@@ -68,6 +68,7 @@ from __future__ import annotations
 import copy
 import importlib.util
 import json
+import math
 import sys
 from pathlib import Path
 
@@ -76,14 +77,23 @@ import pandas as pd
 
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
+_contract_spec = importlib.util.spec_from_file_location("legacy_comparison_contract",
+    FISCAL / "white_replacement_2026_09_28/comparison_contract.py")
+COMPARISON = importlib.util.module_from_spec(_contract_spec)
+_contract_spec.loader.exec_module(COMPARISON)
+_mortality_spec = importlib.util.spec_from_file_location("legacy_stock_mortality",
+    FISCAL / "white_replacement_2026_09_28/mortality_conventions.py")
+MORTALITY = importlib.util.module_from_spec(_mortality_spec)
+_mortality_spec.loader.exec_module(MORTALITY)
 LANE = FISCAL / "debt_legacy_2026_09_23"
-CASE = "oct14"          # the live case setup() builds (main() sets it)
+CASE = "oct15"          # the live case setup() builds (main() sets it)
 # Per case: the groups' lines (group_lines.py), the debt lane's directory under its derived/, this lane's output
 # directory, and whether the case carries the lineage (oct05: the 2005 window on the lineage's composite path).
 CASES = {"sept29": dict(lines="group_lines_sept29.csv", lane_dir="sept29", out=HERE / "derived", lineage=False),
          "oct05": dict(lines="group_lines_oct05.csv", lane_dir="oct05", out=HERE / "derived" / "oct05", lineage=True),
          "oct07": dict(lines="group_lines_oct07.csv", lane_dir="oct07", out=HERE / "derived" / "oct07", lineage=True),
-         "oct14": dict(lines="group_lines_oct14.csv", lane_dir="oct14", out=HERE / "derived" / "oct14", lineage=True)}
+         "oct14": dict(lines="group_lines_oct14.csv", lane_dir="oct14", out=HERE / "derived" / "oct14", lineage=True),
+         "oct15": dict(lines="group_lines_oct15.csv", lane_dir="oct15", out=HERE / "derived" / "oct15", lineage=True)}
 GROUPS = ("mexican_origin_engine", "mexican_origin_rough", "A1_third_plus_nh_white", "all_residents_slice")
 UNION = ("mexican_origin_engine", "mexican_origin_rough")
 BASES = ("cash", "accrual")
@@ -94,6 +104,10 @@ TOL = 1e-6
 
 
 def load_lane():
+    # The lane's payload adapters are imported when case_payload is called,
+    # after this loader returns. Keep their authoritative sibling path visible.
+    if str(LANE) not in sys.path:
+        sys.path.insert(0, str(LANE))
     spec = importlib.util.spec_from_file_location("debt_legacy", LANE / "debt_legacy.py")
     module = importlib.util.module_from_spec(spec)
     sys.modules["debt_legacy"] = module
@@ -129,7 +143,7 @@ def setup() -> dict:
     D.subfunction_levels(responses, extras)
     cash_payload = D.case_payload(CASE, "cash")
     run_shares, _ = D.v4_shares(shares, extras, wb, D.apply_corrections(D.MODEL, cash_payload), cash_payload["meta"])
-    if CASE == "oct14":
+    if CASE in ("oct14", "oct15"):
         D.job_capital_shares(run_shares, wb)
     jf = D.justice_federal(wb)
     ucf = D.uncompensated_federal(float(shares["central"].loc[D.LAST, "medicaid_and_chip_other_medical"]))
@@ -159,6 +173,40 @@ def setup() -> dict:
     return ctx
 
 
+def complete_population_split(meta, debt_count_m):
+    """Reporting union follows the historical union path; nonreporting additions follow G3+.
+
+    Coverage's Hispanic reporting-frame completion joins the reporting union. This is
+    historical-path transport, not an observed historical count of the missing people.
+    The original modeled descendants and observed nonreporting children stay added.
+    """
+    population = meta["population_v8"]
+    counts = meta["union_completion"]["counts"]
+    complete = population["with_coverage"]
+    if not math.isfinite(complete) or complete <= 0:
+        raise SystemExit("[BLOCKED] oct15 complete population is not positive and finite")
+    if not math.isfinite(debt_count_m) or abs(debt_count_m * 1e6 - complete) > 0.01:
+        raise SystemExit("[BLOCKED] debt member_count must use population_v8.with_coverage before legacy comparisons")
+    keys = ("baseline_account_union", "baseline_lineage_population", "reporting_union",
+            "reporters", "nonreporters", "added_lineage", "lineage_population")
+    if any(key not in counts or not math.isfinite(counts[key]) or counts[key] < 0 for key in keys):
+        raise SystemExit("[BLOCKED] oct15 union-completion counts lack valid population parts")
+    checks = (counts["baseline_account_union"] + counts["reporters"] - counts["reporting_union"],
+              counts["nonreporters"] - counts["added_lineage"],
+              sum(counts["by_generation"].values()) - population["completion"],
+              counts["reporters"] + counts["nonreporters"] - population["completion"],
+              counts["baseline_lineage_population"] + population["completion"] - counts["lineage_population"],
+              counts["lineage_population"] - population["without_coverage"],
+              population["without_coverage"] + population["coverage"] - complete)
+    if any(not math.isfinite(value) or abs(value) > 1e-6 for value in checks):
+        raise SystemExit("[BLOCKED] oct15 population declarations do not close (1e-6 persons)")
+    added = counts["baseline_lineage_population"] - counts["baseline_account_union"] + counts["added_lineage"]
+    union = counts["reporting_union"] + population["coverage"]
+    if min(added, union) < 0 or abs(union + added - complete) > 1e-6:
+        raise SystemExit("[BLOCKED] oct15 debt historical count split does not close to complete population")
+    return dict(account_union=union, added=added, lineage_population=complete)
+
+
 def lineage_setup(ctx: dict, responses: dict) -> dict:
     """October 5, as the lane's main() builds them: the identified third-plus path (hist_l: its population share where
     History uses the group's, its count where History uses the group's size), the case's per-head key, each corner's
@@ -176,6 +224,10 @@ def lineage_setup(ctx: dict, responses: dict) -> dict:
     share_l = g3 / (hist.people.reindex(D.YEARS) / 1e3)
     hist_l.share, hist_l.group = share_l / share_l[D.LAST], g3
     meta = run["meta"]["lineage"]
+    counts = dict(meta["counts"])
+    if CASE == "oct15":
+        payload_meta = D.case_payload(CASE)["meta"]
+        counts.update(complete_population_split(payload_meta, D.member_count(CASE)))
     per_head = responses["general_government"]["s"]
     if abs(per_head - (D.TARGET_M + meta["counts"]["added"] / 1e6) / D.RESIDENTS_M) > 1e-8:
         raise SystemExit(f"[BLOCKED] the case's s {per_head} is not the account's target plus the added people")
@@ -192,7 +244,6 @@ def lineage_setup(ctx: dict, responses: dict) -> dict:
                 raise SystemExit(f"[BLOCKED] {basis} {end}: the twin's lines are not the corner's but for the amounts")
             twins[basis][end] = twin
             added[basis][end] = pd.Series((a.amount_bn - b.amount_bn).to_numpy(), index=pd.MultiIndex.from_arrays([a.side, a.id]))
-    counts = meta["counts"]
     return dict(hist_l=hist_l, per_head=per_head, twins=twins, added=added, n_union=counts["account_union"],
                 n_lineage=counts["lineage_population"], n_added=counts["added"])
 
@@ -236,6 +287,8 @@ def lineage_flows(hist, hist_l, corner: dict, twin: dict, end: str, conv: str, s
 def group_table(base: pd.DataFrame, lines: pd.DataFrame, group: str, where: str) -> pd.DataFrame:
     """The case's lines at a corner with the group's 2024 amounts. Gates: the same line set wherever either side has a
     responsive amount; the dump's responses are the corner's (1e-9); the engine union's amounts are the corner's."""
+    if CASE == "oct15" and ("engine" not in lines or set(lines.engine) != {COMPARISON.engine_for(group)}):
+        raise SystemExit(f"[BLOCKED] {where}: group lines have missing or incorrect engine tags")
     g = lines[lines.side != "scalar"].set_index(["side", "line"])
     t = base.copy()
     key = list(zip(t.side, t.id))
@@ -293,7 +346,7 @@ def federal_path(ctx: dict, group: str, basis: str, end: str, conv: str, lines: 
                 raise SystemExit(f"[BLOCKED] {group}: union-only line {lid} is not zero")
         if twin is not None:
             twin.update(justice=0.0, uc=0.0)
-    kw = dict(series=D.RECEIPT_SERIES_V7 if CASE == "oct14" else D.RECEIPT_SERIES_V4,
+    kw = dict(series=D.RECEIPT_SERIES_V7 if CASE in ("oct14", "oct15") else D.RECEIPT_SERIES_V4,
               signed_receipts=D.SIGNED_RECEIPTS_V4)
     if twin is None:
         prog = D.programme_federal(ctx["hist"], c, end, conv, ctx["shares"], ctx["extras"], jf, ucf, parts, **kw)
@@ -401,12 +454,16 @@ def zero_audit(wb, carried: set[str]) -> dict:
     return dict(series_audited=len(refs), zero_before_2005=out)
 
 
-def main(case: str = "oct14") -> None:
+def main(case: str = "oct15") -> None:
     global CASE
     CASE = case
     conf = CASES[case]
     lineage = conf["lineage"]
     lines_all = pd.read_csv(HERE / "derived" / conf["lines"])
+    if case == "oct15":
+        if "mortality_convention" not in lines_all or set(lines_all.mortality_convention) != {MORTALITY.GENERAL}:
+            raise SystemExit("[BLOCKED] base legacy annual inputs have missing/wrong mortality labels")
+        mortality = lines_all.mortality_convention.iloc[0]
     acs = pd.read_csv(HERE / "derived/acs_inputs.csv")
     count_m = D.member_count(case)
     gates: dict = {}
@@ -543,18 +600,40 @@ def main(case: str = "oct14") -> None:
             raise SystemExit("[BLOCKED] the extended run's 2005 window is not the lane's")
     main_t = stocks[stocks.convention == "central"].drop(columns="convention")
     conv_t = stocks[(stocks.window_start == 2005) & stocks.basis.isin(BASES)]
-    diffs = []
+    diffs, bridges, annual_bridges = [], [], []
     for basis in (*BASES, "accrual_payroll_carry"):
         for start in windows:
             for end in ENDS:
                 pick = main_t[(main_t.basis == basis) & (main_t.window_start == start) & (main_t.end == end)].set_index("group")
-                for ref in UNION:
+                for ref in (("mexican_origin_rough",) if case == "oct15" else UNION):
                     for comp in ("A1_third_plus_nh_white", "all_residents_slice"):
                         a, b = pick.loc[ref], pick.loc[comp]
+                        if case == "oct15":
+                            COMPARISON.require_same_engine({"engine": COMPARISON.engine_for(ref)},
+                                                           {"engine": COMPARISON.engine_for(comp)})
                         diffs.append(dict(basis=basis, window_start=start, end=end, union=ref, comparator=comp,
                                           stock_diff_bn=a.stock_entering_2024_bn - b.stock_entering_2024_bn,
                                           interest_diff_bn=a.interest_2024_bn - b.interest_2024_bn,
                                           interest_diff_per_member_usd=a.interest_per_member_usd - b.interest_per_member_usd))
+                if case == "oct15":
+                    a, b = pick.loc["mexican_origin_engine"], pick.loc["mexican_origin_rough"]
+                    bridges.append(dict(basis=basis, window_start=start, end=end, row_type="bridge",
+                        lineage_engine="case", comparator_engine="rough",
+                        stock_case_minus_rough_bn=a.stock_entering_2024_bn-b.stock_entering_2024_bn,
+                        interest_case_minus_rough_bn=a.interest_2024_bn-b.interest_2024_bn))
+    if case == "oct15":
+        annual_frame = pd.DataFrame(annual)
+        for basis in annual_frame.basis.unique():
+            for end in ENDS:
+                pick = annual_frame[(annual_frame.basis == basis) & (annual_frame.end == end)]
+                a = pick[pick.group == "mexican_origin_engine"].set_index("year")
+                b = pick[pick.group == "mexican_origin_rough"].set_index("year")
+                for year in a.index:
+                    annual_bridges.append(dict(basis=basis, end=end, year=int(year), row_type="bridge",
+                        lineage_engine="case", comparator_engine="rough",
+                        fiscal_case_minus_rough_real_bn=a.loc[year,"fiscal_gap_real_bn"]-b.loc[year,"fiscal_gap_real_bn"],
+                        federal_case_minus_rough_real_bn=a.loc[year,"federal_real_bn"]-b.loc[year,"federal_real_bn"],
+                        federal_case_minus_rough_nominal_bn=a.loc[year,"federal_nominal_bn"]-b.loc[year,"federal_nominal_bn"]))
     # Sign and scale gates: the average slice's 2024 federal flow lies between the union's and the white slice's on
     # cash at both ends (a ranking the 2024 account already shows), and no stock exceeds debt held by the public.
     debt_2023 = float(rates.loc[2023, "debt_held_by_public_bn"])
@@ -573,6 +652,27 @@ def main(case: str = "oct14") -> None:
                                 effective_rate_fy=r_ext.reindex(hist.group.index).to_numpy()))
     out = conf["out"]
     out.mkdir(exist_ok=True)
+    if case == "oct15":
+        for table in (main_t, conv_t, paths_t):
+            table["case"] = case
+            table["mortality_convention"] = mortality
+            if "group" in table:
+                table["engine"] = table.group.map(COMPARISON.engine_for)
+        for collection in (diffs, annual):
+            for row in collection:
+                row.update(case=case, mortality_convention=mortality)
+                if "group" in row:
+                    row["engine"] = COMPARISON.engine_for(row["group"])
+                else:
+                    row.update(row_type="comparison", lineage_engine=COMPARISON.engine_for(row["union"]),
+                               comparator_engine=COMPARISON.engine_for(row["comparator"]),
+                               mixed_unit_asymmetry="item11 annual flow measured for lineage only; comparator counterpart unmeasured; no direct stock subtraction")
+                    COMPARISON.require_same_engine({"engine": row["lineage_engine"]}, {"engine": row["comparator_engine"]})
+        for collection in (bridges, annual_bridges):
+            for row in collection:
+                row.update(case=case, mortality_convention=mortality)
+        pd.DataFrame(bridges).round(6).to_csv(out / "case_rough_stock_bridge.csv", index=False, lineterminator="\n")
+        pd.DataFrame(annual_bridges).round(6).to_csv(out / "case_rough_annual_bridge.csv", index=False, lineterminator="\n")
     main_t.round(6).to_csv(out / "legacy_main.csv", index=False, lineterminator="\n")
     pd.DataFrame(diffs).round(6).to_csv(out / "legacy_differences.csv", index=False, lineterminator="\n")
     conv_t.round(6).to_csv(out / "legacy_conventions.csv", index=False, lineterminator="\n")
@@ -601,6 +701,9 @@ def main(case: str = "oct14") -> None:
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct14", choices=list(CASES),
-                    help="oct14 (default, v7, derived/oct14/); sept29, oct05 and oct07 are archived cases")
+    ap.add_argument("--case", default="oct15", choices=list(CASES),
+                    help="oct15 (default, v8, derived/oct15/); earlier keyed cases are archived")
     main(ap.parse_args().case)
+    sys.path.insert(0, str(FISCAL / "scripts"))
+    from memory_budget import require_within_budget
+    print(f"[memory] peak physical footprint {require_within_budget('Legacy comparators') / 1e9:.3f} GB")

@@ -609,3 +609,68 @@ The accrual ordering and all other sign, scale, flow, rate and per-member checks
 `group_lines.py --case oct14`, `legacy.py --case oct14`, `pytest test_legacy.py -q` all exit 0;
 **IDENTICAL 36/36, exit 0**. Python timing: 34.65s; child peak RSS 1,782.2MiB. Only `test_legacy.py` and this
 RESULT change in round 3; all derived files reproduce unchanged. No Git writes.
+
+## Live v8 propagation (oct15)
+
+The live group export and debt-comparator default now target oct15. Both rely on the completed
+oct15 white/Black library; debt comparison additionally relies on the debt lane's completed oct15
+back-cast routing and tables. Historical exports and case directories remain archived.
+R7's native receipt series and federal collection shares carry forward to v8; the debt lane owns
+the rules for routing items 9–12. The existing 1e-6bn debt parity and 1e-9bn flow gates remain.
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/legacy_comparators_2026_09_30/group_lines.py --case oct15
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/legacy_comparators_2026_09_30/legacy.py --case oct15
+uv run --no-project python3 -m pytest infra/immigration-fiscal/legacy_comparators_2026_09_30/test_legacy.py -q
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/legacy_comparators_2026_09_30 "uv run --no-project python3 {lane}/group_lines.py --case oct15" "uv run --no-project python3 {lane}/legacy.py --case oct15" "uv run --no-project python3 -m pytest {lane}/test_legacy.py -q"
+```
+
+- 2026-10-14 23:50 JST — Initial oct15 probe stopped on unsupported case key. Added the new
+  live mappings; final runs and parity checks wait for CASE_FINAL and upstream oct15 outputs.
+  [CALCULATION: legacy-candidate.log]
+
+### 2026-10-15 Round-2 rules
+
+The group export and legacy tables carry `case=oct15` and the explicit inherited
+`mixed mortality conventions` label. A scalar annual lineage mortality change is insufficient
+to reconstruct its historical federal receipt/benefit paths; no guessed historical mortality
+charge enters these stock comparisons. The annual symmetric comparator lane owns the
+two-convention annual contrasts. [DATA: group_lines.py, legacy.py; SOURCE: parent round-2 rules]
+
+The legacy count split now requires the debt producer to declare `population_split_v8`:
+`population_rule=population_v8.with_coverage`, `account_union`, `added`, and
+`lineage_population`. Both its count and `D.member_count(oct15)` must match the principal
+complete population within 0.01 people. No historical coverage or completed-membership split
+is guessed. The candidate group export stops on 13 upstream dump/band/post/count/key gates;
+it writes no output (5.755s). The count-contract negative controls pass.
+[CALCULATION: legacy-groups-resume.json; test_legacy.py test_v8_frame_requires_declared_split_and_complete_debt_count]
+
+
+## 2026-10-15 Round-2 comparator fixes
+
+The parent supplies the historical count rule without a new export. This supersedes the prior request for `population_split_v8`. The reporting union, completed reporters and Hispanic reporting-frame coverage people follow the historical union path. Original modeled descendants and observed nonreporting children follow the identified third-plus path. `complete_population_split` derives both parts from `meta.union_completion.counts` and `meta.population_v8`, checks all completion declarations, and gates their sum to `with_coverage` at 1e-6 persons. This is declared historical transport, not observed historical membership. The debt member-count guard remains. [SOURCE: parent second resume note; CALCULATION: legacy.py]
+
+- 2026-10-15 00:50 JST — fixture accepts the derived split and rejects stale debt count and a 2e-6-person population discrepancy; Python compile check passes. CASE_FINAL remains absent, so final live totals/reproducibility wait.
+
+
+### One-engine live comparisons (2026-10-15, Round-2 C02 follow-up)
+
+Before: live engine-lineage-minus-white stock rows combined case and rough source keys. After: every live comparison is rough-lineage versus a rough comparator, and the canonical white comparison_contract.py guard rejects missing/different engine tags. Absolute case-lineage stocks remain standalone. The case-versus-rough bridge is separate, with both source tags; earlier rows/files are preserved. No Black group exists in these stock tables, and no new mortality-stock estimand is constructed.
+
+Pension summary emits only the rough-lineage-minus-A1 comparison plus a separately labeled case-minus-rough bridge. The adopted bridge is itemized by plan/service in case_rough_bridge_by_line.csv and closes to its summary interest difference at1e-9bn. Item11 is an annual fiscal-removal term and is not subtracted from employee-service stock. Legacy debt differences likewise use rough-versus-rough; case_rough_stock_bridge.csv and per-year case_rough_annual_bridge.csv retain the source bridge. group_lines.py itemizes all annual line/resource/post components in case_rough_line_bridge_oct15.csv using the same canonical decomposition guard at1e-9bn. annual_comparison_oct15.csv carries the equal-population rough-engine full-removal gap and its gap without item11, and labels the lineage-only mixed-unit asymmetry. This annual removal table is separate from financing stocks; no scalar item11 amount is subtracted directly from a historical stock.
+
+Input group-line tags are validated before any stock comparison. Seven pension fixture probes and two legacy population/engine fixture probes pass, including deliberate engine-tag mismatches. Recorded-output tests and final source bridge closure remain held for CASE_FINAL. [SOURCE: parent Round-2 C02 follow-up; CALCULATION: canonical comparison_contract.py, owned consumers and tests]
+
+
+### Correction: mortality labels on the base route (2026-10-15)
+
+The earlier mixed-mortality label was wrong for this base route. Plain K.run29 consumes the base general-mortality ratios; white rekey_sept29.py write() labels these diagnostic rows whole-population mortality. group_lines.py now inherits that actual upstream label and rejects missing, own-group or mixed labels. Legacy financing rows inherit the gated group-line label; Indian base references must both have the same authoritative general label. Indian mortality is independently traced: accrual_indian uses A.G (the white producer's P.CENTRAL mortality=general), passes that grid/default Part-A mortality to A.oasdi_ratio/A.part_a, and now gates G[1]=general on the live route. Its CSV's explicit whole_population_tables label is checked before downstream rekeying. Indian combined rows inherit their gated fiscal input label; pure social terms have not_applicable_social_terms. Pension employee-service stock rows retain not_applicable_service_share.
+
+Canonical display labels load mortality_conventions.py; no copied definition is introduced. The symmetric producer separately supplies its mixed/own-group convention comparisons; base diagnostic rows do not claim to be either of those. General-mortality inheritance and missing/wrong-label negative controls pass. Three legacy fixture probes and seven Indian source/level probes pass; changed callers compile. Historical rows and logs remain, with this dated correction superseding their misleading current-label statement. [DATA: white_replacement_2026_09_28/rekey_sept29.py write(), accrual_white.py G/part_a; pension_accrual_2026_09_28/pension_accrual.py CENTRAL; owned callers/tests]
+
+
+### Adopted v8 group receipt and financing stop, 2026-10-15
+
+Final group_lines export passes and reproduces IDENTICAL39/39,exit0,13.504s including3focused metadata/count/engine fixtures. Historical legacy.py and actual-stock tests are explicitly excluded from this group-only receipt. Debt loader now retains its authoritative sibling path for late v8_payload import; the actual call reaches the semantic guard. Authoritative debt v8 API stops: full financing needs unlocated post-engine payer/timing rules. current_flow_contract.json declares financing_complete=false and historical_stock_identified=false; its9sourcepins all match. No historical stock/annual path, per-member stock or comparator difference/stock bridge is generated. Source current-flow audit cannot substitute for missing historical payer, government and cash/accrual timing incidence. Existing stock/annual parity1e-6bn stays intact. [CALCULATION: legacy.py --case oct15, scratch legacy-final.log; ../debt_legacy_2026_09_23/derived/oct15/current_flow_contract.json]
+
+Group annual rough-minus-white removal gaps541.8818034552818 /517.9530837626708bn; excluding lineage-only item11 531.14178718258 /503.42139356469727bn. Tags rough/rough, population45,230,062.30075857 on both sides, mortality whole-population. These removal-account rows do not identify the stopped financing stock. All annual case/rough bridge parts close at1e-9bn. [CALCULATION: derived/annual_comparison_oct15.csv,case_rough_line_bridge_oct15.csv]

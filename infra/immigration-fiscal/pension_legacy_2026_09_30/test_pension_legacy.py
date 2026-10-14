@@ -92,7 +92,7 @@ def test_shares_and_weights_are_sane():
 
 
 def test_rebuild_reproduces_derived(tmp_path):
-    run = subprocess.run([sys.executable, str(HERE / "pension_legacy.py"), "--out-dir", str(tmp_path)],
+    run = subprocess.run([sys.executable, str(HERE / "pension_legacy.py"), "--case", "sept29", "--out-dir", str(tmp_path)],
                          capture_output=True, text=True, env={**os.environ, "OPENBLAS_NUM_THREADS": "1"})
     assert run.returncode == 0, run.stderr[-2000:]
     names = sorted(p.name for p in (HERE / "derived").iterdir() if p.is_file())   # later cases sit in derived/<case>/
@@ -144,3 +144,132 @@ def test_same_keys_pension_gap_uses_row4_and_differs_from_engine():
         assert interest("mexican_origin_minus_A1_white", end) > interest("mexican_origin_rough_minus_A1_white", end)
     assert interest("mexican_origin_rough_minus_A1_white", "low") == pytest.approx(4.8918, abs=0.0001)
     assert interest("mexican_origin_rough_minus_A1_white", "high") == pytest.approx(4.6828, abs=0.0001)
+
+
+def test_live_population_uses_authoritative_lineage_count():
+    import json
+    payload = json.loads((pl.FISCAL / "main_case_2026_10_15/derived/corrections.json").read_text())
+    try:
+        pl.use_case("oct15")
+        expected = payload["meta"]["population_v8"]["with_coverage"]
+        assert pl.POPULATION == expected
+        baseline = payload["meta"]["lineage"]["counts"]["lineage_population"]
+        assert expected > baseline
+        pl.group_shares()  # Rejects any comparator slice on the old population frame.
+    finally:
+        pl.use_case("sept29")
+
+
+def test_service_carriers_follow_selected_parent_key_even_at_zero_response():
+    lines = {"defense": {"side": "spending", "key": "population", "response": 0},
+             "selected": {"national_bn": 0, "response": 0},
+             "inactive": {"national_bn": 0, "response": 0}}
+    common = {"kind": "line", "side": "spending", "parent_line": "defense"}
+    carriers = {"selected": {**common, "parent_key": "population"},
+                "inactive": {**common, "parent_key": "wages"}}
+    assert pl.service_carrier_amount("defense", lines, {"selected": 2, "inactive": 999}, carriers) == 2
+
+
+def test_service_carrier_rejects_missing_amount_or_wrong_response():
+    lines = {"education_services": {"side": "spending", "key": "education_mix", "response": 1},
+             "carrier": {"national_bn": 0, "response": 1}}
+    carriers = {"carrier": {"kind": "line", "side": "spending", "parent_line": "education_services",
+                            "parent_key": "education_mix"}}
+    with pytest.raises(ValueError, match="missing selected"):
+        pl.service_carrier_amount("education_services", lines, {}, carriers)
+    lines["carrier"]["response"] = 0
+    with pytest.raises(ValueError, match="parent response"):
+        pl.service_carrier_amount("education_services", lines, {"carrier": 2}, carriers)
+
+
+def test_receipt_carrier_uses_scenario_and_restores_economic_sign():
+    lines = {"enterprise_surplus": {"side": "receipts", "scenario": "cbo_collective", "response": 1},
+             "carrier": {"national_bn": 0, "response": 1}}
+    carriers = {"carrier": {"kind": "line", "side": "receipt", "parent_line": "enterprise_surplus",
+                             "parent_key": "cbo_collective"}}
+    assert pl.service_carrier_amount("enterprise_surplus", lines, {"carrier": -.2}, carriers) == .2
+    lines["enterprise_surplus"]["scenario"] = "population"
+    with pytest.raises(ValueError, match="key/scenario is absent"):
+        pl.service_carrier_amount("enterprise_surplus", lines, {"carrier": -.2}, carriers)
+
+
+def test_every_carrier_keeps_parent_service_and_resource_nature(monkeypatch):
+    carriers = {"line": {"kind": "line", "side": "spending", "parent_line": "state_price_health_services", "parent_key": "population"},
+                "capital": {"kind": "capital", "parent_line": "health_sl"},
+                "production": {"kind": "production", "parent_line": "production"},
+                "education_fee": {"kind": "capital", "parent_line": "k12_user_fees"},
+                "health_fee": {"kind": "capital", "parent_line": "health_fed_user_fees"}}
+    lines = {key: {"amount_bn": .25, "response": 1.} for key in carriers}
+    lines["state_price_health_services"] = {"key": "population"}
+    monkeypatch.setattr(pl, "COMPLETION_CARRIERS", carriers)
+    monkeypatch.setattr(pl, "SERVICE_ATTRIBUTIONS", [])
+    pl.completion_attribution("low", lines)
+    assert len(pl.SERVICE_ATTRIBUTIONS) == 5
+    assert [row[4] for row in pl.SERVICE_ATTRIBUTIONS] == ["health_services", "health_services", "private_production", "education_services", "health_services"]
+    assert [row[-1] for row in pl.SERVICE_ATTRIBUTIONS] == [True, False, False, False, False]
+    del lines["capital"]
+    with pytest.raises(ValueError, match="parent/kind/amount"):
+        pl.completion_attribution("high", lines)
+
+
+def test_defense_stock_bridge_adds_people_and_does_not_repeat_native_amount():
+    counts = {"baseline_account_union": 100., "baseline_lineage_population": 130.,
+              "reporters": 10., "nonreporters": 5.}
+    population = {"completion": 15., "coverage": 2., "without_coverage": 145., "with_coverage": 147.}
+    # Baseline raw price=.2bn/person. Native children already add1bn to the full raw amount.
+    result = pl.defense_stock_bridge(counts, population, 20., 26., 27., 1.)
+    assert result["completion_raw_bn"] == 3.
+    assert result["coverage_raw_bn"] == .4
+    assert result["additional_stock_raw_bn"] == pytest.approx(2.4, abs=1e-12)
+    assert result["stock_raw_bn"] == pytest.approx(29.4, abs=1e-12)
+    with pytest.raises(ValueError, match="baseline/native bridge"):
+        pl.defense_stock_bridge(counts, population, 20., 26., 27., 0.)
+    with pytest.raises(ValueError, match="population bridge"):
+        pl.defense_stock_bridge(counts, {**population, "with_coverage": 147.000002}, 20., 26., 27., 1.)
+
+
+def test_live_stock_comparisons_reject_case_rough_engine_pairing(monkeypatch):
+    assert pl.comparison_tags("mexican_origin_rough_minus_A1_white") == ["comparison", "rough", "rough"]
+    assert pl.comparison_tags("case_minus_rough_bridge") == ["bridge", "case", "rough"]
+    with pytest.raises(ValueError, match="unrecognized live pension comparison"):
+        pl.comparison_tags("mexican_origin_minus_A1_white")
+    monkeypatch.setattr(pl.COMPARISON, "engine_for", lambda group: "case" if group == "mexican_origin_rough" else "rough")
+    with pytest.raises(SystemExit, match="different engine tags"):
+        pl.comparison_tags("mexican_origin_rough_minus_A1_white")
+
+
+def test_coverage_composition_and_zero_response_keep_household_prices(tmp_path):
+    import json
+    lane = tmp_path / "coverage"
+    base = lane / "inputs/oct15_base"
+    base.mkdir(parents=True)
+    (lane / "derived").mkdir()
+    household = {"meta": {"case": "main_case_2026_10_15", "basis": "set"}, "generations": {}}
+    for gen in ("G1", "G2", "G3plus"):
+        household["generations"][gen] = {"low": {"rows": [
+            {"id": "defense", "side": "spending", "key": "population", "amount_bn": 20.}]}}
+    (base / "lines.json").write_text(json.dumps(household))
+    (base / "generation_results.csv").write_text("convention,generation,band_end,population\n"
+        + "".join(f"a,{gen},low,100\n" for gen in household["generations"]))
+    (base / "manifest.json").write_text(json.dumps({"files": [
+        {"name": name, "sha256": pl.sha(base / name)} for name in ("lines.json", "generation_results.csv")]}))
+    prices = {gen: {"0-4": {"net_missing_people": 10., "by_end": {"low":
+             {"coverage_bn": 1., "per_member_usd": 1e8}}}} for gen in household["generations"]}
+    scenario = {"by_generation_age_band": prices,
+        "implied_net_missing_people_by_age_band": {g: {"0-4": 10.} for g in prices},
+        "ends": {"low": {"decomposition": {"total_cost_bn": 3., "line_parts": [
+            {"source_line": "education_services", "source_side": "spending", "economic_class": "fiscal_line", "coverage_bn": 3.}]}}}}
+    raw = {"key": "oct15", "sets": {"set": {"scenarios": {"central": scenario}}}}
+    source = lane / "derived/coverage.json"
+    source.write_text(json.dumps(raw))
+    coverage = {"net_missing_people": 30., "which": "set", "file": "coverage/derived/coverage.json",
+        "sha256": pl.sha(source), "construction": "central", "by_end": {"low": {"total_bn": 3.}}}
+    lines = {"defense": {"side": "spending", "response": 0},
+             "education_services": {"side": "spending", "response": .5}}
+    amounts = pl.coverage_service_amounts(coverage, "low", lines, list(lines), source_root=tmp_path)
+    assert amounts == {"defense": 6., "education_services": 6.}
+    prices["G2"]["0-4"]["by_end"]["low"]["per_member_usd"] += 1000
+    source.write_text(json.dumps(raw))
+    coverage["sha256"] = pl.sha(source)
+    with pytest.raises(ValueError, match="age-price mismatch"):
+        pl.coverage_service_amounts(coverage, "low", lines, list(lines), source_root=tmp_path)

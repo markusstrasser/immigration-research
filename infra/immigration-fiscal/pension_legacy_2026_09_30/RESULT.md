@@ -400,3 +400,78 @@ Log (times from `date`):
   v6 propagation. On oct05 it moves the matched difference from $5.32 / 5.24bn to $5.22 / 5.14bn and the engine
   difference from $5.64 / 5.85bn to $5.75 / 5.96bn. sept29 keeps its keys, and its outputs are unchanged. See
   "v6 case (oct07)".
+
+## Live v8 propagation (oct15)
+
+The default now reads the oct15 comparator line export and engine dump, and divides by
+`main_case_2026_10_15/derived/corrections.json` → `meta.population_v8.with_coverage`.
+The case's Consumers row now explicitly declares `population_v8` for this lane. The inherited
+lineage record retains its historical construction and cannot supply the new divisor.
+This remains a pension-legacy attribution beside the annual case, rather than a new charge to it.
+The service shares and population gates retain their tolerances. Earlier keyed files stay archived.
+
+Live commands, after `legacy_comparators_2026_09_30/group_lines.py --case oct15`:
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --case oct15
+uv run --no-project python3 -m pytest infra/immigration-fiscal/pension_legacy_2026_09_30/test_pension_legacy.py -q
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/pension_legacy_2026_09_30 "uv run --no-project python3 {lane}/pension_legacy.py --case oct15" "uv run --no-project python3 -m pytest {lane}/test_pension_legacy.py -q"
+```
+
+- 2026-10-14 23:50 JST — Initial oct15 probe stopped on unsupported case key. Added explicit
+  mappings and the authoritative count check; final execution waits for CASE_FINAL. [CALCULATION: pension-candidate.log]
+
+### 2026-10-15 Round-2 rules
+
+The pension divisor reads `meta.population_v8.with_coverage`. Service-share attribution
+adds reporter carriers only where their declared source side, parent line and parent key
+match the selected engine parent; a zero response alone cannot select an inactive key.
+Native children's edits are already inside their original parent lines. Selected carriers
+must preserve national zero and their evaluated parent response. Two adversarial carrier
+checks pass. [CALCULATION: pension_legacy.py service_carrier_amount; test_pension_legacy.py]
+
+Public-employee legacy shares use service amounts, so their rows carry
+`mortality_convention=not_applicable_service_share` and `case=oct15`. Annual mortality
+substitution is outside these service-share stock calculations. Coverage's additional people
+enter the divisor, but aggregate coverage net costs cannot identify missing service use or
+a historical stock charge. A service-level coverage allocation remains required before a
+covered-population legacy-stock claim. The candidate run stops because the matching oct15
+group-line export is absent; final pricing/reproduction waits for CASE_FINAL and that export.
+[DATA: main_case_2026_10_15/RESULT.md Consumers; CALCULATION: pension-resume-probe.json]
+
+
+## 2026-10-15 Round-2 comparator fixes
+
+Item 10: every carrier is attributed by `parent_line`; the live run writes `completion_service_attribution.csv` for both ends. Fiscal carrier amounts enter their selected parent service on the economic side. Receipt carriers use the parent receipt scenario and reverse their signed spending-storage sign. State-price overlays, roads and enterprises retain their carrier amounts. Capital and production carriers carry their parent service and resource nature in the attribution table and do not become employee-service amounts. Native children are already in the original parent lines. No comparator membership correction is invented. [SOURCE: parent second resume note; CALCULATION: pension_legacy.py]
+
+Item 12: read the pinned coverage source's generation/age missing people and own household per-person prices; multiplication and the full service/resource composition each close to the item-12 amount at each end within 1e-6bn. The source's typed line parts are the same underlying household-person-price allocation, summed over its generation/age cells. Divide only nonzero-response service costs by their declared response. At zero response, read the receipt-pinned frozen oct15 household raw amount per person (the per-head defense price); a net-zero amount cannot recover service use. Frozen base prices avoid pricing coverage twice. This supersedes the prior missing-service-export stop. [DATA: coverage_bound_2026_10_14/coverage_oct15.py, inputs/oct15_base/lines.json; CALCULATION: pension_legacy.py]
+
+- 2026-10-15 00:50 JST — five adversarial carrier/coverage probes pass, including receipt sign/scenario, parent/resource attribution, zero-response household price and age-price corruption rejection. Compile check passes. CASE_FINAL remains absent, so final live amounts and lane reproducibility wait.
+
+
+### Defense stock bridge resolved (2026-10-15, parent second-resume follow-up)
+
+Defense average-cost stock attribution uses the preserved baseline union raw defense amount divided by `meta.union_completion.counts.baseline_account_union` (n4). Add that raw price times reporters, observed nonreporting children and coverage people to the preserved baseline lineage raw amount. The frozen household before/full rows and every native child raw defense amount are traced independently; subtract the native raw amount already in the full export once. Population closure is 1e-6 persons; raw-before/native/full closure and source-national parity are 1e-9bn. Both lineage key variants use this common per-head stock price. The live bridge writes `defense_stock_bridge.json` with case, counts, source formula, before/after amounts and the unchanged zero removal response. The raw service-use attribution only changes the stock average-cost companion; removal defense stays zero. [SOURCE: parent follow-up; DATA: white_replacement_2026_09_28/derived/engine_lines_oct14{,_union}.json, coverage_bound_2026_10_14/inputs/oct15_base/lines.json; CALCULATION: defense_stock_amount, defense_stock_bridge]
+
+Candidate source trace (coverage off, not an adopted run): baseline union raw 100.30445274752034bn/n4 39,712,493.3312 = 2.525765680613069e-6bn/person. Baseline lineage raw 107.98207210147763bn; full native raw 108.13488062170230bn includes 0.1528085202246655bn already. Completion 517,435.75719317 people needs 1.3069214774405458bn; additional stock raw after subtracting native = 1.1541129572158804bn; stock raw 109.28899357891817bn. Both ends agree. Coverage adds the same source raw price times its separately declared people on adoption. Six adversarial carrier/coverage/defense-stock tests pass; a missing native amount and a 2e-6-person discrepancy both block. CASE_FINAL still absent. [CALCULATION: read-only candidate raw trace; test_pension_legacy.py]
+
+
+### One-engine live comparisons (2026-10-15, Round-2 C02 follow-up)
+
+Before: live engine-lineage-minus-white stock rows combined case and rough source keys. After: every live comparison is rough-lineage versus a rough comparator, and the canonical white comparison_contract.py guard rejects missing/different engine tags. Absolute case-lineage stocks remain standalone. The case-versus-rough bridge is separate, with both source tags; earlier rows/files are preserved. No Black group exists in these stock tables, and no new mortality-stock estimand is constructed.
+
+Pension summary emits only the rough-lineage-minus-A1 comparison plus a separately labeled case-minus-rough bridge. The adopted bridge is itemized by plan/service in case_rough_bridge_by_line.csv and closes to its summary interest difference at1e-9bn. Item11 is an annual fiscal-removal term and is not subtracted from employee-service stock. Legacy debt differences likewise use rough-versus-rough; case_rough_stock_bridge.csv and per-year case_rough_annual_bridge.csv retain the source bridge. group_lines.py itemizes all annual line/resource/post components in case_rough_line_bridge_oct15.csv using the same canonical decomposition guard at1e-9bn. annual_comparison_oct15.csv carries the equal-population rough-engine full-removal gap and its gap without item11, and labels the lineage-only mixed-unit asymmetry. This annual removal table is separate from financing stocks; no scalar item11 amount is subtracted directly from a historical stock.
+
+Input group-line tags are validated before any stock comparison. Seven pension fixture probes and two legacy population/engine fixture probes pass, including deliberate engine-tag mismatches. Recorded-output tests and final source bridge closure remain held for CASE_FINAL. [SOURCE: parent Round-2 C02 follow-up; CALCULATION: canonical comparison_contract.py, owned consumers and tests]
+
+
+### Correction: mortality labels on the base route (2026-10-15)
+
+The earlier mixed-mortality label was wrong for this base route. Plain K.run29 consumes the base general-mortality ratios; white rekey_sept29.py write() labels these diagnostic rows whole-population mortality. group_lines.py now inherits that actual upstream label and rejects missing, own-group or mixed labels. Legacy financing rows inherit the gated group-line label; Indian base references must both have the same authoritative general label. Indian mortality is independently traced: accrual_indian uses A.G (the white producer's P.CENTRAL mortality=general), passes that grid/default Part-A mortality to A.oasdi_ratio/A.part_a, and now gates G[1]=general on the live route. Its CSV's explicit whole_population_tables label is checked before downstream rekeying. Indian combined rows inherit their gated fiscal input label; pure social terms have not_applicable_social_terms. Pension employee-service stock rows retain not_applicable_service_share.
+
+Canonical display labels load mortality_conventions.py; no copied definition is introduced. The symmetric producer separately supplies its mixed/own-group convention comparisons; base diagnostic rows do not claim to be either of those. General-mortality inheritance and missing/wrong-label negative controls pass. Three legacy fixture probes and seven Indian source/level probes pass; changed callers compile. Historical rows and logs remain, with this dated correction superseding their misleading current-label statement. [DATA: white_replacement_2026_09_28/rekey_sept29.py write(), accrual_white.py G/part_a; pension_accrual_2026_09_28/pension_accrual.py CENTRAL; owned callers/tests]
+
+
+### Adopted v8 receipt, 2026-10-15
+
+CASE_FINAL b35ac8fb inspected. Final producer and17tests pass; rerun IDENTICAL43/43, exit0,3.701s (Python perf_counter; child RSS107,315,200bytes informational). All339carriers at each end mapped:281fiscal,56capital,2production. Capital user-fee offsets follow their declared underlying education/health service; a fixture includes fee offsets. Coverage source age/price and typed composition close to12.001818463568476 /15.859877306531986bn at1e-6bn. Defense raw annual service-use attribution moves108.13488062170230→114.24053901804987bn, using baseline union100.30445274752034bn /39,712,493.3312people; completion adds1.3069214774405458bn, coverage4.951545439131706bn, native0.1528085202246655bn already included is removed once. Defense removal response remains0. Adopted case pension-stock interest24.219446 /25.267122bn; rough23.689818 /24.737813; A1 white17.817269 /19.097633; rough-minus-white5.872550 /5.640180bn. The former mixed-engine difference would have been6.402178 /6.169489bn; its separate case/rough bridge is0.529628 /0.529309bn and closes by plan/service at1e-9bn. Stock mortality label is not_applicable_service_share. [CALCULATION: derived/oct15/summary.csv, completion_service_attribution.csv, defense_stock_bridge.json, case_rough_bridge_by_line.csv; scratch pension-final.json,pension-repro.json]

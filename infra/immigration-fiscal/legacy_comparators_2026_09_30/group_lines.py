@@ -57,10 +57,24 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
 WHITE = FISCAL / "white_replacement_2026_09_28"
+_contract_spec = importlib.util.spec_from_file_location("legacy_line_comparison_contract", WHITE / "comparison_contract.py")
+COMPARISON = importlib.util.module_from_spec(_contract_spec)
+_contract_spec.loader.exec_module(COMPARISON)
+_mortality_spec = importlib.util.spec_from_file_location("legacy_line_mortality", WHITE / "mortality_conventions.py")
+MORTALITY = importlib.util.module_from_spec(_mortality_spec)
+_mortality_spec.loader.exec_module(MORTALITY)
 GROUPS = ("mexican_origin_engine", "mexican_origin_rough", "A1_third_plus_nh_white", "all_residents_slice")
 BASES = ("cash", "accrual")
 ENDS = ("low", "high")
 SIDE = {"receipts": "receipt", "spending": "spending"}     # the debt lane's side names
+
+
+def annual_mortality_label(rows):
+    """This base route consumes general-mortality ratios; inherit its actual label."""
+    labels = {r.get("mortality_convention") for r in rows}
+    if labels != {MORTALITY.GENERAL}:
+        raise SystemExit("[BLOCKED] base annual group lines lack the authoritative whole-population mortality label")
+    return next(iter(labels))
 
 
 def load_rekey():
@@ -71,18 +85,21 @@ def load_rekey():
     return module
 
 
-def main(case: str = "oct14") -> None:
+def main(case: str = "oct15") -> None:
     K = load_rekey()
     K.use_case(case)
     K.setup()
     K.stop_if_failed()
     scen = K.scenarios()
     summary = pd.read_csv(WHITE / f"derived/rekey_summary_{case}.csv")
-    rows, fails = [], []
+    mortality = annual_mortality_label(summary.to_dict("records")) if case == "oct15" else None
+    rows, fails, runs = [], [], {}
     for basis in BASES:
         for end in ENDS:
             for g in GROUPS:
-                r, lines, _, _, _ = K.run29(scen[g], end, basis)
+                run = K.run29(scen[g], end, basis)
+                r, lines, _, _, _ = run
+                runs[basis, end, g] = run
                 want = summary[(summary.basis == basis) & (summary.group == g) & (summary.end == end)].iloc[0]
                 if abs(r["cost"] - want.cost) > 5e-5 or int(round(r["population"])) != int(want.population):
                     fails.append(f"{g} {basis} {end}: cost {r['cost']:.6f} vs {want.cost:.4f}")
@@ -103,18 +120,55 @@ def main(case: str = "oct14") -> None:
                       f"  production {r['production_gain']:.4f} (dump {prod['effect_bn']:.4f})")
     if fails:
         raise SystemExit(f"[BLOCKED] group lines do not reproduce rekey_summary_{case}.csv: " + "; ".join(fails))
+    if case == "oct15":
+        for row in rows:
+            row.update(case=case, mortality_convention=mortality, engine=COMPARISON.engine_for(row["group"]))
+        bridges, comparisons = [], []
+        for basis in BASES:
+            for end in ENDS:
+                for part in COMPARISON.bridge_parts(runs[basis, end, "mexican_origin_engine"],
+                    runs[basis, end, "mexican_origin_rough"], K.META.get("union_completion", {}).get("carriers", {})):
+                    bridges.append(dict(case=case, basis=basis, end=end, row_type="bridge", lineage_engine="case",
+                        comparator_engine="rough", mortality_convention=mortality, **part))
+                lineage = runs[basis, end, "mexican_origin_rough"][0]
+                item11 = K.META["mixed_unit_removal"]["by_end"][end]["total_bn"]
+                for comparator in ("A1_third_plus_nh_white", "all_residents_slice"):
+                    left, right = COMPARISON.engine_for("mexican_origin_rough"), COMPARISON.engine_for(comparator)
+                    COMPARISON.require_same_engine({"engine": left}, {"engine": right})
+                    other = runs[basis, end, comparator][0]
+                    if abs(lineage["population"] - other["population"]) > 1e-6:
+                        raise SystemExit("[BLOCKED] live annual legacy comparison has unequal populations (1e-6 persons)")
+                    gap = lineage["cost"] - other["cost"]
+                    comparisons.append(dict(case=case, basis=basis, end=end, row_type="comparison",
+                        lineage="mexican_origin_rough", comparator=comparator, lineage_engine=left, comparator_engine=right,
+                        mortality_convention=mortality, annual_removal_cost_gap_bn=gap,
+                        lineage_population=lineage["population"], comparator_population=other["population"],
+                        annual_gap_without_item11_bn=gap-item11, lineage_item11_bn=item11,
+                        mixed_unit_asymmetry="item11 measured for lineage only; comparator counterpart unmeasured"))
     out = HERE / "derived"
     out.mkdir(exist_ok=True)
     with open(out / f"group_lines_{case}.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
+    if case == "oct15":
+        with (out / "case_rough_line_bridge_oct15.csv").open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(bridges[0]), lineterminator="\n")
+            writer.writeheader()
+            writer.writerows(bridges)
+        with (out / "annual_comparison_oct15.csv").open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(comparisons[0]), lineterminator="\n")
+            writer.writeheader()
+            writer.writerows(comparisons)
     print(f"[written] derived/group_lines_{case}.csv: {len(rows)} rows")
 
 
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct14", choices=["sept29", "oct05", "oct07", "oct14"],
-                    help="oct14 (default, v7); sept29, oct05 (v5) and oct07 (v6) are archived cases")
+    ap.add_argument("--case", default="oct15", choices=["sept29", "oct05", "oct07", "oct14", "oct15"],
+                    help="oct15 (default, v8); earlier keyed cases are archived")
     main(ap.parse_args().case)
+    sys.path.insert(0, str(FISCAL / "scripts"))
+    from memory_budget import require_within_budget
+    print(f"[memory] peak physical footprint {require_within_budget('Legacy group line export') / 1e9:.3f} GB")

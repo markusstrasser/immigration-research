@@ -10,10 +10,9 @@ to equal-sized groups by their use of public services, retaining engine and matc
 Run from the repository root (a worktree drops --no-project):
   uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py
   uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --fetch
-  uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --case oct05
-  uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --case oct07
-(--case oct05: the v5 case adopted 2026-10-05, after group_lines.py --case oct05; writes derived/oct05/; --case oct07:
-main case v6 of 2026-10-07, after group_lines.py --case oct07; writes derived/oct07/; see CASES)
+  uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --case oct15
+The live default is oct15, after group_lines.py --case oct15; writes derived/oct15/.
+Earlier entries in CASES locate archived inputs and outputs, which the live run never regenerates.
 `--fetch` downloads every input to `_cache/` (ignored; ASPEP needs CENSUS_API_KEY in the environment,
 never written) and then runs. A default run reads `_cache/` and stops unless every file matches its pin.
 
@@ -34,6 +33,7 @@ import argparse
 import csv
 import hashlib
 import io
+import importlib.util
 import json
 import math
 import os
@@ -48,6 +48,10 @@ import openpyxl
 
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
+_contract_spec = importlib.util.spec_from_file_location("pension_comparison_contract",
+    FISCAL / "white_replacement_2026_09_28/comparison_contract.py")
+COMPARISON = importlib.util.module_from_spec(_contract_spec)
+_contract_spec.loader.exec_module(COMPARISON)
 CACHE = HERE / "_cache"
 UNION_ROW4 = 39_712_493.33          # dataset audit row 4: the people the account prices (per-member denominator)
 RESIDENTS = 340_110_988              # the account's 2024 resident control
@@ -65,10 +69,18 @@ CASES = {"sept29": dict(lines="group_lines_sept29.csv", dump="engine_lines_sept2
          "oct05": dict(lines="group_lines_oct05.csv", dump="engine_lines_oct05.json",
                        lineage="main_case_2026_10_05/derived/corrections.json"),
          "oct07": dict(lines="group_lines_oct07.csv", dump="engine_lines_oct07.json",
-                       lineage="main_case_2026_10_07/derived/corrections.json")}
+                       lineage="main_case_2026_10_07/derived/corrections.json"),
+         "oct15": dict(lines="group_lines_oct15.csv", dump="engine_lines_oct15.json",
+                       lineage="main_case_2026_10_15/derived/corrections.json")}
 CASE = "sept29"
 POPULATION = UNION_ROW4              # the case's priced count (use_case())
 SCALED = {}                          # line -> national total after the case's items' national-scale edits (use_case())
+COMPLETION_CARRIERS = {}
+COVERAGE = None
+SERVICE_ATTRIBUTIONS = []
+POPULATION_V8 = {}
+COMPLETION_COUNTS = {}
+DEFENSE_STOCK_BRIDGES = []
 
 PINS = {
     "Section3All_xls.xlsx": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
@@ -387,15 +399,26 @@ DUMP_FILE = FISCAL / "white_replacement_2026_09_28/derived/engine_lines_sept29.j
 
 def use_case(case: str) -> None:
     """Point the group shares at a case's line export, engine dump, priced count and items' national-scale edits."""
-    global CASE, POPULATION, GROUP_LINES, DUMP_FILE, SCALED
+    global CASE, POPULATION, GROUP_LINES, DUMP_FILE, SCALED, COMPLETION_CARRIERS, COVERAGE, SERVICE_ATTRIBUTIONS
+    global POPULATION_V8, COMPLETION_COUNTS, DEFENSE_STOCK_BRIDGES
     conf = CASES[case]
     CASE = case
     GROUP_LINES = FISCAL / "legacy_comparators_2026_09_30/derived" / conf["lines"]
     DUMP_FILE = FISCAL / "white_replacement_2026_09_28/derived" / conf["dump"]
-    POPULATION, SCALED = UNION_ROW4, {}
+    POPULATION, SCALED, COMPLETION_CARRIERS, COVERAGE = UNION_ROW4, {}, {}, None
+    SERVICE_ATTRIBUTIONS = []
+    POPULATION_V8, COMPLETION_COUNTS, DEFENSE_STOCK_BRIDGES = {}, {}, []
     if "lineage" in conf:
         payload = json.loads((FISCAL / conf["lineage"]).read_text())
         POPULATION = payload["meta"]["lineage"]["counts"]["lineage_population"]
+        if case == "oct15":
+            POPULATION = payload["meta"]["population_v8"]["with_coverage"]
+            COMPLETION_CARRIERS = payload["meta"]["union_completion"]["carriers"]
+            COVERAGE = payload["meta"].get("coverage")
+            POPULATION_V8 = payload["meta"]["population_v8"]
+            COMPLETION_COUNTS = payload["meta"]["union_completion"]["counts"]
+            if not math.isfinite(POPULATION) or POPULATION <= 0:
+                raise ValueError("[BLOCKED] oct15 population_v8.with_coverage is not a positive finite count")
         for item in payload["meta"].get("items", []):
             if item["kind"] != "edit_set" or not item["applied"]:
                 continue
@@ -411,6 +434,245 @@ OVERLAY = {"public_order_safety": ("state_price_public_order_safety", 519.153),
 HIGHWAYS_NATIONAL = 201.005        # S&L highways inside economic affairs, the national of the case's road key
 
 
+def service_carrier_amount(parent, dump_lines, amounts, carriers):
+    """Use only the selected parent key; inactive carriers can also have response zero."""
+    selected = dump_lines[parent]
+    parent_side = "receipt" if selected["side"] == "receipts" else selected["side"]
+    parent_key = selected.get("scenario") if parent_side == "receipt" else selected.get("key")
+    candidates = [source for source in carriers.values() if source.get("kind") == "line"
+                  and source.get("side") == parent_side and source.get("parent_line") == parent]
+    if candidates and (not isinstance(parent_key, str) or parent_key not in {s.get("parent_key") for s in candidates}):
+        raise ValueError(f"[BLOCKED] selected service parent key/scenario is absent from the declared carrier map: {parent}")
+    total = 0.0
+    for carrier, source in carriers.items():
+        if (source.get("kind") != "line" or source.get("side") != parent_side
+                or source.get("parent_line") != parent or source.get("parent_key") != parent_key):
+            continue
+        if carrier not in dump_lines or carrier not in amounts:
+            raise ValueError(f"[BLOCKED] missing selected service carrier {carrier}")
+        line = dump_lines[carrier]
+        if line["national_bn"] != 0 or abs(line["response"] - selected["response"]) > 1e-9:
+            raise ValueError(f"[BLOCKED] service carrier {carrier} differs from its selected parent response")
+        amount = amounts[carrier]
+        if not math.isfinite(amount):
+            raise ValueError(f"[BLOCKED] nonfinite selected service carrier {carrier}")
+        # Receipt amounts live on signed spending carriers. Recover their economic
+        # receipt amount before measuring the parent's service-use share.
+        total += amount if source["side"] == "spending" else -amount
+    return total
+
+
+def coverage_service_amounts(coverage, end, dump_lines, required, source_root=FISCAL):
+    """Coverage people use the same generation/age household prices as coverage.
+
+    The pinned source's line_parts retain the exact missing-person-weighted service
+    composition. Zero-response per-head lines retain their household raw amount
+    per person; net-cost division cannot recover those amounts.
+    """
+    if not coverage or coverage["net_missing_people"] == 0:
+        return {line: 0.0 for line in required}
+    if coverage.get("stub") or coverage.get("which") != "set":
+        raise ValueError("[BLOCKED] pension coverage requires the live explicit set profile")
+    source = source_root / coverage["file"]
+    if not source.exists() or hashlib.sha256(source.read_bytes()).hexdigest() != coverage["sha256"]:
+        raise ValueError("[BLOCKED] pension coverage source is absent or stale")
+    raw = json.loads(source.read_text())
+    if raw.get("key") != "oct15":
+        raise ValueError("[BLOCKED] pension coverage profile is not oct15")
+    scenario = raw["sets"]["set"]["scenarios"][coverage["construction"]]
+    entry = scenario["ends"][end]
+    decomposition = entry["decomposition"]
+    parts = decomposition["line_parts"]
+    target = coverage["by_end"][end]["total_bn"]
+    if (not all(math.isfinite(row["coverage_bn"]) for row in parts)
+            or abs(sum(row["coverage_bn"] for row in parts) - target) > 1e-6
+            or abs(decomposition["total_cost_bn"] - target) > 1e-6):
+        raise ValueError("[BLOCKED] pension coverage typed parts do not close to the payload")
+    age_prices = scenario["by_generation_age_band"]
+    composition = 0.0
+    for generation, bands in age_prices.items():
+        for band, price in bands.items():
+            count = scenario["implied_net_missing_people_by_age_band"][generation][band]
+            quoted = price["by_end"][end]
+            if abs(price["net_missing_people"] - count) > 1e-6:
+                raise ValueError("[BLOCKED] pension coverage age-price population mismatch")
+            amount = count * quoted["per_member_usd"] / 1e9 if count else 0.0
+            if not math.isfinite(amount) or abs(amount - quoted["coverage_bn"]) > 1e-6:
+                raise ValueError("[BLOCKED] pension coverage missing-person age-price mismatch")
+            composition += amount
+    if abs(composition - target) > 1e-6:
+        raise ValueError("[BLOCKED] pension coverage generation/age service composition does not close (1e-6bn)")
+    # Coverage prices the frozen, coverage-off household export, not a recursively
+    # coverage-on amount. Verify that principal input's receipt before raw pricing.
+    base = source.parent.parent / "inputs/oct15_base"
+    receipt = json.loads((base / "manifest.json").read_text())
+    pin = next((p for p in receipt["files"] if p["name"] == "lines.json"), None)
+    household_path = base / "lines.json"
+    if not pin or not household_path.exists() or sha(household_path) != pin["sha256"]:
+        raise ValueError("[BLOCKED] pension coverage household prices are absent or stale")
+    household = json.loads(household_path.read_text())
+    if household["meta"].get("case") != "main_case_2026_10_15" or household["meta"].get("basis") != "set":
+        raise ValueError("[BLOCKED] pension coverage household price identity differs")
+    population_path = base / "generation_results.csv"
+    population_pin = next((p for p in receipt["files"] if p["name"] == population_path.name), None)
+    if not population_pin or not population_path.exists() or sha(population_path) != population_pin["sha256"]:
+        raise ValueError("[BLOCKED] pension coverage household population is absent or stale")
+    with population_path.open() as stream:
+        populations = {r["generation"]: float(r["population"]) for r in csv.DictReader(stream)
+                       if r["convention"] == "a" and r["band_end"] == end}
+    costs = {line: 0.0 for line in required}
+    for row in parts:
+        line = row.get("source_line")
+        if line not in costs or row["economic_class"] != "fiscal_line":
+            continue
+        economic_side = "receipt" if dump_lines[line]["side"] == "receipts" else dump_lines[line]["side"]
+        if row["source_side"] != economic_side:
+            raise ValueError(f"[BLOCKED] pension coverage source side differs for {line}")
+        costs[line] += row["coverage_bn"]
+    amounts = {}
+    for line, cost in costs.items():
+        response = dump_lines[line]["response"]
+        sign = 1 if dump_lines[line]["side"] == "spending" else -1
+        if response != 0:
+            amount = sign * cost / response
+        else:
+            amount = 0.0
+            for generation in ("G1", "G2", "G3plus"):
+                group = household["generations"][generation][end]
+                economic_side = "receipt" if dump_lines[line]["side"] == "receipts" else dump_lines[line]["side"]
+                declarations = [r for r in group["rows"] if r["id"] == line and r["side"] == economic_side]
+                if len(declarations) != 1 or declarations[0]["key"] != "population":
+                    raise ValueError(f"[BLOCKED] pension coverage zero-response {line} lacks a per-head household price")
+                people = populations[generation]
+                if not math.isfinite(people) or people <= 0:
+                    raise ValueError("[BLOCKED] pension coverage service-price population is invalid")
+                missing = sum(scenario["implied_net_missing_people_by_age_band"][generation].values())
+                amount += declarations[0]["amount_bn"] * missing / people
+        if not math.isfinite(amount) or abs(sign * amount * response - cost) > 1e-9:
+            raise ValueError(f"[BLOCKED] pension coverage raw service amount does not reproduce {line}")
+        amounts[line] = amount
+    return amounts
+
+
+def completion_attribution(end, dump_lines):
+    """Attribute every carrier to its declared parent, retaining its economic nature.
+
+    Capital and production carriers are resource terms, not employee service-use
+    amounts. Tax/transfer and unlocated constants are outside this pension kernel.
+    """
+    capital_services = {"k12": "education_services", "college": "education_services",
+        "k12_user_fees": "education_services", "college_user_fees": "education_services",
+        "pos_sl": "public_order_safety", "pos_fed": "public_order_safety",
+        "health_sl": "health_services", "health_fed": "health_services",
+        "health_sl_user_fees": "health_services", "health_fed_user_fees": "health_services",
+        "gps_sl": "general_public_services", "gps_fed": "general_public_services",
+        "hwy_sl": "highways", "hwy_fed": "highways", "air_fed": "economic_affairs_services",
+        "rec_sl": "recreation_culture", "rec_fed": "recreation_culture"}
+    for carrier, source in COMPLETION_CARRIERS.items():
+        parent, kind = source.get("parent_line"), source.get("kind")
+        if not parent or kind not in ("line", "capital", "production") or carrier not in dump_lines:
+            raise ValueError(f"[BLOCKED] item10 carrier lacks its declared parent/kind/amount: {carrier}")
+        if kind == "capital":
+            service = "enterprises" if parent.startswith("ent_") else capital_services.get(parent)
+            if service is None:
+                raise ValueError(f"[BLOCKED] item10 capital parent has no service mapping: {parent}")
+        elif kind == "production":
+            service = "private_production"
+        else:
+            if parent != "lane_constants" and parent not in dump_lines:
+                raise ValueError(f"[BLOCKED] item10 fiscal parent absent: {parent}")
+            service = next((name for name, (overlay, _) in OVERLAY.items() if parent == overlay),
+                           "highways" if parent.startswith("roads_vmt_") else
+                           "education_services" if parent in ("school_reprice", "college_rekey") else
+                           "enterprises" if parent == "enterprise_surplus" else
+                           parent if parent in LINES else "outside_public_service")
+        line = dump_lines[carrier]
+        amount = line["amount_bn"]
+        if not math.isfinite(amount):
+            raise ValueError(f"[BLOCKED] item10 carrier amount nonfinite: {carrier}")
+        if kind == "line" and parent in dump_lines:
+            selected = dump_lines[parent]
+            selected_key = selected.get("scenario") if source.get("side") == "receipt" else selected.get("key")
+            active = selected_key == source.get("parent_key")
+        else:
+            active = source.get("end") == end if kind in ("capital", "production") else False
+        included = kind == "line" and service in LINES and active
+        SERVICE_ATTRIBUTIONS.append([end, carrier, kind, parent, service, amount, line["response"], active, included])
+    if len([r for r in SERVICE_ATTRIBUTIONS if r[0] == end]) != len(COMPLETION_CARRIERS):
+        raise ValueError("[BLOCKED] incomplete item10 service attribution")
+
+
+def defense_stock_bridge(counts, population, union_raw, baseline_raw, full_raw, native_raw):
+    """Stock use at union raw defense/n4; subtract native amounts already in full raw.
+
+    The baseline lineage's raw amount is retained, including its historical tiny
+    construction-rounding remainder. This does not alter any removal-response key.
+    """
+    n4 = counts["baseline_account_union"]
+    completed = counts["reporters"] + counts["nonreporters"]
+    covered = population["coverage"]
+    values = (n4, completed, covered, union_raw, baseline_raw, full_raw, native_raw)
+    if not all(math.isfinite(v) for v in values) or n4 <= 0:
+        raise ValueError("[BLOCKED] defense stock source values are invalid")
+    if (abs(completed - population["completion"]) > 1e-6
+            or abs(counts["baseline_lineage_population"] + completed - population["without_coverage"]) > 1e-6
+            or abs(population["without_coverage"] + covered - population["with_coverage"]) > 1e-6):
+        raise ValueError("[BLOCKED] defense stock population bridge does not close (1e-6 persons)")
+    if abs(full_raw - baseline_raw - native_raw) > 1e-9:
+        raise ValueError("[BLOCKED] defense raw baseline/native bridge does not close (1e-9bn)")
+    price = union_raw / n4
+    completion_raw, coverage_raw = price * completed, price * covered
+    additional = completion_raw + coverage_raw - native_raw
+    desired = baseline_raw + completion_raw + coverage_raw
+    if abs(full_raw + additional - desired) > 1e-9:
+        raise ValueError("[BLOCKED] defense stock addition double assigns native defense")
+    return dict(union_raw_bn=union_raw, n4=n4, raw_price_bn_per_person=price,
+        baseline_raw_bn=baseline_raw, full_raw_bn=full_raw, native_already_included_bn=native_raw,
+        reporters=counts["reporters"], nonreporters=counts["nonreporters"], coverage_people=covered,
+        completed_people=completed, lineage_population=population["with_coverage"],
+        completion_raw_bn=completion_raw, coverage_raw_bn=coverage_raw,
+        additional_stock_raw_bn=additional, stock_raw_bn=desired,
+        amount_basis="annual raw defense service-use amount for legacy-stock attribution; not a pension stock or fiscal-removal amount",
+        rule="baseline lineage raw + (baseline union raw defense/n4)*(reporters+nonreporters+coverage); subtract already included native raw once")
+
+
+def defense_stock_amount(end, dump_line):
+    """Trace independently preserved v7 raw and the coverage's frozen household base."""
+    white = FISCAL / "white_replacement_2026_09_28/derived"
+    union = json.loads((white / "engine_lines_oct14_union.json").read_text())[end]
+    baseline = json.loads((white / "engine_lines_oct14.json").read_text())[end]
+    row = lambda block: next(r for r in block["lines"] if r["id"] == "defense")
+    base = FISCAL / "coverage_bound_2026_10_14/inputs/oct15_base"
+    receipt = json.loads((base / "manifest.json").read_text())
+    pin = next(p for p in receipt["files"] if p["name"] == "lines.json")
+    if sha(base / "lines.json") != pin["sha256"]:
+        raise ValueError("[BLOCKED] defense stock household source is stale")
+    household = json.loads((base / "lines.json").read_text())
+    if household["meta"].get("case") != "main_case_2026_10_15" or household["meta"].get("basis") != "set":
+        raise ValueError("[BLOCKED] defense stock household source identity differs")
+    amount = lambda group: next(r["amount_bn"] for r in group["rows"] if r["id"] == "defense" and r["side"] == "spending")
+    before, full = 0.0, 0.0
+    for generation in ("G1", "G2", "G3plus"):
+        group = household["generations"][generation][end]
+        before += amount(group.get("before_native_children") or group)
+        full += amount(group)
+    native = household["meta"]["child_pricing"]["records"]
+    native_people = sum(r["people"] for r in native)
+    native_raw = sum(r["people"] * next(p["amount_bn"] for p in r["ends"][end]["rows"]
+        if p["id"] == "defense" and p["side"] == "spending") for r in native)
+    if (abs(before - row(baseline)["amount_bn"]) > 1e-9
+            or abs(native_people - COMPLETION_COUNTS["nonreporters"]) > 1e-6
+            or abs(full - dump_line["amount_bn"]) > 1e-9
+            or abs(row(union)["national_bn"] - dump_line["national_bn"]) > 1e-9
+            or dump_line["response"] != 0):
+        raise ValueError("[BLOCKED] defense stock raw/native/source response trace does not close")
+    bridge = defense_stock_bridge(COMPLETION_COUNTS, POPULATION_V8, row(union)["amount_bn"],
+                                  before, full, native_raw)
+    DEFENSE_STOCK_BRIDGES.append(dict(case=CASE, end=end, removal_defense_response=0,
+        mortality_convention="not_applicable_service_share", **bridge))
+    return bridge["stock_raw_bn"]
+
+
 def group_shares() -> tuple[dict, dict]:
     """Read the white lane's gated sept29 line export on audit row 4, including each group's overlays.
 
@@ -418,9 +680,16 @@ def group_shares() -> tuple[dict, dict]:
     The export's producer runs rekey_sept29.setup(), checks every cost, and records each slice's count.
     Reject a different population, line definition or engine amount before attributing any liability.
     """
+    SERVICE_ATTRIBUTIONS.clear()
+    DEFENSE_STOCK_BRIDGES.clear()
+    for path in (DUMP_FILE, GROUP_LINES):
+        if not path.exists():
+            raise ValueError(f"[BLOCKED] pension service-share input absent: {path}; build the matching group-line export")
     dump = json.loads(DUMP_FILE.read_text())
     with GROUP_LINES.open() as f:
         rows = [r for r in csv.DictReader(f) if r["basis"] == "accrual" and r["group"] in GROUP_SOURCES.values()]
+    if CASE == "oct15" and any(r.get("engine") != COMPARISON.engine_for(r["group"]) for r in rows):
+        raise ValueError("[BLOCKED] pension group lines have missing or incorrect engine tags")
     source = {(r["group"], r["end"], r["side"], r["line"]): r for r in rows}
     if len(source) != len(rows):
         raise ValueError("[BLOCKED] duplicate group line in row-4 export")
@@ -440,6 +709,9 @@ def group_shares() -> tuple[dict, dict]:
     share, response = {g: {} for g in GROUPS}, {}
     for end in ("low", "high"):
         lines = {l["id"]: l for l in dump[end]["lines"]}
+        if CASE == "oct15":
+            completion_attribution(end, lines)
+            defense_stock = defense_stock_amount(end, lines["defense"])
         if lines["domestic_interest"]["response"] != 0 or abs(lines["domestic_interest"]["national_bn"] - 1118.87) > 1e-9:
             raise ValueError("[BLOCKED] the case no longer holds domestic interest ($1,118.87bn) at zero response")
         resp = {l: lines[l]["response"] for l in base}
@@ -447,6 +719,7 @@ def group_shares() -> tuple[dict, dict]:
         resp["enterprises"] = lines["enterprise_surplus"]["response"]
         response[end] = resp
         needed = base + [v[0] for v in OVERLAY.values()] + ["roads_vmt_sl", "enterprise_surplus"]
+        coverage_amounts = coverage_service_amounts(COVERAGE, end, lines, needed) if CASE == "oct15" else {}
         for g in GROUPS:
             if abs(value(g, end, "population", "amount_bn") - POPULATION) > 0.01:
                 raise ValueError(f"[BLOCKED] {g}/{end} population is not the case's priced count ({POPULATION:,.2f})")
@@ -457,12 +730,36 @@ def group_shares() -> tuple[dict, dict]:
                 if g == "mexican_origin" and abs(value(g, end, l, "amount_bn") - lines[l]["amount_bn"]) > 1e-8:
                     raise ValueError(f"[BLOCKED] {end}/{l} differs from the engine dump")
             s = {l: value(g, end, l, "amount_bn") / lines[l]["national_bn"] for l in base}
+            if CASE == "oct15":
+                amounts = {r["line"]: float(r["amount_bn"]) for r in rows
+                           if r["group"] == GROUP_SOURCES[g] and r["end"] == end}
+                completion_amounts = {line: service_carrier_amount(line, lines, amounts, COMPLETION_CARRIERS)
+                                      for line in needed}
+                for line in base:
+                    s[line] += completion_amounts[line] / lines[line]["national_bn"]
+            if g in ("mexican_origin", "mexican_origin_rough"):
+                for line in base:
+                    s[line] += coverage_amounts.get(line, 0.0) / lines[line]["national_bn"]
+                if CASE == "oct15":
+                    # A stock-only service attribution. The same per-head price/count
+                    # applies to both lineage key variants; defense removal stays zero.
+                    s["defense"] = defense_stock / lines["defense"]["national_bn"]
             for line, (ov, nat) in OVERLAY.items():
                 if abs(lines[line]["national_bn"] - SCALED.get(line, nat)) > 1e-9:
                     raise ValueError(f"[BLOCKED] {line} national changed")
                 s[line] += value(g, end, ov, "amount_bn") / nat      # a scaled line's overlay stays on nat (CASES)
+                if CASE == "oct15":
+                    s[line] += completion_amounts[ov] / nat
+                if g in ("mexican_origin", "mexican_origin_rough"):
+                    s[line] += coverage_amounts.get(ov, 0.0) / nat
             s["highways"] = s["economic_affairs_services"] + value(g, end, "roads_vmt_sl", "amount_bn") / HIGHWAYS_NATIONAL
             s["enterprises"] = value(g, end, "enterprise_surplus", "amount_bn") / lines["enterprise_surplus"]["national_bn"]
+            if CASE == "oct15":
+                s["highways"] += completion_amounts["roads_vmt_sl"] / HIGHWAYS_NATIONAL
+                s["enterprises"] += completion_amounts["enterprise_surplus"] / lines["enterprise_surplus"]["national_bn"]
+            if g in ("mexican_origin", "mexican_origin_rough"):
+                s["highways"] += coverage_amounts.get("roads_vmt_sl", 0.0) / HIGHWAYS_NATIONAL
+                s["enterprises"] += coverage_amounts.get("enterprise_surplus", 0.0) / lines["enterprise_surplus"]["national_bn"]
             share[g][end] = s
     key = 0.117175 * POPULATION / UNION_ROW4      # the case's per-head key: 0.117175 on audit row 4's count
     for g in GROUPS:
@@ -531,7 +828,24 @@ def time_factors(rel: dict, population: dict, z1: dict) -> tuple[dict, dict]:
 
 
 # ----------------------------------------------------------------------------------------------- output
+def comparison_tags(group):
+    """Live comparisons use rough keys; preserve case-vs-rough as a bridge."""
+    if group == "case_minus_rough_bridge":
+        return ["bridge", "case", "rough"]
+    if group == "mexican_origin_rough_minus_A1_white":
+        left, right = COMPARISON.engine_for("mexican_origin_rough"), COMPARISON.engine_for("A1_third_plus_nh_white")
+        COMPARISON.require_same_engine({"engine": left}, {"engine": right})
+        return ["comparison", left, right]
+    if group not in GROUPS:
+        raise ValueError(f"[BLOCKED] unrecognized live pension comparison group: {group}")
+    return ["absolute", COMPARISON.engine_for("mexican_origin_engine" if group == "mexican_origin" else group), ""]
+
+
 def write(path: Path, header: list[str], rows: list[list]) -> None:
+    if CASE == "oct15" and "group" in header:
+        group_index = header.index("group")
+        header = header + ["case", "mortality_convention", "row_type", "lineage_engine", "comparator_engine"]
+        rows = [row + [CASE, "not_applicable_service_share"] + comparison_tags(row[group_index]) for row in rows]
     with open(path, "w", newline="") as f:
         w = csv.writer(f, lineterminator="\n")
         w.writerow(header)
@@ -545,8 +859,8 @@ def main() -> None:
     ap.add_argument("--census-env", type=Path, default=FISCAL / "acquire/config.local.env",
                     help="file holding CENSUS_API_KEY=... when the variable is not set (only --fetch reads it)")
     ap.add_argument("--out-dir", type=Path, default=None, help="default derived/ (sept29) or derived/<case>/")
-    ap.add_argument("--case", default="sept29", choices=list(CASES),
-                    help="sept29 (default), oct05 (v5, the lineage) or oct07 (v6, its four items)")
+    ap.add_argument("--case", default="oct15", choices=list(CASES),
+                    help="oct15 (live v8); sept29, oct05 and oct07 are archived cases")
     args = ap.parse_args()
     if args.fetch:
         fetch(args.census_env if args.census_env.exists() else None)
@@ -561,6 +875,10 @@ def main() -> None:
     aspep = measure_aspep()
     mix = function_mixes(aspep, m)
     share, response = group_shares()
+    if CASE == "oct15":
+        write(out / "completion_service_attribution.csv", ["end", "carrier", "kind", "parent_line", "service",
+              "signed_carrier_amount_bn", "response", "selected_parent_or_end", "employee_service_amount"], SERVICE_ATTRIBUTIONS)
+        (out / "defense_stock_bridge.json").write_text(json.dumps(DEFENSE_STOCK_BRIDGES, indent=2) + "\n")
     rel, abs_share = headcount_path(extra["population"], census)
     factors, weights = time_factors(rel, extra["population"], z1)
 
@@ -678,6 +996,17 @@ def main() -> None:
                         x = factors[plan]["vintage_central"] * mix[plan][l] * share[g][e][l] * response[e][l] * interest
                         brows.append([g, e, plan, l, x])
     write(out / "by_line.csv", ["group", "end", "plan", "line", "interest_2024_bn"], brows)
+    if CASE == "oct15":
+        paired = {(r[0], r[1], r[2], r[3]): r[4] for r in brows}
+        bridge_rows = [["case_minus_rough_bridge", e, p, l,
+            paired[("mexican_origin", e, p, l)] - paired[("mexican_origin_rough", e, p, l)]]
+            for g, e, p, l, _ in brows if g == "mexican_origin"]
+        for e in ("low", "high"):
+            target = sum(res[("mexican_origin", p, "consolidated", "vintage_central", "main_case", e)][2]
+                         - res[("mexican_origin_rough", p, "consolidated", "vintage_central", "main_case", e)][2] for p in plans)
+            if abs(sum(r[-1] for r in bridge_rows if r[1] == e) - target) > 1e-9:
+                raise ValueError("[BLOCKED] itemized pension case/rough bridge does not close (1e-9bn)")
+        write(out / "case_rough_bridge_by_line.csv", ["group", "end", "plan", "line", "interest_2024_bn"], bridge_rows)
 
     # --- summary.csv: totals over plans for named arms
     arms = [("adopted", "consolidated", "vintage_central", "main_case"),
@@ -701,9 +1030,12 @@ def main() -> None:
                 srows.append([name, basis, tarm, rarm, e, g, parts["state_local"][1], parts["federal_civilian"][1] + parts["federal_military"][1],
                               stock, parts["state_local"][2], parts["federal_civilian"][2] + parts["federal_military"][2], inter,
                               inter * 1e9 / POPULATION])
-            for g in ("mexican_origin", "mexican_origin_rough"):
+            for g in (("mexican_origin_rough",) if CASE == "oct15" else ("mexican_origin", "mexican_origin_rough")):
                 d = [tot[g][i] - tot["A1_third_plus_nh_white"][i] for i in (0, 1)]
                 srows.append([name, basis, tarm, rarm, e, f"{g}_minus_A1_white", "", "", d[0], "", "", d[1], d[1] * 1e9 / POPULATION])
+            if CASE == "oct15":
+                d = [tot["mexican_origin"][i] - tot["mexican_origin_rough"][i] for i in (0, 1)]
+                srows.append([name, basis, tarm, rarm, e, "case_minus_rough_bridge", "", "", d[0], "", "", d[1], d[1] * 1e9 / POPULATION])
     write(out / "summary.csv", ["arm", "federal_basis", "time_weighting", "responses", "end", "group", "stock_sl_bn", "stock_federal_bn",
                                 "stock_total_bn", "interest_sl_bn", "interest_federal_bn", "interest_total_bn", "interest_per_member"], srows)
 
@@ -728,3 +1060,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+    import sys
+    sys.path.insert(0, str(FISCAL / "scripts"))
+    from memory_budget import require_within_budget
+    print(f"[memory] peak physical footprint {require_within_budget('Pension legacy') / 1e9:.3f} GB")
