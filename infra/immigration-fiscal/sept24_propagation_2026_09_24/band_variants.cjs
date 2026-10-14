@@ -125,6 +125,8 @@ const CASES = {
     cash: "main_case_2026_10_07/derived/corrections_cash.json", cashPackage: (pkg) => pkg.CASH },
   oct14: { lane: "main_case_2026_10_14", out: path.join(__dirname, "derived", "oct14"),
     cash: "main_case_2026_10_14/derived/corrections_cash.json", cashPackage: (pkg) => pkg.CASH },
+  oct15: { lane: "main_case_2026_10_15", out: path.join(__dirname, "derived", "oct15"),
+    cash: "main_case_2026_10_15/derived/corrections_cash.json", cashPackage: (pkg) => pkg.CASH },
 };
 const argv = process.argv.slice(2);
 function opt(name, dflt) {
@@ -133,7 +135,7 @@ function opt(name, dflt) {
   if (!argv[i + 1] || argv[i + 1].startsWith("--")) { console.error(`${name} needs a value`); process.exit(2); }
   return argv[i + 1];
 }
-const CASE = opt("--case", "oct14");
+const CASE = opt("--case", "oct15");
 if (!CASES[CASE]) { console.error(`unknown --case ${CASE}; one of ${Object.keys(CASES).join(", ")}`); process.exit(2); }
 const OUT = opt("--out-dir", null) ? path.resolve(opt("--out-dir")) : CASES[CASE].out;
 if (!OUT) { console.error(`--case ${CASE} writes only to --out-dir DIR`); process.exit(2); }
@@ -167,9 +169,10 @@ if (LATER) {
     case_bands: `${LANE}/derived/main_case_bands.csv` });
 }
 if (CASES[CASE].cash) SOURCES.cash_corrections = CASES[CASE].cash;
-if (CASE === "oct14") SOURCES.item_base_per_spec = "main_case_2026_10_07/derived/per_spec.csv";
-if (CASE === "oct14") SOURCES.row4_state_index = "row4_class_2026_09_29/derived/row4_state_index.json";
-const ROW4_INDEX = CASE === "oct14" ? readJson(SOURCES.row4_state_index) : null;
+const PERSONAL_CASE = ["oct14", "oct15"].includes(CASE);
+if (PERSONAL_CASE) SOURCES.item_base_per_spec = "main_case_2026_10_07/derived/per_spec.csv";
+if (PERSONAL_CASE) SOURCES.row4_state_index = "row4_class_2026_09_29/derived/row4_state_index.json";
+const ROW4_INDEX = PERSONAL_CASE ? readJson(SOURCES.row4_state_index) : null;
 const cj = readJson(SOURCES.justice);
 const JUSTICE = { central: cj.central.change_bn, raw_coding: cj.one_at_a_time_change_bn.scaling_raw,
   grid_low: cj.range_change_bn[0], grid_high: cj.range_change_bn[1], cbp_fixed: cj.one_at_a_time_change_bn.cbp_zero };
@@ -339,12 +342,18 @@ function lineResponsesAt(r, spendingIds, reading) {
 
 // Runs: [name, model, specifications, cost function]. A later case's specifications are the September 24 ones with
 // the responses of its meta.responses in place of 0.59/0.84 and 0.63/0.66, value for value.
-const RUNS = [["sept23", MODEL, P24.MAIN_SPECS], ["sept24", corrected, P24.MAIN_SPECS]];
+// The v8 post-engine amounts apply only to v8, never to historical controls.
+const CONTROL = CASE === "oct15" ? P.OCT14 : P;
+const RUNS = [["sept23", MODEL, P24.MAIN_SPECS, P24.cost], ["sept24", corrected, P24.MAIN_SPECS, P24.cost]];
 let payload = null, summary = null, published = null, cashPayload = null;
 if (LATER) {
   console.log(`[${CASE}: ${LANE}]`);
   payload = readJson(SOURCES.case_corrections);
   summary = readJson(SOURCES.case_summary);
+  if (CASE === "oct15" && (!payload.meta.coverage || payload.meta.coverage.stub ||
+      payload.meta.adopted !== "2026-10-15" || summary.v8?.stub)) {
+    throw new Error("[BLOCKED] oct15 requires the adopted non-stub coverage payload; candidate files are not final inputs");
+  }
   const r = payload.meta.responses;
   const cap = payload.meta.capital_return || null;   // September 27 on
   gate("the payload's meta.responses equal the case's summary.json responses", JSON.stringify(r) === JSON.stringify(summary.responses));
@@ -367,7 +376,7 @@ if (LATER) {
   csvRows(SOURCES.case_bands).filter((x) => x.profile === P.MAIN_PROFILE)
     .forEach((x) => { published[x.variant] = [Number(x.cost_low_bn), Number(x.cost_high_bn)]; });
   const corrected = Engine.applyCorrections(MODEL, payload);
-  RUNS.push([`${CASE}_uncorrected`, MODEL, specs], [CASE, corrected, specs]);
+  RUNS.push([`${CASE}_uncorrected`, P.withSyntheticLines(MODEL), specs, CONTROL.cost], [CASE, corrected, specs]);
   if (cap) {
     // Beside the case, never in its band: the reported rate on every component, and option A. The package's
     // own switches build their specifications (main_case.cjs runs7 and optionARuns).
@@ -375,7 +384,15 @@ if (LATER) {
     const specs7 = P.specsFor({ rates: { low: rate, high: rate } });
     gate(`the ${rate} specifications differ from the case's in the rate alone`,
       canon(specs7) === canon(specs.map((s) => ({ ...s, rate }))));
-    RUNS.push([`${CASE}_capital_at_7pct`, corrected, specs7], [`${CASE}_enterprises_out_option_a`, corrected, P.specsFor({ enterprises: "A" })]);
+    const optionModel = options => {
+      if (CASE !== "oct15") return corrected;
+      // Rebuild and evaluate each fill-in method under its own option. Their
+      // candidate key ratios also vary; averaging cells before evaluation
+      // would create products that neither method evaluates.
+      return P.METHODS.map(method => P.modelFor("central", method, P.withCentral(options)));
+    };
+    RUNS.push([`${CASE}_capital_at_7pct`, optionModel({ rates: { low: rate, high: rate } }), specs7],
+      [`${CASE}_enterprises_out_option_a`, optionModel({ enterprises: "A" }), P.specsFor({ enterprises: "A" })]);
   }
   const sp = (payload.meta.state_pricing || {}).lines || [];
   if (sp.length) {
@@ -428,8 +445,8 @@ if (LATER) {
           `${m29} + ${nL} + ${pkg.ITEM_EDITS.length} edits (${editSetsOf(pay.meta).map((r) => `${r.id} ${r.edits.count}`).join(", ")})`);
       }
     }
-    RUNS.push([`${CASE}_sept29_payload`, Engine.applyCorrections(MODEL, p29), specs, null, true]);
-    if (editSetsOf(payload.meta).length) RUNS.push([`${CASE}_item_base`, P.ITEM_BASE.payloadModel(), specs, null, true]);
+    RUNS.push([`${CASE}_sept29_payload`, P.withSyntheticLines(Engine.applyCorrections(MODEL, p29)), specs, CONTROL.cost, true]);
+    if (editSetsOf(payload.meta).length) RUNS.push([`${CASE}_item_base`, P.withSyntheticLines(P.ITEM_BASE.payloadModel()), specs, CONTROL.cost, true]);
   }
 }
 
@@ -516,6 +533,14 @@ function itemsOwnMove(mc, mb, modelChange, change, spec) {
   let own = 0;
   for (const row of C.v.evaluation.spending) {
     const r0 = rowOf(C.a, row.id), b1 = rowOf(B.v, row.id), b0 = rowOf(B.a, row.id);
+    // Item 10's carriers select their parent's key by selecting a response on
+    // their fixed carrier key. Their independently declared signed amount
+    // times the change in response is the additional variant contribution.
+    if (mc.corrections?.union_completion?.carriers?.[row.id]) {
+      own += fw * ((row.response * row.amount_bn - r0.response * r0.amount_bn)
+        - (b1.response * b1.amount_bn - b0.response * b0.amount_bn));
+      continue;
+    }
     if (row.key === r0.key) continue;
     if (row.response !== r0.response) throw new Error(`[BLOCKED] ${row.id}: the variant moves its response`);
     if (b1.key !== row.key || b0.key !== r0.key || b1.response !== row.response || b0.response !== r0.response) {
@@ -578,12 +603,15 @@ const rows = [];
 const bands = {};
 const perSpec = {};
 const extra = {};   // a re-priced variant's move beyond its held alternative, by specification
-for (const [caseName, base, specs, costOf, gateOnly] of RUNS) {
+for (const [caseName, modelOrMethods, specs, costOf, gateOnly] of RUNS) {
+  const bases = Array.isArray(modelOrMethods) ? modelOrMethods : [modelOrMethods];
+  const base = bases[0];
   console.log(`[${caseName}]${gateOnly ? " (gate only, not written)" : ""}`);
   const price = costOf || cost;
   for (const [name, change, modelChange, ref] of VARIANTS) {
-    const m = modelChange ? modelChange(base) : base;
-    const costs = specsWith(specs, change).map((s) => price(m, s));
+    const models = bases.map(b => modelChange ? modelChange(b) : b);
+    const m = models[0];
+    const costs = specsWith(specs, change).map(s => models.reduce((n,mm)=>n+price(mm,s),0)/models.length);
     const b = span(costs);
     bands[`${caseName}|${name}`] = b;
     perSpec[`${caseName}|${name}`] = costs;
@@ -594,12 +622,13 @@ for (const [caseName, base, specs, costOf, gateOnly] of RUNS) {
     } else {
       console.log(`  ${name.padEnd(44)} ${f4(b)}`);
     }
-    if (hasStatePrice(base) && modelChange) extra[`${caseName}|${name}`] = specsWith(specs, change).map((s) => repricing(base, m, s));
+    if (hasStatePrice(base) && modelChange) extra[`${caseName}|${name}`] = specsWith(specs, change).map(s => bases.reduce((n,b,i)=>n+repricing(b,models[i],s),0)/bases.length);
   }
   if (!hasStatePrice(base)) continue;
   for (const [name, change, modelChange] of HELD) {
-    const m = modelChange ? modelChange(base) : base;
-    const costs = specsWith(specs, change).map((s) => price(m, s));
+    const models = bases.map(b => modelChange ? modelChange(b) : b);
+    const m = models[0];
+    const costs = specsWith(specs, change).map(s => models.reduce((n,mm)=>n+price(mm,s),0)/models.length);
     const b = span(costs), held = `${name}_state_price_held`;
     bands[`${caseName}|${held}`] = b;
     perSpec[`${caseName}|${held}`] = costs;
@@ -680,7 +709,7 @@ if (LATER) {
       // The item base at the case's end specifications is v5 plus the lineage item alone.
       const linItem = payload.meta.items.find((r) => r.kind === "lineage");
       const ib = perSpec[`${IB}|adopted`];
-      if (CASE === "oct14") {
+      if (PERSONAL_CASE) {
         const sourceRows = csvRows(SOURCES.item_base_per_spec);
         const newReceiptLines = Object.keys(payload.meta.responses).filter((id) => payload.meta.responses[id].receipt
           && !(id in P.V6_PACKAGE.RESPONSES));
@@ -688,7 +717,7 @@ if (LATER) {
           const rr = sourceRows.filter((r) => Number(r.spec) === i);
           if (rr.length !== 2) throw new Error(`[BLOCKED] v6 per_spec.csv: expected both methods at spec ${i}`);
           const old = rr.reduce((n, r) => n + Number(r.oct05_cost_bn) + Number(r.item_added_age_mix_bn), 0) / rr.length;
-          const ev = P.ITEM_BASE.evaluateFull(P.ITEM_BASE.payloadModel(), specs5[i]).evaluation;
+          const ev = P.ITEM_BASE.evaluateFull(P.withSyntheticLines(P.ITEM_BASE.payloadModel()), specs5[i]).evaluation;
           return old - ev.receipts.filter((r) => newReceiptLines.includes(r.id)).reduce((n, r) => n + r.effect_bn, 0);
         });
         gate("the item base equals v6's published v5 cost plus its age-mix item, with the new receipt responses (1e-9)",
@@ -723,8 +752,9 @@ if (LATER) {
   if (payload.meta.capital_return) {
     for (const [run, key, row] of [[`${CASE}_capital_at_7pct`, "rate_7pct", "capital_return_at_7pct"],
       [`${CASE}_enterprises_out_option_a`, "enterprises_out_option_A", "enterprises_out_option_a"]]) {
-      const b = bands[`${run}|adopted`], want = summary.beside_the_account[key].band_bn;
-      gate(`${run} reproduces ${LANE} beside_the_account.${key} (summary.json, 1e-9)`, near(b[0], want[0], 1e-9) && near(b[1], want[1], 1e-9), f4(b));
+      const b = bands[`${run}|adopted`], want = CASE === "oct15" ? published[row] : summary.beside_the_account[key].band_bn;
+      const summaryTolerance = CASE === "oct15" ? 1e-4 : 1e-9;
+      gate(`${run} reproduces ${LANE} ${CASE === "oct15" ? row + " (main_case_bands.csv, 1e-4; inherited summary companion is historical)" : "beside_the_account." + key + " (summary.json, 1e-9)"}`, near(b[0], want[0], summaryTolerance) && near(b[1], want[1], summaryTolerance), f4(b));
       gate(`${run} reproduces ${LANE} main_case_bands.csv ${row} (1e-4)`,
         near(b[0], published[row][0], 1e-4) && near(b[1], published[row][1], 1e-4), `${f4(b)} vs ${f4(published[row])}`);
     }
@@ -733,8 +763,6 @@ if (LATER) {
 
 if (failures) { console.error(`${failures} gate(s) failed; nothing written`); process.exit(1); }
 fs.mkdirSync(OUT, { recursive: true });
-fs.writeFileSync(path.join(OUT, "band_variants.csv"), ["case,variant,cost_low_bn,cost_high_bn"]
-  .concat(rows.map((r) => [r.case, r.variant, r.low.toPrecision(15), r.high.toPrecision(15)].join(","))).join("\n") + "\n");
 const meta = { profile: P.MAIN_PROFILE, specifications: P.MAIN_SPECS.length, target_population: MODEL.meta.target_population,
   care_constant_bn: CONSTANTS.care.c, justice_changes_bn: JUSTICE };
 if (LATER) {
@@ -743,6 +771,55 @@ if (LATER) {
       sept24: "main_case_2026_09_24 corrections at 0.59/0.84 and 0.63/0.66",
       [`${CASE}_uncorrected`]: "uncorrected model at the responses in the payload's meta.responses",
       [CASE]: `${LANE} corrections at the responses in the payload's meta.responses` } });
+  if (CASE === "oct15") {
+    meta.population_v8 = payload.meta.population_v8;
+    meta.post_engine = { mixed_unit_removal: payload.meta.mixed_unit_removal, coverage: payload.meta.coverage };
+    meta.union_completion = payload.meta.union_completion;
+    meta.runs[CASE] += "; mixed-unit removal and coverage post-engine amounts included";
+    meta.social_transport = "source keys of the original priced union and added descendants held; completion/coverage social quantities unpriced pending a producer rule";
+    const coveragePath = "coverage_bound_2026_10_14/derived/coverage_bound_oct15.json";
+    const coverage = readJson(coveragePath);
+    const funding = {};
+    for (const [end, i] of [["low", 16], ["high", 11]]) {
+      const change = end === "low" ? RAW : {};
+      const cashModel = end === "low" ? onKey(RAW.justice)(P.CASH.payloadModel()) : P.CASH.payloadModel();
+      const setModel = end === "low" ? onKey(RAW.justice)(P.payloadModel()) : P.payloadModel();
+      const cash = P.CASH.evaluateFull(cashModel, {...P.CASH.MAIN_SPECS[i], ...change}, P.MAIN_PROFILE);
+      const set = P.evaluateFull(setModel, {...P.MAIN_SPECS[i], ...change}, P.MAIN_PROFILE);
+      const productionState = P.CASH.stateFor(cashModel, {...P.CASH.MAIN_SPECS[i], ...change}, P.MAIN_PROFILE).production;
+      if (productionState.labor_supply_elasticity !== 0)
+        throw new Error("[BLOCKED] private WTP is not cash income with nonzero labor-supply disutility");
+      const typed = coverage.sets.cash.ends[end].decomposition;
+      if (!typed || !Number.isFinite(typed.total_cost_bn) || Math.abs(typed.total_cost_bn - cash.post_engine.coverage_bn) > 1e-9)
+        throw new Error("[BLOCKED] social funding requires matching typed cash coverage");
+      const fixedCapital = Object.values(cashPayload.meta.union_completion.carriers)
+        .filter(x => x.kind === "capital" && x.end === end).reduce((s, x) => s + x.source_cost_bn, 0);
+      const unclassifiedCompletionProduction = Object.values(cashPayload.meta.union_completion.carriers)
+        .filter(x => x.kind === "production" && x.end === end).reduce((s, x) => s + x.source_cost_bn, 0);
+      const cap = cash.capital.total_bn + fixedCapital + Object.values(typed.capital_by_level_bn).reduce((a,b) => a+b,0);
+      const privateP = cash.evaluation.private_wtp_bn + typed.production.P_bn;
+      const H = cash.cost_bn - cap + privateP;
+      const bridge = set.cost_bn - cash.cost_bn;
+      const currentFromParts = -cash.evaluation.direct_fiscal_response_bn - cash.evaluation.induced_receipts_bn - fixedCapital
+        + cash.post_engine.mixed_unit_removal_bn + typed.classified_cash_fiscal_bn + typed.unclassified_bn;
+      if (![H, cap, privateP, bridge, typed.unclassified_bn, cash.cost_bn, set.cost_bn].every(Number.isFinite) ||
+          !Number.isFinite(currentFromParts) || Math.abs(currentFromParts-H) > 1e-9 ||
+          Math.abs(set.cost_bn - (H + cap + bridge - privateP)) > 1e-9)
+        throw new Error("[BLOCKED] social resource identity does not close");
+      funding[end] = {accounting_basis:"national_accounts",current_H_bn:H,capital_return_bn:cap,
+        net_accrual_timing_bridge_bn:bridge,private_wtp_bn:privateP,
+        production_cash_income_rule:"fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
+        cash_cost_bn:cash.cost_bn,set_cost_bn:set.cost_bn,
+        coverage_unclassified_bn:typed.unclassified_bn,
+        coverage_production_split:typed.production,
+        completion_production_net_without_PF_split_bn:unclassifiedCompletionProduction,
+        current_H_from_typed_parts_bn:currentFromParts,
+        timing_rule:"conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"};
+    }
+    meta.social_resource_account = {ends:funding,closure_tolerance_bn:1e-9,source:coveragePath,
+      source_sha256:sha(coveragePath),production_identity_source:"matched_benefits_2026_09_19/model.py fiscal_and_private",
+      production_identity_sha256:sha("matched_benefits_2026_09_19/model.py")};
+  }
   if (payload.meta.capital_return) {
     Object.assign(meta.runs, {
       [CASE]: `${LANE} corrections at the responses in meta.responses, plus the return on public capital in meta.capital_return (package evaluateFull)`,
@@ -784,5 +861,7 @@ if (LATER) {
   }
 }
 meta.sources_sha256 =Object.fromEntries(Object.values(SOURCES).map((rel) => [rel, sha(rel)]));
+fs.writeFileSync(path.join(OUT, "band_variants.csv"), ["case,variant,cost_low_bn,cost_high_bn"]
+  .concat(rows.map((r) => [r.case, r.variant, r.low.toPrecision(15), r.high.toPrecision(15)].join(","))).join("\n") + "\n");
 fs.writeFileSync(path.join(OUT, "band_variants.json"), JSON.stringify(meta, null, 1) + "\n");
 console.log(`all gates passed; ${rows.length} bands -> ${path.relative(process.cwd(), path.join(OUT, "band_variants.csv"))}`);

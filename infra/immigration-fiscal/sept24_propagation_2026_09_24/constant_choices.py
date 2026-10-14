@@ -58,7 +58,8 @@ HERE = Path(__file__).resolve().parent
 LANE = HERE.parent / "debt_legacy_2026_09_23"
 OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=HERE.parent / "sept26_propagation_2026_09_26" / "derived",
                 sept27=HERE.parent / "sept27_propagation_2026_09_27" / "derived", sept29=HERE / "derived" / "sept29",
-                oct05=HERE / "derived" / "oct05", oct07=HERE / "derived" / "oct07", oct14=HERE / "derived" / "oct14")
+                oct05=HERE / "derived" / "oct05", oct07=HERE / "derived" / "oct07", oct14=HERE / "derived" / "oct14",
+                oct15=HERE / "derived" / "oct15")
 LINEAGE_ROW8 = "v5_union_response:row8"                  # October 5: the per-correction split's lineage components
 LINEAGE_CONSTANTS = "v5_lineage:constants"
 OLD_PROFILE = "cbo_category_lag_non_school_full"         # the main profile of every case before September 27
@@ -109,6 +110,8 @@ def debt_run(case: str, out: Path, item: str | None = None):
     """debt_legacy.py --case CASE --out-dir OUT, with the ledger lane's split of one constant (item) or none."""
     spec = importlib.util.spec_from_file_location("debt_legacy_choice", LANE / "debt_legacy.py")
     mod = importlib.util.module_from_spec(spec)
+    previous_module = sys.modules.get(spec.name)
+    sys.modules[spec.name] = mod
     spec.loader.exec_module(mod)
     original = mod.constant_parts
 
@@ -125,6 +128,8 @@ def debt_run(case: str, out: Path, item: str | None = None):
     if item:
         mod.constant_parts = ledger_choice
     argv, sys.argv = sys.argv, ["debt_legacy.py", "--case", case, "--out-dir", str(out)]
+    original_path = sys.path[:]
+    sys.path.insert(0, str(LANE))
     try:
         with contextlib.redirect_stdout(io.StringIO()):
             mod.main()
@@ -133,6 +138,11 @@ def debt_run(case: str, out: Path, item: str | None = None):
             raise SystemExit(f"[BLOCKED] debt_legacy.py --case {case}{' (' + item + ')' if item else ''}: {e.code}") from None
     finally:
         sys.argv = argv
+        sys.path[:] = original_path
+        if previous_module is None:
+            sys.modules.pop(spec.name, None)
+        else:
+            sys.modules[spec.name] = previous_module
     return pd.read_csv(out / "stocks.csv"), pd.read_csv(out / "federal_split_2024.csv")
 
 
@@ -145,7 +155,7 @@ def central(stocks):
 
 def main():
     ap = argparse.ArgumentParser(description="Federal-dollar effect of the ledger lane's two constant splits.")
-    ap.add_argument("--case", choices=tuple(OUT_DIRS), default="oct14")
+    ap.add_argument("--case", choices=tuple(OUT_DIRS), default="oct15")
     ap.add_argument("--out-dir", type=Path, default=None)
     args = ap.parse_args()
     out = args.out_dir or OUT_DIRS[args.case]

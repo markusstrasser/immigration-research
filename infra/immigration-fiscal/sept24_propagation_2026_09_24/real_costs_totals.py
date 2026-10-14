@@ -110,6 +110,8 @@ import argparse
 import csv
 import hashlib
 import json
+import math
+import sys
 from decimal import ROUND_HALF_UP, Decimal
 from pathlib import Path
 from types import SimpleNamespace
@@ -118,6 +120,11 @@ import pandas as pd
 
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
+sys.path.insert(0, str(FISCAL / "scripts"))
+from memory_budget import require_within_budget
+sys.path.insert(0, str(FISCAL / "social_respending_2026_10_14"))
+from respending import spending_basis_gate, verify_bundle
+from valuation_registry import mortality_registry
 PATHS = dict(
     bands=HERE / "derived" / "band_variants.csv",
     bands_meta=HERE / "derived" / "band_variants.json",
@@ -138,10 +145,11 @@ PATHS = dict(
 LANES = dict(sept24="main_case_2026_09_24", sept26="main_case_2026_09_26",
              sept26_schools="main_case_schools_full_2026_09_26", sept27="main_case_long_run_2026_09_27",
              sept29="main_case_2026_09_29", oct05="main_case_2026_10_05", oct07="main_case_2026_10_07",
-             oct14="main_case_2026_10_14")
+             oct14="main_case_2026_10_14", oct15="main_case_2026_10_15")
 OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=FISCAL / "sept26_propagation_2026_09_26" / "derived",
                 sept27=FISCAL / "sept27_propagation_2026_09_27" / "derived", sept29=HERE / "derived" / "sept29",
-                oct05=HERE / "derived" / "oct05", oct07=HERE / "derived" / "oct07", oct14=HERE / "derived" / "oct14")
+                oct05=HERE / "derived" / "oct05", oct07=HERE / "derived" / "oct07", oct14=HERE / "derived" / "oct14",
+                oct15=HERE / "derived" / "oct15")
 # Cases whose roads respond: congestion beside the account is the response lane's, by band end.
 LONG_RUN = dict(sept27=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json",
                 sept29=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json",
@@ -173,6 +181,8 @@ SOCIAL_ITEMS["sept29"] = SOCIAL_ITEMS["sept27"]
 SOCIAL_ITEMS["oct05"] = SOCIAL_ITEMS["sept27"]
 SOCIAL_ITEMS["oct07"] = SOCIAL_ITEMS["sept27"]
 SOCIAL_ITEMS["oct14"] = SOCIAL_ITEMS["sept27"]
+SOCIAL_ITEMS["oct15"] = SOCIAL_ITEMS["sept27"]
+LONG_RUN["oct15"] = LONG_RUN["oct14"]
 # Cases whose published pairing is restated on the priced count (population_basis_2026_09_29).
 RESTATED = dict(sept27=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv",
                 sept29=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv",
@@ -181,13 +191,14 @@ RESTATED = dict(sept27=FISCAL / "population_basis_2026_09_29/derived/restated_pa
                 oct14=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv")
 # A case whose social rows the population lane restated on another case's pairing: that case. The restated social
 # rows (pairing less its fiscal row) then carry over, and the case adds its own fiscal rows.
-RESTATED_BASE = dict(sept29="sept27", oct05="sept27", oct07="sept27", oct14="sept27")
+RESTATED["oct15"] = RESTATED["oct14"]
+RESTATED_BASE = dict(sept29="sept27", oct05="sept27", oct07="sept27", oct14="sept27", oct15="sept27")
 # Cases that carry the lineage (October 5 on). Each restated social row prices the added people at their share of one
 # engine key (band_variants.json lineage_social_keys), at the low end and at the high end; None: not priced (0).
 # [ASSUMPTION] the row scales with the key at the margin, and the added people's amount on the key is the case's.
-LINEAGE_CASES = ("oct05", "oct07", "oct14")
+LINEAGE_CASES = ("oct05", "oct07", "oct14", "oct15")
 # The summary.json block whose per_member_usd.population is the lineage case's per-member divisor.
-PER_MEMBER_BLOCK = dict(oct05="v5", oct07="v6", oct14="v7")
+PER_MEMBER_BLOCK = dict(oct05="v5", oct07="v6", oct14="v7", oct15="v8")
 CRIME = ("justice_use_raw_coding", "justice_use")   # the low end's footing (raw coding), the high end's (custody)
 LINEAGE_ROW_KEYS = dict(
     victims=CRIME, property_crime=CRIME, fear_avoidance=CRIME, private_security=CRIME,
@@ -276,6 +287,9 @@ BESIDE_RUNS["oct07"] = dict(BESIDE, cash_set=(
 BESIDE_RUNS["oct14"] = dict(BESIDE, cash_set=(
     "cash_set", "the cash set: benefits when paid (main_case_2026_10_14 band row cash_set); beside the central total"))
 RESTATED_BESIDE = dict(sept29=("cash_set",), oct05=("cash_set",), oct07=("cash_set",), oct14=("cash_set",))
+BESIDE_RUNS["oct15"] = dict(BESIDE, cash_set=(
+    "cash_set", "benefits when paid (main_case_2026_10_15 cash_set); beside the central total"))
+RESTATED_BESIDE["oct15"] = ("cash_set",)
 MIXED_METHOD = ("theta 0.4977 of each group attributed Hispanic "
                 "(NIBRS TX+AZ mean Hispanic fraction of mixed groups)")
 FAILURES: list[str] = []
@@ -484,7 +498,7 @@ def half_up(x, places):
     return float(Decimal(repr(round(float(x), 9))).quantize(Decimal(1).scaleb(-places), ROUND_HALF_UP))
 
 
-def apply_p7_crime(rows, doc):
+def apply_p7_crime(rows, doc, case="oct14"):
     """Adopt only the owned crime payload, retaining all noncrime producer rows.
 
     The original record-basis tables remain historical controls. The priced
@@ -513,10 +527,15 @@ def apply_p7_crime(rows, doc):
             raise ValueError("[BLOCKED] P7 item/payload mismatch")
     delta = [p["pairing_bn"][i] - p["baseline_pairing_bn"][i] for i in (0, 1)]
     pairing = [next(r for r in rows if r["column"] == "pairing_on_priced_count" and r["item"] == f"published pairing ({e})") for e in ("low", "high")]
+    original_pairing = [r[case] for r in pairing]
+    if case == "oct15":
+        doc["without_round1_social_fixes_bn"] = dict(zip(("low", "high"), original_pairing))
     for i, r in enumerate(pairing):
-        if abs(r["oct14"] - p["baseline_pairing_bn"][i]) > 2e-6:
+        if case == "oct14" and abs(r[case] - p["baseline_pairing_bn"][i]) > 2e-6:
             raise ValueError("[BLOCKED] P7 frozen baseline no longer matches the reconstructed pairing")
     lineage = doc["lineage_social_rows"]
+    original_social = [lineage["union_social_bn"][end] + lineage["added_social_bn"][end]
+                       for end in ("low", "high")]
     if {d["item"] for d in lineage["rows"]} != set(SOCIAL_CONTRACTS):
         raise ValueError("[BLOCKED] every adopted social row needs exactly one consumer declaration")
     union_sums, added_sums = [0.0, 0.0], [0.0, 0.0]
@@ -544,24 +563,30 @@ def apply_p7_crime(rows, doc):
             added_sums[i] += d[f"added_{end}_bn"]
     lineage["union_social_bn"] = dict(zip(("low", "high"), union_sums))
     lineage["added_social_bn"] = dict(zip(("low", "high"), added_sums))
+    if case == "oct15":
+        delta = [union_sums[i] + added_sums[i] - original_social[i] for i in (0, 1)]
     lineage["rule"] = "active crime rows; every signed row has U→D and D→D removed [ASSUMPTION: exchangeable recipients within age scope]"
     for r in rows:
-        if r.get("oct14") is None:
+        if r.get(case) is None:
             continue
         value = None
         for i, end in enumerate(("low", "high")):
             if r["column"].startswith("pairing_on_priced_count") and r["item"] in (
                     f"published pairing ({end})", f"published pairing per group member ({end})"):
                 if r["column"] == "pairing_on_priced_count":
-                    value = p["pairing_bn"][i]
+                    value = p["pairing_bn"][i] if case == "oct14" else r[case] + delta[i]
                     if "per group" in r["item"]:
-                        value /= doc["per_member_population_m"]["oct14"]
+                        value = (p["pairing_bn"][i] if case == "oct14" else original_pairing[i] + delta[i]) / doc["per_member_population_m"][case]
                 else:
-                    value = r["oct14"] + delta[i] / (doc["per_member_population_m"]["oct14"] if "per group" in r["item"] else 1)
+                    value = r[case] + delta[i] / (doc["per_member_population_m"][case] if "per group" in r["item"] else 1)
             if r["column"] == "full_span" and r["item"] in (f"{end} end", f"per group member, {end}"):
-                value = p["full_span_bn"][i]
+                baseline_path = lane / "inputs/baseline_totals_oct14.csv"
+                baseline_rows = list(csv.DictReader(baseline_path.open()))
+                old_full = next(float(x["oct14"]) for x in baseline_rows if x["column"] == "full_span" and x["item"] == f"{end} end")
+                value = p["full_span_bn"][i] if case == "oct14" else r[case] + p["full_span_bn"][i] - old_full
                 if "per group" in r["item"]:
-                    value /= doc["per_member_population_m"]["oct14"]
+                    own_full = next(x[case] for x in rows if x["column"] == "full_span" and x["item"] == f"{end} end")
+                    value = (p["full_span_bn"][i] if case == "oct14" else own_full) / doc["per_member_population_m"][case]
             if r["column"] == "pairing_on_priced_count":
                 if r["item"] == f"social rows on the priced count ({end})":
                     value = union_sums[i]
@@ -571,7 +596,7 @@ def apply_p7_crime(rows, doc):
                 item = r["column"].removeprefix("lineage_social_")
                 value = next(d[f"added_{end}_bn"] for d in lineage["rows"] if d["item"] == item)
         if value is not None:
-            r["oct14"] = value
+            r[case] = value
             r["change"] = None if r["sept24"] is None else value - r["sept24"]
             r["note"] += "; P7 owned crime rows; U→D and D→D removed under exchangeable-recipient assumption; dot_uniform"
         if r["column"] in ("social_item_fear_avoidance", "social_item_private_security", "social_items_2026_09_28"):
@@ -582,8 +607,9 @@ def apply_p7_crime(rows, doc):
         for statistic in ("low", "central", "high"):
             record = {key: None for key in template}
             record.update(section="7", column=f"social_item_{item['item']}", item=f"{statistic}, {item['end']} footing, row4 union",
-                          unit="bn", sept23=None, sept24=None, oct14=float(item[f"{statistic}_bn"]), change=None,
+                          unit="bn", sept23=None, sept24=None, change=None,
                           note="P7 with/without; current personal payment key; dot_uniform; outsiders of union before separate lineage boundary")
+            record[case] = float(item[f"{statistic}_bn"])
             rows.append(record)
     doc["p7_crime"] = p
     doc["p7_crime"]["adopted_items"] = items
@@ -598,20 +624,259 @@ def apply_p7_crime(rows, doc):
 
 def parse_args():
     ap = argparse.ArgumentParser(description="Real-costs totals (memo §7, §7b) on an adopted main case.")
-    ap.add_argument("--case", choices=tuple(LANES), default="oct14",
-                    help="oct14: main case v7 (default); oct07: main case v6 (main_case_2026_10_07); "
+    ap.add_argument("--case", choices=tuple(LANES), default="oct15",
+                    help="oct15: main case v8 (default); oct14: historical v7; oct07: main case v6 (main_case_2026_10_07); "
                          "oct05: the main case adopted 2026-10-05; "
                          "sept29: the main case adopted 2026-09-29; "
                          "sept26_schools: schools at full average cost; sept26: the one-year scenario (--out-dir only); "
                          "sept24: the committed September 24 run")
     ap.add_argument("--out-dir", type=Path, default=None,
                     help="the directory band_variants.cjs wrote this case's bands to; the outputs go there too")
+    ap.add_argument("--v8-social-transport", choices=("fixed_v7_source_keys",), default="fixed_v7_source_keys",
+                    help="explicit transport: retain committed P7 sender/receiver quantities; v8 resource funding; new completion/coverage social effects are unpriced")
     args = ap.parse_args()
     args.out_dir = args.out_dir or OUT_DIRS[args.case]
     if args.out_dir is None:
         ap.error(f"--case {args.case} writes only to --out-dir DIR")
     args.out_dir = args.out_dir.resolve()
     return args
+
+
+def apply_v8_environment(rows, doc, bands_meta, summary, transport):
+    """Replace owned PM/crash/volunteering rows, retaining their declared frame.
+
+    Sender/receiver quantities retain frozen v7 keys. Funding reads v8's complete
+    typed resource arithmetic; spendability of unclassified net cash amounts is
+    conditional. New people's social quantities are not measured here.
+    This explicit switch is the recommended branch pending a producer transport
+    rule. Government, carbon and life-year valuations remain beside.
+    """
+    if transport != "fixed_v7_source_keys":
+        raise ValueError("[BLOCKED] undeclared v8 social transport")
+    lane = FISCAL / "social_respending_2026_10_14"
+    stack_generation = verify_bundle("stack", lane / "derived")
+    respending_generation = verify_bundle("respending", lane / "derived")
+    stack_path = lane / "derived/conditional_stacks.csv"
+    integration_path = lane / "derived/integration.json"
+    source_rows = list(csv.DictReader(stack_path.open()))
+    integration = json.loads(integration_path.read_text())
+    congestion_path = FISCAL / "service_response_long_run_2026_09_27/derived/net_change_oct15.json"
+    live_congestion = json.loads(congestion_path.read_text())
+    crime_mortality_path = FISCAL / "social_costs_unpriced_2026_09_28/derived/oct15/mortality_pairing_rows.csv"
+    crime_mortality_rows = list(csv.DictReader(crime_mortality_path.open()))
+    if not all(integration["gates"].values()) or integration["counts"]["conditional_stack_rows"] != len(source_rows):
+        raise ValueError("[BLOCKED] social environment producer gates/row count")
+    source_baseline = doc["p7_crime"]["baseline_pairing_bn"]
+    detail = doc["lineage_social_rows"]["rows"]
+    before = {end: next(r["oct15"] for r in rows if r["column"] == "pairing_on_priced_count"
+                        and r["item"] == f"published pairing ({end})") for end in ("low", "high")}
+    population = doc["per_member_population_m"]["oct15"]
+
+    def amount(item, end, gross=False):
+        d = next(d for d in detail if d["item"] == item)
+        if gross:
+            return d[f"union_before_boundary_{end}_bn"] * (1 + d[f"share_{end}"])
+        return d[f"union_{end}_bn"] + d[f"added_{end}_bn"]
+
+    def selected(end, denominator="PCE", valuation="uniform", rate="0", displacement="1.0", crash_arm="multivehicle_only"):
+        chosen = [r for r in source_rows if r["end"] == end and r["spending_denominator"] == denominator
+                  and r["mortality_valuation"] == valuation and r["real_discount_rate"] == rate
+                   and r["crash_arm"] == crash_arm and r["volunteering_proxy"] == "primary_food"
+                  and r["displacement"] == displacement and r["market_demand_arm"] == "False"
+                  and r["pm_crash_recipient_boundary"] == "lineage_exchangeable"]
+        if len(chosen) != 1:
+            raise ValueError(f"[BLOCKED] social environment named stack missing/ambiguous: {end}/{denominator}/{valuation}/{rate}/{displacement}")
+        r = chosen[0]
+        index = ("low", "high").index(end)
+        if abs(float(r["baseline_bn"]) - source_baseline[index]) > 1e-9:
+            raise ValueError("[BLOCKED] environment/crime frozen baselines disagree")
+        source_terms = ("mortality_delta_bn", "respending_bn", "government_mirror_bn", "crash_delta_bn",
+                        "volunteering_delta_bn", "market_demand_delta_bn", "city_tax_increment_bn", "crime_mortality_delta_bn")
+        if not all(math.isfinite(float(r[k])) for k in (*source_terms, "baseline_bn", "stack_delta_bn", "stack_pairing_bn", "budget_saving_at_pairing_bn")):
+            raise ValueError("[BLOCKED] nonfinite social source amount")
+        if abs(sum(float(r[k]) for k in source_terms) - float(r["stack_delta_bn"])) > 1e-9 or abs(
+                float(r["stack_pairing_bn"]) - float(r["baseline_bn"]) - float(r["stack_delta_bn"])) > 1e-9:
+            raise ValueError("[BLOCKED] social environment source stack does not close")
+        # Replace levels from the exact producer boundary. Its historical
+        # delta baseline uses different sender keys from the legacy consumer;
+        # transplanting those deltas would preserve that baseline discrepancy.
+        terms = dict(
+            pm_mortality=float(r["pm_gross_replacement_bn"]) - amount("pm25_consumption", end),
+            pm_respending=float(r["respending_bn"]),
+            crash_capacity=float(r["crash_replacement_bn"]) - amount("road_crash_externality", end),
+            incoming_volunteering=float(r["volunteering_delta_bn"]),
+            # The producer's baseline still has pre-round-1 victims, while
+            # this consumer has already applied P7. Use its separate delta
+            # against current P7, so uniform mortality is not counted twice.
+            crime_mortality=float(r["crime_delta_from_current_P7_bn"]),
+        )
+        registry = json.loads(r["mortality_registry_json"])
+        basis = "dot_uniform" if valuation == "uniform" else "dot_life_years"
+        mortality_registry(basis,rate,registry["channels"])
+        crime = [x for x in crime_mortality_rows if x["end"]==end and x["valuation"]==basis
+                 and float(x["real_discount_rate"])==float(rate)]
+        if len(crime)!=1 or abs(float(crime[0]["baseline_lineage_victim_bn"])-amount("victims",end))>1e-9:
+            raise ValueError("[BLOCKED] crime mortality baseline does not match selected pairing")
+        if abs(float(crime[0]["lineage_victim_delta_bn"])-terms["crime_mortality"])>1e-9:
+            raise ValueError("[BLOCKED] crime mortality delta differs across source/stack")
+        con = live_congestion["pairing_by_end"][end]
+        if abs(con["baseline_lineage_congestion_bn"]-amount("congestion",end)) > 1e-9:
+            raise ValueError("[BLOCKED] live congestion baseline does not match selected pairing")
+        terms["congestion_capacity"] = con["lineage_congestion_delta_bn"]
+        if abs(con["replacement_lineage_congestion_bn"]-con["baseline_lineage_congestion_bn"]-terms["congestion_capacity"]) > 1e-9:
+            raise ValueError("[BLOCKED] congestion replacement does not close")
+        funding = bands_meta["social_resource_account"]["ends"][end]
+        if not all(math.isfinite(funding[k]) for k in ("current_H_bn", "capital_return_bn", "net_accrual_timing_bridge_bn",
+                                                      "private_wtp_bn", "cash_cost_bn", "set_cost_bn")):
+            raise ValueError("[BLOCKED] nonfinite v8 social resource account")
+        if funding["accounting_basis"] != "national_accounts" or r["funding_accounting_basis"] != funding["accounting_basis"]:
+            raise ValueError("[BLOCKED] social funding accounting basis mismatch")
+        spending_basis_gate(funding["accounting_basis"], r["denominator_accounting_basis"],
+                            units_sensitivity=denominator == "CE")
+        old_H = float(r["budget_saving_at_pairing_bn"])
+        if old_H <= 0:
+            raise ValueError("[BLOCKED] source re-spending denominator H must be positive")
+        unit = -float(r["respending_bn"]) / old_H
+        terms["pm_respending"] = -funding["current_H_bn"] * unit
+        return r, terms, unit, funding
+
+    contract = dict(comparator="with_without", beneficiary_population="residents_outside_v7_lineage",
+                     valuation_basis="dot_uniform_plus_morbidity; multivehicle_only_crashes; volunteer_replacement_wage",
+                     overlap_set=["pm25_consumption", "road_crash_externality", "formal_volunteering_outside_group", "victims", "congestion"],
+                    population_transport=transport,
+                     assumptions="frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack")
+    variants = {}
+    for name, denominator, valuation, rate, displacement, government, crash_arm, timing in (
+            ("central", "PCE", "uniform", "0", "1.0", False, "multivehicle_only", "current_cash"),
+            ("without_incoming_displacement", "PCE", "uniform", "0", "0.0", False, "multivehicle_only", "current_cash"),
+            ("government_mirror", "PCE", "uniform", "0", "1.0", True, "multivehicle_only", "current_cash"),
+            ("CE_units_sensitivity", "CE", "uniform", "0", "1.0", False, "multivehicle_only", "current_cash"),
+            ("all_density", "PCE", "uniform", "0", "1.0", False, "all_density", "current_cash"),
+            ("resource_promises_deferred", "PCE", "uniform", "0", "1.0", False, "multivehicle_only", "resource_deferred"),
+            ("resource_wealth_equivalent", "PCE", "uniform", "0", "1.0", False, "multivehicle_only", "resource_wealth"),
+            ("life_years_r0", "PCE", "VSLY", "0", "1.0", False, "multivehicle_only", "current_cash"),
+            ("life_years_r003", "PCE", "VSLY", "0.03", "1.0", False, "multivehicle_only", "current_cash")):
+        values, parts = {}, {}
+        for end in ("low", "high"):
+            source, terms, unit, funding = selected(end, denominator, valuation, rate, displacement, crash_arm)
+            city_income_lost = -amount("scale_net_earnings", end)
+            market_income_lost = city_income_lost + funding["private_wtp_bn"]
+            spending_base = funding["current_H_bn"]
+            if timing != "current_cash":
+                spending_base += funding["capital_return_bn"] - market_income_lost
+                if timing == "resource_wealth":
+                    spending_base += funding["net_accrual_timing_bridge_bn"]
+                full_cost = funding["set_cost_bn"] if timing == "resource_wealth" else funding["cash_cost_bn"]
+                if abs(spending_base - (full_cost-city_income_lost)) > 1e-9:
+                    raise ValueError("[BLOCKED] resource spending must close to complete cost minus city market income")
+                terms["pm_respending"] = -spending_base * unit
+            if government:
+                terms["government_mirror"] = float(source["government_mirror_bn"])
+            delta = sum(terms.values())
+            values[end] = before[end] + delta
+            parts[end] = dict(terms=terms, delta_bn=delta, source_budget_saving_bn=float(source["budget_saving_at_pairing_bn"]),
+                               current_H_bn=funding["current_H_bn"],spending_base_bn=spending_base,resource_account=funding,
+                               market_income_lost_bn=market_income_lost,city_income_lost_bn=city_income_lost,
+                               private_production_income_lost_bn=funding["private_wtp_bn"],pm_unit_harm_per_bn_spent=unit,
+                              pm_replacement_bn=amount("pm25_consumption", end) + terms["pm_mortality"] + terms["pm_respending"],
+                               crash_replacement_bn=amount("road_crash_externality", end) + terms["crash_capacity"],
+                               crime_victim_replacement_bn=amount("victims",end)+terms["crime_mortality"],
+                               congestion_replacement_bn=amount("congestion",end)+terms["congestion_capacity"],
+                              volunteering_replacement_bn=amount("formal_volunteering_outside_group", end) + terms["incoming_volunteering"])
+            if abs(values[end] - before[end] - delta) > 1e-9:
+                raise ValueError("[BLOCKED] social environment row closure")
+        variants[name] = dict(pairing_bn=values, parts=parts,
+                              contract=dict(contract, valuation_basis=valuation, denominator=denominator,
+                                             incoming_displacement=float(displacement), government_mirror=government,
+                                             crash_arm=crash_arm,timing=timing,units_sensitivity=denominator=="CE"))
+    # Preserve the exact crime-only pairing beside before replacing central.
+    template = dict(rows[0])
+
+    def append(column, item, value, unit="bn", note=""):
+        row = {key: None for key in template}
+        row.update(section="7", column=column, item=item, unit=unit, oct15=value, note=note)
+        rows.append(row)
+
+    for end in ("low", "high"):
+        append("pairing_on_priced_count_without_social_env", f"published pairing ({end})", before[end],
+               note="P7 crime live; PM/crash/volunteering prior rows retained; explicit fixed v7 social source frame")
+        append("pairing_on_priced_count_without_social_env", f"published pairing per group member ({end})", before[end] / population, "$k")
+    central = variants["central"]
+    current_social_rows = []
+    for record in detail:
+        item = record["item"]
+        values = {end: record[f"union_{end}_bn"] + record[f"added_{end}_bn"] for end in ("low", "high")}
+        replacement_field = {"pm25_consumption": "pm_replacement_bn", "road_crash_externality": "crash_replacement_bn",
+                             "formal_volunteering_outside_group": "volunteering_replacement_bn",
+                             "victims":"crime_victim_replacement_bn", "congestion":"congestion_replacement_bn"}.get(item)
+        if replacement_field:
+            values = {end: central["parts"][end][replacement_field] for end in ("low", "high")}
+        current_social_rows.append(dict(item=item, total_by_end_bn=values,
+                                       contract=contract if replacement_field else doc["p7_crime"]["consumer_contracts"][item]))
+    current_social = {end: sum(record["total_by_end_bn"][end] for record in current_social_rows) for end in ("low", "high")}
+    joint = {}
+    for end in ("low", "high"):
+        baseline = doc["without_round1_social_fixes_bn"][end]
+        crime_delta = before[end] - baseline
+        environment_delta = central["parts"][end]["delta_bn"]
+        combined = central["pairing_bn"][end]
+        interaction = combined - baseline - crime_delta - environment_delta
+        prior_social = sum(amount(record["item"], end) for record in detail)
+        fiscal = before[end] - prior_social
+        if abs(interaction) > 1e-9 or abs(fiscal + current_social[end] - combined) > 1e-9:
+            raise ValueError("[BLOCKED] joint crime/environment interaction or row closure")
+        joint[end] = dict(without_round1_social_fixes_bn=baseline,crime_delta_bn=crime_delta,
+                          environment_delta_bn=environment_delta,with_round1_social_fixes_bn=combined,
+                           round2_crime_mortality_delta_bn=central["parts"][end]["terms"]["crime_mortality"],
+                           round2_congestion_delta_bn=central["parts"][end]["terms"]["congestion_capacity"],
+                          interaction_residual_bn=interaction,fiscal_pairing_bn=fiscal,
+                          social_rows_bn=current_social[end])
+        append("pairing_without_round1_social_fixes", f"published pairing ({end})", baseline,
+               note="v8 fiscal account; preserved pre-round1 social source rows; conditional source-key transport")
+    for end in ("low", "high"):
+        append("pairing_on_priced_count", f"social rows after environmental replacements ({end})", current_social[end],
+               note="signed owned row replacements; government mirror, carbon and life-years excluded; v7 social frame held")
+    for row in rows:
+        if row.get("oct15") is None or not row["column"].startswith("pairing_on_priced_count"):
+            continue
+        if row["column"] == "pairing_on_priced_count_without_social_env":
+            continue
+        for end in ("low", "high"):
+            if row["item"] in (f"published pairing ({end})", f"published pairing per group member ({end})"):
+                per_member = "per group" in row["item"]
+                row["oct15"] += central["parts"][end]["delta_bn"] / (population if per_member else 1)
+                row["change"] = None if row["sept24"] is None else row["oct15"] - row["sept24"]
+                row["note"] += "; conditional PCE uniform-VSL, multivehicle-only crashes, incoming primary-food volunteering at displacement 1; government/CO2/life-years beside; frozen v7 social keys, v8 current funding"
+    for name, variant in variants.items():
+        for end in ("low", "high"):
+            if name != "central":
+                append(f"pairing_social_env_{name}_beside", f"published pairing ({end})", variant["pairing_bn"][end],
+                       note="conditional alternative; never add to central; " + json.dumps(variant["contract"], sort_keys=True))
+            for item, value in variant["parts"][end]["terms"].items():
+                append(f"social_env_{name}_{item}", f"replacement delta ({end})", value,
+                       note=json.dumps(variant["contract"], sort_keys=True))
+    carbon_path = lane / "derived/co2_beside.csv"
+    for source in csv.DictReader(carbon_path.open()):
+        if source["population_basis"] == "lineage" and source["spending_denominator"] == "PCE":
+            append("co2_source_frame_beside", f"{source['valuation']} ({source['end']})", float(source["other_us_damage_bn"]),
+                   note="frozen v7 source quantities; never added; carbon valuation alternative")
+    doc["v8_social_environment"] = dict(transport=transport, contract=contract,
+        status="conditional named stack; added completion/coverage social effects unpriced, not zero measured effects",
+        without_environment_pairing_bn=before, variants=variants,
+         changed_rows_from_oct14=["fiscal account and divisor", "PM mortality/exposure and PCE re-spending", "multivehicle-only crashes on the live road key", "live road-key congestion", "incoming volunteering", "all-channel mortality arms; uniform crime central already corrected by P7"],
+        held_source_population=42752212.92438524, current_fiscal_population=summary["v8"]["population"]["with_coverage"],
+        government_mirror="beside", carbon="beside", life_years="beside", full_span="P7 crime-only range; conditional environment grid is not a confidence interval")
+    doc["v8_social_environment"]["current_social_rows"] = current_social_rows
+    doc["v8_social_environment"]["current_social_by_end_bn"] = current_social
+    doc["joint_social_stack"] = dict(ends=joint,interaction_closure_tolerance_bn=1e-9,
+        interaction_closure_gate=True,
+        scope="accounting closure of selected row replacements; behavioural crime/pollution interactions unmeasured",
+        funding="same exact v8 H for crime-plus-environment pairing; capital and promise timing priced beside")
+    doc["lineage_social_rows"]["status"] = "P7 source-frame row decomposition before environment; current total rows in v8_social_environment.current_social_rows"
+    for path in (stack_path, integration_path, carbon_path, congestion_path, crime_mortality_path):
+        doc["sources_sha256"][rel(path)] = hashlib.sha256(path.read_bytes()).hexdigest()
+    if stack_generation != verify_bundle("stack", lane / "derived") or respending_generation != verify_bundle("respending", lane / "derived"):
+        raise ValueError("[BLOCKED] social producer generation changed during pairing")
 
 
 def rel(p: Path) -> str:
@@ -645,14 +910,25 @@ def main():
     if case in LINEAGE_CASES:
         # The case prices the lineage: the union (audit row 4) plus the added people (meta.lineage, through the band file).
         counts, lineage_keys = meta["lineage"]["counts"], meta["lineage_social_keys"]
-        divisor = summaries[case][PER_MEMBER_BLOCK[case]]["per_member_usd"]["population"]
+        divisor = (summaries[case]["v8"]["population"]["with_coverage"] if case == "oct15" else
+                   summaries[case][PER_MEMBER_BLOCK[case]]["per_member_usd"]["population"])
+        source_population = counts["lineage_population"]
+        if case == "oct15":
+            payload_meta = json.loads(paths["case_corrections"].read_text())["meta"]
+            complete = payload_meta["union_completion"]["counts"]["total"]
+            coverage = payload_meta["coverage"]["net_missing_people"]
+            gate("v8 population adds union completion and coverage exactly (1e-6 people)",
+                 abs(source_population + complete + coverage - divisor) < 1e-6)
+            gate("the v8 per-member fiscal dollars use that same divisor (1e-9 dollars)",
+                 all(abs(b * 1e9 / divisor - v) < 1e-9 for b, v in zip(
+                     summaries[case]["main_case"], summaries[case]["v8"]["per_member_usd"]["set"])))
         gate("the lineage population is the union (row 4) plus the added people, and the case's per-member population",
              abs(counts["account_union"] - priced) < 1e-3 and abs(counts["lineage_population"] - priced - counts["added"]) < 1e-3
-             and abs(counts["lineage_population"] - divisor) < 1e-3, f"{counts['lineage_population']:,.1f} = {priced:,.1f} + {counts['added']:,.1f}")
+             and (case == "oct15" or abs(counts["lineage_population"] - divisor) < 1e-3), f"{counts['lineage_population']:,.1f} = {priced:,.1f} + {counts['added']:,.1f}")
         gate("the band file's head-count share is the added people over the union",
              abs(lineage_keys["head_count"] - counts["added"] / priced) < 1e-12, f"{lineage_keys['head_count']:.6f}")
         gate("the lineage case's pairing is restated on another case's social rows (RESTATED_BASE)", case in RESTATED_BASE)
-        pop[case] = counts["lineage_population"] / 1e6
+        pop[case] = divisor / 1e6
     band = lambda k, v:(float(bands.loc[(k, v), "cost_low_bn"]), float(bands.loc[(k, v), "cost_high_bn"]))  # noqa: E731
     print("[inputs]")
     c = channels()
@@ -989,8 +1265,11 @@ def main():
             items=item_detail, never_added=("property values; each item's normalized figure; the crash lane's "
                                             "fault-based row; CO2, ozone and government-services emissions; disease, food "
                                             "safety and the cuisine mix"))
-    if case == "oct14":
-        apply_p7_crime(rows, doc)
+    if case in ("oct14", "oct15"):
+        apply_p7_crime(rows, doc, case)
+    if case == "oct15":
+        apply_v8_environment(rows, doc, meta, summaries[case], args.v8_social_transport)
+    require_within_budget("real-costs totals")
     with out.open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0]), lineterminator="\n")
         w.writeheader()
