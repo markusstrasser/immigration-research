@@ -1,0 +1,5 @@
+end,allocation,generation,cost_bn,population,bound_bn
+low,personal,G2,137.995318,14333217.7,7.247623
+low,personal,G3plus,151.620381,17382294.2,7.963222
+high,personal,G2,165.493815,14333217.7,8.691865
+high,personal,G3plus,184.749967,17382294.2,9.703214
