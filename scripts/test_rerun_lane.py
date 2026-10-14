@@ -208,3 +208,34 @@ def test_differing_run_keeps_its_backup(tmp_path: Path) -> None:
     assert r.returncode == 1, r.stdout
     kept = list(tmpdir.glob("rerun_*/lane/lane/derived/out.txt"))
     assert len(kept) == 1 and kept[0].read_text() == "1\n" and f"backup: {kept[0].parents[2]}" in r.stdout, r.stdout
+
+
+def test_backup_copies_get_fresh_times(tmp_path: Path) -> None:
+    # 2026-10-15: copy2 kept the lane files' old access times, and macOS's dirhelper (files unread for 3 days under
+    # /var/folders, daily at 03:35) deleted 39 of 197 copies mid-run.
+    import os
+    import time
+    repo, tmpdir = lane_repo(tmp_path / "repo"), tmp_path / "tmp"
+    tmpdir.mkdir()
+    old = time.time() - 10 * 86400
+    os.utime(repo / "lane" / "derived" / "out.txt", (old, old))
+    (repo / "lane" / "build.py").write_text("open('lane/derived/out.txt', 'w').write('2\\n')\n")
+    git(repo, "commit", "-q", "-am", "change output")
+    r = rerun_in_tmpdir(repo, tmpdir)
+    assert r.returncode == 1, r.stdout
+    kept = next(tmpdir.glob("rerun_*/lane/lane/derived/out.txt")).stat()
+    assert kept.st_atime > time.time() - 3600 and kept.st_mtime > time.time() - 3600
+
+
+def test_vanished_backup_copy_stops_without_a_verdict(tmp_path: Path) -> None:
+    repo, tmpdir = lane_repo(tmp_path / "repo"), tmp_path / "tmp"
+    tmpdir.mkdir()
+    (repo / "lane" / "build.py").write_text(
+        "import glob, os\n"
+        "[os.unlink(p) for p in glob.glob(os.environ['TMPDIR'] + '/rerun_*/lane/lane/derived/out.txt')]\n"
+        "open('lane/derived/out.txt', 'w').write('1\\n')\n")
+    git(repo, "commit", "-q", "-am", "simulate a temp cleaner")
+    r = rerun_in_tmpdir(repo, tmpdir)
+    assert r.returncode == 5, r.stdout
+    assert "VANISHED FROM BACKUP lane/derived/out.txt" in r.stdout and "BACKUP DAMAGED: 1/" in r.stdout
+    assert "IDENTICAL" not in r.stdout

@@ -16,6 +16,10 @@ missing-pyreadr trap). After a clean run, the same set is compared with its copy
 changed files are listed. Exit 0 only when every command succeeded and every output is identical.
 An identical run deletes its copy; a failed or differing run keeps it and prints its path, to restore
 from. Until 2026-10-15 every copy stayed: 233 of them held 1.5 GB of the temp folder.
+The copy carries bytes only, with fresh file times. On 2026-10-15 a metadata-preserving copy kept the
+lane files' old access times, and macOS's dirhelper (03:35 daily, files unread for 3 days under
+/var/folders) deleted 39 of 197 copies mid-run; a copy missing at comparison time now stops with
+BACKUP DAMAGED and exit 5 instead of a traceback.
 
 New or modified scripts in the lane that no command names are listed as NOT RUN, and the exit code is
 3; a shell script a command runs (a run_all.sh) counts its text as named. Such a script is either still being written by a worker, or missing from the reproduce list; either
@@ -196,7 +200,7 @@ def main(argv: list[str]) -> int:
     backup = Path(tempfile.mkdtemp(prefix="rerun_")) / "lane"
     for p in before:
         (backup / p).parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(ROOT / p, backup / p)
+        shutil.copyfile(ROOT / p, backup / p)  # bytes only: fresh times keep the temp cleaner off the copy
     env = child_env(online)
     print(f"[rerun] uv {'online' if env.get('UV_OFFLINE') in (None, '0', 'false') else 'offline'}"
           f" (UV_OFFLINE={env.get('UV_OFFLINE', 'unset')})")
@@ -213,6 +217,14 @@ def main(argv: list[str]) -> int:
             print(f"[rerun] FAILED at command {i}; outputs not compared (backup: {backup})")
             return 1
     old, new = before, output_files(lane)
+    vanished = sorted(str(p) for p in old if not (backup / p).is_file())
+    if vanished:
+        for it in vanished:
+            print(f"[rerun] VANISHED FROM BACKUP {it}")
+        print(f"[rerun] BACKUP DAMAGED: {len(vanished)}/{len(old)} copies disappeared from {backup} during the run;"
+              " no verdict. Something deleted them (macOS dirhelper clears /var/folders files unread for 3 days at"
+              " 03:35); the lane's own files are untouched. Rerun.")
+        return 5
     changed = sorted(str(p) for p in old & new if not filecmp.cmp(backup / p, ROOT / p, shallow=False))
     added, missing = sorted(map(str, new - old)), sorted(map(str, old - new))
     for label, items in (("CHANGED", changed), ("NEW", added), ("MISSING", missing)):
