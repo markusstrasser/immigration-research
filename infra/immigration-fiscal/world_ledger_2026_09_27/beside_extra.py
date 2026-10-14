@@ -4,7 +4,7 @@
 ledger's oct14 central, lineage basis (42,752,213 members), beside beside_arms.py's arms. Each arm swaps one input of the central and is shown alone;
 the readings stack them. None replaces a central input, and no reading is a new central.
 
-Arm 1, the place premium (G1 and G2; G3+ at its zero bound throughout).
+Arm 1, the place premium (G1 and G2; each reading reports both G3+ bounds and a labelled rearing-ratio arm).
   1a. Mexican cells computed directly on the ENIGH 2024 persons in localities of 100,000+ (tam_loc 1: mexico.py's
       cells and young-by-parent tables on that subset), G2's schooling from the ESRU-EMOVI 2017 respondents who lived
       in a city of 100,000+ at 14, Mexican pay at household-consumption PPP (WDI 2024 PA.NUS.PRVT.PP, 10.80) instead
@@ -66,9 +66,11 @@ Arm 5, output at common prices [FRAMING-SENSITIVE: it values output at common pr
    without housing, 9260000 [ASSUMPTION]; goods and every other class at GDP PPP. Variant: agriculture at food
    (1101100), construction at 1501200 and manufacturing at machinery and equipment (1501100) too.
 The private gain on wages alone, per generation, in total, per member and per G1 adult: (a) the premium, less the US
-   taxes the group pays (valuation_by_generation's tax class at cost, the mean of the band ends), plus the Mexican
-   taxes it avoids (mexico_taxes_avoided), less Mexico's services forgone as valued (mexico_budget_lost); every US
-   service and benefit at zero; remittances left out (they are the group's own spending). (b) (a) plus the old-age
+    income taxes and payroll/social contributions the group pays, plus Mexico's withheld and employer taxes it
+    avoids; consumption and property taxes and services on both sides at zero. The with-services form includes
+    all taxes on both sides, adds US services and subtracts Mexico's services forgone. Remittances are left out
+    (the group's own spending).
+    The separately named old-age form is wages alone plus the old-age
    promises the members earn: the Social Security accrual (the social_security line) and Part A (the pension lane's
    Part A per HI tax dollar by generation, item pension_tr2026's arm, times the generation's HI taxes
    [ASSUMPTION]). US taxes stay nominal under arm 2. A reading with arm 5 takes its private gain from its
@@ -228,11 +230,15 @@ SECTOR_RANGES = {"Agriculture, Forestry, Fishing and Hunting": (170, 290),
 OFF_LIST = {9890}
 LAMBDA_COLS = {"equal_lambda_1.16": 1.16, "equal_lambda_1.5": 1.5}
 PARTY_THETA = dict(others_today="o", future_taxpayers="f", mexico_residents="o")
-MONEY_COLS = ("mexico_earnings_bn", "mexico_take_home_bn", "mexico_withheld_tax_bn", "mexico_consumption_tax_bn")
+MONEY_COLS = ("mexico_earnings_bn", "mexico_take_home_bn", "mexico_withheld_tax_bn", "mexico_consumption_tax_bn",
+              "mexico_cash_earnings_bn", "mexico_employer_contributions_bn")
 KEYS = ["generation", "convention", "ppp", "diploma_reread", "mishra", "selection"]
-CELL_MONEY = ("inc", "net", "tax", "ctax")
+CELL_MONEY = ("inc", "net", "tax", "ctax", "cash", "employer")
 # HI's part of the self-employment tax (15.3%: OASDI 12.4, HI 2.9).
 SE_HI_SHARE = 2.9 / 15.3
+WAGE_TAX_LINES = {"federal_income_tax", "state_local_income_tax", "employee_oasdi", "employee_hi",
+                  "self_employment_oasdi_hi", "employer_oasdi", "employer_hi", "employer_ui",
+                  "other_domestic_social_contributions"}
 # Readings whose world total uses arm 5 take their private gain from the twin at consumption PPP.
 PRIVATE_GAIN_TWIN = {"reading2": "reading2_consumption", "combined_low": "combined_low_consumption"}
 SHOW_THETA = ("theta_central",)
@@ -269,12 +275,18 @@ def cells_dicts(c, y):
     """g2_premium.mexico_cells' lookup tables for both PPPs from a cells table and a young-by-parent table."""
     out = {}
     for ppp in ("gdp", "consumption"):
-        cols = dict(inc=f"gross_per_person_ppp_{ppp}", net=f"income_per_person_ppp_{ppp}",
-                    tax=f"withheld_per_person_ppp_{ppp}", ctax=f"ctax_per_person_ppp_{ppp}", emp="employment_rate",
+        cols = dict(inc=f"compensation_per_person_ppp_{ppp}", net=f"income_per_person_ppp_{ppp}",
+                    tax=f"total_tax_per_person_ppp_{ppp}", cash=f"gross_per_person_ppp_{ppp}",
+                    employer=f"employer_per_person_ppp_{ppp}", ctax=f"ctax_per_person_ppp_{ppp}", emp="employment_rate",
                     hrs="weekly_hours_employed")
         o = {k: {(r.sex, r.band, r.cat): getattr(r, col) for r in c.itertuples()} for k, col in cols.items()}
         o.update({f"y{k}": {(r.sex, r.band, r.parent_cat): getattr(r, col) for r in y.itertuples()}
                   for k, col in cols.items()})
+        for pre, source, keys in (("", c, ("sex", "band", "cat")), ("y", y, ("sex", "band", "parent_cat"))):
+            o[pre + "inc"] = {k: o[pre + "cash"][k] + o[pre + "employer"][k] for k in o[pre + "cash"]}
+            employee = {tuple(getattr(r, key) for key in keys): getattr(r, f"withheld_per_person_ppp_{ppp}")
+                        for r in source.itertuples()}
+            o[pre + "tax"] = {k: employee[k] + o[pre + "employer"][k] for k in employee}
         out[ppp] = o
     return out
 
@@ -426,7 +438,7 @@ def classify(ind):
     return out
 
 
-def industry_table(d, ratio, e_mx):
+def industry_table(d, ratio, e_mx, employer_us=None):
     """Arm 5 by class: each generation's E_US share, its Mexican counterpart at GDP PPP (the lane's central E_MX split
     in the same shares) and at the class's category PPP, in arm 5 and its goods variant; F per generation."""
     rows, F = [], {}
@@ -434,6 +446,7 @@ def industry_table(d, ratio, e_mx):
         s = d[d.gen.eq(g)]
         e = (s.pw * s.earn).groupby(s.cls).sum()
         tot = float(e.sum())
+        total_comp_bn = tot / 1e9 + (employer_us or {}).get(g, 0.0)
         F[g] = {}
         for var, pos in (("services", 2), ("goods_too", 3)):
             series = {c[0]: c[pos] for c in CLASSES}
@@ -447,12 +460,12 @@ def industry_table(d, ratio, e_mx):
             rows.append(dict(generation=g, cls=k, icp_series=(spec[2] if spec else None) or "gdp",
                              icp_series_goods_too=(spec[3] if spec else None) or "gdp",
                              ppp_over_gdp_ppp=r5, ppp_over_gdp_ppp_goods_too=rg, e_us_share=share,
-                             e_us_bn=share * tot / 1e9, e_mx_gdp_ppp_bn=mx, e_mx_category_bn=mx / r5,
-                             e_mx_category_goods_too_bn=mx / rg, premium_gdp_ppp_bn=share * tot / 1e9 - mx,
-                             premium_category_bn=share * tot / 1e9 - mx / r5,
-                             premium_category_goods_too_bn=share * tot / 1e9 - mx / rg,
-                             price_not_output_bn=(share * tot / 1e9 - mx) - (share * tot / 1e9 - mx / r5),
-                             price_not_output_goods_too_bn=(share * tot / 1e9 - mx) - (share * tot / 1e9 - mx / rg)))
+                              e_us_bn=share * total_comp_bn, e_mx_gdp_ppp_bn=mx, e_mx_category_bn=mx / r5,
+                              e_mx_category_goods_too_bn=mx / rg, premium_gdp_ppp_bn=share * total_comp_bn - mx,
+                              premium_category_bn=share * total_comp_bn - mx / r5,
+                              premium_category_goods_too_bn=share * total_comp_bn - mx / rg,
+                              price_not_output_bn=mx / r5 - mx,
+                              price_not_output_goods_too_bn=mx / rg - mx))
     t = pd.DataFrame(rows)
     for g in ("G1", "G2"):
         x = t[t.generation == g]
@@ -488,9 +501,69 @@ def change_by_class(v, v0):
     return {g: {c: float(x) for c, x in d.xs(g, level="generation").items() if abs(x) > 1e-9} for g in W.GENS}
 
 
-def evaluate(I, fac, pgc="average_cost", care_vg=None, mexico_health_vg=None, remit_rows=None, keep_rows=None):
+def g3_k12_at_cost(vgen, specs):
+    """Report-only: remove V=0 for G3+ K-12 while holding its place premium at zero."""
+    v = vgen.copy()
+    lines = {"education_services", "school_reprice", "capital_k12", "capital_k12_user_fees"}
+    for end in ("low", "high"):
+        selected = v.generation.eq("G3+") & v.end.eq(end)
+        gate(f"g3_k12_lines_exist_{end}", lines <= set(v.loc[selected, "line"]))
+        share = float(specs.loc[end, "share"])
+        gate("g3_k12_share_valid", np.isfinite(share) and 0 <= share <= 1)
+        # education_services includes college: the case's school share selects only its K-12 part.
+        for line in lines:
+            m = selected & v.line.eq(line)
+            factor = share if line == "education_services" else 1.0
+            for c in ("V_low_bn", "V_central_bn", "V_high_bn"):
+                v.loc[m, c] = v.loc[m, "G_bn"] * factor
+    return v
+
+
+def public_goods_wtp(vgen, pos, elasticity):
+    """Beside 3b: cost valuation scaled by per-head income, with no fiscal-cost or Mexico change."""
+    gate("wtp_elasticity_is_named", elasticity in (0.5, 1.0))
+    p = pos[pos.measure.eq("money")].set_index("party")
+    income = p.mean_y_pc
+    B.finite_gate("wtp_incomes_finite", income)
+    gate("wtp_incomes_positive", bool((income > 0).all()))
+    v = vgen.copy()
+    factors = {g: float((income[g] / income["other_residents"]) ** elasticity) for g in W.GENS}
+    for g, factor in factors.items():
+        m = v.generation.eq(g) & v.cls.eq("public_good")
+        for c in ("V_low_bn", "V_central_bn", "V_high_bn"):
+            v.loc[m, c] = v.loc[m, c] * factor
+    return v, factors
+
+
+def mexico_public_goods_responsive(mxb):
+    out = mxb.copy()
+    m = out.cls.eq("public_good")
+    out.loc[m, "bn"] = out.loc[m, "bn"] * W.MEXICO_PUBLIC_RESPONSE[1]
+    return out
+
+
+def mobility_evidence(d):
+    """Actual cohort routing of current G2 records, not a claim that today's young cohort is observed in 2017."""
+    t = pd.read_csv(DERIVED / "mexico_transition.csv")
+    s = d[d.gen.eq("G2") & d.A_AGE.ge(25)].copy()
+    s["mobility_cohort"] = G.emovi_cohort(2024 - s.A_AGE)
+    routed = s.groupby("mobility_cohort").pw.sum()
+    B.finite_gate("mobility_weights_finite", routed)
+    gate("mobility_weights_conserved", abs(routed.sum() - s.pw.sum()) < 1e-6)
+    return dict(source="[DATA: mexico_transition.csv, ESRU-EMOVI 2017 birth cohorts; g2_premium.emovi_cohort]",
+                observed_birth_years=[1983, 1992],
+                observed_age_2024=[2024 - 1992, 2024 - 1983],
+                terminal_cohort_records=int(t.loc[t.cohort.eq("1983-92"), "n"].sum()),
+                g2_persons_25plus_by_routed_cohort=routed.to_dict(),
+                extrapolation="[ASSUMPTION] Births after 1992 take the 1983-92 terminal cohort; no measured current-cohort mobility effect",
+                sensitivity="Not identified from held EMOVI 2017: a later observed cohort is required")
+
+
+def evaluate(I, fac, pgc="average_cost", care_vg=None, mexico_health_vg=None, remit_rows=None, keep_rows=None,
+             g3_bound="zero", end="central"):
     """beside_arms.evaluate, with keep_rows: rows (indexed by row id) whose values replace the scenario's."""
-    rows, prem, _ = W.build_rows(I, pgc)
+    I = dict(I, account_end=end) if end in ("low", "high") else I
+    rows, prem, _ = W.build_rows(I, pgc, g3_central=g3_bound)
     if care_vg is not None or mexico_health_vg is not None:
         rows = B.health_rows(rows, I, pgc, care_vg, mexico_health_vg)
     for over in (remit_rows, keep_rows):
@@ -498,6 +571,7 @@ def evaluate(I, fac, pgc="average_cost", care_vg=None, mexico_health_vg=None, re
             rows = rows.set_index("row")
             rows.loc[over.index, ["low", "central", "high"]] = over[["low", "central", "high"]]
             rows = rows.reset_index()
+    B.finite_gate("extra_rows_are_finite", rows[["low", "central", "high"]])
     return rows, prem, W.totals(rows, prem, I, "central", fac, I["pos"])
 
 
@@ -590,8 +664,10 @@ def derived_rows(party_tot):
     N = sum(party_tot[x] for x in W.PARTIES if x not in W.GROUP)
     N_us = party_tot["others_today"] + party_tot["future_taxpayers"]
     M = sum(party_tot[x] for x in W.GROUP)
+    B.finite_gate("theta_party_totals_are_finite", list(party_tot.values()))
     return dict(party_tot, non_group_total=N, group_total=M, world_total=N + M,
-                breakeven_w=(-N / M) if (M > 0 and N < 0) else np.nan, us_residents_total=N_us,
+                breakeven_w=(-N / M) if (M > 0 and N < 0) else np.nan, other_us_residents_total=N_us,
+                us_residents_incl_group_total=N_us + M,
                 breakeven_w_us_only=(-N_us / M) if (M > 0 and N_us < 0) else np.nan)
 
 
@@ -628,12 +704,13 @@ def linearity_gate(long, lam_h, tol, name):
 
 # ------------------------------------------------------------------ the private gain on wages alone
 def private_gain_inputs(vgen):
-    """By generation, the mean of the band ends: the US taxes the group pays (the tax class at cost, negative), the
+    """By generation, the mean of the supplied band ends: the US taxes the group pays (valued tax class, negative), the
     Social Security accrual (the social_security line as valued), the HI taxes behind Part A, and Part A at the
     pension lane's rate per HI tax dollar."""
     v = vgen
     mean = lambda m, col: v[m].groupby(["generation", "end"])[col].sum().groupby(level="generation").mean()  # noqa: E731
-    tax = mean(v.cls.eq("tax"), "G_bn")
+    tax = mean(v.cls.eq("tax"), "V_central_bn")
+    wage_tax = mean(v.cls.eq("tax") & v.line.isin(WAGE_TAX_LINES), "V_central_bn")
     ss = mean(v.line.eq("social_security"), "V_central_bn")
     hi = -(mean(v.line.isin(["employee_hi", "employer_hi"]), "G_bn")
            + SE_HI_SHARE * mean(v.line.eq("self_employment_oasdi_hi"), "G_bn"))
@@ -642,20 +719,26 @@ def private_gain_inputs(vgen):
     gate("pension_arm_has_each_generation", {"G1", "G2", "G3plus", "union"} <= set(arms.index), groups=list(arms.index))
     rate = {g: float(arms.loc[g.replace("+", "plus"), "part_a_per_hi_tax_dollar"]) for g in W.GENS}
     gate("tax_class_is_paid", all(tax[g] < 0 for g in W.GENS), tax=tax.to_dict())
-    return {g: dict(us_taxes_bn=float(tax[g]), social_security_accrual_bn=float(ss[g]), hi_taxes_bn=float(hi[g]),
+    return {g: dict(us_taxes_bn=float(tax[g]), us_wage_taxes_bn=float(wage_tax[g]),
+                    social_security_accrual_bn=float(ss[g]), hi_taxes_bn=float(hi[g]),
                     part_a_per_hi_tax_dollar=rate[g], part_a_accrual_bn=rate[g] * float(hi[g])) for g in W.GENS}, dict(
         union_part_a_pension_lane_bn=float(arms.loc["union", "part_a_bn"]),
         union_hi_tax_pension_lane_bn=float(arms.loc["union", "hi_tax_bn"]))
 
 
-def private_gain(name, rows, inp, persons, g1_adults, source):
+def private_gain(name, rows, inp, persons, g1_adults, source, prem):
     c = rows.set_index("row").central
-    out, tot = [], dict.fromkeys(("premium", "us_taxes", "mexico_taxes_avoided", "mexico_services_forgone",
+    out, tot = [], dict.fromkeys(("premium", "us_taxes", "us_wage_taxes", "mexico_taxes_avoided", "mexico_wage_taxes_avoided",
+                                  "mexico_services_forgone", "us_services",
                                   "social_security_accrual", "part_a_accrual"), 0.0)
     for g in W.GENS:
         x = dict(premium=float(c[f"premium_{g}"]), us_taxes=inp[g]["us_taxes_bn"],
+                  us_wage_taxes=inp[g]["us_wage_taxes_bn"],
                  mexico_taxes_avoided=float(c[f"mexico_taxes_avoided_{g}"]),
+                  mexico_wage_taxes_avoided=float(prem[g]["tax"]["central"]),
                  mexico_services_forgone=float(c[f"mexico_budget_lost_{g}"]),
+                  us_services=float(c[f"us_budget_value_{g}"]) - inp[g]["us_taxes_bn"]
+                              + float(c[f"uncompensated_received_{g}"]),
                  social_security_accrual=inp[g]["social_security_accrual_bn"],
                  part_a_accrual=inp[g]["part_a_accrual_bn"])
         for k in tot:
@@ -664,14 +747,86 @@ def private_gain(name, rows, inp, persons, g1_adults, source):
     out.append(("group", tot, sum(persons.values())))
     res = []
     for g, x, n in out:
-        a = x["premium"] + x["us_taxes"] + x["mexico_taxes_avoided"] + x["mexico_services_forgone"]
+        B.finite_gate("private_gain_components_are_finite", list(x.values()) + [n, g1_adults])
+        gate("private_gain_population_positive", n > 0 and g1_adults > 0)
+        a = x["premium"] + x["us_wage_taxes"] + x["mexico_wage_taxes_avoided"]
+        alltax = x["premium"] + x["us_taxes"] + x["mexico_taxes_avoided"]
+        services = alltax + x["us_services"] + x["mexico_services_forgone"]
         b = a + x["social_security_accrual"] + x["part_a_accrual"]
-        res.append(dict(scenario=name, from_scenario=source, generation=g, **{f"{k}_bn": v for k, v in x.items()},
+        res.append(dict(scenario=name, from_scenario=source, g3_bound=B.scenario_bound(name), generation=g,
+                        **{f"{k}_bn": v for k, v in x.items()}, with_services_bn=services,
+                        all_taxes_private_bn=alltax,
+                        with_services_per_member_usd=services * 1e9 / n,
                         wages_only_bn=a, with_old_age_accrual_bn=b, persons=n, wages_only_per_member_usd=a * 1e9 / n,
                         with_old_age_accrual_per_member_usd=b * 1e9 / n,
                         wages_only_per_g1_adult_usd=a * 1e9 / g1_adults if g == "G1" else np.nan,
                         with_old_age_accrual_per_g1_adult_usd=b * 1e9 / g1_adults if g == "G1" else np.nan))
     return res
+
+
+def endpoint_readings(scenarios, fac, persons, g1_adults):
+    """Personal account endpoints with central premium/valuation assumptions held fixed."""
+    output, gains = [], []
+    specs = {name: (arm, label, Ia, kw) for name, arm, label, Ia, kw in scenarios}
+    for end in ("low", "high"):
+        evaluated = {name: evaluate(Ia, fac, **dict(kw, end=end))
+                     for name, (_, _, Ia, kw) in specs.items()}
+        base_by_bound = {}
+        for bound in B.G3_BOUNDS:
+            _, _, t = evaluated[B.bound_name("reading1", bound)]
+            base_by_bound[bound] = t.set_index(["weighting", "party"]).bn
+        for name, (arm, label, Ia, kw) in specs.items():
+            rows, _, totals = evaluated[name]
+            bound = B.scenario_bound(name)
+            c = rows.set_index("row").central
+            prem = {g: float(c[f"premium_{g}"]) for g in W.GENS}
+            t = {wt: x.set_index("party").bn.to_dict() for wt, x in totals[totals.weighting.isin(B.WEIGHTINGS)].groupby("weighting")}
+            base = {wt: float(base_by_bound[bound][(wt, "world_total")]) for wt in t}
+            eqw = float(t["equal"]["world_total"])
+            got = summary_rows(name, arm, label, t, prem, float(sum(c[f"us_budget_value_{g}"] for g in W.GENS)), base, eqw)
+            output.extend(dict(x, end=end, delta_from_r1_bn=x["world_change_bn"]) for x in got)
+            if B.base_name(name).startswith("arm5_"):
+                continue
+            src = B.bound_name(PRIVATE_GAIN_TWIN.get(B.base_name(name), B.base_name(name)), bound)
+            si, skw = specs[src][2:]
+            sr, sp, _ = evaluated[src]
+            inp, _ = private_gain_inputs(si["vgen"][si["vgen"].end.eq(end)])
+            gains.extend(dict(x, end=end) for x in private_gain(name, sr, inp, persons, g1_adults, src, sp))
+    result, private = pd.DataFrame(output), pd.DataFrame(gains)
+    B.finite_gate("p7_endpoint_party_values_finite", result[["world_total_bn", "group_total_bn", "other_us_residents_bn", "us_residents_incl_group_bn", "mexico_residents_bn"]])
+    gate("p7_endpoint_world_closure", bool(np.allclose(result.world_total_bn,
+         result.us_residents_incl_group_bn + result.mexico_residents_bn, atol=1e-6, rtol=0)))
+    return result, private
+
+
+def endpoint_theta_summary(summary, thetas, reference="reading1"):
+    """Fiscal alternative-use arms at each account end, from existing lambda slopes; no re-evaluation."""
+    keys = ["scenario", "end"]
+    equal = summary[summary.weighting.eq("equal")].set_index(keys)
+    lam = summary[summary.weighting.eq("equal_lambda_1.16")].set_index(keys)
+    gate("endpoint_theta_same_scenarios", equal.index.equals(lam.index))
+    results = [summary]
+    for weighting, theta in thetas.items():
+        x = equal.copy()
+        for column, coefficient in (("others_today_bn", "theta_o"), ("future_taxpayers_bn", "theta_f"),
+                                    ("mexico_residents_bn", "theta_o")):
+            slope = (lam[column] - equal[column]) / 0.16
+            x[column] = equal[column] + (theta[coefficient] - 1) * slope
+        x["weighting"] = weighting
+        x["other_us_residents_bn"] = x.others_today_bn + x.future_taxpayers_bn
+        x["us_residents_incl_group_bn"] = x.other_us_residents_bn + x.group_total_bn
+        x["world_total_bn"] = x.us_residents_incl_group_bn + x.mexico_residents_bn
+        x["world_change_from_equal_bn"] = x.world_total_bn - equal.world_total_bn
+        x["breakeven_w"] = -(x.world_total_bn - x.group_total_bn) / x.group_total_bn
+        x["breakeven_w_us_only"] = -x.other_us_residents_bn / x.group_total_bn
+        bases = x[x.index.get_level_values("scenario").map(B.base_name) == reference].reset_index().set_index(["end", "g3_bound"]).world_total_bn
+        baseline = np.array([bases.loc[(end, bound)] for (_, end), bound in zip(x.index, x.g3_bound)], float)
+        x["world_change_bn"] = x.world_total_bn - baseline
+        if "delta_from_r1_bn" in x:
+            x["delta_from_r1_bn"] = x.world_change_bn
+        B.finite_gate("endpoint_theta_party_values_finite", x[["world_total_bn", "group_total_bn", "other_us_residents_bn", "mexico_residents_bn"]])
+        results.append(x.reset_index())
+    return pd.concat(results, ignore_index=True)
 
 
 # ------------------------------------------------------------------ checks
@@ -708,13 +863,13 @@ def summary_rows(name, arm, label, tot, prem, budget_bn, base, eqw):
     baseline's world total by weighting; eqw: the scenario's own world total at equal weights."""
     out = []
     for wt, g in tot.items():
-        out.append(dict(scenario=name, arm=arm, label=label, weighting=wt, premium_G1_bn=prem["G1"],
+        out.append(dict(scenario=name, arm=arm, label=label, g3_bound=B.scenario_bound(name), weighting=wt, premium_G1_bn=prem["G1"],
                         premium_G2_bn=prem["G2"], premium_G3plus_bn=prem["G3+"], premium_bn=sum(prem.values()),
                         us_budget_value_bn=budget_bn, group_total_bn=g["group_total"],
                         others_today_bn=g["others_today"], future_taxpayers_bn=g["future_taxpayers"],
                         mexico_residents_bn=g["mexico_residents"], world_total_bn=g["world_total"],
-                        us_residents_bn=g["us_residents_total"],
-                        us_residents_incl_group_bn=g["us_residents_total"] + g["group_total"],
+                        other_us_residents_bn=g["other_us_residents_total"],
+                        us_residents_incl_group_bn=g["us_residents_incl_group_total"],
                         group_per_member_usd=g["group_total"] * 1e9 / MEMBERS, breakeven_w=g["breakeven_w"],
                         breakeven_w_us_only=g["breakeven_w_us_only"],
                         world_change_bn=g["world_total"] - base[wt], world_change_from_equal_bn=g["world_total"] - eqw))
@@ -801,8 +956,9 @@ def main():
          no_code=int((earners.industry <= 0).sum()))
     e_mx0 = {"G1": float(central_row(tab0, "own_schooling_all_ages").mexico_earnings_bn),
              "G2": float(prem0["G2"]["e_mx"]["central"])}
-    ind_tab, F = industry_table(d, ratio, e_mx0)
-    _, F_state = industry_table(d_state, ratio, e_mx0)
+    employer_us = {g: prem0[g]["employer_us"] for g in ("G1", "G2")}
+    ind_tab, F = industry_table(d, ratio, e_mx0, employer_us)
+    _, F_state = industry_table(d_state, ratio, e_mx0, employer_us)
     off_share = {g: float((s.pw * s.earn)[s.industry.isin(OFF_LIST)].sum() / (s.pw * s.earn).sum())
                  for g, s in grp.groupby("gen")}
 
@@ -875,6 +1031,17 @@ def main():
               dict(I, g2=r2, vgen=v3a), dict(kw3ab, remit_rows=remit0)))
     S.append(("reading2_consumption", "reading_2", "Reading 2 at consumption PPP in place of 5 (its private gain)",
               dict(I, g2=r2c, vgen=v3a), dict(kw3ab, remit_rows=remit0)))
+    # Report-only, each one change from reading 1, never adopted as the convention.
+    S.append(("p7_g3_k12_at_cost", "p7_6a", "R1, G3+ K-12 at cost beside its V=0 [FRAMING-SENSITIVE]",
+              dict(I, g2=r1, mxb=mx_us, vgen=g3_k12_at_cost(I["vgen"], I["specs"])), dict(remit_rows=remit0)))
+    S.append(("p7_mexico_goods_responsive", "p7_6b", "R1, US public goods at average cost and Mexican goods forgone at responsive share",
+              dict(I, g2=r1, mxb=mexico_public_goods_responsive(mx_us)), dict(remit_rows=remit0)))
+    wtp_factors = {}
+    for elasticity in (0.5, 1.0):
+        vw, factors = public_goods_wtp(I["vgen"], I["pos"], elasticity)
+        wtp_factors[str(elasticity)] = factors
+        S.append((f"p7_goods_wtp_{elasticity:g}", "p7_11", f"R1, US public goods WTP at income elasticity {elasticity:g}; beside 3b [ASSUMPTION; FRAMING-SENSITIVE]",
+                  dict(I, g2=r1, mxb=mx_us, vgen=vw), dict(remit_rows=remit0)))
     # Same-person pay: parameter rows only, never a reading or a low end (the module docstring).
     S.append(("reading1_same_person_cmp", "same_person", f"{SP_LABEL} reading 1 with G1 at CMP's Re 2.46",
               dict(I, g2=sp(r1, "arm1b_cmp_re"), mxb=mx_us), dict(remit_rows=remit0)))
@@ -887,6 +1054,7 @@ def main():
     S.append(("combined_low_consumption", "same_person", f"{SP_LABEL} reading 2 with G1 at 1.59, consumption PPP in "
               "place of 5 (its private gain)", dict(I, g2=sp(r2c, "arm1c_mmp_per_person"), vgen=v3a),
               dict(kw3ab, remit_rows=remit0)))
+    S = B.bound_scenarios(S)
     names = [s[0] for s in S]
     gate("scenario_names_unique", len(names) == len(set(names)))
 
@@ -894,19 +1062,21 @@ def main():
     for name, arm, _, Ia, kw in S:
         rows, prem, t = evaluate(Ia, fac, **kw)
         evaluated[name] = (rows, prem, Ia)
-        long.append(t.assign(scenario=name, arm=arm))
+        long.append(t.assign(scenario=name, arm=arm, g3_bound=B.scenario_bound(name)))
     long = pd.concat(long, ignore_index=True)
     gate("baseline_is_the_central", B.max_diff(long[long.scenario == "baseline"].bn, t0.bn) == 0.0)
     # The group-only check on arm 3: Mexico's budget saved stays at GDP PPP.
     saved = [f"mexico_budget_saved_{g}" for g in W.GENS]
     keep = rows0.set_index("row").loc[saved]
-    rows_g, _, t_g = evaluate(dict(I, mxb=mx_us), fac, keep_rows=keep)
-    evaluated["arm3_us_numeraire_group_only"] = (rows_g, evaluated["arm3_us_numeraire"][1], dict(I, mxb=mx_us))
-    long = pd.concat([long, t_g.assign(scenario="arm3_us_numeraire_group_only", arm="3")], ignore_index=True)
     labels = {s[0]: s[2] for s in S}
-    labels["arm3_us_numeraire_group_only"] = "3's check: the group's rows only (Mexico's budget saved at GDP PPP)"
     arm_of = {s[0]: s[1] for s in S}
-    arm_of["arm3_us_numeraire_group_only"] = "3"
+    for bound in B.G3_BOUNDS:
+        name = B.bound_name("arm3_us_numeraire_group_only", bound)
+        rows_g, _, t_g = evaluate(dict(I, mxb=mx_us), fac, keep_rows=keep, g3_bound=bound)
+        evaluated[name] = (rows_g, evaluated[B.bound_name("arm3_us_numeraire", bound)][1], dict(I, mxb=mx_us))
+        long = pd.concat([long, t_g.assign(scenario=name, arm="3", g3_bound=bound)], ignore_index=True)
+        labels[name] = f"3's check: the group's rows only (Mexico's budget saved at GDP PPP); {B.G3_LABELS[bound]}"
+        arm_of[name] = "3"
     # Arms 2, 3a and 3b are beside_arms.py's.
     for k in ("arm2_state_rpp", "arm3a", "arm3b"):
         a = arms[arms.scenario == k].merge(long[long.scenario == k], on=["weighting", "party"], suffixes=("", "_now"))
@@ -951,7 +1121,8 @@ def main():
             rr = rows.copy()
             ff = rr.row.eq("fiscal_future")
             rr.loc[ff, ["low", "central", "high"]] = rr.loc[ff, ["low", "central", "high"]] * th["theta_f"] / th["theta_o"]
-            td = W.totals(rr, prem, Ia, "central", dict(fac, _lambda={"equal_lambda_theta": th["theta_o"]}), Ia["pos"])
+            td = W.totals(rr, prem, Ia, "central", dict(fac, _lambda={"equal_lambda_theta": th["theta_o"]}), Ia["pos"],
+                          requested_weightings=["equal_lambda_theta"])
             td = td[td.weighting == "equal_lambda_theta"].set_index("party").bn
             mine = np.array([float(th_idx[(name, tname, p)]) for p in td.index])
             direct = max(direct, B.max_diff(mine, td.to_numpy(float)))
@@ -966,17 +1137,20 @@ def main():
     gate("one_g1_adult_count", len(g1_adults) == 1, adults=list(g1_adults))
     pg = []
     for name in evaluated:
-        if name.startswith("arm5_"):
+        if B.base_name(name).startswith("arm5_"):
             continue                       # output at common prices: not a purchasing-power figure
-        src = PRIVATE_GAIN_TWIN.get(name, name)
-        pg += private_gain(name, evaluated[src][0], inp, persons, float(g1_adults[0]), src)
+        src = B.bound_name(PRIVATE_GAIN_TWIN.get(B.base_name(name), B.base_name(name)), B.scenario_bound(name))
+        pg += private_gain(name, evaluated[src][0], inp, persons, float(g1_adults[0]), src, evaluated[src][1])
     pg = pd.DataFrame(pg)
+    endpoint_summary, endpoint_private = endpoint_readings(S, fac, persons, float(g1_adults[0]))
+    endpoint_summary = endpoint_theta_summary(endpoint_summary, thetas)
 
     # ---- outputs
-    keep_cols = ["case", "scenario", "arm", "weighting", "party", "bn"]
+    keep_cols = ["case", "scenario", "arm", "g3_bound", "weighting", "party", "bn"]
     arm_of.update({s: a for s, a in zip(arms_sum.scenario, arms_sum.arm) if s not in arm_of})
     labels.update({s: f"beside_arms.py: {lab}" for s, lab in zip(arms_sum.scenario, arms_sum.label) if s not in labels})
-    out_long = pd.concat([long.drop(columns=["unknown_rows"]), th_long.assign(arm=th_long.scenario.map(arm_of))],
+    out_long = pd.concat([long.drop(columns=["unknown_rows"]), th_long.assign(arm=th_long.scenario.map(arm_of),
+                         g3_bound=th_long.scenario.map(B.scenario_bound))],
                          ignore_index=True).assign(case=CASE)[keep_cols]
     gate("every_scenario_has_an_arm", out_long.arm.notna().all())
     base_w = {**{w: float(piv[("baseline", w, "world_total")]) for w in B.WEIGHTINGS},
@@ -1001,14 +1175,20 @@ def main():
         summ += summary_rows(scen, arm_of[scen], labels[scen], tot, prem, budget_bn, base_w,
                              float(piv[(scen, "equal", "world_total")]))
     summary = pd.DataFrame(summ)
+    beside_endpoints = pd.read_csv(DERIVED / f"p7_beside_arms_endpoints_{CASE}.csv")
+    beside_endpoints = endpoint_theta_summary(beside_endpoints, thetas, reference="baseline")
+    outer_endpoints = pd.concat([endpoint_summary, beside_endpoints], ignore_index=True)
     out_long.to_csv(DERIVED / f"beside_extra_{CASE}.csv", index=False, lineterminator="\n", float_format="%.6f")
     summary.to_csv(DERIVED / f"beside_extra_summary_{CASE}.csv", index=False, lineterminator="\n", float_format="%.6f")
     pg.to_csv(DERIVED / f"beside_extra_private_gain_{CASE}.csv", index=False, lineterminator="\n", float_format="%.6f")
+    endpoint_summary.to_csv(DERIVED / f"p7_named_readings_{CASE}.csv", index=False, lineterminator="\n", float_format="%.6f")
+    endpoint_private.to_csv(DERIVED / f"p7_private_gain_{CASE}.csv", index=False, lineterminator="\n", float_format="%.6f")
     ind_tab.to_csv(DERIVED / f"beside_extra_industry_{CASE}.csv", index=False, lineterminator="\n", float_format="%.6f")
     detail = {}
     for name, (_, prem, _) in evaluated.items():
         detail[name] = dict(e_mx_central_bn={g: prem[g]["e_mx"]["central"] for g in W.GENS},
                             e_us_bn={g: prem[g]["e_us"] for g in W.GENS},
+                            employer_us_bn={g: prem[g]["employer_us"] for g in W.GENS},
                             mexico_taxes_central_bn={g: prem[g]["tax"]["central"] + prem[g]["ctax"]["central"]
                                                      for g in W.GENS})
     same = {k: same_person(tab0, ratios[k], e_us_nom)[1] for k in SAME_PERSON}
@@ -1038,6 +1218,17 @@ def main():
                 private_gain=dict(inputs=inp, check=inp_check, g1_adults=float(g1_adults[0]), persons=persons,
                                   twins=PRIVATE_GAIN_TWIN),
                 tenure_check=tenure_check(d),
+                p7=dict(g3_bounds=B.G3_LABELS, public_goods_wtp_income_elasticity_factors=wtp_factors,
+                        mobility=mobility_evidence(d),
+                        other_us_residents_outer_span_bn={wt: [float(x.other_us_residents_bn.min()), float(x.other_us_residents_bn.max())]
+                                                         for wt, x in outer_endpoints.groupby("weighting")},
+                        other_us_residents_outer_span_fixed_lambda_1_bn=[float(outer_endpoints[outer_endpoints.weighting.eq("equal")].other_us_residents_bn.min()), float(outer_endpoints[outer_endpoints.weighting.eq("equal")].other_us_residents_bn.max())],
+                        other_us_residents_outer_span_theta_arms_bn=[float(outer_endpoints[outer_endpoints.weighting.str.startswith("theta_")].other_us_residents_bn.min()), float(outer_endpoints[outer_endpoints.weighting.str.startswith("theta_")].other_us_residents_bn.max())],
+                        other_us_residents_theta_span_rule="equal individual dollar weights with stated fiscal alternative-use theta assumptions; distinct from fixed lambda=1 fiscal valuation",
+                        private_gain_signs={f"{end}/{bound}": {form: float(x[x.generation.eq("group")][form].iloc[0])
+                                             for form in ("wages_only_bn", "with_services_bn")}
+                                            for (end, bound), x in endpoint_private[endpoint_private.scenario.map(B.base_name).eq("reading1")].groupby(["end", "g3_bound"])},
+                        endpoint_rule="Personal low/high account; premium assumptions held at central; one change from R1 at the same G3+ bound"),
                 gates=dict(theta_identity_max_abs_diff=idd, theta_direct_max_abs_diff=direct))
     json.dump(meta, open(DERIVED / f"beside_extra_meta_{CASE}.json", "w"), indent=1, sort_keys=True, default=float)
     show = summary[summary.weighting.isin(("equal", "equal_lambda_1.16") + SHOW_THETA)].set_index(

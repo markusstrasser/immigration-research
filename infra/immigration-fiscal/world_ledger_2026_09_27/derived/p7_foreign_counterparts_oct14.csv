@@ -1,0 +1,3 @@
+account_end,corporate_labor_already_in_wages_bn,us_capital_source_tax_bn,foreign_counterpart_central_bn,foreign_counterpart_stress_low_bn,foreign_counterpart_stress_high_bn,identified_union_capital_source_bn,rule
+high,4.170465184,39.196422041,0,0,39.196422041,36.416090270,Mexico plus rest of world excluded; [ASSUMPTION] 0..US capital-source parity stress; no empirical finite bound
+low,11.271527523,60.499609060,0,0,60.499609060,56.078119279,Mexico plus rest of world excluded; [ASSUMPTION] 0..US capital-source parity stress; no empirical finite bound

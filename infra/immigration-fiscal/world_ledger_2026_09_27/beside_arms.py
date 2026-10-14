@@ -100,8 +100,8 @@ MIN_RATIO_N = 100                        # records behind a metro pay ratio befo
 CITIES = {1: "valle_de_mexico", 2: "guadalajara", 3: "monterrey"}
 HEALTH_CLASSES = ("medicaid", "medicare", "health_services")
 SOCIAL_LINES = ("income_security_services",)
-WEIGHTINGS = ("equal", "equal_lambda_1.16", "equal_lambda_hendren_a")
-MONEY = dict(inc="gross", net="income", tax="withheld", ctax="ctax")   # g2_premium's cell keys -> mexico.py's columns
+WEIGHTINGS = ("equal", "equal_lambda_1.16", "equal_lambda_1.5", "equal_lambda_hendren_a")
+MONEY = dict(inc="compensation", net="income", tax="total_tax", ctax="ctax", employer="employer", cash="gross")
 
 
 def gate(name, ok, **detail):
@@ -209,7 +209,7 @@ def pay_ratios(en, sel, nat, young_nat):
             a["parent_cat"] = a.parent_cat.astype(int)
             ref, keys, by = young_nat.set_index(["sex", "band", "parent_cat"]), ["sex", "band", "parent_cat"], "band"
         idx = pd.MultiIndex.from_frame(a[keys])
-        cols = {k: f"{k}_per_person_mxn" for k in ("gross", "withheld", "ctax")} | {"income": "income_per_person_mxn"}
+        cols = {k: f"{k}_per_person_mxn" for k in ("gross", "withheld", "ctax", "compensation", "total_tax", "employer")} | {"income": "income_per_person_mxn"}
         for k, c in cols.items():
             a[f"num_{k}"] = a.w * a[MX.MONEY[k]]
             a[f"den_{k}"] = a.w * ref[c].reindex(idx).to_numpy()
@@ -251,6 +251,10 @@ def area_cells(ppp, ratios, price):
         rk = lambda k: rat[(kind, k[0], k[pos])]
         for m, col in MONEY.items():
             out[pre + m] = {k: v * getattr(rk(k), f"R_{col}") / price for k, v in nat[pre + m].items()}
+        # Rounded staged compensation totals cannot silently break cash-plus-employer closure.
+        out[pre + "inc"] = {k: out[pre + "cash"][k] + out[pre + "employer"][k] for k in nat[pre + "inc"]}
+        out[pre + "tax"] = {k: (nat[pre + "tax"][k] - nat[pre + "employer"][k])
+                            * rk(k).R_withheld / price + out[pre + "employer"][k] for k in nat[pre + "tax"]}
         out[pre + "emp"] = {k: min(v * rk(k).R_emp, 1.0) for k, v in nat[pre + "emp"].items()}
         out[pre + "hrs"] = {k: v * rk(k).R_hrs for k, v in nat[pre + "hrs"].items()}
     return out
@@ -541,8 +545,37 @@ def cmp_cell(d, cells):
     return dict(records=int(len(s)), us_per_worker=us, mexico_per_worker=mx, ratio=us / mx)
 
 
-def evaluate(I, fac, pgc="average_cost", care_vg=None, mexico_health_vg=None, remit_rows=None, budget_deflator=None):
-    rows, prem, _ = W.build_rows(I, pgc)
+G3_BOUNDS = ("zero", "upper", "rearing")
+G3_LABELS = dict(zero="G3+ zero-premium bound", upper="G3+ sex-age G2-ratio upper bound",
+                 rearing="G3+ aggregate G2 rearing-ratio arm [ASSUMPTION; not adopted]")
+
+
+def bound_name(name, bound):
+    return name if bound == "zero" else f"{name}__g3_{bound}"
+
+
+def scenario_bound(name):
+    return name.rsplit("__g3_", 1)[1] if "__g3_" in name else "zero"
+
+
+def base_name(name):
+    return name.split("__g3_", 1)[0]
+
+
+def bound_scenarios(scenarios):
+    """Every named reading states its G3+ counterfactual, including the unadopted third arm."""
+    return [(bound_name(name, bound), arm, f"{label}; {G3_LABELS[bound]}", Ia,
+             dict(kw, g3_bound=bound)) for name, arm, label, Ia, kw in scenarios for bound in G3_BOUNDS]
+
+
+def finite_gate(name, values):
+    gate(name, bool(np.isfinite(np.asarray(values, dtype=float)).all()))
+
+
+def evaluate(I, fac, pgc="average_cost", care_vg=None, mexico_health_vg=None, remit_rows=None, budget_deflator=None,
+             g3_bound="zero", end="central"):
+    I = dict(I, account_end=end) if end in ("low", "high") else I
+    rows, prem, _ = W.build_rows(I, pgc, g3_central=g3_bound)
     if care_vg is not None or mexico_health_vg is not None:
         rows = health_rows(rows, I, pgc, care_vg, mexico_health_vg)
     if remit_rows is not None:
@@ -554,6 +587,7 @@ def evaluate(I, fac, pgc="average_cost", care_vg=None, mexico_health_vg=None, re
         for g, f in budget_deflator.items():
             m = rows.row.eq(f"us_budget_value_{g}")
             rows.loc[m, ["low", "central", "high"]] = rows.loc[m, ["low", "central", "high"]] / f
+    finite_gate("beside_rows_are_finite", rows[["low", "central", "high"]])
     t = W.totals(rows, prem, I, "central", fac, I["pos"])
     return rows, prem, t
 
@@ -564,13 +598,14 @@ def summary_row(name, arm, label, rows, t, base):
     c = rows.set_index("row").central
     for wt in WEIGHTINGS:
         g = lambda p: float(piv[(wt, p)])
-        out.append(dict(scenario=name, arm=arm, label=label, weighting=wt,
+        out.append(dict(scenario=name, arm=arm, label=label, g3_bound=scenario_bound(name), weighting=wt,
                         premium_G1_bn=c["premium_G1"], premium_G2_bn=c["premium_G2"], premium_G3plus_bn=c["premium_G3+"],
                         premium_bn=sum(c[f"premium_{x}"] for x in W.GENS),
                         us_budget_value_bn=sum(c[f"us_budget_value_{x}"] for x in W.GENS),
                         group_total_bn=g("group_total"), others_today_bn=g("others_today"),
                         future_taxpayers_bn=g("future_taxpayers"), mexico_residents_bn=g("mexico_residents"),
-                        world_total_bn=g("world_total"), us_residents_incl_group_bn=g("us_residents_total") + g("group_total"),
+                        world_total_bn=g("world_total"), other_us_residents_bn=g("other_us_residents_total"),
+                        us_residents_incl_group_bn=g("us_residents_incl_group_total"),
                         group_per_member_usd=g("group_total") * 1e9 / MEMBERS, breakeven_w=g("breakeven_w"),
                         breakeven_w_us_only=g("breakeven_w_us_only"),
                         world_change_bn=g("world_total") - base[(wt, "world_total")]))
@@ -728,6 +763,7 @@ def main():
               dict(I, g2=tables["combined"], vgen=public_goods_at_prices(v3a, r_public)),
               dict(care_vg=hcare, mexico_health_vg=hmx, remit_rows=remit0)))
 
+    S = bound_scenarios(S)
     long, summ, detail = [], [], {}
     for name, arm, label, Ia, kw in S:
         rows, prem, t = evaluate(Ia, fac, **kw)
@@ -735,14 +771,23 @@ def main():
             gate("baseline_is_the_central", float((t.bn - t0.bn).abs().max()) == 0.0)
         if name == "arm3b":
             gate("arm3b_is_the_response_only_central", float((t.bn - t0b.bn).abs().max()) == 0.0)
-        long.append(t.assign(case=CASE, scenario=name, arm=arm))
+        long.append(t.assign(case=CASE, scenario=name, arm=arm, g3_bound=scenario_bound(name)))
         summ += summary_row(name, arm, label, rows, t, base)
         detail[name] = dict(e_mx_central_bn={g: prem[g]["e_mx"]["central"] for g in W.GENS},
                             e_us_bn={g: prem[g]["e_us"] for g in W.GENS},
                             mexico_taxes_central_bn={g: prem[g]["tax"]["central"] + prem[g]["ctax"]["central"]
                                                      for g in W.GENS})
-    res = pd.concat(long)[["case", "scenario", "arm", "weighting", "party", "bn", "unknown_rows"]]
+    res = pd.concat(long)[["case", "scenario", "arm", "g3_bound", "weighting", "party", "bn", "unknown_rows"]]
     summary = pd.DataFrame(summ)
+    endpoints = []
+    for end in ("low", "high"):
+        _, _, endpoint_base = evaluate(I, fac, end=end)
+        endpoint_base = endpoint_base.set_index(["weighting", "party"]).bn
+        for name, arm, label, Ia, kw in S:
+            rows, _, t = evaluate(Ia, fac, **dict(kw, end=end))
+            endpoints.extend(dict(r, end=end) for r in summary_row(name, arm, label, rows, t, endpoint_base))
+    endpoints = pd.DataFrame(endpoints)
+    endpoints.to_csv(DERIVED / f"p7_beside_arms_endpoints_{CASE}.csv", index=False, lineterminator="\n", float_format="%.6f")
     # The combination's parts: each arm's change at equal weights, beside the combination's (they interact).
     eq = summary[summary.weighting == "equal"].set_index("scenario").world_change_bn
     parts = {k: float(eq[k]) for k in ("arm1_metros", "arm2_state_rpp", "arm3")}
@@ -772,7 +817,7 @@ def main():
 
     ratios_out = pd.concat([r.assign(variant=k) for k, r in ratios.items()])[
         ["variant", "kind", "sex", "key", "n", "n_used", "level", "R_gross", "R_income", "R_withheld", "R_ctax", "R_emp",
-         "R_hrs"]]
+         "R_hrs", "R_compensation", "R_total_tax", "R_employer"]]
     ratios_out.to_csv(DERIVED / "beside_arms_ratios.csv", index=False, lineterminator="\n", float_format="%.6f")
     res.to_csv(DERIVED / f"beside_arms_{CASE}.csv", index=False, lineterminator="\n", float_format="%.6f")
     summary.to_csv(DERIVED / f"beside_arms_summary_{CASE}.csv", index=False, lineterminator="\n", float_format="%.6f")
@@ -793,7 +838,11 @@ def main():
                 fhl_wtp_per_dollar=fhl, lane_medicaid_vg=list(I["health_vg"]), scenario_detail=detail,
                 combined_parts_equal_bn=parts, arm3b_decomposition=arm3b,
                 cmp_check=dict(cmp_ro=G.CMP_RO, cmp_re=G.CMP_RE, ratios=cmp, cmp_cell=cmp_cells),
-                enoe_cdmx_check=enoe)
+                 enoe_cdmx_check=enoe,
+                 other_us_residents_outer_span_bn={wt: [float(x.other_us_residents_bn.min()),
+                                                        float(x.other_us_residents_bn.max())]
+                                                  for wt, x in endpoints.groupby("weighting")},
+                 g3_bounds=G3_LABELS)
     json.dump(meta, open(DERIVED / f"beside_arms_meta_{CASE}.json", "w"), indent=1, sort_keys=True, default=float)
     show = summary[summary.weighting == "equal"].set_index("scenario")[
         ["premium_bn", "us_budget_value_bn", "group_total_bn", "world_total_bn", "us_residents_incl_group_bn",

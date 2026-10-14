@@ -1,7 +1,8 @@
 case,end,side,cls,amount_bn,G_bn,V_low_bn,V_central_bn,V_high_bn,third_party_bn,net_cost_bn,source
 oct14,high,receipt,housing_voucher,-3.717821,3.717821,3.085792,3.717821,3.717821,0.000000,3.717821,"HSK Table II: HCV Chicago Lottery WTP 0.83, HCV RCT to Welfare 1.00 per $1"
-oct14,high,receipt,tax,559.999299,-490.538444,-490.538444,-490.538444,-490.538444,0.000000,-490.538444,"tax paid, $1 per $1"
-oct14,high,spending,cash,197.209878,197.209878,197.209878,197.209878,197.209878,0.000000,197.209878,envelope theorem on observed flows: 'individuals are willing to pay for the mechanical cost' (HSK 2020 p.20); behavioral costs are already in observed earnings [INFERENCE]
+oct14,high,receipt,source_tax,74.343902,-43.366887,0.000000,0.000000,0.000000,0.000000,-43.366887,item 6 source receipts on job capital; no additional debit from measured group earnings; corporate labour incidence is already inside wages [INFERENCE]
+oct14,high,receipt,tax,485.655398,-447.171557,-449.143862,-449.143862,-449.143862,0.000000,-447.171557,"explicit group-borne receipt, $1 per $1"
+oct14,high,spending,cash,197.209878,197.209878,194.464899,194.464899,194.464899,0.000000,197.209878,envelope theorem on observed flows: 'individuals are willing to pay for the mechanical cost' (HSK 2020 p.20); behavioral costs are already in observed earnings [INFERENCE]
 oct14,high,spending,correction,-5.400108,-5.400108,0.000000,0.000000,0.000000,0.000000,-5.400108,"account correction rows (care-work taxes, shelter, audit constants)"
 oct14,high,spending,education,241.363941,245.792803,0.000000,0.000000,0.000000,0.000000,245.792803,investment; its return is in the G2 premium; custodial value in both places
 oct14,high,spending,health_services,24.267489,24.267489,23.033296,23.033296,23.033296,0.000000,24.267489,public health and hospitals at cost (convention)
@@ -14,8 +15,9 @@ oct14,high,spending,public_good,231.853720,101.130563,231.445596,231.445596,231.
 oct14,high,spending,services,47.033721,47.033721,47.033721,47.033721,47.033721,0.000000,47.033721,social services at cost (convention)
 oct14,high,spending,snap,14.625495,14.625495,9.506572,14.625495,14.625495,0.000000,14.625495,"low: Whitmore (2002) trade value 'at least 65%' (HSK fn 38); central/high: inframarginal, cash-equivalent [INFERENCE]"
 oct14,low,receipt,housing_voucher,-3.717821,3.717821,3.085792,3.717821,3.717821,0.000000,3.717821,"HSK Table II: HCV Chicago Lottery WTP 0.83, HCV RCT to Welfare 1.00 per $1"
-oct14,low,receipt,tax,559.999299,-518.942694,-518.942694,-518.942694,-518.942694,0.000000,-518.942694,"tax paid, $1 per $1"
-oct14,low,spending,cash,197.209878,197.209878,197.209878,197.209878,197.209878,0.000000,197.209878,envelope theorem on observed flows: 'individuals are willing to pay for the mechanical cost' (HSK 2020 p.20); behavioral costs are already in observed earnings [INFERENCE]
+oct14,low,receipt,source_tax,74.343902,-71.771137,0.000000,0.000000,0.000000,0.000000,-71.771137,item 6 source receipts on job capital; no additional debit from measured group earnings; corporate labour incidence is already inside wages [INFERENCE]
+oct14,low,receipt,tax,485.655398,-447.171557,-449.143862,-449.143862,-449.143862,0.000000,-447.171557,"explicit group-borne receipt, $1 per $1"
+oct14,low,spending,cash,197.209878,197.209878,194.464899,194.464899,194.464899,0.000000,197.209878,envelope theorem on observed flows: 'individuals are willing to pay for the mechanical cost' (HSK 2020 p.20); behavioral costs are already in observed earnings [INFERENCE]
 oct14,low,spending,correction,-5.400108,-5.400108,0.000000,0.000000,0.000000,0.000000,-5.400108,"account correction rows (care-work taxes, shelter, audit constants)"
 oct14,low,spending,education,234.683598,238.272298,0.000000,0.000000,0.000000,0.000000,238.272298,investment; its return is in the G2 premium; custodial value in both places
 oct14,low,spending,health_services,23.981086,23.981086,22.746893,22.746893,22.746893,0.000000,23.981086,public health and hospitals at cost (convention)

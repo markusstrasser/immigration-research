@@ -1,0 +1,84 @@
+{
+  "files": {
+    "banxico_circular_12_2012.txt": {
+      "path": "inputs/banxico_circular_12_2012.txt",
+      "representation": "deterministic Exa text extraction of primary source",
+      "retrieved": "2026-10-14",
+      "sha256": "a38116c19d20289e38db8a5fd95fe82bc8cdb61c75c195d89f4abd5154c11898",
+      "transport": "direct source rejected/timeout; primary text recovered through Exa",
+      "url": "https://dof.gob.mx/nota_detalle_popup.php?codigo=5260748"
+    },
+    "bea_nipa_section3_2026_08_26.xlsx": {
+      "authority": "full_account_receipts_2026_09_20/sources.json bea2024",
+      "path": "inputs/bea_nipa_section3_2026_08_26.xlsx",
+      "representation": "original BEA XLSX bytes copied without change from existing pinned primary file",
+      "sha256": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+      "url": "https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx",
+      "vintage": "2026-08-26",
+      "year": 2024
+    },
+    "imss_financing_2024.txt": {
+      "path": "inputs/imss_financing_2024.txt",
+      "representation": "deterministic Exa text extraction of primary source",
+      "retrieved": "2026-10-14",
+      "sha256": "a980d13790a0f3dbece84d7824713845aca5ecf815ed38feb1eafc2cf5bb5c8d",
+      "transport": "direct source rejected/timeout; primary text recovered through Exa",
+      "url": "https://www.imss.gob.mx/sites/all/statics/pdf/informes/20242025/15-anexos.pdf"
+    },
+    "infonavit_statutory.txt": {
+      "path": "inputs/infonavit_statutory.txt",
+      "representation": "deterministic Exa text extraction of primary source",
+      "retrieved": "2026-10-14",
+      "sha256": "4889b9c878e1cfd38fb189b90da04e83e3e4cd335243ebf227bd7631152a80cf",
+      "transport": "direct source rejected/timeout; primary text recovered through Exa",
+      "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LIFNVT.pdf"
+    },
+    "lss_statutory.txt": {
+      "path": "inputs/lss_statutory.txt",
+      "representation": "deterministic Exa text extraction of primary source",
+      "retrieved": "2026-10-14",
+      "sha256": "73fe00c8a02286e4713301119f99a81abd2587d69341e04705f4a44ae037c082",
+      "transport": "direct source rejected/timeout; primary text recovered through Exa",
+      "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LSS.pdf"
+    },
+    "oecd_mexico_2024.txt": {
+      "path": "inputs/oecd_mexico_2024.txt",
+      "representation": "deterministic Exa text extraction of primary source",
+      "retrieved": "2026-10-14",
+      "sha256": "44e1e192cd3b475e71e3a509e381814265c7e9a344efb309c498be0ada05c6f5",
+      "transport": "direct source rejected/timeout; primary text recovered through Exa",
+      "url": "https://www.oecd.org/en/publications/taxing-wages-2025_b3a95829-en/full-report/mexico_98ddd565.html"
+    },
+    "positive_control_mexico_earnings_cells.csv": {
+      "authority": "current oct14 Mexico outputs, preserved before P7 changes by root",
+      "path": "inputs/positive_control_mexico_earnings_cells.csv",
+      "representation": "unmodified original derived csv bytes",
+      "sha256": "4562a400324b42e583533f003a2b0d1327ed1936b0560d215c7bee8bd9598cd9"
+    },
+    "positive_control_mexico_young_by_parent.csv": {
+      "authority": "current oct14 Mexico outputs, preserved before P7 changes by root",
+      "path": "inputs/positive_control_mexico_young_by_parent.csv",
+      "representation": "unmodified original derived csv bytes",
+      "sha256": "86565ca7ff0c2edb58094b196005b51f4fe2a87abb382f92009f3a42bfdde710"
+    },
+    "wdi_PA.NUS.FCRF.json": {
+      "path": "_cache/mexico/wdi_PA.NUS.FCRF.json",
+      "representation": "existing World Bank JSON authority cached by acquire.py",
+      "sha256": "835d34e58593a34f24f310dc7488a679b0bcce605f6b3306016ad06195b91419",
+      "url": "https://api.worldbank.org/v2/country/MEX/indicator/PA.NUS.FCRF?format=json"
+    },
+    "wdi_PA.NUS.PPP.json": {
+      "path": "_cache/mexico/wdi_PA.NUS.PPP.json",
+      "representation": "existing World Bank JSON authority cached by acquire.py",
+      "sha256": "590da8901608c781f835a428343ebd11b7d4537f9aea41a4daebe6d87d188f6f",
+      "url": "https://api.worldbank.org/v2/country/MEX/indicator/PA.NUS.PPP?format=json"
+    },
+    "wdi_PA.NUS.PRVT.PP.json": {
+      "path": "_cache/mexico/wdi_PA.NUS.PRVT.PP.json",
+      "representation": "existing World Bank JSON authority cached by acquire.py",
+      "sha256": "9d290a97f3d9da7d46e89bcf77b8fae040a2cabf560337344c9cd4692b1376f6",
+      "url": "https://api.worldbank.org/v2/country/MEX/indicator/PA.NUS.PRVT.PP?format=json"
+    }
+  },
+  "note": "Rates parsed from pinned primary text; current consolidated law articles checked for pre-2024 reform dates; exact December2024 schedule from IMSS report. No model-extracted or hand-typed numeric table."
+}

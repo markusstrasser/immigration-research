@@ -4,13 +4,13 @@ G1,health,government health spending per head,7.341736,[DATA: WDI SH.XPD.GHED.PP
 G1,cash,government cash transfers by age (ENIGH bene_gob claves),4.233249,[DATA: ENIGH 2024],
 G1,cash,pensions paid in Mexico by age (ENIGH P032),12.040431,[DATA: ENIGH 2024],
 G1,public_good,other government consumption per head,14.209735,[CALCULATION: WDI NE.CON.GOVT.ZS 2024 less health and education shares; approximate],
-G1,tax,taxes the group would pay in Mexico: withheld from formal pay (lower bound),7.572990,"[CALCULATION: 2024 statutory withholding, mexico.py; consumption taxes in world_ledger's central, all taxes its upper bound]",
+G1,tax,taxes the group would pay in Mexico: withheld from formal pay (lower bound),19.244800,"[CALCULATION: 2024 statutory withholding, mexico.py; consumption taxes in world_ledger's central, all taxes its upper bound]",
 G2,education,public school places at Mexico's cost per public student,20.772414,[DATA: ENIGH attendance; WDI SE.XPD.TOTL.GD.ZS 2022 x GDP PPP 2024],4.577294
 G2,health,government health spending per head,9.534616,[DATA: WDI SH.XPD.GHED.PP.CD 2023],
 G2,cash,government cash transfers by age (ENIGH bene_gob claves),2.100405,[DATA: ENIGH 2024],
 G2,cash,pensions paid in Mexico by age (ENIGH P032),4.203384,[DATA: ENIGH 2024],
 G2,public_good,other government consumption per head,18.453995,[CALCULATION: WDI NE.CON.GOVT.ZS 2024 less health and education shares; approximate],
-G2,tax,taxes the group would pay in Mexico: withheld from formal pay (lower bound),6.343750,"[CALCULATION: 2024 statutory withholding, mexico.py; consumption taxes in world_ledger's central, all taxes its upper bound]",
+G2,tax,taxes the group would pay in Mexico: withheld from formal pay (lower bound),16.241750,"[CALCULATION: 2024 statutory withholding, mexico.py; consumption taxes in world_ledger's central, all taxes its upper bound]",
 G3+,education,public school places at Mexico's cost per public student,24.521705,[DATA: ENIGH attendance; WDI SE.XPD.TOTL.GD.ZS 2022 x GDP PPP 2024],5.403467
 G3+,health,government health spending per head,11.562893,[DATA: WDI SH.XPD.GHED.PP.CD 2023],
 G3+,cash,government cash transfers by age (ENIGH bene_gob claves),3.769098,[DATA: ENIGH 2024],

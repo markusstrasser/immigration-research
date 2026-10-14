@@ -3,43 +3,99 @@
   "oct14": {
    "high": {
     "A_bn": 431.48364393831827,
-    "V_central_bn": 257.9977573624376,
-    "V_high_bn": 278.511139984471,
-    "V_low_bn": 230.79534537616215
+    "V_central_bn": 296.6473603035636,
+    "V_high_bn": 317.160742925597,
+    "V_low_bn": 269.4449483172881
    },
    "low": {
     "A_bn": 351.4616626869457,
-    "V_central_bn": 214.02446319398084,
-    "V_high_bn": 234.19836499050612,
-    "V_low_bn": 187.2198575278606
+    "V_central_bn": 281.0783154939017,
+    "V_high_bn": 301.252217290427,
+    "V_low_bn": 254.27370982778143
    }
   }
  },
  "generations": {
   "oct14": {
    "high|G1": {
-    "V_central_bn": 77.44096367404356,
+    "V_central_bn": 90.95279611263986,
     "net_cost_bn": 78.28618459399998
    },
    "high|G2": {
-    "V_central_bn": 84.43124048862536,
+    "V_central_bn": 96.64848717203702,
     "net_cost_bn": 167.00631381099998
    },
    "high|G3+": {
-    "V_central_bn": 96.1255531989288,
+    "V_central_bn": 109.04607701930712,
     "net_cost_bn": 186.19114553500003
    },
    "low|G1": {
-    "V_central_bn": 64.39733742843943,
+    "V_central_bn": 86.23347451403573,
     "net_cost_bn": 57.355852785999986
    },
    "low|G2": {
-    "V_central_bn": 70.34481092591436,
+    "V_central_bn": 91.57411730832602,
     "net_cost_bn": 140.29458329699997
    },
    "low|G3+": {
-    "V_central_bn": 79.28231483819552,
+    "V_central_bn": 103.27072367257385,
     "net_cost_bn": 153.811226605
+   }
+  }
+ },
+ "incidence": {
+  "oct14": {
+   "high": {
+    "added_people_child_credit_other_residents_bn": 0.41873889866613045,
+    "capital_source_tax_credit_bn": 39.19642204110708,
+    "child_credit_by_generation_bn": {
+     "G1": -0.023699600596297908,
+     "G2": 1.2533646075883418,
+     "G3+": 3.487619276621678
+    },
+    "child_credit_other_residents_bn": 4.717284283613722,
+    "corporate_labor_credit_bn": 4.17046518363257,
+    "foreign_capital_source_tax_exclusion": {
+     "assumption_stress_lower_bn": 0.0,
+     "assumption_stress_upper_bn": 39.19642204110708,
+     "bound_kind": "ASSUMPTION: combined foreign tax between zero and US capital-source receipts; no empirical finite identification bound; no allocation between Mexico and rest of world",
+     "mexico_bn": null,
+     "rest_of_world_bn": null,
+     "source": "https://www.oecd.org/en/publications/corporate-tax-statistics-2024_9c27d6e8-en/full-report/corporate-effective-tax-rates_c3356c78.html",
+     "status": "unidentified; excluded from central, not measured zero"
+    },
+    "group_credit_adjustment_bn": -4.717284283613722,
+    "identified_union_capital_source_tax_credit_bn": 36.41609026975563,
+    "identified_union_child_credit_other_residents_bn": 4.298545384947592,
+    "identified_union_corporate_labor_credit_bn": 3.8491802822201597,
+    "identified_union_source_tax_credit_bn": 40.26527055197579,
+    "source_tax_credit_bn": 43.36688722473965
+   },
+   "low": {
+    "added_people_child_credit_other_residents_bn": 0.41873889866613045,
+    "capital_source_tax_credit_bn": 60.499609060203284,
+    "child_credit_by_generation_bn": {
+     "G1": -0.023699600596297908,
+     "G2": 1.2533646075883418,
+     "G3+": 3.487619276621678
+    },
+    "child_credit_other_residents_bn": 4.717284283613722,
+    "corporate_labor_credit_bn": 11.2715275233313,
+    "foreign_capital_source_tax_exclusion": {
+     "assumption_stress_lower_bn": 0.0,
+     "assumption_stress_upper_bn": 60.499609060203284,
+     "bound_kind": "ASSUMPTION: combined foreign tax between zero and US capital-source receipts; no empirical finite identification bound; no allocation between Mexico and rest of world",
+     "mexico_bn": null,
+     "rest_of_world_bn": null,
+     "source": "https://www.oecd.org/en/publications/corporate-tax-statistics-2024_9c27d6e8-en/full-report/corporate-effective-tax-rates_c3356c78.html",
+     "status": "unidentified; excluded from central, not measured zero"
+    },
+    "group_credit_adjustment_bn": -4.717284283613722,
+    "identified_union_capital_source_tax_credit_bn": 56.0781192789344,
+    "identified_union_child_credit_other_residents_bn": 4.298545384947592,
+    "identified_union_corporate_labor_credit_bn": 10.403189951946407,
+    "identified_union_source_tax_credit_bn": 66.48130923088081,
+    "source_tax_credit_bn": 71.77113658353458
    }
   }
  },

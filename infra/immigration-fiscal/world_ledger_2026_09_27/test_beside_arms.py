@@ -48,15 +48,15 @@ def ledger(pgc):
 def test_lane_central_reproduced(long, scenario, pgc):
     mine = long[long.scenario == scenario].set_index(["weighting", "party"]).bn
     ref = ledger(pgc)
-    assert len(mine) == len(ref) == 96
+    assert len(mine) == len(ref) == 104
     assert np.allclose(mine.reindex(ref.index), ref, atol=1e-6, equal_nan=True)
 
 
 def test_every_scenario_complete(long, summary):
     per = long.groupby("scenario").size()
-    assert (per == 96).all(), per[per != 96]
+    assert (per == 104).all(), per[per != 104]
     assert set(summary.scenario) == set(per.index)
-    assert (summary.groupby("scenario").size() == 3).all()
+    assert (summary.groupby("scenario").size() == 4).all()
 
 
 def test_summary_follows_from_party_totals(long, summary):
@@ -65,10 +65,11 @@ def test_summary_follows_from_party_totals(long, summary):
         g = lambda party: p[(r.scenario, r.weighting, party)]
         assert np.isclose(r.world_total_bn, g("world_total"), atol=1e-6)
         assert np.isclose(r.group_total_bn, g("group_total"), atol=1e-6)
-        assert np.isclose(r.us_residents_incl_group_bn, g("us_residents_total") + g("group_total"), atol=2e-6)
+        assert np.isclose(r.other_us_residents_bn, g("other_us_residents_total"), atol=1e-6)
+        assert np.isclose(r.us_residents_incl_group_bn, g("us_residents_incl_group_total"), atol=2e-6)
         assert np.isclose(r.group_per_member_usd, g("group_total") * 1e9 / MEMBERS, atol=0.05)
         assert np.isclose(r.breakeven_w, -(g("world_total") - g("group_total")) / g("group_total"), atol=1e-5)
-        assert np.isclose(r.breakeven_w_us_only, -g("us_residents_total") / g("group_total"), atol=1e-5)
+        assert np.isclose(r.breakeven_w_us_only, -g("other_us_residents_total") / g("group_total"), atol=1e-5)
 
 
 def test_arms_add_at_equal_weights(summary):

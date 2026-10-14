@@ -2,10 +2,13 @@
 (ENIGH 2024, cross-checked on ENOE 2024 Q1-Q2), and the intergenerational schooling transition
 (ESRU-EMOVI 2017). Case-independent. Inputs are the public files acquire.py stores in _cache/mexico/.
 
-ENIGH records pay as received, after withholding (reads/enigh_2024_questionnaire.md); US earnings are gross.
+ENIGH records pay as received, after withholding (reads/enigh_2024_questionnaire.md).
 Pay from formal jobs (subordinate, with SAR or AFORE) is grossed up by the 2024 statutory withholding (income
 tax, employee IMSS contributions, the worker's retirement-account deposit), reproducing OECD's rates at the
 average wage (gate); the withheld tax is kept as a Mexican tax the person would pay.
+P7 adds the formal employer's IMSS, SAR/CEAV and INFONAVIT contributions to total compensation and
+the ledger's avoided contributions, each once; cash gross and employee withholding stay as positive
+controls. The employer's occupational-risk and missing work-duration bounds are separate columns.
 
 Consumption taxes: each person's gross labor income bears the IVA and IEPS their household's income decile pays
 as a share of its autonomous income, as SHCP measures them for 2024 on the same survey (reads/shcp_2026_incidence.md),
@@ -13,7 +16,8 @@ plus the fuel excise, which SHCP's incidence leaves out, spread by SHCP's own pr
 
 Outputs (derived/):
 - mexico_earnings_cells.csv: sex x age band x schooling category; persons, employment, formal share, weekly
-  hours; annual labor income per person as received ('income'), gross, withheld tax, retirement deposit and
+   hours; annual labor income per person as received ('income'), cash gross, compensation, employer contribution,
+   employee withheld tax, total contributions, retirement deposit and
   consumption taxes ('ctax'), in pesos and in PPP dollars.
 - mexico_transition.csv: P(own schooling category | parents' schooling category, sex, birth cohort).
 - mexico_enoe_check.csv: ENIGH against ENOE, mean monthly labor income per employed by category.
@@ -23,7 +27,10 @@ Schooling categories follow CEEY's six (Informe Movilidad Social 2019, p. 26, re
 (12-15), 5 profesional (16+). Levels are converted to years of schooling first, in every survey.
 """
 import csv
+import functools
+import hashlib
 import json
+import re
 import sys
 import warnings
 import zipfile
@@ -40,6 +47,7 @@ warnings.filterwarnings("error", category=pd.errors.DtypeWarning)
 HERE = Path(__file__).resolve().parent
 CACHE = HERE / "_cache" / "mexico"
 DERIVED = HERE / "derived"
+INPUTS = HERE / "inputs"
 CATS = ["none", "primaria_incompleta", "primaria", "secundaria", "preparatoria", "profesional"]
 AGE_BANDS = [15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 200]
 # ENIGH 2024 ingresos claves that make up the concentrado's labor income (ingtrab = trabajo + negocio +
@@ -95,6 +103,114 @@ def gate(name, ok, **detail):
         raise SystemExit(f"[BLOCKED] gate {name} failed: {detail}")
 
 
+def pinned_text(name):
+    """Read a retrieved primary document only after validating its exact bytes."""
+    pins = json.loads((INPUTS / "pins.json").read_text())
+    row = pins["files"].get(name)
+    gate("mexico_primary_source_declared", row is not None, file=name)
+    p = HERE / row["path"]
+    gate("mexico_primary_source_exists", p.is_file(), file=str(p))
+    b = p.read_bytes()
+    gate("mexico_primary_source_sha256", hashlib.sha256(b).hexdigest() == row["sha256"], file=name)
+    return b.decode("utf-8")
+
+
+@functools.lru_cache(maxsize=1)
+def employer_parameters():
+    """Parse IMSS's 2024 statutory financing table; retain its occupational-risk ambiguity.
+
+    Retrieval-service text is the exact deterministic extraction of the official primary PDF,
+    not a model-created table. The law's current consolidation supplies unchanged historical
+    articles 74 and 29(II); their reform dates are retained in the pinned text.
+    """
+    report = " ".join(pinned_text("imss_financing_2024.txt").split())
+    law = " ".join(pinned_text("lss_statutory.txt").split())
+    housing = " ".join(pinned_text("infonavit_statutory.txt").split())
+    oecd = " ".join(pinned_text("oecd_mexico_2024.txt").split())
+
+    def number(pattern, text=report):
+        m = re.search(pattern, text)
+        gate("mexico_statutory_parameter_parses", m is not None, pattern=pattern)
+        return float(m.group(1))
+
+    table = report[report.index("Cuadro A.3."):report.index("Cuadro A.4.")]
+    out = {"fixed": number(r"Cuota fija UMA2/ ([\d.]+)", table) / 100,
+           "excess": number(r"menos 3 UMA ([\d.]+)", table) / 100,
+           "cash_benefit": number(r"Prestaciones en dinero SBC ([\d.]+)", table) / 100,
+           "pension_medical": number(r"Personas pensionadas SBC ([\d.]+)", table) / 100,
+           "disability_life": number(r"Invalidez y Vida SBC ([\d.]+)", table) / 100,
+           "daycare": number(r"Guarderías y Prestaciones Sociales SBC ([\d.]+)", table) / 100,
+           "retirement": number(r"Retiro SBC ([\d.]+)", table) / 100,
+           "risk": number(r"Riesgos de Trabajo SBC ([\d.]+?)1/", table) / 100,
+           "uma": number(r"Cifra igual a ([\d.]+) pesos en diciembre de 2024", table),
+           "cap_uma": number(r"hasta llegar a (\d+) en 2007", table),
+           "minimum_wage": number(r"general minimum wage is ([\d.]+)", oecd)}
+    # The table's footnote is the enacted gradual 2024 CEAV schedule, not its final 2030 rates.
+    foot = table[table.index("6/ Con la reforma"):table.index("7/ Con la reforma")]
+    first = number(r"cuota en 2024 es de ([\d.]+)%", foot)
+    rates = [float(x) for x in re.findall(r"UMA = ([\d.]+)%", foot)]
+    rates.append(number(r"UMA en adelante ([\d.]+)%", foot))
+    gate("mexico_ceav_2024_eight_tiers", len(rates) == 7, rates=rates)
+    out["ceav_rates"] = np.array([first] + rates) / 100
+    out["ceav_upper_uma"] = np.array([float(x) for x in re.findall(r"a ([\d.]+) UMA =", foot)])
+    gate("mexico_ceav_2024_six_uma_cutoffs", len(out["ceav_upper_uma"]) == 6)
+    # Parse written statutory percentages rather than retyping values from a source.
+    words = {"cero punto cinco": 0.5, "quince": 15.0, "cinco": 5.0}
+    art74 = law[law.index("Artículo 74."):law.index("Artículo 75.")]
+    m = re.search(r"serán de (.+?) por ciento y (.+?) por ciento de los salarios", art74)
+    gate("mexico_statutory_risk_bounds_parse", m is not None and all(x in words for x in m.groups()))
+    out["risk_min"], out["risk_max"] = [words[x] / 100 for x in m.groups()]
+    art29 = housing[housing.index("Artículo 29.-"):housing.index("Artículo 29 Bis.-")]
+    m = re.search(r"aportaciones del (\w+) por ciento sobre el salario", art29)
+    gate("mexico_housing_rate_parse", m is not None and m.group(1) in words)
+    out["housing"] = words[m.group(1)] / 100
+    gate("mexico_housing_historical_provision", "Fracción reformada DOF 24-02-1992, 22-07-1994, 06-01-1997" in art29)
+    gate("mexico_risk_historical_provision", "Párrafo reformado DOF 20-12-2001" in art74)
+    gate("mexico_employer_uma_matches_employee_model", out["uma"] == UMA)
+    return out
+
+
+def mx_employer_contributions(g, risk_rate=None, full_year=False):
+    """Annual employer IMSS, SAR/CEAV and INFONAVIT on formal cash gross pay, pesos.
+
+    [ASSUMPTION] The existing annualized cash gross approximates SBC. Below the existing
+    full-year integrated minimum, exposure is g/MW_YEAR, with its statutory minimum daily
+    wage; full_year=True bounds the missing duration by a full year at that minimum.
+    Above it, use the lane's existing 30.4*12 annualization and 25-UMA cap. Accident-history
+    risk is unobserved: default IMSS's March-2024–February-2025 average, bounds LSS art74.
+    SAR/CEAV and housing are mandatory individual-account deposits, separately disclosed;
+    total_tax follows the requested ledger convention, not a claim all are public revenue.
+    """
+    g = np.asarray(g, float)
+    gate("mexico_employer_pay_finite_nonnegative", np.isfinite(g).all() and (g >= 0).all())
+    p = employer_parameters()
+    risk = p["risk"] if risk_rate is None else float(risk_rate)
+    gate("mexico_employer_risk_inside_statute", np.isfinite(risk) and p["risk_min"] <= risk <= p["risk_max"])
+    exposure = np.where(g > 0, 1.0, 0.0) if full_year else np.minimum(g / MW_YEAR, 1.0)
+    annual = np.divide(g, exposure, out=np.zeros_like(g), where=exposure > 0)
+    annual = np.where(exposure > 0, np.maximum(annual, MW_YEAR), 0.0)
+    base = np.minimum(annual, p["cap_uma"] * UMA_YEAR)
+    excess = np.maximum(base - 3 * UMA_YEAR, 0.0)
+    # The minimum-wage tier takes precedence over UMA intervals (SM exceeds the first
+    # two UMA brackets in 2024). Bounds preserve the law's statutory discontinuities.
+    idx = np.searchsorted(p["ceav_upper_uma"], base / UMA_YEAR, side="left") + 1
+    ceav = np.where(base <= p["minimum_wage"] * 30.4 * 12, p["ceav_rates"][0], p["ceav_rates"][idx])
+    minimum = (annual > 0) & (annual <= MW_YEAR)
+    # LSS art36: employers also bear the worker shares at the minimum wage. Existing
+    # mx_withholding exempts that wage, so compute the shares directly at its capped SBC.
+    worker_ssc_assumed = np.where(minimum, base * SSC_RATE + excess * SSC_RATE_SUR, 0.0)
+    worker_afore_assumed = np.where(minimum, base * AFORE_RATE, 0.0)
+    out = {"imss": exposure * (p["fixed"] * UMA_YEAR * (g > 0) + p["excess"] * excess
+                                + base * (p["cash_benefit"] + p["pension_medical"] + p["disability_life"]
+                                          + p["daycare"] + risk) + worker_ssc_assumed),
+           "retirement": exposure * (base * (p["retirement"] + ceav) + worker_afore_assumed),
+           "housing": exposure * base * p["housing"]}
+    out["total"] = sum(out.values())
+    gate("mexico_employer_components_close", np.isfinite(out["total"]).all()
+         and np.allclose(out["total"], out["imss"] + out["retirement"] + out["housing"], rtol=0, atol=1e-9))
+    return out
+
+
 def fuel_ieps_by_decile():
     """The fuel excise by household decile, % of income on SHCP's base (see SHCP_FUEL_SHARE), and the decile incomes
     (MXN m) that SHCP's IVA shares and rates imply."""
@@ -124,7 +240,7 @@ def age_band(a):
 def ppp():
     out = {}
     for ind in ("PA.NUS.PPP", "PA.NUS.PRVT.PP", "PA.NUS.FCRF"):
-        rows = json.load(open(CACHE / f"wdi_{ind}.json"))[1]
+        rows = json.loads(pinned_text(f"wdi_{ind}.json"))[1]
         v = [r["value"] for r in rows if r["country"]["id"] == "MX" and r["date"] == "2024"]
         gate(f"wdi_{ind}_2024", len(v) == 1 and v[0], found=v)
         out[ind] = float(v[0])
@@ -223,6 +339,20 @@ def load_enigh():
     d["afore_mxn"] = a                                 # the worker's own retirement saving
     d["formal_gross_mxn"] = fg
     d["gross_mxn"] = d.labor_mxn + (fg - d.formal_net_mxn)
+    employer = mx_employer_contributions(fg)
+    for component in ("imss", "retirement", "housing"):
+        d[f"employer_{component}_mxn"] = employer[component]
+    d["employer_mxn"] = employer["total"]
+    p = employer_parameters()
+    d["employer_risk_min_mxn"] = mx_employer_contributions(fg, p["risk_min"])["total"]
+    d["employer_risk_max_mxn"] = mx_employer_contributions(fg, p["risk_max"])["total"]
+    d["employer_full_year_mxn"] = mx_employer_contributions(fg, full_year=True)["total"]
+    d["compensation_mxn"] = d.gross_mxn + d.employer_mxn
+    d["total_tax_mxn"] = d.withheld_tax_mxn + d.employer_mxn
+    gate("mexico_employer_nonformal_zero", bool((d.employer_mxn[d.formal_net_mxn == 0] == 0).all()))
+    gate("mexico_compensation_adds_each_employer_contribution_once",
+         bool(np.allclose(d.compensation_mxn - d.total_tax_mxn,
+                          d.gross_mxn - d.withheld_tax_mxn, rtol=0, atol=1e-7)))
     miss = (fg - t - s - a) - d.formal_net_mxn
     gate("gross_up_closes", ((miss >= 0) & (miss <= 10 + 5e-4 * d.formal_net_mxn)).all(),
          worst=float(miss.abs().max()))
@@ -275,21 +405,31 @@ def young_by_parent(d, rates):
             rows.append(dict(sex=sex, band=band, parent_cat=int(pc), parent_cat_name=CATS[int(pc)], n=len(t),
                              persons=t.w.sum(), coresident_share_of_band=share, employment_rate=emp,
                              weekly_hours_employed=hrs, income_per_person_mxn=per["income"],
-                             **{f"{m}_per_person_mxn": per[m] for m in ("gross", "withheld", "afore", "ctax")}))
+                              **{f"{m}_per_person_mxn": per[m] for m in MONEY if m != "income"}))
     out = pd.DataFrame(rows)
+    eligible = y[y.parent_cat >= 0]
+    gate("mexico_young_cells_conserve_weights", abs(float(out.persons.sum()) - float(eligible.w.sum())) < 1e-3)
+    for m, col in MONEY.items():
+        got = float((out.persons * out[f"{m}_per_person_mxn"]).sum())
+        target = float((eligible.w * eligible[col]).sum())
+        gate(f"mexico_young_cells_{m}_closure", abs(got - target) / 1e9 < 1e-6)
     add_ppp(out, rates)
     return out
 
 
 def add_ppp(t, rates):
     """PPP-dollar columns for every per-person peso column: GDP PPP (central) and private-consumption PPP."""
-    for m in ("income", "gross", "withheld", "afore", "ctax"):
+    for m in MONEY:
         t[f"{m}_per_person_ppp_gdp"] = t[f"{m}_per_person_mxn"] / rates["PA.NUS.PPP"]
         t[f"{m}_per_person_ppp_consumption"] = t[f"{m}_per_person_mxn"] / rates["PA.NUS.PRVT.PP"]
 
 
 MONEY = {"income": "labor_mxn", "gross": "gross_mxn", "withheld": "withheld_tax_mxn", "afore": "afore_mxn",
-         "ctax": "ctax_mxn"}
+         "ctax": "ctax_mxn", "employer": "employer_mxn", "compensation": "compensation_mxn",
+         "total_tax": "total_tax_mxn", "employer_imss": "employer_imss_mxn",
+         "employer_retirement": "employer_retirement_mxn", "employer_housing": "employer_housing_mxn",
+         "employer_risk_min": "employer_risk_min_mxn", "employer_risk_max": "employer_risk_max_mxn",
+         "employer_full_year": "employer_full_year_mxn"}
 
 
 def cells(d, weight_col="w"):
@@ -313,8 +453,12 @@ def cells(d, weight_col="w"):
     out["weekly_hours_employed"] = out.hours_sum / out.hours_n.replace(0, np.nan)
     out["income_per_person_mxn"] = out.income_sum / out.persons
     out["income_per_employed_mxn"] = out.income_sum / out.employed.replace(0, np.nan)
-    for k in ("gross", "withheld", "afore", "ctax"):
+    for k in MONEY:
         out[f"{k}_per_person_mxn"] = out[f"{k}_sum"] / out.persons
+    for k in MONEY:
+        target = float((d[weight_col] * d[MONEY[k]]).sum())
+        gate(f"mexico_cells_{k}_national_closure", abs(float(out[f"{k}_sum"].sum()) - target) / 1e9 < 1e-6)
+    gate("mexico_cells_conserve_weights", abs(float(out.persons.sum()) - float(d[weight_col].sum())) < 1e-3)
     return out
 
 
@@ -471,6 +615,8 @@ def main():
             "income_per_person_ppp_consumption", "income_per_employed_ppp_gdp", "gross_per_person_mxn",
             "withheld_per_person_mxn", "afore_per_person_mxn", "ctax_per_person_mxn"] + [
             f"{m}_per_person_ppp_{p}" for m in ("gross", "withheld", "afore", "ctax") for p in ("gdp", "consumption")]
+    cols += [f"{m}_per_person_{unit}" for m in MONEY if m not in ("income", "gross", "withheld", "afore", "ctax")
+             for unit in ("mxn", "ppp_gdp", "ppp_consumption")]
     c[cols].to_csv(DERIVED / "mexico_earnings_cells.csv", index=False, lineterminator="\n", float_format="%.6g")
     gate("enigh_persons_15plus", 95e6 < c.persons.sum() < 110e6, persons=c.persons.sum())
     yp = young_by_parent(en, rates)
@@ -534,6 +680,16 @@ def main():
     ca, cmeta = comparators(rates)
     ca.to_csv(DERIVED / "mexico_comparators_by_age.csv", index=False, lineterminator="\n", float_format="%.6g")
     meta["comparators"] = cmeta
+    meta["employer_contributions"] = dict(
+        parameters={k: v.tolist() if isinstance(v, np.ndarray) else v for k, v in employer_parameters().items()},
+        totals_mxn_bn={k: float((en.w * en[v]).sum() / 1e9) for k, v in MONEY.items() if k.startswith("employer")},
+        source="IMSS Informe 2024–2025 Annex A, Table A.3; LSS art74; INFONAVIT art29(II); exact retrieved text pinned",
+        assumptions="Formal gross cash approximates SBC; annualization 30.4*12 matches existing employee model; "
+                    "work-year fraction below the existing integrated minimum is gross/MW_YEAR; accident-history "
+                    "risk at IMSS observed March-2024–February-2025 average, LSS bounds beside. Fixed/UMA quotas "
+                    "use December-2024 UMA as existing model; no employer-location/industry accident record.",
+        account_deposits="SAR/CEAV and housing deposits belong to the worker. Including them in total_tax follows "
+                         "the requested ledger's contribution convention, not a claim they are public revenue.")
     json.dump(meta, open(DERIVED / "mexico_meta.json", "w"), indent=1, sort_keys=True)
     print(json.dumps(meta, indent=1), file=sys.stderr)
 

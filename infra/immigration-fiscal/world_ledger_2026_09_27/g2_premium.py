@@ -224,7 +224,7 @@ def transitions():
 
 
 # gross pay, pay as received, income tax and employee contributions withheld, consumption taxes (IVA and IEPS)
-MONEY = ("inc", "net", "tax", "ctax")
+MONEY = ("inc", "net", "tax", "ctax", "employer", "cash")
 
 
 def mexico_cells(ppp):
@@ -232,11 +232,18 @@ def mexico_cells(ppp):
     band, parents' schooling) for the young ('y' prefix): gross pay (ENIGH pay as received, formal jobs grossed
     up by the 2024 statutory withholding), pay as received, withheld tax, consumption taxes, employment and weekly
     hours."""
-    cols = dict(inc=f"gross_per_person_ppp_{ppp}", net=f"income_per_person_ppp_{ppp}",
-                tax=f"withheld_per_person_ppp_{ppp}", ctax=f"ctax_per_person_ppp_{ppp}", emp="employment_rate",
+    cols = dict(inc=f"compensation_per_person_ppp_{ppp}", net=f"income_per_person_ppp_{ppp}",
+                tax=f"total_tax_per_person_ppp_{ppp}", ctax=f"ctax_per_person_ppp_{ppp}",
+                employer=f"employer_per_person_ppp_{ppp}", cash=f"gross_per_person_ppp_{ppp}", emp="employment_rate",
                 hrs="weekly_hours_employed")
     c = pd.read_csv(DERIVED / "mexico_earnings_cells.csv")
     y = pd.read_csv(DERIVED / "mexico_young_by_parent.csv")
+    # Reconstruct identities from the same serialized terms instead of independently rounded totals.
+    for table in (c, y):
+        table[f"compensation_per_person_ppp_{ppp}"] = (table[f"gross_per_person_ppp_{ppp}"]
+            + table[f"employer_per_person_ppp_{ppp}"])
+        table[f"total_tax_per_person_ppp_{ppp}"] = (table[f"withheld_per_person_ppp_{ppp}"]
+            + table[f"employer_per_person_ppp_{ppp}"])
     out = {k: {(r.sex, r.band, r.cat): getattr(r, col) for r in c.itertuples()} for k, col in cols.items()}
     out.update({f"y{k}": {(r.sex, r.band, r.parent_cat): getattr(r, col) for r in y.itertuples()}
                 for k, col in cols.items()})
@@ -310,14 +317,21 @@ def summarize(gen, convention, people, e, delta, extra):
     wk = works & (hrs > 0)
     adult = people.A_AGE.to_numpy() >= 15
     E_US, E_MX = (w * e_us).sum(), (w * e["inc"] * (1 + delta)).sum()
+    gate("premium_money_finite", np.isfinite(w).all() and np.isfinite(e_us).all()
+         and all(np.isfinite(e[m]).all() for m in MONEY))
+    gate("mexico_compensation_identity", abs(float((w * (e["inc"] - e["cash"] - e["employer"])).sum())) < 1e-3)
     emp_mx, hw_mx = e["emp"], e["hw"]
     return dict(generation=gen, convention=convention, **extra, selection_delta=round(delta, 6),
+                income_basis="US cash intermediate; Mexico total compensation; world_ledger adds US employer receipts",
                 persons_m=w.sum() / 1e6, persons_15plus_m=w[adult].sum() / 1e6,
                 us_earnings_bn=E_US / 1e9, mexico_earnings_bn=E_MX / 1e9, gain_bn=(E_US - E_MX) / 1e9,
                 gain_per_person=(E_US - E_MX) / w.sum(), ratio_us_to_mexico=E_US / E_MX if E_MX > 0 else np.nan,
                 mexico_take_home_bn=(w * e["net"] * (1 + delta)).sum() / 1e9,
                 mexico_withheld_tax_bn=(w * e["tax"] * (1 + delta)).sum() / 1e9,
                 mexico_consumption_tax_bn=(w * e["ctax"] * (1 + delta)).sum() / 1e9,
+                us_cash_earnings_bn=E_US / 1e9,
+                mexico_cash_earnings_bn=(w * e["cash"] * (1 + delta)).sum() / 1e9,
+                mexico_employer_contributions_bn=(w * e["employer"] * (1 + delta)).sum() / 1e9,
                 employment_us_15plus=(w * works)[adult].sum() / w[adult].sum(),
                 employment_mx_15plus=(w * emp_mx)[adult].sum() / w[adult].sum(),
                 weekly_hours_us_workers=(w * hrs)[wk].sum() / w[wk].sum(),

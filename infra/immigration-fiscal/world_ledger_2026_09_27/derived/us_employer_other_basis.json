@@ -1,0 +1,70 @@
+{
+ "cells": {
+  "T30100-A/8": {
+   "bea_series": "A061RC",
+   "bn": 1923.151,
+   "label": "From persons"
+  },
+  "T30600-A/2": {
+   "bea_series": "B039RC",
+   "bn": 866.444,
+   "label": "Employer contributions"
+  },
+  "T30600-A/20": {
+   "bea_series": "B228RC",
+   "bn": 1056.705,
+   "label": "Employee and self-employed contributions"
+  },
+  "T30600-A/22": {
+   "bea_series": "A1586C",
+   "bn": 894.003,
+   "label": "Old-age, survivors, disability, and hospital insurance"
+  },
+  "T30600-A/27": {
+   "bea_series": "CON530",
+   "bn": 145.117,
+   "label": "Supplementary medical insurance"
+  },
+  "T30600-A/4": {
+   "bea_series": "CON110",
+   "bn": 790.681,
+   "label": "Old-age, survivors, disability, and hospital insurance"
+  },
+  "T30600-A/7": {
+   "bea_series": "A1581C",
+   "bn": 43.767,
+   "label": "Unemployment insurance"
+  }
+ },
+ "employer_fraction": 0.8116014997321908,
+ "employer_ui_fraction": 0.46884841992501347,
+ "group_allocation_assumption": "Apply this national payer mix to the account's other_domestic_social_contributions, whose positive_FICA_worker key is common to the mix. The group's actual employer/worker mix is not measured.",
+ "locators": {
+  "denominator": "T30100-A/8 - T30600-A/22 - T30600-A/4 - T30600-A/27",
+  "employer": "T30600-A/2 - T30600-A/4",
+  "ui_subset": "T30600-A/7",
+  "worker": "T30600-A/20 - T30600-A/22 - T30600-A/27"
+ },
+ "national_domestic_residual_bn": 93.35,
+ "national_employer_residual_bn": 75.763,
+ "national_employer_ui_bn": 43.767,
+ "national_source_rounding_bn": 0.002,
+ "national_worker_residual_bn": 17.585,
+ "payer": "employers for employer residual; worker/self-employed for worker residual; unassigned source rounding, not an employer contribution",
+ "source": {
+  "authority": "full_account_receipts_2026_09_20/sources.json bea2024",
+  "path": "inputs/bea_nipa_section3_2026_08_26.xlsx",
+  "representation": "original BEA XLSX bytes copied without change from existing pinned primary file",
+  "sha256": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+  "url": "https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx",
+  "vintage": "2026-08-26",
+  "year": 2024
+ },
+ "source_rounding_fraction": 2.1424745581146227e-05,
+ "unidentified_group_employer_fraction_bound": [
+  0.0,
+  1.0
+ ],
+ "worker_fraction": 0.18837707552222818,
+ "year": 2024
+}

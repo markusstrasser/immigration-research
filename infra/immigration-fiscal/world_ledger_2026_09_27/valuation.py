@@ -144,6 +144,9 @@ CLASSES = {
                 "(offender processing, enforcement) at 0; cj_use_allocation central split"),
     "not_a_service": ("none", 0.0, 0.0, 0.0, "interest, business subsidies, foreign lines: no service to the group"),
     "correction": ("none", 0.0, 0.0, 0.0, "account correction rows (care-work taxes, shelter, audit constants)"),
+    "tax": ("effect", 1.0, 1.0, 1.0, "explicit group-borne receipt, $1 per $1"),
+    "source_tax": ("none", 0.0, 0.0, 0.0, "item 6 source receipts on job capital; no additional debit from measured "
+                   "group earnings; corporate labour incidence is already inside wages [INFERENCE]"),
 }
 LINES = {
     "cash": ["social_security", "ssi", "unemployment", "refundable_tax_credits", "family_and_general_assistance",
@@ -178,12 +181,40 @@ LINES = {
 # valuation_meta (state_price_value_bn).
 STATE_PRICE_LINES = ("state_price_public_order_safety", "state_price_health_services",
                      "state_price_recreation_culture")
-# Receipts are taxes the group pays, which it loses at $1 per $1 ('tax'), except a negative receipt that pays for a
-# service to the group. From sept29 public housing's enterprise deficit is its own receipt line at the rental line's
+# Every receipt needs an explicit class and economic payer; unknown lines fail closed. Employer contributions
+# are paid from total compensation (the premium's income basis), not cash earnings. Item 6 overrides its receipt
+# lines using the frozen item registry: owners keep their after-tax return, and labour incidence is inside wages.
+# From sept29 public housing's enterprise deficit is its own receipt line at the rental line's
 # key: below-market rent to public-housing tenants, valued as a housing voucher like rental assistance and the return
 # on public housing's capital (ent_housing_sl); the lead accepted it on 2026-09-29. The alternative, $1 per $1 as the
 # enterprise_surplus receipt that held it before, is reported beside it in RESULT.md.
-RECEIPT_CLASS = {"housing_enterprise_surplus": "housing_voucher"}
+RECEIPT_PAYER = {
+    "federal_income_tax": "group_filers", "state_local_income_tax": "group_filers",
+    "employee_oasdi": "group_workers", "employee_hi": "group_workers",
+    "employer_oasdi": "group_workers_via_total_compensation", "employer_hi": "group_workers_via_total_compensation",
+    "self_employment_oasdi_hi": "group_self_employed", "other_domestic_social_contributions": "group_contributors",
+    "medicare_supplementary_premiums": "group_enrollees", "personal_current_transfers": "group_payers",
+    "other_personal_tax": "group_taxpayers", "personal_motor_vehicle": "group_vehicle_owners",
+    "modeled_owner_property": "group_homeowners", "tenant_occupied_property": "group_tenants",
+    "personal_property_tax": "group_property_owners", "general_sales_tax": "group_consumers",
+    "excise_selective_sales": "group_consumers", "customs_duties": "group_consumers",
+    "corporate_capital": "group_capital_owners_under_pre_item6_incidence",
+    "corporate_labor": "group_workers_under_pre_item6_incidence",
+    "remaining_production_property": "group_under_pre_item6_incidence",
+    "other_production_taxes": "group_under_pre_item6_incidence",
+    "business_current_transfers": "group_under_account_incidence", "enterprise_surplus": "group_enterprise_customers",
+    "government_asset_income": "group_under_account_incidence", "housing_enterprise_surplus": "public_housing_enterprise",
+    "rest_world_current_transfers": "rest_of_world", "rest_world_tax_contributions": "rest_of_world",
+    "source_rounding": "account_rounding_no_economic_payment",
+    "user_fees_key_k12": "carrier_no_economic_payment", "user_fees_key_college": "carrier_no_economic_payment",
+    "user_fees_key_health": "carrier_no_economic_payment",
+}
+RECEIPT_CLASS = dict.fromkeys(RECEIPT_PAYER, "tax")
+RECEIPT_CLASS["housing_enterprise_surplus"] = "housing_voucher"
+SOURCE_TAX_PAYER = {"corporate_capital": "business_capital_owners_outside_group",
+                    "corporate_labor": "group_workers_via_measured_wages",
+                    "remaining_production_property": "business_capital_owners_outside_group",
+                    "other_production_taxes": "business_capital_owners_outside_group"}
 # The Sept 27 case's return on public capital, by component of main_case_long_run_2026_09_27's
 # meta.capital_return (f3031ab), classed before any sept27 number was seen (RESULT.md, "When the sept27 pins
 # arrive"): a function's capital takes that function's class, enterprise capital is a service at cost, and public
@@ -208,7 +239,7 @@ CASE_LANES = {"sept29": f"{FISCAL_REL}/main_case_2026_09_29", "oct05": f"{FISCAL
 # user-fee item's k12_user_fees, college_user_fees, health_sl_user_fees and health_fed_user_fees; meta.capital_return
 # .components' of_component). Each takes the class of the component it offsets, as it takes that component's level
 # and financing (the v6 Consumers table). value_case() and value_generations() set the case's offsets here; its
-# carrier receipt lines are taxes at effect 0, as every receipt without a RECEIPT_CLASS.
+# carrier receipt lines have an explicit class and economic payer, at effect 0.
 ITEM_CLASS = {}
 FHL_EXTERNAL = 2152 / 3600          # N / G per recipient-year (FHL JPE 2019, author manuscript: N $2,152, G $3,600)
 
@@ -223,6 +254,121 @@ def pinned_csv(commit, rel):
     return pd.read_csv(io.BytesIO(out.stdout))
 
 
+def case_payload(case):
+    """The authoritative item registry and edits, read at the frozen case pin."""
+    if not PINS[case].get("main_case"):
+        return {"meta": {"items": []}, "edits": []}
+    out = subprocess.run(["git", "-C", str(REPO), "show",
+                          f"{PINS[case]['main_case']}:{CASE_LANES[case]}/derived/corrections.json"],
+                         capture_output=True, check=True)
+    return json.loads(out.stdout)
+
+
+def item_edits(payload, item_id):
+    items = [x for x in payload["meta"].get("items", []) if x["id"] == item_id and x.get("applied")]
+    gate(f"unique_item_{item_id}", len(items) <= 1, count=len(items))
+    if not items:
+        return None, []
+    item = items[0]
+    first, count = item["edits"]["first"], item["edits"]["count"]
+    edits = payload["edits"][first:first + count]
+    gate(f"item_edits_covered_{item_id}", len(edits) == count, first=first, count=count)
+    return item, edits
+
+
+def receipt_contract(case):
+    classes, payers = dict(RECEIPT_CLASS), dict(RECEIPT_PAYER)
+    item, edits = item_edits(case_payload(case), "job_capital_taxes")
+    if item is not None:
+        lines = {e["line"] for e in edits}
+        gate("item6_explicit_receipt_incidence", all(e["side"] == "receipt" for e in edits)
+             and lines == set(SOURCE_TAX_PAYER), lines=sorted(lines))
+        for line in lines:
+            classes[line], payers[line] = "source_tax", SOURCE_TAX_PAYER[line]
+    return classes, payers
+
+
+def finite_rows(frame, name, columns):
+    """Pandas reductions skip NaN: validate inputs and outputs before any reduction."""
+    gate(f"finite_{name}", bool(np.isfinite(frame[list(columns)].to_numpy(dtype=float)).all()), columns=list(columns))
+
+
+def child_credit_adjustments(case, lines):
+    """Isolate item 5b by its frozen parts, on each generation/end's actual scenario and allocation.
+
+    Amounts are positive benefits to the nonmember filers who hold the return. Reverse terms remain signed;
+    neither the headline's removal cost nor its generation fiscal split changes. No total is inferred from prose.
+    """
+    payload = case_payload(case)
+    item, edits = item_edits(payload, "child_credits")
+    if item is None:
+        return {}
+    gate("child_credit_lines", {e["line"] for e in edits} == {"federal_income_tax", "refundable_tax_credits"})
+    parts = item["parts"]
+    for j, edit in enumerate(edits):
+        pieces = [p for p in parts.values() if p["edit"] == j]
+        gate(f"child_credit_parts_close_{j}", bool(pieces) and all(
+            abs(sum(p["by"][a] for p in pieces) - edit["by"][a]) < 1e-9 for a in ("personal", "shared")))
+    result = {}
+    for (end, gen), group in lines.groupby(["band_end", "generation"]):
+        gate(f"child_credit_allocation_{end}_{gen}", group.allocation.nunique() == 1)
+        allocation = group.allocation.iloc[0]
+        for j, edit in enumerate(edits):
+            match = group[(group.side == edit["side"]) & (group.line == edit["line"])]
+            gate(f"child_credit_line_present_{end}_{gen}_{j}", len(match) == 1)
+            row = match.iloc[0]
+            if edit["side"] == "receipt" and row.key.split(":", 1)[0] != edit["scenario"]:
+                continue
+            if edit["side"] == "spending":
+                gate("child_credit_spending_key", row.key == edit["key"], key=row.key)
+            delta = 0.0
+            for name, part in parts.items():
+                if part["edit"] != j:
+                    continue
+                if name.startswith("lineage_"):
+                    part_gen = "G3+"
+                elif name.startswith("union_") and name.split(":", 1)[0][6:] in ("G1", "G2", "G3plus"):
+                    part_gen = name.split(":", 1)[0][6:].replace("G3plus", "G3+")
+                else:
+                    raise SystemExit(f"[BLOCKED] unknown child-credit generation part {name!r}")
+                if part_gen == gen:
+                    delta += part["by"][allocation]
+            benefit = delta * row.response * (-1 if edit["side"] == "receipt" else 1)
+            key = (end, gen, edit["side"], edit["line"])
+            result[key] = result.get(key, 0.0) + benefit
+    gate("finite_child_credit_adjustments", all(np.isfinite(v) for v in result.values()))
+    # The parts must also reproduce each union edit at the chosen scenario/key, independently of generation routing.
+    for end, group in lines.groupby("band_end"):
+        expected = 0.0
+        for edit in edits:
+            match = group[(group.side == edit["side"]) & (group.line == edit["line"])]
+            gate("child_credit_same_key_response", match.key.nunique() == match.response.nunique() == 1)
+            row = match.iloc[0]
+            if edit["side"] == "receipt" and row.key.split(":", 1)[0] != edit["scenario"]:
+                continue
+            expected += edit["by"][row.allocation] * row.response * (-1 if edit["side"] == "receipt" else 1)
+        actual = sum(v for k, v in result.items() if k[0] == end)
+        gate(f"child_credit_generation_sum_{end}", abs(actual - expected) < 1e-9, actual=actual, expected=expected)
+    return result
+
+
+def valuation_row(r, classes, payers, credit=0.0):
+    """Keep the fiscal closure separate from who receives or bears the economic flow."""
+    finite_rows(pd.DataFrame([{"amount_bn": r.amount_bn, "effect_bn": r.effect_bn, "response": r.response}]),
+                f"line_{r.line}", ("amount_bn", "effect_bn", "response"))
+    cls, cost, values, third = value_line(r, receipt_classes=classes)
+    values = [v - credit for v in values]
+    payer = payers.get(r.line) if r.side == "receipt" else "government_budget"
+    gate(f"economic_payer_{r.line}", bool(payer), side=r.side)
+    if credit and r.side == "receipt":
+        payer += ";item5b_delta_nonmember_filers"
+    return dict(cls=cls, economic_payer=payer, receipt_incidence_class=cls if r.side == "receipt" else "not_receipt",
+                amount_bn=r.amount_bn, response=r.response, G_bn=cost, V_low_bn=values[0],
+                V_central_bn=values[1], V_high_bn=values[2], third_party_bn=third, net_cost_bn=cost,
+                source_tax_credit_bn=r.effect_bn if cls == "source_tax" else 0.0,
+                child_credit_other_residents_bn=credit, group_credit_adjustment_bn=-credit)
+
+
 _STATE_PRICE = {}
 
 
@@ -234,6 +380,7 @@ def state_price_functions(line):
         q = pd.read_csv(path)
         q = q[(q.line == line) & (q.function != "all")].set_index("function")
         gate(f"state_price_functions_{line}", len(q) > 0, line=line)
+        finite_rows(q, f"state_price_{line}", ("gap_bn", "quantity_bn"))
         _STATE_PRICE[line] = q[["gap_bn", "quantity_bn"]]
     return _STATE_PRICE[line]
 
@@ -268,8 +415,9 @@ def offset_classes(case):
     return classes
 
 
-def value_line(r, part="quantity_bn"):
-    cls = RECEIPT_CLASS.get(r.line) if r.side == "receipt" else LINE_CLASS.get(r.line, ITEM_CLASS.get(r.line))
+def value_line(r, part="quantity_bn", receipt_classes=None):
+    receipts = RECEIPT_CLASS if receipt_classes is None else receipt_classes
+    cls = receipts.get(r.line) if r.side == "receipt" else LINE_CLASS.get(r.line, ITEM_CLASS.get(r.line))
     if cls is None:
         raise SystemExit(f"[BLOCKED] unclassified {r.side} line {r.line!r}: add it to LINES before valuing")
     basis, lo, mid, hi, _ = CLASSES[cls]
@@ -298,24 +446,27 @@ def value_case(case):
     f = pinned_csv(pin["winners"], lane_file(case, "winners", "fiscal_lines_band_ends.csv"))
     f = f[f.case == pin["model"]]
     gate("case_present", len(f) > 0, case=case, model=pin["model"])
+    finite_rows(f, "case_inputs", ("amount_bn", "response", "effect_bn"))
+    classes, payers = receipt_contract(case)
+    credit = {}
+    if case == "oct14":
+        glines = pd.read_csv(DERIVED / f"generation_lines_{case}.csv")
+        glines["generation"] = glines.generation.replace({"G3plus": "G3+"})
+        finite_rows(glines, "child_credit_inputs", ("amount_bn", "response", "effect_bn"))
+        for (end, _, side, line), amount in child_credit_adjustments(case, glines).items():
+            credit[(end, side, line)] = credit.get((end, side, line), 0.0) + amount
     rows = []
     for r in f.itertuples():
-        if r.side == "receipt" and r.line not in RECEIPT_CLASS:
-            # A tax the group pays: a transfer to other residents; the group loses it at $1 per $1.
-            rows.append(dict(case=case, end=r.end, side="receipt", line=r.line, cls="tax", amount_bn=r.amount_bn,
-                             response=r.response, G_bn=-r.effect_bn, V_low_bn=-r.effect_bn, V_central_bn=-r.effect_bn,
-                             V_high_bn=-r.effect_bn, third_party_bn=0.0, F_bn=0.0, net_cost_bn=-r.effect_bn))
-            continue
-        cls, cost, v, third = value_line(r)
         # The capital return's components (side capital_return) are costs, like spending lines.
         rows.append(dict(case=case, end=r.end, side="receipt" if r.side == "receipt" else "spending", line=r.line,
-                         cls=cls, amount_bn=r.amount_bn, response=r.response, G_bn=cost, V_low_bn=v[0],
-                         V_central_bn=v[1], V_high_bn=v[2], third_party_bn=third, F_bn=0.0, net_cost_bn=cost))
+                         F_bn=0.0, **valuation_row(r, classes, payers, credit.get((r.end, r.side, r.line), 0.0))))
     out = pd.DataFrame(rows)
+    finite_rows(out, "case_valuations", ("amount_bn", "G_bn", "V_low_bn", "V_central_bn", "V_high_bn", "net_cost_bn"))
     # Gate: the lines reproduce the account's direct response A at each end (spending less receipts), as the
     # winners lane's fiscal_specs states it.
     sp = pinned_csv(pin["winners"], lane_file(case, "winners", "fiscal_specs.csv"))
     sp = sp[(sp.case == pin["model"]) & sp.band_end.notna()].drop_duplicates("band_end").set_index("band_end")
+    finite_rows(sp, "case_specs", ("A_bn",))
     for end, s in out.groupby("end"):
         A = s.net_cost_bn.sum()
         gate(f"lines_reproduce_A_{end}", abs(A + sp.loc[end, "A_bn"]) < 1e-3, lines=A, A_bn=sp.loc[end, "A_bn"])
@@ -339,6 +490,9 @@ def value_generations(case, union):
     ITEM_CLASS.update(offset_classes(case))
     g = pd.read_csv(path)
     g["generation"] = g.generation.replace({"G3plus": "G3+"})
+    finite_rows(g, "generation_inputs", ("amount_bn", "response", "effect_bn"))
+    classes, payers = receipt_contract(case)
+    credit = child_credit_adjustments(case, g)
     tot = g[g.side == "total"].pivot_table(index=["band_end", "generation"], columns="line", values="effect_bn")
     lines = g[g.side != "total"].assign(side=lambda d: d.side.replace({"capital": "spending"}))
     # Gate: the three generations add to the case's lines, line by line (the same line set, the same amounts).
@@ -351,19 +505,19 @@ def value_generations(case, union):
     gate("generations_add_to_the_case_lines", bool((d < 1e-6).all()), max_abs_diff=d.to_dict())
     rows = []
     for r in lines.itertuples():
-        head = dict(case=case, end=r.band_end, generation=r.generation, side=r.side, line=r.line, amount_bn=r.amount_bn)
-        if r.side == "receipt" and r.line not in RECEIPT_CLASS:
-            rows.append(dict(head, cls="tax", G_bn=-r.effect_bn, V_low_bn=-r.effect_bn, V_central_bn=-r.effect_bn,
-                             V_high_bn=-r.effect_bn, third_party_bn=0.0, net_cost_bn=-r.effect_bn))
-            continue
-        cls, cost, v, third = value_line(r)
-        rows.append(dict(head, cls=cls, G_bn=cost, V_low_bn=v[0], V_central_bn=v[1], V_high_bn=v[2],
-                         third_party_bn=third, net_cost_bn=cost))
+        head = dict(case=case, end=r.band_end, generation=r.generation, side=r.side, line=r.line)
+        rows.append(dict(head, **valuation_row(r, classes, payers,
+                         credit.get((r.band_end, r.generation, r.side, r.line), 0.0))))
     out = pd.DataFrame(rows)
+    finite_rows(out, "generation_valuations", ("amount_bn", "G_bn", "V_low_bn", "V_central_bn", "V_high_bn", "net_cost_bn"))
+    for column in ("V_low_bn", "V_central_bn", "V_high_bn", "child_credit_other_residents_bn", "source_tax_credit_bn"):
+        delta = out.groupby(["end", "side", "line"])[column].sum() - union.set_index(["end", "side", "line"])[column]
+        gate(f"generations_add_to_union_{column}", bool((delta.abs() < 1e-6).all()), max_abs_diff=float(delta.abs().max()))
     # Gate: each generation's net cost plus its production term is the generation lane's cost (convention (a)).
     pin = PINS[case]["generation"]
     res = pinned_csv(pin, lane_file(case, "generation", "generation_results.csv"))
     res = res[res.convention == "a"].assign(generation=lambda d: d.generation.replace({"G3plus": "G3+"}))
+    finite_rows(res, "generation_results", ("cost_bn",))
     res = res.set_index(["band_end", "generation"]).cost_bn
     net = out.groupby(["end", "generation"]).net_cost_bn.sum()
     worst = max(abs(net[k] + tot.loc[k, "production"] - res[k]) for k in res.index)
@@ -425,6 +579,7 @@ def value_block(cases, mx):
         vals.append(v)
         vg = value_generations(case, v)
         gens.append(vg)
+        meta.setdefault("incidence", {})[case] = incidence_summary(case, v, vg)
         meta["generations"][case] = {f"{end}|{g}": dict(net_cost_bn=float(s.net_cost_bn.sum()),
                                                        V_central_bn=float(s.V_central_bn.sum()))
                                      for (end, g), s in vg.groupby(["end", "generation"])}
@@ -445,6 +600,54 @@ def value_block(cases, mx):
     json.dump(meta, open(at("valuation_meta.json"), "w"), indent=1, sort_keys=True)
     print(json.dumps(meta["cases"], indent=1), file=sys.stderr)
     print(by[by.end == "low"].drop(columns=["source"]).round(2).to_string(), file=sys.stderr)
+
+
+def incidence_summary(case, union, generations):
+    """Expose payer corrections to consumers; source counterparts remain explicitly unidentified.
+
+    The foreign-parity bound is a stress convention, not an empirical identification bound. It applies only to
+    capital-source taxes; removing the second debit of corporate_labor has no foreign-tax counterpart here.
+    """
+    for name, values in (("incidence_union", union), ("incidence_generations", generations)):
+        finite_rows(values, name, ("source_tax_credit_bn", "child_credit_other_residents_bn"))
+    payload = case_payload(case)
+    job, _ = item_edits(payload, "job_capital_taxes")
+    child, _ = item_edits(payload, "child_credits")
+    result = {}
+    for end, rows in union.groupby("end"):
+        credit = float(rows.child_credit_other_residents_bn.sum())
+        labor = float(rows.loc[rows.line.eq("corporate_labor"), "source_tax_credit_bn"].sum())
+        source = float(rows.source_tax_credit_bn.sum())
+        identified_source = identified_labor = 0.0
+        if job is not None:
+            identified_source = job["source_central_bn"][end]["personal"]
+            corporate = payload["meta"]["job_capital_taxes"]["lines"]["corporate"]
+            identified_labor = labor * corporate["group_bn"]["personal"] / corporate["group_after_bn"]["personal"]
+            # The union source total must match the frozen item's own reference-effect account.
+            gate(f"item6_receipt_effect_{end}", abs(source - job["effect_at_reference_bn"][end]["personal"]) < 1e-6,
+                 source=source, item=job["effect_at_reference_bn"][end]["personal"])
+        result[end] = dict(source_tax_credit_bn=source, corporate_labor_credit_bn=labor,
+                           capital_source_tax_credit_bn=source - labor,
+                           identified_union_source_tax_credit_bn=identified_source,
+                           identified_union_corporate_labor_credit_bn=identified_labor,
+                           identified_union_capital_source_tax_credit_bn=identified_source - identified_labor,
+                           child_credit_other_residents_bn=credit, group_credit_adjustment_bn=-credit,
+                           identified_union_child_credit_other_residents_bn=0.0 if child is None else child["source_net_bn"],
+                           added_people_child_credit_other_residents_bn=0.0 if child is None else child["added_people_bn"],
+                           child_credit_by_generation_bn=generations[generations.end.eq(end)].groupby(
+                               "generation").child_credit_other_residents_bn.sum().to_dict(),
+                           foreign_capital_source_tax_exclusion=dict(
+                               status="unidentified; excluded from central, not measured zero",
+                               mexico_bn=None, rest_of_world_bn=None,
+                               assumption_stress_lower_bn=0.0, assumption_stress_upper_bn=source - labor,
+                               bound_kind="ASSUMPTION: combined foreign tax between zero and US capital-source receipts; "
+                                          "no empirical finite identification bound; no allocation between Mexico and rest of world",
+                               source="https://www.oecd.org/en/publications/corporate-tax-statistics-2024_9c27d6e8-en/"
+                                      "full-report/corporate-effective-tax-rates_c3356c78.html"))
+        if child is not None:
+            gate(f"item5b_credit_total_{end}", abs(credit - child["source_net_bn"] - child["added_people_bn"]) < 1e-9,
+                 credit=credit)
+    return result
 
 
 def main():

@@ -21,7 +21,7 @@ points the same way (section D).
   group. The US plus the group comes out behind when w is below 0.61 (equal weights; 0.69 at λ 1.16, 0.87 at
   λ 1.5), central; counting Mexico's residents, below 0.43–0.68. [FRAMING-SENSITIVE]
 - **The second generation, the operator's other remark ("that's a loss... they don't send remittance").** To other
-  US residents the second generation is a net fiscal cost, $128–153bn a year ($105–117bn on the schools case).
+  other US residents (excluding the group) the second generation is a net fiscal cost, $128–153bn a year ($105–117bn on the schools case).
   [DATA: generation lane, convention (a)] In the world frame its row is the largest in the central, +$300bn a year
   at equal weights, mostly its place premium. The same people raised in Mexico by parents who stayed would earn
   about a quarter as much: a premium of $252bn ($241–260bn). Remittances do not decide the question. The second
@@ -87,7 +87,7 @@ points the same way (section D).
   [CALCULATION: world_ledger.py, every case rebuilt]]
 - [2026-10-07: on main case v6 (`oct07`, the account of $389–461bn adopted that day), on the same 42.75M. The world
   total at equal weights is **+$321.1bn** a year, central (oct05: +$318.9bn). v6 moves it +$2.23bn:
-  - US residents +$0.49bn: the accrual falls $1.48bn, and the borrowed part and other residents' fiscal channel take
+  - other US residents (excluding the group) +$0.49bn: the accrual falls $1.48bn, and the borrowed part and other residents' fiscal channel take
     back $0.99bn;
   - the group +$1.74bn, mostly because the receipts it pays fall $1.81bn, which it values at cost.
   - The US plus the group comes out behind when w is below 0.68 (0.76 at λ 1.16, 0.92 at λ 1.5), as on oct05 after
@@ -376,20 +376,20 @@ FRAMING-SENSITIVE: every weighted total]
 | Mexico's residents | +102.7 | +109.0 | +122.6 | +114.1 | +118.1 | +118.1 | +1,048.9 | +1,048.9 |
 | World total | +363.8 | +314.3 | +209.1 | +275.2 | +386.6 | +393.3 | +2,449.7 | +1,987.3 |
 | Break-even w, world | 0.45 | 0.52 | 0.68 | 0.58 | 0.44 | 0.43 | none | none |
-| Break-even w, US residents only | 0.61 | 0.69 | 0.87 | 0.76 | 0.61 | 0.60 | 0.27 | 0.51 |
+| Break-even w, other US residents in N (excluding the group), group at w | 0.61 | 0.69 | 0.87 | 0.76 | 0.61 | 0.60 | 0.27 | 0.51 |
 
 [2026-09-29: this table counts the group's person-based rows on the published 40.9M, while its budget rows count
 the 39.71M the account prices. On 39.71M (`world_ledger_sept27_row4.csv`; section "Population basis" under "v4 case
 (sept29)"):
 - G1's place premium is $236.4bn, $26.5bn lower, and G1's row is +239.9 at equal weights;
 - the world total is +337.3 at equal weights, +287.6 at λ 1.16, +182.0 at λ 1.5 and +358.4 at Hendren a;
-- break-even w is 0.47 / 0.55 / 0.71 / 0.46 (world) and 0.63 / 0.72 / 0.90 / 0.64 (US residents only);
+- break-even w is 0.47 / 0.55 / 0.71 / 0.46 (world) and 0.63 / 0.72 / 0.90 / 0.64 (other US residents in N (excluding the group), group at w);
 - Mexico's residents +101.5.
 
 In the low outer span at λ 1.5 the world total turns negative, −10.0 against +14.4.]
 
 [2026-09-29: the v4 case (sept29), on 39.71M, is in section "Phase 2 results" under "v4 case (sept29)": the world
-total is +327.6 at equal weights and +350.2 at Hendren a; break-even w is 0.51 (world) and 0.66 (US residents only);
+total is +327.6 at equal weights and +350.2 at Hendren a; break-even w is 0.51 (world) and 0.66 (other US residents in N (excluding the group), group at w);
 in the low outer span at λ 1.5 it is −39.9.]
 
 The same on the schools case (sept26_schools) [CALCULATION: derived/world_ledger.csv; FRAMING-SENSITIVE]:
@@ -404,13 +404,13 @@ The same on the schools case (sept26_schools) [CALCULATION: derived/world_ledger
 | Mexico's residents | +102.7 | +109.0 | +122.6 | +114.1 | +118.1 | +118.1 | +1,048.9 | +1,048.9 |
 | World total | +396.6 | +358.9 | +279.0 | +329.2 | +418.7 | +423.9 | +2,445.9 | +2,084.3 |
 | Break-even w, world | 0.36 | 0.42 | 0.55 | 0.47 | 0.35 | 0.35 | none | none |
-| Break-even w, US residents only | 0.53 | 0.60 | 0.75 | 0.65 | 0.54 | 0.53 | 0.25 | 0.44 |
+| Break-even w, other US residents in N (excluding the group), group at w | 0.53 | 0.60 | 0.75 | 0.65 | 0.54 | 0.53 | 0.25 | 0.44 |
 
 Break-even w solves N + wM = 0, where M is the group's total and N the other parties'. "World" counts Mexico's
 residents in N. Under log weights they gain so much that N is positive and no w breaks even. The US-only column
 leaves them out. Mexico's row is the same in both cases, because none of its rows depends on the US account.
 
-Break-even w (US residents only) across the scenarios, sept27 [CALCULATION; FRAMING-SENSITIVE]:
+Break-even w (other US residents in N (excluding the group), group at w) across the scenarios, sept27 [CALCULATION; FRAMING-SENSITIVE]:
 
 | Public goods | Mexican taxes | Scenario | equal | λ 1.16 | λ 1.5 | Hendren a | log a | log b |
 |---|---|---|---|---|---|---|---|---|
@@ -1326,17 +1326,17 @@ cost, Mexican taxes at the central (withheld plus consumption taxes). $bn a year
 | Mexico's residents | +101.5 | +107.7 | +120.8 | +112.6 | +116.7 | +116.7 | +1,038.4 | +1,038.4 |
 | World total | +327.6 | +270.7 | +149.7 | +225.7 | +350.2 | +356.3 | +2,394.1 | +1,972.3 |
 | Break-even w, world | 0.51 | 0.60 | 0.78 | 0.67 | 0.50 | 0.49 | none | none |
-| Break-even w, US residents only | 0.66 | 0.76 | 0.96 | 0.83 | 0.67 | 0.66 | 0.30 | 0.52 |
+| Break-even w, other US residents in N (excluding the group), group at w | 0.66 | 0.76 | 0.96 | 0.83 | 0.67 | 0.66 | 0.30 | 0.52 |
 
 Controlled rounding keeps each column adding: other residents today at equal weights prints −360.5 (unrounded
 −360.556, which the winners lane prints as −360.6), and G3+ at λ 1.16 and λ 1.5 prints +110.4 (110.342).
 
 **The move from Sept 27, equal weights, central.** Two decimals; the moves are differences of the printed levels,
-and US residents' sept29 level prints −448.58 (unrounded −448.5715) so its column adds.
+and other US residents (excluding the group)' sept29 level prints −448.58 (unrounded −448.5715) so its column adds.
 
 | $bn a year | Sept 27, 40.9M | Sept 27, 39.71M | sept29, 39.71M | the recount | v4 |
 |---|---:|---:|---:|---:|---:|
-| US residents, today and future | −400.04 | −400.04 | −448.58 | 0.00 | −48.54 |
+| other US residents (excluding the group), today and future | −400.04 | −400.04 | −448.58 | 0.00 | −48.54 |
 | The group (G1, G2, G3+) | +661.21 | +635.84 | +674.66 | −25.37 | +38.82 |
 | Mexico's residents | +102.67 | +101.49 | +101.49 | −1.18 | 0.00 |
 | World total | +363.84 | +337.29 | +327.57 | −26.55 | −9.72 |
@@ -1381,7 +1381,7 @@ The recount's sign change holds on v4 and widens. In the low outer span at λ 1.
 39.71M and −$15.56bn on the published count. v4 moves it by −$29.92bn on 39.71M, because λ scales v4's new cost to
 taxpayers and not the group's gain.
 
-**Break-even w** on sept29 (39.71M), world / US residents only:
+**Break-even w** on sept29 (39.71M), world / other US residents in N (excluding the group), group at w:
 - central: 0.51 / 0.66 at equal weights, 0.60 / 0.76 at λ 1.16 and 0.78 / 0.96 at λ 1.5 (Sept 27 on 39.71M: 0.47 /
   0.63 at equal weights);
 - the low outer span: 0.74 / 0.88 at equal weights, and 1.07 / 1.23 at λ 1.5. Above 1, the world comes out behind
@@ -1394,7 +1394,7 @@ charged to the one generation, G1 is 0.60 and G2 0.68. [CALCULATION: world_ledge
 generation_breakeven]
 
 **Per member**, on the account's count (39,712,493 in all; G1 11,036,701): at equal weights, central, the group's
-row is $16,989 per member and G1's $21,989 per G1 member. US residents bear $11,295 per group member.
+row is $16,989 per member and G1's $21,989 per G1 member. other US residents (excluding the group) bear $11,295 per group member.
 
 **Carried from upstream.** Other residents' channels outside the budget (renters, landlords, crime victims, property
 crime, unreimbursed care, congestion, mobility) come from lanes that price the published 40.9M. The winners lane
@@ -1745,11 +1745,11 @@ FRAMING-SENSITIVE: every weighted total]
 | Mexico's residents | +99.0 | +104.8 | +117.1 | +109.3 | +113.8 | +113.8 | +1,016.1 | +1,016.1 |
 | World total | +318.9 | +258.1 | +128.8 | +210.1 | +341.0 | +347.5 | +2,386.0 | +1,940.8 |
 | Break-even w, world | 0.54 | 0.63 | 0.81 | 0.70 | 0.53 | 0.52 | none | 0.01 |
-| Break-even w, US residents only | 0.68 | 0.78 | 0.98 | 0.85 | 0.68 | 0.68 | 0.30 | 0.53 |
+| Break-even w, other US residents in N (excluding the group), group at w | 0.68 | 0.78 | 0.98 | 0.85 | 0.68 | 0.68 | 0.30 | 0.53 |
 
 [2026-10-07: the future taxpayers', world total and break-even cells of the three λ columns are superseded (section
 "λ correction (2026-10-07)"): future taxpayers −95.0 / −99.3 / −96.6, world total +270.9 / +169.0 / +233.1, break-even
-w 0.61 / 0.76 / 0.66 (world) and 0.76 / 0.92 / 0.82 (US residents only) at λ 1.16 / 1.5 / λ_h. With those totals the
+w 0.61 / 0.76 / 0.66 (world) and 0.76 / 0.92 / 0.82 (other US residents in N (excluding the group), group at w) at λ 1.16 / 1.5 / λ_h. With those totals the
 controlled rounding prints G3+ at +126.3 under λ 1.16 and λ 1.5 (+126.4 under λ_h) and Mexico's residents at +104.8,
 +117.1 and +109.3. Every other cell stands.]
 
@@ -1763,12 +1763,12 @@ break-even w there is 0.01 rather than none.
 
 **The move from sept29, equal weights, central.** Two decimals. The moves are differences of the printed levels, and
 so that each column adds:
-- US residents print −448.58 on sept29 (unrounded −448.5715, as in the v4 table) and −471.22 on oct05 (−471.2122);
+- other US residents (excluding the group) print −448.58 on sept29 (unrounded −448.5715, as in the v4 table) and −471.22 on oct05 (−471.2122);
 - oct05's world total prints +318.91 (318.9177).
 
 | $bn a year | sept29, 39.71M | oct05, 39.71M (beside) | oct05, 42.75M | v5's budget rows and channels | the added people's person rows |
 |---|---:|---:|---:|---:|---:|
-| US residents, today and future | −448.58 | −471.22 | −471.22 | −22.64 | 0.00 |
+| other US residents (excluding the group), today and future | −448.58 | −471.22 | −471.22 | −22.64 | 0.00 |
 | The group (G1, G2, G3+) | +674.66 | +685.27 | +691.17 | +10.61 | +5.90 |
 | Mexico's residents | +101.49 | +101.49 | +98.96 | 0.00 | −2.53 |
 | World total | +327.57 | +315.54 | +318.91 | −12.03 | +3.37 |
@@ -1809,7 +1809,7 @@ so that each column adds:
   and the added people's person rows +$1.05bn.
 - **High outer span:** it rises $51.94bn, because it takes G3+'s premium at its upper bound on 17.38M members.
 
-**Break-even w** on oct05 (42.75M), world / US residents only:
+**Break-even w** on oct05 (42.75M), world / other US residents in N (excluding the group), group at w:
 - central: 0.54 / 0.68 at equal weights, 0.63 / 0.78 at λ 1.16 and 0.81 / 0.98 at λ 1.5 (sept29: 0.51 / 0.66,
   0.60 / 0.76, 0.78 / 0.96);
 - the low outer span: 0.77 / 0.91 at equal weights, 0.88 / 1.02 at λ 1.16 and 1.11 / 1.27 at λ 1.5 (sept29:
@@ -1829,7 +1829,7 @@ so that each column adds:
 **Per member,** on the case's count, at equal weights, central:
 - the group's row is $16,167 per member (sept29: $16,989 on 39.71M);
 - G1's is $22,009 per G1 member (sept29: $21,989), and G3+'s $7,268 per G3+ member (sept29: $7,693);
-- US residents bear $11,022 per group member (sept29: $11,295).
+- other US residents (excluding the group) bear $11,022 per group member (sept29: $11,295).
 
 **The two verdicts stand.**
 - Hendren's weights still give the group's dollars more weight than the payers': 1.02–1.05 against 0.98. G3+ is at
@@ -1984,7 +1984,7 @@ taxes), old → new:
 | oct05 (42.75M) | low outer | 75.43 → 87.89 | **−70.46 → −31.55** | 21.24 → 43.52 |
 | oct05_row4 (39.71M, beside) | low outer | 73.35 → 85.81 | **−71.52 → −32.60** | 19.54 → 41.82 |
 
-Break-even w, central, US residents only (world in brackets), old → new:
+Break-even w, central, other US residents in N (excluding the group), group at w (world in brackets), old → new:
 - sept29: λ 1.16 0.758 → 0.741 (0.599 → 0.581); λ 1.5 0.957 → 0.902 (0.778 → 0.723); λ_h 0.832 → 0.800.
 - oct05: λ 1.16 0.778 → 0.760 (0.627 → 0.608); λ 1.5 0.983 → 0.925 (0.814 → 0.755); λ_h 0.854 → 0.821.
 - In the low outer span at λ 1.5 the world's break-even stays above 1: 1.065 → 1.006 on sept29 and 1.113 → 1.051 on
@@ -2107,7 +2107,7 @@ FRAMING-SENSITIVE: every weighted total]
 | Mexico's residents | +99.0 | +104.7 | +117.0 | +109.3 | +113.8 | +113.8 | +1,016.1 | +1,016.1 |
 | World total | +321.1 | +273.0 | +170.7 | +235.0 | +343.3 | +349.8 | +2,389.7 | +1,943.9 |
 | Break-even w, world | 0.54 | 0.61 | 0.75 | 0.66 | 0.52 | 0.51 | none | 0.01 |
-| Break-even w, US residents only | 0.68 | 0.76 | 0.92 | 0.82 | 0.68 | 0.67 | 0.30 | 0.53 |
+| Break-even w, other US residents in N (excluding the group), group at w | 0.68 | 0.76 | 0.92 | 0.82 | 0.68 | 0.67 | 0.30 | 0.53 |
 
 Controlled rounding keeps each column adding:
 - other residents today print −378.7 at equal weights (unrounded −378.637);
@@ -2119,12 +2119,12 @@ residents print −470.73 on oct07 (unrounded −470.7248), so that each column 
 
 | $bn a year | oct05 | oct07 | v6's move |
 |---|---:|---:|---:|
-| US residents, today and future | −471.22 | −470.73 | +0.49 |
+| other US residents (excluding the group), today and future | −471.22 | −470.73 | +0.49 |
 | The group (G1, G2, G3+) | +691.17 | +692.91 | +1.74 |
 | Mexico's residents | +98.96 | +98.96 | 0.00 |
 | World total | +318.91 | +321.14 | +2.23 |
 
-- **US residents, +$0.49bn.**
+- **other US residents (excluding the group), +$0.49bn.**
   - The accrual falls $1.48bn, to −$78.90bn.
   - The borrowed part deepens $0.58bn, to −$13.19bn.
   - Other residents today carry $0.41bn more, −$378.64bn: their fiscal channel −$0.38bn, induced receipts −$0.03bn.
@@ -2154,7 +2154,7 @@ residents print −470.73 on oct07 (unrounded −470.7248), so that each column 
 
 The oct05 column is the λ-corrected one. The low outer span at λ 1.5 stays negative: −$31.29bn.
 
-**Break-even w** on oct07 (42.75M), world / US residents only:
+**Break-even w** on oct07 (42.75M), world / other US residents in N (excluding the group), group at w:
 - central: 0.54 / 0.68 at equal weights, 0.61 / 0.76 at λ 1.16, 0.75 / 0.92 at λ 1.5 and 0.66 / 0.82 at λ_h (oct05,
   λ-corrected: 0.54 / 0.68, 0.61 / 0.76, 0.76 / 0.92, 0.66 / 0.82);
 - across the equal, λ and Hendren columns the world's threshold runs 0.51–0.75 (oct05: 0.52–0.76), and under log b
@@ -2174,7 +2174,7 @@ The oct05 column is the λ-corrected one. The low outer span at λ 1.5 stays neg
 **Per member,** on the case's count, at equal weights, central:
 - the group's row is $16,207 per member (oct05: $16,167);
 - G1's is $22,037 per G1 member (oct05: $22,009), and G3+'s $7,306 per G3+ member (oct05: $7,268);
-- US residents bear $11,011 per group member (oct05: $11,022).
+- other US residents (excluding the group) bear $11,011 per group member (oct05: $11,022).
 
 **The part of the account that buys the group nothing it values,** justice's cost above its value plus Medicaid's
 shortfall, is $61.3–61.8bn (oct05: $61.2–61.7bn).
@@ -3040,7 +3040,7 @@ own pre-migration wage.
 ### The readings at three weightings
 
 $bn a year, oct07, lineage basis (42,752,213 members). λ 1 is equal weights, and w is the break-even weight on the
-group's dollar. Values part 2 printed are repeated as printed there. The US residents' totals and the break-evens at
+group's dollar. Values part 2 printed are repeated as printed there. The all US residents including the group' totals and the break-evens at
 λ 1.16, the CMP row and the private gains part 2 did not print are rounded once from the files. The last column is
 G1's private gain per G1 adult (10,566,525); Table B has it by generation.
 
@@ -3056,7 +3056,7 @@ G1's private gain per G1 adult (10,566,525); Table B has it by generation.
   the pay buys.
 - **The parameter rows change only G1's Mexican pay.** CMP's 2.46 lowers G1's premium from $227.5bn to $195.4bn,
   and the world total by the same $32.1bn. MMP's 2.0 read as a year lowers it to $163.6bn, and the world total by
-  $63.9bn. US residents lose less than the world, because the Mexican taxes G1 avoids rise with it, a transfer the
+  $63.9bn. all US residents including the group lose less than the world, because the Mexican taxes G1 avoids rise with it, a transfer the
   world total nets out.
 - **MMP's 2.0 an hour**, 1.59 a year, is part 2's reading 3: +$179.3bn on R1. On R2 it is part 2's combined low,
   −$1.9bn. Both are parameters now, in part 2's table under their old names.
@@ -3579,3 +3579,138 @@ Log (append-only; times from `date`):
 - 2026-10-14 19:50:42 JST — round 3 pins filled, only winners/distribution and `_pending` changed; baseline snapshot contains 102 tracked historical derived files. No Git writes.
 - 2026-10-14 19:58:44 JST — the complete `sh run_all.sh oct14` run exits 0: 110.45s, peak RSS 1,452,195,840 bytes. Python `time.perf_counter` and `resource.getrusage(RUSAGE_CHILDREN)` via `prop_a_measure.py`; no `ps`, `sysctl` or `/usr/bin/time`. Both obsolete regression references independently verified and updated; 28 tests pass. Full byte-reproduction receipt follows after the stable rerun.
 - 2026-10-14 20:01:44 JST — complete reproduction: IDENTICAL 161/161, exit 0. 134.25s, peak RSS 1,111,638,016 bytes (Python perf_counter / RUSAGE_CHILDREN). All four commands succeeded, including cache acquisitions, the full live wrapper and all 28 tests. The only allow-unrun is imported `population_basis.py`. All 102/102 tracked historical derived files are byte-identical to the pre-run snapshot; raw caches unchanged and all three CASE_FINAL hashes retained. Focused read-only code review PASS, no material findings. No producer/source changes after the stable rerun; this appended log records its receipt. No Git writes.
+
+## P7 fixes (2026-10-14)
+
+**Verdict:** The ledger corrects compensation, source-tax incidence, remittance purchasing power and the child-credit payer. The frozen fiscal headline and pins stay unchanged. R1 is now a span across explicit G3+ bounds, not one selected bound. Unknown receipts, non-finite amounts and invalid log consumption stop totals and break-evens. [CALCULATION: run_all.sh; p7_fix_deltas_oct14.csv; p7_named_readings_oct14.csv]
+
+The earlier sections are the historical pre-P7 record. In particular, **“Tax basis: gross pay, each tax once” is superseded here**: CPS PEARNVAL is cash earnings, excluding employer contributions. US total compensation adds the account's employer OASDI/HI plus the employer portion of the other-social-contribution receipt, including unemployment insurance. Self-employment contributions remain paid out of measured cash earnings. BEA's employer fraction of the residual is 0.811601500; applying that national mix to the group's common positive-FICA key is an assumption. The unidentified group employer share is bounded at 0–100% of that residual. [DATA: pinned BEA tables 3.1/8 and 3.6/2,4,20,22,27; employer_ui_basis.py]
+
+Mexico's formal comparators add parsed 2024 IMSS quotas, SAR/CEAV and INFONAVIT to compensation and contribution transfers exactly once. Employer-funded individual retirement/housing deposits are worker assets, so this requested transfer convention is broader than a public-revenue measure. Consumption taxes remain on cash gross. Formal status, salary as contribution base, exposure below the annual minimum and accident-risk assignment are model assumptions; source outputs separate components and statutory/duration bounds. Source SHA pins identify the retrieved primary text bytes where direct PDFs were unavailable, not PDF bytes. [SOURCE: inputs/imss_financing_2024.txt, lss_statutory.txt, infonavit_statutory.txt; inputs/pins.json; CALCULATION: mexico.py → mexico_meta.json]
+
+### Population, endpoints and frame
+
+The adopted lineage has 42,752,213 members; the identified union has 39,712,493. Every named reading reports personal endpoints 16 / 11 at fixed central premium/valuation settings and G3+ zero, sex-age G2 upper bound, and the separate aggregate-G2-rearing-ratio arm. Outer low/high uncertainty scenarios in world_ledger_oct14.csv are different objects. The row4 companion retains the frozen lineage fiscal baseline while changing its person rows; its isolated-fix table applies only the identified-union correction, explicitly labelled, and must not be quoted as a full union fiscal account. [DATA: pins.json; population_basis.py; p7_fix_deltas_oct14.csv population_rule]
+
+All pairs below are low / high personal account endpoint, $bn/year. Other US residents excludes the group and combines today's and future payers; all US residents including the group adds the same weighted group total. All results are conditional accounting/valuation calculations, not observed causal removal effects. The LLM instrument's framing choices remain explicit. [FRAMING-SENSITIVE]
+
+| reading | G3+ | weights | world | other US residents, excludes group | all US residents, includes group | group | Mexico residents | break-even w |
+|---|---|---|---|---|---|---|---|---|
+| reading1 | zero | equal | 472.320 / 354.691 | -356.974 / -490.171 | 366.631 / 249.003 | 723.605 / 739.175 | 105.688 / 105.688 | 0.347 / 0.520 |
+| reading1 | zero | equal_lambda_1.16 | 429.899 / 298.776 | -397.760 / -544.451 | 325.846 / 194.723 | 723.605 / 739.175 | 104.053 / 104.053 | 0.406 / 0.596 |
+| reading1 | zero | equal_lambda_1.5 | 339.753 / 179.956 | -484.429 / -659.796 | 239.176 / 79.379 | 723.605 / 739.175 | 100.577 / 100.577 | 0.530 / 0.757 |
+| reading1 | upper | equal | 771.502 / 653.874 | -356.974 / -490.171 | 576.932 / 459.303 | 933.906 / 949.475 | 194.571 / 194.571 | 0.174 / 0.311 |
+| reading1 | upper | equal_lambda_1.16 | 743.302 / 612.180 | -397.760 / -544.451 | 536.146 / 405.024 | 933.906 / 949.475 | 207.156 / 207.156 | 0.204 / 0.355 |
+| reading1 | upper | equal_lambda_1.5 | 683.377 / 523.579 | -484.429 / -659.796 | 449.477 / 289.679 | 933.906 / 949.475 | 233.900 / 233.900 | 0.268 / 0.449 |
+| reading1 | rearing | equal | 780.395 / 662.767 | -356.974 / -490.171 | 583.183 / 465.555 | 940.157 / 955.726 | 197.213 / 197.213 | 0.170 / 0.307 |
+| reading1 | rearing | equal_lambda_1.16 | 752.618 / 621.496 | -397.760 / -544.451 | 542.397 / 411.275 | 940.157 / 955.726 | 210.221 / 210.221 | 0.199 / 0.350 |
+| reading1 | rearing | equal_lambda_1.5 | 693.591 / 533.794 | -484.429 / -659.796 | 455.728 / 295.930 | 940.157 / 955.726 | 237.863 / 237.863 | 0.262 / 0.441 |
+| reading2 | zero | equal | 245.244 / 155.366 | -356.974 / -490.171 | 181.563 / 91.685 | 538.537 / 581.856 | 63.681 / 63.681 | 0.545 / 0.733 |
+| reading2 | zero | equal_lambda_1.16 | 196.101 / 92.729 | -397.760 / -544.451 | 140.777 / 37.405 | 538.537 / 581.856 | 55.324 / 55.324 | 0.636 / 0.841 |
+| reading2 | zero | equal_lambda_1.5 | 91.674 / -40.373 | -484.429 / -659.796 | 54.108 / -77.939 | 538.537 / 581.856 | 37.566 / 37.566 | 0.830 / 1.069 |
+| reading2 | upper | equal | 544.426 / 454.548 | -356.974 / -490.171 | 391.863 / 301.985 | 748.837 / 792.156 | 152.563 / 152.563 | 0.273 / 0.426 |
+| reading2 | upper | equal_lambda_1.16 | 509.505 / 406.133 | -397.760 / -544.451 | 351.077 / 247.705 | 748.837 / 792.156 | 158.428 / 158.428 | 0.320 / 0.487 |
+| reading2 | upper | equal_lambda_1.5 | 435.297 / 303.250 | -484.429 / -659.796 | 264.408 / 132.361 | 748.837 / 792.156 | 170.889 / 170.889 | 0.419 / 0.617 |
+| reading2 | rearing | equal | 542.373 / 452.496 | -356.974 / -490.171 | 390.420 / 300.542 | 747.394 / 790.714 | 151.953 / 151.953 | 0.274 / 0.428 |
+| reading2 | rearing | equal_lambda_1.16 | 507.355 / 403.983 | -397.760 / -544.451 | 349.634 / 246.263 | 747.394 / 790.714 | 157.720 / 157.720 | 0.321 / 0.489 |
+| reading2 | rearing | equal_lambda_1.5 | 432.940 / 300.893 | -484.429 / -659.796 | 262.965 / 130.918 | 747.394 / 790.714 | 169.975 / 169.975 | 0.421 / 0.619 |
+| reading2_consumption | zero | equal | 264.258 / 174.381 | -356.974 / -490.171 | 195.090 / 105.212 | 552.064 / 595.383 | 69.169 / 69.169 | 0.521 / 0.707 |
+| reading2_consumption | zero | equal_lambda_1.16 | 215.994 / 112.622 | -397.760 / -544.451 | 154.304 / 50.932 | 552.064 / 595.383 | 61.690 / 61.690 | 0.609 / 0.811 |
+| reading2_consumption | zero | equal_lambda_1.5 | 113.432 / -18.615 | -484.429 / -659.796 | 67.635 / -64.412 | 552.064 / 595.383 | 45.797 / 45.797 | 0.795 / 1.031 |
+| reading2_consumption | upper | equal | 563.441 / 473.563 | -356.974 / -490.171 | 405.390 / 315.512 | 762.364 / 805.683 | 158.051 / 158.051 | 0.261 / 0.412 |
+| reading2_consumption | upper | equal_lambda_1.16 | 529.397 / 426.026 | -397.760 / -544.451 | 364.604 / 261.232 | 762.364 / 805.683 | 164.793 / 164.793 | 0.306 / 0.471 |
+| reading2_consumption | upper | equal_lambda_1.5 | 457.056 / 325.009 | -484.429 / -659.796 | 277.935 / 145.888 | 762.364 / 805.683 | 179.121 / 179.121 | 0.400 / 0.597 |
+| reading2_consumption | rearing | equal | 572.334 / 482.456 | -356.974 / -490.171 | 411.641 / 321.763 | 768.615 / 811.935 | 160.693 / 160.693 | 0.255 / 0.406 |
+| reading2_consumption | rearing | equal_lambda_1.16 | 538.713 / 435.342 | -397.760 / -544.451 | 370.855 / 267.484 | 768.615 / 811.935 | 167.858 / 167.858 | 0.299 / 0.464 |
+| reading2_consumption | rearing | equal_lambda_1.5 | 467.270 / 335.223 | -484.429 / -659.796 | 284.186 / 152.139 | 768.615 / 811.935 | 183.084 / 183.084 | 0.392 / 0.587 |
+
+The complete table, including every named same-person parameter and beside arm at every G3+ bound, endpoint and executed weighting, is [p7_named_readings_oct14.csv](derived/p7_named_readings_oct14.csv). Smaller beside arms are in [p7_beside_arms_endpoints_oct14.csv](derived/p7_beside_arms_endpoints_oct14.csv). World, other US residents excluding the group, all US residents including the group, group, Mexico residents and break-even w have separate columns. No reading label may omit its G3+ convention.
+
+### Private gain
+
+“Wages alone” now includes wage income and wage taxes on **both** sides, without either country's public services or consumption/property taxes. “With services” includes US and Mexican services and all modelled taxes on both sides. Remittance principal is the group's own spending and is excluded from these private comparisons. Each sign at both G3+ bounds is visible below; the aggregate-G2 arm is beside them, not adopted. Reading 2 uses its consumption-PPP twin for purchasing-power private gains. [CALCULATION: beside_extra.private_gain; p7_private_gain_oct14.csv]
+
+| reading | G3+ | wages and wage taxes only | with services and all taxes, both countries |
+|---|---|---|---|
+| reading1 | zero | 315.528 / 315.528 | 806.509 / 822.078 |
+| reading1 | upper | 556.859 / 556.859 | 1,016.809 / 1,032.378 |
+| reading1 | rearing | 564.033 / 564.033 | 1,023.060 / 1,038.630 |
+| reading2_consumption | zero | 297.682 / 297.682 | 634.967 / 678.287 |
+| reading2_consumption | upper | 539.013 / 539.013 | 845.267 / 888.587 |
+| reading2_consumption | rearing | 546.187 / 546.187 | 851.519 / 894.838 |
+
+Fix 5's **service-symmetry correction alone**, holding the original all-tax definition, compensation, incidence and price basis fixed, moves R1's original zero-bound private comparison from **-89.650 / -61.246bn to 66.522 / 94.926bn** (personal low / high): +156.173bn at either end. The final wage-tax-only definition above additionally changes tax scope, explicitly reported in its component columns; these changes must not be added as independent estimates. Every originally reported private scenario's isolated symmetry change is in p7_private_symmetry_delta_oct14.csv. [CALCULATION: p7_fixes.py → p7_private_symmetry_delta_oct14.csv]
+
+### Each fix in isolation
+
+Each row is **one** change from the pre-P7 oct14 central at its identified personal endpoint, with every other convention held fixed. The full [p7_fix_deltas_oct14.csv](derived/p7_fix_deltas_oct14.csv) gives both G3+ bounds and equal/λ 1.16/λ 1.5 weights, all parties and break-even changes. These are world-ledger deltas: the frozen fiscal headline changes by **zero** for every fix. A world or private-claim change at least $5bn is shown separately from a fiscal-headline move. [CALCULATION: p7_fixes.py]
+
+| fix | population | world delta | group delta | other US residents delta, excludes group | world change at least $5bn? |
+|---|---|---|---|---|---|
+| fix1_compensation | lineage | 24.900 / 24.900 | 89.480 / 89.480 | 0.000 / 0.000 | True |
+| fix2_source_incidence | lineage | 71.771 / 43.367 | 71.771 / 43.367 | 0.000 / 0.000 | True |
+| fix7_recipient_principal_gdp | lineage | 53.117 / 53.117 | 0.000 / 0.000 | 0.000 / 0.000 | True |
+| fix7_recipient_principal_consumption | lineage | 43.623 / 43.623 | 0.000 / 0.000 | 0.000 / 0.000 | True |
+| fix12_child_credit_payer | lineage | 0.000 / 0.000 | -4.717 / -4.717 | 4.717 / 4.717 | False |
+| fix1_compensation | row4 | 24.900 / 24.900 | 81.957 / 81.957 | 0.000 / 0.000 | True |
+| fix2_source_incidence | row4 | 66.481 / 40.265 | 66.481 / 40.265 | 0.000 / 0.000 | True |
+| fix7_recipient_principal_gdp | row4 | 53.117 / 53.117 | 0.000 / 0.000 | 0.000 / 0.000 | True |
+| fix7_recipient_principal_consumption | row4 | 43.623 / 43.623 | 0.000 / 0.000 | 0.000 / 0.000 | True |
+| fix12_child_credit_payer | row4 | 0.000 / 0.000 | -4.299 / -4.299 | 4.299 / 4.299 | False |
+
+Fixes 3 (population labels), 4 (fail closed) and 8 (bounds/report coverage) are rule corrections without a standalone monetary shock. The symmetric private-gain convention, fix 5, is reported by the two forms above and their components in p7_private_gain_oct14.csv. Child credits move from member-child rows to the non-member filer holding the return; this conserves the equal/λ world total while changing the group and other US residents excluding the group. The frozen identified-union credit source has replicate SE **0.325754bn**; the added-member term is an assumption, not an independent estimate. No joint ENIGH/EMOVI/CPS replicate covariance is available in this route, so no joint replicate SE is invented. [DATA: frozen meta.child_credits; inputs positive controls; CALCULATION: valuation.py]
+
+### Foreign source-tax counterparts and remittances
+
+Item 6's receipt-line set comes from the frozen item registry. Corporate_labor is already inside measured wages and is not charged again. The remaining US capital-source taxes are 60.500 / 39.196bn on the lineage (56.078 / 36.416bn on the identified union). Their Mexican and rest-of-world counterparts are **explicit exclusions, unidentified**: a matched taxable-capital base, destination and source-tax liability are absent. A wage bill and a statutory corporate rate cannot identify them. [DATA: valuation_meta_oct14.json incidence; SOURCE: OECD corporate effective-tax-rate methodology, https://www.oecd.org/en/publications/corporate-tax-statistics-2024_9c27d6e8-en/full-report/corporate-effective-tax-rates_c3356c78.html]
+
+The declared foreign-parity stress is 0–100% of those US capital-source taxes, **not an empirical finite bound**. At equal weights the capital-source world increment is US tax minus foreign tax, hence 0–60.500 / 0–39.196bn; the corporate-labour double-debit correction is separate. Foreign taxes may exceed the assumed cap. The central exclusion must never be described as a measured zero. [ASSUMPTION; CALCULATION: p7_foreign_counterparts_oct14.csv; DATA: valuation_meta_oct14.json foreign_capital_source_tax_exclusion]
+
+Banxico's principal is paid to recipients; the circular separately reports sender outlay including commissions. Sender-added fees and unmeasured FX spreads are excluded from this principal-only ledger. Recipients exchange nominal dollars at PA.NUS.FCRF and spend at Mexican prices. The lane's central GDP-PPP basis uses market-rate/GDP-PPP; the consumption-PPP recipient-only sensitivity holds the other rows fixed and is evaluated only at equal/λ weights. It is explicitly a one-row purchasing-power sensitivity, never a mixed-basis live log-weight run. The live row schema carries price_basis; each party has one basis, and nominal Mexican rows cannot receive log weights. [SOURCE: Banxico Circular12/2012, https://dof.gob.mx/nota_detalle_popup.php?codigo=5260748; DATA: pinned WDI PA.NUS.FCRF, PA.NUS.PPP, PA.NUS.PRVT.PP; CALCULATION: world_ledger.py]
+
+### Report-only assumptions and the other-residents claim
+
+Fix 6a values G3+ **K–12 only** at cost beside the zero-premium/V=0 convention: the actual K–12 portion of education_services at the pinned school share, school_reprice and K–12 capital/fee-offset components. Colleges, benefits and training stay separate. Fix 6b holds US public goods at average cost and Mexican forgone public goods at the responsive share. Fix 11 scales public-good willingness to pay by group/other-resident income at elasticities 0.5 and 1. Their one-change R1 deltas at each endpoint/bound are in p7_named_readings_oct14.csv delta_from_r1_bn. These are operator-framing sensitivities, not adopted convention changes. [FRAMING-SENSITIVE; CALCULATION: beside_extra.py]
+
+| one change from R1 | G3+ | world delta, low / high |
+|---|---|---|
+| p7_g3_k12_at_cost | zero | 81.507 / 100.029 |
+| p7_g3_k12_at_cost | upper | 81.507 / 100.029 |
+| p7_g3_k12_at_cost | rearing | 81.507 / 100.029 |
+| p7_mexico_goods_responsive | zero | 6.945 / 6.945 |
+| p7_mexico_goods_responsive | upper | 6.945 / 6.945 |
+| p7_mexico_goods_responsive | rearing | 6.945 / 6.945 |
+| p7_goods_wtp_0.5 | zero | -48.944 / -50.479 |
+| p7_goods_wtp_0.5 | upper | -48.944 / -50.479 |
+| p7_goods_wtp_0.5 | rearing | -48.944 / -50.479 |
+| p7_goods_wtp_1 | zero | -86.726 / -89.446 |
+| p7_goods_wtp_1 | upper | -86.726 / -89.446 |
+| p7_goods_wtp_1 | rearing | -86.726 / -89.446 |
+
+These sensitivities change the group's valuation only, so their world deltas are also the group/all-US-including-group deltas; other US residents excluding the group and Mexico residents stay fixed. The equal and λ deltas are the same. The $5bn test is the absolute value of each endpoint delta, not a change to the frozen fiscal headline.
+
+The rearing model's terminal mobility cohort is births 1983–92, approximately ages 32–41 in income-year 2024; subsequent birth cohorts inherit that terminal transition. An identified later-cohort replacement is unavailable, so fix 6c is a documented transport limit, not an invented causal correction. The route accounts for which G2 weights use it. [DATA: mexico_transition.csv; g2_premium.emovi_cohort; beside_extra_meta_oct14.json]
+
+The former statement that other US residents excluding the group lose at every named reading was invariant to the readings' group-only changes. Across the personal account endpoints and beside arms their fixed equal-weight span is **-490.171 to -356.974bn**. Across the explicit fiscal-alternative-use θ arms the span is **-829.550 to -311.057bn** (including the labelled education-MVPF-5 extreme). These are different conventions, separately named; neither is a confidence interval. λ-specific spans are in beside_extra_meta_oct14.json p7. [CALCULATION: beside_extra.py; p7_named_readings_oct14.csv; p7_beside_arms_endpoints_oct14.csv]
+
+### Gates and reproduction
+
+Positive controls reproduce the committed oct14 route before correction, original Mexico cash/employee-tax cells, and original valuation by undoing precisely the two incidence fields. New gates cover primary-file hashes, national employer/worker/source-rounding closure at 1e-6bn, group allocation closure, monetary identities, population conservation, exhaustive receipt classes/economic payers, finite rows/log increments, price-basis consistency, both G3+ bounds, personal endpoint coverage and party sums. Existing tolerances were not loosened. [CALCULATION: test_mexico_compensation.py; test_employer_ui_basis.py; test_p7_valuation.py; test_p7_world.py; test_p7_readings.py]
+
+```sh
+sh infra/immigration-fiscal/world_ledger_2026_09_27/run_all.sh oct14
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest -p no:cacheprovider infra/immigration-fiscal/world_ledger_2026_09_27/ -q
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/world_ledger_2026_09_27 "sh {lane}/run_all.sh oct14" "uv run --no-project python3 -m pytest -p no:cacheprovider {lane}/test_live_contract.py {lane}/test_beside_arms.py {lane}/test_beside_extra.py {lane}/test_mexico_compensation.py {lane}/test_employer_ui_basis.py {lane}/test_p7_valuation.py {lane}/test_p7_world.py {lane}/test_p7_readings.py {lane}/test_p7_fix_deltas.py -q"
+```
+
+The per-command timing log uses Python time.perf_counter and resource.getrusage in _cache/p7_timings.jsonl; no ps/sysctl/time-l. Validation timestamps and return codes follow below. No Git metadata was written by this lane.
+
+<!-- END P7 GENERATED -->
+
+### P7 validation log
+
+- 2026-10-14 20:48 JST — preserved 0b41a200's 125 derived files as the committed positive control; the original world route ran successfully. Independent reconstruction later matched its central equal-weight world total within 4.957e-7bn, the half-unit tolerance of the stored six-place figure.
+- 2026-10-14 20:55 JST — source/generation/world stages passed; the extra-reading route blocked on the K–12 selector. Repaired against the actual school share, school repricing and capital/fee-offset components; college rows remain separate. Tests cover that distinction.
+- 2026-10-14 21:11 JST — independent audit's employer-residual finding repaired from the pinned BEA workbook. Profiling isolated redundant theta-weight computations; requested-weighting evaluation preserves exact values and every direct theta check. Final focused X run 40.85s, 1.222GB, versus its prior 79.12s. These are individual observed runs, not a normalized speedup.
+- 2026-10-14 21:18 JST — complete live wrapper exits 0; all 95 tests pass after the final finite-distribution guard; Python compile, Node syntax and shell syntax checks pass. No tolerance relaxed.
+- 2026-10-14 21:27 JST — final `rerun_lane.py` receipt: **IDENTICAL 188/188, exit 0**. Both commands succeeded: full oct14 route and all 95 tests. No allow-unrun exemption. The frozen main-case directory and historical case-keyed outputs have no diff. Per-command Python timing/RSS receipts are in `_cache/p7_timings.jsonl`; no Git metadata was written. The append-only validation receipt is retained by the document renderer on future reruns.

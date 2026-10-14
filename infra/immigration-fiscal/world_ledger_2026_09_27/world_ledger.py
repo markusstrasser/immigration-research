@@ -52,6 +52,8 @@ import numpy as np
 import pandas as pd
 
 from population_basis import BASES, suffixed
+from mexico import pinned_text
+from employer_ui_basis import allocate_group, load_basis as employer_other_basis
 from valuation import CASE_LANES, PINS, SHARED_OUTPUTS, basis_of, case_path, lane_file, require_pins
 
 HERE = Path(__file__).resolve().parent
@@ -174,7 +176,7 @@ def load(case, basis):
     vgen = vgen[vgen.case == case]
     gate("valuation_by_generation_has_case", len(vgen) > 0, case=case)
     glines = pd.read_csv(DERIVED / f"generation_lines_{case}.csv").replace({"generation": {"G3plus": "G3+"}})
-    return dict(ch=ch, specs=specs, gf=gf, dist=dist, gen=gen, val=val, vgen=vgen, glines=glines,
+    return dict(case=case, basis=basis, ch=ch, specs=specs, gf=gf, dist=dist, gen=gen, val=val, vgen=vgen, glines=glines,
                 # the group's person-based inputs, on the run's population basis
                 g2=pd.read_csv(suffixed(DERIVED / "g2_premium.csv", basis)),
                 ages=pd.read_csv(suffixed(DERIVED / "group_ages.csv", basis)),
@@ -243,9 +245,69 @@ def premium_rows(I, short_run=False, g3_central="zero"):
     scale = g3.us_earnings_bn / g3.mexico_earnings_bn
     zero = dict(gain=0.0, e_mx=g3.us_earnings_bn, tax=g3.mexico_withheld_tax_bn * scale,
                 home=g3.mexico_take_home_bn * scale, ctax=g3.mexico_consumption_tax_bn * scale)
-    mid = {"zero": zero, "upper": up}[g3_central]
+    # The third arm applies the aggregate G2 rearing ratio, beside the existing sex-age upper bound.
+    ratio = out["G2"]["e_mx"]["central"] / out["G2"]["e_us"]
+    rearing_scale = g3.us_earnings_bn * ratio / up["e_mx"]
+    rearing = {k: up[k] * rearing_scale for k in up}
+    rearing["gain"] = g3.us_earnings_bn - rearing["e_mx"]
+    mid = {"zero": zero, "upper": up, "rearing": rearing}[g3_central]
     out["G3+"] = dict(**{k: lh(zero[k], mid[k], up[k]) for k in ("gain", "e_mx", "tax", "home", "ctax")},
                       e_us=g3.us_earnings_bn, persons=g3.persons_m)
+    if I.get("cash_positive_control"):
+        for p in out.values():
+            p["e_us_cash"], p["employer_us"] = p["e_us"], 0.0
+        return out
+    # PEARNVAL excludes employer contributions. Add exactly the responding employer receipts once.
+    v = I["vgen"]
+    employer_lines = ["employer_oasdi", "employer_hi", "employer_ui", "other_domestic_social_contributions"]
+    employer = v[v.side.eq("receipt") & v.line.isin(employer_lines)].copy()
+    gate("employer_compensation_rows_finite", np.isfinite(employer.net_cost_bn).all())
+    other = employer.line.eq("other_domestic_social_contributions")
+    employer.loc[other, "net_cost_bn"] *= employer_other_basis()["employer_fraction"]
+    for gen in GROUP:
+        s = employer[employer.generation.eq(gen)].groupby("end").net_cost_bn.sum()
+        gate(f"employer_compensation_{gen}_finite", len(s) == 2 and np.isfinite(s).all()
+             and abs(s.loc["low"] - s.loc["high"]) < 1e-6, totals=s.to_dict())
+        add = -float(s.mean())
+        if I.get("basis") == "row4" and gen == "G3+":
+            case = I["case"]
+            pin = PINS[case]
+            payload = json.loads(git_show(pin["main_case"], f"{CASE_LANES[case]}/derived/corrections.json"))
+            span = payload["meta"]["lineage"]["edits"]
+            lineage_edits = payload["edits"][span["first"]:span["first"] + span["count"]]
+            keys = I["glines"][(I["glines"].generation == "G3+") & (I["glines"].band_end == "low")
+                              & I["glines"].line.isin(employer_lines)]
+            extra = 0.0
+            for r in keys.itertuples():
+                scenario = r.key.split(":")[0]
+                part = sum(e["by"]["personal"] for e in lineage_edits
+                           if e["side"] == "receipt" and e["line"] == r.line and e["scenario"] == scenario)
+                extra += (allocate_group(part)["employer_bn"] if r.line == "other_domestic_social_contributions"
+                          else part)
+                later = payload["edits"][span["first"] + span["count"]:]
+                gate(f"no_later_employer_rekey_{r.line}", not any(e["side"] == "receipt" and e["line"] == r.line
+                     for e in later))
+            add -= extra
+            gate("union_employer_compensation_nonnegative", add >= 0, added_people=extra)
+        out[gen]["e_us_cash"] = out[gen]["e_us"]
+        out[gen]["employer_us"] = add
+        out[gen]["e_us"] += add
+        for e in ("low", "central", "high"):
+            out[gen]["gain"][e] += add
+    # A zero-premium bound means zero on the corrected compensation basis, not cash wages.
+    g3o = out["G3+"]
+    if g3_central == "rearing":
+        target = g3o["e_us"] * out["G2"]["e_mx"]["central"] / out["G2"]["e_us"]
+        f = target / g3o["e_mx"]["central"]
+        for k in ("e_mx", "tax", "home", "ctax"):
+            g3o[k]["central"] *= f
+        g3o["gain"]["central"] = g3o["e_us"] - target
+    for e in (["low", "central"] if g3_central == "zero" else ["low"]):
+        factor = g3o["e_us"] / g3o["e_mx"][e]
+        for k in ("e_mx", "tax", "home", "ctax"):
+            g3o[k][e] *= factor
+        g3o["e_mx"][e] = g3o["e_us"]
+        g3o["gain"][e] = 0.0
     return out
 
 
@@ -272,13 +334,19 @@ def fiscal_group_rows(I, pg_convention):
         for c in ("V_low_bn", "V_central_bn", "V_high_bn"):
             v.loc[m, c] = v.loc[m, "G_bn"]
     sh = population_shares(I)
-    by = v.groupby(["end", "generation"])[["V_low_bn", "V_central_bn", "V_high_bn"]].sum()
+    value_cols = ["V_low_bn", "V_central_bn", "V_high_bn"]
+    gate("fiscal_group_values_finite", np.isfinite(v[value_cols]).all().all())
+    by = v.groupby(["end", "generation"])[value_cols].sum()
     tot = by.groupby(level="end").sum()
     lo_end, hi_end = tot.V_low_bn.idxmin(), tot.V_high_bn.idxmax()
     out = {gname: dict(value=lh(by.loc[(lo_end, gname), "V_low_bn"],
                                 np.mean([by.loc[(e, gname), "V_central_bn"] for e in ("low", "high")]),
                                 by.loc[(hi_end, gname), "V_high_bn"]))
            for gname in GENS}
+    if I.get("account_end"):
+        e = I["account_end"]
+        gate("personal_account_end", e in ("low", "high"), end=e)
+        out = {gen: dict(value=lh(*([by.loc[(e, gen), "V_central_bn"]] * 3))) for gen in GENS}
     return out, sh
 
 
@@ -308,7 +376,10 @@ def generation_split_check(I, case):
 
 # ------------------------------------------------------------------ the rows
 def wdi_mexico_2024(ind):
-    rows = json.load(open(HERE / f"_cache/mexico/wdi_{ind}.json"))[1]
+    if ind in ("PA.NUS.FCRF", "PA.NUS.PPP", "PA.NUS.PRVT.PP"):
+        rows = json.loads(pinned_text(f"wdi_{ind}.json"))[1]
+    else:
+        rows = json.load(open(HERE / f"_cache/mexico/wdi_{ind}.json"))[1]
     v = [r["value"] for r in rows if r["country"]["id"] == "MX" and r["date"] == "2024"]
     gate(f"wdi_{ind}_mexico_2024", len(v) == 1 and v[0] is not None, found=v)
     return v[0]
@@ -364,12 +435,38 @@ def row_basis(rid):
     raise SystemExit(f"[BLOCKED] row {rid!r} has no basis label")
 
 
+def remittance_price_factor(price_basis="gdp"):
+    """Convert recipient principal from US nominal dollars to Mexican purchasing power."""
+    gate("remittance_price_basis_explicit", price_basis in ("gdp", "consumption"), basis=price_basis)
+    rates = json.load(open(DERIVED / "mexico_meta.json"))["ppp_2024"]
+    key = "PA.NUS.PPP" if price_basis == "gdp" else "PA.NUS.PRVT.PP"
+    for ind in ("PA.NUS.FCRF", key):
+        principal = wdi_mexico_2024(ind)
+        gate(f"remit_price_matches_primary_{ind}", np.isfinite(principal) and principal > 0
+             and abs(principal - rates[ind]) < 1e-9)
+    return rates["PA.NUS.FCRF"] / rates[key]
+
+
+def validate_rows(rows, logarithmic=False):
+    gate("row_amounts_finite", np.isfinite(rows[["low", "central", "high"]]).all().all())
+    gate("row_parties_explicit", set(rows.party) <= set(PARTIES), parties=sorted(set(rows.party)))
+    gate("row_price_basis_explicit", "price_basis" in rows and rows.price_basis.notna().all())
+    allowed = {"US$", "PPP-GDP", "PPP-consumption"}
+    gate("row_price_basis_known", set(rows.price_basis) <= allowed)
+    for party, s in rows.groupby("party"):
+        gate(f"one_price_basis_{party}", s.price_basis.nunique() == 1, bases=sorted(set(s.price_basis)))
+    if logarithmic:
+        gate("log_mexico_rows_are_ppp", rows.loc[rows.party.eq("mexico_residents"), "price_basis"].ne("US$").all())
+
+
 def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="withheld_consumption",
-               g3_central="zero", accrual_today=False):
+               g3_central="zero", accrual_today=False, remit_price_basis="gdp"):
     rows = []
 
     def add(rid, label, party, kind, vals, **meta):
-        rows.append(dict(row=rid, label=label, party=party, kind=kind, basis=row_basis(rid), **vals, **meta))
+        prices = "PPP-GDP" if party == "mexico_residents" else "US$"
+        rows.append(dict(row=rid, label=label, party=party, kind=kind, basis=row_basis(rid), price_basis=prices,
+                         **vals, **meta))
 
     alt = "the same people in Mexico (descendants raised there by parents who stayed); the US without them"
     health_vg = I["health_vg"]
@@ -478,7 +575,7 @@ def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="w
     # Remittances.
     remit = float(I["gf"].set_index("item").filter(like="remittances received", axis=0).bn_central.iloc[0])
     # The split is held at its central scenario at every end: it moves money between G1 and G2 only.
-    g2r = prem["G2"]["e_us"] * G2_REMIT_RATE[1]
+    g2r = prem["G2"]["e_us_cash"] * G2_REMIT_RATE[1]
     add("remit_G1", "G1: remittances sent to Mexico", "G1", "transfer", lh(-(remit - g2r), -(remit - g2r),
                                                                           -(remit - g2r)),
         initial="sent", alternative="not sent", window="2024",
@@ -487,9 +584,13 @@ def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="w
     add("remit_G2", "G2: remittances sent to Mexico (1.6% of earnings, scenario)", "G2", "transfer",
         lh(-g2r, -g2r, -g2r), initial="sent", alternative="not sent", window="2024",
         comparator="scenario (0-5.2% of earnings)", weight="group_remit", tag="[INFERENCE: remit_leak arms]")
-    add("remit_mexico", "Mexico's residents: remittances received", "mexico_residents", "transfer",
-        lh(remit, remit, remit), initial="received", alternative="not received", window="2024",
-        comparator="measured", weight="mexico_recipients", tag="[DATA: Banxico via winners]")
+    recipient = remit * remittance_price_factor(remit_price_basis)
+    add("remit_mexico", "Mexico's residents: remittance principal received at Mexican prices", "mexico_residents", "transfer",
+        lh(recipient, recipient, recipient), initial="received", alternative="not received", window="2024",
+        comparator="measured principal; sender fees excluded", weight="mexico_recipients",
+        nominal_usd_bn=remit, tag="[DATA: Banxico via winners; WDI market exchange rate / PPP]")
+    gate("remittance_principal_conserves_market_pesos", abs(recipient / remittance_price_factor(remit_price_basis)
+         - remit) < 1e-9)
     # Mexico's budget in the alternative world: the group loses its value, Mexico's residents save its cost.
     mx = I["mxb"]
     for gname in GENS:
@@ -541,7 +642,38 @@ def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="w
             alternative="received", window="2024", comparator=comp, weight="mexico_budget", tag=tag)
     if short_run:
         rows += mishra_rows(I, prem)
-    return pd.DataFrame(rows), prem, shares
+    # The child-related credit sits on the non-member filer's return. It is a benefit to other residents.
+    if "child_credit_other_residents_bn" in I["vgen"]:
+        credit = I["vgen"].groupby("end").child_credit_other_residents_bn.sum()
+        add("fiscal_nonmember_credits", "Other US residents: child credits on non-member filers' returns",
+            "others_today", "transfer", lh(credit.loc["high"], credit.mean(), credit.loc["low"]),
+            initial="credit received by the filer", alternative="member child absent", window="2024",
+            comparator="frozen item 5b", weight="others:mean", tag="[DATA: case meta.child_credits]")
+    frame = pd.DataFrame(rows)
+    # A requested personal endpoint holds the premium and valuation ratios at their central values.
+    if I.get("account_end"):
+        e = I["account_end"]
+        direct = dict(fiscal_others=-T[e] - fut[f"bn_{e}"] - Pn[e], fiscal_future=fut[f"bn_{e}"],
+                      induced_receipts=F[e])
+        if pen is not None:
+            direct["fiscal_pension_accrual"] = pen[f"bn_{e}"]
+        if disp is not None:
+            direct["displaced_beneficiaries"] = disp[f"bn_{e}"]
+        if "child_credit_other_residents_bn" in I["vgen"]:
+            direct["fiscal_nonmember_credits"] = credit.loc[e]
+        for cid in ("wages", "renters", "landlords", "crime_victims", "property_crime", "unreimbursed_care",
+                    "congestion", "mobility"):
+            direct[cid] = ch.loc[cid, f"bn_{e}"]
+        for rid, amount in direct.items():
+            frame.loc[frame.row.eq(rid), ["low", "central", "high"]] = amount
+    if remit_price_basis == "consumption":
+        # This is a whole Mexican-party repricing arm, not a nominal/PPP mixture within a party.
+        rates = json.load(open(DERIVED / "mexico_meta.json"))["ppp_2024"]
+        m = frame.party.eq("mexico_residents") & frame.row.ne("remit_mexico")
+        frame.loc[m, ["low", "central", "high"]] *= rates["PA.NUS.PPP"] / rates["PA.NUS.PRVT.PP"]
+        frame.loc[frame.party.eq("mexico_residents"), "price_basis"] = "PPP-consumption"
+    validate_rows(frame)
+    return frame, prem, shares
 
 
 def mishra_rows(I, prem):
@@ -604,6 +736,7 @@ def channel_factors(I, measure):
     """Per channel of other residents: the ratio of the weighted to the unweighted sum over percentiles, for
     Hendren's g and for log-income weights (distribution lane, pinned)."""
     d = I["dist"][I["dist"].measure == measure]
+    gate("distributed_channel_inputs_finite", np.isfinite(d[["bn", "percentile", "persons_m"]]).all().all())
     g = np.interp(d.percentile, I["gtab"]["quantile"], I["gtab"]["g"])
     # Log weights per percentile: reference income per head over each person's household income per head
     # (weights.py log_weights_by_percentile.csv, on the distribution lane's own bins).
@@ -649,7 +782,7 @@ def saving_leak(I, rows, res, measure="money"):
     out = dict(inputs=dict(saving_by_percentile=MSS_SAVING, capital_tax=CAPITAL_TAX,
                            return_over_discount={f"tau_{x}": m for x, m in RETURN_OVER_DISCOUNT.items()}, theta=1.0,
                            group_saving=0.0),
-               tax_financed_central_bn=tax, breakeven_w_us_only_equal=float(-t.us_residents_total / t.group_total))
+               tax_financed_central_bn=tax, breakeven_w_us_only_equal=float(-t.other_us_residents_total / t.group_total))
     for conv in ("a", "b"):
         s = d[d.channel == f"fiscal_{conv}"].set_index("percentile").bn
         rate = pd.Series(np.nan, index=s.index)
@@ -661,7 +794,7 @@ def saving_leak(I, rows, res, measure="money"):
         leaks = {f"tau_{x}_m_{round(m, 4)}": sp * x * m for x in CAPITAL_TAX for m in RETURN_OVER_DISCOUNT[x]}
         out[conv] = dict(payer_saving_rate=sp, leak_per_dollar=leaks,
                          leak_bn={k: v * tax for k, v in leaks.items()},
-                         breakeven_w_us_only_equal={k: float(-(t.us_residents_total + v * tax) / t.group_total)
+                         breakeven_w_us_only_equal={k: float(-(t.other_us_residents_total + v * tax) / t.group_total)
                                                     for k, v in leaks.items()})
     return out
 
@@ -725,6 +858,9 @@ def row_weight(r, col, fac, pos, I, prem, conv):
             return G_MEXICO
         mx = I["wmeta"]["mexico"]                   # income per head, PPP (weights.py)
         y = mx["remittance_households_median_y"] if w == "mexico_recipients" else mx["median_y"]
+        if r.price_basis == "PPP-consumption":
+            rates = json.load(open(DERIVED / "mexico_meta.json"))["ppp_2024"]
+            y *= rates["PA.NUS.PPP"] / rates["PA.NUS.PRVT.PP"]
         return I["wmeta"]["us_reference"]["per_capita"]["y_ref_other_mean"] / y
     # the group's rows
     gname = r.party
@@ -743,7 +879,9 @@ def group_log(rows, prem, I, end):
         p = prem[gname]
         n = p["persons"] * 1e6
         e_us = p["e_us"] * 1e9 / n
-        e_mx = p["e_mx"][end] * 1e9 / n if np.isfinite(p["e_mx"][end]) else np.nan
+        gate(f"log_premium_inputs_{gname}", np.isfinite([n, e_us, p["e_mx"][end], yref]).all()
+             and n > 0 and e_us > 0 and p["e_mx"][end] > 0)
+        e_mx = p["e_mx"][end] * 1e9 / n
         g = rows[rows.party == gname].set_index("row")
         per = lambda rid: g.loc[rid, end] * 1e9 / n
         m = -per(f"mexico_budget_lost_{gname}")
@@ -753,14 +891,14 @@ def group_log(rows, prem, I, end):
         rem = -per(f"remit_{gname}") if f"remit_{gname}" in g.index else 0.0
         vic = per(f"ingroup_victims_{gname}") + per(f"uncompensated_received_{gname}")
         steps = {}
-        if not np.isfinite(e_mx):
-            out[gname] = {k: np.nan for k in g.index}
-            continue
         c = e_mx + m
         chain = [(f"mexico_budget_lost_{gname}", e_mx), (f"premium_{gname}", e_us), (f"us_budget_value_{gname}", e_us + v),
                  (f"remit_{gname}", e_us + v - rem), ("_vic", e_us + v - rem + vic)]
         for rid, nxt in chain:
-            steps[rid] = yref * n * (np.log(nxt) - np.log(c)) / 1e9 if nxt > 0 and c > 0 else np.nan
+            gate(f"log_consumption_{gname}_{rid}", np.isfinite([nxt, c]).all() and nxt > 0 and c > 0,
+                 previous=c, next=nxt)
+            steps[rid] = yref * n * (np.log(nxt) - np.log(c)) / 1e9
+            gate(f"log_increment_{gname}_{rid}", np.isfinite(steps[rid]))
             c = nxt
         steps[f"ingroup_victims_{gname}"] = steps.pop("_vic")
         steps[f"uncompensated_received_{gname}"] = 0.0          # folded into the victims step above
@@ -770,31 +908,32 @@ def group_log(rows, prem, I, end):
     return out
 
 
-def totals(rows, prem, I, end, fac, pos):
-    cols = ["equal"] + list(fac["_lambda"]) + ["hendren_a", "hendren_b", "log_a", "log_b"]
+def totals(rows, prem, I, end, fac, pos, requested_weightings=None):
+    available = ["equal"] + list(fac["_lambda"]) + ["hendren_a", "hendren_b", "log_a", "log_b"]
+    cols = available if requested_weightings is None else list(requested_weightings)
+    gate("requested_weightings_declared", bool(cols) and set(cols) <= set(available), requested=cols)
+    validate_rows(rows, logarithmic=any(c.startswith("log") for c in cols))
     res = []
-    glog = group_log(rows, prem, I, end)
+    glog = group_log(rows, prem, I, end) if any(c.startswith("log") for c in cols) else {}
     for col in cols:
         conv = "b" if col.endswith("_b") else "a"
         party_tot = {p: 0.0 for p in PARTIES}
         unknown = {p: [] for p in PARTIES}
         for r in rows.itertuples():
             x = getattr(r, end)
-            if not np.isfinite(x):
-                unknown[r.party].append(r.row)
-                continue
+            gate(f"total_row_{r.row}_{end}_finite", np.isfinite(x))
             if col.startswith("log") and r.party in GROUP:
                 val = glog[r.party].get(r.row, np.nan)
-                if not np.isfinite(val):
-                    unknown[r.party].append(r.row)
-                    continue
+                gate(f"total_log_{r.party}_{r.row}_finite", np.isfinite(val))
                 party_tot[r.party] += val
                 continue
             c = r.weight.split(":")[1] if r.weight.startswith("others:") else None
             if c in fac and fac[c].get("mixed") and not col.startswith("equal"):
                 party_tot[r.party] += x + fac[c]["add_g" if col.startswith("hendren") else "add_log"]
                 continue
-            party_tot[r.party] += x * row_weight(r, col, fac, pos, I, prem, conv)
+            weight = row_weight(r, col, fac, pos, I, prem, conv)
+            gate(f"total_weight_{col}_{r.row}_finite", np.isfinite(weight))
+            party_tot[r.party] += x * weight
         N = sum(party_tot[p] for p in PARTIES if p not in GROUP)
         N_us = party_tot["others_today"] + party_tot["future_taxpayers"]
         M = sum(party_tot[p] for p in GROUP)
@@ -805,7 +944,8 @@ def totals(rows, prem, I, end, fac, pos):
         res.append(dict(weighting=col, party="world_total", bn=N + M, unknown_rows=""))
         res.append(dict(weighting=col, party="breakeven_w", bn=(-N / M) if (M > 0 and N < 0) else np.nan,
                         unknown_rows="" if (M > 0 and N < 0) else "none: the non-group parties gain"))
-        res.append(dict(weighting=col, party="us_residents_total", bn=N_us, unknown_rows=""))
+        res.append(dict(weighting=col, party="other_us_residents_total", bn=N_us, unknown_rows=""))
+        res.append(dict(weighting=col, party="us_residents_incl_group_total", bn=N_us + M, unknown_rows=""))
         res.append(dict(weighting=col, party="breakeven_w_us_only", bn=(-N_us / M) if (M > 0 and N_us < 0) else np.nan,
                         unknown_rows="Mexico's residents left out of N"))
     return pd.DataFrame(res)
@@ -842,7 +982,7 @@ def main():
             for mtx in ("withheld", "withheld_consumption", "proportional"):
                 # G3+ has bounds only: the central scenario is reported at each bound; the outer spans take the
                 # lower bound at their low end and the upper at their high end, whichever central is built.
-                for g3 in ("zero", "upper"):
+                for g3 in ("zero", "upper", "rearing"):
                     rows, prem, shares = build_rows(I, pgc, mexico_taxes=mtx, g3_central=g3)
                     detail.append(rows.assign(case=args.case, pg_convention=pgc, mexico_taxes=mtx, g3_central=g3))
                     for end in ("low", "central", "high") if g3 == "zero" else ("central",):

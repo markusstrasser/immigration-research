@@ -1,0 +1,284 @@
+# Mexico: Taxing Wages 2025 | OECD
+URL: https://www.oecd.org/en/publications/taxing-wages-2025_b3a95829-en/full-report/mexico_98ddd565.html
+Published: 2025-04-30
+
+Mexico: Taxing Wages 2025 | OECD
+
+# Taxing Wages 2025
+
+Decomposition of Personal Income Taxes and the Role of Tax Reliefs 
+
+ 30 April 2025 
+
+## Abstract 
+
+This chapter includes data on the income taxes paid by workers, their social security contributions, the family benefits they receive in the form of cash transfers as well as the social security contributions and payroll taxes paid by their employers. Results reported include the marginal and average tax burden for eight different family types.
+
+Methodological information is available for personal income tax systems, compulsory social security contributions to schemes operated within the government sector, universal cash transfers as well as recent changes in the tax/benefit system. The methodology also includes the parameter values and tax equations underlying the data. 
+
+The national currency is the peso (MXN). In 2024, MXN 18.31 were equal to USD 1. That year, the estimated earnings of the average worker are MXN 199 946 (Secretariat estimate). 
+
+##### Tax unit 
+
+Each person is taxed separately.
+
+###### Standard tax reliefs 
+
+There are two basic allowances, a yearly holiday bonus and an end-of-year bonus.
+
+- Holiday Bonus: As a result of the amendment of the Mexico's Labour Law that entered into force in 2023, stipulates a minimum holiday bonus of 25% of twelve days of the worker’s wage. The maximum exemption according to the Tax Law is equivalent to 15 Units of Measure and Update (UMAs). 1 
+- End-of-year bonus: The minimum end-of-year bonus established in the Labour Law is 15 days of the worker’s wage. The Tax Law exempts end-of-year-bonuses up to 30 UMAs.
+
+###### Main non-standard tax reliefs 
+
+Deductions:
+
+- Compulsory school transportation costs. 
+- Medical expenses (doctor, dental, psychology and nutrition fees and hospital expenses): For expenses made by the taxpayer on behalf of his or her spouse and straight-line relatives, the deduction is allowed only if the taxpayer´s relative earns less than the minimum annual wage.
+- Complementary contributions of certain retirement accounts are considered eligible as long as they do not exceed 10% of taxable income and MXN 198 032 (5 annual UMAs).
+- Funeral expenses: for the spouse and straight-line relatives up to 1 annual UMA. 
+- Charitable donations made to institutions such as:
+
+- Federal, state, and municipal governments.
+- Non-profit organisations involved in the fields of social beneficence, education, culture, and research and technology.
+- Deposits on special savings accounts, payments of insurance premium of pension plans, and for the acquisition of shares of investment societies as long as they do not exceed MXN 152 000.
+- Health insurance premiums for individuals, if the beneficiary is the taxpayer, and/or his family.
+- Real interest expenditure of mortgage loans if the value of the property does not exceed MXN 6 065 231 (750 000 Investment Units). Real interest expenditure is defined as the excess of interest expense over the inflation rate. 2
+- Deduction of taxpayer's educational expenditures for himself, on behalf of his/her spouse, parents or children, among others, for the following educational levels.
+
+| Educational Level | Maximum Annual Deduction (MXN) |
+| --- | --- |
+| Kinder Garden | 14 200 |
+| Primary Education | 12 900 |
+| Secondary Education | 19 900 |
+| Technical Profession | 17 100 |
+| High School | 24 500 |
+
+Since 2016, the limit amount for personal deductions was increased. The new limit is the minimum between 15% of taxpayer's gross income and an amount equivalent to 5 annual UMAs (MXN 198 032 in 2024). The limit does not apply to private school´s tuition, complementary contributions to retirement´s personal accounts, professional fees, and medical expenses in the event of incapacity or disability. Since 2022 this limit applies to charity donations.
+
+###### Employment subsidy credit 
+
+By Presidential Decree of May 1, 2024, the employment subsidy credit table was replaced by a monthly amount equivalent to 11.82% of the monthly value of the UMA, applicable uniformly to all workers whose monthly taxable income for salary does not exceed MXN 9 081, this will be applied against their income tax of the corresponding calendar month. In cases in which the tax payable by the employee is less than the monthly employment subsidy credit, the difference cannot be carried forward or refunded.
+
+Until April 30, 2024 the employment subsidy credit was decreasing on workers´ income and was assigned based on a table of income brackets. For monthly income higher than MXN 7 382 no employment subsidy credit was given. Employees with an income tax lower than the credit received in cash the difference along with their salary. The rest of the workers that received the credit were entitled to a reduction in their tax burden. The employment subsidy credit was paid by the employers who may credit it against their tax liabilities; the credit therefore represented a fiscal cost for the government.
+
+###### Tax schedule 
+
+ 
+
+ expand 
+
+| Taxable income (MXN) | | Fixed quota (MXN) | Tax on the amount in excess of the lower limit (%) |
+| --- | --- | --- | --- |
+| Lower Limit | Upper Limit | | |
+| 0.01 | 8 952.49 | 0.00 | 1.92 |
+| 8 952.50 | 75 984.55 | 171.88 | 6.40 |
+| 75 984.56 | 133 536.07 | 4 461.94 | 10.88 |
+| 133 536.08 | 155 229.80 | 10 723 .55 | 16.00 |
+| 155 229.81 | 185 852.57 | 14 194.54 | 17.92 |
+| 185 852.58 | 374 837.88 | 19 682.13 | 21.36 |
+| 374 837.89 | 590 795.99 | 60 049.40 | 23.52 |
+| 590 796.00 | 1 127 926.84 | 110 842.74 | 30.00 |
+| 1 127 926.85 | 1 503 902.46 | 271 981.99 | 32.00 |
+| 1 503 902.47 | 4 511 707.37 | 392 294.17 | 34.00 |
+| 4 511 707.38 | And over | 1 414 947.85 | 35.00 |
+
+ 
+
+ 
+
+The income tax schedule is updated once the accumulated inflation reaches 10%. The last update was in 2023.
+
+###### Employment subsidy credit table 
+
+Until April 30, 2024 for annual taxable income in a certain income range, the employment subsidy credit was given in the third column of the following illustrative table:
+
+| Lower limit (MXN) | Upper limit (MXN) | Tax credit (MXN) |
+| --- | --- | --- |
+| 0.0 | 21 227.52 | 4 884.24 |
+| 21 227.53 | 31 840.56 | 4 881.96 |
+| 31 840.57 | 41 674.08 | 4 879.44 |
+| 41 674.09 | 42 454.44 | 4 713.24 |
+| 42 454.45 | 53 353.80 | 4 589.52 |
+| 53 353.81 | 56 606.16 | 4 250.76 |
+| 56 606.17 | 64 025.04 | 3 898.44 |
+| 64 025.05 | 74 696.04 | 3 535.56 |
+| 74 696.05 | 85 366.80 | 3 042.48 |
+| 85 366.81 | 88 587.96 | 2 611.32 |
+| 88 587.97 | And Over | 0.00 |
+
+For 2024 the monthly amount of the employment subsidy credit is MNX 390, effective from May 1 to December 31, 2024.
+
+#### State and local income taxes 
+
+States do not levy taxes on income.
+
+#### Payroll taxes 
+
+Mexico does not have a Federal pay-roll tax. However, most States apply a state pay-roll tax with an average rate of 2.82%. These taxes are not considered in this Report since there are a wide range of practices with respect to the definition of the tax base that does not allow obtaining a reliable estimation.
+
+### Compulsory Social Security Contributions to Schemes Operated within the Government Sector 
+
+#### Employees’ contributions 
+
+Social security contributions are divided as follows:
+
+For sickness and maternity insurance, 0.625% of the workers monthly wage, plus 0.40% of the amount in excess of 3 UMAs. For disability and life insurance, 0.625% of the monthly wage.
+
+In 2024, a ceiling of 25 UMAs applies to the salary that is used to calculate the social security contributions.
+
+#### Employers’ contributions 
+
+- For sickness and maternity 20.40% of the UMA, plus 1.10% of the amount in excess of 3 UMAs, plus 1.75% of the monthly wage.
+- For disability and life insurance, 1.75% of worker’s monthly wage. 
+- For social services and nursery, 1% of worker’s monthly wage.
+- For insurance for work injuries of employees, 1.978% of worker’s monthly wage. 3 
+
+In 2024, a ceiling of 25 UMAs applies to the salary that is used to calculate the social security contributions. 
+
+#### Transfers related to marital status 
+
+None.
+
+#### Transfers for dependent children 
+
+None.
+
+### Main Changes in the Tax/Benefit System since 1995 
+
+The Social Security Law enacted in July 1997 changed fundamentally the financing of non-government employees’ social security, which shifted from a pay-as-you-go scheme to funded individual accounts. The government does not manage these accounts; new private financial institutions were created specifically for this purpose. However, the contractual obligation is between the workers and the government, not with the private administrator of the funds, because legally they are still considered as contributions to social security, independently of who manages the funds. It should be noted that the federal government also contributes to each pension account and guarantees a minimum pension to every beneficiary of the social security system, independently of the administration of the funds as well.
+
+#### Changes to labour taxation due to the COVID pandemic in 2020 and 2021 
+
+Federal Government.
+
+- The Tax Administration Service extended the deadline for filing the individual 2020 annual tax return until May 31st, 2021 (originally April 30).
+- The Tax Administration Service extended the deadline for filing the individual 2019 annual tax return until June 30, 2020 (originally April 30).
+
+Examples of tax measures at Subnational Governments.
+
+- Waiver of the Payroll Tax corresponding to the month of January 2021 for taxpayers of sectors affected by the pandemic in the historic downtown area of Mexico City & for all the restaurants in Mexico City.
+- The Mexico City Government suspended tax inspection acts from December 17th, 2020, to January 6th, 2021.
+- The City Government also announced the deferral of tax returns and payments obligations included in the Mexico City Tax Code, extending the deadline to the end of the month. Tax inspection acts were suspended from March 23rd to May 29th.
+- Individuals and companies were exempted of surcharges, fines and other expenses generated during the first three bimesters of 2020 for non-compliance with the payment of the property tax. Additionally, a 5% discount was granted on the payment of this tax for the fourth bimester, as well as for advance payments of the tax corresponding to the fifth and sixth bimesters.
+- The State of Mexico also granted a 50% discount for the payment of payroll tax for companies with up to 50 employees for April and May.
+- The Government of the State of Sonora announced for March and April a 50% discount for the payment of payroll tax for companies with up to 50 employees The measures were extended until June.
+
+#### Method used to identify an average worker and to calculate his gross earnings. 
+
+The income data refer to average workers. It should be noted that in the sample used for this survey, medium and large size firms are over-represented. In Mexico, there are no state or local government income taxes. Information on non-standard tax reliefs is not available. 
+
+Figures for 1999 and subsequent years cannot be compared with preliminary figures from previous editions of this publication for two reasons: first, the wage level of the average worker is now based on observed data instead of being estimated; second, social security contributions taken into account no longer include contributions made by employers and employees to privately managed individual accounts. Contributions no longer included in the calculation of social security contributions are specified in the table below.
+
+#### Main employees’ and employers' contributions to private pension, health, etc. schemes 
+
+| | Account | % of workers’ monthly wage |
+| --- | --- | --- |
+| Employers’ contributions | Retirement | 2.00 |
+| | Discharge and old age insurance | As a result of an amendments of the Social Security Law and Retirement Savings Systems Law that entered into force in 2021, which consider a gradual increase to the employer's discharge and old age insurance rate from 2023 until 2030. The contribution will be increased according to the table below |
+| | Housing Fund (INFONAVIT) | 5.00 |
+| Employees’ contributions | Discharge and old age insurance | 1.125 |
+
+ Contribution rates to private pension, health, etc. for employees and employers from 2024 onwards. 
+
+ expand 
+
+| Worker’s base salary | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1.00 Minimum wage (Mw) | 3.150% | 3.150% | 3.150% | 3.150% | 3.150% | 3.150% | 3.150% | 3.150% |
+| 1.01 Mw to 1.50 Unit of Measure and Update (UMA) | 3.281% | 3.413% | 3.544% | 3.676% | 3.807% | 3.939% | 4.070% | 4.202% |
+| 1.51 to 2.00 UMA | 3.575% | 4.000% | 4.426% | 4.851% | 5.276% | 5.701% | 6.126% | 6.552% |
+| 2.01 to 2.50 UMA | 3.751% | 4.353% | 4.954% | 5.556% | 6.157% | 6.759% | 7.360% | 7.962% |
+| 2.51 to 3.00 UMA | 3.869% | 4.588% | 5.307% | 6.026% | 6.745% | 7.464% | 8.183% | 8.902% |
+| 3.01 to 3.50 UMA | 3.953% | 4.756% | 5.559% | 6.361% | 7.164% | 7.967% | 8.770% | 9.573% |
+| 3.51 to 4.00 UMA | 4.016% | 4.882% | 5.747% | 6.613% | 7.479% | 8.345% | 9.211% | 10.077% |
+| 4.01 to 4.50 UMA | 4.241% | 5.331% | 6.422% | 7.513% | 8.603% | 9.694% | 10.784% | 11.875% |
+
+ 
+
+ 
+
+In 2023, the employer contributions came into force for the financing of discharge and old age insurance, which are defined based on the table contained in Article 168 of the Social Security Law, in which, some intervals are defined in multiples of the minimum wage and others in Unit of Measure and Update (UMAs). Due to the minimum wage is used in the first two intervals, a discontinuity is generated with respect to the following intervals, owing to the fact that the value of the UMA is less than the minimum wage. In this regard, the Second Chamber of the Supreme Court of Justice of the Nation confirmed the constitutionality of the current Social Security Law in relation to quotas and contributions for the employer´s discharge and old age insurance, establishing that the option that is most favorable for workers should be applied.
+
+### 2024 Parameter values 
+
+ 
+
+ expand 
+
+| Average earnings/yr | Ave_earn | 199 946 714 | Secretariat estimate | |
+| --- | --- | --- | --- | --- |
+| Unit of Measure and Update | UMA | 108.57 | | |
+| Income tax | tax_table | 0.00 | 0 | 0.0192 |
+| | | 8 952.50 | 171.88 | 0.0640 |
+| | | 75 984.56 | 4 461.94 | 0.1088 |
+| | | 133 536.08 | 10 723.55 | 0.1600 |
+| | | 155 229.81 | 14 194.54 | 0.1792 |
+| | | 185 852.58 | 19 682.13 | 0.2136 |
+| | | 374 837.89 | 60 049.40 | 0.2352 |
+| | | 590 796.00 | 110 842.74 | 0.3000 |
+| | | 1 127 926.85 | 271 981.99 | 0.3200 |
+| | | 1 503 902.47 | 392 294.17 | 0.3400 |
+| | | 4 511 707.38 | 1 414 947.85 | 0.3500 |
+| Tax credit basic | Basic_crd | 0.0 | 4 884.24 | |
+| | | 21 227.53 | 4 881.96 | |
+| | | 31 840.57 | 4 879.44 | |
+| | | 41 674.09 | 4 713.24 | |
+| | | 42 454.45 | 4 589.52 | |
+| | | 53 353.81 | 4 250.76 | |
+| | | 56 606.17 | 3 898.44 | |
+| | | 64 025.05 | 3 535.56 | |
+| | | 74 696.05 | 3 042.48 | |
+| | | 85 366.81 | 2 611.32 | |
+| | | 88 587.97 | 0.00 | |
+| | Basic_crd_2024 | 4 681.47 | | |
+| Employees SSC | SSC_rate | 0.0125 | | |
+| | SSC_rate_sur | 0.0040 | | |
+| Employers SSC | SSC_empr | 0.06478 | | |
+| | SSC_empr_min | 0.2040 | | |
+| | SSC_empr_sur | 0.0110 | | |
+
+ 
+
+ 
+
+### 2024 Tax equations 
+
+The equations for the Mexican system in 2024 are on an individual basis.
+
+The functions which are used in the equations (Taper, MIN, Tax etc) are described in the technical note about tax equations. Variable names are defined in the table of parameters above, within the equations table, or are the standard variables “married” and “children”. A reference to a variable with the affix “_total” indicates the sum of the relevant variable values for the principal and spouse. And the affixes “_princ” and “_spouse” indicate the value for the principal and spouse, respectively. Equations for a single person are as shown for the principal, with “_spouse” values taken as 0.
+
+ 
+
+ expand 
+
+| | Line in country table and intermediate steps | Variable name | Range | Equation |
+| --- | --- | --- | --- | --- |
+| 1. | Earnings | earn | | |
+| 2. | Allowances | tax_al | B | MIN(earn, MIN(earn*(12/365)*0.25, UMA*15)+ MIN(earn*(15/365), UMA*30)) |
+| 3. | Credits in taxable income | taxbl_cr | B | 0 |
+| 4. | CG taxable income | tax_inc | B | Positive(earn-tax_al) |
+| 5. | CG tax before credits | CG_tax_excl | B | Tax(tax_inc, Tax_sch) |
+| 6. | Tax credits | tax_cr | B | 1/3*VLOOKUP(tax_inc, Basic_crd, 2) +2/3*IF(tax_inc<max_inc_tc,Basic_crd24,0) |
+| 7. | CG tax | CG_tax | B | CG_tax_excl-tax_cr |
+| 8. | State and local taxes | local_tax | B | 0 |
+| 9. | Employees' soc security | SSC | B | MIN(earn*ssc_rate, UMA*25*30.4*12*ssc_rate)+MIN(Positive(earn-(3*30.4*12*UMA))*ssc_rate_sur, UMA*(25-3)*30.4*12*ssc_rate_sur) |
+| 11. | Cash transfers | cash_trans | B | 0 |
+| 13. | Employer's soc security | SSC_empr | B | MIN(earn*ssc_empr, UMA*25*30.4*12*ssc_empr)+30.4*12*UMA*ssc_empr_min +MIN(Positive(earn-(3*30.4*12*UMA))*ssc_empr_sur, UMA*(25-3)*30.4*12*ssc_empr_sur) |
+| | Memorandum item: Non-wastable tax credit | | | |
+| | tax expenditure component | taxexp | B | tax_cr-transfer |
+| | cash transfer component | transfer | B | IF(CG_tax<0, -CG_tax, 0) |
+
+Key to range of equation B calculated separately for both principal earner and spouse P calculated for principal only (value taken as 0 for spouse calculation).
+
+ 
+
+### Notes 
+
+← 1. For 2024, the value of the UMA is 108.57, mean while the general minimum wage is 248.93 and 374.89 in the northern border region. The municipalities constituting the northern border region are as follows: Ensenada, Playas de Rosarito, Mexicali, Tecate, Tijuana, San Quintín and San Felipe in the state of Baja California; San Luis Río Colorado, Puerto Peñasco, General Plutarco Elías Calles, Caborca, Altar, Sáric, Nogales, Santa Cruz, Cananea, Naco and Agua Prieta in the state of Sonora; Janos, Ascensión, Juárez, Práxedis G. Guerrero, Guadalupe, Coyame del Sotol, Ojinaga and Manuel Benavides in the state of Chihuahua; Ocampo, Acuña, Zaragoza, Jiménez, Piedras Negras, Nava, Guerrero and Hidalgo in the state of Coahuila de Zaragoza; Anáhuac in the state of Nuevo León, and Nuevo Laredo; Guerrero, Mier, Miguel Alemán, Camargo, Gustavo Díaz Ordaz, Reynosa, Río Bravo, Valle Hermoso and Matamoros in the state of Tamaulipas.
+
+← 2. The Investment Units (UDIS) is a daily frequency indicator and it is updated taking as reference the fortnightly variations of the National Consumer Price Index (INPC). The average value of the UDIS from January to April of 2024 was MXN 8.0870.
+
+← 3. The amount of the work injury fee depends on the risk level in which the company is classified. The Mexican Institute of Social Security provided a weighted average rate that considers the economic activities from C to K of the International Standard Classification.
+
+

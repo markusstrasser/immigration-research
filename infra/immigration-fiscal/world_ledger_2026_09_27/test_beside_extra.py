@@ -126,10 +126,11 @@ def test_summary_follows_from_party_totals(summary):
         g = lambda party: x[(r.scenario, r.weighting, party)]   # noqa: E731
         assert np.isclose(r.world_total_bn, g("world_total"), atol=1e-6)
         assert np.isclose(r.group_total_bn, sum(g(q) for q in GENS), atol=3e-6)
-        assert np.isclose(r.us_residents_incl_group_bn, g("us_residents_total") + g("group_total"), atol=2e-6)
+        assert np.isclose(r.other_us_residents_bn, g("other_us_residents_total"), atol=1e-6)
+        assert np.isclose(r.us_residents_incl_group_bn, g("us_residents_incl_group_total"), atol=2e-6)
         assert np.isclose(r.group_per_member_usd, g("group_total") * 1e9 / MEMBERS, atol=0.05)
         assert np.isclose(r.breakeven_w, -(g("world_total") - g("group_total")) / g("group_total"), atol=1e-5)
-        assert np.isclose(r.breakeven_w_us_only, -g("us_residents_total") / g("group_total"), atol=1e-5)
+        assert np.isclose(r.breakeven_w_us_only, -g("other_us_residents_total") / g("group_total"), atol=1e-5)
 
 
 def test_arms_alone_are_beside_arms(eq):
@@ -142,11 +143,12 @@ def test_arms_alone_are_beside_arms(eq):
 
 def test_same_person_moves_only_g1(meta, eq):
     sp = meta["arm1"]["same_person"]
-    e_us = sp["e_us_nominal_bn"]["own_schooling_all_ages"]
+    e_us_cash = sp["e_us_nominal_bn"]["own_schooling_all_ages"]
+    employer = meta["scenario_detail"]["baseline"]["employer_us_bn"]["G1"]
     base = eq.loc["baseline"]
     for name, d in sp["detail"].items():
         x = d["own_schooling_all_ages"]
-        assert np.isclose(eq.loc[name, "premium_G1_bn"], e_us * (1 - 1 / x["r_annual"]), atol=1e-6), name
+        assert np.isclose(eq.loc[name, "premium_G1_bn"], e_us_cash * (1 - 1 / x["r_annual"]) + employer, atol=1e-6), name
         assert np.isclose(eq.loc[name, "premium_G2_bn"], base.premium_G2_bn, atol=1e-9)
         assert np.isclose(eq.loc[name, "premium_G3plus_bn"], base.premium_G3plus_bn, atol=1e-9)
         # Mexico's taxes on the group are transfers, so at equal weights the world moves by the premium alone.
@@ -196,7 +198,7 @@ def test_readings_are_their_arms(meta, eq):
 def test_same_person_rows_are_parameters(meta, summary):
     # The lead's ruling (2026-10-08): same-person pay is a parameter row only, never a reading or a low end.
     lab = summary.drop_duplicates("scenario").set_index("scenario")
-    sp = set(lab.index[lab.arm == "same_person"])
+    sp = set(lab.index[(lab.arm == "same_person") & lab.g3_bound.eq("zero")])
     assert sp == {"reading1_same_person_cmp", "reading3_mmp_annual", "reading3", "combined_low",
                   "combined_low_consumption"}
     assert lab.loc[sorted(sp), "label"].str.startswith("Same-person parameter, not a reading or a low end:").all()
@@ -228,8 +230,9 @@ def test_private_gain_adds_up(meta, eq):
     p = pd.read_csv(D / f"beside_extra_private_gain_{CASE}.csv")
     inp = meta["private_gain"]["inputs"]
     for r in p.itertuples():
-        a = r.premium_bn + r.us_taxes_bn + r.mexico_taxes_avoided_bn + r.mexico_services_forgone_bn
+        a = r.premium_bn + r.us_wage_taxes_bn + r.mexico_wage_taxes_avoided_bn
         assert np.isclose(r.wages_only_bn, a, atol=1e-5), r.scenario
+        assert np.isclose(r.with_services_bn, r.all_taxes_private_bn + r.us_services_bn + r.mexico_services_forgone_bn, atol=1e-5)
         assert np.isclose(r.with_old_age_accrual_bn, a + r.social_security_accrual_bn + r.part_a_accrual_bn, atol=1e-5)
         assert np.isclose(r.wages_only_per_member_usd, r.wages_only_bn * 1e9 / r.persons, atol=0.05)
         if r.generation == "G1":

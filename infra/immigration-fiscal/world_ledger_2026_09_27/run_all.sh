@@ -10,15 +10,17 @@ if [ "$#" -ne 1 ] || [ "$1" != oct14 ]; then
   echo '[BLOCKED] run_all.sh computes only the live oct14 case; historical outputs are preserved' >&2
   exit 1
 fi
-run() { OPENBLAS_NUM_THREADS=1 uv run --no-project python3 "$@"; }
+run() { OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 uv run --no-project python3 "$L/measured_run.py" uv run --no-project python3 "$@"; }
 run "$L/mexico.py"
+run "$L/employer_ui_basis.py"
 run "$L/g2_premium.py"
 run "$L/g2_premium.py" --basis row4
 run "$L/g2_premium.py" --basis lineage
 run "$L/weights.py"
 run "$L/weights.py" --basis row4
 run "$L/weights.py" --basis lineage
-node "$L/generation_lines.cjs" --case oct14
+run "$L/p7_snapshot.py"
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 "$L/measured_run.py" node "$L/generation_lines.cjs" --case oct14
 run "$L/split_residual.py" --case oct14
 run "$L/state_price_quantity.py"
 run "$L/valuation.py" --case oct14
@@ -27,3 +29,5 @@ run "$L/world_ledger.py" --case oct14
 run "$L/world_ledger.py" --case oct14 --basis row4
 run "$L/beside_arms.py"
 run "$L/beside_extra.py"
+run "$L/p7_fixes.py"
+run "$L/p7_document.py"
