@@ -15,7 +15,7 @@ D = Path(__file__).resolve().parent / "derived/sept29"
 KEY = ["convention", "end", "breakdown", "cell"]
 
 
-@pytest.fixture(params=["sept29", "oct14", "oct14/shared_allocation"])
+@pytest.fixture(params=["sept29", "oct15", "oct15/shared_allocation"])
 def case_dir(request):
     return Path(__file__).resolve().parent / "derived" / request.param
 

@@ -1191,3 +1191,139 @@ hotspot; a future change needs its own parity proof. No consolidation was attemp
 
 - 2026-10-14 19:11 JST — v7 propagation complete: R5–R9, personal and shared companions, all gates and 16 tests passed;
   stable rerun `IDENTICAL: 120/120`, exit 0. Memory and exact rerun-RSS receipt limitations are stated above.
+
+## Oct15 route (v8), 2026-10-15
+
+The route computes `oct15` only. Earlier case files and the execution records above stay unchanged.
+`export_lines.cjs` gates the principal case payload/package identity, found ends, published set/cash bands,
+and generation conservation at all 32 specifications (1e-9bn). Its explicit child native-cell reversal separates
+the old G3+ allocation from observed nonreporting children; each child's own-age transformed unit model is
+evaluated at the actual specification and placed on its PH_SEQ/PPPOS household. Every resulting line,
+capital component and production term has an independent 1e-9bn conservation check. Reporter carriers copy
+the selected parent key/response, and their own job keys reuse the source's exact record-level kernel.
+[CALCULATION: `export_lines.cjs`, `completion_keys.py`, `households.py`]
+
+`HOUSEHOLD_MIXED_ROUTE=per_member` is the declared default branch: item11's authoritative generation total
+is distributed per member within that generation because the payload supplies no observed household split.
+This is a distribution assumption, not a recomputed household counterfactual. The v7 child-credit edits stay
+and item11's bounded delta enters once; no independent D or second item5b amount is added. [ASSUMPTION]
+
+When real coverage enables the generation lane's new state-price route, its joint normalization is decomposed
+into exact identified, latent and observed-native changes. The household kernel removes only that increment
+from baseline P7 line pricing, then places the identified/latent changes on P7 source-category keys with their
+respective weight fractions and native changes on the children's principal own-age source amounts at their
+observed records. Reporter carriers remain outside the adjustment. The source's G3 state-geography proxy is
+an assumption; no residual replaces a missing declaration. [CALCULATION: `statePriceParts`, `state_price_source`]
+The added-person price target preserves the case's original nonreporting-descendant subtotal separately and
+adds only the declared active latent/native state reallocation. The identified offset balances this change,
+so the union total stays fixed. `coverage_added_source_cost_bn`, `coverage_added_state_reallocation_bn` and
+their provenance prevent a calibration from erasing the changed allocation. Native record metadata also
+separates `base_cost_bn` and central convention(a) `state_price_cost_bn`; their sum is `cost_bn`. These fixed
+unit prices are suitable for a conditional parent-fraction calculation, not full fiscal uncertainty.
+[CALCULATION: `addedStateTargetMetadata`, `childCostMetadata`; ASSUMPTION: generation source geography proxy]
+
+The original P7 credit allocation remains first order, as documented at the top of `households.py`: cash-FIT
+corrections follow the original federal-liability key and refundable-credit corrections the original survey
+credit key. A conserved age partition of this kernel does not establish true dependent-owner credit incidence.
+That distinction is separate from item11's explicitly assumed distribution. [CALCULATION: `v4_split`, `line_parts`]
+
+Coverage is reported in `people_survey_misses.csv` as a separate signed block by generation and age, at the
+coverage lane's exact signed cohort prices. It contributes to the account's total and complete population,
+and never enters an observed household's balance, head category, rank or net-contributor share. Household
+distribution statistics therefore describe the located members; their conservation controls include the
+separate unlocated block. The identified/added weight matrices exposed at the pricing construction boundary
+put reporters on their observed identified weights and biological nonreporters exclusively in the added block.
+[CALCULATION: `households.py`; DATA: main_case_2026_10_15 payload coverage source]
+
+The own-job key producer runs separately to bound physical footprint. Its source AST adapter replaces only
+the obsolete RSS fail gate with `scripts/memory_budget.py`'s principal physical-footprint check; upstream source
+code and gates remain unchanged. Household processes use that same 2.5GB principal gate. The original
+September29 person-accrual cache remains the source for the beside person/on-books arms. [CALCULATION]
+
+Live reproduction, in this order (the cash flat files are beside the set's person/on-books arms):
+
+```sh
+node infra/immigration-fiscal/within_group_distribution_2026_09_29/reporter_b_inputs.cjs
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/reporter_b_routes.py --basis set --zero-raw-driver-policy source_anchor
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/reporter_b_routes.py --basis cash --zero-raw-driver-policy source_anchor
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/reporter_b_routes.py --merge
+node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs --case oct15
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/completion_keys.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct15
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct15 --accrual person
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct15 --accrual person --payroll onbooks
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct15 --placement uniform
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct15 --basis cash
+node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs --case oct15 --allocation shared
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct15 --allocation shared
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct15 --allocation shared --accrual person
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct15 --allocation shared --accrual person --payroll onbooks
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct15 --allocation shared --basis cash
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/within_group_distribution_2026_09_29/test_person_accrual.py infra/immigration-fiscal/within_group_distribution_2026_09_29/test_oct15_contract.py infra/immigration-fiscal/within_group_distribution_2026_09_29/test_reporter_b_routes.py infra/immigration-fiscal/within_group_distribution_2026_09_29/test_completion_publication.py -q -p no:cacheprovider
+```
+
+**Execution log (JST).**
+
+- 2026-10-15 00:14 — The initial absent-oct15 stop was fixed by declared routes. Saved/API parity, the band and
+  found-end gates now pass; generation oct15 files were still pending. No final household or coverage result
+  is claimed at this checkpoint. The measured export startup was 42.585s; child RSS was 256,753,664 bytes,
+  reported without using RSS as a fail gate. [CALCULATION: `_cache/oct15-export-base.log`]
+- 2026-10-15 01:16 — BASE export (`COVERAGE=0`) passes every gate, including all 32-specification generation conservation
+  at 2.4e-12bn set / 2.0e-12bn cash. Exact own-record job national masses and native-child rows, capital and
+  production are declared separately; receipt-offset capital follows its P7 service parent. Native education
+  retains the P7 school/P categories through principal own-age unit cells and pinned national components.
+  G1's 0.000012099743-person source rounding has a zero-dollar record; observed weights stay unchanged.
+  [CALCULATION: `_cache/oct15-export-base.log`, `households.py`]
+- 2026-10-15 01:16 — The standard cProfile CLI suppressed a failed memory gate's SystemExit. Missing terminal
+  receipts caught the false exit 0; the local exit-preserving profiler passes explicit exit 0/7 regressions.
+  One sort/CDF now serves all five quantiles and pension arms are evaluated sequentially. Exact flat-output
+  parity and every arm's case/replicate gates pass; one profiled person run falls from 148.588s to 41.182s,
+  at 2,457,423,208 physical bytes, below the unchanged 2.5GB budget. Canonical row4 matrix parity passes;
+  its physical receipt is 2.219GB. After the category fix, flat/person/cash run in 15.622 / 55.308 / 18.886s,
+  with physical peaks 2.313 / 2.486 / 2.268GB and exit 0. Timing varies with concurrent machine work.
+  [CALCULATION: `_cache/oct15-households-{flat,person,cash}-base.log`, `_cache/profile_run.py`]
+- 2026-10-15 — `reporter_b_routes.json` declares all339 reporter carriers in each basis, both allocations and
+  all161 replicates from actual household driver primitives and the principal204-record NAS(b) parent map.
+  Raw generation shares close at1e-12, signed amounts at1e-9bn; driver-pool values and component shares retain
+  each record's exact contribution for fine-cell consumers. Existing union parents remain `P7_frozen`; six old
+  children affected by a newly completed parent are explicitly deferred rather than silently repriced.
+  Four personal unused veterans-key carriers have nonzero raw amounts but zero reporter driver mass.
+  `--zero-raw-driver-policy stop` fails closed; the parent's named `source_anchor` branch uses only the exact
+  source fallback anchor chosen by item_union263–277, with alternative carrier key/response/amount retained.
+  Their ownership is modeled and labeled; allother335personal/339shared drivers stay actual selected drivers.
+  Both producers exit0 in3.391/3.472s at1.444/1.465GB physical footprint; four bounded regressions pass.
+  [CALCULATION: `reporter_b_inputs.cjs`, `reporter_b_routes.py`, `test_reporter_b_routes.py`; ASSUMPTION: source-anchor ownership]
+- 2026-10-15 — Final household placement excludes exactly574,915.64098685 principal missing-coverage adults
+  from its G3+ target; complete counts and the source subtraction remain in metadata. Every original gate
+  stays unchanged. Final personal set/cash lines are byte-identical before/after generation provenance refresh.
+  Final memory profiling found retained construction and statistics buffers. Their release preserves all6
+  frozen BASE person CSV bytes and every original generation/replicate reduction. All personal/shared,
+  flat/person/on-books/uniform/cash variants pass; maximum current physical footprint2.444GB. All24 tests pass.
+  The full16-command byte reproduction is running. [CALCULATION: `_cache/oct15-final-*.log`,
+  `_cache/check-base-person-memory.log`, `_cache/final-pytest.log`]
+
+Original latent descendants retain the P7 assumption: age-band factors place them on existing G3+ records.
+Thus household shares describe observed members plus that modeled placement; new observed reporters and
+biological children use their own records. Coverage people remain separately unlocated and enter no household
+rank or contributor classification. [ASSUMPTION; CALCULATION: `age_band_factors`, coverage block]
+- 2026-10-15 — The first full replay ran all 16 commands with exit 0, then the comparison harness failed
+  because part of its OS-temporary backup vanished; no IDENTICAL verdict was accepted. The parent is auditing
+  that external deletion. A separate concurrent-reader SHA failure exposed in-place shared JSON publication.
+  Inventory, reporter profiles, line exports and job NPZ/receipts now publish staged sibling files by atomic
+  rename; physical gates precede publication. Two fault regressions preserve prior files on a failed budget
+  gate and expose only complete JSON. Actual job NPZ bytes and all reporter driver/route arrays are unchanged.
+  All 26 tests pass. The repeat uses an owned protected TMPDIR and freezes documentation during comparison.
+  [CALCULATION: `_cache/oct15-rerun-final.log`, atomic publication tests; UNRESOLVED: external backup deletion]
+- 2026-10-15 — Protected backup comparison is IDENTICAL 198/198, but exit3 correctly rejects four test files
+  omitted from that replay's command list. The required repeat adds an explicit pytest command naming all four
+  files, with no blanket exemptions. The local wrapper now checks source coverage and EOL conversion before
+  an expensive replay. No scientific source or output changes accompany this correction. [CALCULATION]
+- 2026-10-15 — FINAL PASS: protected 17-command reproduction exits 0, IDENTICAL 198/198; all producers
+  and four explicitly named pytest files execute successfully. Observed total 279.270s; resource.getrusage
+  peak child RSS 3,549,970,432 bytes is descriptive, not the physical-memory fail gate. Every household
+  variant passes the principal 2.5GB physical gate; current variant receipts include personal/person-on-books
+  2.095/2.107GB and shared person/on-books 2.444/2.443GB. All 26 tests pass. All 73 reporter source pins remain
+  current after replay, and every reporter driver/route array remains exact before/after atomic publication.
+  Final personal set/cash pricing lines remain byte-identical after generation provenance refresh. No git
+  staging, commit or merge occurred in this delegated lane. [CALCULATION: `_cache/oct15-rerun-final.log`,
+  `_cache/final-rerun-wrapper-complete.log`, `_cache/oct15-final-*.log`, `derived/reporter_b_routes.json`]

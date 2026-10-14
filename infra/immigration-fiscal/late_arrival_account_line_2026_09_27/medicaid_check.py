@@ -76,12 +76,13 @@ SETS = {"default": (("sept27", "sept26_schools"), "medicaid_check.csv"),
         "sept29": (("sept29", "sept29_cash"), "medicaid_check_sept29.csv"),
         "oct05": (("oct05", "oct05_cash"), "medicaid_check_oct05.csv"),
         "oct07": (("oct07", "oct07_cash"), "medicaid_check_oct07.csv"),
-        "oct14": (("oct14", "oct14_cash"), "medicaid_check_oct14.csv")}
+        "oct14": (("oct14", "oct14_cash"), "medicaid_check_oct14.csv"),
+        "oct15": (("oct15", "oct15_cash"), "medicaid_check_oct15.csv")}
 # The v4, v5 and v6 sets' cash cases (the set's Medicare is keyed on the cash set's charge), and the case each v5 or v6
 # case builds on.
-CASH = {"sept29": "sept29_cash", "oct05": "oct05_cash", "oct07": "oct07_cash", "oct14": "oct14_cash"}
+CASH = {"sept29": "sept29_cash", "oct05": "oct05_cash", "oct07": "oct07_cash", "oct14": "oct14_cash", "oct15": "oct15_cash"}
 BUILDS_ON = {"oct05": "sept29", "oct05_cash": "sept29_cash", "oct07": "oct05", "oct07_cash": "oct05_cash",
-             "oct14": "oct05", "oct14_cash": "oct05_cash"}
+             "oct14": "oct05", "oct14_cash": "oct05_cash", "oct15": "oct05", "oct15_cash": "oct05_cash"}
 FAILS = []
 
 
@@ -91,12 +92,26 @@ def gate(label, ok, detail=""):
         FAILS.append(label)
 
 
+def publish_rows(rows, out_name):
+    """Only validated results may replace a live medical-check file."""
+    if FAILS:
+        sys.exit(f"✗ {len(FAILS)} gate(s) failed")
+    sys.path.insert(0, str(F.FISCAL / "scripts"))
+    from memory_budget import require_within_budget
+    print(f"physical footprint bytes: {require_within_budget('late-arrival medical check')}")
+    with (F.HERE / "derived" / out_name).open("w", newline="") as fh:
+        wr = csv.DictWriter(fh, fieldnames=list(rows[0]), lineterminator="\n")
+        wr.writeheader()
+        wr.writerows(rows)
+    print(f"  wrote derived/{out_name} ({len(rows)} rows)")
+
+
 def main():
     if F.LATE_DEF != "central":
         sys.exit("[BLOCKED] the check runs on the central reading")
-    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "oct14"
-    if which != "oct14":
-        sys.exit(f"[BLOCKED] live case is oct14; {which} outputs are frozen")
+    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "oct15"
+    if which != "oct15":
+        sys.exit(f"[BLOCKED] live case is oct15; {which} outputs are frozen")
     if which not in SETS:
         sys.exit(f"--set must be one of {', '.join(SETS)}")
     cases, out_name = SETS[which]
@@ -267,13 +282,7 @@ def main():
             put("ltss_variants", variant, sub, "ltss_users_charge_bn", val, "bn")
     put("mcbs_2023", "", "hispanic_65p", "medicaid_per_beneficiary_with_medicaid_usd", m_dual, "usd")
     put("mcbs_2023", "", "hispanic_65p", "public_per_beneficiary_usd", public, "usd")
-    with (F.HERE / "derived" / out_name).open("w", newline="") as fh:
-        wr = csv.DictWriter(fh, fieldnames=list(rows[0]), lineterminator="\n")
-        wr.writeheader()
-        wr.writerows(rows)
-    print(f"  wrote derived/{out_name} ({len(rows)} rows)")
-    if FAILS:
-        sys.exit(f"✗ {len(FAILS)} gate(s) failed")
+    publish_rows(rows, out_name)
 
 
 if __name__ == "__main__":

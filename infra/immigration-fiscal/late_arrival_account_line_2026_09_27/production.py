@@ -24,6 +24,7 @@ from __future__ import annotations
 import importlib.util
 import itertools
 import json
+import subprocess
 import sys
 
 import numpy as np
@@ -36,6 +37,39 @@ NODES = 24  # Gauss-Legendre nodes on [0, 1]
 STEP = 1e-5  # central-difference step in the cell fraction; above the 1e-12 fixed-point noise, below every t*f
 TAX = [.384, .426]  # matched_benefits: transported marginal labor tax rates by skill
 CAPITAL_TAX = .246
+
+
+def production_order(dims):
+    """The array coordinates are the engine's declaration, never JSON object order."""
+    engine = F.FISCAL / "assumption_explorer_2026_09_21/engine.js"
+    order = json.loads(subprocess.check_output(["node", "-e",
+        "process.stdout.write(JSON.stringify(require(process.argv[1]).PRODUCTION_DIMS))", str(engine)], text=True))
+    if len(order) != len(set(order)) or set(order) != set(dims):
+        raise SystemExit("[BLOCKED] production grid dimensions differ from Engine.PRODUCTION_DIMS")
+    return order
+
+
+def grid_index(dims, coordinates):
+    order = production_order(dims)
+    return int(np.ravel_multi_index([dims[k].index(coordinates[k]) for k in order], [len(dims[k]) for k in order]))
+
+
+def check_grid_order():
+    """Read-only probe of this consumer against the authoritative engine index."""
+    model = json.loads((F.FISCAL / "assumption_explorer_2026_09_21/derived/model.json").read_text())
+    dims = model["production"]["dims"]
+    order = production_order(dims)
+    coordinates = {k: dims[k][(i + 1) % len(dims[k])] for i, k in enumerate(order)}
+    engine = F.FISCAL / "assumption_explorer_2026_09_21/engine.js"
+    expected = int(subprocess.check_output(["node", "-e",
+        "const E=require(process.argv[1]);process.stdout.write(String(E.productionIndex({production:{dims:JSON.parse(process.argv[2])}},JSON.parse(process.argv[3]))))",
+        str(engine), json.dumps(dims), json.dumps(coordinates)], text=True))
+    variants = (dims, dict(sorted(dims.items())), dict(reversed(list(dims.items()))))
+    if any(grid_index(variant, coordinates) != expected for variant in variants):
+        raise SystemExit("[BLOCKED] production coordinate differs from the engine under JSON key reordering")
+    sys.path.insert(0, str(F.FISCAL / "scripts"))
+    from memory_budget import require_within_budget
+    print(f"production grid order probe passes: engine index {expected}; footprint {require_within_budget('late production order probe')} bytes")
 
 
 def gate(label, ok, detail=""):
@@ -89,8 +123,7 @@ def main():
 
     m = json.loads((F.FISCAL / "assumption_explorer_2026_09_21/derived/model.json").read_text())
     dims = m["production"]["dims"]
-    order = ["proxy", "split", "normalization", "labor_share", "sigma", "capital_adjustment",
-             "labor_supply_elasticity", "capital_tax_retention", "excluded_capital_owner_share"]
+    order = production_order(dims)
     gdp = json.loads((F.FISCAL / "matched_benefits_2026_09_19/derived/audit.json").read_text())["gdp_billions"]
     x, wq = np.polynomial.legendre.leggauss(NODES)
     t, wq = (x + 1) / 2, wq / 2
@@ -153,8 +186,8 @@ def main():
     ref = m["production"]["reference"]
     idx = {}
     for norm in dims["normalization"]:
-        combo = [ref[k] if k != "normalization" else norm for k in order]
-        idx[norm] = int(np.ravel_multi_index([dims[k].index(v) for k, v in zip(order, combo)], [len(dims[k]) for k in order]))
+        coordinates = {k: ref[k] if k != "normalization" else norm for k in order}
+        idx[norm] = grid_index(dims, coordinates)
     summary = {}
     for norm, i in idx.items():
         summary[norm] = {
@@ -181,4 +214,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if sys.argv[1:] == ["--check-grid-order"]:
+        check_grid_order()
+    elif sys.argv[1:]:
+        raise SystemExit("[BLOCKED] production.py accepts only --check-grid-order or no arguments")
+    else:
+        main()

@@ -22,6 +22,7 @@ Run from the repository root:
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import subprocess
 import sys
@@ -43,6 +44,8 @@ V6_LANE = "main_case_2026_10_07"
 V6_GEN = {c: FISCAL / f"generation_account_2026_09_24/derived/generation_summary_{c}.json" for c in ("oct07", "oct07_cash")}
 V7_LANE = "main_case_2026_10_14"
 V7_GEN = {c: FISCAL / f"generation_account_2026_09_24/derived/generation_summary_{c}.json" for c in ("oct14", "oct14_cash")}
+V8_LANE = "main_case_2026_10_15"
+V8_GEN = {c: FISCAL / f"generation_account_2026_09_24/derived/generation_summary_{c}.json" for c in ("oct15", "oct15_cash")}
 LATE = ["G1_L50_50_64", "G1_L50_65p", "G1_L55_55_64", "G1_L55_65p"]
 REST = ["G1_Y_u50", "G1_Y_50_64", "G1_Y_65p"]
 fails = []
@@ -79,17 +82,26 @@ def v6_band(case):
 
 
 def main():
-    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "oct14"
-    if which != "oct14":
-        sys.exit(f"[BLOCKED] live case is oct14; {which} outputs are frozen")
-    if which not in ("default", "sept29", "oct05", "oct07", "oct14"):
+    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "oct15"
+    if which != "oct15":
+        sys.exit(f"[BLOCKED] live case is oct15; {which} outputs are frozen")
+    if which not in ("default", "sept29", "oct05", "oct07", "oct14", "oct15"):
         sys.exit("--set must be default, sept29, oct05 or oct07")
-    v4, v5, v6 = which == "sept29", which == "oct05", which in ("oct07", "oct14")
-    live_lane = V7_LANE if which == "oct14" else V6_LANE
+    v4, v5, v6 = which == "sept29", which == "oct05", which in ("oct07", "oct14", "oct15")
+    live_lane = V8_LANE if which == "oct15" else V7_LANE if which == "oct14" else V6_LANE
     # From here v5 means "a case with the added people" (oct05 or oct07); v6 picks the v6 lane and files.
     v5 = v5 or v6
-    sets = V7_GEN if which == "oct14" else V6_GEN if v6 else V5_GEN if v5 else V4_GEN
-    if which == "oct14":
+    sets = V8_GEN if which == "oct15" else V7_GEN if which == "oct14" else V6_GEN if v6 else V5_GEN if v5 else V4_GEN
+    if which == "oct15":
+        root = FISCAL.parents[1]
+        snapshot = json.loads((FISCAL / "world_ledger_2026_09_27/inputs/oct15_source_hashes.json").read_text())
+        gens = {}
+        for case, path in sets.items():
+            data = path.read_bytes()
+            if hashlib.sha256(data).hexdigest() != snapshot["sha256"].get(str(path.relative_to(root))):
+                sys.exit(f"[BLOCKED] unknown or changed generation snapshot {path.name}")
+            gens[case] = json.loads(data)
+    elif which == "oct14":
         root = FISCAL.parents[1]
         gens = {c: json.loads(subprocess.check_output(
             ["git", "-C", str(root), "show", f"1a02fbbb:{p.relative_to(root)}"], text=True)) for c, p in sets.items()}
@@ -99,7 +111,7 @@ def main():
     line = list(csv.DictReader((HERE / f"derived/late_arrival_line{'_' + which if v4 or v5 else ''}.csv").open()))
     for case in (sets if v4 or v5 else MAIN):
         if v4 or v5:
-            if which == "oct14":
+            if which in ("oct14", "oct15"):
                 band = next(r for r in csv.DictReader((FISCAL / live_lane / "derived/main_case_bands.csv").open())
                             if r["profile"] == "long_run_non_school_full" and r["variant"] == ("cash_set" if case.endswith("_cash") else "adopted"))
                 gen = gens[case]
@@ -134,7 +146,7 @@ def main():
                             json.dumps(c["low_spec" if k == 0 else "high_spec"], sort_keys=True)
                         check(f"{tag}: late + younger = the generation lane's G1 {ref:.6f}", same_spec and abs(late + rest - ref) < 1e-6,
                               f"late {late:.6f} + younger {rest:.6f}; |diff| {abs(late + rest - ref):.1e}")
-                        if which == "oct14":
+                        if which in ("oct14", "oct15"):
                             check(f"{tag}: seven G1 cells add to committed generation G1 (1e-9)",
                                   same_spec and abs(late + rest - ref) < 1e-9)
                     elif reading == "central" and conv == "a" and end == "low":
@@ -155,6 +167,9 @@ def main():
         print(f"✗ {len(fails)} check(s) failed")
         sys.exit(1)
     print("  ✓ all checks passed")
+    sys.path.insert(0, str(HERE.parent / "scripts"))
+    from memory_budget import require_within_budget
+    print(f"physical footprint bytes: {require_within_budget('late-arrival verification')}")
 
 
 if __name__ == "__main__":

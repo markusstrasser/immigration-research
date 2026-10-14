@@ -67,6 +67,7 @@
  */
 "use strict";
 const fs = require("fs");
+const crypto = require("crypto");
 const path = require("path");
 const HERE = __dirname;
 const FISCAL = path.join(HERE, "..");
@@ -100,9 +101,14 @@ const CASES = {
     cash: { payload: "main_case_2026_10_14/derived/corrections_cash.json", package: "CASH",
       genCorrections: "generation_corrections_oct14_cash.json", genResults: "generation_results_oct14_cash.csv" },
     summary: "generation_summary_oct14.json", lineage: true, items: true, live: true },
+  oct15: { lane: "main_case_2026_10_15", genCorrections: "generation_corrections_oct15.json",
+    genResults: "generation_results_oct15.csv", out: "oct15/lines.json",
+    cash: { payload: "main_case_2026_10_15/derived/corrections_cash.json", package: "CASH",
+      genCorrections: "generation_corrections_oct15_cash.json", genResults: "generation_results_oct15_cash.csv" },
+    summary: "generation_summary_oct15.json", lineage: true, items: true, live: true, v8: true },
 };
 const argv = process.argv.slice(2);
-const CASE = argv.includes("--case") ? argv[argv.indexOf("--case") + 1] : "oct14";
+const CASE = argv.includes("--case") ? argv[argv.indexOf("--case") + 1] : "oct15";
 if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
 const C = CASES[CASE];
 const ALLOCATION = argv.includes("--allocation") ? argv[argv.indexOf("--allocation") + 1] : "personal";
@@ -110,7 +116,7 @@ if (!["personal", "shared"].includes(ALLOCATION) || (ALLOCATION === "shared" && 
   throw new Error("[BLOCKED] --allocation shared is the oct14 companion; allocation must be personal or shared");
 }
 C.shared = ALLOCATION === "shared";
-if (C.shared) C.out = "oct14/shared_allocation/lines.json";
+if (C.shared) C.out = `${CASE}/shared_allocation/lines.json`;
 if (C.live) {
   const csv = fs.readFileSync(path.join(FISCAL, C.lane, "derived/main_case_bands.csv"), "utf8").trim().split("\n");
   const head = csv.shift().split(",");
@@ -160,9 +166,15 @@ gate("the corrected union reproduces the adopted case", Math.abs(uCost[lo] - C.b
   `${uCost[lo].toFixed(4)}–${uCost[hi].toFixed(4)} at specifications ${lo} / ${hi} (0-based)`);
 // oct07: the case's full-precision band (its summary.json), as well as the pinned four decimals.
 const FULL = C.items ? read(path.join(FISCAL, C.lane, "derived/summary.json")) : null;
+const VERSION = FULL && (C.v8 ? FULL.v8 : FULL.v7);
+const endsOf = (which) => C.v8 ? VERSION.end_specifications[which][0] : VERSION.end_specifications[which];
+const sharedEnds = which => C.v8 ? VERSION.companions.shared_allocation[which === "set" ? "ends" : "cash_ends"][0]
+  : which === "set" ? VERSION.companions.shared_allocation.ends : VERSION.companions.shared_allocation.cash.ends;
+const sharedBand = which => C.v8 ? VERSION.companions.shared_allocation[which === "set" ? "band_bn" : "cash_set_bn"]
+  : which === "set" ? VERSION.companions.shared_allocation.band_bn : VERSION.companions.shared_allocation.cash.band_bn;
 if (FULL) {
-  const band = C.shared ? FULL.v7.companions.shared_allocation.band_bn : FULL.main_case;
-  const ends = C.shared ? FULL.v7.companions.shared_allocation.ends : C.live ? FULL.v7.end_specifications.set : null;
+  const band = C.shared ? sharedBand("set") : FULL.main_case;
+  const ends = C.shared ? sharedEnds("set") : C.live ? endsOf("set") : null;
   if (C.live) gate(`the ${ALLOCATION} band's 32 specifications and ends match the case summary`,
     indices.length === 32 && JSON.stringify([lo, hi]) === JSON.stringify(ends));
   gate(`the corrected union is the case's full-precision band (${C.lane}/derived/summary.json main_case, 1e-6)`,
@@ -182,10 +194,38 @@ function resultsOf(file) {
 }
 const pay = read(path.join(GEN, C.genCorrections)).payloads.a;
 const published = resultsOf(C.genResults);
+const apiPayloads = new Map([[P, pay]]);
+const v8Evaluator = C.v8 ? require("../generation_account_2026_09_24/v8_split.cjs").evaluator : null;
+function withoutChildren(model, payload, sourcePayload = corrections) {
+  if (!C.v8 || !payload.meta.union_completion.production_delta) return model;
+  // Registry offsets locate edits in the union's payload, not in a generation's independently built edit stack.
+  const it = sourcePayload.meta.items.find(i=>i.id==="union_completion");
+  const edits = Object.entries(it.parts).filter(([n])=>n.startsWith("lineage_g3plus:observed_nonreporters:"))
+    .map(([,p])=>({...sourcePayload.edits[it.edits.first+p.edit],by:Object.fromEntries(Object.entries(p.by).map(([a,v])=>[a,-v]))}));
+  let m = Engine.applyCorrections(model,{edits,meta:model.corrections});
+  const delta = payload.meta.union_completion.production_delta;
+  m = JSON.parse(JSON.stringify(m));
+  for (const key of ["private_wtp_bn","induced_receipts_bn"]) m.production[key] = m.production[key].map((v,i)=>v-delta[key][i]);
+  return m;
+}
 
-function dump(m, spec) {
-  const full = P.evaluateFull(m, spec, PROFILE);
-  const state = V4 ? P.stateFor(m, spec, PROFILE) : P.stateFor(P.withSyntheticLines ? P.withSyntheticLines(m) : m, spec);
+function selectedPost(api, spec, generation) {
+  if (!C.v8) return {};
+  const meta = api.correctionsPayload().meta;
+  return Object.fromEntries(["mixed_unit_removal", "coverage"].filter(k => meta[k]).map(k => {
+    const end = meta[k].by_end[spec.reading];
+    const parts = end.by_generation_bn || end.by_generation;
+    const value = generation ? parts[generation === "G3plus" ? (Object.hasOwn(parts, "G3plus") ? "G3plus" : "G3+") : generation] : end.total_bn;
+    if (!Number.isFinite(value)) throw Error(`[BLOCKED] ${k}: no declared ${generation || "union"} amount`);
+    return [k, value];
+  }));
+}
+function dump(m, spec, api = P, generation = null) {
+  const full = C.v8 && generation ? v8Evaluator(apiPayloads.get(api)[generation], api).evaluateFull(m, spec)
+    : api.evaluateFull(m, spec, PROFILE);
+  const state = full.state || (V4 ? api.stateFor(m, spec, PROFILE) : api.stateFor(api.withSyntheticLines ? api.withSyntheticLines(m) : m, spec));
+  const post = selectedPost(api, spec, generation);
+  const cost = full.cost_bn - (full.post_engine?.total_bn || 0) + Object.values(post).reduce((s,v)=>s+v,0);
   const ev = full.evaluation, fw = state.fiscal_weight;
   const rows = [];
   for (const r of ev.receipts) {
@@ -211,14 +251,196 @@ function dump(m, spec) {
   const production = { dims: state.production, count: state.count_production, fiscal_weight: fw,
     private_wtp_bn: ev.private_wtp_bn, induced_receipts_bn: ev.induced_receipts_bn,
     cost_bn: -(ev.private_wtp_bn + fw * ev.induced_receipts_bn) };
-  const sum = rows.reduce((a, r) => a + r.cost_bn, 0) + capital.reduce((a, c) => a + c.cost_bn, 0) + production.cost_bn;
-  return { cost_bn: full.cost_bn, sum_bn: sum, allocation: state.allocation, receipt_scenario: state.receipt_scenario,
-    rows, capital, production };
+  const sum = rows.reduce((a, r) => a + r.cost_bn, 0) + capital.reduce((a, c) => a + c.cost_bn, 0) + production.cost_bn
+    + Object.values(post).reduce((s,v)=>s+v,0);
+  return { cost_bn: cost, sum_bn: sum, allocation: state.allocation, receipt_scenario: state.receipt_scenario,
+    rows, capital, production, post_engine: post };
+}
+
+function childPricing(api, payload) {
+  if (!C.v8 || !payload.meta.union_completion.production_delta) return null;
+  const source = require("../main_case_2026_10_15/item_union.cjs");
+  const units = source.optionRates(P.OCT14,{foreign_source_tax:true},true).unit_models;
+  const basis = api === P ? "set" : "cash", base = basis === "set" ? P.OCT14 : P.OCT14.CASH;
+  const rec = base.correctionsPayload().meta.items.find(r=>r.id==="child_credits"), bp = base.correctionsPayload();
+  const detail = P.ITEM_DETAIL.added_age_mix.counts, c3=payload.meta.union_completion.c3;
+  const den = detail.later+(1-c3)*detail.g3_rate;
+  const componentFile="school_enrollment_2026_09_20/derived/updated_account_components.csv";
+  const componentRows=fs.readFileSync(path.join(FISCAL,componentFile),"utf8").trim().split("\n").map(r=>r.split(","));
+  const componentHead=componentRows.shift();
+  const components=componentRows.map(r=>Object.fromEntries(componentHead.map((k,i)=>[k,r[i]])));
+  const schoolShare=Object.fromEntries(["personal","shared"].map(allocation=>{
+    const values=["school","P"].map(component=>components.filter(r=>r.allocation===allocation &&
+      r.group==="national_civilian" && r.component===component));
+    if(values.some(r=>r.length!==1)) throw Error("[BLOCKED] native education lacks unique national school/P declaration");
+    const [ns,np]=values.map(r=>Number(r[0].spending_bn));
+    if(!(ns>0 && np>0)) throw Error("[BLOCKED] native education national school/P masses are invalid");
+    return [allocation,ns/(ns+np)];
+  }));
+  function educationSchool(model, evaluated) {
+    const row=evaluated.rows.find(r=>r.side==="spending" && r.id==="education_services");
+    if(row.key==="school_operating") return row.cost_bn;
+    if(row.key!=="education_mix") throw Error(`[BLOCKED] native education category split has no declared key ${row.key}`);
+    const line=model.spending.lines.find(r=>r.id===row.id),a=evaluated.allocation;
+    const mix=line.keys.education_mix[a].target_bn, school=line.keys.school_operating[a].target_bn*schoolShare[a];
+    if(mix===0) {
+      if(school!==0 || row.cost_bn!==0) throw Error("[BLOCKED] native education zero mix has nonzero component");
+      return 0;
+    }
+    return row.cost_bn*school/mix;
+  }
+  const records=[];
+  for (const person of payload.meta.union_completion.observed_records.filter(r=>r.observed_nonreporter)) {
+    const gWeight=person.economic_class==="g3_rate"?1-c3:1, whiteWeight=1-gWeight;
+    const g0=units[person.age_band].g3[basis], white=units[person.age_band].white[basis];
+    const creditEdits=Object.entries(rec.parts).filter(([n])=>n.startsWith("lineage_g3plus:")).map(([,part])=>({
+      ...bp.edits[rec.edits.first+part.edit],by:Object.fromEntries(Object.entries(part.by).map(([a,v])=>[a,-v/den]))}));
+    const g=Engine.applyCorrections(g0,{edits:creditEdits,meta:g0.corrections});
+    const ends={};
+    for(const [end,i] of [["low",lo],["high",hi]]) {
+      const spec=JSON.parse(JSON.stringify(MAIN_SPECS[i]));
+      for(const id of Object.keys(payload.meta.union_completion.carriers)) delete spec.line_responses[id];
+      const a=dump(g,spec,base),b=dump(white,spec,base);
+      ends[end]={rows:a.rows.map((r,j)=>({...r,amount_bn:gWeight*r.amount_bn+whiteWeight*b.rows[j].amount_bn,cost_bn:gWeight*r.cost_bn+whiteWeight*b.rows[j].cost_bn})),
+        capital:a.capital.map((r,j)=>({...r,cost_bn:gWeight*r.cost_bn+whiteWeight*b.capital[j].cost_bn})),
+        production_bn:gWeight*a.production.cost_bn+whiteWeight*b.production.cost_bn};
+      const education=ends[end].rows.find(r=>r.side==="spending" && r.id==="education_services");
+      const schools=gWeight*educationSchool(g,a)+whiteWeight*educationSchool(white,b);
+      education.category_cost_bn={schools,education_other:education.cost_bn-schools};
+    }
+    records.push({...person,ends});
+  }
+  return {basis,source:"native transformed own-age G3/white unit models, projection removed before selected specification",
+    education_category_source:{file:componentFile,sha256:crypto.createHash("sha256").update(fs.readFileSync(path.join(FISCAL,componentFile))).digest("hex"),
+      rule:"education_mix school component = school_operating target x national school/(school+P); residual is P",school_share:schoolShare},records};
+}
+
+function statePriceParts(payload, generation, evaluated) {
+  const route=payload.meta.added_state_price_routing;
+  if(!route) return [];
+  if(!payload.meta.coverage || payload.meta.coverage.stub) throw Error("[BLOCKED] added-state route requires real coverage");
+  const sourceFile="generation_account_2026_09_24/derived/generation_state_indexes.json";
+  const indexes=read(path.join(FISCAL,sourceFile)).conventions.a;
+  const allocation=evaluated.allocation, result=[];
+  for(const change of route.changes) {
+    const e=change.edit;
+    const row=evaluated.rows.find(r=>r.side===e.side && r.id===e.line &&
+      (e.side==="receipt"?r.scenario===e.scenario:r.key===e.key));
+    if(!row) continue; // An inactive receipt scenario contributes no cost at this end.
+    const sources=change.charge_sources.filter(r=>r.allocation===allocation);
+    if(sources.length!==1) throw Error("[BLOCKED] added-state change lacks unique allocation source");
+    const source=sources[0], charges=source.identified_charges, added=source.added_charges;
+    const population=source.added_charges_by_population;
+    if(!population || Object.keys(population).sort().join(",")!=="latent,native")
+      throw Error("[BLOCKED] added-state source lacks latent/native decomposition");
+    const amounts={identified:0,latent:0,native:0};
+    const oldDen=GENS.reduce((s,g)=>s+charges[g],0), den=GENS.reduce((s,g)=>s+charges[g]+added[g],0);
+    if(!(oldDen>0 && den>0)) throw Error("[BLOCKED] invalid added-state normalization masses");
+    const functions=source.functions || [{function:source.function,sl_amount_bn:source.factor}];
+    for(const item of functions) {
+      const values=Object.fromEntries(GENS.map(g=>[g,indexes[item.function][g].replicates[0]]));
+      const oldMean=GENS.reduce((s,g)=>s+charges[g]*values[g],0)/oldDen;
+      const mean=GENS.reduce((s,g)=>s+charges[g]*values[g]+added[g]*values.G3plus,0)/den;
+      amounts.identified+=item.sl_amount_bn*charges[generation]*(oldMean-mean);
+      for(const name of ["latent","native"]) amounts[name]+=item.sl_amount_bn*population[name][generation]*(values.G3plus-mean);
+    }
+    for(const g of GENS) if(Math.abs(population.latent[g]+population.native[g]-added[g])>1e-12)
+      throw Error("[BLOCKED] added-state population charges do not reproduce added mass");
+    const delta=change.by_generation[generation][allocation];
+    gate(`${generation} ${e.side} ${e.line}: identified/latent/native state deltas reproduce generation change (1e-9 bn)`,
+      Math.abs(Object.values(amounts).reduce((s,v)=>s+v,0)-delta)<1e-9);
+    const coefficient=(e.side==="receipt"?-1:1)*evaluated.production.fiscal_weight*row.response;
+    result.push({edit:e,source_cell:source.source_cell,charge_source:source,amount_bn:delta,
+      cost_bn:delta*coefficient,amount_by_population:amounts,
+      cost_by_population:Object.fromEntries(Object.entries(amounts).map(([k,v])=>[k,v*coefficient])),
+      indexes_source:{file:sourceFile,sha256:crypto.createHash("sha256").update(fs.readFileSync(path.join(FISCAL,sourceFile))).digest("hex")},
+      rule:route.rule});
+  }
+  return result;
+}
+
+function childCostMetadata(exported) {
+  const records=exported.meta.child_pricing?.records || [];
+  if(!records.length) return;
+  for(const end of ["low","high"]) {
+    for(const record of records) {
+      const block=record.ends[end];
+      block.base_cost_bn=block.rows.reduce((s,r)=>s+r.cost_bn,0)+block.capital.reduce((s,r)=>s+r.cost_bn,0)+block.production_bn;
+      block.state_price_cost_bn=0;
+    }
+    const generation=exported.generations.G3plus[end];
+    let extra=0;
+    for(const part of generation.added_state_prices || []) {
+      const cost=part.cost_by_population.native;
+      if(cost===0) continue;
+      const [side,id,key]=part.source_cell.split("|");
+      const amounts=records.map(record=>{
+        const row=record.ends[end].rows.find(r=>r.side===side && r.id===id);
+        if(!row || (side==="receipt"?row.scenario:row.key)!==key) throw Error("[BLOCKED] native state unit metadata lacks selected source row");
+        return row.amount_bn;
+      });
+      const denominator=records.reduce((s,r,i)=>s+r.people*amounts[i],0);
+      if(!(denominator>0) || amounts.some(v=>v<0)) throw Error("[BLOCKED] native state unit metadata has invalid mass");
+      records.forEach((record,i)=>{record.ends[end].state_price_cost_bn+=cost*amounts[i]/denominator;});
+      extra+=cost;
+    }
+    for(const record of records) {
+      const block=record.ends[end];
+      block.cost_bn=block.base_cost_bn+block.state_price_cost_bn;
+      block.state_price_rule="central convention(a) household native component: exact selected source amount / observed native source mass";
+    }
+    const base=records.reduce((s,r)=>s+r.people*r.ends[end].base_cost_bn,0);
+    const state=records.reduce((s,r)=>s+r.people*r.ends[end].state_price_cost_bn,0);
+    gate(`${exported.meta.basis} native ${end}: per-record base/state unit metadata conserves principal components (1e-9 bn)`,
+      Math.abs(base-(generation.cost_bn-generation.before_native_children.cost_bn))<1e-9 && Math.abs(state-extra)<1e-9);
+  }
+}
+
+function addedStateTargetMetadata(exported) {
+  const source={...exported.meta.coverage_added_cost_bn}, delta={};
+  for(const end of ["low","high"]) {
+    let identified=0,latent=0,native=0;
+    for(const g of GENS) for(const part of exported.generations[g][end].added_state_prices || []) {
+      const costs=part.cost_by_population;
+      if(Object.keys(costs).sort().join(",")!=="identified,latent,native" || Object.values(costs).some(v=>!Number.isFinite(v)))
+        throw Error("[BLOCKED] final added-state target has invalid population costs");
+      gate(`${exported.meta.basis} ${g} ${end} ${part.edit.line}: final target subtotal closes (1e-9 bn)`,
+        Math.abs(costs.identified+costs.latent+costs.native-part.cost_bn)<1e-9);
+      identified+=costs.identified;latent+=costs.latent;native+=costs.native;
+    }
+    delta[end]=latent+native;
+    gate(`${exported.meta.basis} ${end}: identified offset balances final added state reallocation (1e-9 bn)`,
+      Math.abs(identified+delta[end])<1e-9);
+    exported.meta.coverage_added_cost_bn[end]=source[end]+delta[end];
+    gate(`${exported.meta.basis} ${end}: final added target preserves source plus declared state delta (1e-9 bn)`,
+      Number.isFinite(source[end]) && Math.abs(exported.meta.coverage_added_cost_bn[end]-source[end]-delta[end])<1e-9);
+  }
+  exported.meta.coverage_added_source_cost_bn=source;
+  exported.meta.coverage_added_state_reallocation_bn=delta;
+  exported.meta.coverage_added_source_cost_source=exported.meta.coverage_added_cost_source;
+  exported.meta.coverage_added_state_reallocation_source={
+    file:`generation_account_2026_09_24/derived/${exported.meta.basis==="set"?C.genCorrections:C.cash.genCorrections}`,
+    declaration:"payloads.a.{generation}.meta.added_state_price_routing; active selected end response",
+    rule:"sum active latent + native state costs; identified offset balances, no post-engine coverage included",
+    convention:"a",spec_index:exported.meta.spec_index};
+  exported.meta.coverage_added_cost_source=exported.meta.coverage_added_source_cost_source+" + declared active latent/native state reallocation";
 }
 
 const out = { meta: { case: C.lane, convention: "a", spec_index: { low: lo, high: hi },
   specs: { low: MAIN_SPECS[lo], high: MAIN_SPECS[hi] } }, union: {}, generations: {} };
 if (C.live) out.meta.allocation = ALLOCATION;
+if (C.v8) {
+  out.meta.basis = "set";
+  out.meta.union_completion = corrections.meta.union_completion;
+  out.meta.coverage = corrections.meta.coverage || null;
+  out.meta.mixed_unit_removal = corrections.meta.mixed_unit_removal;
+  out.meta.population_v8 = corrections.meta.population_v8;
+  const lineage = read(path.join(FISCAL,C.lane,"derived/lineage_addition.json")).v8;
+  if (!lineage) throw Error("[BLOCKED] v8 lineage addition contract absent");
+  out.meta.coverage_added_cost_bn = Object.fromEntries(["low","high"].map((end,i)=>[end,lineage.set.all_nonreporting_descendants.cost_bn[i]]));
+  out.meta.coverage_added_cost_source = `${C.lane}/derived/lineage_addition.json v8.set.all_nonreporting_descendants.cost_bn`;
+  out.meta.child_pricing = childPricing(P, corrections);
+}
 if (C.items) {
   // The items' carriers (an item's capital: receipt lines whose share keys its offset components) and the parent line
   // its meta splits each by (splits.split_basis); households.py spreads an offset's return as that line.
@@ -242,11 +464,15 @@ for (const g of GENS) {
   models[g] = { m0, m1 };
   out.generations[g] = {};
   for (const [end, i] of [["low", lo], ["high", hi]]) {
-    const d = dump(m1, MAIN_SPECS[i]);
+    const d = dump(m1, MAIN_SPECS[i], P, g);
+    if(C.v8 && pay[g].meta.added_state_price_routing) d.added_state_prices=statePriceParts(pay[g],g,d);
+    if (C.v8 && g === "G3plus" && pay[g].meta.union_completion.production_delta) {
+      d.before_native_children = dump(withoutChildren(m1,pay[g]),MAIN_SPECS[i],P,g);
+    }
     out.generations[g][end] = d;
     // The generation result file reports personal ends. Keep its oracle on the shared companion's input model too.
     const publishedCost = C.shared
-      ? P.evaluateFull(m1, P.MAIN_SPECS[FULL.v7.end_specifications.set[end === "low" ? 0 : 1]], PROFILE).cost_bn : d.cost_bn;
+      ? dump(m1, P.MAIN_SPECS[endsOf("set")[end === "low" ? 0 : 1]], P, g).cost_bn : d.cost_bn;
     gate(`${g} ${end}: rows sum to their evaluateFull(); the model at the published ends matches ${C.genResults}`,
       Math.abs(d.sum_bn - d.cost_bn) < 1e-9 && Math.abs(publishedCost - published[`${g}|${end}`]) < 1e-6,
       `${d.cost_bn.toFixed(6)} at this end; published ${publishedCost.toFixed(6)} vs ${published[`${g}|${end}`]}`);
@@ -274,8 +500,11 @@ if (C.lineage) {
     const s29 = P29.MAIN_SPECS[i];
     gate(`${end}: the September 29 specification ${i} has the case's production dimensions`,
       JSON.stringify(P29.stateFor(P29.payloadModel(), s29, PROFILE).production) === JSON.stringify(out.union[end].production.dims));
-    const dU = out.union[end].production.cost_bn - prodOf(P29.payloadModel(), s29);
-    const dG = GENS.map((g) => out.generations[g][end].production.cost_bn - prodOf(Engine.applyCorrections(models[g].m0, pay29[g]), s29));
+    const child = out.generations.G3plus[end].before_native_children;
+    const childProduction = child ? out.generations.G3plus[end].production.cost_bn-child.production.cost_bn : 0;
+    const dU = out.union[end].production.cost_bn - prodOf(P29.payloadModel(), s29)-childProduction;
+    const dG = GENS.map((g) => out.generations[g][end].production.cost_bn - prodOf(Engine.applyCorrections(models[g].m0, pay29[g]), s29)
+      -(g==="G3plus"?childProduction:0));
     gate(`${end}: the lineage's production term is all on G3+, which moves by the union's change; G1 and G2 do not move (1e-9 bn)`,
       Math.abs(dG[2] - dU) < 1e-9 && Math.abs(dG[0]) < 1e-9 && Math.abs(dG[1]) < 1e-9, `${dU.toFixed(6)} bn`);
     out.meta.lineage.production_bn[end] = dU;
@@ -286,12 +515,36 @@ if (V4) {
   const V = P.V4PKG;
   const PA = corrections.meta.pension_accrual;
   const SUM = read(path.join(GEN, C.summary));
+  if (C.v8) {
+    out.meta.population_rounding = SUM.population_rounding;
+    if (out.meta.population_rounding?.generation !== "G1" || !Number.isFinite(out.meta.population_rounding.people)) {
+      throw Error("[BLOCKED] missing principal G1 population rounding declaration");
+    }
+  }
   const ALLOC = { low: MAIN_SPECS[lo].allocation, high: MAIN_SPECS[hi].allocation };
   // oct07: the generation account's G3+ members and adults (the added people's adults at their age mix), which
   // households.py's placement must reproduce.
   if (C.items) {
     const G3 = SUM.conventions.a.G3plus;
     out.meta.lineage.generation_g3plus = { population: G3.population, adults: G3.adults, source: `generation_account_2026_09_24/derived/${C.summary}` };
+    if (C.v8 && out.meta.coverage) {
+      const coverage=out.meta.coverage, file=path.join(FISCAL,coverage.file);
+      if(coverage.stub || crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex")!==coverage.sha256)
+        throw Error("[BLOCKED] household observed adult target requires principal live coverage counts");
+      const source=read(file).sets[coverage.which].scenarios[coverage.construction];
+      const population=source.implied_net_missing_people.G3plus, adults=source.adults_by_generation.G3plus;
+      if(!Number.isFinite(population) || !Number.isFinite(adults) ||
+         Math.abs(population-coverage.counts_by_generation.G3plus)>1e-6)
+        throw Error("[BLOCKED] household coverage population/adult source mismatch");
+      out.meta.lineage.complete_generation_g3plus={...out.meta.lineage.generation_g3plus};
+      Object.assign(out.meta.lineage.generation_g3plus,{population:G3.population-population,adults:G3.adults-adults,
+        coverage_excluded:{population,adults,file:coverage.file,sha256:coverage.sha256,
+          declaration:`sets.${coverage.which}.scenarios.${coverage.construction}.implied_net_missing_people/adults_by_generation.G3plus`,
+          rule:"observed household placement excludes coverage people; coverage remains its separate unlocated block"}});
+      gate("observed G3+ placement target plus unlocated coverage reconstruct complete generation counts",
+        Math.abs(out.meta.lineage.generation_g3plus.population+population-G3.population)<1e-6 &&
+        Math.abs(out.meta.lineage.generation_g3plus.adults+adults-G3.adults)<1e-6);
+    }
     // The items' parts whose split basis (the item's splits.split_basis) is a line other than the one they edit, with
     // each generation's amount of the part (the generation account's items.split, convention a): households.py spreads
     // each part's share of its line as the basis line (splits.household_person).
@@ -336,26 +589,53 @@ if (V4) {
   }
   const uCash = [lo, hi].map((i) => PC.evaluateFull(PC.payloadModel(), MAIN_SPECS[i], PROFILE).cost_bn);
   if (C.live) gate(`the ${ALLOCATION} cash set's ends match the case summary`,
-    JSON.stringify([lo, hi]) === JSON.stringify(C.shared ? FULL.v7.companions.shared_allocation.cash.ends : FULL.v7.end_specifications.cash));
+    JSON.stringify([lo, hi]) === JSON.stringify(C.shared ? sharedEnds("cash") : endsOf("cash")));
   gate("the cash set's union reproduces its band at the same specifications (1e-4)",
     Math.abs(uCash[0] - C.cash.band[0]) < 1e-4 && Math.abs(uCash[1] - C.cash.band[1]) < 1e-4, `${uCash[0].toFixed(7)} / ${uCash[1].toFixed(7)}`);
   if (FULL) {
-    const band = C.shared ? FULL.v7.companions.shared_allocation.cash.band_bn : FULL.cash_set.band_bn;
+    const band = C.shared ? sharedBand("cash") : FULL.cash_set.band_bn;
     gate(`the cash set's union is its full-precision band (${C.lane}/derived/summary.json cash_set.band_bn, 1e-6)`,
       Math.abs(uCash[0] - band[0]) < 1e-6 && Math.abs(uCash[1] - band[1]) < 1e-6,
       `${uCash[0].toFixed(6)} / ${uCash[1].toFixed(6)} against ${band.map((v) => v.toFixed(6)).join(" / ")}`);
   }
   out.meta.cash_set = { payload: C.cash.payload, cost_bn: { low: uCash[0], high: uCash[1] } };
   const payCash = read(path.join(GEN, C.cash.genCorrections)).payloads.a;
+  apiPayloads.set(PC, payCash);
   const cashResults = resultsOf(C.cash.genResults);
   const PENSION = new Set(["receipt|federal_income_tax", "spending|social_security", "spending|medicare"]);
   const tot = { accrual: [0, 0], part_a: [0, 0], benefit_tax: [0, 0] };
   const cashSum = [0, 0];
+  const cashExport = C.v8 ? JSON.parse(JSON.stringify(out)) : null;
+  if (cashExport) {
+    cashExport.meta.basis = "cash";
+    cashExport.meta.union_completion = cashPayload.meta.union_completion;
+    cashExport.meta.coverage = cashPayload.meta.coverage || null;
+    cashExport.meta.mixed_unit_removal = cashPayload.meta.mixed_unit_removal;
+    const lineage = read(path.join(FISCAL,C.lane,"derived/lineage_addition.json")).v8;
+    cashExport.meta.coverage_added_cost_bn = Object.fromEntries(["low","high"].map((end,i)=>[end,lineage.cash.all_nonreporting_descendants.cost_bn[i]]));
+    cashExport.meta.coverage_added_cost_source = `${C.lane}/derived/lineage_addition.json v8.cash.all_nonreporting_descendants.cost_bn`;
+    cashExport.meta.child_pricing = childPricing(PC, cashPayload);
+    for (const record of out.meta.child_pricing?.records || []) {
+      const cashRecord=cashExport.meta.child_pricing.records.find(r=>r.PH_SEQ===record.PH_SEQ&&r.PPPOS===record.PPPOS);
+      for(const end of ["low","high"]) {
+        const setMed=record.ends[end].rows.find(r=>r.side==="spending"&&r.id==="medicare");
+        const cashMed=cashRecord.ends[end].rows.find(r=>r.side==="spending"&&r.id==="medicare");
+        record.ends[end].part_a_accrual_cost_bn=setMed.cost_bn-(1-corrections.meta.pension_accrual.part_a_share)*cashMed.cost_bn;
+      }
+    }
+    for (const [end,i] of [["low",lo],["high",hi]]) cashExport.union[end] = dump(PC.payloadModel(), MAIN_SPECS[i], PC);
+  }
   for (const g of GENS) {
     const mc = Engine.applyCorrections(models[g].m0, payCash[g]);
     for (const [j, [end, i]] of [["low", lo], ["high", hi]].entries()) {
       const fc = PC.evaluateFull(mc, MAIN_SPECS[i], PROFILE);
-      cashSum[j] += fc.cost_bn;
+      const cashDump = dump(mc, MAIN_SPECS[i], PC, g);
+      if(C.v8 && payCash[g].meta.added_state_price_routing) cashDump.added_state_prices=statePriceParts(payCash[g],g,cashDump);
+      cashSum[j] += cashDump.cost_bn;
+      if (cashExport) cashExport.generations[g][end] = cashDump;
+      if (cashExport && g === "G3plus" && payCash[g].meta.union_completion.production_delta) {
+        cashDump.before_native_children = dump(withoutChildren(mc,payCash[g],cashPayload),MAIN_SPECS[i],PC,g);
+      }
       const setRows = out.generations[g][end].rows;
       const cashRows = fc.evaluation.receipts.map((r) => ["receipt", r]).concat(fc.evaluation.spending.map((r) => ["spending", r]));
       const byId = new Map(cashRows.map(([side, r]) => [`${side}|${r.id}`, r]));
@@ -365,9 +645,11 @@ if (V4) {
       const prodSame = fc.evaluation.private_wtp_bn === out.generations[g][end].production.private_wtp_bn
         && fc.evaluation.induced_receipts_bn === out.generations[g][end].production.induced_receipts_bn;
       gate(`${g} ${end}: the set and the cash set differ only in the three pension lines`,
-        moved.length === 3 && moved.every((k) => PENSION.has(k)) && capSame && prodSame && byId.size === setRows.length,
+        moved.filter(k => !C.v8 || !k.startsWith("spending|union_completion_")).length === 3
+          && moved.every((k) => PENSION.has(k) || (C.v8 && k.startsWith("spending|union_completion_")))
+          && capSame && prodSame && byId.size === setRows.length,
         moved.join(", "));
-      const publishedCash = C.shared ? PC.evaluateFull(mc, P.MAIN_SPECS[FULL.v7.end_specifications.cash[j]], PROFILE).cost_bn : fc.cost_bn;
+      const publishedCash = C.shared ? dump(mc, P.MAIN_SPECS[endsOf("cash")[j]], PC, g).cost_bn : cashDump.cost_bn;
       gate(`${g} ${end}: the cash model at the published ends matches ${C.cash.genResults} (1e-6 bn)`,
         Math.abs(publishedCash - cashResults[`${g}|${end}`]) < 1e-6, `${publishedCash.toFixed(6)} vs ${cashResults[`${g}|${end}`]}`);
       const setOf = (side, id) => setRows.find((r) => r.side === side && r.id === id);
@@ -377,6 +659,15 @@ if (V4) {
         part_a_accrual_bn: med.amount_bn - (1 - PA.part_a_share) * medCash, fit_cash_bn: fitCash, benefit_tax_bn: fitCash - fit.amount_bn,
         keys: { social_security: ss.key, medicare: med.key, federal_income_tax: fit.key } };
       out.generations[g][end].pension = pension;
+      if (out.generations[g][end].before_native_children) {
+        const sr=out.generations[g][end].before_native_children.rows, cr=cashDump.before_native_children.rows;
+        const r=(rows,side,id)=>rows.find(r=>r.side===side&&r.id===id).amount_bn;
+        const mc=r(cr,"spending","medicare"),fitc=r(cr,"receipt","federal_income_tax");
+        out.generations[g][end].before_native_children.pension={...pension,accrual_bn:r(sr,"spending","social_security"),
+          medicare_benefits_bn:(1-PA.part_a_share)*mc,part_a_accrual_bn:r(sr,"spending","medicare")-(1-PA.part_a_share)*mc,
+          fit_cash_bn:fitc,benefit_tax_bn:fitc-r(sr,"receipt","federal_income_tax")};
+        cashDump.before_native_children.pension=out.generations[g][end].before_native_children.pension;
+      }
       tot.accrual[j] += pension.accrual_bn;
       tot.part_a[j] += pension.part_a_accrual_bn;
       tot.benefit_tax[j] += pension.benefit_tax_bn;
@@ -411,10 +702,19 @@ if (V4) {
       part_a: row(ue, "spending", "medicare").amount_bn - (1 - PA.part_a_share) * row(uc, "spending", "medicare").amount_bn,
       benefit_tax: row(uc, "receipt", "federal_income_tax").amount_bn - row(ue, "receipt", "federal_income_tax").amount_bn };
     const LS = P.LINEAGE_EDITS, LC = PC.LINEAGE_EDITS;
-    const linOasdi = PA.oasdi_lines.reduce((s, id) => s + lin(LS, "receipt", id, sc), 0) + PA.se_oasdi_share * lin(LS, "receipt", PA.se_line, sc);
+    let linOasdi = PA.oasdi_lines.reduce((s, id) => s + lin(LS, "receipt", id, sc), 0) + PA.se_oasdi_share * lin(LS, "receipt", PA.se_line, sc);
     const own = { accrual: lin(LS, "spending", "social_security", row(ue, "spending", "social_security").key),
       part_a: lin(LS, "spending", "medicare", row(ue, "spending", "medicare").key) - (1 - PA.part_a_share) * lin(LC, "spending", "medicare", row(uc, "spending", "medicare").key),
       benefit_tax: lin(LC, "receipt", "federal_income_tax", sc) - lin(LS, "receipt", "federal_income_tax", sc) };
+    if (C.v8 && out.generations.G3plus[end].before_native_children) {
+      const set = out.generations.G3plus[end], cash = cashExport.generations.G3plus[end];
+      const delta = (d,side,id) => d.rows.find(r=>r.side===side&&r.id===id).amount_bn-d.before_native_children.rows.find(r=>r.side===side&&r.id===id).amount_bn;
+      linOasdi += PA.oasdi_lines.reduce((s,id)=>s+delta(set,"receipt",id),0)+PA.se_oasdi_share*delta(set,"receipt",PA.se_line);
+      own.accrual += delta(set,"spending","social_security");
+      own.part_a += delta(set,"spending","medicare")-(1-PA.part_a_share)*delta(cash,"spending","medicare");
+      own.benefit_tax += delta(cash,"receipt","federal_income_tax")-delta(set,"receipt","federal_income_tax");
+      console.log(`[native pension ${end}]`,JSON.stringify({native_ss:delta(set,"spending","social_security"),native_med:delta(set,"spending","medicare"),native_cash_med:delta(cash,"spending","medicare"),native_set_fit:delta(set,"receipt","federal_income_tax"),native_cash_fit:delta(cash,"receipt","federal_income_tax"),native_oasdi:PA.oasdi_lines.reduce((s,id)=>s+delta(set,"receipt",id),0)+PA.se_oasdi_share*delta(set,"receipt",PA.se_line)}));
+    }
     // oct07: the edit sets' parts that the generation account puts on the added people (its rule lineage, all on G3+)
     // are the lineage's own too; the payload's ratio_net and Part A accrual (v6's) price the rest.
     const items = { accrual: 0, part_a: 0, benefit_tax: 0 };
@@ -445,10 +745,10 @@ if (V4) {
         if (C.live && it.id === "row4_frame" && p.name.startsWith("union_") && active && pensionComponent) {
           row4Union[pensionComponent] += (x.side === "receipt" ? -1 : 1) * p.union_bn[a];
         }
-        if (p.rule !== "lineage") continue;
+        if (p.rule !== "lineage" && !(C.v8 && p.rule === "declared" && ["g3", "white"].includes(p.route?.kind))) continue;
         // R7 receipt shifts and R6's added-people credit parts already sit on G3+'s evaluated lines.
         // They take those lines' household split; they never enter the pension subtraction below.
-        const jobReceipt = it.id === "job_capital_taxes" && x.side === "receipt"
+        const jobReceipt = ["job_capital_taxes", "foreign_source_tax"].includes(it.id) && x.side === "receipt"
           && ["corporate_capital", "corporate_labor", "remaining_production_property", "other_production_taxes"].includes(x.line)
           && /^(lineage_g3plus|lineage_whites):/.test(p.name);
         const creditPart = it.id === "child_credits" && /^lineage_g3plus:/.test(p.name)
@@ -462,7 +762,9 @@ if (V4) {
             || (x.side === "receipt" && component === "owner_national_key" && x.line === "modeled_owner_property")
             || (component === "state_index" && ((x.side === "receipt" && ["general_sales_tax", "personal_motor_vehicle"].includes(x.line))
               || (x.side === "spending" && ["state_price_public_order_safety", "state_price_health_services", "state_price_recreation_culture"].includes(x.line)))));
-        if (C.live && (jobReceipt || creditPart || whiteFit || row4Part)) {
+        const completionPart = C.v8 && it.id === "union_completion"
+          && /^lineage_g3plus:observed_nonreporters:(receipt|spending):/.test(p.name);
+        if (C.live && (jobReceipt || creditPart || whiteFit || row4Part || completionPart)) {
           if (!r || !GENS.every((g) => Math.abs(p.bn[g][a] - (g === "G3plus" ? p.union_bn[a] : 0)) < 1e-12)) {
             throw new Error(`[BLOCKED] ${it.id} ${p.name}: its lineage part is not wholly on G3+`);
           }
@@ -502,6 +804,17 @@ if (V4) {
     }
     out.meta.lineage.pension_bn = Object.assign(out.meta.lineage.pension_bn || {},
       { [end]: Object.assign({ oasdi_receipts_bn: linOasdi }, own, C.items ? { items_bn: items } : {}) });
+  }
+  if (cashExport) {
+    // Copy the metadata computed by pension/road gates, then retain cash method's own payload blocks.
+    cashExport.meta.lineage = JSON.parse(JSON.stringify(out.meta.lineage));
+    cashExport.meta.pension_accrual = JSON.parse(JSON.stringify(out.meta.pension_accrual));
+    cashExport.meta.roads = out.meta.roads;
+    cashExport.meta.routes = out.meta.routes;
+    for (const g of GENS) for (const end of ["low", "high"]) {
+      cashExport.generations[g][end].pension = out.generations[g][end].pension;
+    }
+    out.meta.cash_export = cashExport;
   }
 
   // Roads: each generation's road line in its three pieces, with the driver-mile share from the generation account.
@@ -551,8 +864,48 @@ if (V4) {
       out.generations[g][end].roads = roads;
     }
   }
+  if (C.v8 && out.generations.G3plus.low.before_native_children) {
+    const m1=withoutChildren(models.G3plus.m1,pay.G3plus);
+    for(const [end,i] of [["low",lo],["high",hi]]) {
+      const before=out.generations.G3plus[end].before_native_children,a=MAIN_SPECS[i].allocation;
+      const svmt=solvedSvmt(m1,a),ea=m1.spending.lines.find(l=>l.id===EA),ex=m1.receipts.lines.find(l=>l.id===EXCISE);
+      const kOld=ea.keys[ea.preferred_key][a].target_bn/ea.national_bn;
+      before.roads={};
+      for(const [lvl,id] of [["sl","roads_vmt_sl"],["fed","roads_vmt_fed"]]) {
+        const row=before.rows.find(r=>r.id===id),N=V.HWY_N[lvl],driver=N*V.FP*svmt,old=-N*kOld;
+        before.roads[id]={driver_miles_bn:driver,old_key_bn:old,freight_bn:row.amount_bn-driver-old,
+          freight_key:ex.cells[V.REF][a].key||null,old_key:ea.preferred_key,s_vmt:svmt};
+      }
+      out.meta.cash_export.generations.G3plus[end].before_native_children.roads=before.roads;
+    }
+  }
 }
 if (fails) { console.log(`✗ ${fails} gate(s) failed`); process.exit(1); }
+if (C.v8) {
+  for (const [basis, api, payloads] of [["set", P, pay], ["cash", P.CASH, apiPayloads.get(P.CASH)]]) {
+    let gap = 0;
+    for (const spec of MAIN_SPECS.filter(s=>s.allocation===ALLOCATION)) {
+      const total = GENS.reduce((sum,g)=>sum+dump(Engine.applyCorrections(models[g].m0,payloads[g]),spec,api,g).cost_bn,0);
+      gap = Math.max(gap,Math.abs(total-dump(api.payloadModel(),spec,api).cost_bn));
+    }
+    gate(`${basis}: all 32 specification generation splits add to the case (1e-9 bn)`,gap<1e-9,`max |gap| ${gap.toExponential(1)}`);
+  }
+  if (fails) process.exit(1);
+}
+if(C.v8) {
+  addedStateTargetMetadata(out);
+  addedStateTargetMetadata(out.meta.cash_export);
+  childCostMetadata(out);
+  childCostMetadata(out.meta.cash_export);
+  if(fails) process.exit(1);
+}
+function atomicWrite(file,data){const temporary=`${file}.tmp-${process.pid}`;try{fs.writeFileSync(temporary,data);fs.renameSync(temporary,file);}finally{if(fs.existsSync(temporary))fs.unlinkSync(temporary);}}
 fs.mkdirSync(path.dirname(path.join(HERE, "_cache", C.out)), { recursive: true });
-fs.writeFileSync(path.join(HERE, "_cache", C.out), JSON.stringify(out, null, 1) + "\n");
+if (C.v8) {
+  const cashExport = out.meta.cash_export;
+  for (const g of GENS) for (const end of ["low","high"]) cashExport.generations[g][end].roads = out.generations[g][end].roads;
+  delete out.meta.cash_export;
+  atomicWrite(path.join(HERE, "_cache", C.out), JSON.stringify(out, null, 1) + "\n");
+  atomicWrite(path.join(HERE, "_cache", C.out.replace("lines.json", "lines_cash.json")), JSON.stringify(cashExport, null, 1) + "\n");
+} else atomicWrite(path.join(HERE, "_cache", C.out), JSON.stringify(out, null, 1) + "\n");
 console.log("  ✓ all export gates passed");

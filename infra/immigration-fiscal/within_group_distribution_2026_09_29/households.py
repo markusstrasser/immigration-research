@@ -144,10 +144,14 @@ import sys
 sys.dont_write_bytecode = True  # read-only imports from other lanes: write nothing beside them
 
 import argparse
+import ast
 import contextlib
 import csv
 import io
 import json
+import os
+import importlib.util
+import hashlib
 from pathlib import Path
 
 import numpy as np
@@ -159,6 +163,8 @@ FISCAL = HERE.parent
 GENLANE = FISCAL / "generation_account_2026_09_24"
 sys.path.insert(0, str(GENLANE))
 sys.path.insert(0, str(FISCAL / "status_impute_2026_09_16"))
+sys.path.insert(0, str(FISCAL / "scripts"))
+from memory_budget import require_within_budget, peak_bytes
 import frame as F  # noqa: E402  (puts the CPS lane on sys.path)
 import keys as K  # noqa: E402
 from impute_status import impute  # noqa: E402
@@ -176,11 +182,11 @@ FAILS = []
 # The September 29 case (export_lines.cjs --case sept29): its lines, its tenant key's inputs and its new category.
 # oct05 (v5) runs on the same rules, with the lineage placed on G3+ (LINEAGE_CASES); oct07 (v6) places it by age band
 # (AGE_MIX_CASES).
-CASE_DIRS = {"sept27": None, "sept29": "sept29", "oct05": "oct05", "oct07": "oct07", "oct14": "oct14"}
+CASE_DIRS = {"sept27": None, "sept29": "sept29", "oct05": "oct05", "oct07": "oct07", "oct14": "oct14", "oct15": "oct15"}
 CASE_LANES = {"sept29": "main_case_2026_09_29", "oct05": "main_case_2026_10_05", "oct07": "main_case_2026_10_07",
-              "oct14": "main_case_2026_10_14"}
-LINEAGE_CASES = ("oct05", "oct07", "oct14")
-AGE_MIX_CASES = ("oct07", "oct14")
+              "oct14": "main_case_2026_10_14", "oct15": "main_case_2026_10_15"}
+LINEAGE_CASES = ("oct05", "oct07", "oct14", "oct15")
+AGE_MIX_CASES = ("oct07", "oct14", "oct15")
 STATES_CSV = FISCAL / "receipt_side_long_run_2026_09_28/derived/states.csv"
 V4_INPUTS = GENLANE / "derived/v4_inputs.json"
 CASH_RENT = 2  # H_TENURE: rented for cash
@@ -355,6 +361,48 @@ def load_frame():
     return F.load()
 
 
+def completion_job_vectors(d, weights, rows, gens):
+    """Reuse the source own-job kernel; its obsolete RSS guard becomes the principal footprint check."""
+    file = FISCAL / "union_completion_2026_10_14/job_record_key.py"
+    spec = importlib.util.spec_from_file_location("household_completion_jobs", file)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    tree = ast.parse(file.read_text())
+    fn = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == "job_record_taxes")
+    calls = [n for n in fn.body if isinstance(n, ast.Expr) and isinstance(n.value, ast.Call)
+             and isinstance(n.value.func, ast.Name) and n.value.func.id == "_require"
+             and any(isinstance(a, ast.Constant) and a.value == "peak memory below 2.5GB" for a in n.value.args)]
+    if len(calls) != 1:
+        raise SystemExit("[BLOCKED] own-job memory boundary changed")
+    fn.body[fn.body.index(calls[0])] = ast.parse("require_within_budget('completion own-job household vectors')").body[0]
+    loops = [n for n in fn.body if isinstance(n, ast.For) and isinstance(n.target, ast.Tuple)
+             and [x.id for x in n.target.elts if isinstance(x, ast.Name)] == ["name", "line"]]
+    if len(loops) != 1:
+        raise SystemExit("[BLOCKED] own-job national driver loop boundary changed")
+    loop = loops[0]
+    fn.body.insert(fn.body.index(loop), ast.parse("national_driver_mass = {}").body[0])
+    assignments = [n for n in loop.body if isinstance(n, ast.Assign)
+                   and any(isinstance(t, ast.Name) and t.id == "tax" for t in n.targets)]
+    if len(assignments) != 1:
+        raise SystemExit("[BLOCKED] own-job national tax boundary changed")
+    loop.body.insert(loop.body.index(assignments[0]) + 1,
+                     ast.parse("national_driver_mass[name] = float(tax.sum()) * float(factor)").body[0])
+    result = next(n for n in fn.body if isinstance(n, ast.Assign)
+                  and any(isinstance(t, ast.Name) and t.id == "result" for t in n.targets))
+    if not isinstance(result.value, ast.Call):
+        raise SystemExit("[BLOCKED] own-job return receipt boundary changed")
+    result.value.keywords.append(ast.keyword(arg="national_driver_mass", value=ast.Name(id="national_driver_mass", ctx=ast.Load())))
+    module.require_within_budget = require_within_budget
+    exec(compile(ast.fix_missing_locations(ast.Module(body=[fn], type_ignores=[])), str(file), "exec"), module.__dict__)
+    result = module.job_record_taxes(d, weights, rows, gens)
+    vectors = {}
+    for key, matrix in result["outside_bn"].items():
+        vector = np.zeros(len(d))
+        vector[rows] = matrix[:, 0] / weights[rows, 0]
+        vectors[key] = vector
+    return vectors, result["national_driver_mass"]
+
+
 def spending_category(row):
     i, k = row["id"], row["key"]
     if i == "general_public_services":
@@ -386,11 +434,11 @@ def age_band_factors(age, g3, w_id, lineage):
     return f_b[band], dict(n_id=n_id, added_b=added_b, f_b=f_b, mix_gap=float(np.abs(n_id / n_id.sum() - mix["identified"]).max()))
 
 
-def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band", allocation="personal"):
+def main(arm, case="oct15", accrual="flat", payroll_base="all", placement="band", allocation="personal", basis="set", lines_path=None):
     sub = CASE_DIRS[case]
     if allocation == "shared":
-        if case != "oct14":
-            raise SystemExit("[BLOCKED] --allocation shared is the oct14 companion")
+        if case not in ("oct14", "oct15"):
+            raise SystemExit("[BLOCKED] --allocation shared needs the live companion")
         sub = f"{sub}/shared_allocation"
     if placement != "band" and (case not in AGE_MIX_CASES or accrual != "flat"):
         raise SystemExit("[BLOCKED] --placement uniform is the beside arm of a case placed by age band, flat arm only")
@@ -402,11 +450,33 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
         raise SystemExit("[BLOCKED] --payroll onbooks needs --accrual person: the central pairs the two")
     print(f"[frame] weights: {arm}" + (f"; case {case}" if sub else "") + (f"; accrual {accrual}" if accrual != "flat" else "")
           + (f"; payroll {payroll_base}" if payroll_base != "all" else ""), flush=True)
-    lines = json.loads(((CACHE / sub if sub else CACHE) / "lines.json").read_text())
+    if basis not in ("set", "cash") or (basis == "cash" and case != "oct15"):
+        raise SystemExit("[BLOCKED] cash pricing is the oct15 route")
+    lines = json.loads((Path(lines_path) if lines_path else (CACHE / sub if sub else CACHE) / ("lines_cash.json" if basis == "cash" else "lines.json")).read_text())
+    missing_block = []
+    coverage = lines["meta"].get("coverage") if case == "oct15" else None
+    if coverage:
+        source = FISCAL / coverage["file"]
+        if coverage.get("stub") or hashlib.sha256(source.read_bytes()).hexdigest() != coverage["sha256"]:
+            raise SystemExit("[BLOCKED] coverage household block source missing, stub or stale")
+        payload = json.loads(source.read_text())["sets"][basis]["scenarios"][coverage["construction"]]
+        for generation, bands in payload["by_generation_age_band"].items():
+            for band, values in bands.items():
+                for end in ENDS:
+                    missing_block.append(dict(block="people the survey misses", generation=generation, age_band=band,
+                                              end=end, net_missing_people=values["net_missing_people"],
+                                              cost_bn=values["by_end"][end]["coverage_bn"],
+                                              per_member_usd=values["by_end"][end]["per_member_usd"],
+                                              observed_household=False))
+        for end in ENDS:
+            gate(f"coverage {basis}/{end}: own age/generation block adds to declared post-engine amount (1e-9 bn)",
+                 abs(sum(r["cost_bn"] for r in missing_block if r["end"] == end) - coverage["by_end"][end]["total_bn"]) < 1e-9)
+        gate("coverage own block people add to v8 extra denominator (1e-6 people)",
+             abs(sum(r["net_missing_people"] for r in missing_block if r["end"] == "low") - coverage["net_missing_people"]) < 1e-6)
     v4 = case in CASE_LANES
     if v4 and lines["meta"]["case"] != CASE_LANES[case]:
         raise SystemExit(f"[BLOCKED] _cache/{sub}/lines.json is {lines['meta']['case']}'s; run export_lines.cjs --case {case}")
-    if case == "oct14" and (lines["meta"].get("allocation") != allocation
+    if case in ("oct14", "oct15") and (lines["meta"].get("allocation") != allocation
                             or any(lines["meta"]["specs"][end]["allocation"] != allocation for end in ENDS)):
         raise SystemExit(f"[BLOCKED] _cache/{sub}/lines.json is not the {allocation} allocation; rerun export_lines.cjs")
     lineage = lines["meta"]["lineage"] if case in LINEAGE_CASES else None
@@ -437,6 +507,8 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
     out_dir, cache_dir = (OUT, CACHE) if arm == "published" else (OUT / arm, CACHE / arm)
     if sub:     # a later case writes its own directory, on the row-4 weights
         out_dir, cache_dir = OUT / sub, CACHE / sub
+    if basis == "cash":
+        out_dir, cache_dir = out_dir / "cash", cache_dir / "cash"
     if placement == "uniform":   # beside the case: v5's one factor, in a directory of its own
         out_dir, cache_dir = out_dir / "uniform_placement", cache_dir / "uniform_placement"
     index = C.spm_index(d)
@@ -468,6 +540,7 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
             placed = f"G3+ records x f_b {bands['f_b'].min():.4f} to {bands['f_b'].max():.4f} by band"
         else:
             lineage_f = 1.0 + counts["added"] / n_g3
+            f_rec = np.full(len(d), lineage_f)
             W[g3, :] *= lineage_f   # [ASSUMPTION] the added people at the identified G3+ members' composition, every replicate
             placed = f"G3+ records x {lineage_f:.6f}"
         w0 = W[:, 0]
@@ -479,6 +552,8 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
             print(f"  beside the case: the placed G3+ adults (18 and over) are {adults:,.1f}, the generation account's {want:,.1f}", flush=True)
         elif case in AGE_MIX_CASES:
             adults, want = float(w0[g3 & (age >= 18)].sum()), lineage["generation_g3plus"]["adults"]
+            if case == "oct15":
+                want -= sum(r["people"] for r in lines["meta"]["union_completion"]["observed_records"] if r["age"] >= 18)
             gate("the placed G3+ adults (18 and over) are the generation account's, its added people's at their age mix (1 person)",
                  abs(adults - want) <= 1.0, f"{adults:,.1f} vs {want:,.1f} ({lineage['generation_g3plus']['source']})")
 
@@ -575,7 +650,7 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
     # member; on the published weights the first generation pays less.
     spread = 0.0
     for end in ENDS:
-        rows_g = {g: {r["id"]: r for r in lines["generations"][g][end]["rows"]} for g in GENS}
+        rows_g = {g: {r["id"]: r for r in (lines["generations"][g][end].get("before_native_children") or lines["generations"][g][end])["rows"]} for g in GENS}
         for i, r in rows_g["G1"].items():
             per_member = np.array([rows_g[g][i]["cost_bn"] for g in GENS]) * 1e9 / pop
             if r["key"] in PER_HEAD_KEYS and np.any(per_member != 0):
@@ -606,7 +681,7 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
         cells = [d.A_HGA.between(31, cut).to_numpy(), d.A_HGA.between(cut + 1, 46).to_numpy()]
         labor = np.array([[float((earn * w_labor)[gens[g] & c].sum()) for c in cells] for g in GENS])
         A = labor / labor.sum(axis=0)
-        y = np.array([lines["generations"][g][end]["production"]["cost_bn"] for g in GENS])
+        y = np.array([(lines["generations"][g][end].get("before_native_children") or lines["generations"][g][end])["production"]["cost_bn"] for g in GENS])
         y_all = y.copy()
         if lineage:     # the lineage's production term is set apart: the identified union's terms are September 29's
             y[GENS.index("G3plus")] -= lineage["production_bn"][end]
@@ -626,14 +701,101 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
 
     # Pieces: (generation, category, amount_bn, vector restricted to the generation).
     print("[pieces]", flush=True)
+    original_gens = {g: m.copy() for g, m in gens.items()}
+    original_union = union.copy()
+    reporter = nonreporter = np.zeros(len(d), bool)
+    completion = lines["meta"].get("union_completion") if case == "oct15" else None
+    if completion:
+        if not completion.get("production_delta") or not lines["meta"].get("child_pricing"):
+            raise SystemExit("[BLOCKED] oct15 requires native child cells/production and own-age pricing")
+        reporter, nonreporter = np.zeros(len(d), bool), np.zeros(len(d), bool)
+        identities = {(int(h), int(p)): i for i, (h, p) in enumerate(zip(d.PH_SEQ, d.PPPOS))}
+        if len(identities) != len(d):
+            raise SystemExit("[BLOCKED] completion identity is not one-to-one")
+        for record in completion["observed_records"]:
+            identity = (record["PH_SEQ"], record["PPPOS"])
+            if identity not in identities:
+                raise SystemExit(f"[BLOCKED] item10 observed person absent: {identity}")
+            i = identities[identity]
+            if original_union[i] or abs(w_id[i] - record["people"]) > 1e-6:
+                raise SystemExit(f"[BLOCKED] item10 record overlaps union or has stale weight: {identity}")
+            (nonreporter if record["observed_nonreporter"] else reporter)[i] = True
+        union = original_union | reporter | nonreporter
+        gens = {g: m.copy() for g, m in original_gens.items()}
+        gens["G3plus"] |= reporter | nonreporter
+        lab = F.label(gens, len(d))
+        gate("item10 reporters and children retain their own observed person/household weights (1e-6 people)",
+             abs(float(w_id[reporter].sum()) - completion["counts"]["reporters"]) < 1e-6
+             and abs(float(w_id[nonreporter].sum()) - completion["counts"]["nonreporters"]) < 1e-6)
+        gate("completed household members match v8 without-coverage population (1 person)",
+             abs(float(w0[union].sum()) - lines["meta"]["population_v8"]["without_coverage"]) < 1)
+        cache = CACHE / "oct15/completion_jobs.npz"
+        if not cache.exists():
+            raise SystemExit("[BLOCKED] missing own-job cache: run completion_keys.py after export_lines.cjs")
+        pins = json.loads(cache.with_suffix(".json").read_text())
+        for rel, expected in pins["source_sha256"].items():
+            if hashlib.sha256((FISCAL / rel).read_bytes()).hexdigest() != expected:
+                raise SystemExit(f"[BLOCKED] stale own-job cache source {rel}: run completion_keys.py")
+        completion_national_mass = pins["national_driver_mass"]
+        with np.load(cache) as data:
+            source_rows = data["rows"]
+            if not np.array_equal(np.sort(source_rows), np.flatnonzero(reporter)):
+                raise SystemExit("[BLOCKED] own-job cache reporter identities changed")
+            completion_jobs = {}
+            for key in data.files:
+                if key == "rows":
+                    continue
+                vector = np.zeros(len(d))
+                vector[source_rows] = data[key]
+                completion_jobs[key] = vector
+        completion_pension = None
+        if basis == "set":
+            completion_pension = alt if alt is not None else person_vectors(d, original_union, original_gens, index)[0]
     rows_u = np.flatnonzero(union)
+    coverage_identified_weights = W[rows_u].copy() if completion else None
+    coverage_added_weights = np.zeros_like(coverage_identified_weights) if completion else None
+    if completion:
+        old_g3 = original_gens["G3plus"][rows_u]
+        coverage_identified_weights[old_g3] /= f_rec[rows_u][old_g3, None]
+        coverage_identified_weights[nonreporter[rows_u]] = 0
+        coverage_added_weights = W[rows_u] - coverage_identified_weights
+        rounding = lines["meta"]["population_rounding"]
+        rounding_people = rounding["people"]
+        if rounding["generation"] != "G1":
+            raise SystemExit("[BLOCKED] population rounding has no declared G1 owner")
+        identified_people = float(coverage_identified_weights[:, 0].sum())
+        added_people = float(coverage_added_weights[:, 0].sum())
+        expected_identified = lineage["counts"]["account_union"] + completion["counts"]["reporters"]
+        expected_added = lineage["counts"]["added"] + completion["counts"]["nonreporters"]
+        gate("coverage populations separate completed reporters/descendants and declared zero-dollar G1 rounding (1e-6 people)",
+             abs(identified_people + rounding_people - expected_identified) < 1e-6 and abs(added_people - expected_added) < 1e-6
+             and abs(rounding_people) < 1e-4,
+             f"identified {identified_people:.9f} + rounding {rounding_people:+.9f}/{expected_identified:.9f}; added {added_people:.9f}/{expected_added:.9f}")
     pieces, residual, scaling = {e: [] for e in ENDS}, {e: {} for e in ENDS}, []
     moves = []   # oct07: each part split by another line, its cost by category on its own line's split and on the basis line's
     for end in ENDS:
         for g in GENS:
-            G = lines["generations"][g][end]
+            full_G = lines["generations"][g][end]
+            native_before = full_G.get("before_native_children") or full_G
+            state_prices = full_G.get("added_state_prices", [])
+            G = native_before
+            if state_prices:
+                if not lines["meta"].get("coverage") or lines["meta"]["coverage"].get("stub"):
+                    raise SystemExit("[BLOCKED] added-state household route requires real coverage")
+                G = {**G, "rows": [dict(row) for row in G["rows"]]}
+                for part in state_prices:
+                    edit = part["edit"]
+                    matching = [row for row in G["rows"] if row["side"] == edit["side"] and row["id"] == edit["line"]
+                                and (row["scenario"] == edit["scenario"] if edit["side"] == "receipt" else row["key"] == edit["key"])]
+                    if len(matching) != 1:
+                        raise SystemExit("[BLOCKED] added-state change lacks unique household row")
+                    row = matching[0]
+                    row["amount_bn"] -= part["amount_bn"]
+                    row["cost_bn"] -= part["cost_bn"]
+                    gate(f"{g} {end} {row['id']}: identified/latent/native state costs reproduce delta (1e-9 bn)",
+                         abs(sum(part["cost_by_population"].values()) - part["cost_bn"]) < 1e-9)
             a = G["allocation"]
-            m = gens[g]
+            m = original_gens[g]
             amount = {}
 
             def add(cat, bn, x, pid):
@@ -641,7 +803,7 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
                 # whose non-union entries are all zero (the union here has 18,331 records).
                 x = np.where(m[rows_u], x[rows_u], 0.0)
                 piece = dict(g=g, cat=cat, bn=bn, x=x, id=pid)
-                if alt is not None and cat == PENSION:
+                if alt is not None and cat == PENSION and pid in ("social_security", "medicare"):
                     # The pension pieces: Social Security (the social_security line) and Part A (part of medicare).
                     part = {"social_security": "oasdi", "medicare": "part_a"}[pid]
                     piece["alt"] = {k: np.where(m[rows_u], alt[k][part][a][rows_u], 0.0) for k in PENSION_VECTORS}
@@ -693,6 +855,8 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
                     return [("roads_parks", rp["driver_miles_bn"] / row["amount_bn"], (age >= 5).astype(float)),
                             ("roads_parks", rp["freight_bn"] / row["amount_bn"], vec[a][("receipt", rp["freight_key"])]),
                             ("roads_parks", rp["old_key_bn"] / row["amount_bn"], vec[a][("spending", rp["old_key"])])]
+                if basis == "cash" and i in ("social_security", "medicare", "federal_income_tax"):
+                    return None
                 pen = G["pension"]
                 if side == "spending" and i == "social_security":
                     return [(PENSION, 1.0, receipts_of([(x, 1.0) for x in PA["oasdi_lines"]]
@@ -753,17 +917,75 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
                     cost = r["bn"][g][a] * row["response"]
                     print(f"  {g} {end}: {r['part']} {r['bn'][g][a]:+.6f} bn of {lid} ({cost:+.6f} bn at its response) "
                           f"spread as {r['basis']}", flush=True)
-                    own, basis = {}, {}
-                    for into, split in ((own, line_split(row)), (basis, line_split(row_of("spending", r["basis"])))):
+                    own, basis_parts = {}, {}
+                    for into, split in ((own, line_split(row)), (basis_parts, line_split(row_of("spending", r["basis"])))):
                         for cat, share, _ in split:
                             into[cat] = into.get(cat, 0.0) + cost * share
                     moves += [dict(end=end, generation=g, part=r["part"], line=lid, basis=r["basis"], amount_bn=r["bn"][g][a],
-                                   cost_bn=cost, category=cat, own_line_bn=own.get(cat, 0.0), basis_line_bn=basis.get(cat, 0.0))
-                              for cat in sorted(set(own) | set(basis))]
+                                   cost_bn=cost, category=cat, own_line_bn=own.get(cat, 0.0), basis_line_bn=basis_parts.get(cat, 0.0))
+                              for cat in sorted(set(own) | set(basis_parts))]
             for row in G["rows"]:
                 i, bn = row["id"], row["cost_bn"]
                 amount[i] = row["amount_bn"]
                 if bn == 0:
+                    continue
+                if completion and i in completion["carriers"]:
+                    src = completion["carriers"][i]
+                    target = reporter
+                    if src["kind"] == "line":
+                        parent = row_of(src["side"], src["parent_line"])
+                        selected = G["receipt_scenario"] if src["side"] == "receipt" else parent["key"]
+                        if selected != src["parent_key"] or abs(row["response"] - parent["response"]) > 1e-12:
+                            raise SystemExit(f"[BLOCKED] {i}: active carrier differs from selected parent key/response")
+                        if src["parent_line"] in ("corporate_capital", "corporate_labor", "remaining_production_property", "other_production_taxes"):
+                            key = {"corporate_capital": "corporate", "corporate_labor": "corporate", "remaining_production_property": "business_property"}.get(src["parent_line"], src["parent_line"])
+                            split = [("taxes", 1.0, completion_jobs[key])]
+                        elif src["parent_line"] == "tenant_occupied_property":
+                            rates = json.loads((FISCAL / "union_completion_2026_10_14/derived/added_band_prices.json").read_text())
+                            x = np.array([r["g3_fallback_line_bn_per_person"]["tenant_occupied_property"][basis][ENDS.index(end)]
+                                          for r in rates["rates"]])[np.minimum(age // 5, 16)]
+                            split = [("taxes", 1.0, np.abs(x))]
+                        elif src["parent_line"] == "lane_constants":
+                            split = [("other_shared", 1.0, np.ones(len(d)))]
+                        else:
+                            split = routed_split(parent)
+                            if basis == "set" and src["parent_line"] in ("social_security", "medicare"):
+                                part = "oasdi" if src["parent_line"] == "social_security" else "part_a"
+                                split = [(cat, share, completion_pension["person"][part][a] if cat == PENSION else x)
+                                         for cat, share, x in split]
+                    elif src["kind"] == "production":
+                        split = [("production", 1.0, prod_parts[end]["earn"])]
+                    elif src["kind"] == "capital":
+                        c = next(c for c in G["capital"] if c["id"] == src["parent_line"])
+                        rule = c["rule"]
+                        if rule["kind"] == "receipt_amount_over_national":
+                            if rule["line"] in carriers:
+                                split = [("capital", share, x) for _, share, x in
+                                         routed_split(row_of("spending", carriers[rule["line"]]["parent_line"]))]
+                            elif rule["line"] == "enterprise_surplus":
+                                split = [("capital", 1.0, np.ones(len(d)))]
+                            else:
+                                raise SystemExit(f"[BLOCKED] reporter capital {c['id']}: undeclared receipt parent {rule['line']}")
+                        elif rule["kind"] == "part_rekeyed":
+                            split = [("capital", share * c["shares"][part] / sum(c["shares"].values()), x)
+                                     for part, lid in (("parent", rule["parent_line"]), ("part", rule["correction_line"]))
+                                     for _, share, x in routed_split(row_of("spending", lid))]
+                        else:
+                            ids = rule["numerator_lines"]
+                            den = sum(row_of("spending", lid)["amount_bn"] for lid in ids)
+                            split = [("capital", share * row_of("spending", lid)["amount_bn"] / den, x)
+                                     for lid in ids for _, share, x in routed_split(row_of("spending", lid))]
+                    else:
+                        raise SystemExit(f"[BLOCKED] unknown item10 carrier kind {src['kind']}")
+                    for cat, share, x in split:
+                        old_m = m
+                        m = target
+                        add(cat, bn * share, x, i)
+                        piece = pieces[end][-1]
+                        piece["completion_source"] = src
+                        piece["full_driver"] = x.copy()
+                        piece["observed_population"] = "reporter"
+                        m = old_m
                     continue
                 if i == "lane_constants":
                     residual[end][g] = residual[end].get(g, 0.0) + bn
@@ -807,18 +1029,153 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
             pp = prod_parts[end]
             for s, cell in enumerate(pp["cells"]):
                 add("production", pp["part"][GENS.index(g), s], pp["earn"] * cell, "production")
+            if completion and g == "G3plus" and full_G.get("before_native_children"):
+                native = lines["meta"]["child_pricing"]["records"]
+                old_m = m
+                m = nonreporter
+                # Native per-person rows are evaluated at the actual key/response, then placed at each child's ID.
+                for kind in ("rows", "capital", "production"):
+                    declarations = G["rows"] if kind == "rows" else G["capital"] if kind == "capital" else [dict(id="production")]
+                    for parent in declarations:
+                        pid = parent["id"]
+                        values = np.zeros(len(d))
+                        for record in native:
+                            r = identities[(record["PH_SEQ"], record["PPPOS"])]
+                            block = record["ends"][end]
+                            values[r] = (block["production_bn"] if kind == "production" else
+                                         next((p["cost_bn"] for p in block[kind] if p["id"] == pid
+                                               and (kind != "rows" or p["side"] == parent["side"])), 0.0))
+                        expected = (full_G["production"]["cost_bn"] - G["production"]["cost_bn"] if kind == "production" else
+                                    next(p["cost_bn"] for p in full_G[kind] if p["id"] == pid
+                                         and (kind != "rows" or p["side"] == parent["side"])) -
+                                    next(p["cost_bn"] for p in native_before[kind] if p["id"] == pid
+                                         and (kind != "rows" or p["side"] == parent["side"])))
+                        actual = float(values @ w0)
+                        gate(f"native observed children {end} {kind} {pid}: own-age cells reproduce declared generation change (1e-9 bn)",
+                             abs(actual - expected) < 1e-9, f"{actual:+.9f} / {expected:+.9f}")
+                        if kind == "rows":
+                            if parent["side"] == "receipt":
+                                cat = "enterprise" if pid == "enterprise_surplus" else "taxes"
+                            elif basis == "set" and pid == "social_security":
+                                cat = PENSION
+                            elif pid in ("education_services", "school_reprice"):
+                                cat = "schools"
+                            elif pid == "college_rekey":
+                                cat = "education_other"
+                            elif pid == "lane_constants":
+                                cat = "other_shared"
+                            else:
+                                cat = spending_category(parent)
+                        else:
+                            cat = "capital" if kind == "capital" else "production"
+                        components = [(cat, values)]
+                        if kind == "rows" and parent["side"] == "spending" and pid == "education_services":
+                            schools = np.zeros(len(d))
+                            for record in native:
+                                row = next(p for p in record["ends"][end]["rows"] if p["side"] == "spending" and p["id"] == pid)
+                                parts = row["category_cost_bn"]
+                                gate(f"native education {record['PH_SEQ']}/{record['PPPOS']} {end}: school/P categories reproduce row (1e-12 bn)",
+                                     set(parts) == {"schools", "education_other"} and abs(sum(parts.values()) - row["cost_bn"]) < 1e-12)
+                                schools[identities[(record["PH_SEQ"], record["PPPOS"])]] = parts["schools"]
+                            components = [("schools", schools), ("education_other", values - schools)]
+                        if kind == "rows" and basis == "set" and pid == "medicare":
+                            part_a = np.zeros(len(d))
+                            for record in native:
+                                part_a[identities[(record["PH_SEQ"], record["PPPOS"])]] = record["ends"][end]["part_a_accrual_cost_bn"]
+                            components = [("health", values - part_a), (PENSION, part_a)]
+                        for into, component in components:
+                            for sign in (-1, 1):
+                                vector = np.where(sign * component > 0, np.abs(component), 0.0)
+                                bn = float((component * (sign * component > 0)) @ w0)
+                                if bn == 0:
+                                    continue
+                                add(into, bn, vector, f"native_child_{parent.get('side',kind)}_{pid}")
+                                pieces[end][-1]["full_driver"] = vector.copy()
+                                pieces[end][-1]["native_child_source"] = dict(kind=kind, parent=pid, side=parent.get("side"), key=parent.get("key"))
+                                if kind == "rows" and parent["side"] == "spending" and pid == "education_services":
+                                    pieces[end][-1]["native_child_source"]["category"] = into
+                                if into == PENSION:
+                                    pieces[end][-1]["part"] = "oasdi" if pid == "social_security" else "part_a"
+                m = old_m
+            for part in state_prices:
+                source = part["charge_source"]
+                source_side, source_id, source_key = part["source_cell"].split("|")
+                source_row = row_of(source_side, source_id)
+                selected = source_row["scenario"] if source_side == "receipt" else source_row["key"]
+                if source_key != selected:
+                    raise SystemExit("[BLOCKED] added-state source differs from selected household source cell")
+                key = source_row["key"]
+                cat = "taxes" if part["edit"]["side"] == "receipt" else spending_category(source_row)
+                for population, bn in part["cost_by_population"].items():
+                    if bn == 0:
+                        continue
+                    if population in ("identified", "latent"):
+                        # The nominal age factors apply to weights only on original G3+ records.
+                        identified_fraction = np.where(original_gens["G3plus"], 1 / f_rec, 1.0)
+                        fraction = identified_fraction if population == "identified" else 1 - identified_fraction
+                        components = [(into, share, vector * fraction) for into, share, vector in line_split(source_row)]
+                        target = original_gens[g]
+                    elif population == "native":
+                        vector = np.zeros(len(d))
+                        for record in lines["meta"]["child_pricing"]["records"]:
+                            priced = [row for row in record["ends"][end]["rows"] if row["side"] == source_side and row["id"] == source_id]
+                            if len(priced) != 1 or (priced[0]["scenario"] if source_side == "receipt" else priced[0]["key"]) != source_key:
+                                raise SystemExit("[BLOCKED] native added-state charge lacks selected own-age source cell")
+                            vector[identities[(record["PH_SEQ"], record["PPPOS"])]] = priced[0]["amount_bn"]
+                        target = nonreporter & gens[g]
+                        components = [(cat, 1.0, vector)]
+                    else:
+                        raise SystemExit(f"[BLOCKED] unknown added-state population {population}")
+                    for into, share, vector in components:
+                        if share == 0:
+                            continue
+                        if np.any(vector < 0) or not np.any(vector[target]):
+                            raise SystemExit(f"[BLOCKED] invalid {population} added-state source driver")
+                        old_m, m = m, target
+                        add(into, bn * share, vector, f"added_state_{population}_{part['edit']['line']}")
+                        piece = pieces[end][-1]
+                        piece["full_driver"] = vector.copy()
+                        piece["state_price_source"] = dict(population=population, source_cell=part["source_cell"],
+                                                           edit=part["edit"], key=key, charge_source=source,
+                                                           category=into, category_share=share,
+                                                           rule=part["rule"], indexes_source=part["indexes_source"])
+                        m = old_m
+            if completion:
+                if os.environ.get("HOUSEHOLD_MIXED_ROUTE", "per_member") != "per_member":
+                    raise SystemExit("[BLOCKED] HOUSEHOLD_MIXED_ROUTE has no declared household route")
+                mixed = G.get("post_engine", {}).get("mixed_unit_removal", 0.0)
+                old_m = m
+                m = gens[g]
+                add("other_shared", mixed, np.ones(len(d)), "mixed_unit_removal")
+                pieces[end][-1]["full_driver"] = np.ones(len(d))
+                pieces[end][-1]["distribution_assumption"] = "declared generation total per member; no observed household split"
+                m = old_m
+                # Coverage is a separate unobserved block, not allocated to observed households.
+                residual[end][g] = residual[end].get(g, 0.0) + G.get("post_engine", {}).get("coverage", 0.0)
             # Gate: the generation's pieces plus its residual equal its cost.
             got = sum(p["bn"] for p in pieces[end] if p["g"] == g) + residual[end].get(g, 0.0)
             gaps["generation pieces vs cost (bn)"] = max(gaps.get("generation pieces vs cost (bn)", 0.0),
-                                                         abs(got - G["cost_bn"]))
-            gate(f"{g} {end}: pieces plus residual equal the generation's cost", abs(got - G["cost_bn"]) < 1e-6,
-                 f"{got:.6f} vs {G['cost_bn']:.6f}")
+                                                         abs(got - full_G["cost_bn"]))
+            gate(f"{g} {end}: pieces plus residual equal the generation's cost", abs(got - full_G["cost_bn"]) < 1e-9,
+                 f"{got:.6f} vs {full_G['cost_bn']:.6f}")
 
     # The pieces now own every needed vector; release construction buffers before allocating amount matrices.
     del prod_parts, vec, rk, sk, medical, edu, v
+    if coverage:
+        del payload  # the unlocated block owns its scalar prices/counts
+    del coverage_identified_weights, coverage_added_weights
+    del models, shares, use_parts, routes, carriers, index
+    if completion:
+        del completion_jobs, completion_pension
+        if "rates" in locals():
+            del rates
+    for end in ENDS:
+        for piece in pieces[end]:
+            piece.pop("full_driver", None)
+    print(f"[resources] constructed piece peak physical footprint {peak_bytes()} bytes", flush=True)
     if alt is not None:
         alt.clear()  # retain the arm-presence flag; the pieces own independent masked copies
-        del onbooks_key
+        del onbooks_key, onbooks
     # Only first-column weights and household/status fields are read after construction. Copy the small vectors
     # before dropping their large backing blocks; the full raw frame/cache was already read and gated above.
     age, w_pub, w0 = age.copy(), w_pub.copy(), w0.copy()
@@ -838,6 +1195,8 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
             x = p["x"]
             k = x @ Wu  # 161
             if not np.any(x) or np.any(k == 0):
+                if p.get("completion_source") and p["bn"] != 0:
+                    raise SystemExit(f"[BLOCKED] item10 observed own-key piece unassignable: {p['id']}")
                 unassigned[end] += p["bn"]
                 if p["bn"] != 0:
                     print(f"  · unassignable piece {p['g']} {p['id']} {p['bn']:.6f} bn")
@@ -851,7 +1210,7 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
         gaps["households + residual vs the case (bn)"] = max(gaps.get("households + residual vs the case (bn)", 0.0), gap_case)
         gaps["replicates vs full sample (bn)"] = max(gaps.get("replicates vs full sample (bn)", 0.0), gap_reps)
         gate(f"{end}: persons' assigned amounts plus the residual reproduce the case (full sample)",
-             gap_case < 1e-6, f"{tot[0]:.6f} + {res:.6f} = {tot[0] + res:.6f} vs {case:.6f}, gap {gap_case:.1e}")
+             gap_case < 1e-9, f"{tot[0]:.6f} + {res:.6f} = {tot[0] + res:.6f} vs {case:.6f}, gap {gap_case:.1e}")
         gate(f"{end}: every replicate's assigned total equals the full sample's (line totals held)",
              gap_reps < 1e-6, f"max |diff| {gap_reps:.1e} bn")
         # Sensitivity: the same school dollars spread per head over the union instead of charged to the pupils.
@@ -859,7 +1218,48 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
         amt[end]["schools_per_head"] = np.tile(school_total / Wu.sum(axis=0), (len(rows_u), 1))
 
     # --accrual person: the pension pieces again under each arm; every other category is the flat arm's.
-    arms = {"flat": amt}
+    def pension_arm(k_vec):
+        """Build one beside arm, retaining no other arm's dense pension matrices."""
+        pen = {e: np.zeros((len(rows_u), W.shape[1])) for e in ENDS}
+        worst = 0.0
+        for end in ENDS:
+            for p in pieces[end]:
+                if "alt" not in p:
+                    if p["cat"] == PENSION:
+                        x = p["x"]
+                        pen[end] += np.outer(x, p["bn"] * 1e9 / (x @ Wu))
+                    continue
+                x = p["alt"][k_vec]
+                k = x @ Wu
+                if not np.any(x) or np.any(k <= 0):
+                    raise SystemExit(f"[BLOCKED] {k_vec}: {p['g']} {end} {p['id']}: no member carries the piece")
+                part = np.outer(x, p["bn"] * 1e9 / k)
+                worst = max(worst, float(np.abs((part * Wu).sum(axis=0) / 1e9 - p["bn"]).max()))
+                pen[end] += part
+        gate(f"{k_vec}: every pension piece keeps its generation's accrual in every replicate (1e-9 bn)",
+             worst < 1e-9, f"max |diff| {worst:.1e}")
+        return pen
+
+    def onbooks_tax_arm():
+        """Build the tax matrices only when the final two arms need them."""
+        taxes = {e: amt[e]["taxes"].copy() for e in ENDS}
+        worst = 0.0
+        for end in ENDS:
+            for p in pieces[end]:
+                if "alt_tax" not in p:
+                    continue
+                x0, x1 = p["x"], p["alt_tax"]
+                k0, k1 = x0 @ Wu, x1 @ Wu
+                if not (np.any(x0) and np.all(k0 != 0) and np.any(x1) and np.all(k1 > 0)):
+                    raise SystemExit(f"[BLOCKED] on-books payroll: {p['g']} {end} {p['id']} cannot be re-keyed")
+                moved = np.outer(x1, p["bn"] * 1e9 / k1)
+                worst = max(worst, float(np.abs((moved * Wu).sum(axis=0) / 1e9 - p["bn"]).max()))
+                taxes[end] += moved - np.outer(x0, p["bn"] * 1e9 / k0)
+        gate("on-books payroll: every payroll piece keeps its generation's total in every replicate (1e-9 bn)",
+             worst < 1e-9, f"max |diff| {worst:.1e}")
+        return taxes
+
+    taxes = None
     if alt is not None:
         print("[person accrual arms]", flush=True)
         for end in ENDS:
@@ -880,66 +1280,53 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
             gate(f"{end}: the union's Part A accrual is the payload's part_a_accrual_bn (1e-9 bn)" + (", plus the lineage's" if lineage else ""),
                  abs(part_bn["part_a"] - PA["part_a_accrual_bn"] - own["part_a"] - row4["part_a"]) < 1e-9,
                  f"{part_bn['part_a']:.9f} bn; R9 union {row4['part_a']:+.9f} bn")
-        pen_by = {}
-        for k_vec in PENSION_VECTORS:
-            pen = {e: np.zeros((len(rows_u), W.shape[1])) for e in ENDS}
-            worst = 0.0
-            for end in ENDS:
-                for p in pieces[end]:
-                    if "alt" not in p:
-                        continue
-                    x = p["alt"][k_vec]
-                    k = x @ Wu
-                    if not np.any(x) or np.any(k <= 0):
-                        raise SystemExit(f"[BLOCKED] {k_vec}: {p['g']} {end} {p['id']}: no member carries the piece")
-                    part = np.outer(x, p["bn"] * 1e9 / k)
-                    worst = max(worst, float(np.abs((part * Wu).sum(axis=0) / 1e9 - p["bn"]).max()))
-                    pen[end] += part
-            gate(f"{k_vec}: every pension piece keeps its generation's accrual in every replicate (1e-9 bn)",
-                 worst < 1e-9, f"max |diff| {worst:.1e}")
-            pen_by[k_vec] = pen
-            if k_vec in PERSON_ARMS:
-                arms[k_vec] = {e: {**amt[e], PENSION: pen[e]} for e in ENDS}
-        # ONBOOKS_ARMS: each payroll piece moved from its key to its on-books key, beside their pension vectors.
-        taxes = {e: amt[e]["taxes"].copy() for e in ENDS}
-        worst = 0.0
-        for end in ENDS:
-            for p in pieces[end]:
-                if "alt_tax" not in p:
-                    continue
-                x0, x1 = p["x"], p["alt_tax"]
-                k0, k1 = x0 @ Wu, x1 @ Wu
-                if not (np.any(x0) and np.all(k0 != 0) and np.any(x1) and np.all(k1 > 0)):
-                    raise SystemExit(f"[BLOCKED] on-books payroll: {p['g']} {end} {p['id']} cannot be re-keyed")
-                moved = np.outer(x1, p["bn"] * 1e9 / k1)
-                worst = max(worst, float(np.abs((moved * Wu).sum(axis=0) / 1e9 - p["bn"]).max()))
-                taxes[end] += moved - np.outer(x0, p["bn"] * 1e9 / k0)
-        gate("on-books payroll: every payroll piece keeps its generation's total in every replicate (1e-9 bn)",
-             worst < 1e-9, f"max |diff| {worst:.1e}")
+        # Retain the payroll vectors until their deferred producer runs; other non-pension pieces can go.
+        pieces = {e: [p for p in pieces[e] if "alt" in p or "alt_tax" in p or p["cat"] == PENSION] for e in ENDS}
+        # Keep the authoritative pre-rekey baseline totals, rather than its dense tax/pension matrices
+        # throughout the two final on-books arms. The reduction is identical to their existing gate.
         own = lab[rows_u]
-        for k_arm, k_vec in ONBOOKS_ARMS.items():
-            arms[k_arm] = {e: {**amt[e], PENSION: pen_by[k_vec][e], "taxes": taxes[e]} for e in ENDS}
+        baseline_arm_totals = {end: {c: [(amt[end][c][own == gi] * Wu[own == gi]).sum(axis=0)
+                                        for gi in range(len(GENS))] for c in ("taxes", PENSION)} for end in ENDS}
+
+    def make_arm(k_arm):
+        nonlocal taxes, pieces
+        if k_arm == "flat":
+            return amt
+        if k_arm in ONBOOKS_ARMS and taxes is None:
+            taxes = onbooks_tax_arm()
+            pieces = {e: [p for p in pieces[e] if "alt" in p or p["cat"] == PENSION] for e in ENDS}
+            for end in ENDS:
+                # Both on-books arms are last; their source baselines are frozen in baseline_arm_totals.
+                amt[end].pop("taxes")
+                amt[end].pop(PENSION, None)
+        k_vec = ONBOOKS_ARMS.get(k_arm, k_arm)
+        pen = pension_arm(k_vec)
+        current = {e: {**amt[e], PENSION: pen[e]} for e in ENDS}
+        if k_arm in ONBOOKS_ARMS:
+            for end in ENDS:
+                current[end]["taxes"] = taxes[end]
             worst = 0.0
+            own = lab[rows_u]
             for end in ENDS:
                 for gi in range(len(GENS)):
                     m = own == gi
                     for c in ("taxes", PENSION):
-                        got = (arms[k_arm][end][c][m] * Wu[m]).sum(axis=0)
-                        want = (amt[end][c][m] * Wu[m]).sum(axis=0)
+                        got = (current[end][c][m] * Wu[m]).sum(axis=0)
+                        want = baseline_arm_totals[end][c][gi]
                         worst = max(worst, float(np.abs(got - want).max()) / 1e9)
             gate(f"{k_arm}: each generation keeps its taxes and its pension accrual in every replicate (1e-9 bn)",
                  worst < 1e-9, f"max |diff| {worst:.1e} bn")
-        for k_arm in ARM_ORDER[1:]:
-            for end in ENDS:
-                tot = sum((arms[k_arm][end][c] * Wu).sum(axis=0) for c in cats) / 1e9
-                res = sum(residual[end].values()) + unassigned[end][0]
-                gap_case = float(np.abs(tot + res - lines["union"][end]["cost_bn"]).max())
-                gate(f"{k_arm} {end}: convention A reproduces the case in every replicate (1e-9 bn)", gap_case < 1e-9,
-                     f"max |gap| {gap_case:.1e}")
+        for end in ENDS:
+            tot = sum((current[end][c] * Wu).sum(axis=0) for c in cats) / 1e9
+            res = sum(residual[end].values()) + unassigned[end][0]
+            gap_case = float(np.abs(tot + res - lines["union"][end]["cost_bn"]).max())
+            gate(f"{k_arm} {end}: convention A reproduces the case in every replicate (1e-9 bn)", gap_case < 1e-9,
+                 f"max |gap| {gap_case:.1e}")
+        return current
+    print(f"[resources] arm matrix peak physical footprint {peak_bytes()} bytes", flush=True)
 
-    # The per-person amounts now own every spread. Release the construction vectors before household statistics
-    # allocate their temporary matrices; no subsequent calculation reads these buffers.
-    del pieces
+    if alt is None:
+        del pieces
     print("[households]", flush=True)
     # Household ordering needs three columns, not the entire 411-column CPS frame and its 161 replicate weights.
     du = d[["PH_SEQ", "A_AGE", "PPPOS"]].iloc[rows_u].reset_index(drop=True)
@@ -1011,11 +1398,15 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
                     sel = lab_p == cell
                     wsel = Wu[sel]
                     for c in cats + ["schools_per_head"]:
-                        mean = (amt[end][c][sel] * wsel).sum(axis=0) / wsel.sum(axis=0)
+                        selected = amt[end][c][sel]  # boolean indexing gives an independent copy
+                        selected *= wsel
+                        mean = selected.sum(axis=0) / wsel.sum(axis=0)
                         mean_rows.append(dict(end=end, breakdown=name, cell=cell, category=c, in_B=c in b_cats,
                                               net_cost_per_member_usd=mean[0], se=sdr(mean)))
                         if c == PENSION:
                             reps["pension"][(end, name, cell)] = mean
+                        del selected
+        del wsel
         npos_rows, conc_rows, q_rows, ctrl_rows = [], [], [], []
         hh_out = pd.DataFrame({"PH_SEQ": hh_ids, "union_members": members, "weight": Wh[:, 0], **{k: v for k, v in breaks.items() if k != "all"},
                                "head_is_reference_person": head_is_ref, "reference_person_in_union": ref_in_union})
@@ -1038,11 +1429,15 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
                         sel = lab_p == cell
                         wsel = Wu[sel]
                         share = (npos_p[sel] * wsel).sum(axis=0) / wsel.sum(axis=0)
-                        mean_pm = (person[sel] * wsel).sum(axis=0) / wsel.sum(axis=0)
+                        selected = person[sel]
+                        selected *= wsel
+                        weighted = selected.sum(axis=0)
+                        del selected
+                        mean_pm = weighted / wsel.sum(axis=0)
                         hsel = np.zeros(H, bool)
                         hsel[np.unique(hh_code[sel])] = True
                         hshare = ((hcost[hsel] < 0) * Wh[hsel]).sum(axis=0) / Wh[hsel].sum(axis=0)
-                        cell_bn = (person[sel] * wsel).sum(axis=0) / 1e9
+                        cell_bn = weighted / 1e9
                         npos_rows.append(dict(convention=conv, end=end, breakdown=name, cell=cell, records=int(sel.sum()),
                                               households=int(hsel.sum()), members_m=wsel[:, 0].sum() / 1e6,
                                               share_members_net_positive=share[0], se=sdr(share),
@@ -1076,12 +1471,14 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
                     conc_rows.append(dict(convention=conv, end=end, statistic=k, value=v[0], se=sdr(v)))
                 # Quantiles: per member (members weighted by person weights) and per household (household weights).
                 for unit, vals, wts in (("per_member", per_member[hh_code], Wu), ("household", hcost, Wh)):
-                    for q in (0.1, 0.25, 0.5, 0.75, 0.9):
-                        qs = np.zeros(W.shape[1])
-                        for r in range(W.shape[1]):
-                            o = np.argsort(vals[:, r], kind="stable")
-                            cwq = np.cumsum(wts[o, r]) / wts[:, r].sum()
+                    # The five quantiles share precisely the same order/CDF in a replicate.
+                    quantiles = {q: np.zeros(W.shape[1]) for q in (0.1, 0.25, 0.5, 0.75, 0.9)}
+                    for r in range(W.shape[1]):
+                        o = np.argsort(vals[:, r], kind="stable")
+                        cwq = np.cumsum(wts[o, r]) / wts[:, r].sum()
+                        for q, qs in quantiles.items():
                             qs[r] = vals[o, r][min(int(np.searchsorted(cwq, q)), len(o) - 1)]
+                    for q, qs in quantiles.items():
                         q_rows.append(dict(convention=conv, end=end, unit=unit, quantile=q, net_cost_usd=qs[0], se=sdr(qs)))
                 if conv == "A":
                     case = lines["union"][end]["cost_bn"]
@@ -1089,13 +1486,18 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
                         ctrl_rows.append(dict(end=end, item=c, bn=float((amt[end][c][:, 0] * Wu[:, 0]).sum() / 1e9),
                                               assigned=True))
                     for g in GENS:
-                        ctrl_rows.append(dict(end=end, item=f"lane_constants_{g}", bn=residual[end].get(g, 0.0), assigned=False))
+                        miss = lines["generations"][g][end].get("post_engine", {}).get("coverage", 0.0)
+                        ctrl_rows.append(dict(end=end, item=f"lane_constants_{g}", bn=residual[end].get(g, 0.0) - miss, assigned=False))
+                        if miss:
+                            ctrl_rows.append(dict(end=end, item=f"people_survey_misses_{g}", bn=miss, assigned=False))
                     ctrl_rows.append(dict(end=end, item="unassignable_pieces", bn=float(unassigned[end][0]), assigned=False))
                     ctrl_rows.append(dict(end=end, item="households_sum", bn=float(total[0]), assigned=True))
                     ctrl_rows.append(dict(end=end, item="case", bn=case, assigned=None))
                     ctrl_rows.append(dict(end=end, item="households_sum_plus_residual_minus_case",
                                           bn=float(total[0]) + sum(residual[end].values()) + float(unassigned[end][0]) - case,
                                           assigned=None))
+                # Release this end/convention's dense buffers before constructing the next ones.
+                del person, hcost, hweighted, per_member, npos_p, wsel, vals, wts
         return dict(npos=npos_rows, conc=conc_rows, q=q_rows, ctrl=ctrl_rows, means=mean_rows, hh=hh_out, reps=reps)
 
     breaks = dict(head_breaks)
@@ -1103,7 +1505,20 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
         # The case's own status flag (state-aware, the one its on-books share and the accrual's claim share read).
         breaks[CASE_FLAG] = np.where(head_lab == 0, np.where(unauth_case[head_rows], "unauthorized", "legal_immigrant"),
                                      np.where(head_lab > 0, "us_born", "outside_union"))
-    results = {name: household_stats(a_, breaks) for name, a_ in arms.items()}
+    results = {}
+    selected_household_arm = "flat" if alt is None else ("person" if payroll_base == "all" else ONBOOKS_CENTRAL)
+    for name in ARM_ORDER if alt is not None else ("flat",):
+        current = make_arm(name)
+        results[name] = household_stats(current, breaks)
+        if name == "flat" and alt is not None:
+            for end in ENDS:
+                # Later arms replace pension with a new matrix; their original totals were frozen above.
+                del amt[end][PENSION]
+        if name != selected_household_arm:
+            del results[name]["hh"]  # other arms need statistics/replicates, not their household table
+        del current
+    if alt is not None:
+        del pieces
 
     print(f"  households: {H:,} with {len(rows_u):,} union person records; reference person outside the union: "
           f"{int((~ref_in_union).sum())} households; union members all minors (head = reference person): {int(minor_only.sum())}")
@@ -1137,6 +1552,11 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
     files = dict(zip(FLAT_FILES, [flat["npos"], flat["conc"], flat["q"], flat["ctrl"], flat["means"], scaling]))
     if moves:
         files["split_basis_moves.csv"] = moves
+    if missing_block:
+        files["people_survey_misses.csv"] = missing_block
+    if completion:
+        files["population_rounding.csv"] = [dict(generation="G1", people=rounding_people, cost_bn=0.0,
+                                                   observed_person=False, source=rounding["rule"])]
     if alt is not None:
         # The flat arm without the case-flag rows is the flat run's output, byte for byte.
         same_as_written("the flat arm reproduces the flat run's",
@@ -1163,6 +1583,8 @@ def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band"
             same_as_written("the person arm reproduces the --accrual person run's", person_files)
             same_as_written("the arms comparison reproduces the --accrual person run's",
                             {"person_accrual_arms.csv": arm_rows})
+    footprint = require_within_budget("household oct15 pricing/distribution")
+    print(f"[resources] peak physical footprint {footprint} bytes", flush=True)
     if FAILS:
         print(f"✗ {len(FAILS)} gate(s) failed, nothing written: {FAILS}")
         sys.exit(1)
@@ -1193,8 +1615,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="An adopted main case spread over the union's households.")
     parser.add_argument("--weights", choices=["published", "row4"], default="row4",
                         help="row4 (default): audit row 4's weights; published: ASEC person weights, historical sept27 only")
-    parser.add_argument("--case", choices=list(CASE_DIRS), default="oct14",
-                        help="oct14 (default): live main case v7; historical cases are explicit; "
+    parser.add_argument("--case", choices=list(CASE_DIRS), default="oct15",
+                        help="oct15 (default): live main case v8; historical cases are explicit; "
                              "later cases use row-4 weights and write to derived/<case>/")
     parser.add_argument("--allocation", choices=["personal", "shared"], default="personal",
                         help="personal (default): the group total; shared: oct14 within-group companion in shared_allocation/")
@@ -1209,5 +1631,6 @@ if __name__ == "__main__":
                         help="band (default): a case's added people by five-year band at its measured age mix; "
                              "uniform: beside it, v5's one factor on every G3+ record, flat arm only, written to "
                              "derived/<case>/uniform_placement/")
+    parser.add_argument("--basis", choices=["set", "cash"], default="set")
     args = parser.parse_args()
-    main(args.weights, args.case, args.accrual, args.payroll, args.placement, args.allocation)
+    main(args.weights, args.case, args.accrual, args.payroll, args.placement, args.allocation, args.basis)

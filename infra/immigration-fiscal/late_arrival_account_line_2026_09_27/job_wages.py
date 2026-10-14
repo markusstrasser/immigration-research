@@ -8,6 +8,8 @@ cell's total wages; under the authorized common-industry-mix approximation
 those totals alone determine the share. Both assignment conventions are kept.
 """
 import json
+import sys
+from pathlib import Path
 import numpy as np
 
 import frame as F
@@ -45,7 +47,10 @@ def main():
             out["wages"][conv][allocation] = dict(zip(F.G1_CELLS, values.tolist()))
             out["shares"][conv][allocation] = dict(zip(F.G1_CELLS, shares.tolist()))
     F.OUT.mkdir(parents=True, exist_ok=True)
-    (F.OUT / "job_wages_oct14.json").write_text(json.dumps(out, indent=1) + "\n")
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+    from memory_budget import require_within_budget
+    print(f"footprint bytes: {require_within_budget('late arrival wages')}")
+    (F.OUT / "job_wages_oct15.json").write_text(json.dumps(out, indent=1) + "\n")
     print(f"job wages {F.LATE_DEF}: both shares close (1e-12); {out['rule']}")
 
 

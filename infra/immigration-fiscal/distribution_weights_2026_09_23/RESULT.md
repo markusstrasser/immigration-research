@@ -1077,6 +1077,62 @@ correction and row-4-frame correction. No distribution-specific schema change wa
   above exited 0 with **IDENTICAL: 75/75**. All 56 tracked historical derived
   files equal HEAD byte for byte. No historical case was regenerated.
 
+## v8 consumer route (oct15), 2026-10-15
+
+2026-10-15 01:03 JST: the live producer now computes only `oct15`; all historical
+derived files remain frozen. The base run has coverage off and is preparation,
+not a claim about an adopted case. Its set band is
+`[356.9891157917939, 443.3429994363893]` and cash band
+`[281.00072341817486, 367.3546070627696]` ($bn), at personal specifications
+16 / 11. [CALCULATION: `derived/case_ends_oct15.json`, `ends`;
+SOURCE: `main_case_2026_10_15/derived/summary.json`, `v8`]
+
+The package applies foreign-source taxes, observed union-completion members,
+native nonreporting children and mixed-unit removal once. The observed new
+members leave the other-resident payer and beneficiary masks. Their source
+weights sum to 517,435.75719317; the production calibration retains its original
+row-4 denominator. The displaced wage basis is allocated to remaining residents
+within its existing skill branch, an explicit distribution assumption. Reporter
+capital follows the source service's federal/state-local class; reporter P/F uses
+the frozen source generation's endpoint proportions. [ASSUMPTION]
+
+Final coverage will enter from its frozen-base age/generation decomposition:
+capital as resources, P/F as production, classified spending as fiscal, and any
+unclassified remainder as its own cost channel. Unobserved coverage members never
+enter the observed other-resident payer pool. Missing decomposition fields stop
+the producer. Production array indexing now loads `Engine.PRODUCTION_DIMS` from
+the authoritative engine: JSON key order cannot select a different cell. The
+regression compares original and reversed dimension metadata against the engine's
+index. [CALCULATION: `case_ends.cjs`, `distribute.py`, `test_distribute.py`]
+
+The base distribution passed 288 gates, six tests, and the three-command rerun
+with exit 0, **IDENTICAL: 89/89**. The distribution's physical footprint was
+1,830,521,040 bytes, below the 2.5 GB limit. Final adopted-case validation is
+pending `CASE_FINAL`; these base outputs are replaced by that run. Live commands:
+
+```sh
+node infra/immigration-fiscal/distribution_weights_2026_09_23/case_ends.cjs --case oct15
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py --case oct15
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/distribution_weights_2026_09_23 \
+  "node {lane}/case_ends.cjs --case oct15" \
+  "uv run --no-project python3 {lane}/distribute.py --case oct15" \
+  "uv run --no-project python3 -m pytest {lane}/test_distribute.py -q --import-mode=importlib -p no:cacheprovider"
+```
+
+2026-10-15 02:27:16 JST (`date`): final adopted case b35ac8fb, coverage on,
+passes 18 endpoint gates and 288 distribution gates. Personal set endpoints are
+$368.9909342553624 / 459.20287674292126bn; cash endpoints are
+$284.95156767595086 / 375.1635101635089bn. Coverage retains its own classified
+K/P/F/fiscal/unclassified channels, outside the observed other-resident payer
+pool. The distribution run took 22.299s with physical footprint 1,857,784,088
+bytes. Six tests and the three-command whole-lane rerun passed, exit 0,
+**IDENTICAL: 89/89**. Its SPM quintile-0 central totals are fiscal
+−$405.73105067127386bn and all channels −$449.6158726254012bn (a); these are
+the lane's central channel totals, not the case endpoint band.
+[CALCULATION: `derived/case_ends_oct15.json`, `ends`;
+`derived/oct15/channel_by_quintile.csv`, `measure=spm`, `quintile=0`,
+`channel=fiscal_a/TOTAL_a`, `bn`]
+
 ## Revisions
 
 2026-09-23: Connecticut planning regions (09110–09190) now map to 2013 CBSAs in the shared crosswalk; the housing lane's metro-local inputs moved (renters' extra rent −$33.86bn → −$33.86bn, landlords $37.36bn → $37.37bn, +$0.002bn each). The verdict's figures are unchanged at $0.1bn (bottom four fifths −$80.7bn, top fifth +$46.0bn, total −$262.6bn; at η = 1.3, −$407.1bn and −$738.3bn); the largest unweighted flow move is $0.003bn (renters, metro-local high). Four weighted-table cells change in their last printed digit: (b) η = 1 per person −557.0 → −557.1 (also in the headline η table), (a) η = 1.4 floored quintiles −419.9 → −420.0, (a) η = 2 quintile bins −781.0 → −781.1, and (b) η = 2 quintile bins −1,567.4 → −1,567.5. Owner-occupiers' top-fifth stock goes $815bn → $816bn, or $31,892 → $31,895 per household. Detail: [`CT_PLANNING_REGIONS.md`](../hedonic_composition_2026_09_19/CT_PLANNING_REGIONS.md).

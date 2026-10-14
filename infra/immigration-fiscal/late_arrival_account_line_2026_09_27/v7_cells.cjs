@@ -10,13 +10,16 @@ const byAlloc = (f) => Object.fromEntries(ALLOCS.map((a) => [a, f(a)]));
 const sum = (xs) => xs.reduce((a, b) => a + b, 0);
 const blocked = (why) => { throw new Error(`[BLOCKED] oct14 G1: ${why}`); };
 function layer(L, gens, top, models29, union29, opts = {}) {
+  // Live oct15 supplies the already parity-tested metadata-efficient engine
+  // wrapper; historical callers keep their original implementation.
+  const withStep = opts.withStep || V6.withStep;
   if (!L.added) return V6.layer(L, gens, top, models29, union29, opts);
   const lay = V6.layer(L.old, gens, top, models29, union29, opts);
   const parts = clone(lay.parts), items = clone(lay.items), g1 = gens.filter((g) => top[g] === "G1");
   if (!opts.jobT1 && (!opts.wages || ALLOCS.some((a) => !opts.wages[a]
     || g1.some((g) => !Number.isFinite(opts.wages[a][g]) || opts.wages[a][g] < 0)
     || Math.abs(sum(g1.map((g) => opts.wages[a][g])) - 1) >= 1e-12))) blocked("missing or invalid authorized G1 wage shares");
-  const current = Object.fromEntries(gens.map((g) => [g, V6.withStep(models29[g], parts[g].edits, parts[g].receipt_lines)]));
+  const current = Object.fromEntries(gens.map((g) => [g, withStep(models29[g], parts[g].edits, parts[g].receipt_lines)]));
   const target = (m, e, a) => e.side === "receipt"
     ? m.receipts.lines.find((l) => l.id === e.line).cells[e.scenario][a].target_bn
     : m.spending.lines.find((l) => l.id === e.line).keys[e.key][a].target_bn;
@@ -60,7 +63,7 @@ function layer(L, gens, top, models29, union29, opts = {}) {
         const ed = Object.assign(clone(e), { by: byAlloc((a) => sum(routed.map((p) => p.bn[g][a]))) });
         parts[g].item_edits.push(ed);
         parts[g].edits.push(ed);
-        current[g] = V6.withStep(current[g], [ed], []);
+        current[g] = withStep(current[g], [ed], []);
       }
       rec.edits.push({ edit: j, side: e.side, line: e.line, key: e.key, scenario: e.scenario, parts: routed });
     });

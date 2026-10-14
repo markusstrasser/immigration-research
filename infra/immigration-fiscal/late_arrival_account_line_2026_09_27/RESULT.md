@@ -744,3 +744,53 @@ Log (times from `date` and file times, JST):
   `resource.getrusage` on the final live route measured **57.50 seconds** and
   **1,445,281,792 bytes** peak RSS, exit 0.
 - **2026-10-14 19:43:35 JST:** Final-source rerun: IDENTICAL 32/32, exit 0, 49.86s, 1,453,244,416 bytes peak child RSS. Module exclusion only; historical derived diff empty.
+
+## Oct15 propagation
+
+- 2026-10-15 00:05 JST — Initial oct15 probe rejected the unknown case before writes. Prepared the live set/cash route with the generation lane's v8 split as the authoritative aggregate owner. P7 minors, dependent credit ownership, R6/R8/R9 owners and state indexes travel through that aggregate split. Each aggregate change is then allocated among the seven G1 cells by existing t1 targets; job-capital changes use all-wage shares, with t1 beside. Every cell/allocation must reproduce the generation aggregate at 1e-9; nine-cell and programme closure remains 1e-9 and the production grid 1e-12. Old oct14 outputs remain frozen.
+- The explicit `LATE_V8_POST_SPLIT=t1_population` switch scopes item 11 by corrected federal income-tax t1 and coverage by each G1 cell's population; unknown selectors stop. `[APPROX]` The missing people's arrival age is unobserved, so this within-G1 coverage split is an allocation assumption. The generation totals and generation age prices remain the source's. Counts are taken from the generation summary and its added counts follow the same within-G1 population rule.
+- Generation inputs use the world core's exact `[WORKTREE INPUT]` SHA256 snapshot until the parent supplies adopted generation pins. Wage-stage physical footprint uses `memory_budget.require_within_budget()` inside the Python process. Final outputs and reproduction await CASE_FINAL and final generation readiness.
+
+```sh
+bash infra/immigration-fiscal/late_arrival_account_line_2026_09_27/run_oct15.sh
+node infra/immigration-fiscal/late_arrival_account_line_2026_09_27/test_v8_cells.cjs
+OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 uv run --no-project python3 -m pytest -p no:cacheprovider infra/immigration-fiscal/late_arrival_account_line_2026_09_27/test_validation_output.py -q
+OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 uv run --no-project python3 -m pytest -p no:cacheprovider infra/immigration-fiscal/late_arrival_account_line_2026_09_27/test_production_order.py -q
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/late_arrival_account_line_2026_09_27 "bash {lane}/run_oct15.sh" "node {lane}/test_v8_cells.cjs" "node --check {lane}/v8_cells.cjs" "uv run --no-project python3 -m pytest -p no:cacheprovider {lane}/test_validation_output.py {lane}/test_production_order.py -q"
+```
+
+- 2026-10-15 00:31 JST — Found an adjacent publication defect: the medical checker wrote its CSV before testing accumulated failed gates. Moved validation and footprint guards ahead of publication. The regression injects a scientific gate failure and verifies that the existing result bytes remain intact (1/1 passes, exit 0). Every executed Python late-arrival stage now checks its own physical footprint; no RSS-only budget failure remains.
+- 2026-10-15 00:35 JST — The adapter's intermediate layer application now supplies each already-corrected model's complete production grid as the base; `payloadOf` then adds the layer delta once. A cached-model regression confirms every P/F grid coordinate, unchanged dimensions/sampling-SE arrays and read-only input production (exit 0). An empty base would have stopped on the G3plus lineage delta; this was caught before the final run.
+- 2026-10-15 00:43:45 JST — Parent's dimension-order defect prompted a full Python sweep of both owned lanes. This lane's `production.py` used an explicit copied order, which matched the engine today; it now loads the authoritative `Engine.PRODUCTION_DIMS` declaration and rejects unknown/missing dimensions. Direct probe against `Engine.productionIndex` returns index 2715 identically under original, sorted and reversed JSON key order, exit 0, physical footprint 61,260,544 bytes. Two regression tests pass (including unknown-dimension rejection). `run_oct15.sh` runs the read-only probe; historical production outputs are preserved.
+- 2026-10-15 00:55:28 JST — Fine-cell post metadata now scales its total and own 161-element replicate stack by the declared fixed within-generation share and SE by its absolute value; original `source_*` aliases and full source-by-generation stacks/covariance remain unchanged. Uncertainty is conditional on the fixed allocation share; uncertainty in that share is unidentified. Auditable metadata is exported under `cells.v8.post_by_cell`. The correlated-stack regression checks additivity, SDR/SE consistency, source preservation, signed-share SE and invalid-SE rejection (exit 0). Frozen BASE input artifacts are unchanged.
+- 2026-10-15 02:43 JST — New reporter carriers use their actual raw source
+  drivers and exact completed-household NAS(b) fine owners. The independent
+  `reporter_fine_routes.py` reads the pinned raw CPS, reuses this lane's frame
+  assignment implementation and verifies all204 reporter rules and aggregate
+  omega against the principal parent measurement at1e-12. It exports all three
+  arrival readings before the live runs. The four G1-owned reporter minors map
+  **9,287.5966854 persons to G1_Y_u50 and3,337.8872582 to G1_Y_65p** under all
+  readings; none map to a late cell. Original P7 union parent assignments stay
+  frozen. Counts use the same exact observed reporter destinations; unobserved
+  coverage and item11 retain the disclosed population/t1 approximations above.
+  `[CALCULATION: _cache/reporter_fine_oct15.json]`
+- The adapter consumes all339 declared reporter carrier parts from
+  `within_group_distribution_2026_09_29/derived/reporter_b_routes.json`, including
+  inactive keys and scalar production/capital carriers. It reconstructs each
+  record's contribution from actual drivers and source weights, subtracts the
+  corresponding coarse amount from the generic delta, then injects the exact
+  fine amount. It rejects missing identities, changed source parts, zero
+  drivers for nonzero amounts, and coarse/fine share disagreement at1e-12.
+  A fixture checks half-parent ownership and a zero-valued reporter source
+  rather than a person-count allocation (Node regression passes, exit0).
+  Final numbers still await the authoritative final generation snapshot.
+
+### Final Oct15 receipt — 2026-10-15 04:13:40 JST
+
+- Final authoritative snapshot and atomic household producer graph admitted; all source hashes verified. Full six-context wrapper passed exit0,220.390158s. Its executed Python stage physical footprints were102,433,344–1,401,587,536bytes, each below the shared strict2.5GB budget. Python perf_counter/getrusage child RSS diagnostic1,379,008,512bytes; no RSS-only failure gate.
+- Exact documented rerun harness above passed all four commands, exit0, **IDENTICAL40/40**,155.595453s; child RSS diagnostic1,509,638,144bytes. Node/source/ownership/immutability checks and publication/dimension regressions passed. Historical tracked derived outputs, including Oct14, have an empty diff. No new exemption or weakened tolerance.
+- Central personal arrival50+ cost in bn: set(a)3.120980–3.741215; set(b)4.396669–5.089862; cash(a)4.559743–5.180895; cash(b)5.844571–6.538669. Source-frame late50 populations376,887.4(a),430,285.1(b), at published CSV precision. Lower/upper arrival readings and every set/cash/convention/end also pass closure.
+- Retained tolerances: line/G1/nine-cell/programme1e-9bn; production1e-12; reporter fine/coarse shares1e-12; published CSV1e-5bn; G3plus cost/member/adult1e-6; historical rounded1e-4 and5.01e-5. Exact final specifications16/11. Final coverage-routing delta accepted separately at low+.0165287681946/high+.0166488521297bn for both sets, each<.5bn; original q unchanged.
+- Owned hotspots fixed after profiling: binary source verification returns Buffer until JSON decode is needed; live step callers use the validated V8 metadata-efficient engine application. Complete central output before/after is byte-identical (exit0,29.619s); full engine model equality and input immutability regression passes. Remaining legacy generation v6/v7 clone hotspot is outside this lane's ownership and deferred under frozen P7 inputs. Timings are not a normalized speedup claim.
+- `[APPROX]` Missing coverage arrival age remains allocated by fixed within-G1 population and item11 by corrected FIT t1. Actual204 new reporters use exact raw drivers and fine parent/relative owners; no reporter late50 assignment is inferred from t1. Four unused personal veteran alternatives carry an explicitly declared modeled source-anchor policy; parent verified zero response/effect at all32 specifications. Existing P7 parent vintage stays frozen. Source uncertainty preserves actual161 stacks and is conditional on fixed within-cell share assumptions.
+- CSV SHA256: late_arrival_line_oct15.csv `a158a44c4bb25d3f7b673b85a2ef522a4727113ac2f15af003d983f234d1e9e4`; medicaid_check_oct15.csv `4cecdb937a84238bd2c7f6ddf2d8bda10d32a60c53431aa8ade7bedc67d9ec7d`. Exact logs and profiling receipts are in scratch/prop8/late-world-result.md and late-performance.md. Lane changed-paths.txt includes every changed source, ignored output and profile.

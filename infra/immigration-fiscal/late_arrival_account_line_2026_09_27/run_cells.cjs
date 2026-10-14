@@ -52,6 +52,7 @@ const { execFileSync } = require("child_process");
 const HERE = __dirname;
 const GEN_PIN = "1a02fbbb";
 function committedGeneration(rel) {
+  if (ON15) return JSON.parse(require("../world_ledger_2026_09_27/v8_snapshot.cjs").read(`infra/immigration-fiscal/${rel}`));
   return JSON.parse(execFileSync("git", ["-C", path.resolve(HERE, "../../.."), "show", `${GEN_PIN}:infra/immigration-fiscal/${rel}`],
     { encoding: "utf8", maxBuffer: 16 * 1024 * 1024 }));
 }
@@ -67,17 +68,19 @@ const CASES = { sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_c
   sept29: "main_case_long_run_2026_09_27", sept29_cash: "main_case_long_run_2026_09_27",
   oct05: "main_case_long_run_2026_09_27", oct05_cash: "main_case_long_run_2026_09_27",
   oct07: "main_case_long_run_2026_09_27", oct07_cash: "main_case_long_run_2026_09_27",
-  oct14: "main_case_long_run_2026_09_27", oct14_cash: "main_case_long_run_2026_09_27" };
-const CASE = arg("--case", "oct14");
+  oct14: "main_case_long_run_2026_09_27", oct14_cash: "main_case_long_run_2026_09_27",
+  oct15: "main_case_long_run_2026_09_27", oct15_cash: "main_case_long_run_2026_09_27" };
+const CASE = arg("--case", "oct15");
 if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
-if (!["oct14", "oct14_cash"].includes(CASE)) throw new Error(`[BLOCKED] live case is oct14; ${CASE} outputs are frozen`);
+if (!["oct15", "oct15_cash"].includes(CASE)) throw new Error(`[BLOCKED] live case is oct15; ${CASE} outputs are frozen`);
+const ON15 = CASE === "oct15" || CASE === "oct15_cash";
 const ON26 = CASE !== "sept24";
-const ON14 = CASE === "oct14" || CASE === "oct14_cash";
-const V4SET = { sept29: "set", sept29_cash: "cash", oct05: "set", oct05_cash: "cash", oct07: "set", oct07_cash: "cash", oct14: "set", oct14_cash: "cash" }[CASE];
+const ON14 = CASE === "oct14" || CASE === "oct14_cash" || ON15;
+const V4SET = { sept29: "set", sept29_cash: "cash", oct05: "set", oct05_cash: "cash", oct07: "set", oct07_cash: "cash", oct14: "set", oct14_cash: "cash", oct15: "set", oct15_cash: "cash" }[CASE];
 const ON29 = V4SET !== undefined;
-const V5SET = { oct05: "set", oct05_cash: "cash", oct07: "set", oct07_cash: "cash", oct14: "set", oct14_cash: "cash" }[CASE];
+const V5SET = { oct05: "set", oct05_cash: "cash", oct07: "set", oct07_cash: "cash", oct14: "set", oct14_cash: "cash", oct15: "set", oct15_cash: "cash" }[CASE];
 const ON05 = V5SET !== undefined;
-const V6SET = { oct07: "set", oct07_cash: "cash", oct14: "set", oct14_cash: "cash" }[CASE];
+const V6SET = { oct07: "set", oct07_cash: "cash", oct14: "set", oct14_cash: "cash", oct15: "set", oct15_cash: "cash" }[CASE];
 const ON07 = V6SET !== undefined;
 const MAIN = CASES[CASE];
 const P = require(path.join(HERE, "..", MAIN, "package.cjs"));
@@ -586,9 +589,14 @@ function v5Part() {
 const W6 = ON07 ? v6Part() : null;
 function v6Part() {
   console.log("[v6 part]");
-  const V6 = ON14 ? require("./v7_cells.cjs") : require(path.join(HERE, "..", "generation_account_2026_09_24", "v6_split.cjs"));
-  const wage = ON14 ? load("job_wages_oct14.json") : null;
+  const V6 = ON15 ? require("./v8_cells.cjs") : ON14 ? require("./v7_cells.cjs") : require(path.join(HERE, "..", "generation_account_2026_09_24", "v6_split.cjs"));
+  const wage = ON14 ? load("job_wages_oct15.json") : null;
   if (wage && wage.def !== DEF) throw new Error("[BLOCKED] job wage reading differs");
+  const generationPolicy = ON15 ? committedGeneration(`generation_account_2026_09_24/derived/generation_corrections_${CASE}.json`).meta.policy : null;
+  if (ON15 && (!generationPolicy || generationPolicy.central !== true || !Number.isFinite(generationPolicy.minor_scale)
+    || !Array.isArray(generationPolicy.fixes) || generationPolicy.production_rule !== "aumann_shapley")) {
+    throw new Error("[BLOCKED] late arrival requires the final central generation routing policy");
+  }
   const L = V6.loadCase(V6SET);
   console.log(`  · ${L.rel}: ${L.baseRel} plus ${L.lineage.edits.count} lineage edits (item ${L.lineageItem}) and `
     + `${L.items.map((it) => `${it.edits.length} of item ${it.id}`).join(", ")}`);
@@ -602,7 +610,8 @@ function v6Part() {
   };
   const GRID = ["private_wtp_bn", "induced_receipts_bn"];
   const nationalOf = (m, side, id) => (side === "receipt" ? m.receipts : m.spending).lines.find((l) => l.id === id).national_bn;
-  const withEdits = (m, edits) => (edits.length ? Engine.applyCorrections(m, { lines: [], edits, meta: m.corrections }) : m);
+  const withEdits = (m, edits) => ON15 ? V6.withStep(m,edits)
+    : (edits.length ? Engine.applyCorrections(m, { lines: [], edits, meta: m.corrections }) : m);
   const union29 = Engine.applyCorrections(MODEL, V.C.payload), union6 = Engine.applyCorrections(MODEL, L.payload);
   const unionL = (L.set === "set" ? V6.P6.ITEM_BASE : V6.P6.ITEM_BASE.CASH).payloadModel();
   const models29 = {}, payloads6 = {}, layers = {}, partAScale = {}, jobT1 = {}, baseline = {};
@@ -621,14 +630,18 @@ function v6Part() {
   let payloadsAlt = null;
   for (const conv of CONVS) {
     models29[conv] = Object.fromEntries(GENS.map((g) => [g, Engine.applyCorrections(models[conv][g], V.payloads[conv][g])]));
-    const options = ON14 ? { wages: wage.shares[conv] } : {};
+    const options = ON14 ? { wages: wage.shares[conv], convention: conv,
+      ...(ON15 ? {withStep:V6.withStep,arrivalReading:DEF,minorScale:generationPolicy.minor_scale,fixes:generationPolicy.fixes,
+        productionRule:generationPolicy.production_rule} : {}),
+      populations: Object.fromEntries(GENS.map(g=>[g,V.VI.headcount[conv][g].population])) } : {};
     const lay = V6.layer(L, GENS, TOP, models29[conv], union29, options);
     layers[conv] = lay;
     payloads6[conv] = Object.fromEntries(GENS.map((g) => [g, V6.payloadOf(V.payloads[conv][g], lay.parts[g])]));
     const m6 = GENS.map((g) => Engine.applyCorrections(models[conv][g], payloads6[conv][g]));
     if (ON14) {
-      const old = V6.layer(L.old, GENS, TOP, models29[conv], union29, options);
-      baseline[conv] = Object.fromEntries(GENS.map((g) => [g, V6.payloadOf(V.payloads[conv][g], old.parts[g])]));
+      const old = ON15 ? require("./v7_cells.cjs").layer(L.old, GENS, TOP, models29[conv], union29, options)
+        : V6.layer(L.old, GENS, TOP, models29[conv], union29, options);
+      baseline[conv] = Object.fromEntries(GENS.map((g) => [g, (ON15 ? require("./v7_cells.cjs") : V6).payloadOf(V.payloads[conv][g], old.parts[g])]));
       const altJob = V6.layer(L, GENS, TOP, models29[conv], union29, { ...options, jobT1: true });
       jobT1[conv] = Object.fromEntries(GENS.map((g) => [g, V6.payloadOf(V.payloads[conv][g], altJob.parts[g])]));
       const gc = committedGeneration(`generation_account_2026_09_24/derived/generation_corrections_${CASE}.json`);
@@ -638,7 +651,7 @@ function v6Part() {
       const refs = cellsOf(refModels.G1), mine = m6.slice(0, G1_CELLS.length).map(cellsOf);
       for (const [key, cell] of refs) for (const a of ALLOCS) lineGap = Math.max(lineGap,
         Math.abs(mine.reduce((t, m) => t + m.get(key)[a].target_bn, 0) - cell[a].target_bn));
-      gate(`(${conv}) seven G1 cells add to committed generation 1a02fbbb on every line and allocation (1e-9)`, lineGap < 1e-9, `max ${e(lineGap)} bn`);
+      gate(`(${conv}) seven G1 cells add to exact generation snapshot on every line and allocation (1e-9)`, lineGap < 1e-9, `max ${e(lineGap)} bn`);
       const altGap = addsTo(GENS.map((g) => Engine.applyCorrections(models[conv][g], jobT1[conv][g])));
       gate(`(${conv}) job t1 sensitivity adds to case (cells 1e-9, grid 1e-12)`, altGap.worst < 1e-9 && altGap.grid < 1e-12);
     }
@@ -662,7 +675,7 @@ function v6Part() {
     let mU = unionL, mG = Object.fromEntries(GENS.map((g) => [g, Engine.applyCorrections(models[conv][g],
       V6.payloadOf(V.payloads[conv][g], { edits: lay.parts[g].lineage_edits, production: lay.parts[g].production }))]));
     let k = 0;
-    for (const it of L.items) for (const ed of it.edits) {
+    for (const it of (ON15 ? L.old.items : L.items)) for (const ed of it.edits) {
       if (ed.national_bn !== undefined) {
         nNat += 1;
         for (const g of GENS) natGap = Math.max(natGap, Math.abs(nationalOf(mG[g], ed.side, ed.line) - nationalOf(mU, ed.side, ed.line)));
@@ -703,7 +716,7 @@ function v6Part() {
   const FIELDS = ["allocation", "normalization", "share", "school", "reading", "gg", "uc"];
   gate(`the consumer's specifications are ${AP.source}'s MAIN_SPECS, in order`, ev.specs.length === AP.specs.length
     && ev.specs.every((s, i) => FIELDS.every((k) => s[k] === AP.specs[i][k])));
-  return { V6, L, ev, AP, layers, models29, payloads: payloads6, payloadsAlt, jobT1, baseline, wage,
+  return { V6, L, ev, AP, layers, models29, payloads: payloads6, payloadsAlt, jobT1, baseline, wage, generationPolicy,
     partAScale: L.set === "set" ? partAScale : null, O: V6.oracle(L.set) };
 }
 
@@ -861,7 +874,7 @@ function groupOfSpending(row) {
   return "subsidies_interest_foreign";
 }
 const PROGRAMS = [...Object.keys(RECEIPT_GROUPS), "taxes_other_receipts", ...Object.keys(SPENDING_GROUPS), "other_transfers",
-  "services_other", "subsidies_interest_foreign", "capital_return", "production"];
+  "services_other", "subsidies_interest_foreign", "capital_return", "production", ...(ON15 ? ["mixed_unit_removal", "coverage"] : [])];
 function evaluateCase(m, spec) {
   if (P.evaluateFull) return P.evaluateFull(m, spec);
   const evaluation = Engine.evaluate(m, P.stateFor(m, spec));
@@ -877,6 +890,7 @@ function partsOf(m, spec) {
   for (const r of ev.spending) out[groupOfSpending(r)] -= fw * r.effect_bn;
   out.capital_return = full.capital.total_bn;
   out.production = -ev.private_wtp_bn - fw * ev.induced_receipts_bn;
+  if (ON15) for (const id of ["mixed_unit_removal", "coverage"]) out[id] = full.post_engine?.[`${id}_bn`] || 0;
   const total = PROGRAMS.reduce((s, k) => s + out[k], 0);
   partsWorst = Math.max(partsWorst, Math.abs(total - full.cost_bn), Math.abs(full.cost_bn - CE.cost(m, spec)));
   // Programme inputs beside the parts: the Medicaid line's amount and response (for the pricing check).
@@ -898,6 +912,19 @@ const ADDED = ON07 ? (() => {
   return { cell: g, population: n, adults: n * h.adults / h.population, adult_share: h.adults / h.population };
 })() : null;
 const plus = (g, k) => (ADDED && g === ADDED.cell ? ADDED[k] : 0);
+const generationCounts = ON15 ? committedGeneration(`generation_account_2026_09_24/derived/generation_summary_${CASE}.json`) : null;
+function countAt(conv,g,k) {
+  const base = V.VI.headcount[conv][g][k] + plus(g,k);
+  if (!ON15) return base;
+  const hits = GENS.filter(h=>TOP[h]===TOP[g]);
+  const total = hits.reduce((t,h)=>t+V.VI.headcount[conv][h][k]+plus(h,k),0);
+  const wanted = generationCounts.conventions[conv][TOP[g]][k];
+  if (!Number.isFinite(wanted) || total<=0) throw Error(`[BLOCKED] oct15 headcount ${conv}/${g}/${k}`);
+  const actualReporter = W6.layers[conv].reporter_fine_population;
+  const exact = actualReporter ? actualReporter[g][k] : 0;
+  const exactTotal = actualReporter ? hits.reduce((t,h)=>t+actualReporter[h][k],0) : 0;
+  return base + (wanted-total-exactTotal)*(hits.length===1?1:base/total)+exact;
+}
 const cells = { case: CASE, main: ON07 ? W6.V6.V6_LANE : ON05 ? W.V5.V5_LANE : ON29 ? V.X.V4_LANE : MAIN, def: DEF, low_spec: SPECS[lo], high_spec: SPECS[hi], lo, hi,
   union_band_bn: [uCost[lo], uCost[hi]], programs: PROGRAMS, conventions: {} };
 for (const conv of CONVS) {
@@ -905,8 +932,8 @@ for (const conv of CONVS) {
   GENS.forEach((g, j) => {
     const m1 = res[conv][g].model;
     cells.conventions[conv][g] = {
-      population: ON29 ? V.VI.headcount[conv][g].population + plus(g, "population") : keyMeta.population[conv][j],
-      adults: ON29 ? V.VI.headcount[conv][g].adults + plus(g, "adults") : keyMeta.adults_18plus[conv][j],
+      population: ON29 ? countAt(conv,g,"population") : keyMeta.population[conv][j],
+      adults: ON29 ? countAt(conv,g,"adults") : keyMeta.adults_18plus[conv][j],
       own_span_bn: [Math.min(...res[conv][g].corrected), Math.max(...res[conv][g].corrected)],
       low: partsOf(m1, SPECS[lo]), high: partsOf(m1, SPECS[hi]),
     };
@@ -928,8 +955,8 @@ for (const conv of CONVS) {
       if (ON14) {
         const base = Engine.applyCorrections(models[conv][g], W6.baseline[conv][g]);
         const alt = Engine.applyCorrections(models[conv][g], W6.jobT1[conv][g]);
-        const oldEv = require("../generation_account_2026_09_24/v6_split.cjs").evaluator(W6.L.old.payload, W6.L.old.api);
-        cells.conventions[conv][g].oct07_cost_bn = [lo, hi].map((i) => oldEv.cost(base, oldEv.specs[i]));
+        const oldEv = require(ON15 ? "../generation_account_2026_09_24/v7_split.cjs" : "../generation_account_2026_09_24/v6_split.cjs").evaluator(W6.L.old.payload, W6.L.old.api);
+        cells.conventions[conv][g][ON15 ? "oct14_cost_bn" : "oct07_cost_bn"] = [lo, hi].map((i) => oldEv.cost(base, oldEv.specs[i]));
         cells.conventions[conv][g].job_capital_t1_cost_bn = [CE.cost(alt, SPECS[lo]), CE.cost(alt, SPECS[hi])];
         const m5 = Engine.applyCorrections(models[conv][g], W.payloads[conv][g]);
         cells.conventions[conv][g].oct05_medical_parts_personal = Object.fromEntries(["low", "high"].map((end) => {
@@ -996,7 +1023,7 @@ if (ON14) {
     job_wages: W6.wage, job_t1_sensitivity: "job_capital_t1_cost_bn",
     row4_medicare_bn: Object.fromEntries(CONVS.map((conv) => [conv, Object.fromEntries(GENS.map((g) => [g,
       Object.fromEntries(ALLOCS.map((a) => [a, W6.layers[conv].parts[g].item_edits
-        .slice(W6.L.added.slice(0, -1).reduce((n, it) => n + it.edits.length, 0) + W6.L.old.items.reduce((n, it) => n + it.edits.length, 0))
+        .slice((ON15 ? W6.L.old : W6.L).added.slice(0, -1).reduce((n, it) => n + it.edits.length, 0) + (ON15 ? W6.L.old.old : W6.L.old).items.reduce((n, it) => n + it.edits.length, 0))
         .filter((ed) => ed.side === "spending" && ed.line === "medicare").reduce((t, ed) => t + ed.by[a], 0)])) ]))])),
     fixed_spread_abs_bn: Object.fromEntries(CONVS.map((conv) => [conv, Object.fromEntries(["low", "high"].map((end) => {
       const spec = SPECS[end === "low" ? lo : hi], a = spec.allocation;
@@ -1006,6 +1033,15 @@ if (ON14) {
         .reduce((t, p) => t + Math.abs(p.union_bn[a]), 0);
       return [end, value];
     }))])) };
+  if (ON15) cells.v8 = {generation_provenance:"[WORKTREE INPUT] exact SHA256 snapshot",policy:W6.generationPolicy,post_split:W6.layers.a.post_split,
+    reporter_fine_provenance:Object.fromEntries(CONVS.map(c=>[c,W6.layers[c].reporter_fine_provenance])),
+    reporter_fine_population:Object.fromEntries(CONVS.map(c=>[c,W6.layers[c].reporter_fine_population])),
+    within_g1_routes:Object.fromEntries(CONVS.map(c=>[c,W6.layers[c].within_g1_routes])),
+    post_by_cell:Object.fromEntries(CONVS.map(c=>[c,Object.fromEntries(GENS.map(g=>[g,
+      Object.fromEntries(["mixed_unit_removal","coverage"].map(id=>[id,res[c][g].model.corrections[id]]))]))])),
+    counts_by_generation:Object.fromEntries(CONVS.map(c=>[c,Object.fromEntries(TOPS.map(g=>[g,
+      {population:generationCounts.conventions[c][g].population,adults:generationCounts.conventions[c][g].adults}]))])),
+    approximation:"mixed-unit removal by federal income-tax t1; coverage by existing G1 cell populations; unobserved arrival age is not measured"};
 }
 if (ON05 && !ON07) {
   cells.v5 = { set: W.L.set, payload: W.L.rel, builds_on: W.L.baseRel, oracle: W.O, uncorrected_own_ends_bn: [u0Cost[lo0], u0Cost[hi0]],
