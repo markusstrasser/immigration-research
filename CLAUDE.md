@@ -97,6 +97,9 @@ set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
   `audit_numbers.py --out <scratch>` and `memo_sweep.py --worktree --out <scratch>`
   (`infra/immigration-fiscal/number_drift_audit_2026_09_29/`; no MISMATCH or STALE). A new number
   in an audited span needs a `source_map.csv` row; without `--out` the audit rewrites its tracked `derived/`.
+  `citation_freshness.py --out <scratch>` in the same lane lists living prose that cites a superseded
+  case's files (exit 1 while any remain). `infra/immigration-fiscal/live_case.json` declares the live
+  case; an adoption updates it in the same commit.
 - Python `csv.writer` defaults to CRLF; pass `lineterminator="\n"`. The repo stores LF
   (`core.autocrlf=input`), so CRLF outputs never byte-match on rerun (e2476da), and a fresh clone
   fails any pin of a CRLF file. `rerun_lane.py` fails on a lane file git would convert (an EOL line). A
