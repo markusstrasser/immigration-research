@@ -1212,3 +1212,31 @@ node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs -
 - 15:15:55–15:15:57: the earlier cases re-run to scratch, byte-identical.
 - 15:19:06–15:19:42: the oct07 outputs re-run, byte-identical.
 - This section was written after 15:25:08.
+
+
+## 2026-10-14: live case oct14 (v7)
+
+The live set is 339.552018 / 423.649261bn, cash 264.425574 / 348.522816bn, personal specifications 16 / 11. [DATA: `derived/summary_oct14.json`, `summary_oct14_cash.json`; case `summary.json` `v7`]
+
+| Part ($bn, case low / high ends) | Low | High |
+|---|---:|---:|
+| Shared | -28.321788 | 77.484104 |
+| age_structure | 89.605687 | 81.067159 |
+| taxes_at_given_ages | 283.309227 | 272.472922 |
+| service_use_at_given_ages | -5.041108 | -7.374925 |
+
+R6 has separate child-credit receipt and refundable-spending groups; R7's four whole responsive receipt amounts form `job_capital_taxes`. R8 and R9 lineage parts join the added people. R9 union SS shifts are removed before the unchanged v6 identity gate; actual state calculations retain the effective union ratio, Part A and benefit-tax changes. Each named shift is checked against the declared frame change. The new `summary.v7` records these rules and actual pension inputs. [CALCULATION: `decompose.cjs`]
+
+[ASSUMPTION] Child-credit shifts use their host lines' correction age profiles; job-capital taxes retain the account-key age profiles. No industry-by-age job-capital profile is measured here. These conventions affect the attribution among parts, not the case total.
+
+Exact case/item/state/part gates pass at 1e-9; the four-decimal band CSV oracle uses 5e-5bn. Both sets and both measured/identified-age placements pass. Reproduction: IDENTICAL 68/68, exit 0, including the persistent output-guard regression test. A falsified external-band gate exits 1 without writing results; all writes now follow the gates.
+
+```sh
+node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs --case oct14
+node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs --case oct14_cash
+node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs --case oct14 --placement identified
+node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs --case oct14_cash --placement identified
+uv run --no-project python3 -m pytest infra/immigration-fiscal/main_case_decomposition_2026_09_29/test_decomposition.py -q
+```
+
+Log: 2026-10-14 18:23:25 JST (`date`): moved to adopted 148ed1ea; computed oct14 only and preserved earlier case files.

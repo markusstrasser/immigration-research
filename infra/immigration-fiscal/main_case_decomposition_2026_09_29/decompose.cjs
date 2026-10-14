@@ -122,8 +122,11 @@ const CASES = {
   oct07: { lane: "main_case_2026_10_07", suffix: "_oct07", lineage: true, items: true, ages: "g3plus_ages_oct07.csv" },
   oct07_cash: { lane: "main_case_2026_10_07", suffix: "_oct07_cash", lineage: true, items: true, ages: "g3plus_ages_oct07.csv",
     cash: "main_case_2026_10_07/derived/corrections_cash.json" },
+  oct14: { lane: "main_case_2026_10_14", suffix: "_oct14", lineage: true, items: true, ages: "g3plus_ages_oct07.csv" },
+  oct14_cash: { lane: "main_case_2026_10_14", suffix: "_oct14_cash", lineage: true, items: true, ages: "g3plus_ages_oct07.csv",
+    cash: "main_case_2026_10_14/derived/corrections_cash.json" },
 };
-const CASE_KEY = argOf("--case", "sept27");
+const CASE_KEY = argOf("--case", "oct14");
 const CASE_DEF = CASES[CASE_KEY];
 if (!CASE_DEF) throw new Error(`[BLOCKED] unknown case ${CASE_KEY}: ${Object.keys(CASES).join(", ")}`);
 // The added people's ages: the case's measured mix (v6) or the identified G3+'s (v5's rule, the only one v5 has).
@@ -171,7 +174,15 @@ const unionCost = SPECS.map((s) => P.evaluateFull(UNION, s).cost_bn);
 const LO = unionCost.indexOf(Math.min(...unionCost)), HI = unionCost.indexOf(Math.max(...unionCost));
 gate("(b) the corrected union reproduces the case at both ends", rel(unionCost[LO], CASE[0]) < 1e-12 && rel(unionCost[HI], CASE[1]) < 1e-12,
   `${unionCost[LO].toFixed(4)} / ${unionCost[HI].toFixed(4)} vs ${CASE[0].toFixed(4)} / ${CASE[1].toFixed(4)}`);
-gate("the ends are specifications 48 (low) and 11 (high)", LO === 48 && HI === 11, `${LO} / ${HI}`);
+if (CASE_SUMMARY.v7) {
+  const variant = CASE_DEF.cash ? "cash_set" : "adopted";
+  const oracle = P.csvRows(`${CASE_DEF.lane}/derived/main_case_bands.csv`).filter((r) => r.variant === variant && r.profile === P.MAIN_PROFILE);
+  gate(`the case equals main_case_bands.csv ${variant} (four-decimal printing, 5e-5 bn)`, oracle.length === 1
+    && Math.abs(unionCost[LO] - Number(oracle[0].cost_low_bn)) < 5e-5
+    && Math.abs(unionCost[HI] - Number(oracle[0].cost_high_bn)) < 5e-5);
+}
+const EXPECTED_ENDS = CASE_SUMMARY.v7 ? CASE_SUMMARY.v7.end_specifications[CASE_DEF.cash ? "cash" : "set"] : [48, 11];
+gate("the ends are the case's end specifications", LO === EXPECTED_ENDS[0] && HI === EXPECTED_ENDS[1], `${LO} / ${HI}`);
 const ENDS = [["low", LO], ["high", HI]];
 
 // ---------------------------------------------------------------------------------------------------
@@ -312,6 +323,15 @@ function armValue(arm, s, kg) {
 const SYN_IDS = new Set(P.SYN_LINES.map((l) => l.id));
 const ROW8 = P.CONSTANTS.row8.c * P.RESPONSES.row8_factor;
 const unionLine = (side, id) => (side === "receipt" ? UNION.receipts.lines : UNION.spending.lines).find((l) => l.id === id);
+function row4UnionPart(component, side, line, a) {
+  const it = (CORR.meta.items || []).find((x) => x.id === "row4_frame" && x.applied);
+  if (!it) return 0;
+  return sum(Object.entries(it.parts).filter(([name, part]) => {
+    const e = CORR.edits[it.edits.first + part.edit];
+    return name.startsWith("union_") && name.split(":")[1] === component && e.side === side && e.line === line
+      && (side !== "receipt" || e.scenario === REF);
+  }).map(([, part]) => part.by[a]));
+}
 // A national-scale edit's factor on a line's uncorrected cell: 1 on every line the payload does not scale (every line of
 // a September 27 payload).
 const natScale = (side, id) => unionLine(side, id).national_bn / (side === "receipt" ? MODEL.receipts.lines : MODEL.spending.lines)
@@ -382,8 +402,15 @@ function itemLineageEdits(api) {
   return p.meta.items.filter((it) => it.applied && it.parts).flatMap((it) => Object.entries(it.parts)
     .filter(([name]) => name.startsWith("lineage_")).map(([name, part]) => {
       const e = p.edits[it.edits.first + part.edit];
-      if (!e.by || !["social_security", "medicare"].includes(e.line)) {
-        throw new Error(`[BLOCKED] item ${it.id}'s part ${name} is on ${e.line}: the added people's amounts are read on the accrual lines only`);
+      const allowed = ["social_security", "medicare"].includes(e.line)
+        || (it.id === "job_capital_taxes" && e.side === "receipt" && ["corporate_capital", "corporate_labor", "remaining_production_property", "other_production_taxes"].includes(e.line))
+        || (it.id === "child_credits" && ((e.side === "receipt" && e.line === "federal_income_tax") || (e.side === "spending" && e.line === "refundable_tax_credits")))
+        || (it.id === "white_end_tax_keys" && e.side === "receipt" && e.line === "federal_income_tax")
+        || (it.id === "row4_frame" && (e.side === "receipt"
+          ? ["modeled_owner_property", "federal_income_tax", "general_sales_tax", "personal_motor_vehicle"].includes(e.line)
+          : ["state_price_public_order_safety", "state_price_health_services", "state_price_recreation_culture"].includes(e.line)));
+      if (!e.by || !allowed) {
+        throw new Error(`[BLOCKED] item ${it.id}'s part ${name} is on ${e.side}/${e.line}: no admitted lineage rule`);
       }
       return { item: it.id, part: name, side: e.side, line: e.line, key: e.key, scenario: e.scenario, by: part.by };
     }));
@@ -409,8 +436,10 @@ if (LINEAGE && CASE_DEF.items) {
   const partsOff = recs.filter((it) => it.parts && Object.keys(it.parts).length).flatMap((it) => CORR.edits.slice(it.edits.first, it.edits.first + it.edits.count)
     .flatMap((e, k) => (e.by ? ["personal", "shared"].map((a) => Math.abs(sum(Object.values(it.parts).filter((p) => p.edit === k).map((p) => p.by[a])) - e.by[a])) : [])));
   gate("v6: each item's parts add to its edits (1e-9)", Math.max(0, ...partsOff) < 1e-9, `worst ${Math.max(0, ...partsOff).toExponential(1)}`);
-  gate("v6: the items' lineage_* parts are the added people's on the accrual lines (the cash set's: none)",
-    ITEM_LINEAGE.cash.length === 0, ITEM_LINEAGE.set.map((e) => `${e.item}/${e.part} on ${e.line}`).join(", ") || "none");
+  gate("the cash set's lineage item parts follow R6-R9; pension-frame changes remain set-only",
+    ITEM_LINEAGE.cash.every((e) => ["child_credits", "job_capital_taxes", "white_end_tax_keys"].includes(e.item)
+      || (e.item === "row4_frame" && ["modeled_owner_property", "general_sales_tax", "personal_motor_vehicle", "state_price_public_order_safety", "state_price_health_services", "state_price_recreation_culture"].includes(e.line))),
+    ITEM_LINEAGE.set.map((e) => `${e.item}/${e.part} on ${e.line}`).join(", ") || "none");
 }
 if (LINEAGE) {
   const E = LINEAGE.L.edits;
@@ -672,8 +701,16 @@ function planFor(spec, opts) {
       Object.assign(x, { ratio_lineage: x.social_security_bn / oasdiLin, part_a_accrual_bn: x.medicare_set_bn - (1 - sA) * x.medicare_cash_bn,
         benefit_tax_bn: x.income_tax_cash_bn - x.income_tax_set_bn });
       const union29 = ACCRUAL.ratio_net * (oasdiGG - oasdiLin);
-      checks.push({ label: "v5: the September 29 union's Social Security is ratio_net x its OASDI receipts (the case less the lineage)",
-        ok: Math.abs(ss.A - x.social_security_bn - union29) < 1e-9, detail: `${ss.A - x.social_security_bn} vs ${union29}` });
+      const frameSS = row4UnionPart("oasdi_ratio", "spending", "social_security", a);
+      if (CORR.meta.row4_frame) {
+        const rn = CORR.meta.row4_frame.values.rn;
+        checks.push({ label: "R9's union SS shift is the declared row4-minus-published ratio times union OASDI receipts",
+          ok: Math.abs(frameSS - (rn.row4 - rn.pub) * (oasdiGG - oasdiLin)) < 1e-9,
+          detail: `${frameSS} vs ${(rn.row4 - rn.pub) * (oasdiGG - oasdiLin)}` });
+      }
+      checks.push({ label: "the September 29 union's Social Security, before R9's union pension shift, is ratio_net x OASDI receipts",
+        ok: Math.abs(ss.A - x.social_security_bn - frameSS - union29) < 1e-9,
+        detail: `${ss.A - x.social_security_bn - frameSS} vs ${union29}; R9 union ${frameSS}` });
       checks.push({ label: "v5: the lineage's Part A accrual and tax on current benefits are positive", ok: x.part_a_accrual_bn > 0 && x.benefit_tax_bn > 0,
         detail: `${x.part_a_accrual_bn}, ${x.benefit_tax_bn}` });
       return x;
@@ -686,7 +723,8 @@ function planFor(spec, opts) {
     // Medicare: Parts B and D on the medicare key at the use profile, the Part A accrual at the ages and receipts
     // profile, scaled by covered workers (Part A turns on insured status, not on the tax paid) or, as the alternative,
     // by the HI receipts.
-    const PA = ACCRUAL.part_a_accrual_bn + (lin ? lin.part_a_accrual_bn : 0);
+    const framePA = row4UnionPart("part_a", "spending", "medicare", a);
+    const PA = ACCRUAL.part_a_accrual_bn + framePA + (lin ? lin.part_a_accrual_bn : 0);
     const covered = keyTotals(W, a, "receipt|positive_fica_worker");
     const partA = (alpha, rho) => PA * (o.part_a === "hi_scaled" ? hiAt(alpha, rho) / hiAt("G", "G") : covered.T[alpha + rho] / covered.T.GG);
     const cashMed = withCorrections(med.U, (med.A - PA) / (1 - sA));
@@ -695,7 +733,14 @@ function planFor(spec, opts) {
     med.amount = (alpha, pi) => med.at(alpha, pi, pi);
     // Federal income tax: its key at the receipts profile, less the tax on current Social Security benefits (the benefit
     // key): the payload's dollars at R = G; at R = N the national rate on the national line.
-    const btKey = keyTotals(W, a, "spending|social_security"), BT = ACCRUAL.benefit_tax_receipt_bn[a] + (lin ? lin.benefit_tax_bn : 0);
+    const frameBT = row4UnionPart("benefit_tax", "receipt", "federal_income_tax", a);
+    if (CORR.meta.row4_frame) {
+      const v = CORR.meta.row4_frame.values;
+      checks.push({ label: "R9's union Part A and benefit-tax shifts equal their declared frame changes",
+        ok: Math.abs(framePA - (v.partA.row4 - v.partA.pub)) < 1e-9 && Math.abs(frameBT - v.btBy[a]) < 1e-9,
+        detail: `Part A ${framePA}; benefit tax ${frameBT}` });
+    }
+    const btKey = keyTotals(W, a, "spending|social_security"), BT = ACCRUAL.benefit_tax_receipt_bn[a] - frameBT + (lin ? lin.benefit_tax_bn : 0);
     const btNational = PENSION.benefit_tax.current_rate_nation * lineOf("social_security").national_bn;
     const bt = (alpha, rho) => (rho === "G" ? BT * btKey.T[alpha + "G"] / btKey.T.GG : btNational * btKey.T[alpha + "N"] / btKey.V);
     const cashFit = withCorrections(fit.U, fit.A + BT);
@@ -708,7 +753,8 @@ function planFor(spec, opts) {
       oasdi_bn: Object.fromEntries(["NN", "GN", "NG", "GG"].map((s) => [s, oasdiAt(s[0], s[1])])),
       part_a_bn: Object.fromEntries(["NN", "GN", "NG", "GG"].map((s) => [s, partA(s[0], s[1])])),
       benefit_tax_bn: Object.fromEntries(["NN", "GN", "NG", "GG"].map((s) => [s, bt(s[0], s[1])])),
-      medicare_cash_kappa: cashMed.kappa, income_tax_cash_kappa: cashFit.kappa }, lin ? { lineage: Object.assign(lin, {
+      medicare_cash_kappa: cashMed.kappa, income_tax_cash_kappa: cashFit.kappa,
+      row4_union: { part_a_shift_bn: framePA, benefit_tax_receipt_shift_bn: frameBT } }, lin ? { lineage: Object.assign(lin, {
       group_part_a_accrual_bn: PA, group_benefit_tax_bn: BT }) } : {});
   }
   // A row that reads other rows returns the case's own amount at the group's state, as withCorrections does (its
@@ -799,6 +845,14 @@ const GROUP_NAMES = ["income_taxes", "payroll_taxes", "consumption_taxes", "prod
   "colleges_other_education", "medicaid", "justice", "refundable_credits", "social_security_medicare", "health_veterans",
   "cash_food_housing_benefits", "roads_economic_affairs", "per_head_government_and_enterprises", "care_shelter_audit_constants"];
 if (IS_V4) GROUP_NAMES.splice(GROUP_NAMES.indexOf("production_term"), 0, "property_taxes");
+const CHILD_CREDITS = (CORR.meta.items || []).find((it) => it.id === "child_credits" && it.applied);
+if (CHILD_CREDITS) GROUP_NAMES.push("child_credits_receipt", "child_credits_spending");
+if ((CORR.meta.items || []).some((it) => it.id === "job_capital_taxes" && it.applied)) {
+  GROUPS.job_capital_taxes = ["corporate_capital", "corporate_labor", "remaining_production_property", "other_production_taxes"];
+  GROUPS.other_receipts = GROUPS.other_receipts.filter((id) => !GROUPS.job_capital_taxes.includes(id));
+  GROUP_NAMES.push("job_capital_taxes");
+  for (const id of GROUPS.job_capital_taxes) GROUP_OF[id] = "job_capital_taxes";
+}
 
 function evaluateState(plan, st) {
   const m = stateModel(plan, st);
@@ -829,6 +883,21 @@ function evaluateState(plan, st) {
     else add(GROUP_OF[s.id] || "unmapped", c);
   }
   add("production_term", -(ev.private_wtp_bn + ev.induced_receipts_bn));  // fiscal weight 1 (the package's state)
+  if (CHILD_CREDITS) {
+    // Separate the item's shifts from their host lines, using those lines' existing correction profiles.
+    // The receipt part follows R; the refundable spending part follows U. These age profiles are assumptions.
+    for (const e of CORR.edits.slice(CHILD_CREDITS.edits.first, CHILD_CREDITS.edits.first + CHILD_CREDITS.edits.count)) {
+      const row = plan.rows.find((r) => r.side === e.side && r.id === e.line);
+      if (!row || (e.side === "receipt" ? e.scenario !== REF : e.key !== row.key)) continue;
+      if (!e.by || !row.U) throw new Error(`[BLOCKED] child credits on ${e.line}: no correction age profile`);
+      const pi = e.side === "receipt" ? st[1] : st[2];
+      const amount = plan.opts.corrections === "none" || pi === "N" ? 0
+        : e.by[plan.a] * (plan.opts.corrections === "ratio" ? row.U(st[0] + "G") / row.U("GG") : 1);
+      const c = (e.side === "receipt" ? -1 : 1) * row.response * amount;
+      add(`child_credits_${e.side}`, c);
+      add(GROUP_OF[e.line], -c);
+    }
+  }
   const comps = P.componentsFor(plan.spec.capital_variant);
   for (const c of full.capital.components) add(CAPITAL_GROUP(comps.find((x) => x.id === c.id), comps), c.return_bn);
   const zeroResponse = { receipts: sum(ev.receipts.filter((x) => x.response === 0).map((x) => x.amount_bn)),
@@ -894,6 +963,16 @@ for (const [end, i] of ENDS) {
     ph.every((x) => Math.abs(x.kappa - 1) < 1e-4), ph.map((x) => `${x.id} ${x.kappa.toFixed(7)}`).join(", "));
   const worstSum = Math.max(...STATES.map((st) => Math.abs(sum(Object.values(r.states[st].groups)) - r.states[st].cost)));
   gate(`${end} end: line-group contributions add to each state's cost`, worstSum < 1e-9, `worst ${worstSum.toExponential(1)}`);
+  if (CASE_SUMMARY.v7) {
+    const which = CASE_DEF.cash ? "cash" : "set", k = end === "low" ? 0 : 1;
+    for (const id of ["child_credits", "job_capital_taxes"]) {
+      const x = CASE_SUMMARY.v7.change_by_item[id];
+      const want = (which === "cash" ? x.cash : x).at_end_specifications_bn[k];
+      const got = id === "child_credits" ? ggg.groups.child_credits_receipt + ggg.groups.child_credits_spending : ggg.groups[id];
+      gate(`${end}: ${id} line groups equal the case item's change (1e-9)`, Math.abs(got - want) < 1e-9,
+        `${got} vs ${want}`);
+    }
+  }
 }
 
 // Parts.
@@ -1048,13 +1127,11 @@ for (const f of FACTORS) {
   row(PART_OF[f], "shapley", D.low.shapley[f], D.high.shapley[f]);
 }
 row("total", "all", costs.low.GGG, costs.high.GGG);
-fs.writeFileSync(path.join(OUT, `decomposition${SUFFIX}.csv`), lines.join("\n") + "\n");
 
 const gl = [["part", "line_group", "low_bn", "high_bn"].join(",")];
 for (const g of GROUP_NAMES) gl.push(["shared", g, f6(DG.low.shared[g]), f6(DG.high.shared[g])].join(","));
 for (const f of FACTORS) for (const g of GROUP_NAMES) gl.push([PART_OF[f], g, f6(DG.low.shapley[f][g]), f6(DG.high.shapley[f][g])].join(","));
 for (const g of GROUP_NAMES) gl.push(["total", g, f6(groupVals.low.GGG[g]), f6(groupVals.high.GGG[g])].join(","));
-fs.writeFileSync(path.join(OUT, `decomposition_lines${SUFFIX}.csv`), gl.join("\n") + "\n");
 for (const [end] of ENDS) {
   for (const f of FACTORS) {
     const s = sum(Object.values(DG[end].shapley[f]));
@@ -1064,7 +1141,6 @@ for (const [end] of ENDS) {
 
 const sl = [["state", "age", "receipts", "use", "low_bn", "high_bn"].join(",")];
 for (const st of STATES) sl.push([st, st[0], st[1], st[2], f6(costs.low[st]), f6(costs.high[st])].join(","));
-fs.writeFileSync(path.join(OUT, `states${SUFFIX}.csv`), sl.join("\n") + "\n");
 
 const round = (x) => (typeof x === "number" ? Number(x.toPrecision(12)) : x);
 const deep = (o) => JSON.parse(JSON.stringify(o, (k, v) => round(v)));
@@ -1247,11 +1323,27 @@ if (CASE_DEF.items) {
       ratio_net: ACCRUAL.ratio_net, part_a_accrual_bn: ACCRUAL.part_a_accrual_bn } : null,
   };
 }
-fs.writeFileSync(path.join(OUT, `summary${SUFFIX}.json`), JSON.stringify(deep(summary), null, 1) + "\n");
+if (CASE_SUMMARY.v7) {
+  summary.v7 = {
+    allocation: CORR.meta.allocation.group_total,
+    end_specifications: [LO, HI],
+    rules: {
+      lineage_parts: "R6-R9: all tagged lineage parts join the added people's amounts; the effective union pension amounts include R9's named shifts",
+      pension_identities: "subtract R9's union pension shifts before comparison to meta.pension_accrual; the actual state calculations retain those shifts",
+      child_credits: "receipt and refundable spending shifts are separate line groups, on their host lines' correction age profiles [ASSUMPTION]",
+      job_capital_taxes: "all four responsive receipt lines form one line group, using the existing account-key age profiles [ASSUMPTION: no industry-by-age job-capital profile is measured here]",
+    },
+    pension_by_end: Object.fromEntries(ENDS.map(([end]) => [end, main[end].plan.accrual])),
+  };
+}
 
 console.log("\nParts ($bn, Shapley mean; low / high):");
 console.log(`  shared ${D.low.shared.toFixed(2)} / ${D.high.shared.toFixed(2)}`);
 for (const f of FACTORS) console.log(`  ${PART_OF[f]} ${D.low.shapley[f].toFixed(2)} / ${D.high.shapley[f].toFixed(2)}`);
 console.log(`  total ${costs.low.GGG.toFixed(4)} / ${costs.high.GGG.toFixed(4)}`);
 if (fails.length) { console.log(`FAIL: ${fails.length} gate(s)`); process.exit(1); }
+fs.writeFileSync(path.join(OUT, `decomposition${SUFFIX}.csv`), lines.join("\n") + "\n");
+fs.writeFileSync(path.join(OUT, `decomposition_lines${SUFFIX}.csv`), gl.join("\n") + "\n");
+fs.writeFileSync(path.join(OUT, `states${SUFFIX}.csv`), sl.join("\n") + "\n");
+fs.writeFileSync(path.join(OUT, `summary${SUFFIX}.json`), JSON.stringify(deep(summary), null, 1) + "\n");
 console.log("all gates passed");
