@@ -322,6 +322,9 @@ def use_case(case):
 def lineage_part(full, union):
     """The added people's part of a case dump at one end: every line's amount, the capital return and the production
     term, full less union. The two dumps must share every line, national and response."""
+    full_scalars, union_scalars = validate_scalars(full), validate_scalars(union)
+    if full_scalars.keys() != union_scalars.keys():
+        raise SystemExit("[BLOCKED] case and union do not declare the same comparator scalars")
     fl = [x for x in full["lines"] if x["side"] != "scalar"]
     ul = [x for x in union["lines"] if x["side"] != "scalar"]
     if [(x["side"], x["id"]) for x in fl] != [(x["side"], x["id"]) for x in ul]:
@@ -902,7 +905,35 @@ def v7_items_gates(s):
                  abs(credits - source["union"][i]) < 1e-9)
 
 
-def run29(sc, end, basis="accrual", top=None, cap=False, v4=True, dump=None, union_sc=None, rule4="all"):
+# Scalar fields are not new national lines. Every field must be classified;
+# summaries are recomputed from comparator lines, never copied as an extra cost.
+SCALAR_POLICIES = {
+    "production_gain_bn": "production_policy",
+    "private_wtp_bn": "production_component_in_gain",
+    "induced_receipts_bn": "production_component_in_gain",
+    "sampling_se_bn": "case_sampling_only_not_comparator_uncertainty",
+    "welfare_bn": "recomputed_from_comparator_lines_and_gain",
+    "direct_fiscal_response_bn": "recomputed_from_comparator_lines",
+    "effective_service_response": "diagnostic_not_an_additive_cost",
+    "target_balance_bn": "recomputed_from_comparator_lines",
+    "other_balance_bn": "case_diagnostic_not_an_additive_cost",
+    "normalized_gap_bn": "recomputed_cash_only_national_counterpart",
+    "per_target_person": "recomputed_with_comparator_population",
+    "per_other_resident": "case_diagnostic_not_an_additive_cost",
+}
+
+
+def validate_scalars(e):
+    scalars = [x for x in e["lines"] if x["side"] == "scalar"]
+    ids = [x["id"] for x in scalars]
+    unknown = set(ids) - SCALAR_POLICIES.keys()
+    if unknown or len(ids) != len(set(ids)) or "production_gain_bn" not in ids:
+        raise SystemExit(f"[BLOCKED] undeclared or duplicate comparator scalar policy: {sorted(unknown)}; ids={ids}")
+    return {x["id"]: x["effect_bn"] for x in scalars}
+
+
+def run29(sc, end, basis="accrual", top=None, cap=False, v4=True, dump=None, union_sc=None, rule4="all",
+          production="legacy", production_model=None, status_keys=None, status_rule="rules_only"):
     """rekey_white.run on a case dump, with the sept29 rules when v4 (a September 27 dump with v4=False reproduces
     run()). sc: a scenario or 'eng' (the engine's own amounts). union_sc: the whole rough union, for union pieces.
     top: the income-tax rule, by default the central ('case' on TAX_CASES, else 'cps'; a September 27 run 'cps');
@@ -913,6 +944,11 @@ def run29(sc, end, basis="accrual", top=None, cap=False, v4=True, dump=None, uni
         top = "case" if TAX_ON and v4 else "cps"
     g = "eng" if sc == "eng" else sc["name"]
     e = (dump or DUMP[basis])[end]
+    scalars = validate_scalars(e)
+    if LINEAGE_ON and dump is None:
+        validate_scalars(FULL[basis][end])
+    if production not in ("legacy", "own", "zero"):
+        raise SystemExit(f"[BLOCKED] undeclared comparator production policy {production!r}")
     lines = [ln for ln in e["lines"] if ln["side"] != "scalar"]
     amt, resp, nat = {}, {}, {}
     terms = None
@@ -938,6 +974,10 @@ def run29(sc, end, basis="accrual", top=None, cap=False, v4=True, dump=None, uni
             a = ln["national_bn"] * R.line_share(sc, side, lid, top)
             if ik is not None and side == "spending" and lid in IPEDS_LINES:
                 a += ipeds_move(sc, lid, ln["national_bn"], ik)
+        if status_keys is not None and g != "eng" and v4 and dump is None and side == "receipts":
+            corrected = status_keys.receipt_amount(sc, lid, ln["national_bn"], rule=status_rule)
+            if corrected is not None:
+                a = corrected
         if JOB_CAPITAL is not None and v4 and dump is None and side == "receipts" and lid in JOB_LINES and g != "eng":
             category = JOB_LINES[lid]
             if g in ("mex", "union_piece"):
@@ -1024,11 +1064,16 @@ def run29(sc, end, basis="accrual", top=None, cap=False, v4=True, dump=None, uni
         cap_bn += c["stock_charged_bn"] * k * c["response"] * e["rate"]
     if g == "eng":
         cap_bn = e["capital_bn"]
-    prod = [x for x in e["lines"] if x["side"] == "scalar" and x["id"] == "production_gain_bn"][0]["effect_bn"]
-    prod = prod if g in ("mex", "eng") else 0.0    # no production term for a native-born group
+    prod = scalars["production_gain_bn"] if g in ("mex", "eng") else 0.0
+    if production == "own" and g not in ("mex", "eng"):
+        if production_model is None:
+            raise SystemExit("[BLOCKED] own production policy requires the group's CES skill mix")
+        prod = production_model.gain(sc, end)
     if lin is not None:
         cap_bn += lin["capital_bn"]
         prod += lin["production_gain_bn"]
+    if production == "zero":
+        prod = 0.0     # applies to the added people as well as the identified union
     buckets["capital return"] = cap_bn
     buckets["production gain (subtracted)"] = -prod
     net = sp_eff - rec_eff

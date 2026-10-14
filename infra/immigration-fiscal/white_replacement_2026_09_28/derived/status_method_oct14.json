@@ -1,0 +1,20 @@
+{
+  "allocation": "personal",
+  "civilian_population": 335543730.5484647,
+  "frame": "cps_imputation_keys_2026_09_23/_cache/asec25_lane.parquet",
+  "income_tax": "existing IRS/CBO-raked carrier key times source status factor, normalized on row4",
+  "payroll": "source wage_oasdi / wage / self_payroll vectors, separate SE key",
+  "row13": "not applied; nonlinear ratio has no closed additive definition",
+  "rules": "combine_status.status_vectors; origin central share_configs",
+  "source_sha256": {
+    "cps_imputation_keys_2026_09_23/_cache/asec25_lane.parquet": "c5b881660ac06c80ff8cf424c2d4be0120a661a8e31357252ba1d98b92f447fb",
+    "cps_imputation_keys_2026_09_23/combine_onbooks_lane.py": "c4c6e05b784b23da7985652f03cac13a1ce678a3cb3b33a0aeea9eebc3f3c42f",
+    "cps_imputation_keys_2026_09_23/combine_status.py": "b69b1fdcb039910768c71ddfeacd2273eaebfe4db5cb04bf4da711b6cf3423c5",
+    "cps_imputation_keys_2026_09_23/common.py": "490e3c38d191b47259595ee2eac6dbc0ff8361362fbfe5c204f5aece3b1506a6",
+    "onbooks_share_2026_09_23/derived/onbooks_inputs.json": "886f317acb33d74ac07ba6e24924d6f59619b4c11324baba7771a040ed75cd9d",
+    "onbooks_share_2026_09_23/derived/onbooks_split.csv": "6a652151547df2c33a35c46a016bb5be3d8cc4f84c359ac6f422b45766553564"
+  },
+  "status": "combine_onbooks_lane.state_aware_flag(STATUS_BLIND_2024)",
+  "unauthorized_population": 9992831.164322034,
+  "union_population": 39712494.53846472
+}

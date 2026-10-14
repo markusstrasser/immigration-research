@@ -37,7 +37,7 @@ STORED = dict(payable=1.018378, scheduled=1.297788, part_a=41.137128, timing=0.0
 G = (P.CENTRAL["rate"], P.CENTRAL["mortality"])
 
 
-def oasdi_ratio(q, grids, u_long, taus, scens=None):
+def oasdi_ratio(q, grids, u_long, taus, scens=None, g=G):
     """Per-person central accrual (both scenarios) and the benefit-tax timing, as pension_accrual.central_accrual."""
     fam = SS.family_vector(q, "observed_family")
     level = P.career_levels(q, P.CENTRAL["mapping"])
@@ -47,15 +47,15 @@ def oasdi_ratio(q, grids, u_long, taus, scens=None):
     w, tax = q.w.to_numpy(), q.tax_oasdi.to_numpy()
     out = {}
     for scen in scens or P.SCENARIOS:
-        fac = P.model_factor(grids[scen], P.CENTRAL["method"], G, fam, entry, birth, lvl, q.age.to_numpy().astype(float))
+        fac = P.model_factor(grids[scen], P.CENTRAL["method"], g, fam, entry, birth, lvl, q.age.to_numpy().astype(float))
         acc = tax * P.note_mwr(q, P.S.mwr_table(P.MWR_TABLE[scen]), level, fam) * fac * np.where(q.unauth, u_long, 1.0)
-        tau = P.person_tau(taus, fam, birth)[(G, scen)]
+        tau = P.person_tau(taus, fam, birth)[(g, scen)]
         out[scen] = dict(ratio=float((w * acc).sum() / (w * tax).sum()),
                          timing=float((w * acc * tau).sum() / (w * acc).sum()), tax_bn=float((w * tax).sum() / 1e9))
     return out
 
 
-def part_a(u, econ, u_long, scen):
+def part_a(u, econ, u_long, scen, population=P.CENTRAL["mortality"]):
     """pension_accrual.hi_accrual's central (own sex, no spouse credit) for a group, generation by generation."""
     w = u.w.to_numpy()
     covered = (u.tax_hi > 0).to_numpy()
@@ -70,7 +70,7 @@ def part_a(u, econ, u_long, scen):
         num = pd.Series(covered[m] * w[m]).groupby(u.age.to_numpy()[m]).sum()
         cov = (num / wt).reindex(range(0, 91)).fillna(0.0).to_numpy()
         n_years[m] = [cov[s:65].sum() for s in start[m]]
-    own = P.part_a_pv(u.age.to_numpy(), u.sex.to_numpy(), econ, P.CENTRAL["rate"], scen, P.CENTRAL["mortality"])
+    own = P.part_a_pv(u.age.to_numpy(), u.sex.to_numpy(), econ, P.CENTRAL["rate"], scen, population)
     base = np.where(covered & (u.age < 65).to_numpy() & (n_years > 0), pq * own / np.maximum(n_years, 1e-9), 0.0)
     acc = base * u.onbooks.to_numpy() * np.where(u.unauth.to_numpy(), u_long, 1.0)
     return dict(accrual_bn=float((w * acc).sum() / 1e9), hi_tax_bn=float((w * u.tax_hi.to_numpy()).sum() / 1e9),
@@ -227,4 +227,12 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--case", default="oct14", choices=["sept29", "oct14"],
                     help="oct14 (default, live v7 on the 2026 path); sept29 is the archived 2025 path")
-    main() if ap.parse_args().case == "sept29" else main_oct07()
+    ap.add_argument("--mortality", action="store_true", help="write separate group-mortality and row-4 arms")
+    args = ap.parse_args()
+    if args.mortality:
+        if args.case != "oct14":
+            raise SystemExit("[BLOCKED] mortality arms require the live oct14 path")
+        from mortality_comparators import run
+        run("white")
+    else:
+        main() if args.case == "sept29" else main_oct07()

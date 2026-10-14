@@ -1,0 +1,7 @@
+group,end,population,receipt_change_bn,receipt_sampling_se_bn,uncertainty_scope
+mex,low,39712493.3312,-14.415536764876872,1.4081885124214326,"receipt shift only; conditional fixed count, status flags, IRS/CBO carrier and age mix; no reimputation/reraking uncertainty"
+mex,high,39712493.3312,-14.415536764876872,1.4081885124214326,"receipt shift only; conditional fixed count, status flags, IRS/CBO carrier and age mix; no reimputation/reraking uncertainty"
+blk,low,41954493.92,1.0408122689424344,0.39059889303913226,"receipt shift only; conditional fixed count, status flags, IRS/CBO carrier and age mix; no reimputation/reraking uncertainty"
+blk,high,41954493.92,1.0408122689424344,0.39059889303913226,"receipt shift only; conditional fixed count, status flags, IRS/CBO carrier and age mix; no reimputation/reraking uncertainty"
+w3,low,42752212.92438524,5.452854582220311,0.382144205230311,"receipt shift only; conditional fixed count, status flags, IRS/CBO carrier and age mix; no reimputation/reraking uncertainty"
+w3,high,42752212.92438524,5.452854582220311,0.382144205230311,"receipt shift only; conditional fixed count, status flags, IRS/CBO carrier and age mix; no reimputation/reraking uncertainty"

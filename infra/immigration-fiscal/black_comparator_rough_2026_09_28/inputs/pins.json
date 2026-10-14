@@ -1,0 +1,50 @@
+{
+  "mortality_sources": {
+    "lt2024_Table02.xlsx": {
+      "sha256": "f7908e92f47f6250308d671abb0a30b74f86aa5d3e6d402a5d092054ed8a5ea0",
+      "year": 2024,
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/NVSR/75-05/Table02.xlsx"
+    },
+    "lt2024_Table03.xlsx": {
+      "sha256": "3024d85dc0566dfad80a4ea76dc988694f7a276a6f15e6b2316ad5e9cf5477ef",
+      "year": 2024,
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/NVSR/75-05/Table03.xlsx"
+    },
+    "lt2024_Table14.xlsx": {
+      "sha256": "afb55fafebd53ed4a4d1a4a907fffc4cd02051d51ba19d93de0d6ce21658465c",
+      "year": 2024,
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/NVSR/75-05/Table14.xlsx"
+    },
+    "lt2024_Table15.xlsx": {
+      "sha256": "45bc098b18b420677fee19f42c4e378d7ecccfe7054110f8587acfa8f2cda234",
+      "year": 2024,
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/NVSR/75-05/Table15.xlsx"
+    }
+  },
+  "symmetric_sources": {
+    "cps_imputation_keys_2026_09_23/_cache/asec25_lane.parquet": {
+      "file": "cps_imputation_keys_2026_09_23/_cache/asec25_lane.parquet",
+      "sha256": "c5b881660ac06c80ff8cf424c2d4be0120a661a8e31357252ba1d98b92f447fb"
+    },
+    "cps_imputation_keys_2026_09_23/common.py": {
+      "file": "cps_imputation_keys_2026_09_23/common.py",
+      "sha256": "490e3c38d191b47259595ee2eac6dbc0ff8361362fbfe5c204f5aece3b1506a6"
+    },
+    "cps_imputation_keys_2026_09_23/combine_onbooks_lane.py": {
+      "file": "cps_imputation_keys_2026_09_23/combine_onbooks_lane.py",
+      "sha256": "c4c6e05b784b23da7985652f03cac13a1ce678a3cb3b33a0aeea9eebc3f3c42f"
+    },
+    "cps_imputation_keys_2026_09_23/combine_status.py": {
+      "file": "cps_imputation_keys_2026_09_23/combine_status.py",
+      "sha256": "b69b1fdcb039910768c71ddfeacd2273eaebfe4db5cb04bf4da711b6cf3423c5"
+    },
+    "onbooks_share_2026_09_23/derived/onbooks_split.csv": {
+      "file": "onbooks_share_2026_09_23/derived/onbooks_split.csv",
+      "sha256": "6a652151547df2c33a35c46a016bb5be3d8cc4f84c359ac6f422b45766553564"
+    },
+    "onbooks_share_2026_09_23/derived/onbooks_inputs.json": {
+      "file": "onbooks_share_2026_09_23/derived/onbooks_inputs.json",
+      "sha256": "886f317acb33d74ac07ba6e24924d6f59619b4c11324baba7771a040ed75cd9d"
+    }
+  }
+}

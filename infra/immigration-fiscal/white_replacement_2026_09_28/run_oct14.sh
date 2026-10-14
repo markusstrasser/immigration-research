@@ -17,4 +17,13 @@ uv run --no-project python3 "$L/limits_oct14.py"
 uv run --no-project python3 "$L/income_tax_parts.py" --case oct14
 uv run --no-project python3 "$L/local_whites_fragility.py" --case oct14
 uv run --no-project python3 -I "$L/local_whites_soi.py" --case oct14
-uv run --no-project python3 -m pytest -p no:cacheprovider "$L/test_job_policy_oct14.py" -q
+# Symmetric comparators (2026-10-14 critique round): own production, mortality, status keys.
+node "$L/production_state_oct14.cjs"
+uv run --no-project python3 "$L/accrual_white.py" --mortality
+uv run --no-project python3 "$B/accrual_black.py" --mortality
+uv run --no-project python3 "$L/status_keys_oct14.py"
+uv run --no-project python3 "$L/symmetric_comparators_oct14.py"
+uv run --no-project python3 "$L/render_symmetric_result.py"
+uv run --no-project python3 -m pytest -p no:cacheprovider "$L/test_job_policy_oct14.py" \
+    "$L/test_scalar_policy_oct14.py" "$L/test_status_keys_oct14.py" "$L/test_mortality_comparators.py" \
+    "$L/test_symmetric_tables_oct14.py" "$L/test_production_comparators_oct14.py" -q
