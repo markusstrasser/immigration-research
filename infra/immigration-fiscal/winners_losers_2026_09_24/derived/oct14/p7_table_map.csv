@@ -12,3 +12,8 @@ memo_table,file,selection
 §5 group resources,group_frame.csv,live 42.75M; p7_mixed_reconciliation.csv for boundary transfer
 §6 excluded roles,p7_excluded_channels.csv,source exclusions and supplemental/proposed channels; role_table.csv preserves source roles
 §1 financing,p7_trust_inputs.json,exact set/cash trust-fund amounts; p7_net_shares future_bn
+literature epsilon arms,p7_nest_shares.csv,"matched recommended and full-stack; both payer pools, a/b/c, low/central/high, all sharing rules"
+literature epsilon cuts,p7_nest_cuts.csv,"same tags; state3,edu_nativity,tenure,decile and all existing cuts"
+native/earlier-immigrant wage split,p7_nest_wage_split.csv,"after-tax changes and induced receipts, both normalizations and midpoint"
+delivered wage split,p7_nest_delivered_wages.csv,"payer-weighted actual native/earlier-immigrant amounts; baseline preserved, each epsilon cell delta conserved"
+Card split sizing only,p7_card_wage_bills.csv,half some-college wage bill moved; no supported equilibrium/share-ahead arm

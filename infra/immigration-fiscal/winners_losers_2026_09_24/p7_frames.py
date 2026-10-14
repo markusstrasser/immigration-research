@@ -522,6 +522,13 @@ def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
     from p7_cohorts import cohort_keys
     member_weights, member_info = wl.lineage_group_weights(B,d)
     union_weights, _ = wl.row4_group_weights(B,d)
+    from p7_nest import build as build_nest, card_bills, transport_wage_delta
+    nest_scenarios, nest_wages_table, nest_info = build_nest(wl,B,d,I,pin,require,check_total)
+    wl.write_csv(nest_wages_table,"p7_nest_wage_split.csv")
+    bills=[]
+    for population,weights,gw in (("identified_union",w,union_weights),("lineage",adjusted,member_weights)):
+        bills.extend(card_bills(d,weights,gw,population,require))
+    wl.write_csv(pd.DataFrame(bills),"p7_card_wage_bills.csv")
     cohort = cohort_keys(d,wl,trust["central"],group_weights=union_weights)
     for path in cohort["pins"]:
         pin(path,wl)
@@ -552,6 +559,26 @@ def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
     cached = {}
     programme_key_rows=[]
     reweighted_channels = {k:{L:transport(v[L],w,adjusted,d) for L in wl.LEVELS} for k,v in ch.items()}
+    nest_by_population={"identified_union":nest_scenarios,"lineage":{
+        name:dict(wages={L:reweighted_channels["wages"][L]+transport_wage_delta(
+            d,values["delta_wages"][L],w,adjusted,require) for L in wl.LEVELS},
+                  delta_f=values["delta_f"]) for name,values in nest_scenarios.items()}}
+    delivered=[]
+    for population,weights,channels in (("identified_union",w,ch),("lineage",adjusted,reweighted_channels)):
+        for name in ("infinite",*nest_scenarios):
+            values=channels["wages"] if name=="infinite" else nest_by_population[population][name]["wages"]
+            for L in wl.LEVELS:
+                for native,branch in ((True,"native"),(False,"earlier_immigrant")):
+                    mask=other & (d.native.to_numpy()==native)
+                    amount=total(np.where(mask,values[L],0),weights)
+                    baseline_amount=total(np.where(mask,channels["wages"][L],0),weights)
+                    if name!="infinite":
+                        requested=total(np.where(mask,nest_scenarios[name]["delta_wages"][L],0),w)
+                        require(f"epsilon_delivered_branch_delta_{population}_{name}_{L}_{branch}",
+                                abs(amount-baseline_amount-requested)<1e-9)
+                    delivered.append(dict(population=population,epsilon=name,level=L,branch=branch,
+                        after_tax_wage_bn=amount,delta_vs_infinite_bn=amount-baseline_amount))
+    wl.write_csv(pd.DataFrame(delivered),"p7_nest_delivered_wages.csv")
     cohorts = {"identified_union":cohort,"lineage":cohort_keys(weighted_frame(d,adjusted),wl,trust["central"],group_weights=member_weights)}
 
     def context_for(population, rule):
@@ -593,6 +620,12 @@ def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
             swtable["level"],swtable["population"] = L,population
             if rule == "a":
                 channels_rows.extend(swtable.to_dict("records"))
+        nest_statew={}
+        for name,values in nest_by_population[population].items():
+            nest_statew[name]={}
+            for L in wl.LEVELS:
+                nest_statew[name][L],_=state_wages(dd,weights,values["wages"][L],wl,
+                    group_weights=union_weights if population=="identified_union" else member_weights)
         credit = credits["forward"].copy()
         if population == "lineage":
             # Fixed measured union credit is reallocated across surviving filers
@@ -602,11 +635,13 @@ def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
         social_sum = {L:sum(soc[k][L] for k in soc) for L in wl.LEVELS}
         result = dict(weights=weights,dd=dd,ch=channels,social=soc, social_sum=social_sum,pool=pool,cohort=cohorts[population],
                       kf=kf,ks=ks,property_key=pkey,statew=statew,credit=credit,
-                      owner_gain=owners,owner_gain_broad=owner_broad, gross_owner=gross_owner)
+                      owner_gain=owners,owner_gain_broad=owner_broad, gross_owner=gross_owner,
+                      nest=nest_by_population[population],nest_statew=nest_statew,
+                      receipt_key=ctx["tax_fed"]+ctx["tax_sl"] if rule=="a" else kf)
         cached[key] = result
         return result
 
-    def net_of(cx,frame,L,channel_set,credit=False,wage_geo=False,cap_geo=False,owner_type=False):
+    def net_of(cx,frame,L,channel_set,credit=False,wage_geo=False,cap_geo=False,owner_type=False,nest_arm=None):
         weights,dd = cx["weights"],cx["dd"]
         f = meta["fiscal"][L]
         # All cases price the live lineage headline. The identified-union payer
@@ -653,6 +688,15 @@ def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
         require("frozen_rounding_small",abs(rounding)<1e-3,rounding_bn=rounding)
         account += wl.alloc(dd,keyf,rounding)
         check_total("account_exact_case_closure",account,weights,head+future)
+        if nest_arm:
+            require("nest_arm_stationary_frame",frame=="stationary")
+            values=cx["nest"][nest_arm]
+            replacement=cx["nest_statew"][nest_arm][L] if wage_geo else values["wages"][L]
+            delta_p=total(replacement-wages,weights)
+            delta_f=values["delta_f"][L]
+            account+=replacement-wages+wl.alloc(dd,cx["receipt_key"],delta_f)
+            wages=replacement
+            check_total(f"nest_account_closure_{nest_arm}_{L}",account,weights,head+future+delta_p+delta_f)
         if channel_set=="legacy":
             social = sum(cx["ch"][p][L] for p in wl.SOCIAL)
         else:
@@ -673,11 +717,11 @@ def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
             check_total("owner_type_net_total_conserved",replacement,weights,0.0)
         return x,wages,future,account
 
-    def record(population,rule,arm,frame,channel_set,credit=False,wage_geo=False,cap_geo=False,owner_type=False,all_sharing=True):
+    def record(population,rule,arm,frame,channel_set,credit=False,wage_geo=False,cap_geo=False,owner_type=False,all_sharing=True,nest_arm=None):
         cx=context_for(population,rule)
         weights=cx["weights"]
         for L in wl.LEVELS:
-            x,wages,future,account=net_of(cx,frame,L,channel_set,credit,wage_geo,cap_geo,owner_type)
+            x,wages,future,account=net_of(cx,frame,L,channel_set,credit,wage_geo,cap_geo,owner_type,nest_arm)
             sharing={"person":x,"pooled":cx["pool"](x)}
             if all_sharing:
                 shared_nonwage=cx["pool"](x-wages)
@@ -750,6 +794,13 @@ def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
         record("lineage",rule,"recommended_capitalization","stationary","complete",credit=True,cap_geo=True)
         for frame in ("stationary","cohort30","cohort10"):
             record("lineage",rule,"stack",frame,"complete",credit=True,wage_geo=True,cap_geo=True,owner_type=True)
+        for population in ("identified_union","lineage"):
+            for base_arm,geography in (("nest_recommended",False),("nest_stack",True)):
+                record(population,rule,base_arm+"_infinite","stationary","complete",credit=True,
+                       wage_geo=geography,cap_geo=geography,owner_type=geography)
+                for name in nest_scenarios:
+                    record(population,rule,base_arm+"_"+name,"stationary","complete",credit=True,
+                           wage_geo=geography,cap_geo=geography,owner_type=geography,nest_arm=name)
 
     # Enumerated share extrema are a separate objective from dollar extrema.
     # Grid: 2 fiscal ends × 2 wage incidences × 2 capitalization arms ×
@@ -819,6 +870,38 @@ def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
     results["over_5bn_incidence_bar"]=results.delta_today_bn.abs()>=5
     results["all_cohorts_resource_delta_bn"]=results.delta_today_bn+results.future_bn-results.hybrid_future_bn
     results["frozen_main_case_file_change_bn"]=0.0
+    nest_results=results[results.arm.str.startswith("nest_")].copy()
+    nest_results["base_arm"]=nest_results.arm.map(lambda a:"nest_stack" if a.startswith("nest_stack_") else "nest_recommended")
+    nest_results["epsilon"]=nest_results.arm.str.rsplit("_",n=1).str[-1]
+    keys=["population","financing","level","sharing","base_arm"]
+    nest_ref=nest_results[nest_results.epsilon.eq("infinite")][keys+["total_bn","winners_share"]].rename(
+        columns={"total_bn":"infinite_total_bn","winners_share":"infinite_winners_share"})
+    nest_results=nest_results.merge(nest_ref,on=keys,validate="many_to_one")
+    nest_results["delta_vs_infinite_bn"]=nest_results.total_bn-nest_results.infinite_total_bn
+    nest_results["delta_vs_infinite_ahead_pp"]=100*(nest_results.winners_share-nest_results.infinite_winners_share)
+    for base_arm,ref_arm in (("nest_recommended","recommended"),("nest_stack","stack")):
+        control=nest_results[nest_results.base_arm.eq(base_arm)&nest_results.epsilon.eq("infinite")&nest_results.population.eq("lineage")]
+        reference=results[results.arm.eq(ref_arm)&results.frame.eq("stationary")]
+        matched_control=control.merge(reference,on=["population","financing","level","sharing"],suffixes=("_new","_live"),validate="one_to_one")
+        require(f"nest_control_{base_arm}_matches_live",len(matched_control)==45 and
+                np.max(np.abs(matched_control.total_bn_new-matched_control.total_bn_live))<1e-9 and
+                np.array_equal(matched_control.winners_share_new,matched_control.winners_share_live))
+    frozen_bytes=wl.git_show(
+        "infra/immigration-fiscal/winners_losers_2026_09_24/derived/oct14/p7_net_shares.csv","95f151e5")
+    frozen=pd.read_csv(__import__("io").BytesIO(frozen_bytes))
+    retained=results[~results.arm.str.startswith("nest_")].merge(frozen,on=[
+        "population","financing","arm","frame","level","sharing"],suffixes=("_new","_frozen"),validate="one_to_one")
+    # The archived CSV has ten significant digits. Compare the actual prior
+    # serialization byte for byte, rather than treating its rounding as drift.
+    prior_rows=results[~results.arm.str.startswith("nest_")]
+    prior_serialized=prior_rows[frozen.columns].to_csv(index=False,lineterminator="\n",float_format="%.10g").encode()
+    require("prior_p7_all_scenarios_preserved",len(retained)==len(frozen) and prior_serialized==frozen_bytes,
+            retained_rows=len(retained),frozen_rows=len(frozen),
+            max_total_gap_bn=float(np.max(np.abs(retained.total_bn_new-retained.total_bn_frozen))),
+            max_share_gap=float(np.max(np.abs(retained.winners_share_new-retained.winners_share_frozen))))
+    wl.write_csv(nest_results,"p7_nest_shares.csv")
+    nest_cuts=pd.concat([c for c in cuts if c.arm.iloc[0].startswith("nest_")],ignore_index=True)
+    wl.write_csv(nest_cuts,"p7_nest_cuts.csv")
     source_doc=json.loads((HERE/"inputs/social_oct14.json").read_text())
     exclusions=pd.DataFrame([
         dict(item="source never-added rows",status="excluded",reason=source_doc["social_items_in_the_social_rows"]["never_added"]),
@@ -849,7 +932,12 @@ def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
               ("§4 pooling moves","pooling_moves.csv","live oct14 legacy hybrid calculation record"),
               ("§5 group resources","group_frame.csv","live 42.75M; p7_mixed_reconciliation.csv for boundary transfer"),
               ("§6 excluded roles","p7_excluded_channels.csv","source exclusions and supplemental/proposed channels; role_table.csv preserves source roles"),
-              ("§1 financing","p7_trust_inputs.json","exact set/cash trust-fund amounts; p7_net_shares future_bn")]
+              ("§1 financing","p7_trust_inputs.json","exact set/cash trust-fund amounts; p7_net_shares future_bn"),
+              ("literature epsilon arms","p7_nest_shares.csv","matched recommended and full-stack; both payer pools, a/b/c, low/central/high, all sharing rules"),
+              ("literature epsilon cuts","p7_nest_cuts.csv","same tags; state3,edu_nativity,tenure,decile and all existing cuts"),
+              ("native/earlier-immigrant wage split","p7_nest_wage_split.csv","after-tax changes and induced receipts, both normalizations and midpoint"),
+              ("delivered wage split","p7_nest_delivered_wages.csv","payer-weighted actual native/earlier-immigrant amounts; baseline preserved, each epsilon cell delta conserved"),
+              ("Card split sizing only","p7_card_wage_bills.csv","half some-college wage bill moved; no supported equilibrium/share-ahead arm")]
     wl.write_csv(pd.DataFrame(mappings,columns=["memo_table","file","selection"]),"p7_table_map.csv")
     credit_meta={k:v for k,v in credit_meta.items() if k not in ("wall_seconds","peak_memory_bytes","source_paths")}
     info=dict(case="oct14",recommended="stationary; complete adopted social set; corrected lineage payer pool; state wage and capitalization arms beside",
@@ -864,6 +952,7 @@ def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
               mixed_resources="CPS personal cash income minus own taxes/FICA plus per-capita SPM noncash benefits; observed resources proxy, no removal behavioral response",
               owner_types=owner_meta,replicate_se="160 official SDR weights; conditional on fixed allocations, sharing assignments and model; not total estimation uncertainty",
               union_population=member_info["row4_members_m"],lineage_population=member_info["members_m"],
+              nest_sensitivities=nest_info,
               instrument="LLM implementation; deterministic closure and signed, matched sensitivity arms are the verification evidence")
     (out/"p7_inputs.json").write_text(json.dumps(info,indent=1,default=float)+"\n")
     if "years" in cohort:

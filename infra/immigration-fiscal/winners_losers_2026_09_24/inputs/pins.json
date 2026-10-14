@@ -70,7 +70,16 @@
   "infra/immigration-fiscal/pension_accrual_2026_09_28/lifetime_model.py": "e5337b51943180e383dc2573a49053228881a1518a4453c4e118499a31b02fd6",
   "infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py": "ae09107dcfabca4bf2c30596db9092cab7b16e384a971c11450ceda95aef566a",
   "infra/immigration-fiscal/pension_tr2026_2026_10_06/sources_tr2026.py": "de46db633e34e85886583229837cc71cd4391090952ec34a4bde445043a392b7",
-  "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/ss_timing.py": "a4dce98ef0a86c46ec1c812db614eca85f6077a9fb3b25688956f5ac6db183e1"
+  "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/ss_timing.py": "a4dce98ef0a86c46ec1c812db614eca85f6077a9fb3b25688956f5ac6db183e1",
+  "infra/immigration-fiscal/production_nativity_nest_2026_09_22/builder.py": "aadb78881d3c5e29f821156c8f13ed9e68955582ed9c0fcdebd0be393dfc4338",
+  "infra/immigration-fiscal/production_nativity_nest_2026_09_22/nest_model.py": "61a5f8ace2b077f01fba0099e251b52f5b4466a10b4d361899815cc844a27cec",
+  "infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/nest_scenarios.csv": "8051742ad4ca1dad97692e7d0d3d9015d0a41db7ea7289ed3719d4a78744efe5",
+  "infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/branch_composition.csv": "aec24f9812fa11e2ad54147ca9105b0c115036f482de488d37a10a14e75efa10",
+  "infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/audit.json": "8ceba3211dc33651b8deb8040a9a3e9b07face40c8b626afe06437176903a173",
+  "infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py": "1690b9fdc58ad7b89cbda3bc7902039349b41b445c6ea6e644781b4a5bb1f1fa",
+  "infra/immigration-fiscal/matched_benefits_2026_09_19/model.py": "8740f820a937dcce0dfe700d5a167b4ff6b52b82ea5a92a0ab60d99de93e56cc",
+  "infra/immigration-fiscal/main_case_2026_09_29/derived/corrections.json": "ba72adb198a4765604bb676406df6bfc18063529923bae230d9e0ad8d3b7adbe",
+  "infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac"
  },
  "provenance": {
   "social_oct14": "git c392d356 adopted-v7 propagation; concurrent unadopted peer refresh excluded"
@@ -83,6 +92,20 @@
   {
    "reason": "split responding education budget into K12 and college using authoritative v7 BEA weight",
    "prior_generated_sha256": "8df136c50b57b9d8c7c4e0a6379fbf2db07fe6eec2bbba66df6b5a6aa62aea17"
+  },
+  {
+   "reason": "read-only literature epsilon solves consume pinned production sources and published controls",
+   "new_input_paths": [
+    "infra/immigration-fiscal/production_nativity_nest_2026_09_22/builder.py",
+    "infra/immigration-fiscal/production_nativity_nest_2026_09_22/nest_model.py",
+    "infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/nest_scenarios.csv",
+    "infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/branch_composition.csv",
+    "infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/audit.json",
+    "infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py",
+    "infra/immigration-fiscal/matched_benefits_2026_09_19/model.py",
+    "infra/immigration-fiscal/main_case_2026_09_29/derived/corrections.json",
+    "infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json"
+   ]
   }
  ]
 }

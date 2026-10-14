@@ -1,5 +1,5 @@
 #!/bin/sh
-# Imported execution coverage: p7_frames.py p7_cohorts.py p7_credits.py.
+# Imported execution coverage: p7_frames.py p7_cohorts.py p7_credits.py p7_nest.py.
 # Directory pytest covers test_winners_losers.py and test_p7_frames.py.
 set -eu
 export OPENBLAS_NUM_THREADS=1 PYTHONUNBUFFERED=1

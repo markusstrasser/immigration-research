@@ -173,7 +173,78 @@ def main():
       "The reported share minimum/maximum are over this finite declared grid, not "
       "universal bounds on household outcomes or all uncertain social parameters. "
       "[CALCULATION: p7_enumerated_grid.csv]",
-      "## Live table map", "",markdown(pd.read_csv(OUT/"p7_table_map.csv")),"",
+       "## Literature within-cell substitution and skill split", ""])
+    ns=pd.read_csv(OUT/"p7_nest_shares.csv")
+    display=ns[ns.population.eq("lineage")&ns.sharing.eq("pooled")][[
+        "base_arm","epsilon","financing","level","total_bn","winners_share",
+        "winners_share_conditional_se","delta_vs_infinite_bn","delta_vs_infinite_ahead_pp"]].copy()
+    for f in ["total_bn","delta_vs_infinite_bn","delta_vs_infinite_ahead_pp"]:
+        display[f]=display[f].map(lambda x:f"{x:.6f}")
+    display.winners_share=display.winners_share.map(lambda x:f"{100*x:.6f}%")
+    display.winners_share_conditional_se=display.winners_share_conditional_se.map(lambda x:f"{100*x:.6f}pp")
+    central_eps=ns[ns.population.eq("lineage")&ns.sharing.eq("pooled")&ns.base_arm.eq("nest_recommended")&
+                   ns.level.eq("central")&~ns.epsilon.eq("infinite")]
+    parts.extend([markdown(display),"",
+        f"Across rules a/b/c the recommended central share ahead moves by at most "
+        f"{central_eps.delta_vs_infinite_ahead_pp.abs().max():.3f} percentage points. "
+        "The minority-ahead conclusion survives both literature arms. The modeled wage split does not: "
+        "the small aggregate native loss at infinity becomes a native gain at both finite values, while "
+        "earlier immigrants move from a small gain to a loss. These are model outcomes under transported parameters. "
+        "[CALCULATION: p7_nest_shares.csv; p7_nest_wage_split.csv; p7_nest_delivered_wages.csv]",
+        "Each finite-epsilon row changes only within-cell substitution from its matching infinite control. "
+        "`nest_recommended` is stationary financing, complete social rows, lineage payer pool and crossing credits; "
+        "`nest_stack` also takes state wage incidence, capitalization and the central owner-type allocation. "
+        "Low/high preserve personal specifications 16/11 and their cash/GDP normalization; central is the priced-array midpoint. "
+        "The new controls reproduce every matching prior P7 sign count and dollar total; the frozen hybrid also remains unchanged. "
+        "[CALCULATION: p7_nest_shares.csv; p7_gates.json]",
+        "The nest is invoked read-only via its existing row-4 solve and lineage adapter, with a copied scenario list. "
+        "Finite epsilons retain the infinite sibling's cell-specific added-descendant multipliers, exactly as the existing ε=3 arm. "
+        "Native and earlier-immigrant after-tax wage changes, plus induced labor receipts, change together. "
+        "The unchanged delivered infinite baseline receives each epsilon's wage delta, preserving the delta's "
+        "state × nativity × skill × sign totals under payer thinning. This avoids reassigning the native/immigrant "
+        "transfer while preserving the recommended control. Raw solver wage levels below and actual delivered levels "
+        "in `p7_nest_delivered_wages.csv` are distinguished; their epsilon changes match at 1e-9bn. "
+        "Extra receipts use the existing epsilon arm's combined national tax key under (a), equal persons under (b), "
+        "and the responding-programme receipt key under (c); the nest does not identify their government jurisdiction. "
+        "[ASSUMPTION; CALCULATION: p7_nest.py, p7_frames.py]",
+        "Caiumi–Peri's 8.7 is the rounded reciprocal of Table 7's no-diploma coefficient, "
+        "not a pooled HS-or-less estimate. Piyapromdee's 17.9 is Table 1's rounded low-skill native/immigrant elasticity. "
+        "Both arms apply a common epsilon to both model skill cells, as the existing nest does; that transport is assumed. "
+        "These are model sensitivities, not estimates on the lineage. "
+        "[SOURCE: https://www.nber.org/papers/w32389; https://doi.org/10.1093/restud/rdaa029; "
+        "production_nativity_nest_2026_09_22/builder.py SIGMA_NI_CITATION]", ""])
+    wage=pd.read_csv(OUT/"p7_nest_wage_split.csv")
+    for f in ["after_tax_wage_bn","delta_vs_infinite_bn","induced_receipts_bn","delta_receipts_bn"]:
+        wage[f]=wage[f].map(lambda x:f"{x:.6f}")
+    parts.extend([markdown(wage),"",
+        "The cut tables are `p7_nest_cuts.csv`, with state3, edu_nativity, tenure, decile and every prior cut; "
+        "person, pooled, unequal and mixed-unit sharing are all retained. `identified_union` remains a payer-pool "
+        "sensitivity of the same lineage production/fiscal case, not a union-only fiscal rerun. "
+        "These epsilon arms sit beside the earlier declared grid; its extrema are not bounds over the new arms. "
+        "The finite-epsilon account change is Δ(native wages + earlier-immigrant wages + induced receipts); "
+        "the frozen main-case files stay unchanged. [DATA: p7_nest_shares.csv, p7_nest_cuts.csv]", ""])
+    bills=pd.read_csv(OUT/"p7_card_wage_bills.csv")
+    lineage_bills=bills[bills.population.eq("lineage")]
+    group_low=lineage_bills.iloc[0]
+    show=bills[["population","branch","hs_or_less_bn","above_hs_bn","transfer_bn","card_low_bn","card_high_bn",
+                "low_bill_change_pct","high_bill_change_pct"]].copy()
+    for f in show.columns[2:]:
+        show[f]=show[f].map(lambda x:f"{x:.6f}")
+    parts.extend([markdown(show),"",
+        f"On the lineage payer/member frame the half assignment moves ${lineage_bills.transfer_bn.sum():.3f}bn "
+        f"of the annual wage bill to the low cell. The group's low-cell removal share falls from "
+        f"{100*group_low.group_low_removal_share_before:.3f}% to {100*group_low.group_low_removal_share_card:.3f}%. "
+        "This sizes a potentially consequential input change without estimating its equilibrium effect. "
+        "[DATA: p7_card_wage_bills.csv]",
+        "The builder accepts only hs_or_less and below_ba and exposes no skill-split option. Card's requested arm "
+        "is therefore sized only: half the CPS some-college/associate wage bill (A_HGA 40–42) moves from the high to "
+        "the low cell, conserving each branch and national total. The source's 1–3-year postsecondary definition "
+        "and efficiency-hours weights are not replicated by this wage-bill diagnostic. "
+        "No Card share-ahead or net-dollar estimate can be inferred from these input shifts. The full file also reports "
+        "skill shares and group removal shares before/after. "
+        "[SOURCE: https://davidcard.berkeley.edu/papers/immigration-and-inequality.pdf pp.12–13; "
+        "DATA: p7_card_wage_bills.csv; CALCULATION: p7_nest.py]",
+       "## Live table map", "",markdown(pd.read_csv(OUT/"p7_table_map.csv")),"",
       "## Gates, reproduction and limits", "",
       f"All **{len(gates)} P7 gates** pass, in addition to the unchanged 511 hybrid gates. "
       "New allocations close at absolute 1e-9bn; weights and combined mixed-unit resources are conserved. "

@@ -10,6 +10,43 @@ HERE = Path(__file__).resolve().parent
 spec = importlib.util.spec_from_file_location("p7_frames",HERE/"p7_frames.py")
 p7 = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(p7)
+spec_nest = importlib.util.spec_from_file_location("p7_nest",HERE/"p7_nest.py")
+nest = importlib.util.module_from_spec(spec_nest)
+spec_nest.loader.exec_module(nest)
+
+
+def test_nest_scenario_extension_does_not_mutate_authoritative_globals():
+    import types
+    scope={"LANE_SCENARIOS":[("hs_or_less",2.,1.,np.inf)]}
+    exec("def solve(): return LANE_SCENARIOS",scope)
+    B=types.SimpleNamespace(row4_nest_rows=scope["solve"],LANE_SCENARIOS=scope["LANE_SCENARIOS"])
+    solver=nest.scenario_solver(B,(8.7,17.9))
+    assert [r[-1] for r in solver()]==[np.inf,8.7,17.9]
+    assert len(B.row4_nest_rows())==1
+
+
+def test_card_half_assignment_uses_different_group_and_payer_weights():
+    d=pd.DataFrame(dict(PEARNVAL=[100.,200,300,400,100,200,300,400],
+                        A_HGA=[39,40,42,43]*2,other=[True]*4+[False]*4,
+                        target=[False]*4+[True]*4,native=[True]*8))
+    # Add positive foreign branches so their share denominators are defined.
+    d=pd.concat([d,d.assign(native=False)],ignore_index=True)
+    rows=nest.card_bills(d,np.ones(16),np.full(16,2.),"fixture",p7.require)
+    native,_,group,_=rows
+    assert native["transfer_bn"]==pytest.approx(250/1e9)
+    assert group["transfer_bn"]==pytest.approx(500/1e9)
+    assert native["card_low_bn"]+native["card_high_bn"]==pytest.approx(1000/1e9)
+    assert native["group_low_removal_share_card"]==pytest.approx(2/3)
+
+
+def test_epsilon_change_keeps_nativity_and_skill_when_only_native_payers_thin():
+    d=pd.DataFrame(dict(st=[6]*4,native=[True,False,True,False],A_HGA=[39,39,43,43],other=[True]*4))
+    delta=np.array([10.,20,30,40])
+    old=np.full(4,10.)
+    new=np.array([5.,10,8,10])
+    delivered=nest.transport_wage_delta(d,delta,old,new,p7.require)
+    assert np.allclose(delivered*new,delta*old)
+    assert np.array_equal(delivered[~d.native],delta[~d.native])
 
 
 def test_unequal_sharing_can_cross_person_and_pooled_counts():

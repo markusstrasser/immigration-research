@@ -150,6 +150,159 @@
  "payer_nonnegative_and_only_other_g3_moves": {
   "passed": true
  },
+ "within_run_pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/builder.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/production_nativity_nest_2026_09_22/builder.py"
+ },
+ "pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/builder.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/production_nativity_nest_2026_09_22/builder.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/nest_model.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/production_nativity_nest_2026_09_22/nest_model.py"
+ },
+ "pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/nest_model.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/production_nativity_nest_2026_09_22/nest_model.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/nest_scenarios.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/nest_scenarios.csv"
+ },
+ "pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/nest_scenarios.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/nest_scenarios.csv"
+ },
+ "within_run_pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/branch_composition.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/branch_composition.csv"
+ },
+ "pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/branch_composition.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/branch_composition.csv"
+ },
+ "within_run_pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/audit.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/audit.json"
+ },
+ "pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/audit.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/audit.json"
+ },
+ "within_run_pin_infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py"
+ },
+ "pin_infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/matched_benefits_2026_09_19/model.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/matched_benefits_2026_09_19/model.py"
+ },
+ "pin_infra/immigration-fiscal/matched_benefits_2026_09_19/model.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/matched_benefits_2026_09_19/model.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/main_case_2026_09_29/derived/corrections.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/main_case_2026_09_29/derived/corrections.json"
+ },
+ "pin_infra/immigration-fiscal/main_case_2026_09_29/derived/corrections.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/main_case_2026_09_29/derived/corrections.json"
+ },
+ "within_run_pin_infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json"
+ },
+ "pin_infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json"
+ },
+ "nest_private_infinite": {
+  "passed": true,
+  "got_bn": -0.4634049812875846,
+  "target_bn": -0.4634049812875958
+ },
+ "nest_branch_infinite_True": {
+  "passed": true,
+  "got_bn": -0.6432185155812161,
+  "target_bn": -0.6432185155812249
+ },
+ "nest_branch_infinite_False": {
+  "passed": true,
+  "got_bn": 0.1798135342936283,
+  "target_bn": 0.17981353429362912
+ },
+ "nest_receipts_infinite": {
+  "passed": true
+ },
+ "nest_infinite_reproduces_live_row": {
+  "passed": true
+ },
+ "nest_private_eps8.7": {
+  "passed": true,
+  "got_bn": 1.0046955763585736,
+  "target_bn": 1.0046955763585714
+ },
+ "nest_branch_eps8.7_True": {
+  "passed": true,
+  "got_bn": 9.725219579396146,
+  "target_bn": 9.725219579396146
+ },
+ "nest_branch_eps8.7_False": {
+  "passed": true,
+  "got_bn": -8.720524003037575,
+  "target_bn": -8.720524003037575
+ },
+ "nest_receipts_eps8.7": {
+  "passed": true
+ },
+ "nest_private_eps17.9": {
+  "passed": true,
+  "got_bn": 0.24740855386939067,
+  "target_bn": 0.24740855386938954
+ },
+ "nest_branch_eps17.9_True": {
+  "passed": true,
+  "got_bn": 4.369342750224973,
+  "target_bn": 4.369342750224973
+ },
+ "nest_branch_eps17.9_False": {
+  "passed": true,
+  "got_bn": -4.121934196355585,
+  "target_bn": -4.121934196355584
+ },
+ "nest_receipts_eps17.9": {
+  "passed": true
+ },
+ "card_bill_conservation_identified_union_native_nonmember": {
+  "passed": true
+ },
+ "card_bill_conservation_identified_union_earlier_immigrant_nonmember": {
+  "passed": true
+ },
+ "card_bill_conservation_identified_union_group_us_born": {
+  "passed": true
+ },
+ "card_bill_conservation_identified_union_group_mexico_born": {
+  "passed": true
+ },
+ "card_bill_conservation_lineage_native_nonmember": {
+  "passed": true
+ },
+ "card_bill_conservation_lineage_earlier_immigrant_nonmember": {
+  "passed": true
+ },
+ "card_bill_conservation_lineage_group_us_born": {
+  "passed": true
+ },
+ "card_bill_conservation_lineage_group_mexico_born": {
+  "passed": true
+ },
  "within_run_pin_infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/note151.pdf": {
   "passed": true,
   "path": "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/note151.pdf"
@@ -965,6 +1118,84 @@
  "transport_has_mass_56_True": {
   "passed": true
  },
+ "epsilon_delta_cells_have_recipient_mass": {
+  "passed": true
+ },
+ "epsilon_delta_state_nativity_skill_sign_conserved": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_identified_union_eps8.7_low_native": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_identified_union_eps8.7_low_earlier_immigrant": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_identified_union_eps8.7_central_native": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_identified_union_eps8.7_central_earlier_immigrant": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_identified_union_eps8.7_high_native": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_identified_union_eps8.7_high_earlier_immigrant": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_identified_union_eps17.9_low_native": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_identified_union_eps17.9_low_earlier_immigrant": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_identified_union_eps17.9_central_native": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_identified_union_eps17.9_central_earlier_immigrant": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_identified_union_eps17.9_high_native": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_identified_union_eps17.9_high_earlier_immigrant": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_lineage_eps8.7_low_native": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_lineage_eps8.7_low_earlier_immigrant": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_lineage_eps8.7_central_native": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_lineage_eps8.7_central_earlier_immigrant": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_lineage_eps8.7_high_native": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_lineage_eps8.7_high_earlier_immigrant": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_lineage_eps17.9_low_native": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_lineage_eps17.9_low_earlier_immigrant": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_lineage_eps17.9_central_native": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_lineage_eps17.9_central_earlier_immigrant": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_lineage_eps17.9_high_native": {
+  "passed": true
+ },
+ "epsilon_delivered_branch_delta_lineage_eps17.9_high_earlier_immigrant": {
+  "passed": true
+ },
  "within_run_pin_infra/immigration-fiscal/winners_losers_2026_09_24/inputs/social_oct14.json": {
   "passed": true,
   "path": "infra/immigration-fiscal/winners_losers_2026_09_24/inputs/social_oct14.json"
@@ -1739,8 +1970,8 @@
  },
  "state_wage_cell_True_True": {
   "passed": true,
-  "got_bn": -59.73639594762903,
-  "target_bn": -59.736395947629035
+  "got_bn": -55.32398170290557,
+  "target_bn": -55.32398170290558
  },
  "state_wage_recipients_True_False_1": {
   "passed": true
@@ -1897,8 +2128,8 @@
  },
  "state_wage_cell_True_False": {
   "passed": true,
-  "got_bn": -13.015271462646334,
-  "target_bn": -13.015271462646336
+  "got_bn": -16.98892497174415,
+  "target_bn": -16.988924971744154
  },
  "state_wage_group_labour_False": {
   "passed": true
@@ -2058,8 +2289,8 @@
  },
  "state_wage_cell_False_True": {
   "passed": true,
-  "got_bn": 59.10518869211994,
-  "target_bn": 59.10518869211995
+  "got_bn": 59.70533571320266,
+  "target_bn": 59.705335713202665
  },
  "state_wage_recipients_False_False_1": {
   "passed": true
@@ -2216,13 +2447,13 @@
  },
  "state_wage_cell_False_False": {
   "passed": true,
-  "got_bn": 13.183073736867838,
-  "target_bn": 13.18307373686784
+  "got_bn": 12.85497951531644,
+  "target_bn": 12.854979515316444
  },
  "state_wage_national": {
   "passed": true,
-  "got_bn": -0.4634049812875829,
-  "target_bn": -0.4634049812875879
+  "got_bn": 0.24740855386937094,
+  "target_bn": 0.2474085538693868
  },
  "frozen_rounding_small": {
   "passed": true,
@@ -2235,13 +2466,13 @@
  },
  "mixed_unit_total_conserved": {
   "passed": true,
-  "got_bn": 519.9845874994253,
-  "target_bn": 519.9845874994251
+  "got_bn": 519.3555720998163,
+  "target_bn": 519.3555720998164
  },
  "sharing_person": {
   "passed": true,
-  "got_bn": -525.5763586666922,
-  "target_bn": -525.5763586666922
+  "got_bn": -526.2053740663011,
+  "target_bn": -526.2053740663011
  },
  "cut_closure_quintile": {
   "passed": true
@@ -2290,23 +2521,23 @@
  },
  "sharing_pooled": {
   "passed": true,
-  "got_bn": -525.5763586666922,
-  "target_bn": -525.5763586666922
+  "got_bn": -526.205374066301,
+  "target_bn": -526.2053740663011
  },
  "sharing_retains_0.5": {
   "passed": true,
-  "got_bn": -525.5763586666922,
-  "target_bn": -525.5763586666922
+  "got_bn": -526.205374066301,
+  "target_bn": -526.2053740663011
  },
  "sharing_retains_0.8": {
   "passed": true,
-  "got_bn": -525.5763586666922,
-  "target_bn": -525.5763586666922
+  "got_bn": -526.205374066301,
+  "target_bn": -526.2053740663011
  },
  "complete_channel_table_closure": {
   "passed": true,
-  "got_bn": -525.5763586666922,
-  "target_bn": -525.5763586666922
+  "got_bn": -526.2053740663011,
+  "target_bn": -526.2053740663011
  },
  "capitalization_renters_zero": {
   "passed": true
@@ -2540,6 +2771,39 @@
   "passed": true,
   "got_bn": 7.391169520588532,
   "target_bn": 7.391169520588531
+ },
+ "nest_arm_stationary_frame": {
+  "passed": true
+ },
+ "nest_account_closure_eps8.7_low": {
+  "passed": true,
+  "got_bn": -335.8275477448891,
+  "target_bn": -335.8275477448891
+ },
+ "nest_account_closure_eps8.7_central": {
+  "passed": true,
+  "got_bn": -378.51339179159334,
+  "target_bn": -378.51339179159334
+ },
+ "nest_account_closure_eps8.7_high": {
+  "passed": true,
+  "got_bn": -421.1992358382976,
+  "target_bn": -421.1992358382976
+ },
+ "nest_account_closure_eps17.9_low": {
+  "passed": true,
+  "got_bn": -337.74873360097286,
+  "target_bn": -337.74873360097286
+ },
+ "nest_account_closure_eps17.9_central": {
+  "passed": true,
+  "got_bn": -380.1058803994724,
+  "target_bn": -380.1058803994723
+ },
+ "nest_account_closure_eps17.9_high": {
+  "passed": true,
+  "got_bn": -422.4630271979718,
+  "target_bn": -422.46302719797177
  },
  "social_identified_union_b_victims_low": {
   "passed": true,
@@ -3698,6 +3962,19 @@
  "scenario_population_coverage_lineage_owner_type_broad_only": {
   "passed": true
  },
+ "nest_control_nest_recommended_matches_live": {
+  "passed": true
+ },
+ "nest_control_nest_stack_matches_live": {
+  "passed": true
+ },
+ "prior_p7_all_scenarios_preserved": {
+  "passed": true,
+  "retained_rows": 1305,
+  "frozen_rows": 1305,
+  "max_total_gap_bn": 4.989766466678702e-08,
+  "max_share_gap": 4.990216573297346e-11
+ },
  "final_source_pin_infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json": {
   "passed": true
  },
@@ -3711,6 +3988,33 @@
   "passed": true
  },
  "final_source_pin_infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/builder.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/nest_model.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/nest_scenarios.csv": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/branch_composition.csv": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/audit.json": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/matched_benefits_2026_09_19/model.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/main_case_2026_09_29/derived/corrections.json": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json": {
   "passed": true
  },
  "final_source_pin_infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/note151.pdf": {

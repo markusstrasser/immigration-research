@@ -798,5 +798,158 @@
  "replicate_se": "160 official SDR weights; conditional on fixed allocations, sharing assignments and model; not total estimation uncertainty",
  "union_population": 39.712493331187886,
  "lineage_population": 42.752212924373126,
+ "nest_sensitivities": {
+  "row4": {
+   "weights": "row4",
+   "grid": {
+    "grid": "row4",
+    "file": "main_case_candidate_2026_09_28/derived/production_row4.json",
+    "sha256": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+    "rule": "the production model on the account's row-4 weights replaces model.json's grid (private_wtp_bn, induced_receipts_bn, sampling_se_bn), scenario by scenario (item 2)"
+   },
+   "factors": {
+    "naturalized": 0.8556255897504617,
+    "noncitizen": 0.7781269999470055
+   },
+   "gdp_factor": {
+    "published": 1.5155456901687994,
+    "row4": 1.520176444772577
+   },
+   "published_solve_max_abs_diff_vs_nest_scenarios": 3.730349362740526e-12,
+   "published_gdp_factor_max_rel_diff": 1.4486190025309043e-12,
+   "row4_max_abs_diff_vs_case_grid_bn": 4.961862032359932e-10
+  },
+  "lineage": {
+   "rule": "the case's grid less the base's at each scenario's cell: the wage changes of skill cell c scaled by lambda_c and the capital columns by kappa so that P and F are the case grid's (two lambdas without capital terms, one lambda and kappa with them); sigma_NI 3 takes its sigma_NI-infinite sibling's factors [ASSUMPTION: the added members' effects fall on other residents' cells as the union's do]",
+   "base": "main_case_2026_09_29",
+   "scenarios": [
+    {
+     "split": "below_ba",
+     "sigma": 2.0,
+     "capital_adjustment": 1.0,
+     "sigma_NI": "inf",
+     "lambda_cell0": 1.0288470308884605,
+     "lambda_cell1": 1.0288615020598078,
+     "kappa": 1.0,
+     "delta_P_bn": -0.045209360956959266,
+     "delta_F_bn": 0.2599202094933091
+    },
+    {
+     "split": "hs_or_less",
+     "sigma": 2.0,
+     "capital_adjustment": 1.0,
+     "sigma_NI": "inf",
+     "lambda_cell0": 1.0190911344637232,
+     "lambda_cell1": 1.0191272488976484,
+     "kappa": 1.0,
+     "delta_P_bn": -0.006167529361221447,
+     "delta_F_bn": 0.1573120811448412
+    },
+    {
+     "split": "below_ba",
+     "sigma": 2.0,
+     "capital_adjustment": 1.0,
+     "sigma_NI": 3.0,
+     "lambda_cell0": 1.0288470308884605,
+     "lambda_cell1": 1.0288615020598078,
+     "kappa": 1.0,
+     "delta_P_bn": 0.06284745440851935,
+     "delta_F_bn": 0.330947965072113
+    },
+    {
+     "split": "below_ba",
+     "sigma": 2.0,
+     "capital_adjustment": 0.0,
+     "sigma_NI": "inf",
+     "lambda_cell0": 1.0401266934346354,
+     "lambda_cell1": 1.0401266934346354,
+     "kappa": 1.03984324926585,
+     "delta_P_bn": 2.5843008861241117,
+     "delta_F_bn": -1.7870886778384971
+    },
+    {
+     "split": "hs_or_less",
+     "sigma": 1.5,
+     "capital_adjustment": 1.0,
+     "sigma_NI": "inf",
+     "lambda_cell0": 1.0190947353676445,
+     "lambda_cell1": 1.0191306234436466,
+     "kappa": 1.0,
+     "delta_P_bn": -0.008540084965936168,
+     "delta_F_bn": 0.21090774126984257
+    },
+    {
+     "split": "hs_or_less",
+     "sigma": 2.5,
+     "capital_adjustment": 1.0,
+     "sigma_NI": "inf",
+     "lambda_cell0": 1.0190889526983993,
+     "lambda_cell1": 1.0191252047035086,
+     "kappa": 1.0,
+     "delta_P_bn": -0.0048200326152015305,
+     "delta_F_bn": 0.1254327134482498
+    },
+    {
+     "split": "below_ba",
+     "sigma": 1.5,
+     "capital_adjustment": 1.0,
+     "sigma_NI": "inf",
+     "lambda_cell0": 1.0288474845972104,
+     "lambda_cell1": 1.0288619326612851,
+     "kappa": 1.0,
+     "delta_P_bn": -0.06046535503141737,
+     "delta_F_bn": 0.34704249632172335
+    },
+    {
+     "split": "below_ba",
+     "sigma": 2.5,
+     "capital_adjustment": 1.0,
+     "sigma_NI": "inf",
+     "lambda_cell0": 1.0288467488517499,
+     "lambda_cell1": 1.0288612344195343,
+     "kappa": 1.0,
+     "delta_P_bn": -0.0360985654448025,
+     "delta_F_bn": 0.20775883360857073
+    },
+    {
+     "split": "hs_or_less",
+     "sigma": 2.0,
+     "capital_adjustment": 1.0,
+     "sigma_NI": 3.0,
+     "lambda_cell0": 1.0190911344637232,
+     "lambda_cell1": 1.0191272488976484,
+     "kappa": 1.0,
+     "delta_P_bn": 0.07477787814703518,
+     "delta_F_bn": 0.21145604634631532
+    },
+    {
+     "split": "hs_or_less",
+     "sigma": 2.0,
+     "capital_adjustment": 1.0,
+     "sigma_NI": 8.7,
+     "lambda_cell0": 1.0190911344637232,
+     "lambda_cell1": 1.0191272488976484,
+     "kappa": 1.0,
+     "delta_P_bn": 0.021354657915022557,
+     "delta_F_bn": 0.17572145212244727
+    },
+    {
+     "split": "hs_or_less",
+     "sigma": 2.0,
+     "capital_adjustment": 1.0,
+     "sigma_NI": 17.9,
+     "lambda_cell0": 1.0190911344637232,
+     "lambda_cell1": 1.0191272488976484,
+     "kappa": 1.0,
+     "delta_P_bn": 0.007157949541741537,
+     "delta_F_bn": 0.16622537762297362
+    }
+   ],
+   "max_abs_diff_vs_case_grid_bn": 3.552713678800501e-14
+  },
+  "epsilon_scope": "[ASSUMPTION] one common epsilon in both skill cells, as the existing nest; low-skill literature values transported",
+  "receipt_incidence": "delta induced labor receipts: national combined-tax key for a; equal persons for b; responding-programme receipts for c",
+  "card_status": "builder has no Card split option; wage-bill reclassification only, no equilibrium/share-ahead estimate"
+ },
  "instrument": "LLM implementation; deterministic closure and signed, matched sensitivity arms are the verification evidence"
 }

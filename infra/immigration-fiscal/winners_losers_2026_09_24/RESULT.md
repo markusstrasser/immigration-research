@@ -415,6 +415,123 @@ The low source social rows use the equal/raw-coded crime footing and the high us
 
 The enumerated grid has 2 fiscal ends × 2 wage incidences × 2 capitalization arms × 3 coherent housing levels, for each rule and person/pooled sharing. Nonhousing social rows follow the selected fiscal case end at their central model settings, including the matched source crime footing; credit rules are fixed. The reported share minimum/maximum are over this finite declared grid, not universal bounds on household outcomes or all uncertain social parameters. [CALCULATION: p7_enumerated_grid.csv]
 
+## Literature within-cell substitution and skill split
+
+
+
+| base_arm | epsilon | financing | level | total_bn | winners_share | winners_share_conditional_se | delta_vs_infinite_bn | delta_vs_infinite_ahead_pp |
+|---|---|---|---|---|---|---|---|---|
+| nest_recommended | infinite | a | low | -438.751473 | 11.082209% | 0.161789pp | 0.000000 | 0.000000 |
+| nest_recommended | infinite | a | central | -483.071540 | 4.632925% | 0.103491pp | 0.000000 | 0.000000 |
+| nest_recommended | infinite | a | high | -527.391608 | 2.329404% | 0.078289pp | 0.000000 | 0.000000 |
+| nest_recommended | eps8.7 | a | low | -435.027003 | 11.505342% | 0.157620pp | 3.724470 | 0.423133 |
+| nest_recommended | eps8.7 | a | central | -479.984293 | 4.846897% | 0.108995pp | 3.087247 | 0.213972 |
+| nest_recommended | eps8.7 | a | high | -524.941583 | 2.386283% | 0.080381pp | 2.450025 | 0.056878 |
+| nest_recommended | eps17.9 | a | low | -436.948189 | 11.280114% | 0.161305pp | 1.803284 | 0.197905 |
+| nest_recommended | eps17.9 | a | central | -481.576781 | 4.751955% | 0.103711pp | 1.494759 | 0.119030 |
+| nest_recommended | eps17.9 | a | high | -526.205374 | 2.348894% | 0.078839pp | 1.186234 | 0.019490 |
+| nest_stack | infinite | a | low | -438.751473 | 2.976538% | 0.090955pp | 0.000000 | 0.000000 |
+| nest_stack | infinite | a | central | -483.071540 | 2.271575% | 0.082740pp | 0.000000 | 0.000000 |
+| nest_stack | infinite | a | high | -527.391608 | 1.907702% | 0.075126pp | 0.000000 | 0.000000 |
+| nest_stack | eps8.7 | a | low | -435.027003 | 3.037720% | 0.091633pp | 3.724470 | 0.061182 |
+| nest_stack | eps8.7 | a | central | -479.984293 | 2.318726% | 0.084492pp | 3.087247 | 0.047151 |
+| nest_stack | eps8.7 | a | high | -524.941583 | 1.911666% | 0.076269pp | 2.450025 | 0.003964 |
+| nest_stack | eps17.9 | a | low | -436.948189 | 3.022998% | 0.091321pp | 1.803284 | 0.046460 |
+| nest_stack | eps17.9 | a | central | -481.576781 | 2.310516% | 0.084487pp | 1.494759 | 0.038941 |
+| nest_stack | eps17.9 | a | high | -526.205374 | 1.907651% | 0.075133pp | 1.186234 | -0.000051 |
+| nest_recommended | infinite | b | low | -438.751473 | 12.728445% | 0.191953pp | 0.000000 | 0.000000 |
+| nest_recommended | infinite | b | central | -483.071540 | 8.399225% | 0.161376pp | 0.000000 | 0.000000 |
+| nest_recommended | infinite | b | high | -527.391608 | 5.453652% | 0.123122pp | 0.000000 | 0.000000 |
+| nest_recommended | eps8.7 | b | low | -435.027003 | 13.004636% | 0.198199pp | 3.724470 | 0.276191 |
+| nest_recommended | eps8.7 | b | central | -479.984293 | 8.615776% | 0.164149pp | 3.087247 | 0.216552 |
+| nest_recommended | eps8.7 | b | high | -524.941583 | 5.576079% | 0.120956pp | 2.450025 | 0.122427 |
+| nest_recommended | eps17.9 | b | low | -436.948189 | 12.810510% | 0.194183pp | 1.803284 | 0.082065 |
+| nest_recommended | eps17.9 | b | central | -481.576781 | 8.496720% | 0.162948pp | 1.494759 | 0.097495 |
+| nest_recommended | eps17.9 | b | high | -526.205374 | 5.523616% | 0.123582pp | 1.186234 | 0.069963 |
+| nest_stack | infinite | b | low | -438.751473 | 4.624418% | 0.110352pp | 0.000000 | 0.000000 |
+| nest_stack | infinite | b | central | -483.071540 | 3.444365% | 0.099936pp | 0.000000 | 0.000000 |
+| nest_stack | infinite | b | high | -527.391608 | 2.818167% | 0.088100pp | 0.000000 | 0.000000 |
+| nest_stack | eps8.7 | b | low | -435.027003 | 4.702354% | 0.111721pp | 3.724470 | 0.077936 |
+| nest_stack | eps8.7 | b | central | -479.984293 | 3.485513% | 0.101933pp | 3.087247 | 0.041148 |
+| nest_stack | eps8.7 | b | high | -524.941583 | 2.867164% | 0.089086pp | 2.450025 | 0.048997 |
+| nest_stack | eps17.9 | b | low | -436.948189 | 4.671696% | 0.110583pp | 1.803284 | 0.047278 |
+| nest_stack | eps17.9 | b | central | -481.576781 | 3.465894% | 0.100561pp | 1.494759 | 0.021529 |
+| nest_stack | eps17.9 | b | high | -526.205374 | 2.851616% | 0.089406pp | 1.186234 | 0.033448 |
+| nest_recommended | infinite | c | low | -438.751473 | 18.809222% | 0.225405pp | 0.000000 | 0.000000 |
+| nest_recommended | infinite | c | central | -483.071540 | 14.741259% | 0.209569pp | 0.000000 | 0.000000 |
+| nest_recommended | infinite | c | high | -527.391608 | 10.760987% | 0.175469pp | 0.000000 | 0.000000 |
+| nest_recommended | eps8.7 | c | low | -435.027003 | 19.019857% | 0.227606pp | 3.724470 | 0.210635 |
+| nest_recommended | eps8.7 | c | central | -479.984293 | 14.922451% | 0.212845pp | 3.087247 | 0.181191 |
+| nest_recommended | eps8.7 | c | high | -524.941583 | 10.922777% | 0.176081pp | 2.450025 | 0.161790 |
+| nest_recommended | eps17.9 | c | low | -436.948189 | 18.890204% | 0.228498pp | 1.803284 | 0.080982 |
+| nest_recommended | eps17.9 | c | central | -481.576781 | 14.838385% | 0.211878pp | 1.494759 | 0.097125 |
+| nest_recommended | eps17.9 | c | high | -526.205374 | 10.842920% | 0.173567pp | 1.186234 | 0.081933 |
+| nest_stack | infinite | c | low | -438.751473 | 5.811448% | 0.127753pp | 0.000000 | 0.000000 |
+| nest_stack | infinite | c | central | -483.071540 | 4.236055% | 0.111336pp | 0.000000 | 0.000000 |
+| nest_stack | infinite | c | high | -527.391608 | 3.409587% | 0.101783pp | 0.000000 | 0.000000 |
+| nest_stack | eps8.7 | c | low | -435.027003 | 5.929598% | 0.130113pp | 3.724470 | 0.118150 |
+| nest_stack | eps8.7 | c | central | -479.984293 | 4.295934% | 0.110492pp | 3.087247 | 0.059879 |
+| nest_stack | eps8.7 | c | high | -524.941583 | 3.410734% | 0.102067pp | 2.450025 | 0.001148 |
+| nest_stack | eps17.9 | c | low | -436.948189 | 5.872366% | 0.127813pp | 1.803284 | 0.060918 |
+| nest_stack | eps17.9 | c | central | -481.576781 | 4.279363% | 0.111933pp | 1.494759 | 0.043308 |
+| nest_stack | eps17.9 | c | high | -526.205374 | 3.406854% | 0.103026pp | 1.186234 | -0.002733 |
+
+
+
+Across rules a/b/c the recommended central share ahead moves by at most 0.217 percentage points. The minority-ahead conclusion survives both literature arms. The modeled wage split does not: the small aggregate native loss at infinity becomes a native gain at both finite values, while earlier immigrants move from a small gain to a loss. These are model outcomes under transported parameters. [CALCULATION: p7_nest_shares.csv; p7_nest_wage_split.csv; p7_nest_delivered_wages.csv]
+
+Each finite-epsilon row changes only within-cell substitution from its matching infinite control. `nest_recommended` is stationary financing, complete social rows, lineage payer pool and crossing credits; `nest_stack` also takes state wage incidence, capitalization and the central owner-type allocation. Low/high preserve personal specifications 16/11 and their cash/GDP normalization; central is the priced-array midpoint. The new controls reproduce every matching prior P7 sign count and dollar total; the frozen hybrid also remains unchanged. [CALCULATION: p7_nest_shares.csv; p7_gates.json]
+
+The nest is invoked read-only via its existing row-4 solve and lineage adapter, with a copied scenario list. Finite epsilons retain the infinite sibling's cell-specific added-descendant multipliers, exactly as the existing ε=3 arm. Native and earlier-immigrant after-tax wage changes, plus induced labor receipts, change together. The unchanged delivered infinite baseline receives each epsilon's wage delta, preserving the delta's state × nativity × skill × sign totals under payer thinning. This avoids reassigning the native/immigrant transfer while preserving the recommended control. Raw solver wage levels below and actual delivered levels in `p7_nest_delivered_wages.csv` are distinguished; their epsilon changes match at 1e-9bn. Extra receipts use the existing epsilon arm's combined national tax key under (a), equal persons under (b), and the responding-programme receipt key under (c); the nest does not identify their government jurisdiction. [ASSUMPTION; CALCULATION: p7_nest.py, p7_frames.py]
+
+Caiumi–Peri's 8.7 is the rounded reciprocal of Table 7's no-diploma coefficient, not a pooled HS-or-less estimate. Piyapromdee's 17.9 is Table 1's rounded low-skill native/immigrant elasticity. Both arms apply a common epsilon to both model skill cells, as the existing nest does; that transport is assumed. These are model sensitivities, not estimates on the lineage. [SOURCE: https://www.nber.org/papers/w32389; https://doi.org/10.1093/restud/rdaa029; production_nativity_nest_2026_09_22/builder.py SIGMA_NI_CITATION]
+
+
+
+| epsilon | level | branch | after_tax_wage_bn | delta_vs_infinite_bn | induced_receipts_bn | delta_receipts_bn |
+|---|---|---|---|---|---|---|
+| inf | low | native | -0.977806 | 0.000000 | 12.614102 | 0.000000 |
+| inf | low | earlier_immigrant | 0.273348 | 0.000000 | 12.614102 | 0.000000 |
+| inf | central | native | -0.810512 | 0.000000 | 10.455945 | 0.000000 |
+| inf | central | earlier_immigrant | 0.226581 | 0.000000 | 10.455945 | 0.000000 |
+| inf | high | native | -0.643219 | 0.000000 | 8.297788 | 0.000000 |
+| inf | high | earlier_immigrant | 0.179814 | 0.000000 | 8.297788 | 0.000000 |
+| 8.7 | low | native | 14.784050 | 15.761855 | 14.106800 | 1.492698 |
+| 8.7 | low | earlier_immigrant | -13.256735 | -13.530083 | 14.106800 | 1.492698 |
+| 8.7 | central | native | 12.254635 | 13.065147 | 11.693256 | 1.237311 |
+| 8.7 | central | earlier_immigrant | -10.988630 | -11.215211 | 11.693256 | 1.237311 |
+| 8.7 | high | native | 9.725220 | 10.368438 | 9.279713 | 0.981924 |
+| 8.7 | high | earlier_immigrant | -8.720524 | -8.900338 | 9.279713 | 0.981924 |
+| 17.9 | low | native | 6.642172 | 7.619978 | 13.336824 | 0.722722 |
+| 17.9 | low | earlier_immigrant | -6.266067 | -6.539416 | 13.336824 | 0.722722 |
+| 17.9 | central | native | 5.505757 | 6.316269 | 11.055016 | 0.599071 |
+| 17.9 | central | earlier_immigrant | -5.194001 | -5.420582 | 11.055016 | 0.599071 |
+| 17.9 | high | native | 4.369343 | 5.012561 | 8.773208 | 0.475420 |
+| 17.9 | high | earlier_immigrant | -4.121934 | -4.301748 | 8.773208 | 0.475420 |
+
+
+
+The cut tables are `p7_nest_cuts.csv`, with state3, edu_nativity, tenure, decile and every prior cut; person, pooled, unequal and mixed-unit sharing are all retained. `identified_union` remains a payer-pool sensitivity of the same lineage production/fiscal case, not a union-only fiscal rerun. These epsilon arms sit beside the earlier declared grid; its extrema are not bounds over the new arms. The finite-epsilon account change is Δ(native wages + earlier-immigrant wages + induced receipts); the frozen main-case files stay unchanged. [DATA: p7_nest_shares.csv, p7_nest_cuts.csv]
+
+
+
+| population | branch | hs_or_less_bn | above_hs_bn | transfer_bn | card_low_bn | card_high_bn | low_bill_change_pct | high_bill_change_pct |
+|---|---|---|---|---|---|---|---|---|
+| identified_union | native_nonmember | 1828.607437 | 7607.740319 | 996.387093 | 2824.994530 | 6611.353226 | 54.488846 | -13.097018 |
+| identified_union | earlier_immigrant_nonmember | 395.059146 | 1684.581783 | 124.120182 | 519.179328 | 1560.461601 | 31.418126 | -7.368012 |
+| identified_union | group_us_born | 228.801250 | 442.387698 | 100.664238 | 329.465488 | 341.723461 | 43.996367 | -22.754755 |
+| identified_union | group_mexico_born | 226.970162 | 113.148010 | 22.743919 | 249.714081 | 90.404091 | 10.020665 | -20.101033 |
+| lineage | native_nonmember | 1811.243266 | 7545.986420 | 987.779974 | 2799.023240 | 6558.206446 | 54.536019 | -13.090137 |
+| lineage | earlier_immigrant_nonmember | 395.059146 | 1684.581783 | 124.120182 | 519.179328 | 1560.461601 | 31.418126 | -7.368012 |
+| lineage | group_us_born | 250.622130 | 485.859136 | 110.242961 | 360.865091 | 375.616175 | 43.987720 | -22.690314 |
+| lineage | group_mexico_born | 226.970162 | 113.148010 | 22.743919 | 249.714081 | 90.404091 | 10.020665 | -20.101033 |
+
+
+
+On the lineage payer/member frame the half assignment moves $1244.887bn of the annual wage bill to the low cell. The group's low-cell removal share falls from 17.795% to 15.541%. This sizes a potentially consequential input change without estimating its equilibrium effect. [DATA: p7_card_wage_bills.csv]
+
+The builder accepts only hs_or_less and below_ba and exposes no skill-split option. Card's requested arm is therefore sized only: half the CPS some-college/associate wage bill (A_HGA 40–42) moves from the high to the low cell, conserving each branch and national total. The source's 1–3-year postsecondary definition and efficiency-hours weights are not replicated by this wage-bill diagnostic. No Card share-ahead or net-dollar estimate can be inferred from these input shifts. The full file also reports skill shares and group removal shares before/after. [SOURCE: https://davidcard.berkeley.edu/papers/immigration-and-inequality.pdf pp.12–13; DATA: p7_card_wage_bills.csv; CALCULATION: p7_nest.py]
+
 ## Live table map
 
 
@@ -434,6 +551,11 @@ The enumerated grid has 2 fiscal ends × 2 wage incidences × 2 capitalization a
 | §5 group resources | group_frame.csv | live 42.75M; p7_mixed_reconciliation.csv for boundary transfer |
 | §6 excluded roles | p7_excluded_channels.csv | source exclusions and supplemental/proposed channels; role_table.csv preserves source roles |
 | §1 financing | p7_trust_inputs.json | exact set/cash trust-fund amounts; p7_net_shares future_bn |
+| literature epsilon arms | p7_nest_shares.csv | matched recommended and full-stack; both payer pools, a/b/c, low/central/high, all sharing rules |
+| literature epsilon cuts | p7_nest_cuts.csv | same tags; state3,edu_nativity,tenure,decile and all existing cuts |
+| native/earlier-immigrant wage split | p7_nest_wage_split.csv | after-tax changes and induced receipts, both normalizations and midpoint |
+| delivered wage split | p7_nest_delivered_wages.csv | payer-weighted actual native/earlier-immigrant amounts; baseline preserved, each epsilon cell delta conserved |
+| Card split sizing only | p7_card_wage_bills.csv | half some-college wage bill moved; no supported equilibrium/share-ahead arm |
 
 
 
@@ -441,7 +563,7 @@ The enumerated grid has 2 fiscal ends × 2 wage incidences × 2 capitalization a
 
 
 
-All **1049 P7 gates** pass, in addition to the unchanged 511 hybrid gates. New allocations close at absolute 1e-9bn; weights and combined mixed-unit resources are conserved. The primary source's serializing residual is allocated explicitly. [DATA: p7_gates.json; gates.json]
+All **1133 P7 gates** pass, in addition to the unchanged 511 hybrid gates. New allocations close at absolute 1e-9bn; weights and combined mixed-unit resources are conserved. The primary source's serializing residual is allocated explicitly. [DATA: p7_gates.json; gates.json]
 
 Winner-share SEs use the 160 official successive-difference replicate weights and hold the priced arrays, sharing assignments and model fixed. They measure conditional prevalence uncertainty, not uncertainty of the allocation or causal model. Credit-flow SEs come from the primary tax model's full calibrated joint replicates. [DATA: p7_net_shares.csv, p7_inputs.json]
 
