@@ -261,6 +261,36 @@ const ALL = {};
 for (const [k, v] of Object.entries(UE)) ALL[`U_${k}`] = { set: v, cash: UEc[k] };
 for (const [k, v] of Object.entries(LINEAGE)) ALL[`L_${k}`] = { set: v, cash: v };
 ALL.white = { set: WHITE, cash: WHITE };
+// The live-case residual checker needs this measurement's cell shifts, not another
+// oct07 pricing run. Export before the historical rows/files are computed.
+// node row4_oct07.cjs --export-row4 derived/row4_oct14_inputs.json
+if (process.argv[2] === "--export-row4") {
+  if (!process.argv[3]) throw new Error("[BLOCKED] --export-row4 needs an output path");
+  const edits = {};
+  for (const w of SETS) {
+    let corrected = M[w];
+    for (const [name, pair] of Object.entries(ALL)) {
+      if (name === "white" || name === "U_oasdi_ratio_rate_held") continue;
+      const r = pair[w];
+      if (!(r.set_only && w === "cash")) corrected = r.apply(corrected, w);
+    }
+    edits[w] = [];
+    for (const [side, modelSide, cellField] of [["spending", "spending", "keys"], ["receipt", "receipts", "cells"]]) {
+      for (const original of M[w][modelSide].lines) {
+        const changed = lineOf(corrected, modelSide, original.id);
+        gate(`export ${w}/${side}/${original.id}: national total unchanged`, original.national_bn === changed.national_bn);
+        for (const key of Object.keys(original[cellField])) {
+          const by = byAlloc((a) => changed[cellField][key][a].target_bn - original[cellField][key][a].target_bn);
+          if (ALLOCS.some((a) => by[a] !== 0)) edits[w].push({ side, line: original.id, ...(side === "receipt" ? { scenario: key } : { key }), by });
+        }
+      }
+    }
+  }
+  if (fails) { console.error(`[BLOCKED] ${fails} measurement gate(s) failed; nothing written`); process.exit(1); }
+  fs.writeFileSync(process.argv[3], JSON.stringify({ source: "row4_oct07.cjs: row-4 measurement, before historical pricing", edits, gates_failed: fails }, null, 1) + "\n");
+  console.log(`[written] ${process.argv[3]} (measurement only; no oct07 files regenerated)`);
+  process.exit(0);
+}
 function run(names) {
   const out = {};
   for (const w of SETS) {

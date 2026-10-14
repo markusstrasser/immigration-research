@@ -259,7 +259,28 @@ All pass; each script writes nothing and exits 1 on any failure.
   and that the cash set's Medicare equals the September 27 case's (1e-9).
 - Every classified line cites file:line (table above).
 
-## Reproduce
+## Live-case reproduction (oct14)
+
+The live consumer is `row4_oct14.cjs`. It reads the case's personal end numbers from
+`summary.json` `v7.end_specifications`, locates `row4_frame` by `meta.items`, and subtracts that item's
+applied cell shifts from this lane's measured row-4 shifts before pricing the remainder. If the item is
+adopted, both its cell residual and its priced residual must be zero at 1e-9. The full-precision total
+must match the case's `summary.json` at 1e-9; the `adopted` and `cash_set` CSV rows are checked at 5e-5
+because the case prints four decimal places. No gate is relaxed to accommodate a changed item.
+
+`row4_oct07.cjs --export-row4` reuses the measurement formulas and their positive controls, stopping
+before the historical pricing/output block. The v4/v6 measurements remain read-only source inputs;
+no earlier case file is regenerated. Run after the final oct14 case is adopted:
+
+```sh
+node infra/immigration-fiscal/row4_class_2026_09_29/row4_oct07.cjs --export-row4 infra/immigration-fiscal/row4_class_2026_09_29/derived/row4_oct14_inputs.json
+node infra/immigration-fiscal/row4_class_2026_09_29/row4_oct14.cjs
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/row4_class_2026_09_29 \
+  "node {lane}/row4_oct07.cjs --export-row4 {lane}/derived/row4_oct14_inputs.json" \
+  "node {lane}/row4_oct14.cjs"
+```
+
+## Historical reproduction (v4/v6; not the live consumer)
 
 From the repository root, in this order (`row4_parta.py` first: the other Python scripts read its factors;
 `price_rekeys.cjs` after the v4 reruns; the v6 pair last, since `row4_oct07.py` gates on the v4 outputs and
@@ -354,3 +375,11 @@ Times from `date` (JST).
   UV_OFFLINE=1): every command rc 0, IDENTICAL (19/19 files unchanged), exit 0.
 - 01:49:32: the v6 section, Reproduce and Log written (table under controlled rounding, five printed values moved by
   0.0001); no output changed.
+- 2026-10-14 18:16:22 JST: live consumer moved to oct14 after CASE_FINAL (committed case `148ed1ea`, all 26 case
+  files byte-checked). `row4_frame` is now in the case: the independent measurement export minus its registered
+  edits leaves maximum cell residual 1.31e-14bn on the set and 4.06e-15bn on the cash set; the priced residual is
+  **0 / 0bn in both sets**, gated at 1e-9. The set is **339.5520 / 423.6493bn**, cash **264.4256 / 348.5228bn**
+  (`derived/row4_oct14.json`, `sets.*.baseline_bn`, rounded once); the exact summary gate is 1e-9 and the
+  four-decimal case CSV gate is 5e-5. `row4_oct14.cjs`: 115 gates PASS. Rerun of the two live commands above:
+  **IDENTICAL: 23/23, exit 0**. Earlier case outputs were preserved. [CALCULATION: `row4_oct07.cjs --export-row4`
+  → `derived/row4_oct14_inputs.json`; `row4_oct14.cjs` → `derived/row4_oct14.json` and `row4_oct14.csv`]

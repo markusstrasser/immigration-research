@@ -1,0 +1,1101 @@
+{
+ "case": "oct14",
+ "end_specifications": {
+  "set": [
+   16,
+   11
+  ],
+  "cash": [
+   16,
+   11
+  ],
+  "by_method": {
+   "set": [
+    [
+     16,
+     11
+    ],
+    [
+     16,
+     11
+    ]
+   ],
+   "cash": [
+    [
+     16,
+     11
+    ],
+    [
+     16,
+     11
+    ]
+   ]
+  }
+ },
+ "tolerance_bn": 1e-9,
+ "sets": {
+  "set": {
+   "absorbed": true,
+   "baseline_bn": [
+    339.5520178295269,
+    423.6492607005069
+   ],
+   "residual_bn": [
+    0,
+    0
+   ],
+   "residual_cost_bn": [
+    339.5520178295269,
+    423.6492607005069
+   ],
+   "maximum_cell_residual_bn": 1.3100631690576847e-14,
+   "residual_edits": [
+    {
+     "side": "spending",
+     "line": "social_security",
+     "key": "social_security",
+     "by": {
+      "personal": 2.7200464103316335e-15,
+      "shared": 2.942091015256665e-15
+     }
+    },
+    {
+     "side": "spending",
+     "line": "medicare",
+     "key": "medicare",
+     "by": {
+      "personal": 1.3322676295501878e-15,
+      "shared": -1.3100631690576847e-14
+     }
+    },
+    {
+     "side": "spending",
+     "line": "state_price_public_order_safety",
+     "key": "k",
+     "by": {
+      "personal": -8.326672684688674e-16,
+      "shared": -8.326672684688674e-16
+     }
+    },
+    {
+     "side": "spending",
+     "line": "state_price_health_services",
+     "key": "k",
+     "by": {
+      "personal": 4.579669976578771e-16,
+      "shared": 4.579669976578771e-16
+     }
+    },
+    {
+     "side": "spending",
+     "line": "state_price_recreation_culture",
+     "key": "k",
+     "by": {
+      "personal": 1.8214596497756474e-17,
+      "shared": 1.8214596497756474e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "federal_income_tax",
+     "scenario": "cbo_collective",
+     "by": {
+      "personal": 5.509481759702339e-15,
+      "shared": -4.912736883966318e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "federal_income_tax",
+     "scenario": "corporate_all_capital",
+     "by": {
+      "personal": 5.509481759702339e-15,
+      "shared": -4.912736883966318e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "federal_income_tax",
+     "scenario": "federal_gap_high_agi",
+     "by": {
+      "personal": 1.2191636589165e-14,
+      "shared": 3.740063814205996e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "federal_income_tax",
+     "scenario": "medicare_income_weighted",
+     "by": {
+      "personal": 5.509481759702339e-15,
+      "shared": -4.912736883966318e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "federal_income_tax",
+     "scenario": "nas_80",
+     "by": {
+      "personal": 5.509481759702339e-15,
+      "shared": -4.912736883966318e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "federal_income_tax",
+     "scenario": "property_residual_consumption",
+     "by": {
+      "personal": 5.509481759702339e-15,
+      "shared": -4.912736883966318e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "federal_income_tax",
+     "scenario": "public_assets_tax_base",
+     "by": {
+      "personal": 5.509481759702339e-15,
+      "shared": -4.912736883966318e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "federal_income_tax",
+     "scenario": "treasury_815",
+     "by": {
+      "personal": 5.509481759702339e-15,
+      "shared": -4.912736883966318e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "cbo_collective",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "corporate_all_capital",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "federal_gap_high_agi",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "medicare_income_weighted",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "nas_80",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "property_residual_consumption",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "public_assets_tax_base",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "treasury_815",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "cbo_collective",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "corporate_all_capital",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "federal_gap_high_agi",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "medicare_income_weighted",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "nas_80",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "property_residual_consumption",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "public_assets_tax_base",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "treasury_815",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "modeled_owner_property",
+     "scenario": "cbo_collective",
+     "by": {
+      "personal": -1.27675647831893e-15,
+      "shared": -1.27675647831893e-15
+     }
+    }
+   ]
+  },
+  "cash": {
+   "absorbed": true,
+   "baseline_bn": [
+    264.4255736155054,
+    348.52281648648557
+   ],
+   "residual_bn": [
+    0,
+    0
+   ],
+   "residual_cost_bn": [
+    264.4255736155054,
+    348.52281648648557
+   ],
+   "maximum_cell_residual_bn": 4.062722380737682e-15,
+   "residual_edits": [
+    {
+     "side": "spending",
+     "line": "state_price_public_order_safety",
+     "key": "k",
+     "by": {
+      "personal": -8.326672684688674e-16,
+      "shared": -8.326672684688674e-16
+     }
+    },
+    {
+     "side": "spending",
+     "line": "state_price_health_services",
+     "key": "k",
+     "by": {
+      "personal": 4.579669976578771e-16,
+      "shared": 4.579669976578771e-16
+     }
+    },
+    {
+     "side": "spending",
+     "line": "state_price_recreation_culture",
+     "key": "k",
+     "by": {
+      "personal": 1.8214596497756474e-17,
+      "shared": 1.8214596497756474e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "cbo_collective",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "corporate_all_capital",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "federal_gap_high_agi",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "medicare_income_weighted",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "nas_80",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "property_residual_consumption",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "public_assets_tax_base",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "scenario": "treasury_815",
+     "by": {
+      "personal": -1.8735013540549517e-16,
+      "shared": -9.71445146547012e-17
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "cbo_collective",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "corporate_all_capital",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "federal_gap_high_agi",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "medicare_income_weighted",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "nas_80",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "property_residual_consumption",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "public_assets_tax_base",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "scenario": "treasury_815",
+     "by": {
+      "personal": 3.2959746043559335e-16,
+      "shared": 4.062722380737682e-15
+     }
+    },
+    {
+     "side": "receipt",
+     "line": "modeled_owner_property",
+     "scenario": "cbo_collective",
+     "by": {
+      "personal": -1.27675647831893e-15,
+      "shared": -1.27675647831893e-15
+     }
+    }
+   ]
+  }
+ },
+ "gates": [
+  {
+   "name": "measurement export passed every source gate",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "v7 ends are two personal specifications per set",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "case band CSV has its declared columns",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "set: adopted oct14 payload",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|social_security|social_security",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|medicare|medicare",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|state_price_public_order_safety|k",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|state_price_health_services|k",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|state_price_recreation_culture|k",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|cbo_collective",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|corporate_all_capital",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|federal_gap_high_agi",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|medicare_income_weighted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|nas_80",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|property_residual_consumption",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|public_assets_tax_base",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|treasury_815",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|cbo_collective",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|corporate_all_capital",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|federal_gap_high_agi",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|medicare_income_weighted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|nas_80",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|property_residual_consumption",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|public_assets_tax_base",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|treasury_815",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|cbo_collective",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|corporate_all_capital",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|federal_gap_high_agi",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|medicare_income_weighted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|nas_80",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|property_residual_consumption",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|public_assets_tax_base",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|treasury_815",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|modeled_owner_property|cbo_collective",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "set: registered row4_frame is an edit set",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|modeled_owner_property|cbo_collective",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|medicare|medicare",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|cbo_collective",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|corporate_all_capital",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|federal_gap_high_agi",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|medicare_income_weighted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|nas_80",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|property_residual_consumption",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|public_assets_tax_base",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|federal_income_tax|treasury_815",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|state_price_public_order_safety|k",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|state_price_health_services|k",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|state_price_recreation_culture|k",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|cbo_collective",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|corporate_all_capital",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|federal_gap_high_agi",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|medicare_income_weighted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|nas_80",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|property_residual_consumption",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|public_assets_tax_base",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|treasury_815",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|cbo_collective",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|corporate_all_capital",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|federal_gap_high_agi",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|medicare_income_weighted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|nas_80",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|property_residual_consumption",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|public_assets_tax_base",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|treasury_815",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|social_security|social_security",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "set: adopted row4_frame exhausts the measured cell shifts (1e-9)",
+   "pass": true,
+   "detail": "1.310e-14"
+  },
+  {
+   "name": "set: live total matches the full-precision case band (1e-9)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "set: live total matches main_case_bands.csv (5e-5: four decimal places)",
+   "pass": true,
+   "detail": "339.5520178295269 / 423.6492607005069; row adopted"
+  },
+  {
+   "name": "set: measured residual on oct14 is zero (1e-9)",
+   "pass": true,
+   "detail": "0 / 0"
+  },
+  {
+   "name": "cash: adopted oct14 payload",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|state_price_public_order_safety|k",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|state_price_health_services|k",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|state_price_recreation_culture|k",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|cbo_collective",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|corporate_all_capital",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|federal_gap_high_agi",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|medicare_income_weighted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|nas_80",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|property_residual_consumption",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|public_assets_tax_base",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|treasury_815",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|cbo_collective",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|corporate_all_capital",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|federal_gap_high_agi",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|medicare_income_weighted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|nas_80",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|property_residual_consumption",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|public_assets_tax_base",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|treasury_815",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|modeled_owner_property|cbo_collective",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cash: registered row4_frame is an edit set",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|modeled_owner_property|cbo_collective",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|state_price_public_order_safety|k",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|state_price_health_services|k",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement spending|state_price_recreation_culture|k",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|cbo_collective",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|corporate_all_capital",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|federal_gap_high_agi",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|medicare_income_weighted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|nas_80",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|property_residual_consumption",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|public_assets_tax_base",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|general_sales_tax|treasury_815",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|cbo_collective",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|corporate_all_capital",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|federal_gap_high_agi",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|medicare_income_weighted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|nas_80",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|property_residual_consumption",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|public_assets_tax_base",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cell-shift measurement receipt|personal_motor_vehicle|treasury_815",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cash: adopted row4_frame exhausts the measured cell shifts (1e-9)",
+   "pass": true,
+   "detail": "4.063e-15"
+  },
+  {
+   "name": "cash: live total matches the full-precision case band (1e-9)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cash: live total matches main_case_bands.csv (5e-5: four decimal places)",
+   "pass": true,
+   "detail": "264.4255736155054 / 348.52281648648557; row cash_set"
+  },
+  {
+   "name": "cash: measured residual on oct14 is zero (1e-9)",
+   "pass": true,
+   "detail": "0 / 0"
+  }
+ ]
+}
