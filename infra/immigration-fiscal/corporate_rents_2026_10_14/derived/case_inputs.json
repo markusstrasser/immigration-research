@@ -1,0 +1,250 @@
+{
+  "rule": "one change at frozen v7 personal specifications 16/11; consumption proxy = customs consumption cells, methods averaged; added persons rebuilt at own ages",
+  "baseline_lineage_bn": [
+    339.55201782952685,
+    423.64926070050683
+  ],
+  "baseline_lineage_cash_bn": [
+    264.4255736155055,
+    348.52281648648557
+  ],
+  "baseline_union_bn": [
+    317.74297962279894,
+    395.8107295353342
+  ],
+  "baseline_union_cash_bn": [
+    248.13105839910247,
+    326.19880831163766
+  ],
+  "union_baseline_rule": "the union at frozen v7 lineage responses, not the different union-only removal responses",
+  "population": {
+    "union": 39712493.3312,
+    "added": 3039719.593185237,
+    "lineage": 42752212.92438524
+  },
+  "corporate": {
+    "national_bn": 663.685,
+    "normal_share": 0.37,
+    "union_bn": 41.61275980778575,
+    "lineage_bn": 45.08611009332533,
+    "parts_bn": {
+      "union_G1": 13.213181978535768,
+      "union_G2": 14.30485666432735,
+      "union_G3plus": 14.094721164922628,
+      "lineage_g3plus": 1.6513828205546475,
+      "lineage_whites": 1.8219674649849371
+    }
+  },
+  "consumption": {
+    "by_method": [
+      {
+        "method": "b_hotdeck_union_matched",
+        "national_bn": 83.587,
+        "union": 0.08205314613145887,
+        "lineage": 0.0897271233395792,
+        "added": 0.007673977208120335
+      },
+      {
+        "method": "b_matched_over_pooled",
+        "national_bn": 83.587,
+        "union": 0.08170719321788987,
+        "lineage": 0.0893811704260102,
+        "added": 0.007673977208120335
+      }
+    ],
+    "union": 0.08188016967467437,
+    "lineage": 0.0895541468827947,
+    "note": "Proxy for proportional market rents; neither a measured corporate-rent elasticity nor a US-only corporate sales share. Customs was chosen to avoid state price/fuel keys."
+  },
+  "source_hashes": {
+    "main_case_2026_10_14/derived/summary.json": "b30720cff0c29637ab6f74d809829fdbfc4b82a00a45fa286e3f0c1c5c183582",
+    "main_case_2026_10_14/derived/corrections.json": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958",
+    "main_case_2026_10_14/derived/lineage_addition.json": "fde51a608e49d7bd3a88a4044f8d9637b6c20cbb3ac52f244b478e14c5311a49",
+    "job_capital_taxes_2026_10_14/derived/items.csv": "7be8c55bb04693e42d079b05b022adf9a1720b362da3206c6f7d7d21cfdc49e1",
+    "job_capital_taxes_2026_10_14/derived/item.json": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283",
+    "consumption_key_2026_09_24/derived/summary.json": "cb2bb6211ed633a27706c3400ad99530b09e3a5aeac48521b12def58bd66c9ba"
+  },
+  "gates": [
+    {
+      "name": "frozen upstream pin: infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json",
+      "passed": true,
+      "detail": "b30720cff0c29637ab6f74d809829fdbfc4b82a00a45fa286e3f0c1c5c183582"
+    },
+    {
+      "name": "frozen upstream pin: infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json",
+      "passed": true,
+      "detail": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958"
+    },
+    {
+      "name": "frozen upstream pin: infra/immigration-fiscal/main_case_2026_10_14/derived/lineage_addition.json",
+      "passed": true,
+      "detail": "fde51a608e49d7bd3a88a4044f8d9637b6c20cbb3ac52f244b478e14c5311a49"
+    },
+    {
+      "name": "frozen upstream pin: infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/items.csv",
+      "passed": true,
+      "detail": "7be8c55bb04693e42d079b05b022adf9a1720b362da3206c6f7d7d21cfdc49e1"
+    },
+    {
+      "name": "frozen upstream pin: infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/item.json",
+      "passed": true,
+      "detail": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283"
+    },
+    {
+      "name": "frozen upstream pin: infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/summary.json",
+      "passed": true,
+      "detail": "e34797b916a751b5a8b14d2a4e926968dca3017c1ef0fcfa913e29941c85bc30"
+    },
+    {
+      "name": "frozen upstream pin: infra/immigration-fiscal/consumption_key_2026_09_24/derived/summary.json",
+      "passed": true,
+      "detail": "cb2bb6211ed633a27706c3400ad99530b09e3a5aeac48521b12def58bd66c9ba"
+    },
+    {
+      "name": "frozen upstream pin: infra/immigration-fiscal/main_case_2026_10_14/package.cjs",
+      "passed": true,
+      "detail": "ec00d49b40c118e61d2a6543ad21a54021b6364ebf49e0e4b3a97260fa3cc907"
+    },
+    {
+      "name": "frozen upstream pin: infra/immigration-fiscal/main_case_2026_10_14/item_job_capital.cjs",
+      "passed": true,
+      "detail": "69d93ef3bae160bee3986ddd6920d7bfa9f83fca61f725440fb2efe0e4626f2d"
+    },
+    {
+      "name": "frozen upstream pin: infra/immigration-fiscal/main_case_2026_10_07/item_age_mix.cjs",
+      "passed": true,
+      "detail": "6f94386fe460afca36a732982848d0345e96755ee8469fbc481569b7a555c7b5"
+    },
+    {
+      "name": "v7 adopted, personal, ends 16/11",
+      "passed": true,
+      "detail": {
+        "set": [
+          16,
+          11
+        ],
+        "cash": [
+          16,
+          11
+        ],
+        "by_method": {
+          "set": [
+            [
+              16,
+              11
+            ],
+            [
+              16,
+              11
+            ]
+          ],
+          "cash": [
+            [
+              16,
+              11
+            ],
+            [
+              16,
+              11
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "name": "set: live package positive control vs frozen central (1e-9bn)",
+      "passed": true,
+      "detail": [
+        339.55201782952685,
+        423.64926070050683
+      ]
+    },
+    {
+      "name": "cash: live package positive control vs frozen central (1e-9bn)",
+      "passed": true,
+      "detail": [
+        264.4255736155055,
+        348.52281648648557
+      ]
+    },
+    {
+      "name": "corporate generations conserve union (1e-9bn)",
+      "passed": true,
+      "detail": 41.61275980778575
+    },
+    {
+      "name": "corporate parts conserve lineage (1e-9bn)",
+      "passed": true,
+      "detail": 45.08611009332533
+    },
+    {
+      "name": "corporate key times national reproduces union (1e-9bn)",
+      "passed": true,
+      "detail": 663.685
+    },
+    {
+      "name": "production residence-capital term remains zero",
+      "passed": true,
+      "detail": {
+        "capital_tax_term_bn": 0,
+        "rule": "the production module's capital-tax term is 0.246 x (domestic capital gain - capital_tax_retention x opportunity income); at every case specification the state's production cell has capital_adjustment 1, capital_tax_retention 1 and no excluded owners, where the term is 0 (full_account_benefits_2026_09_20 upstream_replay scenarios.csv; main_case.cjs gates it)"
+      }
+    },
+    {
+      "name": "normal-return arm field present",
+      "passed": true,
+      "detail": [
+        "item",
+        "arm",
+        "source_arm",
+        "label",
+        "band_bn",
+        "end_specifications",
+        "change_from_the_case_bn",
+        "on_v6_band_bn",
+        "change_from_v6_arm_bn",
+        "cash"
+      ]
+    },
+    {
+      "name": "existing fixed-rent phi=1 arm closes (1e-9bn)",
+      "passed": true,
+      "detail": [
+        367.9562671883219,
+        423.64926070050683
+      ]
+    },
+    {
+      "name": "b_hotdeck_union_matched: consumption member + other closes national (1e-9bn)",
+      "passed": true,
+      "detail": 83.587
+    },
+    {
+      "name": "b_hotdeck_union_matched: consumption key nonnegative and conserves shares (1e-12)",
+      "passed": true,
+      "detail": 0.08205314613145887
+    },
+    {
+      "name": "b_matched_over_pooled: consumption member + other closes national (1e-9bn)",
+      "passed": true,
+      "detail": 83.587
+    },
+    {
+      "name": "b_matched_over_pooled: consumption key nonnegative and conserves shares (1e-12)",
+      "passed": true,
+      "detail": 0.08170719321788987
+    },
+    {
+      "name": "population conservation (1e-6 persons)",
+      "passed": true,
+      "detail": {
+        "added": 3039719.593185237,
+        "at_g3_rate": 1944891.7263696424,
+        "later_losses": 1094827.8668155947,
+        "lineage_population": 42752212.92438524,
+        "account_union": 39712493.3312,
+        "identified_g3plus": 14342574.606276
+      }
+    }
+  ]
+}

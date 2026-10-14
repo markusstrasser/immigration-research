@@ -1,0 +1,221 @@
+{
+  "rule": "exact bytes, immutable source freeze; cache ignored",
+  "files": [
+    {
+      "root": "lane",
+      "path": "_cache/lit_barkai2020.pdf",
+      "url": "https://growthecon.com/assets/papers/Barkai_2020.pdf",
+      "sha256": "22f63ea25f503755f809b181ea11bd66e762a64729b4b7fbe5545ae60ab0fb74"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/lit_kn2018wp.pdf",
+      "url": "https://www.nber.org/system/files/working_papers/w24404/w24404.pdf",
+      "sha256": "f0907d2498c4caae99ceff10159139676b2c25f92d7ff1193c6e2f72160a436e"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/lit_dleu2020.pdf",
+      "url": "https://www.janeeckhout.com/wp-content/uploads/RMP.pdf",
+      "sha256": "acb1d312650fc47595e81596f0b181f778a1490082f6d3357b1569dff18f6718"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/lit_ce2023.pdf",
+      "url": "https://www.kellogg.northwestern.edu/faculty/crouzet/html/papers/Qplus_published.pdf",
+      "sha256": "f11934a29d8060b7a72a1f2b478fe35354dae76b6abd955568784ff8e59406ac"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/lit_kn2019.pdf",
+      "url": "https://growthecon.com/assets/papers/Kara_Neiman_2018.pdf",
+      "sha256": "236a917782e5d418c4a306fd63e55a1be04b2bf8c88f0fa07851542b5a5e867f"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/lit_dleu2020published.pdf",
+      "url": "https://crei.cat/wp-content/uploads/2020/10/the-rise-1.pdf",
+      "sha256": "c5aebff9d6264f68a9b0b4461b2aaf4a37e18f3f8ae0b732b8b54ac1de875452"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_govinfo_hearing_2024.pdf",
+      "url": "https://www.govinfo.gov/content/pkg/CHRG-118hhrg56532/pdf/CHRG-118hhrg56532.pdf",
+      "sha256": "901f70ac029a5c4e911b1339a5cb53cec0ab775fb68159cf190ad4bd54712302"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_rosenthal_burke_2020.pdf",
+      "url": "https://www.law.nyu.edu/sites/default/files/Who%E2%80%99s%20Left%20to%20Tax%3F%20US%20Taxation%20of%20Corporations%20and%20Their%20Shareholders-%20Rosenthal%20and%20Burke.pdf",
+      "sha256": "16832d53a179d1b1e9ab86094ca9d8c3d57296ea47733dc3dbf3a4df88ca380a"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_cbo_policy_2024.csv",
+      "url": "https://raw.githubusercontent.com/US-CBO/captax/b89974934148486b6ff0423707ebb8177621d4db/captax/data/inputs/policy_parameters/policy_parameters_Current-Law_comprehensive.csv",
+      "sha256": "940c05b2c81f90f71ef4f37854076c1d414af7bff9380f45e67487586db2be0e"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_cbo_environment_2024.csv",
+      "url": "https://raw.githubusercontent.com/US-CBO/captax/b89974934148486b6ff0423707ebb8177621d4db/captax/data/inputs/environment_parameters/environment_parameters.csv",
+      "sha256": "e48d90d2ac5adfb43501d2dba83a9777af68d4e75835656cc61b12ba52773970"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_cbo_policy_documentation_2024.md",
+      "url": "https://raw.githubusercontent.com/US-CBO/captax/b89974934148486b6ff0423707ebb8177621d4db/docs/policy_parameters.md",
+      "sha256": "e01a01a0a80a92ee5d503c46671028b7920ec94116f2fecb4aa29236c6534de1"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_cbo_environment_documentation_2024.md",
+      "url": "https://raw.githubusercontent.com/US-CBO/captax/b89974934148486b6ff0423707ebb8177621d4db/docs/environment_parameters.md",
+      "sha256": "a6b8356680c2408a7b66afab9847c67d75e86ab40b81fbd1c76dcfd9e5df92fb"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_cbo_readme_2024.md",
+      "url": "https://raw.githubusercontent.com/US-CBO/captax/b89974934148486b6ff0423707ebb8177621d4db/README.md",
+      "sha256": "6dbef0451a823097d667a34cbd9b6564e070814afcdc58e562c480fde76eaba4"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_cbo_calculator_2024.py",
+      "url": "https://raw.githubusercontent.com/US-CBO/captax/b89974934148486b6ff0423707ebb8177621d4db/captax/calculator.py",
+      "sha256": "99faf96edd6636ca772ee94bee53492e667350560091c60b64009437b57ff8f6"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_irs_i1120.html",
+      "url": "https://www.irs.gov/instructions/i1120",
+      "sha256": "185d7672091f80bcf1e20ce6139b4b0adbca8691c86497bc0a46933dd4de557f"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_irs_2024_rates.html",
+      "url": "https://www.irs.gov/irb/2023-48_IRB",
+      "sha256": "fae8c4530487f64410c45e14fe8c98e51bd0c2b38d70a97b740b9e3dd7f275a8"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_treasury_retirement_2016.pdf",
+      "url": "https://home.treasury.gov/system/files/131/Distribution-Retirement-Tax-Benefits-Methodology.pdf",
+      "sha256": "d5c19e0f5f939d54b64a049da7656d1a73bd96c01d490ddf09513371befc08b3"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_congress_hearing_2024.pdf",
+      "url": "https://www.congress.gov/118/chrg/CHRG-118hhrg56532/CHRG-118hhrg56532.pdf",
+      "sha256": "901f70ac029a5c4e911b1339a5cb53cec0ab775fb68159cf190ad4bd54712302"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_cbo_policy.csv",
+      "url": "https://raw.githubusercontent.com/US-CBO/captax/main/captax/data/inputs/policy_parameters/policy_parameters_Current-Law_comprehensive.csv",
+      "sha256": "3e63636a033c4effbd6a627e69eb8779362f6321c6ad8873e8db8e24ea29e382"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_cbo_environment.csv",
+      "url": "https://raw.githubusercontent.com/US-CBO/captax/main/captax/data/inputs/environment_parameters/environment_parameters.csv",
+      "sha256": "37ad4221f844384173aac743b899df0be10708e803c9b37fa65c9b265ac1aefc"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_cbo_policy_documentation.md",
+      "url": "https://raw.githubusercontent.com/US-CBO/captax/main/docs/policy_parameters.md",
+      "sha256": "67f0675e6c8f51affd4849ce03389623bf314fb5a4aa8472419c37f220a00588"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/equity_cbo_environment_documentation.md",
+      "url": "https://raw.githubusercontent.com/US-CBO/captax/main/docs/environment_parameters.md",
+      "sha256": "db62bf1a004de33cda9b67088012973d86ef7b9d81bbe771e6c3953537323c1f"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/treasury_tp5.pdf",
+      "url": "https://home.treasury.gov/system/files/131/TP-5.pdf",
+      "sha256": "48a3a3e48f1ff50102527791c322d0e5d9c2443282c3a58ca9fd98abe0b55c4c"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/treasury_wp111.pdf",
+      "url": "https://home.treasury.gov/system/files/131/wp-111.pdf",
+      "sha256": "24ed934b0be75c5f3f6f6067aeb1653dae7792bfc485dc08fd780306da4233e1"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/corporate_rate_2024.html",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partII-sec11.htm",
+      "sha256": "a475fdd7532debbfbea1b53603d1465c41a6d2186679818dfce15b0ad155a8e0"
+    },
+    {
+      "root": "lane",
+      "path": "_cache/irs_1040_2024.pdf",
+      "url": "https://www.irs.gov/pub/irs-prior/i1040gi--2024.pdf",
+      "sha256": "0ae53ed5020d69e6571d40cd7955b7735f44a28df483626d128628d2810e93d4"
+    },
+    {
+      "root": "repo",
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json",
+      "url": null,
+      "sha256": "b30720cff0c29637ab6f74d809829fdbfc4b82a00a45fa286e3f0c1c5c183582"
+    },
+    {
+      "root": "repo",
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json",
+      "url": null,
+      "sha256": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958"
+    },
+    {
+      "root": "repo",
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/derived/lineage_addition.json",
+      "url": null,
+      "sha256": "fde51a608e49d7bd3a88a4044f8d9637b6c20cbb3ac52f244b478e14c5311a49"
+    },
+    {
+      "root": "repo",
+      "path": "infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/items.csv",
+      "url": null,
+      "sha256": "7be8c55bb04693e42d079b05b022adf9a1720b362da3206c6f7d7d21cfdc49e1"
+    },
+    {
+      "root": "repo",
+      "path": "infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/item.json",
+      "url": null,
+      "sha256": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283"
+    },
+    {
+      "root": "repo",
+      "path": "infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/summary.json",
+      "url": null,
+      "sha256": "e34797b916a751b5a8b14d2a4e926968dca3017c1ef0fcfa913e29941c85bc30"
+    },
+    {
+      "root": "repo",
+      "path": "infra/immigration-fiscal/consumption_key_2026_09_24/derived/summary.json",
+      "url": null,
+      "sha256": "cb2bb6211ed633a27706c3400ad99530b09e3a5aeac48521b12def58bd66c9ba"
+    },
+    {
+      "root": "repo",
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/package.cjs",
+      "url": null,
+      "sha256": "ec00d49b40c118e61d2a6543ad21a54021b6364ebf49e0e4b3a97260fa3cc907"
+    },
+    {
+      "root": "repo",
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/item_job_capital.cjs",
+      "url": null,
+      "sha256": "69d93ef3bae160bee3986ddd6920d7bfa9f83fca61f725440fb2efe0e4626f2d"
+    },
+    {
+      "root": "repo",
+      "path": "infra/immigration-fiscal/main_case_2026_10_07/item_age_mix.cjs",
+      "url": null,
+      "sha256": "6f94386fe460afca36a732982848d0345e96755ee8469fbc481569b7a555c7b5"
+    }
+  ]
+}

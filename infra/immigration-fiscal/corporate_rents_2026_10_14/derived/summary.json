@@ -1,0 +1,2029 @@
+{
+  "rates": {
+    "supernormal": 0.63,
+    "normal": 0.37,
+    "power_frerick_normal": [
+      0.4,
+      0.25
+    ],
+    "corporate_rates": [
+      0.21,
+      0.25
+    ],
+    "corporate_rate_note": "21% parsed federal statutory rate; 25% combined-rate sensitivity ASSUMPTION, not a measured effective rent rate",
+    "qualified_withdrawal_cap": 0.37,
+    "policy": {
+      "dividend_inc_tax_rate": 0.1944,
+      "cap_gains_short_term_tax_rate": 0.3125,
+      "cap_gains_long_term_tax_rate": 0.2014,
+      "cap_gains_at_death_tax_rate": 0.0,
+      "ret_plan_deferred_tax_rate": 0.2218
+    },
+    "retained": 0.5,
+    "repurchase": 0.6,
+    "dividend_share": 0.4,
+    "gain_share": 0.6,
+    "gains_rate": 0.11765322000000002
+  },
+  "ownership": {
+    "amounts_bn": {
+      "foreign": 20050,
+      "nonprofits": 1961,
+      "government": 456,
+      "life": 965,
+      "db": 3264,
+      "dc": 3335,
+      "ira": 5104,
+      "taxable": 12810
+    },
+    "published_total_bn": 47943,
+    "row_sum_bn": 47945,
+    "rounding_residual_bn": 2,
+    "shares": {
+      "foreign": 0.41818750651788505,
+      "nonprofits": 0.04090103243299614,
+      "government": 0.009510897903848159,
+      "life": 0.020127229116696215,
+      "db": 0.06807800604859734,
+      "dc": 0.06955886953801231,
+      "ira": 0.10645531337991448,
+      "taxable": 0.26718114506205026
+    },
+    "rule": "normalize printed row sum; do not fabricate a balancing cell",
+    "domestic_share": 0.581812493482115,
+    "retirement_share": 0.24409218896652413
+  },
+  "residence_rates": {
+    "dividend_only_cash": 0.02077600584002503,
+    "taxable_payout_no_deferral": 0.03963683906392742,
+    "taxable_plus_insurance_no_deferral": 0.04410105848201064,
+    "all_retirement_at_top_bracket_no_deferral": 0.13441516839962456
+  },
+  "eligible_national_corporate_bn": 651.50760011,
+  "retained_owner_rule": "Displayed incremental residence loss assumes e_tax=0: no overlap with taxes already lost on removed owners in frozen individual-income receipts. Actual extra loss is (1-e_tax)*R, where e_tax is the fraction already counted, not identified. Private exclusion e_private is separate and not identified.",
+  "caveat": "Phi and disappearance elasticities unmeasured. Ownership 2022 transferred to 2024 ASSUMPTION; all-domestic private loss upper bound includes institutions and group owners. No retirement flow automatically belongs in income-year-2024 cash.",
+  "gates": [
+    {
+      "name": "source pin: _cache/lit_barkai2020.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/lit_kn2018wp.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/lit_dleu2020.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/lit_ce2023.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/lit_kn2019.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/lit_dleu2020published.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_govinfo_hearing_2024.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_rosenthal_burke_2020.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_cbo_policy_2024.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_cbo_environment_2024.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_cbo_policy_documentation_2024.md",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_cbo_environment_documentation_2024.md",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_cbo_readme_2024.md",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_cbo_calculator_2024.py",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_irs_i1120.html",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_irs_2024_rates.html",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_treasury_retirement_2016.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_congress_hearing_2024.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_cbo_policy.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_cbo_environment.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_cbo_policy_documentation.md",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/equity_cbo_environment_documentation.md",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/treasury_tp5.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/treasury_wp111.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/corporate_rate_2024.html",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: _cache/irs_1040_2024.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: infra/immigration-fiscal/main_case_2026_10_14/derived/lineage_addition.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/items.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/item.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/summary.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: infra/immigration-fiscal/consumption_key_2026_09_24/derived/summary.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: infra/immigration-fiscal/main_case_2026_10_14/package.cjs",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: infra/immigration-fiscal/main_case_2026_10_14/item_job_capital.cjs",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "source pin: infra/immigration-fiscal/main_case_2026_10_07/item_age_mix.cjs",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "Treasury shares close (1e-12)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "TP5 rent incidence is an assumption, not a measured composition",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "WP111 excess includes risk and other categories",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "IRS withdrawal treatment includes tax-free qualified Roth distribution",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "payout partition closes, gains not taxed again as dividends (1e-12)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "realization partition closes (1e-12)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "TP5 source share matches frozen v7",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ownership primary Table5 OCR has total plus all eight rows",
+      "passed": true,
+      "value": [
+        47943,
+        20050,
+        1961,
+        456,
+        965,
+        3264,
+        3335,
+        5104,
+        12810
+      ]
+    },
+    {
+      "name": "ownership mass conserved after explicit rounded-table normalization (1e-12)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ownership weighted rates within domestic income",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "eligible corporate national closes source lane (1e-6bn)",
+      "passed": true,
+      "value": 651.50760011
+    },
+    {
+      "name": "corporate union positive control (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "union: demand plus remaining rents close national (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.0/fixed/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.0/fixed/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.1/fixed/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.1/fixed/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.25/fixed/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.25/fixed/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.5/fixed/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/0.5/fixed/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/1.0/fixed/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.21/1.0/fixed/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/dividend_only_cash/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_payout_no_deferral/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/taxable_plus_insurance_no_deferral/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/jobs/all_retirement_at_top_bracket_no_deferral/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/dividend_only_cash/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_payout_no_deferral/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/taxable_plus_insurance_no_deferral/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition union/demand/all_retirement_at_top_bracket_no_deferral/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "lineage: demand plus remaining rents close national (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.0/fixed/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.0/fixed/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.1/fixed/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.1/fixed/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.25/fixed/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.25/fixed/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.5/fixed/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/0.5/fixed/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/1.0/fixed/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.21/1.0/fixed/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/dividend_only_cash/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_payout_no_deferral/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/taxable_plus_insurance_no_deferral/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/jobs/all_retirement_at_top_bracket_no_deferral/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/dividend_only_cash/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_payout_no_deferral/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/taxable_plus_insurance_no_deferral/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.21/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.21/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.21/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.1/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.1/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.25/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.25/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.5/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.25/0.5/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.25/1.0/vanishing/low (1e-9bn)",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "partition lineage/demand/all_retirement_at_top_bracket_no_deferral/0.25/1.0/vanishing/high (1e-9bn)",
+      "passed": true,
+      "value": null
+    }
+  ],
+  "se_rule": "Jobs: propagate source lane's 160-replicate corporate SE linearly, conditional on phi, rates, ownership and added people; demand no exact-v7 joint replicates stored. No SE measures premise uncertainty.",
+  "household_claim_rule": "Taxable+DC+IRA+life-insurance ownership; government, nonprofits and DB excluded. Conditional on losses passing through to holders. Removed-group share unknown, so [0,reported] bounds other-resident private loss. All-domestic field also includes institutions, not purely private welfare."
+}
