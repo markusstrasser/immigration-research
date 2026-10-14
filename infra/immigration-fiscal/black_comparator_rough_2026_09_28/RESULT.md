@@ -582,3 +582,47 @@ do not move. The reproduce list is the v6 section's.
 - 21:49:49–21:51:23 (by `date`): the same rerun after the white library relabelled the columns of its CPS-totals file
   and the white lane added `income_tax_parts.py`: **IDENTICAL 47/47, exit 0**. This lane writes no CPS-totals file,
   and none of its figures moved.
+
+### 2026-10-14 18:28:21 JST — v7 propagation, completed leaves and stopped comparator
+
+After `CASE_FINAL` named adopted commit `148ed1ea`, final Consumers, The items and the decision were re-read and
+payload hashes checked. The computed route is `oct14`, personal ends 16/11; earlier outputs remain unchanged.
+Four final engine dumps reproduce $339.55201782952685 / $423.64926070050683bn, cash
+$264.4255736155055 / $348.52281648648557bn. These are engine account totals; no final NH Black cost is asserted.
+The white lane's `check_dumps_oct14.py` validates both lanes' leaves with 64 gates: adopted/cash bands at 5e-5,
+cost and lineage accounting at 1e-9 and R7 responses at 1e-12. Case/source/dump hashes are pinned in
+`derived/engine_lines_oct14_meta.json`. [CALCULATION: `derived/engine_lines_oct14*.json`]
+
+The white lane's pension-free `export_keys_oct14.py` exports this lane's raw personal key shares using canonical
+`TK.case_keys`, the gated row-4 frame and final lineage counts. `income_tax_keys_oct14_meta.json` pins case, raw
+inputs, code and CSV hashes, explicitly labels its limited scope, and reports W's receipt-key residual
++1.932434339213529e-7bn at both ends/bases after the adopted item. This exceeds the required 1e-9 contract.
+[CALCULATION: `derived/income_tax_keys_oct14.csv` and `derived/income_tax_keys_oct14_meta.json`]
+
+The final rough run exits 1 at R9, before writing comparator totals. **Exact unresolved question:** how should
+the rough identified-union OASDI net ratio, Part A per-tax rate and benefit-tax calibration use
+`meta.row4_frame.values`, given that its state and owner keys already use row-4 weights? Final Consumers specifies
+engine pension reconstruction, which still passes at 1e-9, but not this rough calibration. Both live wrappers
+preflight the question and stop before writing. Rough totals and attribution remain unvalidated.
+
+R7 code applies the comparator's own wage share and the source's `black_nh` factors, at the same personal ends
+and responses as the union. Corporate carrier totals are split proportionally. **Credit asymmetry:** the mixed-unit
+credit crossing was measured for the union and the added G3+-priced people only; no NH Black crossing is measured
+or invented. Final Consumers leaves items 7/8 comparator counterparts open. [DATA: final case `RESULT.md`
+Consumers; `job_capital_taxes_2026_10_14/derived/item.json`; CALCULATION: white library `rekey_sept29.py`]
+
+Candidate oct14 rough outputs were preserved in `_cache/prop-d-candidate-oct14/`; the scratch
+`comparator-quarantine.json` records each move and hash. Final dumps/raw-key leaves stay in `derived/`. The initial
+leaf-only rerun (four dumps, shared dump checker and raw-key exporter) ended **IDENTICAL 55/55, exit 0**; rough
+pricing, accrual and the full wrapper are explicitly excluded. This is partial coverage, not a validated move of
+the complete comparator. The final source/metadata repeat is recorded in the worker evidence file.
+
+## v7 wave 2 (2026-10-14): rough pension rule resolved
+
+The parent defines the rough union as legacy pension amounts plus only R9 union pension parts, carried exactly by the payload (kRN included). The shared library derives effective rates on the same rough payroll/benefit bases; all other R9 parts are already represented by rough row-4 keys. Its SS, Medicare and benefit-tax equality gates pass at 1e-9, as does the Consumers R9 cash/accrual identity. Black and white central ratios retain their own weights. Rule 3a uses the effective union Part A rate and the source white_rule3_ratio; its legacy gross-OASDI alternative is explicitly labelled. Mixed-unit credits remain measured only for the union and its G3+-priced added people. [CALCULATION: white library rekey_sept29.py; derived/rekey_summary_oct14.csv]
+
+- 2026-10-14 19:07 JST — full re-key exit 0, 5.13s, max RSS 1707.9MiB. NH Black accrual costs: 422.7455 / 501.1208bn on 41,954,494 people; union rough costs 315.7654 / 397.7945bn on the 42.75M lineage. These account/model rows preserve their different counts. All adopted-case and R9 gates pass.
+
+Live reproduction: sh infra/immigration-fiscal/black_comparator_rough_2026_09_28/run_oct14.sh after white run_oct14.sh. The full reproducibility receipt executes every wrapper child explicitly, profiling accrual_black.py during that required repeat; run_oct14.sh is the only allow-unrun entry (its equivalent child sequence is run, and shell syntax checked). Earlier keyed outputs remain unchanged.
+
+- 2026-10-14 19:09:57 JST — full live producer sequence rerun: IDENTICAL 62/62, exit 0, 83.15s, max RSS 1776.7MiB. Every producer was rerun; the pension child was profiled during this repeat. [CALCULATION: wave-2 rerun_black_wave2.py and rerun_lane.py]

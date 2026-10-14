@@ -1,0 +1,60 @@
+{
+  "case": "oct14",
+  "scope": "raw income-tax keys only; no pension pricing or validated rough totals",
+  "allocation": "personal",
+  "lineage_counts": {
+    "added": 3039719.593185237,
+    "at_g3_rate": 1944891.7263696424,
+    "later_losses": 1094827.8668155947,
+    "lineage_population": 42752212.92438524,
+    "account_union": 39712493.3312,
+    "identified_g3plus": 14342574.606276
+  },
+  "inputs_sha256": {
+    "main_case_2026_10_14/derived/corrections.json": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958",
+    "main_case_2026_10_14/derived/corrections_cash.json": "581701613b7f3c8086437100334e3818ebe062dc57e2e486f14897208b05de97",
+    "main_case_2026_10_14/derived/summary.json": "b30720cff0c29637ab6f74d809829fdbfc4b82a00a45fa286e3f0c1c5c183582",
+    "white_replacement_2026_09_28/export_keys_oct14.py": "19e626794798cafc3e6cca7768eb4027fe7654e69409512a1b07065bd0086eea",
+    "white_replacement_2026_09_28/rekey_sept29.py": "2adb5d379d6e23e13399552f790bdc5f292d05c9d7e3583091c7cd54fc37e8e6",
+    "white_replacement_2026_09_28/rekey_white.py": "bef5e563bb2233262367b3a62d2d26da1c87e44b1ddc4060de81ab1070ad027f",
+    "white_replacement_2026_09_28/check_dumps_oct14.py": "8b86ce9dcecfdf064391a2eb52ec93256c8005ec27bfdb80472a83c6259adc76",
+    "white_replacement_2026_09_28/derived/engine_lines_sept29_cash.json": "616a060be37d285e17a7330015b7254995178e146746350ed053edfe82813ed0",
+    "tax_key_heldout_2026_09_28/keys.py": "cbf2ee35ebc6205bb718fff398ef59f19f4d95d9db98e91beff7a490c6168934",
+    "external_benchmarks_2026_09_24/frame.py": "c5ba5e8c7e6fceef6f4f853b8cf596ebd639b3be8cc6f8a376125831f8e5b6ad",
+    "gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+    "tax_key_heldout_2026_09_28/derived/bins.csv": "950d83f07ab7f63ade40e47570c4b751ea416c72c7753e56f595d2219d8369cb",
+    "external_benchmarks_2026_09_24/derived/cbo_group_shares.csv": "fc73f97db7e8da645e22e546cf6f637c3f059c66fb328c058689f2c1c1d1f24b",
+    "white_replacement_2026_09_28/derived/engine_lines_oct14.json": "7ed7587c4017b309a8a4917cc1c741234f768e82a2a4ee97103dd773fe1da355",
+    "white_replacement_2026_09_28/derived/engine_lines_oct14_cash.json": "c3a280263640644fa13b45a699cda0055b8889ae998050bb2920f49bbbd0e855",
+    "white_replacement_2026_09_28/derived/engine_lines_oct14_union.json": "1a2549fb315d7fd5a171d0f3077337792d4c3f9d222a61a191c38adf5d623785",
+    "white_replacement_2026_09_28/derived/engine_lines_oct14_union_cash.json": "907e660eaa79c4609174787105e8eebf00e2a672e13c769819b50854238f071d"
+  },
+  "csv_sha256": {
+    "white_replacement_2026_09_28/derived/income_tax_keys_oct14.csv": "213e0d13694827d4044f209137b390757d34fc59a1757e598238feee7de2a134",
+    "black_comparator_rough_2026_09_28/derived/income_tax_keys_oct14.csv": "755f23ac8ff66f18c9014cbfe9abe23dfcae6d7cbe2c4760d681cda47b45aab2"
+  },
+  "source_count": 1082721.22406998,
+  "raw_move_bn": 1.086440193243434,
+  "parts_bn": {
+    "federal_income_tax": 0.7578184242392856,
+    "state_local_income_tax": 0.3270835817760852,
+    "other_personal_tax": 0.0015381872280632602
+  },
+  "applied_move_bn": {
+    "accrual": 1.08644,
+    "cash": 1.08644
+  },
+  "item_applied": true,
+  "residual_zero_tolerance_bn": 1e-09,
+  "white_end_tax_keys_residual": {
+    "accrual": {
+      "low": 1.932434339213529e-07,
+      "high": 1.932434339213529e-07
+    },
+    "cash": {
+      "low": 1.932434339213529e-07,
+      "high": 1.932434339213529e-07
+    }
+  },
+  "measurement_scope": "receipt-key arithmetic only; a nonzero residual is reported, never rounded to pass"
+}

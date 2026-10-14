@@ -1,6 +1,6 @@
-// Read-only dump of an adopted case at specs 48 / 11, methods averaged: every receipt and spending line (national,
+// Dump of the live adopted case at its own ends, methods averaged: every receipt and spending line (national,
 // group amount, response, effect), the scalars, and the capital-return components.
-// Cases (first argument): none = the September 27 case -> derived/engine_lines.json, the input of rekey.py;
+// Cases (first argument): none = oct14 (live v7); explicit sept27 is the archived September 27 library route.
 // "sept29" = the v4 case adopted 2026-09-29 -> derived/engine_lines_sept29.json; "sept29_cash" = its cash set (pension
 // switch off) -> derived/engine_lines_sept29_cash.json. The sept29 files are the input of rekey_sept29.py.
 // "oct05" = the v5 case adopted 2026-10-05 (main_case_2026_10_05: v4 plus the lineage, 42.75M members)
@@ -14,6 +14,8 @@
 // applied edit set's union part, in payload order (itemUnionEdits), with a union-only item's carrier receipt lines.
 // Without the items the union dump would leave their union parts in the full dump less the union dump, where
 // rekey_sept29.py books them as the added people's.
+// Those oct07 files are preserved. Their computed route is now oct14 / oct14_cash / oct14_union / oct14_union_cash:
+// v7's own personal ends, allocation item skipped only when it has zero edits, every edit set split by named parts.
 "use strict";
 const fs = require("fs");
 const path = require("path");
@@ -26,12 +28,12 @@ const CASES = {
   oct05_cash: { lane: "main_case_2026_10_05", pkg: (p) => p.CASH, options: {}, out: "engine_lines_oct05_cash.json" },
   oct05_union: { lane: "main_case_2026_10_05", options: {}, union: true, out: "engine_lines_oct05_union.json" },
   oct05_union_cash: { lane: "main_case_2026_10_05", pkg: (p) => p.CASH, options: {}, union: true, out: "engine_lines_oct05_union_cash.json" },
-  oct07: { lane: "main_case_2026_10_07", options: {}, out: "engine_lines_oct07.json" },
-  oct07_cash: { lane: "main_case_2026_10_07", pkg: (p) => p.CASH, options: {}, out: "engine_lines_oct07_cash.json" },
-  oct07_union: { lane: "main_case_2026_10_07", options: {}, union: true, out: "engine_lines_oct07_union.json" },
-  oct07_union_cash: { lane: "main_case_2026_10_07", pkg: (p) => p.CASH, options: {}, union: true, out: "engine_lines_oct07_union_cash.json" },
+  oct14: { lane: "main_case_2026_10_14", options: {}, out: "engine_lines_oct14.json" },
+  oct14_cash: { lane: "main_case_2026_10_14", pkg: (p) => p.CASH, options: {}, out: "engine_lines_oct14_cash.json" },
+  oct14_union: { lane: "main_case_2026_10_14", options: {}, union: true, out: "engine_lines_oct14_union.json" },
+  oct14_union_cash: { lane: "main_case_2026_10_14", pkg: (p) => p.CASH, options: {}, union: true, out: "engine_lines_oct14_union_cash.json" },
 };
-const CASE = CASES[process.argv[2] || "sept27"];
+const CASE = CASES[process.argv[2] || "oct14"];
 if (!CASE) throw new Error(`[BLOCKED] unknown case ${process.argv[2]}: one of ${Object.keys(CASES).join(", ")}`);
 const P0 = require(path.join(FISCAL, CASE.lane, "package.cjs"));
 const P = CASE.pkg ? CASE.pkg(P0) : P0;
@@ -52,6 +54,7 @@ function itemUnionEdits() {
   const out = [], carriers = [];
   for (const r of p.meta.items || []) {
     if (r.kind === "lineage" || !r.applied) continue;    // the lineage item's edits are the lineage's (the overlay)
+    if (r.kind === "allocation" && r.edits && r.edits.count === 0) continue;
     if (r.kind !== "edit_set" || !r.edits) throw new Error(`[BLOCKED] item ${r.id}: an applied item of kind ${r.kind} without edits`);
     const edits = p.edits.slice(r.edits.first, r.edits.first + r.edits.count);
     if (edits.length !== r.edits.count) throw new Error(`[BLOCKED] item ${r.id}: its edits are not in the payload`);
@@ -109,13 +112,22 @@ function unionOnly(method) {
   return out;
 }
 const models = P.METHODS.map((m) => (CASE.union ? unionOnly(m) : P.modelFor("central", m, oo)));
-const ENDS = { low: 48, high: 11 };
+const summary = JSON.parse(fs.readFileSync(path.join(FISCAL, CASE.lane, "derived", "summary.json"), "utf8"));
+const isV7 = CASE.lane === "main_case_2026_10_14";
+const ends = isV7 ? summary.v7.end_specifications[CASE.pkg ? "cash" : "set"] : null;
+const ENDS = isV7 ? { low: ends[0], high: ends[1] } : { low: 48, high: 11 };
+const specAt = (idx) => {
+  if (!Number.isInteger(idx)) throw new Error(`[BLOCKED] case end ${idx} is not an integer specification index`);
+  const s = specs[idx];  // v7 preserves v6's numbering 0–31 for the personal specifications
+  if (!s || (isV7 && s.allocation !== "personal")) throw new Error(`[BLOCKED] case end ${idx} is not a personal specification`);
+  return s;
+};
 const out = {};
 for (const [end, idx] of Object.entries(ENDS)) {
   const acc = {}, cap = {};
   let cost = 0, capTotal = 0, pop = 0, res = 0, welfare = 0;
   models.forEach((m) => {
-    const r = P.evaluateFull(m, specs[idx]);
+    const r = P.evaluateFull(m, specAt(idx));
     const ev = r.evaluation;
     const k = models.length;
     cost += r.cost_bn / k; capTotal += r.capital.total_bn / k; welfare += ev.welfare_bn / k;
@@ -135,7 +147,7 @@ for (const [end, idx] of Object.entries(ENDS)) {
       cap[c.id].key += c.key / k; cap[c.id].return_bn += c.return_bn / k;
     }
   });
-  out[end] = { spec: idx, rate: specs[idx].rate, cost_bn: cost, capital_bn: capTotal, welfare_bn: welfare,
+  out[end] = { spec: idx, allocation: specAt(idx).allocation, rate: specAt(idx).rate, cost_bn: cost, capital_bn: capTotal, welfare_bn: welfare,
     target_population: pop, resident_population: res, lines: Object.values(acc), capital: Object.values(cap) };
 }
 fs.writeFileSync(path.join(__dirname, "derived", CASE.out), JSON.stringify(out, null, 1) + "\n");

@@ -48,6 +48,11 @@ rule, the earlier central), cost_top_tail_proportional, cost_capital_taxes_respo
 lines at 1) and cost_both_arms (the same column: the top tail is inside the central). The attribution adds step 5
 (the case's keys). income_tax_keys_<case>.csv gives each group's income-tax shares at both allocations and under the
 old rules.
+
+Live --case oct14 consumes v7 at both personal ends through the white library. It applies R7 to NH Black at
+item.json factor.black_nh on the group's own plain wage share; the four line responses follow the case's low/high
+readings. Child-credit crossing was measured only for the identified union, with its stated lineage extension;
+no comparator credit term is added. Preserved oct07 files are not regenerated.
 """
 from __future__ import annotations
 
@@ -238,6 +243,6 @@ def main(case="sept29"):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="sept29", choices=list(W.CASES),
-                    help="sept29 (default), oct05 (v5, the lineage on the union's side) or oct07 (v6, v5 plus its items)")
+    ap.add_argument("--case", default="oct14", choices=list(W.CASES),
+                    help="oct14 (default, live v7); sept29 and oct05 are archived input-library routes")
     main(ap.parse_args().case)
