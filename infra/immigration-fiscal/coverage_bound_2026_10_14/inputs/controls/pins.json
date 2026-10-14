@@ -1,0 +1,90 @@
+{
+  "sources": [
+    {
+      "file": "paa2024-modernizing-base.pdf",
+      "url": "https://www.census.gov/content/dam/Census/newsroom/press-kits/2024/paa/paa2024-paper-modernizing-popestimates-base.pdf",
+      "size_bytes": 699169,
+      "sha256": "8eb3194c3168bd1c4b6f30f2dfce58dedbc1a745f2f46e92d92f48d8b1010f14"
+    },
+    {
+      "file": "methods-statement-v2024.pdf",
+      "url": "https://www2.census.gov/programs-surveys/popest/technical-documentation/methodology/2020-2024/methods-statement-v2024.pdf",
+      "size_bytes": 504437,
+      "sha256": "5995ca18b0d55b50e2d54e2224814a5edcd4c3f247a00e49b3d2c862f05a1f2d"
+    },
+    {
+      "file": "sehsd-wp2025-13.pdf",
+      "url": "https://www2.census.gov/library/working-papers/2025/demo/sehsd-wp2025-13.pdf",
+      "size_bytes": 3001682,
+      "sha256": "42ee492bdcf30ac2deb1077b9235084299b5e7244fdc0d93d0995117fab8d6bf"
+    },
+    {
+      "file": "acs-2024-research-note.pdf",
+      "url": "https://www.census.gov/content/dam/Census/programs-surveys/acs/tech-doc/user-notes/2024-acs-1-year-research-note.pdf",
+      "size_bytes": 420653,
+      "sha256": "14d8c12305fc837cc73497eefd05bc89bc317ea7197e8d86cc7c3c5e990d917a"
+    },
+    {
+      "file": "v2024-methodology-updates.pdf",
+      "url": "https://www2.census.gov/about/training-workshops/2024/2024-12-16-methodology-updates-presentation.pdf",
+      "size_bytes": 3043941,
+      "sha256": "d463558703f6ed2cffea6e337205fdb83b92bf1d07d8adf6c520fb9ee66aa57b"
+    },
+    {
+      "file": "2024-est-relnotes.pdf",
+      "url": "https://www2.census.gov/programs-surveys/popest/technical-documentation/methodology/2020-2024/2024-est-relnotes.pdf",
+      "size_bytes": 174012,
+      "sha256": "311348b869562a6e12d506c7b9d6c1a457d935f758d8936a08a5be0d9e9c6b8c"
+    },
+    {
+      "file": "nc-est2024-alldata-layout.pdf",
+      "url": "https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2020-2024/NC-EST2024-ALLDATA.pdf",
+      "size_bytes": 109816,
+      "sha256": "5a0bb8ac518a0aedf8f9d1db4d36b2a7539e8a29061d30fb68ed5c2bacfef086"
+    },
+    {
+      "file": "nc-est2024-alldata-r-file01.csv",
+      "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/national/asrh/nc-est2024-alldata-r-file01.csv",
+      "size_bytes": 140739,
+      "sha256": "c6479135fde5ec94e0b58a0930bf1441fa765350f03d799f27aa8245a512e6e8"
+    },
+    {
+      "file": "dhc-p12h-variables.json",
+      "url": "https://api.census.gov/data/2020/dec/dhc/groups/P12H.json",
+      "size_bytes": 66766,
+      "sha256": "b24bd620f879f4981849b81cd2e5248781e85d7d7365fc367cd31647c13a46cb"
+    },
+    {
+      "file": "blended-base-2023.html",
+      "url": "https://www.census.gov/library/stories/2023/06/blended-base-methodology.html",
+      "size_bytes": 360406,
+      "sha256": "23c50abc1be3d158b4401fd4ecf3dadd2681daae20e57414b29ab5b9df932228"
+    },
+    {
+      "file": "pes-base-recommendation-2023.html",
+      "url": "https://www.census.gov/newsroom/blogs/random-samplings/2023/12/recommendations-2020-pes-coverage-results-in-vintage-2023-pop-estimates.html",
+      "size_bytes": 350963,
+      "sha256": "5e58286e1e67025dadc22c61a21c6e6e850631d50838030f574c3946a9b50f2f"
+    },
+    {
+      "file": "acs-controls-2024.html",
+      "url": "https://www.census.gov/programs-surveys/acs/technical-documentation/user-notes/2025-03.html",
+      "size_bytes": 334447,
+      "sha256": "29d9bbc192a8a2424e104a005593ec542189662969d8d07da87d57d2f80e60b2"
+    },
+    {
+      "file": "dhc-p12h-us.json",
+      "url": "https://api.census.gov/data/2020/dec/dhc?get=NAME,group(P12H)&for=us:*",
+      "size_bytes": 2025,
+      "sha256": "4b053d421e0443e5b2a5287bba2ae7d303fdb10bd14784c1a2a53c4b108cbabf",
+      "requires_api_key": true
+    },
+    {
+      "file": "bls-controls-2025.web-extract.txt",
+      "url": "https://www.bls.gov/cps/notices/2025/population-controls.htm",
+      "size_bytes": 12063,
+      "sha256": "b8b0af61a67fdb09e99e5a34c307feb1ea9d7c2469696309ea6d5834591ca927",
+      "representation": "web.open text extraction, original HTML download HTTP403"
+    }
+  ]
+}

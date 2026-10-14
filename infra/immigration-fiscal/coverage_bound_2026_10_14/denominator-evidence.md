@@ -1,0 +1,17 @@
+**Verdict:** Implemented actual-driver recovery, with ambiguity blocking and a principal national-rent denominator for the union-only tenant driver. Thirty isolated regression checks pass; full export integration is owned by the parent.
+
+Scope: `national_keys.py` and its isolated regression tests only. The parent owns export integration, pricing reruns and all other lane files.
+
+Trace: `within_group_distribution_2026_09_29/households.py`, lines 639–809: piece masking; pension receipt composites; Social Security benefit-tax offsets; road components; state-price parents; routed education pieces; capital numerator/carrier parents; production skill-cell earnings.
+
+The helper extends the household consumer's actual piece driver. This denominator sensitivity holds the generation receipt coefficients and production attribution fixed; it is not a full fiscal engine rerun. [ASSUMPTION]
+
+API: `full_key(snapshot, piece, end)` returns `(full_driver, source_and_method, national_mass_override)`. The override is `None` except for the tenant contract-rent driver. Each recovered vector is finite, nonnegative, and reproduces the piece on its generation at pointwise relative tolerance 1e-12, with exact structural zeroes. Matching extensions that differ outside the priced generation stop `[BLOCKED]`; equivalent full vectors may have several source names. [CALCULATION: national_keys.py]
+
+Pension recovery uses the exact `receipts_of` coefficients: each generation receipt amount times its OASDI/HI share divided by its generation key mass on `W[:,0]`; the same coefficients extend each actual receipt vector to the full frame. The federal income-tax benefit offset extends the Social Security benefit vector. Road parts extend ages 5+, the freight receipt key, or the old spending key. State prices follow their parent splits; routed pieces follow their declared basis; capital follows its numerator, correction or carrier parent; production follows earnings in its actual skill cell. [DATA: within_group_distribution_2026_09_29/households.py:673–809]
+
+Tenant special case: `households.py:223–234` restricts its state-weighted rent driver to union tenants. Its driver mass on `w_id` must reproduce the principal `group_rent` sum, and its national denominator is the principal `all_rent` sum. The helper reads those fields from `receipt_side_long_run_2026_09_28/derived/states.csv`, verifies 51 unique states, finite nonnegative group amounts and positive national amounts, and verifies the group-mass reconstruction at 1e-12 relative. `generation_account_2026_09_24/v4_inputs.py:238–266` explicitly derives the group's rent share as `sum(group_rent)/sum(all_rent)`. [DATA: states.csv; v4_inputs.py]
+
+Validation: `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/coverage_bound_2026_10_14/test_national_keys.py -q` → 30 passed in 0.42s, exit 0. Both Python files compile from source. Small frames independently check pension coefficients, Part A, benefit-tax offsets, road and production parts, state-price and capital parents, education routes, national tenant-rent mass, coincident vectors, invalid inputs and fail-closed ambiguity. No full pricing construction was run by this worker. [CALCULATION: test_national_keys.py]
+
+Covered: `national_keys.py`, `test_national_keys.py`. Skipped: parent-owned `export_pricing.py`, downstream computation, RESULT and derived outputs; the parent integrates and verifies the full-case export.

@@ -1,0 +1,25 @@
+{
+ "key": "oct14",
+ "pes_hispanic_net_undercount": 0.0499,
+ "factor": 0.052520787285548876,
+ "ends": {
+  "low": {
+   "allocation": "personal",
+   "case_bn": 339.55201782952685,
+   "us_born_cost_bn": 289.615699,
+   "us_born_population": 31715511.862981,
+   "bound_bn": 15.21084452173455,
+   "case_with_bound_bn": 354.7628623512614,
+   "implied_missed_people": 1665723.652207927
+  },
+  "high": {
+   "allocation": "personal",
+   "case_bn": 423.64926070050683,
+   "us_born_cost_bn": 350.243782,
+   "us_born_population": 31715511.862981,
+   "bound_bn": 18.395079172508154,
+   "case_with_bound_bn": 442.04433987301496,
+   "implied_missed_people": 1665723.652207927
+  }
+ }
+}

@@ -1,0 +1,162 @@
+{
+  "controls/2024-est-relnotes.pdf": {
+    "bytes": 174012,
+    "sha256": "311348b869562a6e12d506c7b9d6c1a457d935f758d8936a08a5be0d9e9c6b8c",
+    "url": "https://www2.census.gov/programs-surveys/popest/technical-documentation/methodology/2020-2024/2024-est-relnotes.pdf"
+  },
+  "controls/acs-2024-research-note.pdf": {
+    "bytes": 420653,
+    "sha256": "14d8c12305fc837cc73497eefd05bc89bc317ea7197e8d86cc7c3c5e990d917a",
+    "url": "https://www.census.gov/content/dam/Census/programs-surveys/acs/tech-doc/user-notes/2024-acs-1-year-research-note.pdf"
+  },
+  "controls/acs-controls-2024.html": {
+    "bytes": 334447,
+    "sha256": "29d9bbc192a8a2424e104a005593ec542189662969d8d07da87d57d2f80e60b2",
+    "url": "https://www.census.gov/programs-surveys/acs/technical-documentation/user-notes/2025-03.html"
+  },
+  "controls/base_adjustments.csv": {
+    "bytes": 1871,
+    "sha256": "4c97208671f42b9c7647ef2b81469b780bac99e37fe4886668683fdb8388dcb8",
+    "source": "derived directly from pinned primary tables via controls/compare_base.py; reproduced byte-for-byte"
+  },
+  "controls/base_adjustments_sex.csv": {
+    "bytes": 1785,
+    "sha256": "05a41bf8f80a1524cb5d47edd07e363f7b4e0f92f2ae8560810f08da3ba20988",
+    "source": "derived directly from pinned primary tables via controls/compare_base.py; reproduced byte-for-byte"
+  },
+  "controls/blended-base-2023.html": {
+    "bytes": 360406,
+    "sha256": "23c50abc1be3d158b4401fd4ecf3dadd2681daae20e57414b29ab5b9df932228",
+    "url": "https://www.census.gov/library/stories/2023/06/blended-base-methodology.html"
+  },
+  "controls/bls-controls-2025.web-extract.txt": {
+    "bytes": 12063,
+    "sha256": "b8b0af61a67fdb09e99e5a34c307feb1ea9d7c2469696309ea6d5834591ca927",
+    "url": "https://www.bls.gov/cps/notices/2025/population-controls.htm"
+  },
+  "controls/compare_base.py": {
+    "bytes": 9586,
+    "sha256": "c7cefb58fe411946918e0e6e4433451b7dabf0bd6f20e0bb60734fcb9501fbd8",
+    "source": "derived directly from pinned primary tables via controls/compare_base.py; reproduced byte-for-byte"
+  },
+  "controls/dhc-p12h-us.json": {
+    "bytes": 2025,
+    "sha256": "4b053d421e0443e5b2a5287bba2ae7d303fdb10bd14784c1a2a53c4b108cbabf",
+    "url": "https://api.census.gov/data/2020/dec/dhc?get=NAME,group(P12H)&for=us:*"
+  },
+  "controls/dhc-p12h-variables.json": {
+    "bytes": 66766,
+    "sha256": "b24bd620f879f4981849b81cd2e5248781e85d7d7365fc367cd31647c13a46cb",
+    "url": "https://api.census.gov/data/2020/dec/dhc/groups/P12H.json"
+  },
+  "controls/methods-statement-v2024.pdf": {
+    "bytes": 504437,
+    "sha256": "5995ca18b0d55b50e2d54e2224814a5edcd4c3f247a00e49b3d2c862f05a1f2d",
+    "url": "https://www2.census.gov/programs-surveys/popest/technical-documentation/methodology/2020-2024/methods-statement-v2024.pdf"
+  },
+  "controls/nc-est2024-alldata-layout.pdf": {
+    "bytes": 109816,
+    "sha256": "5a0bb8ac518a0aedf8f9d1db4d36b2a7539e8a29061d30fb68ed5c2bacfef086",
+    "url": "https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2020-2024/NC-EST2024-ALLDATA.pdf"
+  },
+  "controls/nc-est2024-alldata-r-file01.csv": {
+    "bytes": 140739,
+    "sha256": "c6479135fde5ec94e0b58a0930bf1441fa765350f03d799f27aa8245a512e6e8",
+    "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/national/asrh/nc-est2024-alldata-r-file01.csv"
+  },
+  "controls/paa2024-modernizing-base.pdf": {
+    "bytes": 699169,
+    "sha256": "8eb3194c3168bd1c4b6f30f2dfce58dedbc1a745f2f46e92d92f48d8b1010f14",
+    "url": "https://www.census.gov/content/dam/Census/newsroom/press-kits/2024/paa/paa2024-paper-modernizing-popestimates-base.pdf"
+  },
+  "controls/pes-base-recommendation-2023.html": {
+    "bytes": 350963,
+    "sha256": "5e58286e1e67025dadc22c61a21c6e6e850631d50838030f574c3946a9b50f2f",
+    "url": "https://www.census.gov/newsroom/blogs/random-samplings/2023/12/recommendations-2020-pes-coverage-results-in-vintage-2023-pop-estimates.html"
+  },
+  "controls/sehsd-wp2025-13.pdf": {
+    "bytes": 3001682,
+    "sha256": "42ee492bdcf30ac2deb1077b9235084299b5e7244fdc0d93d0995117fab8d6bf",
+    "url": "https://www2.census.gov/library/working-papers/2025/demo/sehsd-wp2025-13.pdf"
+  },
+  "controls/v2024-methodology-updates.pdf": {
+    "bytes": 3043941,
+    "sha256": "d463558703f6ed2cffea6e337205fdb83b92bf1d07d8adf6c520fb9ee66aa57b",
+    "url": "https://www2.census.gov/about/training-workshops/2024/2024-12-16-methodology-updates-presentation.pdf"
+  },
+  "da_age.xlsx": {
+    "bytes": 20103,
+    "sha256": "9f368527f51d0c7b3bc566818533c112c3a23c9189207848d2add1a44874f3f1",
+    "url": "https://www2.census.gov/programs-surveys/popest/tables/2020/2020-demographic-analysis-estimates/Table-2_5YA-sex.xlsx"
+  },
+  "da_hispanic.xlsx": {
+    "bytes": 22242,
+    "sha256": "c570c160b90eabd7f162928dba3f8c1774ec5de169a1295e4956703c63f55a1a",
+    "url": "https://www2.census.gov/programs-surveys/popest/tables/2020/2020-demographic-analysis-estimates/table-1c.xlsx"
+  },
+  "generation_account_2026_09_24/_cache/asec25_generation.parquet": {
+    "repo_path": "infra/immigration-fiscal/generation_account_2026_09_24/_cache/asec25_generation.parquet",
+    "sha256": "664c67d7a4a33c1ed726acf9f0c7162671e6b1e137a4d64e6d75a6258529c452"
+  },
+  "generation_account_2026_09_24/frame.py": {
+    "repo_path": "infra/immigration-fiscal/generation_account_2026_09_24/frame.py",
+    "sha256": "455c80718f27fefdf07489cf22a29625767c731c6a629733827a2f4a773c2c1c"
+  },
+  "generation_results_original.csv": {
+    "bytes": 1844,
+    "commit": "1a02fbbb",
+    "original_repo_path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_oct14.csv",
+    "sha256": "77c77c37fba0de31e5041f04e4a6f85d56067434b7b81317f610197d6f91c259",
+    "source": "Original v7 generation split at commit 1a02fbbb; read-only git show, byte-identical to initial principal pin"
+  },
+  "legacy.json": {
+    "bytes": 668,
+    "sha256": "d03c59ed2fb31bb2b9421ff407822b5f087599c0c532820e4e9805694e862961",
+    "source": "preserved pre-fix positive-control output"
+  },
+  "legacy_coverage_source.txt": {
+    "bytes": 4485,
+    "sha256": "c8f9ff8119ed792a600de332103bf4ef4e774cc88c446fd508433b477a4abeb2",
+    "source": "preserved pre-fix positive-control output"
+  },
+  "legacy_result.md": {
+    "bytes": 3096,
+    "sha256": "b8bcf584d42843a9e06df481e1dfaa65f11b0f4d0b2f31528396a0329dfe7f79",
+    "source": "superseded prior result preserved verbatim"
+  },
+  "main_case_2026_10_14/derived/lineage_addition.json": {
+    "repo_path": "infra/immigration-fiscal/main_case_2026_10_14/derived/lineage_addition.json",
+    "sha256": "fde51a608e49d7bd3a88a4044f8d9637b6c20cbb3ac52f244b478e14c5311a49"
+  },
+  "main_case_2026_10_14/derived/summary.json": {
+    "repo_path": "infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json",
+    "sha256": "b30720cff0c29637ab6f74d809829fdbfc4b82a00a45fa286e3f0c1c5c183582"
+  },
+  "pes_cross.pdf": {
+    "bytes": 1053832,
+    "sha256": "336e595c0de46e541fda5cd389236579db3d9281e26dd4e5bd344c2d1a95cd86",
+    "url": "https://www2.census.gov/programs-surveys/decennial/coverage-measurement/pes/net-coverage-error-and-components-of-coverage-by-race-hispanic-origin.pdf"
+  },
+  "pes_national.pdf": {
+    "bytes": 881838,
+    "sha256": "faa5b01e9d29dc7ec87863f89c73a104e6bd2feba1ef9432f65a6841f436e022",
+    "url": "https://www2.census.gov/programs-surveys/decennial/coverage-measurement/pes/national-census-coverage-estimates-by-demographic-characteristics.pdf"
+  },
+  "pricing_dependencies.json": {
+    "bytes": 10037,
+    "sha256": "381db4e0e08a683a8371fe681dafa0df8ec07647b67c67f75a9bc635310575fc",
+    "source": "explicit dependency discovery"
+  },
+  "receipt_side_long_run_2026_09_28/derived/states.csv": {
+    "repo_path": "infra/immigration-fiscal/receipt_side_long_run_2026_09_28/derived/states.csv",
+    "sha256": "6ddb2c0156119aa0149dfde5f872e6638fd5c93bbecbb9cbd488a527551dcafb"
+  },
+  "within_group_distribution_2026_09_29/_cache/oct14/lines.json": {
+    "repo_path": "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct14/lines.json",
+    "sha256": "00a5d68278ca8fb2d99ed2db3197c3eddf5d4fe338a03cb8f8f7dc8840462d38"
+  },
+  "within_group_distribution_2026_09_29/households.py": {
+    "repo_path": "infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py",
+    "sha256": "aff9410a909aa03efcb70e2e4381b9f30dbc1d2788da69dc806ed46327fc4d8a"
+  }
+}

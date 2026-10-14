@@ -1,0 +1,22 @@
+origin,age_sex,nce_pct,se_pct,pdf_page,table
+hispanic,all,-4.99,0.53,9,C
+hispanic,0 to 4,-7.34,1.33,9,C
+hispanic,5 to 9,-3.96,1.1,9,C
+hispanic,10 to 17,-4.81,0.92,9,C
+hispanic,18 to 29 males,-7.84,1.25,9,C
+hispanic,18 to 29 females,-8.07,1.11,9,C
+hispanic,30 to 49 males,-9.32,0.73,9,C
+hispanic,30 to 49 females,-4.1,0.76,9,C
+hispanic,50 and over males,0.44,0.82,9,C
+hispanic,50 and over females,0.59,0.73,9,C
+nonhispanic_white,all,1.64,0.21,7,C
+nonhispanic_white,0 to 4,0.44,0.71,7,C
+nonhispanic_white,5 to 9,2.75,0.77,7,C
+nonhispanic_white,10 to 17,2.79,0.48,7,C
+nonhispanic_white,18 to 29 males,1.01,0.65,7,C
+nonhispanic_white,18 to 29 females,2.42,0.68,7,C
+nonhispanic_white,30 to 49 males,0.0,0.36,7,C
+nonhispanic_white,30 to 49 females,1.15,0.36,7,C
+nonhispanic_white,50 and over males,1.14,0.25,7,C
+nonhispanic_white,50 and over females,2.79,0.23,7,C
+total,all,-0.24,0.25,6,B
