@@ -188,35 +188,46 @@ It cannot identify:
   `translation_inputs.json`, `summary.json` and `gates.json` (11 gates);
 - `reads/`: the IRS cells for both years and the availability record.
 
-## Live-case reproduction (oct14)
+## Live-case reproduction (oct15)
 
-`ends.cjs` defaults to the live oct14 residual. It reads personal end specifications from
-`summary.json` `v7.end_specifications`, the `white_end_tax_keys` item from the case's registry, and
-the independent receipt-only white-lane measurement in `income_tax_keys_oct14_meta.json`. Its hashes
+`ends.cjs` defaults to the live oct15 residual. It reads personal end specifications from
+`summary.json` `v8.end_specifications`, the `white_end_tax_keys` item from the case's registry, and
+the independent receipt-only white-lane measurement in `income_tax_keys_oct15_meta.json`. Its hashes
 tie it to the final case, canonical key code, frame, raw inputs and exported CSVs. An applied item must leave a measured
 and priced residual of zero at 1e-9, in both the set and the cash set. Totals gate against the case's
 full-precision `summary.json` at 1e-9 and its four-decimal `main_case_bands.csv` at 5e-5. The white
 lane must run first. `test_keys.py` checks A1's person-level tax shares against that lane's live
-`income_tax_keys_oct14.csv` at both allocations.
+`income_tax_keys_oct15.csv` at both allocations. `evaluateFull` carries v8's post-engine mixed-unit
+removal and coverage, together with the capital return. The oct15 zero gate stays at 1e-9; the
+oct14 printing-tolerance decision below is retained as history and does not loosen that gate.
+The A1 comparison CSV uses `meta.population_v8.with_coverage`; item 7's independent movement
+keeps its original white-priced count and age mix. The tests check those two declared frames
+separately: the live CSV on the full comparison count, the historical shared-share pin on
+`meta.lineage.counts.lineage_population`. The export metadata names and hashes both frames.
 
-The original held-out key translation is a frozen input to the candidate-v2 package, which v7
+The original held-out key translation is a frozen input to the candidate-v2 package, which v8
 still consumes. Its files, IRS reads and person-key definition remain source measurements;
 live propagation does not regenerate them. `heldout.py` explicitly selects the translator's
 `--historical-sept27` route when reproducing that historical measurement. The new consumer writes
-`main_case_translation_oct14.json` and `main_case_change_oct14.csv` only after all gates pass.
+`main_case_translation_oct15.json` and `main_case_change_oct15.csv` only after all gates pass.
 
 ```sh
-node infra/immigration-fiscal/tax_key_heldout_2026_09_28/ends.cjs --case oct14
+node infra/immigration-fiscal/tax_key_heldout_2026_09_28/ends.cjs --case oct15
+node infra/immigration-fiscal/tax_key_heldout_2026_09_28/test_residual_gate.cjs
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest -p no:cacheprovider infra/immigration-fiscal/tax_key_heldout_2026_09_28/test_keys.py -q
 uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/tax_key_heldout_2026_09_28 \
-  "node {lane}/ends.cjs --case oct14" \
+  "node {lane}/ends.cjs --case oct15" \
+  "node {lane}/test_residual_gate.cjs" \
   "uv run --no-project python3 -m pytest -p no:cacheprovider {lane}/test_keys.py -q" \
-  --allow-unrun infra/immigration-fiscal/tax_key_heldout_2026_09_28/ends_oct14.cjs \
+  --allow-unrun infra/immigration-fiscal/tax_key_heldout_2026_09_28/ends_oct15.cjs \
   --allow-unrun infra/immigration-fiscal/tax_key_heldout_2026_09_28/heldout.py
 ```
 
-The module `ends_oct14.cjs` is executed by `ends.cjs`; `heldout.py` has only the historical caller
-flag updated, syntax-checked during propagation. These are the two explicit rerun coverage declarations.
+The module `ends_oct15.cjs` is executed by `ends.cjs`; the allowance declares this indirect caller.
+`heldout.py` remains a historical caller and is not regenerated. Historical oct14 outputs stay unchanged.
+The isolated `test_residual_gate.cjs` regression uses mock inputs: exact zero must pass,
+the inherited six-decimal source remainder must fail at 1e-9 before writing outputs, and
+an earlier adopted stamp must fail before writing oct15 outputs. It performs no live I/O.
 
 ## Historical reproduction (key measurement; not the live consumer)
 
@@ -264,3 +275,15 @@ The parent explicitly resolves the prior precision stop: item 7 reads limits_oct
 Live commands: node infra/immigration-fiscal/tax_key_heldout_2026_09_28/ends.cjs --case oct14; OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest -p no:cacheprovider infra/immigration-fiscal/tax_key_heldout_2026_09_28/test_keys.py -q. The live full rerun allows ends_oct14.cjs as the module executed by ends.cjs, and heldout.py as the preserved historical caller (compile-checked, not regenerated).
 
 - 2026-10-14 19:11:30 JST — live translation exits 0 with 45 gates; five person-key tests pass. Full live-consumer rerun IDENTICAL 21/21, exit 0. Both full-precision baseline totals reproduce the adopted case at 1e-9; the engine prices the preserved remainder at 1e-9. [CALCULATION: ends.cjs --case oct14; test_keys.py; wave-2 rerun]
+
+
+## 2026-10-15 Round-2 comparator fixes
+
+The parent resolves the oct15 precision stop: frozen v7 item 7 remains 1.08644bn at six decimals. Only the measured-versus-carried comparison admits 5e-7bn. Engine pricing and the priced remainder beyond that declared rounding stay at 1e-9; the exact measured rounding remainder remains visible in both output sets. `test_residual_gate.cjs` accepts 1.932434339e-7bn, rejects 6e-7bn and a stale case stamp, and checks the unchanged 1e-9 closure metadata. This supersedes the earlier strict-rounding stop; no source bytes change. [SOURCE: parent second resume note; CALCULATION: ends_oct15.cjs, test_residual_gate.cjs]
+
+- 2026-10-15 00:50 JST — isolated residual probe and Node syntax check pass. CASE_FINAL remains absent; no final live output or reproducibility receipt is claimed.
+
+
+### Adopted v8 receipt, 2026-10-15
+
+Final White export_keys was rebuilt after Black exporter; all source hashes pass. The earlier source-order failure is resolved by regenerated metadata, without editing a stored hash. Live consumer passes46gates and5keytests plus isolated VM controls. Actual measured-minus-carried item7 residual remains+1.932434339213529e-7bn at both ends/bases; only that six-decimal comparison uses5e-7bn. Engine pricing and the remainder beyond the declared rounding close at1e-9bn. Rerun IDENTICAL25/25,exit0,8.808s; child RSS1,498,497,024bytes informational via Python resource. heldout.py is explicitly allow-unrun: preserved historical measurement, not a live producer. ends_oct15.cjs is traced through ends.cjs and needs no indirect-module exemption. [CALCULATION: derived/main_case_translation_oct15.json,main_case_change_oct15.csv; scratch tax-final.json,tax-repro.json]

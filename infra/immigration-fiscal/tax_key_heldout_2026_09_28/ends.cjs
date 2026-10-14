@@ -1,5 +1,5 @@
-// Default: measure the remaining tax-key residual on the live oct14 case.
-// node ends.cjs --case oct14
+// Default: measure the remaining tax-key residual on the live oct15 case.
+// node ends.cjs --case oct15
 // The September 27 translation is a frozen upstream measurement used by the
 // candidate-v2 package. heldout.py explicitly selects --historical-sept27 when
 // reproducing that measurement; live propagation never regenerates its files.
@@ -16,9 +16,9 @@ const fs = require("fs");
 const path = require("path");
 
 if (process.argv[2] !== "--historical-sept27") {
-  if (process.argv.length > 2 && (process.argv[2] !== "--case" || process.argv[3] !== "oct14" || process.argv.length !== 4))
-    throw new Error("[BLOCKED] use --case oct14 for the live residual or --historical-sept27 for the frozen measurement");
-  require("./ends_oct14.cjs");
+  if (process.argv.length > 2 && (process.argv[2] !== "--case" || process.argv[3] !== "oct15" || process.argv.length !== 4))
+    throw new Error("[BLOCKED] use --case oct15 for the live residual or --historical-sept27 for the frozen measurement");
+  require("./ends_oct15.cjs");
 } else {
 if (process.argv.length !== 5) throw new Error("[BLOCKED] --historical-sept27 needs an input path and an output path");
 

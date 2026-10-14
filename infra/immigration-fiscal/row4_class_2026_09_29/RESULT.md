@@ -259,10 +259,10 @@ All pass; each script writes nothing and exits 1 on any failure.
   and that the cash set's Medicare equals the September 27 case's (1e-9).
 - Every classified line cites file:line (table above).
 
-## Live-case reproduction (oct14)
+## Live-case reproduction (oct15)
 
-The live consumer is `row4_oct14.cjs`. It reads the case's personal end numbers from
-`summary.json` `v7.end_specifications`, locates `row4_frame` by `meta.items`, and subtracts that item's
+The live consumer is `row4_oct15.cjs`. It reads the case's personal end numbers from
+`summary.json` `v8.end_specifications`, locates `row4_frame` by `meta.items`, and subtracts that item's
 applied cell shifts from this lane's measured row-4 shifts before pricing the remainder. If the item is
 adopted, both its cell residual and its priced residual must be zero at 1e-9. The full-precision total
 must match the case's `summary.json` at 1e-9; the `adopted` and `cash_set` CSV rows are checked at 5e-5
@@ -270,15 +270,22 @@ because the case prints four decimal places. No gate is relaxed to accommodate a
 
 `row4_oct07.cjs --export-row4` reuses the measurement formulas and their positive controls, stopping
 before the historical pricing/output block. The v4/v6 measurements remain read-only source inputs;
-no earlier case file is regenerated. Run after the final oct14 case is adopted:
+no earlier case file is regenerated. V8's post-engine mixed-unit removal and coverage are included
+by `evaluateFull`, as is the capital return. Run after the final oct15 case is adopted:
 
 ```sh
-node infra/immigration-fiscal/row4_class_2026_09_29/row4_oct07.cjs --export-row4 infra/immigration-fiscal/row4_class_2026_09_29/derived/row4_oct14_inputs.json
-node infra/immigration-fiscal/row4_class_2026_09_29/row4_oct14.cjs
+node infra/immigration-fiscal/row4_class_2026_09_29/row4_oct07.cjs --export-row4 infra/immigration-fiscal/row4_class_2026_09_29/derived/row4_oct15_inputs.json
+node infra/immigration-fiscal/row4_class_2026_09_29/row4_oct15.cjs
+node infra/immigration-fiscal/row4_class_2026_09_29/test_residual_gate.cjs
 uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/row4_class_2026_09_29 \
-  "node {lane}/row4_oct07.cjs --export-row4 {lane}/derived/row4_oct14_inputs.json" \
-  "node {lane}/row4_oct14.cjs"
+  "node {lane}/row4_oct07.cjs --export-row4 {lane}/derived/row4_oct15_inputs.json" \
+  "node {lane}/row4_oct15.cjs" \
+  "node {lane}/test_residual_gate.cjs"
 ```
+
+The isolated `test_residual_gate.cjs` regression performs no live I/O. Exact cell
+closure must pass; a nonzero cell remainder and inconsistent methods' endpoints
+must each fail the actual consumer before either oct15 output is written.
 
 ## Historical reproduction (v4/v6; not the live consumer)
 
@@ -383,3 +390,8 @@ Times from `date` (JST).
   four-decimal case CSV gate is 5e-5. `row4_oct14.cjs`: 115 gates PASS. Rerun of the two live commands above:
   **IDENTICAL: 23/23, exit 0**. Earlier case outputs were preserved. [CALCULATION: `row4_oct07.cjs --export-row4`
   → `derived/row4_oct14_inputs.json`; `row4_oct14.cjs` → `derived/row4_oct14.json` and `row4_oct14.csv`]
+
+
+### Adopted v8 receipt, 2026-10-15
+
+CASE_FINAL b35ac8fb inspected. Export/live consumer passes116gates with exactly zero remaining priced row4 residual at both ends/bases,1e-9bn. Absolute set368.9909342553624 /459.20287674292126bn, cash284.95156767595086 /375.1635101635089bn close to principal. VM positive/negative controls pass. Rerun IDENTICAL28/28,exit0,3.847s; Python perf_counter/resource child RSS371,589,120bytes informational. All archived outputs unchanged. [CALCULATION: derived/row4_oct15.json; scratch row4-final.json,row4-repro.json]
