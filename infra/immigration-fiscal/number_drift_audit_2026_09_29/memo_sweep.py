@@ -96,10 +96,6 @@ EXEMPT = {
 }
 # coincidences: (memo, record id, the number as printed, a phrase of its sentence) → why the number is current
 ALLOW = {
-    ("research/immigration-INDEX.md", "household.net_contributor_share", "24.2%",
-     "counting only services a household uses itself"): (
-        "the use-based share on main case v6 (convention B, 24.16% of members), which rounds like the every-line "
-        "share's superseded 24.18% on the published CPS union"),
     ("research/immigration-mexican-origin-by-generation-2026-09-16.md", "gap_vs_white.per_person_common_age", "$7,000",
      "per-person health care spending by age"): (
         "a published figure, Hispanic health spending per person at 45–64 (JAMA 2021, 2016 dollars), which reads to "

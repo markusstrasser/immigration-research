@@ -278,8 +278,11 @@ The cells are rounded under control so that every row and column adds: the third
 third fifth's tax-share cost and bottom fifth's per-person fiscal cost each sit 0.1 from their nearest rounding. The fiscal rows are the main case:
 cash $249.2bn, the return on public capital's resource cost $49.1bn and the pension accrual $75.1bn, which the lane
 distributes like the rest and reports apart. The winners lane's
-construction of the same channel, which the INDEX quotes, comes to $372.2bn on this lane's bridge; the two differ only
-in induced receipts: the engine's at the band's ends here, its central scenario's there ($1.2bn). The survey cannot
+construction of the same channel, which the INDEX quotes, comes to $372.2bn on this lane's bridge; holding the
+case and allocation rules fixed, the two differ only in induced receipts: the engine's at the band's ends here,
+its central scenario's there ($1.2bn). [CALCULATION: `winners_losers_2026_09_24/derived/oct14/channels.csv`,
+`fiscal`; `distribution_weights_2026_09_23/derived/oct14/channel_by_quintile.csv`, `spm`, `fiscal_a`, quintile `0`.]
+The survey cannot
 find the 3.04M added descendants, so they stay among the payers [ASSUMPTION]. The lineage's production term
 scales the wage scenarios; the other rows do not move with the case.
 

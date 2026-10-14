@@ -102,9 +102,10 @@ set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
 - Before asserting that a line's key biases a result, read how the engine keys it (schools have
   been state-priced since 2026-09-20, not national-average). The adopted case is one engine
   run plus a post-engine return on public capital:
-  `infra/immigration-fiscal/main_case_2026_10_07/main_case.cjs`. Its package (`package.cjs`) is
-  v5's (`main_case_2026_10_05`, built on the September 29 case's) plus an item registry: `meta.items`
-  locates each item's edits, and `forItems`/`withItems` apply them. The line and receipt responses and
+  `infra/immigration-fiscal/main_case_2026_10_14/main_case.cjs`. Its package (`package.cjs`) is
+  v6's (`main_case_2026_10_07`, built on v5's and the September 29 case's) plus five items in the same
+  item registry: `meta.items` locates each item's edits, and `forItems`/`withItems` apply them. The
+  ends are the personal specifications 16 / 11 in both methods (`summary.json` `v7.end_specifications`). The line and receipt responses and
   the capital return travel in `derived/corrections.json` → `meta.responses` and
   `meta.capital_return`. A consumer that applies the payload must set all of them. The payload adds
   eight spending and two receipt lines that `model.json` lacks, plus item 4's three carrier receipt
@@ -113,9 +114,9 @@ set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
   added descendants (arm b, C3, the members priced as G3+ and as whites); their edits sit in every
   engine cell, and the items' edits follow them, so the lineage no longer closes the payload. A
   consumer that splits the case by generation, household or person needs a stated rule for both (the
-  lane's Consumers table; item 4 splits by `meta.user_fees.splits`, Pell and the K-12 weight by the
-  education line). Consumer lanes compute the live case only (`oct07`); outputs of earlier cases stay in
-  git and are not regenerated.
+  Consumers tables: R1–R4 in v6's lane, R5–R9 in v7's; item 4 splits by `meta.user_fees.splits`, Pell
+  and the K-12 weight by the education line). Consumer lanes compute the live case only (`oct14`);
+  outputs of earlier cases stay in git and are not regenerated.
 
 - Consumers of `ledger_absolute_2026_09_17` (the `lifetime.py` loaders, `age_normalizations.py`)
   verify stored source hashes, including upstream
@@ -154,7 +155,7 @@ substituting a web summary or declaring a measurement unavailable:
   the keys stops `[BLOCKED]` unless it passes `--off T` (decision 2026-10-07-ledger-item-t). The finance-refresh and
   enrollment accounts carry the all-generation union only; do not flat-scale the ledger's split
   onto any account total. The adopted main case has its own split, computed on the account with
-  no reference group: `infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_oct07.csv`,
+  no reference group: `infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_oct14.csv`,
   the added descendants counted in G3+ (ladder 224; earlier cases' files are in git).
 - The account prices 39,712,493 people (dataset audit row 4); the CPS ASEC's published weights give
   40.90M. A lane that sums CPS weights gates its total at row 4 (pattern:
@@ -171,9 +172,7 @@ substituting a web summary or declaring a measurement unavailable:
 - Only income-year 2024 is a measured account. Earlier years are a
   [model back-cast](research/immigration-historical-backcast-2026-09-20.md).
 - The headline's "CBO-informed" label covers CBO's tax-incidence rules and its category rule for
-  which budgets respond; since 2026-09-26 the school response is no longer CBO's. Corporate,
-  business-property and production taxes take CBO's keys but respond at zero, by the production
-  module's unmeasured retention rule, which the 2026-10-14 assumption review contests (item 2). Since
+  which budgets respond; since 2026-09-26 the school response is no longer CBO's. Since
   2026-09-23 the main case lets general public services respond at 0.59–0.84, from cross-state
   scale, and charges justice and uncompensated care by use
   ([decision](decisions/2026-09-23-main-case-general-government-and-use-keys.md)). Since
@@ -194,17 +193,25 @@ substituting a web summary or declaring a measurement unavailable:
   of Mexican immigrants who no longer report Mexican origin
   ([decision](decisions/2026-10-05-main-case-v5.md)). Since 2026-10-07 it takes the 2026 Trustees
   Reports on current law's separate OASI and DI funds, retiree health on accrual, the added people at
-  their measured ages, and public colleges, fees and Pell keyed by use: **$389–461bn**
-  ([decision](decisions/2026-10-07-main-case-v6.md)). Companion figures:
-  - $389.1–461.5bn unrounded; counting benefits when paid (the cash set), $307.4–385.4bn; per member
-    of the 42.75M lineage, $9,101–10,794;
-  - the count's arms a and c: $378.0–445.3bn and $400.2–477.7bn; C3 (0.557) ± 1 SE: $386.3–465.4bn;
+  their measured ages, and public colleges, fees and Pell keyed by use
+  ([decision](decisions/2026-10-07-main-case-v6.md)). Since 2026-10-14 it takes the group total at the
+  personal allocation at both ends, follows child credits across mixed tax units, and counts the source
+  taxes on the business capital that serves the group's jobs: mining at 0, corporate tax at 1 at the low
+  end and at Treasury's normal-return share (0.37) at the high, and the production module's capital-tax
+  term stays zero, so nothing counts twice. It also folds in v6's two measured residuals: **$340–424bn**
+  ([decision](decisions/2026-10-14-main-case-v7.md)). Companion figures:
+  - $339.6–423.6bn unrounded; counting benefits when paid (the cash set), $264.4–348.5bn; per member
+    of the 42.75M lineage, $7,942–9,909;
+  - the count's arms a and c: $326.1–408.0bn and $353.0–439.3bn; C3 (0.557) ± 1 SE: $335.7–427.4bn;
   - counted by share of Mexican-immigrant ancestry instead of whole (beside, never the headline):
-    $274.9–374.8bn;
-  - low side with the within-district 0.836: $361–435bn;
-  - the case's two measured residuals (W on the case's income-tax keys, the row-4 class): $387.1–462.3bn,
-    $306.4–387.2bn counting benefits when paid (ladder 298), stated beside the headline, not adopted;
-  - first-year budget response with CBO's 0.63–0.66: $289–336bn, $207–260bn counting benefits when paid
+    $226.0–342.4bn;
+  - low side with the within-district 0.836: $311–397bn;
+  - the shared allocation, for distribution inside the group, not the removal total: $307.8–394.9bn
+    ($7,200–9,237 per member);
+  - the Census coverage upper bound, the 2020 PES Hispanic undercount on the US-born members with the
+    Mexico-born count fixed: +$15.2 / 18.4bn, $354.8–442.0bn, beside, never added, because how much the
+    2024 controls absorb is unmeasured (ladder 303);
+  - first-year budget response with CBO's 0.63–0.66: $236–298bn, $161–223bn counting benefits when paid
     (ladder 270's lane);
   - Earlier cases: the decision records and the INDEX's case table.
 

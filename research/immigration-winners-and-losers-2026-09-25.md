@@ -8,58 +8,62 @@ wins exactly". [MODEL / FRAMING-SENSITIVE] Three choices shape the result:
 
 Every figure below names the choice it uses.
 
-**Verdict (2026-10-07, main case v6, $389.1–461.5bn; [decision](../decisions/2026-10-07-main-case-v6.md)):**
-About one other US resident in six comes out ahead of the Mexican-origin group's presence, and the rest
+**Verdict (2026-10-14, main case v7, $339.6–423.6bn; [decision](../decisions/2026-10-14-main-case-v7.md)):**
+About one other US resident in five comes out ahead of the Mexican-origin group's presence, and the rest
 come out behind.
-- Counting each household's gains and costs as shared among its members, 17.5% come out ahead if the
-  fiscal cost is financed by tax shares, and 16.8% if by equal cuts per person. [CALCULATION:
-  `derived/oct07/net_shares.csv`, `net_social_a` and `net_social_b`, unit `spm_unit_pooled`, central; f2d96008]
-- Setting every choice at its least costly value gives 24%, and at its most costly 11% [CALCULATION:
+- Counting each household's gains and costs as shared among its members, 19.6% come out ahead if the
+  fiscal cost is financed by tax shares, and 18.7% if by equal cuts per person. [CALCULATION:
+  `derived/oct14/net_shares.csv`, `net_social_a` and `net_social_b`, unit `spm_unit_pooled`, central; 2204a2bc]
+- Setting every choice at its least costly value gives 26.9% / 24.7%, and at its most costly 11.9% / 12.1%,
+  under tax shares / per-person cuts [CALCULATION:
   `net_shares.csv`, stacks `least_costly` and `most_costly`].
-- Giving wages to the earner alone, while taxes and rent stay shared, gives 16.7% under both
+- Giving wages to the earner alone, while taxes and rent stay shared, gives 17.9% / 18.0% under tax shares / per-person cuts
   [CALCULATION: `net_shares.csv`, unit `person`].
 
 The count runs person by person over the 295.8m other residents in CPS ASEC 2025. It covers the
 adopted main case and the social items the ledger allocates (§2), at central values. Taxpayers carry
-$415.9bn of the fiscal channel at central values; the distribution lane's $417.1bn adds $1.2bn of
-induced receipts at the band's ends. $78.9bn of it is the pension accrual: the Social
+$372.2bn of the fiscal channel at central values; the distribution lane's $373.4bn adds $1.2bn of
+induced receipts at the band's ends, holding the case and allocation rules fixed. $75.1bn of it is the pension accrual: the Social
 Security and Part A benefits the group's 2024 work earns, which nothing finances in 2024. It falls on the
-future payers of those benefits and, like the borrowed federal part ($13.2bn), is allocated to no one
-alive today. With the accrual, 69% of the channel is state and local; without it, 85%. $48.8bn is the
+future payers of those benefits and, like the borrowed federal part ($10.2bn), is allocated to no one
+alive today. With the accrual, 69% of this taxpayer channel is state and local; excluding that accrual
+but keeping its other components, 87%. $49.1bn is the
 return on public capital, which is never borrowed. Rental assistance, LIHEAP and public housing ($8.8bn)
-fall on eligible households that go without the aid. The social net on today's residents is −$378.6bn,
-or −$1,280 per other resident. The group's own rows count the 42.75M lineage,
+fall on eligible households that go without the aid. The social net on today's residents is −$341.7bn,
+or −$1,155 per other resident. The group's own rows count the 42.75M lineage,
 the 3.04M added descendants placed at the identified third-plus members' records of their own five-year
-age band [ASSUMPTION]; the direct transfer it receives is $10,178 per member. [CALCULATION:
-`derived/oct07/channels.csv`, rows `fiscal`, `future_pension_accrual`, `future_taxpayers`,
+age band [ASSUMPTION]; the direct transfer it receives is $9,157 per member. [CALCULATION:
+`derived/oct14/channels.csv`, rows `fiscal`, `future_pension_accrual`, `future_taxpayers`,
 `fiscal_state_local`, `fiscal_resource` and `displaced_beneficiaries`; `net_shares.csv`, `mean_usd`;
-`group_frame.csv`; f2d96008. The distribution lane's $417.1bn: `derived/oct07/channel_by_quintile.csv`,
-`fiscal_a`, 498a6a71]
+`group_frame.csv`; 2204a2bc. The distribution lane's $373.4bn: `derived/oct14/channel_by_quintile.csv`,
+`fiscal_a`, 17d3735a]
 
 Who comes out where:
-- **Behind:** 97–99% in California and Texas, 98–99% of US-born adults with a high-school education or
-  less, 91–92% of renters, and from 84% to over 99% of each decile in the bottom half.
+- **Behind:** 96–98% in California and Texas, 97–98% of US-born adults with a high-school education or
+  less, 89–91% of renters, and from 82% to over 99% of each decile in the bottom half.
 - **Most often ahead:** households whose earners have some college or more and live outside California
-  and Texas: the top decile (30% under tax shares, 54% under per-person cuts) and landlords (37–42%),
-  whose pooled net under tax shares is −$636 a year.
+  and Texas: the top decile (34% under tax shares, 56% under per-person cuts) and landlords (41–46%),
+  whose pooled net under tax shares is −$384 a year.
 
-[CALCULATION: `derived/oct07/person_nets_by_cut.csv`, cuts `state3`, `edu_nativity`, `tenure` and
-`decile`, pooled under (a) and (b); f2d96008]
+[CALCULATION: `derived/oct14/person_nets_by_cut.csv`, cuts `state3`, `edu_nativity`, `tenure` and
+`decile`, pooled under (a) and (b); 2204a2bc]
 
 Preferences are an attribution under a stated proportional-replacement rule. White natives' part is
 −$0.58bn, and other recipients in the same pools, mostly in admissions, carry −$0.97bn [CALCULATION:
-`derived/oct07/channels.csv`, rows `preferences_group_part` and `preferences_group_part_others`].
+`derived/oct14/channels.csv`, rows `preferences_group_part` and `preferences_group_part_others`].
 [CALCULATION: [ledger lane](../infra/immigration-fiscal/winners_losers_2026_09_24/RESULT.md),
-`--case oct07` → `derived/oct07/`, f2d96008; ladder 226] [FRAMING-SENSITIVE]
+`--case oct14` → `derived/oct14/`, 2204a2bc; ladder 226] [FRAMING-SENSITIVE]
 
-The sections below keep the tables of the September 24 run. [CALCULATION: `winners_losers.py` →
+The tables and their accompanying analysis below preserve the September 24 calculation record;
+they are not the current verdict. Current pointers in §§1 and 7 name their case separately.
+[CALCULATION: `winners_losers.py` →
 `derived/net_shares.csv`, `person_nets_by_cut.csv` at `--case sept24`]
 
 ## 1. Object and frame
 
 The frame is the [complete annual account](immigration-complete-annual-account-2026-09-20.md) on the
 main case adopted September 24 in the tables below; the verdict above is the lane's run on
-main case v6 of 2026-10-07. It measures the effect of the Mexican-origin residents, all generations, on all
+main case v7 of 2026-10-14. It measures the effect of the Mexican-origin residents, all generations, on all
 other US residents in 2024, comparing the year with and without the group. The verdict counts the 42.75M
 lineage the case prices: the 39.7M who report Mexican origin, as the account prices them, and 3.04M
 descendants who no longer do. The September 24 tables count the survey's 40.9m. The survey cannot find the
@@ -317,7 +321,7 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
 - **Pooling.** It treats each household as sharing everything and measures nothing about how families
   actually share. The truth for any family lies between the two counts.
 - **Kept out of every net.**
-  - The debt legacy's interest ($31.8–44.2bn on the main case, `derived/oct07/channels.csv` row
+  - The debt legacy's interest ($25.9–41.9bn on main case v7, `derived/oct14/channels.csv` row
     `debt_legacy`) is a different object.
   - The owners' home-value gain is a stock ($1.3–2.9tn).
   - The consumer-price and care side views overlap the wage channel.
@@ -388,3 +392,4 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
 - 2026-10-07 (main case v6, [decision](../decisions/2026-10-07-main-case-v6.md), ladder 295): the verdict runs main case v6 (f2d96008). 17.5% / 16.8% of other residents come out ahead, pooled, and 16.7% under both with wages to the earner; taxpayers' fiscal channel is $415.9bn, the pension accrual $78.9bn, the borrowed part $13.2bn and the social net on today's residents −$378.6bn. The case falls $0.5bn at central values, but the accrual falls $1.5bn and the borrowed part rises $0.6bn, so today's residents carry $0.4bn more and the share slips. The group's rows place the 3.04M added descendants at the identified third-plus records of their own five-year age band. The October 5 verdict's figures are a column of the earlier-cases table; the pairing ($489.0–570.7bn) and the debt legacy ($31.8–44.2bn) follow v6, and the G3+ premium bound stays on v5 with the world ledger. §1 now names the run and the lineage, which it had not since September 29, and the preferences paragraph dates its 0.1-point move to the September 27 case. Concept affected: who comes out ahead, and the group frame's age placement.
 - 2026-10-08: living text states only the live case, at the operator's request; earlier-case figures removed, recoverable at 0e0c5e28.
 - 2026-10-08 (item T): §4's pointer to the California–Texas gaps leads with their item-T values, because the white-reference ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T; [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)): −$12,133 / −$7,479 → −$15,228 / −$9,267, with the survey-tax pair and the few-records caveat beside them. No figure of this memo's own changes. Concept affected: the pointer to the per-member geography gaps.
+- 2026-10-14 (main case v7, [decision](../decisions/2026-10-14-main-case-v7.md)): the current verdict uses `oct14` (2204a2bc), with both case ends personal and the job-capital tax receipts included. Pooled, 19.6% / 18.7% of other residents come out ahead under tax shares / per-person cuts; with wages to the earner, 17.9% / 18.0%. The fiscal taxpayer channel is $372.2bn centrally and the social net on today's residents −$341.7bn; the minority-ahead conclusion holds. The dated September 24 tables remain a calculation record. Concept affected: the share ahead and the present/future financing allocation.

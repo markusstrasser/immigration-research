@@ -333,7 +333,7 @@ INDEX_SPANS = [
      "([scope memo](immigration-education-administration-scope-2026-09-20.md))."),
     ("[Real fiscal and social costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) (ladder 188–193)",
      "[decision](../decisions/2026-09-28-social-items-more-benefits.md))."),
-    ("Wages move **$66–166bn**", "charged nationally, the share ahead falls to 7.5%."),
+    ("Wages move **$66–166bn**", "charged nationally, the share ahead falls to 9.0%."),
     ("The [world ledger]", "premium over being raised in Mexico. [FRAMING-SENSITIVE]"),
     ("Benefits are priced to the same standard as the costs", "so both figures stand (ladder 199)."),
     # the dataset audit's fill-in correction, sized on the main case (the list's other sizes sit in the ladder)
@@ -368,7 +368,7 @@ FAQ_SPANS = [
     # entry 6 also sets the white gap beside the main case (since the comparators' income-tax keys, cc793ccf)
     ("the renters' payments cancel in dollars but not by income", "(ladder 194)."),
     ("many average residents, the main case's gap counting benefits when paid",
-     "falls inside the main case's $340–424bn."),
+     "because it subtracts their net contribution."),
     ("**What about obligations left by past years?**",
      "[decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]"),
     # entry 19, the lineage counted as whole people (main case v5, 2026-10-05)
@@ -409,12 +409,12 @@ MEMO_SPANS = {
         ("**Verdict (2026-10-14, main case v7):**", "state mix are not computed."),
     ],
     WINNERS: [
-        ("**Verdict (2026-10-07, main case v6,", "whose pooled net under tax shares is −$636 a year."),
+        ("**Verdict (2026-10-14, main case v7,", "whose pooled net under tax shares is −$384 a year."),
     ],
     # the Indian-origin full account on main case v6 (00992d4b): the verdict, §2's table and notes, the v6 revision
     INDIAN: [
-        ("**Verdict:** On main case v6", "reference is third-plus non-Hispanic whites]"),
-        ("Per member a year, low / high end of main case v6", "too few to estimate."),
+        ("**Verdict:** On main case v7", "reference is third-plus non-Hispanic whites]"),
+        ("Per member a year, low / high end of main case v7", "too few to estimate."),
         ("- 2026-10-07 (main case v6, [decision]",
          "affected: the Indian-origin full account follows the main case and the comparators' education keys."),
     ],

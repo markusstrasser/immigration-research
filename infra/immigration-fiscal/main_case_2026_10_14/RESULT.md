@@ -361,9 +361,9 @@ the parts, `summary.json` `v7.change_by_item.<item>.lineage`]
 - **`meta.items`** names v6's four items, then the five new ones. Each applied edit set has `{first, count}` and its
   parts. `personal_allocation` has count 0.
 - **The lineage payloads** are v6's files byte for byte (gated); the added people's lineage block is v6's.
-- **Stamps.** While v7 is the candidate, `meta.adopted` is `null`. `status` reads "candidate: main case v7, not
-  adopted (decisions/2026-10-14-main-case-v7.md not yet written); …", and `case` extends v6's text with the five
-  items. An arm or a lineage option is a variant: adopted null, status `variant: …`.
+- **Stamps.** `meta.adopted` is "2026-10-14" and `status` reads "adopted 2026-10-14
+  (decisions/2026-10-14-main-case-v7.md): …" (148ed1ea; `null` and "candidate: …" until then), and `case` extends
+  v6's text with the five items. An arm or a lineage option is a variant: adopted null, status `variant: …`.
 
 ## The item mechanism
 
@@ -422,8 +422,8 @@ The v7 layer then builds the new edit sets on that case's models and appends the
   - the meta subtrees.
 
   Two relocations are documented: v6's `change_at_fixed_specifications` and `range.items_at_the_case_data` move under
-  `.oct07_case` (168 paths). One type change is documented: `meta.adopted`, string to null, while v7 is
-  the candidate.
+  `.oct07_case` (168 paths). While v7 was the candidate, one type change was documented (`meta.adopted`, string
+  to null); adoption emptied `TYPE_CHANGES`.
 - **G3** (`generality.cjs`). v6's own scripts, unmodified, run on this package with the new items off (main_case.cjs 129, sign_reversal.cjs 22, lineage_addition.cjs 41
   gates). They write v6's 10 derived files byte for byte.
 - **G4** (`api_check.cjs`). 10 patterns and 120 checks pass. 35 consumer gates need
@@ -578,8 +578,8 @@ Notes:
 - **The four new responses** are in `meta.responses` after v6's entries, and in every specification after v6's line
   responses. A consumer that builds its own specifications from a fixed list misses them, and its job-capital lines
   then respond at 0.
-- **The stamp.** While v7 is the candidate, `meta.adopted` is `null` and the status starts "candidate: main case v7,
-  not adopted". A consumer that checks `meta.adopted` (`debt_legacy.py`'s v5_parts) waits for the adoption.
+- **The stamp.** `meta.adopted` is "2026-10-14" since adoption (148ed1ea); before it, `null` with a status starting
+  "candidate: main case v7, not adopted". A consumer that checks `meta.adopted` (`debt_legacy.py`'s v5_parts) reads it.
 - **The oracle.** Each consumer gates its oct14 total against `main_case_bands.csv`: `adopted` and `cash_set`.
 - **The companion readings** are the rows `lineage_<option>`, `ancestry_share_<scenario>` and `shared_allocation`
   (each with `_cash_set`), and `v7.companions` in `summary.json`.

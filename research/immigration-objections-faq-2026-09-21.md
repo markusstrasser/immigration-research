@@ -14,7 +14,7 @@ Social Security and Part A promises members earn as they work, at the benefits c
 pay; counting benefits when paid, it is $264–349bn. It charges the return on public capital, lets
 roads, parks, rental assistance and government enterprises respond, and takes long-run property
 taxes. With every service proportional it is $369–438bn. CBO-style first-year budget responses
-give $289–336bn ($207–260bn counting benefits when paid), and other residents' social costs and
+give $236–298bn ($161–223bn counting benefits when paid), and other residents' social costs and
 benefits bring the total to $439–533bn.
 The second anchor is the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
 (same-age gap against third-plus non-Hispanic whites: Mexico-born −$8,849, second generation
@@ -60,7 +60,7 @@ end assumes it sits above that average, as custody does (fiscal $423.6bn, victim
 added descendants' own social rows, $8.4 / 8.5bn, take their share of each row's key [ASSUMPTION].
 Figures normalized against the average resident and the crash figure charged by fault ($40.6bn)
 sit beside it and are never added. Property values stay out. The first-year budget response
-($289–336bn, or $207–260bn counting benefits when paid)
+($236–298bn, or $161–223bn counting benefits when paid)
 and fully proportional services ($369–438bn) are scenarios of the same account, not
 earlier estimates.
 
@@ -117,7 +117,7 @@ about respond as follows ([decision](../decisions/2026-09-27-main-case-capital-r
   stock gives far less and stays beside.
 - **Schools** are charged at their full average cost per pupil: across 2019 districts spending rises
   1.004% per 1% more pupils (pupil-weighted) and across states 0.973%. CBO's year-to-year 63–66%
-  belongs to the first-year budget response ($289–336bn), and
+  belongs to the first-year budget response ($236–298bn), and
   the within-district 0.836 gives the low side, $311–397bn
   ([decision](../decisions/2026-09-26-main-case-schools-full-cost.md)).
 - **General public services** respond at 0.60–0.85 of average cost: removing a group that is 13%
@@ -140,9 +140,9 @@ against third-plus non-Hispanic whites on matched keys (every group's income tax
 the same headcount path,
 ending at 42.75M people. The federal comparison uses **2005–2023**, the annual ACS headcount
 window; earlier starts rely more on interpolation. In 2024 the modeled excess annual financing
-charge is **$101.6–101.7bn** with past accrued Social Security and Part A promises capitalized as if
-borrowed. Carrying those accruals with payroll instead of benefits gives **$92.2–92.3bn**;
-counting benefits when paid gives **$35.6–36.3bn**. The main case carries the
+charge is **$109.7–120.0bn** with past accrued Social Security and Part A promises capitalized as if
+borrowed. Carrying those accruals with payroll instead of benefits gives **$100.7–111.1bn**;
+counting benefits when paid gives **$49.5–59.8bn**. The main case carries the
 3.04M added descendants on the third-plus generation's path, measured from 2005 only, so the comparison runs the
 2005 start alone. These are model
 outputs, not measured group debt.
@@ -193,7 +193,7 @@ and corporate rents treated separately from normal returns
 ([decision](../decisions/2026-10-14-main-case-v7.md), item 6). Omitted benefits would have to reach
 $340–424bn a year to offset the main case. That threshold is conditional on the service-response share,
 which is assumed and unmeasured.
-- It is $289–336bn with CBO's first-year responses ($207–260bn counting benefits when paid). It is
+- It is $236–298bn with CBO's first-year responses ($161–223bn counting benefits when paid). It is
   $276–390bn if non-school education budgets
   are also held fixed.
 - It reaches zero below a 4.6% service response at the low end and 18.2% at the high, with enterprises and their
@@ -309,14 +309,14 @@ ladder 224]
 ## 6. "Comparing with whites is cherry-picking."
 
 Finding: against all natives the same-age gaps are −$6,478, −$6,128 and −$4,747; against as
-many average residents, the main case's gap counting benefits when paid is −$279–310bn, about −$6,500 to
-−$7,200 per person. The gap is defined on cash flows only: an accrued pension
+many average residents, the main case's gap counting benefits when paid is −$280–282bn, about
+−$6,555–6,605 per person. The gap is defined on cash flows only: an accrued pension
 has no national total to share out. The net-cost headline compares with no reference group at all: it is the change for
 all other residents, other immigrants included. Third-plus whites are not a flattering reference either: with every
-group's income taxes on the case's own keys they about break even on accrual, so the gap against as many of them,
-$432–436bn a year, falls inside the main case's $340–424bn. [SOURCE: `derived/complete_gaps.csv`;
+group's income taxes on the case's own keys and its job-capital tax responses they contribute more than they cost on accrual. Holding those rules fixed, the gap against as many of them,
+$482–512bn a year, exceeds the main case's $340–424bn because it subtracts their net contribution. This is a rough matched re-key of both groups, rather than an engine run. [SOURCE: `derived/complete_gaps.csv`;
 [program gaps](../infra/immigration-fiscal/black_comparator_rough_2026_09_28/RESULT.md), ladder 259;
-`derived/rekey_summary_oct07.csv`, 86667f65; [white comparison](../infra/immigration-fiscal/white_replacement_2026_09_28/RESULT.md),
+`derived/rekey_summary_oct14.csv`, 7a051bd3; [white comparison](../infra/immigration-fiscal/white_replacement_2026_09_28/RESULT.md),
 ladder 263]
 
 ## 7. "Is this just low education? Poor natives cost money too."
@@ -402,7 +402,7 @@ of an admission rule, a removal policy or one more arrival, it contains no trans
 and most of the people in it are US-born citizens. In the first years, budgets would not shed the
 full average cost of the group's pupils, nor the long-run road and park costs. With CBO's
 year-to-year responses, no capital response and benefits counted when paid, the main case gives
-$207–260bn ($289–336bn with the pension accrual). The return on
+$161–223bn ($236–298bn with the pension accrual). The return on
 public capital ($37–61bn of the case) is an opportunity cost, and the pension accrual ($75bn) a
 promise of future benefits; neither is cash that a removal would free in the year.
 Schools show how slowly budgets shrink: across US districts whose enrollment fell over twenty-year spans, spending
@@ -559,8 +559,8 @@ all ages and generations in income-year 2024, state and local services included:
 case charges the return on public capital, long-run road and park
 responses, rental assistance, government enterprises and the pension promises members earn as they
 work, none of which CBO's projection carries;
-with CBO-style first-year budget responses the main case gives −$289 to −336bn, or −$207 to
-−260bn counting benefits when paid (entry 2).
+with CBO-style first-year budget responses the main case gives −$236 to −298bn, or −$161 to
+−223bn counting benefits when paid (entry 2).
 Where the two overlap they agree: a young recent inflow is net positive on the measured items
 here too, +$3,495 per person for Mexico-born arrivals of 2016–2025 on the partial account with
 taxes as the survey reports them, and about break-even (−$1,299, interval −$3,151 to +$554) once
@@ -1009,3 +1009,5 @@ they get more prominence.
   weights behind its per-person and total figures; entry 4 says that taxes on the business capital working with the
   group count at zero, which the review finds inconsistent with the case's long-run capital rule. Concept affected:
   the ledger's benefit basis next to an accrual headline; the induced-tax claim in entry 4.
+
+- 2026-10-14, wave 2 ([decision](../decisions/2026-10-14-main-case-v7.md)): the first-year budget response, white/average-resident comparisons and federal legacy comparisons follow the committed `oct14` files. Entry 6 now states that third-plus whites contribute on accrual at both ends under the case's job-capital receipt responses, so the white gap exceeds the no-reference headline. Concept affected: live-case companion comparisons.
