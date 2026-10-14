@@ -112,7 +112,7 @@ def test_oct14_rebuilds_its_directory(tmp_path):
     names = sorted(p.name for p in (HERE / "derived" / "oct14").iterdir())
     oct07 = sorted(p.name for p in (HERE / "derived" / "oct07").iterdir())
     assert names == sorted(oct07 + ["oct14_bridge_2024.csv"]), names
-    rebuild(tmp_path)
+    rebuild(tmp_path, "--case", "oct14")
     assert sorted(p.name for p in tmp_path.iterdir()) == names
     differ = [n for n in names if (tmp_path / n).read_bytes() != (HERE / "derived" / "oct14" / n).read_bytes()]
     assert not differ, differ

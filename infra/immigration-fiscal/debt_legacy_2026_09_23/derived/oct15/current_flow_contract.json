@@ -1,0 +1,536 @@
+{
+  "case": "oct15",
+  "status": "current flows only; historical stocks blocked by unlocated financing",
+  "financing_complete": false,
+  "historical_stock_identified": false,
+  "case_commit": "b35ac8fb533b26c797abd2e03f3610b79bbadd73",
+  "gates": [
+    {
+      "basis": "set",
+      "spec": 0,
+      "cost_bn": 369.86725471891816,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 1,
+      "cost_bn": 371.9959816759026,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 2,
+      "cost_bn": 453.00277532670077,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 3,
+      "cost_bn": 455.13150228368534,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 4,
+      "cost_bn": 369.86725471891816,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 5,
+      "cost_bn": 371.9959816759026,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 6,
+      "cost_bn": 453.00277532670077,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 7,
+      "cost_bn": 455.13150228368534,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 8,
+      "cost_bn": 370.71753702421245,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 9,
+      "cost_bn": 372.8462639811971,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 10,
+      "cost_bn": 453.8530576319953,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 11,
+      "cost_bn": 455.98178458897974,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 12,
+      "cost_bn": 370.71753702421245,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 13,
+      "cost_bn": 372.8462639811971,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 14,
+      "cost_bn": 453.8530576319953,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 15,
+      "cost_bn": 455.98178458897974,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 16,
+      "cost_bn": 365.79193025548534,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 17,
+      "cost_bn": 367.9206572124698,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 18,
+      "cost_bn": 448.92745086326795,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 19,
+      "cost_bn": 451.0561778202525,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 20,
+      "cost_bn": 365.79193025548534,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 21,
+      "cost_bn": 367.9206572124698,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 22,
+      "cost_bn": 448.92745086326795,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 23,
+      "cost_bn": 451.0561778202525,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 24,
+      "cost_bn": 366.6422125607796,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 25,
+      "cost_bn": 368.7709395177643,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 26,
+      "cost_bn": 449.77773316856246,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 27,
+      "cost_bn": 451.9064601255469,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 28,
+      "cost_bn": 366.6422125607796,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 29,
+      "cost_bn": 368.7709395177643,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 30,
+      "cost_bn": 449.77773316856246,
+      "passed": true
+    },
+    {
+      "basis": "set",
+      "spec": 31,
+      "cost_bn": 451.9064601255469,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 0,
+      "cost_bn": 285.8278881395059,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 1,
+      "cost_bn": 287.95661509649034,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 2,
+      "cost_bn": 368.9634087472883,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 3,
+      "cost_bn": 371.0921357042729,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 4,
+      "cost_bn": 285.8278881395059,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 5,
+      "cost_bn": 287.95661509649034,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 6,
+      "cost_bn": 368.9634087472883,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 7,
+      "cost_bn": 371.0921357042729,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 8,
+      "cost_bn": 286.6781704448003,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 9,
+      "cost_bn": 288.80689740178485,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 10,
+      "cost_bn": 369.81369105258284,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 11,
+      "cost_bn": 371.9424180095673,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 12,
+      "cost_bn": 286.6781704448003,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 13,
+      "cost_bn": 288.80689740178485,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 14,
+      "cost_bn": 369.81369105258284,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 15,
+      "cost_bn": 371.9424180095673,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 16,
+      "cost_bn": 281.752563676073,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 17,
+      "cost_bn": 283.88129063305746,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 18,
+      "cost_bn": 364.8880842838555,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 19,
+      "cost_bn": 367.01681124084007,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 20,
+      "cost_bn": 281.752563676073,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 21,
+      "cost_bn": 283.88129063305746,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 22,
+      "cost_bn": 364.8880842838555,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 23,
+      "cost_bn": 367.01681124084007,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 24,
+      "cost_bn": 282.6028459813674,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 25,
+      "cost_bn": 284.731572938352,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 26,
+      "cost_bn": 365.73836658915,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 27,
+      "cost_bn": 367.86709354613447,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 28,
+      "cost_bn": 282.6028459813674,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 29,
+      "cost_bn": 284.731572938352,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 30,
+      "cost_bn": 365.73836658915,
+      "passed": true
+    },
+    {
+      "basis": "cash",
+      "spec": 31,
+      "cost_bn": 367.86709354613447,
+      "passed": true
+    }
+  ],
+  "closure_tolerance_bn": 1e-09,
+  "source_pins": {
+    "sources/immigration-fiscal/data/external/bea_nipa/Section1All_xls.xlsx": "238ba851c9a4932d91a0dedb1b3f2e6c6d37574d154a54267da18b9cb0921a19",
+    "sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+    "infra/immigration-fiscal/historical_backcast_2026_09_20/_cache/Section7All_xls.xlsx": "ce107c8ce92393613c0abae38156afcfaef8ab571eedf0302dc09ca44738b9ef",
+    "sources/immigration-fiscal/data/external/omb_hist_fy2027/hist03z1_fy2027.xlsx": "47864b5078698919c3237038ad7296fb7aeb62f6942c3d8acccf98ad0a7122f7",
+    "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/hist03z2_fy2027.xlsx": "78100f3efb1a6b08d675b24af173a57359e47dce103a2f1499d905a4bbba06ce",
+    "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/hist07z1_fy2027.xlsx": "c3cfce645fe7e4eb9beeb46a970e2b0b30301f02f03f3e5461e9950538641ff9",
+    "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/hist12z3_fy2027.xlsx": "43aa30c0d39116909b990a93926540fd173bce4963f26ee3a0d28a6f900d974d",
+    "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/fred_GS10.csv": "e22128f6caa50e4e7fed03a1c2d323a517bad452a2c69eab89277450fb59bc5c",
+    "sources/immigration-fiscal/data/external/nhea/nhe_tables/Table 03 National Health Expenditures, by Source of Funds.xlsx": "d379d2746ece097b6f864543d99832882f7dbdc197d1a25473d53d22cdfd58c7"
+  },
+  "bands_bn": {
+    "set": [
+      365.7919302554848,
+      455.9817845889793
+    ],
+    "cash": [
+      281.75256367607324,
+      371.9424180095669
+    ]
+  },
+  "unlocated_by_set_end_convention": {
+    "cash|high|central": 6.90595676914041,
+    "cash|high|high": 6.90595676914041,
+    "cash|high|low": 6.90595676914041,
+    "cash|low|central": 2.9521605120143652,
+    "cash|low|high": 2.9521605120143652,
+    "cash|low|low": 2.9521605120143652,
+    "set|high|central": 6.893743593401796,
+    "set|high|high": 6.893743593401796,
+    "set|high|low": 6.893743593401796,
+    "set|low|central": 2.939947336275636,
+    "set|low|high": 2.939947336275636,
+    "set|low|low": 2.939947336275636
+  },
+  "population": {
+    "without_coverage": 43269648.68157841,
+    "with_coverage": 45230062.30075857,
+    "completion": 517435.75719317,
+    "coverage": 1960413.6191801599
+  },
+  "source_rule": "classified source pieces retain their government and timing; no aggregate federal/cash fallback",
+  "coverage_production_rule": "producer generation_ratio P/F transport is conditional",
+  "financing_totals_bn": {
+    "cash|high|central|cash": 290.97450837629526,
+    "cash|high|central|displaced_beneficiaries": 9.263855039872865,
+    "cash|high|central|private_production": 0.4850060844461385,
+    "cash|high|central|resource_cost": 64.3130917398127,
+    "cash|high|central|unlocated": 6.90595676914041,
+    "cash|high|high|cash": 290.97450837629526,
+    "cash|high|high|displaced_beneficiaries": 9.263855039872865,
+    "cash|high|high|private_production": 0.4850060844461385,
+    "cash|high|high|resource_cost": 64.3130917398127,
+    "cash|high|high|unlocated": 6.90595676914041,
+    "cash|high|low|cash": 290.97450837629526,
+    "cash|high|low|displaced_beneficiaries": 9.263855039872865,
+    "cash|high|low|private_production": 0.4850060844461385,
+    "cash|high|low|resource_cost": 64.3130917398127,
+    "cash|high|low|unlocated": 6.90595676914041,
+    "cash|low|central|cash": 229.73410779647352,
+    "cash|low|central|displaced_beneficiaries": 9.263855039872865,
+    "cash|low|central|private_production": 0.7372948249361221,
+    "cash|low|central|resource_cost": 39.065145502776154,
+    "cash|low|central|unlocated": 2.9521605120143652,
+    "cash|low|high|cash": 229.73410779647352,
+    "cash|low|high|displaced_beneficiaries": 9.263855039872865,
+    "cash|low|high|private_production": 0.7372948249361221,
+    "cash|low|high|resource_cost": 39.065145502776154,
+    "cash|low|high|unlocated": 2.9521605120143652,
+    "cash|low|low|cash": 229.73410779647352,
+    "cash|low|low|displaced_beneficiaries": 9.263855039872865,
+    "cash|low|low|private_production": 0.7372948249361221,
+    "cash|low|low|resource_cost": 39.065145502776154,
+    "cash|low|low|unlocated": 2.9521605120143652,
+    "set|high|central|cash": 290.97450837629526,
+    "set|high|central|displaced_beneficiaries": 9.263855039872865,
+    "set|high|central|pension_accrual": 84.05157975515104,
+    "set|high|central|private_production": 0.4850060844461385,
+    "set|high|central|resource_cost": 64.3130917398127,
+    "set|high|central|unlocated": 6.893743593401796,
+    "set|high|high|cash": 290.97450837629526,
+    "set|high|high|displaced_beneficiaries": 9.263855039872865,
+    "set|high|high|pension_accrual": 84.05157975515104,
+    "set|high|high|private_production": 0.4850060844461385,
+    "set|high|high|resource_cost": 64.3130917398127,
+    "set|high|high|unlocated": 6.893743593401796,
+    "set|high|low|cash": 290.97450837629526,
+    "set|high|low|displaced_beneficiaries": 9.263855039872865,
+    "set|high|low|pension_accrual": 84.05157975515104,
+    "set|high|low|private_production": 0.4850060844461385,
+    "set|high|low|resource_cost": 64.3130917398127,
+    "set|high|low|unlocated": 6.893743593401796,
+    "set|low|central|cash": 229.73410779647352,
+    "set|low|central|displaced_beneficiaries": 9.263855039872865,
+    "set|low|central|pension_accrual": 84.05157975515104,
+    "set|low|central|private_production": 0.7372948249361221,
+    "set|low|central|resource_cost": 39.065145502776154,
+    "set|low|central|unlocated": 2.939947336275636,
+    "set|low|high|cash": 229.73410779647352,
+    "set|low|high|displaced_beneficiaries": 9.263855039872865,
+    "set|low|high|pension_accrual": 84.05157975515104,
+    "set|low|high|private_production": 0.7372948249361221,
+    "set|low|high|resource_cost": 39.065145502776154,
+    "set|low|high|unlocated": 2.939947336275636,
+    "set|low|low|cash": 229.73410779647352,
+    "set|low|low|displaced_beneficiaries": 9.263855039872865,
+    "set|low|low|pension_accrual": 84.05157975515104,
+    "set|low|low|private_production": 0.7372948249361221,
+    "set|low|low|resource_cost": 39.065145502776154,
+    "set|low|low|unlocated": 2.939947336275636
+  },
+  "mixed_population_rule": "Declared D_added_residual booked to added lineage; other surviving-unit components booked to the identified-union route [ASSUMPTION]. Generation totals alone do not identify a further union/lineage split.",
+  "per_member_usd": {
+    "set": [
+      8087.36295393849,
+      10081.387497477133
+    ],
+    "cash": [
+      6229.320707156042,
+      8223.345250694667
+    ]
+  },
+  "previous_case_bands_bn": {
+    "set": [
+      339.55201782952685,
+      423.64926070050683
+    ],
+    "cash": [
+      264.4255736155055,
+      348.52281648648557
+    ]
+  },
+  "change_from_oct14_bn": {
+    "set": [
+      26.239912425957925,
+      32.33252388847245
+    ],
+    "cash": [
+      17.32699006056771,
+      23.419601523081326
+    ]
+  }
+}

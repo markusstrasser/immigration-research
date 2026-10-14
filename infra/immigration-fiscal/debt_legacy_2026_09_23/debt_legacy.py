@@ -99,13 +99,15 @@ set is a correction of its own (item_components). The union twin carries the edi
 so the lineage, the case less its twin, holds only the added people's parts. The whole-budget rules take the
 back-cast's v6 parts by their line (cash_whole). One more bridge, from October 5 (items_bridge): item by item.
 
-The live case is oct14 (v7), written only to derived/oct14/. The personal allocation sets both band ends;
+The live case is oct15 (v8), whose source-classified current flow is written only to derived/oct15/.
+Use --current-flow-only explicitly: unlocated post-engine payer/timing stops historical stock construction.
+The personal allocation sets both band ends. The historical v7 port keeps its original rule:
 R6/R7 and later item parts follow the registry's union/lineage tags. The v7 bridge moves the allocation first,
 then each new edit set, with a receipt response entering with its item. Earlier case files stay untouched.
 
 Run from the repository root (only the live case for propagation; older commands are historical entry points):
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py
-  ... debt_legacy.py --case oct14                           # main case v7 of 2026-10-14 -> derived/oct14/
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py --current-flow-only
+  ... debt_legacy.py --case oct14                           # historical v7 -> derived/oct14/
   ... debt_legacy.py --case oct07                           # historical v6 -> derived/oct07/
   ... debt_legacy.py --case oct05                           # the main case of 2026-10-05 -> derived/oct05/
   ... debt_legacy.py --case sept29                          # the main case of 2026-09-29 -> derived/sept29/
@@ -114,6 +116,7 @@ Run from the repository root (only the live case for propagation; older commands
 from __future__ import annotations
 
 import argparse
+import sys
 import copy
 import hashlib
 import importlib.util
@@ -356,7 +359,7 @@ LATER_CASES = {"sept26": Case("main_case_2026_09_26", "main case adopted 2026-09
                               {"long_run_non_school_full": ("cbo_category_lag_non_school_full", True),
                                "long_run_non_school_fixed": ("cbo_category_lag_non_school_fixed", True),
                                "proportional_reference": ("proportional_reference", False)})}
-DEFAULT_CASE = "oct14"
+DEFAULT_CASE = "oct15"
 # The main case adopted on 2026-09-29 (candidate v4), in one place: its lane; its two payloads, paths under
 # infra/immigration-fiscal/ (the set, with the pension accrual, is the adopted lane's corrections.json, which is the
 # candidate's corrections_v4.json plus five meta stamps, gated in case_payload; the adopted lane writes no cash
@@ -423,7 +426,14 @@ LATER_CASES["oct14"] = Case(OCT14["lane"],
                             "main case v7 (2026-10-14): personal allocation, mixed-unit child credits, job-capital "
                             "taxes and the case's further item edits",
                             dict(LATER_CASES["sept27"].profiles), OCT14["payloads"])
-CASE_CONFIG = {"sept29": SEPT29, "oct05": OCT05, "oct07": OCT07, "oct14": OCT14}
+OCT15 = dict(OCT14, lane="main_case_2026_10_15",
+             payloads={"set": "main_case_2026_10_15/derived/corrections.json",
+                       "cash": "main_case_2026_10_15/derived/corrections_cash.json"},
+             adopted="2026-10-15", version="v8")
+LATER_CASES["oct15"] = Case(OCT15["lane"],
+                            "main case v8: domestic-source taxes, completed union, mixed-unit removal and coverage",
+                            dict(LATER_CASES["sept27"].profiles), OCT15["payloads"])
+CASE_CONFIG = {"sept29": SEPT29, "oct05": OCT05, "oct07": OCT07, "oct14": OCT14, "oct15": OCT15}
 JOB_CAPITAL_LINES = ("corporate_capital", "corporate_labor", "remaining_production_property", "other_production_taxes")
 LONG_RUN_LINES = ("economic_affairs_services", "recreation_culture")
 LONG_RUN_FUNCTIONS = {"economic_affairs_services": "econ", "recreation_culture": "recreation"}
@@ -2130,10 +2140,15 @@ def case_oracle(case: str) -> dict:
     if not conf.get("oracle_from_files"):
         return conf["oracle"]
     bands = pd.read_csv(case_file(case, "main_case_bands.csv"))
-    summary = json.loads(case_file(case, "summary.json").read_text())["v7"]
+    version = conf.get("version", "v7")
+    summary = json.loads(case_file(case, "summary.json").read_text())[version]
     end_specifications = summary["end_specifications"]
     ends = end_specifications["set"]
-    if ends != [16, 11] or end_specifications["cash"] != ends or any(
+    if version == "v8":
+        if ends != [[16, 11], [16, 11]] or end_specifications["cash"] != ends:
+            raise SystemExit(f"[BLOCKED] v8's personal ends moved: {end_specifications}")
+        ends = ends[0]
+    elif ends != [16, 11] or end_specifications["cash"] != ends or any(
             e != ends for kind in ("set", "cash") for e in end_specifications["by_method"][kind]):
         raise SystemExit(f"[BLOCKED] v7's personal ends moved: {end_specifications}")
     out = dict(ends=ends, tol=1e-6, bands_file_tol=1e-4,
@@ -2257,6 +2272,10 @@ def v6_parts(case: str, payload: dict, which: str = "set") -> dict:
       the payload's responses are the lane's summary.json's.
     Returns v5_parts' keys (previous: September 29's payload; edits: the lineage's) and base (v5's payload), items
     (each applied edit set: record, first, edits, union_only), lineage_item, carriers and components."""
+    if case == "oct15":
+        from v8_payload import parts
+
+        return parts(sys.modules[__name__], payload, which)
     conf = CASE_CONFIG[case]
     base = case_payload(conf["base"], which)
     prev = case_payload(previous_case(conf["base"]), which)
@@ -2508,7 +2527,11 @@ def union_model(case: str, which: str) -> dict:
                 continue
             union = [p for k, p in ps.items() if p["edit"] == j and k.startswith("union_")]
             edits.append(dict(e, by={a: sum(p["by"][a] for p in union) for a in ("personal", "shared")}))
-    twin = apply_corrections(MODEL, dict(prev, edits=edits, receipt_lines=payload.get("receipt_lines") or []))
+    twin_payload = dict(prev, edits=edits, receipt_lines=payload.get("receipt_lines") or [])
+    if case == "oct15":
+        # R11 reporter carriers belong to the union; native child cells do not.
+        twin_payload["lines"] = payload["lines"]
+    twin = apply_corrections(MODEL, twin_payload)
     got = apply_corrections(MODEL, payload)
     for side in ("receipts", "spending"):
         nat = {x["id"]: x["national_bn"] for x in got[side]["lines"]}
@@ -2845,6 +2868,9 @@ def case_split(case: str, shares: dict, extras: dict, jf: dict, ucf: dict) -> di
     = the set's net cost + P (1e-6). The corrections split is the cash set's: the previous case's components,
     then the September 29 parts (v4_components) and the production grid's change in F. The port is gated
     against engine.js (engine_parity) and, where the lane writes the September 27 contract, per_spec.csv."""
+    if case == "oct15":
+        raise SystemExit("[BLOCKED] v8's full financing split needs the unlocated post-engine payer/timing rules; "
+                         "use the explicit --current-flow-only source audit, not this historical four-column API")
     framed = case != "sept23"
     responses, meta, gates = None, None, None
     v4 = case in LATER_CASES and LATER_CASES[case].payloads is not None
@@ -3727,6 +3753,17 @@ def member_count(case: str = "sept29") -> float:
         raise SystemExit(f"[BLOCKED] {SEPT29['count'].name}: the published count is not the account's target")
     if not CASE_CONFIG[case].get("lineage"):
         return pop["row4"] / 1e6
+    if case == "oct15":
+        payload = case_payload(case, "cash")
+        p = payload["meta"]["population_v8"]
+        old = payload["meta"]["lineage"]["counts"]["lineage_population"]
+        if abs(p["without_coverage"] - old - p["completion"]) > 1e-6 or \
+                abs(p["with_coverage"] - p["without_coverage"] - p["coverage"]) > 1e-6:
+            raise SystemExit("[BLOCKED] v8 denominator does not include completion and coverage exactly once")
+        summary = json.loads(case_file(case, "summary.json").read_text())["v8"]["population"]
+        if abs(p["with_coverage"] - summary["with_coverage"]) > 1e-6:
+            raise SystemExit("[BLOCKED] v8 population payload and case summary disagree")
+        return p["with_coverage"] / 1e6
     counts = case_payload(case, "cash")["meta"]["lineage"]["counts"]
     if abs(counts["account_union"] - pop["row4"]) > 1e-3:
         raise SystemExit(f"[BLOCKED] the lineage's union {counts['account_union']} is not audit row 4's {pop['row4']}")
@@ -3872,7 +3909,8 @@ def v6_summary(run: dict) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Debt legacy of past federal gaps on an adopted main case.")
     parser.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24", "sept23"), default=DEFAULT_CASE,
-                        help="a case from September 26 on (default: oct14: main case v7, personal allocation; "
+                        help="a case from September 26 on (default: oct15: main case v8; unresolved historical "
+                             "financing stops, --current-flow-only publishes classified current flows; "
                              "sept27: long-run road and park responses, rental "
                              "assistance, the return on public capital and the enterprises; oct07: main case v6 of "
                              "2026-10-07 (v5 plus four items), written to derived/oct07/; oct05: the main case of "
@@ -3882,7 +3920,14 @@ def main() -> None:
                              "sept23: this lane's first result")
     parser.add_argument("--out-dir", type=Path, default=None,
                         help="default derived/, and derived/<case>/ for a case with two payloads (including oct14)")
+    parser.add_argument("--current-flow-only", action="store_true",
+                        help="oct15 typed current-flow audit; unresolved financing stays unlocated, no legacy stocks")
     args = parser.parse_args()
+    if args.case == "oct15":
+        from v8_flow import main as current_flow
+
+        current_flow(sys.modules[__name__], args)
+        return
     framed = args.case != "sept23"          # on the September 24 frame, with a corrections payload
     later = args.case in LATER_CASES        # September 26 on: responses from the payload's meta.responses
     three = later and LATER_CASES[args.case].profiles is not None   # September 27 on: the three columns
