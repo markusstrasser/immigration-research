@@ -25,8 +25,9 @@ uncorrected model at its responses, from derived/<case>/ (written by the same
 script): --case sept26 (CBO's one-year school response, 0.63-0.66) and --case
 sept26_schools (schools at full average cost), then --case sept27 (the return on public capital), --case
 sept29 (candidate v4, adopted 2026-09-29), --case oct05 (main case v5, adopted 2026-10-05: the lineage's
-added people counted whole) and --case oct07 (main case v6: v5 plus an item registry, meta.items; the default, as the
-last entry). The September 20 outputs are written as before and do not change.
+added people counted whole) and --case oct07 (main case v6: v5 plus an item registry, meta.items).
+Since 2026-10-14 later_cases.json selects only oct14 (v7): the 32 personal specifications, with job-capital's
+industry-key replicates carried jointly with the account. Historical keyed outputs remain untouched.
 
 From sept27 on, the administrative benefit keys' re-keying is recomputed on the same 161 CPS weights and its
 replicate deviation joins the account's before the variance is taken (conceptual audit 2026-09-27, section A):
@@ -38,8 +39,13 @@ either way.
 from __future__ import annotations
 
 import argparse
+import contextlib
+import gc
+import hashlib
 import importlib.util
+import io
 import json
+import os
 import sys
 import zipfile
 from pathlib import Path
@@ -251,7 +257,8 @@ RECEIPTS_FILE = FISCAL / "full_account_receipts_2026_09_20/derived/category_allo
 # adopted lane's main_case.cjs reads the same file for its cash_set row).
 CASH_PAYLOADS = {"sept29": "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json",
                  "oct05": "main_case_2026_10_05/derived/corrections_cash.json",
-                 "oct07": "main_case_2026_10_07/derived/corrections_cash.json"}
+                 "oct07": "main_case_2026_10_07/derived/corrections_cash.json",
+                 "oct14": "main_case_2026_10_14/derived/corrections_cash.json"}
 # Later cases, case -> main-case lane, one line each; sept24_specs.cjs reads the same file.
 LATER_CASES = json.loads((HERE / "later_cases.json").read_text())
 # Per --case: the main case's summary, then (row label, band in that summary, column tag in
@@ -337,8 +344,12 @@ def payload_blocks(p):
             if it["applied"] and it["lineage_edits"] != e:
                 raise ValueError(f"[BLOCKED] item {it['id']}'s lineage edits are not meta.lineage.edits")
             continue
+        if it["kind"] == "allocation":
+            if it.get("edits") != dict(first=at, count=0):
+                raise ValueError(f"[BLOCKED] allocation item {it['id']} must have zero edits at the next block")
+            continue
         if it["kind"] != "edit_set":
-            raise ValueError(f"[BLOCKED] item {it['id']} is of kind {it['kind']}, neither an edit set nor the lineage")
+            raise ValueError(f"[BLOCKED] item {it['id']} is of kind {it['kind']}, neither an edit set, allocation nor the lineage")
         if not it["applied"]:
             if it.get("edits"):
                 raise ValueError(f"[BLOCKED] item {it['id']} is not applied but locates edits")
@@ -375,6 +386,8 @@ def lineage_rebase(lin, arms, case_lane, main, items, ends):
       lineage parts are taken in proportion to the count, not to its mix of G3-rate persons and later losses.
     Returns ({arm: band}, {arm: [low line, high line]}, the rebase record).
     """
+    if "v7" in main:
+        return lineage_rebase_v7(lin, arms, case_lane, main, ends)
     central = lin["arm"]
     c3 = lin["c3"]["value"]
     band, base = main["main_case"], main["v6"]["base"]["band_bn"]
@@ -450,6 +463,107 @@ def lineage_rebase(lin, arms, case_lane, main, items, ends):
               "the central change times g3_x / g3_b [APPROX: per-person changes at the central arm's responses; the edit "
               "sets' lineage parts held at the central C3]"))
     return bands, lines, record
+
+
+def lineage_rebase_v7(lin, arms, case_lane, main, ends):
+    """Read v7's executed whole-case lineage companions, including every item's lineage parts.
+
+    The modeled C3 shift is the symmetric difference of the case's two C3 companion runs; check their
+    midpoint against the central case (1e-9). The count arms use the case's own arm bands. As before,
+    each count arm uses the central C3 slope scaled by its G3-rate count [APPROX: central responses].
+    """
+    options = main["v7"]["companions"]["options"]
+    c3, se, central = lin["c3"]["value"], lin["c3"]["se"], lin["arm"]
+    band = np.asarray(main["main_case"], float)
+    if not np.allclose([e.net_cost_bn for e in ends], band, rtol=0, atol=1e-9):
+        raise ValueError("[BLOCKED] v7's end specifications do not give its adopted band")
+    minus, plus = options["c3_minus_se"], options["c3_plus_se"]
+    if not (np.isclose(minus["c3"], c3 - se, atol=1e-12, rtol=0)
+            and np.isclose(plus["c3"], c3 + se, atol=1e-12, rtol=0)):
+        raise ValueError("[BLOCKED] v7's C3 companions do not use the measured C3 +/- SE")
+    bm, bp = np.asarray(minus["set"]["band_bn"]), np.asarray(plus["set"]["band_bn"])
+    if not np.allclose((bm + bp) / 2, band, rtol=0, atol=1e-9):
+        raise ValueError("[BLOCKED] v7's C3 companions are not symmetric about its adopted band")
+    slope = (bp - bm) / (2 * se)
+    bands = {central: band.tolist(), "a": options["arm_a"]["set"]["band_bn"],
+             "c": options["arm_c"]["set"]["band_bn"]}
+    lines = {}
+    for arm, b in bands.items():
+        option = None if arm == central else options[f"arm_{arm}"]
+        if option and (option["arm"] != arm or option["c3"] != c3):
+            raise ValueError(f"[BLOCKED] v7's lineage arm {arm} uses the wrong arm or C3")
+        rd = slope if arm == central else slope * option["g3_rate"] / minus["g3_rate"]
+        lines[arm] = [dict(intercept_bn=b[j] - rd[j] * c3, slope_bn=rd[j]) for j in (0, 1)]
+    record = dict(source=f"{case_lane}/derived/summary.json (v7.companions.options)",
+                  c3_central_slope_bn=slope.tolist(), lineage_item="added_age_mix",
+                  rule="whole-case arm bands; symmetric C3 +/- SE runs carry every item, including lineage credits "
+                       "and job capital; arms a/c scale the central C3 slope by their G3-rate count [APPROX]")
+    return bands, lines, record
+
+
+def job_capital_replicates(source):
+    """Read-only reconstruction up to the producer's central vectors; never run its output writers.
+
+    Same pwwgt0..160 order as this lane. Gate each line's point and response-weighted SDR and the joint
+    SDR against item.json (1e-9); the four receipt lines retain their covariance with the account.
+    """
+    item_file = FISCAL / source["file"]
+    if hashlib.sha256(item_file.read_bytes()).hexdigest() != source["sha256"]:
+        raise ValueError("[BLOCKED] job-capital sampling source differs from the case's pinned item.json")
+    item = json.loads(item_file.read_text())
+    producer = load_module(FISCAL / source["lane"] / "job_capital.py", "up_job_capital")
+    if producer.REPS != REPS:
+        raise ValueError("[BLOCKED] job-capital replicate columns are not pwwgt0..160 in the account's order")
+    vectors = {}
+    class Stop(Exception):
+        pass
+    def trace(frame, event, arg):
+        if frame.f_code is not producer.main.__code__:
+            return None
+        if event == "line" and "central" in frame.f_locals:
+            local = frame.f_locals
+            vectors.update({(a, group): np.asarray(v, float).copy()
+                            for a in producer.ALLOCS for group, (v, _) in local["line_parts"](a).items()})
+            raise Stop
+        return trace
+    write_guard = {"active": True}
+    def deny_writer(event, args):
+        if not write_guard["active"]:
+            return
+        writes_file = event == "open" and (args[2] or 0) & (os.O_WRONLY | os.O_RDWR | os.O_CREAT | os.O_TRUNC | os.O_APPEND)
+        if writes_file or event in {"os.mkdir", "os.remove", "os.rename", "os.rmdir"}:
+            raise ValueError(f"[BLOCKED] job-capital read-only reconstruction reached a writer: {event}")
+    sys.addaudithook(deny_writer)
+    argv = sys.argv
+    try:
+        sys.argv = [str(FISCAL / source["lane"] / "job_capital.py")]
+        with contextlib.redirect_stdout(io.StringIO()):
+            sys.settrace(trace)
+            try:
+                producer.main()
+            except Stop:
+                pass
+    finally:
+        write_guard["active"] = False
+        sys.settrace(None)
+        sys.argv = argv
+    if not vectors or not all(g["passed"] for g in producer.GATES):
+        raise ValueError("[BLOCKED] job-capital producer did not yield its central vectors with every input gate passed")
+    groups = {"corporate": "corporate", "c_and_i_property": "business_property",
+              "other_production_taxes": "other_production_taxes"}
+    for a in producer.ALLOCS:
+        for reading in ("low", "high"):
+            total = np.zeros(161)
+            for group, name in groups.items():
+                v, line = vectors[(a, group)], item["lines"][name]
+                weighted = v * line["response"][reading]
+                if not (np.isclose(v[0], line["group_bn"][a], rtol=0, atol=1e-9)
+                        and np.isclose(sdr(weighted), item["se_bn"]["by_line"][reading][name][a], rtol=0, atol=1e-9)):
+                    raise ValueError(f"[BLOCKED] {name}/{reading}/{a}: job-capital point or SDR differs from item.json")
+                total += weighted
+            if not np.isclose(sdr(total), item["se_bn"]["central"][reading][a], rtol=0, atol=1e-9):
+                raise ValueError(f"[BLOCKED] {reading}/{a}: joint job-capital SDR differs from item.json")
+    return item, vectors
 
 
 def lineage_component(f, lin, main=None, items=None, case_lane=None):
@@ -643,6 +757,21 @@ def adopted_cases(ctx, name, joint=None):
         raise ValueError("[BLOCKED] an item payload without the lineage and the pension switch")
     ss_weight = {}                                               # oct05: social_security's weight on each OASDI line
     pension_record = None                                        # oct07: the union-side identities on v6's values
+    row4_union = {line: {a: 0.0 for a in ("personal", "shared")} for line in ("social_security", "medicare")}
+    row4_parts = {}
+    if payload["meta"].get("row4_frame"):
+        row4 = next(b for b in payload_blocks(payload)["items"] if b["id"] == "row4_frame")
+        row4_parts = {k: v for k, v in row4["parts"].items()
+                      if row4["edits"][v["edit"]]["side"] == "spending"
+                      and row4["edits"][v["edit"]]["line"] in row4_union}
+        for k, v in row4_parts.items():
+            group, component, line, key = k.split(":")
+            if group.startswith("union_"):
+                if group not in ("union_G1", "union_G2", "union_G3plus") or component != (
+                        "oasdi_ratio" if line == "social_security" else "part_a") or key != line:
+                    raise ValueError(f"[BLOCKED] unknown row4 union pension part {k}")
+                for a in row4_union[line]:
+                    row4_union[line][a] += v["by"][a]
     if pa:
         # The payload's rule holds on its targets: social_security = ratio_net x the group's OASDI receipts (1e-9),
         # and the Medicare line less its Part A accrual is (1 - part_a_share) of the cash set's (the cash payload,
@@ -702,9 +831,23 @@ def adopted_cases(ctx, name, joint=None):
                 med -= lc["medicare"][a]
                 med_cash -= lc_cash["medicare"][a]
                 for line, _ in oasdi:
-                    ss_weight[(a, line)] = ((pa["ratio_net"] * receipts[line] + lineage_k[a] * lc[line][a])
+                    effective_ratio = pa["ratio_net"] + row4_union["social_security"][a] / sum(c * receipts[ln] for ln, c in oasdi)
+                    ss_weight[(a, line)] = ((effective_ratio * receipts[line] + lineage_k[a] * lc[line][a])
                                             / target(base, "receipt", line, "cbo_collective", a))
                 fixed[(a, "medicare")] += lineage_part_a[a]
+            # R9: the metadata retains v6's published-weight pension block. Remove exactly the row4 union parts
+            # for its unchanged identity gates; their actual SS dollars follow the OASDI vectors and Part A is fixed.
+            if row4_parts:
+                r9 = payload["meta"]["row4_frame"]
+                values, block = r9["values"], r9["pension_block"]
+                expect_ss = (values["rn"]["row4"] - values["rn"]["pub"]) * sum(c * receipts[ln] for ln, c in oasdi) * block["k_ratio_net"]
+                expect_pa = values["partA"]["row4"] - values["partA"]["pub"]
+                if not (np.isclose(row4_union["social_security"][a], expect_ss, rtol=0, atol=1e-9)
+                        and np.isclose(row4_union["medicare"][a], expect_pa, rtol=0, atol=1e-9)):
+                    raise ValueError(f"[BLOCKED] row4/{a}: union pension parts do not match their declared input changes")
+                ss -= row4_union["social_security"][a]
+                med -= row4_union["medicare"][a]
+                fixed[(a, "medicare")] += row4_union["medicare"][a]
             if not np.isclose(ss, pa["ratio_net"] * sum(c * receipts[line] for line, c in oasdi), rtol=0, atol=1e-9):
                 raise ValueError(f"[BLOCKED] social_security/{a} is not ratio_net x the OASDI receipts")
             if not np.isclose(med - pa["part_a_accrual_bn"], (1 - pa["part_a_share"]) * med_cash, rtol=0, atol=1e-9):
@@ -736,7 +879,10 @@ def adopted_cases(ctx, name, joint=None):
             for b in payload_blocks(payload)["items"]:
                 for k, v in b["parts"].items():
                     line = b["edits"][v["edit"]]["line"]
-                    if not k.startswith("lineage_"):
+                    if not k.startswith("lineage_") or line not in ("social_security", "medicare"):
+                        continue
+                    if b["id"] == "row4_frame":
+                        # These are R9's part-model shifts, not pension_tr2026's (f - 1) adjustment.
                         continue
                     want = ({a: (lf["f_ss"] - 1) * ss0[a] for a in ss0} if line == "social_security" else
                             {a: (lf["f_pa"] - 1) * pa0[a] for a in pa0} if line == "medicare" else None)
@@ -770,6 +916,23 @@ def adopted_cases(ctx, name, joint=None):
                                                              for i, ps in on_pension.items() if ps},
                 items_union_parts={i: {k: v["by"] for k, v in ps.items() if k.startswith("union_")}
                                    for i, ps in on_pension.items() if ps})
+            if row4_parts:
+                inp = json.loads((sub / "row4_pension_inputs.json").read_text())
+                r9 = payload["meta"]["row4_frame"]
+                values, block = r9["values"], r9["pension_block"]
+                want = {
+                    "lineage_g3plus:part_a_split:medicare:medicare": {a: inp["G_part_a"][a] * values["fPA0"] * values["delta_part_a"][a] for a in identities},
+                    "lineage_g3plus:ss_split:social_security:social_security": {a: inp["G_ss"][a] * values["fSS4"] * values["delta_ss"][a] * block["k_f_ss"] for a in identities},
+                    "lineage_g3plus:ss_factor:social_security:social_security": {a: inp["G_ss"][a] * (values["fSS4"] - values["fSS0"]) * block["k_f_ss"] for a in identities},
+                    "lineage_whites:ss_factor:social_security:social_security": {a: (inp["lineage_ss"][a] - inp["G_ss"][a]) * (values["fSS4"] - values["fSS0"]) * block["k_f_ss"] for a in identities},
+                }
+                got = {k: v["by"] for k, v in row4_parts.items() if k.startswith("lineage_")}
+                if got.keys() != want.keys() or not all(np.isclose(got[k][a], v, rtol=0, atol=1e-9)
+                                                     for k in want for a, v in want[k].items()):
+                    raise ValueError("[BLOCKED] row4 lineage pension parts do not follow their declared part-model formulas")
+                pension_record["row4_frame"] = dict(union_parts_subtracted_for_base_identities_bn=row4_union,
+                                                     lineage_parts_validated_bn=got, part_model_inputs=inp,
+                                                     rule="R9: subtract named union parts before v6 identity checks; actual union SS shifts follow OASDI receipts and Part A shifts are fixed; lineage parts keep their own accrual ratio/fixed Part A")
             if prev:
                 # The union parts are the union's rule moving to v6's values (the case lane's parts_rule), to 1e-9.
                 for i, ps in parts.items():
@@ -818,6 +981,15 @@ def adopted_cases(ctx, name, joint=None):
     overrides = [c[len("response_receipt_"):] for c in specs.columns
                  if c.startswith("response_receipt_") and c != "response_receipt_enterprise_surplus"]
     receipt_reps, follow, followers, no_error = {}, {}, [], []
+    job_source = payload["meta"].get("job_capital_taxes", {}).get("source")
+    job_item, job_vectors = (ctx["job_capital_inputs"] if "job_capital_inputs" in ctx else
+                             job_capital_replicates(job_source) if job_source else (None, {}))
+    if job_item and job_item != json.loads((FISCAL / job_source["file"]).read_text()):
+        raise ValueError("[BLOCKED] job-capital item changed after its replicate reconstruction")
+    job_lines = {"corporate_capital": "corporate", "corporate_labor": "corporate",
+                 "remaining_production_property": "c_and_i_property", "other_production_taxes": "other_production_taxes"}
+    if job_item and not set(job_lines) <= set(overrides):
+        raise ValueError("[BLOCKED] the job-capital item needs all four receipt-response overrides")
     if overrides:
         account_receipts = pd.read_csv(RECEIPTS_FILE).query("scenario_id == 'cbo_collective'")
         new_lines = {line["id"]: line for line in payload.get("receipt_lines", [])}
@@ -885,6 +1057,8 @@ def adopted_cases(ctx, name, joint=None):
             if side == "spending":
                 keys = [ctx["lane_keys"].get((a, line)) for a in allocs]
                 return "line ratio" if None not in keys and (scale or all(x["key"] == k for k in keys)) else "no sampling error"
+            if job_item and line in job_lines and x.get("scenario") == "cbo_collective":
+                return "job-capital CPS replicates"
             on = all((a, "receipt", line) in ctx["line_reps"] or (a, line) in receipt_reps for a in allocs) or (
                 capital and line == "enterprise_surplus") or line in followers
             return "line ratio" if on and (scale or x["scenario"] == "cbo_collective") else "no sampling error"
@@ -902,6 +1076,9 @@ def adopted_cases(ctx, name, joint=None):
                 item_routes.append(dict(id=it["id"], kind="lineage", lineage_edits=it["lineage_edits"],
                                         route="the lineage's cells, re-valued in place, ride each line's first-order "
                                               "ratio as v5's do [ASSUMPTION, oct05's]"))
+            elif it["kind"] == "allocation" and it["applied"]:
+                item_routes.append(dict(id=it["id"], kind="allocation", edits=it["edits"],
+                                        route="the case's group total uses its personal specifications (R5)"))
         for b in payload_blocks(payload)["items"]:
             it = meta_of[b["id"]]
             # A union-only item (user_fees) prices the union alone: no lineage_* part, so nothing of it is booked with
@@ -1090,13 +1267,23 @@ def adopted_cases(ctx, name, joint=None):
             else:
                 dev_gg = -s.gg * ratio(case, "service", "general_public_services", a) * (gps[a] - gps[a][0])
                 dev_account = dev + dev_gg
+            dev_jobs = np.zeros(161)
             if overrides:
                 # The receipt lines the case sets a response on, on the CPS keys this lane replicates.
                 dev_receipts = np.zeros(161)
                 for line in overrides:
-                    if (a, line) in receipt_reps:
+                    if case == adopted and job_item and line in job_lines:
+                        group = job_lines[line]
+                        key = "business_property" if group == "c_and_i_property" else group
+                        rep = job_vectors[(a, group)]
+                        # Corporate's two lines share one industry key; their amounts split its vector, preserving
+                        # perfect covariance. Added people's dollars ride the same first-order line ratio [ASSUMPTION].
+                        scale = target(case, "receipt", line, "cbo_collective", a) / job_item["lines"][key]["group_bn"][a]
+                        dev_jobs += getattr(s, f"response_receipt_{line}") * scale * (rep - rep[0])
+                    elif (a, line) in receipt_reps:
                         rep = receipt_reps[(a, line)]
                         dev_receipts += getattr(s, f"response_receipt_{line}") * ratio(case, "receipt", line, a) * (rep - rep[0])
+                dev_receipts += dev_jobs
                 dev_account = dev_account + dev_receipts
             se_account = sdr(dev_account)
             # The benefit keys' change on the replicates as a welfare deviation: first order (the change's level at
@@ -1165,6 +1352,8 @@ def adopted_cases(ctx, name, joint=None):
                                 se_cps_factor_product_bn=sdr(dev_account + b_product))
             if dev_receipts is not None:
                 rows[-1].update(se_cps_receipt_responses_part_bn=sdr(dev_receipts))
+            if job_item:
+                rows[-1].update(se_cps_job_capital_part_bn=sdr(dev_jobs))
             for alt, se_alt in pension_alt.items():
                 rows[-1].update({f"se_cps_pension_{alt}_bn": se_alt, f"se_combined_pension_{alt}_bn":
                                  np.sqrt(se_alt ** 2 + se_pf_case ** 2 + se_school ** 2 + se_m ** 2)})
@@ -1201,6 +1390,13 @@ def adopted_cases(ctx, name, joint=None):
         if items is not None and case == adopted:
             summary[case]["pension_switch"] = pension_record
             summary[case]["items"] = item_routes
+        if job_item and case == adopted:
+            summary[case]["job_capital_sampling"] = dict(
+                source=job_source, replicate_columns=REPS, source_se_bn=job_item["se_bn"],
+                se_propagated_bn=[f.se_cps_job_capital_part_bn.min(), f.se_cps_job_capital_part_bn.max()],
+                rule="producer's 161-weight vectors, points and per-line/joint SDR gated against item.json (1e-9); "
+                     "corporate's two lines share one vector; joint with the account and benefit keys at matching "
+                     "pwwgt columns; lineage dollars ride the line's first-order ratio [ASSUMPTION]")
     (sub / "summary.json").write_text(json.dumps(summary, indent=2, default=float) + "\n")
     for case, v in summary.items():
         print(f"[{case}] cost {v['net_cost_band_bn'][0]:.1f}-{v['net_cost_band_bn'][1]:.1f}  "
@@ -1219,14 +1415,20 @@ def adopted_cases(ctx, name, joint=None):
 def main():
     ap = argparse.ArgumentParser(description="Propagate sampling and donor errors onto the account's cases.")
     ap.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24", "sept20"), default=list(LATER_CASES)[-1],
-                    help="a later case (default: the last in later_cases.json, oct07: main case v6, v5 plus an item "
-                         "registry; oct05: main case v5 adopted "
-                         "2026-10-05; sept29: candidate v4 adopted 2026-09-29; sept27: the return on public capital; "
-                         "sept26_schools: schools at full average "
-                         "cost; sept26: CBO's one-year school response, 0.63-0.66) or sept24: also that adopted case; "
-                         "sept20: its files only")
+                    help="the live case in later_cases.json (oct14, main case v7) or the September 20/24 construction "
+                         "as an explicit control; historical keyed case outputs are not regenerated")
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
+    # Reconstruct the producer before loading the account's large matrices. Only its small 161-weight vectors
+    # remain; collecting the producer's closure/frame cycles prevents both CPS workloads overlapping in memory.
+    job_inputs = (None, {})
+    if args.case in LATER_CASES:
+        case_meta = json.loads((FISCAL / LATER_CASES[args.case] / "derived/corrections.json").read_text())["meta"]
+        source = case_meta.get("job_capital_taxes", {}).get("source")
+        if source:
+            print("[stage] job-capital industry replicates (read only)", flush=True)
+            job_inputs = job_capital_replicates(source)
+            gc.collect()
     print("[stage] CPS load", flush=True)
     d = load_cps()
     civ, target = SPENDING.canonical_target(d)
@@ -1411,7 +1613,7 @@ def main():
     if args.case in ADOPTED:
         adopted_cases(dict(line_reps=line_reps, lane_keys=lane_keys, meps_parts=meps_parts, cov=cov, ncell=ncell,
                            hf=hf, spending=spending, skeys=skeys, rkeys=rkeys, cases=cases, comps=comps, pf=pf,
-                           school_rel=school_rel, case_frame=case_frame), args.case)
+                           school_rel=school_rel, case_frame=case_frame, job_capital_inputs=job_inputs), args.case)
 
 
 if __name__ == "__main__":

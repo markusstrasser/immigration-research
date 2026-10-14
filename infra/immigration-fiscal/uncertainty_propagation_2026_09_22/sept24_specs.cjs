@@ -51,11 +51,17 @@
  * payload beside its summary (oct05, oct07), that payload's specifications must span the lane's cash set (1e-9), and a
  * case in PINNED must span the set and cash bands pinned at its adoption (1e-6).
  *
+ * Since 2026-10-14 only the live case in later_cases.json is emitted. The all-allocation rebuild is compared
+ * against ALL_SPECS, every cost/return against the methods' mean, then only the payload's group_total allocation
+ * (v7: personal, 32 MAIN_SPECS) is written and used for the exact summary bands. The four-decimal CSV oracle is
+ * checked within half its final printed unit (5e-5 bn), alongside the unchanged 1e-9 exact-summary gates.
+ *
  * Run from anywhere: node sept24_specs.cjs
  */
 "use strict";
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 const P = require(path.join(__dirname, "..", "main_case_2026_09_24", "package.cjs"));
 const P26 = require(path.join(__dirname, "..", "main_case_2026_09_26", "package.cjs"));
 const { Engine, MODEL, FISCAL, MAIN_SPECS, ALLOCS, cost, span, readJson } = P;
@@ -67,9 +73,12 @@ function gate(label, ok, detail) {
   console.log(`  ${ok ? "PASS" : "FAIL"} ${label}${detail ? " — " + detail : ""}`);
   if (!ok) failures += 1;
 }
-// The bands pinned at a case's adoption, to the sixth decimal (the case lane's main_case.cjs PINNED; oct07: main case
-// v6, adopted 2026-10-07, 218a2fb2): the case's specifications and its cash payload's must span them (1e-6).
-const PINNED = { oct07: { set: [389.082553, 461.479709], cash: [307.399411, 385.364123] } };
+// Live-case adoption pins: v7, 2026-10-14, commit 148ed1ea. Exact committed source bytes and six-decimal bands.
+const PINNED = { oct14: { set: [339.552018, 423.649261], cash: [264.425574, 348.522816], files: {
+  "corrections.json": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958",
+  "corrections_cash.json": "581701613b7f3c8086437100334e3818ebe062dc57e2e486f14897208b05de97",
+  "summary.json": "b30720cff0c29637ab6f74d809829fdbfc4b82a00a45fa286e3f0c1c5c183582"
+} } };
 
 const specs = MAIN_SPECS.map((s) => ({ ...s, sept23: cost(MODEL, s), sept24: cost(corrected, s) }));
 for (const [c, want] of [["sept23", summary.adopted_2026_09_23], ["sept24", summary.main_case]]) {
@@ -147,16 +156,21 @@ function csvRows(rel) {
   return rows.map((r) => Object.fromEntries(head.map((h, i) => [h, r[i]])));
 }
 function capitalCase(name, lane, PC, payload, sum) {
+  for (const [file, want] of Object.entries(PINNED[name]?.files || {})) {
+    const got = crypto.createHash("sha256").update(fs.readFileSync(path.join(FISCAL, lane, "derived", file))).digest("hex");
+    gate(`${name}: ${file} is the committed adoption's bytes`, got === want, got);
+  }
   const R = payload.meta.responses;
   const models = { uncorrected: PC.MODEL, [name]: Engine.applyCorrections(PC.MODEL, payload) };
+  const allSpecs = PC.ALL_SPECS || PC.MAIN_SPECS;
   const rows = MAIN_SPECS.map((s, i) => ({ ...s,
     gg: swap(s.gg, GG24, [R.general_government.low, R.general_government.high]),
     school: swap(s.school, SCHOOL24, [R.school.growth, R.school.decline]),
     school_sept24: s.school, gg_sept24: s.gg,
-    reading: PC.MAIN_SPECS[i].reading, rate: PC.MAIN_SPECS[i].rate, enterprises: PC.MAIN_SPECS[i].enterprises }));
-  gate(`${name}: adopted responses replace the September 24 ones one for one (${lane}/package.cjs MAIN_SPECS)`,
-    rows.length === PC.MAIN_SPECS.length && rows.every((s, i) => Object.keys(MAIN_SPECS[0]).every((k) => s[k] === PC.MAIN_SPECS[i][k])
-      && Object.keys(PC.MAIN_SPECS[i]).every((k) => k in MAIN_SPECS[0] || EXTRA.includes(k))),
+    reading: allSpecs[i].reading, rate: allSpecs[i].rate, enterprises: allSpecs[i].enterprises }));
+  gate(`${name}: adopted responses replace the September 24 ones one for one (${lane}/package.cjs ALL_SPECS)`,
+    rows.length === allSpecs.length && rows.every((s, i) => Object.keys(MAIN_SPECS[0]).every((k) => s[k] === allSpecs[i][k])
+      && Object.keys(allSpecs[i]).every((k) => k in MAIN_SPECS[0] || EXTRA.includes(k))),
     `general government ${R.general_government.low.toFixed(4)}/${R.general_government.high.toFixed(4)}, ` +
     `schools ${R.school.growth.toFixed(4)}/${R.school.decline.toFixed(4)}, readings ${rows.filter((s) => s.reading === "low").length} low`);
   const components = PC.componentsFor(null);
@@ -173,9 +187,9 @@ function capitalCase(name, lane, PC, payload, sum) {
   }
   // Every line response a specification sets, in its order (September 27: the two long-run lines, rental assistance
   // and the enterprise receipt).
-  const RESP = Object.keys(PC.MAIN_SPECS[0].line_responses);
+  const RESP = Object.keys(allSpecs[0].line_responses);
   gate(`${name}: every specification sets the same line responses`,
-    PC.MAIN_SPECS.every((spec) => JSON.stringify(Object.keys(spec.line_responses)) === JSON.stringify(RESP)), `${RESP.length} entries`);
+    allSpecs.every((spec) => JSON.stringify(Object.keys(spec.line_responses)) === JSON.stringify(RESP)), `${RESP.length} entries`);
   // A payload that rescales a line's national total gives the lines keyed over it a derivative per unit of amount
   // that differs between the two models, so each model's own is written.
   const scaled = payload.edits.some((e) => e.national_bn !== undefined);
@@ -183,7 +197,7 @@ function capitalCase(name, lane, PC, payload, sum) {
   let coefGap = 0, modelGap = 0, rebuildGap = 0, responseGap = 0, transferGap = 0, carrierGap = 0;
   const moved = new Set();
   for (const [i, s] of rows.entries()) {
-    const spec = PC.MAIN_SPECS[i];
+    const spec = allSpecs[i];
     const evals = Object.fromEntries(Object.entries(models).map(([c, m]) => [c, PC.evaluateFull(m, spec, PC.MAIN_PROFILE)]));
     // The return's derivatives on evaluation r: per unit of each key line's group amount, with the national totals
     // of evaluation n, and per unit of the enterprise receipt's share.
@@ -280,8 +294,13 @@ function capitalCase(name, lane, PC, payload, sum) {
     gate(`${name}: the derivatives rebuild the capital return on both models (1e-9) and do not depend on the model (1e-12)`,
       rebuildGap < 1e-9 && modelGap < 1e-12, `rebuild ${rebuildGap.toExponential(1)}, models ${modelGap.toExponential(1)}`);
   }
+  const allocation = payload.meta.allocation?.group_total;
+  const bandRows = allocation ? rows.filter((s) => s.allocation === allocation) : rows;
+  gate(`${name}: the published band uses exactly the package's MAIN_SPECS`,
+    bandRows.length === PC.MAIN_SPECS.length && bandRows.every((s, i) =>
+      Object.keys(MAIN_SPECS[0]).every((k) => s[k] === PC.MAIN_SPECS[i][k])), `${bandRows.length} specifications, ${allocation || "both allocations"}`);
   for (const [c, want] of [["uncorrected", sum.uncorrected_at_adopted_responses], [name, sum.main_case]]) {
-    const b = span(rows.map((s) => s[c]));
+    const b = span(bandRows.map((s) => s[c]));
     gate(`${name}: ${c} specifications span the published band`,
       Math.abs(b[0] - want[0]) < 1e-9 && Math.abs(b[1] - want[1]) < 1e-9, `${b[0].toFixed(4)}–${b[1].toFixed(4)}`);
   }
@@ -294,8 +313,21 @@ function capitalCase(name, lane, PC, payload, sum) {
     gate(`${name}: the cash payload's specifications span the case lane's cash set (1e-9)`,
       [0, 1].every((e) => Math.abs(cashBand[e] - sum.cash_set.band_bn[e]) < 1e-9), `${cashBand[0].toFixed(4)}–${cashBand[1].toFixed(4)}`);
   }
+  if (sum.v7) {
+    const setBand = span(bandRows.map((s) => s[name]));
+    gate(`${name}: set and cash match summary.json v7 (1e-9)`, cashBand !== null &&
+      [[setBand, sum.v7.band_bn], [cashBand, sum.v7.cash_set_bn]].every(([b, w]) =>
+        b.every((x, i) => Math.abs(x - w[i]) < 1e-9)));
+    const bands = csvRows(`${lane}/derived/main_case_bands.csv`);
+    for (const [variant, band] of [["adopted", setBand], ["cash_set", cashBand]]) {
+      const oracle = bands.filter((r) => r.variant === variant && r.profile === PC.MAIN_PROFILE);
+      gate(`${name}: ${variant} matches main_case_bands.csv to its printed precision (5e-5 bn)`,
+        oracle.length === 1 && band !== null && band.every((x, i) =>
+          Math.abs(x - Number(oracle[0][i ? "cost_high_bn" : "cost_low_bn"])) <= 5e-5));
+    }
+  }
   if (PINNED[name]) {
-    const setBand = span(rows.map((s) => s[name])), pin = PINNED[name], f6 = (b) => b.map((x) => x.toFixed(6)).join(" / ");
+    const setBand = span(bandRows.map((s) => s[name])), pin = PINNED[name], f6 = (b) => b.map((x) => x.toFixed(6)).join(" / ");
     gate(`${name}: the set's and the cash set's bands are the ones pinned at adoption (1e-6)`, cashBand !== null
       && [[setBand, pin.set], [cashBand, pin.cash]].every(([b, w]) => [0, 1].every((e) => Math.abs(b[e] - w[e]) < 1e-6)),
       `set ${f6(setBand)}, cash ${cashBand ? f6(cashBand) : "none"}`);
@@ -317,7 +349,10 @@ function capitalCase(name, lane, PC, payload, sum) {
     ["capital_uncorrected_bn", "capital_uncorrected"], [`capital_${name}_bn`, `capital_${name}`]]
     .concat(scaled ? kcols("kcoef_uncorrected_").concat(kcols(`kcoef_${name}_`)) : kcols("kcoef_"))
     .concat(grid ? [["production_se_uncorrected_bn", "production_se_uncorrected"], [`production_se_${name}_bn`, `production_se_${name}`]] : []);
-  return { name, rows, targets: lineTargets(models[name]), dims, costCols, benefits: benefitFactors(name, PC, payload) };
+  const row4PensionInputs = payload.meta.row4_frame ? PC.ITEM_DETAIL.row4_frame.set.lineage_inputs : null;
+  if (payload.meta.row4_frame) gate(`${name}: row4 pension inputs come from the applied item's part models`,
+    row4PensionInputs && ["G_part_a", "G_ss", "lineage_ss"].every((key) => ALLOCS.every((a) => Number.isFinite(row4PensionInputs[key][a]))));
+  return { name, rows: bandRows, targets: lineTargets(models[name]), dims, costCols, benefits: benefitFactors(name, PC, payload), row4PensionInputs };
 }
 // The administrative benefit keys in a case's payload: the package's benefitShifts, the producer's central change
 // on each line times the CPS stack's factor on that line, as the methods' mean. propagate.py varies the change on
@@ -350,7 +385,11 @@ function blocksOf(payload) {
       if (it.applied && JSON.stringify(it.lineage_edits) !== JSON.stringify(e)) throw new Error(`[BLOCKED] item ${it.id}'s lineage edits are not meta.lineage.edits`);
       continue;
     }
-    if (it.kind !== "edit_set") throw new Error(`[BLOCKED] item ${it.id} is of kind ${it.kind}, neither an edit set nor the lineage`);
+    if (it.kind === "allocation") {
+      if (!it.edits || it.edits.first !== at || it.edits.count !== 0) throw new Error(`[BLOCKED] allocation item ${it.id} must have zero edits at the next block`);
+      continue;
+    }
+    if (it.kind !== "edit_set") throw new Error(`[BLOCKED] item ${it.id} is of kind ${it.kind}, neither an edit set, allocation nor the lineage`);
     if (!it.applied) {
       if (it.edits) throw new Error(`[BLOCKED] item ${it.id} is not applied but locates edits`);
       continue;
@@ -457,8 +496,7 @@ function write(dir, dims, costCols, rows, targetCols, targetRows) {
   console.log(`${rows.length} specifications, ${targetRows.length} line targets -> ${path.relative(FISCAL, out)}`);
 }
 const dims = Object.keys(MAIN_SPECS[0]);
-write("sept24", dims, [["cost_sept23_bn", "sept23"], ["cost_sept24_bn", "sept24"]], specs,
-  ["target_sept23_bn", "target_sept24_bn"], targets);
+// The September 24 construction remains a read-only positive control. Only live-case outputs are written.
 for (const c of later) {
   write(c.name, c.dims || dims.concat(["school_sept24", "gg_sept24"]),
     c.costCols || [["cost_uncorrected_bn", "uncorrected"], [`cost_${c.name}_bn`, c.name]], c.rows,
@@ -468,5 +506,7 @@ for (const c of later) {
     fs.writeFileSync(path.join(__dirname, "derived", c.name, "benefit_factors.csv"),
       [cols.join(",")].concat(c.benefits.map((r) => cols.map((k) => num(r[k])).join(","))).join("\n") + "\n");
   }
+  if (c.row4PensionInputs) fs.writeFileSync(path.join(__dirname, "derived", c.name, "row4_pension_inputs.json"),
+    JSON.stringify(c.row4PensionInputs, null, 2) + "\n");
 }
 console.log("all gates passed");

@@ -1,0 +1,3115 @@
+{
+  "oct14": {
+    "net_cost_band_bn": [
+      339.552017829527,
+      423.649260700507
+    ],
+    "se_independent_bn": [
+      10.528957747675074,
+      10.96418173767263
+    ],
+    "se_positive_correlation_bn": [
+      17.59792572687511,
+      18.385096997885235
+    ],
+    "se_cps_bn": [
+      8.698533759457703,
+      9.208764878702047
+    ],
+    "ci95_union_bn": [
+      318.0660238056798,
+      444.2900952087435
+    ],
+    "ci95_envelope_union_bn": [
+      303.5373089371055,
+      458.16127634861573
+    ],
+    "ci95_with_benefit_keys_union_bn": [
+      317.2231180517411,
+      445.1426403654765
+    ],
+    "specifications": 32,
+    "capital_return_band_bn": [
+      37.1161544209576,
+      61.0642563792209
+    ],
+    "se_cps_capital_part_bn": [
+      0.21435827081242,
+      0.37155666146878863
+    ],
+    "se_cps_account_keys_bn": [
+      9.148446871792798,
+      9.64852238227328
+    ],
+    "se_benefit_keys_replicate_bn": [
+      1.3438034558538243,
+      1.3581823948818603
+    ],
+    "corr_cps_benefit_keys": [
+      -0.39734582741855773,
+      -0.38942854977781843
+    ],
+    "se_cps_independent_append_bn": [
+      9.248715564000356,
+      9.741652420877738
+    ],
+    "se_cps_factor_product_bn": [
+      8.69442008921281,
+      9.2056896533559
+    ],
+    "se_with_benefit_keys_bn": [
+      10.9640122965341,
+      11.394162476082219
+    ],
+    "se_cps_receipt_responses_part_bn": [
+      1.2168004532014352,
+      2.1890028825850076
+    ],
+    "production_term_se_bn": [
+      0.676368777,
+      1.034971412
+    ],
+    "se_cps_pension_fixed_bn": [
+      9.340780707472492,
+      9.940196133146127
+    ],
+    "se_combined_pension_fixed_bn": [
+      11.065470885280568,
+      11.585310947527947
+    ],
+    "se_cps_pension_generic_bn": [
+      10.113166000504034,
+      10.609913847140236
+    ],
+    "se_combined_pension_generic_bn": [
+      11.72478521089629,
+      12.164793562951893
+    ],
+    "lineage": {
+      "source": "main_case_lineage_2026_10_05/derived/v5_summary.json (sets.set.arms.<arm>: band_bn, c3_line, counts), re-based on main_case_2026_10_14/derived/summary.json (v7.companions.options)",
+      "c3": 0.5567,
+      "c3_se": 0.2457,
+      "c3_label": "pooled with CPS monthly 1994-2026 (central)",
+      "central_arm": "b",
+      "se_independent_at_ends_bn": [
+        10.962241848901659,
+        10.531038014406356
+      ],
+      "se_positive_correlation_at_ends_bn": [
+        18.37485147572527,
+        17.608171249035074
+      ],
+      "ci95_at_ends_bn": [
+        318.0660238056798,
+        444.2900952087435
+      ],
+      "arms": {
+        "a": {
+          "added_persons": 1806958.6613715945,
+          "population": 41519451.9925716,
+          "band_bn": [
+            326.10988690514614,
+            408.0186297537731
+          ],
+          "band_at_c3_minus_1se_bn": [
+            329.73069507701035,
+            411.484119968406
+          ],
+          "band_at_c3_plus_1se_bn": [
+            322.48907873328193,
+            404.5531395391402
+          ],
+          "se_c3_bn": [
+            3.6208081718641987,
+            3.4654902146329034
+          ],
+          "se_independent_with_c3_bn": [
+            11.544738982378485,
+            11.086585772391254
+          ],
+          "se_positive_correlation_with_c3_bn": [
+            21.995659647589466,
+            21.073661463667978
+          ],
+          "ci95_with_c3_bn": [
+            303.48219849968433,
+            429.74833786766
+          ],
+          "ci95_envelope_with_c3_bn": [
+            282.9983939958708,
+            449.32300622256236
+          ],
+          "c3_line": {
+            "low": {
+              "intercept_bn": 334.31381001982584,
+              "slope_bn": -14.736703996191284
+            },
+            "high": {
+              "intercept_bn": 415.8706379038998,
+              "slope_bn": -14.104559278115195
+            }
+          }
+        },
+        "b": {
+          "added_persons": 3039719.593185237,
+          "population": 42752212.92438524,
+          "band_bn": [
+            339.55201782952685,
+            423.64926070050683
+          ],
+          "band_at_c3_minus_1se_bn": [
+            343.4492181400668,
+            427.3792869542001
+          ],
+          "band_at_c3_plus_1se_bn": [
+            335.6548175189869,
+            419.91923444681356
+          ],
+          "se_c3_bn": [
+            3.897200310539972,
+            3.730026253693268
+          ],
+          "se_independent_with_c3_bn": [
+            11.63438509824579,
+            11.172101750078756
+          ],
+          "se_positive_correlation_with_c3_bn": [
+            22.27205178626524,
+            21.33819750272834
+          ],
+          "ci95_with_c3_bn": [
+            316.7486230369651,
+            445.5465801306612
+          ],
+          "ci95_envelope_with_c3_bn": [
+            295.89879632844696,
+            465.47212780585437
+          ],
+          "c3_line": {
+            "low": {
+              "intercept_bn": 348.3821823101032,
+              "slope_bn": -15.861621125518813
+            },
+            "high": {
+              "intercept_bn": 432.1006470066975,
+              "slope_bn": -15.181222033753633
+            }
+          }
+        },
+        "c": {
+          "added_persons": 4272480.52499888,
+          "population": 43984973.856198885,
+          "band_bn": [
+            352.9871228389036,
+            439.27245212655646
+          ],
+          "band_at_c3_minus_1se_bn": [
+            357.1607144888471,
+            443.26701365432336
+          ],
+          "band_at_c3_plus_1se_bn": [
+            348.8135311889601,
+            435.2778905987895
+          ],
+          "se_c3_bn": [
+            4.173591649943502,
+            3.9945615277669186
+          ],
+          "se_independent_with_c3_bn": [
+            11.7298599145211,
+            11.26318265234065
+          ],
+          "se_positive_correlation_with_c3_bn": [
+            22.54844312566877,
+            21.602732776801993
+          ],
+          "ci95_with_c3_bn": [
+            329.9965974064422,
+            461.3482901251441
+          ],
+          "ci95_envelope_with_c3_bn": [
+            308.7921743125928,
+            481.61380836908836
+          ],
+          "c3_line": {
+            "low": {
+              "intercept_bn": 362.44352687440846,
+              "slope_bn": -16.986535001805052
+            },
+            "high": {
+              "intercept_bn": 448.3232148555261,
+              "slope_bn": -16.257881675893035
+            }
+          }
+        }
+      },
+      "ci95_with_c3_over_arms_bn": [
+        303.48219849968433,
+        461.3482901251441
+      ],
+      "ci95_envelope_with_c3_over_arms_bn": [
+        282.9983939958708,
+        481.61380836908836
+      ],
+      "rebase": {
+        "source": "main_case_2026_10_14/derived/summary.json (v7.companions.options)",
+        "c3_central_slope_bn": [
+          -15.861621125518813,
+          -15.181222033753633
+        ],
+        "lineage_item": "added_age_mix",
+        "rule": "whole-case arm bands; symmetric C3 +/- SE runs carry every item, including lineage credits and job capital; arms a/c scale the central C3 slope by their G3-rate count [APPROX]"
+      }
+    },
+    "pension_switch": {
+      "rule": "the union-side identities on v6's meta.pension_accrual: social_security less the lineage's (its cells and the items' lineage_* parts) is ratio_net x the union's OASDI receipts, and medicare less the lineage's, less part_a_accrual_bn, is (1 - part_a_share) of the cash set's union amount (1e-9); the lineage's social_security moves with its own OASDI receipts at k, and its Part A accrual is fixed like the union's",
+      "ratio_net": 0.9535468505020114,
+      "part_a_accrual_bn": 40.78277939340838,
+      "part_a_share": 0.3751126329068301,
+      "previous": {
+        "ratio_net": 0.9736673650311839,
+        "part_a_accrual_bn": 41.13712783048602
+      },
+      "identities": {
+        "personal": {
+          "union_social_security_bn": 100.63155613846482,
+          "union_oasdi_receipts_bn": 105.5339400318769,
+          "social_security_gap_bn": 4.689582056016661e-13,
+          "union_medicare_less_part_a_bn": 32.75610340334443,
+          "union_medicare_cash_bn": 52.41921205051428,
+          "medicare_gap_bn": 0.0
+        },
+        "shared": {
+          "union_social_security_bn": 107.1461339473363,
+          "union_oasdi_receipts_bn": 112.36588311410986,
+          "social_security_gap_bn": -3.126388037344441e-13,
+          "union_medicare_less_part_a_bn": 32.756103403344405,
+          "union_medicare_cash_bn": 52.419212050514254,
+          "medicare_gap_bn": -7.105427357601002e-15
+        }
+      },
+      "lineage_k": {
+        "personal": 0.931249565857135,
+        "shared": 0.9371199940210873
+      },
+      "lineage_part_a_bn": {
+        "personal": 2.55266632337272,
+        "shared": 3.202287100881324
+      },
+      "items_lineage_parts_booked_with_the_lineage": {
+        "pension_tr2026": {
+          "lineage_oasdi": {
+            "personal": -0.15634229873910022,
+            "shared": -0.19862042863975995
+          },
+          "lineage_part_a": {
+            "personal": -0.025862992192876095,
+            "shared": -0.03250378359863497
+          }
+        },
+        "row4_frame": {
+          "lineage_g3plus:part_a_split:medicare:medicare": {
+            "personal": -0.04499235881619295,
+            "shared": -0.06236746960726447
+          },
+          "lineage_g3plus:ss_split:social_security:social_security": {
+            "personal": -0.008160493772648035,
+            "shared": -0.007741013937261208
+          },
+          "lineage_g3plus:ss_factor:social_security:social_security": {
+            "personal": 5.848337154625699e-06,
+            "shared": 8.679238924561343e-06
+          },
+          "lineage_whites:ss_factor:social_security:social_security": {
+            "personal": 4.620188564375414e-06,
+            "shared": 4.620188564375414e-06
+          }
+        }
+      },
+      "items_union_parts": {
+        "pension_tr2026": {
+          "union_oasdi": {
+            "personal": -2.1233971737322013,
+            "shared": -2.260859383780748
+          },
+          "union_part_a": {
+            "personal": -0.35434843707763974,
+            "shared": -0.35434843707763974
+          }
+        },
+        "row4_frame": {
+          "union_G1:part_a:medicare:medicare": {
+            "personal": -0.1740713939678873,
+            "shared": -0.12931233638658313
+          },
+          "union_G2:part_a:medicare:medicare": {
+            "personal": -0.4663598961459936,
+            "shared": -0.4277881053729544
+          },
+          "union_G3plus:part_a:medicare:medicare": {
+            "personal": -0.3878284307132809,
+            "shared": -0.4711592790676171
+          },
+          "union_G1:oasdi_ratio:social_security:social_security": {
+            "personal": 0.2743936768022874,
+            "shared": 0.24938799933707845
+          },
+          "union_G2:oasdi_ratio:social_security:social_security": {
+            "personal": -0.07500905396116232,
+            "shared": -0.0516036891341321
+          },
+          "union_G3plus:oasdi_ratio:social_security:social_security": {
+            "personal": -0.07673234473107998,
+            "shared": -0.06719190039022592
+          }
+        }
+      },
+      "row4_frame": {
+        "union_parts_subtracted_for_base_identities_bn": {
+          "social_security": {
+            "personal": 0.12265227811004509,
+            "shared": 0.1305924098127204
+          },
+          "medicare": {
+            "personal": -1.0282597208271618,
+            "shared": -1.0282597208271547
+          }
+        },
+        "lineage_parts_validated_bn": {
+          "lineage_g3plus:part_a_split:medicare:medicare": {
+            "personal": -0.04499235881619295,
+            "shared": -0.06236746960726447
+          },
+          "lineage_g3plus:ss_split:social_security:social_security": {
+            "personal": -0.008160493772648035,
+            "shared": -0.007741013937261208
+          },
+          "lineage_g3plus:ss_factor:social_security:social_security": {
+            "personal": 5.848337154625699e-06,
+            "shared": 8.679238924561343e-06
+          },
+          "lineage_whites:ss_factor:social_security:social_security": {
+            "personal": 4.620188564375414e-06,
+            "shared": 4.620188564375414e-06
+          }
+        },
+        "part_model_inputs": {
+          "G_part_a": {
+            "personal": 1.5808018367441918,
+            "shared": 2.254438516449625
+          },
+          "G_ss": {
+            "personal": 4.2051745469044235,
+            "shared": 6.240699475268775
+          },
+          "lineage_ss": {
+            "personal": 7.5272640296291655,
+            "shared": 9.562788957993517
+          },
+          "G_benefit_tax": {
+            "personal": -0.06755897720182169,
+            "shared": -0.09898531672230337
+          },
+          "W_benefit_tax": {
+            "personal": -0.12364247926395322,
+            "shared": -0.12364247926395322
+          }
+        },
+        "rule": "R9: subtract named union parts before v6 identity checks; actual union SS shifts follow OASDI receipts and Part A shifts are fixed; lineage parts keep their own accrual ratio/fixed Part A"
+      }
+    },
+    "items": [
+      {
+        "id": "added_age_mix",
+        "kind": "lineage",
+        "lineage_edits": {
+          "first": 416,
+          "count": 336,
+          "row8_edit_index": 751,
+          "row8_edit_bn": -0.00798742966671706
+        },
+        "route": "the lineage's cells, re-valued in place, ride each line's first-order ratio as v5's do [ASSUMPTION, oct05's]"
+      },
+      {
+        "id": "personal_allocation",
+        "kind": "allocation",
+        "edits": {
+          "first": 769,
+          "count": 0
+        },
+        "route": "the case's group total uses its personal specifications (R5)"
+      },
+      {
+        "id": "pension_tr2026",
+        "kind": "edit_set",
+        "edits": {
+          "first": 752,
+          "count": 2
+        },
+        "cash_edits": null,
+        "union_only": false,
+        "parts": {
+          "lineage_oasdi": {
+            "edit": 0,
+            "line": "social_security",
+            "side": "lineage"
+          },
+          "lineage_part_a": {
+            "edit": 1,
+            "line": "medicare",
+            "side": "lineage"
+          },
+          "union_oasdi": {
+            "edit": 0,
+            "line": "social_security",
+            "side": "union"
+          },
+          "union_part_a": {
+            "edit": 1,
+            "line": "medicare",
+            "side": "union"
+          }
+        },
+        "lines": {
+          "social_security": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "pension rule"
+          },
+          "medicare": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "pension rule"
+          }
+        }
+      },
+      {
+        "id": "retiree_health",
+        "kind": "edit_set",
+        "edits": {
+          "first": 754,
+          "count": 10
+        },
+        "cash_edits": {
+          "first": 750,
+          "count": 10
+        },
+        "union_only": false,
+        "parts": {},
+        "lines": {
+          "other_federal_benefits": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "general_public_services": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "defense": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "no sampling error"
+          },
+          "public_order_safety": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "economic_affairs_services": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "housing_community_services": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "health_services": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "recreation_culture": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "education_services": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "income_security_services": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          }
+        }
+      },
+      {
+        "id": "user_fees",
+        "kind": "edit_set",
+        "edits": {
+          "first": 764,
+          "count": 5
+        },
+        "cash_edits": {
+          "first": 760,
+          "count": 5
+        },
+        "union_only": true,
+        "parts": {
+          "union_fee_health": {
+            "edit": 3,
+            "line": "health_services",
+            "side": "union"
+          },
+          "union_fee_tuition": {
+            "edit": 0,
+            "line": "education_services",
+            "side": "union"
+          },
+          "union_k12_weight_other": {
+            "edit": 2,
+            "line": "college_rekey",
+            "side": "union"
+          },
+          "union_k12_weight_school": {
+            "edit": 1,
+            "line": "school_reprice",
+            "side": "union"
+          },
+          "union_key_health": {
+            "edit": 3,
+            "line": "health_services",
+            "side": "union"
+          },
+          "union_key_higher_ed": {
+            "edit": 0,
+            "line": "education_services",
+            "side": "union"
+          },
+          "union_key_pell": {
+            "edit": 4,
+            "line": "other_federal_benefits",
+            "side": "union"
+          }
+        },
+        "lines": {
+          "education_services": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "line ratio"
+          },
+          "school_reprice": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "school correction"
+          },
+          "college_rekey": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "school correction"
+          },
+          "health_services": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "line ratio"
+          },
+          "other_federal_benefits": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "line ratio"
+          }
+        },
+        "capital": {
+          "carriers": [
+            "user_fees_key_k12",
+            "user_fees_key_college",
+            "user_fees_key_health"
+          ],
+          "offsets": [
+            "k12_user_fees",
+            "college_user_fees",
+            "health_sl_user_fees",
+            "health_fed_user_fees"
+          ],
+          "route": "each offset's key is its carrier's share, a fixed key shift the item sets: it enters the capital return's rebuild (kcoef_<tag>_share_<carrier>) and carries no sampling error [ASSUMPTION: v4's rule for correction lines the uncorrected model lacks]"
+        }
+      },
+      {
+        "id": "child_credits",
+        "kind": "edit_set",
+        "edits": {
+          "first": 769,
+          "count": 9
+        },
+        "cash_edits": {
+          "first": 765,
+          "count": 9
+        },
+        "union_only": false,
+        "parts": {
+          "lineage_g3plus:federal_income_tax:cbo_collective": {
+            "edit": 0,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:federal_income_tax:corporate_all_capital": {
+            "edit": 1,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:federal_income_tax:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:federal_income_tax:medicare_income_weighted": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:federal_income_tax:nas_80": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:federal_income_tax:property_residual_consumption": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:federal_income_tax:public_assets_tax_base": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:federal_income_tax:treasury_815": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:refundable_tax_credits": {
+            "edit": 8,
+            "line": "refundable_tax_credits",
+            "side": "lineage"
+          },
+          "union_G1:A_receipt_G1:cbo_collective": {
+            "edit": 0,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:A_receipt_G1:corporate_all_capital": {
+            "edit": 1,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:A_receipt_G1:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:A_receipt_G1:medicare_income_weighted": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:A_receipt_G1:nas_80": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:A_receipt_G1:property_residual_consumption": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:A_receipt_G1:public_assets_tax_base": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:A_receipt_G1:treasury_815": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:A_spending_G1": {
+            "edit": 8,
+            "line": "refundable_tax_credits",
+            "side": "union"
+          },
+          "union_G1:B_receipt_G1:cbo_collective": {
+            "edit": 0,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:B_receipt_G1:corporate_all_capital": {
+            "edit": 1,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:B_receipt_G1:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:B_receipt_G1:medicare_income_weighted": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:B_receipt_G1:nas_80": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:B_receipt_G1:property_residual_consumption": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:B_receipt_G1:public_assets_tax_base": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:B_receipt_G1:treasury_815": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:B_spending_G1": {
+            "edit": 8,
+            "line": "refundable_tax_credits",
+            "side": "union"
+          },
+          "union_G1:C_receipt_G1:cbo_collective": {
+            "edit": 0,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:C_receipt_G1:corporate_all_capital": {
+            "edit": 1,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:C_receipt_G1:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:C_receipt_G1:medicare_income_weighted": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:C_receipt_G1:nas_80": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:C_receipt_G1:property_residual_consumption": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:C_receipt_G1:public_assets_tax_base": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:C_receipt_G1:treasury_815": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:Cr_receipt_G1:cbo_collective": {
+            "edit": 0,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:Cr_receipt_G1:corporate_all_capital": {
+            "edit": 1,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:Cr_receipt_G1:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:Cr_receipt_G1:medicare_income_weighted": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:Cr_receipt_G1:nas_80": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:Cr_receipt_G1:property_residual_consumption": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:Cr_receipt_G1:public_assets_tax_base": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:Cr_receipt_G1:treasury_815": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:A_receipt_G2:cbo_collective": {
+            "edit": 0,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:A_receipt_G2:corporate_all_capital": {
+            "edit": 1,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:A_receipt_G2:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:A_receipt_G2:medicare_income_weighted": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:A_receipt_G2:nas_80": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:A_receipt_G2:property_residual_consumption": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:A_receipt_G2:public_assets_tax_base": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:A_receipt_G2:treasury_815": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:A_spending_G2": {
+            "edit": 8,
+            "line": "refundable_tax_credits",
+            "side": "union"
+          },
+          "union_G2:B_receipt_G2:cbo_collective": {
+            "edit": 0,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:B_receipt_G2:corporate_all_capital": {
+            "edit": 1,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:B_receipt_G2:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:B_receipt_G2:medicare_income_weighted": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:B_receipt_G2:nas_80": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:B_receipt_G2:property_residual_consumption": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:B_receipt_G2:public_assets_tax_base": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:B_receipt_G2:treasury_815": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:B_spending_G2": {
+            "edit": 8,
+            "line": "refundable_tax_credits",
+            "side": "union"
+          },
+          "union_G2:C_receipt_G2:cbo_collective": {
+            "edit": 0,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:C_receipt_G2:corporate_all_capital": {
+            "edit": 1,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:C_receipt_G2:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:C_receipt_G2:medicare_income_weighted": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:C_receipt_G2:nas_80": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:C_receipt_G2:property_residual_consumption": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:C_receipt_G2:public_assets_tax_base": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:C_receipt_G2:treasury_815": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:Cr_receipt_G2:cbo_collective": {
+            "edit": 0,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:Cr_receipt_G2:corporate_all_capital": {
+            "edit": 1,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:Cr_receipt_G2:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:Cr_receipt_G2:medicare_income_weighted": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:Cr_receipt_G2:nas_80": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:Cr_receipt_G2:property_residual_consumption": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:Cr_receipt_G2:public_assets_tax_base": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:Cr_receipt_G2:treasury_815": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:A_receipt_G3plus:cbo_collective": {
+            "edit": 0,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:A_receipt_G3plus:corporate_all_capital": {
+            "edit": 1,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:A_receipt_G3plus:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:A_receipt_G3plus:medicare_income_weighted": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:A_receipt_G3plus:nas_80": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:A_receipt_G3plus:property_residual_consumption": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:A_receipt_G3plus:public_assets_tax_base": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:A_receipt_G3plus:treasury_815": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:A_spending_G3plus": {
+            "edit": 8,
+            "line": "refundable_tax_credits",
+            "side": "union"
+          },
+          "union_G3plus:B_receipt_G3plus:cbo_collective": {
+            "edit": 0,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:B_receipt_G3plus:corporate_all_capital": {
+            "edit": 1,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:B_receipt_G3plus:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:B_receipt_G3plus:medicare_income_weighted": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:B_receipt_G3plus:nas_80": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:B_receipt_G3plus:property_residual_consumption": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:B_receipt_G3plus:public_assets_tax_base": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:B_receipt_G3plus:treasury_815": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:B_spending_G3plus": {
+            "edit": 8,
+            "line": "refundable_tax_credits",
+            "side": "union"
+          },
+          "union_G3plus:C_receipt_G3plus:cbo_collective": {
+            "edit": 0,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:C_receipt_G3plus:corporate_all_capital": {
+            "edit": 1,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:C_receipt_G3plus:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:C_receipt_G3plus:medicare_income_weighted": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:C_receipt_G3plus:nas_80": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:C_receipt_G3plus:property_residual_consumption": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:C_receipt_G3plus:public_assets_tax_base": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:C_receipt_G3plus:treasury_815": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:Cr_receipt_G3plus:cbo_collective": {
+            "edit": 0,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:Cr_receipt_G3plus:corporate_all_capital": {
+            "edit": 1,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:Cr_receipt_G3plus:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:Cr_receipt_G3plus:medicare_income_weighted": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:Cr_receipt_G3plus:nas_80": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:Cr_receipt_G3plus:property_residual_consumption": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:Cr_receipt_G3plus:public_assets_tax_base": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:Cr_receipt_G3plus:treasury_815": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          }
+        },
+        "lines": {
+          "federal_income_tax": {
+            "side": "receipt",
+            "edit": "cell shift",
+            "route": "line ratio"
+          },
+          "refundable_tax_credits": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "line ratio"
+          }
+        }
+      },
+      {
+        "id": "job_capital_taxes",
+        "kind": "edit_set",
+        "edits": {
+          "first": 778,
+          "count": 32
+        },
+        "cash_edits": {
+          "first": 774,
+          "count": 32
+        },
+        "union_only": false,
+        "parts": {
+          "lineage_g3plus:corporate_capital:cbo_collective": {
+            "edit": 0,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_capital:corporate_all_capital": {
+            "edit": 1,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_capital:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_capital:medicare_income_weighted": {
+            "edit": 3,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_capital:nas_80": {
+            "edit": 4,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_capital:property_residual_consumption": {
+            "edit": 5,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_capital:public_assets_tax_base": {
+            "edit": 6,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_capital:treasury_815": {
+            "edit": 7,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_labor:cbo_collective": {
+            "edit": 8,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_labor:corporate_all_capital": {
+            "edit": 9,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_labor:federal_gap_high_agi": {
+            "edit": 10,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_labor:medicare_income_weighted": {
+            "edit": 11,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_labor:nas_80": {
+            "edit": 12,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_labor:property_residual_consumption": {
+            "edit": 13,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_labor:public_assets_tax_base": {
+            "edit": 14,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_g3plus:corporate_labor:treasury_815": {
+            "edit": 15,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_g3plus:other_production_taxes:cbo_collective": {
+            "edit": 24,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_g3plus:other_production_taxes:corporate_all_capital": {
+            "edit": 25,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_g3plus:other_production_taxes:federal_gap_high_agi": {
+            "edit": 26,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_g3plus:other_production_taxes:medicare_income_weighted": {
+            "edit": 27,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_g3plus:other_production_taxes:nas_80": {
+            "edit": 28,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_g3plus:other_production_taxes:property_residual_consumption": {
+            "edit": 29,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_g3plus:other_production_taxes:public_assets_tax_base": {
+            "edit": 30,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_g3plus:other_production_taxes:treasury_815": {
+            "edit": 31,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_g3plus:remaining_production_property:cbo_collective": {
+            "edit": 16,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_g3plus:remaining_production_property:corporate_all_capital": {
+            "edit": 17,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_g3plus:remaining_production_property:federal_gap_high_agi": {
+            "edit": 18,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_g3plus:remaining_production_property:medicare_income_weighted": {
+            "edit": 19,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_g3plus:remaining_production_property:nas_80": {
+            "edit": 20,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_g3plus:remaining_production_property:property_residual_consumption": {
+            "edit": 21,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_g3plus:remaining_production_property:public_assets_tax_base": {
+            "edit": 22,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_g3plus:remaining_production_property:treasury_815": {
+            "edit": 23,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_capital:cbo_collective": {
+            "edit": 0,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_capital:corporate_all_capital": {
+            "edit": 1,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_capital:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_capital:medicare_income_weighted": {
+            "edit": 3,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_capital:nas_80": {
+            "edit": 4,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_capital:property_residual_consumption": {
+            "edit": 5,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_capital:public_assets_tax_base": {
+            "edit": 6,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_capital:treasury_815": {
+            "edit": 7,
+            "line": "corporate_capital",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_labor:cbo_collective": {
+            "edit": 8,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_labor:corporate_all_capital": {
+            "edit": 9,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_labor:federal_gap_high_agi": {
+            "edit": 10,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_labor:medicare_income_weighted": {
+            "edit": 11,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_labor:nas_80": {
+            "edit": 12,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_labor:property_residual_consumption": {
+            "edit": 13,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_labor:public_assets_tax_base": {
+            "edit": 14,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_whites:corporate_labor:treasury_815": {
+            "edit": 15,
+            "line": "corporate_labor",
+            "side": "lineage"
+          },
+          "lineage_whites:other_production_taxes:cbo_collective": {
+            "edit": 24,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_whites:other_production_taxes:corporate_all_capital": {
+            "edit": 25,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_whites:other_production_taxes:federal_gap_high_agi": {
+            "edit": 26,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_whites:other_production_taxes:medicare_income_weighted": {
+            "edit": 27,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_whites:other_production_taxes:nas_80": {
+            "edit": 28,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_whites:other_production_taxes:property_residual_consumption": {
+            "edit": 29,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_whites:other_production_taxes:public_assets_tax_base": {
+            "edit": 30,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_whites:other_production_taxes:treasury_815": {
+            "edit": 31,
+            "line": "other_production_taxes",
+            "side": "lineage"
+          },
+          "lineage_whites:remaining_production_property:cbo_collective": {
+            "edit": 16,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_whites:remaining_production_property:corporate_all_capital": {
+            "edit": 17,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_whites:remaining_production_property:federal_gap_high_agi": {
+            "edit": 18,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_whites:remaining_production_property:medicare_income_weighted": {
+            "edit": 19,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_whites:remaining_production_property:nas_80": {
+            "edit": 20,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_whites:remaining_production_property:property_residual_consumption": {
+            "edit": 21,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_whites:remaining_production_property:public_assets_tax_base": {
+            "edit": 22,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "lineage_whites:remaining_production_property:treasury_815": {
+            "edit": 23,
+            "line": "remaining_production_property",
+            "side": "lineage"
+          },
+          "union_G1:corporate_capital:cbo_collective": {
+            "edit": 0,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G1:corporate_capital:corporate_all_capital": {
+            "edit": 1,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G1:corporate_capital:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G1:corporate_capital:medicare_income_weighted": {
+            "edit": 3,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G1:corporate_capital:nas_80": {
+            "edit": 4,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G1:corporate_capital:property_residual_consumption": {
+            "edit": 5,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G1:corporate_capital:public_assets_tax_base": {
+            "edit": 6,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G1:corporate_capital:treasury_815": {
+            "edit": 7,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G1:corporate_labor:cbo_collective": {
+            "edit": 8,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G1:corporate_labor:corporate_all_capital": {
+            "edit": 9,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G1:corporate_labor:federal_gap_high_agi": {
+            "edit": 10,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G1:corporate_labor:medicare_income_weighted": {
+            "edit": 11,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G1:corporate_labor:nas_80": {
+            "edit": 12,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G1:corporate_labor:property_residual_consumption": {
+            "edit": 13,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G1:corporate_labor:public_assets_tax_base": {
+            "edit": 14,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G1:corporate_labor:treasury_815": {
+            "edit": 15,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G1:other_production_taxes:cbo_collective": {
+            "edit": 24,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G1:other_production_taxes:corporate_all_capital": {
+            "edit": 25,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G1:other_production_taxes:federal_gap_high_agi": {
+            "edit": 26,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G1:other_production_taxes:medicare_income_weighted": {
+            "edit": 27,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G1:other_production_taxes:nas_80": {
+            "edit": 28,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G1:other_production_taxes:property_residual_consumption": {
+            "edit": 29,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G1:other_production_taxes:public_assets_tax_base": {
+            "edit": 30,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G1:other_production_taxes:treasury_815": {
+            "edit": 31,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G1:remaining_production_property:cbo_collective": {
+            "edit": 16,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G1:remaining_production_property:corporate_all_capital": {
+            "edit": 17,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G1:remaining_production_property:federal_gap_high_agi": {
+            "edit": 18,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G1:remaining_production_property:medicare_income_weighted": {
+            "edit": 19,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G1:remaining_production_property:nas_80": {
+            "edit": 20,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G1:remaining_production_property:property_residual_consumption": {
+            "edit": 21,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G1:remaining_production_property:public_assets_tax_base": {
+            "edit": 22,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G1:remaining_production_property:treasury_815": {
+            "edit": 23,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G2:corporate_capital:cbo_collective": {
+            "edit": 0,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G2:corporate_capital:corporate_all_capital": {
+            "edit": 1,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G2:corporate_capital:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G2:corporate_capital:medicare_income_weighted": {
+            "edit": 3,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G2:corporate_capital:nas_80": {
+            "edit": 4,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G2:corporate_capital:property_residual_consumption": {
+            "edit": 5,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G2:corporate_capital:public_assets_tax_base": {
+            "edit": 6,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G2:corporate_capital:treasury_815": {
+            "edit": 7,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G2:corporate_labor:cbo_collective": {
+            "edit": 8,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G2:corporate_labor:corporate_all_capital": {
+            "edit": 9,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G2:corporate_labor:federal_gap_high_agi": {
+            "edit": 10,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G2:corporate_labor:medicare_income_weighted": {
+            "edit": 11,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G2:corporate_labor:nas_80": {
+            "edit": 12,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G2:corporate_labor:property_residual_consumption": {
+            "edit": 13,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G2:corporate_labor:public_assets_tax_base": {
+            "edit": 14,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G2:corporate_labor:treasury_815": {
+            "edit": 15,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G2:other_production_taxes:cbo_collective": {
+            "edit": 24,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G2:other_production_taxes:corporate_all_capital": {
+            "edit": 25,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G2:other_production_taxes:federal_gap_high_agi": {
+            "edit": 26,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G2:other_production_taxes:medicare_income_weighted": {
+            "edit": 27,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G2:other_production_taxes:nas_80": {
+            "edit": 28,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G2:other_production_taxes:property_residual_consumption": {
+            "edit": 29,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G2:other_production_taxes:public_assets_tax_base": {
+            "edit": 30,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G2:other_production_taxes:treasury_815": {
+            "edit": 31,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G2:remaining_production_property:cbo_collective": {
+            "edit": 16,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G2:remaining_production_property:corporate_all_capital": {
+            "edit": 17,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G2:remaining_production_property:federal_gap_high_agi": {
+            "edit": 18,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G2:remaining_production_property:medicare_income_weighted": {
+            "edit": 19,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G2:remaining_production_property:nas_80": {
+            "edit": 20,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G2:remaining_production_property:property_residual_consumption": {
+            "edit": 21,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G2:remaining_production_property:public_assets_tax_base": {
+            "edit": 22,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G2:remaining_production_property:treasury_815": {
+            "edit": 23,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G3plus:corporate_capital:cbo_collective": {
+            "edit": 0,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G3plus:corporate_capital:corporate_all_capital": {
+            "edit": 1,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G3plus:corporate_capital:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G3plus:corporate_capital:medicare_income_weighted": {
+            "edit": 3,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G3plus:corporate_capital:nas_80": {
+            "edit": 4,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G3plus:corporate_capital:property_residual_consumption": {
+            "edit": 5,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G3plus:corporate_capital:public_assets_tax_base": {
+            "edit": 6,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G3plus:corporate_capital:treasury_815": {
+            "edit": 7,
+            "line": "corporate_capital",
+            "side": "union"
+          },
+          "union_G3plus:corporate_labor:cbo_collective": {
+            "edit": 8,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G3plus:corporate_labor:corporate_all_capital": {
+            "edit": 9,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G3plus:corporate_labor:federal_gap_high_agi": {
+            "edit": 10,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G3plus:corporate_labor:medicare_income_weighted": {
+            "edit": 11,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G3plus:corporate_labor:nas_80": {
+            "edit": 12,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G3plus:corporate_labor:property_residual_consumption": {
+            "edit": 13,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G3plus:corporate_labor:public_assets_tax_base": {
+            "edit": 14,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G3plus:corporate_labor:treasury_815": {
+            "edit": 15,
+            "line": "corporate_labor",
+            "side": "union"
+          },
+          "union_G3plus:other_production_taxes:cbo_collective": {
+            "edit": 24,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G3plus:other_production_taxes:corporate_all_capital": {
+            "edit": 25,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G3plus:other_production_taxes:federal_gap_high_agi": {
+            "edit": 26,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G3plus:other_production_taxes:medicare_income_weighted": {
+            "edit": 27,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G3plus:other_production_taxes:nas_80": {
+            "edit": 28,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G3plus:other_production_taxes:property_residual_consumption": {
+            "edit": 29,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G3plus:other_production_taxes:public_assets_tax_base": {
+            "edit": 30,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G3plus:other_production_taxes:treasury_815": {
+            "edit": 31,
+            "line": "other_production_taxes",
+            "side": "union"
+          },
+          "union_G3plus:remaining_production_property:cbo_collective": {
+            "edit": 16,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G3plus:remaining_production_property:corporate_all_capital": {
+            "edit": 17,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G3plus:remaining_production_property:federal_gap_high_agi": {
+            "edit": 18,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G3plus:remaining_production_property:medicare_income_weighted": {
+            "edit": 19,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G3plus:remaining_production_property:nas_80": {
+            "edit": 20,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G3plus:remaining_production_property:property_residual_consumption": {
+            "edit": 21,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G3plus:remaining_production_property:public_assets_tax_base": {
+            "edit": 22,
+            "line": "remaining_production_property",
+            "side": "union"
+          },
+          "union_G3plus:remaining_production_property:treasury_815": {
+            "edit": 23,
+            "line": "remaining_production_property",
+            "side": "union"
+          }
+        },
+        "lines": {
+          "corporate_capital": {
+            "side": "receipt",
+            "edit": "cell shift",
+            "route": "job-capital CPS replicates"
+          },
+          "corporate_labor": {
+            "side": "receipt",
+            "edit": "cell shift",
+            "route": "job-capital CPS replicates"
+          },
+          "remaining_production_property": {
+            "side": "receipt",
+            "edit": "cell shift",
+            "route": "job-capital CPS replicates"
+          },
+          "other_production_taxes": {
+            "side": "receipt",
+            "edit": "cell shift",
+            "route": "job-capital CPS replicates"
+          }
+        }
+      },
+      {
+        "id": "white_end_tax_keys",
+        "kind": "edit_set",
+        "edits": {
+          "first": 810,
+          "count": 8
+        },
+        "cash_edits": {
+          "first": 806,
+          "count": 8
+        },
+        "union_only": false,
+        "parts": {
+          "lineage_whites:income_tax_keys:federal_income_tax:cbo_collective": {
+            "edit": 0,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:income_tax_keys:federal_income_tax:corporate_all_capital": {
+            "edit": 1,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:income_tax_keys:federal_income_tax:federal_gap_high_agi": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:income_tax_keys:federal_income_tax:medicare_income_weighted": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:income_tax_keys:federal_income_tax:nas_80": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:income_tax_keys:federal_income_tax:property_residual_consumption": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:income_tax_keys:federal_income_tax:public_assets_tax_base": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:income_tax_keys:federal_income_tax:treasury_815": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          }
+        },
+        "lines": {
+          "federal_income_tax": {
+            "side": "receipt",
+            "edit": "cell shift",
+            "route": "line ratio"
+          }
+        }
+      },
+      {
+        "id": "row4_frame",
+        "kind": "edit_set",
+        "edits": {
+          "first": 818,
+          "count": 30
+        },
+        "cash_edits": {
+          "first": 814,
+          "count": 20
+        },
+        "union_only": false,
+        "parts": {
+          "lineage_g3plus:benefit_tax:federal_income_tax:cbo_collective": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:benefit_tax:federal_income_tax:corporate_all_capital": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:benefit_tax:federal_income_tax:federal_gap_high_agi": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:benefit_tax:federal_income_tax:medicare_income_weighted": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:benefit_tax:federal_income_tax:nas_80": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:benefit_tax:federal_income_tax:property_residual_consumption": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:benefit_tax:federal_income_tax:public_assets_tax_base": {
+            "edit": 8,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:benefit_tax:federal_income_tax:treasury_815": {
+            "edit": 9,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:owner_national_key:modeled_owner_property:cbo_collective": {
+            "edit": 0,
+            "line": "modeled_owner_property",
+            "side": "lineage"
+          },
+          "lineage_g3plus:part_a_split:medicare:medicare": {
+            "edit": 1,
+            "line": "medicare",
+            "side": "lineage"
+          },
+          "lineage_g3plus:ss_factor:social_security:social_security": {
+            "edit": 29,
+            "line": "social_security",
+            "side": "lineage"
+          },
+          "lineage_g3plus:ss_split:social_security:social_security": {
+            "edit": 29,
+            "line": "social_security",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:general_sales_tax:cbo_collective": {
+            "edit": 13,
+            "line": "general_sales_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:general_sales_tax:corporate_all_capital": {
+            "edit": 14,
+            "line": "general_sales_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:general_sales_tax:federal_gap_high_agi": {
+            "edit": 15,
+            "line": "general_sales_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:general_sales_tax:medicare_income_weighted": {
+            "edit": 16,
+            "line": "general_sales_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:general_sales_tax:nas_80": {
+            "edit": 17,
+            "line": "general_sales_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:general_sales_tax:property_residual_consumption": {
+            "edit": 18,
+            "line": "general_sales_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:general_sales_tax:public_assets_tax_base": {
+            "edit": 19,
+            "line": "general_sales_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:general_sales_tax:treasury_815": {
+            "edit": 20,
+            "line": "general_sales_tax",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:personal_motor_vehicle:cbo_collective": {
+            "edit": 21,
+            "line": "personal_motor_vehicle",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:personal_motor_vehicle:corporate_all_capital": {
+            "edit": 22,
+            "line": "personal_motor_vehicle",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:personal_motor_vehicle:federal_gap_high_agi": {
+            "edit": 23,
+            "line": "personal_motor_vehicle",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:personal_motor_vehicle:medicare_income_weighted": {
+            "edit": 24,
+            "line": "personal_motor_vehicle",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:personal_motor_vehicle:nas_80": {
+            "edit": 25,
+            "line": "personal_motor_vehicle",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:personal_motor_vehicle:property_residual_consumption": {
+            "edit": 26,
+            "line": "personal_motor_vehicle",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:personal_motor_vehicle:public_assets_tax_base": {
+            "edit": 27,
+            "line": "personal_motor_vehicle",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:personal_motor_vehicle:treasury_815": {
+            "edit": 28,
+            "line": "personal_motor_vehicle",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:state_price_health_services:k": {
+            "edit": 11,
+            "line": "state_price_health_services",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:state_price_public_order_safety:k": {
+            "edit": 10,
+            "line": "state_price_public_order_safety",
+            "side": "lineage"
+          },
+          "lineage_g3plus:state_index:state_price_recreation_culture:k": {
+            "edit": 12,
+            "line": "state_price_recreation_culture",
+            "side": "lineage"
+          },
+          "lineage_whites:benefit_tax:federal_income_tax:cbo_collective": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:benefit_tax:federal_income_tax:corporate_all_capital": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:benefit_tax:federal_income_tax:federal_gap_high_agi": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:benefit_tax:federal_income_tax:medicare_income_weighted": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:benefit_tax:federal_income_tax:nas_80": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:benefit_tax:federal_income_tax:property_residual_consumption": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:benefit_tax:federal_income_tax:public_assets_tax_base": {
+            "edit": 8,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:benefit_tax:federal_income_tax:treasury_815": {
+            "edit": 9,
+            "line": "federal_income_tax",
+            "side": "lineage"
+          },
+          "lineage_whites:ss_factor:social_security:social_security": {
+            "edit": 29,
+            "line": "social_security",
+            "side": "lineage"
+          },
+          "union_G1:benefit_tax:federal_income_tax:cbo_collective": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:benefit_tax:federal_income_tax:corporate_all_capital": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:benefit_tax:federal_income_tax:federal_gap_high_agi": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:benefit_tax:federal_income_tax:medicare_income_weighted": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:benefit_tax:federal_income_tax:nas_80": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:benefit_tax:federal_income_tax:property_residual_consumption": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:benefit_tax:federal_income_tax:public_assets_tax_base": {
+            "edit": 8,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:benefit_tax:federal_income_tax:treasury_815": {
+            "edit": 9,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G1:oasdi_ratio:social_security:social_security": {
+            "edit": 29,
+            "line": "social_security",
+            "side": "union"
+          },
+          "union_G1:owner:modeled_owner_property:cbo_collective": {
+            "edit": 0,
+            "line": "modeled_owner_property",
+            "side": "union"
+          },
+          "union_G1:part_a:medicare:medicare": {
+            "edit": 1,
+            "line": "medicare",
+            "side": "union"
+          },
+          "union_G1:state_index:general_sales_tax:cbo_collective": {
+            "edit": 13,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G1:state_index:general_sales_tax:corporate_all_capital": {
+            "edit": 14,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G1:state_index:general_sales_tax:federal_gap_high_agi": {
+            "edit": 15,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G1:state_index:general_sales_tax:medicare_income_weighted": {
+            "edit": 16,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G1:state_index:general_sales_tax:nas_80": {
+            "edit": 17,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G1:state_index:general_sales_tax:property_residual_consumption": {
+            "edit": 18,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G1:state_index:general_sales_tax:public_assets_tax_base": {
+            "edit": 19,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G1:state_index:general_sales_tax:treasury_815": {
+            "edit": 20,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G1:state_index:personal_motor_vehicle:cbo_collective": {
+            "edit": 21,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G1:state_index:personal_motor_vehicle:corporate_all_capital": {
+            "edit": 22,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G1:state_index:personal_motor_vehicle:federal_gap_high_agi": {
+            "edit": 23,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G1:state_index:personal_motor_vehicle:medicare_income_weighted": {
+            "edit": 24,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G1:state_index:personal_motor_vehicle:nas_80": {
+            "edit": 25,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G1:state_index:personal_motor_vehicle:property_residual_consumption": {
+            "edit": 26,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G1:state_index:personal_motor_vehicle:public_assets_tax_base": {
+            "edit": 27,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G1:state_index:personal_motor_vehicle:treasury_815": {
+            "edit": 28,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G1:state_index:state_price_health_services:k": {
+            "edit": 11,
+            "line": "state_price_health_services",
+            "side": "union"
+          },
+          "union_G1:state_index:state_price_public_order_safety:k": {
+            "edit": 10,
+            "line": "state_price_public_order_safety",
+            "side": "union"
+          },
+          "union_G1:state_index:state_price_recreation_culture:k": {
+            "edit": 12,
+            "line": "state_price_recreation_culture",
+            "side": "union"
+          },
+          "union_G2:benefit_tax:federal_income_tax:cbo_collective": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:benefit_tax:federal_income_tax:corporate_all_capital": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:benefit_tax:federal_income_tax:federal_gap_high_agi": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:benefit_tax:federal_income_tax:medicare_income_weighted": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:benefit_tax:federal_income_tax:nas_80": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:benefit_tax:federal_income_tax:property_residual_consumption": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:benefit_tax:federal_income_tax:public_assets_tax_base": {
+            "edit": 8,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:benefit_tax:federal_income_tax:treasury_815": {
+            "edit": 9,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G2:oasdi_ratio:social_security:social_security": {
+            "edit": 29,
+            "line": "social_security",
+            "side": "union"
+          },
+          "union_G2:owner:modeled_owner_property:cbo_collective": {
+            "edit": 0,
+            "line": "modeled_owner_property",
+            "side": "union"
+          },
+          "union_G2:part_a:medicare:medicare": {
+            "edit": 1,
+            "line": "medicare",
+            "side": "union"
+          },
+          "union_G2:state_index:general_sales_tax:cbo_collective": {
+            "edit": 13,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G2:state_index:general_sales_tax:corporate_all_capital": {
+            "edit": 14,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G2:state_index:general_sales_tax:federal_gap_high_agi": {
+            "edit": 15,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G2:state_index:general_sales_tax:medicare_income_weighted": {
+            "edit": 16,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G2:state_index:general_sales_tax:nas_80": {
+            "edit": 17,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G2:state_index:general_sales_tax:property_residual_consumption": {
+            "edit": 18,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G2:state_index:general_sales_tax:public_assets_tax_base": {
+            "edit": 19,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G2:state_index:general_sales_tax:treasury_815": {
+            "edit": 20,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G2:state_index:personal_motor_vehicle:cbo_collective": {
+            "edit": 21,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G2:state_index:personal_motor_vehicle:corporate_all_capital": {
+            "edit": 22,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G2:state_index:personal_motor_vehicle:federal_gap_high_agi": {
+            "edit": 23,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G2:state_index:personal_motor_vehicle:medicare_income_weighted": {
+            "edit": 24,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G2:state_index:personal_motor_vehicle:nas_80": {
+            "edit": 25,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G2:state_index:personal_motor_vehicle:property_residual_consumption": {
+            "edit": 26,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G2:state_index:personal_motor_vehicle:public_assets_tax_base": {
+            "edit": 27,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G2:state_index:personal_motor_vehicle:treasury_815": {
+            "edit": 28,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G2:state_index:state_price_health_services:k": {
+            "edit": 11,
+            "line": "state_price_health_services",
+            "side": "union"
+          },
+          "union_G2:state_index:state_price_public_order_safety:k": {
+            "edit": 10,
+            "line": "state_price_public_order_safety",
+            "side": "union"
+          },
+          "union_G2:state_index:state_price_recreation_culture:k": {
+            "edit": 12,
+            "line": "state_price_recreation_culture",
+            "side": "union"
+          },
+          "union_G3plus:benefit_tax:federal_income_tax:cbo_collective": {
+            "edit": 2,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:benefit_tax:federal_income_tax:corporate_all_capital": {
+            "edit": 3,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:benefit_tax:federal_income_tax:federal_gap_high_agi": {
+            "edit": 4,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:benefit_tax:federal_income_tax:medicare_income_weighted": {
+            "edit": 5,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:benefit_tax:federal_income_tax:nas_80": {
+            "edit": 6,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:benefit_tax:federal_income_tax:property_residual_consumption": {
+            "edit": 7,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:benefit_tax:federal_income_tax:public_assets_tax_base": {
+            "edit": 8,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:benefit_tax:federal_income_tax:treasury_815": {
+            "edit": 9,
+            "line": "federal_income_tax",
+            "side": "union"
+          },
+          "union_G3plus:oasdi_ratio:social_security:social_security": {
+            "edit": 29,
+            "line": "social_security",
+            "side": "union"
+          },
+          "union_G3plus:owner:modeled_owner_property:cbo_collective": {
+            "edit": 0,
+            "line": "modeled_owner_property",
+            "side": "union"
+          },
+          "union_G3plus:part_a:medicare:medicare": {
+            "edit": 1,
+            "line": "medicare",
+            "side": "union"
+          },
+          "union_G3plus:state_index:general_sales_tax:cbo_collective": {
+            "edit": 13,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G3plus:state_index:general_sales_tax:corporate_all_capital": {
+            "edit": 14,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G3plus:state_index:general_sales_tax:federal_gap_high_agi": {
+            "edit": 15,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G3plus:state_index:general_sales_tax:medicare_income_weighted": {
+            "edit": 16,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G3plus:state_index:general_sales_tax:nas_80": {
+            "edit": 17,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G3plus:state_index:general_sales_tax:property_residual_consumption": {
+            "edit": 18,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G3plus:state_index:general_sales_tax:public_assets_tax_base": {
+            "edit": 19,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G3plus:state_index:general_sales_tax:treasury_815": {
+            "edit": 20,
+            "line": "general_sales_tax",
+            "side": "union"
+          },
+          "union_G3plus:state_index:personal_motor_vehicle:cbo_collective": {
+            "edit": 21,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G3plus:state_index:personal_motor_vehicle:corporate_all_capital": {
+            "edit": 22,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G3plus:state_index:personal_motor_vehicle:federal_gap_high_agi": {
+            "edit": 23,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G3plus:state_index:personal_motor_vehicle:medicare_income_weighted": {
+            "edit": 24,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G3plus:state_index:personal_motor_vehicle:nas_80": {
+            "edit": 25,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G3plus:state_index:personal_motor_vehicle:property_residual_consumption": {
+            "edit": 26,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G3plus:state_index:personal_motor_vehicle:public_assets_tax_base": {
+            "edit": 27,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G3plus:state_index:personal_motor_vehicle:treasury_815": {
+            "edit": 28,
+            "line": "personal_motor_vehicle",
+            "side": "union"
+          },
+          "union_G3plus:state_index:state_price_health_services:k": {
+            "edit": 11,
+            "line": "state_price_health_services",
+            "side": "union"
+          },
+          "union_G3plus:state_index:state_price_public_order_safety:k": {
+            "edit": 10,
+            "line": "state_price_public_order_safety",
+            "side": "union"
+          },
+          "union_G3plus:state_index:state_price_recreation_culture:k": {
+            "edit": 12,
+            "line": "state_price_recreation_culture",
+            "side": "union"
+          }
+        },
+        "lines": {
+          "modeled_owner_property": {
+            "side": "receipt",
+            "edit": "cell shift",
+            "route": "no sampling error"
+          },
+          "medicare": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "pension rule"
+          },
+          "federal_income_tax": {
+            "side": "receipt",
+            "edit": "cell shift",
+            "route": "line ratio"
+          },
+          "state_price_public_order_safety": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "no sampling error"
+          },
+          "state_price_health_services": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "no sampling error"
+          },
+          "state_price_recreation_culture": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "no sampling error"
+          },
+          "general_sales_tax": {
+            "side": "receipt",
+            "edit": "cell shift",
+            "route": "line ratio"
+          },
+          "personal_motor_vehicle": {
+            "side": "receipt",
+            "edit": "cell shift",
+            "route": "line ratio"
+          },
+          "social_security": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "pension rule"
+          }
+        }
+      }
+    ],
+    "job_capital_sampling": {
+      "source": {
+        "lane": "job_capital_taxes_2026_10_14",
+        "file": "job_capital_taxes_2026_10_14/derived/item.json",
+        "sha256": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283",
+        "stub": false,
+        "verdict": "Taxes on the business capital that serves the group's jobs come to **$66.5bn a year at the band's low end"
+      },
+      "replicate_columns": [
+        "pwwgt0",
+        "pwwgt1",
+        "pwwgt2",
+        "pwwgt3",
+        "pwwgt4",
+        "pwwgt5",
+        "pwwgt6",
+        "pwwgt7",
+        "pwwgt8",
+        "pwwgt9",
+        "pwwgt10",
+        "pwwgt11",
+        "pwwgt12",
+        "pwwgt13",
+        "pwwgt14",
+        "pwwgt15",
+        "pwwgt16",
+        "pwwgt17",
+        "pwwgt18",
+        "pwwgt19",
+        "pwwgt20",
+        "pwwgt21",
+        "pwwgt22",
+        "pwwgt23",
+        "pwwgt24",
+        "pwwgt25",
+        "pwwgt26",
+        "pwwgt27",
+        "pwwgt28",
+        "pwwgt29",
+        "pwwgt30",
+        "pwwgt31",
+        "pwwgt32",
+        "pwwgt33",
+        "pwwgt34",
+        "pwwgt35",
+        "pwwgt36",
+        "pwwgt37",
+        "pwwgt38",
+        "pwwgt39",
+        "pwwgt40",
+        "pwwgt41",
+        "pwwgt42",
+        "pwwgt43",
+        "pwwgt44",
+        "pwwgt45",
+        "pwwgt46",
+        "pwwgt47",
+        "pwwgt48",
+        "pwwgt49",
+        "pwwgt50",
+        "pwwgt51",
+        "pwwgt52",
+        "pwwgt53",
+        "pwwgt54",
+        "pwwgt55",
+        "pwwgt56",
+        "pwwgt57",
+        "pwwgt58",
+        "pwwgt59",
+        "pwwgt60",
+        "pwwgt61",
+        "pwwgt62",
+        "pwwgt63",
+        "pwwgt64",
+        "pwwgt65",
+        "pwwgt66",
+        "pwwgt67",
+        "pwwgt68",
+        "pwwgt69",
+        "pwwgt70",
+        "pwwgt71",
+        "pwwgt72",
+        "pwwgt73",
+        "pwwgt74",
+        "pwwgt75",
+        "pwwgt76",
+        "pwwgt77",
+        "pwwgt78",
+        "pwwgt79",
+        "pwwgt80",
+        "pwwgt81",
+        "pwwgt82",
+        "pwwgt83",
+        "pwwgt84",
+        "pwwgt85",
+        "pwwgt86",
+        "pwwgt87",
+        "pwwgt88",
+        "pwwgt89",
+        "pwwgt90",
+        "pwwgt91",
+        "pwwgt92",
+        "pwwgt93",
+        "pwwgt94",
+        "pwwgt95",
+        "pwwgt96",
+        "pwwgt97",
+        "pwwgt98",
+        "pwwgt99",
+        "pwwgt100",
+        "pwwgt101",
+        "pwwgt102",
+        "pwwgt103",
+        "pwwgt104",
+        "pwwgt105",
+        "pwwgt106",
+        "pwwgt107",
+        "pwwgt108",
+        "pwwgt109",
+        "pwwgt110",
+        "pwwgt111",
+        "pwwgt112",
+        "pwwgt113",
+        "pwwgt114",
+        "pwwgt115",
+        "pwwgt116",
+        "pwwgt117",
+        "pwwgt118",
+        "pwwgt119",
+        "pwwgt120",
+        "pwwgt121",
+        "pwwgt122",
+        "pwwgt123",
+        "pwwgt124",
+        "pwwgt125",
+        "pwwgt126",
+        "pwwgt127",
+        "pwwgt128",
+        "pwwgt129",
+        "pwwgt130",
+        "pwwgt131",
+        "pwwgt132",
+        "pwwgt133",
+        "pwwgt134",
+        "pwwgt135",
+        "pwwgt136",
+        "pwwgt137",
+        "pwwgt138",
+        "pwwgt139",
+        "pwwgt140",
+        "pwwgt141",
+        "pwwgt142",
+        "pwwgt143",
+        "pwwgt144",
+        "pwwgt145",
+        "pwwgt146",
+        "pwwgt147",
+        "pwwgt148",
+        "pwwgt149",
+        "pwwgt150",
+        "pwwgt151",
+        "pwwgt152",
+        "pwwgt153",
+        "pwwgt154",
+        "pwwgt155",
+        "pwwgt156",
+        "pwwgt157",
+        "pwwgt158",
+        "pwwgt159",
+        "pwwgt160"
+      ],
+      "source_se_bn": {
+        "central": {
+          "low": {
+            "personal": 2.0058863714772923,
+            "shared": 2.1721133265958787
+          },
+          "high": {
+            "personal": 1.10693016994514,
+            "shared": 1.164135764098376
+          }
+        },
+        "by_line": {
+          "low": {
+            "corporate": {
+              "personal": 1.5339631791483672,
+              "shared": 1.6900897774298635
+            },
+            "other_production_taxes": {
+              "personal": 0.1941354337788137,
+              "shared": 0.19079951920283653
+            },
+            "business_property": {
+              "personal": 0.4785328876787759,
+              "shared": 0.47031004651979036
+            }
+          },
+          "high": {
+            "corporate": {
+              "personal": 0.5675663762848959,
+              "shared": 0.6253332176490499
+            },
+            "other_production_taxes": {
+              "personal": 0.1941354337788137,
+              "shared": 0.19079951920283653
+            },
+            "business_property": {
+              "personal": 0.4785328876787759,
+              "shared": 0.47031004651979036
+            }
+          }
+        },
+        "fill_in": {
+          "low": {
+            "personal": 0.4874260387535888,
+            "shared": 0.4870650800373876
+          },
+          "high": {
+            "personal": 0.2952159268754982,
+            "shared": 0.2929015252380945
+          }
+        },
+        "rule": "SDR over the 160 replicate weights (the CPS sample); fill_in from the fill-in rel_change SE"
+      },
+      "se_propagated_bn": [
+        1.1929435402691713,
+        2.1678017952537236
+      ],
+      "rule": "producer's 161-weight vectors, points and per-line/joint SDR gated against item.json (1e-9); corporate's two lines share one vector; joint with the account and benefit keys at matching pwwgt columns; lineage dollars ride the line's first-order ratio [ASSUMPTION]"
+    }
+  },
+  "uncorrected_at_adopted_responses": {
+    "net_cost_band_bn": [
+      284.29107018271,
+      353.550121073485
+    ],
+    "se_independent_bn": [
+      12.489178035944906,
+      12.72647553498113
+    ],
+    "se_positive_correlation_bn": [
+      20.38915974245122,
+      20.963588436483477
+    ],
+    "se_cps_bn": [
+      10.21367717654068,
+      10.488873207782616
+    ],
+    "ci95_union_bn": [
+      259.34717813414693,
+      378.02891002393704
+    ],
+    "ci95_envelope_union_bn": [
+      243.20243684720236,
+      393.5128741686894
+    ],
+    "ci95_with_benefit_keys_union_bn": [
+      259.34717813414693,
+      378.02891002393704
+    ],
+    "specifications": 32,
+    "capital_return_band_bn": [
+      34.8410544674718,
+      56.7541220176195
+    ],
+    "se_cps_capital_part_bn": [
+      0.2149164197701194,
+      0.3657675196279253
+    ],
+    "se_cps_account_keys_bn": [
+      10.21367717654068,
+      10.488873207782616
+    ],
+    "se_cps_receipt_responses_part_bn": [
+      1.2283849201414483,
+      1.8448956438874715
+    ]
+  }
+}

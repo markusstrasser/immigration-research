@@ -124,7 +124,10 @@ def test_later_cases_span_the_adopted_bands_at_the_payload_responses(name, lane)
     for case, band in ((name, main["main_case"]),
                        ("uncorrected_at_adopted_responses", main["uncorrected_at_adopted_responses"])):
         c = u[u.case == case]
-        assert len(c) == 64
+        allocation = json.loads((HERE.parent / lane / "derived/corrections.json").read_text())["meta"].get("allocation", {}).get("group_total")
+        assert len(c) == (32 if allocation else 64)
+        if allocation:
+            assert set(c.allocation) == {allocation}
         np.testing.assert_allclose([c.net_cost_bn.min(), c.net_cost_bn.max()], band, atol=1e-6)
         assert (c.se_combined_independent_bn >= c.se_cps_fiscal_keys_bn).all()
         assert (c.se_all_positive_correlation_bn >= c.se_combined_independent_bn).all()
@@ -145,6 +148,8 @@ def test_capital_case_carries_the_return_on_public_capital():
         per = pd.read_csv(HERE.parent / lane / "derived/per_spec.csv").groupby("spec")[
             ["cost_bn", "capital_total_bn", "capital_k12_bn", "capital_college_bn"]].mean()
         c = u[u.case == name].reset_index(drop=True)
+        ids = pd.read_csv(OUT / name / "spec_costs.csv").index
+        per = per.loc[ids]
         np.testing.assert_allclose(c.net_cost_bn, per.cost_bn, atol=1e-9)
         np.testing.assert_allclose(c.capital_return_bn, per.capital_total_bn, atol=1e-9)
         np.testing.assert_allclose(c.capital_return_education_bn, per.capital_k12_bn + per.capital_college_bn, atol=1e-9)
@@ -232,11 +237,20 @@ def test_lineage_component_beside_the_propagation():
         if "items" in payload_meta:
             main = json.loads((HERE.parent / lane / "derived/summary.json").read_text())
             want = main["main_case"]
-            p = main["change_at_fixed_specifications"]["items"][g["rebase"]["lineage_item"]]
-            d = [p["members"]["whites"][j] / g["c3"] - (p["members"]["g3plus_members"][j] - p["parts"]["later"][j])
-                 / (1 - g["c3"]) for j in (0, 1)]
-            slope = {arm: [arms[arm]["c3_line"][e]["slope_bn"] + arms[arm]["g3_rate"] / arms[central]["g3_rate"] * d[j]
-                           for j, e in enumerate(("low", "high"))] for arm in g["arms"]}
+            if "v7" in main:
+                options = main["v7"]["companions"]["options"]
+                minus, plus = options["c3_minus_se"], options["c3_plus_se"]
+                d = (np.asarray(plus["set"]["band_bn"]) - minus["set"]["band_bn"]) / (2 * g["c3_se"])
+                slope = {arm: d * (1 if arm == central else options[f"arm_{arm}"]["g3_rate"] / minus["g3_rate"])
+                         for arm in g["arms"]}
+                for arm in ("a", "c"):
+                    np.testing.assert_allclose(g["arms"][arm]["band_bn"], options[f"arm_{arm}"]["set"]["band_bn"], atol=1e-9)
+            else:
+                p = main["change_at_fixed_specifications"]["items"][g["rebase"]["lineage_item"]]
+                d = [p["members"]["whites"][j] / g["c3"] - (p["members"]["g3plus_members"][j] - p["parts"]["later"][j])
+                     / (1 - g["c3"]) for j in (0, 1)]
+                slope = {arm: [arms[arm]["c3_line"][e]["slope_bn"] + arms[arm]["g3_rate"] / arms[central]["g3_rate"] * d[j]
+                               for j, e in enumerate(("low", "high"))] for arm in g["arms"]}
             for arm, v in g["arms"].items():
                 np.testing.assert_allclose([v["c3_line"][e]["slope_bn"] for e in ("low", "high")], slope[arm], rtol=1e-12)
                 np.testing.assert_allclose([v["c3_line"][e]["intercept_bn"] + v["c3_line"][e]["slope_bn"] * g["c3"]
@@ -264,7 +278,7 @@ def test_item_payload_routes_every_edit_and_holds_the_pension_identities():
     meta.items puts them, the edit sets tile the payload after the lineage's edits, and every edit's line has a route.
     The union-side pension identities hold at v6's meta.pension_accrual (1e-9), with the items' lineage_* parts booked
     with the lineage and their union_* parts the union's rule moving to v6's ratio_net and Part A."""
-    routes = {"pension rule", "line ratio", "school correction", "no sampling error"}
+    routes = {"pension rule", "line ratio", "school correction", "no sampling error", "job-capital CPS replicates"}
     found = 0
     for name, lane in json.loads((HERE / "later_cases.json").read_text()).items():
         payload = json.loads((HERE.parent / lane / "derived/corrections.json").read_text())
@@ -283,6 +297,9 @@ def test_item_payload_routes_every_edit_and_holds_the_pension_identities():
             r = got[it["id"]]
             if it["kind"] == "lineage":
                 assert r["lineage_edits"] == e
+                continue
+            if it["kind"] == "allocation":
+                assert r["edits"] == it["edits"] == dict(first=at, count=0)
                 continue
             assert r["edits"] == it["edits"] and r["edits"]["first"] == at
             at += it["edits"]["count"]
@@ -317,3 +334,74 @@ def test_item_payload_routes_every_edit_and_holds_the_pension_identities():
                 assert r["capital"]["carriers"] == it["capital"]["receipt_lines"]
                 assert r["capital"]["offsets"] == it["capital"]["components"]
     assert found >= 1
+
+
+def test_job_capital_spread_uses_the_industry_replicates_jointly():
+    prop = _load("propagate")
+    lane = HERE.parent / "main_case_2026_10_14"
+    payload = json.loads((lane / "derived/corrections.json").read_text())
+    item, vectors = prop.job_capital_replicates(payload["meta"]["job_capital_taxes"]["source"])
+    assert prop.REPS == [f"pwwgt{i}" for i in range(161)]
+    for a in ("personal", "shared"):
+        for reading in ("low", "high"):
+            total = sum(vectors[(a, group)] * item["lines"][key]["response"][reading]
+                        for group, key in (("corporate", "corporate"), ("c_and_i_property", "business_property"),
+                                           ("other_production_taxes", "other_production_taxes")))
+            assert prop.sdr(total) == pytest.approx(item["se_bn"]["central"][reading][a], abs=1e-9)
+    u = pd.read_csv(OUT / "oct14/case_uncertainty.csv")
+    assert (u[u.case == "oct14"].se_cps_job_capital_part_bn > 0).all()
+    assert (u[u.case != "oct14"].se_cps_job_capital_part_bn == 0).all()
+    specs = pd.read_csv(OUT / "oct14/spec_costs.csv")
+    targets = pd.read_csv(OUT / "oct14/line_targets.csv").set_index(["side", "line", "key", "allocation"])
+    groups = {"corporate_capital": ("corporate", "corporate"), "corporate_labor": ("corporate", "corporate"),
+              "remaining_production_property": ("c_and_i_property", "business_property"),
+              "other_production_taxes": ("other_production_taxes", "other_production_taxes")}
+    expected = []
+    for spec in specs.itertuples():
+        vector = np.zeros(161)
+        for line, (group, key) in groups.items():
+            amount = targets.loc[("receipt", line, "cbo_collective", spec.allocation), "target_oct14_bn"]
+            vector += (vectors[(spec.allocation, group)] * amount / item["lines"][key]["group_bn"][spec.allocation]
+                       * getattr(spec, f"response_receipt_{line}"))
+        expected.append(prop.sdr(vector))
+    np.testing.assert_allclose(u[u.case == "oct14"].se_cps_job_capital_part_bn, expected, rtol=0, atol=1e-9)
+    record = json.loads((OUT / "oct14/summary.json").read_text())["oct14"]["job_capital_sampling"]
+    assert record["source_se_bn"] == item["se_bn"]
+
+
+def test_job_capital_reconstruction_blocks_writers_before_any_mutation(monkeypatch, tmp_path):
+    """A producer refactor that moves a writer ahead of central must stop read-only consumption."""
+    from types import SimpleNamespace
+    prop = _load("propagate")
+    item_file = HERE.parent / "job_capital_taxes_2026_10_14/derived/item.json"
+    source = dict(file=str(item_file), lane="job_capital_taxes_2026_10_14",
+                  sha256=prop.hashlib.sha256(item_file.read_bytes()).hexdigest())
+    attempted = tmp_path / "must-not-be-written.txt"
+    def main():
+        attempted.write_text("bad")
+    monkeypatch.setattr(prop, "load_module", lambda *a: SimpleNamespace(main=main, REPS=prop.REPS))
+    with pytest.raises(ValueError, match="read-only reconstruction reached a writer"):
+        prop.job_capital_replicates(source)
+    assert not attempted.exists()
+
+
+def test_row4_pension_parts_are_removed_only_for_base_identity_checks():
+    lane = HERE.parent / "main_case_2026_10_14"
+    payload = json.loads((lane / "derived/corrections.json").read_text())
+    case = json.loads((OUT / "oct14/summary.json").read_text())["oct14"]
+    ps = case["pension_switch"]
+    row4 = next(i for i in payload["meta"]["items"] if i["id"] == "row4_frame")
+    edits = payload["edits"][row4["edits"]["first"]:row4["edits"]["first"] + row4["edits"]["count"]]
+    for a in ("personal", "shared"):
+        for line in ("social_security", "medicare"):
+            parts = {k: p for k, p in row4["parts"].items() if k.startswith("union_")
+                     and edits[p["edit"]]["side"] == "spending" and edits[p["edit"]]["line"] == line}
+            shift = sum(p["by"][a] for p in parts.values())
+            assert ps["row4_frame"]["union_parts_subtracted_for_base_identities_bn"][line][a] == pytest.approx(shift, abs=1e-12)
+        assert abs(ps["identities"][a]["social_security_gap_bn"]) < 1e-9
+        assert abs(ps["identities"][a]["medicare_gap_bn"]) < 1e-9
+    got = {k: p["by"] for k, p in row4["parts"].items() if k.startswith("lineage_")
+           and edits[p["edit"]]["line"] in ("social_security", "medicare")}
+    assert ps["row4_frame"]["lineage_parts_validated_bn"] == got
+    assert len(got) == 4
+    assert "row4_pension_inputs.json" in {p.name for p in (OUT / "oct14").iterdir()}
