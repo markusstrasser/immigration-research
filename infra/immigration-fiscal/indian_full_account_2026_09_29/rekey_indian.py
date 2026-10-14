@@ -79,11 +79,19 @@ term beside the central): the Indian-origin groups take NH Asian students' IPEDS
 derived/<case>/ipeds_terms.csv gives the union's and the Indian-origin groups' costs on the rough keys of September 27,
 each part's move and the hospital term beside (the library's ipeds_rows(), less its union-minus-group columns), gated to
 the summary's costs (5e-5).
+
+On live oct14 the case's personal ends and responses apply. Each Indian scenario takes its own measured
+job-capital factor (job_capital_factors.py), on its own CPS/age/worker/household weights. The same function
+reproduces the source lane's white_nh personal factors at 1e-9 before pricing. All 160 group replicates
+remeasure the factor while national wages stay fixed, as this lane holds its other national keys fixed.
+Outputs also include job_capital_factors.csv and job_capital_gates.json under derived/oct14/;
+rekey_replicates.csv carries each replicate's three factors. There is no white/Black proxy factor.
 """
 from __future__ import annotations
 
 import csv
 import importlib.util
+import json
 import sys
 import zipfile
 from pathlib import Path
@@ -113,7 +121,12 @@ R.MASK["ind1"] = G1
 # India-born adults by the class of their longest job (LJCW 5-6 self-employed, 1-4 wage and salary), and households
 # classed by their highest-earning India-born adult worker (members: the household's Indian-origin persons).
 with zipfile.ZipFile(R.ZIP) as _z:
-    _x = pd.read_csv(_z.open("pppub25.csv"), usecols=["LJCW", "SEMP_VAL", "INDUSTRY"])
+    _x = pd.read_csv(_z.open("pppub25.csv"), usecols=list(set(R.PC) | {"LJCW", "SEMP_VAL", "INDUSTRY"}))
+if not _x[R.PC].equals(d[R.PC]):
+    raise SystemExit("[BLOCKED] Indian-frame industry records do not align with fiscal persons")
+JOB_CALCULATOR = None
+JOB_CONTROL = None
+ORIGINAL_RUN29 = W.run29
 ADULT = d.A_AGE.ge(18).to_numpy()
 SEMP = _x.SEMP_VAL.to_numpy(float)
 SE = _x.LJCW.isin([5, 6]).to_numpy()
@@ -206,6 +219,8 @@ def keyed_ind(g, cw, total, ages, mwt, cw_own):
     sc = {"name": g, "ages": ages, "population": total, "cps_w": cw, "meps_w": mwt,
           "share": {k: float((cw * v).sum() / R.KTOT[k]) for k, v in R.K.items()},
           "cps_bn": {k: float((cw * R.K[k]).sum() / 1e9) for k in ("fit", "sit")}}
+    if JOB_CALCULATOR is not None:
+        sc["job_capital_factor"] = JOB_CALCULATOR.measure(cw)
     meps = {c: float((mwt * R.md[c]).sum() / R.MTOT[c]) for c in R.MEPS_COLS}
     ph = sc["share"]["pc"] * R.pc_scale
     frac = total / R.CPS_TOTAL
@@ -272,6 +287,18 @@ def union_white_ages():
     sc["frac"] = frac
     sc["keys"] = {**{f"meps_ratio_{c}": v for c, v in ratio.items()}, "old_ratio": old_r, "crime_age_factor": crime_r}
     return sc
+
+
+def run_with_job_factors(sc, *args, **kwargs):
+    """Apply the scenario's measured factor to every library consumer, including IPEDS arms."""
+    original_factor = W.job_factor
+    if sc != "eng" and "job_capital_factor" in sc:
+        W.job_factor = lambda group, category: (sc["job_capital_factor"][category] if group == sc["name"]
+                                               else original_factor(group, category))
+    try:
+        return ORIGINAL_RUN29(sc, *args, **kwargs)
+    finally:
+        W.job_factor = original_factor
 
 
 def evaluate(sc, end, basis, top=None):
@@ -380,13 +407,24 @@ def drivers(scen, res):
 
 
 # Each case's accrual ratios (accrual_indian.py): the 2025 reports' serve sept29 and oct05, oct07 is on the 2026 path.
-ACCRUAL = {"sept29": DER / "accrual_ratios.csv", "oct05": DER / "accrual_ratios.csv", "oct07": DER / "oct07/accrual_ratios.csv"}
+ACCRUAL = {"sept29": DER / "accrual_ratios.csv", "oct05": DER / "accrual_ratios.csv", "oct07": DER / "oct07/accrual_ratios.csv",
+           "oct14": DER / "oct14/accrual_ratios.csv"}
 
 
-def main(case="sept29"):
+def main(case="oct14"):
+    global JOB_CALCULATOR, JOB_CONTROL
     W.use_case(case)
     out = DER if case == "sept29" else DER / case
+    if case == "oct14":
+        from job_capital_factors import Factors, run_positive_control
+        JOB_CONTROL = run_positive_control()
     W.setup()
+    if case == "oct14":
+        frame = d.assign(INDUSTRY=_x.INDUSTRY.to_numpy(), LJCW=_x.LJCW.to_numpy())
+        JOB_CALCULATOR = Factors(frame, R.w)
+        W.gate("Indian industry codes use the same CPS 2025 crosswalk; wage denominator matches (1e-9 relative)",
+               abs(JOB_CALCULATOR.national_wages / R.KTOT["wage_job"] - 1) < 1e-9)
+        W.run29 = run_with_job_factors
     print("[this lane: groups and gates]", flush=True)
     rows = {(r["group"], r["entry_rule"], r["scenario"]): r for r in csv.DictReader(open(ACCRUAL[case]))}
     for g in ("indian_origin", "india_born"):
@@ -483,7 +521,8 @@ def main(case="sept29"):
                         r = evaluate(sc, end, b)[0]
                         reps.append({"group": lab, "replicate": i, "basis": b, "end": end,
                                      "population": r["population"], "cost_bn": r["cost"],
-                                     "cost_per_member": r["cost"] * 1e9 / r["population"]})
+                                     "cost_per_member": r["cost"] * 1e9 / r["population"],
+                                     **{f"job_factor_{k}": v for k, v in sc.get("job_capital_factor", {}).items()}})
             print(f"  {lab}: {N_REP} replicates", flush=True)
     rp = pd.DataFrame(reps)
     se = {}
@@ -546,6 +585,20 @@ def main(case="sept29"):
                      "india_born_sample": int((G1 & R.civ & (R.cage == bnd)).sum())})
     drv = drivers(scen, res)
     out.mkdir(exist_ok=True)
+    if JOB_CALCULATOR is not None:
+        factors = [{"group": lab, "alias": sc["name"], "ages": sc["ages"], "line": k, "factor": v,
+                    "plain_wage_share": sc["share"]["wage_job"], "replicates": "160; group factor remeasured, national fixed"}
+                   for lab, sc in scen.items() if sc != "eng" for k, v in sc.get("job_capital_factor", {}).items()]
+        with (out / "job_capital_factors.csv").open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(factors[0]), lineterminator="\n")
+            writer.writeheader()
+            writer.writerows(factors)
+        with (out / "job_capital_gates.json").open("w") as stream:
+            json.dump({"positive_control": JOB_CONTROL, "source_hashes": JOB_CALCULATOR.provenance,
+                       "codes": "CPS ASEC 2025 INDUSTRY, same crosswalk; LJCW government overrides",
+                       "sampling": "160 own group replicates; factor sampling propagated; national held fixed"},
+                      stream, indent=2)
+            stream.write("\n")
     for name, data in (("rekey_summary.csv", summary), ("rekey_buckets.csv", buckets), ("keys.csv", keys),
                        ("age_structures.csv", ages), ("drivers.csv", [{k: (f"{v:.8g}" if isinstance(v, float) else v)
                                                                         for k, v in r.items()} for r in drv]),
@@ -564,6 +617,6 @@ def main(case="sept29"):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="sept29", choices=list(W.CASES),
-                    help="sept29 (default, derived/), oct05 (derived/oct05/) or oct07 (derived/oct07/)")
+    ap.add_argument("--case", default="oct14", choices=list(W.CASES),
+                    help="oct14 (default, live v7); prior cases are archived library routes")
     main(ap.parse_args().case)

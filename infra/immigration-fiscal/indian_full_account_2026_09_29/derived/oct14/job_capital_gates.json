@@ -1,0 +1,30 @@
+{
+  "positive_control": [
+    {
+      "line": "corporate",
+      "measured": 1.0181332156315621,
+      "committed": 1.0181332156315623,
+      "absolute_difference": 2.220446049250313e-16
+    },
+    {
+      "line": "business_property",
+      "measured": 0.9515021940073841,
+      "committed": 0.9515021940073842,
+      "absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "line": "other_production_taxes",
+      "measured": 0.6399355613079512,
+      "committed": 0.6399355613079509,
+      "absolute_difference": 2.220446049250313e-16
+    }
+  ],
+  "source_hashes": {
+    "job_capital_taxes_2026_10_14/job_capital.py": "c720e31f3d9803d4413443f0dbd65da8d45cab633029cb3e20b7e990a084c1b7",
+    "job_capital_taxes_2026_10_14/inputs/census_industry_crosswalk.csv": "25bcaf038773cbb337227c19de547895d6b370892d14222e407962f326432a92",
+    "job_capital_taxes_2026_10_14/derived/national_by_industry.csv": "95ff41e65fd36dcb87a12ebd502a6c0c54365cb5596da083d7c75ed3107087f8",
+    "job_capital_taxes_2026_10_14/derived/item.json": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283"
+  },
+  "codes": "CPS ASEC 2025 INDUSTRY, same crosswalk; LJCW government overrides",
+  "sampling": "160 own group replicates; factor sampling propagated; national held fixed"
+}

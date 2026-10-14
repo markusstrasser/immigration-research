@@ -1,0 +1,6 @@
+group,entry_rule,scenario,oasdi_per_tax_dollar,benefit_tax_timing,relative_benefit_tax_rate,future_share,oasdi_per_tax_dollar_net,part_a_per_hi_tax_dollar,cps_oasdi_tax_bn,cps_hi_tax_bn,part_a_accrual_bn,p_qualify_65plus,sample_taxpayers
+union,lane,payable,0.999262,0.087410,0.523382,0.045749,0.953547,1.448361,113.7160,28.1579,40.7828,0.906081,9264
+indian_origin,immigrants_at_arrival,payable,0.929749,0.087378,1.357148,0.118585,0.819495,0.652027,42.1979,12.4169,8.0961,0.794169,1336
+indian_origin,all_at_21,payable,0.846033,0.087539,1.357148,0.118804,0.745522,0.549283,42.1979,12.4169,6.8204,0.794169,1336
+india_born,immigrants_at_arrival,payable,0.955474,0.087284,1.315103,0.114788,0.845797,0.689074,36.1777,10.5785,7.2894,0.823257,1100
+india_born,all_at_21,payable,0.857828,0.087459,1.315103,0.115018,0.759162,0.566286,36.1777,10.5785,5.9905,0.823257,1100

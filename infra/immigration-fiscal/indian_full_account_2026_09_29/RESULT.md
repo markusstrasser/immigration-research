@@ -463,3 +463,70 @@ per case. The pairing's oct07 file is still sha256 e84db10b….
   pairing's file read e84db10b… at the start.
 - 21:51:23–21:57:07 (by `date`): the same rerun after the white library relabelled the columns of its CPS-totals file:
   **IDENTICAL 43/43, exit 0**; the pairing's file again read e84db10b….
+
+## v7 propagation (oct14), 2026-10-14: Indian R7 policy required
+
+The live default is oct14. The three routes now target v7 and preserve all oct07/oct05 outputs: accrual_indian.py uses the 2026 separate-funds path and this case published-weight pension metadata, writing derived/oct14/accrual_ratios.csv; rekey_indian.py uses the completed white/Black v7 library and personal ends; social_rows.py selects the committed oct14 pairing. All existing gates retain their tolerances.
+
+The first oct14 re-key reached the inherited gates but stopped at the absent accrual-path map (KeyError oct14). That map is repaired. It now preflights every Indian scenario against the R7 policy before pricing or writing. The source item supplies no Indian factor, and the old shared helper would silently select white_nh. That fallback is removed, with 12 regression tests including all seven unsupported Indian aliases. Both re-key and social scripts exit 1 before writing. [CALCULATION: rekey_indian.py --case oct14; social_rows.py --case oct14; white test_job_policy_oct14.py]
+
+**STOP / parent question:** what R7 rule applies to Indian-origin and India-born people, their worker/household subgroups and age/replicate variants? A measured Indian factor or an explicitly approved labelled proxy is needed for ind, ind1, ind1se, ind1wage, ind1oth, hhse and hhwage. The IPEDS Asian proxy does not supply a job-capital policy. No Indian oct14 fiscal, social or combined figure is claimed.
+
+Live commands after the policy is resolved: OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/indian_full_account_2026_09_29/accrual_indian.py --case oct14; then rekey_indian.py --case oct14; then social_rows.py --case oct14, followed by rerun_lane.py with all three. Historical reproduce blocks are prior receipts. The independent accrual leaf may be rerun with explicit allow-unrun for the two stopped consumers; that cannot imply full-lane completion.
+
+- 2026-10-14 19:17 JST — the independent 2026 accrual leaf exits 0; union ratio/timing/Part A/HI-tax source gates pass. Initial run 27.13s, max RSS 539.9MiB; leaf-only rerun IDENTICAL 44/44, exit 0, 23.17s, max RSS 532.5MiB. The two stopped fiscal/social consumers are explicitly allow-unrun; this is not a full-lane pass. Their guarded runs both exit 1 before writes. All three modified Python sources compile. [CALCULATION: accrual_indian.py --case oct14; wave-2 leaf rerun and guarded-stop receipts]
+
+## 2026-10-14 round 3: measured Indian job-capital factors
+
+The parent authorized measurement on this lane's own persons, rather than a comparator proxy. The factor is
+`sum(industry wage share * national industry tax) / line national / plain wage share` at the personal allocation.
+`job_capital_factors.py` imports the source lane's industry mapper read-only and reads its national per-industry
+vectors and crosswalk. This frame has the same CPS ASEC 2025 `INDUSTRY` codes; a gate checks its person columns
+against the original raw rows before adding industry and class-of-worker data. `LJCW` government's overrides,
+source thin-cell pooling, national spreading of wages >=$1M, mining at zero and residential exclusion all match
+the source construction. Each Indian alias, worker/household group and age variant gets its own factor.
+[CALCULATION: `rekey_indian.py --case oct14` → `derived/oct14/job_capital_factors.csv`]
+
+The same function on the job-capital lane's frame reproduces its committed `white_nh` personal factors at
+**1e-9** on every line; the maximum absolute error is **2.22e-16**. The national vectors also reproduce each
+source item's `base_bn` at 1e-9. Own-age Indian-origin factors are corporate **1.2929556573920054**,
+business property **0.8201939140519006**, and other production taxes **0.5516237966530695**.
+All 160 own-group replicate weights are available: the factor is remeasured in each, with national weights
+held fixed as this lane holds its other national keys fixed. The three factors travel in `rekey_replicates.csv`;
+there is no unpropagated-factor approximation. Both readings retain the case's responses, corporate **1 / 0.37**.
+[CALCULATION: `job_capital_factors.py`; `derived/oct14/job_capital_gates.json`, `job_capital_factors.csv`]
+
+The scenario adapter is installed at the library's `run29` consumer, covering the fiscal, IPEDS and replicate
+paths; it restores `job_factor` after each call even on failure. The white library and job-capital source lane
+remain read-only. No mixed-credit counterpart is invented; previously documented external-key limitations remain.
+
+Indian-origin own-age modeled costs, $bn, low / high (negative means a net benefit to other residents):
+
+| Basis | Fiscal | Social | Combined |
+|---|---:|---:|---:|
+| Accrual | −126.2293 / −98.8827 | 7.5542 / 8.0828 | −118.6751 / −90.7999 |
+| Cash | −155.7943 / −128.4476 | 7.5542 / 8.0828 | −148.2401 / −120.3648 |
+
+[CALCULATION: `derived/oct14/combined.csv`, group `indian_origin`; model outputs, not measured removal effects]
+
+Initial fiscal run: **218 PASS gates**, exit 0, 85.73s, peak RSS 1782.6MiB. Social run: **25 PASS gates**, exit 0,
+0.50s, 103.7MiB. All inherited numerical gates remain, including exact engine/identified-union checks (1e-9),
+white/Black parity (5e-5 for printed CSVs), white-age identity (1e-12), IPEDS decomposition (1e-9) and the existing
+India-born partition tolerance (0.05bn, group state-price products). Independent scoped code review found no material
+defect and reran the positive control successfully. Full reproducibility receipt follows after the final run.
+
+Live reproduce commands (historical blocks above remain receipts):
+```
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/indian_full_account_2026_09_29/job_capital_factors.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/indian_full_account_2026_09_29/accrual_indian.py --case oct14
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/indian_full_account_2026_09_29/rekey_indian.py --case oct14
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/indian_full_account_2026_09_29/social_rows.py --case oct14
+```
+
+- 2026-10-14 19:44 JST — full live reproducibility: all four commands above exit 0;
+  **IDENTICAL 57/57, exit 0**, 89.79s, Python child peak RSS **2222.9MiB**. All archived outputs remain unchanged.
+  The first successful harness (134.77s) peaked at 2579.7MiB; isolating the source's 161-weight-column
+  positive-control frame in a subprocess reduced the final peak without changing any output. The subprocess
+  fails loudly on a failed control and returns the same three numerical receipts. The final harness above
+  covers this resource fix. Frozen-case, archived-output, factor/replicate coverage, combined-table closure,
+  source syntax, CSV LF and scoped whitespace checks pass. No Git writes.

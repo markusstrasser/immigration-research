@@ -94,12 +94,15 @@ OUT = DRV = KEYS = FIS = LIN_SOC = N_LINEAGE = None
 SUFFIX = ""      # oct05: the union rows that calibrate the union at white ages are the identified ones
 PAIRING = ""     # the pairing the added people's rows come from (oct05: v5's; oct07: v6's)
 # A lineage case's lane, and the name of the pairing that prices its added people's social rows.
-LINEAGE_CASES = {"oct05": ("main_case_2026_10_05", "v5 pairing"), "oct07": ("main_case_2026_10_07", "v6 pairing")}
+LINEAGE_CASES = {"oct05": ("main_case_2026_10_05", "v5 pairing"), "oct07": ("main_case_2026_10_07", "v6 pairing"),
+                 "oct14": ("main_case_2026_10_14", "v7 pairing")}
 
 
 def load(case):
     global OUT, DRV, KEYS, FIS, LIN_SOC, N_LINEAGE, SUFFIX, PAIRING
     OUT = DER if case == "sept29" else DER / case
+    if case == "oct14" and any(not (OUT / name).exists() for name in ("drivers.csv", "keys.csv", "rekey_summary.csv")):
+        raise SystemExit("[BLOCKED] oct14 Indian fiscal inputs absent: complete the R7 policy and re-key before social rows")
     DRV = pd.read_csv(OUT / "drivers.csv").set_index("group")
     KEYS = pd.read_csv(OUT / "keys.csv").set_index(["group", "key"]).value
     FIS = pd.read_csv(OUT / "rekey_summary.csv")
@@ -198,7 +201,7 @@ def pm25(g, n, cons_ratio):
     return float(cen.others * cen.morb * AIR.VSL_DOT_2024 / 1e9), float(vals.min()), float(vals.max())
 
 
-def main(case="sept29"):
+def main(case="oct14"):
     load(case)
     u = DRV.loc["mexican_origin_rough"]
     uni = {it: {e: pair_value(it, e) for e in ("low", "high")} for it in ITEMS}
@@ -352,6 +355,6 @@ def main(case="sept29"):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="sept29", choices=["sept29", "oct05", "oct07"],
-                    help="sept29 (default, derived/), oct05 (derived/oct05/) or oct07 (v6, derived/oct07/)")
+    ap.add_argument("--case", default="oct14", choices=["sept29", "oct05", "oct07", "oct14"],
+                    help="oct14 (default, live v7); prior cases are archived routes")
     main(ap.parse_args().case)
