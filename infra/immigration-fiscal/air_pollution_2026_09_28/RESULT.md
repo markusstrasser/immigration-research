@@ -288,3 +288,19 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/air_p
 ```
 
 Files covered: only this lane's new mortality/cap producer, source pins, positive-control consumer snapshot, tests and derived mortality/cap outputs; append-only revision to this RESULT. Skipped deliberately: the frozen main case, parent integration producers, re-spending, crashes, volunteering, CO2, city-size tax computation and all other peer-owned paths. The parent owns their combined stack and review/commit.
+
+## Round-2 corrections, 2026-10-15
+
+R2S11: deaths are reweighted for receptor mortality before their membership shares are computed. The previous share-only change held plume deaths fixed and reassigned deaths to outsiders. The local component now weights group/other mortality risks relative to the emitter-weighted UA population mixture; the nonlocal component uses the national mixture. Equal group/other mortality risks reproduce the exposure-based model exactly. These reference mixtures are declared spatial assumptions, not an observed source–receptor mortality matrix. Nonfatal illness keeps its original exposure-based dollars. [CALCULATION: `mortality_reweight` in `mortality_items.py`; DATA: common NVSS age rates and ACS receptor cube]
+
+On the row4 frame, caused deaths change 5,965.910526 → 5,940.219850; outsider deaths 5,274.450138 → 5,249.430283; gross harm $84.184963 → $83.833001bn; outsider harm $74.427766 → $73.900460bn. The original exposure control remains $68.092104bn. The conditional fixed-source lineage uniform-VSL row becomes $80.509975bn. [DATA: `derived/mortality_context.json`, `derived/mortality_items.csv`; before: prior committed source outputs]
+
+Applied alone to the oct15 joint pairing, the correction moves $467.204631 / $567.247849bn → $466.636067 / $566.679285bn, −$0.568564bn at each end, including the existing receiver boundary. Sender quantities retain their frozen v7 source transport; completion/coverage people's own social exposures remain unpriced. [CALCULATION: Sept24 pairing; scratch `b8-joint-before-r2b.json`, `b8-joint-pm-only-r2b.json`]
+
+The life-year arm now uses the reweighted outsider mortality deaths and life-year composition together, while holding morbidity dollars fixed. The joint consumer must choose the same mortality basis for crime, PM and crashes; this lane alone does not identify an all-channel arm. [CALCULATION: `mortality_items.py`; ASSUMPTION: period-life-table remaining years]
+
+Log: 2026-10-15 02:23:10 JST (`date`): producer exit0, 12.842s, physical footprint2,039,925,184bytes; seven regression checks pass. Explicit physical-footprint guards now run before source-cache/output writes. Final lane reproduction is recorded below when complete. Below-bar log only: outsider source–receptor bound, equal within-age mortality, SO2 cap offset, and saving/propensity assumptions.
+
+Log: 2026-10-15 03:23:39 JST (`date`): complete six-command reproduction IDENTICAL20/20, exit0, after the explicit air-model range guard and mortality/nonmortality split. The preserved exposure-based control and nonfatal formula pass seven regressions. No source edit follows that reproduction. [CALCULATION: scratch `b8-air-rerun.log`]
+
+Log: 2026-10-15 06:01:26 JST (`date`, parent): rerun on corrected v8 (`d1a24d47`), IDENTICAL 20/20, exit 0. This lane's mortality, cap and exposure outputs read no fiscal amount, so its figures stand. The joint-pairing levels quoted above ($467.204631 / 567.247849bn → $466.636067 / 566.679285bn) sit on the uncorrected fiscal row; the −$0.568564bn delta stands. The corrected joint pairing is in `sept24_propagation_2026_09_24/RESULT.md` ($462.163473 / 561.630823bn).

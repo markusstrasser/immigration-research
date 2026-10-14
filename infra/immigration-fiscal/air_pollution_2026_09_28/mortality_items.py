@@ -30,6 +30,8 @@ sys.path.insert(0, str(FISCAL / "crime_victim_cost_2026_09_23"))
 import vsl_standard as V
 import air_items as A
 from mortality_sources import digest
+sys.path.insert(0, str(FISCAL / "scripts"))
+from memory_budget import require_within_budget
 
 OUT = HERE / "derived"
 WEIGHTS = ["PWGTP"] + [f"PWGTP{i}" for i in range(1, 81)]
@@ -108,6 +110,7 @@ def puma_cells(rates, years):
                 sub = chunk.groupby(["STATE", "PUMA", "member", "age"], sort=True)[WEIGHTS].sum()
                 pieces.append(sub)
     cells = pd.concat(pieces).groupby(level=[0, 1, 2, 3]).sum().reset_index()
+    require_within_budget("PM source aggregation")
     cells.to_pickle(cache)
     meta.write_text(json.dumps(signature, sort_keys=True) + "\n")
     with (HERE / "_cache/mortality_timings.jsonl").open("a") as stream:
@@ -195,6 +198,29 @@ def receiver_context(cells, rates, years, target_n, min_age=0):
 
 def self_share(context, L, iota, exposure_share):
     return L * odds_adjust(iota, context["local_odds_ratio"]) + (1 - L) * odds_adjust(exposure_share, context["national_rate_ratio"])
+
+
+def mortality_reweight(context, L, iota, exposure_share):
+    """Weight exposure deaths by receptor risk before dividing their shares.
+
+    Local risk is normalized to the emitter-weighted UA population mixture;
+    nonlocal risk to the national population mixture. These reference mixtures
+    retain the original attributed plume under equal mortality risks. Neither
+    identifies an ethnic/source-receptor CRF. The same-risk correction is zero.
+    """
+    local_ratio = context["local_odds_ratio"]
+    national_ratio = context["national_rate_ratio"]
+    local_reference = context["local_pop_self"]
+    national_reference = context["group"]["pop"] / (context["group"]["pop"] + context["other"]["pop"])
+    local_den = local_reference * local_ratio + 1 - local_reference
+    national_den = national_reference * national_ratio + 1 - national_reference
+    group = L * iota * local_ratio / local_den + (1-L) * exposure_share * national_ratio / national_den
+    local_other = L * (1-iota) / local_den
+    nonlocal_other = (1-L) * (1-exposure_share) / national_den
+    other = local_other + nonlocal_other
+    if not (np.isfinite(group+other).all() and ((group+other)>0).all()):
+        raise ValueError("[BLOCKED] mortality exposure risk weights finite positive")
+    return group, other, local_other, nonlocal_other
 
 
 def primary_caps():
@@ -289,28 +315,36 @@ def main():
         old_full = grid.caused.to_numpy() * (1 - np.array(old_sigmas)) * grid.morb.to_numpy() * V.dot_vsl() / 1e9
         if basis == "row4":
             gate("positive control matches CURRENT row4 PM producer", abs(float(old_full[cen_mask][0]) - float(reevaluated.loc["pm25_consumption", "row4_bn"])) < 1e-9)
-        self_values, full_values, years0, years3 = [], [], [], []
+        self_values, full_values, caused_values, mortality_values, morbidity_values, years0, years3 = [], [], [], [], [], [], []
         for _, x in grid.iterrows():
             min_age = (65, 0, 18)[int(x.i_crf)]
             ctx = contexts_by_age[min_age]
-            sigma = self_share(ctx, A.ARMS["L"][int(x.i_L)], A.ARMS["iota"]["mexican_origin"][int(x.i_io)], s * A.ARMS["E"]["mexican_origin"][int(x.i_E)])
-            self_values.append(sigma)
-            full_values.append(x.caused * (1 - sigma) * x.morb * V.dot_vsl() / 1e9)
             L = A.ARMS["L"][int(x.i_L)]
-            local_self = odds_adjust(A.ARMS["iota"]["mexican_origin"][int(x.i_io)], ctx["local_odds_ratio"])
-            nonlocal_self = odds_adjust(s * A.ARMS["E"]["mexican_origin"][int(x.i_E)], ctx["national_rate_ratio"])
+            iota = A.ARMS["iota"]["mexican_origin"][int(x.i_io)]
+            exposure = s * A.ARMS["E"]["mexican_origin"][int(x.i_E)]
+            group_risk, other_risk, local_other, nonlocal_other = mortality_reweight(ctx, L, iota, exposure)
+            sigma = group_risk / (group_risk+other_risk)
+            self_values.append(sigma)
+            caused_values.append(x.caused*(group_risk+other_risk))
+            mortality = x.caused * other_risk * V.dot_vsl() / 1e9
+            # Baseline mortality rates do not identify nonfatal illness risk.
+            morbidity = x.caused * (1-old_sigmas[len(self_values)-1]) * (x.morb-1) * V.dot_vsl() / 1e9
+            mortality_values.append(mortality)
+            morbidity_values.append(np.full_like(mortality, morbidity))
+            full_values.append(mortality+morbidity)
             for r, dest in [("0.0", years0), ("0.03", years3)]:
-                dest.append((L * (1 - local_self) * ctx["local_other_years"][r] +
-                             (1 - L) * (1 - nonlocal_self) * ctx["other"]["years"][r]) / (1 - sigma))
+                dest.append((local_other * ctx["local_other_years"][r] +
+                             nonlocal_other * ctx["other"]["years"][r]) / other_risk)
         sigmas = np.array(self_values)
         full = np.array(full_values)
         ci = np.flatnonzero(cen_mask)[0]
         ctx = contexts_by_age[0]
         sigma = sigmas[ci]
-        caused = float(grid.loc[ci, "caused"])
+        all_caused = np.array(caused_values)
+        gate(f"all receptor-reweighted deaths finite positive {basis}", np.isfinite(all_caused).all() and (all_caused>0).all())
+        caused = float(all_caused[ci,0])
         gate(f"mortality conservation {basis}", abs(caused * sigma[0] + caused * (1 - sigma[0]) - caused) < 1e-10)
         gate(f"all grid/replicate mortality shares are probabilities {basis}", ((sigmas >= 0) & (sigmas <= 1)).all())
-        all_caused = grid.caused.to_numpy()[:, None]
         gate(f"all 2187 cells/81 weights close on caused deaths {basis}", np.max(np.abs(all_caused * sigmas + all_caused * (1 - sigmas) - all_caused)) < 1e-8)
         gate(f"all 2187 cells/81 weights close on national-attributed dollars {basis}",
              np.max(np.abs((all_caused * sigmas + all_caused * (1 - sigmas) - all_caused) * V.dot_vsl() / 1e9)) < 1e-6)
@@ -322,11 +356,14 @@ def main():
                        national_group_to_other_death_rate=float(ctx["national_rate_ratio"][0]), local_mortality_odds_ratio=float(ctx["local_odds_ratio"][0]),
                        bridge_multiplier=float(ctx["bridge_multiplier"]), raw_acs_group_population=ctx["raw_acs_group_population"], ua_count=ctx["ua_count"],
                        D=float(cen.D), theta=A.THETA_CONSUMPTION, caused_deaths=caused,
-                       outsider_deaths=caused * (1 - sigma[0]), gross_harm_bn=caused * V.dot_vsl() * cen.morb / 1e9,
+                       outsider_deaths=caused * (1 - sigma[0]),
+                       gross_harm_bn=(caused + float(grid.loc[ci,"caused"])*(cen.morb-1))*V.dot_vsl()/1e9,
                        outsider_harm_bn=float(full[ci, 0]), original_bn=reference,
                        live_original_union_bn=reference, historical_original_union_bn=float(original[cen_mask].iloc[0]),
                        source_attribution_national_population=source_population, old_exposure_self_share=float(old_sigmas[ci]),
-                       baseline_rates="NVSS 2024 national common age rates; not ethnicity-specific; national total deaths held fixed",
+                       original_caused_deaths=float(grid.loc[ci,"caused"]),
+                       receptor_mortality_scale=caused/float(grid.loc[ci,"caused"]),
+                       baseline_rates="NVSS 2024 common age rates; group plume deaths reweighted before shares; source national deaths fixed; nonfatal illness exposure dollars fixed",
                        source_spatial_assumptions="Original L/iota/E; UA mortality/population odds ratio on member-population emitter weights; no measured group source-receptor matrix")
         ce = pd.read_csv(OUT / "ce_group_spending.csv").set_index("group")
         national_spending = 4 * ce.loc["all", "total_pc_q"] * source_population
@@ -339,14 +376,17 @@ def main():
             summary[f"national_other_vsly_harm_per_spending_usd_r{r}"] = summary["uniform_harm_per_spending_usd"] * (float(y[0]) / V.reference_life_years(float(r)) + cen.morb - 1) / cen.morb
         gov = old[(old.item == "pm25_government_use") & (old.group == "mexican_origin") & (old.measure == "absolute")].iloc[0]
         summary["government_use_original_rounded_bn"] = float(gov.central_bn)
-        summary["government_use_mortality_adjusted_bn"] = (cen.D * A.THETA_GOVERNMENT * s * A.GOV["response"][1] *
-                                                         A.GOV["use"]["mexican_origin"][1] * (1 - sigma[0]) * V.dot_vsl() * cen.morb / 1e9)
+        gov_base = cen.D * A.THETA_GOVERNMENT * s * A.GOV["response"][1] * A.GOV["use"]["mexican_origin"][1]
+        gov_other = all_caused[ci,0] / float(grid.loc[ci,"caused"]) * (1-sigma[0])
+        summary["government_use_mortality_bn"] = gov_base * gov_other * V.dot_vsl()/1e9
+        summary["government_use_morbidity_bn"] = gov_base * (1-old_sigmas[ci])*(cen.morb-1)*V.dot_vsl()/1e9
+        summary["government_use_mortality_adjusted_bn"] = summary["government_use_mortality_bn"] + summary["government_use_morbidity_bn"]
         for rate, ygrid in [(0.0, np.array(years0)), (0.03, np.array(years3))]:
             ry = V.reference_life_years(rate)
             # Morbidity is not a mortality life-year: retain the original
             # illness dollars while replacing only the death valuation.
-            mortality_only = full / grid.morb.to_numpy()[:, None]
-            values = mortality_only * ygrid / ry + mortality_only * (grid.morb.to_numpy()[:, None] - 1)
+            mortality_only = np.array(mortality_values)
+            values = mortality_only * ygrid / ry + np.array(morbidity_values)
             summary[f"remaining_years_r{rate}"] = float(ygrid[ci, 0])
             summary[f"mean_outsider_vsl_usd_r{rate}"] = V.mortality_value("dot_life_years", remaining_years=float(ygrid[ci, 0]), reference_years=ry)
             summary[f"vsly_harm_per_spending_usd_r{rate}"] = summary["uniform_harm_per_spending_usd"] * ((float(ygrid[ci, 0]) / ry) + cen.morb - 1) / cen.morb
@@ -370,6 +410,7 @@ def main():
                                               exchangeability_assumption="Added descendants receive group-caused pollution at the average remaining nonmember mortality share; source age/place matrix unavailable",
                                               exchangeable_outside_lineage_uniform_bn=contexts["row4"]["outsider_harm_bn"] * factor * receiver_factor,
                                               added_receivers_no_data_bound_factor=[0.0, 1.0])
+    require_within_budget("PM receptor mortality producer")
     pd.DataFrame(items).to_csv(OUT / "mortality_items.csv", index=False, lineterminator="\n", float_format="%.12g")
     pd.DataFrame(age_contexts).to_csv(OUT / "mortality_age_contexts.csv", index=False, lineterminator="\n", float_format="%.12g")
     (OUT / "mortality_context.json").write_text(json.dumps(contexts, indent=2) + "\n")
@@ -389,7 +430,7 @@ def append_item(items, basis, n, item, values, ci, reference, rate, summary):
                       high_bn=float(values[:, 0].max()), per_member_usd=central * 1e9 / n,
                       evidence_level="contested model; measured primary mortality rates and survey ages; assumed source attribution and receiver bridge",
                       double_count_with="replacement for pm25_consumption; uniform and VSLY mutually exclusive; government/re-spending separate",
-                      method_note="Hold original national PM deaths, consumption source attribution, L/E/iota and illness dollars; mortality-weight receiver odds by common baseline age death rates; source/age independence assumed within local/nonlocal components",
+                      method_note="Hold original national PM deaths, source attribution, L/E/iota and exposure-based illness dollars; rescale group-plume deaths for common-age receptor mortality before shares; local risk normalized to emitter-weighted UA population mixture and nonlocal to national population mixture [ASSUMPTION]",
                       population_basis=basis, comparator="with versus without identified union; no replacement residents", beneficiary="residents outside identified union",
                       valuation="dot_life_years" if "vsly" in item else "dot_uniform", real_discount_rate=rate,
                       overlap="replace pm25_consumption only; no healthcare fiscal spending overlap; add neither mortality valuations nor gross/net spending rows together",

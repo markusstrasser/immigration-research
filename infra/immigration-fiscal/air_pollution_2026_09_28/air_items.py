@@ -251,7 +251,8 @@ def main():
     df.loc[df.measure == "normalized", "method_note"] += norm_note
     cols = ["item", "group", "measure", "low_bn", "central_bn", "high_bn", "per_member_usd",
             "evidence_level", "double_count_with", "method_note"]
-    assert ((df.low_bn <= df.central_bn + 1e-9) & (df.central_bn <= df.high_bn + 1e-9)).all(), "range order"
+    if not ((df.low_bn <= df.central_bn + 1e-9) & (df.central_bn <= df.high_bn + 1e-9)).all():
+        raise ValueError("[BLOCKED] air item range order")
     df[cols].to_csv(OUT / "items.csv", index=False, lineterminator="\n", float_format="%.4f")
     pd.DataFrame(params).to_csv(OUT / "params.csv", index=False, lineterminator="\n", float_format="%.6g")
     pd.set_option("display.width", 250)

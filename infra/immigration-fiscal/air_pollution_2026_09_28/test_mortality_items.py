@@ -43,11 +43,30 @@ def test_current_row4_control_and_declared_lineage_transport():
     current = pd.read_csv(M.FISCAL / "population_basis_2026_09_29/derived/reeval.csv").set_index("row")
     row4 = rows[(rows.population_basis == "row4") & (rows.item == "pm25_consumption_mortality")].iloc[0]
     assert abs(row4.frame_matched_original_bn - current.loc["pm25_consumption", "row4_bn"]) < 1e-9
-    expected = (1 - context["row4"]["self_share"]) / (1 - context["row4"]["old_exposure_self_share"]) * row4.frame_matched_original_bn
+    c = context["row4"]
+    # Mortality is reweighted before shares; illness retains exposure dollars.
+    morbidity = 1.03
+    expected = row4.frame_matched_original_bn / morbidity * (
+        c["receptor_mortality_scale"] * (1-c["self_share"]) / (1-c["old_exposure_self_share"]) + morbidity-1)
     assert abs(expected - row4.central_bn) < 1e-9
     line = rows[(rows.population_basis == "lineage_fixed_boundary") & (rows.item == "pm25_consumption_mortality")].iloc[0]
     assert abs(line.central_bn - row4.central_bn * context["lineage_fixed_boundary"]["factor"]) < 1e-9
     assert "receiver boundary remains identified union" in line.method_note
+
+
+def test_receptor_risk_changes_total_before_shares():
+    context = dict(local_odds_ratio=np.array([0.4]), national_rate_ratio=np.array([0.4]),
+                   local_pop_self=np.array([0.2]), group=dict(pop=np.array([20.])), other=dict(pop=np.array([80.])))
+    group, other, local, nonlocal_ = M.mortality_reweight(context, .35, .3, .224)
+    assert group+other < 1
+    assert abs(other-local-nonlocal_) < 1e-15
+    # Lower group mortality cannot turn all previously group deaths into
+    # outsider deaths merely by changing the denominator.
+    assert other < 1-M.self_share(context, .35, .3, .224)
+    context["local_odds_ratio"] = context["national_rate_ratio"] = np.ones(1)
+    group, other, _, _ = M.mortality_reweight(context, .35, .3, .224)
+    np.testing.assert_allclose(group+other, 1, atol=1e-15, rtol=0)
+    np.testing.assert_allclose(other, 1-(.35*.3+.65*.224), atol=1e-15, rtol=0)
 
 
 def test_cap_gap_cannot_be_mistaken_for_zero():

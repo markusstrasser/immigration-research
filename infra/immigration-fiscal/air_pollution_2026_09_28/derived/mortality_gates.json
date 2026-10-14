@@ -228,6 +228,10 @@
     "pass_": true
   },
   {
+    "name": "all receptor-reweighted deaths finite positive legacy_cps",
+    "pass_": true
+  },
+  {
     "name": "mortality conservation legacy_cps",
     "pass_": true
   },
@@ -365,6 +369,10 @@
   },
   {
     "name": "positive control matches CURRENT row4 PM producer",
+    "pass_": true
+  },
+  {
+    "name": "all receptor-reweighted deaths finite positive row4",
     "pass_": true
   },
   {
