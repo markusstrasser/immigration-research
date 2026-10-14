@@ -1,0 +1,39 @@
+{
+ "PH_SEQ": 51544,
+ "head_line": 1,
+ "FILESTAT": 4,
+ "head_age": 40,
+ "head_member": false,
+ "wages": 25002.0,
+ "AGI": 25002.0,
+ "TAX_INC": 3102.0,
+ "FEDTAX_BC": 0.0,
+ "CTC_CRD": 310.0,
+ "ACTC_CRD": 1690.0,
+ "EIT_CRED": 3848.0,
+ "dependents": [
+  {
+   "line": 2,
+   "age": 13,
+   "member": true,
+   "generation": "G3+"
+  }
+ ],
+ "counterfactual_no_dependents": {
+  "nonref": 0.0,
+  "actc": 0.0,
+  "eitc": 0.0,
+  "fedtax_bc": 310.0
+ },
+ "single_status": {
+  "taxable_income": 10402.0,
+  "fedtax_bc": 1040.0
+ },
+ "A": {
+  "nonref": 310.0,
+  "actc": 1690.0,
+  "eitc": 3848.0
+ },
+ "C": 730.0,
+ "weight": 883.16778508
+}
