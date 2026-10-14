@@ -153,3 +153,16 @@ session: 75b08f57-63cc-4e3d-96dc-60050327b5c1
   Try to use 6.1 gpt sol etc."]
   consumed: 2026-10-15 the held lanes run on GPT-6.1 Sol, kept lean: the who-wins round-2 fixes now, the comparators'
   own mixed-unit removal after v8's adoption, round 3 with its GPT axes once round 2's fixes land — session 75b08f57
+
+## Open ask, 2026-10-15 03:35 JST: Codex past the weekly plan
+session: 75b08f57-63cc-4e3d-96dc-60050327b5c1
+
+- **Prepaid credits for four more Sol lanes (recommend: yes; I report the credit burn after each).** The weekly plan
+  reached 92% at 03:32 and rises 5–13 points an hour with two or three lanes running, so it reaches 100% around
+  04:15–05:00 JST; after that Codex draws the prepaid credits (balance 55,113.75), which your 01:02 answer allows
+  ("fine to use a bit more"). Still needing Sol: the two running propagation lanes; round 3's one method fix to v8
+  (coverage charged the missed adults a second time for prisons, arrests and ICE, about −$3.2bn at every end); and
+  the world ledger and who-wins lanes on v8. I take the docs pass and the evidence map, explorer and figures updates
+  myself, without Codex; the critique rounds keep their small GPT axis. If you want no credits spent, the lanes after
+  100% wait for the reset (2026-10-20 14:57 JST) and v8 is pushed with its docs once the fix lands, or the remaining
+  lanes run as Claude workers.
