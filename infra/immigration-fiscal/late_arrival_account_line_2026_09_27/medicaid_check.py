@@ -75,11 +75,13 @@ OLD = ["G1_Y_65p", "G1_L50_65p", "G1_L55_65p"]
 SETS = {"default": (("sept27", "sept26_schools"), "medicaid_check.csv"),
         "sept29": (("sept29", "sept29_cash"), "medicaid_check_sept29.csv"),
         "oct05": (("oct05", "oct05_cash"), "medicaid_check_oct05.csv"),
-        "oct07": (("oct07", "oct07_cash"), "medicaid_check_oct07.csv")}
+        "oct07": (("oct07", "oct07_cash"), "medicaid_check_oct07.csv"),
+        "oct14": (("oct14", "oct14_cash"), "medicaid_check_oct14.csv")}
 # The v4, v5 and v6 sets' cash cases (the set's Medicare is keyed on the cash set's charge), and the case each v5 or v6
 # case builds on.
-CASH = {"sept29": "sept29_cash", "oct05": "oct05_cash", "oct07": "oct07_cash"}
-BUILDS_ON = {"oct05": "sept29", "oct05_cash": "sept29_cash", "oct07": "oct05", "oct07_cash": "oct05_cash"}
+CASH = {"sept29": "sept29_cash", "oct05": "oct05_cash", "oct07": "oct07_cash", "oct14": "oct14_cash"}
+BUILDS_ON = {"oct05": "sept29", "oct05_cash": "sept29_cash", "oct07": "oct05", "oct07_cash": "oct05_cash",
+             "oct14": "oct05", "oct14_cash": "oct05_cash"}
 FAILS = []
 
 
@@ -92,7 +94,9 @@ def gate(label, ok, detail=""):
 def main():
     if F.LATE_DEF != "central":
         sys.exit("[BLOCKED] the check runs on the central reading")
-    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "default"
+    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "oct14"
+    if which != "oct14":
+        sys.exit(f"[BLOCKED] live case is oct14; {which} outputs are frozen")
     if which not in SETS:
         sys.exit(f"--set must be one of {', '.join(SETS)}")
     cases, out_name = SETS[which]
@@ -181,13 +185,16 @@ def main():
             gate(f"{case} {end}: the Medicaid part is the line's amount x response", max(abs(amt[g] - part[g]["medicaid"]) for g in F.GENS) < 1e-12)
             alloc = c["low_spec" if end == "low" else "high_spec"]["allocation"]
             if prev is not None:
-                was = {g: prev["conventions"]["a"][g][end]["parts"] for g in F.GENS}
+                was = {g: (cells[g]["oct05_medical_parts_personal"][end] if "v7" in c
+                           else prev["conventions"]["a"][g][end]["parts"]) for g in F.GENS}
                 # v6's set moves each cell's Part A accrual: its scale x v6's accrual less v4's scale x v4's.
                 shift = {g: (pension["part_a_accrual_bn"] * c["v6"]["part_a_scale"]["a"][g][alloc]
                              - pension_v4["part_a_accrual_bn"] * c["v4"]["parameters"]["a"][g]["pension_refs"]["partAScale"][alloc])
                          if v6 and accrual_case else 0.0 for g in F.GENS}
-                gate(f"{case} {end}: every G1 cell's Medicaid part is {BUILDS_ON[case]}'s, and its Medicare part its plus the change "
-                     "in its Part A accrual (1e-12)" if v6 and accrual_case
+                if "v7" in c:
+                    shift = {g: shift[g] + c["v7"]["row4_medicare_bn"]["a"][g][alloc] for g in F.GENS}
+                gate(f"{case} {end}: every G1 cell's Medicaid part is {BUILDS_ON[case]}'s at the same allocation, and its Medicare part its plus the change "
+                     "in its Part A accrual" + (" plus R9's row4 Medicare shift (1e-12)" if "v7" in c else " (1e-12)") if v6 and accrual_case
                      else f"{case} {end}: every G1 cell's Medicaid and Medicare parts are {BUILDS_ON[case]}'s (1e-12)",
                      max(max(abs(part[g]["medicaid"] - was[g]["medicaid"]), abs(part[g]["medicare"] - was[g]["medicare"] - shift[g]))
                          for g in F.GENS if g.startswith("G1_")) < 1e-12)
@@ -198,7 +205,8 @@ def main():
                         for g in F.GENS}
                 gate(f"{case} {end}: each cell's Medicare part less its keyed charge is its Part A accrual (part_a_accrual x its scale)"
                      + ("" if plain == F.GENS else f"; the cells without the added people ({len(plain)} of {len(F.GENS)})"),
-                     max(abs(part[g]["medicare"] - medicare[g] - pension["part_a_accrual_bn"] * refs[g]) for g in plain) < 1e-9)
+                     max(abs(part[g]["medicare"] - medicare[g] - pension["part_a_accrual_bn"] * refs[g]
+                             - (c["v7"]["row4_medicare_bn"]["a"][g][alloc] if "v7" in c else 0)) for g in plain) < 1e-9)
             else:
                 medicare = {g: part[g]["medicare"] for g in F.GENS}
             accrual = {g: part[g]["medicare"] - medicare[g] for g in F.GENS}

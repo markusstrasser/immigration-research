@@ -38,6 +38,8 @@
  *     G1's ratio on its own receipts). Costs come from the v4 consumer on the v6 payload, gated on the v6 band (1e-4)
  *     and the v6 package (every model); the added people's adults follow the case's measured age mix (v6_split.cjs
  *     addedAdults, as the generation lane counts them).
+ * Live oct14 (set/cash): v6 R1–R4 plus v7_cells.cjs's parent-authorized R6–R9
+ * split; only 32 personal specifications. Historical outputs remain frozen.
  * Outputs: _cache/cells_<case>_<def>.json (per cell, convention, band end: cost and programme parts).
  * Run from the repository root:
  *   node infra/immigration-fiscal/late_arrival_account_line_2026_09_27/run_cells.cjs --case sept27 --def central
@@ -45,8 +47,14 @@
 "use strict";
 const fs = require("fs");
 const path = require("path");
+const { execFileSync } = require("child_process");
 
 const HERE = __dirname;
+const GEN_PIN = "1a02fbbb";
+function committedGeneration(rel) {
+  return JSON.parse(execFileSync("git", ["-C", path.resolve(HERE, "../../.."), "show", `${GEN_PIN}:infra/immigration-fiscal/${rel}`],
+    { encoding: "utf8", maxBuffer: 16 * 1024 * 1024 }));
+}
 const argv = process.argv.slice(2);
 const arg = (name, dflt) => { const i = argv.indexOf(name); return i < 0 ? dflt : argv[i + 1]; };
 // The case switch: each case's package lane. Repointing the lane is the default below. Every case after
@@ -58,15 +66,18 @@ const arg = (name, dflt) => { const i = argv.indexOf(name); return i < 0 ? dflt 
 const CASES = { sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_case_schools_full_2026_09_26",
   sept29: "main_case_long_run_2026_09_27", sept29_cash: "main_case_long_run_2026_09_27",
   oct05: "main_case_long_run_2026_09_27", oct05_cash: "main_case_long_run_2026_09_27",
-  oct07: "main_case_long_run_2026_09_27", oct07_cash: "main_case_long_run_2026_09_27" };
-const CASE = arg("--case", "sept26_schools");
+  oct07: "main_case_long_run_2026_09_27", oct07_cash: "main_case_long_run_2026_09_27",
+  oct14: "main_case_long_run_2026_09_27", oct14_cash: "main_case_long_run_2026_09_27" };
+const CASE = arg("--case", "oct14");
 if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
+if (!["oct14", "oct14_cash"].includes(CASE)) throw new Error(`[BLOCKED] live case is oct14; ${CASE} outputs are frozen`);
 const ON26 = CASE !== "sept24";
-const V4SET = { sept29: "set", sept29_cash: "cash", oct05: "set", oct05_cash: "cash", oct07: "set", oct07_cash: "cash" }[CASE];
+const ON14 = CASE === "oct14" || CASE === "oct14_cash";
+const V4SET = { sept29: "set", sept29_cash: "cash", oct05: "set", oct05_cash: "cash", oct07: "set", oct07_cash: "cash", oct14: "set", oct14_cash: "cash" }[CASE];
 const ON29 = V4SET !== undefined;
-const V5SET = { oct05: "set", oct05_cash: "cash", oct07: "set", oct07_cash: "cash" }[CASE];
+const V5SET = { oct05: "set", oct05_cash: "cash", oct07: "set", oct07_cash: "cash", oct14: "set", oct14_cash: "cash" }[CASE];
 const ON05 = V5SET !== undefined;
-const V6SET = { oct07: "set", oct07_cash: "cash" }[CASE];
+const V6SET = { oct07: "set", oct07_cash: "cash", oct14: "set", oct14_cash: "cash" }[CASE];
 const ON07 = V6SET !== undefined;
 const MAIN = CASES[CASE];
 const P = require(path.join(HERE, "..", MAIN, "package.cjs"));
@@ -575,7 +586,9 @@ function v5Part() {
 const W6 = ON07 ? v6Part() : null;
 function v6Part() {
   console.log("[v6 part]");
-  const V6 = require(path.join(HERE, "..", "generation_account_2026_09_24", "v6_split.cjs"));
+  const V6 = ON14 ? require("./v7_cells.cjs") : require(path.join(HERE, "..", "generation_account_2026_09_24", "v6_split.cjs"));
+  const wage = ON14 ? load("job_wages_oct14.json") : null;
+  if (wage && wage.def !== DEF) throw new Error("[BLOCKED] job wage reading differs");
   const L = V6.loadCase(V6SET);
   console.log(`  · ${L.rel}: ${L.baseRel} plus ${L.lineage.edits.count} lineage edits (item ${L.lineageItem}) and `
     + `${L.items.map((it) => `${it.edits.length} of item ${it.id}`).join(", ")}`);
@@ -592,7 +605,7 @@ function v6Part() {
   const withEdits = (m, edits) => (edits.length ? Engine.applyCorrections(m, { lines: [], edits, meta: m.corrections }) : m);
   const union29 = Engine.applyCorrections(MODEL, V.C.payload), union6 = Engine.applyCorrections(MODEL, L.payload);
   const unionL = (L.set === "set" ? V6.P6.ITEM_BASE : V6.P6.ITEM_BASE.CASH).payloadModel();
-  const models29 = {}, payloads6 = {}, layers = {}, partAScale = {};
+  const models29 = {}, payloads6 = {}, layers = {}, partAScale = {}, jobT1 = {}, baseline = {};
   // How far the nine models are from the case's payload model, cell by cell and on the production grid.
   const addsTo = (m6) => {
     const u = cellsOf(union6), parts = m6.map(cellsOf);
@@ -608,15 +621,32 @@ function v6Part() {
   let payloadsAlt = null;
   for (const conv of CONVS) {
     models29[conv] = Object.fromEntries(GENS.map((g) => [g, Engine.applyCorrections(models[conv][g], V.payloads[conv][g])]));
-    const lay = V6.layer(L, GENS, TOP, models29[conv], union29);
+    const options = ON14 ? { wages: wage.shares[conv] } : {};
+    const lay = V6.layer(L, GENS, TOP, models29[conv], union29, options);
     layers[conv] = lay;
     payloads6[conv] = Object.fromEntries(GENS.map((g) => [g, V6.payloadOf(V.payloads[conv][g], lay.parts[g])]));
     const m6 = GENS.map((g) => Engine.applyCorrections(models[conv][g], payloads6[conv][g]));
+    if (ON14) {
+      const old = V6.layer(L.old, GENS, TOP, models29[conv], union29, options);
+      baseline[conv] = Object.fromEntries(GENS.map((g) => [g, V6.payloadOf(V.payloads[conv][g], old.parts[g])]));
+      const altJob = V6.layer(L, GENS, TOP, models29[conv], union29, { ...options, jobT1: true });
+      jobT1[conv] = Object.fromEntries(GENS.map((g) => [g, V6.payloadOf(V.payloads[conv][g], altJob.parts[g])]));
+      const gc = committedGeneration(`generation_account_2026_09_24/derived/generation_corrections_${CASE}.json`);
+      const refModels = Object.fromEntries(TOPS.map((g) => [g, Engine.applyCorrections(
+        committedGeneration(`generation_account_2026_09_24/derived/${conv === "a" ? "model_" : "model_b_"}${g}.json`), gc.payloads[conv][g]) ]));
+      let lineGap = 0;
+      const refs = cellsOf(refModels.G1), mine = m6.slice(0, G1_CELLS.length).map(cellsOf);
+      for (const [key, cell] of refs) for (const a of ALLOCS) lineGap = Math.max(lineGap,
+        Math.abs(mine.reduce((t, m) => t + m.get(key)[a].target_bn, 0) - cell[a].target_bn));
+      gate(`(${conv}) seven G1 cells add to committed generation 1a02fbbb on every line and allocation (1e-9)`, lineGap < 1e-9, `max ${e(lineGap)} bn`);
+      const altGap = addsTo(GENS.map((g) => Engine.applyCorrections(models[conv][g], jobT1[conv][g])));
+      gate(`(${conv}) job t1 sensitivity adds to case (cells 1e-9, grid 1e-12)`, altGap.worst < 1e-9 && altGap.grid < 1e-12);
+    }
     const { worst, grid } = addsTo(m6);
     gate(`(${conv}) the cells' row-8 shares add to 1, the lineage goes on ${lay.g3plus}, and the nine v6 models add to the case's payload model (cells 1e-9, grid 1e-12)`,
       lay.share_sum_error < 1e-12 && worst < 1e-9 && grid < 1e-12, `shares ${e(lay.share_sum_error)}; cells ${e(worst)} bn, grid ${e(grid)} bn`);
     if (basisMoved(lay)) {
-      const alt = V6.layer(L, GENS, TOP, models29[conv], union29, { alt: ["split_basis_edited_line"] });
+      const alt = V6.layer(L, GENS, TOP, models29[conv], union29, { ...options, alt: ["split_basis_edited_line"] });
       (payloadsAlt ||= {})[conv] = Object.fromEntries(GENS.map((g) => [g, V6.payloadOf(V.payloads[conv][g], alt.parts[g])]));
       const r = addsTo(GENS.map((g) => Engine.applyCorrections(models[conv][g], payloadsAlt[conv][g])));
       gate(`(${conv}) beside the case, the parts split by their edited lines: the nine models add to the case's payload model (cells 1e-9, grid 1e-12)`,
@@ -673,7 +703,8 @@ function v6Part() {
   const FIELDS = ["allocation", "normalization", "share", "school", "reading", "gg", "uc"];
   gate(`the consumer's specifications are ${AP.source}'s MAIN_SPECS, in order`, ev.specs.length === AP.specs.length
     && ev.specs.every((s, i) => FIELDS.every((k) => s[k] === AP.specs[i][k])));
-  return { V6, L, ev, AP, layers, models29, payloads: payloads6, payloadsAlt, partAScale: L.set === "set" ? partAScale : null, O: V6.oracle(L.set) };
+  return { V6, L, ev, AP, layers, models29, payloads: payloads6, payloadsAlt, jobT1, baseline, wage,
+    partAScale: L.set === "set" ? partAScale : null, O: V6.oracle(L.set) };
 }
 
 // ---------------------------------------------------------------------------------------------------
@@ -694,7 +725,7 @@ if (ON29) {
     lo === CV.O.specs[0] && hi === CV.O.specs[1] && near(uCost[lo], CV.O.band[0], 1e-4) && near(uCost[hi], CV.O.band[1], 1e-4),
     `${uCost[lo].toFixed(4)}–${uCost[hi].toFixed(4)} at ${lo} / ${hi}`);
   if (ON07) {
-    gate(`the corrected union is the case's full-precision band at 48 / 11 (${CV.O.full.source}, 1e-6)`,
+    gate(`the corrected union is the case's full-precision band at ${CV.O.specs.join(" / ")} (${CV.O.full.source}, 1e-6)`,
       near(uCost[lo], CV.O.full.band[0], 1e-6) && near(uCost[hi], CV.O.full.band[1], 1e-6),
       `${uCost[lo].toFixed(6)} / ${uCost[hi].toFixed(6)} against ${CV.O.full.band.map((v) => v.toFixed(6)).join(" / ")}`);
   }
@@ -785,9 +816,17 @@ if (ON07) {
   const u5 = [W.ev.cost(m5, W.ev.specs[lo]), W.ev.cost(m5, W.ev.specs[hi])];
   let worst = 0;
   for (const conv of CONVS) for (const k of [0, 1]) worst = Math.max(worst, Math.abs(GENS.reduce((t, g) => t + oct05At[conv][g][k], 0) - u5[k]));
-  gate(`the cells' v5 costs at the case's ends, which are v5's, add to the v5 union, which is ${W.O.source} (1e-4)`,
-    W.O.specs[0] === lo && W.O.specs[1] === hi && worst < 1e-9 && near(u5[0], W.O.band[0], 1e-4) && near(u5[1], W.O.band[1], 1e-4),
-    `${u5.map((x) => x.toFixed(4)).join("–")}; cells max |diff| ${e(worst)} bn`);
+  if (ON14) {
+    const oldEnds = W.O.specs.map((i) => W.ev.cost(m5, W.ev.specs[i]));
+    gate(`v5 still reproduces ${W.O.source} at its own ends (1e-4)`, oldEnds.every((v, k) => near(v, W.O.band[k], 1e-4)));
+    gate("v5 cells add at v7's personal ends, and the union equals v5's package there (1e-9)",
+      worst < 1e-9 && [lo, hi].every((i, k) => near(u5[k], W.AP.cost(m5, i), 1e-9)),
+      `${u5.map((x) => x.toFixed(4)).join("–")}; cells max |diff| ${e(worst)} bn`);
+  } else {
+    gate(`the cells' v5 costs at the case's ends, which are v5's, add to the v5 union, which is ${W.O.source} (1e-4)`,
+      W.O.specs[0] === lo && W.O.specs[1] === hi && worst < 1e-9 && near(u5[0], W.O.band[0], 1e-4) && near(u5[1], W.O.band[1], 1e-4),
+      `${u5.map((x) => x.toFixed(4)).join("–")}; cells max |diff| ${e(worst)} bn`);
+  }
 }
 
 // ---------------------------------------------------------------------------------------------------
@@ -886,6 +925,19 @@ for (const conv of CONVS) {
         const mA = Engine.applyCorrections(models[conv][g], W6.payloadsAlt[conv][g]);
         cells.conventions[conv][g].split_basis_edited_line_cost_bn = [CE.cost(mA, SPECS[lo]), CE.cost(mA, SPECS[hi])];
       }
+      if (ON14) {
+        const base = Engine.applyCorrections(models[conv][g], W6.baseline[conv][g]);
+        const alt = Engine.applyCorrections(models[conv][g], W6.jobT1[conv][g]);
+        const oldEv = require("../generation_account_2026_09_24/v6_split.cjs").evaluator(W6.L.old.payload, W6.L.old.api);
+        cells.conventions[conv][g].oct07_cost_bn = [lo, hi].map((i) => oldEv.cost(base, oldEv.specs[i]));
+        cells.conventions[conv][g].job_capital_t1_cost_bn = [CE.cost(alt, SPECS[lo]), CE.cost(alt, SPECS[hi])];
+        const m5 = Engine.applyCorrections(models[conv][g], W.payloads[conv][g]);
+        cells.conventions[conv][g].oct05_medical_parts_personal = Object.fromEntries(["low", "high"].map((end) => {
+          const full = W.ev.evaluateFull(m5, W.ev.specs[end === "low" ? lo : hi]);
+          return [end, Object.fromEntries(["medicaid", "medicare"].map((line) => [line,
+            -full.state.fiscal_weight * full.evaluation.spending.find((r) => r.id === (line === "medicaid" ? MEDICAID : line)).effect_bn]))];
+        }));
+      }
     }
   });
   if (ON07 && W6.payloadsAlt) {
@@ -938,6 +990,23 @@ if (ON07) {
       + "pension rule with the 2026 per-generation ratios, each G1 cell at G1's ratio on its own receipts); the case's responses. The "
       + "change is from v5 (v5_split.cjs on the same September 29 payloads); cells.v4 is the September 29 part this case builds on" };
 }
+if (ON14) {
+  cells.v7 = { payload: W6.L.rel, oracle: W6.O, generation_pin: GEN_PIN, wage_rule: W6.wage.rule,
+    fixed_rule: "[APPROX: within-G1 distribution of the item not measured; spread by the line's own cell targets]",
+    job_wages: W6.wage, job_t1_sensitivity: "job_capital_t1_cost_bn",
+    row4_medicare_bn: Object.fromEntries(CONVS.map((conv) => [conv, Object.fromEntries(GENS.map((g) => [g,
+      Object.fromEntries(ALLOCS.map((a) => [a, W6.layers[conv].parts[g].item_edits
+        .slice(W6.L.added.slice(0, -1).reduce((n, it) => n + it.edits.length, 0) + W6.L.old.items.reduce((n, it) => n + it.edits.length, 0))
+        .filter((ed) => ed.side === "spending" && ed.line === "medicare").reduce((t, ed) => t + ed.by[a], 0)])) ]))])),
+    fixed_spread_abs_bn: Object.fromEntries(CONVS.map((conv) => [conv, Object.fromEntries(["low", "high"].map((end) => {
+      const spec = SPECS[end === "low" ? lo : hi], a = spec.allocation;
+      const value = W6.layers[conv].items.filter((it) => ["child_credits", "white_end_tax_keys", "row4_frame"].includes(it.id))
+        .flatMap((it) => it.edits).filter((ed) => ed.side === "spending" || ed.scenario === unionModel.receipts.reference)
+        .flatMap((ed) => ed.parts).filter((p) => p.rule === "g1_t1_remainder")
+        .reduce((t, p) => t + Math.abs(p.union_bn[a]), 0);
+      return [end, value];
+    }))])) };
+}
 if (ON05 && !ON07) {
   cells.v5 = { set: W.L.set, payload: W.L.rel, builds_on: W.L.baseRel, oracle: W.O, uncorrected_own_ends_bn: [u0Cost[lo0], u0Cost[hi0]],
     uncorrected_own_ends: [lo0, hi0], added: ADDED, row8_edit_bn: W.L.lineage.edits.row8_edit_bn,
@@ -947,10 +1016,10 @@ if (ON05 && !ON07) {
       + "the September 29 part this case builds on" };
 }
 const outFile = path.join(OUT, `cells_${CASE}_${DEF}.json`);
-fs.writeFileSync(outFile, JSON.stringify(cells, null, 1) + "\n");
-console.log(`  wrote ${path.relative(process.cwd(), outFile)}`);
 if (fails.length) {
   console.log(`✗ ${fails.length} gate(s) failed: ${fails.join("; ")}`);
   process.exit(1);
 }
+fs.writeFileSync(outFile, JSON.stringify(cells, null, 1) + "\n");
+console.log(`  wrote ${path.relative(process.cwd(), outFile)}`);
 console.log("  ✓ all gates passed");

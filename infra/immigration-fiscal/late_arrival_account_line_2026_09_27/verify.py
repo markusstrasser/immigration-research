@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import csv
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -40,6 +41,8 @@ V5_GEN = {c: FISCAL / f"generation_account_2026_09_24/derived/generation_summary
 # The v6 cases: the v6 lane and each case's generation summary (run_generations_v6.cjs).
 V6_LANE = "main_case_2026_10_07"
 V6_GEN = {c: FISCAL / f"generation_account_2026_09_24/derived/generation_summary_{c}.json" for c in ("oct07", "oct07_cash")}
+V7_LANE = "main_case_2026_10_14"
+V7_GEN = {c: FISCAL / f"generation_account_2026_09_24/derived/generation_summary_{c}.json" for c in ("oct14", "oct14_cash")}
 LATE = ["G1_L50_50_64", "G1_L50_65p", "G1_L55_55_64", "G1_L55_65p"]
 REST = ["G1_Y_u50", "G1_Y_50_64", "G1_Y_65p"]
 fails = []
@@ -76,19 +79,32 @@ def v6_band(case):
 
 
 def main():
-    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "default"
-    if which not in ("default", "sept29", "oct05", "oct07"):
+    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "oct14"
+    if which != "oct14":
+        sys.exit(f"[BLOCKED] live case is oct14; {which} outputs are frozen")
+    if which not in ("default", "sept29", "oct05", "oct07", "oct14"):
         sys.exit("--set must be default, sept29, oct05 or oct07")
-    v4, v5, v6 = which == "sept29", which == "oct05", which == "oct07"
+    v4, v5, v6 = which == "sept29", which == "oct05", which in ("oct07", "oct14")
+    live_lane = V7_LANE if which == "oct14" else V6_LANE
     # From here v5 means "a case with the added people" (oct05 or oct07); v6 picks the v6 lane and files.
     v5 = v5 or v6
-    sets = V6_GEN if v6 else V5_GEN if v5 else V4_GEN
-    gens = {c: json.loads(sets[c].read_text()) for c in sets} if v4 or v5 else None
+    sets = V7_GEN if which == "oct14" else V6_GEN if v6 else V5_GEN if v5 else V4_GEN
+    if which == "oct14":
+        root = FISCAL.parents[1]
+        gens = {c: json.loads(subprocess.check_output(
+            ["git", "-C", str(root), "show", f"1a02fbbb:{p.relative_to(root)}"], text=True)) for c, p in sets.items()}
+    else:
+        gens = {c: json.loads(sets[c].read_text()) for c in sets} if v4 or v5 else None
     gen = None if v4 or v5 else json.loads(GEN.read_text())
     line = list(csv.DictReader((HERE / f"derived/late_arrival_line{'_' + which if v4 or v5 else ''}.csv").open()))
     for case in (sets if v4 or v5 else MAIN):
         if v4 or v5:
-            gen, band = gens[case], (v6_band(case) if v6 else v5_band(case) if v5 else v4_band(case))
+            if which == "oct14":
+                band = next(r for r in csv.DictReader((FISCAL / live_lane / "derived/main_case_bands.csv").open())
+                            if r["profile"] == "long_run_non_school_full" and r["variant"] == ("cash_set" if case.endswith("_cash") else "adopted"))
+                gen = gens[case]
+            else:
+                gen, band = gens[case], (v6_band(case) if v6 else v5_band(case) if v5 else v4_band(case))
         else:
             band = next(r for r in csv.DictReader((FISCAL / MAIN[case] / "derived/main_case_bands.csv").open())
                         if r["variant"] == "adopted" and r["profile"] in ("long_run_non_school_full", "cbo_category_lag_non_school_full"))
@@ -98,8 +114,8 @@ def main():
                 check(f"{case} {reading}: the cells and the generation summary are one lane's payload ({V4_LANE})",
                       c["main"] == gen["lane"] == V4_LANE and c["v4"]["payload"] == gen["payload"], c["v4"]["payload"])
             if v6:
-                check(f"{case} {reading}: the cells and the generation summary are one lane's payload ({V6_LANE})",
-                      c["main"] == gen["lane"] == V6_LANE and c["v6"]["payload"] == gen["payload"], c["v6"]["payload"])
+                check(f"{case} {reading}: the cells and the generation summary are one lane's payload ({live_lane})",
+                      c["main"] == gen["lane"] == live_lane and c["v6"]["payload"] == gen["payload"], c["v6"]["payload"])
             elif v5:
                 check(f"{case} {reading}: the cells and the generation summary are one lane's payload ({V5_LANE})",
                       c["main"] == gen["lane"] == V5_LANE and c["v5"]["payload"] == gen["payload"], c["v5"]["payload"])
@@ -118,6 +134,9 @@ def main():
                             json.dumps(c["low_spec" if k == 0 else "high_spec"], sort_keys=True)
                         check(f"{tag}: late + younger = the generation lane's G1 {ref:.6f}", same_spec and abs(late + rest - ref) < 1e-6,
                               f"late {late:.6f} + younger {rest:.6f}; |diff| {abs(late + rest - ref):.1e}")
+                        if which == "oct14":
+                            check(f"{tag}: seven G1 cells add to committed generation G1 (1e-9)",
+                                  same_spec and abs(late + rest - ref) < 1e-9)
                     elif reading == "central" and conv == "a" and end == "low":
                         print(f"  [PENDING] {case}: the generation lane holds case {gen.get('case')}, not {case}; "
                               "G1 checked against the case's band only")

@@ -41,9 +41,10 @@ CASES = ["sept27", "sept26_schools"]
 # Each set of cases and its file: the default two, and the v4 and v5 cases each in a file of their own.
 SETS = {"default": (CASES, "late_arrival_line.csv"), "sept29": (["sept29", "sept29_cash"], "late_arrival_line_sept29.csv"),
         "oct05": (["oct05", "oct05_cash"], "late_arrival_line_oct05.csv"),
-        "oct07": (["oct07", "oct07_cash"], "late_arrival_line_oct07.csv")}
+        "oct07": (["oct07", "oct07_cash"], "late_arrival_line_oct07.csv"),
+        "oct14": (["oct14", "oct14_cash"], "late_arrival_line_oct14.csv")}
 # The case each set's rows beside the total compare with.
-PREVIOUS = {"sept29": "sept27", "oct05": "sept29", "oct07": "oct05"}
+PREVIOUS = {"sept29": "sept27", "oct05": "sept29", "oct07": "oct05", "oct14": "oct07"}
 # oct07: each cell's cost with the items' parts split by their edited lines rather than their split_basis (run_cells.cjs,
 # when a part's basis is another model line).
 ALT = "split_basis_edited_line_cost_bn"
@@ -68,7 +69,9 @@ SERVICES = ["education", "services_other"]
 
 
 def main():
-    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "default"
+    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "oct14"
+    if which != "oct14":
+        sys.exit(f"[BLOCKED] live case is oct14; {which} outputs are frozen")
     if which not in SETS:
         sys.exit(f"--set must be one of {', '.join(SETS)}")
     cases, out_name = SETS[which]
@@ -104,6 +107,9 @@ def main():
                             # Beside the total: the move if the items' parts were split by their edited lines.
                             k = 0 if end == "low" else 1
                             out["split_basis_edited_line_move"] = sum(cells[g][ALT][k] for g in members) - total
+                        if which == "oct14":
+                            k = 0 if end == "low" else 1
+                            out["job_capital_t1_move"] = sum(cells[g]["job_capital_t1_cost_bn"][k] for g in members) - total
                         for k, v in out.items():
                             rows.append(dict(case=case, reading=reading, convention=conv, spec=end,
                                              allocation=spec["allocation"], subgroup=name, program=k,

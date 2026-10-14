@@ -671,3 +671,76 @@ Log (times from `date` and file times, JST):
   from September 24. None is asked for, and the sensitivities would multiply run time with no bearing on
   the late line.
 - Replicate-weight SEs on dollars: the engine runs on the full-sample weight only.
+
+## 2026-10-14 oct14 propagation stop
+
+- **18:28 JST:** The pre-fix `run_cells.cjs --case oct14 --out-dir <scratch>`
+  exits 1 at its case registry and writes nothing. The final case is committed at
+  `148ed1ea`; its Consumers R5–R9 and decision have been read. Those rules assign
+  `union_<G>:` parts to a generation, but do not assign G1's child-credit and
+  job-capital amounts among this lane's seven G1 cells. R7 additionally requires
+  re-keying their own receipt cells, rather than applying convention-a shifts.
+  No within-G1 allocation is inferred from an edited-line or wage share.
+  **STOPPED pending the parent's authoritative cell rule**, as the propagation
+  brief requires when a rule is missing. No code or derived output changed;
+  no oct14 figures, gates or reproducibility are claimed for this lane.
+  [SOURCE: `main_case_2026_10_14/RESULT.md`, Consumers R6–R9;
+  `run_cells.cjs` G1_CELLS and TOP mapping]
+
+## 2026-10-14 oct14 wave 2
+
+- **19:36 JST (`date`):** The parent's 19:25 rule resolves the preceding stop.
+  Live outputs are oct14/set and oct14/cash only; the oct07 files stay frozen.
+  R5 takes the 32 personal specifications, ends 16/11. R6, R8 and R9 follow
+  the existing two-level split: generation tags at level 1, no measured cell
+  part at level 2, then G1's remainder by each edited line's own t1.
+  [APPROX: within-G1 distribution of the item not measured; spread by the line's own cell targets]
+- R7 sets each cell's receipt target to its share of G1's job-capital target,
+  subtracting its own old amount, in both conventions. The cached records do
+  not have `INDUSTRY` (the longest job); `PEIOIND` and `A_DTIND` are different
+  fields and are not substituted. The parent's permitted fallback uses all
+  clipped `WSAL_VAL`, including off-books wages, on row 4 and the lane's two
+  assignment conventions. The common G1 fill-in multiplier cancels in this
+  ratio; the $1M national industry spread preserves each cell's total wages.
+  [APPROX: industry mix within G1 not measured by cell]
+  Each cell's t1 re-key is reported as the sensitivity `job_capital_t1_move`
+  beside its main cost in `derived/late_arrival_line_oct14.csv`.
+- Sum of absolute G1 tagged parts spread by t1, selecting the active receipt
+  scenario rather than summing the eight replicated scenarios: **0.859380920bn
+  at each set end; 0.380642242bn at each cash end**, both conventions and all
+  arrival readings. A zero G1 part allocates zero to every G1 cell.
+  [DATA: `_cache/cells_oct14{,_cash}_<reading>.json`, `v7.fixed_spread_abs_bn`]
+- The nine cells reproduce the set **339.552017829527–423.649260700507bn** and
+  cash **264.425573615506–348.522816486486bn**, at 16/11. The central arrival
+  reading's arrived-at-50+ cells, convention a, cost **3.245881679/3.838937727bn**
+  in the set and **4.736936187/5.329992236bn** in cash. Convention b gives
+  **4.344323382/5.015612193bn** and **5.831937111/6.503225923bn** respectively.
+  [DATA: `_cache/cells_oct14{,_cash}_central.json`, `union_band_bn` and the four
+  `G1_L*` cells' `low/high.cost_bn`; `derived/late_arrival_line_oct14.csv`]
+- Gates retain their tolerances: seven G1 cells add to generation commit
+  **1a02fbbb**, read directly by `git show`, on every line and both allocations
+  (1e-9); all nine cells and programme parts add at every personal specification
+  and both ends (1e-9; production grid 1e-12); the case oracle keeps its 1e-4
+  rounded band and 1e-6 full-precision checks. `verify.py` additionally checks
+  G1's endpoint cost at 1e-9. The old v5 control checks its own adopted ends,
+  then the cell closure at v7's personal ends against v5's package (1e-9).
+  `oct07_total` is v6 evaluated at the same personal 16/11, not its former
+  shared/personal band. R9's Medicare shift stays separate from the published
+  Part A metadata; the medical gates retain 1e-12/1e-9 and add that exact shift.
+- Reproduce only the live case: `bash infra/immigration-fiscal/late_arrival_account_line_2026_09_27/run_oct14.sh`.
+  It builds the three wage shares, runs each reading's set and cash engine,
+  then `build_line.py`, `medicaid_check.py` and `verify.py`. Historical split
+  inputs are read without rebuilding them. Python `RUSAGE_CHILDREN` on the
+  full route measured **1,430,487,040 bytes** peak RSS and **56.82 seconds**;
+  every command exited 0. Node's measured central run used 380,485,632 bytes.
+  New outputs: the two oct14 CSVs, six ignored `cells_oct14*` files and three
+  ignored `split_<reading>/job_wages_oct14.json` files. No other lane is written.
+- **19:41 JST:** Final source builds personal and unit-equal shared wage shares
+  separately, and rejects missing/nonfinite/non-closing shares. Personal
+  figures above are unchanged. `verify.py` also reads its generation summaries
+  directly at 1a02fbbb. The focused Astra code review found the initially
+  unpinned comparator; that defect is repaired, and the final allocation and
+  medical paths have no unresolved finding. Python `time.perf_counter` and
+  `resource.getrusage` on the final live route measured **57.50 seconds** and
+  **1,445,281,792 bytes** peak RSS, exit 0.
+- **2026-10-14 19:43:35 JST:** Final-source rerun: IDENTICAL 32/32, exit 0, 49.86s, 1,453,244,416 bytes peak child RSS. Module exclusion only; historical derived diff empty.
