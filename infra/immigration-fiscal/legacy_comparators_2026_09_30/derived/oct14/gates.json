@@ -1,0 +1,160 @@
+{
+ "debt_held_by_public_end_fy2023_bn": 26235.592,
+ "lineage": {
+  "added_people": 3039719.593185237,
+  "identified_union": 39712493.3312,
+  "lineage_path_vs_lane_max_abs_diff": 0.0,
+  "lineage_population": 42752212.92438524,
+  "note": "the 2000 and 1990 windows and the zero-cell audit are not run: the third-plus path starts in 2005",
+  "per_head_key": 0.129182223,
+  "third_plus_share_rel_2024": {
+   "2005": 0.655126135,
+   "2010": 0.788510111,
+   "2015": 0.835143619,
+   "2020": 0.957527726,
+   "2024": 1.0
+  },
+  "windows": [
+   2005
+  ]
+ },
+ "member_count_m": 42.752212924,
+ "parity": {
+  "max_abs_diff": 4.98e-07,
+  "rows": [
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "central",
+    "end": "low",
+    "interest_bn": 25.947050791,
+    "lane_interest_bn": 25.947051,
+    "lane_stock_bn": 802.54439,
+    "max_abs_diff": 4.57e-07,
+    "stock_bn": 802.544390352
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "low",
+    "end": "low",
+    "interest_bn": 12.681027492,
+    "lane_interest_bn": 12.681027,
+    "lane_stock_bn": 392.225211,
+    "max_abs_diff": 4.92e-07,
+    "stock_bn": 392.22521122
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "high",
+    "end": "low",
+    "interest_bn": 30.517998901,
+    "lane_interest_bn": 30.517999,
+    "lane_stock_bn": 943.924187,
+    "max_abs_diff": 4.56e-07,
+    "stock_bn": 943.924186987
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "central",
+    "end": "high",
+    "interest_bn": 41.937111673,
+    "lane_interest_bn": 41.937112,
+    "lane_stock_bn": 1297.118273,
+    "max_abs_diff": 4.74e-07,
+    "stock_bn": 1297.118273337
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "low",
+    "end": "high",
+    "interest_bn": 28.374853179,
+    "lane_interest_bn": 28.374853,
+    "lane_stock_bn": 877.636516,
+    "max_abs_diff": 4.77e-07,
+    "stock_bn": 877.636515562
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "high",
+    "end": "high",
+    "interest_bn": 48.968386099,
+    "lane_interest_bn": 48.968386,
+    "lane_stock_bn": 1514.596163,
+    "max_abs_diff": 4.49e-07,
+    "stock_bn": 1514.596162947
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "central",
+    "end": "low",
+    "interest_bn": 55.583656694,
+    "lane_interest_bn": 55.583657,
+    "lane_stock_bn": 1719.20702,
+    "max_abs_diff": 4.82e-07,
+    "stock_bn": 1719.207020234
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "low",
+    "end": "low",
+    "interest_bn": 42.317633394,
+    "lane_interest_bn": 42.317633,
+    "lane_stock_bn": 1308.887841,
+    "max_abs_diff": 4.51e-07,
+    "stock_bn": 1308.887841103
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "high",
+    "end": "low",
+    "interest_bn": 60.154604804,
+    "lane_interest_bn": 60.154605,
+    "lane_stock_bn": 1860.586817,
+    "max_abs_diff": 4.98e-07,
+    "stock_bn": 1860.586816869
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "central",
+    "end": "high",
+    "interest_bn": 71.573717576,
+    "lane_interest_bn": 71.573718,
+    "lane_stock_bn": 2213.780903,
+    "max_abs_diff": 4.85e-07,
+    "stock_bn": 2213.78090322
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "low",
+    "end": "high",
+    "interest_bn": 58.011459081,
+    "lane_interest_bn": 58.011459,
+    "lane_stock_bn": 1794.299145,
+    "max_abs_diff": 4.95e-07,
+    "stock_bn": 1794.299145444
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "high",
+    "end": "high",
+    "interest_bn": 78.604992002,
+    "lane_interest_bn": 78.604992,
+    "lane_stock_bn": 2431.258793,
+    "max_abs_diff": 4.89e-07,
+    "stock_bn": 2431.25879283
+   }
+  ],
+  "tolerance": 1e-06
+ }
+}

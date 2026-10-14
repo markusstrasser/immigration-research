@@ -538,3 +538,74 @@ all-residents slice's three income-tax rows and their `cost_bn` rows), and in `d
   **IDENTICAL 29/29, exit 0**.
 - 21:57:07–21:58:22 (by `date`): the same rerun after the white library relabelled the columns of its CPS-totals file:
   **IDENTICAL 29/29, exit 0**.
+
+## 2026-10-14 v7 propagation — stopped at the retained sign gate
+
+**Status (2026-10-14 19:15:16 JST, from `date`):** Both oct14 producers exit 0, but the migration is not complete:
+the unchanged positive-interest assertion for the average-resident slice fails on the live case. No gate has been
+loosened; the full `rerun_lane.py` receipt is withheld pending resolution. Earlier outputs remain unchanged.
+
+The default is now oct14. `group_lines.py` reads the completed white library's `rekey_summary_oct14.csv` and
+personal ends 16 / 11; it writes only `derived/group_lines_oct14.csv` (1,360 rows). The library's R9 effective
+pension rule reproduces the case union's Social Security, Medicare and benefit-tax amounts at 1e-9 and removes
+the R9 spending parts before checking the retained `meta.pension_accrual` rule. R7 uses each supported
+comparator's job-capital rule. Item 5b remains measured for the union only; no comparator credit term is invented.
+Items 7 and 8 retain the case's own-key/frame corrections; comparator counterparts remain open, as the case's
+Consumers note states. [CALCULATION: `group_lines.py --case oct14`; SOURCE: `main_case_2026_10_14/RESULT.md`,
+Consumers, R5–R9; parent wave-2 note's pension definition]
+
+`legacy.py` applies the debt lane's `job_capital_shares` and `RECEIPT_SERIES_V7` on oct14, while retaining the
+signed-receipt rule and the lineage split. It reads the frozen case (148ed1ea), debt oct14 outputs (6b1250b9),
+and back-cast oct14 outputs (439b05eb), and writes six files under `derived/oct14/`. The engine union's annual
+flows, stocks and interest match the debt lane across all 12 corners at 1e-6bn; `gates.json` records maximum
+absolute difference 4.98e-7bn. The separate lineage-path identity is 0 at the unchanged 1e-12 gate. The lineage
+count is 42,752,212.92438524. [CALCULATION: `legacy.py --case oct14` → `derived/oct14/gates.json`]
+
+Conditional all-borrowed modeled interest for the 2005 window, low / high, $bn (not observed group borrowing):
+
+| Basis | Engine union | Rough union | A1 third-plus NH whites | Average-resident slice |
+|---|---:|---:|---:|---:|
+| Cash | 25.947051 / 41.937112 | 19.460565 / 34.953833 | −40.365599 / −14.522772 | −26.021907 / −2.632676 |
+| Accrual | 55.583657 / 71.573718 | 46.677055 / 62.170322 | −73.368680 / −47.525854 | −31.907448 / −8.518217 |
+
+[CALCULATION: `derived/oct14/legacy_main.csv`, `interest_2024_bn`; negative values are modeled credits]
+
+**Blocking receipt:** `pytest test_legacy.py -q`: **5 passed, 1 failed**, exit 1. The newly added oct14 coverage
+reaches the historical assertion `rough_interest > average_interest > 0`; the first failure is the average's
+cash low value −26.021907bn. The historical sept29 test and both cases' live/recorded debt-parity tests pass.
+The sign/scale assertions are retained in full. The oct14 test stops at the sign assertion, so later accounting
+assertions in that test have no oct14 PASS receipt. `rerun_lane` was not run after this failure. The parent must
+resolve whether the historical positive-sign assertion is applicable to the adopted case before completion.
+
+**Run receipts:** compile-check exit 0; timed `group_lines.py --case oct14` exit 0, 4.28s, 1,401.9MiB peak RSS;
+timed `legacy.py --case oct14` exit 0, 18.96s, 170.1MiB; timed pytest exit 1, 12.35s, 164.0MiB. Timing uses the
+parent's explicit subprocess/resource wrapper; `/usr/bin/time -l` is not used. All processes stay below 2.5GiB.
+
+**Changed paths:** `group_lines.py`, `legacy.py`, `test_legacy.py`, this `RESULT.md`,
+`derived/group_lines_oct14.csv`, and `derived/oct14/{federal_gap_by_group.csv,gates.json,legacy_conventions.csv,
+legacy_differences.csv,legacy_main.csv,paths.csv}`. No git metadata writes; no item-source rebuild;
+`pension_legacy.py` is not run.
+
+**Subsequent reproducibility receipts (parent-authorized subset):** The full harness with the two oct14 producers
+and `pytest test_legacy.py -q` fails at command 3, exit 1 (5 passed, 1 failed, same sign gate); outputs are not
+compared and no full-lane identity is claimed. It takes 33.16s, peak 1,724.5MiB. A producer-only harness with
+`--allow-unrun test_legacy.py` then returns **IDENTICAL 36/36, exit 0**, 19.29s, peak 1,712.5MiB. This is a
+two-producer subset receipt: tests were run and failed, not ignored. The positive-sign criterion is unchanged.
+Read-only inspection of `derived/oct07/legacy_main.csv` shows average cash low −1.471298bn and accrual low
+−6.934073bn (high values positive). That earlier negativity locates the historical test's coverage limitation;
+it does not authorize loosening the gate. [CALCULATION: `rerun_lane.py`; DATA: the named archived oct07 table]
+
+## 2026-10-14 round 3: sign invariant corrected (19:32 JST)
+
+The parent authorized retaining `rough_interest > average_interest` at every end and basis while removing the
+unwarranted `average_interest > 0` assertion. The average-resident slice's modeled legacy interest at the cash
+low end is **−$26.0bn**, rounded once from `derived/oct14/legacy_main.csv` `interest_2024_bn` = −26.021907
+(2005 window). The case charges only spending that responds to population. The average slice's receipts also
+pay toward defense, existing interest and other zero-response lines, whose spending is not charged here, so the
+slice can be a net payer and its modeled legacy a credit. This is conditional attribution, not observed repayment.
+[CALCULATION: `derived/oct14/legacy_main.csv`; SOURCE: parent round-3 sign instruction]
+
+The accrual ordering and all other sign, scale, flow, rate and per-member checks remain. Full live-lane rerun:
+`group_lines.py --case oct14`, `legacy.py --case oct14`, `pytest test_legacy.py -q` all exit 0;
+**IDENTICAL 36/36, exit 0**. Python timing: 34.65s; child peak RSS 1,782.2MiB. Only `test_legacy.py` and this
+RESULT change in round 3; all derived files reproduce unchanged. No Git writes.

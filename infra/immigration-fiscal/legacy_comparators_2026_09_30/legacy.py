@@ -58,6 +58,10 @@ The debt lane's case_split builds the items into each corner and its twin (union
 the edit sets' union parts), so the added people, the case less its twin, carry only their own parts; the gates are
 oct05's, against the debt lane's derived/oct07/.
   OPENBLAS_NUM_THREADS=1 uv run python3 infra/immigration-fiscal/legacy_comparators_2026_09_30/legacy.py --case oct07
+
+The live default, oct14, reads group_lines_oct14.csv at v7's personal ends and writes derived/oct14/. It takes
+R7's federal collection shares and native receipt series from the debt lane, retaining all lineage and parity
+gates against that lane's completed oct14 outputs. Earlier keyed outputs remain archived.
 """
 from __future__ import annotations
 
@@ -73,12 +77,13 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
 LANE = FISCAL / "debt_legacy_2026_09_23"
-CASE = "sept29"          # the case setup() builds (main() sets it)
+CASE = "oct14"          # the live case setup() builds (main() sets it)
 # Per case: the groups' lines (group_lines.py), the debt lane's directory under its derived/, this lane's output
 # directory, and whether the case carries the lineage (oct05: the 2005 window on the lineage's composite path).
 CASES = {"sept29": dict(lines="group_lines_sept29.csv", lane_dir="sept29", out=HERE / "derived", lineage=False),
          "oct05": dict(lines="group_lines_oct05.csv", lane_dir="oct05", out=HERE / "derived" / "oct05", lineage=True),
-         "oct07": dict(lines="group_lines_oct07.csv", lane_dir="oct07", out=HERE / "derived" / "oct07", lineage=True)}
+         "oct07": dict(lines="group_lines_oct07.csv", lane_dir="oct07", out=HERE / "derived" / "oct07", lineage=True),
+         "oct14": dict(lines="group_lines_oct14.csv", lane_dir="oct14", out=HERE / "derived" / "oct14", lineage=True)}
 GROUPS = ("mexican_origin_engine", "mexican_origin_rough", "A1_third_plus_nh_white", "all_residents_slice")
 UNION = ("mexican_origin_engine", "mexican_origin_rough")
 BASES = ("cash", "accrual")
@@ -124,6 +129,8 @@ def setup() -> dict:
     D.subfunction_levels(responses, extras)
     cash_payload = D.case_payload(CASE, "cash")
     run_shares, _ = D.v4_shares(shares, extras, wb, D.apply_corrections(D.MODEL, cash_payload), cash_payload["meta"])
+    if CASE == "oct14":
+        D.job_capital_shares(run_shares, wb)
     jf = D.justice_federal(wb)
     ucf = D.uncompensated_federal(float(shares["central"].loc[D.LAST, "medicaid_and_chip_other_medical"]))
     hist = D.History(wb)
@@ -286,7 +293,8 @@ def federal_path(ctx: dict, group: str, basis: str, end: str, conv: str, lines: 
                 raise SystemExit(f"[BLOCKED] {group}: union-only line {lid} is not zero")
         if twin is not None:
             twin.update(justice=0.0, uc=0.0)
-    kw = dict(series=D.RECEIPT_SERIES_V4, signed_receipts=D.SIGNED_RECEIPTS_V4)
+    kw = dict(series=D.RECEIPT_SERIES_V7 if CASE == "oct14" else D.RECEIPT_SERIES_V4,
+              signed_receipts=D.SIGNED_RECEIPTS_V4)
     if twin is None:
         prog = D.programme_federal(ctx["hist"], c, end, conv, ctx["shares"], ctx["extras"], jf, ucf, parts, **kw)
     else:
@@ -393,7 +401,7 @@ def zero_audit(wb, carried: set[str]) -> dict:
     return dict(series_audited=len(refs), zero_before_2005=out)
 
 
-def main(case: str = "sept29") -> None:
+def main(case: str = "oct14") -> None:
     global CASE
     CASE = case
     conf = CASES[case]
@@ -593,6 +601,6 @@ def main(case: str = "sept29") -> None:
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="sept29", choices=list(CASES),
-                    help="sept29 (default, derived/), oct05 (v5, derived/oct05/) or oct07 (v6, derived/oct07/)")
+    ap.add_argument("--case", default="oct14", choices=list(CASES),
+                    help="oct14 (default, v7, derived/oct14/); sept29, oct05 and oct07 are archived cases")
     main(ap.parse_args().case)
