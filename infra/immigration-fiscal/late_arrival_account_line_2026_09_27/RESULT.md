@@ -794,3 +794,11 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/late_
 - Owned hotspots fixed after profiling: binary source verification returns Buffer until JSON decode is needed; live step callers use the validated V8 metadata-efficient engine application. Complete central output before/after is byte-identical (exit0,29.619s); full engine model equality and input immutability regression passes. Remaining legacy generation v6/v7 clone hotspot is outside this lane's ownership and deferred under frozen P7 inputs. Timings are not a normalized speedup claim.
 - `[APPROX]` Missing coverage arrival age remains allocated by fixed within-G1 population and item11 by corrected FIT t1. Actual204 new reporters use exact raw drivers and fine parent/relative owners; no reporter late50 assignment is inferred from t1. Four unused personal veteran alternatives carry an explicitly declared modeled source-anchor policy; parent verified zero response/effect at all32 specifications. Existing P7 parent vintage stays frozen. Source uncertainty preserves actual161 stacks and is conditional on fixed within-cell share assumptions.
 - CSV SHA256: late_arrival_line_oct15.csv `a158a44c4bb25d3f7b673b85a2ef522a4727113ac2f15af003d983f234d1e9e4`; medicaid_check_oct15.csv `4cecdb937a84238bd2c7f6ddf2d8bda10d32a60c53431aa8ade7bedc67d9ec7d`. Exact logs and profiling receipts are in scratch/prop8/late-world-result.md and late-performance.md. Lane changed-paths.txt includes every changed source, ignored output and profile.
+
+Parent rerun 2026-10-15 05:46 JST (from `date`), on the corrected v8 (d1a24d47; same key `oct15`) and the regenerated generation
+split (3aa9b48f). The world core's snapshot was re-captured by its producer (`world_ledger_2026_09_27/v8_snapshot.cjs
+--capture`, 30 of 126 hashes changed, all files the correction and the generation rebuild rewrote) and is now
+committed with this lane, which requires it. Only the coverage piece moves: central personal arrival-50+ cost, set
+(a) **3.102350–3.722458bn**, set (b) 4.381517–5.074607, cash (a) 4.541114–5.162138, cash (b) 5.829419–6.523414 (was
+3.120980–3.741215, 4.396669–5.089862, 4.559743–5.180895, 5.844571–6.538669). Reproduction IDENTICAL 40/40, exit 0.
+[DATA: `derived/late_arrival_line_oct15.csv`]
