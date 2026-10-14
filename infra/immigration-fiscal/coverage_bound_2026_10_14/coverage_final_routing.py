@@ -15,6 +15,7 @@ import coverage_bound as C
 from coverage_oct15 import BASE, digest, validate_frozen
 from dependency_manifest import validate_manifest
 from source_tables import load
+from export_pricing import constructed_prices
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from memory_budget import require_within_budget
@@ -180,6 +181,7 @@ def compare_final_prices():
             for key in ("weights", "added_weights", "generation", "age", "sex", "arrival", "hispanic",
                         "person_rows", "person_ph_seq", "person_pppos"):
                 C.require(np.array_equal(data[key], stored[key]), "final routing changed BASE frame " + key)
+        constructed_prices(data, audit)
         f, af = C.factors(data, rates, base)
         estimates, parts, people = C.evaluate(data, f, af)
         ends = {}

@@ -1309,3 +1309,35 @@ OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 uv run --no-project python3 scr
 ## R2C40 final receipt — 2026-10-15T03:58:49+09:00
 
 Own-mask comparator item11 is now measured and applied post-evaluator, with pinned paired gap SEs. [FRAMING-SENSITIVE] The labeled one-sided gap is preserved immediately below the measured row. Full White 210/210, full Black 96/96, C8 source-only 77/77, legacy annual-only 39/39, pension 43/43, Indian independent fiscal 71/71: all IDENTICAL, exit 0. Exact baselines unchanged; no feedback into M5; no annual charge to legacy stock. Break tables and Indian social/combined rows remain withheld. [CALCULATION: parent scratch c40-*-rerun.json/log; c40-validation.json; prop-d-result.md]
+
+## R3 first-year correction — 2026-10-15 04:59:09 JST
+
+**Verdict:** Independent first-year producer and checks PASS; full five-command break-condition replay BLOCKED on the external generation input. Existing generation and publication gates are retained. [CALCULATION: _cache/r3fix_independent_first_year.log, r3fix_break_stop.log]
+
+| First-year bn low / high | Before | Corrected |
+|---|---:|---:|
+| set | 300.476333 / 359.478629 | 294.382070 / 351.746107 |
+| cash | 216.436967 / 275.439263 | 210.342703 / 267.706741 |
+
+| Post-engine item by generation, bn low / high | Before | Corrected |
+|---|---:|---:|
+| set, mixed_unit_removal, G1 | -2.031196 / -1.310909 | -1.904946 / -1.184659 |
+| set, mixed_unit_removal, G2 | 1.223304 / 2.383540 | 1.051816 / 2.212053 |
+| set, mixed_unit_removal, G3plus | 11.547909 / 13.459060 | 10.459720 / 12.370871 |
+| set, coverage, G1 | 1.419816 / 2.278465 | 0.822214 / 1.336127 |
+| set, coverage, G2 | 5.970629 / 7.569746 | 3.554605 / 4.473130 |
+| set, coverage, G3plus | 4.611374 / 6.011666 | 2.664162 / 3.451524 |
+| cash, mixed_unit_removal, G1 | -2.031196 / -1.310909 | -1.904946 / -1.184659 |
+| cash, mixed_unit_removal, G2 | 1.223304 / 2.383540 | 1.051816 / 2.212053 |
+| cash, mixed_unit_removal, G3plus | 11.547909 / 13.459060 | 10.459720 / 12.370871 |
+| cash, coverage, G1 | 0.013893 / 0.872543 | -0.583709 / -0.069796 |
+| cash, coverage, G2 | 2.332943 / 3.932059 | -0.083082 / 0.835444 |
+| cash, coverage, G3plus | 1.604009 / 3.004301 | -0.343202 / 0.444159 |
+
+Item11 drops the principal `M5_owner_property` vector by generation. Item12 uses source-line response ratios with capital/property at zero, removes its per-generation mixed-property share, and holds production/unclassified residual prices. The independent implementation records generation parts and separates the changed coverage-response component from the four business-tax response components. Their combined change closes in every mode/set/end. [CALCULATION: first_year_v8.cjs:postAt, run; derived/first_year_item6_oct15.json]
+
+**129 independent checks pass**, including case-companion parity at **1e-9bn**. The two-command first-year/test reproduction is **IDENTICAL 77/77, exit 0**, **4.312s**, diagnostic peak child RSS **386,842,624 bytes**. The independent focused suite is **11 passed, 3 deselected**. Two publication tests remain deselected as before; the third is the currently stale generation-output closure test. The originally requested focused selection was also run: **11 passed, 1 failed, 2 deselected**, with the sole failure matching that stale generation total (368.9909 vs corrected 365.791930255). These are separately labeled checks, not a pass for the complete lane. [CALCULATION: _cache/r3fix_independent_replay.log, r3fix_tests_independent.log, r3fix_tests_full.log]
+
+The specified five-command replay ran commands 1–3 successfully and stopped at command 4 with `[BLOCKED] oct15 generation preflight: unclosed coverage a/low; run final generation account first` (32.652s). It did not compare artifacts or claim IDENTICAL. Generation files belong to a different worker. Parent action: rebuild `generation_account_2026_09_24/run_all.sh`, then rerun the five documented break commands. The unedited `engine_breaks_sept29.cjs:351` and `tables_oct15.py:375` also need their old full-post-engine wording updated by their owner. `tables_oct15.py` stays excluded until the declared debt/winners inputs exist. All other existing break outputs remain on their earlier receipt until the full replay passes. [CALCULATION: _cache/r3fix_first_replay.log, r3fix_break_stop.log; external caller inventory in main_case_2026_10_15/companion-consumers.md]
+
+Only the first-year reader, its focused tests/output, this appended record and the changed-path manifest were changed in this lane. No generation or external reader was edited.

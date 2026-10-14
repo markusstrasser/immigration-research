@@ -82,11 +82,11 @@ def pes_label(age, sex):
     return "50 and over " + ("males" if sex == 1 else "females"), (50, 100)
 
 
-def rate_at(age2020, sex, rates, base, mode="central", se_shift=0.0):
+def rate_at(age2020, sex, rates, base, mode="central", se_shift=0.0, da_max_age=29):
     label, band = pes_label(age2020, sex)
     cell = base[(*band, sex)]
     q = cell["base_over_census"]
-    if (age2020 <= 4 and mode != "pes_only") or (mode.startswith("da_") and age2020 <= 29):
+    if (age2020 <= 4 and mode != "pes_only") or (mode.startswith("da_") and age2020 <= da_max_age):
         series = mode.split("_")[1] if mode.startswith("da_") else "middle"
         return cell["da_residual_factor_" + series]
     estimate = rates["hispanic"][label]
@@ -95,7 +95,7 @@ def rate_at(age2020, sex, rates, base, mode="central", se_shift=0.0):
     return 1 / ((1 + nce) * q) - 1
 
 
-def factors(data, rates, base, mode="central", se_shift=0.0, birth_arm="mixture", arrival_arm="central"):
+def factors(data, rates, base, mode="central", se_shift=0.0, birth_arm="mixture", arrival_arm="central", da_max_age=29):
     n = len(data["age"])
     f, added_f = np.zeros(n), np.zeros(n)
     for i, (age, sex, gen, arrival, hispanic) in enumerate(zip(data["age"], data["sex"], data["generation"],
@@ -125,7 +125,7 @@ def factors(data, rates, base, mode="central", se_shift=0.0, birth_arm="mixture"
                     nce = rates["hispanic"]["all"]["nce_pct"] / 100
                     r = 1 / ((1 + nce) * base[(0, 100)]["base_over_census"]) - 1
                 else:
-                    r = rate_at(int(old_age), int(sex), rates, base, mode, se_shift)
+                    r = rate_at(int(old_age), int(sex), rates, base, mode, se_shift, da_max_age)
                 f[i] += fraction * prearrival * r
             if mode == "added_white":
                 r = 1 / (1 + rates["nonhispanic_white"]["all"]["nce_pct"] / 100) - 1
@@ -180,8 +180,14 @@ def denominator_arm(data, f, central, audit_path=None, output_path=None):
     current_weight = data["weights"][:, 0] + data["added_weights"][:, 0]
     for i, piece in enumerate(audit["denominator_pieces"]):
         amount = float(data["base_piece_prices"][i] @ current_weight)
-        addition = float(data["base_piece_prices"][i] @ numerator_delta_weight)
+        coverage_prices = data.get("constructed_piece_prices", data["base_piece_prices"])
+        addition = float(coverage_prices[i] @ numerator_delta_weight)
         end = piece["end"]
+        if piece.get("administratively_complete_use"):
+            require(np.count_nonzero(coverage_prices[i]) == 0,
+                    "constructed person has nonzero administratively complete use price")
+            held[end] += abs(amount)
+            continue  # its administrative numerator is already complete; no dilution either
         require(piece["denominator_scope"] == "actual_declared_driver", "unpriced national denominator piece")
         dilution = float(data["national_vectors"][i] @ delta_weight) / data["national_masses"][i]
         require(math.isfinite(dilution) and 1 + dilution > 0, "invalid added national denominator")

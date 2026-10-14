@@ -234,3 +234,127 @@ All seven live commands above completed with exit **0**, and the lane harness en
 With the parent's explicit replay authorization, all four actual-read pricing routes were recaptured through their original scientific and physical gates. The preceding four NPZs, four age CSVs, four audits, four manifests and both coverage JSONs are retained in `_cache/pre_atomic_source_epoch/`. The updated four principal guards and the household producer's three source pins pass. Four NPZs, four age CSVs and both coverage JSONs remain exact **10/10**; both calculators exit 0 with unchanged four repricing deltas. Current BASE set/cash exports passed at **2,190.4 / 2,142.7MB** and final set/cash at **2,285.1 / 2,237.6MB**; the exact route terminal receipts remain in the archived capture logs. [CALCULATION: `_cache/recapture_atomic_epoch.py`, preserved source epoch/capture logs, principal guard checks]
 
 The **current atomic-source epoch** seven-command harness exited **0**, every command exited **0**, and comparison ended **IDENTICAL: 91/91 files unchanged**. It used the protected absolute `TMPDIR=/Users/alien/Projects/immigration-research/infra/immigration-fiscal/coverage_bound_2026_10_14/_cache/repro-temp`. Its authoritative log is `_cache/rerun_oct15_atomic_source.log`; `_cache/rerun_oct15_final.log` is the preceding epoch. The unchanged focused suite has 77 tests. Final prose is applied after the comparison; source/data bytes are unchanged. [CALCULATION: current atomic-source harness status and log]
+
+## R3 coverage correction — 2026-10-15 04:50:30 JST
+
+**Verdict:** Corrected coverage pricing; central and every construction use zero on administratively complete justice-use drivers and their capital descendants. Observed base prices, union-completion carriers, counts, frozen BASE/final inputs, key `oct15`, and source epochs are preserved. [CALCULATION: export_pricing.py, coverage_oct15.py, coverage_final_routing.py]
+
+The four administrative justice-use components total **3.154827692bn** (public-order 2.880455117, state correction 0.274372575, including reporters). These are not the capital components. The matched justice-use capital descendants add **0.044176308bn low / 0.066264462bn high**. The complete rule therefore lowers every set by **3.199004000 / 3.221092154bn**, rather than the review lead of a uniform 3.155. Per-head justice and its capital descendants stay. [DATA: before/after `coverage_bound_oct15.json` line_parts; principal key/capital declarations in national_keys.py]
+
+| Item 12, bn low / high | Before | Corrected | Change |
+|---|---:|---:|---:|
+| set | 12.001818 / 15.859877 | 8.802814 / 12.638785 | -3.199004 / -3.221092 |
+| cash | 3.950844 / 7.808903 | 0.751840 / 4.587811 | -3.199004 / -3.221092 |
+
+| Item 12 by generation, bn low / high | Before | Corrected |
+|---|---:|---:|
+| set, G1 | 1.419816 / 2.278465 | 0.852209 / 1.707003 |
+| set, G2 | 5.970629 / 7.569746 | 4.471476 / 6.060463 |
+| set, G3plus | 4.611374 / 6.011666 | 3.479129 / 4.871319 |
+| cash, G1 | 0.013893 / 0.872543 | -0.553714 / 0.301080 |
+| cash, G2 | 2.332943 / 3.932059 | 0.833789 / 2.422777 |
+| cash, G3plus | 1.604009 / 3.004301 | 0.471764 / 1.863954 |
+
+### All constructions, repriced
+
+The pre-fix values for the two newly named DA boundaries are reconstructed on the preserved observed base price arrays; every previously published construction reproduces its actual pre-fix value within 1e-9bn before this comparison. [CALCULATION: parent scratch r3fix_document.py; preserved before JSON]
+
+| Construction | Set before | Set corrected | Cash before | Cash corrected |
+|---|---:|---:|---:|---:|
+| central | 12.001818 / 15.859877 | 8.802814 / 12.638785 | 3.950844 / 7.808903 | 0.751840 / 4.587811 |
+| pes_only | 10.856935 / 14.645240 | 7.657931 / 11.424148 | 2.805464 / 6.593769 | -0.393540 / 3.372677 |
+| da_low | -16.452276 / -16.911629 | -16.421971 / -16.881120 | -16.488837 / -16.948190 | -16.458532 / -16.917680 |
+| da_middle | 6.259687 / 8.124688 | 5.041197 / 6.897782 | 3.620898 / 5.485898 | 2.402407 / 4.258993 |
+| da_high | 23.704154 / 27.606824 | 21.218328 / 25.103833 | 18.226160 / 22.128830 | 15.740334 / 19.625839 |
+| pes_nce_minus_1se | 14.441393 / 18.989787 | 10.782084 / 15.305212 | 5.534846 / 10.083241 | 1.875537 / 6.398666 |
+| pes_nce_plus_1se | 9.613340 / 12.794612 | 6.865218 / 10.027514 | 2.398117 / 5.579389 | -0.350006 / 2.812291 |
+| proportional_pricing | 16.855003 / 20.760706 | 14.624047 / 18.514379 | 13.291146 / 17.196849 | 11.060190 / 14.950522 |
+| age_priced_all_age_rate | 15.909792 / 19.774327 | 13.640995 / 17.489866 | 12.422093 / 16.286628 | 10.153295 / 14.002166 |
+| proportional | 15.372701 / 19.071215 | 13.287420 / 16.971552 | 12.120688 / 15.819202 | 10.035407 / 13.719539 |
+| post_arrival_rate | 12.159989 / 16.206252 | 8.846629 / 12.870027 | 3.768418 / 7.814681 | 0.455058 / 4.478456 |
+| arrival27_none_pre2020 | 11.981733 / 15.830278 | 8.788656 / 12.615153 | 3.947164 / 7.795709 | 0.754086 / 4.580583 |
+| arrival27_all_pre2020 | 12.142413 / 16.067070 | 8.901922 / 12.804209 | 3.976608 / 7.901265 | 0.736117 / 4.638404 |
+| added_white | 11.635487 / 15.403852 | 8.484177 / 12.230796 | 3.675666 / 7.444032 | 0.524357 / 4.270976 |
+| birthday_younger | 11.944049 / 15.801694 | 8.743762 / 12.579310 | 3.880104 / 7.737749 | 0.679817 / 4.515365 |
+| birthday_older | 13.184392 / 17.050922 | 10.011660 / 13.856282 | 5.398937 / 9.265467 | 2.226205 / 6.070828 |
+| da_middle_0_9 | 11.754459 / 15.597135 | 8.555455 / 12.376043 | 3.703391 / 7.546067 | 0.504387 / 4.324975 |
+| da_middle_0_17 | 9.170987 / 12.740958 | 6.181589 / 9.730919 | 1.290417 / 4.860389 | -1.698981 / 1.850350 |
+
+### National Hispanic coverage implied by each DA boundary
+
+| Construction | Constructed true population | Implied all-age net coverage error | Difference from PES, in PES SE |
+|---|---:|---:|---:|
+| central | 65,431,223 | -5.1217% | -0.248 |
+| da_middle_0_9 | 65,416,937 | -5.1010% | -0.209 |
+| da_middle_0_17 | 65,160,848 | -4.7280% | +0.494 |
+| da_middle | 63,622,261 | -2.4240% | +4.841 |
+
+The PES national comparator is **−4.99%, SE 0.53 percentage points**. The table computes Census enumerated / constructed truth − 1, not blended base / truth − 1. The age-sex truth is blended-base population × (1 + the selected residual factor), using `inputs/controls/base_adjustments_sex.csv` and the pinned PES rates also exported in `derived/coverage_rates.csv`. [CALCULATION: coverage_oct15.py:national_constructions; SOURCE: pinned Census tables parsed by source_tables.py]
+
+Boundary criterion: use DA where it agrees with PES or PES understates young-child omissions (0–4); at 5–9 the estimates agree within about 0.2 PES SE, while they diverge at 10–17 by about 2.9 SE and at 18–29 by about 9.6 SE. PES is the direct measurement with an SE where the two diverge. DA through 9 and through 17 are named arms beside the retained DA-through-4 central; the all-age PES total alone cannot distinguish those three nearby totals. [DATA: derived/da_coverage.csv, coverage_rates.csv; INFERENCE: declared boundary criterion, not an identified optimal splice]
+
+The corrected cash low end is **negative under PES-only and some DA constructions**. Any earlier statement that every construction except DA-low is positive is superseded separately for each set by this table. These are modeled coverage transfers, not observations of the missing people; the construction envelope remains a sensitivity envelope, not a confidence interval. [CALCULATION: sets.cash.scenarios]
+
+### Key classification and source trace
+
+| Source lines / categories | Classification and coverage rule | Principal evidence |
+|---|---|---|
+| `public_order_safety` (`justice_use`) | Administrative group-use total; constructed coverage people take zero. Prisons: ACS institutional count/household-count rate; arrests: FBI ethnicity share plus custody scaling; ICE: administrative interior custody estimate. | `generation_account_2026_09_24/keys.py:207-241`; `cj_use_allocation_2026_09_23/RESULT.md:64-76,95-99`; `within_group_distribution_2026_09_29/households.py:879-888` |
+| `state_price_public_order_safety` (`justice_use`) | Same administrative use driver as parent; zero. | `households.py:211-213,845-849`; `national_keys.py:102-114` |
+| `pos_fed`, `pos_sl` (`capital`, custody-driver piece) | Administrative-use parent; zero. Excluding only `justice_use` would miss these pieces. | `households.py:1004-1028`; `national_keys.py:291-313`; principal capital declarations in `coverage_bound_2026_10_14/inputs/oct15_base/lines.json`: `rule.numerator_lines=[public_order_safety]` |
+| Same four source lines, per-head driver (`justice_per_head`, or `capital`) | Per head; retain. Police/fire/courts/border allocations not use-keyed remain in this part. | `keys.py:219-224`; `households.py:636-648,882-888`; `national_keys.py:102-108` |
+| `federal_income_tax`, `state_local_income_tax`, `other_personal_tax` (`taxes`) | Survey tax-model liability keys; retain. Federal benefit-tax offset is separately keyed on survey SS benefits in set, absent from cash. | `cps_imputation_keys_2026_09_23/common.py:128-154`; `households.py:870-874`; `national_keys.py:124-125` |
+| `employee_oasdi`, `employer_oasdi`, `employee_hi`, `employer_hi`, `self_employment_oasdi_hi`, `other_domestic_social_contributions` (`taxes`) | Survey wage/capped wage/self-employment/FICA-worker keys; retain. | `common.py:130-139`; `households.py:560-577`; `keys.py:149-161` |
+| `corporate_capital`, `corporate_labor`, `personal_property_tax`, `remaining_production_property`, `other_production_taxes` (`taxes`) | Survey capital/wage keys; retain. Completion reporter carriers for the three production taxes follow declared own-job principal receipts instead of the ordinary capital vector; still survey records, not administratively complete group-use totals. | `common.py:130-145`; `households.py:932-942`; `national_keys.py:245-252` |
+| `general_sales_tax`, `excise_selective_sales`, `customs_duties`, `personal_current_transfers` (`taxes`) | Survey SPM-resources consumption key; retain. | `common.py:145`; `households.py:560-577` |
+| `personal_motor_vehicle` (`taxes`) | Per adult aged 18+; retain. | `common.py:137`; source row `personal_motor_vehicle.key=adults` in frozen `lines.json` |
+| `modeled_owner_property` (`taxes`) | Survey household tenure/value × state rate / household size, SPM-shared; retain as modeled survey key, not an administrative property-tax group total. | `keys.py:50-57`; `households.py:579-586` |
+| `tenant_occupied_property` (`taxes`) | Survey tenant-headcounts by state, normalized to modeled group rent; retain. Reporter completion uses declared G3 age-price proxy. | `households.py:221-246,943-947`; `national_keys.py:253-261` |
+| `medicare_supplementary_premiums` (`taxes`) | Survey Medicare coverage indicator; retain. | `common.py:135,146`; `keys.py:149-161` |
+| `enterprise_surplus` (`enterprise`) | Per resident head; retain. | `households.py:570`; frozen source row key `resident_population` |
+| `housing_enterprise_surplus` (`transfers`, native child `taxes`) | Survey housing-assistance key; retain. Native child's category label differs, source parent remains the same. | `households.py:584,875-876`; native source verification `national_keys.py:199-235` |
+| `medicaid_and_chip_other_medical` (`health`, native child `transfers_per_head`) | Two survey parts: MEPS mean Medicaid paid dollars by age/US birth transported to CPS exposure, plus survey uninsured person-years. Retain both. No Medicaid administrative enrollment/use numerator is used here. | `keys.py:60-82,252-280`; `households.py:564-566,889-892`; `national_keys.py:109-111` |
+| `medicare` (`health`) | MEPS age/birth donor payer mean × CPS exposure; retain. Set includes separately priced HI accrual below. | `keys.py:60-82`; `households.py:864-869` |
+| `military_medical`, `veterans_other`, `health_services`, `state_price_health_services` (`health`, native `other_shared`) | MEPS TRICARE, VA and other-public payer donor means × CPS exposure; retain. State-price correction inherits parent key. | `keys.py:60-82`; `households.py:564,572,845-849` |
+| `social_security`, `medicare` (`pension_accrual`, set only) | Survey receipts-derived composite (OASDI / HI, with SE shares), fixed generation coefficients; retain. Completion reporters instead use the declared person-pension profile. These are modeled claims, not administrative current-use totals. | `households.py:835-843,858-869,952-955`; `national_keys.py:76-95,264-266` |
+| `social_security` (cash `transfers`), `railroad_retirement`, `ssi`, `unemployment`, `income_security_services`, `family_and_general_assistance`, `veterans_life_insurance`, `veterans_pension_disability`, `veterans_readjustment`, `workers_compensation`, `black_lung`, `temporary_disability`, `other_federal_benefits` (`transfers`) | Survey benefit dollar keys (SS, SSI, unemployment, cash assistance, veterans, workers comp, all cash); retain. `other_federal_benefits` also has routed Pell school/P pieces. | `common.py:157-182`; `households.py:820-830,902-912` |
+| `snap`, `energy_assistance`, `other_state_welfare`, `housing_subsidies` (`transfers`) | Survey SPM-unit SNAP, energy, WIC and housing-assistance dollars split per member; retain. | `common.py:160-172`; `households.py:560-577` |
+| `refundable_tax_credits` (`transfers`) | Survey modeled EITC + ACTC, with the case's declared item routing; retain. | `common.py:168`; `households.py:902-912` |
+| `education_services`, `school_reprice`, `college_rekey`, routed school/P parts of `other_federal_benefits` (`schools`, `education_other`) | School part: survey October CPS public K–12 enrollment rates × state pupil spending. P part: state finance per population. Retain both; P is per-head state pricing, not a complete observed group enrollment total. Routed corrections inherit these components. | `keys.py:85-107`; `school_enrollment_2026_09_20/measurement.py:105-143`; `households.py:823-829,902-912` |
+| `education_benefits` (`transfers_per_head`) | State item-P per-population key; retain. | `keys.py:96-107`; `households.py:574-576`; frozen row key `postsecondary` |
+| `employment_training`, `other_state_benefits`, `pension_guaranty` (`transfers_per_head`) | Per working-age head, all heads, age65+ head respectively; retain. | `common.py:173-176`; frozen rows' selected keys `working_age`, `population`, `age65plus` |
+| `general_public_services` (`general_government`), `housing_community_services` (`other_shared`), `recreation_culture`, `state_price_recreation_culture` (`roads_parks`, native `other_shared`) | Per head; retain, with declared service responses. | `common.py:173`; `households.py:649-666,845-849` |
+| `economic_affairs_services` (`roads_parks`) | Survey SPM resources; retain. | `common.py:172`; frozen row key `resources` |
+| `roads_vmt_fed`, `roads_vmt_sl` (`roads_parks`, native `other_shared`) | Mixture of age5+ per-head miles driver and survey consumption/resources freight/old key; retain. National miles calibrate the rule, not an administratively observed group miles total. | `households.py:850-857`; `national_keys.py:115-119` |
+| `k12`, `college`, `k12_user_fees`, `college_user_fees` (`capital`) | Inherit survey school and state-P per-head parents, including routes; retain. | `households.py:1004-1028`; `national_keys.py:291-313` |
+| `health_fed`, `health_sl`, `health_fed_user_fees`, `health_sl_user_fees` (`capital`) | Inherit MEPS health parent; retain. | Same capital parent code; principal rules name `health_services` |
+| `gps_fed`, `gps_sl`, `rec_fed`, `rec_sl` (`capital`) | Per-head general-service/recreation parent; retain. | Same capital parent code; principal rules name `general_public_services` / `recreation_culture` |
+| `hwy_fed`, `hwy_sl`, `air_fed` (`capital`) | Roads/resources parent mixture (air: resources); retain. | `households.py:1016-1028`; `national_keys.py:302-313` |
+| `ent_housing_sl` (`capital`) | Survey housing-support parent; retain. | `households.py:1023-1028`; principal numerator `housing_subsidies` |
+| `ent_transit_sl`, `ent_airports_sl`, `ent_ports_sl`, `ent_power_sl`, `ent_water_sl`, `ent_sewer_sl`, `ent_tolls_sl`, `ent_power_fed`, `ent_other_sl`, `ent_other_fed` (`capital`) | Enterprise-surplus per-head parent; retain. | `households.py:1006-1014`; `national_keys.py:295-301` |
+| `production` (`production`) | Survey earnings × skill cell, generation production totals solved from the case; retain, labeled modeled production transport. | `households.py:669-700,1029-1031`; `national_keys.py:287-290` |
+| `mixed_unit_removal` (`other_shared`) | Explicit generation per-member distribution assumption of a post-engine modeled amount; not an administrative-use total. Retain in coverage prices under current authorized personal pricing, while shared companion must omit item11 itself. | `households.py:1143-1151`; `national_keys.py:236-239` |
+| `lane_constants`, `lane_residual`, `net_profile_calibration` (`other_shared` / separate net correction) | Unassigned/model residuals explicitly spread per generation head; retain with assumption label, not misclassified as observed use. | `households.py:948-949,990-992`; `export_pricing.py:250-257,279-299` |
+
+### Material qualifications
+
+- Schools are survey-keyed **for group use**, although national/state dollar costs and national controls are administrative. Public K–12 rates are October CPS weighted enrollment / weighted population (`measurement.py:128-143`), then transported to March person cells (`keys.py:85-107`); there is no administrative group pupil-count numerator that cancels a corrected group count.
+- Medicaid is **MEPS payer-mean transport**, not CPS self-reported Medicaid dollars and not administrative Medicaid group use (`keys.py:60-82`). MEPS exposure excludes only uncovered infants, guarded at `:70-72`. Its survey bias and transport assumptions survive the repricing.
+- Uninsured care uses CPS `NOCOV_CYR` full/half uninsured person-years and offsets from MEPS/program allocation keys (`keys.py:252-280`). AHA national uncompensated-care totals price that exposure; they do not observe the missing group's total use. Administrative national dollars alone therefore do not justify zeroing it.
+- Administrative-use justice is still a modeled attribution: institutional residence is not correctional custody; arrest/Hispanic-to-Mexican and nativity splits use proxies; ICE interior share uses length-of-stay assumptions; years differ (`cj_use_allocation.../RESULT.md:74,97-99,113-121`). The exclusion means the existing administrative numerator already covers the missed people under the adopted model, not that every numerator perfectly observes their true use.
+- Reporter and observed native-child completion pieces are a separate population route. Reporters retain all declared justice carriers (`households.py:932-988`). Native children verify their own-age principal costs (`national_keys.py:199-235`), rather than matching arbitrary adult custody vectors. Current observed children are minors; do not infer a generic exemption for future adult-native carriers.
+- Zero-response lines never enter the nonzero-price inventory (`export_pricing.py:227-228`): defense, existing interest, excluded subsidies/external flows, and zero receipt carriers do not require a new coverage charge.
+
+### Export and frozen-routing guards
+
+`net_id` / `net_added` and `base_piece_prices` preserve observed-account price closure. `excluded_use_prices` records the exact 161-replicate administrative-use prices; `constructed_piece_prices` is zero on those drivers. Call `export_pricing.constructed_prices(data, audit)` after observed closure checks and before coverage evaluation. It rejects any nonzero constructed administrative-use price, requires identical prices elsewhere and checks excluded central prices against the traced pieces. Both BASE and final-routing calculators use it; the omissions-denominator arm also holds these complete administrative pools fixed. Other readers that evaluate constructed people must select this rule too. [CALCULATION: export_pricing.py:constructed_prices; negative tests in test_oct15.py]
+
+Frozen final routing refers to its exact original coverage SHA `9843ba1db05666d11fc70008f6183b3562e805de8cb2b152ba7286d06092e367`. That original source is preserved byte for byte at `inputs/final_routing_coverage_source.json`; the AST adapter substitutes only that source-read path after a unique-boundary and receipt-hash check. All original upstream coverage/age/generation gates then run; observed_snapshot removes the old coverage block before corrected prices are evaluated. No existing frozen input or hash was changed. [CALCULATION: export_pricing.py:construction, frozen_coverage_source; test_frozen_final_routing_requires_its_exact_original_coverage_receipt]
+
+Replay receipts are appended after the final stable-code harness. The original v7 and earlier oct15 prose above remains an execution/history record.
+
+### R3 final receipt — 2026-10-15 04:59:09 JST
+
+All seven specified live commands exit 0; **IDENTICAL 88/88, exit 0**, **79.797s** wall. All four person-price producers pass their own 2.5GB physical-footprint gates; the wrapper's diagnostic child RSS peaks at **2,894,954,496 bytes**, a macOS RSS over-read that is not the physical-footprint gate. The focused suite has **85 tests**. Final routing remains within 0.5bn of BASE: **+0.016270768 / +0.016390852bn** in both sets. Existing frozen input bytes and earlier-case outputs are separately checked against the worker's entry hashes. No source pin was changed, and no historical writer was run. [CALCULATION: _cache/r3fix_stable_replay.log; pricing_audit_oct15_*.json.gates; coverage_final_routing_check.json]
+
+Preparation replay records are also retained: the first compared changed adapter/audit bytes; the next differed on two old adapter-hash audit receipts; the final stable-code replay above is authoritative. Prose receipts and changed-path manifests are appended after comparison; scientific outputs stay unchanged. [CALCULATION: _cache/r3fix_prepare_replay.log, r3fix_final_replay.log, r3fix_stable_replay.log]

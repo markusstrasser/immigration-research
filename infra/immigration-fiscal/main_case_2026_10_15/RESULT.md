@@ -146,3 +146,59 @@ This table specifies propagation; it does not claim those external consumers wer
 - 2026-10-15 01:39 JST — **FINAL PASS:** default live coverage-on G5 IDENTICAL45/45, exit0;297.013s, peak child RSS2,139,439,104bytes. All producers and old-case preservation checks pass. Live source and both payloads remain non-STUB; candidate/adoptednull. No git writes, no old-lane edits, no external consumer migration or adoption in this task. [CALCULATION: _cache/g5_final.log; derived/summary.json v8; derived/corrections*.json]
 - 2026-10-15 02:07 JST — Adopted by the parent: STATUS "adopted", decision written, live_case.json on oct15. Rebuild PASS (233.272 s), rerun IDENTICAL 45/45, exit 0 (223.228 s, peak child RSS 2,189,393,920 bytes). The coverage base pin compares the stamp-neutral payload; its hashes equal the coverage file's pins.
 - 2026-10-15 02:26 JST — Round 3 (R3-03, GPT-6 Astra axes): `coverage.cjs` served the historical stub, whose v7 set prices also reach the cash set (+7.14 / +7.02bn on cash), whenever the live coverage file was missing, and the package would still stamp itself adopted. It now stops `[BLOCKED]` unless a fixture asks for the stub (`{stub:true}`); `coverage_check.cjs` adds the negative test for both sets (13 checks). Rebuild PASS, rerun IDENTICAL 45/45, exit 0 (peak child RSS 2,397,732,864 bytes); only `derived/coverage_check.json` changed.
+
+## R3 corrected coverage and companions — 2026-10-15 04:54:06 JST
+
+**Verdict:** Corrected in place under the same adopted v8 stamp and `oct15` key. Central engine edits and coverage-off payload pins are unchanged; item12 and the named companions are repriced. [CALCULATION: derived/summary.json v8; G1 base reconstruction]
+
+| Whole-case bn low / high | Before | Corrected | Change |
+|---|---:|---:|---:|
+| set | 368.990934 / 459.202877 | 365.791930 / 455.981785 | -3.199004 / -3.221092 |
+| cash | 284.951568 / 375.163510 | 281.752564 / 371.942418 | -3.199004 / -3.221092 |
+
+The complete denominator remains **45,230,062.300758570** modeled people. Corrected per-member dollars are **8087.362954 / 10081.387497 set** and **6229.320707 / 8223.345251 cash**; personal ends remain 16 / 11 in both methods/sets. The population, static-removal frame and pension timing distinction are unchanged. [DATA: v8.population, per_member_usd, end_specifications]
+
+Coverage now removes every traced administrative-use justice price and its capital descendants. Its total correction is −3.199004000 / −3.221092154bn, in both sets; the justice-use amount alone is −3.154827692bn. See the coverage lane R3 appendix for every line-key classification, per-generation before/after values and every construction. Item10 reporters retain their original carriers. [DATA: coverage_bound_2026_10_14/RESULT.md R3; coverage_bound_oct15.json]
+
+### Named companions before and after
+
+| Companion, bn low / high | Set before | Set corrected | Cash before | Cash corrected |
+|---|---:|---:|---:|---:|
+| lineage_arm_a | 354.863034 / 442.900200 | 351.664030 / 439.679108 | 272.831975 / 360.869141 | 269.632971 / 357.648049 |
+| lineage_arm_c | 383.111545 / 475.497841 | 379.912541 / 472.276749 | 297.063871 / 389.450167 | 293.864867 / 386.229075 |
+| lineage_c3_minus_se | 373.208050 / 463.286601 | 370.009046 / 460.065509 | 289.228240 / 379.306791 | 286.029236 / 376.085699 |
+| lineage_c3_plus_se | 364.773816 / 455.119151 | 361.574812 / 451.898059 | 280.674893 / 371.020228 | 277.475889 / 367.799136 |
+| shared_allocation | 337.180496 / 430.058863 | 323.241475 / 412.306081 | 247.461003 / 340.339371 | 233.521983 / 322.586588 |
+| school_within_district | 339.463270 / 432.171370 | 335.421706 / 428.107787 | 255.423903 / 348.132004 | 251.382339 / 344.068421 |
+| ancestry_share_g4_at_nothing | 240.639799 / 303.993106 | 238.340979 / 301.678594 | 180.243161 / 243.596467 | 177.944340 / 241.281956 |
+| ancestry_share_g4_at_bound | 294.601718 / 368.962136 | 291.893119 / 366.234914 | 225.097814 / 299.458232 | 222.389215 / 296.731010 |
+| first_year | 300.476333 / 359.478629 | 294.382070 / 351.746107 | 216.436967 / 275.439263 | 210.342703 / 267.706741 |
+
+The first-year companion prices each coverage fiscal part at its declared source line’s first-year response divided by its central response; capital-return and property parts are zero. Production and explicitly unclassified residual/calibration parts stay at their declared central prices. Coverage’s item11 piece removes its generation’s owner-property fraction. Item11 itself removes `M5_owner_property` by the full principal generation vector; its other source parts stay. The school-within-district companion applies its own school response to the coverage school parts. The shared companion excludes all of item11; coverage stays at central personal prices. These are declared price transports, not new observation of missing people or a fresh missing-person counterfactual. [CALCULATION: companions.cjs:companionPost, adjustedRun, firstYear]
+
+Named companion totals are computed by the explicit companion helpers. Generic raw payload/specification evaluation still carries central post-engine metadata; a reader implementing the shared named companion must apply its item11-off rule to its own splits and metadata. The caller inventory and required source/cache/closure updates are in [companion-consumers.md](companion-consumers.md). Those external readers were inspected and not edited. [DATA: caller trace; CALCULATION: main_case.cjs:run, companions.cjs]
+
+### Item9 normal-share arms, beside only
+
+The premise that foreign-source income is all supernormal is an assumption, not a measured split. Source-part normalization and a uniform national normalization differ because the adopted source key is industry-specific. `0.37/(1−foreign_fraction)` is computed for every semantic part/allocation. A positive control verifies that the matched arm restores exactly the engine’s lost corporate normal amount at the same end; coverage corporate parts use the declared generation fraction and retain unclassified calibration. [DATA: v8.normal_share_foreign_supernormal]
+
+| Normal-share arm, bn low / high | Set | Cash | High-end change in both sets |
+|---|---:|---:|---:|
+| Matched source-part foreign fractions | 365.791930 / 454.512657 | 281.752564 / 370.473290 | -1.469128 |
+| Uniform national federal foreign fraction | 365.791930 / 452.925754 | 281.752564 / 368.886388 | -3.056030 |
+
+The national federal foreign share is 0.159613053, giving normal share 0.440273378; the lineage’s effective source fraction is smaller. Thus the review’s uniform-national-share argument does not reproduce its claimed −1.40bn high change. Both constructions are published explicitly; neither changes the headline. These are fixed-end arms, not a new end search. [DATA: job_capital_key_refine_2026_10_14/derived/k236.json K2; item_foreign.cjs fractions; v8.normal_share_foreign_supernormal]
+
+### Gates, resource accounting and remaining propagation
+
+G1–G4 and the retained sign/lineage/source checks passed the first full rebuild. The initial harness appropriately reported changed artifacts. Final G5 and coverage replay receipts are appended below after stable-code completion. The resource wrapper reports Python perf_counter and child getrusage RSS without rejecting a macOS RSS over-read; Python producers continue to enforce their own 2.5GB physical-footprint guards. Earlier prose claiming that the wrapper itself enforces a physical budget via child RSS is superseded. [CALCULATION: measure_run.py; _cache/r3fix_first_rebuild.log]
+
+The independent first-year reader has its own implementation of the same source-line/property rules, with generation parts and coverage response deltas. It matches this case at 1e-9bn with 129 checks. The complete break-condition five-command replay stops on its unchanged generation preflight: `[BLOCKED] oct15 generation preflight: unclosed coverage a/low; run final generation account first`. The parent must rebuild the final generation account before replaying that lane. The worker did not alter external source data, generation gates or frozen inputs to bypass this stop. Its table producer remains excluded until its declared debt/winners inputs exist. [CALCULATION: break_conditions_2026_09_29/_cache/r3fix_independent_first_year.log, r3fix_break_stop.log]
+
+### R3 final case receipt — 2026-10-15 04:59:09 JST
+
+**G1 PASS; G2 PASS; G3 ten exact v7 data files; G4 1,682 checks; G5 IDENTICAL 46/46, exit 0.** Complete stable-code replay **216.349s**, diagnostic peak child RSS **2,277,785,600 bytes**. Coverage fixtures, source completion checks, sign reversal and lineage gates pass. The default adopted stamp and neutral coverage-off payload pins hold. [CALCULATION: derived/{g1,contract,generality,api_check,coverage_check}.json; _cache/r3fix_final_replay.log]
+
+The initial full rebuild passed all producers and reported DIFFERS (272.610s), including in-flight source preparation and the expected changed scientific outputs. A final main-case preparation run passed (91.565s) before the stable-code G5 above. The early normal-share probe is superseded: its sum included inactive receipt carriers; the final arm selects only active corporate carriers and fails unless restoring the source amount equals the whole engine cost change. [CALCULATION: _cache/r3fix_first_rebuild.log, r3fix_refresh_main.log, r3fix_normal_probe.log; companions.cjs:normalShareArm]
+
+The inherited overlap/model-clone costs are the already profiled hotspots in performance.md. Rewriting those source/engine modules is outside this lane-only task; that existing owner follow-up remains. This task does not claim a whole-gate speedup. [DATA: performance.md source/clone profiles]

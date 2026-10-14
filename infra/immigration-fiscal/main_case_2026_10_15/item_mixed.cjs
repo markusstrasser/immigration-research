@@ -116,4 +116,4 @@ function build(ctx, arm, which) {
 }
 // Validate both methods and all covariance stacks at module load.
 for (const w of ["set", "cash"]) for (const reading of READINGS) sourceRow(w, reading, `bounded_${reading}`);
-module.exports = { get, build, S, ARMS, GENS, READINGS, CENTRAL_ADDED_G3, CENTRAL_RESIDUAL_G3, countsOf, sdr };
+module.exports = { get, build, S, ARMS, GENS, READINGS, CENTRAL_ADDED_G3, CENTRAL_RESIDUAL_G3, countsOf, sdr, sourceRow };

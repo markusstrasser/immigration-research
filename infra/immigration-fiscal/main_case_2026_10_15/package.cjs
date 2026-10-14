@@ -19,7 +19,7 @@ const NEW=[
  {id:"foreign_source_tax",kind:"edit_set",label:"domestic-source corporate tax",arms:{},build:FOREIGN.build},
  {id:"union_completion",kind:"edit_set",label:"complete observed membership",arms:{broad_report:{label:"broad reporters"},all_age_extrapolation:{label:"all-age extrapolation"}},build:(ctx,arm,which)=>require("./item_union.cjs").build(ctx,arm,which)},
  {id:"mixed_unit_removal",kind:"post_engine",label:"bounded unified removal",arms:MIXED.ARMS,build:MIXED.build},
- {id:"coverage",kind:"post_engine",label:"coverage people and cost",arms:{da_middle:{},da_low:{},da_high:{},pes_only:{}},build:(ctx,arm,which)=>({edits:[],parts:{},meta:{coverage:COVER.get(which,arm||"central")}})},
+ {id:"coverage",kind:"post_engine",label:"coverage people and cost",arms:{da_middle:{},da_low:{},da_high:{},pes_only:{},da_middle_0_9:{},da_middle_0_17:{}},build:(ctx,arm,which)=>({edits:[],parts:{},meta:{coverage:COVER.get(which,arm||"central")}})},
  {id:"item6_low_corporate_response",kind:"response",label:"item6 low corporate-response parameter",arms:{},build:(ctx,arm,which)=>({edits:[],parts:{},meta:{item6_low_corporate_response:{value:ITEM6_LOW_CORPORATE_RESPONSE,default:1}},responses:Object.fromEntries(FOREIGN.LINES.map(id=>[id,{...ctx.B.correctionsPayload().meta.responses[id],low:ITEM6_LOW_CORPORATE_RESPONSE}]))})},
 ];
 const NEW_IDS=NEW.map(x=>x.id), REGISTRY=V7.REGISTRY.concat(NEW);

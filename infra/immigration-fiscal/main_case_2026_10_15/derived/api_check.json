@@ -1,7 +1,7 @@
 {
  "gate": "G4",
  "pass": true,
- "checks": 1659,
+ "checks": 1682,
  "records": [
   {
    "name": "v7 exported name Engine retained",
@@ -8299,6 +8299,121 @@
   },
   {
    "name": "guard unknown arm",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set first-year own post-engine repricing",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set first-year generation post parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set first-year coverage capital/property zero",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set first-year generation post parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set first-year coverage capital/property zero",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set first-year generation post parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set first-year coverage capital/property zero",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set first-year generation post parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set first-year coverage capital/property zero",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set shared excludes removal item11",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set school coverage follows its response",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash first-year own post-engine repricing",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash first-year generation post parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash first-year coverage capital/property zero",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash first-year generation post parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash first-year coverage capital/property zero",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash first-year generation post parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash first-year coverage capital/property zero",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash first-year generation post parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash first-year coverage capital/property zero",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash shared excludes removal item11",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash school coverage follows its response",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "guard companion source repricing cannot silently carry missing source",
    "pass": true,
    "details": null
   }

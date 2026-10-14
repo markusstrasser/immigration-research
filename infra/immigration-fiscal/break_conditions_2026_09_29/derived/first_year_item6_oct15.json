@@ -15,8 +15,8 @@
     }
   },
   "central": [
-    368.9909342553624,
-    459.20287674292126
+    365.7919302554848,
+    455.9817845889793
   ],
   "population_scope": {
     "without_coverage": 43269648.68157841,
@@ -25,49 +25,49 @@
     "coverage": 1960413.6191801599
   },
   "thresholds": {
-    "midpoint_bn": 414.0969054991418,
-    "low_bn": 310.57267912435634,
-    "high_bn": 517.6211318739273
+    "midpoint_bn": 410.886857422232,
+    "low_bn": 308.16514306667403,
+    "high_bn": 513.6085717777901
   },
   "variants": {
     "fixed_capital": {
       "set": [
-        300.4763332025574,
-        359.47862911258767
+        294.38206975257606,
+        351.74610737913224
       ],
       "cash": [
-        216.43696662314514,
-        275.43926253317517
+        210.3427031731638,
+        267.70674079971974
       ]
     },
     "whole": {
       "set": [
-        263.9401713365318,
-        332.1221429029239
+        256.3294142101032,
+        323.2824976056137
       ],
       "cash": [
-        179.90080475711954,
-        248.08277632351138
+        172.29004763069094,
+        239.24313102620124
       ]
     },
     "corporate_only": {
       "set": [
-        290.97742569141644,
-        359.15939725780845
+        284.4334984991075,
+        351.38658189461796
       ],
       "cash": [
-        206.93805911200417,
-        275.120030678396
+        200.39413191969527,
+        267.3472153152055
       ]
     },
     "off": {
       "set": [
-        332.608607806436,
-        374.5629346403657
+        327.92123441273276,
+        367.47704418265937
       ],
       "cash": [
-        248.56924122702375,
-        290.5235680609532
+        243.8818678333205,
+        283.43767760324687
       ]
     }
   },
@@ -2185,21 +2185,343 @@
       "cost_change_from_whole_bn": 7.803086506332098
     }
   ],
+  "post_components": [
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "low_end_16",
+      "cost_change_from_whole_bn": 1.5164936764472756,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.90494642764261,
+          "coverage_bn": 0.8557995278911061
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 1.051816349410487,
+          "coverage_bn": 3.6800008478377526
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 10.45972045038345,
+          "coverage_bn": 2.779007759217875
+        }
+      }
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "high_end_11",
+      "cost_change_from_whole_bn": 1.1071235638547252,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.1846592610966997,
+          "coverage_bn": 1.293722747311198
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 2.2120525773612574,
+          "coverage_bn": 4.28450492580084
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 12.37087098115845,
+          "coverage_bn": 3.2830437755805217
+        }
+      }
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "low_end_16",
+      "cost_change_from_whole_bn": 0,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.90494642764261,
+          "coverage_bn": 0.5285521908693868
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 1.051816349410487,
+          "coverage_bn": 3.0840206718776275
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 10.45972045038345,
+          "coverage_bn": 2.185741595752444
+        }
+      }
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "high_end_11",
+      "cost_change_from_whole_bn": 0,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.1846592610966997,
+          "coverage_bn": 1.0505769527172522
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 2.2120525773612574,
+          "coverage_bn": 3.8544784379899992
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 12.37087098115845,
+          "coverage_bn": 2.8490924941305824
+        }
+      }
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "low_end_16",
+      "cost_change_from_whole_bn": 1.0668299341197107,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.90494642764261,
+          "coverage_bn": 0.7670445761022746
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 1.051816349410487,
+          "coverage_bn": 3.493374262945767
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 10.45972045038345,
+          "coverage_bn": 2.604725553571128
+        }
+      }
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "high_end_11",
+      "cost_change_from_whole_bn": 1.0668299341197107,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.1846592610966997,
+          "coverage_bn": 1.2890693379501417
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 2.2120525773612574,
+          "coverage_bn": 4.263832029058137
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 12.37087098115845,
+          "coverage_bn": 3.2680764519492653
+        }
+      }
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "low_end_16",
+      "cost_change_from_whole_bn": 2.9233837327253838,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.90494642764261,
+          "coverage_bn": 1.1484574669311862
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 1.051816349410487,
+          "coverage_bn": 4.245998698996944
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 10.45972045038345,
+          "coverage_bn": 3.3272420252967123
+        }
+      }
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "high_end_11",
+      "cost_change_from_whole_bn": 1.7537548396038085,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.1846592610966997,
+          "coverage_bn": 1.4301921075568385
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 2.2120525773612574,
+          "coverage_bn": 4.542303070397071
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 12.37087098115845,
+          "coverage_bn": 3.5354075464877326
+        }
+      }
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "low_end_16",
+      "cost_change_from_whole_bn": 1.516493676447273,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.90494642764261,
+          "coverage_bn": -0.5501234021026402
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 1.051816349410487,
+          "coverage_bn": 0.04231431992198337
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 10.45972045038345,
+          "coverage_bn": -0.22835698866517473
+        }
+      }
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "high_end_11",
+      "cost_change_from_whole_bn": 1.1071235638547297,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.1846592610966997,
+          "coverage_bn": -0.11220018268254862
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 2.2120525773612574,
+          "coverage_bn": 0.6468183978850665
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 12.37087098115845,
+          "coverage_bn": 0.2756790276973543
+        }
+      }
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "low_end_16",
+      "cost_change_from_whole_bn": 0,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.90494642764261,
+          "coverage_bn": -0.8773707391243604
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 1.051816349410487,
+          "coverage_bn": -0.5536658560381422
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 10.45972045038345,
+          "coverage_bn": -0.821623152130602
+        }
+      }
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "high_end_11",
+      "cost_change_from_whole_bn": 0,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.1846592610966997,
+          "coverage_bn": -0.3553459772764952
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 2.2120525773612574,
+          "coverage_bn": 0.21679191007422227
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 12.37087098115845,
+          "coverage_bn": -0.15827225375258458
+        }
+      }
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "low_end_16",
+      "cost_change_from_whole_bn": 1.0668299341197098,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.90494642764261,
+          "coverage_bn": -0.6388783538914727
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 1.051816349410487,
+          "coverage_bn": -0.1443122649700025
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 10.45972045038345,
+          "coverage_bn": -0.4026391943119195
+        }
+      }
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "high_end_11",
+      "cost_change_from_whole_bn": 1.0668299341197116,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.1846592610966997,
+          "coverage_bn": -0.11685359204360592
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 2.2120525773612574,
+          "coverage_bn": 0.6261455011423621
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 12.37087098115845,
+          "coverage_bn": 0.260711704066098
+        }
+      }
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "low_end_16",
+      "cost_change_from_whole_bn": 2.923383732725384,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.90494642764261,
+          "coverage_bn": -0.2574654630625608
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 1.051816349410487,
+          "coverage_bn": 0.608312171081174
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 10.45972045038345,
+          "coverage_bn": 0.31987727741366634
+        }
+      }
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "high_end_11",
+      "cost_change_from_whole_bn": 1.7537548396038138,
+      "by_generation": {
+        "G1": {
+          "mixed_unit_removal_bn": -1.1846592610966997,
+          "coverage_bn": 0.02426917756309127
+        },
+        "G2": {
+          "mixed_unit_removal_bn": 2.2120525773612574,
+          "coverage_bn": 0.9046165424812979
+        },
+        "G3plus": {
+          "mixed_unit_removal_bn": 12.37087098115845,
+          "coverage_bn": 0.5280427986045669
+        }
+      }
+    }
+  ],
   "checks": [
     {
-      "label": "fixed_capital/set/low engine response closure",
+      "label": "fixed_capital/set/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "fixed_capital/set/low post-engine items unchanged",
+      "label": "fixed_capital/set/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "fixed_capital/set/low engine response closure",
+      "label": "fixed_capital/set/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "fixed_capital/set/low post-engine items unchanged",
+      "label": "fixed_capital/set/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2219,19 +2541,19 @@
       "pass": true
     },
     {
-      "label": "fixed_capital/set/high engine response closure",
+      "label": "fixed_capital/set/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "fixed_capital/set/high post-engine items unchanged",
+      "label": "fixed_capital/set/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "fixed_capital/set/high engine response closure",
+      "label": "fixed_capital/set/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "fixed_capital/set/high post-engine items unchanged",
+      "label": "fixed_capital/set/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2251,19 +2573,19 @@
       "pass": true
     },
     {
-      "label": "whole/set/low engine response closure",
+      "label": "whole/set/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "whole/set/low post-engine items unchanged",
+      "label": "whole/set/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "whole/set/low engine response closure",
+      "label": "whole/set/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "whole/set/low post-engine items unchanged",
+      "label": "whole/set/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2283,19 +2605,19 @@
       "pass": true
     },
     {
-      "label": "whole/set/high engine response closure",
+      "label": "whole/set/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "whole/set/high post-engine items unchanged",
+      "label": "whole/set/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "whole/set/high engine response closure",
+      "label": "whole/set/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "whole/set/high post-engine items unchanged",
+      "label": "whole/set/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2315,19 +2637,19 @@
       "pass": true
     },
     {
-      "label": "corporate_only/set/low engine response closure",
+      "label": "corporate_only/set/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "corporate_only/set/low post-engine items unchanged",
+      "label": "corporate_only/set/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "corporate_only/set/low engine response closure",
+      "label": "corporate_only/set/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "corporate_only/set/low post-engine items unchanged",
+      "label": "corporate_only/set/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2347,19 +2669,19 @@
       "pass": true
     },
     {
-      "label": "corporate_only/set/high engine response closure",
+      "label": "corporate_only/set/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "corporate_only/set/high post-engine items unchanged",
+      "label": "corporate_only/set/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "corporate_only/set/high engine response closure",
+      "label": "corporate_only/set/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "corporate_only/set/high post-engine items unchanged",
+      "label": "corporate_only/set/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2379,19 +2701,19 @@
       "pass": true
     },
     {
-      "label": "off/set/low engine response closure",
+      "label": "off/set/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "off/set/low post-engine items unchanged",
+      "label": "off/set/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "off/set/low engine response closure",
+      "label": "off/set/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "off/set/low post-engine items unchanged",
+      "label": "off/set/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2411,19 +2733,19 @@
       "pass": true
     },
     {
-      "label": "off/set/high engine response closure",
+      "label": "off/set/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "off/set/high post-engine items unchanged",
+      "label": "off/set/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "off/set/high engine response closure",
+      "label": "off/set/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "off/set/high post-engine items unchanged",
+      "label": "off/set/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2443,19 +2765,19 @@
       "pass": true
     },
     {
-      "label": "fixed_capital/cash/low engine response closure",
+      "label": "fixed_capital/cash/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "fixed_capital/cash/low post-engine items unchanged",
+      "label": "fixed_capital/cash/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "fixed_capital/cash/low engine response closure",
+      "label": "fixed_capital/cash/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "fixed_capital/cash/low post-engine items unchanged",
+      "label": "fixed_capital/cash/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2475,19 +2797,19 @@
       "pass": true
     },
     {
-      "label": "fixed_capital/cash/high engine response closure",
+      "label": "fixed_capital/cash/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "fixed_capital/cash/high post-engine items unchanged",
+      "label": "fixed_capital/cash/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "fixed_capital/cash/high engine response closure",
+      "label": "fixed_capital/cash/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "fixed_capital/cash/high post-engine items unchanged",
+      "label": "fixed_capital/cash/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2507,19 +2829,19 @@
       "pass": true
     },
     {
-      "label": "whole/cash/low engine response closure",
+      "label": "whole/cash/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "whole/cash/low post-engine items unchanged",
+      "label": "whole/cash/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "whole/cash/low engine response closure",
+      "label": "whole/cash/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "whole/cash/low post-engine items unchanged",
+      "label": "whole/cash/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2539,19 +2861,19 @@
       "pass": true
     },
     {
-      "label": "whole/cash/high engine response closure",
+      "label": "whole/cash/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "whole/cash/high post-engine items unchanged",
+      "label": "whole/cash/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "whole/cash/high engine response closure",
+      "label": "whole/cash/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "whole/cash/high post-engine items unchanged",
+      "label": "whole/cash/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2571,19 +2893,19 @@
       "pass": true
     },
     {
-      "label": "corporate_only/cash/low engine response closure",
+      "label": "corporate_only/cash/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "corporate_only/cash/low post-engine items unchanged",
+      "label": "corporate_only/cash/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "corporate_only/cash/low engine response closure",
+      "label": "corporate_only/cash/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "corporate_only/cash/low post-engine items unchanged",
+      "label": "corporate_only/cash/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2603,19 +2925,19 @@
       "pass": true
     },
     {
-      "label": "corporate_only/cash/high engine response closure",
+      "label": "corporate_only/cash/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "corporate_only/cash/high post-engine items unchanged",
+      "label": "corporate_only/cash/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "corporate_only/cash/high engine response closure",
+      "label": "corporate_only/cash/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "corporate_only/cash/high post-engine items unchanged",
+      "label": "corporate_only/cash/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2635,19 +2957,19 @@
       "pass": true
     },
     {
-      "label": "off/cash/low engine response closure",
+      "label": "off/cash/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "off/cash/low post-engine items unchanged",
+      "label": "off/cash/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "off/cash/low engine response closure",
+      "label": "off/cash/low engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "off/cash/low post-engine items unchanged",
+      "label": "off/cash/low owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2667,19 +2989,19 @@
       "pass": true
     },
     {
-      "label": "off/cash/high engine response closure",
+      "label": "off/cash/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "off/cash/high post-engine items unchanged",
+      "label": "off/cash/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
-      "label": "off/cash/high engine response closure",
+      "label": "off/cash/high engine plus repriced coverage response closure",
       "pass": true
     },
     {
-      "label": "off/cash/high post-engine items unchanged",
+      "label": "off/cash/high owner-property exclusion fixed across response modes",
       "pass": true
     },
     {
@@ -2713,7 +3035,7 @@
     "property": "none",
     "item6_first_year": true
   },
-  "first_year_rules": "item9 with item6; item10 present in full with parent responses and fixed-capital source endpoint prices; items11/12 full post-engine",
+  "first_year_rules": "item9 with item6; item10 parent responses and fixed-capital source endpoint prices; item11 without M5_owner_property by generation; item12 source-line responses, capital/property zero, production and unclassified residuals held",
   "sensitivity_limit": "whole/corporate_only/off hold completion's fixed-capital endpoint prices; response-only sensitivities [APPROX]",
   "first_year_breaks_alone": false
 }

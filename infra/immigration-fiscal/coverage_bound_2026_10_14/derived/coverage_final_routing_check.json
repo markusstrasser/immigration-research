@@ -6,31 +6,31 @@
     "set": {
       "ends": {
         "low": {
-          "base_coverage_bn": 12.001818463568476,
-          "final_routing_coverage_bn": 12.01834723176309,
-          "repricing_delta_bn": 0.016528768194614685,
+          "base_coverage_bn": 8.802814463690858,
+          "final_routing_coverage_bn": 8.819085231438892,
+          "repricing_delta_bn": 0.016270767748034487,
           "within_0_5bn": true
         },
         "high": {
-          "base_coverage_bn": 15.859877306531986,
-          "final_routing_coverage_bn": 15.876526158661639,
-          "repricing_delta_bn": 0.01664885212965217,
+          "base_coverage_bn": 12.638785152590001,
+          "final_routing_coverage_bn": 12.655176004273027,
+          "repricing_delta_bn": 0.016390851683025787,
           "within_0_5bn": true
         }
       },
       "parts": {
         "low": {
           "G1": {
-            "coverage_bn": 1.42368378959772,
-            "cps_replicate_se_bn": 0.17132638088927285
+            "coverage_bn": 0.8548272006722812,
+            "cps_replicate_se_bn": 0.1706080376417496
           },
           "G2": {
-            "coverage_bn": 5.9790446393751076,
-            "cps_replicate_se_bn": 0.31190405942938204
+            "coverage_bn": 4.476607024397423,
+            "cps_replicate_se_bn": 0.3086333587266943
           },
           "G3plus": {
-            "coverage_bn": 4.615618802790264,
-            "cps_replicate_se_bn": 0.23186990941655541
+            "coverage_bn": 3.487651006369187,
+            "cps_replicate_se_bn": 0.23295311936076593
           },
           "added": {
             "coverage_bn": 0.0,
@@ -39,16 +39,16 @@
         },
         "high": {
           "G1": {
-            "coverage_bn": 2.2823620967901133,
-            "cps_replicate_se_bn": 0.15261756618870545
+            "coverage_bn": 1.7096493301027953,
+            "cps_replicate_se_bn": 0.1509595258564067
           },
           "G2": {
-            "coverage_bn": 7.5782135170277805,
-            "cps_replicate_se_bn": 0.30848696770612793
+            "coverage_bn": 6.065646846917011,
+            "cps_replicate_se_bn": 0.3046846047097205
           },
           "G3plus": {
-            "coverage_bn": 6.015950544843745,
-            "cps_replicate_se_bn": 0.22247102984328515
+            "coverage_bn": 4.8798798272532204,
+            "cps_replicate_se_bn": 0.22283023685900716
           },
           "added": {
             "coverage_bn": 0.0,
@@ -66,31 +66,31 @@
     "cash": {
       "ends": {
         "low": {
-          "base_coverage_bn": 3.950844257775926,
-          "final_routing_coverage_bn": 3.967373025970561,
-          "repricing_delta_bn": 0.016528768194635113,
+          "base_coverage_bn": 0.7518402578983028,
+          "final_routing_coverage_bn": 0.7681110256463313,
+          "repricing_delta_bn": 0.016270767748028492,
           "within_0_5bn": true
         },
         "high": {
-          "base_coverage_bn": 7.8089031007393,
-          "final_routing_coverage_bn": 7.8255519528689215,
-          "repricing_delta_bn": 0.016648852129621083,
+          "base_coverage_bn": 4.587810946797321,
+          "final_routing_coverage_bn": 4.604201798480332,
+          "repricing_delta_bn": 0.016390851683011576,
           "within_0_5bn": true
         }
       },
       "parts": {
         "low": {
           "G1": {
-            "coverage_bn": 0.017760859603972966,
-            "cps_replicate_se_bn": 0.19418475632399385
+            "coverage_bn": -0.5510957293214707,
+            "cps_replicate_se_bn": 0.19455072238682208
           },
           "G2": {
-            "coverage_bn": 2.34135811145936,
-            "cps_replicate_se_bn": 0.34065167289735104
+            "coverage_bn": 0.83892049648166,
+            "cps_replicate_se_bn": 0.3388362267392067
           },
           "G3plus": {
-            "coverage_bn": 1.608254054907228,
-            "cps_replicate_se_bn": 0.2688663906320422
+            "coverage_bn": 0.4802862584861419,
+            "cps_replicate_se_bn": 0.27179142832579184
           },
           "added": {
             "coverage_bn": 0.0,
@@ -99,16 +99,16 @@
         },
         "high": {
           "G1": {
-            "coverage_bn": 0.8764391667963574,
-            "cps_replicate_se_bn": 0.17499689089915263
+            "coverage_bn": 0.3037264001090476,
+            "cps_replicate_se_bn": 0.17467423529051598
           },
           "G2": {
-            "coverage_bn": 3.9405269891119787,
-            "cps_replicate_se_bn": 0.3352563404563341
+            "coverage_bn": 2.4279603190012233,
+            "cps_replicate_se_bn": 0.3329665117501821
           },
           "G3plus": {
-            "coverage_bn": 3.0085857969605856,
-            "cps_replicate_se_bn": 0.258276804954536
+            "coverage_bn": 1.8725150793700618,
+            "cps_replicate_se_bn": 0.2606770773136824
           },
           "added": {
             "coverage_bn": 0.0,

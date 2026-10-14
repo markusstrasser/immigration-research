@@ -10,7 +10,7 @@ import pytest
 import coverage_oct15 as V
 import coverage_final_routing as R
 from coverage_final_routing import observed_snapshot
-from export_pricing import profile_call
+from export_pricing import profile_call, administratively_complete_use, constructed_prices, frozen_coverage_source
 from national_keys import full_key
 from test_national_keys import snapshot, piece
 
@@ -162,6 +162,8 @@ def test_final_state_justice_uses_principal_category_not_nonexistent_use_key(cat
     p = dict(g="G3plus", id="added_state_latent", cat=category, bn=2.*share, x=np.asarray(driver)[:3],
              full_driver=np.asarray(driver), state_price_source=source)
     np.testing.assert_array_equal(full_key(s, p, "low")[0], driver)
+    if category == "justice_use":
+        assert "public_order_safety custody ages18-64" in full_key(s, p, "low")[1]
     source["category_share"] += .1
     with pytest.raises(SystemExit, match="source category share mismatch"):
         full_key(s, p, "low")
@@ -324,3 +326,51 @@ def test_published_oct15_has_own_set_cash_prices_and_all_constructions():
                        + d["unclassified_bn"] - d["production"]["P_bn"] - d["production"]["F_bn"]
                        - e["total_bn"]) < 1e-9
     assert output["sets"]["set"]["ends"]["low"]["coverage_bn"] != output["sets"]["cash"]["ends"]["low"]["coverage_bn"]
+
+
+@pytest.mark.parametrize("category,driver,expected", [
+    ("justice_use", "public_order_safety custody ages18-64", True),
+    ("capital", "capital pos_sl parent: public_order_safety custody ages18-64", True),
+    ("justice_per_head", "public_order_safety per_head", False),
+    ("capital", "capital pos_sl parent: public_order_safety per_head", False),
+    ("medical", "canonical spending:medicaid", False)])
+def test_constructed_rule_follows_administrative_driver_including_capital(category, driver, expected):
+    assert administratively_complete_use({"category": category}, driver) is expected
+
+
+def test_constructed_adult_cannot_pay_administratively_complete_use():
+    audit = {"denominator_pieces": [dict(end="low", category="justice_use",
+        key="public_order_safety custody ages18-64", administratively_complete_use=True)]}
+    data = dict(net_id=np.ones((2, 1, 161))*5, net_added=np.ones((2, 1, 161))*5,
+        excluded_use_prices=np.array([np.ones((1, 161))*2, np.zeros((1, 161))]),
+        base_piece_prices=np.array([[2.]]), constructed_piece_prices=np.array([[.001]]))
+    with pytest.raises(SystemExit, match="nonzero administratively complete use"):
+        constructed_prices(data, audit)
+    data["constructed_piece_prices"][:] = 0
+    constructed_prices(data, audit)
+    np.testing.assert_array_equal(data["net_id"][0], np.ones((1, 161))*3)
+    np.testing.assert_array_equal(data["base_piece_prices"], [[2.]])  # observed total preserved
+
+
+def test_da_through_17_uses_pes_only_after_17():
+    rates, base = V.load()
+    for sex in (1, 2):
+        assert V.C.rate_at(17, sex, rates, base, "da_middle", da_max_age=17) == base[(10, 17, sex)]["da_residual_factor_middle"]
+        assert V.C.rate_at(18, sex, rates, base, "da_middle", da_max_age=17) == V.C.rate_at(18, sex, rates, base, "pes_only")
+    totals = V.national_constructions(rates, base)
+    expected = {"central": -5.12, "da_middle_0_9": -5.10, "da_middle_0_17": -4.73, "da_middle": -2.42}
+    for name, nce in expected.items():
+        assert totals[name]["implied_nce_pct"] == pytest.approx(nce, abs=.01)
+
+
+def test_frozen_final_routing_requires_its_exact_original_coverage_receipt(tmp_path):
+    source = tmp_path / "coverage.json"
+    source.write_text('{"old": true}\n')
+    record = {"sha256": V.digest(source), "stub": False}
+    assert frozen_coverage_source(source, record) == source
+    source.write_text('{"new": true}\n')
+    with pytest.raises(SystemExit, match="differs from its principal receipt"):
+        frozen_coverage_source(source, record)
+    source.unlink()
+    with pytest.raises(SystemExit, match="missing frozen real coverage"):
+        frozen_coverage_source(source, record)

@@ -22,5 +22,21 @@ for(const [which,X] of [["set",P],["cash",P.CASH]]){
  gate(`${which} lineage denominator includes completion and coverage`,near(pl.meta.population_v8.with_coverage,pl.meta.lineage.counts.lineage_population+pl.meta.union_completion.counts.total+(pl.meta.coverage?.net_missing_people||0),1e-6));
 }
 for(const [name,fn] of [["unknown item",()=>P.caseOf(P.OCT05,["bogus"])],["duplicate item",()=>P.caseOf(P.OCT05,[P.CANDIDATE[0],P.CANDIDATE[0]])],["unknown arm",()=>P.caseOf(P.OCT05,P.CANDIDATE,{mixed_unit_removal:"bogus"})]]){let stopped=false;try{fn();}catch(e){stopped=/BLOCKED/.test(String(e));}gate(`guard ${name}`,stopped);}
+if(P.POST_ENGINE.coverage&&!P.POST_ENGINE.coverage.stub){
+ const C=require("./companions.cjs"),saved=JSON.parse(fs.readFileSync(path.join(__dirname,"derived/summary.json"),"utf8")).v8;
+ for(const [basis,X] of [["set",P],["cash",P.CASH]]){
+  const fy=C.firstYear(P,basis),want=basis==="set"?saved.companions.first_year.band_bn:saved.companions.first_year.cash.band_bn;
+  gate(`${basis} first-year own post-engine repricing`,fy.band_bn.every((n,i)=>near(n,want[i])));
+  for(const pair of fy.post_engine_at_ends)for(const post of pair){
+   gate(`${basis} first-year generation post parts close`,near(Object.values(post.by_generation).reduce((n,g)=>n+g.mixed_unit_removal_bn+g.coverage_bn,0),post.mixed_unit_removal_bn+post.coverage_bn));
+   gate(`${basis} first-year coverage capital/property zero`,post.line_parts.filter(p=>p.economic_class==="capital_return"||p.source_side==="receipt"&&/property/.test(p.source_line)).every(p=>p.coverage_bn===0));
+  }
+  const m=X.payloadModel(),s=X.MAIN_SPECS[16],r=X.evaluateFull(m,s),shared=C.companionPost(X,s,r,"shared"),school=C.companionPost(X,{...s,school:.836},r,"school");
+  gate(`${basis} shared excludes removal item11`,shared.mixed_unit_removal_bn===0&&near(shared.coverage_bn,X.POST_ENGINE.coverage.by_end.low.total_bn));
+  gate(`${basis} school coverage follows its response`,school.line_parts.every(p=>near(p.coverage_bn,p.central_coverage_bn*(p.category==="schools"?.836:1))));
+ }
+ const fake={POST_ENGINE:{mixed_unit_removal:{which:"set",by_end:{low:{total_bn:0,by_generation_bn:{}}}},coverage:{by_end:{low:{total_bn:1,by_generation:{G1:1},decomposition:{line_parts:[{generation:"G1",economic_class:"fiscal_line",source_side:"spending",source_line:"missing",coverage_bn:1}]}}}}}};
+ let stopped=false;try{C.companionPost(fake,{reading:"low"},{evaluation:{receipts:[],spending:[]}},"first_year");}catch(e){stopped=/BLOCKED/.test(String(e));}gate("guard companion source repricing cannot silently carry missing source",stopped);
+}
 fs.writeFileSync(path.join(__dirname,"derived/api_check.json"),JSON.stringify({gate:"G4",pass:true,checks:records.length,records},null,1)+"\n");
 console.log(`G4 PASS ${records.length} checks; maxRSS ${process.resourceUsage().maxRSS} KiB`);

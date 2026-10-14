@@ -195,7 +195,8 @@ def full_key(snapshot, piece, end):
                         "added-state native principal source mismatch")
                 expected[index] = values[0]["amount_bn"]
         require(_same(np.asarray(p["full_driver"]), expected), "added-state full driver differs from principal source")
-        candidates = [(expected, "principal added-state " + subgroup + ":" + state_source["source_cell"])]
+        matched_source = ("; driver: " + " | ".join(dict.fromkeys(source for _, source in matching))) if subgroup != "native" else ""
+        candidates = [(expected, "principal added-state " + subgroup + ":" + state_source["source_cell"] + matched_source)]
     elif native is not None:
         kind, parent = native["kind"], native["parent"]
         require(kind in ("rows", "capital", "production"), "unknown native-child component")

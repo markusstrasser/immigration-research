@@ -54,7 +54,7 @@ def verify_local_pins():
         require(sha == pin["sha256"], "stale principal input " + pin["repo_path"])
 
 
-def construction(source=SOURCE, case="oct14", basis="set", lines_path=None):
+def construction(source=SOURCE, case="oct14", basis="set", lines_path=None, coverage_source_path=None):
     """Keep the original function prefix and return its locals before any writes."""
     spec = importlib.util.spec_from_file_location("coverage_households", source)
     module = importlib.util.module_from_spec(spec)
@@ -63,6 +63,17 @@ def construction(source=SOURCE, case="oct14", basis="set", lines_path=None):
     functions = [n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == "main"]
     require(len(functions) == 1, "household pricing has no unique main")
     fn = functions[0]
+    if coverage_source_path is not None:
+        # Replay frozen final routing against its own original coverage receipt.
+        # The later observed_snapshot subtraction removes that whole old block.
+        # No live file, hash or upstream guard is rewritten or weakened.
+        pattern = ast.parse("source = FISCAL / coverage['file']").body[0]
+        matches = [n for n in ast.walk(fn) if isinstance(n, ast.Assign)
+                   and ast.dump(n) == ast.dump(pattern)]
+        require(len(matches) == 1, "no unique frozen coverage source-read boundary")
+        matches[0].value = ast.Call(ast.Name("_coverage_frozen_source", ast.Load()),
+                                   [ast.Name("coverage", ast.Load())], [])
+        module._coverage_frozen_source = lambda record: frozen_coverage_source(coverage_source_path, record)
     expected = {"prod_parts", "vec", "rk", "sk", "medical", "edu", "v"}
     boundaries = [i for i, n in enumerate(fn.body) if isinstance(n, ast.Delete)
                   and {x.id for x in n.targets if isinstance(x, ast.Name)} == expected]
@@ -104,6 +115,13 @@ def construction(source=SOURCE, case="oct14", basis="set", lines_path=None):
     return module, got
 
 
+def frozen_coverage_source(path, record):
+    require(path.is_file() and not record.get("stub"), "missing frozen real coverage source")
+    require(hashlib.sha256(path.read_bytes()).hexdigest() == record.get("sha256"),
+            "frozen routing coverage source differs from its principal receipt")
+    return path
+
+
 def validate_metadata(meta, case="oct14"):
     require(meta.get("case") == {"oct14": "main_case_2026_10_14", "oct15": "main_case_2026_10_15"}[case], "mismatched case metadata")
     require(meta.get("allocation") == "personal", "mismatched allocation metadata")
@@ -136,7 +154,48 @@ def component_metadata(snapshot, piece, end):
         declarations = [x for x in group["rows"] if x["id"] == parent and (side is None or x["side"] == side)]
         require(len(declarations) == 1, "no unique source-side fiscal line " + parent)
         result["source_side"] = declarations[0]["side"]
+        result["source_response"] = declarations[0]["response"]
+        result["source_key"] = declarations[0]["key"]
     return result
+
+
+def administratively_complete_use(detail, driver):
+    """The matched principal driver, including its capital descendants, owns the rule."""
+    complete = "public_order_safety custody ages18-64" in driver
+    require(detail["category"] != "justice_use" or complete,
+            "justice use lacks its traced administrative driver")
+    require(not complete or detail["category"] in ("justice_use", "capital"),
+            "unclassified administrative-use descendant")
+    return complete
+
+
+def constructed_prices(data, audit):
+    """Select coverage prices only after callers validate the unchanged observed account."""
+    require("excluded_use_prices" in data and "constructed_piece_prices" in data,
+            "missing constructed-person pricing rule; replay export_pricing.py")
+    excluded = data["excluded_use_prices"]
+    require(excluded.shape == data["net_id"].shape and np.isfinite(excluded).all(),
+            "invalid excluded administrative-use prices")
+    require(data["constructed_piece_prices"].shape == data["base_piece_prices"].shape,
+            "constructed-person piece price shape differs from observed pieces")
+    for i, piece in enumerate(audit["denominator_pieces"]):
+        complete = administratively_complete_use(piece, piece["key"])
+        require(piece.get("administratively_complete_use") is complete,
+                "constructed administrative-use declaration changed")
+        price = data["constructed_piece_prices"][i]
+        require(np.isfinite(price).all(), "nonfinite constructed-person piece price")
+        require(not complete or np.count_nonzero(price) == 0,
+                "constructed person has nonzero administratively complete use price")
+        require(complete or np.array_equal(price, data["base_piece_prices"][i]),
+                "constructed rule changes a non-administrative price")
+    for e, end in enumerate(("low", "high")):
+        traced = sum((data["base_piece_prices"][i] for i, p in enumerate(audit["denominator_pieces"])
+                      if p["end"] == end and p["administratively_complete_use"]),
+                     np.zeros(excluded.shape[1]))
+        require(np.allclose(excluded[e, :, 0], traced, rtol=1e-12, atol=1e-15),
+                "excluded use does not close to principal administrative pieces")
+    data["net_id"] -= excluded
+    data["net_added"] -= excluded
 
 
 def main(tracker, case="oct14", basis="set", final_routing=False):
@@ -155,7 +214,8 @@ def main(tracker, case="oct14", basis="set", final_routing=False):
         from coverage_final_routing import FINAL, validate_final_inputs, observed_snapshot
         validate_final_inputs()
         module, s = construction(case=case, basis=basis,
-            lines_path=FINAL / f"lines{'_cash' if basis == 'cash' else ''}.json")
+            lines_path=FINAL / f"lines{'_cash' if basis == 'cash' else ''}.json",
+            coverage_source_path=LANE / "inputs/final_routing_coverage_source.json")
         observed_snapshot(s)
     else:
         module, s = construction(case=case, basis=basis)
@@ -212,6 +272,7 @@ def main(tracker, case="oct14", basis="set", final_routing=False):
     else:
         exact_added = json.loads((ROOT / "infra/immigration-fiscal/main_case_2026_10_14/derived/lineage_addition.json").read_text())["set"]["parts"]["added"]["cost_bn"]
     net = np.zeros((2, len(rows), 161))
+    excluded_components = []
     line_rows = []
     line_vectors = []
     line_national = []
@@ -238,6 +299,11 @@ def main(tracker, case="oct14", basis="set", final_routing=False):
             vector = full[rows].copy()
             scope = "actual_declared_driver"
             detail = component_metadata(s, p, end) if case == "oct15" else {}
+            if case == "oct15":
+                complete = administratively_complete_use(detail, source)
+                detail["administratively_complete_use"] = complete
+                if complete:
+                    excluded_components.append((end_i, x.copy(), bn / denom))
             line_rows.append({"end": end, "generation": p["g"], "line": p["id"], "category": p["cat"],
                               "key": source, "denominator_scope": scope, **detail})
             line_vectors.append(vector)
@@ -276,6 +342,10 @@ def main(tracker, case="oct14", basis="set", final_routing=False):
     gc.collect()
     pa.default_memory_pool().release_unused()
     stage("source buffers released")
+    excluded_use = np.zeros_like(net) if case == "oct15" else None
+    for end_i, driver, coefficients in excluded_components:
+        excluded_use[end_i] += driver[:, None] * coefficients
+    excluded_components.clear()
     # Separate the added people's exact net total from the household route's blended G3+ placement.
     # Keep the existing individual profile and add a per-head calibration within the two G3+ parts.
     # This is a transparent distribution assumption; both populations and combined totals stay exact.
@@ -339,6 +409,12 @@ def main(tracker, case="oct14", basis="set", final_routing=False):
     line_vectors.clear()
     base_piece_prices = np.asarray(line_base)
     line_base.clear()
+    if case == "oct15":
+        constructed_piece_prices = base_piece_prices.copy()
+        for i, part in enumerate(line_rows):
+            if part["administratively_complete_use"]:
+                constructed_piece_prices[i] = 0.0
+        extra.update(excluded_use_prices=excluded_use, constructed_piece_prices=constructed_piece_prices)
     stage("packed cache")
     np.savez_compressed(cache / "pricing.npz", weights=identified, added_weights=added, generation=g,
                         age=age, sex=sex, arrival=arrival, hispanic=hispanic,
@@ -357,6 +433,7 @@ def main(tracker, case="oct14", basis="set", final_routing=False):
              "case_bn": case_bn,
              "g3_net_calibration": calibration, "denominator_pieces": line_rows,
              "other_pieces": other_rows,
+             "constructed_person_rule": "zero on traced administrative justice-use totals and their capital descendants; observed prices and union-completion carriers preserved",
              "gates": {"metadata": True, "161_weights": True, "population_conservation": True,
                        "every_generation_and_replicate_closes_1e_6bn": True, "separate_added_total_closes_1e_6bn": True}}
     if final_routing:

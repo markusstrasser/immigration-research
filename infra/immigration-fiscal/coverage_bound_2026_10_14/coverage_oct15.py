@@ -15,7 +15,7 @@ sys.dont_write_bytecode = True
 import numpy as np
 import coverage_bound as C
 from dependency_manifest import validate_manifest
-from export_pricing import validate_metadata
+from export_pricing import validate_metadata, constructed_prices
 from source_tables import load
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -26,7 +26,31 @@ BASE = LANE / "inputs/oct15_base"
 CASE = ROOT / "infra/immigration-fiscal/main_case_2026_10_15/derived"
 GEN = ROOT / "infra/immigration-fiscal/generation_account_2026_09_24/derived"
 HOUSE = ROOT / "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct15"
-DEFINITIONS, ENVELOPE = C.DEFINITIONS, C.ENVELOPE
+DEFINITIONS = {**C.DEFINITIONS,
+               "da_middle_0_9": {"mode": "da_middle", "da_max_age": 9},
+               "da_middle_0_17": {"mode": "da_middle", "da_max_age": 17}}
+ENVELOPE = (*C.ENVELOPE, "da_middle_0_9", "da_middle_0_17")
+
+
+def national_constructions(rates, base):
+    """Implied Census error: enumerated / constructed truth - 1 (not base / truth)."""
+    out = {}
+    for name, boundary in (("central", 4), ("da_middle_0_9", 9),
+                           ("da_middle_0_17", 17), ("da_middle", 29)):
+        census = truth = 0.0
+        for key, cell in base.items():
+            if len(key) != 3:
+                continue
+            lo, hi, sex = key
+            factor = C.rate_at(lo, sex, rates, base, "da_middle", da_max_age=boundary)
+            census += cell["census_hispanic"]
+            truth += cell["base_hispanic"] * (1 + factor)
+        nce = 100 * (census/truth - 1)
+        pes = rates["hispanic"]["all"]
+        out[name] = {"census_people": census, "implied_true_people": truth,
+                     "implied_nce_pct": nce, "pes_nce_pct": pes["nce_pct"],
+                     "pes_se_pct": pes["se_pct"], "difference_in_pes_se": (nce-pes["nce_pct"])/pes["se_pct"]}
+    return out
 
 
 def digest(path):
@@ -243,9 +267,14 @@ def decompose(data, f, af, audit, end, target, basis, production_split):
     for i, piece in enumerate(audit["denominator_pieces"]):
         if piece["end"] != end:
             continue
-        cost = float(data["base_piece_prices"][i] @ mass)
+        cost = float(data.get("constructed_piece_prices", data["base_piece_prices"])[i] @ mass)
         kind = piece["economic_class"]
         row = {k: piece[k] for k in ("generation", "line", "source_line", "source_side", "category", "level", "economic_class")}
+        if "administratively_complete_use" in piece:
+            row["administratively_complete_use"] = piece["administratively_complete_use"]
+        for key in ("source_response", "source_key"):
+            if key in piece:
+                row[key] = piece[key]
         row["coverage_bn"] = cost
         if kind == "capital_return":
             C.require(piece["level"] in capital, "unknown coverage public-capital level")
@@ -320,6 +349,7 @@ def calculate(basis, summary, rates, base, production_split="generation_ratio"):
             got = (data["net_id"][i, mask] * data["weights"][mask] + data["net_added"][i, mask] * data["added_weights"][mask]).sum(axis=0)
             C.require(np.max(np.abs(got - lines["generations"][g][end]["cost_bn"])) < 1e-6,
                       "cached oct15 generation every-replicate closure")
+    constructed_prices(data, audit)
     scenarios = {}
     for name, options in DEFINITIONS.items():
         f, af = C.factors(data, rates, base, **options)
@@ -403,7 +433,8 @@ def calculate(basis, summary, rates, base, production_split="generation_ratio"):
                     @ data["hispanic"][data["generation"] == i]) for i,g in enumerate(GENS)},
             "gates": {"full_precision_base_1e_9bn": True, "pricing_every_replicate_1e_6bn": True,
                 "coverage_generation_closure_1e_9bn": True, "added_central_zero": True,
-                "source_pins": True, "actual_dependency_manifest": True, "cache_digest": True},
+                "source_pins": True, "actual_dependency_manifest": True, "cache_digest": True,
+                "constructed_administrative_use_zero": True},
             "cash_rule": "own cash-set person prices" if basis == "cash" else "own accrual-set person prices"}
 
 
@@ -430,6 +461,8 @@ def main():
               "specifications": [16, 11], "base_payload_sha256": hashes["set"],
               "base_payload_sha256_by_set": hashes, "sets": sets,
               "production_split": args.production_split,
+              "national_hispanic_constructions": national_constructions(rates, base),
+              "boundary_criterion": "DA where it agrees with PES or PES understates the young-child undercount (0-4; 5-9 within 0.2 PES SE); PES, the direct measurement with an SE, where they diverge (10-17 about 2.9 SE, 18-29 about 9.6 SE)",
               "fixed": ["national budgets and key masses in central", "base case per-member prices and responses"],
               "limitations": json.loads((LANE / "derived/coverage_bound.json").read_text())["limitations"]}
     footprint = require_within_budget("oct15 coverage constructions")

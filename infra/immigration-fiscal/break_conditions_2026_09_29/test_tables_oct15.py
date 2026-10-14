@@ -158,7 +158,8 @@ def test_first_year_response_controls_and_postengine_closure():
                          for s in ("union", "added", "lineage")}
                 assert moves["lineage"] == pytest.approx(moves["union"] + moves["added"], abs=1e-9, rel=0)
                 i = 0 if end.startswith("low") else 1
-                assert report["variants"][mode][basis][i] - report["variants"]["whole"][basis][i] == pytest.approx(moves["lineage"], abs=1e-9, rel=0)
+                post = next(r for r in report["post_components"] if r["mode"] == mode and r["basis"] == basis and r["end"] == end)
+                assert report["variants"][mode][basis][i] - report["variants"]["whole"][basis][i] == pytest.approx(moves["lineage"]+post["cost_change_from_whole_bn"], abs=1e-9, rel=0)
     assert report["thresholds"]["low_bn"] == pytest.approx(0.75 * sum(case["band_bn"]) / 2, abs=1e-9)
     assert report["first_year_breaks_alone"] == (sum(report["variants"]["fixed_capital"]["set"])/2 < report["thresholds"]["low_bn"])
 
