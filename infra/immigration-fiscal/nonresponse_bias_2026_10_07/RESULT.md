@@ -129,3 +129,30 @@ The four existing first-order arms give 1.904836 to 4.613037bn. [DATA: `derived/
 Reweight/control run exits 0; reproduction IDENTICAL 12/12, exit 0. Run `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/nonresponse_bias_2026_10_07/reweight.py`.
 
 Log: 2026-10-14 18:23:25 JST (`date`): moved to adopted 148ed1ea; computed oct14 only and preserved earlier case files.
+
+## 2026-10-15: live case oct15 (v8)
+
+The first-order sensitivity now uses actual v8 corrected native line amounts and reporter source-side carriers at both ends. `v8_exposures.cjs` independently finds the ends and gates each set/cash total at 1e-9 and the external adopted/cash band at 5e-5bn before publishing exposures. Observed completion records enter the measured CPS target on their unique person keys. Per-member changes divide by the complete **45,230,062.30075857** people. [CALCULATION: `v8_exposures.cjs`, `reweight.py`; DATA: `derived/v8_exposures.json`, `v8_sensitivity.json`]
+
+The four existing arms range **+1.619953 to +4.708750bn at the low end**, **+1.571374 to +4.352611bn at the high**. Across both ends, +$34.74–104.11 per complete lineage member. The previous v7 sensitivity was +1.904836 to +4.613037bn without an end split. [DATA: `derived/v8_summary.csv` `net_cost_change_bn`, `per_member_change_usd`; retained `v7_summary.csv`]
+
+This remains a conditional, first-order measured-key transport assumption, not a rerun of the whole removal account or a measured nonresponse effect. Modeled descendants inherit the relative key changes; coverage people and the entire mixed/coverage post-engine construction are held fixed (`coverage_reweighted=false`, `mixed_unit_reweighted=false`). Public capital and production are not rerun. The earlier tax-record overlap warning remains: excluding federal income tax, the eight end/curve/denominator readings range +0.014734 to +1.990642bn; neither reading is adopted into the main case. [ASSUMPTION; CALCULATION: sum `v8_line_changes.csv` except item `federal_income_tax`; DATA: `v8_sensitivity.json` `rule`]
+
+The initial completion update stopped on a pandas read-only target view before outputs; the mutable local target now uses an explicit copy. Actual-route replay checks this failure regression. The shared guard reports physical footprint, not an RSS ceiling. Unkeyed controls become live oct15; older keyed v5/v7 files stay unchanged. [CALCULATION: `reweight.py`]
+
+Reproduce the live case:
+
+```sh
+node infra/immigration-fiscal/nonresponse_bias_2026_10_07/v8_exposures.cjs
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/nonresponse_bias_2026_10_07/reweight.py
+GIT_OPTIONAL_LOCKS=0 uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/nonresponse_bias_2026_10_07 "node {lane}/v8_exposures.cjs" "OPENBLAS_NUM_THREADS=1 uv run --no-project python3 {lane}/reweight.py"
+```
+
+Log: 2026-10-15 02:13 JST — after CASE_FINAL b35ac8fb, exact set/cash/end and external-band gates pass. Exposure builder 3.45s / 0.370GB physical footprint; reweight 4.48s / 0.308GB. Reproduction receipt follows below.
+
+Validation 2026-10-15 02:19:18 JST (from `date`): `scripts/rerun_lane.py` IDENTICAL 17/17, exit 0 (7.07s); no uncovered scripts or EOL conversion failures. GIT_OPTIONAL_LOCKS=0 used for all read-only Git probes. Older keyed artifacts unchanged.
+
+Parent rerun 2026-10-15 05:32 JST (from `date`), on the corrected v8 (d1a24d47; same key `oct15`). The four arms are unchanged
+(+1.619953 to +4.708750bn at the low end, +1.571374 to +4.352611bn at the high), because coverage is held fixed in
+this sensitivity; the exposure builder's end gates now check the corrected band, 365.791930 / 455.981785bn (cash
+281.752564 / 371.942418bn). Reproduction IDENTICAL 17/17, exit 0. [DATA: `derived/v8_summary.csv`]

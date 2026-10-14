@@ -22,8 +22,11 @@ ratios must reproduce the all-household curve (figure 3) to within the reading e
 from __future__ import annotations
 
 import csv
+import hashlib
 import importlib.util
 import json
+import sys
+import time
 import zipfile
 from pathlib import Path
 
@@ -165,14 +168,32 @@ def irs_binned_share(d, w, civ, tgt, base_w):
 
 
 def main():
+    started = time.perf_counter()
     sb = load_spending_builder()
     curves = pd.read_csv(HERE/"curves_by_eye.csv")
     d, h = read_cps(sb)
     h = householder_groups(d, h)
     civ, tgt = sb.canonical_target(d)
+    tgt = tgt.copy()  # completion membership is local; pandas can return read-only shared views
     base = d.pwwgt0.to_numpy(float)
     if abs(base[tgt].sum() - 40896574.15235156) > .01:
         raise ValueError("Canonical target population drift")
+    people = json.loads((FISCAL / "main_case_2026_10_15/derived/union_people.json").read_text())["records"]
+    index = pd.MultiIndex.from_frame(d[["PH_SEQ", "PPPOS"]])
+    if not index.is_unique:
+        raise ValueError("[BLOCKED] duplicate CPS person key")
+    added = 0.0
+    for row in people:
+        if not (row["central_reporter"] or row["observed_nonreporter"]):
+            continue
+        loc = index.get_loc((row["PH_SEQ"], row["PPPOS"]))
+        if tgt[loc] or not civ[loc] or abs(base[loc] - row["people"]) > 1e-6:
+            raise ValueError("[BLOCKED] completion record does not match the observed outside-union person")
+        tgt[loc] = True
+        added += base[loc]
+    completion = json.loads(ACCRUAL.read_text())["meta"]["union_completion"]["counts"]["total"]
+    if abs(added - completion) > 1e-6:
+        raise ValueError("[BLOCKED] observed completion people differ from v8")
     vectors = key_vectors(d, sb)
     hh_index = pd.Index(h.H_SEQ.to_numpy())
     pos = hh_index.get_indexer(d.PH_SEQ.to_numpy())
@@ -225,6 +246,10 @@ def main():
     quantiles = pd.DataFrame(quantile_rows)
     lines = price_lines(shares)
     price_case(lines, shares, quantiles)
+    sys.path.insert(0, str(FISCAL / "scripts"))
+    from memory_budget import require_within_budget
+    peak = require_within_budget("nonresponse sensitivity")
+    print(json.dumps({"elapsed_seconds": time.perf_counter() - started, "peak_physical_footprint_bytes": peak}))
 
 
 def price_lines(shares):
@@ -256,7 +281,7 @@ def price_lines(shares):
 # Income-type keys: their national totals should fall by the published all-household bias.
 INCOME_KEYS = {"federal_liability", "federal_liability_irs_bins", "state_liability", "wage", "wage_oasdi",
                "self_payroll", "capital", "consumption", "resources"}
-ACCRUAL = FISCAL/"main_case_2026_10_14/derived/corrections.json"
+ACCRUAL = FISCAL/"main_case_2026_10_15/derived/corrections.json"
 
 
 def price_case(lines, shares, quantiles):
@@ -271,13 +296,24 @@ def price_case(lines, shares, quantiles):
       the shortfall of the reweighted all-household curve against figure 3 (the between-group part this reweight
       does not model), which shrinks the group's share loss.
     """
-    acc = json.loads(ACCRUAL.read_text())["meta"]["pension_accrual"]
+    payload = json.loads(ACCRUAL.read_text())
+    acc = payload["meta"]["pension_accrual"]
+    exposure_file = OUT / "v8_exposures.json"
+    if not exposure_file.exists():
+        raise ValueError("[BLOCKED] run v8_exposures.cjs before reweight.py")
+    exposure = json.loads(exposure_file.read_text())
+    for file, expected in exposure["source_hashes"].items():
+        if hashlib.sha256((FISCAL / file).read_bytes()).hexdigest() != expected:
+            raise ValueError(f"[BLOCKED] stale v8 exposure source: {file}")
     rows = []
     for curve, part in lines[lines["count"] == "pinned"].groupby("curve"):
         q = quantiles[(quantiles.curve == curve) & (quantiles.group == "all")]
         shortfall = float((q.published - q.implied_ratio).mean()/q.published.mean())
         ks = shares[(shares.curve == curve) & (shares["count"] == "pinned")].set_index("key")
-        for denominator in ["reweighted", "calibrated"]:
+        for end in ("low", "high"):
+          current = exposure["records"]["set"][end]
+          cash = exposure["records"]["cash"][end]
+          for denominator in ["reweighted", "calibrated"]:
             def ratio(key):
                 r = float(ks.loc[key, "ratio"])
                 if denominator == "calibrated" and key in INCOME_KEYS:
@@ -289,21 +325,37 @@ def price_case(lines, shares, quantiles):
                 sign = -1 if rec.side == "receipt" else 1
                 if rec.category == "social_security":
                     continue
-                amount = rec.target_bn*(1 - acc["part_a_share"]) if rec.category == "medicare" else rec.target_bn
-                out.append(dict(item=rec.category, side=rec.side, net_cost_change_bn=sign*amount*(ratio(rec.key) - 1)))
-            oasdi = sum(part.set_index("category").target_bn[c]*(ratio("wage_oasdi") - 1) for c in acc["oasdi_lines"])
-            oasdi += acc["se_oasdi_share"]*part.set_index("category").target_bn[acc["se_line"]]*(ratio("self_payroll") - 1)
-            out.append(dict(item="social_security_accrual", side="spending", net_cost_change_bn=acc["ratio_net"]*oasdi))
+                source = current["lines"].get(f"{rec.side}|{rec.category}")
+                if source is None:
+                    raise ValueError(f"[BLOCKED] v8 has no source exposure for {rec.side}/{rec.category}")
+                amount = source["amount_bn"]
+                if rec.category == "medicare":
+                    amount = cash["lines"]["spending|medicare"]["amount_bn"]*(1 - acc["part_a_share"])
+                out.append(dict(item=rec.category, side=rec.side,
+                                net_cost_change_bn=sign*source["response"]*amount*(ratio(rec.key) - 1)))
+            at = lambda category: current["lines"][f"receipt|{category}"]["amount_bn"]
+            oasdi_level = sum(at(c) for c in acc["oasdi_lines"]) + acc["se_oasdi_share"]*at(acc["se_line"])
+            oasdi = sum(at(c)*(ratio("wage_oasdi") - 1) for c in acc["oasdi_lines"])
+            oasdi += acc["se_oasdi_share"]*at(acc["se_line"])*(ratio("self_payroll") - 1)
+            effective_ratio = current["lines"]["spending|social_security"]["amount_bn"]/oasdi_level
+            out.append(dict(item="social_security_accrual", side="spending", net_cost_change_bn=effective_ratio*oasdi))
+            part_a = current["lines"]["spending|medicare"]["amount_bn"] - (1 - acc["part_a_share"])*cash["lines"]["spending|medicare"]["amount_bn"]
             out.append(dict(item="part_a_accrual", side="spending",
-                            net_cost_change_bn=acc["part_a_accrual_bn"]*(ratio("wage") - 1)))
+                            net_cost_change_bn=part_a*(ratio("wage") - 1)))
             for o in out:
-                rows.append(dict(curve=curve, denominator=denominator, shortfall=shortfall, **o))
+                rows.append(dict(curve=curve, end=end, denominator=denominator, shortfall=shortfall, **o))
     v5 = pd.DataFrame(rows)
-    write(OUT/"v7_line_changes.csv", v5)
-    summary = v5.groupby(["curve", "denominator", "side"]).net_cost_change_bn.sum().unstack("side")
+    write(OUT/"v8_line_changes.csv", v5)
+    summary = v5.groupby(["curve", "end", "denominator", "side"]).net_cost_change_bn.sum().unstack("side")
     summary["net_cost_change_bn"] = summary.sum(axis=1)
-    write(OUT/"v7_summary.csv", summary.reset_index())
+    population = payload["meta"]["population_v8"]["with_coverage"]
+    summary["per_member_change_usd"] = summary["net_cost_change_bn"]*1e9/population
+    write(OUT/"v8_summary.csv", summary.reset_index())
     print(summary.round(2).to_string())
+    (OUT / "v8_sensitivity.json").write_text(json.dumps({"case_key": "oct15", "population": population,
+        "source_hashes": exposure["source_hashes"], "coverage_reweighted": False, "mixed_unit_reweighted": False,
+        "rule": "[ASSUMPTION] measured CPS relative key changes transport to actual v8 source-side line exposures, with observed completion records in the target. Modeled descendants retain that first-order key transport; coverage people and mixed/coverage post amounts are held fixed. Public capital and production are not re-run.",
+        "source_gate": "v8_exposures.cjs gates both set/cash ends to exact case totals at 1e-9 and printed band rows at 5e-5bn"}, indent=1)+"\n")
 
 
 def write(path, frame):
