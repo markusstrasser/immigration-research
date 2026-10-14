@@ -1,3 +1,539 @@
+**Verdict:** On the complete adopted social channel set, stationary financing and the corrected lineage payer pool, 4.63% / 8.40% of other residents are ahead under tax shares / per-person cuts, pooled. Their annual net is $-483.072bn. A minority ahead survives; the former one-in-five count depends on inconsistent financing and incomplete channels. [MODEL / FRAMING-SENSITIVE; CALCULATION: derived/oct14/p7_net_shares.csv]
+
+
+
+# P7 fixes on the frozen adopted v7 account (2026-10-14)
+
+
+
+The frozen hybrid reproduces **19.64694897% / 18.74420662%** pooled and **$-341.7338304bn** to today's residents. It remains a labelled calculation record in the original `net_shares.csv`; the new `p7_*` tables carry explicit financing, sharing, population and channel-set tags. [DATA: p7_positive_control.csv; source oracle at 2204a2bc]
+
+The account and its personal specifications 16/11 are held fixed. `identified_union` and `lineage` name the **payer-pool** alternatives for the same live 42.75M fiscal case, not separately recomputed fiscal headlines. The complete social amounts are separately tabulated for the identified 39.71M union and the 42.75M lineage. No frozen main-case file changed. Adding the direct credit to non-member filers changes their resource net while the government's adopted account stays fixed. [ASSUMPTION / DATA: p7_inputs.json]
+
+The social vintage is the adopted-v7 propagation at **c392d356**, copied verbatim to `inputs/social_oct14.json`, pinned by SHA-256. A concurrent unadopted peer refresh changed the working upstream JSON during a preliminary run; it is excluded. Every source pin is checked and within-run drift fails closed. [SOURCE: Git c392d356; DATA: inputs/pins.json]
+
+## One fix at a time
+
+
+
+Each dollar delta below compares to the live central hybrid at the **same end, rule and sharing**; the frozen government-account file stays unchanged. Pure financing reassignment has zero all-cohort resource delta, reported separately from its present-resident delta. Changes to the stated distributional claims are material independently. [CALCULATION: p7_net_shares.csv]
+
+
+
+| arm | frame | population | financing | level | total_bn | winners_share | winners_share_conditional_se | delta_today_bn | delta_ahead_pp |
+|---|---|---|---|---|---|---|---|---|---|
+| financing_only | stationary | identified_union | a | low | -361.691 | 15.992% | 0.205pp | -80.068 | -7.393 |
+| financing_only | stationary | identified_union | a | high | -494.889 | 4.474% | 0.108pp | -90.553 | -8.928 |
+| financing_only | cohort30 | identified_union | a | low | -358.849 | 14.007% | 0.192pp | -77.226 | -9.378 |
+| financing_only | cohort30 | identified_union | a | high | -491.206 | 3.292% | 0.098pp | -86.870 | -10.111 |
+| financing_only | cohort10 | identified_union | a | low | -360.199 | 14.095% | 0.198pp | -78.576 | -9.290 |
+| financing_only | cohort10 | identified_union | a | high | -493.168 | 3.268% | 0.098pp | -88.833 | -10.134 |
+| social_coverage_only | hybrid | identified_union | a | low | -355.749 | 19.680% | 0.217pp | -74.125 | -3.705 |
+| social_coverage_only | hybrid | identified_union | a | high | -433.773 | 7.257% | 0.132pp | -29.438 | -6.145 |
+| crossing_credit_only | hybrid | identified_union | a | low | -276.625 | 23.632% | 0.244pp | 4.999 | 0.247 |
+| crossing_credit_only | hybrid | identified_union | a | high | -399.337 | 13.645% | 0.168pp | 4.999 | 0.243 |
+| state_wages_only | hybrid | identified_union | a | low | -281.624 | 5.445% | 0.130pp | 0.000 | -17.940 |
+| state_wages_only | hybrid | identified_union | a | high | -404.336 | 2.887% | 0.094pp | -0.000 | -10.515 |
+| capitalization_only | hybrid | identified_union | a | low | -281.624 | 22.718% | 0.228pp | 0.000 | -0.667 |
+| capitalization_only | hybrid | identified_union | a | high | -404.336 | 13.929% | 0.175pp | -0.000 | 0.526 |
+| owner_type_only | hybrid | identified_union | a | low | -281.624 | 25.920% | 0.255pp | 0.000 | 2.535 |
+| owner_type_only | hybrid | identified_union | a | high | -404.336 | 17.534% | 0.191pp | 0.000 | 4.132 |
+| owner_type_broad_only | hybrid | identified_union | a | low | -281.624 | 23.569% | 0.250pp | 0.000 | 0.184 |
+| owner_type_broad_only | hybrid | identified_union | a | high | -404.336 | 13.666% | 0.165pp | 0.000 | 0.263 |
+| financing_only | stationary | lineage | a | low | -361.691 | 16.054% | 0.204pp | -80.068 | -7.331 |
+| financing_only | stationary | lineage | a | high | -494.889 | 4.513% | 0.108pp | -90.553 | -8.889 |
+| financing_only | cohort30 | lineage | a | low | -358.704 | 14.061% | 0.194pp | -77.081 | -9.324 |
+| financing_only | cohort30 | lineage | a | high | -491.014 | 3.303% | 0.100pp | -86.679 | -10.099 |
+| financing_only | cohort10 | lineage | a | low | -360.121 | 14.150% | 0.198pp | -78.497 | -9.235 |
+| financing_only | cohort10 | lineage | a | high | -493.073 | 3.293% | 0.099pp | -88.738 | -10.109 |
+| social_coverage_only | hybrid | lineage | a | low | -364.140 | 19.147% | 0.216pp | -82.516 | -4.238 |
+| social_coverage_only | hybrid | lineage | a | high | -442.294 | 7.046% | 0.132pp | -37.959 | -6.356 |
+| crossing_credit_only | hybrid | lineage | a | low | -276.167 | 23.638% | 0.244pp | 5.456 | 0.253 |
+| crossing_credit_only | hybrid | lineage | a | high | -398.880 | 13.714% | 0.165pp | 5.456 | 0.312 |
+| state_wages_only | hybrid | lineage | a | low | -281.624 | 5.486% | 0.130pp | 0.000 | -17.899 |
+| state_wages_only | hybrid | lineage | a | high | -404.336 | 2.932% | 0.095pp | 0.000 | -10.470 |
+| capitalization_only | hybrid | lineage | a | low | -281.624 | 22.705% | 0.227pp | -0.000 | -0.680 |
+| capitalization_only | hybrid | lineage | a | high | -404.336 | 13.955% | 0.176pp | -0.000 | 0.553 |
+| owner_type_only | hybrid | lineage | a | low | -281.624 | 25.907% | 0.255pp | 0.000 | 2.522 |
+| owner_type_only | hybrid | lineage | a | high | -404.336 | 17.542% | 0.188pp | -0.000 | 4.140 |
+| owner_type_broad_only | hybrid | lineage | a | low | -281.624 | 23.592% | 0.250pp | 0.000 | 0.207 |
+| owner_type_broad_only | hybrid | lineage | a | high | -404.336 | 13.715% | 0.165pp | -0.000 | 0.313 |
+| payer_pool_only | hybrid | lineage | a | low | -281.624 | 23.387% | 0.244pp | 0.000 | 0.002 |
+| payer_pool_only | hybrid | lineage | a | high | -404.336 | 13.458% | 0.163pp | -0.000 | 0.056 |
+| financing_only | stationary | identified_union | b | low | -361.691 | 14.175% | 0.211pp | -80.068 | -7.912 |
+| financing_only | stationary | identified_union | b | high | -494.889 | 6.904% | 0.137pp | -90.553 | -6.681 |
+| financing_only | cohort30 | identified_union | b | low | -358.849 | 14.198% | 0.211pp | -77.226 | -7.889 |
+| financing_only | cohort30 | identified_union | b | high | -491.206 | 6.821% | 0.140pp | -86.870 | -6.764 |
+| financing_only | cohort10 | identified_union | b | low | -360.199 | 14.127% | 0.213pp | -78.576 | -7.960 |
+| financing_only | cohort10 | identified_union | b | high | -493.168 | 6.626% | 0.137pp | -88.833 | -6.959 |
+| social_coverage_only | hybrid | identified_union | b | low | -355.749 | 20.195% | 0.235pp | -74.125 | -1.892 |
+| social_coverage_only | hybrid | identified_union | b | high | -433.773 | 9.687% | 0.174pp | -29.438 | -3.898 |
+| crossing_credit_only | hybrid | identified_union | b | low | -276.625 | 22.314% | 0.237pp | 4.999 | 0.227 |
+| crossing_credit_only | hybrid | identified_union | b | high | -399.337 | 13.793% | 0.193pp | 4.999 | 0.208 |
+| state_wages_only | hybrid | identified_union | b | low | -281.624 | 9.629% | 0.169pp | 0.000 | -12.458 |
+| state_wages_only | hybrid | identified_union | b | high | -404.336 | 3.930% | 0.107pp | 0.000 | -9.654 |
+| capitalization_only | hybrid | identified_union | b | low | -281.624 | 21.992% | 0.231pp | 0.000 | -0.095 |
+| capitalization_only | hybrid | identified_union | b | high | -404.336 | 12.716% | 0.184pp | 0.000 | -0.869 |
+| owner_type_only | hybrid | identified_union | b | low | -281.624 | 24.578% | 0.245pp | 0.000 | 2.490 |
+| owner_type_only | hybrid | identified_union | b | high | -404.336 | 17.040% | 0.208pp | 0.000 | 3.456 |
+| owner_type_broad_only | hybrid | identified_union | b | low | -281.624 | 22.297% | 0.239pp | 0.000 | 0.209 |
+| owner_type_broad_only | hybrid | identified_union | b | high | -404.336 | 13.962% | 0.197pp | 0.000 | 0.377 |
+| financing_only | stationary | lineage | b | low | -361.691 | 14.203% | 0.212pp | -80.068 | -7.885 |
+| financing_only | stationary | lineage | b | high | -494.889 | 6.911% | 0.137pp | -90.553 | -6.674 |
+| financing_only | cohort30 | lineage | b | low | -358.704 | 14.241% | 0.209pp | -77.081 | -7.846 |
+| financing_only | cohort30 | lineage | b | high | -491.014 | 6.838% | 0.141pp | -86.679 | -6.747 |
+| financing_only | cohort10 | lineage | b | low | -360.121 | 14.117% | 0.214pp | -78.497 | -7.971 |
+| financing_only | cohort10 | lineage | b | high | -493.073 | 6.648% | 0.137pp | -88.738 | -6.937 |
+| social_coverage_only | hybrid | lineage | b | low | -364.140 | 19.842% | 0.232pp | -82.516 | -2.246 |
+| social_coverage_only | hybrid | lineage | b | high | -442.294 | 9.496% | 0.168pp | -37.959 | -4.089 |
+| crossing_credit_only | hybrid | lineage | b | low | -276.167 | 22.327% | 0.235pp | 5.456 | 0.239 |
+| crossing_credit_only | hybrid | lineage | b | high | -398.880 | 13.827% | 0.193pp | 5.456 | 0.242 |
+| state_wages_only | hybrid | lineage | b | low | -281.624 | 9.653% | 0.166pp | -0.000 | -12.435 |
+| state_wages_only | hybrid | lineage | b | high | -404.336 | 3.931% | 0.107pp | 0.000 | -9.654 |
+| capitalization_only | hybrid | lineage | b | low | -281.624 | 21.997% | 0.232pp | 0.000 | -0.090 |
+| capitalization_only | hybrid | lineage | b | high | -404.336 | 12.736% | 0.183pp | 0.000 | -0.849 |
+| owner_type_only | hybrid | lineage | b | low | -281.624 | 24.578% | 0.245pp | 0.000 | 2.491 |
+| owner_type_only | hybrid | lineage | b | high | -404.336 | 17.074% | 0.209pp | 0.000 | 3.489 |
+| owner_type_broad_only | hybrid | lineage | b | low | -281.624 | 22.300% | 0.239pp | 0.000 | 0.212 |
+| owner_type_broad_only | hybrid | lineage | b | high | -404.336 | 13.982% | 0.198pp | 0.000 | 0.397 |
+| payer_pool_only | hybrid | lineage | b | low | -281.624 | 22.089% | 0.236pp | 0.000 | 0.002 |
+| payer_pool_only | hybrid | lineage | b | high | -404.336 | 13.606% | 0.194pp | 0.000 | 0.021 |
+
+
+
+The added-descendant-only incidence arm removes precisely the payload's added count from US-born nonmembers whose two parents were born in US areas, proportionally within five-year age bands. Removed weights enter the surrogate member pool at the case's G3+ age records: no weight is discarded. The within-cell state, income and family assignment is unidentified. [ASSUMPTION; DATA: p7_payer_cells.csv]
+
+Crossing credits go to the measured non-member tax-return carriers. The union's gross forward A+C is $4.998683bn (joint SDR SE $0.298167bn); reverse B+Cr is $-0.700138bn. The additional forward $0.457349bn uses item 5b's own G3+ per-member extrapolation, applied to the recovered G3+ gross forward vector; white-priced added people take zero. That additional filer location is an assumption, not observed microdata. [CALCULATION: p7_credits.py, p7_inputs.json; SOURCE: mixed_unit_credits/credits.py]
+
+The identified union's direct filer gain is just below the review's $5bn bar; including the case's added-person extrapolation puts the full-lineage gain above it at both ends. This improves the combined other-resident resource account, not the government's unchanged net budget charge. `all_cohorts_resource_delta_bn` keeps that distinction visible; the parent decides whether to revise the broader headline interpretation. [CALCULATION: p7_net_shares.csv, p7_inputs.json]
+
+## Financing and future cohorts
+
+
+
+| population | frame | financing | sharing | total_bn | future_bn | winners_share |
+|---|---|---|---|---|---|---|
+| identified_union | hybrid | a | person | -341.734 | -85.310 | 17.888% |
+| identified_union | hybrid | a | pooled | -341.734 | -85.310 | 19.647% |
+| identified_union | stationary | a | person | -427.044 | -0.000 | 12.657% |
+| identified_union | stationary | a | pooled | -427.044 | -0.000 | 8.700% |
+| identified_union | cohort30 | a | person | -423.782 | -3.263 | 11.448% |
+| identified_union | cohort30 | a | pooled | -423.782 | -3.263 | 7.065% |
+| identified_union | cohort10 | a | person | -425.438 | -1.606 | 10.895% |
+| identified_union | cohort10 | a | pooled | -425.438 | -1.606 | 7.005% |
+| lineage | hybrid | a | person | -341.734 | -85.310 | 17.910% |
+| lineage | hybrid | a | pooled | -341.734 | -85.310 | 19.657% |
+| lineage | stationary | a | person | -427.044 | -0.000 | 12.672% |
+| lineage | stationary | a | pooled | -427.044 | -0.000 | 8.740% |
+| lineage | cohort30 | a | person | -423.613 | -3.431 | 11.478% |
+| lineage | cohort30 | a | pooled | -423.613 | -3.431 | 7.129% |
+| lineage | cohort10 | a | person | -425.351 | -1.693 | 10.912% |
+| lineage | cohort10 | a | pooled | -425.351 | -1.693 | 7.061% |
+| identified_union | hybrid | b | person | -341.734 | -85.310 | 18.044% |
+| identified_union | hybrid | b | pooled | -341.734 | -85.310 | 18.744% |
+| identified_union | stationary | b | person | -427.044 | -0.000 | 12.190% |
+| identified_union | stationary | b | pooled | -427.044 | -0.000 | 10.131% |
+| identified_union | cohort30 | b | person | -423.782 | -3.263 | 11.849% |
+| identified_union | cohort30 | b | pooled | -423.782 | -3.263 | 10.069% |
+| identified_union | cohort10 | b | person | -425.438 | -1.606 | 11.358% |
+| identified_union | cohort10 | b | pooled | -425.438 | -1.606 | 9.905% |
+| lineage | hybrid | b | person | -341.734 | -85.310 | 18.063% |
+| lineage | hybrid | b | pooled | -341.734 | -85.310 | 18.758% |
+| lineage | stationary | b | person | -427.044 | -0.000 | 12.196% |
+| lineage | stationary | b | pooled | -427.044 | -0.000 | 10.134% |
+| lineage | cohort30 | b | person | -423.613 | -3.431 | 11.859% |
+| lineage | cohort30 | b | pooled | -423.613 | -3.431 | 10.094% |
+| lineage | cohort10 | b | person | -425.351 | -1.693 | 11.375% |
+| lineage | cohort10 | b | pooled | -425.351 | -1.693 | 9.909% |
+| identified_union | hybrid | c | person | -341.734 | -85.310 | 22.989% |
+| identified_union | hybrid | c | pooled | -341.734 | -85.310 | 24.019% |
+| identified_union | stationary | c | person | -427.044 | -0.000 | 20.802% |
+| identified_union | stationary | c | pooled | -427.044 | -0.000 | 18.483% |
+| identified_union | cohort30 | c | person | -423.782 | -3.263 | 19.066% |
+| identified_union | cohort30 | c | pooled | -423.782 | -3.263 | 16.734% |
+| identified_union | cohort10 | c | person | -425.438 | -1.606 | 18.691% |
+| identified_union | cohort10 | c | pooled | -425.438 | -1.606 | 16.691% |
+| lineage | hybrid | c | person | -341.734 | -85.310 | 23.029% |
+| lineage | hybrid | c | pooled | -341.734 | -85.310 | 24.000% |
+| lineage | stationary | c | person | -427.044 | -0.000 | 20.846% |
+| lineage | stationary | c | pooled | -427.044 | -0.000 | 18.471% |
+| lineage | cohort30 | c | person | -423.613 | -3.431 | 19.114% |
+| lineage | cohort30 | c | pooled | -423.613 | -3.431 | 16.762% |
+| lineage | cohort10 | c | person | -425.351 | -1.693 | 18.740% |
+| lineage | cohort10 | c | pooled | -425.351 | -1.693 | 16.719% |
+
+
+
+Stationary assigns all accrual and borrowing to current keys. Cohort10/30 move the **whole trust block** together: current payroll receipts, current OASDI/Part A benefits and the net pension increment. The non-trust borrowing part uses projected federal-tax shares over the 10/30-year service windows. Each component is conserved between living and future cohorts. [CALCULATION: p7_inputs.cjs, p7_cohorts.py]
+
+The cohort projection is **[DEGRADED]**, with these explicit proxies:
+
+
+
+- [DEGRADED] SSA-area broad-age population growth applied to the other-resident CPS frame; future age/sex composition held at 2024 within broad bands.
+
+- [DEGRADED] Future beneficiary cuts use SS retirement exposure from attained-age/sex cross-sectional benefits; no separate DI/child/survivor timing or specific legislative counterfactual.
+
+- [DEGRADED] Worker payout timing uses medium single workers, entry 21, retirement 65; target FICA weights proxy accrual shares; HI fraction is explicit caller input (default 0.25).
+
+- [DEGRADED] Living denominator is floored at closed-cohort exposure where coarse projected composition undershoots; every floor is recorded in year table.
+
+- [ASSUMPTION] Borrowing service equal amounts in 2025–2034 / 2025–2054; federal income tax plus FICA age-sex profile proxies future federal taxes, with 2024 real profile fixed.
+
+- [ASSUMPTION] NVSS 2024 sex survival with 2026 Trustees improvements; CPS topcoded ages treated as reported; age-profile means constant beyond last observed cell until age 100.
+
+- [ASSUMPTION] Whole signed trust block uses one common payout-year incidence key; payroll/cash/accrual cannot be credited or charged to inconsistent cohorts.
+
+- [DEGRADED] Payouts after 2100 are assigned wholly to future cohorts/arrivals; tail mass reported.
+
+
+
+Rule (c) allocates cuts by receipt of the responding programmes, valued at their national budgets and responses. Cash and SPM noncash receipts are survey fields; health enrollment and school age/enrollment proxy their receipt. The education budget is split at the case's BEA K12 weight; college receipt uses A_ENRLW=1 and A_HSCOL=2 (CPS universe16–24), so older student receipt and public/private type are unidentified and this key is explicitly a proxy. Programmes without a CPS person receipt use a declared universal service key. It is an allocation assumption, not an observed policy experiment. [DATA: p7_programme_receipt_keys.csv; CALCULATION: p7_inputs.cjs → responding_programme_key]
+
+## Sharing rules are sensitivities, never bounds
+
+
+
+| financing | sharing | winners_share | total_bn |
+|---|---|---|---|
+| a | person | 9.829% | -483.072 |
+| a | pooled | 4.633% | -483.072 |
+| a | retains_0.5 | 5.822% | -483.072 |
+| a | retains_0.8 | 8.192% | -483.072 |
+| a | mixed_unit | 6.264% | -378.105 |
+| b | person | 10.322% | -483.072 |
+| b | pooled | 8.399% | -483.072 |
+| b | retains_0.5 | 8.613% | -483.072 |
+| b | retains_0.8 | 9.376% | -483.072 |
+| b | mixed_unit | 9.986% | -376.701 |
+| c | person | 17.690% | -483.072 |
+| c | pooled | 14.741% | -483.072 |
+| c | retains_0.5 | 14.756% | -483.072 |
+| c | retains_0.8 | 14.790% | -483.072 |
+| c | mixed_unit | 16.230% | -377.683 |
+
+
+
+For s=0.5/0.8 the earner retains s of their own wage change and transfers the remainder to other unit members, conserving weighted dollars in each unit. All other net channels are pooled. Singletons retain everything. The two-person counterexample (wages 100/0, shared taxes 40/40) gives person 60/−40, pooled 10/10, and retaining 20% gives −20/40: an individual's sign can lie outside both endpoint signs. A separate aggregate control with two units, net wages (100,−1) and (8,−10), puts 50% ahead under both endpoints but 75% under s=0.8. Counts themselves also need not be bounded. [CALCULATION: test_p7_frames.py]
+
+The mixed-unit arm includes members' personal cash income net of their own income taxes and FICA plus per-capita SPM noncash benefits. It shares those resources with the other residents of their units, conserving the combined total and reporting both sides of the boundary. It is a resources sensitivity; bargaining, refiling, wage adjustment and member departure behavior are unmeasured. The all-group units remain in the conservation check. [ASSUMPTION; DATA: p7_mixed_reconciliation.csv]
+
+## Geography, ownership and claims
+
+
+
+| arm | financing | cut | group | persons_m | mean_usd | winners_share |
+|---|---|---|---|---|---|---|
+| recommended | a | edu_nativity | ba_plus / other_foreign_born | 16.879 | -2198.7 | 7.423% |
+| recommended | a | edu_nativity | ba_plus / us_born | 69.935 | -1790.4 | 8.269% |
+| recommended | a | edu_nativity | below_high_school / other_foreign_born | 4.558 | -1935.5 | 0.675% |
+| recommended | a | edu_nativity | below_high_school / us_born | 8.468 | -1424.8 | 1.200% |
+| recommended | a | edu_nativity | high_school / other_foreign_born | 8.153 | -2295.6 | 1.335% |
+| recommended | a | edu_nativity | high_school / us_born | 47.837 | -2016.4 | 1.570% |
+| recommended | a | edu_nativity | some_college / other_foreign_born | 5.461 | -1665.2 | 4.675% |
+| recommended | a | edu_nativity | some_college / us_born | 47.009 | -1345.3 | 4.737% |
+| recommended | a | edu_nativity | under_25 | 84.491 | -1329.7 | 3.616% |
+| recommended | a | tenure | landlord | 24.293 | -1160.4 | 25.653% |
+| recommended | a | tenure | owner_no_rental_income | 182.667 | -1563.7 | 3.667% |
+| recommended | a | tenure | renter | 85.831 | -1971.9 | 0.739% |
+| recommended | a | state3 | CA | 26.104 | -4623.9 | 1.929% |
+| recommended | a | state3 | TX | 21.008 | -4314.1 | 1.353% |
+| recommended | a | state3 | rest | 245.679 | -1106.1 | 5.201% |
+| recommended_state_wages | a | edu_nativity | ba_plus / other_foreign_born | 16.879 | -2175.6 | 3.051% |
+| recommended_state_wages | a | edu_nativity | ba_plus / us_born | 69.935 | -1779.1 | 2.969% |
+| recommended_state_wages | a | edu_nativity | below_high_school / other_foreign_born | 4.558 | -2039.7 | 0.917% |
+| recommended_state_wages | a | edu_nativity | below_high_school / us_born | 8.468 | -1388.8 | 1.041% |
+| recommended_state_wages | a | edu_nativity | high_school / other_foreign_born | 8.153 | -2321.7 | 1.512% |
+| recommended_state_wages | a | edu_nativity | high_school / us_born | 47.837 | -2036.2 | 1.516% |
+| recommended_state_wages | a | edu_nativity | some_college / other_foreign_born | 5.461 | -1661.3 | 1.941% |
+| recommended_state_wages | a | edu_nativity | some_college / us_born | 47.009 | -1356.8 | 2.212% |
+| recommended_state_wages | a | edu_nativity | under_25 | 84.491 | -1321.8 | 1.155% |
+| recommended_state_wages | a | tenure | landlord | 24.293 | -1090.7 | 18.666% |
+| recommended_state_wages | a | tenure | owner_no_rental_income | 182.667 | -1562.3 | 0.470% |
+| recommended_state_wages | a | tenure | renter | 85.831 | -1994.6 | 0.346% |
+| recommended_state_wages | a | state3 | CA | 26.104 | -4698.9 | 2.378% |
+| recommended_state_wages | a | state3 | TX | 21.008 | -4321.2 | 1.720% |
+| recommended_state_wages | a | state3 | rest | 245.679 | -1097.5 | 1.917% |
+| recommended_capitalization | a | edu_nativity | ba_plus / other_foreign_born | 16.879 | -1948.5 | 7.909% |
+| recommended_capitalization | a | edu_nativity | ba_plus / us_born | 69.935 | -1608.9 | 8.460% |
+| recommended_capitalization | a | edu_nativity | below_high_school / other_foreign_born | 4.558 | -1995.5 | 0.626% |
+| recommended_capitalization | a | edu_nativity | below_high_school / us_born | 8.468 | -1549.2 | 1.161% |
+| recommended_capitalization | a | edu_nativity | high_school / other_foreign_born | 8.153 | -2307.9 | 1.089% |
+| recommended_capitalization | a | edu_nativity | high_school / us_born | 47.837 | -2076.1 | 1.435% |
+| recommended_capitalization | a | edu_nativity | some_college / other_foreign_born | 5.461 | -1683.2 | 4.035% |
+| recommended_capitalization | a | edu_nativity | some_college / us_born | 47.009 | -1439.9 | 4.639% |
+| recommended_capitalization | a | edu_nativity | under_25 | 84.491 | -1425.4 | 3.318% |
+| recommended_capitalization | a | tenure | landlord | 24.293 | -1077.9 | 24.800% |
+| recommended_capitalization | a | tenure | owner_no_rental_income | 182.667 | -1899.7 | 3.199% |
+| recommended_capitalization | a | tenure | renter | 85.831 | -1280.0 | 1.736% |
+| recommended_capitalization | a | state3 | CA | 26.104 | -4623.9 | 1.757% |
+| recommended_capitalization | a | state3 | TX | 21.008 | -4314.1 | 1.130% |
+| recommended_capitalization | a | state3 | rest | 245.679 | -1106.1 | 5.154% |
+| stack | a | edu_nativity | ba_plus / other_foreign_born | 16.879 | -1937.9 | 3.536% |
+| stack | a | edu_nativity | ba_plus / us_born | 69.935 | -1585.5 | 4.473% |
+| stack | a | edu_nativity | below_high_school / other_foreign_born | 4.558 | -2097.9 | 0.816% |
+| stack | a | edu_nativity | below_high_school / us_born | 8.468 | -1533.6 | 0.947% |
+| stack | a | edu_nativity | high_school / other_foreign_born | 8.153 | -2344.4 | 1.065% |
+| stack | a | edu_nativity | high_school / us_born | 47.837 | -2106.0 | 1.317% |
+| stack | a | edu_nativity | some_college / other_foreign_born | 5.461 | -1713.6 | 2.169% |
+| stack | a | edu_nativity | some_college / us_born | 47.009 | -1456.1 | 2.157% |
+| stack | a | edu_nativity | under_25 | 84.491 | -1411.6 | 1.136% |
+| stack | a | tenure | landlord | 24.293 | -1650.2 | 12.631% |
+| stack | a | tenure | owner_no_rental_income | 182.667 | -1825.6 | 0.827% |
+| stack | a | tenure | renter | 85.831 | -1275.9 | 2.414% |
+| stack | a | state3 | CA | 26.104 | -4861.5 | 4.608% |
+| stack | a | state3 | TX | 21.008 | -4399.5 | 3.144% |
+| stack | a | state3 | rest | 245.679 | -1073.5 | 1.949% |
+| recommended | b | edu_nativity | ba_plus / other_foreign_born | 16.879 | -1573.5 | 16.661% |
+| recommended | b | edu_nativity | ba_plus / us_born | 69.935 | -1064.4 | 18.029% |
+| recommended | b | edu_nativity | below_high_school / other_foreign_born | 4.558 | -2732.4 | 0.792% |
+| recommended | b | edu_nativity | below_high_school / us_born | 8.468 | -1969.4 | 1.110% |
+| recommended | b | edu_nativity | high_school / other_foreign_born | 8.153 | -2749.3 | 1.511% |
+| recommended | b | edu_nativity | high_school / us_born | 47.837 | -2288.7 | 1.690% |
+| recommended | b | edu_nativity | some_college / other_foreign_born | 5.461 | -1888.2 | 5.399% |
+| recommended | b | edu_nativity | some_college / us_born | 47.009 | -1507.2 | 6.491% |
+| recommended | b | edu_nativity | under_25 | 84.491 | -1655.6 | 5.638% |
+| recommended | b | tenure | landlord | 24.293 | -0.5 | 32.881% |
+| recommended | b | tenure | owner_no_rental_income | 182.667 | -1537.3 | 8.060% |
+| recommended | b | tenure | renter | 85.831 | -2356.4 | 2.193% |
+| recommended | b | state3 | CA | 26.104 | -4481.0 | 2.690% |
+| recommended | b | state3 | TX | 21.008 | -4285.2 | 1.958% |
+| recommended | b | state3 | rest | 245.679 | -1123.7 | 9.557% |
+| recommended_state_wages | b | edu_nativity | ba_plus / other_foreign_born | 16.879 | -1550.4 | 6.463% |
+| recommended_state_wages | b | edu_nativity | ba_plus / us_born | 69.935 | -1053.1 | 7.215% |
+| recommended_state_wages | b | edu_nativity | below_high_school / other_foreign_born | 4.558 | -2836.6 | 0.745% |
+| recommended_state_wages | b | edu_nativity | below_high_school / us_born | 8.468 | -1933.4 | 1.170% |
+| recommended_state_wages | b | edu_nativity | high_school / other_foreign_born | 8.153 | -2775.4 | 1.310% |
+| recommended_state_wages | b | edu_nativity | high_school / us_born | 47.837 | -2308.5 | 1.514% |
+| recommended_state_wages | b | edu_nativity | some_college / other_foreign_born | 5.461 | -1884.3 | 2.489% |
+| recommended_state_wages | b | edu_nativity | some_college / us_born | 47.009 | -1518.6 | 2.887% |
+| recommended_state_wages | b | edu_nativity | under_25 | 84.491 | -1647.7 | 1.971% |
+| recommended_state_wages | b | tenure | landlord | 24.293 | 69.2 | 26.263% |
+| recommended_state_wages | b | tenure | owner_no_rental_income | 182.667 | -1535.9 | 1.799% |
+| recommended_state_wages | b | tenure | renter | 85.831 | -2379.0 | 0.691% |
+| recommended_state_wages | b | state3 | CA | 26.104 | -4556.0 | 6.688% |
+| recommended_state_wages | b | state3 | TX | 21.008 | -4292.3 | 5.428% |
+| recommended_state_wages | b | state3 | rest | 245.679 | -1115.1 | 3.001% |
+| recommended_capitalization | b | edu_nativity | ba_plus / other_foreign_born | 16.879 | -1725.0 | 14.799% |
+| recommended_capitalization | b | edu_nativity | ba_plus / us_born | 69.935 | -1318.0 | 15.693% |
+| recommended_capitalization | b | edu_nativity | below_high_school / other_foreign_born | 4.558 | -2240.4 | 0.756% |
+| recommended_capitalization | b | edu_nativity | below_high_school / us_born | 8.468 | -1791.3 | 1.179% |
+| recommended_capitalization | b | edu_nativity | high_school / other_foreign_born | 8.153 | -2441.0 | 1.235% |
+| recommended_capitalization | b | edu_nativity | high_school / us_born | 47.837 | -2199.5 | 1.582% |
+| recommended_capitalization | b | edu_nativity | some_college / other_foreign_born | 5.461 | -1763.0 | 4.690% |
+| recommended_capitalization | b | edu_nativity | some_college / us_born | 47.009 | -1516.5 | 5.689% |
+| recommended_capitalization | b | edu_nativity | under_25 | 84.491 | -1542.9 | 4.634% |
+| recommended_capitalization | b | tenure | landlord | 24.293 | -641.4 | 29.138% |
+| recommended_capitalization | b | tenure | owner_no_rental_income | 182.667 | -1892.4 | 5.974% |
+| recommended_capitalization | b | tenure | renter | 85.831 | -1419.3 | 3.867% |
+| recommended_capitalization | b | state3 | CA | 26.104 | -4481.0 | 2.093% |
+| recommended_capitalization | b | state3 | TX | 21.008 | -4285.2 | 1.445% |
+| recommended_capitalization | b | state3 | rest | 245.679 | -1123.7 | 8.328% |
+| stack | b | edu_nativity | ba_plus / other_foreign_born | 16.879 | -1714.4 | 6.142% |
+| stack | b | edu_nativity | ba_plus / us_born | 69.935 | -1294.5 | 7.753% |
+| stack | b | edu_nativity | below_high_school / other_foreign_born | 4.558 | -2342.8 | 0.677% |
+| stack | b | edu_nativity | below_high_school / us_born | 8.468 | -1775.7 | 1.047% |
+| stack | b | edu_nativity | high_school / other_foreign_born | 8.153 | -2477.5 | 1.160% |
+| stack | b | edu_nativity | high_school / us_born | 47.837 | -2229.4 | 1.452% |
+| stack | b | edu_nativity | some_college / other_foreign_born | 5.461 | -1793.3 | 2.355% |
+| stack | b | edu_nativity | some_college / us_born | 47.009 | -1532.8 | 2.837% |
+| stack | b | edu_nativity | under_25 | 84.491 | -1529.1 | 1.485% |
+| stack | b | tenure | landlord | 24.293 | -1213.7 | 16.819% |
+| stack | b | tenure | owner_no_rental_income | 182.667 | -1818.2 | 1.812% |
+| stack | b | tenure | renter | 85.831 | -1415.2 | 3.134% |
+| stack | b | state3 | CA | 26.104 | -4718.6 | 5.629% |
+| stack | b | state3 | TX | 21.008 | -4370.5 | 3.491% |
+| stack | b | state3 | rest | 245.679 | -1091.2 | 3.208% |
+
+
+
+State wage incidence conserves every nativity/skill cell's national gross gain/loss at 1e-9bn; group skill-cell earnings locate the state shock, then other workers' own earnings allocate it. This is a geographic incidence arm, not a local-labor-market equilibrium solve. Capitalization puts the state/local burden on owners using ACS state × income property-value margins mapped to CPS owner cells. Renters bear no direct capitalization charge; the separate rent channel remains. [ASSUMPTION; CALCULATION: p7_state_wage_cells.csv, property_key]
+
+Reported RHFS rental-unit owner shares proxy rent-receipt shares. Individuals are identified, corporation/REIT ownership is identified, and LLC/partnership/trust/other ownership remains unresolved. The two ownership arms assign that residual either through capital income or individual landlords; both preserve each matching geography's gross landlord dollars and the housing net. No interpretation makes an LLC automatically a corporate/REIT owner. [DATA: inputs_rhfs.csv; p7_owner_types_*.csv, p7_inputs.json]
+
+## Complete social rows and exclusions
+
+
+
+| item | low_bn | central_bn | high_bn | key |
+|---|---|---|---|---|
+| victims | -32.626396 | -33.302789 | -33.979181 | live total on existing crime_victims incidence |
+| property_crime | -1.342564 | -1.394312 | -1.446059 | live total on existing property_crime incidence |
+| unreimbursed_care | -3.310305 | -4.488684 | -5.667063 | live total on existing unreimbursed_care incidence |
+| congestion | -14.663600 | -13.593610 | -12.523620 | live total on existing congestion incidence |
+| housing_gain | 3.651977 | 2.196137 | 0.740298 | gross renter/landlord arrays, live central metro-local at low; national-uniform at high |
+| fear_avoidance | -11.066272 | -11.044307 | -11.022342 | crime victim risk within group states |
+| private_security | 0.525136 | 0.524094 | 0.523051 | crime victim risk within group states; signed net may be a benefit |
+| school_disruption | 2.145917 | 2.145917 | 2.145917 | ages 5-17 in group states; school type unavailable |
+| pm25_consumption | -74.182132 | -74.182132 | -74.182132 | 35% local group-state resident exposure, 65% national residents; assumed dispersion |
+| road_crash_externality | -11.365389 | -11.365389 | -11.365389 | state group vehicle-minutes by urban area, receiving metro workers; driving proxy |
+| scale_net_earnings | 14.721034 | 14.721034 | 14.721034 | earnings by scale-lane metro states plus induced receipts by financing rule |
+| restaurant_variety_market_size | 6.793000 | 6.793000 | 6.793000 | SPM resources within group states, consumption proxy |
+| formal_volunteering_outside_group | 6.352761 | 6.352761 | 6.352761 | all other residents nationally; beneficiary location unobserved |
+| total_consumer_scale | 2.320176 | 2.320176 | 2.320176 | national SPM resources, consumption proxy |
+| total_trade_travel_fdi | 7.391170 | 7.391170 | 7.391170 | national SPM resources, consumption proxy |
+| source_rounding | -0.000000 | -0.000001 | -0.000001 | national persons; explicit serialized source-row rounding |
+
+
+
+All 15 adopted live social rows are allocated, plus an explicit source-rounding row of at most $1,000 that reconciles the source's separately rounded aggregate. The legacy mobility row is supplemental and not in this adopted channel set. Fear/security use crime-risk keys; schools use group state pupil shares; pollution uses the source's local fraction plus national dispersion; crashes use urban vehicle exposure. Volunteering and trade/consumer-scale rows use national beneficiary/consumption keys where their location is unobserved. Every key is an incidence proxy. [DATA: p7_channel_coverage.csv; p7_excluded_channels.csv]
+
+The low source social rows use the equal/raw-coded crime footing and the high use custody, while the frozen main-case fiscal band uses custody at both ends. These incidence sums are therefore explicit allocation scenarios, not a claim to reproduce the published paired total. Each source row and its population is preserved; the mismatch is not hidden by a total label. [DATA: inputs/social_oct14.json lineage_social_rows.keys]
+
+## Dollar extrema and share extrema
+
+
+
+| extreme | financing | level | wage_geography | capitalization | housing_level | sharing | persons_m | total_bn | winners_share | losers_share | mean_usd |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| share_minimum | a | high | state | False | central | person | 292.7915093 | -524.624 | 1.542% | 0.9845808576 | -1791.801709 |
+| share_maximum | a | low | national | True | central | person | 292.7915093 | -438.896 | 14.937% | 0.8506326957 | -1499.004778 |
+| dollar_minimum | a | high | national | True | low | person | 292.7915093 | -528.511 | 6.055% | 0.9394486006 | -1805.076768 |
+| dollar_maximum | a | low | national | False | high | person | 292.7915093 | -433.000 | 14.527% | 0.8547339558 | -1478.866841 |
+| share_minimum | a | high | state | False | central | pooled | 292.7915093 | -524.624 | 1.220% | 0.9877997344 | -1791.801709 |
+| share_maximum | a | low | national | True | central | pooled | 292.7915093 | -438.896 | 12.186% | 0.8781386571 | -1499.004778 |
+| dollar_minimum | a | high | national | True | low | pooled | 292.7915093 | -528.511 | 2.676% | 0.9732436025 | -1805.076768 |
+| dollar_maximum | a | low | state | True | high | pooled | 292.7915093 | -433.000 | 2.839% | 0.9716081177 | -1478.866841 |
+| share_minimum | b | high | state | True | central | person | 292.7915093 | -524.624 | 2.149% | 0.9785125873 | -1791.801709 |
+| share_maximum | b | low | national | False | high | person | 292.7915093 | -433.000 | 14.549% | 0.8545096449 | -1478.866841 |
+| dollar_minimum | b | high | national | False | low | person | 292.7915093 | -528.511 | 7.280% | 0.9272018564 | -1805.076768 |
+| dollar_maximum | b | low | state | False | high | person | 292.7915093 | -433.000 | 5.717% | 0.9428347725 | -1478.866841 |
+| share_minimum | b | high | state | True | central | pooled | 292.7915093 | -524.624 | 1.744% | 0.9825594825 | -1791.801709 |
+| share_maximum | b | low | national | False | high | pooled | 292.7915093 | -433.000 | 13.078% | 0.8692215158 | -1478.866841 |
+| dollar_minimum | b | high | national | False | low | pooled | 292.7915093 | -528.511 | 5.784% | 0.9421645158 | -1805.076768 |
+| dollar_maximum | b | low | national | False | high | pooled | 292.7915093 | -433.000 | 13.078% | 0.8692215158 | -1478.866841 |
+| share_minimum | c | high | state | True | central | person | 292.7915093 | -524.624 | 2.831% | 0.9716854412 | -1791.801709 |
+| share_maximum | c | low | national | False | high | person | 292.7915093 | -433.000 | 20.553% | 0.7944749155 | -1478.866841 |
+| dollar_minimum | c | high | national | False | low | person | 292.7915093 | -528.511 | 14.327% | 0.8567341744 | -1805.076768 |
+| dollar_maximum | c | low | state | True | high | person | 292.7915093 | -433.000 | 6.116% | 0.9388352353 | -1478.866841 |
+| share_minimum | c | high | state | True | central | pooled | 292.7915093 | -524.624 | 2.108% | 0.9789244023 | -1791.801709 |
+| share_maximum | c | low | national | False | high | pooled | 292.7915093 | -433.000 | 18.899% | 0.8110121223 | -1478.866841 |
+| dollar_minimum | c | high | national | False | low | pooled | 292.7915093 | -528.511 | 10.853% | 0.8914694884 | -1805.076768 |
+| dollar_maximum | c | low | state | False | high | pooled | 292.7915093 | -433.000 | 8.696% | 0.9130385606 | -1478.866841 |
+
+
+
+The enumerated grid has 2 fiscal ends × 2 wage incidences × 2 capitalization arms × 3 coherent housing levels, for each rule and person/pooled sharing. Nonhousing social rows follow the selected fiscal case end at their central model settings, including the matched source crime footing; credit rules are fixed. The reported share minimum/maximum are over this finite declared grid, not universal bounds on household outcomes or all uncertain social parameters. [CALCULATION: p7_enumerated_grid.csv]
+
+## Live table map
+
+
+
+| memo_table | file | selection |
+|---|---|---|
+| §2 all channels | p7_channel_table.csv | complete_social/recommended/stack; select population,financing,frame,level; gross wages/rents, fiscal today/future, every social row |
+| §2 social detail | p7_social_channel_table.csv | complete_social; select financing/frame/level/population |
+| §2 prior inside/beside channel table | winners_losers_table.csv | live oct14 retained hybrid record; current channel set is p7_channel_table.csv |
+| §3 cuts | p7_cuts.csv | state3,edu_nativity,tenure,age3,industry5,race5,sex; select full model tags |
+| §3 quintiles and income | p7_cuts.csv | quintile or decile; pct_of_resources |
+| §3 two-way winning cells | p7_cuts.csv | state3 / edu_nativity,edu_nativity / tenure,state3 / tenure,decile / tenure |
+| §4 sensitivities | p7_net_shares.csv | one arm at a time plus stack; exact financing/sharing tags |
+| §4 account-only/proposed/national-state-local/alternate-housing/crime variants | net_shares.csv | live oct14 legacy hybrid variants; exact net,stack,unit; retained comparison, not corrected verdict |
+| §4 enumerated extrema | p7_grid_extrema.csv | share extrema and dollar extrema separately |
+| §4 pooling moves | pooling_moves.csv | live oct14 legacy hybrid calculation record |
+| §5 group resources | group_frame.csv | live 42.75M; p7_mixed_reconciliation.csv for boundary transfer |
+| §6 excluded roles | p7_excluded_channels.csv | source exclusions and supplemental/proposed channels; role_table.csv preserves source roles |
+| §1 financing | p7_trust_inputs.json | exact set/cash trust-fund amounts; p7_net_shares future_bn |
+
+
+
+## Gates, reproduction and limits
+
+
+
+All **1049 P7 gates** pass, in addition to the unchanged 511 hybrid gates. New allocations close at absolute 1e-9bn; weights and combined mixed-unit resources are conserved. The primary source's serializing residual is allocated explicitly. [DATA: p7_gates.json; gates.json]
+
+Winner-share SEs use the 160 official successive-difference replicate weights and hold the priced arrays, sharing assignments and model fixed. They measure conditional prevalence uncertainty, not uncertainty of the allocation or causal model. Credit-flow SEs come from the primary tax model's full calibrated joint replicates. [DATA: p7_net_shares.csv, p7_inputs.json]
+
+```sh
+sh infra/immigration-fiscal/winners_losers_2026_09_24/run_all.sh
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/winners_losers_2026_09_24 "sh {lane}/run_all.sh"
+```
+
+`run_all.sh` names the imported helpers and directory-level pytest files for the coverage scanner. No `--allow-unrun` is used. `measured_run.py` records Python wall time/child peak RSS under ignored `_cache/timings.jsonl`; it fails above 2500 MiB and propagates child failure. No ps/sysctl/time -l is used.
+
+Source review: the initial owner-geometry replacement and one-fix comparator bugs were corrected; the generated-output pin now has a location-independent logical identity and a regression test. An actual within-run peer input change triggered frozen-vintage acquisition and drift guarding. The raw record includes initial failures; successful rerun receipts are recorded by the parent. [CALCULATION: test_p7_frames.py; scratch winners-code-review.md]
+
+The LLM is an instrument with dispositions on immigration; the stated conclusions follow the matched numerical scenarios and gates, not the reviewers' predictions. The older minority-ahead claim survives, while its exact share and who is ahead are conditional on financing, household sharing, channels and geography. [FRAMING-SENSITIVE; SOURCE: notes/llm-bias-caveat.md]
+
+## Run log (UTC)
+
+
+
+Timing receipts below come directly from Python, captured as a fixed input before the final byte-identical rerun. A preliminary successful run was rejected on inspection for mixed social vintages; another failed on the source's separately rounded aggregate. Those failures remain in the record. Repeated cut filters were replaced with grouped aggregation; the unrelated external congestion setup hotspot is documented in performance.md.
+
+
+
+- 2026-10-14T12:30:09.877246+00:00: exit 0; 106.530s, 1411.422 MiB; uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+- 2026-10-14T12:39:09.457905+00:00: exit 1; 51.596s, 1950.531 MiB; uv run --no-project python3 -m cProfile -o infra/immigration-fiscal/winners_losers_2026_09_24/_cache/p7_profile.pstat infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+- 2026-10-14T12:45:33.243753+00:00: exit 0; 315.265s, 2204.266 MiB; uv run --no-project python3 -m cProfile -o infra/immigration-fiscal/winners_losers_2026_09_24/_cache/p7_profile.pstat infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+- 2026-10-14T12:47:57.725364+00:00: exit 1; 70.231s, 2184.188 MiB; uv run --no-project python3 -m cProfile -o infra/immigration-fiscal/winners_losers_2026_09_24/_cache/p7_profile_fixed.pstat infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+- 2026-10-14T12:51:03.389924+00:00: exit 0; 114.133s, 2182.688 MiB; uv run --no-project python3 -m cProfile -o infra/immigration-fiscal/winners_losers_2026_09_24/_cache/p7_profile_fixed.pstat infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+- 2026-10-14T12:59:01.004414+00:00: exit 0; 185.690s, 1621.203 MiB; uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+- 2026-10-14T13:07:59.941308+00:00: exit 0; 174.822s, 1623.359 MiB; uv run --no-project python3 -m cProfile -o infra/immigration-fiscal/winners_losers_2026_09_24/_cache/verification_profile.pstat infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+- 2026-10-14T13:11:19.100924+00:00: exit 0; 0.715s, 213.672 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs --case oct14
+
+- 2026-10-14T13:11:19.901745+00:00: exit 0; 0.767s, 215.672 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs
+
+- 2026-10-14T13:13:12.131019+00:00: exit 0; 112.194s, 1989.516 MiB; uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+- 2026-10-14T13:18:53.667230+00:00: exit 0; 0.973s, 210.094 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs --case oct14
+
+- 2026-10-14T13:18:54.551170+00:00: exit 0; 0.836s, 211.328 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs
+
+- 2026-10-14T13:20:36.813704+00:00: exit 0; 102.224s, 2092.062 MiB; uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+- 2026-10-14T13:20:54.489105+00:00: exit 0; 0.690s, 212.250 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs --case oct14
+
+- 2026-10-14T13:20:55.300942+00:00: exit 0; 0.778s, 211.516 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs
+
+- 2026-10-14T13:22:22.675972+00:00: exit 0; 87.342s, 2652.531 MiB; uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+- 2026-10-14T13:23:24.576089+00:00: exit 0; 0.656s, 214.766 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs --case oct14
+
+- 2026-10-14T13:23:25.220916+00:00: exit 0; 0.614s, 212.281 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs
+
+- 2026-10-14T13:25:12.512791+00:00: exit 0; 107.259s, 2246.906 MiB; uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+- 2026-10-14T13:27:07.410559+00:00: exit 0; 2.494s, 214.828 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs --case oct14
+
+- 2026-10-14T13:27:08.587950+00:00: exit 0; 1.124s, 206.703 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs
+
+- 2026-10-14T13:31:26.402507+00:00: exit 0; 257.774s, 2159.641 MiB; uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+- 2026-10-14T13:31:53.425644+00:00: exit 0; 1.208s, 216.094 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs --case oct14
+
+- 2026-10-14T13:31:54.941343+00:00: exit 0; 1.467s, 211.953 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs
+
+- 2026-10-14T13:34:40.196730+00:00: exit 0; 165.193s, 1779.266 MiB; uv run --no-project python3 -m cProfile -o infra/immigration-fiscal/winners_losers_2026_09_24/_cache/final_profile.pstat infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+- 2026-10-14T13:36:36.415894+00:00: exit 0; 2.848s, 206.734 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs --case oct14
+
+- 2026-10-14T13:36:38.250626+00:00: exit 0; 1.758s, 208.766 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs
+
+- 2026-10-14T13:39:16.835827+00:00: exit 0; 158.524s, 2546.828 MiB; uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+- 2026-10-14T13:41:59.810027+00:00: exit 0; 2.525s, 205.719 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs --case oct14
+
+- 2026-10-14T13:42:00.622176+00:00: exit 0; 0.776s, 213.719 MiB; node infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs
+
+- 2026-10-14T13:44:34.785009+00:00: exit 0; 154.124s, 1986.016 MiB; uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14
+
+
+
+---
+
+
+
+# Preserved prior calculation record
+
 **Verdict:** [2026-09-28: the scripts now default to the September 27 case (`--case sept27`, $321.8–387.4bn, pins 78766c2, e03450b, 8654a0c), and `derived/` holds that run. Pooled within SPM units, 17.8% of other residents come out ahead under tax-share financing and 17.0% under per-person cuts (schools case: 20.5%, 19.0%), 11.1–24.0% across the stacks under (a); the person count gives 16.9% under both. The fiscal channel now has three financing parts. Taxpayers carry $349.3bn at central values, 85% of it state and local; of that, $44.7bn is the return on public capital, enterprise capital included, which is never borrowed. The capped programs, $5.1bn of rental assistance and LIHEAP, fall on eligible households without the aid under both conventions (`displaced_beneficiaries`). The social net on today's residents is −$386.6bn. Congestion is the long-run re-derivation, $13.0bn central ($2.0–30.8bn). Where the uniform lane cut outweighs the group's traffic, other residents gain: in 18–27 of the 50 states and DC across the levels, 22 at central values ($0.9bn). The preferences row is an attribution under a stated replacement rule; the DBE premium's part already in the fiscal channel ($2.6m) is netted, and the rule's other recipients' part (−$0.97bn) sits beside it in "with proposed". `specs.cjs` writes each capital component as a line `capital_<id>`. `--case sept26_schools` rewrites fa1bd3a's files byte for byte, and `sept26` and `sept24` reproduce theirs. Old → new: `../sept27_propagation_2026_09_27/RESULT_ledger.md`.] [2026-09-26, later: the scripts now default to the main case with schools at full cost (`--case sept26_schools`, $258.5–292.0bn), and `derived/` holds that run. Pooled within SPM units, 20.5% of other residents come out ahead under tax-share financing and 19.0% under per-person cuts (text below: 23.9%, 21.4%), 11.9–27.1% across the stacks under (a); the person count gives 18.4% and 18.3% (below: 20.1%, 19.9%). The fiscal channel is $275.0bn at central values (below: $223.4bn), 83% of it state and local, and the social net on today's residents is −$314.4bn (below: −$263.9bn). School dilution stays in the role table, since nothing is left unfunded at a school response of 1; the consumption key is inside the fiscal channel. `--case sept26` gives the one-year scenario (23.9%, 21.4%). `--case sept24` reproduces the run described below byte for byte. Old → new: `../sept26_propagation_2026_09_26/RESULT_ledger.md`.] [Parent ruling 7, 2026-09-25: the count pooled within SPM units is central: 23.9% ahead under (a) and 21.4% under (b), 13.9–30.0% across the stacks. The person count gives wages to the earner but shares taxes and rent within the unit, so it counts children and non-earners in winning units as behind by construction; it stays as the alternative. Memo: [who wins and who loses](../../../research/immigration-winners-and-losers-2026-09-25.md), ladder 226.] About one other resident in five comes out ahead of the Mexican-origin group's presence and
 four in five come out behind. The person count ("wages to the earner, taxes and rent shared within the
 unit") puts 20.1% ahead with tax-share financing (a) and 19.9% with per-person cuts (b). Pooling every

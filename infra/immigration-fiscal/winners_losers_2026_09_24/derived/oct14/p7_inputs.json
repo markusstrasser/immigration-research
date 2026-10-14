@@ -1,0 +1,802 @@
+{
+ "case": "oct14",
+ "recommended": "stationary; complete adopted social set; corrected lineage payer pool; state wage and capitalization arms beside",
+ "channel_set": "all 15 lineage_social_rows rows; mobility supplemental outside the adopted published total",
+ "source_frame": "identified_union is an alternative payer pool for the live lineage case, not a 39.71M fiscal rerun",
+ "group_incidence_weights": "audit row4 for identified union; payload age-band G3+ surrogate for the added lineage people; same weights feed state labor and cohort payout proxies",
+ "social_vintage": "adopted v7 at c392d356; inputs/social_oct14.json; excludes concurrent unadopted peer source refresh",
+ "cohort": {
+  "living_shares": {
+   "trust": 0.8713815512117437,
+   "borrowing10": 0.9782230559773011,
+   "borrowing30": 0.9198295213631204
+  },
+  "living_incidence_by_current_age": {
+   "trust": {
+    "under18": 0.04839278287081822,
+    "age18_64": 0.8531093089130592,
+    "age65plus": 0.09849790821612252
+   },
+   "borrowing10": {
+    "under18": 0.02813950490539554,
+    "age18_64": 0.8781987683994746,
+    "age65plus": 0.09366172669512982
+   },
+   "borrowing30": {
+    "under18": 0.15979653157554535,
+    "age18_64": 0.7921494632404702,
+    "age65plus": 0.04805400518398443
+   }
+  },
+  "component_living_shares": {
+   "payroll_bn": 0.8713815512117437,
+   "cash_benefits_bn": 0.8713815512117437,
+   "accrual_bn": 0.8713815512117437,
+   "trust_cost_bn": 0.8713815512117437,
+   "set_cost_bn": 0.8713815512117437,
+   "cash_cost_bn": 0.8713815512117437
+  },
+  "proxies": [
+   "[DEGRADED] SSA-area broad-age population growth applied to the other-resident CPS frame; future age/sex composition held at 2024 within broad bands.",
+   "[DEGRADED] Future beneficiary cuts use SS retirement exposure from attained-age/sex cross-sectional benefits; no separate DI/child/survivor timing or specific legislative counterfactual.",
+   "[DEGRADED] Worker payout timing uses medium single workers, entry 21, retirement 65; target FICA weights proxy accrual shares; HI fraction is explicit caller input (default 0.25).",
+   "[DEGRADED] Living denominator is floored at closed-cohort exposure where coarse projected composition undershoots; every floor is recorded in year table.",
+   "[ASSUMPTION] Borrowing service equal amounts in 2025\u20132034 / 2025\u20132054; federal income tax plus FICA age-sex profile proxies future federal taxes, with 2024 real profile fixed.",
+   "[ASSUMPTION] NVSS 2024 sex survival with 2026 Trustees improvements; CPS topcoded ages treated as reported; age-profile means constant beyond last observed cell until age 100.",
+   "[ASSUMPTION] Whole signed trust block uses one common payout-year incidence key; payroll/cash/accrual cannot be credited or charged to inconsistent cohorts.",
+   "[DEGRADED] Payouts after 2100 are assigned wholly to future cohorts/arrivals; tail mass reported."
+  ],
+  "gates": {
+   "population_closure": true,
+   "keys_normalized": true,
+   "component_conservation": true,
+   "payout_mass": 0.9997658735248114,
+   "payout_tail": 0.00023412647518854246,
+   "payout_closure": true,
+   "tax_floor_years": 0,
+   "benefit_floor_years": 1
+  }
+ },
+ "lineage_cohort_living_shares": {
+  "trust": 0.8659097488980003,
+  "borrowing10": 0.9766579534749571,
+  "borrowing30": 0.9153745122901822
+ },
+ "credits": {
+  "reading": "R3",
+  "units": "unweighted 2024 dollars per tax-return carrier",
+  "total_units": "account $bn on audit row 4",
+  "components": {
+   "forward_A": {
+    "total_bn": 4.681765714595817,
+    "se_bn": 0.2898388446494693,
+    "primary_total_bn": 4.681765713
+   },
+   "forward_C": {
+    "total_bn": 0.3169172144413998,
+    "se_bn": 0.039059026004620315,
+    "primary_total_bn": 0.31691721500000003
+   },
+   "reverse_B": {
+    "total_bn": -0.6841759619406919,
+    "se_bn": 0.10076617883569014,
+    "primary_total_bn": -0.6841759609999999
+   },
+   "reverse_Cr": {
+    "total_bn": -0.01596158214893055,
+    "se_bn": 0.008751278817307395,
+    "primary_total_bn": -0.015961582000000002
+   }
+  },
+  "gates": {
+   "forward_A": true,
+   "forward_C": true,
+   "reverse_B": true,
+   "reverse_Cr": true,
+   "R3_item_joint_total_and_SE": true
+  },
+  "forward": {
+   "total_bn": 4.998682929037217,
+   "se_bn": 0.29816748957398626
+  },
+  "reverse": {
+   "total_bn": -0.7001375440896224,
+   "se_bn": 0.10263746936664468
+  },
+  "forward_g3plus": {
+   "total_bn": 3.35185028243652,
+   "se_bn": 0.24920156182152725
+  },
+  "source_sha256": {
+   "/Users/alien/Projects/immigration-research/.venv/lib/python3.13/site-packages/numpy/rec/__pycache__/__init__.cpython-313.pyc": "edb83bbe3a4a29cb127596bcaa8523b45fad204fd259fecd4190823f8742d923",
+   "/Users/alien/Projects/immigration-research/.venv/lib/python3.13/site-packages/pandas/api/__pycache__/internals.cpython-313.pyc": "59bc54c0af0d1a163f1689d0a44fd5e1788354b2b21162dcdfdd261025ef58af",
+   "/Users/alien/Projects/immigration-research/.venv/lib/python3.13/site-packages/pandas/core/arrays/arrow/__pycache__/extension_types.cpython-313.pyc": "3719e51f9fd5657edbaa5417627bf94ebbad202aeec6519190d295ed4dee3326",
+   "/Users/alien/Projects/immigration-research/.venv/lib/python3.13/site-packages/pandas/core/methods/__pycache__/to_dict.cpython-313.pyc": "a7df451bd0ebc53c3fb0d8eb18e0cf06353b717e8efc5e7549baf4dbc50019fb",
+   "/Users/alien/Projects/immigration-research/.venv/lib/python3.13/site-packages/pandas/io/formats/__pycache__/csvs.cpython-313.pyc": "77ab2799beb13489b43aa5a5a7fde21ec39054d9306043efda0fdec7ca0ab84f",
+   "/Users/alien/Projects/immigration-research/.venv/lib/python3.13/site-packages/pyarrow/__pycache__/dataset.cpython-313.pyc": "2f6001417ed697098c6b2d96f7426296bd86e38928f26dcb3cad0cb3e7597a7d",
+   "/Users/alien/Projects/immigration-research/.venv/lib/python3.13/site-packages/pyarrow/__pycache__/fs.cpython-313.pyc": "37b7dd132ec2701d2a5be86fb4627defc3c008835381e2837925ddae2b9ef22c",
+   "/Users/alien/Projects/immigration-research/.venv/lib/python3.13/site-packages/pyarrow/__pycache__/pandas_compat.cpython-313.pyc": "c7c9e348145e345632ade1aa4fc1fa98bddf9687506f4fe0083f567b08df0b28",
+   "/Users/alien/Projects/immigration-research/.venv/lib/python3.13/site-packages/pyarrow/__pycache__/substrait.cpython-313.pyc": "4c31885741a3dd15c9096ffed27d8960068f7f185c52ba051aa068aa879ef5e5",
+   "/Users/alien/Projects/immigration-research/.venv/lib/python3.13/site-packages/pyarrow/parquet/__pycache__/__init__.cpython-313.pyc": "68f800ae357f27623da990d6c0458e686b892e277b7246f4269dc53b94d05931",
+   "/Users/alien/Projects/immigration-research/.venv/lib/python3.13/site-packages/pyarrow/parquet/__pycache__/core.cpython-313.pyc": "e7de59a1303edb68302a884332fd4bb525e32c4b7599cceb07cb012577732ecc",
+   "/Users/alien/Projects/immigration-research/.venv/lib/python3.13/site-packages/pyarrow/vendored/__pycache__/version.cpython-313.pyc": "83c93c24e200c75a0ce5a7b51cec711608335e0f3a3abce49437facf39cdb454",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/backtest_admin_totals_2026_09_28/derived/prediction_audit.json": "6353ce781fd2ddbb8f8d33582cd0f5aa236d788d4c8d0cd03e7c9b11ee6eb41c",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/build/__pycache__/meps_health_transport_2024.cpython-313.pyc": "9786e50e9b342e61754906620deacce883431e1f6f0b77e43d5ffeeca7f9201b",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/build/__pycache__/paths.cpython-313.pyc": "f882b87bc8dfdd66352b426e8cf3b44d51661e6a4f8c5fbfbfef4b0c504efc86",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/build/__pycache__/public_mvp_io.cpython-313.pyc": "4b82ca9b9dbf8dc88b7facfabe77bd6f94db9fc72236c31a391738bbe0585953",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/california_medical_status_2026_09_23/cps_ca_status.py": "55c6b0e32b191e9a06a8a45a34d260edd44a144a75ad8757edb64b0ffbe5ea70",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/common.cpython-313.pyc": "eb17383157ee5b19a467f3b341ba24e9ccf6f5fea4621a6be0bef431056cd3f5",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/hotdeck.cpython-313.pyc": "b55d6e58e94655388600024d1f8c60f7196f9bf22adee097443204d5fee97e45",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/taxcalc.cpython-313.pyc": "2a26da379efda13b365c80f99a98803715feaf0f08819012c5af9c83e81a228c",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_onbooks_lane.py": "c4c6e05b784b23da7985652f03cac13a1ce678a3cb3b33a0aeea9eebc3f3c42f",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_status.py": "b69b1fdcb039910768c71ddfeacd2273eaebfe4db5cb04bf4da711b6cf3423c5",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/cps_imputation_keys_2026_09_23/ipw.py": "fb6318da5aace1aeb0b8e718735b49f8a9494a22bcd209f88ece2296e19c11b8",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/cps_imputation_keys_2026_09_23/run_hotdeck.py": "9f38fbdabebe33fa3687774cf2d9b6f1857f17a730674ba0e4fa220facda1903",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/cps_imputation_keys_2026_09_23/translate.py": "0bed2558c39310b9c832c698dd1bcafa1285df2d3e3282b54d79df59d4ee9340",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/dataset_integrity_2026_09_23/derived/spending_mts_credits.json": "d06bc724ec0bd4fb5f2189cc087ddd498e6f01b93ecba0a07fe653d9e40da05c",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/external_benchmarks_2026_09_24/__pycache__/frame.cpython-313.pyc": "54d8f67df9921c58bbf8e30e6d58f495150fc8fd513bbeee8fe92ece44fcc666",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/external_benchmarks_2026_09_24/_cache/cps25_frame.parquet": "915993b7bd9d050e615b8d485f9703bf6c084e54af71d82f989a93add14afcc5",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_group_shares.csv": "fc73f97db7e8da645e22e546cf6f637c3f059c66fb328c058689f2c1c1d1f24b",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/mixed_unit_credits_2026_10_14/__pycache__/credits.cpython-313.pyc": "9d540abc4d32143e2d864dcb82b5cd330d7df1abf86a68a7d3da1e909ca3d7a1",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/mixed_unit_credits_2026_10_14/derived/summary.json": "e648553401f4b3fe8fc61ff0ff768af30ef21aadeb9e23a238ec660fcbaabf46",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_inputs.json": "886f317acb33d74ac07ba6e24924d6f59619b4c11324baba7771a040ed75cd9d",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_split.csv": "6a652151547df2c33a35c46a016bb5be3d8cc4f84c359ac6f422b45766553564",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/status_impute_2026_09_16/__pycache__/impute_status.cpython-313.pyc": "d0345b43c77e8c743330c6010a55e078ac193c5a474cb742a560a384e4868aec",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/tax_key_heldout_2026_09_28/__pycache__/keys.cpython-313.pyc": "1153dd8fa4d3ac73631e8a830fb99d0d39f4a1b5be4f92d3c0c5950572d857b4",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/bins.csv": "950d83f07ab7f63ade40e47570c4b751ea416c72c7753e56f595d2219d8369cb",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/translation_inputs.json": "a701d8e4d695ec163b3e04ded5357fbde2332881e6d3fe0dd55ca63b5dffd82e",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/tax_key_heldout_2026_09_28/reads/irs_table_1_2_ty2023.md": "47d5d93d51e3f74b8b87763a79e1c4a47da86e1fa83d0b3201a7c32b2fdf64c6",
+   "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/world_ledger_2026_09_27/__pycache__/population_basis.cpython-313.pyc": "31377e319a9549f97eaf3854d0f3947932b0a7b6ed1e249250f11060b2f6f620"
+  },
+  "source_gates": 83
+ },
+ "added_descendant_forward_credit": {
+  "total_bn": 0.4573492358461542,
+  "rule": "[ASSUMPTION] item5b's added G3+-priced people per identified G3+ member on measured G3+ gross forward filer vector; white-priced added people zero"
+ },
+ "mixed_resources": "CPS personal cash income minus own taxes/FICA plus per-capita SPM noncash benefits; observed resources proxy, no removal behavioral response",
+ "owner_types": {
+  "identified_union": {
+   "individual": 0.3543812110651899,
+   "corporate_reit": 0.0487353559356422,
+   "unresolved": 0.596883432999168,
+   "proxy": "reported rental-unit shares proxy rent shares",
+   "property_empty_cell_transfers": [
+    {
+     "state": 2,
+     "from_cell": 14,
+     "to_cell": 13
+    },
+    {
+     "state": 2,
+     "from_cell": 31,
+     "to_cell": 30
+    },
+    {
+     "state": 2,
+     "from_cell": 51,
+     "to_cell": 50
+    },
+    {
+     "state": 8,
+     "from_cell": 8,
+     "to_cell": 7
+    },
+    {
+     "state": 8,
+     "from_cell": 17,
+     "to_cell": 16
+    },
+    {
+     "state": 8,
+     "from_cell": 25,
+     "to_cell": 24
+    },
+    {
+     "state": 9,
+     "from_cell": 21,
+     "to_cell": 20
+    },
+    {
+     "state": 9,
+     "from_cell": 67,
+     "to_cell": 66
+    },
+    {
+     "state": 10,
+     "from_cell": 2,
+     "to_cell": 1
+    },
+    {
+     "state": 11,
+     "from_cell": 6,
+     "to_cell": 5
+    },
+    {
+     "state": 11,
+     "from_cell": 15,
+     "to_cell": 14
+    },
+    {
+     "state": 11,
+     "from_cell": 18,
+     "to_cell": 17
+    },
+    {
+     "state": 11,
+     "from_cell": 20,
+     "to_cell": 19
+    },
+    {
+     "state": 11,
+     "from_cell": 25,
+     "to_cell": 24
+    },
+    {
+     "state": 11,
+     "from_cell": 27,
+     "to_cell": 26
+    },
+    {
+     "state": 11,
+     "from_cell": 33,
+     "to_cell": 32
+    },
+    {
+     "state": 11,
+     "from_cell": 39,
+     "to_cell": 38
+    },
+    {
+     "state": 11,
+     "from_cell": 41,
+     "to_cell": 40
+    },
+    {
+     "state": 11,
+     "from_cell": 43,
+     "to_cell": 42
+    },
+    {
+     "state": 11,
+     "from_cell": 45,
+     "to_cell": 44
+    },
+    {
+     "state": 11,
+     "from_cell": 58,
+     "to_cell": 57
+    },
+    {
+     "state": 15,
+     "from_cell": 11,
+     "to_cell": 10
+    },
+    {
+     "state": 16,
+     "from_cell": 7,
+     "to_cell": 6
+    },
+    {
+     "state": 19,
+     "from_cell": 4,
+     "to_cell": 3
+    },
+    {
+     "state": 19,
+     "from_cell": 92,
+     "to_cell": 91
+    },
+    {
+     "state": 20,
+     "from_cell": 6,
+     "to_cell": 5
+    },
+    {
+     "state": 21,
+     "from_cell": 19,
+     "to_cell": 18
+    },
+    {
+     "state": 21,
+     "from_cell": 96,
+     "to_cell": 95
+    },
+    {
+     "state": 23,
+     "from_cell": 3,
+     "to_cell": 2
+    },
+    {
+     "state": 23,
+     "from_cell": 9,
+     "to_cell": 8
+    },
+    {
+     "state": 23,
+     "from_cell": 10,
+     "to_cell": 11
+    },
+    {
+     "state": 23,
+     "from_cell": 17,
+     "to_cell": 16
+    },
+    {
+     "state": 23,
+     "from_cell": 35,
+     "to_cell": 34
+    },
+    {
+     "state": 23,
+     "from_cell": 38,
+     "to_cell": 37
+    },
+    {
+     "state": 23,
+     "from_cell": 51,
+     "to_cell": 50
+    },
+    {
+     "state": 23,
+     "from_cell": 75,
+     "to_cell": 74
+    },
+    {
+     "state": 23,
+     "from_cell": 77,
+     "to_cell": 76
+    },
+    {
+     "state": 24,
+     "from_cell": 16,
+     "to_cell": 15
+    },
+    {
+     "state": 24,
+     "from_cell": 18,
+     "to_cell": 17
+    },
+    {
+     "state": 24,
+     "from_cell": 27,
+     "to_cell": 26
+    },
+    {
+     "state": 24,
+     "from_cell": 29,
+     "to_cell": 28
+    },
+    {
+     "state": 27,
+     "from_cell": 16,
+     "to_cell": 15
+    },
+    {
+     "state": 28,
+     "from_cell": 97,
+     "to_cell": 96
+    },
+    {
+     "state": 28,
+     "from_cell": 98,
+     "to_cell": 99
+    },
+    {
+     "state": 29,
+     "from_cell": 82,
+     "to_cell": 81
+    },
+    {
+     "state": 30,
+     "from_cell": 17,
+     "to_cell": 16
+    },
+    {
+     "state": 32,
+     "from_cell": 72,
+     "to_cell": 71
+    },
+    {
+     "state": 33,
+     "from_cell": 19,
+     "to_cell": 18
+    },
+    {
+     "state": 33,
+     "from_cell": 24,
+     "to_cell": 23
+    },
+    {
+     "state": 33,
+     "from_cell": 32,
+     "to_cell": 31
+    },
+    {
+     "state": 33,
+     "from_cell": 36,
+     "to_cell": 35
+    },
+    {
+     "state": 34,
+     "from_cell": 23,
+     "to_cell": 22
+    },
+    {
+     "state": 38,
+     "from_cell": 10,
+     "to_cell": 9
+    },
+    {
+     "state": 38,
+     "from_cell": 18,
+     "to_cell": 17
+    },
+    {
+     "state": 38,
+     "from_cell": 24,
+     "to_cell": 23
+    },
+    {
+     "state": 41,
+     "from_cell": 23,
+     "to_cell": 22
+    },
+    {
+     "state": 44,
+     "from_cell": 23,
+     "to_cell": 22
+    },
+    {
+     "state": 44,
+     "from_cell": 51,
+     "to_cell": 50
+    },
+    {
+     "state": 46,
+     "from_cell": 11,
+     "to_cell": 10
+    },
+    {
+     "state": 49,
+     "from_cell": 12,
+     "to_cell": 11
+    },
+    {
+     "state": 49,
+     "from_cell": 15,
+     "to_cell": 14
+    },
+    {
+     "state": 55,
+     "from_cell": 22,
+     "to_cell": 21
+    }
+   ]
+  },
+  "lineage": {
+   "individual": 0.3543812110651899,
+   "corporate_reit": 0.0487353559356422,
+   "unresolved": 0.596883432999168,
+   "proxy": "reported rental-unit shares proxy rent shares",
+   "property_empty_cell_transfers": [
+    {
+     "state": 2,
+     "from_cell": 14,
+     "to_cell": 13
+    },
+    {
+     "state": 2,
+     "from_cell": 31,
+     "to_cell": 30
+    },
+    {
+     "state": 2,
+     "from_cell": 51,
+     "to_cell": 50
+    },
+    {
+     "state": 8,
+     "from_cell": 8,
+     "to_cell": 7
+    },
+    {
+     "state": 8,
+     "from_cell": 17,
+     "to_cell": 16
+    },
+    {
+     "state": 8,
+     "from_cell": 25,
+     "to_cell": 24
+    },
+    {
+     "state": 9,
+     "from_cell": 21,
+     "to_cell": 20
+    },
+    {
+     "state": 9,
+     "from_cell": 67,
+     "to_cell": 66
+    },
+    {
+     "state": 10,
+     "from_cell": 2,
+     "to_cell": 1
+    },
+    {
+     "state": 11,
+     "from_cell": 6,
+     "to_cell": 5
+    },
+    {
+     "state": 11,
+     "from_cell": 15,
+     "to_cell": 14
+    },
+    {
+     "state": 11,
+     "from_cell": 18,
+     "to_cell": 17
+    },
+    {
+     "state": 11,
+     "from_cell": 20,
+     "to_cell": 19
+    },
+    {
+     "state": 11,
+     "from_cell": 25,
+     "to_cell": 24
+    },
+    {
+     "state": 11,
+     "from_cell": 27,
+     "to_cell": 26
+    },
+    {
+     "state": 11,
+     "from_cell": 33,
+     "to_cell": 32
+    },
+    {
+     "state": 11,
+     "from_cell": 39,
+     "to_cell": 38
+    },
+    {
+     "state": 11,
+     "from_cell": 41,
+     "to_cell": 40
+    },
+    {
+     "state": 11,
+     "from_cell": 43,
+     "to_cell": 42
+    },
+    {
+     "state": 11,
+     "from_cell": 45,
+     "to_cell": 44
+    },
+    {
+     "state": 11,
+     "from_cell": 58,
+     "to_cell": 57
+    },
+    {
+     "state": 15,
+     "from_cell": 11,
+     "to_cell": 10
+    },
+    {
+     "state": 16,
+     "from_cell": 7,
+     "to_cell": 6
+    },
+    {
+     "state": 19,
+     "from_cell": 4,
+     "to_cell": 3
+    },
+    {
+     "state": 19,
+     "from_cell": 92,
+     "to_cell": 91
+    },
+    {
+     "state": 20,
+     "from_cell": 6,
+     "to_cell": 5
+    },
+    {
+     "state": 21,
+     "from_cell": 19,
+     "to_cell": 18
+    },
+    {
+     "state": 21,
+     "from_cell": 96,
+     "to_cell": 95
+    },
+    {
+     "state": 23,
+     "from_cell": 3,
+     "to_cell": 2
+    },
+    {
+     "state": 23,
+     "from_cell": 9,
+     "to_cell": 8
+    },
+    {
+     "state": 23,
+     "from_cell": 10,
+     "to_cell": 11
+    },
+    {
+     "state": 23,
+     "from_cell": 17,
+     "to_cell": 16
+    },
+    {
+     "state": 23,
+     "from_cell": 35,
+     "to_cell": 34
+    },
+    {
+     "state": 23,
+     "from_cell": 38,
+     "to_cell": 37
+    },
+    {
+     "state": 23,
+     "from_cell": 51,
+     "to_cell": 50
+    },
+    {
+     "state": 23,
+     "from_cell": 75,
+     "to_cell": 74
+    },
+    {
+     "state": 23,
+     "from_cell": 77,
+     "to_cell": 76
+    },
+    {
+     "state": 24,
+     "from_cell": 16,
+     "to_cell": 15
+    },
+    {
+     "state": 24,
+     "from_cell": 18,
+     "to_cell": 17
+    },
+    {
+     "state": 24,
+     "from_cell": 27,
+     "to_cell": 26
+    },
+    {
+     "state": 24,
+     "from_cell": 29,
+     "to_cell": 28
+    },
+    {
+     "state": 27,
+     "from_cell": 16,
+     "to_cell": 15
+    },
+    {
+     "state": 28,
+     "from_cell": 97,
+     "to_cell": 96
+    },
+    {
+     "state": 28,
+     "from_cell": 98,
+     "to_cell": 99
+    },
+    {
+     "state": 29,
+     "from_cell": 82,
+     "to_cell": 81
+    },
+    {
+     "state": 30,
+     "from_cell": 17,
+     "to_cell": 16
+    },
+    {
+     "state": 32,
+     "from_cell": 72,
+     "to_cell": 71
+    },
+    {
+     "state": 33,
+     "from_cell": 19,
+     "to_cell": 18
+    },
+    {
+     "state": 33,
+     "from_cell": 24,
+     "to_cell": 23
+    },
+    {
+     "state": 33,
+     "from_cell": 32,
+     "to_cell": 31
+    },
+    {
+     "state": 33,
+     "from_cell": 36,
+     "to_cell": 35
+    },
+    {
+     "state": 34,
+     "from_cell": 23,
+     "to_cell": 22
+    },
+    {
+     "state": 38,
+     "from_cell": 10,
+     "to_cell": 9
+    },
+    {
+     "state": 38,
+     "from_cell": 18,
+     "to_cell": 17
+    },
+    {
+     "state": 38,
+     "from_cell": 24,
+     "to_cell": 23
+    },
+    {
+     "state": 41,
+     "from_cell": 23,
+     "to_cell": 22
+    },
+    {
+     "state": 44,
+     "from_cell": 23,
+     "to_cell": 22
+    },
+    {
+     "state": 44,
+     "from_cell": 51,
+     "to_cell": 50
+    },
+    {
+     "state": 46,
+     "from_cell": 11,
+     "to_cell": 10
+    },
+    {
+     "state": 49,
+     "from_cell": 12,
+     "to_cell": 11
+    },
+    {
+     "state": 49,
+     "from_cell": 15,
+     "to_cell": 14
+    },
+    {
+     "state": 55,
+     "from_cell": 22,
+     "to_cell": 21
+    }
+   ]
+  }
+ },
+ "replicate_se": "160 official SDR weights; conditional on fixed allocations, sharing assignments and model; not total estimation uncertainty",
+ "union_population": 39.712493331187886,
+ "lineage_population": 42.752212924373126,
+ "instrument": "LLM implementation; deterministic closure and signed, matched sensitivity arms are the verification evidence"
+}

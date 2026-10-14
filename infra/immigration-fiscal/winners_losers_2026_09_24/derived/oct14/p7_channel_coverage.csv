@@ -1,0 +1,97 @@
+item,status,excluded_reason,population,financing,key,low_bn,central_bn,high_bn
+victims,allocated,,identified_union,a,live total on existing crime_victims incidence,-30.483111,-31.1783345,-31.873558
+property_crime,allocated,,identified_union,a,live total on existing property_crime incidence,-1.254369,-1.3054095,-1.35645
+unreimbursed_care,allocated,,identified_union,a,live total on existing unreimbursed_care incidence,-3.08854,-4.1905495,-5.292559
+congestion,allocated,,identified_union,a,live total on existing congestion incidence,-13.628205,-12.6337665,-11.639328
+housing_gain,allocated,,identified_union,a,"gross renter/landlord arrays, live central metro-local at low; national-uniform at high",3.392318,2.03999,0.687662
+fear_avoidance,allocated,,identified_union,a,crime victim risk within group states,-10.339309,-10.339309,-10.339309
+private_security,allocated,,identified_union,a,crime victim risk within group states; signed net may be a benefit,0.490639,0.490639,0.490639
+school_disruption,allocated,,identified_union,a,ages 5-17 in group states; school type unavailable,1.938666,1.938666,1.938666
+pm25_consumption,allocated,,identified_union,a,"35% local group-state resident exposure, 65% national residents; assumed dispersion",-68.092105,-68.092105,-68.092105
+road_crash_externality,allocated,,identified_union,a,"state group vehicle-minutes by urban area, receiving metro workers; driving proxy",-10.56288,-10.56288,-10.56288
+scale_net_earnings,allocated,,identified_union,a,earnings by scale-lane metro states plus induced receipts by financing rule,13.674356,13.674356,13.674356
+restaurant_variety_market_size,allocated,,identified_union,a,"SPM resources within group states, consumption proxy",6.793,6.793,6.793
+formal_volunteering_outside_group,allocated,,identified_union,a,all other residents nationally; beneficiary location unobserved,5.980771,5.980771,5.980771
+total_consumer_scale,allocated,,identified_union,a,"national SPM resources, consumption proxy",2.1297,2.1297,2.1297
+total_trade_travel_fdi,allocated,,identified_union,a,"national SPM resources, consumption proxy",6.784387,6.784387,6.784387
+source_rounding,allocated,,identified_union,a,national persons; explicit serialized source-row rounding,-4.263256415e-14,-5.000000201e-07,-9.999999975e-07
+victims,allocated,,lineage,a,live total on existing crime_victims incidence,-32.62639636,-33.30278871,-33.97918106
+property_crime,allocated,,lineage,a,live total on existing property_crime incidence,-1.342564418,-1.39431194,-1.446059462
+unreimbursed_care,allocated,,lineage,a,live total on existing unreimbursed_care incidence,-3.31030471,-4.488683753,-5.667062795
+congestion,allocated,,lineage,a,live total on existing congestion incidence,-14.66360039,-13.59360997,-12.52361955
+housing_gain,allocated,,lineage,a,"gross renter/landlord arrays, live central metro-local at low; national-uniform at high",3.651976728,2.196137274,0.7402978201
+fear_avoidance,allocated,,lineage,a,crime victim risk within group states,-11.06627186,-11.04430686,-11.02234186
+private_security,allocated,,lineage,a,crime victim risk within group states; signed net may be a benefit,0.5251361149,0.5240937932,0.5230514716
+school_disruption,allocated,,lineage,a,ages 5-17 in group states; school type unavailable,2.145916961,2.145916961,2.145916961
+pm25_consumption,allocated,,lineage,a,"35% local group-state resident exposure, 65% national residents; assumed dispersion",-74.18213187,-74.18213187,-74.18213187
+road_crash_externality,allocated,,lineage,a,"state group vehicle-minutes by urban area, receiving metro workers; driving proxy",-11.36538901,-11.36538901,-11.36538901
+scale_net_earnings,allocated,,lineage,a,earnings by scale-lane metro states plus induced receipts by financing rule,14.72103437,14.72103437,14.72103437
+restaurant_variety_market_size,allocated,,lineage,a,"SPM resources within group states, consumption proxy",6.793,6.793,6.793
+formal_volunteering_outside_group,allocated,,lineage,a,all other residents nationally; beneficiary location unobserved,6.352761156,6.352761156,6.352761156
+total_consumer_scale,allocated,,lineage,a,"national SPM resources, consumption proxy",2.320176271,2.320176271,2.320176271
+total_trade_travel_fdi,allocated,,lineage,a,"national SPM resources, consumption proxy",7.391169521,7.391169521,7.391169521
+source_rounding,allocated,,lineage,a,national persons; explicit serialized source-row rounding,-5.684341886e-14,-5.000000272e-07,-9.999999975e-07
+victims,allocated,,identified_union,b,live total on existing crime_victims incidence,-30.483111,-31.1783345,-31.873558
+property_crime,allocated,,identified_union,b,live total on existing property_crime incidence,-1.254369,-1.3054095,-1.35645
+unreimbursed_care,allocated,,identified_union,b,live total on existing unreimbursed_care incidence,-3.08854,-4.1905495,-5.292559
+congestion,allocated,,identified_union,b,live total on existing congestion incidence,-13.628205,-12.6337665,-11.639328
+housing_gain,allocated,,identified_union,b,"gross renter/landlord arrays, live central metro-local at low; national-uniform at high",3.392318,2.03999,0.687662
+fear_avoidance,allocated,,identified_union,b,crime victim risk within group states,-10.339309,-10.339309,-10.339309
+private_security,allocated,,identified_union,b,crime victim risk within group states; signed net may be a benefit,0.490639,0.490639,0.490639
+school_disruption,allocated,,identified_union,b,ages 5-17 in group states; school type unavailable,1.938666,1.938666,1.938666
+pm25_consumption,allocated,,identified_union,b,"35% local group-state resident exposure, 65% national residents; assumed dispersion",-68.092105,-68.092105,-68.092105
+road_crash_externality,allocated,,identified_union,b,"state group vehicle-minutes by urban area, receiving metro workers; driving proxy",-10.56288,-10.56288,-10.56288
+scale_net_earnings,allocated,,identified_union,b,earnings by scale-lane metro states plus induced receipts by financing rule,13.674356,13.674356,13.674356
+restaurant_variety_market_size,allocated,,identified_union,b,"SPM resources within group states, consumption proxy",6.793,6.793,6.793
+formal_volunteering_outside_group,allocated,,identified_union,b,all other residents nationally; beneficiary location unobserved,5.980771,5.980771,5.980771
+total_consumer_scale,allocated,,identified_union,b,"national SPM resources, consumption proxy",2.1297,2.1297,2.1297
+total_trade_travel_fdi,allocated,,identified_union,b,"national SPM resources, consumption proxy",6.784387,6.784387,6.784387
+source_rounding,allocated,,identified_union,b,national persons; explicit serialized source-row rounding,-4.263256415e-14,-5.000000201e-07,-9.999999975e-07
+victims,allocated,,lineage,b,live total on existing crime_victims incidence,-32.62639636,-33.30278871,-33.97918106
+property_crime,allocated,,lineage,b,live total on existing property_crime incidence,-1.342564418,-1.39431194,-1.446059462
+unreimbursed_care,allocated,,lineage,b,live total on existing unreimbursed_care incidence,-3.31030471,-4.488683753,-5.667062795
+congestion,allocated,,lineage,b,live total on existing congestion incidence,-14.66360039,-13.59360997,-12.52361955
+housing_gain,allocated,,lineage,b,"gross renter/landlord arrays, live central metro-local at low; national-uniform at high",3.651976728,2.196137274,0.7402978201
+fear_avoidance,allocated,,lineage,b,crime victim risk within group states,-11.06627186,-11.04430686,-11.02234186
+private_security,allocated,,lineage,b,crime victim risk within group states; signed net may be a benefit,0.5251361149,0.5240937932,0.5230514716
+school_disruption,allocated,,lineage,b,ages 5-17 in group states; school type unavailable,2.145916961,2.145916961,2.145916961
+pm25_consumption,allocated,,lineage,b,"35% local group-state resident exposure, 65% national residents; assumed dispersion",-74.18213187,-74.18213187,-74.18213187
+road_crash_externality,allocated,,lineage,b,"state group vehicle-minutes by urban area, receiving metro workers; driving proxy",-11.36538901,-11.36538901,-11.36538901
+scale_net_earnings,allocated,,lineage,b,earnings by scale-lane metro states plus induced receipts by financing rule,14.72103437,14.72103437,14.72103437
+restaurant_variety_market_size,allocated,,lineage,b,"SPM resources within group states, consumption proxy",6.793,6.793,6.793
+formal_volunteering_outside_group,allocated,,lineage,b,all other residents nationally; beneficiary location unobserved,6.352761156,6.352761156,6.352761156
+total_consumer_scale,allocated,,lineage,b,"national SPM resources, consumption proxy",2.320176271,2.320176271,2.320176271
+total_trade_travel_fdi,allocated,,lineage,b,"national SPM resources, consumption proxy",7.391169521,7.391169521,7.391169521
+source_rounding,allocated,,lineage,b,national persons; explicit serialized source-row rounding,-5.684341886e-14,-5.000000272e-07,-9.999999975e-07
+victims,allocated,,identified_union,c,live total on existing crime_victims incidence,-30.483111,-31.1783345,-31.873558
+property_crime,allocated,,identified_union,c,live total on existing property_crime incidence,-1.254369,-1.3054095,-1.35645
+unreimbursed_care,allocated,,identified_union,c,live total on existing unreimbursed_care incidence,-3.08854,-4.1905495,-5.292559
+congestion,allocated,,identified_union,c,live total on existing congestion incidence,-13.628205,-12.6337665,-11.639328
+housing_gain,allocated,,identified_union,c,"gross renter/landlord arrays, live central metro-local at low; national-uniform at high",3.392318,2.03999,0.687662
+fear_avoidance,allocated,,identified_union,c,crime victim risk within group states,-10.339309,-10.339309,-10.339309
+private_security,allocated,,identified_union,c,crime victim risk within group states; signed net may be a benefit,0.490639,0.490639,0.490639
+school_disruption,allocated,,identified_union,c,ages 5-17 in group states; school type unavailable,1.938666,1.938666,1.938666
+pm25_consumption,allocated,,identified_union,c,"35% local group-state resident exposure, 65% national residents; assumed dispersion",-68.092105,-68.092105,-68.092105
+road_crash_externality,allocated,,identified_union,c,"state group vehicle-minutes by urban area, receiving metro workers; driving proxy",-10.56288,-10.56288,-10.56288
+scale_net_earnings,allocated,,identified_union,c,earnings by scale-lane metro states plus induced receipts by financing rule,13.674356,13.674356,13.674356
+restaurant_variety_market_size,allocated,,identified_union,c,"SPM resources within group states, consumption proxy",6.793,6.793,6.793
+formal_volunteering_outside_group,allocated,,identified_union,c,all other residents nationally; beneficiary location unobserved,5.980771,5.980771,5.980771
+total_consumer_scale,allocated,,identified_union,c,"national SPM resources, consumption proxy",2.1297,2.1297,2.1297
+total_trade_travel_fdi,allocated,,identified_union,c,"national SPM resources, consumption proxy",6.784387,6.784387,6.784387
+source_rounding,allocated,,identified_union,c,national persons; explicit serialized source-row rounding,-4.263256415e-14,-5.000000201e-07,-9.999999975e-07
+victims,allocated,,lineage,c,live total on existing crime_victims incidence,-32.62639636,-33.30278871,-33.97918106
+property_crime,allocated,,lineage,c,live total on existing property_crime incidence,-1.342564418,-1.39431194,-1.446059462
+unreimbursed_care,allocated,,lineage,c,live total on existing unreimbursed_care incidence,-3.31030471,-4.488683753,-5.667062795
+congestion,allocated,,lineage,c,live total on existing congestion incidence,-14.66360039,-13.59360997,-12.52361955
+housing_gain,allocated,,lineage,c,"gross renter/landlord arrays, live central metro-local at low; national-uniform at high",3.651976728,2.196137274,0.7402978201
+fear_avoidance,allocated,,lineage,c,crime victim risk within group states,-11.06627186,-11.04430686,-11.02234186
+private_security,allocated,,lineage,c,crime victim risk within group states; signed net may be a benefit,0.5251361149,0.5240937932,0.5230514716
+school_disruption,allocated,,lineage,c,ages 5-17 in group states; school type unavailable,2.145916961,2.145916961,2.145916961
+pm25_consumption,allocated,,lineage,c,"35% local group-state resident exposure, 65% national residents; assumed dispersion",-74.18213187,-74.18213187,-74.18213187
+road_crash_externality,allocated,,lineage,c,"state group vehicle-minutes by urban area, receiving metro workers; driving proxy",-11.36538901,-11.36538901,-11.36538901
+scale_net_earnings,allocated,,lineage,c,earnings by scale-lane metro states plus induced receipts by financing rule,14.72103437,14.72103437,14.72103437
+restaurant_variety_market_size,allocated,,lineage,c,"SPM resources within group states, consumption proxy",6.793,6.793,6.793
+formal_volunteering_outside_group,allocated,,lineage,c,all other residents nationally; beneficiary location unobserved,6.352761156,6.352761156,6.352761156
+total_consumer_scale,allocated,,lineage,c,"national SPM resources, consumption proxy",2.320176271,2.320176271,2.320176271
+total_trade_travel_fdi,allocated,,lineage,c,"national SPM resources, consumption proxy",7.391169521,7.391169521,7.391169521
+source_rounding,allocated,,lineage,c,national persons; explicit serialized source-row rounding,-5.684341886e-14,-5.000000272e-07,-9.999999975e-07

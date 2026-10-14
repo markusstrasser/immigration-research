@@ -1,0 +1,375 @@
+{
+ "case": "oct14",
+ "rows": {
+  "low": {
+   "payroll_bn": 144.71398368579776,
+   "cash_benefits_bn": 77.27543076083579,
+   "accrual_bn": 75.12644421402149,
+   "hi_payout_fraction": 0.28125258785026536,
+   "trust_cost_bn": 7.6878912890595075,
+   "set_cost_bn": 339.5520178295269,
+   "cash_cost_bn": 264.4255736155054
+  },
+  "high": {
+   "payroll_bn": 144.71398368579776,
+   "cash_benefits_bn": 77.27543076083579,
+   "accrual_bn": 75.12644421402132,
+   "hi_payout_fraction": 0.28125258785026536,
+   "trust_cost_bn": 7.687891289059337,
+   "set_cost_bn": 423.6492607005069,
+   "cash_cost_bn": 348.52281648648557
+  }
+ },
+ "programmes": {
+  "low": [
+   {
+    "id": "general_public_services",
+    "national_bn": 402.771128442,
+    "response": 0.6005266346459308
+   },
+   {
+    "id": "public_order_safety",
+    "national_bn": 521.2025117960001,
+    "response": 1
+   },
+   {
+    "id": "economic_affairs_services",
+    "national_bn": 453.136829594,
+    "response": 0.3844994797314016
+   },
+   {
+    "id": "housing_community_services",
+    "national_bn": 14.747693443000001,
+    "response": 1
+   },
+   {
+    "id": "health_services",
+    "national_bn": 308.35875489899996,
+    "response": 1
+   },
+   {
+    "id": "recreation_culture",
+    "national_bn": 54.483657029,
+    "response": 0.8563914832367988
+   },
+   {
+    "id": "income_security_services",
+    "national_bn": 168.26451691100002,
+    "response": 1
+   },
+   {
+    "id": "social_security",
+    "national_bn": 1447.965,
+    "response": 1
+   },
+   {
+    "id": "medicare",
+    "national_bn": 1102.358,
+    "response": 1
+   },
+   {
+    "id": "unemployment",
+    "national_bn": 36.468,
+    "response": 1
+   },
+   {
+    "id": "railroad_retirement",
+    "national_bn": 14.493,
+    "response": 1
+   },
+   {
+    "id": "pension_guaranty",
+    "national_bn": 0.771,
+    "response": 1
+   },
+   {
+    "id": "veterans_life_insurance",
+    "national_bn": 0.449,
+    "response": 1
+   },
+   {
+    "id": "workers_compensation",
+    "national_bn": 11.923,
+    "response": 1
+   },
+   {
+    "id": "military_medical",
+    "national_bn": 7.157,
+    "response": 1
+   },
+   {
+    "id": "veterans_pension_disability",
+    "national_bn": 180.525,
+    "response": 1
+   },
+   {
+    "id": "veterans_readjustment",
+    "national_bn": 11.391,
+    "response": 1
+   },
+   {
+    "id": "veterans_other",
+    "national_bn": 37.526,
+    "response": 1
+   },
+   {
+    "id": "snap",
+    "national_bn": 97.391,
+    "response": 1
+   },
+   {
+    "id": "black_lung",
+    "national_bn": 0.173,
+    "response": 1
+   },
+   {
+    "id": "ssi",
+    "national_bn": 65.134,
+    "response": 1
+   },
+   {
+    "id": "refundable_tax_credits",
+    "national_bn": 228.809,
+    "response": 1
+   },
+   {
+    "id": "other_federal_benefits",
+    "national_bn": 66.62745901599999,
+    "response": 1
+   },
+   {
+    "id": "temporary_disability",
+    "national_bn": 13.138,
+    "response": 1
+   },
+   {
+    "id": "medicaid_and_chip_other_medical",
+    "national_bn": 954.2,
+    "response": 1
+   },
+   {
+    "id": "family_and_general_assistance",
+    "national_bn": 63.065,
+    "response": 1
+   },
+   {
+    "id": "energy_assistance",
+    "national_bn": 5.218,
+    "response": 1
+   },
+   {
+    "id": "other_state_welfare",
+    "national_bn": 22.385,
+    "response": 1
+   },
+   {
+    "id": "education_benefits",
+    "national_bn": 64.479,
+    "response": 1
+   },
+   {
+    "id": "employment_training",
+    "national_bn": 1.377,
+    "response": 1
+   },
+   {
+    "id": "other_state_benefits",
+    "national_bn": 2.875,
+    "response": 1
+   },
+   {
+    "id": "housing_subsidies",
+    "national_bn": 55.003189000000006,
+    "response": 1
+   },
+   {
+    "id": "education_k12",
+    "national_bn": 950.2544781031669,
+    "response": 1
+   },
+   {
+    "id": "education_college_other",
+    "national_bn": 276.1423870558331,
+    "response": 1
+   }
+  ],
+  "high": [
+   {
+    "id": "general_public_services",
+    "national_bn": 402.771128442,
+    "response": 0.8510539647701243
+   },
+   {
+    "id": "public_order_safety",
+    "national_bn": 521.2025117960001,
+    "response": 1
+   },
+   {
+    "id": "economic_affairs_services",
+    "national_bn": 453.136829594,
+    "response": 0.6387399411939584
+   },
+   {
+    "id": "housing_community_services",
+    "national_bn": 14.747693443000001,
+    "response": 1
+   },
+   {
+    "id": "health_services",
+    "national_bn": 308.35875489899996,
+    "response": 1
+   },
+   {
+    "id": "recreation_culture",
+    "national_bn": 54.483657029,
+    "response": 1
+   },
+   {
+    "id": "income_security_services",
+    "national_bn": 168.26451691100002,
+    "response": 1
+   },
+   {
+    "id": "social_security",
+    "national_bn": 1447.965,
+    "response": 1
+   },
+   {
+    "id": "medicare",
+    "national_bn": 1102.358,
+    "response": 1
+   },
+   {
+    "id": "unemployment",
+    "national_bn": 36.468,
+    "response": 1
+   },
+   {
+    "id": "railroad_retirement",
+    "national_bn": 14.493,
+    "response": 1
+   },
+   {
+    "id": "pension_guaranty",
+    "national_bn": 0.771,
+    "response": 1
+   },
+   {
+    "id": "veterans_life_insurance",
+    "national_bn": 0.449,
+    "response": 1
+   },
+   {
+    "id": "workers_compensation",
+    "national_bn": 11.923,
+    "response": 1
+   },
+   {
+    "id": "military_medical",
+    "national_bn": 7.157,
+    "response": 1
+   },
+   {
+    "id": "veterans_pension_disability",
+    "national_bn": 180.525,
+    "response": 1
+   },
+   {
+    "id": "veterans_readjustment",
+    "national_bn": 11.391,
+    "response": 1
+   },
+   {
+    "id": "veterans_other",
+    "national_bn": 37.526,
+    "response": 1
+   },
+   {
+    "id": "snap",
+    "national_bn": 97.391,
+    "response": 1
+   },
+   {
+    "id": "black_lung",
+    "national_bn": 0.173,
+    "response": 1
+   },
+   {
+    "id": "ssi",
+    "national_bn": 65.134,
+    "response": 1
+   },
+   {
+    "id": "refundable_tax_credits",
+    "national_bn": 228.809,
+    "response": 1
+   },
+   {
+    "id": "other_federal_benefits",
+    "national_bn": 66.62745901599999,
+    "response": 1
+   },
+   {
+    "id": "temporary_disability",
+    "national_bn": 13.138,
+    "response": 1
+   },
+   {
+    "id": "medicaid_and_chip_other_medical",
+    "national_bn": 954.2,
+    "response": 1
+   },
+   {
+    "id": "family_and_general_assistance",
+    "national_bn": 63.065,
+    "response": 1
+   },
+   {
+    "id": "energy_assistance",
+    "national_bn": 5.218,
+    "response": 1
+   },
+   {
+    "id": "other_state_welfare",
+    "national_bn": 22.385,
+    "response": 1
+   },
+   {
+    "id": "education_benefits",
+    "national_bn": 64.479,
+    "response": 1
+   },
+   {
+    "id": "employment_training",
+    "national_bn": 1.377,
+    "response": 1
+   },
+   {
+    "id": "other_state_benefits",
+    "national_bn": 2.875,
+    "response": 1
+   },
+   {
+    "id": "housing_subsidies",
+    "national_bn": 55.003189000000006,
+    "response": 1
+   },
+   {
+    "id": "education_k12",
+    "national_bn": 950.2544781031669,
+    "response": 1
+   },
+   {
+    "id": "education_college_other",
+    "national_bn": 276.1423870558331,
+    "response": 1
+   }
+  ]
+ },
+ "rule": "gross 2024 payroll receipts, cash OASDI and Part A benefits, and the complete net pension increment (including benefit-tax adjustment); all three travel together",
+ "sources": [
+  "main_case_2026_10_14/derived/corrections.json",
+  "main_case_2026_10_14/derived/corrections_cash.json",
+  "main_case_2026_10_14/derived/summary.json"
+ ]
+}

@@ -1,0 +1,3917 @@
+{
+ "hybrid_positive_control_a_person": {
+  "passed": true,
+  "winners_share": 0.1788841980364269,
+  "total_bn": -341.73383036361145
+ },
+ "hybrid_positive_control_a_spm_unit_pooled": {
+  "passed": true,
+  "winners_share": 0.1964694896981325,
+  "total_bn": -341.73383036361133
+ },
+ "hybrid_positive_control_b_person": {
+  "passed": true,
+  "winners_share": 0.18043928821981897,
+  "total_bn": -341.7338303636114
+ },
+ "hybrid_positive_control_b_spm_unit_pooled": {
+  "passed": true,
+  "winners_share": 0.1874420662192563,
+  "total_bn": -341.73383036361145
+ },
+ "extra_person_join": {
+  "passed": true
+ },
+ "within_run_pin_infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json"
+ },
+ "pin_infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json"
+ },
+ "pin_generated:p7_trust_inputs.json": {
+  "passed": true
+ },
+ "within_run_pin_infra/immigration-fiscal/main_case_2026_10_14/derived/corrections_cash.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/main_case_2026_10_14/derived/corrections_cash.json"
+ },
+ "pin_infra/immigration-fiscal/main_case_2026_10_14/derived/corrections_cash.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/main_case_2026_10_14/derived/corrections_cash.json"
+ },
+ "within_run_pin_infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json"
+ },
+ "pin_infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json"
+ },
+ "within_run_pin_infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip"
+ },
+ "pin_infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip"
+ },
+ "lineage_payer_cell_0_has_mass": {
+  "passed": true,
+  "available": 11611925.827416599,
+  "removed": 423557.85189803556
+ },
+ "lineage_payer_cell_1_has_mass": {
+  "passed": true,
+  "available": 12695455.30127302,
+  "removed": 382706.6964725673
+ },
+ "lineage_payer_cell_2_has_mass": {
+  "passed": true,
+  "available": 13213683.47701758,
+  "removed": 389473.2255509524
+ },
+ "lineage_payer_cell_3_has_mass": {
+  "passed": true,
+  "available": 13826121.858817222,
+  "removed": 361475.7063954489
+ },
+ "lineage_payer_cell_4_has_mass": {
+  "passed": true,
+  "available": 13726221.31250094,
+  "removed": 279293.57556411147
+ },
+ "lineage_payer_cell_5_has_mass": {
+  "passed": true,
+  "available": 13709871.40723962,
+  "removed": 242984.53646169664
+ },
+ "lineage_payer_cell_6_has_mass": {
+  "passed": true,
+  "available": 14958953.624791171,
+  "removed": 193128.14768988502
+ },
+ "lineage_payer_cell_7_has_mass": {
+  "passed": true,
+  "available": 14300897.645866372,
+  "removed": 161037.34425059392
+ },
+ "lineage_payer_cell_8_has_mass": {
+  "passed": true,
+  "available": 13987562.648798801,
+  "removed": 147520.24812758737
+ },
+ "lineage_payer_cell_9_has_mass": {
+  "passed": true,
+  "available": 12782643.920377769,
+  "removed": 120759.55540766491
+ },
+ "lineage_payer_cell_10_has_mass": {
+  "passed": true,
+  "available": 13157400.582539901,
+  "removed": 77359.98433574442
+ },
+ "lineage_payer_cell_11_has_mass": {
+  "passed": true,
+  "available": 13982867.540778529,
+  "removed": 57675.39750579282
+ },
+ "lineage_payer_cell_12_has_mass": {
+  "passed": true,
+  "available": 15410691.055874899,
+  "removed": 62184.12840335667
+ },
+ "lineage_payer_cell_13_has_mass": {
+  "passed": true,
+  "available": 14615562.9351069,
+  "removed": 49385.4538754674
+ },
+ "lineage_payer_cell_14_has_mass": {
+  "passed": true,
+  "available": 12854611.35181198,
+  "removed": 39610.42589069976
+ },
+ "lineage_payer_cell_15_has_mass": {
+  "passed": true,
+  "available": 9858989.561006362,
+  "removed": 25830.62527133917
+ },
+ "lineage_payer_cell_16_has_mass": {
+  "passed": true,
+  "available": 10431063.56747523,
+  "removed": 25736.69008429322
+ },
+ "payer_removed_count": {
+  "passed": true,
+  "removed": 3039719.593185234,
+  "added": 3039719.593185237
+ },
+ "payer_nonnegative_and_only_other_g3_moves": {
+  "passed": true
+ },
+ "within_run_pin_infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/note151.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/note151.pdf"
+ },
+ "pin_infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/note151.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/note151.pdf"
+ },
+ "within_run_pin_infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/ssa_an2025-7.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/ssa_an2025-7.pdf"
+ },
+ "pin_infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/ssa_an2025-7.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/ssa_an2025-7.pdf"
+ },
+ "within_run_pin_infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/ss_timing.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/ss_timing.py"
+ },
+ "pin_infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/ss_timing.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/ss_timing.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/an2025-1.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/an2025-1.pdf"
+ },
+ "pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/an2025-1.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/an2025-1.pdf"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/an2025-3.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/an2025-3.pdf"
+ },
+ "pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/an2025-3.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/an2025-3.pdf"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/cms_fr2025.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/cms_fr2025.pdf"
+ },
+ "pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/cms_fr2025.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/cms_fr2025.pdf"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/lt2024_Table02.xlsx": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/lt2024_Table02.xlsx"
+ },
+ "pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/lt2024_Table02.xlsx": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/lt2024_Table02.xlsx"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/lt2024_Table03.xlsx": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/lt2024_Table03.xlsx"
+ },
+ "pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/lt2024_Table03.xlsx": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/lt2024_Table03.xlsx"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/mtr2025.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/mtr2025.pdf"
+ },
+ "pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/mtr2025.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/mtr2025.pdf"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/ocact_obbba_wyden_20250805.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/ocact_obbba_wyden_20250805.pdf"
+ },
+ "pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/ocact_obbba_wyden_20250805.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/ocact_obbba_wyden_20250805.pdf"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/ssa_afr2025_fin.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/ssa_afr2025_fin.pdf"
+ },
+ "pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/ssa_afr2025_fin.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/ssa_afr2025_fin.pdf"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/tr2025.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/tr2025.pdf"
+ },
+ "pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/tr2025.pdf": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/tr2025.pdf"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/lifetime_model.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/lifetime_model.py"
+ },
+ "pin_infra/immigration-fiscal/pension_accrual_2026_09_28/lifetime_model.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/lifetime_model.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/pension_accrual.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/pension_accrual.py"
+ },
+ "pin_infra/immigration-fiscal/pension_accrual_2026_09_28/pension_accrual.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/pension_accrual.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py"
+ },
+ "pin_infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_tr2026_2026_10_06/derived/paths.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_tr2026_2026_10_06/derived/paths.csv"
+ },
+ "pin_infra/immigration-fiscal/pension_tr2026_2026_10_06/derived/paths.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_tr2026_2026_10_06/derived/paths.csv"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_tr2026_2026_10_06/pension_tr2026.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_tr2026_2026_10_06/pension_tr2026.py"
+ },
+ "pin_infra/immigration-fiscal/pension_tr2026_2026_10_06/pension_tr2026.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_tr2026_2026_10_06/pension_tr2026.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/pension_tr2026_2026_10_06/sources_tr2026.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_tr2026_2026_10_06/sources_tr2026.py"
+ },
+ "pin_infra/immigration-fiscal/pension_tr2026_2026_10_06/sources_tr2026.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/pension_tr2026_2026_10_06/sources_tr2026.py"
+ },
+ "within_run_pin_sources/immigration-fiscal/data/external/stage3/cms/trustees_2026/mtr2026.pdf": {
+  "passed": true,
+  "path": "sources/immigration-fiscal/data/external/stage3/cms/trustees_2026/mtr2026.pdf"
+ },
+ "pin_sources/immigration-fiscal/data/external/stage3/cms/trustees_2026/mtr2026.pdf": {
+  "passed": true,
+  "path": "sources/immigration-fiscal/data/external/stage3/cms/trustees_2026/mtr2026.pdf"
+ },
+ "within_run_pin_sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/an2026-3.pdf": {
+  "passed": true,
+  "path": "sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/an2026-3.pdf"
+ },
+ "pin_sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/an2026-3.pdf": {
+  "passed": true,
+  "path": "sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/an2026-3.pdf"
+ },
+ "within_run_pin_sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.pdf": {
+  "passed": true,
+  "path": "sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.pdf"
+ },
+ "pin_sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.pdf": {
+  "passed": true,
+  "path": "sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.pdf"
+ },
+ "within_run_pin_sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.txt": {
+  "passed": true,
+  "path": "sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.txt"
+ },
+ "pin_sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.txt": {
+  "passed": true,
+  "path": "sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.txt"
+ },
+ "within_run_pin_.venv/lib/python3.13/site-packages/numpy/rec/__pycache__/__init__.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/numpy/rec/__pycache__/__init__.cpython-313.pyc"
+ },
+ "pin_.venv/lib/python3.13/site-packages/numpy/rec/__pycache__/__init__.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/numpy/rec/__pycache__/__init__.cpython-313.pyc"
+ },
+ "within_run_pin_.venv/lib/python3.13/site-packages/pandas/api/__pycache__/internals.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pandas/api/__pycache__/internals.cpython-313.pyc"
+ },
+ "pin_.venv/lib/python3.13/site-packages/pandas/api/__pycache__/internals.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pandas/api/__pycache__/internals.cpython-313.pyc"
+ },
+ "within_run_pin_.venv/lib/python3.13/site-packages/pandas/core/arrays/arrow/__pycache__/extension_types.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pandas/core/arrays/arrow/__pycache__/extension_types.cpython-313.pyc"
+ },
+ "pin_.venv/lib/python3.13/site-packages/pandas/core/arrays/arrow/__pycache__/extension_types.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pandas/core/arrays/arrow/__pycache__/extension_types.cpython-313.pyc"
+ },
+ "within_run_pin_.venv/lib/python3.13/site-packages/pandas/core/methods/__pycache__/to_dict.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pandas/core/methods/__pycache__/to_dict.cpython-313.pyc"
+ },
+ "pin_.venv/lib/python3.13/site-packages/pandas/core/methods/__pycache__/to_dict.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pandas/core/methods/__pycache__/to_dict.cpython-313.pyc"
+ },
+ "within_run_pin_.venv/lib/python3.13/site-packages/pandas/io/formats/__pycache__/csvs.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pandas/io/formats/__pycache__/csvs.cpython-313.pyc"
+ },
+ "pin_.venv/lib/python3.13/site-packages/pandas/io/formats/__pycache__/csvs.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pandas/io/formats/__pycache__/csvs.cpython-313.pyc"
+ },
+ "within_run_pin_.venv/lib/python3.13/site-packages/pyarrow/__pycache__/dataset.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pyarrow/__pycache__/dataset.cpython-313.pyc"
+ },
+ "pin_.venv/lib/python3.13/site-packages/pyarrow/__pycache__/dataset.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pyarrow/__pycache__/dataset.cpython-313.pyc"
+ },
+ "within_run_pin_.venv/lib/python3.13/site-packages/pyarrow/__pycache__/fs.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pyarrow/__pycache__/fs.cpython-313.pyc"
+ },
+ "pin_.venv/lib/python3.13/site-packages/pyarrow/__pycache__/fs.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pyarrow/__pycache__/fs.cpython-313.pyc"
+ },
+ "within_run_pin_.venv/lib/python3.13/site-packages/pyarrow/__pycache__/pandas_compat.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pyarrow/__pycache__/pandas_compat.cpython-313.pyc"
+ },
+ "pin_.venv/lib/python3.13/site-packages/pyarrow/__pycache__/pandas_compat.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pyarrow/__pycache__/pandas_compat.cpython-313.pyc"
+ },
+ "within_run_pin_.venv/lib/python3.13/site-packages/pyarrow/__pycache__/substrait.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pyarrow/__pycache__/substrait.cpython-313.pyc"
+ },
+ "pin_.venv/lib/python3.13/site-packages/pyarrow/__pycache__/substrait.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pyarrow/__pycache__/substrait.cpython-313.pyc"
+ },
+ "within_run_pin_.venv/lib/python3.13/site-packages/pyarrow/parquet/__pycache__/__init__.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pyarrow/parquet/__pycache__/__init__.cpython-313.pyc"
+ },
+ "pin_.venv/lib/python3.13/site-packages/pyarrow/parquet/__pycache__/__init__.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pyarrow/parquet/__pycache__/__init__.cpython-313.pyc"
+ },
+ "within_run_pin_.venv/lib/python3.13/site-packages/pyarrow/parquet/__pycache__/core.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pyarrow/parquet/__pycache__/core.cpython-313.pyc"
+ },
+ "pin_.venv/lib/python3.13/site-packages/pyarrow/parquet/__pycache__/core.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pyarrow/parquet/__pycache__/core.cpython-313.pyc"
+ },
+ "within_run_pin_.venv/lib/python3.13/site-packages/pyarrow/vendored/__pycache__/version.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pyarrow/vendored/__pycache__/version.cpython-313.pyc"
+ },
+ "pin_.venv/lib/python3.13/site-packages/pyarrow/vendored/__pycache__/version.cpython-313.pyc": {
+  "passed": true,
+  "path": ".venv/lib/python3.13/site-packages/pyarrow/vendored/__pycache__/version.cpython-313.pyc"
+ },
+ "within_run_pin_infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json"
+ },
+ "pin_infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json"
+ },
+ "within_run_pin_infra/immigration-fiscal/backtest_admin_totals_2026_09_28/derived/prediction_audit.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/backtest_admin_totals_2026_09_28/derived/prediction_audit.json"
+ },
+ "pin_infra/immigration-fiscal/backtest_admin_totals_2026_09_28/derived/prediction_audit.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/backtest_admin_totals_2026_09_28/derived/prediction_audit.json"
+ },
+ "within_run_pin_infra/immigration-fiscal/build/__pycache__/meps_health_transport_2024.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/build/__pycache__/meps_health_transport_2024.cpython-313.pyc"
+ },
+ "pin_infra/immigration-fiscal/build/__pycache__/meps_health_transport_2024.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/build/__pycache__/meps_health_transport_2024.cpython-313.pyc"
+ },
+ "within_run_pin_infra/immigration-fiscal/build/__pycache__/paths.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/build/__pycache__/paths.cpython-313.pyc"
+ },
+ "pin_infra/immigration-fiscal/build/__pycache__/paths.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/build/__pycache__/paths.cpython-313.pyc"
+ },
+ "within_run_pin_infra/immigration-fiscal/build/__pycache__/public_mvp_io.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/build/__pycache__/public_mvp_io.cpython-313.pyc"
+ },
+ "pin_infra/immigration-fiscal/build/__pycache__/public_mvp_io.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/build/__pycache__/public_mvp_io.cpython-313.pyc"
+ },
+ "within_run_pin_infra/immigration-fiscal/california_medical_status_2026_09_23/cps_ca_status.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/california_medical_status_2026_09_23/cps_ca_status.py"
+ },
+ "pin_infra/immigration-fiscal/california_medical_status_2026_09_23/cps_ca_status.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/california_medical_status_2026_09_23/cps_ca_status.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/common.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/common.cpython-313.pyc"
+ },
+ "pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/common.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/common.cpython-313.pyc"
+ },
+ "within_run_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/hotdeck.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/hotdeck.cpython-313.pyc"
+ },
+ "pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/hotdeck.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/hotdeck.cpython-313.pyc"
+ },
+ "within_run_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/taxcalc.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/taxcalc.cpython-313.pyc"
+ },
+ "pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/taxcalc.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/taxcalc.cpython-313.pyc"
+ },
+ "within_run_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_onbooks_lane.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_onbooks_lane.py"
+ },
+ "pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_onbooks_lane.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_onbooks_lane.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_status.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_status.py"
+ },
+ "pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_status.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_status.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/ipw.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/ipw.py"
+ },
+ "pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/ipw.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/ipw.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/run_hotdeck.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/run_hotdeck.py"
+ },
+ "pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/run_hotdeck.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/run_hotdeck.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/translate.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/translate.py"
+ },
+ "pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/translate.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/translate.py"
+ },
+ "within_run_pin_infra/immigration-fiscal/dataset_integrity_2026_09_23/derived/spending_mts_credits.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/dataset_integrity_2026_09_23/derived/spending_mts_credits.json"
+ },
+ "pin_infra/immigration-fiscal/dataset_integrity_2026_09_23/derived/spending_mts_credits.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/dataset_integrity_2026_09_23/derived/spending_mts_credits.json"
+ },
+ "within_run_pin_infra/immigration-fiscal/external_benchmarks_2026_09_24/__pycache__/frame.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/external_benchmarks_2026_09_24/__pycache__/frame.cpython-313.pyc"
+ },
+ "pin_infra/immigration-fiscal/external_benchmarks_2026_09_24/__pycache__/frame.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/external_benchmarks_2026_09_24/__pycache__/frame.cpython-313.pyc"
+ },
+ "within_run_pin_infra/immigration-fiscal/external_benchmarks_2026_09_24/_cache/cps25_frame.parquet": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/external_benchmarks_2026_09_24/_cache/cps25_frame.parquet"
+ },
+ "pin_infra/immigration-fiscal/external_benchmarks_2026_09_24/_cache/cps25_frame.parquet": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/external_benchmarks_2026_09_24/_cache/cps25_frame.parquet"
+ },
+ "within_run_pin_infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_group_shares.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_group_shares.csv"
+ },
+ "pin_infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_group_shares.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_group_shares.csv"
+ },
+ "within_run_pin_infra/immigration-fiscal/mixed_unit_credits_2026_10_14/__pycache__/credits.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/mixed_unit_credits_2026_10_14/__pycache__/credits.cpython-313.pyc"
+ },
+ "pin_infra/immigration-fiscal/mixed_unit_credits_2026_10_14/__pycache__/credits.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/mixed_unit_credits_2026_10_14/__pycache__/credits.cpython-313.pyc"
+ },
+ "within_run_pin_infra/immigration-fiscal/mixed_unit_credits_2026_10_14/derived/summary.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/mixed_unit_credits_2026_10_14/derived/summary.json"
+ },
+ "pin_infra/immigration-fiscal/mixed_unit_credits_2026_10_14/derived/summary.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/mixed_unit_credits_2026_10_14/derived/summary.json"
+ },
+ "within_run_pin_infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_inputs.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_inputs.json"
+ },
+ "pin_infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_inputs.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_inputs.json"
+ },
+ "within_run_pin_infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_split.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_split.csv"
+ },
+ "pin_infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_split.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_split.csv"
+ },
+ "within_run_pin_infra/immigration-fiscal/status_impute_2026_09_16/__pycache__/impute_status.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/status_impute_2026_09_16/__pycache__/impute_status.cpython-313.pyc"
+ },
+ "pin_infra/immigration-fiscal/status_impute_2026_09_16/__pycache__/impute_status.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/status_impute_2026_09_16/__pycache__/impute_status.cpython-313.pyc"
+ },
+ "within_run_pin_infra/immigration-fiscal/tax_key_heldout_2026_09_28/__pycache__/keys.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/tax_key_heldout_2026_09_28/__pycache__/keys.cpython-313.pyc"
+ },
+ "pin_infra/immigration-fiscal/tax_key_heldout_2026_09_28/__pycache__/keys.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/tax_key_heldout_2026_09_28/__pycache__/keys.cpython-313.pyc"
+ },
+ "within_run_pin_infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/bins.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/bins.csv"
+ },
+ "pin_infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/bins.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/bins.csv"
+ },
+ "within_run_pin_infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/translation_inputs.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/translation_inputs.json"
+ },
+ "pin_infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/translation_inputs.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/translation_inputs.json"
+ },
+ "within_run_pin_infra/immigration-fiscal/tax_key_heldout_2026_09_28/reads/irs_table_1_2_ty2023.md": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/tax_key_heldout_2026_09_28/reads/irs_table_1_2_ty2023.md"
+ },
+ "pin_infra/immigration-fiscal/tax_key_heldout_2026_09_28/reads/irs_table_1_2_ty2023.md": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/tax_key_heldout_2026_09_28/reads/irs_table_1_2_ty2023.md"
+ },
+ "within_run_pin_infra/immigration-fiscal/world_ledger_2026_09_27/__pycache__/population_basis.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/world_ledger_2026_09_27/__pycache__/population_basis.cpython-313.pyc"
+ },
+ "pin_infra/immigration-fiscal/world_ledger_2026_09_27/__pycache__/population_basis.cpython-313.pyc": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/world_ledger_2026_09_27/__pycache__/population_basis.cpython-313.pyc"
+ },
+ "forward_credit_union": {
+  "passed": true,
+  "got_bn": 4.998682929037216,
+  "target_bn": 4.998682929037217
+ },
+ "forward_credit_carriers_are_nonmembers": {
+  "passed": true
+ },
+ "transport_has_mass_1_False": {
+  "passed": true
+ },
+ "transport_has_mass_2_False": {
+  "passed": true
+ },
+ "transport_has_mass_4_False": {
+  "passed": true
+ },
+ "transport_has_mass_5_False": {
+  "passed": true
+ },
+ "transport_has_mass_6_False": {
+  "passed": true
+ },
+ "transport_has_mass_8_False": {
+  "passed": true
+ },
+ "transport_has_mass_9_False": {
+  "passed": true
+ },
+ "transport_has_mass_10_False": {
+  "passed": true
+ },
+ "transport_has_mass_11_False": {
+  "passed": true
+ },
+ "transport_has_mass_12_False": {
+  "passed": true
+ },
+ "transport_has_mass_13_False": {
+  "passed": true
+ },
+ "transport_has_mass_15_False": {
+  "passed": true
+ },
+ "transport_has_mass_16_False": {
+  "passed": true
+ },
+ "transport_has_mass_17_False": {
+  "passed": true
+ },
+ "transport_has_mass_18_False": {
+  "passed": true
+ },
+ "transport_has_mass_19_False": {
+  "passed": true
+ },
+ "transport_has_mass_20_False": {
+  "passed": true
+ },
+ "transport_has_mass_21_False": {
+  "passed": true
+ },
+ "transport_has_mass_22_False": {
+  "passed": true
+ },
+ "transport_has_mass_23_False": {
+  "passed": true
+ },
+ "transport_has_mass_24_False": {
+  "passed": true
+ },
+ "transport_has_mass_25_False": {
+  "passed": true
+ },
+ "transport_has_mass_26_False": {
+  "passed": true
+ },
+ "transport_has_mass_27_False": {
+  "passed": true
+ },
+ "transport_has_mass_28_False": {
+  "passed": true
+ },
+ "transport_has_mass_29_False": {
+  "passed": true
+ },
+ "transport_has_mass_30_False": {
+  "passed": true
+ },
+ "transport_has_mass_31_False": {
+  "passed": true
+ },
+ "transport_has_mass_32_False": {
+  "passed": true
+ },
+ "transport_has_mass_33_False": {
+  "passed": true
+ },
+ "transport_has_mass_34_False": {
+  "passed": true
+ },
+ "transport_has_mass_35_False": {
+  "passed": true
+ },
+ "transport_has_mass_36_False": {
+  "passed": true
+ },
+ "transport_has_mass_37_False": {
+  "passed": true
+ },
+ "transport_has_mass_38_False": {
+  "passed": true
+ },
+ "transport_has_mass_39_False": {
+  "passed": true
+ },
+ "transport_has_mass_40_False": {
+  "passed": true
+ },
+ "transport_has_mass_41_False": {
+  "passed": true
+ },
+ "transport_has_mass_42_False": {
+  "passed": true
+ },
+ "transport_has_mass_44_False": {
+  "passed": true
+ },
+ "transport_has_mass_45_False": {
+  "passed": true
+ },
+ "transport_has_mass_46_False": {
+  "passed": true
+ },
+ "transport_has_mass_47_False": {
+  "passed": true
+ },
+ "transport_has_mass_48_False": {
+  "passed": true
+ },
+ "transport_has_mass_49_False": {
+  "passed": true
+ },
+ "transport_has_mass_50_False": {
+  "passed": true
+ },
+ "transport_has_mass_51_False": {
+  "passed": true
+ },
+ "transport_has_mass_53_False": {
+  "passed": true
+ },
+ "transport_has_mass_54_False": {
+  "passed": true
+ },
+ "transport_has_mass_55_False": {
+  "passed": true
+ },
+ "transport_has_mass_56_False": {
+  "passed": true
+ },
+ "transport_total": {
+  "passed": true,
+  "got_bn": -41.937112,
+  "target_bn": -41.937112
+ },
+ "transport_has_mass_1_True": {
+  "passed": true
+ },
+ "transport_has_mass_2_True": {
+  "passed": true
+ },
+ "transport_has_mass_4_True": {
+  "passed": true
+ },
+ "transport_has_mass_5_True": {
+  "passed": true
+ },
+ "transport_has_mass_6_True": {
+  "passed": true
+ },
+ "transport_has_mass_8_True": {
+  "passed": true
+ },
+ "transport_has_mass_9_True": {
+  "passed": true
+ },
+ "transport_has_mass_10_True": {
+  "passed": true
+ },
+ "transport_has_mass_11_True": {
+  "passed": true
+ },
+ "transport_has_mass_12_True": {
+  "passed": true
+ },
+ "transport_has_mass_13_True": {
+  "passed": true
+ },
+ "transport_has_mass_15_True": {
+  "passed": true
+ },
+ "transport_has_mass_16_True": {
+  "passed": true
+ },
+ "transport_has_mass_17_True": {
+  "passed": true
+ },
+ "transport_has_mass_18_True": {
+  "passed": true
+ },
+ "transport_has_mass_19_True": {
+  "passed": true
+ },
+ "transport_has_mass_20_True": {
+  "passed": true
+ },
+ "transport_has_mass_21_True": {
+  "passed": true
+ },
+ "transport_has_mass_22_True": {
+  "passed": true
+ },
+ "transport_has_mass_23_True": {
+  "passed": true
+ },
+ "transport_has_mass_24_True": {
+  "passed": true
+ },
+ "transport_has_mass_25_True": {
+  "passed": true
+ },
+ "transport_has_mass_26_True": {
+  "passed": true
+ },
+ "transport_has_mass_27_True": {
+  "passed": true
+ },
+ "transport_has_mass_28_True": {
+  "passed": true
+ },
+ "transport_has_mass_29_True": {
+  "passed": true
+ },
+ "transport_has_mass_30_True": {
+  "passed": true
+ },
+ "transport_has_mass_31_True": {
+  "passed": true
+ },
+ "transport_has_mass_32_True": {
+  "passed": true
+ },
+ "transport_has_mass_33_True": {
+  "passed": true
+ },
+ "transport_has_mass_34_True": {
+  "passed": true
+ },
+ "transport_has_mass_35_True": {
+  "passed": true
+ },
+ "transport_has_mass_36_True": {
+  "passed": true
+ },
+ "transport_has_mass_37_True": {
+  "passed": true
+ },
+ "transport_has_mass_38_True": {
+  "passed": true
+ },
+ "transport_has_mass_39_True": {
+  "passed": true
+ },
+ "transport_has_mass_40_True": {
+  "passed": true
+ },
+ "transport_has_mass_41_True": {
+  "passed": true
+ },
+ "transport_has_mass_42_True": {
+  "passed": true
+ },
+ "transport_has_mass_44_True": {
+  "passed": true
+ },
+ "transport_has_mass_45_True": {
+  "passed": true
+ },
+ "transport_has_mass_46_True": {
+  "passed": true
+ },
+ "transport_has_mass_47_True": {
+  "passed": true
+ },
+ "transport_has_mass_48_True": {
+  "passed": true
+ },
+ "transport_has_mass_49_True": {
+  "passed": true
+ },
+ "transport_has_mass_50_True": {
+  "passed": true
+ },
+ "transport_has_mass_51_True": {
+  "passed": true
+ },
+ "transport_has_mass_53_True": {
+  "passed": true
+ },
+ "transport_has_mass_54_True": {
+  "passed": true
+ },
+ "transport_has_mass_55_True": {
+  "passed": true
+ },
+ "transport_has_mass_56_True": {
+  "passed": true
+ },
+ "within_run_pin_infra/immigration-fiscal/winners_losers_2026_09_24/inputs/social_oct14.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/winners_losers_2026_09_24/inputs/social_oct14.json"
+ },
+ "pin_infra/immigration-fiscal/winners_losers_2026_09_24/inputs/social_oct14.json": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/winners_losers_2026_09_24/inputs/social_oct14.json"
+ },
+ "within_run_pin_infra/immigration-fiscal/congestion_2026_09_23/derived/ua_exposure.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/congestion_2026_09_23/derived/ua_exposure.csv"
+ },
+ "pin_infra/immigration-fiscal/congestion_2026_09_23/derived/ua_exposure.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/congestion_2026_09_23/derived/ua_exposure.csv"
+ },
+ "within_run_pin_infra/immigration-fiscal/air_pollution_2026_09_28/air_items.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/air_pollution_2026_09_28/air_items.py"
+ },
+ "pin_infra/immigration-fiscal/air_pollution_2026_09_28/air_items.py": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/air_pollution_2026_09_28/air_items.py"
+ },
+ "social_victims_seed": {
+  "passed": true
+ },
+ "social_identified_union_a_victims_low": {
+  "passed": true,
+  "got_bn": -30.483110999999997,
+  "target_bn": -30.483111
+ },
+ "social_identified_union_a_victims_central": {
+  "passed": true,
+  "got_bn": -31.17833449999999,
+  "target_bn": -31.1783345
+ },
+ "social_identified_union_a_victims_high": {
+  "passed": true,
+  "got_bn": -31.873557999999996,
+  "target_bn": -31.873558
+ },
+ "social_property_crime_seed": {
+  "passed": true
+ },
+ "social_identified_union_a_property_crime_low": {
+  "passed": true,
+  "got_bn": -1.254369,
+  "target_bn": -1.254369
+ },
+ "social_identified_union_a_property_crime_central": {
+  "passed": true,
+  "got_bn": -1.3054095000000003,
+  "target_bn": -1.3054095000000001
+ },
+ "social_identified_union_a_property_crime_high": {
+  "passed": true,
+  "got_bn": -1.35645,
+  "target_bn": -1.35645
+ },
+ "social_unreimbursed_care_seed": {
+  "passed": true
+ },
+ "social_identified_union_a_unreimbursed_care_low": {
+  "passed": true,
+  "got_bn": -3.088540000000001,
+  "target_bn": -3.08854
+ },
+ "social_identified_union_a_unreimbursed_care_central": {
+  "passed": true,
+  "got_bn": -4.1905495,
+  "target_bn": -4.1905494999999995
+ },
+ "social_identified_union_a_unreimbursed_care_high": {
+  "passed": true,
+  "got_bn": -5.292559,
+  "target_bn": -5.292559
+ },
+ "social_congestion_seed": {
+  "passed": true
+ },
+ "social_identified_union_a_congestion_low": {
+  "passed": true,
+  "got_bn": -13.628205000000001,
+  "target_bn": -13.628205
+ },
+ "social_identified_union_a_congestion_central": {
+  "passed": true,
+  "got_bn": -12.6337665,
+  "target_bn": -12.6337665
+ },
+ "social_identified_union_a_congestion_high": {
+  "passed": true,
+  "got_bn": -11.639328000000004,
+  "target_bn": -11.639328
+ },
+ "social_identified_union_a_housing_gain_low": {
+  "passed": true,
+  "got_bn": 3.392317999999997,
+  "target_bn": 3.392318
+ },
+ "social_identified_union_a_housing_gain_central": {
+  "passed": true,
+  "got_bn": 2.039989999999998,
+  "target_bn": 2.03999
+ },
+ "social_identified_union_a_housing_gain_high": {
+  "passed": true,
+  "got_bn": 0.6876620000000004,
+  "target_bn": 0.687662
+ },
+ "social_identified_union_a_fear_avoidance_low": {
+  "passed": true,
+  "got_bn": -10.339309,
+  "target_bn": -10.339309
+ },
+ "social_identified_union_a_fear_avoidance_central": {
+  "passed": true,
+  "got_bn": -10.339309,
+  "target_bn": -10.339309
+ },
+ "social_identified_union_a_fear_avoidance_high": {
+  "passed": true,
+  "got_bn": -10.339309,
+  "target_bn": -10.339309
+ },
+ "social_identified_union_a_private_security_low": {
+  "passed": true,
+  "got_bn": 0.490639,
+  "target_bn": 0.490639
+ },
+ "social_identified_union_a_private_security_central": {
+  "passed": true,
+  "got_bn": 0.490639,
+  "target_bn": 0.490639
+ },
+ "social_identified_union_a_private_security_high": {
+  "passed": true,
+  "got_bn": 0.490639,
+  "target_bn": 0.490639
+ },
+ "social_identified_union_a_school_disruption_low": {
+  "passed": true,
+  "got_bn": 1.938666,
+  "target_bn": 1.938666
+ },
+ "social_identified_union_a_school_disruption_central": {
+  "passed": true,
+  "got_bn": 1.938666,
+  "target_bn": 1.938666
+ },
+ "social_identified_union_a_school_disruption_high": {
+  "passed": true,
+  "got_bn": 1.938666,
+  "target_bn": 1.938666
+ },
+ "social_identified_union_a_pm25_consumption_low": {
+  "passed": true,
+  "got_bn": -68.09210499999999,
+  "target_bn": -68.092105
+ },
+ "social_identified_union_a_pm25_consumption_central": {
+  "passed": true,
+  "got_bn": -68.09210499999999,
+  "target_bn": -68.092105
+ },
+ "social_identified_union_a_pm25_consumption_high": {
+  "passed": true,
+  "got_bn": -68.09210499999999,
+  "target_bn": -68.092105
+ },
+ "social_identified_union_a_road_crash_externality_low": {
+  "passed": true,
+  "got_bn": -10.562880000000003,
+  "target_bn": -10.56288
+ },
+ "social_identified_union_a_road_crash_externality_central": {
+  "passed": true,
+  "got_bn": -10.562880000000003,
+  "target_bn": -10.56288
+ },
+ "social_identified_union_a_road_crash_externality_high": {
+  "passed": true,
+  "got_bn": -10.562880000000003,
+  "target_bn": -10.56288
+ },
+ "social_identified_union_a_scale_net_earnings_low": {
+  "passed": true,
+  "got_bn": 13.674355999999996,
+  "target_bn": 13.674356
+ },
+ "social_identified_union_a_scale_net_earnings_central": {
+  "passed": true,
+  "got_bn": 13.674355999999996,
+  "target_bn": 13.674356
+ },
+ "social_identified_union_a_scale_net_earnings_high": {
+  "passed": true,
+  "got_bn": 13.674355999999996,
+  "target_bn": 13.674356
+ },
+ "social_identified_union_a_restaurant_variety_market_size_low": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_identified_union_a_restaurant_variety_market_size_central": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_identified_union_a_restaurant_variety_market_size_high": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_identified_union_a_formal_volunteering_outside_group_low": {
+  "passed": true,
+  "got_bn": 5.980771,
+  "target_bn": 5.980771
+ },
+ "social_identified_union_a_formal_volunteering_outside_group_central": {
+  "passed": true,
+  "got_bn": 5.980771,
+  "target_bn": 5.980771
+ },
+ "social_identified_union_a_formal_volunteering_outside_group_high": {
+  "passed": true,
+  "got_bn": 5.980771,
+  "target_bn": 5.980771
+ },
+ "social_identified_union_a_total_consumer_scale_low": {
+  "passed": true,
+  "got_bn": 2.1297,
+  "target_bn": 2.1297
+ },
+ "social_identified_union_a_total_consumer_scale_central": {
+  "passed": true,
+  "got_bn": 2.1297,
+  "target_bn": 2.1297
+ },
+ "social_identified_union_a_total_consumer_scale_high": {
+  "passed": true,
+  "got_bn": 2.1297,
+  "target_bn": 2.1297
+ },
+ "social_identified_union_a_total_trade_travel_fdi_low": {
+  "passed": true,
+  "got_bn": 6.784386999999999,
+  "target_bn": 6.784387
+ },
+ "social_identified_union_a_total_trade_travel_fdi_central": {
+  "passed": true,
+  "got_bn": 6.784386999999999,
+  "target_bn": 6.784387
+ },
+ "social_identified_union_a_total_trade_travel_fdi_high": {
+  "passed": true,
+  "got_bn": 6.784386999999999,
+  "target_bn": 6.784387
+ },
+ "social_coverage_unique_complete": {
+  "passed": true
+ },
+ "adopted_declaration_covered": {
+  "passed": true,
+  "missing": []
+ },
+ "social_source_rounding_low": {
+  "passed": true,
+  "rounding_bn": -5.684341886080802e-14
+ },
+ "social_source_rounding_high": {
+  "passed": true,
+  "rounding_bn": -9.999999974752427e-07
+ },
+ "social_primary_low": {
+  "passed": true,
+  "got_bn": -104.65548748885026,
+  "target_bn": -104.65548748885021
+ },
+ "social_primary_high": {
+  "passed": true,
+  "got_bn": -109.19837903321265,
+  "target_bn": -109.19837903321265
+ },
+ "property_state_has_owners_1": {
+  "passed": true
+ },
+ "property_margin_1": {
+  "passed": true
+ },
+ "property_state_has_owners_2": {
+  "passed": true
+ },
+ "property_margin_2": {
+  "passed": true
+ },
+ "property_state_has_owners_4": {
+  "passed": true
+ },
+ "property_margin_4": {
+  "passed": true
+ },
+ "property_state_has_owners_5": {
+  "passed": true
+ },
+ "property_margin_5": {
+  "passed": true
+ },
+ "property_state_has_owners_6": {
+  "passed": true
+ },
+ "property_margin_6": {
+  "passed": true
+ },
+ "property_state_has_owners_8": {
+  "passed": true
+ },
+ "property_margin_8": {
+  "passed": true
+ },
+ "property_state_has_owners_9": {
+  "passed": true
+ },
+ "property_margin_9": {
+  "passed": true
+ },
+ "property_state_has_owners_10": {
+  "passed": true
+ },
+ "property_margin_10": {
+  "passed": true
+ },
+ "property_state_has_owners_11": {
+  "passed": true
+ },
+ "property_margin_11": {
+  "passed": true
+ },
+ "property_state_has_owners_12": {
+  "passed": true
+ },
+ "property_margin_12": {
+  "passed": true
+ },
+ "property_state_has_owners_13": {
+  "passed": true
+ },
+ "property_margin_13": {
+  "passed": true
+ },
+ "property_state_has_owners_15": {
+  "passed": true
+ },
+ "property_margin_15": {
+  "passed": true
+ },
+ "property_state_has_owners_16": {
+  "passed": true
+ },
+ "property_margin_16": {
+  "passed": true
+ },
+ "property_state_has_owners_17": {
+  "passed": true
+ },
+ "property_margin_17": {
+  "passed": true
+ },
+ "property_state_has_owners_18": {
+  "passed": true
+ },
+ "property_margin_18": {
+  "passed": true
+ },
+ "property_state_has_owners_19": {
+  "passed": true
+ },
+ "property_margin_19": {
+  "passed": true
+ },
+ "property_state_has_owners_20": {
+  "passed": true
+ },
+ "property_margin_20": {
+  "passed": true
+ },
+ "property_state_has_owners_21": {
+  "passed": true
+ },
+ "property_margin_21": {
+  "passed": true
+ },
+ "property_state_has_owners_22": {
+  "passed": true
+ },
+ "property_margin_22": {
+  "passed": true
+ },
+ "property_state_has_owners_23": {
+  "passed": true
+ },
+ "property_margin_23": {
+  "passed": true
+ },
+ "property_state_has_owners_24": {
+  "passed": true
+ },
+ "property_margin_24": {
+  "passed": true
+ },
+ "property_state_has_owners_25": {
+  "passed": true
+ },
+ "property_margin_25": {
+  "passed": true
+ },
+ "property_state_has_owners_26": {
+  "passed": true
+ },
+ "property_margin_26": {
+  "passed": true
+ },
+ "property_state_has_owners_27": {
+  "passed": true
+ },
+ "property_margin_27": {
+  "passed": true
+ },
+ "property_state_has_owners_28": {
+  "passed": true
+ },
+ "property_margin_28": {
+  "passed": true
+ },
+ "property_state_has_owners_29": {
+  "passed": true
+ },
+ "property_margin_29": {
+  "passed": true
+ },
+ "property_state_has_owners_30": {
+  "passed": true
+ },
+ "property_margin_30": {
+  "passed": true
+ },
+ "property_state_has_owners_31": {
+  "passed": true
+ },
+ "property_margin_31": {
+  "passed": true
+ },
+ "property_state_has_owners_32": {
+  "passed": true
+ },
+ "property_margin_32": {
+  "passed": true
+ },
+ "property_state_has_owners_33": {
+  "passed": true
+ },
+ "property_margin_33": {
+  "passed": true
+ },
+ "property_state_has_owners_34": {
+  "passed": true
+ },
+ "property_margin_34": {
+  "passed": true
+ },
+ "property_state_has_owners_35": {
+  "passed": true
+ },
+ "property_margin_35": {
+  "passed": true
+ },
+ "property_state_has_owners_36": {
+  "passed": true
+ },
+ "property_margin_36": {
+  "passed": true
+ },
+ "property_state_has_owners_37": {
+  "passed": true
+ },
+ "property_margin_37": {
+  "passed": true
+ },
+ "property_state_has_owners_38": {
+  "passed": true
+ },
+ "property_margin_38": {
+  "passed": true
+ },
+ "property_state_has_owners_39": {
+  "passed": true
+ },
+ "property_margin_39": {
+  "passed": true
+ },
+ "property_state_has_owners_40": {
+  "passed": true
+ },
+ "property_margin_40": {
+  "passed": true
+ },
+ "property_state_has_owners_41": {
+  "passed": true
+ },
+ "property_margin_41": {
+  "passed": true
+ },
+ "property_state_has_owners_42": {
+  "passed": true
+ },
+ "property_margin_42": {
+  "passed": true
+ },
+ "property_state_has_owners_44": {
+  "passed": true
+ },
+ "property_margin_44": {
+  "passed": true
+ },
+ "property_state_has_owners_45": {
+  "passed": true
+ },
+ "property_margin_45": {
+  "passed": true
+ },
+ "property_state_has_owners_46": {
+  "passed": true
+ },
+ "property_margin_46": {
+  "passed": true
+ },
+ "property_state_has_owners_47": {
+  "passed": true
+ },
+ "property_margin_47": {
+  "passed": true
+ },
+ "property_state_has_owners_48": {
+  "passed": true
+ },
+ "property_margin_48": {
+  "passed": true
+ },
+ "property_state_has_owners_49": {
+  "passed": true
+ },
+ "property_margin_49": {
+  "passed": true
+ },
+ "property_state_has_owners_50": {
+  "passed": true
+ },
+ "property_margin_50": {
+  "passed": true
+ },
+ "property_state_has_owners_51": {
+  "passed": true
+ },
+ "property_margin_51": {
+  "passed": true
+ },
+ "property_state_has_owners_53": {
+  "passed": true
+ },
+ "property_margin_53": {
+  "passed": true
+ },
+ "property_state_has_owners_54": {
+  "passed": true
+ },
+ "property_margin_54": {
+  "passed": true
+ },
+ "property_state_has_owners_55": {
+  "passed": true
+ },
+ "property_margin_55": {
+  "passed": true
+ },
+ "property_state_has_owners_56": {
+  "passed": true
+ },
+ "property_margin_56": {
+  "passed": true
+ },
+ "property_no_renter_burden": {
+  "passed": true
+ },
+ "within_run_pin_infra/immigration-fiscal/housing_transfer_2026_09_23/derived/inputs_rhfs.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/housing_transfer_2026_09_23/derived/inputs_rhfs.csv"
+ },
+ "pin_infra/immigration-fiscal/housing_transfer_2026_09_23/derived/inputs_rhfs.csv": {
+  "passed": true,
+  "path": "infra/immigration-fiscal/housing_transfer_2026_09_23/derived/inputs_rhfs.csv"
+ },
+ "owner_type_shares": {
+  "passed": true
+ },
+ "owner_type_rent_conserved": {
+  "passed": true,
+  "got_bn": 67.16443270073971,
+  "target_bn": 67.16443270073972
+ },
+ "owner_type_rent_ambiguous_arm_conserved": {
+  "passed": true,
+  "got_bn": 67.16443270073974,
+  "target_bn": 67.16443270073972
+ },
+ "state_wage_group_labour_True": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_1": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_2": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_4": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_5": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_6": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_8": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_9": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_10": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_11": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_12": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_13": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_15": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_16": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_17": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_18": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_19": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_20": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_21": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_22": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_23": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_24": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_25": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_26": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_27": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_28": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_29": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_30": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_31": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_32": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_33": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_34": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_35": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_36": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_37": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_38": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_39": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_40": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_41": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_42": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_44": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_45": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_46": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_47": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_48": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_49": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_50": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_51": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_53": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_54": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_55": {
+  "passed": true
+ },
+ "state_wage_recipients_True_True_56": {
+  "passed": true
+ },
+ "state_wage_cell_True_True": {
+  "passed": true,
+  "got_bn": -59.73639594762903,
+  "target_bn": -59.736395947629035
+ },
+ "state_wage_recipients_True_False_1": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_2": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_4": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_5": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_6": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_8": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_9": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_10": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_11": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_12": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_13": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_15": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_16": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_17": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_18": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_19": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_20": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_21": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_22": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_23": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_24": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_25": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_26": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_27": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_28": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_29": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_30": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_31": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_32": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_33": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_34": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_35": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_36": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_37": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_38": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_39": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_40": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_41": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_42": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_44": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_45": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_46": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_47": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_48": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_49": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_50": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_51": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_53": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_54": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_55": {
+  "passed": true
+ },
+ "state_wage_recipients_True_False_56": {
+  "passed": true
+ },
+ "state_wage_cell_True_False": {
+  "passed": true,
+  "got_bn": -13.015271462646334,
+  "target_bn": -13.015271462646336
+ },
+ "state_wage_group_labour_False": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_1": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_2": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_4": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_5": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_6": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_8": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_9": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_10": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_11": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_12": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_13": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_15": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_16": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_17": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_18": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_19": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_20": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_21": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_22": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_23": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_24": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_25": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_26": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_27": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_28": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_29": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_30": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_31": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_32": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_33": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_34": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_35": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_36": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_37": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_38": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_39": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_40": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_41": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_42": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_44": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_45": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_46": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_47": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_48": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_49": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_50": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_51": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_53": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_54": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_55": {
+  "passed": true
+ },
+ "state_wage_recipients_False_True_56": {
+  "passed": true
+ },
+ "state_wage_cell_False_True": {
+  "passed": true,
+  "got_bn": 59.10518869211994,
+  "target_bn": 59.10518869211995
+ },
+ "state_wage_recipients_False_False_1": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_2": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_4": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_5": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_6": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_8": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_9": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_10": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_11": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_12": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_13": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_15": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_16": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_17": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_18": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_19": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_20": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_21": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_22": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_23": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_24": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_25": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_26": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_27": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_28": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_29": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_30": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_31": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_32": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_33": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_34": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_35": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_36": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_37": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_38": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_39": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_40": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_41": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_42": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_44": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_45": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_46": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_47": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_48": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_49": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_50": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_51": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_53": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_54": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_55": {
+  "passed": true
+ },
+ "state_wage_recipients_False_False_56": {
+  "passed": true
+ },
+ "state_wage_cell_False_False": {
+  "passed": true,
+  "got_bn": 13.183073736867838,
+  "target_bn": 13.18307373686784
+ },
+ "state_wage_national": {
+  "passed": true,
+  "got_bn": -0.4634049812875829,
+  "target_bn": -0.4634049812875879
+ },
+ "frozen_rounding_small": {
+  "passed": true,
+  "rounding_bn": 4.863387061959656e-07
+ },
+ "account_exact_case_closure": {
+  "passed": true,
+  "got_bn": -423.64926070050694,
+  "target_bn": -423.649260700507
+ },
+ "mixed_unit_total_conserved": {
+  "passed": true,
+  "got_bn": 519.9845874994253,
+  "target_bn": 519.9845874994251
+ },
+ "sharing_person": {
+  "passed": true,
+  "got_bn": -525.5763586666922,
+  "target_bn": -525.5763586666922
+ },
+ "cut_closure_quintile": {
+  "passed": true
+ },
+ "cut_closure_decile": {
+  "passed": true
+ },
+ "cut_closure_edu_nativity": {
+  "passed": true
+ },
+ "cut_closure_tenure": {
+  "passed": true
+ },
+ "cut_closure_age3": {
+  "passed": true
+ },
+ "cut_closure_race5": {
+  "passed": true
+ },
+ "cut_closure_state3": {
+  "passed": true
+ },
+ "cut_closure_top10_states": {
+  "passed": true
+ },
+ "cut_closure_sex": {
+  "passed": true
+ },
+ "cut_closure_worker": {
+  "passed": true
+ },
+ "cut_closure_industry5": {
+  "passed": true
+ },
+ "cut_closure_state3|edu_nativity": {
+  "passed": true
+ },
+ "cut_closure_edu_nativity|tenure": {
+  "passed": true
+ },
+ "cut_closure_state3|tenure": {
+  "passed": true
+ },
+ "cut_closure_decile|tenure": {
+  "passed": true
+ },
+ "sharing_pooled": {
+  "passed": true,
+  "got_bn": -525.5763586666922,
+  "target_bn": -525.5763586666922
+ },
+ "sharing_retains_0.5": {
+  "passed": true,
+  "got_bn": -525.5763586666922,
+  "target_bn": -525.5763586666922
+ },
+ "sharing_retains_0.8": {
+  "passed": true,
+  "got_bn": -525.5763586666922,
+  "target_bn": -525.5763586666922
+ },
+ "complete_channel_table_closure": {
+  "passed": true,
+  "got_bn": -525.5763586666922,
+  "target_bn": -525.5763586666922
+ },
+ "capitalization_renters_zero": {
+  "passed": true
+ },
+ "owner_type_net_total_conserved": {
+  "passed": true,
+  "got_bn": 9.41753387451172e-15,
+  "target_bn": 0.0
+ },
+ "social_lineage_a_victims_low": {
+  "passed": true,
+  "got_bn": -32.62639635559924,
+  "target_bn": -32.62639635559924
+ },
+ "social_lineage_a_victims_central": {
+  "passed": true,
+  "got_bn": -33.30278870755636,
+  "target_bn": -33.30278870755636
+ },
+ "social_lineage_a_victims_high": {
+  "passed": true,
+  "got_bn": -33.979181059513486,
+  "target_bn": -33.979181059513486
+ },
+ "social_lineage_a_property_crime_low": {
+  "passed": true,
+  "got_bn": -1.342564417725496,
+  "target_bn": -1.342564417725496
+ },
+ "social_lineage_a_property_crime_central": {
+  "passed": true,
+  "got_bn": -1.3943119400928956,
+  "target_bn": -1.394311940092896
+ },
+ "social_lineage_a_property_crime_high": {
+  "passed": true,
+  "got_bn": -1.4460594624602958,
+  "target_bn": -1.446059462460296
+ },
+ "social_lineage_a_unreimbursed_care_low": {
+  "passed": true,
+  "got_bn": -3.3103047104895675,
+  "target_bn": -3.310304710489568
+ },
+ "social_lineage_a_unreimbursed_care_central": {
+  "passed": true,
+  "got_bn": -4.48868375260066,
+  "target_bn": -4.488683752600661
+ },
+ "social_lineage_a_unreimbursed_care_high": {
+  "passed": true,
+  "got_bn": -5.667062794711752,
+  "target_bn": -5.667062794711753
+ },
+ "social_lineage_a_congestion_low": {
+  "passed": true,
+  "got_bn": -14.663600392511034,
+  "target_bn": -14.663600392511034
+ },
+ "social_lineage_a_congestion_central": {
+  "passed": true,
+  "got_bn": -13.593609973455253,
+  "target_bn": -13.593609973455255
+ },
+ "social_lineage_a_congestion_high": {
+  "passed": true,
+  "got_bn": -12.523619554399472,
+  "target_bn": -12.523619554399474
+ },
+ "social_lineage_a_housing_gain_low": {
+  "passed": true,
+  "got_bn": 3.6519767276682917,
+  "target_bn": 3.6519767276682926
+ },
+ "social_lineage_a_housing_gain_central": {
+  "passed": true,
+  "got_bn": 2.1961372738864804,
+  "target_bn": 2.1961372738864813
+ },
+ "social_lineage_a_housing_gain_high": {
+  "passed": true,
+  "got_bn": 0.7402978201046698,
+  "target_bn": 0.7402978201046699
+ },
+ "social_lineage_a_fear_avoidance_low": {
+  "passed": true,
+  "got_bn": -11.066271860408685,
+  "target_bn": -11.066271860408683
+ },
+ "social_lineage_a_fear_avoidance_central": {
+  "passed": true,
+  "got_bn": -11.044306859745022,
+  "target_bn": -11.044306859745019
+ },
+ "social_lineage_a_fear_avoidance_high": {
+  "passed": true,
+  "got_bn": -11.022341859081356,
+  "target_bn": -11.022341859081354
+ },
+ "social_lineage_a_private_security_low": {
+  "passed": true,
+  "got_bn": 0.525136114929833,
+  "target_bn": 0.5251361149298329
+ },
+ "social_lineage_a_private_security_central": {
+  "passed": true,
+  "got_bn": 0.5240937932465735,
+  "target_bn": 0.5240937932465735
+ },
+ "social_lineage_a_private_security_high": {
+  "passed": true,
+  "got_bn": 0.5230514715633141,
+  "target_bn": 0.523051471563314
+ },
+ "social_lineage_a_school_disruption_low": {
+  "passed": true,
+  "got_bn": 2.1459169614596214,
+  "target_bn": 2.145916961459621
+ },
+ "social_lineage_a_school_disruption_central": {
+  "passed": true,
+  "got_bn": 2.1459169614596214,
+  "target_bn": 2.145916961459621
+ },
+ "social_lineage_a_school_disruption_high": {
+  "passed": true,
+  "got_bn": 2.1459169614596214,
+  "target_bn": 2.145916961459621
+ },
+ "social_lineage_a_pm25_consumption_low": {
+  "passed": true,
+  "got_bn": -74.18213186669833,
+  "target_bn": -74.18213186669834
+ },
+ "social_lineage_a_pm25_consumption_central": {
+  "passed": true,
+  "got_bn": -74.18213186669833,
+  "target_bn": -74.18213186669834
+ },
+ "social_lineage_a_pm25_consumption_high": {
+  "passed": true,
+  "got_bn": -74.18213186669833,
+  "target_bn": -74.18213186669834
+ },
+ "social_lineage_a_road_crash_externality_low": {
+  "passed": true,
+  "got_bn": -11.365389008607297,
+  "target_bn": -11.365389008607293
+ },
+ "social_lineage_a_road_crash_externality_central": {
+  "passed": true,
+  "got_bn": -11.365389008607297,
+  "target_bn": -11.365389008607293
+ },
+ "social_lineage_a_road_crash_externality_high": {
+  "passed": true,
+  "got_bn": -11.365389008607297,
+  "target_bn": -11.365389008607293
+ },
+ "social_lineage_a_scale_net_earnings_low": {
+  "passed": true,
+  "got_bn": 14.721034371733806,
+  "target_bn": 14.721034371733808
+ },
+ "social_lineage_a_scale_net_earnings_central": {
+  "passed": true,
+  "got_bn": 14.721034371733806,
+  "target_bn": 14.721034371733808
+ },
+ "social_lineage_a_scale_net_earnings_high": {
+  "passed": true,
+  "got_bn": 14.721034371733806,
+  "target_bn": 14.721034371733808
+ },
+ "social_lineage_a_restaurant_variety_market_size_low": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_lineage_a_restaurant_variety_market_size_central": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_lineage_a_restaurant_variety_market_size_high": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_lineage_a_formal_volunteering_outside_group_low": {
+  "passed": true,
+  "got_bn": 6.352761156204946,
+  "target_bn": 6.352761156204947
+ },
+ "social_lineage_a_formal_volunteering_outside_group_central": {
+  "passed": true,
+  "got_bn": 6.352761156204946,
+  "target_bn": 6.352761156204947
+ },
+ "social_lineage_a_formal_volunteering_outside_group_high": {
+  "passed": true,
+  "got_bn": 6.352761156204946,
+  "target_bn": 6.352761156204947
+ },
+ "social_lineage_a_total_consumer_scale_low": {
+  "passed": true,
+  "got_bn": 2.3201762706044615,
+  "target_bn": 2.3201762706044624
+ },
+ "social_lineage_a_total_consumer_scale_central": {
+  "passed": true,
+  "got_bn": 2.3201762706044615,
+  "target_bn": 2.3201762706044624
+ },
+ "social_lineage_a_total_consumer_scale_high": {
+  "passed": true,
+  "got_bn": 2.3201762706044615,
+  "target_bn": 2.3201762706044624
+ },
+ "social_lineage_a_total_trade_travel_fdi_low": {
+  "passed": true,
+  "got_bn": 7.391169520588532,
+  "target_bn": 7.391169520588531
+ },
+ "social_lineage_a_total_trade_travel_fdi_central": {
+  "passed": true,
+  "got_bn": 7.391169520588532,
+  "target_bn": 7.391169520588531
+ },
+ "social_lineage_a_total_trade_travel_fdi_high": {
+  "passed": true,
+  "got_bn": 7.391169520588532,
+  "target_bn": 7.391169520588531
+ },
+ "social_identified_union_b_victims_low": {
+  "passed": true,
+  "got_bn": -30.483110999999997,
+  "target_bn": -30.483111
+ },
+ "social_identified_union_b_victims_central": {
+  "passed": true,
+  "got_bn": -31.17833449999999,
+  "target_bn": -31.1783345
+ },
+ "social_identified_union_b_victims_high": {
+  "passed": true,
+  "got_bn": -31.873557999999996,
+  "target_bn": -31.873558
+ },
+ "social_identified_union_b_property_crime_low": {
+  "passed": true,
+  "got_bn": -1.254369,
+  "target_bn": -1.254369
+ },
+ "social_identified_union_b_property_crime_central": {
+  "passed": true,
+  "got_bn": -1.3054095000000003,
+  "target_bn": -1.3054095000000001
+ },
+ "social_identified_union_b_property_crime_high": {
+  "passed": true,
+  "got_bn": -1.35645,
+  "target_bn": -1.35645
+ },
+ "social_identified_union_b_unreimbursed_care_low": {
+  "passed": true,
+  "got_bn": -3.088540000000001,
+  "target_bn": -3.08854
+ },
+ "social_identified_union_b_unreimbursed_care_central": {
+  "passed": true,
+  "got_bn": -4.1905495,
+  "target_bn": -4.1905494999999995
+ },
+ "social_identified_union_b_unreimbursed_care_high": {
+  "passed": true,
+  "got_bn": -5.292559,
+  "target_bn": -5.292559
+ },
+ "social_identified_union_b_congestion_low": {
+  "passed": true,
+  "got_bn": -13.628205000000001,
+  "target_bn": -13.628205
+ },
+ "social_identified_union_b_congestion_central": {
+  "passed": true,
+  "got_bn": -12.6337665,
+  "target_bn": -12.6337665
+ },
+ "social_identified_union_b_congestion_high": {
+  "passed": true,
+  "got_bn": -11.639328000000004,
+  "target_bn": -11.639328
+ },
+ "social_identified_union_b_housing_gain_low": {
+  "passed": true,
+  "got_bn": 3.392317999999997,
+  "target_bn": 3.392318
+ },
+ "social_identified_union_b_housing_gain_central": {
+  "passed": true,
+  "got_bn": 2.039989999999998,
+  "target_bn": 2.03999
+ },
+ "social_identified_union_b_housing_gain_high": {
+  "passed": true,
+  "got_bn": 0.6876620000000004,
+  "target_bn": 0.687662
+ },
+ "social_identified_union_b_fear_avoidance_low": {
+  "passed": true,
+  "got_bn": -10.339309,
+  "target_bn": -10.339309
+ },
+ "social_identified_union_b_fear_avoidance_central": {
+  "passed": true,
+  "got_bn": -10.339309,
+  "target_bn": -10.339309
+ },
+ "social_identified_union_b_fear_avoidance_high": {
+  "passed": true,
+  "got_bn": -10.339309,
+  "target_bn": -10.339309
+ },
+ "social_identified_union_b_private_security_low": {
+  "passed": true,
+  "got_bn": 0.490639,
+  "target_bn": 0.490639
+ },
+ "social_identified_union_b_private_security_central": {
+  "passed": true,
+  "got_bn": 0.490639,
+  "target_bn": 0.490639
+ },
+ "social_identified_union_b_private_security_high": {
+  "passed": true,
+  "got_bn": 0.490639,
+  "target_bn": 0.490639
+ },
+ "social_identified_union_b_school_disruption_low": {
+  "passed": true,
+  "got_bn": 1.938666,
+  "target_bn": 1.938666
+ },
+ "social_identified_union_b_school_disruption_central": {
+  "passed": true,
+  "got_bn": 1.938666,
+  "target_bn": 1.938666
+ },
+ "social_identified_union_b_school_disruption_high": {
+  "passed": true,
+  "got_bn": 1.938666,
+  "target_bn": 1.938666
+ },
+ "social_identified_union_b_pm25_consumption_low": {
+  "passed": true,
+  "got_bn": -68.09210499999999,
+  "target_bn": -68.092105
+ },
+ "social_identified_union_b_pm25_consumption_central": {
+  "passed": true,
+  "got_bn": -68.09210499999999,
+  "target_bn": -68.092105
+ },
+ "social_identified_union_b_pm25_consumption_high": {
+  "passed": true,
+  "got_bn": -68.09210499999999,
+  "target_bn": -68.092105
+ },
+ "social_identified_union_b_road_crash_externality_low": {
+  "passed": true,
+  "got_bn": -10.562880000000003,
+  "target_bn": -10.56288
+ },
+ "social_identified_union_b_road_crash_externality_central": {
+  "passed": true,
+  "got_bn": -10.562880000000003,
+  "target_bn": -10.56288
+ },
+ "social_identified_union_b_road_crash_externality_high": {
+  "passed": true,
+  "got_bn": -10.562880000000003,
+  "target_bn": -10.56288
+ },
+ "social_identified_union_b_scale_net_earnings_low": {
+  "passed": true,
+  "got_bn": 13.674355999999996,
+  "target_bn": 13.674356
+ },
+ "social_identified_union_b_scale_net_earnings_central": {
+  "passed": true,
+  "got_bn": 13.674355999999996,
+  "target_bn": 13.674356
+ },
+ "social_identified_union_b_scale_net_earnings_high": {
+  "passed": true,
+  "got_bn": 13.674355999999996,
+  "target_bn": 13.674356
+ },
+ "social_identified_union_b_restaurant_variety_market_size_low": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_identified_union_b_restaurant_variety_market_size_central": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_identified_union_b_restaurant_variety_market_size_high": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_identified_union_b_formal_volunteering_outside_group_low": {
+  "passed": true,
+  "got_bn": 5.980771,
+  "target_bn": 5.980771
+ },
+ "social_identified_union_b_formal_volunteering_outside_group_central": {
+  "passed": true,
+  "got_bn": 5.980771,
+  "target_bn": 5.980771
+ },
+ "social_identified_union_b_formal_volunteering_outside_group_high": {
+  "passed": true,
+  "got_bn": 5.980771,
+  "target_bn": 5.980771
+ },
+ "social_identified_union_b_total_consumer_scale_low": {
+  "passed": true,
+  "got_bn": 2.1297,
+  "target_bn": 2.1297
+ },
+ "social_identified_union_b_total_consumer_scale_central": {
+  "passed": true,
+  "got_bn": 2.1297,
+  "target_bn": 2.1297
+ },
+ "social_identified_union_b_total_consumer_scale_high": {
+  "passed": true,
+  "got_bn": 2.1297,
+  "target_bn": 2.1297
+ },
+ "social_identified_union_b_total_trade_travel_fdi_low": {
+  "passed": true,
+  "got_bn": 6.784386999999999,
+  "target_bn": 6.784387
+ },
+ "social_identified_union_b_total_trade_travel_fdi_central": {
+  "passed": true,
+  "got_bn": 6.784386999999999,
+  "target_bn": 6.784387
+ },
+ "social_identified_union_b_total_trade_travel_fdi_high": {
+  "passed": true,
+  "got_bn": 6.784386999999999,
+  "target_bn": 6.784387
+ },
+ "social_lineage_b_victims_low": {
+  "passed": true,
+  "got_bn": -32.62639635559924,
+  "target_bn": -32.62639635559924
+ },
+ "social_lineage_b_victims_central": {
+  "passed": true,
+  "got_bn": -33.30278870755636,
+  "target_bn": -33.30278870755636
+ },
+ "social_lineage_b_victims_high": {
+  "passed": true,
+  "got_bn": -33.979181059513486,
+  "target_bn": -33.979181059513486
+ },
+ "social_lineage_b_property_crime_low": {
+  "passed": true,
+  "got_bn": -1.342564417725496,
+  "target_bn": -1.342564417725496
+ },
+ "social_lineage_b_property_crime_central": {
+  "passed": true,
+  "got_bn": -1.3943119400928956,
+  "target_bn": -1.394311940092896
+ },
+ "social_lineage_b_property_crime_high": {
+  "passed": true,
+  "got_bn": -1.4460594624602958,
+  "target_bn": -1.446059462460296
+ },
+ "social_lineage_b_unreimbursed_care_low": {
+  "passed": true,
+  "got_bn": -3.3103047104895675,
+  "target_bn": -3.310304710489568
+ },
+ "social_lineage_b_unreimbursed_care_central": {
+  "passed": true,
+  "got_bn": -4.48868375260066,
+  "target_bn": -4.488683752600661
+ },
+ "social_lineage_b_unreimbursed_care_high": {
+  "passed": true,
+  "got_bn": -5.667062794711752,
+  "target_bn": -5.667062794711753
+ },
+ "social_lineage_b_congestion_low": {
+  "passed": true,
+  "got_bn": -14.663600392511034,
+  "target_bn": -14.663600392511034
+ },
+ "social_lineage_b_congestion_central": {
+  "passed": true,
+  "got_bn": -13.593609973455253,
+  "target_bn": -13.593609973455255
+ },
+ "social_lineage_b_congestion_high": {
+  "passed": true,
+  "got_bn": -12.523619554399472,
+  "target_bn": -12.523619554399474
+ },
+ "social_lineage_b_housing_gain_low": {
+  "passed": true,
+  "got_bn": 3.6519767276682917,
+  "target_bn": 3.6519767276682926
+ },
+ "social_lineage_b_housing_gain_central": {
+  "passed": true,
+  "got_bn": 2.1961372738864804,
+  "target_bn": 2.1961372738864813
+ },
+ "social_lineage_b_housing_gain_high": {
+  "passed": true,
+  "got_bn": 0.7402978201046698,
+  "target_bn": 0.7402978201046699
+ },
+ "social_lineage_b_fear_avoidance_low": {
+  "passed": true,
+  "got_bn": -11.066271860408685,
+  "target_bn": -11.066271860408683
+ },
+ "social_lineage_b_fear_avoidance_central": {
+  "passed": true,
+  "got_bn": -11.044306859745022,
+  "target_bn": -11.044306859745019
+ },
+ "social_lineage_b_fear_avoidance_high": {
+  "passed": true,
+  "got_bn": -11.022341859081356,
+  "target_bn": -11.022341859081354
+ },
+ "social_lineage_b_private_security_low": {
+  "passed": true,
+  "got_bn": 0.525136114929833,
+  "target_bn": 0.5251361149298329
+ },
+ "social_lineage_b_private_security_central": {
+  "passed": true,
+  "got_bn": 0.5240937932465735,
+  "target_bn": 0.5240937932465735
+ },
+ "social_lineage_b_private_security_high": {
+  "passed": true,
+  "got_bn": 0.5230514715633141,
+  "target_bn": 0.523051471563314
+ },
+ "social_lineage_b_school_disruption_low": {
+  "passed": true,
+  "got_bn": 2.1459169614596214,
+  "target_bn": 2.145916961459621
+ },
+ "social_lineage_b_school_disruption_central": {
+  "passed": true,
+  "got_bn": 2.1459169614596214,
+  "target_bn": 2.145916961459621
+ },
+ "social_lineage_b_school_disruption_high": {
+  "passed": true,
+  "got_bn": 2.1459169614596214,
+  "target_bn": 2.145916961459621
+ },
+ "social_lineage_b_pm25_consumption_low": {
+  "passed": true,
+  "got_bn": -74.18213186669833,
+  "target_bn": -74.18213186669834
+ },
+ "social_lineage_b_pm25_consumption_central": {
+  "passed": true,
+  "got_bn": -74.18213186669833,
+  "target_bn": -74.18213186669834
+ },
+ "social_lineage_b_pm25_consumption_high": {
+  "passed": true,
+  "got_bn": -74.18213186669833,
+  "target_bn": -74.18213186669834
+ },
+ "social_lineage_b_road_crash_externality_low": {
+  "passed": true,
+  "got_bn": -11.365389008607297,
+  "target_bn": -11.365389008607293
+ },
+ "social_lineage_b_road_crash_externality_central": {
+  "passed": true,
+  "got_bn": -11.365389008607297,
+  "target_bn": -11.365389008607293
+ },
+ "social_lineage_b_road_crash_externality_high": {
+  "passed": true,
+  "got_bn": -11.365389008607297,
+  "target_bn": -11.365389008607293
+ },
+ "social_lineage_b_scale_net_earnings_low": {
+  "passed": true,
+  "got_bn": 14.721034371733804,
+  "target_bn": 14.721034371733808
+ },
+ "social_lineage_b_scale_net_earnings_central": {
+  "passed": true,
+  "got_bn": 14.721034371733804,
+  "target_bn": 14.721034371733808
+ },
+ "social_lineage_b_scale_net_earnings_high": {
+  "passed": true,
+  "got_bn": 14.721034371733804,
+  "target_bn": 14.721034371733808
+ },
+ "social_lineage_b_restaurant_variety_market_size_low": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_lineage_b_restaurant_variety_market_size_central": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_lineage_b_restaurant_variety_market_size_high": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_lineage_b_formal_volunteering_outside_group_low": {
+  "passed": true,
+  "got_bn": 6.352761156204946,
+  "target_bn": 6.352761156204947
+ },
+ "social_lineage_b_formal_volunteering_outside_group_central": {
+  "passed": true,
+  "got_bn": 6.352761156204946,
+  "target_bn": 6.352761156204947
+ },
+ "social_lineage_b_formal_volunteering_outside_group_high": {
+  "passed": true,
+  "got_bn": 6.352761156204946,
+  "target_bn": 6.352761156204947
+ },
+ "social_lineage_b_total_consumer_scale_low": {
+  "passed": true,
+  "got_bn": 2.3201762706044615,
+  "target_bn": 2.3201762706044624
+ },
+ "social_lineage_b_total_consumer_scale_central": {
+  "passed": true,
+  "got_bn": 2.3201762706044615,
+  "target_bn": 2.3201762706044624
+ },
+ "social_lineage_b_total_consumer_scale_high": {
+  "passed": true,
+  "got_bn": 2.3201762706044615,
+  "target_bn": 2.3201762706044624
+ },
+ "social_lineage_b_total_trade_travel_fdi_low": {
+  "passed": true,
+  "got_bn": 7.391169520588532,
+  "target_bn": 7.391169520588531
+ },
+ "social_lineage_b_total_trade_travel_fdi_central": {
+  "passed": true,
+  "got_bn": 7.391169520588532,
+  "target_bn": 7.391169520588531
+ },
+ "social_lineage_b_total_trade_travel_fdi_high": {
+  "passed": true,
+  "got_bn": 7.391169520588532,
+  "target_bn": 7.391169520588531
+ },
+ "receipt_key_general_public_services": {
+  "passed": true
+ },
+ "receipt_key_public_order_safety": {
+  "passed": true
+ },
+ "receipt_key_economic_affairs_services": {
+  "passed": true
+ },
+ "receipt_key_housing_community_services": {
+  "passed": true
+ },
+ "receipt_key_health_services": {
+  "passed": true
+ },
+ "receipt_key_recreation_culture": {
+  "passed": true
+ },
+ "receipt_key_income_security_services": {
+  "passed": true
+ },
+ "receipt_key_social_security": {
+  "passed": true
+ },
+ "receipt_key_medicare": {
+  "passed": true
+ },
+ "receipt_key_unemployment": {
+  "passed": true
+ },
+ "receipt_key_railroad_retirement": {
+  "passed": true
+ },
+ "receipt_key_pension_guaranty": {
+  "passed": true
+ },
+ "receipt_key_veterans_life_insurance": {
+  "passed": true
+ },
+ "receipt_key_workers_compensation": {
+  "passed": true
+ },
+ "receipt_key_military_medical": {
+  "passed": true
+ },
+ "receipt_key_veterans_pension_disability": {
+  "passed": true
+ },
+ "receipt_key_veterans_readjustment": {
+  "passed": true
+ },
+ "receipt_key_veterans_other": {
+  "passed": true
+ },
+ "receipt_key_snap": {
+  "passed": true
+ },
+ "receipt_key_black_lung": {
+  "passed": true
+ },
+ "receipt_key_ssi": {
+  "passed": true
+ },
+ "receipt_key_refundable_tax_credits": {
+  "passed": true
+ },
+ "receipt_key_other_federal_benefits": {
+  "passed": true
+ },
+ "receipt_key_temporary_disability": {
+  "passed": true
+ },
+ "receipt_key_medicaid_and_chip_other_medical": {
+  "passed": true
+ },
+ "receipt_key_family_and_general_assistance": {
+  "passed": true
+ },
+ "receipt_key_energy_assistance": {
+  "passed": true
+ },
+ "receipt_key_other_state_welfare": {
+  "passed": true
+ },
+ "receipt_key_education_benefits": {
+  "passed": true
+ },
+ "receipt_key_employment_training": {
+  "passed": true
+ },
+ "receipt_key_other_state_benefits": {
+  "passed": true
+ },
+ "receipt_key_housing_subsidies": {
+  "passed": true
+ },
+ "receipt_key_education_k12": {
+  "passed": true
+ },
+ "receipt_key_education_college_other": {
+  "passed": true
+ },
+ "responding_receipt_key_national": {
+  "passed": true,
+  "got_bn": 7416.571204896188,
+  "target_bn": 7416.57120489619
+ },
+ "social_identified_union_c_victims_low": {
+  "passed": true,
+  "got_bn": -30.483110999999997,
+  "target_bn": -30.483111
+ },
+ "social_identified_union_c_victims_central": {
+  "passed": true,
+  "got_bn": -31.17833449999999,
+  "target_bn": -31.1783345
+ },
+ "social_identified_union_c_victims_high": {
+  "passed": true,
+  "got_bn": -31.873557999999996,
+  "target_bn": -31.873558
+ },
+ "social_identified_union_c_property_crime_low": {
+  "passed": true,
+  "got_bn": -1.254369,
+  "target_bn": -1.254369
+ },
+ "social_identified_union_c_property_crime_central": {
+  "passed": true,
+  "got_bn": -1.3054095000000003,
+  "target_bn": -1.3054095000000001
+ },
+ "social_identified_union_c_property_crime_high": {
+  "passed": true,
+  "got_bn": -1.35645,
+  "target_bn": -1.35645
+ },
+ "social_identified_union_c_unreimbursed_care_low": {
+  "passed": true,
+  "got_bn": -3.088540000000001,
+  "target_bn": -3.08854
+ },
+ "social_identified_union_c_unreimbursed_care_central": {
+  "passed": true,
+  "got_bn": -4.1905495,
+  "target_bn": -4.1905494999999995
+ },
+ "social_identified_union_c_unreimbursed_care_high": {
+  "passed": true,
+  "got_bn": -5.292559,
+  "target_bn": -5.292559
+ },
+ "social_identified_union_c_congestion_low": {
+  "passed": true,
+  "got_bn": -13.628205000000001,
+  "target_bn": -13.628205
+ },
+ "social_identified_union_c_congestion_central": {
+  "passed": true,
+  "got_bn": -12.6337665,
+  "target_bn": -12.6337665
+ },
+ "social_identified_union_c_congestion_high": {
+  "passed": true,
+  "got_bn": -11.639328000000004,
+  "target_bn": -11.639328
+ },
+ "social_identified_union_c_housing_gain_low": {
+  "passed": true,
+  "got_bn": 3.392317999999997,
+  "target_bn": 3.392318
+ },
+ "social_identified_union_c_housing_gain_central": {
+  "passed": true,
+  "got_bn": 2.039989999999998,
+  "target_bn": 2.03999
+ },
+ "social_identified_union_c_housing_gain_high": {
+  "passed": true,
+  "got_bn": 0.6876620000000004,
+  "target_bn": 0.687662
+ },
+ "social_identified_union_c_fear_avoidance_low": {
+  "passed": true,
+  "got_bn": -10.339309,
+  "target_bn": -10.339309
+ },
+ "social_identified_union_c_fear_avoidance_central": {
+  "passed": true,
+  "got_bn": -10.339309,
+  "target_bn": -10.339309
+ },
+ "social_identified_union_c_fear_avoidance_high": {
+  "passed": true,
+  "got_bn": -10.339309,
+  "target_bn": -10.339309
+ },
+ "social_identified_union_c_private_security_low": {
+  "passed": true,
+  "got_bn": 0.490639,
+  "target_bn": 0.490639
+ },
+ "social_identified_union_c_private_security_central": {
+  "passed": true,
+  "got_bn": 0.490639,
+  "target_bn": 0.490639
+ },
+ "social_identified_union_c_private_security_high": {
+  "passed": true,
+  "got_bn": 0.490639,
+  "target_bn": 0.490639
+ },
+ "social_identified_union_c_school_disruption_low": {
+  "passed": true,
+  "got_bn": 1.938666,
+  "target_bn": 1.938666
+ },
+ "social_identified_union_c_school_disruption_central": {
+  "passed": true,
+  "got_bn": 1.938666,
+  "target_bn": 1.938666
+ },
+ "social_identified_union_c_school_disruption_high": {
+  "passed": true,
+  "got_bn": 1.938666,
+  "target_bn": 1.938666
+ },
+ "social_identified_union_c_pm25_consumption_low": {
+  "passed": true,
+  "got_bn": -68.09210499999999,
+  "target_bn": -68.092105
+ },
+ "social_identified_union_c_pm25_consumption_central": {
+  "passed": true,
+  "got_bn": -68.09210499999999,
+  "target_bn": -68.092105
+ },
+ "social_identified_union_c_pm25_consumption_high": {
+  "passed": true,
+  "got_bn": -68.09210499999999,
+  "target_bn": -68.092105
+ },
+ "social_identified_union_c_road_crash_externality_low": {
+  "passed": true,
+  "got_bn": -10.562880000000003,
+  "target_bn": -10.56288
+ },
+ "social_identified_union_c_road_crash_externality_central": {
+  "passed": true,
+  "got_bn": -10.562880000000003,
+  "target_bn": -10.56288
+ },
+ "social_identified_union_c_road_crash_externality_high": {
+  "passed": true,
+  "got_bn": -10.562880000000003,
+  "target_bn": -10.56288
+ },
+ "social_identified_union_c_scale_net_earnings_low": {
+  "passed": true,
+  "got_bn": 13.674355999999996,
+  "target_bn": 13.674356
+ },
+ "social_identified_union_c_scale_net_earnings_central": {
+  "passed": true,
+  "got_bn": 13.674355999999996,
+  "target_bn": 13.674356
+ },
+ "social_identified_union_c_scale_net_earnings_high": {
+  "passed": true,
+  "got_bn": 13.674355999999996,
+  "target_bn": 13.674356
+ },
+ "social_identified_union_c_restaurant_variety_market_size_low": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_identified_union_c_restaurant_variety_market_size_central": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_identified_union_c_restaurant_variety_market_size_high": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_identified_union_c_formal_volunteering_outside_group_low": {
+  "passed": true,
+  "got_bn": 5.980771,
+  "target_bn": 5.980771
+ },
+ "social_identified_union_c_formal_volunteering_outside_group_central": {
+  "passed": true,
+  "got_bn": 5.980771,
+  "target_bn": 5.980771
+ },
+ "social_identified_union_c_formal_volunteering_outside_group_high": {
+  "passed": true,
+  "got_bn": 5.980771,
+  "target_bn": 5.980771
+ },
+ "social_identified_union_c_total_consumer_scale_low": {
+  "passed": true,
+  "got_bn": 2.1297,
+  "target_bn": 2.1297
+ },
+ "social_identified_union_c_total_consumer_scale_central": {
+  "passed": true,
+  "got_bn": 2.1297,
+  "target_bn": 2.1297
+ },
+ "social_identified_union_c_total_consumer_scale_high": {
+  "passed": true,
+  "got_bn": 2.1297,
+  "target_bn": 2.1297
+ },
+ "social_identified_union_c_total_trade_travel_fdi_low": {
+  "passed": true,
+  "got_bn": 6.784386999999999,
+  "target_bn": 6.784387
+ },
+ "social_identified_union_c_total_trade_travel_fdi_central": {
+  "passed": true,
+  "got_bn": 6.784386999999999,
+  "target_bn": 6.784387
+ },
+ "social_identified_union_c_total_trade_travel_fdi_high": {
+  "passed": true,
+  "got_bn": 6.784386999999999,
+  "target_bn": 6.784387
+ },
+ "social_lineage_c_victims_low": {
+  "passed": true,
+  "got_bn": -32.62639635559924,
+  "target_bn": -32.62639635559924
+ },
+ "social_lineage_c_victims_central": {
+  "passed": true,
+  "got_bn": -33.30278870755636,
+  "target_bn": -33.30278870755636
+ },
+ "social_lineage_c_victims_high": {
+  "passed": true,
+  "got_bn": -33.979181059513486,
+  "target_bn": -33.979181059513486
+ },
+ "social_lineage_c_property_crime_low": {
+  "passed": true,
+  "got_bn": -1.342564417725496,
+  "target_bn": -1.342564417725496
+ },
+ "social_lineage_c_property_crime_central": {
+  "passed": true,
+  "got_bn": -1.3943119400928956,
+  "target_bn": -1.394311940092896
+ },
+ "social_lineage_c_property_crime_high": {
+  "passed": true,
+  "got_bn": -1.4460594624602958,
+  "target_bn": -1.446059462460296
+ },
+ "social_lineage_c_unreimbursed_care_low": {
+  "passed": true,
+  "got_bn": -3.3103047104895675,
+  "target_bn": -3.310304710489568
+ },
+ "social_lineage_c_unreimbursed_care_central": {
+  "passed": true,
+  "got_bn": -4.48868375260066,
+  "target_bn": -4.488683752600661
+ },
+ "social_lineage_c_unreimbursed_care_high": {
+  "passed": true,
+  "got_bn": -5.667062794711752,
+  "target_bn": -5.667062794711753
+ },
+ "social_lineage_c_congestion_low": {
+  "passed": true,
+  "got_bn": -14.663600392511034,
+  "target_bn": -14.663600392511034
+ },
+ "social_lineage_c_congestion_central": {
+  "passed": true,
+  "got_bn": -13.593609973455253,
+  "target_bn": -13.593609973455255
+ },
+ "social_lineage_c_congestion_high": {
+  "passed": true,
+  "got_bn": -12.523619554399472,
+  "target_bn": -12.523619554399474
+ },
+ "social_lineage_c_housing_gain_low": {
+  "passed": true,
+  "got_bn": 3.6519767276682917,
+  "target_bn": 3.6519767276682926
+ },
+ "social_lineage_c_housing_gain_central": {
+  "passed": true,
+  "got_bn": 2.1961372738864804,
+  "target_bn": 2.1961372738864813
+ },
+ "social_lineage_c_housing_gain_high": {
+  "passed": true,
+  "got_bn": 0.7402978201046698,
+  "target_bn": 0.7402978201046699
+ },
+ "social_lineage_c_fear_avoidance_low": {
+  "passed": true,
+  "got_bn": -11.066271860408685,
+  "target_bn": -11.066271860408683
+ },
+ "social_lineage_c_fear_avoidance_central": {
+  "passed": true,
+  "got_bn": -11.044306859745022,
+  "target_bn": -11.044306859745019
+ },
+ "social_lineage_c_fear_avoidance_high": {
+  "passed": true,
+  "got_bn": -11.022341859081356,
+  "target_bn": -11.022341859081354
+ },
+ "social_lineage_c_private_security_low": {
+  "passed": true,
+  "got_bn": 0.525136114929833,
+  "target_bn": 0.5251361149298329
+ },
+ "social_lineage_c_private_security_central": {
+  "passed": true,
+  "got_bn": 0.5240937932465735,
+  "target_bn": 0.5240937932465735
+ },
+ "social_lineage_c_private_security_high": {
+  "passed": true,
+  "got_bn": 0.5230514715633141,
+  "target_bn": 0.523051471563314
+ },
+ "social_lineage_c_school_disruption_low": {
+  "passed": true,
+  "got_bn": 2.1459169614596214,
+  "target_bn": 2.145916961459621
+ },
+ "social_lineage_c_school_disruption_central": {
+  "passed": true,
+  "got_bn": 2.1459169614596214,
+  "target_bn": 2.145916961459621
+ },
+ "social_lineage_c_school_disruption_high": {
+  "passed": true,
+  "got_bn": 2.1459169614596214,
+  "target_bn": 2.145916961459621
+ },
+ "social_lineage_c_pm25_consumption_low": {
+  "passed": true,
+  "got_bn": -74.18213186669833,
+  "target_bn": -74.18213186669834
+ },
+ "social_lineage_c_pm25_consumption_central": {
+  "passed": true,
+  "got_bn": -74.18213186669833,
+  "target_bn": -74.18213186669834
+ },
+ "social_lineage_c_pm25_consumption_high": {
+  "passed": true,
+  "got_bn": -74.18213186669833,
+  "target_bn": -74.18213186669834
+ },
+ "social_lineage_c_road_crash_externality_low": {
+  "passed": true,
+  "got_bn": -11.365389008607297,
+  "target_bn": -11.365389008607293
+ },
+ "social_lineage_c_road_crash_externality_central": {
+  "passed": true,
+  "got_bn": -11.365389008607297,
+  "target_bn": -11.365389008607293
+ },
+ "social_lineage_c_road_crash_externality_high": {
+  "passed": true,
+  "got_bn": -11.365389008607297,
+  "target_bn": -11.365389008607293
+ },
+ "social_lineage_c_scale_net_earnings_low": {
+  "passed": true,
+  "got_bn": 14.721034371733806,
+  "target_bn": 14.721034371733808
+ },
+ "social_lineage_c_scale_net_earnings_central": {
+  "passed": true,
+  "got_bn": 14.721034371733806,
+  "target_bn": 14.721034371733808
+ },
+ "social_lineage_c_scale_net_earnings_high": {
+  "passed": true,
+  "got_bn": 14.721034371733806,
+  "target_bn": 14.721034371733808
+ },
+ "social_lineage_c_restaurant_variety_market_size_low": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_lineage_c_restaurant_variety_market_size_central": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_lineage_c_restaurant_variety_market_size_high": {
+  "passed": true,
+  "got_bn": 6.793,
+  "target_bn": 6.793
+ },
+ "social_lineage_c_formal_volunteering_outside_group_low": {
+  "passed": true,
+  "got_bn": 6.352761156204946,
+  "target_bn": 6.352761156204947
+ },
+ "social_lineage_c_formal_volunteering_outside_group_central": {
+  "passed": true,
+  "got_bn": 6.352761156204946,
+  "target_bn": 6.352761156204947
+ },
+ "social_lineage_c_formal_volunteering_outside_group_high": {
+  "passed": true,
+  "got_bn": 6.352761156204946,
+  "target_bn": 6.352761156204947
+ },
+ "social_lineage_c_total_consumer_scale_low": {
+  "passed": true,
+  "got_bn": 2.3201762706044615,
+  "target_bn": 2.3201762706044624
+ },
+ "social_lineage_c_total_consumer_scale_central": {
+  "passed": true,
+  "got_bn": 2.3201762706044615,
+  "target_bn": 2.3201762706044624
+ },
+ "social_lineage_c_total_consumer_scale_high": {
+  "passed": true,
+  "got_bn": 2.3201762706044615,
+  "target_bn": 2.3201762706044624
+ },
+ "social_lineage_c_total_trade_travel_fdi_low": {
+  "passed": true,
+  "got_bn": 7.391169520588532,
+  "target_bn": 7.391169520588531
+ },
+ "social_lineage_c_total_trade_travel_fdi_central": {
+  "passed": true,
+  "got_bn": 7.391169520588532,
+  "target_bn": 7.391169520588531
+ },
+ "social_lineage_c_total_trade_travel_fdi_high": {
+  "passed": true,
+  "got_bn": 7.391169520588532,
+  "target_bn": 7.391169520588531
+ },
+ "replicate_wanted_unique": {
+  "passed": true
+ },
+ "replicate_source_unique_0": {
+  "passed": true
+ },
+ "replicate_source_unique_1": {
+  "passed": true
+ },
+ "replicate_source_unique_2": {
+  "passed": true
+ },
+ "replicate_source_unique_3": {
+  "passed": true
+ },
+ "replicate_source_unique_4": {
+  "passed": true
+ },
+ "replicate_source_unique_5": {
+  "passed": true
+ },
+ "replicate_source_unique_6": {
+  "passed": true
+ },
+ "replicate_source_unique_7": {
+  "passed": true
+ },
+ "replicate_source_unique_8": {
+  "passed": true
+ },
+ "replicate_source_unique_9": {
+  "passed": true
+ },
+ "replicate_source_unique_10": {
+  "passed": true
+ },
+ "replicate_source_unique_11": {
+  "passed": true
+ },
+ "replicate_source_unique_12": {
+  "passed": true
+ },
+ "replicate_source_unique_13": {
+  "passed": true
+ },
+ "replicate_source_unique_14": {
+  "passed": true
+ },
+ "replicate_person_join": {
+  "passed": true
+ },
+ "replicate_lineage_mass_0": {
+  "passed": true
+ },
+ "replicate_lineage_mass_1": {
+  "passed": true
+ },
+ "replicate_lineage_mass_2": {
+  "passed": true
+ },
+ "replicate_lineage_mass_3": {
+  "passed": true
+ },
+ "replicate_lineage_mass_4": {
+  "passed": true
+ },
+ "replicate_lineage_mass_5": {
+  "passed": true
+ },
+ "replicate_lineage_mass_6": {
+  "passed": true
+ },
+ "replicate_lineage_mass_7": {
+  "passed": true
+ },
+ "replicate_lineage_mass_8": {
+  "passed": true
+ },
+ "replicate_lineage_mass_9": {
+  "passed": true
+ },
+ "replicate_lineage_mass_10": {
+  "passed": true
+ },
+ "replicate_lineage_mass_11": {
+  "passed": true
+ },
+ "replicate_lineage_mass_12": {
+  "passed": true
+ },
+ "replicate_lineage_mass_13": {
+  "passed": true
+ },
+ "replicate_lineage_mass_14": {
+  "passed": true
+ },
+ "replicate_lineage_mass_15": {
+  "passed": true
+ },
+ "replicate_lineage_mass_16": {
+  "passed": true
+ },
+ "scenario_population_coverage_identified_union_financing_only": {
+  "passed": true
+ },
+ "scenario_population_coverage_identified_union_complete_social": {
+  "passed": true
+ },
+ "scenario_population_coverage_identified_union_social_coverage_only": {
+  "passed": true
+ },
+ "scenario_population_coverage_identified_union_crossing_credit_only": {
+  "passed": true
+ },
+ "scenario_population_coverage_identified_union_state_wages_only": {
+  "passed": true
+ },
+ "scenario_population_coverage_identified_union_capitalization_only": {
+  "passed": true
+ },
+ "scenario_population_coverage_identified_union_owner_type_only": {
+  "passed": true
+ },
+ "scenario_population_coverage_identified_union_owner_type_broad_only": {
+  "passed": true
+ },
+ "scenario_population_coverage_lineage_financing_only": {
+  "passed": true
+ },
+ "scenario_population_coverage_lineage_complete_social": {
+  "passed": true
+ },
+ "scenario_population_coverage_lineage_social_coverage_only": {
+  "passed": true
+ },
+ "scenario_population_coverage_lineage_crossing_credit_only": {
+  "passed": true
+ },
+ "scenario_population_coverage_lineage_state_wages_only": {
+  "passed": true
+ },
+ "scenario_population_coverage_lineage_capitalization_only": {
+  "passed": true
+ },
+ "scenario_population_coverage_lineage_owner_type_only": {
+  "passed": true
+ },
+ "scenario_population_coverage_lineage_owner_type_broad_only": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json": {
+  "passed": true
+ },
+ "final_source_pin_generated:p7_trust_inputs.json": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/main_case_2026_10_14/derived/corrections_cash.json": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/note151.pdf": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/ssa_an2025-7.pdf": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/ss_timing.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/an2025-1.pdf": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/an2025-3.pdf": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/cms_fr2025.pdf": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/lt2024_Table02.xlsx": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/lt2024_Table03.xlsx": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/mtr2025.pdf": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/ocact_obbba_wyden_20250805.pdf": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/ssa_afr2025_fin.pdf": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/tr2025.pdf": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/lifetime_model.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/pension_accrual.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_tr2026_2026_10_06/derived/paths.csv": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_tr2026_2026_10_06/pension_tr2026.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/pension_tr2026_2026_10_06/sources_tr2026.py": {
+  "passed": true
+ },
+ "final_source_pin_sources/immigration-fiscal/data/external/stage3/cms/trustees_2026/mtr2026.pdf": {
+  "passed": true
+ },
+ "final_source_pin_sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/an2026-3.pdf": {
+  "passed": true
+ },
+ "final_source_pin_sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.pdf": {
+  "passed": true
+ },
+ "final_source_pin_sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.txt": {
+  "passed": true
+ },
+ "final_source_pin_.venv/lib/python3.13/site-packages/numpy/rec/__pycache__/__init__.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_.venv/lib/python3.13/site-packages/pandas/api/__pycache__/internals.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_.venv/lib/python3.13/site-packages/pandas/core/arrays/arrow/__pycache__/extension_types.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_.venv/lib/python3.13/site-packages/pandas/core/methods/__pycache__/to_dict.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_.venv/lib/python3.13/site-packages/pandas/io/formats/__pycache__/csvs.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_.venv/lib/python3.13/site-packages/pyarrow/__pycache__/dataset.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_.venv/lib/python3.13/site-packages/pyarrow/__pycache__/fs.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_.venv/lib/python3.13/site-packages/pyarrow/__pycache__/pandas_compat.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_.venv/lib/python3.13/site-packages/pyarrow/__pycache__/substrait.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_.venv/lib/python3.13/site-packages/pyarrow/parquet/__pycache__/__init__.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_.venv/lib/python3.13/site-packages/pyarrow/parquet/__pycache__/core.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_.venv/lib/python3.13/site-packages/pyarrow/vendored/__pycache__/version.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/backtest_admin_totals_2026_09_28/derived/prediction_audit.json": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/build/__pycache__/meps_health_transport_2024.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/build/__pycache__/paths.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/build/__pycache__/public_mvp_io.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/california_medical_status_2026_09_23/cps_ca_status.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/common.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/hotdeck.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/__pycache__/taxcalc.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_onbooks_lane.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_status.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/ipw.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/run_hotdeck.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/cps_imputation_keys_2026_09_23/translate.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/dataset_integrity_2026_09_23/derived/spending_mts_credits.json": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/external_benchmarks_2026_09_24/__pycache__/frame.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/external_benchmarks_2026_09_24/_cache/cps25_frame.parquet": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_group_shares.csv": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/mixed_unit_credits_2026_10_14/__pycache__/credits.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/mixed_unit_credits_2026_10_14/derived/summary.json": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_inputs.json": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_split.csv": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/status_impute_2026_09_16/__pycache__/impute_status.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/tax_key_heldout_2026_09_28/__pycache__/keys.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/bins.csv": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/translation_inputs.json": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/tax_key_heldout_2026_09_28/reads/irs_table_1_2_ty2023.md": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/world_ledger_2026_09_27/__pycache__/population_basis.cpython-313.pyc": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/winners_losers_2026_09_24/inputs/social_oct14.json": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/congestion_2026_09_23/derived/ua_exposure.csv": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/air_pollution_2026_09_28/air_items.py": {
+  "passed": true
+ },
+ "final_source_pin_infra/immigration-fiscal/housing_transfer_2026_09_23/derived/inputs_rhfs.csv": {
+  "passed": true
+ },
+ "scale_registry_matches_allocated_recipient_sign": {
+  "passed": true
+ }
+}

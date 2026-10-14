@@ -1,0 +1,137 @@
+population,level,programme,responding_national_bn,key
+identified_union,low,general_public_services,241.8747903,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,public_order_safety,521.2025118,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,economic_affairs_services,174.2308752,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,housing_community_services,14.74769344,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,health_services,308.3587549,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,recreation_culture,46.65933986,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,income_security_services,168.2645169,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,social_security,1447.965,survey receipt/enrollment proxy
+identified_union,low,medicare,1102.358,survey receipt/enrollment proxy
+identified_union,low,unemployment,36.468,survey receipt/enrollment proxy
+identified_union,low,railroad_retirement,14.493,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,pension_guaranty,0.771,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,veterans_life_insurance,0.449,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,workers_compensation,11.923,survey receipt/enrollment proxy
+identified_union,low,military_medical,7.157,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,veterans_pension_disability,180.525,survey receipt/enrollment proxy
+identified_union,low,veterans_readjustment,11.391,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,veterans_other,37.526,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,snap,97.391,survey receipt/enrollment proxy
+identified_union,low,black_lung,0.173,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,ssi,65.134,survey receipt/enrollment proxy
+identified_union,low,refundable_tax_credits,228.809,survey receipt/enrollment proxy
+identified_union,low,other_federal_benefits,66.62745902,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,temporary_disability,13.138,survey receipt/enrollment proxy
+identified_union,low,medicaid_and_chip_other_medical,954.2,survey receipt/enrollment proxy
+identified_union,low,family_and_general_assistance,63.065,survey receipt/enrollment proxy
+identified_union,low,energy_assistance,5.218,survey receipt/enrollment proxy
+identified_union,low,other_state_welfare,22.385,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,education_benefits,64.479,survey receipt/enrollment proxy
+identified_union,low,employment_training,1.377,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,other_state_benefits,2.875,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,low,housing_subsidies,55.003189,survey receipt/enrollment proxy
+identified_union,low,education_k12,950.2544781,survey receipt/enrollment proxy
+identified_union,low,education_college_other,276.1423871,survey receipt/enrollment proxy
+identified_union,high,general_public_services,342.7799658,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,public_order_safety,521.2025118,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,economic_affairs_services,289.4365919,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,housing_community_services,14.74769344,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,health_services,308.3587549,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,recreation_culture,54.48365703,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,income_security_services,168.2645169,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,social_security,1447.965,survey receipt/enrollment proxy
+identified_union,high,medicare,1102.358,survey receipt/enrollment proxy
+identified_union,high,unemployment,36.468,survey receipt/enrollment proxy
+identified_union,high,railroad_retirement,14.493,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,pension_guaranty,0.771,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,veterans_life_insurance,0.449,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,workers_compensation,11.923,survey receipt/enrollment proxy
+identified_union,high,military_medical,7.157,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,veterans_pension_disability,180.525,survey receipt/enrollment proxy
+identified_union,high,veterans_readjustment,11.391,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,veterans_other,37.526,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,snap,97.391,survey receipt/enrollment proxy
+identified_union,high,black_lung,0.173,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,ssi,65.134,survey receipt/enrollment proxy
+identified_union,high,refundable_tax_credits,228.809,survey receipt/enrollment proxy
+identified_union,high,other_federal_benefits,66.62745902,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,temporary_disability,13.138,survey receipt/enrollment proxy
+identified_union,high,medicaid_and_chip_other_medical,954.2,survey receipt/enrollment proxy
+identified_union,high,family_and_general_assistance,63.065,survey receipt/enrollment proxy
+identified_union,high,energy_assistance,5.218,survey receipt/enrollment proxy
+identified_union,high,other_state_welfare,22.385,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,education_benefits,64.479,survey receipt/enrollment proxy
+identified_union,high,employment_training,1.377,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,other_state_benefits,2.875,[ASSUMPTION] universal service receipt; programme has no CPS person field
+identified_union,high,housing_subsidies,55.003189,survey receipt/enrollment proxy
+identified_union,high,education_k12,950.2544781,survey receipt/enrollment proxy
+identified_union,high,education_college_other,276.1423871,survey receipt/enrollment proxy
+lineage,low,general_public_services,241.8747903,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,public_order_safety,521.2025118,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,economic_affairs_services,174.2308752,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,housing_community_services,14.74769344,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,health_services,308.3587549,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,recreation_culture,46.65933986,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,income_security_services,168.2645169,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,social_security,1447.965,survey receipt/enrollment proxy
+lineage,low,medicare,1102.358,survey receipt/enrollment proxy
+lineage,low,unemployment,36.468,survey receipt/enrollment proxy
+lineage,low,railroad_retirement,14.493,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,pension_guaranty,0.771,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,veterans_life_insurance,0.449,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,workers_compensation,11.923,survey receipt/enrollment proxy
+lineage,low,military_medical,7.157,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,veterans_pension_disability,180.525,survey receipt/enrollment proxy
+lineage,low,veterans_readjustment,11.391,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,veterans_other,37.526,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,snap,97.391,survey receipt/enrollment proxy
+lineage,low,black_lung,0.173,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,ssi,65.134,survey receipt/enrollment proxy
+lineage,low,refundable_tax_credits,228.809,survey receipt/enrollment proxy
+lineage,low,other_federal_benefits,66.62745902,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,temporary_disability,13.138,survey receipt/enrollment proxy
+lineage,low,medicaid_and_chip_other_medical,954.2,survey receipt/enrollment proxy
+lineage,low,family_and_general_assistance,63.065,survey receipt/enrollment proxy
+lineage,low,energy_assistance,5.218,survey receipt/enrollment proxy
+lineage,low,other_state_welfare,22.385,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,education_benefits,64.479,survey receipt/enrollment proxy
+lineage,low,employment_training,1.377,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,other_state_benefits,2.875,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,low,housing_subsidies,55.003189,survey receipt/enrollment proxy
+lineage,low,education_k12,950.2544781,survey receipt/enrollment proxy
+lineage,low,education_college_other,276.1423871,survey receipt/enrollment proxy
+lineage,high,general_public_services,342.7799658,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,public_order_safety,521.2025118,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,economic_affairs_services,289.4365919,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,housing_community_services,14.74769344,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,health_services,308.3587549,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,recreation_culture,54.48365703,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,income_security_services,168.2645169,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,social_security,1447.965,survey receipt/enrollment proxy
+lineage,high,medicare,1102.358,survey receipt/enrollment proxy
+lineage,high,unemployment,36.468,survey receipt/enrollment proxy
+lineage,high,railroad_retirement,14.493,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,pension_guaranty,0.771,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,veterans_life_insurance,0.449,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,workers_compensation,11.923,survey receipt/enrollment proxy
+lineage,high,military_medical,7.157,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,veterans_pension_disability,180.525,survey receipt/enrollment proxy
+lineage,high,veterans_readjustment,11.391,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,veterans_other,37.526,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,snap,97.391,survey receipt/enrollment proxy
+lineage,high,black_lung,0.173,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,ssi,65.134,survey receipt/enrollment proxy
+lineage,high,refundable_tax_credits,228.809,survey receipt/enrollment proxy
+lineage,high,other_federal_benefits,66.62745902,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,temporary_disability,13.138,survey receipt/enrollment proxy
+lineage,high,medicaid_and_chip_other_medical,954.2,survey receipt/enrollment proxy
+lineage,high,family_and_general_assistance,63.065,survey receipt/enrollment proxy
+lineage,high,energy_assistance,5.218,survey receipt/enrollment proxy
+lineage,high,other_state_welfare,22.385,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,education_benefits,64.479,survey receipt/enrollment proxy
+lineage,high,employment_training,1.377,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,other_state_benefits,2.875,[ASSUMPTION] universal service receipt; programme has no CPS person field
+lineage,high,housing_subsidies,55.003189,survey receipt/enrollment proxy
+lineage,high,education_k12,950.2544781,survey receipt/enrollment proxy
+lineage,high,education_college_other,276.1423871,survey receipt/enrollment proxy

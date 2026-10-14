@@ -468,6 +468,8 @@ def configure(case: str, out_dir: Path | None = None, dev_unpinned: bool = False
         PATHS.update({k: CASE_PATHS[k] for k in ("long_run_net_change", "preferences_code", "preferences_tiers")})
     PINNED.clear()
     PINNED.update(generations=c["gen"], debt_corrections=c["debt_files"])
+    if case == "oct14":
+        PINNED.update(real_costs="c392d356",band_variants="c392d356")
     return CASE
 
 
@@ -1246,7 +1248,7 @@ def published_totals(fin):
     """Ruling 5: the real-costs memo's totals at central values on the case, each crime footing on its
     own, as the propagation lane published them (its column for the case). This lane's allocation base
     mixes the footings and is never quoted as a total."""
-    t = pd.read_csv(PATHS["real_costs"], dtype={"section": str})
+    t = pd.read_csv(io.BytesIO(read_input("real_costs")), dtype={"section": str})
     t = t[t.section == "7"].set_index(["column", "item"])
     v = lambda col, item: float(t.loc[(col, item), CASE["case"]])
     ends = ("low", "high")
@@ -1258,7 +1260,7 @@ def published_totals(fin):
                span=[v("full_span", "low end"), v("full_span", "high end")])
     out["range"] = [out["equal"][0], out["custody"][1]]
     a = fin[CASE["model"]]["ends"]
-    bv = pd.read_csv(PATHS["band_variants"]).set_index(["case", "variant"])
+    bv = pd.read_csv(io.BytesIO(read_input("band_variants"))).set_index(["case", "variant"])
     raw = [float(bv.loc[(CASE["case"], "justice_raw_coding"), c]) for c in ("cost_low_bn", "cost_high_bn")]
     note = str(t.loc[("hispanic_mixed_group", "total at central values (low)"), "note"])
     out["equal_victims"] = float(re.search(r"victims ([\d.]+)", note).group(1))
@@ -1362,7 +1364,9 @@ def acs_geo(B, acs, arms):
             rent_cells=np.bincount(H.cell, weights=rent_x, minlength=B.CELLS),
             value_cells=np.bincount(H.cell, weights=value_x, minlength=B.CELLS),
             rent_state=pd.Series(rent_x).groupby(st).sum().to_dict(),
-            value_state=pd.Series(value_x).groupby(st).sum().to_dict())
+            value_state=pd.Series(value_x).groupby(st).sum().to_dict(),
+            value_cell_state={s: np.bincount(H.cell.to_numpy()[st == s], weights=value_x[st == s],
+                                            minlength=B.CELLS) for s in np.unique(st)})
     return out
 
 
@@ -3685,6 +3689,13 @@ def main():
     in_place = DERIVED == HERE / "derived"
     frame.to_parquet(CACHE / ("person_frame.parquet" if in_place else f"person_frame_{CASE['case']}.parquet"), index=False)
     print(f"  ✓ {sum(g['passed'] for g in GATES.values())} gates passed; person frame {frame.shape} in _cache/")
+    del frame, cols, arrays, tb, cuts, recon, wide, page, reg_tbl, gf, tree, cells, X, shares, moves, tmpl, fs_rows
+    import gc
+    import pyarrow as pa
+    gc.collect()
+    pa.default_memory_pool().release_unused()
+    from p7_frames import run as run_p7
+    run_p7(globals(), B, d, I, ch, totals, meta, fin, ctx, nets, pnets)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,477 @@
+[
+  {
+    "utc": "2026-10-14T12:30:09.877246+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 106.53032649998204,
+    "peak_rss_mb": 1411.421875,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T12:39:09.457905+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "-m",
+      "cProfile",
+      "-o",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/_cache/p7_profile.pstat",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 51.5963734590041,
+    "peak_rss_mb": 1950.53125,
+    "exit_code": 1
+  },
+  {
+    "utc": "2026-10-14T12:45:33.243753+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "-m",
+      "cProfile",
+      "-o",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/_cache/p7_profile.pstat",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 315.26540312499856,
+    "peak_rss_mb": 2204.265625,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T12:47:57.725364+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "-m",
+      "cProfile",
+      "-o",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/_cache/p7_profile_fixed.pstat",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 70.23094337497605,
+    "peak_rss_mb": 2184.1875,
+    "exit_code": 1
+  },
+  {
+    "utc": "2026-10-14T12:51:03.389924+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "-m",
+      "cProfile",
+      "-o",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/_cache/p7_profile_fixed.pstat",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 114.13344791700365,
+    "peak_rss_mb": 2182.6875,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T12:59:01.004414+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 185.6903287919995,
+    "peak_rss_mb": 1621.203125,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:07:59.941308+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "-m",
+      "cProfile",
+      "-o",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/_cache/verification_profile.pstat",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 174.82158950000303,
+    "peak_rss_mb": 1623.359375,
+    "child_user_cpu_seconds": 118.272027,
+    "child_system_cpu_seconds": 6.208294,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:11:19.100924+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 0.7152150420006365,
+    "peak_rss_mb": 213.671875,
+    "child_user_cpu_seconds": 0.759845,
+    "child_system_cpu_seconds": 0.065701,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:11:19.901745+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs"
+    ],
+    "seconds": 0.7668054999958258,
+    "peak_rss_mb": 215.671875,
+    "child_user_cpu_seconds": 0.8206239999999999,
+    "child_system_cpu_seconds": 0.065096,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:13:12.131019+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 112.19414495798992,
+    "peak_rss_mb": 1989.515625,
+    "child_user_cpu_seconds": 89.784633,
+    "child_system_cpu_seconds": 4.575619,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:18:53.667230+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 0.9731629169837106,
+    "peak_rss_mb": 210.09375,
+    "child_user_cpu_seconds": 0.993679,
+    "child_system_cpu_seconds": 0.091337,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:18:54.551170+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs"
+    ],
+    "seconds": 0.8362496670160908,
+    "peak_rss_mb": 211.328125,
+    "child_user_cpu_seconds": 0.9195399999999999,
+    "child_system_cpu_seconds": 0.090293,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:20:36.813704+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 102.22359562499332,
+    "peak_rss_mb": 2092.0625,
+    "child_user_cpu_seconds": 87.971729,
+    "child_system_cpu_seconds": 4.714609,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:20:54.489105+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 0.690008083009161,
+    "peak_rss_mb": 212.25,
+    "child_user_cpu_seconds": 0.7550469999999999,
+    "child_system_cpu_seconds": 0.062219,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:20:55.300942+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs"
+    ],
+    "seconds": 0.7776751669880468,
+    "peak_rss_mb": 211.515625,
+    "child_user_cpu_seconds": 0.788431,
+    "child_system_cpu_seconds": 0.060462999999999996,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:22:22.675972+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 87.34213483298663,
+    "peak_rss_mb": 2652.53125,
+    "child_user_cpu_seconds": 80.175611,
+    "child_system_cpu_seconds": 3.238867,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:23:24.576089+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 0.6561280000023544,
+    "peak_rss_mb": 214.765625,
+    "child_user_cpu_seconds": 0.705287,
+    "child_system_cpu_seconds": 0.052818,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:23:25.220916+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs"
+    ],
+    "seconds": 0.6140612089948263,
+    "peak_rss_mb": 212.28125,
+    "child_user_cpu_seconds": 0.672175,
+    "child_system_cpu_seconds": 0.046597,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:25:12.512791+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 107.2587189170008,
+    "peak_rss_mb": 2246.90625,
+    "child_user_cpu_seconds": 101.473558,
+    "child_system_cpu_seconds": 2.834977,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:27:07.410559+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 2.4935154159902595,
+    "peak_rss_mb": 214.828125,
+    "child_user_cpu_seconds": 0.985737,
+    "child_system_cpu_seconds": 0.116834,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:27:08.587950+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs"
+    ],
+    "seconds": 1.123826665978413,
+    "peak_rss_mb": 206.703125,
+    "child_user_cpu_seconds": 0.964746,
+    "child_system_cpu_seconds": 0.088378,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:31:26.402507+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 257.773958707985,
+    "peak_rss_mb": 2159.640625,
+    "child_user_cpu_seconds": 129.159759,
+    "child_system_cpu_seconds": 7.874416,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:31:53.425644+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 1.2080014589882921,
+    "peak_rss_mb": 216.09375,
+    "child_user_cpu_seconds": 1.106688,
+    "child_system_cpu_seconds": 0.147725,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:31:54.941343+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs"
+    ],
+    "seconds": 1.4672752910119016,
+    "peak_rss_mb": 211.953125,
+    "child_user_cpu_seconds": 0.975857,
+    "child_system_cpu_seconds": 0.106365,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:34:40.196730+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "-m",
+      "cProfile",
+      "-o",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/_cache/final_profile.pstat",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 165.19278204100556,
+    "peak_rss_mb": 1779.265625,
+    "child_user_cpu_seconds": 136.988707,
+    "child_system_cpu_seconds": 5.993135,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:36:36.415894+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 2.848396999994293,
+    "peak_rss_mb": 206.734375,
+    "child_user_cpu_seconds": 1.130833,
+    "child_system_cpu_seconds": 0.146238,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:36:38.250626+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs"
+    ],
+    "seconds": 1.7576238749898039,
+    "peak_rss_mb": 208.765625,
+    "child_user_cpu_seconds": 1.113124,
+    "child_system_cpu_seconds": 0.13738599999999998,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:39:16.835827+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 158.5238769580028,
+    "peak_rss_mb": 2546.828125,
+    "child_user_cpu_seconds": 104.146791,
+    "child_system_cpu_seconds": 6.462541,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:41:59.810027+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 2.5249352079990786,
+    "peak_rss_mb": 205.71875,
+    "child_user_cpu_seconds": 0.964564,
+    "child_system_cpu_seconds": 0.119367,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:42:00.622176+00:00",
+    "command": [
+      "node",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/p7_inputs.cjs"
+    ],
+    "seconds": 0.7755017089948524,
+    "peak_rss_mb": 213.71875,
+    "child_user_cpu_seconds": 0.857833,
+    "child_system_cpu_seconds": 0.08477799999999999,
+    "exit_code": 0
+  },
+  {
+    "utc": "2026-10-14T13:44:34.785009+00:00",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "python3",
+      "infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py",
+      "--case",
+      "oct14"
+    ],
+    "seconds": 154.1241445839987,
+    "peak_rss_mb": 1986.015625,
+    "child_user_cpu_seconds": 120.451302,
+    "child_system_cpu_seconds": 4.934786,
+    "exit_code": 0
+  }
+]

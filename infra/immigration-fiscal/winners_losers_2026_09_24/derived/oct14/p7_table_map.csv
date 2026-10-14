@@ -1,0 +1,14 @@
+memo_table,file,selection
+§2 all channels,p7_channel_table.csv,"complete_social/recommended/stack; select population,financing,frame,level; gross wages/rents, fiscal today/future, every social row"
+§2 social detail,p7_social_channel_table.csv,complete_social; select financing/frame/level/population
+§2 prior inside/beside channel table,winners_losers_table.csv,live oct14 retained hybrid record; current channel set is p7_channel_table.csv
+§3 cuts,p7_cuts.csv,"state3,edu_nativity,tenure,age3,industry5,race5,sex; select full model tags"
+§3 quintiles and income,p7_cuts.csv,quintile or decile; pct_of_resources
+§3 two-way winning cells,p7_cuts.csv,"state3|edu_nativity,edu_nativity|tenure,state3|tenure,decile|tenure"
+§4 sensitivities,p7_net_shares.csv,one arm at a time plus stack; exact financing/sharing tags
+§4 account-only/proposed/national-state-local/alternate-housing/crime variants,net_shares.csv,"live oct14 legacy hybrid variants; exact net,stack,unit; retained comparison, not corrected verdict"
+§4 enumerated extrema,p7_grid_extrema.csv,share extrema and dollar extrema separately
+§4 pooling moves,pooling_moves.csv,live oct14 legacy hybrid calculation record
+§5 group resources,group_frame.csv,live 42.75M; p7_mixed_reconciliation.csv for boundary transfer
+§6 excluded roles,p7_excluded_channels.csv,source exclusions and supplemental/proposed channels; role_table.csv preserves source roles
+§1 financing,p7_trust_inputs.json,exact set/cash trust-fund amounts; p7_net_shares future_bn
