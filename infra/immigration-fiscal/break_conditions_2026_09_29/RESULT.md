@@ -1341,3 +1341,18 @@ Item11 drops the principal `M5_owner_property` vector by generation. Item12 uses
 The specified five-command replay ran commands 1–3 successfully and stopped at command 4 with `[BLOCKED] oct15 generation preflight: unclosed coverage a/low; run final generation account first` (32.652s). It did not compare artifacts or claim IDENTICAL. Generation files belong to a different worker. Parent action: rebuild `generation_account_2026_09_24/run_all.sh`, then rerun the five documented break commands. The unedited `engine_breaks_sept29.cjs:351` and `tables_oct15.py:375` also need their old full-post-engine wording updated by their owner. `tables_oct15.py` stays excluded until the declared debt/winners inputs exist. All other existing break outputs remain on their earlier receipt until the full replay passes. [CALCULATION: _cache/r3fix_first_replay.log, r3fix_break_stop.log; external caller inventory in main_case_2026_10_15/companion-consumers.md]
 
 Only the first-year reader, its focused tests/output, this appended record and the changed-path manifest were changed in this lane. No generation or external reader was edited.
+
+### Round-3 correction (2026-10-15 06:22:28 JST, `date`, parent)
+
+Rerun on corrected v8 (`d1a24d47`: the coverage term no longer charges the missed people's custody, arrests and ICE a
+second time). Two engine changes in `engine_breaks_sept29.cjs`: (1) the within-district school reading and the shared
+allocation price items 11 and 12 under their own rules through the case's `companions.adjustedRun`, as
+`main_case.cjs` prices those companions (round 3, R3-05); before, the school arm carried them at central amounts and
+missed its published row by $0.84bn. (2) The item-arm gate no longer requires an arm's cash change to share its set
+direction: coverage's DA-through-29 arm lowers the set (−$3.7616 / −5.7410bn) and raises the cash set at the low end
+(+$1.6506 / −0.3288bn), because the missed young adults it removes are net payers when benefits count as paid and net
+costs when promises accrue. The search is exact and assumes no monotonicity (`minimal_subsets.cjs`), so the arm is
+named in the gate's detail, not refused. Corrected: the case $365.7919–455.9818bn, midpoint $410.89bn, a quarter down
+$308.17bn, up $513.61bn; school within district $335.4217–428.1078bn; first-year horizon $294.3821–351.7461bn (cash
+$210.3427–267.7067bn); 7,282 minimal crossings down and 1,450 up. Parent rerun IDENTICAL 77/77, exit 0 (two
+publication tests stay deselected until the who-wins lane is on oct15).

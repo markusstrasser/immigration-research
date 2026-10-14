@@ -92,11 +92,22 @@ const PC_ = LIN ? P.CASH : null;             // the cash set's package where the
 const stable = x => Array.isArray(x) ? x.map(stable) : x && typeof x === "object"
   ? Object.fromEntries(Object.keys(x).sort().map(k=>[k,stable(x[k])])) : x;
 const optionBands=new Map();
+// oct15 (round 3, R3-05): the shared allocation and the within-district school reading price items 11 and 12 under
+// their own rules, as main_case.cjs prices those companions (companions.cjs adjustedRun).
+const companionRule = (o) => CASE !== "oct15" ? null : o.allocation === "shared" ? "shared" : o.school_rule === "within_district" ? "school" : null;
+function companionBand(X, o, rule) {
+  const COMP = require(path.join(ROOT, LANE, "companions.cjs")), specs = X.specsFor(o);
+  const bands = P.METHODS.map((method) => {
+    const m = X.modelFor("central", method, X.withCentral(o)), costs = specs.map((s) => COMP.adjustedRun(X, m, s, rule).cost_bn);
+    return [Math.min(...costs), Math.max(...costs)];
+  });
+  return [0, 1].map((e) => bands.reduce((t, b) => t + b[e], 0) / bands.length);
+}
 function centralOf(o) {
   const cash=PC_&&o.pension4==="cash", X=cash?PC_:P;
   const options=cash?Object.fromEntries(Object.entries(o).filter(([k])=>k!=="pension4")):o;
   const key=JSON.stringify([cash?"cash":"set",stable(X.withCentral(options))]);
-  if(!optionBands.has(key))optionBands.set(key,X.central(options));
+  if(!optionBands.has(key)){const rule=companionRule(options);optionBands.set(key,rule?companionBand(X,options,rule):X.central(options));}
   return optionBands.get(key).slice();
 }
 const S24 = require(path.join(ROOT, "main_case_2026_09_24", "sign_reversal.cjs"));
@@ -348,10 +359,10 @@ if (CASE === "oct15") {
   const FY8 = require("./first_year_v8.cjs"), report = FY8.run(P, MAIN, gate);
   for (const [basis, name] of [["set", "first_year_horizon"], ["cash", "first_year_horizon_cash"]]) {
     HORIZON[name].band = report.variants.fixed_capital[basis];
-    HORIZON[name].src += "; item9 with item6 fixed-capital multiplier; item10 parent responses and option endpoint prices; item11/coverage full post-engine";
+    HORIZON[name].src += "; item9 with item6 fixed-capital multiplier; item10 parent responses and option endpoint prices; item11 without its owner property; item12 at its source lines' first-year responses, public capital and property at zero";
   }
   HORIZON.first_year_horizon_property_long_run.band = FY8.band(P,"set","fixed_capital",{...FIRST,item6_first_year:true});
-  HORIZON.first_year_horizon_property_long_run.src += "; item9 with fixed-capital item6; items10–12 held by v8 first-year rules";
+  HORIZON.first_year_horizon_property_long_run.src += "; item9 with fixed-capital item6; item10 first-year parent responses; item11 with its owner property (property long-run); item12 at its source lines' responses here, public capital at zero";
   for (const mode of ["whole", "corporate_only", "off"]) for (const basis of ["set", "cash"]) {
     HORIZON[`first_year_horizon_item6_${mode}${basis === "cash" ? "_cash" : ""}`] = {band:report.variants[mode][basis],src:report.sensitivity_limit};
   }
@@ -606,9 +617,15 @@ if (ITEMS.length) {
     ITEM_ALTS[id] = { item: a.item, dir: mid(set) < 0 ? "down" : "up", by: { set, cash },
       src: `${LANE} summary.json ${VERSION}.arms ${id} (item ${a.item}): ${a.label.replace(/"/g, "'")}` };
   }
-  gate("every item arm is a finite pair on both sets, the cash set's in its direction or zero",
-    Object.values(ITEM_ALTS).every((x) => ["set", "cash"].every((s) => x.by[s].every(Number.isFinite)
-      && (x.dir === "down" ? mid(x.by[s]) <= 0 : mid(x.by[s]) >= 0))));
+  // An arm's cash change may run against its set direction: coverage's DA-through-29 arm lowers the set and raises the
+  // cash set at the low end, because once custody is not charged twice (round 3, R3-12) the missed young adults it
+  // removes are net payers when benefits count as paid and net costs when promises accrue. The search assumes no
+  // monotonicity (minimal_subsets.cjs), so such an arm is named here, not refused.
+  const against = Object.entries(ITEM_ALTS).filter(([, x]) => (x.dir === "down" ? mid(x.by.cash) > 0 : mid(x.by.cash) < 0));
+  gate("every item arm is a finite pair on both sets, its set change in its direction",
+    Object.values(ITEM_ALTS).every((x) => ["set", "cash"].every((s) => x.by[s].every(Number.isFinite))
+      && (x.dir === "down" ? mid(x.by.set) <= 0 : mid(x.by.set) >= 0)),
+    against.length ? "cash change against the set direction: " + against.map(([id, x]) => `${id} ${x.by.cash.map(f4).join(" / ")}`).join("; ") : "");
 }
 
 const armRows = [["arm", "direction", "kind", "cost_low_bn", "cost_high_bn", "midpoint_bn", "move_pct_of_midpoint", "source"]];
