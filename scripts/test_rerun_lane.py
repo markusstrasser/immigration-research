@@ -22,6 +22,7 @@ def git(repo: Path, *args: str) -> None:
 
 
 def lane_repo(tmp: Path) -> Path:
+    tmp.mkdir(parents=True, exist_ok=True)
     (tmp / "scripts").mkdir()
     shutil.copy(SCRIPT, tmp / "scripts" / "rerun_lane.py")
     lane = tmp / "lane"
@@ -180,3 +181,30 @@ def test_modules_a_run_script_loads_are_covered(tmp_path: Path) -> None:
     assert r.returncode == 3, r.stdout
     flagged = {line.split()[-1] for line in r.stdout.splitlines() if "NOT RUN" in line}
     assert flagged == {"lane/orphan.cjs", "lane/unused.py"}, r.stdout
+
+
+def rerun_in_tmpdir(repo: Path, tmpdir: Path) -> subprocess.CompletedProcess:
+    import os
+    env = {**os.environ, "TMPDIR": str(tmpdir)}
+    return subprocess.run([sys.executable, "scripts/rerun_lane.py", "lane", f"{sys.executable} {{lane}}/build.py"],
+                          cwd=repo, capture_output=True, text=True, env=env)
+
+
+def test_identical_run_removes_its_backup(tmp_path: Path) -> None:
+    # Until 2026-10-15 every run left its copy behind: 233 of them held 1.5 GB of the temp folder.
+    repo, tmpdir = lane_repo(tmp_path / "repo"), tmp_path / "tmp"
+    tmpdir.mkdir()
+    r = rerun_in_tmpdir(repo, tmpdir)
+    assert r.returncode == 0, r.stdout
+    assert "backup removed" in r.stdout and not list(tmpdir.glob("rerun_*")), r.stdout
+
+
+def test_differing_run_keeps_its_backup(tmp_path: Path) -> None:
+    repo, tmpdir = lane_repo(tmp_path / "repo"), tmp_path / "tmp"
+    tmpdir.mkdir()
+    (repo / "lane" / "build.py").write_text("open('lane/derived/out.txt', 'w').write('2\\n')\n")
+    git(repo, "commit", "-q", "-am", "change output")
+    r = rerun_in_tmpdir(repo, tmpdir)
+    assert r.returncode == 1, r.stdout
+    kept = list(tmpdir.glob("rerun_*/lane/lane/derived/out.txt"))
+    assert len(kept) == 1 and kept[0].read_text() == "1\n" and f"backup: {kept[0].parents[2]}" in r.stdout, r.stdout

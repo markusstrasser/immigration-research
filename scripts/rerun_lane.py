@@ -14,6 +14,8 @@ nonzero exit code and reports FAILED without comparing anything: a failed script
 outputs in place, and they would compare identical (the 2026-09-23 zsh `$w` trap and the 2026-09-27
 missing-pyreadr trap). After a clean run, the same set is compared with its copy; new, missing and
 changed files are listed. Exit 0 only when every command succeeded and every output is identical.
+An identical run deletes its copy; a failed or differing run keeps it and prints its path, to restore
+from. Until 2026-10-15 every copy stayed: 233 of them held 1.5 GB of the temp folder.
 
 New or modified scripts in the lane that no command names are listed as NOT RUN, and the exit code is
 3; a shell script a command runs (a run_all.sh) counts its text as named. Such a script is either still being written by a worker, or missing from the reproduce list; either
@@ -217,8 +219,10 @@ def main(argv: list[str]) -> int:
         for it in items:
             print(f"[rerun] {label} {it}")
     ok = not (changed or added or missing)
+    if ok:
+        shutil.rmtree(backup.parent)
     print(f"[rerun] {'IDENTICAL' if ok else 'DIFFERS'}: {len(old & new) - len(changed)}/{len(old)} files unchanged"
-          f" (backup: {backup})")
+          f" ({'backup removed' if ok else f'backup: {backup}'})")
     converted = converted_on_commit(lane)
     for path in converted:
         print(f"[rerun] EOL {path}")
