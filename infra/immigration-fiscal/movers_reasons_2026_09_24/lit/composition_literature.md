@@ -58,6 +58,16 @@ vignette varied crime, schools and housing values alongside composition — this
 "the other variables for which race may serve as a proxy"; [UNVERIFIED] until the full text is
 read.) [GAP] coefficients and intervals for the Hispanic-share term not seen.
 
+> **Correction 2026-10-14 (full-text re-check):** full text read (JSTOR scan, corpus
+> doi_10_2307_3088879). The abstract-derived claims are CONFIRMED and the [UNVERIFIED] on the
+> vignette is lifted: each respondent heard one random combination of school quality
+> (low/medium/high), percent Asian, black or Hispanic (5–100% in 5-point steps), property-value
+> trend, the house's value relative to its neighbours, and crime (low/average/high) (Data and Methods section).
+> [GAP] filled: Table 2, Model 2 (Hispanic), cumulative logit, composition coefficient .01
+> (SE .02) per 5-point step, null; crime −.87 (.11), schools .80 (.11). Black composition is
+> about 10 times larger than the Asian or Hispanic term (Results text after Table 2). Fieldwork October 1999 to
+> April 2000, non-Hispanic whites over 17, response rate 53%, 1,581 complete cases (Data and Methods section).
+
 Which side [INFERENCE]: disconfirms a Hispanic-composition disamenity in stated purchase intent
 among whites nationally, 1999–2000-era survey, with crime, schools and values randomized
 alongside. The randomization makes this the cleanest test of the "not separable" hypothesis: here
@@ -93,6 +103,17 @@ has little effect on Hispanics' and blacks' neighborhood preferences. We find no
 in-group preferences; rather, results suggest that whites express negative out-group preferences
 toward black and Hispanic neighborhoods." [GAP] coefficients, intervals, survey year and white n
 not seen.
+
+> **Correction 2026-10-14 (full-text re-check):** full text read (Social Forces 89(4):1385–1407;
+> title and authors checked; PDF via the sci-hub.ren route). Abstract claims CONFIRMED and the
+> [GAP] is filled: Houston Area Survey, February–March 2003 and 2005, response rates 53% and 48%
+> (p. 1394). Table 2, whites, cumulative logit: percent Hispanic −.11 (t = −3.52, p < .001),
+> N = 408 whites asked about Hispanics; percent black −.12 (t = −4.11), N = 438; percent Asian
+> −.01 (t = −.28), N = 163. Crime (high) −1.73 and school quality (high) 1.38 are much larger in
+> the Hispanic model. Shape (models not shown): no drop between 0 and 20 percent black or
+> Hispanic; the likelihood "begins to drop" once the share reaches 30 percent. The paper itself
+> notes the contrast with Emerson et al. 2001 (Results). The "which side" reading below stands,
+> with the addition that the Houston penalty starts at about 30% Hispanic.
 
 Which side [INFERENCE]: the same randomized design as 1.1, with crime, schools and values held
 fixed, finds a Hispanic-composition penalty among Houston whites where the national 1.1 sample
@@ -325,6 +346,13 @@ competition and housing costs, and fits composition avoidance only on the untest
 richer natives can buy into whiter neighbourhoods inside the state while poorer ones must leave
 it. No interval; no individual controls in what was read.
 
+> **Correction 2026-10-14 (full-text re-check):** both Frey papers were read in full (Population
+> and Environment 16(4), corpus doi_10_1007_bf02208119; PDR 22(4):741–763, JSTOR scan; titles
+> checked). The 1995 quote is in the text; the 1996 quote is the publisher abstract, and the body
+> matches it ("a higher rate of net outmigration for persons with 'less select' demographic
+> attributes"). Both are descriptive census and CPS tabulations by poverty, income, education
+> and race (Frey 1995, Table 3), with no regression and no motive measure. CONFIRMED; grade C stands.
+
 ### 3.2 Wright, Ellis & Reibel (1997), "The Linkage between Immigration and Internal Migration in Large Metropolitan Areas in the United States" — grade C; disconfirms the flight reading
 
 Economic Geography 73(2):234–254 (Crossref),
@@ -341,6 +369,10 @@ probably a function of those cities' population size rather than immigrant flow 
 Which side [INFERENCE]: against metro-level native flight; the authors attribute Frey's pattern to
 metro size and industrial restructuring. Same grade as Frey: aggregate metro regressions, no
 motive measured, and by their own words the answer depends on the specification.
+
+> **Correction 2026-10-14 (full-text re-check):** full text read (corpus
+> doi_10_1111_j_1944-8287_1997_tb00069_x; title checked). The quoted abstract sentence appears
+> verbatim. CONFIRMED; no change.
 
 ### 3.3 California leavers' stated reasons, 2010–2026 — grade D (descriptive), cross-reference to `moving_costs_and_surveys.md` Task 2
 

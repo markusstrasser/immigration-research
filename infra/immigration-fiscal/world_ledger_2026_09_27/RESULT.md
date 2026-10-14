@@ -755,6 +755,9 @@ None of these is in hand. [GAP]
   [SOURCE: reads/finkelstein_hendren_luttmer_2019.md quotes 2, 4, 5, 10, 11]
 - The claim that Heckman–LaLonde–Smith (1999) "assume a 50% deadweight cost" was not found in primary text. The
   1.5 is Heckman–Smith (1998)'s convention. [SOURCE: reads/mcpf_sources.md]
+  > **Correction 2026-10-14 (full-text re-check):** the chapter has now been read. Heckman, LaLonde & Smith (1999)
+  > use a welfare cost of taxation of 0.00 and 0.50 per tax dollar as two sensitivity values in Tables 19–21
+  > (p. 2049 ff.), so the 50% appears there too, as the upper case. λ = 1.5 is unchanged. [SOURCE: reads/mcpf_sources.md]
 - ENIGH 2024 records take-home pay. A premium on it overstates the gross gain by the Mexican withholding, and
   adding Mexican taxes on top counts that withholding twice. Both are fixed here: the premium falls $9.0bn for
   G1 and $6.8bn for G2. [CALCULATION]

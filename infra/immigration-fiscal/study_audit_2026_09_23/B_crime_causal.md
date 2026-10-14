@@ -57,6 +57,14 @@ Plausibility arithmetic [CALCULATION, inputs from the author's summary and my ow
 
 [GAP] Parse the AER P&P table (clusters, SEs, and whether the county UCR series is imputed or restricted to fully reporting agencies). Route: openICPSR e113380 README, or the AEA PDF through an institutional route.
 
+> **Correction 2026-10-14 (full-text re-check):** the AER P&P paper was read in full (4 pp., title and author checked; PDF via the sci-hub.ren route). The [GAP] is closed as far as the paper allows:
+> - **Table 1 (p. 211), log crime per capita on cumulative legalized IRCA applicants per capita, county and year FE, economic and crime controls, 47,688 county-years, UCR 1980–2000:** all crime −4.525 (SE 1.245), 95% CI about −7.0 to −2.1 per percentage point; nonzero-IRCA counties −4.019 (1.544), n = 6,602; violent −1.333 (1.829), **not significant**; property −4.022 (1.690), p < 0.05.
+> - **QUALIFIED, "mainly property":** the property coefficient is not larger than the all-crime one (−4.0 vs −4.5). "Mainly property" holds only because the violent estimate is null. The author's blog line "larger effects when restricting to property crimes" (quoted above) does not match the published table.
+> - **QUALIFIED, treatment definition:** the regressor is legalized applicants per capita **weighted by the criminal propensity of their age and sex composition** (table notes), not the raw share of the population legalized. The suggested repo wording "per 1% of county population legalized" should read "per 1 percentage point of propensity-weighted legalized applicants".
+> - **Not stated in the paper:** the clustering of the standard errors (the notes give none), and whether the county UCR series is imputed. The text says only that the county-level UCR data "are assembled annually using a standardized methodology" (p. 211). The imputation risk above stays an open [GAP] and an unaddressed MEASUREMENT RISK.
+> - Oddities for a replicator: column 5 splits the regressor into predicted (−48.55, SE 1.296) and residual (−3.520, SE 1.403) components, a tenfold gap the text does not explain; the violent column reports R² = −0.654.
+> The SOUND BUT IMPRECISE verdict stands; the 95% interval excludes zero for all crime and property crime, so "imprecise" means a wide interval, not a null.
+
 ---
 
 ## 2. Pinotti 2017, AER 107(1):138–68, DOI 10.1257/aer.20150355
@@ -245,6 +253,8 @@ No sign of fake data.
 **Verdict:**
 - **Bersani & Pittman: SOUND BUT IMPRECISE** for the floor claim. There is **MEASUREMENT RISK** on the dyad (child-minus-mother) figures from the 1980 versus 1990s instrument confound, with unknown direction but common to all generations. The repo already grades it B+ with this caveat. Not overstated.
 - **Inkpen 2024: not audited this pass** [GAP]; see Coverage.
+
+> **Correction 2026-10-14 (full-text re-check):** Inkpen 2024 read in full (Crime & Delinquency 72(1):82–111, corpus doi_10_1177_00111287231225125; title and author checked). The generational memo's figures are CONFIRMED: 85% of first-generation vs 78% of second-generation Mexican-origin respondents reach 18 without an arrest; observed arrests are 60% of expected for both first-generation groups, 81% for the Other-Hispanic second generation, and about equal for the Mexican second generation (log-rank, Table 4 text); the "regress to the mean" sentence is verbatim in the Discussion. Caveat the memo already carries: NLSY97, N = 7,948, Hispanic-origin first and second generations only, outcome is self-reported first arrest. Verdict for this row: SOUND BUT IMPRECISE (single cohort, survey-reported arrest); not overstated in the repo.
 
 ---
 

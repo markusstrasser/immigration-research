@@ -265,6 +265,11 @@ July 2023. [SOURCE: CRS R48190 pp. 12–13] Even so, restricted dollars rose in 
 - **Price premium:** after Prop 209, California's state-funded highway contracts became 5.6%
   cheaper than federally funded ones that kept the goals. [SOURCE: Marion 2009, *REStat* 91(3),
   abstract p. 503; the body text is paywalled and was not verified]
+  > **Correction 2026-10-14 (full-text re-check):** the full text was read (corpus
+  > doi_10_1162_rest_91_3_503). The 5.6% is CONFIRMED as the preferred estimate: item-level
+  > unit prices, weighted by cost share, low bidder only, May 1996–Dec 1999 (§IV Results, Table 3).
+  > Caveat: it is the effect of a goal cut that averaged 9.0 percentage points on state-funded
+  > contracts (Table 3 text; Conclusion), not of removing a program of any size.
 
 The premium is applied at 0%, 2.8% or 5.6%. It falls on the $49bn of DOT-assisted contracts that
 the 12.6% participation rate implies. Only the minority-owned share of it is counted, and white
@@ -276,7 +281,14 @@ quotes Marion as finding that winning bids fell "by between 3.1 and 5.6 percent 
 similar federal-aid contracts". [SOURCE: Geshekter, National Association of Scholars, 25 Sep
 2008, quoting Marion; secondary and UNVERIFIED, because the paper's body could not be reached
 through fetch_paper, the MIT Press PDF, the DOI page, Unpaywall (no open copy) or CiteSeerX] If
-that range is right, the central sits below the paper's lowest estimate. At 3.1% the central DBE
+that range is right, the central sits below the paper's lowest estimate.
+> **Correction 2026-10-14 (full-text re-check):** the range is now verified at source and the
+> UNVERIFIED tag is lifted. The 3.1% is the contract-level winning-bid difference-in-differences
+> with project controls, "marginally statistically significant" (Table 2 text); adding firm
+> fixed effects gives 4.1%; the item-level preferred estimate is 5.6% (Table 3). Adding
+> subcontractor dummies cuts the effect to 2.5%, so about 55% of the decline runs through the
+> subcontractor mix (Introduction). The central 2.8% therefore does sit below every total-effect
+> estimate the paper reports; the sensitivity arithmetic below stands unchanged. At 3.1% the central DBE
 premium row would be $0.53bn instead of $0.48bn. At the range's midpoint, 4.35%, it would be
 $0.74bn, and the 2024 central total would rise from $3.96bn to $4.22bn. [CALCULATION: linear
 rescaling of row 3c, $0.4773bn × p / 2.8%]
@@ -305,7 +317,9 @@ minority-owned federal contract dollars. [DATA: USAspending; used as a proxy]
 - **The premium is a single estimate.** It comes from one state in the 1990s. Most of it came from
   the mix of subcontractors, which Marion traces to the higher costs of firms in high-minority
   areas rather than to minority-owned firms being less productive than their neighbours.
-  [SOURCE: Marion 2009 abstract, as quoted on the UCOP Prop 209 research page]
+  [SOURCE: Marion 2009 abstract, as quoted on the UCOP Prop 209 research page; 2026-10-14
+  full-text check: CONFIRMED, subcontractor dummies cut the effect to 2.5%, and city fixed
+  effects drive the minority-ZIP cost gap to zero]
 
 ## Where this sits against the account
 
@@ -371,7 +385,8 @@ IPEDS EF2024A file returned 404 on 2026-09-24. [DATA]
   Hinrichs and UNC in-state are public-sector estimates. UNC out-of-state shows much larger
   effects in competitive pools, so the central may understate this tier.
 - **DBE inputs are old.** The dollars are from FY2020, the minority/women split from 1993–99, and
-  Marion's price premium was checked in the abstract only.
+  Marion's price premium was checked in the abstract only. [2026-10-14: full text read; 5.6%
+  and the 3.1–5.6% range confirmed, see the correction under DOT DBE]
 - **Mexican-origin and generation shares are population proxies.** They are not measured among
   actual beneficiaries. Elite colleges' Hispanic students are likely less Mexican than Hispanic
   graduates in general.
@@ -444,7 +459,7 @@ The source log, with page numbers, is `WORKLOG.md`.
 - Kline, Rose & Walters (2021), NBER w29053 (*QJE* 2022).
 - Quillian et al. (2017), *PNAS* 114(41).
 - Marion (2007 working paper), "The Effectiveness of Affirmative Action in Highway Procurement".
-- Marion (2009), *REStat* 91(3): 503–522. Abstract only.
+- Marion (2009), *REStat* 91(3): 503–522. Abstract only. [2026-10-14: full text read and checked]
 - CRS IF12055 (version 3) and CRS R48190 (19 September 2024).
 - DOT interim final rule, 90 FR 47969 (3 October 2025).
 - USAspending API.

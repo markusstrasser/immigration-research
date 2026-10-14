@@ -157,6 +157,7 @@ Only Brunello & Rocco can see a system-wide shift on an absolute scale. The with
 - [GAP] 2006→2022 cross-country test. The 2022 volume tables start in 2012. The 2006/2009 splits live in the PISA 2015 Vol I annex (Table I.7.x) and the PISA 2018 Vol II annex (Table II.B1.9.x StatLinks); fetch them via `stat.link/files/<doi-suffix>/<id>.xlsx`.
 - [GAP] IQB 2021 grade-4 adjusted trends (report chapter on adjusted means) not read. Group trends are from the handout, via Exa only.
 - [GAP] Jensen & Rasmussen's native-specific estimates, and the journal versions of all eight studies.
+  > **Correction 2026-10-14 (full-text re-check):** Jensen & Rasmussen's journal version is now read. Native Danes per 10 pp: reading −2.8 (OLS) / −3.1 (IV, n.s.), maths −7.1 (OLS) / −10.5 (IV), about −0.07 to −0.10 SD; the >50% threshold is reading-only. The table row above ("about −0.02 SD for all pupils pooled") is the 2007 WP reading figure and understates the native maths effect. Detail: `reads/peer_effects_europe.md` §3.
 - [GAP] PISA exclusion rates for Germany by cycle (OECD Vol I annex A2), to size the recent-arrival coverage channel.
 - [GAP] Microdata replication, with BRR replicate SEs for the composition terms and a 4-group decomposition that keeps missing status. PISA student files are on webfs.oecd.org; untested here.
 
