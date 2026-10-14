@@ -19,6 +19,7 @@ import pytest
 
 HERE = Path(__file__).resolve().parent
 D = HERE / "derived"
+CASE = "oct14"
 MEMBERS = 42_752_213
 PARTIES = ["others_today", "future_taxpayers", "G1", "G2", "G3+", "mexico_residents"]
 GENS = ["G1", "G2", "G3+"]
@@ -26,12 +27,12 @@ GENS = ["G1", "G2", "G3+"]
 
 @pytest.fixture(scope="module")
 def meta():
-    return json.load(open(D / "beside_extra_meta_oct07.json"))
+    return json.load(open(D / f"beside_extra_meta_{CASE}.json"))
 
 
 @pytest.fixture(scope="module")
 def summary():
-    return pd.read_csv(D / "beside_extra_summary_oct07.csv")
+    return pd.read_csv(D / f"beside_extra_summary_{CASE}.csv")
 
 
 @pytest.fixture(scope="module")
@@ -42,8 +43,8 @@ def eq(summary):
 @pytest.fixture(scope="module")
 def lane_columns():
     """Every scenario's equal and lambda 1.16 party totals: this file's and beside_arms.py's others."""
-    x = pd.read_csv(D / "beside_extra_oct07.csv")
-    a = pd.read_csv(D / "beside_arms_oct07.csv")
+    x = pd.read_csv(D / f"beside_extra_{CASE}.csv")
+    a = pd.read_csv(D / f"beside_arms_{CASE}.csv")
     a = a[~a.scenario.isin(set(x.scenario[x.weighting == "equal"]))]
     x = x[x.weighting.isin(["equal", "equal_lambda_1.16"])]
     return pd.concat([a, x], ignore_index=True).set_index(["scenario", "weighting", "party"]).bn
@@ -67,10 +68,10 @@ def test_theta_values(meta):
 
 
 def test_theta_matches_mcpf(meta):
-    """mcpf's theta_eff at the band ends (the lead's note and mix_sens.py: 1.069 / 1.077 central)."""
-    want = dict(theta_central=(1.069, 1.077), theta_alt_use=(0.984, 0.985), theta_waste=(0.944, 0.947),
-                theta_education_2=(1.226, 1.240), theta_current_law=(1.082, 1.096),
-                theta_waste_alt_use=(0.859, 0.855), theta_education_5_extreme=(1.793, 1.827))
+    """mcpf's recipe on oct14's debt split, committed at 6b1250b9; independently Decimal-replayed."""
+    want = dict(theta_central=(1.066, 1.076), theta_alt_use=(0.984, 0.985), theta_waste=(0.940, 0.948),
+                theta_education_2=(1.223, 1.236), theta_ladd=(1.106, 1.114), theta_current_law=(1.074, 1.095),
+                theta_waste_alt_use=(0.858, 0.857), theta_education_5_extreme=(1.791, 1.815))
     got = meta["arm4"]["mcpf_theta_eff_by_end"]
     for k, (lo, hi) in want.items():
         assert np.isclose(got[k]["low"], lo, atol=6e-4) and np.isclose(got[k]["high"], hi, atol=6e-4), (k, got[k])
@@ -83,14 +84,14 @@ def test_theta_matches_mcpf(meta):
 
 
 def test_capital_beside(meta):
-    """The shadow price of capital and the R&D policy arm, beside and in no total: the lead's note's figures."""
+    """The recorded capital/R&D recipe on oct14's pinned debt split, beside and in no total."""
     b = meta["arm4"]["beside"]
     for e, r in b["by_end"].items():
         assert np.isclose(r["spc_central_bn"], r["displaced_investment_bn"][1] * (b["spc"][1] - 1), atol=1e-9), e
         assert np.isclose(r["spc_range_bn"][1], r["displaced_investment_bn"][2] * (b["spc"][2] - 1), atol=1e-9), e
     lo, hi = b["by_end"]["low"], b["by_end"]["high"]
-    assert round(lo["spc_central_bn"], 1) == 3.1 and round(hi["spc_central_bn"], 1) == 4.3
-    assert np.isclose(lo["rd_policy_arm_bn"][0], 39.4, atol=0.05) and np.isclose(hi["rd_policy_arm_bn"][1], 263.5,
+    assert round(lo["spc_central_bn"], 1) == 2.4 and round(hi["spc_central_bn"], 1) == 3.9
+    assert np.isclose(lo["rd_policy_arm_bn"][0], 23.7, atol=0.05) and np.isclose(hi["rd_policy_arm_bn"][1], 238.4,
                                                                                     atol=0.05)
 
 
@@ -120,7 +121,7 @@ def test_theta_from_lambda_columns(meta, summary, lane_columns):
 
 
 def test_summary_follows_from_party_totals(summary):
-    x = pd.read_csv(D / "beside_extra_oct07.csv").set_index(["scenario", "weighting", "party"]).bn
+    x = pd.read_csv(D / f"beside_extra_{CASE}.csv").set_index(["scenario", "weighting", "party"]).bn
     for r in summary.itertuples():
         g = lambda party: x[(r.scenario, r.weighting, party)]   # noqa: E731
         assert np.isclose(r.world_total_bn, g("world_total"), atol=1e-6)
@@ -132,7 +133,7 @@ def test_summary_follows_from_party_totals(summary):
 
 
 def test_arms_alone_are_beside_arms(eq):
-    a = pd.read_csv(D / "beside_arms_summary_oct07.csv")
+    a = pd.read_csv(D / f"beside_arms_summary_{CASE}.csv")
     a = a[a.weighting == "equal"].set_index("scenario")
     for k in ("baseline", "arm2_state_rpp", "arm3a", "arm3b"):
         for c in ("world_total_bn", "premium_bn", "us_budget_value_bn", "us_residents_incl_group_bn"):
@@ -205,7 +206,7 @@ def test_same_person_rows_are_parameters(meta, summary):
 
 
 def test_arm5_table(meta, eq):
-    t = pd.read_csv(D / "beside_extra_industry_oct07.csv")
+    t = pd.read_csv(D / f"beside_extra_industry_{CASE}.csv")
     F = meta["arm5"]["F"]
     for g in ("G1", "G2"):
         x = t[t.generation == g]
@@ -224,7 +225,7 @@ def test_arm5_table(meta, eq):
 
 
 def test_private_gain_adds_up(meta, eq):
-    p = pd.read_csv(D / "beside_extra_private_gain_oct07.csv")
+    p = pd.read_csv(D / f"beside_extra_private_gain_{CASE}.csv")
     inp = meta["private_gain"]["inputs"]
     for r in p.itertuples():
         a = r.premium_bn + r.us_taxes_bn + r.mexico_taxes_avoided_bn + r.mexico_services_forgone_bn

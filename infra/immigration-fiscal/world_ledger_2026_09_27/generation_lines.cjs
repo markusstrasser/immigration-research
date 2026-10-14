@@ -6,8 +6,8 @@
  * case package's engine state at every specification. This script repeats that evaluation at the case's two band
  * ends and writes every line, so the world ledger values the generation lane's own split and never a second one.
  * The band ends are the union's cheapest and dearest specifications, the first on a tie, as that lane picks them
- * (48 and 11 in every case here). The allocation of household flows is the specification's: shared at the low
- * end, personal at the high end.
+ * (48 / 11 through oct07; the personal specifications at both ends from oct14). The allocation of household
+ * flows is the specification's; no allocation is inferred from the end's name.
  *
  * It also evaluates the uncorrected models at the same specifications, for split_residual.py, which shows how the
  * lane's split departs from splitting each corrected line by the generations' shares of it.
@@ -34,7 +34,7 @@
  * and the union gate below holds it to the v6 band.
  *
  * Run from the repository root:
- *   node infra/immigration-fiscal/world_ledger_2026_09_27/generation_lines.cjs --case sept26_schools|sept27|sept29|oct05|oct07
+ *   node infra/immigration-fiscal/world_ledger_2026_09_27/generation_lines.cjs --case oct14
  * Output: derived/generation_lines_<case>.csv, derived/generation_lines_uncorrected_<case>.csv.
  */
 "use strict";
@@ -54,20 +54,26 @@ const arg = (name, dflt) => { const i = argv.indexOf(name); return i < 0 ? dflt 
 const SEPT29 = "main_case_2026_09_29";
 const OCT05 = "main_case_2026_10_05";
 const OCT07 = "main_case_2026_10_07";
-const CASES = { oct07: OCT07, oct05: OCT05, sept29: SEPT29, sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_case_schools_full_2026_09_26" };
-const CASE = arg("--case", "sept26_schools");
+const OCT14 = "main_case_2026_10_14";
+const CASES = { oct14: OCT14, oct07: OCT07, oct05: OCT05, sept29: SEPT29, sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_case_schools_full_2026_09_26" };
+const CASE = arg("--case", "oct14");
 if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
 // The cases that carry the return on public capital, which the lane evaluates with evaluateFull().
-const FULL = CASE === "sept27" || CASE === "sept29" || CASE === "oct05" || CASE === "oct07";
+const FULL = CASE === "sept27" || CASE === "sept29" || CASE === "oct05" || CASE === "oct07" || CASE === "oct14";
 const PINNED = JSON.parse(fs.readFileSync(path.join(HERE, "pins.json"), "utf8"))[CASE];
+if (!PINNED) throw new Error(`[BLOCKED] no input pins for ${CASE}`);
 const PIN = PINNED.generation;
 if (!PIN) throw new Error(`[BLOCKED] no generation pin for ${CASE}`);
+if (CASE === "oct14" && !PINNED.main_case) throw new Error(`[BLOCKED] no final main_case pin for ${CASE}`);
 // The generation lane's files for the case: its derived/ under the default case's names, unless the case's pins name
 // another directory ("dirs") or rename a file ("files"), as valuation.py's lane_file() reads them.
 const GREL = (PINNED.dirs || {}).generation || "infra/immigration-fiscal/generation_account_2026_09_24/derived";
 const GFILES = (PINNED.files || {}).generation || {};
 const gfile = (f) => GFILES[f] || f;
-const show = (f) => execFileSync("git", ["-C", REPO, "show", `${PIN}:${GREL}/${gfile(f)}`], { maxBuffer: 1 << 30 }).toString("utf8");
+const show = (f) => {
+  try { return execFileSync("git", ["-C", REPO, "show", `${PIN}:${GREL}/${gfile(f)}`], { maxBuffer: 1 << 30 }).toString("utf8"); }
+  catch (e) { throw new Error(`[BLOCKED] ${CASE} generation input missing at ${PIN}: ${GREL}/${gfile(f)}`, { cause: e }); }
+};
 const P = require(path.join(FISCAL, CASES[CASE], "package.cjs"));
 const { Engine, MAIN_SPECS } = P;
 const GENS = ["G1", "G2", "G3plus"];
@@ -116,6 +122,14 @@ const costOf = (r) => -r.evaluation.welfare_bn + r.capital.total_bn;
 
 const union = MAIN_SPECS.map((s) => GENS.reduce((t, g) => t + costOf(partsAt(MODELS.corrected[g], s)), 0));
 const lo = union.indexOf(Math.min(...union)), hi = union.indexOf(Math.max(...union));
+if (CASE === "oct14") {
+  const summary = JSON.parse(fs.readFileSync(path.join(FISCAL, OCT14, "derived", "summary.json"), "utf8"));
+  const ends = summary.v7.end_specifications.set;
+  gate("oct14 spans only the case's personal specifications", MAIN_SPECS.length === 32
+    && MAIN_SPECS.every((s) => s.allocation === "personal"));
+  gate("oct14 ends are the case's v7.end_specifications.set", lo === ends[0] && hi === ends[1],
+    `${lo} / ${hi} against ${JSON.stringify(ends)}`);
+}
 // Oracle: the generations' union at the band ends is the case's adopted band, as its lane publishes it.
 const [bandHead, ...bandRows] = fs.readFileSync(path.join(FISCAL, CASES[CASE], "derived", "main_case_bands.csv"), "utf8")
   .trim().split("\n").map((l) => l.split(","));

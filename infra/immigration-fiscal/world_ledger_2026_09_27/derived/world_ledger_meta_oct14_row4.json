@@ -1,0 +1,739 @@
+{
+ "basis": "row4",
+ "case": "oct14",
+ "channel_factors": {
+  "TOTAL_a": {
+   "add_g": 51.17230236495175,
+   "add_log": -122.57126226311539,
+   "g": 0.8773198401552551,
+   "inv_g": 1.186899618785837,
+   "log": 1.2938515828263795,
+   "mixed": false,
+   "unweighted": -417.11962577903125
+  },
+  "TOTAL_b": {
+   "add_g": -13.705423161386591,
+   "add_log": -636.63563831294,
+   "g": 1.0328572963590235,
+   "inv_g": 0.9744702129733438,
+   "log": 2.5262663249755533,
+   "mixed": true,
+   "unweighted": -417.1196257790312
+  },
+  "crime": {
+   "add_g": -0.4297423123694557,
+   "add_log": -59.305764122493464,
+   "g": 1.0132890402456995,
+   "inv_g": 1.012016761285773,
+   "log": 2.833928527727154,
+   "mixed": false,
+   "unweighted": -32.33809999999999
+  },
+  "displaced_beneficiaries": {
+   "add_g": -1.0827590615201768,
+   "add_log": -35.99980566271182,
+   "g": 1.1228844252230743,
+   "inv_g": 0.8908120557525027,
+   "log": 5.085687743673788,
+   "mixed": false,
+   "unweighted": -8.811198486338885
+  },
+  "fiscal_a": {
+   "add_g": 72.35247977793495,
+   "add_log": 86.48553323843106,
+   "g": 0.8062450061742329,
+   "inv_g": 1.286302082319292,
+   "log": 0.7683976553386813,
+   "mixed": false,
+   "unweighted": -373.4225288820037
+  },
+  "fiscal_b": {
+   "add_g": 7.474754251596664,
+   "add_log": -427.5788428113934,
+   "g": 0.9799831191921509,
+   "inv_g": 1.0490146467640367,
+   "log": 2.145026905825766,
+   "mixed": false,
+   "unweighted": -373.42252888200363
+  },
+  "housing_net": {
+   "add_g": -8.65425368547918,
+   "add_log": -58.69978954923463,
+   "g": -1.467301436121887,
+   "inv_g": 4.540382663797913,
+   "log": -15.735131684189822,
+   "mixed": true,
+   "unweighted": 3.507578587187938
+  },
+  "landlords": {
+   "add_g": -9.27195104335101,
+   "add_log": -13.805130050488199,
+   "g": 0.7518620449171006,
+   "inv_g": 1.3770059261177943,
+   "log": 0.6305441298853564,
+   "mixed": false,
+   "unweighted": 37.36611370176473
+  },
+  "mean": {
+   "g": 0.9799831191921513,
+   "inv_g": 1.0,
+   "log": 2.1450269058257665,
+   "mixed": false
+  },
+  "renters": {
+   "add_g": 0.6176973578718332,
+   "add_log": -44.894659498746435,
+   "g": 0.981756524439656,
+   "inv_g": 1.0492955727092017,
+   "log": 2.3259480762184044,
+   "mixed": false,
+   "unweighted": -33.858535114576824
+  },
+  "unreimbursed_care": {
+   "add_g": 0.2608353039028657,
+   "add_log": -2.32634276073333,
+   "g": 0.9407300254719901,
+   "inv_g": 1.0946497277614453,
+   "log": 1.5286181514118642,
+   "mixed": false,
+   "unweighted": -4.400799999999997
+  },
+  "wages": {
+   "add_g": -11.274257657517229,
+   "add_log": -52.72509340637305,
+   "g": 7.813981864842746,
+   "inv_g": -8.898019407787109,
+   "log": 32.86620717805045,
+   "mixed": true,
+   "unweighted": -1.6545769978766178
+  }
+ },
+ "generation_breakeven": {
+  "G1": {
+   "breakeven_w_all_nonfiscal_on_it": 0.5112981809992393,
+   "breakeven_w_fiscal_only": 0.2706402498688313,
+   "fiscal_cost_central_bn": 61.670899,
+   "fiscal_cost_ends_bn": [
+    49.936319,
+    73.405479
+   ],
+   "row_equal_central_bn": 227.8703889384135
+  },
+  "G2": {
+   "breakeven_w_all_nonfiscal_on_it": 0.6871513208264536,
+   "breakeven_w_fiscal_only": 0.5047428203140599,
+   "fiscal_cost_central_bn": 151.74456650000002,
+   "fiscal_cost_ends_bn": [
+    137.995318,
+    165.493815
+   ],
+   "row_equal_central_bn": 300.63739471436537
+  },
+  "G3+": {
+   "breakeven_w_all_nonfiscal_on_it_g3_upper": 0.7123885437610998,
+   "breakeven_w_all_nonfiscal_on_it_g3_zero": 2.032457459686019,
+   "breakeven_w_fiscal_only_g3_upper": 0.5372210899395947,
+   "breakeven_w_fiscal_only_g3_zero": 1.5327015310826582,
+   "fiscal_cost_central_bn": 168.18517400000002,
+   "fiscal_cost_ends_bn": [
+    151.620381,
+    184.749967
+   ],
+   "row_equal_central_bn_g3_upper": 313.0650995457211,
+   "row_equal_central_bn_g3_zero": 109.73119722872505
+  },
+  "others_nonfiscal_central_bn": -54.83881636779999
+ },
+ "generation_shares": {
+  "pop": {
+   "G1": 0.27791507813329497,
+   "G2": 0.3609246415869774,
+   "G3+": 0.36116028027972774
+  }
+ },
+ "hours_beside": {
+  "G1": {
+   "employment_mx": 0.700946,
+   "employment_us": 0.667628,
+   "hours_mx": 46.3149,
+   "hours_us": 38.6278,
+   "leisure_value_bn": 17.209581037635843
+  },
+  "G2": {
+   "employment_mx": 0.645913,
+   "employment_us": 0.654713,
+   "hours_mx": 44.9332,
+   "hours_us": 37.5452,
+   "leisure_value_bn": 13.71332512262647
+  }
+ },
+ "lambda_hendren_tax_shares": 1.286302082319292,
+ "mexico_consumption_tax": {
+  "by_generation_bn": {
+   "G1": {
+    "central": 12.0619,
+    "high": 9.76408,
+    "low": 14.2655
+   },
+   "G2": {
+    "central": 9.832825,
+    "high": 8.90078,
+    "low": 11.2032
+   },
+   "G3+": {
+    "central": 38.94949297318219,
+    "high": 9.55748,
+    "low": 38.94949297318219
+   }
+  },
+  "source": "SHCP 2026 IVA and IEPS incidence plus the 2024 fuel excise, by household decile x gross pay (mexico.py)",
+  "wdi_check": {
+   "basis": "rate x take-home pay",
+   "by_generation_bn": {
+    "G1": {
+     "central": 8.334320957985664,
+     "high": 6.746619459499299,
+     "low": 9.856921270662008
+    },
+    "G2": {
+     "central": 6.7838618726274555,
+     "high": 6.140825236821057,
+     "low": 7.629309563042104
+    },
+    "G3+": {
+     "central": 26.734223242387248,
+     "high": 6.560080361779762,
+     "low": 26.734223242387248
+    }
+   },
+   "inputs": {
+    "household_consumption_mxn_bn": 23682.189759,
+    "taxes_on_goods_services_mxn_bn": 2065.289532336
+   },
+   "rate": 0.08720855433358408
+  }
+ },
+ "mexico_tax_bound": {
+  "by_generation_bn": {
+   "G1": {
+    "central": 61.2352229961989,
+    "high": 49.56983269763958,
+    "low": 72.42242719742754
+   },
+   "G2": {
+    "central": 49.95645061614956,
+    "high": 45.221097182875965,
+    "low": 56.608682442304314
+   },
+   "G3+": {
+    "central": 197.73411477838633,
+    "high": 48.520268251331,
+    "low": 197.73411477838633
+   }
+  },
+  "inputs": {
+   "gdp_ppp_bn": 3378.87736798299,
+   "labor_income_gross_ppp_bn": 848.1414191227473,
+   "tax_share": 0.14824110677306299
+  }
+ },
+ "mexico_withheld_tax_bn": {
+  "G1": {
+   "central": 7.57299,
+   "high": 6.13032,
+   "low": 8.95651
+  },
+  "G2": {
+   "central": 6.34375,
+   "high": 5.74243,
+   "low": 7.80991
+  },
+  "G3+": {
+   "central": 26.41610470982167,
+   "high": 6.48202,
+   "low": 26.41610470982167
+  }
+ },
+ "pension_accrual_payer": {
+  "alternative_today": {
+   "central_g3_zero": {
+    "equal": {
+     "breakeven_w": 0.5100878822399109,
+     "breakeven_w_us_only": 0.6690978438797157,
+     "future_taxpayers": -10.18405212,
+     "others_today": -416.8602738678014,
+     "world_total": 312.68101076069865
+    },
+    "equal_lambda_1.16": {
+     "breakeven_w": 0.593696305327419,
+     "breakeven_w_us_only": 0.7624059672051646,
+     "future_taxpayers": -11.8135004592,
+     "others_today": -474.78370706780163,
+     "world_total": 259.31885601621786
+    },
+    "equal_lambda_1.5": {
+     "breakeven_w": 0.7713642043883736,
+     "breakeven_w_us_only": 0.9606857292717433,
+     "future_taxpayers": -15.27607818,
+     "others_today": -597.8710026178019,
+     "world_total": 145.92427718419623
+    },
+    "equal_lambda_hendren_a": {
+     "breakeven_w": 0.6596957924235731,
+     "breakeven_w_us_only": 0.836062281413349,
+     "future_taxpayers": -13.099767448404203,
+     "others_today": -520.5077709943168,
+     "world_total": 217.19541063326648
+    },
+    "hendren_a": {
+     "breakeven_w": 0.49848589377367997,
+     "breakeven_w_us_only": 0.6741313399194931,
+     "future_taxpayers": -10.18405212,
+     "others_today": -437.749012757041,
+     "world_total": 333.2358805746269
+    },
+    "hendren_b": {
+     "breakeven_w": 0.4875799786965001,
+     "breakeven_w_us_only": 0.6632254248423133,
+     "future_taxpayers": -10.18405212,
+     "others_today": -430.50247239237956,
+     "world_total": 340.4824209392883
+    },
+    "log_a": {
+     "breakeven_w": NaN,
+     "breakeven_w_us_only": 0.30140800870170775,
+     "future_taxpayers": -7.825401770854927,
+     "others_today": -555.0836960685133,
+     "world_total": 2343.1116186932586
+    },
+    "log_b": {
+     "breakeven_w": 0.012238205723170375,
+     "breakeven_w_us_only": 0.5682583886940897,
+     "future_taxpayers": -7.825401770854927,
+     "others_today": -1053.4530237669821,
+     "world_total": 1844.7422909947895
+    }
+   },
+   "high_outer": {
+    "equal": {
+     "breakeven_w": 0.1785883497636839,
+     "breakeven_w_us_only": 0.3565969876092453,
+     "future_taxpayers": -4.941402977,
+     "others_today": -320.54279015208397,
+     "world_total": 749.7441579539161
+    },
+    "equal_lambda_1.16": {
+     "breakeven_w": 0.2189679389986387,
+     "breakeven_w_us_only": 0.4144504748028105,
+     "future_taxpayers": -5.73202745332,
+     "others_today": -372.5579835968494,
+     "world_total": 712.8876547368308
+    },
+    "equal_lambda_1.5": {
+     "breakeven_w": 0.3047745661229177,
+     "breakeven_w_us_only": 0.5373891350891365,
+     "future_taxpayers": -7.412104465500001,
+     "others_today": -483.0902696669759,
+     "world_total": 634.5675854005242
+    },
+    "equal_lambda_hendren_a": {
+     "breakeven_w": 0.2508431027709666,
+     "breakeven_w_us_only": 0.4601193241901841,
+     "future_taxpayers": -6.356136938893849,
+     "others_today": -413.618153873816,
+     "world_total": 683.793572841046
+    },
+    "hendren_a": {
+     "breakeven_w": 0.17675441015749704,
+     "breakeven_w_us_only": 0.3744742550428675,
+     "future_taxpayers": -4.941402977,
+     "others_today": -348.94416667286384,
+     "world_total": 777.9833475863437
+    },
+    "hendren_b": {
+     "breakeven_w": 0.16986843026635073,
+     "breakeven_w_us_only": 0.36758827515172116,
+     "future_taxpayers": -4.941402977,
+     "others_today": -342.436779626732,
+     "world_total": 784.4907346324756
+    },
+    "log_a": {
+     "breakeven_w": NaN,
+     "breakeven_w_us_only": 0.15015799520301776,
+     "future_taxpayers": -3.79696246161038,
+     "others_today": -434.60459370339527,
+     "world_total": 4059.62465887843
+    },
+    "log_b": {
+     "breakeven_w": NaN,
+     "breakeven_w_us_only": 0.3034443874213423,
+     "future_taxpayers": -3.79696246161038,
+     "others_today": -882.1398234896965,
+     "world_total": 3612.0894290921287
+    }
+   },
+   "low_outer": {
+    "equal": {
+     "breakeven_w": 0.7833070531149546,
+     "breakeven_w_us_only": 0.941690285254233,
+     "future_taxpayers": -15.42670126,
+     "others_today": -511.78233050271876,
+     "world_total": 121.31640360528127
+    },
+    "equal_lambda_1.16": {
+     "breakeven_w": 0.8943352917271097,
+     "breakeven_w_us_only": 1.0601139284509062,
+     "future_taxpayers": -17.8949734616,
+     "others_today": -575.6140034584336,
+     "world_total": 59.15680496268584
+    },
+    "equal_lambda_1.5": {
+     "breakeven_w": 1.1302702987779394,
+     "breakeven_w_us_only": 1.3117641702438376,
+     "future_taxpayers": -23.14005189,
+     "others_today": -711.2563084893278,
+     "world_total": -72.93234215282973
+    },
+    "equal_lambda_hendren_a": {
+     "breakeven_w": 0.9819796525580996,
+     "breakeven_w_us_only": 1.1535961330232607,
+     "future_taxpayers": -19.843397954055646,
+     "others_today": -626.0019610348762,
+     "world_total": 10.088762808365573
+    },
+    "hendren_a": {
+     "breakeven_w": 0.7639548282737673,
+     "breakeven_w_us_only": 0.9388412959173756,
+     "future_taxpayers": -15.42670126,
+     "others_today": -531.989657534395,
+     "world_total": 137.63240813891912
+    },
+    "hendren_b": {
+     "breakeven_w": 0.7502590391619947,
+     "breakeven_w_us_only": 0.9251455068056029,
+     "future_taxpayers": -15.42670126,
+     "others_today": -524.003963851144,
+     "world_total": 145.61810182217005
+    },
+    "log_a": {
+     "breakeven_w": NaN,
+     "breakeven_w_us_only": 0.45016657076618044,
+     "future_taxpayers": -11.85384107779428,
+     "others_today": -721.2635094377221,
+     "world_total": 1820.3918601560754
+    },
+    "log_b": {
+     "breakeven_w": 0.2194339174039522,
+     "breakeven_w_us_only": 0.7874018341086565,
+     "future_taxpayers": -11.85384107779428,
+     "others_today": -1270.4669350524887,
+     "world_total": 1271.1884345413089
+    }
+   }
+  },
+  "rule_future_payers": {
+   "central_g3_zero": {
+    "equal": {
+     "breakeven_w": 0.510087882239911,
+     "breakeven_w_us_only": 0.6690978438797158,
+     "future_taxpayers": -85.31049612000001,
+     "others_today": -341.73382986780143,
+     "world_total": 312.6810107606986
+    },
+    "equal_lambda_1.16": {
+     "breakeven_w": 0.5748628723970169,
+     "breakeven_w_us_only": 0.7435725342747626,
+     "future_taxpayers": -86.9399444592,
+     "others_today": -387.63703202780164,
+     "world_total": 271.3390870562178
+    },
+    "equal_lambda_1.5": {
+     "breakeven_w": 0.7125097264808674,
+     "breakeven_w_us_only": 0.9018312513642371,
+     "future_taxpayers": -90.40252218,
+     "others_today": -485.1813366178021,
+     "world_total": 183.487499184196
+    },
+    "equal_lambda_hendren_a": {
+     "breakeven_w": 0.6259954732661054,
+     "breakeven_w_us_only": 0.8023619622558813,
+     "future_taxpayers": -88.22621144840421,
+     "others_today": -423.8724696398732,
+     "world_total": 238.70426798771012
+    },
+    "hendren_a": {
+     "breakeven_w": 0.4984858937736801,
+     "breakeven_w_us_only": 0.6741313399194933,
+     "future_taxpayers": -85.31049612000001,
+     "others_today": -362.622568757041,
+     "world_total": 333.23588057462683
+    },
+    "hendren_b": {
+     "breakeven_w": 0.48984316669638417,
+     "breakeven_w_us_only": 0.6654886128421974,
+     "future_taxpayers": -85.31049612000001,
+     "others_today": -356.87982546744513,
+     "world_total": 338.9786238642227
+    },
+    "log_a": {
+     "breakeven_w": NaN,
+     "breakeven_w_us_only": 0.3014080087017078,
+     "future_taxpayers": -65.55238519438768,
+     "others_today": -497.3567126449806,
+     "world_total": 2343.1116186932586
+    },
+    "log_b": {
+     "breakeven_w": NaN,
+     "breakeven_w_us_only": 0.5128817812760714,
+     "future_taxpayers": -65.55238519438768,
+     "others_today": -892.3047800479695,
+     "world_total": 1948.1635512902694
+    }
+   },
+   "high_outer": {
+    "equal": {
+     "breakeven_w": 0.17858834976368387,
+     "breakeven_w_us_only": 0.3565969876092453,
+     "future_taxpayers": -80.067846977,
+     "others_today": -245.41634615208395,
+     "world_total": 749.7441579539161
+    },
+    "equal_lambda_1.16": {
+     "breakeven_w": 0.20579870291984947,
+     "breakeven_w_us_only": 0.40128123872402127,
+     "future_taxpayers": -80.85847145332,
+     "others_today": -285.4113085568494,
+     "world_total": 724.9078857768307
+    },
+    "equal_lambda_1.5": {
+     "breakeven_w": 0.2636207033767013,
+     "breakeven_w_us_only": 0.49623527234292014,
+     "future_taxpayers": -82.53854846550001,
+     "others_today": -370.40060366697594,
+     "world_total": 672.1308074005242
+    },
+    "equal_lambda_hendren_a": {
+     "breakeven_w": 0.2272782295715185,
+     "breakeven_w_us_only": 0.436554450990736,
+     "future_taxpayers": -81.48258093889386,
+     "others_today": -316.9828525193724,
+     "world_total": 705.3024301954895
+    },
+    "hendren_a": {
+     "breakeven_w": 0.17675441015749704,
+     "breakeven_w_us_only": 0.3744742550428675,
+     "future_taxpayers": -80.067846977,
+     "others_today": -273.81772267286385,
+     "world_total": 777.9833475863437
+    },
+    "hendren_b": {
+     "breakeven_w": 0.17145971665301518,
+     "breakeven_w_us_only": 0.3691795615383856,
+     "future_taxpayers": -80.067846977,
+     "others_today": -268.8141327017976,
+     "world_total": 782.98693755741
+    },
+    "log_a": {
+     "breakeven_w": NaN,
+     "breakeven_w_us_only": 0.15015799520301776,
+     "future_taxpayers": -61.52394588514313,
+     "others_today": -376.87761027986255,
+     "world_total": 4059.62465887843
+    },
+    "log_b": {
+     "breakeven_w": NaN,
+     "breakeven_w_us_only": 0.26802131720419703,
+     "future_taxpayers": -61.52394588514313,
+     "others_today": -720.9915797706838,
+     "world_total": 3715.510689387609
+    }
+   },
+   "low_outer": {
+    "equal": {
+     "breakeven_w": 0.7833070531149547,
+     "breakeven_w_us_only": 0.941690285254233,
+     "future_taxpayers": -90.55314526000001,
+     "others_today": -436.6558865027188,
+     "world_total": 121.31640360528121
+    },
+    "equal_lambda_1.16": {
+     "breakeven_w": 0.8728649941507703,
+     "breakeven_w_us_only": 1.038643630874567,
+     "future_taxpayers": -93.02141746160001,
+     "others_today": -488.4673284184337,
+     "world_total": 71.17703600268572
+    },
+    "equal_lambda_1.5": {
+     "breakeven_w": 1.0631756188518788,
+     "breakeven_w_us_only": 1.2446694903177768,
+     "future_taxpayers": -98.26649589,
+     "others_today": -598.5666424893279,
+     "world_total": -35.36912015282985
+    },
+    "equal_lambda_hendren_a": {
+     "breakeven_w": 0.9435609594073451,
+     "breakeven_w_us_only": 1.115177439872506,
+     "future_taxpayers": -94.96984195405565,
+     "others_today": -529.3666596804328,
+     "world_total": 31.59762016280888
+    },
+    "hendren_a": {
+     "breakeven_w": 0.7639548282737673,
+     "breakeven_w_us_only": 0.9388412959173756,
+     "future_taxpayers": -90.55314526000001,
+     "others_today": -456.8632135343949,
+     "world_total": 137.63240813891912
+    },
+    "hendren_b": {
+     "breakeven_w": 0.7528381122424204,
+     "breakeven_w_us_only": 0.9277245798860287,
+     "future_taxpayers": -90.55314526000001,
+     "others_today": -450.38131692620954,
+     "world_total": 144.11430474710448
+    },
+    "log_a": {
+     "breakeven_w": NaN,
+     "breakeven_w_us_only": 0.45016657076618044,
+     "future_taxpayers": -69.58082450132703,
+     "others_today": -663.5365260141893,
+     "world_total": 1820.3918601560754
+    },
+    "log_b": {
+     "breakeven_w": 0.15592867631424845,
+     "breakeven_w_us_only": 0.7238965930189528,
+     "future_taxpayers": -69.58082450132703,
+     "others_today": -1109.318691333476,
+     "world_total": 1374.6096948367888
+    }
+   }
+  }
+ },
+ "pins": {
+  "basis": "lineage",
+  "dirs": {
+   "distribution": "infra/immigration-fiscal/distribution_weights_2026_09_23/derived/oct14",
+   "winners": "infra/immigration-fiscal/winners_losers_2026_09_24/derived/oct14"
+  },
+  "distribution": "17d3735a8de11fbbeab32e93a1626c69cb6c2028",
+  "files": {
+   "generation": {
+    "generation_corrections.json": "generation_corrections_oct14.json",
+    "generation_results.csv": "generation_results_oct14.csv"
+   }
+  },
+  "generation": "1a02fbbb48b16904c3d490866359c4b6332aa44b",
+  "main_case": "148ed1eaede17b38ceeb5b6ecd055ece441e8c5e",
+  "model": "adopted_2026_10_14",
+  "winners": "2204a2bc0996c3a614262cca55842d0027134417"
+ },
+ "saving_leak": {
+  "a": {
+   "breakeven_w_us_only_equal": {
+    "tau_0.093_m_1.0": 0.6810174840015556,
+    "tau_0.093_m_1.1025": 0.6822396742235303,
+    "tau_0.29_m_1.0": 0.7062666141521192,
+    "tau_0.29_m_1.4085": 0.7214482245450728
+   },
+   "leak_bn": {
+    "tau_0.093_m_1.0": -7.607578963837277,
+    "tau_0.093_m_1.1025": -8.387628405553777,
+    "tau_0.29_m_1.0": -23.722558059277528,
+    "tau_0.29_m_1.4085": -33.41205360461624
+   },
+   "leak_per_dollar": {
+    "tau_0.093_m_1.0": 0.020439189553115807,
+    "tau_0.093_m_1.1025": 0.022534938867823377,
+    "tau_0.29_m_1.0": 0.06373510720864069,
+    "tau_0.29_m_1.4085": 0.0897677566318883
+   },
+   "payer_saving_rate": 0.2197762317539334
+  },
+  "b": {
+   "breakeven_w_us_only_equal": {
+    "tau_0.093_m_1.0": 0.6729701270142383,
+    "tau_0.093_m_1.1025": 0.6733671747887814,
+    "tau_0.29_m_1.0": 0.6811727052669365,
+    "tau_0.29_m_1.4085": 0.6861046909039703
+   },
+   "leak_bn": {
+    "tau_0.093_m_1.0": -2.471442041462267,
+    "tau_0.093_m_1.1025": -2.724853408447924,
+    "tau_0.29_m_1.0": -7.706647226065133,
+    "tau_0.29_m_1.4085": -10.854432712767794
+   },
+   "leak_per_dollar": {
+    "tau_0.093_m_1.0": 0.00663999316932588,
+    "tau_0.093_m_1.1025": 0.007320830396169657,
+    "tau_0.29_m_1.0": 0.02070535504413446,
+    "tau_0.29_m_1.4085": 0.02916247189314713
+   },
+   "payer_saving_rate": 0.07139777601425677
+  },
+  "breakeven_w_us_only_equal": 0.6690978438797158,
+  "inputs": {
+   "capital_tax": [
+    0.093,
+    0.29
+   ],
+   "group_saving": 0.0,
+   "return_over_discount": {
+    "tau_0.093": [
+     1.0,
+     1.1025358324145533
+    ],
+    "tau_0.29": [
+     1.0,
+     1.4084507042253522
+    ]
+   },
+   "saving_by_percentile": [
+    [
+     1,
+     50,
+     0.0
+    ],
+    [
+     51,
+     90,
+     0.12
+    ],
+    [
+     91,
+     99,
+     0.2
+    ],
+    [
+     100,
+     100,
+     0.54
+    ]
+   ],
+   "theta": 1.0
+  },
+  "tax_financed_central_bn": -372.20550962000135
+ },
+ "short_run_block": {
+  "G1_G2": {
+   "fixed_factor_owners_loss_bn": -295.85531124404,
+   "mexico_employed_m": 65.8750172438422,
+   "mexico_net_bn": -30.037382811090765,
+   "premium_rise_G1_bn": 9.961817105393347,
+   "premium_rise_G2_bn": 7.335022874684625,
+   "scale": 1.3333980866541753,
+   "shock_m": 0.21334369386466806,
+   "stayer_workers_gain_bn": 265.81792843294926,
+   "workers_m": 14.0540195122
+  },
+  "G1_G2_G3": {
+   "fixed_factor_owners_loss_bn": -438.74192897402156,
+   "mexico_employed_m": 65.8750172438422,
+   "mexico_net_bn": -60.74071928817996,
+   "premium_rise_G1_bn": 14.166008059376011,
+   "premium_rise_G2_bn": 10.430626466955891,
+   "scale": 1.8961327880305185,
+   "shock_m": 0.303381246084883,
+   "stayer_workers_gain_bn": 378.0012096858416,
+   "workers_m": 19.9852448173
+  }
+ }
+}

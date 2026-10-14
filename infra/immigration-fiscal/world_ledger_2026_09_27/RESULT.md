@@ -3178,5 +3178,404 @@ Log (times from `date` or file mtimes, JST):
 - 01:36:14–01:38:03: the rerun, 34 commands, IDENTICAL, 137/137 files, exit 0.
 - 01:38:37–01:43:34: the other scripts' footprints: `beside_arms.py` 5.595 GB, `mexico.py` 3.740 GB.
 - 01:49:43–01:51:36: after the read edits, the rerun, 34 commands, IDENTICAL, 137/137 files, exit 0.
+
+## Live case oct14 propagation (2026-10-14)
+
+**Status: code prepared; final outputs pending.** The lane computes only oct14. Earlier case outputs and pin entries
+are retained as historical records. `generation_lines.cjs` evaluates the generation lane's oct14 split using the
+case's personal `MAIN_SPECS` and gates its ends against `summary.json` `v7.end_specifications.set`. The residual
+decomposition reads each row's allocation rather than assigning the low end to shared. The new receipt lines take
+the existing receipt class, tax. The pension bridge reads the v7 set and cash bands. The extra scenarios read the
+oct14 debt split and gate its cost against the committed v7 band at absolute 1e-6, with relative tolerance zero.
+
+The parent's committed oct14 generation, winners, distribution and case pins belong in `pins.json`. Pending pins
+are explicitly null and stop before computation. The extra scenarios also stop if the live debt split or live
+world/beside files are absent. Generation lines and the residual can run with the generation and case pins alone;
+valuation needs winners too; the world ledger needs distribution too. Complete lane finalization waits for those
+upstream migrations and the debt lane. No historical case is substituted. Final builds, gates and reproducibility
+checks also wait for the parent's `CASE_FINAL` marker. No final oct14 numbers have been recorded here.
+
+Reproduce the live route after all dependencies are committed and pinned (the acquisition commands use their
+already staged sources; no new acquisition is required):
+
+```sh
+L=infra/immigration-fiscal/world_ledger_2026_09_27
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 scripts/rerun_lane.py "$L" \
+  "uv run --no-project python3 {lane}/acquire.py" \
+  "uv run --no-project python3 {lane}/acquire_beside.py" \
+  "sh {lane}/run_all.sh oct14" \
+  "uv run --no-project python3 -m pytest {lane}/test_beside_arms.py {lane}/test_beside_extra.py {lane}/test_live_contract.py -q" \
+  --allow-unrun "$L/population_basis.py"
+```
+
+Log (times from `date`):
+- 2026-10-14 17:12 JST — code moved to oct14; the pre-fix generation-lines probe stopped on unknown case (exit 1).
+  After migration, generation lines stop on the missing oct14 generation pin; valuation and the world ledger stop
+  on their missing oct14 pins; extra scenarios stop on missing live debt/generation/world/beside inputs (all exit 1,
+  nothing written). Node and shell syntax checks pass; all Python files parse. The isolated live-contract tests
+  pass, five tests, including personal low-end residual replay, preservation of historical valuation dispatch,
+  missing-input stops and the absolute debt-gate tolerance. CASE_FINAL remains absent; producers and the full rerun
+  have not been run.
+- 2026-10-14 18:16 JST — CASE_FINAL received; the adopted case pin is now
+  `148ed1eaede17b38ceeb5b6ecd055ece441e8c5e`. Re-read the final decision and Consumers R5–R9. R6's added-people
+  credits, R8's white-end tax keys and R9's row-4 shifts travel in the committed generation payloads; this lane
+  applies those payloads whole and evaluates every line through the case package, so no separate item allocation
+  is performed here. The final case source (not an executed world-ledger result) is $339.552–423.649bn, cash
+  $264.426–348.523bn [DATA: committed `main_case_2026_10_14/derived/summary.json`, `v7.band_bn` =
+  `[339.55201782952685, 423.64926070050683]`, `v7.cash_set_bn` = `[264.4255736155055, 348.52281648648557]`;
+  `main_case_bands.csv` profile `long_run_non_school_full`, variants `adopted` and `cash_set`]. Summary bytes
+  match the adopted commit. Five isolated tests and the syntax/AST/JSON/diff checks pass again. Generation lines
+  stop on the missing committed generation pin; valuation and world ledger stop on their missing upstream pins;
+  extra scenarios stop on missing oct14 debt/world/beside inputs (all exit 1, no output). Generation, winners and
+  distribution pins remain null, with no invented commits. The lane stays STOPPED for those dependencies;
+  complete final gates and reproducibility remain pending the parent's later resumption. No derived files changed.
+- 2026-10-14 19:01 JST — generation is now available at the parent's actual commit
+  `1a02fbbb48b16904c3d490866359c4b6332aa44b` (`[analysis] Split main case v7 by generation`). Read-only SHA-256
+  comparison against `git show` matched all 19 selected files: the lane's nine CJS sources, `run_all.sh`, three
+  base generation models and six oct14 set/cash correction/result/summary outputs. Filled only the oct14 generation
+  pin; the actual case pin is preserved, winners/distribution remain null. Pins JSON validates. Per the parent's
+  instruction, no interim generation-line/residual producers ran: the complete world route waits for winners,
+  distribution and debt inputs and the later resumption. Full lane remains STOPPED; no world derived files changed
+  and no final world gates/reproducibility are claimed.
+- 2026-10-14 19:04 JST — correction to the remaining dependencies: the debt input is available. The concrete file
+  `debt_legacy_2026_09_23/derived/oct14/federal_split_2024.csv`, the only debt file `beside_extra.py` reads, matches
+  commit `6b1250b9959b692a63d124c579b87c4e86c33015` byte for byte (SHA-256
+  `5be5324e6679355de30f0d4135453dbb0d0dee17f33ab68db5814d3040f39d23`). Its central rows for profile
+  `long_run_non_school_full` have both ends, all fields `fiscal_parts()` reads, and net costs 339.552018 / 423.649261;
+  the maximum absolute difference from the committed case's `v7.band_bn` is 2.995e-7bn, below 1e-6. This is a
+  read-only file/contract check, not a world producer or full lane gate. The remaining external dependencies are
+  winners and distribution only; the full world route remains STOPPED until those committed inputs and the parent's
+  resumption arrive. Historical log entries above describe what was missing at those times. Provenance guards are
+  preserved; no producers, parent-file edits or Git writes occurred.
 - 01:52:07–01:53:02: the footprints after the fix: `mexico.py` 0.992 GB, `g2_premium.py` 0.731 GB, `beside_arms.py`
   1.405 GB, `beside_extra.py` 1.077 GB, `world_ledger.py` 0.076 GB. 02:03:28: `beside_arms.py` again, 1.374 GB.
+
+## Confirmed world ledger v7 (oct14), 2026-10-14
+
+**Verdict:** The complete live route passes on adopted v7. The world and US-resident readings below are modelled annual surpluses under the lane's existing counterfactuals, values and weights; they are separate from the fiscal case cost. R1 remains the recommended reading. Same-person pay remains a parameter, never a reading or a low end. [FRAMING-SENSITIVE: service values, Mexican counterfactual pay, fiscal alternatives and weights.]
+
+The live pins are winners `2204a2bc0996c3a614262cca55842d0027134417`, distribution `17d3735a8de11fbbeab32e93a1626c69cb6c2028`, generation `1a02fbbb48b16904c3d490866359c4b6332aa44b` and main case `148ed1eaede17b38ceeb5b6ecd055ece441e8c5e`; model `adopted_2026_10_14`, basis `lineage`. Only winners/distribution and `_pending` changed in this round. Inputs read through git show stay pinned; working-tree package/module and staged-source provenance guards stay in force. [DATA: `pins.json`]
+
+### Fiscal oracle, set and cash
+
+| Fiscal case, $bn cost | Low | High |
+|---|---|---|
+| adopted | 339.552 | 423.649 |
+| cash_set | 264.426 | 348.523 |
+
+[DATA: `../main_case_2026_10_14/derived/main_case_bands.csv`, profile `long_run_non_school_full`, variants `adopted`/`cash_set`, fields `cost_low_bn`/`cost_high_bn`.] The world route reports a set-based world account; it reports the cash set in its pension bridge, and private gain both without and with earned old-age accrual below. It does not produce a separate cash-world account.
+
+### R1 and every named reading
+
+| Reading key | World / US, λ 1 | World / US, λ 1.16 | World / US, θ central | Group $/member, λ 1 | w world, λ 1 | w US, λ 1 |
+|---|---|---|---|---|---|---|
+| baseline | 316.1 / 217.1 | 274.3 / 169.6 | 292.3 / 190.4 | 15,067 | 0.51 | 0.66 |
+| reading1 | 282.1 / 159.4 | 244.2 / 111.9 | 260.4 / 132.7 | 13,717 | 0.52 | 0.73 |
+| reading1_deflated | 288.4 / 164.4 | 250.6 / 116.9 | 266.7 / 137.7 | 13,835 | 0.51 | 0.72 |
+| reading2 | 73.4 / -11.8 | 29.5 / -59.3 | 48.6 / -38.5 | 9,713 | 0.82 | 1.03 |
+| reading2_consumption | 90.3 / 1.7 | 46.9 / -45.8 | 65.7 / -25.0 | 10,029 | 0.79 | 1.00 |
+| reading1_same_person_cmp | 250.0 / 133.7 | 211.1 / 86.1 | 227.8 / 106.9 | 13,115 | 0.55 | 0.76 |
+| reading3_mmp_annual | 218.2 / 108.1 | 178.3 / 60.6 | 195.5 / 81.4 | 12,518 | 0.59 | 0.80 |
+| reading3 | 174.2 / 72.8 | 132.9 / 25.3 | 150.7 / 46.1 | 11,692 | 0.65 | 0.85 |
+| combined_low | -6.1 / -75.6 | -52.6 / -123.1 | -32.3 / -102.3 | 8,220 | 1.02 | 1.22 |
+| combined_low_consumption | 1.8 / -69.3 | -44.4 / -116.8 | -24.2 / -96.0 | 8,368 | 0.99 | 1.19 |
+
+Every pair is **world / all US residents including the group**, $bn annual surplus. R1 = `reading1` (1a + 2 + 3); R2 = `reading2` (urban p70 + 2 + 5 + 3a + 3b). The keys `reading1_same_person_cmp`, `reading3_mmp_annual`, `reading3`, `combined_low` and `combined_low_consumption` are same-person parameters under the preserved 2026-10-08 ruling. `reading2_consumption` is the consumption-PPP twin for its private gain. [DATA: `derived/beside_extra_summary_oct14.csv`, `scenario`, `weighting`, `world_total_bn`, `us_residents_incl_group_bn`, `group_per_member_usd`, `breakeven_w`, `breakeven_w_us_only`; `label`/`arm` give each row's interpretation.]
+
+### Full world readings, including the row-4 companion
+
+All scenarios, public-good conventions and Mexican-tax conventions the world route reports follow. Each pair is world / all US residents including the group ($bn). The latter is `us_residents_total + group_total` (equivalently `world_total - mexico_residents`), using the same file's unrounded stored values. Each displayed result is rounded once; rounded parts need not add exactly.
+
+#### Lineage, 42.75M
+
+| Public goods | Mexico taxes | Scenario | λ 1 | λ 1.16 | λ 1.5 | λ_h | Hendren a | Hendren b | log a | log b |
+|---|---|---|---|---|---|---|---|---|---|---|
+| average_cost | withheld | low_outer | 123.9 / -34.5 | 84.9 / -88.7 | 2.0 / -204.1 | 54.1 / -131.6 | 148.8 / -33.3 | 155.3 / -26.8 | 2,215.6 / 673.8 | 1,769.8 / 228.1 |
+| average_cost | withheld | central_g3_zero | 316.1 / 148.0 | 285.4 / 100.5 | 220.1 / -0.5 | 261.1 / 62.9 | 344.9 / 151.6 | 350.7 / 157.4 | 2,717.1 / 1,089.2 | 2,322.2 / 694.3 |
+| average_cost | withheld | high_outer | 807.5 / 606.3 | 788.8 / 565.5 | 749.2 / 478.9 | 774.1 / 533.4 | 841.3 / 609.9 | 846.3 / 615.0 | 4,394.0 / 2,473.2 | 4,049.8 / 2,129.1 |
+| average_cost | withheld | central_g3_upper | 622.3 / 430.0 | 595.4 / 382.5 | 538.4 / 281.5 | 574.3 / 345.0 | 659.3 / 438.2 | 665.0 / 444.0 | 3,945.6 / 2,103.8 | 3,550.7 / 1,708.9 |
+| average_cost | withheld_consumption | low_outer | 123.9 / 38.2 | 73.3 / -16.1 | -34.3 / -131.4 | 33.3 / -58.9 | 139.9 / 41.3 | 146.3 / 47.8 | 1,808.4 / 910.1 | 1,362.6 / 464.3 |
+| average_cost | withheld_consumption | central_g3_zero | 316.1 / 217.1 | 274.3 / 169.6 | 185.6 / 68.6 | 241.4 / 132.0 | 336.3 / 222.5 | 342.1 / 228.3 | 2,337.5 / 1,321.4 | 1,942.5 / 926.4 |
+| average_cost | withheld_consumption | high_outer | 807.5 / 636.6 | 784.0 / 595.8 | 734.1 / 509.1 | 765.4 / 563.6 | 837.8 / 641.3 | 842.8 / 646.3 | 4,326.9 / 2,674.0 | 3,982.8 / 2,329.8 |
+| average_cost | withheld_consumption | central_g3_upper | 622.3 / 463.5 | 590.1 / 416.0 | 521.7 / 315.0 | 564.7 / 378.5 | 655.5 / 472.9 | 661.2 / 478.7 | 3,853.0 / 2,307.6 | 3,458.0 / 1,912.7 |
+| average_cost | proportional | low_outer | 123.9 / 285.4 | 33.7 / 231.2 | -157.9 / 115.8 | -37.5 / 188.3 | 109.5 / 295.3 | 116.0 / 301.8 | 690.0 / 1,980.5 | 244.2 / 1,534.8 |
+| average_cost | proportional | central_g3_zero | 316.1 / 452.9 | 236.6 / 405.4 | 67.7 / 304.4 | 173.8 / 367.8 | 307.1 / 464.5 | 312.9 / 470.3 | 1,305.9 / 2,377.6 | 911.0 / 1,982.7 |
+| average_cost | proportional | high_outer | 807.5 / 740.2 | 767.4 / 699.4 | 682.3 / 612.7 | 735.8 / 667.2 | 825.9 / 748.5 | 830.9 / 753.6 | 4,277.6 / 3,542.0 | 3,933.5 / 3,197.9 |
+| average_cost | proportional | central_g3_upper | 622.3 / 578.3 | 571.7 / 530.7 | 464.3 / 429.7 | 531.8 / 493.2 | 642.5 / 591.9 | 648.2 / 597.6 | 3,722.2 / 3,192.8 | 3,327.3 / 2,797.9 |
+| response_only | withheld | low_outer | -19.3 / -177.7 | -58.3 / -231.9 | -141.2 / -347.3 | -89.1 / -274.8 | 0.7 / -181.3 | 7.2 / -174.9 | 1,954.8 / 413.1 | 1,509.1 / -32.6 |
+| response_only | withheld | central_g3_zero | 186.9 / 18.8 | 156.2 / -28.7 | 91.0 / -129.7 | 131.9 / -66.3 | 211.4 / 18.1 | 217.1 / 23.8 | 2,504.9 / 877.0 | 2,109.9 / 482.1 |
+| response_only | withheld | high_outer | 692.3 / 491.2 | 673.7 / 450.4 | 634.0 / 363.7 | 658.9 / 418.2 | 722.2 / 490.9 | 727.2 / 495.9 | 4,254.4 / 2,333.6 | 3,910.2 / 1,989.5 |
+| response_only | withheld | central_g3_upper | 493.1 / 300.8 | 466.2 / 253.3 | 409.2 / 152.3 | 445.1 / 215.8 | 525.7 / 304.7 | 531.5 / 310.4 | 3,761.6 / 1,919.9 | 3,366.7 / 1,524.9 |
+| response_only | withheld_consumption | low_outer | -19.3 / -105.0 | -70.0 / -159.3 | -177.5 / -274.6 | -109.9 / -202.1 | -8.2 / -106.7 | -1.7 / -100.2 | 1,554.2 / 655.9 | 1,108.4 / 210.1 |
+| response_only | withheld_consumption | central_g3_zero | 186.9 / 87.9 | 145.1 / 40.4 | 56.4 / -60.6 | 112.2 / 2.8 | 202.8 / 89.0 | 208.5 / 94.7 | 2,132.1 / 1,116.1 | 1,737.2 / 721.1 |
+| response_only | withheld_consumption | high_outer | 692.3 / 521.4 | 668.8 / 480.6 | 618.9 / 393.9 | 650.3 / 448.4 | 718.7 / 522.2 | 723.7 / 527.2 | 4,197.0 / 2,544.0 | 3,852.9 / 2,199.9 |
+| response_only | withheld_consumption | central_g3_upper | 493.1 / 334.3 | 460.9 / 286.8 | 392.5 / 185.8 | 435.5 / 249.3 | 521.9 / 339.4 | 527.7 / 345.1 | 3,678.1 / 2,132.8 | 3,283.2 / 1,737.8 |
+| response_only | proportional | low_outer | -19.3 / 142.2 | -109.5 / 87.9 | -301.1 / -27.4 | -180.7 / 45.1 | -38.6 / 147.2 | -32.1 / 153.7 | 475.0 / 1,765.5 | 29.2 / 1,319.7 |
+| response_only | proportional | central_g3_zero | 186.9 / 323.7 | 107.4 / 276.2 | -61.5 / 175.2 | 44.7 / 238.6 | 173.6 / 330.9 | 179.3 / 336.7 | 1,142.1 / 2,213.7 | 747.1 / 1,818.8 |
+| response_only | proportional | high_outer | 692.3 / 625.0 | 652.2 / 584.2 | 567.1 / 497.6 | 620.6 / 552.0 | 706.8 / 629.5 | 711.9 / 634.5 | 4,201.9 / 3,466.3 | 3,857.8 / 3,122.2 |
+| response_only | proportional | central_g3_upper | 493.1 / 449.1 | 442.5 / 401.5 | 335.1 / 300.5 | 402.6 / 364.0 | 508.9 / 458.3 | 514.7 / 464.1 | 3,598.8 / 3,069.4 | 3,203.9 / 2,674.4 |
+
+[DATA: `derived/world_ledger_oct14.csv`, all 192 world-total reading/weighting rows and matching `us_residents_total`/`group_total` rows. Scenarios retain `low_outer`, `central_g3_zero`, `high_outer`, `central_g3_upper`; neither outer span is a confidence interval.]
+
+#### Row 4, 39.71M person rows, beside
+
+| Public goods | Mexico taxes | Scenario | λ 1 | λ 1.16 | λ 1.5 | λ_h | Hendren a | Hendren b | log a | log b |
+|---|---|---|---|---|---|---|---|---|---|---|
+| average_cost | withheld | low_outer | 121.3 / -31.8 | 81.5 / -86.1 | -3.2 / -201.4 | 50.0 / -128.9 | 145.5 / -30.6 | 151.9 / -24.1 | 2,173.4 / 678.0 | 1,727.6 / 232.3 |
+| average_cost | withheld | central_g3_zero | 312.7 / 150.4 | 281.1 / 102.8 | 213.9 / 1.8 | 256.1 / 65.3 | 340.7 / 154.0 | 346.4 / 159.8 | 2,668.6 / 1,091.5 | 2,273.7 / 696.6 |
+| average_cost | withheld | high_outer | 749.7 / 559.0 | 729.4 / 518.3 | 686.2 / 431.6 | 713.4 / 486.1 | 781.2 / 561.9 | 786.2 / 566.9 | 4,122.9 / 2,294.6 | 3,778.8 / 1,950.5 |
+| average_cost | withheld | central_g3_upper | 565.3 / 383.1 | 536.9 / 335.5 | 476.5 / 234.5 | 514.5 / 298.0 | 600.1 / 390.5 | 605.8 / 396.2 | 3,682.3 / 1,928.7 | 3,287.4 / 1,533.7 |
+| average_cost | withheld_consumption | low_outer | 121.3 / 32.6 | 71.2 / -21.6 | -35.4 / -137.0 | 31.6 / -64.5 | 137.6 / 35.7 | 144.1 / 42.1 | 1,820.4 / 895.4 | 1,374.6 / 449.6 |
+| average_cost | withheld_consumption | central_g3_zero | 312.7 / 211.2 | 271.3 / 163.7 | 183.5 / 62.7 | 238.7 / 126.1 | 333.2 / 216.5 | 339.0 / 222.3 | 2,343.1 / 1,304.7 | 1,948.2 / 909.7 |
+| average_cost | withheld_consumption | high_outer | 749.7 / 587.3 | 724.9 / 546.5 | 672.1 / 459.8 | 705.3 / 514.3 | 778.0 / 591.1 | 783.0 / 596.1 | 4,059.6 / 2,481.2 | 3,715.5 / 2,137.1 |
+| average_cost | withheld_consumption | central_g3_upper | 565.3 / 414.5 | 531.9 / 367.0 | 460.8 / 266.0 | 505.5 / 329.5 | 596.6 / 423.1 | 602.3 / 428.9 | 3,593.6 / 2,118.4 | 3,198.6 / 1,723.5 |
+| average_cost | proportional | low_outer | 121.3 / 251.8 | 36.1 / 197.5 | -145.0 / 82.2 | -31.1 / 154.7 | 111.0 / 261.1 | 117.5 / 267.6 | 861.4 / 1,876.8 | 415.6 / 1,431.1 |
+| average_cost | proportional | central_g3_zero | 312.7 / 418.9 | 238.1 / 371.4 | 79.6 / 270.4 | 179.2 / 333.9 | 307.8 / 430.0 | 313.5 / 435.7 | 1,470.3 / 2,271.3 | 1,075.4 / 1,876.3 |
+| average_cost | proportional | high_outer | 749.7 / 684.0 | 709.4 / 643.2 | 623.8 / 556.5 | 677.6 / 611.0 | 767.0 / 691.4 | 772.0 / 696.4 | 4,010.4 / 3,288.5 | 3,666.3 / 2,944.3 |
+| average_cost | proportional | central_g3_upper | 565.3 / 522.4 | 514.6 / 474.9 | 406.9 / 373.9 | 474.6 / 437.3 | 584.5 / 535.1 | 590.2 / 540.8 | 3,464.1 / 2,943.9 | 3,069.2 / 2,549.0 |
+| response_only | withheld | low_outer | -23.0 / -176.1 | -62.8 / -230.3 | -147.4 / -345.7 | -94.2 / -273.2 | -3.7 / -179.7 | 2.8 / -173.3 | 1,912.1 / 416.8 | 1,466.3 / -29.0 |
+| response_only | withheld | central_g3_zero | 182.4 / 20.1 | 150.8 / -27.5 | 83.6 / -128.5 | 125.9 / -65.0 | 206.0 / 19.4 | 211.8 / 25.1 | 2,456.8 / 879.7 | 2,061.9 / 484.7 |
+| response_only | withheld | high_outer | 633.5 / 442.8 | 613.2 / 402.0 | 570.0 / 315.3 | 597.1 / 369.8 | 661.0 / 441.7 | 666.0 / 446.7 | 3,979.1 / 2,150.8 | 3,635.0 / 1,806.7 |
+| response_only | withheld | central_g3_upper | 435.1 / 252.8 | 406.7 / 205.3 | 346.3 / 104.3 | 384.2 / 167.8 | 465.4 / 255.8 | 471.2 / 261.6 | 3,493.8 / 1,740.2 | 3,098.8 / 1,345.2 |
+| response_only | withheld_consumption | low_outer | -23.0 / -111.6 | -73.1 / -165.9 | -179.7 / -281.3 | -112.7 / -208.8 | -11.5 / -113.5 | -5.0 / -107.0 | 1,565.4 / 640.4 | 1,119.6 / 194.6 |
+| response_only | withheld_consumption | central_g3_zero | 182.4 / 80.9 | 141.1 / 33.4 | 53.2 / -67.6 | 108.4 / -4.1 | 198.6 / 81.9 | 204.3 / 87.6 | 2,137.9 / 1,099.5 | 1,742.9 / 704.5 |
+| response_only | withheld_consumption | high_outer | 633.5 / 471.0 | 608.7 / 430.2 | 555.9 / 343.6 | 589.0 / 398.0 | 657.8 / 471.0 | 662.8 / 476.0 | 3,924.8 / 2,346.3 | 3,580.7 / 2,002.2 |
+| response_only | withheld_consumption | central_g3_upper | 435.1 / 284.3 | 401.6 / 236.7 | 330.5 / 135.7 | 375.2 / 199.2 | 461.9 / 288.5 | 467.7 / 294.2 | 3,413.5 / 1,938.4 | 3,018.6 / 1,543.4 |
+| response_only | proportional | low_outer | -23.0 / 107.5 | -108.2 / 53.2 | -289.2 / -62.1 | -175.4 / 10.4 | -38.1 / 112.0 | -31.6 / 118.4 | 643.5 / 1,658.9 | 197.7 / 1,213.2 |
+| response_only | proportional | central_g3_zero | 182.4 / 288.7 | 107.8 / 241.1 | -50.7 / 140.1 | 49.0 / 203.6 | 173.1 / 295.3 | 178.9 / 301.1 | 1,304.5 / 2,105.5 | 909.6 / 1,710.5 |
+| response_only | proportional | high_outer | 633.5 / 567.7 | 593.2 / 527.0 | 507.5 / 440.3 | 561.4 / 494.8 | 646.9 / 571.3 | 651.9 / 576.3 | 3,925.9 / 3,203.9 | 3,581.7 / 2,859.8 |
+| response_only | proportional | central_g3_upper | 435.1 / 392.1 | 384.4 / 344.6 | 276.6 / 243.6 | 344.3 / 307.1 | 449.8 / 400.4 | 455.6 / 406.2 | 3,331.7 / 2,811.5 | 2,936.7 / 2,416.5 |
+
+[DATA: `derived/world_ledger_oct14_row4.csv`, all 192 world-total reading/weighting rows and matching `us_residents_total`/`group_total` rows. Scenarios retain `low_outer`, `central_g3_zero`, `high_outer`, `central_g3_upper`; neither outer span is a confidence interval.]
+
+### Beside arms, all reported weightings
+
+| Arm/scenario key | λ 1 | λ 1.16 | λ_h |
+|---|---|---|---|
+| baseline | 316.1 / 217.1 | 274.3 / 169.6 | 241.4 / 132.0 |
+| arm1_metros | 304.5 / 215.8 | 261.1 / 168.3 | 226.9 / 130.8 |
+| arm1_metros_nominal | 295.2 / 208.4 | 251.5 / 160.9 | 217.0 / 123.3 |
+| arm1_metros_coneval | 307.9 / 218.5 | 264.6 / 171.0 | 230.5 / 133.5 |
+| arm1_metros_national_schooling | 304.7 / 215.9 | 261.3 / 168.3 | 227.1 / 130.8 |
+| arm1_cdmx | 326.1 / 236.2 | 282.9 / 188.7 | 248.8 / 151.2 |
+| arm1_guadalajara | 285.4 / 192.2 | 242.7 / 144.6 | 209.0 / 107.1 |
+| arm1_monterrey | 249.2 / 176.5 | 203.3 / 129.0 | 167.0 / 91.5 |
+| arm1_large_localities | 299.6 / 210.2 | 256.3 / 162.7 | 222.2 / 125.1 |
+| arm2_state_rpp | 299.0 / 199.1 | 257.3 / 151.6 | 224.5 / 114.1 |
+| arm2_metro_rpp | 300.5 / 201.3 | 258.7 / 153.8 | 225.8 / 116.3 |
+| arm2_state_rpp_budget | 294.1 / 194.2 | 252.4 / 146.7 | 219.6 / 109.2 |
+| arm3a | 263.2 / 164.3 | 221.5 / 116.7 | 188.5 / 79.2 |
+| arm3a_mexico_health_lane | 265.5 / 166.6 | 223.8 / 119.0 | 190.8 / 81.5 |
+| arm3b | 186.9 / 87.9 | 145.1 / 40.4 | 112.2 / 2.8 |
+| arm3 | 134.0 / 35.1 | 92.3 / -12.4 | 59.3 / -50.0 |
+| arm3b_icp | 224.7 / 125.8 | 183.0 / 78.2 | 150.0 / 40.7 |
+| arm3_icp | 171.9 / 73.0 | 130.2 / 25.4 | 97.2 / -12.1 |
+| arm3_low | 37.8 / -61.1 | -3.9 / -108.7 | -36.9 / -146.2 |
+| arm3_high | 195.1 / 96.1 | 153.4 / 48.6 | 120.4 / 11.1 |
+| arm3c_fhl | 96.2 / -2.8 | 54.4 / -50.3 | 21.5 / -87.9 |
+| arm3c_fhl_low | 78.2 / -20.8 | 36.4 / -68.3 | 3.5 / -105.9 |
+| arm3c_fhl_high | 103.4 / 4.5 | 61.7 / -43.1 | 28.7 / -80.6 |
+| combined | 105.4 / 15.8 | 62.2 / -31.7 | 28.0 / -69.3 |
+| combined_cdmx | 127.0 / 36.1 | 84.0 / -11.4 | 50.0 / -48.9 |
+| combined_icp | 143.3 / 53.7 | 100.0 / 6.1 | 65.9 / -31.4 |
+
+[DATA: `derived/beside_arms_summary_oct14.csv`, all 78 rows; `world_total_bn` / `us_residents_incl_group_bn`. `label` and `arm` define the scenarios; all remain beside the main case.]
+
+### Beside extras, all reported weightings
+
+Every extra scenario is shown. `—` means that weighting has no row in this summary file; the preceding arm table contains the original arm's three base weightings. Each pair remains world / all US residents including the group ($bn). The θ variants are fiscal-alternative sensitivities, never sums to add to one another.
+
+| Extra/scenario key | λ 1 | λ 1.16 | λ_h |
+|---|---|---|---|
+| baseline | 316.1 / 217.1 | 274.3 / 169.6 | 241.4 / 132.0 |
+| arm1a_urban_consumption | 308.8 / 217.3 | 265.9 / 169.8 | 232.0 / 132.3 |
+| arm1a_urban | 291.4 / 203.4 | 247.9 / 155.8 | 213.5 / 118.3 |
+| arm1a_consumption | 331.5 / 229.6 | 290.2 / 182.0 | 257.6 / 144.5 |
+| arm1a_urban_deflated_consumption | 315.1 / 222.3 | 272.3 / 174.8 | 238.6 / 137.3 |
+| arm1a_cdmx | 301.2 / 215.6 | 257.3 / 168.1 | 222.6 / 130.5 |
+| arm1a_cdmx_consumption | 317.8 / 228.8 | 274.5 / 181.3 | 240.2 / 143.7 |
+| arm1a_urban_p70 | 270.2 / 186.4 | 226.1 / 138.9 | 191.2 / 101.3 |
+| arm1b_cmp_re | 281.5 / 189.1 | 238.7 / 141.5 | 204.9 / 104.0 |
+| arm1c_mmp_annual | 249.7 / 163.3 | 205.9 / 115.8 | 171.4 / 78.2 |
+| arm1c_mmp_per_person | 205.7 / 127.6 | 160.6 / 80.1 | 125.0 / 42.6 |
+| arm1c_nis_annual | 230.8 / 148.0 | 186.5 / 100.4 | 151.5 / 62.9 |
+| arm1c_nis_per_person | 181.9 / 108.3 | 136.1 / 60.8 | 99.9 / 23.3 |
+| arm2_state_rpp | 299.0 / 199.1 | 257.3 / 151.6 | 224.5 / 114.1 |
+| arm3_us_numeraire | 306.5 / 177.2 | 269.6 / 129.6 | 240.4 / 92.1 |
+| arm3a | 263.2 / 164.3 | 221.5 / 116.7 | 188.5 / 79.2 |
+| arm3b | 186.9 / 87.9 | 145.1 / 40.4 | 112.2 / 2.8 |
+| arm3_mexican_numeraire | 188.2 / 89.2 | 146.5 / 41.7 | 113.5 / 4.2 |
+| arm5_output_prices | 317.8 / 218.5 | 276.1 / 171.0 | 243.2 / 133.4 |
+| arm5_output_prices_goods_too | 327.3 / 226.2 | 285.8 / 178.6 | 253.2 / 141.1 |
+| reading1 | 282.1 / 159.4 | 244.2 / 111.9 | 214.2 / 74.3 |
+| reading1_deflated | 288.4 / 164.4 | 250.6 / 116.9 | 220.8 / 79.4 |
+| reading2 | 73.4 / -11.8 | 29.5 / -59.3 | -5.2 / -96.8 |
+| reading2_consumption | 90.3 / 1.7 | 46.9 / -45.8 | 12.6 / -83.3 |
+| reading1_same_person_cmp | 250.0 / 133.7 | 211.1 / 86.1 | 180.3 / 48.6 |
+| reading3_mmp_annual | 218.2 / 108.1 | 178.3 / 60.6 | 146.7 / 23.1 |
+| reading3 | 174.2 / 72.8 | 132.9 / 25.3 | 100.2 / -12.2 |
+| combined_low | -6.1 / -75.6 | -52.6 / -123.1 | -89.2 / -160.7 |
+| combined_low_consumption | 1.8 / -69.3 | -44.4 / -116.8 | -80.9 / -154.3 |
+| arm3_us_numeraire_group_only | 276.1 / 177.2 | 234.4 / 129.6 | 201.4 / 92.1 |
+| arm1_metros | — | — | — |
+| arm1_metros_nominal | — | — | — |
+| arm1_metros_coneval | — | — | — |
+| arm1_metros_national_schooling | — | — | — |
+| arm1_cdmx | — | — | — |
+| arm1_guadalajara | — | — | — |
+| arm1_monterrey | — | — | — |
+| arm1_large_localities | — | — | — |
+| arm2_metro_rpp | — | — | — |
+| arm2_state_rpp_budget | — | — | — |
+| arm3a_mexico_health_lane | — | — | — |
+| arm3 | — | — | — |
+| arm3b_icp | — | — | — |
+| arm3_icp | — | — | — |
+| arm3_low | — | — | — |
+| arm3_high | — | — | — |
+| arm3c_fhl | — | — | — |
+| arm3c_fhl_low | — | — | — |
+| arm3c_fhl_high | — | — | — |
+| combined | — | — | — |
+| combined_cdmx | — | — | — |
+| combined_icp | — | — | — |
+
+| Extra/scenario key | theta_central | theta_alt_use | theta_waste | theta_education_2 | theta_ladd | theta_current_law | theta_waste_alt_use | theta_education_5_extreme |
+|---|---|---|---|---|---|---|---|---|
+| baseline | 292.3 / 190.4 | 320.6 / 222.3 | 333.7 / 237.7 | 240.6 / 131.1 | 279.6 / 175.8 | 287.9 / 185.3 | 361.9 / 269.6 | 53.8 / -82.6 |
+| arm1a_urban_consumption | 284.5 / 190.6 | 313.5 / 222.6 | 327.0 / 237.9 | 231.2 / 131.4 | 271.3 / 176.0 | 279.9 / 185.6 | 356.1 / 269.9 | 38.8 / -82.4 |
+| arm1a_urban | 266.7 / 176.6 | 296.1 / 208.6 | 309.9 / 223.9 | 212.7 / 117.4 | 253.4 / 162.0 | 262.1 / 171.6 | 339.3 / 255.9 | 17.7 / -96.3 |
+| arm1a_consumption | 308.0 / 202.9 | 336.0 / 234.8 | 348.9 / 250.2 | 256.9 / 143.6 | 295.4 / 188.3 | 303.6 / 197.8 | 376.8 / 282.1 | 72.2 / -70.1 |
+| arm1a_urban_deflated_consumption | 290.8 / 195.6 | 319.7 / 227.6 | 333.2 / 242.9 | 237.8 / 136.4 | 277.8 / 181.0 | 286.3 / 190.6 | 362.1 / 274.9 | 46.3 / -77.4 |
+| arm1a_cdmx | 276.3 / 188.9 | 306.0 / 220.8 | 319.9 / 236.2 | 221.8 / 129.6 | 262.9 / 174.3 | 271.7 / 183.8 | 349.5 / 268.1 | 25.0 / -84.1 |
+| arm1a_cdmx_consumption | 293.3 / 202.1 | 322.5 / 234.1 | 336.2 / 249.4 | 239.4 / 142.9 | 280.0 / 187.5 | 288.7 / 197.0 | 365.5 / 281.4 | 45.2 / -70.9 |
+| arm1a_urban_p70 | 245.3 / 159.7 | 275.1 / 191.6 | 289.1 / 207.0 | 190.4 / 100.5 | 231.7 / 145.1 | 240.6 / 154.6 | 318.9 / 238.9 | -7.7 / -113.3 |
+| arm1b_cmp_re | 257.2 / 162.4 | 286.2 / 194.3 | 299.7 / 209.7 | 204.1 / 103.1 | 244.1 / 147.8 | 252.7 / 157.3 | 328.6 / 241.6 | 12.4 / -110.6 |
+| arm1c_mmp_annual | 224.9 / 136.6 | 254.5 / 168.5 | 268.3 / 183.9 | 170.6 / 77.3 | 211.5 / 122.0 | 220.3 / 131.5 | 297.9 / 215.8 | -25.6 / -136.4 |
+| arm1c_mmp_per_person | 180.2 / 100.9 | 210.6 / 132.9 | 225.0 / 148.2 | 124.1 / 41.7 | 166.4 / 86.3 | 175.4 / 95.8 | 255.4 / 180.2 | -78.2 / -172.1 |
+| arm1c_nis_annual | 205.7 / 121.3 | 235.6 / 153.2 | 249.7 / 168.6 | 150.6 / 62.0 | 192.2 / 106.7 | 201.0 / 116.2 | 279.6 / 200.5 | -48.2 / -151.7 |
+| arm1c_nis_per_person | 156.1 / 81.6 | 186.9 / 113.6 | 201.6 / 128.9 | 99.0 / 22.4 | 142.0 / 67.0 | 151.2 / 76.6 | 232.4 / 160.9 | -106.7 / -191.4 |
+| arm2_state_rpp | 275.3 / 172.4 | 303.5 / 204.4 | 316.5 / 219.7 | 223.7 / 113.2 | 262.6 / 157.8 | 270.9 / 167.4 | 344.7 / 251.7 | 37.6 / -100.6 |
+| arm3_us_numeraire | 285.3 / 150.5 | 310.4 / 182.4 | 321.6 / 197.8 | 239.8 / 91.2 | 274.1 / 135.9 | 281.4 / 145.4 | 346.8 / 229.7 | 75.5 / -122.5 |
+| arm3a | 239.5 / 137.6 | 267.8 / 169.5 | 280.9 / 184.9 | 187.8 / 78.3 | 226.8 / 123.0 | 235.1 / 132.5 | 309.1 / 216.8 | 1.0 / -135.4 |
+| arm3b | 163.2 / 61.2 | 191.4 / 93.1 | 204.5 / 108.5 | 111.4 / 2.0 | 150.4 / 46.6 | 158.7 / 56.1 | 232.7 / 140.5 | -75.4 / -211.8 |
+| arm3_mexican_numeraire | 164.5 / 62.5 | 192.7 / 94.5 | 205.8 / 109.8 | 112.7 / 3.3 | 151.7 / 47.9 | 160.1 / 57.5 | 234.1 / 141.8 | -74.1 / -210.5 |
+| arm5_output_prices | 294.1 / 191.8 | 322.3 / 223.7 | 335.4 / 239.1 | 242.4 / 132.5 | 281.4 / 177.2 | 289.7 / 186.7 | 363.6 / 271.0 | 55.8 / -81.2 |
+| arm5_output_prices_goods_too | 303.7 / 199.5 | 331.8 / 231.4 | 344.7 / 246.8 | 252.4 / 140.2 | 291.1 / 184.9 | 299.3 / 194.4 | 372.7 / 278.7 | 67.2 / -73.5 |
+| reading1 | 260.4 / 132.7 | 286.2 / 164.7 | 297.8 / 180.0 | 213.5 / 73.5 | 248.8 / 118.1 | 256.4 / 127.6 | 323.6 / 212.0 | 44.4 / -140.3 |
+| reading1_deflated | 266.7 / 137.7 | 292.4 / 169.7 | 304.0 / 185.0 | 220.1 / 78.5 | 255.3 / 123.1 | 262.8 / 132.6 | 329.6 / 217.0 | 52.0 / -135.3 |
+| reading2 | 48.6 / -38.5 | 78.2 / -6.5 | 92.2 / 8.8 | -6.1 / -97.7 | 35.1 / -53.1 | 43.9 / -43.6 | 121.8 / 40.8 | -203.1 / -311.5 |
+| reading2_consumption | 65.7 / -25.0 | 95.0 / 7.0 | 108.8 / 22.3 | 11.8 / -84.2 | 52.4 / -39.6 | 61.1 / -30.0 | 138.1 / 54.3 | -182.7 / -298.0 |
+| reading1_same_person_cmp | 227.8 / 106.9 | 254.2 / 138.9 | 266.2 / 154.3 | 179.6 / 47.7 | 215.9 / 92.4 | 223.7 / 101.9 | 292.7 / 186.2 | 5.8 / -166.0 |
+| reading3_mmp_annual | 195.5 / 81.4 | 222.6 / 113.4 | 235.0 / 128.7 | 146.0 / 22.2 | 183.3 / 66.8 | 191.2 / 76.4 | 262.1 / 160.7 | -32.5 / -191.6 |
+| reading3 | 150.7 / 46.1 | 178.7 / 78.1 | 191.6 / 93.4 | 99.5 / -13.1 | 138.1 / 31.5 | 146.3 / 41.0 | 219.6 / 125.4 | -85.5 / -226.9 |
+| combined_low | -32.3 / -102.3 | -1.0 / -70.4 | 13.9 / -55.0 | -90.1 / -161.5 | -46.5 / -116.9 | -37.2 / -107.4 | 45.2 / -23.1 | -298.9 / -375.3 |
+| combined_low_consumption | -24.2 / -96.0 | 6.9 / -64.0 | 21.7 / -48.7 | -81.7 / -155.2 | -38.4 / -110.6 | -29.1 / -101.1 | 52.8 / -16.7 | -289.3 / -369.0 |
+| arm3_us_numeraire_group_only | 252.4 / 150.5 | 280.7 / 182.4 | 293.8 / 197.8 | 200.7 / 91.2 | 239.7 / 135.9 | 248.0 / 145.4 | 322.0 / 229.7 | 13.9 / -122.5 |
+| arm1_metros | 280.0 / 189.1 | 309.3 / 221.1 | 323.0 / 236.4 | 226.1 / 129.9 | 266.7 / 174.5 | 275.4 / 184.0 | 352.3 / 268.4 | 31.6 / -83.9 |
+| arm1_metros_nominal | 270.5 / 181.7 | 300.0 / 213.6 | 313.8 / 229.0 | 216.2 / 122.4 | 257.1 / 167.1 | 265.8 / 176.6 | 343.3 / 260.9 | 20.3 / -91.3 |
+| arm1_metros_coneval | 283.4 / 191.8 | 312.6 / 223.8 | 326.3 / 239.1 | 229.6 / 132.6 | 270.1 / 177.2 | 278.8 / 186.7 | 355.5 / 271.1 | 35.7 / -81.2 |
+| arm1_metros_national_schooling | 280.2 / 189.2 | 309.4 / 221.1 | 323.2 / 236.5 | 226.3 / 129.9 | 266.9 / 174.6 | 275.6 / 184.1 | 352.5 / 268.4 | 31.9 / -83.8 |
+| arm1_cdmx | 301.6 / 209.5 | 330.8 / 241.5 | 344.5 / 256.8 | 248.0 / 150.3 | 288.4 / 194.9 | 297.1 / 204.4 | 373.7 / 288.8 | 54.4 / -63.5 |
+| arm1_guadalajara | 261.2 / 165.5 | 290.0 / 197.4 | 303.5 / 212.8 | 208.2 / 106.2 | 248.1 / 150.9 | 256.7 / 160.4 | 332.3 / 244.7 | 17.1 / -107.5 |
+| arm1_monterrey | 223.4 / 149.8 | 254.3 / 181.8 | 269.0 / 197.1 | 166.2 / 90.6 | 209.3 / 135.2 | 218.5 / 144.7 | 300.0 / 229.1 | -40.2 / -123.2 |
+| arm1_large_localities | 275.1 / 183.5 | 304.3 / 215.4 | 318.0 / 230.8 | 221.4 / 124.2 | 261.9 / 168.9 | 270.5 / 178.4 | 347.3 / 262.7 | 27.5 / -89.5 |
+| arm2_metro_rpp | 276.8 / 174.6 | 305.0 / 206.6 | 318.1 / 221.9 | 225.0 / 115.4 | 264.0 / 160.0 | 272.4 / 169.5 | 346.3 / 253.9 | 38.4 / -98.4 |
+| arm2_state_rpp_budget | 270.4 / 167.5 | 298.6 / 199.5 | 311.6 / 214.8 | 218.8 / 108.3 | 257.7 / 152.9 | 266.0 / 162.5 | 339.8 / 246.8 | 32.7 / -105.5 |
+| arm3a_mexico_health_lane | 241.8 / 139.8 | 270.1 / 171.8 | 283.1 / 187.1 | 190.0 / 80.6 | 229.1 / 125.2 | 237.4 / 134.8 | 311.4 / 219.1 | 3.2 / -133.1 |
+| arm3 | 110.3 / 8.4 | 138.6 / 40.3 | 151.7 / 55.7 | 58.6 / -50.9 | 97.6 / -6.2 | 105.9 / 3.3 | 179.9 / 87.6 | -128.2 / -264.6 |
+| arm3b_icp | 201.0 / 99.1 | 229.3 / 131.0 | 242.4 / 146.4 | 149.3 / 39.8 | 188.3 / 84.5 | 196.6 / 94.0 | 270.6 / 178.3 | -37.5 / -173.9 |
+| arm3_icp | 148.2 / 46.3 | 176.5 / 78.2 | 189.6 / 93.6 | 96.5 / -13.0 | 135.5 / 31.7 | 143.8 / 41.2 | 217.8 / 125.5 | -90.4 / -226.7 |
+| arm3_low | 14.1 / -87.8 | 42.4 / -55.9 | 55.5 / -40.5 | -37.6 / -147.1 | 1.4 / -102.4 | 9.7 / -92.9 | 83.7 / -8.6 | -224.4 / -360.8 |
+| arm3_high | 171.4 / 69.4 | 199.7 / 101.4 | 212.7 / 116.7 | 119.6 / 10.2 | 158.6 / 54.8 | 167.0 / 64.4 | 241.0 / 148.7 | -67.2 / -203.5 |
+| arm3c_fhl | 72.4 / -29.5 | 100.7 / 2.4 | 113.8 / 17.8 | 20.7 / -88.8 | 59.7 / -44.1 | 68.0 / -34.6 | 142.0 / 49.7 | -166.1 / -302.5 |
+| arm3c_fhl_low | 54.5 / -47.5 | 82.7 / -15.5 | 95.8 / -0.2 | 2.7 / -106.7 | 41.7 / -62.1 | 50.0 / -52.6 | 124.0 / 31.8 | -184.1 / -320.5 |
+| arm3c_fhl_high | 79.7 / -22.2 | 108.0 / 9.7 | 121.1 / 25.1 | 28.0 / -81.5 | 67.0 / -36.8 | 75.3 / -27.3 | 149.3 / 57.0 | -158.8 / -295.2 |
+| combined | 80.9 / -10.9 | 110.1 / 21.0 | 123.8 / 36.4 | 27.2 / -70.2 | 67.7 / -25.5 | 76.3 / -16.0 | 153.0 / 68.3 | -166.5 / -283.9 |
+| combined_cdmx | 102.6 / 9.4 | 131.7 / 41.4 | 145.3 / 56.7 | 49.2 / -49.8 | 89.4 / -5.2 | 98.0 / 4.4 | 174.4 / 88.7 | -143.7 / -263.5 |
+| combined_icp | 118.8 / 27.0 | 148.0 / 58.9 | 161.7 / 74.3 | 65.1 / -32.3 | 105.6 / 12.4 | 114.2 / 21.9 | 190.9 / 106.2 | -128.6 / -246.0 |
+
+[DATA: `derived/beside_extra_summary_oct14.csv`, all 506 rows, `world_total_bn` / `us_residents_incl_group_bn`. Each `label` and `arm` is preserved in the source file; same-person rows remain parameters. Arm 5 values output at common prices; its private-gain reading is its consumption-PPP twin.]
+
+### Private gain, wages alone and with earned old-age accrual
+
+US services/benefits valued at zero and remittances left out, as in the existing lane. Each pair is wages-only / with Social Security and Part A accrual ($bn). This is the private-gain comparison the lane reports in both forms; it is not the fiscal cash-versus-set difference. Every private-gain scenario and generation is included.
+
+| Scenario key | G1 | G2 | G3+ | Group |
+|---|---|---|---|---|
+| baseline | 96.27 / 139.57 | 66.96 / 117.73 | -180.99 / -121.93 | -17.76 / 135.36 |
+| arm1a_urban_consumption | 95.10 / 138.40 | 64.04 / 114.81 | -176.66 / -117.61 | -17.53 / 135.60 |
+| arm1a_urban | 87.49 / 130.79 | 57.67 / 108.44 | -176.66 / -117.61 | -31.50 / 121.63 |
+| arm1a_consumption | 103.15 / 146.45 | 72.57 / 123.33 | -180.99 / -121.93 | -5.27 / 147.85 |
+| arm1a_urban_deflated_consumption | 97.83 / 141.13 | 66.32 / 117.09 | -176.66 / -117.61 | -12.51 / 140.61 |
+| arm1a_cdmx | 90.96 / 134.26 | 63.48 / 114.25 | -173.70 / -114.64 | -19.26 / 133.87 |
+| arm1a_cdmx_consumption | 98.28 / 141.58 | 69.37 / 120.14 | -173.70 / -114.64 | -6.05 / 147.07 |
+| arm1a_urban_p70 | 70.53 / 113.83 | 57.67 / 108.44 | -176.66 / -117.61 | -48.46 / 104.67 |
+| arm1b_cmp_re | 68.24 / 111.54 | 66.96 / 117.73 | -180.99 / -121.93 | -45.78 / 107.34 |
+| arm1c_mmp_annual | 42.47 / 85.77 | 66.96 / 117.73 | -180.99 / -121.93 | -71.56 / 81.56 |
+| arm1c_mmp_per_person | 6.78 / 50.08 | 66.96 / 117.73 | -180.99 / -121.93 | -107.25 / 45.88 |
+| arm1c_nis_annual | 27.15 / 70.45 | 66.96 / 117.73 | -180.99 / -121.93 | -86.88 / 66.24 |
+| arm1c_nis_per_person | -12.50 / 30.80 | 66.96 / 117.73 | -180.99 / -121.93 | -126.53 / 26.60 |
+| arm2_state_rpp | 89.79 / 133.09 | 56.34 / 107.11 | -181.85 / -122.79 | -35.72 / 117.41 |
+| arm3_us_numeraire | 86.56 / 129.86 | 53.14 / 103.90 | -197.36 / -138.31 | -57.67 / 95.45 |
+| arm3a | 95.68 / 138.98 | 66.20 / 116.97 | -181.92 / -122.86 | -20.04 / 133.09 |
+| arm3b | 100.18 / 143.48 | 72.04 / 122.81 | -174.84 / -115.78 | -2.62 / 150.50 |
+| arm3_mexican_numeraire | 95.68 / 138.98 | 66.20 / 116.97 | -181.92 / -122.86 | -20.04 / 133.09 |
+| reading1 | 78.91 / 122.21 | 39.59 / 90.36 | -193.95 / -134.89 | -75.45 / 77.68 |
+| reading1_deflated | 81.64 / 124.94 | 41.88 / 92.65 | -193.95 / -134.89 | -70.43 / 82.69 |
+| reading2 | 76.37 / 119.67 | 57.73 / 108.50 | -172.35 / -113.29 | -38.24 / 114.88 |
+| reading2_consumption | 76.37 / 119.67 | 57.73 / 108.50 | -172.35 / -113.29 | -38.24 / 114.88 |
+| reading1_same_person_cmp | 53.16 / 96.46 | 39.59 / 90.36 | -193.95 / -134.89 | -101.19 / 51.93 |
+| reading3_mmp_annual | 27.64 / 70.94 | 39.59 / 90.36 | -193.95 / -134.89 | -126.72 / 26.41 |
+| reading3 | -7.69 / 35.61 | 39.59 / 90.36 | -193.95 / -134.89 | -162.05 / -8.92 |
+| combined_low | 5.34 / 48.64 | 57.73 / 108.50 | -172.35 / -113.29 | -109.27 / 43.85 |
+| combined_low_consumption | 5.34 / 48.64 | 57.73 / 108.50 | -172.35 / -113.29 | -109.27 / 43.85 |
+| arm3_us_numeraire_group_only | 86.56 / 129.86 | 53.14 / 103.90 | -197.36 / -138.31 | -57.67 / 95.45 |
+
+[DATA: `derived/beside_extra_private_gain_oct14.csv`, all 112 rows, `wages_only_bn` / `with_old_age_accrual_bn`; `from_scenario` identifies any consumption-PPP twin.]
+
+### Fiscal alternatives and capital beside the totals
+
+| θ set | mcpf low / high |
+|---|---|
+| theta_alt_use | 0.984 / 0.985 |
+| theta_central | 1.066 / 1.076 |
+| theta_current_law | 1.074 / 1.095 |
+| theta_education_2 | 1.223 / 1.236 |
+| theta_education_5_extreme | 1.791 / 1.815 |
+| theta_ladd | 1.106 / 1.114 |
+| theta_waste | 0.940 / 0.948 |
+| theta_waste_alt_use | 0.858 / 0.857 |
+
+| Beside capital, $bn | Low | High |
+|---|---|---|
+| SPC central | 2.41 | 3.86 |
+| SPC range | 0.00 / 8.86 | 0.00 / 13.30 |
+| R&D policy arm | 23.71 / 90.52 | 62.46 / 238.44 |
+
+[DATA: `derived/beside_extra_meta_oct14.json`, `arm4.mcpf_theta_eff_by_end` and `arm4.beside.by_end`.] These capital/R&D figures enter no total. Their recorded parameter assumptions and the R&D benefit-cost ratio's `[UNVERIFIED]` status remain as stated in `beside_extra.py:169–183`.
+
+### Validation and live reproduction
+
+All producer gates pass. Generation end specifications are 16 / 11 (personal); generation line closures retain 1e-9, valuation/generation comparisons retain 1e-6, and the debt oracle retains absolute 1e-6 with relative tolerance zero. The pension bridge reads both adopted set and cash; its maximum difference is 2.1e-7bn, below 1e-6. Staged-source hashes and package/module commit checks pass.
+
+The first regression run found two obsolete oct07 point references, in `test_theta_matches_mcpf` and `test_capital_beside`. The unchanged recipes, independently evaluated with Decimal on the debt CSV bytes at `6b1250b9959b692a63d124c579b87c4e86c33015`, agree with oct14's stored values to 1e-12. Only the expected values moved, and the existing tolerances stayed 6e-4, 6e-3, 1e-9 and 0.05. The existing θ test also covers `theta_ladd`. All 28 tests pass; Python compile-check passes. [CALCULATION: scratch `world_round3_reference.py` / `world-round3-reference.json`; `world-round3-tests-final.log`.]
+
+```sh
+L=infra/immigration-fiscal/world_ledger_2026_09_27
+sh "$L/run_all.sh" oct14
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 scripts/rerun_lane.py "$L" \
+  "uv run --no-project python3 {lane}/acquire.py" \
+  "uv run --no-project python3 {lane}/acquire_beside.py" \
+  "sh {lane}/run_all.sh oct14" \
+  "uv run --no-project python3 -m pytest {lane}/test_beside_arms.py {lane}/test_beside_extra.py {lane}/test_live_contract.py -q" \
+  --allow-unrun "$L/population_basis.py"
+```
+
+The sole `--allow-unrun` is `population_basis.py`, an imported population-basis module with no standalone CLI, exercised by the premium, weights and world producers. Acquisitions reuse the staged files and verify their manifests/hashes; historical case producers are not run.
+
+Log (append-only; times from `date`):
+
+- 2026-10-14 19:50:42 JST — round 3 pins filled, only winners/distribution and `_pending` changed; baseline snapshot contains 102 tracked historical derived files. No Git writes.
+- 2026-10-14 19:58:44 JST — the complete `sh run_all.sh oct14` run exits 0: 110.45s, peak RSS 1,452,195,840 bytes. Python `time.perf_counter` and `resource.getrusage(RUSAGE_CHILDREN)` via `prop_a_measure.py`; no `ps`, `sysctl` or `/usr/bin/time`. Both obsolete regression references independently verified and updated; 28 tests pass. Full byte-reproduction receipt follows after the stable rerun.
+- 2026-10-14 20:01:44 JST — complete reproduction: IDENTICAL 161/161, exit 0. 134.25s, peak RSS 1,111,638,016 bytes (Python perf_counter / RUSAGE_CHILDREN). All four commands succeeded, including cache acquisitions, the full live wrapper and all 28 tests. The only allow-unrun is imported `population_basis.py`. All 102/102 tracked historical derived files are byte-identical to the pre-run snapshot; raw caches unchanged and all three CASE_FINAL hashes retained. Focused read-only code review PASS, no material findings. No producer/source changes after the stable rerun; this appended log records its receipt. No Git writes.

@@ -1,4 +1,4 @@
-"""Beside arms (operator, 2026-10-07): three side scenarios on the world ledger's central for main case v6 (oct07), on
+"""Beside arms (operator, 2026-10-07; live case oct14): three side scenarios on the world ledger's central for main case v7, on
 its own lineage basis (42,752,213 members). Each tests one objection to a measure the central uses; none replaces it.
 
 1. Best domestic alternative. The group's Mexican counterfactual in Mexico's three big metropolitan labor markets
@@ -36,15 +36,15 @@ Combined: arms 1 + 2 + 3(a) + 3(b).
 
 Every row and weight is world_ledger.py's; an arm swaps its inputs (the premium table, the valuation lines) and the
 two health row families it reprices. Gates: the staged sources' sha256; the central and the response_only central
-equal world_ledger_oct07.csv; the national ENIGH cells equal mexico.py's; the premium table recomputed on national
+equal world_ledger_oct14.csv; the national ENIGH cells equal mexico.py's; the premium table recomputed on national
 cells equals g2_premium_lineage.csv; the row recomputations equal build_rows' at the lane's inputs. Sanity checks in
 the meta: US/Mexico pay per worker against CMP's Ro, ENIGH's Mexico City pay by schooling against ENOE's, the price
 levels.
 
 Run from the repository root:
     OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/world_ledger_2026_09_27/beside_arms.py
-Outputs (derived/): beside_arms_oct07.csv (scenario x weighting x party, the central scenario), beside_arms_summary_oct07.csv
-(per scenario at equal weights, lambda 1.16 and lambda_h), beside_arms_ratios.csv (metro pay ratios), beside_arms_meta_oct07.json.
+Outputs (derived/): beside_arms_oct14.csv (scenario x weighting x party, the central scenario), beside_arms_summary_oct14.csv
+(per scenario at equal weights, lambda 1.16 and lambda_h), beside_arms_ratios.csv (metro pay ratios), beside_arms_meta_oct14.json.
 """
 import hashlib
 import io
@@ -64,7 +64,7 @@ HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
 DERIVED = HERE / "derived"
 STAGE = REPO / "sources/immigration-fiscal/data/external/stage3"
-CASE, BASIS = "oct07", "lineage"
+CASE, BASIS = "oct14", "lineage"
 MEMBERS = 42_752_213                      # the lineage (main case v5 on), per-member figures divide by it
 # Staged with an ACQUIRED.md beside each (acquire_beside.py fetches a missing one): path, sha256, URL.
 SOURCES = {
@@ -578,6 +578,8 @@ def summary_row(name, arm, label, rows, t, base):
 
 
 def main():
+    if not (DERIVED / f"world_ledger_{CASE}.csv").is_file():
+        raise SystemExit(f"[BLOCKED] {CASE}: run the live world ledger before beside_arms.py")
     srcs = check_sources()
     I = W.load(CASE, BASIS)
     fac = W.channel_factors(I, "money")
@@ -677,7 +679,7 @@ def main():
     v3a = services_at_prices(I["vgen"], r_health, r_social)
     hcare, hmx = (r_health,) * 3, (1.0,) * 3
     S = []   # (name, arm, label, I, kwargs)
-    S.append(("baseline", "central", "the lane's central (oct07, lineage, average cost, withheld + consumption taxes)",
+    S.append(("baseline", "central", f"the lane's central ({CASE}, lineage, average cost, withheld + consumption taxes)",
               I, {}))
     labels1 = dict(arm1_metros="three metros, metro schooling, hedonic price level (central)",
                    arm1_metros_nominal="three metros before the price level",

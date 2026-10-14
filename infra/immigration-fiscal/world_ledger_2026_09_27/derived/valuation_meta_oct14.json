@@ -1,0 +1,87 @@
+{
+ "cases": {
+  "oct14": {
+   "high": {
+    "A_bn": 431.48364393831827,
+    "V_central_bn": 257.9977573624376,
+    "V_high_bn": 278.511139984471,
+    "V_low_bn": 230.79534537616215
+   },
+   "low": {
+    "A_bn": 351.4616626869457,
+    "V_central_bn": 214.02446319398084,
+    "V_high_bn": 234.19836499050612,
+    "V_low_bn": 187.2198575278606
+   }
+  }
+ },
+ "generations": {
+  "oct14": {
+   "high|G1": {
+    "V_central_bn": 77.44096367404356,
+    "net_cost_bn": 78.28618459399998
+   },
+   "high|G2": {
+    "V_central_bn": 84.43124048862536,
+    "net_cost_bn": 167.00631381099998
+   },
+   "high|G3+": {
+    "V_central_bn": 96.1255531989288,
+    "net_cost_bn": 186.19114553500003
+   },
+   "low|G1": {
+    "V_central_bn": 64.39733742843943,
+    "net_cost_bn": 57.355852785999986
+   },
+   "low|G2": {
+    "V_central_bn": 70.34481092591436,
+    "net_cost_bn": 140.29458329699997
+   },
+   "low|G3+": {
+    "V_central_bn": 79.28231483819552,
+    "net_cost_bn": 153.811226605
+   }
+  }
+ },
+ "medicaid_vg": [
+  0.76,
+  0.92,
+  1.08
+ ],
+ "mexico_budget_bn_known": 166.33541555156995,
+ "pins": {
+  "oct14": {
+   "basis": "lineage",
+   "dirs": {
+    "distribution": "infra/immigration-fiscal/distribution_weights_2026_09_23/derived/oct14",
+    "winners": "infra/immigration-fiscal/winners_losers_2026_09_24/derived/oct14"
+   },
+   "distribution": "17d3735a8de11fbbeab32e93a1626c69cb6c2028",
+   "files": {
+    "generation": {
+     "generation_corrections.json": "generation_corrections_oct14.json",
+     "generation_results.csv": "generation_results_oct14.csv"
+    }
+   },
+   "generation": "1a02fbbb48b16904c3d490866359c4b6332aa44b",
+   "main_case": "148ed1eaede17b38ceeb5b6ecd055ece441e8c5e",
+   "model": "adopted_2026_10_14",
+   "winners": "2204a2bc0996c3a614262cca55842d0027134417"
+  }
+ },
+ "protection_share": 0.42467763366851674,
+ "state_price_value_bn": {
+  "oct14": {
+   "high": {
+    "quantity_bn": -0.3416291590937753,
+    "whole_gap_bn": 5.966594328220873,
+    "zero_bn": 0.0
+   },
+   "low": {
+    "quantity_bn": -0.3416291590937753,
+    "whole_gap_bn": 5.966594328220873,
+    "zero_bn": 0.0
+   }
+  }
+ }
+}

@@ -1,7 +1,7 @@
 """Beside arms, part 2 (2026-10-07, the lead's specs from the operator's questions): the premium's other readings (arms
 1a-1c), the services' price basis (arm 3), the fiscal dollar's alternative use (arm 4), output at common prices (arm
 5), the group's private gain on wages alone, two stacked readings and the same-person parameter rows, on the world
-ledger's oct07 central, lineage basis (42,752,213 members), beside beside_arms.py's arms. Each arm swaps one input of the central and is shown alone;
+ledger's oct14 central, lineage basis (42,752,213 members), beside beside_arms.py's arms. Each arm swaps one input of the central and is shown alone;
 the readings stack them. None replaces a central input, and no reading is a new central.
 
 Arm 1, the place premium (G1 and G2; G3+ at its zero bound throughout).
@@ -46,7 +46,7 @@ Arm 4, the fiscal dollar's alternative use: theta in place of lambda. Under the 
    - federal, the rest (and the capital return's federal part): half spent at m, half tax cuts at lambda
      [ASSUMPTION; the research flags this 50/50 split and the average-share composition behind m as its weakest
      inputs]; under current-law scoring, at the borrowed rate.
-   The parts are the case's own (debt_legacy_2026_09_23 federal_split_2024.csv, oct07, the mean of the band ends, as
+   The parts are the case's own (debt_legacy_2026_09_23 federal_split_2024.csv, oct14, the mean of the band ends, as
    the ledger's central), so theta is one number for others today (theta_o) and one for future taxpayers (theta_f).
    Mexico's budget rows take theta_o, as they take lambda [ASSUMPTION]. The lambda columns are linear in those rows,
    so each party's lambda rows are S = (W_1.16 - W_equal) / 0.16 and W_theta = W_equal + (theta - 1) S; gates
@@ -81,17 +81,17 @@ Same-person pay is a parameter row only, never a reading or a low end (the lead,
    2's combined low, withdrawn as a low end; the scenario names reading3* and combined_low* are kept). Where arm 2
    meets 1b or 1c, G1's Mexican pay is the nominal E_US / r: the ratio is of pay where the migrant lives.
 
-Gates: the staged sources' sha256; the central equals world_ledger_oct07.csv; the cells computed on every ENIGH person
+Gates: the staged sources' sha256; the central equals world_ledger_oct14.csv; the cells computed on every ENIGH person
 equal mexico.py's, and the premium table on them g2_premium_lineage.csv; the identities (the central rows relabelled to
 themselves, the lane's own ratio, F = 1, factors of 1, every share at lambda) reproduce the central; arms 2, 3a and 3b
-equal beside_arms_oct07.csv; theta's post-processing equals a direct evaluation; the group's industry codes are on the
+equal beside_arms_oct14.csv; theta's post-processing equals a direct evaluation; the group's industry codes are on the
 2022 list, whose sector ranges are the classes'.
 
-Run from the repository root, after beside_arms.py (it reads derived/beside_arms_oct07.csv, its summary and its meta's
+Run from the repository root, after beside_arms.py (it reads derived/beside_arms_oct14.csv, its summary and its meta's
 price level):
     OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/world_ledger_2026_09_27/beside_extra.py
-Outputs (derived/): beside_extra_oct07.csv (scenario x weighting x party), beside_extra_summary_oct07.csv,
-beside_extra_private_gain_oct07.csv, beside_extra_industry_oct07.csv, beside_extra_meta_oct07.json.
+Outputs (derived/): beside_extra_oct14.csv (scenario x weighting x party), beside_extra_summary_oct14.csv,
+beside_extra_private_gain_oct14.csv, beside_extra_industry_oct14.csv, beside_extra_meta_oct14.json.
 """
 import json
 import re
@@ -120,12 +120,11 @@ EXTRA_SOURCES = {
                              "https://www2.census.gov/programs-surveys/demo/guidance/industry-occupation/"
                              "2022-Census-Industry-Code-List-with-Crosswalk.xlsx"),
 }
-SPLIT = REPO / "infra/immigration-fiscal/debt_legacy_2026_09_23/derived/oct07/federal_split_2024.csv"
-SPLIT_PROFILE = "long_run_non_school_full"     # the main case's profile in the debt lane (its oct07 summary)
-CASE_SET = (389.082553, 461.479709)            # main case v6, low / high (main_case_2026_10_07 summary.json)
+SPLIT = REPO / f"infra/immigration-fiscal/debt_legacy_2026_09_23/derived/{CASE}/federal_split_2024.csv"
+SPLIT_PROFILE = "long_run_non_school_full"     # the main case's profile in the debt lane
 PENSION_ARMS = REPO / "infra/immigration-fiscal/pension_tr2026_2026_10_06/derived/arms.csv"
 PENSION_ARM = "all_2026_inputs_separate_funds"  # item pension_tr2026 of main case v6: 2026 Trustees, OASI and DI apart
-GENERATION_RESULTS = REPO / "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_oct07.csv"
+GENERATION_RESULTS = REPO / f"infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_{CASE}.csv"
 # The MVPF of a marginal state-local dollar: composition [TRAINING-DATA: Census state-local direct expenditure shares]
 # times values from Hendren and Sprung-Keyser's Table II (reads/hendren_sprung_keyser_2020.md): K-12's two rows
 # straddle 1 (Jackson et al. infinite, Michigan 0.65), so it is valued at cost; the adult-health category is 0.89
@@ -505,11 +504,17 @@ def evaluate(I, fac, pgc="average_cost", care_vg=None, mexico_health_vg=None, re
 # ------------------------------------------------------------------ arm 4: theta
 def fiscal_parts():
     """The case's parts at the ledger's central (the mean of the two band ends), $bn: the debt lane's split."""
+    if not SPLIT.is_file():
+        raise SystemExit(f"[BLOCKED] {CASE}: missing live debt split {SPLIT}; wait for the debt lane")
+    W.require_pins(CASE, "main_case")
+    case_summary = json.loads(W.git_show(W.PINS[CASE]["main_case"],
+                                       f"{W.CASE_LANES[CASE]}/derived/summary.json"))
+    case_set = case_summary["v7"]["band_bn"]
     t = pd.read_csv(SPLIT)
     t = t[(t.profile == SPLIT_PROFILE) & (t.convention == "central")].set_index("end")
     gate("split_has_both_ends", sorted(t.index) == ["high", "low"])
-    gate("split_is_the_case", np.allclose([t.loc["low", "net_cost_bn"], t.loc["high", "net_cost_bn"]], CASE_SET,
-                                          atol=1e-6), net_cost=t.net_cost_bn.to_dict())
+    gate("split_is_the_case", np.allclose([t.loc["low", "net_cost_bn"], t.loc["high", "net_cost_bn"]], case_set,
+                                          atol=1e-6, rtol=0), net_cost=t.net_cost_bn.to_dict())
     mid = lambda c: float(t[c].mean())   # noqa: E731
     return dict(state_local=mid("state_local_bn"), federal=mid("federal_bn"), capital_return=mid("resource_cost_bn"),
                 capital_return_federal=mid("resource_cost_federal_bn"), accrual=mid("accrual_bn"),
@@ -717,6 +722,12 @@ def summary_rows(name, arm, label, tot, prem, budget_bn, base, eqw):
 
 
 def main():
+    needed = [SPLIT, GENERATION_RESULTS, DERIVED / f"world_ledger_{CASE}.csv",
+              DERIVED / f"beside_arms_{CASE}.csv", DERIVED / f"beside_arms_summary_{CASE}.csv",
+              DERIVED / f"beside_arms_meta_{CASE}.json"]
+    missing = [str(p) for p in needed if not p.is_file()]
+    if missing:
+        raise SystemExit(f"[BLOCKED] {CASE}: missing live debt/generation/world/beside inputs: {missing}")
     srcs = check_sources()
     I = W.load(CASE, BASIS)
     fac = W.channel_factors(I, "money")
@@ -829,7 +840,7 @@ def main():
     sp = lambda tab, k: same_person(tab, ratios[k], e_us_nom)[0]   # noqa: E731
 
     # ---- the scenarios: (name, arm, label, inputs, evaluate's keywords)
-    S = [("baseline", "central", "the lane's central (oct07, lineage, average cost, withheld + consumption taxes)", I, {})]
+    S = [("baseline", "central", f"the lane's central ({CASE}, lineage, average cost, withheld + consumption taxes)", I, {})]
     one = lambda name, arm, label, tab, **kw: S.append((name, arm, label, dict(I, g2=tab), kw))   # noqa: E731
     one("arm1a_urban_consumption", "1a", "1a: localities of 100,000+, consumption PPP, p56",
         with_central(T["urban"], "consumption"))

@@ -27,13 +27,14 @@ line by line with the same classes. Gates: the three generations add to the case
 generation's net cost plus its production term equals generation_results.csv, to 1e-6.
 
 Inputs are read at pinned commits (PINS), so peers' uncommitted reruns never leak in.
-Run: OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/world_ledger_2026_09_27/valuation.py
-Every case with pins is valued. Outputs: derived/valuation.csv, derived/valuation_by_class.csv,
+Run: OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/world_ledger_2026_09_27/valuation.py --case oct14
+Only the requested live case is valued; historical keyed outputs are preserved. Outputs: derived/valuation.csv, derived/valuation_by_class.csv,
 derived/valuation_by_generation.csv and derived/valuation_meta.json (one block per case of SHARED_OUTPUTS; each
 later case writes the same four files with a _<case> suffix), derived/mexico_budget.csv,
 derived/mexico_budget_row4.csv and derived/mexico_budget_lineage.csv (case-independent; the group on the cps, row4
 and lineage population bases, population_basis.py).
 """
+import argparse
 import io
 import json
 import subprocess
@@ -75,6 +76,15 @@ def lane_file(case, lane, name):
     """A pinned lane's file for a case, as a path in the repository (read at the case's pin for that lane)."""
     pin = PINS[case]
     return f"{pin.get('dirs', {}).get(lane, LANE_DIRS[lane])}/{pin.get('files', {}).get(lane, {}).get(name, name)}"
+
+
+def require_pins(case, *lanes):
+    """Stop before computation when the parent has not supplied a committed input for the live case."""
+    if case == "oct14":
+        lanes = tuple(dict.fromkeys((*lanes, "main_case")))
+    missing = [lane for lane in lanes if not PINS[case].get(lane)]
+    if missing:
+        raise SystemExit(f"[BLOCKED] {case}: missing committed {'/'.join(missing)} pins; parent supplies oct14 inputs")
 
 
 # Cases whose rows share the lane's multi-case files (valuation*.csv, valuation_meta.json, world_ledger.csv,
@@ -193,7 +203,7 @@ for _cls, _ids in CAPITAL_COMPONENTS.items():
         LINE_CLASS[f"capital_{_id}"] = LINE_CLASS[f"capital_return_{_id}"] = _cls
 # The case lane of each case whose pins name its commit ("main_case"); world_ledger.py imports it.
 CASE_LANES = {"sept29": f"{FISCAL_REL}/main_case_2026_09_29", "oct05": f"{FISCAL_REL}/main_case_2026_10_05",
-              "oct07": f"{FISCAL_REL}/main_case_2026_10_07"}
+              "oct07": f"{FISCAL_REL}/main_case_2026_10_07", "oct14": f"{FISCAL_REL}/main_case_2026_10_14"}
 # From oct07 (main case v6) an item may add capital components that offset one of the case's components (the
 # user-fee item's k12_user_fees, college_user_fees, health_sl_user_fees and health_fed_user_fees; meta.capital_return
 # .components' of_component). Each takes the class of the component it offsets, as it takes that component's level
@@ -279,6 +289,7 @@ def value_line(r, part="quantity_bn"):
 
 
 def value_case(case):
+    require_pins(case, "winners", "generation")
     pin = PINS[case]
     if not pin["winners"]:
         raise SystemExit(f"[BLOCKED] no pins for case {case}; the parent sends them (brief: 'The case')")
@@ -437,15 +448,16 @@ def value_block(cases, mx):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--case", default="oct14", choices=sorted(PINS))
+    case = ap.parse_args().case
+    require_pins(case, "winners", "generation")
     DERIVED.mkdir(exist_ok=True)
-    cases = [c for c, pin in PINS.items() if pin["winners"]]
     # Mexico's budget on every basis (g2_premium.py runs on each first); world_ledger.py reads the one it runs on.
     mxs = {b: mexico_budget(b) for b in BASES}
     for b, mx in mxs.items():
         mx.to_csv(suffixed(DERIVED / "mexico_budget.csv", b), index=False, lineterminator="\n", float_format="%.6f")
-    for block in [[c for c in cases if c in SHARED_OUTPUTS]] + [[c] for c in cases if c not in SHARED_OUTPUTS]:
-        if block:
-            value_block(block, mxs[basis_of(block[0])])
+    value_block([case], mxs[basis_of(case)])
     print(mxs["cps"].groupby(["cls"]).bn.sum().round(2).to_string(), file=sys.stderr)
 
 

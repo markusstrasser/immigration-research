@@ -18,27 +18,28 @@ import pytest
 
 HERE = Path(__file__).resolve().parent
 D = HERE / "derived"
+CASE = "oct14"
 MEMBERS = 42_752_213
 CENTRAL = dict(mexico_taxes="withheld_consumption", scenario="central_g3_zero")
 
 
 @pytest.fixture(scope="module")
 def long():
-    return pd.read_csv(D / "beside_arms_oct07.csv")
+    return pd.read_csv(D / f"beside_arms_{CASE}.csv")
 
 
 @pytest.fixture(scope="module")
 def summary():
-    return pd.read_csv(D / "beside_arms_summary_oct07.csv")
+    return pd.read_csv(D / f"beside_arms_summary_{CASE}.csv")
 
 
 @pytest.fixture(scope="module")
 def meta():
-    return json.load(open(D / "beside_arms_meta_oct07.json"))
+    return json.load(open(D / f"beside_arms_meta_{CASE}.json"))
 
 
 def ledger(pgc):
-    w = pd.read_csv(D / "world_ledger_oct07.csv")
+    w = pd.read_csv(D / f"world_ledger_{CASE}.csv")
     w = w[(w.pg_convention == pgc) & (w.mexico_taxes == CENTRAL["mexico_taxes"]) & (w.scenario == CENTRAL["scenario"])]
     return w.set_index(["weighting", "party"]).bn
 

@@ -35,13 +35,12 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from valuation import PINS, lane_file
+from valuation import PINS, lane_file, require_pins
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
 DERIVED = HERE / "derived"
 GENS = ["G1", "G2", "G3plus"]
-ALLOC = {"low": "shared", "high": "personal"}
 
 
 def gate(name, ok, **detail):
@@ -91,8 +90,9 @@ def edit_cost(model, edits, side, line, key, alloc, response):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--case", default="sept26_schools", choices=sorted(PINS))
+    ap.add_argument("--case", default="oct14", choices=sorted(PINS))
     case = ap.parse_args().case
+    require_pins(case, "generation")
     pin = PINS[case]["generation"]
     gate("generation_pin", bool(pin), case=case)
     corr = git_json(pin, lane_file(case, "generation", "generation_corrections.json"))
@@ -121,6 +121,10 @@ def main():
         C = grp.set_index("generation").reindex(GENS)
         head = dict(case=case, band_end=end, spec=int(C.spec.iloc[0]), allocation=C.allocation.iloc[0], side=side,
                     line=line, key=C.key.iloc[0])
+        gate(f"one_allocation_per_line_{end}_{line}", C.allocation.nunique() == 1
+             and head["allocation"] in ("personal", "shared"), allocations=C.allocation.tolist())
+        if case == "oct14":
+            gate(f"oct14_personal_allocation_{end}_{line}", head["allocation"] == "personal")
         if line in only:
             for g in GENS:
                 rows.append(dict(head, generation=g, prorata_bn=np.nan, spec_key_bn=np.nan, lane_bn=C.cost[g],
@@ -136,12 +140,12 @@ def main():
                                  key_step_bn=np.nan, unlisted_bn=np.nan, corrections_step_bn=np.nan,
                                  correction_only_bn=C.cost[g]))
             continue
-        p = target_share(models, side, line, head["key"], ALLOC[end]) if side != "capital" else None
+        p = target_share(models, side, line, head["key"], head["allocation"]) if side != "capital" else None
         s = U / U.sum() if U.sum() else np.full(3, np.nan)
         total = C.cost.sum()
         for k, g in enumerate(GENS):
             if side != "capital":
-                e = edit_cost(models[g], edits[g], side, line, head["key"], ALLOC[end], C.response[g])
+                e = edit_cost(models[g], edits[g], side, line, head["key"], head["allocation"], C.response[g])
                 worst = max(worst, abs(C.cost[g] - U[k] - e))
             pr = total * p[k] if p is not None else np.nan
             sk = total * s[k]

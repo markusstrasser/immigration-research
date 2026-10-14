@@ -52,7 +52,7 @@ import numpy as np
 import pandas as pd
 
 from population_basis import BASES, suffixed
-from valuation import CASE_LANES, PINS, SHARED_OUTPUTS, basis_of, case_path, lane_file
+from valuation import CASE_LANES, PINS, SHARED_OUTPUTS, basis_of, case_path, lane_file, require_pins
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
@@ -105,6 +105,12 @@ def pinned_csv(commit, rel):
 
 # ------------------------------------------------------------------ inputs
 def load(case, basis):
+    require_pins(case, "winners", "distribution", "generation")
+    needed = [case_path("valuation.csv", case), case_path("valuation_by_generation.csv", case),
+              case_path("valuation_meta.json", case), DERIVED / f"generation_lines_{case}.csv"]
+    missing = [str(p) for p in needed if not p.is_file()]
+    if missing:
+        raise SystemExit(f"[BLOCKED] {case}: missing live generation/valuation inputs: {missing}")
     pin = PINS[case]
     if not pin["winners"]:
         raise SystemExit(f"[BLOCKED] no pins for case {case}; the parent sends them")
@@ -119,13 +125,16 @@ def load(case, basis):
         s = json.loads(git_show(pin["main_case"], f"{CASE_LANES[case]}/derived/summary.json"))
         pen, mc = ch.loc["future_pension_accrual"], ch.loc["main_case"]
         ends = (("low", 0), ("high", 1))
-        diff = max([abs(-mc[f"bn_{e}"] - s["main_case"][i]) for e, i in ends]
-                   + [abs(pen[f"bn_{e}"] - s["cash_set"]["change_from_main_case_bn"][i]) for e, i in ends]
-                   + [abs(-mc[f"bn_{e}"] + pen[f"bn_{e}"] - s["cash_set"]["band_bn"][i]) for e, i in ends])
+        adopted_band = s["v7"]["band_bn"] if case == "oct14" else s["main_case"]
+        cash_band = s["v7"]["cash_set_bn"] if case == "oct14" else s["cash_set"]["band_bn"]
+        accrual_change = [cash_band[i] - adopted_band[i] for i in range(2)]
+        diff = max([abs(-mc[f"bn_{e}"] - adopted_band[i]) for e, i in ends]
+                   + [abs(pen[f"bn_{e}"] - accrual_change[i]) for e, i in ends]
+                   + [abs(-mc[f"bn_{e}"] + pen[f"bn_{e}"] - cash_band[i]) for e, i in ends])
         gate("pension_accrual_is_the_case_less_its_cash_set", diff < 1e-6, max_abs_diff=diff)
         print(f"  pension accrual {-pen.bn_low:.6f} / {-pen.bn_high:.6f}: the case less it is "
               f"{-mc.bn_low + pen.bn_low:.6f} / {-mc.bn_high + pen.bn_high:.6f}, the cash set "
-              f"{s['cash_set']['band_bn'][0]:.6f} / {s['cash_set']['band_bn'][1]:.6f} ({CASE_LANES[case]} at "
+              f"{cash_band[0]:.6f} / {cash_band[1]:.6f} ({CASE_LANES[case]} at "
               f"{pin['main_case']}; max |diff| {diff:.1e})", file=sys.stderr)
     gf = pinned_csv(pin["winners"], w("group_frame.csv"))
     dist_rel = lane_file(case, "distribution", "channel_by_percentile.csv")
@@ -816,7 +825,7 @@ def write_case(name, new, case, basis):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--case", default="sept26_schools", choices=sorted(PINS))
+    ap.add_argument("--case", default="oct14", choices=sorted(PINS))
     ap.add_argument("--basis", default=None, choices=BASES, help="default: the case's own (pins 'basis', else cps)")
     args = ap.parse_args()
     basis = args.basis or basis_of(args.case)
