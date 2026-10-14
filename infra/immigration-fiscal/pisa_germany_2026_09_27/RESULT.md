@@ -120,7 +120,7 @@ Full quotes and conversions are in [`reads/peer_effects_europe.md`](reads/peer_e
 |---|---|---|---|
 | Brunello & Rocco 2013 (27 OECD countries) | Country × wave panel, country FE | PISA, **absolute** (linked) | −2.75% of score ≈ −0.14 SD; poor-background natives −0.20 SD |
 | Schneeweis 2015 (Austria) | Within school, across cohorts; trend-deviation IV | Track choice, grade repetition (relative) | High track −0.2 to −0.45 pp, repetition +0.1 to +0.3 pp; not significant |
-| Jensen & Rasmussen 2011 (Denmark) | Between schools, one cross-section; housing/county IV | PISA reading and maths (absolute instrument, cross-sectional) | [ABSTRACT-ONLY] about −0.02 SD for all pupils pooled; native estimate [GAP] |
+| Jensen & Rasmussen 2011 (Denmark) | Between schools, one cross-section; housing/county IV | PISA reading and maths (absolute instrument, cross-sectional) | [ABSTRACT-ONLY] about −0.02 SD for all pupils pooled; native estimate [GAP] *[Correction 2026-10-14, full-text re-check: natives: maths −0.07 to −0.10 SD, reading −0.03 SD (n.s. IV) per 10 pp]* |
 | Ohinata & van Ours 2013 (Netherlands) | Within school, across classes | PIRLS/TIMSS (relative in effect) | −0.03 to +0.15 SD, mostly not significant |
 | Geay, McNally & Telhaj 2013 (England) | Within school, across cohorts; Catholic × post-2004 IV | KS2 percentile (relative) | ≈ 0 (reading +0.02 percentiles) |
 | Ballatore, Fort & Ichino 2018 (Italy) | Rule-based class-formation IV | INVALSI fraction correct (relative) | −0.16 to −0.30 school-level SD; weak first stage, F ≈ 2.9 |
