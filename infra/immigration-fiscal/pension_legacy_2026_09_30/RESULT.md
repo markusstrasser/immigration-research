@@ -384,6 +384,11 @@ Log (times from `date`):
   updated to the final inputs' 5.2e-5 and $0.0044bn (adopted arm $0.0036bn), a comment-only edit.
 - 17:32:34–17:32:38 JST: `rerun_lane.py` after that edit, the same four commands: IDENTICAL, 31/31 files, exit 0
   (pytest 9 passed inside it). The outputs are newer than every script.
+- 2026-10-14 18:16:22 JST: after CASE_FINAL, verified `meta.lineage.counts.lineage_population` in both committed
+  oct14 payloads (`148ed1ea`) equals the preserved v6 value **42752212.92438524 exactly**. The set and cash-set
+  probes both passed. Stopped at this count verification as the propagation brief directs; the debt-dependent
+  pension tables remain for the parent's later step. [DATA: `main_case_2026_10_14/derived/corrections{,_cash}.json`
+  and `main_case_2026_10_07/derived/corrections.json`, `meta.lineage.counts.lineage_population`]
 
 ## Revisions
 
