@@ -1,0 +1,9 @@
+basis,end,line,category,rule
+set,low,tenant_occupied_property,taxes,G3+ five-year band rate
+set,low,lane_constants,residual,case's added-people G3+ band rate
+set,high,tenant_occupied_property,taxes,G3+ five-year band rate
+set,high,lane_constants,residual,case's added-people G3+ band rate
+cash,low,tenant_occupied_property,taxes,G3+ five-year band rate
+cash,low,lane_constants,residual,case's added-people G3+ band rate
+cash,high,tenant_occupied_property,taxes,G3+ five-year band rate
+cash,high,lane_constants,residual,case's added-people G3+ band rate

@@ -1,0 +1,592 @@
+[
+  {
+    "gate": "initial source set remains pinned",
+    "passed": true
+  },
+  {
+    "gate": "all source and kernel hashes match pins",
+    "passed": true
+  },
+  {
+    "gate": "primary CPS hash is the account's",
+    "passed": true
+  },
+  {
+    "gate": "biological nonreporters are outside union and two-US-parent loss universe",
+    "passed": true
+  },
+  {
+    "gate": "all_parent_types nonreporters are outside union and two-US-parent loss universe",
+    "passed": true
+  },
+  {
+    "gate": "father_US_mother_other expansion conserves every weight column",
+    "passed": true,
+    "tolerance_people": 1e-06
+  },
+  {
+    "gate": "mother_US_father_other expansion conserves every weight column",
+    "passed": true,
+    "tolerance_people": 1e-06
+  },
+  {
+    "gate": "neither_US expansion conserves every weight column",
+    "passed": true,
+    "tolerance_people": 1e-06
+  },
+  {
+    "gate": "central_one_US expansion conserves every weight column",
+    "passed": true,
+    "tolerance_people": 1e-06
+  },
+  {
+    "gate": "all_omitted expansion conserves every weight column",
+    "passed": true,
+    "tolerance_people": 1e-06
+  },
+  {
+    "gate": "national civilian classification conserves all weights",
+    "passed": true,
+    "tolerance_people": 1e-06,
+    "max_gap_people": 5.960464477539063e-08
+  },
+  {
+    "gate": "biological loss denominator positive in every replicate",
+    "passed": true
+  },
+  {
+    "gate": "all_parent_types loss denominator positive in every replicate",
+    "passed": true
+  },
+  {
+    "gate": "omitted masks partition",
+    "passed": true
+  },
+  {
+    "gate": "omitted membership and original union disjoint",
+    "passed": true
+  },
+  {
+    "gate": "job_source: national.py's gates all passed",
+    "passed": true
+  },
+  {
+    "gate": "job_source: case_keys.cjs's gates all passed",
+    "passed": true
+  },
+  {
+    "gate": "job_source: national lines are case_keys.json's (1e-6 bn)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: the crosswalk names one cell per code, all of them national.py's cells or GOV / NOIND",
+    "passed": true
+  },
+  {
+    "gate": "job_source: every wage-bearing industry code maps to a cell",
+    "passed": true
+  },
+  {
+    "gate": "job_source: personal: the union's wage total is the builder's (1e-9 relative)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: personal: the national civilian wage total is the builder's (1e-9 relative)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: personal: the wage share and its SE are the builder's (1e-9)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: shared: the union's wage total is the builder's (1e-9 relative)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: shared: the national civilian wage total is the builder's (1e-9 relative)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: shared: the wage share and its SE are the builder's (1e-9)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: row 4 naturalized: records, CPS population and main factor are production_row4.json's",
+    "passed": true
+  },
+  {
+    "gate": "job_source: row 4 naturalized: the replicate factors' range is production_row4.json's (1e-12)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: row 4 noncitizen: records, CPS population and main factor are production_row4.json's",
+    "passed": true
+  },
+  {
+    "gate": "job_source: row 4 noncitizen: the replicate factors' range is production_row4.json's (1e-12)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: row 4 moves no civilian outside the union",
+    "passed": true
+  },
+  {
+    "gate": "job_source: the union on row 4 is the account's 39,712,493 (1e-3)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: the union's G3+ on row 4 is the case's identified G3+ (1e-3)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: the case's account union is row 4's (1e-3)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: personal: spreading the wages at or above $1M keeps every group's total in every weight column (1e-12)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: personal: the generations add to the union in every cell and weight column (1e-12 of the largest cell)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: personal: each fill-in method's change on the wage key splits into the generations' (1e-9 bn)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: shared: spreading the wages at or above $1M keeps every group's total in every weight column (1e-12)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: shared: the generations add to the union in every cell and weight column (1e-12 of the largest cell)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: shared: each fill-in method's change on the wage key splits into the generations' (1e-9 bn)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: personal: the corrected generations add to the union's fill-in change (1e-12)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: shared: the corrected generations add to the union's fill-in change (1e-12)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: every cell with a tax amount has national CPS wages under both allocations",
+    "passed": true
+  },
+  {
+    "gate": "job_source: every cell has a sector",
+    "passed": true
+  },
+  {
+    "gate": "job_source: counties: every land share is positive and every implied land-price fall in [0, 1]",
+    "passed": true
+  },
+  {
+    "gate": "job_source: the high reading's corporate response is TP-5's normal-return share, twice OTA's 2021 labor share (1e-12)",
+    "passed": true
+  },
+  {
+    "gate": "job_source: mining's cells carry no tax in the item's vectors, and every other cell keeps its own",
+    "passed": true
+  },
+  {
+    "gate": "job corporate national closure",
+    "passed": true,
+    "max_gap_bn": 4.547473508864641e-13,
+    "tolerance_bn": 1e-06
+  },
+  {
+    "gate": "job other_production_taxes national closure",
+    "passed": true,
+    "max_gap_bn": 7.105427357601002e-14,
+    "tolerance_bn": 1e-06
+  },
+  {
+    "gate": "job business_property national closure",
+    "passed": true,
+    "max_gap_bn": 1.1368683772161603e-13,
+    "tolerance_bn": 1e-06
+  },
+  {
+    "gate": "job corporate original G3 positive control",
+    "passed": true,
+    "max_gap_bn": 4.973799150320701e-14,
+    "tolerance_bn": 1e-06
+  },
+  {
+    "gate": "job other_production_taxes original G3 positive control",
+    "passed": true,
+    "max_gap_bn": 9.769962616701378e-15,
+    "tolerance_bn": 1e-06
+  },
+  {
+    "gate": "job business_property original G3 positive control",
+    "passed": true,
+    "max_gap_bn": 2.4868995751603507e-14,
+    "tolerance_bn": 1e-06
+  },
+  {
+    "gate": "member_kernel: union count reproduces headcount.csv, column row4 (1 person)",
+    "passed": true,
+    "detail": "39,712,493.331 vs 39,712,493.331"
+  },
+  {
+    "gate": "member_kernel: the identified G3+ count is the lineage's identified_g3plus (1 person)",
+    "passed": true,
+    "detail": "14,342,574.606 vs 14,342,574.606"
+  },
+  {
+    "gate": "member_kernel: the frame's identified G3+ age mix is the case's (meta.lineage.age_mix identified, 1e-7 per band)",
+    "passed": true,
+    "detail": "max |diff| 1.4e-08 over 17 bands"
+  },
+  {
+    "gate": "member_kernel: the bands' added people add to meta.lineage.counts added (1e-6 persons)",
+    "passed": true,
+    "detail": "|diff| 4.7e-10"
+  },
+  {
+    "gate": "member_kernel: the placed union is the lineage population (1 person)",
+    "passed": true,
+    "detail": "42,752,212.924 = 39,712,493.331 + 3,039,719.593; G3+ records x f_b 1.1411 to 1.2493 by band"
+  },
+  {
+    "gate": "member_kernel: the placed G3+ adults (18 and over) are the generation account's, its added people's at their age mix (1 person)",
+    "passed": true,
+    "detail": "9,792,850.6 vs 9,792,850.6 (generation_account_2026_09_24/derived/generation_summary_oct14.json)"
+  },
+  {
+    "gate": "member_kernel: states.csv covers the 50 states and DC, as the FIPS map",
+    "passed": true,
+    "detail": "51 rows"
+  },
+  {
+    "gate": "member_kernel: the tenant key's generation shares are the generation account's (v4_inputs.json tenant_share, 1e-12)",
+    "passed": true,
+    "detail": "max |diff| 5.6e-17"
+  },
+  {
+    "gate": "member_kernel: the person model covers every person of the frame",
+    "passed": true,
+    "detail": "142,125 of 142,125"
+  },
+  {
+    "gate": "member_kernel: its union and generations are the account's",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "gate": "member_kernel: 90 key rows reproduce their row4 totals: G2 and G3+ generation_keys.csv, the union age_bins.csv (1e-9 relative)",
+    "passed": true,
+    "detail": "worst 5.8e-16"
+  },
+  {
+    "gate": "member_kernel: row 4 moves public order's per-head part as the engine does (C_row4_weights, 1e-6 bn)",
+    "passed": true,
+    "detail": "G1 -0.819632, G2 +0.036203, G3plus +0.036226 bn; max |diff| 5.3e-08"
+  },
+  {
+    "gate": "member_kernel: every per-head line charges each generation the same per member (1e-08 relative)",
+    "passed": true,
+    "detail": "widest spread 1.8e-09"
+  },
+  {
+    "gate": "member_kernel: production low: cell parts reproduce the three generations' terms",
+    "passed": true,
+    "detail": "AS = [-17.1266, 5.4467] bn, max residual 4.4e-16"
+  },
+  {
+    "gate": "member_kernel: production low: with the lineage's term on G3+ the cell parts add to the generations' terms (1e-9 bn)",
+    "passed": true,
+    "detail": "lineage -0.229766 bn; max |diff| 4.4e-16"
+  },
+  {
+    "gate": "member_kernel: production high: cell parts reproduce the three generations' terms",
+    "passed": true,
+    "detail": "AS = [-11.2662, 3.5829] bn, max residual 1.8e-15"
+  },
+  {
+    "gate": "member_kernel: production high: with the lineage's term on G3+ the cell parts add to the generations' terms (1e-9 bn)",
+    "passed": true,
+    "detail": "lineage -0.151145 bn; max |diff| 1.8e-15"
+  },
+  {
+    "gate": "member_kernel: G1 low: pieces plus residual equal the generation's cost",
+    "passed": true,
+    "detail": "49.936319 vs 49.936319"
+  },
+  {
+    "gate": "member_kernel: G2 low: pieces plus residual equal the generation's cost",
+    "passed": true,
+    "detail": "137.995318 vs 137.995318"
+  },
+  {
+    "gate": "member_kernel: G3plus low: pieces plus residual equal the generation's cost",
+    "passed": true,
+    "detail": "151.620381 vs 151.620381"
+  },
+  {
+    "gate": "member_kernel: G1 high: pieces plus residual equal the generation's cost",
+    "passed": true,
+    "detail": "73.405479 vs 73.405479"
+  },
+  {
+    "gate": "member_kernel: G2 high: pieces plus residual equal the generation's cost",
+    "passed": true,
+    "detail": "165.493815 vs 165.493815"
+  },
+  {
+    "gate": "member_kernel: G3plus high: pieces plus residual equal the generation's cost",
+    "passed": true,
+    "detail": "184.749967 vs 184.749967"
+  },
+  {
+    "gate": "added_price: original set later at fixed responses",
+    "passed": true,
+    "max_gap_bn": 2.753353101070388e-13
+  },
+  {
+    "gate": "added_price: original set g3_rate at fixed responses",
+    "passed": true,
+    "max_gap_bn": 3.0375701953744283e-13
+  },
+  {
+    "gate": "added_price: original cash later at fixed responses",
+    "passed": true,
+    "max_gap_bn": 4.121147867408581e-13
+  },
+  {
+    "gate": "added_price: original cash g3_rate at fixed responses",
+    "passed": true,
+    "max_gap_bn": 3.232969447708456e-13
+  },
+  {
+    "gate": "row4 weights unchanged for omitted natives",
+    "passed": true
+  },
+  {
+    "gate": "set low union reproduced every replicate",
+    "passed": true,
+    "tolerance_bn": 1e-06,
+    "max_gap_bn": 1.4779288903810084e-12,
+    "engine_bn": 339.5520178295269
+  },
+  {
+    "gate": "set low exported central lines close",
+    "passed": true,
+    "max_gap_bn": 1.1102230246251565e-15,
+    "tolerance_bn": 1e-06
+  },
+  {
+    "gate": "set low exported all lines close",
+    "passed": true,
+    "max_gap_bn": 8.881784197001252e-16,
+    "tolerance_bn": 1e-06
+  },
+  {
+    "gate": "set high union reproduced every replicate",
+    "passed": true,
+    "tolerance_bn": 1e-06,
+    "max_gap_bn": 1.1368683772161603e-12,
+    "engine_bn": 423.6492607005069
+  },
+  {
+    "gate": "set high exported central lines close",
+    "passed": true,
+    "max_gap_bn": 0.0,
+    "tolerance_bn": 1e-06
+  },
+  {
+    "gate": "set high exported all lines close",
+    "passed": true,
+    "max_gap_bn": 6.217248937900877e-15,
+    "tolerance_bn": 1e-06
+  },
+  {
+    "gate": "member_kernel: union count reproduces headcount.csv, column row4 (1 person)",
+    "passed": true,
+    "detail": "39,712,493.331 vs 39,712,493.331"
+  },
+  {
+    "gate": "member_kernel: the identified G3+ count is the lineage's identified_g3plus (1 person)",
+    "passed": true,
+    "detail": "14,342,574.606 vs 14,342,574.606"
+  },
+  {
+    "gate": "member_kernel: the frame's identified G3+ age mix is the case's (meta.lineage.age_mix identified, 1e-7 per band)",
+    "passed": true,
+    "detail": "max |diff| 1.4e-08 over 17 bands"
+  },
+  {
+    "gate": "member_kernel: the bands' added people add to meta.lineage.counts added (1e-6 persons)",
+    "passed": true,
+    "detail": "|diff| 4.7e-10"
+  },
+  {
+    "gate": "member_kernel: the placed union is the lineage population (1 person)",
+    "passed": true,
+    "detail": "42,752,212.924 = 39,712,493.331 + 3,039,719.593; G3+ records x f_b 1.1411 to 1.2493 by band"
+  },
+  {
+    "gate": "member_kernel: the placed G3+ adults (18 and over) are the generation account's, its added people's at their age mix (1 person)",
+    "passed": true,
+    "detail": "9,792,850.6 vs 9,792,850.6 (generation_account_2026_09_24/derived/generation_summary_oct14.json)"
+  },
+  {
+    "gate": "member_kernel: states.csv covers the 50 states and DC, as the FIPS map",
+    "passed": true,
+    "detail": "51 rows"
+  },
+  {
+    "gate": "member_kernel: the tenant key's generation shares are the generation account's (v4_inputs.json tenant_share, 1e-12)",
+    "passed": true,
+    "detail": "max |diff| 5.6e-17"
+  },
+  {
+    "gate": "member_kernel: the person model covers every person of the frame",
+    "passed": true,
+    "detail": "142,125 of 142,125"
+  },
+  {
+    "gate": "member_kernel: its union and generations are the account's",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "gate": "member_kernel: 90 key rows reproduce their row4 totals: G2 and G3+ generation_keys.csv, the union age_bins.csv (1e-9 relative)",
+    "passed": true,
+    "detail": "worst 5.8e-16"
+  },
+  {
+    "gate": "member_kernel: row 4 moves public order's per-head part as the engine does (C_row4_weights, 1e-6 bn)",
+    "passed": true,
+    "detail": "G1 -0.819632, G2 +0.036203, G3plus +0.036226 bn; max |diff| 5.3e-08"
+  },
+  {
+    "gate": "member_kernel: every per-head line charges each generation the same per member (1e-08 relative)",
+    "passed": true,
+    "detail": "widest spread 1.8e-09"
+  },
+  {
+    "gate": "member_kernel: production low: cell parts reproduce the three generations' terms",
+    "passed": true,
+    "detail": "AS = [-17.1266, 5.4467] bn, max residual 4.4e-16"
+  },
+  {
+    "gate": "member_kernel: production low: with the lineage's term on G3+ the cell parts add to the generations' terms (1e-9 bn)",
+    "passed": true,
+    "detail": "lineage -0.229766 bn; max |diff| 4.4e-16"
+  },
+  {
+    "gate": "member_kernel: production high: cell parts reproduce the three generations' terms",
+    "passed": true,
+    "detail": "AS = [-11.2662, 3.5829] bn, max residual 1.8e-15"
+  },
+  {
+    "gate": "member_kernel: production high: with the lineage's term on G3+ the cell parts add to the generations' terms (1e-9 bn)",
+    "passed": true,
+    "detail": "lineage -0.151145 bn; max |diff| 1.8e-15"
+  },
+  {
+    "gate": "member_kernel: G1 low: pieces plus residual equal the generation's cost",
+    "passed": true,
+    "detail": "35.906608 vs 35.906608"
+  },
+  {
+    "gate": "member_kernel: G2 low: pieces plus residual equal the generation's cost",
+    "passed": true,
+    "detail": "103.710887 vs 103.710887"
+  },
+  {
+    "gate": "member_kernel: G3plus low: pieces plus residual equal the generation's cost",
+    "passed": true,
+    "detail": "124.808078 vs 124.808078"
+  },
+  {
+    "gate": "member_kernel: G1 high: pieces plus residual equal the generation's cost",
+    "passed": true,
+    "detail": "59.375768 vs 59.375768"
+  },
+  {
+    "gate": "member_kernel: G2 high: pieces plus residual equal the generation's cost",
+    "passed": true,
+    "detail": "131.209384 vs 131.209384"
+  },
+  {
+    "gate": "member_kernel: G3plus high: pieces plus residual equal the generation's cost",
+    "passed": true,
+    "detail": "157.937664 vs 157.937664"
+  },
+  {
+    "gate": "added_price: original set later at fixed responses",
+    "passed": true,
+    "max_gap_bn": 2.753353101070388e-13
+  },
+  {
+    "gate": "added_price: original set g3_rate at fixed responses",
+    "passed": true,
+    "max_gap_bn": 3.0375701953744283e-13
+  },
+  {
+    "gate": "added_price: original cash later at fixed responses",
+    "passed": true,
+    "max_gap_bn": 4.121147867408581e-13
+  },
+  {
+    "gate": "added_price: original cash g3_rate at fixed responses",
+    "passed": true,
+    "max_gap_bn": 3.232969447708456e-13
+  },
+  {
+    "gate": "row4 weights unchanged for omitted natives",
+    "passed": true
+  },
+  {
+    "gate": "cash low union reproduced every replicate",
+    "passed": true,
+    "tolerance_bn": 1e-06,
+    "max_gap_bn": 1.6484591469634324e-12,
+    "engine_bn": 264.4255736155054
+  },
+  {
+    "gate": "cash low exported central lines close",
+    "passed": true,
+    "max_gap_bn": 5.551115123125783e-16,
+    "tolerance_bn": 1e-06
+  },
+  {
+    "gate": "cash low exported all lines close",
+    "passed": true,
+    "max_gap_bn": 4.440892098500626e-16,
+    "tolerance_bn": 1e-06
+  },
+  {
+    "gate": "cash high union reproduced every replicate",
+    "passed": true,
+    "tolerance_bn": 1e-06,
+    "max_gap_bn": 1.0800249583553523e-12,
+    "engine_bn": 348.52281648648557
+  },
+  {
+    "gate": "cash high exported central lines close",
+    "passed": true,
+    "max_gap_bn": 6.661338147750939e-16,
+    "tolerance_bn": 1e-06
+  },
+  {
+    "gate": "cash high exported all lines close",
+    "passed": true,
+    "max_gap_bn": 7.993605777301127e-15,
+    "tolerance_bn": 1e-06
+  },
+  {
+    "gate": "process below 2.5GiB",
+    "passed": true,
+    "peak_GiB_limit": 2.5
+  }
+]
