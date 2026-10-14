@@ -713,3 +713,110 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-f
   −$217.32bn with SE $8.700282bn → −$203.52bn with SE $12.337676bn, reproduced exactly [CALCULATION: `audit.py` →
   `derived/ledger_replicate_check.csv`, `se_catalog.csv`]. The ledger SE enters no headline interval, so nothing else
   in this lane moves.
+
+## v8 propagation (oct15), 2026-10-15
+
+`later_cases.json` selects only `oct15`; earlier keyed output directories remain unchanged. The full exporter
+reconstruction keeps item 10's native child cells/production and reporter source-parent response selection. Its
+uncorrected positive control adds zero-valued synthetic lines and excludes the new post-engine amounts; cash uses
+the cash evaluator for its own coverage prices. Exact band/per-spec/pension/derivative gates retain their existing
+tolerances. [CALCULATION: `sept24_specs.cjs`, `propagate.py`]
+
+Items 9–11 use their producer's matching CPS replicate vectors, jointly with the account and benefit keys. K2's
+published point/SDR is re-derived from its cell/tax vectors; item 10 uses the candidate's paired own-record vector;
+item 11 independently reconstructs the complete generation stack in `round2_replicates.csv` and its D-only scale.
+Item 9 is excluded from generic job-tax amount scaling before its signed source vector enters. Item 10's native
+child and credit cells stay in the full cost/capital reconstruction but are explicitly subtracted from generic
+key-error scaling and the original pension identity checks, before its own producer vector enters once. Coverage
+uses the producer's derivative times the external PES SE of 0.0053, separately from CPS sampling; a coverage stub
+cannot enter an interval. [DATA: source lanes named in `meta.foreign_source_tax`, `meta.union_completion`,
+`meta.mixed_unit_removal`, `meta.coverage`; CALCULATION: `propagate.py` `v8_sampling`, `adopted_cases`]
+
+[APPROX] Source item-10 endpoint spreads travel by reading across the personal specifications at their source
+response/calibration assumptions. The external PES error is independent of the CPS block in the primary interval;
+the positive-correlation envelope remains beside it. These conditional sampling intervals are neither observed
+removal effects nor bounds on total model error. [ASSUMPTION: this lane's covariance/transport rule]
+
+Current reproduction commands (historical commands above remain as execution records):
+
+```sh
+node infra/immigration-fiscal/uncertainty_propagation_2026_09_22/sept24_specs.cjs
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/uncertainty_propagation_2026_09_22/coverage_replay.py --basis set
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/uncertainty_propagation_2026_09_22/coverage_replay.py --basis cash
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/uncertainty_propagation_2026_09_22/propagate.py --case oct15 --coverage-pes-rule common_nce_source
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/uncertainty_propagation_2026_09_22/audit.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/uncertainty_propagation_2026_09_22/ -q --import-mode=importlib
+```
+
+### Log (append-only)
+
+- 2026-10-15 00:11 JST — migration preparation: source-only K2/item-10/item-11 point/SDR probes and compile checks
+  pass. The moving candidate still fails strict saved-payload/per-spec band parity; no final result is claimed.
+  The final exporter, propagation, audit, tests and reproducibility run await `CASE_FINAL` and the final case rules.
+
+- 2026-10-15 — Preparation correction to the live-only contract: fresh source-control artifacts are scoped to `derived/oct15/control/` and `audit.py` defaults there; preserved historical root and earlier keyed files are not rewritten. This does not substitute an earlier control summary for the live source reconstruction. Final execution remains pending CASE_FINAL. [CALCULATION: `propagate.py main`, `audit.py main`; syntax/help checks only]
+
+- 2026-10-15 — The delivered typed coverage file has no `pes_sampling` declaration. The default producer mode still stops. The parent explicitly chose `--coverage-pes-rule common_nce_source` as a conditional branch: `coverage_pes.py` calls the producer's pinned source reader, `factors`/`rate_at` and `evaluate` on its hash-validated set/cash caches, checks the point against the principal output, and checks a Richardson derivative against an independent finite difference. The scalar .0053 is the pinned overall Hispanic PES SE. One common absolute NCE shock moves every PES-priced Hispanic cell; DA children and 2024 controls stay fixed. This is a conditional covariance approximation, not official age/sex covariance or an unconditional interval. The derivative receipt and every source hash publish separately under `derived/oct15/coverage_pes_derivative.json`; no derivative values are reported before CASE_FINAL. [CALCULATION: `coverage_pes.py`, `propagate.py`; preparation compile checks only]
+
+### Round-2 corrections (2026-10-15)
+
+- Final adopted consumer (b35ac8fb) passes: **$368.990934–459.202877bn**, combined conditional SE **$11.212685–11.513910bn** across32specifications; 95% union **$346.427292–481.183567bn**, all-positive-correlation envelope **$329.361890–498.318817bn**. Preserved oct14: band339.552018–423.649261, SE10.528958–10.964182, union318.066024–444.290095, envelope303.537309–458.161276. These are source/policy-conditional model intervals. [CALCULATION: derived/oct15/summary.json oct15; preserved derived/oct14/summary.json]
+- Before: new items would inherit account-key spread and coverage lacked a derivative. After: source item9 K2 SE **0.324354565 /0.120011189bn**, item10 paired own-record **1.693634443 /1.691287826**, item11 signed joint **4.416785865 /4.405052931**. Matching161CPScolumns preserve their covariance with the account keys; only declared D scales. The signed-source-NCE derivative is **−241.377228350 /−317.498593681bn per fraction set**, **−157.779538041 /−233.900903371 cash**: increasing signed NCE makes negative error less negative, reducing omission. Positive undercount fraction has the opposite derivative sign. With .0053 scalar SE the magnitudes are **1.279299310 /1.682742547 set**, **0.836231552 /1.239674788 cash**. This common NCE shock holds DA children/controls fixed and is not official age/sex covariance or an unconditional interval. [CALCULATION: coverage_pes_derivative.json; summary.json v8_sampling; case_uncertainty.csv]
+- Original recipe drift is retained as evidence: household code/receipt hashes moved after coverage pricing; the receipt's original full7847bytes are recovered by changing only the code hash, but the historical household source itself was unavailable in git. The parent chose an owned native `export_pricing.main` replay into `_cache/pes_replay`, with upstream-write guard. All16cache arrays and compressed cache SHA match the principal exactly in both sets. All economic/decomposition audit fields also match; only national-key/code-dependency provenance changes. Fresh owned manifest/audit/cache validate the current recipe; original source totals, typed denominator pieces and cache SHA remain authoritative. No producer pin/cache was re-enrolled. [CALCULATION: coverage_replay.py, _cache/pes_replay/parity_{set,cash}.json; coverage_pes.py validate_source_recipe]
+- V8 lineage companions use a new flat schema and are slightly nonlinear. Every one of the four native option bands is independently rerun/gated at1e-9. C3 error uses the declared symmetric±SE secant [APPROX]; midpoint-minus-central **−0.000001166821 /−0.000000431723bn** is reported rather than weakening the v7 affine gate. Exact C3 companion bands are retained, and arm populations include completion/coverage. [CALCULATION: summary.json oct15.lineage.rebase]
+- Final exporter/full-cash/per-spec/band gates pass (1e-9; printed band5e-5), audit passes, **22tests pass**, **rerun IDENTICAL83/83, exit0**,154.085s. The final propagation took40.116s with peak physical footprint2.142GB. The six-command rerun exceeded two minutes cumulatively, so the native replay was profiled:18.729s total,5.14s zlib cache compression and3.26s producer construction; source hashing/packing fill the rest. Profiling retained identical recipe bytes. Each independent source phase is below two minutes; producer compression optimization is outside this consumer's owned scope and is deferred. [CALCULATION: prop8/uncertainty-{oct15,audit,tests,rerun}.log; _cache/coverage_replay_profile.prof]
+
+### Round-2 conditional CPS coverage correction (2026-10-15; final source refresh pending)
+
+The prior common-NCE branch held the coverage CPS construction fixed. R13 also exposes a priced161-vector source sampling block. The new bounded producer validates canonical PH_SEQ/PPPOS and every pwwgt0..160 column against the official main CPS zip, checks the authoritative frame source/pin and owned native recipe, and reproduces source points/SDR at1e-9. Source set SDs are0.427895410313/0.410273212046bn; cash SDs0.483705788290/0.463936443342bn. Actual shared signed vectors enter the main CPS covariance, not independent scalar errors. PES common absolute signedNCE remains separate. Endpoint calibrated-price/model transport across32specs remains conditional.
+
+An integrated proof first exceeded the unchanged2.5GB guard at2.718GB because temporary pandas frame/official merge buffers retained allocator capacity before the main account matrices. The proof now executes in its own bounded subprocess and retains only four161vectors; both parent and source process keep physical-memory gates. Final adoption waits for a stable household producer source: the intervening peer update correctly invalidated exact replay provenance. No failed-run outputs qualify as final.
+
+## 2026-10-15 Round-2 corrections — final CPS covariance closure
+
+[CALCULATION: coverage_cps.py, coverage_cps_replicates.json, case_uncertainty.csv] Before, the conditional common-NCE branch fixed the coverage CPS construction; after, its actual161 source vectors join the same official pwwgt0..160 axis as the account and benefit keys. PH_SEQ/PPPOS and every weight column match the official CPS source, its source pin and canonical frame. All set/cash principal points and SDRs match the producer at1e-9. Prices, calibration, transfer assumptions and model choices remain conditional; endpoint source vectors are carried across32personal specifications [APPROX]. This is not an independent0.43bn error appended in quadrature.
+
+| Quantity | Coverage CPS held fixed | Shared coverage CPS vectors |
+|---|---:|---:|
+| Combined SE range, bn | 11.212684700169 / 11.513909556124 | 11.175453606618 / 11.467571911332 |
+| Conditional95% union, bn | 346.427292143563 / 481.183567495818 | 346.518128559748 / 481.110607305699 |
+| Positive-correlation envelope, bn | 329.361890432314 / 498.318817232349 | 329.468969066252 / 498.231381264972 |
+
+low: coverage source set SDR 0.427895410313bn; own cash SDR 0.483705788290bn. At that live band end, CPS SE 9.773514002440→9.718882046349bn; shared covariance -0.624001103606bn²; combined SE 11.512062301938→11.465717191640bn.
+
+high: coverage source set SDR 0.410273212046bn; own cash SDR 0.463936443342bn. At that live band end, CPS SE 9.364732458520→9.320122271083bn; shared covariance -0.500929490124bn²; combined SE 11.214638139233→11.177413552438bn.
+
+Variance closure maximum residual 2.51e-14bn² (gate1e-9). PES remains a separate0.0053-SE common absolute **signed source NCE-fraction** shock: negative gradients mean increasing NCE reduces omission; positive undercount has the opposite sign. This is a conditional covariance approximation, not official age/sex PES covariance or an unconditional interval. Default producer mode still fails closed without pes_sampling. K2/item10/item11 spreads retain their own exact source vectors and covariance.
+
+set native replay: every16 cached arrays exactly equal the principal; all original source dependencies plus adapter unchanged at start/end and immediately before receipt publication. H 08b13cca82fc915a2b1d8069efb9efe4c47181d17f30c3894ed9aa7c6453ccbe; adapter 688a1952bb973e6c25fa9c99a5285f64c757c527a3e8baf9d8e9cc39df58fe26; owned recipe 9d6b24243142f5f18b99729619de748433d31f5c04c79bcc620bdb1395902587. No producer pins or caches were overwritten. Only proven adapter/national-key/manifest provenance differences are excluded from economic audit equality.
+
+cash native replay: every16 cached arrays exactly equal the principal; all original source dependencies plus adapter unchanged at start/end and immediately before receipt publication. H 08b13cca82fc915a2b1d8069efb9efe4c47181d17f30c3894ed9aa7c6453ccbe; adapter 688a1952bb973e6c25fa9c99a5285f64c757c527a3e8baf9d8e9cc39df58fe26; owned recipe 256261c5b630669f5cee1e319d02346ae170ae845c3242ae1dfc5d4e012423a2. No producer pins or caches were overwritten. Only proven adapter/national-key/manifest provenance differences are excluded from economic audit equality.
+
+Repo producers require authoritative adopted live-case/summary/payload/non-STUB checks, without temporary session-marker dependencies. The task wrapper alone kept CASE_FINAL before final commands. Source mutation failures were retained as failed-run evidence and did not qualify for adoption. Raw-frame proof now runs in a separate bounded process; latest successful parent1.918GB and proof1.190GB, source replay set2.238GB/cash2.174GB, all below unchanged2.5GB guard. Audit exit0;24tests pass; final full seven-command rerun exit0, [rerun] IDENTICAL: 85/85 files unchanged (backup removed), 144.047s. Earlier compression profile identifies source cache packing as the replay hotspot; no source-gate weakening or guessed spreads.
+
+Final reproduction includes the existing node exporter, owned replay set/cash, coverage_cps.py, propagate.py --case oct15 --coverage-pes-rule common_nce_source, audit.py and test_uncertainty.py. Historical keyed outputs were preserved. Full historical debt stocks and constant_choices remain BLOCKED on an authoritative financing/timing allocation for the explicit unlocated bucket; the switched source-classified current-flow route is complete.
+
+### Round-2 completion-producer provenance correction (2026-10-15)
+
+After the preceding final PASS, an external update changed completion_keys.py a5bfae6704bc…→28c09b54e4f8… and completion_jobs.json7e364546a459…→2719484192ef…. That invalidated the source contract. The current56-line caller uses the unchanged H.completion_job_vectors, stages NPZ/JSON before its physical-footprint gate and publishes by replacement/cleanup. Old code bytes are unavailable because the file is untracked; no old-code semantic equivalence or exact patch claim is made.
+
+Restoring only source-code hash stamps in current job metadata reproduces the full old pinned receipt SHA exactly. All identities, national_driver_mass and national_driver_rule fields therefore match; the job NPZ remains byte-identical. The helper narrowly admits only the traced households/completion producer code stamps and their matching receipt, after current-source stamp validation and this complete receipt reconstruction. Unknown code, any other data, changed receipt identities/numbers or stale stamps remain BLOCKED. Four new class-negative cases pass. Native replay requires exactly the principal16-key set, every array/shape/type equal, compressed cache SHA equal, every economic/decomposition audit field equal, and all source dependencies plus adapter stable before/after execution and before receipt publication. No producer input pins or numerical cache exceptions were introduced.
+
+Before: new completion-code provenance stopped both downstream branches. After: both exact owned replays and helper validation pass; the refreshed authoritative original recipes also validate. Source H08b13cca82fc… and adapter688a1952bb97… stayed fixed. Numerical changes are zero: combined SE11.175453606618–11.467571911332bn and conditional95%union346.518128559748–481.110607305699bn remain exactly the preceding results. The shared coverage CPS covariance and separate conditional signed-NCE/PES approximation are unchanged. Full historical debt stocks/constant_choices remain BLOCKED on the financing/timing rule.
+
+Latest authoritative-source refresh physical footprints: propagation1.699GB, isolated CPS1.377GB; final exact source replays2.220GB/set2.146GB/cash. These retain the unchanged2.5GB gate. Audit passes;28tests pass. Final full seven-command reproducibility:
+[rerun] IDENTICAL: 85/85 files unchanged (backup removed); exit0; 99.397s. No further source changes after these checks.
+
+set owned recipe d36dc8c87707cd416ab4298febd5093d6c94d3ee3f3ac6eb8e5914dc123828d7; original source validation method current bytes match original frozen recipe.
+
+cash owned recipe a4f245e6aa7e1d503206a1442e38b06d4bcb807b558953b623dda698aec0de2f; original source validation method current bytes match original frozen recipe.
+
+### Round-3 correction (2026-10-15 06:19:49 JST, `date`, parent)
+
+`coverage_cps.py` and `coverage_pes.py` replayed the coverage evaluator without round 3's constructed-person rule, so
+both rebuilt the uncorrected item 12 (+$3.199004 / 3.221092bn) and stopped at their point gates on corrected v8 (`d1a24d47`: the coverage term no longer charges the missed people's custody, arrests and ICE a second time, −$3.199004 / −$3.221092bn on the lineage). Both now
+call the coverage lane's own `export_pricing.constructed_prices` before evaluating (one definition of the rule).
+Corrected: band $365.791930–455.981785bn; combined independent SE $11.140832–11.443143bn; conditional 95% union
+**$343.367012–477.821668bn** (was $346.518129–481.110607bn); positive-correlation envelope $326.778021–494.499189bn;
+with benefit keys $342.592639–478.601779bn. Coverage CPS SDR (set) $0.425171 / 0.406972bn. The figures in the round-2
+sections above are on the uncorrected v8. Parent rerun IDENTICAL 85/85, exit 0.

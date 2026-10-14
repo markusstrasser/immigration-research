@@ -161,7 +161,8 @@ function capitalCase(name, lane, PC, payload, sum) {
     gate(`${name}: ${file} is the committed adoption's bytes`, got === want, got);
   }
   const R = payload.meta.responses;
-  const models = { uncorrected: PC.MODEL, [name]: Engine.applyCorrections(PC.MODEL, payload) };
+  const models = { uncorrected: PC.withSyntheticLines ? PC.withSyntheticLines(PC.MODEL) : PC.MODEL,
+    [name]: Engine.applyCorrections(PC.MODEL, payload) };
   const allSpecs = PC.ALL_SPECS || PC.MAIN_SPECS;
   const rows = MAIN_SPECS.map((s, i) => ({ ...s,
     gg: swap(s.gg, GG24, [R.general_government.low, R.general_government.high]),
@@ -198,7 +199,13 @@ function capitalCase(name, lane, PC, payload, sum) {
   const moved = new Set();
   for (const [i, s] of rows.entries()) {
     const spec = allSpecs[i];
-    const evals = Object.fromEntries(Object.entries(models).map(([c, m]) => [c, PC.evaluateFull(m, spec, PC.MAIN_PROFILE)]));
+    const evals = Object.fromEntries(Object.entries(models).map(([c, m]) => {
+      const r = PC.evaluateFull(m, spec, PC.MAIN_PROFILE);
+      // v8's post-engine declarations apply to the corrected account only. Synthetic carriers on the
+      // uncorrected positive control are zero; remove the declared post-engine amount explicitly.
+      if (c === "uncorrected" && r.post_engine) r.cost_bn -= r.post_engine.total_bn;
+      return [c, r];
+    }));
     // The return's derivatives on evaluation r: per unit of each key line's group amount, with the national totals
     // of evaluation n, and per unit of the enterprise receipt's share.
     const derivatives = (r, n) => {
@@ -237,7 +244,11 @@ function capitalCase(name, lane, PC, payload, sum) {
       for (const id of RESP) {
         const got = id.startsWith("receipt:") ? receipt(id.slice("receipt:".length)).response : line(id).response;
         s[responseColumn(id)] = got;
-        responseGap = Math.max(responseGap, Math.abs(got - spec.line_responses[id]));
+        const source = payload.meta.union_completion?.carriers?.[id];
+        const parent = source?.kind === "line" ? (source.side === "receipt" ? receipt(source.parent_line) : line(source.parent_line)) : null;
+        const selected = source?.side === "receipt" ? models[c].receipts.reference : parent?.key;
+        const want = source?.kind === "line" ? (selected === source.parent_key ? parent.response : 0) : spec.line_responses[id];
+        responseGap = Math.max(responseGap, Math.abs(got - want));
       }
       for (const id of TRANSFER_LINES) transferGap = Math.max(transferGap, Math.abs(line(id).response - 1));
       if (grid) s[`production_se_${c}`] = r.evaluation.sampling_se_bn;
@@ -309,14 +320,16 @@ function capitalCase(name, lane, PC, payload, sum) {
   let cashBand = null;
   if (sum.cash_set && fs.existsSync(path.join(FISCAL, lane, "derived", "corrections_cash.json"))) {
     const cashModel = Engine.applyCorrections(PC.MODEL, readJson(`${lane}/derived/corrections_cash.json`));
-    cashBand = span(PC.MAIN_SPECS.map((spec) => PC.evaluateFull(cashModel, spec, PC.MAIN_PROFILE).cost_bn));
+    const cashAPI = PC.CASH || PC;
+    cashBand = span(PC.MAIN_SPECS.map((spec) => cashAPI.evaluateFull(cashModel, spec, PC.MAIN_PROFILE).cost_bn));
     gate(`${name}: the cash payload's specifications span the case lane's cash set (1e-9)`,
       [0, 1].every((e) => Math.abs(cashBand[e] - sum.cash_set.band_bn[e]) < 1e-9), `${cashBand[0].toFixed(4)}–${cashBand[1].toFixed(4)}`);
   }
-  if (sum.v7) {
+  if (sum.v8 || sum.v7) {
+    const live = sum.v8 || sum.v7;
     const setBand = span(bandRows.map((s) => s[name]));
-    gate(`${name}: set and cash match summary.json v7 (1e-9)`, cashBand !== null &&
-      [[setBand, sum.v7.band_bn], [cashBand, sum.v7.cash_set_bn]].every(([b, w]) =>
+    gate(`${name}: set and cash match summary.json ${sum.v8 ? "v8" : "v7"} (1e-9)`, cashBand !== null &&
+      [[setBand, live.band_bn], [cashBand, live.cash_set_bn]].every(([b, w]) =>
         b.every((x, i) => Math.abs(x - w[i]) < 1e-9)));
     const bands = csvRows(`${lane}/derived/main_case_bands.csv`);
     for (const [variant, band] of [["adopted", setBand], ["cash_set", cashBand]]) {
@@ -385,8 +398,9 @@ function blocksOf(payload) {
       if (it.applied && JSON.stringify(it.lineage_edits) !== JSON.stringify(e)) throw new Error(`[BLOCKED] item ${it.id}'s lineage edits are not meta.lineage.edits`);
       continue;
     }
-    if (it.kind === "allocation") {
+    if (it.kind === "allocation" || it.kind === "post_engine") {
       if (!it.edits || it.edits.first !== at || it.edits.count !== 0) throw new Error(`[BLOCKED] allocation item ${it.id} must have zero edits at the next block`);
+      if (it.kind === "post_engine" && !payload.meta[it.id]?.by_end) throw new Error(`[BLOCKED] post-engine item ${it.id} lacks declared end values`);
       continue;
     }
     if (it.kind !== "edit_set") throw new Error(`[BLOCKED] item ${it.id} is of kind ${it.kind}, neither an edit set, allocation nor the lineage`);

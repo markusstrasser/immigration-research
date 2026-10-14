@@ -1,0 +1,71 @@
+{
+  "rule": "common_nce_source",
+  "se_fraction": 0.0053,
+  "source": "2020 PES Hispanic overall NCE SE, pinned Census Table C and national positive control",
+  "covariance_rule": "[APPROX] one common absolute Hispanic NCE-fraction shock to all PES-priced age/sex cells; DA-priced children and 2024 controls fixed. Shape uncertainty is excluded. Consumer treats this scalar instrument as independent of CPS.",
+  "derivative_bn_per_fraction": {
+    "set": {
+      "low": -192.0751235808876,
+      "high": -267.8560912706828
+    },
+    "cash": {
+      "low": -108.47743327162743,
+      "high": -184.258400963409
+    }
+  },
+  "finite_difference_checks": {
+    "set": {
+      "point_bn": [
+        8.802814463690858,
+        12.638785152590001
+      ],
+      "max_difference_bn_per_fraction": 2.087827510877105e-08,
+      "absolute_tolerance": 1e-06,
+      "relative_tolerance": 1e-07,
+      "passed": true
+    },
+    "cash": {
+      "point_bn": [
+        0.7518402578983028,
+        4.587810946797321
+      ],
+      "max_difference_bn_per_fraction": 4.731276703751064e-09,
+      "absolute_tolerance": 1e-06,
+      "relative_tolerance": 1e-07,
+      "passed": true
+    }
+  },
+  "inputs": {
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/coverage_bound_oct15.json": "3456126cc53c353ef0806059dcff33ccc1448cfe8de39d2c92583c6c7d3d073c",
+    "infra/immigration-fiscal/uncertainty_propagation_2026_09_22/coverage_pes.py": "8ab297950d04c361ab8fa9ea8f60ee6b5d17ca6f8630b9d3b1c4c036a3374d54",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/coverage_bound.py": "20c23df7ecc783df7ad8da9e8205e55d88878a976f49ed50fcdc14895dbbadbf",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/source_tables.py": "3083c8b1dce1cf88fade72e13a57b524491f55afbc8f03248cc811ceecef8e7d",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/dependency_manifest.py": "7c31482d1f0c12178af8450b0c43cfa9e55e3830037603ac0891d13f0193d69c",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/export_pricing.py": "41864c83d57cdf70ed4cf6fe525e8eb17c615869ba8f49132f52226d5ef5fc35",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/national_keys.py": "1e4b7aa38574a2db20ae206c3e9af4591a05de698fd49a74488f6b23542ef92f",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/pins.json": "25b72dc12c801f04520e4f4f125a74e1cc2f6f6d89ef967d089cbe6cbe9ab230",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/pes_cross.pdf": "336e595c0de46e541fda5cd389236579db3d9281e26dd4e5bd344c2d1a95cd86",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/pes_national.pdf": "faa5b01e9d29dc7ec87863f89c73a104e6bd2feba1ef9432f65a6841f436e022",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/controls/base_adjustments.csv": "4c97208671f42b9c7647ef2b81469b780bac99e37fe4886668683fdb8388dcb8",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/controls/base_adjustments_sex.csv": "05a41bf8f80a1524cb5d47edd07e363f7b4e0f92f2ae8560810f08da3ba20988",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/pricing_dependencies_oct15_set.json": "3de25b82c5d3972b3ea505fc92c3bf2dedfdaa68a5379eb94983b0d985dc7163",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/pricing_audit_oct15_set.json": "50337dcadf8bacfb75623a65923ba6b7b83e6af9fcf9e95d1277807f0deffbee",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/_cache/oct15/set/pricing.npz": "ae558af8141f4d22e7addcedafa53ecd1089bfde43e93d60b9c197fbacff2b7d",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/pricing_dependencies_oct15_cash.json": "8f12eeead636277fee03b3017975f27e149f2d3211018a6afbb81281bf5ea6a9",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/pricing_audit_oct15_cash.json": "a9ac741a814fe3ff7812b9c4c12134a883f9e3de4d42ae72a14c5437242e51fb",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/_cache/oct15/cash/pricing.npz": "b890920914ff660c02e521899bacf2d3e046aa29acab2c78f298a7765f82cc69"
+  },
+  "coverage_file_sha256": "3456126cc53c353ef0806059dcff33ccc1448cfe8de39d2c92583c6c7d3d073c",
+  "derivative_method": "producer factors/evaluate; centred differences at h=1e-4 and 1e-5, Richardson extrapolation, independent check at h=1e-6",
+  "frozen_recipe": {
+    "set": {
+      "method": "current bytes match original frozen recipe",
+      "recovered": []
+    },
+    "cash": {
+      "method": "current bytes match original frozen recipe",
+      "recovered": []
+    }
+  },
+  "derivative_axis": "signed source NCE fraction (nce_pct/100); increasing it makes negative net coverage error less negative and reduces priced omission. A positive undercount-fraction shock has the opposite sign."
+}

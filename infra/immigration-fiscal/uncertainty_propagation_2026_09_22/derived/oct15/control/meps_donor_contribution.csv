@@ -1,0 +1,13 @@
+allocation,key,categories,target_bn,se_meps_key_only_bn
+personal,medicare,medicare,63.96498236557849,5.045581414997318
+personal,medicaid,medicaid_and_chip_other_medical,116.91361192727226,4.189603867344877
+personal,va_medical,veterans_other,2.3698837930964665,0.39407040600763976
+personal,tricare,military_medical,0.6484139326829691,0.06893413057682482
+personal,health_other,health_services,23.534996006511168,2.095969556503175
+personal,ALL_MEDICAL_JOINT,all,,6.741772658416773
+shared,medicare,medicare,63.96498236557849,5.045581414997318
+shared,medicaid,medicaid_and_chip_other_medical,116.91361192727226,4.189603867344877
+shared,va_medical,veterans_other,2.3698837930964665,0.39407040600763976
+shared,tricare,military_medical,0.6484139326829691,0.06893413057682482
+shared,health_other,health_services,23.534996006511168,2.095969556503175
+shared,ALL_MEDICAL_JOINT,all,,6.741772658416773

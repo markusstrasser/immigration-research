@@ -7,6 +7,7 @@ receipt and spending category tables and the BEA education cells.
 """
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 
@@ -345,6 +346,18 @@ def general_services():
 
 
 def main():
+    global OUT
+    cases = json.loads((HERE / "later_cases.json").read_text())
+    if len(cases) != 1:
+        raise ValueError("[BLOCKED] audit needs exactly one declared live case")
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--out-dir", type=Path, default=OUT / next(iter(cases)) / "control",
+                    help="live-case source-control outputs; preserved historical derived files are not rewritten")
+    args = ap.parse_args()
+    OUT = args.out_dir
+    if not all((OUT / name).is_file() for name in ("case_uncertainty.csv", "propagation_meta.json",
+               "component_sampling.csv", "meps_donor_contribution.csv")):
+        raise ValueError("[BLOCKED] missing live source-control outputs; run propagate.py on the live case first")
     unc = pd.read_csv(OUT / "case_uncertainty.csv")
     ledger = ledger_check()
     ledger.to_csv(OUT / "ledger_replicate_check.csv", index=False)

@@ -26,8 +26,9 @@ script): --case sept26 (CBO's one-year school response, 0.63-0.66) and --case
 sept26_schools (schools at full average cost), then --case sept27 (the return on public capital), --case
 sept29 (candidate v4, adopted 2026-09-29), --case oct05 (main case v5, adopted 2026-10-05: the lineage's
 added people counted whole) and --case oct07 (main case v6: v5 plus an item registry, meta.items).
-Since 2026-10-14 later_cases.json selects only oct14 (v7): the 32 personal specifications, with job-capital's
-industry-key replicates carried jointly with the account. Historical keyed outputs remain untouched.
+Since 2026-10-15 later_cases.json selects only oct15 (v8): the 32 personal specifications, with job-capital's
+industry-key replicates and items 9–11's producer vectors carried jointly with the account. Coverage carries
+external PES SE through its producer derivative. Historical keyed outputs remain untouched.
 
 From sept27 on, the administrative benefit keys' re-keying is recomputed on the same 161 CPS weights and its
 replicate deviation joins the account's before the variance is taken (conceptual audit 2026-09-27, section A):
@@ -39,6 +40,7 @@ either way.
 from __future__ import annotations
 
 import argparse
+import subprocess
 import contextlib
 import gc
 import hashlib
@@ -54,6 +56,7 @@ import numpy as np
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))  # local source adapters also load under pytest importlib mode
 FISCAL = HERE.parent
 ROOT = FISCAL.parents[1]
 OUT = HERE / "derived"
@@ -258,7 +261,8 @@ RECEIPTS_FILE = FISCAL / "full_account_receipts_2026_09_20/derived/category_allo
 CASH_PAYLOADS = {"sept29": "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json",
                  "oct05": "main_case_2026_10_05/derived/corrections_cash.json",
                  "oct07": "main_case_2026_10_07/derived/corrections_cash.json",
-                 "oct14": "main_case_2026_10_14/derived/corrections_cash.json"}
+                 "oct14": "main_case_2026_10_14/derived/corrections_cash.json",
+                 "oct15": "main_case_2026_10_15/derived/corrections_cash.json"}
 # Later cases, case -> main-case lane, one line each; sept24_specs.cjs reads the same file.
 LATER_CASES = json.loads((HERE / "later_cases.json").read_text())
 # Per --case: the main case's summary, then (row label, band in that summary, column tag in
@@ -344,9 +348,11 @@ def payload_blocks(p):
             if it["applied"] and it["lineage_edits"] != e:
                 raise ValueError(f"[BLOCKED] item {it['id']}'s lineage edits are not meta.lineage.edits")
             continue
-        if it["kind"] == "allocation":
+        if it["kind"] in ("allocation", "post_engine"):
             if it.get("edits") != dict(first=at, count=0):
                 raise ValueError(f"[BLOCKED] allocation item {it['id']} must have zero edits at the next block")
+            if it["kind"] == "post_engine" and not p["meta"].get(it["id"], {}).get("by_end"):
+                raise ValueError(f"[BLOCKED] post-engine item {it['id']} lacks declared end values")
             continue
         if it["kind"] != "edit_set":
             raise ValueError(f"[BLOCKED] item {it['id']} is of kind {it['kind']}, neither an edit set, allocation nor the lineage")
@@ -386,7 +392,7 @@ def lineage_rebase(lin, arms, case_lane, main, items, ends):
       lineage parts are taken in proportion to the count, not to its mix of G3-rate persons and later losses.
     Returns ({arm: band}, {arm: [low line, high line]}, the rebase record).
     """
-    if "v7" in main:
+    if "v8" in main or "v7" in main:
         return lineage_rebase_v7(lin, arms, case_lane, main, ends)
     central = lin["arm"]
     c3 = lin["c3"]["value"]
@@ -472,7 +478,10 @@ def lineage_rebase_v7(lin, arms, case_lane, main, ends):
     midpoint against the central case (1e-9). The count arms use the case's own arm bands. As before,
     each count arm uses the central C3 slope scaled by its G3-rate count [APPROX: central responses].
     """
-    options = main["v7"]["companions"]["options"]
+    if "v8" in main:
+        return lineage_rebase_v8(lin, arms, case_lane, main, ends)
+    version = "v7"
+    options = main[version]["companions"]["options"]
     c3, se, central = lin["c3"]["value"], lin["c3"]["se"], lin["arm"]
     band = np.asarray(main["main_case"], float)
     if not np.allclose([e.net_cost_bn for e in ends], band, rtol=0, atol=1e-9):
@@ -494,11 +503,63 @@ def lineage_rebase_v7(lin, arms, case_lane, main, ends):
             raise ValueError(f"[BLOCKED] v7's lineage arm {arm} uses the wrong arm or C3")
         rd = slope if arm == central else slope * option["g3_rate"] / minus["g3_rate"]
         lines[arm] = [dict(intercept_bn=b[j] - rd[j] * c3, slope_bn=rd[j]) for j in (0, 1)]
-    record = dict(source=f"{case_lane}/derived/summary.json (v7.companions.options)",
+    record = dict(source=f"{case_lane}/derived/summary.json ({version}.companions.options)",
                   c3_central_slope_bn=slope.tolist(), lineage_item="added_age_mix",
                   rule="whole-case arm bands; symmetric C3 +/- SE runs carry every item, including lineage credits "
                        "and job capital; arms a/c scale the central C3 slope by their G3-rate count [APPROX]")
     return bands, lines, record
+
+
+def lineage_rebase_v8(lin, arms, case_lane, main, ends):
+    """Use native v8 companions and retain their declared slight nonlinearity."""
+    c3,se,central=lin['c3']['value'],lin['c3']['se'],lin['arm']
+    band=np.asarray(main['main_case'],float)
+    if not np.allclose([e.net_cost_bn for e in ends],band,rtol=0,atol=1e-9):
+        raise ValueError('[BLOCKED] v8 end specifications do not give adopted band')
+    script=r'''
+const P=require(process.argv[1]), out={};
+for(const name of ['arm_a','arm_c','c3_minus_se','c3_plus_se']) {
+ const Q=P.caseOf(P.OCT05,P.CANDIDATE,{},name), pl=Q.correctionsPayload();
+ const m=Q.Engine.applyCorrections(Q.MODEL,pl);
+ const costs=Q.MAIN_SPECS.map(s=>Q.evaluateFull(m,s).cost_bn);
+ out[name]={lineage:pl.meta.lineage,population:pl.meta.population_v8,
+            observed_added:pl.meta.union_completion.counts.added_lineage,
+            band_bn:[Math.min(...costs),Math.max(...costs)]};
+}
+process.stdout.write(JSON.stringify(out));
+'''
+    run=subprocess.run(['node','-e',script,str(FISCAL/case_lane/'package.cjs')],capture_output=True,text=True)
+    if run.returncode:
+        raise ValueError('[BLOCKED] v8 native lineage companions: '+run.stderr[-1000:])
+    native=json.loads(run.stdout)
+    options={name:main['v8']['companions']['lineage_'+name] for name in native}
+    for name,value in native.items():
+        if not np.allclose(value['band_bn'],options[name]['band_bn'],rtol=0,atol=1e-9):
+            raise ValueError('[BLOCKED] v8 native companion band differs: '+name)
+    minus,plus=native['c3_minus_se'],native['c3_plus_se']
+    if not (abs(minus['lineage']['c3']['value']-(c3-se))<1e-12 and
+            abs(plus['lineage']['c3']['value']-(c3+se))<1e-12):
+        raise ValueError('[BLOCKED] v8 C3 companions use wrong measured C3 +/- SE')
+    bm,bp=np.asarray(minus['band_bn']),np.asarray(plus['band_bn'])
+    slope=(bp-bm)/(2*se)
+    bands={central:band.tolist(),'a':native['arm_a']['band_bn'],'c':native['arm_c']['band_bn']}
+    lines={}
+    central_g3=lin['counts']['at_g3_rate']
+    for arm,b in bands.items():
+        option=None if arm==central else native['arm_'+arm]['lineage']
+        if option and (option['arm']!=arm or abs(option['c3']['value']-c3)>1e-12):
+            raise ValueError('[BLOCKED] v8 count companion has wrong arm/C3')
+        rd=slope if option is None else slope*option['counts']['at_g3_rate']/central_g3
+        lines[arm]=[dict(intercept_bn=b[j]-rd[j]*c3,slope_bn=rd[j]) for j in (0,1)]
+    record=dict(source=f'{case_lane}/derived/summary.json (v8.companions), independently rerun native caseOf options',
+                lineage_item='added_age_mix',c3_central_slope_bn=slope.tolist(),
+                exact_c3_minus_se_band_bn=bm.tolist(),exact_c3_plus_se_band_bn=bp.tolist(),
+                populations={arm:(main['v8']['population'] if arm==central else native['arm_'+arm]['population'])
+                             for arm in bands},
+                observed_added_persons=native['arm_a']['observed_added'],
+                c3_midpoint_minus_central_bn=((bm+bp)/2-band).tolist(),
+                rule='Native whole-case bands at all four options gated 1e-9. C3 error uses symmetric +/-SE secant [APPROX], not an affine identity; nonlinear midpoint residual retained. Arms a/c scale this secant by native G3-rate counts [APPROX]; coverage prices fixed as producer declares.')
+    return bands,lines,record
 
 
 def job_capital_replicates(source):
@@ -566,6 +627,131 @@ def job_capital_replicates(source):
     return item, vectors
 
 
+def v8_sampling(meta, pes_rule="producer", source_derivative=None):
+    """Producer errors on their own keys; signed cost vectors join the matching CPS block.
+
+    K2 is reconstructed from its producer's frozen cell shares and tax vectors, then gated against
+    its published point/SDR. Item 10 uses the paired candidate vector and published SE. Item 11 is
+    independently rebuilt from round2_replicates.csv with only its declared D residual scaled.
+    PES error is external to CPS and enters through the coverage producer's derivative, never its
+    CPS key spread. Every source is read-only.
+    """
+    if "foreign_source_tax" not in meta:
+        return None
+
+    def pinned(file, digest, base=FISCAL):
+        p = base / file
+        if hashlib.sha256(p.read_bytes()).hexdigest() != digest:
+            raise ValueError(f"[BLOCKED] v8 sampling source hash changed: {file}")
+        return p
+
+    foreign = meta["foreign_source_tax"]
+    source = foreign["source"]
+    oracle = json.loads(pinned(source["file"], source["sha256"]).read_text())["arms"]["K2_foreign_source_removed"]
+    lane = FISCAL / Path(source["file"]).parts[0]
+    for file in ("pins.json", "k236_pins.json"):
+        for name, record in json.loads((lane / "inputs" / file).read_text()).items():
+            if "sha256" not in record:
+                raise ValueError(f"[BLOCKED] K2 source pin lacks a hash: {file}/{name}")
+            location = record.get("path", name)
+            p = Path(location)
+            if not p.is_absolute():
+                p = lane / "_cache" / p
+            actual = None
+            if p.is_file():
+                with p.open('rb') as stream:
+                    actual = hashlib.file_digest(stream,'sha256').hexdigest()
+            if actual != record["sha256"]:
+                raise ValueError(f"[BLOCKED] K2 authoritative source pin changed: {file}/{name}")
+    core = json.loads((lane / "derived/core.json").read_text())
+    if not all(g["passed"] for g in core["gates"]):
+        raise ValueError("[BLOCKED] K2 core source gates fail")
+    with np.load(lane / "_cache/core.npz") as c, np.load(lane / "_cache/k236_targets.npz") as k:
+        parts = {g: c[f"shares_{g}"].T @ c["tax_corporate"] - k[f"foreign_removed_{g}"]
+                 for g in ("union", "G3plus", "white")}
+    k2 = {}
+    for end in ("low", "high"):
+        response = core["responses"][end]["corporate"]
+        union = response * parts["union"]
+        whole = union + sum(response * core["lineage_rates"][g] * parts[g] for g in ("G3plus", "white"))
+        for population, vector in (("union", union), ("lineage", whole)):
+            q = oracle[end][population]
+            if not (vector.shape == (161,) and np.isfinite(vector).all()
+                    and np.isclose(vector[0], q["delta_net_cost_bn"], rtol=0, atol=1e-9)
+                    and np.isclose(sdr(vector), q["delta_conditional_se_bn"], rtol=0, atol=1e-9)):
+                raise ValueError(f"[BLOCKED] K2 {end}/{population} point/SDR differs from producer")
+        k2[end] = whole
+
+    completion = meta["union_completion"]
+    csource = completion["source"]
+    candidate = json.loads(pinned(csource["file"], csource["sha256"]).read_text())
+    union = {}
+    for index, end in enumerate(("low", "high")):
+        vector = np.asarray(completion["paired_replicate_delta_bn"][index], float)
+        q = candidate["results"]["set"][end]["arms"]["central_observed_completion"]["delta_bn"]
+        if not (vector.shape == (161,) and np.isfinite(vector).all()
+                and np.isclose(vector[0], q["estimate"], rtol=0, atol=1e-9)
+                and np.isclose(sdr(vector), q["se"], rtol=0, atol=1e-9)):
+            raise ValueError(f"[BLOCKED] item 10 {end} point/SDR differs from its producer")
+        union[end] = vector
+
+    mixed = meta["mixed_unit_removal"]
+    files = mixed["source"]["files"]
+    for q in files.values():
+        pinned(q["path"], q["sha256"], ROOT)
+    reps = pd.read_csv(ROOT / files["replicates"]["path"])
+    cols = [f"r{i}" for i in range(161)]
+    if list(reps.columns) != ["method", "end", "component", "generation", *cols] or reps.duplicated(
+            ["method", "end", "component", "generation"]).any():
+        raise ValueError("[BLOCKED] item 11 source replicate schema/keys changed")
+    removal = {}
+    for end in ("low", "high"):
+        q = mixed["by_end"][end]
+        def stack(component):
+            z = reps[(reps.method == "set") & (reps.end == end) & (reps.component == component)]
+            if set(z.generation) != {"G1", "G2", "G3+"} or len(z) != 3:
+                raise ValueError(f"[BLOCKED] item 11 missing generation stack: {end}/{component}")
+            return z[cols].to_numpy(float).sum(axis=0)
+        vector = stack(q["source_component"]) + stack("D_added_residual") * (mixed["D_scaling"]["scale"] - 1)
+        if not (np.allclose(vector, q["replicates_bn"], rtol=0, atol=1e-9)
+                and np.isclose(vector[0], q["total_bn"], rtol=0, atol=1e-9)
+                and np.isclose(sdr(vector), q["se_bn"], rtol=0, atol=1e-9)):
+            raise ValueError(f"[BLOCKED] item 11 {end} point/SDR differs from source round2 stack")
+        removal[end] = vector
+
+    coverage = meta.get("coverage")
+    if not coverage:
+        raise ValueError("[BLOCKED] v8 uncertainty requires the coverage declaration")
+    if coverage.get("stub"):
+        raise ValueError("[BLOCKED] v8 uncertainty cannot propagate a coverage stub")
+    raw = json.loads(pinned(coverage["file"], coverage["sha256"]).read_text())
+    pes = raw.get("pes_sampling")
+    if pes_rule == "common_nce_source":
+        from coverage_pes import derive, validate_receipt
+
+        if source_derivative is None:
+            source_derivative = derive(FISCAL, coverage)
+        if source_derivative.get("coverage_file_sha256") != coverage["sha256"]:
+            raise ValueError("[BLOCKED] coverage changed after source-derived PES gradient")
+        validate_receipt(FISCAL, source_derivative)
+        pes = dict(source_derivative, derivative_axis=(
+            "signed source NCE fraction (nce_pct/100); increasing it makes negative net coverage error "
+            "less negative and reduces priced omission. A positive undercount-fraction shock has the opposite sign."))
+    elif pes_rule != "producer":
+        raise ValueError("[BLOCKED] unknown coverage PES covariance rule")
+    if not pes or not np.isclose(pes.get("se_fraction", np.nan), .0053, rtol=0, atol=1e-12):
+        raise ValueError("[BLOCKED] coverage producer must declare PES 0.53-point SE and its derivative")
+    derivative = pes.get("derivative_bn_per_fraction", {})
+    if not all(isinstance(derivative.get(basis, {}).get(end), (int, float))
+               and np.isfinite(derivative[basis][end])
+               for basis in ("set", "cash") for end in ("low", "high")):
+        raise ValueError("[BLOCKED] coverage producer needs finite, separately priced set/cash PES derivatives")
+    if not pes.get("covariance_rule") or not pes.get("source"):
+        raise ValueError("[BLOCKED] coverage PES derivative lacks its authoritative source/covariance rule")
+    return dict(k2=k2, union=union, removal=removal, pes=pes,
+                sources=dict(foreign=source, union=csource, mixed=files, coverage=coverage))
+
+
 def lineage_component(f, lin, main=None, items=None, case_lane=None):
     """The lineage's own uncertainty beside the propagation (oct05; main_case_2026_10_05 RESULT, Consumers): C3's SE
     and the count's arms a and c, which the CPS ASEC replicates do not see.
@@ -619,6 +805,13 @@ def lineage_component(f, lin, main=None, items=None, case_lane=None):
             ci95_envelope_with_c3_bn=[band[0] - 1.96 * env[0], band[1] + 1.96 * env[1]])
         if rebase is not None:
             out["arms"][arm]["c3_line"] = dict(low=lines[0], high=lines[1])
+            if arm==lin['arm'] and 'exact_c3_minus_se_band_bn' in rebase:
+                out['arms'][arm]['band_at_c3_minus_1se_bn']=rebase['exact_c3_minus_se_band_bn']
+                out['arms'][arm]['band_at_c3_plus_1se_bn']=rebase['exact_c3_plus_se_band_bn']
+            if 'populations' in rebase:
+                out['arms'][arm]['population']=rebase['populations'][arm]['with_coverage']
+                out['arms'][arm]['population_basis']=rebase['populations'][arm]
+                out['arms'][arm]['added_persons']=v['added']+rebase['observed_added_persons']
     out["ci95_with_c3_over_arms_bn"] = [min(v["ci95_with_c3_bn"][0] for v in out["arms"].values()),
                                         max(v["ci95_with_c3_bn"][1] for v in out["arms"].values())]
     out["ci95_envelope_with_c3_over_arms_bn"] = [min(v["ci95_envelope_with_c3_bn"][0] for v in out["arms"].values()),
@@ -722,6 +915,17 @@ def adopted_cases(ctx, name, joint=None):
             raise ValueError(f"{case} specifications do not span the published band: {got} vs {want}")
     lane_dir = LATER_CASES.get(name)
     payload = json.loads((FISCAL / lane_dir / "derived/corrections.json").read_text()) if lane_dir else {"meta": {}}
+    completion_item = next((it for it in payload["meta"].get("items", []) if it["id"] == "union_completion"), None)
+    completion_range = completion_item.get("edits") if completion_item else None
+    completion_edits = payload["edits"][completion_range["first"]:completion_range["first"] + completion_range["count"]] if completion_range else []
+    completion_shifts = {}
+    for x in completion_edits:
+        if "national_bn" in x:
+            raise ValueError("[BLOCKED] item 10 source-error routing cannot silently scale a national total")
+        key = x.get("scenario") if x["side"] == "receipt" else x.get("key")
+        for a, v in x["by"].items():
+            k = (a, x["side"], x["line"], key)
+            completion_shifts[k] = completion_shifts.get(k, 0.0) + v
     pa = payload["meta"].get("pension_accrual")                  # sept29: the pension switch at payable benefits
     lin = payload["meta"].get("lineage")                         # oct05: the lineage's edits after the union's (v5)
     if lin and not pa:
@@ -735,6 +939,12 @@ def adopted_cases(ctx, name, joint=None):
         v = lt.loc[(side, line, key, a), f"target_{tag[case]}_bn"]
         return 0.0 if pd.isna(v) else float(v)
 
+    def sampling_target(case, side, line, key, a):
+        # Item 10's native child cells and exact credit interaction have their own source stack. Their
+        # dollars stay in the full reconstruction; exclude them from generic account-key error scaling.
+        return target(case, side, line, key, a) - (completion_shifts.get((a, side, line, key), 0.0)
+                                                 if case == adopted else 0.0)
+
     # Fixed dollars in the case's target on a line carry no CPS or MEPS error; the line's error scales with the rest
     # of its amount (sept29: the Part A accrual on the Medicare line).
     fixed = {(a, "medicare"): pa["part_a_accrual_bn"] for a in ("personal", "shared")} if pa else {}
@@ -744,7 +954,7 @@ def adopted_cases(ctx, name, joint=None):
             return 1.0
         side, key = ("receipt", "cbo_collective") if kind == "receipt" else ("spending", ctx["lane_keys"][(a, line)])
         t0 = target(base, side, line, key, a)
-        return (target(adopted, side, line, key, a) - fixed.get((a, line), 0.0)) / t0 if t0 else 1.0
+        return (sampling_target(adopted, side, line, key, a) - fixed.get((a, line), 0.0)) / t0 if t0 else 1.0
 
     def kcoefs(s, t):
         """The capital return's derivatives on the model tagged t: its own (kcoef_<t>_<line>) or the common ones."""
@@ -780,7 +990,9 @@ def adopted_cases(ctx, name, joint=None):
         cash = json.loads((FISCAL / CASH_PAYLOADS[name]).read_text())
 
         def cell_edits(p, line, key):
-            return {a: sum(e["by"][a] for e in p["edits"] if e.get("line") == line and e.get("key") == key
+            item = next((it for it in p["meta"].get("items", []) if it["id"] == "union_completion"), None)
+            skip = range(item["edits"]["first"], item["edits"]["first"] + item["edits"]["count"]) if item else ()
+            return {a: sum(e["by"][a] for i, e in enumerate(p["edits"]) if i not in skip and e.get("line") == line and e.get("key") == key
                            and "national_bn" not in e) for a in ("personal", "shared")}
         set_m, cash_m = cell_edits(payload, "medicare", "medicare"), cell_edits(cash, "medicare", "medicare")
         if lin:
@@ -801,6 +1013,8 @@ def adopted_cases(ctx, name, joint=None):
                             and (x.get("scenario") if side == "receipt" else x.get("key")) == key)
                 out = {a: sum(x["by"][a] for x in p["edits"][first:row8] if on(x)) for a in ("personal", "shared")}
                 for b in blocks["items"] if with_items else ():
+                    if b["id"] == "union_completion":
+                        continue  # Native observed children enter through their producer stack, not this ratio.
                     for part_name, part in b["parts"].items():
                         if part_name.startswith("lineage_") and on(b["edits"][part["edit"]]):
                             for a in out:
@@ -815,9 +1029,9 @@ def adopted_cases(ctx, name, joint=None):
                 raise ValueError("[BLOCKED] the set's and the cash set's lineage differ on the OASDI receipts")
         lineage_k, lineage_part_a, identities = {}, {}, {}
         for a in ("personal", "shared"):
-            ss = target(adopted, "spending", "social_security", "social_security", a)
-            receipts = {line: target(adopted, "receipt", line, "cbo_collective", a) for line, _ in oasdi}
-            med = target(adopted, "spending", "medicare", "medicare", a)
+            ss = sampling_target(adopted, "spending", "social_security", "social_security", a)
+            receipts = {line: sampling_target(adopted, "receipt", line, "cbo_collective", a) for line, _ in oasdi}
+            med = sampling_target(adopted, "spending", "medicare", "medicare", a)
             med_cash = med - set_m[a] + cash_m[a]
             if lin:
                 lin_oasdi = sum(c * lc[line][a] for line, c in oasdi)
@@ -881,7 +1095,7 @@ def adopted_cases(ctx, name, joint=None):
                     line = b["edits"][v["edit"]]["line"]
                     if not k.startswith("lineage_") or line not in ("social_security", "medicare"):
                         continue
-                    if b["id"] == "row4_frame":
+                    if b["id"] in ("row4_frame", "union_completion"):
                         # These are R9's part-model shifts, not pension_tr2026's (f - 1) adjustment.
                         continue
                     want = ({a: (lf["f_ss"] - 1) * ss0[a] for a in ss0} if line == "social_security" else
@@ -916,6 +1130,13 @@ def adopted_cases(ctx, name, joint=None):
                                                              for i, ps in on_pension.items() if ps},
                 items_union_parts={i: {k: v["by"] for k, v in ps.items() if k.startswith("union_")}
                                    for i, ps in on_pension.items() if ps})
+            if completion_item:
+                pension_record["union_completion"] = dict(
+                    native_shifts_removed_from_generic_identity_and_error_scaling_bn={
+                        f"{a}|{side}|{line}|{key}": v for (a, side, line, key), v in completion_shifts.items()
+                        if line in ("social_security", "medicare") or line in dict(oasdi)},
+                    rule="R11: these source-priced native cells enter through item 10's producer stack; "
+                         "original pension identities/rules remain unchanged after their explicit subtraction")
             if row4_parts:
                 inp = json.loads((sub / "row4_pension_inputs.json").read_text())
                 r9 = payload["meta"]["row4_frame"]
@@ -990,6 +1211,22 @@ def adopted_cases(ctx, name, joint=None):
                  "remaining_production_property": "c_and_i_property", "other_production_taxes": "other_production_taxes"}
     if job_item and not set(job_lines) <= set(overrides):
         raise ValueError("[BLOCKED] the job-capital item needs all four receipt-response overrides")
+    new_sampling = v8_sampling(payload["meta"], ctx.get("coverage_pes_rule", "producer"),
+                               ctx.get("coverage_pes_derivative"))
+    if new_sampling and ctx.get("coverage_pes_rule") == "common_nce_source":
+        (sub / "coverage_pes_derivative.json").write_text(
+            json.dumps(new_sampling["pes"], indent=2) + "\n")
+    if new_sampling:
+        cps_receipt = ctx["coverage_cps"]
+        (sub / "coverage_cps_replicates.json").write_text(json.dumps(cps_receipt, indent=2) + "\n")
+        new_sampling["coverage_cps"] = {end: np.asarray(v) for end, v in cps_receipt["vectors_bn"]["set"].items()}
+    foreign_shifts = {}
+    if new_sampling:
+        foreign_block = next(b for b in payload_blocks(payload)["items"] if b["id"] == "foreign_source_tax")
+        for x in foreign_block["edits"]:
+            if x.get("scenario") == "cbo_collective":
+                for a in ("personal", "shared"):
+                    foreign_shifts[(a, x["line"])] = foreign_shifts.get((a, x["line"]), 0.0) + x["by"][a]
     if overrides:
         account_receipts = pd.read_csv(RECEIPTS_FILE).query("scenario_id == 'cbo_collective'")
         new_lines = {line["id"]: line for line in payload.get("receipt_lines", [])}
@@ -1018,8 +1255,8 @@ def adopted_cases(ctx, name, joint=None):
                           float(sp.query("category == 'housing_subsidies'").national_bn.iloc[0]))
             for a in ["personal", "shared"]:
                 for case in (base, adopted):
-                    t_hs = target(case, "spending", "housing_subsidies", "housing_support", a)
-                    follow[(case, a, line)] = target(case, "receipt", line, "cbo_collective", a) / t_hs
+                    t_hs = sampling_target(case, "spending", "housing_subsidies", "housing_support", a)
+                    follow[(case, a, line)] = sampling_target(case, "receipt", line, "cbo_collective", a) / t_hs
                 if not np.isclose(target(adopted, "receipt", line, "cbo_collective", a) / new_lines[line]["national_bn"],
                                   target(adopted, "spending", "housing_subsidies", "housing_support", a) / hs_nat,
                                   rtol=1e-12, atol=0):
@@ -1079,6 +1316,10 @@ def adopted_cases(ctx, name, joint=None):
             elif it["kind"] == "allocation" and it["applied"]:
                 item_routes.append(dict(id=it["id"], kind="allocation", edits=it["edits"],
                                         route="the case's group total uses its personal specifications (R5)"))
+            elif it["kind"] == "post_engine" and it["applied"]:
+                item_routes.append(dict(id=it["id"], kind="post_engine", edits=it["edits"],
+                                        route="source round2 CPS replicate stack" if it["id"] == "mixed_unit_removal"
+                                        else "source PES 0.53-point SE through producer derivative"))
         for b in payload_blocks(payload)["items"]:
             it = meta_of[b["id"]]
             # A union-only item (user_fees) prices the union alone: no lineage_* part, so nothing of it is booked with
@@ -1088,6 +1329,10 @@ def adopted_cases(ctx, name, joint=None):
             lines = {}
             for k, x in enumerate(b["edits"]):
                 r = route_of(x)
+                if b["id"] == "union_completion":
+                    r = "producer paired own-record replicate stack; never account key ratio"
+                elif b["id"] == "foreign_source_tax":
+                    r = "producer K2 replicate stack; never account key ratio"
                 if r == "pension rule":
                     ps = [v for v in b["parts"].values() if v["edit"] == k]
                     if "national_bn" in x or not ps or not all(
@@ -1278,13 +1523,32 @@ def adopted_cases(ctx, name, joint=None):
                         rep = job_vectors[(a, group)]
                         # Corporate's two lines share one industry key; their amounts split its vector, preserving
                         # perfect covariance. Added people's dollars ride the same first-order line ratio [ASSUMPTION].
-                        scale = target(case, "receipt", line, "cbo_collective", a) / job_item["lines"][key]["group_bn"][a]
+                        amount = sampling_target(case, "receipt", line, "cbo_collective", a) - foreign_shifts.get((a, line), 0.0)
+                        scale = amount / job_item["lines"][key]["group_bn"][a]
                         dev_jobs += getattr(s, f"response_receipt_{line}") * scale * (rep - rep[0])
                     elif (a, line) in receipt_reps:
                         rep = receipt_reps[(a, line)]
                         dev_receipts += getattr(s, f"response_receipt_{line}") * ratio(case, "receipt", line, a) * (rep - rep[0])
+                if new_sampling and case == adopted:
+                    # Welfare is minus cost: remove K2's signed cost shift from the old source-tax vector.
+                    vector = new_sampling["k2"][s.reading]
+                    dev_jobs -= vector - vector[0]
                 dev_receipts += dev_jobs
                 dev_account = dev_account + dev_receipts
+            new_se = {"foreign_source_tax": 0.0, "union_completion": 0.0, "mixed_unit_removal": 0.0, "coverage_cps": 0.0, "coverage_pes": 0.0}
+            if new_sampling and case == adopted:
+                if a != "personal":
+                    raise ValueError("[BLOCKED] v8 producer sampling stacks price only the personal group total")
+                for item, key in (("union_completion", "union"), ("mixed_unit_removal", "removal"), ("coverage_cps", "coverage_cps")):
+                    vector = new_sampling[key][s.reading]
+                    dev_account -= vector - vector[0]
+                    new_se[item] = sdr(vector)
+                new_se["foreign_source_tax"] = sdr(new_sampling["k2"][s.reading])
+                if new_sampling["pes"]:
+                    derivative = new_sampling["pes"]["derivative_bn_per_fraction"]["set"][s.reading]
+                    if not np.isfinite(derivative):
+                        raise ValueError("[BLOCKED] nonfinite coverage PES derivative")
+                    new_se["coverage_pes"] = abs(derivative) * new_sampling["pes"]["se_fraction"]
             se_account = sdr(dev_account)
             # The benefit keys' change on the replicates as a welfare deviation: first order (the change's level at
             # the account's point) and with the factor product (its level on the replicate).
@@ -1305,16 +1569,18 @@ def adopted_cases(ctx, name, joint=None):
                     pension_alt[alt] = sdr(d_alt + b) if joint else sdr(d_alt)
 
             def education_dollars(r, school):
-                return (r["education_services"] * target(case, "spending", "education_services", edu_key, a)
-                        + s.share * school * target(case, "spending", "school_reprice", "k", a)
-                        + (1 - s.share) * target(case, "spending", "college_rekey", "k", a))
+                return (r["education_services"] * sampling_target(case, "spending", "education_services", edu_key, a)
+                        + s.share * school * sampling_target(case, "spending", "school_reprice", "k", a)
+                        + (1 - s.share) * sampling_target(case, "spending", "college_rekey", "k", a))
             edu_dollars = education_dollars(resp, s.school)
             if capital:
                 # The K-12 and college returns: their keys are the education lines' amounts.
                 edu_capital = (kc["education_services"] * target(case, "spending", "education_services", edu_key, a)
                                + kc["school_reprice"] * target(case, "spending", "school_reprice", "k", a)
                                + kc["college_rekey"] * target(case, "spending", "college_rekey", "k", a))
-                edu_dollars += edu_capital
+                edu_dollars += (kc["education_services"] * sampling_target(case, "spending", "education_services", edu_key, a)
+                                + kc["school_reprice"] * sampling_target(case, "spending", "school_reprice", "k", a)
+                                + kc["college_rekey"] * sampling_target(case, "spending", "college_rekey", "k", a))
             se_school = edu_dollars * school_rel[a]["indep"]
             se_school_up = edu_dollars * school_rel[a]["upper"]
             if case == base and not (
@@ -1322,11 +1588,12 @@ def adopted_cases(ctx, name, joint=None):
                     and np.isclose(education_dollars(resp20, school_old) * school_rel[a]["indep"],
                                    ref.se_school_correction_bn, rtol=1e-9, atol=0)):
                 raise ValueError("MEPS or school error of the September 20 case not reproduced")
-            indep = np.sqrt(se_cps ** 2 + se_pf_case ** 2 + se_school ** 2 + se_m ** 2)
-            envelope = se_cps + se_pf_case + se_school_up + se_m
+            se_pes = new_se["coverage_pes"]
+            indep = np.sqrt(se_cps ** 2 + se_pf_case ** 2 + se_school ** 2 + se_m ** 2 + se_pes ** 2)
+            envelope = se_cps + se_pf_case + se_school_up + se_m + se_pes
             ben = float(ben_se[a]) if case == adopted else 0.0
             # The published append: package_se.csv beside the account's combined error without the benefit keys.
-            indep_account = np.sqrt(se_account ** 2 + se_pf_case ** 2 + se_school ** 2 + se_m ** 2) if joint else indep
+            indep_account = np.sqrt(se_account ** 2 + se_pf_case ** 2 + se_school ** 2 + se_m ** 2 + se_pes ** 2) if joint else indep
             cost = getattr(s, f"cost_{tag[case]}_bn")
             rows.append(dict(case=case, allocation=a, normalization=s.normalization, school_share=s.share,
                              school_response=s.school, general_government_response=s.gg, medicaid_key=s.uc,
@@ -1354,9 +1621,18 @@ def adopted_cases(ctx, name, joint=None):
                 rows[-1].update(se_cps_receipt_responses_part_bn=sdr(dev_receipts))
             if job_item:
                 rows[-1].update(se_cps_job_capital_part_bn=sdr(dev_jobs))
+            if new_sampling:
+                rows[-1].update({f"se_{item}_bn": v for item, v in new_se.items()})
+                if case == adopted:
+                    coverage_dev = -(new_sampling['coverage_cps'][s.reading] - new_sampling['coverage_cps'][s.reading][0])
+                    shared = dev_account + b if joint else dev_account
+                    without = shared - coverage_dev
+                    covariance = 4 / 160 * float(np.dot(without[1:] - without[0], coverage_dev[1:] - coverage_dev[0]))
+                    rows[-1].update(se_cps_without_coverage_bn=sdr(without),
+                                    coverage_cps_covariance_bn2=covariance)
             for alt, se_alt in pension_alt.items():
                 rows[-1].update({f"se_cps_pension_{alt}_bn": se_alt, f"se_combined_pension_{alt}_bn":
-                                 np.sqrt(se_alt ** 2 + se_pf_case ** 2 + se_school ** 2 + se_m ** 2)})
+                                  np.sqrt(se_alt ** 2 + se_pf_case ** 2 + se_school ** 2 + se_m ** 2 + se_pes ** 2)})
     frame = pd.DataFrame(rows)
     frame.to_csv(sub / "case_uncertainty.csv", index=False)
     summary = {}
@@ -1396,7 +1672,27 @@ def adopted_cases(ctx, name, joint=None):
                 se_propagated_bn=[f.se_cps_job_capital_part_bn.min(), f.se_cps_job_capital_part_bn.max()],
                 rule="producer's 161-weight vectors, points and per-line/joint SDR gated against item.json (1e-9); "
                      "corporate's two lines share one vector; joint with the account and benefit keys at matching "
-                     "pwwgt columns; lineage dollars ride the line's first-order ratio [ASSUMPTION]")
+                      "pwwgt columns; lineage dollars ride the line's first-order ratio [ASSUMPTION]" +
+                      ("; v8's foreign-source shifts are removed from that ratio and its exact signed K2 producer "
+                       "vector enters instead" if new_sampling else ""))
+        if new_sampling and case == adopted:
+            summary[case]["v8_sampling"] = dict(
+                sources=new_sampling["sources"], pes_sampling=new_sampling["pes"],
+                se_bn={item: [f[f"se_{item}_bn"].min(), f[f"se_{item}_bn"].max()] for item in new_se},
+                rule="K2, item 10 paired own-record CPS stack, item 11 round2 stack and conditional coverage CPS construction join the account and benefit "
+                     "keys at matching pwwgt0..160, preserving covariance. Source policy/count calibrations are fixed. "
+                     "Coverage uses external PES 0.53-point SE times the declared derivative, independent of CPS; "
+                     "no account-key spread substitutes for an item's producer spread.",
+                coverage_cps=dict(rule=cps_receipt['rule'],frame_proof=cps_receipt['frame_proof'],
+                                  replicate_ids=cps_receipt['replicate_ids'],se_bn=cps_receipt['se_bn'],
+                                  receipt='coverage_cps_replicates.json'),
+                transport="Producer item-10 and coverage CPS endpoint vectors carried by reading over the 32 personal specifications "
+                          "[APPROX]; producer responses/calibrations held. K2 and item-11 exact source stacks gated at 1e-9.")
+            summary[case]["v8_sampling"]["coverage_pes_rule"] = ctx.get("coverage_pes_rule", "producer")
+            if ctx.get("coverage_pes_rule") == "common_nce_source":
+                summary[case]["v8_sampling"]["interval_scope"] = (
+                    "[CONDITIONAL APPROXIMATION] common absolute Hispanic NCE shock through pinned producer "
+                    "functions; DA children fixed. No official age/sex covariance or unconditional interval.")
     (sub / "summary.json").write_text(json.dumps(summary, indent=2, default=float) + "\n")
     for case, v in summary.items():
         print(f"[{case}] cost {v['net_cost_band_bn'][0]:.1f}-{v['net_cost_band_bn'][1]:.1f}  "
@@ -1415,13 +1711,21 @@ def adopted_cases(ctx, name, joint=None):
 def main():
     ap = argparse.ArgumentParser(description="Propagate sampling and donor errors onto the account's cases.")
     ap.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24", "sept20"), default=list(LATER_CASES)[-1],
-                    help="the live case in later_cases.json (oct14, main case v7) or the September 20/24 construction "
+                    help="the live case in later_cases.json (oct15, main case v8) or the September 20/24 construction "
                          "as an explicit control; historical keyed case outputs are not regenerated")
+    ap.add_argument("--coverage-pes-rule", choices=["producer", "common_nce_source"], default="producer",
+                    help="producer derivative (fail closed), or explicit conditional common absolute NCE shock through pinned source functions")
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
+    # Controls are rebuilt for the live covariance calculation, but preserved
+    # historical output files are not rewritten during a live-case migration.
+    control_out = OUT / args.case / "control" if args.case in ADOPTED else OUT
+    control_out.mkdir(parents=True, exist_ok=True)
     # Reconstruct the producer before loading the account's large matrices. Only its small 161-weight vectors
     # remain; collecting the producer's closure/frame cycles prevents both CPS workloads overlapping in memory.
     job_inputs = (None, {})
+    coverage_derivative = None
+    coverage_cps = None
     if args.case in LATER_CASES:
         case_meta = json.loads((FISCAL / LATER_CASES[args.case] / "derived/corrections.json").read_text())["meta"]
         source = case_meta.get("job_capital_taxes", {}).get("source")
@@ -1429,6 +1733,22 @@ def main():
             print("[stage] job-capital industry replicates (read only)", flush=True)
             job_inputs = job_capital_replicates(source)
             gc.collect()
+        if args.coverage_pes_rule == "common_nce_source":
+            from coverage_pes import derive
+
+            coverage_derivative = derive(FISCAL, case_meta["coverage"])
+            gc.collect()
+        # Keep the official raw-frame proof's temporary pandas buffers outside
+        # the account process; only four small shared-replicate vectors remain.
+        run = subprocess.run([sys.executable,str(HERE/'coverage_cps.py')],check=False)
+        if run.returncode:
+            raise ValueError('[BLOCKED] coverage CPS source proof failed')
+        coverage_cps = json.loads((OUT/'oct15/coverage_cps_replicates.json').read_text())
+        for name, expected in coverage_cps['inputs'].items():
+            with (ROOT/name).open('rb') as stream:
+                actual = hashlib.file_digest(stream,'sha256').hexdigest()
+            if actual != expected:
+                raise ValueError('[BLOCKED] coverage CPS source changed after bounded proof: '+name)
     print("[stage] CPS load", flush=True)
     d = load_cps()
     civ, target = SPENDING.canonical_target(d)
@@ -1480,7 +1800,7 @@ def main():
     se_ok = keycheck.dropna(subset=["se_published"])
     if not np.allclose(se_ok.se_rebuilt, se_ok.se_published, rtol=1e-6, atol=0):
         raise ValueError("Rebuilt receipt-key SDR SEs disagree with the published ones")
-    keycheck.to_csv(OUT / "key_replicate_check.csv", index=False)
+    keycheck.to_csv(control_out / "key_replicate_check.csv", index=False, lineterminator="\n")
 
     # ---- per-replicate account components -------------------------------
     direct, spending = account_inputs()
@@ -1514,8 +1834,8 @@ def main():
                 lane_keys[(allocation, r.category)] = r.allocation_key
     for (allocation, name), rep in comp_reps.items():
         comp_rows.append(dict(allocation=allocation, component=name, point_bn=rep[0], se_cps_bn=sdr(rep)))
-    pd.DataFrame(comp_rows).to_csv(OUT / "component_sampling.csv", index=False)
-    np.savez_compressed(OUT / "component_replicates.npz",
+    pd.DataFrame(comp_rows).to_csv(control_out / "component_sampling.csv", index=False, lineterminator="\n")
+    np.savez_compressed(control_out / "component_replicates.npz",
                         **{f"{a}|{n}": v for (a, n), v in comp_reps.items()})
 
     # ---- MEPS donor gradient --------------------------------------------
@@ -1549,7 +1869,7 @@ def main():
         meps_rows.append(dict(allocation=allocation, key="ALL_MEDICAL_JOINT", categories="all",
                               target_bn=np.nan, se_meps_key_only_bn=float(np.sqrt(g @ cov @ g))))
     meps = pd.DataFrame(meps_rows)
-    meps.to_csv(OUT / "meps_donor_contribution.csv", index=False)
+    meps.to_csv(control_out / "meps_donor_contribution.csv", index=False, lineterminator="\n")
     se_meps = meps.query("key == 'ALL_MEDICAL_JOINT'").set_index("allocation").se_meps_key_only_bn
 
     # ---- school-correction sampling (published, partial) -----------------
@@ -1602,18 +1922,24 @@ def main():
                         ci95_envelope_low_bn=-c.welfare_bn - 1.96 * envelope,
                         ci95_envelope_high_bn=-c.welfare_bn + 1.96 * envelope))
     case_frame = pd.DataFrame(out)
-    case_frame.to_csv(OUT / "case_uncertainty.csv", index=False)
+    case_frame.to_csv(control_out / "case_uncertainty.csv", index=False, lineterminator="\n")
 
     meta = dict(hf_point=float(hf[0]), hf_se=sdr(hf), school_relative_se=school_rel,
                 production_term_se={k: float(v) for k, v in pf.private_plus_receipts_se_sampling_bn.items()},
                 meps_cells=int(ncell), meps_payer_sets=list(MEDICAL))
-    (OUT / "propagation_meta.json").write_text(json.dumps(meta, indent=2) + "\n")
+    (control_out / "propagation_meta.json").write_text(json.dumps(meta, indent=2) + "\n")
     print(case_frame.groupby("profile")[["net_cost_bn", "se_cps_fiscal_keys_bn", "se_combined_independent_bn",
                                          "se_all_positive_correlation_bn"]].agg(["min", "max"]).to_string())
     if args.case in ADOPTED:
         adopted_cases(dict(line_reps=line_reps, lane_keys=lane_keys, meps_parts=meps_parts, cov=cov, ncell=ncell,
                            hf=hf, spending=spending, skeys=skeys, rkeys=rkeys, cases=cases, comps=comps, pf=pf,
-                           school_rel=school_rel, case_frame=case_frame, job_capital_inputs=job_inputs), args.case)
+                            school_rel=school_rel, case_frame=case_frame, job_capital_inputs=job_inputs,
+                            coverage_pes_rule=args.coverage_pes_rule,
+                             coverage_pes_derivative=coverage_derivative, coverage_cps=coverage_cps), args.case)
+    sys.path.insert(0, str(FISCAL / "scripts"))
+    from memory_budget import require_within_budget
+    peak = require_within_budget("uncertainty propagation")
+    print(f"[memory] peak physical footprint {peak / 1e9:.3f} GB", flush=True)
 
 
 if __name__ == "__main__":

@@ -168,6 +168,8 @@ def test_joint_case_carries_the_benefit_keys_in_the_cps_block():
             continue
         found += 1
         other = u.se_production_term_bn ** 2 + u.se_school_correction_bn ** 2 + u.se_meps_donor_bn ** 2
+        if "se_coverage_pes_bn" in u:
+            other += u.se_coverage_pes_bn ** 2
         np.testing.assert_allclose(u.se_combined_independent_bn, np.sqrt(u.se_cps_fiscal_keys_bn ** 2 + other), atol=1e-9)
         np.testing.assert_allclose(u.se_with_benefit_keys_bn,
                                    np.sqrt(u.se_cps_account_keys_bn ** 2 + other + u.se_benefit_keys_package_bn ** 2), atol=1e-9)
@@ -204,6 +206,8 @@ def test_payload_production_grid_and_pension_switch():
         np.testing.assert_allclose(base.se_production_term_bn,
                                    pf.loc[base.normalization].private_plus_receipts_se_sampling_bn.to_numpy(), atol=1e-9)
         other = c.se_production_term_bn ** 2 + c.se_school_correction_bn ** 2 + c.se_meps_donor_bn ** 2
+        if "se_coverage_pes_bn" in c:
+            other += c.se_coverage_pes_bn ** 2
         for alt in ("fixed", "generic"):
             np.testing.assert_allclose(c[f"se_combined_pension_{alt}_bn"],
                                        np.sqrt(c[f"se_cps_pension_{alt}_bn"] ** 2 + other), atol=1e-9)
@@ -237,7 +241,19 @@ def test_lineage_component_beside_the_propagation():
         if "items" in payload_meta:
             main = json.loads((HERE.parent / lane / "derived/summary.json").read_text())
             want = main["main_case"]
-            if "v7" in main:
+            if "v8" in main:
+                options=main['v8']['companions']
+                minus,plus=options['lineage_c3_minus_se']['band_bn'],options['lineage_c3_plus_se']['band_bn']
+                d=(np.asarray(plus)-minus)/(2*g['c3_se'])
+                slope={arm:d*(1 if arm==central else arms[arm]['g3_rate']/arms[central]['g3_rate']) for arm in g['arms']}
+                for arm in ('a','c'):
+                    np.testing.assert_allclose(g['arms'][arm]['band_bn'],options['lineage_arm_'+arm]['band_bn'],rtol=0,atol=1e-9)
+                    assert g['arms'][arm]['population']==options['lineage_arm_'+arm]['population']['with_coverage']
+                for label,values in (('minus',minus),('plus',plus)):
+                    np.testing.assert_allclose(g['arms'][central]['band_at_c3_'+label+'_1se_bn'],values,rtol=0,atol=1e-9)
+                np.testing.assert_allclose(g['rebase']['c3_midpoint_minus_central_bn'],
+                                          (np.asarray(minus)+plus)/2-np.asarray(main['main_case']),rtol=0,atol=1e-9)
+            elif "v7" in main:
                 options = main["v7"]["companions"]["options"]
                 minus, plus = options["c3_minus_se"], options["c3_plus_se"]
                 d = (np.asarray(plus["set"]["band_bn"]) - minus["set"]["band_bn"]) / (2 * g["c3_se"])
@@ -278,7 +294,9 @@ def test_item_payload_routes_every_edit_and_holds_the_pension_identities():
     meta.items puts them, the edit sets tile the payload after the lineage's edits, and every edit's line has a route.
     The union-side pension identities hold at v6's meta.pension_accrual (1e-9), with the items' lineage_* parts booked
     with the lineage and their union_* parts the union's rule moving to v6's ratio_net and Part A."""
-    routes = {"pension rule", "line ratio", "school correction", "no sampling error", "job-capital CPS replicates"}
+    routes = {"pension rule", "line ratio", "school correction", "no sampling error", "job-capital CPS replicates",
+              "producer paired own-record replicate stack; never account key ratio",
+              "producer K2 replicate stack; never account key ratio"}
     found = 0
     for name, lane in json.loads((HERE / "later_cases.json").read_text()).items():
         payload = json.loads((HERE.parent / lane / "derived/corrections.json").read_text())
@@ -298,8 +316,10 @@ def test_item_payload_routes_every_edit_and_holds_the_pension_identities():
             if it["kind"] == "lineage":
                 assert r["lineage_edits"] == e
                 continue
-            if it["kind"] == "allocation":
+            if it["kind"] in ("allocation", "post_engine"):
                 assert r["edits"] == it["edits"] == dict(first=at, count=0)
+                if it["kind"] == "post_engine":
+                    assert payload["meta"][it["id"]]["by_end"]
                 continue
             assert r["edits"] == it["edits"] and r["edits"]["first"] == at
             at += it["edits"]["count"]
@@ -405,3 +425,145 @@ def test_row4_pension_parts_are_removed_only_for_base_identity_checks():
     assert ps["row4_frame"]["lineage_parts_validated_bn"] == got
     assert len(got) == 4
     assert "row4_pension_inputs.json" in {p.name for p in (OUT / "oct14").iterdir()}
+
+
+def test_v8_corrections_use_the_producer_spreads_and_external_pes_derivative():
+    prop = _load("propagate")
+    meta = json.loads((HERE.parent / "main_case_2026_10_15/derived/corrections.json").read_text())["meta"]
+    published = json.loads((OUT / "oct15/summary.json").read_text())["oct15"]["v8_sampling"]
+    rule = published["coverage_pes_rule"]
+    receipt = published["pes_sampling"] if rule == "common_nce_source" else None
+    source = prop.v8_sampling(meta, rule, receipt)
+    u = pd.read_csv(OUT / "oct15/case_uncertainty.csv")
+    specs = pd.read_csv(OUT / "oct15/spec_costs.csv")
+    adopted = u[u.case == "oct15"].reset_index(drop=True)
+    for item, key in (("foreign_source_tax", "k2"), ("union_completion", "union"), ("mixed_unit_removal", "removal")):
+        expected = [prop.sdr(source[key][r]) for r in specs.reading]
+        np.testing.assert_allclose(adopted[f"se_{item}_bn"], expected, rtol=0, atol=1e-9)
+        assert (u[u.case != "oct15"][f"se_{item}_bn"] == 0).all()
+    pes = source["pes"]
+    assert pes["se_fraction"] == pytest.approx(.0053, abs=1e-12)
+    expected = [abs(pes["derivative_bn_per_fraction"]["set"][r]) * .0053 for r in specs.reading]
+    np.testing.assert_allclose(adopted.se_coverage_pes_bn, expected, rtol=0, atol=1e-9)
+    # Different instruments: no account/CPS key SE may replace the external PES derivative.
+    assert (adopted.se_coverage_pes_bn > 0).all()
+    original = meta["union_completion"]["paired_replicate_delta_bn"][0][1]
+    meta["union_completion"]["paired_replicate_delta_bn"][0][1] = original + .1
+    with pytest.raises(ValueError, match="item 10 .* point/SDR differs"):
+        prop.v8_sampling(meta, rule, receipt)
+    if rule == "common_nce_source":
+        assert json.loads((OUT / "oct15/coverage_pes_derivative.json").read_text()) == receipt
+        assert all(q["passed"] for q in receipt["finite_difference_checks"].values())
+        assert "CONDITIONAL APPROXIMATION" in published["interval_scope"]
+        raw = json.loads((HERE.parent / meta["coverage"]["file"]).read_text())
+        if "pes_sampling" not in raw:
+            meta["union_completion"]["paired_replicate_delta_bn"][0][1] = original
+            with pytest.raises(ValueError, match="coverage producer must declare PES"):
+                prop.v8_sampling(meta)
+
+
+def test_v8_coverage_stub_cannot_enter_sampling_intervals():
+    prop = _load("propagate")
+    meta = json.loads((HERE.parent / "main_case_2026_10_15/derived/corrections.json").read_text())["meta"]
+    meta["coverage"]["stub"] = True
+    with pytest.raises(ValueError, match="coverage stub"):
+        prop.v8_sampling(meta)
+
+
+def test_coverage_cps_uses_shared_vectors_and_closes_covariance():
+    prop = _load('propagate')
+    receipt = json.loads((OUT / 'oct15/coverage_cps_replicates.json').read_text())
+    assert receipt['replicate_ids'] == prop.REPS
+    source = json.loads((HERE.parent / 'coverage_bound_2026_10_14/derived/coverage_bound_oct15.json').read_text())
+    for basis in ('set', 'cash'):
+        for end in ('low', 'high'):
+            vector = np.asarray(receipt['vectors_bn'][basis][end])
+            assert vector.shape == (161,)
+            assert vector[0] == pytest.approx(source['sets'][basis]['ends'][end]['coverage_bn'], abs=1e-9)
+            assert prop.sdr(vector) == pytest.approx(source['sets'][basis]['ends'][end]['cps_replicate_se_bn'], abs=1e-9)
+    rows = pd.read_csv(OUT / 'oct15/case_uncertainty.csv')
+    active = rows[rows.case == 'oct15']
+    np.testing.assert_allclose(active.se_cps_fiscal_keys_bn ** 2,
+                               active.se_cps_without_coverage_bn ** 2 + active.se_coverage_cps_bn ** 2
+                               + 2 * active.coverage_cps_covariance_bn2, rtol=0, atol=1e-9)
+
+
+def test_replay_rejects_midrun_source_mutation(tmp_path, monkeypatch):
+    monkeypatch.syspath_prepend(str(HERE))
+    replay = _load('coverage_replay')
+    source = tmp_path/'source.py'
+    source.write_text('original source\n')
+    before = {'source.py': replay.digest(source)}
+    replay.require_unchanged(tmp_path, before)
+    source.write_text('concurrent peer edit\n')
+    with pytest.raises(ValueError, match='changed during owned native replay'):
+        replay.require_unchanged(tmp_path, before)
+
+
+def _completion_provenance_case(root):
+    gradient = _load('coverage_pes')
+    prefix = 'infra/immigration-fiscal/'
+    names = ['within_group_distribution_2026_09_29/households.py',
+             'within_group_distribution_2026_09_29/completion_keys.py',
+             'union_completion_2026_10_14/job_record_key.py']
+    entries = {}
+    for name in names:
+        p = root/prefix/name
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text('original '+name+'\n')
+        entries[prefix+name] = {'sha256': gradient.digest(p)}
+    job = prefix+'within_group_distribution_2026_09_29/_cache/oct15/completion_jobs.json'
+    path = root/job
+    path.parent.mkdir(parents=True)
+    metadata = {'source_sha256': {name: entries[prefix+name]['sha256'] for name in names},
+                'identities': [[1, 1]], 'national_driver_mass': {'corporate': 645.4},
+                'national_driver_rule': 'original source driver'}
+    path.write_text(json.dumps(metadata, indent=2)+'\n')
+    entries[job] = {'sha256': gradient.digest(path)}
+    code = root/prefix/names[1]
+    code.write_text('staged publication of same economic arrays\n')
+    metadata['source_sha256'][names[1]] = gradient.digest(code)
+    path.write_text(json.dumps(metadata, indent=2)+'\n')
+    return gradient, entries, [prefix+names[1], job], path, metadata
+
+
+def test_completion_code_stamps_require_full_receipt_equality(tmp_path):
+    gradient, entries, changed, path, metadata = _completion_provenance_case(tmp_path)
+    proof = gradient.job_code_provenance(tmp_path, entries, changed)
+    assert proof['receipt_data_exact']
+    metadata['identities'] = [[2, 1]]
+    path.write_text(json.dumps(metadata, indent=2)+'\n')
+    with pytest.raises(ValueError, match='identities/numeric metadata are not equal'):
+        gradient.job_code_provenance(tmp_path, entries, changed)
+
+
+@pytest.mark.parametrize('name', ['unrecognized.py', 'completion_jobs.npz'])
+def test_completion_provenance_cannot_waive_unknown_code_or_data(tmp_path, name):
+    gradient, entries, changed, path, metadata = _completion_provenance_case(tmp_path)
+    with pytest.raises(ValueError, match='untraced code/data dependency'):
+        gradient.job_code_provenance(tmp_path, entries, changed+[name])
+
+
+def test_completion_provenance_rejects_stale_current_code_stamp(tmp_path):
+    gradient, entries, changed, path, metadata = _completion_provenance_case(tmp_path)
+    metadata['source_sha256']['within_group_distribution_2026_09_29/completion_keys.py'] = 'stale'
+    path.write_text(json.dumps(metadata, indent=2)+'\n')
+    with pytest.raises(ValueError, match='does not name current source'):
+        gradient.job_code_provenance(tmp_path, entries, changed)
+
+
+def test_conditional_pes_receipt_rejects_changed_input_and_missing_checks(tmp_path):
+    gradient = _load("coverage_pes")
+    fiscal = tmp_path / "infra/immigration-fiscal"
+    fiscal.mkdir(parents=True)
+    source = tmp_path / "primary.csv"
+    source.write_text("verified source\n")
+    receipt = dict(rule="common_nce_source", inputs={"primary.csv": gradient.digest(source)},
+                   finite_difference_checks={basis: {"passed": True} for basis in ("set", "cash")})
+    gradient.validate_receipt(fiscal, receipt)
+    receipt["finite_difference_checks"].pop("cash")
+    with pytest.raises(ValueError, match="finite-difference checks absent"):
+        gradient.validate_receipt(fiscal, receipt)
+    source.write_text("changed source\n")
+    with pytest.raises(ValueError, match="gradient input changed"):
+        gradient.validate_receipt(fiscal, receipt)
