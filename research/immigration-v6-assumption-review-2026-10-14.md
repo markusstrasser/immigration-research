@@ -85,9 +85,10 @@ were stronger than their basis and are corrected, and the rest are answered by t
 
 ### 2. Taxes on the business capital that serves the group's jobs count at zero (B: Opus; Argon on both B axes)
 
-- **Where.** Corporate tax, business property and other production taxes are keyed by CBO's rules and respond at 0:
-  `full_account_2026_09_20/welfare.py` lists them as capital categories and `engine.js` applies
-  `indirect_receipt_response: 0` (`receipt_side_long_run_2026_09_28/RESULT.md`, item 1). The account's rule 1 hands
+- **Where.** Corporate tax (keyed by CBO's 75 / 25 rule), business property and other production taxes respond at 0:
+  `full_account_2026_09_20/welfare.py` treats them as indirect receipts (the first two by its capital-category list,
+  the third by its class) and `engine.js` applies `indirect_receipt_response: 0`
+  (`receipt_side_long_run_2026_09_28/RESULT.md`, item 1). The account's rule 1 hands
   them to the production module ("the production model handles induced capital taxes"), and at every specification
   the module's capital-tax term is exactly 0. Its retention is 1: the capital that follows the group's jobs "pays
   the same taxes elsewhere".
