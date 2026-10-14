@@ -123,6 +123,8 @@ const CASES = {
     cash: "main_case_2026_10_05/derived/corrections_cash.json", cashPackage: (pkg) => pkg.CASH },
   oct07: { lane: "main_case_2026_10_07", out: path.join(__dirname, "derived", "oct07"),
     cash: "main_case_2026_10_07/derived/corrections_cash.json", cashPackage: (pkg) => pkg.CASH },
+  oct14: { lane: "main_case_2026_10_14", out: path.join(__dirname, "derived", "oct14"),
+    cash: "main_case_2026_10_14/derived/corrections_cash.json", cashPackage: (pkg) => pkg.CASH },
 };
 const argv = process.argv.slice(2);
 function opt(name, dflt) {
@@ -131,7 +133,7 @@ function opt(name, dflt) {
   if (!argv[i + 1] || argv[i + 1].startsWith("--")) { console.error(`${name} needs a value`); process.exit(2); }
   return argv[i + 1];
 }
-const CASE = opt("--case", "sept27");
+const CASE = opt("--case", "oct14");
 if (!CASES[CASE]) { console.error(`unknown --case ${CASE}; one of ${Object.keys(CASES).join(", ")}`); process.exit(2); }
 const OUT = opt("--out-dir", null) ? path.resolve(opt("--out-dir")) : CASES[CASE].out;
 if (!OUT) { console.error(`--case ${CASE} writes only to --out-dir DIR`); process.exit(2); }
@@ -165,6 +167,9 @@ if (LATER) {
     case_bands: `${LANE}/derived/main_case_bands.csv` });
 }
 if (CASES[CASE].cash) SOURCES.cash_corrections = CASES[CASE].cash;
+if (CASE === "oct14") SOURCES.item_base_per_spec = "main_case_2026_10_07/derived/per_spec.csv";
+if (CASE === "oct14") SOURCES.row4_state_index = "row4_class_2026_09_29/derived/row4_state_index.json";
+const ROW4_INDEX = CASE === "oct14" ? readJson(SOURCES.row4_state_index) : null;
 const cj = readJson(SOURCES.justice);
 const JUSTICE = { central: cj.central.change_bn, raw_coding: cj.one_at_a_time_change_bn.scaling_raw,
   grid_low: cj.range_change_bn[0], grid_high: cj.range_change_bn[1], cbp_fixed: cj.one_at_a_time_change_bn.cbp_zero };
@@ -265,6 +270,9 @@ function statePriced(m, parent, key) {
   const p = out.spending.lines.find((l) => l.id === parent);
   if (!p || !p.keys[key]) throw new Error(`[BLOCKED] state pricing: no key ${parent}/${key}`);
   const added = addedOf(m);
+  const row4 = m.corrections && m.corrections.row4_frame;
+  const factor = row4 && row4.components_applied.union.includes("state_index") ? ROW4_INDEX.lines[parent].ratio : 1;
+  if (!Number.isFinite(factor)) throw new Error(`[BLOCKED] row4 state-price index: no ratio for ${parent}`);
   for (const sp of mine) {
     const line = out.spending.lines.find((l) => l.id === sp.line);
     if (!line || !line.keys.k || !Number.isFinite(sp.national_gap_bn)) throw new Error(`[BLOCKED] state pricing: unreadable line ${sp.line}`);
@@ -274,8 +282,8 @@ function statePriced(m, parent, key) {
       // over theirs on the line's parent key [ASSUMPTION: their price gap per unit of justice service holds]. From
       // October 7 their amounts are the case's (addedOf), so an edit set that scales the parent leaves the union's share.
       const own = added ? (ln, k) => added(ln, k, a) : null;
-      const next = !added ? sp.national_gap_bn * p.keys[key][a].target_bn / p.national_bn
-        : sp.national_gap_bn * (p.keys[key][a].target_bn - own(parent, key)) / p.national_bn + own(sp.line, "k") * own(parent, key) / own(parent, sp.parent_key);
+      const next = !added ? factor * sp.national_gap_bn * p.keys[key][a].target_bn / p.national_bn
+        : factor * sp.national_gap_bn * (p.keys[key][a].target_bn - own(parent, key)) / p.national_bn + own(sp.line, "k") * own(parent, key) / own(parent, sp.parent_key);
       line.keys.k[a].other_bn -= next - line.keys.k[a].target_bn;
       line.keys.k[a].target_bn = next;
     }
@@ -341,7 +349,7 @@ if (LATER) {
   const cap = payload.meta.capital_return || null;   // September 27 on
   gate("the payload's meta.responses equal the case's summary.json responses", JSON.stringify(r) === JSON.stringify(summary.responses));
   const spendingIds = new Set(MODEL.spending.lines.map((l) => l.id).concat((payload.lines || []).map((l) => l.id)));
-  const specs = P24.MAIN_SPECS.map((s) => {
+  const rebuiltSpecs = P24.MAIN_SPECS.map((s) => {
     const low = s.gg === P.GG24[0];
     const spec = { ...s, gg: low ? r.general_government.low : r.general_government.high,
       school: s.school === P.SCHOOL24[0] ? r.school.growth : r.school.decline };
@@ -350,9 +358,11 @@ if (LATER) {
     return { ...spec, reading, rate: cap.rates[reading], long_run: r[P.LR_LINES[0]].variant, enterprises: cap.enterprises,
       line_responses: lineResponsesAt(r, spendingIds, reading) };
   });
-  gate("the specifications at meta.responses equal the package's MAIN_SPECS", canon(specs) === canon(P.MAIN_SPECS),
+  gate("the specifications at meta.responses equal the package's full specification set", canon(rebuiltSpecs) === canon(P.ALL_SPECS || P.MAIN_SPECS),
     `general government ${r.general_government.low}/${r.general_government.high}, schools ${r.school.growth}/${r.school.decline}` +
     (cap ? `; long-run lines, rental assistance, the enterprise receipt and the capital return (${cap.rates.low}/${cap.rates.high}, option ${cap.enterprises}) from meta` : ""));
+  const specs = rebuiltSpecs.filter((s) => !payload.meta.allocation || s.allocation === payload.meta.allocation.group_total);
+  gate("the band specifications equal MAIN_SPECS", canon(specs) === canon(P.MAIN_SPECS));
   published = {};
   csvRows(SOURCES.case_bands).filter((x) => x.profile === P.MAIN_PROFILE)
     .forEach((x) => { published[x.variant] = [Number(x.cost_low_bn), Number(x.cost_high_bn)]; });
@@ -376,7 +386,7 @@ if (LATER) {
       const [a, b] = [corrected, rebuilt].map((mm) => mm.spending.lines.find((x) => x.id === l.line).keys.k);
       for (const al of ["personal", "shared"]) gap = Math.max(gap, Math.abs(a[al].target_bn - b[al].target_bn), Math.abs(a[al].other_bn - b[al].other_bn));
     }
-    gate(`state pricing: national_gap_bn x ${JUSTICE_LINE}'s use-key share rebuilds the payload's justice line (1e-9)`, gap < 1e-9,
+    gate(`state pricing: national_gap_bn x ${JUSTICE_LINE}'s use-key share${payload.meta.row4_frame ? ", with R9's index ratio" : ""} rebuilds the payload's justice line (1e-9)`, gap < 1e-9,
       `${sp.filter((x) => x.parent === JUSTICE_LINE).map((x) => x.line).join(", ")}; max |diff| ${gap.toExponential(1)}`);
     const keyLines = new Set(P.componentsFor(null).flatMap((c) => [c.key.line, c.key.parent_line, c.key.correction_line,
       c.key.denominator_line, c.response.line].concat(c.key.numerator_lines || [])));
@@ -669,11 +679,27 @@ if (LATER) {
     if (IB) {
       // The item base at the case's end specifications is v5 plus the lineage item alone.
       const linItem = payload.meta.items.find((r) => r.kind === "lineage");
-      const base = summary.v6.base, alone = summary.change_at_fixed_specifications.items[linItem.id].total, ib = perSpec[`${IB}|adopted`];
-      const gapB = Math.max(Math.abs(ib[lo] - base.band_bn[0] - alone[0]), Math.abs(ib[hi] - base.band_bn[1] - alone[1]));
-      gate(`the item base at the case's end specifications is v5 plus item ${linItem.id} alone (summary.json v6.base.band_bn at v5's ends ${base.end_specifications.join(" / ")}, plus change_at_fixed_specifications.items.${linItem.id}.total; 1e-9)`,
-        JSON.stringify(base.end_specifications) === JSON.stringify([lo, hi]) && gapB < 1e-9,
-        `${ib[lo].toFixed(4)} / ${ib[hi].toFixed(4)}; max |diff| ${gapB.toExponential(1)}`);
+      const ib = perSpec[`${IB}|adopted`];
+      if (CASE === "oct14") {
+        const sourceRows = csvRows(SOURCES.item_base_per_spec);
+        const newReceiptLines = Object.keys(payload.meta.responses).filter((id) => payload.meta.responses[id].receipt
+          && !(id in P.V6_PACKAGE.RESPONSES));
+        const oracle = [lo, hi].map((i) => {
+          const rr = sourceRows.filter((r) => Number(r.spec) === i);
+          if (rr.length !== 2) throw new Error(`[BLOCKED] v6 per_spec.csv: expected both methods at spec ${i}`);
+          const old = rr.reduce((n, r) => n + Number(r.oct05_cost_bn) + Number(r.item_added_age_mix_bn), 0) / rr.length;
+          const ev = P.ITEM_BASE.evaluateFull(P.ITEM_BASE.payloadModel(), specs5[i]).evaluation;
+          return old - ev.receipts.filter((r) => newReceiptLines.includes(r.id)).reduce((n, r) => n + r.effect_bn, 0);
+        });
+        gate("the item base equals v6's published v5 cost plus its age-mix item, with the new receipt responses (1e-9)",
+          Math.max(...oracle.map((v, k) => Math.abs(v - ib[[lo, hi][k]]))) < 1e-9);
+      } else {
+        const base = summary.v6.base, alone = summary.change_at_fixed_specifications.items[linItem.id].total;
+        const gapB = Math.max(Math.abs(ib[lo] - base.band_bn[0] - alone[0]), Math.abs(ib[hi] - base.band_bn[1] - alone[1]));
+        gate(`the item base at the case's end specifications is v5 plus item ${linItem.id} alone (summary.json v6.base.band_bn at v5's ends ${base.end_specifications.join(" / ")}, plus change_at_fixed_specifications.items.${linItem.id}.total; 1e-9)`,
+          JSON.stringify(base.end_specifications) === JSON.stringify([lo, hi]) && gapB < 1e-9,
+          `${ib[lo].toFixed(4)} / ${ib[hi].toFixed(4)}; max |diff| ${gapB.toExponential(1)}`);
+      }
       // On the case, with the added people's amounts carried through the edit sets, every share an edit set only scales
       // is the item base's; the others are written beside.
       onCase = {};

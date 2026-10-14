@@ -136,15 +136,17 @@ PATHS = dict(
 # Each case's main-case lane and default output directory (None: --out-dir only), as in band_variants.cjs.
 LANES = dict(sept24="main_case_2026_09_24", sept26="main_case_2026_09_26",
              sept26_schools="main_case_schools_full_2026_09_26", sept27="main_case_long_run_2026_09_27",
-             sept29="main_case_2026_09_29", oct05="main_case_2026_10_05", oct07="main_case_2026_10_07")
+             sept29="main_case_2026_09_29", oct05="main_case_2026_10_05", oct07="main_case_2026_10_07",
+             oct14="main_case_2026_10_14")
 OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=FISCAL / "sept26_propagation_2026_09_26" / "derived",
                 sept27=FISCAL / "sept27_propagation_2026_09_27" / "derived", sept29=HERE / "derived" / "sept29",
-                oct05=HERE / "derived" / "oct05", oct07=HERE / "derived" / "oct07")
+                oct05=HERE / "derived" / "oct05", oct07=HERE / "derived" / "oct07", oct14=HERE / "derived" / "oct14")
 # Cases whose roads respond: congestion beside the account is the response lane's, by band end.
 LONG_RUN = dict(sept27=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json",
                 sept29=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json",
                 oct05=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json",
-                oct07=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json")
+                oct07=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json",
+                oct14=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json")
 # Cases whose social rows carry added social items for the union: (lane items.csv, item ids, decision, kind) per
 # source. A source with a `measure` column adds its absolute rows and reports its normalized rows beside. Benefits
 # are negative costs; the scale lane's summary is read through scale_rows().
@@ -169,20 +171,22 @@ SOCIAL_ITEMS = dict(sept27=(
 SOCIAL_ITEMS["sept29"] = SOCIAL_ITEMS["sept27"]
 SOCIAL_ITEMS["oct05"] = SOCIAL_ITEMS["sept27"]
 SOCIAL_ITEMS["oct07"] = SOCIAL_ITEMS["sept27"]
+SOCIAL_ITEMS["oct14"] = SOCIAL_ITEMS["sept27"]
 # Cases whose published pairing is restated on the priced count (population_basis_2026_09_29).
 RESTATED = dict(sept27=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv",
                 sept29=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv",
                 oct05=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv",
-                oct07=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv")
+                oct07=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv",
+                oct14=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv")
 # A case whose social rows the population lane restated on another case's pairing: that case. The restated social
 # rows (pairing less its fiscal row) then carry over, and the case adds its own fiscal rows.
-RESTATED_BASE = dict(sept29="sept27", oct05="sept27", oct07="sept27")
+RESTATED_BASE = dict(sept29="sept27", oct05="sept27", oct07="sept27", oct14="sept27")
 # Cases that carry the lineage (October 5 on). Each restated social row prices the added people at their share of one
 # engine key (band_variants.json lineage_social_keys), at the low end and at the high end; None: not priced (0).
 # [ASSUMPTION] the row scales with the key at the margin, and the added people's amount on the key is the case's.
-LINEAGE_CASES = ("oct05", "oct07")
+LINEAGE_CASES = ("oct05", "oct07", "oct14")
 # The summary.json block whose per_member_usd.population is the lineage case's per-member divisor.
-PER_MEMBER_BLOCK = dict(oct05="v5", oct07="v6")
+PER_MEMBER_BLOCK = dict(oct05="v5", oct07="v6", oct14="v7")
 CRIME = ("justice_use_raw_coding", "justice_use")   # the low end's footing (raw coding), the high end's (custody)
 LINEAGE_ROW_KEYS = dict(
     victims=CRIME, property_crime=CRIME, fear_avoidance=CRIME, private_security=CRIME,
@@ -212,7 +216,9 @@ BESIDE_RUNS["oct07"] = dict(BESIDE, cash_set=(
     "cash_set", "the cash set: the pension switch off, social security and Medicare's Part A at the group's current "
     "benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it"))
 # Beside runs whose pairing is also restated on the priced count.
-RESTATED_BESIDE = dict(sept29=("cash_set",), oct05=("cash_set",), oct07=("cash_set",))
+BESIDE_RUNS["oct14"] = dict(BESIDE, cash_set=(
+    "cash_set", "the cash set: benefits when paid (main_case_2026_10_14 band row cash_set); beside the central total"))
+RESTATED_BESIDE = dict(sept29=("cash_set",), oct05=("cash_set",), oct07=("cash_set",), oct14=("cash_set",))
 MIXED_METHOD = ("theta 0.4977 of each group attributed Hispanic "
                 "(NIBRS TX+AZ mean Hispanic fraction of mixed groups)")
 FAILURES: list[str] = []
@@ -382,8 +388,8 @@ def half_up(x, places):
 
 def parse_args():
     ap = argparse.ArgumentParser(description="Real-costs totals (memo §7, §7b) on an adopted main case.")
-    ap.add_argument("--case", choices=tuple(LANES), default="sept27",
-                    help="sept27: the September 27 case (default); oct07: main case v6 (main_case_2026_10_07); "
+    ap.add_argument("--case", choices=tuple(LANES), default="oct14",
+                    help="oct14: main case v7 (default); oct07: main case v6 (main_case_2026_10_07); "
                          "oct05: the main case adopted 2026-10-05; "
                          "sept29: the main case adopted 2026-09-29; "
                          "sept26_schools: schools at full average cost; sept26: the one-year scenario (--out-dir only); "

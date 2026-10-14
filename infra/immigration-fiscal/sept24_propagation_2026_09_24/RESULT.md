@@ -733,3 +733,20 @@ Log (append-only; times from `date`):
 - 15:26:48–15:32:13 JST: `rerun_lane.py` over the twelve commands, IDENTICAL 35/35, exit 0. 15:32:13–15:32:44:
   over the sept27 lane, IDENTICAL 11/11, exit 0. 15:32:44–15:33:07: over the sept26 lane, IDENTICAL 20/20, exit 0.
   Nothing is committed.
+
+
+## 2026-10-14: live case oct14 (v7)
+
+The live set is 339.552018 / 423.649261bn, cash 264.425574 / 348.522816bn at personal specifications 16 / 11. The pairing on the priced count is 439.435316 / 532.847640bn; cash pairing 364.308872 / 457.721196bn. [DATA: `derived/oct14/band_variants.csv`; `real_costs_totals.csv`, column oct14]
+
+The 64-spec rebuild gates against ALL_SPECS, then each band spans the 32 personal specifications; per-member figures use v7's lineage population. Lineage and item moves are read at those same personal ends. R9's measured index ratio travels through justice repricing, including the union and added-people parts. The item-base oracle is v6's published per-spec v5 cost plus its age-mix item, with the four new receipt responses, at 1e-9. Set/cash summary gates retain 1e-9 and printed CSV band gates retain 1e-4. Constant-choice runs use the debt lane's oct14 route.
+
+```sh
+node infra/immigration-fiscal/sept24_propagation_2026_09_24/band_variants.cjs --case oct14
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/real_costs_totals.py --case oct14
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/constant_choices.py --case oct14
+```
+
+Log: 2026-10-14 18:23:25 JST (`date`): moved to adopted 148ed1ea; computed oct14 only and preserved earlier case files.
+
+- 2026-10-14 18:33:36 JST (`date`): final checks on 148ed1ea: band_variants83 gates, real_costs52 gates, constant choices pass; three-command reproduction IDENTICAL41/41, exit0. Profiled constant-choice replay 275.645s; peak RSS 229998592bytes. Repeated Pandas lookups dominate the three debt runs; see the parent scratch prop-b result for the measured follow-up.
