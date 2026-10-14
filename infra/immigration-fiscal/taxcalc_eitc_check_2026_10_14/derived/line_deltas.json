@@ -1,0 +1,1402 @@
+{
+  "all_items|case_central|b_hotdeck_union_matched": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -7.985342069360126e-05,
+        "shared": -7.985342069360126e-05
+      },
+      "excise_selective_sales": {
+        "personal": -0.0003546788456763347,
+        "shared": -0.0003546788456763347
+      },
+      "general_sales_tax": {
+        "personal": -0.0005755212680015576,
+        "shared": -0.0005755212680015576
+      },
+      "personal_current_transfers": {
+        "personal": -0.00013476405170831422,
+        "shared": -0.00013476405170831422
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -7.787018665197128e-06,
+          "shared": -7.787018665197128e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -0.00042745369615642705,
+          "shared": -0.00042745369615642705
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -1.3749531195915298e-05,
+          "shared": -1.3749531195915298e-05
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -5.699666364429055e-05,
+          "shared": -5.699666364429055e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -2.3967333047017515e-05,
+          "shared": -2.3967333047017515e-05
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -5.1387891546073744e-05,
+          "shared": -5.1387891546073744e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": -0.0017495963339816405,
+          "shared": -0.004839895020582195
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -3.8306116353757277e-07,
+          "shared": -3.8306116353757277e-07
+        }
+      }
+    }
+  },
+  "all_items|case_central|b_matched_over_pooled": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -1.6870714658777445e-05,
+        "shared": -1.6870714658777445e-05
+      },
+      "excise_selective_sales": {
+        "personal": -7.493336602159465e-05,
+        "shared": -7.493336602159465e-05
+      },
+      "general_sales_tax": {
+        "personal": -0.00012159097266186482,
+        "shared": -0.00012159097266186482
+      },
+      "personal_current_transfers": {
+        "personal": -2.8471740382361372e-05,
+        "shared": -2.8471740382361372e-05
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -1.6451714754611856e-06,
+          "shared": -1.6451714754611856e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -9.030858384095116e-05,
+          "shared": -9.030858384095116e-05
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -2.904877655627263e-06,
+          "shared": -2.904877655627263e-06
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -1.2041743991590732e-05,
+          "shared": -1.2041743991590732e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -5.063603205172651e-06,
+          "shared": -5.063603205172651e-06
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -1.0856772917925626e-05,
+          "shared": -1.0856772917925626e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": 0.0024466215652879336,
+          "shared": -0.004121672560524151
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -8.092972762805541e-08,
+          "shared": -8.092972762805541e-08
+        }
+      }
+    }
+  },
+  "all_items|case_high|b_hotdeck_union_matched": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -7.985342069360126e-05,
+        "shared": -7.985342069360126e-05
+      },
+      "excise_selective_sales": {
+        "personal": -0.0003546788456763347,
+        "shared": -0.0003546788456763347
+      },
+      "general_sales_tax": {
+        "personal": -0.0005755212680015576,
+        "shared": -0.0005755212680015576
+      },
+      "personal_current_transfers": {
+        "personal": -0.00013476405170831422,
+        "shared": -0.00013476405170831422
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -7.787018665197128e-06,
+          "shared": -7.787018665197128e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -0.00042745369615642705,
+          "shared": -0.00042745369615642705
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -1.3749531195915298e-05,
+          "shared": -1.3749531195915298e-05
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -5.699666364429055e-05,
+          "shared": -5.699666364429055e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -2.3967333047017515e-05,
+          "shared": -2.3967333047017515e-05
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -5.1387891546073744e-05,
+          "shared": -5.1387891546073744e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": -0.0012352648414779613,
+          "shared": -0.004272105039162274
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -3.8306116353757277e-07,
+          "shared": -3.8306116353757277e-07
+        }
+      }
+    }
+  },
+  "all_items|case_high|b_matched_over_pooled": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -1.6870714658777445e-05,
+        "shared": -1.6870714658777445e-05
+      },
+      "excise_selective_sales": {
+        "personal": -7.493336602159465e-05,
+        "shared": -7.493336602159465e-05
+      },
+      "general_sales_tax": {
+        "personal": -0.00012159097266186482,
+        "shared": -0.00012159097266186482
+      },
+      "personal_current_transfers": {
+        "personal": -2.8471740382361372e-05,
+        "shared": -2.8471740382361372e-05
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -1.6451714754611856e-06,
+          "shared": -1.6451714754611856e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -9.030858384095116e-05,
+          "shared": -9.030858384095116e-05
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -2.904877655627263e-06,
+          "shared": -2.904877655627263e-06
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -1.2041743991590732e-05,
+          "shared": -1.2041743991590732e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -5.063603205172651e-06,
+          "shared": -5.063603205172651e-06
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -1.0856772917925626e-05,
+          "shared": -1.0856772917925626e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": 0.0026555348518477167,
+          "shared": -0.0038755354639898472
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -8.092972762805541e-08,
+          "shared": -8.092972762805541e-08
+        }
+      }
+    }
+  },
+  "all_items|case_low|b_hotdeck_union_matched": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -7.985342069360126e-05,
+        "shared": -7.985342069360126e-05
+      },
+      "excise_selective_sales": {
+        "personal": -0.0003546788456763347,
+        "shared": -0.0003546788456763347
+      },
+      "general_sales_tax": {
+        "personal": -0.0005755212680015576,
+        "shared": -0.0005755212680015576
+      },
+      "personal_current_transfers": {
+        "personal": -0.00013476405170831422,
+        "shared": -0.00013476405170831422
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -7.787018665197128e-06,
+          "shared": -7.787018665197128e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -0.00042745369615642705,
+          "shared": -0.00042745369615642705
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -1.3749531195915298e-05,
+          "shared": -1.3749531195915298e-05
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -5.699666364429055e-05,
+          "shared": -5.699666364429055e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -2.3967333047017515e-05,
+          "shared": -2.3967333047017515e-05
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -5.1387891546073744e-05,
+          "shared": -5.1387891546073744e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": -0.0022863294501387767,
+          "shared": -0.005434478213534063
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -3.8306116353757277e-07,
+          "shared": -3.8306116353757277e-07
+        }
+      }
+    }
+  },
+  "all_items|case_low|b_matched_over_pooled": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -1.6870714658777445e-05,
+        "shared": -1.6870714658777445e-05
+      },
+      "excise_selective_sales": {
+        "personal": -7.493336602159465e-05,
+        "shared": -7.493336602159465e-05
+      },
+      "general_sales_tax": {
+        "personal": -0.00012159097266186482,
+        "shared": -0.00012159097266186482
+      },
+      "personal_current_transfers": {
+        "personal": -2.8471740382361372e-05,
+        "shared": -2.8471740382361372e-05
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -1.6451714754611856e-06,
+          "shared": -1.6451714754611856e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -9.030858384095116e-05,
+          "shared": -9.030858384095116e-05
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -2.904877655627263e-06,
+          "shared": -2.904877655627263e-06
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -1.2041743991590732e-05,
+          "shared": -1.2041743991590732e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -5.063603205172651e-06,
+          "shared": -5.063603205172651e-06
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -1.0856772917925626e-05,
+          "shared": -1.0856772917925626e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": 0.002234520601408587,
+          "shared": -0.00437385659888644
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -8.092972762805541e-08,
+          "shared": -8.092972762805541e-08
+        }
+      }
+    }
+  },
+  "all_items|published|b_hotdeck_union_matched": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -8.172566481328065e-05,
+        "shared": -8.172566481328065e-05
+      },
+      "excise_selective_sales": {
+        "personal": -0.000362994649525742,
+        "shared": -0.000362994649525742
+      },
+      "general_sales_tax": {
+        "personal": -0.0005890149455473298,
+        "shared": -0.0005890149455473298
+      },
+      "personal_current_transfers": {
+        "personal": -0.00013792373104532324,
+        "shared": -0.00013792373104532324
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -7.96959318459924e-06,
+          "shared": -7.96959318459924e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -0.0004374757798957679,
+          "shared": -0.0004374757798957679
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -1.4071902845198488e-05,
+          "shared": -1.4071902845198488e-05
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -5.8333008004024634e-05,
+          "shared": -5.8333008004024634e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -2.452927138318289e-05,
+          "shared": -2.452927138318289e-05
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -5.259273257773124e-05,
+          "shared": -5.259273257773124e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": -0.009260463301572076,
+          "shared": -0.011827337084466701
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -3.9204241950233114e-07,
+          "shared": -3.9204241950233114e-07
+        }
+      }
+    }
+  },
+  "all_items|published|b_matched_over_pooled": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -1.859107815951551e-05,
+        "shared": -1.859107815951551e-05
+      },
+      "excise_selective_sales": {
+        "personal": -8.257457331472653e-05,
+        "shared": -8.257457331472653e-05
+      },
+      "general_sales_tax": {
+        "personal": -0.00013399001298810732,
+        "shared": -0.00013399001298810732
+      },
+      "personal_current_transfers": {
+        "personal": -3.137509948403526e-05,
+        "shared": -3.137509948403526e-05
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -1.8129351426254735e-06,
+          "shared": -1.8129351426254735e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -9.951765379356776e-05,
+          "shared": -9.951765379356776e-05
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -3.201097797685717e-06,
+          "shared": -3.201097797685717e-06
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -1.3269681116209602e-05,
+          "shared": -1.3269681116209602e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -5.579955850131119e-06,
+          "shared": -5.579955850131119e-06
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -1.1963874557753504e-05,
+          "shared": -1.1963874557753504e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": 0.002899965533592286,
+          "shared": -0.0020689307452915
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -8.918240407668125e-08,
+          "shared": -8.918240407668125e-08
+        }
+      }
+    }
+  },
+  "all_items|row4|b_hotdeck_union_matched": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -7.985342069360126e-05,
+        "shared": -7.985342069360126e-05
+      },
+      "excise_selective_sales": {
+        "personal": -0.0003546788456763347,
+        "shared": -0.0003546788456763347
+      },
+      "general_sales_tax": {
+        "personal": -0.0005755212680015576,
+        "shared": -0.0005755212680015576
+      },
+      "personal_current_transfers": {
+        "personal": -0.00013476405170831422,
+        "shared": -0.00013476405170831422
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -7.787018665197128e-06,
+          "shared": -7.787018665197128e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -0.00042745369615642705,
+          "shared": -0.00042745369615642705
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -1.3749531195915298e-05,
+          "shared": -1.3749531195915298e-05
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -5.699666364429055e-05,
+          "shared": -5.699666364429055e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -2.3967333047017515e-05,
+          "shared": -2.3967333047017515e-05
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -5.1387891546073744e-05,
+          "shared": -5.1387891546073744e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": -0.00897758784920469,
+          "shared": -0.011933370965012503
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -3.8306116353757277e-07,
+          "shared": -3.8306116353757277e-07
+        }
+      }
+    }
+  },
+  "all_items|row4|b_matched_over_pooled": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -1.6870714658777445e-05,
+        "shared": -1.6870714658777445e-05
+      },
+      "excise_selective_sales": {
+        "personal": -7.493336602159465e-05,
+        "shared": -7.493336602159465e-05
+      },
+      "general_sales_tax": {
+        "personal": -0.00012159097266186482,
+        "shared": -0.00012159097266186482
+      },
+      "personal_current_transfers": {
+        "personal": -2.8471740382361372e-05,
+        "shared": -2.8471740382361372e-05
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -1.6451714754611856e-06,
+          "shared": -1.6451714754611856e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -9.030858384095116e-05,
+          "shared": -9.030858384095116e-05
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -2.904877655627263e-06,
+          "shared": -2.904877655627263e-06
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -1.2041743991590732e-05,
+          "shared": -1.2041743991590732e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -5.063603205172651e-06,
+          "shared": -5.063603205172651e-06
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -1.0856772917925626e-05,
+          "shared": -1.0856772917925626e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": 0.003946098075505774,
+          "shared": -0.0016177719897953072
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -8.092972762805541e-08,
+          "shared": -8.092972762805541e-08
+        }
+      }
+    }
+  },
+  "main|case_central|b_hotdeck_union_matched": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -6.87282139408304e-05,
+        "shared": -6.87282139408304e-05
+      },
+      "excise_selective_sales": {
+        "personal": -0.00030526486372403096,
+        "shared": -0.00030526486372403096
+      },
+      "general_sales_tax": {
+        "personal": -0.0004953394418315581,
+        "shared": -0.0004953394418315581
+      },
+      "personal_current_transfers": {
+        "personal": -0.00011598867646360367,
+        "shared": -0.00011598867646360367
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -6.702128476580002e-06,
+          "shared": -6.702128476580002e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -0.00036790069635165586,
+          "shared": -0.00036790069635165586
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -1.1833941657238367e-05,
+          "shared": -1.1833941657238367e-05
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -4.9055868350198885e-05,
+          "shared": -4.9055868350198885e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -2.0628195748395144e-05,
+          "shared": -2.0628195748395144e-05
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -4.4228512360144306e-05,
+          "shared": -4.4228512360144306e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": 0.002641125172893482,
+          "shared": 0.0015925274908381083
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -3.296929470442002e-07,
+          "shared": -3.296929470442002e-07
+        }
+      }
+    }
+  },
+  "main|case_central|b_matched_over_pooled": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -1.4645665822958177e-05,
+        "shared": -1.4645665822958177e-05
+      },
+      "excise_selective_sales": {
+        "personal": -6.505053638440306e-05,
+        "shared": -6.505053638440306e-05
+      },
+      "general_sales_tax": {
+        "personal": -0.0001055545534799035,
+        "shared": -0.0001055545534799035
+      },
+      "personal_current_transfers": {
+        "personal": -2.47166527009654e-05,
+        "shared": -2.47166527009654e-05
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -1.4281927078016035e-06,
+          "shared": -1.4281927078016035e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -7.839794381152892e-05,
+          "shared": -7.839794381152892e-05
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -2.5217584590443226e-06,
+          "shared": -2.5217584590443226e-06
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -1.045357959004402e-05,
+          "shared": -1.045357959004402e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -4.395773498808773e-06,
+          "shared": -4.395773498808773e-06
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -9.424892263763988e-06,
+          "shared": -9.424892263763988e-06
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": 0.0010751761345455504,
+          "shared": -0.0006402282818108048
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -7.025604842216074e-08,
+          "shared": -7.025604842216074e-08
+        }
+      }
+    }
+  },
+  "main|case_high|b_hotdeck_union_matched": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -6.87282139408304e-05,
+        "shared": -6.87282139408304e-05
+      },
+      "excise_selective_sales": {
+        "personal": -0.00030526486372403096,
+        "shared": -0.00030526486372403096
+      },
+      "general_sales_tax": {
+        "personal": -0.0004953394418315581,
+        "shared": -0.0004953394418315581
+      },
+      "personal_current_transfers": {
+        "personal": -0.00011598867646360367,
+        "shared": -0.00011598867646360367
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -6.702128476580002e-06,
+          "shared": -6.702128476580002e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -0.00036790069635165586,
+          "shared": -0.00036790069635165586
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -1.1833941657238367e-05,
+          "shared": -1.1833941657238367e-05
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -4.9055868350198885e-05,
+          "shared": -4.9055868350198885e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -2.0628195748395144e-05,
+          "shared": -2.0628195748395144e-05
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -4.4228512360144306e-05,
+          "shared": -4.4228512360144306e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": 0.0031435647905812907,
+          "shared": 0.0021376608294244267
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -3.296929470442002e-07,
+          "shared": -3.296929470442002e-07
+        }
+      }
+    }
+  },
+  "main|case_high|b_matched_over_pooled": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -1.4645665822958177e-05,
+        "shared": -1.4645665822958177e-05
+      },
+      "excise_selective_sales": {
+        "personal": -6.505053638440306e-05,
+        "shared": -6.505053638440306e-05
+      },
+      "general_sales_tax": {
+        "personal": -0.0001055545534799035,
+        "shared": -0.0001055545534799035
+      },
+      "personal_current_transfers": {
+        "personal": -2.47166527009654e-05,
+        "shared": -2.47166527009654e-05
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -1.4281927078016035e-06,
+          "shared": -1.4281927078016035e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -7.839794381152892e-05,
+          "shared": -7.839794381152892e-05
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -2.5217584590443226e-06,
+          "shared": -2.5217584590443226e-06
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -1.045357959004402e-05,
+          "shared": -1.045357959004402e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -4.395773498808773e-06,
+          "shared": -4.395773498808773e-06
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -9.424892263763988e-06,
+          "shared": -9.424892263763988e-06
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": 0.001279220579789813,
+          "shared": -0.0004249654605235278
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -7.025604842216074e-08,
+          "shared": -7.025604842216074e-08
+        }
+      }
+    }
+  },
+  "main|case_low|b_hotdeck_union_matched": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -6.87282139408304e-05,
+        "shared": -6.87282139408304e-05
+      },
+      "excise_selective_sales": {
+        "personal": -0.00030526486372403096,
+        "shared": -0.00030526486372403096
+      },
+      "general_sales_tax": {
+        "personal": -0.0004953394418315581,
+        "shared": -0.0004953394418315581
+      },
+      "personal_current_transfers": {
+        "personal": -0.00011598867646360367,
+        "shared": -0.00011598867646360367
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -6.702128476580002e-06,
+          "shared": -6.702128476580002e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -0.00036790069635165586,
+          "shared": -0.00036790069635165586
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -1.1833941657238367e-05,
+          "shared": -1.1833941657238367e-05
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -4.9055868350198885e-05,
+          "shared": -4.9055868350198885e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -2.0628195748395144e-05,
+          "shared": -2.0628195748395144e-05
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -4.4228512360144306e-05,
+          "shared": -4.4228512360144306e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": 0.0021196615206297703,
+          "shared": 0.00102474251409027
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -3.296929470442002e-07,
+          "shared": -3.296929470442002e-07
+        }
+      }
+    }
+  },
+  "main|case_low|b_matched_over_pooled": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -1.4645665822958177e-05,
+        "shared": -1.4645665822958177e-05
+      },
+      "excise_selective_sales": {
+        "personal": -6.505053638440306e-05,
+        "shared": -6.505053638440306e-05
+      },
+      "general_sales_tax": {
+        "personal": -0.0001055545534799035,
+        "shared": -0.0001055545534799035
+      },
+      "personal_current_transfers": {
+        "personal": -2.47166527009654e-05,
+        "shared": -2.47166527009654e-05
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -1.4281927078016035e-06,
+          "shared": -1.4281927078016035e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -7.839794381152892e-05,
+          "shared": -7.839794381152892e-05
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -2.5217584590443226e-06,
+          "shared": -2.5217584590443226e-06
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -1.045357959004402e-05,
+          "shared": -1.045357959004402e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -4.395773498808773e-06,
+          "shared": -4.395773498808773e-06
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -9.424892263763988e-06,
+          "shared": -9.424892263763988e-06
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": 0.0008669523089692934,
+          "shared": -0.0008605621704886561
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -7.025604842216074e-08,
+          "shared": -7.025604842216074e-08
+        }
+      }
+    }
+  },
+  "main|published|b_hotdeck_union_matched": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -7.047198620919501e-05,
+        "shared": -7.047198620919501e-05
+      },
+      "excise_selective_sales": {
+        "personal": -0.00031301004395418135,
+        "shared": -0.00031301004395418135
+      },
+      "general_sales_tax": {
+        "personal": -0.0005079071943245402,
+        "shared": -0.0005079071943245402
+      },
+      "personal_current_transfers": {
+        "personal": -0.00011893154120377683,
+        "shared": -0.00011893154120377683
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -6.872174882653329e-06,
+          "shared": -6.872174882653329e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -0.0003772350729493419,
+          "shared": -0.0003772350729493419
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -1.213419242914265e-05,
+          "shared": -1.213419242914265e-05
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -5.0300513859294575e-05,
+          "shared": -5.0300513859294575e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -2.115157433820422e-05,
+          "shared": -2.115157433820422e-05
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -4.535067819135649e-05,
+          "shared": -4.535067819135649e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": -0.002458806197572862,
+          "shared": -0.0030338608979741184
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -3.3805791661297197e-07,
+          "shared": -3.3805791661297197e-07
+        }
+      }
+    }
+  },
+  "main|published|b_matched_over_pooled": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -1.5845744185984474e-05,
+        "shared": -1.584574418482447e-05
+      },
+      "excise_selective_sales": {
+        "personal": -7.038083288043556e-05,
+        "shared": -7.038083287528327e-05
+      },
+      "general_sales_tax": {
+        "personal": -0.00011420378372190204,
+        "shared": -0.00011420378371354163
+      },
+      "personal_current_transfers": {
+        "personal": -2.6741956328088094e-05,
+        "shared": -2.6741956326130425e-05
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -1.545220037769621e-06,
+          "shared": -1.545220037769621e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -8.482193826908946e-05,
+          "shared": -8.482193826908946e-05
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -2.728393500432039e-06,
+          "shared": -2.728393500432039e-06
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -1.131015482764911e-05,
+          "shared": -1.131015482764911e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -4.755966932719809e-06,
+          "shared": -4.755966932719809e-06
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -1.0197175983488555e-05,
+          "shared": -1.0197175983488555e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": 0.001442023652592367,
+          "shared": 0.0005016842979321257
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -7.601288901939712e-08,
+          "shared": -7.601288901939712e-08
+        }
+      }
+    }
+  },
+  "main|row4|b_hotdeck_union_matched": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -6.87282139408304e-05,
+        "shared": -6.87282139408304e-05
+      },
+      "excise_selective_sales": {
+        "personal": -0.00030526486372403096,
+        "shared": -0.00030526486372403096
+      },
+      "general_sales_tax": {
+        "personal": -0.0004953394418315581,
+        "shared": -0.0004953394418315581
+      },
+      "personal_current_transfers": {
+        "personal": -0.00011598867646360367,
+        "shared": -0.00011598867646360367
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -6.702128476580002e-06,
+          "shared": -6.702128476580002e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -0.00036790069635165586,
+          "shared": -0.00036790069635165586
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -1.1833941657238367e-05,
+          "shared": -1.1833941657238367e-05
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -4.9055868350198885e-05,
+          "shared": -4.9055868350198885e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -2.0628195748395144e-05,
+          "shared": -2.0628195748395144e-05
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -4.4228512360144306e-05,
+          "shared": -4.4228512360144306e-05
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": -0.002430326525278315,
+          "shared": -0.0032600766289400617
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -3.296929470442002e-07,
+          "shared": -3.296929470442002e-07
+        }
+      }
+    }
+  },
+  "main|row4|b_matched_over_pooled": {
+    "receipts": {
+      "customs_duties": {
+        "personal": -1.4645665822958177e-05,
+        "shared": -1.4645665822958177e-05
+      },
+      "excise_selective_sales": {
+        "personal": -6.505053638440306e-05,
+        "shared": -6.505053638440306e-05
+      },
+      "general_sales_tax": {
+        "personal": -0.0001055545534799035,
+        "shared": -0.0001055545534799035
+      },
+      "personal_current_transfers": {
+        "personal": -2.47166527009654e-05,
+        "shared": -2.47166527009654e-05
+      }
+    },
+    "spending": {
+      "agricultural_subsidies": {
+        "resources": {
+          "personal": -1.4281927078016035e-06,
+          "shared": -1.4281927078016035e-06
+        }
+      },
+      "economic_affairs_services": {
+        "resources": {
+          "personal": -7.839794381152892e-05,
+          "shared": -7.839794381152892e-05
+        }
+      },
+      "housing_community_services": {
+        "resources": {
+          "personal": -2.5217584590443226e-06,
+          "shared": -2.5217584590443226e-06
+        }
+      },
+      "housing_subsidies": {
+        "resources": {
+          "personal": -1.045357959004402e-05,
+          "shared": -1.045357959004402e-05
+        }
+      },
+      "other_subsidies": {
+        "resources": {
+          "personal": -4.395773498808773e-06,
+          "shared": -4.395773498808773e-06
+        }
+      },
+      "recreation_culture": {
+        "resources": {
+          "personal": -9.424892263763988e-06,
+          "shared": -9.424892263763988e-06
+        }
+      },
+      "refundable_tax_credits": {
+        "refundable_credits": {
+          "personal": 0.0018061401670111062,
+          "shared": 0.0006597129837306246
+        }
+      },
+      "transport_subsidies": {
+        "resources": {
+          "personal": -7.025604842216074e-08,
+          "shared": -7.025604842216074e-08
+        }
+      }
+    }
+  }
+}
