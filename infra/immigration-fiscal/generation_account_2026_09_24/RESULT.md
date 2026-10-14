@@ -1325,6 +1325,28 @@ Covered: every input the brief names, through `model.json`'s reproduction (step 
 
 ## Revisions
 
+- **2026-10-14 17:14 JST: oct14 propagation prepared, final checks pending.**
+  `v7_split.cjs` and `run_generations_v7.cjs` consume the v7 payload on the frozen
+  September 29 split and v6's R1–R4 layer. The band uses the 32 personal
+  specifications and the case's `v7.end_specifications`. New union parts follow
+  their generation tags, lineage parts stay on G3+, and the job-capital targets
+  are re-keyed on each convention's own cells (R7), rather than applying
+  convention-a shifts to convention b. All case receipt responses travel with
+  the payload. Earlier derived files remain inputs, not regenerated outputs.
+  `run_all.sh` now computes only oct14 and oct14_cash. Final numbers, gates and
+  reproducibility await the parent's `CASE_FINAL` marker and the final item rules.
+
+  Live reproduction (from the repository root):
+
+  ```sh
+  bash infra/immigration-fiscal/generation_account_2026_09_24/run_all.sh
+  uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/generation_account_2026_09_24 \
+    "bash {lane}/run_all.sh" \
+    --allow-unrun infra/immigration-fiscal/generation_account_2026_09_24/v7_split.cjs
+  ```
+
+  The allowed file is the shared module loaded by the two live runners.
+
 - **2026-10-08: item T in the September 19 ledger.** The ledger now carries the main case's income-tax keys (item T
   in `ledger_absolute_2026_09_17`), so the ledger rows of step 6 move; the account rows do not. $ per person a year, G1 / G2 / G3+,
   old → new [CALCULATION: `compare_ledger.py` → `derived/ledger_comparison.csv`]:
@@ -1343,3 +1365,35 @@ Covered: every input the brief names, through `model.json`'s reproduction (step 
     ledger's shared G1 and G2 are $73 apart (was $48); its personal G3+ is $212 more costly than G2 (was $165). The
     September 24 record and the later bullets that compare the account with the ledger's own balances quote the pre-T
     ledger; its own balances move by +$296 / +$174 / +$535 per person at the shared end.
+
+- **2026-10-14 18:24 JST: oct14 finalized on committed case 148ed1ea.**
+  The marker's three hashes match both the working files and that commit. Final
+  Consumers rules R5–R9 and the adoption decision were reread before execution.
+  R6 includes the added G3+-priced people's credit term and all eight receipt
+  scenarios; R8's white-tax parts and R9's frame parts follow their registry tags.
+  R7 re-keys convention b on its own receipt cells. These are allocations of the
+  same modeled account, not separate generation-removal counterfactuals.
+
+  The modeled set is **339.552–423.649bn**, cash set **264.426–348.523bn**, at
+  personal specifications **16 / 11**. Under (a), the generations' set costs
+  are G1 **49.936–73.405bn**, G2 **137.995–165.494bn**, G3+ **151.620–184.750bn**;
+  their cash costs are **35.907–59.376bn**, **103.711–131.209bn**, and
+  **124.808–157.938bn**, respectively. Under (b), the set costs are
+  **153.412–183.555bn**, **83.868–108.045bn**, **102.272–132.049bn**;
+  cash **139.406–169.549bn**, **49.651–73.829bn**, **75.368–105.145bn**.
+  Figures are independently rounded once; additivity uses full precision.
+  [CALCULATION: `derived/generation_summary_oct14.json` and
+  `generation_summary_oct14_cash.json`, `union.cost_bn`,
+  `conventions.{a,b}.{G1,G2,G3plus}.cost_bn`]
+
+  All 17 set and 15 cash gates pass: every cell/cost and every capital component
+  adds at 1e-9, production grids at 1e-12, both conventions and all 32 personal
+  specifications. The independent consumer agrees with the case package;
+  the set also matches G4 pattern 3's reference at its printed 5e-5 tolerance.
+  A completed, sequential rerun gave **IDENTICAL: 72/72, exit 0**; it follows
+  the live command above and leaves all earlier generation outputs unchanged.
+  Measured set peak is **242,319,360 bytes**, elapsed 1.938 seconds
+  (`RUSAGE_CHILDREN.ru_maxrss`, Darwin bytes). The sandbox blocks
+  `time -l`'s clock-rate query, so that wrapper returned 1 after successful
+  child runs; the replacement measurement preserves child failures
+  (a deliberate exit-7 probe returned 7). No failed wrapper is counted as a pass.
