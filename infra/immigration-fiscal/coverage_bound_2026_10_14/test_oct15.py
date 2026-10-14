@@ -84,6 +84,27 @@ def test_missing_frozen_base_blocks(tmp_path, monkeypatch):
         V.validate_frozen()
 
 
+def test_final_target_refresh_preserves_complete_population_and_all_dollars():
+    old_target = dict(population=10., adults=5., source="principal")
+    previous = dict(meta=dict(lineage=dict(generation_g3plus=old_target),
+                              coverage=dict(file="coverage.json", sha256="exact")), cost_bn=7.)
+    current = copy.deepcopy(previous)
+    lineage = current["meta"]["lineage"]
+    lineage["complete_generation_g3plus"] = copy.deepcopy(old_target)
+    lineage["generation_g3plus"] = dict(population=7., adults=3., source="principal",
+        coverage_excluded=dict(population=3., adults=2., file="coverage.json", sha256="exact"))
+    coverage = dict(sets=dict(set=dict(scenarios=dict(central=dict(
+        implied_net_missing_people=dict(G3plus=3.), adults_by_generation=dict(G3plus=2.))))))
+    R.validate_observed_target_revision(previous, current, "set", coverage)
+    current["cost_bn"] += .1
+    with pytest.raises(SystemExit, match="amounts or unrelated"):
+        R.validate_observed_target_revision(previous, current, "set", coverage)
+    current["cost_bn"] = previous["cost_bn"]
+    lineage["generation_g3plus"]["adults"] = old_target["adults"]
+    with pytest.raises(SystemExit, match="principal coverage adults"):
+        R.validate_observed_target_revision(previous, current, "set", coverage)
+
+
 def test_native_education_categories_require_principal_amounts_and_closure():
     s = snapshot()
     s["d"]["PH_SEQ"], s["d"]["PPPOS"] = [1, 2, 3, 4], [1, 1, 1, 1]
@@ -143,6 +164,29 @@ def test_final_state_justice_uses_principal_category_not_nonexistent_use_key(cat
     np.testing.assert_array_equal(full_key(s, p, "low")[0], driver)
     source["category_share"] += .1
     with pytest.raises(SystemExit, match="source category share mismatch"):
+        full_key(s, p, "low")
+
+
+def test_final_identified_G1_rejects_nominal_G3_age_factor_on_entire_frame():
+    s = snapshot()
+    s["gens"]["G3plus"] = np.array([False, False, True, True])
+    s["f_rec"] = np.array([2., 4., 2., 4.])
+    source = dict(population="identified", source_cell="spending|economic_affairs_services|economic",
+                  edit={"side": "spending", "line": "state_price_public_order_safety", "key": "population"},
+                  key="economic", category="other_shared", category_share=1., charge_source="principal state shares",
+                  rule="joint normalization", indexes_source="principal indexes")
+    part = {k: v for k, v in source.items() if k not in ("population", "key", "category", "category_share")}
+    part["cost_by_population"] = {"identified": 1., "latent": 0., "native": 0.}
+    s["lines"]["generations"]["G1"]["low"]["added_state_prices"] = [part]
+    p = dict(g="G1", id="added_state_identified", cat="other_shared", bn=1., x=np.array([1., 2., 0.]),
+             full_driver=np.array([1., 2., 1.5, 1.]), state_price_source=source)
+    np.testing.assert_array_equal(full_key(s, p, "low")[0], [1., 2., 1.5, 1.])
+    correct_price = p["x"] / (p["x"] @ s["W"][:3, 0])
+    p["full_driver"] = np.array([.5, .5, 1.5, 1.])
+    p["x"] = np.array([.5, .5, 0.])
+    wrong_price = p["x"] / (p["x"] @ s["W"][:3, 0])
+    assert not np.allclose(correct_price, wrong_price)  # age allocation differs even though both totals close
+    with pytest.raises(SystemExit, match="differs from principal source category"):
         full_key(s, p, "low")
 
 
@@ -213,6 +257,15 @@ def test_final_calibration_cannot_erase_nonzero_added_state_amount(tmp_path, mon
             for e in V.ENDS} for g in V.GENS}}}
     with pytest.raises(SystemExit, match="erases declared state allocation"):
         observed_snapshot(s)
+
+
+def test_final_freeze_cannot_use_missing_or_template_adoption_marker(tmp_path):
+    with pytest.raises(SystemExit, match="actual CASE_FINAL"):
+        R.adoption_receipt(tmp_path / "CASE_FINAL")
+    marker = tmp_path / "CASE_FINAL"
+    marker.write_text("CASE_FINAL: main case v8 (key oct15) adopted at commit FILL_COMMIT (FILL_TIME JST).")
+    with pytest.raises(SystemExit, match="template"):
+        R.adoption_receipt(marker)
 
 
 def test_signed_age_bands_close_and_added_stays_separate():

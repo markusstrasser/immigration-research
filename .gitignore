@@ -57,6 +57,7 @@ infra/immigration-fiscal/gap_incidence_2026_09_18/derived/corrections_federal_up
 infra/immigration-fiscal/homicide_cost_2026_09_18/derived/profile_source_audit.json
 # earlier frozen base snapshots the coverage lane archives on a re-freeze (kept locally, 23 MB each)
 infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/oct15_base/superseded_*/
+infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/oct15_final_routing/superseded_*/
 .model-review/redteam-*
 .model-review/2026-10-08-v6-red-team-*/
 .model-review/assumptions-2026-10-14-*

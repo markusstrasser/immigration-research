@@ -1,7 +1,10 @@
 """Separate final-routing price replay and the required <=0.5bn coverage check."""
 import argparse
+import copy
 import hashlib
 import json
+import re
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -21,10 +24,51 @@ FINAL = LANE / "inputs/oct15_final_routing"
 HOUSE = ROOT / "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct15"
 
 
-def freeze_final_inputs():
-    C.require(not (FINAL / "manifest.json").exists(), "final-routing source already frozen")
+def adoption_receipt(marker):
+    C.require(marker is not None and marker.is_file(), "phase2 requires actual CASE_FINAL adoption marker")
+    text = marker.read_text()
+    match = re.match(r"CASE_FINAL: main case v8 \(key oct15\) adopted at commit ([0-9a-f]{7,40})\b", text)
+    C.require(match is not None, "CASE_FINAL is absent, a template, or not an oct15 adoption")
+    resolved = subprocess.run(["git", "--no-optional-locks", "-C", str(ROOT), "rev-parse", "--verify",
+                               match.group(1)+"^{commit}"], capture_output=True, text=True, check=False)
+    C.require(resolved.returncode == 0, "CASE_FINAL adoption commit does not resolve")
+    return {"source": str(marker.resolve()), "commit": resolved.stdout.strip(),
+            "bytes": marker.stat().st_size, "sha256": digest(marker)}
+
+
+def validate_observed_target_revision(previous, current, basis, coverage):
+    """Allow only the principal coverage exclusion from the observed G3 target."""
+    old = previous["meta"]["lineage"]["generation_g3plus"]
+    lineage = current["meta"]["lineage"]
+    revised = lineage["generation_g3plus"]
+    excluded = revised.get("coverage_excluded", {})
+    central = coverage["sets"][basis]["scenarios"]["central"]
+    C.require(lineage.get("complete_generation_g3plus") == old,
+              "final refresh changed the complete generation target")
+    for field, expected in (("population", central["implied_net_missing_people"]["G3plus"]),
+                            ("adults", central["adults_by_generation"]["G3plus"])):
+        C.require(abs(excluded.get(field, float("inf"))-expected) < 1e-6
+                  and abs(revised[field]+expected-old[field]) < 1e-6,
+                  "final observed target exclusion differs from principal coverage " + field)
+    declared = current["meta"]["coverage"]
+    C.require(excluded.get("file") == declared["file"] and excluded.get("sha256") == declared["sha256"],
+              "final observed target has stale coverage receipt")
+    normalized = copy.deepcopy(current)
+    normalized["meta"]["lineage"]["generation_g3plus"] = old
+    del normalized["meta"]["lineage"]["complete_generation_g3plus"]
+    C.require(normalized == previous, "final refresh changed amounts or unrelated declarations")
+
+
+def freeze_final_inputs(marker, refresh=False):
+    adoption = adoption_receipt(marker)
+    receipt_path = FINAL / "manifest.json"
+    if refresh:
+        validate_final_inputs()
+    else:
+        C.require(not receipt_path.exists(), "final-routing source already frozen")
     validate_frozen()
     files = {}
+    blocks = {}
     for basis in ("set", "cash"):
         name = "lines_cash.json" if basis == "cash" else "lines.json"
         source = HOUSE / name
@@ -36,12 +80,24 @@ def freeze_final_inputs():
         C.require(coverage and not coverage.get("stub"), "final routing requires actual coverage, never STUB")
         coverage_file = ROOT / "infra/immigration-fiscal" / coverage["file"]
         C.require(coverage_file.is_file() and digest(coverage_file) == coverage["sha256"], "stale final coverage source")
+        if refresh:
+            validate_observed_target_revision(json.loads((FINAL / name).read_text()), block, basis,
+                                              json.loads(coverage_file.read_text()))
+        blocks[name] = source.read_bytes()
         files[name] = {"bytes": source.stat().st_size, "sha256": digest(source),
                        "source": str(source.relative_to(ROOT))}
+    if refresh:
+        archived = FINAL / ("superseded_" + digest(receipt_path)[:16])
+        C.require(not archived.exists(), "final-routing superseded receipt already archived")
+        archived.mkdir()
+        for name in ("manifest.json", "CASE_FINAL", "lines.json", "lines_cash.json"):
+            (archived / name).write_bytes((FINAL / name).read_bytes())
     FINAL.mkdir(parents=True, exist_ok=True)
     for name in files:
-        (FINAL / name).write_bytes((HOUSE / name).read_bytes())
-    (FINAL / "manifest.json").write_text(json.dumps({"vintage": "oct15_final_routing", "files": files}, indent=2)+"\n")
+        (FINAL / name).write_bytes(blocks[name])
+    (FINAL / "CASE_FINAL").write_bytes(marker.read_bytes())
+    (FINAL / "manifest.json").write_text(json.dumps({"vintage": "oct15_final_routing", "files": files,
+                                                    "adoption": adoption}, indent=2)+"\n")
     print("final routing household snapshots frozen; actual coverage receipt PASS")
 
 
@@ -51,6 +107,9 @@ def validate_final_inputs():
     receipt = json.loads(path.read_text())
     C.require(receipt.get("vintage") == "oct15_final_routing"
               and set(receipt["files"]) == {"lines.json", "lines_cash.json"}, "final routing receipt shape")
+    marker = FINAL / "CASE_FINAL"
+    C.require(marker.is_file() and marker.stat().st_size == receipt["adoption"]["bytes"]
+              and digest(marker) == receipt["adoption"]["sha256"], "frozen final adoption marker changed")
     for name, row in receipt["files"].items():
         file = FINAL / name
         C.require(file.is_file() and file.stat().st_size == row["bytes"] and digest(file) == row["sha256"],
@@ -142,8 +201,12 @@ def compare_final_prices():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--freeze-final", action="store_true")
+    parser.add_argument("--refresh-final-observed-target", action="store_true")
+    parser.add_argument("--case-final", type=Path)
     args = parser.parse_args()
-    if args.freeze_final:
-        freeze_final_inputs()
+    C.require(not (args.freeze_final and args.refresh_final_observed_target), "choose one final source operation")
+    if args.freeze_final or args.refresh_final_observed_target:
+        freeze_final_inputs(args.case_final, refresh=args.refresh_final_observed_target)
     else:
+        C.require(args.case_final is None, "--case-final is the explicit freeze-only input")
         compare_final_prices()

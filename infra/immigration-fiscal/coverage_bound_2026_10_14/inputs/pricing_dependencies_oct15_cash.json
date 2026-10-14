@@ -211,7 +211,7 @@
     {
       "path": "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct15/completion_jobs.json",
       "bytes": 7847,
-      "sha256": "a76b8eafc80f7d238c784cdd2687bf51d0d9d123b951836f9579f36d02909ad0"
+      "sha256": "2719484192ef313c8708e1d80540cdb3efa4126a2ddce7f0766fe0b8d10de235"
     },
     {
       "path": "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct15/completion_jobs.npz",
@@ -220,13 +220,13 @@
     },
     {
       "path": "infra/immigration-fiscal/within_group_distribution_2026_09_29/completion_keys.py",
-      "bytes": 2151,
-      "sha256": "a5bfae6704bccd97e55f1fafa5618baa21b615d2dafa7bca80815e7dd3f75937"
+      "bytes": 2610,
+      "sha256": "28c09b54e4f8a252c8ce2dbfba1891ec49efed80342f744ec85e2b2207f36157"
     },
     {
       "path": "infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py",
-      "bytes": 111443,
-      "sha256": "d958ce812254d82d8eedac6f5b432e9b0bf5ce255eb0efd356ec6af2e8c0cc82"
+      "bytes": 113848,
+      "sha256": "08b13cca82fc915a2b1d8069efb9efe4c47181d17f30c3894ed9aa7c6453ccbe"
     },
     {
       "path": "pyproject.toml",

@@ -1,0 +1,129 @@
+{
+  "vintage": "oct15_final_routing",
+  "coverage_base_preserved": true,
+  "threshold_bn": 0.5,
+  "sets": {
+    "set": {
+      "ends": {
+        "low": {
+          "base_coverage_bn": 12.001818463568476,
+          "final_routing_coverage_bn": 12.01834723176309,
+          "repricing_delta_bn": 0.016528768194614685,
+          "within_0_5bn": true
+        },
+        "high": {
+          "base_coverage_bn": 15.859877306531986,
+          "final_routing_coverage_bn": 15.876526158661639,
+          "repricing_delta_bn": 0.01664885212965217,
+          "within_0_5bn": true
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 1.42368378959772,
+            "cps_replicate_se_bn": 0.17132638088927285
+          },
+          "G2": {
+            "coverage_bn": 5.9790446393751076,
+            "cps_replicate_se_bn": 0.31190405942938204
+          },
+          "G3plus": {
+            "coverage_bn": 4.615618802790264,
+            "cps_replicate_se_bn": 0.23186990941655541
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 2.2823620967901133,
+            "cps_replicate_se_bn": 0.15261756618870545
+          },
+          "G2": {
+            "coverage_bn": 7.5782135170277805,
+            "cps_replicate_se_bn": 0.30848696770612793
+          },
+          "G3plus": {
+            "coverage_bn": 6.015950544843745,
+            "cps_replicate_se_bn": 0.22247102984328515
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 446105.1075376299,
+        "G2": 824190.8641341948,
+        "G3plus": 690117.6475083351,
+        "added": 0.0
+      }
+    },
+    "cash": {
+      "ends": {
+        "low": {
+          "base_coverage_bn": 3.950844257775926,
+          "final_routing_coverage_bn": 3.967373025970561,
+          "repricing_delta_bn": 0.016528768194635113,
+          "within_0_5bn": true
+        },
+        "high": {
+          "base_coverage_bn": 7.8089031007393,
+          "final_routing_coverage_bn": 7.8255519528689215,
+          "repricing_delta_bn": 0.016648852129621083,
+          "within_0_5bn": true
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 0.017760859603972966,
+            "cps_replicate_se_bn": 0.19418475632399385
+          },
+          "G2": {
+            "coverage_bn": 2.34135811145936,
+            "cps_replicate_se_bn": 0.34065167289735104
+          },
+          "G3plus": {
+            "coverage_bn": 1.608254054907228,
+            "cps_replicate_se_bn": 0.2688663906320422
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 0.8764391667963574,
+            "cps_replicate_se_bn": 0.17499689089915263
+          },
+          "G2": {
+            "coverage_bn": 3.9405269891119787,
+            "cps_replicate_se_bn": 0.3352563404563341
+          },
+          "G3plus": {
+            "coverage_bn": 3.0085857969605856,
+            "cps_replicate_se_bn": 0.258276804954536
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 446105.1075376299,
+        "G2": 824190.8641341948,
+        "G3plus": 690117.6475083351,
+        "added": 0.0
+      }
+    }
+  },
+  "minor_scale_rule": "convention-b minor-parent scaling has no convention-a coverage channel; final state/credit routing is measured separately",
+  "pass": true
+}

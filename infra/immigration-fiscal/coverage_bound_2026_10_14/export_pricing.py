@@ -244,6 +244,9 @@ def main(tracker, case="oct14", basis="set", final_routing=False):
             line_national.append(mass)
             # Copy this tiny column: a view would retain every 161-column temporary price matrix.
             line_base.append(person[:, 0].copy())
+            # Drop the previous full temporary before the next piece allocates
+            # its multiplication and division buffers.
+            del person, full
         for g_i, gen in enumerate(module.GENS):
             m = g == g_i
             residual = float(s["residual"][end].get(gen, 0.0))
@@ -259,6 +262,11 @@ def main(tracker, case="oct14", basis="set", final_routing=False):
         want = s["lines"]["union"][end]["cost_bn"]
         require(np.max(np.abs(total - want)) < 1e-6, "case price closure " + end)
         case_bn.append(float(total[0]))
+        # This end's drivers and metadata are now captured and all its gates
+        # have passed. They are not needed while pricing the other end.
+        s["pieces"][end].clear()
+        gc.collect()
+        pa.default_memory_pool().release_unused()
     stage("price pieces")
     combined_g3 = [s["lines"]["generations"]["G3plus"][end]["cost_bn"] for end in ends]
     population_rounding = s["lines"]["meta"].get("population_rounding")
@@ -294,8 +302,11 @@ def main(tracker, case="oct14", basis="set", final_routing=False):
     stage("calibration and release")
     age_rows = []
     for end_i, end in enumerate(ends):
-        for label, weights, prices in [(gname, identified * (g == g_i)[:, None], net_id)
-                                       for g_i, gname in enumerate(gen_names)] + [("added", added, net_add)]:
+        # Evaluate one generation at a time: retaining all three full 161-column
+        # masked weight copies together adds memory without changing any price.
+        for g_i, label in enumerate((*gen_names, "added")):
+            weights = added if label == "added" else identified * (g == g_i)[:, None]
+            prices = net_add if label == "added" else net_id
             all_cost, all_pop = 0.0, 0.0
             for lo in range(0, 81, 5):
                 m = (age >= lo) & ((age < lo + 5) if lo < 80 else True)
@@ -312,6 +323,7 @@ def main(tracker, case="oct14", basis="set", final_routing=False):
                 all_pop += pop
             require(abs(all_cost - float((prices[end_i] * weights).sum(axis=0)[0])) < 1e-6, "age-price cost closure")
             require(abs(all_pop - float(weights[:, 0].sum())) < 1e-6, "age-price population closure")
+            del weights, prices
     vintage = "oct15_final_routing" if final_routing else case
     suffix = "" if case == "oct14" else f"_{vintage}_{basis}"
     with (LANE / f"derived/age_prices{suffix}.csv").open("w", newline="") as stream:
