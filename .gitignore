@@ -57,3 +57,6 @@ infra/immigration-fiscal/gap_incidence_2026_09_18/derived/corrections_federal_up
 infra/immigration-fiscal/homicide_cost_2026_09_18/derived/profile_source_audit.json
 .model-review/redteam-*
 .model-review/2026-10-08-v6-red-team-*/
+.model-review/assumptions-2026-10-14-*
+.model-review/2026-10-14-assumptions-*/
+.model-review/dispatch.json
