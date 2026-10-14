@@ -23,15 +23,22 @@ function check(name, fn) {
 function rejects(name, data, live, which, pattern) {
   check(name, () => {
     let error;
-    try { fixture(data, live).get(which); } catch (e) { error = e; }
+    try { fixture(data, live).get(which, "central", { stub: !live }); } catch (e) { error = e; }
     if (!error || !pattern.test(String(error))) throw Error("[BLOCKED] " + name + ": " + error);
   });
 }
 check("all ten original stub constructions retain generation/count closure", () => {
   for (const which of ["set", "cash"]) for (const arm of ["central", "da_middle", "da_low", "da_high", "pes_only"]) {
-    const c = fixture(original, false).get(which, arm);
+    const c = fixture(original, false).get(which, arm, { stub: true });
     if (!c.stub || !Number.isFinite(c.net_missing_people)) throw Error("[BLOCKED] stub fixture");
     for (const e of Object.values(c.by_end)) if (Math.abs(Object.values(e.by_generation).reduce((a,b)=>a+b,0)-e.total_bn)>1e-9) throw Error("[BLOCKED] generation closure");
+  }
+});
+check("a missing live input stops both sets unless a fixture asks for the stub", () => {
+  for (const w of ["set", "cash"]) {
+    let error;
+    try { fixture(original, false).get(w); } catch (e) { error = e; }
+    if (!error || !/is absent/.test(String(error))) throw Error("[BLOCKED] implicit stub served for " + w + ": " + error);
   }
 });
 const live = { key: "oct15", sets: { set: clone(original), cash: clone(original) } };

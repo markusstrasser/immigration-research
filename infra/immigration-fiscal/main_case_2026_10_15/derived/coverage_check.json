@@ -6,6 +6,10 @@
    "pass": true
   },
   {
+   "name": "a missing live input stops both sets unless a fixture asks for the stub",
+   "pass": true
+  },
+  {
    "name": "explicit set/cash live schema accepted",
    "pass": true
   },

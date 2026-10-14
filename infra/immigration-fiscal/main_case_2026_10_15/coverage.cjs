@@ -3,9 +3,11 @@ const fs=require("fs"),path=require("path"),crypto=require("crypto");
 const F=path.join(__dirname,".."), FILE="coverage_bound_2026_10_14/derived/coverage_bound_oct15.json";
 const STUB=path.join(__dirname,"_stub/coverage_bound_oct15.json");
 const clone=x=>JSON.parse(JSON.stringify(x));
-function get(which="set",arm="central") {
+function get(which="set",arm="central",opts={}) {
  if(!["set","cash"].includes(which))throw Error("[BLOCKED] unknown coverage accounting set");
  const live=fs.existsSync(path.join(F,FILE)),file=live?path.join(F,FILE):STUB;
+ // The stub carries v7 set prices for both sets; only an explicit fixture call may read it (round 3, 2026-10-15).
+ if(!live&&opts.stub!==true) throw Error(`[BLOCKED] live coverage input ${FILE} is absent; the historical stub serves only explicit fixture calls ({stub:true})`);
  if(!fs.existsSync(file)) throw Error("[BLOCKED] coverage input and explicit stub are absent");
  const raw=JSON.parse(fs.readFileSync(file,"utf8"));
  if(live && raw.key!=="oct15") throw Error("[BLOCKED] coverage file is not oct15");
