@@ -1,0 +1,7 @@
+**Verdict:** The source integration profile identifies local TAXSIM replay, rather than pension-grid loading, as the dominant cost. Exact-input in-run reuse is implemented in the adapter; the frozen source remains unchanged.
+
+The profiled source integration consumed 68.040s; ten subprocess calls consumed 44.709s cumulatively, including two federal survivor solves (27.310s) and the high-AGI alternative (16.215s). Pension calculation consumed 2.492s. Total profiled adapter runtime was 162.052s, peak physical footprint 1.973GB. These are observed timing receipts under concurrent machine load, not a matched speedup experiment. [CALCULATION: `_cache/source_integration_profile.txt`; `_cache/timing.jsonl`]
+
+The adapter now caches only identical serialized canonical TAXSIM inputs, checks original source pins on every hit, returns deep output copies, and retains at most four outputs / 64MB. It also reuses M5 allocations only when all relevant comparator target fields are identical. Native policy calls, return construction, source controls and signed replicate calculations remain executed. [CALCULATION: `adapter.py` `TaxsimCache`, `tax`; `test_adapter.py`]
+
+Cold policy-frame loading remains separate by process to preserve the physical-memory limit. Combining those source loaders or modifying the source lane's kernel route is deferred because this task explicitly forbids source edits. The existing source issue documents that broader route: `../mixed_unit_removal_2026_10_14/performance-issue.md`. [ASSUMPTION / INFERENCE]

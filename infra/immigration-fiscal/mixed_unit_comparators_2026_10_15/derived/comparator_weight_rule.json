@@ -1,0 +1,9 @@
+{
+  "full": "MARSUPWT/100",
+  "factors": {
+    "4": 0.8556255897504617,
+    "5": 0.7781269999470055
+  },
+  "replicates": "original source row4 signed SDR columns, unchanged",
+  "full_factor_source": "rekey_sept29.row4_weights"
+}

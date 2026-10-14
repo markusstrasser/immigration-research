@@ -71,3 +71,4 @@ infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/oct15_base/superseded_
 # worker lists of the paths a lane run touched (review aids, rederivable)
 changed-paths.txt
 *-changed-paths.txt
+changed-external-paths.txt

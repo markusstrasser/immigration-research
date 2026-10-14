@@ -1,0 +1,169 @@
+{
+  "passed": true,
+  "tolerance_bn": 1e-06,
+  "maximum_part_or_se_gap_bn": 0.0,
+  "maximum_replicate_gap_bn": 0.0,
+  "rows_checked": 122,
+  "headline": [
+    {
+      "method": "set",
+      "end": "low",
+      "component": "bounded_low",
+      "arm": "Medicaid_low|ACA_low|SNAP_zero_observed_high_takeup",
+      "recommendation": "unified conditional removal arm; frozen v7 plus this delta",
+      "case_total_bn": 350.2920341022287,
+      "bn": 10.740016272701766,
+      "se_bn": 4.4167858647167995,
+      "by_generation_bn": [
+        -2.0311962220637065,
+        1.2233035172461966,
+        11.547908977519276
+      ],
+      "by_generation_se_bn": [
+        1.3038717005986635,
+        2.7560262346043944,
+        3.0902659524685183
+      ]
+    },
+    {
+      "method": "set",
+      "end": "low",
+      "component": "bounded_high",
+      "arm": "Medicaid_high|ACA_high|SNAP_cap_observed_low_takeup",
+      "recommendation": "unified conditional removal arm; frozen v7 plus this delta",
+      "case_total_bn": 354.0837080275004,
+      "bn": 14.531690197973518,
+      "se_bn": 4.405052930817506,
+      "by_generation_bn": [
+        -1.3109090555178016,
+        2.3835397451969715,
+        13.459059508294349
+      ],
+      "by_generation_se_bn": [
+        1.3015843506746292,
+        2.766111112556429,
+        3.093500827509816
+      ]
+    },
+    {
+      "method": "set",
+      "end": "high",
+      "component": "bounded_low",
+      "arm": "Medicaid_low|ACA_low|SNAP_zero_observed_high_takeup",
+      "recommendation": "unified conditional removal arm; frozen v7 plus this delta",
+      "case_total_bn": 434.38927697320867,
+      "bn": 10.740016272701766,
+      "se_bn": 4.4167858647167995,
+      "by_generation_bn": [
+        -2.0311962220637065,
+        1.2233035172461966,
+        11.547908977519276
+      ],
+      "by_generation_se_bn": [
+        1.3038717005986635,
+        2.7560262346043944,
+        3.0902659524685183
+      ]
+    },
+    {
+      "method": "set",
+      "end": "high",
+      "component": "bounded_high",
+      "arm": "Medicaid_high|ACA_high|SNAP_cap_observed_low_takeup",
+      "recommendation": "unified conditional removal arm; frozen v7 plus this delta",
+      "case_total_bn": 438.18095089848043,
+      "bn": 14.531690197973518,
+      "se_bn": 4.405052930817506,
+      "by_generation_bn": [
+        -1.3109090555178016,
+        2.3835397451969715,
+        13.459059508294349
+      ],
+      "by_generation_se_bn": [
+        1.3015843506746292,
+        2.766111112556429,
+        3.093500827509816
+      ]
+    },
+    {
+      "method": "cash",
+      "end": "low",
+      "component": "bounded_low",
+      "arm": "Medicaid_low|ACA_low|SNAP_zero_observed_high_takeup",
+      "recommendation": "unified conditional removal arm; frozen v7 plus this delta",
+      "case_total_bn": 275.1655898882072,
+      "bn": 10.740016272701766,
+      "se_bn": 4.4167858647167995,
+      "by_generation_bn": [
+        -2.0311962220637065,
+        1.2233035172461966,
+        11.547908977519276
+      ],
+      "by_generation_se_bn": [
+        1.3038717005986635,
+        2.7560262346043944,
+        3.0902659524685183
+      ]
+    },
+    {
+      "method": "cash",
+      "end": "low",
+      "component": "bounded_high",
+      "arm": "Medicaid_high|ACA_high|SNAP_cap_observed_low_takeup",
+      "recommendation": "unified conditional removal arm; frozen v7 plus this delta",
+      "case_total_bn": 278.9572638134789,
+      "bn": 14.531690197973518,
+      "se_bn": 4.405052930817506,
+      "by_generation_bn": [
+        -1.3109090555178016,
+        2.3835397451969715,
+        13.459059508294349
+      ],
+      "by_generation_se_bn": [
+        1.3015843506746292,
+        2.766111112556429,
+        3.093500827509816
+      ]
+    },
+    {
+      "method": "cash",
+      "end": "high",
+      "component": "bounded_low",
+      "arm": "Medicaid_low|ACA_low|SNAP_zero_observed_high_takeup",
+      "recommendation": "unified conditional removal arm; frozen v7 plus this delta",
+      "case_total_bn": 359.26283275918735,
+      "bn": 10.740016272701766,
+      "se_bn": 4.4167858647167995,
+      "by_generation_bn": [
+        -2.0311962220637065,
+        1.2233035172461966,
+        11.547908977519276
+      ],
+      "by_generation_se_bn": [
+        1.3038717005986635,
+        2.7560262346043944,
+        3.0902659524685183
+      ]
+    },
+    {
+      "method": "cash",
+      "end": "high",
+      "component": "bounded_high",
+      "arm": "Medicaid_high|ACA_high|SNAP_cap_observed_low_takeup",
+      "recommendation": "unified conditional removal arm; frozen v7 plus this delta",
+      "case_total_bn": 363.05450668445906,
+      "bn": 14.531690197973518,
+      "se_bn": 4.405052930817506,
+      "by_generation_bn": [
+        -1.3109090555178016,
+        2.3835397451969715,
+        13.459059508294349
+      ],
+      "by_generation_se_bn": [
+        1.3015843506746292,
+        2.766111112556429,
+        3.093500827509816
+      ]
+    }
+  ]
+}
