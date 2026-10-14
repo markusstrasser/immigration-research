@@ -1941,7 +1941,7 @@ def main(case="sept29"):
                             "comparison_engine": "rough" if lab != "mexican_origin_engine" else "not a comparison",
                             "case_minus_rough_bridge_bn": f"{eg['cost'] - u['cost']:.9f}",
                             "mixed_unit_removal_bn": META['mixed_unit_removal']['by_end'][end]['total_bn'],
-                            "mixed_unit_asymmetry": "lineage only; comparator counterpart unmeasured",
+                            "mixed_unit_asymmetry": "one-sided evaluator control; see comparator_item11_bn in published summary",
                             "delta_without_item11_bn": f"{u['cost'] - r['cost'] - META['mixed_unit_removal']['by_end'][end]['total_bn']:.9f}"
                             if not lab.startswith('mexican_') else ""} if CASE == "oct15" else {}),
                         **({"delta_like_for_like_cps_bn": f"{u['cost_cps'] - r['cost_cps']:.4f}"} if TAX_ON else {}),
@@ -1961,7 +1961,7 @@ def main(case="sept29"):
                                 "per_member": f"{v * 1e9 / r['population']:.0f}",
                                 "delta_vs_union_rough_bn": f"{ub.get(bucket, 0.0) - v:.4f}" if CASE != 'oct15' or lab != 'mexican_origin_engine' else '',
                                 **({'engine': 'case' if lab == 'mexican_origin_engine' else 'rough',
-                                    'mixed_unit_asymmetry': 'lineage only; comparator counterpart unmeasured'} if CASE == 'oct15' else {})})
+                                    'mixed_unit_asymmetry': 'evaluator components; comparator survivor term is post-evaluator'} if CASE == 'oct15' else {})})
         if terms is not None and b == "accrual":
             term_rows.append({"group": lab, "end": end, **{f"index_{k}": f"{v:.6f}" for k, v in terms["index"].items()},
                               "rho_miles": f"{terms['rho']:.6f}", "under5_share": f"{terms['u5']:.6f}",
@@ -1997,6 +1997,17 @@ def main(case="sept29"):
             want = res[(r["basis"], r["group"], r["end"])][0]["cost"]
             gate(f"the IPEDS terms' cost is the summary's {r['group']} {r['basis']} {r['end']}", abs(float(r["cost_bn"]) - want) < 5e-5)
     stop_if_failed()
+    if CASE == 'oct15':
+        from comparison_contract import publish_base_summary, load_mixed_unit, comparator_removal
+        mixed = load_mixed_unit()
+        for (basis, group, end), (result, *_) in res.items():
+            if group in ('A1_third_plus_nh_white', 'nh_black_rough'):
+                term = comparator_removal(mixed, group, basis, end, result['population'])['bn']
+                bucket_rows.append(dict(basis=basis, group=group, end=end,
+                    bucket='comparator post-engine mixed_unit_removal', cost_bn=f'{term:.4f}',
+                    per_member=f"{term * 1e9 / result['population']:.0f}", delta_vs_union_rough_bn=f'{-term:.4f}',
+                    engine='rough', mixed_unit_asymmetry='measured comparator survivor term; post-evaluator'))
+        publish_base_summary(summary, META['population_v8']['with_coverage'])
     if LINEAGE_ON:
         hl = headline_lineage(summary, st, n4)     # its identified pass runs gates of its own; nothing is written yet
         stop_if_failed()

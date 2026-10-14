@@ -101,7 +101,8 @@ def main(case: str = "oct15") -> None:
                 r, lines, _, _, _ = run
                 runs[basis, end, g] = run
                 want = summary[(summary.basis == basis) & (summary.group == g) & (summary.end == end)].iloc[0]
-                if abs(r["cost"] - want.cost) > 5e-5 or int(round(r["population"])) != int(want.population):
+                control_cost = want.cost_evaluator_bn if case == 'oct15' else want.cost
+                if abs(r["cost"] - control_cost) > 5e-5 or int(round(r["population"])) != int(want.population):
                     fails.append(f"{g} {basis} {end}: cost {r['cost']:.6f} vs {want.cost:.4f}")
                 e = (K.FULL or K.DUMP)[basis][end]     # oct05: the case's dump (K.DUMP is its identified union)
                 prod = next(x for x in e["lines"] if x["side"] == "scalar" and x["id"] == "production_gain_bn")
@@ -121,6 +122,7 @@ def main(case: str = "oct15") -> None:
     if fails:
         raise SystemExit(f"[BLOCKED] group lines do not reproduce rekey_summary_{case}.csv: " + "; ".join(fails))
     if case == "oct15":
+        mixed = COMPARISON.load_mixed_unit()
         for row in rows:
             row.update(case=case, mortality_convention=mortality, engine=COMPARISON.engine_for(row["group"]))
         bridges, comparisons = [], []
@@ -139,12 +141,15 @@ def main(case: str = "oct15") -> None:
                     if abs(lineage["population"] - other["population"]) > 1e-6:
                         raise SystemExit("[BLOCKED] live annual legacy comparison has unequal populations (1e-6 persons)")
                     gap = lineage["cost"] - other["cost"]
+                    removal = COMPARISON.comparator_removal(mixed, comparator, basis, end, other['population'])
                     comparisons.append(dict(case=case, basis=basis, end=end, row_type="comparison",
                         lineage="mexican_origin_rough", comparator=comparator, lineage_engine=left, comparator_engine=right,
-                        mortality_convention=mortality, annual_removal_cost_gap_bn=gap,
+                        mortality_convention=mortality, annual_removal_cost_gap_bn=gap-removal['bn'],
+                        annual_one_sided_gap_bn=gap, comparator_cost_bn=other['cost']+removal['bn'],
+                        comparator_item11_bn=removal['bn'], item11_paired_se_bn=removal['paired_se_bn'],
                         lineage_population=lineage["population"], comparator_population=other["population"],
                         annual_gap_without_item11_bn=gap-item11, lineage_item11_bn=item11,
-                        mixed_unit_asymmetry="item11 measured for lineage only; comparator counterpart unmeasured"))
+                        mixed_unit_asymmetry=removal['scope'], framing=COMPARISON.MIXED_FRAME))
     out = HERE / "derived"
     out.mkdir(exist_ok=True)
     with open(out / f"group_lines_{case}.csv", "w", newline="") as f:

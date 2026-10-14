@@ -757,7 +757,12 @@
   },
   "full_row13_symmetric": false,
   "row13_limit": "matched and matched/pooled composite has no declared conserved comparator record vector; rules_only is a named sensitivity, never exact full-case symmetry",
-  "credit_crossing": "comparator crossings not measured; union case crossings preserved",
+  "credit_crossing": "own-mask comparator survivor solve measured; applied after evaluator only",
+  "comparator_item11_source_sha256": {
+    "white_summary.json": "121b787f04637b43d698555fade2b115686f15fa7f30d4d5167ac5c3d4477081",
+    "black_summary.json": "2cf7a859a12a3775a385440347ebf7851630302b56b95dbbd00847b26d7c2409",
+    "gaps.csv": "9e257fca3101fda638c2fe256b6d51ec6fe62cced1678300a22ed89f57f52ce2"
+  },
   "production_point_weight_rounding_max": 0.005049970000015946,
   "source_proxy_limit": "diagnostic only: old R9 union ratio held on changed denominator; do not interpret as status correction",
   "preserved_case_lineage": true,
@@ -14071,7 +14076,8 @@
         "CPS replicate SE excludes PES covariance, DA series range and transfer uncertainty"
       ]
     },
-    "comparator_completion_and_mixed_unit_removal": "unmeasured; no counterpart invented",
+    "comparator_completion": "unmeasured; no counterpart invented",
+    "comparator_mixed_unit_removal": "measured for A1 whites and Black on own masks; A2/A3/A4 unmeasured",
     "comparator_coverage": "none; NH-white PES rates exist but no own-price cohort/base-adjusted term; Black rates absent from source export",
     "coverage_age_mix": "coverage people take completed observed overlay age shares; generation-only source supplies no own-age people",
     "lineage_mortality": "whole-population headline; explicit mixed and own-group comparisons beside"

@@ -1,269 +1,269 @@
-case,section,slice,measure,basis,end,value,unit
-oct15,counts,whites at union ages: California,sample records,,,3055,records
-oct15,counts,whites at union ages: California,raked federal income tax,,,173.6911,bn
-oct15,counts,whites at union ages: California,households with a member whose own AGI is at least $1M,,,16,households
-oct15,counts,whites at union ages: California,persons in those members' SPM units (AGI at least $1M),,,45,records
-oct15,counts,whites at union ages: California,weighted share of persons in those units (AGI at least $1M),,,0.016060,share
-oct15,counts,whites at union ages: California,share of raked federal tax from those units (AGI at least $1M),,,0.357968,share
-oct15,counts,whites at union ages: California,share of unraked federal tax from those units (AGI at least $1M),,,0.173622,share
-oct15,counts,whites at union ages: California,households with a member whose own AGI is at least $500k,,,53,households
-oct15,counts,whites at union ages: California,persons in those members' SPM units (AGI at least $500k),,,151,records
-oct15,counts,whites at union ages: California,weighted share of persons in those units (AGI at least $500k),,,0.052648,share
-oct15,counts,whites at union ages: California,share of raked federal tax from those units (AGI at least $500k),,,0.518469,share
-oct15,counts,whites at union ages: California,share of unraked federal tax from those units (AGI at least $500k),,,0.330377,share
-oct15,counts,whites at union ages: California,share of raked federal tax from the top 10 records,,,0.279762,share
-oct15,counts,whites at union ages: California,share of raked federal tax from the top 20 records,,,0.400489,share
-oct15,counts,whites at union ages: California,households among the top 10 records,,,10,households
-oct15,counts,whites at union ages: California,minors (under 18) among the top 10 records,,,0,records
-oct15,counts,whites at union ages: California,records with own AGI under $100k among the top 10 records,,,0,records
-oct15,counts,whites at union ages: California,share of raked federal tax carried by persons under 18,,,0.000254,share
-oct15,counts,whites at union ages: Texas,sample records,,,3034,records
-oct15,counts,whites at union ages: Texas,raked federal income tax,,,93.6001,bn
-oct15,counts,whites at union ages: Texas,households with a member whose own AGI is at least $1M,,,14,households
-oct15,counts,whites at union ages: Texas,persons in those members' SPM units (AGI at least $1M),,,49,records
-oct15,counts,whites at union ages: Texas,weighted share of persons in those units (AGI at least $1M),,,0.018233,share
-oct15,counts,whites at union ages: Texas,share of raked federal tax from those units (AGI at least $1M),,,0.461970,share
-oct15,counts,whites at union ages: Texas,share of unraked federal tax from those units (AGI at least $1M),,,0.227068,share
-oct15,counts,whites at union ages: Texas,households with a member whose own AGI is at least $500k,,,28,households
-oct15,counts,whites at union ages: Texas,persons in those members' SPM units (AGI at least $500k),,,92,records
-oct15,counts,whites at union ages: Texas,weighted share of persons in those units (AGI at least $500k),,,0.031439,share
-oct15,counts,whites at union ages: Texas,share of raked federal tax from those units (AGI at least $500k),,,0.527197,share
-oct15,counts,whites at union ages: Texas,share of unraked federal tax from those units (AGI at least $500k),,,0.289172,share
-oct15,counts,whites at union ages: Texas,share of raked federal tax from the top 10 records,,,0.387025,share
-oct15,counts,whites at union ages: Texas,share of raked federal tax from the top 20 records,,,0.501164,share
-oct15,counts,whites at union ages: Texas,households among the top 10 records,,,10,households
-oct15,counts,whites at union ages: Texas,minors (under 18) among the top 10 records,,,0,records
-oct15,counts,whites at union ages: Texas,records with own AGI under $100k among the top 10 records,,,0,records
-oct15,counts,whites at union ages: Texas,share of raked federal tax carried by persons under 18,,,0.000058,share
-oct15,counts,whites at union ages: rest of US,sample records,,,73873,records
-oct15,counts,whites at union ages: rest of US,raked federal income tax,,,120.9737,bn
-oct15,counts,whites at union ages: rest of US,households with a member whose own AGI is at least $1M,,,191,households
-oct15,counts,whites at union ages: rest of US,persons in those members' SPM units (AGI at least $1M),,,585,records
-oct15,counts,whites at union ages: rest of US,weighted share of persons in those units (AGI at least $1M),,,0.008677,share
-oct15,counts,whites at union ages: rest of US,share of raked federal tax from those units (AGI at least $1M),,,0.315045,share
-oct15,counts,whites at union ages: rest of US,share of unraked federal tax from those units (AGI at least $1M),,,0.140810,share
-oct15,counts,whites at union ages: rest of US,households with a member whose own AGI is at least $500k,,,583,households
-oct15,counts,whites at union ages: rest of US,persons in those members' SPM units (AGI at least $500k),,,1848,records
-oct15,counts,whites at union ages: rest of US,weighted share of persons in those units (AGI at least $500k),,,0.028102,share
-oct15,counts,whites at union ages: rest of US,share of raked federal tax from those units (AGI at least $500k),,,0.435624,share
-oct15,counts,whites at union ages: rest of US,share of unraked federal tax from those units (AGI at least $500k),,,0.247139,share
-oct15,counts,whites at union ages: rest of US,share of raked federal tax from the top 10 records,,,0.053423,share
-oct15,counts,whites at union ages: rest of US,share of raked federal tax from the top 20 records,,,0.094580,share
-oct15,counts,whites at union ages: rest of US,households among the top 10 records,,,10,households
-oct15,counts,whites at union ages: rest of US,minors (under 18) among the top 10 records,,,0,records
-oct15,counts,whites at union ages: rest of US,records with own AGI under $100k among the top 10 records,,,0,records
-oct15,counts,whites at union ages: rest of US,share of raked federal tax carried by persons under 18,,,0.001769,share
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,sample records,,,73873,records
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,raked federal income tax,,,385.8080,bn
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,households with a member whose own AGI is at least $1M,,,191,households
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,persons in those members' SPM units (AGI at least $1M),,,585,records
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,weighted share of persons in those units (AGI at least $1M),,,0.007752,share
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax from those units (AGI at least $1M),,,0.321571,share
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,share of unraked federal tax from those units (AGI at least $1M),,,0.144759,share
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,households with a member whose own AGI is at least $500k,,,583,households
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,persons in those members' SPM units (AGI at least $500k),,,1848,records
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,weighted share of persons in those units (AGI at least $500k),,,0.024553,share
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax from those units (AGI at least $500k),,,0.442846,share
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,share of unraked federal tax from those units (AGI at least $500k),,,0.253217,share
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax from the top 10 records,,,0.052125,share
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax from the top 20 records,,,0.088075,share
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,households among the top 10 records,,,10,households
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,minors (under 18) among the top 10 records,,,0,records
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,records with own AGI under $100k among the top 10 records,,,0,records
-oct15,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax carried by persons under 18,,,0.000658,share
-oct15,leave_out,"local gap (California, Texas, rest of US)",persons dropped: top 10 households,,,24,records
-oct15,leave_out,"local gap (California, Texas, rest of US)",share of the white side's raked federal tax dropped: top 10 households,,,0.153299,share
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 households,accrual,low,460.6727,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 households,accrual,low,-70.0428,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 households, % of the gap",accrual,low,-13.1978,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 households,accrual,high,437.1951,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 households,accrual,high,-68.2407,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 households, % of the gap",accrual,high,-13.5014,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 households,cash,low,495.5103,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 households,cash,low,-72.2850,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 households, % of the gap",cash,low,-12.7308,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 households,cash,high,472.0328,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 households,cash,high,-70.4829,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 households, % of the gap",cash,high,-12.9919,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",persons dropped: top 10 persons,,,10,records
-oct15,leave_out,"local gap (California, Texas, rest of US)",share of the white side's raked federal tax dropped: top 10 persons,,,0.153095,share
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 persons,accrual,low,462.8515,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 persons,accrual,low,-67.8640,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 persons, % of the gap",accrual,low,-12.7873,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 persons,accrual,high,438.9082,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 persons,accrual,high,-66.5276,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 persons, % of the gap",accrual,high,-13.1624,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 persons,cash,low,498.3102,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 persons,cash,low,-69.4851,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 persons, % of the gap",cash,low,-12.2377,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 persons,cash,high,474.3670,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 persons,cash,high,-68.1488,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 persons, % of the gap",cash,high,-12.5616,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",persons dropped: top 20 households,,,60,records
-oct15,leave_out,"local gap (California, Texas, rest of US)",share of the white side's raked federal tax dropped: top 20 households,,,0.242034,share
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 households,accrual,low,421.8848,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 households,accrual,low,-108.8307,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 households, % of the gap",accrual,low,-20.5064,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 households,accrual,high,399.0809,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 households,accrual,high,-106.3549,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 households, % of the gap",accrual,high,-21.0422,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 households,cash,low,456.0257,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 households,cash,low,-111.7696,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 households, % of the gap",cash,low,-19.6848,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 households,cash,high,433.2219,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 households,cash,high,-109.2938,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 households, % of the gap",cash,high,-20.1457,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",persons dropped: top 20 persons,,,20,records
-oct15,leave_out,"local gap (California, Texas, rest of US)",share of the white side's raked federal tax dropped: top 20 persons,,,0.241745,share
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 persons,accrual,low,425.4749,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 persons,accrual,low,-105.2405,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 persons, % of the gap",accrual,low,-19.8299,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 persons,accrual,high,401.8309,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 persons,accrual,high,-103.6050,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 persons, % of the gap",accrual,high,-20.4981,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 persons,cash,low,460.5816,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 persons,cash,low,-107.2137,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 persons, % of the gap",cash,low,-18.8825,pct
-oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 persons,cash,high,436.9375,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 persons,cash,high,-105.5782,bn
-oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 persons, % of the gap",cash,high,-19.4609,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),persons dropped: top 10 households,,,26,records
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),share of the white side's raked federal tax dropped: top 10 households,,,0.055419,share
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 households,accrual,low,517.5762,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 households,accrual,low,-24.3056,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 households, % of the gap",accrual,low,-4.4854,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 households,accrual,high,494.3334,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 households,accrual,high,-23.6197,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 households, % of the gap",accrual,high,-4.5602,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 households,cash,low,349.8481,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 households,cash,low,-25.1358,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 households, % of the gap",cash,low,-6.7032,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 households,cash,high,326.6053,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 households,cash,high,-24.4499,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 households, % of the gap",cash,high,-6.9647,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),persons dropped: top 10 persons,,,10,records
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),share of the white side's raked federal tax dropped: top 10 persons,,,0.052125,share
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 persons,accrual,low,519.6152,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 persons,accrual,low,-22.2666,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 persons, % of the gap",accrual,low,-4.1091,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 persons,accrual,high,496.0836,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 persons,accrual,high,-21.8695,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 persons, % of the gap",accrual,high,-4.2223,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 persons,cash,low,352.2507,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 persons,cash,low,-22.7332,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 persons, % of the gap",cash,low,-6.0624,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 persons,cash,high,328.7192,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 persons,cash,high,-22.3360,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 persons, % of the gap",cash,high,-6.3625,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),persons dropped: top 20 households,,,48,records
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),share of the white side's raked federal tax dropped: top 20 households,,,0.091763,share
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 households,accrual,low,501.2764,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 households,accrual,low,-40.6054,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 households, % of the gap",accrual,low,-7.4934,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 households,accrual,high,478.4822,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 households,accrual,high,-39.4709,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 households, % of the gap",accrual,high,-7.6206,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 households,cash,low,332.9446,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 households,cash,low,-42.0393,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 households, % of the gap",cash,low,-11.2110,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 households,cash,high,310.1504,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 households,cash,high,-40.9048,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 households, % of the gap",cash,high,-11.6520,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),persons dropped: top 20 persons,,,20,records
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),share of the white side's raked federal tax dropped: top 20 persons,,,0.088075,share
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 persons,accrual,low,504.1004,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 persons,accrual,low,-37.7815,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 persons, % of the gap",accrual,low,-6.9723,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 persons,accrual,high,480.7595,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 persons,accrual,high,-37.1936,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 persons, % of the gap",accrual,high,-7.1809,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 persons,cash,low,336.4467,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 persons,cash,low,-38.5372,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 persons, % of the gap",cash,low,-10.2770,pct
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 persons,cash,high,313.1059,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 persons,cash,high,-37.9493,bn
-oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 persons, % of the gap",cash,high,-10.8101,pct
-oct15,allocation_companion,local gap: California,gap at the personal allocation (the central),accrual,low,251.5721,bn
-oct15,allocation_companion,local gap: California,gap at the shared income-tax allocation,accrual,low,285.6567,bn
-oct15,allocation_companion,local gap: Texas,gap at the personal allocation (the central),accrual,low,116.7424,bn
-oct15,allocation_companion,local gap: Texas,gap at the shared income-tax allocation,accrual,low,140.3743,bn
-oct15,allocation_companion,local gap: rest of US,gap at the personal allocation (the central),accrual,low,162.4010,bn
-oct15,allocation_companion,local gap: rest of US,gap at the shared income-tax allocation,accrual,low,193.6845,bn
-oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the personal allocation (the central),accrual,low,530.7155,bn
-oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the shared income-tax allocation,accrual,low,619.7155,bn
-oct15,allocation_companion,local gap: California,gap at the personal allocation (the central),accrual,high,239.4696,bn
-oct15,allocation_companion,local gap: California,gap at the shared income-tax allocation,accrual,high,273.5541,bn
-oct15,allocation_companion,local gap: Texas,gap at the personal allocation (the central),accrual,high,111.5244,bn
-oct15,allocation_companion,local gap: Texas,gap at the shared income-tax allocation,accrual,high,135.1564,bn
-oct15,allocation_companion,local gap: rest of US,gap at the personal allocation (the central),accrual,high,154.4419,bn
-oct15,allocation_companion,local gap: rest of US,gap at the shared income-tax allocation,accrual,high,185.7254,bn
-oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the personal allocation (the central),accrual,high,505.4359,bn
-oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the shared income-tax allocation,accrual,high,594.4359,bn
-oct15,allocation_companion,local gap: California,gap at the personal allocation (the central),cash,low,271.0802,bn
-oct15,allocation_companion,local gap: California,gap at the shared income-tax allocation,cash,low,305.1648,bn
-oct15,allocation_companion,local gap: Texas,gap at the personal allocation (the central),cash,low,123.4305,bn
-oct15,allocation_companion,local gap: Texas,gap at the shared income-tax allocation,cash,low,147.0624,bn
-oct15,allocation_companion,local gap: rest of US,gap at the personal allocation (the central),cash,low,173.2846,bn
-oct15,allocation_companion,local gap: rest of US,gap at the shared income-tax allocation,cash,low,204.5681,bn
-oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the personal allocation (the central),cash,low,567.7952,bn
-oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the shared income-tax allocation,cash,low,656.7952,bn
-oct15,allocation_companion,local gap: California,gap at the personal allocation (the central),cash,high,258.9777,bn
-oct15,allocation_companion,local gap: California,gap at the shared income-tax allocation,cash,high,293.0622,bn
-oct15,allocation_companion,local gap: Texas,gap at the personal allocation (the central),cash,high,118.2125,bn
-oct15,allocation_companion,local gap: Texas,gap at the shared income-tax allocation,cash,high,141.8445,bn
-oct15,allocation_companion,local gap: rest of US,gap at the personal allocation (the central),cash,high,165.3254,bn
-oct15,allocation_companion,local gap: rest of US,gap at the shared income-tax allocation,cash,high,196.6089,bn
-oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the personal allocation (the central),cash,high,542.5157,bn
-oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the shared income-tax allocation,cash,high,631.5156,bn
-oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the personal allocation (the central),accrual,low,541.8818,bn
-oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the shared income-tax allocation,accrual,low,524.4213,bn
-oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the personal allocation (the central),accrual,high,517.9531,bn
-oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the shared income-tax allocation,accrual,high,500.4926,bn
-oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the personal allocation (the central),cash,low,374.9839,bn
-oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the shared income-tax allocation,cash,low,357.5234,bn
-oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the personal allocation (the central),cash,high,351.0552,bn
-oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the shared income-tax allocation,cash,high,333.5947,bn
-oct15,replicate_se,"local gap (California, Texas, rest of US)",central,accrual,low,530.7155,bn
-oct15,replicate_se,"local gap (California, Texas, rest of US)",replicate 0,accrual,low,530.7155,bn
-oct15,replicate_se,"local gap (California, Texas, rest of US)",standard error,accrual,low,29.7651,bn
-oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),central,accrual,low,541.8818,bn
-oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),replicate 0,accrual,low,541.8818,bn
-oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),standard error,accrual,low,16.2822,bn
-oct15,replicate_se,local gap less A1 gap,central,accrual,low,-11.1663,bn
-oct15,replicate_se,local gap less A1 gap,standard error,accrual,low,23.4574,bn
-oct15,replicate_se,white piece at union ages: California,standard error of its cost,accrual,low,22.8384,bn
-oct15,replicate_se,white piece at union ages: Texas,standard error of its cost,accrual,low,13.9255,bn
-oct15,replicate_se,white piece at union ages: rest of US,standard error of its cost,accrual,low,5.3954,bn
-oct15,replicate_se,"local gap (California, Texas, rest of US)",central,accrual,high,505.4359,bn
-oct15,replicate_se,"local gap (California, Texas, rest of US)",replicate 0,accrual,high,505.4359,bn
-oct15,replicate_se,"local gap (California, Texas, rest of US)",standard error,accrual,high,28.8782,bn
-oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),central,accrual,high,517.9531,bn
-oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),replicate 0,accrual,high,517.9531,bn
-oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),standard error,accrual,high,15.7135,bn
-oct15,replicate_se,local gap less A1 gap,central,accrual,high,-12.5172,bn
-oct15,replicate_se,local gap less A1 gap,standard error,accrual,high,22.8340,bn
-oct15,replicate_se,white piece at union ages: California,standard error of its cost,accrual,high,22.2134,bn
-oct15,replicate_se,white piece at union ages: Texas,standard error of its cost,accrual,high,13.4140,bn
-oct15,replicate_se,white piece at union ages: rest of US,standard error of its cost,accrual,high,5.2050,bn
-oct15,replicate_se,"local gap (California, Texas, rest of US)",central,cash,low,567.7953,bn
-oct15,replicate_se,"local gap (California, Texas, rest of US)",replicate 0,cash,low,567.7954,bn
-oct15,replicate_se,"local gap (California, Texas, rest of US)",standard error,cash,low,31.5168,bn
-oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),central,cash,low,374.9839,bn
-oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),replicate 0,cash,low,374.9839,bn
-oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),standard error,cash,low,17.6103,bn
-oct15,replicate_se,local gap less A1 gap,central,cash,low,192.8114,bn
-oct15,replicate_se,local gap less A1 gap,standard error,cash,low,24.6632,bn
-oct15,replicate_se,white piece at union ages: California,standard error of its cost,cash,low,24.1243,bn
-oct15,replicate_se,white piece at union ages: Texas,standard error of its cost,cash,low,15.0423,bn
-oct15,replicate_se,white piece at union ages: rest of US,standard error of its cost,cash,low,5.7941,bn
-oct15,replicate_se,"local gap (California, Texas, rest of US)",central,cash,high,542.5157,bn
-oct15,replicate_se,"local gap (California, Texas, rest of US)",replicate 0,cash,high,542.5157,bn
-oct15,replicate_se,"local gap (California, Texas, rest of US)",standard error,cash,high,30.5861,bn
-oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),central,cash,high,351.0552,bn
-oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),replicate 0,cash,high,351.0552,bn
-oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),standard error,cash,high,17.0178,bn
-oct15,replicate_se,local gap less A1 gap,central,cash,high,191.4605,bn
-oct15,replicate_se,local gap less A1 gap,standard error,cash,high,23.9923,bn
-oct15,replicate_se,white piece at union ages: California,standard error of its cost,cash,high,23.4600,bn
-oct15,replicate_se,white piece at union ages: Texas,standard error of its cost,cash,high,14.5138,bn
-oct15,replicate_se,white piece at union ages: rest of US,standard error of its cost,cash,high,5.5974,bn
+case,section,slice,measure,basis,end,value,unit,item11_scope
+oct15,counts,whites at union ages: California,sample records,,,3055,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,raked federal income tax,,,173.6911,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,households with a member whose own AGI is at least $1M,,,16,households,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,persons in those members' SPM units (AGI at least $1M),,,45,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,weighted share of persons in those units (AGI at least $1M),,,0.016060,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,share of raked federal tax from those units (AGI at least $1M),,,0.357968,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,share of unraked federal tax from those units (AGI at least $1M),,,0.173622,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,households with a member whose own AGI is at least $500k,,,53,households,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,persons in those members' SPM units (AGI at least $500k),,,151,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,weighted share of persons in those units (AGI at least $500k),,,0.052648,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,share of raked federal tax from those units (AGI at least $500k),,,0.518469,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,share of unraked federal tax from those units (AGI at least $500k),,,0.330377,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,share of raked federal tax from the top 10 records,,,0.279762,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,share of raked federal tax from the top 20 records,,,0.400489,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,households among the top 10 records,,,10,households,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,minors (under 18) among the top 10 records,,,0,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,records with own AGI under $100k among the top 10 records,,,0,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: California,share of raked federal tax carried by persons under 18,,,0.000254,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,sample records,,,3034,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,raked federal income tax,,,93.6001,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,households with a member whose own AGI is at least $1M,,,14,households,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,persons in those members' SPM units (AGI at least $1M),,,49,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,weighted share of persons in those units (AGI at least $1M),,,0.018233,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,share of raked federal tax from those units (AGI at least $1M),,,0.461970,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,share of unraked federal tax from those units (AGI at least $1M),,,0.227068,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,households with a member whose own AGI is at least $500k,,,28,households,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,persons in those members' SPM units (AGI at least $500k),,,92,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,weighted share of persons in those units (AGI at least $500k),,,0.031439,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,share of raked federal tax from those units (AGI at least $500k),,,0.527197,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,share of unraked federal tax from those units (AGI at least $500k),,,0.289172,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,share of raked federal tax from the top 10 records,,,0.387025,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,share of raked federal tax from the top 20 records,,,0.501164,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,households among the top 10 records,,,10,households,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,minors (under 18) among the top 10 records,,,0,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,records with own AGI under $100k among the top 10 records,,,0,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: Texas,share of raked federal tax carried by persons under 18,,,0.000058,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,sample records,,,73873,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,raked federal income tax,,,120.9737,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,households with a member whose own AGI is at least $1M,,,191,households,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,persons in those members' SPM units (AGI at least $1M),,,585,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,weighted share of persons in those units (AGI at least $1M),,,0.008677,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,share of raked federal tax from those units (AGI at least $1M),,,0.315045,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,share of unraked federal tax from those units (AGI at least $1M),,,0.140810,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,households with a member whose own AGI is at least $500k,,,583,households,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,persons in those members' SPM units (AGI at least $500k),,,1848,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,weighted share of persons in those units (AGI at least $500k),,,0.028102,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,share of raked federal tax from those units (AGI at least $500k),,,0.435624,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,share of unraked federal tax from those units (AGI at least $500k),,,0.247139,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,share of raked federal tax from the top 10 records,,,0.053423,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,share of raked federal tax from the top 20 records,,,0.094580,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,households among the top 10 records,,,10,households,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,minors (under 18) among the top 10 records,,,0,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,records with own AGI under $100k among the top 10 records,,,0,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,whites at union ages: rest of US,share of raked federal tax carried by persons under 18,,,0.001769,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,sample records,,,73873,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,raked federal income tax,,,385.8080,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,households with a member whose own AGI is at least $1M,,,191,households,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,persons in those members' SPM units (AGI at least $1M),,,585,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,weighted share of persons in those units (AGI at least $1M),,,0.007752,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax from those units (AGI at least $1M),,,0.321571,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,share of unraked federal tax from those units (AGI at least $1M),,,0.144759,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,households with a member whose own AGI is at least $500k,,,583,households,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,persons in those members' SPM units (AGI at least $500k),,,1848,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,weighted share of persons in those units (AGI at least $500k),,,0.024553,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax from those units (AGI at least $500k),,,0.442846,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,share of unraked federal tax from those units (AGI at least $500k),,,0.253217,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax from the top 10 records,,,0.052125,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax from the top 20 records,,,0.088075,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,households among the top 10 records,,,10,households,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,minors (under 18) among the top 10 records,,,0,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,records with own AGI under $100k among the top 10 records,,,0,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax carried by persons under 18,,,0.000658,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",persons dropped: top 10 households,,,24,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",share of the white side's raked federal tax dropped: top 10 households,,,0.153299,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 households,accrual,low,460.6727,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 households,accrual,low,-70.0428,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 households, % of the gap",accrual,low,-13.1978,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 households,accrual,high,437.1951,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 households,accrual,high,-68.2407,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 households, % of the gap",accrual,high,-13.5014,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 households,cash,low,495.5103,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 households,cash,low,-72.2850,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 households, % of the gap",cash,low,-12.7308,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 households,cash,high,472.0328,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 households,cash,high,-70.4829,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 households, % of the gap",cash,high,-12.9919,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",persons dropped: top 10 persons,,,10,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",share of the white side's raked federal tax dropped: top 10 persons,,,0.153095,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 persons,accrual,low,462.8515,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 persons,accrual,low,-67.8640,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 persons, % of the gap",accrual,low,-12.7873,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 persons,accrual,high,438.9082,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 persons,accrual,high,-66.5276,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 persons, % of the gap",accrual,high,-13.1624,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 persons,cash,low,498.3102,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 persons,cash,low,-69.4851,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 persons, % of the gap",cash,low,-12.2377,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 persons,cash,high,474.3670,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 persons,cash,high,-68.1488,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 persons, % of the gap",cash,high,-12.5616,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",persons dropped: top 20 households,,,60,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",share of the white side's raked federal tax dropped: top 20 households,,,0.242034,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 households,accrual,low,421.8848,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 households,accrual,low,-108.8307,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 households, % of the gap",accrual,low,-20.5064,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 households,accrual,high,399.0809,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 households,accrual,high,-106.3549,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 households, % of the gap",accrual,high,-21.0422,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 households,cash,low,456.0257,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 households,cash,low,-111.7696,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 households, % of the gap",cash,low,-19.6848,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 households,cash,high,433.2219,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 households,cash,high,-109.2938,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 households, % of the gap",cash,high,-20.1457,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",persons dropped: top 20 persons,,,20,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",share of the white side's raked federal tax dropped: top 20 persons,,,0.241745,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 persons,accrual,low,425.4749,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 persons,accrual,low,-105.2405,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 persons, % of the gap",accrual,low,-19.8299,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 persons,accrual,high,401.8309,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 persons,accrual,high,-103.6050,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 persons, % of the gap",accrual,high,-20.4981,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 persons,cash,low,460.5816,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 persons,cash,low,-107.2137,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 persons, % of the gap",cash,low,-18.8825,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 persons,cash,high,436.9375,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 persons,cash,high,-105.5782,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 persons, % of the gap",cash,high,-19.4609,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),persons dropped: top 10 households,,,26,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),share of the white side's raked federal tax dropped: top 10 households,,,0.055419,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 households,accrual,low,517.5762,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 households,accrual,low,-24.3056,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 households, % of the gap",accrual,low,-4.4854,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 households,accrual,high,494.3334,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 households,accrual,high,-23.6197,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 households, % of the gap",accrual,high,-4.5602,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 households,cash,low,349.8481,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 households,cash,low,-25.1358,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 households, % of the gap",cash,low,-6.7032,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 households,cash,high,326.6053,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 households,cash,high,-24.4499,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 households, % of the gap",cash,high,-6.9647,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),persons dropped: top 10 persons,,,10,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),share of the white side's raked federal tax dropped: top 10 persons,,,0.052125,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 persons,accrual,low,519.6152,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 persons,accrual,low,-22.2666,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 persons, % of the gap",accrual,low,-4.1091,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 persons,accrual,high,496.0836,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 persons,accrual,high,-21.8695,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 persons, % of the gap",accrual,high,-4.2223,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 persons,cash,low,352.2507,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 persons,cash,low,-22.7332,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 persons, % of the gap",cash,low,-6.0624,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 persons,cash,high,328.7192,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 persons,cash,high,-22.3360,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 persons, % of the gap",cash,high,-6.3625,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),persons dropped: top 20 households,,,48,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),share of the white side's raked federal tax dropped: top 20 households,,,0.091763,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 households,accrual,low,501.2764,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 households,accrual,low,-40.6054,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 households, % of the gap",accrual,low,-7.4934,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 households,accrual,high,478.4822,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 households,accrual,high,-39.4709,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 households, % of the gap",accrual,high,-7.6206,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 households,cash,low,332.9446,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 households,cash,low,-42.0393,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 households, % of the gap",cash,low,-11.2110,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 households,cash,high,310.1504,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 households,cash,high,-40.9048,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 households, % of the gap",cash,high,-11.6520,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),persons dropped: top 20 persons,,,20,records,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),share of the white side's raked federal tax dropped: top 20 persons,,,0.088075,share,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 persons,accrual,low,504.1004,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 persons,accrual,low,-37.7815,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 persons, % of the gap",accrual,low,-6.9723,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 persons,accrual,high,480.7595,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 persons,accrual,high,-37.1936,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 persons, % of the gap",accrual,high,-7.1809,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 persons,cash,low,336.4467,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 persons,cash,low,-38.5372,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 persons, % of the gap",cash,low,-10.2770,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 persons,cash,high,313.1059,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 persons,cash,high,-37.9493,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 persons, % of the gap",cash,high,-10.8101,pct,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: California,gap at the personal allocation (the central),accrual,low,251.5721,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: California,gap at the shared income-tax allocation,accrual,low,285.6567,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: Texas,gap at the personal allocation (the central),accrual,low,116.7424,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: Texas,gap at the shared income-tax allocation,accrual,low,140.3743,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: rest of US,gap at the personal allocation (the central),accrual,low,162.4010,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: rest of US,gap at the shared income-tax allocation,accrual,low,193.6845,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the personal allocation (the central),accrual,low,530.7155,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the shared income-tax allocation,accrual,low,619.7155,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: California,gap at the personal allocation (the central),accrual,high,239.4696,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: California,gap at the shared income-tax allocation,accrual,high,273.5541,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: Texas,gap at the personal allocation (the central),accrual,high,111.5244,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: Texas,gap at the shared income-tax allocation,accrual,high,135.1564,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: rest of US,gap at the personal allocation (the central),accrual,high,154.4419,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: rest of US,gap at the shared income-tax allocation,accrual,high,185.7254,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the personal allocation (the central),accrual,high,505.4359,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the shared income-tax allocation,accrual,high,594.4359,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: California,gap at the personal allocation (the central),cash,low,271.0802,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: California,gap at the shared income-tax allocation,cash,low,305.1648,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: Texas,gap at the personal allocation (the central),cash,low,123.4305,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: Texas,gap at the shared income-tax allocation,cash,low,147.0624,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: rest of US,gap at the personal allocation (the central),cash,low,173.2846,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: rest of US,gap at the shared income-tax allocation,cash,low,204.5681,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the personal allocation (the central),cash,low,567.7952,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the shared income-tax allocation,cash,low,656.7952,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: California,gap at the personal allocation (the central),cash,high,258.9777,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: California,gap at the shared income-tax allocation,cash,high,293.0622,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: Texas,gap at the personal allocation (the central),cash,high,118.2125,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: Texas,gap at the shared income-tax allocation,cash,high,141.8445,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: rest of US,gap at the personal allocation (the central),cash,high,165.3254,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,local gap: rest of US,gap at the shared income-tax allocation,cash,high,196.6089,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the personal allocation (the central),cash,high,542.5157,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,"local gap (California, Texas, rest of US)",gap at the shared income-tax allocation,cash,high,631.5156,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the personal allocation (the central),accrual,low,541.8818,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the shared income-tax allocation,accrual,low,524.4213,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the personal allocation (the central),accrual,high,517.9531,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the shared income-tax allocation,accrual,high,500.4926,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the personal allocation (the central),cash,low,374.9839,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the shared income-tax allocation,cash,low,357.5234,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the personal allocation (the central),cash,high,351.0552,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,allocation_companion,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the shared income-tax allocation,cash,high,333.5947,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,"local gap (California, Texas, rest of US)",central,accrual,low,530.7155,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,"local gap (California, Texas, rest of US)",replicate 0,accrual,low,530.7155,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,"local gap (California, Texas, rest of US)",standard error,accrual,low,29.7651,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),central,accrual,low,541.8818,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),replicate 0,accrual,low,541.8818,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),standard error,accrual,low,16.2822,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,local gap less A1 gap,central,accrual,low,-11.1663,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,local gap less A1 gap,standard error,accrual,low,23.4574,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,white piece at union ages: California,standard error of its cost,accrual,low,22.8384,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,white piece at union ages: Texas,standard error of its cost,accrual,low,13.9255,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,white piece at union ages: rest of US,standard error of its cost,accrual,low,5.3954,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,"local gap (California, Texas, rest of US)",central,accrual,high,505.4359,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,"local gap (California, Texas, rest of US)",replicate 0,accrual,high,505.4359,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,"local gap (California, Texas, rest of US)",standard error,accrual,high,28.8782,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),central,accrual,high,517.9531,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),replicate 0,accrual,high,517.9531,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),standard error,accrual,high,15.7135,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,local gap less A1 gap,central,accrual,high,-12.5172,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,local gap less A1 gap,standard error,accrual,high,22.8340,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,white piece at union ages: California,standard error of its cost,accrual,high,22.2134,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,white piece at union ages: Texas,standard error of its cost,accrual,high,13.4140,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,white piece at union ages: rest of US,standard error of its cost,accrual,high,5.2050,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,"local gap (California, Texas, rest of US)",central,cash,low,567.7953,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,"local gap (California, Texas, rest of US)",replicate 0,cash,low,567.7954,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,"local gap (California, Texas, rest of US)",standard error,cash,low,31.5168,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),central,cash,low,374.9839,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),replicate 0,cash,low,374.9839,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),standard error,cash,low,17.6103,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,local gap less A1 gap,central,cash,low,192.8114,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,local gap less A1 gap,standard error,cash,low,24.6632,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,white piece at union ages: California,standard error of its cost,cash,low,24.1243,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,white piece at union ages: Texas,standard error of its cost,cash,low,15.0423,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,white piece at union ages: rest of US,standard error of its cost,cash,low,5.7941,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,"local gap (California, Texas, rest of US)",central,cash,high,542.5157,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,"local gap (California, Texas, rest of US)",replicate 0,cash,high,542.5157,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,"local gap (California, Texas, rest of US)",standard error,cash,high,30.5861,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),central,cash,high,351.0552,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),replicate 0,cash,high,351.0552,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),standard error,cash,high,17.0178,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,local gap less A1 gap,central,cash,high,191.4605,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,local gap less A1 gap,standard error,cash,high,23.9923,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,white piece at union ages: California,standard error of its cost,cash,high,23.4600,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,white piece at union ages: Texas,standard error of its cost,cash,high,14.5138,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv
+oct15,replicate_se,white piece at union ages: rest of US,standard error of its cost,cash,high,5.5974,bn,one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv

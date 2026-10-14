@@ -1,5 +1,5 @@
 case,mortality_convention,mortality_bound,basis,end,group,engine,before_cost_bn,bracket_rerake_change_bn,payroll_denominator_change_bn,joint_bracket_payroll_change_bn,interaction_bn,scenario_pension_selection_change_bn,after_cost_bn,total_change_bn
-oct15,mixed mortality conventions,none,accrual,low,nh_black_rough,rough,404.2325009515659,-0.3300486036274606,-0.5642259257250544,-0.894274529352515,0.0,0.0,403.3382264222134,-0.894274529352515
-oct15,mixed mortality conventions,none,accrual,high,nh_black_rough,rough,480.1871147806708,-0.3300486036274606,-0.5642259257250544,-0.894274529352515,0.0,0.0,479.2928402513183,-0.894274529352515
-oct15,mixed mortality conventions,none,cash,low,nh_black_rough,rough,412.11786533577896,-0.3300486036274606,0.0,-0.3300486036274606,0.0,0.0,411.7878167321515,-0.3300486036274606
-oct15,mixed mortality conventions,none,cash,high,nh_black_rough,rough,488.0724791648841,-0.33004860362757427,0.0,-0.33004860362757427,0.0,0.0,487.7424305612565,-0.33004860362757427
+oct15,mixed mortality conventions,none,accrual,low,nh_black_rough,rough,401.89882989857244,-0.3300486036274606,-0.5642259257250544,-0.894274529352515,0.0,0.0,401.00455536921993,-0.894274529352515
+oct15,mixed mortality conventions,none,accrual,high,nh_black_rough,rough,480.833778888481,-0.3300486036274606,-0.5642259257250544,-0.894274529352515,0.0,0.0,479.9395043591285,-0.894274529352515
+oct15,mixed mortality conventions,none,cash,low,nh_black_rough,rough,409.7841942827855,-0.3300486036274606,0.0,-0.3300486036274606,0.0,0.0,409.45414567915805,-0.3300486036274606
+oct15,mixed mortality conventions,none,cash,high,nh_black_rough,rough,488.7191432726943,-0.33004860362757427,0.0,-0.33004860362757427,0.0,0.0,488.3890946690667,-0.33004860362757427

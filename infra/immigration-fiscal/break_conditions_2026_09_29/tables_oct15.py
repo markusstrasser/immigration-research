@@ -163,8 +163,13 @@ def comparator_values(records, arm="combined_rules_only"):
                                   num(row, "cost_bn") - removal, 1e-9)
                             if not row.get("mixed_unit_asymmetry"):
                                 blocked("C8 explicit mixed-unit asymmetry required")
-                        if num(comparator, "mixed_unit_removal_bn") != 0:
-                            blocked("C8 comparator item11 must remain unmeasured at zero")
+                        if group == 'A1_third_plus_nh_white':
+                            check('C8 measured comparator item11 declaration',
+                                  num(comparator, 'mixed_unit_removal_bn'), num(comparator, 'comparator_item11_bn'), 1e-9)
+                            if num(comparator, 'item11_paired_se_bn') < 0:
+                                blocked('C8 paired item11 SE must be nonnegative')
+                        elif num(comparator, 'mixed_unit_removal_bn') != 0:
+                            blocked('C8 age-standardized comparator item11 remains unmeasured')
                         MORTALITY.validate_pair(lineage,
                                                 declared[*reading, basis, group, end], reading[0])
                     except ValueError as error:
@@ -437,8 +442,12 @@ def main():
                     "comparator_cost_bn": comparator[mortality, bound, basis, group, end],
                     "lineage_minus_comparator_bn": values[i],
                     "lineage_minus_comparator_without_item11_bn": num(lineage_row, "cost_without_item11_bn") - num(comparison_row, "cost_without_item11_bn"),
-                    "mixed_unit_removal_bn": num(lineage_row, "mixed_unit_removal_bn"),
-                    "mixed_unit_asymmetry": lineage_row["mixed_unit_asymmetry"],
+                    "mixed_unit_removal_bn": num(lineage_row, "mixed_unit_removal_bn") - num(comparison_row, 'mixed_unit_removal_bn'),
+                    "comparator_item11_bn": num(comparison_row, 'mixed_unit_removal_bn'),
+                    "item11_paired_se_bn": comparison_row.get('item11_paired_se_bn', ''),
+                    "lineage_minus_comparator_one_sided_bn": values[i] + num(comparison_row, 'mixed_unit_removal_bn'),
+                    "mixed_unit_asymmetry": comparison_row["mixed_unit_asymmetry"],
+                    "framing": COMPARISON.MIXED_FRAME,
                     "case_lineage_cost_bn": case_value,
                     "case_minus_rough_lineage_bridge_bn": bridges[mortality, bound, basis, end],
                     "bridge_itemization": "white_replacement_2026_09_28/derived/lineage_engine_bridge_oct15.csv"})

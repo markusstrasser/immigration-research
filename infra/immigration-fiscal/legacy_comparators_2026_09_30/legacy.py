@@ -666,7 +666,7 @@ def main(case: str = "oct15") -> None:
                 else:
                     row.update(row_type="comparison", lineage_engine=COMPARISON.engine_for(row["union"]),
                                comparator_engine=COMPARISON.engine_for(row["comparator"]),
-                               mixed_unit_asymmetry="item11 annual flow measured for lineage only; comparator counterpart unmeasured; no direct stock subtraction")
+                               mixed_unit_asymmetry="item11 annual flow measured for lineage and A1/Black; annual_comparison_oct15.csv; no direct stock subtraction")
                     COMPARISON.require_same_engine({"engine": row["lineage_engine"]}, {"engine": row["comparator_engine"]})
         for collection in (bridges, annual_bridges):
             for row in collection:

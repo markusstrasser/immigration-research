@@ -1007,3 +1007,11 @@ cash,mexican_origin_rough_identified,high,veterans and military medical,11.5868,
 cash,mexican_origin_rough_identified,high,"per-head lines: government, defense, interest, roads, other",97.1669,2447,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,high,capital return,56.2616,1417,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,high,production gain (subtracted),-7.6832,-193,oct15,whole-population mortality,whole_population_tables,rough
+accrual,A1_third_plus_nh_white,low,comparator post-engine mixed_unit_removal,-9.2508,-205,oct15,whole-population mortality,whole_population_tables,rough
+accrual,nh_black_rough,low,comparator post-engine mixed_unit_removal,-2.3337,-56,oct15,whole-population mortality,whole_population_tables,rough
+accrual,A1_third_plus_nh_white,high,comparator post-engine mixed_unit_removal,-4.6534,-103,oct15,whole-population mortality,whole_population_tables,rough
+accrual,nh_black_rough,high,comparator post-engine mixed_unit_removal,0.6467,15,oct15,whole-population mortality,whole_population_tables,rough
+cash,A1_third_plus_nh_white,low,comparator post-engine mixed_unit_removal,-9.2508,-205,oct15,whole-population mortality,whole_population_tables,rough
+cash,nh_black_rough,low,comparator post-engine mixed_unit_removal,-2.3337,-56,oct15,whole-population mortality,whole_population_tables,rough
+cash,A1_third_plus_nh_white,high,comparator post-engine mixed_unit_removal,-4.6534,-103,oct15,whole-population mortality,whole_population_tables,rough
+cash,nh_black_rough,high,comparator post-engine mixed_unit_removal,0.6467,15,oct15,whole-population mortality,whole_population_tables,rough

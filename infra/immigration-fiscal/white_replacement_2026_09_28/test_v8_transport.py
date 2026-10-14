@@ -36,7 +36,8 @@ def test_completed_population_and_comparator_asymmetry():
     assert (white.population - payload['population_v8']['with_coverage']).abs().max() < 1e-6
     audit = load(HERE / 'derived/symmetric_audit_oct15.json')['v8_asymmetry']
     assert audit['union_completion']['total'] > 0
-    assert audit['comparator_completion_and_mixed_unit_removal'].startswith('unmeasured')
+    assert audit['comparator_completion'].startswith('unmeasured')
+    assert audit['comparator_mixed_unit_removal'].startswith('measured for A1')
     assert audit['comparator_coverage'].startswith('none')
 
 

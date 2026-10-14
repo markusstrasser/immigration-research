@@ -85,3 +85,5 @@ cash,nh_black_rough,veterans and military medical,41.5391,990,-12.2979,-293,oct1
 cash,nh_black_rough,"per head: government, defense, interest, roads",79.7973,1902,33.7814,805,oct15,whole-population mortality
 cash,nh_black_rough,capital return,35.6347,849,,,oct15,whole-population mortality
 cash,nh_black_rough,production gain (subtracted),-0.0000,-0,,,oct15,whole-population mortality
+accrual,nh_black_rough,comparator post-engine mixed_unit_removal,-2.3337,-56,,,oct15,whole-population mortality
+cash,nh_black_rough,comparator post-engine mixed_unit_removal,-2.3337,-56,,,oct15,whole-population mortality

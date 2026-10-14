@@ -1,0 +1,134 @@
+{
+  "case": "oct15",
+  "source_only": true,
+  "tables_withheld": true,
+  "bridges_checked": 12,
+  "measured_item11_rows_checked": 12,
+  "source_sha256": {
+    "white_summary.json": "121b787f04637b43d698555fade2b115686f15fa7f30d4d5167ac5c3d4477081",
+    "black_summary.json": "2cf7a859a12a3775a385440347ebf7851630302b56b95dbbd00847b26d7c2409",
+    "gaps.csv": "9e257fca3101fda638c2fe256b6d51ec6fe62cced1678300a22ed89f57f52ce2"
+  },
+  "comparisons": [
+    {
+      "mortality": "mixed mortality conventions",
+      "bound": "none",
+      "basis": "accrual",
+      "group": "A1_third_plus_nh_white",
+      "lineage_minus_comparator_bn": [
+        574.4798735165595,
+        545.8026388205053
+      ]
+    },
+    {
+      "mortality": "mixed mortality conventions",
+      "bound": "none",
+      "basis": "accrual",
+      "group": "A3_third_plus_nh_white_at_union_ages",
+      "lineage_minus_comparator_bn": [
+        457.9881974454172,
+        438.4509613324723
+      ]
+    },
+    {
+      "mortality": "mixed mortality conventions",
+      "bound": "none",
+      "basis": "cash",
+      "group": "A1_third_plus_nh_white",
+      "lineage_minus_comparator_bn": [
+        404.39489892719996,
+        375.71766423114576
+      ]
+    },
+    {
+      "mortality": "mixed mortality conventions",
+      "bound": "none",
+      "basis": "cash",
+      "group": "A3_third_plus_nh_white_at_union_ages",
+      "lineage_minus_comparator_bn": [
+        468.70825611109024,
+        449.1710199981451
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "low",
+      "basis": "accrual",
+      "group": "A1_third_plus_nh_white",
+      "lineage_minus_comparator_bn": [
+        578.2195919131022,
+        549.542357217048
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "low",
+      "basis": "accrual",
+      "group": "A3_third_plus_nh_white_at_union_ages",
+      "lineage_minus_comparator_bn": [
+        461.72791584196,
+        442.190679729015
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "low",
+      "basis": "cash",
+      "group": "A1_third_plus_nh_white",
+      "lineage_minus_comparator_bn": [
+        404.39489892719996,
+        375.71766423114576
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "low",
+      "basis": "cash",
+      "group": "A3_third_plus_nh_white_at_union_ages",
+      "lineage_minus_comparator_bn": [
+        468.70825611109024,
+        449.1710199981451
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "high",
+      "basis": "accrual",
+      "group": "A1_third_plus_nh_white",
+      "lineage_minus_comparator_bn": [
+        578.2234993810296,
+        549.5462646849754
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "high",
+      "basis": "accrual",
+      "group": "A3_third_plus_nh_white_at_union_ages",
+      "lineage_minus_comparator_bn": [
+        461.7318233098873,
+        442.1945871969424
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "high",
+      "basis": "cash",
+      "group": "A1_third_plus_nh_white",
+      "lineage_minus_comparator_bn": [
+        404.39489892719996,
+        375.71766423114576
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "high",
+      "basis": "cash",
+      "group": "A3_third_plus_nh_white_at_union_ages",
+      "lineage_minus_comparator_bn": [
+        468.70825611109024,
+        449.1710199981451
+      ]
+    }
+  ]
+}

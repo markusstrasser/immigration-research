@@ -190,6 +190,8 @@ def pell_hispanic(rows):
 def theta_arms(rows, scen):
     """3. A race's tuition residency θ at 0.5 and 1.5."""
     summary = pd.read_csv(DER / "rekey_summary_oct15.csv")
+    from comparison_contract import load_mixed_unit, comparator_removal
+    mixed = load_mixed_unit()
     saved = {r: W.IK["races"][r]["tuition"] for r in W.IK["races"]}
     cost = {}
     try:
@@ -206,7 +208,7 @@ def theta_arms(rows, scen):
     for basis in W.BASES:
         for end in W.ENDS:
             for g in GROUPS:
-                want = summary[(summary.basis == basis) & (summary.group == g) & (summary.end == end)].cost.iloc[0]
+                want = summary[(summary.basis == basis) & (summary.group == g) & (summary.end == end)].cost_evaluator_bn.iloc[0]
                 gate(f"θ central: {g} ({basis}, {end}) is rekey_summary_oct15.csv's (5e-5)",
                      abs(cost[("central", basis, end, g)] - want) < 5e-5)
             u = [cost[(a, basis, end, "mexican_origin_rough")] for a in ("central", "0.5", "1.5")]
@@ -215,9 +217,15 @@ def theta_arms(rows, scen):
                 union = cost[(arm, basis, end, "mexican_origin_rough")]
                 for g in GROUPS[1:]:
                     c = cost[(arm, basis, end, g)]
+                    correction = comparator_removal(mixed, g, basis, end, scen[g]['population'])['bn']
+                    c += correction
                     value = c if g == "nh_black_rough" else union - c
                     rows.append(dict(item="theta_" + ("nh_black_cost" if g == "nh_black_rough" else g.split("_")[0] + "_gap"),
                                      arm=arm, basis=basis, end=end, per_person_usd="", count="", bn=f"{value:.6f}"))
+                    if g in ('A1_third_plus_nh_white', 'nh_black_rough'):
+                        rows.append(dict(item='theta_one_sided_' + ('nh_black_cost' if g == 'nh_black_rough' else 'A1_gap'),
+                            arm=arm, basis=basis, end=end, per_person_usd='', count='',
+                            bn=f"{cost[(arm, basis, end, g)] if g == 'nh_black_rough' else union - cost[(arm, basis, end, g)]:.6f}"))
                 if basis == "accrual":
                     print(f"  θ {arm:7s} {end:4s} A1 gap {union - cost[(arm, basis, end, GROUPS[1])]:9.4f}  A3 gap "
                           f"{union - cost[(arm, basis, end, GROUPS[2])]:9.4f}  NH Black {cost[(arm, basis, end, GROUPS[3])]:9.4f}")

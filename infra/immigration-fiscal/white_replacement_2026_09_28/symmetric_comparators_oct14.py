@@ -210,6 +210,7 @@ def hispanic_arm(ratio_table=None):
 def main(pin=False):
     started = time.perf_counter()
     hashes = check_pins(pin)
+    mixed = CC.load_mixed_unit()
     baseline = json.loads((HERE / 'inputs/comparator_baseline_oct14.json').read_text())
     archive = pd.read_csv(HERE / 'derived/rekey_summary_oct14.csv').set_index(['basis', 'end', 'group'])
     for row in baseline:
@@ -282,14 +283,25 @@ def main(pin=False):
                         W.gate(f'{arm}/{basis}/{end}/{name}: cost identity (1e-9bn)',
                                abs(r['cost'] - (r['spending_saved'] - r['taxes_lost'] + r['capital'] - r['production_gain'])) < 1e-9)
                         before = legacy[basis, end, name]
+                        correction = CC.comparator_removal(mixed, name, basis, end, r['population'])
+                        comparator_item11 = correction['bn']
+                        # Publication only: run29 remains the unadjusted M5 calibration input.
+                        r = dict(r, cost=r['cost'] + comparator_item11,
+                                 net_budget=r['net_budget'] + comparator_item11,
+                                 spending_saved=r['spending_saved'] + comparator_item11)
                         se = sampling_se(production.evaluate(sc, end)) if policy == 'own' and sc != 'eng' and sc['name'] != 'mex' else None
-                        item11 = W.META['mixed_unit_removal']['by_end'][end]['total_bn'] if name.startswith('mexican_') else 0.
+                        item11 = W.META['mixed_unit_removal']['by_end'][end]['total_bn'] if name.startswith('mexican_') else comparator_item11
                         row = dict(arm=arm, basis=basis, end=end, group=name, allocation='personal', population=r['population'],
                                    engine=CC.engine_for(name), mixed_unit_removal_bn=item11,
-                                   mixed_unit_asymmetry='item11 measured for lineage only; comparator counterpart unmeasured',
+                                   comparator_item11_bn=comparator_item11,
+                                   item11_paired_se_bn=correction['paired_se_bn'],
+                                   mixed_unit_asymmetry=correction['scope'] if not name.startswith('mexican_') else 'lineage measured; A1/Black counterparts measured',
+                                   framing=CC.MIXED_FRAME,
+                                   balance_scope='allocated member lines; survivor post-engine term excluded, as on lineage side',
+                                   cost_one_sided_bn=r['cost'] - comparator_item11,
                                    cost_without_item11_bn=r['cost'] - item11,
-                                   cost_bn=r['cost'], change_from_raw_bn=r['cost'] - before['cost'],
-                                   exceeds_5bn=abs(r['cost'] - before['cost']) >= 5,
+                                   cost_bn=r['cost'], change_from_raw_bn=r['cost'] - before['cost'] - comparator_item11,
+                                   exceeds_5bn=abs(r['cost'] - before['cost'] - comparator_item11) >= 5,
                                    cost_per_person=r['cost'] * 1e9 / r['population'],
                                    allocated_balance_bn=r['balance'], responsive_budget_cost_bn=r['net_budget'],
                                    capital_resource_cost_bn=r['capital'], production_gain_bn=r['production_gain'],
@@ -299,6 +311,11 @@ def main(pin=False):
                         results.append(row)
                         lookup[arm, basis, end, name] = row
                         if name in ('mexican_origin_engine', 'mexican_origin_rough', 'nh_black_rough', 'A1_third_plus_nh_white'):
+                            if name in CC.MIXED_GROUPS:
+                                program_rows.append(MC.tag(dict(arm=arm, basis=basis, end=end, group=name,
+                                    side='post_engine', line='comparator_mixed_unit_removal',
+                                    source_side='post_engine', source_line='mixed_unit_removal', carrier_kind='survivor_net',
+                                    national_bn=0., amount_bn=comparator_item11, response=1.)))
                             for side, lid, national, amount, response in lines:
                                 source = W.META.get('union_completion', {}).get('carriers', {}).get(lid, {})
                                 program_rows.append(MC.tag(dict(arm=arm, basis=basis, end=end, group=name, side=side, line=lid,
@@ -337,6 +354,7 @@ def main(pin=False):
             delta = (mortality_changes[row['end']][bound]
                      if row['basis'] == 'accrual' and row['group'].startswith('mexican_') else 0.)
             row.update(cost_bn=row['cost_bn'] + delta,
+                       cost_one_sided_bn=row['cost_one_sided_bn'] + delta,
                        mortality_delta_bn=delta,
                        change_from_raw_bn=row['change_from_raw_bn'] + delta,
                        cost_per_person=(row['cost_bn'] + delta) * 1e9 / row['population'],
@@ -360,7 +378,7 @@ def main(pin=False):
                 side='spending', line='lineage_mortality_substitution', source_side='spending',
                 source_line='social_security_and_medicare_part_a', carrier_kind='mortality_sensitivity',
                 national_bn=0., amount_bn=r['mortality_delta_bn'], response=1.))
-    comparisons, scaled = [], []
+    comparisons, scaled, white_scaled = [], [], []
     readings = [(arm, MC.convention(arm), 'none') for arm in arms]
     readings += [(arm, MC.OWN, bound) for arm in arms if arm in MC.OWN_ARMS for bound in ('low', 'high')]
     for arm, mortality_convention, mortality_bound in readings:
@@ -373,6 +391,21 @@ def main(pin=False):
                 for comparator in (w, b):
                     MC.validate_pair(u, comparator, mortality_convention)
                 item11 = u['mixed_unit_removal_bn']
+                white_own = CC.comparator_removal(mixed, 'A1_third_plus_nh_white', basis, end, w['population'])['own_count']
+                for frame, population in (('own_count', white_own), ('lineage_count', e['population'])):
+                    f = population / w['population']
+                    correction = CC.comparator_removal(mixed, 'A1_third_plus_nh_white', basis, end, population)
+                    white_scaled.append(dict(case='oct15', arm=arm, basis=basis, end=end,
+                        mortality_convention=mortality_convention, mortality_bound=mortality_bound,
+                        population_basis=frame, population=population,
+                        lineage_engine=u['engine'], comparator_engine=w['engine'],
+                        comparator_cost_bn=w['cost_bn'] * f, lineage_cost_bn=u['cost_bn'],
+                        lineage_population=u['population'],
+                        lineage_minus_comparator_bn=u['cost_bn'] - w['cost_bn'] * f,
+                        one_sided_gap_bn=u['cost_bn'] - (w['cost_bn'] - w['comparator_item11_bn']) * f,
+                        comparator_item11_bn=correction['bn'], item11_paired_se_bn=correction['paired_se_bn'],
+                        framing=CC.MIXED_FRAME,
+                        rule='linear standardization of comparator per-person price; lineage held at live count; no new removal solve'))
                 comparisons.append(dict(case='oct15', mortality_convention=mortality_convention, mortality_bound=mortality_bound,
                     arm=arm, basis=basis, end=end,
                     **CC.gap_fields(u, w, b, item11),
@@ -380,14 +413,18 @@ def main(pin=False):
                     full_row13_symmetric=False))
                 factor = e['population'] / b['population']
                 for frame, f in (('own_count', 1.), ('scaled_to_lineage', factor)):
+                    correction = CC.comparator_removal(mixed, 'nh_black_rough', basis, end, b['population'] * f)
                     scaled.append(dict(case='oct15', mortality_convention=mortality_convention, mortality_bound=mortality_bound,
                         arm=arm, basis=basis, end=end, population_basis=frame,
                         population=b['population'] * f, cost_bn=b['cost_bn'] * f,
                         lineage_engine=u['engine'], comparator_engine=b['engine'],
                         mixed_unit_removal_bn=item11, mixed_unit_asymmetry=u['mixed_unit_asymmetry'],
+                        comparator_item11_bn=correction['bn'], item11_paired_se_bn=correction['paired_se_bn'],
+                        framing=CC.MIXED_FRAME,
                         cost_per_person=b['cost_per_person'], scaling_delta_bn=b['cost_bn'] * (f - 1),
                         black_minus_rough_lineage_bn=b['cost_bn'] * f - u['cost_bn'],
-                        black_minus_lineage_without_item11_bn=b['cost_bn'] * f - u['cost_bn'] + item11,
+                        black_minus_lineage_one_sided_bn=(b['cost_bn'] - b['comparator_item11_bn']) * f - u['cost_bn'],
+                        black_minus_lineage_without_item11_bn=b['cost_bn'] * f - u['cost_bn'] + item11 - correction['bn'],
                         rule='linear accounting standardization; fixed per-person amount, no new CES removal solve'))
                 W.gate(f'{arm}/{basis}/{end}: population standardization conserves per-person amount (1e-9)',
                        abs(b['cost_bn'] * factor * 1e9 / (b['population'] * factor) - b['cost_per_person']) < 1e-9)
@@ -443,6 +480,7 @@ def main(pin=False):
         require_ratio_snapshot_fresh(table)
     write(HERE, 'symmetric_results_oct15.csv', results)
     write(HERE, 'symmetric_comparisons_oct15.csv', comparisons)
+    write(HERE, 'symmetric_white_population_oct15.csv', white_scaled)
     write(HERE, 'lineage_engine_bridge_oct15.csv', bridges)
     write(HERE, 'round2_changes_oct15.csv', changes)
     write(HERE, 'symmetric_programs_oct15.csv', program_rows)
@@ -463,7 +501,8 @@ def main(pin=False):
                     scalar_policies=W.SCALAR_POLICIES, status_method=status.source_info,
                     full_row13_symmetric=False,
                     row13_limit='matched and matched/pooled composite has no declared conserved comparator record vector; rules_only is a named sensitivity, never exact full-case symmetry',
-                    credit_crossing='comparator crossings not measured; union case crossings preserved',
+                    credit_crossing='own-mask comparator survivor solve measured; applied after evaluator only',
+                    comparator_item11_source_sha256=mixed['sha256'],
                     production_point_weight_rounding_max=production.point_weight_rounding_max,
                     source_proxy_limit='diagnostic only: old R9 union ratio held on changed denominator; do not interpret as status correction',
                     preserved_case_lineage=True, comparison_engine='rough on both sides',
@@ -474,7 +513,8 @@ def main(pin=False):
                     v8_asymmetry={'union_completion': W.META['union_completion']['counts'],
                                   'mixed_unit_removal': W.META['mixed_unit_removal']['by_end'],
                                   'coverage': W.META.get('coverage', {}),
-                                  'comparator_completion_and_mixed_unit_removal': 'unmeasured; no counterpart invented',
+                                  'comparator_completion': 'unmeasured; no counterpart invented',
+                                  'comparator_mixed_unit_removal': 'measured for A1 whites and Black on own masks; A2/A3/A4 unmeasured',
                                   'comparator_coverage': 'none; NH-white PES rates exist but no own-price cohort/base-adjusted term; Black rates absent from source export',
                                   'coverage_age_mix': 'coverage people take completed observed overlay age shares; generation-only source supplies no own-age people',
                                   'lineage_mortality': 'whole-population headline; explicit mixed and own-group comparisons beside'})

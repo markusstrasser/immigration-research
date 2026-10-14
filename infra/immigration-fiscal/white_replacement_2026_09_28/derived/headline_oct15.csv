@@ -1,16 +1,16 @@
 figure,end,oct15_bn,per_member,identified_bn,identified_per_member,oct05_bn,oct05_per_member,oct07_bn,oct07_per_member,oct14_bn,oct14_per_member,sept29_bn,sept29_per_member,case,mortality_convention
-"age artefact removed: A1 third-plus whites, accrual (central)",low,541.8818,11981,470.0688,11837,425.1768,9945,431.6076,10096,512.1502,11980,351.2369,8844,oct15,whole-population mortality
+"age artefact removed: A1 third-plus whites, accrual (central)",low,551.1326,12185,470.0688,11837,425.1768,9945,431.6076,10096,512.1502,11980,351.2369,8844,oct15,whole-population mortality
 "age artefact removed: A3 white rates at union ages, accrual",low,430.4304,9516,397.5847,10012,410.0903,9592,411.3507,9622,418.0302,9778,341.4497,8598,oct15,whole-population mortality
 "age artefact removed: A3 white rates at union ages, cash",low,449.7368,9943,421.4770,10613,419.2189,9806,419.6067,9815,442.1782,10343,351.9423,8862,oct15,whole-population mortality
-"raw cash at white ages: A1, cash set",low,374.9839,8291,328.4427,8271,259.2342,6064,263.4721,6163,359.0353,8398,197.1254,4964,oct15,whole-population mortality
+"raw cash at white ages: A1, cash set",low,384.2347,8495,328.4427,8271,259.2342,6064,263.4721,6163,359.0353,8398,197.1254,4964,oct15,whole-population mortality
 "local whites state by state, union ages, accrual (central)",low,530.7155,11734,491.3723,12373,527.4897,12338,528.6410,12365,516.3085,12077,410.4020,10334,oct15,whole-population mortality
 "local whites state by state, union ages, cash",low,567.7952,12553,531.8597,13393,554.2301,12964,554.1401,12962,557.7184,13045,437.6780,11021,oct15,whole-population mortality
 "California per union member, union ages, accrual",low,251.5721,17164,237.4174,18147,247.3894,17734,247.9482,17774,247.0563,17710,189.5390,14488,oct15,whole-population mortality
 "California per union member, union ages, cash",low,271.0802,18495,257.2433,19663,262.8702,18844,262.8665,18844,267.5263,19178,204.7256,15648,oct15,whole-population mortality
-"age artefact removed: A1 third-plus whites, accrual (central)",high,517.9531,11452,445.5082,11218,428.1094,10014,435.9552,10197,481.6429,11266,350.5180,8826,oct15,whole-population mortality
+"age artefact removed: A1 third-plus whites, accrual (central)",high,522.6065,11554,445.5082,11218,428.1094,10014,435.9552,10197,481.6429,11266,350.5180,8826,oct15,whole-population mortality
 "age artefact removed: A3 white rates at union ages, accrual",high,410.9725,9086,374.8808,9440,412.9685,9660,415.6703,9723,391.1663,9150,340.4574,8573,oct15,whole-population mortality
 "age artefact removed: A3 white rates at union ages, cash",high,430.2788,9513,398.7731,10042,423.4908,9906,425.9413,9963,415.3143,9714,350.9499,8837,oct15,whole-population mortality
-"raw cash at white ages: A1, cash set",high,351.0552,7762,303.8821,7652,263.5604,6165,269.8347,6312,328.5279,7684,196.4064,4946,oct15,whole-population mortality
+"raw cash at white ages: A1, cash set",high,355.7086,7864,303.8821,7652,263.5604,6165,269.8347,6312,328.5279,7684,196.4064,4946,oct15,whole-population mortality
 "local whites state by state, union ages, accrual (central)",high,505.4359,11175,463.2613,11665,528.8726,12371,531.4654,12431,483.2791,11304,407.9733,10273,oct15,whole-population mortality
 "local whites state by state, union ages, cash",high,542.5157,11995,503.7487,12685,557.0065,13029,558.9795,13075,524.6891,12273,435.2493,10960,oct15,whole-population mortality
 "California per union member, union ages, accrual",high,239.4696,16339,224.7514,17179,247.0482,17710,248.0233,17780,232.2711,16650,188.1664,14383,oct15,whole-population mortality

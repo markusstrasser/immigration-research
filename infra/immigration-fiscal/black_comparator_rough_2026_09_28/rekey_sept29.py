@@ -214,7 +214,7 @@ def main(case="sept29"):
                         **({"engine": "case" if lab == "mexican_origin_engine" else "rough",
                             "comparison_engine": "rough" if lab != "mexican_origin_engine" else "not a comparison",
                             "mixed_unit_removal_bn": W.META['mixed_unit_removal']['by_end'][end]['total_bn'],
-                            "mixed_unit_asymmetry": "lineage only; comparator counterpart unmeasured",
+                            "mixed_unit_asymmetry": "one-sided evaluator control; see comparator_item11_bn in published summary",
                             "black_minus_lineage_own_count_bn": r['cost'] - rough['cost'] if lab == 'nh_black_rough' else '',
                             "black_minus_lineage_equal_population_bn": r['cost'] * rough['population'] / r['population'] - rough['cost'] if lab == 'nh_black_rough' else '',
                             "black_minus_lineage_without_item11_bn": r['cost'] - rough['cost'] + W.META['mixed_unit_removal']['by_end'][end]['total_bn'] if lab == 'nh_black_rough' else ''}
@@ -254,6 +254,16 @@ def main(case="sept29"):
             row[f"amount_{lab}_bn"] = f"{amt:.4f}"
             row[f"share_{lab}"] = f"{amt / nat:.6f}" if abs(nat) > 1e-6 else ""
         line_rows.append(row)
+    if W.CASE == 'oct15':
+        from comparison_contract import publish_base_summary, load_mixed_unit, comparator_removal
+        source = load_mixed_unit()
+        for basis in W.BASES:
+            for lab in ('nh_black_rough',):
+                population = res[(basis, lab, 'low')][0]['population']
+                correction = comparator_removal(source, lab, basis, 'low', population)['bn']
+                programs.append(dict(basis=basis, group=lab, program='comparator post-engine mixed_unit_removal',
+                    cost_bn=f'{correction:.4f}', cost_per_member=f'{correction * 1e9 / population:.0f}', gap_bn='', gap_per_member=''))
+        publish_base_summary(summary, W.META['population_v8']['with_coverage'])
     write(f"rekey_summary_{W.CASE}.csv", summary)
     write(f"rekey_by_program_{W.CASE}.csv", programs)
     write(f"rekey_line_shares_{W.CASE}.csv", line_rows)

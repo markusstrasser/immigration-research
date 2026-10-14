@@ -1305,3 +1305,7 @@ OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 uv run --no-project python3 scr
   "node {lane}/engine_breaks_sept29.cjs --case oct15" \
   "uv run --no-project python3 -m pytest -p no:cacheprovider {lane}/test_tables_oct15.py -q -k 'not tables_use_final_first_year_verdict and not c8_reports_all_source_mortality_bounds'"
 ```
+
+## R2C40 final receipt — 2026-10-15T03:58:49+09:00
+
+Own-mask comparator item11 is now measured and applied post-evaluator, with pinned paired gap SEs. [FRAMING-SENSITIVE] The labeled one-sided gap is preserved immediately below the measured row. Full White 210/210, full Black 96/96, C8 source-only 77/77, legacy annual-only 39/39, pension 43/43, Indian independent fiscal 71/71: all IDENTICAL, exit 0. Exact baselines unchanged; no feedback into M5; no annual charge to legacy stock. Break tables and Indian social/combined rows remain withheld. [CALCULATION: parent scratch c40-*-rerun.json/log; c40-validation.json; prop-d-result.md]

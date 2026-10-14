@@ -47,10 +47,12 @@ def comparator_fixture():
              "mortality_convention": convention, "mortality_bound": bound, "basis": basis,
              "group_mortality": "whole-population" if convention == tables.MIXED_MORTALITY and group in ("mexican_origin_engine", tables.ROUGH_LINEAGE) else "own-group",
              "engine": "case" if group == "mexican_origin_engine" else "rough",
-             "mixed_unit_removal_bn": 10 if group in ("mexican_origin_engine", tables.ROUGH_LINEAGE) else 0,
+             "mixed_unit_removal_bn": 10 if group in ("mexican_origin_engine", tables.ROUGH_LINEAGE) else -5 if group == 'A1_third_plus_nh_white' else 0,
+             "comparator_item11_bn": -5 if group == 'A1_third_plus_nh_white' else 0,
+             "item11_paired_se_bn": 3 if group == 'A1_third_plus_nh_white' else '',
              "mixed_unit_asymmetry": "lineage measured; comparator unmeasured",
              "cost_without_item11_bn": 340 if group in ("mexican_origin_engine", tables.ROUGH_LINEAGE) else -20,
-             "group": group, "end": end, "cost_bn": 350 if group in ("mexican_origin_engine", tables.ROUGH_LINEAGE) else -20}
+             "group": group, "end": end, "cost_bn": 350 if group in ("mexican_origin_engine", tables.ROUGH_LINEAGE) else -25 if group == 'A1_third_plus_nh_white' else -20}
             for convention, bound in tables.MORTALITY_READINGS for basis in ("accrual", "cash")
              for group in ("mexican_origin_engine", tables.ROUGH_LINEAGE, "A1_third_plus_nh_white", "A3_third_plus_nh_white_at_union_ages")
             for end in ("low", "high")]
@@ -59,7 +61,7 @@ def comparator_fixture():
 def test_comparator_pairing_requires_explicit_case_and_mortality_labels():
     records = comparator_fixture()
     values = tables.comparator_values(records)
-    assert tables.comparator_gap(values, tables.MIXED_MORTALITY, "none", "accrual", "A1_third_plus_nh_white") == [370, 370]
+    assert tables.comparator_gap(values, tables.MIXED_MORTALITY, "none", "accrual", "A1_third_plus_nh_white") == [375, 375]
     # The same numeric whole-headline/own-comparator pairing cannot pass without its label.
     records[0].pop("mortality_convention")
     with pytest.raises(SystemExit, match="explicit mortality convention/bound required"):

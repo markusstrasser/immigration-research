@@ -490,7 +490,8 @@ def main(case="oct15"):
         for end in ENDS:
             for lab, ref in (("A1_third_plus_nh_white", wl), ("nh_black_rough", bl), ("mexican_origin_rough", wl),
                              ("mexican_origin_engine", wl)):
-                want = float(ref.query("basis == @b and group == @lab and end == @end").cost.iloc[0])
+                reference = ref.query("basis == @b and group == @lab and end == @end").iloc[0]
+                want = float(reference.cost_evaluator_bn if case == 'oct15' else reference.cost)
                 got = res[(b, lab, end)][0]["cost"]
                 W.gate(f"{b} {end} {lab} reproduces its lane's rekey_summary_{case}.csv (5e-5)", abs(got - want) < 5e-5,
                        f"{got:.4f} vs {want:.4f}")
@@ -643,6 +644,21 @@ def main(case="oct15"):
                        "sampling": "160 own group replicates; factor sampling propagated; national held fixed"},
                       stream, indent=2)
             stream.write("\n")
+    if case == 'oct15':
+        import comparison_contract as C
+        mixed = C.load_mixed_unit()
+        for row in summary:
+            population = res[row['basis'], row['group'], row['end']][0]['population']
+            correction = C.comparator_removal(mixed, row['group'], row['basis'], row['end'], population)
+            row.update(cost_evaluator_bn=row['cost_bn'], comparator_item11_bn=correction['bn'],
+                       item11_paired_se_bn=correction['paired_se_bn'], item11_scope=correction['scope'],
+                       framing=C.MIXED_FRAME)
+            row['cost_bn'] = f"{float(row['cost_bn']) + correction['bn']:.4f}"
+            row['cost_per_member'] = f"{float(row['cost_bn']) * 1e9 / population:.0f}"
+            if row['group'] in C.MIXED_GROUPS:
+                buckets.append(dict(basis=row['basis'], group=row['group'], end=row['end'],
+                    bucket='comparator post-engine mixed_unit_removal', cost_bn=f"{correction['bn']:.4f}",
+                    cost_per_member=f"{correction['bn'] * 1e9 / population:.0f}"))
     for name, data in (("rekey_summary.csv", summary), ("rekey_buckets.csv", buckets), ("keys.csv", keys),
                        ("age_structures.csv", ages), ("drivers.csv", [{k: (f"{v:.8g}" if isinstance(v, float) else v)
                                                                         for k, v in r.items()} for r in drv]),

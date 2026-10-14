@@ -224,7 +224,9 @@ def main():
         else:
             txt = f"{int(value)}"
         out.append({"case": case, "section": section, "slice": slc, "measure": measure, "basis": basis, "end": end,
-                    "value": txt, "unit": unit})
+                    "value": txt, "unit": unit,
+                    **({'item11_scope': 'one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv'}
+                       if case == 'oct15' else {})})
 
     # ---------------------------------------------------------------- the central, reproduced
     scen = W.scenarios()
@@ -250,7 +252,8 @@ def main():
         gate(f"local gap {k[0]} {k[1]}: the union pieces less the white pieces is state_summary's sum (2e-4)",
              abs(g0 - want) < 2e-4, f"{g0:.4f}")
     acc = parts[(parts.basis == "accrual") & (parts.end == "low")]
-    pcols = [c for c in acc.columns if c.endswith("_bn") and c not in ("cps_bn", "prop_bn", "central_bn")]
+    pcols = [f'{part}_bn' for part in P.PARTS]
+    gate('tax decomposition has every declared part', all(column in acc for column in pcols))
     fed_parts = ["a_federal_bn", "b1_federal_credits_bn", "b2_federal_unit_bn", "c_federal_raking_bn"]
     slices = {**{n: (f"Part F whites at union ages: {n}", [pieces[n]["sc"]]) for n in REGIONS},
               "sum": ("Part F whites at union ages: sum of CA, TX and rest", [pieces[n]["sc"] for n in REGIONS]),

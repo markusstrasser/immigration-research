@@ -8,6 +8,46 @@ import pytest
 HERE = Path(__file__).resolve().parent
 
 
+def test_actual_comparator_publications_match_pinned_terms_and_paired_se():
+    import comparison_contract as C
+    source = C.load_mixed_unit()
+    d = pd.read_csv(HERE / 'derived/symmetric_results_oct15.csv')
+    for row in d[d.group.isin(C.MIXED_GROUPS)].itertuples():
+        term = C.comparator_removal(source, row.group, row.basis, row.end, row.population)
+        assert row.comparator_item11_bn == pytest.approx(term['bn'], abs=1e-9)
+        assert row.item11_paired_se_bn == pytest.approx(term['paired_se_bn'], abs=1e-9)
+        assert row.cost_bn - row.cost_one_sided_bn == pytest.approx(term['bn'], abs=1e-9)
+        assert row.cost_bn - row.cost_without_item11_bn == pytest.approx(term['bn'], abs=1e-9)
+        assert '[FRAMING-SENSITIVE]' in row.framing
+    own = pd.read_csv(HERE / 'derived/symmetric_white_population_oct15.csv')
+    for row in own.itertuples():
+        assert row.lineage_minus_comparator_bn == pytest.approx(row.lineage_cost_bn - row.comparator_cost_bn, abs=1e-9)
+        assert row.lineage_minus_comparator_bn - row.one_sided_gap_bn == pytest.approx(-row.comparator_item11_bn, abs=1e-9)
+        # The source paired vector leaves the lineage at its live count in both frames.
+        assert row.lineage_population == pytest.approx(float(source['gaps'][0]['lineage_count']), abs=1e-6)
+
+
+def test_published_base_budget_identity_and_member_balance_definition():
+    for lane in (HERE, HERE.parent / 'black_comparator_rough_2026_09_28'):
+        d = pd.read_csv(lane / 'derived/rekey_summary_oct15.csv')
+        for row in d[d.group.isin(('A1_third_plus_nh_white', 'nh_black_rough'))].itertuples():
+            assert row.cost - row.cost_evaluator_bn == pytest.approx(row.comparator_item11_bn, abs=5e-5)
+            assert row.cost == pytest.approx(row.net_budget + row.capital - row.production_gain, abs=2e-4)
+            assert row.balance == pytest.approx(row.taxes_paid - row.spending_drawn, abs=1e-4)
+            # Three independently printed four-decimal fields, plus the added
+            # correction's second rounding: up to two displayed units.
+            assert row.net_budget == pytest.approx(row.spending_saved - row.taxes_lost, abs=2e-4)
+
+
+def test_tax_parts_exclude_post_evaluator_metadata_from_decomposition():
+    import income_tax_parts as P
+    d = pd.read_csv(HERE / 'derived/income_tax_parts_oct15.csv')
+    total = d[[f'{part}_bn' for part in P.PARTS]].sum(axis=1)
+    assert (total - (d.central_bn - d.cps_bn)).abs().max() < 1e-3
+    a1 = d[d.figure.eq('gap: union less A1_third_plus_nh_white')]
+    assert (a1.central_with_comparator_item11_bn - a1.central_bn + a1.comparator_item11_bn).abs().max() < 1e-4
+
+
 def test_zero_production_removes_whole_lineage_gain():
     d = pd.read_csv(HERE / 'derived/symmetric_results_oct15.csv').query("mortality_bound == 'none'")
     for group in ('mexican_origin_engine', 'mexican_origin_rough'):
