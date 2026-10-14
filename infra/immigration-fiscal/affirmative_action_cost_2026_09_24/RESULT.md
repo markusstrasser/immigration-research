@@ -288,7 +288,9 @@ that range is right, the central sits below the paper's lowest estimate.
 > fixed effects gives 4.1%; the item-level preferred estimate is 5.6% (Table 3). Adding
 > subcontractor dummies cuts the effect to 2.5%, so about 55% of the decline runs through the
 > subcontractor mix (Introduction). The central 2.8% therefore does sit below every total-effect
-> estimate the paper reports; the sensitivity arithmetic below stands unchanged. At 3.1% the central DBE
+> estimate the paper reports; the sensitivity arithmetic below stands unchanged.
+
+At 3.1% the central DBE
 premium row would be $0.53bn instead of $0.48bn. At the range's midpoint, 4.35%, it would be
 $0.74bn, and the 2024 central total would rise from $3.96bn to $4.22bn. [CALCULATION: linear
 rescaling of row 3c, $0.4773bn × p / 2.8%]
