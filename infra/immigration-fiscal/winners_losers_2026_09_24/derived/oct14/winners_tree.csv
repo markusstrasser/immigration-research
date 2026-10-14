@@ -1,0 +1,31 @@
+net,stack,path,persons_m,share_of_persons,winners_share,mean_net_usd
+net_social_a,central,worker = not_worker & tenure = landlord,11.34605099,0.03835312126,0.2277926001,-207.4278064
+net_social_a,central,worker = not_worker & tenure != landlord & age3 = 18_64,36.18376745,0.1223121967,0.003575353577,-953.9046152
+net_social_a,central,worker = not_worker & tenure != landlord & age3 != 18_64,95.20721459,0.3218294936,7.516063522e-05,-866.1362783
+net_social_a,central,worker != not_worker & edu_nativity = high_school|us_born & tenure = owner_no_rental_income,16.54443675,0.05592525445,0.000107231241,-3314.095871
+net_social_a,central,worker != not_worker & edu_nativity = high_school|us_born & tenure != owner_no_rental_income,9.866924588,0.03335322179,0.009822026051,-3267.002783
+net_social_a,central,worker != not_worker & edu_nativity != high_school|us_born & state3 = rest,105.0013079,0.3549365235,0.4726027406,-400.9543259
+net_social_a,central,worker != not_worker & edu_nativity != high_school|us_born & state3 != rest,21.68152657,0.07329018865,0.02194803576,-4300.260412
+net_social_b,central,industry5 = rest & edu_nativity = ba_plus|us_born & state3 = rest,40.30154129,0.1362315312,0.6693781894,394.0447515
+net_social_b,central,industry5 = rest & edu_nativity = ba_plus|us_born & state3 != rest,8.024828368,0.02712637337,0.07216675068,-2688.654132
+net_social_b,central,industry5 = rest & edu_nativity != ba_plus|us_born & edu_nativity = high_school|us_born,21.27457035,0.07191455219,0.002673411937,-3321.606304
+net_social_b,central,industry5 = rest & edu_nativity != ba_plus|us_born & edu_nativity != high_school|us_born,62.26042656,0.2104592771,0.3082144537,-1136.088003
+net_social_b,central,industry5 != rest & tenure = landlord & decile <= 7,6.598338232,0.02230440058,0.1701177917,-657.3696336
+net_social_b,central,industry5 != rest & tenure = landlord & decile > 7,6.380801297,0.02156905923,0.3350170465,1052.597834
+net_social_b,central,industry5 != rest & tenure != landlord & worker = not_worker,131.390982,0.4441416903,0.0008781022321,-1200.795569
+net_social_b,central,industry5 != rest & tenure != landlord & worker != not_worker,19.59974071,0.06625311597,0.1633435965,-2002.299142
+net_account_a,central,worker = not_worker & age3 = 18_64 & edu_nativity = ba_plus|us_born,6.237269721,0.02108387862,0.01097200063,-1063.424934
+net_account_a,central,worker = not_worker & age3 = 18_64 & edu_nativity != ba_plus|us_born,32.52924958,0.109958809,0.003236363694,-668.8346051
+net_account_a,central,worker = not_worker & age3 != 18_64 & decile <= 9,96.16877306,0.3250798553,3.607455867e-05,-554.3725771
+net_account_a,central,worker = not_worker & age3 != 18_64 & decile > 9,7.801740665,0.02637226873,0.0004725341226,-3355.353216
+net_account_a,central,worker != not_worker & edu_nativity = high_school|us_born,26.41136134,0.08927847624,0,-3093.746645
+net_account_a,central,worker != not_worker & edu_nativity != high_school|us_born & state3 = rest,105.0013079,0.3549365235,0.5180644464,-306.3564801
+net_account_a,central,worker != not_worker & edu_nativity != high_school|us_born & state3 != rest,21.68152657,0.07329018865,0.003313659045,-3437.570212
+net_account_b,central,worker = not_worker & age3 = 18_64 & decile <= 4,24.6042898,0.08317002195,0.0008142011563,-1013.248528
+net_account_b,central,worker = not_worker & age3 = 18_64 & decile > 4,14.1622295,0.04787266563,0.007396842521,-1123.626511
+net_account_b,central,worker = not_worker & age3 != 18_64 & edu_nativity = some_college|us_born,10.82766938,0.03660083293,0.0006719312724,-1078.679046
+net_account_b,central,worker = not_worker & age3 != 18_64 & edu_nativity != some_college|us_born,93.14284435,0.3148512911,1.270926317e-05,-979.9128058
+net_account_b,central,worker != not_worker & edu_nativity = ba_plus|us_born & state3 = rest,42.65192219,0.1441765373,0.7061187949,445.0151766
+net_account_b,central,worker != not_worker & edu_nativity = ba_plus|us_born & state3 != rest,8.399570833,0.02839311747,0.0391434351,-1985.483758
+net_account_b,central,worker != not_worker & edu_nativity != ba_plus|us_born & edu_nativity = some_college|us_born,29.77533005,0.100649719,0.4574703971,-358.5558044
+net_account_b,central,worker != not_worker & edu_nativity != ba_plus|us_born & edu_nativity != some_college|us_born,72.26737275,0.2442858147,0.1421970305,-1994.299765

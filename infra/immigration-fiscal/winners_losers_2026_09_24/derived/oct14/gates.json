@@ -1,0 +1,2693 @@
+{
+ "cps_extra_columns_aligned": {
+  "passed": true,
+  "records": 142125
+ },
+ "account_production_term": {
+  "passed": true,
+  "nest": 8.790627696466178,
+  "account": 8.790627696465311
+ },
+ "account_production_term_oct07_grid": {
+  "passed": true,
+  "row4": {
+   "low": 11.909644857442428,
+   "high": 7.834383237811679
+  },
+  "case_grid": {
+   "low": 11.909644857418181,
+   "high": 7.834383237811649
+  },
+  "normalization": {
+   "low": "gdp",
+   "high": "cash"
+  }
+ },
+ "account_production_term_case_grid": {
+  "passed": true,
+  "row4": {
+   "low": 11.909644857442428,
+   "high": 7.834383237811679
+  },
+  "case_grid": {
+   "low": 11.909644857418181,
+   "high": 7.834383237811649
+  },
+  "normalization": {
+   "low": "gdp",
+   "high": "cash"
+  }
+ },
+ "production_rows_add_to_the_previous_case_s": {
+  "passed": true,
+  "base": "main_case_2026_09_29",
+  "previous_lane": "main_case_2026_10_07",
+  "grid": "main_case_candidate_2026_09_28/derived/production_row4.json",
+  "previous_case_s_base": "main_case_2026_09_29"
+ },
+ "wage_base_below_ba_native_cell0": {
+  "passed": true,
+  "cps": 3821.3816225683977,
+  "nest": 3821.381622568373
+ },
+ "wage_base_below_ba_native_cell1": {
+  "passed": true,
+  "cps": 5614.966133303451,
+  "nest": 5614.966133303432
+ },
+ "wage_base_below_ba_other_fb_cell0": {
+  "passed": true,
+  "cps": 643.299510124197,
+  "nest": 643.2995101241958
+ },
+ "wage_base_below_ba_other_fb_cell1": {
+  "passed": true,
+  "cps": 1436.341419202398,
+  "nest": 1436.3414192023995
+ },
+ "wage_base_hs_or_less_native_cell0": {
+  "passed": true,
+  "cps": 1828.6074369171904,
+  "nest": 1828.6074369171924
+ },
+ "wage_base_hs_or_less_native_cell1": {
+  "passed": true,
+  "cps": 7607.7403189546585,
+  "nest": 7607.740318954641
+ },
+ "wage_base_hs_or_less_other_fb_cell0": {
+  "passed": true,
+  "cps": 395.05914641052675,
+  "nest": 395.0591464105268
+ },
+ "wage_base_hs_or_less_other_fb_cell1": {
+  "passed": true,
+  "cps": 1684.5817829160683,
+  "nest": 1684.58178291607
+ },
+ "acs_geo_mirrors_base_low_metro_local": {
+  "passed": true
+ },
+ "acs_geo_mirrors_base_low_national_uniform": {
+  "passed": true
+ },
+ "acs_geo_mirrors_base_central_metro_local": {
+  "passed": true
+ },
+ "acs_geo_mirrors_base_central_national_uniform": {
+  "passed": true
+ },
+ "acs_geo_mirrors_base_high_metro_local": {
+  "passed": true
+ },
+ "acs_geo_mirrors_base_high_national_uniform": {
+  "passed": true
+ },
+ "base_case_ends_committed_at_17d3735a": {
+  "passed": true,
+  "file": "infra/immigration-fiscal/distribution_weights_2026_09_23/derived/case_ends_oct14.json"
+ },
+ "regression_target_is_oct07": {
+  "passed": true,
+  "target_case": "oct07",
+  "target_A_mid": -435.1531374999941,
+  "A_mid": -435.1531374999941
+ },
+ "crime_mixed_group_row_unique": {
+  "passed": true,
+  "rows": 1
+ },
+ "crime_nibrs_central_unique": {
+  "passed": true,
+  "rows": 1
+ },
+ "crime_inputs_pinned": {
+  "passed": true,
+  "equal": 28.9228851746268,
+  "custody": 32.3381,
+  "mixed_equal": 30.927388,
+  "nibrs_equal": 28.5907,
+  "envelope_low": 15.4099,
+  "envelope_high": 45.3424
+ },
+ "regression_oct07_channel_by_quintile": {
+  "passed": true,
+  "max_abs_diff_bn": 1.4210854715202004e-14,
+  "cells": 828,
+  "channels": 23
+ },
+ "regression_target_is_oct14": {
+  "passed": true,
+  "target_case": "oct14",
+  "target_A_mid": -391.47265331263173,
+  "A_mid": -391.47265331263173
+ },
+ "regression_oct14_channel_by_quintile": {
+  "passed": true,
+  "max_abs_diff_bn": 5.684341886080802e-14,
+  "cells": 828,
+  "channels": 23
+ },
+ "band_reproduced_adopted_2026_10_14": {
+  "passed": true,
+  "band": [
+   339.552017829527,
+   423.649260700507
+  ],
+  "published": [
+   339.552,
+   423.6493
+  ]
+ },
+ "welfare_identity_adopted_2026_10_14": {
+  "passed": true
+ },
+ "band_reproduced_adopted_2026_10_07": {
+  "passed": true,
+  "band": [
+   389.082552865478,
+   461.47970930242
+  ],
+  "published": [
+   389.0826,
+   461.4797
+  ]
+ },
+ "welfare_identity_adopted_2026_10_07": {
+  "passed": true
+ },
+ "fiscal_totals_oct14_matches_engine": {
+  "passed": true,
+  "fiscal_totals": {
+   "low": -351.46166268694503,
+   "high": -431.48364393831844
+  },
+  "engine": {
+   "low": -351.461662686945,
+   "high": -431.483643938318
+  },
+  "diff": {
+   "low": -5.684341886080802e-14,
+   "high": -4.547473508864641e-13
+  }
+ },
+ "capital_return_oct14_matches_engine": {
+  "passed": true,
+  "distribution_lane": [
+   37.116154420957585,
+   61.0642563792209
+  ],
+  "engine": {
+   "low": 37.1161544209576,
+   "high": 61.0642563792209
+  }
+ },
+ "fiscal_totals_oct07_matches_engine": {
+  "passed": true,
+  "fiscal_totals": {
+   "low": -400.9921487676602,
+   "high": -469.314126232328
+  },
+  "engine": {
+   "low": -400.992197722897,
+   "high": -469.314092540232
+  },
+  "diff": {
+   "low": 4.8955236820802384e-05,
+   "high": -3.369209599668466e-05
+  }
+ },
+ "capital_return_oct07_matches_engine": {
+  "passed": true,
+  "distribution_lane": [
+   36.581557021423414,
+   61.0642563792209
+  ],
+  "engine": {
+   "low": 36.5815570214234,
+   "high": 61.0642563792209
+  }
+ },
+ "line_ids_unique_adopted_2026_10_07_low": {
+  "passed": true
+ },
+ "debt_lines_unique_adopted_2026_10_07_low_low": {
+  "passed": true
+ },
+ "debt_lines_F_adopted_2026_10_07_low_low": {
+  "passed": true,
+  "lane": [
+   -12.614102,
+   -11.151488
+  ],
+  "engine": [
+   -12.614102194161,
+   -11.151487724439754
+  ]
+ },
+ "debt_split_row_unique_adopted_2026_10_07_low_low": {
+  "passed": true,
+  "rows": 1
+ },
+ "federal_split_recomputed_adopted_2026_10_07_low_low": {
+  "passed": true,
+  "recomputed": 4.788900949488003,
+  "lane": 4.788902,
+  "cost": 261.30219802097247,
+  "lane_cost": 261.302198,
+  "max_line_diff_bn": 7.802740924489626e-07
+ },
+ "federal_split_recomputed_resource_cost_adopted_2026_10_07_low_low": {
+  "passed": true,
+  "recomputed": [
+   36.58155702142341,
+   0.8873321580004486
+  ],
+  "lane": [
+   36.581557,
+   0.887332
+  ]
+ },
+ "federal_split_recomputed_displaced_beneficiaries_adopted_2026_10_07_low_low": {
+  "passed": true,
+  "recomputed": [
+   8.811198486338883,
+   4.91791533163569
+  ],
+  "lane": [
+   8.811198,
+   4.917916
+  ]
+ },
+ "federal_split_recomputed_pension_accrual_adopted_2026_10_07_low_low": {
+  "passed": true,
+  "recomputed": [
+   81.683142,
+   81.683142
+  ],
+  "lane": [
+   81.683142,
+   81.683142
+  ]
+ },
+ "debt_lines_unique_adopted_2026_10_07_low_central": {
+  "passed": true
+ },
+ "debt_lines_F_adopted_2026_10_07_low_central": {
+  "passed": true,
+  "lane": [
+   -12.614102,
+   -11.151488
+  ],
+  "engine": [
+   -12.614102194161,
+   -11.151487724439754
+  ]
+ },
+ "debt_split_row_unique_adopted_2026_10_07_low_central": {
+  "passed": true,
+  "rows": 1
+ },
+ "federal_split_recomputed_adopted_2026_10_07_low_central": {
+  "passed": true,
+  "recomputed": 34.0350518734708,
+  "lane": 34.035054,
+  "cost": 261.30219802097247,
+  "lane_cost": 261.302198,
+  "max_line_diff_bn": 7.802740924489626e-07
+ },
+ "federal_split_recomputed_resource_cost_adopted_2026_10_07_low_central": {
+  "passed": true,
+  "recomputed": [
+   36.58155702142341,
+   0.8873321580004486
+  ],
+  "lane": [
+   36.581557,
+   0.887332
+  ]
+ },
+ "federal_split_recomputed_displaced_beneficiaries_adopted_2026_10_07_low_central": {
+  "passed": true,
+  "recomputed": [
+   8.811198486338883,
+   5.474821180265386
+  ],
+  "lane": [
+   8.811198,
+   5.474821
+  ]
+ },
+ "federal_split_recomputed_pension_accrual_adopted_2026_10_07_low_central": {
+  "passed": true,
+  "recomputed": [
+   81.683142,
+   81.683142
+  ],
+  "lane": [
+   81.683142,
+   81.683142
+  ]
+ },
+ "debt_lines_unique_adopted_2026_10_07_low_high": {
+  "passed": true
+ },
+ "debt_lines_F_adopted_2026_10_07_low_high": {
+  "passed": true,
+  "lane": [
+   -12.614102,
+   -11.151488
+  ],
+  "engine": [
+   -12.614102194161,
+   -11.151487724439754
+  ]
+ },
+ "debt_split_row_unique_adopted_2026_10_07_low_high": {
+  "passed": true,
+  "rows": 1
+ },
+ "federal_split_recomputed_adopted_2026_10_07_low_high": {
+  "passed": true,
+  "recomputed": 46.048540998194916,
+  "lane": 46.048542,
+  "cost": 261.30219802097247,
+  "lane_cost": 261.302198,
+  "max_line_diff_bn": 7.802740924489626e-07
+ },
+ "federal_split_recomputed_resource_cost_adopted_2026_10_07_low_high": {
+  "passed": true,
+  "recomputed": [
+   36.58155702142341,
+   0.8873321580004486
+  ],
+  "lane": [
+   36.581557,
+   0.887332
+  ]
+ },
+ "federal_split_recomputed_displaced_beneficiaries_adopted_2026_10_07_low_high": {
+  "passed": true,
+  "recomputed": [
+   8.811198486338883,
+   5.474821180265386
+  ],
+  "lane": [
+   8.811198,
+   5.474821
+  ]
+ },
+ "federal_split_recomputed_pension_accrual_adopted_2026_10_07_low_high": {
+  "passed": true,
+  "recomputed": [
+   81.683142,
+   81.683142
+  ],
+  "lane": [
+   81.683142,
+   81.683142
+  ]
+ },
+ "line_ids_unique_adopted_2026_10_07_high": {
+  "passed": true
+ },
+ "debt_lines_unique_adopted_2026_10_07_high_low": {
+  "passed": true
+ },
+ "debt_lines_F_adopted_2026_10_07_high_low": {
+  "passed": true,
+  "lane": [
+   -8.297788,
+   -7.335654
+  ],
+  "engine": [
+   -8.29778821909926,
+   -7.335653544024646
+  ]
+ },
+ "debt_split_row_unique_adopted_2026_10_07_high_low": {
+  "passed": true,
+  "rows": 1
+ },
+ "federal_split_recomputed_adopted_2026_10_07_high_low": {
+  "passed": true,
+  "recomputed": 34.37559112032309,
+  "lane": 34.375592,
+  "cost": 315.0252614555718,
+  "lane_cost": 315.025263,
+  "max_line_diff_bn": 7.460869824171823e-07
+ },
+ "federal_split_recomputed_resource_cost_adopted_2026_10_07_high_low": {
+  "passed": true,
+  "recomputed": [
+   61.064256379220836,
+   1.8952947543976437
+  ],
+  "lane": [
+   61.064256,
+   1.895295
+  ]
+ },
+ "federal_split_recomputed_displaced_beneficiaries_adopted_2026_10_07_high_low": {
+  "passed": true,
+  "recomputed": [
+   8.811198486338883,
+   4.91791533163569
+  ],
+  "lane": [
+   8.811198,
+   4.917916
+  ]
+ },
+ "federal_split_recomputed_pension_accrual_adopted_2026_10_07_high_low": {
+  "passed": true,
+  "recomputed": [
+   76.11558799999999,
+   76.11558799999999
+  ],
+  "lane": [
+   76.115587,
+   76.115587
+  ]
+ },
+ "debt_lines_unique_adopted_2026_10_07_high_central": {
+  "passed": true
+ },
+ "debt_lines_F_adopted_2026_10_07_high_central": {
+  "passed": true,
+  "lane": [
+   -8.297788,
+   -7.335654
+  ],
+  "engine": [
+   -8.29778821909926,
+   -7.335653544024646
+  ]
+ },
+ "debt_split_row_unique_adopted_2026_10_07_high_central": {
+  "passed": true,
+  "rows": 1
+ },
+ "federal_split_recomputed_adopted_2026_10_07_high_central": {
+  "passed": true,
+  "recomputed": 63.825328143930356,
+  "lane": 63.82533,
+  "cost": 315.0252614555718,
+  "lane_cost": 315.025263,
+  "max_line_diff_bn": 7.460869824171823e-07
+ },
+ "federal_split_recomputed_resource_cost_adopted_2026_10_07_high_central": {
+  "passed": true,
+  "recomputed": [
+   61.064256379220836,
+   1.8952947543976437
+  ],
+  "lane": [
+   61.064256,
+   1.895295
+  ]
+ },
+ "federal_split_recomputed_displaced_beneficiaries_adopted_2026_10_07_high_central": {
+  "passed": true,
+  "recomputed": [
+   8.811198486338883,
+   5.474821180265386
+  ],
+  "lane": [
+   8.811198,
+   5.474821
+  ]
+ },
+ "federal_split_recomputed_pension_accrual_adopted_2026_10_07_high_central": {
+  "passed": true,
+  "recomputed": [
+   76.11558799999999,
+   76.11558799999999
+  ],
+  "lane": [
+   76.115587,
+   76.115587
+  ]
+ },
+ "debt_lines_unique_adopted_2026_10_07_high_high": {
+  "passed": true
+ },
+ "debt_lines_F_adopted_2026_10_07_high_high": {
+  "passed": true,
+  "lane": [
+   -8.297788,
+   -7.335654
+  ],
+  "engine": [
+   -8.29778821909926,
+   -7.335653544024646
+  ]
+ },
+ "debt_split_row_unique_adopted_2026_10_07_high_high": {
+  "passed": true,
+  "rows": 1
+ },
+ "federal_split_recomputed_adopted_2026_10_07_high_high": {
+  "passed": true,
+  "recomputed": 82.57779332526226,
+  "lane": 82.577795,
+  "cost": 315.0252614555718,
+  "lane_cost": 315.025263,
+  "max_line_diff_bn": 7.460869824171823e-07
+ },
+ "federal_split_recomputed_resource_cost_adopted_2026_10_07_high_high": {
+  "passed": true,
+  "recomputed": [
+   61.064256379220836,
+   1.8952947543976437
+  ],
+  "lane": [
+   61.064256,
+   1.895295
+  ]
+ },
+ "federal_split_recomputed_displaced_beneficiaries_adopted_2026_10_07_high_high": {
+  "passed": true,
+  "recomputed": [
+   8.811198486338883,
+   5.474821180265386
+  ],
+  "lane": [
+   8.811198,
+   5.474821
+  ]
+ },
+ "federal_split_recomputed_pension_accrual_adopted_2026_10_07_high_high": {
+  "passed": true,
+  "recomputed": [
+   76.11558799999999,
+   76.11558799999999
+  ],
+  "lane": [
+   76.115587,
+   76.115587
+  ]
+ },
+ "line_ids_unique_adopted_2026_10_14_low": {
+  "passed": true
+ },
+ "debt_lines_unique_adopted_2026_10_14_low_low": {
+  "passed": true
+ },
+ "debt_lines_F_adopted_2026_10_14_low_low": {
+  "passed": true,
+  "lane": [
+   -12.614102,
+   -11.151488
+  ],
+  "engine": [
+   -12.614102194161,
+   -11.151487724439754
+  ]
+ },
+ "debt_split_row_unique_adopted_2026_10_14_low_low": {
+  "passed": true,
+  "rows": 1
+ },
+ "federal_split_recomputed_adopted_2026_10_14_low_low": {
+  "passed": true,
+  "recomputed": -10.998489289150129,
+  "lane": -10.998489,
+  "cost": 217.7937625854881,
+  "lane_cost": 217.793763,
+  "max_line_diff_bn": 4.941604503372332e-07
+ },
+ "federal_split_recomputed_resource_cost_adopted_2026_10_14_low_low": {
+  "passed": true,
+  "recomputed": [
+   37.11615442095757,
+   0.8873321580004486
+  ],
+  "lane": [
+   37.116154,
+   0.887332
+  ]
+ },
+ "federal_split_recomputed_displaced_beneficiaries_adopted_2026_10_14_low_low": {
+  "passed": true,
+  "recomputed": [
+   8.811198486338883,
+   4.91791533163569
+  ],
+  "lane": [
+   8.811198,
+   4.917916
+  ]
+ },
+ "federal_split_recomputed_pension_accrual_adopted_2026_10_14_low_low": {
+  "passed": true,
+  "recomputed": [
+   75.126445,
+   75.126445
+  ],
+  "lane": [
+   75.126444,
+   75.126444
+  ]
+ },
+ "debt_lines_unique_adopted_2026_10_14_low_central": {
+  "passed": true
+ },
+ "debt_lines_F_adopted_2026_10_14_low_central": {
+  "passed": true,
+  "lane": [
+   -12.614102,
+   -11.151488
+  ],
+  "engine": [
+   -12.614102194161,
+   -11.151487724439754
+  ]
+ },
+ "debt_split_row_unique_adopted_2026_10_14_low_central": {
+  "passed": true,
+  "rows": 1
+ },
+ "federal_split_recomputed_adopted_2026_10_14_low_central": {
+  "passed": true,
+  "recomputed": 18.333182739159692,
+  "lane": 18.333183,
+  "cost": 217.7937625854881,
+  "lane_cost": 217.793763,
+  "max_line_diff_bn": 4.941604503372332e-07
+ },
+ "federal_split_recomputed_resource_cost_adopted_2026_10_14_low_central": {
+  "passed": true,
+  "recomputed": [
+   37.11615442095757,
+   0.8873321580004486
+  ],
+  "lane": [
+   37.116154,
+   0.887332
+  ]
+ },
+ "federal_split_recomputed_displaced_beneficiaries_adopted_2026_10_14_low_central": {
+  "passed": true,
+  "recomputed": [
+   8.811198486338883,
+   5.474821180265386
+  ],
+  "lane": [
+   8.811198,
+   5.474821
+  ]
+ },
+ "federal_split_recomputed_pension_accrual_adopted_2026_10_14_low_central": {
+  "passed": true,
+  "recomputed": [
+   75.126445,
+   75.126445
+  ],
+  "lane": [
+   75.126444,
+   75.126444
+  ]
+ },
+ "debt_lines_unique_adopted_2026_10_14_low_high": {
+  "passed": true
+ },
+ "debt_lines_F_adopted_2026_10_14_low_high": {
+  "passed": true,
+  "lane": [
+   -12.614102,
+   -11.151488
+  ],
+  "engine": [
+   -12.614102194161,
+   -11.151487724439754
+  ]
+ },
+ "debt_split_row_unique_adopted_2026_10_14_low_high": {
+  "passed": true,
+  "rows": 1
+ },
+ "federal_split_recomputed_adopted_2026_10_14_low_high": {
+  "passed": true,
+  "recomputed": 30.579096704595706,
+  "lane": 30.579098,
+  "cost": 217.7937625854881,
+  "lane_cost": 217.793763,
+  "max_line_diff_bn": 4.941604503372332e-07
+ },
+ "federal_split_recomputed_resource_cost_adopted_2026_10_14_low_high": {
+  "passed": true,
+  "recomputed": [
+   37.11615442095757,
+   0.8873321580004486
+  ],
+  "lane": [
+   37.116154,
+   0.887332
+  ]
+ },
+ "federal_split_recomputed_displaced_beneficiaries_adopted_2026_10_14_low_high": {
+  "passed": true,
+  "recomputed": [
+   8.811198486338883,
+   5.474821180265386
+  ],
+  "lane": [
+   8.811198,
+   5.474821
+  ]
+ },
+ "federal_split_recomputed_pension_accrual_adopted_2026_10_14_low_high": {
+  "passed": true,
+  "recomputed": [
+   75.126445,
+   75.126445
+  ],
+  "lane": [
+   75.126444,
+   75.126444
+  ]
+ },
+ "line_ids_unique_adopted_2026_10_14_high": {
+  "passed": true
+ },
+ "debt_lines_unique_adopted_2026_10_14_high_low": {
+  "passed": true
+ },
+ "debt_lines_F_adopted_2026_10_14_high_low": {
+  "passed": true,
+  "lane": [
+   -8.297788,
+   -7.335654
+  ],
+  "engine": [
+   -8.29778821909926,
+   -7.335653544024646
+  ]
+ },
+ "debt_split_row_unique_adopted_2026_10_14_high_low": {
+  "passed": true,
+  "rows": 1
+ },
+ "federal_split_recomputed_adopted_2026_10_14_high_low": {
+  "passed": true,
+  "recomputed": 27.769942164098886,
+  "lane": 27.769942,
+  "cost": 278.1839558536593,
+  "lane_cost": 278.183957,
+  "max_line_diff_bn": 4.968342727992847e-07
+ },
+ "federal_split_recomputed_resource_cost_adopted_2026_10_14_high_low": {
+  "passed": true,
+  "recomputed": [
+   61.064256379220836,
+   1.8952947543976437
+  ],
+  "lane": [
+   61.064256,
+   1.895295
+  ]
+ },
+ "federal_split_recomputed_displaced_beneficiaries_adopted_2026_10_14_high_low": {
+  "passed": true,
+  "recomputed": [
+   8.811198486338883,
+   4.91791533163569
+  ],
+  "lane": [
+   8.811198,
+   4.917916
+  ]
+ },
+ "federal_split_recomputed_pension_accrual_adopted_2026_10_14_high_low": {
+  "passed": true,
+  "recomputed": [
+   75.126445,
+   75.126445
+  ],
+  "lane": [
+   75.126444,
+   75.126444
+  ]
+ },
+ "debt_lines_unique_adopted_2026_10_14_high_central": {
+  "passed": true
+ },
+ "debt_lines_F_adopted_2026_10_14_high_central": {
+  "passed": true,
+  "lane": [
+   -8.297788,
+   -7.335654
+  ],
+  "engine": [
+   -8.29778821909926,
+   -7.335653544024646
+  ]
+ },
+ "debt_split_row_unique_adopted_2026_10_14_high_central": {
+  "passed": true,
+  "rows": 1
+ },
+ "federal_split_recomputed_adopted_2026_10_14_high_central": {
+  "passed": true,
+  "recomputed": 57.234865231634295,
+  "lane": 57.234866,
+  "cost": 278.1839558536593,
+  "lane_cost": 278.183957,
+  "max_line_diff_bn": 4.968342727992847e-07
+ },
+ "federal_split_recomputed_resource_cost_adopted_2026_10_14_high_central": {
+  "passed": true,
+  "recomputed": [
+   61.064256379220836,
+   1.8952947543976437
+  ],
+  "lane": [
+   61.064256,
+   1.895295
+  ]
+ },
+ "federal_split_recomputed_displaced_beneficiaries_adopted_2026_10_14_high_central": {
+  "passed": true,
+  "recomputed": [
+   8.811198486338883,
+   5.474821180265386
+  ],
+  "lane": [
+   8.811198,
+   5.474821
+  ]
+ },
+ "federal_split_recomputed_pension_accrual_adopted_2026_10_14_high_central": {
+  "passed": true,
+  "recomputed": [
+   75.126445,
+   75.126445
+  ],
+  "lane": [
+   75.126444,
+   75.126444
+  ]
+ },
+ "debt_lines_unique_adopted_2026_10_14_high_high": {
+  "passed": true
+ },
+ "debt_lines_F_adopted_2026_10_14_high_high": {
+  "passed": true,
+  "lane": [
+   -8.297788,
+   -7.335654
+  ],
+  "engine": [
+   -8.29778821909926,
+   -7.335653544024646
+  ]
+ },
+ "debt_split_row_unique_adopted_2026_10_14_high_high": {
+  "passed": true,
+  "rows": 1
+ },
+ "federal_split_recomputed_adopted_2026_10_14_high_high": {
+  "passed": true,
+  "recomputed": 75.94248025444217,
+  "lane": 75.94248,
+  "cost": 278.1839558536593,
+  "lane_cost": 278.183957,
+  "max_line_diff_bn": 4.968342727992847e-07
+ },
+ "federal_split_recomputed_resource_cost_adopted_2026_10_14_high_high": {
+  "passed": true,
+  "recomputed": [
+   61.064256379220836,
+   1.8952947543976437
+  ],
+  "lane": [
+   61.064256,
+   1.895295
+  ]
+ },
+ "federal_split_recomputed_displaced_beneficiaries_adopted_2026_10_14_high_high": {
+  "passed": true,
+  "recomputed": [
+   8.811198486338883,
+   5.474821180265386
+  ],
+  "lane": [
+   8.811198,
+   5.474821
+  ]
+ },
+ "federal_split_recomputed_pension_accrual_adopted_2026_10_14_high_high": {
+  "passed": true,
+  "recomputed": [
+   75.126445,
+   75.126445
+  ],
+  "lane": [
+   75.126444,
+   75.126444
+  ]
+ },
+ "debt_by_line_file_rebuilds_lineage_components": {
+  "passed": true,
+  "max_abs_diff_bn": 8.999999999925734e-06,
+  "rows": 48,
+  "item_components": [
+   "v6_child_credits",
+   "v6_job_capital_taxes",
+   "v6_retiree_health",
+   "v6_row4_frame",
+   "v6_user_fees",
+   "v6_white_end_tax_keys"
+  ]
+ },
+ "debt_lines_carry_per_correction_split": {
+  "passed": true,
+  "rows": 12,
+  "max_abs_diff_bn": 3.000000000419334e-06
+ },
+ "omb_fy2024_totals": {
+  "passed": true,
+  "receipts_musd": 4919884.0,
+  "outlays_musd": 6735261.0
+ },
+ "tax_parts_add_to_base_key": {
+  "passed": true
+ },
+ "fiscal_cost_matches_debt_lane_low": {
+  "passed": true,
+  "frame": 338.84756049278405,
+  "debt_lane": 338.847559,
+  "diff": 1.4927840652489976e-06
+ },
+ "fiscal_cost_matches_debt_lane_high": {
+  "passed": true,
+  "frame": 423.18585571921915,
+  "debt_lane": 423.185855,
+  "diff": 7.192191446847573e-07
+ },
+ "pension_accrual_is_federal": {
+  "passed": true,
+  "accrual": {
+   "low": 75.126444,
+   "high": 75.126444,
+   "central": 75.126444
+  },
+  "federal": {
+   "low": 75.126444,
+   "high": 75.126444,
+   "central": 75.126444
+  }
+ },
+ "fiscal_a_is_cash_plus_resource": {
+  "passed": true,
+  "max_abs_usd_per_person": 4.3655745685100555e-11
+ },
+ "fiscal_b_is_cash_plus_resource": {
+  "passed": true,
+  "max_abs_usd_per_person": 1.3642420526593924e-12
+ },
+ "displaced_beneficiaries_match_debt_lane_low": {
+  "passed": true,
+  "distribution_lane": 8.811198486338885,
+  "debt_lane": 8.811198
+ },
+ "displaced_beneficiaries_match_debt_lane_high": {
+  "passed": true,
+  "distribution_lane": 8.811198486338885,
+  "debt_lane": 8.811198
+ },
+ "gdp_normalization_is_a_uniform_scale": {
+  "passed": true,
+  "ratios": [
+   1.520176444772577,
+   1.520176444772577,
+   1.520176444772577
+  ]
+ },
+ "account_wages_equal_P_cash": {
+  "passed": true,
+  "cps": -0.4634049812875857,
+  "nest": -0.4634049812875958
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_0": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_1": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_2": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_3": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_4": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_5": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_6": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_7": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_8": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_9": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_10": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_11": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_12": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_13": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_14": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_15": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_16": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_17": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_18": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_19": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_20": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_21": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_22": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_23": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_24": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_25": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_26": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_27": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_28": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_29": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_30": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_14_31": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_0": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_1": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_2": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_3": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_4": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_5": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_6": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_7": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_8": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_9": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_10": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_11": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_12": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_13": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_14": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_15": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_16": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_17": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_18": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_19": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_20": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_21": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_22": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_23": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_24": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_25": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_26": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_27": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_28": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_29": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_30": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_31": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_32": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_33": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_34": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_35": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_36": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_37": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_38": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_39": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_40": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_41": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_42": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_43": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_44": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_45": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_46": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_47": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_48": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_49": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_50": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_51": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_52": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_53": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_54": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_55": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_56": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_57": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_58": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_59": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_60": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_61": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_62": {
+  "passed": true
+ },
+ "wages_equal_engine_P_adopted_2026_10_07_63": {
+  "passed": true
+ },
+ "inside_channels_sum_to_headline_every_specification": {
+  "passed": true,
+  "max_abs_gap_bn": 2.0173729353700764e-10,
+  "specifications": 128
+ },
+ "inside_channels_equal_band_end_low": {
+  "passed": true,
+  "inside": -339.5520183160666,
+  "headline": -339.552017829527,
+  "gap": -4.865395908382197e-07
+ },
+ "inside_channels_equal_band_end_high": {
+  "passed": true,
+  "inside": -423.64926118684565,
+  "headline": -423.649260700507,
+  "gap": -4.863386493525468e-07
+ },
+ "housing_is_ladder_190": {
+  "passed": true,
+  "centrals": [
+   0.7082298460183115,
+   3.507578587187932
+  ],
+  "span": [
+   -0.3792459764252824,
+   9.403795587206028
+  ]
+ },
+ "housing_central_is_base_arm_metro_local": {
+  "passed": true
+ },
+ "housing_central_is_base_arm_national_uniform": {
+  "passed": true
+ },
+ "acs_rent_total_low": {
+  "passed": true,
+  "acs": 50.473428454858905,
+  "lane": 50.473428261833945
+ },
+ "rake_margins_consistent_renters_low": {
+  "passed": true,
+  "states": 50473428261.83394,
+  "cells": 50473428261.83394
+ },
+ "rake_converged_renters_low": {
+  "passed": true,
+  "iterations": 8,
+  "max_cell_gap": 0.10138040781021118,
+  "max_state_gap": 2.47955322265625e-05
+ },
+ "rake_margins_consistent_landlords_low": {
+  "passed": true,
+  "states": 50094182285.40867,
+  "cells": 50094182285.40867
+ },
+ "rake_converged_landlords_low": {
+  "passed": true,
+  "iterations": 16,
+  "max_cell_gap": 0.5259361267089844,
+  "max_state_gap": 1.1444091796875e-05
+ },
+ "acs_rent_total_central": {
+  "passed": true,
+  "acs": 33.85853511457682,
+  "lane": 33.858535114576824
+ },
+ "rake_margins_consistent_renters_central": {
+  "passed": true,
+  "states": 33858535114.576824,
+  "cells": 33858535114.576824
+ },
+ "rake_converged_renters_central": {
+  "passed": true,
+  "iterations": 9,
+  "max_cell_gap": 0.017696380615234375,
+  "max_state_gap": 3.0517578125e-05
+ },
+ "rake_margins_consistent_landlords_central": {
+  "passed": true,
+  "states": 37366113701.76476,
+  "cells": 37366113701.76476
+ },
+ "rake_converged_landlords_central": {
+  "passed": true,
+  "iterations": 13,
+  "max_cell_gap": 0.1969754695892334,
+  "max_state_gap": 1.1444091796875e-05
+ },
+ "acs_rent_total_high": {
+  "passed": true,
+  "acs": 50.07062745258501,
+  "lane": 50.07062745258503
+ },
+ "rake_margins_consistent_renters_high": {
+  "passed": true,
+  "states": 57760637113.5337,
+  "cells": 57760637113.533714
+ },
+ "rake_converged_renters_high": {
+  "passed": true,
+  "iterations": 9,
+  "max_cell_gap": 0.030335068702697754,
+  "max_state_gap": 6.866455078125e-05
+ },
+ "rake_margins_consistent_landlords_high": {
+  "passed": true,
+  "states": 67164432700.739746,
+  "cells": 67164432700.73976
+ },
+ "rake_converged_landlords_high": {
+  "passed": true,
+  "iterations": 13,
+  "max_cell_gap": 0.33874034881591797,
+  "max_state_gap": 3.0517578125e-05
+ },
+ "acs_rent_total_national_uniform_central": {
+  "passed": true,
+  "acs": 33.4749823676848,
+  "lane": 33.47498223794534
+ },
+ "rake_margins_consistent_renters_national_uniform_central": {
+  "passed": true,
+  "states": 33474982237.94534,
+  "cells": 33474982237.945343
+ },
+ "rake_converged_renters_national_uniform_central": {
+  "passed": true,
+  "iterations": 8,
+  "max_cell_gap": 0.0672379732131958,
+  "max_state_gap": 9.5367431640625e-06
+ },
+ "rake_margins_consistent_landlords_national_uniform_central": {
+  "passed": true,
+  "states": 34183212083.96366,
+  "cells": 34183212083.963657
+ },
+ "rake_converged_landlords_national_uniform_central": {
+  "passed": true,
+  "iterations": 16,
+  "max_cell_gap": 0.35887718200683594,
+  "max_state_gap": 4.76837158203125e-06
+ },
+ "rake_margins_consistent_owner_value_low": {
+  "passed": true,
+  "states": 1263878523280.3801,
+  "cells": 1263878523280.3801
+ },
+ "rake_converged_owner_value_low": {
+  "passed": true,
+  "iterations": 8,
+  "max_cell_gap": 3.3616714477539062,
+  "max_state_gap": 0.0003662109375
+ },
+ "rake_margins_consistent_owner_value_central": {
+  "passed": true,
+  "states": 1931639831911.6448,
+  "cells": 1931639831911.645
+ },
+ "rake_converged_owner_value_central": {
+  "passed": true,
+  "iterations": 8,
+  "max_cell_gap": 5.1837310791015625,
+  "max_state_gap": 0.00341796875
+ },
+ "rake_margins_consistent_owner_value_high": {
+  "passed": true,
+  "states": 2855411988375.14,
+  "cells": 2855411988375.1396
+ },
+ "rake_converged_owner_value_high": {
+  "passed": true,
+  "iterations": 8,
+  "max_cell_gap": 7.7470703125,
+  "max_state_gap": 0.008544921875
+ },
+ "congestion_ua_states": {
+  "passed": true,
+  "missing": 0
+ },
+ "congestion_states_sum": {
+  "passed": true,
+  "states": 19.162711110731028,
+  "lane": 19.162711110731056
+ },
+ "congestion_long_run_starts_from_b1": {
+  "passed": true,
+  "lane": [
+   19.162711110731056,
+   8.047943973203898,
+   35.25151421805585
+  ]
+ },
+ "congestion_long_run_area_states": {
+  "passed": true,
+  "missing": 0
+ },
+ "congestion_long_run_reproduces_b1_by_state": {
+  "passed": true,
+  "total": 19.16271111073105,
+  "max_state_gap_bn": 7.993605777301127e-15
+ },
+ "congestion_long_run_low_end_reproduced": {
+  "passed": true,
+  "states": 13.992562864050909,
+  "arm": 13.992562864050909,
+  "lane": 13.992562864050909
+ },
+ "congestion_long_run_high_end_reproduced": {
+  "passed": true,
+  "states": 12.01805628378483,
+  "arm": 12.01805628378483,
+  "lane": 12.01805628378483
+ },
+ "preferences_group_part_reproduced": {
+  "passed": true,
+  "parts": 0.5840280500000001,
+  "lane": 0.58
+ },
+ "preferences_cps_nat_ba_reproduced": {
+  "passed": true,
+  "frame": 0.9358894436295399,
+  "lane": 0.936
+ },
+ "preferences_cps_emp_wn_ba_reproduced": {
+  "passed": true,
+  "frame": 0.9004919471418685,
+  "lane": 0.9
+ },
+ "preferences_cps_e_wn_ba_reproduced": {
+  "passed": true,
+  "frame": 111719.46705564394,
+  "lane": 111719.0
+ },
+ "preferences_cps_nat_w_reproduced": {
+  "passed": true,
+  "frame": 0.9496498224643521,
+  "lane": 0.95
+ },
+ "preferences_cps_white_of_nonpref_reproduced": {
+  "passed": true,
+  "frame": 0.8535828192743113,
+  "lane": 0.854
+ },
+ "preferences_cps_se_wn_reproduced": {
+  "passed": true,
+  "frame": 0.6703887073787014,
+  "lane": 0.67
+ },
+ "preferences_cps_tax_wn_reproduced": {
+  "passed": true,
+  "frame": 0.6335305819914402,
+  "lane": 0.634
+ },
+ "preferences_admissions_boundary_E_reproduced": {
+  "passed": true,
+  "crossings": 1092.840593581396,
+  "lane_crossings": 1093.0,
+  "per_worker": 21886.679012458615,
+  "lane_per_worker": 21887.0
+ },
+ "preferences_admissions_boundary_S_reproduced": {
+  "passed": true,
+  "crossings": 4150.924851116568,
+  "lane_crossings": 4151.0,
+  "per_worker": 3018.0744126776594,
+  "lane_per_worker": 3018.0
+ },
+ "preferences_dbe_premium_row_unique": {
+  "passed": true,
+  "rows": 1
+ },
+ "mobility_parts_add_low": {
+  "passed": true,
+  "parts": 0.1808228774287499,
+  "total": 0.1808228774287499
+ },
+ "mobility_parts_add_central": {
+  "passed": true,
+  "parts": 0.6548831113416558,
+  "total": 0.6548831113416558
+ },
+ "mobility_parts_add_high": {
+  "passed": true,
+  "parts": 2.4617874844936827,
+  "total": 2.4617874844936827
+ },
+ "scale_metro_states": {
+  "passed": true,
+  "missing": 0
+ },
+ "property_crime_proxy_reproduced": {
+  "passed": true,
+  "mccollister2010": 1.3762198638057002,
+  "miller2021": 1.2726508536391001
+ },
+ "care_hours_central_row_unique": {
+  "passed": true,
+  "rows": 1
+ },
+ "care_hours_taxes_match_summary": {
+  "passed": true,
+  "specs": 2.688622998456876,
+  "summary": 2.688622998456876
+ },
+ "census_divisions_cover_states": {
+  "passed": true
+ },
+ "debt_legacy_pinned_oct14": {
+  "passed": true,
+  "low": 25.947051,
+  "high": 41.937112
+ },
+ "debt_legacy_pinned_oct07": {
+  "passed": true,
+  "low": 31.823258,
+  "high": 44.169319
+ },
+ "debt_legacy_is_oct14_case": {
+  "passed": true,
+  "lane": [
+   339.55201782952685,
+   423.64926070050683
+  ],
+  "engine": [
+   339.552017829527,
+   423.649260700507
+  ]
+ },
+ "closure_fiscal_federal_today_a_low": {
+  "passed": true,
+  "persons": -14.279112023190194,
+  "total": -14.279112023190192
+ },
+ "closure_fiscal_federal_today_a_central": {
+  "passed": true,
+  "persons": -28.99128588312785,
+  "total": -28.991285883127844
+ },
+ "closure_fiscal_federal_today_a_high": {
+  "passed": true,
+  "persons": -43.703459743065494,
+  "total": -43.70345974306549
+ },
+ "closure_fiscal_state_local_a_low": {
+  "passed": true,
+  "persons": -235.6894034927841,
+  "total": -235.68940349278404
+ },
+ "closure_fiscal_state_local_a_central": {
+  "passed": true,
+  "persons": -257.90372810600167,
+  "total": -257.9037281060016
+ },
+ "closure_fiscal_state_local_a_high": {
+  "passed": true,
+  "persons": -280.11805271921924,
+  "total": -280.1180527192192
+ },
+ "closure_fiscal_a_low": {
+  "passed": true,
+  "persons": -249.96851551597425,
+  "total": -249.96851551597422
+ },
+ "closure_fiscal_a_central": {
+  "passed": true,
+  "persons": -286.8950139891295,
+  "total": -286.89501398912944
+ },
+ "closure_fiscal_a_high": {
+  "passed": true,
+  "persons": -323.8215124622847,
+  "total": -323.82151246228466
+ },
+ "closure_fiscal_cash_a_low": {
+  "passed": true,
+  "persons": -212.8523615159743,
+  "total": -212.85236151597428
+ },
+ "closure_fiscal_cash_a_central": {
+  "passed": true,
+  "persons": -237.80480898912953,
+  "total": -237.8048089891295
+ },
+ "closure_fiscal_cash_a_high": {
+  "passed": true,
+  "persons": -262.7572564622847,
+  "total": -262.75725646228466
+ },
+ "closure_fiscal_resource_a_low": {
+  "passed": true,
+  "persons": -37.11615400000001,
+  "total": -37.116154
+ },
+ "closure_fiscal_resource_a_central": {
+  "passed": true,
+  "persons": -49.090205,
+  "total": -49.090205
+ },
+ "closure_fiscal_resource_a_high": {
+  "passed": true,
+  "persons": -61.06425600000001,
+  "total": -61.064256
+ },
+ "closure_fiscal_federal_today_b_low": {
+  "passed": true,
+  "persons": -14.279112023190194,
+  "total": -14.279112023190192
+ },
+ "closure_fiscal_federal_today_b_central": {
+  "passed": true,
+  "persons": -28.991285883127855,
+  "total": -28.991285883127844
+ },
+ "closure_fiscal_federal_today_b_high": {
+  "passed": true,
+  "persons": -43.703459743065494,
+  "total": -43.70345974306549
+ },
+ "closure_fiscal_state_local_b_low": {
+  "passed": true,
+  "persons": -235.68940349278407,
+  "total": -235.68940349278404
+ },
+ "closure_fiscal_state_local_b_central": {
+  "passed": true,
+  "persons": -257.90372810600167,
+  "total": -257.9037281060016
+ },
+ "closure_fiscal_state_local_b_high": {
+  "passed": true,
+  "persons": -280.11805271921924,
+  "total": -280.1180527192192
+ },
+ "closure_fiscal_b_low": {
+  "passed": true,
+  "persons": -249.96851551597425,
+  "total": -249.96851551597422
+ },
+ "closure_fiscal_b_central": {
+  "passed": true,
+  "persons": -286.8950139891295,
+  "total": -286.89501398912944
+ },
+ "closure_fiscal_b_high": {
+  "passed": true,
+  "persons": -323.82151246228466,
+  "total": -323.82151246228466
+ },
+ "closure_fiscal_cash_b_low": {
+  "passed": true,
+  "persons": -212.8523615159743,
+  "total": -212.85236151597428
+ },
+ "closure_fiscal_cash_b_central": {
+  "passed": true,
+  "persons": -237.80480898912953,
+  "total": -237.8048089891295
+ },
+ "closure_fiscal_cash_b_high": {
+  "passed": true,
+  "persons": -262.75725646228466,
+  "total": -262.75725646228466
+ },
+ "closure_fiscal_resource_b_low": {
+  "passed": true,
+  "persons": -37.11615400000001,
+  "total": -37.116154
+ },
+ "closure_fiscal_resource_b_central": {
+  "passed": true,
+  "persons": -49.090205,
+  "total": -49.090205
+ },
+ "closure_fiscal_resource_b_high": {
+  "passed": true,
+  "persons": -61.064256000000015,
+  "total": -61.064256
+ },
+ "closure_displaced_beneficiaries_low": {
+  "passed": true,
+  "persons": -8.811198486338887,
+  "total": -8.811198486338885
+ },
+ "closure_displaced_beneficiaries_central": {
+  "passed": true,
+  "persons": -8.811198486338887,
+  "total": -8.811198486338885
+ },
+ "closure_displaced_beneficiaries_high": {
+  "passed": true,
+  "persons": -8.811198486338887,
+  "total": -8.811198486338885
+ },
+ "closure_displaced_housing_subsidies_low": {
+  "passed": true,
+  "persons": -4.488824290011592,
+  "total": -4.488824290011592
+ },
+ "closure_displaced_housing_subsidies_central": {
+  "passed": true,
+  "persons": -4.488824290011592,
+  "total": -4.488824290011592
+ },
+ "closure_displaced_housing_subsidies_high": {
+  "passed": true,
+  "persons": -4.488824290011592,
+  "total": -4.488824290011592
+ },
+ "closure_displaced_energy_assistance_low": {
+  "passed": true,
+  "persons": -0.6045528356789629,
+  "total": -0.6045528356789629
+ },
+ "closure_displaced_energy_assistance_central": {
+  "passed": true,
+  "persons": -0.6045528356789629,
+  "total": -0.6045528356789629
+ },
+ "closure_displaced_energy_assistance_high": {
+  "passed": true,
+  "persons": -0.6045528356789629,
+  "total": -0.6045528356789629
+ },
+ "closure_displaced_housing_enterprise_surplus_low": {
+  "passed": true,
+  "persons": -3.7178213606483306,
+  "total": -3.7178213606483306
+ },
+ "closure_displaced_housing_enterprise_surplus_central": {
+  "passed": true,
+  "persons": -3.7178213606483306,
+  "total": -3.7178213606483306
+ },
+ "closure_displaced_housing_enterprise_surplus_high": {
+  "passed": true,
+  "persons": -3.7178213606483306,
+  "total": -3.7178213606483306
+ },
+ "closure_fiscal_a_pooled_national_low": {
+  "passed": true,
+  "persons": -249.96851551597422,
+  "total": -249.96851551597422
+ },
+ "closure_fiscal_a_pooled_national_central": {
+  "passed": true,
+  "persons": -286.89501398912944,
+  "total": -286.89501398912944
+ },
+ "closure_fiscal_a_pooled_national_high": {
+  "passed": true,
+  "persons": -323.82151246228466,
+  "total": -323.82151246228466
+ },
+ "closure_fiscal_b_pooled_national_low": {
+  "passed": true,
+  "persons": -249.96851551597425,
+  "total": -249.96851551597422
+ },
+ "closure_fiscal_b_pooled_national_central": {
+  "passed": true,
+  "persons": -286.8950139891295,
+  "total": -286.89501398912944
+ },
+ "closure_fiscal_b_pooled_national_high": {
+  "passed": true,
+  "persons": -323.82151246228466,
+  "total": -323.82151246228466
+ },
+ "closure_wages_low": {
+  "passed": true,
+  "persons": -0.7044573369436655,
+  "total": -0.7044573369436655
+ },
+ "closure_wages_central": {
+  "passed": true,
+  "persons": -0.5839311591156273,
+  "total": -0.5839311591156273
+ },
+ "closure_wages_high": {
+  "passed": true,
+  "persons": -0.4634049812875857,
+  "total": -0.4634049812875857
+ },
+ "closure_wages_eps3_low": {
+  "passed": true,
+  "persons": 5.859398762083674,
+  "total": 5.859398762083674
+ },
+ "closure_wages_eps3_central": {
+  "passed": true,
+  "persons": 4.8569094697892154,
+  "total": 4.8569094697892154
+ },
+ "closure_wages_eps3_high": {
+  "passed": true,
+  "persons": 3.8544201774947626,
+  "total": 3.8544201774947626
+ },
+ "closure_wages_eps3_receipts_a_low": {
+  "passed": true,
+  "persons": 4.390187786088735,
+  "total": 4.390187786088735
+ },
+ "closure_wages_eps3_receipts_a_central": {
+  "passed": true,
+  "persons": 3.639066992667166,
+  "total": 3.639066992667166
+ },
+ "closure_wages_eps3_receipts_a_high": {
+  "passed": true,
+  "persons": 2.8879461992455977,
+  "total": 2.8879461992455973
+ },
+ "closure_wages_eps3_receipts_b_low": {
+  "passed": true,
+  "persons": 4.3901877860887355,
+  "total": 4.390187786088735
+ },
+ "closure_wages_eps3_receipts_b_central": {
+  "passed": true,
+  "persons": 3.639066992667166,
+  "total": 3.639066992667166
+ },
+ "closure_wages_eps3_receipts_b_high": {
+  "passed": true,
+  "persons": 2.887946199245597,
+  "total": 2.8879461992455973
+ },
+ "closure_wages_below_ba_cash_low": {
+  "passed": true,
+  "persons": -1.654576997876615,
+  "total": -1.654576997876615
+ },
+ "closure_wages_below_ba_cash_central": {
+  "passed": true,
+  "persons": -1.654576997876615,
+  "total": -1.654576997876615
+ },
+ "closure_wages_below_ba_cash_high": {
+  "passed": true,
+  "persons": -1.654576997876615,
+  "total": -1.654576997876615
+ },
+ "closure_renters_low": {
+  "passed": true,
+  "persons": -50.473428261833895,
+  "total": -50.473428261833945
+ },
+ "closure_renters_central": {
+  "passed": true,
+  "persons": -33.85853511457685,
+  "total": -33.858535114576824
+ },
+ "closure_renters_high": {
+  "passed": true,
+  "persons": -57.760637113533676,
+  "total": -57.760637113533704
+ },
+ "closure_landlords_low": {
+  "passed": true,
+  "persons": 50.09418228540867,
+  "total": 50.094182285408664
+ },
+ "closure_landlords_central": {
+  "passed": true,
+  "persons": 37.36611370176476,
+  "total": 37.36611370176475
+ },
+ "closure_landlords_high": {
+  "passed": true,
+  "persons": 67.16443270073971,
+  "total": 67.16443270073974
+ },
+ "closure_renters_national_uniform_low": {
+  "passed": true,
+  "persons": -33.474982237945326,
+  "total": -33.47498223794534
+ },
+ "closure_renters_national_uniform_central": {
+  "passed": true,
+  "persons": -33.474982237945326,
+  "total": -33.47498223794534
+ },
+ "closure_renters_national_uniform_high": {
+  "passed": true,
+  "persons": -33.474982237945326,
+  "total": -33.47498223794534
+ },
+ "closure_landlords_national_uniform_low": {
+  "passed": true,
+  "persons": 34.18321208396366,
+  "total": 34.18321208396365
+ },
+ "closure_landlords_national_uniform_central": {
+  "passed": true,
+  "persons": 34.18321208396366,
+  "total": 34.18321208396365
+ },
+ "closure_landlords_national_uniform_high": {
+  "passed": true,
+  "persons": 34.18321208396366,
+  "total": 34.18321208396365
+ },
+ "closure_owner_value_stock_low": {
+  "passed": true,
+  "persons": 1263.8785232803807,
+  "total": 1263.8785232803805
+ },
+ "closure_owner_value_stock_central": {
+  "passed": true,
+  "persons": 1931.639831911645,
+  "total": 1931.6398319116452
+ },
+ "closure_owner_value_stock_high": {
+  "passed": true,
+  "persons": 2855.411988375143,
+  "total": 2855.4119883751405
+ },
+ "closure_crime_victims_low": {
+  "passed": true,
+  "persons": -15.409900000000002,
+  "total": -15.4099
+ },
+ "closure_crime_victims_central": {
+  "passed": true,
+  "persons": -30.927388000000008,
+  "total": -30.927388
+ },
+ "closure_crime_victims_high": {
+  "passed": true,
+  "persons": -45.3424,
+  "total": -45.3424
+ },
+ "closure_crime_victims_equal_footing_low": {
+  "passed": true,
+  "persons": -28.9228851746268,
+  "total": -28.9228851746268
+ },
+ "closure_crime_victims_equal_footing_central": {
+  "passed": true,
+  "persons": -28.9228851746268,
+  "total": -28.9228851746268
+ },
+ "closure_crime_victims_equal_footing_high": {
+  "passed": true,
+  "persons": -28.9228851746268,
+  "total": -28.9228851746268
+ },
+ "closure_crime_victims_custody_footing_low": {
+  "passed": true,
+  "persons": -32.3381,
+  "total": -32.3381
+ },
+ "closure_crime_victims_custody_footing_central": {
+  "passed": true,
+  "persons": -32.3381,
+  "total": -32.3381
+ },
+ "closure_crime_victims_custody_footing_high": {
+  "passed": true,
+  "persons": -32.3381,
+  "total": -32.3381
+ },
+ "closure_crime_victims_national_key_low": {
+  "passed": true,
+  "persons": -30.927388,
+  "total": -30.927388
+ },
+ "closure_crime_victims_national_key_central": {
+  "passed": true,
+  "persons": -30.927388,
+  "total": -30.927388
+ },
+ "closure_crime_victims_national_key_high": {
+  "passed": true,
+  "persons": -30.927388,
+  "total": -30.927388
+ },
+ "closure_unreimbursed_care_low": {
+  "passed": true,
+  "persons": -3.243500000000001,
+  "total": -3.2435
+ },
+ "closure_unreimbursed_care_central": {
+  "passed": true,
+  "persons": -4.400800000000001,
+  "total": -4.4008
+ },
+ "closure_unreimbursed_care_high": {
+  "passed": true,
+  "persons": -5.5581,
+  "total": -5.5581
+ },
+ "closure_congestion_low": {
+  "passed": true,
+  "persons": -2.0148618745196165,
+  "total": -2.014861874519616
+ },
+ "closure_congestion_central": {
+  "passed": true,
+  "persons": -13.00530957391787,
+  "total": -13.00530957391787
+ },
+ "closure_congestion_high": {
+  "passed": true,
+  "persons": -30.828298311580394,
+  "total": -30.828298311580394
+ },
+ "closure_preferences_group_part_low": {
+  "passed": true,
+  "persons": -0.009955371844455394,
+  "total": -0.009955371844455392
+ },
+ "closure_preferences_group_part_central": {
+  "passed": true,
+  "persons": -0.5774115669784129,
+  "total": -0.5774115669784127
+ },
+ "closure_preferences_group_part_high": {
+  "passed": true,
+  "persons": -3.7432198135152284,
+  "total": -3.7432198135152275
+ },
+ "closure_preferences_group_part_others_low": {
+  "passed": true,
+  "persons": -0.01670050506219095,
+  "total": -0.01670050506219095
+ },
+ "closure_preferences_group_part_others_central": {
+  "passed": true,
+  "persons": -0.9686292936070755,
+  "total": -0.9686292936070753
+ },
+ "closure_preferences_group_part_others_high": {
+  "passed": true,
+  "persons": -6.279389903383799,
+  "total": -6.279389903383798
+ },
+ "closure_preferences_regime_low": {
+  "passed": true,
+  "persons": -0.1754,
+  "total": -0.1754
+ },
+ "closure_preferences_regime_central": {
+  "passed": true,
+  "persons": -3.955100000000001,
+  "total": -3.9551000000000003
+ },
+ "closure_preferences_regime_high": {
+  "passed": true,
+  "persons": -18.6984,
+  "total": -18.6984
+ },
+ "closure_mobility_low": {
+  "passed": true,
+  "persons": 0.18082287742874986,
+  "total": 0.1808228774287499
+ },
+ "closure_mobility_central": {
+  "passed": true,
+  "persons": 0.6548831113416558,
+  "total": 0.6548831113416558
+ },
+ "closure_mobility_high": {
+  "passed": true,
+  "persons": 2.4617874844936822,
+  "total": 2.4617874844936827
+ },
+ "closure_scale_private_low": {
+  "passed": true,
+  "persons": -32.36224349842154,
+  "total": -32.36224349842155
+ },
+ "closure_scale_private_central": {
+  "passed": true,
+  "persons": 7.9677318191162785,
+  "total": 7.967731819116281
+ },
+ "closure_scale_private_high": {
+  "passed": true,
+  "persons": 48.2977071366541,
+  "total": 48.29770713665411
+ },
+ "closure_scale_receipts_a_low": {
+  "passed": true,
+  "persons": -24.20643639344344,
+  "total": -24.20643639344344
+ },
+ "closure_scale_receipts_a_central": {
+  "passed": true,
+  "persons": 5.959734945102332,
+  "total": 5.959734945102332
+ },
+ "closure_scale_receipts_a_high": {
+  "passed": true,
+  "persons": 36.125906283648106,
+  "total": 36.125906283648106
+ },
+ "closure_scale_receipts_b_low": {
+  "passed": true,
+  "persons": -24.206436393443443,
+  "total": -24.20643639344344
+ },
+ "closure_scale_receipts_b_central": {
+  "passed": true,
+  "persons": 5.959734945102332,
+  "total": 5.959734945102332
+ },
+ "closure_scale_receipts_b_high": {
+  "passed": true,
+  "persons": 36.125906283648106,
+  "total": 36.125906283648106
+ },
+ "closure_property_crime_low": {
+  "passed": true,
+  "persons": -1.2726508536391001,
+  "total": -1.2726508536391001
+ },
+ "closure_property_crime_central": {
+  "passed": true,
+  "persons": -1.2726508536391001,
+  "total": -1.2726508536391001
+ },
+ "closure_property_crime_high": {
+  "passed": true,
+  "persons": -1.3762198638057002,
+  "total": -1.3762198638057002
+ },
+ "closure_care_women_after_tax_earnings_low": {
+  "passed": true,
+  "persons": 3.622698594164899,
+  "total": 3.6226985941648984
+ },
+ "closure_care_women_after_tax_earnings_central": {
+  "passed": true,
+  "persons": 3.622698594164899,
+  "total": 3.6226985941648984
+ },
+ "closure_care_women_after_tax_earnings_high": {
+  "passed": true,
+  "persons": 3.622698594164899,
+  "total": 3.6226985941648984
+ },
+ "closure_consumer_prices_low": {
+  "passed": true,
+  "persons": 23.76338307391988,
+  "total": 23.76338307391988
+ },
+ "closure_consumer_prices_central": {
+  "passed": true,
+  "persons": 23.76338307391988,
+  "total": 23.76338307391988
+ },
+ "closure_consumer_prices_high": {
+  "passed": true,
+  "persons": 23.76338307391988,
+  "total": 23.76338307391988
+ },
+ "closure_debt_legacy_a_low": {
+  "passed": true,
+  "persons": -25.947051000000005,
+  "total": -25.947051
+ },
+ "closure_debt_legacy_a_central": {
+  "passed": true,
+  "persons": -33.9420815,
+  "total": -33.9420815
+ },
+ "closure_debt_legacy_a_high": {
+  "passed": true,
+  "persons": -41.937112000000006,
+  "total": -41.937112
+ },
+ "closure_debt_legacy_b_low": {
+  "passed": true,
+  "persons": -25.947051,
+  "total": -25.947051
+ },
+ "closure_debt_legacy_b_central": {
+  "passed": true,
+  "persons": -33.9420815,
+  "total": -33.9420815
+ },
+ "closure_debt_legacy_b_high": {
+  "passed": true,
+  "persons": -41.937112,
+  "total": -41.937112
+ },
+ "published_totals_on_their_bands": {
+  "passed": true,
+  "custody_fiscal": [
+   339.552018,
+   423.649261
+  ],
+  "equal_fiscal": [
+   334.779828,
+   418.844137
+  ],
+  "justice_raw_coding": [
+   334.779828375149,
+   418.844137451089
+  ]
+ },
+ "frame_vs_base_control_wages_below_ba": {
+  "passed": true,
+  "max_abs_diff_bn": 3.552713678800501e-15
+ },
+ "frame_vs_base_control_displaced_beneficiaries": {
+  "passed": true,
+  "max_abs_diff_bn": 9.522005579853943e-17
+ },
+ "census_industry_crosswalk_parsed": {
+  "passed": true,
+  "rows": 344
+ },
+ "sister_allocated_rows_on_account_counterfactual": {
+  "passed": true,
+  "allocated": 0,
+  "off_counterfactual": []
+ },
+ "closure_net_account_a_central": {
+  "passed": true
+ },
+ "closure_net_account_a_least_costly": {
+  "passed": true
+ },
+ "closure_net_account_a_most_costly": {
+  "passed": true
+ },
+ "closure_net_account_b_central": {
+  "passed": true
+ },
+ "closure_net_account_b_least_costly": {
+  "passed": true
+ },
+ "closure_net_account_b_most_costly": {
+  "passed": true
+ },
+ "closure_net_social_a_central": {
+  "passed": true
+ },
+ "closure_net_social_a_least_costly": {
+  "passed": true
+ },
+ "closure_net_social_a_most_costly": {
+  "passed": true
+ },
+ "closure_net_social_b_central": {
+  "passed": true
+ },
+ "closure_net_social_b_least_costly": {
+  "passed": true
+ },
+ "closure_net_social_b_most_costly": {
+  "passed": true
+ },
+ "closure_net_with_proposed_a_central": {
+  "passed": true
+ },
+ "closure_net_with_proposed_a_least_costly": {
+  "passed": true
+ },
+ "closure_net_with_proposed_a_most_costly": {
+  "passed": true
+ },
+ "closure_net_with_proposed_b_central": {
+  "passed": true
+ },
+ "closure_net_with_proposed_b_least_costly": {
+  "passed": true
+ },
+ "closure_net_with_proposed_b_most_costly": {
+  "passed": true
+ },
+ "account_net_plus_future_equals_headline_a": {
+  "passed": true,
+  "persons": -296.29014363458396,
+  "future": 85.31049611687217,
+  "headline": -381.600639265017,
+  "gap": -4.864391485170927e-07
+ },
+ "account_net_plus_future_equals_headline_b": {
+  "passed": true,
+  "persons": -296.29014363458396,
+  "future": 85.31049611687217,
+  "headline": -381.600639265017,
+  "gap": -4.864391485170927e-07
+ },
+ "closure_net_social_a_pooled_national_fiscal_central": {
+  "passed": true
+ },
+ "closure_net_social_a_housing_national_uniform_central": {
+  "passed": true
+ },
+ "closure_net_social_a_crime_custody_footing_central": {
+  "passed": true
+ },
+ "closure_net_social_b_pooled_national_fiscal_central": {
+  "passed": true
+ },
+ "closure_net_social_b_housing_national_uniform_central": {
+  "passed": true
+ },
+ "closure_net_social_b_crime_custody_footing_central": {
+  "passed": true
+ },
+ "spm_units_nest_in_households": {
+  "passed": true
+ },
+ "spm_pooling_keeps_every_channel_total": {
+  "passed": true,
+  "channels": 44,
+  "levels": 3,
+  "worst_bn": 6.103515625e-14,
+  "at": "fiscal_b_pooled_national:high"
+ },
+ "closure_pooled_net_account_a_central": {
+  "passed": true
+ },
+ "closure_pooled_net_account_a_least_costly": {
+  "passed": true
+ },
+ "closure_pooled_net_account_a_most_costly": {
+  "passed": true
+ },
+ "closure_pooled_net_account_b_central": {
+  "passed": true
+ },
+ "closure_pooled_net_account_b_least_costly": {
+  "passed": true
+ },
+ "closure_pooled_net_account_b_most_costly": {
+  "passed": true
+ },
+ "closure_pooled_net_social_a_central": {
+  "passed": true
+ },
+ "closure_pooled_net_social_a_least_costly": {
+  "passed": true
+ },
+ "closure_pooled_net_social_a_most_costly": {
+  "passed": true
+ },
+ "closure_pooled_net_social_b_central": {
+  "passed": true
+ },
+ "closure_pooled_net_social_b_least_costly": {
+  "passed": true
+ },
+ "closure_pooled_net_social_b_most_costly": {
+  "passed": true
+ },
+ "closure_pooled_net_with_proposed_a_central": {
+  "passed": true
+ },
+ "closure_pooled_net_with_proposed_a_least_costly": {
+  "passed": true
+ },
+ "closure_pooled_net_with_proposed_a_most_costly": {
+  "passed": true
+ },
+ "closure_pooled_net_with_proposed_b_central": {
+  "passed": true
+ },
+ "closure_pooled_net_with_proposed_b_least_costly": {
+  "passed": true
+ },
+ "closure_pooled_net_with_proposed_b_most_costly": {
+  "passed": true
+ },
+ "cuts_sum_to_frame_quintile": {
+  "passed": true,
+  "max_abs_diff_bn": 3.637978807091713e-12,
+  "arrays": 174
+ },
+ "cuts_sum_to_frame_decile": {
+  "passed": true,
+  "max_abs_diff_bn": 1.8189894035458565e-12,
+  "arrays": 174
+ },
+ "cuts_sum_to_frame_edu_nativity": {
+  "passed": true,
+  "max_abs_diff_bn": 2.0463630789890885e-12,
+  "arrays": 174
+ },
+ "cuts_sum_to_frame_tenure": {
+  "passed": true,
+  "max_abs_diff_bn": 2.6830093702301383e-11,
+  "arrays": 174
+ },
+ "cuts_sum_to_frame_age3": {
+  "passed": true,
+  "max_abs_diff_bn": 5.9117155615240335e-12,
+  "arrays": 174
+ },
+ "cuts_sum_to_frame_race5": {
+  "passed": true,
+  "max_abs_diff_bn": 5.9117155615240335e-12,
+  "arrays": 174
+ },
+ "cuts_sum_to_frame_state3": {
+  "passed": true,
+  "max_abs_diff_bn": 1.318767317570746e-11,
+  "arrays": 174
+ },
+ "cuts_sum_to_frame_top10_states": {
+  "passed": true,
+  "max_abs_diff_bn": 1.2732925824820995e-11,
+  "arrays": 174
+ },
+ "cuts_sum_to_frame_sex": {
+  "passed": true,
+  "max_abs_diff_bn": 4.547473508864641e-12,
+  "arrays": 174
+ },
+ "cuts_sum_to_frame_worker": {
+  "passed": true,
+  "max_abs_diff_bn": 3.183231456205249e-12,
+  "arrays": 174
+ },
+ "cuts_sum_to_frame_industry5": {
+  "passed": true,
+  "max_abs_diff_bn": 3.183231456205249e-12,
+  "arrays": 174
+ },
+ "row4_group_grid_file_is_the_payload_s": {
+  "passed": true,
+  "file": "main_case_candidate_2026_09_28/derived/production_row4.json"
+ },
+ "row4_group_naturalized_is_the_grid_file_s": {
+  "passed": true,
+  "records": 943,
+  "frame": 1677809.80045101,
+  "grid_file": 1677809.80045101
+ },
+ "row4_group_naturalized_moves_only_the_group": {
+  "passed": true
+ },
+ "row4_group_noncitizen_is_the_grid_file_s": {
+  "passed": true,
+  "records": 2139,
+  "frame": 4250103.13255449,
+  "grid_file": 4250103.13255449
+ },
+ "row4_group_noncitizen_moves_only_the_group": {
+  "passed": true
+ },
+ "row4_group_count_is_the_account_s": {
+  "passed": true,
+  "frame": 39712493.33118789,
+  "account": 39712493.33118789
+ },
+ "lineage_group_union_is_the_account_s": {
+  "passed": true,
+  "frame": 39712493.33118789,
+  "account": 39712493.3312
+ },
+ "lineage_group_g3plus_is_the_identified_g3plus": {
+  "passed": true,
+  "frame": 14342574.60627561,
+  "case": 14342574.606276,
+  "records": 6351
+ },
+ "age_mix_bands_are_five_years_to_an_open_top": {
+  "passed": true,
+  "bands": [
+   "0-4",
+   "5-9",
+   "10-14",
+   "15-19",
+   "20-24",
+   "25-29",
+   "30-34",
+   "35-39",
+   "40-44",
+   "45-49",
+   "50-54",
+   "55-59",
+   "60-64",
+   "65-69",
+   "70-74",
+   "75-79",
+   "80+"
+  ]
+ },
+ "age_mix_parts_add_to_the_added": {
+  "passed": true,
+  "parts": {
+   "g3_rate": 1944891.7263696424,
+   "later": 1094827.8668155947
+  },
+  "added": 3039719.593185237
+ },
+ "age_mix_bands_hold_identified_records": {
+  "passed": true,
+  "empty_bands": []
+ },
+ "age_mix_added_people_by_band_are_the_case_s": {
+  "passed": true,
+  "max_rel_diff": 7.06768973628028e-16
+ },
+ "age_mix_identified_mix_is_the_frame_s": {
+  "passed": true,
+  "max_abs_diff": 1.3833450038247541e-08
+ },
+ "lineage_group_count_is_the_lineage": {
+  "passed": true,
+  "frame": 42752212.92437313,
+  "lineage": 42752212.92438524,
+  "g3plus_frame": 17382294.19946085,
+  "g3plus_generation_split": 17382294.199461
+ },
+ "lineage_group_moves_only_g3plus": {
+  "passed": true
+ },
+ "lineage_counterfactual_label_counts": {
+  "passed": true,
+  "label": "2024, with vs without the 42.8m people of Mexican-origin lineage the account prices: the 39.7m who report Mexican origin (audit row 4) and 3.0m descendants who no longer do, counted whole (stationary)",
+  "counts": [
+   "42.8m",
+   "39.7m",
+   "3.0m"
+  ]
+ },
+ "generation_split_adds_to_band_a_low": {
+  "passed": true,
+  "generations": 339.552018,
+  "band": 339.552017829527
+ },
+ "generation_split_adds_to_band_a_high": {
+  "passed": true,
+  "generations": 423.649261,
+  "band": 423.649260700507
+ },
+ "generation_split_adds_to_band_b_low": {
+  "passed": true,
+  "generations": 339.552017,
+  "band": 339.552017829527
+ },
+ "generation_split_adds_to_band_b_high": {
+  "passed": true,
+  "generations": 423.649262,
+  "band": 423.649260700507
+ },
+ "crime_outside_cost_rows_reproduced": {
+  "passed": true
+ },
+ "corridor_needs_over_3x_surveyed_amounts": {
+  "passed": true,
+  "ratio": 3.3477065393964316,
+  "cemla_usd": 6035.0
+ },
+ "banxico_ce167_2024": {
+  "passed": true,
+  "quarters": 4,
+  "us_bn": 62.794313403,
+  "total_bn": 65.01683633,
+  "lane_us_bn": 62.794
+ },
+ "registry_inside_rows_sum_to_main_case": {
+  "passed": true,
+  "inside": {
+   "low": -339.5520183160666,
+   "central": -381.60063975145613,
+   "high": -423.6492611868456
+  },
+  "main_case": {
+   "low": -339.552017829527,
+   "high": -423.649260700507,
+   "central": -381.600639265017
+  }
+ }
+}

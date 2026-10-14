@@ -1,6 +1,6 @@
 /* The adopted main case, specification by specification, split into the engine's three terms.
  *
- * For a case (--case, default sept27) this evaluates the explorer engine at each of the 64
+ * For a case (--case, default oct14) this evaluates the explorer engine at each of the package's
  * main-case specifications of the case and of the case before it, and writes the direct fiscal
  * response A, the private production term P and the induced receipts F. welfare = P + A + F, and the
  * cost to other residents is -welfare. winners_losers.py puts A + F in the fiscal channel and P in the
@@ -27,6 +27,8 @@
  *   --case oct07           adopted_2026_10_05 (its lane's package, at its band variant oct05_case in OCT07_LANE's
  *                          main_case_bands.csv) and adopted_2026_10_07 (OCT07_LANE: main case v6, v5 plus the items in
  *                          its payload's meta.items), written to derived/oct07/.
+ * Live case oct14 writes only derived/oct14/: frozen v6 at its own ends as the positive control,
+ * then v7 on its 32 personal MAIN_SPECS. Receipt overrides take the specification's reading (R7).
  * A payload's line responses are the meta.responses entries with a low and a high other than general government
  * (a receipt under its override id): four on September 27, thirteen on September 29.
  * The specification grid and responses come from the packages, whose MAIN_SPECS carry the responses
@@ -68,6 +70,7 @@ const FISCAL = path.join(HERE, "..");
 const SEPT29_LANE = "main_case_2026_09_29";
 const OCT05_LANE = "main_case_2026_10_05";
 const OCT07_LANE = "main_case_2026_10_07";
+const OCT14_LANE = "main_case_2026_10_14";
 // case -> its main-case lane, and its two models in the order written: [name, payload lane or null for
 // the explorer model, variant in the lane's main_case_bands.csv, the package whose MAIN_SPECS it uses].
 const CASES = {
@@ -92,16 +95,20 @@ const CASES = {
   oct07: { lane: OCT07_LANE, out: "oct07", models: (P) => [
     ["adopted_2026_10_05", OCT05_LANE, "oct05_case", P.OCT05],
     ["adopted_2026_10_07", OCT07_LANE, "adopted", P]] },
+  oct14: { lane: OCT14_LANE, out: "oct14", models: (P) => [
+    ["adopted_2026_10_07", OCT07_LANE, "oct07_case", require(path.join(FISCAL, OCT07_LANE, "package.cjs"))],
+    ["adopted_2026_10_14", OCT14_LANE, "adopted", P]] },
 };
 const opt = (name, fallback) => {
   const i = process.argv.indexOf(name);
   return i > 0 ? process.argv[i + 1] : fallback;
 };
-const CASE = opt("--case", "sept27");
+const CASE = opt("--case", "oct14");
 if (!CASES[CASE]) {
   console.error(`unknown case ${CASE}; one of ${Object.keys(CASES).join(", ")}`);
   process.exit(2);
 }
+if (CASE !== "oct14") throw new Error(`[BLOCKED] only live case oct14 is computed; ${CASE} outputs stay frozen`);
 const OUT = path.resolve(opt("--out-dir", path.join(HERE, "derived", CASES[CASE].out || "")));
 const P = require(path.join(FISCAL, CASES[CASE].lane, "package.cjs"));
 const { Engine, MODEL } = P;
@@ -159,6 +166,14 @@ for (const [caseName, payloadLane, variant, pkg] of CASES[CASE].models(P)) {
   const payload = payloadLane && readJson(`${payloadLane}/derived/corrections.json`);
   const m = payload ? Engine.applyCorrections(MODEL, payload) : MODEL;
   const specs = pkg.MAIN_SPECS;
+  if (payload && payload.meta.allocation) {
+    const ends = readJson(`${payloadLane}/derived/summary.json`).v7.end_specifications;
+    gate(`${caseName}: the band uses 32 personal specifications`,
+      specs.length === 32 && specs.every((s) => s.allocation === "personal"));
+    gate(`${caseName}: adopted end specifications are 16 / 11`,
+      [ends.set, ends.cash, ...ends.by_method.set, ...ends.by_method.cash]
+        .every((e) => e[0] === 16 && e[1] === 11));
+  }
   if (payload && payload.meta.responses) {
     const r = payload.meta.responses;
     gate(`${caseName}: the package's responses are the payload's meta.responses`,
@@ -173,7 +188,7 @@ for (const [caseName, payloadLane, variant, pkg] of CASES[CASE].models(P)) {
       const ids = JSON.stringify(Object.entries(r)
         .filter(([k, v]) => v && typeof v === "object" && "low" in v && "high" in v && k !== "general_government")
         .map(([k, v]) => v.override || k).sort());
-      const want = (s, id) => (id.startsWith("receipt:") ? r[id.slice(8)].low : r[id][s.reading]);
+      const want = (s, id) => r[id.startsWith("receipt:") ? id.slice(8) : id][s.reading];
       gate(`${caseName}: every specification's line responses and rate are the payload's meta`, specs.every((s) =>
         JSON.stringify(Object.keys(s.line_responses).sort()) === ids && Object.entries(s.line_responses).every(([id, v]) => v === want(s, id))
         && s.rate === cap.rates[s.reading] && s.enterprises === cap.enterprises), `${JSON.parse(ids).length} line responses`);
@@ -227,7 +242,7 @@ for (const [caseName, payloadLane, variant, pkg] of CASES[CASE].models(P)) {
       band_end: costs[i] === lo ? "low" : costs[i] === hi ? "high" : "",
     }, capital ? Object.assign({ engine_A_bn: r.direct_fiscal_response_bn }, capitalColumns(capital)) : {}));
   });
-  gate(`${caseName}: welfare = P + A + F in all 64 specifications`, maxId < 1e-9, `max |gap| ${maxId.toExponential(2)}`);
+  gate(`${caseName}: welfare = P + A + F in all ${specs.length} specifications`, maxId < 1e-9, `max |gap| ${maxId.toExponential(2)}`);
   gate(`${caseName}: P + F depends on the normalization only`, Object.values(pf).every((s) => s.size === 1),
     Object.entries(pf).map(([k, s]) => `${k} ${[...s].join("/")}`).join("; "));
   // Line effects at the two band ends; each capital component as a line capital_<id> on side capital_return,

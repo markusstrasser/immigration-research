@@ -103,9 +103,13 @@ Steps (BRIEF.md numbering):
 Sister-lane rows map to key templates through an explicit `key` column or the patterns in key_map.csv;
 test_winners_losers.py holds the ingestion's positive controls on a synthetic frame.
 
+Only the live case oct14 is computed; earlier outputs stay frozen. R5 selects the personal specifications;
+R6–R9 enter through the complete payload, distribution A, debt split and generation split. The prior
+oct07 positive control reads its own pinned distribution module without running that module's main().
+
 Run from the repository root (specs.cjs first, with the same --case and --out-dir):
-  node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs [--case sept26_schools --out-dir DIR]
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py [--case sept26_schools --out-dir DIR]
+  node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs --case oct14 [--out-dir DIR]
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14 [--out-dir DIR]
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/winners_losers_2026_09_24/ -q
 """
 from __future__ import annotations
@@ -199,6 +203,13 @@ GEN07_COMMIT = "3f583fb4"
 OCT07_INTEREST = (31.8233, 44.1693)     # the debt lane's legacy interest at the main benchmark, its stocks.csv at 0485e5a2
 OCT07_LADDER = "295"      # main case v6's own entry (parent, 2026-10-07)
 OCT07_PUBLISHED = "sept24_propagation_2026_09_24/derived/oct07"
+OCT14_LANE = "main_case_2026_10_14"
+BASE14_COMMIT = "17d3735a"
+DEBT14_COMMIT = "6b1250b9"
+GEN14_COMMIT = "1a02fbbb"
+OCT14_INTEREST = (25.947051, 41.937112)  # main / programme_income_pandemic_per_head / 2005 / effective / all_borrowed
+OCT14_LADDER = "299"
+OCT14_PUBLISHED = "sept24_propagation_2026_09_24/derived/oct14"
 OLD_PROFILE = "cbo_category_lag_non_school_full"   # every case's main profile before September 27
 DEBT_REL = "infra/immigration-fiscal/debt_legacy_2026_09_23/derived"
 GEN_REL = "infra/immigration-fiscal/generation_account_2026_09_24/derived"
@@ -307,9 +318,17 @@ CASES = {
                   capped=True, congestion="long_run", preferences="attribution", production="row4", accrual=True,
                   base_dir="oct07", debt_dir="oct07", gen_results="generation_results_oct07.csv", out="oct07",
                   group_weights="lineage"),
+    "oct14": dict(model="adopted_2026_10_14", label="October 14 case (main case v7)", prev="oct07",
+                  lane=OCT14_LANE, ladder=OCT14_LADDER, date="2026-10-14", base=BASE14_COMMIT, debt=DEBT14_COMMIT,
+                  debt_files=DEBT14_COMMIT, gen=GEN14_COMMIT, gen_split=None, sisters=SISTER26_COMMITS,
+                  interest=OCT14_INTEREST, consumption_proposal=False, published=OCT14_PUBLISHED,
+                  published_dir=OCT14_PUBLISHED, profile="long_run_non_school_full", prev_variant="oct07_case",
+                  capped=True, congestion="long_run", preferences="attribution", production="row4", accrual=True,
+                  base_dir="oct14", debt_dir="oct14", gen_results="generation_results_oct14.csv", out="oct14",
+                  group_weights="lineage"),
 }
-RUNNABLE = ("oct07", "oct05", "sept29", "sept27", "sept26_schools", "sept26", "sept24")
-DEFAULT_CASE = "sept27"
+RUNNABLE = ("oct14",)
+DEFAULT_CASE = "oct14"
 CASE: dict = {}   # the run's case with its previous case under "prev" (configure)
 # At a school response of 1 nothing is left unfunded, so the school dilution rows (priced at the
 # account's former 0.63-0.66) stay in the role table (decisions/2026-09-26-main-case-schools-full-cost.md).
@@ -484,14 +503,19 @@ def write_csv(df: pd.DataFrame, name: str):
 
 
 # ================================================================== base lane, pinned at the case's commit
-def load_base():
+def load_base(case=None):
     """distribute.py at the case's base commit as a module. __file__ points at the base lane, so its caches
     (ACS extract, cached documents) are read from there; nothing here calls its main() or writes."""
-    src = git_show(f"{BASE_REL}/distribute.py")
+    src = git_show(f"{BASE_REL}/distribute.py", CASES[case]["base"] if case else None)
     mod = types.ModuleType("base_distribute")
     mod.__file__ = str(ROOT / BASE_REL / "distribute.py")
     exec(compile(src.decode(), mod.__file__, "exec"), mod.__dict__)
     return mod, sha(src)
+
+
+def base_for_case(B, case):
+    """Use the previous case's frozen module for its positive control; live modules compute only the live case."""
+    return B if case == CASE["case"] else load_base(case)[0]
 
 
 # ================================================================== CPS frame
@@ -595,7 +619,7 @@ def fiscal_one_definition(B, fin):
     so it differs from this lane's engine run by rounding; the gap is recorded and must stay < 1e-3."""
     out = {}
     for case, arg in ((CASE["model"], CASE["case"]), (CASE["prev"]["model"], CASE["prev"]["case"])):
-        ft = B.fiscal_totals(arg)["adopted"]
+        ft = base_for_case(B, arg).fiscal_totals(arg)["adopted"]
         A = {"low": float(ft["A_low_cost"]), "high": float(ft["A_high_cost"])}
         e = fin[case]["ends"]
         diff = {end: A[end] - float(e[end]["A_bn"]) for end in ("low", "high")}
@@ -756,7 +780,9 @@ def per_correction_check():
     From October 7 the lines also carry the v6 items, each a component of its own named v6_<item> (v6_retiree_health,
     by line v6_retiree_health:scale; v6_user_fees). The items' rows on school_reprice and college_rekey (v6_user_fees: the
     K-12 weight's re-blend of row 6) join the lineage's there; no item edits the lane constants. The rebuild gate covers
-    the v6 components too, a component missing from one file counting as zero."""
+    the v6 namespace too, a component missing from one file counting as zero. The debt lane also delivers
+    v7's edit sets in that namespace (v6_child_credits, v6_job_capital_taxes, v6_white_end_tax_keys and
+    v6_row4_frame), so they enter this unchanged component check."""
     raw = read_input("debt_corrections")
     comp = pd.read_csv(io.BytesIO(raw))
     dl = debt_csv("federal_split_2024_lines.csv", CASE["debt"], CASE.get("debt_dir")).set_index(["end", "convention", "side", "line"])
@@ -807,7 +833,7 @@ def per_correction_check():
         out["lineage"] = ("the added people's parts of the correction lines from corrections_federal_split_2024.csv "
                           "(v5_lineage:constants, v5_union_response:row8; v5_lineage on school_reprice and college_rekey)")
     if items:
-        out["items"] = (f"the v6 items' components ({', '.join(items)}), rebuilt from the same file; their rows on "
+        out["items"] = (f"the case items' components ({', '.join(items)}), rebuilt from the same file; their rows on "
                         "school_reprice and college_rekey join the lineage's there")
     return out
 
@@ -1749,7 +1775,7 @@ def base_inputs(B, d):
     for c in (CASE["prev"], CASE):
         if not c.get("production"):
             continue
-        own, info4, prod = production_rows(B, d, nest, c["case"])
+        own, info4, prod = production_rows(base_for_case(B, c["case"]), d, nest, c["case"])
         # The account's split is the engine's production cell at both band ends (case_ends' P and F there). The case's
         # gate keeps the name it had when only the case had a grid.
         got = {end: float(own["account" if v["normalization"] == "cash" else "account_gdp"].private_plus_receipts_bn)
@@ -1841,6 +1867,7 @@ def regression(B, d, I, case):
     """The base lane's central channels rebuilt by this lane's code, with the fiscal channel at
     fiscal_totals(case) A_mid plus the base's central induced receipts, compared with that lane's
     channel_by_quintile.csv on the same case (at the case's base commit in CASES)."""
+    B = base_for_case(B, case)
     commit, sub = CASES[case]["base"], CASES[case].get("base_dir")
     expected = pd.read_csv(io.BytesIO(git_show(lane_rel(f"{BASE_REL}/derived", sub, "channel_by_quintile.csv"), commit)))
     held = json.loads(git_show(lane_rel(f"{BASE_REL}/derived", sub, "inputs.json"), commit))["fiscal"]
@@ -3410,7 +3437,7 @@ def role_only_lanes(fin) -> dict:
 def parse_args(argv=None):
     ap = argparse.ArgumentParser(description="Winners and losers across every priced channel, on one main case.")
     ap.add_argument("--case", choices=RUNNABLE, default=DEFAULT_CASE,
-                    help=f"the main case to allocate (default {DEFAULT_CASE}); sept24 rebuilds the September 24 files")
+                    help=f"the live main case to allocate (default {DEFAULT_CASE}); earlier outputs stay frozen")
     ap.add_argument("--out-dir", type=Path, default=None,
                     help="where specs.cjs wrote this case's engine runs and where outputs go (default derived/)")
     ap.add_argument("--dev-unpinned", action="store_true",

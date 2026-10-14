@@ -276,7 +276,8 @@ def test_cases_chain_and_configure(tmp_path):
         c = wl.CASES[case]
         assert c["prev"] in wl.CASES and wl.CASES[c["prev"]]["model"] != c["model"]
         assert c["consumption_proposal"] == (case == "sept24")   # inside the fiscal channel from Sept 26 on
-    assert wl.DEFAULT_CASE == "sept27" and wl.CASES["sept27"]["prev"] == "sept26_schools"
+    assert wl.DEFAULT_CASE == "oct14" and wl.RUNNABLE == ("oct14",)
+    assert wl.CASES["oct14"]["prev"] == "oct07"
     assert wl.CASES["sept26_schools"]["prev"] == "sept26"
     assert len({wl.CASES[c]["model"] for c in wl.CASES}) == len(wl.CASES)
     # sept24 reads the paths it committed with; a later case its own lane, published totals and out-dir.

@@ -1,0 +1,17 @@
+template,description,cps_basis,population_m
+per_person,"every other resident, equally",CPS ASEC 2025 person weight,295.8312288
+taxes,"all taxes paid, federal and state-local (ladder 194's convention (a))","CBO 2022 shares, ITEP rates, CPS money income",295.8312288
+federal_taxes,federal taxes paid (CBO 2022 shares by income group),CPS money income per capita within group,295.8312288
+state_local_taxes,state and local taxes paid (ITEP average rates),CPS money income per capita within group,295.8312288
+workers,earnings of other-resident workers,PEARNVAL > 0,295.8312288
+industry_owner:<NAICS>,self-employment and farm income of persons whose longest job was in that NAICS (prefix match through the Census 2022 industry crosswalk),"SEMP_VAL + FRSE_VAL > 0, INDUSTRY",
+industry_worker:<NAICS>,wage and salary earnings of workers whose longest job was in that NAICS,"WSAL_VAL > 0, INDUSTRY",
+public_school_pupils,"persons aged 5-17, equally (CPS has no school-type item); ':q1'..':q5' restricts to an SPM income quintile as a stand-in for district income",A_AGE 5-17,45.52998807
+interstate_movers:<ST>,persons who lived in state ST a year earlier and now live in another state,"MIG_ST, GESTFIPS, MIGSAME = 2",
+commuters,"workers in metropolitan households, equally","WORKYN = 1, GTMETSTA = 1",133.4620839
+renters,"persons in cash-rent households headed by an other resident, one share per household","H_TENURE = 2, PERRP",85.00030153
+landlords,"persons in households reporting rental income or loss, by its absolute value (gross rents are not observed)",HRNTVAL != 0,24.51772853
+owners,"persons in owner-occupied households headed by an other resident, one share per household",H_TENURE = 1,203.799543
+nh_white_natives,"US-born non-Hispanic white residents, equally","PEHSPNON = 2, PRDTRACE = 1, PRCITSHP 1-3",183.4877271
+privately_insured,"persons with private health coverage, equally",PRIV = 1,201.4661773
+@ST,"Any template takes '@ST' (postal code) to restrict it to residents of one state, for example industry_worker:7225@CA or renters@TX.",GESTFIPS,
