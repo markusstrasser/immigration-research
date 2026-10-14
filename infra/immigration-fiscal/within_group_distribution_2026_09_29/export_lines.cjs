@@ -1,6 +1,6 @@
 /* Step 1: an adopted main case, line by line, for each generation at the case's two band ends.
  *
- * --case sept27 (the default): the September 27 case. Reads read-only: the case's package
+ * --case sept27 (historical): the September 27 case. Reads read-only: the case's package
  * (main_case_long_run_2026_09_27/package.cjs), the generation account's uncorrected models
  * (generation_account_2026_09_24/derived/model_{G1,G2,G3plus}.json, convention (a): everyone in their own generation)
  * and its corrections payloads (derived/generation_corrections.json, which already end with each generation's
@@ -42,6 +42,11 @@
  * that line. The union and the cash set are also gated at the case's full-precision band (its summary.json, 1e-6).
  * Writes _cache/oct07/lines.json.
  *
+ * --case oct14 (the default): live main case v7, on the generation account's oct14 split. MAIN_SPECS is the
+ * 32 personal specifications, with its ends checked against summary.json v7.end_specifications. The adopted and
+ * cash_set rows of main_case_bands.csv are the oracle. R7's job-capital lineage receipt parts and R6's credit lineage
+ * parts are carried in G3+'s own lines, separately from the pension gate's lineage parts. Writes _cache/oct14/lines.json.
+ *
  * Every case reads capRule, each capital component's key rule, from the case's payload (meta.capital_return
  * components); on September 27 it must equal the capital lane's engine_components.json, whose rules the committed
  * outputs used.
@@ -58,7 +63,7 @@
  * pieces' implied freight key is the generation's excise share before the gasoline shift (1e-9); the part-rekeyed
  * shares add to the component's key (1e-12).
  * Writes _cache/lines.json (September 27), or _cache/<case>/lines.json for a later case. Run from the repository root:
- *   node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs [--case sept27|sept29|oct05|oct07]
+ *   node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs [--case oct14]
  */
 "use strict";
 const fs = require("fs");
@@ -90,14 +95,41 @@ const CASES = {
       genCorrections: "generation_corrections_oct07_cash.json", genResults: "generation_results_oct07_cash.csv",
       band: [307.3994, 385.3641] },
     summary: "generation_summary_oct07.json", lineage: true, items: true },
+  oct14: { lane: "main_case_2026_10_14", genCorrections: "generation_corrections_oct14.json",
+    genResults: "generation_results_oct14.csv", out: "oct14/lines.json",
+    cash: { payload: "main_case_2026_10_14/derived/corrections_cash.json", package: "CASH",
+      genCorrections: "generation_corrections_oct14_cash.json", genResults: "generation_results_oct14_cash.csv" },
+    summary: "generation_summary_oct14.json", lineage: true, items: true, live: true },
 };
 const argv = process.argv.slice(2);
-const CASE = argv.includes("--case") ? argv[argv.indexOf("--case") + 1] : "sept27";
+const CASE = argv.includes("--case") ? argv[argv.indexOf("--case") + 1] : "oct14";
 if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
 const C = CASES[CASE];
+const ALLOCATION = argv.includes("--allocation") ? argv[argv.indexOf("--allocation") + 1] : "personal";
+if (!["personal", "shared"].includes(ALLOCATION) || (ALLOCATION === "shared" && !C.live)) {
+  throw new Error("[BLOCKED] --allocation shared is the oct14 companion; allocation must be personal or shared");
+}
+C.shared = ALLOCATION === "shared";
+if (C.shared) C.out = "oct14/shared_allocation/lines.json";
+if (C.live) {
+  const csv = fs.readFileSync(path.join(FISCAL, C.lane, "derived/main_case_bands.csv"), "utf8").trim().split("\n");
+  const head = csv.shift().split(",");
+  const rows = csv.map((line) => Object.fromEntries(line.split(",").map((v, i) => [head[i], v])));
+  const bandOf = (variant) => {
+    const r = rows.find((x) => x.profile === "long_run_non_school_full" && x.variant === variant);
+    if (!r) throw new Error(`[BLOCKED] ${C.lane}: no main_case_bands.csv row ${variant}`);
+    const b = [Number(r.cost_low_bn), Number(r.cost_high_bn)];
+    if (!b.every(Number.isFinite)) throw new Error(`[BLOCKED] ${variant}: invalid band`);
+    return b;
+  };
+  C.band = bandOf(C.shared ? "shared_allocation" : "adopted");
+  C.cash.band = bandOf(C.shared ? "shared_allocation_cash_set" : "cash_set");
+}
 const V4 = CASE !== "sept27";   // the v4 rules: sept29 and every case built on it
 const P = require(path.join(FISCAL, C.lane, "package.cjs"));
-const { Engine, MODEL, MAIN_SPECS } = P;
+const { Engine, MODEL } = P;
+// ALL_SPECS keeps v6's original numbering; a shared companion filters it rather than renumbering 32–63.
+const MAIN_SPECS = C.shared ? P.ALL_SPECS : P.MAIN_SPECS;
 const PROFILE = V4 ? P.MAIN_PROFILE : undefined;
 const GEN = path.join(FISCAL, "generation_account_2026_09_24", "derived");
 const GENS = ["G1", "G2", "G3plus"];
@@ -122,15 +154,20 @@ if (!V4) {
 }
 const unionModel = V4 ? P.payloadModel() : Engine.applyCorrections(MODEL, corrections);
 const uCost = MAIN_SPECS.map((s) => P.evaluateFull(unionModel, s, PROFILE).cost_bn);
-const lo = uCost.indexOf(Math.min(...uCost)), hi = uCost.indexOf(Math.max(...uCost));
+const indices = MAIN_SPECS.map((s, i) => i).filter((i) => !C.live || MAIN_SPECS[i].allocation === ALLOCATION);
+const lo = indices.reduce((a, i) => uCost[i] < uCost[a] ? i : a), hi = indices.reduce((a, i) => uCost[i] > uCost[a] ? i : a);
 gate("the corrected union reproduces the adopted case", Math.abs(uCost[lo] - C.band[0]) < 1e-4 && Math.abs(uCost[hi] - C.band[1]) < 1e-4,
   `${uCost[lo].toFixed(4)}–${uCost[hi].toFixed(4)} at specifications ${lo} / ${hi} (0-based)`);
 // oct07: the case's full-precision band (its summary.json), as well as the pinned four decimals.
 const FULL = C.items ? read(path.join(FISCAL, C.lane, "derived/summary.json")) : null;
 if (FULL) {
+  const band = C.shared ? FULL.v7.companions.shared_allocation.band_bn : FULL.main_case;
+  const ends = C.shared ? FULL.v7.companions.shared_allocation.ends : C.live ? FULL.v7.end_specifications.set : null;
+  if (C.live) gate(`the ${ALLOCATION} band's 32 specifications and ends match the case summary`,
+    indices.length === 32 && JSON.stringify([lo, hi]) === JSON.stringify(ends));
   gate(`the corrected union is the case's full-precision band (${C.lane}/derived/summary.json main_case, 1e-6)`,
-    Math.abs(uCost[lo] - FULL.main_case[0]) < 1e-6 && Math.abs(uCost[hi] - FULL.main_case[1]) < 1e-6,
-    `${uCost[lo].toFixed(6)} / ${uCost[hi].toFixed(6)} against ${FULL.main_case.map((v) => v.toFixed(6)).join(" / ")}`);
+    Math.abs(uCost[lo] - band[0]) < 1e-6 && Math.abs(uCost[hi] - band[1]) < 1e-6,
+    `${uCost[lo].toFixed(6)} / ${uCost[hi].toFixed(6)} against ${band.map((v) => v.toFixed(6)).join(" / ")}`);
 }
 
 function resultsOf(file) {
@@ -181,6 +218,7 @@ function dump(m, spec) {
 
 const out = { meta: { case: C.lane, convention: "a", spec_index: { low: lo, high: hi },
   specs: { low: MAIN_SPECS[lo], high: MAIN_SPECS[hi] } }, union: {}, generations: {} };
+if (C.live) out.meta.allocation = ALLOCATION;
 if (C.items) {
   // The items' carriers (an item's capital: receipt lines whose share keys its offset components) and the parent line
   // its meta splits each by (splits.split_basis); households.py spreads an offset's return as that line.
@@ -206,9 +244,12 @@ for (const g of GENS) {
   for (const [end, i] of [["low", lo], ["high", hi]]) {
     const d = dump(m1, MAIN_SPECS[i]);
     out.generations[g][end] = d;
-    gate(`${g} ${end}: rows sum to evaluateFull() and to ${C.genResults}`,
-      Math.abs(d.sum_bn - d.cost_bn) < 1e-9 && Math.abs(d.cost_bn - published[`${g}|${end}`]) < 1e-6,
-      `${d.cost_bn.toFixed(6)} vs ${published[`${g}|${end}`]}`);
+    // The generation result file reports personal ends. Keep its oracle on the shared companion's input model too.
+    const publishedCost = C.shared
+      ? P.evaluateFull(m1, P.MAIN_SPECS[FULL.v7.end_specifications.set[end === "low" ? 0 : 1]], PROFILE).cost_bn : d.cost_bn;
+    gate(`${g} ${end}: rows sum to their evaluateFull(); the model at the published ends matches ${C.genResults}`,
+      Math.abs(d.sum_bn - d.cost_bn) < 1e-9 && Math.abs(publishedCost - published[`${g}|${end}`]) < 1e-6,
+      `${d.cost_bn.toFixed(6)} at this end; published ${publishedCost.toFixed(6)} vs ${published[`${g}|${end}`]}`);
   }
 }
 for (const end of ["low", "high"]) {
@@ -294,12 +335,15 @@ if (V4) {
     gate(`the package's cash set (${C.cash.package}) has the cash payload, exactly`, JSON.stringify(PC.correctionsPayload()) === JSON.stringify(cashPayload));
   }
   const uCash = [lo, hi].map((i) => PC.evaluateFull(PC.payloadModel(), MAIN_SPECS[i], PROFILE).cost_bn);
+  if (C.live) gate(`the ${ALLOCATION} cash set's ends match the case summary`,
+    JSON.stringify([lo, hi]) === JSON.stringify(C.shared ? FULL.v7.companions.shared_allocation.cash.ends : FULL.v7.end_specifications.cash));
   gate("the cash set's union reproduces its band at the same specifications (1e-4)",
     Math.abs(uCash[0] - C.cash.band[0]) < 1e-4 && Math.abs(uCash[1] - C.cash.band[1]) < 1e-4, `${uCash[0].toFixed(7)} / ${uCash[1].toFixed(7)}`);
   if (FULL) {
+    const band = C.shared ? FULL.v7.companions.shared_allocation.cash.band_bn : FULL.cash_set.band_bn;
     gate(`the cash set's union is its full-precision band (${C.lane}/derived/summary.json cash_set.band_bn, 1e-6)`,
-      Math.abs(uCash[0] - FULL.cash_set.band_bn[0]) < 1e-6 && Math.abs(uCash[1] - FULL.cash_set.band_bn[1]) < 1e-6,
-      `${uCash[0].toFixed(6)} / ${uCash[1].toFixed(6)} against ${FULL.cash_set.band_bn.map((v) => v.toFixed(6)).join(" / ")}`);
+      Math.abs(uCash[0] - band[0]) < 1e-6 && Math.abs(uCash[1] - band[1]) < 1e-6,
+      `${uCash[0].toFixed(6)} / ${uCash[1].toFixed(6)} against ${band.map((v) => v.toFixed(6)).join(" / ")}`);
   }
   out.meta.cash_set = { payload: C.cash.payload, cost_bn: { low: uCash[0], high: uCash[1] } };
   const payCash = read(path.join(GEN, C.cash.genCorrections)).payloads.a;
@@ -323,8 +367,9 @@ if (V4) {
       gate(`${g} ${end}: the set and the cash set differ only in the three pension lines`,
         moved.length === 3 && moved.every((k) => PENSION.has(k)) && capSame && prodSame && byId.size === setRows.length,
         moved.join(", "));
-      gate(`${g} ${end}: the cash set's cost is ${C.cash.genResults}'s (1e-6 bn)`, Math.abs(fc.cost_bn - cashResults[`${g}|${end}`]) < 1e-6,
-        `${fc.cost_bn.toFixed(6)} vs ${cashResults[`${g}|${end}`]}`);
+      const publishedCash = C.shared ? PC.evaluateFull(mc, P.MAIN_SPECS[FULL.v7.end_specifications.cash[j]], PROFILE).cost_bn : fc.cost_bn;
+      gate(`${g} ${end}: the cash model at the published ends matches ${C.cash.genResults} (1e-6 bn)`,
+        Math.abs(publishedCash - cashResults[`${g}|${end}`]) < 1e-6, `${publishedCash.toFixed(6)} vs ${cashResults[`${g}|${end}`]}`);
       const setOf = (side, id) => setRows.find((r) => r.side === side && r.id === id);
       const ss = setOf("spending", "social_security"), med = setOf("spending", "medicare"), fit = setOf("receipt", "federal_income_tax");
       const medCash = byId.get("spending|medicare").amount_bn, fitCash = byId.get("receipt|federal_income_tax").amount_bn;
@@ -373,11 +418,69 @@ if (V4) {
     // oct07: the edit sets' parts that the generation account puts on the added people (its rule lineage, all on G3+)
     // are the lineage's own too; the payload's ratio_net and Part A accrual (v6's) price the rest.
     const items = { accrual: 0, part_a: 0, benefit_tax: 0 };
+    const row4Union = { accrual: 0, part_a: 0, benefit_tax: 0 };
+    // R8 changes FIT in both sets, by different amounts. Their difference is part of the lineage's benefit-tax
+    // difference; read the actual set/cash item parts at this receipt scenario, not the inherited PA metadata.
+    const itemLineageFit = (payload, id) => {
+      const it = payload.meta.items.find((r) => r.id === id && r.applied);
+      if (!it) return 0;
+      return Object.entries(it.parts || {}).filter(([name, p]) => {
+        const e = payload.edits[it.edits.first + p.edit];
+        return name.startsWith("lineage_") && e.side === "receipt" && e.line === "federal_income_tax" && e.scenario === sc;
+      }).reduce((s, [, p]) => s + p.by[a], 0);
+    };
+    if (C.live) {
+      const whiteBenefitTax = itemLineageFit(cashPayload, "white_end_tax_keys") - itemLineageFit(corrections, "white_end_tax_keys");
+      own.benefit_tax += whiteBenefitTax;
+      items.benefit_tax += whiteBenefitTax;
+    }
     if (C.items) {
       for (const it of SUM.items.split.a) for (const x of it.edits) for (const p of x.parts || []) {
+        const r = row(ue, x.side, x.line);
+        const active = r && (x.side === "receipt" ? x.scenario === sc : x.key === r.key);
+        const pensionComponent = x.side === "spending" ? { social_security: "accrual", medicare: "part_a" }[x.line]
+          : x.line === "federal_income_tax" ? "benefit_tax" : null;
+        // R9: subtract its union pension parts before checking the inherited published-weight PA oracle.
+        // The added-people parts are already subtracted as lineage own amounts below.
+        if (C.live && it.id === "row4_frame" && p.name.startsWith("union_") && active && pensionComponent) {
+          row4Union[pensionComponent] += (x.side === "receipt" ? -1 : 1) * p.union_bn[a];
+        }
         if (p.rule !== "lineage") continue;
+        // R7 receipt shifts and R6's added-people credit parts already sit on G3+'s evaluated lines.
+        // They take those lines' household split; they never enter the pension subtraction below.
+        const jobReceipt = it.id === "job_capital_taxes" && x.side === "receipt"
+          && ["corporate_capital", "corporate_labor", "remaining_production_property", "other_production_taxes"].includes(x.line)
+          && /^(lineage_g3plus|lineage_whites):/.test(p.name);
+        const creditPart = it.id === "child_credits" && /^lineage_g3plus:/.test(p.name)
+          && ((x.side === "receipt" && x.line === "federal_income_tax")
+            || (x.side === "spending" && x.line === "refundable_tax_credits"));
+        const whiteFit = it.id === "white_end_tax_keys" && /^lineage_whites:income_tax_keys:federal_income_tax:/.test(p.name)
+          && x.side === "receipt" && x.line === "federal_income_tax";
+        const component = p.name.split(":")[1];
+        const row4Part = it.id === "row4_frame" && /^(lineage_g3plus|lineage_whites):/.test(p.name)
+          && ((x.side === "receipt" && component === "benefit_tax" && x.line === "federal_income_tax")
+            || (x.side === "receipt" && component === "owner_national_key" && x.line === "modeled_owner_property")
+            || (component === "state_index" && ((x.side === "receipt" && ["general_sales_tax", "personal_motor_vehicle"].includes(x.line))
+              || (x.side === "spending" && ["state_price_public_order_safety", "state_price_health_services", "state_price_recreation_culture"].includes(x.line)))));
+        if (C.live && (jobReceipt || creditPart || whiteFit || row4Part)) {
+          if (!r || !GENS.every((g) => Math.abs(p.bn[g][a] - (g === "G3plus" ? p.union_bn[a] : 0)) < 1e-12)) {
+            throw new Error(`[BLOCKED] ${it.id} ${p.name}: its lineage part is not wholly on G3+`);
+          }
+          if (active && it.id === "row4_frame" && pensionComponent === "benefit_tax") {
+            own.benefit_tax -= p.union_bn[a];
+            items.benefit_tax -= p.union_bn[a];
+          }
+          if (active) {
+            out.meta.lineage.non_pension_parts = out.meta.lineage.non_pension_parts || {};
+            (out.meta.lineage.non_pension_parts[end] = out.meta.lineage.non_pension_parts[end] || [])
+              .push({ item: it.id, part: p.name, side: x.side, line: x.line, amount_bn: p.union_bn[a], rule: "G3plus own-line household split" });
+          }
+          continue;
+        }
         const k = x.side === "spending" ? { social_security: "accrual", medicare: "part_a" }[x.line] : undefined;
-        if (!k || x.key !== row(ue, "spending", x.line).key) {
+        const row4Pension = it.id !== "row4_frame" || (x.line === "social_security" && ["ss_split", "ss_factor"].includes(component))
+          || (x.line === "medicare" && component === "part_a_split");
+        if (!k || !row4Pension || x.key !== row(ue, "spending", x.line).key) {
           throw new Error(`[BLOCKED] ${it.id} ${p.name}: a part on the added people on ${x.side} ${x.line} (${x.key}), which the pension gates do not count`);
         }
         items[k] += p.union_bn[a];
@@ -389,8 +492,13 @@ if (V4) {
       gate(`${end}: the generations' ${k} adds to the union's (its set and cash models, 1e-9 bn)`, Math.abs(tot[k][j] - union[k]) < 1e-9,
         `${tot[k][j].toFixed(6)} vs ${union[k].toFixed(6)}`);
       gate(`${end}: the union's ${k} less the lineage's own (${own[k].toFixed(6)}${C.items ? `, the items' ${items[k].toFixed(6)} in it` : ""}) is the `
-        + `${C.items ? "payload's" : "September 29 payload's"} (1e-9 bn)`,
-        Math.abs(union[k] - own[k] - want[k]) < 1e-9, `${(union[k] - own[k]).toFixed(6)} vs ${want[k].toFixed(6)}`);
+        + `${C.items ? "payload's" : "September 29 payload's"}${C.live ? ", after taking out R9's union part" : ""} (1e-9 bn)`,
+        Math.abs(union[k] - own[k] - row4Union[k] - want[k]) < 1e-9,
+        `${(union[k] - own[k]).toFixed(6)} less R9 union ${row4Union[k].toFixed(6)} vs ${want[k].toFixed(6)}`);
+    }
+    if (C.live) {
+      out.meta.pension_accrual.row4_union_bn = out.meta.pension_accrual.row4_union_bn || {};
+      out.meta.pension_accrual.row4_union_bn[end] = row4Union;
     }
     out.meta.lineage.pension_bn = Object.assign(out.meta.lineage.pension_bn || {},
       { [end]: Object.assign({ oasdi_receipts_bn: linOasdi }, own, C.items ? { items_bn: items } : {}) });
@@ -444,7 +552,7 @@ if (V4) {
     }
   }
 }
+if (fails) { console.log(`✗ ${fails} gate(s) failed`); process.exit(1); }
 fs.mkdirSync(path.dirname(path.join(HERE, "_cache", C.out)), { recursive: true });
 fs.writeFileSync(path.join(HERE, "_cache", C.out), JSON.stringify(out, null, 1) + "\n");
-if (fails) { console.log(`✗ ${fails} gate(s) failed`); process.exit(1); }
 console.log("  ✓ all export gates passed");

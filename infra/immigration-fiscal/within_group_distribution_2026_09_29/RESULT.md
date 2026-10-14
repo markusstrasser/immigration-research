@@ -1099,3 +1099,95 @@ running.
 - 15:21:00–15:27:46: the five final commands (export, flat, person, on-books, single factor), all exit 0.
 - 15:29:21–15:38:05: `rerun_lane.py` IDENTICAL 77/77, exit 0.
 - This section was written after.
+
+## Live v7 route (oct14), 2026-10-14
+
+The live route computes only `oct14`, adopted at `148ed1ea`; the generation inputs are committed at `1a02fbbb`.
+Earlier sections and their commands record historical runs; their outputs remain unchanged.
+
+The export reads the `adopted` and `cash_set` rows of `main_case_2026_10_14/derived/main_case_bands.csv` (1e-4bn,
+the CSV's four decimals), also checking the full-precision summary (1e-6bn) and personal ends against
+`summary.json` `v7.end_specifications`. Generation closure remains 1e-9bn. R7's lineage receipt parts and R6's
+added-people credit parts go to G3+'s corrected lines and follow those lines' household keys [ASSUMPTION],
+separately from the pension subtraction. Unrecognized lineage parts still stop the export.
+
+R8's income-tax lineage parts and R9's owner, state-price, sales and licence lineage parts also stay on G3+'s
+own-line household split [ASSUMPTION]. R8 changes income-tax receipts differently in the set and cash set:
+their cash-minus-set lineage difference enters the lineage's benefit-tax part. R9's lineage tax-on-benefits
+shift also enters that part, with the receipt sign reversed. R9's lineage Social Security and Medicare shifts
+enter the lineage's own accrual and Part A. The union pension check explicitly takes out R9's union Social
+Security, Medicare and benefit-tax parts before comparing with the inherited published-weight pension block,
+as Consumers R9 requires. `lines.json` records those shifts in `meta.pension_accrual.row4_union_bn`; the person
+spread checks keep them separately, preserving the payload's declared pension parameters.
+
+The person-accrual vectors remain the existing September 29 model's [APPROX], rescaled to each generation's
+live accrual. `person_accrual.py` is a historical cache producer and is not rerun by this live route. The central
+remains person accrual with payroll taxes on on-books wages. Run the following in order from the repo root:
+
+```sh
+node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs --case oct14
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct14 --weights row4
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct14 --weights row4 --accrual person
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct14 --weights row4 --accrual person --payroll onbooks
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct14 --weights row4 --placement uniform
+```
+
+The uniform-placement output is a companion about placement, at the same personal ends. A/B conventions
+describe included categories. Outputs go only to `_cache/oct14/` and `derived/oct14/`, with the uniform companion
+in `uniform_placement/` beneath each.
+
+R5 also preserves the shared allocation as a within-group companion: the earlier lane reported a shared low
+end and mixed-unit effects on those cells. `--allocation shared` evaluates only shared specifications in v6's
+numbering (32–63) and gates the band against the case's `shared_allocation` and `shared_allocation_cash_set` rows,
+also checking `summary.json` `v7.companions.shared_allocation` (including the ends, 48/43). The generation files
+publish personal ends only: the shared export checks each input model against those personal results separately,
+then gates its shared rows against their own `evaluateFull` and their sum against the companion (1e-9bn).
+
+The four companion commands run after the five personal commands above, writing only
+`_cache/oct14/shared_allocation/` and `derived/oct14/shared_allocation/`:
+
+```sh
+node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs --case oct14 --allocation shared
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct14 --weights row4 --allocation shared
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct14 --weights row4 --allocation shared --accrual person
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct14 --weights row4 --allocation shared --accrual person --payroll onbooks
+```
+
+**Results, 2026-10-14.** At the central (person accrual, payroll on on-books wages), the personal case is
+$339.552018 / 423.649261bn at specifications 16/11; the cash set is $264.425574 / 348.522816bn.
+The shared companion is $307.805117 / 394.894138bn at 48/43; its cash set is $227.119147 / 314.208168bn. These are modelled allocations over
+7,106 sampled households and 42.752213M lineage members; placement and household keys retain the assumptions above.
+
+| Central, % of members in net-contributor households (SE in percentage points) | A, low | A, high | B, low | B, high |
+|---|---:|---:|---:|---:|
+| Personal, the headline allocation | 19.7 (0.5) | 16.3 (0.4) | 26.0 (0.5) | 24.9 (0.5) |
+| Shared, the within-group companion | 21.0 (0.5) | 17.7 (0.4) | 27.5 (0.5) | 26.2 (0.5) |
+
+[CALCULATION: `derived/oct14/net_positive_shares_person_onbooks.csv` and
+`derived/oct14/shared_allocation/net_positive_shares_person_onbooks.csv`, rows `breakdown=all`, `cell=all`,
+fields `share_members_net_positive` and `se`; amounts from each export's `union`/`meta.cash_set` and
+`main_case_2026_10_14/derived/summary.json` `v7.companions.shared_allocation`]
+
+**Validation.** All nine commands exit 0. Printed checks include the closing passed line: export 73 per allocation;
+flat 30, person 57 and on-books 59 per allocation; personal uniform-placement 27. Case CSV oracle tolerance
+1e-4bn, full-precision summary 1e-6bn; generation/row/cash/pension closure 1e-9bn; household closure 1e-6bn;
+key totals 1e-9 relative, lineage per-head spread 1e-8 relative. The same case's personal and shared ends are gated.
+The canonical 142,125×161 row-4 matrix and its metadata are bit-identical under replicate-column blocks
+(`np.array_equal`, maximum absolute difference 0). Both sets of seven flat CSVs remain byte-identical after the
+memory changes. Sixteen tests pass, including real-canonical parity, caller-schema coverage and missing-frame guard.
+The single stable nine-command rerun ends `IDENTICAL: 120/120`, exit 0; it computes only oct14 and preserves older files.
+
+**[DEGRADED] Memory.** The approximate 2.5GB target is not proved met. After the last memory repair, normal
+shared-flat peak was 2,718,253,056 bytes (2.718GB / 2.532GiB), shared person 2,087,223,296 and shared on-books
+2,248,998,912 bytes. Exact rerun peaks are unavailable: the harness discards successful child stdout and the
+measurement wrapper initially failed to persist it. All nine rerun commands passed an enforced 3,000,000,000-byte
+review limit. The scratch wrapper now persists the canonical measurement to JSONL before exit; trivial children
+returning 0 and 7 preserve those exact exits and record their metrics. No scientific rerun was repeated to recover RSS.
+The preceding 3.273GB shared-flat observation predates the final canonical buffer repair.
+
+**Timing follow-up for the parent.** Initial person/on-books commands spent 83–104 seconds each; the rerun
+repeats all arm statistics at each allocation. `household_stats` and repeated arm accumulation remain the timing
+hotspot; a future change needs its own parity proof. No consolidation was attempted during this validation.
+
+- 2026-10-14 19:11 JST — v7 propagation complete: R5–R9, personal and shared companions, all gates and 16 tests passed;
+  stable rerun `IDENTICAL: 120/120`, exit 0. Memory and exact rerun-RSS receipt limitations are stated above.

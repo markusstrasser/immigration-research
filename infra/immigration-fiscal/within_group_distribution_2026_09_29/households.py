@@ -30,7 +30,7 @@ government, public order per head, roads and parks, other per-head services and 
 age, college and other education, the capital return, the enterprise surplus and the production term are left out.
 Standard errors: the 160 ASEC replicate weights (successive difference, 4/160), re-running the within-generation
 spread and every statistic per replicate with the engine's line totals held fixed.
-Weights (--weights): `published`, the default, spreads over the ASEC person weights (union 40,896,574). `row4`
+Weights (--weights): `published` spreads over the ASEC person weights (union 40,896,574). `row4` (the live default)
 spreads over audit row 4's weights, the count the case prices (union 39,712,493): the Mexico-born naturalized
 and noncitizen persons outside CA+TX scaled to their ACS 2024 cells by cps_imputation_keys_2026_09_23/
 combine_onbooks_lane.py weight_arms, arm "row4", called as population_basis_2026_09_29/frame_counts.py calls it
@@ -121,6 +121,11 @@ _cache/oct07/lines.json (export_lines.cjs --case oct07) and writes derived/oct07
 The pension gates take v6's ratio_net and Part A accrual, with the items' parts on the added people (pension_tr2026's
 lineage parts) in the lineage's own. The person-accrual arms' vectors stay the September 29 parquet's (the 2025
 Trustees path) [APPROX]: they only spread each generation's accrual, which is v6's.
+--case oct14 (default, live v7) uses _cache/oct14/lines.json and writes only derived/oct14/ and _cache/oct14/.
+Both band ends use personal allocation. R6's credit shifts and R7's responding job-capital receipts arrive inside
+each generation's corrected lines, including their added-people parts on G3+. They follow each line's household
+key, blending the identified and placed G3+ amounts as before [ASSUMPTION]. The person arms reuse the existing
+September 29 parquet; historical commands below describe earlier runs, not the live reproduction route.
 Writes derived/net_positive_shares.csv, concentration.csv, household_balance_quantiles.csv, control.csv,
 category_means.csv, line_scaling.csv and _cache/households.parquet; the row-4 run writes the same files to
 derived/row4/ and _cache/row4/. Run from the repository root:
@@ -139,6 +144,7 @@ import sys
 sys.dont_write_bytecode = True  # read-only imports from other lanes: write nothing beside them
 
 import argparse
+import contextlib
 import csv
 import io
 import json
@@ -146,6 +152,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import pyarrow as pa
 
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
@@ -169,10 +176,11 @@ FAILS = []
 # The September 29 case (export_lines.cjs --case sept29): its lines, its tenant key's inputs and its new category.
 # oct05 (v5) runs on the same rules, with the lineage placed on G3+ (LINEAGE_CASES); oct07 (v6) places it by age band
 # (AGE_MIX_CASES).
-CASE_DIRS = {"sept27": None, "sept29": "sept29", "oct05": "oct05", "oct07": "oct07"}
-CASE_LANES = {"sept29": "main_case_2026_09_29", "oct05": "main_case_2026_10_05", "oct07": "main_case_2026_10_07"}
-LINEAGE_CASES = ("oct05", "oct07")
-AGE_MIX_CASES = ("oct07",)
+CASE_DIRS = {"sept27": None, "sept29": "sept29", "oct05": "oct05", "oct07": "oct07", "oct14": "oct14"}
+CASE_LANES = {"sept29": "main_case_2026_09_29", "oct05": "main_case_2026_10_05", "oct07": "main_case_2026_10_07",
+              "oct14": "main_case_2026_10_14"}
+LINEAGE_CASES = ("oct05", "oct07", "oct14")
+AGE_MIX_CASES = ("oct07", "oct14")
 STATES_CSV = FISCAL / "receipt_side_long_run_2026_09_28/derived/states.csv"
 V4_INPUTS = GENLANE / "derived/v4_inputs.json"
 CASH_RENT = 2  # H_TENURE: rented for cash
@@ -297,6 +305,54 @@ HEALTH_KEYS = {"medicare", "medicaid", "health_other", "tricare", "va_medical"}
 OWN_RECEIPT_KEYS = {"cash_assistance", "social_security", "ssi", "unemployment", "veterans", "workers_comp", "snap",
                     "energy", "wic", "housing_support", "refundable_credits", "all_cash"}
 ROADS_PARKS = {"economic_affairs_services", "recreation_culture"}
+HOUSEHOLD_COLUMNS = (
+    "PH_SEQ", "H_SEQ", "HPUBLIC", "HLORENT", "PRCITSHP", "PEINUSYR", "SS_VAL", "SSI_VAL", "MCARE", "MIL",
+    "CHAMPVA", "MCAID", "VET_YN", "PEAFEVER", "PRPERTYP", "A_CLSWKR", "PENATVTY", "PEIOOCC", "A_LINENO",
+    "A_SPOUSE", "A_EXPRRP", "A_HGA", "GESTFIPS", "A_AGE", "PPPOS",
+)
+
+
+def household_frame(d):
+    """After keys/pieces are built, retain the complete household/status caller schema without the 161 weights.
+
+    The source and shared cache stay intact. The coverage test traces both the remaining main code and impute().
+    """
+    missing = set(HOUSEHOLD_COLUMNS) - set(d.columns)
+    if missing:
+        raise SystemExit(f"[BLOCKED] household/status frame lacks {sorted(missing)}")
+    return d[list(HOUSEHOLD_COLUMNS)].copy()
+
+
+def row4_weights(d, weights, cells, block_width=16):
+    """Call the authoritative columnwise builder without retaining its unused full-width companion arms.
+
+    Each block includes the central column, preserving the builder's diagnostics and its replicate requirement.
+    The whole 142,125 x 161 result was checked np.array_equal against L.weight_arms before adoption.
+    """
+    if weights.ndim != 2 or weights.shape[1] < 2 or block_width < 1:
+        raise SystemExit("[BLOCKED] row4 weight blocks need a central column, replicates and positive block width")
+    result = np.empty_like(weights)
+    info = None
+    for start in range(1, weights.shape[1], block_width):
+        end = min(start + block_width, weights.shape[1])
+        # Block diagnostics describe only that block; retain the canonical guards and print the full-run summary below.
+        with contextlib.redirect_stdout(io.StringIO()):
+            arms, metadata = L.weight_arms(d, weights[:, [0, *range(start, end)]], cells)
+        if info is None:
+            info = metadata
+            result[:, 0] = arms["row4"][:, 0]
+        elif metadata != info:
+            raise SystemExit(f"[BLOCKED] row4 metadata differs in replicate block {start}:{end}")
+        result[:, start:end] = arms["row4"][:, 1:]
+        del arms
+    return result, info
+
+
+def load_frame():
+    """Use the existing canonical frame; rebuilding a shared upstream cache is outside this consumer route."""
+    if not (F.CACHE / "asec25_generation.parquet").is_file():
+        raise SystemExit("[BLOCKED] canonical frame cache missing; reproduce the generation frame before this consumer")
+    return F.load()
 
 
 def spending_category(row):
@@ -330,14 +386,18 @@ def age_band_factors(age, g3, w_id, lineage):
     return f_b[band], dict(n_id=n_id, added_b=added_b, f_b=f_b, mix_gap=float(np.abs(n_id / n_id.sum() - mix["identified"]).max()))
 
 
-def main(arm, case="sept27", accrual="flat", payroll_base="all", placement="band"):
+def main(arm, case="oct14", accrual="flat", payroll_base="all", placement="band", allocation="personal"):
     sub = CASE_DIRS[case]
+    if allocation == "shared":
+        if case != "oct14":
+            raise SystemExit("[BLOCKED] --allocation shared is the oct14 companion")
+        sub = f"{sub}/shared_allocation"
     if placement != "band" and (case not in AGE_MIX_CASES or accrual != "flat"):
-        raise SystemExit("[BLOCKED] --placement uniform is the beside arm of a case placed by age band (oct07), flat arm only")
+        raise SystemExit("[BLOCKED] --placement uniform is the beside arm of a case placed by age band, flat arm only")
     if sub and arm != "row4":
         raise SystemExit(f"[BLOCKED] --case {case} runs on the row-4 weights only, the count the case prices")
     if accrual != "flat" and case not in CASE_LANES:
-        raise SystemExit("[BLOCKED] --accrual person needs --case sept29, oct05 or oct07, the cases that carry the pension accrual")
+        raise SystemExit("[BLOCKED] --accrual person needs a case that carries the pension accrual")
     if payroll_base != "all" and accrual != "person":
         raise SystemExit("[BLOCKED] --payroll onbooks needs --accrual person: the central pairs the two")
     print(f"[frame] weights: {arm}" + (f"; case {case}" if sub else "") + (f"; accrual {accrual}" if accrual != "flat" else "")
@@ -346,6 +406,9 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all", placement="band
     v4 = case in CASE_LANES
     if v4 and lines["meta"]["case"] != CASE_LANES[case]:
         raise SystemExit(f"[BLOCKED] _cache/{sub}/lines.json is {lines['meta']['case']}'s; run export_lines.cjs --case {case}")
+    if case == "oct14" and (lines["meta"].get("allocation") != allocation
+                            or any(lines["meta"]["specs"][end]["allocation"] != allocation for end in ENDS)):
+        raise SystemExit(f"[BLOCKED] _cache/{sub}/lines.json is not the {allocation} allocation; rerun export_lines.cjs")
     lineage = lines["meta"]["lineage"] if case in LINEAGE_CASES else None
     carriers = lines["meta"].get("carriers", {})   # oct07: the items' carriers and their parent lines (export_lines.cjs)
     routes = {}   # oct07: (side, line) -> the items' parts on it whose split basis is another line (meta.routes)
@@ -356,15 +419,18 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all", placement="band
         routes.setdefault((r["side"], r["line"]), []).append(r)
     PA = lines["meta"]["pension_accrual"] if v4 else None
     b_cats = B_CATS + ([PENSION] if v4 else [])   # the pension accrual is the members' own claim, so in B
-    d = F.load()
+    # These canonical ACS/IPUMS checks read large frames. Finish them before loading the full CPS frame.
+    row4_cells = L.acs_cells() if arm == "row4" else None
+    pa.default_memory_pool().release_unused()
+    d = load_frame()
+    # Return temporary Parquet buffers before the weight/key phases overlap with the validated frame.
+    pa.default_memory_pool().release_unused()
     civ, union, gens = F.masks(d)
     W_pub = d[F.REPS].to_numpy(float)
     W = W_pub
     if arm == "row4":
         print("[row 4 weights]", flush=True)
-        arms, info = L.weight_arms(d, W_pub, L.acs_cells())
-        W = arms["row4"]
-        del arms
+        W, info = row4_weights(d, W_pub, row4_cells)
         print(f"  row-4 factors: naturalized {info['factor_natz']:.6f}, noncitizen {info['factor_noncit']:.6f}", flush=True)
     w0 = W[:, 0]
     w_pub = W_pub[:, 0]
@@ -560,6 +626,7 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all", placement="band
 
     # Pieces: (generation, category, amount_bn, vector restricted to the generation).
     print("[pieces]", flush=True)
+    rows_u = np.flatnonzero(union)
     pieces, residual, scaling = {e: [] for e in ENDS}, {e: {} for e in ENDS}, []
     moves = []   # oct07: each part split by another line, its cost by category on its own line's split and on the basis line's
     for end in ENDS:
@@ -570,18 +637,20 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all", placement="band
             amount = {}
 
             def add(cat, bn, x, pid):
-                x = np.where(m, x, 0.0)
+                # Every later spread uses union rows only. Keep precisely those masked values, not 142k rows
+                # whose non-union entries are all zero (the union here has 18,331 records).
+                x = np.where(m[rows_u], x[rows_u], 0.0)
                 piece = dict(g=g, cat=cat, bn=bn, x=x, id=pid)
                 if alt is not None and cat == PENSION:
                     # The pension pieces: Social Security (the social_security line) and Part A (part of medicare).
                     part = {"social_security": "oasdi", "medicare": "part_a"}[pid]
-                    piece["alt"] = {k: np.where(m, alt[k][part][a], 0.0) for k in PENSION_VECTORS}
+                    piece["alt"] = {k: np.where(m[rows_u], alt[k][part][a][rows_u], 0.0) for k in PENSION_VECTORS}
                     piece["part"] = part
                 if pid in payroll:
                     key = row_of("receipt", pid)["key"]
                     if cat != "taxes" or key not in onbooks_key:
                         raise SystemExit(f"[BLOCKED] payroll line {pid}: category {cat}, key {key}")
-                    piece["alt_tax"] = np.where(m, onbooks_key[key][a], 0.0)
+                    piece["alt_tax"] = np.where(m[rows_u], onbooks_key[key][a][rows_u], 0.0)
                 pieces[end].append(piece)
 
             def line_parts(row):
@@ -745,16 +814,28 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all", placement="band
             gate(f"{g} {end}: pieces plus residual equal the generation's cost", abs(got - G["cost_bn"]) < 1e-6,
                  f"{got:.6f} vs {G['cost_bn']:.6f}")
 
+    # The pieces now own every needed vector; release construction buffers before allocating amount matrices.
+    del prod_parts, vec, rk, sk, medical, edu, v
+    if alt is not None:
+        alt.clear()  # retain the arm-presence flag; the pieces own independent masked copies
+        del onbooks_key
+    # Only first-column weights and household/status fields are read after construction. Copy the small vectors
+    # before dropping their large backing blocks; the full raw frame/cache was already read and gated above.
+    age, w_pub, w0 = age.copy(), w_pub.copy(), w0.copy()
+    d = household_frame(d)
+    del W_pub, w_labor
+    # The late projection released the Arrow-backed full frame; return its unused pool pages before NumPy matrices.
+    pa.default_memory_pool().release_unused()
     # Person amounts per replicate, by category: coefficient = bn * 1e9 / (x . w_r) within the generation.
     print("[person amounts]", flush=True)
-    rows_u = np.flatnonzero(union)
     Wu = W[rows_u]
+    W = Wu  # all later W reads are shape-only; the actual replicate weights are Wu
     cats = b_cats + A_ONLY
     amt = {e: {c: np.zeros((len(rows_u), W.shape[1])) for c in cats} for e in ENDS}
     unassigned = {e: np.zeros(W.shape[1]) for e in ENDS}
     for end in ENDS:
         for p in pieces[end]:
-            x = p["x"][rows_u]
+            x = p["x"]
             k = x @ Wu  # 161
             if not np.any(x) or np.any(k == 0):
                 unassigned[end] += p["bn"]
@@ -788,14 +869,17 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all", placement="band
             part_bn = {k: sum(p["bn"] for p in pieces[end] if p.get("part") == k) for k in ("oasdi", "part_a")}
             # oct05: the lineage's own accrual and Part A sit beside the September 29 union's (export_lines.cjs gates them).
             own = lineage["pension_bn"][end] if lineage else dict(oasdi_receipts_bn=0.0, accrual=0.0, part_a=0.0)
-            want = PA["ratio_net"] * (oasdi - own["oasdi_receipts_bn"]) + own["accrual"]
+            row4 = PA.get("row4_union_bn", {}).get(end, dict(accrual=0.0, part_a=0.0, benefit_tax=0.0))
+            want = PA["ratio_net"] * (oasdi - own["oasdi_receipts_bn"]) + own["accrual"] + row4["accrual"]
             gap = abs(part_bn["oasdi"] - want) / want
             gate(f"{end}: the union's Social Security accrual is ratio_net x its OASDI receipts in the account (1e-9 relative)"
-                 + (", plus the lineage's own on its receipts" if lineage else ""),
+                 + (", plus the lineage's own on its receipts" if lineage else "")
+                 + (", with R9's union shift kept separately" if PA.get("row4_union_bn") else ""),
                  gap < 1e-9, f"{part_bn['oasdi']:.6f} = {PA['ratio_net']:.6f} x {oasdi - own['oasdi_receipts_bn']:.6f}"
-                 + (f" + {own['accrual']:.6f}" if lineage else "") + " bn")
+                 + (f" + {own['accrual']:.6f}" if lineage else "") + f" + R9 {row4['accrual']:.6f} bn")
             gate(f"{end}: the union's Part A accrual is the payload's part_a_accrual_bn (1e-9 bn)" + (", plus the lineage's" if lineage else ""),
-                 abs(part_bn["part_a"] - PA["part_a_accrual_bn"] - own["part_a"]) < 1e-9, f"{part_bn['part_a']:.9f} bn")
+                 abs(part_bn["part_a"] - PA["part_a_accrual_bn"] - own["part_a"] - row4["part_a"]) < 1e-9,
+                 f"{part_bn['part_a']:.9f} bn; R9 union {row4['part_a']:+.9f} bn")
         pen_by = {}
         for k_vec in PENSION_VECTORS:
             pen = {e: np.zeros((len(rows_u), W.shape[1])) for e in ENDS}
@@ -804,7 +888,7 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all", placement="band
                 for p in pieces[end]:
                     if "alt" not in p:
                         continue
-                    x = p["alt"][k_vec][rows_u]
+                    x = p["alt"][k_vec]
                     k = x @ Wu
                     if not np.any(x) or np.any(k <= 0):
                         raise SystemExit(f"[BLOCKED] {k_vec}: {p['g']} {end} {p['id']}: no member carries the piece")
@@ -823,7 +907,7 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all", placement="band
             for p in pieces[end]:
                 if "alt_tax" not in p:
                     continue
-                x0, x1 = p["x"][rows_u], p["alt_tax"][rows_u]
+                x0, x1 = p["x"], p["alt_tax"]
                 k0, k1 = x0 @ Wu, x1 @ Wu
                 if not (np.any(x0) and np.all(k0 != 0) and np.any(x1) and np.all(k1 > 0)):
                     raise SystemExit(f"[BLOCKED] on-books payroll: {p['g']} {end} {p['id']} cannot be re-keyed")
@@ -853,8 +937,12 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all", placement="band
                 gate(f"{k_arm} {end}: convention A reproduces the case in every replicate (1e-9 bn)", gap_case < 1e-9,
                      f"max |gap| {gap_case:.1e}")
 
+    # The per-person amounts now own every spread. Release the construction vectors before household statistics
+    # allocate their temporary matrices; no subsequent calculation reads these buffers.
+    del pieces
     print("[households]", flush=True)
-    du = d.iloc[rows_u].reset_index(drop=True)
+    # Household ordering needs three columns, not the entire 411-column CPS frame and its 161 replicate weights.
+    du = d[["PH_SEQ", "A_AGE", "PPPOS"]].iloc[rows_u].reset_index(drop=True)
     hh_code, hh_ids = pd.factorize(du.PH_SEQ, sort=True)
     H = len(hh_ids)
     members = np.bincount(hh_code).astype(float)
@@ -877,11 +965,10 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all", placement="band
     head_lab = lab[head_rows]
 
     s_status = {}
-    dd = d.assign(state=d.GESTFIPS)
     hh = d[["H_SEQ", "HPUBLIC", "HLORENT"]].drop_duplicates("H_SEQ")
     mex = d.PENATVTY.eq(303).to_numpy() & d.PRCITSHP.isin([4, 5]).to_numpy()
     for name, use_med in (("borjas_paper_rules", True), ("no_medicaid_rule", False)):
-        s = impute(dd, hh, use_medicaid_rule=use_med)
+        s = impute(d, hh, use_medicaid_rule=use_med)
         un = np.asarray(s["unauthorized"], bool)
         sel = mex & un & (age >= 25) & (age <= 64)
         got = w_pub[sel].sum() / 1e6
@@ -1104,21 +1191,23 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all", placement="band
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="An adopted main case spread over the union's households.")
-    parser.add_argument("--weights", choices=["published", "row4"], default="published",
-                        help="published: ASEC person weights (derived/); row4: audit row 4's weights (derived/row4/)")
-    parser.add_argument("--case", choices=list(CASE_DIRS), default="sept27",
-                        help="sept27 (default): the September 27 case; sept29: the main case adopted on 2026-09-29; oct05: on 2026-10-05; "
-                             "oct07: main case v6; the later cases on the row-4 weights only, written to derived/<case>/")
+    parser.add_argument("--weights", choices=["published", "row4"], default="row4",
+                        help="row4 (default): audit row 4's weights; published: ASEC person weights, historical sept27 only")
+    parser.add_argument("--case", choices=list(CASE_DIRS), default="oct14",
+                        help="oct14 (default): live main case v7; historical cases are explicit; "
+                             "later cases use row-4 weights and write to derived/<case>/")
+    parser.add_argument("--allocation", choices=["personal", "shared"], default="personal",
+                        help="personal (default): the group total; shared: oct14 within-group companion in shared_allocation/")
     parser.add_argument("--accrual", choices=["flat", "person"], default="flat",
                         help="flat (default): the pension accrual by OASDI and HI receipts; person: by the pension "
                              "lane's person model (person_accrual.py), new *_person_accrual files beside the flat ones "
-                             "(--case sept29, oct05 or oct07)")
+                             "(cases carrying pension accrual)")
     parser.add_argument("--payroll", choices=["all", "onbooks"], default="all",
                         help="all (default): the payroll taxes on all wages, as the account keys them; onbooks (with "
                              "--accrual person): on on-books wages, the lane's central, written to *_person_onbooks")
     parser.add_argument("--placement", choices=["band", "uniform"], default="band",
-                        help="band (default): a case's added people by five-year band at its measured age mix (oct07); "
+                        help="band (default): a case's added people by five-year band at its measured age mix; "
                              "uniform: beside it, v5's one factor on every G3+ record, flat arm only, written to "
-                             "derived/oct07/uniform_placement/")
+                             "derived/<case>/uniform_placement/")
     args = parser.parse_args()
-    main(args.weights, args.case, args.accrual, args.payroll, args.placement)
+    main(args.weights, args.case, args.accrual, args.payroll, args.placement, args.allocation)
