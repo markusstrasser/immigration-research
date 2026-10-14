@@ -122,3 +122,16 @@ built from the adopted fixes. Each ask has my recommendation; the work proceeds 
 - **Who wins (recommend: the stationary financing frame as the verdict, the cohort frame beside).** With every
   channel and the corrected payer pool, 4.6% / 8.4% of other residents come out ahead under rules a / b (was 19.6% /
   18.7%); the cohort frame moves that by under 0.2 points. Evidence: `winners_losers_2026_09_24/RESULT.md` (P7).
+
+## Open ask, 2026-10-15 00:45 JST: the Codex weekly plan
+session: 75b08f57-63cc-4e3d-96dc-60050327b5c1
+
+- **Codex budget (recommend: the v8 case and its propagation finish on the plan; the round-2 fix lanes on beside
+  readings and round 3's GPT reviewers wait for your word).** The weekly Codex plan stood at 74% at 00:39 and rose
+  7–9 points an hour through the evening (5% at 01:00 on 10-14). Over the last three hours this repo used about 48%
+  of the Codex tokens on this machine and genomics about 38%. At that pace the plan runs out around 03:30–04:00 JST;
+  it resets 2026-10-20 14:57 JST. The account also shows prepaid credits (balance 55,113.75) that Codex may draw on
+  past the limit. The critical path (coverage, v8's final build, the consumer propagation) is running now. Held
+  until you answer: the who-wins lane's round-2 fixes, the comparators' own mixed-unit removal, and round 3's GPT
+  reviewers. The world-ledger fix worker is already in its research phase. Your options: continue on credits, wait
+  for the reset, or run the held lanes as Claude workers (you asked for Sol to save tokens).
