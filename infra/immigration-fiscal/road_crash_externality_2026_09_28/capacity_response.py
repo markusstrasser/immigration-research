@@ -3,8 +3,10 @@
 The historical crash_model.py and every original output stay unchanged. This
 producer reproduces its full grid, then applies its density elasticities to
 residual VMT/lane after the same uniform capacity cuts as the congestion row.
-Composition, liability and single-vehicle losses stay fixed. This transfers a
-traffic elasticity to road density [ASSUMPTION], not an estimated capacity effect.
+Composition and liability are held during the capacity change. The separate
+life-year arms change only gross mortality, including passenger losses in the
+single-vehicle term. Density response transfers a traffic elasticity to road
+density [ASSUMPTION], not an estimated capacity effect.
 """
 from __future__ import annotations
 
@@ -16,9 +18,11 @@ import itertools
 import json
 import math
 from pathlib import Path
-import resource
 import sys
 import time
+import argparse
+import os
+import tempfile
 
 sys.dont_write_bytecode = True
 HERE = Path(__file__).resolve().parent
@@ -26,6 +30,8 @@ ROOT = HERE.parents[2]
 FISCAL = HERE.parent
 OUT = HERE / "derived"
 GATES = []
+sys.path.insert(0, str(FISCAL / "scripts"))
+from memory_budget import require_within_budget
 
 
 def read_json(path):
@@ -99,8 +105,58 @@ def residual_share(traffic_share, lane_cut):
     return 1 - (1 - traffic_share) / (1 - lane_cut)
 
 
+def mortality_base(crash, dot_vsl):
+    """Gross mortality, separate from NHTSA's net QoL/productivity accounting."""
+    k = "Fatal"
+    nm_fraction = (crash.PED[k] + crash.BIKE[k]) / (crash.ECON[k] + crash.QALY[k])
+    killed = crash.KILLED[2023]
+    deaths = {"mv_fatal": killed * (1 - nm_fraction) * crash.MV_SHARE_FATAL,
+              "nm_fatal": killed * nm_fraction,
+              "sv_fatal": killed * (1 - nm_fraction) * (1 - crash.MV_SHARE_FATAL)}
+    gate("modeled fatal physical allocation closes", abs(sum(deaths.values()) - killed) < 1e-9)
+    return {k: n * dot_vsl / 1e9 for k, n in deaths.items()}, deaths
+
+
+def reprice_mortality(crash, p, result, density, gross, ratios):
+    """Change gross mortality only; liability and net nonmortality stay fixed."""
+    r = dict(result)
+    d = dict(density)
+    s, q = result["s"], result["q"]
+    nm_scale = s * (1 - q) / (1 - s) * (1 - crash.HISP_PED * crash.MEX_OF_HISP)
+    rc, xf = p["r_c"], p["x_fatal"]
+    bf = p["beta"][1]
+    comp_mv = s * (1 - q) * gross["mv_fatal"] * (rc - 1) * (1 - xf) / 2
+    comp_nm = nm_scale * gross["nm_fatal"] * crash.F_DRIVER_PED * (rc - 1) * (1 - bf)
+    mv = result["m_fatal"] * s * (1 - q) * gross["mv_fatal"] * xf + comp_mv
+    nm = result["m_fatal"] * nm_scale * bf * gross["nm_fatal"] + comp_nm
+    sv = result["m_fatal"] * s * gross["sv_fatal"] * p["e_sv"]
+    deltas = {"mv_fatal": mv * (ratios["mv_fatal"] - 1),
+              "nm_fatal": nm * (ratios["nm_fatal"] - 1),
+              "sv_fatal": sv * (ratios["sv_fatal"] - 1)}
+    r["mv_fatal"] += deltas["mv_fatal"]
+    r["nonmotorist"] += deltas["nm_fatal"]
+    r["single_vehicle"] += deltas["sv_fatal"]
+    r["total"] += sum(deltas.values())
+    r["composition"] += comp_mv * (ratios["mv_fatal"] - 1) + comp_nm * (ratios["nm_fatal"] - 1)
+    d["mv_fatal"] += result["m_fatal"] * s * (1 - q) * gross["mv_fatal"] * xf * (ratios["mv_fatal"] - 1)
+    d["nm_fatal"] += result["m_fatal"] * nm_scale * bf * gross["nm_fatal"] * (ratios["nm_fatal"] - 1)
+    return r, d
+
+
+def csv_text(records):
+    import io
+    handle = io.StringIO()
+    writer = csv.DictWriter(handle, fieldnames=list(records[0]), lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(records)
+    return handle.getvalue()
+
+
 def main():
     started = time.perf_counter()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--pin-new-inputs", action="store_true", help="explicitly admit the verified oct15 road/age inputs")
+    args = parser.parse_args()
     pins = read_json(HERE / "inputs/pins.json")
     for rel, expected in pins["sha256"].items():
         actual = hashlib.sha256((ROOT / rel).read_bytes()).hexdigest()
@@ -154,35 +210,71 @@ def main():
     gate("live fixed-network full span reproduced", max(abs(v - float(next(r for r in printed_spans if r["statistic"] == stat)["priced"])) for stat, v in zip(("low", "central", "high"), fixed_span)) < 5e-10)
 
     long_run = FISCAL / "service_response_long_run_2026_09_27/derived"
-    net = read_json(long_run / "net_change.json")
-    ea = read_json(long_run / "responses.json")["lines"]["economic_affairs_services"]
-    candidate = read_json(long_run / "candidate_band.json")
-    highways = [r for r in ea["subfunctions"] if r["subfunction"] == "Highways"]
+    old_net = read_json(long_run / "net_change.json")
+    net_path = long_run / "net_change_oct15.json"
+    net = read_json(net_path)
+    gate("live congestion source is oct15", net["case"] == "oct15")
+    for rel, expected in net["source_hashes"].items():
+        gate(f"live congestion source current {rel}", hashlib.sha256((ROOT / rel).read_bytes()).hexdigest() == expected)
+    ages_path = OUT / "fars_mortality_2023.json"
+    mortality = read_json(ages_path)
+    for rel, expected in mortality["source_hashes"].items():
+        gate(f"FARS mortality source current {rel}", hashlib.sha256((ROOT / rel).read_bytes()).hexdigest() == expected)
+    gate("FARS mortality standard matches DOT-linked crash base", abs(mortality["dot_vsl_2024usd"] - crash.VSL_2024 * 1e6) < 1e-9)
+    new_source_paths = [net_path, ages_path, FISCAL / "service_response_long_run_2026_09_27/congestion.py",
+                        HERE / "fars_group.py", Path(__file__), FISCAL / "main_case_2026_10_15/derived/corrections.json",
+                        FISCAL / "main_case_2026_10_15/derived/summary.json"]
+    new_pins = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in new_source_paths}
+    pin_path = HERE / "inputs/pins_oct15.json"
+    gate("oct15 source pins explicitly admitted", args.pin_new_inputs or pin_path.exists())
+    gate("oct15 source pins current", args.pin_new_inputs or read_json(pin_path)["sha256"] == new_pins)
     band = read_json(FISCAL / "sept24_propagation_2026_09_24/derived/oct14/band_variants.json")
     lineage = band["lineage"]["counts"]
     gate("lineage count closes", abs(lineage["account_union"] - n4) < 1e-3 and abs(lineage["lineage_population"] - n4 - lineage["added"]) < 1e-6)
     recipient_share = lineage["added"] / (civ4 - n4)
     rows, components, extrema, ends = [], [], [], {}
+    gross, modeled_deaths = mortality_base(crash, mortality["dot_vsl_2024usd"])
+    uniform = {}
+    valuation_spans = {}
     overlap = ["mortality", "road_congestion"]
     for end in ("low", "high"):
-        response = sum(r["national_bn"] * r["response"][end] for r in highways) / sum(r["national_bn"] for r in highways)
-        key = candidate["group_amounts_at_end_specifications_bn"][end]["economic_affairs_services"] / ea["national_bn"]
-        cut = response * key
-        gate(f"{end}: same capacity cut as congestion case", abs(cut - net["by_band_end"][end]["lane_cut"]) < 1e-12)
+        source = net["by_band_end"][end]
+        response, key, cut = source["highway_response"], source["key_share"], source["lane_cut"]
+        gate(f"{end}: same live capacity cut as congestion case", abs(cut - response * key) < 1e-12)
         gate(f"{end}: valid capacity fraction", 0 <= cut < 1)
         road_key = band["lineage_social_keys"][f"{end}_end"]["road"]
         gate(f"{end}: personal end specification", band["lineage_social_keys"][f"{end}_end"]["allocation"] == "personal" and band["lineage_social_keys"][f"{end}_end"]["specification"] == {"low": 16, "high": 11}[end])
-        ends[end] = dict(lane_cut=cut, highway_response=response, key=key, added_road_share=road_key)
-        for arm in ("all_density", "multivehicle_only"):
+        gate(f"{end}: actual oct15 personal specification", net["live_roads"]["ends"][end]["specification"] == {"low": 16, "high": 11}[end] and net["live_roads"]["ends"][end]["allocation"] == "personal")
+        ends[end] = dict(lane_cut=cut, before_lane_cut=old_net["by_band_end"][end]["lane_cut"], highway_response=response, key=key, added_road_share=road_key)
+    valuations = [("dot_uniform", "0"), ("dot_life_years", "0"), ("dot_life_years", "0.03")]
+    for valuation, rate in valuations:
+      ratios = {k: 1.0 if valuation == "dot_uniform" else mortality["profiles"][k]["rates"][rate]["mortality_ratio"] for k in gross}
+      active = []
+      max_nonfatal = max_identity = 0.0
+      for p, result, density in fixed:
+          r, d = reprice_mortality(crash, p, result, density, gross, ratios)
+          max_nonfatal = max(max_nonfatal, abs(r["mv_nonfatal"] - result["mv_nonfatal"]), abs(d["nm_nonfatal"] - density["nm_nonfatal"]))
+          identity, _ = reprice_mortality(crash, p, result, density, gross, {k: 1.0 for k in gross})
+          max_identity = max(max_identity, abs(identity["total"] - result["total"]))
+          active.append((p, r, d))
+      gate(f"{valuation}/{rate}: nonfatal dollars held and reference-age identity", max_nonfatal < 1e-9 and max_identity < 1e-9)
+      active_span = [min(r[1]["total"] for r in active), active[middle][1]["total"], max(r[1]["total"] for r in active)]
+      valuation_spans[f"{valuation}|{rate}"] = active_span
+      for end in ("low", "high"):
+        cut = ends[end]["lane_cut"]
+        road_key = ends[end]["added_road_share"]
+        for arm in ("multivehicle_only", "all_density"):
             adjusted = []
+            before = []
             grid = []
             max_close = max_comp = max_zero = 0.0
-            for index, (p, result, density) in enumerate(fixed):
+            for index, (p, result, density) in enumerate(active):
                 s = result["s"]
                 residual = residual_share(s, cut)
                 multiplier = residual / s
                 selected = sum(v for k, v in density.items() if arm == "all_density" or k.startswith("mv_"))
                 total = result["total"] + (multiplier - 1) * selected
+                before.append(result["total"] + (residual_share(s, ends[end]["before_lane_cut"]) / s - 1) * selected)
                 new_components = {k: result[k] for k in ("mv_nonfatal", "mv_fatal", "nonmotorist", "single_vehicle")}
                 for k in ("mv_nonfatal", "mv_fatal"):
                     new_components[k] += (multiplier - 1) * density[k]
@@ -192,31 +284,41 @@ def main():
                 max_comp = max(max_comp, abs((total - selected * multiplier) - (result["total"] - selected)))
                 max_zero = max(max_zero, abs(residual_share(s, 0) / s - 1))
                 adjusted.append(total)
-                grid.append(dict(end=end, arm=arm, cell=index, **cells[index], traffic_share=s, lane_cut=cut, residual_density_share=residual, density_multiplier=multiplier, fixed_total_bn=result["total"], density_fixed_bn=selected, total_bn=total))
+                grid.append(dict(valuation=valuation, real_discount_rate=rate, end=end, arm=arm, cell=index, **cells[index], traffic_share=s, lane_cut=cut, residual_density_share=residual, density_multiplier=multiplier, fixed_total_bn=result["total"], density_fixed_bn=selected, total_bn=total))
                 if index == middle:
-                    components.append(dict(end=end, arm=arm, **new_components, composition_bn=result["composition"], density_fixed_bn=selected, density_after_bn=selected * multiplier, other_held_bn=result["total"] - selected, residual_density_share=residual, multiplier=multiplier))
+                    components.append(dict(valuation=valuation, real_discount_rate=rate, end=end, arm=arm, **new_components, composition_bn=result["composition"], density_fixed_bn=selected, density_after_bn=selected * multiplier, other_held_bn=result["total"] - selected, residual_density_share=residual, multiplier=multiplier))
             gate(f"{end} {arm}: component closure", max_close < 1e-9, max_close)
             gate(f"{end} {arm}: all nondensity terms conserved", max_comp < 1e-9, max_comp)
             gate(f"{end} {arm}: zero capacity cut reproduces fixed network", max_zero < 1e-12, max_zero)
-            gate(f"{end} {arm}: capacity matching traffic removes density term", abs(residual_share(fixed[middle][1]["s"], fixed[middle][1]["s"])) < 1e-12)
+            gate(f"{end} {arm}: capacity matching traffic removes density term", abs(residual_share(active[middle][1]["s"], active[middle][1]["s"])) < 1e-12)
             span = [min(adjusted), adjusted[middle], max(adjusted)]
             for statistic, index in (("low", adjusted.index(span[0])), ("central", middle), ("high", adjusted.index(span[2]))):
                 extrema.append(dict(statistic=statistic, **grid[index]))
-            for population, factor, n in (("union", 1.0, n4), ("lineage_gross", 1 + road_key, lineage["lineage_population"]), ("lineage", (1 + road_key) * (1 - recipient_share), lineage["lineage_population"])):
+            complete = net["live_roads"]["population"]["with_coverage"]
+            for population, factor, n in (("union", 1.0, n4), ("lineage_gross", 1 + road_key, complete), ("lineage", (1 + road_key) * (1 - recipient_share), complete)):
                 declaration = dict(comparator="with_without", beneficiary_population="residents_outside_union" if population == "union" else "residents_outside_lineage" if population == "lineage" else "residents_outside_union_including_added_descendants", valuation_basis="crash_resource_and_harm", overlap_set=json.dumps(overlap))
-                rows.append(dict(item="road_crash_externality_capacity_response", group="mexican_origin" if population == "union" else "mexican_immigrant_lineage", measure="absolute", low_bn=span[0] * factor, central_bn=span[1] * factor, high_bn=span[2] * factor, per_member_usd=span[1] * factor * 1e9 / n, evidence_level="existing crash grid plus assumed density-capacity transfer", double_count_with="replace road_crash_externality; congestion and EMS excluded; fault-based row alternative", method_note="composition/liability/single vehicle held; no VMT fill-in; " + ("x and beta on density" if arm == "all_density" else "x on density; beta stays on traffic volume") + "; lineage road-key scaling assumed", end=end, arm=arm, population=population, baseline_central_bn=fixed_span[1] * factor, change_bn=(span[1] - fixed_span[1]) * factor, change_from_gross_live_bn=span[1] * factor - fixed_span[1] * (1 if population == "union" else 1 + road_key), scale_from_union=factor, population_n=n, **declaration))
-    gate("no duplicate row keys", len({(r["end"], r["arm"], r["population"]) for r in rows}) == len(rows))
-    for name, records in (("capacity_items.csv", rows), ("capacity_components.csv", components), ("capacity_extrema.csv", extrema)):
-        with (OUT / name).open("w", newline="") as handle:
-            writer = csv.DictWriter(handle, fieldnames=list(records[0]), lineterminator="\n")
-            writer.writeheader()
-            writer.writerows(records)
-    document = dict(case="oct14", original_positive_control=original_span, fixed_network_priced_span=fixed_span, ends=ends, recipient_share=recipient_share, lineage_rule="existing v7 added-people road-key extrapolation; lineage removes exchangeable added recipients; lineage_gross retains them for boundary-independent comparison [ASSUMPTION]", capacity_rule="remaining VMT/lane = (1-s)/(1-cut); ratio of finite density reduction to original s multiplies density terms only [ASSUMPTION]", replicate_se="not available: full factorial sensitivity span, no joint replicate inputs for crash/capacity parameters", all_passed=True, gates=GATES, input_pins=pins)
-    (OUT / "capacity_model.json").write_text(json.dumps(document, indent=2) + "\n")
+                row_key = (end, arm, population)
+                if valuation == "dot_uniform":
+                    uniform[row_key] = span[1] * factor
+                rows.append(dict(item="road_crash_externality_capacity_response", group="mexican_origin" if population == "union" else "mexican_immigrant_lineage", measure="absolute", valuation=valuation, real_discount_rate=rate, case="oct15", source_quantity_case="oct14", low_bn=span[0] * factor, central_bn=span[1] * factor, high_bn=span[2] * factor, per_member_usd=span[1] * factor * 1e9 / n, evidence_level="transported v7 crash quantities plus assumed native oct15 density-capacity response", double_count_with="replace road_crash_externality; congestion and EMS excluded; fault-based row alternative", method_note="physical mixing/culpability held; liability and net nonmortality dollars held across valuation; no VMT fill-in; " + ("x and beta on density" if arm == "all_density" else "x on density; beta stays on traffic volume") + "; v7 lineage road-key/recipient boundary transported; FARS victim-class ages, modeled fatal allocation held", end=end, arm=arm, population=population, baseline_central_bn=active_span[1] * factor, change_bn=(span[1] - active_span[1]) * factor, before_live_key_central_bn=before[middle] * factor, live_key_delta_bn=(span[1] - before[middle]) * factor, mortality_only_delta_bn=span[1] * factor - uniform[row_key], change_from_gross_live_bn=span[1] * factor - fixed_span[1] * (1 if population == "union" else 1 + road_key), scale_from_union=factor, population_n=n, quantity_population_n=n4 if population == "union" else lineage["lineage_population"], **declaration))
+    gate("no duplicate valuation/rate row keys", len({(r["valuation"], r["real_discount_rate"], r["end"], r["arm"], r["population"]) for r in rows}) == len(rows))
+    document = dict(case="oct15", original_positive_control=original_span, fixed_network_priced_span=fixed_span, valuation_fixed_spans=valuation_spans, ends=ends, recipient_share=recipient_share, modeled_deaths_by_class=modeled_deaths, gross_mortality_base_bn=gross, mortality_source=mortality, mortality_rule="Gross DOT mortality changes by FARS victim-class remaining years / age-40 reference; NHTSA net QoL embeds a productivity deduction, so the net nonmortality residual and liability dollars are held. Uniform reproduces the original base; no uniform fallback in life-year rows.", lineage_rule="v7 crash/traffic quantities and added-people road-key/recipient extrapolation transported; complete oct15 only in per-member denominator [ASSUMPTION]", capacity_rule="remaining VMT/lane = (1-s)/(1-cut); actual adopted native road key/responses shared with congestion [ASSUMPTION]; post-engine resource additions have no separately measured physical capacity response", replicate_se="not available: factorial sensitivity, not a confidence interval", all_passed=True, gates=GATES, input_pins=pins, oct15_input_pins=new_pins)
+    print(f"physical footprint {require_within_budget('crash capacity and mortality') / 1e9:.3f} GB")
+    outputs = {"capacity_items_oct15.csv": csv_text(rows), "capacity_components_oct15.csv": csv_text(components),
+               "capacity_extrema_oct15.csv": csv_text(extrema), "capacity_model_oct15.json": json.dumps(document, indent=2) + "\n"}
+    with tempfile.TemporaryDirectory(dir=OUT) as stage:
+        for name, text in outputs.items():
+            (Path(stage) / name).write_text(text)
+        if args.pin_new_inputs:
+            pinned = Path(stage) / "pins_oct15.json"
+            pinned.write_text(json.dumps({"rule": "Explicitly admitted verified adopted native road and observed mortality-age inputs", "sha256": new_pins}, indent=2) + "\n")
+            os.replace(pinned, pin_path)
+        for name in outputs:
+            os.replace(Path(stage) / name, OUT / name)
     for row in rows:
-        if row["arm"] == "all_density":
-            print(f"{row['end']} {row['population']}: {row['central_bn']:.6f} ({row['low_bn']:.6f}, {row['high_bn']:.6f}); change {row['change_bn']:+.6f}")
-    print(f"PASS {len(GATES)} gates; elapsed_s={time.perf_counter()-started:.3f}; maxrss_bytes={resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}")
+        if row["arm"] == "multivehicle_only":
+            print(f"{row['valuation']}/{row['real_discount_rate']} {row['end']} {row['population']}: {row['central_bn']:.6f}; capacity-key change {row['live_key_delta_bn']:+.6f}; mortality-only {row['mortality_only_delta_bn']:+.6f}")
+    print(f"PASS {len(GATES)} gates; elapsed_s={time.perf_counter()-started:.3f}")
 
 
 if __name__ == "__main__":

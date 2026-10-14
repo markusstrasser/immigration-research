@@ -1,0 +1,12 @@
+{
+  "rule": "Explicitly admitted verified adopted native road and observed mortality-age inputs",
+  "sha256": {
+    "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/net_change_oct15.json": "bf52fd1c61a381e86e117dc19096e588fed6d165f31037e311d33bc5680442b4",
+    "infra/immigration-fiscal/road_crash_externality_2026_09_28/derived/fars_mortality_2023.json": "f571a78e56d6542ea6b1564c9e2396c458b95da89e62cf4e88f9888b66c30bd3",
+    "infra/immigration-fiscal/service_response_long_run_2026_09_27/congestion.py": "cc217691cb462989cd75b537c0283423386b51a7577b34caeb0d48a1e6212fd1",
+    "infra/immigration-fiscal/road_crash_externality_2026_09_28/fars_group.py": "31270176da3e3595cb07cde2f6b94b62ff661d519c8d6e7f723441170780fc5e",
+    "infra/immigration-fiscal/road_crash_externality_2026_09_28/capacity_response.py": "92e23403a210416a06c5c1c7c1ba589cafe204830dbe0b03c54d5c19fc51f4e9",
+    "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections.json": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68",
+    "infra/immigration-fiscal/main_case_2026_10_15/derived/summary.json": "1d999c666d68696ed2728b9e6fd48c44ab85371e875e3e6f1b16d0b16971013a"
+  }
+}

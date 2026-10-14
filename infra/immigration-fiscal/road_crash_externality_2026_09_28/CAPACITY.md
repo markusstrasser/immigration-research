@@ -63,3 +63,34 @@ The original FARS and crash producer commands remain part of the lane's reproduc
 - 2026-10-14 21:58:33 JST — traced the capacity cut to the congestion producer and read the live case and consumer declarations.
 - 2026-10-14 22:02:07 JST — the requested all-density calculation and the multi-vehicle-only disconfirmation arm pass; original and live-frame positive controls reproduce. A strict self-exposure check first caught the congestion lane's rounded TARGET versus the CPS file's full precision; reading its authoritative declaration fixed the mismatch, with the 1e-12 tolerance retained.
 - Reproducibility: all three commands exit 0; `rerun_lane.py` **IDENTICAL 16/16**, exit 0. Python-measured 4.035 seconds, peak child RSS 636,059,648 bytes; new producer alone 1.257 seconds and 101,826,560 bytes. No `--allow-unrun` exemption.
+
+## Round-2 corrections — 2026-10-15
+
+The oct15 branch uses the adopted case's native highway key **0.103045731939**, actual personal specifications 16/11 and the amount-weighted state/local and federal highway responses. Capacity cuts change **0.059051 / 0.080610 → 0.075587 / 0.103046** (rounded). The traffic quantities, row-4/5+ normalization, culprit/victim mixing, v7 descendant road factor and recipient boundary are transported from the original source; they are not observed oct15 geography. Completion and coverage resource additions have no separately measured physical road response. The complete oct15 population is used only for the per-member denominator. [CALCULATION: `derived/capacity_model_oct15.json`; `service_response_long_run_2026_09_27/derived/net_change_oct15.json`] [ASSUMPTION]
+
+Central is **multivehicle-only, uniform DOT VSL**. All-density remains beside because it additionally transfers pedestrian/cyclist traffic elasticities to road density. All dollar figures below have the same outside-lineage recipient boundary. [FRAMING-SENSITIVE]
+
+| Mortality basis and capacity arm | Low end, before native key | Low end, after | High end, before | High end, after |
+|---|---:|---:|---:|---:|
+| Uniform, multivehicle-only | 11.673727 | 11.801388 | 11.841073 | 12.023762 |
+| Uniform, all-density | 7.487794 | 6.347376 | 5.992857 | 4.360858 |
+| Life years, 0%, multivehicle-only | 11.305474 | 11.367384 | 11.386629 | 11.475224 |
+| Life years, 3%, multivehicle-only | 11.221315 | 11.262017 | 11.274670 | 11.332916 |
+
+[CALCULATION: `derived/capacity_items_oct15.csv`; factorial spans are sensitivity ranges, not confidence intervals.]
+
+Life-year arms reprice **gross mortality only** using observed national FARS 2023 victim-class ages and the common NVSS 2024 period table, relative to remaining years at age 40. Multivehicle victims are occupants; single-vehicle external victims are passengers, matching the model's passenger term; nonmotorists are pedestrians and cyclists. Missing age takes the known-age mean within its class, with age-0/100 bounds reported. The conditional age distribution of victims outside the lineage is unmeasured, so national class ages are transported. Common within-age mortality is retained. [DATA: `derived/fars_mortality_2023.json`; `fars_group.py`; `crime_victim_cost_2026_09_23/vsl_standard.py`] [ASSUMPTION]
+
+NHTSA's net quality-of-life amount subtracts market and household productivity from gross QALY loss (Blincoe report, chapter 5, p.92, cached `_cache/blincoe.txt`). Multiplying that net amount would also reprice the subtraction. Instead, each held fatal physical allocation is represented as gross DOT mortality plus a fixed net nonmortality residual. Only gross mortality changes; economic/nonfatal losses, liability flows and that residual stay fixed. Uniform and an age-40 reference identity reproduce the original cells. The original TSF model holds 40,901 deaths; revised cached FARS has 41,025. FARS supplies age proportions only, and does not silently replace the held quantities. [SOURCE: cached Blincoe report] [CALCULATION: `mortality_base()`, `reprice_mortality()`]
+
+`capacity_items_oct15.csv` has 36 unique rows keyed by `valuation`, `real_discount_rate`, `end`, `arm`, `population`. Valuation/rate cells are `dot_uniform/0`, `dot_life_years/0`, `dot_life_years/0.03`; consumers must select an exact cell and cannot fall back to uniform. `before_live_key_central_bn` and `live_key_delta_bn` isolate the key update at each valuation; `mortality_only_delta_bn` compares the same current capacity with uniform. Replace the crash row once. Original outputs remain unchanged. [CALCULATION]
+
+Explicit admission of verified inputs writes `inputs/pins_oct15.json` via `--pin-new-inputs`; default replay fails if those pins are missing or stale. All new outputs are staged after fail-loud source/accounting/physical-budget gates. Physical footprint uses the shared memory-budget definition; RSS is diagnostic only. Reproduce this branch with FARS (cached openpyxl), capacity, and its tests; no historical crash-model regeneration is needed.
+
+Validation — 2026-10-15 02:58:07 JST: **1,070 capacity gates**, three capacity regressions and two congestion regressions pass. Default FARS/capacity/test branch replay is **IDENTICAL 23/23**, exit 0, measured 3.486s. A first replay caught admission omitting two successful pin-gate records; admission and default replay now emit the same receipt. FARS physical footprint 0.829GB; capacity 0.256GB, both below the shared 2.5GB budget. All 23 historical derived files across the road and service lanes match the pre-edit hashes, including every adopted service-response input. No network, historical regeneration, Git writes or tolerance relaxation.
+
+### Round-2 replacement-baseline repair
+
+2026-10-15 03:25:33 JST (`date`): full mortality replacement deltas subtract the original uniform fixed-network baseline, while capacity-only deltas retain the selected valuation baseline. Previously subtraction of an already-repriced baseline canceled the fixed-network mortality repricing. The all-channel lineage multivehicle life-year pairing falls a further0.152778bn at0% or0.167079bn at3%, at both ends; uniform central unchanged. Four regressions,1,070 gates and default branch reproduction IDENTICAL23/23 exit0 pass. Physical footprint0.256GB. The consumer uses exact replacement levels and the original embedded sender amount. [CALCULATION: `test_capacity.py`; scratch `b8-final-road.log`]
+
+Log: 2026-10-15 06:01:26 JST (`date`, parent): rerun on corrected v8 (`d1a24d47`): capacity IDENTICAL 23/23, congestion IDENTICAL 24/24, exit 0. No road key or response moves, so every figure above stands; `inputs/pins_oct15.json` re-pins `service_response_long_run_2026_09_27/derived/net_change_oct15.json`, whose values are unchanged (its recorded source hashes moved).

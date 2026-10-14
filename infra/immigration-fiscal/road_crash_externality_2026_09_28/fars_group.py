@@ -6,6 +6,8 @@ separately. Output: derived/fars_group_2023.json, derived/fars_group_2023_tables
 """
 import json
 import csv
+import hashlib
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -238,6 +240,51 @@ result = {
     "driverrf_nonbehavioural_codes": [int(x) for x in rf_nonbehav],
     "violation_nonmoving_codes": [int(x) for x in vio_nonmoving],
 }
+
+# New mortality-only arm. Historical FARS summaries above keep their schema and
+# bytes; observed age mixes are separate from the model's held crash quantities.
+sys.path.insert(0, str(LANE.parent / "crime_victim_cost_2026_09_23"))
+import vsl_standard as V
+
+age_dead = dead.merge(acc[["ST_CASE", "VE_FORMS"]], on="ST_CASE", validate="many_to_one")
+held_fatalities = json.loads((OUT / "fars_group_2023.json").read_text())["fatalities_total"]
+if len(age_dead) != len(dead) or len(dead) != held_fatalities:
+    raise ValueError("[BLOCKED] FARS mortality ages do not reproduce 2023 fatalities")
+occupant = age_dead.PER_TYP.isin([1, 2, 9])
+groups = {"mv_fatal": occupant & age_dead.VE_FORMS.ge(2),
+          "nm_fatal": age_dead.PER_TYP.isin([5, 6, 7]),
+           "sv_fatal": age_dead.PER_TYP.eq(2) & age_dead.VE_FORMS.eq(1)}
+table = V.life_table()
+dot = V.dot_vsl()
+profiles = {}
+for name, mask in groups.items():
+    ages = age_dead.loc[mask, "AGE"]
+    known = ages[ages.between(0, 120)].clip(upper=100).astype(int)
+    if known.empty:
+        raise ValueError(f"[BLOCKED] FARS victim class {name} has no observed ages")
+    hist = known.value_counts().sort_index()
+    rates = {}
+    for label, rate in (("0", 0.0), ("0.03", 0.03)):
+        values = {int(age): V.remaining_years(int(age), rate, table) for age in hist.index}
+        mean = sum(int(hist.loc[age]) * values[int(age)] for age in hist.index) / len(known)
+        missing = len(ages) - len(known)
+        low = (mean * len(known) + missing * V.remaining_years(100, rate, table)) / len(ages)
+        high = (mean * len(known) + missing * V.remaining_years(0, rate, table)) / len(ages)
+        reference = V.remaining_years(V.REFERENCE_AGE, rate, table)
+        if not 0 <= low <= mean <= high or not reference > 0:
+            raise ValueError(f"[BLOCKED] FARS mortality missing-age bounds {name}/{label}")
+        rates[label] = {"remaining_years": mean, "reference_years": reference, "mortality_ratio": mean / reference,
+                        "missing_age_low_years": low, "missing_age_high_years": high}
+    profiles[name] = {"all_records": len(ages), "known_age_records": len(known), "missing_age_records": len(ages) - len(known),
+                      "age_counts": {str(int(age)): int(n) for age, n in hist.items()}, "rates": rates}
+raw_sources = [SRC / "person.csv", SRC / "accident.csv", V.HERE / "inputs/lt2024_Table01.xlsx", V.HERE / "inputs/dot_vsl_table_web.txt", V.HERE / "vsl_standard.py"]
+age_document = {"source_year": 2023, "fatalities": len(dead), "profiles": profiles, "dot_vsl_2024usd": dot,
+                "source_hashes": {str(p.relative_to(LANE.parents[2])): hashlib.sha256(p.read_bytes()).hexdigest() for p in raw_sources},
+                "rule": "Observed national FARS victim-class ages; source quantities remain the original crash model's allocation. Missing age takes its class's known-age mean, with 0/100-year bounds; 100+ uses NVSS open final age interval. Common NVSS period table; no within-age ethnic mortality adjustment.",
+                "classes": "mv: PER_TYP 1/2/9 and VE_FORMS >=2; sv: passengers PER_TYP 2 and VE_FORMS==1, matching the external passenger term; nm: pedestrian/bicyclist/other cyclist PER_TYP 5/6/7. National class age profiles transported to outside-lineage victims; their conditional age mix is unmeasured. Other person types are not silently assigned to these classes."}
+sys.path.insert(0, str(LANE.parent / "scripts"))
+from memory_budget import require_within_budget
+print(f"FARS physical footprint {require_within_budget('FARS mortality ages') / 1e9:.3f} GB")
 OUT.mkdir(exist_ok=True)
 (OUT / "fars_group_2023.json").write_text(json.dumps(result, indent=1))
 with open(OUT / "fars_group_2023_tables.csv", "w", newline="") as f:
@@ -245,3 +292,6 @@ with open(OUT / "fars_group_2023_tables.csv", "w", newline="") as f:
     w.writeheader()
     w.writerows(rows)
 print("wrote", OUT / "fars_group_2023.json")
+age_temp = OUT / ".fars_mortality_2023.json.tmp"
+age_temp.write_text(json.dumps(age_document, indent=2) + "\n")
+age_temp.replace(OUT / "fars_mortality_2023.json")

@@ -1,0 +1,130 @@
+{
+ "case": "oct15",
+ "live_roads": {
+  "case": "oct15",
+  "population": {
+   "without_coverage": 43269648.68157841,
+   "with_coverage": 45230062.30075857,
+   "completion": 517435.75719317,
+   "coverage": 1960413.6191801599
+  },
+  "ends": {
+   "low": {
+    "specification": 16,
+    "allocation": "personal",
+    "roads": [
+     {
+      "id": "hwy_sl",
+      "group": "block",
+      "level": "state_local",
+      "stock_charged_bn": 4388.9962727707125,
+      "key": 0.1030457319387052,
+      "response": 0.7401981546463505,
+      "return_bn": 6.695348911847956
+     },
+     {
+      "id": "hwy_fed",
+      "group": "block",
+      "level": "federal",
+      "stock_charged_bn": 54.573499999999996,
+      "key": 0.1030457319387052,
+      "response": 0,
+      "return_bn": 0
+     }
+    ]
+   },
+   "high": {
+    "specification": 11,
+    "allocation": "personal",
+    "roads": [
+     {
+      "id": "hwy_sl",
+      "group": "block",
+      "level": "state_local",
+      "stock_charged_bn": 4388.9962727707125,
+      "key": 0.1030457319387052,
+      "response": 1,
+      "return_bn": 13.568020002117212
+     },
+     {
+      "id": "hwy_fed",
+      "group": "block",
+      "level": "federal",
+      "stock_charged_bn": 54.573499999999996,
+      "key": 0.1030457319387052,
+      "response": 1,
+      "return_bn": 0.16870698755870783
+     }
+    ]
+   }
+  }
+ },
+ "source_hashes": {
+  "infra/immigration-fiscal/service_response_long_run_2026_09_27/congestion.py": "cc217691cb462989cd75b537c0283423386b51a7577b34caeb0d48a1e6212fd1",
+  "infra/immigration-fiscal/congestion_2026_09_23/arms.py": "919cca2da97ec4859a390da7be5367629fd06ffe3197c91efc0142076dfc4531",
+  "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/congestion_pairing_baseline_oct15.json": "472a3081e385419861562afc47ace1e6561b3f7fb1851acfc4a4dfc8d4dcccc9",
+  "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections.json": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/summary.json": "1d999c666d68696ed2728b9e6fd48c44ab85371e875e3e6f1b16d0b16971013a"
+ },
+ "b1_lanes_fixed_bn": 19.162711110731056,
+ "b1_factorial_bn": [
+  8.047943973203898,
+  35.25151421805585
+ ],
+ "keyed_proportional_bn": 11.978122617882287,
+ "lanes_coefficient": {
+  "low": 0.028000000000000004,
+  "central": 0.066,
+  "high": 0.10400000000000001
+ },
+ "note": "Live native road key and actual case responses; capacity follows spending [ASSUMPTION]. Original congestion urban exposures/traffic quantities transported, not observed oct15 geography. Coverage/mixed post-engine resource amounts have no separately measured physical capacity response and are not silently converted to roads. This is congestion only, not the historical service-response account-move total.",
+ "by_band_end": {
+  "low": {
+   "congestion_change_bn": -6.680202996520562,
+   "congestion_bn": 12.482508114210495,
+   "congestion_range_bn": [
+    0.16403121854856467,
+    31.1153850041253
+   ],
+   "lane_cut": 0.07558722369730002,
+   "highway_response": 0.7335308534880576,
+   "key_share": 0.1030457319387052
+  },
+  "high": {
+   "congestion_change_bn": -9.25354065446144,
+   "congestion_bn": 9.909170456269615,
+   "congestion_range_bn": [
+    -5.921966575473084,
+    29.525972628626654
+   ],
+   "lane_cut": 0.1030457319387052,
+   "highway_response": 1.0,
+   "key_share": 0.1030457319387052
+  }
+ },
+ "pairing_by_end": {
+  "low": {
+   "baseline_lineage_congestion_bn": 14.512929235874232,
+   "replacement_lineage_congestion_bn": 12.946717388934198,
+   "lineage_congestion_delta_bn": -1.5662118469400337,
+   "source_published_before_bn": 13.992562864050909,
+   "source_published_after_bn": 12.482508114210495,
+   "row4_nhts5plus_factor": 0.9739606055308851,
+   "original_lineage_road_factor": 0.07597445096482147,
+   "outside_lineage_recipient_share": 0.010275181579126573,
+   "rule": "Frozen parent pre-R2b pairing row; original row4/NHTS5+ normalization and v7 lineage/recipient factors held during the native-road-key replacement."
+  },
+  "high": {
+   "baseline_lineage_congestion_bn": 12.39493708945012,
+   "replacement_lineage_congestion_bn": 10.219917556869603,
+   "lineage_congestion_delta_bn": -2.1750195325805173,
+   "source_published_before_bn": 12.01805628378483,
+   "source_published_after_bn": 9.909170456269615,
+   "row4_nhts5plus_factor": 0.9684867274006844,
+   "original_lineage_road_factor": 0.07597445096482147,
+   "outside_lineage_recipient_share": 0.010275181579126573,
+   "rule": "Frozen parent pre-R2b pairing row; original row4/NHTS5+ normalization and v7 lineage/recipient factors held during the native-road-key replacement."
+  }
+ }
+}

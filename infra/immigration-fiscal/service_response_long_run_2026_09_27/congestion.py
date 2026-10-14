@@ -32,6 +32,14 @@ import csv
 import importlib.util
 import io
 import json
+import ctypes
+import ctypes.util
+import hashlib
+import os
+import subprocess
+import sys
+import tempfile
+import time
 from pathlib import Path
 
 import numpy as np
@@ -48,11 +56,50 @@ LANES_SE = 0.038  # CDT working paper table 10 column 6, log lane (total) 0.066 
 LANES = {"low": A.LANES_COEF_T10 - LANES_SE, "central": A.LANES_COEF_T10, "high": A.LANES_COEF_T10 + LANES_SE}
 KAPPA = {"network follows spending": 1.0, "network fixed (bound)": 0.0}
 GATES: list[dict] = []
+sys.path.insert(0, str(FISCAL / "scripts"))
+import memory_budget as MB
+ARM_WEIGHTS = {}
 
 
 def gate(name, ok, detail=""):
     GATES.append({"gate": name, "passed": bool(ok), "detail": detail})
     print(f"  {'PASS' if ok else 'FAIL'} {name}{' — ' + detail if detail else ''}")
+    if not ok:
+        raise SystemExit(f"[BLOCKED] {name}: {detail}; no new outputs written")
+
+
+def live_roads():
+    """Use the adopted native road key/responses; no physicalization of fixed post amounts."""
+    source = r'''
+const P=require('./infra/immigration-fiscal/main_case_2026_10_15/package.cjs');
+const S=P.readJson('main_case_2026_10_15/derived/summary.json'), Q=P.correctionsPayload();
+if(S.v8.status!=='adopted'||Q.meta.coverage.stub||JSON.stringify(Q)!==JSON.stringify(P.readJson('main_case_2026_10_15/derived/corrections.json')))throw Error('[BLOCKED] roads require matching adopted payload');
+const rows={};for(const [j,end]of ['low','high'].entries()){const i=S.v8.end_specifications.set[0][j],sp=P.MAIN_SPECS[i],x=P.evaluateFull(P.payloadModel(),sp);if(Math.abs(x.cost_bn-S.main_case[j])>1e-9)throw Error('[BLOCKED] road case does not close');rows[end]={specification:i,allocation:sp.allocation,roads:x.capital.components.filter(c=>['hwy_sl','hwy_fed'].includes(c.id))};}
+console.log(JSON.stringify({case:'oct15',population:Q.meta.population_v8,ends:rows}));
+'''
+    proc = subprocess.Popen(["node", "-e", source], cwd=HERE.parents[2], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    peak = 0
+    if sys.platform == "darwin":
+        lib = ctypes.CDLL(ctypes.util.find_library("proc"), use_errno=True)
+        while proc.poll() is None:
+            info = MB._RUsageInfoV4()
+            rc = lib.proc_pid_rusage(proc.pid, MB._RUSAGE_INFO_V4, ctypes.byref(info))
+            if rc == 0:
+                peak = max(peak, info.ri_lifetime_max_phys_footprint)
+                if peak > MB.LIMIT_BYTES:
+                    proc.terminate()
+                    proc.wait()
+                    raise SystemExit("[BLOCKED] road probe exceeds physical-footprint budget")
+            elif ctypes.get_errno() != 3:
+                proc.terminate()
+                proc.wait()
+                raise OSError(ctypes.get_errno(), "road-probe footprint measurement failed")
+            time.sleep(0.01)
+    stdout, stderr = proc.communicate()
+    if proc.returncode or not stdout.strip():
+        raise RuntimeError(f"[BLOCKED] adopted road probe failed: {stderr}")
+    print(f"road probe physical footprint {peak / 1e9:.3f} GB")
+    return json.loads(stdout)
 
 
 def setup():
@@ -86,12 +133,46 @@ def setup():
 
 def arm(ex, scope, share, eps, lam, cut, tau, vot, year, r_hours):
     """B-arm time cost with lanes shrinking by `cut` (a scalar or a per-area series); $bn over the lane's scope."""
-    log_c0 = eps * np.log1p(-share) - lam * np.log1p(-cut)
-    res = A.time_cost_arm(ex, log_c0, 0.0, tau, ex.phi_commute_route, vot, year, r_hours)
-    return A.summarise(res, ex, scope)["total_bn"]
+    log_c0 = eps * np.log1p(-np.asarray(share)) - lam * np.log1p(-np.asarray(cut))
+    # A.time_cost_arm is linear in g once its free-flow cap is applied. Cache
+    # unchanged exposure/price weights instead of rebuilding pandas Series for
+    # thousands of factorial cells; the original helper remains the parity oracle.
+    cache_key = (id(ex), year, r_hours, tau, float(vot["all_purposes_local"]), float(vot["truck_driver"]))
+    if cache_key not in ARM_WEIGHTS:
+        delay = np.asarray(A.delay_share(ex, year, r_hours))
+        passenger = np.asarray(A.others_hours(ex, year)) * float(vot["all_purposes_local"])
+        truck = np.asarray(ex.truck_delay_ph) * (1 - tau) * float(vot["truck_driver"])
+        fuel = (np.asarray(ex.passenger_fuel_gal) * (1 - np.asarray(ex.phi_commute_route)) * np.asarray(ex.gas_price)
+                + np.asarray(ex.truck_fuel_gal) * (1 - tau) * np.asarray(ex.diesel_price))
+        ARM_WEIGHTS[cache_key] = delay, passenger + (truck + fuel) / delay
+    delay, weights = ARM_WEIGHTS[cache_key]
+    g = np.minimum(np.asarray(A.surplus_fraction(log_c0, 0.0)), delay)
+    return float(np.nansum((weights * g)[scope]) / 1e9)
+
+
+def pairing_values(baseline, replacement):
+    """Apply the unchanged printed row4/5+ and recipient contract to new dollars."""
+    out = {}
+    row = baseline["row"]
+    for end in ("low", "high"):
+        before = baseline["source_published_before"][f"{end}_end"]
+        factor = row[f"union_before_boundary_{end}_bn"] / before
+        lineage_factor = (1 + row[f"share_{end}"]) * (1 - row[f"recipient_share_{end}"])
+        base = before * factor * lineage_factor
+        principal = row[f"union_{end}_bn"] + row[f"added_{end}_bn"]
+        gate(f"{end}: parent pre-R2b lineage congestion baseline closes (1e-9)", abs(base - principal) < 1e-9)
+        value = replacement[end]["congestion_bn"] * factor * lineage_factor
+        out[end] = {"baseline_lineage_congestion_bn": principal, "replacement_lineage_congestion_bn": value,
+                    "lineage_congestion_delta_bn": value - principal,
+                    "source_published_before_bn": before, "source_published_after_bn": replacement[end]["congestion_bn"],
+                    "row4_nhts5plus_factor": factor, "original_lineage_road_factor": row[f"share_{end}"],
+                    "outside_lineage_recipient_share": row[f"recipient_share_{end}"],
+                    "rule": baseline["rule"]}
+    return out
 
 
 def main():
+    started = time.perf_counter()
     control, nhts, tau, vots, exposures, pop_share = setup()
     e = exposures["2017 southwest"]
     scope = e["in_scope"].to_numpy()
@@ -131,14 +212,19 @@ def main():
     # ------------------------------------------------------------------------------------------
     print("\n[bridge]")
     resp = json.loads((DERIVED / "responses.json").read_text())
-    cand = json.loads((DERIVED / "candidate_band.json").read_text())
+    live = live_roads()
     ea = resp["lines"]["economic_affairs_services"]
     hw = [s for s in ea["subfunctions"] if s["subfunction"] == "Highways"]
     gate("highway subfunctions are S&L and federal", sorted(s["level"] for s in hw) == ["federal", "state_local"])
-    h = {end: sum(s["national_bn"] * s["response"][end] for s in hw) / sum(s["national_bn"] for s in hw) for end in ("low", "high")}
-    k = {end: cand["group_amounts_at_end_specifications_bn"][end]["economic_affairs_services"] / ea["national_bn"] for end in ("low", "high")}
-    move = {"low": cand["move_at_fixed_specifications_bn"]["low_end_spec_low_responses"],
-            "high": cand["move_at_fixed_specifications_bn"]["high_end_spec_high_responses"]}
+    h, k = {}, {}
+    for end in ("low", "high"):
+        roads = {r["level"]: r for r in live["ends"][end]["roads"]}
+        gate(f"{end}: live highways have both government levels", sorted(roads) == ["federal", "state_local"])
+        gate(f"{end}: road keys agree across levels", abs(roads["federal"]["key"] - roads["state_local"]["key"]) < 1e-12)
+        gate(f"{end}: personal adopted specification", live["ends"][end]["allocation"] == "personal" and live["ends"][end]["specification"] == {"low": 16, "high": 11}[end])
+        h[end] = sum(s["national_bn"] * roads[s["level"]]["response"] for s in hw) / sum(s["national_bn"] for s in hw)
+        k[end] = roads["state_local"]["key"]
+        gate(f"{end}: live capacity fraction valid", 0 <= h[end] * k[end] < 1)
     rows, net = [], {}
     for end in ("low", "high"):
         for kname, kappa in KAPPA.items():
@@ -159,8 +245,7 @@ def main():
                      "change_vs_b1_central_bn": central - b1})
         main = next(r for r in rows if r["band_end"] == end and r["variant"] == "network follows spending"
                     and r["geography"].startswith("uniform"))
-        net[end] = {"account_move_bn": move[end], "congestion_change_bn": main["change_vs_b1_central_bn"],
-                    "net_change_bn": move[end] + main["change_vs_b1_central_bn"],
+        net[end] = {"congestion_change_bn": main["change_vs_b1_central_bn"],
                     "congestion_bn": main["congestion_central_bn"], "congestion_range_bn": [main["factorial_min_bn"], main["factorial_max_bn"]],
                     "lane_cut": main["lane_cut"], "highway_response": h[end], "key_share": k[end]}
     gate("congestion with shrinking lanes is at most the fixed-lane B1", all(r["congestion_central_bn"] <= b1 + 1e-9 for r in rows))
@@ -175,22 +260,28 @@ def main():
     w.writeheader()
     for r in rows:
         w.writerow({f: (f"{r[f]:.10g}" if isinstance(r[f], float) else r[f]) for f in fields})
-    (DERIVED / "congestion_bridge.csv").write_text(buf.getvalue())
-    (DERIVED / "net_change.json").write_text(json.dumps({
+    baseline_path = DERIVED / "congestion_pairing_baseline_oct15.json"
+    pairing = pairing_values(json.loads(baseline_path.read_text()), net)
+    source_paths = [Path(__file__), Path(A.__file__), baseline_path, DERIVED / "responses.json", FISCAL / "main_case_2026_10_15/derived/corrections.json", FISCAL / "main_case_2026_10_15/derived/summary.json"]
+    source_hashes = {str(p.relative_to(HERE.parents[2])): hashlib.sha256(p.read_bytes()).hexdigest() for p in source_paths}
+    document = {
+        "case": "oct15", "live_roads": live, "source_hashes": source_hashes,
         "b1_lanes_fixed_bn": b1, "b1_factorial_bn": [min(fixed), max(fixed)], "keyed_proportional_bn": keyed,
-        "lanes_coefficient": LANES, "note": ("net_change = the account's move at the band end's fixed specification + the change in "
-                                             "the congestion item beside it (central inputs, network follows spending, uniform cut)"),
-        "by_band_end": net}, indent=1) + "\n")
-    (DERIVED / "gates_congestion.json").write_text(json.dumps({"gates": GATES}, indent=1) + "\n")
-    all_gates = {step: json.loads((DERIVED / f"gates_{step}.json").read_text())["gates"] for step in ("build", "engine", "land", "congestion")}
-    (DERIVED / "gates.json").write_text(json.dumps({"all_passed": all(g_["passed"] for gs in all_gates.values() for g_ in gs),
-                                                    "counts": {s: len(g_) for s, g_ in all_gates.items()}, "gates": all_gates}, indent=1) + "\n")
+        "lanes_coefficient": LANES,
+        "note": "Live native road key and actual case responses; capacity follows spending [ASSUMPTION]. Original congestion urban exposures/traffic quantities transported, not observed oct15 geography. Coverage/mixed post-engine resource amounts have no separately measured physical capacity response and are not silently converted to roads. This is congestion only, not the historical service-response account-move total.",
+        "by_band_end": net, "pairing_by_end": pairing}
+    print(f"physical footprint {MB.require_within_budget('live congestion') / 1e9:.3f} GB; elapsed_s={time.perf_counter()-started:.3f}")
+    outputs = {"congestion_bridge_oct15.csv": buf.getvalue(), "net_change_oct15.json": json.dumps(document, indent=1) + "\n",
+               "gates_congestion_oct15.json": json.dumps({"gates": GATES}, indent=1) + "\n"}
+    with tempfile.TemporaryDirectory(dir=DERIVED) as stage:
+        for name, text in outputs.items():
+            (Path(stage) / name).write_text(text)
+        for name in outputs:
+            os.replace(Path(stage) / name, DERIVED / name)
     print(f"\n  B1 lanes fixed {b1:.4f}; keyed proportional {keyed:.4f}")
     for r in rows:
         print(f"  {r['band_end']:4s} {r['variant']:26s} {r['geography']:32s} cut {r['lane_cut']:.5f}  "
               f"{r['congestion_central_bn']:.4f} ({r['factorial_min_bn']:.2f}–{r['factorial_max_bn']:.2f})  change {r['change_vs_b1_central_bn']:+.4f}")
-    for end, v in net.items():
-        print(f"  net {end}: account {v['account_move_bn']:+.4f} + congestion {v['congestion_change_bn']:+.4f} = {v['net_change_bn']:+.4f}")
     print(f"all {len(GATES)} gates passed")
 
 
