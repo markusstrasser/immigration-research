@@ -1,0 +1,17 @@
+model,end,spec,direct_receipts_bn,household_transfers_bn,tally_bn,scheduled_move_bn,tally_at_scheduled_bn
+case_accrual,low_end_16,16.0000,425.5566,431.1871,-5.6305,40.4842,-46.1147
+case_accrual,high_end_11,11.0000,425.5566,433.3158,-7.7592,40.4842,-48.2434
+cash_set,low_end_16,16.0000,427.5574,357.1995,70.3579,,
+cash_set,high_end_11,11.0000,427.5574,359.3282,68.2292,,
+v4_items_without_dataset_corrections,low_end_16,16.0000,471.7646,472.2639,-0.4993,44.0561,-44.5553
+v4_items_without_dataset_corrections,high_end_11,11.0000,471.7646,474.3926,-2.6280,44.0561,-46.6841
+v4_items_without_dataset_corrections_increments_held,low_end_16,16.0000,471.7646,472.2602,-0.4955,44.0561,-44.5516
+v4_items_without_dataset_corrections_increments_held,high_end_11,11.0000,471.7646,474.3889,-2.6243,44.0561,-46.6803
+uncorrected_no_v4_items,low_end_16,16.0000,424.5223,367.9208,56.6015,,
+uncorrected_no_v4_items,high_end_11,11.0000,424.5223,370.0169,54.5055,,
+union_at_case_responses,low_end_16,16.0000,391.7909,403.9402,-12.1493,37.7794,-49.9288
+union_at_case_responses,high_end_11,11.0000,391.7909,406.0428,-14.2519,37.7794,-52.0313
+lineage_arm_a,low_end_16,16.0000,414.7936,420.4928,-5.6992,,
+lineage_arm_a,high_end_11,11.0000,414.7936,422.6061,-7.8125,,
+lineage_arm_c,low_end_16,16.0000,436.3196,441.8813,-5.5618,,
+lineage_arm_c,high_end_11,11.0000,436.3196,444.0255,-7.7059,,

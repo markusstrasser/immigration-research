@@ -1,0 +1,2719 @@
+{
+  "calibration": {
+    "source": "matched_benefits_2026_09_19/model.py",
+    "sha256": "8740f820a937dcce0dfe700d5a167b4ff6b52b82ea5a92a0ab60d99de93e56cc",
+    "labor_share": 0.65,
+    "alpha": 0.35,
+    "first_year_multiplier": 0.65,
+    "rule": "[ASSUMPTION; APPROX] First-order fixed-capital output/profit response: 1 - alpha; business property response 0. Other production and both corporate lines scale their long-run responses.",
+    "form_probe": {
+      "labor_remaining": 0.9,
+      "fixed_capital": 1,
+      "fixed_output": 0.9338080879268165,
+      "long_run_output": 0.8999999999999999,
+      "finite_loss_ratio": 0.6619191207318348
+    }
+  },
+  "central": [
+    368.9909342553624,
+    459.20287674292126
+  ],
+  "population_scope": {
+    "without_coverage": 43269648.68157841,
+    "with_coverage": 45230062.30075857,
+    "completion": 517435.75719317,
+    "coverage": 1960413.6191801599
+  },
+  "thresholds": {
+    "midpoint_bn": 414.0969054991418,
+    "low_bn": 310.57267912435634,
+    "high_bn": 517.6211318739273
+  },
+  "variants": {
+    "fixed_capital": {
+      "set": [
+        300.4763332025574,
+        359.47862911258767
+      ],
+      "cash": [
+        216.43696662314514,
+        275.43926253317517
+      ]
+    },
+    "whole": {
+      "set": [
+        263.9401713365318,
+        332.1221429029239
+      ],
+      "cash": [
+        179.90080475711954,
+        248.08277632351138
+      ]
+    },
+    "corporate_only": {
+      "set": [
+        290.97742569141644,
+        359.15939725780845
+      ],
+      "cash": [
+        206.93805911200417,
+        275.120030678396
+      ]
+    },
+    "off": {
+      "set": [
+        332.608607806436,
+        374.5629346403657
+      ],
+      "cash": [
+        248.56924122702375,
+        290.5235680609532
+      ]
+    }
+  },
+  "components": [
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 10.107030601761945
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 0.8211547034307
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 10.928185305192645
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 3.369010200587314
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 0.2737182344768999
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 3.642728435064214
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 17.941066832569447
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 1.2931010159830612
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 19.234167848552506
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 2.547471466631575
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 0.1836088105846595
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 2.7310802772162344
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 0.37,
+      "first_year_response": 0.2405,
+      "cost_change_from_whole_bn": 3.73960132265192
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 0.37,
+      "first_year_response": 0.2405,
+      "cost_change_from_whole_bn": 0.30382724026935903
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 0.37,
+      "first_year_response": 0.2405,
+      "cost_change_from_whole_bn": 4.043428562921279
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 0.37,
+      "first_year_response": 0.2405,
+      "cost_change_from_whole_bn": 1.2465337742173064
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 0.37,
+      "first_year_response": 0.2405,
+      "cost_change_from_whole_bn": 0.10127574675645298
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 0.37,
+      "first_year_response": 0.2405,
+      "cost_change_from_whole_bn": 1.3478095209737593
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 17.941066832569447
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 1.2931010159830612
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 19.234167848552506
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 2.547471466631575
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 0.1836088105846595
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 2.7310802772162344
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0.8806493775433665,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0.8806493775433665,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0.8806493775433665,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0.8806493775433665,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0.8806493775433665,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0.8806493775433665,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 17.941066832569447
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 1.2931010159830612
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 19.234167848552506
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.278489904661643
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 0.5245966016704557
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.803086506332098
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 17.941066832569447
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 1.2931010159830612
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 19.234167848552506
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.278489904661643
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 0.5245966016704557
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.803086506332098
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 28.877230290748415
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 2.346156295516286
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 31.223386586264702
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 9.62574343024947
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 0.7820520985054285
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 10.407795528754898
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 17.941066832569447
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 1.2931010159830612
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 19.234167848552506
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.278489904661643
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 0.5245966016704557
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.803086506332098
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 0.37,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 10.684575207576913
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 0.37,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 0.8680778293410257
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 0.37,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 11.55265303691794
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 0.37,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 3.561525069192304
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 0.37,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 0.28935927644700854
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 0.37,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 3.850884345639312
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 17.941066832569447
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 1.2931010159830612
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 19.234167848552506
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.278489904661643
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 0.5245966016704557
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.803086506332098
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 10.107030601761945
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 0.8211547034307
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 10.928185305192645
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 3.369010200587314
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 0.2737182344768999
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 3.642728435064214
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 17.941066832569447
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 1.2931010159830612
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 19.234167848552506
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 2.547471466631575
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 0.1836088105846595
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 2.7310802772162344
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 0.37,
+      "first_year_response": 0.2405,
+      "cost_change_from_whole_bn": 3.73960132265192
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 0.37,
+      "first_year_response": 0.2405,
+      "cost_change_from_whole_bn": 0.30382724026935903
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 0.37,
+      "first_year_response": 0.2405,
+      "cost_change_from_whole_bn": 4.043428562921279
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 0.37,
+      "first_year_response": 0.2405,
+      "cost_change_from_whole_bn": 1.2465337742173064
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 0.37,
+      "first_year_response": 0.2405,
+      "cost_change_from_whole_bn": 0.10127574675645298
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 0.37,
+      "first_year_response": 0.2405,
+      "cost_change_from_whole_bn": 1.3478095209737593
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 17.941066832569447
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 1.2931010159830612
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 19.234167848552506
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 2.547471466631575
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 0.1836088105846595
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 0.65,
+      "cost_change_from_whole_bn": 2.7310802772162344
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0.8806493775433665,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0.8806493775433665,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0.8806493775433665,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0.8806493775433665,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0.8806493775433665,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0.8806493775433665,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 1,
+      "first_year_response": 1,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 17.941066832569447
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 1.2931010159830612
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 19.234167848552506
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.278489904661643
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 0.5245966016704557
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.803086506332098
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 0.37,
+      "first_year_response": 0.37,
+      "cost_change_from_whole_bn": 0
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 17.941066832569447
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 1.2931010159830612
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 19.234167848552506
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.278489904661643
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 0.5245966016704557
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.803086506332098
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 28.877230290748415
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 2.346156295516286
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 31.223386586264702
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 9.62574343024947
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 0.7820520985054285
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 10.407795528754898
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 17.941066832569447
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 1.2931010159830612
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 19.234167848552506
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.278489904661643
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 0.5245966016704557
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "low_end_16",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.803086506332098
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "union",
+      "amount_bn": 28.877230290748415,
+      "long_run_response": 0.37,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 10.684575207576913
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "added",
+      "amount_bn": 2.346156295516286,
+      "long_run_response": 0.37,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 0.8680778293410257
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_capital",
+      "scope": "lineage",
+      "amount_bn": 31.223386586264702,
+      "long_run_response": 0.37,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 11.55265303691794
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "union",
+      "amount_bn": 9.62574343024947,
+      "long_run_response": 0.37,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 3.561525069192304
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "added",
+      "amount_bn": 0.7820520985054285,
+      "long_run_response": 0.37,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 0.28935927644700854
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "corporate_labor",
+      "scope": "lineage",
+      "amount_bn": 10.407795528754898,
+      "long_run_response": 0.37,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 3.850884345639312
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "union",
+      "amount_bn": 20.372542455678918,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 17.941066832569447
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "added",
+      "amount_bn": 1.4683494350387865,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 1.2931010159830612
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "remaining_production_property",
+      "scope": "lineage",
+      "amount_bn": 21.840891890717703,
+      "long_run_response": 0.8806493775433665,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 19.234167848552506
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "union",
+      "amount_bn": 7.278489904661643,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.278489904661643
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "added",
+      "amount_bn": 0.5245966016704557,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 0.5245966016704557
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "end": "high_end_11",
+      "line": "other_production_taxes",
+      "scope": "lineage",
+      "amount_bn": 7.803086506332098,
+      "long_run_response": 1,
+      "first_year_response": 0,
+      "cost_change_from_whole_bn": 7.803086506332098
+    }
+  ],
+  "checks": [
+    {
+      "label": "fixed_capital/set/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/low/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/low/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/low/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/low/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/high/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/high/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/high/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/high/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/set/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "whole/set/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "whole/set/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "whole/set/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "whole/set/low/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/set/low/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/set/low/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/set/low/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/set/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "whole/set/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "whole/set/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "whole/set/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "whole/set/high/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/set/high/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/set/high/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/set/high/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/low/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/low/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/low/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/low/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/high/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/high/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/high/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/high/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/set/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "off/set/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "off/set/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "off/set/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "off/set/low/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/set/low/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/set/low/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/set/low/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/set/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "off/set/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "off/set/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "off/set/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "off/set/high/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/set/high/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/set/high/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/set/high/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/low/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/low/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/low/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/low/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/high/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/high/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/high/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/high/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/low/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/low/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/low/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/low/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/high/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/high/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/high/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/high/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/low/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/low/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/low/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/low/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/high/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/high/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/high/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/high/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/cash/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "off/cash/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "off/cash/low engine response closure",
+      "pass": true
+    },
+    {
+      "label": "off/cash/low post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "off/cash/low/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/cash/low/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/cash/low/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/cash/low/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/cash/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "off/cash/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "off/cash/high engine response closure",
+      "pass": true
+    },
+    {
+      "label": "off/cash/high post-engine items unchanged",
+      "pass": true
+    },
+    {
+      "label": "off/cash/high/corporate_capital receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/cash/high/corporate_labor receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/cash/high/remaining_production_property receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "off/cash/high/other_production_taxes receipt parts close",
+      "pass": true
+    },
+    {
+      "label": "first-year set/cash match case companion (1e-9)",
+      "pass": true
+    }
+  ],
+  "options": {
+    "long_run": false,
+    "rental": 0,
+    "capital": false,
+    "enterprise_receipt": 0,
+    "school_rule": "one_year",
+    "roads": "resources",
+    "property": "none",
+    "item6_first_year": true
+  },
+  "first_year_rules": "item9 with item6; item10 present in full with parent responses and fixed-capital source endpoint prices; items11/12 full post-engine",
+  "sensitivity_limit": "whole/corporate_only/off hold completion's fixed-capital endpoint prices; response-only sensitivities [APPROX]",
+  "first_year_breaks_alone": false
+}

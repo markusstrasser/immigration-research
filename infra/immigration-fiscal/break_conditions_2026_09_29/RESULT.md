@@ -1086,3 +1086,222 @@ No `--allow-unrun`: the helper is imported by the engine and explicitly syntax-c
 - 2026-10-14 20:47:04 JST — complete six-command reproduction **IDENTICAL 60/60, exit 0**, no exclusions;
   106.43s wall, 659.6MiB child peak RSS via Python. Python compile 3/3, both Node syntax checks and scoped
   whitespace check pass. Only this receipt was appended after reproduction; no calculation changed.
+
+## 2026-10-15 v8 propagation
+
+**Verdict:** In progress; final outputs and pins wait for the adopted case's `CASE_FINAL` receipt.
+The live computation is oct15. Explicit historical case options and every earlier case's output are
+preserved. `tables_oct15.py` freezes and checks independently derived oct15 source bytes and numeric
+cells; it never updates its own pins. [CALCULATION: `engine_breaks_sept29.cjs`, `tables_oct15.py`]
+
+The v8 first-year rule applies the fixed-capital item-6 response to item 9's domestic-source corporate
+amounts. Completed members remain present: reporter carriers follow their source parents and children
+use native cells/production, including the case's first-year source repricing. Mixed-unit and coverage
+amounts enter once, in full, after the engine and capital return. The whole/corporate-only/off
+response sensitivities hold the completion's fixed-capital endpoint source prices to isolate receipt
+responses; they are explicitly approximate. [DATA: `main_case_2026_10_15/RESULT.md`, rules R10–R13;
+CALCULATION: `first_year_v8.cjs`]
+
+C2's class-defined direct-receipt tally includes completion real-line carriers in their source parent's
+class. The new post-engine net costs have no receipt-versus-household-transfer split in the payload;
+this tally excludes them and states that scope. Its service break-even carries both amounts in full.
+The explicit switch `C2_POSTENGINE_CLASS_RULE=exclude_unclassified` is the default; `stop` blocks this
+reading until a source-side class split is declared. An unknown rule blocks immediately.
+C6 preserves each generation payload's scoped post-engine metadata, replaces the package's full-case
+post amount with that generation's declared amount, and requires the three unrounded costs to add to
+the case at 1e-9bn. [GAP; CALCULATION: `engine_breaks_sept29.cjs`, `tables_oct15.py`]
+
+### Reproduction after final upstream producers
+
+```sh
+OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/break_conditions_2026_09_29 \
+  "uv run --no-project python3 {lane}/scheduled_tr2026.py" \
+  "uv run --no-project python3 {lane}/first_year_calibration.py" \
+  "node {lane}/test_minimal_subsets.cjs" \
+  "node {lane}/engine_breaks_sept29.cjs --case oct15" \
+  "uv run --no-project python3 {lane}/tables_oct15.py" \
+  "uv run --no-project python3 -m pytest -p no:cacheprovider {lane}/test_tables_oct15.py -q"
+```
+
+Timing uses Python `time.perf_counter` and `resource.getrusage`; wrapper RSS is diagnostic. The tables
+process checks its own physical footprint through `scripts/memory_budget.py`.
+
+### Log (v8; append-only)
+
+- 2026-10-15 00:08 JST — Candidate initially stopped on an unknown oct15 key. Added the live case,
+  personal end/schema rules, source-parent carrier handling, native completion pension preservation and
+  generation-scoped post amounts. Two data-independent regressions and source syntax checks pass.
+  Case RESULT remains candidate/STUB; no final oct15 outputs or evidence pins are claimed.
+
+### Round-2 rules — 2026-10-15
+
+The headline remains on whole-population mortality. C8's live A1/A3 comparison consumes
+`symmetric_results_oct15.csv` under `combined_rules_only`, with mandatory case, personal allocation,
+mortality convention and source-bound tags. It reports both **mixed mortality conventions** (lineage
+on whole-population tables, comparators on their own) and **own-group mortality**, preserving both
+lineage source bounds in `c8_comparisons_oct15.csv`. A pairing without an explicit mortality label,
+an old case key, duplicate row or missing bound stops before output. The local-state symmetric
+production/mortality comparison is uncomputed; its legacy source reading stays labelled beside an
+explicit gap. Comparator item 9 is measured on each group's own job-capital lines by its producer,
+never population-scaled here. Linear population standardization is logged below the bar. [DATA:
+operator round-2 rule, 2026-10-15; CALCULATION: `tables_oct15.py`, `test_tables_oct15.py`]
+
+- 2026-10-15 (resumed) — Eight candidate, data-independent regression cases pass; Node syntax checks
+  pass. Added mandatory comparator provenance and negative controls. Non-finite principal values now
+  stop rather than passing a tolerance comparison. The first-year component labels read the actual
+  case end specifications, and divergent method ends stop before pricing. Python wrapper elapsed
+  0.657 seconds, child peak RSS 45.22 MB (diagnostic only). CASE_FINAL remains absent; no final numeric
+  output, pin derivation or reproducibility receipt is claimed. [CALCULATION: candidate pytest run]
+
+### Round-2 comparator fixes — 2026-10-15 (second resume)
+
+- **R2C02:** Before, C8 subtracted rough A1/A3 comparators from the case-lineage
+  `mexican_origin_engine` row. It now subtracts them from `mexican_origin_rough`,
+  requires both engine tags to be `rough` via the producer's shared comparison contract,
+  and uses case rows only for headline parity and the separate bridge. Each output row
+  names the itemized bridge file, whose component differences and sum close at 1e-9bn
+  for both sets and all mortality readings. The producer applies the same own-mortality
+  delta to both lineage engines; the consumer verifies bridge invariance rather than
+  assuming it. Live legacy local/headline gaps are withheld because they mix engines;
+  the local matched comparison remains an explicit GAP. [CALCULATION: `tables_oct15.py`]
+- **R2C40:** Before, every gap included the lineage's item11 against an unmeasured zero
+  comparator counterpart without an exclusion column. Now every C8 gap row declares
+  that asymmetry and reports the gap without item11 beside the full gap, requiring
+  exact exclusion closure (1e-9bn) and zero comparator item11. Dollar before/after
+  values wait for final case and comparator producers. R2C07/status/pension producer
+  fixes belong to the comparator lane; this lane consumes their final A1/A3 outputs.
+  [CALCULATION: `tables_oct15.py`, `test_tables_oct15.py`]
+- **Timing:** Candidate full-engine `central({capital:false})` sampled by V8 CPU
+  profiler: 4.7227s Python wall, 4.3491s package loading, 0.2059s option evaluation,
+  338,018,304 bytes child peak RSS (diagnostic). The full first-year option took
+  9.9537s wall, 9.4152s loading and 0.2903s evaluation, diagnostic RSS 323,289,088 bytes.
+  The sampled hotspot is case-owned: layer → item_union.partsAt → editsAt → childAt →
+  optionRates/buildPrices (first sample partsAt 2.005s inclusive, optionRates 1.898s).
+  Reported to the parent; no case edit or lane speedup is claimed. A code-change
+  before/after wall comparison is inapplicable here because the traced hotspot lies
+  outside this lane. Whole-lane timing remains pending CASE_FINAL. [CALCULATION:
+  parent's prop8 scratch `break-option-before-timing.json`,
+  `first-year-option-before-timing.json`, corresponding `.cpuprofile`/`.summary.json`]
+- 2026-10-15 00:47:43 JST — Ten candidate regression cases pass (four final-output
+  tests deselected), Python compile 2/2, Node syntax 2/2 and scoped whitespace check
+  pass. CASE_FINAL and adoption decision remain absent; live_case.json still says
+  oct14. No final first-year run, evidence pin derivation or rerun is claimed.
+
+### Adopted v8 exact-search repair — 2026-10-15
+
+The v8 item arms are rederived from exact package evaluations, with the published
+four-decimal rows checked only at their existing printed precision. The domestic-source
+arm is verified unchanged after item9 on both sets at 1e-9bn, then represented as the
+proved no-op; rounding cannot invent a signed alternative. All other numeric gates
+retain their existing tolerances. [CALCULATION: `engine_breaks_sept29.cjs`]
+
+C1 now enumerates eligible choices by cardinality with the source's mutually exclusive
+lineage/item groups. It prunes only sets containing a proper crossing subset, which
+proves they cannot be inclusion-minimal even under nonmonotonic band interactions.
+A prefix trie avoids scanning unrelated known cuts. This is an **exact minimum search
+within the declared combination model**: engine arms are jointly repriced, while ADD
+amounts and delivered lineage/item changes are added on the chosen set/cash basis.
+The lineage/item deltas retain their stated additive transport approximation; the
+algorithm does not jointly remeasure every subset in the full engine. The scope,
+groups, counts and proof travel in `derived/c1_search_oct15.json`; wall times stay in
+the execution log so the receipt reproduces byte for byte. [CALCULATION:
+`minimal_subsets.cjs`, `engine_breaks_sept29.cjs`; APPROX: additive lineage/item changes]
+
+Regression checks match brute force across 80 nonmonotonic spaces and a 41-arm space.
+The generation freshness preflight rejects stale adoption stamps, missing coverage and
+unclosed scoped post-engine amounts before expensive pricing, and source hashes must
+remain stable during the run. Missing source parts are not replaced with zero.
+[CALCULATION: `test_minimal_subsets.cjs`, `generation_preflight.cjs`]
+
+### Final partial receipt — 2026-10-15 02:37:57 JST
+
+**PARTIAL:** Adoption b35ac8fb verified. Independent first-year checks pass: set
+300.476333203 / 359.478629113bn, cash 216.436966623 / 275.439262533bn; 129 gates and
+the existing response-component regression pass. The 329.977481158bn midpoint is
+above the 310.572679124bn lower quarter cut: first-year alone does not break C1.
+[CALCULATION: parent scratch `first-year-final-scratch.json` and `.log`]
+
+C8's delivered one-engine/item11 controls and all 12 explicit mortality-bound bridge
+closures pass at 1e-9bn. Case-minus-rough bridge: accrual 6.207304737 / 8.275413202bn,
+cash 3.685630622 / 5.753739087bn. Final table/pin publication waits the dependencies
+below. [DATA: white comparator `symmetric_results_oct15.csv`,
+`lineage_engine_bridge_oct15.csv`; CALCULATION: `tables_oct15.py` source controls]
+
+The repaired engine's late dependency failure took 119.516280541s, exit 1. The new
+preflight rejects the same stale generation state in 7.065485s, exit 1, before C1
+pricing. This is a fail-fast improvement, not a successful whole-engine speedup.
+A separate 20-arm synthetic structural control (arbitrary scores, no fiscal engine)
+took 4.060736s for the old mask/filter/all-crossings comparison and 0.012808s for the
+exact grouped/trie route; both find the identical 1,251 minima. Those times do not
+estimate a whole-lane speedup. The earlier case-owned option-pricing profiles remain
+reported above. [CALCULATION: parent scratch `breaks-final-engine-fixed.log`,
+`breaks-preflight-refusal.log`, `break-search-control.log`]
+
+Ten source-independent pytest cases pass (four final-output tests deselected), plus
+80 brute-force nonmonotonic search controls, the 41-arm case and generation freshness
+negative controls. The documented six-command reproduction covers all changed/new
+scripts with no exclusions. No final engine output, pin derivation, all-output test
+pass or IDENTICAL receipt is claimed. [CALCULATION: executed checks]
+
+The shared unkeyed scheduled output refreshed only its `accrual_white.py` source
+fingerprint; its numeric values are unchanged. Calibration bytes are unchanged.
+[DATA: scoped diff of `derived/scheduled_tr2026.json`]
+
+**External stops:** generation `generation_corrections_oct15.json` and its cash
+counterpart remain candidate/coverage-off; `meta.adopted` is null and scoped coverage
+is missing. The debt lane's oct15 `summary.json` and `federal_split_2024.csv`, and the
+winners lane's oct15 `net_shares.csv`, are absent. Parent reports the debt producer's
+semantic stop. Parent was notified; final work resumes after these sources are
+delivered. No old keyed output was regenerated and no missing field was bypassed.
+[DATA: source existence/metadata probes; SOURCE: parent's continuation messages]
+
+### Generation-ready engine close — 2026-10-15
+
+This receipt supersedes the earlier generation-input stop and unavailable engine
+reproduction receipt; debt/winners publication stops remain current.
+
+**PASS for C1–C3/C6 and first-year outputs; tables partial.** Final generation set
+and cash payloads arrived with the adopted stamp and coverage. The full engine
+passes all gates and writes nine live outputs. Adopted totals reproduce at 1e-9bn:
+368.990934255 / 459.202876743bn set, 284.951567676 / 375.163510164bn cash. Every
+generation costs others at both ends under both conventions; the minimum among
+case/cash rows is 26.1682bn. C2's class-defined tally (excluding the explicitly
+unclassified item11/coverage net amounts) is -5.6305 / -7.7592bn set and
++70.3579 / +68.2292bn cash. The first-year verdict above is unchanged.
+[CALCULATION: `derived/c1_arms_oct15.csv`, `c2_tally_oct15.csv`,
+`c6_generation_break_even_oct15.csv`, `first_year_item6_oct15.json`; source parity gates]
+
+The exact declared-model C1 search finds 5,567 downward and 1,462 upward
+inclusion-minimal crossings. Minimum cardinalities are one downward
+(`ancestry_share_low`, a framing alternative) and two upward. Coverage is all
+3,096,575 / 552,959 eligible sets under the stated mutual exclusions; only
+411,078 / 137,517 sets need pricing after proved-subset pruning. Search times
+are 7.671171 / 0.576820s. The engine arms are jointly priced and lineage/item
+changes retain the declared additive approximation. [FRAMING-SENSITIVE;
+CALCULATION: `derived/c1_search_oct15.json`, `c1_min_cuts_oct15.csv`, live engine log]
+
+Full engine: exit 0, 95.705557s wall, diagnostic child RSS 1,781,465,088 bytes.
+Scoped five-command reproduction: **IDENTICAL 75/75, exit 0**, 143.574904s wall,
+diagnostic child RSS 1,778,581,504 bytes. Twelve focused tests pass, including the
+actual first-year and generation outputs. `tables_oct15.py` alone is explicitly
+excluded from reproduction; its two publication-dependent tests remain deselected.
+This is engine/first-year reproduction, not the complete six-command table route.
+[CALCULATION: parent scratch `breaks-final-engine-live.log`,
+`breaks-engine-scoped-rerun.log`]
+
+The only remaining input stops are debt's oct15 `federal_split_2024.csv` and
+`summary.json`, and winners' oct15 `net_shares.csv`. No table evidence pins or
+complete C1–C9 publication are claimed. The generation stop above is resolved.
+Historical keyed files remain untouched; no numeric source gate was loosened.
+
+Scoped reproduction used the documented commands except tables:
+
+```sh
+OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/break_conditions_2026_09_29 \
+  --allow-unrun tables_oct15.py \
+  "uv run --no-project python3 {lane}/scheduled_tr2026.py" \
+  "uv run --no-project python3 {lane}/first_year_calibration.py" \
+  "node {lane}/test_minimal_subsets.cjs" \
+  "node {lane}/engine_breaks_sept29.cjs --case oct15" \
+  "uv run --no-project python3 -m pytest -p no:cacheprovider {lane}/test_tables_oct15.py -q -k 'not tables_use_final_first_year_verdict and not c8_reports_all_source_mortality_bounds'"
+```
