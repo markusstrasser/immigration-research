@@ -1,0 +1,5500 @@
+{
+  "arms": [
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "unchanged_recommended",
+      "fire": 0,
+      "freight": null,
+      "police": 0
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "incident_proxy",
+      "fire": 0.06,
+      "freight": null,
+      "police": 0.20483435293698216
+    },
+    {
+      "activity": "plain_wage",
+      "arm": "incident_proxy_plain_wage",
+      "fire": 0.06,
+      "freight": null,
+      "police": 0.20483435293698216
+    },
+    {
+      "activity": "business_output_full",
+      "arm": "incident_proxy_mining_moves",
+      "fire": 0.06,
+      "freight": null,
+      "police": 0.20483435293698216
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "police_2023_proxy",
+      "fire": 0,
+      "freight": null,
+      "police": 0.2002669465682317
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "police_2024_proxy",
+      "fire": 0,
+      "freight": null,
+      "police": 0.20483435293698216
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "fire_all_runs_proxy",
+      "fire": 0.06,
+      "freight": null,
+      "police": 0
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "broader_location_proxy",
+      "fire": 0.165,
+      "freight": null,
+      "police": 0.32054051991430205
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "pos_capital_expenditure_mix_proxy",
+      "fire": 0.06,
+      "freight": null,
+      "police": 0.20483435293698216,
+      "pos_capital": true
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "freight_demand_control",
+      "fire": 0,
+      "freight": "demand",
+      "police": 0
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "freight_goods_output",
+      "fire": 0,
+      "freight": "freight_output_mining_fixed",
+      "police": 0
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "freight_goods_output_mining_moves",
+      "fire": 0,
+      "freight": "freight_output_full",
+      "police": 0
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "freight_plain_wage",
+      "fire": 0,
+      "freight": "plain_wage",
+      "police": 0
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "oregon_cost_share_demand",
+      "fire": 0,
+      "freight": "demand",
+      "freight_share": 0.29100000000000004,
+      "police": 0
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "federal_cost_share_demand",
+      "fire": 0,
+      "freight": "demand",
+      "freight_share": 0.4029729485752114,
+      "police": 0
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "truck_vmt_2023_demand",
+      "fire": 0,
+      "freight": "demand",
+      "freight_share": 0.1015943928208099,
+      "police": 0
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "truck_vmt_2024_demand",
+      "fire": 0,
+      "freight": "demand",
+      "freight_share": 0.10005974472491609,
+      "police": 0
+    },
+    {
+      "activity": "business_output_mining_fixed",
+      "arm": "combined_incidents_goods_output",
+      "fire": 0.06,
+      "freight": "freight_output_mining_fixed",
+      "police": 0.20483435293698216
+    }
+  ],
+  "case": "oct14",
+  "gates": [
+    {
+      "detail": null,
+      "name": "upstream inventory all gates",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "activity gate schema",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "activity all gates",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "activity population matches inventory union",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "business_output_full generations conserve union",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "business_output_full replicate SE",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "business_output_mining_fixed generations conserve union",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "business_output_mining_fixed replicate SE",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "freight_output_full generations conserve union",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "freight_output_full replicate SE",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "freight_output_mining_fixed generations conserve union",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "freight_output_mining_fixed replicate SE",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "plain_wage generations conserve union",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "plain_wage replicate SE",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "population generations conserve union",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "population replicate SE",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "HCAS freight share reproduces inherited roads",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unchanged positive control delta",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "union freight/passenger principal positive control",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rekeyed safety target+other closes national at 1e-9bn",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "safety subfunctions and excluded pools close national",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "SL and federal highway key agree",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "road/excise two-key reconstruction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "changed road key target+other conserves weight",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "new allocation conserves national budget",
+      "pass": true
+    }
+  ],
+  "holds_fixed": "personal end specifications 16/11; national budgets/stocks; service responses; household part; receipts; production; group frame; state-price intensity",
+  "input_sha256": {
+    "derived/activity_keys.json": "d66428525a110902f7ab94f98026d5b5a14dcb4853957a1655bd9fe16a5ca4ad",
+    "derived/inventory.json": "2c795b9c85d91446f4fc44d79345a730e2eade77311d2fd529c86003fa537aed",
+    "inputs/highway_shares.json": "f16005f2e24ee0586c7c0510cf5d116b5716902b73a4daa507014e8350c477b8",
+    "inputs/incident_shares.json": "861c9b2f9b16c1f57171cd0a4b2cb52b09b35f8874da5dcb456d1eec84e34563",
+    "inputs/spending_shares.json": "44e55c36084fbcc3ad8c8daff25d26cdff898d21784811f87133c58b86b74219"
+  },
+  "recommendation": "retain central, zero rekeying until spending/stock shares measured; proxy arms beside",
+  "rows": [
+    {
+      "above_5bn_bar": false,
+      "arm": "unchanged_recommended",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": 0.0,
+      "conditional_union_key_se_bn": 0.0,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 317.74297962279906
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "unchanged_recommended",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": 0.0,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 339.55201782952685
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "unchanged_recommended",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": 0.0,
+      "conditional_union_key_se_bn": 0.0,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 395.8107295353342
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "unchanged_recommended",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": 0.0,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 423.64926070050683
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "incident_proxy",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": -1.0318706854517845,
+      "conditional_union_key_se_bn": 0.051248818234284926,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 316.71110893734726
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "incident_proxy",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": -1.123534345924289,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 338.4284834836026
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "incident_proxy",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": -1.0318706854517845,
+      "conditional_union_key_se_bn": 0.051248818234284926,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 394.7788588498824
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "incident_proxy",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": -1.123534345924289,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 422.52572635458256
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "incident_proxy_plain_wage",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": -1.1148437223635919,
+      "conditional_union_key_se_bn": 0.03940409345102908,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 316.62813590043544
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "incident_proxy_plain_wage",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": -1.2027756805132275,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 338.3492421490136
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "incident_proxy_plain_wage",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": -1.1148437223635919,
+      "conditional_union_key_se_bn": 0.03940409345102908,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 394.6958858129706
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "incident_proxy_plain_wage",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": -1.2027756805132275,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 422.4464850199936
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "incident_proxy_mining_moves",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": -1.027634240969507,
+      "conditional_union_key_se_bn": 0.05163432154933954,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 316.71534538182954
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "incident_proxy_mining_moves",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": -1.1193965989585668,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 338.43262123056826
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "incident_proxy_mining_moves",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": -1.027634240969507,
+      "conditional_union_key_se_bn": 0.05163432154933954,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 394.78309529436467
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "incident_proxy_mining_moves",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": -1.1193965989585668,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 422.52986410154824
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "police_2023_proxy",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": -0.8250335624123804,
+      "conditional_union_key_se_bn": 0.040976059959242174,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 316.91794606038667
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "police_2023_proxy",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": -0.8983233625875623,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 338.65369446693927
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "police_2023_proxy",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": -0.8250335624123804,
+      "conditional_union_key_se_bn": 0.040976059959242174,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 394.9856959729218
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "police_2023_proxy",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": -0.8983233625875623,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 422.75093733791925
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "police_2024_proxy",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": -0.8438497655450891,
+      "conditional_union_key_se_bn": 0.04191058420516099,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 316.89912985725397
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "police_2024_proxy",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": -0.9188110562274203,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 338.63320677329943
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "police_2024_proxy",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": -0.8438497655450891,
+      "conditional_union_key_se_bn": 0.04191058420516099,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 394.9668797697891
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "police_2024_proxy",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": -0.9188110562274203,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 422.7304496442794
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "fire_all_runs_proxy",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": -0.1880209199066954,
+      "conditional_union_key_se_bn": 0.00933823402912392,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 317.55495870289235
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "fire_all_runs_proxy",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": -0.20472328969686868,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 339.34729453983
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "fire_all_runs_proxy",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": -0.1880209199066954,
+      "conditional_union_key_se_bn": 0.00933823402912392,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 395.6227086154275
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "fire_all_runs_proxy",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": -0.20472328969686868,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 423.44453741080997
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "broader_location_proxy",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": -1.837578422352677,
+      "conditional_union_key_se_bn": 0.09126504307772271,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 315.90540120044636
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "broader_location_proxy",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": -2.000815121459395,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 337.5512027080675
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "broader_location_proxy",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": -1.837578422352677,
+      "conditional_union_key_se_bn": 0.09126504307772271,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 393.9731511129815
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "broader_location_proxy",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": -2.000815121459395,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 421.64844557904746
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "pos_capital_expenditure_mix_proxy",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": -1.0531042256851735,
+      "conditional_union_key_se_bn": 0.05186631762464139,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 316.6898753971139
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "pos_capital_expenditure_mix_proxy",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": -1.14605022347372,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 338.40596760605314
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "pos_capital_expenditure_mix_proxy",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": -1.063720995801868,
+      "conditional_union_key_se_bn": 0.052176231573346284,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 394.7470085395323
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "pos_capital_expenditure_mix_proxy",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": -1.1573081622484356,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 422.4919525382584
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_demand_control",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": 0.0,
+      "conditional_union_key_se_bn": 0.0,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 317.74297962279906
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_demand_control",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": 0.0,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 339.55201782952685
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_demand_control",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": 0.0,
+      "conditional_union_key_se_bn": 0.0,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 395.8107295353342
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_demand_control",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": 0.0,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 42752212.92438524,
+      "result_bn": 423.64926070050683
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_goods_output",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": 0.2934800654652432,
+      "conditional_union_key_se_bn": 0.26161670642574236,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 318.0364596882643
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_goods_output",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": 0.1796772245384924,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 339.7316950540653
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_goods_output",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": 0.46150362217916124,
+      "conditional_union_key_se_bn": 0.4113978148623564,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 396.27223315751337
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_goods_output",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": 0.2825462431874547,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 423.9318069436943
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_goods_output_mining_moves",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": 0.511769068224375,
+      "conditional_union_key_se_bn": 0.3155615176552348,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 318.25474869102345
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_goods_output_mining_moves",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": 0.40354519542320083,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 339.95556302495004
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_goods_output_mining_moves",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": 0.8047677048537886,
+      "conditional_union_key_se_bn": 0.49622717368342517,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 396.615497240188
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_goods_output_mining_moves",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": 0.6345833714653466,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 424.28384407197217
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_plain_wage",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": -0.17265296336540842,
+      "conditional_union_key_se_bn": 0.08647539887818638,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 317.57032665943365
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_plain_wage",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": -0.28322526663337644,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 339.26879256289345
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_plain_wage",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": -0.27150044363929215,
+      "conditional_union_key_se_bn": 0.1359843972652963,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 395.5392290916949
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "freight_plain_wage",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": -0.4453777337031495,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 423.2038829668037
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "oregon_cost_share_demand",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": -0.03270027887306852,
+      "conditional_union_key_se_bn": 0.0,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 317.710279343926
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "oregon_cost_share_demand",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": -0.031794710355501035,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 339.52022311917136
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "oregon_cost_share_demand",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": -0.051421881490540576,
+      "conditional_union_key_se_bn": 0.0,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 395.7593076538436
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "oregon_cost_share_demand",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": -0.04999785580645777,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 423.5992628447004
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "federal_cost_share_demand",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": -0.5015583670354834,
+      "conditional_union_key_se_bn": 0.0,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 317.24142125576356
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "federal_cost_share_demand",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": -0.4876687158593174,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 339.0643491136675
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "federal_cost_share_demand",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": -0.7887111608558433,
+      "conditional_union_key_se_bn": 0.0,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 395.02201837447836
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "federal_cost_share_demand",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": -0.7668693900410388,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 422.8823913104658
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "truck_vmt_2023_demand",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": 0.7603872659246587,
+      "conditional_union_key_se_bn": 0.0,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 318.5033668887237
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "truck_vmt_2023_demand",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": 0.7393298684677714,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 340.29134769799464
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "truck_vmt_2023_demand",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": 1.1957250892895779,
+      "conditional_union_key_se_bn": 0.0,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 397.00645462462376
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "truck_vmt_2023_demand",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": 1.16261188555421,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 424.81187258606104
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "truck_vmt_2024_demand",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": 0.7668132123822482,
+      "conditional_union_key_se_bn": 0.0,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 318.5097928351813
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "truck_vmt_2024_demand",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": 0.7455778612500994,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 340.297595690777
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "truck_vmt_2024_demand",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": 1.2058300262685366,
+      "conditional_union_key_se_bn": 0.0,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 397.0165595616027
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "truck_vmt_2024_demand",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": 1.1724369866077438,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 424.8216976871146
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "combined_incidents_goods_output",
+      "baseline_bn": 317.74297962279906,
+      "change_bn": -0.7383906199865413,
+      "conditional_union_key_se_bn": 0.2873894654390033,
+      "end": "low",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 317.0045890028125
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "combined_incidents_goods_output",
+      "baseline_bn": 339.55201782952685,
+      "change_bn": -0.9438571213857967,
+      "conditional_union_key_se_bn": null,
+      "end": "low",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 338.60816070814104
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "combined_incidents_goods_output",
+      "baseline_bn": 395.8107295353342,
+      "change_bn": -0.5703670632726232,
+      "conditional_union_key_se_bn": 0.4358838216718397,
+      "end": "high",
+      "frame": "union",
+      "freight_basis": "principal union keys / unchanged demand control",
+      "members": 39712493.3312,
+      "result_bn": 395.2403624720616
+    },
+    {
+      "above_5bn_bar": false,
+      "arm": "combined_incidents_goods_output",
+      "baseline_bn": 423.64926070050683,
+      "change_bn": -0.8409881027368343,
+      "conditional_union_key_se_bn": null,
+      "end": "high",
+      "frame": "lineage",
+      "freight_basis": "[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption",
+      "members": 42752212.92438524,
+      "result_bn": 422.80827259777
+    }
+  ],
+  "se_scope": "union CPS SDR, conditional on national shares, output vector, pooling, averaged fillin factors, mapped baseline and state index; road consumption and capital mix held fixed. Lineage SE unavailable: added members not observed in CPS and correlated model factors not propagated.",
+  "unit": "billions of 2024 dollars per year, net-cost change for other residents"
+}

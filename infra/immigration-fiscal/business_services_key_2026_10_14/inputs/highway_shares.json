@@ -1,0 +1,294 @@
+{
+  "gates": {
+    "cost_shares_close": true,
+    "source_hashes": true,
+    "v21_legacy_positive_control": true,
+    "vm1_unrounded_national_subtotals_close_at_1e_6_miles_m": true
+  },
+  "hcas_addendum_federal": {
+    "freight_share": 0.4029729485752114,
+    "passenger_share": 0.5970270514247886,
+    "rows": [
+      {
+        "cents_per_mile": 0.8,
+        "cost_m": 14501,
+        "printed_share": 0.436,
+        "vehicle_class": "Autos"
+      },
+      {
+        "cents_per_mile": 0.76,
+        "cost_m": 5103,
+        "printed_share": 0.154,
+        "vehicle_class": "Pickups/Vans"
+      },
+      {
+        "cents_per_mile": 3.2,
+        "cost_m": 237,
+        "printed_share": 0.006999999999999999,
+        "vehicle_class": "Buses"
+      },
+      {
+        "cents_per_mile": 0.8,
+        "cost_m": 19841,
+        "printed_share": 0.597,
+        "vehicle_class": "All Passenger Vehicles"
+      },
+      {
+        "cents_per_mile": 2.2,
+        "cost_m": 1245,
+        "printed_share": 0.037000000000000005,
+        "vehicle_class": "< 25,000 pounds"
+      },
+      {
+        "cents_per_mile": 5.46,
+        "cost_m": 1049,
+        "printed_share": 0.032,
+        "vehicle_class": "25,001 - 50,000 pounds"
+      },
+      {
+        "cents_per_mile": 18.12,
+        "cost_m": 1344,
+        "printed_share": 0.04,
+        "vehicle_class": ">50,000 pounds"
+      },
+      {
+        "cents_per_mile": 4.38,
+        "cost_m": 3638,
+        "printed_share": 0.109,
+        "vehicle_class": "All Single Units"
+      },
+      {
+        "cents_per_mile": 3.43,
+        "cost_m": 231,
+        "printed_share": 0.006999999999999999,
+        "vehicle_class": "< 50,000 pounds"
+      },
+      {
+        "cents_per_mile": 5.21,
+        "cost_m": 557,
+        "printed_share": 0.017,
+        "vehicle_class": "50,001 - 70,000 pounds"
+      },
+      {
+        "cents_per_mile": 7.62,
+        "cost_m": 452,
+        "printed_share": 0.013999999999999999,
+        "vehicle_class": "70,001 - 75,000 pounds"
+      },
+      {
+        "cents_per_mile": 8.65,
+        "cost_m": 7458,
+        "printed_share": 0.22399999999999998,
+        "vehicle_class": "75,001 - 80,000 pounds"
+      },
+      {
+        "cents_per_mile": 15.32,
+        "cost_m": 594,
+        "printed_share": 0.018000000000000002,
+        "vehicle_class": "80,001 - 100,000 pounds"
+      },
+      {
+        "cents_per_mile": 20.28,
+        "cost_m": 462,
+        "printed_share": 0.013999999999999999,
+        "vehicle_class": ">100,001 pounds"
+      },
+      {
+        "cents_per_mile": 8.43,
+        "cost_m": 9754,
+        "printed_share": 0.294,
+        "vehicle_class": "All Combinations"
+      },
+      {
+        "cents_per_mile": 6.74,
+        "cost_m": 13392,
+        "printed_share": 0.40299999999999997,
+        "vehicle_class": "All Trucks"
+      },
+      {
+        "cents_per_mile": 1.23,
+        "cost_m": 33233,
+        "printed_share": 1.0,
+        "vehicle_class": "All Revenues"
+      }
+    ],
+    "table": "May 2000 addendum Table 4, federal TEA-21 forecast program costs"
+  },
+  "hcas_v21": {
+    "extraction": "Reused existing road-lane transcription; image visually checked and hash-pinned, not an independent machine extraction.",
+    "gate": "Existing transcription hash and cross-level row closure",
+    "rows": [
+      {
+        "federal_m": 12405,
+        "local_m": 15791,
+        "responsibility": "passenger",
+        "state_m": 35988,
+        "total_m": 64184,
+        "vehicle_class": "Autos"
+      },
+      {
+        "federal_m": 4770,
+        "local_m": 6328,
+        "responsibility": "passenger",
+        "state_m": 13678,
+        "total_m": 24777,
+        "vehicle_class": "Pickups and Vans"
+      },
+      {
+        "federal_m": 221,
+        "local_m": 268,
+        "responsibility": "passenger",
+        "state_m": 383,
+        "total_m": 871,
+        "vehicle_class": "Buses"
+      },
+      {
+        "federal_m": 1074,
+        "local_m": 886,
+        "responsibility": "freight",
+        "state_m": 1755,
+        "total_m": 3715,
+        "vehicle_class": "Single unit trucks <=25,000 lb"
+      },
+      {
+        "federal_m": 981,
+        "local_m": 1349,
+        "responsibility": "freight",
+        "state_m": 1867,
+        "total_m": 4197,
+        "vehicle_class": "Single unit trucks 25,001-50,000 lb"
+      },
+      {
+        "federal_m": 1098,
+        "local_m": 1212,
+        "responsibility": "freight",
+        "state_m": 1929,
+        "total_m": 4239,
+        "vehicle_class": "Single unit trucks >=50,000 lb"
+      },
+      {
+        "federal_m": 222,
+        "local_m": 149,
+        "responsibility": "freight",
+        "state_m": 325,
+        "total_m": 696,
+        "vehicle_class": "Combination trucks <=50,000 lb"
+      },
+      {
+        "federal_m": 528,
+        "local_m": 306,
+        "responsibility": "freight",
+        "state_m": 722,
+        "total_m": 1555,
+        "vehicle_class": "Combination trucks 50,001-70,000 lb"
+      },
+      {
+        "federal_m": 408,
+        "local_m": 178,
+        "responsibility": "freight",
+        "state_m": 517,
+        "total_m": 1103,
+        "vehicle_class": "Combination trucks 70,001-75,000 lb"
+      },
+      {
+        "federal_m": 6329,
+        "local_m": 2950,
+        "responsibility": "freight",
+        "state_m": 8353,
+        "total_m": 17632,
+        "vehicle_class": "Combination trucks 75,001-80,000 lb"
+      },
+      {
+        "federal_m": 778,
+        "local_m": 450,
+        "responsibility": "freight",
+        "state_m": 1125,
+        "total_m": 2353,
+        "vehicle_class": "Combination trucks >=80,000 lb"
+      }
+    ],
+    "shares": {
+      "federal_m": {
+        "freight_m": 11418,
+        "freight_share": 0.39626570417158324,
+        "passenger_share": 0.6037342958284168,
+        "total_m": 28814
+      },
+      "local_m": {
+        "freight_m": 7480,
+        "freight_share": 0.25044363344159104,
+        "passenger_share": 0.749556366558409,
+        "total_m": 29867
+      },
+      "state_m": {
+        "freight_m": 16593,
+        "freight_share": 0.24898712523633745,
+        "passenger_share": 0.7510128747636625,
+        "total_m": 66642
+      },
+      "total_m": {
+        "freight_m": 35490,
+        "freight_share": 0.28319050126873174,
+        "passenger_share": 0.7168094987312682,
+        "total_m": 125322
+      }
+    },
+    "table": "1997 HCAS V-21 (forecast 2000 program costs)"
+  },
+  "oregon_corrected": {
+    "heavy_cost_share": 0.29100000000000004,
+    "light_cost_share": 0.7090000000000001,
+    "scope": "Full-fee-paying vehicles; heavy >10,000 pounds. Forecast cost responsibility, state/local program mix; not observed national business-use share.",
+    "table": "Corrected May 28 2025 Oregon HCAS, 2025-2027 biennium, summary page 7"
+  },
+  "source_pins": {
+    "legacy_table": {
+      "path": "../roads_mileage_key_2026_09_29/derived/hcas_v21.csv",
+      "sha256": "fc45226f92a0273c374c57a803d42670365691cd371d0f75c780b40b5eaedcef"
+    },
+    "sources": {
+      "addendum": {
+        "path": "_cache/highway_hcas_addendum.html",
+        "sha256": "c24fac39094cd8431e3bc425e8acfe383d2ca5013f697a02a0f3d5d7b9c70f56",
+        "url": "https://www.fhwa.dot.gov/policy/hcas/addendum.cfm"
+      },
+      "oregon": {
+        "path": "_cache/highway_oregon_2025_27_corrected.pdf",
+        "sha256": "17b634f1528f598af0faa343d56802b3c232703db348e7e47ed0d544260ab9f2",
+        "url": "https://www.oregon.gov/das/oea/Documents/ECONW-HCAS-Cost-Allocation-Study-2025-27-Corrected.pdf"
+      },
+      "v21": {
+        "path": "_cache/highway_hcas_v21.gif",
+        "sha256": "854e57bfcb4af1944650ed8e6ecaa1d0aebd2e434de9e1ef277ed4d2a7a02190",
+        "url": "https://web.archive.org/web/2016id_/http://www.fhwa.dot.gov/policy/hcas/final/five/img27.gif"
+      },
+      "vm2024": {
+        "path": "_cache/highway_vm1_2024.xlsx",
+        "sha256": "f5a7594cea2131968f37b9871a44945b2c8ab786dd1c70e294151bacaf48dae3",
+        "url": "https://www.fhwa.dot.gov/policyinformation/statistics/2024/xls/vm1.xlsx"
+      }
+    }
+  },
+  "vm1": {
+    "definition": "Single-unit 2-axle 6-tire or more and combination trucks. Light duty includes pickups, vans and SUVs regardless of private/business use.",
+    "table": "Highway Statistics 2024 VM-1, latest HPMS national VMT (2023 and 2024)",
+    "years": {
+      "2023": {
+        "all_vmt_m": 3246817.017950001,
+        "combination_vmt_m": 195757.795420187,
+        "light_duty_vmt_m": 2879076.448102814,
+        "single_unit_vmt_m": 134100.608118716,
+        "truck_vmt_m": 329858.403538903,
+        "truck_vmt_share": 0.1015943928208099
+      },
+      "2024": {
+        "all_vmt_m": 3294031.21898,
+        "combination_vmt_m": 192519.612514282,
+        "light_duty_vmt_m": 2924107.45490795,
+        "single_unit_vmt_m": 137080.310372761,
+        "truck_vmt_m": 329599.922887043,
+        "truck_vmt_share": 0.10005974472491609
+      }
+    }
+  }
+}

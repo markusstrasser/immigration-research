@@ -1,0 +1,149 @@
+{
+  "case": "oct14",
+  "sources": [
+    {
+      "kind": "item6 upstream control",
+      "path": "../job_capital_taxes_2026_10_14/derived/case_keys.json",
+      "sha256": "d9048296ac9f3485b737f788225167b33450d3b5735bcbe085fafe7fd0b74063"
+    },
+    {
+      "kind": "item6 upstream control",
+      "path": "../job_capital_taxes_2026_10_14/derived/national.json",
+      "sha256": "d3bf71be1bdd3c66e265db3721acdbdb06902548b74d2470d5d06df0395fd0a0"
+    },
+    {
+      "kind": "item6 upstream control",
+      "path": "../job_capital_taxes_2026_10_14/derived/national_by_industry.csv",
+      "sha256": "95ff41e65fd36dcb87a12ebd502a6c0c54365cb5596da083d7c75ed3107087f8"
+    },
+    {
+      "kind": "item6 upstream control",
+      "path": "../job_capital_taxes_2026_10_14/derived/wages_by_industry.csv",
+      "sha256": "3bccaa790e713c2206ccba4a091b42a41b293b58eda41ee4aede4ee806202009"
+    },
+    {
+      "kind": "item6 upstream control",
+      "path": "../job_capital_taxes_2026_10_14/inputs/census_industry_crosswalk.csv",
+      "sha256": "25bcaf038773cbb337227c19de547895d6b370892d14222e407962f326432a92"
+    },
+    {
+      "kind": "item6 upstream control",
+      "path": "../job_capital_taxes_2026_10_14/job_capital.py",
+      "sha256": "c720e31f3d9803d4413443f0dbd65da8d45cab633029cb3e20b7e990a084c1b7"
+    },
+    {
+      "kind": "item6 upstream control",
+      "path": "../job_capital_taxes_2026_10_14/national.py",
+      "sha256": "34860d512b4c2fe146c1e6983f40dcab68479716c1b720a304bf9a996b3b5576"
+    },
+    {
+      "kind": "frozen v7 control",
+      "path": "../main_case_2026_10_14/derived/corrections.json",
+      "sha256": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958"
+    },
+    {
+      "kind": "frozen v7 control",
+      "path": "../main_case_2026_10_14/derived/lineage_addition.json",
+      "sha256": "fde51a608e49d7bd3a88a4044f8d9637b6c20cbb3ac52f244b478e14c5311a49"
+    },
+    {
+      "kind": "frozen v7 control",
+      "path": "../main_case_2026_10_14/derived/summary.json",
+      "sha256": "b30720cff0c29637ab6f74d809829fdbfc4b82a00a45fa286e3f0c1c5c183582"
+    },
+    {
+      "kind": "frozen v7 control",
+      "path": "../main_case_2026_10_14/lineage_addition.cjs",
+      "sha256": "1b33f7eed24bf0af1b20d3ae8d7bdba3c3d660ac0a3f4bc6e0aa48fb22355ab4"
+    },
+    {
+      "kind": "frozen v7 control",
+      "path": "../main_case_2026_10_14/package.cjs",
+      "sha256": "ec00d49b40c118e61d2a6543ad21a54021b6364ebf49e0e4b3a97260fa3cc907"
+    },
+    {
+      "path": "../roads_mileage_key_2026_09_29/derived/hcas_v21.csv",
+      "sha256": "fc45226f92a0273c374c57a803d42670365691cd371d0f75c780b40b5eaedcef"
+    },
+    {
+      "path": "_cache/Section3All_xls.xlsx",
+      "sha256": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+      "url": "https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx"
+    },
+    {
+      "kind": "BEA parsed primary archive",
+      "path": "_cache/bea_SUPPLY-USE.zip",
+      "sha256": "3f16466e11eef0ed562d3663907f4a4a65856c134aa9f8baf7da6460bd11987d",
+      "url": "https://apps.bea.gov/industry/release/zip/SUPPLY-USE.zip"
+    },
+    {
+      "path": "_cache/highway_hcas_addendum.html",
+      "sha256": "c24fac39094cd8431e3bc425e8acfe383d2ca5013f697a02a0f3d5d7b9c70f56",
+      "url": "https://www.fhwa.dot.gov/policy/hcas/addendum.cfm"
+    },
+    {
+      "path": "_cache/highway_hcas_v21.gif",
+      "sha256": "854e57bfcb4af1944650ed8e6ecaa1d0aebd2e434de9e1ef277ed4d2a7a02190",
+      "url": "https://web.archive.org/web/2016id_/http://www.fhwa.dot.gov/policy/hcas/final/five/img27.gif"
+    },
+    {
+      "path": "_cache/highway_oregon_2025_27_corrected.pdf",
+      "sha256": "17b634f1528f598af0faa343d56802b3c232703db348e7e47ed0d544260ab9f2",
+      "url": "https://www.oregon.gov/das/oea/Documents/ECONW-HCAS-Cost-Allocation-Study-2025-27-Corrected.pdf"
+    },
+    {
+      "path": "_cache/highway_vm1_2024.xlsx",
+      "sha256": "f5a7594cea2131968f37b9871a44945b2c8ab786dd1c70e294151bacaf48dae3",
+      "url": "https://www.fhwa.dot.gov/policyinformation/statistics/2024/xls/vm1.xlsx"
+    },
+    {
+      "bytes": 465967,
+      "path": "_cache/incident_bjs_contract_trials_2005.pdf",
+      "sha256": "ac1ab0367212ffa3e3497262003123d928ceb4822742ed37f16397a212543d95",
+      "source_url": "https://bjs.ojp.gov/content/pub/pdf/cbajtsc05.pdf",
+      "url": "https://bjs.ojp.gov/content/pub/pdf/cbajtsc05.pdf"
+    },
+    {
+      "bytes": 34454,
+      "cde_key": "nibrs/tables/2023/location.zip",
+      "path": "_cache/incident_fbi_location_2023.zip",
+      "sha256": "935264eebcd296f0f5ca30eb5c50490befdbf8de3995f2f7c80b7bdd774f5fb4",
+      "source_url": "https://cde-prd-data.s3.us-gov-east-1.amazonaws.com/nibrs/tables/2023/location.zip"
+    },
+    {
+      "bytes": 35032,
+      "cde_key": "nibrs/tables/2024/location.zip",
+      "path": "_cache/incident_fbi_location_2024.zip",
+      "sha256": "a23a316f3a470a9921af1921bf2697481fdd040a41c8e22dad481b315d42a489",
+      "source_url": "https://cde-prd-data.s3.us-gov-east-1.amazonaws.com/nibrs/tables/2024/location.zip"
+    },
+    {
+      "bytes": 274231,
+      "cde_key": "nibrs/tables/2023/2023-nibrs-list-of-contents.pdf",
+      "path": "_cache/incident_fbi_tables_contents_2023.pdf",
+      "sha256": "86d267519054897ed94931669d7a31cded1589d7b9f658a377ba8b242ae09f4e",
+      "source_url": "https://cde-prd-data.s3.us-gov-east-1.amazonaws.com/nibrs/tables/2023/2023-nibrs-list-of-contents.pdf"
+    },
+    {
+      "bytes": 78695,
+      "path": "_cache/incident_usfa_nonresidential.html",
+      "sha256": "4243646378df6b446522d15df14b868d9d7334ac22e427596f11d96de6f76485",
+      "source_url": "https://www.usfa.fema.gov/statistics/nonresidential-fires/",
+      "url": "https://www.usfa.fema.gov/statistics/nonresidential-fires/"
+    },
+    {
+      "bytes": 543250,
+      "path": "_cache/incident_usfa_run_profile_2020.pdf",
+      "sha256": "f4ba1d2b1d8480dc879302ace0e8bb0ecce562ded1528130708eee40f08a282c",
+      "source_url": "https://www.usfa.fema.gov/downloads/pdf/statistics/v22i1-fire-department-run-profile.pdf",
+      "url": "https://www.usfa.fema.gov/downloads/pdf/statistics/v22i1-fire-department-run-profile.pdf"
+    },
+    {
+      "bytes": 108162,
+      "path": "_cache/incident_usfa_statistics.html",
+      "sha256": "dbb6235ee7b853d7fc6ab46080a0cb3d850ad22c003915f79c96ae3269bd0be0",
+      "source_url": "https://www.usfa.fema.gov/statistics/",
+      "url": "https://www.usfa.fema.gov/statistics/"
+    }
+  ]
+}

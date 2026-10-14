@@ -1,0 +1,73 @@
+arm,frame,end,baseline_bn,change_bn,result_bn,conditional_union_key_se_bn,above_5bn_bar,members,freight_basis
+unchanged_recommended,union,low,317.74297962279906,0.0,317.74297962279906,0.0,False,39712493.3312,principal union keys / unchanged demand control
+unchanged_recommended,lineage,low,339.55201782952685,0.0,339.55201782952685,,False,42752212.92438524,principal union keys / unchanged demand control
+unchanged_recommended,union,high,395.8107295353342,0.0,395.8107295353342,0.0,False,39712493.3312,principal union keys / unchanged demand control
+unchanged_recommended,lineage,high,423.64926070050683,0.0,423.64926070050683,,False,42752212.92438524,principal union keys / unchanged demand control
+incident_proxy,union,low,317.74297962279906,-1.0318706854517845,316.71110893734726,0.051248818234284926,False,39712493.3312,principal union keys / unchanged demand control
+incident_proxy,lineage,low,339.55201782952685,-1.123534345924289,338.4284834836026,,False,42752212.92438524,principal union keys / unchanged demand control
+incident_proxy,union,high,395.8107295353342,-1.0318706854517845,394.7788588498824,0.051248818234284926,False,39712493.3312,principal union keys / unchanged demand control
+incident_proxy,lineage,high,423.64926070050683,-1.123534345924289,422.52572635458256,,False,42752212.92438524,principal union keys / unchanged demand control
+incident_proxy_plain_wage,union,low,317.74297962279906,-1.1148437223635919,316.62813590043544,0.03940409345102908,False,39712493.3312,principal union keys / unchanged demand control
+incident_proxy_plain_wage,lineage,low,339.55201782952685,-1.2027756805132275,338.3492421490136,,False,42752212.92438524,principal union keys / unchanged demand control
+incident_proxy_plain_wage,union,high,395.8107295353342,-1.1148437223635919,394.6958858129706,0.03940409345102908,False,39712493.3312,principal union keys / unchanged demand control
+incident_proxy_plain_wage,lineage,high,423.64926070050683,-1.2027756805132275,422.4464850199936,,False,42752212.92438524,principal union keys / unchanged demand control
+incident_proxy_mining_moves,union,low,317.74297962279906,-1.027634240969507,316.71534538182954,0.05163432154933954,False,39712493.3312,principal union keys / unchanged demand control
+incident_proxy_mining_moves,lineage,low,339.55201782952685,-1.1193965989585668,338.43262123056826,,False,42752212.92438524,principal union keys / unchanged demand control
+incident_proxy_mining_moves,union,high,395.8107295353342,-1.027634240969507,394.78309529436467,0.05163432154933954,False,39712493.3312,principal union keys / unchanged demand control
+incident_proxy_mining_moves,lineage,high,423.64926070050683,-1.1193965989585668,422.52986410154824,,False,42752212.92438524,principal union keys / unchanged demand control
+police_2023_proxy,union,low,317.74297962279906,-0.8250335624123804,316.91794606038667,0.040976059959242174,False,39712493.3312,principal union keys / unchanged demand control
+police_2023_proxy,lineage,low,339.55201782952685,-0.8983233625875623,338.65369446693927,,False,42752212.92438524,principal union keys / unchanged demand control
+police_2023_proxy,union,high,395.8107295353342,-0.8250335624123804,394.9856959729218,0.040976059959242174,False,39712493.3312,principal union keys / unchanged demand control
+police_2023_proxy,lineage,high,423.64926070050683,-0.8983233625875623,422.75093733791925,,False,42752212.92438524,principal union keys / unchanged demand control
+police_2024_proxy,union,low,317.74297962279906,-0.8438497655450891,316.89912985725397,0.04191058420516099,False,39712493.3312,principal union keys / unchanged demand control
+police_2024_proxy,lineage,low,339.55201782952685,-0.9188110562274203,338.63320677329943,,False,42752212.92438524,principal union keys / unchanged demand control
+police_2024_proxy,union,high,395.8107295353342,-0.8438497655450891,394.9668797697891,0.04191058420516099,False,39712493.3312,principal union keys / unchanged demand control
+police_2024_proxy,lineage,high,423.64926070050683,-0.9188110562274203,422.7304496442794,,False,42752212.92438524,principal union keys / unchanged demand control
+fire_all_runs_proxy,union,low,317.74297962279906,-0.1880209199066954,317.55495870289235,0.00933823402912392,False,39712493.3312,principal union keys / unchanged demand control
+fire_all_runs_proxy,lineage,low,339.55201782952685,-0.20472328969686868,339.34729453983,,False,42752212.92438524,principal union keys / unchanged demand control
+fire_all_runs_proxy,union,high,395.8107295353342,-0.1880209199066954,395.6227086154275,0.00933823402912392,False,39712493.3312,principal union keys / unchanged demand control
+fire_all_runs_proxy,lineage,high,423.64926070050683,-0.20472328969686868,423.44453741080997,,False,42752212.92438524,principal union keys / unchanged demand control
+broader_location_proxy,union,low,317.74297962279906,-1.837578422352677,315.90540120044636,0.09126504307772271,False,39712493.3312,principal union keys / unchanged demand control
+broader_location_proxy,lineage,low,339.55201782952685,-2.000815121459395,337.5512027080675,,False,42752212.92438524,principal union keys / unchanged demand control
+broader_location_proxy,union,high,395.8107295353342,-1.837578422352677,393.9731511129815,0.09126504307772271,False,39712493.3312,principal union keys / unchanged demand control
+broader_location_proxy,lineage,high,423.64926070050683,-2.000815121459395,421.64844557904746,,False,42752212.92438524,principal union keys / unchanged demand control
+pos_capital_expenditure_mix_proxy,union,low,317.74297962279906,-1.0531042256851735,316.6898753971139,0.05186631762464139,False,39712493.3312,principal union keys / unchanged demand control
+pos_capital_expenditure_mix_proxy,lineage,low,339.55201782952685,-1.14605022347372,338.40596760605314,,False,42752212.92438524,principal union keys / unchanged demand control
+pos_capital_expenditure_mix_proxy,union,high,395.8107295353342,-1.063720995801868,394.7470085395323,0.052176231573346284,False,39712493.3312,principal union keys / unchanged demand control
+pos_capital_expenditure_mix_proxy,lineage,high,423.64926070050683,-1.1573081622484356,422.4919525382584,,False,42752212.92438524,principal union keys / unchanged demand control
+freight_demand_control,union,low,317.74297962279906,0.0,317.74297962279906,0.0,False,39712493.3312,principal union keys / unchanged demand control
+freight_demand_control,lineage,low,339.55201782952685,0.0,339.55201782952685,,False,42752212.92438524,principal union keys / unchanged demand control
+freight_demand_control,union,high,395.8107295353342,0.0,395.8107295353342,0.0,False,39712493.3312,principal union keys / unchanged demand control
+freight_demand_control,lineage,high,423.64926070050683,0.0,423.64926070050683,,False,42752212.92438524,principal union keys / unchanged demand control
+freight_goods_output,union,low,317.74297962279906,0.2934800654652432,318.0364596882643,0.26161670642574236,False,39712493.3312,principal union keys / unchanged demand control
+freight_goods_output,lineage,low,339.55201782952685,0.1796772245384924,339.7316950540653,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+freight_goods_output,union,high,395.8107295353342,0.46150362217916124,396.27223315751337,0.4113978148623564,False,39712493.3312,principal union keys / unchanged demand control
+freight_goods_output,lineage,high,423.64926070050683,0.2825462431874547,423.9318069436943,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+freight_goods_output_mining_moves,union,low,317.74297962279906,0.511769068224375,318.25474869102345,0.3155615176552348,False,39712493.3312,principal union keys / unchanged demand control
+freight_goods_output_mining_moves,lineage,low,339.55201782952685,0.40354519542320083,339.95556302495004,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+freight_goods_output_mining_moves,union,high,395.8107295353342,0.8047677048537886,396.615497240188,0.49622717368342517,False,39712493.3312,principal union keys / unchanged demand control
+freight_goods_output_mining_moves,lineage,high,423.64926070050683,0.6345833714653466,424.28384407197217,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+freight_plain_wage,union,low,317.74297962279906,-0.17265296336540842,317.57032665943365,0.08647539887818638,False,39712493.3312,principal union keys / unchanged demand control
+freight_plain_wage,lineage,low,339.55201782952685,-0.28322526663337644,339.26879256289345,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+freight_plain_wage,union,high,395.8107295353342,-0.27150044363929215,395.5392290916949,0.1359843972652963,False,39712493.3312,principal union keys / unchanged demand control
+freight_plain_wage,lineage,high,423.64926070050683,-0.4453777337031495,423.2038829668037,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+oregon_cost_share_demand,union,low,317.74297962279906,-0.03270027887306852,317.710279343926,0.0,False,39712493.3312,principal union keys / unchanged demand control
+oregon_cost_share_demand,lineage,low,339.55201782952685,-0.031794710355501035,339.52022311917136,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+oregon_cost_share_demand,union,high,395.8107295353342,-0.051421881490540576,395.7593076538436,0.0,False,39712493.3312,principal union keys / unchanged demand control
+oregon_cost_share_demand,lineage,high,423.64926070050683,-0.04999785580645777,423.5992628447004,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+federal_cost_share_demand,union,low,317.74297962279906,-0.5015583670354834,317.24142125576356,0.0,False,39712493.3312,principal union keys / unchanged demand control
+federal_cost_share_demand,lineage,low,339.55201782952685,-0.4876687158593174,339.0643491136675,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+federal_cost_share_demand,union,high,395.8107295353342,-0.7887111608558433,395.02201837447836,0.0,False,39712493.3312,principal union keys / unchanged demand control
+federal_cost_share_demand,lineage,high,423.64926070050683,-0.7668693900410388,422.8823913104658,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+truck_vmt_2023_demand,union,low,317.74297962279906,0.7603872659246587,318.5033668887237,0.0,False,39712493.3312,principal union keys / unchanged demand control
+truck_vmt_2023_demand,lineage,low,339.55201782952685,0.7393298684677714,340.29134769799464,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+truck_vmt_2023_demand,union,high,395.8107295353342,1.1957250892895779,397.00645462462376,0.0,False,39712493.3312,principal union keys / unchanged demand control
+truck_vmt_2023_demand,lineage,high,423.64926070050683,1.16261188555421,424.81187258606104,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+truck_vmt_2024_demand,union,low,317.74297962279906,0.7668132123822482,318.5097928351813,0.0,False,39712493.3312,principal union keys / unchanged demand control
+truck_vmt_2024_demand,lineage,low,339.55201782952685,0.7455778612500994,340.297595690777,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+truck_vmt_2024_demand,union,high,395.8107295353342,1.2058300262685366,397.0165595616027,0.0,False,39712493.3312,principal union keys / unchanged demand control
+truck_vmt_2024_demand,lineage,high,423.64926070050683,1.1724369866077438,424.8216976871146,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+combined_incidents_goods_output,union,low,317.74297962279906,-0.7383906199865413,317.0045890028125,0.2873894654390033,False,39712493.3312,principal union keys / unchanged demand control
+combined_incidents_goods_output,lineage,low,339.55201782952685,-0.9438571213857967,338.60816070814104,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption
+combined_incidents_goods_output,union,high,395.8107295353342,-0.5703670632726232,395.2403624720616,0.4358838216718397,False,39712493.3312,principal union keys / unchanged demand control
+combined_incidents_goods_output,lineage,high,423.64926070050683,-0.8409881027368343,422.80827259777,,False,42752212.92438524,[DEGRADED] effective split inferred after independent age-mix reprofile; not literal measured consumption

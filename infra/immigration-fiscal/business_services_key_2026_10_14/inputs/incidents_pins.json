@@ -1,0 +1,51 @@
+{
+  "bjs_contract_trials_2005": {
+    "bytes": 465967,
+    "path": "_cache/incident_bjs_contract_trials_2005.pdf",
+    "sha256": "ac1ab0367212ffa3e3497262003123d928ceb4822742ed37f16397a212543d95",
+    "source_url": "https://bjs.ojp.gov/content/pub/pdf/cbajtsc05.pdf",
+    "url": "https://bjs.ojp.gov/content/pub/pdf/cbajtsc05.pdf"
+  },
+  "fbi_contents_2023": {
+    "bytes": 274231,
+    "cde_key": "nibrs/tables/2023/2023-nibrs-list-of-contents.pdf",
+    "path": "_cache/incident_fbi_tables_contents_2023.pdf",
+    "sha256": "86d267519054897ed94931669d7a31cded1589d7b9f658a377ba8b242ae09f4e",
+    "source_url": "https://cde-prd-data.s3.us-gov-east-1.amazonaws.com/nibrs/tables/2023/2023-nibrs-list-of-contents.pdf"
+  },
+  "fbi_location_2023": {
+    "bytes": 34454,
+    "cde_key": "nibrs/tables/2023/location.zip",
+    "path": "_cache/incident_fbi_location_2023.zip",
+    "sha256": "935264eebcd296f0f5ca30eb5c50490befdbf8de3995f2f7c80b7bdd774f5fb4",
+    "source_url": "https://cde-prd-data.s3.us-gov-east-1.amazonaws.com/nibrs/tables/2023/location.zip"
+  },
+  "fbi_location_2024": {
+    "bytes": 35032,
+    "cde_key": "nibrs/tables/2024/location.zip",
+    "path": "_cache/incident_fbi_location_2024.zip",
+    "sha256": "a23a316f3a470a9921af1921bf2697481fdd040a41c8e22dad481b315d42a489",
+    "source_url": "https://cde-prd-data.s3.us-gov-east-1.amazonaws.com/nibrs/tables/2024/location.zip"
+  },
+  "usfa_allfires": {
+    "bytes": 108162,
+    "path": "_cache/incident_usfa_statistics.html",
+    "sha256": "dbb6235ee7b853d7fc6ab46080a0cb3d850ad22c003915f79c96ae3269bd0be0",
+    "source_url": "https://www.usfa.fema.gov/statistics/",
+    "url": "https://www.usfa.fema.gov/statistics/"
+  },
+  "usfa_nonresidential_2023": {
+    "bytes": 78695,
+    "path": "_cache/incident_usfa_nonresidential.html",
+    "sha256": "4243646378df6b446522d15df14b868d9d7334ac22e427596f11d96de6f76485",
+    "source_url": "https://www.usfa.fema.gov/statistics/nonresidential-fires/",
+    "url": "https://www.usfa.fema.gov/statistics/nonresidential-fires/"
+  },
+  "usfa_runs_2020": {
+    "bytes": 543250,
+    "path": "_cache/incident_usfa_run_profile_2020.pdf",
+    "sha256": "f4ba1d2b1d8480dc879302ace0e8bb0ecce562ded1528130708eee40f08a282c",
+    "source_url": "https://www.usfa.fema.gov/downloads/pdf/statistics/v22i1-fire-department-run-profile.pdf",
+    "url": "https://www.usfa.fema.gov/downloads/pdf/statistics/v22i1-fire-department-run-profile.pdf"
+  }
+}

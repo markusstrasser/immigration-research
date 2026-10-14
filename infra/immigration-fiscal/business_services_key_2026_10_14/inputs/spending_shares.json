@@ -1,0 +1,24 @@
+{
+  "excluded_border_and_custody_bn": 26.788968973650007,
+  "fractions": {
+    "Fire": 0.15442944936370318,
+    "Law courts": 0.15445446254372497,
+    "Police": 0.4574371880567838,
+    "Prisons": 0.2336789000357881
+  },
+  "gates": {
+    "cj_positive_control_1e_9_bn": true,
+    "primary_hash": true,
+    "subfunction_closure_1e_12": true
+  },
+  "police_protective_fraction": 0.5,
+  "police_protective_fraction_status": "ASSUMPTION: inherited police half-arrests half-population split; not empirically measured",
+  "source": "BEA NIPA Table 3.16, 2024 case vintage",
+  "subline_millions": {
+    "Fire": 80261.0,
+    "Law courts": 80274.0,
+    "Police": 237742.0,
+    "Prisons": 121449.0,
+    "Public order and safety": 519726.0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "legacy_table": {
+    "path": "../roads_mileage_key_2026_09_29/derived/hcas_v21.csv",
+    "sha256": "fc45226f92a0273c374c57a803d42670365691cd371d0f75c780b40b5eaedcef"
+  },
+  "sources": {
+    "addendum": {
+      "path": "_cache/highway_hcas_addendum.html",
+      "sha256": "c24fac39094cd8431e3bc425e8acfe383d2ca5013f697a02a0f3d5d7b9c70f56",
+      "url": "https://www.fhwa.dot.gov/policy/hcas/addendum.cfm"
+    },
+    "oregon": {
+      "path": "_cache/highway_oregon_2025_27_corrected.pdf",
+      "sha256": "17b634f1528f598af0faa343d56802b3c232703db348e7e47ed0d544260ab9f2",
+      "url": "https://www.oregon.gov/das/oea/Documents/ECONW-HCAS-Cost-Allocation-Study-2025-27-Corrected.pdf"
+    },
+    "v21": {
+      "path": "_cache/highway_hcas_v21.gif",
+      "sha256": "854e57bfcb4af1944650ed8e6ecaa1d0aebd2e434de9e1ef277ed4d2a7a02190",
+      "url": "https://web.archive.org/web/2016id_/http://www.fhwa.dot.gov/policy/hcas/final/five/img27.gif"
+    },
+    "vm2024": {
+      "path": "_cache/highway_vm1_2024.xlsx",
+      "sha256": "f5a7594cea2131968f37b9871a44945b2c8ab786dd1c70e294151bacaf48dae3",
+      "url": "https://www.fhwa.dot.gov/policyinformation/statistics/2024/xls/vm1.xlsx"
+    }
+  }
+}
