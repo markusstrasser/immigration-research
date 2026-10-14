@@ -1,0 +1,25 @@
+end,population,year,delta_bn,conditional_se_bn,conditioning
+low,union,2019,5.67209638378,1.87584079245,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+low,union,2020,2.43760311028,1.61785941273,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+low,union,2021,2.15443819204,1.77821782279,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+low,union,2022,4.58673208225,1.94253518969,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+low,union,2023,0.766387051295,2.1102846424,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+low,union,2024,0,0,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+low,lineage,2019,5.77319531532,2.00282691229,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+low,lineage,2020,2.86916236685,1.71259341935,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+low,lineage,2021,2.49796358515,1.88381770552,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+low,lineage,2022,4.82513103002,2.09504482311,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+low,lineage,2023,0.855379051242,2.27686538592,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+low,lineage,2024,0,0,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+high,union,2019,5.67761614171,1.87766625281,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+high,union,2020,2.43997524541,1.61943382045,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+high,union,2021,2.15653476736,1.77994828209,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+high,union,2022,4.59119562608,1.9444255532,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+high,union,2023,0.76713285509,2.11233825003,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+high,union,2024,0,0,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+high,lineage,2019,5.7773448738,2.00283812225,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+high,lineage,2020,2.86568555535,1.7127577067,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+high,lineage,2021,2.49540434169,1.88399367134,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+high,lineage,2022,4.82636353963,2.09474257716,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+high,lineage,2023,0.854918741506,2.27654161505,2024 relative-use key and case prices fixed; covariance of union/G3 preserved
+high,lineage,2024,0,0,2024 relative-use key and case prices fixed; covariance of union/G3 preserved

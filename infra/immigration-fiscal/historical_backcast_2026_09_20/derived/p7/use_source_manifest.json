@@ -1,0 +1,78 @@
+{
+  "sources": [
+    {
+      "path": "infra/immigration-fiscal/g3_identity_pooled_2026_10_05/_cache/asec_pooled.csv.gz",
+      "sha256": "59e1c80d8738f8f3938b235db66f1656bce480b3cee276fcb1ed6ba748822e7e",
+      "bytes": 135937482
+    },
+    {
+      "path": "infra/immigration-fiscal/backcast_pandemic_measured_2026_09_28/_cache/asecpub20csv.zip",
+      "sha256": "f79430c5664745a2ae1c0f7fef615d93fa6b1933d0fe1dabb932ec52c73be591",
+      "bytes": 162135125
+    },
+    {
+      "path": "infra/immigration-fiscal/backcast_pandemic_measured_2026_09_28/_cache/asecpub21csv.zip",
+      "sha256": "7196ff49c52f833f65c537d66a0c8cc1540a8e31711a09c3730c218b4486c1f4",
+      "bytes": 168518554
+    },
+    {
+      "path": "infra/immigration-fiscal/latam_comparison_2026_09_17/_cache/2022/asecpub22csv.zip",
+      "sha256": "7338011adefca16dae30a4469ddaf0c01cef579b607b26b4bceec749376e4ac9",
+      "bytes": 157679473
+    },
+    {
+      "path": "infra/immigration-fiscal/latam_comparison_2026_09_17/_cache/2023/asecpub23csv.zip",
+      "sha256": "d2e000250782adfbdd7f29c82b66d866591a30f0d330496698ec19f9c784ce11",
+      "bytes": 150165063
+    },
+    {
+      "path": "infra/immigration-fiscal/same_year_tax_2026_09_20/_cache/asecpub24csv.zip",
+      "sha256": "cdb39cdac34bef99dd0940ab28e306f692404c2eea44d85dfd634214872a0a09",
+      "bytes": 148664101
+    },
+    {
+      "path": "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+      "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+      "bytes": 147271429
+    }
+  ],
+  "available_years": {
+    "school_age_5_17": [
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "medicaid_covered": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ]
+  },
+  "school_replicates": false,
+  "medicaid_replicates": 160,
+  "school_year_timing": "survey age in income year+1",
+  "medicaid_year_timing": "prior-calendar-year coverage",
+  "school_2014_weight_factor": 0.5,
+  "gaps": "Medicaid 2005\u20132018 and full-sample school replicates unavailable in local extracts",
+  "lineage": "identified G3+ proxy; added non-identifiers unobserved"
+}

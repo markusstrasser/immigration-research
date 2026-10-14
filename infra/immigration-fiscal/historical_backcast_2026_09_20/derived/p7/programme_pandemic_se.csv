@@ -1,0 +1,9 @@
+end,population,year,eip_component_bn,eip_se_lower_bn,eip_se_upper_bn,credit_rest_conditional_se_bn,conditioning
+low,union,2020,32.6099852705,0.306918100499,0.306918100499,0.676053638902,"2024 keys and prices fixed; round covariance not stored, bounds not a combined SE"
+low,union,2021,74.3859995344,0.252880844968,0.672743445414,0.653317138393,"2024 keys and prices fixed; round covariance not stored, bounds not a combined SE"
+low,lineage,2020,34.4434642574,0.324174406605,0.324174406605,0.714064393297,"2024 keys and prices fixed; round covariance not stored, bounds not a combined SE"
+low,lineage,2021,78.4185251234,0.266589721432,0.709213415239,0.688733992301,"2024 keys and prices fixed; round covariance not stored, bounds not a combined SE"
+high,union,2020,32.6099852705,0.306918100499,0.306918100499,0.676053638902,"2024 keys and prices fixed; round covariance not stored, bounds not a combined SE"
+high,union,2021,74.3859995344,0.252880844968,0.672743445414,0.653317138393,"2024 keys and prices fixed; round covariance not stored, bounds not a combined SE"
+high,lineage,2020,34.4434642574,0.324174406605,0.324174406605,0.714064393297,"2024 keys and prices fixed; round covariance not stored, bounds not a combined SE"
+high,lineage,2021,78.4185251234,0.266589721432,0.709213415239,0.688733992301,"2024 keys and prices fixed; round covariance not stored, bounds not a combined SE"

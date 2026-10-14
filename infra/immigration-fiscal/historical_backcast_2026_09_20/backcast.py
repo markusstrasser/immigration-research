@@ -53,6 +53,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+from functools import lru_cache
 from pathlib import Path
 from typing import NamedTuple
 
@@ -67,6 +68,21 @@ PINNED = {"Section1All_xls.xlsx": "238ba851c9a4932d91a0dedb1b3f2e6c6d37574d154a5
           "Section7All_xls.xlsx": "ce107c8ce92393613c0abae38156afcfaef8ab571eedf0302dc09ca44738b9ef",
           "fa_Section7All_xls.xlsx": "e67f534560f111575d5314bab8fe4d62dd696c2e49f421eaa2fa73f25dea12ae"}
 YEARS = list(range(2005, 2025))
+# BEA 3.12 veterans' other benefits begin in 2015 in the pinned workbook.
+# These are the only permitted blanks, identified by source series AND year.
+STRUCTURAL_ZEROS = {("T31200-A:20", year) for year in range(2005, 2015)}
+
+
+def checked_years(values: pd.Series, reference: str) -> pd.Series:
+    """Reject missing observations unless the exact source/year is a structural zero."""
+    out = values.reindex(YEARS).copy()
+    missing = [int(y) for y in out.index[out.isna()]]
+    bad = [y for y in missing if (reference, y) not in STRUCTURAL_ZEROS]
+    if bad or not np.isfinite(out.dropna()).all():
+        raise ValueError(f"[BLOCKED] {reference}: missing/nonfinite observations {bad}")
+    for year in missing:
+        out.loc[year] = 0.0
+    return out
 PROFILES = {"net_cost_cbo_informed": "cbo_category_lag_non_school_full",
             "net_cost_full_proportional": "proportional_reference"}
 
@@ -244,26 +260,36 @@ def workbook(path: Path) -> pd.ExcelFile:
 
 
 def series(book: pd.ExcelFile, sheet: str, label: str) -> pd.Series:
-    table = book.parse(sheet, header=None)
+    table = parsed_sheet(book, sheet)
     header = table.index[table.iloc[:, 0].astype(str).str.strip().eq("Line")][0]
     match = table[table.iloc[:, 1].astype(str).str.strip().eq(label)]
     if match.empty:
         raise ValueError(f"[BLOCKED] {sheet} has no line labelled {label!r}")
     years = [int(float(v)) for v in table.iloc[header, 3:]]
-    return pd.Series(match.iloc[0, 3:].astype(float).to_numpy(), index=years)
+    values = pd.Series(match.iloc[0, 3:].astype(float).to_numpy(), index=years)
+    values.loc[YEARS] = checked_years(values, f"{sheet}:{label}")
+    return values
+
+
+@lru_cache(maxsize=128)
+def parsed_sheet(book: pd.ExcelFile, sheet: str) -> pd.DataFrame:
+    """Parse each verified workbook sheet once; hundreds of parts reuse these cells."""
+    return book.parse(sheet, header=None)
 
 
 def line(book: pd.ExcelFile, reference: str) -> pd.Series:
     """`T31700-A:5` -> that table line by year, as published (NIPA $ millions)."""
     sheet, number = reference.split(":")
-    table = book.parse(sheet, header=None)
+    table = parsed_sheet(book, sheet)
     header = table.index[table.iloc[:, 0].astype(str).str.strip().eq("Line")][0]
     body = table.iloc[header + 1:]
     match = body[pd.to_numeric(body.iloc[:, 0], errors="coerce") == int(number)]
     if len(match) != 1:
         raise ValueError(f"[BLOCKED] {sheet} has no single line {number}")
     years = [int(float(v)) for v in table.iloc[header, 3:]]
-    return pd.Series(pd.to_numeric(match.iloc[0, 3:], errors="coerce").to_numpy(float), index=years)
+    values = pd.Series(pd.to_numeric(match.iloc[0, 3:], errors="coerce").to_numpy(float), index=years)
+    values.loc[YEARS] = checked_years(values, reference)
+    return values
 
 
 def capital_paths(real: pd.Series, components: list[dict]) -> dict[str, pd.Series]:
@@ -301,7 +327,7 @@ def capital_paths(real: pd.Series, components: list[dict]) -> dict[str, pd.Serie
         # October 7: an item's offset component (of_component) takes its component's stock.
         w = {ENTERPRISE_FA_LINE: 1.0} if c["part"] == "enterprise" else weights[c.get("of_component", c["id"])]
         value = sum(wt * stock[n] for n, wt in w.items())
-        paths[c["id"]] = (value.reindex(YEARS) * real / value[2024])
+        paths[c["id"]] = checked_years(value, f"capital:{c['id']}") * real / value[2024]
     return paths
 
 
@@ -373,9 +399,8 @@ def v4_series(data: dict, book: pd.ExcelFile, gdp_book: pd.ExcelFile, real: pd.S
             raise ValueError(f"[BLOCKED] {part}: no national series for the {p['side']} line {lid}")
         if abs(nominal[2024] - want) > 1e-3:
             raise ValueError(f"[BLOCKED] {part}: its cells' 2024 value {nominal[2024]} is not {want}")
-        # A cell BEA leaves blank in a year counts as zero there, as backcast_categories.py and debt_legacy.py count it
-        # (October 5's veterans_other, NIPA 3.12 line 20, starts in 2015); no September 29 part has a blank year.
-        out[part] = nominal.reindex(YEARS).fillna(0.0) * real / nominal[2024]
+        # Source cells are checked before summing; no missing observation becomes a zero.
+        out[part] = checked_years(nominal, part) * real / nominal[2024]
     return out
 
 
@@ -431,21 +456,24 @@ def carried_parts(case: str, book: pd.ExcelFile, real: pd.Series, share: pd.Seri
             parts = {part: e["additions_bn"][part] * index[part] * (lineage["share"] if part in ours else share)
                      for part in e["additions_bn"]}
             own = {part: e["additions_bn"][part] for part in ours}
+            lineage_parts = {part: parts[part] for part in ours}
             for group in ("core", "block", "enterprise"):
                 parts[f"capital_{group}"] = sum(e["capital_bn"][k["id"]] * stock[k["id"]] for k in components
                                                 if k["part"] == group) * share
                 ids = [k["id"] for k in components if k["part"] == group]
                 if c.lineage:
-                    parts[f"capital_{group}"] = parts[f"capital_{group}"] + sum(
+                    lineage_parts[f"capital_{group}"] = sum(
                         e["v5_capital_bn"][i] * stock[i] for i in ids) * lineage["share"]
+                    parts[f"capital_{group}"] = parts[f"capital_{group}"] + lineage_parts[f"capital_{group}"]
                     own[f"capital_{group}"] = sum(e["v5_capital_bn"][i] for i in ids)
                 if c.items:
                     k6 = e["v6_capital_bn"]
                     parts[f"capital_{group}"] = parts[f"capital_{group}"] + sum(
                         k6["union"][i] * stock[i] for i in ids) * share + sum(k6["lineage"][i] * stock[i] for i in ids) * lineage["share"]
                     own[f"capital_{group}"] = own[f"capital_{group}"] + sum(k6["lineage"][i] for i in ids)
+                    lineage_parts[f"capital_{group}"] += sum(k6["lineage"][i] * stock[i] for i in ids) * lineage["share"]
             out[f"{concept}{c.tag}{end}"] = dict(base=e["base_bn"], parts=parts,
-                                                 **({"lineage_2024": own} if c.lineage else {}))
+                                                 **({"lineage_2024": own, "lineage_parts": lineage_parts} if c.lineage else {}))
     return out
 
 
@@ -492,7 +520,7 @@ def per_lineage_member(annual: pd.DataFrame, case: str) -> None:
                                  f"{version}.per_member_usd.set {want}")
 
 
-def main() -> None:
+def main() -> tuple[pd.DataFrame, dict]:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--bea-dir", type=Path,
                         default=ROOT / "sources/immigration-fiscal/data/external/bea_nipa")
@@ -647,6 +675,7 @@ def main() -> None:
         pd.DataFrame(yearly).round(6).to_csv(args.out_dir / "case_parts_annual.csv", index=False)
     print(f"receipts ratio {rho:.3f}; relative income {relative[2008]:.3f} (2008) -> {relative[2024]:.3f} (2024)")
     print(table.round(2).to_string(index=False))
+    return annual, carried
 
 
 if __name__ == "__main__":

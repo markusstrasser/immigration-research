@@ -1,0 +1,2916 @@
+{
+  "low": {
+    "lineage": {
+      "specification": 16,
+      "spec": {
+        "allocation": "personal",
+        "normalization": "gdp",
+        "share": 0.7153278156243373,
+        "school": 1,
+        "gg": 0.6005266346459308,
+        "uc": "uninsured_use_low",
+        "justice": "use",
+        "reading": "low",
+        "rate": 0.02,
+        "long_run": "adopted",
+        "enterprises": "D",
+        "line_responses": {
+          "economic_affairs_services": 0.3844994797314016,
+          "recreation_culture": 0.8563914832367988,
+          "housing_subsidies": 1,
+          "receipt:enterprise_surplus": 1,
+          "receipt:housing_enterprise_surplus": 1,
+          "receipt:modeled_owner_property": 0.7726986463443216,
+          "receipt:tenant_occupied_property": 0.7189123969969125,
+          "receipt:personal_property_tax": 1,
+          "roads_vmt_sl": 0.7401981546463505,
+          "roads_vmt_fed": 0,
+          "state_price_public_order_safety": 1,
+          "state_price_health_services": 1,
+          "state_price_recreation_culture": 0.8563914832367988,
+          "receipt:corporate_capital": 1,
+          "receipt:corporate_labor": 1,
+          "receipt:remaining_production_property": 0.8806493775433665,
+          "receipt:other_production_taxes": 1
+        }
+      },
+      "cost_bn": 339.5520178295269,
+      "spending": [
+        {
+          "id": "general_public_services",
+          "family": "consumption",
+          "national_bn": 402.771128442,
+          "key": "population",
+          "share": 0.12741175044421638,
+          "keys": [
+            "population",
+            "wages"
+          ],
+          "response_class": "public_goods",
+          "group": "public_goods",
+          "amount_bn": 50.807301243958996,
+          "response": 0.6005266346459308,
+          "effect_bn": -30.51113763147671
+        },
+        {
+          "id": "defense",
+          "family": "consumption",
+          "national_bn": 856.019902,
+          "key": "population",
+          "share": 0.12741175044421613,
+          "keys": [
+            "population"
+          ],
+          "response_class": "public_goods",
+          "group": "public_goods",
+          "amount_bn": 107.98207210147714,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "public_order_safety",
+          "family": "consumption",
+          "national_bn": 521.2025117960001,
+          "key": "use",
+          "share": 0.14447201926599726,
+          "keys": [
+            "adults",
+            "population",
+            "use",
+            "use_raw_coding"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 74.55015591898928,
+          "response": 1,
+          "effect_bn": -74.55015591898928
+        },
+        {
+          "id": "economic_affairs_services",
+          "family": "consumption",
+          "national_bn": 453.136829594,
+          "key": "resources",
+          "share": 0.08859642041152715,
+          "keys": [
+            "population",
+            "resources",
+            "wages"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 39.74695404491953,
+          "response": 0.3844994797314016,
+          "effect_bn": -15.282683151179489
+        },
+        {
+          "id": "housing_community_services",
+          "family": "consumption",
+          "national_bn": 14.747693443000001,
+          "key": "population",
+          "share": 0.12741175044419023,
+          "keys": [
+            "population",
+            "resources"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 1.8603381688340848,
+          "response": 1,
+          "effect_bn": -1.8603381688340848
+        },
+        {
+          "id": "health_services",
+          "family": "consumption",
+          "national_bn": 308.35875489899996,
+          "key": "health_other",
+          "share": 0.06338918443692568,
+          "keys": [
+            "health_other",
+            "population",
+            "veterans"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 19.352173965499816,
+          "response": 1,
+          "effect_bn": -19.352173965499816
+        },
+        {
+          "id": "recreation_culture",
+          "family": "consumption",
+          "national_bn": 54.483657029,
+          "key": "population",
+          "share": 0.12741175044422326,
+          "keys": [
+            "population",
+            "resources"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 6.87280537242713,
+          "response": 0.8563914832367988,
+          "effect_bn": -5.885811986890709
+        },
+        {
+          "id": "education_services",
+          "family": "consumption",
+          "national_bn": 1226.396865159,
+          "key": "education_mix",
+          "share": 0.1781459792454003,
+          "keys": [
+            "age5_24",
+            "education_mix",
+            "school_operating"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 216.30440866145693,
+          "response": 1,
+          "effect_bn": -216.30440866145693
+        },
+        {
+          "id": "income_security_services",
+          "family": "consumption",
+          "national_bn": 168.26451691100002,
+          "key": "cash_assistance",
+          "share": 0.17919908341575516,
+          "keys": [
+            "all_cash",
+            "cash_assistance",
+            "population"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 29.852907934124666,
+          "response": 1,
+          "effect_bn": -29.852907934124666
+        },
+        {
+          "id": "social_security",
+          "family": "social_benefits",
+          "national_bn": 1447.965,
+          "key": "social_security",
+          "share": 0.07541843776287448,
+          "keys": [
+            "age65plus",
+            "social_security"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 108.11698012221756,
+          "response": 1,
+          "effect_bn": -108.11698012221756
+        },
+        {
+          "id": "medicare",
+          "family": "social_benefits",
+          "national_bn": 1102.358,
+          "key": "medicare",
+          "share": 0.07029676509243689,
+          "keys": [
+            "age65plus",
+            "medicare"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 76.7213638123311,
+          "response": 1,
+          "effect_bn": -76.7213638123311
+        },
+        {
+          "id": "unemployment",
+          "family": "social_benefits",
+          "national_bn": 36.468,
+          "key": "unemployment",
+          "share": 0.13767467844469655,
+          "keys": [
+            "unemployment",
+            "working_age"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 4.970777568679642,
+          "response": 1,
+          "effect_bn": -4.970777568679642
+        },
+        {
+          "id": "railroad_retirement",
+          "family": "social_benefits",
+          "national_bn": 14.493,
+          "key": "social_security",
+          "share": 0.03949394103126895,
+          "keys": [
+            "age65plus",
+            "social_security"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.5666919925903448,
+          "response": 1,
+          "effect_bn": -0.5666919925903448
+        },
+        {
+          "id": "pension_guaranty",
+          "family": "social_benefits",
+          "national_bn": 0.771,
+          "key": "age65plus",
+          "share": 0.05246468318129763,
+          "keys": [
+            "age65plus",
+            "social_security"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.0400478999095943,
+          "response": 1,
+          "effect_bn": -0.0400478999095943
+        },
+        {
+          "id": "veterans_life_insurance",
+          "family": "social_benefits",
+          "national_bn": 0.449,
+          "key": "veterans",
+          "share": 0.05587787835453488,
+          "keys": [
+            "adults",
+            "veterans"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.024839598503763237,
+          "response": 1,
+          "effect_bn": -0.024839598503763237
+        },
+        {
+          "id": "workers_compensation",
+          "family": "social_benefits",
+          "national_bn": 11.923,
+          "key": "workers_comp",
+          "share": 0.13917737430649368,
+          "keys": [
+            "wages",
+            "workers_comp",
+            "working_age"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 1.6429051721203116,
+          "response": 1,
+          "effect_bn": -1.6429051721203116
+        },
+        {
+          "id": "military_medical",
+          "family": "social_benefits",
+          "national_bn": 7.157,
+          "key": "tricare",
+          "share": 0.04951335439698456,
+          "keys": [
+            "population",
+            "tricare",
+            "veterans"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.35084208277747103,
+          "response": 1,
+          "effect_bn": -0.35084208277747103
+        },
+        {
+          "id": "veterans_pension_disability",
+          "family": "social_benefits",
+          "national_bn": 180.525,
+          "key": "veterans",
+          "share": 0.05587787840496426,
+          "keys": [
+            "adults",
+            "veterans"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 9.987012112445596,
+          "response": 1,
+          "effect_bn": -9.987012112445596
+        },
+        {
+          "id": "veterans_readjustment",
+          "family": "social_benefits",
+          "national_bn": 11.391,
+          "key": "veterans",
+          "share": 0.05587787840606626,
+          "keys": [
+            "age18_24",
+            "veterans"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.6301734104846313,
+          "response": 1,
+          "effect_bn": -0.6301734104846313
+        },
+        {
+          "id": "veterans_other",
+          "family": "social_benefits",
+          "national_bn": 37.526,
+          "key": "va_medical",
+          "share": 0.04670394041321563,
+          "keys": [
+            "va_medical",
+            "veterans"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 1.7351783283012046,
+          "response": 1,
+          "effect_bn": -1.7351783283012046
+        },
+        {
+          "id": "snap",
+          "family": "social_benefits",
+          "national_bn": 97.391,
+          "key": "snap",
+          "share": 0.1516817828186819,
+          "keys": [
+            "cash_assistance",
+            "snap"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 14.62549462768213,
+          "response": 1,
+          "effect_bn": -14.62549462768213
+        },
+        {
+          "id": "black_lung",
+          "family": "social_benefits",
+          "national_bn": 0.173,
+          "key": "workers_comp",
+          "share": 0.20387271288441236,
+          "keys": [
+            "age65plus",
+            "workers_comp"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.0349191384374209,
+          "response": 1,
+          "effect_bn": -0.0349191384374209
+        },
+        {
+          "id": "ssi",
+          "family": "social_benefits",
+          "national_bn": 65.134,
+          "key": "ssi",
+          "share": 0.08471349617344806,
+          "keys": [
+            "all_cash",
+            "population",
+            "ssi"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 5.462842350283602,
+          "response": 1,
+          "effect_bn": -5.462842350283602
+        },
+        {
+          "id": "refundable_tax_credits",
+          "family": "social_benefits",
+          "national_bn": 228.809,
+          "key": "refundable_credits",
+          "share": 0.16408407619486046,
+          "keys": [
+            "refundable_credits",
+            "working_age"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 37.17045293380809,
+          "response": 1,
+          "effect_bn": -37.17045293380809
+        },
+        {
+          "id": "other_federal_benefits",
+          "family": "social_benefits",
+          "national_bn": 66.62745901599999,
+          "key": "all_cash",
+          "share": 0.10581970666008472,
+          "keys": [
+            "all_cash",
+            "health_other",
+            "population"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 6.9803647089112975,
+          "response": 1,
+          "effect_bn": -6.9803647089112975
+        },
+        {
+          "id": "temporary_disability",
+          "family": "social_benefits",
+          "national_bn": 13.138,
+          "key": "workers_comp",
+          "share": 0.20387271289201767,
+          "keys": [
+            "workers_comp",
+            "working_age"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 2.6518360696783936,
+          "response": 1,
+          "effect_bn": -2.6518360696783936
+        },
+        {
+          "id": "medicaid_and_chip_other_medical",
+          "family": "social_benefits",
+          "national_bn": 954.2,
+          "key": "uninsured_use_low",
+          "share": 0.13346647623509328,
+          "keys": [
+            "medicaid",
+            "medicaid_covered",
+            "uninsured_use_07_high",
+            "uninsured_use_07_low",
+            "uninsured_use_high",
+            "uninsured_use_low"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 126.08688622828268,
+          "response": 1,
+          "effect_bn": -126.08688622828268
+        },
+        {
+          "id": "family_and_general_assistance",
+          "family": "social_benefits",
+          "national_bn": 63.065,
+          "key": "cash_assistance",
+          "share": 0.19797481760328425,
+          "keys": [
+            "all_cash",
+            "cash_assistance"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 12.3610870900053,
+          "response": 1,
+          "effect_bn": -12.3610870900053
+        },
+        {
+          "id": "energy_assistance",
+          "family": "social_benefits",
+          "national_bn": 5.218,
+          "key": "energy",
+          "share": 0.11702317363314903,
+          "keys": [
+            "cash_assistance",
+            "energy"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.6045528356789629,
+          "response": 1,
+          "effect_bn": -0.6045528356789629
+        },
+        {
+          "id": "other_state_welfare",
+          "family": "social_benefits",
+          "national_bn": 22.385,
+          "key": "wic",
+          "share": 0.25275908222955096,
+          "keys": [
+            "cash_assistance",
+            "wic"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 5.601730122075813,
+          "response": 1,
+          "effect_bn": -5.601730122075813
+        },
+        {
+          "id": "education_benefits",
+          "family": "social_benefits",
+          "national_bn": 64.479,
+          "key": "postsecondary",
+          "share": 0.1504437246943832,
+          "keys": [
+            "age18_24",
+            "postsecondary"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 9.603967561678482,
+          "response": 1,
+          "effect_bn": -9.603967561678482
+        },
+        {
+          "id": "employment_training",
+          "family": "social_benefits",
+          "national_bn": 1.377,
+          "key": "working_age",
+          "share": 0.12991500501871558,
+          "keys": [
+            "unemployment",
+            "working_age"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.17711346126243668,
+          "response": 1,
+          "effect_bn": -0.17711346126243668
+        },
+        {
+          "id": "other_state_benefits",
+          "family": "social_benefits",
+          "national_bn": 2.875,
+          "key": "population",
+          "share": 0.1274117504441137,
+          "keys": [
+            "population",
+            "veterans"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.3626649997065471,
+          "response": 1,
+          "effect_bn": -0.3626649997065471
+        },
+        {
+          "id": "foreign_territory_social_benefits",
+          "family": "foreign",
+          "national_bn": 34.323,
+          "key": "external",
+          "share": 0,
+          "keys": [
+            "external"
+          ],
+          "response_class": "foreign",
+          "group": "foreign",
+          "amount_bn": 0,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "other_foreign_current_transfers",
+          "family": "foreign",
+          "national_bn": 87.735,
+          "key": "external",
+          "share": 0,
+          "keys": [
+            "external"
+          ],
+          "response_class": "foreign",
+          "group": "foreign",
+          "amount_bn": 0,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "domestic_interest",
+          "family": "interest",
+          "national_bn": 1118.87,
+          "key": "population",
+          "share": 0.12741175044421627,
+          "keys": [
+            "population"
+          ],
+          "response_class": "interest",
+          "group": "interest",
+          "amount_bn": 141.1391262396452,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "foreign_interest",
+          "family": "interest",
+          "national_bn": 278.755,
+          "key": "external",
+          "share": 0,
+          "keys": [
+            "external"
+          ],
+          "response_class": "interest",
+          "group": "interest",
+          "amount_bn": 0,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "agricultural_subsidies",
+          "family": "subsidies",
+          "national_bn": 8.233,
+          "key": "wages",
+          "share": 0.0848543273704806,
+          "keys": [
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 0.6916564401244311,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "housing_subsidies",
+          "family": "subsidies",
+          "national_bn": 55.003189000000006,
+          "key": "housing_support",
+          "share": 0.08243021290723411,
+          "keys": [
+            "housing_support",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 4.488824290011592,
+          "response": 1,
+          "effect_bn": -4.488824290011592
+        },
+        {
+          "id": "transport_subsidies",
+          "family": "subsidies",
+          "national_bn": 0.405,
+          "key": "resources",
+          "share": 0.08859642039645628,
+          "keys": [
+            "population",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 0.03552462564258004,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "other_subsidies",
+          "family": "subsidies",
+          "national_bn": 25.34,
+          "key": "resources",
+          "share": 0.08859642041127044,
+          "keys": [
+            "population",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 2.2227012892301903,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "source_rounding",
+          "family": "rounding",
+          "national_bn": 0,
+          "key": "external",
+          "share": 0,
+          "keys": [
+            "external"
+          ],
+          "response_class": "rounding",
+          "group": "rounding",
+          "amount_bn": 0,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "school_reprice",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "education_school_part",
+          "group": "education_school_part",
+          "amount_bn": 0.42236802296048814,
+          "response": 0.7153278156243373,
+          "effect_bn": -0.30213159525389593
+        },
+        {
+          "id": "college_rekey",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "education_other_part",
+          "group": "education_other_part",
+          "amount_bn": -5.184946926866755,
+          "response": 0.28467218437566266,
+          "effect_bn": 1.4760101675430384
+        },
+        {
+          "id": "lane_constants",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "correction_constant",
+          "group": "correction_constant",
+          "amount_bn": -5.40010769452897,
+          "response": 1,
+          "effect_bn": 5.40010769452897
+        },
+        {
+          "id": "roads_vmt_sl",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 3.0632087295166937,
+          "response": 0.7401981546463505,
+          "effect_bn": -2.2673814488848487
+        },
+        {
+          "id": "roads_vmt_fed",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 0.027842503165727218,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "state_price_public_order_safety",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 6.931151541634829,
+          "response": 1,
+          "effect_bn": -6.931151541634829
+        },
+        {
+          "id": "state_price_health_services",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 1.9700870661101257,
+          "response": 1,
+          "effect_bn": -1.9700870661101257
+        },
+        {
+          "id": "state_price_recreation_culture",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 0.4397297100874745,
+          "response": 0.8563914832367988,
+          "effect_bn": -0.37658077864509987
+        }
+      ],
+      "receipts": [
+        {
+          "id": "federal_income_tax",
+          "national_bn": 2403.242,
+          "key": "federal_liability",
+          "share": 0.04598294559118143,
+          "response_class": "personal_income",
+          "group": "direct_receipts",
+          "amount_bn": 110.50814544116858,
+          "response": 1,
+          "effect_bn": 110.50814544116858
+        },
+        {
+          "id": "state_local_income_tax",
+          "national_bn": 536.167,
+          "key": "state_liability",
+          "share": 0.049476391666055955,
+          "response_class": "personal_income",
+          "group": "direct_receipts",
+          "amount_bn": 26.527608417168892,
+          "response": 1,
+          "effect_bn": 26.527608417168892
+        },
+        {
+          "id": "personal_motor_vehicle",
+          "national_bn": 26.125,
+          "key": "adults",
+          "share": 0.13687398152229105,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 3.575832776052499,
+          "response": 1,
+          "effect_bn": 3.575832776052499
+        },
+        {
+          "id": "personal_property_tax",
+          "national_bn": 12.988,
+          "key": "capital",
+          "share": 0.10808368038426511,
+          "response_class": "household_direct",
+          "group": "incidence_receipts",
+          "amount_bn": 1.403790822498509,
+          "response": 1,
+          "effect_bn": 1.403790822498509
+        },
+        {
+          "id": "other_personal_tax",
+          "national_bn": 9.721,
+          "key": "state_liability",
+          "share": 0.04902458460793952,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 0.4765679859765222,
+          "response": 1,
+          "effect_bn": 0.4765679859765222
+        },
+        {
+          "id": "employee_oasdi",
+          "national_bn": 610.399,
+          "key": "wage_oasdi",
+          "share": 0.08833208596106695,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 53.91781721140484,
+          "response": 1,
+          "effect_bn": 53.91781721140484
+        },
+        {
+          "id": "employee_hi",
+          "national_bn": 196.749,
+          "key": "wage",
+          "share": 0.08074267503203363,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 15.886040584824329,
+          "response": 1,
+          "effect_bn": 15.886040584824329
+        },
+        {
+          "id": "self_employment_oasdi_hi",
+          "national_bn": 86.855,
+          "key": "self_payroll",
+          "share": 0.07363829280724915,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 6.395853937908699,
+          "response": 1,
+          "effect_bn": 6.395853937908699
+        },
+        {
+          "id": "employer_oasdi",
+          "national_bn": 615.67,
+          "key": "wage_oasdi",
+          "share": 0.08833208596103531,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 54.3834156385346,
+          "response": 1,
+          "effect_bn": 54.3834156385346
+        },
+        {
+          "id": "employer_hi",
+          "national_bn": 175.011,
+          "key": "wage",
+          "share": 0.08074267503195681,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 14.130856313125296,
+          "response": 1,
+          "effect_bn": 14.130856313125296
+        },
+        {
+          "id": "medicare_supplementary_premiums",
+          "national_bn": 145.117,
+          "key": "medicare",
+          "share": 0.05196508379840805,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 7.541017110234034,
+          "response": 1,
+          "effect_bn": 7.541017110234034
+        },
+        {
+          "id": "other_domestic_social_contributions",
+          "national_bn": 93.35,
+          "key": "positive_fica_worker",
+          "share": 0.11355996501106541,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 10.600822738703933,
+          "response": 1,
+          "effect_bn": 10.600822738703933
+        },
+        {
+          "id": "corporate_capital",
+          "national_bn": 497.76375,
+          "key": "capital",
+          "share": 0.0679329963801697,
+          "response_class": "corporate_capital",
+          "group": "incidence_receipts",
+          "amount_bn": 33.81458256999403,
+          "response": 1,
+          "effect_bn": 33.81458256999403
+        },
+        {
+          "id": "corporate_labor",
+          "national_bn": 165.92125,
+          "key": "wage",
+          "share": 0.06793299540006542,
+          "response_class": "household_direct",
+          "group": "incidence_receipts",
+          "amount_bn": 11.271527523331267,
+          "response": 1,
+          "effect_bn": 11.271527523331267
+        },
+        {
+          "id": "general_sales_tax",
+          "national_bn": 602.43,
+          "key": "consumption",
+          "share": 0.09944996688457775,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 59.91164379937781,
+          "response": 1,
+          "effect_bn": 59.91164379937781
+        },
+        {
+          "id": "modeled_owner_property",
+          "national_bn": 394.862477949,
+          "key": "modeled_owner_property",
+          "share": 0.06813732247045644,
+          "response_class": "household_direct",
+          "group": "incidence_receipts",
+          "amount_bn": 26.90487211475465,
+          "response": 0.7726986463443216,
+          "effect_bn": 20.789358263138002
+        },
+        {
+          "id": "remaining_production_property",
+          "national_bn": 273.445297051,
+          "key": "capital",
+          "share": 0.07883243986296451,
+          "response_class": "business_property",
+          "group": "incidence_receipts",
+          "amount_bn": 21.556359644478896,
+          "response": 0.8806493775433665,
+          "effect_bn": 18.983594703011285
+        },
+        {
+          "id": "excise_selective_sales",
+          "national_bn": 371.262,
+          "key": "consumption",
+          "share": 0.09298093641878966,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 34.52028856009088,
+          "response": 1,
+          "effect_bn": 34.52028856009088
+        },
+        {
+          "id": "customs_duties",
+          "national_bn": 83.587,
+          "key": "consumption",
+          "share": 0.0895541465034885,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 7.485562475492161,
+          "response": 1,
+          "effect_bn": 7.485562475492161
+        },
+        {
+          "id": "other_production_taxes",
+          "national_bn": 145.258,
+          "key": "capital",
+          "share": 0.05301898615605723,
+          "response_class": "other_business",
+          "group": "incidence_receipts",
+          "amount_bn": 7.701431787197984,
+          "response": 1,
+          "effect_bn": 7.701431787197984
+        },
+        {
+          "id": "rest_world_tax_contributions",
+          "national_bn": 45.309,
+          "key": "none",
+          "share": 0,
+          "response_class": "foreign",
+          "group": "incidence_receipts",
+          "amount_bn": 0,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "government_asset_income",
+          "national_bn": 196.291,
+          "key": "resident_population",
+          "share": 0.12919345696886156,
+          "response_class": "public_asset",
+          "group": "incidence_receipts",
+          "amount_bn": 25.359512963301167,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "business_current_transfers",
+          "national_bn": 139.976,
+          "key": "capital",
+          "share": 0.02943472981256849,
+          "response_class": "other_business",
+          "group": "incidence_receipts",
+          "amount_bn": 4.120155684872796,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "personal_current_transfers",
+          "national_bn": 141.065,
+          "key": "consumption",
+          "share": 0.08955414651036271,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 12.632955730024051,
+          "response": 1,
+          "effect_bn": 12.632955730024051
+        },
+        {
+          "id": "rest_world_current_transfers",
+          "national_bn": 3.343,
+          "key": "none",
+          "share": 0,
+          "response_class": "foreign",
+          "group": "incidence_receipts",
+          "amount_bn": 0,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "enterprise_surplus",
+          "national_bn": -7.161999999999999,
+          "key": "resident_population",
+          "share": 0.1261443471263462,
+          "response_class": "public_asset",
+          "group": "incidence_receipts",
+          "amount_bn": -0.9034458177695179,
+          "response": 1,
+          "effect_bn": -0.9034458177695179
+        },
+        {
+          "id": "source_rounding",
+          "national_bn": 0.002,
+          "key": "population",
+          "share": 0.1241849861747629,
+          "response_class": "rounding",
+          "group": "incidence_receipts",
+          "amount_bn": 0.0002483701400386852,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "housing_enterprise_surplus",
+          "national_bn": -45.555811000000006,
+          "key": "housing_support",
+          "share": 0.08161025518014221,
+          "response_class": "public_asset",
+          "group": "incidence_receipts",
+          "amount_bn": -3.7178213606483306,
+          "response": 1,
+          "effect_bn": -3.7178213606483306
+        },
+        {
+          "id": "tenant_occupied_property",
+          "national_bn": 83.840225,
+          "key": "renter_contract_rent",
+          "share": 0.12256449456115505,
+          "response_class": "tenant_housing_property",
+          "group": "incidence_receipts",
+          "amount_bn": 10.275834801018515,
+          "response": 0.7189123969969125,
+          "effect_bn": 7.387425027944512
+        },
+        {
+          "id": "user_fees_key_k12",
+          "national_bn": 1e-9,
+          "key": "capital_key_offset",
+          "share": 0.00975296263696325,
+          "response_class": "capital_key_carrier",
+          "group": "incidence_receipts",
+          "amount_bn": 9.75296263696325e-12,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "user_fees_key_college",
+          "national_bn": 1e-9,
+          "key": "capital_key_offset",
+          "share": -0.03854858618402715,
+          "response_class": "capital_key_carrier",
+          "group": "incidence_receipts",
+          "amount_bn": -3.854858618402715e-11,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "user_fees_key_health",
+          "national_bn": 1e-9,
+          "key": "capital_key_offset",
+          "share": -0.002079886038647402,
+          "response_class": "capital_key_carrier",
+          "group": "incidence_receipts",
+          "amount_bn": -2.079886038647402e-12,
+          "response": 0,
+          "effect_bn": 0
+        }
+      ],
+      "medicaid_coverage_fraction": 0.9708091419590916,
+      "production_private_bn": -0.704457336742795,
+      "production_receipts_bn": 12.614102194160976,
+      "capital": {
+        "components": [
+          {
+            "id": "k12",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 2723.9194975692117,
+            "key": 0.17671830615476924,
+            "response": 1,
+            "return_bn": 9.627328794247624
+          },
+          {
+            "id": "college",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 1198.387599270317,
+            "key": 0.1721461198510312,
+            "response": 1,
+            "return_bn": 4.125955505839551
+          },
+          {
+            "id": "pos_sl",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 289.47299999999996,
+            "key": 0.14303491297863966,
+            "response": 1,
+            "return_bn": 0.828094907293315
+          },
+          {
+            "id": "pos_fed",
+            "group": "core",
+            "level": "federal",
+            "stock_charged_bn": 110.2,
+            "key": 0.14303491297863966,
+            "response": 1,
+            "return_bn": 0.31524894820492183
+          },
+          {
+            "id": "health_sl",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 365.979,
+            "key": 0.06275863311174168,
+            "response": 1,
+            "return_bn": 0.4593668357520422
+          },
+          {
+            "id": "health_fed",
+            "group": "core",
+            "level": "federal",
+            "stock_charged_bn": 106.019,
+            "key": 0.06275863311174168,
+            "response": 1,
+            "return_bn": 0.1330721504774748
+          },
+          {
+            "id": "gps_sl",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 1292.9385000000002,
+            "key": 0.12614434763606788,
+            "response": 0.6005266346459308,
+            "return_bn": 1.958880452783785
+          },
+          {
+            "id": "gps_fed",
+            "group": "core",
+            "level": "federal",
+            "stock_charged_bn": 152.17000000000002,
+            "key": 0.12614434763606788,
+            "response": 0.6005266346459308,
+            "return_bn": 0.23054680365702515
+          },
+          {
+            "id": "hwy_sl",
+            "group": "block",
+            "level": "state_local",
+            "stock_charged_bn": 4388.9962727707125,
+            "key": 0.10295459120593183,
+            "response": 0.7401981546463505,
+            "return_bn": 6.6894270847667325
+          },
+          {
+            "id": "rec_sl",
+            "group": "block",
+            "level": "state_local",
+            "stock_charged_bn": 425.0824916531727,
+            "key": 0.12614434763013327,
+            "response": 0.9514857707559868,
+            "return_bn": 1.02040671104067
+          },
+          {
+            "id": "hwy_fed",
+            "group": "block",
+            "level": "federal",
+            "stock_charged_bn": 54.573499999999996,
+            "key": 0.10295459120593183,
+            "response": 0,
+            "return_bn": 0
+          },
+          {
+            "id": "air_fed",
+            "group": "block",
+            "level": "federal",
+            "stock_charged_bn": 35.406,
+            "key": 0.0877151258716531,
+            "response": 0,
+            "return_bn": 0
+          },
+          {
+            "id": "rec_fed",
+            "group": "block",
+            "level": "federal",
+            "stock_charged_bn": 41.8305,
+            "key": 0.12614434763013327,
+            "response": 0,
+            "return_bn": 0
+          },
+          {
+            "id": "ent_housing_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 420.402,
+            "key": 0.08161025518014221,
+            "response": 1,
+            "return_bn": 0.6861822899648429
+          },
+          {
+            "id": "ent_transit_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 505.7986332941459,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 1.2760727726420948
+          },
+          {
+            "id": "ent_airports_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 595.8142303973117,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 1.5031719481150945
+          },
+          {
+            "id": "ent_ports_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 94.43351434918577,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 0.23824508125118585
+          },
+          {
+            "id": "ent_power_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 542.057,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 1.3675485329312809
+          },
+          {
+            "id": "ent_water_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 915.9465,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 2.310829474240793
+          },
+          {
+            "id": "ent_sewer_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 1224.8960000000002,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 3.09027413684058
+          },
+          {
+            "id": "ent_tolls_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 501.1837272292877,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 1.2644298863430294
+          },
+          {
+            "id": "ent_power_fed",
+            "group": "enterprise",
+            "level": "federal",
+            "stock_charged_bn": 27.6655,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 0.06979692899051272
+          },
+          {
+            "id": "ent_other_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 75.4805887275022,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 0.19042899248434203
+          },
+          {
+            "id": "ent_other_fed",
+            "group": "enterprise",
+            "level": "federal",
+            "stock_charged_bn": 56.71180600256709,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 0.14307747542914126
+          },
+          {
+            "id": "k12_user_fees",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 2723.9194975692117,
+            "key": 0.00975296263696325,
+            "response": 1,
+            "return_bn": 0.5313257017177646
+          },
+          {
+            "id": "college_user_fees",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 1198.387599270317,
+            "key": -0.03854858618402715,
+            "response": 1,
+            "return_bn": -0.9239229530468241
+          },
+          {
+            "id": "health_sl_user_fees",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 365.979,
+            "key": -0.002079886038647402,
+            "response": 1,
+            "return_bn": -0.015223892250762752
+          },
+          {
+            "id": "health_fed_user_fees",
+            "group": "core",
+            "level": "federal",
+            "stock_charged_bn": 106.019,
+            "key": -0.002079886038647402,
+            "response": 1,
+            "return_bn": -0.0044101487586271785
+          }
+        ],
+        "total_bn": 37.116154420957585
+      }
+    }
+  },
+  "high": {
+    "lineage": {
+      "specification": 11,
+      "spec": {
+        "allocation": "personal",
+        "normalization": "cash",
+        "share": 0.8651608840454027,
+        "school": 1,
+        "gg": 0.8510539647701243,
+        "uc": "uninsured_use_high",
+        "justice": "use",
+        "reading": "high",
+        "rate": 0.03,
+        "long_run": "adopted",
+        "enterprises": "D",
+        "line_responses": {
+          "economic_affairs_services": 0.6387399411939584,
+          "recreation_culture": 1,
+          "housing_subsidies": 1,
+          "receipt:enterprise_surplus": 1,
+          "receipt:housing_enterprise_surplus": 1,
+          "receipt:modeled_owner_property": 0.7726986463443216,
+          "receipt:tenant_occupied_property": 0.7189123969969125,
+          "receipt:personal_property_tax": 1,
+          "roads_vmt_sl": 1,
+          "roads_vmt_fed": 1,
+          "state_price_public_order_safety": 1,
+          "state_price_health_services": 1,
+          "state_price_recreation_culture": 1,
+          "receipt:corporate_capital": 0.37,
+          "receipt:corporate_labor": 0.37,
+          "receipt:remaining_production_property": 0.8806493775433665,
+          "receipt:other_production_taxes": 1
+        }
+      },
+      "cost_bn": 423.6492607005069,
+      "spending": [
+        {
+          "id": "general_public_services",
+          "family": "consumption",
+          "national_bn": 402.771128442,
+          "key": "population",
+          "share": 0.12741175044421638,
+          "keys": [
+            "population",
+            "wages"
+          ],
+          "response_class": "public_goods",
+          "group": "public_goods",
+          "amount_bn": 50.807301243958996,
+          "response": 0.8510539647701243,
+          "effect_bn": -43.23975516294137
+        },
+        {
+          "id": "defense",
+          "family": "consumption",
+          "national_bn": 856.019902,
+          "key": "population",
+          "share": 0.12741175044421613,
+          "keys": [
+            "population"
+          ],
+          "response_class": "public_goods",
+          "group": "public_goods",
+          "amount_bn": 107.98207210147714,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "public_order_safety",
+          "family": "consumption",
+          "national_bn": 521.2025117960001,
+          "key": "use",
+          "share": 0.14447201926599726,
+          "keys": [
+            "adults",
+            "population",
+            "use",
+            "use_raw_coding"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 74.55015591898928,
+          "response": 1,
+          "effect_bn": -74.55015591898928
+        },
+        {
+          "id": "economic_affairs_services",
+          "family": "consumption",
+          "national_bn": 453.136829594,
+          "key": "resources",
+          "share": 0.08859642041152715,
+          "keys": [
+            "population",
+            "resources",
+            "wages"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 39.74695404491953,
+          "response": 0.6387399411939584,
+          "effect_bn": -25.387967089290868
+        },
+        {
+          "id": "housing_community_services",
+          "family": "consumption",
+          "national_bn": 14.747693443000001,
+          "key": "population",
+          "share": 0.12741175044419023,
+          "keys": [
+            "population",
+            "resources"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 1.8603381688340848,
+          "response": 1,
+          "effect_bn": -1.8603381688340848
+        },
+        {
+          "id": "health_services",
+          "family": "consumption",
+          "national_bn": 308.35875489899996,
+          "key": "health_other",
+          "share": 0.06338918443692568,
+          "keys": [
+            "health_other",
+            "population",
+            "veterans"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 19.352173965499816,
+          "response": 1,
+          "effect_bn": -19.352173965499816
+        },
+        {
+          "id": "recreation_culture",
+          "family": "consumption",
+          "national_bn": 54.483657029,
+          "key": "population",
+          "share": 0.12741175044422326,
+          "keys": [
+            "population",
+            "resources"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 6.87280537242713,
+          "response": 1,
+          "effect_bn": -6.87280537242713
+        },
+        {
+          "id": "education_services",
+          "family": "consumption",
+          "national_bn": 1226.396865159,
+          "key": "education_mix",
+          "share": 0.1781459792454003,
+          "keys": [
+            "age5_24",
+            "education_mix",
+            "school_operating"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 216.30440866145693,
+          "response": 1,
+          "effect_bn": -216.30440866145693
+        },
+        {
+          "id": "income_security_services",
+          "family": "consumption",
+          "national_bn": 168.26451691100002,
+          "key": "cash_assistance",
+          "share": 0.17919908341575516,
+          "keys": [
+            "all_cash",
+            "cash_assistance",
+            "population"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 29.852907934124666,
+          "response": 1,
+          "effect_bn": -29.852907934124666
+        },
+        {
+          "id": "social_security",
+          "family": "social_benefits",
+          "national_bn": 1447.965,
+          "key": "social_security",
+          "share": 0.07541843776287448,
+          "keys": [
+            "age65plus",
+            "social_security"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 108.11698012221756,
+          "response": 1,
+          "effect_bn": -108.11698012221756
+        },
+        {
+          "id": "medicare",
+          "family": "social_benefits",
+          "national_bn": 1102.358,
+          "key": "medicare",
+          "share": 0.07029676509243689,
+          "keys": [
+            "age65plus",
+            "medicare"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 76.7213638123311,
+          "response": 1,
+          "effect_bn": -76.7213638123311
+        },
+        {
+          "id": "unemployment",
+          "family": "social_benefits",
+          "national_bn": 36.468,
+          "key": "unemployment",
+          "share": 0.13767467844469655,
+          "keys": [
+            "unemployment",
+            "working_age"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 4.970777568679642,
+          "response": 1,
+          "effect_bn": -4.970777568679642
+        },
+        {
+          "id": "railroad_retirement",
+          "family": "social_benefits",
+          "national_bn": 14.493,
+          "key": "social_security",
+          "share": 0.03949394103126895,
+          "keys": [
+            "age65plus",
+            "social_security"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.5666919925903448,
+          "response": 1,
+          "effect_bn": -0.5666919925903448
+        },
+        {
+          "id": "pension_guaranty",
+          "family": "social_benefits",
+          "national_bn": 0.771,
+          "key": "age65plus",
+          "share": 0.05246468318129763,
+          "keys": [
+            "age65plus",
+            "social_security"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.0400478999095943,
+          "response": 1,
+          "effect_bn": -0.0400478999095943
+        },
+        {
+          "id": "veterans_life_insurance",
+          "family": "social_benefits",
+          "national_bn": 0.449,
+          "key": "veterans",
+          "share": 0.05587787835453488,
+          "keys": [
+            "adults",
+            "veterans"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.024839598503763237,
+          "response": 1,
+          "effect_bn": -0.024839598503763237
+        },
+        {
+          "id": "workers_compensation",
+          "family": "social_benefits",
+          "national_bn": 11.923,
+          "key": "workers_comp",
+          "share": 0.13917737430649368,
+          "keys": [
+            "wages",
+            "workers_comp",
+            "working_age"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 1.6429051721203116,
+          "response": 1,
+          "effect_bn": -1.6429051721203116
+        },
+        {
+          "id": "military_medical",
+          "family": "social_benefits",
+          "national_bn": 7.157,
+          "key": "tricare",
+          "share": 0.04951335439698456,
+          "keys": [
+            "population",
+            "tricare",
+            "veterans"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.35084208277747103,
+          "response": 1,
+          "effect_bn": -0.35084208277747103
+        },
+        {
+          "id": "veterans_pension_disability",
+          "family": "social_benefits",
+          "national_bn": 180.525,
+          "key": "veterans",
+          "share": 0.05587787840496426,
+          "keys": [
+            "adults",
+            "veterans"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 9.987012112445596,
+          "response": 1,
+          "effect_bn": -9.987012112445596
+        },
+        {
+          "id": "veterans_readjustment",
+          "family": "social_benefits",
+          "national_bn": 11.391,
+          "key": "veterans",
+          "share": 0.05587787840606626,
+          "keys": [
+            "age18_24",
+            "veterans"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.6301734104846313,
+          "response": 1,
+          "effect_bn": -0.6301734104846313
+        },
+        {
+          "id": "veterans_other",
+          "family": "social_benefits",
+          "national_bn": 37.526,
+          "key": "va_medical",
+          "share": 0.04670394041321563,
+          "keys": [
+            "va_medical",
+            "veterans"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 1.7351783283012046,
+          "response": 1,
+          "effect_bn": -1.7351783283012046
+        },
+        {
+          "id": "snap",
+          "family": "social_benefits",
+          "national_bn": 97.391,
+          "key": "snap",
+          "share": 0.1516817828186819,
+          "keys": [
+            "cash_assistance",
+            "snap"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 14.62549462768213,
+          "response": 1,
+          "effect_bn": -14.62549462768213
+        },
+        {
+          "id": "black_lung",
+          "family": "social_benefits",
+          "national_bn": 0.173,
+          "key": "workers_comp",
+          "share": 0.20387271288441236,
+          "keys": [
+            "age65plus",
+            "workers_comp"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.0349191384374209,
+          "response": 1,
+          "effect_bn": -0.0349191384374209
+        },
+        {
+          "id": "ssi",
+          "family": "social_benefits",
+          "national_bn": 65.134,
+          "key": "ssi",
+          "share": 0.08471349617344806,
+          "keys": [
+            "all_cash",
+            "population",
+            "ssi"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 5.462842350283602,
+          "response": 1,
+          "effect_bn": -5.462842350283602
+        },
+        {
+          "id": "refundable_tax_credits",
+          "family": "social_benefits",
+          "national_bn": 228.809,
+          "key": "refundable_credits",
+          "share": 0.16408407619486046,
+          "keys": [
+            "refundable_credits",
+            "working_age"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 37.17045293380809,
+          "response": 1,
+          "effect_bn": -37.17045293380809
+        },
+        {
+          "id": "other_federal_benefits",
+          "family": "social_benefits",
+          "national_bn": 66.62745901599999,
+          "key": "all_cash",
+          "share": 0.10581970666008472,
+          "keys": [
+            "all_cash",
+            "health_other",
+            "population"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 6.9803647089112975,
+          "response": 1,
+          "effect_bn": -6.9803647089112975
+        },
+        {
+          "id": "temporary_disability",
+          "family": "social_benefits",
+          "national_bn": 13.138,
+          "key": "workers_comp",
+          "share": 0.20387271289201767,
+          "keys": [
+            "workers_comp",
+            "working_age"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 2.6518360696783936,
+          "response": 1,
+          "effect_bn": -2.6518360696783936
+        },
+        {
+          "id": "medicaid_and_chip_other_medical",
+          "family": "social_benefits",
+          "national_bn": 954.2,
+          "key": "uninsured_use_high",
+          "share": 0.1357124125236084,
+          "keys": [
+            "medicaid",
+            "medicaid_covered",
+            "uninsured_use_07_high",
+            "uninsured_use_07_low",
+            "uninsured_use_high",
+            "uninsured_use_low"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 128.2086413877093,
+          "response": 1,
+          "effect_bn": -128.2086413877093
+        },
+        {
+          "id": "family_and_general_assistance",
+          "family": "social_benefits",
+          "national_bn": 63.065,
+          "key": "cash_assistance",
+          "share": 0.19797481760328425,
+          "keys": [
+            "all_cash",
+            "cash_assistance"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 12.3610870900053,
+          "response": 1,
+          "effect_bn": -12.3610870900053
+        },
+        {
+          "id": "energy_assistance",
+          "family": "social_benefits",
+          "national_bn": 5.218,
+          "key": "energy",
+          "share": 0.11702317363314903,
+          "keys": [
+            "cash_assistance",
+            "energy"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.6045528356789629,
+          "response": 1,
+          "effect_bn": -0.6045528356789629
+        },
+        {
+          "id": "other_state_welfare",
+          "family": "social_benefits",
+          "national_bn": 22.385,
+          "key": "wic",
+          "share": 0.25275908222955096,
+          "keys": [
+            "cash_assistance",
+            "wic"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 5.601730122075813,
+          "response": 1,
+          "effect_bn": -5.601730122075813
+        },
+        {
+          "id": "education_benefits",
+          "family": "social_benefits",
+          "national_bn": 64.479,
+          "key": "postsecondary",
+          "share": 0.1504437246943832,
+          "keys": [
+            "age18_24",
+            "postsecondary"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 9.603967561678482,
+          "response": 1,
+          "effect_bn": -9.603967561678482
+        },
+        {
+          "id": "employment_training",
+          "family": "social_benefits",
+          "national_bn": 1.377,
+          "key": "working_age",
+          "share": 0.12991500501871558,
+          "keys": [
+            "unemployment",
+            "working_age"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.17711346126243668,
+          "response": 1,
+          "effect_bn": -0.17711346126243668
+        },
+        {
+          "id": "other_state_benefits",
+          "family": "social_benefits",
+          "national_bn": 2.875,
+          "key": "population",
+          "share": 0.1274117504441137,
+          "keys": [
+            "population",
+            "veterans"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 0.3626649997065471,
+          "response": 1,
+          "effect_bn": -0.3626649997065471
+        },
+        {
+          "id": "foreign_territory_social_benefits",
+          "family": "foreign",
+          "national_bn": 34.323,
+          "key": "external",
+          "share": 0,
+          "keys": [
+            "external"
+          ],
+          "response_class": "foreign",
+          "group": "foreign",
+          "amount_bn": 0,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "other_foreign_current_transfers",
+          "family": "foreign",
+          "national_bn": 87.735,
+          "key": "external",
+          "share": 0,
+          "keys": [
+            "external"
+          ],
+          "response_class": "foreign",
+          "group": "foreign",
+          "amount_bn": 0,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "domestic_interest",
+          "family": "interest",
+          "national_bn": 1118.87,
+          "key": "population",
+          "share": 0.12741175044421627,
+          "keys": [
+            "population"
+          ],
+          "response_class": "interest",
+          "group": "interest",
+          "amount_bn": 141.1391262396452,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "foreign_interest",
+          "family": "interest",
+          "national_bn": 278.755,
+          "key": "external",
+          "share": 0,
+          "keys": [
+            "external"
+          ],
+          "response_class": "interest",
+          "group": "interest",
+          "amount_bn": 0,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "agricultural_subsidies",
+          "family": "subsidies",
+          "national_bn": 8.233,
+          "key": "wages",
+          "share": 0.0848543273704806,
+          "keys": [
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 0.6916564401244311,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "housing_subsidies",
+          "family": "subsidies",
+          "national_bn": 55.003189000000006,
+          "key": "housing_support",
+          "share": 0.08243021290723411,
+          "keys": [
+            "housing_support",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 4.488824290011592,
+          "response": 1,
+          "effect_bn": -4.488824290011592
+        },
+        {
+          "id": "transport_subsidies",
+          "family": "subsidies",
+          "national_bn": 0.405,
+          "key": "resources",
+          "share": 0.08859642039645628,
+          "keys": [
+            "population",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 0.03552462564258004,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "other_subsidies",
+          "family": "subsidies",
+          "national_bn": 25.34,
+          "key": "resources",
+          "share": 0.08859642041127044,
+          "keys": [
+            "population",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 2.2227012892301903,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "source_rounding",
+          "family": "rounding",
+          "national_bn": 0,
+          "key": "external",
+          "share": 0,
+          "keys": [
+            "external"
+          ],
+          "response_class": "rounding",
+          "group": "rounding",
+          "amount_bn": 0,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "school_reprice",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "education_school_part",
+          "group": "education_school_part",
+          "amount_bn": 0.42236802296048814,
+          "response": 0.8651608840454027,
+          "effect_bn": -0.3654162921370049
+        },
+        {
+          "id": "college_rekey",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "education_other_part",
+          "group": "education_other_part",
+          "amount_bn": -5.184946926866755,
+          "response": 0.1348391159545973,
+          "effect_bn": 0.6991336598902193
+        },
+        {
+          "id": "lane_constants",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "correction_constant",
+          "group": "correction_constant",
+          "amount_bn": -5.40010769452897,
+          "response": 1,
+          "effect_bn": 5.40010769452897
+        },
+        {
+          "id": "roads_vmt_sl",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 3.0632087295166937,
+          "response": 1,
+          "effect_bn": -3.0632087295166937
+        },
+        {
+          "id": "roads_vmt_fed",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 0.027842503165727218,
+          "response": 1,
+          "effect_bn": -0.027842503165727218
+        },
+        {
+          "id": "state_price_public_order_safety",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 6.931151541634829,
+          "response": 1,
+          "effect_bn": -6.931151541634829
+        },
+        {
+          "id": "state_price_health_services",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 1.9700870661101257,
+          "response": 1,
+          "effect_bn": -1.9700870661101257
+        },
+        {
+          "id": "state_price_recreation_culture",
+          "family": "consumption",
+          "national_bn": 0,
+          "key": "k",
+          "share": 0,
+          "keys": [
+            "k"
+          ],
+          "response_class": "service",
+          "group": "service",
+          "amount_bn": 0.4397297100874745,
+          "response": 1,
+          "effect_bn": -0.4397297100874745
+        }
+      ],
+      "receipts": [
+        {
+          "id": "federal_income_tax",
+          "national_bn": 2403.242,
+          "key": "federal_liability",
+          "share": 0.04598294559118143,
+          "response_class": "personal_income",
+          "group": "direct_receipts",
+          "amount_bn": 110.50814544116858,
+          "response": 1,
+          "effect_bn": 110.50814544116858
+        },
+        {
+          "id": "state_local_income_tax",
+          "national_bn": 536.167,
+          "key": "state_liability",
+          "share": 0.049476391666055955,
+          "response_class": "personal_income",
+          "group": "direct_receipts",
+          "amount_bn": 26.527608417168892,
+          "response": 1,
+          "effect_bn": 26.527608417168892
+        },
+        {
+          "id": "personal_motor_vehicle",
+          "national_bn": 26.125,
+          "key": "adults",
+          "share": 0.13687398152229105,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 3.575832776052499,
+          "response": 1,
+          "effect_bn": 3.575832776052499
+        },
+        {
+          "id": "personal_property_tax",
+          "national_bn": 12.988,
+          "key": "capital",
+          "share": 0.10808368038426511,
+          "response_class": "household_direct",
+          "group": "incidence_receipts",
+          "amount_bn": 1.403790822498509,
+          "response": 1,
+          "effect_bn": 1.403790822498509
+        },
+        {
+          "id": "other_personal_tax",
+          "national_bn": 9.721,
+          "key": "state_liability",
+          "share": 0.04902458460793952,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 0.4765679859765222,
+          "response": 1,
+          "effect_bn": 0.4765679859765222
+        },
+        {
+          "id": "employee_oasdi",
+          "national_bn": 610.399,
+          "key": "wage_oasdi",
+          "share": 0.08833208596106695,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 53.91781721140484,
+          "response": 1,
+          "effect_bn": 53.91781721140484
+        },
+        {
+          "id": "employee_hi",
+          "national_bn": 196.749,
+          "key": "wage",
+          "share": 0.08074267503203363,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 15.886040584824329,
+          "response": 1,
+          "effect_bn": 15.886040584824329
+        },
+        {
+          "id": "self_employment_oasdi_hi",
+          "national_bn": 86.855,
+          "key": "self_payroll",
+          "share": 0.07363829280724915,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 6.395853937908699,
+          "response": 1,
+          "effect_bn": 6.395853937908699
+        },
+        {
+          "id": "employer_oasdi",
+          "national_bn": 615.67,
+          "key": "wage_oasdi",
+          "share": 0.08833208596103531,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 54.3834156385346,
+          "response": 1,
+          "effect_bn": 54.3834156385346
+        },
+        {
+          "id": "employer_hi",
+          "national_bn": 175.011,
+          "key": "wage",
+          "share": 0.08074267503195681,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 14.130856313125296,
+          "response": 1,
+          "effect_bn": 14.130856313125296
+        },
+        {
+          "id": "medicare_supplementary_premiums",
+          "national_bn": 145.117,
+          "key": "medicare",
+          "share": 0.05196508379840805,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 7.541017110234034,
+          "response": 1,
+          "effect_bn": 7.541017110234034
+        },
+        {
+          "id": "other_domestic_social_contributions",
+          "national_bn": 93.35,
+          "key": "positive_fica_worker",
+          "share": 0.11355996501106541,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 10.600822738703933,
+          "response": 1,
+          "effect_bn": 10.600822738703933
+        },
+        {
+          "id": "corporate_capital",
+          "national_bn": 497.76375,
+          "key": "capital",
+          "share": 0.0679329963801697,
+          "response_class": "corporate_capital",
+          "group": "incidence_receipts",
+          "amount_bn": 33.81458256999403,
+          "response": 0.37,
+          "effect_bn": 12.511395550897792
+        },
+        {
+          "id": "corporate_labor",
+          "national_bn": 165.92125,
+          "key": "wage",
+          "share": 0.06793299540006542,
+          "response_class": "household_direct",
+          "group": "incidence_receipts",
+          "amount_bn": 11.271527523331267,
+          "response": 0.37,
+          "effect_bn": 4.170465183632569
+        },
+        {
+          "id": "general_sales_tax",
+          "national_bn": 602.43,
+          "key": "consumption",
+          "share": 0.09944996688457775,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 59.91164379937781,
+          "response": 1,
+          "effect_bn": 59.91164379937781
+        },
+        {
+          "id": "modeled_owner_property",
+          "national_bn": 394.862477949,
+          "key": "modeled_owner_property",
+          "share": 0.06813732247045644,
+          "response_class": "household_direct",
+          "group": "incidence_receipts",
+          "amount_bn": 26.90487211475465,
+          "response": 0.7726986463443216,
+          "effect_bn": 20.789358263138002
+        },
+        {
+          "id": "remaining_production_property",
+          "national_bn": 273.445297051,
+          "key": "capital",
+          "share": 0.07883243986296451,
+          "response_class": "business_property",
+          "group": "incidence_receipts",
+          "amount_bn": 21.556359644478896,
+          "response": 0.8806493775433665,
+          "effect_bn": 18.983594703011285
+        },
+        {
+          "id": "excise_selective_sales",
+          "national_bn": 371.262,
+          "key": "consumption",
+          "share": 0.09298093641878966,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 34.52028856009088,
+          "response": 1,
+          "effect_bn": 34.52028856009088
+        },
+        {
+          "id": "customs_duties",
+          "national_bn": 83.587,
+          "key": "consumption",
+          "share": 0.0895541465034885,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 7.485562475492161,
+          "response": 1,
+          "effect_bn": 7.485562475492161
+        },
+        {
+          "id": "other_production_taxes",
+          "national_bn": 145.258,
+          "key": "capital",
+          "share": 0.05301898615605723,
+          "response_class": "other_business",
+          "group": "incidence_receipts",
+          "amount_bn": 7.701431787197984,
+          "response": 1,
+          "effect_bn": 7.701431787197984
+        },
+        {
+          "id": "rest_world_tax_contributions",
+          "national_bn": 45.309,
+          "key": "none",
+          "share": 0,
+          "response_class": "foreign",
+          "group": "incidence_receipts",
+          "amount_bn": 0,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "government_asset_income",
+          "national_bn": 196.291,
+          "key": "resident_population",
+          "share": 0.12919345696886156,
+          "response_class": "public_asset",
+          "group": "incidence_receipts",
+          "amount_bn": 25.359512963301167,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "business_current_transfers",
+          "national_bn": 139.976,
+          "key": "capital",
+          "share": 0.02943472981256849,
+          "response_class": "other_business",
+          "group": "incidence_receipts",
+          "amount_bn": 4.120155684872796,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "personal_current_transfers",
+          "national_bn": 141.065,
+          "key": "consumption",
+          "share": 0.08955414651036271,
+          "response_class": "household_direct",
+          "group": "direct_receipts",
+          "amount_bn": 12.632955730024051,
+          "response": 1,
+          "effect_bn": 12.632955730024051
+        },
+        {
+          "id": "rest_world_current_transfers",
+          "national_bn": 3.343,
+          "key": "none",
+          "share": 0,
+          "response_class": "foreign",
+          "group": "incidence_receipts",
+          "amount_bn": 0,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "enterprise_surplus",
+          "national_bn": -7.161999999999999,
+          "key": "resident_population",
+          "share": 0.1261443471263462,
+          "response_class": "public_asset",
+          "group": "incidence_receipts",
+          "amount_bn": -0.9034458177695179,
+          "response": 1,
+          "effect_bn": -0.9034458177695179
+        },
+        {
+          "id": "source_rounding",
+          "national_bn": 0.002,
+          "key": "population",
+          "share": 0.1241849861747629,
+          "response_class": "rounding",
+          "group": "incidence_receipts",
+          "amount_bn": 0.0002483701400386852,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "housing_enterprise_surplus",
+          "national_bn": -45.555811000000006,
+          "key": "housing_support",
+          "share": 0.08161025518014221,
+          "response_class": "public_asset",
+          "group": "incidence_receipts",
+          "amount_bn": -3.7178213606483306,
+          "response": 1,
+          "effect_bn": -3.7178213606483306
+        },
+        {
+          "id": "tenant_occupied_property",
+          "national_bn": 83.840225,
+          "key": "renter_contract_rent",
+          "share": 0.12256449456115505,
+          "response_class": "tenant_housing_property",
+          "group": "incidence_receipts",
+          "amount_bn": 10.275834801018515,
+          "response": 0.7189123969969125,
+          "effect_bn": 7.387425027944512
+        },
+        {
+          "id": "user_fees_key_k12",
+          "national_bn": 1e-9,
+          "key": "capital_key_offset",
+          "share": 0.00975296263696325,
+          "response_class": "capital_key_carrier",
+          "group": "incidence_receipts",
+          "amount_bn": 9.75296263696325e-12,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "user_fees_key_college",
+          "national_bn": 1e-9,
+          "key": "capital_key_offset",
+          "share": -0.03854858618402715,
+          "response_class": "capital_key_carrier",
+          "group": "incidence_receipts",
+          "amount_bn": -3.854858618402715e-11,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "user_fees_key_health",
+          "national_bn": 1e-9,
+          "key": "capital_key_offset",
+          "share": -0.002079886038647402,
+          "response_class": "capital_key_carrier",
+          "group": "incidence_receipts",
+          "amount_bn": -2.079886038647402e-12,
+          "response": 0,
+          "effect_bn": 0
+        }
+      ],
+      "medicaid_coverage_fraction": 0.9547429916319758,
+      "production_private_bn": -0.46340498128760943,
+      "production_receipts_bn": 8.297788219099258,
+      "capital": {
+        "components": [
+          {
+            "id": "k12",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 2723.9194975692117,
+            "key": 0.17671830615476924,
+            "response": 1,
+            "return_bn": 14.440993191371435
+          },
+          {
+            "id": "college",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 1198.387599270317,
+            "key": 0.1721461198510312,
+            "response": 1,
+            "return_bn": 6.1889332587593255
+          },
+          {
+            "id": "pos_sl",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 289.47299999999996,
+            "key": 0.14303491297863966,
+            "response": 1,
+            "return_bn": 1.2421423609399727
+          },
+          {
+            "id": "pos_fed",
+            "group": "core",
+            "level": "federal",
+            "stock_charged_bn": 110.2,
+            "key": 0.14303491297863966,
+            "response": 1,
+            "return_bn": 0.4728734223073827
+          },
+          {
+            "id": "health_sl",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 365.979,
+            "key": 0.06275863311174168,
+            "response": 1,
+            "return_bn": 0.6890502536280632
+          },
+          {
+            "id": "health_fed",
+            "group": "core",
+            "level": "federal",
+            "stock_charged_bn": 106.019,
+            "key": 0.06275863311174168,
+            "response": 1,
+            "return_bn": 0.19960822571621223
+          },
+          {
+            "id": "gps_sl",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 1292.9385000000002,
+            "key": 0.12614434763606788,
+            "response": 0.8510539647701243,
+            "return_bn": 4.164127483292884
+          },
+          {
+            "id": "gps_fed",
+            "group": "core",
+            "level": "federal",
+            "stock_charged_bn": 152.17000000000002,
+            "key": 0.12614434763606788,
+            "response": 0.8510539647701243,
+            "return_bn": 0.4900892649825789
+          },
+          {
+            "id": "hwy_sl",
+            "group": "block",
+            "level": "state_local",
+            "stock_charged_bn": 4388.9962727707125,
+            "key": 0.10295459120593183,
+            "response": 1,
+            "return_bn": 13.556019512024015
+          },
+          {
+            "id": "rec_sl",
+            "group": "block",
+            "level": "state_local",
+            "stock_charged_bn": 425.0824916531727,
+            "key": 0.12614434763013327,
+            "response": 1,
+            "return_bn": 1.6086526079574313
+          },
+          {
+            "id": "hwy_fed",
+            "group": "block",
+            "level": "federal",
+            "stock_charged_bn": 54.573499999999996,
+            "key": 0.10295459120593183,
+            "response": 1,
+            "return_bn": 0.1685577714953076
+          },
+          {
+            "id": "air_fed",
+            "group": "block",
+            "level": "federal",
+            "stock_charged_bn": 35.406,
+            "key": 0.0877151258716531,
+            "response": 1,
+            "return_bn": 0.09316925239835248
+          },
+          {
+            "id": "rec_fed",
+            "group": "block",
+            "level": "federal",
+            "stock_charged_bn": 41.8305,
+            "key": 0.12614434763013327,
+            "response": 1,
+            "return_bn": 0.1583004340062687
+          },
+          {
+            "id": "ent_housing_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 420.402,
+            "key": 0.08161025518014221,
+            "response": 1,
+            "return_bn": 1.0292734349472643
+          },
+          {
+            "id": "ent_transit_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 505.7986332941459,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 1.914109158963142
+          },
+          {
+            "id": "ent_airports_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 595.8142303973117,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 2.2547579221726415
+          },
+          {
+            "id": "ent_ports_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 94.43351434918577,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 0.35736762187677873
+          },
+          {
+            "id": "ent_power_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 542.057,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 2.051322799396921
+          },
+          {
+            "id": "ent_water_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 915.9465,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 3.4662442113611887
+          },
+          {
+            "id": "ent_sewer_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 1224.8960000000002,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 4.63541120526087
+          },
+          {
+            "id": "ent_tolls_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 501.1837272292877,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 1.8966448295145442
+          },
+          {
+            "id": "ent_power_fed",
+            "group": "enterprise",
+            "level": "federal",
+            "stock_charged_bn": 27.6655,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 0.10469539348576906
+          },
+          {
+            "id": "ent_other_sl",
+            "group": "enterprise",
+            "level": "state_local",
+            "stock_charged_bn": 75.4805887275022,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 0.285643488726513
+          },
+          {
+            "id": "ent_other_fed",
+            "group": "enterprise",
+            "level": "federal",
+            "stock_charged_bn": 56.71180600256709,
+            "key": 0.12614434763606786,
+            "response": 1,
+            "return_bn": 0.21461621314371185
+          },
+          {
+            "id": "k12_user_fees",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 2723.9194975692117,
+            "key": 0.00975296263696325,
+            "response": 1,
+            "return_bn": 0.7969885525766468
+          },
+          {
+            "id": "college_user_fees",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 1198.387599270317,
+            "key": -0.03854858618402715,
+            "response": 1,
+            "return_bn": -1.3858844295702362
+          },
+          {
+            "id": "health_sl_user_fees",
+            "group": "core",
+            "level": "state_local",
+            "stock_charged_bn": 365.979,
+            "key": -0.002079886038647402,
+            "response": 1,
+            "return_bn": -0.022835838376144127
+          },
+          {
+            "id": "health_fed_user_fees",
+            "group": "core",
+            "level": "federal",
+            "stock_charged_bn": 106.019,
+            "key": -0.002079886038647402,
+            "response": 1,
+            "return_bn": -0.006615223137940767
+          }
+        ],
+        "total_bn": 61.064256379220915
+      }
+    }
+  }
+}

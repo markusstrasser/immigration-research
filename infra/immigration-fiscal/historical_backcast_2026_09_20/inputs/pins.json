@@ -1,0 +1,12 @@
+{
+  "DFII10.csv": {
+    "path": "_cache/DFII10.csv",
+    "sha256": "92cc1f9dcd2df8f4387c39a8ae5038afe1d2fea8ea803c556b15a7f263ed4985",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFII10&cosd=2005-01-01&coed=2024-12-31"
+  },
+  "bea_pandemic_2022q4_3rd.pdf": {
+    "path": "_cache/bea_pandemic_2022q4_3rd.pdf",
+    "sha256": "c0d92a9c6e6bfbcd8d22cc12af4f49675d95f4d9e0fa74e793a3b1b0058490fd",
+    "url": "https://www.bea.gov/sites/default/files/2023-03/effects-of-selected-federal-pandemic-response-programs-on-personal-income-2022q4-3rd.pdf"
+  }
+}

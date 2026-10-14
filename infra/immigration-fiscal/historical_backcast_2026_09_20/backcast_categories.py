@@ -22,7 +22,7 @@ import re
 import numpy as np
 import pandas as pd
 
-from backcast import FISCAL, HERE, ROOT, YEARS, series, workbook
+from backcast import FISCAL, HERE, ROOT, YEARS, checked_years, series, workbook
 
 BEA = ROOT / "sources/immigration-fiscal/data/external/bea_nipa"
 RECEIPT_LINES = {  # Table 3.1 line -> complete-account receipt categories counted as direct
@@ -57,7 +57,7 @@ class Cells:
                 values = body.iloc[:, 3:].apply(pd.to_numeric, errors="coerce")
                 values.columns = years
                 self.tables[sheet] = values
-            row = self.tables[sheet].loc[int(line)].reindex(YEARS).fillna(0.0) / 1e3
+            row = checked_years(self.tables[sheet].loc[int(line)], part.strip()) / 1e3
             total = row if total is None else total + row
         return total
 
