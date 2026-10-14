@@ -384,10 +384,12 @@ the recent window, not the stock. [SOURCE:
 ## 10. "What happens as this population ages?"
 
 Finding: at the white age structure and today's rates the 40.9m residents' balance moves from
-−$204bn to −$325bn. Social Security and other cash add $70bn, public medical $80bn; schools
-save $31bn; under-65 institutional cost falls $1.3bn while nursing cost rises $9.2bn. This
-is a composition exercise on the generation ledger, not a forecast. [SOURCE: age structures
-section, `age_normalizations_by_category.csv`] Would change it: US-born cohorts reaching 65 with
+−$224bn to −$322bn on the personal allocation, the rule the main case uses for a group total
+(−$204bn to −$325bn with household costs shared). Social Security and other cash add $92bn,
+public medical $80bn and institutions $8bn (nursing cost rises $9.2bn, under-65 institutional
+cost falls $1.3bn); the taxes they pay rise $20bn, schools save $57bn and the other lines net
+$5bn. This is a composition exercise on the generation ledger, not a forecast. [SOURCE: age
+structures section, `age_normalizations_by_category.csv`, allocation `personal`] Would change it: US-born cohorts reaching 65 with
 higher covered earnings than the 0.5m second-generation and 1.0m third-plus residents born
 before about 1960 whose rates fill the 65+ cells today (ladder 161). On the ledger's basis,
 which counts Social Security and Medicare when paid, the sign of the composition effect at today's
@@ -1015,3 +1017,7 @@ they get more prominence.
   item 6 at its first-year part (business property still assessed, profits and production taxes at 0.65 of their
   long-run fall): $273–326bn, $198–251bn counting benefits when paid, in entries 2, 11 and 16 and the summary.
   Concept affected: the first-year budget reading.
+- 2026-10-14, later (v7 assumption review, round 1, finding C21): entry 10 quoted the shared allocation
+  for a group total. It now leads with the personal allocation, v7's rule for group totals (−$224bn to
+  −$322bn; cash +$92bn, schools −$57bn, taxes +$20bn), with the shared figures beside. Concept affected:
+  the allocation behind the ageing composition exercise.
