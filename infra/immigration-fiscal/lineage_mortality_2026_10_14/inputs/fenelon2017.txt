@@ -1,0 +1,864 @@
+                                                                      SSM - Population Health 3 (2017) 245–254
+
+
+
+                                                                    Contents lists available at ScienceDirect
+
+
+                                                                 SSM – Population Health
+                                                        journal homepage: www.elsevier.com/locate/ssmph
+
+
+
+
+A comprehensive analysis of the mortality experience of hispanic subgroups                                                                                        MARK
+in the United States: Variation by age, country of origin, and nativity
+                                  ⁎
+Andrew Fenelona,b, , Juanita J. Chinnc,d, Robert N. Andersonc
+a
+  Department of Health Services Administration, University of Maryland, college Park 3310 SPH Building 2242 Valley Dr, College Park, MD, 20740 USA
+b
+  Maryland Population Research Center, University of Maryland, College Park, USA
+c
+  Centers for Disease Control and Prevention, National Center for Health Statistics, Hyattsville, MD, USA
+d
+  Oﬃce of Minority Health, Department of Health and Human Services, USA
+
+
+
+
+                                                           A BS T RAC T
+
+                                                           Although those identifying as “Hispanic or Latino” experience lower adult mortality than the more socio-
+                                                           economically advantaged non-Hispanic white population, the ethnic category Hispanic conceals variation by
+                                                           country of origin, nativity, age, and immigration experience. The current analysis examines adult mortality
+                                                           diﬀerentials among 12 Hispanic subgroups by region of origin and nativity, and non-Hispanic whites, adjusting
+                                                           for socioeconomic and demographic characteristics. We use the National Health Interview Survey Linked
+                                                           Mortality Files pooled 1990–2009 to obtain suﬃcient sample of each subgroup to calculate mortality estimates
+                                                           by sex and age group (25–64, 65+). Among adults aged 65 and over, all foreign born subgroups have an
+                                                           advantage over non-Hispanic whites, and many USB subgroups exhibit an advantage in the adjusted model.
+                                                           Foreign-born Dominicans, Central/South Americans, and other Hispanics exhibit consistent advantages across
+                                                           models for both men and women, aged 25–64 and 65 and over, and both unadjusted and adjusted for
+                                                           socioeconomic covariates. Both US-born and foreign-born Mexicans between ages 25 and 64 have mortality
+                                                           disadvantaged relative to non-Hispanic whites, while older Mexicans exhibit clear advantages. Our results
+                                                           complicate the traditional formulation of the Hispanic Paradox and cast doubt on the singularity of the
+                                                           mortality experience of those of Hispanic origin.
+
+
+
+
+Introduction                                                                                  Hispanics as a whole, subsequent work showed that the pattern varies
+                                                                                              signiﬁcantly by country of origin and place of birth (Palloni & Arias,
+    In most populations, socioeconomic status (SES) exhibits a strong                         2004).
+positive association with health; this relationship holds for a variety of                        The emergence of the panethnic Hispanic origin group has its roots
+measures of both SES and health, which speaks to its relatively                               in the second-half of the 20th Century (Jones-Correa & Leal, 1996);
+universal nature (Elo, 2009). Between populations, however, the                               but instead of being the result of the natural development of an existing
+SES-health relationship is less clear, particularly with respect to the                       cultural identity, the formation of the oﬃcial ethnic origin “Hispanic/
+Hispanic/Latino population in the United States. The Hispanic mor-                            Latino” reﬂected the simultaneous actions of state actors aiming to
+tality paradox, as it is sometimes known, refers to the ﬁnding that                           describe the origins of growing immigrant populations and social
+Hispanics in the United States have health and mortality outcomes                             movement interests aiming to generate political legitimacy for a social
+similar to those of non-Hispanic whites while having socioeconomic                            group (Mora, 2014). Indeed, the speed with which the terms
+attainment similar to African-Americans (Fenelon, 2013; Hummer,                               “Hispanic” and “Latino” entered the public lexicon of the United
+Powers, Pullum, Gossman, & Frisbie, 2000; Markides & Eschbach,                                States partially reﬂects the growing population of Mexicans and
+2011). In many studies, Hispanics exhibit higher life expectancy than                         Mexican-Americans in the US Southwest during the 1960s and
+non-Hispanic whites (Arias, Kochanek, & Anderson, 2015), as well as                           1970s. The implicit perception that Hispanic was synonymous with
+more favorable proﬁles with respect to non-fatal conditions such as                           Mexican also contributed to the development of the “Hispanic
+cancer incidence and severity, heart disease, and hypertension                                Epidemiological Paradox” in the 1980s, which largely referred to
+(Eschbach, Mahnken, & Goodwin, 2005; Singh & Siahpush, 2002).                                 evidence of the mortality experience of Mexican-Americans
+Although the earliest empirical ﬁndings demonstrated this for                                 (Markides & Coreil, 1986). As the Hispanic population has expanded,
+
+
+    ⁎
+        Corresponding author at: Department of Health Services Administration, University of Maryland, College Park, 3310 SPH Building, 4200 Valley Dr, College Park, MD 20742, USA
+        E-mail address: afenelon@umd.edu (A. Fenelon).
+
+http://dx.doi.org/10.1016/j.ssmph.2017.01.011
+Received 15 September 2016; Received in revised form 3 January 2017; Accepted 4 January 2017
+2352-8273/ © 2017 The Authors. Published by Elsevier Ltd.
+This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/BY-NC-ND/4.0/).
+A. Fenelon et al.                                                                                                         SSM - Population Health 3 (2017) 245–254
+
+
+so has the recognition of Hispanics’ internal heterogeneity. Individuals         nities may foster and maintain beneﬁcial social, cultural, and beha-
+classiﬁed as Hispanic by the U.S. census and demographic surveys have            vioral characteristics in close-knit community enclaves (Markides &
+origins in more than 20 countries, each with distinctive social and              Eschbach, 2005; Osypuk, Roux, Hadley, & Kandula, 2009).
+cultural characteristics that contribute to unique health experiences
+within the United States.                                                        Hispanic panethnicity and the mortality of hispanic subgroups
+    U.S. Hispanics diﬀer greatly in terms of nativity and country of
+origin, socioeconomic background and attainment, English language                     Partially by deﬁnition, most explanations for the Hispanic Paradox
+orientation, geographic mobility, and health (Fenelon, 2016; Hall,               view Hispanics as a singular ethnic group with a homogeneous
+2013; Markides & Eschbach, 2005) While the largest waves of                      mortality experience. The opportunity to identify as of Hispanic origin
+Mexican migration began in the 1960s and 1970s, large populations                on the United States Census ﬁrst appeared in 1970,1 with the precise
+of immigrants from Central America arrived in the 1980s and South                category “Hispanic” entering the census in 1980 as a result of the 1977
+American migration began largely in the 1990s and 2000s. Mexicans                Oﬃce of Management and Budget standard identifying Hispanic
+tend to experience the highest levels of socioeconomic disadvantage              ethnicity as a separate concept from Race.2 With the growing use of
+(Franzini & Fernandez-Esquer, 2004), and employment for Mexican                  Hispanic panethnicity in the US system of racial and ethnic classiﬁca-
+immigrants is concentrated both geographically and in terms of                   tion, incoming US immigrants have been increasingly categorized in
+industry (Kandel & Parrado, 2005; Palloni & Arias, 2004). Puerto                 the panethnic. Although the term Hispanic has traditionally meant
+Ricans tend to be the most residentially segregated from non-Hispanic            little outside of the US context, transnational relationships and global
+whites (Tienda & Fuentes, 2014), and US-born Cuban Americans                     Spanish-language media have increasingly adopted the term and led to
+achieve the highest levels of socioeconomic attainment among                     greater usage in origin countries (Roth, 2009). Research approaches
+Hispanics (Williams, Mohammed, Leavell, & Collins, 2010). These                  that have combined all Hispanics into a singular group have typically
+patterns support the notion that comparing Hispanics as a whole to               done so due to data limitations, since direct measurement of the
+other race/ethnic groups in terms of mortality experience ignores                mortality experience of Hispanic subgroups is unavailable in many data
+substantial within-group variation.                                              sources (Arias et al., 2008; Elo, Turra, Kestenbaum, & Ferguson, 2004;
+                                                                                 Liao et al., 1998; Sorlie, Backlund, Johnson, & Rogot, 1993). The
+Background                                                                       heterogeneity of the Hispanic population has also grown over time, as
+                                                                                 migration from Latin America to the United States increased during the
+Explanations for the hispanic paradox                                            1990s and early 2000s (Logan & Turner, 2013).
+                                                                                      Variation in the social and behavioral characteristics of Hispanic
+    Explanations for the Hispanic mortality advantage historically fall          subgroups can lead to corresponding diﬀerences in mortality experi-
+into three main categories: data artifacts, migration eﬀects, and                ence vis-à-vis non-Hispanic whites. The distinctive migration experi-
+cultural eﬀects (Waters & Pineau, 2015). The data artifacts hypothesis           ences of US Hispanic region-of-origin subgroups underscore this
+questions whether mortality data for Hispanics in the US, particularly           heterogeneity (Borrell & Lancet, 2012). For instance, work by
+immigrants, are of high enough quality to obtain accurate estimates;             Feliciano (2005) suggests that the greater migration distance for
+because Hispanic origin is often undercounted on US death certiﬁcates,           migrants countries in South America as compared to Mexico implies
+standard mortality calculations for Hispanic populations may be                  stronger socioeconomic and health selection. This is supported by the
+underestimated (Arias, Schauman, Eschbach, Sorlie, & Backlund,                   ﬁnding that Mexicans appear to be among the least select immigrant
+2008). Nationally-representative surveys with prospective mortality              groups in the United States (Akresh & Frank, 2008). Early Cuban
+follow-up have resolved issues of underreporting of Hispanic ethnicity           migrants were highly-selected, while more recent migration cohorts are
+on US death certiﬁcates, since these combined datasets use self-                 more mixed (Zsembik & Fennell, 2005). Puerto Ricans have fewer
+reported ethnicity in the survey rather than relying on third-party              immigration barriers than other groups, given U.S. citizenship
+reporting from death certiﬁcates (Fenelon, 2013; Lariscy, Hummer, &              (Abraido-Lanza, Dohrenwend, Ng-Mak, & Turner, 1999). Diﬀerent
+Hayward, 2015). As a result, recent research has focused largely on the          migration experiences contribute to socioeconomic variation among
+latter two explanations.                                                         Hispanic subgroups, which may contribute to diﬀerences in adult
+    Since the majority of adult Hispanics in the United States are               mortality rates. Hispanic subgroups may also diﬀer in terms of
+foreign born, explanations of the Hispanic mortality experience must             health-related behaviors such as cigarette smoking. While Cubans
+account for migration. This explanation draws attention to the selective         and Puerto Ricans in the United States smoke at relatively high rates,
+processes governing both who comes to the United States as well as               Central Americans, South Americans, Dominicans, and Mexicans
+who remains in the country over time (Palloni & Ewbank, 2004).                   exhibit low smoking prevalence (Kaplan et al., 2014). Mexican im-
+Individuals who come to the United States are likely to be diﬀerent              migrants in the US, particularly women, tend to smoke at very low
+from those who remain in their origin countries in ways that are                 rates, which explain a large fraction of their mortality advantage over
+relevant to health, a process known as the healthy migrant eﬀect                 non-Hispanic whites (Fenelon, 2013).
+(Hamilton, 2015; Lu & Qin, 2014). Alternatively, older Hispanics may                  Some comprehensive demographic studies of adult mortality dif-
+return to their countries of origin as their health declines, leaving a          ferentials among Hispanics have expanded their analysis to include
+relatively healthy subset in the United States, referred to as return            many region of origin populations. Hummer et al. (2000) used the
+migration bias or salmon bias (Arenas, Goldman, Pebley, & Teruel,                National Health Interview Survey (NHIS) linked mortality ﬁle pooled
+2015). Both selection processes certainly occur with respect to                  from 1986 to 1995 to reveal modest variation in mortality experience
+Hispanic immigrants, although selection is unlikely to be of suﬃcient            among Hispanics by region of origin, ﬁnding that Puerto Ricans
+magnitude to explain a large proportion of the advantage for most                experience the highest mortality and Central/South Americans the
+groups (Akresh & Frank, 2008; Turra & Elo, 2008). Additionally,                  lowest. Mexicans also exhibit consistently favorable mortality outcomes
+return migration eﬀects are unlikely to explain the advantage found              relative to non-Hispanic whites (Sorlie et al., 1993). Indeed, the fact
+with respect to infant mortality (Hummer, Powers, Pullum, Gossman,               that Mexicans comprise nearly two-thirds of American Hispanics is an
+& Frisbie, 2007).
+    More recent research focusing on the role of cultural buﬀering                 1
+                                                                                     Individuals could identify as Mexican, Cuban, Puerto Rican, Central or South
+suggests that aspects of Hispanic culture may provide health beneﬁts             American, or Other Spanish. The term “Hispanic” was not used in this census cycle.
+and may help to shelter individuals from the deleterious eﬀects of                 2
+                                                                                     Subsequently, the OMB 1997 standard changed the term “Hispanic” to “Hispanic or
+socioeconomic disadvantage. Scholars suggest that Hispanic commu-                Latino”
+
+
+                                                                           246
+A. Fenelon et al.                                                                                                               SSM - Population Health 3 (2017) 245–254
+
+
+important reason for the observation that Hispanics have favorable                  migrants in earlier migration cohorts (Hamilton, Palermo, & Green,
+mortality outcomes when considered as a whole (Fenelon, 2013).                      2015).
+    In the 2000s, nearly half of all Hispanic individuals were born                     This study uses a large nationally-representative household survey
+outside the United States, and Hispanic immigrants form the plurality               linked to mortality follow-up to provide a detailed portrait of adult
+of all foreign-born individuals in the United States. Nativity is                   mortality experience across 12 Hispanic subgroups, considering region
+important because the characteristics that select immigrants from their             of origin, nativity, sex, and age group. The analysis focuses on
+origin populations to the United States are likely to be related to health,         Mexicans, Puerto Ricans, Cubans, Dominicans, and Central/South
+and may impact comparisons to US-born populations (Blue &                           Americans, comparing US-born and foreign-born individuals in each
+Fenelon, 2011). Foreign-born Hispanic populations tend to exhibit                   origin subgroup. We demonstrate a signiﬁcant range of mortality
+more favorable outcomes than those born in the United States, and                   experience across subgroups; some subgroups exhibit mortality experi-
+assimilation has long been associated with worsening mortality out-                 ence similar to that of US-born non-Hispanic whites and others exhibit
+comes among Hispanic immigrants (Abraido-Lanza, Chao, & Florez,                     a signiﬁcant adult mortality advantage. Below age 65, mortality
+2005; Riosmena, Everett, Rogers, & Dennis, 2015). Although some                     advantages over non-Hispanic whites are smaller, and some groups,
+research has found an advantage for US-born Hispanics relative to                   particularly Mexicans and Puerto Ricans, have a mortality disadvan-
+non-Hispanic whites, it is greatly diminished compared with that of                 tage. At age 65 and over, nearly all Hispanic subgroups, particularly the
+foreign-born Hispanics (Singh & Siahpush, 2002). Although scholars                  foreign born, experience a mortality advantage over non-Hispanic
+have recently attempted to integrate considerations of region of origin             whites. Our results provide additional support for the substantial
+and nativity, data limitations have hampered the ability to draw broad              heterogeneity in mortality experience among Hispanics and conﬁrm
+conclusions about variation in Hispanic mortality on these dimensions.              that the “Hispanic Paradox” does not apply to all subpopulations within
+Palloni and Arias (2004) considered both region of origin and nativity,             the panethnic category Hispanic.
+examining Mexicans, Cubans, Puerto Ricans, and other Hispanics.
+However, their analysis was limited by relatively small sample sizes for
+                                                                                    Data
+many subgroups, particularly Cubans and Puerto Ricans. Furthermore,
+they were unable to consider Central Americans, South Americans, or
+                                                                                        We use data from the National Health Interview Survey Linked-
+Dominicans. As a result, their analysis found statistically signiﬁcant
+                                                                                    Mortality Files (NHIS-LMF), covering the period 1990–2009 with
+mortality advantages only for foreign-born Mexicans and foreign-born
+                                                                                    mortality follow-up through the end of 2011. NHIS collects detailed
+other Hispanics. Likewise, Borrell and Lancet (2012) examined a
+                                                                                    demographic, behavioral, and health information in annual cross-
+number of Hispanic subgroups by nativity, but were unable to detect
+                                                                                    sectional samples and is conducted by the National Center for Health
+statistical signiﬁcance for many of the groups due to relatively small
+                                                                                    Statistics (NCHS). NHIS-LMF matches deceased individuals to mor-
+sample sizes, and thus their results were mixed. As a result, a
+                                                                                    tality vital statistics through stochastic linkage to the National Death
+comprehensive analysis of the mortality experience of Hispanic sub-
+                                                                                    Index. This linkage allows the analysis of disparities in survival on a
+groups by both region of origin and nativity is warranted.
+                                                                                    large number of social dimensions. The survey years 1990–2009 were
+    At younger adult ages, many Hispanic subgroups experience a
+                                                                                    chosen because they contain complete information on Hispanic origin
+mortality disadvantage relative to non-Hispanic whites. Evidence for
+                                                                                    and nativity status.
+the “young adult disadvantage” comes from the work of Hayes-Bautista
+                                                                                        The primary beneﬁt of the NHIS is the large and geographically-
+among others (Hayes-Bautista et al., 2002; Vaca, Anderson, & Hayes-
+                                                                                    diverse sample. Many of the Hispanic subgroups considered here make
+Bautista, 2011), demonstrating that Hispanics have considerably
+                                                                                    up less than 1% of the US population, which makes representative
+elevated mortality compared to non-Hispanic whites between ages 15
+                                                                                    samples for these groups diﬃcult to obtain in most survey samples.
+and 24. However, this excess mortality is also observed among younger
+                                                                                    With surveys pooled 1990 to 2009, the total sample becomes large
+adults aged 25–44, at least for particular subgroups (Eschbach et al.,
+                                                                                    enough to examine smaller Hispanic subgroups than has been possible
+2007; Lariscy, Nau, Firebaugh, & Hummer, 2016). Given the sig-
+                                                                                    in prior research. Individuals under age 25 are excluded because they
+niﬁcant mortality advantage among Hispanics at older ages (Markides
+                                                                                    are less likely to have completed their education, which is a key
+& Eschbach, 2011), the relatively unfavorable mortality experience of
+                                                                                    measure of socioeconomic status in our analysis. The total pooled
+young adult Hispanics adds an additional layer to the Hispanic
+                                                                                    sample includes 890,115 individuals and 143,435 deaths by the end of
+paradox; studies that combine all adult ages into a summary measure
+                                                                                    2011. Table 1 provides a detailed description of the sample by Hispanic
+often miss this nuance in the Hispanic Paradox and conclude that the
+                                                                                    subgroup, while Table 2 provides the number of deaths by Hispanic
+mortality advantage extends to all adults (Abraido-Lanza et al., 1999).
+                                                                                    subgroup, sex, and age group.
+Although the reasons for the young adult disadvantage of Hispanics as
+well as its pattern across subgroups remain unclear, elevated mortality
+among younger adults is particularly notable for men (Hummer et al.,                Hispanic subgroups
+2000).
+    Age-related diﬀerences in the mortality advantage of Hispanic                       NHIS respondents report their race and whether they are of
+subgroups may reﬂect either diﬀerences in the determinants of                       Hispanic or Latino origin. Those that identify as Hispanic or Latino
+mortality by age or diﬀerences in selection mechanisms across migra-                also report their speciﬁc Hispanic subgroup (if any). We consider six
+tion cohorts. Given that the large majority of the foreign born in the US           region-of-origin subgroups: Mexicans, Puerto Ricans, Cubans,
+arrived as immigrants prior to age 40 (Holmes, Driscoll, & Heron,                   Dominicans, Central/South Americans, and other Hispanics.3 We also
+2015), age variation in mortality experience may reﬂect diﬀerences in               consider nativity among Hispanics, separating each origin group into
+migrant selection across migration cohorts (Reynolds, Chernenko, &                  foreign-born (FB) and US-born (USB) subgroups, which gives 12
+Read, 2016). We may expect greater health selection among migrants                  Hispanic subgroups. Respondents are considered foreign-born if they
+prior to the large immigration wave of the 1990s, given less strong                 were born outside the ﬁfty states and the District of Columbia. For our
+migration networks and streams. At the same time, underlying                        purposes, Island-born Puerto Ricans are considered foreign born even
+improvements in health in sending regions of origin countries may                   though they are US citizens at birth. US-born individuals who identify
+result in healthier immigrants over time, even if selection mechanisms
+are unchanged (Riosmena , Wong, & Palloni, 2013). Empirical                           3
+                                                                                        Other Hispanics include those not identifying as members of another group. This
+research suggests that immigrants in the most recent migration cohorts              includes residual groups such as Spaniards, Hispanics of multiple origins, and Hispanics
+from Mexico and other parts of Latin America report better health than              of unknown origin.
+
+
+                                                                              247
+A. Fenelon et al.                                                                                                                          SSM - Population Health 3 (2017) 245–254
+
+
+Table 1
+Descriptive statistics of National Health Interview Survey sample by Hispanic subgroup 1990–2009.
+
+                                  US-born
+
+                                  Non-Hispanic white          Mexican        Puerto Rican           Cuban         Dominican         Central/South American         other Hispanic
+
+  n                               726,805                     41,534         6453                   1565          283               1093                           9793
+  Mean Age                        49.8                        43.8           38.5                   39.3          33.7              36.2                           45.1
+  Mean Family Size                2.7                         3.4            3.3                    3.0           3.3               3.2                            2.9
+  Male %                          47.4                        46.0           44.3                   47.8          42.1              48.0                           45.0
+
+  Education (%)
+  12 years or less                49.2                        65.2           55.5                   36.3          40.3              32.8                           55.3
+  13 years or more                50.8                        34.8           44.5                   63.7          59.7              67.3                           44.7
+
+  Poverty Status (%)
+  Below 100% of Poverty           7.0                         18.4           18.8                   8.0           16.6              7.8                            15.3
+  100–399%                        55.5                        60.2           54.4                   50.4          54.8              50.2                           59.5
+  400% and above                  37.5                        21.4           26.8                   41.7          28.6              42.0                           25.2
+
+  Employment Status (%)
+  Employed                        64.7                        66.5           68.9                   77.1          73.5              79.4                           64.8
+  Unemployed                      2.0                         3.5            5.4                    3.6           5.0               4.4                            3.4
+  Not in Labor Force              33.3                        30.0           25.7                   19.4          21.6              16.2                           31.9
+
+  Marital Status (%)
+  Married                         70.0                        61.7           53.3                   57.7          44.2              49.2                           60.0
+  Divorced                        11.7                        16.0           16.9                   15.0          15.2              13.5                           17.2
+  Widowed                         8.1                         5.1            2.3                    4.2           0.4               2.1                            6.2
+  Never Married                   10.3                        17.2           27.5                   23.2          40.3              35.2                           16.6
+
+                                  Foreign-born
+                                                              Mexican        Puerto Rican           Cuban         Dominican         Central/South American         other Hispanic
+
+  n                                                           56,786         9049                   8570          2522              14,428                         11,234
+  Mean Age                                                    41.1           48.8                   54.4          45.0              42.9                           43.0
+  Mean Family Size                                            4.3            3.1                    3.0           3.5               3.5                            3.6
+  Male %                                                      50.8           41.9                   46.3          36.6              46.5                           42.9
+
+  Education (%)
+  12 years or less                                            87.2           74.0                   63.8          69.7              64.7                           67.3
+  13 years or more                                            12.8           26.0                   36.2          30.3              35.4                           32.7
+
+  Poverty Status (%)
+  Below 100% of Poverty                                       33.6           29.9                   17.2          32.4              18.8                           25.3
+  100–399%                                                    59.8           54.9                   62.1          56.0              63.0                           62.6
+  400% and above                                              6.7            15.2                   20.7          11.6              18.2                           12.2
+
+  Employment Status (%)
+  Employed                                                    64.7           49.1                   55.7          61.1              72.3                           65.7
+  Unemployed                                                  3.7            2.9                    2.7           4.5               4.3                            3.9
+  Not in Labor Force                                          31.6           48.0                   41.6          34.4              23.4                           30.5
+
+  Marital Status (%)
+  Married                                                     74.6           55.5                   66.5          53.5              64.7                           66.0
+  Divorced                                                    8.8            19.8                   15.2          25.0              13.3                           15.4
+  Widowed                                                     3.7            7.8                    9.5           5.0               3.6                            4.5
+  Never Married                                               12.9           16.9                   8.8           16.6              18.4                           14.2
+
+a Fewer than 10 deaths occurred for US-born Dominicans. Number not shown due to disclosure risk.
+* Different from US-born non-Hispanic whites at p < 0.05
+
+
+as white and as “not of Hispanic origin” are classiﬁed as non-Hispanic                          poverty ratio ( < 100% of the poverty line, 100–399%, 400%+).
+whites and form the majority comparison group for the analysis.                                 Employment status is categorized as employed, unemployed, or not
+                                                                                                in the labor force. Respondents with missing data on these covariates
+                                                                                                were excluded from the analysis (although data on family income
+Sociodemographic controls
+                                                                                                comes from NHIS imputed income ﬁles). 1.5% of respondents were
+                                                                                                excluded due to missing data. This is a similar set of variables used by
+   The analysis also adjusts for demographic and socioeconomic
+                                                                                                previous analyses examining the Hispanic mortality advantage using
+characteristics: age, sex, level of education, marital status, family size,
+                                                                                                NHIS-LMF data (Fenelon, 2013, 2016; Lariscy et al., 2015).
+family income, employment status, and year of interview. Education is
+measured using a dichotomous variable denoting whether an indivi-
+dual has 12 years of education or less versus 13 years of education or
+more.4 Family income is categorized according to the income-to-                                 (footnote continued)
+                                                                                                to compare levels of education between US-born and foreign-born subgroups. Previous
+                                                                                                studies have found these diﬀerences have little impact on mortality comparisons for
+  4
+      The meaning of education may diﬀer across national populations, making it diﬃcult         Hispanics vis-à-vis whites (Hummer et al. 1999)
+
+
+                                                                                          248
+A. Fenelon et al.                                                                                                               SSM - Population Health 3 (2017) 245–254
+
+
+Table 2                                                                                     shown in Table 2. Some Hispanic subgroups have too few deaths to
+Number of deaths by subgroup at ages 25–64 and 65+ from NHIS-LMF 1990–2011.                 report (fewer than 10), and thus our models have diﬃculty calculating
+                                                                                            accurate death rates for these groups. Speciﬁcally, mortality estimates
+                     Men                            Women
+                                                                                            for US-born Central/South Americans and Dominicans should be
+  Subgroup           Deaths at       Deaths at      Deaths at       Deaths at               interpreted with caution.
+                     Ages 25–64      Ages 65+       Ages 25–64      Ages 65+                    The results of hazard models estimating diﬀerences in mortality
+                                                                                            among Hispanic subgroups by region of origin and nativity are shown
+  US Born
+  Non-Hispanic       26,462          38,038         19,188          45,920                  for men in Table 3. The ﬁrst two models consider men aged 25–64.
+     White                                                                                  Model 1 adjusts only for age and year of interview (unadjusted model),
+  Mexican            1317            917            837             1007                    while Model 2 includes socioeconomic covariates (adjusted model). For
+  Puerto Rican       147             43             114             51                      men in the unadjusted model, many subgroups experience higher
+  Cuban              28              30             30              37
+                                                                                            mortality risk than non-Hispanic whites, including USB and FB
+  Dominican          a               a              a               a
+  Central/South      a               a              a               a                       Mexicans and Puerto Ricans. Adjusting for socioeconomic covariates
+     American                                                                               mediates the disadvantage of these groups, suggesting that younger
+  other Hispanic     351             339            305             382                     adult Mexican and Puerto Rican men experience mortality disadvan-
+                                                                                            tage as a function of socioeconomic disadvantage. Only FB Central/
+  Foreign Born
+  Mexican            1510            611            1020            692                     South American and other Hispanic men experience lower risks than
+  Puerto Rican       374             248            341             291                     non-Hispanic white men in this age group. Models 3 and 4 examine
+  Cuban              261             499            157             556                     mortality among men aged 65 and over. In the unadjusted model,
+  Dominican          17              11             16              22                      Mexican men are the only USB subgroup with a mortality advantage. In
+  Central/South      91              63             78              99
+                                                                                            the adjusted model, all FB subgroups, as well as USB Mexicans,
+     American
+  other Hispanic     271             165            235             231                     Cubans, and other Hispanics, exhibit an advantage relative to non-
+                                                                                            Hispanic whites. Among men aged 65 and over, FB Dominicans have
+a Fewer than 10 deaths occurred for US-born Dominicans and Central/South Americans.         the most favorable mortality outcomes of any subgroup in both the
+Number not shown due to disclosure risk.                                                    unadjusted and adjusted models, although diﬀerences by subgroup in
+                                                                                            relative mortality risks were not tested for statistical signiﬁcance.
+Methods                                                                                         Among women (Table 4), the pattern of Hispanic advantage and
+                                                                                            disadvantage across subgroups is similar to that of men. Among
+    We use a hazard modeling approach to examine diﬀerences in                              women aged 25–64, unadjusted for socioeconomic covariates, several
+mortality risk between non-Hispanic whites and Hispanic subgroups.                          subgroups experience higher mortality risk than non-Hispanic whites
+Since the exact date of interview and death are available through the                       including FB Mexicans, USB and FB Puerto Ricans and USB other
+restricted-use ﬁle, the model uses a continuous-time proportional                           Hispanics (Model 1). However, unlike for men, Mexican and FB Puerto
+hazards procedure modeled using a Gompertz-distributed hazard                               Rican women's disadvantage is reversed and becomes a mortality
+function. The ﬁrst set of models (unadjusted) examines mortality                            advantage in the adjusted model (Model 2). All FB subgroups have
+diﬀerences among Hispanic subgroups and non-Hispanic whites                                 an advantage in the adjusted model. Among women aged 65 and over,
+focusing on two age groups: 25–64 and 65+. The second set of models                         all FB subgroups and USB Mexicans have an advantage in the
+includes controls for socioeconomic and demographic characteristics                         unadjusted model. In the adjusted model, advantages expand for these
+(adjusted). We run all models separately by sex, in order to consider                       subgroups, but no other USB subgroups exhibit an advantage. Among
+diﬀerences between Hispanic men and women in migration experi-                              women aged 65 and over, FB Dominicans again experience the lowest
+ences, socioeconomic experiences in the United States (Lariscy et al.,                      mortality risk of any subgroup, although diﬀerences in relative
+2015). The coeﬃcient for each Hispanic subgroup denotes the hazard                          mortality risks were not tested statistically.
+ratio of the mortality risk in comparison to that for US-born non-                              Table 5 summarizes the ﬁndings with respect to the mortality
+Hispanic whites. We use sample weights adjusted for eligibility status                      advantage (or disadvantage) of each Hispanic subgroup vis-à-vis non-
+in the mortality linkage (National Center for Health Statistics, 2013).                     Hispanic whites. Among adults aged 25–64, many US-born subgroups
+                                                                                            and some foreign-born subgroups experience mortality disadvantages.
+Results                                                                                     These disadvantages largely reﬂect socioeconomic disadvantage, and
+                                                                                            are not present in the adjusted models. Among adults aged 65 and over,
+    Table 1 presents descriptive statistics of the sample by Hispanic                       all FB subgroups have an advantage over non-Hispanic whites, and
+subgroup and nativity. Mexicans are the largest Hispanic subgroup,                          many USB subgroups exhibit an advantage in the adjusted model. FB
+comprising 59% of all Hispanics in the sample. Central/South                                Dominicans, Central/South Americans, and other Hispanics exhibit
+Americans are the next largest (9.4%), followed by Puerto Ricans                            consistent advantages across models for both men and women, aged
+(9.3%), Cubans (6.1%) and Dominicans (1.7%). Other Hispanics make                           25–64 and 65 and over, and both unadjusted and adjusted for
+up 14% of Hispanics in the sample. Sixty-three percent of Hispanics are                     socioeconomic covariates. Although much of the focus of the
+foreign-born. Subgroups also diﬀer substantially in their socioeco-                         Hispanic paradox is on Mexican-origin populations, foreign-born
+nomic attainment, and not all Hispanic subgroups exhibit lower SES                          Dominicans, Central/South Americans, and other Hispanics have the
+than non-Hispanic whites. Although all foreign-born groups have lower                       most consistent mortality advantage across age and sex among
+levels of education and income than whites, USB Cubans, Dominicans,                         Hispanic subgroups.
+and Central/South Americans show higher socioeconomic attainment.
+While 50.8% of whites have at least 13 years of education, 63.7% of                         Discussion
+USB Cubans, 59.7% of USB Dominicans, and 67.3% of USB Central/
+South Americans do. FB Mexicans have particularly low levels of SES,                            Although much of the existing research on the Hispanic mortality
+with 33.6% having family income below the federal poverty line. FB                          paradox has often treated the more than 50 million individuals of
+Dominicans have the next highest poverty rate, 32.4%, followed by FB                        Hispanic origin in the US as a singular group, there is signiﬁcant
+Puerto Ricans, 29.9%. Within each Hispanic subgroup, the foreign-                           heterogeneity in this population. The primary contribution of this study
+born have lower levels of education and greater rates of poverty than                       is a comprehensive analysis of the mortality experience of Hispanic
+the US-born. The number of deaths observed for each subgroup is                             subgroups compared to non-Hispanic whites. In accomplishing this,
+
+                                                                                      249
+A. Fenelon et al.                                                                                                                      SSM - Population Health 3 (2017) 245–254
+
+
+Table 3
+Hazard ratios of mortality by Hispanic subgroup among men by age group.
+
+                                               Ages 25–64                                                               Ages 65+
+
+                                               Model 1a                             Model 2b                            Model 3a                           Model 4b
+
+  Subgroup
+
+  US-born
+  NH White                                     1.00                                 1.00                                1.00                               1.00
+  Mexican                                      1.22 (1.15–1.30)***                  1.03 (0.96–1.10)                    0.87 (0.81–0.94)***                0.77 (0.71–0.83)***
+  Puerto Rican                                 1.24 (1.03–1.49)*                    1.05 (0.88–1.26)                    1.05 (0.78–1.42)                   0.99 (0.33–1.34)
+  Cuban                                        0.77 (0.52–1.14)                     0.74 (0.50–1.09)                    0.72 (0.48–1.07)                   0.63 (0.42–0.95)*
+  Dominican                                    0.63 (0.09–4.52)                     0.50 (0.07–3.63)                    3.67 (0.37–36.8)                   3.22 (0.31–33.3)
+  Central/South American                       0.64 (0.31–1.31)                     0.65 (0.33–1.29)                    1.24 (0.52–2.95)                   1.14 (0.44–2.92)
+  other Hispanic                               1.14 (1.02–1.30)*                    1.02 (0.83–0.99)                    0.95 (0.84–1.06)                   0.88 (0.79–0.99)*
+
+  Foreign-Born
+  Mexican                                      1.18 (1.11–1.25)***                  0.97 (0.91–1.03)                    0.71 (0.64–0.78)***                0.60 (0.55–0.66)***
+  Puerto Rican                                 1.32 (1.17–1.48)***                  0.90 (0.80–1.01)                    0.88 (0.75–1.03)                   0.73 (0.62–0.86)***
+  Cuban                                        1.00 (0.87–1.15)                     0.93 (0.81–1.07)                    0.83 (0.74–0.93)***                0.78 (0.69–0.87)***
+  Dominican                                    0.73 (0.43–1.23)                     0.54 (0.32–0.92)*                   0.33 (0.16–0.66)**                 0.26 (0.13–0.54)***
+  Central/South American                       0.48 (0.38–0.60)***                  0.45 (0.36–0.57)***                 0.49 (0.37–0.63)***                0.44 (0.33–0.57)***
+  other Hispanic                               0.59 (0.52–0.67)***                  0.52 (0.46–0.59)***                 0.58 (0.49–0.69)***                0.56 (0.47–0.67)***
+
+  Sociodemographic Covariates
+
+  Education
+  12 years or fewer                                                                 1.00                                                                   1.00
+  13 years or more                                                                  0.71 (0.69–0.73)***                                                    0.86 (0.84–0.88)***
+
+  Employment Status
+  Employed                                                                          1.00                                                                   1.00
+  Unemployed                                                                        1.38 (1.30–1.47)***                                                    1.08 (0.92–1.26)
+  Not in Labor Force                                                                2.13 (2.07–2.20)***                                                    1.38 (1.34–1.43)***
+
+  Family Income
+  Below 100% of Poverty                                                             1.00                                                                   1.00
+  100–399%                                                                          0.81 (0.78–0.84)***                                                    0.86 (0.83–0.90)***
+  400% and above                                                                    0.60 (0.58–0.63)***                                                    0.71 (0.67–0.74)***
+  Household Size                                                                    0.96 (0.95–0.97)***                                                    1.01 (1.00–1.03)
+
+  Marital Status
+  Married                                                                           1.00                                                                   1.00
+  Divorced/separated                                                                1.48 (1.42–1.53)***                                                    1.30 (1.24–1.36)***
+  Widowed                                                                           1.45 (1.34–1.57)***                                                    1.16 (1.12–1.20)***
+  Never Married                                                                     1.49 (1.43–1.55)***                                                    1.16 (1.11–1.23)***
+  Number of Observations                       411,184                              411,184                             84,941                             84,941
+
+  a
+     Models 1 and 3 control only for age and year of interview (unadjusted model).
+  b
+     Models 2 and 4 add socioeconomic covariates: education, family income, employment status, marital status, family size (adjusted model)
+  *
+     p < 0.05.
+  **
+      p < 0.01.
+  ***
+       p < 0.001.
+
+
+our results complicate the traditional formulation of the Hispanic                              Using the largest available nationally-representative sample for the
+Paradox by highlighting the variation in mortality experience among                         study of Hispanic mortality, we compare the mortality experience of 48
+Hispanic subgroups by age, region of origin, and nativity. The                              subgroups (six region of origin groups by nativity, age group, and
+signiﬁcance of this ﬁnding should not be discounted in research on                          adjusted/unadjusted) to that of US-born non-Hispanic whites. Overall,
+the Hispanic and immigrant epidemiological paradoxes in the United                          27 of the 48 subgroup comparisons show an advantage for the Hispanic
+States, since it has implications both for our understanding of the                         subgroup over non-Hispanic whites, 5 show a disadvantage, and 16
+processes of immigrant health as well as for data collection strategies                     show no statistical diﬀerence. Although this demonstrates a fair
+for    identifying   Hispanic     subgroups    (Hayward,      Hummer,                       amount of consistency in the Hispanic mortality advantage, it suggests
+ Chiu, González-González, & Wong, 2014; Ruiz, Steﬀen, & Smith,                              a more nuanced perspective on this diﬀerence than is often claimed.
+2013). Immigrants from diverse backgrounds entering the United                              We observe that foreign-born subgroups have more favorable outcomes
+States have found the assimilation process to be especially complicated                     than their US-born counterparts, almost without exception.
+given the nature of the American racial classiﬁcation system (Frank,                        Consistently lower mortality risk is found among Mexicans at older
+Akresh, & Lu, 2010). New immigrants often face racial discrimination,                       ages, and foreign-born Cubans, Dominicans Central/South Americans,
+residential and occupational segregation, and categorization into broad                     and other Hispanics. US-born Puerto Ricans consistently have the
+racial and ethnic categories, particularly Hispanic panethnicity                            poorest mortality outcomes among Hispanics, although this partially
+(Okamoto & Mora, 2014). We demonstrate the importance of a critical                         reﬂects low levels of SES in this population. Our results simultaneously
+perspective on the use of the panethnic category for research on health                     provide evidence for the Hispanic mortality advantage as well as
+and mortality, which is likely to become increasingly important as the                      evidence that the advantage does not apply equally to all Hispanic
+Hispanic population continues to grow in both size and diversity.                           subgroups.
+
+
+                                                                                      250
+A. Fenelon et al.                                                                                                                      SSM - Population Health 3 (2017) 245–254
+
+
+Table 4
+Hazard ratios of mortality by Hispanic subgroup among women by age group.
+
+                                                 Ages 25–64                                                              Ages 65+
+
+                                                 Model 1a                              Model 2b                          Model 3a                          Model 4b
+
+  Subgroup
+
+  US-born
+  NH White                                       1.00                                  1.00                              1.00                              1.00
+  Mexican                                        0.98 (0.91–1.06)                      0.80 (0.74–0.87)***               0.92 (0.86–0.99)*                 0.82 (0.76–0.88)***
+  Puerto Rican                                   1.22 (1.01–1.49)*                     0.97 (0.80–1.18)                  0.92 (0.69–1.23)                  0.85 (0.62–1.14)
+  Cuban                                          1.26 (0.84–1.89)                      1.29 (0.87–1.93)                  0.96 (0.67–1.36)                  0.93 (0.65–1.33)
+  Dominican                                      1.90 (0.48–7.59)                      1.49 (0.36–6.04)                  1.93 (0.94–2.88)                  1.68 (0.85–2.71)
+  Central/South American                         1.02 (0.42–2.45)                      1.01 (0.42–2.40)                  0.78 (0.27–2.28)                  0.76 (0.27–2.10)
+  other Hispanic                                 1.23 (1.08–1.41)**                    1.07 (0.94–1.22)                  1.06 (0.95–1.19)                  1.00 (0.90–1.12)
+
+  Foreign-Born
+  Mexican                                        1.28 (1.19–1.38)***                   0.87 (0.81–0.94)***               0.79 (0.72–0.86)***               0.66 (0.60–0.73)***
+  Puerto Rican                                   1.32 (1.18–1.50)***                   0.81 (0.72–0.92)***               0.79 (0.69–0.90)***               0.68 (0.60–0.77)***
+  Cuban                                          0.74 (0.62–0.89)***                   0.64 (0.53–0.77)***               0.79 (0.71–0.87)***               0.71 (0.65–0.80)***
+  Dominican                                      0.48 (0.29–0.80)**                    0.29 (0.17–0.48)***               0.44 (0.26–0.72)***               0.36 (0.22–0.59)***
+  Central/South American                         0.44 (0.35–0.56)***                   0.36 (0.28–0.46)***               0.54 (0.43–0.68)***               0.47 (0.37–0.58)***
+  other Hispanic                                 0.59 (0.51–0.67)***                   0.45 (0.39–0.52)***               0.51 (0.44–0.59)***               0.44 (0.38–0.52)***
+
+  Sociodemographic Covariates
+
+  Education
+  12 years or fewer                                                                    1.00                                                                1.00
+  13 years or more                                                                     0.75 (0.73–0.77)***                                                 0.86 (0.84–0.88)***
+
+  Employment Status
+  Employed                                                                             1.00                                                                1.00
+  Unemployed                                                                           1.26 (1.16–1.37)***                                                 1.27 (1.05–1.52)***
+  Not in Labor Force                                                                   1.83 (1.77–1.88)***                                                 1.50 (1.45–1.56)***
+
+  Family Income
+  Below 100% of Poverty                                                                1.00                                                                1.00
+  100–399%                                                                             0.71 (0.69–0.74)***                                                 0.91 (0.88–0.93)***
+  400% and above                                                                       0.50 (0.47–0.52)***                                                 0.80 (0.77–0.82)***
+  Household Size                                                                       0.95 (0.94–0.96)***                                                 1.04 (1.03–1.05)***
+
+  Marital Status
+  Married                                                                              1.00                                                                1.00
+  Divorced/separated                                                                   1.42 (1.37–1.47)***                                                 1.32 (1.27–1.37)***
+  Widowed                                                                              1.42 (1.35–1.48)***                                                 1.25 (1.22–1.28)***
+  Never Married                                                                        1.59 (1.51–1.67)***                                                 1.27 (1.21–1.33)***
+  Number of Observations                         454,617                               454,617                           117,009                           117,009
+
+  a
+     Models 1 and 3 control only for age and year of interview (unadjusted model).
+  b
+     Models 2 and 4 add socioeconomic covariates: education, family income, employment status, marital status, family size (adjusted model)
+  *
+     p < 0.05.
+  **
+      p < 0.01.
+  ***
+       p < 0.001.
+
+
+    It is well known that recent immigrants to the US have the most                                   Our results also demonstrate that comparisons of the mortality
+favorable health proﬁle (Ullmann, Goldman, & Massey, 2011), while                                 experience of individual Hispanic subgroups to non-Hispanic whites
+greater duration of residence is associated with poorer health and                                depends on age. The advantages for Mexicans and Puerto Ricans at
+mortality outcomes (Creighton, Goldman, Pebley, & Chung, 2012). In                                older ages do not extend to younger-adult ages, and these groups
+addition, those immigrants who arrived at younger ages experience                                 experience a mortality disadvantage relative to whites between ages 25
+higher mortality risk than those who arrived at older ages regardless of                          and 64. This ﬁnding is unlikely to reﬂect exclusively diﬀerences across
+duration of residence (Holmes et al., 2015). Our results conﬁrm the                               migration cohorts, since more recent cohorts report better health than
+distinct mortality experiences of US-born and foreign-born Hispanics,                             earlier cohorts (Hamilton et al., 2015). The disadvantage among adults
+a pattern that exists for nearly every region-of-origin subgroup. We ﬁnd                          aged 25–64 is mediated by socioeconomic disadvantage, primarily due
+advantages for each foreign-born subgroup over non-Hispanic whites                                to lower levels of education and higher rates of poverty in these
+at older ages for both men and women. Mexicans are the only US-born                               populations. Similarly, the mortality advantage of many Hispanic
+subgroup to demonstrate a consistent advantage over non-Hispanic                                  subgroups would be even larger if they did not experience considerable
+whites at older ages for both men and women. The advantages are quite                             socioeconomic disadvantage, a facet of the “weak Hispanic Paradox”
+large for foreign-born Mexicans, Central/South Americans, and                                     (Hummer et al., 1999). The disadvantage for these subgroups at
+Dominicans, corresponding to adult life expectancy 8 years greater                                younger adult ages is partially due to external causes of death, which
+than that of non-Hispanic whites.5                                                                may reﬂect neighborhood conditions in high-poverty immigrant en-
+
+
+   5
+     Calculated using standard life table methods applying the estimated mortality ratios         (footnote continued)
+from the adjusted models. These diﬀerences are similar to those found by Palloni and              Arias (2004).
+
+
+                                                                                            251
+A. Fenelon et al.                                                                                                                          SSM - Population Health 3 (2017) 245–254
+
+
+Table 5
+Summary of mortality relative to non-Hispanic whites by Hispanic subgroup.
+
+                                                Mortality Experience Relative to non-Hispanic whites
+
+                                                Ages 25–64                                                                    Ages 65+
+
+  Subgroup                                      Unadjusted                             Adjusted                               Unadjusted                             Adjusted
+
+  US Born
+  Mexican                                       Higher for men                         Lower for women                        Lower                                  Lower
+  Puerto Rican                                  Higher                                 No Difference                          No Difference                          No Difference
+  Cuban                                         No Difference                          No Difference                          No Difference                          Lower for men
+  Dominican                                     No Difference                          No Difference                          No Difference                          No Difference
+  Central/South American                        No Difference                          No Difference                          No Difference                          No Difference
+  other Hispanic                                Higher                                 No Difference                          No Difference                          Lower for men
+
+  Foreign Born
+  Mexican                                       Higher                                 Lower for women                        Lower                                  Lower
+  Puerto Rican                                  Higher                                 Lower for women                        Lower for women                        Lower
+  Cuban                                         Lower for women                        Lower for women                        Lower                                  Lower
+  Dominican                                     Lower for women                        Lower                                  Lower                                  Lower
+  Central/South American                        Lower                                  Lower                                  Lower                                  Lower
+  other Hispanic                                Lower                                  Lower                                  Lower                                  Lower
+
+Notes: Differences refer to statistically significant higher or lower mortality risk of the Hispanic subgroup with respect to non-Hispanic white men and women of the same age.
+Unadjusted models control only for age and year of interview. Adjusted models control for socioeconomic covariates: education, family income, employment status, marital status, family
+size. Comparisons with no sex specified means that the advantage/disadvantage pertains to both men and women.
+
+
+claves (Vega, Rodriguez, & Gruskin, 2009). Palloni and Arias (2004)                            study (Turra & Elo, 2008) demonstrated that the magnitude of return
+found that the advantage for foreign-born Mexicans expanded sub-                               migration would need to be very large to explain the substantial
+stantially at older ages, which they interpreted as evidence for return                        mortality diﬀerentials found in most data sources.
+migration of older individuals. Instead, this may reﬂect the greater                               Finally, the analysis covers a relatively long time series, with
+impact of socioeconomic disadvantage on mortality risk among young-                            interviews stretching across a 20-year period and mortality follow-up
+er adults than older adults (Herd, 2006).                                                      covering a period of up to 22 years. Considering such a long period
+    While the results here conﬁrm that the Hispanic Paradox is not a                           makes it possible that death occurs many years after interview, and
+characteristic of all Hispanic subgroups, most foreign-born Hispanic                           individual characteristics may change during the course of follow-up.
+subgroups have an advantage over non-Hispanic whites. However,                                 The inclusion of a control for year of interview helps to assure that the
+given the large number of Mexican-origin individuals among both US-                            observed mortality diﬀerences do not reﬂect secular trends in mortality
+born and foreign-born Hispanics, the consistent advantage for                                  over time, although it remains an issue cross-sectional data cannot
+Mexicans makes a large contribution to the advantage of Hispanics                              completely address.
+when considered as a singular group (Fenelon, 2013; Lariscy et al.,
+2015). When data limitations preclude the analysis of detailed sub-
+                                                                                               Conclusions
+groups among Hispanics, researchers must be cognizant of the fact that
+the experience of the Mexican population drives much of the overall
+                                                                                                   The Hispanic mortality paradox is a theoretically signiﬁcant ﬁnding
+Hispanic mortality experience, and should convey that there is
+                                                                                               for social science research in that it represents a case in which a lower-
+considerable variation among Hispanic subgroups.
+                                                                                               status group experiences better health outcomes than the higher-status
+                                                                                               majority. Expanding our knowledge of this process not only informs
+Limitations
+                                                                                               research on the health and mortality outcomes of Hispanics but also
+                                                                                               the nuances of the relationship between SES and health. As the
+    The primary limitation of the analysis is that we are unable to
+                                                                                               Hispanic population has grown in the past several decades, it has also
+specify explanations for the advantages of individual subgroups. Some
+                                                                                               become more diverse, in terms of age, nativity, and country of origin.
+advantages may reﬂect health-related behaviors (Fenelon & Blue,
+                                                                                               With this increase in diversity has come regional growth in Hispanic
+2015), and advantages for other groups may reﬂect patterns of health-
+                                                                                               immigrant population across the United States, with new destinations
+selective migration (Riosmena et al., 2013). Although the analysis
+                                                                                               emerging in places as far apart as Seattle and Atlanta. These trends
+provides a comprehensive analysis of the Hispanic mortality paradox,
+                                                                                               have also led to increased interest in the health and mortality
+future work must investigate whether explanations for the mortality
+                                                                                               experience of Hispanic populations across the US. Many of the
+advantage vary across Hispanic subgroups.
+                                                                                               subgroups that exhibit the largest mortality advantages are also those
+    The analysis is limited by two well-known data quality issues. First,
+                                                                                               that are growing the fastest (Fenelon & Blue, 2015), including Central
+record linkage between NHIS and NDI may diﬀer in quality across
+                                                                                               Americans, South Americans, and Dominicans. This shift is combined
+Hispanic subgroups, with foreign-born Hispanics experiencing lower
+                                                                                               with the aging of many Hispanic subgroups, whose mortality experi-
+matching quality than non-Hispanic whites (Lariscy, 2011) The true
+                                                                                               ence will become more relevant for the overall longevity of the US
+impact of linkage diﬀerences on mortality diﬀerences is diﬃcult to
+                                                                                               population in the coming decades.
+determine, speciﬁcally because diﬀering linkage rates combine both
+diﬀerences in linkage given death and diﬀerences in death risks.
+Although record linkage likely diﬀers by nativity, it is unknown                               Disclaimer
+whether it would vary by region of origin. Second, the current data
+cannot completely address the issue of health-selective return migra-                             The views expressed in this article are those of the authors and do
+tion (Arenas et al., 2015). Certain subgroups, such as foreign-born                            not necessarily reﬂect the oﬃcial position of the National Center for
+Cubans, are unable to return to their origin country and one previous                          Health Statistics or the US Centers for Disease Control and Prevention.
+
+
+                                                                                         252
+A. Fenelon et al.                                                                                                                         SSM - Population Health 3 (2017) 245–254
+
+
+
+Appendix A1
+
+    see Table A1 here.
+    Our analysis seeks to present the most comprehensive analysis of the mortality experience of Hispanic subgroups in the United States. Our main
+analysis examines subgroups separately by sex. However, small sample sizes occasionally reduce statistical power for sex-separate analyses. Here we
+present the models from Tables 3 and 4 in a combined model for both sexes. Results are generally comparable, although sex-speciﬁc patterns in the
+size of the mortality advantage across subgroups cannot be identiﬁed.
+
+
+
+
+Table A1
+Hazard ratios of mortality by Hispanic subgroup with sexes combined.
+
+                                                    Ages 25–64                                                              Ages 65+
+
+                                                    Model 1                             Model 2                             Model 3                             Model 4
+
+  Subgroup
+
+  US-born
+  NH White                                          1.00                                1.00                                1.00                                1.00
+  Mexican                                           1.12 (1.07–1.18)***                 1.03 (0.96–1.10)                    0.87 (0.81–0.94)***                 0.77 (0.71–0.83)***
+  Puerto Rican                                      1.23 (1.08–1.41)**                  1.05 (0.88–1.26)                    1.05 (0.78–1.42)                    0.99 (0.33–1.34)
+  Cuban                                             0.97 (0.73–1.29)                    0.74 (0.50–1.09)                    0.72 (0.48–1.07)                    0.63 (0.42–0.95)*
+  Dominican                                         1.19 (0.38–3.73)                    0.50 (0.07–3.63)                    3.67 (0.37–36.8)                    3.22 (0.31–33.3)
+  Central/South American                            0.78 (0.441–1.38)                   0.65 (0.33–1.29)                    1.24 (0.52–2.95)                    1.14 (0.44–2.92)
+  other Hispanic                                    1.19 (1.08–1.30)***                 1.02 (0.83–0.99)                    0.95 (0.84–1.06)                    0.88 (0.79–0.99)*
+
+  Foreign-Born
+  Mexican                                           1.22 (1.16–1.28)***                 0.97 (0.91–1.03)                    0.71 (0.64–0.78)***                 0.60 (0.55–0.66)***
+  Puerto Rican                                      1.32 (1.22–1.44)***                 0.90 (0.80–1.01)                    0.88 (0.75–1.03)                    0.73 (0.62–0.86)***
+  Cuban                                             0.89 (0.80–0.99)*                   0.93 (0.81–1.07)                    0.83 (0.74–0.93)***                 0.78 (0.69–0.87)***
+  Dominican                                         0.61 (0.42–0.88)**                  0.54 (0.32–0.92)*                   0.33 (0.16–0.66)**                  0.26 (0.13–0.54)***
+  Central/South American                            0.46 (0.39–0.54)***                 0.45 (0.36–0.57)***                 0.49 (0.37–0.63)***                 0.44 (0.33–0.57)***
+  other Hispanic                                    0.59 (0.53–0.65)***                 0.52 (0.46–0.59)***                 0.58 (0.49–0.69)***                 0.56 (0.47–0.67)***
+
+  Sociodemographic Characteristics
+
+  Education
+  12 years or fewer                                                                     1.00                                                                    1.00
+  13 years or more                                                                      0.71 (0.69–0.73)***                                                     0.86 (0.84–0.88)***
+
+  Employment Status
+  Employed                                                                              1.00                                                                    1.00
+  Unemployed                                                                            1.38 (1.30–1.47)***                                                     1.08 (0.92–1.26)
+  Not in Labor Force                                                                    2.13 (2.07–2.20)***                                                     1.38 (1.34–1.43)***
+
+  Family Income
+  Below 100% of Poverty                                                                 1.00                                                                    1.00
+  100–399%                                                                              0.81 (0.78–0.84)***                                                     0.86 (0.83–0.90)***
+  400% and above                                                                        0.60 (0.58–0.63)***                                                     0.71 (0.67–0.74)***
+  Household Size                                                                        0.96 (0.95–0.97)***                                                     1.01 (1.00–1.03)
+
+  Marital Status
+  Married                                                                               1.00                                                                    1.00
+  Divorced/separated                                                                    1.48 (1.42–1.53)***                                                     1.30 (1.24–1.36)***
+  Widowed                                                                               1.45 (1.34–1.57)***                                                     1.16 (1.12–1.20)***
+  Never Married                                                                         1.49 (1.43–1.55)***                                                     1.16 (1.11–1.23)***
+  Number of Observations                            411,184                             411,184                             84,941                              84,941
+
+Notes: Models 1 and 3 control only for age, sex and year of interview (unadjusted results). Models 2 and 4 add socioeconomic covariates: education, family income, employment status,
+marital status, family size
+  *
+     p < 0.05.
+  **
+      p < 0.01.
+  ***
+       p < 0.001.
+
+
+
+                                                                                              Abraido-Lanza, A. F., Chao, M. T., & Florez, K. R. (2005). Do healthy behaviors decline
+                                                                                                  with greater acculturation?: Implications for the Latino mortality paradox. Social
+                                                                                                  Science Medicine, 61, 1243–1255.
+References                                                                                    Akresh, I. R., & Frank, R. (2008). Health selection among new immigrants. American
+                                                                                                  Journal of Public Health, 98, 2058–2064.
+                                                                                              Arenas, E., Goldman, N., Pebley, A. R., & Teruel, G. (2015). Return migration to Mexico:
+Abraido-Lanza, A. F., Dohrenwend, B. P., Ng-Mak, D. S., & Turner, J. B. (1999). The               Does health matter? Demography, 52, 1853–1868.
+   Latino mortality paradox: A test of the” salmon bias” and healthy migrant                  Arias, E., Schauman, W. S., Eschbach, K., Sorlie, P. D., & Backlund, E. (2008). The
+   hypotheses. American Journal of Public Health, 89, 1543–1548.                                  validity of race and Hispanic origin reporting on death certiﬁcates in the United
+
+
+                                                                                        253
+A. Fenelon et al.                                                                                                                                  SSM - Population Health 3 (2017) 245–254
+
+
+    States. Vital and Health Statistics Series 2, Data Evaluation and Methods Research,              Lariscy, J. T., Hummer, R. A., & Hayward, M. D. (2015). Hispanic older adult mortality
+    1–23.                                                                                                in the United States: New estimates and an assessment of factors shaping the
+Arias, E., Kochanek, K., & Anderson, R. (2015). How does cause of death contribute to                    Hispanic paradox. Demography, 52, 1–14.
+    the Hispanic mortality advantage in the United States? NCHS Data Brief, 1–8.                     Lariscy, J. T., Nau, C., Firebaugh, G., & Hummer, R. A. (2016). Hispanic-White
+Blue, L., & Fenelon, A. (2011). Explaining low mortality among US immigrants relative to                 diﬀerences in lifespan variability in the United States. Demography, 53, 215–239.
+    native-born Americans: The role of smoking. International Journal of                             Liao, Y., Cooper, R. S., Cao, G., Durazo-Arvizu, R., Kaufman, J. S., Luke, A. et al. (1998).
+    Epidemiology, 40, 786–793.                                                                           Mortality patterns among adult Hispanics: Findings from the NHIS, 1986 to 1990.
+Borrell, L. N., & Lancet, E. A. (2012). Race/ethnicity and all-cause mortality in US adults:             American Journal of Public Health, 88, 227–232.
+    Revisiting the Hispanic paradox. American Journal of Public Health, 102, 836–843.                Logan, J., & Turner, R. N. (2013). Hispanics in the United States: Not only Mexicans
+Creighton, M. J., Goldman, N., Pebley, A. R., & Chung, C. Y. (2012). Durational and                      (US2010 Project). Brown University, Providence RI.
+    generational diﬀerences in Mexican immigrant obesity: Is acculturation the                       Lu, Y., & Qin, L. (2014). Healthy migrant and salmon bias hypotheses: A study of health
+    explanation? Social Science Medicine, 75, 300–310.                                                   and internal migration in China. Social Science Medicine, 102, 41–48.
+Elo, I. T. (2009). Social class diﬀerentials in health and mortality: Patterns and                   Markides, K. S., & Coreil, J. (1986). The health of Hispanics in the southwestern United
+    explanations in comparative perspective. Annual Review of Sociology, 553–572.                        States: An epidemiologic paradox. Public Health Reports, 101, 253.
+Elo, I. T., Turra, C. M., Kestenbaum, B., & Ferguson, B. R. (2004). Mortality among                  Markides, K. S., & Eschbach, K. (2005). Aging, migration, and mortality: Current status
+    elderly Hispanics in the United States: Past evidence and new results. Demography,                   of research on the Hispanic paradox. The Journals of Gerontology Series B:
+    41, 109–128.                                                                                         Psychological Sciences and Social Sciences, 60, S68–S75.
+Eschbach, K., Mahnken, J. D., & Goodwin, J. S. (2005). Neighborhood composition and                  Markides, K. S., & Eschbach, K. (2011). Hispanic paradox in adult mortality in the United
+    incidence of cancer among Hispanics in the United States. Cancer, 103, 1036–1044.                    States. , in: Rogers, R. G., & Crimmins, E. M. (Eds.). (2011). International handbook
+Eschbach, K., Stimpson, J. P., Kuo, Y.-F., & Goodwin, J. S. (2007). Mortality of foreign-                of adult mortality . . Springer, 227–240.
+    born and US-born Hispanic adults at younger ages: A reexamination of recent                      Mora, G. C. (2014). Cross-ﬁeld eﬀects and ethnic classiﬁcation the institutionalization of
+    patterns. American Journal of Public Health, 97, 1297–1304.                                          Hispanic panethnicity, 1965 to 1990. American Sociological Review, 79, 183–210.
+Feliciano, C. (2005). Educational selectivity in US immigration: How do immigrants                   National Center for Health Statistics (2013). Oﬃce of analysis and epidemiology,
+    compare to those left behind? Demography, 42, 131–152.                                               analytic guidelines for NCHS 2011 linked mortality ﬁles. Hyattsville, MD: National
+Fenelon, A. (2013). Revisiting the Hispanic mortality advantage in the United States: The                Center for Health Statistics.
+    role of smoking. Social Science Medicine, 82, 1–9.                                               Okamoto, D., & Mora, G. C. (2014). Panethnicity. Annual Review of Sociology, 40,
+Fenelon, A. (2016). Rethinking the Hispanic Paradox: The mortality experience of                         219–239.
+    Mexican immigrants in traditional gateways and new destinations. International                   Osypuk, T. L., Roux, A. V. D., Hadley, C., & Kandula, N. R. (2009). Are immigrant
+    Migration Review.                                                                                    enclaves healthy places to live? The multi-ethnic study of atherosclerosis. Social
+Fenelon, A., & Blue, L. (2015). Widening life expectancy advantage of Hispanics in the                   Science Medicine, 69, 110–120.
+    United States: 1990–2010. Journal of Immigrant and Minority Health, 17,                          Palloni, A., & Arias, E. (2004). Paradox lost: Explaining the Hispanic adult mortality
+    1130–1137.                                                                                           advantage. Demography, 41, 385–415.
+Frank, R., Akresh, I. R., & Lu, B. (2010). Latino immigrants and the US racial order how             Palloni, A., & Ewbank, D. (2004). Selection processes in the study of racial and ethnic
+    and where do they ﬁt in? American Sociological Review, 75, 378–401.                                  diﬀerentials in adult health and mortality. , in: Anderson, N. B., Bulatao, R. A., &
+Franzini, L., & Fernandez-Esquer, M. E. (2004). Socioeconomic, cultural, and personal                    Cohen, B. (Eds.). (2004). Critical perspectives on racial and ethnic diﬀerences in
+    inﬂuences on health outcomes in low income Mexican-origin individuals in Texas.                      health in late life . Washington, DC: National Academies Press.
+    Social Science Medicine, 59, 1629–1646.                                                          Reynolds, M. M., Chernenko, A., & Read, Jn. G. (2016). Region of origin diversity in
+Hall, M. (2013). Residential integration on the new frontier: Immigrant segregation in                   immigrant health: Moving beyond the Mexican case. Social Science Medicine, 166,
+    established and new destinations. Demography, 50, 1873–1896.                                         102–109.
+Hamilton, T. G. (2015). The healthy immigrant (migrant) eﬀect: In search of a better                 Riosmena, F., Wong, R., & Palloni, A. (2013). Migration selection, protection, and
+    native-born comparison group. Social Science Research, 54, 353–365.                                  acculturation in health: A binational perspective on older adults. Demography, 50,
+Hamilton, T. G., Palermo, T., & Green, T. L. (2015). Health assimilation among Hispanic                  1039–1064.
+    immigrants in the United States the impact of ignoring arrival-cohort eﬀects.                    Riosmena, F., Everett, B. G., Rogers, R. G., & Dennis, J. A. (2015). Negative acculturation
+    Journal of Health and Social Behavior (0022146515611179).                                            and nothing more? Cumulative disadvantage and mortality during the immigrant
+Hayes-Bautista, D. E., Hsu, P., Hayes-Bautista, M., Iniguez, D., Chamberlin, C. L., Rico,                adaptation process among Latinos in the United States. International Migration
+    C. et al. (2002). An anomaly within the Latino epidemiological paradox: The Latino                   Review, 49, 443–478.
+    adolescent male mortality peak. Archives of Pediatrics Adolescent Medicine, 156,                 Roth, W. D. (2009). ‘Latino before the world’: The transnational extension of
+    480–484.                                                                                             panethnicity. Ethnic and Racial Studies, 32, 927–947.
+Hayward, M. D., Hummer, R. A., Chiu, C.-T., González-González, C., & Wong, R. (2014).                Ruiz, J. M., Steﬀen, P., & Smith, T. B. (2013). Hispanic mortality paradox: A systematic
+    Does the Hispanic paradox in US adult mortality extend to disability? Population                     review and meta-analysis of the longitudinal literature. American Journal of Public
+    Research and Policy Review, 33, 81–96.                                                               Health, 103, e52–e60.
+Herd, P. (2006). Do functional health inequalities decrease in old age? Educational status           Singh, G. K., & Siahpush, M. (2002). Ethnic-immigrant diﬀerentials in health behaviors,
+    and functional decline among the 1931–1941 birth cohort. Research on Aging, 28,                      morbidity, and cause-speciﬁc mortality in the United States: An analysis of two
+    375–392.                                                                                             national data bases. Human Biology, 83–109.
+Holmes, J. S., Driscoll, A. K., & Heron, M. (2015). Mortality among US-born and                      Sorlie, P. D., Backlund, E., Johnson, N. J., & Rogot, E. (1993). Mortality by Hispanic
+    immigrant Hispanics in the US: Eﬀects of nativity, duration of residence, and age at                 status in the United States. JAMA, 270, 2464–2468.
+    immigration. International Journal of Public Health, 60, 609–617.                                Tienda, M., & Fuentes, N. (2014). Hispanics in metropolitan America: New realities and
+Hummer, R. A., Biegler, M., De Turk, P. B., Forbes, D., Frisbie, W. P., Hong, Y. et al.                  old debates. Annual Review of Sociology, 40, 499–520.
+    (1999). Race/ethnicity, nativity, and infant mortality in the United States. Social              Turra, C. M., & Elo, I. T. (2008). The impact of salmon bias on the Hispanic mortality
+    Forces, 77, 1083–1117.                                                                               advantage: New evidence from social security data. Population Research and Policy
+Hummer, R. A., Rogers, R. G., Amir, S. H., Forbes, D., & Frisbie, W. P. (2000). Adult                    Review, 27, 515–530.
+    mortality diﬀerentials among Hispanic subgroups and non-Hispanic whites. Social                  Ullmann, S. H., Goldman, N., & Massey, D. S. (2011). Healthier before they migrate, less
+    Science Quarterly, 459–476.                                                                          healthy when they return? The health of returned migrants in Mexico. Social Science
+Hummer, R. A., Powers, D. A., Pullum, S. G., Gossman, G. L., & Frisbie, W. P. (2007).                    Medicine, 73, 421–428.
+    Paradox found (again): Infant mortality among the Mexican-origin population in the               Vaca, F. E., Anderson, C. L., & Hayes-Bautista, D. E. (2011). The Latino adolescent male
+    United States. Demography, 44, 441–457.                                                              mortality peak revisited: Attribution of homicide and motor vehicle crash death.
+Jones-Correa, M., & Leal, D. L. (1996). Becoming” Hispanic”: Secondary panethnic                         Injury Prevention, 17, 102–107.
+    identiﬁcation among Latin American-origin populations in the United States.                      Vega, W. A., Rodriguez, M. A., & Gruskin, E. (2009). Health disparities in the Latino
+    Hispanic Journal of Behavioral Sciences, 18, 214–254.                                                population. Epidemiologic Reviews, 31, 99–112.
+Kandel, W., & Parrado, E. A. (2005). Restructuring of the US meat processing industry                Waters, M.C., & Pineau, M.G. (2015). Panel on the Integration of Immigrants into
+    and new Hispanic migrant destinations. Population and Development Review, 31,                        American Society. Washington, DC: Committee on Population; Division of
+    447–471.                                                                                             Behavioral and Social Sciences and Education; National Academies of Sciences,
+Kaplan, R. C., Bangdiwala, S. I., Barnhart, J. M., Castañeda, S. F., Gellman, M. D., Lee, D.             Engineering, and Medicine.
+    J. et al. (2014). Smoking among US Hispanic/Latino adults: The Hispanic                          Williams, D. R., Mohammed, S. A., Leavell, J., & Collins, C. (2010). Race, socioeconomic
+    community health study/study of Latinos. American Journal of Preventive                              status, and health: Complexities, ongoing challenges, and research opportunities.
+    Medicine, 46, 496–506.                                                                               Annals of the New York Academy of Sciences, 1186, 69–101.
+Lariscy, J. T. (2011). Diﬀerential record linkage by Hispanic ethnicity and age in linked            Zsembik, B. A., & Fennell, D. (2005). Ethnic variation in health and the determinants of
+    mortality studies: Implications for the epidemiologic paradox. Journal of Aging and                  health among Latinos. Social Science Medicine, 61, 53–63.
+    Health (0898264311421369).
+
+
+
+
+                                                                                               254
+

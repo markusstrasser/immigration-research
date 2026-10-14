@@ -1,0 +1,1014 @@
+                            NIH Public Access
+                            Author Manuscript
+                            Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+                           Published in final edited form as:
+
+
+
+
+NIH-PA Author Manuscript
+                            Popul Res Policy Rev. 2008 ; 27(5): 515–530. doi:10.1007/s11113-008-9087-4.
+
+
+
+                           The Impact of Salmon Bias on the Hispanic Mortality Advantage:
+                           New Evidence from Social Security Data
+
+                           Cassio M. Turra and
+                           Associate Professor, Department of Demography and Cedeplar, Universidade Federal de Minas
+                           Gerais, Brazil
+                           Irma T. Elo
+                           Associate Professor of Sociology and Chair, Graduate Group in Demography, Population Studies
+                           Center, University of Pennsylvania
+
+                           Abstract
+                                A great deal of research has focused on factors that may contribute to the Hispanic mortality paradox
+
+
+
+
+NIH-PA Author Manuscript
+                                in the United States. In this paper, we examine the role of the salmon bias hypothesis - the selective
+                                return of less-healthy Hispanics to their country of birth - on mortality at ages 65 and above. These
+                                analyses are based on data drawn from the Master Beneficiary Record and NUMIDENT data files
+                                of the Social Security Administration. These data provide the first direct evidence regarding the effect
+                                of salmon bias on the Hispanic mortality advantage. Although we confirm the existence of salmon
+                                bias, it is of too small a magnitude to be a primary explanation for the lower mortality of Hispanic
+                                than NH white primary social security beneficiaries. Longitudinal surveys that follow individuals in
+                                and out of the United States are needed to further explore the role of migration in the health and
+                                mortality of foreign-born US residents and factors that contribute to the Hispanic mortality paradox.
+
+
+                           Keywords
+                                emigration; Hispanic paradox; mortality; salmon-bias; social security
+
+
+                           Introduction
+                                             Research has consistently documented lower mortality for Hispanics than for non-Hispanic
+
+
+
+
+NIH-PA Author Manuscript
+                                             (NH) whites in the United States. This mortality advantage is greater for foreign-born than for
+                                             native-born Hispanics and it is substantial even at old ages (Hummer, Benjamins & Rogers
+                                             2004; Turra 2004; Elo & Preston 1997; Sorlie et al. 1993). According to recent estimates,
+                                             Hispanic death rates at ages 65 and above are 10-15 percent lower than the rates of NH whites,
+                                             differences that translate into a 1.3-year advantage in life expectancy at age 65 for Hispanic
+                                             men and 0.9-year advantage for Hispanic women (Elo et al. 2004). These findings are puzzling
+                                             given the lower socioeconomic status of Hispanics, their lesser access to health care, and their
+                                             lower self-reported health status (Hummer et al. 2004). Several explanations have been
+                                             proposed for this paradox: cultural factors that influence health behaviors, family dynamics,
+                                             and social support (Palloni & Arias 2004; LeClere, Rogers & Peters 1997); data problems such
+                                             as a lack of comparability in reporting of Hispanic origin in vital statistics and census records,
+                                             age misreporting, and difficulties in linking persons of Hispanic origin among various data
+                                             sources (Elo et al. 2004; Rosenberg et al. 1999; Elo & Preston 1997); and healthy in-migrant
+
+
+
+                           Correspondence: Irma T. Elo, Population Studies Center, University of Pennsylvania, 3718 Locust Walk, Philadelphia, PA, 19104-6298;
+                           Phone: 215-898 9162; Fax: 215-898 2124; E-mail: popelo@pop.upenn.edu..
+                           Turra and Elo                                                                                                Page 2
+
+
+                                           and unhealthy out-migrant selection effects (Jasso et al. 2004; Palloni & Arias 2004; Franzini,
+                                           Ribble & Keddie 2001; Abraido-Lanza et al. 1999; Markides et al. 1997). Nevertheless,
+                                           uncertainty remains about the relative importance of the various explanations. The purpose of
+
+
+
+
+NIH-PA Author Manuscript
+                                           this paper is to test and quantify the effect of the unhealthy out-migrant explanation for the
+                                           Hispanic mortality paradox at ages 65 and above.
+
+                                           To distinguish between the healthy in-migrant and the unhealthy out-migrant selection effects
+                                           we begin by briefly outlining the rationale for each. The healthy in-migrant hypothesis proposes
+                                           that migration is selective of healthier individuals, i.e., migrants are healthier than the average
+                                           person in both the country of origin and the country of destination. This hypothesis has also
+                                           been offered as an explanation for the low mortality of immigrant populations in Europe and
+                                           Canada, although only a few studies have systematically tried to assess its validity (e.g. Khlat
+                                           & Courbage 1996; Sharma, Michalowski & Verma 1990; Marmot, Adelstein & Bulusu
+                                           1984). Recent illustrations of its role in the mortality advantage of foreign-born Hispanics in
+                                           the United States suggest that its effect is likely to be more important at younger ages than at
+                                           older ages where the frailty composition of the foreign-born and US-born Hispanics becomes
+                                           similar (Palloni & Ewbank 2004; Palloni & Morenoff 2001).
+
+                                           The unhealthy out-migrant hypothesis, which is the focus of this article, is often referred to as
+                                           the salmon bias hypothesis, a phrase coined by Pablo-Mendez a decade ago (Pablos-Mendez
+                                           1994). It posits that, in contrast to the healthy in-migrant hypothesis, foreign-born persons who
+
+
+
+
+NIH-PA Author Manuscript
+                                           have lived in the United States for some time return to their countries of origin in significant
+                                           numbers when their health deteriorates. Such return migration may be particularly prevalent
+                                           among Hispanics because of the cultural importance of family ties and the proximity of Mexico
+                                           and other Latin American countries to the United States (Abraido-Lanza et al. 1999). This type
+                                           of selective emigration results in mortality for the US Hispanic population that is lower than
+                                           if the mortality experience of the return migrants had not been omitted. Because the salmon
+                                           bias hypothesis proposes that deteriorating health triggers return migration, one would expect
+                                           its effect on mortality to be more pronounced at older ages when health problems become more
+                                           prevalent (Palloni & Arias 2004; Palloni & Ewbank 2004).
+
+                                           A second mechanism related to return migration that can affect estimates of Hispanic mortality
+                                           concerns a data artifact present in prospective mortality follow-up studies. That is, when survey
+                                           data are prospectively linked to U.S. death registration records, deaths of individuals who
+                                           emigrated during the follow-up period will be missed. The resulting downward bias in mortality
+                                           due to this omission will be greatest for subgroups most likely to emigrate, notably the foreign-
+                                           born (Palloni & Arias 2004; Abraido-Lanza et al. 1999; Elo & Preston 1997). This type of
+                                           error, in contrast to the salmon bias effect, will occur even when emigration is not selective of
+                                           unhealthy individuals. Fortunately, the data used in this paper are free of this type of inaccuracy
+
+
+
+
+NIH-PA Author Manuscript
+                                           as they capture deaths to individuals who emigrated during the study period.
+
+                                           Until now only indirect empirical evidence has been brought forward either to refute or to
+                                           support the salmon bias hypothesis as an explanation for the Hispanic mortality paradox.
+                                           Abraido-Lanza et al. (1999) insightfully pointed out that it cannot explain the mortality
+                                           advantage of Cubans and US-born Hispanics relative to NH whites, groups whose members
+                                           rarely emigrate, nor Puerto Ricans residing in the United States whose deaths in Puerto Rico
+                                           are captured in the US death registration system. However, these explanations do not rule out
+                                           the possibility that the salmon bias is an important factor in the mortality advantage of other
+                                           Hispanic groups. In a recent study, Palloni and Arias (2004) concluded that the salmon bias
+                                           hypothesis may well explain the mortality advantage of foreign-born Mexicans, although not
+                                           that of other foreign-born Hispanics. Their deduction was based on the finding that the mortality
+                                           advantage of foreign-born Mexicans relative to NH whites was greater at older ages and the
+                                           slope of the mortality curve for foreign-born Mexicans was consistent with selective return
+
+
+                                            Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+                           Turra and Elo                                                                                                Page 3
+
+
+                                           migration. In addition, the authors found the self-reported health status of elderly Mexicans
+                                           who had returned from the United States to Mexico to be poorer than the health status of elderly
+                                           Mexican-born individuals residing in the United States; a finding that is consistent with the
+
+
+
+
+NIH-PA Author Manuscript
+                                           salmon bias hypothesis (Palloni & Arias 2004). The potency of this finding, which is based on
+                                           two cross sectional surveys, the Mexican Health and Aging Study (MHAS) in Mexico and the
+                                           National Health Interview Survey (NHIS) in the United States, of course, depends on the
+                                           comparability of the two data sources. Furthermore, given the relatively small sample sizes,
+                                           these results should be interpreted with caution (Markides & Eschbach 2005; NCHS 2000).
+
+                                           In this paper, we provide the first direct test of the salmon bias hypothesis on the Hispanic
+                                           mortality advantage in the United States at ages 65 and above where it is hypothesized to have
+                                           its greatest impact. We use data from the Social Security Administration’s Master Beneficiary
+                                           Record (MBR) and NUMIDENT data files, which are the only data that we know of that permit
+                                           a direct test of salmon bias at ages 65 and above. To investigate the potential contribution of
+                                           salmon bias to low mortality of elderly Hispanics living in the United States, we compared the
+                                           mortality experience of foreign-born and US-born Hispanic and NH white emigrants to that of
+                                           foreign-born and US-born Hispanic and NH white US residents. In addition, we examined
+                                           another migration selection effect that is less commonly discussed in the literature, namely the
+                                           mortality experience of individuals returning to the United States after living abroad. Mortality
+                                           differentials between returnees to the U.S. and longer term residents could either partially offset
+                                           or accentuate the effects of salmon bias.
+
+
+
+
+NIH-PA Author Manuscript
+                                           The remainder of the paper is organized as follows. The next section gives details of the data
+                                           and methods used in the analysis. We then present our results and examine evidence for the
+                                           salmon bias hypothesis and the mortality experience of emigrants returning to the United States.
+                                           The paper ends with a discussion and concluding comments.
+
+                              Data and Methods
+                                           These analyses are based on data from two master files of the Social Security Administration
+                                           (SSA) - the Master Beneficiary Record (MBR) and the NUMIDENT data files - and cover the
+                                           period from December 1995 to December 2000. The MBR is the master file of persons entitled
+                                           to social security benefits, and the NUMIDENT is the master file of applications for a social
+                                           security number. These data have been used in several previous studies of mortality at older
+                                           ages in the United States (e.g. Elo et al. 2004; Kestenbaum & Ferguson 2002; Lauderdale &
+                                           Kestenbaum 2002; Kestenbaum 1997, 1988). Because these data are not publicly available,
+                                           we had the collaboration of the personnel from the Social Security Administration who
+                                           extracted and merged individual-level data from the MBR and the NUMIDENT databases to
+                                           protect the confidentiality of social security recipients. These data were then provided to the
+
+
+
+
+NIH-PA Author Manuscript
+                                           authors in a de-identified summary format that permitted the statistical analysis reported here.
+
+                                           Data from the MBR provided information needed to estimate sex-age-place specific mortality
+                                           and migration: sex, current and last place of residence, and dates of birth and death. We obtained
+                                           place of current residence for individuals who were alive and place of last residence for
+                                           deceased persons for each December from 1995 to 2000 from annual snapshots of the MBR.
+                                           Place of residence was coded as either in the United States or abroad, including Puerto Rico.
+
+                                           Dates of death were obtained from the June 2004 snapshot of the MBR to ensure that we
+                                           captured all deaths, including those that were recorded some time after their occurrence. Given
+                                           the seriousness with which SSA carries out its program stewardship responsibilities, the
+                                           ascertainment of death for primary beneficiaries is close to 100% for deaths that occur in the
+                                           United States and is nearly as complete for deaths that occur outside the United States. For
+                                           example, foreign enforcement questionnaires are sent once a year to update information about
+
+
+                                            Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+                           Turra and Elo                                                                                              Page 4
+
+
+                                           beneficiaries, and a failure to complete these questionnaires results in suspension of benefits.
+                                           Also, occasional validation and integrity investigations are carried out to evaluate the accuracy
+                                           of this information.
+
+
+
+
+NIH-PA Author Manuscript
+                                           The NUMIDENT file provided information needed to identify Hispanics and NH-whites: race/
+                                           ethnicity, country of birth, first name, last name, and father’s last name for married women.
+                                           We used the NUMIDENT information in three ways to identify Hispanics. First, for individuals
+                                           who applied for a social security number after February 1981, when a Hispanic identifier was
+                                           added to the race item on the application form, we used it to identify Hispanics. Second, we
+                                           assumed that those who were born or were residing in Spanish-speaking countries of Latin
+                                           America or in Spain were Hispanic. Third, for all others we calculated a “Spanishness” score
+                                           based on the person’s first name, last name, or maiden name for women (when available), and
+                                           county of residence. To do so we used lists of names we had developed based on 93 million
+                                           original applications for social security numbers filed after February 1981, and information for
+                                           each county on the percentage of the population aged 65 and older who self-identified as
+                                           Hispanic in the 1990 census. A person was then presumed to be Hispanic if this “Spanishness”
+                                           score exceeded a threshold value chosen such that the percentage of the age 65+ Medicare
+                                           population alive in the end of 1999 identified as Hispanic by our methods was equal to the
+                                           percentage of the 65+ population counted in the 2000 census as Hispanic. This algorithm was
+                                           found to perform better in correctly classifying self-identified Hispanics as Hispanic than had
+                                           we used the 1980 or 1990 Spanish surname lists prepared at the Census Bureau (Word &
+
+
+
+
+NIH-PA Author Manuscript
+                                           Perkins 1996; Passel & Word 1980). We identified the smallest percentage of Hispanics (less
+                                           than 10%) from the Hispanic item on the application forms followed by place of birth (about
+                                           40%) and then by our “Spanishness” score (slightly over 50%) with some variation in these
+                                           percentages by age and sex (for further detail see Elo et al. 2004). NH whites were individuals
+                                           who self-identified as white on the social security card application and who were not classified
+                                           as Hispanic.
+
+                                           We studied the mortality and migration experience from December 1995 to December 2000
+                                           among individuals who were primary social security beneficiaries in December 1995. Primary
+                                           social security beneficiaries are individuals (1) who were born in 1929 or later and, if not
+                                           disabled, had worked a minimum of 10 years to accumulate 40 “quarters of coverage” or (2)
+                                           who were born before 1929 and who had worked at least as many “quarters of coverage” as
+                                           the number of years between 1951 and the year when the person attained age 61. Because of
+                                           our interest in mortality among emigrants, we excluded persons who were living in Puerto Rico
+                                           in December 1995 because employment in Puerto Rico is covered by social security and thus
+                                           many Puerto Ricans may have never resided in the United States.
+
+                                           For the same reason, we excluded ‘secondary’ beneficiaries, those individuals whose
+
+
+
+
+NIH-PA Author Manuscript
+                                           entitlement to social security benefits is based on someone else’s work history, because many
+                                           secondary beneficiaries who were living abroad in December 1995 may have never lived in
+                                           the United States (Kestenbaum 1988). Approximately 25 percent of the elderly in our data were
+                                           secondary beneficiaries in December 1995 of whom 98.9 percent were women.
+
+                                           In these analyses, we included 21.6 million individuals who were primary social security
+                                           beneficiaries in December 1995, of whom 0.9 million (4.3%) were Hispanic and 20.7 million
+                                           (95.7%) were NH white. According to the 2000 US Census, 4.9% of the population ages 65
+                                           and above in 2000 was Hispanic (US Census Bureau 2002). We estimated that our data covered
+                                           approximately 70% of elderly Hispanic men and about 98% of Hispanic male social security
+                                           beneficiaries. The respective figures for Hispanic women were 40% and 60%, respectively.
+                                           Similarly, we estimated that our data covered 77% of the elderly NH white men and 86% of
+                                           NH white male social security beneficiaries. The respective figures for NH white women were
+                                           50% and 87%, respectively (tabulations by the authors). Thus, our data covered a smaller
+
+
+                                            Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+                           Turra and Elo                                                                                                  Page 5
+
+
+                                           percentage of 65+ year old women than men because women were more likely to be secondary
+                                           beneficiaries. We address the implications of the less than complete coverage of the US
+                                           population ages 65 and above in the discussion and conclusions.
+
+
+
+
+NIH-PA Author Manuscript
+                                           We present results for all Hispanic and NH white primary beneficiaries and for selected
+                                           subgroups. We distinguished three subgroups among NH whites: US-born (79%), foreign-born
+                                           (5%), and persons whose place of birth was unknown (16%). Among Hispanics we
+                                           differentiated among four subgroups: US-born (38%), foreign-born (42%), persons born in
+                                           Puerto Rico (9%), and persons with unknown place of birth (11%). We kept individuals with
+                                           unknown place of birth as a separate subgroup because we did not have adequate information
+                                           to impute place of birth and we wanted to assess whether the mortality experience of this group
+                                           differed substantially from that of the foreign-born and US-born subgroups. We calculated
+                                           person-years of exposure, number of deaths, and number of migrations for the subgroups
+                                           detailed above. These data were further classified by sex, 5-year age group, and place of
+                                           residence. For persons who did not change residence and who died in a given year we assumed
+                                           that deaths were evenly distributed throughout the year. For individuals who changed residence
+                                           between United States and elsewhere between one December and the next and who were alive
+                                           we assumed that the change of residence occurred at mid-year on average. For persons who
+                                           changed residence and died between one December and the next we assumed that residential
+                                           moves occurred on average in the first quarter of the year and that deaths were evenly
+                                           distributed between the move and the end of the year.
+
+
+
+
+NIH-PA Author Manuscript
+                              Statistical analysis
+                                           Because the effect of salmon bias on mortality estimates is a function not only of the magnitude
+                                           of mortality differentials between emigrants and stayers but also of the volume of migration,
+                                           we began with a straightforward tabulation of mortality and migration experience during the
+                                           period December 1995 to December 2000. We calculated person-years lived in the United
+                                           States and abroad, the percentage of person-years lived outside the US, the volume of migration
+                                           in and out of the United States, and the number of deaths by place of residence.
+
+                                           We then estimated a series of Poisson regression models to look for evidence for or against the
+                                           salmon bias hypothesis. Poisson regression is commonly used to estimate mortality with
+                                           grouped data (e.g. Hu & Goldman 1990). We modeled the number of deaths during the
+                                           observation period as a function of the number of person-years of exposure, age in 5-year age
+                                           groups, and place of residence (US residence versus non-US residence). We fit separate models
+                                           for foreign-born and native-born Hispanic and NH white men and women and for Hispanic
+                                           and NH white men and women with unknown place of birth. Among the foreign-born
+                                           Hispanics, we further distinguished those who were born in Puerto Rico from those born
+                                           elsewhere. Thus we estimated 14 models, each with the following specification:
+
+
+
+
+NIH-PA Author Manuscript
+                                                                                                                                             (1)
+
+                                           where i indexes age group, j indexes place of residence, E(Dij) denotes the expected number
+                                           of deaths, Nij is the number of persons-years lived, αi is the effect of the ith age group, βj is the
+                                           effect of the jth place of residence, and η is the constant term. The interaction term involving
+                                           age and place of residence was omitted because it was not statistically significant at the 5
+                                           percent level in any model of substantive interest. We used the exponentiated parameter
+                                           estimates for place of residence (expβ(j)), obtained from models in which US residence was
+                                           the omitted category, to assess the relative mortality experience of foreign residents versus US
+                                           residents.
+
+                                           We also analyzed the experience of persons who migrated during the study period (1996-2000).
+                                           If migration was precipitated by poor health, we would expect mortality among migrants to be
+
+
+                                            Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+                           Turra and Elo                                                                                                 Page 6
+
+
+                                           particularly high immediately following their move. We estimated Poisson regression models
+                                           to assess the level of post-migration mortality in the year following the move among persons
+                                           leaving the United States and among returnees to the US relative to that of US residents.
+
+
+
+
+NIH-PA Author Manuscript
+                                           Because of the small number of movers, we could not distinguish in these models among
+                                           foreign-born and native-born Hispanics or foreign-born and native-born NH whites.
+
+                                           Our final model was used to estimate Hispanic and NH white age-specific death rates by gender
+                                           for (1) primary social security beneficiaries residing in the United States and (2) all primary
+                                           beneficiaries regardless of their place of residence. This model was of the following form:
+                                                                                                                                            (2)
+
+                                           where i indexes age group, j indexes place of residence, E(Dij) denotes the expected number
+                                           of deaths, Nij is the number of person-years lived, αi is the effect of the ith age group, δj is the
+                                           effect of the jth ethnicity, (αδ)ij is an interaction term between age and ethnicity, and η
+                                           represents the constant. The salmon bias hypothesis predicts that the ratio of Hispanic to NH-
+                                           white mortality by age and sex should be appreciably closer to 1 when the mortality estimates
+                                           are based on all Hispanics regardless of their place of residence than when mortality estimates
+                                           are based on US residents only.
+
+                              Results
+
+
+
+
+NIH-PA Author Manuscript
+                                           Table 1 presents the number of person-years of exposure, the number of migrations to and from
+                                           the United States, and the number of deaths during the study period for the 14 population
+                                           subgroups. As seen in the first three data columns of Table 1, a larger percentage of foreign-
+                                           born Hispanics than native-born Hispanics were living abroad in the late 1990s. The same was
+                                           true for NH whites. Similarly, the volume of migration in and out of the United States was
+                                           higher among foreign-born Hispanics, persons born in Puerto Rico, and foreign-born NH
+                                           whites than among native-born Hispanics and native-born NH whites. We were surprised to
+                                           discover that among foreign-born Hispanics the number of moves to (3,400) and from (3,500)
+                                           the United States was nearly identical. In contrast, among foreign-born NH whites and
+                                           Hispanics born in Puerto Rico the net flow was decidedly out of the United States.
+
+                                           Table 2 presents the results from the Poisson regression models estimated to assess the evidence
+                                           for the salmon bias hypothesis. In all models the omitted category is US residence. Our results
+                                           were consistent with the salmon bias hypothesis in that mortality was higher among foreign-
+                                           born primary social security beneficiaries living abroad than among foreign-born beneficiaries
+                                           living in the United States. At the same time, the size of this excess varied among population
+                                           subgroups. For example, we found statistically significant excess mortality of 12-25 percent
+                                           among individuals born in Puerto Rico and 15-20 percent among other foreign-born Hispanics.
+
+
+
+
+NIH-PA Author Manuscript
+                                           Until now the salmon bias hypothesis has been discussed only in the context of the Hispanic
+                                           mortality paradox. We found that it also applies to the mortality experience of foreign-born
+                                           NH whites. The mortality of foreign-born NH white women living abroad was 8 percent higher
+                                           than the mortality of foreign-born NH white women living in the United States. The respective
+                                           figure for foreign-born NH white men was 10 percent.
+
+                                           We did not find statistically significant excess mortality for emigrants among US-born
+                                           Hispanics, US-born NH whites, nor among persons whose place of birth was unknown (Table
+                                           2). Indeed, we discovered that the mortality of US-born NH white men and women who were
+                                           living abroad was significantly lower than the mortality of US-born NH white men and women
+                                           living in the Unites States. These results suggest that US-born NH whites living abroad
+                                           represent a select group of healthy expatriates. Similarly, Hispanic and NH white men whose
+                                           place of birth was unknown and who were living abroad had significantly lower mortality than
+
+
+                                            Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+                           Turra and Elo                                                                                                  Page 7
+
+
+                                           their counterparts living in the United States, while the mortality of Hispanic and NH white
+                                           women whose place of birth was unknown did not differ by place of residence. In addition, the
+                                           mortality of US-born Hispanics living abroad did not differ from that of US-born Hispanics
+
+
+
+
+NIH-PA Author Manuscript
+                                           living in the United States.
+
+                                           The salmon bias hypothesis further predicts that the mortality of recent emigrants would be
+                                           particularly high since it is hypothesized that poor health precipitates emigration from the
+                                           United States. Table 3, which compares the mortality of persons who migrated during the study
+                                           period to that of US residents, is consistent with this interpretation. Among recent emigrants,
+                                           excess mortality was most pronounced for Hispanic women (76 percent) followed by the
+                                           estimated excess for Hispanic men (45 percent). The excess mortality among NH white
+                                           emigrant men (37 percent) and NH white emigrant women (19%) was lower than among
+                                           Hispanics, but nevertheless significantly higher than that of NH white US residents.
+
+                                           We also documented excess mortality among recent returnees to the United States. These
+                                           findings suggest that Hispanic men and NH white men and women who had emigrated from
+                                           the United States returned when their health deteriorated, as implied by their high mortality in
+                                           the year following their return to the United States. Thus, at least at ages 65 and above, the
+                                           health-selective migration of Hispanics and of NH whites appears to operate in both directions,
+                                           and the effect of salmon bias on mortality rates at older ages is partially counterbalanced by
+                                           the high mortality of emigrants returning to the United States. Because of the small number of
+
+
+
+
+NIH-PA Author Manuscript
+                                           moves during the study period, we could not distinguish between foreign-born and native-born
+                                           recent migrants in the estimates shown in Table 3. However, as seen in Table 1, among
+                                           Hispanics, most migrants were either foreign-born or they were born in Puerto Rico. These
+                                           two groups accounted for 80-90 percent of all moves in and out of the United States among
+                                           Hispanics. Among NH whites, moves by foreign-born individuals made up 44-60 percent of
+                                           all moves (Table 1).
+
+                                           In Table 4, we compare two sets of age-sex specific mortality estimates for Hispanics and NH
+                                           whites, one for U.S residents only and the other for U.S. and foreign residents combined. There
+                                           is virtually no difference in the Hispanic mortality advantage (measured to two decimal places)
+                                           between the two sets of estimates. Thus, although we find evidence for the salmon bias
+                                           hypothesis, at least among primary social security beneficiaries the higher mortality of the
+                                           foreign-born living abroad does not explain the lower mortality of Hispanics in the United
+                                           States.
+
+                              Discussion
+                                           Markides and Eschbach (2005) recently noted that the salmon bias hypothesis was the “biggest
+
+
+
+
+NIH-PA Author Manuscript
+                                           challenge” to the Hispanic mortality paradox and thus needed further investigation. To our
+                                           knowledge ours is the first study that has attempted to estimate whether mortality of foreign-
+                                           born elderly Hispanics who have emigrated from the United States is higher than among
+                                           foreign-born elderly Hispanics living in the US. It thus provides the first direct test of the impact
+                                           of salmon bias on the Hispanic mortality paradox at ages 65 and above; earlier investigations
+                                           could offer only indirect evidence of its role. Our results were consistent with the salmon bias
+                                           hypothesis. Mortality was higher among foreign-born Hispanic primary social security
+                                           beneficiaries living abroad than among foreign-born beneficiaries residing in the United States.
+                                           This excess was 12-25 percent for persons born in Puerto Rico and 15-20 percent for other
+                                           foreign-born Hispanics. We also found a similar pattern of excess mortality for foreign-born
+                                           NH white emigrants who experienced 8-10 percent higher death rates than native-born NH
+                                           whites living in the United States. These results suggest that the salmon-bias hypothesis has
+                                           more general applicability and it could also contribute to the lower mortality of foreign-born
+                                           NH white elderly living in the United States.
+
+
+                                            Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+                           Turra and Elo                                                                                                Page 8
+
+
+                                           The salmon bias hypothesis posits that return migration of foreign-born Hispanics is
+                                           precipitated by poor health which in turn places these emigrants at a greater risk of death than
+                                           foreign-born Hispanics who remain in the United States. Thus we should find particularly high
+
+
+
+
+NIH-PA Author Manuscript
+                                           mortality among recent emigrants. Again our results were consistent with this expectation in
+                                           that excess mortality was quite high among persons who emigrated during the study period
+                                           when compared to US residents. This excess risk ranged from 76 percent for Hispanic women
+                                           to 31 percent for NH white men.
+
+                                           We do not have information on the health conditions of these foreign-born emigrants, however,
+                                           and thus other explanations for their excess mortality are also plausible. For example, the
+                                           quality of and access to health care for the elderly is likely to differ between the United States
+                                           and Latin American and other foreign countries with concomitant differences in survival
+                                           outcomes (Ross, Pagan and Polsky 2006). In fact, it has been suggested that mortality of the
+                                           oldest old in the United States is lower than in Europe and Japan at least in part because of
+                                           greater availability of medical care for the elderly in the United States (Manton & Vaupel
+                                           1995).
+
+                                           Also relevant to the discussion of the salmon bias hypothesis, although heretofore not a part
+                                           of it, is our finding that primary social security beneficiaries who returned to the United States
+                                           after living abroad also had higher death rates than their US resident counterparts. Among
+                                           Hispanics most of these return migrants were born either in Puerto Rico or in Spanish-speaking
+
+
+
+
+NIH-PA Author Manuscript
+                                           countries of Latin America. Thus the impact of migration on elderly Hispanic mortality in the
+                                           United States appears to be more complex than previously hypothesized.
+
+                                           We also found higher mortality among NH white return migrants of whom only approximately
+                                           half were foreign-born. We speculate that this return migration is also related to health selection
+                                           in that individuals in poor health return to the United States to seek medical care for which
+                                           they are entitled under the Medicare program. Medicare, the health insurance program for the
+                                           elderly, covers all US social security beneficiaries and their medical expenses but only in the
+                                           United States. Thus this coverage provides incentives for individuals to return to the US when
+                                           they fall ill. More generally, motivation for migration at older ages is likely to differ from that
+                                           at younger ages. Jasso et al. (2004) hypothesize that migration related selectivity among older
+                                           immigrants is the opposite of that operating at younger ages - at younger ages immigration is
+                                           selective of healthier individuals who migrate to the United States to take advantage of work
+                                           opportunities, while at older ages work related immigration is likely to be minimal and other
+                                           factors, such as health or family reunification, are likely to play a more important role.
+
+                                           However, regardless of whether the higher mortality among Hispanic emigrants is due to
+                                           health-related migration or to other factors, when taken together with the volume of emigration,
+
+
+
+
+NIH-PA Author Manuscript
+                                           its magnitude is too small to explain a significant part of the Hispanic mortality advantage in
+                                           the United States among primary social security beneficiaries. Only a small fraction of foreign-
+                                           born Hispanics ages 65 and older who were also primary social security beneficiaries resided
+                                           outside the United States in the late 1990s. Furthermore, the bias due to the emigration of
+                                           individuals with higher mortality is partially offset by the higher mortality of return migrants,
+                                           particularly among men. Therefore, our findings do not support recent claims that out-
+                                           migration selection effects would explain the mortality advantage of elderly Hispanics.
+
+                                           Our study points to the importance of following individuals when they move in and out of the
+                                           United States. Without such longitudinal data it is impossible to test directly the effect of
+                                           emigration on US mortality. Indirect inference is unlikely to prove adequate either to confirm
+                                           or refute the salmon bias hypothesis. The social security data used here can only shed light on
+                                           the role of migration at older ages and only for a subgroup of the elderly. Furthermore, lack of
+                                           information on health, socioeconomic status, and migration history in these data limits our
+
+
+                                            Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+                           Turra and Elo                                                                                                  Page 9
+
+
+                                           ability to examine which factors influence mortality of elderly migrants. Thus, large survey
+                                           data sets covering a wider age range that also include information on a host of relevant
+                                           characteristics hypothesized to influence health are needed to assess fully the role of migration
+
+
+
+
+NIH-PA Author Manuscript
+                                           in the mortality advantage of foreign-born US residents. Nevertheless, our results suggest that
+                                           the role of migration on mortality at older ages is far more complex than previously noted.
+                                           With a sizable increase in foreign-born residents in recent decades, especially among
+                                           Hispanics, a better understanding of the role of migration on the health of the US population
+                                           is becoming increasingly important. In addition, in this paper we were unable to distinguish
+                                           among Hispanic subgroups, except for Puerto Ricans, and it may well be that migration effects
+                                           are not uniform. Migration flows in and out of the country at older ages is also likely to impact
+                                           the US health care system as emigrants may return to the United States to seek health care,
+                                           which is covered by Medicare but only in the United States. This issue will increase in salience
+                                           as current younger cohorts age and begin to reach retirement age.
+
+                              Limitations
+                                           Our study has several limitations that deserve to be noted. First, we had to restrict our analyses
+                                           to primary social security beneficiaries, which results in the exclusion of about 25-30 percent
+                                           of NH white and Hispanic men and about half of NH white and Hispanic women living in the
+                                           United States and an unknown number of elderly NH whites and Hispanics living abroad. A
+                                           comparison of the mortality estimates shown in Table 4 with death rates of Hispanic and NH
+
+
+
+
+NIH-PA Author Manuscript
+                                           white Medicare Part B recipients that exclude foreign residents but cover a larger percentage
+                                           of the elderly living in the United States suggest that restricting the data to primary beneficiaries
+                                           does not substantially bias our mortality estimates (Elo et al. 2004). The differences in age-
+                                           specific death rates between the two sets of estimates range from 1% to 9% and these
+                                           differences are similar in magnitude and direction for Hispanics and NH whites and for men
+                                           and women. Thus, the exclusion of secondary beneficiaries is unlikely to affect our conclusions
+                                           about the salmon bias hypothesis.
+
+                                           According to the 2000 Census, about 70 percent of the Hispanics who did not qualify for social
+                                           security benefits were foreign born and most had lived in the United States for more than 10
+                                           years (tabulations by the authors). Our data exclude the mortality experience of these
+                                           individuals. However, there would have to be a large volume of health-related emigration
+                                           among this group of foreign-born Hispanics and high death rates among the emigrants if their
+                                           mortality-migration experience were to account for the Hispanic mortality paradox. Even if
+                                           the probability of emigrating among Hispanic non-beneficiaries were twice as high as among
+                                           foreign-born Hispanic primary social security beneficiaries, we estimate that the mortality of
+                                           the foreign-born non-beneficiaries would have to be four times higher than the mortality of
+                                           U.S. residents for it to eliminate the Hispanic mortality advantage. This is an unlikely
+
+
+
+
+NIH-PA Author Manuscript
+                                           possibility given the excess mortality of 15-25% that we document for the foreign-born
+                                           Hispanics living abroad relative to U.S. residents.
+
+                                           It is, however, possible that we misestimate the volume of migration. We must infer migration
+                                           from an address change recorded in the MBR. A change of address could reflect a temporary
+                                           or seasonal move, rather than a migration. Furthermore, because occasionally the address on
+                                           the MBR is not the address of the beneficiary but that of his or her representative, an address
+                                           change may not occur although the beneficiary has moved, and, conversely, it may occur
+                                           although the beneficiary has not moved. These issues would affect our estimates only if they
+                                           involved changes from a US to a non-US address and vice versa. That our main finding
+                                           regarding the Hispanic mortality advantage is unaffected by these problems is confirmed by
+                                           comparing mortality estimates that are based on all primary social security beneficiaries and
+                                           those based only on US residents (Table 4).
+
+
+
+                                            Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+                           Turra and Elo                                                                                                               Page 10
+
+
+                                           The migration flows that we estimate during the 1996-2000 period are small. In general,
+                                           migration rates among the elderly are known to be low and our data pertain to individuals who
+                                           were long-time US residents. It is quite possible that most foreign-born individuals return to
+
+
+
+
+NIH-PA Author Manuscript
+                                           their countries of origin prior to or near retirement. For example, projections of the financial
+                                           health of the social security system assume that 30% of the total foreign-born population will
+                                           eventually return to their country of origin with most of the return migration (85%) taking place
+                                           in the first 10 years of US residence (Duleep 1994). Many others are assumed to leave after
+                                           qualifying for social security benefits. Findings from several studies show that that these late
+                                           emigrants leave mostly around the age of retirement (Reyes 1997; Ahmed & Robinson 1994;
+                                           Duleep 1994; Warren & Peck 1980). Another factor likely to reduce emigration at older ages
+                                           is the very low prevalence of undocumented migrants among the elderly in the United States
+                                           (Passel 2005). An advantage of the social security data is that they capture not only emigrants
+                                           who leave after reaching age 65, but also the experience of primary beneficiaries who migrated
+                                           prior to retirement. Thus, to the extent that health-related migration occurs below age 65 and
+                                           is reflected in mortality above age 65 our data capture this experience.
+
+                                           Finally, it would be advantageous to estimate the impact of salmon bias separately for various
+                                           Hispanic subgroups as its effect is hypothesized to vary by Hispanic origin (Palloni & Arias
+                                           2004). Unfortunately, the social security data are not well suited for such an investigation
+                                           because of missing information on place of birth for a sizable fraction of social security
+                                           beneficiaries. This missing information could also influence our results. The mortality of men
+
+
+
+
+NIH-PA Author Manuscript
+                                           whose place of birth was unknown and who were residing abroad was significantly lower than
+                                           the mortality of men living in the United States among both NH whites and Hispanics. Thus
+                                           if these men were included among the foreign-born residing abroad, this inclusion would have
+                                           attenuated the size of the excess mortality among the foreign born men living abroad. Among
+                                           NH white and Hispanic women the mortality of individuals with unknown place of birth was
+                                           not significantly different from that of US residents.
+
+                              Acknowledgments
+                                           This research was supported by Grant AG10168 from the National Institute on Aging to the University of Pennsylvania,
+                                           Samuel H. Preston, Principal Investigator. We are grateful to Bert Kestenbaum and B. Renee Ferguson of the Social
+                                           Security Administration for providing us the data used in this study and for their valuable input. We also thank Sam
+                                           Preston, Bob Hummer, Noreen Goldman, and two anonymous reviewers for their helpful comments. An earlier version
+                                           of this paper was presented at the annual meeting of the Population Association of America, Philadelphia, PA, April
+                                           2005.
+
+
+                              References
+                                           Abraido-Lanza AF, Dohrenwend BP, Ng-Mak DS, Turner JB. The Latino mortality paradox: A test of
+
+
+
+
+NIH-PA Author Manuscript
+                                              the “salmon bias” and healthy migrant hypotheses. American Journal of Public Health 1999;89(10):
+                                              1543–1548. [PubMed: 10511837]
+                                           Ahmed, B.; Robinson, G. Estimates of emigration of the foreign-born population: 1980-1990. US Census
+                                              Bureau; Washington, DC: 1994. Population Division Working Paper No. 9
+                                           Duleep HO. Social security and the emigration of immigrants. Social Security Bulletin 1994;57(1):37–
+                                              52. [PubMed: 8091274]
+                                           Elo, IT.; Preston, SH. Racial and ethnic differences in mortality at older ages. In: Martin, LG.; Soldo,
+                                              BJ., editors. Racial and ethnic differences in the health of older Americans. National Academy Press;
+                                              1997. p. 10-42.
+                                           Elo IT, Turra CM, Kestenbaum B, Ferguson BR. Mortality among elderly Hispanics in the United States:
+                                              past evidence and new results. Demography 2004;41(1):109–128. [PubMed: 15074127]
+                                           Franzini L, Ribble JC, Keddie AM. Understanding the Hispanic paradox. Ethnicity and Disease 2001;11
+                                              (3):496–518. [PubMed: 11572416]
+
+
+
+
+                                            Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+                           Turra and Elo                                                                                                       Page 11
+
+
+                                           Hu YR, Goldman N. Mortality differentials by marital status - an international comparison. Demography
+                                              1990;27(2):233–250. [PubMed: 2332088]
+                                           Hummer, RA.; Benjamins, MR.; Rogers, RG. Racial and ethnic disparities in health and mortality among
+
+
+
+
+NIH-PA Author Manuscript
+                                              the U.S. elderly population. In: Anderson, NB.; Bulatao, RA.; Cohen, B., editors. Critical perspectives
+                                              on racial and ethnic differences in health in late life. National Academy Press; 2004.
+                                           Jasso, G.; Massey, DS.; Rosenzweig, RS.; Smith, JP. Immigrant health, selectivity and acculturation. In:
+                                              Anderson, NB.; Bulatao, RA.; Cohen, B., editors. Critical perspectives on racial and ethnic differences
+                                              in health in late life. National Academy Press; 2004.
+                                           Kestenbaum B. Social security beneficiaries residing abroad and emigration. Research on Aging 1988;10
+                                                (4):493–498.
+                                           Kestenbaum, B. Recent mortality of the oldest old, from Medicare data. Washington, DC: 1997.
+                                           Kestenbaum B, Ferguson BR. Mortality of the extreme aged in the United States in the 1990s. North
+                                                American Actuarial Journal 2002;6:38–44.
+                                           Khlat M, Courbage Y. Mortality and causes of death of Moroccans in France, 1979-91. Population: An
+                                                English Selection 1996;8:59–94.
+                                           Lauderdale DS, Kestenbaum B. Mortality rates of elderly Asian American populations based on Medicare
+                                                and social security data. Demography 2002;39(3):529–540. [PubMed: 12205756]
+                                           LeClere FB, Rogers RG, Peters KD. Ethnicity and mortality in the United States: individual and
+                                                community correlates. Social Forces 1997;76(1):169–198.
+                                           Manton KG, Vaupel JW. Survival after the age of 80 in the United States, Sweden, France, England, and
+                                                Japan. New England Journal of Medicine 1995;333(18):1232–1235. [PubMed: 7565998]
+
+
+
+
+NIH-PA Author Manuscript
+                                           Markides KS, Eschbach K. Aging, migration, and mortality: current status of research on the Hispanic
+                                                paradox. Journals of Gerontology: Series B 2005;60B:68–75.
+                                           Markides, KS.; Rudkin, L.; Angel, J.; Espino, DV. Health status of the Hispanic elderly. In: Martin, LG.;
+                                                Soldo, BJ., editors. Racial and ethnic differences in the health of older Americans. National Academy
+                                                Press; 1997. p. 105-162.
+                                           Marmot MG, Adelstein AM, Bulusu L. Lessons from the study of immigrant mortality. Lancet 1984;1
+                                                (8392):1455–1457. [PubMed: 6145889]
+                                           NCHS. Multiple cause of death public use files. 1986-1994 survey years. Dates of death 1986-1996.
+                                                NCHS; Hyattsville, MD: 2000.
+                                           Pablos-Mendez A. Mortality among Hispanics. JAMA 1994;271(16):1237. [PubMed: 8031363]letter;
+                                                comment on: JAMA 1993 Nov 24;270(20): 2464-8
+                                           Palloni A, Arias E. Paradox lost: explaining the Hispanic adult mortality advantage. Demography 2004;41
+                                                (3):385–415. [PubMed: 15461007]
+                                           Palloni, A.; Ewbank, DC. Selection processes in the study of racial and ethnic differentials in adult health
+                                                and mortality. In: Anderson, NB.; Bulatao, RA.; Cohen, B., editors. Critical perspectives on racial
+                                                and ethnic differences in health in late life. National Academy Press; 2004.
+                                           Palloni, A.; Morenoff, J. Interpreting the paradoxical in the Hispanic paradox: demographic and
+                                                epidemiological approaches. In: Weinstein, M.; Hermalin, A.; Soto, MA., editors. Population health
+
+
+
+
+NIH-PA Author Manuscript
+                                                and aging: strengthening the dialogue between epidemiology and demography. New York Academy
+                                                of Sciences; New York, NY: 2001.
+                                           Passel, JS. Estimates of the size and characteristics of the undocumented population. Report, Pew
+                                                Hispanic Center; Washington, D.C.: 2005.
+                                           Passel, JS.; Word, DL. Constructing the list of Spanish surnames for the 1980 census: an application of
+                                                Bayes’ theorem; Presented at annual meeting of the Population Association of America; Denver, CO.
+                                                1980; Apr 10-12.
+                                           Reyes, BI. Dynamics of immigration: return migration to Western Mexico. Public Policy Institute of
+                                                California; San Francisco, CA: 1997.
+                                           Rosenberg HM, Maurer JD, Sorlie PD, MacDorman MF, Hoyert DL, Spitler JF, Scott C. Quality of death
+                                                rates by race and Hispanic origin: a summary of current research, 1999. Vital and Health Statistics
+                                                1999;2(128)
+                                           Ross SJ, Pagan JA, Polsky D. Access to health care for migrants returning to Mexico. Journal of Health
+                                                Care for the Poor and Underserved 2006;17:374–385. [PubMed: 16702721]
+
+
+
+                                            Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+                           Turra and Elo                                                                                                    Page 12
+
+
+                                           Sharma RD, Michalowski M, Verma RBP. Mortality differentials among immigrant populations in
+                                               Canada. International Migration 1990;28:443–450. [PubMed: 12159559]
+                                           Sorlie PD, Backlund MS, Johnson NJ, Rogot E. Mortality by Hispanic status in the United States. Journal
+
+
+
+
+NIH-PA Author Manuscript
+                                               of the American Medical Association 1993;20:2464–2468. [PubMed: 8031341]
+                                           Turra, CM. Living and dying at older ages: essays on the Hispanic mortality paradox and the annuity
+                                               puzzle in the U.S. Ph.D. Thesis. University of Pennsylvania; 2004.
+                                           U.S. Census Bureau. Race and Hispanic or Latino Origin by Age and Sex for the United States: 2000
+                                               (PHT-T-8). 2002. http://www.census.gov/population/www/cen2000/phc-t08.html
+                                           Warren R, Peck JM. Foreign-born emigration from the United States, 1960-1970. Demography 1980;17
+                                               (1):71–84. [PubMed: 7353709]
+                                           Word, DL.; Perkins, RC. Building a Spanish surname list for the 1990s - a new approach to an old problem.
+                                               US Census Bureau; Washington, DC: 1996. Technical working paper No. 13
+
+
+
+
+NIH-PA Author Manuscript
+
+
+
+
+NIH-PA Author Manuscript
+
+
+
+
+                                            Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+                                                                            NIH-PA Author Manuscript                                    NIH-PA Author Manuscript                               NIH-PA Author Manuscript
+                                                                                                                                                              Table 1
+                                                                                                  Distribution of Person-Years Lived and Events by Population Subgroup, 1996-2000: Primary Social Security Beneficiaries Ages 65 and
+                                                                                                  Above
+
+                                                                                                                           Number of Person-Years (1,000)                   Number of Moves (1,000)             Number of Deaths (1,000)
+
+                                                                              Population Subgroup            U.S. Residence        Foreign Residence        % Foreign   To the U.S.      From the U.S.   U.S. Residence       Foreign Residence
+                                                                                                                                                                                                                                                  Turra and Elo
+                                                                              Men
+                                                                                     Hispanics
+                                                                                         U.S.-born               904.7                   18.5                  2.0          0.7                0.4            44.8                   1.0
+                                                                                         Foreign-born            954.7                   98.4                  9.3          3.4                3.5            39.7                   5.0
+                                                                                         Born in Puerto
+                                                                                                                 198.0                   11.6                  5.5          0.9                3.5            9.6                    0.7
+                                                                              Rico
+                                                                                         Unknown Place
+                                                                                                                 196.5                   15.9                  7.5          0.3                0.6            27.5                   2.3
+                                                                              of Birth
+                                                                                   NH Whites
+                                                                                       U.S.-born                38,053.4                  68.1                 0.2          2.4                2.0          2,071.4                  3.2
+                                                                                       Foreign-born              1,915.6                 236.1                11.0          2.2                4.1            97.5                  11.7
+                                                                                       Unknown Place
+                                                                                                                4,845.8                  36.4                  0.7          0.4                0.6           840.8                   5.7
+                                                                              of Birth
+                                                                              Women
+                                                                                   Hispanics
+                                                                                       U.S.-born                 735.5                    5.9                  0.8          0.3                0.1            22.2                   0.2
+                                                                                       Foreign-born              738.4                   37.2                  4.8          1.3                1.9            18.6                   1.2
+                                                                                       Born in Puerto
+                                                                                                                 170.1                    6.6                  3.7          0.6                2.3            5.2                    0.2
+                                                                              Rico
+                                                                                       Unknown Place
+                                                                                                                 176.1                    7.4                  4.0          0.1                0.4            20.5                   0.9
+                                                                              of Birth
+                                                                                   NH Whites
+                                                                                       U.S.-born                34,649.2                  34.7                 0.1          1.1                0.9          1,287.0                  1.1
+                                                                                       Foreign-born              1,944.0                 144.4                 6.9          1.7                3.2            68.0                   4.8
+                                                                                       Unknown Place
+                                                                                                                6,608.3                  44.3                  0.7          0.3                0.7           925.5                   6.4
+                                                                              of Birth
+
+Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+
+
+
+
+                                                                                                                                                                                                                                                  Page 13
+                                 Turra and Elo                                                                                                                           Page 14
+
+                                                                                                   Table 2
+                                                                      Estimated Mortality Ratios (foreign residence relative to US residence) from
+                                                                      Poisson Modelsa by Population Subgroup, 1996-2000: Primary Social Security
+                                                                      Beneficiaries Ages 65 and Above
+
+
+
+
+NIH-PA Author Manuscript
+                           Population Subgroup                                                                  Men                                          Women
+
+                           Hispanics
+                               U.S.-born                                                                      1.05 (.152)                                 0.90 (.180)
+                               Foreign-born                                                                 1.15 (.000)***                              1.20 (.000)***
+                               Born in Puerto Rico                                                           1.12 (.004)**                               1.25 (.001)**
+                               Unknown Place of Birth                                                        0.95 (.034)*                                 0.95 (.176)
+                           NH-whites
+                               U.S.-born                                                                    0.91 (.000)***                              0.86 (.000)***
+                               Foreign-born                                                                 1.10 (.000)***                              1.08 (.000)***
+                               Unknown Place of Birth                                                       0.92 (.000)***                                0.99 (.348)
+
+                           p-values are in parentheses.
+                           *
+                            p<.05
+                           **
+                               p<.01
+                           ***
+                                p<.001
+                           a
+                            Separate Poisson regression models were estimated for each population subgroup, using the specification described in the text.
+
+
+
+
+NIH-PA Author Manuscript
+
+
+
+
+NIH-PA Author Manuscript
+
+
+
+
+                                                          Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+                                 Turra and Elo                                                                                                                        Page 15
+
+                                                                                                    Table 3
+                                                                       Estimated Mortality Ratios (recent migrants relative to U.S. residents)a from
+                                                                       Poisson Modelsb by Population Subgroup: Primary Social Security Beneficiaries
+                                                                       Ages 65 and above who Migrated between 1996 and 2000
+
+
+
+
+NIH-PA Author Manuscript
+                           Population Subgroup                                                           Men                                            Women
+
+                           1996-2000 Emigrants
+                               Hispanics                                                            1.45 (.000)***                                   1.76 (.000)***
+                               NH-whites                                                            1.37 (.000)***                                    1.19 (.035)*
+                           1996-2000 Return migrants to the U.S.
+                               Hispanics                                                            1.48 (.000)***                                     0.89 (.600)
+                               NH-whites                                                            1.31 (.001)**                                     1.37 (.005)**
+
+                           p-values are in parentheses.
+                           *
+                            p<.05
+                           **
+                               p<.01
+                           ***
+                                p<.001
+                           a
+                            Post-migration mortality of migrants in the year of the move relative to U.S. residents.
+                           b
+                            Separate Poisson regression models were estimated for each population subgroup, using the specification described in the text.
+
+
+
+
+NIH-PA Author Manuscript
+
+
+
+
+NIH-PA Author Manuscript
+
+
+
+
+                                                          Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+                                                                            NIH-PA Author Manuscript                        NIH-PA Author Manuscript                     NIH-PA Author Manuscript
+                                                                                                                                            Table 4
+                                                                                          Estimated Age-Specific Mortality Rates (Deaths per 1,000) for Hispanic and NH White Men and Women, and Hispanic to NH White
+                                                                                          Mortality Ratios, by Place of Residence, 1996-2000: Primary Social Security Beneficiaries Ages 65 and Above
+
+                                                                                                                   U.S. Residents                                        U.S. & Foreign Residents Combined
+
+                                                                              Sex & Age
+                                                                                             Hispanics       NH Whites              Ratio   95% CI         Hispanics        NH Whites             Ratio      95% CI
+                                                                              Groups                                                                                                                                      Turra and Elo
+
+                                                                              Men
+                                                                               65-69           24.61            28.62               0.86    0.84, 0.88       24.71             28.58              0.86       0.85, 0.88
+                                                                               70-74           34.53            39.49               0.87    0.86, 0.88       34.63             39.45              0.88       0.87, 0.89
+                                                                               75-79           53.07            60.68               0.87    0.86, 0.89       53.28             60.65              0.88       0.87, 0.89
+                                                                               80-84           88.34            99.18               0.89    0.88, 0.90       88.46             99.16              0.89       0.88, 0.90
+                                                                               85-89          142.08           162.57               0.87    0.86, 0.89      142.04            162.52              0.87       0.86, 0.89
+                                                                               90+            248.44           288.22               0.86    0.85, 0.88      248.04            288.14              0.86       0.85, 0.88
+                                                                              Women
+                                                                               65-69           12.92            15.76               0.82    0.80, 0.84       12.93             15.75              0.82       0.80, 0.85
+                                                                               70-74           18.58            22.76               0.82    0.80, 0.83       18.60             22.74              0.82       0.80, 0.83
+                                                                               75-79           30.72            36.94               0.83    0.82, 0.85       30.92             36.92              0.84       0.82, 0.85
+                                                                               80-84           54.63            63.84               0.86    0.84, 0.87       54.60             63.84              0.86       0.84, 0.87
+                                                                               85-89           98.35           112.07               0.88    0.86, 0.89       98.50            112.09              0.88       0.86, 0.89
+                                                                               90+            199.96           226.96               0.88    0.87, 0.90      199.54            227.00              0.88       0.86, 0.89
+
+
+
+
+Popul Res Policy Rev. Author manuscript; available in PMC 2009 January 1.
+
+
+
+
+                                                                                                                                                                                                                          Page 16
+

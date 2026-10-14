@@ -1,0 +1,127 @@
+{
+  "fenelon": {
+    "primary_copy": "Published article PDF; not a secondary table",
+    "publisher_url": "https://doi.org/10.1016/j.ssmph.2017.01.011",
+    "sha256": "861e1002190c26b57d8c4b1a994933e86da79e7061f8c2e236503c607c921637",
+    "url": "https://www.clevelandhealth.org/assets/documents/health/minority_health/Analysis_in_Mortality_Experience_of_Hispanic_Subgroups.pdf"
+  },
+  "local_sources": {
+    "infra/immigration-fiscal/added_age_mix_2026_10_07/derived/age_mix.json": "01b6653fc6291365339be9ad2bdedf9053d2b45c6c98f856c9081f8ccfe713e3",
+    "infra/immigration-fiscal/black_comparator_rough_2026_09_28/accrual_black.py": "f6415fb50408de83cc99f578ed462f7957bc909061ca6b74dfb15efa184b7737",
+    "infra/immigration-fiscal/black_comparator_rough_2026_09_28/derived/accrual_ratios_mortality_oct14.csv": "deab65e069dc34f585262de2ac99db9d17588987b3074d050cdf338507909b1b",
+    "infra/immigration-fiscal/black_comparator_rough_2026_09_28/derived/accrual_ratios_oct14.csv": "93fe256742053b02660ca47d0a3b60fa6b536645245ffb3db2f370895349bef0",
+    "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+    "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/derived/cps_ss_stage.parquet": "4fcf6b421d85583b9dd266f8cd91af3be666a66847b132b44330d22145f238b7",
+    "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/fenelon2017.pdf": "861e1002190c26b57d8c4b1a994933e86da79e7061f8c2e236503c607c921637",
+    "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/fenelon2017.txt": "b28cbce7f64d635937e934722e726aed502e1e5fcc539719f4a3327d11b3f75e",
+    "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/route_archive/accrual_black.py.txt": "f6415fb50408de83cc99f578ed462f7957bc909061ca6b74dfb15efa184b7737",
+    "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/route_archive/accrual_white.py.txt": "d5e766c6000e3ad55bcc991ea2492020617dbcc50ebc77f9308a7e0c54d9cb66",
+    "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/route_archive/mortality_comparators.py.txt": "c98ab1cfa73e9ce2c9e82e5f47e9d8a6b4edb45e4ff92055e2717e1ee2debc9a",
+    "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/route_archive/tr2026_path.py.txt": "d5d0617db4ce188790858eacc6101486fa6a8b5988e545c0a4811cf39534a30b",
+    "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/route_archive/white_pins.json": "f59c2720178568f2b0b85528b0399f2e6290a5086f44125d512da5f5fddfc5d8",
+    "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/salmon_turra_elo_2008.pdf": "a70d7b848353f3bd1098d7099eadd9c6f3fd0b6c0b76462d7b9797731ac42d2d",
+    "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/salmon_turra_elo_2008.txt": "de88ffb2f7d6d8d7f79f5e471ab22de328e94319d37ac7be0b893ee41f7ebeb9",
+    "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/salmon_turra_rates.csv": "e4fe00f7d2e22407ad500a31db00ae1dacecb0be2626c5287b49ed4a64f68f1e",
+    "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/salmon_vanhook_zhang_2011.html": "7f6ecc3564199587c35e80b274a4d8f5075e621e96aba6d178b62d662ad61742",
+    "infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958",
+    "infra/immigration-fiscal/main_case_2026_10_14/derived/corrections_cash.json": "581701613b7f3c8086437100334e3818ebe062dc57e2e486f14897208b05de97",
+    "infra/immigration-fiscal/main_case_2026_10_14/derived/main_case_bands.csv": "9b953c9c5825acb69505070d4ca5cfec7626cd6fe8aa08e5221c2ac39a361cdb",
+    "infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json": "b30720cff0c29637ab6f74d809829fdbfc4b82a00a45fa286e3f0c1c5c183582",
+    "infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+    "infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_split.csv": "6a652151547df2c33a35c46a016bb5be3d8cc4f84c359ac6f422b45766553564",
+    "infra/immigration-fiscal/pension_accrual_2026_09_28/benefit_tax.py": "2a1179fcf1537984d82ffef2624cf0ebc0b98df34d0d882fc8769feae6dd769c",
+    "infra/immigration-fiscal/pension_accrual_2026_09_28/lifetime_model.py": "e5337b51943180e383dc2573a49053228881a1518a4453c4e118499a31b02fd6",
+    "infra/immigration-fiscal/pension_accrual_2026_09_28/national_check.py": "a7f0f38182407d8285b8af8ca5ba3963f0e478f616c79619d291ab591bfd4750",
+    "infra/immigration-fiscal/pension_accrual_2026_09_28/pension_accrual.py": "90fd40c9bfc5d9b71cd8d300c9244e9ebb14529e09bb3c436e02ca6f2dc32789",
+    "infra/immigration-fiscal/pension_accrual_2026_09_28/reads/quotes.json": "0400b1726c0606fc431cacb9465ac2b864ca1995e9558d28f01af216786bdab0",
+    "infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py": "ae09107dcfabca4bf2c30596db9092cab7b16e384a971c11450ceda95aef566a",
+    "infra/immigration-fiscal/pension_tr2026_2026_10_06/pension_tr2026.py": "c80555b734b37b64b5edd73f120326c5224d8c9c30688f877bc2d34d3e8e8609",
+    "infra/immigration-fiscal/pension_tr2026_2026_10_06/sources_tr2026.py": "de46db633e34e85886583229837cc71cd4391090952ec34a4bde445043a392b7",
+    "infra/immigration-fiscal/pension_tr2026_2026_10_06/test_pension_tr2026.py": "366d3e72c739a6e265c920c8ecae0eff6d8752d9bc27834dab776bcac88c1a1f",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/accrual_white.py": "d5e766c6000e3ad55bcc991ea2492020617dbcc50ebc77f9308a7e0c54d9cb66",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/accrual_ratios_mortality_oct14.csv": "e2d3a3bf691f33f8264dd94b1dfb8ffc2cf80e325e29af57edccef11e885bb66",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/accrual_ratios_oct14.csv": "2468354ea3ca5493a36ed9135904d6fca48dd37bcb98bb2fe0ba34afbf03c492",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/engine_lines_oct14.json": "7ed7587c4017b309a8a4917cc1c741234f768e82a2a4ee97103dd773fe1da355",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/engine_lines_oct14_cash.json": "c3a280263640644fa13b45a699cda0055b8889ae998050bb2920f49bbbd0e855",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/engine_lines_oct14_union.json": "1a2549fb315d7fd5a171d0f3077337792d4c3f9d222a61a191c38adf5d623785",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/engine_lines_oct14_union_cash.json": "907e660eaa79c4609174787105e8eebf00e2a672e13c769819b50854238f071d",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/symmetric_comparisons_oct14.csv": "73401ad2057cc357956db5a8dea9f48ff87e19a3c83b7a41c8b05b10c32d96dc",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/symmetric_hispanic_arm_oct14.csv": "2e231b611365eab1fd6b7e679721987f4d226aec26a2deb6657e8b99fc3deab7",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/symmetric_results_oct14.csv": "981b6a39a168b6896cce16fb96255834152b2d4d451b50867d4c88e6623c770a",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/inputs/pins.json": "f59c2720178568f2b0b85528b0399f2e6290a5086f44125d512da5f5fddfc5d8",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/mortality_comparators.py": "c98ab1cfa73e9ce2c9e82e5f47e9d8a6b4edb45e4ff92055e2717e1ee2debc9a",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/tr2026_path.py": "d5d0617db4ce188790858eacc6101486fa6a8b5988e545c0a4811cf39534a30b"
+  },
+  "mortality_sources": {
+    "lt2024_Table02.xlsx": {
+      "sha256": "f7908e92f47f6250308d671abb0a30b74f86aa5d3e6d402a5d092054ed8a5ea0",
+      "source": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/lt2024_Table02.xlsx",
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/NVSR/75-05/Table02.xlsx",
+      "year": 2024
+    },
+    "lt2024_Table03.xlsx": {
+      "sha256": "3024d85dc0566dfad80a4ea76dc988694f7a276a6f15e6b2316ad5e9cf5477ef",
+      "source": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/lt2024_Table03.xlsx",
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/NVSR/75-05/Table03.xlsx",
+      "year": 2024
+    },
+    "lt2024_Table05.xlsx": {
+      "sha256": "f72e7d0e780d48d212b127e8ca1ac685ba6dc8897c7179c848c0a71b7646d3a8",
+      "source": "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/lt2024_Table05.xlsx",
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/NVSR/75-05/Table05.xlsx",
+      "year": 2024
+    },
+    "lt2024_Table06.xlsx": {
+      "sha256": "1faef865f600a9326a2626fb83decffbdf5d5126a6d92693aa8c0607478d5168",
+      "source": "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/lt2024_Table06.xlsx",
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/NVSR/75-05/Table06.xlsx",
+      "year": 2024
+    },
+    "lt2024_Table17.xlsx": {
+      "sha256": "e979e13760c3fcfcc541f5a8f341b930173192da6dbe211c90b29589dc9fc9d6",
+      "source": "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/lt2024_Table17.xlsx",
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/NVSR/75-05/Table17.xlsx",
+      "year": 2024
+    },
+    "lt2024_Table18.xlsx": {
+      "sha256": "1a11237f158bc383a68e97e38c9b3bd91aa036ac011a3bcc782b78e8cb98fbcd",
+      "source": "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/_cache/lt2024_Table18.xlsx",
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/NVSR/75-05/Table18.xlsx",
+      "year": 2024
+    }
+  },
+  "route_archives": {
+    "infra/immigration-fiscal/black_comparator_rough_2026_09_28/accrual_black.py": {
+      "file": "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/route_archive/accrual_black.py.txt",
+      "sha256": "f6415fb50408de83cc99f578ed462f7957bc909061ca6b74dfb15efa184b7737"
+    },
+    "infra/immigration-fiscal/white_replacement_2026_09_28/accrual_white.py": {
+      "file": "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/route_archive/accrual_white.py.txt",
+      "sha256": "d5e766c6000e3ad55bcc991ea2492020617dbcc50ebc77f9308a7e0c54d9cb66"
+    },
+    "infra/immigration-fiscal/white_replacement_2026_09_28/inputs/pins.json": {
+      "file": "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/route_archive/white_pins.json",
+      "sha256": "f59c2720178568f2b0b85528b0399f2e6290a5086f44125d512da5f5fddfc5d8"
+    },
+    "infra/immigration-fiscal/white_replacement_2026_09_28/mortality_comparators.py": {
+      "file": "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/route_archive/mortality_comparators.py.txt",
+      "sha256": "c98ab1cfa73e9ce2c9e82e5f47e9d8a6b4edb45e4ff92055e2717e1ee2debc9a"
+    },
+    "infra/immigration-fiscal/white_replacement_2026_09_28/tr2026_path.py": {
+      "file": "infra/immigration-fiscal/lineage_mortality_2026_10_14/inputs/route_archive/tr2026_path.py.txt",
+      "sha256": "d5d0617db4ce188790858eacc6101486fa6a8b5988e545c0a4811cf39534a30b"
+    }
+  },
+  "route_mode": "explicit frozen oct14/v7 route; concurrent oct15 entrypoint migration excluded",
+  "salmon_sources": {
+    "salmon_turra_elo_2008.pdf": {
+      "publisher_url": "https://doi.org/10.1007/s11113-008-9087-4",
+      "sha256": "a70d7b848353f3bd1098d7099eadd9c6f3fd0b6c0b76462d7b9797731ac42d2d",
+      "url": "https://artefacts-discovery.researcher.life/full_text/DA-2/e2/e285c4d9b9f835799eded1acd9e1f52d/full_text/ac6ec3fbd082a0eb9d3165d716ddf65f.pdf"
+    },
+    "salmon_vanhook_zhang_2011.html": {
+      "sha256": "7f6ecc3564199587c35e80b274a4d8f5075e621e96aba6d178b62d662ad61742",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3367327/"
+    }
+  }
+}

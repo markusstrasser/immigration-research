@@ -1,0 +1,46 @@
+{
+  "added_bound": "Componentwise min/max relative mortality factors across the comparators' three measured age/profile combinations, all assigned US-born Mexican mortality. Not an identified exact added-dollar split.",
+  "attribution": "Identified delta by row4 actuarial CPS OASDI and HI payroll shares, common union benefit-tax rate. Not a replacement of the case's complete generation account.",
+  "cash_zero_reason": "Only future accrued OASDI/Part A liabilities and future benefit-tax timing change. Current cash benefits, taxes, population and every other line stay fixed.",
+  "controls": [
+    {
+      "control": "general union/cps",
+      "max_abs_gap": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "control": "general union/row4",
+      "max_abs_gap": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "control": "general third_plus_nh_white/cps",
+      "max_abs_gap": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "control": "general nh_black/cps",
+      "max_abs_gap": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "control": "general G3plus/cps",
+      "max_abs_gap": 4.163336342344337e-17,
+      "passed": true
+    },
+    {
+      "control": "pooled_hispanic low",
+      "max_abs_gap": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "control": "pooled_hispanic high",
+      "max_abs_gap": 1.7763568394002505e-15,
+      "passed": true
+    }
+  ],
+  "denominator_sha256": "e75002401b80e96be36d8a7a9d2bbdd21e4b15d63b440b8b406d1cadbe0a8fb9",
+  "denominator_unchanged": true,
+  "general_controls_before_new_tables": true,
+  "parts_close_absolute_1e_9": true
+}
