@@ -1,7 +1,7 @@
-"""The pension accrual at scheduled benefits on the 2026 inputs, for engine_breaks_sept29.cjs --case oct07 (C1's
+"""The pension accrual at scheduled benefits on the 2026 inputs, for engine_breaks_sept29.cjs --case oct14 (C1's
 pension_scheduled item and C2's tally at scheduled benefits, both beside the case).
 
-Main case v6 (main_case_2026_10_07, item pension_tr2026) values the accrual on the 2026 Trustees' separate-funds arm
+Main case v7 (main_case_2026_10_14, retaining item pension_tr2026) values the accrual on the 2026 Trustees' separate-funds arm
 at payable benefits, and its scheduled_benefits_arm stays on the 2025 reports (ratio_net 1.2406). The break script's
 rule, scheduled less payable, would then mix the 2025 scheduled arm with the 2026 payable one. Here the scheduled arm
 is rebuilt on the 2026 inputs the payable arm reads (TR 2026's new-issue rates, Note 2026.3's wage index, Table V.C1's
@@ -40,7 +40,7 @@ HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
 REPO = FISCAL.parents[1]
 WR = FISCAL / "white_replacement_2026_09_28"
-CASE_PAYLOAD = FISCAL / "main_case_2026_10_07/derived/corrections.json"
+CASE_PAYLOAD = FISCAL / "main_case_2026_10_14/derived/corrections.json"
 PEN_FILE = FISCAL / "pension_accrual_2026_09_28/derived/summary.json"
 
 
@@ -120,7 +120,7 @@ def main():
     print(f"[gate] the 2026 payable run is the case's pension block (ratio_net {r26['payable']['ratio_net']:.9f}, "
           f"Part A {r26['payable']['part_a_bn']:.6f}bn)")
     out = dict(
-        question="the pension accrual at scheduled benefits on the 2026 inputs the v6 case's payable arm reads",
+        question="the pension accrual at scheduled benefits on the 2026 inputs the live v7 case's payable arm reads",
         rule="Note 2025.7 Table 1 x k(2026 inputs, scheduled) / mwr(Note 2025.7's basis, 2025 economy, scheduled); "
              "timing at scheduled benefits on the 2026 inputs; Part A at scheduled benefits on the 2026 HI costs and "
              "mortality; net at the union's relative benefit-tax rate",

@@ -861,3 +861,120 @@ claim.
 - 02:16:46–02:17:42: `rerun_lane.py` with the nine commands: **IDENTICAL 43/43, exit 0**.
 - 02:22:42–02:23:35: the docstring's date for the map's wording corrected (on v6 since 2026-10-07); `rerun_lane.py`
   with the nine commands: **IDENTICAL 43/43, exit 0**.
+
+## v7 case (oct14), 2026-10-14
+
+**Status:** Engine complete; tables and full-lane reproducibility await the final white, debt and winners outputs.
+The live computed case is now `oct14`. Historical keyed outputs and their log rows are preserved.
+The adopted case's four primary files match commit `148ed1ea` byte for byte; Consumers R5–R9 and the adoption
+decision were re-read after `CASE_FINAL` appeared.
+
+- The band is **$339.5520 / 423.6493bn**, with cash **$264.4256 / 348.5228bn**, at personal specifications 16 / 11.
+  Both are gated against the committed bands at 1e-4 and the full-precision `summary.json` `v7` fields at 1e-9.
+  [CALCULATION: `engine_breaks_sept29.cjs --case oct14` → `derived/c1_arms_oct14.csv`, rows `adopted`, `pension_cash`]
+- C2's direct receipts less household transfers are **−$8.0163 / −10.1381bn**; on cash **+$67.1101 / 64.9884bn**.
+  Direct receipts exclude the job-capital indirect receipts; the service break-even carries their responses.
+  [CALCULATION: `derived/c2_tally_oct14.csv`, `tally_bn`]
+- C3's rebuilt split is taxes **+$52.3787 / 49.5965bn**, spending **−$57.0088 / 56.8919bn**, net
+  **−$4.6301 / −7.2954bn**. Its historical net-about-$11bn clause breaks, while cancellation holds. The side range
+  is read at its printed whole-$bn precision (57.0088 prints 57). These are the existing thresholds:
+  `tables_oct07.py:542–543` (44–57) and `:560–562` (a quarter on the net; half the smaller side for cancellation).
+  [CALCULATION: `derived/c3_correction_split_oct14.csv`, `pension_rebuilt` rows]
+
+R6's lineage credit, R7's receipt responses, R8's white income-tax shifts and R9's row-4 corrections travel by
+`meta.items`, not edit positions. R9 keeps `meta.pension_accrual` on published weights, so C3 retains the
+`row4_frame` union Social Security and Medicare parts as fixed offsets in every dataset subset. Lineage parts
+remain in their own accrual. The full-payload rebuild still moves nothing (1e-9), and the receipt follow-through
+gate retains 1e-9. C6 retains its documented 1e-6 generation-to-case gate; its printed four-decimal rows require
+2e-4 for a three-row sum in the tables.
+
+The replacement-child alternatives retain their established v5-to-live additive transfer [APPROX], rederived at
+matching personal 16 / 11. The stored white per-person model is reconstructed exactly from `white_lines.json`
+using `main_case_lineage_2026_10_05/lineage_case.cjs:283–288`, `:318–332`. All four historical prices reproduce
+exactly, and that model's personal-16 prices equal its shared-48 prices because its amounts are identical in both
+allocations. This is not a new replacement framing or a v7 replacement-child model. The source gates run before
+the transferred delta enters any minimal cut.
+
+`tables_oct14.py` follows the two-output pattern, with every final source file and every numeric CSV cell pinned
+in `tables_oct14_pins.json`; a source change stops before writing. C8 keeps the map's explicitly historical
+oct07 claim by the operator's presentation-layer rule, and compares it with live oct14 white results. It requires
+both engine-union comparator costs to match the adopted set/cash case at 1e-4, and both ends to match 16 / 11
+exactly. The existing map-text, registry-value and raw-cash why-line guards remain. C7/C9 and C6's progress clause
+are labeled as historical evidence, not newly measured on v7. The historical premise membership matrix is
+retained, with live swap effects regenerated.
+
+### Live reproduce commands
+
+```sh
+OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 uv run --no-project python3 infra/immigration-fiscal/break_conditions_2026_09_29/scheduled_tr2026.py
+node infra/immigration-fiscal/break_conditions_2026_09_29/engine_breaks_sept29.cjs --case oct14
+OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 uv run --no-project python3 infra/immigration-fiscal/break_conditions_2026_09_29/tables_oct14.py
+```
+
+These compute only the live case. Earlier reproduce blocks record earlier runs; an explicit `--case sept29`
+is now required for the archived default route. `scheduled_tr2026.json` is the unkeyed live output and now pins
+the oct14 payload; the pension math and numerical gates are unchanged.
+
+### Log (v7; append-only)
+
+- 2026-10-14 17:09–17:12 JST — candidate probes: unknown oct14 route, then personal-end routing, then a stop on
+  missing generation outputs; nothing written. Python/Node compile checks passed.
+- 2026-10-14 18:14 JST — read `CASE_FINAL`, re-read the final contract and decision, and verified the four primary
+  files against commit `148ed1ea`, exit 0.
+- 2026-10-14 18:18 JST — scheduled-benefits run exit 0, 47.54s, maximum RSS 306.7MiB. The initial macOS
+  `/usr/bin/time -l` diagnostic had failed after the successful calculation because sandbox denies
+  `sysctl kern.clockrate`; a subprocess/resource wrapper repaired the diagnostic, propagated a test child's
+  exit 7 correctly, and the pension run was then rerun successfully.
+- 2026-10-14 18:25 JST — engine exit 0, **86/86 gates**, 35.29s, maximum RSS 658.9MiB. The added full-precision
+  set/cash summary gates passed; all seven oct14 engine CSVs were written. A parent-message cash transcription
+  was corrected from the files and direct `P.CASH` route; the program's figures and tolerance never changed.
+- 2026-10-14 18:39–18:42 JST — final core subset rerun: both commands exit 0, **IDENTICAL 51/51**, harness exit 0.
+  The commands are the first two live reproduce commands above. The harness explicitly excludes
+  `tables_oct14.py` with `--allow-unrun`; this validates the scheduled/engine core only, not the full lane.
+  Python compilation (2/2), Node syntax and scoped whitespace checks pass.
+- 2026-10-14 18:42:46 JST — **Final status: core moved; combined tables STOPPED.** The table run exits 1 before
+  writing at `[BLOCKED] white_replacement_2026_09_28/derived/headline_oct14.csv absent: run its live oct14 producer first`.
+  That producer has stopped on a missing R9 rule: how should the rough identified-union OASDI net ratio, Part A
+  per-tax rate and benefit-tax calibration use `meta.row4_frame.values`, given that state and owner keys already
+  use row-4 weights? Its separate W receipt residual also exceeds the required 1e-9 zero gate.
+  [DATA: final comparator worker evidence, `prop-d-comparators.md:46–63`]
+  The table source is prepared, but `tables_oct14_pins.json`, `conclusions_oct14.csv` and `common_mode_oct14.csv`
+  were not generated. No older or quarantined candidate comparator values substitute for missing live inputs.
+  Debt, pairing and winners inputs cannot complete this table until the required white headline exists. The table's
+  C2 status explicitly names the direct-receipt clause: this historical tally excludes R7 indirect receipts,
+  which remain included in the service break-even calculation. Historical keyed outputs were unchanged.
+
+- 2026-10-14 19:11:30 JST — wave 2: completed white/Black oct14 outputs resolve the earlier comparator dependency. Final input pinning and tables_oct14.py both stop before writing because winners_losers_2026_09_24/derived/oct14/net_shares.csv is absent. No pins or combined tables are written; no historical or candidate substitute is used. Core remains the recorded 86-gate/IDENTICAL 51/51 run. The parent must finish the oct14 winners producer before final table pinning and full-lane rerun. [CALCULATION: pin_breaks.py and tables_oct14.py wave-2 stop receipts]
+
+## 2026-10-14 round 3: committed winners and complete live tables (19:54 JST)
+
+After legacy and Indian completion, the winners marker arrived after about four minutes of 60-second polling.
+`WINNERS_COMMITTED` names **2204a2bc0996c3a614262cca55842d0027134417**. `tables_oct14_pins.json` is derived from
+**26 files and 8,263 numeric CSV cells**, with external inputs verified against committed bytes at that commit;
+the frozen case is **148ed1eaede17b38ceeb5b6ecd055ece441e8c5e**. This worker's seven case-gated engine outputs
+are pinned as rederived owned outputs, pending parent commit. No earlier case substitutes for a live input.
+[CALCULATION: scratch `pin_breaks_round3.py` → `tables_oct14_pins.json`]
+
+Two input-consumer defects were exposed and fixed before completion. The current pairing is section 7;
+dated historical revision rows have no oct14 amounts and are excluded from the live loader. Missing or
+non-numeric live values still stop. The debt split's six-decimal CSV columns cannot be summed as if exact:
+the low sum was 338.847559, versus 338.847560829527 at the existing 1e-6 closure gate. The consumer now takes
+the debt producer's unrounded `case.financing_columns_2024.main_profile` and `v4.headline_2024` accrual columns
+from its already-pinned JSON. Each substituted CSV cell is gated at its six-decimal representation bound,
+0.5e-6 + 1e-12; the scientific closure remains **1e-6**. Two regression tests check the historical/live missing
+value distinction, raw-column closure and rejection of a modified printed debt cell.
+[SOURCE: pairing `real_costs_totals.csv` `section`; debt `debt_legacy.py` financing/headline builders and
+six-decimal CSV writer; CALCULATION: `test_tables_oct14.py`, 2 passed]
+
+`tables_oct14.py` writes nine conclusions and twenty premise rows. Selected live readings:
+- C2 direct receipts less household transfers −8.0163 / −10.1381bn; cash 67.1101 / 64.9884bn.
+- C5 state-local share **70.5 / 67.0%**; cash **90.6 / 81.4%**; winners pooled in SPM units **19.6 / 18.7%**
+  under a / b. Those are modeled incidence, not observed individual effects.
+- C6 generation minimum **49.9bn**; C8 A1 **512.2 / 481.6bn**, local whites **516.3 / 483.3bn** against the
+  explicitly historical map claim. C7/C9 retain historical evidence and state that they were not rerun.
+[CALCULATION: `derived/conclusions_oct14.csv`, `derived/common_mode_oct14.csv`; account/model outputs]
+
+Full live rerun: `scheduled_tr2026.py`, `engine_breaks_sept29.cjs --case oct14`, `tables_oct14.py`, and
+`pytest test_tables_oct14.py -q` all exit 0; **IDENTICAL 55/55, exit 0**. Python wall time **68.40s** and child
+peak RSS **668.7MiB**. The existing engine/core gates and all numeric tolerances remain. Scoped source review
+finds no material regression and independently passes both tests. No Git writes; oct07/oct05 outputs remain.

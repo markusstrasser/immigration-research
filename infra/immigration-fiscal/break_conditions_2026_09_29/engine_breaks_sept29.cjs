@@ -1,4 +1,5 @@
-/* Break conditions on the main case adopted 2026-09-29 (v4: main_case_2026_09_29, key sept29): the engine computations
+/* Break conditions on live v7 by default (--case oct14); explicit historical --case modes retain their old computations.
+ * Original v4 route (main_case_2026_09_29, key sept29): the engine computations
  * behind RESULT.md's "v4 case (sept29)" rows for C1, C2, C3 and C6, beside engine_breaks.cjs's September 27 files, which
  * this script does not touch.
  *
@@ -24,7 +25,7 @@
  *       the cash set; their sha256 is written beside the results.
  *
  * Additive items are figures priced beside the account, not engine runs; they are marked "additive" in the outputs.
- * Run from anywhere: node engine_breaks_sept29.cjs  ->  derived/c1_arms_sept29.csv, c1_min_cuts_sept29.csv,
+ * Historical reproduction: node engine_breaks_sept29.cjs --case sept29 -> derived/c1_arms_sept29.csv, c1_min_cuts_sept29.csv,
  * c2_tally_sept29.csv, c2_break_even_sept29.csv, c3_correction_split_sept29.csv, c6_generation_break_even_sept29.csv
  *
  * --case oct05 runs the same on main case v5 (main_case_2026_10_05, adopted 2026-10-05: v4 plus the lineage's 3.04M
@@ -55,6 +56,10 @@
  * on rough keys), each its band's change from the case on the set or the cash set [APPROX: additive], at most one per
  * item in a combination; the stacks take each item's largest arm in their direction. C6 reads the generation account's
  * oct07 files.
+ *
+ * --case oct14 (the default) computes only live v7. Its personal ends come from summary.json v7.end_specifications;
+ * its item edits and receipt responses travel through the package. Historical --case options are explicit reproductions.
+ * C2's lineage-arm tallies now run the case's own option payloads at those ends, rather than carry v5's shared-end tally.
  */
 "use strict";
 const fs = require("fs");
@@ -65,9 +70,10 @@ const CASES = {
   sept29: { lane: "main_case_2026_09_29", band: [371.4146, 434.8410], cash: "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json" },
   oct05: { lane: "main_case_2026_10_05", band: [390.2940, 461.2431], cash: "main_case_2026_10_05/derived/corrections_cash.json" },
   oct07: { lane: "main_case_2026_10_07", band: [389.0826, 461.4797], cash: "main_case_2026_10_07/derived/corrections_cash.json" },
+  oct14: { lane: "main_case_2026_10_14", cash: "main_case_2026_10_14/derived/corrections_cash.json" },
 };
 const CASE_ARG = process.argv.indexOf("--case");
-const CASE = CASE_ARG > 0 ? process.argv[CASE_ARG + 1] : "sept29";
+const CASE = CASE_ARG > 0 ? process.argv[CASE_ARG + 1] : "oct14";
 if (!CASES[CASE]) throw new Error(`[BLOCKED] --case ${CASE}: not one of ${Object.keys(CASES).join(", ")}`);
 const LANE = CASES[CASE].lane;
 const P = require(path.join(ROOT, LANE, "package.cjs"));
@@ -117,18 +123,40 @@ const readCsv = (rel) => {
   });
 };
 const sha256 = (rel) => crypto.createHash("sha256").update(fs.readFileSync(path.join(ROOT, rel))).digest("hex");
-const ENDS = [["low_end_48", 48], ["high_end_11", 11]];
+const SUMMARY = readJson(`${LANE}/derived/summary.json`);
+const VERSION = CASE === "oct14" ? "v7" : "v6";
+const endNumbers = CASE === "oct14" ? SUMMARY.v7.end_specifications.set : [48, 11];
+if (CASE === "oct14" && JSON.stringify(endNumbers) !== JSON.stringify(SUMMARY.v7.end_specifications.cash)) {
+  throw new Error("[BLOCKED] oct14: set and cash ends differ; the shared tally end rule needs revision");
+}
+const ENDS = [[`low_end_${endNumbers[0]}`, endNumbers[0]], [`high_end_${endNumbers[1]}`, endNumbers[1]]];
+for (const [, i] of ENDS) {
+  if (!MAIN_SPECS[i] || (CASE === "oct14" && MAIN_SPECS[i].allocation !== "personal")) {
+    throw new Error(`[BLOCKED] ${CASE}: end specification ${i} absent or not personal`);
+  }
+}
+if (process.argv.includes("--probe-only")) {
+  console.log(`[probe] ${CASE}: ${MAIN_SPECS.length} specifications; ends ${endNumbers.join(" / ")}`);
+  process.exit(0);
+}
 
 // ------------------------------------------------------------------------------------------------ C1
 console.log(`[C1 the account's magnitude, ${CASE}]`);
 const MAIN = P.central({});
-const [B0, B1] = CASES[CASE].band;
+const adopted = readCsv(`${LANE}/derived/main_case_bands.csv`).find((r) => r.profile === P.MAIN_PROFILE && r.variant === "adopted");
+const [B0, B1] = CASES[CASE].band || [+adopted.cost_low_bn, +adopted.cost_high_bn];
 gate(`the adopted case reproduces ($${B0.toFixed(4)}–${B1.toFixed(4)}bn)`, near(MAIN[0], B0, 1e-4) && near(MAIN[1], B1, 1e-4),
   `${MAIN[0].toFixed(4)}–${MAIN[1].toFixed(4)}`);
+if (CASE === "oct14") gate("the live band equals committed summary.json v7.band_bn (1e-9)",
+  MAIN.every((x, j) => near(x, SUMMARY.v7.band_bn[j], 1e-9)));
 const M = mid(MAIN);
 const LOW_CUT = 0.75 * M, HIGH_CUT = 1.25 * M;
 const bands = readCsv(`${LANE}/derived/main_case_bands.csv`).filter((r) => r.profile === P.MAIN_PROFILE);
-const bandRow = (v) => { const r = bands.find((x) => x.variant === v); return [+r.cost_low_bn, +r.cost_high_bn]; };
+const bandRow = (v) => {
+  const r = bands.find((x) => x.variant === v);
+  if (!r) throw new Error(`[BLOCKED] ${LANE}/derived/main_case_bands.csv: no ${v} row`);
+  return [+r.cost_low_bn, +r.cost_high_bn];
+};
 const comps = readCsv(`${LANE}/derived/components.csv`);
 const comp = (id) => comps.find((r) => r.component === id);
 const PROP = comp("property_long_run"), CARE = comp("care"), MED = comp("medical");
@@ -201,6 +229,8 @@ const ITEMS = (payload.meta.items || []).filter((r) => r.applied && r.kind === "
 const ITEM_FIRST = ITEMS.length ? ITEMS[0].edits.first : payload.edits.length;
 const zeroBy = () => Object.fromEntries(P.ALLOCS.map((a) => [a, 0]));
 const ITEM_PEN = { union: { social_security: zeroBy(), medicare: zeroBy() }, lineage: { social_security: zeroBy(), medicare: zeroBy() } };
+// R9 keeps meta.pension_accrual on published weights. Its row-4 union pension shifts stay fixed in every C3 subset.
+const ROW4_UNION_PEN = { social_security: zeroBy(), medicare: zeroBy() };
 const partsOf = (r, k) => Object.entries(r.parts || {}).filter(([, x]) => x.edit === k);
 for (const r of ITEMS) {
   payload.edits.slice(r.edits.first, r.edits.first + r.edits.count).forEach((e, k) => {
@@ -210,7 +240,10 @@ for (const r of ITEMS) {
       || !P.ALLOCS.every((a) => parts.reduce((t, [, x]) => t + x.by[a], 0) === e.by[a])) {
       throw new Error(`[BLOCKED] item ${r.id}: edit ${k} on ${e.line} is not a preferred-key cell shift split exactly into union_/lineage_ parts`);
     }
-    for (const [n, x] of parts) for (const a of P.ALLOCS) ITEM_PEN[n.startsWith("union_") ? "union" : "lineage"][e.line][a] += x.by[a];
+    for (const [n, x] of parts) for (const a of P.ALLOCS) {
+      ITEM_PEN[n.startsWith("union_") ? "union" : "lineage"][e.line][a] += x.by[a];
+      if (r.id === "row4_frame" && n.startsWith("union_")) ROW4_UNION_PEN[e.line][a] += x.by[a];
+    }
   });
 }
 const linOasdi = (a) => sum(ACC.oasdi_lines.map((l) => linCell(LIN_SET, "receipt", l, a))) + ACC.se_oasdi_share * linCell(LIN_SET, "receipt", ACC.se_line, a);
@@ -224,8 +257,7 @@ if (LIN) {
 }
 // At scheduled benefits: the union's rule on the union's OASDI receipts; the lineage's accrual (on a model that carries
 // it) rises in the union's proportion [ASSUMPTION: its parts' ratios move as the union's].
-const schedAdd = (m, lineage = Boolean(LIN), v = SCHED) => ENDS.map(([, i]) => {
-  const a = MAIN_SPECS[i].allocation;
+const schedAdd = (m, lineage = Boolean(LIN), v = SCHED, allocations = ENDS.map(([, i]) => MAIN_SPECS[i].allocation)) => allocations.map((a) => {
   if (!lineage) return (v.s - v.p) * oasdiOf(m, a) + (v.sa - v.pa);
   return (v.s - v.p) * (oasdiOf(m, a) - linOasdi(a))
     + (v.s / v.p - 1) * linSS(a)
@@ -235,7 +267,7 @@ const schedAdd = (m, lineage = Boolean(LIN), v = SCHED) => ENDS.map(([, i]) => {
   // Positive control: the same rule on the September 27 payload's receipts gives the pension lane's scheduled less payable
   // (on the 2025 reports, whose values oct07's payload keeps in previous.oct05).
   const m27 = Engine.applyCorrections(MODEL, readJson("main_case_long_run_2026_09_27/derived/corrections.json"));
-  const got = schedAdd(m27, false, { s: ACC.scheduled_benefits_arm.ratio_net, p: PAY25.ratio_net, sa: PA_SCHED25, pa: PAY25.part_a_accrual_bn });
+  const got = schedAdd(m27, false, { s: ACC.scheduled_benefits_arm.ratio_net, p: PAY25.ratio_net, sa: PA_SCHED25, pa: PAY25.part_a_accrual_bn }, ["shared", "personal"]);
   const lane = [PEN.scheduled_arm.case_on_accrual_net_bn.low - PEN.case_on_accrual_net_bn.low,
     PEN.scheduled_arm.case_on_accrual_net_bn.high - PEN.case_on_accrual_net_bn.high];
   gate("the scheduled-benefits rule on the September 27 receipts reproduces the pension lane's scheduled less payable (1e-6)",
@@ -315,17 +347,17 @@ if (LIN) {
   // ancestry_share.cjs rowsFor, run read-only) at the convention's shares. The replacement rows have no v6 counterpart
   // (the frame the operator declined on 2026-10-05): v5's changes carried, not recomputed on v6.
   if (ITEMS.length) {
-    const s6 = readJson(`${LANE}/derived/summary.json`), comp = s6.v6.companions, CASH_SET = s6.cash_set.band_bn;
+    const s6 = SUMMARY, comp = s6[VERSION].companions, CASH_SET = s6.cash_set.band_bn;
     const minus = (b, c) => b.map((x, j) => x - c[j]);
     for (const [id, name] of [["lineage_arm_a", "arm_a"], ["lineage_arm_c", "arm_c"], ["lineage_c3_plus_1se", "c3_plus_se"],
       ["lineage_c3_minus_1se", "c3_minus_se"]]) {
       const o = comp.options[name];
-      gate(`${id}: v6.companions.options.${name} is the case plus its change and main_case_bands.csv's row, on the set and the cash set (1e-9; 5e-5)`,
+      gate(`${id}: ${VERSION}.companions.options.${name} is the case plus its change and main_case_bands.csv's row, on the set and the cash set (1e-9; 5e-5)`,
         o.set.band_bn.every((x, j) => near(x, MAIN[j] + o.set.change_from_the_case_bn[j], 1e-9) && near(x, bandRow(`lineage_${name}`)[j], 5e-5))
         && o.cash.band_bn.every((x, j) => near(x, CASH_SET[j] + o.cash.change_from_the_case_bn[j], 1e-9) && near(x, bandRow(`lineage_${name}_cash_set`)[j], 5e-5)),
         `${o.set.band_bn.map(f4).join("–")}`);
       LINEAGE[id].by = { set: o.set.change_from_the_case_bn.slice(), cash: o.cash.change_from_the_case_bn.slice() };
-      LINEAGE[id].src = `${LANE} summary.json v6.companions.options.${name}: ${o.label.replace(/"/g, "'")}`;
+      LINEAGE[id].src = `${LANE} summary.json ${VERSION}.companions.options.${name}: ${o.label.replace(/"/g, "'")}`;
     }
     const AS = require(path.join(ROOT, LANE, "ancestry_share.cjs"));
     const SH = readJson(AS.SHARES_FILE).shares;
@@ -342,7 +374,7 @@ if (LIN) {
         if (scenario !== "convention") {
           const own = r.rows.find((x) => x.scenario === scenario), kept = comp.ancestry_share[which].rows.find((x) => x.scenario === scenario);
           const row = bandRow(`ancestry_share_${scenario}${which === "cash" ? "_cash_set" : ""}`);
-          gate(`${id}, ${which}: the count at its shares is rowsFor's row (1e-9), summary.json v6.companions' (1e-6) and main_case_bands.csv's (5e-5)`,
+          gate(`${id}, ${which}: the count at its shares is rowsFor's row (1e-9), summary.json ${VERSION}.companions' (1e-6) and main_case_bands.csv's (5e-5)`,
             b.every((x, j) => near(x, own.band_bn[j], 1e-9) && near(x, kept.band_bn[j], 1e-6) && near(x, row[j], 5e-5)), `${b.map(f4).join("–")}`);
         }
         (by[id] = by[id] || {})[which] = minus(b, base);
@@ -351,10 +383,46 @@ if (LIN) {
     for (const [id, [scenario]] of Object.entries(SC)) {
       LINEAGE[id].by = by[id];
       LINEAGE[id].src = scenario === "convention"
-        ? `[FRAMING-SENSITIVE] ${LANE} ancestry_share.cjs rowsFor on v6 (read-only): the whole lineage counted by ancestry share, every third-plus member at the population lane's convention (${SH.G3plus.convention.toFixed(4)}), inside the bound; no v6.companions row`
-        : `[FRAMING-SENSITIVE] ${LANE} summary.json v6.companions.ancestry_share: the whole lineage counted by ancestry share, ${scenario === "g4_at_nothing" ? "the stated bound's low end (G4+ at nothing)" : "the stated bound's high end (G4+ at its measured high bound)"}`;
+        ? `[FRAMING-SENSITIVE] ${LANE} ancestry_share.cjs rowsFor on ${VERSION} (read-only): the whole lineage counted by ancestry share, every third-plus member at the population lane's convention (${SH.G3plus.convention.toFixed(4)}), inside the bound; no ${VERSION}.companions row`
+        : `[FRAMING-SENSITIVE] ${LANE} summary.json ${VERSION}.companions.ancestry_share: the whole lineage counted by ancestry share, ${scenario === "g4_at_nothing" ? "the stated bound's low end (G4+ at nothing)" : "the stated bound's high end (G4+ at its measured high bound)"}`;
     }
-    for (const x of [LINEAGE.replacement_r1, LINEAGE_LISTED.replacement_r05]) x.src += "; v5 delta carried, not recomputed on v6";
+    for (const x of [LINEAGE.replacement_r1, LINEAGE_LISTED.replacement_r05]) x.src += `; v5 delta carried, not recomputed on ${VERSION}`;
+    if (CASE === "oct14") {
+      // The existing v5 replacement rule (lineage_case.cjs:560-577): subtract r x added persons x its white part.
+      // Reconstruct its stored per-person model exactly (partModel, :283-288; whiteOf/setUp, :318-332), then price
+      // it at the live personal ends. No import of lineage_case.cjs: importing it would rewrite the preserved lane.
+      const wl = readJson(`${LL}/derived/white_lines.json`);
+      const own = {};
+      for (const which of ["set", "cash"]) {
+        const Q = which === "set" ? P.OCT05 : P.OCT05.CASH;
+        const white = wl.g3plus_ages[which === "set" ? "accrual" : "cash"].low;
+        const amounts = new Map(white.lines.map((l) => [`${l.side}|${l.id}`, l.amount_bn / white.population]));
+        const mW = JSON.parse(JSON.stringify(Q.payloadModel()));
+        for (const [side, lines] of [["receipts", mW.receipts.lines], ["spending", mW.spending.lines]]) {
+          for (const line of lines) {
+            const amount = amounts.get(`${side}|${line.id}`);
+            if (!Number.isFinite(amount)) throw new Error(`[BLOCKED] v5 replacement: no stored white amount on ${side}|${line.id}`);
+            for (const cells of Object.values(side === "receipts" ? line.cells : line.keys)) for (const a of Q.ALLOCS) {
+              cells[a].target_bn = amount;
+              cells[a].share = 0;
+            }
+          }
+        }
+        for (const key of ["private_wtp_bn", "induced_receipts_bn"]) mW.production[key] = mW.production[key].map(() => 0);
+        const cost = (i) => Q.evaluateFull(mW, Q.MAIN_SPECS[i]).cost_bn;
+        const stored = v5s.replacement.rows.find((r) => r.set === which && r.arm === LIN.arm && r.r === 1);
+        gate(`replacement ${which}: the reconstructed v5 white part reproduces its stored per-person prices at its historical ends (1e-9)`,
+          stored.ends.every((i, j) => near(cost(i) * 1e9, stored.w_per_person_usd[j], 1e-9)));
+        gate(`replacement ${which}: v5 specifications at the live ends ${endNumbers.join(" / ")} are personal`,
+          endNumbers.every((i) => Q.MAIN_SPECS[i].allocation === "personal"));
+        own[which] = endNumbers.map((i) => cost(i));
+      }
+      const added = v5s.sets.set.arms[LIN.arm].added;
+      for (const [id, ratio, group] of [["replacement_r1", 1, LINEAGE], ["replacement_r05", 0.5, LINEAGE_LISTED]]) {
+        group[id].by = Object.fromEntries(["set", "cash"].map((which) => [which, own[which].map((w) => -ratio * added * w)]));
+        group[id].src = `[FRAMING-SENSITIVE; APPROX: additive transfer] ${LL} lineage_case.cjs replacement rule, its stored white_lines.json per-person model rederived on v5 at matching personal specifications ${endNumbers.join(" / ")}; subtract ${ratio} x ${added} added persons x white cost. This v5 delta is transferred to v7, not a v7 replacement-child model`;
+      }
+    }
   }
   gate("every lineage alternative is a finite pair on both sets, in its direction at the midpoint", Object.values(Object.assign({}, LINEAGE, LINEAGE_LISTED))
     .every((x) => ["set", "cash"].every((s) => x.by[s].every(Number.isFinite) && (x.dir === "down" ? mid(x.by[s]) < 0 : mid(x.by[s]) > 0))));
@@ -365,14 +433,15 @@ if (LIN) {
 // combination]. Its direction is its set midpoint's.
 const ITEM_ALTS = {};
 if (ITEMS.length) {
-  const s6 = readJson(`${LANE}/derived/summary.json`), v6arms = s6.v6.arms;
+  const s6 = SUMMARY, v6arms = s6[VERSION].arms;
   for (const [id, a] of Object.entries(v6arms)) {
     const set = a.change_from_the_case_bn, cash = a.cash ? a.cash.change_from_the_cash_set_bn : [0, 0];
+    const cashRow = CASE === "oct14" && !P.REGISTRY.find((r) => r.id === a.item).cash.applies ? "cash_set" : `${id}_cash_set`;
     gate(`item arm ${id}: its band is the case plus its change (1e-9) and main_case_bands.csv's row (5e-5), on both sets`,
       a.band_bn.every((x, j) => near(x, MAIN[j] + set[j], 1e-9) && near(x, bandRow(id)[j], 5e-5))
-      && (!a.cash || a.cash.band_bn.every((x, j) => near(x, s6.cash_set.band_bn[j] + cash[j], 1e-9) && near(x, bandRow(`${id}_cash_set`)[j], 5e-5))));
+      && (!a.cash || a.cash.band_bn.every((x, j) => near(x, s6.cash_set.band_bn[j] + cash[j], 1e-9) && near(x, bandRow(cashRow)[j], 5e-5))));
     ITEM_ALTS[id] = { item: a.item, dir: mid(set) < 0 ? "down" : "up", by: { set, cash },
-      src: `${LANE} summary.json v6.arms ${id} (item ${a.item}): ${a.label.replace(/"/g, "'")}` };
+      src: `${LANE} summary.json ${VERSION}.arms ${id} (item ${a.item}): ${a.label.replace(/"/g, "'")}` };
   }
   gate("every item arm is a finite pair on both sets, the cash set's in its direction or zero",
     Object.values(ITEM_ALTS).every((x) => ["set", "cash"].every((s) => x.by[s].every(Number.isFinite)
@@ -493,16 +562,16 @@ const tailMed = (a) => TAIL_MED[0].by[a] + ITEM_PEN.union.medicare[a];
 // oct05: the switch is rebuilt on the union's part; the lineage keeps its own accrual (its edits, held).
 function pensionRebuilt(m) {
   const by = (f) => Object.fromEntries(ALLOCS.map((a) => [a, f(a)]));
-  const ss = by((a) => (LIN ? ACC.ratio_net * (oasdiOf(m, a) - linOasdi(a)) + linSS(a) : ACC.ratio_net * oasdiOf(m, a))
+  const ss = by((a) => (LIN ? ACC.ratio_net * (oasdiOf(m, a) - linOasdi(a)) + linSS(a) : ACC.ratio_net * oasdiOf(m, a)) + ROW4_UNION_PEN.social_security[a]
     - benefit(m, "social_security", a));
   const med = by((a) => {
     if (LIN) {
       const own = linMedSet(a);
       const preU = benefit(m, "medicare", a) - tailMed(a) - own;
-      return (1 - ACC.part_a_share) * preU + ACC.part_a_accrual_bn + own - benefit(m, "medicare", a);
+      return (1 - ACC.part_a_share) * preU + ACC.part_a_accrual_bn + ROW4_UNION_PEN.medicare[a] + own - benefit(m, "medicare", a);
     }
     const pre = benefit(m, "medicare", a) - tailMed(a);
-    return (1 - ACC.part_a_share) * pre + ACC.part_a_accrual_bn - benefit(m, "medicare", a);
+    return (1 - ACC.part_a_share) * pre + ACC.part_a_accrual_bn + ROW4_UNION_PEN.medicare[a] - benefit(m, "medicare", a);
   });
   const edits = [{ side: "spending", line: "social_security", key: TAIL_SS[0].key, by: ss }, { side: "spending", line: "medicare", key: TAIL_MED[0].key, by: med }];
   return { m: Engine.applyCorrections(m, { lines: [], receipt_lines: [], edits }), shift: [ss, med] };
@@ -516,6 +585,8 @@ const mCash = PC.payloadModel();
 const CASH = ENDS.map(([, i]) => PC.evaluateFull(mCash, PC.MAIN_SPECS[i]).cost_bn);
 gate("the cash payload is the cash set at both ends (main_case_bands.csv cash_set, 1e-4)", CASH.every((x, j) => near(x, bandRow("cash_set")[j], 1e-4)),
   `${CASH[0].toFixed(4)}–${CASH[1].toFixed(4)}`);
+if (CASE === "oct14") gate("the cash payload equals committed summary.json v7.cash_set_bn (1e-9)",
+  CASH.every((x, j) => near(x, SUMMARY.v7.cash_set_bn[j], 1e-9)));
 // The tally at scheduled benefits moves by the scheduled rule on each model's own OASDI receipts.
 // oct05 adds the union alone at the case's responses (v4's payload with row 8's move): the case less it is the lineage's.
 const tallyRows = [["model", "end", "spec", "direct_receipts_bn", "household_transfers_bn", "tally_bn", "scheduled_move_bn", "tally_at_scheduled_bn"]];
@@ -559,7 +630,16 @@ for (const [lab, pkg, m, accrual] of tallyModels) {
     tallyRows.push([lab, end, i, rec, tr, rec - tr, accrual ? sched[j] : "", accrual ? rec - tr - sched[j] : ""]);
   });
 }
-if (LIN) {
+if (LIN && CASE === "oct14") {
+  for (const arm of ["a", "c"]) {
+    const variant = P.caseOf(P.OCT05, P.CANDIDATE, {}, `arm_${arm}`), model = variant.payloadModel();
+    ENDS.forEach(([end, i]) => {
+      const ev = variant.evaluateFull(model, variant.MAIN_SPECS[i]).evaluation;
+      const rec = ev.classes.direct_receipts.responsive_bn, tr = ev.classes.household_transfer.responsive_bn;
+      tallyRows.push([`lineage_arm_${arm}`, end, i, rec, tr, rec - tr, "", ""]);
+    });
+  }
+} else if (LIN) {
   // The tally at the lineage lane's arms a, b and c from its per-line costs at the arm's responses and ends
   // (lineage_lines.csv v5_bn: v4's line, the union's response move and the added people's parts), classed as the case's
   // evaluation classes each line at that end. Arm b's must be the case's tally (1e-4: the file's six decimals).
@@ -678,8 +758,8 @@ for (const [lab, pkg, file, results] of [["case_accrual", P, `generation_correct
       const raw = readJson(`${GEN}/${conv === "a" ? `model_${g}.json` : `model_b_${g}.json`}`);
       const mg = Engine.applyCorrections(raw, Object.assign({}, gp[conv][g], { meta }));
       const row = (end) => res.find((r) => r.convention === conv && r.generation === g && r.band_end === end);
-      const lo = pkg.evaluateFull(mg, pkg.MAIN_SPECS[48]).cost_bn, hi = pkg.evaluateFull(mg, pkg.MAIN_SPECS[11]).cost_bn;
-      gate(`${lab} ${conv} ${g}: the corrected model reproduces ${results} at 48 / 11 (1e-6)`,
+      const lo = pkg.evaluateFull(mg, pkg.MAIN_SPECS[endNumbers[0]]).cost_bn, hi = pkg.evaluateFull(mg, pkg.MAIN_SPECS[endNumbers[1]]).cost_bn;
+      gate(`${lab} ${conv} ${g}: the corrected model reproduces ${results} at ${endNumbers.join(" / ")} (1e-6)`,
         near(lo, +row("low").cost_bn, 1e-6) && near(hi, +row("high").cost_bn, 1e-6), `${lo.toFixed(4)} / ${hi.toFixed(4)}`);
       costs.low += lo; costs.high += hi;
       const bp = withCase(pkg, "enterprises_at_s", () => S24.breakEven(mg, "personal", PAIRS));
@@ -687,7 +767,7 @@ for (const [lab, pkg, file, results] of [["case_accrual", P, `generation_correct
       genRows.push([lab, conv, g, lo, hi, bp[0], bp[1], bs[0], bs[1]]);
     }
     const want = lab === "case_accrual" ? MAIN : CASH;
-    gate(`${lab} ${conv}: the three generations add to the case at 48 / 11 (1e-6)`, near(costs.low, want[0], 1e-6) && near(costs.high, want[1], 1e-6),
+    gate(`${lab} ${conv}: the three generations add to the case at ${endNumbers.join(" / ")} (1e-6)`, near(costs.low, want[0], 1e-6) && near(costs.high, want[1], 1e-6),
       `${costs.low.toFixed(4)} / ${costs.high.toFixed(4)}`);
   }
 }
