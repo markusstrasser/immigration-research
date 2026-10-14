@@ -1,0 +1,262 @@
+{
+  "route": "coverage oct15 personal flat pricing cash",
+  "runtime": {
+    "python": "3.13.15",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "pyarrow": "25.0.1"
+  },
+  "method": "actual Python read paths, pandas Parquet paths, and imported repository modules",
+  "files": [
+    {
+      "path": "infra/immigration-fiscal/build/meps_health_transport_2024.py",
+      "bytes": 4667,
+      "sha256": "8a3eda7a2fce7b27f2e4cb0aa865526d7c188893644c39b7693d05e6632fd587"
+    },
+    {
+      "path": "infra/immigration-fiscal/build/paths.py",
+      "bytes": 4838,
+      "sha256": "f4148ed20555d4e2a5cc4d4c681fde205be3cb9b5a1e6bf29f7f0a58308750f3"
+    },
+    {
+      "path": "infra/immigration-fiscal/build/public_mvp_io.py",
+      "bytes": 15851,
+      "sha256": "e3775ce460a8f47408a3fec96737e738f7077ab996c9316f119d123732b1fba5"
+    },
+    {
+      "path": "infra/immigration-fiscal/california_medical_status_2026_09_23/cps_ca_status.py",
+      "bytes": 17446,
+      "sha256": "55c6b0e32b191e9a06a8a45a34d260edd44a144a75ad8757edb64b0ffbe5ea70"
+    },
+    {
+      "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_onbooks_lane.py",
+      "bytes": 72130,
+      "sha256": "c4c6e05b784b23da7985652f03cac13a1ce678a3cb3b33a0aeea9eebc3f3c42f"
+    },
+    {
+      "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_status.py",
+      "bytes": 15036,
+      "sha256": "b69b1fdcb039910768c71ddfeacd2273eaebfe4db5cb04bf4da711b6cf3423c5"
+    },
+    {
+      "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/common.py",
+      "bytes": 20748,
+      "sha256": "490e3c38d191b47259595ee2eac6dbc0ff8361362fbfe5c204f5aece3b1506a6"
+    },
+    {
+      "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/hotdeck.py",
+      "bytes": 19846,
+      "sha256": "eb380679abf00e140c070d19d8ca9abe8900faa28e4003e73480699e79d15ac2"
+    },
+    {
+      "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/ipw.py",
+      "bytes": 5611,
+      "sha256": "fb6318da5aace1aeb0b8e718735b49f8a9494a22bcd209f88ece2296e19c11b8"
+    },
+    {
+      "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/run_hotdeck.py",
+      "bytes": 4266,
+      "sha256": "9f38fbdabebe33fa3687774cf2d9b6f1857f17a730674ba0e4fa220facda1903"
+    },
+    {
+      "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/taxcalc.py",
+      "bytes": 8463,
+      "sha256": "2b062e5575b8902150a16bd0bb8b5eb0a31717b9ae533295fdc4581d4b241cce"
+    },
+    {
+      "path": "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/translate.py",
+      "bytes": 13242,
+      "sha256": "0bed2558c39310b9c832c698dd1bcafa1285df2d3e3282b54d79df59d4ee9340"
+    },
+    {
+      "path": "infra/immigration-fiscal/dataset_integrity_2026_09_23/_cache/acs_person_2023.parquet",
+      "bytes": 70446206,
+      "sha256": "e378293a55a4845f489d4c40cec447134e53e90a1963f20f5bd4884480115f8c"
+    },
+    {
+      "path": "infra/immigration-fiscal/dataset_integrity_2026_09_23/_cache/acs_person_2024.parquet",
+      "bytes": 71940027,
+      "sha256": "7f8fa127db584862759cf1cf59bd14036e9788bea9d5300338527bf35e4f35d0"
+    },
+    {
+      "path": "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/state_parameters.csv",
+      "bytes": 5406,
+      "sha256": "00b0bb778861cc8406a04c8159938368146494965348d477e0514c4b0efccff2"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/_cache/asec25_generation.parquet",
+      "bytes": 185906549,
+      "sha256": "664c67d7a4a33c1ed726acf9f0c7162671e6b1e137a4d64e6d75a6258529c452"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_key_shares.json",
+      "bytes": 26103,
+      "sha256": "6b76a90b3d6ec3a701a2272afed4afd3151906b1f13b694b13fa69987c7e19d9"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_keys.csv",
+      "bytes": 28130,
+      "sha256": "a9b02c55bbe5778716aa24d1f60eb81074c17a34b68fc19c91a815a7c065568f"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_G1.json",
+      "bytes": 301002,
+      "sha256": "8a5dc446fcd52cd46f8e0c81c88afae4a4f5bedf9978831b934b6ee1c2a5a50f"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_G2.json",
+      "bytes": 301960,
+      "sha256": "14ff14a27f6f2118624effc63b49b564db5271d52058d9200380f90d3ba67c67"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_G3plus.json",
+      "bytes": 301873,
+      "sha256": "31435455243c290248b569a340276ab0f58aac67533e5b17602db62f956ac33e"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/stack_by_generation.json",
+      "bytes": 578736,
+      "sha256": "35039234a00eee6e7e08d2ab920ab40d369b542adc4b3eaac90f4d7d8a0404f1"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/v4_inputs.json",
+      "bytes": 945891,
+      "sha256": "31a77369be8beb73869387f2eecb1f84a27daa251944b369df803c6eeb52126c"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/frame.py",
+      "bytes": 8527,
+      "sha256": "455c80718f27fefdf07489cf22a29625767c731c6a629733827a2f4a773c2c1c"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/keys.py",
+      "bytes": 20943,
+      "sha256": "20992d3a390987825da075394145ee84a865243338f0a347d936fe4875959468"
+    },
+    {
+      "path": "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json",
+      "bytes": 224512,
+      "sha256": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922"
+    },
+    {
+      "path": "infra/immigration-fiscal/macro_closure_2026_09_19/_cache/finance_2024_state_combined.json",
+      "bytes": 2075868,
+      "sha256": "e5e0b320c1125fcfb67e8243b4a5fb1ccbcc52fddefea2f75e6a706a24cb736c"
+    },
+    {
+      "path": "infra/immigration-fiscal/macro_closure_2026_09_19/_cache/finance_2024_us_combined.json",
+      "bytes": 44328,
+      "sha256": "85c4d95d3216c882240b034846e938dfb1a7cf39a7a1c68243680b7c6fd6f068"
+    },
+    {
+      "path": "infra/immigration-fiscal/macro_closure_2026_09_19/census_sources.json",
+      "bytes": 2238,
+      "sha256": "9e6f9a31bd36fe08b577e5e9f264c9835d54e47902d85f3250310e6948f0bb80"
+    },
+    {
+      "path": "infra/immigration-fiscal/macro_closure_2026_09_19/finance_vintage.py",
+      "bytes": 7694,
+      "sha256": "ab018214a7d8b00baa7cd9adc806245cba26ad98bd555f9bae4111dfe77d8e3d"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/age_bins.csv",
+      "bytes": 473036,
+      "sha256": "73785096958005ddb334846c297e10b0696abb91e266e0971f320ec7a3c15664"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/headcount.csv",
+      "bytes": 938,
+      "sha256": "a40d606e42c931782358da8d7ca8a8dad28fffa5f4aa9af59da5a14a0631273e"
+    },
+    {
+      "path": "infra/immigration-fiscal/mexborn_count_2026_09_23/derived/annual_series.csv",
+      "bytes": 4036,
+      "sha256": "91bd1f987621e9d8956130d8962ae7b5d3c51e1490371121023689b7b53dadb6"
+    },
+    {
+      "path": "infra/immigration-fiscal/receipt_side_long_run_2026_09_28/derived/states.csv",
+      "bytes": 9394,
+      "sha256": "6ddb2c0156119aa0149dfde5f872e6638fd5c93bbecbb9cbd488a527551dcafb"
+    },
+    {
+      "path": "infra/immigration-fiscal/school_enrollment_2026_09_20/derived/national_rates.csv",
+      "bytes": 967,
+      "sha256": "baf3e4f6a20a20f8d5a71c8a9930e6588ac47d70fb82d1e3e8557056c9c2272f"
+    },
+    {
+      "path": "infra/immigration-fiscal/school_enrollment_2026_09_20/measurement.py",
+      "bytes": 7225,
+      "sha256": "ca273a066357c6a2636d8cd8ea2ef5591b9995222f695f1c8e9bb94a08f12529"
+    },
+    {
+      "path": "infra/immigration-fiscal/scripts/memory_budget.py",
+      "bytes": 3173,
+      "sha256": "52fcbf8baa838a0cfe67b8355ccc2186eda143e53230010e94ac36909348589f"
+    },
+    {
+      "path": "infra/immigration-fiscal/status_impute_2026_09_16/impute_status.py",
+      "bytes": 9047,
+      "sha256": "68dc38e36735e49aeee8d2a7fc0806f3756ee053504596a003efb950c8a6429c"
+    },
+    {
+      "path": "infra/immigration-fiscal/union_completion_2026_10_14/derived/added_band_prices.json",
+      "bytes": 42418,
+      "sha256": "58ae4a2eb332936e9285a1aacd38269bd33664722ec9dbe43e8f559f9bf58fcc"
+    },
+    {
+      "path": "infra/immigration-fiscal/union_completion_2026_10_14/job_record_key.py",
+      "bytes": 9892,
+      "sha256": "87d641e0d4f520176d5080e0797b39e177e46a43893bf898ebd541e3732d53fe"
+    },
+    {
+      "path": "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct15/completion_jobs.json",
+      "bytes": 7847,
+      "sha256": "a76b8eafc80f7d238c784cdd2687bf51d0d9d123b951836f9579f36d02909ad0"
+    },
+    {
+      "path": "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct15/completion_jobs.npz",
+      "bytes": 3441,
+      "sha256": "9b705b349785c176dbfd507201e0e304f4b7d51e8d1cc48e667c0e1de3389a89"
+    },
+    {
+      "path": "infra/immigration-fiscal/within_group_distribution_2026_09_29/completion_keys.py",
+      "bytes": 2151,
+      "sha256": "a5bfae6704bccd97e55f1fafa5618baa21b615d2dafa7bca80815e7dd3f75937"
+    },
+    {
+      "path": "infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py",
+      "bytes": 111443,
+      "sha256": "d958ce812254d82d8eedac6f5b432e9b0bf5ce255eb0efd356ec6af2e8c0cc82"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 602,
+      "sha256": "0ef9c8e68ffcb1b2cfab8a443787ae47d81dbe2ad69a18c862ede105c9726fd6"
+    },
+    {
+      "path": "sources/immigration-fiscal/data/external/census_popest_2024/NST-EST2024-ALLDATA.csv",
+      "bytes": 41378,
+      "sha256": "b8b50bd345d8a5f33d5c8a28c95aeaa0a50971356f000d9b48276a65fd9022a7"
+    },
+    {
+      "path": "sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256dat.zip",
+      "bytes": 6125956,
+      "sha256": "d0779e49de4f5ff0b0fff6774167023382366a0ef0905e6a3c40126114f988c9"
+    },
+    {
+      "path": "sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256su.txt",
+      "bytes": 565233,
+      "sha256": "a7bd4eca49833f40df45b53aad803dfca15b1a3a9b1de03aa6e79f508c5e24be"
+    },
+    {
+      "path": "sources/immigration-fiscal/derived/ipums_usa/usa_00003_census1980-2000+acs2005-2024_mexborn.parquet",
+      "bytes": 27392010,
+      "sha256": "4779fe688d764cb41751afde1ac44f5b2a80d5c19f622b2f34b0ab638f6dfa37"
+    },
+    {
+      "path": "uv.lock",
+      "bytes": 179568,
+      "sha256": "fda4346826789712bcd76fc60dedeb709be3ffaa3bd09db25c9f628587094aa2"
+    }
+  ]
+}

@@ -28,6 +28,17 @@ GENS = ("G1", "G2", "G3plus")
 TOL = 1e-6
 # Calendar-based uniform-birthday approximation at the case's March 15 survey date.
 BIRTH_OLDER_SHARE = (date(2020, 4, 1) - date(2020, 3, 15)).days / (date(2021, 3, 15) - date(2020, 3, 15)).days
+DEFINITIONS = {
+    "central": {}, "pes_only": {"mode": "pes_only"},
+    "da_low": {"mode": "da_low"}, "da_middle": {"mode": "da_middle"}, "da_high": {"mode": "da_high"},
+    "pes_nce_minus_1se": {"se_shift": -1}, "pes_nce_plus_1se": {"se_shift": 1},
+    "proportional_pricing": {}, "age_priced_all_age_rate": {"mode": "proportional"},
+    "proportional": {"mode": "proportional"}, "post_arrival_rate": {"arrival_arm": "post_rate"},
+    "arrival27_none_pre2020": {"arrival_arm": "none_27"}, "arrival27_all_pre2020": {"arrival_arm": "all_27"},
+    "added_white": {"mode": "added_white"}, "birthday_younger": {"birth_arm": "all_younger"},
+    "birthday_older": {"birth_arm": "all_older"}}
+ENVELOPE = ("da_low", "da_high", "pes_nce_minus_1se", "pes_nce_plus_1se", "proportional",
+            "proportional_pricing", "age_priced_all_age_rate", "pes_only")
 
 
 def require(ok, why):
@@ -156,9 +167,9 @@ def evaluate(data, f, af, proportional=False):
     return out, parts, people
 
 
-def denominator_arm(data, f, central):
+def denominator_arm(data, f, central, audit_path=None, output_path=None):
     """Add positive omissions to the consumer's actual national driver masses."""
-    audit = json.loads((LANE / "derived/pricing_audit.json").read_text())
+    audit = json.loads((audit_path or LANE / "derived/pricing_audit.json").read_text())
     shifts = {e: 0.0 for e in ENDS}
     covered, held = {e: 0.0 for e in ENDS}, {e: 0.0 for e in ENDS}
     diagnostics = []
@@ -183,7 +194,7 @@ def denominator_arm(data, f, central):
                             "national_dilution": float(dilution), "base_piece_bn": amount,
                             "signed_numerator_addition_bn": addition,
                             "change_from_fixed_mass_bn": float((amount + addition) / (1 + dilution) - (amount + addition))})
-    with (LANE / "derived/denominators.csv").open("w", newline="") as stream:
+    with (output_path or LANE / "derived/denominators.csv").open("w", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=diagnostics[0].keys(), lineterminator="\n")
         writer.writeheader()
         writer.writerows(diagnostics)
@@ -192,13 +203,13 @@ def denominator_arm(data, f, central):
                 "gross_piece_bn_with_parent": covered[e], "gross_piece_bn_held": held[e]} for i, e in enumerate(ENDS)}
 
 
-def validate_cache_receipt(audit):
+def validate_cache_receipt(audit, manifest=None, cache=None):
     for field, filename in (("adapter_sha256", "export_pricing.py"), ("national_keys_sha256", "national_keys.py")):
         require(audit.get(field) == hashlib.sha256((LANE / filename).read_bytes()).hexdigest(),
                 "stale pricing adapter " + filename + "; rerun export_pricing.py")
-    require(audit.get("dependency_manifest_sha256") == hashlib.sha256(MANIFEST.read_bytes()).hexdigest(),
+    require(audit.get("dependency_manifest_sha256") == hashlib.sha256((manifest or MANIFEST).read_bytes()).hexdigest(),
             "stale pricing input manifest; rerun export_pricing.py")
-    with (LANE / "_cache/pricing.npz").open("rb") as stream:
+    with (cache or LANE / "_cache/pricing.npz").open("rb") as stream:
         cache_hash = hashlib.file_digest(stream, "sha256").hexdigest()
     require(audit.get("pricing_cache_sha256") == cache_hash, "stale or corrupt pricing cache")
 
@@ -230,17 +241,8 @@ def main():
         got = factor * sum(float(generations[(end, g)]["cost_bn"]) for g in ("G2", "G3plus"))
         require(abs(got - legacy["ends"][end]["bound_bn"]) < TOL, "legacy positive control failed")
         old[end] = {"coverage_bn": got, "case_with_coverage_bn": summary["main_case"][i] + got}
-    definitions = {
-        "central": {}, "pes_only": {"mode": "pes_only"},
-        "da_low": {"mode": "da_low"}, "da_middle": {"mode": "da_middle"}, "da_high": {"mode": "da_high"},
-        "pes_nce_minus_1se": {"se_shift": -1}, "pes_nce_plus_1se": {"se_shift": 1},
-        "proportional_pricing": {},
-        "age_priced_all_age_rate": {"mode": "proportional"}, "proportional": {"mode": "proportional"},
-        "post_arrival_rate": {"arrival_arm": "post_rate"}, "arrival27_none_pre2020": {"arrival_arm": "none_27"},
-        "arrival27_all_pre2020": {"arrival_arm": "all_27"}, "added_white": {"mode": "added_white"},
-        "birthday_younger": {"birth_arm": "all_younger"}, "birthday_older": {"birth_arm": "all_older"}}
     scenarios, rows = {}, []
-    for name, options in definitions.items():
+    for name, options in DEFINITIONS.items():
         f, af = factors(data, rates, base, **options)
         estimates, parts, people = evaluate(data, f, af, proportional=name in ("proportional", "proportional_pricing"))
         scenarios[name] = {"ends": {}, "parts": parts, "implied_net_missing_people": people}
@@ -263,12 +265,10 @@ def main():
     for i, e in enumerate(ENDS):
         denom[e]["case_with_coverage_bn"] = summary["main_case"][i] + denom[e]["coverage_bn"]
         denom[e]["over_5bn_from_central"] = abs(denom[e]["change_from_central_bn"]) >= 5
-    envelope = ("da_low", "da_high", "pes_nce_minus_1se", "pes_nce_plus_1se", "proportional",
-                "proportional_pricing", "age_priced_all_age_rate", "pes_only")
     output = {"key": "oct14", "case": "main_case_2026_10_14", "allocation": "personal", "specifications": [16, 11],
         "ends": central_ends, "legacy_positive_control": old, "scenarios": scenarios, "denominator_arm": denom,
-        "range_bn": {e: [min(scenarios[n]["ends"][e]["coverage_bn"] for n in envelope),
-                         max(scenarios[n]["ends"][e]["coverage_bn"] for n in envelope)] for e in ENDS},
+        "range_bn": {e: [min(scenarios[n]["ends"][e]["coverage_bn"] for n in ENVELOPE),
+                         max(scenarios[n]["ends"][e]["coverage_bn"] for n in ENVELOPE)] for e in ENDS},
         "range_label": "construction sensitivity envelope, not confidence interval or bound",
         "gates": {"legacy_reproduction_1e_6bn": True, "pricing_every_replicate_1e_6bn": True,
                   "coverage_generation_closure_1e_6bn": True, "finite_positive_inputs": True, "metadata": True},

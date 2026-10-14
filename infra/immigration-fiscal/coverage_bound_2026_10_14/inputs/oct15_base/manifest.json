@@ -1,0 +1,66 @@
+{
+  "key": "oct15",
+  "coverage": "off",
+  "files": [
+    {
+      "name": "summary.json",
+      "source": "infra/immigration-fiscal/main_case_2026_10_15/derived/summary.json",
+      "bytes": 1619960,
+      "sha256": "c6e83a3ab879a6c0d1efaefcb6fe7ae53ec8180904ea307466acb86c7a9880d8"
+    },
+    {
+      "name": "lineage_addition.json",
+      "source": "infra/immigration-fiscal/main_case_2026_10_15/derived/lineage_addition.json",
+      "bytes": 112460,
+      "sha256": "191c9f46289ec455052265c0ddb1787be90de12eebc93fbb2bc922a18f7c6dbb"
+    },
+    {
+      "name": "corrections.json",
+      "source": "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections.json",
+      "bytes": 1887313,
+      "sha256": "5f1bbd73ccfc0ce15c635674cb5be4823bdeeab3591027669db806e01d1bc6a9"
+    },
+    {
+      "name": "generation_results.csv",
+      "source": "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_oct15.csv",
+      "bytes": 2901,
+      "sha256": "1dae0fa987abfe9494bad23f6a44a241f600a0f4c03635ff6b5432c089daa8b9"
+    },
+    {
+      "name": "generation_summary.json",
+      "source": "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_summary_oct15.json",
+      "bytes": 5753931,
+      "sha256": "f9b7505d075b6fb42dec93a69b5edce3999e69b346a8b17f323da1c798074518"
+    },
+    {
+      "name": "lines.json",
+      "source": "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct15/lines.json",
+      "bytes": 3869339,
+      "sha256": "fe1cd51f0f393f5f6b2ecad53952e05fe7d4b3dc15f728f9d718f44ee4adb003"
+    },
+    {
+      "name": "corrections_cash.json",
+      "source": "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections_cash.json",
+      "bytes": 1864849,
+      "sha256": "70d408e45bad832c4d6a0bcd1f27d969cfce79a61f7d2d3bc9ec3d399eb207f0"
+    },
+    {
+      "name": "generation_results_cash.csv",
+      "source": "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_oct15_cash.csv",
+      "bytes": 2901,
+      "sha256": "720a8ae91e2da0bddb24e20adb69467f17a848b161c7af9ee8e1df796cee336a"
+    },
+    {
+      "name": "generation_summary_cash.json",
+      "source": "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_summary_oct15_cash.json",
+      "bytes": 5601553,
+      "sha256": "53433961cbce6949b5ecd7b641b62b16657896e7fbc0b5335be64b59b2793ff8"
+    },
+    {
+      "name": "lines_cash.json",
+      "source": "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct15/lines_cash.json",
+      "bytes": 3866066,
+      "sha256": "74d9a08c4707556b4fbb6badbf665eda0fc67f094382b4b56992faff6fd95116"
+    }
+  ]
+}

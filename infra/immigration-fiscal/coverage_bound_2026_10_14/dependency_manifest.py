@@ -34,10 +34,11 @@ def digest(path, opener=io.open):
         return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
-def validate_manifest():
-    require(MANIFEST.exists(), "missing manifest; explicit capture is required")
-    data = json.loads(MANIFEST.read_text())
-    require(data.get("route") == "coverage oct14 personal flat pricing", "mismatched manifest route")
+def validate_manifest(manifest=None, route="coverage oct14 personal flat pricing"):
+    manifest = MANIFEST if manifest is None else manifest
+    require(manifest.exists(), "missing manifest; explicit capture is required")
+    data = json.loads(manifest.read_text())
+    require(data.get("route") == route, "mismatched manifest route")
     require(data.get("runtime") == runtime(), "changed numerical runtime; recapture and reproduce pricing")
     paths = [x["path"] for x in data["files"]]
     require(paths and len(paths) == len(set(paths)), "empty or duplicate dependency manifest")
@@ -50,9 +51,11 @@ def validate_manifest():
 
 
 class ReadGuard:
-    def __init__(self, capture):
+    def __init__(self, capture, manifest=None, route="coverage oct14 personal flat pricing"):
         self.capture = capture
-        self.entries = {} if capture else validate_manifest()
+        self.manifest = MANIFEST if manifest is None else manifest
+        self.route = route
+        self.entries = {} if capture else validate_manifest(self.manifest, route)
         self.reads = set()
         self.opener = io.open
 
@@ -83,17 +86,17 @@ class ReadGuard:
         for name in ("uv.lock", "pyproject.toml"):
             self.observe(ROOT / name)
         if self.capture:
-            payload = {"route": "coverage oct14 personal flat pricing",
+            payload = {"route": self.route,
                        "runtime": runtime(),
                        "method": "actual Python read paths, pandas Parquet paths, and imported repository modules",
                        "files": [self.entries[p] for p in sorted(self.entries)]}
-            MANIFEST.write_text(json.dumps(payload, indent=2) + "\n")
-        return digest(MANIFEST, self.opener)
+            self.manifest.write_text(json.dumps(payload, indent=2) + "\n")
+        return digest(self.manifest, self.opener)
 
 
 @contextmanager
-def guard(capture=False):
-    tracker = ReadGuard(capture)
+def guard(capture=False, manifest=None, route="coverage oct14 personal flat pricing"):
+    tracker = ReadGuard(capture, manifest, route)
     old_builtin, old_io, old_parquet = builtins.open, io.open, pd.read_parquet
 
     def wrapped(opener):
