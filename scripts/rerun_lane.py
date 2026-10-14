@@ -28,8 +28,11 @@ way the rerun does not cover it (3589a4f took a half-written script from a runni
 A module that a named script reaches through a static `require("./x.cjs")`, `import ... from "./x.mjs"` or
 Python `import x` (resolved beside the importing file) counts as run too: the round-2 review of 2026-10-14 found
 lanes exempting `v7_split.cjs` and `age_routing.cjs` with `--allow-unrun` because the check did not follow
-`require()`, so an exemption kept passing after a caller stopped loading the module. Dynamic paths
-(`require(path.join(...))`, `sys.path` edits) are not followed; those still need a command or an exemption.
+`require()`, so an exemption kept passing after a caller stopped loading the module. A wrapper's
+`"$LANE/x.cjs"` token resolves beside the wrapper, and a script a Python file builds a path to and runs
+(`HERE / "x.cjs"`, or a call argument) counts as reached: on 2026-10-15 the generation lane flagged three
+modules its run_all.sh ran that way. Other dynamic paths (`require(path.join(...))`, `sys.path` edits) are
+not followed; those still need a command or an exemption.
 
 Commands run with UV_OFFLINE=1, so `uv run --with <pkg>` takes packages from uv's cache instead of
 asking PyPI on every call. On 2026-09-29 a PyPI connect timeout failed two white_replacement reruns
@@ -60,11 +63,39 @@ ROOT = Path(__file__).resolve().parent.parent
 SCRIPT_SUFFIXES = {".py", ".cjs", ".mjs", ".js", ".R", ".sh"}
 
 
+def wrapper_paths(cmds: list[str]) -> list[Path]:
+    """Each shell script a command runs."""
+    return [ROOT / tok for c in cmds for tok in c.split() if tok.endswith(".sh") and (ROOT / tok).is_file()]
+
+
 def wrapper_texts(cmds: list[str]) -> list[str]:
     """The text of each shell script a command runs. A wrapper such as run_all.sh names the lane's scripts itself:
     on 2026-09-29 `sh {lane}/run_all.sh` ran all of the world ledger's scripts and eight of them showed as NOT RUN."""
-    return [(ROOT / tok).read_text() for c in cmds for tok in c.split()
-            if tok.endswith(".sh") and (ROOT / tok).is_file()]
+    return [p.read_text() for p in wrapper_paths(cmds)]
+
+
+def wrapper_scripts(wrapper: Path) -> set[Path]:
+    """Scripts beside a wrapper that it names through a variable, as `node "$LANE/run_generations_v8.cjs"`: the
+    token does not resolve from the repository root, so on 2026-10-15 the modules that script requires showed as
+    NOT RUN although run_all.sh ran it."""
+    names = {Path(tok.strip("'\";()")).name for tok in wrapper.read_text().split()}
+    return {(wrapper.parent / n).resolve() for n in names
+            if Path(n).suffix in SCRIPT_SUFFIXES and (wrapper.parent / n).is_file()}
+
+
+def py_named_scripts(path: Path, tree: ast.AST) -> set[Path]:
+    """Scripts beside a Python file that it builds a path to and runs, as `subprocess.run(["node", str(HERE /
+    "routing_variants.cjs")])`: a string literal on the right of `/`, or a call argument (bare or inside a list)."""
+    lits: list[str] = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div) and isinstance(node.right, ast.Constant):
+            lits.append(node.right.value)
+        elif isinstance(node, ast.Call):
+            for arg in node.args:
+                elts = arg.elts if isinstance(arg, (ast.List, ast.Tuple)) else [arg]
+                lits += [e.value for e in elts if isinstance(e, ast.Constant)]
+    return {(path.parent / Path(s).name).resolve() for s in lits if isinstance(s, str)
+            and Path(s).suffix in SCRIPT_SUFFIXES and (path.parent / Path(s).name).is_file()}
 
 
 JS_SPEC = re.compile(r"""(?:\brequire\(\s*|\bimport\s*\(\s*|\bfrom\s+|^\s*import\s+)(['"])([^'"]+)\1""", re.M)
@@ -98,7 +129,7 @@ def py_deps(path: Path) -> set[Path]:
         elif isinstance(node, ast.ImportFrom):
             mod = node.module or ""
             names += [(mod, node.level)] + [(f"{mod}.{a.name}" if mod else a.name, node.level) for a in node.names]
-    deps = set()
+    deps = py_named_scripts(path, tree)
     for name, level in names:
         if not name:
             continue
@@ -114,6 +145,7 @@ def reached_files(cmds: list[str]) -> set[Path]:
     """Every file the commands name (directly or through a shell script they run), closed over static loads."""
     todo = [(ROOT / tok.strip("'\";()")).resolve() for text in cmds + wrapper_texts(cmds) for tok in text.split()]
     todo = [p for p in todo if p.suffix in SCRIPT_SUFFIXES and p.is_file()]
+    todo += [p for w in wrapper_paths(cmds) for p in wrapper_scripts(w)]
     seen: set[Path] = set()
     while todo:
         p = todo.pop()

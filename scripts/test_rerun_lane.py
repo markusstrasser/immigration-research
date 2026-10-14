@@ -239,3 +239,33 @@ def test_vanished_backup_copy_stops_without_a_verdict(tmp_path: Path) -> None:
     assert r.returncode == 5, r.stdout
     assert "VANISHED FROM BACKUP lane/derived/out.txt" in r.stdout and "BACKUP DAMAGED: 1/" in r.stdout
     assert "IDENTICAL" not in r.stdout
+
+
+def test_modules_a_wrapper_names_through_a_variable_are_covered(tmp_path: Path) -> None:
+    # 2026-10-15: run_all.sh ran `node "$LANE/run_generations_v8.cjs"`; the token did not resolve from the root, so the
+    # modules that script requires showed as NOT RUN.
+    repo = lane_repo(tmp_path)
+    (repo / "lane" / "run_all.sh").write_text(f'L=lane\n{sys.executable} "$L/main.py"\n')
+    (repo / "lane" / "main.py").write_text("import helper\nopen('lane/derived/out.txt', 'w').write('1\\n')\n")
+    (repo / "lane" / "helper.py").write_text("x = 1\n")
+    (repo / "lane" / "orphan.py").write_text("y = 2\n")
+    r = subprocess.run([sys.executable, "scripts/rerun_lane.py", "lane", "sh {lane}/run_all.sh"], cwd=repo,
+                       capture_output=True, text=True)
+    assert r.returncode == 3, r.stdout
+    flagged = {line.split()[-1] for line in r.stdout.splitlines() if "NOT RUN" in line}
+    assert flagged == {"lane/orphan.py"}, r.stdout
+
+
+def test_script_a_python_runner_builds_a_path_to_is_covered(tmp_path: Path) -> None:
+    # routing_audit.py runs `node HERE / "routing_variants.cjs"` through subprocess; no import reaches it.
+    repo = lane_repo(tmp_path)
+    (repo / "lane" / "build.py").write_text(
+        "import subprocess, sys\nfrom pathlib import Path\nHERE = Path(__file__).parent\n"
+        "subprocess.run([sys.executable, str(HERE / 'child.py')], check=True)\n"
+        "print('see notes.py')\n")
+    (repo / "lane" / "child.py").write_text("open('lane/derived/out.txt', 'w').write('1\\n')\n")
+    (repo / "lane" / "notes.py").write_text("z = 3\n")
+    r = rerun(repo)
+    assert r.returncode == 3, r.stdout
+    flagged = {line.split()[-1] for line in r.stdout.splitlines() if "NOT RUN" in line}
+    assert flagged == {"lane/notes.py"}, r.stdout
