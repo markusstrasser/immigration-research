@@ -83,6 +83,9 @@ session: 95a94bd8-dcdc-4501-bb8e-5f9906dddc53
   candidate built 2026-09-30: `infra/immigration-fiscal/main_case_candidate_v41_2026_09_30/` (1bbeae94, 44 gates); adoption needs a new adopted lane, the 15 consumer lanes and the docs, listed in its RESULT.
 - **Evidence map to v4 (recommend: yes).** It still states the September 27 claims: C2 "taxes cover benefits" is false on v4 (the group's taxes fall $3.4–12.6bn short of its household transfers with pensions on accrual), C1 says $355bn (v4 midpoint $403bn) and C5 85% (v4 68%). Evidence: `infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md`, section "v4 case (sept29)".
 - **Push (recommend: yes).** main is about 50 commits ahead of origin/main (01e7d0b), including the peer session's Indian-origin lanes; keyscan clean on every commit this session.
+  consumed: 2026-10-15 all three asks of this section were overtaken — the row-4 revision went into v7 as item
+  row4_frame (148ed1ea); the evidence map has been on v6 since 2026-10-07 at his request; pushes went out since, last
+  ed8fc58b on 2026-10-14 — session 75b08f57
 
 ## Open asks, 2026-10-14
 session: 75b08f57-63cc-4e3d-96dc-60050327b5c1
@@ -122,6 +125,12 @@ built from the adopted fixes. Each ask has my recommendation; the work proceeds 
 - **Who wins (recommend: the stationary financing frame as the verdict, the cohort frame beside).** With every
   channel and the corrected payer pool, 4.6% / 8.4% of other residents come out ahead under rules a / b (was 19.6% /
   18.7%); the cohort frame moves that by under 0.2 points. Evidence: `winners_losers_2026_09_24/RESULT.md` (P7).
+  [answered: 2026-10-15 01:02 JST, in chat, to each of the eight asks above: "ok"]
+  consumed: 2026-10-15 value of a death — kept: uniform DOT VSL in the central, life-years beside — session 75b08f57
+  consumed: 2026-10-15 world ledger public goods — kept report-only — session 75b08f57
+  consumed: 2026-10-15 who wins — the stationary frame stays the verdict, the cohort frame beside — session 75b08f57
+  (coverage, the mixed-unit removal and item 6's wording get their receipts at v8's adoption; the UIs and the push
+  after v8's docs pass.)
 
 ## Open ask, 2026-10-15 00:45 JST: the Codex weekly plan
 session: 75b08f57-63cc-4e3d-96dc-60050327b5c1
@@ -135,3 +144,7 @@ session: 75b08f57-63cc-4e3d-96dc-60050327b5c1
   until you answer: the who-wins lane's round-2 fixes, the comparators' own mixed-unit removal, and round 3's GPT
   reviewers. The world-ledger fix worker is already in its research phase. Your options: continue on credits, wait
   for the reset, or run the held lanes as Claude workers (you asked for Sol to save tokens).
+  [answered: 2026-10-15 01:02 JST, in chat: "yeah it's fine to use a bit more ... use common sense and taste ...
+  Try to use 6.1 gpt sol etc."]
+  consumed: 2026-10-15 the held lanes run on GPT-6.1 Sol, kept lean: the who-wins round-2 fixes now, the comparators'
+  own mixed-unit removal after v8's adoption, round 3 with its GPT axes once round 2's fixes land — session 75b08f57
