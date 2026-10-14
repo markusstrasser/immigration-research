@@ -1,0 +1,123 @@
+NAICS2022,NAICS2022_LABEL,TAXSTAT,NAPCS2022,NAPCS2022_LABEL,NAPCSDOL,NAPCSDOL_F,NAPCSDOL_CV,NAPCSDOL_IMP,LINEALL_PCT,LINEALL_PCT_SE,us
+561611,Investigation and Personal Background Check Services,00,0000000000,Total,6154657,,0.0,0,100.0,0.0,1
+561611,Investigation and Personal Background Check Services,00,7000550000,"Building security system monitoring services, residential",2581,s,73.5,0,0.0,0.0,1
+561611,Investigation and Personal Background Check Services,00,7002775000,"Security, navigation, armoring, and other vehicle services",0,A,0.0,0,0.0,0.0,1
+561611,Investigation and Personal Background Check Services,00,7004960000,"Health screening services and medical examinations for employment, except by health practitioners",15939,s,53.1,0,0.3,0.0,1
+561611,Investigation and Personal Background Check Services,00,7006000000,Process server services,0,A,0.0,0,0.0,0.0,1
+561611,Investigation and Personal Background Check Services,00,7006050000,Personal background checks,2726258,,5.2,0,44.3,0.0,1
+561611,Investigation and Personal Background Check Services,00,7006100000,Investigation services,3095233,,3.8,0,50.3,0.0,1
+561611,Investigation and Personal Background Check Services,00,7006100003,Domestic and family investigation services,135895,,14.5,0,2.2,0.0,1
+561611,Investigation and Personal Background Check Services,00,7006100006,Legal investigation services,330783,,6.9,0,5.4,0.0,1
+561611,Investigation and Personal Background Check Services,00,7006100009,Insurance investigation services,786066,,11.8,0,12.8,0.0,1
+561611,Investigation and Personal Background Check Services,00,7006100012,Corporate investigation services,437435,,13.4,0,7.1,0.0,1
+561611,Investigation and Personal Background Check Services,00,7006100015,Other investigation services,1405054,,5.6,0,22.8,0.0,1
+561611,Investigation and Personal Background Check Services,00,7006250000,Notarization and certification services,0,D,0.0,0,0.0,0.0,1
+561611,Investigation and Personal Background Check Services,00,7007475000,"Building security system monitoring services, nonresidential",2729,s,79.1,0,0.0,0.0,1
+561611,Investigation and Personal Background Check Services,00,7008735000,Security guard and patrol services,262604,,16.0,0,4.3,0.0,1
+561611,Investigation and Personal Background Check Services,00,7008735003,Security guard and patrol services for buildings and grounds,237342,,18.3,0,3.9,0.0,1
+561611,Investigation and Personal Background Check Services,00,7008735006,"Security services for special events, including crowd control",25262,,20.8,0,0.4,0.0,1
+561611,Investigation and Personal Background Check Services,00,7008750000,Security consulting services,0,D,0.0,0,0.0,0.0,1
+561611,Investigation and Personal Background Check Services,00,7008775000,Security training services,806,s,51.6,0,0.0,0.0,1
+561611,Investigation and Personal Background Check Services,00,7012125000,"Testing services (excluding automotive, medical, veterinary, and calibration)",9020,,26.7,0,0.1,0.0,1
+561611,Investigation and Personal Background Check Services,00,7014475000,IT technical support services,0,A,0.0,0,0.0,0.1,1
+561611,Investigation and Personal Background Check Services,00,7017125000,Bodyguard services,13904,,35.2,0,0.2,0.0,1
+561611,Investigation and Personal Background Check Services,00,9000000000,"All other products and services, not elsewhere classified",0,D,0.0,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,0000000000,Total,37044039,,0.0,0,100.0,0.0,1
+561612,Security Guards and Patrol Services,00,7000550000,"Building security system monitoring services, residential",35381,,25.9,0,0.1,0.0,1
+561612,Security Guards and Patrol Services,00,7000575000,"Building security system and lock installation and repair services, residential",696,s,73.2,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,7002775000,"Security, navigation, armoring, and other vehicle services",27384,,29.2,0,0.1,0.0,1
+561612,Security Guards and Patrol Services,00,7005542000,Cash handling and management services for business,0,D,0.0,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,7006000000,Process server services,1680,s,60.5,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,7006050000,Personal background checks,30397,,31.9,0,0.1,0.0,1
+561612,Security Guards and Patrol Services,00,7006100000,Investigation services,183032,,19.3,0,0.5,0.0,1
+561612,Security Guards and Patrol Services,00,7006100003,Domestic and family investigation services,15841,,33.3,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,7006100006,Legal investigation services,9817,s,53.7,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,7006100009,Insurance investigation services,9386,s,48.1,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,7006100012,Corporate investigation services,30503,,13.5,0,0.1,0.0,1
+561612,Security Guards and Patrol Services,00,7006100015,Other investigation services,117485,,25.1,0,0.3,0.0,1
+561612,Security Guards and Patrol Services,00,7006250000,Notarization and certification services,0,D,0.0,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,7007425000,General-purpose and comprehensive commercial cleaning services,0,D,0.0,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,7007475000,"Building security system monitoring services, nonresidential",142902,,27.0,0,0.4,0.0,1
+561612,Security Guards and Patrol Services,00,7007500000,"Building security system and lock installation and repair services, nonresidential",16366,,39.7,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,7008735000,Security guard and patrol services,35948516,,1.1,0,97.0,0.0,1
+561612,Security Guards and Patrol Services,00,7008735003,Security guard and patrol services for buildings and grounds,34910988,,1.1,0,94.2,0.0,1
+561612,Security Guards and Patrol Services,00,7008735006,"Security services for special events, including crowd control",1037528,,12.2,0,2.8,0.0,1
+561612,Security Guards and Patrol Services,00,7008750000,Security consulting services,51082,,28.1,0,0.1,0.0,1
+561612,Security Guards and Patrol Services,00,7008775000,Security training services,54901,s,59.3,0,0.1,0.0,1
+561612,Security Guards and Patrol Services,00,7012030000,Database design and development services,0,D,0.0,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,7012270000,"Scientific and technical consulting services, not elsewhere classified",0,D,0.0,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,7014675000,Other facility support services,0,D,0.0,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,7016560000,Armored car services,100273,,30.1,0,0.3,0.0,1
+561612,Security Guards and Patrol Services,00,7016560003,"Armored car transportation of cash, except from automatic teller machines, and valuables",4484,s,41.1,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,7016560006,Armored car automatic teller machine services,219,s,87.8,0,0.0,0.0,1
+561612,Security Guards and Patrol Services,00,7016560009,Other armored car services,95570,,32.2,0,0.3,0.0,1
+561612,Security Guards and Patrol Services,00,7017125000,Bodyguard services,381142,,13.6,0,1.0,0.0,1
+561612,Security Guards and Patrol Services,00,9000000000,"All other products and services, not elsewhere classified",0,D,0.0,0,0.0,0.0,1
+561613,Armored car services,00,0000000000,Total,3605043,,0.0,0,100.0,0.0,1
+561613,Armored car services,00,7005542000,Cash handling and management services for business,0,D,0.0,0,0.0,0.0,1
+561613,Armored car services,00,7008735000,Security guard and patrol services,4909,,6.1,0,0.1,0.0,1
+561613,Armored car services,00,7008735003,Security guard and patrol services for buildings and grounds,4909,,6.1,0,0.1,0.0,1
+561613,Armored car services,00,7016560000,Armored car services,3589394,,0.6,0,99.6,0.0,1
+561613,Armored car services,00,7016560003,"Armored car transportation of cash, except from automatic teller machines, and valuables",2787194,,0.9,0,77.3,0.0,1
+561613,Armored car services,00,7016560006,Armored car automatic teller machine services,196778,,2.6,0,5.5,0.0,1
+561613,Armored car services,00,7016560009,Other armored car services,605422,,2.5,0,16.8,0.0,1
+561621,Security Systems Services (except Locksmiths),00,0000000000,Total,31313513,,0.0,0,100.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,3000325000,Construction services for maintenance and repair of single detached residential buildings,41,s,88.9,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,3002050000,"Construction services for maintenance and repair of stores, restaurants, automobile service stations, parking garages, and other commercial buildings (excluding mobile buildings)",0,S,0.0,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,4001875000,"Wholesale sales of communications equipment, including household and wireless telephones",3330,,34.2,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,4002610000,Wholesale sales of commercial sound equipment,4497,,15.2,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,4004850000,"Wholesale sales of electrical, communication, and lighting system products, including garage door openers, wiring, and cables",713,s,58.2,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,4004950000,Wholesale sales of fire extinguishers and fire safety equipment,13002,,19.6,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,4004975000,Wholesale sales of fire sprinkler devices,3618,s,99.5,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,5000875000,"Retail sales of televisions, audio and video equipment",226,s,88.8,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,5001550000,"Retail sales of computers and peripheral equipment, communications equipment, and related products",0,A,0.0,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,5001710000,Retail sales of safes and vaults,17956,,22.3,0,0.1,0.0,1
+561621,Security Systems Services (except Locksmiths),00,5001930000,"Retail sales of hardware, nonpower hand tools, and other building materials and supplies",192146,,35.2,0,0.6,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7000550000,"Building security system monitoring services, residential",14378429,,2.1,0,45.9,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7000575000,"Building security system and lock installation and repair services, residential",1745379,,10.0,0,5.6,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7000600000,Key duplication services,11581,,37.4,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7005542000,Cash handling and management services for business,7930,s,53.2,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7006050000,Personal background checks,160,s,72.5,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7006100000,Investigation services,0,D,0.0,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7006100003,Domestic and family investigation services,30,,35.0,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7006100006,Legal investigation services,15,,38.2,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7006100009,Insurance investigation services,0,D,0.0,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7006100012,Corporate investigation services,84,s,48.6,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7006100015,Other investigation services,0,D,0.0,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7007475000,"Building security system monitoring services, nonresidential",6471901,,9.6,0,20.7,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7007500000,"Building security system and lock installation and repair services, nonresidential",7956422,,3.3,0,25.4,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7008735000,Security guard and patrol services,280369,,18.5,0,0.9,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7008735003,Security guard and patrol services for buildings and grounds,0,D,0.0,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7008735006,"Security services for special events, including crowd control",0,D,0.0,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7008750000,Security consulting services,65711,,19.4,0,0.2,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7008775000,Security training services,14335,,13.3,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7009275000,"Rental and leasing of heavy trucks, truck trailers and buses",0,S,0.0,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7012033000,Custom software application design and development services,0,A,0.0,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7012048000,Computer systems integration services,16559,,17.3,0,0.1,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7014150000,Telephone answering and messaging services,0,D,0.0,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7014200000,Installation services for telecommunication networks,0,D,0.0,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7014450000,IT infrastructure and network management services,13958,,1.1,0,0.0,0.0,1
+561621,Security Systems Services (except Locksmiths),00,7014475000,IT technical support services,16784,,29.9,0,0.1,0.0,1
+561621,Security Systems Services (except Locksmiths),00,9000000000,"All other products and services, not elsewhere classified",0,D,0.0,0,0.0,0.0,1
+561622,Locksmiths,00,0000000000,Total,2626866,,0.0,0,100.0,0.0,1
+561622,Locksmiths,00,4002605000,Wholesale sales of commercial and service industry equipment,0,A,0.0,0,0.0,0.0,1
+561622,Locksmiths,00,4004925000,Wholesale sales of other construction materials and supplies,0,D,0.0,0,0.0,0.0,1
+561622,Locksmiths,00,4005325000,"Wholesale sales of materials and supplies for professional and service industries, not elsewhere classified",0,D,0.0,0,0.0,0.0,1
+561622,Locksmiths,00,5000700000,Retail sales of major household appliances and related parts and accessories,0,D,0.0,0,0.0,0.0,1
+561622,Locksmiths,00,5001710000,Retail sales of safes and vaults,120743,,8.9,0,4.6,0.0,1
+561622,Locksmiths,00,5001930000,"Retail sales of hardware, nonpower hand tools, and other building materials and supplies",337225,,6.2,0,12.8,0.0,1
+561622,Locksmiths,00,7000550000,"Building security system monitoring services, residential",26313,,21.2,0,1.0,0.0,1
+561622,Locksmiths,00,7000575000,"Building security system and lock installation and repair services, residential",541161,,6.2,0,20.6,0.0,1
+561622,Locksmiths,00,7000600000,Key duplication services,392374,,8.7,0,14.9,0.0,1
+561622,Locksmiths,00,7000800000,"Maintenance and repair services for household goods, not elsewhere classified",3587,s,53.1,0,0.1,0.0,1
+561622,Locksmiths,00,7002625000,Maintenance and repair services for automobiles and light-duty trucks,0,D,0.0,0,0.0,0.0,1
+561622,Locksmiths,00,7002775000,"Security, navigation, armoring, and other vehicle services",14412,s,44.6,0,0.5,0.0,1
+561622,Locksmiths,00,7005542000,Cash handling and management services for business,2169,s,59.5,0,0.1,0.0,1
+561622,Locksmiths,00,7006050000,Personal background checks,0,A,0.0,0,0.0,0.0,1
+561622,Locksmiths,00,7007475000,"Building security system monitoring services, nonresidential",33573,,13.6,0,1.3,0.0,1
+561622,Locksmiths,00,7007500000,"Building security system and lock installation and repair services, nonresidential",1116878,,4.2,0,42.5,0.0,1
+561622,Locksmiths,00,7008750000,Security consulting services,0,A,0.0,0,0.4,0.0,1
+561622,Locksmiths,00,7008775000,Security training services,5303,,13.2,0,0.2,0.0,1
+561622,Locksmiths,00,7011125000,Local transportation and delivery of purchased or serviced items,163,s,78.0,0,0.0,0.0,1
+561622,Locksmiths,00,7017425000,"Other miscellaneous services, not elsewhere classified",6034,,31.0,0,0.2,0.0,1
+561622,Locksmiths,00,9000000000,"All other products and services, not elsewhere classified",0,D,0.0,0,0.0,0.0,1

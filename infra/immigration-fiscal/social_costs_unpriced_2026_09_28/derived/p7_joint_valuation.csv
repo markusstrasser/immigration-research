@@ -1,0 +1,9 @@
+scenario,end,population,vsl_standard,victims_bn,fear_bn,victims_plus_fear_bn,security_bn,mortality_scope
+stacked_dot,low,39.71M union → outside lineage,dot_uniform,34.88880165304532,6.160934784780293,41.049736437825615,0.49405030321520194,DOT uniform mortality
+stacked_dot,low,42.75M lineage → outsiders,dot_uniform,37.341853694137136,6.61052360369506,43.95237729783219,0.4585074095464421,DOT uniform mortality
+stacked_dot,high,39.71M union → outside lineage,dot_uniform,39.008480793656645,7.105703550078491,46.11418434373513,0.6163742654445592,DOT uniform mortality
+stacked_dot,high,42.75M lineage → outsiders,dot_uniform,41.585449347832885,7.591849436660065,49.17729878449295,0.5676075224154165,DOT uniform mortality
+stacked_life_years_crime_only,low,39.71M union → outside lineage,dot_life_years,36.341138768322345,5.434766227141824,41.77590499546417,0.49405030321520194,crime only; pollution age mix not identified here
+stacked_life_years_crime_only,low,42.75M lineage → outsiders,dot_life_years,38.8963054810619,5.833297710232725,44.72960319129463,0.4585074095464421,crime only; pollution age mix not identified here
+stacked_life_years_crime_only,high,39.71M union → outside lineage,dot_life_years,40.632310268529245,6.293788812642177,46.92609908117142,0.6163742654445592,crime only; pollution age mix not identified here
+stacked_life_years_crime_only,high,42.75M lineage → outsiders,dot_life_years,43.31655184151968,6.72629818981665,50.042850031336336,0.5676075224154165,crime only; pollution age mix not identified here

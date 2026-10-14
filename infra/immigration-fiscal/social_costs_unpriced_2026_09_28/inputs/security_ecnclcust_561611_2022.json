@@ -1,0 +1,7 @@
+[["NAICS2022","NAICS2022_LABEL","TYPOP","TAXSTAT","CLASSCUST","CLASSCUST_LABEL","RCPTOT","RCPTOT_F","RCPTOT_DIST","RCPTOT_DIST_F","CLASSCUST_COV","CLASSCUST_COV_F","CLASSCUST","TAXSTAT","NAICS2022","us"],
+["561611","Investigation and Personal Background Check Services","00","00","001","All classes of customer","6154657",null,"100.0",null,"0.0","8","001","00","561611","1"],
+["561611","Investigation and Personal Background Check Services","00","00","5045","Household consumers and individuals","0","X","3.5",null,"0.0","X","5045","00","561611","1"],
+["561611","Investigation and Personal Background Check Services","00","00","514","Business firms and farms","0","X","75.6",null,"0.0","X","514","00","561611","1"],
+["561611","Investigation and Personal Background Check Services","00","00","515","Federal government","0","X","11.0",null,"0.0","X","515","00","561611","1"],
+["561611","Investigation and Personal Background Check Services","00","00","516","State and local governments","0","X","5.0",null,"0.0","X","516","00","561611","1"],
+["561611","Investigation and Personal Background Check Services","00","00","570","Not-for-profit organizations","0","X","4.9",null,"0.0","X","570","00","561611","1"]]

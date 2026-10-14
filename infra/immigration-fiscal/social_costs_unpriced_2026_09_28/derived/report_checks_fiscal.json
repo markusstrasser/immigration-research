@@ -1,0 +1,42 @@
+[
+  {
+    "scenario": "custody only",
+    "end": "low",
+    "personal_specification": 16,
+    "before_bn": 339.5520178295269,
+    "after_bn": 339.23349136089666,
+    "delta_bn": -0.3185264686302389,
+    "population": "39.71M union changed; added descendants held at case amounts; same absolute delta on 42.75M lineage",
+    "assumption": "Existing central 50% arrest police and 60% criminal court shares; same national state-price gap per justice service unit"
+  },
+  {
+    "scenario": "custody only",
+    "end": "high",
+    "personal_specification": 11,
+    "before_bn": 423.6492607005069,
+    "after_bn": 423.32853611701324,
+    "delta_bn": -0.32072458349364297,
+    "population": "39.71M union changed; added descendants held at case amounts; same absolute delta on 42.75M lineage",
+    "assumption": "Existing central 50% arrest police and 60% criminal court shares; same national state-price gap per justice service unit"
+  },
+  {
+    "scenario": "custody plus arrest rescaling",
+    "end": "low",
+    "personal_specification": 16,
+    "before_bn": 339.5520178295269,
+    "after_bn": 338.82917401150416,
+    "delta_bn": -0.7228438180227386,
+    "population": "39.71M union changed; added descendants held at case amounts; same absolute delta on 42.75M lineage",
+    "assumption": "Existing central 50% arrest police and 60% criminal court shares; same national state-price gap per justice service unit"
+  },
+  {
+    "scenario": "custody plus arrest rescaling",
+    "end": "high",
+    "personal_specification": 11,
+    "before_bn": 423.6492607005069,
+    "after_bn": 422.9214286196651,
+    "delta_bn": -0.7278320808417789,
+    "population": "39.71M union changed; added descendants held at case amounts; same absolute delta on 42.75M lineage",
+    "assumption": "Existing central 50% arrest police and 60% criminal court shares; same national state-price gap per justice service unit"
+  }
+]

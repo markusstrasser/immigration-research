@@ -1,0 +1,5 @@
+item,group,end,measure,comparator,beneficiary_population,valuation_basis,overlap_set,low_bn,central_bn,high_bn,vsl_standard
+fear_avoidance,mexican_origin,low,absolute,with_without,residents_outside_union,wtp_residual,"[""victims"", ""private_security""]",3.64046439619532,6.224896728981894,20.68606291320349,dot_uniform
+fear_avoidance,mexican_origin,high,absolute,with_without,residents_outside_union,wtp_residual,"[""victims"", ""private_security""]",4.126942514188698,7.179473948542373,23.744741837043538,dot_uniform
+private_security,mexican_origin,low,absolute,with_without,residents_outside_union,resource_spending,"[""fear_avoidance""]",-0.3210453251023613,0.5418078791438496,0.9274889839497362,dot_uniform
+private_security,mexican_origin,high,absolute,with_without,residents_outside_union,resource_spending,"[""fear_avoidance""]",-0.23873091351580555,0.6652594476989186,1.1001426354091626,dot_uniform

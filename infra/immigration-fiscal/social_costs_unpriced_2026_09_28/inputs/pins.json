@@ -1,0 +1,33 @@
+{
+  "description": "Executed pre-P7 control and frozen population/payment inputs; append new pins, never refresh stale bytes",
+  "files": [
+    {
+      "path": "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/baseline_priced_spans.csv",
+      "sha256": "7f8e4d8de643830f6da6d60e57f42461d0304d3536e24f91532cccf28320519a"
+    },
+    {
+      "path": "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/baseline_totals_oct14.json",
+      "sha256": "a9503beaba2e28abba2d8e1e5024b9933c33e647ce5d0e7776587ffa85cb0b80"
+    },
+    {
+      "path": "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/baseline_totals_oct14.csv",
+      "sha256": "d1ce84dc9bd8fac231b714dc3ad2cae672e19d37051a0b2db2b3468695375343"
+    },
+    {
+      "path": "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/baseline_restated_pairing.csv",
+      "sha256": "62d5e50b52226b3f9e965292ff7fd68aa4b49c6b9057b80f44eb798038eb10c1"
+    },
+    {
+      "path": "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/baseline_social_items.csv",
+      "sha256": "c8ff8aa3f9fdecb63460cf4f5e2f44d2e7aaab40f555abedf402acdba62c64a0"
+    },
+    {
+      "path": "infra/immigration-fiscal/consumption_key_2026_09_24/derived/key_specs.csv",
+      "sha256": "efc460c84be27509aead447a05badbe41095416eed866041f7736551d7e3a34f"
+    },
+    {
+      "path": "infra/immigration-fiscal/population_basis_2026_09_29/derived/frame_counts.csv",
+      "sha256": "57d068d5ba8be325048baa07da831910ff318a762f7721bf192b0122b08f3527"
+    }
+  ]
+}

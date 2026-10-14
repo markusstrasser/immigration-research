@@ -1,0 +1,19 @@
+Source: https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis
+Retrieved: 2026-10-14; web open, source page table text; curl returned HTTP 403.
+L23:                                               Current and Prior Year VSL
+L24: Value (million $)  | Base Year
+L25: --- | ---
+L26: 14.2  | 2025
+L27: 13.7  | 2024
+L28: 13.2  | 2023
+L29: 12.5  | 2022
+L30: 11.8  | 2021
+L31: 11.6  | 2020
+L32: 10.9  | 2019
+L33: 10.5  | 2018
+L34: 10.2  | 2017
+L35: 9.9  | 2016
+L36: 9.6  | 2015
+L37: 9.4  | 2014
+L38: 9.2  | 2013
+L39: 9.1  | 2012

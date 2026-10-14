@@ -1,0 +1,26 @@
+{
+  "low": {
+    "personal_specification": 16,
+    "receipt_scenario": "cbo_collective",
+    "union_share": 0.09130597981153593,
+    "lineage_share": 0.0994499672980725,
+    "added_share": 0.008143987486536573,
+    "national_bn": 602.43,
+    "union_bn": 55.005461417863586,
+    "added_bn": 4.906182381514228,
+    "lineage_ratio_source": "meta.items.lineage_social_keys_on_the_case",
+    "rule": "Current personal general-sales-tax consumption key; current moved D/U declaration takes precedence; business pass-through premise [ASSUMPTION]"
+  },
+  "high": {
+    "personal_specification": 11,
+    "receipt_scenario": "cbo_collective",
+    "union_share": 0.09130597981153593,
+    "lineage_share": 0.0994499672980725,
+    "added_share": 0.008143987486536573,
+    "national_bn": 602.43,
+    "union_bn": 55.005461417863586,
+    "added_bn": 4.906182381514228,
+    "lineage_ratio_source": "meta.items.lineage_social_keys_on_the_case",
+    "rule": "Current personal general-sales-tax consumption key; current moved D/U declaration takes precedence; business pass-through premise [ASSUMPTION]"
+  }
+}

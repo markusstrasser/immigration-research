@@ -272,13 +272,15 @@ def main():
     items = FISCAL / "social_costs_unpriced_2026_09_28" / "derived" / "items.csv"
     g = "mexican_origin"
     gate("social-costs lane's union and frame are the published CPS counts", abs(sc.N[g] - n0) < 0.5 and abs(sc.POP_ALL - civ0) < 0.5)
-    fear0, sec0, school0 = sc.fear(g, "central"), sc.security(g)[1], sc.school_range(g)[1]
+    # This producer reproduces the historical September 27 record. The live v7
+    # response is p7_crime.py's explicit active-arm output, consumed separately.
+    fear0, sec0, school0 = sc.historical_fear(g, "central"), sc.security_equal_population(g)[1], sc.school_range(g)[1]
     for name, v in (("fear_avoidance", fear0), ("private_security", sec0), ("school_disruption", school0)):
         want = item_central(items, name)
         gate(f"{name} central reproduces items.csv", abs(round(v, 2) - want) < 1e-9, f"{v:.6f} vs {want}")
     saved = dict(sc.V[g])
     sc.V[g] = {o: v * f_s for o, v in saved.items()}
-    fear4 = sc.fear(g, "central")
+    fear4 = sc.historical_fear(g, "central")
     sc.V[g] = saved
     exc0 = sc.W_PROP * sc.mex_prop_cost + (1 - sc.W_PROP) * sc.mex_viol_ncvs - sc.SHARE[g]
     gate("security's central excess share rebuilds from its parts", abs(exc0 - sc.EXC[g]["central"]) < 1e-15, f"{exc0:.6f}")

@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "path": "infra/immigration-fiscal/crime_victim_cost_2026_09_23/inputs/dot_vsl_table_web.txt",
+      "sha256": "7094dd8578affc5688c3b6d0f4500928876c4ae96dc50bbfe98f5ab313993996"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_victim_cost_2026_09_23/inputs/lt2024_Table01.xlsx",
+      "sha256": "d9ce5588403433666c26eaf178ed7afd0cd591c65b3b08dcba2b76fcf5dcdd3c"
+    },
+    {
+      "path": "infra/immigration-fiscal/homicide_cost_2026_09_18/_cache/SHR76_25a.csv",
+      "sha256": "eeedbf5e58a4a2e91d88e8078341210bd2034b57e6d42d0e2de2667020b88a12"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/derived/ncvs_victimization_factor.csv",
+      "sha256": "9764e924d954b83d11ae6c9aef0337715dcca080e51796911785d14008214822"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/derived/nibrs_mixed_group_hispanic_fraction.csv",
+      "sha256": "ff14af43b24e1f268ae4cde46d7a2ecf6c2f745a0ed36ef26635fb44e751c1de"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/dollar_effects.py",
+      "sha256": "b54ced1930b4c6787551a9b280ed6d7d5519ea93877ec00ec899d99f2c581eb4"
+    }
+  ]
+}

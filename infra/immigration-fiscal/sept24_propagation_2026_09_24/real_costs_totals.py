@@ -112,6 +112,7 @@ import hashlib
 import json
 from decimal import ROUND_HALF_UP, Decimal
 from pathlib import Path
+from types import SimpleNamespace
 
 import pandas as pd
 
@@ -200,6 +201,62 @@ LINEAGE_ROW_KEYS = dict(
     restaurant_variety_market_size=(None, None),   # the population lane: no head count in the item (factor 1)
 )
 UNION = ("mexican_origin", "union")  # the lanes' labels for the same 40.9m group
+# Consumer declarations are explicit even where a producer predates typed rows. They
+# describe the adopted reading, not a default inferred from a missing column.
+SOCIAL_CONTRACTS = {
+    "victims": ("crime_victim_cost_2026_09_23", "victim_harm_active_vsl", ("fear_avoidance",)),
+    "property_crime": ("crime_victim_cost_2026_09_23", "victim_resource_loss", ("private_security",)),
+    "unreimbursed_care": ("uncompensated_care_2026_09_23", "unreimbursed_resource_cost", ("fiscal_health",)),
+    "congestion": ("service_response_long_run_2026_09_27", "value_of_time", ("road_crash_externality",)),
+    "housing_gain": ("housing_transfer_2026_09_23", "net_resident_welfare", ("capitalized_crime", "school_disruption")),
+    "fear_avoidance": ("social_costs_unpriced_2026_09_28", "wtp_residual", ("victims", "private_security")),
+    "private_security": ("social_costs_unpriced_2026_09_28", "resource_spending", ("fear_avoidance",)),
+    "school_disruption": ("social_costs_unpriced_2026_09_28", "earnings_pv", ("school_violence",)),
+    "pm25_consumption": ("air_pollution_2026_09_28", "dot_vsl_plus_morbidity", ("mortality",)),
+    "road_crash_externality": ("road_crash_externality_2026_09_28", "crash_resource_and_harm", ("mortality", "road_congestion")),
+    "scale_net_earnings": ("scale_spillovers_2026_09_23", "earnings_including_receipts", ("production",)),
+    "restaurant_variety_market_size": ("disease_food_2026_09_28", "consumer_surplus", ("consumer_scale",)),
+    "formal_volunteering_outside_group": ("benefits_inventory_2026_09_28", "replacement_wage", ("informal_care",)),
+    "total_consumer_scale": ("consumer_scale_2026_09_28", "consumer_surplus", ("restaurant_variety", "trade")),
+    "total_trade_travel_fdi": ("trade_networks_2026_09_28", "mixed_resource_and_surplus", ("consumer_scale",)),
+}
+
+
+def social_contract(path, row, historical=False):
+    """Fail closed on an undeclared source, comparator, recipient or valuation.
+
+    historical=True is solely for reproducing the frozen pre-P7 control; its rows
+    cannot be used as the adopted P7 crime rows.
+    """
+    item = row["item"]
+    if item not in SOCIAL_CONTRACTS:
+        raise ValueError(f"[BLOCKED] no consumer declaration for {item}")
+    source, valuation, overlaps = SOCIAL_CONTRACTS[item]
+    owner = path.parent.parent.name
+    if path.name == "baseline_social_items.csv":
+        owner = "social_costs_unpriced_2026_09_28"
+    if owner != source:
+        raise ValueError(f"[BLOCKED] {item}: undeclared source {path}")
+    contract = dict(comparator="with_without", beneficiary_population="residents_outside_union",
+                    valuation_basis=valuation, overlap_set=list(overlaps))
+    if historical and item == "private_security":
+        contract["comparator"] = "equal_population"
+    measure = row.get("measure")
+    if measure is not None and measure not in ("absolute", "normalized"):
+        raise ValueError(f"[BLOCKED] {item}: unknown measure {measure}")
+    if item == "private_security" and measure == "normalized" and not historical:
+        raise ValueError("[BLOCKED] equal-population security cannot enter a with/without total")
+    for key, expected in contract.items():
+        supplied = row.get(key)
+        if supplied is not None:
+            if key == "overlap_set" and isinstance(supplied, str):
+                supplied = json.loads(supplied)
+            if supplied != expected:
+                raise ValueError(f"[BLOCKED] {item}: incompatible {key}: {supplied!r} != {expected!r}")
+    # A legacy security producer explicitly describes an equal-population price.
+    if item == "private_security" and not historical and "offending share - population share" in str(row.get("method_note", "")):
+        raise ValueError("[BLOCKED] equal-population security cannot enter a with/without total")
+    return contract
 # Runs of band_variants.cjs beside a case, never in its band (the case's column; the row label, its note).
 BESIDE = dict(capital_at_7pct=("capital_at_7pct", "the return on public capital at the reported 7% on every component; "
                                "beside the central total, never in it"),
@@ -313,7 +370,7 @@ def scale_rows(path):
     return pd.DataFrame(rows)
 
 
-def social_items(sources):
+def social_items(sources, historical=False):
     """The union's added social items from their lanes' items.csv: (central, stacked low, stacked high) summed over
     all items and over the cost items, $bn, and one record per item with its normalized figure where the lane
     reports one (beside, never added)."""
@@ -321,11 +378,15 @@ def social_items(sources):
     for path, ids, decision, kind in sources:
         frame = scale_rows(path) if path == PATHS["scale"] else pd.read_csv(path)
         union = frame[frame.group.isin(UNION) & frame["item"].isin(ids)]
-        measure = union["measure"] if "measure" in union.columns else pd.Series("absolute", index=union.index)
+        declarations = {i: social_contract(path, r.to_dict(), historical=historical) for i, r in union.iterrows()}
+        # Missing producer `measure` is resolved only by the authoritative registry.
+        measure = union["measure"] if "measure" in union.columns else pd.Series(
+            {i: "absolute" for i in declarations}, index=union.index)
         absolute, normalized = union[measure == "absolute"], union[measure == "normalized"]
         gate(f"social items: one absolute row per added item for the union ({rel(path)})",
              sorted(absolute["item"]) == sorted(ids), f"{len(absolute)} rows")
-        for r in absolute.itertuples():
+        for index, row in absolute.iterrows():
+            r = SimpleNamespace(**row.to_dict())
             n = normalized[normalized["item"] == r.item]
             # Lanes label their arms low/high by evidence, not always by cost (trade: low = the small gain); the
             # stacked span needs the least and most costly values, so order them and require the central inside.
@@ -333,7 +394,7 @@ def social_items(sources):
             gate(f"social items: {r.item} central inside its range", lo <= float(r.central_bn) <= hi)
             nlo, nhi = (None, None) if n.empty else sorted((float(n.low_bn.iloc[0]), float(n.high_bn.iloc[0])))
             detail.append(dict(item=r.item, kind=kind, source=rel(path), decision=decision, central_bn=float(r.central_bn),
-                               low_bn=lo, high_bn=hi,
+                               low_bn=lo, high_bn=hi, contract=declarations[index],
                                normalized_bn=None if n.empty else dict(
                                    central=float(n.central_bn.iloc[0]), low=nlo, high=nhi)))
     gate("social items: no item added twice", len({d["item"] for d in detail}) == len(detail))
@@ -342,7 +403,36 @@ def social_items(sources):
     return sums(detail), sums([d for d in detail if d["kind"] == "cost"]), detail
 
 
-def lineage_social_rows(path, keys, restated_social):
+def lineage_recipient_shares(lineage, frame_path):
+    """Added people among each row's former outsiders, not among its senders.
+
+    [ASSUMPTION] exchangeable exposure within the stated recipient age range;
+    fractional five-year bins are uniform within bin. This does not identify U→D.
+    """
+    counts = {r["count"]: float(r["row4"]) for r in csv.DictReader(frame_path.open())}
+    mixes = lineage["age_mix"]["mixes"]
+    parts = ((lineage["counts"]["at_g3_rate"], mixes["g3_rate"]),
+             (lineage["counts"]["later_losses"], mixes["later"]))
+    weights = {
+        "all": [1.0] * 17,
+        "12_plus": [0.0, 0.0, 3 / 5] + [1.0] * 14,
+        "18_plus": [0.0] * 3 + [2 / 5] + [1.0] * 13,
+        "5_17": [0.0, 1.0, 1.0, 3 / 5] + [0.0] * 13,
+    }
+    shares = {}
+    for age, w in weights.items():
+        added = sum(n * sum(p * a for p, a in zip(mix, w)) for n, mix in parts)
+        outsiders = counts[f"cps_all_civilian|{age}"] - counts[f"union|{age}"]
+        share = added / outsiders
+        if not 0 <= share < 1:
+            raise ValueError(f"[BLOCKED] lineage recipients {age}: {share}")
+        shares[age] = share
+    return {item: shares["5_17" if item == "school_disruption" else
+                         "18_plus" if item == "formal_volunteering_outside_group" else "all"]
+            for item in LINEAGE_ROW_KEYS}
+
+
+def lineage_social_rows(path, keys, restated_social, recipient_shares=None):
     """The added people's social rows (October 5 on): each row of the population lane's restatement on audit row 4's
     union (section row; crash and congestion from row_5plus, the pairing's 5+ basis) times the added people's share of
     its key (LINEAGE_ROW_KEYS) at each band end. Gates: every row has a key, and the rows add to the restated social
@@ -364,7 +454,15 @@ def lineage_social_rows(path, keys, restated_social):
             v = by_end.get(end, by_end.get("both"))
             key = LINEAGE_ROW_KEYS[item][i]
             share = 0.0 if key is None else (keys["head_count"] if key == "head_count" else keys[f"{end}_end"][key])
-            amount = 0.0 if key is None else v * share
+            gross = 0.0 if key is None else v * share
+            receiver_share = (recipient_shares or {}).get(item, 0.0)
+            # U→D and D→D both leave the outsider side. Signed benefits obey
+            # the identical boundary rule; they are not subtracted as harms.
+            boundary = -(v + gross) * receiver_share
+            amount = gross + boundary
+            rec[f"recipient_share_{end}"], rec[f"gross_added_{end}_bn"] = receiver_share, gross
+            rec[f"union_to_added_{end}_bn"], rec[f"added_to_added_{end}_bn"] = v * receiver_share, gross * receiver_share
+            rec[f"boundary_change_{end}_bn"] = boundary
             rec[f"union_{end}_bn"], rec[f"share_{end}"], rec[f"added_{end}_bn"] = v, share, amount
             totals[i] += amount
         detail.append(rec)
@@ -384,6 +482,118 @@ def priced_count(path):
 def half_up(x, places):
     # Rounding to 9 places first removes float noise from sums of one-decimal rows (57.8 - 0.65).
     return float(Decimal(repr(round(float(x), 9))).quantize(Decimal(1).scaleb(-places), ROUND_HALF_UP))
+
+
+def apply_p7_crime(rows, doc):
+    """Adopt only the owned crime payload, retaining all noncrime producer rows.
+
+    The original record-basis tables remain historical controls. The priced
+    pairing and full span are the current readings; their provenance is explicit.
+    """
+    lane = FISCAL / "social_costs_unpriced_2026_09_28"
+    payload_path, items_path = lane / "derived/p7_payload.json", lane / "derived/p7_items.csv"
+    p = json.loads(payload_path.read_text())
+    for name, digest in p["sources_sha256"].items():
+        source = FISCAL.parent.parent / name
+        if not source.exists() or hashlib.sha256(source.read_bytes()).hexdigest() != digest:
+            raise ValueError(f"[BLOCKED] missing or stale P7 crime source: {name}")
+    if p.get("case") != "oct14" or p.get("vsl_standard") != "dot_uniform":
+        raise ValueError("[BLOCKED] incompatible P7 case or valuation")
+    items = list(csv.DictReader(items_path.open()))
+    expected = {(item, end) for item in ("fear_avoidance", "private_security") for end in ("low", "high")}
+    if {(r["item"], r["end"]) for r in items} != expected or len(items) != 4:
+        raise ValueError("[BLOCKED] P7 crime item coverage")
+    for r in items:
+        social_contract(items_path, r)
+        if r["measure"] != "absolute" or r["vsl_standard"] != p["vsl_standard"]:
+            raise ValueError("[BLOCKED] incompatible P7 row measure or mortality setting")
+        if not float(r["low_bn"]) <= float(r["central_bn"]) <= float(r["high_bn"]):
+            raise ValueError("[BLOCKED] P7 crime central outside its range")
+        if abs(float(r["central_bn"]) - p["union_crime_rows"][r["end"]][r["item"]]) > 1e-9:
+            raise ValueError("[BLOCKED] P7 item/payload mismatch")
+    delta = [p["pairing_bn"][i] - p["baseline_pairing_bn"][i] for i in (0, 1)]
+    pairing = [next(r for r in rows if r["column"] == "pairing_on_priced_count" and r["item"] == f"published pairing ({e})") for e in ("low", "high")]
+    for i, r in enumerate(pairing):
+        if abs(r["oct14"] - p["baseline_pairing_bn"][i]) > 2e-6:
+            raise ValueError("[BLOCKED] P7 frozen baseline no longer matches the reconstructed pairing")
+    lineage = doc["lineage_social_rows"]
+    if {d["item"] for d in lineage["rows"]} != set(SOCIAL_CONTRACTS):
+        raise ValueError("[BLOCKED] every adopted social row needs exactly one consumer declaration")
+    union_sums, added_sums = [0.0, 0.0], [0.0, 0.0]
+    for d in lineage["rows"]:
+        recipient = p["recipient_shares"][d["item"]]
+        for i, end in enumerate(("low", "high")):
+            value = p["union_crime_rows"][end].get(d["item"], d[f"union_{end}_bn"])
+            share = d[f"share_{end}"]
+            d[f"union_before_boundary_{end}_bn"] = value
+            d[f"union_to_added_{end}_bn"] = value * recipient
+            d[f"added_to_added_{end}_bn"] = value * share * recipient
+            d[f"recipient_share_{end}"] = recipient
+            d[f"union_{end}_bn"] = value * (1-recipient)
+            d[f"added_{end}_bn"] = value * share * (1-recipient)
+            if d["item"] in p["lineage_crime_rows"][end]:
+                # Security's forward offending and reverse consumption keys are
+                # distinct, so evaluate the full lineage before differencing.
+                d[f"union_{end}_bn"] = p["union_crime_rows_outside_lineage"][end][d["item"]]
+                d[f"added_{end}_bn"] = p["lineage_crime_rows"][end][d["item"]] - d[f"union_{end}_bn"]
+                before = p["lineage_crime_rows_before_boundary"][end][d["item"]]
+                d[f"gross_added_{end}_bn"] = before-value
+                d[f"union_to_added_{end}_bn"] = value-d[f"union_{end}_bn"]
+                d[f"added_to_added_{end}_bn"] = before-p["lineage_crime_rows"][end][d["item"]]-d[f"union_to_added_{end}_bn"]
+            union_sums[i] += d[f"union_{end}_bn"]
+            added_sums[i] += d[f"added_{end}_bn"]
+    lineage["union_social_bn"] = dict(zip(("low", "high"), union_sums))
+    lineage["added_social_bn"] = dict(zip(("low", "high"), added_sums))
+    lineage["rule"] = "active crime rows; every signed row has U→D and D→D removed [ASSUMPTION: exchangeable recipients within age scope]"
+    for r in rows:
+        if r.get("oct14") is None:
+            continue
+        value = None
+        for i, end in enumerate(("low", "high")):
+            if r["column"].startswith("pairing_on_priced_count") and r["item"] in (
+                    f"published pairing ({end})", f"published pairing per group member ({end})"):
+                if r["column"] == "pairing_on_priced_count":
+                    value = p["pairing_bn"][i]
+                    if "per group" in r["item"]:
+                        value /= doc["per_member_population_m"]["oct14"]
+                else:
+                    value = r["oct14"] + delta[i] / (doc["per_member_population_m"]["oct14"] if "per group" in r["item"] else 1)
+            if r["column"] == "full_span" and r["item"] in (f"{end} end", f"per group member, {end}"):
+                value = p["full_span_bn"][i]
+                if "per group" in r["item"]:
+                    value /= doc["per_member_population_m"]["oct14"]
+            if r["column"] == "pairing_on_priced_count":
+                if r["item"] == f"social rows on the priced count ({end})":
+                    value = union_sums[i]
+                elif r["item"] == f"the added people's social rows ({end})":
+                    value = added_sums[i]
+            if r["column"].startswith("lineage_social_") and r["item"] == f"added people ({end})":
+                item = r["column"].removeprefix("lineage_social_")
+                value = next(d[f"added_{end}_bn"] for d in lineage["rows"] if d["item"] == item)
+        if value is not None:
+            r["oct14"] = value
+            r["change"] = None if r["sept24"] is None else value - r["sept24"]
+            r["note"] += "; P7 owned crime rows; U→D and D→D removed under exchangeable-recipient assumption; dot_uniform"
+        if r["column"] in ("social_item_fear_avoidance", "social_item_private_security", "social_items_2026_09_28"):
+            r["column"] = "historical_control_" + r["column"]
+            r["note"] += "; pre-P7 control, never adopted; current crime rows are endpoint-specific"
+    template = dict(rows[0])
+    for item in items:
+        for statistic in ("low", "central", "high"):
+            record = {key: None for key in template}
+            record.update(section="7", column=f"social_item_{item['item']}", item=f"{statistic}, {item['end']} footing, row4 union",
+                          unit="bn", sept23=None, sept24=None, oct14=float(item[f"{statistic}_bn"]), change=None,
+                          note="P7 with/without; current personal payment key; dot_uniform; outsiders of union before separate lineage boundary")
+            rows.append(record)
+    doc["p7_crime"] = p
+    doc["p7_crime"]["adopted_items"] = items
+    doc["p7_crime"]["consumer_contracts"] = {
+        item: social_contract(FISCAL / source / "derived/items.csv", dict(item=item))
+        for item, (source, _, _) in SOCIAL_CONTRACTS.items()}
+    doc["p7_crime"]["beneficiary_after_boundary"] = "residents_outside_lineage"
+    doc["social_items_in_the_social_rows"]["status"] = "historical record-basis control; current priced pairing uses p7_crime"
+    doc["sources_sha256"].update({rel(payload_path): hashlib.sha256(payload_path.read_bytes()).hexdigest(),
+                                  rel(items_path): hashlib.sha256(items_path.read_bytes()).hexdigest()})
 
 
 def parse_args():
@@ -489,7 +699,9 @@ def main():
     cost_items = {k: (0.0, 0.0, 0.0) for k in cols}
     item_detail = []
     if case in SOCIAL_ITEMS:
-        items[case], cost_items[case], item_detail = social_items(SOCIAL_ITEMS[case])
+        # Reproduce the original record as a positive control before the live
+        # oct14 correction below. Historical security is never adopted here.
+        items[case], cost_items[case], item_detail = social_items(SOCIAL_ITEMS[case], historical=True)
         scale = [d for d in item_detail if d["item"] == "scale_net_earnings"]
         gate("the scale item is the scale net §7b adds", all(abs(d["central_bn"] + c["scale_net"]) < 1e-9 for d in scale),
              f"{[d['central_bn'] for d in scale]} / {c['scale_net']:.4f}")
@@ -750,11 +962,6 @@ def main():
         raise SystemExit(f"[BLOCKED] {len(FAILURES)} gate(s) failed: {FAILURES}")
 
     out = out_dir / "real_costs_totals.csv"
-    with out.open("w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(rows[0]), lineterminator="\n")
-        w.writeheader()
-        for r in rows:
-            w.writerow({k: (f"{v:.6f}" if isinstance(v, float) else v) for k, v in r.items()})
     shas = {rel(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths.values()}
     doc = dict(channels=c, target_population_m=pop_m, per_member_population_m=pop, care_constant_bn=care24,
                sources_sha256=shas)
@@ -782,6 +989,13 @@ def main():
             items=item_detail, never_added=("property values; each item's normalized figure; the crash lane's "
                                             "fault-based row; CO2, ozone and government-services emissions; disease, food "
                                             "safety and the cuisine mix"))
+    if case == "oct14":
+        apply_p7_crime(rows, doc)
+    with out.open("w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0]), lineterminator="\n")
+        w.writeheader()
+        for r in rows:
+            w.writerow({k: (f"{v:.6f}" if isinstance(v, float) else v) for k, v in r.items()})
     (out_dir / "real_costs_totals.json").write_text(json.dumps(doc, indent=1) + "\n")
     print("\n[result]")
     fmt = lambda v: "" if v is None else f"{v:9.3f}"  # noqa: E731

@@ -1,0 +1,175 @@
+{
+  "schema": "security-inputs-v1",
+  "sources": [
+    {
+      "path": "inputs/security_ecnclcust_variables.json",
+      "sha256": "1d3c73e749a4986605d996396c04f68bc405d42d1db0eac05d527329ba476fdf",
+      "source": "https://api.census.gov/data/2022/ecnclcust/variables.json"
+    },
+    {
+      "path": "inputs/security_ecnclcust_561611_2022.json",
+      "query_without_key": {
+        "CLASSCUST": "*",
+        "NAICS2022": "561611",
+        "TAXSTAT": "00",
+        "for": "us:1",
+        "get": "NAICS2022,NAICS2022_LABEL,TYPOP,TAXSTAT,CLASSCUST,CLASSCUST_LABEL,RCPTOT,RCPTOT_F,RCPTOT_DIST,RCPTOT_DIST_F,CLASSCUST_COV,CLASSCUST_COV_F"
+      },
+      "sha256": "f508ab089d6daf04b1dda9ed0f242e7a43d0ec5996ca0a90ce0bdb7a89e1c6c6",
+      "source": "https://api.census.gov/data/2022/ecnclcust"
+    },
+    {
+      "path": "inputs/security_ecnclcust_561612_2022.json",
+      "query_without_key": {
+        "CLASSCUST": "*",
+        "NAICS2022": "561612",
+        "TAXSTAT": "00",
+        "for": "us:1",
+        "get": "NAICS2022,NAICS2022_LABEL,TYPOP,TAXSTAT,CLASSCUST,CLASSCUST_LABEL,RCPTOT,RCPTOT_F,RCPTOT_DIST,RCPTOT_DIST_F,CLASSCUST_COV,CLASSCUST_COV_F"
+      },
+      "sha256": "ea50c403a4e2304d523a6b06b54d74cd79b5ac829b752f0d6098917a3aae3acb",
+      "source": "https://api.census.gov/data/2022/ecnclcust"
+    },
+    {
+      "path": "inputs/security_ecnclcust_561613_2022.json",
+      "query_without_key": {
+        "CLASSCUST": "*",
+        "NAICS2022": "561613",
+        "TAXSTAT": "00",
+        "for": "us:1",
+        "get": "NAICS2022,NAICS2022_LABEL,TYPOP,TAXSTAT,CLASSCUST,CLASSCUST_LABEL,RCPTOT,RCPTOT_F,RCPTOT_DIST,RCPTOT_DIST_F,CLASSCUST_COV,CLASSCUST_COV_F"
+      },
+      "sha256": "b3f256d7d9ede5ece2cbb9915005b08dd4dda58dcffe9a890ead672f89fc99b8",
+      "source": "https://api.census.gov/data/2022/ecnclcust"
+    },
+    {
+      "path": "inputs/security_ecnclcust_561621_2022.json",
+      "query_without_key": {
+        "CLASSCUST": "*",
+        "NAICS2022": "561621",
+        "TAXSTAT": "00",
+        "for": "us:1",
+        "get": "NAICS2022,NAICS2022_LABEL,TYPOP,TAXSTAT,CLASSCUST,CLASSCUST_LABEL,RCPTOT,RCPTOT_F,RCPTOT_DIST,RCPTOT_DIST_F,CLASSCUST_COV,CLASSCUST_COV_F"
+      },
+      "sha256": "5842a01bdc953ffeac62db5a46bd69cfb63e97501312505173d2929561374903",
+      "source": "https://api.census.gov/data/2022/ecnclcust"
+    },
+    {
+      "path": "inputs/security_ecnclcust_561622_2022.json",
+      "query_without_key": {
+        "CLASSCUST": "*",
+        "NAICS2022": "561622",
+        "TAXSTAT": "00",
+        "for": "us:1",
+        "get": "NAICS2022,NAICS2022_LABEL,TYPOP,TAXSTAT,CLASSCUST,CLASSCUST_LABEL,RCPTOT,RCPTOT_F,RCPTOT_DIST,RCPTOT_DIST_F,CLASSCUST_COV,CLASSCUST_COV_F"
+      },
+      "sha256": "e47d68852704add36e2061aeda00c86200152b8fc08c2e05a2d6c829eb420249",
+      "source": "https://api.census.gov/data/2022/ecnclcust"
+    },
+    {
+      "path": "inputs/security_ecnnapcsind_variables.json",
+      "sha256": "825ab971ad543fa4dc183dd3fded221a40e3fdf06346ad8e1b42d5df459a1f2c",
+      "source": "https://api.census.gov/data/2022/ecnnapcsind/variables.json"
+    },
+    {
+      "path": "inputs/security_ecnnapcsind_561611_2022.json",
+      "query_without_key": {
+        "NAICS2022": "561611",
+        "NAPCS2022": "*",
+        "TAXSTAT": "00",
+        "for": "us:1",
+        "get": "NAICS2022,NAICS2022_LABEL,TAXSTAT,NAPCS2022,NAPCS2022_LABEL,NAPCSDOL,NAPCSDOL_F,NAPCSDOL_CV,NAPCSDOL_IMP,LINEALL_PCT,LINEALL_PCT_SE"
+      },
+      "sha256": "0ade8f32bdc4b0d3a76de53eaac2e5d6c88d99ee29c727295229c1dc8a621ddf",
+      "source": "https://api.census.gov/data/2022/ecnnapcsind"
+    },
+    {
+      "path": "inputs/security_ecnnapcsind_561612_2022.json",
+      "query_without_key": {
+        "NAICS2022": "561612",
+        "NAPCS2022": "*",
+        "TAXSTAT": "00",
+        "for": "us:1",
+        "get": "NAICS2022,NAICS2022_LABEL,TAXSTAT,NAPCS2022,NAPCS2022_LABEL,NAPCSDOL,NAPCSDOL_F,NAPCSDOL_CV,NAPCSDOL_IMP,LINEALL_PCT,LINEALL_PCT_SE"
+      },
+      "sha256": "4ff7d4c81c66133e7bd37a056460531b48452ee615edbaad8ec686f5d38ca0fb",
+      "source": "https://api.census.gov/data/2022/ecnnapcsind"
+    },
+    {
+      "path": "inputs/security_ecnnapcsind_561613_2022.json",
+      "query_without_key": {
+        "NAICS2022": "561613",
+        "NAPCS2022": "*",
+        "TAXSTAT": "00",
+        "for": "us:1",
+        "get": "NAICS2022,NAICS2022_LABEL,TAXSTAT,NAPCS2022,NAPCS2022_LABEL,NAPCSDOL,NAPCSDOL_F,NAPCSDOL_CV,NAPCSDOL_IMP,LINEALL_PCT,LINEALL_PCT_SE"
+      },
+      "sha256": "0d640f5a027cb8df1563907c8004de0b31db33cf0ea1a2db213a35bd03ec33eb",
+      "source": "https://api.census.gov/data/2022/ecnnapcsind"
+    },
+    {
+      "path": "inputs/security_ecnnapcsind_561621_2022.json",
+      "query_without_key": {
+        "NAICS2022": "561621",
+        "NAPCS2022": "*",
+        "TAXSTAT": "00",
+        "for": "us:1",
+        "get": "NAICS2022,NAICS2022_LABEL,TAXSTAT,NAPCS2022,NAPCS2022_LABEL,NAPCSDOL,NAPCSDOL_F,NAPCSDOL_CV,NAPCSDOL_IMP,LINEALL_PCT,LINEALL_PCT_SE"
+      },
+      "sha256": "2ee8e757895c4d69539789289da149501c07a4b52160e3e12b85b7b77ee3792a",
+      "source": "https://api.census.gov/data/2022/ecnnapcsind"
+    },
+    {
+      "path": "inputs/security_ecnnapcsind_561622_2022.json",
+      "query_without_key": {
+        "NAICS2022": "561622",
+        "NAPCS2022": "*",
+        "TAXSTAT": "00",
+        "for": "us:1",
+        "get": "NAICS2022,NAICS2022_LABEL,TAXSTAT,NAPCS2022,NAPCS2022_LABEL,NAPCSDOL,NAPCSDOL_F,NAPCSDOL_CV,NAPCSDOL_IMP,LINEALL_PCT,LINEALL_PCT_SE"
+      },
+      "sha256": "0127a844e353383d3746d2326afa1f87a2f49b67c7b4b6d96ca23dfaef0c68bf",
+      "source": "https://api.census.gov/data/2022/ecnnapcsind"
+    },
+    {
+      "path": "inputs/security_fred_REVEF561611ALLEST.csv",
+      "publisher": "Census Service Annual Survey, distributed by FRED",
+      "selected_observation": "2022-01-01",
+      "sha256": "05d14a165b564f7ea459a946720262676f3fb737c780c7434b2fa1caa700f55b",
+      "source": "https://fred.stlouisfed.org/graph/?g=&id=REVEF561611ALLEST",
+      "source_series": "REVEF561611ALLEST"
+    },
+    {
+      "path": "inputs/security_fred_REVEF561612ALLEST.csv",
+      "publisher": "Census Service Annual Survey, distributed by FRED",
+      "selected_observation": "2022-01-01",
+      "sha256": "148f1ea76f3a3578f4afacd952d4083eaef039e83db71802cc22dc0b9fc4362f",
+      "source": "https://fred.stlouisfed.org/graph/?g=&id=REVEF561612ALLEST",
+      "source_series": "REVEF561612ALLEST"
+    },
+    {
+      "path": "inputs/security_fred_REVEF561613ALLEST.csv",
+      "publisher": "Census Service Annual Survey, distributed by FRED",
+      "selected_observation": "2022-01-01",
+      "sha256": "ce95ff6e806aa0629f2092ae09b8585be7a7600749dcb520d39cf8d2ced1d49b",
+      "source": "https://fred.stlouisfed.org/graph/?g=&id=REVEF561613ALLEST",
+      "source_series": "REVEF561613ALLEST"
+    },
+    {
+      "path": "inputs/security_fred_REVEF561621ALLEST.csv",
+      "publisher": "Census Service Annual Survey, distributed by FRED",
+      "selected_observation": "2022-01-01",
+      "sha256": "736fbdb357376ad3f1e2ebed45ef6c4d81abb235642a7996e7de5c7496ba6732",
+      "source": "https://fred.stlouisfed.org/graph/?g=&id=REVEF561621ALLEST",
+      "source_series": "REVEF561621ALLEST"
+    },
+    {
+      "path": "inputs/security_fred_REVEF561622ALLEST.csv",
+      "publisher": "Census Service Annual Survey, distributed by FRED",
+      "selected_observation": "2022-01-01",
+      "sha256": "88f9f9a6d2eda08b76d5312fca8b888fca3fe0953c9877ff4f20dc6610c7261a",
+      "source": "https://fred.stlouisfed.org/graph/?g=&id=REVEF561622ALLEST",
+      "source_series": "REVEF561622ALLEST"
+    }
+  ]
+}

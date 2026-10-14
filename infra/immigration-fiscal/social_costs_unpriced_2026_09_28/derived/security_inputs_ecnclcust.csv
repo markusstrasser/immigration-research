@@ -1,0 +1,31 @@
+NAICS2022,NAICS2022_LABEL,TYPOP,TAXSTAT,CLASSCUST,CLASSCUST_LABEL,RCPTOT,RCPTOT_F,RCPTOT_DIST,RCPTOT_DIST_F,CLASSCUST_COV,CLASSCUST_COV_F,us
+561611,Investigation and Personal Background Check Services,00,00,001,All classes of customer,6154657,,100.0,,0.0,8,1
+561611,Investigation and Personal Background Check Services,00,00,5045,Household consumers and individuals,0,X,3.5,,0.0,X,1
+561611,Investigation and Personal Background Check Services,00,00,514,Business firms and farms,0,X,75.6,,0.0,X,1
+561611,Investigation and Personal Background Check Services,00,00,515,Federal government,0,X,11.0,,0.0,X,1
+561611,Investigation and Personal Background Check Services,00,00,516,State and local governments,0,X,5.0,,0.0,X,1
+561611,Investigation and Personal Background Check Services,00,00,570,Not-for-profit organizations,0,X,4.9,,0.0,X,1
+561612,Security Guards and Patrol Services,00,00,001,All classes of customer,37044039,,100.0,,0.0,4,1
+561612,Security Guards and Patrol Services,00,00,5045,Household consumers and individuals,0,X,3.7,,0.0,X,1
+561612,Security Guards and Patrol Services,00,00,514,Business firms and farms,0,X,68.8,,0.0,X,1
+561612,Security Guards and Patrol Services,00,00,515,Federal government,0,X,15.0,,0.0,X,1
+561612,Security Guards and Patrol Services,00,00,516,State and local governments,0,X,8.4,,0.0,X,1
+561612,Security Guards and Patrol Services,00,00,570,Not-for-profit organizations,0,X,4.1,,0.0,X,1
+561613,Armored car services,00,00,001,All classes of customer,3605043,,100.0,,0.0,3,1
+561613,Armored car services,00,00,5045,Household consumers and individuals,0,X,1.1,,0.0,X,1
+561613,Armored car services,00,00,514,Business firms and farms,0,X,95.9,,0.0,X,1
+561613,Armored car services,00,00,515,Federal government,0,X,0.6,,0.0,X,1
+561613,Armored car services,00,00,516,State and local governments,0,X,0.6,,0.0,X,1
+561613,Armored car services,00,00,570,Not-for-profit organizations,0,X,1.8,,0.0,X,1
+561621,Security Systems Services (except Locksmiths),00,00,001,All classes of customer,31313513,,100.0,,0.0,6,1
+561621,Security Systems Services (except Locksmiths),00,00,5045,Household consumers and individuals,0,X,55.3,,0.0,X,1
+561621,Security Systems Services (except Locksmiths),00,00,514,Business firms and farms,0,X,34.9,,0.0,X,1
+561621,Security Systems Services (except Locksmiths),00,00,515,Federal government,0,X,2.4,,0.0,X,1
+561621,Security Systems Services (except Locksmiths),00,00,516,State and local governments,0,X,4.8,,0.0,X,1
+561621,Security Systems Services (except Locksmiths),00,00,570,Not-for-profit organizations,0,X,2.6,,0.0,X,1
+561622,Locksmiths,00,00,001,All classes of customer,2626866,,100.0,,0.0,6,1
+561622,Locksmiths,00,00,5045,Household consumers and individuals,0,X,29.3,,0.0,X,1
+561622,Locksmiths,00,00,514,Business firms and farms,0,X,51.7,,0.0,X,1
+561622,Locksmiths,00,00,515,Federal government,0,X,3.0,,0.0,X,1
+561622,Locksmiths,00,00,516,State and local governments,0,X,7.1,,0.0,X,1
+561622,Locksmiths,00,00,570,Not-for-profit organizations,0,X,8.9,,0.0,X,1

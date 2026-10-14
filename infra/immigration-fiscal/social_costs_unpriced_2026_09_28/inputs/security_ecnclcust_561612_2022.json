@@ -1,0 +1,7 @@
+[["NAICS2022","NAICS2022_LABEL","TYPOP","TAXSTAT","CLASSCUST","CLASSCUST_LABEL","RCPTOT","RCPTOT_F","RCPTOT_DIST","RCPTOT_DIST_F","CLASSCUST_COV","CLASSCUST_COV_F","CLASSCUST","TAXSTAT","NAICS2022","us"],
+["561612","Security Guards and Patrol Services","00","00","001","All classes of customer","37044039",null,"100.0",null,"0.0","4","001","00","561612","1"],
+["561612","Security Guards and Patrol Services","00","00","5045","Household consumers and individuals","0","X","3.7",null,"0.0","X","5045","00","561612","1"],
+["561612","Security Guards and Patrol Services","00","00","514","Business firms and farms","0","X","68.8",null,"0.0","X","514","00","561612","1"],
+["561612","Security Guards and Patrol Services","00","00","515","Federal government","0","X","15.0",null,"0.0","X","515","00","561612","1"],
+["561612","Security Guards and Patrol Services","00","00","516","State and local governments","0","X","8.4",null,"0.0","X","516","00","561612","1"],
+["561612","Security Guards and Patrol Services","00","00","570","Not-for-profit organizations","0","X","4.1",null,"0.0","X","570","00","561612","1"]]

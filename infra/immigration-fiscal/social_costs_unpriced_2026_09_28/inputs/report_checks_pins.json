@@ -1,0 +1,272 @@
+{
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_01.json": {
+    "bytes": 124082,
+    "sha256": "ea7420065a8fa36fbabc3135da8390832ebe0fb667d7a0f1b72a99ee34776ceb",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:01"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_02.json": {
+    "bytes": 16605,
+    "sha256": "f3cb6dd980c0aa1d35a3c4e9f3d175bc1ef092e29f2700c06abc6ccf3315959c",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:02"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_04.json": {
+    "bytes": 157024,
+    "sha256": "772970f4e01bd1996f54b37f1a48545574bd95f39507a8dc05640a11b73fe23c",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:04"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_05.json": {
+    "bytes": 72684,
+    "sha256": "c2f5fb2c8e84eef0ca01da297da0fc78f1afab500ebe82707f69a5a013000180",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:05"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_06.json": {
+    "bytes": 866440,
+    "sha256": "22093ba23690ef55a65f2e7125c725d1105e709afb7bff31e6c70867b647d61f",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:06"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_08.json": {
+    "bytes": 128384,
+    "sha256": "3e8b3de101a2fd508cdfba0aa222c38d6c49d4d3188bb084c4a61015235c8ae9",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:08"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_09.json": {
+    "bytes": 97016,
+    "sha256": "9a79ef08b38182b3946aa87c29f0f75d8b32bfafd6a41b7470d9a10331d576e0",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:09"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_10.json": {
+    "bytes": 23286,
+    "sha256": "6ecee4ce81d6f41ebf6a79386c2dd2e5bfdcd2e7e718a58b5afccbe21c2017f1",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:10"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_11.json": {
+    "bytes": 21757,
+    "sha256": "e85eab957d9a09265599931b9e945060b299eef305a70e9335e1e1fa5df4f615",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:11"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_12.json": {
+    "bytes": 455143,
+    "sha256": "7214d6aafbf88f9525bf37545c14918b0f69df4b87af9fece3421f0f88a74386",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:12"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_13.json": {
+    "bytes": 243104,
+    "sha256": "a55e2c0efb2dbac082740ac861ddc6882245922d8cf595390e7ac7d76bcace76",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:13"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_15.json": {
+    "bytes": 39549,
+    "sha256": "18dc7db47c4fcb172adc843a6b15d31c4af93133e78cdf98080a49b95d4f7e7f",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:15"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_16.json": {
+    "bytes": 38756,
+    "sha256": "7425c2e7f1a2c6547570168a6afe2c41a864e0af7a9d6cef2dae26fb34fd69f0",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:16"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_17.json": {
+    "bytes": 284359,
+    "sha256": "10f190fe33b11affd3df2b03d453c2f0f1de287c976089eb25c107469f393ba9",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:17"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_18.json": {
+    "bytes": 146516,
+    "sha256": "cf1b2152b063e2ee43e1b53b796f20503f163512cb368b563f0243b5003fe0bc",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:18"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_19.json": {
+    "bytes": 73841,
+    "sha256": "5c8ff3cf31a7e5f6a6eda9de10840027cbe193680d1feca4f925969fcb45a921",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:19"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_20.json": {
+    "bytes": 71294,
+    "sha256": "8bcef6d6f94cacbe3d1fa6d0959f446fb8721750aa5c8ab0843c381f23790ab8",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:20"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_21.json": {
+    "bytes": 113701,
+    "sha256": "1f7431b6808c23bacf404e5ba77dd82cca58c0ba50ea9aa7b6e0a3cee235ab07",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:21"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_22.json": {
+    "bytes": 124829,
+    "sha256": "453ddc4c0175eb4f844a3e3a4ad3a748c8087d7d8429073fad57dcb56845ecad",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:22"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_23.json": {
+    "bytes": 34198,
+    "sha256": "6f23b3be7b0125501664a188e9a42a037417ac1c2ba6a4b428e457409e67af19",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:23"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_24.json": {
+    "bytes": 134738,
+    "sha256": "9ab9e2edf3e7312bfe7426ac6fc7fadaa25d1fdf799ce4d3ed5de37693290297",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:24"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_25.json": {
+    "bytes": 151749,
+    "sha256": "81470fc676f4da8663132cce5433191abe450ba9e052ef511ca93448ccf977f4",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:25"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_26.json": {
+    "bytes": 260246,
+    "sha256": "f0c1766427de4999c2dbf8d1c01bae9f07661700437ed843eb64288b0ae742b1",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:26"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_27.json": {
+    "bytes": 133842,
+    "sha256": "d5ff23684739bb1de5f958071154164eada1505d15ac21974b463a93a056e28a",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:27"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_28.json": {
+    "bytes": 78923,
+    "sha256": "eaad5b310b52871ea2288624462ea10a457b2e2ef960a4b0127150c47487628b",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:28"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_29.json": {
+    "bytes": 145697,
+    "sha256": "8cf687896ea5604f6ed479a9158f2046d38e7094ec5d992ae5336c3ec7304a72",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:29"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_30.json": {
+    "bytes": 27563,
+    "sha256": "de1544c9f6b0f0bd5ddb5fb1341ea04689ca7016045c382f7b506103f82d2fbe",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:30"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_31.json": {
+    "bytes": 48456,
+    "sha256": "1a3d439ced1ec493d7bbe6e035200c22c2fb62a598a62b7178f0442ef6755f4c",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:31"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_32.json": {
+    "bytes": 66804,
+    "sha256": "319f1c031cdade1ce7e341b65e421205e3e8de40ed0422dc7a76598d0cc1afa8",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:32"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_33.json": {
+    "bytes": 33050,
+    "sha256": "ca285b81ca72414faa7ecbc073002bfad507ae7e05bf5eda159d0e0be3f46adc",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:33"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_34.json": {
+    "bytes": 195671,
+    "sha256": "f990d24c2c4ad0bbf077e58dc6fc8a9dec064e75977003617e85a59644461e12",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:34"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_35.json": {
+    "bytes": 56597,
+    "sha256": "3da09e314947fa13ad203c306a410c519fc7eca56d68f186872875b0393f6467",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:35"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_36.json": {
+    "bytes": 468209,
+    "sha256": "b73feba6f6edf32a22232fc5b11d4e6ff3f121d9eb342370fb6d1dec5082933d",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:36"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_37.json": {
+    "bytes": 253387,
+    "sha256": "39a112ad38eae5be8427e5a38fc9a91d95077f897c725ddce650987dab8a01f7",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:37"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_38.json": {
+    "bytes": 20659,
+    "sha256": "43f276c8113f245a7c8bc9a47e6a4547bba3677dc9cdd57fc2a29dea0c77ac4a",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:38"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_39.json": {
+    "bytes": 262922,
+    "sha256": "6bff0bb4b3d549d0a08ab72c825cf92f7f1eb1ca14c517d2b2d7952c6d1911fd",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:39"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_40.json": {
+    "bytes": 106941,
+    "sha256": "2e0f1acd55c3736923887bbb86ee1dc8b60309ebb00612bc0bf9b9aac6a72dc8",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:40"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_41.json": {
+    "bytes": 87378,
+    "sha256": "ee60024b2837d48905d7c22758450b33c255daeaf79a0739f31732ee0142bfd3",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:41"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_42.json": {
+    "bytes": 317591,
+    "sha256": "e168019ca934ebd98afcc8799857b700688b2be2aee8d479286f34a823eaf5bb",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:42"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_44.json": {
+    "bytes": 23209,
+    "sha256": "663dbc3e326f7691a800757d0471664c12a7464fc0352cab3d005fd57c9d3538",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:44"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_45.json": {
+    "bytes": 125735,
+    "sha256": "c3d64f4f96ee38a260f599f5b8545b8e22ec8c15d6905e1d4e19388fea0356a2",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:45"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_46.json": {
+    "bytes": 22255,
+    "sha256": "49389880907eb7916f0ab2eed7018faeb2a101acc3454be1cda70db2746cb696",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:46"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_47.json": {
+    "bytes": 150772,
+    "sha256": "72c59309680af3ab614356bc198c65e123309749c8d0a7ad4dd217b6b653e7f6",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:47"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_48.json": {
+    "bytes": 599999,
+    "sha256": "f630e2883023b32f85b908f9ea35208036685bedb4295bc849acb4f67b45febd",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:48"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_49.json": {
+    "bytes": 61325,
+    "sha256": "60f3c63408773e4cdcde2a73f4470750e96bf70696adba4a8fdeb33ebbbf88df",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:49"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_50.json": {
+    "bytes": 16676,
+    "sha256": "8183467378c9076a2f523a8f72b55425c6be71e241b01e4aff59a1a06829b5b1",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:50"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_51.json": {
+    "bytes": 196599,
+    "sha256": "451c51f79f0d0db35368900467405c2cdcfacdf636efdd63539c1209189e00e9",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:51"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_53.json": {
+    "bytes": 160716,
+    "sha256": "f8ea4250298ffe4eaa89dad98ccb5c657aaaf2ede96cf20e0a20f6a040fa6f4d",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:53"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_54.json": {
+    "bytes": 49416,
+    "sha256": "1f283ca365418249f4c37923a9b2a82a9196d0215927bb2bdd31933ad5e4cc4b",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:54"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_55.json": {
+    "bytes": 136466,
+    "sha256": "bd666dc47ebcfbd4ae7024142b800647e01e892c6426d7d24319c5af519fc1de",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:55"
+  },
+  "crime_victim_cost_2026_09_23/_cache/acs5_2024_b03001_tract_56.json": {
+    "bytes": 13971,
+    "sha256": "9cf45c1e4d13150dad9547631de3f339ad56087852d4ac6a8462b2440fd165c0",
+    "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME,B03001_001E,B03001_003E,B03001_004E&for=tract:*&in=state:56"
+  },
+  "detention_evidence_2026_09_20/_cache/ice_fy2024_annual.pdf": {
+    "bytes": 2941904,
+    "sha256": "ca5ec28b2b99fac101f80bf3c353811bfa5086c981a2e93a99ece427076ffad1",
+    "url": "https://www.ice.gov/doclib/eoy/iceAnnualReportFY2024.pdf"
+  },
+  "detention_evidence_2026_09_20/_cache/ice_fy2024_yearend.xlsx": {
+    "bytes": 240012,
+    "sha256": "ebd4a083f33aca8d7cc717ee4b9c363ac2f4b6c0e74b9ddc54b0772a414ce29e",
+    "url": "https://raw.githubusercontent.com/vera-institute/ice-fytd-stats/a6bf48e2627323f01827d52776f0d08023c410ba/raw/FY2024/2024-10-01_FY24_detentionStats.xlsx"
+  },
+  "social_costs_unpriced_2026_09_28/inputs/report_checks_acs1_2024_state1864.json": {
+    "bytes": 71761,
+    "sha256": "85e7af05ec1a3e76f3ea51ea2eee91e4ad76c55ba96f39740c9a01dfe31065b7",
+    "url": "https://api.census.gov/data/2024/acs/acs1/pums?tabulate=weight(PWGTP)&col+TYPEHUGQ&row+NATIVITY&row+HISP&row+for&for=state:*&AGEP=18:64"
+  }
+}

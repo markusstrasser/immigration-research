@@ -1,0 +1,5 @@
+component,footing,population,se_bn,scope
+security+fear,mixed,published CPS union; other inputs held,0.04586469750316713,Exact linear propagation of the source's 160-replicate CPS SDR payment-key SE; not a joint or row4 replicate SE
+nonfatal_victims,mixed,row4 union,2.0088536638094157,Understated source NCVS independent-cell GVP delta method; not a replicate SE or joint crime SE
+security+fear,custody,published CPS union; other inputs held,0.04576008310792545,Exact linear propagation of the source's 160-replicate CPS SDR payment-key SE; not a joint or row4 replicate SE
+nonfatal_victims,custody,row4 union,2.2460596481189916,Understated source NCVS independent-cell GVP delta method; not a replicate SE or joint crime SE

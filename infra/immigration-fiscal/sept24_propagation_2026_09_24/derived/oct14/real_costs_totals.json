@@ -62,7 +62,9 @@
   "consumer_scale_2026_09_28/derived/items.csv": "6865f708c2c9d1b824f72e4db0aba1067719dded0c07fa6869bcaa487bdf1a08",
   "trade_networks_2026_09_28/derived/items.csv": "63ca23c4ca47ef47a694abd09b6cb64e2b566f09bacdb905b260d05bd628ade3",
   "population_basis_2026_09_29/derived/restated_pairing.csv": "62d5e50b52226b3f9e965292ff7fd68aa4b49c6b9057b80f44eb798038eb10c1",
-  "sept27_propagation_2026_09_27/derived/band_variants.csv": "3193ba6cc713e4ca6669c3af9e247f9861ab2ac73afc7b21c71eee749b05ce99"
+  "sept27_propagation_2026_09_27/derived/band_variants.csv": "3193ba6cc713e4ca6669c3af9e247f9861ab2ac73afc7b21c71eee749b05ce99",
+  "social_costs_unpriced_2026_09_28/derived/p7_payload.json": "8208c9993b58c078c075a2109bdb761b70de543b86499c34e6a6f138a6a16974",
+  "social_costs_unpriced_2026_09_28/derived/p7_items.csv": "c5432c1ab4dd8af0e8314f1a615946f05371fd2a9fa792685f2ba1bd2410598b"
  },
  "congestion_by_band_end_bn": {
   "case": "oct14",
@@ -92,7 +94,7 @@
   "oct14_cash_set": "the cash set: benefits when paid (main_case_2026_10_14 band row cash_set); beside the central total"
  },
  "lineage_social_rows": {
-  "rule": "each restated social row (population lane, audit row 4's union, 5+ basis) times the added people's share of the engine key it scales with at the band end's specification [ASSUMPTION]; restaurant variety carries no head count and is not priced",
+  "rule": "active crime rows; every signed row has U\u2192D and D\u2192D removed [ASSUMPTION: exchangeable recipients within age scope]",
   "keys": {
    "rule": "the added people's amount over the union's (the September 29 payload's) on the key a social row scales with, at the band end's specification, read on the item base (the September 29 payload with the lineage item's edits, P.ITEM_BASE) [ASSUMPTION: the edit sets change the prices and keys of the account's lines, not the quantities the social rows scale with]",
    "head_count": 0.07654315652845424,
@@ -132,12 +134,24 @@
      "low": "justice_use_raw_coding",
      "high": "justice_use"
     },
-    "union_low_bn": 30.483111,
+    "recipient_share_low": 0.010275181579126573,
+    "gross_added_low_bn": 2.4785192767073525,
+    "union_to_added_low_bn": 0.36221055124710944,
+    "added_to_added_low_bn": 0.025467235615536765,
+    "boundary_change_low_bn": -0.0,
+    "union_low_bn": 34.88880165304532,
     "share_low": 0.07031058462501538,
-    "added_low_bn": 2.1432853555992373,
-    "union_high_bn": 31.873558,
+    "added_low_bn": 2.4530520410918157,
+    "recipient_share_high": 0.010275181579126573,
+    "gross_added_high_bn": 2.6037222733161727,
+    "union_to_added_high_bn": 0.40498047115784175,
+    "added_to_added_high_bn": 0.02675371913993274,
+    "boundary_change_high_bn": -0.0,
+    "union_high_bn": 39.008480793656645,
     "share_high": 0.06606175123321623,
-    "added_high_bn": 2.105623059513489
+    "added_high_bn": 2.57696855417624,
+    "union_before_boundary_low_bn": 35.25101220429243,
+    "union_before_boundary_high_bn": 39.41346126481449
    },
    {
     "item": "property_crime",
@@ -145,12 +159,24 @@
      "low": "justice_use_raw_coding",
      "high": "justice_use"
     },
-    "union_low_bn": 1.254369,
+    "recipient_share_low": 0.010275181579126573,
+    "gross_added_low_bn": 0.08819541772549593,
+    "union_to_added_low_bn": 0.012888869242227421,
+    "added_to_added_low_bn": 0.0009062239315763889,
+    "boundary_change_low_bn": -0.0,
+    "union_low_bn": 1.2414801307577727,
     "share_low": 0.07031058462501538,
-    "added_low_bn": 0.08819541772549593,
-    "union_high_bn": 1.35645,
+    "added_low_bn": 0.08728919379391954,
+    "recipient_share_high": 0.010275181579126573,
+    "gross_added_high_bn": 0.08960946246029615,
+    "union_to_added_high_bn": 0.013937770053006239,
+    "added_to_added_high_bn": 0.0009207534979874691,
+    "boundary_change_high_bn": -0.0,
+    "union_high_bn": 1.3425122299469938,
     "share_high": 0.06606175123321623,
-    "added_high_bn": 0.08960946246029615
+    "added_high_bn": 0.08868870896230868,
+    "union_before_boundary_low_bn": 1.254369,
+    "union_before_boundary_high_bn": 1.35645
    },
    {
     "item": "unreimbursed_care",
@@ -158,12 +184,24 @@
      "low": "uninsured_use",
      "high": "uninsured_use"
     },
-    "union_low_bn": 3.08854,
+    "recipient_share_low": 0.010275181579126573,
+    "gross_added_low_bn": 0.2217647104895678,
+    "union_to_added_low_bn": 0.03173530931439558,
+    "added_to_added_low_bn": 0.0022786726681227444,
+    "boundary_change_low_bn": -0.0,
+    "union_low_bn": 3.0568046906856043,
     "share_low": 0.0718024407938922,
-    "added_low_bn": 0.2217647104895678,
-    "union_high_bn": 5.292559,
+    "added_low_bn": 0.21948603782144507,
+    "recipient_share_high": 0.010275181579126573,
+    "gross_added_high_bn": 0.37450379471175305,
+    "union_to_added_high_bn": 0.05438200474324055,
+    "added_to_added_high_bn": 0.0038480944927352045,
+    "boundary_change_high_bn": -0.0,
+    "union_high_bn": 5.238176995256759,
     "share_high": 0.07076043832704615,
-    "added_high_bn": 0.37450379471175305
+    "added_high_bn": 0.37065570021901784,
+    "union_before_boundary_low_bn": 3.08854,
+    "union_before_boundary_high_bn": 5.292559
    },
    {
     "item": "congestion",
@@ -171,12 +209,24 @@
      "low": "road",
      "high": "road"
     },
-    "union_low_bn": 13.628205,
+    "recipient_share_low": 0.010275181579126573,
+    "gross_added_low_bn": 1.0353953925110349,
+    "union_to_added_low_bn": 0.14003228097256065,
+    "added_to_added_low_bn": 0.010638875664241912,
+    "boundary_change_low_bn": -0.0,
+    "union_low_bn": 13.488172719027439,
     "share_low": 0.07597445096482147,
-    "added_low_bn": 1.0353953925110349,
-    "union_high_bn": 11.639328,
+    "added_low_bn": 1.024756516846793,
+    "recipient_share_high": 0.010275181579126573,
+    "gross_added_high_bn": 0.8842915543994736,
+    "union_to_added_high_bn": 0.11959620865901215,
+    "added_to_added_high_bn": 0.009086256290342674,
+    "boundary_change_high_bn": -0.0,
+    "union_high_bn": 11.51973179134099,
     "share_high": 0.07597445096482147,
-    "added_high_bn": 0.8842915543994736
+    "added_high_bn": 0.875205298109131,
+    "union_before_boundary_low_bn": 13.628205,
+    "union_before_boundary_high_bn": 11.639328
    },
    {
     "item": "housing_gain",
@@ -184,12 +234,24 @@
      "low": "head_count",
      "high": "head_count"
     },
-    "union_low_bn": -3.392318,
+    "recipient_share_low": 0.010275181579126573,
+    "gross_added_low_bn": -0.25965872766829284,
+    "union_to_added_low_bn": -0.034856683424139494,
+    "added_to_added_low_bn": -0.002668040575396686,
+    "boundary_change_low_bn": 0.0,
+    "union_low_bn": -3.3574613165758604,
     "share_low": 0.07654315652845424,
-    "added_low_bn": -0.25965872766829284,
-    "union_high_bn": -0.687662,
+    "added_low_bn": -0.2569906870928962,
+    "recipient_share_high": 0.010275181579126573,
+    "gross_added_high_bn": -0.0526358201046699,
+    "union_to_added_high_bn": -0.0070658519150653375,
+    "added_to_added_high_bn": -0.0005408426091417242,
+    "boundary_change_high_bn": 0.0,
+    "union_high_bn": -0.6805961480849346,
     "share_high": 0.07654315652845424,
-    "added_high_bn": -0.0526358201046699
+    "added_high_bn": -0.052094977495528175,
+    "union_before_boundary_low_bn": -3.392318,
+    "union_before_boundary_high_bn": -0.687662
    },
    {
     "item": "fear_avoidance",
@@ -197,12 +259,24 @@
      "low": "justice_use_raw_coding",
      "high": "justice_use"
     },
-    "union_low_bn": 10.339309,
+    "recipient_share_low": 0.010275181579126573,
+    "gross_added_low_bn": 0.4542563857619468,
+    "union_to_added_low_bn": 0.0639619442016004,
+    "added_to_added_low_bn": 0.004667566847180282,
+    "boundary_change_low_bn": -0.0,
+    "union_low_bn": 6.160934784780293,
     "share_low": 0.07031058462501538,
-    "added_low_bn": 0.7269628604086832,
-    "union_high_bn": 10.339309,
+    "added_low_bn": 0.44958881891476654,
+    "recipient_share_high": 0.010275181579126573,
+    "gross_added_high_bn": 0.49119298367926945,
+    "union_to_added_high_bn": 0.073770398463882,
+    "added_to_added_high_bn": 0.005047097097695463,
+    "boundary_change_high_bn": -0.0,
+    "union_high_bn": 7.105703550078491,
     "share_high": 0.06606175123321623,
-    "added_high_bn": 0.6830328590813536
+    "added_high_bn": 0.486145886581574,
+    "union_before_boundary_low_bn": 6.224896728981894,
+    "union_before_boundary_high_bn": 7.179473948542373
    },
    {
     "item": "private_security",
@@ -210,12 +284,24 @@
      "low": "justice_use_raw_coding",
      "high": "justice_use"
     },
-    "union_low_bn": -0.490639,
+    "recipient_share_low": 0.010275181579126573,
+    "gross_added_low_bn": -0.032525760898172607,
+    "union_to_added_low_bn": 0.04775757592864771,
+    "added_to_added_low_bn": 0.0030171327705872386,
+    "boundary_change_low_bn": 0.0,
+    "union_low_bn": 0.49405030321520194,
     "share_low": 0.07031058462501538,
-    "added_low_bn": -0.03449711492983292,
-    "union_high_bn": -0.490639,
+    "added_low_bn": -0.035542893668759845,
+    "recipient_share_high": 0.010275181579126573,
+    "gross_added_high_bn": -0.04588469305206644,
+    "union_to_added_high_bn": 0.04888518225435945,
+    "added_to_added_high_bn": 0.0028820499770763064,
+    "boundary_change_high_bn": 0.0,
+    "union_high_bn": 0.6163742654445592,
     "share_high": 0.06606175123321623,
-    "added_high_bn": -0.03241247156331398
+    "added_high_bn": -0.048766743029142745,
+    "union_before_boundary_low_bn": 0.5418078791438496,
+    "union_before_boundary_high_bn": 0.6652594476989186
    },
    {
     "item": "school_disruption",
@@ -223,12 +309,24 @@
      "low": "pupils",
      "high": "pupils"
     },
-    "union_low_bn": -1.938666,
+    "recipient_share_low": 0.021723382497183703,
+    "gross_added_low_bn": -0.20725096145962088,
+    "union_to_added_low_bn": -0.04211438305228514,
+    "added_to_added_low_bn": -0.004502191908696423,
+    "boundary_change_low_bn": 0.0,
+    "union_low_bn": -1.8965516169477148,
     "share_low": 0.10690390271435146,
-    "added_low_bn": -0.20725096145962088,
-    "union_high_bn": -1.938666,
+    "added_low_bn": -0.20274876955092444,
+    "recipient_share_high": 0.021723382497183703,
+    "gross_added_high_bn": -0.20725096145962088,
+    "union_to_added_high_bn": -0.04211438305228514,
+    "added_to_added_high_bn": -0.004502191908696423,
+    "boundary_change_high_bn": 0.0,
+    "union_high_bn": -1.8965516169477148,
     "share_high": 0.10690390271435146,
-    "added_high_bn": -0.20725096145962088
+    "added_high_bn": -0.20274876955092444,
+    "union_before_boundary_low_bn": -1.938666,
+    "union_before_boundary_high_bn": -1.938666
    },
    {
     "item": "pm25_consumption",
@@ -236,12 +334,24 @@
      "low": "consumption",
      "high": "consumption"
     },
-    "union_low_bn": 68.092105,
+    "recipient_share_low": 0.010275181579126573,
+    "gross_added_low_bn": 6.090026866698337,
+    "union_to_added_low_bn": 0.6996587429799525,
+    "added_to_added_low_bn": 0.06257613187708468,
+    "boundary_change_low_bn": -0.0,
+    "union_low_bn": 67.39244625702005,
     "share_low": 0.08943807606914689,
-    "added_low_bn": 6.090026866698337,
-    "union_high_bn": 68.092105,
+    "added_low_bn": 6.027450734821253,
+    "recipient_share_high": 0.010275181579126573,
+    "gross_added_high_bn": 6.090026866698337,
+    "union_to_added_high_bn": 0.6996587429799525,
+    "added_to_added_high_bn": 0.06257613187708468,
+    "boundary_change_high_bn": -0.0,
+    "union_high_bn": 67.39244625702005,
     "share_high": 0.08943807606914689,
-    "added_high_bn": 6.090026866698337
+    "added_high_bn": 6.027450734821253,
+    "union_before_boundary_low_bn": 68.092105,
+    "union_before_boundary_high_bn": 68.092105
    },
    {
     "item": "road_crash_externality",
@@ -249,12 +359,24 @@
      "low": "road",
      "high": "road"
     },
-    "union_low_bn": 10.56288,
+    "recipient_share_low": 0.010275181579126573,
+    "gross_added_low_bn": 0.8025090086072935,
+    "union_to_added_low_bn": 0.10853550999852449,
+    "added_to_added_low_bn": 0.00824592578232479,
+    "boundary_change_low_bn": -0.0,
+    "union_low_bn": 10.454344490001475,
     "share_low": 0.07597445096482147,
-    "added_low_bn": 0.8025090086072935,
-    "union_high_bn": 10.56288,
+    "added_low_bn": 0.7942630828249687,
+    "recipient_share_high": 0.010275181579126573,
+    "gross_added_high_bn": 0.8025090086072935,
+    "union_to_added_high_bn": 0.10853550999852449,
+    "added_to_added_high_bn": 0.00824592578232479,
+    "boundary_change_high_bn": -0.0,
+    "union_high_bn": 10.454344490001475,
     "share_high": 0.07597445096482147,
-    "added_high_bn": 0.8025090086072935
+    "added_high_bn": 0.7942630828249687,
+    "union_before_boundary_low_bn": 10.56288,
+    "union_before_boundary_high_bn": 10.56288
    },
    {
     "item": "scale_net_earnings",
@@ -262,12 +384,24 @@
      "low": "head_count",
      "high": "head_count"
     },
-    "union_low_bn": -13.674356,
+    "recipient_share_low": 0.010275181579126573,
+    "gross_added_low_bn": -1.0466783717338073,
+    "union_to_added_low_bn": -0.1405064908776189,
+    "added_to_added_low_bn": -0.010754810324509412,
+    "boundary_change_low_bn": 0.0,
+    "union_low_bn": -13.533849509122382,
     "share_low": 0.07654315652845424,
-    "added_low_bn": -1.0466783717338073,
-    "union_high_bn": -13.674356,
+    "added_low_bn": -1.0359235614092979,
+    "recipient_share_high": 0.010275181579126573,
+    "gross_added_high_bn": -1.0466783717338073,
+    "union_to_added_high_bn": -0.1405064908776189,
+    "added_to_added_high_bn": -0.010754810324509412,
+    "boundary_change_high_bn": 0.0,
+    "union_high_bn": -13.533849509122382,
     "share_high": 0.07654315652845424,
-    "added_high_bn": -1.0466783717338073
+    "added_high_bn": -1.0359235614092979,
+    "union_before_boundary_low_bn": -13.674356,
+    "union_before_boundary_high_bn": -13.674356
    },
    {
     "item": "restaurant_variety_market_size",
@@ -275,12 +409,24 @@
      "low": null,
      "high": null
     },
-    "union_low_bn": -6.793,
+    "recipient_share_low": 0.010275181579126573,
+    "gross_added_low_bn": 0.0,
+    "union_to_added_low_bn": -0.06979930846700681,
+    "added_to_added_low_bn": -0.0,
+    "boundary_change_low_bn": 0.0,
+    "union_low_bn": -6.723200691532994,
     "share_low": 0.0,
-    "added_low_bn": 0.0,
-    "union_high_bn": -6.793,
+    "added_low_bn": -0.0,
+    "recipient_share_high": 0.010275181579126573,
+    "gross_added_high_bn": 0.0,
+    "union_to_added_high_bn": -0.06979930846700681,
+    "added_to_added_high_bn": -0.0,
+    "boundary_change_high_bn": 0.0,
+    "union_high_bn": -6.723200691532994,
     "share_high": 0.0,
-    "added_high_bn": 0.0
+    "added_high_bn": -0.0,
+    "union_before_boundary_low_bn": -6.793,
+    "union_before_boundary_high_bn": -6.793
    },
    {
     "item": "formal_volunteering_outside_group",
@@ -288,12 +434,24 @@
      "low": "adults",
      "high": "adults"
     },
-    "union_low_bn": -5.980771,
+    "recipient_share_low": 0.006924496588407742,
+    "gross_added_low_bn": -0.37199015620494663,
+    "union_to_added_low_bn": -0.04141382838554796,
+    "added_to_added_low_bn": -0.002575844567562416,
+    "boundary_change_low_bn": 0.0,
+    "union_low_bn": -5.939357171614452,
     "share_low": 0.06219769260601127,
-    "added_low_bn": -0.37199015620494663,
-    "union_high_bn": -5.980771,
+    "added_low_bn": -0.3694143116373842,
+    "recipient_share_high": 0.006924496588407742,
+    "gross_added_high_bn": -0.37199015620494663,
+    "union_to_added_high_bn": -0.04141382838554796,
+    "added_to_added_high_bn": -0.002575844567562416,
+    "boundary_change_high_bn": 0.0,
+    "union_high_bn": -5.939357171614452,
     "share_high": 0.06219769260601127,
-    "added_high_bn": -0.37199015620494663
+    "added_high_bn": -0.3694143116373842,
+    "union_before_boundary_low_bn": -5.980771,
+    "union_before_boundary_high_bn": -5.980771
    },
    {
     "item": "total_consumer_scale",
@@ -301,12 +459,24 @@
      "low": "consumption",
      "high": "consumption"
     },
-    "union_low_bn": -2.1297,
+    "recipient_share_low": 0.010275181579126573,
+    "gross_added_low_bn": -0.19047627060446215,
+    "union_to_added_low_bn": -0.021883054209065864,
+    "added_to_added_low_bn": -0.0019571782669756976,
+    "boundary_change_low_bn": 0.0,
+    "union_low_bn": -2.107816945790934,
     "share_low": 0.08943807606914689,
-    "added_low_bn": -0.19047627060446215,
-    "union_high_bn": -2.1297,
+    "added_low_bn": -0.18851909233748645,
+    "recipient_share_high": 0.010275181579126573,
+    "gross_added_high_bn": -0.19047627060446215,
+    "union_to_added_high_bn": -0.021883054209065864,
+    "added_to_added_high_bn": -0.0019571782669756976,
+    "boundary_change_high_bn": 0.0,
+    "union_high_bn": -2.107816945790934,
     "share_high": 0.08943807606914689,
-    "added_high_bn": -0.19047627060446215
+    "added_high_bn": -0.18851909233748645,
+    "union_before_boundary_low_bn": -2.1297,
+    "union_before_boundary_high_bn": -2.1297
    },
    {
     "item": "total_trade_travel_fdi",
@@ -314,21 +484,33 @@
      "low": "consumption",
      "high": "consumption"
     },
-    "union_low_bn": -6.784387,
+    "recipient_share_low": 0.010275181579126573,
+    "gross_added_low_bn": -0.6067825205885312,
+    "union_to_added_low_bn": -0.06971080832806578,
+    "added_to_added_low_bn": -0.006234800578087266,
+    "boundary_change_low_bn": 0.0,
+    "union_low_bn": -6.714676191671934,
     "share_low": 0.08943807606914689,
-    "added_low_bn": -0.6067825205885312,
-    "union_high_bn": -6.784387,
+    "added_low_bn": -0.600547720010444,
+    "recipient_share_high": 0.010275181579126573,
+    "gross_added_high_bn": -0.6067825205885312,
+    "union_to_added_high_bn": -0.06971080832806578,
+    "added_to_added_high_bn": -0.006234800578087266,
+    "boundary_change_high_bn": 0.0,
+    "union_high_bn": -6.714676191671934,
     "share_high": 0.08943807606914689,
-    "added_high_bn": -0.6067825205885312
+    "added_high_bn": -0.600547720010444,
+    "union_before_boundary_low_bn": -6.784387,
+    "union_before_boundary_high_bn": -6.784387
    }
   ],
   "union_social_bn": {
-   "low": 96.26468200000005,
-   "high": 100.677009
+   "low": 96.9041215852769,
+   "high": 105.08172209798065
   },
   "added_social_bn": {
-   "low": 8.390805488850155,
-   "high": 8.521370033212644
+   "low": 8.366199390407768,
+   "high": 8.721362790224285
   },
   "record_basis_rows": "the section 7 rows on the lanes' published social rows carry the union's social rows only"
  },
@@ -351,6 +533,15 @@
     "central_bn": 10.49,
     "low_bn": 5.24,
     "high_bn": 30.31,
+    "contract": {
+     "comparator": "with_without",
+     "beneficiary_population": "residents_outside_union",
+     "valuation_basis": "wtp_residual",
+     "overlap_set": [
+      "victims",
+      "private_security"
+     ]
+    },
     "normalized_bn": null
    },
    {
@@ -361,6 +552,14 @@
     "central_bn": -0.6,
     "low_bn": -2.93,
     "high_bn": 0.39,
+    "contract": {
+     "comparator": "equal_population",
+     "beneficiary_population": "residents_outside_union",
+     "valuation_basis": "resource_spending",
+     "overlap_set": [
+      "fear_avoidance"
+     ]
+    },
     "normalized_bn": null
    },
    {
@@ -371,6 +570,14 @@
     "central_bn": -1.95,
     "low_bn": -11.71,
     "high_bn": -0.54,
+    "contract": {
+     "comparator": "with_without",
+     "beneficiary_population": "residents_outside_union",
+     "valuation_basis": "earnings_pv",
+     "overlap_set": [
+      "school_violence"
+     ]
+    },
     "normalized_bn": null
    },
    {
@@ -381,6 +588,14 @@
     "central_bn": 69.6808,
     "low_bn": 31.4979,
     "high_bn": 122.484,
+    "contract": {
+     "comparator": "with_without",
+     "beneficiary_population": "residents_outside_union",
+     "valuation_basis": "dot_vsl_plus_morbidity",
+     "overlap_set": [
+      "mortality"
+     ]
+    },
     "normalized_bn": {
      "central": -46.509,
      "low": -81.8082,
@@ -395,6 +610,15 @@
     "central_bn": 11.05,
     "low_bn": -57.68,
     "high_bn": 74.34,
+    "contract": {
+     "comparator": "with_without",
+     "beneficiary_population": "residents_outside_union",
+     "valuation_basis": "crash_resource_and_harm",
+     "overlap_set": [
+      "mortality",
+      "road_congestion"
+     ]
+    },
     "normalized_bn": {
      "central": 0.62,
      "low": -24.08,
@@ -409,6 +633,14 @@
     "central_bn": -13.927466764218613,
     "low_bn": -84.42361342030222,
     "high_bn": 56.56867989186499,
+    "contract": {
+     "comparator": "with_without",
+     "beneficiary_population": "residents_outside_union",
+     "valuation_basis": "earnings_including_receipts",
+     "overlap_set": [
+      "production"
+     ]
+    },
     "normalized_bn": {
      "central": 24.92909982784804,
      "low": -43.12792244938655,
@@ -423,6 +655,14 @@
     "central_bn": -6.793,
     "low_bn": -19.2168,
     "high_bn": -1.0739,
+    "contract": {
+     "comparator": "with_without",
+     "beneficiary_population": "residents_outside_union",
+     "valuation_basis": "consumer_surplus",
+     "overlap_set": [
+      "consumer_scale"
+     ]
+    },
     "normalized_bn": {
      "central": 1.1999,
      "low": 0.1897,
@@ -437,6 +677,14 @@
     "central_bn": -6.2105,
     "low_bn": -7.9043,
     "high_bn": -4.5167,
+    "contract": {
+     "comparator": "with_without",
+     "beneficiary_population": "residents_outside_union",
+     "valuation_basis": "replacement_wage",
+     "overlap_set": [
+      "informal_care"
+     ]
+    },
     "normalized_bn": {
      "central": 4.1893,
      "low": 3.0468,
@@ -451,6 +699,15 @@
     "central_bn": -2.1869,
     "low_bn": -11.8885,
     "high_bn": 6.0644,
+    "contract": {
+     "comparator": "with_without",
+     "beneficiary_population": "residents_outside_union",
+     "valuation_basis": "consumer_surplus",
+     "overlap_set": [
+      "restaurant_variety",
+      "trade"
+     ]
+    },
     "normalized_bn": {
      "central": 2.5207,
      "low": -3.6564,
@@ -465,6 +722,14 @@
     "central_bn": -6.7688,
     "low_bn": -23.7492,
     "high_bn": -1.1358,
+    "contract": {
+     "comparator": "with_without",
+     "beneficiary_population": "residents_outside_union",
+     "valuation_basis": "mixed_resource_and_surplus",
+     "overlap_set": [
+      "consumer_scale"
+     ]
+    },
     "normalized_bn": {
      "central": 0.7837,
      "low": 0.2511,
@@ -472,6 +737,334 @@
     }
    }
   ],
-  "never_added": "property values; each item's normalized figure; the crash lane's fault-based row; CO2, ozone and government-services emissions; disease, food safety and the cuisine mix"
+  "never_added": "property values; each item's normalized figure; the crash lane's fault-based row; CO2, ozone and government-services emissions; disease, food safety and the cuisine mix",
+  "status": "historical record-basis control; current priced pairing uses p7_crime"
+ },
+ "p7_crime": {
+  "case": "oct14",
+  "vsl_standard": "dot_uniform",
+  "baseline_pairing_bn": [
+   439.435316,
+   532.84764
+  ],
+  "pairing_bn": [
+   440.05014948683447,
+   537.4523468549922
+  ],
+  "full_span_bn": [
+   156.21479063437454,
+   810.8667910759359
+  ],
+  "union_crime_rows": {
+   "low": {
+    "victims": 35.25101220429243,
+    "fear_avoidance": 6.224896728981894,
+    "private_security": 0.5418078791438496
+   },
+   "high": {
+    "victims": 39.41346126481449,
+    "fear_avoidance": 7.179473948542373,
+    "private_security": 0.6652594476989186
+   }
+  },
+  "recipient_shares": {
+   "victims": 0.010275181579126573,
+   "property_crime": 0.010275181579126573,
+   "fear_avoidance": 0.010275181579126573,
+   "private_security": 0.010275181579126573,
+   "unreimbursed_care": 0.010275181579126573,
+   "congestion": 0.010275181579126573,
+   "road_crash_externality": 0.010275181579126573,
+   "housing_gain": 0.010275181579126573,
+   "scale_net_earnings": 0.010275181579126573,
+   "school_disruption": 0.021723382497183703,
+   "pm25_consumption": 0.010275181579126573,
+   "total_consumer_scale": 0.010275181579126573,
+   "total_trade_travel_fdi": 0.010275181579126573,
+   "formal_volunteering_outside_group": 0.006924496588407742,
+   "restaurant_variety_market_size": 0.010275181579126573
+  },
+  "union_crime_rows_outside_lineage": {
+   "low": {
+    "victims": 34.88880165304532,
+    "fear_avoidance": 6.160934784780293,
+    "private_security": 0.49405030321520194
+   },
+   "high": {
+    "victims": 39.008480793656645,
+    "fear_avoidance": 7.105703550078491,
+    "private_security": 0.6163742654445592
+   }
+  },
+  "lineage_crime_rows": {
+   "low": {
+    "victims": 37.341853694137136,
+    "fear_avoidance": 6.61052360369506,
+    "private_security": 0.4585074095464421
+   },
+   "high": {
+    "victims": 41.585449347832885,
+    "fear_avoidance": 7.591849436660065,
+    "private_security": 0.5676075224154165
+   }
+  },
+  "lineage_crime_rows_before_boundary": {
+   "low": {
+    "victims": 37.72953148099978,
+    "fear_avoidance": 6.6791531147438405,
+    "private_security": 0.509282118245677
+   },
+   "high": {
+    "victims": 42.01718353813066,
+    "fear_avoidance": 7.670666932221643,
+    "private_security": 0.6193747546468522
+   }
+  },
+  "response_parameters": {
+   "low": {
+    "offending_share_union": 0.11304649176923888,
+    "outside_share_before_boundary": 0.6637326521804545,
+    "recipient_share": 0.010275181579126573,
+    "added_offending_share": 0.07031058462501538,
+    "payment_share_union": 0.09130597981153593,
+    "payment_share_lineage": 0.0994499672980725,
+    "national_spending": {
+     "residential": 15.871967052786385,
+     "commercial": 50.701881604552824,
+     "government": 7.864485855846988
+    }
+   },
+   "high": {
+    "offending_share_union": 0.11600818103311206,
+    "outside_share_before_boundary": 0.662058886038335,
+    "recipient_share": 0.010275181579126573,
+    "added_offending_share": 0.06606175123321623,
+    "payment_share_union": 0.09130597981153593,
+    "payment_share_lineage": 0.0994499672980725,
+    "national_spending": {
+     "residential": 15.871967052786385,
+     "commercial": 50.701881604552824,
+     "government": 7.864485855846988
+    }
+   }
+  },
+  "assumptions": [
+   "security response proportional to offending against outsiders",
+   "business and nonprofit security passes through via consumption",
+   "equipment payer mix equals security-system customer mix",
+   "WTP residual excludes forward security before phi",
+   "added descendants have average outsider exposure within recipient age range"
+  ],
+  "uncertainty": "No joint replicate SE: national source series and victim-arm uncertainty are not jointly replicated.",
+  "sources_sha256": {
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/pins.json": "92b44d71c776a58ba91d6822cb9e3e42cdbaf724b9aab100a247dbf61e18fc48",
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/security_pins.json": "0d1be5aad3961fdc1b0160abe365eb269c757442b3bcb6e73b51b49c4861af0b",
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/report_checks_pins.json": "6abb77a3b9008572bc90866bb7f86a51b7cf29e0bddc530a9bc5ef33ac9e196c",
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/derived/p7_items.csv": "c5432c1ab4dd8af0e8314f1a615946f05371fd2a9fa792685f2ba1bd2410598b",
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/derived/security_inputs.json": "da8e1b8d9cd46ede3522e4e809d2739aee4ef94b20774702540a0716f2fec0f7",
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/derived/payment_keys.json": "1c886f0d713fab51a0a15b8c9460fb3b16233dc39b97a7ed9f9ed38eb442d55a",
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/payment_keys.cjs": "b3bf0f110a020b5acfae49b67e0ef8848cbeac9876ea272c6d9e9a3cc0944207",
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/items.py": "ccb8330161a69bce85b9409bd416f3f82c73ec45f8eff81146b84e6c04c5d65c",
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/p7_crime.py": "0078b53087e131dc026ab0e8e2d1d5282b345885857a0fd92be7e7e15c2f1735",
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/security_inputs.py": "728ff2e195e62ca5e1f53cd4b0e028e26f549c056f2e4c3bd9dfee6c66326798",
+   "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/mortality_detail.csv": "7942aa995bd48f2ed6c6e5e207661c14bb87a1381233c1ac660b32e92199b607",
+   "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/mortality_arms.csv": "f5f455e8fef6e2465988ba83789190fc30c7e6c4b680b0f0c6ea46a9eb653f6f",
+   "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/vsl_standard.json": "954b255412fff22a8ba18dbf0a38acf76e465a28f5b310a73e6ea2ca51bf290d",
+   "infra/immigration-fiscal/crime_victim_cost_2026_09_23/inputs/pins.json": "339327b4dcf414bbeac053e37edab09953b07a19206d0539ee29335ea8c686ad",
+   "infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958",
+   "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct14/band_variants.json": "f32aea1f87c6ab86a69cc4cf6c3a988a8281d2b78ce5c542818454f9cf8c7dcd",
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/baseline_priced_spans.csv": "7f8e4d8de643830f6da6d60e57f42461d0304d3536e24f91532cccf28320519a",
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/baseline_totals_oct14.json": "a9503beaba2e28abba2d8e1e5024b9933c33e647ce5d0e7776587ffa85cb0b80",
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/baseline_totals_oct14.csv": "d1ce84dc9bd8fac231b714dc3ad2cae672e19d37051a0b2db2b3468695375343",
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/baseline_restated_pairing.csv": "62d5e50b52226b3f9e965292ff7fd68aa4b49c6b9057b80f44eb798038eb10c1",
+   "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/baseline_social_items.csv": "c8ff8aa3f9fdecb63460cf4f5e2f44d2e7aaab40f555abedf402acdba62c64a0",
+   "infra/immigration-fiscal/consumption_key_2026_09_24/derived/key_specs.csv": "efc460c84be27509aead447a05badbe41095416eed866041f7736551d7e3a34f",
+   "infra/immigration-fiscal/population_basis_2026_09_29/derived/frame_counts.csv": "57d068d5ba8be325048baa07da831910ff318a762f7721bf192b0122b08f3527"
+  },
+  "adopted_items": [
+   {
+    "item": "fear_avoidance",
+    "group": "mexican_origin",
+    "end": "low",
+    "measure": "absolute",
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "wtp_residual",
+    "overlap_set": "[\"victims\", \"private_security\"]",
+    "low_bn": "3.64046439619532",
+    "central_bn": "6.224896728981894",
+    "high_bn": "20.68606291320349",
+    "vsl_standard": "dot_uniform"
+   },
+   {
+    "item": "fear_avoidance",
+    "group": "mexican_origin",
+    "end": "high",
+    "measure": "absolute",
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "wtp_residual",
+    "overlap_set": "[\"victims\", \"private_security\"]",
+    "low_bn": "4.126942514188698",
+    "central_bn": "7.179473948542373",
+    "high_bn": "23.744741837043538",
+    "vsl_standard": "dot_uniform"
+   },
+   {
+    "item": "private_security",
+    "group": "mexican_origin",
+    "end": "low",
+    "measure": "absolute",
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "resource_spending",
+    "overlap_set": "[\"fear_avoidance\"]",
+    "low_bn": "-0.3210453251023613",
+    "central_bn": "0.5418078791438496",
+    "high_bn": "0.9274889839497362",
+    "vsl_standard": "dot_uniform"
+   },
+   {
+    "item": "private_security",
+    "group": "mexican_origin",
+    "end": "high",
+    "measure": "absolute",
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "resource_spending",
+    "overlap_set": "[\"fear_avoidance\"]",
+    "low_bn": "-0.23873091351580555",
+    "central_bn": "0.6652594476989186",
+    "high_bn": "1.1001426354091626",
+    "vsl_standard": "dot_uniform"
+   }
+  ],
+  "consumer_contracts": {
+   "victims": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "victim_harm_active_vsl",
+    "overlap_set": [
+     "fear_avoidance"
+    ]
+   },
+   "property_crime": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "victim_resource_loss",
+    "overlap_set": [
+     "private_security"
+    ]
+   },
+   "unreimbursed_care": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "unreimbursed_resource_cost",
+    "overlap_set": [
+     "fiscal_health"
+    ]
+   },
+   "congestion": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "value_of_time",
+    "overlap_set": [
+     "road_crash_externality"
+    ]
+   },
+   "housing_gain": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "net_resident_welfare",
+    "overlap_set": [
+     "capitalized_crime",
+     "school_disruption"
+    ]
+   },
+   "fear_avoidance": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "wtp_residual",
+    "overlap_set": [
+     "victims",
+     "private_security"
+    ]
+   },
+   "private_security": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "resource_spending",
+    "overlap_set": [
+     "fear_avoidance"
+    ]
+   },
+   "school_disruption": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "earnings_pv",
+    "overlap_set": [
+     "school_violence"
+    ]
+   },
+   "pm25_consumption": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "dot_vsl_plus_morbidity",
+    "overlap_set": [
+     "mortality"
+    ]
+   },
+   "road_crash_externality": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "crash_resource_and_harm",
+    "overlap_set": [
+     "mortality",
+     "road_congestion"
+    ]
+   },
+   "scale_net_earnings": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "earnings_including_receipts",
+    "overlap_set": [
+     "production"
+    ]
+   },
+   "restaurant_variety_market_size": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "consumer_surplus",
+    "overlap_set": [
+     "consumer_scale"
+    ]
+   },
+   "formal_volunteering_outside_group": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "replacement_wage",
+    "overlap_set": [
+     "informal_care"
+    ]
+   },
+   "total_consumer_scale": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "consumer_surplus",
+    "overlap_set": [
+     "restaurant_variety",
+     "trade"
+    ]
+   },
+   "total_trade_travel_fdi": {
+    "comparator": "with_without",
+    "beneficiary_population": "residents_outside_union",
+    "valuation_basis": "mixed_resource_and_surplus",
+    "overlap_set": [
+     "consumer_scale"
+    ]
+   }
+  },
+  "beneficiary_after_boundary": "residents_outside_lineage"
  }
 }

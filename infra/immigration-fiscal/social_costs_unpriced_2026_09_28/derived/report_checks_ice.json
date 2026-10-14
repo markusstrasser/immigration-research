@@ -1,0 +1,13 @@
+{
+  "acs_institutional_18_64": 2121482.0,
+  "acs_mexican_adjusted_18_64": 279850.6009803304,
+  "conditional_nationality_matched_all_overlap_prison_change_bn": -0.01877909312406523,
+  "extreme_all_ice_assigned_mexican_prison_change_bn": -2.1332797632527325,
+  "extreme_zero_mexican_overlap_prison_change_bn": 0.3113541760977441,
+  "ice_fy2024_adp": 37721.8032786885,
+  "ice_yearend_stock": 37684,
+  "label": "[ASSUMPTION] Full-overlap stock stress tests; not matched ACS corrections or statistical bounds. Contract-only origin/age/year overlap unidentified. All ICE stock dominates its contract subset.",
+  "mexican_national_stock_over_acs_mexican_adjusted": 0.018184702774169444,
+  "mexico_national_yearend": 5089,
+  "stock_over_acs_all": 0.017763054317689236
+}

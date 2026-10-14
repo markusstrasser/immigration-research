@@ -1,0 +1,14 @@
+{
+  "closed_at": "2026-10-14 21:58:31 JST (date)",
+  "tests": "18 targeted social/consumer tests and 8 victim/population tests pass",
+  "social_rerun": "IDENTICAL: 65/65; eight commands rc=0; no allow-unrun",
+  "totals_rerun": "IDENTICAL: 42/42; two commands rc=0; no allow-unrun",
+  "victim_rerun": "IDENTICAL: 38/38; rc=0; no allow-unrun",
+  "population_rerun": "IDENTICAL: 27/27; rc=0; no allow-unrun",
+  "p7_warm_seconds": 1.274690541002201,
+  "p7_peak_rss_bytes": 107872256,
+  "victim_peak_rss_bytes": 1719615488,
+  "measurement": "Python time.perf_counter and resource.getrusage, Darwin ru_maxrss bytes",
+  "review": "p7-code-review.md: four material findings corrected and verified; no remaining scoped material finding",
+  "boundary": "No git writes; no frozen-case or independent producer edits"
+}

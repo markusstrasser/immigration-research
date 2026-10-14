@@ -1,0 +1,9 @@
+[["NAICS2022","NAICS2022_LABEL","TAXSTAT","NAPCS2022","NAPCS2022_LABEL","NAPCSDOL","NAPCSDOL_F","NAPCSDOL_CV","NAPCSDOL_IMP","LINEALL_PCT","LINEALL_PCT_SE","NAPCS2022","TAXSTAT","NAICS2022","us"],
+["561613","Armored car services","00","0000000000","Total","3605043",null,"0.0","0","100.0","0.0","0000000000","00","561613","1"],
+["561613","Armored car services","00","7005542000","Cash handling and management services for business","0","D","0.0","0","0.0","0.0","7005542000","00","561613","1"],
+["561613","Armored car services","00","7008735000","Security guard and patrol services","4909",null,"6.1","0","0.1","0.0","7008735000","00","561613","1"],
+["561613","Armored car services","00","7008735003","Security guard and patrol services for buildings and grounds","4909",null,"6.1","0","0.1","0.0","7008735003","00","561613","1"],
+["561613","Armored car services","00","7016560000","Armored car services","3589394",null,"0.6","0","99.6","0.0","7016560000","00","561613","1"],
+["561613","Armored car services","00","7016560003","Armored car transportation of cash, except from automatic teller machines, and valuables","2787194",null,"0.9","0","77.3","0.0","7016560003","00","561613","1"],
+["561613","Armored car services","00","7016560006","Armored car automatic teller machine services","196778",null,"2.6","0","5.5","0.0","7016560006","00","561613","1"],
+["561613","Armored car services","00","7016560009","Other armored car services","605422",null,"2.5","0","16.8","0.0","7016560009","00","561613","1"]]

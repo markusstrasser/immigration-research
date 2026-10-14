@@ -1,0 +1,26 @@
+{
+  "arrest_based_published_bn": 43.11994349710429,
+  "arrest_based_row4_bn": 42.50051828293412,
+  "arrest_minus_custody_row4_bn": 10.626953330117836,
+  "assumption": "Geography m shift is a sensitivity, not an empirical national victim-matching correction. Arrest ethnic shares proxy incidents and assume equal per-person offending within Hispanics; homicide unchanged. Mixed-offender correction and unified VSL left to adopting worker.",
+  "central_published_bn": 28.922885174626785,
+  "custody_high_published_bn": 32.33810728300224,
+  "custody_high_row4_bn": 31.873564952816277,
+  "frame_factor": 0.9856348324247741,
+  "mexican_neighbor_geography_sensitivity_row4_bn": -1.5524934043385379,
+  "mexican_share_neighbor_gap": 0.061579595818749944,
+  "nibrs_national_transfer_minus_raw_txaz_row4_bn": 2.5845316575842423,
+  "theta_feasible_shift_high_row4_bn": [
+    -2.2090016722024917,
+    2.2296591999012625
+  ],
+  "theta_feasible_shift_low_row4_bn": [
+    -1.975709374594531,
+    1.9941852642436841
+  ],
+  "theta_geography_shift_high_row4_bn": -0.42357315496946757,
+  "theta_geography_shift_low_row4_bn": -0.37883966482712894,
+  "theta_logodds_exposure_sensitivity": 0.4022448591317587,
+  "theta_nibrs_txaz": 0.497673,
+  "theta_transfer_caution": "[ASSUMPTION] Preserved mixed-offender log-odds enrichment relative to population exposure; conditional mixed-group composition does not identify this transfer. Feasible theta 0\u20131 envelope only applies to the mixed-offender correction, not all crime costs."
+}

@@ -1,0 +1,16 @@
+{
+  "setting": "vsl_standard",
+  "values": [
+    "legacy",
+    "dot_uniform",
+    "dot_life_years"
+  ],
+  "dot_vsl_2024usd": 13700000.0,
+  "reference_age": 40,
+  "real_discount_rate": 0.0,
+  "reference_remaining_years": 41.000208957312225,
+  "reference_remaining_years_r3": 23.255233432402814,
+  "mortality_table": "NVSS United States Life Tables 2024, Table 1, total population",
+  "assumptions": "Age-40 calibration; common period mortality; 0% central, 3% beside; not DOT VSLY guidance",
+  "source": "https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis"
+}

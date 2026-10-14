@@ -5,6 +5,7 @@ One method per item, applied to both groups. Every constant carries its source t
 Frame: annual cost to residents outside the group; negative = a gain to them.
 """
 import csv
+import importlib.util
 from pathlib import Path
 
 LANE = Path(__file__).resolve().parent
@@ -74,7 +75,7 @@ PHI = {"low": 0.25, "central": 0.5, "high": 1.0}  # [ASSUMPTION] fear/avoidance 
 inp("phi_low_central_high", "0.25/0.5/1.0", "[ASSUMPTION] share of WTP-minus-victim-cost that is non-victim fear/avoidance")
 
 
-def fear(g, arm):
+def historical_fear(g, arm):
     ex = dict(excess)
     ex["Robbery"] = rob_uncapped if arm == "high" else min(rob_uncapped, 1.0)
     ex["Simple assault"] = excess["Aggravated assault"] if arm == "high" else 0.0
@@ -162,13 +163,45 @@ def reg_fraction(g):
     return REG_B[g] * REG_SHARE_PP[g] / GUARD_MEAN
 
 
-def security(g):
+def security_equal_population(g):
     s = [s_total(i)[0] for i in range(3)]
     e = EXC[g]
     # low also admits the controlled cross-state regression (gross share x central spend)
     cand_low = [s[0] * e["low"], s[2] * e["low"], s[1] * reg_fraction(g)]
     cand_high = [s[0] * e["high"], s[2] * e["high"]]
     return min(cand_low), s[1] * e["central"], max(cand_high)
+
+
+def crime_responses(g, arm="central", footing="mixed", vsl_standard="dot_uniform", factor=None):
+    """The adopted union victim/fear/security rule; explicit arm and mortality value.
+
+    Black historical comparator records remain on their original method. This
+    API requires group-specific active victims and payment shares and fails if
+    they have not been built, rather than silently treating a comparator as an
+    adopted union response.
+    """
+    if g != "mexican_origin":
+        raise ValueError(f"[BLOCKED] active crime-response inputs not built for {g}")
+    spec = importlib.util.spec_from_file_location("p7_crime_responses", LANE / "p7_crime.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    sources = module.load("security_inputs_response", LANE / "security_inputs.py").load_security_inputs()
+    # The module importing this file may not have inserted it in sys.modules.
+    # The response needs only the named constants/functions, so pass the globals
+    # as an explicit namespace rather than depending on import loader behavior.
+    from types import SimpleNamespace
+    if factor is None:
+        factor = module.population_factor()
+    return module.crime_responses(SimpleNamespace(**globals()), sources, footing, vsl_standard,
+                                  arm=arm, factor=factor, subtract_security=True)
+
+
+def fear(g, arm, footing="mixed", vsl_standard="dot_uniform", factor=None):
+    return crime_responses(g, arm, footing, vsl_standard, factor)["fear"]
+
+
+def security(g, footing="mixed", vsl_standard="dot_uniform", factor=None):
+    return tuple(crime_responses(g, arm, footing, vsl_standard, factor)["security"] for arm in ("low", "central", "high"))
 
 
 # ---- item 3: property values ----------------------------------------------------------------
@@ -250,8 +283,10 @@ def main():
     }
     for g in ["mexican_origin", "nh_black"]:
         vals = {
-            "fear_avoidance": tuple(fear(g, a) for a in ["low", "central", "high"]),
-            "private_security": security(g),
+            # Preserve these historical records byte-for-byte. Adopted P7 rows
+            # are produced by p7_crime.py with explicit endpoint footings.
+            "fear_avoidance": tuple(historical_fear(g, a) for a in ["low", "central", "high"]),
+            "private_security": security_equal_population(g),
             "property_values": (0.0, 0.0, property_high(g)),
             "school_disruption": school_range(g),
         }
