@@ -1136,3 +1136,10 @@ the lane's central channel totals, not the case endpoint band.
 ## Revisions
 
 2026-09-23: Connecticut planning regions (09110–09190) now map to 2013 CBSAs in the shared crosswalk; the housing lane's metro-local inputs moved (renters' extra rent −$33.86bn → −$33.86bn, landlords $37.36bn → $37.37bn, +$0.002bn each). The verdict's figures are unchanged at $0.1bn (bottom four fifths −$80.7bn, top fifth +$46.0bn, total −$262.6bn; at η = 1.3, −$407.1bn and −$738.3bn); the largest unweighted flow move is $0.003bn (renters, metro-local high). Four weighted-table cells change in their last printed digit: (b) η = 1 per person −557.0 → −557.1 (also in the headline η table), (a) η = 1.4 floored quintiles −419.9 → −420.0, (a) η = 2 quintile bins −781.0 → −781.1, and (b) η = 2 quintile bins −1,567.4 → −1,567.5. Owner-occupiers' top-fifth stock goes $815bn → $816bn, or $31,892 → $31,895 per household. Detail: [`CT_PLANNING_REGIONS.md`](../hedonic_composition_2026_09_19/CT_PLANNING_REGIONS.md).
+
+Parent rerun 2026-10-15 05:48 JST (from `date`), on the corrected v8 (d1a24d47; same key `oct15`). Personal set endpoints are
+$365.7919302554848 / 455.9817845889793bn, cash $281.75256367607324 / 371.9424180095669bn; the coverage-off base
+band above is unchanged. SPM quintile-0 central totals: fiscal −$402.5210025943637bn and all channels
+−$446.4058245484939bn (a) (were −405.731 and −449.616: the coverage correction, averaged over the ends). All
+endpoint and distribution gates pass; reproduction IDENTICAL 89/89, exit 0. [CALCULATION: `derived/case_ends_oct15.json`
+`ends`; `derived/oct15/channel_by_quintile.csv`, `measure=spm`, `quintile=0`]

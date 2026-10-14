@@ -54,19 +54,19 @@
  "oct15_summary_matches_bands": {
   "passed": true,
   "summary": [
-   368.9909342553624,
-   459.20287674292126
+   365.7919302554848,
+   455.9817845889793
   ]
  },
  "oct15_case_ends_are_the_band": {
   "passed": true,
   "case_ends": [
-   368.9909342553624,
-   459.20287674292126
+   365.7919302554848,
+   455.9817845889793
   ],
   "band": [
-   368.9909342553624,
-   459.20287674292126
+   365.7919302554848,
+   455.9817845889793
   ]
  },
  "oct15_low_previous_grid_is_frozen_v7_at_the_personal_cell": {
@@ -80,19 +80,19 @@
  "oct15_band_rebuilt_from_personal_A": {
   "passed": true,
   "A": [
-   -381.49089920611874,
-   -467.4255833858026
+   -378.2918952062411,
+   -464.20449123186063
   ],
   "band": [
-   368.9909342553624,
-   459.20287674292126
+   365.7919302554848,
+   455.9817845889793
   ]
  },
  "oct15_cash_set_rebuilt_from_A_less_accrual": {
   "passed": true,
   "cash": [
-   284.9516,
-   375.1635
+   281.7526,
+   371.9424
   ]
  },
  "oct15_allocation_move_is_v6_personal_less_v6_all": {
@@ -384,18 +384,18 @@
  },
  "sum_spm_fiscal_a": {
   "passed": true,
-  "split": -405.73105067127267,
-  "given": -405.7310506712726
+  "split": -402.5210025943629,
+  "given": -402.52100259436287
  },
  "sum_spm_fiscal_b": {
   "passed": true,
-  "split": -405.73105067127256,
-  "given": -405.7310506712726
+  "split": -402.5210025943628,
+  "given": -402.52100259436287
  },
  "sum_spm_fiscal_a_cps_tax_fields": {
   "passed": true,
-  "split": -405.73105067127256,
-  "given": -405.7310506712726
+  "split": -402.52100259436287,
+  "given": -402.52100259436287
  },
  "sum_spm_wages": {
   "passed": true,
@@ -459,13 +459,13 @@
  },
  "sum_spm_TOTAL_a": {
   "passed": true,
-  "split": -449.6158726254022,
-  "given": -449.6158726254022
+  "split": -446.40582454849243,
+  "given": -446.40582454849243
  },
  "sum_spm_TOTAL_b": {
   "passed": true,
-  "split": -449.6158726254021,
-  "given": -449.6158726254022
+  "split": -446.4058245484924,
+  "given": -446.40582454849243
  },
  "sum_spm_displaced_beneficiaries": {
   "passed": true,
@@ -474,13 +474,13 @@
  },
  "sum_spm_fiscal_cash_a": {
   "passed": true,
-  "split": -269.2354989641503,
-  "given": -269.2354989641503
+  "split": -266.0806712724015,
+  "given": -266.0806712724015
  },
  "sum_spm_fiscal_resource_a": {
   "passed": true,
-  "split": -51.744339006455384,
-  "given": -51.74433900645538
+  "split": -51.68911862129442,
+  "given": -51.68911862129442
  },
  "sum_spm_fiscal_unclassified_a": {
   "passed": true,
@@ -494,13 +494,13 @@
  },
  "sum_spm_fiscal_cash_b": {
   "passed": true,
-  "split": -269.2354989641503,
-  "given": -269.2354989641503
+  "split": -266.0806712724015,
+  "given": -266.0806712724015
  },
  "sum_spm_fiscal_resource_b": {
   "passed": true,
-  "split": -51.74433900645537,
-  "given": -51.74433900645538
+  "split": -51.68911862129441,
+  "given": -51.68911862129442
  },
  "sum_spm_fiscal_unclassified_b": {
   "passed": true,
@@ -760,18 +760,18 @@
  },
  "sum_money_fiscal_a": {
   "passed": true,
-  "split": -405.73105067127256,
-  "given": -405.7310506712726
+  "split": -402.52100259436287,
+  "given": -402.52100259436287
  },
  "sum_money_fiscal_b": {
   "passed": true,
-  "split": -405.73105067127256,
-  "given": -405.7310506712726
+  "split": -402.5210025943628,
+  "given": -402.52100259436287
  },
  "sum_money_fiscal_a_cps_tax_fields": {
   "passed": true,
-  "split": -405.73105067127256,
-  "given": -405.7310506712726
+  "split": -402.52100259436287,
+  "given": -402.52100259436287
  },
  "sum_money_wages": {
   "passed": true,
@@ -835,13 +835,13 @@
  },
  "sum_money_TOTAL_a": {
   "passed": true,
-  "split": -449.6158726254022,
-  "given": -449.6158726254022
+  "split": -446.40582454849243,
+  "given": -446.40582454849243
  },
  "sum_money_TOTAL_b": {
   "passed": true,
-  "split": -449.6158726254021,
-  "given": -449.6158726254022
+  "split": -446.40582454849243,
+  "given": -446.40582454849243
  },
  "sum_money_displaced_beneficiaries": {
   "passed": true,
@@ -850,13 +850,13 @@
  },
  "sum_money_fiscal_cash_a": {
   "passed": true,
-  "split": -269.2354989641503,
-  "given": -269.2354989641503
+  "split": -266.0806712724015,
+  "given": -266.0806712724015
  },
  "sum_money_fiscal_resource_a": {
   "passed": true,
-  "split": -51.74433900645538,
-  "given": -51.74433900645538
+  "split": -51.68911862129442,
+  "given": -51.68911862129442
  },
  "sum_money_fiscal_unclassified_a": {
   "passed": true,
@@ -870,13 +870,13 @@
  },
  "sum_money_fiscal_cash_b": {
   "passed": true,
-  "split": -269.2354989641503,
-  "given": -269.2354989641503
+  "split": -266.0806712724015,
+  "given": -266.0806712724015
  },
  "sum_money_fiscal_resource_b": {
   "passed": true,
-  "split": -51.74433900645537,
-  "given": -51.74433900645538
+  "split": -51.68911862129441,
+  "given": -51.68911862129442
  },
  "sum_money_fiscal_unclassified_b": {
   "passed": true,
