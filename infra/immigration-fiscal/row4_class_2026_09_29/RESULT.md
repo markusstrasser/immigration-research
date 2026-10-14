@@ -395,3 +395,5 @@ Times from `date` (JST).
 ### Adopted v8 receipt, 2026-10-15
 
 CASE_FINAL b35ac8fb inspected. Export/live consumer passes116gates with exactly zero remaining priced row4 residual at both ends/bases,1e-9bn. Absolute set368.9909342553624 /459.20287674292126bn, cash284.95156767595086 /375.1635101635089bn close to principal. VM positive/negative controls pass. Rerun IDENTICAL28/28,exit0,3.847s; Python perf_counter/resource child RSS371,589,120bytes informational. All archived outputs unchanged. [CALCULATION: derived/row4_oct15.json; scratch row4-final.json,row4-repro.json]
+
+Log: 2026-10-15 06:19:49 JST (`date`, parent): rerun on corrected v8 (`d1a24d47`: the coverage term no longer charges the missed people's custody, arrests and ICE a second time, −$3.199004 / −$3.221092bn on the lineage), IDENTICAL 28/28, exit 0. The priced row-4 residual stays exactly zero; the absolute set it closes to is now $365.791930 / 455.981785bn, cash $281.752564 / 371.942418bn.

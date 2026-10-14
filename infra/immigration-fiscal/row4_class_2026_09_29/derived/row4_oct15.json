@@ -15,16 +15,16 @@
   "set": {
    "absorbed": true,
    "baseline_bn": [
-    368.99093425536216,
-    459.2028767429211
+    365.79193025548454,
+    455.9817845889791
    ],
    "residual_bn": [
     0,
     0
    ],
    "residual_cost_bn": [
-    368.99093425536216,
-    459.2028767429211
+    365.79193025548454,
+    455.9817845889791
    ],
    "maximum_cell_residual_bn": 1.3100631690576847e-14,
    "residual_edits": [
@@ -303,16 +303,16 @@
   "cash": {
    "absorbed": true,
    "baseline_bn": [
-    284.9515676759513,
-    375.1635101635087
+    281.7525636760737,
+    371.9424180095667
    ],
    "residual_bn": [
     0,
     0
    ],
    "residual_cost_bn": [
-    284.9515676759513,
-    375.1635101635087
+    281.7525636760737,
+    371.9424180095667
    ],
    "maximum_cell_residual_bn": 4.062722380737682e-15,
    "residual_edits": [
@@ -843,7 +843,7 @@
   {
    "name": "set: live total matches main_case_bands.csv (5e-5: four decimal places)",
    "pass": true,
-   "detail": "368.99093425536216 / 459.2028767429211; row adopted"
+   "detail": "365.79193025548454 / 455.9817845889791; row adopted"
   },
   {
    "name": "set: measured residual on oct15 is zero (1e-9)",
@@ -1073,7 +1073,7 @@
   {
    "name": "cash: live total matches main_case_bands.csv (5e-5: four decimal places)",
    "pass": true,
-   "detail": "284.9515676759513 / 375.1635101635087; row cash_set"
+   "detail": "281.7525636760737 / 371.9424180095667; row cash_set"
   },
   {
    "name": "cash: measured residual on oct15 is zero (1e-9)",
