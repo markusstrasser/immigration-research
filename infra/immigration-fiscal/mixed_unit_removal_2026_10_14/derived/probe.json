@@ -78,7 +78,8 @@
     "HFDVAL",
     "HFOODMO",
     "HFOODNO",
-    "HFOODSP"
+    "HFOODSP",
+    "HPROP_VAL"
   ],
   "gates": [
     {
@@ -327,6 +328,106 @@
       "value": null
     },
     {
+      "name": "input_sha_inputs/health_aca2024.zip",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/health_group2023.xlsx",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/health_macstats2024.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/health_macstats2024.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/health_macstats2026.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/health_macstats2026.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/health_policy2024.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/health_state_abbreviations.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/health_state_abbreviations_raw.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/tax_corrections_irs_p596_2024.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/tax_corrections_irs_p596_2024.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/tax_corrections_eitc_table_2024.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/gen_ledger_extension_2026_09_16/state_parameters.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/added_age_mix_2026_10_07/derived/g3_age_keys.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/sept29/pension_grid_7660d97f808b5c75.npz",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/sept29/person_accrual.parquet",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/within_group_distribution_2026_09_29/derived/sept29/person_accrual_model.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/pension_accrual_2026_09_28/pension_accrual.py",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/pension_accrual_2026_09_28/lifetime_model.py",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py",
+      "passed": true,
+      "value": null
+    },
+    {
       "name": "case_personal_end_specifications",
       "passed": true,
       "value": null
@@ -416,6 +517,11 @@
       "value": null
     },
     {
+      "name": "CBO_in_run_rank_cache_person_keys_match",
+      "passed": true,
+      "value": null
+    },
+    {
       "name": "all_nonzero_survivor_changes_have_generation",
       "passed": true,
       "value": null
@@ -436,7 +542,7 @@
       "value": 0.0
     },
     {
-      "name": "CBO_fixed_rank_boundaries_ordered",
+      "name": "CBO_in_run_rank_cache_person_keys_match",
       "passed": true,
       "value": null
     },
@@ -492,6 +598,1361 @@
     },
     {
       "name": "stack_generation_closure",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "survivor_dependents_each_assigned_once",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "survivor_dependents_counts_close",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "CBO_in_run_rank_cache_person_keys_match",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "all_nonzero_survivor_changes_have_generation",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "federal_generation_closure",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "refundable_generation_closure",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "head_spouse_swap_survivor_kernel_1e9",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "CBO_in_run_rank_cache_person_keys_match",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "head_spouse_swap_IRS_cell_1e9",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "survivor_dependents_each_assigned_once",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "survivor_dependents_counts_close",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "CBO_in_run_rank_cache_person_keys_match",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "all_nonzero_survivor_changes_have_generation",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "federal_generation_closure",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "refundable_generation_closure",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "head_spouse_swap_survivor_kernel_1e9",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "CBO_in_run_rank_cache_person_keys_match",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "head_spouse_swap_IRS_cell_1e9",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_lowACA_lowSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_lowACA_lowSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_lowACA_lowSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_lowACA_lowSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_lowACA_highSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_lowACA_highSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_lowACA_highSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_lowACA_highSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_highACA_lowSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_highACA_lowSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_highACA_lowSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_highACA_lowSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_highACA_highSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_highACA_highSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_highACA_highSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set0Medicaid_highACA_highSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_bounded_stack_has_observed_takeup_arms",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_lowACA_lowSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_lowACA_lowSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_lowACA_lowSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_lowACA_lowSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_lowACA_highSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_lowACA_highSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_lowACA_highSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_lowACA_highSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_highACA_lowSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_highACA_lowSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_highACA_lowSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_highACA_lowSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_highACA_highSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_highACA_highSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_highACA_highSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_set1Medicaid_highACA_highSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_bounded_stack_has_observed_takeup_arms",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_lowACA_lowSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_lowACA_lowSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_lowACA_lowSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_lowACA_lowSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_lowACA_highSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_lowACA_highSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_lowACA_highSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_lowACA_highSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_highACA_lowSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_highACA_lowSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_highACA_lowSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_highACA_lowSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_highACA_highSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_highACA_highSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_highACA_highSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash0Medicaid_highACA_highSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_bounded_stack_has_observed_takeup_arms",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_lowACA_lowSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_lowACA_lowSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_lowACA_lowSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_lowACA_lowSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_lowACA_highSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_lowACA_highSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_lowACA_highSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_lowACA_highSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_highACA_lowSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_highACA_lowSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_highACA_lowSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_highACA_lowSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_highACA_highSNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_highACA_highSNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_highACA_highSNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_solved_SNAP_allocation_cancels_cash1Medicaid_highACA_highSNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_bounded_stack_has_observed_takeup_arms",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M1_federal",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M2_state",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M3_refunds",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_consumption",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_owner_property",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_SNAP_key",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_housing_key",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_biological_children",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_D_added_residual",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_low_membership_benefit_interaction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_high_membership_benefit_interaction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_high_plus_pension_model",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_Medicaid_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_Medicaid_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_ACA_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_ACA_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_newly_eligible_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_newly_eligible_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_newly_ineligible",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_newly_eligible_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_newly_eligible_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_newly_ineligible",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_tax_replacement_item5b_and_D",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M4_SNAP_baseline_interaction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_all_biological_federal_tax_arm",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M1_federal",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M2_state",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M3_refunds",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_consumption",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_owner_property",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_SNAP_key",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_housing_key",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_biological_children",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_D_added_residual",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_low_membership_benefit_interaction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_high_membership_benefit_interaction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_high_plus_pension_model",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_Medicaid_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_Medicaid_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_ACA_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_ACA_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_newly_eligible_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_newly_eligible_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_newly_ineligible",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_newly_eligible_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_newly_eligible_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_newly_ineligible",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_tax_replacement_item5b_and_D",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M4_SNAP_baseline_interaction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_all_biological_federal_tax_arm",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M1_federal",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M2_state",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M3_refunds",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_consumption",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_owner_property",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_SNAP_key",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_housing_key",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_biological_children",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_D_added_residual",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_low_membership_benefit_interaction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_high_membership_benefit_interaction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_Medicaid_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_Medicaid_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_ACA_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_ACA_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_newly_eligible_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_newly_eligible_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_newly_ineligible",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_newly_eligible_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_newly_eligible_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_newly_ineligible",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_tax_replacement_item5b_and_D",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M4_SNAP_baseline_interaction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_all_biological_federal_tax_arm",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M1_federal",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M2_state",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M3_refunds",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_consumption",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_owner_property",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_SNAP_key",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M5_housing_key",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_biological_children",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_D_added_residual",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_low_membership_benefit_interaction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_bounded_high_membership_benefit_interaction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_Medicaid_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_Medicaid_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_ACA_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_ACA_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_newly_eligible_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_newly_eligible_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_zero_observed_newly_ineligible",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_newly_eligible_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_newly_eligible_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_cap_observed_newly_ineligible",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_tax_replacement_item5b_and_D",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M4_SNAP_baseline_interaction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_all_biological_federal_tax_arm",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_D_corrected_union",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M1_high_AGI",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_latent_nonlinear_tax",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_remove_old_projection",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_all_biological_federal_tax_arm",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_membership_B_nonref",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_membership_B_care",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_membership_B_actc",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_membership_B_eitc",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_membership_Cr_status",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_membership_reverse_credit_reclassification",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_membership_D_added_original_control",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_membership_D_added_original_residual_control",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_membership_M6_remove_roster_lineage_credit_projection",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_membership_identity_child_credit_on_union_heads_diagnostic",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_pension_reverse_max_model",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_pension_reverse_zero_current_earnings_proxy",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_pension_reverse_lower",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_pension_cash_upper_raw_CPS",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_Medicaid_july24_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_Medicaid_july24_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_Medicaid_dec23_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_Medicaid_dec23_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_ACA_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_ACA_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_Medicaid_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_Medicaid_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_latent_Medicaid_july24_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_latent_Medicaid_july24_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_latent_Medicaid_dec23_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_latent_Medicaid_dec23_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_latent_ACA_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_latent_ACA_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_latent_Medicaid_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_health_latent_Medicaid_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_SNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_SNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_SNAP_zero_observed_newly_eligible_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_SNAP_zero_observed_newly_eligible_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_SNAP_zero_observed_newly_ineligible",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_SNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_SNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_SNAP_cap_observed_newly_eligible_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_SNAP_cap_observed_newly_eligible_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_SNAP_cap_observed_newly_ineligible",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_latent_SNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_latent_SNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_latent_SNAP_zero_observed_newly_eligible_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_latent_SNAP_zero_observed_newly_eligible_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_latent_SNAP_zero_observed_newly_ineligible",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_latent_SNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_latent_SNAP_cap_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_latent_SNAP_cap_observed_newly_eligible_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_latent_SNAP_cap_observed_newly_eligible_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_SNAP_latent_SNAP_cap_observed_newly_ineligible",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_benefit_Medicaid_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_benefit_Medicaid_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_benefit_ACA_low",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_benefit_ACA_high",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_benefit_SNAP_zero_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_benefit_SNAP_zero_observed_high_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_benefit_SNAP_cap_observed_low_takeup",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "round2_finite_M6_benefit_SNAP_cap_observed_high_takeup",
       "passed": true,
       "value": null
     },

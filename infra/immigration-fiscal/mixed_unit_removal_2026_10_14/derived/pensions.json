@@ -1,0 +1,80 @@
+{
+  "basis": "payable 2025 pension model, EAN new_issue central; hypothetical lifetime-family envelope, not measured 2026 case correction",
+  "mixed_surviving_workers_million": 2.114712954014168,
+  "mixed_surviving_workers_se_million": 0.07038502679025496,
+  "baseline_relative_error": 0.0,
+  "already_booked": "member workers observed-family ratios already include spouse and survivor contingent benefits; add zero again",
+  "bounds_rule": "zero to one-earner spouse-only premium on all nonmember mixed-couple workers; removed spouse own entitlement fixed at zero at upper model endpoint",
+  "zero_current_earnings_proxy_is_not_lower_bound": true,
+  "missing_inputs": [
+    "both spouses lifetime covered earnings",
+    "insured-status histories",
+    "prior marriages and duration",
+    "own/spouse benefit netting",
+    "actual claim ages",
+    "benefit-type flags for current SS_VAL",
+    "non-co-resident former spouses"
+  ],
+  "female_worker_rule": "male-worker/female-spouse one-earner premium ratio times female own accrual; mortality/age orientation proxy",
+  "cash_increment": null,
+  "cash_reason": "CPS SS_VAL has no retired/spousal/survivor component or linked earnings record. Paid member benefits already on members own record; raw-CPS all surviving-spouse SS is a diagnostic ceiling, includes own benefits, not an additive correction.",
+  "recommendation": "arm only; reject universal +1\u20135bn measurement correction; no claim of hard bound beyond this hypothetical family model",
+  "white_and_added_rule": "no pension transport: lineage aggregate has no mixed spouse links; priced own pension costs held",
+  "source_rules": [
+    "https://www.ssa.gov/faqs/en/questions/KA-02011.html",
+    "https://www.ssa.gov/survivor/amount"
+  ],
+  "gates": [
+    {
+      "name": "cached_gross_baseline_1e12_relative",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "generation_owner_on_every_mixed_worker",
+      "passed": true
+    },
+    {
+      "name": "lower_zero_and_upper_nonnegative",
+      "passed": true
+    }
+  ],
+  "terms": {
+    "pension_reverse_max_model": {
+      "bn": 13.946101645472211,
+      "se_bn": 0.4650901445419576,
+      "by_generation_bn": [
+        3.158083751063858,
+        3.7596581984527515,
+        7.028359695955601
+      ]
+    },
+    "pension_reverse_zero_current_earnings_proxy": {
+      "bn": 2.74693978180535,
+      "se_bn": 0.21797538983498396,
+      "by_generation_bn": [
+        0.7479028358400344,
+        0.674205639496461,
+        1.3248313064688548
+      ]
+    },
+    "pension_reverse_lower": {
+      "bn": 0.0,
+      "se_bn": 0.0,
+      "by_generation_bn": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "pension_cash_upper_raw_CPS": {
+      "bn": 6.807618214618039,
+      "se_bn": 0.6280970901338342,
+      "by_generation_bn": [
+        1.6142756627006962,
+        1.5722376550918027,
+        3.6211048968255404
+      ]
+    }
+  }
+}

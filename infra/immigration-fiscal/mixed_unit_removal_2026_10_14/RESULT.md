@@ -1,69 +1,77 @@
-**Verdict:** Withhold new adoption. The conditional tax-only correction is **+6.774bn** (SE 4.075bn), beyond item 5b, and the conditional fixed-pool stack is **+10.077bn** (SE 4.164bn). These cross the $5bn point-estimate review bar. They are not an identified complete removal effect: deductions, person consumption, benefit units/takeup and added-child membership remain unmeasured. M6 is unpriced, not zero. [CALCULATION: `removal.py` → `derived/summary.json`, `derived/results.csv`, `derived/replicates.csv`] [INFERENCE]
+**Verdict:** Round 2 supplies a bounded unified removal arm, replacing item 5b and D once. Adopt the weight, survivor-record and EITC corrections; retain the tax-input, own-resource, health-takeup, added-person and pension assumptions as arms. [CALCULATION: `round2.py` → `derived/round2_summary.json`]
 
-## One change from the current central
+| Unified removal, $bn | Low v7 end | High v7 end |
+|---|---:|---:|
+| set, bounded_low | 350.292 (Δ+10.740, SE 4.417) | 434.389 (Δ+10.740, SE 4.417) |
+| set, bounded_high | 354.084 (Δ+14.532, SE 4.405) | 438.181 (Δ+14.532, SE 4.405) |
+| cash, bounded_low | 275.166 (Δ+10.740, SE 4.417) | 359.263 (Δ+10.740, SE 4.417) |
+| cash, bounded_high | 278.957 (Δ+14.532, SE 4.405) | 363.055 (Δ+14.532, SE 4.405) |
 
-Income year 2024, personal allocation, specifications 16 / 11, row-4 identified union 39,712,493, against v7 plus item 5b. A plus sign raises net cost to other residents. Every row holds other case lines fixed and is a modeled mechanical adjustment, not a causal forecast. SEs use all 160 SDR replicates; the stack SE comes from the summed replicate vector. [DATA: frozen v7 `package.cjs`, `derived/corrections.json`; CPS ASEC 2025 pinned archive] [FRAMING-SENSITIVE]
+The low/high model rows vary takeup and shelter within each fixed v7 end specification 16 / 11. They are conditional model envelopes, not sampling confidence intervals. Set and cash have the same current tax/transfer/key adjustments; the pension model upper arm is beside the set only. [ASSUMPTION] [FRAMING-SENSITIVE]
 
-| Component, change from frozen v7 | Union, low / high $bn | SE $bn | G1 | G2 | G3+ | Review bar |
-|---|---:|---:|---:|---:|---:|---|
-| M1 | +6.723962 / +6.723962 | 3.570733 | -0.233367 | +1.317403 | +5.639926 | Above $5bn |
-| M2 | +0.850817 / +0.850817 | 0.580743 | -0.304246 | +0.444106 | +0.710956 | Below $5bn |
-| M3 | -0.800464 / -0.800464 | 0.186546 | +0.379708 | -0.585569 | -0.594603 | Below $5bn |
-| M4_conditional_SNAP | -1.069501 / -1.069501 | 0.167594 | -0.222760 | -0.312886 | -0.533855 | Below $5bn |
-| M5_fixed_pool | +4.372536 / +4.372536 | 0.346487 | -0.810791 | +0.132132 | +5.051196 | Below $5bn |
-| tax_only_stack | +6.774315 / +6.774315 | 4.075207 | -0.157905 | +1.175940 | +5.756279 | Above $5bn |
-| conditional_fixed_pool_stack | +10.077351 / +10.077351 | 4.163753 | -1.191456 | +0.995186 | +10.273620 | Above $5bn |
+| One change from v7, $bn | Set low / high | Cash low / high | SE low / high | Recommendation |
+|---|---:|---:|---:|---|
+| M1_federal | +6.723962 / +6.723962 | +6.723962 / +6.723962 | 3.570733 / 3.570733 | arm: own-survivor flags/cell and filing status are measurement corrections; unobserved deductions remain conditional |
+| M2_state | +0.850817 / +0.850817 | +0.850817 / +0.850817 | 0.580743 / 0.580743 | arm: state-calibrated own-return recomputation; income/deduction transport conditional |
+| M3_refunds | -0.800464 / -0.800464 | -0.800464 / -0.800464 | 0.186546 / 0.186546 | arm: solved with M1; EITC operator repair is a measurement correction |
+| M6_biological_children | +1.847528 / +1.847528 | +1.847528 / +1.847528 | 0.265029 / 0.265029 | arm: biological link correction adopted in arm; priced universe stays fixed and roster projection removed once |
+| D_added_residual | +0.545411 / +0.545411 | +0.545411 / +0.545411 | 0.259237 / 0.259237 | arm: G3 transport on unlocated added people; white amount held at zero |
+| M5_consumption | +4.372536 / +4.372536 | +4.372536 / +4.372536 | 0.346487 / 0.346487 | arm: own disposable resources are an explicit allocation rule |
+| M5_owner_property | +1.133426 / +1.133426 | +1.133426 / +1.133426 | 0.114867 / 0.114867 | arm: applies same resource rule to owner unit |
+| M5_SNAP_key | -0.171835 / -0.171835 | -0.171835 / -0.171835 | 0.205792 / 0.205792 | arm separately; exact baseline interaction removes it from solved SNAP removal |
+| M4_SNAP_baseline_interaction | +0.171835 / +0.171835 | +0.171835 / +0.171835 | 0.205792 / 0.205792 | adopt accounting identity in solved removal; cancels M5 SNAP key arm |
+| M5_housing_key | -0.025789 / -0.025789 | -0.025789 / -0.025789 | 0.131858 / 0.131858 | arm: reported housing pool reallocated, rent and eligibility responses held |
+| Medicaid_low | -1.436357 / -1.436357 | -1.436357 / -1.436357 | 0.180987 / 0.180987 | arm: statutory household/eligibility plus empirical takeup and primary-source cost bridge |
+| Medicaid_high | -0.322352 / -0.322352 | -0.322352 / -0.322352 | 0.133141 / 0.133141 | arm: statutory household/eligibility plus empirical takeup and primary-source cost bridge |
+| ACA_low | -0.483317 / -0.483317 | -0.483317 / -0.483317 | 0.095348 / 0.095348 | arm: enhanced schedule, enrollment and premium proxy; rule-based bounded estimate |
+| ACA_high | +0.464593 / +0.464593 | +0.464593 / +0.464593 | 0.040479 / 0.040479 | arm: enhanced schedule, enrollment and premium proxy; rule-based bounded estimate |
+| tax_replacement_item5b_and_D | +13.884538 / +13.884538 | +13.884538 / +13.884538 | 4.275700 / 4.275700 | replacement item, not an additional change from v7; subtract old item5b first |
+| SNAP_cap_observed_high_takeup | -0.707893 / -0.707893 | -0.707893 / -0.707893 | 0.159310 / 0.159310 | arm: statutory SNAP with observed-cell takeup and shelter band |
+| SNAP_cap_observed_low_takeup | -0.527782 / -0.527782 | -0.527782 / -0.527782 | 0.150981 / 0.150981 | arm: statutory SNAP with observed-cell takeup and shelter band |
+| SNAP_cap_observed_newly_eligible_high | -0.639091 / -0.639091 | -0.639091 / -0.639091 | 0.079099 / 0.079099 | diagnostic component only; newly eligible/ineligible separately, never a complete SNAP arm |
+| SNAP_cap_observed_newly_eligible_low | -0.458980 / -0.458980 | -0.458980 / -0.458980 | 0.060316 / 0.060316 | diagnostic component only; newly eligible/ineligible separately, never a complete SNAP arm |
+| SNAP_cap_observed_newly_ineligible | +0.251742 / +0.251742 | +0.251742 / +0.251742 | 0.079687 / 0.079687 | diagnostic component only; newly eligible/ineligible separately, never a complete SNAP arm |
+| SNAP_zero_observed_high_takeup | -2.631240 / -2.631240 | -2.631240 / -2.631240 | 0.245841 / 0.245841 | arm: statutory SNAP with observed-cell takeup and shelter band |
+| SNAP_zero_observed_low_takeup | -2.195441 / -2.195441 | -2.195441 / -2.195441 | 0.218580 / 0.218580 | arm: statutory SNAP with observed-cell takeup and shelter band |
+| SNAP_zero_observed_newly_eligible_high | -1.586365 / -1.586365 | -1.586365 / -1.586365 | 0.159509 / 0.159509 | diagnostic component only; newly eligible/ineligible separately, never a complete SNAP arm |
+| SNAP_zero_observed_newly_eligible_low | -1.150566 / -1.150566 | -1.150566 / -1.150566 | 0.118875 / 0.118875 | diagnostic component only; newly eligible/ineligible separately, never a complete SNAP arm |
+| SNAP_zero_observed_newly_ineligible | +0.206317 / +0.206317 | +0.206317 / +0.206317 | 0.063417 / 0.063417 | diagnostic component only; newly eligible/ineligible separately, never a complete SNAP arm |
+| bounded_low_membership_benefit_interaction | +0.643503 / +0.643503 | +0.643503 / +0.643503 | 0.123358 / 0.123358 | adopt interaction accounting inside chosen arm; latent-child departures change survivors benefits |
+| bounded_high_membership_benefit_interaction | +0.269805 / +0.269805 | +0.269805 / +0.269805 | 0.067834 / 0.067834 | adopt interaction accounting inside chosen arm; latent-child departures change survivors benefits |
+| M6_all_biological_federal_tax_arm | +2.488160 / +2.488160 | +2.488160 / +2.488160 | 0.291603 / 0.291603 | arm beside fixed lineage: all biological departures, including source-definition conflicts; own costs of outside-definition children held, not newly booked |
 
-The primary whole-lineage reading uses the **same adjustment at both ends**, holding the case's existing added-person costs fixed; it does not observe their mixed units. `results.csv` separately shows the case-style G3 transport: each union G3+ adjustment per identified G3+ member times the case's 1.957M G3+-priced added people, white-priced people held. That assumed transport gives +11.479bn for the stack; its SE conditions on the transport coefficient. This is not a measured 42.75M correction. [ASSUMPTION] [CALCULATION: `result_rows`, `derived/case_inputs.json`]
+The tax replacement row is the new item amount, not an additional v7 delta. All other standalone rows are one change from v7. Health and SNAP standalone rows use the identified-union departures; the unified rows additionally include their explicit membership-benefit interaction. SEs sample all 160 signed CPS SDR replicates, conditional on policy/cost/calibration assumptions, not an uncertainty estimate for those assumptions. [CALCULATION / ASSUMPTION]
 
-## Positive controls and account sign
+SNAP key allocation is shown as a one-change arm. Its negative baseline interaction is included in every unified row; adding it without that interaction would double count attribution. `round2_replicates.csv` stores generation vectors and the exact covariance-preserving stack. [CALCULATION]
 
-The original credits code runs unchanged with only its output directory redirected here. All six files reproduce byte for byte; all 83 original gates pass. Item 5b is +4.298545385bn and the old D is +2.279133775bn. D is a control, **never an added component**. [CALCULATION: `derived/positive_control/`, `positive_control()`]
+The original item-5b and D controls remain byte-identical under `derived/positive_control/`; old D is a control and is not added to any unified row. The original conditional first-pass result is preserved in [round1-result.md](round1-result.md). All original diagnostic arms remain in `derived/results.csv` and `derived/replicates.csv`. [DATA]
 
-The new correction is remaining nonmembers' tax after removal minus their tax on the original personal ledger, and original nonmember refunds minus their post-removal refunds. The already-booked A/B/C/Cr item-5b receipt and spending vectors are subtracted once. M1 includes federal liability before EITC/ACTC; M3 includes those refunds, not the same child credit a second time. Item 5b's own full-sample IRS normalization is retained for every replicate, so the subtraction uses one calibration convention. [CALCULATION: `federal_removal`, `original_item_parts`, `federal_denominator`]
+## Membership and credit carriers
 
-## M1, M2 and M3: the surviving return
+The own-parent biological rule identifies 0.853468M children outside the union; 0.074754M step-only children stay. 0.517863M fit the frozen latent universe. They replace its modeled crossing-credit projection once (not their own costs). The remaining outside-definition children are priced as an all-biological federal-tax arm beside the fixed-lineage result; inserting their own costs into the 42.75M headline would silently change its population. [CALCULATION / ASSUMPTION]
 
-The local pinned NBER 2024 TAXSIM kernel evaluates surviving incomes, Social Security taxability, dependent counts, filing status, capital-gain preferences and state laws. A staying spouse files alone; nonmember parents receive staying dependents from vanished returns, including a new return if necessary. The current data transfer 20 dependents to existing returns and create 0 nonfiler returns. Children with no staying parent receive no invented claimant. Two nonmembers' joint return remains joint. The statutory survivor calculation and own IRS cell pass the head/spouse swap check at 1e-9 (measured discrepancy 0). The frozen personal baseline is held: relabeling which original person carried its tax changes that baseline by definition. [CALCULATION: `survivor_registry`, `federal_removal`; `test_removal.py`, `test_state_tax.py`] [ASSUMPTION: staying claimant rule and qualifying dependents]
+Every counted child is assigned to exactly one partition: identified union, located latent subset, or unlocated residual of the fixed addition. This is an explicit reconciliation rule, not an individual crosswalk observed in the aggregate loss estimate. `derived/membership.json` includes count closure, raw parent-field conflicts, generation/class assignment and nonmember claimants. The literal all-biological rule stays visible beside it. [DATA / ASSUMPTION]
 
-The surviving return uses its own state-aware status flag and on-books share, its own weight, its own AGI bin and the remaining household's CBO income group at fixed original national rank thresholds. The benchmark cell multipliers are fixed; unsupported positive-tax cells block. A continuing claimant keeps the Census residual plus the statutory schedule difference; a new return gets its own statutory result, without unexplained joint-income residuals. M2 is state/replicate calibrated to original CPS positive state liability and uses the same canonical before/after kernel inputs as M1/M3, including the conditional care-spending attribution. State negative refunds are outside the positive receipt key and are held outside M2. [CALCULATION: `survivor_irs_cells`, `state_tax.compute`]
+The blanket −$1.033bn subtraction is rejected: a claimant credit for a child is not that child’s own refundable-credit record. The located latent children have no own-record CTC/ACTC/EITC; the nonzero crossing-credit projection that is replaced is explicitly traced by receipt/spending side. The reverse-credit diagnostic is not added a second time to the jointly solved returns. [CALCULATION: `membership.py`; `derived/membership.json`]
 
-Baseline TAXSIM federal liability is 2010.375bn versus CPS 1984.587bn; EITC is 42.897 versus 42.624; ACTC is 26.449 versus 21.589. Retaining residuals is calibration, not validation of new returns. Keeping the original head's IRS cell instead of the survivor's gives M1 +4.998bn, showing material cell sensitivity. [CALCULATION: `derived/summary.json`, `derived/results.csv`] [INFERENCE]
+## Primary-source health arm and costs
 
-Unobserved itemized deductions, qualified dividends, short/long gains, taxable pension shares, QBI, qualifying-household maintenance and actual child-care attribution remain assumptions. March 2025 ages are held as in the CPS model. Other refundable credits, including education credits and ACA PTC, are not identified as a return-level CPS value; their spending is held, not declared zero. The original non-PTC line convention prices EITC and ACTC together, as the control lane does. The M1/M3 result is therefore a conditional kernel simulation, not an exact reconstructed legal return. [ASSUMPTION / DEGRADED]
+See [health-result.md](health-result.md), `inputs/health*`, and `derived/health_results.json`. Health is priced as an arm; the primary expenditure/enrollment bridge and its vintage are explicit. Each state/category transition and newly eligible/ineligible count is in that output. [SOURCE / CALCULATION]
 
-## M4: benefits
+## Keys and weight conservation
 
-SNAP uses primary USDA FY2024/FY2025 schedules in calendar-year 9/3-month proportions, income tests, unit size, standard/earned/medical/care/support deductions, the benefit formula and the statutory maximum. It keeps reported CPS level residuals, varies missing shelter deductions, and compares reported participation held with full-takeup proxies. SPM is a proxy assistance unit, annual incomes proxy monthly incomes, and deductions are prorated: assets, state BBCE/ABAWD/student/status rules are unmeasured. Existing participation with zero shelter is -1.070bn; maximum shelter is -0.069; full-takeup/zero-shelter is -5.606, crossing $5bn only under that unverified takeup construction. [CALCULATION: `benefits.py`, `derived/benefit_results.json`] [ASSUMPTION]
+Own-resource splitting is an arm; all-zero own resources retain equal shares. The original civilian weighted key total stays fixed in every unit and all 161 columns. The worst closure discrepancy is 2.62e-15bn. The old within-member unweighted sharing artifact is +1.443594bn; v7's personal allocation excludes it, so no extra +$1.44bn is booked. The four affected person-key metrics each pass the within-member identity in all 161 columns. [CALCULATION: `resource_keys.py`; `derived/round2_summary.json` `resource_keys`]
 
-Medicaid/CHIP uses parsed state age/parent/expansion thresholds and the 2024 FPL to show income-proxy transitions for surviving children/adults. The fixed MEPS expected-payment key remains held: eligibility is not observed enrollment or spending. ACA premiums, SLCSP, APTC, monthly enrollment and complete MAGI/employer-affordability inputs are absent, so PTC is unpriced. The health changes are unidentified. See `benefits-result.md` for proxy fit failures, excluded units, signed weights, threshold-vintage limits and the conditional SNAP envelope. [DATA: `derived/benefit_results.json` `Medicaid_CHIP`, `ACA`] [SOURCE: primary files and URLs in `inputs/benefit_pins.json`]
+## Pension and federal-tax alternatives
 
-## M5: consumption allocation
+See [pensions-result.md](pensions-result.md) and [tax-corrections-result.md](tax-corrections-result.md). The high-AGI federal scenario is recomputed directly, not the former scalar; both headline ends use the ordinary key. The pension inputs support a conditional one-earner family-model envelope, not a measured lifetime-spouse entitlement correction or new cash payment. [CALCULATION / ASSUMPTION]
 
-Only mixed SPM units change: the adopted saving/remittance-adjusted resource pool is split in proportion to positive own disposable cash income, with joint tax bills split by positive AGI components. Each full/replicate weighted pool and the civilian national key is conserved at 1e-6bn or tighter; signed weights are retained, and noncivilian strata stay fixed. All-zero own-income units explicitly keep equal shares. The original consumption key and saving/remittance shares are positive controls. Sales, excise, customs and personal-transfer receipts use the live **union-only** targets; added people's targets are isolated and fixed. Federal excise keeps CBO income-group shares; the resulting raw union exposure is calibrated to the current case line. [CALCULATION: `weight_preserving_split`, `consumption_removal`, `case_inputs.cjs`]
+The pension zero-current-earnings proxy is +2.746940bn at both set ends (SE 0.217975); the historical-model upper is +13.946102bn (SE 0.465090). Both are arms, with primary pension costs held in set/cash. Their hypothetical benefit timing cannot be inserted as this year's cash. [CALCULATION / ASSUMPTION]
 
-Own disposable income is an attribution assumption, not measured individual consumption: children can consume resources supplied by parents. Half equal sharing / half own income reduces M5 to +2.186bn. Do not adopt the own-income split as a literal spending measurement. Resource-keyed service/subsidy lines and the corporate/business-property key remain held; M5 prices the requested consumption receipts only. [ASSUMPTION / SCOPE]
+The remaining white-priced added people take zero crossing credits and D under the existing case rule, explicitly an assumption. Located biological children receive their observed linked-return treatment regardless of their aggregate G3/white price blend. The reviewer’s ≤$0.25bn white-credit amount is a sensitivity claim, not a verified hard bound on D; adding $0.25bn beside the reported arm moves each endpoint by that amount. [ASSUMPTION / INFERENCE]
 
-## M6: identity-loss reconciliation
+## Reproduction and scope
 
-The roster locates 0.970877M native children under 18 outside the identified union with a member parent (SE 0.083805M). The population concept includes such lost-identity descendants, but v5's 3.04M aggregate addition has no `PH_SEQ`/`PPPOS` crosswalk. No individual child's numerical inclusion or pool overlap is verified. The prior claim that a particular such child is already counted and would leave is therefore not established by these files. [CALCULATION: `identity_loss_children`, `derived/summary.json` `M6`] [INFERENCE]
+Run `removal.py` then the full lane pytest command with `-p no:cacheprovider`; `RUN_LOG.md` records actual return codes and `rerun_lane.py` IDENTICAL receipts. Every computation is deterministic, retains 160 signed SDR replicates, and fails on source, weight or closure drift. No frozen-case or other-lane source is edited. No Git metadata is written. [CALCULATION]
 
-No new child, cost or credit is added; the aggregate addition and its item-5b extrapolation stay fixed. If these children are added members, letting them stay can overstate continuing credits; replacing an aggregate child with a roster child requires subtracting its existing modeled costs first. The direction of the full fiscal correction cannot be determined without that membership/substitution map. M6's cost is **null/unidentified**, not an assumed measured zero. [ASSUMPTION / DEGRADED]
-
-## Stack, adoption and limits
-
-M1/M2/M3 are solved on one shared post-removal return, including nonlinear tax/credit interactions. The displayed stack adds that solved tax correction, the named conditional SNAP scenario and the fixed-pool M5 allocation. Its extra cross-module interaction is 0 **by construction**: SNAP uses pre-tax gross income and the pre-removal consumption pool is held. This does not estimate consumption responses to survivor taxes/refunds/SNAP, benefit takeup/health changes or M6. It is explicitly a partial conditional stack. [CALCULATION: `derived/replicates.csv`, `derived/summary.json` `stack`] [ASSUMPTION]
-
-Recommend adopting no new headline edit from this lane yet. Retain the material tax finding for further validation; do not infer reliability from national residual calibration or from a confidence interval containing/excluding zero. Missing deductibles/new-return fit can move M1, and the tax-only sampling SE is large. Individual consumption observations or an explicit normative allocation rule would settle M5; actual program units/monthly resources would settle M4; a roster-to-added-person crosswalk with aggregate-cost replacement would settle M6. The politically sensitive analysis is LLM-assisted; independent source/gate checks reduce implementation errors without identifying the modeled counterfactual. [INFERENCE]
-
-## Sources, checks and reproduction
-
-Input URLs, primary-file SHA256 and reused read-only input hashes are in `inputs/pins.json`, `inputs/state_pins.json`, and `inputs/benefit_pins.json`. Downloaded constants are parsed, or evaluated by the pinned statutory kernel; no model-extracted numbers are used as statutory tables. NBER documents the local beta's 2024 coverage and input omissions: https://taxsim.nber.org/taxsimtest/. Census's workbook preserves its 2024 source cells in `inputs/state_parameters_2024.json`. [SOURCE]
-
-Run from repository root:
-```sh
-OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/mixed_unit_removal_2026_10_14/removal.py
-OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/mixed_unit_removal_2026_10_14/ -q
-```
-
-The code review is `review-result.md`; its calibration issue was repaired and cancellation has a regression test. All implemented gates are in `derived/summary.json`; no existing gate or tolerance was relaxed. `RUN_LOG.md` records actual check commands, return codes, wall time, Python RSS and full-lane reproduction. The frozen case and all other lanes are read-only. No Git metadata was changed by this worker. Every changed path is enumerated in `changed-paths.txt`.
+This LLM-based political research can inherit framing bias; recommendations above separate numerical corrections from counterfactual assumptions. [INFERENCE]

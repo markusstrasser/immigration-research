@@ -1,0 +1,23 @@
+{
+  "primary_url": "https://www.irs.gov/pub/irs-prior/p596--2024.pdf",
+  "tax_year": 2024,
+  "locator": "Publication 596 (2024), EIC table, printed pp. 28-38",
+  "parsed_rows": 10688,
+  "omitted_cells": "eight starred terminal cells refer to within-interval footnotes; original rows and footnotes preserved in primary PDF/text",
+  "prior_parsed_pin": {
+    "primary_url": "https://www.irs.gov/pub/irs-prior/p596--2024.pdf",
+    "tax_year": 2024,
+    "locator": "Publication 596 (2024), EIC table, printed pp. 28-41",
+    "parsed_rows": 10512,
+    "files": {
+      "tax_corrections_irs_p596_2024.pdf": "e422d1fa90fe8b6eef48b6b2b474dc7081f7d092f932bec0b93e5cfb77ba00e6",
+      "tax_corrections_irs_p596_2024.txt": "43e842a27f2d63eb6a29a67b17a17cfb2004ea84985f0bc6011f982fde9efe7e",
+      "tax_corrections_eitc_table_2024.csv": "003e4949cb9867f90f4e3ba7a202bcdca342dfb67f911d1a71015c9a3e0a8d4f"
+    }
+  },
+  "files": {
+    "tax_corrections_irs_p596_2024.pdf": "e422d1fa90fe8b6eef48b6b2b474dc7081f7d092f932bec0b93e5cfb77ba00e6",
+    "tax_corrections_irs_p596_2024.txt": "43e842a27f2d63eb6a29a67b17a17cfb2004ea84985f0bc6011f982fde9efe7e",
+    "tax_corrections_eitc_table_2024.csv": "489ca70b421fb9e15f7ea3d22d25ff2e9ea8300a0b48cf8588a6bd6f0e802f5b"
+  }
+}

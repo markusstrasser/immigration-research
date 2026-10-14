@@ -1,0 +1,3692 @@
+{
+  "recommendation": "arm",
+  "identified_union_only": true,
+  "source_pins": {
+    "files": {
+      "benefit_fpl24.pdf": {
+        "sha256": "bc8e34debcab427d1ed53bf64175212d35ac51a3d8c5881634a28b27965c89c7",
+        "source": "https://www.medicaid.gov/sites/default/files/2024-01/cib012424_0.pdf"
+      },
+      "benefit_fpl24.txt": {
+        "extract": "pdftotext -layout",
+        "sha256": "520331eb867c1ab196bddc9c32ade24bd7859c60b937c6d670cfc3edf40f4b95",
+        "source": "https://www.medicaid.gov/sites/default/files/2024-01/cib012424_0.pdf"
+      },
+      "benefit_fpl24_fr.pdf": {
+        "sha256": "9bf6ec5bed0ca08d7cad8acb44fe802ffa4bbb420a9f86fd76cbf8d33a9a01fb",
+        "source": "https://www.govinfo.gov/content/pkg/FR-2024-01-17/pdf/2024-00796.pdf"
+      },
+      "benefit_fpl24_fr.txt": {
+        "extract": "pdftotext -layout",
+        "sha256": "70b3aa1a74b81ebb5b7d0fea076a081d81f5abba731c581e403a4b0e4e87304c",
+        "source": "https://www.govinfo.gov/content/pkg/FR-2024-01-17/pdf/2024-00796.pdf"
+      },
+      "benefit_magi_law.xml": {
+        "sha256": "3ec0bd686ac9d62f7b567f38f92e46ebdf13ce04d212987717391da03d45e6a7",
+        "source": "https://www.govinfo.gov/content/pkg/CFR-2024-title42-vol4/xml/CFR-2024-title42-vol4-sec435-603.xml"
+      },
+      "benefit_medicaid.html": {
+        "sha256": "741c85c56d3e42d2813197b505e9e444d4735e1b8a98555ae1260c1b362a7617",
+        "source": "https://www.medicaid.gov/medicaid/national-medicaid-chip-program-information/medicaid-childrens-health-insurance-program-basic-health-program-eligibility-levels"
+      },
+      "benefit_ptc24.pdf": {
+        "sha256": "c7aade0f20fe7e32a2a34e6af6d30288f563bc46efc43a682626134e48b899b9",
+        "source": "https://www.irs.gov/pub/irs-prior/i8962--2024.pdf"
+      },
+      "benefit_ptc24.txt": {
+        "extract": "pdftotext -layout",
+        "sha256": "3de44a1f66b99a5dfc5e53035e72a2ef03628edbf43ad5c81aeb20fb898c4ad7",
+        "source": "https://www.irs.gov/pub/irs-prior/i8962--2024.pdf"
+      },
+      "benefit_snap24_income.pdf": {
+        "sha256": "eb0943b442e5c3ad24e8a5d83f888433bb1cd338ad320987206ad3bf43c2dcd4",
+        "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Income-Eligibility-Standards.pdf"
+      },
+      "benefit_snap24_income.txt": {
+        "extract": "pdftotext -layout",
+        "sha256": "b76b5668bfd6f99cb3b358f3df004b749a1397eb3427240eb220e0d9f62cd7ed",
+        "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Income-Eligibility-Standards.pdf"
+      },
+      "benefit_snap24_max.pdf": {
+        "sha256": "9744852251f83c71cd7df7842abcc6f63e980f4c572b44fc72ba081cdcd93caa",
+        "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Maximum-Allotments-and-Deductions.pdf"
+      },
+      "benefit_snap24_max.txt": {
+        "extract": "pdftotext -layout",
+        "sha256": "b6f691aa472c2ee529359aa2a6bb3340fd0c8081fdd93ead8601838f489978ba",
+        "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Maximum-Allotments-and-Deductions.pdf"
+      },
+      "benefit_snap24_min.pdf": {
+        "sha256": "700786e17005eb38438993618f7a1b683b6407ce8881b7702d6433995dc9b5f6",
+        "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Minimum-Allotments.pdf"
+      },
+      "benefit_snap24_min.txt": {
+        "extract": "pdftotext -layout",
+        "sha256": "bb7fef09f590d51cc144c760c43443bc46e41bb7d70c17a226840ce64c17ead4",
+        "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Minimum-Allotments.pdf"
+      },
+      "benefit_snap25_income.pdf": {
+        "sha256": "384cca1b2f2446ed5273583ad96e55c8511160bd78c8d832640d3af02076a5d1",
+        "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Income-Eligibility-Standards.pdf"
+      },
+      "benefit_snap25_income.txt": {
+        "extract": "pdftotext -layout",
+        "sha256": "8d707b28c2e51ce75f827ac553e748a7487f502a923fa710a9a87c240ca5992d",
+        "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Income-Eligibility-Standards.pdf"
+      },
+      "benefit_snap25_max.pdf": {
+        "sha256": "9e0d5854853672defdc5526046bc6c026b4ef1bdd6a91fc95ffeefce0bbdb06a",
+        "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Maximum-Allotments-Deductions.pdf"
+      },
+      "benefit_snap25_max.txt": {
+        "extract": "pdftotext -layout",
+        "sha256": "d63c4ccae4336fb4ef818b88323b5bdd9b1f63d50a23c93d488a018cc33a6c9e",
+        "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Maximum-Allotments-Deductions.pdf"
+      },
+      "benefit_snap25_min.pdf": {
+        "sha256": "bfde7230e0e2e1204d9caf47f16190f931a31cfcc67471b5b1567337b1d6e6ef",
+        "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Minimum-Allotments.pdf"
+      },
+      "benefit_snap25_min.txt": {
+        "extract": "pdftotext -layout",
+        "sha256": "70374cf25fb4b289b96a8d6e2d5b77d6daba3bf7aec8a02d5ed24cedfa59d07c",
+        "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Minimum-Allotments.pdf"
+      },
+      "benefit_snap_benefits.xml": {
+        "sha256": "a6f5916cc00d079ee9b7d9627c27128e5d716b7faace3be78e1e479967c92c75",
+        "source": "https://www.govinfo.gov/content/pkg/CFR-2024-title7-vol4/xml/CFR-2024-title7-vol4-sec273-10.xml"
+      },
+      "benefit_snap_deductions.xml": {
+        "sha256": "7c0be86c6f6926b8e2d4f84694c55f4135ee95be31d711d569cd4c3357349ff0",
+        "source": "https://www.govinfo.gov/content/pkg/CFR-2024-title7-vol4/xml/CFR-2024-title7-vol4-sec273-9.xml"
+      },
+      "benefit_states.json": {
+        "sha256": "f96a0c7d6d25dc298e522e955a94dd9a3da4d892827d406d64cab388adecc47c",
+        "source": "local archived primary API response: apportionment_2026_09_18/_cache/acs5_2020_states.json"
+      }
+    }
+  },
+  "positive_control_share": 0.14814983969377055,
+  "exclusions": {
+    "mixed_Alaska": 26,
+    "mixed_noncivilian": 58
+  },
+  "diagnostics": {
+    "zero": {
+      "newly_eligible_units": 701644.210378973,
+      "newly_eligible_surviving_people": 1071493.78589596,
+      "newly_ineligible_units": 77887.30094513226,
+      "newly_ineligible_surviving_people": 120862.53577527001,
+      "new_nonparticipant_eligible_units": 604819.7495578481,
+      "new_nonparticipant_enrollments_low": 147194.85910042818,
+      "new_nonparticipant_enrollments_high": 204692.83716703067,
+      "takeup_cells": [
+        {
+          "state": 1,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 125,
+          "takeup": 0.3384856794036307,
+          "takeup_se": 0.038423782334379576,
+          "takeup_low": 0.3000618970692511,
+          "takeup_high": 0.3769094617380103
+        },
+        {
+          "state": 1,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 58,
+          "takeup": 0.38208956366819596,
+          "takeup_se": 0.07728483296214714,
+          "takeup_low": 0.30480473070604885,
+          "takeup_high": 0.4593743966303431
+        },
+        {
+          "state": 4,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 64,
+          "takeup": 0.2745544717821017,
+          "takeup_se": 0.055734691257630226,
+          "takeup_low": 0.21881978052447146,
+          "takeup_high": 0.3302891630397319
+        },
+        {
+          "state": 4,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 37,
+          "takeup": 0.3124863173204631,
+          "takeup_se": 0.07003262017014716,
+          "takeup_low": 0.24245369715031595,
+          "takeup_high": 0.3825189374906103
+        },
+        {
+          "state": 4,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 153,
+          "takeup": 0.3376134272942526,
+          "takeup_se": 0.04887755828172933,
+          "takeup_low": 0.28873586901252324,
+          "takeup_high": 0.38649098557598194
+        },
+        {
+          "state": 4,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 39,
+          "takeup": 0.42344888594397595,
+          "takeup_se": 0.09589356757145498,
+          "takeup_low": 0.32755531837252094,
+          "takeup_high": 0.519342453515431
+        },
+        {
+          "state": 5,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 100,
+          "takeup": 0.20187272273743015,
+          "takeup_se": 0.04062366947692468,
+          "takeup_low": 0.16124905326050548,
+          "takeup_high": 0.24249639221435482
+        },
+        {
+          "state": 5,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 55,
+          "takeup": 0.1758538611440264,
+          "takeup_se": 0.05481590234838911,
+          "takeup_low": 0.1210379587956373,
+          "takeup_high": 0.23066976349241552
+        },
+        {
+          "state": 5,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 25,
+          "takeup": 0.314382268941578,
+          "takeup_se": 0.07448441965322518,
+          "takeup_low": 0.23989784928835284,
+          "takeup_high": 0.38886668859480317
+        },
+        {
+          "state": 5,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 46,
+          "takeup": 0.3739693908736535,
+          "takeup_se": 0.06982798060763709,
+          "takeup_low": 0.3041414102660164,
+          "takeup_high": 0.4437973714812906
+        },
+        {
+          "state": 6,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 380,
+          "takeup": 0.22864105101113147,
+          "takeup_se": 0.02546465685588292,
+          "takeup_low": 0.20317639415524855,
+          "takeup_high": 0.25410570786701436
+        },
+        {
+          "state": 6,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 160,
+          "takeup": 0.23376248777915493,
+          "takeup_se": 0.035002040344158464,
+          "takeup_low": 0.19876044743499646,
+          "takeup_high": 0.2687645281233134
+        },
+        {
+          "state": 6,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 100,
+          "takeup": 0.4231643718738266,
+          "takeup_se": 0.060791112025269586,
+          "takeup_low": 0.362373259848557,
+          "takeup_high": 0.4839554838990962
+        },
+        {
+          "state": 6,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 158,
+          "takeup": 0.4393505369717366,
+          "takeup_se": 0.036459123463232386,
+          "takeup_low": 0.4028914135085042,
+          "takeup_high": 0.475809660434969
+        },
+        {
+          "state": 8,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 57,
+          "takeup": 0.20336586845544694,
+          "takeup_se": 0.0677596407064294,
+          "takeup_low": 0.13560622774901754,
+          "takeup_high": 0.27112550916187633
+        },
+        {
+          "state": 8,
+          "size_bin": 2,
+          "tier": "state",
+          "eligible_sample_units": 91,
+          "takeup": 0.276660560564172,
+          "takeup_se": 0.050513551654036835,
+          "takeup_low": 0.22614700891013514,
+          "takeup_high": 0.3271741122182088
+        },
+        {
+          "state": 8,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 91,
+          "takeup": 0.276660560564172,
+          "takeup_se": 0.050513551654036835,
+          "takeup_low": 0.22614700891013514,
+          "takeup_high": 0.3271741122182088
+        },
+        {
+          "state": 8,
+          "size_bin": 4,
+          "tier": "state",
+          "eligible_sample_units": 91,
+          "takeup": 0.276660560564172,
+          "takeup_se": 0.050513551654036835,
+          "takeup_low": 0.22614700891013514,
+          "takeup_high": 0.3271741122182088
+        },
+        {
+          "state": 9,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 37,
+          "takeup": 0.622573794742747,
+          "takeup_se": 0.08282373156392041,
+          "takeup_low": 0.5397500631788266,
+          "takeup_high": 0.7053975263066674
+        },
+        {
+          "state": 9,
+          "size_bin": 2,
+          "tier": "state",
+          "eligible_sample_units": 72,
+          "takeup": 0.5537129756738783,
+          "takeup_se": 0.05922582090611887,
+          "takeup_low": 0.49448715476775945,
+          "takeup_high": 0.6129387965799972
+        },
+        {
+          "state": 9,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 72,
+          "takeup": 0.5537129756738783,
+          "takeup_se": 0.05922582090611887,
+          "takeup_low": 0.49448715476775945,
+          "takeup_high": 0.6129387965799972
+        },
+        {
+          "state": 10,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 37,
+          "takeup": 0.2672098454092288,
+          "takeup_se": 0.08209230120809986,
+          "takeup_low": 0.18511754420112897,
+          "takeup_high": 0.34930214661732867
+        },
+        {
+          "state": 10,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 21,
+          "takeup": 0.30366546309489423,
+          "takeup_se": 0.10833929590371048,
+          "takeup_low": 0.19532616719118373,
+          "takeup_high": 0.4120047589986047
+        },
+        {
+          "state": 10,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 79,
+          "takeup": 0.4244445175849022,
+          "takeup_se": 0.06453156982790088,
+          "takeup_low": 0.35991294775700133,
+          "takeup_high": 0.4889760874128031
+        },
+        {
+          "state": 10,
+          "size_bin": 4,
+          "tier": "state",
+          "eligible_sample_units": 79,
+          "takeup": 0.4244445175849022,
+          "takeup_se": 0.06453156982790088,
+          "takeup_low": 0.35991294775700133,
+          "takeup_high": 0.4889760874128031
+        },
+        {
+          "state": 11,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 118,
+          "takeup": 0.4000534785959786,
+          "takeup_se": 0.04727030383527926,
+          "takeup_low": 0.35278317476069937,
+          "takeup_high": 0.44732378243125787
+        },
+        {
+          "state": 11,
+          "size_bin": 2,
+          "tier": "state",
+          "eligible_sample_units": 161,
+          "takeup": 0.42758141257029403,
+          "takeup_se": 0.04265942798961033,
+          "takeup_low": 0.3849219845806837,
+          "takeup_high": 0.47024084055990434
+        },
+        {
+          "state": 11,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 161,
+          "takeup": 0.42758141257029403,
+          "takeup_se": 0.04265942798961033,
+          "takeup_low": 0.3849219845806837,
+          "takeup_high": 0.47024084055990434
+        },
+        {
+          "state": 12,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 257,
+          "takeup": 0.2008521444540319,
+          "takeup_se": 0.024714618317438854,
+          "takeup_low": 0.17613752613659306,
+          "takeup_high": 0.22556676277147075
+        },
+        {
+          "state": 12,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 119,
+          "takeup": 0.23283049376371834,
+          "takeup_se": 0.040398262987252576,
+          "takeup_low": 0.19243223077646576,
+          "takeup_high": 0.2732287567509709
+        },
+        {
+          "state": 12,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 48,
+          "takeup": 0.35177210663479314,
+          "takeup_se": 0.08474797143562093,
+          "takeup_low": 0.26702413519917223,
+          "takeup_high": 0.43652007807041404
+        },
+        {
+          "state": 12,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 73,
+          "takeup": 0.5176114479209578,
+          "takeup_se": 0.06611797286627218,
+          "takeup_low": 0.4514934750546856,
+          "takeup_high": 0.58372942078723
+        },
+        {
+          "state": 13,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 105,
+          "takeup": 0.290623746701861,
+          "takeup_se": 0.050474518667692314,
+          "takeup_low": 0.24014922803416866,
+          "takeup_high": 0.3410982653695533
+        },
+        {
+          "state": 13,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 55,
+          "takeup": 0.2912750814561048,
+          "takeup_se": 0.06370434748736868,
+          "takeup_low": 0.22757073396873612,
+          "takeup_high": 0.3549794289434735
+        },
+        {
+          "state": 13,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 31,
+          "takeup": 0.36094028804646705,
+          "takeup_se": 0.0868379008217822,
+          "takeup_low": 0.27410238722468483,
+          "takeup_high": 0.44777818886824927
+        },
+        {
+          "state": 13,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 51,
+          "takeup": 0.538946866656951,
+          "takeup_se": 0.049644481880605974,
+          "takeup_low": 0.489302384776345,
+          "takeup_high": 0.588591348537557
+        },
+        {
+          "state": 15,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 79,
+          "takeup": 0.26882566282974335,
+          "takeup_se": 0.0665687777338565,
+          "takeup_low": 0.20225688509588685,
+          "takeup_high": 0.33539444056359985
+        },
+        {
+          "state": 15,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 35,
+          "takeup": 0.18457833020817946,
+          "takeup_se": 0.06519587277123705,
+          "takeup_low": 0.11938245743694241,
+          "takeup_high": 0.2497742029794165
+        },
+        {
+          "state": 15,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 157,
+          "takeup": 0.30659956799587224,
+          "takeup_se": 0.04320127680799789,
+          "takeup_low": 0.26339829118787433,
+          "takeup_high": 0.34980084480387014
+        },
+        {
+          "state": 15,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 27,
+          "takeup": 0.4986240118528203,
+          "takeup_se": 0.09791587733318324,
+          "takeup_low": 0.40070813451963705,
+          "takeup_high": 0.5965398891860035
+        },
+        {
+          "state": 16,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 70,
+          "takeup": 0.21396451944232714,
+          "takeup_se": 0.037908364463629114,
+          "takeup_low": 0.17605615497869803,
+          "takeup_high": 0.25187288390595625
+        },
+        {
+          "state": 16,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 34,
+          "takeup": 0.2385420881647284,
+          "takeup_se": 0.07798083253087523,
+          "takeup_low": 0.16056125563385318,
+          "takeup_high": 0.3165229206956036
+        },
+        {
+          "state": 16,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 136,
+          "takeup": 0.26616268645941604,
+          "takeup_se": 0.03152636893636702,
+          "takeup_low": 0.23463631752304903,
+          "takeup_high": 0.29768905539578305
+        },
+        {
+          "state": 16,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 24,
+          "takeup": 0.5422388988844371,
+          "takeup_se": 0.10870914696676573,
+          "takeup_low": 0.4335297519176714,
+          "takeup_high": 0.6509480458512028
+        },
+        {
+          "state": 17,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 113,
+          "takeup": 0.3671804500325037,
+          "takeup_se": 0.05645691886892763,
+          "takeup_low": 0.3107235311635761,
+          "takeup_high": 0.42363736890143133
+        },
+        {
+          "state": 17,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 48,
+          "takeup": 0.3560950226841515,
+          "takeup_se": 0.08277719921381929,
+          "takeup_low": 0.2733178234703322,
+          "takeup_high": 0.4388722218979708
+        },
+        {
+          "state": 17,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 20,
+          "takeup": 0.6288175355526509,
+          "takeup_se": 0.12282562675260113,
+          "takeup_low": 0.5059919088000497,
+          "takeup_high": 0.751643162305252
+        },
+        {
+          "state": 17,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 49,
+          "takeup": 0.3675703720191212,
+          "takeup_se": 0.07220127355359234,
+          "takeup_low": 0.29536909846552883,
+          "takeup_high": 0.43977164557271353
+        },
+        {
+          "state": 18,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 45,
+          "takeup": 0.274387991720355,
+          "takeup_se": 0.07005387988502497,
+          "takeup_low": 0.20433411183533,
+          "takeup_high": 0.34444187160538
+        },
+        {
+          "state": 18,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 28,
+          "takeup": 0.3537735436920073,
+          "takeup_se": 0.10405646334092866,
+          "takeup_low": 0.24971708035107865,
+          "takeup_high": 0.45783000703293597
+        },
+        {
+          "state": 18,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 109,
+          "takeup": 0.3195609318095091,
+          "takeup_se": 0.04393695166753641,
+          "takeup_low": 0.2756239801419727,
+          "takeup_high": 0.36349788347704554
+        },
+        {
+          "state": 19,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 39,
+          "takeup": 0.230492512457199,
+          "takeup_se": 0.09240248209854984,
+          "takeup_low": 0.13809003035864917,
+          "takeup_high": 0.3228949945557489
+        },
+        {
+          "state": 19,
+          "size_bin": 2,
+          "tier": "state",
+          "eligible_sample_units": 88,
+          "takeup": 0.30560444362187755,
+          "takeup_se": 0.05861681806873449,
+          "takeup_low": 0.24698762555314308,
+          "takeup_high": 0.36422126169061203
+        },
+        {
+          "state": 19,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 88,
+          "takeup": 0.30560444362187755,
+          "takeup_se": 0.05861681806873449,
+          "takeup_low": 0.24698762555314308,
+          "takeup_high": 0.36422126169061203
+        },
+        {
+          "state": 19,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 21,
+          "takeup": 0.41805319962230125,
+          "takeup_se": 0.07761605133146039,
+          "takeup_low": 0.3404371482908409,
+          "takeup_high": 0.49566925095376163
+        },
+        {
+          "state": 20,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 43,
+          "takeup": 0.2705142299012578,
+          "takeup_se": 0.05279508778665525,
+          "takeup_low": 0.21771914211460253,
+          "takeup_high": 0.32330931768791304
+        },
+        {
+          "state": 20,
+          "size_bin": 2,
+          "tier": "state",
+          "eligible_sample_units": 75,
+          "takeup": 0.31609794105236744,
+          "takeup_se": 0.05394316251440662,
+          "takeup_low": 0.2621547785379608,
+          "takeup_high": 0.37004110356677405
+        },
+        {
+          "state": 20,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 75,
+          "takeup": 0.31609794105236744,
+          "takeup_se": 0.05394316251440662,
+          "takeup_low": 0.2621547785379608,
+          "takeup_high": 0.37004110356677405
+        },
+        {
+          "state": 20,
+          "size_bin": 4,
+          "tier": "state",
+          "eligible_sample_units": 75,
+          "takeup": 0.31609794105236744,
+          "takeup_se": 0.05394316251440662,
+          "takeup_low": 0.2621547785379608,
+          "takeup_high": 0.37004110356677405
+        },
+        {
+          "state": 21,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 49,
+          "takeup": 0.3355750252606785,
+          "takeup_se": 0.06268543909276765,
+          "takeup_low": 0.27288958616791087,
+          "takeup_high": 0.39826046435344614
+        },
+        {
+          "state": 21,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 30,
+          "takeup": 0.4105675375730036,
+          "takeup_se": 0.12720586495169955,
+          "takeup_low": 0.2833616726213041,
+          "takeup_high": 0.5377734025247032
+        },
+        {
+          "state": 21,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 120,
+          "takeup": 0.3799665181851078,
+          "takeup_se": 0.04501914568433686,
+          "takeup_low": 0.33494737250077095,
+          "takeup_high": 0.42498566386944464
+        },
+        {
+          "state": 22,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 157,
+          "takeup": 0.2831966093882805,
+          "takeup_se": 0.04823647932314115,
+          "takeup_low": 0.23496013006513936,
+          "takeup_high": 0.33143308871142163
+        },
+        {
+          "state": 22,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 68,
+          "takeup": 0.3529837285564749,
+          "takeup_se": 0.07028871506296414,
+          "takeup_low": 0.2826950134935108,
+          "takeup_high": 0.42327244361943905
+        },
+        {
+          "state": 22,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 37,
+          "takeup": 0.47960135854702995,
+          "takeup_se": 0.12179026905553487,
+          "takeup_low": 0.3578110894914951,
+          "takeup_high": 0.6013916276025648
+        },
+        {
+          "state": 22,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 72,
+          "takeup": 0.6028780437364166,
+          "takeup_se": 0.05258864112659327,
+          "takeup_low": 0.5502894026098234,
+          "takeup_high": 0.6554666848630099
+        },
+        {
+          "state": 23,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 26,
+          "takeup": 0.4495789888859025,
+          "takeup_se": 0.1284826468762697,
+          "takeup_low": 0.3210963420096328,
+          "takeup_high": 0.5780616357621722
+        },
+        {
+          "state": 23,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 45,
+          "takeup": 0.4118570834689681,
+          "takeup_se": 0.08101394156939447,
+          "takeup_low": 0.33084314189957365,
+          "takeup_high": 0.49287102503836255
+        },
+        {
+          "state": 24,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 46,
+          "takeup": 0.23194655254491675,
+          "takeup_se": 0.0872275273873431,
+          "takeup_low": 0.14471902515757365,
+          "takeup_high": 0.3191740799322599
+        },
+        {
+          "state": 24,
+          "size_bin": 4,
+          "tier": "state",
+          "eligible_sample_units": 77,
+          "takeup": 0.2948393742093294,
+          "takeup_se": 0.06089741352686847,
+          "takeup_low": 0.2339419606824609,
+          "takeup_high": 0.3557367877361978
+        },
+        {
+          "state": 25,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 131,
+          "takeup": 0.4630314235343796,
+          "takeup_se": 0.06743294747445489,
+          "takeup_low": 0.3955984760599247,
+          "takeup_high": 0.5304643710088345
+        },
+        {
+          "state": 25,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 31,
+          "takeup": 0.49619362446256904,
+          "takeup_se": 0.10411251898418539,
+          "takeup_low": 0.39208110547838365,
+          "takeup_high": 0.6003061434467545
+        },
+        {
+          "state": 25,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 23,
+          "takeup": 0.7293777647328886,
+          "takeup_se": 0.09068569951714302,
+          "takeup_low": 0.6386920652157456,
+          "takeup_high": 0.8200634642500316
+        },
+        {
+          "state": 25,
+          "size_bin": 4,
+          "tier": "state",
+          "eligible_sample_units": 201,
+          "takeup": 0.49699290511780825,
+          "takeup_se": 0.0528409278839663,
+          "takeup_low": 0.4441519772338419,
+          "takeup_high": 0.5498338330017746
+        },
+        {
+          "state": 26,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 78,
+          "takeup": 0.35714981336876256,
+          "takeup_se": 0.05813549457775492,
+          "takeup_low": 0.29901431879100765,
+          "takeup_high": 0.41528530794651747
+        },
+        {
+          "state": 26,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 36,
+          "takeup": 0.5410658854177558,
+          "takeup_se": 0.08356845500768191,
+          "takeup_low": 0.4574974304100739,
+          "takeup_high": 0.6246343404254378
+        },
+        {
+          "state": 26,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 20,
+          "takeup": 0.5597930587406015,
+          "takeup_se": 0.13060082113647786,
+          "takeup_low": 0.4291922376041236,
+          "takeup_high": 0.6903938798770793
+        },
+        {
+          "state": 26,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 39,
+          "takeup": 0.643521456054935,
+          "takeup_se": 0.08225908914103336,
+          "takeup_low": 0.5612623669139016,
+          "takeup_high": 0.7257805451959685
+        },
+        {
+          "state": 27,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 48,
+          "takeup": 0.28381464381136456,
+          "takeup_se": 0.08690943402017141,
+          "takeup_low": 0.19690520979119314,
+          "takeup_high": 0.370724077831536
+        },
+        {
+          "state": 27,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 79,
+          "takeup": 0.2984086416643866,
+          "takeup_se": 0.05959941285850061,
+          "takeup_low": 0.23880922880588595,
+          "takeup_high": 0.3580080545228872
+        },
+        {
+          "state": 27,
+          "size_bin": 4,
+          "tier": "state",
+          "eligible_sample_units": 79,
+          "takeup": 0.2984086416643866,
+          "takeup_se": 0.05959941285850061,
+          "takeup_low": 0.23880922880588595,
+          "takeup_high": 0.3580080545228872
+        },
+        {
+          "state": 28,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 127,
+          "takeup": 0.20492902685239117,
+          "takeup_se": 0.04003189398781124,
+          "takeup_low": 0.16489713286457994,
+          "takeup_high": 0.2449609208402024
+        },
+        {
+          "state": 28,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 66,
+          "takeup": 0.26476161549498106,
+          "takeup_se": 0.059811492512695685,
+          "takeup_low": 0.20495012298228538,
+          "takeup_high": 0.32457310800767675
+        },
+        {
+          "state": 28,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 24,
+          "takeup": 0.3608551255397802,
+          "takeup_se": 0.12424578902191959,
+          "takeup_low": 0.23660933651786065,
+          "takeup_high": 0.4851009145616998
+        },
+        {
+          "state": 28,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 49,
+          "takeup": 0.5698544958376195,
+          "takeup_se": 0.054848553178384704,
+          "takeup_low": 0.5150059426592348,
+          "takeup_high": 0.6247030490160042
+        },
+        {
+          "state": 29,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 61,
+          "takeup": 0.19845602979639881,
+          "takeup_se": 0.04642558354635761,
+          "takeup_low": 0.1520304462500412,
+          "takeup_high": 0.24488161334275643
+        },
+        {
+          "state": 29,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 25,
+          "takeup": 0.1638765879151963,
+          "takeup_se": 0.07983171269837103,
+          "takeup_low": 0.08404487521682527,
+          "takeup_high": 0.24370830061356732
+        },
+        {
+          "state": 29,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 120,
+          "takeup": 0.2256807403517135,
+          "takeup_se": 0.040911280013401316,
+          "takeup_low": 0.1847694603383122,
+          "takeup_high": 0.2665920203651148
+        },
+        {
+          "state": 29,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 20,
+          "takeup": 0.42465751944400293,
+          "takeup_se": 0.12318703712676239,
+          "takeup_low": 0.30147048231724055,
+          "takeup_high": 0.5478445565707654
+        },
+        {
+          "state": 30,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 69,
+          "takeup": 0.20662148113153458,
+          "takeup_se": 0.06294566691890555,
+          "takeup_low": 0.14367581421262904,
+          "takeup_high": 0.26956714805044013
+        },
+        {
+          "state": 30,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 33,
+          "takeup": 0.2604963244772226,
+          "takeup_se": 0.07698283704848986,
+          "takeup_low": 0.18351348742873275,
+          "takeup_high": 0.33747916152571245
+        },
+        {
+          "state": 30,
+          "size_bin": 4,
+          "tier": "state",
+          "eligible_sample_units": 127,
+          "takeup": 0.2909044386628475,
+          "takeup_se": 0.042920995871213945,
+          "takeup_low": 0.24798344279163353,
+          "takeup_high": 0.33382543453406144
+        },
+        {
+          "state": 31,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 43,
+          "takeup": 0.22554241974096598,
+          "takeup_se": 0.06876940819157872,
+          "takeup_low": 0.15677301154938728,
+          "takeup_high": 0.2943118279325447
+        },
+        {
+          "state": 31,
+          "size_bin": 2,
+          "tier": "state",
+          "eligible_sample_units": 82,
+          "takeup": 0.24699103050181015,
+          "takeup_se": 0.04820978509935692,
+          "takeup_low": 0.19878124540245323,
+          "takeup_high": 0.29520081560116707
+        },
+        {
+          "state": 31,
+          "size_bin": 4,
+          "tier": "state",
+          "eligible_sample_units": 82,
+          "takeup": 0.24699103050181015,
+          "takeup_se": 0.04820978509935692,
+          "takeup_low": 0.19878124540245323,
+          "takeup_high": 0.29520081560116707
+        },
+        {
+          "state": 32,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 58,
+          "takeup": 0.3206541075227154,
+          "takeup_se": 0.07106471395287926,
+          "takeup_low": 0.24958939356983612,
+          "takeup_high": 0.39171882147559467
+        },
+        {
+          "state": 32,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 32,
+          "takeup": 0.305346416919823,
+          "takeup_se": 0.08767744288133514,
+          "takeup_low": 0.21766897403848787,
+          "takeup_high": 0.39302385980115817
+        },
+        {
+          "state": 32,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 20,
+          "takeup": 0.39862477802927476,
+          "takeup_se": 0.10965850064568172,
+          "takeup_low": 0.28896627738359304,
+          "takeup_high": 0.5082832786749565
+        },
+        {
+          "state": 32,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 22,
+          "takeup": 0.5937902700237508,
+          "takeup_se": 0.09685112256251262,
+          "takeup_low": 0.49693914746123824,
+          "takeup_high": 0.6906413925862634
+        },
+        {
+          "state": 33,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 40,
+          "takeup": 0.23566909655408924,
+          "takeup_se": 0.07589418286429336,
+          "takeup_low": 0.15977491368979588,
+          "takeup_high": 0.3115632794183826
+        },
+        {
+          "state": 33,
+          "size_bin": 2,
+          "tier": "state",
+          "eligible_sample_units": 66,
+          "takeup": 0.279052028567828,
+          "takeup_se": 0.06126851428378919,
+          "takeup_low": 0.21778351428403883,
+          "takeup_high": 0.3403205428516172
+        },
+        {
+          "state": 34,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 73,
+          "takeup": 0.28619905983606414,
+          "takeup_se": 0.0629056055460456,
+          "takeup_low": 0.22329345429001854,
+          "takeup_high": 0.3491046653821097
+        },
+        {
+          "state": 34,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 22,
+          "takeup": 0.2709663137506073,
+          "takeup_se": 0.10509818250053295,
+          "takeup_low": 0.16586813125007438,
+          "takeup_high": 0.37606449625114025
+        },
+        {
+          "state": 34,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 34,
+          "takeup": 0.5620725236355857,
+          "takeup_se": 0.09388957467322866,
+          "takeup_low": 0.468182948962357,
+          "takeup_high": 0.6559620983088144
+        },
+        {
+          "state": 35,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 109,
+          "takeup": 0.3898155951992651,
+          "takeup_se": 0.05036220769866894,
+          "takeup_low": 0.33945338750059617,
+          "takeup_high": 0.44017780289793407
+        },
+        {
+          "state": 35,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 42,
+          "takeup": 0.2708235943181095,
+          "takeup_se": 0.06258491578478187,
+          "takeup_low": 0.20823867853332761,
+          "takeup_high": 0.33340851010289135
+        },
+        {
+          "state": 35,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 30,
+          "takeup": 0.6860816192814388,
+          "takeup_se": 0.08497718432310959,
+          "takeup_low": 0.6011044349583292,
+          "takeup_high": 0.7710588036045485
+        },
+        {
+          "state": 36,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 230,
+          "takeup": 0.41347405583534264,
+          "takeup_se": 0.03548040257861443,
+          "takeup_low": 0.3779936532567282,
+          "takeup_high": 0.4489544584139571
+        },
+        {
+          "state": 36,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 62,
+          "takeup": 0.4971412831533393,
+          "takeup_se": 0.07339731423514399,
+          "takeup_low": 0.42374396891819527,
+          "takeup_high": 0.5705385973884832
+        },
+        {
+          "state": 36,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 42,
+          "takeup": 0.4714336698780736,
+          "takeup_se": 0.08216909889622244,
+          "takeup_low": 0.3892645709818512,
+          "takeup_high": 0.553602768774296
+        },
+        {
+          "state": 36,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 62,
+          "takeup": 0.43084748558325336,
+          "takeup_se": 0.07032433117927399,
+          "takeup_low": 0.36052315440397936,
+          "takeup_high": 0.5011718167625273
+        },
+        {
+          "state": 37,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 142,
+          "takeup": 0.31902180801899876,
+          "takeup_se": 0.046258532095445115,
+          "takeup_low": 0.27276327592355365,
+          "takeup_high": 0.3652803401144439
+        },
+        {
+          "state": 37,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 41,
+          "takeup": 0.28329983730216496,
+          "takeup_se": 0.08969168558351717,
+          "takeup_low": 0.1936081517186478,
+          "takeup_high": 0.37299152288568216
+        },
+        {
+          "state": 37,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 33,
+          "takeup": 0.5328103795707133,
+          "takeup_se": 0.09225544080759336,
+          "takeup_low": 0.44055493876311996,
+          "takeup_high": 0.6250658203783067
+        },
+        {
+          "state": 37,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 54,
+          "takeup": 0.43358199866837405,
+          "takeup_se": 0.05627203984733278,
+          "takeup_low": 0.37730995882104124,
+          "takeup_high": 0.48985403851570686
+        },
+        {
+          "state": 38,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 43,
+          "takeup": 0.2587267274662703,
+          "takeup_se": 0.07402807125395762,
+          "takeup_low": 0.18469865621231268,
+          "takeup_high": 0.3327547987202279
+        },
+        {
+          "state": 38,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 24,
+          "takeup": 0.3275122449718389,
+          "takeup_se": 0.07615653148950868,
+          "takeup_low": 0.2513557134823302,
+          "takeup_high": 0.4036687764613476
+        },
+        {
+          "state": 38,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 94,
+          "takeup": 0.3570308332440204,
+          "takeup_se": 0.055220636097375,
+          "takeup_low": 0.3018101971466454,
+          "takeup_high": 0.4122514693413954
+        },
+        {
+          "state": 38,
+          "size_bin": 4,
+          "tier": "state",
+          "eligible_sample_units": 94,
+          "takeup": 0.3570308332440204,
+          "takeup_se": 0.055220636097375,
+          "takeup_low": 0.3018101971466454,
+          "takeup_high": 0.4122514693413954
+        },
+        {
+          "state": 39,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 89,
+          "takeup": 0.4392614849766324,
+          "takeup_se": 0.05673108165220969,
+          "takeup_low": 0.38253040332442273,
+          "takeup_high": 0.4959925666288421
+        },
+        {
+          "state": 39,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 34,
+          "takeup": 0.2897861721660272,
+          "takeup_se": 0.07433390306778803,
+          "takeup_low": 0.21545226909823917,
+          "takeup_high": 0.36412007523381523
+        },
+        {
+          "state": 39,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 24,
+          "takeup": 0.5694497987365069,
+          "takeup_se": 0.09627041232477819,
+          "takeup_low": 0.47317938641172874,
+          "takeup_high": 0.6657202110612851
+        },
+        {
+          "state": 39,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 32,
+          "takeup": 0.7701255641067429,
+          "takeup_se": 0.06723699067297056,
+          "takeup_low": 0.7028885734337724,
+          "takeup_high": 0.8373625547797134
+        },
+        {
+          "state": 40,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 79,
+          "takeup": 0.30532517678530785,
+          "takeup_se": 0.05913680902756686,
+          "takeup_low": 0.246188367757741,
+          "takeup_high": 0.3644619858128747
+        },
+        {
+          "state": 40,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 33,
+          "takeup": 0.244269089676219,
+          "takeup_se": 0.0930194733434743,
+          "takeup_low": 0.1512496163327447,
+          "takeup_high": 0.3372885630196933
+        },
+        {
+          "state": 40,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 23,
+          "takeup": 0.5348986834510149,
+          "takeup_se": 0.11288280396641208,
+          "takeup_low": 0.4220158794846028,
+          "takeup_high": 0.6477814874174269
+        },
+        {
+          "state": 40,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 25,
+          "takeup": 0.6911055616193343,
+          "takeup_se": 0.09761815421599454,
+          "takeup_low": 0.5934874074033398,
+          "takeup_high": 0.7887237158353289
+        },
+        {
+          "state": 41,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 52,
+          "takeup": 0.370067931667813,
+          "takeup_se": 0.06060404586631274,
+          "takeup_low": 0.30946388580150025,
+          "takeup_high": 0.4306719775341257
+        },
+        {
+          "state": 41,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 34,
+          "takeup": 0.24469960076079256,
+          "takeup_se": 0.09815589692819494,
+          "takeup_low": 0.14654370383259763,
+          "takeup_high": 0.3428554976889875
+        },
+        {
+          "state": 41,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 118,
+          "takeup": 0.3577629344675476,
+          "takeup_se": 0.04891773159497047,
+          "takeup_low": 0.3088452028725771,
+          "takeup_high": 0.40668066606251807
+        },
+        {
+          "state": 41,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 20,
+          "takeup": 0.4775219107845924,
+          "takeup_se": 0.09576354615795715,
+          "takeup_low": 0.38175836462663526,
+          "takeup_high": 0.5732854569425495
+        },
+        {
+          "state": 42,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 127,
+          "takeup": 0.37450772749484385,
+          "takeup_se": 0.054057198162300424,
+          "takeup_low": 0.3204505293325434,
+          "takeup_high": 0.42856492565714427
+        },
+        {
+          "state": 42,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 55,
+          "takeup": 0.3289160548940097,
+          "takeup_se": 0.07106446695465,
+          "takeup_low": 0.2578515879393597,
+          "takeup_high": 0.39998052184865973
+        },
+        {
+          "state": 42,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 24,
+          "takeup": 0.6207819567151932,
+          "takeup_se": 0.13035471209006913,
+          "takeup_low": 0.4904272446251241,
+          "takeup_high": 0.7511366688052623
+        },
+        {
+          "state": 44,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 49,
+          "takeup": 0.16295486332544037,
+          "takeup_se": 0.04946798092924915,
+          "takeup_low": 0.11348688239619123,
+          "takeup_high": 0.21242284425468952
+        },
+        {
+          "state": 44,
+          "size_bin": 2,
+          "tier": "state",
+          "eligible_sample_units": 88,
+          "takeup": 0.3161266130147806,
+          "takeup_se": 0.05533798904969651,
+          "takeup_low": 0.2607886239650841,
+          "takeup_high": 0.3714646020644771
+        },
+        {
+          "state": 45,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 71,
+          "takeup": 0.3794614797042247,
+          "takeup_se": 0.07707804938226534,
+          "takeup_low": 0.30238343032195936,
+          "takeup_high": 0.4565395290864901
+        },
+        {
+          "state": 45,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 37,
+          "takeup": 0.3259909156555155,
+          "takeup_se": 0.09521247376102794,
+          "takeup_low": 0.2307784418944876,
+          "takeup_high": 0.42120338941654345
+        },
+        {
+          "state": 45,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 24,
+          "takeup": 0.24989671043848816,
+          "takeup_se": 0.08995322578038488,
+          "takeup_low": 0.15994348465810326,
+          "takeup_high": 0.33984993621887305
+        },
+        {
+          "state": 45,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 32,
+          "takeup": 0.5715651128955224,
+          "takeup_se": 0.09671761579458278,
+          "takeup_low": 0.4748474971009396,
+          "takeup_high": 0.6682827286901052
+        },
+        {
+          "state": 46,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 53,
+          "takeup": 0.24969669186242133,
+          "takeup_se": 0.04667474805192922,
+          "takeup_low": 0.2030219438104921,
+          "takeup_high": 0.29637143991435055
+        },
+        {
+          "state": 46,
+          "size_bin": 2,
+          "tier": "state",
+          "eligible_sample_units": 80,
+          "takeup": 0.3521849815009623,
+          "takeup_se": 0.04879180419606815,
+          "takeup_low": 0.3033931773048941,
+          "takeup_high": 0.40097678569703044
+        },
+        {
+          "state": 46,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 80,
+          "takeup": 0.3521849815009623,
+          "takeup_se": 0.04879180419606815,
+          "takeup_low": 0.3033931773048941,
+          "takeup_high": 0.40097678569703044
+        },
+        {
+          "state": 46,
+          "size_bin": 4,
+          "tier": "state",
+          "eligible_sample_units": 80,
+          "takeup": 0.3521849815009623,
+          "takeup_se": 0.04879180419606815,
+          "takeup_low": 0.3033931773048941,
+          "takeup_high": 0.40097678569703044
+        },
+        {
+          "state": 47,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 94,
+          "takeup": 0.21775630974473553,
+          "takeup_se": 0.07366678920060471,
+          "takeup_low": 0.14408952054413082,
+          "takeup_high": 0.29142309894534024
+        },
+        {
+          "state": 47,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 32,
+          "takeup": 0.2006341141439252,
+          "takeup_se": 0.07701162993110522,
+          "takeup_low": 0.12362248421281999,
+          "takeup_high": 0.2776457440750304
+        },
+        {
+          "state": 47,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 173,
+          "takeup": 0.2593000422932517,
+          "takeup_se": 0.05585881694012073,
+          "takeup_low": 0.20344122535313097,
+          "takeup_high": 0.31515885923337245
+        },
+        {
+          "state": 47,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 28,
+          "takeup": 0.49360963153868487,
+          "takeup_se": 0.12199459349535824,
+          "takeup_low": 0.37161503804332663,
+          "takeup_high": 0.6156042250340431
+        },
+        {
+          "state": 48,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 256,
+          "takeup": 0.2517390879304979,
+          "takeup_se": 0.029862457940237157,
+          "takeup_low": 0.22187662999026073,
+          "takeup_high": 0.28160154587073505
+        },
+        {
+          "state": 48,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 143,
+          "takeup": 0.24635792217931504,
+          "takeup_se": 0.03720667816328194,
+          "takeup_low": 0.2091512440160331,
+          "takeup_high": 0.283564600342597
+        },
+        {
+          "state": 48,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 70,
+          "takeup": 0.339120171453705,
+          "takeup_se": 0.05265524643834987,
+          "takeup_low": 0.28646492501535514,
+          "takeup_high": 0.39177541789205483
+        },
+        {
+          "state": 48,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 143,
+          "takeup": 0.4759855193161019,
+          "takeup_se": 0.044199998792651726,
+          "takeup_low": 0.43178552052345015,
+          "takeup_high": 0.5201855181087536
+        },
+        {
+          "state": 49,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 79,
+          "takeup": 0.15416173138803624,
+          "takeup_se": 0.07496708931945978,
+          "takeup_low": 0.07919464206857646,
+          "takeup_high": 0.22912882070749602
+        },
+        {
+          "state": 49,
+          "size_bin": 2,
+          "tier": "state",
+          "eligible_sample_units": 128,
+          "takeup": 0.2125649422273195,
+          "takeup_se": 0.056648170925077755,
+          "takeup_low": 0.15591677130224174,
+          "takeup_high": 0.26921311315239727
+        },
+        {
+          "state": 49,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 128,
+          "takeup": 0.2125649422273195,
+          "takeup_se": 0.056648170925077755,
+          "takeup_low": 0.15591677130224174,
+          "takeup_high": 0.26921311315239727
+        },
+        {
+          "state": 49,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 24,
+          "takeup": 0.372884132567277,
+          "takeup_se": 0.10473322386918321,
+          "takeup_low": 0.26815090869809377,
+          "takeup_high": 0.4776173564364602
+        },
+        {
+          "state": 50,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 44,
+          "takeup": 0.4894826091898484,
+          "takeup_se": 0.07292769805876792,
+          "takeup_low": 0.4165549111310805,
+          "takeup_high": 0.5624103072486164
+        },
+        {
+          "state": 50,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 97,
+          "takeup": 0.42169423779951715,
+          "takeup_se": 0.056230976204774304,
+          "takeup_low": 0.36546326159474285,
+          "takeup_high": 0.47792521400429144
+        },
+        {
+          "state": 50,
+          "size_bin": 4,
+          "tier": "state",
+          "eligible_sample_units": 97,
+          "takeup": 0.42169423779951715,
+          "takeup_se": 0.056230976204774304,
+          "takeup_low": 0.36546326159474285,
+          "takeup_high": 0.47792521400429144
+        },
+        {
+          "state": 51,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 72,
+          "takeup": 0.2758047802921339,
+          "takeup_se": 0.062310932320627434,
+          "takeup_low": 0.21349384797150647,
+          "takeup_high": 0.33811571261276135
+        },
+        {
+          "state": 51,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 36,
+          "takeup": 0.414796246890536,
+          "takeup_se": 0.06471580683202027,
+          "takeup_low": 0.35008044005851574,
+          "takeup_high": 0.4795120537225563
+        },
+        {
+          "state": 51,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 139,
+          "takeup": 0.35265848734648614,
+          "takeup_se": 0.038970475472154625,
+          "takeup_low": 0.3136880118743315,
+          "takeup_high": 0.3916289628186408
+        },
+        {
+          "state": 53,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 69,
+          "takeup": 0.3624500108228333,
+          "takeup_se": 0.06035182851764071,
+          "takeup_low": 0.3020981823051926,
+          "takeup_high": 0.422801839340474
+        },
+        {
+          "state": 53,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 36,
+          "takeup": 0.4380337762892286,
+          "takeup_se": 0.0850221137449731,
+          "takeup_low": 0.35301166254425553,
+          "takeup_high": 0.5230558900342017
+        },
+        {
+          "state": 53,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 142,
+          "takeup": 0.40330309508608686,
+          "takeup_se": 0.039493486868817616,
+          "takeup_low": 0.36380960821726926,
+          "takeup_high": 0.44279658195490446
+        },
+        {
+          "state": 53,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 28,
+          "takeup": 0.5686683010436137,
+          "takeup_se": 0.08321142323079014,
+          "takeup_low": 0.48545687781282354,
+          "takeup_high": 0.6518797242744038
+        },
+        {
+          "state": 54,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 111,
+          "takeup": 0.3912110682015451,
+          "takeup_se": 0.09046647156868784,
+          "takeup_low": 0.30074459663285724,
+          "takeup_high": 0.481677539770233
+        },
+        {
+          "state": 55,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 58,
+          "takeup": 0.32097062256742115,
+          "takeup_se": 0.05732143262195716,
+          "takeup_low": 0.263649189945464,
+          "takeup_high": 0.3782920551893783
+        },
+        {
+          "state": 55,
+          "size_bin": 2,
+          "tier": "state",
+          "eligible_sample_units": 100,
+          "takeup": 0.40980831560045533,
+          "takeup_se": 0.049159515507959446,
+          "takeup_low": 0.3606488000924959,
+          "takeup_high": 0.45896783110841477
+        },
+        {
+          "state": 55,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 100,
+          "takeup": 0.40980831560045533,
+          "takeup_se": 0.049159515507959446,
+          "takeup_low": 0.3606488000924959,
+          "takeup_high": 0.45896783110841477
+        },
+        {
+          "state": 55,
+          "size_bin": 4,
+          "tier": "state",
+          "eligible_sample_units": 100,
+          "takeup": 0.40980831560045533,
+          "takeup_se": 0.049159515507959446,
+          "takeup_low": 0.3606488000924959,
+          "takeup_high": 0.45896783110841477
+        },
+        {
+          "state": 56,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 49,
+          "takeup": 0.1102787616595415,
+          "takeup_se": 0.0425728231628262,
+          "takeup_low": 0.0677059384967153,
+          "takeup_high": 0.1528515848223677
+        },
+        {
+          "state": 56,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 22,
+          "takeup": 0.1894509702362734,
+          "takeup_se": 0.10311971497387963,
+          "takeup_low": 0.08633125526239378,
+          "takeup_high": 0.29257068521015306
+        },
+        {
+          "state": 56,
+          "size_bin": 3,
+          "tier": "state",
+          "eligible_sample_units": 95,
+          "takeup": 0.1708244907499115,
+          "takeup_se": 0.04310038403977971,
+          "takeup_low": 0.1277241067101318,
+          "takeup_high": 0.2139248747896912
+        },
+        {
+          "state": 56,
+          "size_bin": 4,
+          "tier": "state",
+          "eligible_sample_units": 95,
+          "takeup": 0.1708244907499115,
+          "takeup_se": 0.04310038403977971,
+          "takeup_low": 0.1277241067101318,
+          "takeup_high": 0.2139248747896912
+        }
+      ],
+      "reported_participants_failing_proxy_test": 136
+    },
+    "cap": {
+      "newly_eligible_units": 413723.157384773,
+      "newly_eligible_surviving_people": 691011.0700668199,
+      "newly_ineligible_units": 268697.6791372743,
+      "newly_ineligible_surviving_people": 406692.35800718004,
+      "new_nonparticipant_eligible_units": 366081.8604258732,
+      "new_nonparticipant_enrollments_low": 45757.73506027853,
+      "new_nonparticipant_enrollments_high": 62507.63719253425,
+      "takeup_cells": [
+        {
+          "state": 1,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 277,
+          "takeup": 0.19074333050390466,
+          "takeup_se": 0.023359856312188083,
+          "takeup_low": 0.16738347419171656,
+          "takeup_high": 0.21410318681609275
+        },
+        {
+          "state": 1,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 248,
+          "takeup": 0.10384404920526295,
+          "takeup_se": 0.026446866617777502,
+          "takeup_low": 0.07739718258748546,
+          "takeup_high": 0.13029091582304045
+        },
+        {
+          "state": 4,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 193,
+          "takeup": 0.10133858755799112,
+          "takeup_se": 0.020803601869190926,
+          "takeup_low": 0.08053498568880019,
+          "takeup_high": 0.12214218942718205
+        },
+        {
+          "state": 4,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 217,
+          "takeup": 0.06842881417171436,
+          "takeup_se": 0.01974565561181314,
+          "takeup_low": 0.04868315855990121,
+          "takeup_high": 0.0881744697835275
+        },
+        {
+          "state": 4,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 58,
+          "takeup": 0.1463496661780303,
+          "takeup_se": 0.05591509050585349,
+          "takeup_low": 0.0904345756721768,
+          "takeup_high": 0.2022647566838838
+        },
+        {
+          "state": 4,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 88,
+          "takeup": 0.29834941157066525,
+          "takeup_se": 0.056990715698579386,
+          "takeup_low": 0.24135869587208586,
+          "takeup_high": 0.35534012726924463
+        },
+        {
+          "state": 5,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 244,
+          "takeup": 0.13555013550731293,
+          "takeup_se": 0.01774228100361095,
+          "takeup_low": 0.11780785450370199,
+          "takeup_high": 0.15329241651092387
+        },
+        {
+          "state": 5,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 227,
+          "takeup": 0.07558924974709372,
+          "takeup_se": 0.017835301828625697,
+          "takeup_low": 0.057753947918468024,
+          "takeup_high": 0.09342455157571941
+        },
+        {
+          "state": 5,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 70,
+          "takeup": 0.18143769934366813,
+          "takeup_se": 0.033356246812659134,
+          "takeup_low": 0.148081452531009,
+          "takeup_high": 0.21479394615632727
+        },
+        {
+          "state": 5,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 95,
+          "takeup": 0.32327987809038405,
+          "takeup_se": 0.055467395492889246,
+          "takeup_low": 0.2678124825974948,
+          "takeup_high": 0.3787472735832733
+        },
+        {
+          "state": 6,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 879,
+          "takeup": 0.14238186441567846,
+          "takeup_se": 0.013197792747124817,
+          "takeup_low": 0.12918407166855364,
+          "takeup_high": 0.15557965716280328
+        },
+        {
+          "state": 6,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 870,
+          "takeup": 0.08998509776297646,
+          "takeup_se": 0.010466381335368079,
+          "takeup_low": 0.07951871642760838,
+          "takeup_high": 0.10045147909834454
+        },
+        {
+          "state": 6,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 405,
+          "takeup": 0.21419562774339576,
+          "takeup_se": 0.022028752499296828,
+          "takeup_low": 0.19216687524409892,
+          "takeup_high": 0.2362243802426926
+        },
+        {
+          "state": 6,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 571,
+          "takeup": 0.22767395582752434,
+          "takeup_se": 0.016963202507512886,
+          "takeup_low": 0.21071075332001146,
+          "takeup_high": 0.2446371583350372
+        },
+        {
+          "state": 8,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 153,
+          "takeup": 0.10915765439667591,
+          "takeup_se": 0.03001239376787474,
+          "takeup_low": 0.07914526062880117,
+          "takeup_high": 0.13917004816455064
+        },
+        {
+          "state": 8,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 134,
+          "takeup": 0.06857850753634583,
+          "takeup_se": 0.02015744971404929,
+          "takeup_low": 0.04842105782229654,
+          "takeup_high": 0.08873595725039511
+        },
+        {
+          "state": 8,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 38,
+          "takeup": 0.13515614521138752,
+          "takeup_se": 0.04854673637703545,
+          "takeup_low": 0.08660940883435207,
+          "takeup_high": 0.18370288158842296
+        },
+        {
+          "state": 8,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 52,
+          "takeup": 0.2446546868885044,
+          "takeup_se": 0.06940044759800415,
+          "takeup_low": 0.17525423929050024,
+          "takeup_high": 0.31405513448650857
+        },
+        {
+          "state": 9,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 115,
+          "takeup": 0.2604821670329444,
+          "takeup_se": 0.043262434603415285,
+          "takeup_low": 0.21721973242952913,
+          "takeup_high": 0.3037446016363597
+        },
+        {
+          "state": 9,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 133,
+          "takeup": 0.08347572125622625,
+          "takeup_se": 0.0231773161507891,
+          "takeup_low": 0.06029840510543715,
+          "takeup_high": 0.10665303740701534
+        },
+        {
+          "state": 9,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 49,
+          "takeup": 0.11026061988560833,
+          "takeup_se": 0.04177954966172886,
+          "takeup_low": 0.06848107022387948,
+          "takeup_high": 0.15204016954733718
+        },
+        {
+          "state": 10,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 128,
+          "takeup": 0.11664966843600127,
+          "takeup_se": 0.0291700413581547,
+          "takeup_low": 0.08747962707784657,
+          "takeup_high": 0.14581970979415598
+        },
+        {
+          "state": 10,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 169,
+          "takeup": 0.05578881362541,
+          "takeup_se": 0.018920530557839512,
+          "takeup_low": 0.03686828306757049,
+          "takeup_high": 0.07470934418324951
+        },
+        {
+          "state": 10,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 51,
+          "takeup": 0.36374636981596886,
+          "takeup_se": 0.0704343587334442,
+          "takeup_low": 0.2933120110825247,
+          "takeup_high": 0.43418072854941303
+        },
+        {
+          "state": 10,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 35,
+          "takeup": 0.4442762543884182,
+          "takeup_se": 0.0906472592832452,
+          "takeup_low": 0.35362899510517304,
+          "takeup_high": 0.5349235136716635
+        },
+        {
+          "state": 11,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 269,
+          "takeup": 0.2530413799614444,
+          "takeup_se": 0.02823150098960944,
+          "takeup_low": 0.22480987897183494,
+          "takeup_high": 0.2812728809510538
+        },
+        {
+          "state": 11,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 134,
+          "takeup": 0.16056148818260638,
+          "takeup_se": 0.034372829982573766,
+          "takeup_low": 0.1261886582000326,
+          "takeup_high": 0.19493431816518014
+        },
+        {
+          "state": 11,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 37,
+          "takeup": 0.37175278391735733,
+          "takeup_se": 0.08567725973659972,
+          "takeup_low": 0.2860755241807576,
+          "takeup_high": 0.45743004365395706
+        },
+        {
+          "state": 12,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 648,
+          "takeup": 0.11723069833948634,
+          "takeup_se": 0.01264093619145261,
+          "takeup_low": 0.10458976214803373,
+          "takeup_high": 0.12987163453093895
+        },
+        {
+          "state": 12,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 706,
+          "takeup": 0.07212192744984917,
+          "takeup_se": 0.01018160909788501,
+          "takeup_low": 0.06194031835196416,
+          "takeup_high": 0.08230353654773419
+        },
+        {
+          "state": 12,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 195,
+          "takeup": 0.16768646885222896,
+          "takeup_se": 0.02839248944136585,
+          "takeup_low": 0.1392939794108631,
+          "takeup_high": 0.1960789582935948
+        },
+        {
+          "state": 12,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 222,
+          "takeup": 0.2509652814982315,
+          "takeup_se": 0.03259952007420758,
+          "takeup_low": 0.21836576142402392,
+          "takeup_high": 0.2835648015724391
+        },
+        {
+          "state": 13,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 265,
+          "takeup": 0.14065728455091478,
+          "takeup_se": 0.0236526928079278,
+          "takeup_low": 0.11700459174298698,
+          "takeup_high": 0.1643099773588426
+        },
+        {
+          "state": 13,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 258,
+          "takeup": 0.10343344016554519,
+          "takeup_se": 0.014365619268971818,
+          "takeup_low": 0.08906782089657338,
+          "takeup_high": 0.117799059434517
+        },
+        {
+          "state": 13,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 84,
+          "takeup": 0.1900681449252112,
+          "takeup_se": 0.04637810951011946,
+          "takeup_low": 0.14369003541509173,
+          "takeup_high": 0.23644625443533068
+        },
+        {
+          "state": 13,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 130,
+          "takeup": 0.25908334885390183,
+          "takeup_se": 0.03235914122712178,
+          "takeup_low": 0.22672420762678006,
+          "takeup_high": 0.29144249008102363
+        },
+        {
+          "state": 15,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 211,
+          "takeup": 0.1244394936653614,
+          "takeup_se": 0.02819789183016303,
+          "takeup_low": 0.09624160183519836,
+          "takeup_high": 0.15263738549552444
+        },
+        {
+          "state": 15,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 241,
+          "takeup": 0.06219687620290805,
+          "takeup_se": 0.016330671733089854,
+          "takeup_low": 0.04586620446981819,
+          "takeup_high": 0.07852754793599791
+        },
+        {
+          "state": 15,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 80,
+          "takeup": 0.14432876976754364,
+          "takeup_se": 0.04133345349384384,
+          "takeup_low": 0.10299531627369979,
+          "takeup_high": 0.18566222326138748
+        },
+        {
+          "state": 15,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 137,
+          "takeup": 0.23098926125483735,
+          "takeup_se": 0.037123503654629866,
+          "takeup_low": 0.19386575760020747,
+          "takeup_high": 0.2681127649094672
+        },
+        {
+          "state": 16,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 153,
+          "takeup": 0.1209588588423853,
+          "takeup_se": 0.027045434452467272,
+          "takeup_low": 0.09391342438991804,
+          "takeup_high": 0.14800429329485257
+        },
+        {
+          "state": 16,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 183,
+          "takeup": 0.06769935488666487,
+          "takeup_se": 0.01854938602138967,
+          "takeup_low": 0.0491499688652752,
+          "takeup_high": 0.08624874090805454
+        },
+        {
+          "state": 16,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 48,
+          "takeup": 0.1194005948854362,
+          "takeup_se": 0.04382479828431704,
+          "takeup_low": 0.07557579660111916,
+          "takeup_high": 0.16322539316975324
+        },
+        {
+          "state": 16,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 71,
+          "takeup": 0.20125329045032334,
+          "takeup_se": 0.05886248690263809,
+          "takeup_low": 0.14239080354768524,
+          "takeup_high": 0.26011577735296143
+        },
+        {
+          "state": 17,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 302,
+          "takeup": 0.18368809627189575,
+          "takeup_se": 0.026579241697369277,
+          "takeup_low": 0.15710885457452647,
+          "takeup_high": 0.21026733796926503
+        },
+        {
+          "state": 17,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 272,
+          "takeup": 0.10086435548653937,
+          "takeup_se": 0.020243596809600382,
+          "takeup_low": 0.08062075867693899,
+          "takeup_high": 0.12110795229613974
+        },
+        {
+          "state": 17,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 82,
+          "takeup": 0.3190402706554153,
+          "takeup_se": 0.05966534662831912,
+          "takeup_low": 0.25937492402709617,
+          "takeup_high": 0.3787056172837344
+        },
+        {
+          "state": 17,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 115,
+          "takeup": 0.23270309681938878,
+          "takeup_se": 0.04158760624261887,
+          "takeup_low": 0.1911154905767699,
+          "takeup_high": 0.27429070306200765
+        },
+        {
+          "state": 18,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 132,
+          "takeup": 0.13283675587447363,
+          "takeup_se": 0.030123480487116362,
+          "takeup_low": 0.10271327538735728,
+          "takeup_high": 0.16296023636159
+        },
+        {
+          "state": 18,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 168,
+          "takeup": 0.09550168049073864,
+          "takeup_se": 0.026175980986672443,
+          "takeup_low": 0.0693256995040662,
+          "takeup_high": 0.12167766147741108
+        },
+        {
+          "state": 18,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 43,
+          "takeup": 0.056431325864908274,
+          "takeup_se": 0.038458087362989626,
+          "takeup_low": 0.017973238501918648,
+          "takeup_high": 0.0948894132278979
+        },
+        {
+          "state": 19,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 103,
+          "takeup": 0.11372091709466992,
+          "takeup_se": 0.0406719474555205,
+          "takeup_low": 0.07304896963914942,
+          "takeup_high": 0.1543928645501904
+        },
+        {
+          "state": 19,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 139,
+          "takeup": 0.05750950771799776,
+          "takeup_se": 0.01617806126960325,
+          "takeup_low": 0.04133144644839451,
+          "takeup_high": 0.07368756898760101
+        },
+        {
+          "state": 19,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 32,
+          "takeup": 0.10813436927841744,
+          "takeup_se": 0.05200736198565104,
+          "takeup_low": 0.056127007292766394,
+          "takeup_high": 0.16014173126406847
+        },
+        {
+          "state": 19,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 50,
+          "takeup": 0.21660226852916784,
+          "takeup_se": 0.04775894525208978,
+          "takeup_low": 0.16884332327707807,
+          "takeup_high": 0.2643612137812576
+        },
+        {
+          "state": 20,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 136,
+          "takeup": 0.11630812997184974,
+          "takeup_se": 0.03086930494154559,
+          "takeup_low": 0.08543882503030414,
+          "takeup_high": 0.14717743491339533
+        },
+        {
+          "state": 20,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 141,
+          "takeup": 0.06122020091411651,
+          "takeup_se": 0.0196208913167613,
+          "takeup_low": 0.04159930959735521,
+          "takeup_high": 0.0808410922308778
+        },
+        {
+          "state": 20,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 27,
+          "takeup": 0.11352866554730047,
+          "takeup_se": 0.0536189703189083,
+          "takeup_low": 0.05990969522839217,
+          "takeup_high": 0.16714763586620876
+        },
+        {
+          "state": 20,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 46,
+          "takeup": 0.19924390948843868,
+          "takeup_se": 0.059259235269400974,
+          "takeup_low": 0.1399846742190377,
+          "takeup_high": 0.25850314475783964
+        },
+        {
+          "state": 21,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 119,
+          "takeup": 0.16717084056746706,
+          "takeup_se": 0.037802365582957076,
+          "takeup_low": 0.12936847498450998,
+          "takeup_high": 0.20497320615042414
+        },
+        {
+          "state": 21,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 143,
+          "takeup": 0.12801096211961518,
+          "takeup_se": 0.03785282069097081,
+          "takeup_low": 0.09015814142864437,
+          "takeup_high": 0.165863782810586
+        },
+        {
+          "state": 21,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 49,
+          "takeup": 0.20411244285566493,
+          "takeup_se": 0.05389784787146005,
+          "takeup_low": 0.1502145949842049,
+          "takeup_high": 0.258010290727125
+        },
+        {
+          "state": 22,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 292,
+          "takeup": 0.18008777886035127,
+          "takeup_se": 0.02750774335254891,
+          "takeup_low": 0.15258003550780236,
+          "takeup_high": 0.20759552221290017
+        },
+        {
+          "state": 22,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 274,
+          "takeup": 0.12678267089035422,
+          "takeup_se": 0.025062363198517734,
+          "takeup_low": 0.10172030769183649,
+          "takeup_high": 0.15184503408887196
+        },
+        {
+          "state": 22,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 120,
+          "takeup": 0.24147460091010167,
+          "takeup_se": 0.05660530955167393,
+          "takeup_low": 0.18486929135842775,
+          "takeup_high": 0.2980799104617756
+        },
+        {
+          "state": 22,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 126,
+          "takeup": 0.43536845031735,
+          "takeup_se": 0.04452309611974151,
+          "takeup_low": 0.39084535419760846,
+          "takeup_high": 0.47989154643709153
+        },
+        {
+          "state": 23,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 110,
+          "takeup": 0.1710217947462012,
+          "takeup_se": 0.046970219938672786,
+          "takeup_low": 0.1240515748075284,
+          "takeup_high": 0.21799201468487397
+        },
+        {
+          "state": 23,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 21,
+          "takeup": 0.10306744403909736,
+          "takeup_se": 0.07113259012541029,
+          "takeup_low": 0.03193485391368707,
+          "takeup_high": 0.17420003416450763
+        },
+        {
+          "state": 24,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 133,
+          "takeup": 0.11933262651562179,
+          "takeup_se": 0.037992501709996775,
+          "takeup_low": 0.08134012480562502,
+          "takeup_high": 0.15732512822561856
+        },
+        {
+          "state": 24,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 55,
+          "takeup": 0.30065874987942326,
+          "takeup_se": 0.0590613046739908,
+          "takeup_low": 0.24159744520543247,
+          "takeup_high": 0.35972005455341405
+        },
+        {
+          "state": 25,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 272,
+          "takeup": 0.2694603714397257,
+          "takeup_se": 0.03606293884150502,
+          "takeup_low": 0.23339743259822066,
+          "takeup_high": 0.3055233102812307
+        },
+        {
+          "state": 25,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 194,
+          "takeup": 0.1500273722448052,
+          "takeup_se": 0.02696109465116285,
+          "takeup_low": 0.12306627759364235,
+          "takeup_high": 0.17698846689596803
+        },
+        {
+          "state": 25,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 92,
+          "takeup": 0.24720368222156772,
+          "takeup_se": 0.04785714591192334,
+          "takeup_low": 0.19934653630964438,
+          "takeup_high": 0.29506082813349105
+        },
+        {
+          "state": 25,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 93,
+          "takeup": 0.272017102553884,
+          "takeup_se": 0.04299410552495675,
+          "takeup_low": 0.22902299702892726,
+          "takeup_high": 0.31501120807884075
+        },
+        {
+          "state": 26,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 244,
+          "takeup": 0.16096947674056242,
+          "takeup_se": 0.026472034707839993,
+          "takeup_low": 0.13449744203272243,
+          "takeup_high": 0.1874415114484024
+        },
+        {
+          "state": 26,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 252,
+          "takeup": 0.14187942041981558,
+          "takeup_se": 0.024735301044192616,
+          "takeup_low": 0.11714411937562297,
+          "takeup_high": 0.1666147214640082
+        },
+        {
+          "state": 26,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 69,
+          "takeup": 0.2491781255542134,
+          "takeup_se": 0.04861480814680013,
+          "takeup_low": 0.20056331740741326,
+          "takeup_high": 0.2977929337010135
+        },
+        {
+          "state": 26,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 83,
+          "takeup": 0.36787214320074946,
+          "takeup_se": 0.06096984984315498,
+          "takeup_low": 0.30690229335759445,
+          "takeup_high": 0.42884199304390447
+        },
+        {
+          "state": 27,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 126,
+          "takeup": 0.13078290790514088,
+          "takeup_se": 0.04408593338051906,
+          "takeup_low": 0.08669697452462183,
+          "takeup_high": 0.17486884128565994
+        },
+        {
+          "state": 27,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 38,
+          "takeup": 0.1493765127741948,
+          "takeup_se": 0.061904447793067995,
+          "takeup_low": 0.08747206498112681,
+          "takeup_high": 0.2112809605672628
+        },
+        {
+          "state": 27,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 40,
+          "takeup": 0.26709566923115996,
+          "takeup_se": 0.06364881235418443,
+          "takeup_low": 0.20344685687697553,
+          "takeup_high": 0.3307444815853444
+        },
+        {
+          "state": 28,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 255,
+          "takeup": 0.1318819396895655,
+          "takeup_se": 0.022213897427084982,
+          "takeup_low": 0.1096680422624805,
+          "takeup_high": 0.15409583711665048
+        },
+        {
+          "state": 28,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 260,
+          "takeup": 0.08499851065955716,
+          "takeup_se": 0.0188595348642444,
+          "takeup_low": 0.06613897579531276,
+          "takeup_high": 0.10385804552380155
+        },
+        {
+          "state": 28,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 77,
+          "takeup": 0.15169394858528676,
+          "takeup_se": 0.05467562534961001,
+          "takeup_low": 0.09701832323567675,
+          "takeup_high": 0.20636957393489677
+        },
+        {
+          "state": 28,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 96,
+          "takeup": 0.37092988302609453,
+          "takeup_se": 0.05162984261560764,
+          "takeup_low": 0.3193000404104869,
+          "takeup_high": 0.4225597256417022
+        },
+        {
+          "state": 29,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 183,
+          "takeup": 0.11926038019771394,
+          "takeup_se": 0.022252238121190458,
+          "takeup_low": 0.09700814207652349,
+          "takeup_high": 0.1415126183189044
+        },
+        {
+          "state": 29,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 157,
+          "takeup": 0.04185585955267214,
+          "takeup_se": 0.013024812572980025,
+          "takeup_low": 0.028831046979692115,
+          "takeup_high": 0.05488067212565216
+        },
+        {
+          "state": 29,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 48,
+          "takeup": 0.12553403446318023,
+          "takeup_se": 0.04432776775259963,
+          "takeup_low": 0.0812062667105806,
+          "takeup_high": 0.16986180221577987
+        },
+        {
+          "state": 29,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 67,
+          "takeup": 0.22400664903714163,
+          "takeup_se": 0.061598217652851936,
+          "takeup_low": 0.16240843138428968,
+          "takeup_high": 0.2856048666899936
+        },
+        {
+          "state": 30,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 197,
+          "takeup": 0.07685321335857694,
+          "takeup_se": 0.02230292854484699,
+          "takeup_low": 0.05455028481372995,
+          "takeup_high": 0.09915614190342392
+        },
+        {
+          "state": 30,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 213,
+          "takeup": 0.056621389787356646,
+          "takeup_se": 0.015071229256464851,
+          "takeup_low": 0.04155016053089179,
+          "takeup_high": 0.0716926190438215
+        },
+        {
+          "state": 30,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 47,
+          "takeup": 0.25973171210748525,
+          "takeup_se": 0.08146239006107844,
+          "takeup_low": 0.1782693220464068,
+          "takeup_high": 0.3411941021685637
+        },
+        {
+          "state": 31,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 132,
+          "takeup": 0.0870300823885061,
+          "takeup_se": 0.027574766179798402,
+          "takeup_low": 0.0594553162087077,
+          "takeup_high": 0.1146048485683045
+        },
+        {
+          "state": 31,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 148,
+          "takeup": 0.027348110712589555,
+          "takeup_se": 0.010621376744477844,
+          "takeup_low": 0.01672673396811171,
+          "takeup_high": 0.0379694874570674
+        },
+        {
+          "state": 31,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 50,
+          "takeup": 0.2050612373518018,
+          "takeup_se": 0.054081508980366795,
+          "takeup_low": 0.150979728371435,
+          "takeup_high": 0.2591427463321686
+        },
+        {
+          "state": 32,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 138,
+          "takeup": 0.17858348002359664,
+          "takeup_se": 0.03181619053164987,
+          "takeup_low": 0.14676728949194678,
+          "takeup_high": 0.2103996705552465
+        },
+        {
+          "state": 32,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 161,
+          "takeup": 0.09932317558904918,
+          "takeup_se": 0.02411217107890221,
+          "takeup_low": 0.07521100451014698,
+          "takeup_high": 0.12343534666795139
+        },
+        {
+          "state": 32,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 63,
+          "takeup": 0.18793674563632767,
+          "takeup_se": 0.05038995274879026,
+          "takeup_low": 0.1375467928875374,
+          "takeup_high": 0.23832669838511794
+        },
+        {
+          "state": 32,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 72,
+          "takeup": 0.2940823233413117,
+          "takeup_se": 0.04914038666463471,
+          "takeup_low": 0.24494193667667696,
+          "takeup_high": 0.3432227100059464
+        },
+        {
+          "state": 33,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 116,
+          "takeup": 0.12339171327896645,
+          "takeup_se": 0.0339496068164146,
+          "takeup_low": 0.08944210646255185,
+          "takeup_high": 0.15734132009538104
+        },
+        {
+          "state": 33,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 143,
+          "takeup": 0.029700645150971237,
+          "takeup_se": 0.014890898615164676,
+          "takeup_low": 0.014809746535806561,
+          "takeup_high": 0.044591543766135916
+        },
+        {
+          "state": 34,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 200,
+          "takeup": 0.15016724172850984,
+          "takeup_se": 0.02488425790274227,
+          "takeup_low": 0.12528298382576758,
+          "takeup_high": 0.1750514996312521
+        },
+        {
+          "state": 34,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 179,
+          "takeup": 0.08837102577043246,
+          "takeup_se": 0.023083407178760618,
+          "takeup_low": 0.06528761859167184,
+          "takeup_high": 0.11145443294919308
+        },
+        {
+          "state": 34,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 94,
+          "takeup": 0.22005378633198522,
+          "takeup_se": 0.04014482514933093,
+          "takeup_low": 0.1799089611826543,
+          "takeup_high": 0.2601986114813162
+        },
+        {
+          "state": 35,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 257,
+          "takeup": 0.22572478627393497,
+          "takeup_se": 0.029185078428715677,
+          "takeup_low": 0.1965397078452193,
+          "takeup_high": 0.25490986470265065
+        },
+        {
+          "state": 35,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 236,
+          "takeup": 0.10924687013520175,
+          "takeup_se": 0.01688287223309546,
+          "takeup_low": 0.09236399790210628,
+          "takeup_high": 0.12612974236829722
+        },
+        {
+          "state": 35,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 86,
+          "takeup": 0.3353976584471048,
+          "takeup_se": 0.06333613256328594,
+          "takeup_low": 0.2720615258838188,
+          "takeup_high": 0.39873379101039075
+        },
+        {
+          "state": 36,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 525,
+          "takeup": 0.24865556339505648,
+          "takeup_se": 0.020363174500546605,
+          "takeup_low": 0.22829238889450987,
+          "takeup_high": 0.2690187378956031
+        },
+        {
+          "state": 36,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 392,
+          "takeup": 0.11277191591929378,
+          "takeup_se": 0.016307833364695535,
+          "takeup_low": 0.09646408255459825,
+          "takeup_high": 0.12907974928398933
+        },
+        {
+          "state": 36,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 146,
+          "takeup": 0.24314221668262617,
+          "takeup_se": 0.03684199246733059,
+          "takeup_low": 0.2063002242152956,
+          "takeup_high": 0.27998420914995675
+        },
+        {
+          "state": 36,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 196,
+          "takeup": 0.24764673112093621,
+          "takeup_se": 0.03198305502847277,
+          "takeup_low": 0.21566367609246345,
+          "takeup_high": 0.279629786149409
+        },
+        {
+          "state": 37,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 309,
+          "takeup": 0.191585430927065,
+          "takeup_se": 0.027350693693022565,
+          "takeup_low": 0.16423473723404244,
+          "takeup_high": 0.21893612462008757
+        },
+        {
+          "state": 37,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 252,
+          "takeup": 0.07297924736564644,
+          "takeup_se": 0.015728114313747103,
+          "takeup_low": 0.05725113305189934,
+          "takeup_high": 0.08870736167939354
+        },
+        {
+          "state": 37,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 94,
+          "takeup": 0.2274243418874614,
+          "takeup_se": 0.039433415336913274,
+          "takeup_low": 0.18799092655054814,
+          "takeup_high": 0.26685775722437466
+        },
+        {
+          "state": 37,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 112,
+          "takeup": 0.2665915004662231,
+          "takeup_se": 0.0337833951361587,
+          "takeup_low": 0.2328081053300644,
+          "takeup_high": 0.3003748956023818
+        },
+        {
+          "state": 38,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 141,
+          "takeup": 0.12408714059223305,
+          "takeup_se": 0.0324960059361795,
+          "takeup_low": 0.09159113465605355,
+          "takeup_high": 0.15658314652841254
+        },
+        {
+          "state": 38,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 142,
+          "takeup": 0.056424869937583694,
+          "takeup_se": 0.017715589225432128,
+          "takeup_low": 0.038709280712151566,
+          "takeup_high": 0.07414045916301581
+        },
+        {
+          "state": 38,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 31,
+          "takeup": 0.2559043398325883,
+          "takeup_se": 0.08362672935507663,
+          "takeup_low": 0.17227761047751167,
+          "takeup_high": 0.33953106918766496
+        },
+        {
+          "state": 38,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 44,
+          "takeup": 0.2472818155122825,
+          "takeup_se": 0.05299474478077409,
+          "takeup_low": 0.19428707073150842,
+          "takeup_high": 0.3002765602930566
+        },
+        {
+          "state": 39,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 283,
+          "takeup": 0.21759984874105878,
+          "takeup_se": 0.03256650999744682,
+          "takeup_low": 0.18503333874361197,
+          "takeup_high": 0.2501663587385056
+        },
+        {
+          "state": 39,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 291,
+          "takeup": 0.057973273300653105,
+          "takeup_se": 0.012043613011543858,
+          "takeup_low": 0.04592966028910925,
+          "takeup_high": 0.07001688631219696
+        },
+        {
+          "state": 39,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 94,
+          "takeup": 0.2612749273338327,
+          "takeup_se": 0.05252449940550573,
+          "takeup_low": 0.20875042792832693,
+          "takeup_high": 0.3137994267393384
+        },
+        {
+          "state": 39,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 90,
+          "takeup": 0.413228353492991,
+          "takeup_se": 0.05512608540578487,
+          "takeup_low": 0.35810226808720613,
+          "takeup_high": 0.4683544388987758
+        },
+        {
+          "state": 40,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 185,
+          "takeup": 0.1701246489896221,
+          "takeup_se": 0.03143668992817936,
+          "takeup_low": 0.13868795906144274,
+          "takeup_high": 0.20156133891780145
+        },
+        {
+          "state": 40,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 178,
+          "takeup": 0.06941184569741092,
+          "takeup_se": 0.01980143831142483,
+          "takeup_low": 0.049610407385986086,
+          "takeup_high": 0.08921328400883576
+        },
+        {
+          "state": 40,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 63,
+          "takeup": 0.27212365426580765,
+          "takeup_se": 0.06597974622894666,
+          "takeup_low": 0.206143908036861,
+          "takeup_high": 0.3381034004947543
+        },
+        {
+          "state": 40,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 71,
+          "takeup": 0.32060860513965034,
+          "takeup_se": 0.06324922182451473,
+          "takeup_low": 0.25735938331513564,
+          "takeup_high": 0.38385782696416504
+        },
+        {
+          "state": 41,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 169,
+          "takeup": 0.22298901410617566,
+          "takeup_se": 0.03473249616521654,
+          "takeup_low": 0.18825651794095913,
+          "takeup_high": 0.25772151027139223
+        },
+        {
+          "state": 41,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 205,
+          "takeup": 0.12414614395111188,
+          "takeup_se": 0.033570930239616,
+          "takeup_low": 0.09057521371149588,
+          "takeup_high": 0.1577170741907279
+        },
+        {
+          "state": 41,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 65,
+          "takeup": 0.23064765905281176,
+          "takeup_se": 0.060844787230283595,
+          "takeup_low": 0.16980287182252818,
+          "takeup_high": 0.29149244628309534
+        },
+        {
+          "state": 41,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 57,
+          "takeup": 0.22755015045673102,
+          "takeup_se": 0.050708902125179034,
+          "takeup_low": 0.176841248331552,
+          "takeup_high": 0.2782590525819101
+        },
+        {
+          "state": 42,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 311,
+          "takeup": 0.19107499113287313,
+          "takeup_se": 0.0283147050423296,
+          "takeup_low": 0.16276028609054352,
+          "takeup_high": 0.21938969617520274
+        },
+        {
+          "state": 42,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 311,
+          "takeup": 0.08024663226305631,
+          "takeup_se": 0.015223606105060725,
+          "takeup_low": 0.06502302615799559,
+          "takeup_high": 0.09547023836811704
+        },
+        {
+          "state": 42,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 94,
+          "takeup": 0.2553140926824409,
+          "takeup_se": 0.048845522932572535,
+          "takeup_low": 0.20646856974986832,
+          "takeup_high": 0.3041596156150134
+        },
+        {
+          "state": 44,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 134,
+          "takeup": 0.13047594074107263,
+          "takeup_se": 0.02711019082240644,
+          "takeup_low": 0.10336574991866619,
+          "takeup_high": 0.15758613156347906
+        },
+        {
+          "state": 44,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 104,
+          "takeup": 0.09573701348717732,
+          "takeup_se": 0.02993543595760198,
+          "takeup_low": 0.06580157752957534,
+          "takeup_high": 0.1256724494447793
+        },
+        {
+          "state": 45,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 209,
+          "takeup": 0.14953292884904573,
+          "takeup_se": 0.029996133641064522,
+          "takeup_low": 0.11953679520798122,
+          "takeup_high": 0.17952906249011025
+        },
+        {
+          "state": 45,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 211,
+          "takeup": 0.07852430810329596,
+          "takeup_se": 0.025443677902417458,
+          "takeup_low": 0.0530806302008785,
+          "takeup_high": 0.10396798600571341
+        },
+        {
+          "state": 45,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 73,
+          "takeup": 0.11409069230189028,
+          "takeup_se": 0.03316689377781517,
+          "takeup_low": 0.08092379852407511,
+          "takeup_high": 0.14725758607970546
+        },
+        {
+          "state": 45,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 76,
+          "takeup": 0.39064902743446195,
+          "takeup_se": 0.06022667253095166,
+          "takeup_low": 0.3304223549035103,
+          "takeup_high": 0.4508756999654136
+        },
+        {
+          "state": 46,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 133,
+          "takeup": 0.10910358943900098,
+          "takeup_se": 0.021185267116190024,
+          "takeup_low": 0.08791832232281095,
+          "takeup_high": 0.130288856555191
+        },
+        {
+          "state": 46,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 137,
+          "takeup": 0.04504267132957146,
+          "takeup_se": 0.0174410092224472,
+          "takeup_low": 0.02760166210712426,
+          "takeup_high": 0.06248368055201866
+        },
+        {
+          "state": 46,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 22,
+          "takeup": 0.3500043589480584,
+          "takeup_se": 0.11398364896620589,
+          "takeup_low": 0.23602070998185254,
+          "takeup_high": 0.4639880079142643
+        },
+        {
+          "state": 46,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 34,
+          "takeup": 0.2796240279730307,
+          "takeup_se": 0.09310766636321315,
+          "takeup_low": 0.18651636160981755,
+          "takeup_high": 0.37273169433624387
+        },
+        {
+          "state": 47,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 242,
+          "takeup": 0.10696422805764219,
+          "takeup_se": 0.02986461919282103,
+          "takeup_low": 0.07709960886482116,
+          "takeup_high": 0.1368288472504632
+        },
+        {
+          "state": 47,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 208,
+          "takeup": 0.10567891690483669,
+          "takeup_se": 0.025039456639869014,
+          "takeup_low": 0.08063946026496768,
+          "takeup_high": 0.1307183735447057
+        },
+        {
+          "state": 47,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 61,
+          "takeup": 0.16190628753220673,
+          "takeup_se": 0.049394346014004616,
+          "takeup_low": 0.11251194151820212,
+          "takeup_high": 0.21130063354621134
+        },
+        {
+          "state": 47,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 81,
+          "takeup": 0.21180806364209587,
+          "takeup_se": 0.06386246778600774,
+          "takeup_low": 0.14794559585608813,
+          "takeup_high": 0.2756705314281036
+        },
+        {
+          "state": 48,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 583,
+          "takeup": 0.15077157983194542,
+          "takeup_se": 0.016977486221068556,
+          "takeup_low": 0.13379409361087685,
+          "takeup_high": 0.16774906605301398
+        },
+        {
+          "state": 48,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 665,
+          "takeup": 0.08224754649983758,
+          "takeup_se": 0.011048118953754524,
+          "takeup_low": 0.07119942754608305,
+          "takeup_high": 0.09329566545359211
+        },
+        {
+          "state": 48,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 262,
+          "takeup": 0.16247114049041028,
+          "takeup_se": 0.023873442452278276,
+          "takeup_low": 0.13859769803813202,
+          "takeup_high": 0.18634458294268855
+        },
+        {
+          "state": 48,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 369,
+          "takeup": 0.2552299401167463,
+          "takeup_se": 0.023326096583348586,
+          "takeup_low": 0.23190384353339774,
+          "takeup_high": 0.27855603670009493
+        },
+        {
+          "state": 49,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 145,
+          "takeup": 0.09248524468010567,
+          "takeup_se": 0.043249046066480445,
+          "takeup_low": 0.04923619861362523,
+          "takeup_high": 0.1357342907465861
+        },
+        {
+          "state": 49,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 132,
+          "takeup": 0.06982803596132445,
+          "takeup_se": 0.024426499969487234,
+          "takeup_low": 0.045401535991837216,
+          "takeup_high": 0.09425453593081168
+        },
+        {
+          "state": 49,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 36,
+          "takeup": 0.0944271925190261,
+          "takeup_se": 0.05528466724525182,
+          "takeup_low": 0.039142525273774285,
+          "takeup_high": 0.14971185976427792
+        },
+        {
+          "state": 49,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 80,
+          "takeup": 0.17511340434687242,
+          "takeup_se": 0.04320515716447039,
+          "takeup_low": 0.13190824718240202,
+          "takeup_high": 0.21831856151134282
+        },
+        {
+          "state": 50,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 164,
+          "takeup": 0.20784497734138244,
+          "takeup_se": 0.03281566194044282,
+          "takeup_low": 0.17502931540093963,
+          "takeup_high": 0.24066063928182524
+        },
+        {
+          "state": 50,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 40,
+          "takeup": 0.13956832192462348,
+          "takeup_se": 0.053175646206873185,
+          "takeup_low": 0.0863926757177503,
+          "takeup_high": 0.19274396813149666
+        },
+        {
+          "state": 50,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 50,
+          "takeup": 0.3562978190714784,
+          "takeup_se": 0.06844683588602761,
+          "takeup_low": 0.28785098318545077,
+          "takeup_high": 0.424744654957506
+        },
+        {
+          "state": 51,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 200,
+          "takeup": 0.1172208948620367,
+          "takeup_se": 0.020243429681829517,
+          "takeup_low": 0.09697746518020718,
+          "takeup_high": 0.1374643245438662
+        },
+        {
+          "state": 51,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 226,
+          "takeup": 0.0930723381153775,
+          "takeup_se": 0.01722236266578432,
+          "takeup_low": 0.07584997544959318,
+          "takeup_high": 0.11029470078116183
+        },
+        {
+          "state": 51,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 55,
+          "takeup": 0.143702474031872,
+          "takeup_se": 0.04835103248357155,
+          "takeup_low": 0.09535144154830044,
+          "takeup_high": 0.19205350651544356
+        },
+        {
+          "state": 53,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 202,
+          "takeup": 0.18398640868693,
+          "takeup_se": 0.03172593740845236,
+          "takeup_low": 0.15226047127847764,
+          "takeup_high": 0.21571234609538237
+        },
+        {
+          "state": 53,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 214,
+          "takeup": 0.09786149252663111,
+          "takeup_se": 0.017212468398574394,
+          "takeup_low": 0.08064902412805672,
+          "takeup_high": 0.1150739609252055
+        },
+        {
+          "state": 53,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 58,
+          "takeup": 0.1895541563253211,
+          "takeup_se": 0.047762449992799785,
+          "takeup_low": 0.1417917063325213,
+          "takeup_high": 0.2373166063181209
+        },
+        {
+          "state": 53,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 96,
+          "takeup": 0.3336972869962419,
+          "takeup_se": 0.042400419810422654,
+          "takeup_low": 0.29129686718581926,
+          "takeup_high": 0.37609770680666454
+        },
+        {
+          "state": 54,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 255,
+          "takeup": 0.21518130205563266,
+          "takeup_se": 0.04370433328287672,
+          "takeup_low": 0.17147696877275592,
+          "takeup_high": 0.2588856353385094
+        },
+        {
+          "state": 55,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 174,
+          "takeup": 0.16114117733400987,
+          "takeup_se": 0.02898083510094615,
+          "takeup_low": 0.13216034223306372,
+          "takeup_high": 0.19012201243495602
+        },
+        {
+          "state": 55,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 168,
+          "takeup": 0.07176082511241752,
+          "takeup_se": 0.022829428814856164,
+          "takeup_low": 0.04893139629756135,
+          "takeup_high": 0.09459025392727369
+        },
+        {
+          "state": 55,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 37,
+          "takeup": 0.20778978354592806,
+          "takeup_se": 0.07281699209936357,
+          "takeup_low": 0.1349727914465645,
+          "takeup_high": 0.28060677564529163
+        },
+        {
+          "state": 55,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 51,
+          "takeup": 0.35409211663311607,
+          "takeup_se": 0.061984463418156915,
+          "takeup_low": 0.29210765321495913,
+          "takeup_high": 0.416076580051273
+        },
+        {
+          "state": 56,
+          "size_bin": 1,
+          "tier": "state_size",
+          "eligible_sample_units": 140,
+          "takeup": 0.04415418933602779,
+          "takeup_se": 0.015332448998378692,
+          "takeup_low": 0.0288217403376491,
+          "takeup_high": 0.05948663833440648
+        },
+        {
+          "state": 56,
+          "size_bin": 2,
+          "tier": "state_size",
+          "eligible_sample_units": 171,
+          "takeup": 0.03865364417304173,
+          "takeup_se": 0.0181853045253669,
+          "takeup_low": 0.02046833964767483,
+          "takeup_high": 0.05683894869840862
+        },
+        {
+          "state": 56,
+          "size_bin": 3,
+          "tier": "state_size",
+          "eligible_sample_units": 39,
+          "takeup": 0.08165830563528363,
+          "takeup_se": 0.031097982921497302,
+          "takeup_low": 0.050560322713786326,
+          "takeup_high": 0.11275628855678094
+        },
+        {
+          "state": 56,
+          "size_bin": 4,
+          "tier": "state_size",
+          "eligible_sample_units": 57,
+          "takeup": 0.19382385888032042,
+          "takeup_se": 0.045927722229081744,
+          "takeup_low": 0.14789613665123869,
+          "takeup_high": 0.23975158110940215
+        }
+      ],
+      "reported_participants_failing_proxy_test": 64
+    }
+  },
+  "assumptions": [
+    "SPM proxy assistance unit; steady annualized monthly income",
+    "federal financial income rules; assets/BBCE/ABAWD/student/status unresolved",
+    "income residual held; deductions proportional to survivors",
+    "shelter zero/cap; fixed observed take-up +/- one replicate SE",
+    "only newly eligible nonparticipants start; observed recipients retain level residual",
+    "loss of proxy financial eligibility stops prior participant benefits",
+    "original mean person weight unit-event basis; person weights unchanged"
+  ],
+  "summaries": {
+    "SNAP_zero_observed_low_takeup": {
+      "bn": -2.1954406491863865,
+      "se_bn": 0.21858012101467303
+    },
+    "SNAP_zero_observed_high_takeup": {
+      "bn": -2.631239641698928,
+      "se_bn": 0.245840971747427
+    },
+    "SNAP_zero_observed_newly_eligible_low": {
+      "bn": -1.1505655346212964,
+      "se_bn": 0.11887454131054268
+    },
+    "SNAP_zero_observed_newly_eligible_high": {
+      "bn": -1.5863645271338391,
+      "se_bn": 0.15950876421430285
+    },
+    "SNAP_zero_observed_newly_ineligible": {
+      "bn": 0.2063168430482586,
+      "se_bn": 0.06341701634639407
+    },
+    "SNAP_cap_observed_low_takeup": {
+      "bn": -0.5277820196176249,
+      "se_bn": 0.15098069667895683
+    },
+    "SNAP_cap_observed_high_takeup": {
+      "bn": -0.70789325035247,
+      "se_bn": 0.15931047986310784
+    },
+    "SNAP_cap_observed_newly_eligible_low": {
+      "bn": -0.4589799042585187,
+      "se_bn": 0.06031598387646968
+    },
+    "SNAP_cap_observed_newly_eligible_high": {
+      "bn": -0.6390911349933637,
+      "se_bn": 0.07909863957382494
+    },
+    "SNAP_cap_observed_newly_ineligible": {
+      "bn": 0.25174245227244724,
+      "se_bn": 0.07968711901128102
+    }
+  },
+  "membership": "union"
+}

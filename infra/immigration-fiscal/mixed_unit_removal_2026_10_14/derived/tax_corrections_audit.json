@@ -1,0 +1,72 @@
+{
+  "national_observed_liability_bn": 1977.9157387941284,
+  "national_positive_residual_bn": 425.3262612058718,
+  "generation_closure_bn": 6.3504757008558954e-12,
+  "liability_delta_bn": 6.665636695254156,
+  "high_AGI_residual_delta_bn": 0.1464756422509077,
+  "booked_item_subtraction_bn": 1.6422382235153323,
+  "booked_item_scenario_scale": 0.925207989647569,
+  "recommendation": "arm",
+  "scope": "identified union; added-person extension is external",
+  "rule": "raw liability plus positive BEA gap on AGI>=500k; own survivor return and factors; unruled high key retained",
+  "replicates": 160,
+  "status": "conditional TAXSIM re-filing; baseline subtraction exact",
+  "IRS_M1_details": {
+    "new_nonfiler_claimants": 0,
+    "transferred_dependents": 20,
+    "nonmember_dependents_without_remaining_claimant": 155,
+    "rule": "staying same return: CPS residual plus TAXSIM delta; newly filed: own TAXSIM income/flags/cell; subtract item 5b once",
+    "unsupported_positive_survivor_IRS_cells": 0,
+    "adoptable": false,
+    "unknown_inputs": [
+      "itemized deductions",
+      "QBI eligibility",
+      "qualified dividend/capital-gain character",
+      "other refundable credits and actual care attribution"
+    ],
+    "baseline_rule_federal_bn": 2010.3751130582648,
+    "baseline_CPS_federal_bn": 1984.5874616072465,
+    "baseline_rule_EITC_bn": 42.896916421993424,
+    "baseline_CPS_EITC_bn": 42.62437313601434,
+    "baseline_rule_ACTC_bn": 26.449176190481843,
+    "baseline_CPS_ACTC_bn": 21.589355248758615,
+    "mixed_joint_returns": 1364,
+    "swap_max_dollars": 0.0,
+    "IRS_rule": "own AGI bin, remaining-household CBO group at original national rank thresholds; benchmark multipliers fixed",
+    "weights": "actual amount: actual carrier weights; new amount: survivor own weights; all 160 replicates",
+    "IRS_replication": "full-sample benchmark mass held across replicates, matching original item 5b; benchmark uncertainty not included",
+    "swap_scope": "survivor tax calculation and IRS multiplier; changing the frozen baseline carrier changes its personal ledger by definition"
+  },
+  "source_pins": {
+    "primary_url": "https://www.irs.gov/pub/irs-prior/p596--2024.pdf",
+    "tax_year": 2024,
+    "locator": "Publication 596 (2024), EIC table, printed pp. 28-38",
+    "parsed_rows": 10688,
+    "omitted_cells": "eight starred terminal cells refer to within-interval footnotes; original rows and footnotes preserved in primary PDF/text",
+    "prior_parsed_pin": {
+      "primary_url": "https://www.irs.gov/pub/irs-prior/p596--2024.pdf",
+      "tax_year": 2024,
+      "locator": "Publication 596 (2024), EIC table, printed pp. 28-41",
+      "parsed_rows": 10512,
+      "files": {
+        "tax_corrections_irs_p596_2024.pdf": "e422d1fa90fe8b6eef48b6b2b474dc7081f7d092f932bec0b93e5cfb77ba00e6",
+        "tax_corrections_irs_p596_2024.txt": "43e842a27f2d63eb6a29a67b17a17cfb2004ea84985f0bc6011f982fde9efe7e",
+        "tax_corrections_eitc_table_2024.csv": "003e4949cb9867f90f4e3ba7a202bcdca342dfb67f911d1a71015c9a3e0a8d4f"
+      }
+    },
+    "files": {
+      "tax_corrections_irs_p596_2024.pdf": "e422d1fa90fe8b6eef48b6b2b474dc7081f7d092f932bec0b93e5cfb77ba00e6",
+      "tax_corrections_irs_p596_2024.txt": "43e842a27f2d63eb6a29a67b17a17cfb2004ea84985f0bc6011f982fde9efe7e",
+      "tax_corrections_eitc_table_2024.csv": "489ca70b421fb9e15f7ea3d22d25ff2e9ea8300a0b48cf8588a6bd6f0e802f5b"
+    }
+  },
+  "survivor_EITC_primary_table_gate": {
+    "passed": true,
+    "IRS_table_credit_usd": 1709,
+    "kernel_credit_usd": 1708.5,
+    "table_rounding_difference_usd": -0.5,
+    "source": "https://www.irs.gov/pub/irs-prior/p596--2024.pdf",
+    "earnings": 5025.0,
+    "AGI": 25025.0
+  }
+}

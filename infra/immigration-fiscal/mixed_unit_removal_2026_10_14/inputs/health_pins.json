@@ -1,0 +1,49 @@
+{
+  "files": {
+    "health_aca2024.zip": {
+      "bytes": 93025,
+      "sha256": "8b98f8816c1769beff243cd64204ef2c431283c0ad21784196e2666777a6b5d9",
+      "source": "https://www.cms.gov/files/zip/2024-oep-state-level-public-use-file.zip"
+    },
+    "health_group2023.xlsx": {
+      "bytes": 38421,
+      "sha256": "8f428ada2ec703f12a6e838aa0a90caa5b5f9137ef5ac05f68759ebd236528ce",
+      "source": "https://www.macpac.gov/wp-content/uploads/2026/01/EXHIBIT-22.-Medicaid-Benefit-Spending-Per-Full-Year-Equivalent-FYE-Enrollee-by-State-and-Eligibility-Group-FY-2023.xlsx"
+    },
+    "health_macstats2024.pdf": {
+      "bytes": 3330757,
+      "sha256": "85bb9171057e147c7719a1655174c9d8c8c3dfa5ef7838c7096ce5d8d9e0102f",
+      "source": "https://www.macpac.gov/wp-content/uploads/2024/12/MACSTATS_Dec2024_WEB-508.pdf"
+    },
+    "health_macstats2024.txt": {
+      "bytes": 821986,
+      "sha256": "10be2080bffde0e9eedc4503bb076a73a7dc5531fdd1be5c9a878013bd39387b",
+      "source": "derived from pinned matching PDF/raw file"
+    },
+    "health_macstats2026.pdf": {
+      "bytes": 2867933,
+      "sha256": "bcf8e0528d708aa2a9c89712ff06a34ea26d32bbca34d87363f86239e6c0be30",
+      "source": "https://www.macpac.gov/wp-content/uploads/2026/02/MACSTATS_Feb2026_WEB_508.pdf"
+    },
+    "health_macstats2026.txt": {
+      "bytes": 837469,
+      "sha256": "ef3d990f0b3061d1c5a45a371340509ee224aeb4d5d1fbb4bc5b06c4d1030499",
+      "source": "derived from pinned matching PDF/raw file"
+    },
+    "health_policy2024.txt": {
+      "bytes": 22651,
+      "sha256": "2097b55fc37ea44e7f1e5294260a4b352560bdb5fddf4bbb2fb760b052f4ca46",
+      "source": "derived from pinned matching PDF/raw file"
+    },
+    "health_state_abbreviations.json": {
+      "bytes": 668,
+      "sha256": "7b9d2c8e106bf05c275290cfd79fe757ca37b18b68720beac31aeef57e2594cc",
+      "source": "derived from pinned matching PDF/raw file"
+    },
+    "health_state_abbreviations_raw.txt": {
+      "bytes": 1485,
+      "sha256": "bea4e03f71a1fa0045ae732aabad11fa541e5932b071c2369bb0d325e8cba5a0",
+      "source": "https://www2.census.gov/geo/docs/reference/state.txt"
+    }
+  }
+}

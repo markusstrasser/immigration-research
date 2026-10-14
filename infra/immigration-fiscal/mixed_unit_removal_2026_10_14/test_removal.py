@@ -6,11 +6,21 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import pytest
+import sys
+import types
 
 LANE=Path(__file__).resolve().parent
 spec=importlib.util.spec_from_file_location('tested_removal',LANE/'removal.py')
 M=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(M)
+
+
+def test_external_driver_main_module_does_not_replace_runtime_api(monkeypatch):
+    monkeypatch.setitem(sys.modules,'__main__',types.SimpleNamespace(driver='cProfile'))
+    api=M.runtime_api()
+    assert api.federal_removal is M.federal_removal
+    assert api.gate is M.gate
+    assert callable(api.load_module)
 
 
 def test_signed_replicate_unit_totals_are_conserved():

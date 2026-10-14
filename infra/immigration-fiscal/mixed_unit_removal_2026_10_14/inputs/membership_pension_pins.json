@@ -1,0 +1,62 @@
+{
+  "files": [
+    {
+      "path": "mixed_unit_credits_2026_10_14/credits.py",
+      "sha256": "d41e16a5fdce5dfcc141aa8c6c11dde9842c614ee185f70b84ecfa2b89782481"
+    },
+    {
+      "path": "gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+      "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b"
+    },
+    {
+      "path": "main_case_2026_10_14/derived/corrections.json",
+      "sha256": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958"
+    },
+    {
+      "path": "main_case_2026_10_14/derived/corrections_cash.json",
+      "sha256": "581701613b7f3c8086437100334e3818ebe062dc57e2e486f14897208b05de97"
+    },
+    {
+      "path": "added_age_mix_2026_10_07/derived/g3_age_keys.json",
+      "sha256": "9feb49b958510ffcb4b86e60cb2ea86f4f458c8a4d0b54a837d0b6308cb6df09"
+    },
+    {
+      "path": "within_group_distribution_2026_09_29/_cache/sept29/pension_grid_7660d97f808b5c75.npz",
+      "sha256": "c14b08a099fddc9e13c63d753d598f20908aedab8c9e198171ee8764894d65e4"
+    },
+    {
+      "path": "within_group_distribution_2026_09_29/_cache/sept29/person_accrual.parquet",
+      "sha256": "30e3499e847aee10b2b3a6105bdb0ab3c3a038bf4ea814a98e232d1ea3760ad0"
+    },
+    {
+      "path": "within_group_distribution_2026_09_29/derived/sept29/person_accrual_model.json",
+      "sha256": "46e6f06d5cf19a1bf405a099ed89dba8a8df54f75e2361251f2e6a66e8ef8b72"
+    },
+    {
+      "path": "pension_accrual_2026_09_28/pension_accrual.py",
+      "sha256": "90fd40c9bfc5d9b71cd8d300c9244e9ebb14529e09bb3c436e02ca6f2dc32789"
+    },
+    {
+      "path": "pension_accrual_2026_09_28/lifetime_model.py",
+      "sha256": "e5337b51943180e383dc2573a49053228881a1518a4453c4e118499a31b02fd6"
+    },
+    {
+      "path": "pension_accrual_2026_09_28/sources.py",
+      "sha256": "ae09107dcfabca4bf2c30596db9092cab7b16e384a971c11450ceda95aef566a"
+    }
+  ],
+  "primary_rules": [
+    {
+      "url": "https://www2.census.gov/programs-surveys/cps/datasets/2025/march/asec2025_ddl_pub_full.pdf",
+      "checked": "PEPAR1TYP/PEPAR2TYP 1 Biological; 2 Step; 3 Adopted"
+    },
+    {
+      "url": "https://www.ssa.gov/faqs/en/questions/KA-02011.html",
+      "checked": "own/spouse total equals higher amount"
+    },
+    {
+      "url": "https://www.ssa.gov/survivor/amount",
+      "checked": "survivor up to100% at survivor FRA"
+    }
+  ]
+}

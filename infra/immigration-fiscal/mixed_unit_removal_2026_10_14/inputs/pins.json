@@ -179,5 +179,86 @@
   "inputs/benefit_states.json": {
     "sha256": "f96a0c7d6d25dc298e522e955a94dd9a3da4d892827d406d64cab388adecc47c",
     "source": "local archived primary API response: apportionment_2026_09_18/_cache/acs5_2020_states.json"
+  },
+  "inputs/health_aca2024.zip": {
+    "bytes": 93025,
+    "sha256": "8b98f8816c1769beff243cd64204ef2c431283c0ad21784196e2666777a6b5d9",
+    "source": "https://www.cms.gov/files/zip/2024-oep-state-level-public-use-file.zip"
+  },
+  "inputs/health_group2023.xlsx": {
+    "bytes": 38421,
+    "sha256": "8f428ada2ec703f12a6e838aa0a90caa5b5f9137ef5ac05f68759ebd236528ce",
+    "source": "https://www.macpac.gov/wp-content/uploads/2026/01/EXHIBIT-22.-Medicaid-Benefit-Spending-Per-Full-Year-Equivalent-FYE-Enrollee-by-State-and-Eligibility-Group-FY-2023.xlsx"
+  },
+  "inputs/health_macstats2024.pdf": {
+    "bytes": 3330757,
+    "sha256": "85bb9171057e147c7719a1655174c9d8c8c3dfa5ef7838c7096ce5d8d9e0102f",
+    "source": "https://www.macpac.gov/wp-content/uploads/2024/12/MACSTATS_Dec2024_WEB-508.pdf"
+  },
+  "inputs/health_macstats2024.txt": {
+    "bytes": 821986,
+    "sha256": "10be2080bffde0e9eedc4503bb076a73a7dc5531fdd1be5c9a878013bd39387b",
+    "source": "derived from pinned matching PDF/raw file"
+  },
+  "inputs/health_macstats2026.pdf": {
+    "bytes": 2867933,
+    "sha256": "bcf8e0528d708aa2a9c89712ff06a34ea26d32bbca34d87363f86239e6c0be30",
+    "source": "https://www.macpac.gov/wp-content/uploads/2026/02/MACSTATS_Feb2026_WEB_508.pdf"
+  },
+  "inputs/health_macstats2026.txt": {
+    "bytes": 837469,
+    "sha256": "ef3d990f0b3061d1c5a45a371340509ee224aeb4d5d1fbb4bc5b06c4d1030499",
+    "source": "derived from pinned matching PDF/raw file"
+  },
+  "inputs/health_policy2024.txt": {
+    "bytes": 22651,
+    "sha256": "2097b55fc37ea44e7f1e5294260a4b352560bdb5fddf4bbb2fb760b052f4ca46",
+    "source": "derived from pinned matching PDF/raw file"
+  },
+  "inputs/health_state_abbreviations.json": {
+    "bytes": 668,
+    "sha256": "7b9d2c8e106bf05c275290cfd79fe757ca37b18b68720beac31aeef57e2594cc",
+    "source": "derived from pinned matching PDF/raw file"
+  },
+  "inputs/health_state_abbreviations_raw.txt": {
+    "bytes": 1485,
+    "sha256": "bea4e03f71a1fa0045ae732aabad11fa541e5932b071c2369bb0d325e8cba5a0",
+    "source": "https://www2.census.gov/geo/docs/reference/state.txt"
+  },
+  "inputs/tax_corrections_irs_p596_2024.pdf": {
+    "sha256": "e422d1fa90fe8b6eef48b6b2b474dc7081f7d092f932bec0b93e5cfb77ba00e6",
+    "source": "https://www.irs.gov/pub/irs-prior/p596--2024.pdf"
+  },
+  "inputs/tax_corrections_irs_p596_2024.txt": {
+    "sha256": "43e842a27f2d63eb6a29a67b17a17cfb2004ea84985f0bc6011f982fde9efe7e",
+    "source": "https://www.irs.gov/pub/irs-prior/p596--2024.pdf"
+  },
+  "inputs/tax_corrections_eitc_table_2024.csv": {
+    "sha256": "489ca70b421fb9e15f7ea3d22d25ff2e9ea8300a0b48cf8588a6bd6f0e802f5b",
+    "source": "https://www.irs.gov/pub/irs-prior/p596--2024.pdf"
+  },
+  "repo:infra/immigration-fiscal/gen_ledger_extension_2026_09_16/state_parameters.csv": {
+    "sha256": "00b0bb778861cc8406a04c8159938368146494965348d477e0514c4b0efccff2"
+  },
+  "repo:infra/immigration-fiscal/added_age_mix_2026_10_07/derived/g3_age_keys.json": {
+    "sha256": "9feb49b958510ffcb4b86e60cb2ea86f4f458c8a4d0b54a837d0b6308cb6df09"
+  },
+  "repo:infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/sept29/pension_grid_7660d97f808b5c75.npz": {
+    "sha256": "c14b08a099fddc9e13c63d753d598f20908aedab8c9e198171ee8764894d65e4"
+  },
+  "repo:infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/sept29/person_accrual.parquet": {
+    "sha256": "30e3499e847aee10b2b3a6105bdb0ab3c3a038bf4ea814a98e232d1ea3760ad0"
+  },
+  "repo:infra/immigration-fiscal/within_group_distribution_2026_09_29/derived/sept29/person_accrual_model.json": {
+    "sha256": "46e6f06d5cf19a1bf405a099ed89dba8a8df54f75e2361251f2e6a66e8ef8b72"
+  },
+  "repo:infra/immigration-fiscal/pension_accrual_2026_09_28/pension_accrual.py": {
+    "sha256": "90fd40c9bfc5d9b71cd8d300c9244e9ebb14529e09bb3c436e02ca6f2dc32789"
+  },
+  "repo:infra/immigration-fiscal/pension_accrual_2026_09_28/lifetime_model.py": {
+    "sha256": "e5337b51943180e383dc2573a49053228881a1518a4453c4e118499a31b02fd6"
+  },
+  "repo:infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py": {
+    "sha256": "ae09107dcfabca4bf2c30596db9092cab7b16e384a971c11450ceda95aef566a"
   }
 }

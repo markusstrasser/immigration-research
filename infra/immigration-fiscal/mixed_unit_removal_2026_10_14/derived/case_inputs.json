@@ -27,6 +27,56 @@
       "full_target_bn": 12.632955730024051
     }
   },
+  "resourceLines": {
+    "modeled_owner_property": {
+      "side": "receipt",
+      "key": "cbo_collective",
+      "national_bn": 394.862477949,
+      "union_target_bn": 24.52911319700066,
+      "full_target_bn": 26.90487211475465,
+      "lineage_target_bn": 2.3757589177539877
+    },
+    "federal_income_tax": {
+      "side": "receipt",
+      "key": "cbo_collective",
+      "national_bn": 2403.242,
+      "union_target_bn": 100.5916266890919,
+      "full_target_bn": 110.50814544116858,
+      "lineage_target_bn": 9.916518752076684
+    },
+    "state_local_income_tax": {
+      "side": "receipt",
+      "key": "cbo_collective",
+      "national_bn": 536.167,
+      "union_target_bn": 23.84165531356951,
+      "full_target_bn": 26.527608417168892,
+      "lineage_target_bn": 2.685953103599381
+    },
+    "snap": {
+      "side": "spending",
+      "key": "snap",
+      "national_bn": 97.391,
+      "union_target_bn": 13.588726924902996,
+      "full_target_bn": 14.62549462768213,
+      "lineage_target_bn": 1.0367677027791338
+    },
+    "housing_subsidies": {
+      "side": "spending",
+      "key": "housing_support",
+      "national_bn": 60.261,
+      "union_target_bn": 4.532065856478911,
+      "full_target_bn": 4.488824290011592,
+      "lineage_target_bn": -0.04324156646731936
+    },
+    "energy_assistance": {
+      "side": "spending",
+      "key": "energy",
+      "national_bn": 5.218,
+      "union_target_bn": 0.562300201139693,
+      "full_target_bn": 0.6045528356789629,
+      "lineage_target_bn": 0.04225263453926986
+    }
+  },
   "bands": {
     "set": [
       339.5520178295269,
@@ -64,6 +114,496 @@
         "excise_selective_sales": 1,
         "customs_duties": 1,
         "personal_current_transfers": 1
+      }
+    ]
+  },
+  "evaluated": {
+    "set": [
+      {
+        "spec": 16,
+        "specification": {
+          "allocation": "personal",
+          "normalization": "gdp",
+          "share": 0.7153278156243373,
+          "school": 1,
+          "gg": 0.6005266346459308,
+          "uc": "uninsured_use_low",
+          "justice": "use",
+          "reading": "low",
+          "rate": 0.02,
+          "long_run": "adopted",
+          "enterprises": "D",
+          "line_responses": {
+            "economic_affairs_services": 0.3844994797314016,
+            "recreation_culture": 0.8563914832367988,
+            "housing_subsidies": 1,
+            "receipt:enterprise_surplus": 1,
+            "receipt:housing_enterprise_surplus": 1,
+            "receipt:modeled_owner_property": 0.7726986463443216,
+            "receipt:tenant_occupied_property": 0.7189123969969125,
+            "receipt:personal_property_tax": 1,
+            "roads_vmt_sl": 0.7401981546463505,
+            "roads_vmt_fed": 0,
+            "state_price_public_order_safety": 1,
+            "state_price_health_services": 1,
+            "state_price_recreation_culture": 0.8563914832367988,
+            "receipt:corporate_capital": 1,
+            "receipt:corporate_labor": 1,
+            "receipt:remaining_production_property": 0.8806493775433665,
+            "receipt:other_production_taxes": 1
+          }
+        },
+        "receipts": [
+          {
+            "id": "federal_income_tax",
+            "national_bn": 2403.242,
+            "key": "federal_liability",
+            "share": 0.04598294559118143,
+            "response_class": "personal_income",
+            "group": "direct_receipts",
+            "amount_bn": 110.50814544116858,
+            "response": 1,
+            "effect_bn": 110.50814544116858
+          },
+          {
+            "id": "state_local_income_tax",
+            "national_bn": 536.167,
+            "key": "state_liability",
+            "share": 0.049476391666055955,
+            "response_class": "personal_income",
+            "group": "direct_receipts",
+            "amount_bn": 26.527608417168892,
+            "response": 1,
+            "effect_bn": 26.527608417168892
+          },
+          {
+            "id": "modeled_owner_property",
+            "national_bn": 394.862477949,
+            "key": "modeled_owner_property",
+            "share": 0.06813732247045644,
+            "response_class": "household_direct",
+            "group": "incidence_receipts",
+            "amount_bn": 26.90487211475465,
+            "response": 0.7726986463443216,
+            "effect_bn": 20.789358263138002
+          }
+        ],
+        "spending": [
+          {
+            "id": "snap",
+            "family": "social_benefits",
+            "national_bn": 97.391,
+            "key": "snap",
+            "share": 0.1516817828186819,
+            "keys": [
+              "cash_assistance",
+              "snap"
+            ],
+            "response_class": "household_transfer",
+            "group": "household_transfer",
+            "amount_bn": 14.62549462768213,
+            "response": 1,
+            "effect_bn": -14.62549462768213
+          },
+          {
+            "id": "energy_assistance",
+            "family": "social_benefits",
+            "national_bn": 5.218,
+            "key": "energy",
+            "share": 0.11702317363314903,
+            "keys": [
+              "cash_assistance",
+              "energy"
+            ],
+            "response_class": "household_transfer",
+            "group": "household_transfer",
+            "amount_bn": 0.6045528356789629,
+            "response": 1,
+            "effect_bn": -0.6045528356789629
+          },
+          {
+            "id": "housing_subsidies",
+            "family": "subsidies",
+            "national_bn": 55.003189000000006,
+            "key": "housing_support",
+            "share": 0.08243021290723411,
+            "keys": [
+              "housing_support",
+              "resources",
+              "wages"
+            ],
+            "response_class": "subsidy",
+            "group": "subsidy",
+            "amount_bn": 4.488824290011592,
+            "response": 1,
+            "effect_bn": -4.488824290011592
+          }
+        ]
+      },
+      {
+        "spec": 11,
+        "specification": {
+          "allocation": "personal",
+          "normalization": "cash",
+          "share": 0.8651608840454027,
+          "school": 1,
+          "gg": 0.8510539647701243,
+          "uc": "uninsured_use_high",
+          "justice": "use",
+          "reading": "high",
+          "rate": 0.03,
+          "long_run": "adopted",
+          "enterprises": "D",
+          "line_responses": {
+            "economic_affairs_services": 0.6387399411939584,
+            "recreation_culture": 1,
+            "housing_subsidies": 1,
+            "receipt:enterprise_surplus": 1,
+            "receipt:housing_enterprise_surplus": 1,
+            "receipt:modeled_owner_property": 0.7726986463443216,
+            "receipt:tenant_occupied_property": 0.7189123969969125,
+            "receipt:personal_property_tax": 1,
+            "roads_vmt_sl": 1,
+            "roads_vmt_fed": 1,
+            "state_price_public_order_safety": 1,
+            "state_price_health_services": 1,
+            "state_price_recreation_culture": 1,
+            "receipt:corporate_capital": 0.37,
+            "receipt:corporate_labor": 0.37,
+            "receipt:remaining_production_property": 0.8806493775433665,
+            "receipt:other_production_taxes": 1
+          }
+        },
+        "receipts": [
+          {
+            "id": "federal_income_tax",
+            "national_bn": 2403.242,
+            "key": "federal_liability",
+            "share": 0.04598294559118143,
+            "response_class": "personal_income",
+            "group": "direct_receipts",
+            "amount_bn": 110.50814544116858,
+            "response": 1,
+            "effect_bn": 110.50814544116858
+          },
+          {
+            "id": "state_local_income_tax",
+            "national_bn": 536.167,
+            "key": "state_liability",
+            "share": 0.049476391666055955,
+            "response_class": "personal_income",
+            "group": "direct_receipts",
+            "amount_bn": 26.527608417168892,
+            "response": 1,
+            "effect_bn": 26.527608417168892
+          },
+          {
+            "id": "modeled_owner_property",
+            "national_bn": 394.862477949,
+            "key": "modeled_owner_property",
+            "share": 0.06813732247045644,
+            "response_class": "household_direct",
+            "group": "incidence_receipts",
+            "amount_bn": 26.90487211475465,
+            "response": 0.7726986463443216,
+            "effect_bn": 20.789358263138002
+          }
+        ],
+        "spending": [
+          {
+            "id": "snap",
+            "family": "social_benefits",
+            "national_bn": 97.391,
+            "key": "snap",
+            "share": 0.1516817828186819,
+            "keys": [
+              "cash_assistance",
+              "snap"
+            ],
+            "response_class": "household_transfer",
+            "group": "household_transfer",
+            "amount_bn": 14.62549462768213,
+            "response": 1,
+            "effect_bn": -14.62549462768213
+          },
+          {
+            "id": "energy_assistance",
+            "family": "social_benefits",
+            "national_bn": 5.218,
+            "key": "energy",
+            "share": 0.11702317363314903,
+            "keys": [
+              "cash_assistance",
+              "energy"
+            ],
+            "response_class": "household_transfer",
+            "group": "household_transfer",
+            "amount_bn": 0.6045528356789629,
+            "response": 1,
+            "effect_bn": -0.6045528356789629
+          },
+          {
+            "id": "housing_subsidies",
+            "family": "subsidies",
+            "national_bn": 55.003189000000006,
+            "key": "housing_support",
+            "share": 0.08243021290723411,
+            "keys": [
+              "housing_support",
+              "resources",
+              "wages"
+            ],
+            "response_class": "subsidy",
+            "group": "subsidy",
+            "amount_bn": 4.488824290011592,
+            "response": 1,
+            "effect_bn": -4.488824290011592
+          }
+        ]
+      }
+    ],
+    "cash": [
+      {
+        "spec": 16,
+        "specification": {
+          "allocation": "personal",
+          "normalization": "gdp",
+          "share": 0.7153278156243373,
+          "school": 1,
+          "gg": 0.6005266346459308,
+          "uc": "uninsured_use_low",
+          "justice": "use",
+          "reading": "low",
+          "rate": 0.02,
+          "long_run": "adopted",
+          "enterprises": "D",
+          "line_responses": {
+            "economic_affairs_services": 0.3844994797314016,
+            "recreation_culture": 0.8563914832367988,
+            "housing_subsidies": 1,
+            "receipt:enterprise_surplus": 1,
+            "receipt:housing_enterprise_surplus": 1,
+            "receipt:modeled_owner_property": 0.7726986463443216,
+            "receipt:tenant_occupied_property": 0.7189123969969125,
+            "receipt:personal_property_tax": 1,
+            "roads_vmt_sl": 0.7401981546463505,
+            "roads_vmt_fed": 0,
+            "state_price_public_order_safety": 1,
+            "state_price_health_services": 1,
+            "state_price_recreation_culture": 0.8563914832367988,
+            "receipt:corporate_capital": 1,
+            "receipt:corporate_labor": 1,
+            "receipt:remaining_production_property": 0.8806493775433665,
+            "receipt:other_production_taxes": 1
+          }
+        },
+        "receipts": [
+          {
+            "id": "federal_income_tax",
+            "national_bn": 2403.242,
+            "key": "federal_liability",
+            "share": 0.04680587930696423,
+            "response_class": "personal_income",
+            "group": "direct_receipts",
+            "amount_bn": 112.48585429785412,
+            "response": 1,
+            "effect_bn": 112.48585429785412
+          },
+          {
+            "id": "state_local_income_tax",
+            "national_bn": 536.167,
+            "key": "state_liability",
+            "share": 0.049476391666055955,
+            "response_class": "personal_income",
+            "group": "direct_receipts",
+            "amount_bn": 26.527608417168892,
+            "response": 1,
+            "effect_bn": 26.527608417168892
+          },
+          {
+            "id": "modeled_owner_property",
+            "national_bn": 394.862477949,
+            "key": "modeled_owner_property",
+            "share": 0.06813732247045644,
+            "response_class": "household_direct",
+            "group": "incidence_receipts",
+            "amount_bn": 26.90487211475465,
+            "response": 0.7726986463443216,
+            "effect_bn": 20.789358263138002
+          }
+        ],
+        "spending": [
+          {
+            "id": "snap",
+            "family": "social_benefits",
+            "national_bn": 97.391,
+            "key": "snap",
+            "share": 0.1516817828186819,
+            "keys": [
+              "cash_assistance",
+              "snap"
+            ],
+            "response_class": "household_transfer",
+            "group": "household_transfer",
+            "amount_bn": 14.62549462768213,
+            "response": 1,
+            "effect_bn": -14.62549462768213
+          },
+          {
+            "id": "energy_assistance",
+            "family": "social_benefits",
+            "national_bn": 5.218,
+            "key": "energy",
+            "share": 0.11702317363314903,
+            "keys": [
+              "cash_assistance",
+              "energy"
+            ],
+            "response_class": "household_transfer",
+            "group": "household_transfer",
+            "amount_bn": 0.6045528356789629,
+            "response": 1,
+            "effect_bn": -0.6045528356789629
+          },
+          {
+            "id": "housing_subsidies",
+            "family": "subsidies",
+            "national_bn": 55.003189000000006,
+            "key": "housing_support",
+            "share": 0.08243021290723411,
+            "keys": [
+              "housing_support",
+              "resources",
+              "wages"
+            ],
+            "response_class": "subsidy",
+            "group": "subsidy",
+            "amount_bn": 4.488824290011592,
+            "response": 1,
+            "effect_bn": -4.488824290011592
+          }
+        ]
+      },
+      {
+        "spec": 11,
+        "specification": {
+          "allocation": "personal",
+          "normalization": "cash",
+          "share": 0.8651608840454027,
+          "school": 1,
+          "gg": 0.8510539647701243,
+          "uc": "uninsured_use_high",
+          "justice": "use",
+          "reading": "high",
+          "rate": 0.03,
+          "long_run": "adopted",
+          "enterprises": "D",
+          "line_responses": {
+            "economic_affairs_services": 0.6387399411939584,
+            "recreation_culture": 1,
+            "housing_subsidies": 1,
+            "receipt:enterprise_surplus": 1,
+            "receipt:housing_enterprise_surplus": 1,
+            "receipt:modeled_owner_property": 0.7726986463443216,
+            "receipt:tenant_occupied_property": 0.7189123969969125,
+            "receipt:personal_property_tax": 1,
+            "roads_vmt_sl": 1,
+            "roads_vmt_fed": 1,
+            "state_price_public_order_safety": 1,
+            "state_price_health_services": 1,
+            "state_price_recreation_culture": 1,
+            "receipt:corporate_capital": 0.37,
+            "receipt:corporate_labor": 0.37,
+            "receipt:remaining_production_property": 0.8806493775433665,
+            "receipt:other_production_taxes": 1
+          }
+        },
+        "receipts": [
+          {
+            "id": "federal_income_tax",
+            "national_bn": 2403.242,
+            "key": "federal_liability",
+            "share": 0.04680587930696423,
+            "response_class": "personal_income",
+            "group": "direct_receipts",
+            "amount_bn": 112.48585429785412,
+            "response": 1,
+            "effect_bn": 112.48585429785412
+          },
+          {
+            "id": "state_local_income_tax",
+            "national_bn": 536.167,
+            "key": "state_liability",
+            "share": 0.049476391666055955,
+            "response_class": "personal_income",
+            "group": "direct_receipts",
+            "amount_bn": 26.527608417168892,
+            "response": 1,
+            "effect_bn": 26.527608417168892
+          },
+          {
+            "id": "modeled_owner_property",
+            "national_bn": 394.862477949,
+            "key": "modeled_owner_property",
+            "share": 0.06813732247045644,
+            "response_class": "household_direct",
+            "group": "incidence_receipts",
+            "amount_bn": 26.90487211475465,
+            "response": 0.7726986463443216,
+            "effect_bn": 20.789358263138002
+          }
+        ],
+        "spending": [
+          {
+            "id": "snap",
+            "family": "social_benefits",
+            "national_bn": 97.391,
+            "key": "snap",
+            "share": 0.1516817828186819,
+            "keys": [
+              "cash_assistance",
+              "snap"
+            ],
+            "response_class": "household_transfer",
+            "group": "household_transfer",
+            "amount_bn": 14.62549462768213,
+            "response": 1,
+            "effect_bn": -14.62549462768213
+          },
+          {
+            "id": "energy_assistance",
+            "family": "social_benefits",
+            "national_bn": 5.218,
+            "key": "energy",
+            "share": 0.11702317363314903,
+            "keys": [
+              "cash_assistance",
+              "energy"
+            ],
+            "response_class": "household_transfer",
+            "group": "household_transfer",
+            "amount_bn": 0.6045528356789629,
+            "response": 1,
+            "effect_bn": -0.6045528356789629
+          },
+          {
+            "id": "housing_subsidies",
+            "family": "subsidies",
+            "national_bn": 55.003189000000006,
+            "key": "housing_support",
+            "share": 0.08243021290723411,
+            "keys": [
+              "housing_support",
+              "resources",
+              "wages"
+            ],
+            "response_class": "subsidy",
+            "group": "subsidy",
+            "amount_bn": 4.488824290011592,
+            "response": 1,
+            "effect_bn": -4.488824290011592
+          }
+        ]
       }
     ]
   },

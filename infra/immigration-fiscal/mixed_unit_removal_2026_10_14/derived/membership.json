@@ -1,0 +1,191 @@
+{
+  "extra_children": 853467.553443,
+  "extra_children_se": 75514.1564272077,
+  "nonmember_claimant_extra_dependents": 278492.92629601,
+  "nonmember_claimant_latent_dependents": 205069.22071541002,
+  "latent_children_with_two_US_parents": 517863.29300860997,
+  "outside_existing_addition_definition": 335604.26043439,
+  "two_US_parent_fields_conflict_with_linked_Mexico_born_parent_records": 17,
+  "conflicting_parent_fields_child_count": 42995.711965660004,
+  "step_only_children_stay": 74754.41191116,
+  "step_only_se": 15658.900557697174,
+  "union_count_unchanged": 39712493.33118789,
+  "existing_addition_count_unchanged": 3039719.593185237,
+  "latent_residual": 2521856.300176627,
+  "latent_third_rate_roster": 250289.50678019,
+  "latent_later_loss_roster": 267573.78622842004,
+  "roster_g3_priced_count": 378527.12458407826,
+  "roster_white_priced_count": 139336.16842453176,
+  "latent_child_own_refundable_credit_key_bn": 0.0,
+  "latent_child_own_nonrefundable_credit_key_bn": 0.0,
+  "remaining_added_g3_priced_count": 1578471.2445311788,
+  "remaining_added_white_priced_count": 943385.0556454482,
+  "class_assignment": "earliest biological member-parent generation: G2 -> third-generation loss blend; G3+ -> later loss at G3+; C3 fixed case value",
+  "counterfactual_departure_count": 40565960.88463089,
+  "original_personal_costs_held": true,
+  "no_new_population_or_own_cost": true,
+  "adoption": "biological-link correction is observed; full departure mask is an arm until outside-latent children have an adopted own-cost rebase",
+  "overlap_rule": "union; disjoint roster latent subset; residual of fixed latent count; outside-definition departures separately identified, no second own cost",
+  "duplicate_1_033_claim": "head-record credit exposure is not evidence of a duplicate: added-age personal refundable key is carried by adult claimant ages, not by qualifying-child ages",
+  "white_rule": "crossing credits and D zero under existing case rule, assumed; a <=0.25bn white-credit sensitivity is not a verified bound on D",
+  "diagnostics_not_additive": [
+    "reverse_credit_reclassification",
+    "identity_child_credit_on_union_heads_diagnostic"
+  ],
+  "D_added_control_rule": "original D G3+ per identified member x existing added G3+-priced count; corrected D should use solved corrected mixed-couple vector",
+  "projection_replication": "frozen original full-sample per-member projection; roster counts vary through all160 replicates; C3 fixed",
+  "gates": [
+    {
+      "name": "extra_and_original_union_disjoint",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "extra_all_civilian_native_children",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "step_only_children_stay",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "expanded_count_exactly_union_plus_extra_all_columns",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "shared_latent_mask_agrees_with_generation_definition",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "latent_has_native_G2_or_G3_member_parent",
+      "passed": true,
+      "value": 0
+    },
+    {
+      "name": "latent_pricing_classes_have_nonnegative_residual_all_columns",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "roster_plus_unlocated_latent_closes_fixed_addition_all_columns",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "located_latent_children_own_credit_records_zero",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "latent_roster_subset_fits_existing_added_count_all_columns",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "observed_latent_and_other_children_partition_exactly_all_columns",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "projection_side_vectors_close_all_columns",
+      "passed": true,
+      "value": null
+    }
+  ],
+  "terms": {
+    "B_nonref": {
+      "bn": 0.33694796058262344,
+      "se_bn": 0.051553239879925924,
+      "by_generation_bn": [
+        0.04314131077608824,
+        0.14323755253020695,
+        0.15056909727632825
+      ]
+    },
+    "B_care": {
+      "bn": 0.015454121169093355,
+      "se_bn": 0.005071202901490767,
+      "by_generation_bn": [
+        0.00364621839794183,
+        0.008520242142196297,
+        0.0032876606289552277
+      ]
+    },
+    "B_actc": {
+      "bn": 0.09379412542676233,
+      "se_bn": 0.03113808570007426,
+      "by_generation_bn": [
+        0.00046631437349471433,
+        0.061063209775426994,
+        0.03226460127784062
+      ]
+    },
+    "B_eitc": {
+      "bn": 0.12282019300954936,
+      "se_bn": 0.045780377848276876,
+      "by_generation_bn": [
+        0.0,
+        0.08735367727339706,
+        0.0354665157361523
+      ]
+    },
+    "Cr_status": {
+      "bn": 0.0064058177229634975,
+      "se_bn": 0.0037868900486201116,
+      "by_generation_bn": [
+        0.0,
+        0.0029294638575043416,
+        0.0034763538654591563
+      ]
+    },
+    "reverse_credit_reclassification": {
+      "bn": 0.575422217910992,
+      "se_bn": 0.09679875196852024,
+      "by_generation_bn": [
+        0.047253843547524786,
+        0.30310414557873167,
+        0.22506422878473556
+      ]
+    },
+    "D_added_original_control": {
+      "bn": 0.3588053596216223,
+      "se_bn": 0.3073619888011754,
+      "by_generation_bn": [
+        0.0,
+        0.0,
+        0.3588053596216223
+      ]
+    },
+    "D_added_original_residual_control": {
+      "bn": 0.28940440190680783,
+      "se_bn": 0.24758888323433453,
+      "by_generation_bn": [
+        0.0,
+        0.0,
+        0.28940440190680783
+      ]
+    },
+    "M6_remove_roster_lineage_credit_projection": {
+      "bn": -0.08099344065128294,
+      "se_bn": 0.009493162204896786,
+      "by_generation_bn": [
+        0.0,
+        0.0,
+        -0.08099344065128294
+      ]
+    },
+    "identity_child_credit_on_union_heads_diagnostic": {
+      "bn": 0.697894418063614,
+      "se_bn": 0.10954248865261296,
+      "by_generation_bn": [
+        0.0,
+        0.35208460493893673,
+        0.3458098131246773
+      ]
+    }
+  }
+}

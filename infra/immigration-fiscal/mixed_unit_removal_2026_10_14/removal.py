@@ -15,6 +15,7 @@ import resource
 import subprocess
 import sys
 import time
+import types
 import zipfile
 from pathlib import Path
 
@@ -36,6 +37,11 @@ def load_module(path, name):
     sys.modules[name] = module
     spec.loader.exec_module(module)
     return module
+
+
+def runtime_api():
+    """Actual execution globals, including under cProfile/runpy drivers."""
+    return types.SimpleNamespace(**globals())
 
 
 def gate(name, passed, value=None):
@@ -99,7 +105,7 @@ def add_fields(d, c):
         cols = pd.read_csv(z.open('pppub25.csv'), nrows=0).columns
         gate('additional_CPS_fields_exist', set(fields) <= set(cols), sorted(set(fields) - set(cols)))
         extra = pd.read_csv(z.open('pppub25.csv'), usecols=[x for x in fields if x not in d or x in ['PH_SEQ', 'PPPOS']])
-        hh = pd.read_csv(z.open('hhpub25.csv'), usecols=['H_SEQ', 'HFOODMO', 'HFOODNO', 'HFDVAL', 'HFOODSP', 'H_TENURE'])
+        hh = pd.read_csv(z.open('hhpub25.csv'), usecols=['H_SEQ', 'HFOODMO', 'HFOODNO', 'HFDVAL', 'HFOODSP', 'H_TENURE','HPROP_VAL'])
     d = d.merge(extra, on=['PH_SEQ', 'PPPOS'], how='left', validate='one_to_one')
     d = d.merge(hh.drop(columns=[x for x in hh if x != 'H_SEQ' and x in d]), on='H_SEQ', how='left', validate='many_to_one')
     gate('additional_CPS_fields_join_every_person', not d[fields].isna().any().any())
@@ -202,14 +208,15 @@ def survivor_registry(d, R, union, gen, civ, drows, ri):
     return outR, own, kcounts, owner.T, details
 
 
-def original_item_parts(x):
+def original_item_parts(x, scope=None):
     """Full 161-column item 5b parts, not rounded CSV amounts or SE quadrature."""
     out = {'receipts': np.zeros((3, 161)), 'spending': np.zeros((3, 161))}
     for k, value in x['comp_ruled'].items():
         if k.startswith('D_'):
             continue
         for g in range(3):
-            out[x['side'][k]][g] += x['account'](value * x['owner'][k][g] * x['keep_of']('R3', k), k)
+            out[x['side'][k]][g] += x['account'](value * x['owner'][k][g] * x['keep_of']('R3', k)
+                                                * (1 if scope is None else scope), k)
     return out
 
 
@@ -231,21 +238,31 @@ def survivor_irs_cells(c, x, d, own, agi):
     never silently filled with a head's multiplier.
     """
     km, bench = x['km'], x['bench']
-    bf = km.benchmark_frame()
-    med = next(v for v in x['model']['spending']['lines'] if v['id'] == 'medicare')['national_bn']
-    per = med * 1e9 / bench.pwwgt0.to_numpy()[bench.MCARE.eq(1).to_numpy()].sum()
-    inc = bf.cbo_income(bench, per)
-    labels, adjusted = bf.cbo_groups(bench, inc)
-    boundaries = np.array([np.min(adjusted[labels == g]) for g in bf.GROUPS[1:-1]])
-    gate('CBO_fixed_rank_boundaries_ordered', bool(np.all(np.diff(boundaries) >= 0)))
-    idx = pd.Series(np.arange(len(bench)), index=pd.MultiIndex.from_frame(bench[['PH_SEQ', 'PPPOS']])).reindex(
-        pd.MultiIndex.from_frame(d[['PH_SEQ', 'PPPOS']])).to_numpy(int)
-    hh = pd.factorize(d.PH_SEQ)[0]
+    # This rank benchmark is held fixed by the scientific rule. Share its exact
+    # sufficient arrays across original/latent/full contexts in this one run;
+    # survivor-mask-dependent household groups are still recomputed below.
+    keys_sha=hashlib.sha256(d[['PH_SEQ','PPPOS']].to_numpy().tobytes()).hexdigest()
+    rank=x.get('_fixed_IRS_rank_context')
+    if rank is None:
+        bf = km.benchmark_frame()
+        med = next(v for v in x['model']['spending']['lines'] if v['id'] == 'medicare')['national_bn']
+        per = med * 1e9 / bench.pwwgt0.to_numpy()[bench.MCARE.eq(1).to_numpy()].sum()
+        inc = bf.cbo_income(bench, per)
+        labels, adjusted = bf.cbo_groups(bench, inc)
+        boundaries = np.array([np.min(adjusted[labels == g]) for g in bf.GROUPS[1:-1]])
+        gate('CBO_fixed_rank_boundaries_ordered', bool(np.all(np.diff(boundaries) >= 0)))
+        idx = pd.Series(np.arange(len(bench)), index=pd.MultiIndex.from_frame(bench[['PH_SEQ', 'PPPOS']])).reindex(
+            pd.MultiIndex.from_frame(d[['PH_SEQ', 'PPPOS']])).to_numpy(int)
+        rank={'keys_sha':keys_sha,'boundaries':boundaries,'income':inc[idx],
+              'household':pd.factorize(d.PH_SEQ)[0],'groups':np.array(bf.GROUPS[:-1])}
+        x['_fixed_IRS_rank_context']=rank
+    gate('CBO_in_run_rank_cache_person_keys_match',rank['keys_sha']==keys_sha)
+    boundaries, hh = rank['boundaries'],rank['household']
     non = ~x['union']
-    post = np.bincount(hh, weights=inc[idx] * non)
+    post = np.bincount(hh, weights=rank['income'] * non)
     size = np.bincount(hh, weights=non)
     eq = post / np.sqrt(np.maximum(size, 1))
-    g = np.array(bf.GROUPS[:-1])[np.searchsorted(boundaries, eq[hh[np.maximum(own, 0)]], side='right')]
+    g = rank['groups'][np.searchsorted(boundaries, eq[hh[np.maximum(own, 0)]], side='right')]
     g = np.where(post[hh[np.maximum(own, 0)]] < 0, 'negative', g)
     b19 = np.where(agi <= 0, 0, np.searchsorted(x['edges'], agi, side='right') + 1)
     b14 = np.where(b19 <= 1, 0, np.minimum(b19, 14) - 1)
@@ -361,9 +378,17 @@ def federal_removal(c, x, d):
                     'swap_scope': 'survivor tax calculation and IRS multiplier; changing the frozen baseline carrier changes its personal ledger by definition'})
     old_cell_after=af*factor*live*base_ratio
     head_cell=M1+weighted_generation_totals(old_cell_after-after_f,owner,ownW)*fit_line/mass
+    # Corrected D is a diagnostic subset of M1/M3, never an extra addend.
+    joint_scope=np.concatenate([joint_mixed,np.zeros(len(afterR)-len(R),bool)])
+    joint_item=original_item_parts(x,joint_mixed)
+    Df=(weighted_generation_totals(after_f*joint_scope,owner,ownW)
+        -weighted_generation_totals(before_f*joint_mixed,owner[:,:len(R)],oldW))*fit_line/mass-joint_item['receipts']
+    Dc=(weighted_generation_totals(before_cr*joint_mixed,owner[:,:len(R)],oldW)
+        -weighted_generation_totals(after_cr*joint_scope,owner,ownW))*x['per_ref']-joint_item['spending']
     # Keep directly comparable own-return ordinary-schedule alternative beside
     # the legal kernel as a disconfirmation check, not an adopted fallback.
-    return {'M1': M1, 'M3': M3, 'terms':{'M1_original_head_IRS_cell':head_cell},'details': details, 'afterR': afterR,
+    return {'M1': M1, 'M3': M3, 'D_corrected':Df+Dc,
+            'terms':{'M1_original_head_IRS_cell':head_cell},'details': details, 'afterR': afterR,
             'own': own, 'counts': counts, 'owner': owner, 'before_input':before_input,'after_input': after_input,
             'after_federal': af, 'after_refunds': ae+aa}
 
@@ -580,6 +605,7 @@ def input_pins():
         for rel,pin in entries.items():
             fullrel=('inputs/'+rel) if name=='benefit_pins.json' else rel
             candidates[fullrel]=pin
+    candidates.update(round2_source_pins())
     target=LANE/'inputs/pins.json'
     if not target.exists():
         write_json(target,candidates)
@@ -589,6 +615,41 @@ def input_pins():
         path=root/rel.removeprefix('repo:') if rel.startswith('repo:') else LANE/rel
         gate(f'input_sha_{rel}',path.exists() and sha(path)==pin['sha256'])
     return registered
+
+
+def round2_source_pins():
+    """One master acquisition inventory; preserve source-specific provenance."""
+    root=FISCAL.parents[1]
+    pins={}
+    for name in ('health_pins.json','tax_corrections_pins.json'):
+        data=json.loads((LANE/'inputs'/name).read_text())
+        for rel,value in data['files'].items():
+            pins['inputs/'+rel]=(value if isinstance(value,dict) else {'sha256':value,
+                                  'source':data['primary_url']})
+    resource=json.loads((LANE/'inputs/resource_pins.json').read_text())
+    for value in resource.values():
+        path=Path(value['path'])
+        pins['repo:'+str(path.relative_to(root))]={'sha256':value['sha256']}
+    members=json.loads((LANE/'inputs/membership_pension_pins.json').read_text())
+    for value in members['files']:
+        path=FISCAL/value['path']
+        pins['repo:'+str(path.relative_to(root))]={'sha256':value['sha256']}
+    return pins
+
+
+def register_round2_source_pins():
+    """Explicit append-only registration; existing hashes can never be renewed."""
+    target=LANE/'inputs/pins.json'
+    registered=json.loads(target.read_text())
+    added=0
+    for rel,pin in round2_source_pins().items():
+        if rel in registered:
+            gate('round2_registration_never_replaces_'+rel,registered[rel]['sha256']==pin['sha256'])
+        else:
+            registered[rel]=pin
+            added+=1
+    write_json(target,registered)
+    print(f'[pins] appended {added} round2 inputs; every existing hash preserved')
 
 
 def result_rows(c,components,case):
@@ -744,6 +805,13 @@ def main():
                       'Medicaid_CHIP_ACA_spending_identified':False,'added_persons':'held in primary result; G3 transport shown separately as assumption',
                       'interactions_bn':0.,'interaction_rule':'M1/M2/M3 solved on one shared after-return; item 5b subtracted once; SNAP uses gross income; fixed pre-removal consumption pool does not respond to taxes or benefits',
                       'unidentified_interactions':['consumption response to survivor taxes/refunds/SNAP','takeup/eligibility/ACA changes','identity-loss membership and aggregate substitution']}}
+    round2=load_module(LANE/'round2.py','mixed_removal_round2')
+    # cProfile executes this file in a separate globals dictionary: its
+    # sys.modules['__main__'] is cProfile, not the running removal namespace.
+    revised=round2.extend(runtime_api(),c,x,d,case,federal,state,benefit,consumption)
+    summary['round2']=revised
+    summary['recommended']='round2 bounded unified removal arm; adopt concrete operator corrections, retain counterfactual inputs as arms'
+    summary['stack']['label']='historical round1 partial stack; current unified envelope is round2'
     rss=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     rss_bytes=rss if sys.platform=='darwin' else rss*1024
     child_rss=resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss
@@ -752,6 +820,7 @@ def main():
     gate('process_peak_RSS_under_2_5GB',max(rss_bytes,child_bytes)<=2_500_000_000,{'limit_bytes':2_500_000_000})
     write_json(OUT/'summary.json',summary)
     write_report(summary)
+    round2.report(revised,case)
     write_json(OUT / 'probe.json', {'persons': len(d), 'columns': list(d), 'gates': GATES,
                                   'federal': federal['details'],
                                   'M1_bn': federal['M1'][:,0].tolist(),
@@ -759,9 +828,15 @@ def main():
     for k in ('M1','M2','M3','M4_conditional_SNAP','M5_fixed_pool','tax_only_stack','conditional_fixed_pool_stack'):
         v=components[k].sum(axis=0)
         print(f'[result] {k}: {v[0]:+.9f}bn SE {c.sdr(v):.9f}',flush=True)
-    print(f"[M6] {children['details']['candidate_children_million']:.6f}M candidate children; overlap unidentifiable",flush=True)
+    print(f"[round1 M6 diagnostic] {children['details']['candidate_children_million']:.6f}M candidate children; see round2 for the solved reconciliation",flush=True)
+    for method in ('set','cash'):
+        rows=[v for v in revised['results'] if v['method']==method and v['component'] in ('bounded_low','bounded_high')]
+        print(f"[round2] {method}: "+'; '.join(f"{v['end']} {v['component']} {v['case_total_bn']:.6f}bn delta {v['bn']:+.6f} SE {v['se_bn']:.6f}" for v in rows),flush=True)
     print(f'[runtime] {time.perf_counter()-start:.3f}s; peak RSS {resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024**2:.1f} MiB', flush=True)
 
 
 if __name__ == '__main__':
-    main()
+    if sys.argv[1:]==['--register-round2-inputs']:
+        register_round2_source_pins()
+    else:
+        main()
