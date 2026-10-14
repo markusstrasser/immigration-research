@@ -48,6 +48,7 @@ writes the outputs there instead of derived/.
 
 import argparse
 import ast
+import bisect
 import csv
 import hashlib
 import html
@@ -109,6 +110,20 @@ MASKS = [
     re.compile(r"\((?:\d{2,3})(?:, \d{2,3})*\)"),
     re.compile(r"\b(?=[0-9a-f]*[a-f])(?=[0-9a-f]*\d)[0-9a-f]{7}\b"),
 ]
+# A hash can be all digits (73934145, 4827413 since the 2026-10-08 rewrite); such a token is masked
+# only when it abbreviates a commit in this repository, so a bare quantity still meets the audit.
+DIGIT_HASH_RE = re.compile(r"(?<![\w.,])\d{7,12}(?![\w]|[.,]\d)")
+_COMMITS = []
+
+
+def is_commit(token):
+    """True when `token` abbreviates a commit on any ref (the pre-rewrite ref included)."""
+    if not _COMMITS:
+        out = subprocess.run(["git", "-C", str(ROOT), "rev-list", "--all"], capture_output=True, text=True,
+                             check=True)
+        _COMMITS.extend(sorted(out.stdout.split()))
+    i = bisect.bisect_left(_COMMITS, token)
+    return i < len(_COMMITS) and _COMMITS[i].startswith(token)
 
 
 YEAR_RE = re.compile(r"(?:19|20)\d\d(?:\s?[–-]\s?(?:(?:19|20)\d\d|\d\d)|\s+to\s+(?:19|20)\d\d)?")
@@ -116,9 +131,10 @@ YEAR_RE = re.compile(r"(?:19|20)\d\d(?:\s?[–-]\s?(?:(?:19|20)\d\d|\d\d)|\s+to\
 
 def mask(text):
     """Blank every masked span, keeping its line breaks so masked lines stay aligned with the text."""
+    blank = lambda x: re.sub(r"[^\n]", " ", x.group(0))  # noqa: E731
     for m in MASKS:
-        text = m.sub(lambda x: re.sub(r"[^\n]", " ", x.group(0)), text)
-    return text
+        text = m.sub(blank, text)
+    return DIGIT_HASH_RE.sub(lambda x: blank(x) if is_commit(x.group(0)) else x.group(0), text)
 
 
 def parse_part(s):
