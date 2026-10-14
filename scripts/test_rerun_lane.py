@@ -157,3 +157,26 @@ def test_output_stored_byte_for_byte_passes(tmp_path: Path) -> None:
     r = rerun(crlf_lane(tmp_path, "lane/derived/out.txt -text\n"))
     assert r.returncode == 0, r.stdout
     assert "[rerun] EOL" not in r.stdout
+
+
+def test_modules_a_run_script_loads_are_covered(tmp_path: Path) -> None:
+    # 2026-10-14 round-2 review: lanes exempted v7_split.cjs and age_routing.cjs with --allow-unrun because the check
+    # did not follow require(); a module a named script loads statically now counts as run.
+    repo = lane_repo(tmp_path)
+    (repo / "lane" / "main.cjs").write_text('const s = require("./split.cjs");\nconst a = require("./age");\n')
+    (repo / "lane" / "split.cjs").write_text('module.exports = require("./deep.cjs");\n')
+    (repo / "lane" / "deep.cjs").write_text("module.exports = 1;\n")
+    (repo / "lane" / "age.js").write_text("module.exports = 2;\n")
+    (repo / "lane" / "orphan.cjs").write_text("module.exports = 3;\n")
+    (repo / "lane" / "build.py").write_text("import helper\nfrom pkg import mod\n"
+                                            "open('lane/derived/out.txt', 'w').write('1\\n')\n")
+    (repo / "lane" / "helper.py").write_text("x = 1\n")
+    (repo / "lane" / "pkg").mkdir()
+    (repo / "lane" / "pkg" / "__init__.py").write_text("")
+    (repo / "lane" / "pkg" / "mod.py").write_text("from . import sib\n")
+    (repo / "lane" / "pkg" / "sib.py").write_text("y = 2\n")
+    (repo / "lane" / "unused.py").write_text("z = 3\n")
+    r = rerun(repo, "node {lane}/main.cjs")
+    assert r.returncode == 3, r.stdout
+    flagged = {line.split()[-1] for line in r.stdout.splitlines() if "NOT RUN" in line}
+    assert flagged == {"lane/orphan.cjs", "lane/unused.py"}, r.stdout

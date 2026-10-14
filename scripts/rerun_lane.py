@@ -19,6 +19,11 @@ New or modified scripts in the lane that no command names are listed as NOT RUN,
 3; a shell script a command runs (a run_all.sh) counts its text as named. Such a script is either still being written by a worker, or missing from the reproduce list; either
 way the rerun does not cover it (3589a4f took a half-written script from a running worker). Check
 `ListAgents` and the RESULT, then add a command or pass `--allow-unrun <path>` (repeatable).
+A module that a named script reaches through a static `require("./x.cjs")`, `import ... from "./x.mjs"` or
+Python `import x` (resolved beside the importing file) counts as run too: the round-2 review of 2026-10-14 found
+lanes exempting `v7_split.cjs` and `age_routing.cjs` with `--allow-unrun` because the check did not follow
+`require()`, so an exemption kept passing after a caller stopped loading the module. Dynamic paths
+(`require(path.join(...))`, `sys.path` edits) are not followed; those still need a command or an exemption.
 
 Commands run with UV_OFFLINE=1, so `uv run --with <pkg>` takes packages from uv's cache instead of
 asking PyPI on every call. On 2026-09-29 a PyPI connect timeout failed two white_replacement reruns
@@ -35,8 +40,10 @@ state. Write LF (`csv.writer(f, lineterminator="\\n")`), or list a pinned raw do
 """
 from __future__ import annotations
 
+import ast
 import filecmp
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -54,10 +61,72 @@ def wrapper_texts(cmds: list[str]) -> list[str]:
             if tok.endswith(".sh") and (ROOT / tok).is_file()]
 
 
+JS_SPEC = re.compile(r"""(?:\brequire\(\s*|\bimport\s*\(\s*|\bfrom\s+|^\s*import\s+)(['"])([^'"]+)\1""", re.M)
+JS_SUFFIXES = ("", ".cjs", ".js", ".mjs", ".json")
+
+
+def js_deps(path: Path) -> set[Path]:
+    """Files a JavaScript module loads through a literal relative specifier (packages are skipped)."""
+    deps = set()
+    for _, spec in JS_SPEC.findall(path.read_text(errors="replace")):
+        if not spec.startswith("."):
+            continue
+        base = path.parent / spec
+        for cand in [base.with_name(base.name + s) for s in JS_SUFFIXES] + [base / "index.js"]:
+            if cand.is_file():
+                deps.add(cand.resolve())
+                break
+    return deps
+
+
+def py_deps(path: Path) -> set[Path]:
+    """Modules a Python script imports that sit beside it (sys.path[0] for a script) or in a relative package."""
+    try:
+        tree = ast.parse(path.read_text(errors="replace"))
+    except SyntaxError:
+        return set()
+    names: list[tuple[str, int]] = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            names += [(a.name, 0) for a in node.names]
+        elif isinstance(node, ast.ImportFrom):
+            mod = node.module or ""
+            names += [(mod, node.level)] + [(f"{mod}.{a.name}" if mod else a.name, node.level) for a in node.names]
+    deps = set()
+    for name, level in names:
+        if not name:
+            continue
+        base = path.parent if level <= 1 else path.parents[level - 1]
+        cand = base.joinpath(*name.split("."))
+        for c in (cand.with_suffix(".py"), cand / "__init__.py"):
+            if c.is_file():
+                deps.add(c.resolve())
+    return deps
+
+
+def reached_files(cmds: list[str]) -> set[Path]:
+    """Every file the commands name (directly or through a shell script they run), closed over static loads."""
+    todo = [(ROOT / tok.strip("'\";()")).resolve() for text in cmds + wrapper_texts(cmds) for tok in text.split()]
+    todo = [p for p in todo if p.suffix in SCRIPT_SUFFIXES and p.is_file()]
+    seen: set[Path] = set()
+    while todo:
+        p = todo.pop()
+        if p in seen:
+            continue
+        seen.add(p)
+        if p.suffix in {".cjs", ".mjs", ".js"}:
+            todo += js_deps(p)
+        elif p.suffix == ".py":
+            todo += py_deps(p)
+    return seen
+
+
 def unrun_scripts(lane: Path, cmds: list[str], allowed: set[str]) -> list[str]:
-    """New or modified scripts under the lane that no command, or shell script a command runs, names."""
+    """New or modified scripts under the lane that no command, shell script a command runs, or module those load
+    names."""
     r = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all", "--", str(lane)],
                        cwd=ROOT, capture_output=True, text=True, check=True)
+    reached = reached_files(cmds)
     cmds = cmds + wrapper_texts(cmds)
     out = []
     for line in r.stdout.splitlines():
@@ -65,7 +134,7 @@ def unrun_scripts(lane: Path, cmds: list[str], allowed: set[str]) -> list[str]:
         p = Path(path)
         if p.suffix not in SCRIPT_SUFFIXES or {"_cache", "__pycache__", "node_modules"} & set(p.parts):
             continue
-        if path in allowed or p.name in allowed or any(p.name in c for c in cmds):
+        if path in allowed or p.name in allowed or any(p.name in c for c in cmds) or (ROOT / p).resolve() in reached:
             continue
         out.append(path)
     return out
