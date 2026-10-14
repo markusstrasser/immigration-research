@@ -9,13 +9,14 @@ Assumed: the group's 2024 per-person position relative to the nation. Three rule
 
   flat    per-person cost constant in 2024 dollars
   ratio   receipts and charged spending keep their 2024 ratios to national per capita
-  income  as ratio, with the receipts ratio scaled by the group's measured
-          per-capita income relative to the nation (unit elasticity)
+   income  as ratio, with receipts scaled by relative per-capita income (unit
+           elasticity). Live oct15 additionally applies per-part pension rules:
+           Part A worker counts, OASDI workers x finite PIA earnings response.
 
 This is not a measured historical account. No year before 2024 has group taxes,
 benefits or services observed here.
 
-Cases (--case), one entry each in LATER_CASES. The default is oct14, the live personal case, written to derived/oct14/.
+Cases (--case), one entry each in LATER_CASES. The default is oct15, the live personal case, written to derived/oct15/.
 Its historical base and items are separate components; the superseded oct07 concepts are not computed beside it.
 Explicit earlier-case commands remain available for scratch regressions. sept27 adds the main case of 2026-09-27
 as the `*_sept27_*` concepts: the schools case's cost at the case's end specifications under these
@@ -53,6 +54,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
+import sys
 from functools import lru_cache
 from pathlib import Path
 from typing import NamedTuple
@@ -106,6 +109,7 @@ SEPT29_LANE = "main_case_2026_09_29"
 OCT05_LANE = "main_case_2026_10_05"
 OCT07_LANE = "main_case_2026_10_07"
 OCT14_LANE = "main_case_2026_10_14"
+OCT15_LANE = "main_case_2026_10_15"
 LATER_CASES = {"sept26": Case("main_case_2026_09_26", "_sept26_", "adopted_2026_09_24", "_corrected_", "adopted_2026_09_24"),
                "sept26_schools": Case("main_case_schools_full_2026_09_26", "_schools_full_", "adopted_2026_09_26",
                                       "_sept26_", "adopted_2026_09_26"),
@@ -124,13 +128,19 @@ LATER_CASES = {"sept26": Case("main_case_2026_09_26", "_sept26_", "adopted_2026_
                "oct07": Case(OCT07_LANE, "_oct07_", "schools_case", "_schools_full_", "adopted_2026_09_26_schools",
                              "case_components_oct07.json", "adopted_2026_09_27", "oct07", True, True),
                "oct14": Case(OCT14_LANE, "_oct14_", "schools_case", "_schools_full_", "adopted_2026_09_26_schools",
-                             "case_components_oct14.json", "adopted_2026_09_27", "oct14", True, True)}
-DEFAULT_CASE = "oct14"
+                             "case_components_oct14.json", "adopted_2026_09_27", "oct14", True, True),
+               "oct15": Case(OCT15_LANE, "_oct15_", "schools_case", "_schools_full_", "adopted_2026_09_26_schools",
+                             "case_components_oct15.json", "adopted_2026_09_27", "oct15", True, True)}
+DEFAULT_CASE = "oct15"
 # October 5: the identified third-plus generation by year (CPS ASEC, cps_g3plus_path.py), the lineage's path.
 G3PLUS_PATH = HERE / "inputs/cps_g3plus_path.csv"
 # The concepts carried per member of each case's lineage, under the ratio and income rules.
 PER_LINEAGE_MEMBER = {case: tuple(f"net_cost_cbo_informed_{case}_{end}" for end in ("low", "high"))
-                      for case in ("oct07", "oct14")}
+                      for case in ("oct07", "oct14", "oct15")}
+INCOME_RECEIPTS = {"federal_income_tax", "state_local_income_tax", "employee_oasdi", "employee_hi",
+                   "employer_oasdi", "employer_hi", "self_employment_oasdi_hi", "other_domestic_social_contributions",
+                   "corporate_capital", "corporate_labor", "remaining_production_property", "other_production_taxes",
+                   "general_sales_tax", "excise_selective_sales", "customs_duties", "personal_current_transfers"}
 # A case's additions and the national series each is carried back with: the account's own source cell
 # (full_account_spending_2026_09_20/derived/categories.csv; the receipt in model.json), real, 2024 = 1,
 # times the group's population-share path, the share path this back-cast gives every line. The capital
@@ -170,7 +180,9 @@ V4_RECEIPT_CELLS = {
     "corporate_capital": "T30100-A:5", "corporate_labor": "T30100-A:5",
     "general_sales_tax": "T30500-A:20", "excise_selective_sales": "T30500-A:4;T30500-A:23", "customs_duties": "T30500-A:15",
     "modeled_owner_property": "T30300-A:9", "remaining_production_property": "T30300-A:9",
-    "tenant_occupied_property": "T30300-A:9", "personal_current_transfers": "T30100-A:17"}
+    "tenant_occupied_property": "T30300-A:9", "personal_current_transfers": "T30100-A:17",
+    # Full-account receipt builder's primary declarations, newly nonzero in v8.
+    "government_asset_income": "T30100-A:10", "business_current_transfers": "T30100-A:16"}
 # Receipt lines that are a part of their cell rather than all of it: the property-tax lines of S&L property taxes.
 V4_CARVED = ("modeled_owner_property", "remaining_production_property", "tenant_occupied_property")
 V4_HOUSING = ("T30800-A:13", "T31300-A:4")      # public housing's deficit; federal housing subsidies
@@ -183,9 +195,9 @@ V4_GDP = ("T10105-A:1", 29298.013)            # nominal GDP and its 2024 value i
 def later_cases(case: str) -> list[str]:
     """The cases after September 24 up to and including `case`, in adoption order."""
     names = list(LATER_CASES)
-    if case == "oct14":
+    if case in ("oct14", "oct15"):
         # Keep the starting schools-case dependency, but compute no superseded consumer case beside the live one.
-        return ["sept26", "sept26_schools", "oct14"]
+        return ["sept26", "sept26_schools", case]
     return names[:names.index(case) + 1] if case in LATER_CASES else []
 
 
@@ -240,6 +252,14 @@ def response_anchors(case: str) -> dict[str, float]:
         profiles = case_profiles(later)
         published = {p: summary_c["main_case"] if name == "net_cost_cbo_informed" else summary_c["other_profiles"][p]["adopted"]
                      for name, p in profiles.items()}
+        if later == 'oct15':
+            # v8 leaves legacy other_profiles in its inherited summary. Its live
+            # alternative profile is the independently evaluated native bridge,
+            # already gated to the adopted profile CSV, never that old field.
+            principal = case_parts(later)['concepts']
+            published = {p: summary_c['v8']['band_bn'] if name == 'net_cost_cbo_informed'
+                         else [principal[name]['ends'][end]['cost_bn'] for end in ('low', 'high')]
+                         for name, p in profiles.items()}
         for name, profile in profiles.items():
             # Each case starts from the band the previous case's concepts carry.
             if not np.allclose(base.loc[profile, ["cost_low_bn", "cost_high_bn"]].to_numpy(float),
@@ -350,7 +370,34 @@ def v4_series(data: dict, book: pd.ExcelFile, gdp_book: pd.ExcelFile, real: pd.S
     out = {}
     for part, p in parts.items():
         lid, want = p["line"], p["national_bn"]
-        if p["rule"] == "per_person":
+        if p["rule"] == "capital":
+            continue  # v8 capital carriers take the exact component stock below.
+        if p['rule'] == 'composite_receipts':
+            weights, amounts = p['composite_cells'], p['composite_national_bn']
+            if abs(sum(weights.values()) - 1) > 1e-12 or set(weights) != set(amounts):
+                raise ValueError(f'[BLOCKED] {part}: invalid composite receipt declaration')
+            paths = []
+            for ref, weight in weights.items():
+                source = checked_years(cells(ref), part + ':' + ref)
+                if abs(source[2024] - amounts[ref]) > 1e-3:
+                    raise ValueError(f'[BLOCKED] {part}: composite national anchor {ref}')
+                paths.append(weight * source * real / source[2024])
+            out[part] = sum(paths)
+            continue
+        if p['rule'] == 'non_eip_credits':
+            from p7_backcast import pandemic_amounts
+            pins = json.loads((HERE / 'inputs/pins.json').read_text())
+            for entry in pins.values():
+                if hashlib.sha256((HERE / entry['path']).read_bytes()).hexdigest() != entry['sha256']:
+                    raise ValueError('[BLOCKED] non-EIP primary source changed: ' + entry['path'])
+            nominal = checked_years(cells(categories.loc[lid, 'source_cells']), part)
+            for year, paid in pandemic_amounts().items():
+                nominal[year] -= paid
+            if not nominal.gt(0).all() or abs(nominal[2024] - want) > 1e-3:
+                raise ValueError(f'[BLOCKED] {part}: non-EIP refundable-credit source')
+            out[part] = checked_years(nominal, part) * real / nominal[2024]
+            continue
+        if p["rule"] in ("per_person", "coverage"):
             if people is None or abs(people[2024] - 1) > 1e-12:
                 raise ValueError(f"[BLOCKED] {part}: no resident population path (2024 = 1) to hold it per person")
             out[part] = people.reindex(YEARS)
@@ -383,6 +430,8 @@ def v4_series(data: dict, book: pd.ExcelFile, gdp_book: pd.ExcelFile, real: pd.S
             # NIPA 3.5 line 17 is not this total; retain every component and gate the result to the account.
             nominal = cells("T30500-A:1") - cells("T30500-A:20;T30500-A:38;T30500-A:4;T30500-A:23;T30500-A:15")
         elif lid in V4_RECEIPT_CELLS:
+            if want is None:
+                want = receipt_national[lid]
             nominal = cells(V4_RECEIPT_CELLS[lid])
             if lid in ("corporate_capital", "corporate_labor"):
                 # CBO's incidence splits one measured corporate-tax line into two account lines. Each follows
@@ -441,6 +490,11 @@ def carried_parts(case: str, book: pd.ExcelFile, real: pd.Series, share: pd.Seri
         index.update(v4_series(data, book, gdp_book, real, categories, receipt_national, "v6", lineage["people"]))
     components = next(iter(data["concepts"].values()))["components"]
     stock = capital_paths(real, components)
+    if case == "oct15":
+        for block in data["concepts"].values():
+            for part, info in block["v6_parts"].items():
+                if info["rule"] == "capital":
+                    index[part] = stock[info["component"]]
     out = {}
     for concept, v in data["concepts"].items():
         paths6 = {part: p["path"] for part, p in v.get("v6_parts", {}).items()}
@@ -453,7 +507,9 @@ def carried_parts(case: str, book: pd.ExcelFile, real: pd.Series, share: pd.Seri
             if c.items and any(part.startswith("v6_") and part not in paths6 for part in e["additions_bn"]):
                 raise ValueError(f"[BLOCKED] {concept}: an item part has no path")
             ours = [part for part in e["additions_bn"] if c.lineage and (part.startswith("v5_") or paths6.get(part) == "lineage")]
-            parts = {part: e["additions_bn"][part] * index[part] * (lineage["share"] if part in ours else share)
+            g3path = {part for part, p in v.get("v6_parts", {}).items()
+                      if p.get("population_path") == "g3plus" and part in e["additions_bn"]}
+            parts = {part: e["additions_bn"][part] * index[part] * (lineage["share"] if part in ours or part in g3path else share)
                      for part in e["additions_bn"]}
             own = {part: e["additions_bn"][part] for part in ours}
             lineage_parts = {part: parts[part] for part in ours}
@@ -473,7 +529,8 @@ def carried_parts(case: str, book: pd.ExcelFile, real: pd.Series, share: pd.Seri
                     own[f"capital_{group}"] = own[f"capital_{group}"] + sum(k6["lineage"][i] for i in ids)
                     lineage_parts[f"capital_{group}"] += sum(k6["lineage"][i] * stock[i] for i in ids) * lineage["share"]
             out[f"{concept}{c.tag}{end}"] = dict(base=e["base_bn"], parts=parts,
-                                                 **({"lineage_2024": own, "lineage_parts": lineage_parts} if c.lineage else {}))
+                                                 **({"lineage_2024": own, "lineage_parts": lineage_parts,
+                                                     "g3path_2024": {part: e["additions_bn"][part] for part in g3path - set(ours)}} if c.lineage else {}))
     return out
 
 
@@ -493,6 +550,267 @@ def anchors(allocation: str) -> dict[str, float]:
                 gap=-float(a.normalized_gap_bn))
 
 
+def check_resource_rate_switch():
+    if "BACKCAST_RATE_ANCHOR" in os.environ:
+        raise ValueError("[BLOCKED] BACKCAST_RATE_ANCHOR retired: DFII10 is a financing-cost sensitivity, not the live resource rate")
+
+
+def apply_corrected_stack(annual, carried, book, real, share, income):
+    """Fixed 2%/3% resource return, charged base and per-part income rules.
+
+    Financing yields remain in separate sensitivity columns, including their
+    explicit 2024 anchor movement. They never alter the live resource account.
+    """
+    from backcast_categories import Cells
+    from pension_transport import income_paths, part_factor, part_group
+    from round2_programme import inputs as programme_inputs, branch_paths, new_measured_parts
+
+    check_resource_rate_switch()
+    paths, pension_audit = income_paths(annual.relative_per_capita_income)
+    pins = json.loads((HERE / "inputs/pins.json").read_text())
+    entry = next(p for p in pins.values() if p["path"].endswith("DFII10.csv"))
+    raw = HERE / entry["path"]
+    if hashlib.sha256(raw.read_bytes()).hexdigest() != entry["sha256"]:
+        raise ValueError("[BLOCKED] historical capital rate source changed")
+    daily = pd.read_csv(raw)
+    daily["year"] = pd.to_datetime(daily.iloc[:, 0]).dt.year
+    daily["yield"] = pd.to_numeric(daily.DFII10, errors="coerce")
+    obs = daily.groupby("year")["yield"].agg(["mean", "count"]).reindex(YEARS)
+    if not obs["count"].between(245, 265).all():
+        raise ValueError("[BLOCKED] historical capital rate lacks a full year")
+    rates = checked_years(obs["mean"] / 100, "historical_yield").clip(lower=0)
+    cells = Cells(book)
+    total = series(book, "T30100-A", "Current expenditures").reindex(YEARS) / 1e3
+    excluded = sum(cells.get(ref) for ref in ("T31700-A:3", "T30100-A:27", "T30100-A:30"))
+    prior_charged = total - excluded
+    prior_change = (prior_charged * real / prior_charged[2024] - total * real / total[2024]) * share
+    cats = pd.read_csv(FISCAL / "full_account_spending_2026_09_20/derived/categories.csv").drop_duplicates("category").set_index("category")
+    data = case_parts("oct15")
+    # These cash benefits do not respond on accrual; the other categories are
+    # priced on separate component paths, so never belong to the residual base.
+    separate = {"social_security", "medicaid_and_chip_other_medical", "housing_subsidies",
+                "economic_affairs_services", "recreation_culture"}
+    carried_national = sum(cells.get(cats.loc[lid, "source_cells"]) for lid in separate)
+    cash_hi = cells.get(cats.loc["medicare", "source_cells"]) * data["pension_accrual"]["part_a_share"]
+    excluded += carried_national + cash_hi
+    charged = total - excluded
+    if not charged.gt(0).all() or (charged + excluded - total).abs().max() > 1e-9:
+        raise ValueError("[BLOCKED] corrected charged-base national closure")
+    change = (charged * real / charged[2024] - total * real / total[2024]) * share
+    receipts = json.loads((FISCAL / "main_case_schools_full_2026_09_26/derived/summary.json").read_text())["group_receipts_bn"]["adopted"]["shared"]
+    diagnostic, comparison, classification, previous_values = [], [], [], {}
+    programme_old, measured_use = programme_inputs()
+    branch_audit, added_base_audit, new_use_audit, descendant_audit, charged_reconciliation = [], [], [], [], []
+    previous = pd.read_csv(HERE / "derived/oct14/backcast_annual.csv").set_index("year")
+    previous_windows = pd.read_csv(HERE / "derived/p7/windows.csv")
+    for name, split in carried.items():
+        concept = name.removesuffix("_low").removesuffix("_high").removesuffix("_oct15")
+        metadata = {k: p for prefix in ("v4", "v5", "v6") for k, p in data["concepts"][concept][prefix + "_parts"].items()}
+        linked = {k for k, p in metadata.items() if p["rule"] == "accrual"
+                  or p.get('income_linked') is True
+                  or (p["side"] == "receipt" and p["line"] in INCOME_RECEIPTS)
+                  or (p["side"] == "production" and p["line"] == "induced_receipts_bn")}
+        for part, info in metadata.items():
+            if info['rule'] == 'accrual':
+                kind = info.get('contributions')
+                if kind not in ('oasdi', 'hi'):
+                    raise ValueError(f'[BLOCKED] {part}: accrual lacks its source-specific income rule')
+                rule_name = 'PartA workers/member under65' if kind == 'hi' else 'OASDI all-age workers/member x finite PIA earnings response'
+            elif part in linked:
+                rule_name = 'unit ACS relative-income elasticity'
+            elif info.get('item') == 'retiree_health':
+                rule_name = 'zero extra group-income response; national OPEB price swap follows function series and fixed service key'
+            else:
+                rule_name = 'zero extra group-income response; source national/key/population path retained'
+            classification.append(dict(concept=concept, part=part, source_line=info['line'], side=info['side'],
+                                       source_rule=info['rule'], contribution=info.get('contributions', ''),
+                                       population_proxy=part_group(part, info), income_rule=rule_name))
+        capital = {k for k, p in metadata.items() if p["rule"] == "capital"}
+        original_ratio = sum(split["by_rule"]["ratio"].values()).copy()
+        original_parts = {k: v.copy() for k, v in split["by_rule"]["ratio"].items()}
+        added_spending = sum(v[2024] for k, v in split.get("lineage_parts", {}).items()
+                             if k in metadata and metadata[k]["side"] == "spending")
+        # Every added expenditure is already a typed component with its own
+        # national programme path. Its gross base is explicit, residual zero.
+        added_base_audit.append(dict(concept=name, gross_added_expenditure_2024_bn=added_spending,
+                                     separately_carried_added_expenditure_2024_bn=added_spending,
+                                     residual_added_expenditure_2024_bn=0.0,
+                                     broad_sigma_without_carrier_exclusion_2015_2024_bn=(added_spending * prior_change).loc[2015:2024].sum()))
+        for rule, parts in split["by_rule"].items():
+            parts = {k: v.copy() for k, v in parts.items()}
+            legacy = {k: v.copy() for k, v in parts.items()}
+            if rule != "flat":
+                parts["base"] += (split["base"] + receipts) * change
+                legacy["base"] += (split["base"] + receipts) * prior_change
+            unit = {k: v.copy() for k, v in parts.items()}
+            median = {k: v.copy() for k, v in parts.items()}
+            wage_only = {k: v.copy() for k, v in parts.items()}
+            if rule == "income":
+                for k in sorted(linked):
+                    if k in parts:
+                        original = parts[k].copy()
+                        unit[k] *= income
+                        legacy[k] *= income
+                        parts[k] *= part_factor(k, metadata[k], paths)
+                        median[k] *= part_factor(k, metadata[k], paths, "median_earnings_proxy")
+                        wage_only[k] *= part_factor(k, metadata[k], paths, "wage_only_earnings_per_worker")
+                        diagnostic += [dict(concept=name, part=k, year=y, rule=metadata[k]["rule"],
+                                            contributions=metadata[k].get("contributions", ""),
+                                            before_unit_delta_bn=unit[k][y] - original[y],
+                                            after_delta_bn=parts[k][y] - original[y]) for y in YEARS]
+            split["by_rule"][rule] = parts
+            live = sum(parts.values())
+            financing = sum(v * rates / 0.02 if name.endswith("_low") and
+                            (k.startswith("capital_") or k in capital) else v for k, v in parts.items())
+            before = sum(v * rates / 0.02 if name.endswith("_low") and
+                          (k.startswith("capital_") or k in capital) else v for k, v in legacy.items())
+            scenarios = {"live_fixed_resource_rates": live, "before_unit_income_fixed_rates": sum(unit.values()),
+                         "financing_cost_dfii10_floor0_beside": financing,
+                         "previous_unit_income_dfii10_stack": before,
+                         "median_earnings_proxy_beside": sum(median.values()),
+                         "wage_only_worker_split_beside": sum(wage_only.values())}
+            annual[f"{name}__{rule}"] = live
+            annual[f"{name}__{rule}__financing_dfii10_beside"] = financing
+            for scenario, values in scenarios.items():
+                if not np.isfinite(values).all():
+                    raise ValueError(f"[BLOCKED] nonfinite round2 {scenario}")
+                comparison += [dict(concept=name, rule=rule, scenario=scenario, year=y, cost_bn=values[y]) for y in YEARS]
+            old_end = "low" if name.endswith("_low") else "high"
+            if concept == "net_cost_cbo_informed":
+                old = previous_windows[(previous_windows.end == old_end) & (previous_windows.rule == rule)
+                                       & (previous_windows.population == "lineage") & (previous_windows.scenario == "stack")]
+                if len(old) != 1:
+                    raise ValueError("[BLOCKED] prior 74ce1f67 stack row absent or duplicated")
+                previous_values[(name, rule)] = float(old.iloc[0]["10y_2015_2024_bn"])
+        if concept == "net_cost_cbo_informed":
+            end = "low" if name.endswith("_low") else "high"
+            branches = branch_paths(programme_old, end, "lineage")
+            prog = branches["programme_measured"]
+            old_ratio = previous[f"net_cost_cbo_informed_oct14_{end}__ratio"]
+            # A declared transport overlay, not an independent oct15 programme
+            # estimation: new pieces retain their own national paths; fixed
+            # resource rates and charged base remain in the oct15 anchor.
+            overlay = prog - old_ratio
+            # The archived annual ratio was rounded to four decimals whereas
+            # programme lines retain full precision. Remove only this known
+            # 2024 precision offset before transporting its displacement.
+            precision = -overlay[2024] * annual.group_millions / annual.group_millions[2024]
+            if precision.abs().max() > 1e-4:
+                raise ValueError("[BLOCKED] programme anchor discrepancy exceeds published rounding")
+            overlay += precision
+            new_parts, new_audit = new_measured_parts(original_parts, metadata, measured_use, end)
+            new_use = sum(new_parts.values()) - sum(original_parts.values())
+            new_use_audit += [dict(concept=name, **row) for row in new_audit]
+            # Programme replaces the broad charged-base change; adding both is
+            # double counting. Known new school/Medicaid parts get measured use.
+            vals = original_ratio + overlay + new_use
+            annual[f"{name}__programme_beside"] = vals
+            comparison += [dict(concept=name, rule="programme", scenario="v7_measured_programme_overlay_beside",
+                                year=y, cost_bn=vals[y]) for y in YEARS]
+            old = previous_windows[(previous_windows.end == end) & (previous_windows.rule == "programme")
+                                   & (previous_windows.population == "lineage") & (previous_windows.scenario == "programme_measured")]
+            if len(old) != 1:
+                raise ValueError("[BLOCKED] prior programme row absent or duplicated")
+            previous_values[(name, "programme")] = float(old.iloc[0]["10y_2015_2024_bn"])
+            # Apply the same current per-part income correction to this declared
+            # overlay; its source programme displacement itself is held fixed.
+            old_lines = programme_old[(programme_old.end == end) & (programme_old.population == "lineage")
+                                      & (programme_old.rule == "programme") & (programme_old.variant == "programme_measured")]
+            receipt_lines = old_lines[old_lines.part.isin([f"receipts:{lid}" for lid in INCOME_RECEIPTS] + ["production_receipts"])]
+            receipt_income = receipt_lines.groupby("year").cost_bn.sum().reindex(YEARS, fill_value=0) * (income - 1)
+            vals_income, joint_unit = vals + receipt_income, vals + receipt_income
+            for k in sorted(linked):
+                info = metadata[k]
+                if k not in new_parts:
+                    continue
+                new_item = info.get("item") in ("foreign_source_tax", "union_completion", "mixed_unit_removal", "coverage")
+                if info["rule"] == "accrual" or new_item:
+                    vals_income += new_parts[k] * (part_factor(k, info, paths) - 1)
+                    joint_unit += new_parts[k] * (income - 1)
+            annual[f"{name}__programme_income_beside"] = vals_income
+            comparison += [dict(concept=name, rule="programme_income", scenario="v7_measured_programme_overlay_beside",
+                                year=y, cost_bn=vals_income[y]) for y in YEARS]
+            old = previous_windows[(previous_windows.end == end) & (previous_windows.rule == "programme_income")
+                                   & (previous_windows.population == "lineage") & (previous_windows.scenario == "programme_measured")]
+            if len(old) != 1:
+                raise ValueError("[BLOCKED] prior programme-income row absent or duplicated")
+            previous_values[(name, "programme_income")] = float(old.iloc[0]["10y_2015_2024_bn"])
+            annual[f"{name}__joint_stack"] = vals_income
+            if abs(vals_income[2024] - original_ratio[2024]) > 1e-9:
+                raise ValueError(f"[BLOCKED] joint programme anchor {name}")
+            old_union = branch_paths(programme_old, end, "union")["programme_measured"]
+            gap = prog - old_union
+            for k, info in metadata.items():
+                if k not in split.get("lineage_parts", {}):
+                    continue
+                own_path = split["lineage_parts"][k]
+                if info.get("item") in ("foreign_source_tax", "union_completion", "mixed_unit_removal", "coverage"):
+                    gap += new_parts.get(k, own_path)
+                if k in linked:
+                    gap += own_path * (part_factor(k, info, paths) - 1)
+                    if k in new_parts:
+                        gap += (new_parts[k] - original_parts[k]) * (part_factor(k, info, paths) - 1)
+            descendant_audit += [dict(concept=name, year=y, lineage_minus_union_bn=gap[y],
+                                      lower_ratio_20pct_change_bn=-0.2 * gap[y]) for y in YEARS]
+            comparison += [dict(concept=name, rule="joint", scenario="live_programme_measured_per_part_income",
+                                year=y, cost_bn=vals_income[y]) for y in YEARS]
+            comparison += [dict(concept=name, rule="joint", scenario="programme_measured_before_unit_income",
+                                year=y, cost_bn=joint_unit[y]) for y in YEARS]
+            previous_values[(name, "joint")] = previous_values[(name, "income")]
+            pieces = {
+                "programme_spending": branches["programme"] - old_ratio,
+                "pandemic_measured": branches["programme_pandemic"] - branches["programme"],
+                "historical_school_medicaid": branches["programme_measured"] - branches["programme_pandemic"],
+                "new_known_use_keys": new_use,
+                "per_part_income": vals_income - vals,
+                "precision_anchor": precision,
+            }
+            residual = vals_income - original_ratio - sum(pieces.values())
+            if residual.abs().max() > 1e-9:
+                raise ValueError("[BLOCKED] programme/charged branch reconciliation")
+            charged_delta = annual[f"{name}__ratio"] - original_ratio
+            programme_delta = sum(v for k, v in pieces.items() if k != 'per_part_income')
+            replaced = vals - annual[f"{name}__ratio"]
+            closure = replaced - programme_delta + charged_delta
+            if closure.abs().max() > 1e-9:
+                raise ValueError('[BLOCKED] charged-to-programme spending reconciliation')
+            charged_reconciliation += [dict(concept=name, year=y, original_ratio_bn=original_ratio[y],
+                                             charged_ratio_bn=annual[f"{name}__ratio"][y], programme_bn=vals[y],
+                                             charged_base_delta_bn=charged_delta[y], programme_delta_bn=programme_delta[y],
+                                             programme_minus_charged_bn=replaced[y], residual_bn=closure[y]) for y in YEARS]
+            for branch, values in pieces.items():
+                branch_audit += [dict(concept=name, branch=branch, year=y, delta_bn=values[y],
+                                     charged_ratio_bn=annual[f"{name}__ratio"][y],
+                                     programme_joint_bn=vals_income[y],
+                                     reconciliation_residual_bn=residual[y]) for y in YEARS]
+    table = pd.DataFrame(comparison)
+    windows = table[table.year >= 2015].groupby(["concept", "rule", "scenario"]).cost_bn.sum().reset_index()
+    windows = windows.rename(columns={"cost_bn": "10y_2015_2024_bn"})
+    windows["previous_74ce1f67_bn"] = [previous_values.get((n, r), np.nan)
+                                         for n, r in zip(windows.concept, windows.rule)]
+    windows["change_from_74ce1f67_bn"] = windows["10y_2015_2024_bn"] - windows.previous_74ce1f67_bn
+    provenance = [HERE / 'round2_programme.py', HERE / 'p7_backcast.py', HERE / 'backcast.py',
+                  HERE / 'derived/oct15/pandemic_zero_audit.json', HERE / 'derived/p7/audit.json',
+                  HERE / 'derived/p7/programme_lines.csv', HERE / 'derived/p7/programme_inputs.json']
+    pension_audit['programme_inputs'] = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in provenance}
+    return {"round2_annual.csv": table, "round2_windows.csv": windows,
+            "round2_income_parts.csv": pd.DataFrame(diagnostic).sort_values(['concept', 'part', 'year']),
+            "round2_income_classification.csv": pd.DataFrame(classification),
+            "round2_programme_branches.csv": pd.DataFrame(branch_audit),
+            "round2_added_expenditure_base.csv": pd.DataFrame(added_base_audit),
+            "round2_new_measured_use.csv": pd.DataFrame(new_use_audit),
+            "round2_descendants.csv": pd.DataFrame(descendant_audit),
+            "round2_charged_programme_reconciliation.csv": pd.DataFrame(charged_reconciliation),
+            "round2_charged_base.csv": pd.DataFrame(dict(year=YEARS, total_bn=total, excluded_bn=excluded, residual_charged_bn=charged)),
+            "round2_income_paths.csv": pd.DataFrame(paths).rename_axis("year").reset_index()}, pension_audit
+
+
+def transported_lineage_count(group, g3, union, added, reporters=0.0, covered_g3=0.0):
+    """Counts take the same union/G3 paths as their priced components."""
+    union_path, g3_path = group / group[2024], g3 / g3[2024]
+    return union * union_path + added * g3_path + (reporters + covered_g3) * (g3_path - union_path)
+
+
 def per_lineage_member(annual: pd.DataFrame, case: str) -> None:
     """Adds `lineage_millions`, the lineage's count by year, and each case's PER_LINEAGE_MEMBER concept per
     lineage member under the ratio and income rules ($, 2024 dollars). The count is the union on the group's path, put
@@ -502,14 +820,25 @@ def per_lineage_member(annual: pd.DataFrame, case: str) -> None:
     added descendants make the case's per-member population (1e-9 million), and 2024 per member is the case's
     version's per_member_usd.set at each end ($0.01)."""
     lane = LATER_CASES[case].lane
-    version = "v7" if case == "oct14" else "v6"
+    version = "v8" if case == "oct15" else "v7" if case == "oct14" else "v6"
     summary = json.loads((FISCAL / lane / "derived/summary.json").read_text())
     counts, per_member = summary["v5"]["lineage"]["counts"], summary[version]["per_member_usd"]
     union, added, lineage = (counts[k] / 1e6 for k in ("account_union", "added", "lineage_population"))
+    if case == "oct15":
+        meta = json.loads((FISCAL / lane / "derived/corrections.json").read_text())["meta"]
+        completion = meta["union_completion"]["counts"]
+        union += completion["reporters"] / 1e6
+        added += completion["nonreporters"] / 1e6
+        coverage = meta["coverage"]["counts_by_generation"]
+        lineage = summary["v8"]["population"]["with_coverage"] / 1e6
+        per_member = dict(per_member, population=lineage * 1e6)
+        union += sum(coverage.values()) / 1e6
     if abs(union + added - lineage) > 1e-9 or abs(per_member["population"] / 1e6 - lineage) > 1e-9:
         raise ValueError(f"[BLOCKED] {lane}: its union and added people are not its per-member population")
     group, g3 = annual["group_millions"], annual["g3plus_millions_cps"]
-    count = group * union / group[2024] + added * g3 / g3[2024]
+    count = transported_lineage_count(group, g3, union, added,
+                                      completion['reporters'] / 1e6 if case == 'oct15' else 0.0,
+                                      coverage['G3plus'] / 1e6 if case == 'oct15' else 0.0)
     annual["lineage_millions"] = count
     for name, want in zip(PER_LINEAGE_MEMBER[case], per_member["set"]):
         for rule in ("ratio", "income"):
@@ -525,7 +854,7 @@ def main() -> tuple[pd.DataFrame, dict]:
     parser.add_argument("--bea-dir", type=Path,
                         default=ROOT / "sources/immigration-fiscal/data/external/bea_nipa")
     parser.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24"), default=DEFAULT_CASE,
-                        help="a case after September 24 (default: oct14, the live personal case; sept27: long-run road and park responses, rental "
+                        help="a case after September 24 (default: oct15, the live personal case; sept27: long-run road and park responses, rental "
                              "assistance, the enterprises and the return on public capital; oct07: main case v6, "
                              "October 5 plus the items; oct05: the main case "
                              "adopted 2026-10-05, v5, with the lineage; sept29: the main case adopted 2026-09-29, "
@@ -533,8 +862,10 @@ def main() -> tuple[pd.DataFrame, dict]:
                              "response, 0.63-0.66) or sept24: the files as of 2026-09-24")
     parser.add_argument("--out-dir", type=Path, default=None,
                         help="default: derived/, or the case's own directory under it (sept29: derived/sept29/; oct05: "
-                             "derived/oct05/; oct07: derived/oct07/; oct14: derived/oct14/)")
+                             "derived/oct05/; oct07: derived/oct07/; oct14: derived/oct14/; oct15: derived/oct15/)")
     args = parser.parse_args()
+    if args.case == 'oct15':
+        check_resource_rate_switch()
     if args.out_dir is None:
         own = LATER_CASES[args.case].out if args.case in LATER_CASES else None
         args.out_dir = HERE / "derived" / (own or "")
@@ -616,8 +947,9 @@ def main() -> tuple[pd.DataFrame, dict]:
         annual[f"{name}__ratio"] = group * 1e6 * (sigma * s - rho_c * r) / 1e9
         annual[f"{name}__income"] = group * 1e6 * (sigma * s - rho_c * income * r) / 1e9
         if split:
-            # The additions follow their own series under both the ratio and income rules: none is keyed by
-            # income (the enterprise receipt follows population). The flat rule holds every part per person.
+            # Earlier cases hold carried additions' relative keys. Oct15 applies
+            # its separate per-part income corrections after this common stage.
+            # The flat rule holds every part per person.
             flat = group / group_2024
             split["by_rule"] = {"flat": dict(base=flat * base_value, **{k: flat * v[2024] for k, v in split["parts"].items()})}
             own = split.get("lineage_2024")
@@ -626,9 +958,16 @@ def main() -> tuple[pd.DataFrame, dict]:
                 split["by_rule"]["flat"] = dict(base=flat * base_value, **{
                     k: flat * (v[2024] - own.get(k, 0.0)) + lineage["flat"] * own.get(k, 0.0) for k, v in split["parts"].items()})
                 annual[f"{name}__flat"] = sum(split["by_rule"]["flat"].values())
+            if args.case == "oct15":
+                for part, value in split.get("g3path_2024", {}).items():
+                    split["by_rule"]["flat"][part] = lineage["flat"] * value
+                annual[f"{name}__flat"] = sum(split["by_rule"]["flat"].values())
             for rule in ("ratio", "income"):
                 split["by_rule"][rule] = dict(base=annual[f"{name}__{rule}"].copy(), **split["parts"])
                 annual[f"{name}__{rule}"] += sum(split["parts"].values())
+    round2 = None
+    if args.case == "oct15":
+        round2, pension_audit = apply_corrected_stack(annual, carried, section3, real, share, income)
     # Gap against the average resident: a receipts shortfall less a spending shortfall, so a
     # national deficit shared by everyone cancels. Domestic shares of the BEA totals stay at 2024.
     name, value = "gap_vs_average_resident", base["gap"]
@@ -647,7 +986,16 @@ def main() -> tuple[pd.DataFrame, dict]:
                                  f"{annual.loc[2024, f'{name}__{rule}']} vs {value}")
     if args.case in PER_LINEAGE_MEMBER:
         per_lineage_member(annual, args.case)
+    if args.case == 'oct15':
+        sys.path.insert(0, str(FISCAL / 'scripts'))
+        from memory_budget import require_within_budget
+        footprint = require_within_budget('historical backcast round2')
+        print(f'physical_footprint_bytes={footprint}')
     args.out_dir.mkdir(parents=True, exist_ok=True)
+    if round2 is not None:
+        for filename, output in round2.items():
+            output.to_csv(args.out_dir / filename, index=False, float_format="%.12g", lineterminator="\n")
+        (args.out_dir / "round2_pension_audit.json").write_text(json.dumps(pension_audit, indent=2, allow_nan=False) + "\n")
     annual.round(4).to_csv(args.out_dir / "backcast_annual.csv", index_label="year")
 
     windows = {"10y_2015_2024": range(2015, 2025), "15y_2010_2024": range(2010, 2025),
@@ -680,3 +1028,7 @@ def main() -> tuple[pd.DataFrame, dict]:
 
 if __name__ == "__main__":
     main()
+    sys.path.insert(0, str(FISCAL / "scripts"))
+    from memory_budget import require_within_budget
+
+    print(f"peak physical footprint {require_within_budget('historical backcast') / 1e9:.3f} GB")

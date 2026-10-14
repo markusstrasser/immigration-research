@@ -1,0 +1,1568 @@
+{
+ "case": "oct15",
+ "sets": {
+  "set": [
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "M1_federal",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": -0.233366659028488,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "M1_federal",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 1.31740284774201,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "M1_federal",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 5.63992618031,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "M2_state",
+    "side": "receipt",
+    "line": "state_local_income_tax",
+    "value_bn": -0.304245594762793,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "M2_state",
+    "side": "receipt",
+    "line": "state_local_income_tax",
+    "value_bn": 0.444106415516668,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "M2_state",
+    "side": "receipt",
+    "line": "state_local_income_tax",
+    "value_bn": 0.710956238793318,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "M3_refunds",
+    "side": "spending",
+    "line": "refundable_tax_credits",
+    "value_bn": 0.379707574940628,
+    "path": "union",
+    "rule": "non_eip_credits",
+    "transport_assumption": "Solved EITC/ACTC refund change follows refundable credits excluding separately measured EIP payments; no EIP counterfactual is inferred from this2024 component."
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "M3_refunds",
+    "side": "spending",
+    "line": "refundable_tax_credits",
+    "value_bn": -0.58556912461131,
+    "path": "union",
+    "rule": "non_eip_credits",
+    "transport_assumption": "Solved EITC/ACTC refund change follows refundable credits excluding separately measured EIP payments; no EIP counterfactual is inferred from this2024 component."
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "M3_refunds",
+    "side": "spending",
+    "line": "refundable_tax_credits",
+    "value_bn": -0.594602927790882,
+    "path": "union",
+    "rule": "non_eip_credits",
+    "transport_assumption": "Solved EITC/ACTC refund change follows refundable credits excluding separately measured EIP payments; no EIP counterfactual is inferred from this2024 component."
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "M6_biological_children",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": -0.0015381282082671,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "M6_biological_children",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.719167101638083,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "M6_biological_children",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 1.1298993908706,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "D_added_residual",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.0,
+    "path": "lineage",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "D_added_residual",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.0,
+    "path": "lineage",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "D_added_residual",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.545410709272824,
+    "path": "lineage",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "M5_owner_property",
+    "side": "receipt",
+    "line": "modeled_owner_property",
+    "value_bn": -0.1262497944211,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "M5_owner_property",
+    "side": "receipt",
+    "line": "modeled_owner_property",
+    "value_bn": 0.171487167835713,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "M5_owner_property",
+    "side": "receipt",
+    "line": "modeled_owner_property",
+    "value_bn": 1.08818852713585,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "M5_housing_key",
+    "side": "spending",
+    "line": "housing_subsidies",
+    "value_bn": 0.0729934334703828,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "M5_housing_key",
+    "side": "spending",
+    "line": "housing_subsidies",
+    "value_bn": 0.213379462208609,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "M5_housing_key",
+    "side": "spending",
+    "line": "housing_subsidies",
+    "value_bn": -0.31216229024988,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "M5_consumption",
+    "side": "receipt",
+    "line": "consumption_receipts_composite",
+    "value_bn": -0.810791465414535,
+    "path": "union",
+    "rule": "composite_receipts",
+    "income_linked": true,
+    "composite_cells": {
+     "T30500-A:20": 0.5232263256167574,
+     "T30500-A:4;T30500-A:23": 0.30175955263437865,
+     "T30500-A:15": 0.06511807326274546,
+     "T30100-A:17": 0.10989604848611852
+    },
+    "composite_national_bn": {
+     "T30500-A:20": 602.43,
+     "T30500-A:4;T30500-A:23": 371.262,
+     "T30500-A:15": 83.587,
+     "T30100-A:17": 141.065
+    },
+    "transport_assumption": "Source preserves only aggregate M5 consumption receipts. Historical index weights its four national receipt indices by2024 union amounts; exact line-by-generation split, including excise CBO allocation, is not observed in preserved output."
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "M5_consumption",
+    "side": "receipt",
+    "line": "consumption_receipts_composite",
+    "value_bn": 0.132131703192232,
+    "path": "union",
+    "rule": "composite_receipts",
+    "income_linked": true,
+    "composite_cells": {
+     "T30500-A:20": 0.5232263256167574,
+     "T30500-A:4;T30500-A:23": 0.30175955263437865,
+     "T30500-A:15": 0.06511807326274546,
+     "T30100-A:17": 0.10989604848611852
+    },
+    "composite_national_bn": {
+     "T30500-A:20": 602.43,
+     "T30500-A:4;T30500-A:23": 371.262,
+     "T30500-A:15": 83.587,
+     "T30100-A:17": 141.065
+    },
+    "transport_assumption": "Source preserves only aggregate M5 consumption receipts. Historical index weights its four national receipt indices by2024 union amounts; exact line-by-generation split, including excise CBO allocation, is not observed in preserved output."
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "M5_consumption",
+    "side": "receipt",
+    "line": "consumption_receipts_composite",
+    "value_bn": 5.05119602618135,
+    "path": "union",
+    "rule": "composite_receipts",
+    "income_linked": true,
+    "composite_cells": {
+     "T30500-A:20": 0.5232263256167574,
+     "T30500-A:4;T30500-A:23": 0.30175955263437865,
+     "T30500-A:15": 0.06511807326274546,
+     "T30100-A:17": 0.10989604848611852
+    },
+    "composite_national_bn": {
+     "T30500-A:20": 602.43,
+     "T30500-A:4;T30500-A:23": 371.262,
+     "T30500-A:15": 83.587,
+     "T30100-A:17": 141.065
+    },
+    "transport_assumption": "Source preserves only aggregate M5 consumption receipts. Historical index weights its four national receipt indices by2024 union amounts; exact line-by-generation split, including excise CBO allocation, is not observed in preserved output."
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "health_latent_Medicaid_low",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.342273703217824,
+    "path": "union",
+    "rule": "line",
+    "measured_fraction": 1.0,
+    "use_key": "medicaid_covered"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "health_latent_Medicaid_low",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.366831278747671,
+    "path": "union",
+    "rule": "line",
+    "measured_fraction": 1.0,
+    "use_key": "medicaid_covered"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "health_latent_Medicaid_low",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.362371506377649,
+    "path": "union",
+    "rule": "line",
+    "measured_fraction": 1.0,
+    "use_key": "medicaid_covered"
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "health_latent_ACA_low",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.0363969915705563,
+    "path": "union",
+    "rule": "line",
+    "use_key_exempt": true,
+    "transport_assumption": "ACA premium credits use the other-medical national index; Medicaid coverage is not an ACA use observation."
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "health_latent_ACA_low",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.126770883147878,
+    "path": "union",
+    "rule": "line",
+    "use_key_exempt": true,
+    "transport_assumption": "ACA premium credits use the other-medical national index; Medicaid coverage is not an ACA use observation."
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "health_latent_ACA_low",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.3306597712474,
+    "path": "union",
+    "rule": "line",
+    "use_key_exempt": true,
+    "transport_assumption": "ACA premium credits use the other-medical national index; Medicaid coverage is not an ACA use observation."
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "SNAP_latent_SNAP_zero_observed_high_takeup",
+    "side": "spending",
+    "line": "snap",
+    "value_bn": -0.629034893851154,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "SNAP_latent_SNAP_zero_observed_high_takeup",
+    "side": "spending",
+    "line": "snap",
+    "value_bn": -0.695199894380254,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "SNAP_latent_SNAP_zero_observed_high_takeup",
+    "side": "spending",
+    "line": "snap",
+    "value_bn": -1.01787159937885,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "M1_federal",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": -0.233366659028488,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "M1_federal",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 1.31740284774201,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "M1_federal",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 5.63992618031,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "M2_state",
+    "side": "receipt",
+    "line": "state_local_income_tax",
+    "value_bn": -0.304245594762793,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "M2_state",
+    "side": "receipt",
+    "line": "state_local_income_tax",
+    "value_bn": 0.444106415516668,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "M2_state",
+    "side": "receipt",
+    "line": "state_local_income_tax",
+    "value_bn": 0.710956238793318,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "M3_refunds",
+    "side": "spending",
+    "line": "refundable_tax_credits",
+    "value_bn": 0.379707574940628,
+    "path": "union",
+    "rule": "non_eip_credits",
+    "transport_assumption": "Solved EITC/ACTC refund change follows refundable credits excluding separately measured EIP payments; no EIP counterfactual is inferred from this2024 component."
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "M3_refunds",
+    "side": "spending",
+    "line": "refundable_tax_credits",
+    "value_bn": -0.58556912461131,
+    "path": "union",
+    "rule": "non_eip_credits",
+    "transport_assumption": "Solved EITC/ACTC refund change follows refundable credits excluding separately measured EIP payments; no EIP counterfactual is inferred from this2024 component."
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "M3_refunds",
+    "side": "spending",
+    "line": "refundable_tax_credits",
+    "value_bn": -0.594602927790882,
+    "path": "union",
+    "rule": "non_eip_credits",
+    "transport_assumption": "Solved EITC/ACTC refund change follows refundable credits excluding separately measured EIP payments; no EIP counterfactual is inferred from this2024 component."
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "M6_biological_children",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": -0.0015381282082671,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "M6_biological_children",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.719167101638083,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "M6_biological_children",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 1.1298993908706,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "D_added_residual",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.0,
+    "path": "lineage",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "D_added_residual",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.0,
+    "path": "lineage",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "D_added_residual",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.545410709272824,
+    "path": "lineage",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "M5_owner_property",
+    "side": "receipt",
+    "line": "modeled_owner_property",
+    "value_bn": -0.1262497944211,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "M5_owner_property",
+    "side": "receipt",
+    "line": "modeled_owner_property",
+    "value_bn": 0.171487167835713,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "M5_owner_property",
+    "side": "receipt",
+    "line": "modeled_owner_property",
+    "value_bn": 1.08818852713585,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "M5_housing_key",
+    "side": "spending",
+    "line": "housing_subsidies",
+    "value_bn": 0.0729934334703828,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "M5_housing_key",
+    "side": "spending",
+    "line": "housing_subsidies",
+    "value_bn": 0.213379462208609,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "M5_housing_key",
+    "side": "spending",
+    "line": "housing_subsidies",
+    "value_bn": -0.31216229024988,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "M5_consumption",
+    "side": "receipt",
+    "line": "consumption_receipts_composite",
+    "value_bn": -0.810791465414535,
+    "path": "union",
+    "rule": "composite_receipts",
+    "income_linked": true,
+    "composite_cells": {
+     "T30500-A:20": 0.5232263256167574,
+     "T30500-A:4;T30500-A:23": 0.30175955263437865,
+     "T30500-A:15": 0.06511807326274546,
+     "T30100-A:17": 0.10989604848611852
+    },
+    "composite_national_bn": {
+     "T30500-A:20": 602.43,
+     "T30500-A:4;T30500-A:23": 371.262,
+     "T30500-A:15": 83.587,
+     "T30100-A:17": 141.065
+    },
+    "transport_assumption": "Source preserves only aggregate M5 consumption receipts. Historical index weights its four national receipt indices by2024 union amounts; exact line-by-generation split, including excise CBO allocation, is not observed in preserved output."
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "M5_consumption",
+    "side": "receipt",
+    "line": "consumption_receipts_composite",
+    "value_bn": 0.132131703192232,
+    "path": "union",
+    "rule": "composite_receipts",
+    "income_linked": true,
+    "composite_cells": {
+     "T30500-A:20": 0.5232263256167574,
+     "T30500-A:4;T30500-A:23": 0.30175955263437865,
+     "T30500-A:15": 0.06511807326274546,
+     "T30100-A:17": 0.10989604848611852
+    },
+    "composite_national_bn": {
+     "T30500-A:20": 602.43,
+     "T30500-A:4;T30500-A:23": 371.262,
+     "T30500-A:15": 83.587,
+     "T30100-A:17": 141.065
+    },
+    "transport_assumption": "Source preserves only aggregate M5 consumption receipts. Historical index weights its four national receipt indices by2024 union amounts; exact line-by-generation split, including excise CBO allocation, is not observed in preserved output."
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "M5_consumption",
+    "side": "receipt",
+    "line": "consumption_receipts_composite",
+    "value_bn": 5.05119602618135,
+    "path": "union",
+    "rule": "composite_receipts",
+    "income_linked": true,
+    "composite_cells": {
+     "T30500-A:20": 0.5232263256167574,
+     "T30500-A:4;T30500-A:23": 0.30175955263437865,
+     "T30500-A:15": 0.06511807326274546,
+     "T30100-A:17": 0.10989604848611852
+    },
+    "composite_national_bn": {
+     "T30500-A:20": 602.43,
+     "T30500-A:4;T30500-A:23": 371.262,
+     "T30500-A:15": 83.587,
+     "T30100-A:17": 141.065
+    },
+    "transport_assumption": "Source preserves only aggregate M5 consumption receipts. Historical index weights its four national receipt indices by2024 union amounts; exact line-by-generation split, including excise CBO allocation, is not observed in preserved output."
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "health_latent_Medicaid_high",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.128153159022902,
+    "path": "union",
+    "rule": "line",
+    "measured_fraction": 1.0,
+    "use_key": "medicaid_covered"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "health_latent_Medicaid_high",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.0546318662582382,
+    "path": "union",
+    "rule": "line",
+    "measured_fraction": 1.0,
+    "use_key": "medicaid_covered"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "health_latent_Medicaid_high",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": 0.0957368056518367,
+    "path": "union",
+    "rule": "line",
+    "measured_fraction": 1.0,
+    "use_key": "medicaid_covered"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "health_latent_ACA_high",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": 0.100105787942194,
+    "path": "union",
+    "rule": "line",
+    "use_key_exempt": true,
+    "transport_assumption": "ACA premium credits use the other-medical national index; Medicaid coverage is not an ACA use observation."
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "health_latent_ACA_high",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": 0.116705816474116,
+    "path": "union",
+    "rule": "line",
+    "use_key_exempt": true,
+    "transport_assumption": "ACA premium credits use the other-medical national index; Medicaid coverage is not an ACA use observation."
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "health_latent_ACA_high",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": 0.231860119997266,
+    "path": "union",
+    "rule": "line",
+    "use_key_exempt": true,
+    "transport_assumption": "ACA premium credits use the other-medical national index; Medicaid coverage is not an ACA use observation."
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "SNAP_latent_SNAP_cap_observed_low_takeup",
+    "side": "spending",
+    "line": "snap",
+    "value_bn": -0.259371051012921,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "SNAP_latent_SNAP_cap_observed_low_takeup",
+    "side": "spending",
+    "line": "snap",
+    "value_bn": -0.0906397785409054,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "SNAP_latent_SNAP_cap_observed_low_takeup",
+    "side": "spending",
+    "line": "snap",
+    "value_bn": -0.127349271877933,
+    "path": "union",
+    "rule": "line"
+   }
+  ],
+  "cash": [
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "M1_federal",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": -0.233366659028488,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "M1_federal",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 1.31740284774201,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "M1_federal",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 5.63992618031,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "M2_state",
+    "side": "receipt",
+    "line": "state_local_income_tax",
+    "value_bn": -0.304245594762793,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "M2_state",
+    "side": "receipt",
+    "line": "state_local_income_tax",
+    "value_bn": 0.444106415516668,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "M2_state",
+    "side": "receipt",
+    "line": "state_local_income_tax",
+    "value_bn": 0.710956238793318,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "M3_refunds",
+    "side": "spending",
+    "line": "refundable_tax_credits",
+    "value_bn": 0.379707574940628,
+    "path": "union",
+    "rule": "non_eip_credits",
+    "transport_assumption": "Solved EITC/ACTC refund change follows refundable credits excluding separately measured EIP payments; no EIP counterfactual is inferred from this2024 component."
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "M3_refunds",
+    "side": "spending",
+    "line": "refundable_tax_credits",
+    "value_bn": -0.58556912461131,
+    "path": "union",
+    "rule": "non_eip_credits",
+    "transport_assumption": "Solved EITC/ACTC refund change follows refundable credits excluding separately measured EIP payments; no EIP counterfactual is inferred from this2024 component."
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "M3_refunds",
+    "side": "spending",
+    "line": "refundable_tax_credits",
+    "value_bn": -0.594602927790882,
+    "path": "union",
+    "rule": "non_eip_credits",
+    "transport_assumption": "Solved EITC/ACTC refund change follows refundable credits excluding separately measured EIP payments; no EIP counterfactual is inferred from this2024 component."
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "M6_biological_children",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": -0.0015381282082671,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "M6_biological_children",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.719167101638083,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "M6_biological_children",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 1.1298993908706,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "D_added_residual",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.0,
+    "path": "lineage",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "D_added_residual",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.0,
+    "path": "lineage",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "D_added_residual",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.545410709272824,
+    "path": "lineage",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "M5_owner_property",
+    "side": "receipt",
+    "line": "modeled_owner_property",
+    "value_bn": -0.1262497944211,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "M5_owner_property",
+    "side": "receipt",
+    "line": "modeled_owner_property",
+    "value_bn": 0.171487167835713,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "M5_owner_property",
+    "side": "receipt",
+    "line": "modeled_owner_property",
+    "value_bn": 1.08818852713585,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "M5_housing_key",
+    "side": "spending",
+    "line": "housing_subsidies",
+    "value_bn": 0.0729934334703828,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "M5_housing_key",
+    "side": "spending",
+    "line": "housing_subsidies",
+    "value_bn": 0.213379462208609,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "M5_housing_key",
+    "side": "spending",
+    "line": "housing_subsidies",
+    "value_bn": -0.31216229024988,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "M5_consumption",
+    "side": "receipt",
+    "line": "consumption_receipts_composite",
+    "value_bn": -0.810791465414535,
+    "path": "union",
+    "rule": "composite_receipts",
+    "income_linked": true,
+    "composite_cells": {
+     "T30500-A:20": 0.5232263256167574,
+     "T30500-A:4;T30500-A:23": 0.30175955263437865,
+     "T30500-A:15": 0.06511807326274546,
+     "T30100-A:17": 0.10989604848611852
+    },
+    "composite_national_bn": {
+     "T30500-A:20": 602.43,
+     "T30500-A:4;T30500-A:23": 371.262,
+     "T30500-A:15": 83.587,
+     "T30100-A:17": 141.065
+    },
+    "transport_assumption": "Source preserves only aggregate M5 consumption receipts. Historical index weights its four national receipt indices by2024 union amounts; exact line-by-generation split, including excise CBO allocation, is not observed in preserved output."
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "M5_consumption",
+    "side": "receipt",
+    "line": "consumption_receipts_composite",
+    "value_bn": 0.132131703192232,
+    "path": "union",
+    "rule": "composite_receipts",
+    "income_linked": true,
+    "composite_cells": {
+     "T30500-A:20": 0.5232263256167574,
+     "T30500-A:4;T30500-A:23": 0.30175955263437865,
+     "T30500-A:15": 0.06511807326274546,
+     "T30100-A:17": 0.10989604848611852
+    },
+    "composite_national_bn": {
+     "T30500-A:20": 602.43,
+     "T30500-A:4;T30500-A:23": 371.262,
+     "T30500-A:15": 83.587,
+     "T30100-A:17": 141.065
+    },
+    "transport_assumption": "Source preserves only aggregate M5 consumption receipts. Historical index weights its four national receipt indices by2024 union amounts; exact line-by-generation split, including excise CBO allocation, is not observed in preserved output."
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "M5_consumption",
+    "side": "receipt",
+    "line": "consumption_receipts_composite",
+    "value_bn": 5.05119602618135,
+    "path": "union",
+    "rule": "composite_receipts",
+    "income_linked": true,
+    "composite_cells": {
+     "T30500-A:20": 0.5232263256167574,
+     "T30500-A:4;T30500-A:23": 0.30175955263437865,
+     "T30500-A:15": 0.06511807326274546,
+     "T30100-A:17": 0.10989604848611852
+    },
+    "composite_national_bn": {
+     "T30500-A:20": 602.43,
+     "T30500-A:4;T30500-A:23": 371.262,
+     "T30500-A:15": 83.587,
+     "T30100-A:17": 141.065
+    },
+    "transport_assumption": "Source preserves only aggregate M5 consumption receipts. Historical index weights its four national receipt indices by2024 union amounts; exact line-by-generation split, including excise CBO allocation, is not observed in preserved output."
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "health_latent_Medicaid_low",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.342273703217824,
+    "path": "union",
+    "rule": "line",
+    "measured_fraction": 1.0,
+    "use_key": "medicaid_covered"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "health_latent_Medicaid_low",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.366831278747671,
+    "path": "union",
+    "rule": "line",
+    "measured_fraction": 1.0,
+    "use_key": "medicaid_covered"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "health_latent_Medicaid_low",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.362371506377649,
+    "path": "union",
+    "rule": "line",
+    "measured_fraction": 1.0,
+    "use_key": "medicaid_covered"
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "health_latent_ACA_low",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.0363969915705563,
+    "path": "union",
+    "rule": "line",
+    "use_key_exempt": true,
+    "transport_assumption": "ACA premium credits use the other-medical national index; Medicaid coverage is not an ACA use observation."
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "health_latent_ACA_low",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.126770883147878,
+    "path": "union",
+    "rule": "line",
+    "use_key_exempt": true,
+    "transport_assumption": "ACA premium credits use the other-medical national index; Medicaid coverage is not an ACA use observation."
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "health_latent_ACA_low",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.3306597712474,
+    "path": "union",
+    "rule": "line",
+    "use_key_exempt": true,
+    "transport_assumption": "ACA premium credits use the other-medical national index; Medicaid coverage is not an ACA use observation."
+   },
+   {
+    "end": "low",
+    "generation": "G1",
+    "component": "SNAP_latent_SNAP_zero_observed_high_takeup",
+    "side": "spending",
+    "line": "snap",
+    "value_bn": -0.629034893851154,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G2",
+    "component": "SNAP_latent_SNAP_zero_observed_high_takeup",
+    "side": "spending",
+    "line": "snap",
+    "value_bn": -0.695199894380254,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "low",
+    "generation": "G3+",
+    "component": "SNAP_latent_SNAP_zero_observed_high_takeup",
+    "side": "spending",
+    "line": "snap",
+    "value_bn": -1.01787159937885,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "M1_federal",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": -0.233366659028488,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "M1_federal",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 1.31740284774201,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "M1_federal",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 5.63992618031,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "M2_state",
+    "side": "receipt",
+    "line": "state_local_income_tax",
+    "value_bn": -0.304245594762793,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "M2_state",
+    "side": "receipt",
+    "line": "state_local_income_tax",
+    "value_bn": 0.444106415516668,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "M2_state",
+    "side": "receipt",
+    "line": "state_local_income_tax",
+    "value_bn": 0.710956238793318,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "M3_refunds",
+    "side": "spending",
+    "line": "refundable_tax_credits",
+    "value_bn": 0.379707574940628,
+    "path": "union",
+    "rule": "non_eip_credits",
+    "transport_assumption": "Solved EITC/ACTC refund change follows refundable credits excluding separately measured EIP payments; no EIP counterfactual is inferred from this2024 component."
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "M3_refunds",
+    "side": "spending",
+    "line": "refundable_tax_credits",
+    "value_bn": -0.58556912461131,
+    "path": "union",
+    "rule": "non_eip_credits",
+    "transport_assumption": "Solved EITC/ACTC refund change follows refundable credits excluding separately measured EIP payments; no EIP counterfactual is inferred from this2024 component."
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "M3_refunds",
+    "side": "spending",
+    "line": "refundable_tax_credits",
+    "value_bn": -0.594602927790882,
+    "path": "union",
+    "rule": "non_eip_credits",
+    "transport_assumption": "Solved EITC/ACTC refund change follows refundable credits excluding separately measured EIP payments; no EIP counterfactual is inferred from this2024 component."
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "M6_biological_children",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": -0.0015381282082671,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "M6_biological_children",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.719167101638083,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "M6_biological_children",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 1.1298993908706,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "D_added_residual",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.0,
+    "path": "lineage",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "D_added_residual",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.0,
+    "path": "lineage",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "D_added_residual",
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "value_bn": 0.545410709272824,
+    "path": "lineage",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "M5_owner_property",
+    "side": "receipt",
+    "line": "modeled_owner_property",
+    "value_bn": -0.1262497944211,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "M5_owner_property",
+    "side": "receipt",
+    "line": "modeled_owner_property",
+    "value_bn": 0.171487167835713,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "M5_owner_property",
+    "side": "receipt",
+    "line": "modeled_owner_property",
+    "value_bn": 1.08818852713585,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "M5_housing_key",
+    "side": "spending",
+    "line": "housing_subsidies",
+    "value_bn": 0.0729934334703828,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "M5_housing_key",
+    "side": "spending",
+    "line": "housing_subsidies",
+    "value_bn": 0.213379462208609,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "M5_housing_key",
+    "side": "spending",
+    "line": "housing_subsidies",
+    "value_bn": -0.31216229024988,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "M5_consumption",
+    "side": "receipt",
+    "line": "consumption_receipts_composite",
+    "value_bn": -0.810791465414535,
+    "path": "union",
+    "rule": "composite_receipts",
+    "income_linked": true,
+    "composite_cells": {
+     "T30500-A:20": 0.5232263256167574,
+     "T30500-A:4;T30500-A:23": 0.30175955263437865,
+     "T30500-A:15": 0.06511807326274546,
+     "T30100-A:17": 0.10989604848611852
+    },
+    "composite_national_bn": {
+     "T30500-A:20": 602.43,
+     "T30500-A:4;T30500-A:23": 371.262,
+     "T30500-A:15": 83.587,
+     "T30100-A:17": 141.065
+    },
+    "transport_assumption": "Source preserves only aggregate M5 consumption receipts. Historical index weights its four national receipt indices by2024 union amounts; exact line-by-generation split, including excise CBO allocation, is not observed in preserved output."
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "M5_consumption",
+    "side": "receipt",
+    "line": "consumption_receipts_composite",
+    "value_bn": 0.132131703192232,
+    "path": "union",
+    "rule": "composite_receipts",
+    "income_linked": true,
+    "composite_cells": {
+     "T30500-A:20": 0.5232263256167574,
+     "T30500-A:4;T30500-A:23": 0.30175955263437865,
+     "T30500-A:15": 0.06511807326274546,
+     "T30100-A:17": 0.10989604848611852
+    },
+    "composite_national_bn": {
+     "T30500-A:20": 602.43,
+     "T30500-A:4;T30500-A:23": 371.262,
+     "T30500-A:15": 83.587,
+     "T30100-A:17": 141.065
+    },
+    "transport_assumption": "Source preserves only aggregate M5 consumption receipts. Historical index weights its four national receipt indices by2024 union amounts; exact line-by-generation split, including excise CBO allocation, is not observed in preserved output."
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "M5_consumption",
+    "side": "receipt",
+    "line": "consumption_receipts_composite",
+    "value_bn": 5.05119602618135,
+    "path": "union",
+    "rule": "composite_receipts",
+    "income_linked": true,
+    "composite_cells": {
+     "T30500-A:20": 0.5232263256167574,
+     "T30500-A:4;T30500-A:23": 0.30175955263437865,
+     "T30500-A:15": 0.06511807326274546,
+     "T30100-A:17": 0.10989604848611852
+    },
+    "composite_national_bn": {
+     "T30500-A:20": 602.43,
+     "T30500-A:4;T30500-A:23": 371.262,
+     "T30500-A:15": 83.587,
+     "T30100-A:17": 141.065
+    },
+    "transport_assumption": "Source preserves only aggregate M5 consumption receipts. Historical index weights its four national receipt indices by2024 union amounts; exact line-by-generation split, including excise CBO allocation, is not observed in preserved output."
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "health_latent_Medicaid_high",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.128153159022902,
+    "path": "union",
+    "rule": "line",
+    "measured_fraction": 1.0,
+    "use_key": "medicaid_covered"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "health_latent_Medicaid_high",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": -0.0546318662582382,
+    "path": "union",
+    "rule": "line",
+    "measured_fraction": 1.0,
+    "use_key": "medicaid_covered"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "health_latent_Medicaid_high",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": 0.0957368056518367,
+    "path": "union",
+    "rule": "line",
+    "measured_fraction": 1.0,
+    "use_key": "medicaid_covered"
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "health_latent_ACA_high",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": 0.100105787942194,
+    "path": "union",
+    "rule": "line",
+    "use_key_exempt": true,
+    "transport_assumption": "ACA premium credits use the other-medical national index; Medicaid coverage is not an ACA use observation."
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "health_latent_ACA_high",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": 0.116705816474116,
+    "path": "union",
+    "rule": "line",
+    "use_key_exempt": true,
+    "transport_assumption": "ACA premium credits use the other-medical national index; Medicaid coverage is not an ACA use observation."
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "health_latent_ACA_high",
+    "side": "spending",
+    "line": "medicaid_and_chip_other_medical",
+    "value_bn": 0.231860119997266,
+    "path": "union",
+    "rule": "line",
+    "use_key_exempt": true,
+    "transport_assumption": "ACA premium credits use the other-medical national index; Medicaid coverage is not an ACA use observation."
+   },
+   {
+    "end": "high",
+    "generation": "G1",
+    "component": "SNAP_latent_SNAP_cap_observed_low_takeup",
+    "side": "spending",
+    "line": "snap",
+    "value_bn": -0.259371051012921,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G2",
+    "component": "SNAP_latent_SNAP_cap_observed_low_takeup",
+    "side": "spending",
+    "line": "snap",
+    "value_bn": -0.0906397785409054,
+    "path": "union",
+    "rule": "line"
+   },
+   {
+    "end": "high",
+    "generation": "G3+",
+    "component": "SNAP_latent_SNAP_cap_observed_low_takeup",
+    "side": "spending",
+    "line": "snap",
+    "value_bn": -0.127349271877933,
+    "path": "union",
+    "rule": "line"
+   }
+  ]
+ },
+ "inputs": {
+  "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/derived/round2_summary.json": "acbb2ba55a6f1fdf4f2a66c2e236608bdaebd24090f7b814333417c7ed3bbc01",
+  "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/derived/round2_replicates.csv": "008472495fd84072c67b9cd5091001b5533aa7c5d0769b51f324b3603c1d0e40",
+  "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/derived/round2_results.csv": "e0a3409898a52948c2d4ffdd9d0d6060380f7aef1fc2aa99dff6d62a28a958e4",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections.json": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections_cash.json": "9af66b4c6a87ddb96d22c208364cd6798d23411590252bbe9520f3019b6446ea",
+  "infra/immigration-fiscal/historical_backcast_2026_09_20/mixed_components.py": "2601176214ba1a39da36a77ed1e9fbb572f65ab65c9546d485dc9eefdfc0015d",
+  "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/derived/case_inputs.json": "f4d61e67490834771defb55dd9274cd7c090666da99ddadee353a28b4f271c74",
+  "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/round2.py": "cb558c339e985ef933c6a46429052ddcfb6e7fdf6dd2b9223ea689f767d9b0d8",
+  "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/removal.py": "1b906be4bc635ebab59295aae5854e1d73d206a9c7070f0fb3e1a86be67df19c"
+ }
+}

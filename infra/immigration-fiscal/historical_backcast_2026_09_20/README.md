@@ -1,5 +1,137 @@
 # Historical back-cast of the 2024 fiscal concepts, 2005–2024
 
+## Live v8 consumer (`oct15`)
+
+The default computes only `oct15`, in `derived/oct15/`; earlier case artifacts
+remain archived. `case_components.cjs` dispatches to `v8_components.cjs`, which
+rebuilds the verified v7 historical decomposition in a temporary directory and
+adds items 9–12 as distinct `v6_<item>_<path>_<line>` components. Those names keep
+the existing debt-consumer component contract. Each new item is gated against
+its evaluated set and cash change at 1e-9bn. Final total and cash bands are gated
+to the v8 files at their existing four-decimal tolerance, 1e-4bn.
+
+The live round-2 joint stack combines programme-level spending, measured EIP
+shares, historical school-age/Medicaid use and per-part income rules. The ratio
+charged-base diagnostic excludes defense, interest, subsidies, zero-response
+OASDI/Part A cash and separately carried programme lines. Capital uses fixed 2% / 3% imputed resource
+return in every year (decision 2026-09-27). DFII10 floored at zero is exported
+beside in `round2_annual.csv` and `backcast_annual.csv` as a financing-cost reading
+the case does not use. Its 2024 difference is retained. The previous
+`BACKCAST_RATE_ANCHOR` switch fails loudly because it changed the live resource
+definition. [CALCULATION: `apply_corrected_stack`]
+
+Under `income`, carried receipts and induced receipts keep unit elasticity.
+Part A instead follows relative covered workers per member; OASDI follows the
+finite PIA response calculated by `pension_transport.py` from the pension lane's
+own formula, cached worker frame, age-adjusted career earnings and entry rules.
+The conditional PIA earnings elasticities at the anchor are 0.557992860339 for
+the original union and 0.550857314724 for its identified G3+. Careers, benefit
+timing, family composition and payable shares stay fixed; this is a PIA response,
+not full actuarial repricing. [CALCULATION: `round2_pension_audit.json`]
+
+**The CPS labour split is measured where compatible inputs exist; it is not an
+exact split of ACS total income.** Public income years 2019–2024 (ASEC survey/file
+years 2020–2025) have wages and farm/self-employment dollars. `historical_workers.py`
+measures wage/positive-SE workers per member: under 65 for Part A, all positive-tax
+ages for OASDI, and mean earnings using the pension lane's capped-wage plus
+92.35%-of-positive-SE mapping, each relative to the same-year national measure,
+then normalised to 2024. Under `income`, Part A uses its worker path; OASDI uses
+workers times the finite PIA response to earnings/worker. Legal covered records
+and the historical on-books adjustment are not observed, so their relative
+adjustment stays fixed. [DATA: `worker_income.csv`; ASSUMPTION]
+The age cut uses the reported ASEC survey age, as the original pension producer
+does; exact age during each prior-calendar-year work spell is not observed.
+[ASSUMPTION; SOURCE: `pension_accrual.py` hi_arms]
+
+Before 2019, relative workers/member stays fixed and ACS total per-capita income
+is the earnings proxy. The earlier pooled CPS has wages but no SE dollars and
+does not match the canonical civilian frame; its wage-only worker and mean-wage
+paths (under 65 for Part A, all earning ages for OASDI) are a labelled sensitivity
+for 2005–2024. Geometric male/female
+full-time earnings medians are another pension-only proxy sensitivity. The
+ACS-to-CPS labour residual in `round2_income_paths.csv` includes nonlabour income,
+different populations and survey measurement; it is not an observed nonlabour
+component. The original pension union/generation prices are transported to new
+membership and coverage pieces. [DATA; ASSUMPTION]
+Generation-labelled coverage pieces use their own generation's PIA response.
+The original national contribution-series paths remain; this correction changes
+their additional response to relative group income. [CALCULATION: `part_factor`]
+The worker inputs use published CPS weights to estimate normalized rates; they
+do not set the live account's population, which remains gated to the case.
+[ASSUMPTION]
+
+`round2_income_classification.csv` states every carried part's rule, including
+all completion and coverage pension carriers. A new accrual without an explicit
+OASDI/Part A source rule stops. Retiree-health/OPEB changes have zero additional
+group-income response: their producer declares national price swaps across
+government functions, with service shares/keys held, so they keep those national
+function series. This differs from an individual worker's earned health promise.
+[CALCULATION: `main_case_2026_10_07/package.cjs` retiree_health; `public_pension_legacy_2026_10_07/RESULT.md`]
+
+The programme stack transports the verified v7 programme-minus-ratio displacement
+onto the oct15 component account. It replaces broad expenditure scaling, so the
+charged-base sigma is not added a second time. Items9–12 retain their typed
+national paths; new completion/coverage school and Medicaid parts additionally
+receive their known measured use keys. Programme receipts receive unit income
+response on their own national line paths; earned pension parts receive the
+worker/PIA rules. Missing use cells stop by key/group/year; only Medicaid before
+2019 may stay at the anchor, because the extract lacks coverage. Each branch
+reconciles at1e-9bn. This remains a conditional transport rather than an observed
+historical v8 ledger. A known four-decimal2024 rounding offset is removed.
+`__joint_stack` is the live programme+per-part income series; ratio/income/flat
+and programme without income are reported separately.
+[ASSUMPTION; CALCULATION: `round2_windows.csv`]
+
+Union-completion reporter carriers and nonreporting children use the identified
+G3+ historical path; reporter membership remains the union's in the component
+metadata. Reporter capital carriers follow the component stock and leave the
+debt consumer as imputed resource costs. Observed children now enter native cells;
+their production and public-capital changes have distinct components, and their
+receipt/spending parts follow the same programme series as the original lineage.
+Coverage uses `BACKCAST_COVERAGE_TRANSPORT=source_piece_profile` (default): its
+authoritative per-end `decomposition.line_parts`, retaining declared source lines,
+sides and economic classes. Native-child aliases resolve through `source_line`.
+Receipt, spending, earned accrual and capital pieces retain their own series;
+production carries the source's exact declared P/F split and its generation-ratio
+approximation. Named post-engine, residual and population-calibration pieces stay
+explicitly unclassified, held per person on their declared population path: G3+
+pieces use the identified G3+ path, G1/G2 pieces the union's. Their federal split
+stays unresolved. Source manifests and cache receipts remain validated. `per_member_total` exposes the
+aggregate per-member alternative. Net missing people enter `lineage_millions`.
+`mixed_components.py` splits item11 by the producer's exact r0 generation vectors:
+federal/state taxes, refunds, owner property, housing and selected latent Medicaid,
+ACA and SNAP arms. D_added stays on the added people's path. Known G3+ pieces use
+the identified G3+ path; G1/G2 use the declared union proxy. Medicaid alone takes
+the Medicaid coverage-use adjustment; ACA is not scaled by that observation.
+The EITC/ACTC refund change follows credits excluding separately measured EIP.
+The source preserves only aggregate consumption receipts. Their historical
+composite index uses the source's2024 union weights over four national receipt
+series; no exact line-by-generation split is claimed. These historical transports
+are assumptions; no historical
+group ledger is observed. Holding added descendants' 2024 ratio to identified
+G3+ fixed back in time likely overstates early membership; the effect is
+unquantified. The marker adopts v8 at `b35ac8fb`; final source validation and
+reproduction are recorded below. [ASSUMPTION]
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/historical_workers.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/pandemic_zero.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/coverage_components.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/mixed_components.py
+node infra/immigration-fiscal/historical_backcast_2026_09_20/case_components.cjs
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/backcast.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/historical_backcast_2026_09_20/ -q --import-mode=importlib
+```
+
+`pandemic_zero.py` checks the missing EIP1 catch-up ratio against the actual
+source payment vector. Under the source's Borjas SSN-spouse rule it is exactly
+zero dollars in income2020/ASEC2021 units, paid in2021. It records a pinned zero
+amount, rather than inventing a relative-use ratio or skipping an observation.
+A positive amount, wrong calendar mapping or changed source stops the stack.
+Covered G3+ people and their costs use the same G3+ path. G1/G2 coverage counts
+stay on the union path. A pre2024 fixture with distinct paths verifies this;
+the shared2024 population anchor alone could not expose the mismatch.
+
 No year before income-year 2024 has Mexican-origin taxes, benefits or services
 measured in this repository. This lane combines **measured national and population
 series by year** with the **2024 relative position** from the
@@ -455,3 +587,105 @@ These are back-cast rules on measured national/population paths, not observed hi
 - 2026-10-14 18:18:43 JST (`date`) — live reproduction chain (Node, Python and the full scratch-regression pytest
   command), with `GIT_OPTIONAL_LOCKS=0` and `PYTHONDONTWRITEBYTECODE=1`: IDENTICAL 37/37, exit 0. Archived outputs
   preserved. Git diff check passes. No Git metadata writes, stages or commits by this worker.
+
+## Round-2 corrections — 2026-10-15
+
+The adopted payloads differ from the candidate's only in their stamps: meta.adopted "2026-10-15", status
+"adopted: main case v8; ...", case "...; v8 adopted"; summary.json v8.status "adopted". Every number is unchanged.
+A pin you took on the candidate's corrections.json / corrections_cash.json / summary.json bytes must be refreshed
+to the committed bytes (verify the numbers match, then re-pin; never enrol silently).
+
+REQUIRED before your phase 2: read the amendment file for your lane name; it changes your phase 2.
+- p8-prop-a: already delivered by resume (note_a8_phase2.md); nothing new.
+- p8-prop-b: /private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/note_b8_r2b.md
+- p8-prop-d: nothing new (note_d8_r2.md and note_d8_r2b.md stand).`.
+
+| Rule/scenario | 2015–2024 low / high, $bn | 74ce1f67 comparison low / high, $bn | Change low / high, $bn |
+|---|---:|---:|---:|
+| ratio: live_fixed_resource_rates | 3597.709115 / 4350.283007 | 2850.858677 / 3753.615749 | +746.850438 / +596.667258 |
+| income: live_fixed_resource_rates | 3906.869647 / 4647.415995 | 3118.521350 / 4008.904121 | +788.348297 / +638.511874 |
+| flat: live_fixed_resource_rates | 3485.772136 / 4338.405633 | 2984.959801 / 4018.492547 | +500.812335 / +319.913086 |
+| programme: v7_measured_programme_overlay_beside | 3515.606037 / 4268.925394 | 3255.471617 / 3953.588138 | +260.134420 / +315.337256 |
+| programme_income: v7_measured_programme_overlay_beside | 3758.381245 / 4496.968549 | 3456.748965 / 4139.786677 | +301.632280 / +357.181872 |
+| joint: live_programme_measured_per_part_income | 3758.381245 / 4496.968549 | 3118.521350 / 4008.904121 | +639.859895 / +488.064428 |
+| joint: programme_measured_before_unit_income | 3720.764203 / 4459.351507 | 3118.521350 / 4008.904121 | +602.242854 / +450.447386 |
+| income: before_unit_income_fixed_rates | 3869.252606 / 4609.798954 | 3118.521350 / 4008.904121 | +750.731256 / +600.894832 |
+| income: median_earnings_proxy_beside | 3917.674886 / 4658.221234 | 3118.521350 / 4008.904121 | +799.153536 / +649.317113 |
+| income: wage_only_worker_split_beside | 3890.729557 / 4631.275905 | 3118.521350 / 4008.904121 | +772.208207 / +622.371783 |
+| ratio: previous_unit_income_dfii10_stack | 3098.144149 / 4066.718388 | 2850.858677 / 3753.615749 | +247.285471 / +313.102638 |
+| income: previous_unit_income_dfii10_stack | 3369.687639 / 4326.234334 | 3118.521350 / 4008.904121 | +251.166289 / +317.330212 |
+| flat: previous_unit_income_dfii10_stack | 3237.338708 / 4338.405633 | 2984.959801 / 4018.492547 | +252.378907 / +319.913086 |
+| ratio: financing_cost_dfii10_floor0_beside | 3374.759810 / 4350.283007 | 2850.858677 / 3753.615749 | +523.901133 / +596.667258 |
+
+Capital-rate correction on the same ratio account, financing-cost DFII10 → fixed resource rates, $bn over2015–2024:
+
+- low: 3374.759810 → 3597.709115 (+222.949305).
+- high: 4350.283007 → 4350.283007 (+0.000000).
+
+Income-linked carried-component change (before unit elasticity → after per-part rules), $bn over 2015–2024:
+
+- low: -26.099349 → +11.517692.
+- high: -38.126894 → -0.509852.
+
+Own-formula PIA response derived from the pension lane, with its careers and vesting rules:
+
+| Group | PIA earnings elasticity at 2024 | Mean AIME / first bend point |
+|---|---:|---:|
+| union | 0.557993 | 3.590069 |
+| g1 | 0.566128 | 2.947100 |
+| g2 | 0.557955 | 3.966727 |
+| g3plus | 0.550857 | 4.037374 |
+
+Part A has zero earnings elasticity conditional on covered workers: its transport follows under65 workers per member. Earned OASDI follows all positive-tax workers per member times the finite benefit-formula response. Current cash offsets retain benefit/use rules. Retiree-health national function price swaps carry no additional individual earnings elasticity. Legal/on-books participation adjustments are held assumptions. CPS earned-income proxies do not identify an exact ACS split into workers and earnings: ACS nonlabor income, survey composition, work-spell age and legal coverage remain unmatched.
+
+Changes against74ce1f67 include v7→v8 propagation and round-2 rules. The previous_unit_income_dfii10_stack rows price the old74ce1f67 rule on the same v8 components, including its2024 financing-rate movement, to isolate that distinction.
+
+2024 lineage: 45.2301 million. Annual anchors/per-member gates: 1e-4bn/$0.01; explicit component closure: 1e-9bn. Fixed capital and pension-rule regressions are in test_backcast.py. Programme paths replace the broad charged-base scaling and retain fixed resource rates, with new items on their own typed series.
+[CALCULATION: derived/oct15/round2_windows.csv, round2_income_parts.csv, round2_pension_audit.json; ASSUMPTION: fixed legal/on-books adjustment; pre2019 fixed relative worker coverage and unsplit ACS earnings proxy]
+
+The live joint stack starts with programme spending, then measured EIP shares, historical school/Medicaid use and per-part income. The broad charged-base correction stays a diagnostic because programme paths replace that same expenditure scaling. New completion/coverage school and Medicaid pieces receive their known source use keys. The old v7 programme displacement is transported onto v8. Item11 now uses its exact source r0 programme/generation split, including income and state taxes, non-EIP refundable credits, Medicaid, ACA, SNAP, property, housing and consumption. Its D_added residual remains a separate G3+ lineage part. The preserved consumption aggregate uses a declared national-receipt composite; historical allocations within that aggregate are unobserved. Unclassified coverage retains its declared population proxy. This remains conditional transport of the current programme scope rather than a reconstruction of historical statutes.
+
+| Live branch: leave-one-branch-out → joint, $bn over 2015–2024 | Low before → after | High before → after |
+|---|---:|---:|
+| historical_school_medicaid | 3674.865731 → 3758.381245 (+83.515515) | 4399.484233 → 4496.968549 (+97.484316) |
+| new_known_use_keys | 3756.522926 → 3758.381245 (+1.858319) | 4494.733985 → 4496.968549 (+2.234564) |
+| pandemic_measured | 3809.227782 → 3758.381245 (-50.846536) | 4547.815085 → 4496.968549 (-50.846536) |
+| per_part_income | 3515.606037 → 3758.381245 (+242.775208) | 4268.925394 → 4496.968549 (+228.043155) |
+| precision_anchor | 3758.381415 → 3758.381245 (-0.000170) | 4496.968174 → 4496.968549 (+0.000375) |
+| programme_spending | 3542.762307 → 3758.381245 (+215.618938) | 4286.603191 → 4496.968549 (+210.365358) |
+
+Charged-base → programme replacement reconciliation (income branch excluded), $bn:
+
+- low: original ratio 3265.459971 → charged ratio 3597.709115 (+332.249144) → programme 3515.606037; replacement -82.103078; maximum annual closure residual 2.84e-14.
+- high: original ratio 4009.687317 → charged ratio 4350.283007 (+340.595690) → programme 4268.925394; replacement -81.357614; maximum annual closure residual 2.84e-14.
+
+Exact item11 programme split and covered-G3+ count-path correction, replacing the previous aggregate tax proxy/count path together:
+
+- low: 3768.372422 → 3758.381245bn (-9.991177). The count correction affects per-member denominators, not these cost totals. In the pre2024 fixture, the old path counts9.00 units and the corrected path8.72 units; the2024 anchor remains13.00. Actual covered-G3+2024 people690117.6475 now follow the same identified-G3+ path as their costs.
+- high: 4504.665274 → 4496.968549bn (-7.696725). The count correction affects per-member denominators, not these cost totals. In the pre2024 fixture, the old path counts9.00 units and the corrected path8.72 units; the2024 anchor remains13.00. Actual covered-G3+2024 people690117.6475 now follow the same identified-G3+ path as their costs.
+
+Missing school-age and Medicaid cells now fail by (key, group, income year); only absent Medicaid coverage before2019 is held. Deletion fixtures verify both a school cell and a 2021 Medicaid cell fail.
+
+Added-descendant expenditure has an explicit gross base; all of it is separately priced by programme, leaving a zero residual broad base. Applying a second broad sigma would double count those components.
+- low: gross added expenditure2024 $60.955268bn; separately carried $60.955268bn; residual $0; broad sigma before carrier exclusion would be $+4.431454bn over2015–24.
+- high: gross added expenditure2024 $62.851571bn; separately carried $62.851571bn; residual $0; broad sigma before carrier exclusion would be $+4.569316bn over2015–24.
+- Held-ratio descendants, low: live lineage–union gap $214.758353bn; an illustrative20% lower average ratio changes it by $-42.951671bn. Reviewer's earlier $169bn/$34bn illustration remains an illustration, not an estimated historical decline.
+- Held-ratio descendants, high: live lineage–union gap $258.202950bn; an illustrative20% lower average ratio changes it by $-51.640590bn. Reviewer's earlier $169bn/$34bn illustration remains an illustration, not an estimated historical decline.
+[CALCULATION: round2_programme_branches.csv, round2_added_expenditure_base.csv, round2_descendants.csv; ASSUMPTION: held descendants/identified-G3+ ratio]
+
+Final validation receipts:
+
+- bridge7: exit0, 27.584s, peak child RSS 0.455GB. See `/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/backcast-bridge7.log`.
+- producer7: exit0, 29.498s, peak child RSS 0.438GB. See `/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/backcast-producer7.log`.
+- tests3: exit0, 42.813s, peak child RSS 0.556GB. See `/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/backcast-tests3.log`.
+- orderfix: exit0, 0.466s, peak child RSS 0.131GB. See `/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/backcast-orderfix.log`.
+- rerun: exit0, 125.115s, peak child RSS 0.834GB. See `/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/backcast-rerun.log`.
+- Regression result: 42 passed in 42.33s.
+- Physical-footprint gates before publication: native bridge0.596GB and latest back-cast0.484GB, below the shared2.5GB budget. Source scanning is streaming; deterministic audit bytes contain no timing or memory readings.
+- The official seven-command gate sums required work. The measured stage receipts above identify the bridge, producer and full regression costs; worker extraction previously took23.550s and the longest individual regression fixture9.45s. The rerun harness records stage return codes but does not expose stage timing/stdout on success, so these are pre-rerun timings, not invented per-stage rerun measurements. No full rerun was repeated after exit0.
+- The first official rerun exited1 with93/94 files unchanged: round2_income_parts.csv differed only in row order. All25,120 rows were exactly equal after canonical key sorting. The linked-set loops and writer now sort explicitly; the existing joint fixture verifies canonical CSV order. Failure log/timing are retained in backcast-rerun-failed-order.log and backcast-rerun-failed-order-timing.json; full original backup remains at /var/folders/td/k9yd1c8n5478my_42k9tb89h0000gn/T/rerun_m26uj0m4/lane. No values, rounding or gate tolerances were changed. The final rerun below validates the fix.
+- The next attempt exited1 at the coverage source gate before comparing outputs: completion_keys.py and completion_jobs changed after the source freeze. Evidence is retained in backcast-rerun-failed-completion-source.log and its timing JSON; backup rerun_q6qcrk5w remains beside the first backup. No provenance gate was waived. The final recipe validates the exact original pricing arrays under the current source before rerunning.
+- A subsequent bridge stopped when the authoritative cash recipe was refreshed between conversion and use. Re-conversion and repeated read-only pair checks passed: original set/cash compressed caches are exactly the owned replay bytes; every economic audit field matches, with only dependency_manifest_sha256 differing. This was a provenance update, not a cohort or price change. Stable source manifest hashes and both cache hashes are retained in backcast-contract-proof.json. The successful final bridge/source gate validates the current authoritative contracts.
+- Official lane reproducibility: [rerun] IDENTICAL: 94/94 files unchanged (backup removed).
+
+Covered: live oct15 set/cash, all typed items9–12, historical worker/pension and programme paths, archived-case byte-preservation fixtures and physical-memory gates. Earlier case outputs remain archived rather than being regenerated as live results. Raw source files were read only. Social and debt/uncertainty outputs remain the parent and sibling agents' responsibilities. The bridge physical probe executes bridge_memory.py dynamically; the official rerun exemption names only that demonstrated dynamic call, not a missing analysis command.

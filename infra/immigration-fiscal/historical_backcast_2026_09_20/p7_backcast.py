@@ -27,10 +27,7 @@ HERE = b.HERE
 OUT = HERE / "derived/p7"
 WINDOWS = {"10y_2015_2024": 2015, "15y_2010_2024": 2010, "20y_2005_2024": 2005}
 RULES = ("flat", "ratio", "income")
-INCOME_RECEIPTS = {"federal_income_tax", "state_local_income_tax", "employee_oasdi", "employee_hi",
-                   "employer_oasdi", "employer_hi", "self_employment_oasdi_hi", "other_domestic_social_contributions",
-                   "corporate_capital", "corporate_labor", "remaining_production_property", "other_production_taxes",
-                   "general_sales_tax", "excise_selective_sales", "customs_duties", "personal_current_transfers"}
+INCOME_RECEIPTS = b.INCOME_RECEIPTS
 PARENTS = {"school_reprice": "education_services", "college_rekey": "education_services",
            "roads_vmt_sl": "economic_affairs_services", "roads_vmt_fed": "economic_affairs_services",
            "state_price_public_order_safety": "public_order_safety", "state_price_health_services": "health_services",
@@ -40,6 +37,15 @@ PARENTS = {"school_reprice": "education_services", "college_rekey": "education_s
 def require(ok, message):
     if not ok:
         raise ValueError("[BLOCKED] " + message)
+
+
+def use_cell(use, key, group, year):
+    cell = (key, group, year)
+    if cell not in use.index:
+        if key == "medicaid_covered" and year < 2019:
+            return None
+        raise ValueError(f"[BLOCKED] missing historical-use cell {cell}")
+    return use.loc[cell]
 
 
 def write_csv(table, name):
@@ -316,8 +322,15 @@ def programme(annual, carried, book, real, share, g3):
                         scale = (credits[year] / (union_amount * index("T31200-A:25")[year] * share[year])) if population == "lineage" else 1.
                         credits[year] = new_union * scale
                         rounds = [("eip1_advance", 2020)] if year == 2020 else [("eip2", 2020), ("eip1_catchup", 2020), ("eip3", 2021)]
+                        for key, y in rounds:
+                            if key == "eip1_catchup" and (key, "borjas", "personal", y) not in eip.index:
+                                from pandemic_zero import require_zero
+                                require_zero()
+                                continue  # Verified zero dollars, not a held/missing use observation.
+                            require((key, "borjas", "personal", y) in eip.index,
+                                    f"missing pandemic-use cell {(key, 'borjas', 'personal', y)}")
                         observations = [eip.loc[(key, "borjas", "personal", y)] for key, y in rounds
-                                        if (key, "borjas", "personal", y) in eip.index]
+                                        if key != "eip1_catchup" or (key, "borjas", "personal", y) in eip.index]
                         weights = np.asarray([value.national_bn for value in observations], float)
                         weights /= weights.sum()
                         terms = np.asarray([value.relative_use_se for value in observations]) * weights
@@ -347,10 +360,10 @@ def programme(annual, carried, book, real, share, g3):
                         for year in b.YEARS:
                             changes, replicate_changes = [], np.zeros(161)
                             for group_name, amount, path in (("union", ua, share), ("g3plus", la if population == "lineage" else 0., g3)):
-                                if (key, group_name, year) not in use.index:
-                                    continue  # Held explicitly where the extract has no coverage variable.
-                                value = use.loc[(key, group_name, year)]
-                                anchor = use.loc[(key, group_name, 2024)]
+                                value = use_cell(use, key, group_name, year)
+                                if value is None:
+                                    continue  # Sole declared exception: coverage not extracted before 2019.
+                                anchor = use_cell(use, key, group_name, 2024)
                                 ratio = value.relative_use / anchor.relative_use
                                 contribution = amount * nat_index[year] * path[year]
                                 changes.append(contribution * (ratio - 1))
