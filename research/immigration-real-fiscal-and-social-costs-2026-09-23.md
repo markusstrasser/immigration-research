@@ -96,7 +96,7 @@ Yes, use is the better key. It changes little because of what the account compar
 | Law courts ($80.2bn) | 12.0% | 13.3% | +1.01 | 60% criminal, keyed by arrests |
 | ICE custody, interior part ($0.9bn) | 12.0% | 22.6% | +0.10 | Mexico's interior bed-day share |
 | CBP ($23.9bn) and fire ($80.2bn) | 12.0% | 12.0% | 0 | not driven by residents' offending |
-| **Total** | **$62.4bn** | **$68.4bn** | **+5.94** | in every main case since September 23 |
+| **Total** | **$62.4bn** | **$68.4bn** | **+5.94** | the September 23 lane, on 2019 arrests |
 
 [CALCULATION: [justice-by-use lane](../infra/immigration-fiscal/cj_use_allocation_2026_09_23/RESULT.md),
 `derived/central_split.csv`; 38 gates, rerun identical]
@@ -121,9 +121,12 @@ Yes, use is the better key. It changes little because of what the account compar
   show an institutional rate of 4.3%, against 1.2% for all natives, which points to institutional
   records without detailed origin rather than a real group [INFERENCE].
   Without the reassignment the prison share is 12.6% and the whole change is **+$1.67bn**.
-- **Police rests on a 2019 arrest share.** It is the last year FBI tables report ethnicity.
-  Hispanic adults made up 1.15 times their share of adult arrests. BJS's adult imprisonment
-  ratio is also above 1: 1.42 in 2019 and 1.32 in 2023. NCVS victims' perceptions put Hispanic
+- **Police rests on FBI 2024 arrests** since the September 24 case: the Hispanic rate is 1.205 times
+  the adult rate, with Texas and Arizona bookings corrected because they record 3.8% fewer Hispanic
+  arrestees than the incident reports (FAQ 12). That change added $2.03bn on the September 24 case;
+  the live case does not isolate the use key's total. The table above is the September 23 lane, on
+  the 2019 arrest share, when Hispanic adults made up 1.15 times their share of adult arrests.
+  BJS's adult imprisonment ratio is also above 1: 1.42 in 2019 and 1.32 in 2023. NCVS victims' perceptions put Hispanic
   offending below the national rate, at 0.80. Carrying the arrest ratio down by the 2019–2023
   fall in imprisonment gives +$4.44bn. At the national arrest rate the central is +$3.19bn.
 - **CBP is a boundary call.** Border spending follows crossings, not residents' offending. The
@@ -375,7 +378,7 @@ quantities the social rows scale with, and the user-fee item's cell shifts stay 
 
 | $bn a year | Low end: Mexican-origin rates = Hispanic | High end: custody ratio carried over (adopted key) |
 |---|---:|---:|
-| Fiscal main case | 334.8 (justice +1.7) | **423.6** (justice +5.9) |
+| Fiscal main case | 334.8 (justice on census codes) | **423.6** (justice on the custody key) |
 | + crime victims' harm, full cost | +30.5 | +31.9 |
 | + property crime, arrest-share proxy | +1.2 | +1.4 |
 | + unreimbursed hospital care, outside budgets | +3.1 | +5.3 |
@@ -579,3 +582,7 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
 - 2026-10-07 (main case v6, [decision](../decisions/2026-10-07-main-case-v6.md), ladder 295; consumer lanes: pairing b0a2ccac, distribution 498a6a71, uncertainty 8020417a): the verdict, §1, §4 and §7 state main case v6, $389.1–461.5bn ($307.4–385.4bn counting benefits when paid). Fiscal and social costs together are $489.0–570.7bn ($11.4–13.3k per member), $407.3–494.6bn counting benefits when paid. The added descendants' rows are $8.4 / 8.5bn (October 5: $8.6 / 8.8bn): at their measured ages they have smaller shares of consumption and road use. §4's fiscal rows are $417.1bn (cash $289.4bn, capital return $48.8bn, accrual $78.9bn), and outside the budget the bottom four fifths lose $80.3bn and the top fifth gains $45.4bn. §7's sign-reversal paragraph takes v6's break-evens, and §1's bullet on the added descendants no longer says their social rows wait on a rerun, which stopped being true on October 5. Concept affected: the fiscal-plus-social total and its distribution by income.
 - 2026-10-08: living text states only the live case, at the operator's request; earlier-case figures removed, recoverable at 0e0c5e28.
 - 2026-10-08 (live-case cleanup, with the FAQ): the verdict no longer quotes the use key's and the hospital-care key's increments measured on the September 23 case (+$5.9bn, $1.7bn with census ethnicity codes as recorded, +$3.7–5.7bn). The main case isolates neither key; with offending at the Hispanic average it is $4.8bn lower at both ends. §7b's care row prints its three channels at two decimals so the parts add: +2.69 + 1.49 − 0.03 = +4.15 (2.60–13.35), was +4.1 (2.6–13.3) naming two. §6 keeps the lane's own measurement as its record. Concept affected: none.
+- 2026-10-14 (v7 assumption review, round 1, findings S27 and S29): §2 and §7 described the justice key
+  of September 23 (2019 arrests; justice +1.7 / +5.9) as current. Since September 24 police follow FBI 2024
+  arrests with the Texas and Arizona booking correction; the text and the §7 labels now say so. No total
+  changes. Concept affected: the justice key's description.

@@ -491,6 +491,11 @@ the true item toward the `case_wage_key` arm. [INFERENCE]
   36.8% of its wages are at employers under 100 against 30.2% nationally, and 43.5% against 51.3% at employers of
   1,000 or more. Small firms are less often C corporations. [CALCULATION: `summary.json` firm_size_wage_shares;
   INFERENCE] Within-industry informality points the same way (above).
+  [2026-10-14 correction, v7 assumption review round 1 (finding A19): these shares pool industries
+  (`job_capital.py` 663–669), so "within industries" overstated them. On private BEA cells, the union's
+  under-100 share is 41.5% against 34.0% nationally; of that 7.5-point gap, 2.6 points are within cells and
+  4.9 come from the industry mix. At 1,000 or more the gap is −8.7 points, −3.8 within cells. The sign
+  holds; the within-industry part is about a third. CALCULATION: `job_capital_key_refine_2026_10_14/derived/within_firm.json`]
 - **The corporate part is likely understated at the high end.** "Supernormal" includes returns to risk and to
   expensed intangibles, and rents from US customers, all of which scale with the group's capital or market. The
   group's industry mix also has a higher normal share (question 2). [INFERENCE]
