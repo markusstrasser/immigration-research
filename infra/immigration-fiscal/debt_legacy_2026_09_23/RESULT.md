@@ -1176,3 +1176,66 @@ Log (append-only; times from `date`):
 - 15:13:19–15:14:28: the case-lane hashes recorded in `derived/oct07/summary.json` (corrections.json f8d346aa…, corrections_cash.json
   e9033bff…, main_case_bands.csv 35116620…, per_spec.csv 9244bcb5…) are the committed files' (218a2fb2), so no file
   was read mid-write; no rerun needed.
+
+## v7 case (oct14), 2026-10-14
+
+The live default is now `oct14`, on adopted main case v7 (`148ed1ea`). It writes only `derived/oct14/`; the
+unkeyed and earlier case directories are preserved. The central convention at the case's low / high ends gives
+**$25.95 / $41.94bn of modeled legacy interest in 2024**, on stocks entering 2024 of $802.54 / $1,297.12bn,
+or $607 / $981 per member of the 42.75M lineage. This remains a modeled historical financing burden, not observed
+group borrowing: the central rule is `programme_income_pandemic_per_head`, start 2005, effective interest rates,
+all cash gaps borrowed. Resource cost, displaced benefits and pension accrual stay outside the compounded cash.
+[CALCULATION: `derived/oct14/summary.json` `case.v4.headline_2024`, `case.v4.central`]
+
+The federal part of the 2024 cash gap is **$18.33 / $57.23bn**, out of $217.79 / $278.18bn across governments.
+The set's $339.552 / $423.649bn and cash set's $264.426 / $348.523bn match the adopted case, both at the personal
+specifications 16 / 11. [CALCULATION: `derived/oct14/summary.json` `case.v4.headline_2024`, `case.v4.oracle`]
+
+R5 selects personal band corners; all 64 specifications remain in the per-specification checks. R6–R9 follow the
+registry's edit ranges and `union_` / `lineage_` parts: the twin contains only union parts, and the difference carries
+the added people on the identified third-plus path. The child-credit lineage term and all eight receipt scenarios,
+the job-capital whole responsive amounts, the white-end taxes and row-4 set-only pension shifts are included.
+Benefit-tax accrual is the actual set-minus-cash receipt, split between the twin and lineage; ordinary tax corrections
+remain cash receipts on their tagged path. The four new receipt responses must be exactly the job-capital registry's
+entries and readings; all inherited responses remain unchanged.
+[SOURCE: `main_case_2026_10_14/RESULT.md`, Consumers R5–R9]
+
+`oct14_bridge_2024.csv` moves from v6's ends to its personal ends first, then applies the four new edit sets in
+registry order; a receipt response enters with its item. Intermediate splits match the independent payload consumer,
+and the bridge closes to the final split, both at 1e-9. The older bridges are byte-identical to their v6 counterparts.
+Earlier lineage cases retain the lineage funding-share epoch when the historical chain is rebuilt.
+[CALCULATION: `debt_legacy.py` `v7_bridge`; `test_oct14_rebuilds_its_directory`]
+
+R7 activates four receipt lines that formerly responded at zero. Corporate receipts carry federal NIPA 3.2:8 and
+state-local 3.3:11; business property carries state-local 3.3:9. Other production taxes carry the native builder's
+full remainder, **3.5:1 minus 20, 38, 4, 23 and 15 = $145.258bn in 2024**, with federal 16+17 and the state-local
+complement. The detailed state-local sum (34+35+36+37−38) agrees within BEA's observed $0.002bn rounding across
+2005–2024; the account closes exactly to its native remainder. The existing 2024 federal fraction was numerically
+right because federal line 16 is zero: federal receipts are $1.580bn. The missing programme series and historical
+national scaler needed repair. The grouped audit now includes corporate receipts at NIPA 3.1:5 and the two production
+receipt lines at 3.1:4, and stops if a responsive receipt lacks a group.
+[SOURCE: `full_account_receipts_2026_09_20/builder.py:218`; pinned BEA Section 3 workbook;
+CALCULATION: `job_capital_shares`, `RECEIPT_SERIES_V7`, `programme_federal`]
+
+Validation: native-engine parity on both payloads' 32 personal specifications (1e-9; maximum cost difference
+4.6e-13bn), the case's 64 per-specification rows per method and all funding conventions at existing tolerances
+(cost 1e-6, line and capital amounts 1e-9, four-decimal CSV bands 1e-4), and the adopted/cash oracle at unrounded
+1e-6. All 17 tests pass. Archival replay tests retain exact output bytes except a single supplier provenance hash,
+which must match the current consumer file: committed `c94314c5` added its missing-capital guard after the archives
+were recorded. Earlier archive files and every numerical field remain unchanged.
+
+Reproduce only the live case (the back-cast's live oct14 outputs must exist):
+
+```sh
+GIT_OPTIONAL_LOCKS=0 PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py --case oct14
+GIT_OPTIONAL_LOCKS=0 PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/debt_legacy_2026_09_23/test_debt_legacy.py -q --import-mode=importlib -k 'oct14 or v7_contract'
+```
+
+Log (append-only; times from `date`):
+- 2026-10-14 18:28:02 JST — `CASE_FINAL` identified adopted commit `148ed1ea`; the case and decision byte-match that
+  commit, and the three payload/summary hashes match its pins. After the live back-cast export, the oct14 run exited 0:
+  central federal cash $18.33 / $57.23bn, modeled legacy interest $25.95 / $41.94bn. Oracle, accounting, native-port,
+  programme-anchor, grouped-audit and bridge gates passed; 17 tests passed in 105.52s. No Git writes by this worker.
+- 2026-10-14 18:31:57 JST — final live-command and live-regression `rerun_lane.py`: IDENTICAL 90/90, both commands
+  rc 0, harness exit 0. Earlier derived files have no Git diff; `git diff --check` passes. The worker leaves review
+  and commits to the parent.
