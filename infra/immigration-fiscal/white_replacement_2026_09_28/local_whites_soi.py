@@ -257,18 +257,18 @@ def main():
             slc = f"{s}: AGI {lab}"
             add("shares", "", slc, "SOI share of the state's income tax after credits", sd[s]["groups"][g], "share")
             add("shares", "central", slc, "the key's raked share, all residents", rak[g], "share")
-            add("shares", "", slc, "unraked share (SPM split of FEDTAX_BC), all residents", unr[g], "share")
+            add("shares", "", slc, f"unraked share (FEDTAX_BC at {W.TAX_ALLOC}), all residents", unr[g], "share")
             add("shares", "central", slc, "raked share, third-plus non-Hispanic whites", rak3[g], "share")
             add("shares", "iii", slc, "raked share, third-plus non-Hispanic whites", arm3[g], "share")
             add("shares", "i", slc, "factor on the class's raked dollars", sd[s]["groups"][g] / rak[g], "ratio")
         slc = f"{s}: share of the 50 states' and DC's income tax"
         add("shares", "", slc, "SOI", sd[s]["total"] / sd["US50"]["total"], "share")
         add("shares", "central", slc, "the key, raked", rtot / tot0, "share")
-        add("shares", "", slc, "unraked (SPM split of FEDTAX_BC)", utot / float(w0 @ m14.sum(axis=1)), "share")
+        add("shares", "", slc, f"unraked (FEDTAX_BC at {W.TAX_ALLOC})", utot / float(w0 @ m14.sum(axis=1)), "share")
     slc = "US: AGI $1M or more"
     add("shares", "", slc, "SOI state file, the 50 states and DC", sd["US50"]["groups"][-1], "share")
     add("shares", "central", slc, "the key (IRS Table 1.2)", nat[-1] / nat.sum(), "share")
-    add("shares", "", slc, "unraked (SPM split of FEDTAX_BC)", float((w0 @ m14) @ G[:, -1]) / float(w0 @ m14.sum(axis=1)),
+    add("shares", "", slc, f"unraked (FEDTAX_BC at {W.TAX_ALLOC})", float((w0 @ m14) @ G[:, -1]) / float(w0 @ m14.sum(axis=1)),
         "share")
 
     # ---------------------------------------------------------------- gaps on each arm

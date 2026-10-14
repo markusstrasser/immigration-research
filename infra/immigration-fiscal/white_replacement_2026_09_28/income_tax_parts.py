@@ -68,7 +68,7 @@ STEPS = [("cps", None, {"federal_income_tax": "cps", "state_local_income_tax": "
 for part, lid, key in (("a_federal", "federal_income_tax", "fit"), ("a_state", "state_local_income_tax", "sit"),
                        ("a_other", "other_personal_tax", "fit"),
                        ("b1_federal_credits", "federal_income_tax", "fit_bc_tu"),
-                       ("b2_federal_unit", "federal_income_tax", "fit_bc_spm"),
+                       ("b2_federal_unit", "federal_income_tax", "fit_bc_alloc"),
                        ("b2_state_unit", "state_local_income_tax", "sit_case"),
                        ("b3_other_key", "other_personal_tax", "sit_case"),
                        ("c_federal_raking", "federal_income_tax", "fit_case")):
@@ -123,15 +123,16 @@ def add_keys(bf, d):
     gate("FEDTAX_BC = FEDTAX_AC + EIT_CRED + ACTC_CRD on every record (exact)",
          np.array_equal(bc, (R.d.FEDTAX_AC + R.d.EIT_CRED + R.d.ACTC_CRD).to_numpy(float)) and (bc >= 0).all())
     R.K["fit_bc_tu"] = np.maximum(R.split(bc, ["PH_SEQ", "TAX_ID"]), 0)
-    R.K["fit_bc_spm"] = bf.unit_equal(bc, R.d.SPM_ID.to_numpy())
-    gate("the national raked vector is the library's shared federal key", np.array_equal(R.K["fit_case"], W.TAX_K["fit_case_shared"]))
+    R.K["fit_bc_alloc"] = bc if W.TAX_ALLOC == "personal" else bf.unit_equal(bc, R.d.SPM_ID.to_numpy())
+    gate(f"the national raked vector is the library's {W.TAX_ALLOC} federal key",
+         np.array_equal(R.K["fit_case"], W.TAX_K[f"fit_case_{W.TAX_ALLOC}"]))
     civ, union = bf.masks(d)
     w0 = d.pwwgt0.to_numpy(float) * civ
-    want = next(x for x in bf.model()["receipts"]["lines"] if x["id"] == "federal_income_tax")["cells"]["cbo_collective"]["shared"]["share"]
-    got = float(w0[union] @ R.K["fit_bc_spm"][union] / (w0 @ R.K["fit_bc_spm"]))
-    gate("the SPM-unit split of FEDTAX_BC gives the union model.json's federal_liability cell on the published weights (1e-9)",
+    want = next(x for x in bf.model()["receipts"]["lines"] if x["id"] == "federal_income_tax")["cells"]["cbo_collective"][W.TAX_ALLOC]["share"]
+    got = float(w0[union] @ R.K["fit_bc_alloc"][union] / (w0 @ R.K["fit_bc_alloc"]))
+    gate(f"FEDTAX_BC at {W.TAX_ALLOC} gives the union model.json's federal_liability cell on the published weights (1e-9)",
          abs(got - want) < 1e-9, f"{got:.9f} vs {want:.9f}")
-    for k in ("fit_bc_tu", "fit_bc_spm"):
+    for k in ("fit_bc_tu", "fit_bc_alloc"):
         R.KTOT[k] = float((R.w * R.K[k]).sum())
     W.UNION_SC = R.scenario("mex")     # rebuilt with the new keys' shares
 
@@ -141,9 +142,9 @@ def agi_bins(d, bc):
     and the bins' lower bounds."""
     labels, _ = W.TK.irs_2023()
     edges, lows = W.TK.bin_edges(labels)
-    m = W.TK.bin_dollars(d, bc, "shared", edges)
-    gate("the AGI bins split each record's FEDTAX_BC as the raking does: their sum is the shared key (1e-6)",
-         float(np.abs(m.sum(axis=1) - R.K["fit_bc_spm"]).max()) < 1e-6)
+    m = W.TK.bin_dollars(d, bc, W.TAX_ALLOC, edges)
+    gate(f"the AGI bins split FEDTAX_BC as the raking does: their sum is the {W.TAX_ALLOC} key (1e-6)",
+         float(np.abs(m.sum(axis=1) - R.K["fit_bc_alloc"]).max()) < 1e-6)
     return m, np.array([0.0] + lows, float)
 
 
@@ -239,7 +240,7 @@ def bins_rows(scen, pieces, m, lows):
               **{f"Part F whites at union ages: {n}": sc for n, sc in pieces.items()}}
     local = {"name": "sum", "cps_w": sum(sc["cps_w"] for sc in pieces.values()),
              "population": sum(sc["population"] for sc in pieces.values())}
-    local["share"] = {k: float((local["cps_w"] * R.K[k]).sum() / R.KTOT[k]) for k in ("fit", "fit_bc_tu", "fit_bc_spm", "fit_case")}
+    local["share"] = {k: float((local["cps_w"] * R.K[k]).sum() / R.KTOT[k]) for k in ("fit", "fit_bc_tu", "fit_bc_alloc", "fit_case")}
     slices["Part F whites at union ages: sum of CA, TX and rest"] = local
     for lab, sc in slices.items():
         cw, pop = sc["cps_w"], sc["population"]
@@ -256,8 +257,8 @@ def bins_rows(scen, pieces, m, lows):
                     "bc_share_agi_500k_plus": f"{float(by_bin[lows >= 500_000].sum()) / tot:.6f}",
                     "bc_share_agi_1m_plus": f"{float(by_bin[lows >= 1_000_000].sum()) / tot:.6f}",
                     "share_fit": f"{sh['fit']:.9f}", "share_fit_bc_tu": f"{sh['fit_bc_tu']:.9f}",
-                    "share_fit_bc_spm": f"{sh['fit_bc_spm']:.9f}", "share_fit_case": f"{sh['fit_case']:.9f}",
-                    "raking_factor": f"{sh['fit_case'] / sh['fit_bc_spm']:.6f}"})
+                    "share_fit_bc_alloc": f"{sh['fit_bc_alloc']:.9f}", "share_fit_case": f"{sh['fit_case']:.9f}",
+                    "allocation": W.TAX_ALLOC, "raking_factor": f"{sh['fit_case'] / sh['fit_bc_alloc']:.6f}"})
     return out
 
 

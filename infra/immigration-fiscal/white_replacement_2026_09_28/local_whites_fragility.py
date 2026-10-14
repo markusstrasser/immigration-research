@@ -143,7 +143,7 @@ def raking(bf, d):
     cbo = TK.cbo_shares()
     g = TK.cbo_groups(d)
     cols = TK._pool14(irs)
-    m14 = TK._pool14(TK.bin_dollars(d, d.FEDTAX_BC.to_numpy(float), "shared", edges).T).T
+    m14 = TK._pool14(TK.bin_dollars(d, d.FEDTAX_BC.to_numpy(float), W.TAX_ALLOC, edges).T).T
     pos = [j for j in cbo if cbo[j] > 0]
     tb = np.stack([m14[civ & (g == j)].T @ w0[civ & (g == j)] for j in pos])
     rows = np.array([cbo[j] for j in pos])
@@ -159,10 +159,10 @@ def raking(bf, d):
         mj = civ & (g == j)
         vcol[mj] = m14[mj] * ratio[i][None, :]
     v = vcol.sum(axis=1)
-    gate("the rebuilt raking is the library's shared federal key (1e-12 relative)",
+    gate(f"the rebuilt raking is the library's {W.TAX_ALLOC} federal key (1e-12 relative)",
          np.allclose(v, R.K["fit_case"], rtol=1e-12, atol=0), f"max |d| {np.abs(v - R.K['fit_case']).max():.3e}")
-    gate("the pooled columns' unraked dollars are the library's SPM split of FEDTAX_BC (1e-6)",
-         float(np.abs(m14.sum(axis=1) - R.K["fit_bc_spm"]).max()) < 1e-6)
+    gate(f"the pooled columns' unraked dollars are FEDTAX_BC at {W.TAX_ALLOC} (1e-6)",
+         float(np.abs(m14.sum(axis=1) - R.K["fit_bc_alloc"]).max()) < 1e-6)
     gate("the pooled top column starts at $1,000,000", lows[13] == 1_000_000, f"{lows[13]:,}")
     return dict(m14=m14, vcol=vcol)
 
@@ -266,7 +266,7 @@ def main():
         tot = sum(cen.values()) - sum(cps.values())
         gate(f"{lab}: the three lines' move from the weights is the parts file's total (1e-3)",
              abs(tot + float(sum(pr[c] for c in pcols))) < 1e-3, f"{tot:.4f}")
-    Kv, Ks = T["fit_case"], T["fit_bc_spm"]
+    Kv, Ks = T["fit_case"], T["fit_bc_alloc"]
     for name in REGIONS:
         cw = pieces[name]["sc"]["cps_w"]
         unr, rak = L * (cw @ rk["m14"]) / Ks, L * (cw @ rk["vcol"]) / Kv
@@ -280,7 +280,7 @@ def main():
     spm = d.SPM_ID.to_numpy()
     hh = d.PH_SEQ.to_numpy()
     age = R.d.A_AGE.to_numpy()
-    s = K["fit_bc_spm"]
+    s = K["fit_bc_alloc"]
     unit_top = {thr: pd.Series(agi >= thr).groupby(spm).transform("max").to_numpy() for thr in (500_000, 1_000_000)}
     contrib = {}
     for name, sc in [*((n, pieces[n]["sc"]) for n in REGIONS), ("A1", a1)]:
@@ -351,7 +351,8 @@ def main():
                     add("leave_out", slc, f"change without the {what}, % of the gap", 100 * (gnew - base[(b, end)]) / base[(b, end)], "pct", b, end)
 
     # ---------------------------------------------------------------- personal allocation
-    personal = {k: f"{x}_personal" for k, x in W.CASE_TAX_KEY.items()}
+    alternative = "shared" if W.TAX_ALLOC == "personal" else "personal"
+    personal = {k: f"{x}_{alternative}" for k, x in W.CASE_TAX_KEY.items()}
     with W.patched(vars(W), CASE_TAX_KEY=personal), contextlib.redirect_stdout(io.StringIO()):
         st_p = {b: W.state_rows(b)[0] for b in W.BASES}
         a1_gap_p = {(b, end): W.run29(W.UNION_SC, end, b)[0]["cost"] - W.run29(a1, end, b)[0]["cost"]
@@ -359,7 +360,7 @@ def main():
     if W.FAILS:
         raise SystemExit(f"[BLOCKED] the library's gates under the personal keys: {W.FAILS[:3]}")
     keys = pd.read_csv(DER / f"income_tax_keys_{case}.csv")
-    dk = (keys.amount_personal_bn - keys.amount_shared_bn).groupby(keys.group).sum()
+    dk = (keys[f"amount_{alternative}_bn"] - keys[f"amount_{W.TAX_ALLOC}_bn"]).groupby(keys.group).sum()
     add_p = {k: a1_gap0[k] - dk["mexican_origin_rough"] + dk["A1_third_plus_nh_white"] for k in a1_gap0}
     gate("control: A1's gap at the personal allocation is the additive figure from income_tax_keys (5e-4)",
          all(abs(a1_gap_p[k] - add_p[k]) < 5e-4 for k in a1_gap_p),
@@ -368,12 +369,12 @@ def main():
         for x in st_p[b]:
             if x["region"] in (*REGIONS, "sum of CA, TX and rest"):
                 slc = LOCAL if x["region"] == "sum of CA, TX and rest" else f"local gap: {x['region']}"
-                add("personal_allocation", slc, "gap at the shared allocation (the central)",
+                add("allocation_companion", slc, f"gap at the {W.TAX_ALLOC} allocation (the central)",
                     float(rows[(b, x["end"], x["region"])]["delta_union_ages_bn"]), "bn", b, x["end"])
-                add("personal_allocation", slc, "gap at the personal allocation", float(x["delta_union_ages_bn"]), "bn", b, x["end"])
+                add("allocation_companion", slc, f"gap at the {alternative} income-tax allocation", float(x["delta_union_ages_bn"]), "bn", b, x["end"])
     for (b, end), g in a1_gap_p.items():
-        add("personal_allocation", A1, "gap at the shared allocation (the central)", a1_gap0[(b, end)], "bn", b, end)
-        add("personal_allocation", A1, "gap at the personal allocation", g, "bn", b, end)
+        add("allocation_companion", A1, f"gap at the {W.TAX_ALLOC} allocation (the central)", a1_gap0[(b, end)], "bn", b, end)
+        add("allocation_companion", A1, f"gap at the {alternative} income-tax allocation", g, "bn", b, end)
 
     # ---------------------------------------------------------------- replicate SE
     with zipfile.ZipFile(R.ZIP) as z:
@@ -425,7 +426,7 @@ def main():
             add("replicate_se", f"white piece at union ages: {n}", "standard error of its cost", se[n], "bn", b, end)
     stop()
 
-    order = {"counts": 0, "leave_out": 1, "personal_allocation": 2, "replicate_se": 3}
+    order = {"counts": 0, "leave_out": 1, "allocation_companion": 2, "replicate_se": 3}
     out.sort(key=lambda x: order[x["section"]])           # stable: each section keeps its build order
     path = args.out_dir / f"local_whites_fragility_{case}.csv"
     with open(path, "w", newline="") as f:

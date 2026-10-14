@@ -122,6 +122,20 @@ capital-side lines at 1; the top tail is inside the central, so cost_both_arms i
 CPS's federal and state income-tax dollars against the national lines on the published and row-4 weights (the rough
 re-key's frame), each row naming its variable, its placement (on the record or split over the tax unit) and its key.
 income_tax_parts.py splits the move from the CPS-dollar rule to the case's keys into its parts.
+Live v7 (--case oct14):
+  - both ends come from v7.end_specifications and use personal allocation for income tax and the pension benefit-tax
+    receipt. The shared low-end mapping above is historical. Earlier keyed outputs are read as preserved evidence.
+  - child_credits' named union parts shift the rough union's federal receipt and refundable spending after the rough
+    keys; its lineage parts travel in FULL minus DUMP. No comparator mixed-unit crossing was measured.
+  - job_capital_taxes' union targets are its source's group_bn. White and Black targets are each scenario's plain
+    WSAL_VAL wage share times the source's white_nh/black_nh personal factor times the national receipt line.
+    Both corporate carriers split the source corporate target in proportion to their nationals, and their responses
+    are the source's low/high readings. All residents have factor base_bn/national_bn: applying the industry's whole
+    wage bill to every cell integrates to the excluded base (job_capital.py cell_wages, shares and nat_lines).
+  - state union pieces split the new job-capital receipts by wages and fixed union credit shifts by persons; both sum
+    to the whole union. The added people's item terms are exclusively in FULL minus DUMP.
+  - white_end_tax_keys' and row4_frame's named parts also enter the appropriate full/union dumps. The white-end
+    remaining tax correction is measured, after the applied item, by limits_oct14.py; it must be zero at 1e-9.
 The keys' one definition is tax_key_heldout_2026_09_28/keys.py (TK, loaded by path), moved there from this library on
 2026-10-07 so that the ledger's item T loads it too.
 Gates (case_tax_keys()): the benchmark lane's frame (external_benchmarks_2026_09_24, FEDTAX_BC, AGI and the CBO income
@@ -150,9 +164,9 @@ state_buckets_sept29.csv, headline_sept29.csv, v4_group_terms_sept29.csv, rule_a
 attribution_sept29.csv, attribution_buckets_sept29.csv. Run from the repository root after engine_lines.cjs sept29 / sept29_cash, accrual_white.py,
 v4_inputs.py and the Black lane's accrual_black.py:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/white_replacement_2026_09_28/rekey_sept29.py
-and, after engine_lines.cjs oct05 / oct05_cash / oct05_union / oct05_union_cash, the same with --case oct05; after
-engine_lines.cjs oct07 / oct07_cash / oct07_union / oct07_union_cash and accrual_white.py and accrual_black.py
---case oct07, the same with --case oct07 (after the oct05 run, whose headline it reads).
+and, after engine_lines.cjs oct05 / oct05_cash / oct05_union / oct05_union_cash, the archived library uses --case oct05.
+The live route is run_oct14.sh. The parent's 2026-10-14 wave-2 rule adds only the registered R9 union pension
+parts to the legacy pension amounts. Rough owner and state keys already use row 4 and receive no second shift.
 """
 from __future__ import annotations
 
@@ -191,14 +205,14 @@ BASES = ("accrual", "cash")
 DUMP27 = R.case
 # The cases this library re-keys, by key: the case lane. Outputs carry the key (rekey_summary_<case>.csv, ...).
 # oct05 (v5) is the September 29 rules on the identified union at v5's responses, plus the lineage (see use_case()).
-CASES = {"sept29": "main_case_2026_09_29", "oct05": "main_case_2026_10_05", "oct07": "main_case_2026_10_07"}
-LINEAGE_CASES = ("oct05", "oct07")
+CASES = {"sept29": "main_case_2026_09_29", "oct05": "main_case_2026_10_05", "oct14": "main_case_2026_10_14"}
+LINEAGE_CASES = ("oct05", "oct07", "oct14")  # earlier keys locate preserved files, never recomputed
 # The accrual ratios each case reads (rule 3): sept29 and oct05 on the 2025 Trustees Reports, oct07 on the 2026
 # separate-funds path (accrual_white.py and the Black lane's accrual_black.py, --case oct07).
-ACCRUAL_FILES = {"sept29": "accrual_ratios.csv", "oct05": "accrual_ratios.csv", "oct07": "accrual_ratios_oct07.csv"}
+ACCRUAL_FILES = {"sept29": "accrual_ratios.csv", "oct05": "accrual_ratios.csv", "oct14": "accrual_ratios_oct14.csv"}
 # The IPEDS keys (module docstring): the cases that take them, and those that also take item 4's fee terms.
-IPEDS_CASES = ("oct05", "oct07")
-FEE_CASES = ("oct07",)
+IPEDS_CASES = ("oct05", "oct14")
+FEE_CASES = ("oct14",)
 IPEDS_LINES = ("other_federal_benefits", "education_services")
 # A scenario's race for the IPEDS keys, by its name (an importer adds its groups), and each race's CPS persons
 IPEDS_RACE = {"mex": "union", "union_piece": "union", "w3": "white", "wus": "white", "wall": "white", "blk": "black",
@@ -215,10 +229,26 @@ BENEFIT_TAX_RULE = "shared"   # rule 3: the shared rule at both ends; "by_end" (
 REL_UNION = 0.5233824966647924     # the union's measured relative benefit-tax rate (pension lane, accrual_white.py)
 # Round 2 (2026-10-07): the cases whose central keys every group's income taxes on the case's own keys (module
 # docstring), the allocation the comparators take, and each income-tax line's key
-TAX_CASES = ("oct05", "oct07")
+TAX_CASES = ("oct05", "oct14")
 TAX_ALLOC = "shared"
 CASE_TAX_KEY = {"federal_income_tax": "fit_case", "state_local_income_tax": "sit_case", "other_personal_tax": "sit_case"}
 TAX_K: dict = {}     # the case's key vectors on the rough frame's rows (case_tax_keys()), added to R.K on TAX_CASES
+
+
+def union_item_shifts(payload, item_id):
+    """Project one item's union parts onto reference receipt and spending lines."""
+    record = next((r for r in payload["meta"].get("items", []) if r["id"] == item_id and r.get("applied")), None)
+    if record is None:
+        return {}
+    shifts = {}
+    first, count = record["edits"]["first"], record["edits"]["count"]
+    for k, edit in enumerate(payload["edits"][first:first + count]):
+        if edit.get("scenario") not in (None, "cbo_collective"):
+            continue
+        key = ("receipts" if edit["side"] == "receipt" else edit["side"]) + "|" + edit["line"]
+        shifts[key] = shifts.get(key, 0.0) + sum(x["by"]["personal"] for name, x in record["parts"].items()
+                                               if x["edit"] == k and name.startswith("union_"))
+    return shifts
 
 
 def use_case(case):
@@ -228,13 +258,22 @@ def use_case(case):
     part of every line, of the capital return and of the production term (FULL less DUMP)."""
     global CASE, CASE_LANE, DUMP, FULL, LIN, LINEAGE, META, PA, SPM, RD, BANDS, ORACLE, SP_LINES, FP, U5, RHO, GAS, LIC
     global HWY_N, SE_SHARE, PART_A_SHARE, STEPS, LINEAGE_ON, UNION_LINES, ITEM_COMPONENTS, IPEDS_ON, FEES_ON, IK
-    global TAX_ON, BOTH_TOP, FINAL_STEPS
+    global TAX_ON, BOTH_TOP, FINAL_STEPS, TAX_ALLOC, JOB_CAPITAL, CREDIT_SHIFTS, FRAME_SHIFTS
     if case not in CASES:
         raise SystemExit(f"[BLOCKED] unknown case {case!r}: one of {', '.join(CASES)}")
     CASE, CASE_LANE = case, FISCAL / CASES[case]
     stem = "engine_lines_" + case + ("_union" if case in LINEAGE_CASES else "")
     DUMP = {"accrual": json.loads((DER / f"{stem}.json").read_text()), "cash": json.loads((DER / f"{stem}_cash.json").read_text())}
     META = json.loads((CASE_LANE / "derived/corrections.json").read_text())["meta"]
+    TAX_ALLOC = "personal" if case == "oct14" else "shared"
+    JOB_CAPITAL = json.loads((FISCAL / "job_capital_taxes_2026_10_14/derived/item.json").read_text()) if case == "oct14" else None
+    CREDIT_SHIFTS = {}
+    FRAME_SHIFTS = {}
+    if case == "oct14":
+        for b, name in (("accrual", "corrections.json"), ("cash", "corrections_cash.json")):
+            p = json.loads((CASE_LANE / "derived" / name).read_text())
+            CREDIT_SHIFTS[b] = union_item_shifts(p, "child_credits")
+            FRAME_SHIFTS[b] = union_item_shifts(p, "row4_frame")
     PA, SPM, RD = META["pension_accrual"], META["state_pricing"], META["roads_mileage_key"]
     BANDS = (pd.read_csv(CASE_LANE / "derived/main_case_bands.csv").query("profile == 'long_run_non_school_full'")
              .set_index("variant"))
@@ -275,7 +314,8 @@ def use_case(case):
     for k in ("fit_case", "sit_case", "fit_case_personal", "fit_case_shared", "sit_case_personal", "sit_case_shared"):
         R.K.pop(k, None)
     if TAX_ON:
-        STEPS = STEPS + [STEP_TAX]
+        step_tax = (STEP_TAX[0], STEP_TAX[1].replace("the shared allocation", f"the {TAX_ALLOC} allocation"), STEP_TAX[2])
+        STEPS = STEPS + [step_tax]
     FINAL_STEPS = ({"5": "accrual"} if TAX_ON else {"4": "accrual"} if LINEAGE_ON else {"2": "cash", "3": "accrual"})
 
 
@@ -335,6 +375,8 @@ def _keyed_meps(g, cw, total, ages, mwt=None):
 
 R.keyed = _keyed_meps       # R.scenario and state_white.white_piece look it up at call time
 R.KTOT["rent"] = float((R.w * R.K["rent"]).sum())
+R.K["wage_job"] = R.d.WSAL_VAL.clip(lower=0).to_numpy(float)
+R.KTOT["wage_job"] = float((R.w * R.K["wage_job"]).sum())
 _line_share27 = R.line_share
 
 
@@ -501,7 +543,38 @@ def acc_entry(row, rel=None):
     return dict(net=net, part_a=float(row["part_a_per_hi_tax_dollar"]), rel=rel, gross=gross, timing=timing)
 
 
+def require_rough_pension_rule():
+    if CASE == "oct14" and META.get("row4_frame"):
+        record = next((r for r in META["items"] if r["id"] == "row4_frame" and r.get("applied")), None)
+        if record is None or not record.get("parts"):
+            raise SystemExit("[BLOCKED] R9 rough pension rule needs the registered row4_frame parts")
+
+
+def union_pension_params(p):
+    """Legacy rule plus payload R9 pension dollars, divided by the same rough cash bases (parent wave 2)."""
+    sc = R.scenario("mex")
+    params = {}
+    for end in ENDS:
+        lines = DUMP["cash"][end]["lines"]
+        cash = {l["side"] + "|" + l["id"]: l["national_bn"] * R.line_share(sc, l["side"], l["id"], "case")
+                for l in lines if l["side"] != "scalar"}
+        se = cash["receipts|self_employment_oasdi_hi"]
+        oasdi = cash["receipts|employee_oasdi"] + cash["receipts|employer_oasdi"] + SE_SHARE * se
+        hi = cash["receipts|employee_hi"] + cash["receipts|employer_hi"] + (1 - SE_SHARE) * se
+        shifts = FRAME_SHIFTS["accrual"]
+        allocation = DUMP["cash"][end]["allocation"]
+        engine = {l["side"] + "|" + l["id"]: l["amount_bn"] for l in lines if l["side"] != "scalar"}
+        engine_oasdi = engine["receipts|employee_oasdi"] + engine["receipts|employer_oasdi"] + SE_SHARE * engine["receipts|self_employment_oasdi_hi"]
+        ss = PA["ratio_net"] * engine_oasdi + shifts.get("spending|social_security", 0.0)
+        part_a = PA["part_a_accrual_bn"] + shifts.get("spending|medicare", 0.0)
+        benefit_tax = PA["benefit_tax_receipt_bn"][allocation] - shifts.get("receipts|federal_income_tax", 0.0)
+        params[end] = {**p, "net": ss / oasdi, "part_a": part_a / hi,
+                       "per_rel_ben": benefit_tax / cash["spending|social_security"] / REL_UNION}
+    return {**p, "by_end": params}
+
+
 def accrual_params():
+    require_rough_pension_rule()
     name = ACCRUAL_FILES[CASE]
     wr = {(r["group"], r["scenario"]): r for r in csv.DictReader(open(DER / name))}
     br = {(r["group"], r["entry_rule"], r["scenario"]): r for r in csv.DictReader(open(BLACK_LANE / "derived" / name))}
@@ -510,7 +583,10 @@ def accrual_params():
     a = br[("all_residents", "immigrants_at_arrival", "payable")]
     gate("the white lane's union net OASDI ratio is the case's ratio_net (1e-6)",
          abs(float(u["oasdi_per_tax_dollar_net"]) - PA["ratio_net"]) < 1e-6, f"{u['oasdi_per_tax_dollar_net']} vs {PA['ratio_net']:.6f}")
-    return {"union": {**acc_entry(u), "net": PA["ratio_net"], "rel": REL_UNION},
+    union = {**acc_entry(u), "net": PA["ratio_net"], "rel": REL_UNION}
+    if CASE == "oct14":
+        union = union_pension_params(union)
+    return {"union": union,
             "white": acc_entry(wt), "black": acc_entry(b), "all": acc_entry(a)}
 
 
@@ -520,13 +596,16 @@ GROUP_OF = {"mex": "union", "union_piece": "union", "w3": "white", "wus": "white
 
 
 def receipt_per_rel_benefit(end):
-    """The case's tax on the union's 2024 benefits per benefit dollar per unit of relative rate. Rule 3: the low end's
-    rule (shared) at both ends, because the rough income-tax key splits a tax unit's tax among its members. Rule 3b's
-    alternative (BENEFIT_TAX_RULE "by_end"): each end's own rule (personal at the high end) over the engine union's
-    benefits at that end."""
-    at = "low" if BENEFIT_TAX_RULE == "shared" else end
+    """Tax on union benefits per benefit dollar per relative rate. V7 reads each end's explicit allocation;
+    archived routes retain the shared-low rule and their by-end companion."""
+    if CASE == "oct14":
+        at = end
+        allocation = DUMP["cash"][at]["allocation"]
+    else:
+        at = "low" if BENEFIT_TAX_RULE == "shared" else end
+        allocation = "shared" if at == "low" else "personal"
     ss = next(l for l in DUMP["cash"][at]["lines"] if l["side"] == "spending" and l["id"] == "social_security")["amount_bn"]
-    return PA["benefit_tax_receipt_bn"]["shared" if at == "low" else "personal"] / ss / REL_UNION
+    return PA["benefit_tax_receipt_bn"][allocation] / ss / REL_UNION
 
 
 def apply_accrual(amt, p, per_rel_ben):
@@ -781,6 +860,48 @@ def v4_terms(sc, e, union_sc):
 
 
 # ------------------------------------------------------------------ the re-key
+JOB_LINES = {"corporate_capital": "corporate", "corporate_labor": "corporate",
+             "remaining_production_property": "business_property", "other_production_taxes": "other_production_taxes"}
+
+
+def job_factor(group, category):
+    """R7 comparator factors on the group's own plain wage share; no mixed-credit counterpart is measured."""
+    if group == "avg":
+        line = JOB_CAPITAL["lines"][category]
+        return line["base_bn"] / line["national_bn"]
+    factors = {"blk": "black_nh", "w3": "white_nh", "wus": "white_nh", "wall": "white_nh"}
+    if group not in factors:
+        raise SystemExit(f"[BLOCKED] no R7 job-capital policy for group {group!r}; the payload has no approved factor")
+    factor_group = factors[group]
+    return JOB_CAPITAL["factor"][factor_group][category]["personal"]
+
+
+def v7_items_gates(s):
+    """Gate v7 at its own personal ends and split using the authoritative lineage addition output."""
+    v7 = s["v7"]
+    added = json.loads((CASE_LANE / "derived/lineage_addition.json").read_text())
+    m6 = json.loads((FISCAL / "main_case_2026_10_07/derived/corrections.json").read_text())["meta"]
+    gate("v7 keeps the lineage's counts exactly", META["lineage"]["counts"] == m6["lineage"]["counts"])
+    for b, key in (("accrual", "set"), ("cash", "cash")):
+        ends = v7["end_specifications"][key]
+        for i, end in enumerate(ENDS):
+            gate(f"{b} {end}: case and union use the personal end {ends[i]}",
+                 FULL[b][end]["spec"] == DUMP[b][end]["spec"] == ends[i]
+                 and FULL[b][end]["allocation"] == DUMP[b][end]["allocation"] == "personal")
+            block = added[key]
+            gate(f"{b} {end}: full less union is the case's added people (1e-9)",
+                 abs(LIN[b][end]["cost_bn"] - block["parts"]["added"]["cost_bn"][i]) < 1e-9)
+            for lid, category in JOB_LINES.items():
+                ln = next(x for x in DUMP[b][end]["lines"] if x["side"] == "receipts" and x["id"] == lid)
+                gate(f"{b} {end}: R7 {lid} response is the source's reading (1e-12)",
+                     abs(ln["response"] - JOB_CAPITAL["lines"][category]["response"][end]) < 1e-12)
+            credits = sum(v if k.startswith("spending|") else -v for k, v in CREDIT_SHIFTS[b].items())
+            source = v7["change_by_item"]["child_credits"]
+            source = source if b == "accrual" else source["cash"]
+            gate(f"{b} {end}: projected child-credit union shifts give the case's union part (1e-9)",
+                 abs(credits - source["union"][i]) < 1e-9)
+
+
 def run29(sc, end, basis="accrual", top=None, cap=False, v4=True, dump=None, union_sc=None, rule4="all"):
     """rekey_white.run on a case dump, with the sept29 rules when v4 (a September 27 dump with v4=False reproduces
     run()). sc: a scenario or 'eng' (the engine's own amounts). union_sc: the whole rough union, for union pieces.
@@ -817,6 +938,16 @@ def run29(sc, end, basis="accrual", top=None, cap=False, v4=True, dump=None, uni
             a = ln["national_bn"] * R.line_share(sc, side, lid, top)
             if ik is not None and side == "spending" and lid in IPEDS_LINES:
                 a += ipeds_move(sc, lid, ln["national_bn"], ik)
+        if JOB_CAPITAL is not None and v4 and dump is None and side == "receipts" and lid in JOB_LINES and g != "eng":
+            category = JOB_LINES[lid]
+            if g in ("mex", "union_piece"):
+                job_line = JOB_CAPITAL["lines"][category]
+                a = job_line["group_bn"]["personal"] * ln["national_bn"] / job_line["national_bn"]
+                if g == "union_piece":
+                    a *= sc["share"]["wage_job"] / UNION_SC["share"]["wage_job"]
+            else:
+                factor = job_factor(g, category)
+                a = ln["national_bn"] * sc["share"]["wage_job"] * factor
         if cap and lid in (CAP29 if v4 else R.CAP_LINES):
             a = ln["national_bn"] * (R.scenario("mex") if g == "eng" else sc)["share"][(CAP29 if v4 else R.CAP_LINES)[lid]]
             resp[k] = 1.0
@@ -830,7 +961,13 @@ def run29(sc, end, basis="accrual", top=None, cap=False, v4=True, dump=None, uni
         # item 4's hospital term; the union's is in the engine's health share its pieces and it take (rule 1)
         amt["spending|health_services"] += hospital_term(sc, amt, nat)
     if v4 and g != "eng" and basis == "accrual":
-        acc = apply_accrual(amt, ACC[GROUP_OF[g]], receipt_per_rel_benefit(end))
+        p = ACC[GROUP_OF[g]]
+        p = p.get("by_end", {}).get(end, p)
+        acc = apply_accrual(amt, p, p.get("per_rel_ben", receipt_per_rel_benefit(end)))
+    if CASE == "oct14" and v4 and dump is None and g in ("mex", "union_piece"):
+        fraction = 1.0 if g == "mex" else sc["population"] / UNION_SC["population"]
+        for k, shift in CREDIT_SHIFTS[basis].items():
+            amt[k] += shift * fraction
     # oct05: the union's side carries the added people at the case lane's own amounts (after the pension rule, which
     # their accrual does not follow: theirs is the lane's), with their capital return and production term below.
     lin = LIN[basis][end] if (LINEAGE_ON and dump is None and g in ("eng", "mex")) else None
@@ -1155,8 +1292,15 @@ def run_alternative(rule, sc, end, basis, acc=None):
             st.enter_context(patched(vars(R), RECEIPT_KEY={**R.RECEIPT_KEY, **PARENT_KEYS}))
         elif rule == "rule 3a":
             u = ACC["union"]
-            acc = {g: p if g == "union" else {**p, "net": u["gross"] * (1 - p["rel"] * p["timing"]), "part_a": u["part_a"]}
+            part_a = u.get("by_end", {}).get(end, u)["part_a"]
+            acc = {g: p if g == "union" else {**p, "net": u["gross"] * (1 - p["rel"] * p["timing"]), "part_a": part_a}
                    for g, p in ACC.items()}
+            if CASE == "oct14":
+                # The source's rule-3 calibration uses its shared receipt/relative-rate ratio, even at personal ends.
+                k = META["row4_frame"]["values"]["white_rule3_ratio"]
+                for g, p in acc.items():
+                    if g != "union":
+                        p["per_rel_ben"] = receipt_per_rel_benefit(end) * k
         elif rule == "rule 3b":
             st.enter_context(patched(globals(), BENEFIT_TAX_RULE="by_end"))
         elif rule == "rule 4":
@@ -1175,6 +1319,12 @@ def alternatives(groups, extra=()):
     for rule, text, bases, acc in [(r, t, b, None) for r, t, b in ALTERNATIVES] + list(extra):
         if rule == "rule 3a":
             text = text.format(gross=ACC["union"]["gross"], part_a=ACC["union"]["part_a"])
+            if CASE == "oct14":
+                text = (f"other groups at the legacy published-weight OASDI gross ratio {ACC['union']['gross']:.6f}, "
+                        "with their own benefit-tax rate and timing; Part A at the effective R9 union per-HI-tax ratio "
+                        "at each end; benefit-tax receipt calibration times item_row4's white_rule3_ratio")
+        if rule == "rule 3b" and CASE == "oct14":
+            text = "the tax on benefits at each personal case end (the central rule at both ends)"
         for b in bases:
             for end in ENDS:
                 cost = {lab: run_alternative(rule, sc, end, b, acc) for lab, sc in groups.items()}
@@ -1348,11 +1498,20 @@ def setup():
     for i, end in enumerate(ENDS):
         cash = {l["side"] + "|" + l["id"]: l["amount_bn"] for l in DUMP["cash"][end]["lines"] if l["side"] != "scalar"}
         accr = {l["side"] + "|" + l["id"]: l["amount_bn"] for l in DUMP["accrual"][end]["lines"] if l["side"] != "scalar"}
-        rule = PA["benefit_tax_receipt_bn"]["shared" if end == "low" else "personal"]
+        allocation = DUMP["cash"][end].get("allocation", "shared" if end == "low" else "personal")
+        rule = PA["benefit_tax_receipt_bn"][allocation]
         se = cash["receipts|self_employment_oasdi_hi"]
         ss = PA["ratio_net"] * (cash["receipts|employee_oasdi"] + cash["receipts|employer_oasdi"] + SE_SHARE * se)
         mc = (1 - PART_A_SHARE) * cash["spending|medicare"] + PA["part_a_accrual_bn"]
         fit = cash["receipts|federal_income_tax"] - rule
+        if CASE == "oct14":
+            # row4_frame is an explicit post-pension edit. Reconstruct its exact union delta; the underlying
+            # pension rule remains gated and the rough re-key needs its own stated frame rule.
+            def frame_delta(key):
+                return FRAME_SHIFTS["accrual"].get(key, 0.0) - FRAME_SHIFTS["cash"].get(key, 0.0)
+            ss += frame_delta("spending|social_security")
+            mc += frame_delta("spending|medicare")
+            fit += frame_delta("receipts|federal_income_tax")
         gate(f"{end}: the case's pension rule on the engine's cash-set union amounts gives the accrual set's (1e-9)",
              max(abs(ss - accr["spending|social_security"]), abs(mc - accr["spending|medicare"]),
                  abs(fit - accr["receipts|federal_income_tax"])) < 1e-9,
@@ -1421,17 +1580,59 @@ def setup():
             keys, TAX_K["_fedtax_bc"] = case_tax_keys()
             TAX_K.update(keys)
             stop_if_failed()
+        # The canonical vectors are allocation-specific; a caller may switch this library between archive and live.
+        TAX_K["fit_case"] = TAX_K[f"fit_case_{TAX_ALLOC}"]
+        TAX_K["sit_case"] = TAX_K[f"sit_case_{TAX_ALLOC}"]
         R.K.update({k: v for k, v in TAX_K.items() if not k.startswith("_")})
     print(f"[the {CASE} frame: row-4 weights, the case's shares]", flush=True)
     set_frame(w4, n4, DUMP["cash"])
     ACC = accrual_params()
     UNION_SC = R.scenario("mex")
+    if CASE == "oct14":
+        with identified():
+            for end in ENDS:
+                cash = {l["side"] + "|" + l["id"]: l["amount_bn"] for l in DUMP["cash"][end]["lines"] if l["side"] != "scalar"}
+                accr = {l["side"] + "|" + l["id"]: l["amount_bn"] for l in DUMP["accrual"][end]["lines"] if l["side"] != "scalar"}
+                _, rows = run29(UNION_SC, end, "accrual")[:2]
+                amounts = {side + "|" + lid: value for side, lid, _, value, *_ in rows}
+                gate(f"R9 rough union {end}: Social Security and Medicare equal the case union (1e-9)",
+                     max(abs(amounts[k] - accr[k]) for k in ("spending|social_security", "spending|medicare")) < 1e-9,
+                     str({k: amounts[k] - accr[k] for k in ("spending|social_security", "spending|medicare")}))
+                p = ACC["union"]["by_end"][end]
+                removed = p["per_rel_ben"] * p["rel"] * next(l["national_bn"] * R.line_share(UNION_SC, "spending", "social_security")
+                    for l in DUMP["cash"][end]["lines"] if l["side"] == "spending" and l["id"] == "social_security")
+                expected = PA["benefit_tax_receipt_bn"][DUMP["cash"][end]["allocation"]] - FRAME_SHIFTS["accrual"].get("receipts|federal_income_tax", 0.0)
+                gate(f"R9 rough union {end}: benefit-tax removal equals the case union (1e-9)", abs(removed - expected) < 1e-9,
+                     f"residual {removed - expected!r}")
+        stop_if_failed()
+    if JOB_CAPITAL is not None:
+        all_sc = R.scenario("avg", scaled=False)
+        gate("R7: all residents own the whole plain wage key (1e-12)",
+             abs(all_sc["share"]["wage_job"] - 1.0) < 1e-12)
+        for category, line in JOB_CAPITAL["lines"].items():
+            gate(f"R7 all residents {category}: national target is the source's base after exclusions (1e-9)",
+                 abs(all_sc["share"]["wage_job"] * job_factor("avg", category) * line["national_bn"] - line["base_bn"]) < 1e-9)
     if LINEAGE_ON:
         lineage_setup()
         stop_if_failed()
     if IPEDS_ON:
         print("[the IPEDS keys]", flush=True)
         ipeds_gates()
+        stop_if_failed()
+    if JOB_CAPITAL is not None:
+        print("[the comparator job-capital amounts]", flush=True)
+        wage = R.d.WSAL_VAL.clip(lower=0).to_numpy(float)
+        denominator = float(R.w @ wage)
+        for group in ("w3", "blk", "avg"):
+            sc = R.scenario(group, scaled=group != "blk")
+            share = float(sc["cps_w"] @ wage) / denominator
+            for end in ENDS:
+                _, rows = run29(sc, end, "cash")[:2]
+                for category, line in JOB_CAPITAL["lines"].items():
+                    got = sum(x[3] for x in rows if x[0] == "receipts" and JOB_LINES.get(x[1]) == category)
+                    want = share * job_factor(group, category) * line["national_bn"]
+                    gate(f"R7 {group} {end} {category}: priced receipts are wage share times source factor (1e-9)",
+                         abs(got - want) < 1e-9, f"{got:.9f} vs {want:.9f}")
         stop_if_failed()
     return n4
 
@@ -1442,7 +1643,7 @@ def lineage_gates():
     oct07 (a payload with meta.items): items_gates()."""
     s = json.loads((CASE_LANE / "derived/summary.json").read_text())
     if "items" in META:
-        items_gates(s)
+        v7_items_gates(s) if CASE == "oct14" else items_gates(s)
         return
     ch, s29 = s["change_at_fixed_specifications"], s["adopted_2026_09_29"]
     m29 = json.loads((FISCAL / CASES["sept29"] / "derived/corrections.json").read_text())["meta"]
@@ -1771,6 +1972,13 @@ def headline_lineage(summary, st, n4):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="sept29", choices=list(CASES),
-                    help="sept29 (default), oct05 (v5, the lineage on both sides) or oct07 (v6, v5 plus its items)")
-    main(ap.parse_args().case)
+    ap.add_argument("--case", default="oct14", choices=list(CASES),
+                    help="oct14 (default, live v7); sept29 and oct05 are archived input-library routes")
+    ap.add_argument("--preflight", action="store_true", help="check the rough pension consumer rule without writing")
+    args = ap.parse_args()
+    if args.preflight:
+        use_case(args.case)
+        require_rough_pension_rule()
+        print("[PASS] rough pension consumer-rule preflight")
+    else:
+        main(args.case)

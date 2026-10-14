@@ -1336,3 +1336,56 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -I $L/local_whites_soi.py --c
   **IDENTICAL 91/91, exit 0**, the 89 files, the new script and its file.
 - 23:35:26–23:35:37 (by `date`): `net_contributor_comparison_2026_10_01`'s rerun (compare, plot, pytest): 9 of 10
   files unchanged, exit 1. Its `derived/audit.json` changes only in this library's hash, as the alias drop requires.
+
+### 2026-10-14 18:28:21 JST — v7 propagation, completed leaves and stopped comparator
+
+The final `CASE_FINAL` marker names adopted commit `148ed1ea`; its payload hashes were checked and the final
+Consumers, The items and adoption decision re-read before final execution. Historical outputs remain unchanged.
+The computed route is now `oct14`, at personal specifications 16/11. The four engine dumps reproduce the adopted
+account's $339.55201782952685 / $423.64926070050683bn and cash $264.4255736155055 / $348.52281648648557bn;
+these are engine totals, not new white-comparator gaps. `check_dumps_oct14.py` passes 64 leaf gates: the printed
+adopted/cash bands at 5e-5, cost accounting and full-minus-union lineage at 1e-9, R7 responses at 1e-12. Its metadata
+pins the final case and source hashes. [CALCULATION: `derived/engine_lines_oct14*.json` and
+`derived/engine_lines_oct14_meta.json`]
+
+`export_keys_oct14.py` independently exports the personal income-tax key leaf on canonical `TK.case_keys`, row-4
+weights and the final lineage counts. Its source/frame/raking gates pass; CSV and source hashes are in
+`income_tax_keys_oct14_meta.json`. Receipt-only arithmetic measures W's raw move as 1.086440193243434bn for
+1,082,721.22406998 members. Subtracting the actual adopted item's 1.086440bn leaves **+1.932434339213529e-7bn**
+at both ends and both bases. It fails the required 1e-9 zero-residual contract. This leaf reports that residual at
+full precision; no `limits_oct14` output is promoted. [CALCULATION: `derived/income_tax_keys_oct14_meta.json`,
+`raw_move_bn`, `source_count`, `applied_move_bn`, `white_end_tax_keys_residual`]
+
+Both final rough re-key runs exit 1 with the explicit R9 stop. The engine pension reconstruction still passes at
+1e-9 after removing the item's named union shifts, as final Consumers specifies. **Exact unresolved question:**
+how should the rough identified-union OASDI net ratio, Part A per-tax rate and benefit-tax calibration use
+`meta.row4_frame.values`, given that its state and owner keys already use row-4 weights? The final Consumers gives
+an engine reconstruction rule but no rough-pension calibration rule. The live full wrapper preflights this question
+and exits before writing any file. The rough totals, limits, parts, fragility and SOI outputs remain stopped.
+
+R7 code prices the comparator's own plain wage share at `white_nh` source factors; corporate carriers split one
+category target in proportion to their nationals. For all residents the same industry rule integrates to
+`base_bn/national_bn`, with wage share one. R6 projects named union parts; full-minus-union carries the final
+lineage credit term. **Credit asymmetry:** mixed-unit child credits were measured on the union and its added
+G3+-priced people, not this comparator; no comparator crossing is invented. Items 7/8 correct the account's own
+keys/frame; their comparator counterparts remain open in final Consumers. [DATA: final case `RESULT.md`
+Consumers; `job_capital_taxes_2026_10_14/derived/item.json`; CALCULATION: `rekey_sept29.py`]
+
+Earlier candidate oct14 comparator outputs were preserved in `_cache/prop-d-candidate-oct14/`, outside live
+`derived/`; the scratch `comparator-quarantine.json` records every source, destination and SHA. Final dumps and
+raw keys were retained. Leaf-only `rerun_lane.py` commands (four dumps, dump checker, raw-key exporter) initially
+ended **IDENTICAL 102/102, exit 0**. This is explicitly partial coverage: accrual inputs, rough re-key, limits and
+auxiliary pricing scripts are excluded because the consumer rule is missing; the complete lane is not validated.
+The final source/metadata repeat is recorded in the worker evidence file.
+
+## v7 wave 2 (2026-10-14): resolved pension and printing contracts
+
+The parent supplied the missing R9 rule: legacy published-weight pension amounts on the case cash base plus only the payload union pension parts, divided by the rough union payroll/benefit bases. Named payload parts include kRN. Owner, state, sales and licence keys already use row 4; they receive no second shift. White and Black central ratios stay on their own weights. Rule 3a keeps its legacy gross-OASDI alternative, uses the effective union Part A ratio, and takes item_row4 white_rule3_ratio for its receipt calibration.
+
+The initial SS numerator incorrectly used the rough payroll base and failed the new gate by +8.15771462259255bn at both ends. Correcting it to the case cash base leaves SS 0, Medicare 1.4210854715202004e-14bn and benefit-tax 0 at both ends (1e-9); the separate Consumers R9 identity also passes. This was an implementation error, not a tolerance change. [CALCULATION: rekey_sept29.py; wave-2 receipts]
+
+Item 7 retains the frozen six-decimal source. Its measurement is checked at 5e-7bn; full-precision residual arithmetic remains 1e-9. The canonical remainder is +1.932434339213529e-7bn, about $193.24; it is preserved, not rounded to zero. All other residual tolerances are unchanged. R6 credit crossings remain measured only for the union and its G3+-priced added people. Unknown R7 comparator groups now stop instead of inheriting white factors; the Indian policy remains for the parent.
+
+Live reproduction: sh infra/immigration-fiscal/white_replacement_2026_09_28/run_oct14.sh. Full rerun includes this wrapper and permits rekey_white.py only as an imported library (executed through rekey_sept29.py), with --allow-unrun rekey_white.py. Historical reproduce blocks are records, not live commands.
+
+- 2026-10-14 19:07:29 JST — all live producers and auxiliaries passed. Full wrapper rerun: IDENTICAL 121/121, exit 0, 172.83s, max RSS 1762.8MiB. A1 accrual gap is $512.1502 / 481.6429bn at personal 16/11; local-white accrual gap $516.3085 / 483.2791bn (headline_oct14.csv oct14_bn). These are rough matched-comparator account/model outputs. All 12 R7 policy tests passed. [CALCULATION: run_oct14.sh; derived/headline_oct14.csv; wave-2 full rerun]

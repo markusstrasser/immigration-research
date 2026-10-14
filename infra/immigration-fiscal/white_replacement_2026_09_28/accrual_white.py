@@ -169,7 +169,7 @@ def main():
              "delta_like_for_like_accrual_bn"]].to_string(index=False))
 
 
-def main_oct07():
+def main_oct07(case="oct14"):
     """--case oct07 (main case v6, item 1): the payable ratios of the union and the third-plus NH white reference on the
     pension accrual's 2026 path, the arm all_2026_inputs_separate_funds of pension_tr2026_2026_10_06 that the case's
     meta.pension_accrual takes (tr2026_path.py rebuilds its grid, timing and Part A path through that lane's code), by
@@ -181,7 +181,7 @@ def main_oct07():
     (accrual_ratios.csv's columns), read by rekey_sept29.py --case oct07."""
     import json
     import tr2026_path as TP
-    TP.case_check(json.loads((FISCAL / "main_case_2026_10_07/derived/corrections.json").read_text())["meta"])
+    TP.case_check(json.loads((FISCAL / "main_case_2026_10_14/derived/corrections.json").read_text())["meta"])
     q = P.S.quotes()
     u_long = q["note151_eligible_share"]["value"]["end_of_projection"]
     p = P.frame()
@@ -215,7 +215,7 @@ def main_oct07():
              "cps_oasdi_tax_bn": f"{o['tax_bn']:.4f}", "cps_hi_tax_bn": f"{a['hi_tax_bn']:.4f}",
              "part_a_accrual_bn": f"{a['accrual_bn']:.4f}", "p_qualify_65plus": f"{a['p_qualify']:.6f}"}
             for name, (o, a) in ratios.items()]
-    with open(DER / "accrual_ratios_oct07.csv", "w", newline="") as f:
+    with open(DER / f"accrual_ratios_{case}.csv", "w", newline="") as f:
         wr = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         wr.writeheader()
         wr.writerows(rows)
@@ -225,6 +225,6 @@ def main_oct07():
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="sept29", choices=["sept29", "oct07"],
-                    help="sept29 (default: the 2025 reports, which the sept29 and oct05 cases read) or oct07 (main_oct07)")
+    ap.add_argument("--case", default="oct14", choices=["sept29", "oct14"],
+                    help="oct14 (default, live v7 on the 2026 path); sept29 is the archived 2025 path")
     main() if ap.parse_args().case == "sept29" else main_oct07()
