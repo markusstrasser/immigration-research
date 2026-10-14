@@ -1,0 +1,15 @@
+{
+  "source": "matched_benefits_2026_09_19/model.py",
+  "sha256": "8740f820a937dcce0dfe700d5a167b4ff6b52b82ea5a92a0ab60d99de93e56cc",
+  "labor_share": 0.65,
+  "alpha": 0.35,
+  "first_year_multiplier": 0.65,
+  "rule": "[ASSUMPTION; APPROX] First-order fixed-capital output/profit response: 1 - alpha; business property response 0. Other production and both corporate lines scale their long-run responses.",
+  "form_probe": {
+    "labor_remaining": 0.9,
+    "fixed_capital": 1.0,
+    "fixed_output": 0.9338080879268165,
+    "long_run_output": 0.8999999999999999,
+    "finite_loss_ratio": 0.6619191207318348
+  }
+}

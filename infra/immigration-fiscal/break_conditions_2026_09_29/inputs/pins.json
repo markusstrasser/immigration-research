@@ -1,0 +1,6 @@
+{
+  "rule": "Primary local production model; drift blocks until deliberately reverified.",
+  "files": {
+    "matched_benefits_2026_09_19/model.py": "8740f820a937dcce0dfe700d5a167b4ff6b52b82ea5a92a0ab60d99de93e56cc"
+  }
+}

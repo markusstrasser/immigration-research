@@ -1,4 +1,6 @@
-**Verdict:** [2026-10-05: on main case v5 (`oct05`), C2 splits by end. Direct taxes exceed benefits counted on accrual by $6.5bn at the low end and fall $4.4bn short at the high end (sept29: −$3.4 / −12.6bn, broken at both ends), because the added people's own tally is +$9.9 / 8.2bn. C1 restates to a $425.8bn midpoint ($390.3–461.2bn; sept29 $403.1bn) and still breaks on the first-year horizon alone (−26.7%; sept29 −26.1%). Counting the lineage by ancestry share at the stated bound's low end also breaks it alone (−29.8%) [FRAMING-SENSITIVE]. The lineage's other alternatives (arms a and c, C3 ± 1 SE, the replacement child) each move C1 by less than 3%. The other conclusions hold as on v4; C8 and C5's winner share are not rerun here. See "v5 case (oct05)" below.] No premise, swapped for its best-supported alternative, overturns more than two of the nine conclusions. The survey frame carries all nine, but its credible alternatives move none by more than about 1%. The conclusions nearest to breaking are C8's $320bn (one reference choice moves it +28%), C2's "taxes cover benefits" (it flips when pensions are counted on accrual), C5's "one in six gains" and C4's ~$100bn social add. Each of these breaks on one convention or on one item's published range. C1's $355bn breaks on the first-year horizon alone; inside the long-run frame it takes three of the case's own alternatives, or two conventions priced beside the account. [CALCULATION: `engine_breaks.cjs`, `tables.py` → `derived/`]
+**Verdict:** [2026-10-14 P7 correction] The first-year horizon alone no longer breaks C1: $273.447–325.806bn on the set, $198.321–250.680bn on cash; midpoint $299.627bn is above the $286.200bn lower cut. Item 6 now holds business property fixed and scales both corporate lines and other production taxes by 1-alpha = 0.65 [ASSUMPTION; APPROX]. This changes the first-year companions, not the adopted long-run case. See the dated P7 section at the end. [CALCULATION: engine_breaks_sept29.cjs -> derived/first_year_item6_oct14.json]
+
+**Historical verdict (through v5):** [2026-10-05: on main case v5 (`oct05`), C2 splits by end. Direct taxes exceed benefits counted on accrual by $6.5bn at the low end and fall $4.4bn short at the high end (sept29: −$3.4 / −12.6bn, broken at both ends), because the added people's own tally is +$9.9 / 8.2bn. C1 restates to a $425.8bn midpoint ($390.3–461.2bn; sept29 $403.1bn) and still breaks on the first-year horizon alone (−26.7%; sept29 −26.1%). Counting the lineage by ancestry share at the stated bound's low end also breaks it alone (−29.8%) [FRAMING-SENSITIVE]. The lineage's other alternatives (arms a and c, C3 ± 1 SE, the replacement child) each move C1 by less than 3%. The other conclusions hold as on v4; C8 and C5's winner share are not rerun here. See "v5 case (oct05)" below.] No premise, swapped for its best-supported alternative, overturns more than two of the nine conclusions. The survey frame carries all nine, but its credible alternatives move none by more than about 1%. The conclusions nearest to breaking are C8's $320bn (one reference choice moves it +28%), C2's "taxes cover benefits" (it flips when pensions are counted on accrual), C5's "one in six gains" and C4's ~$100bn social add. Each of these breaks on one convention or on one item's published range. C1's $355bn breaks on the first-year horizon alone; inside the long-run frame it takes three of the case's own alternatives, or two conventions priced beside the account. [CALCULATION: `engine_breaks.cjs`, `tables.py` → `derived/`]
 
 claude-opus-5-5
 
@@ -978,3 +980,109 @@ Full live rerun: `scheduled_tr2026.py`, `engine_breaks_sept29.cjs --case oct14`,
 `pytest test_tables_oct14.py -q` all exit 0; **IDENTICAL 55/55, exit 0**. Python wall time **68.40s** and child
 peak RSS **668.7MiB**. The existing engine/core gates and all numeric tolerances remain. Scoped source review
 finds no material regression and independently passes both tests. No Git writes; oct07/oct05 outputs remain.
+
+## 2026-10-14 P7: item 6 on the first-year horizon
+
+**Verdict:** C1's "first-year horizon breaks it alone" flips. The revised set's midpoint is
+$299.627bn, a 21.482% reduction from v7's $381.601bn midpoint. C1 requires a reduction **greater than 25%**,
+below $286.200bn (or an increase above $477.001bn); the revised set is $13.426bn above its lower cut.
+The cash companion still falls below the same set-based cut. The adopted long-run headline remains
+$339.552–423.649bn; this correction changes its first-year companion only.
+[CALCULATION: `engine_breaks_sept29.cjs` → `derived/first_year_item6_oct14.json`]
+
+### Rule and limits
+
+The old first-year arm disabled item 5's long-run property response but retained all of item 6's
+long-run tax loss. This lane rebuilds v7's layer through `REGISTRY`, `checkBuilt7` and `forItems7`, preserving
+`editsAt` re-keying, cell edits and registry parts. Only item 6's receipt responses change: business property
+(`remaining_production_property`) at 0; both `corporate_capital` and `corporate_labor`, and
+`other_production_taxes`, at 0.65 times their long-run responses. Corporate keeps its different low/high
+readings, 1 and 0.37 before scaling. Other items, first-year service rules, personal allocation, pension basis
+and the production-module contribution are held fixed.
+[DATA: `main_case_2026_10_14/package.cjs:forItems7`, `item_job_capital.cjs:build`, `meta.items`, `meta.responses`]
+
+`first_year_calibration.py` reads the model's callable default `labor_share=0.65`, hence alpha=0.35.
+The model sets `power = labor_share + adjustment * (1 - labor_share)`, `output = q**power` and
+`capital = q**adjustment`. At adjustment 0, capital is 1 and output q**0.65; at adjustment 1, output is q.
+A numerical probe verifies this at 1e-12. The source hash is pinned in `inputs/pins.json`; drift blocks
+calibration, and the engine checks its calibration against the source hash.
+[SOURCE: `matched_benefits_2026_09_19/model.py:equilibrium`; CALCULATION: `derived/first_year_calibration.json`]
+
+**This is a conditional first-order response, not an observed first-year tax elasticity.** At a hypothetical
+10% uniform labor removal the exact model loss ratio is 0.661919 rather than 0.65; the requested central
+uses the local derivative 1-alpha. Mapping profits and production taxes to output and fixing business
+assessments are assumptions. This lane does not re-solve the production module or estimate a complete
+transition path for private incomes. The three comparison arms expose the response convention.
+[ASSUMPTION; APPROX; CALCULATION: `derived/first_year_calibration.json` `form_probe`]
+
+### Companions (personal allocation, $bn; low / high)
+
+| Item-6 rule; other first-year rules fixed | Set | Cash | Set midpoint | Change from v7 midpoint | C1 lower cut crossed? |
+|---|---|---|---|---|---|
+| **Central: property 0; corporate and production at 0.65 of long run** | **273.447 / 325.806** | **198.321 / 250.680** | **299.627** | **−21.482%** | **No** |
+| Whole retained (positive control; previous first-year rule) | 235.988 / 298.288 | 160.862 / 223.162 | 267.138 | −29.995% | Yes |
+| Property and production 0; corporate retained whole | 262.673 / 324.973 | 187.547 / 249.847 | 293.823 | −23.002% | No |
+| Entire item at response 0 | 307.759 / 341.655 | 232.633 / 266.529 | 324.707 | −14.909% | No |
+
+[CALCULATION: `derived/first_year_item6_oct14.json` `variants`, `thresholds`; `derived/c1_arms_oct14.csv`]
+
+Each next row is the **change from the previous first-year arm** at the same low/high readings, identical
+on set and cash. The identified union is 39.71M; the full lineage is 42.75M including 3.04M added people.
+Weights are unchanged. These are scope-specific tax-response changes, not separate estimates of the
+union's entire first-year account.
+
+| Rule | Identified union change | Added people change | Full lineage change | $5bn review bar |
+|---|---|---|---|---|
+| Central fixed capital | +34.768 / +25.592 | +2.691 / +1.926 | +37.459 / +27.518 | Both ends, union and lineage; C1 also flips |
+| Whole control | 0 / 0 | 0 / 0 | 0 / 0 | Below |
+| Corporate retained whole only | +24.869 / +24.869 | +1.816 / +1.816 | +26.685 / +26.685 | Both ends, union and lineage |
+| Item off | +66.481 / +40.265 | +5.290 / +3.102 | +71.771 / +43.367 | Both ends, union and lineage |
+
+The last row's independently rounded low-side parts differ from the rounded total by 0.001bn; unrounded
+components close at 1e-9bn. Replicate SEs are unavailable for this deterministic response-only change from
+the aggregate package; the input survey's sampling uncertainty is not re-estimated here.
+[CALCULATION: `derived/first_year_item6_oct14.json` `components`; DATA: item-6 `detail.new_parts`]
+
+### Gates and coverage
+
+- 119 engine gates pass. Whole control reproduces all four previous first-year numbers at 1e-4bn.
+  Each arm/basis preserves all cell edits, population and item-6 registry parts. National receipt totals and
+  the five-part allocation close at 1e-9bn; engine changes equal four-line receipt changes at 1e-9bn.
+- Calibration checks the model's fixed-capital form at 1e-12 and stops on unapproved source drift.
+- Four tests pass: two existing missing-value/debt-precision tests, the first-year values/response/scope
+  checks, and the C1/P02 table verdict. Existing tolerances were not loosened.
+- `tables_oct14.py` checks the unrounded horizon report, companion bands and threshold, then updates C1's
+  condition/rival and P02. Its pins change only the owned arm CSV and two new calculation JSONs; all
+  previously pinned external evidence is unchanged (28 inputs now).
+- C1's long-run minimal cuts and C2–C9 rows are unchanged. The property-long-run first-year companion also
+  takes the new item-6 rule. Historical outputs and the frozen case lane are untouched.
+- Scoped review (`_cache/p7-code-review.md`) independently reproduces the controls and multipliers and
+  finds no material defect. Covered engine integration, item rebuild, calibration and table consumer;
+  skipped tests, documentation and peers. This worker ran all four tests.
+
+### Reproduction
+
+```sh
+OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/break_conditions_2026_09_29 \
+  "uv run --no-project python3 {lane}/scheduled_tr2026.py" \
+  "uv run --no-project python3 {lane}/first_year_calibration.py" \
+  "node --check {lane}/first_year_item6.cjs" \
+  "node {lane}/engine_breaks_sept29.cjs --case oct14" \
+  "uv run --no-project python3 {lane}/tables_oct14.py" \
+  "uv run --no-project python3 -m pytest -p no:cacheprovider {lane}/test_tables_oct14.py -q"
+```
+
+No `--allow-unrun`: the helper is imported by the engine and explicitly syntax-checked. Measure via Python
+`time.perf_counter` and `resource.getrusage(RUSAGE_CHILDREN)`; macOS reports `ru_maxrss` in bytes. No Git writes.
+
+### Log (P7; append-only, times from `date`)
+
+- 2026-10-14 20:37 JST — verified item-6 response/part contract and the primary model's fixed-capital form.
+- 2026-10-14 20:41:33 JST — engine exit 0, 119 gates, 74.52s wall, 663.5MiB child peak RSS. An initial
+  probe stopped on treating the registry's response object as an array; corrected to its object contract
+  and added a fail-loud four-response guard before the successful full run.
+- 2026-10-14 20:44:05 JST — only owned inputs repinned; tables regenerated, four tests pass; scoped review
+  finds no material defect. Final reproduction receipt follows.
+- 2026-10-14 20:47:04 JST — complete six-command reproduction **IDENTICAL 60/60, exit 0**, no exclusions;
+  106.43s wall, 659.6MiB child peak RSS via Python. Python compile 3/3, both Node syntax checks and scoped
+  whitespace check pass. Only this receipt was appended after reproduction; no calculation changed.

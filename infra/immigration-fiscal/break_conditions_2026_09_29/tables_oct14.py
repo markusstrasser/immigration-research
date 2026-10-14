@@ -28,6 +28,7 @@ INPUTS = [
     *[D / f"{name}_oct14.csv" for name in (
         "c1_arms", "c1_min_cuts", "c2_tally", "c2_break_even", "c3_correction_split",
         "c6_generation_break_even", "c6_inputs")],
+    D / "first_year_item6_oct14.json", D / "first_year_calibration.json",
     CASE / "summary.json", CASE / "main_case_bands.csv", CASE / "corrections.json", CASE / "corrections_cash.json",
     F / "white_replacement_2026_09_28/derived/headline_oct14.csv",
     F / "white_replacement_2026_09_28/derived/rekey_summary_oct14.csv",
@@ -154,6 +155,15 @@ def main():
             check(f"{variant} published band", value, band(bands[variant])[i], 1e-4)
             check(f"{variant} summary", value, summary[key][i], 1e-4)
     midpoint = sum(band(arms["adopted"])) / 2
+    horizon = json.loads((D / "first_year_item6_oct14.json").read_text())
+    for basis, arm in (("set", "first_year_horizon"), ("cash", "first_year_horizon_cash")):
+        for i, value in enumerate(horizon["variants"]["fixed_capital"][basis]):
+            check(f"first-year {basis} engine report", band(arms[arm])[i], value, 1e-4)
+    check("first-year lower threshold", horizon["thresholds"]["low_bn"], 0.75 * sum(summary["band_bn"]) / 2, 1e-9)
+    horizon_breaks = sum(horizon["variants"]["fixed_capital"]["set"])/2 < horizon["thresholds"]["low_bn"]
+    if horizon_breaks != horizon["first_year_breaks_alone"]:
+        blocked("first-year C1 verdict disagrees with the unrounded engine report")
+    horizon_clause = "First-year horizon " + ("breaks C1 alone" if horizon_breaks else "does not break C1 alone")
     cuts = [r for r in rows(D / "c1_min_cuts_oct14.csv") if r["minimal"] == "yes"]
     tally = {(r["model"], r["end"]): r for r in rows(D / "c2_tally_oct14.csv")}
     tally_of = lambda model: [num(tally[model, e], "tally_bn") for e in end_labels]
@@ -244,7 +254,7 @@ def main():
         return f"{arm}: ${pair_text(band(arms[arm]))}bn ({num(arms[arm], 'move_pct_of_midpoint'):+.1f}%)"
     cut_text = "; ".join(f"{r['set']} ({num(r, 'move_pct_of_midpoint'):+.1f}%)" for r in cuts if int(float(r["size"])) <= 2)
     update("C1", "holds, restated", f"${pair_text(summary['band_bn'])}bn; midpoint ${midpoint:.1f}bn; ${pair_text(summary['per_member_usd']['set'], 0)} per member. Personal specifications {ends}.",
-           f"Midpoint cuts: below ${0.75 * midpoint:.1f}bn or above ${1.25 * midpoint:.1f}bn. Minimal cuts of one or two: {cut_text}. {arm_text('first_year_horizon')}. [APPROX: additive item/lineage arms in combinations]",
+           f"Midpoint cuts: below ${0.75 * midpoint:.1f}bn or above ${1.25 * midpoint:.1f}bn. Minimal cuts of one or two: {cut_text}. {arm_text('first_year_horizon')}. {horizon_clause}; item 6 business property at 0, corporate and production at 1-alpha [ASSUMPTION; APPROX]. [APPROX: additive item/lineage arms in combinations]",
            f"{len(cuts)} minimal cuts. All arms and stacks remain in c1_arms_oct14.csv and c1_min_cuts_oct14.csv.", "P02/P03/P04/P05/P20, and v7 receipt rules")
     t = tally_of("case_accrual")
     status2 = "direct-receipt clause holds at both ends" if min(t) >= 0 else "direct-receipt clause BREAKS at both ends" if max(t) < 0 else "direct-receipt clause splits by end"
@@ -316,7 +326,8 @@ def main():
         row["best_supported_alternative"] = row["best_supported_alternative"].replace("v6", "v7")
         row["effect_if_swapped"] = ""
         if row["premise_id"] == "P02":
-            row["effect_if_swapped"] = arm_text("first_year_horizon") + "; C4 horizon not re-priced here [GAP]."
+            row["best_supported_alternative"] += "; item 6 business property at 0, corporate and production at 1-alpha [ASSUMPTION; APPROX]"
+            row["effect_if_swapped"] = arm_text("first_year_horizon") + f"; {horizon_clause}; C4 horizon not re-priced here [GAP]."
         elif row["premise_id"] == "P05":
             row["effect_if_swapped"] = arm_text("pension_cash") + f"; C2 cash tally ${pair_text(tally_of('cash_set'))}bn; C5 cash share {pair_text(cash_shares)}%."
         elif row["premise_id"] == "P08":

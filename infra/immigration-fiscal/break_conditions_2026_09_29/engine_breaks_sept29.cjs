@@ -303,6 +303,83 @@ const HORIZON = {
   first_year_horizon_cash: { o: Object.assign({}, FIRST, { property: "none", pension4: "cash" }), src: "the same, pensions on cash" },
 };
 for (const h of Object.values(HORIZON)) h.band = centralOf(h.o);
+if (CASE === "oct14") {
+  const FY = require("./first_year_item6.cjs"), calibration = FY.calibration();
+  const opts = Object.assign({}, FIRST, { property: "none" });
+  const variants = {};
+  const componentRows = [["mode", "basis", "end", "line", "scope", "amount_bn", "long_run_response", "first_year_response", "cost_change_from_whole_bn"]];
+  const lineIds = Object.keys(payload.meta.items.find((r) => r.id === "job_capital_taxes").responses);
+  if (lineIds.length !== 4 || !lineIds.every((id) => id in payload.meta.responses)) {
+    throw new Error("[BLOCKED] first-year item 6: registry does not declare the four receipt responses");
+  }
+  for (const mode of FY.MODES) {
+    const q = FY.packages(P, mode, calibration);
+    variants[mode] = { set: q.set.central(opts), cash: q.cash.central(opts) };
+    for (const basis of ["set", "cash"]) {
+      const api = q[basis], original = basis === "set" ? P : P.CASH;
+      const pm = api.payloadModel(), om = original.payloadModel();
+      const cp = api.correctionsPayload(), op = original.correctionsPayload();
+      gate(`first-year ${mode} ${basis}: all cell edits and population conserved`,
+        JSON.stringify(cp.edits) === JSON.stringify(op.edits) && JSON.stringify(pm.meta) === JSON.stringify(om.meta));
+      let nationalGap = 0, partGap = 0;
+      const x = q.built.find((b) => b.item.id === "job_capital_taxes")[basis];
+      const response = cp.meta.responses;
+      for (const l of pm.receipts.lines) for (const sc of pm.receipts.scenarios) for (const a of ["personal", "shared"]) {
+        const cell = l.cells[sc][a], old = om.receipts.lines.find((r) => r.id === l.id).cells[sc][a];
+        nationalGap = Math.max(nationalGap, Math.abs(cell.target_bn + cell.other_bn - old.target_bn - old.other_bn));
+        if (lineIds.includes(l.id)) partGap = Math.max(partGap,
+          Math.abs(sum(Object.values(x.detail.new_parts[`${l.id}|${sc}`]).map((p) => p[a])) - cell.target_bn));
+      }
+      gate(`first-year ${mode} ${basis}: national totals and five-part closure (1e-9bn)`,
+        nationalGap <= 1e-9 && partGap <= 1e-9, `${nationalGap} / ${partGap}`);
+      const record = cp.meta.items.find((r) => r.id === "job_capital_taxes");
+      gate(`first-year ${mode} ${basis}: registry parts unchanged`,
+        JSON.stringify(record.parts) === JSON.stringify(op.meta.items.find((r) => r.id === record.id).parts));
+      for (const [end, i] of ENDS) {
+        const spec = MAIN_SPECS[i], rd = spec.reading;
+        for (const id of lineIds) {
+          const parts = x.detail.new_parts[`${id}|${REF}`];
+          const amounts = {
+            union: sum(Object.entries(parts).filter(([p]) => p.startsWith("union_")).map(([, p]) => p.personal)),
+            added: sum(Object.entries(parts).filter(([p]) => p.startsWith("lineage_")).map(([, p]) => p.personal)),
+          };
+          amounts.lineage = amounts.union + amounts.added;
+          for (const [scope, amount] of Object.entries(amounts)) {
+            const before = op.meta.responses[id][rd], after = response[id][rd];
+            componentRows.push([mode, basis, end, id, scope, amount, before, after, amount * (before - after)]);
+          }
+        }
+      }
+    }
+  }
+  gate("item 6 whole reproduces the four existing first-year numbers (1e-4bn)",
+    variants.whole.set.every((v, j) => near(v, [235.9882, 298.2884][j], 1e-4))
+    && variants.whole.cash.every((v, j) => near(v, [160.8617, 223.1620][j], 1e-4)));
+  const report = { calibration, population_scope: "42.75M lineage; union and added people are separately identified in component rows",
+    central: MAIN, thresholds: { midpoint_bn: M, low_bn: LOW_CUT, high_bn: HIGH_CUT }, variants, components: [] };
+  const keys = componentRows[0];
+  report.components = componentRows.slice(1).map((r) => Object.fromEntries(keys.map((k, i) => [k, r[i]])));
+  for (const mode of FY.MODES) for (const basis of ["set", "cash"]) {
+    const b = variants[mode][basis];
+    const delta = ENDS.map(([end]) => sum(report.components.filter((r) => r.mode === mode && r.basis === basis && r.end === end && r.scope === "lineage")
+      .map((r) => r.cost_change_from_whole_bn)));
+    gate(`first-year ${mode} ${basis}: engine change equals four-line receipt change (1e-9bn)`,
+      b.every((v, j) => near(v - variants.whole[basis][j], delta[j], 1e-9)));
+  }
+  HORIZON.first_year_horizon.band = variants.fixed_capital.set;
+  HORIZON.first_year_horizon.src += "; item 6 business property at 0, corporate and production at 1-alpha of long-run response [ASSUMPTION; APPROX]";
+  HORIZON.first_year_horizon_cash.band = variants.fixed_capital.cash;
+  HORIZON.first_year_horizon_cash.src += "; item 6 fixed-capital rule [ASSUMPTION; APPROX]";
+  HORIZON.first_year_horizon_property_long_run.band = FY.packages(P, "fixed_capital", calibration).set.central(FIRST);
+  HORIZON.first_year_horizon_property_long_run.src += "; item 6 fixed-capital rule (item 5 alone kept at long-run)";
+  for (const mode of ["whole", "corporate_only", "off"]) for (const basis of ["set", "cash"]) {
+    HORIZON[`first_year_horizon_item6_${mode}${basis === "cash" ? "_cash" : ""}`] = {
+      band: variants[mode][basis], src: `item 6 ${mode}; same first-year rules; ${basis}`,
+    };
+  }
+  report.first_year_breaks_alone = mid(variants.fixed_capital.set) < LOW_CUT;
+  outputs["first_year_item6_oct14.json"] = JSON.stringify(report, null, 2) + "\n";
+}
 // oct05: the lineage's alternatives (main_case_lineage_2026_10_05), each the change of its band from the central arm's,
 // on the set or, with cash pensions, on the cash set: v5_bands.csv's arms a and c and replacement rows, the C3 line at
 // C3 -+ 1 SE (v5_summary.json), and the ancestry-share count of the whole lineage (v5_summary.json fractional) at the

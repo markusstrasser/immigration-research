@@ -38,3 +38,42 @@ def test_debt_principal_columns_close_without_summing_rounded_cells():
         changed = dict(printed, fiscal_gap_bn=str(float(printed["fiscal_gap_bn"]) + 1e-5))
         with pytest.raises(SystemExit, match=r"\[BLOCKED\] C5 .* printed fiscal_gap_bn"):
             tables.debt_split_values(case, end, changed)
+
+
+def test_first_year_item6_changes_companions_and_flips_c1_horizon_verdict():
+    report = json.loads((tables.D / "first_year_item6_oct14.json").read_text())
+    expected = {
+        "fixed_capital": {"set": [273.4474, 325.8062], "cash": [198.3210, 250.6797]},
+        "whole": {"set": [235.9882, 298.2884], "cash": [160.8617, 223.1620]},
+        "corporate_only": {"set": [262.6732, 324.9735], "cash": [187.5468, 249.8470]},
+        "off": {"set": [307.7593, 341.6553], "cash": [232.6329, 266.5289]},
+    }
+    for mode, cases in expected.items():
+        for basis, values in cases.items():
+            assert report["variants"][mode][basis] == pytest.approx(values, abs=1e-4, rel=0)
+    cut = report["thresholds"]["low_bn"]
+    assert sum(report["variants"]["whole"]["set"])/2 < cut
+    assert sum(report["variants"]["fixed_capital"]["set"])/2 > cut
+    assert not report["first_year_breaks_alone"]
+    for basis in ("set", "cash"):
+        for end in ("low_end_16", "high_end_11"):
+            rows = [r for r in report["components"] if r["mode"] == "fixed_capital"
+                    and r["basis"] == basis and r["end"] == end]
+            for scope in ("union", "added", "lineage"):
+                cells = [r for r in rows if r["scope"] == scope]
+                assert len(cells) == 4
+                for cell in cells:
+                    factor = 0 if cell["line"] == "remaining_production_property" else 0.65
+                    assert cell["first_year_response"] == pytest.approx(cell["long_run_response"] * factor, abs=1e-12)
+            changes = {s: sum(r["cost_change_from_whole_bn"] for r in rows if r["scope"] == s)
+                       for s in ("union", "added", "lineage")}
+            assert changes["lineage"] == pytest.approx(changes["union"] + changes["added"], abs=1e-9)
+
+
+def test_first_year_live_tables_use_revised_horizon_and_preserve_other_conditions():
+    conclusions = {r["id"]: r for r in tables.rows(tables.D / "conclusions_oct14.csv")}
+    assert "does not break C1 alone" in conclusions["C1"]["break_condition"]
+    assert "$273.4 / 325.8bn" in conclusions["C1"]["rival_reading"]
+    assert "$198.3 / 250.7bn" in conclusions["C1"]["rival_reading"]
+    p02 = next(r for r in tables.rows(tables.D / "common_mode_oct14.csv") if r["premise_id"] == "P02")
+    assert "does not break C1 alone" in p02["effect_if_swapped"]

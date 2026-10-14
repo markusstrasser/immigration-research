@@ -7,7 +7,7 @@
  "rule": "External inputs verified against committed bytes; own live engine outputs rederived and case-gated.",
  "inputs": {
   "break_conditions_2026_09_29/derived/c1_arms_oct14.csv": {
-   "sha256": "016f17742f2c2ffc1382d2c3fd2ed3cc397b8abe1d6a18df3a76352734ea1465",
+   "sha256": "19dc8f8a8d56e74a44bd1b2f7551d3dbeec09f36d1ccc539406e9416e49465a5",
    "numeric_cells": [
     [
      0,
@@ -432,700 +432,820 @@
     [
      21,
      "cost_low_bn",
-     235.9882
+     273.4474
     ],
     [
      21,
+     "cost_high_bn",
+     325.8062
+    ],
+    [
+     21,
+     "midpoint_bn",
+     299.6268
+    ],
+    [
+     21,
+     "move_pct_of_midpoint",
+     -21.4816
+    ],
+    [
+     22,
+     "cost_low_bn",
+     243.8668
+    ],
+    [
+     22,
+     "cost_high_bn",
+     296.2256
+    ],
+    [
+     22,
+     "midpoint_bn",
+     270.0462
+    ],
+    [
+     22,
+     "move_pct_of_midpoint",
+     -29.2333
+    ],
+    [
+     23,
+     "cost_low_bn",
+     198.321
+    ],
+    [
+     23,
+     "cost_high_bn",
+     250.6797
+    ],
+    [
+     23,
+     "midpoint_bn",
+     224.5003
+    ],
+    [
+     23,
+     "move_pct_of_midpoint",
+     -41.1688
+    ],
+    [
+     24,
+     "cost_low_bn",
+     235.9882
+    ],
+    [
+     24,
      "cost_high_bn",
      298.2884
     ],
     [
-     21,
+     24,
      "midpoint_bn",
      267.1383
     ],
     [
-     21,
+     24,
      "move_pct_of_midpoint",
      -29.9953
     ],
     [
-     22,
-     "cost_low_bn",
-     206.4076
-    ],
-    [
-     22,
-     "cost_high_bn",
-     268.7078
-    ],
-    [
-     22,
-     "midpoint_bn",
-     237.5577
-    ],
-    [
-     22,
-     "move_pct_of_midpoint",
-     -37.747
-    ],
-    [
-     23,
+     25,
      "cost_low_bn",
      160.8617
     ],
     [
-     23,
+     25,
      "cost_high_bn",
      223.162
     ],
     [
-     23,
+     25,
      "midpoint_bn",
      192.0119
     ],
     [
-     23,
+     25,
      "move_pct_of_midpoint",
      -49.6825
     ],
     [
-     24,
+     26,
+     "cost_low_bn",
+     262.6732
+    ],
+    [
+     26,
+     "cost_high_bn",
+     324.9735
+    ],
+    [
+     26,
+     "midpoint_bn",
+     293.8233
+    ],
+    [
+     26,
+     "move_pct_of_midpoint",
+     -23.0024
+    ],
+    [
+     27,
+     "cost_low_bn",
+     187.5468
+    ],
+    [
+     27,
+     "cost_high_bn",
+     249.847
+    ],
+    [
+     27,
+     "midpoint_bn",
+     218.6969
+    ],
+    [
+     27,
+     "move_pct_of_midpoint",
+     -42.6896
+    ],
+    [
+     28,
+     "cost_low_bn",
+     307.7593
+    ],
+    [
+     28,
+     "cost_high_bn",
+     341.6553
+    ],
+    [
+     28,
+     "midpoint_bn",
+     324.7073
+    ],
+    [
+     28,
+     "move_pct_of_midpoint",
+     -14.9091
+    ],
+    [
+     29,
+     "cost_low_bn",
+     232.6329
+    ],
+    [
+     29,
+     "cost_high_bn",
+     266.5289
+    ],
+    [
+     29,
+     "midpoint_bn",
+     249.5809
+    ],
+    [
+     29,
+     "move_pct_of_midpoint",
+     -34.5963
+    ],
+    [
+     30,
      "cost_low_bn",
      326.1099
     ],
     [
-     24,
+     30,
      "cost_high_bn",
      408.0186
     ],
     [
-     24,
+     30,
      "midpoint_bn",
      367.0643
     ],
     [
-     24,
+     30,
      "move_pct_of_midpoint",
      -3.8093
     ],
     [
-     25,
+     31,
      "cost_low_bn",
      335.6548
     ],
     [
-     25,
+     31,
      "cost_high_bn",
      419.9192
     ],
     [
-     25,
+     31,
      "midpoint_bn",
      377.787
     ],
     [
-     25,
+     31,
      "move_pct_of_midpoint",
      -0.9994
     ],
     [
-     26,
+     32,
      "cost_low_bn",
      225.9539
     ],
     [
-     26,
+     32,
      "cost_high_bn",
      285.564
     ],
     [
-     26,
+     32,
      "midpoint_bn",
      255.7589
     ],
     [
-     26,
+     32,
      "move_pct_of_midpoint",
      -32.9773
     ],
     [
-     27,
+     33,
      "cost_low_bn",
      266.3256
     ],
     [
-     27,
+     33,
      "cost_high_bn",
      334.364
     ],
     [
-     27,
+     33,
      "midpoint_bn",
      300.3448
     ],
     [
-     27,
+     33,
      "move_pct_of_midpoint",
      -21.2934
     ],
     [
-     28,
+     34,
      "cost_low_bn",
      272.9343
     ],
     [
-     28,
+     34,
      "cost_high_bn",
      342.3523
     ],
     [
-     28,
+     34,
      "midpoint_bn",
      307.6433
     ],
     [
-     28,
+     34,
      "move_pct_of_midpoint",
      -19.3808
     ],
     [
-     29,
+     35,
      "cost_low_bn",
      332.639
     ],
     [
-     29,
+     35,
      "cost_high_bn",
      413.0956
     ],
     [
-     29,
+     35,
      "midpoint_bn",
      372.8673
     ],
     [
-     29,
+     35,
      "move_pct_of_midpoint",
      -2.2886
     ],
     [
-     30,
+     36,
      "cost_low_bn",
      352.9871
     ],
     [
-     30,
+     36,
      "cost_high_bn",
      439.2725
     ],
     [
-     30,
+     36,
      "midpoint_bn",
      396.1298
     ],
     [
-     30,
+     36,
      "move_pct_of_midpoint",
      3.8074
     ],
     [
-     31,
+     37,
      "cost_low_bn",
      343.4492
     ],
     [
-     31,
+     37,
      "cost_high_bn",
      427.3793
     ],
     [
-     31,
+     37,
      "midpoint_bn",
      385.4143
     ],
     [
-     31,
+     37,
      "move_pct_of_midpoint",
      0.9994
     ],
     [
-     32,
+     38,
      "cost_low_bn",
      336.0955
     ],
     [
-     32,
+     38,
      "cost_high_bn",
      418.3724
     ],
     [
-     32,
+     38,
      "midpoint_bn",
      377.234
     ],
     [
-     32,
+     38,
      "move_pct_of_midpoint",
      -1.1443
     ],
     [
-     33,
+     39,
      "cost_low_bn",
      340.5935
     ],
     [
-     33,
+     39,
      "cost_high_bn",
      424.6907
     ],
     [
-     33,
+     39,
      "midpoint_bn",
      382.6421
     ],
     [
-     33,
+     39,
      "move_pct_of_midpoint",
      0.2729
     ],
     [
-     34,
+     40,
      "cost_low_bn",
      339.1754
     ],
     [
-     34,
+     40,
      "cost_high_bn",
      423.2632
     ],
     [
-     34,
+     40,
      "midpoint_bn",
      381.2193
     ],
     [
-     34,
+     40,
      "move_pct_of_midpoint",
      -0.0999
     ],
     [
-     35,
+     41,
      "cost_low_bn",
      339.9287
     ],
     [
-     35,
+     41,
      "cost_high_bn",
      424.0354
     ],
     [
-     35,
+     41,
      "midpoint_bn",
      381.982
     ],
     [
-     35,
+     41,
      "move_pct_of_midpoint",
      0.0999
     ],
     [
-     36,
+     42,
      "cost_low_bn",
      338.1493
     ],
     [
-     36,
+     42,
      "cost_high_bn",
      422.2112
     ],
     [
-     36,
+     42,
      "midpoint_bn",
      380.1803
     ],
     [
-     36,
+     42,
      "move_pct_of_midpoint",
      -0.3722
     ],
     [
-     37,
+     43,
      "cost_low_bn",
      341.7067
     ],
     [
-     37,
+     43,
      "cost_high_bn",
      425.8582
     ],
     [
-     37,
+     43,
      "midpoint_bn",
      383.7824
     ],
     [
-     37,
+     43,
      "move_pct_of_midpoint",
      0.5717
     ],
     [
-     38,
+     44,
      "cost_low_bn",
      340.0083
     ],
     [
-     38,
+     44,
      "cost_high_bn",
      424.1056
     ],
     [
-     38,
+     44,
      "midpoint_bn",
      382.057
     ],
     [
-     38,
+     44,
      "move_pct_of_midpoint",
      0.1196
     ],
     [
-     39,
+     45,
      "cost_low_bn",
      339.4344
     ],
     [
-     39,
+     45,
      "cost_high_bn",
      423.5317
     ],
     [
-     39,
+     45,
      "midpoint_bn",
      381.483
     ],
     [
-     39,
+     45,
      "move_pct_of_midpoint",
      -0.0308
     ],
     [
-     40,
+     46,
      "cost_low_bn",
      340.2555
     ],
     [
-     40,
+     46,
      "cost_high_bn",
      424.3216
     ],
     [
-     40,
+     46,
      "midpoint_bn",
      382.2886
     ],
     [
-     40,
+     46,
      "move_pct_of_midpoint",
      0.1803
     ],
     [
-     41,
+     47,
      "cost_low_bn",
      327.8306
     ],
     [
-     41,
+     47,
      "cost_high_bn",
      412.8691
     ],
     [
-     41,
+     47,
      "midpoint_bn",
      370.3498
     ],
     [
-     41,
+     47,
      "move_pct_of_midpoint",
      -2.9483
     ],
     [
-     42,
+     48,
      "cost_low_bn",
      339.4641
     ],
     [
-     42,
+     48,
      "cost_high_bn",
      423.4848
     ],
     [
-     42,
+     48,
      "midpoint_bn",
      381.4745
     ],
     [
-     42,
+     48,
      "move_pct_of_midpoint",
      -0.0331
     ],
     [
-     43,
+     49,
      "cost_low_bn",
      338.3996
     ],
     [
-     43,
+     49,
      "cost_high_bn",
      422.4969
     ],
     [
-     43,
+     49,
      "midpoint_bn",
      380.4483
     ],
     [
-     43,
+     49,
      "move_pct_of_midpoint",
      -0.302
     ],
     [
-     44,
+     50,
      "cost_low_bn",
      339.6669
     ],
     [
-     44,
+     50,
      "cost_high_bn",
      423.7642
     ],
     [
-     44,
+     50,
      "midpoint_bn",
      381.7155
     ],
     [
-     44,
+     50,
      "move_pct_of_midpoint",
      0.0301
     ],
     [
-     45,
+     51,
      "cost_low_bn",
      339.22
     ],
     [
-     45,
+     51,
      "cost_high_bn",
      423.3172
     ],
     [
-     45,
+     51,
      "midpoint_bn",
      381.2686
     ],
     [
-     45,
+     51,
      "move_pct_of_midpoint",
      -0.087
     ],
     [
-     46,
+     52,
      "cost_low_bn",
      331.6762
     ],
     [
-     46,
+     52,
      "cost_high_bn",
      416.7964
     ],
     [
-     46,
+     52,
      "midpoint_bn",
      374.2363
     ],
     [
-     46,
+     52,
      "move_pct_of_midpoint",
      -1.9299
     ],
     [
-     47,
+     53,
      "cost_low_bn",
      367.9563
     ],
     [
-     47,
+     53,
      "cost_high_bn",
      423.6493
     ],
     [
-     47,
+     53,
      "midpoint_bn",
      395.8028
     ],
     [
-     47,
+     53,
      "move_pct_of_midpoint",
      3.7217
     ],
     [
-     48,
+     54,
      "cost_low_bn",
      339.552
     ],
     [
-     48,
+     54,
      "cost_high_bn",
      429.0596
     ],
     [
-     48,
+     54,
      "midpoint_bn",
      384.3058
     ],
     [
-     48,
+     54,
      "move_pct_of_midpoint",
      0.7089
     ],
     [
-     49,
+     55,
      "cost_low_bn",
      339.552
     ],
     [
-     49,
+     55,
      "cost_high_bn",
      427.1384
     ],
     [
-     49,
+     55,
      "midpoint_bn",
      383.3452
     ],
     [
-     49,
+     55,
      "move_pct_of_midpoint",
      0.4572
     ],
     [
-     50,
+     56,
      "cost_low_bn",
      329.7526
     ],
     [
-     50,
+     56,
      "cost_high_bn",
      420.1792
     ],
     [
-     50,
+     56,
      "midpoint_bn",
      374.9659
     ],
     [
-     50,
+     56,
      "move_pct_of_midpoint",
      -1.7387
     ],
     [
-     51,
+     57,
      "cost_low_bn",
      343.3266
     ],
     [
-     51,
+     57,
      "cost_high_bn",
      425.0459
     ],
     [
-     51,
+     57,
      "midpoint_bn",
      384.1863
     ],
     [
-     51,
+     57,
      "move_pct_of_midpoint",
      0.6776
     ],
     [
-     52,
+     58,
      "cost_low_bn",
      341.1633
     ],
     [
-     52,
+     58,
      "cost_high_bn",
      425.2606
     ],
     [
-     52,
+     58,
      "midpoint_bn",
      383.2119
     ],
     [
-     52,
+     58,
      "move_pct_of_midpoint",
      0.4222
     ],
     [
-     53,
+     59,
      "cost_low_bn",
      336.9793
     ],
     [
-     53,
+     59,
      "cost_high_bn",
      421.0765
     ],
     [
-     53,
+     59,
      "midpoint_bn",
      379.0279
     ],
     [
-     53,
+     59,
      "move_pct_of_midpoint",
      -0.6742
     ],
     [
-     54,
+     60,
      "cost_low_bn",
      397.8814
     ],
     [
-     54,
+     60,
      "cost_high_bn",
      453.5744
     ],
     [
-     54,
+     60,
      "midpoint_bn",
      425.7279
     ],
     [
-     54,
+     60,
      "move_pct_of_midpoint",
      11.5637
     ],
     [
-     55,
+     61,
      "cost_low_bn",
      342.8243
     ],
     [
-     55,
+     61,
      "cost_high_bn",
      425.6818
     ],
     [
-     55,
+     61,
      "midpoint_bn",
      384.253
     ],
     [
-     55,
+     61,
      "move_pct_of_midpoint",
      0.6951
     ]
@@ -23260,6 +23380,14 @@
    "sha256": "453f7d4352c87029ddaecf7381060b296684803c62c2b211563e29022da43e1f",
    "numeric_cells": []
   },
+  "break_conditions_2026_09_29/derived/first_year_item6_oct14.json": {
+   "sha256": "7f859c8e2e5ab1f70310a9aba6c1f91b886b3abcc072d0a4cefc2bbdd841c52b",
+   "numeric_cells": []
+  },
+  "break_conditions_2026_09_29/derived/first_year_calibration.json": {
+   "sha256": "57bfa3a0ed1a82ed5b63a641d12d51535c9255002ea833cf4cff805801ba461f",
+   "numeric_cells": []
+  },
   "main_case_2026_10_14/derived/summary.json": {
    "sha256": "b30720cff0c29637ab6f74d809829fdbfc4b82a00a45fa286e3f0c1c5c183582",
    "numeric_cells": []
@@ -41441,5 +41569,6 @@
    "sha256": "4dd9340bbcb0ca42984601301ab856246cced7b899379680e1008a0cf407d89a",
    "numeric_cells": []
   }
- }
+ },
+ "p7_revision": "First-year item 6: response-only revision; external inputs unchanged; own engine/calibration outputs rederived with positive control and 1e-9 closure."
 }
