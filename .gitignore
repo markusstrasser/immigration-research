@@ -62,3 +62,6 @@ infra/immigration-fiscal/homicide_cost_2026_09_18/derived/profile_source_audit.j
 .model-review/assumptions-v7-*
 .model-review/*-assumptions-v7-*/
 .model-review/dispatch.json
+# worker lists of the paths a lane run touched (review aids, rederivable)
+changed-paths.txt
+*-changed-paths.txt
