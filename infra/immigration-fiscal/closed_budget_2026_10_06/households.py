@@ -56,7 +56,9 @@ DECOMP = FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct05.json
 # meta.lineage.age_mix places the added people.
 CASES = {"oct05": dict(decomp=DECOMP, out=OUT),
          "oct07": dict(decomp=FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct07.json", out=OUT / "oct07",
-                       payload=FISCAL / "main_case_2026_10_07/derived/corrections.json")}
+                       payload=FISCAL / "main_case_2026_10_07/derived/corrections.json"),
+         "oct14": dict(decomp=FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct14.json", out=OUT / "oct14",
+                       payload=FISCAL / "main_case_2026_10_14/derived/corrections.json")}
 sys.path.insert(0, str(FISCAL / "world_ledger_2026_09_27"))
 from population_basis import g3plus, reweight  # noqa: E402
 
@@ -93,7 +95,7 @@ def age_tilted(d, payload_file: Path) -> np.ndarray:
     return lw
 
 
-def main(case: str = "oct05") -> None:
+def main(case: str = "oct14") -> None:
     conf = CASES[case]
     spec = importlib.util.spec_from_file_location("dist_base", FISCAL / "distribution_weights_2026_09_23/distribute.py")
     B = importlib.util.module_from_spec(spec)
@@ -164,6 +166,6 @@ def main(case: str = "oct05") -> None:
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct05", choices=list(CASES),
-                    help="oct05 (default, v5) or oct07 (v6: the added people at their measured age mix)")
+    ap.add_argument("--case", default="oct14", choices=list(CASES),
+                    help="live case oct14 (default), or a historical case explicitly")
     main(ap.parse_args().case)

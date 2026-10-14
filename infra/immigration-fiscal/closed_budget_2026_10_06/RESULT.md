@@ -182,3 +182,21 @@ Log (append-only; times from `date`):
 - 15:14:28–15:14:37: after the excess comment was re-sourced to `summary_oct07.json` (prop-a's rerun IDENTICAL 51/51,
   15:03:57–15:04:25), `rerun_lane.py` over the same six commands: IDENTICAL 20/20, exit 0. The case-lane hash recorded
   in `derived/oct07/audit.json` (summary.json 54709259…) is the committed file's.
+
+
+## 2026-10-14: live case oct14 (v7)
+
+The live case pins are set 339.552018 / 423.649261bn, cash 264.425574 / 348.522816bn (1e-6). The excess over average residents is re-pinned from `summary_oct14.json` at the case's ends: 367.9 / 346.2bn; these are the case's low/high ends, not the extrema of the excess. The frame and measured-age household rule are unchanged. The all-tax rule includes job-capital and child-credit receipts; income-tax and federal-benefit rules retain the child-credit receipt/spending distinction.
+
+Central closed-budget cost: set 307.580680 / 391.677923bn, cash 232.454236 / 316.551479bn. [DATA: `derived/oct14/summary.json` `sets.*.central.cost_bn`; `derived/oct14/audit.json`]
+
+All audit gates pass; 6 tests pass; rerun IDENTICAL 25/25, exit 0. CSV part sums retain the documented 1e-4 tolerance.
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/closed_budget_2026_10_06/households.py --case oct14
+uv run --no-project --with openpyxl python3 infra/immigration-fiscal/closed_budget_2026_10_06/trust_funds.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/closed_budget_2026_10_06/closed_budget.py --case oct14
+uv run --no-project python3 -m pytest infra/immigration-fiscal/closed_budget_2026_10_06/test_closed_budget.py -q
+```
+
+Log: 2026-10-14 18:23:25 JST (`date`): moved to adopted 148ed1ea; computed oct14 only and preserved earlier case files.

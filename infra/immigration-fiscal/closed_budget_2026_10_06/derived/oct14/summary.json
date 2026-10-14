@@ -1,0 +1,208 @@
+{
+ "lane": "closed_budget_2026_10_06",
+ "gdp_2024_bn": 29300.0,
+ "sets": {
+  "main": {
+   "case_bn": [
+    339.55201782952685,
+    423.64926070050683
+   ],
+   "central": {
+    "definition": {
+     "fix": "ag2026_cl",
+     "basis": "general fund (cbo reading)",
+     "rule": "per_household"
+    },
+    "fix_bn": 332.859,
+    "offset_bn": [
+     31.971337,
+     31.971337
+    ],
+    "cost_bn": [
+     307.58068,
+     391.677923
+    ],
+    "change_pct": [
+     -9.416,
+     -7.547
+    ]
+   },
+   "current law": {
+    "fixes": [
+     "ag2026_cl",
+     "cbo2026_debt_stable"
+    ],
+    "fix_bn": [
+     205.838,
+     332.859
+    ],
+    "offset_bn": [
+     9.892367,
+     42.410146
+    ],
+    "cost_bn": [
+     297.141872,
+     413.756893
+    ],
+    "change_pct": [
+     -12.49,
+     -2.335
+    ]
+   },
+   "current policy": {
+    "fixes": [
+     "ag2026_cp",
+     "treasury_fy2025_75yr",
+     "treasury_fy2025_75yr_real_discretionary"
+    ],
+    "fix_bn": [
+     195.903,
+     869.803
+    ],
+    "offset_bn": [
+     9.414915,
+     110.823125
+    ],
+    "cost_bn": [
+     228.728892,
+     414.234346
+    ],
+    "change_pct": [
+     -32.638,
+     -2.222
+    ]
+   },
+   "aei_as_published_per_person": {
+    "cost_bn": [
+     181.639169,
+     265.736412
+    ]
+   },
+   "pooled_funds_arm": {
+    "trust_funds": "infra/immigration-fiscal/closed_budget_2026_10_06/derived/trust_funds.json",
+    "central": {
+     "fix_bn": 370.137,
+     "cost_bn": [
+      304.000089,
+      388.097331
+     ]
+    },
+    "current law": {
+     "cost_bn": [
+      292.392198,
+      412.268931
+     ]
+    },
+    "switch_bn": {
+     "central_fix_bn": -37.27800000000002,
+     "central_cost_bn": [
+      3.58059099999997,
+      3.580592000000024
+     ],
+     "rule": "separate funds less pooled: the general-fund fix nets OASI's post-depletion shortfall from 2032 Q4 instead of the pooled fund's from 2034 Q3"
+    }
+   }
+  },
+  "cash": {
+   "case_bn": [
+    264.4255736155055,
+    348.52281648648557
+   ],
+   "central": {
+    "definition": {
+     "fix": "ag2026_cl",
+     "basis": "general fund (cbo reading)",
+     "rule": "per_household"
+    },
+    "fix_bn": 332.859,
+    "offset_bn": [
+     31.971337,
+     31.971337
+    ],
+    "cost_bn": [
+     232.454236,
+     316.551479
+    ],
+    "change_pct": [
+     -12.091,
+     -9.173
+    ]
+   },
+   "current law": {
+    "fixes": [
+     "ag2026_cl",
+     "cbo2026_debt_stable"
+    ],
+    "fix_bn": [
+     205.838,
+     332.859
+    ],
+    "offset_bn": [
+     9.735858,
+     42.410146
+    ],
+    "cost_bn": [
+     222.015427,
+     338.786958
+    ],
+    "change_pct": [
+     -16.039,
+     -2.793
+    ]
+   },
+   "current policy": {
+    "fixes": [
+     "ag2026_cp",
+     "treasury_fy2025_75yr",
+     "treasury_fy2025_75yr_real_discretionary"
+    ],
+    "fix_bn": [
+     195.903,
+     869.803
+    ],
+    "offset_bn": [
+     9.265959,
+     110.823125
+    ],
+    "cost_bn": [
+     153.602448,
+     339.256857
+    ],
+    "change_pct": [
+     -41.911,
+     -2.659
+    ]
+   },
+   "aei_as_published_per_person": {
+    "cost_bn": [
+     106.512724,
+     190.609967
+    ]
+   },
+   "pooled_funds_arm": {
+    "trust_funds": "infra/immigration-fiscal/closed_budget_2026_10_06/derived/trust_funds.json",
+    "central": {
+     "fix_bn": 370.137,
+     "cost_bn": [
+      228.873644,
+      312.970887
+     ]
+    },
+    "current law": {
+     "cost_bn": [
+      217.265754,
+      337.322537
+     ]
+    },
+    "switch_bn": {
+     "central_fix_bn": -37.27800000000002,
+     "central_cost_bn": [
+      3.580591999999996,
+      3.5805919999999674
+     ],
+     "rule": "separate funds less pooled: the general-fund fix nets OASI's post-depletion shortfall from 2032 Q4 instead of the pooled fund's from 2034 Q3"
+    }
+   }
+  }
+ }
+}

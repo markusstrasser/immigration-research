@@ -101,6 +101,14 @@ CASES = {
                   out=OUT / "oct07", pooled=TRUST_FUNDS,
                   # the adoption's bands to 6 decimals (case lane 218a2fb2), gated at 1e-6
                   bands={"main": (389.082553, 461.479709), "cash": (307.399411, 385.364123)}),
+    "oct14": dict(case=ROOT / "infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json", decomp="oct14",
+                  sets={"main": ("oct14", "main_case"), "cash": ("oct14_cash", "cash_set")},
+                  # summary_oct14.json parts.<end>.shapley: 367.873805503 / 346.165156625.
+                  # These are at the case's low/high ends, not the extrema of the excess.
+                  excess={"low": 367.9, "high": 346.2},
+                  trust_funds=OUT / "trust_funds_separate.json", households=OUT / "oct14/household_share.json",
+                  out=OUT / "oct14", pooled=TRUST_FUNDS,
+                  bands={"main": (339.552018, 423.649261), "cash": (264.425574, 348.522816)}),
 }
 
 
@@ -131,16 +139,19 @@ def case_ends(summary: dict, name: str) -> dict:
 def ratios(parts: dict, household_ratio: float) -> dict:
     """The group's amount over as many average residents', by sharing rule."""
     sh, tot = parts["shared"], parts["total"]
+    tax_keys = TAXES + (["job_capital_taxes", "child_credits_receipt"] if "job_capital_taxes" in tot else [])
+    benefit_keys = FEDERAL_BENEFITS + (["child_credits_spending"] if "child_credits_spending" in tot else [])
     tax = lambda d, ks: -sum(d[k] for k in ks)  # receipts carry negative signs
-    benefits = lambda d: sum(d[k] for k in FEDERAL_BENEFITS)
-    r_inc = tot["income_taxes"] / sh["income_taxes"]
+    benefits = lambda d: sum(d[k] for k in benefit_keys)
+    income = lambda d: d["income_taxes"] + d.get("child_credits_receipt", 0)
+    r_inc = income(tot) / income(sh)
     r_pay = tot["payroll_taxes"] / sh["payroll_taxes"]
     w = FED_MIX["income_taxes"] / (FED_MIX["income_taxes"] + FED_MIX["payroll_taxes"])
     return {
         "per_person": 1.0,
         "per_household": household_ratio,
         "federal_benefits": benefits(tot) / benefits(sh),
-        "all_taxes": tax(tot, TAXES) / tax(sh, TAXES),
+        "all_taxes": tax(tot, tax_keys) / tax(sh, tax_keys),
         "federal_taxes": w * r_inc + (1 - w) * r_pay,
         "income_tax": r_inc,
     }
@@ -174,8 +185,8 @@ def span(rows: list[dict], key: str) -> list[float]:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="The closed-budget arm on a main case.")
-    ap.add_argument("--case", choices=tuple(CASES), default="oct05",
-                    help="oct05 (default, main case v5 -> derived/) or oct07 (main case v6 -> derived/oct07/)")
+    ap.add_argument("--case", choices=tuple(CASES), default="oct14",
+                    help="live case oct14 (default), or a historical case explicitly")
     conf = CASES[ap.parse_args().case]
     if conf["excess"] is None:
         blocked("the case's excess over average residents is not pinned (CASES excess)")
