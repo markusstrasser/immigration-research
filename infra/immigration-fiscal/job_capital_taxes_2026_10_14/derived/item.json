@@ -1,0 +1,4360 @@
+{
+ "lane": "job_capital_taxes_2026_10_14",
+ "contract": "main_case_2026_10_14 item_job_capital.cjs (the v7 brief): lines, by_generation, factor, per_wage_dollar, central_bn, arms, gates",
+ "frame": "the identified union (39,712,493 on audit row 4's weights), CPS ASEC 2025 wage and salary income (WSAL_VAL) by the longest job's industry, the case's fill-in correction split by generation; no status rules: an off-books job's capital is taxed at its source whether or not the wage is reported (the case's production term also counts all CPS earnings)",
+ "conventions": {
+  "readings": "low = the band's low end (corporate at 1), high = its high end (corporate at the normal-return share); every line's response is {low, high}",
+  "group_bn": "the union's target before the response, key_share x national_bn, $bn (taxes on the capital that serves its jobs)",
+  "item_bn": "response x group_bn at each reading: the taxes a removal loses; central_bn sums the lines and net_cost_change_bn is minus it",
+  "plain_wage_share": "the union's share of the case's wage key (corporate_labor at cbo_collective on the September 29 payload model, case_keys.json case_wage_key); lane_plain_wage_share is the union's share of all CPS wages here",
+  "factor": "a group's key share over its share of the case's wage key (union, G1, G2, G3plus: case_wage_key.shares) or over its plain wage share on this lane's frame (white_nh, black_nh: third-plus non-Hispanic white and Black alone; *_all: every nativity); by_generation[G] = factor[G] x case share of G x national_bn",
+  "by_generation": "the union's generations' targets before the response, convention a; they add to group_bn",
+  "national_bn": "the case's line: corporate = corporate_capital + corporate_labor, business_property = remaining_production_property, other_production_taxes the whole line; base_bn is the part the key spreads (mining's cells out of every line; other production taxes: the residential parts of documentary taxes and special assessments out as well)"
+ },
+ "label": "the lane's central reading: every line by industry at the union's share of each industry's CPS wage bill, mining at 0",
+ "lines": {
+  "corporate": {
+   "national_bn": 663.685,
+   "response": {
+    "low": 1.0,
+    "high": 0.37
+   },
+   "key_share": {
+    "personal": 0.06269956350947474,
+    "shared": 0.06921488604899832
+   },
+   "group_bn": {
+    "personal": 41.61275980778574,
+    "shared": 45.936881647429445
+   },
+   "item_bn": {
+    "low": {
+     "personal": 41.61275980778574,
+     "shared": 45.936881647429445
+    },
+    "high": {
+     "personal": 15.396721128880724,
+     "shared": 16.996646209548896
+    }
+   },
+   "plain_wage_share": {
+    "personal": 0.07513433634181657,
+    "shared": 0.08058047223550988
+   },
+   "lane_plain_wage_share": {
+    "personal": 0.07879145287962547,
+    "shared": 0.08433506729704082
+   },
+   "base_bn": 651.507600108
+  },
+  "other_production_taxes": {
+   "national_bn": 145.258,
+   "response": {
+    "low": 1.0,
+    "high": 1.0
+   },
+   "key_share": {
+    "personal": 0.049409928833544337,
+    "shared": 0.05297038201825125
+   },
+   "group_bn": {
+    "personal": 7.177187442502984,
+    "shared": 7.69437175120714
+   },
+   "item_bn": {
+    "low": {
+     "personal": 7.177187442502984,
+     "shared": 7.69437175120714
+    },
+    "high": {
+     "personal": 7.177187442502984,
+     "shared": 7.69437175120714
+    }
+   },
+   "plain_wage_share": {
+    "personal": 0.07513433634181657,
+    "shared": 0.08058047223550988
+   },
+   "lane_plain_wage_share": {
+    "personal": 0.07879145287962547,
+    "shared": 0.08433506729704082
+   },
+   "base_bn": 90.16543379199999
+  },
+  "business_property": {
+   "national_bn": 273.445297051,
+   "response": {
+    "low": 0.8806493775433665,
+    "high": 0.8806493775433665
+   },
+   "key_share": {
+    "personal": 0.07346623399907791,
+    "shared": 0.07876017173580933
+   },
+   "group_bn": {
+    "personal": 20.088996179096135,
+    "shared": 21.536598556086158
+   },
+   "item_bn": {
+    "low": {
+     "personal": 17.691361980592077,
+     "shared": 18.96619211281864
+    },
+    "high": {
+     "personal": 17.691361980592077,
+     "shared": 18.96619211281864
+    }
+   },
+   "plain_wage_share": {
+    "personal": 0.07513433634181657,
+    "shared": 0.08058047223550988
+   },
+   "lane_plain_wage_share": {
+    "personal": 0.07879145287962547,
+    "shared": 0.08433506729704082
+   },
+   "base_bn": 252.37365882199998
+  }
+ },
+ "by_generation": {
+  "G1": {
+   "corporate": {
+    "personal": 13.213181978535765,
+    "shared": 11.022426191809235
+   },
+   "other_production_taxes": {
+    "personal": 2.4817880439363775,
+    "shared": 2.048852001248269
+   },
+   "business_property": {
+    "personal": 6.9465415153869134,
+    "shared": 5.734750604632586
+   }
+  },
+  "G2": {
+   "corporate": {
+    "personal": 14.304856664327346,
+    "shared": 15.72229742397846
+   },
+   "other_production_taxes": {
+    "personal": 2.3601580165952196,
+    "shared": 2.5861158549555494
+   },
+   "business_property": {
+    "personal": 6.606098246291451,
+    "shared": 7.2385557637130145
+   }
+  },
+  "G3plus": {
+   "corporate": {
+    "personal": 14.094721164922625,
+    "shared": 19.192158031641757
+   },
+   "other_production_taxes": {
+    "personal": 2.335241381971387,
+    "shared": 3.0594038950033227
+   },
+   "business_property": {
+    "personal": 6.536356417417769,
+    "shared": 8.563292187740558
+   }
+  }
+ },
+ "factor": {
+  "G1": {
+   "corporate": {
+    "personal": 0.9867792204944273,
+    "shared": 0.97018409446659
+   },
+   "other_production_taxes": {
+    "personal": 0.8468357993864577,
+    "shared": 0.823966360193426
+   },
+   "business_property": {
+    "personal": 1.2591363409463718,
+    "shared": 1.2251324147928317
+   }
+  },
+  "G2": {
+   "corporate": {
+    "personal": 0.7753682618486453,
+    "shared": 0.8596821911763904
+   },
+   "other_production_taxes": {
+    "personal": 0.5845040601347257,
+    "shared": 0.6460882476709676
+   },
+   "business_property": {
+    "personal": 0.8690826534021713,
+    "shared": 0.9606504503904064
+   }
+  },
+  "G3plus": {
+   "corporate": {
+    "personal": 0.7819016147176628,
+    "shared": 0.8053651242764478
+   },
+   "other_production_taxes": {
+    "personal": 0.591901364771871,
+    "shared": 0.5865806940871999
+   },
+   "business_property": {
+    "personal": 0.8800814976760366,
+    "shared": 0.8721703420346939
+   }
+  },
+  "white_nh": {
+   "corporate": {
+    "personal": 1.0181332156315623,
+    "shared": 1.0093853352363915
+   },
+   "other_production_taxes": {
+    "personal": 0.6399355613079509,
+    "shared": 0.6400030677220375
+   },
+   "business_property": {
+    "personal": 0.9515021940073842,
+    "shared": 0.951602567396225
+   }
+  },
+  "black_nh": {
+   "corporate": {
+    "personal": 0.7727400580608814,
+    "shared": 0.7703865356007628
+   },
+   "other_production_taxes": {
+    "personal": 0.5594890049376654,
+    "shared": 0.5529631166568252
+   },
+   "business_property": {
+    "personal": 0.831888471133841,
+    "shared": 0.8221853113315514
+   }
+  },
+  "union": {
+   "corporate": {
+    "personal": 0.8344994653872897,
+    "shared": 0.858953591717684
+   },
+   "other_production_taxes": {
+    "personal": 0.6576211521821199,
+    "shared": 0.6573600346177728
+   },
+   "business_property": {
+    "personal": 0.9777984018498574,
+    "shared": 0.9774101534875546
+   }
+  },
+  "white_nh_all": {
+   "corporate": {
+    "personal": 1.0176632315467122,
+    "shared": 1.0176833784524661
+   },
+   "other_production_taxes": {
+    "personal": 0.6358681285043756,
+    "shared": 0.6371787151966207
+   },
+   "business_property": {
+    "personal": 0.945454442528816,
+    "shared": 0.9474031170333742
+   }
+  },
+  "black_nh_all": {
+   "corporate": {
+    "personal": 0.7931313810125651,
+    "shared": 0.7811702134306259
+   },
+   "other_production_taxes": {
+    "personal": 0.5638233400470894,
+    "shared": 0.5585526530006149
+   },
+   "business_property": {
+    "personal": 0.8383330721475469,
+    "shared": 0.8304962357685985
+   }
+  }
+ },
+ "central_bn": {
+  "low": {
+   "personal": 66.48130923088081,
+   "shared": 72.59744551145522
+  },
+  "high": {
+   "personal": 40.26527055197579,
+   "shared": 43.657210073574674
+  }
+ },
+ "net_cost_change_bn": {
+  "low": {
+   "personal": -66.48130923088081,
+   "shared": -72.59744551145522
+  },
+  "high": {
+   "personal": -40.26527055197579,
+   "shared": -43.657210073574674
+  }
+ },
+ "se_bn": {
+  "central": {
+   "low": {
+    "personal": 2.0058863714772923,
+    "shared": 2.1721133265958787
+   },
+   "high": {
+    "personal": 1.10693016994514,
+    "shared": 1.164135764098376
+   }
+  },
+  "by_line": {
+   "low": {
+    "corporate": {
+     "personal": 1.5339631791483672,
+     "shared": 1.6900897774298635
+    },
+    "other_production_taxes": {
+     "personal": 0.1941354337788137,
+     "shared": 0.19079951920283653
+    },
+    "business_property": {
+     "personal": 0.4785328876787759,
+     "shared": 0.47031004651979036
+    }
+   },
+   "high": {
+    "corporate": {
+     "personal": 0.5675663762848959,
+     "shared": 0.6253332176490499
+    },
+    "other_production_taxes": {
+     "personal": 0.1941354337788137,
+     "shared": 0.19079951920283653
+    },
+    "business_property": {
+     "personal": 0.4785328876787759,
+     "shared": 0.47031004651979036
+    }
+   }
+  },
+  "fill_in": {
+   "low": {
+    "personal": 0.4874260387535888,
+    "shared": 0.4870650800373876
+   },
+   "high": {
+    "personal": 0.2952159268754982,
+    "shared": 0.2929015252380945
+   }
+  },
+  "rule": "SDR over the 160 replicate weights (the CPS sample); fill_in from the fill-in rel_change SE"
+ },
+ "per_wage_dollar": {
+  "rule": "tax lost at the line's response per dollar of the group's CPS wage and salary income on this lane's frame (all wages, row 4 and the fill-in; the employer_hi key's wage concept, WSAL_VAL), by reading; all sums the lines; national is the item's bases over national CPS wages",
+  "low": {
+   "G1": {
+    "corporate": {
+     "personal": 0.04532151957016576,
+     "shared": 0.04526935322946552
+    },
+    "other_production_taxes": {
+     "personal": 0.008512590349923447,
+     "shared": 0.008414681427245838
+    },
+    "business_property": {
+     "personal": 0.020983054780548103,
+     "shared": 0.020741714811883603
+    },
+    "all": {
+     "personal": 0.07481716470063732,
+     "shared": 0.07442574946859497
+    }
+   },
+   "G2": {
+    "corporate": {
+     "personal": 0.0432328292753891,
+     "shared": 0.04501901003234985
+    },
+    "other_production_taxes": {
+     "personal": 0.007132983642461413,
+     "shared": 0.007405048542174328
+    },
+    "business_property": {
+     "personal": 0.017582402108176194,
+     "shared": 0.01825302673138384
+    },
+    "all": {
+     "personal": 0.06794821502602671,
+     "shared": 0.07067708530590802
+    }
+   },
+   "G3plus": {
+    "corporate": {
+     "personal": 0.044025323385643,
+     "shared": 0.04416269013940539
+    },
+    "other_production_taxes": {
+     "personal": 0.007294202973002948,
+     "shared": 0.00703993297697767
+    },
+    "business_property": {
+     "personal": 0.01797979865883145,
+     "shared": 0.01735303746922486
+    },
+    "all": {
+     "personal": 0.06929932501747739,
+     "shared": 0.06855566058560791
+    }
+   },
+   "white_nh": {
+    "corporate": {
+     "personal": 0.05648468434804883,
+     "shared": 0.054995804922663816
+    },
+    "other_production_taxes": {
+     "personal": 0.007770346806260779,
+     "shared": 0.007631900253800093
+    },
+    "business_property": {
+     "personal": 0.019153466335393658,
+     "shared": 0.01881220339720475
+    },
+    "all": {
+     "personal": 0.08340849748970326,
+     "shared": 0.08143990857366866
+    }
+   },
+   "black_nh": {
+    "corporate": {
+     "personal": 0.04287059649221479,
+     "shared": 0.04197408675154175
+    },
+    "other_production_taxes": {
+     "personal": 0.006793533389158434,
+     "shared": 0.006593967377962928
+    },
+    "business_property": {
+     "personal": 0.016745676391514943,
+     "shared": 0.016253757437082565
+    },
+    "all": {
+     "personal": 0.06640980627288817,
+     "shared": 0.06482181156658724
+    }
+   },
+   "union": {
+    "corporate": {
+     "personal": 0.044148048269240556,
+     "shared": 0.0447160964652134
+    },
+    "other_production_taxes": {
+     "personal": 0.007614462946284199,
+     "shared": 0.0074898917194011275
+    },
+    "business_property": {
+     "personal": 0.01876922141851438,
+     "shared": 0.018462160374833055
+    },
+    "all": {
+     "personal": 0.07053173263403913,
+     "shared": 0.07066814855944759
+    }
+   },
+   "white_nh_all": {
+    "corporate": {
+     "personal": 0.05645861025256331,
+     "shared": 0.05544791924414263
+    },
+    "other_production_taxes": {
+     "personal": 0.007720958453111057,
+     "shared": 0.007598220451557471
+    },
+    "business_property": {
+     "personal": 0.019031726832238416,
+     "shared": 0.01872918458547689
+    },
+    "all": {
+     "personal": 0.08321129553791279,
+     "shared": 0.081775324281177
+    }
+   },
+   "black_nh_all": {
+    "corporate": {
+     "personal": 0.04400188012257007,
+     "shared": 0.04256162950808587
+    },
+    "other_production_taxes": {
+     "personal": 0.00684616257405002,
+     "shared": 0.00666062140822036
+    },
+    "business_property": {
+     "personal": 0.016875404362021444,
+     "shared": 0.016418055859854088
+    },
+    "all": {
+     "personal": 0.06772344705864153,
+     "shared": 0.06564030677616031
+    }
+   },
+   "national": {
+    "corporate": {
+     "personal": 0.05446074576315596,
+     "shared": 0.05348476057698111
+    },
+    "other_production_taxes": {
+     "personal": 0.007537098209685928,
+     "shared": 0.007402026680710006
+    },
+    "business_property": {
+     "personal": 0.01857852170891354,
+     "shared": 0.018245578013140747
+    },
+    "all": {
+     "personal": 0.08057636568175543,
+     "shared": 0.07913236527083187
+    }
+   }
+  },
+  "high": {
+   "G1": {
+    "corporate": {
+     "personal": 0.016768962240961333,
+     "shared": 0.016749660694902243
+    },
+    "other_production_taxes": {
+     "personal": 0.008512590349923447,
+     "shared": 0.008414681427245838
+    },
+    "business_property": {
+     "personal": 0.020983054780548103,
+     "shared": 0.020741714811883603
+    },
+    "all": {
+     "personal": 0.046264607371432884,
+     "shared": 0.045906056934031686
+    }
+   },
+   "G2": {
+    "corporate": {
+     "personal": 0.01599614683189397,
+     "shared": 0.016657033711969447
+    },
+    "other_production_taxes": {
+     "personal": 0.007132983642461413,
+     "shared": 0.007405048542174328
+    },
+    "business_property": {
+     "personal": 0.017582402108176194,
+     "shared": 0.01825302673138384
+    },
+    "all": {
+     "personal": 0.04071153258253157,
+     "shared": 0.042315108985527615
+    }
+   },
+   "G3plus": {
+    "corporate": {
+     "personal": 0.016289369652687912,
+     "shared": 0.016340195351579993
+    },
+    "other_production_taxes": {
+     "personal": 0.007294202973002948,
+     "shared": 0.00703993297697767
+    },
+    "business_property": {
+     "personal": 0.01797979865883145,
+     "shared": 0.01735303746922486
+    },
+    "all": {
+     "personal": 0.0415633712845223,
+     "shared": 0.040733165797782515
+    }
+   },
+   "white_nh": {
+    "corporate": {
+     "personal": 0.02089933320877807,
+     "shared": 0.02034844782138561
+    },
+    "other_production_taxes": {
+     "personal": 0.007770346806260779,
+     "shared": 0.007631900253800093
+    },
+    "business_property": {
+     "personal": 0.019153466335393658,
+     "shared": 0.01881220339720475
+    },
+    "all": {
+     "personal": 0.047823146350432506,
+     "shared": 0.046792551472390455
+    }
+   },
+   "black_nh": {
+    "corporate": {
+     "personal": 0.01586212070211947,
+     "shared": 0.015530412098070448
+    },
+    "other_production_taxes": {
+     "personal": 0.006793533389158434,
+     "shared": 0.006593967377962928
+    },
+    "business_property": {
+     "personal": 0.016745676391514943,
+     "shared": 0.016253757437082565
+    },
+    "all": {
+     "personal": 0.03940133048279285,
+     "shared": 0.038378136913115944
+    }
+   },
+   "union": {
+    "corporate": {
+     "personal": 0.016334777859619006,
+     "shared": 0.016544955692128955
+    },
+    "other_production_taxes": {
+     "personal": 0.007614462946284199,
+     "shared": 0.0074898917194011275
+    },
+    "business_property": {
+     "personal": 0.01876922141851438,
+     "shared": 0.018462160374833055
+    },
+    "all": {
+     "personal": 0.04271846222441758,
+     "shared": 0.04249700778636314
+    }
+   },
+   "white_nh_all": {
+    "corporate": {
+     "personal": 0.020889685793448423,
+     "shared": 0.02051573012033277
+    },
+    "other_production_taxes": {
+     "personal": 0.007720958453111057,
+     "shared": 0.007598220451557471
+    },
+    "business_property": {
+     "personal": 0.019031726832238416,
+     "shared": 0.01872918458547689
+    },
+    "all": {
+     "personal": 0.047642371078797895,
+     "shared": 0.046843135157367134
+    }
+   },
+   "black_nh_all": {
+    "corporate": {
+     "personal": 0.016280695645350927,
+     "shared": 0.01574780291799177
+    },
+    "other_production_taxes": {
+     "personal": 0.00684616257405002,
+     "shared": 0.00666062140822036
+    },
+    "business_property": {
+     "personal": 0.016875404362021444,
+     "shared": 0.016418055859854088
+    },
+    "all": {
+     "personal": 0.040002262581422386,
+     "shared": 0.038826480186066215
+    }
+   },
+   "national": {
+    "corporate": {
+     "personal": 0.020150475932367705,
+     "shared": 0.01978936141348301
+    },
+    "other_production_taxes": {
+     "personal": 0.007537098209685928,
+     "shared": 0.007402026680710006
+    },
+    "business_property": {
+     "personal": 0.01857852170891354,
+     "shared": 0.018245578013140747
+    },
+    "all": {
+     "personal": 0.04626609585096718,
+     "shared": 0.04543696610733377
+    }
+   }
+  }
+ },
+ "responses_rule": {
+  "lambda_b": 0.22221599,
+  "delta_L": 0.3851049753847111,
+  "tau": 0.126529176,
+  "r_b": 0.8633604933590392,
+  "business_property": 0.8806493775433665,
+  "corporate": {
+   "low": 1.0,
+   "high": 0.37
+  },
+  "other_production_taxes": 1.0,
+  "mining": "0 on every line at both readings (its cells carry no tax in the key)",
+  "rule": "business property = tau + (1 - tau) x r_b: r_b = 1 - lambda_b (1 - delta_L) on the real property, the tangible personal property part tau leaving whole; corporate leaves whole at the low end and only its normal-return share at the high end"
+ },
+ "normal_return": {
+  "high_reading": 0.37,
+  "source": "Treasury OTA Technical Paper 5 (Cronin, Lin, Power and Cooper, May 2012), p. 7: \"we find that 63 percent of current corporate taxable income is due to supernormal returns\" and \"the remaining 37 percent of the corporate tax on the taxable income attributable to normal returns\"",
+  "ota_2021": "Treasury OTA, Treasury's Distribution Methodology and Results (July 2021; Summary-of-OTA-Distribution-Methodology-05102021.pdf), p. 3 note 4: \"split between capital income (81.5 percent) and labor income (18.5 percent)\"",
+  "power_frerick": {
+   "1992_2002": 0.4,
+   "2003_2013": 0.25,
+   "source": "Power and Frerick, Have Excess Returns To Corporations Been Increasing Over Time?, Treasury OTA Working Paper 111 (November 2016; National Tax Journal 69(4), 2016): abstract p. 2, the risk-free share of the C corporation base \"averaging 40 percent from 1992-2002 and 25 percent from 2003-2013\"; Table 1 p. 16, three-year averages 2011-2013 by industry",
+   "table1_2011_2013": {
+    "Mining": {
+     "risk_free": 0.44,
+     "worldwide_income": 0.03
+    },
+    "Utilities": {
+     "risk_free": 0.85,
+     "worldwide_income": 0.03
+    },
+    "Construction": {
+     "risk_free": 0.71,
+     "worldwide_income": 0.01
+    },
+    "Nondurable Manufacturing": {
+     "risk_free": 0.15,
+     "worldwide_income": 0.08
+    },
+    "Fossil Fuel": {
+     "risk_free": 0.06,
+     "worldwide_income": 0.09
+    },
+    "Chemical Manufacturing": {
+     "risk_free": 0.1,
+     "worldwide_income": 0.13
+    },
+    "Technology": {
+     "risk_free": 0.16,
+     "worldwide_income": 0.11
+    },
+    "Metal and Machinery Manufacturing": {
+     "risk_free": 0.45,
+     "worldwide_income": 0.15
+    },
+    "Wholesale and Retail Trade": {
+     "risk_free": 0.4,
+     "worldwide_income": 0.15
+    },
+    "Transportation and Warehousing": {
+     "risk_free": 0.25,
+     "worldwide_income": 0.03
+    },
+    "Information": {
+     "risk_free": 0.08,
+     "worldwide_income": 0.15
+    },
+    "Service": {
+     "risk_free": 0.16,
+     "worldwide_income": 0.05
+    },
+    "Pharmaceuticals": {
+     "risk_free": 0.1,
+     "worldwide_income": null
+    },
+    "Software": {
+     "risk_free": 0.09,
+     "worldwide_income": null
+    }
+   },
+   "union_effective": {
+    "personal": 0.2926118076183057,
+    "shared": 0.2898485735155947
+   },
+   "national_effective_on_the_item_base": 0.24986099548446558
+  },
+  "fox_2020": "beside, no arm: Fox, Does Capital Bear the U.S. Corporate Tax After All?, Journal of Empirical Legal Studies 17(1), 2020, p. 72: actual 1995-2013 revenue exceeded a hypothetical cash-flow tax's by \"about 4 percent on average\" (21 percent under more conservative assumptions, note 5)",
+  "what_supernormal_includes": "Power and Frerick p. 4: returns above the risk-free rate \"including returns to risk, entrepreneurial labor, decreasing returns to scale, market power, luck, etc.\"; most self-created intangibles are already expensed (Appendix A p. 21), so their returns sit in the excess part"
+ },
+ "mining": {
+  "cells": [
+   "211",
+   "212",
+   "213"
+  ],
+  "by_line": {
+   "corporate": {
+    "national_bn": 12.17739989,
+    "union_target_bn": {
+     "personal": 1.5171751441638062,
+     "shared": 1.5924164871840516
+    }
+   },
+   "other_production_taxes": {
+    "national_bn": 28.463255566,
+    "union_target_bn": {
+     "personal": 3.5296817227739057,
+     "shared": 3.700228416871483
+    }
+   },
+   "business_property": {
+    "national_bn": 21.071638231,
+    "union_target_bn": {
+     "personal": 2.625035958734324,
+     "shared": 2.7551467943818184
+    }
+   }
+  },
+  "rule": "excluded from the key: its cells carry no tax on any line (the team lead, 2026-10-14); the arm mining_as_other_industries keeps them"
+ },
+ "other_production_line": {
+  "national_bn": 145.258,
+  "components_bn": {
+   "federal_other": 1.58,
+   "severance": 20.935,
+   "documentary": 21.468,
+   "special_assessments": 15.556,
+   "motor_vehicle_licenses": 15.01,
+   "other_licenses": 57.527,
+   "sl_other": 13.182
+  },
+  "residential_parts_bn": {
+   "documentary": 15.440742244,
+   "special_assessments": 11.188568397
+  },
+  "mining_part_bn": 28.463255566,
+  "base_bn": 90.16543379199999,
+  "key_rule": "key_share = the union's tax on the base over the whole case line: the residential parts and mining's cells give the group no share, which leaves them at zero as v6 does",
+  "residential_beside": {
+   "union": {
+    "personal": {
+     "target_bn": 1.931436225272193,
+     "lost_bn": 1.4627412532696304
+    },
+    "shared": {
+     "target_bn": 1.931436225272193,
+     "lost_bn": 1.4627412532696304
+    }
+   },
+   "G1": {
+    "personal": {
+     "target_bn": 0.5424656407703516,
+     "lost_bn": 0.41005510274384954
+    },
+    "shared": {
+     "target_bn": 0.5424656407703516,
+     "lost_bn": 0.41005510274384954
+    }
+   },
+   "G2": {
+    "personal": {
+     "target_bn": 0.6669960301395415,
+     "lost_bn": 0.5043665718284739
+    },
+    "shared": {
+     "target_bn": 0.6669960301395415,
+     "lost_bn": 0.5043665718284739
+    }
+   },
+   "G3plus": {
+    "personal": {
+     "target_bn": 0.7219745543622998,
+     "lost_bn": 0.5483195786973067
+    },
+    "shared": {
+     "target_bn": 0.7219745543622998,
+     "lost_bn": 0.5483195786973067
+    }
+   }
+  },
+  "residential_rule": "beside, outside the item: the residential parts of documentary and stamp taxes and special assessments (Z.1 residential share) split owner / tenant by Z.1 market value, at the case's owner and tenant property keys and v6's responses for those lines"
+ },
+ "case_wage_key": {
+  "rule": "the union's and each generation's share of corporate_labor's wage key at cbo_collective on the September 29 payload model (main_case_2026_10_07/package.cjs SEPT29; generations from generation_account_2026_09_24 model_<G>.json with generation_corrections_sept29.json payloads.a): target over the line's national",
+  "reference": "cbo_collective",
+  "line": "corporate_labor",
+  "key": {
+   "personal": "wage",
+   "shared": "wage"
+  },
+  "national_bn": 165.92125,
+  "shares": {
+   "union": {
+    "personal": 0.07513433634181657,
+    "shared": 0.08058047223550988
+   },
+   "G1": {
+    "personal": 0.02017555166347925,
+    "shared": 0.01711831630367307
+   },
+   "G2": {
+    "personal": 0.02779799600787157,
+    "shared": 0.02755599360674446
+   },
+   "G3plus": {
+    "personal": 0.027160788670466136,
+    "shared": 0.03590616232509187
+   }
+  },
+  "base_model_union": {
+   "personal": 0.08323440807612045,
+   "shared": 0.08782377602025057
+  }
+ },
+ "arms": {
+  "mining_as_other_industries": {
+   "label": "mining's three taxes respond as other industries' do (the build before 2026-10-14)",
+   "note": "",
+   "lines": {
+    "corporate": {
+     "national_bn": 663.685,
+     "response": {
+      "low": 1.0,
+      "high": 0.37
+     },
+     "key_share": {
+      "personal": 0.06498555030164843,
+      "shared": 0.0716142418988127
+     },
+     "group_bn": {
+      "personal": 43.12993495194954,
+      "shared": 47.529298134613505
+     },
+     "item_bn": {
+      "low": {
+       "personal": 43.12993495194954,
+       "shared": 47.529298134613505
+      },
+      "high": {
+       "personal": 15.958075932221329,
+       "shared": 17.585840309806997
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 663.6849999980001
+    },
+    "other_production_taxes": {
+     "national_bn": 145.258,
+     "response": {
+      "low": 1.0,
+      "high": 1.0
+     },
+     "key_share": {
+      "personal": 0.07370932523700512,
+      "shared": 0.07844387343952569
+     },
+     "group_bn": {
+      "personal": 10.70686916527689,
+      "shared": 11.394600168078624
+     },
+     "item_bn": {
+      "low": {
+       "personal": 10.70686916527689,
+       "shared": 11.394600168078624
+      },
+      "high": {
+       "personal": 10.70686916527689,
+       "shared": 11.394600168078624
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 118.628689358
+    },
+    "business_property": {
+     "national_bn": 273.445297051,
+     "response": {
+      "low": 0.8806493775433665,
+      "high": 0.8806493775433665
+     },
+     "key_share": {
+      "personal": 0.08306609176604009,
+      "shared": 0.0888358498480131
+     },
+     "group_bn": {
+      "personal": 22.714032137830458,
+      "shared": 24.291745350467977
+     },
+     "item_bn": {
+      "low": {
+       "personal": 20.003098263680414,
+       "shared": 21.39251042233159
+      },
+      "high": {
+       "personal": 20.003098263680414,
+       "shared": 21.39251042233159
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 273.445297053
+    }
+   },
+   "by_generation": {
+    "G1": {
+     "corporate": {
+      "personal": 13.606510299738574,
+      "shared": 11.281282887569418
+     },
+     "other_production_taxes": {
+      "personal": 3.404423560705096,
+      "shared": 2.6577096380449845
+     },
+     "business_property": {
+      "personal": 7.6272054191732295,
+      "shared": 6.182734917502909
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 14.830304238668933,
+      "shared": 16.317708757777773
+     },
+     "other_production_taxes": {
+      "personal": 3.5746391034421396,
+      "shared": 3.9649497454354656
+     },
+     "business_property": {
+      "personal": 7.515105765506814,
+      "shared": 8.268641055334864
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 14.693120413542031,
+      "shared": 19.930306489266314
+     },
+     "other_production_taxes": {
+      "personal": 3.727806501129655,
+      "shared": 4.771940784598174
+     },
+     "business_property": {
+      "personal": 7.571720953150413,
+      "shared": 9.840369377630202
+     }
+    }
+   },
+   "factor": {
+    "G1": {
+     "corporate": {
+      "personal": 1.0161535388702272,
+      "shared": 0.992968429294736
+     },
+     "other_production_taxes": {
+      "personal": 1.1616575212873812,
+      "shared": 1.0688245591076038
+     },
+     "business_property": {
+      "personal": 1.3825140901945945,
+      "shared": 1.320836681787942
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 0.8038491744484768,
+      "shared": 0.8922387893813827
+     },
+     "other_production_taxes": {
+      "personal": 0.885275924233436,
+      "shared": 0.9905617446422873
+     },
+     "business_property": {
+      "personal": 0.9886695316635878,
+      "shared": 1.0973561596007577
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 0.8150976838889907,
+      "shared": 0.8363402248007954
+     },
+     "other_production_taxes": {
+      "personal": 0.9448675296090364,
+      "shared": 0.9149260554136721
+     },
+     "business_property": {
+      "personal": 1.0194871715802476,
+      "shared": 1.0022405095697156
+     }
+    },
+    "white_nh": {
+     "corporate": {
+      "personal": 1.0384734240226425,
+      "shared": 1.0296775907767017
+     },
+     "other_production_taxes": {
+      "personal": 0.8575970802140527,
+      "shared": 0.8573761886496034
+     },
+     "business_property": {
+      "personal": 1.0369320690255084,
+      "shared": 1.0368329665730942
+     }
+    },
+    "black_nh": {
+     "corporate": {
+      "personal": 0.7868387338271355,
+      "shared": 0.7851650432010343
+     },
+     "other_production_taxes": {
+      "personal": 0.708044865896562,
+      "shared": 0.7086900208015608
+     },
+     "business_property": {
+      "personal": 0.8910837404074005,
+      "shared": 0.8842350164566528
+     }
+    },
+    "union": {
+     "corporate": {
+      "personal": 0.8649247929202809,
+      "shared": 0.888729488820916
+     },
+     "other_production_taxes": {
+      "personal": 0.9810338232265937,
+      "shared": 0.973484905998818
+     },
+     "business_property": {
+      "personal": 1.1055676513616723,
+      "shared": 1.1024488611629812
+     }
+    },
+    "white_nh_all": {
+     "corporate": {
+      "personal": 1.037013311235153,
+      "shared": 1.036778938301631
+     },
+     "other_production_taxes": {
+      "personal": 0.8429947257776912,
+      "shared": 0.8416990812167803
+     },
+     "business_property": {
+      "personal": 1.0267262473894183,
+      "shared": 1.0276069334087883
+     }
+    },
+    "black_nh_all": {
+     "corporate": {
+      "personal": 0.8047267910576542,
+      "shared": 0.7938424802337817
+     },
+     "other_production_taxes": {
+      "personal": 0.6863847304050571,
+      "shared": 0.692514982359084
+     },
+     "business_property": {
+      "personal": 0.8870213076270885,
+      "shared": 0.8837062709532736
+     }
+    }
+   },
+   "central_bn": {
+    "low": {
+     "personal": 73.83990238090684,
+     "shared": 80.31640872502372
+    },
+    "high": {
+     "personal": 46.66804336117863,
+     "shared": 50.37295090021721
+    }
+   },
+   "net_cost_change_bn": {
+    "low": {
+     "personal": -73.83990238090684,
+     "shared": -80.31640872502372
+    },
+    "high": {
+     "personal": -46.66804336117863,
+     "shared": -50.37295090021721
+    }
+   }
+  },
+  "normal_return_share": {
+   "label": "corporate at TP-5's normal-return share (0.37) at both readings",
+   "note": "Treasury OTA Technical Paper 5, p. 7",
+   "lines": {
+    "corporate": {
+     "national_bn": 663.685,
+     "response": {
+      "low": 0.37,
+      "high": 0.37
+     },
+     "key_share": {
+      "personal": 0.06269956350947474,
+      "shared": 0.06921488604899832
+     },
+     "group_bn": {
+      "personal": 41.61275980778574,
+      "shared": 45.936881647429445
+     },
+     "item_bn": {
+      "low": {
+       "personal": 15.396721128880724,
+       "shared": 16.996646209548896
+      },
+      "high": {
+       "personal": 15.396721128880724,
+       "shared": 16.996646209548896
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 651.507600108
+    },
+    "other_production_taxes": {
+     "national_bn": 145.258,
+     "response": {
+      "low": 1.0,
+      "high": 1.0
+     },
+     "key_share": {
+      "personal": 0.049409928833544337,
+      "shared": 0.05297038201825125
+     },
+     "group_bn": {
+      "personal": 7.177187442502984,
+      "shared": 7.69437175120714
+     },
+     "item_bn": {
+      "low": {
+       "personal": 7.177187442502984,
+       "shared": 7.69437175120714
+      },
+      "high": {
+       "personal": 7.177187442502984,
+       "shared": 7.69437175120714
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 90.16543379199999
+    },
+    "business_property": {
+     "national_bn": 273.445297051,
+     "response": {
+      "low": 0.8806493775433665,
+      "high": 0.8806493775433665
+     },
+     "key_share": {
+      "personal": 0.07346623399907791,
+      "shared": 0.07876017173580933
+     },
+     "group_bn": {
+      "personal": 20.088996179096135,
+      "shared": 21.536598556086158
+     },
+     "item_bn": {
+      "low": {
+       "personal": 17.691361980592077,
+       "shared": 18.96619211281864
+      },
+      "high": {
+       "personal": 17.691361980592077,
+       "shared": 18.96619211281864
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 252.37365882199998
+    }
+   },
+   "by_generation": {
+    "G1": {
+     "corporate": {
+      "personal": 13.213181978535765,
+      "shared": 11.022426191809235
+     },
+     "other_production_taxes": {
+      "personal": 2.4817880439363775,
+      "shared": 2.048852001248269
+     },
+     "business_property": {
+      "personal": 6.9465415153869134,
+      "shared": 5.734750604632586
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 14.304856664327346,
+      "shared": 15.72229742397846
+     },
+     "other_production_taxes": {
+      "personal": 2.3601580165952196,
+      "shared": 2.5861158549555494
+     },
+     "business_property": {
+      "personal": 6.606098246291451,
+      "shared": 7.2385557637130145
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 14.094721164922625,
+      "shared": 19.192158031641757
+     },
+     "other_production_taxes": {
+      "personal": 2.335241381971387,
+      "shared": 3.0594038950033227
+     },
+     "business_property": {
+      "personal": 6.536356417417769,
+      "shared": 8.563292187740558
+     }
+    }
+   },
+   "factor": {
+    "G1": {
+     "corporate": {
+      "personal": 0.9867792204944273,
+      "shared": 0.97018409446659
+     },
+     "other_production_taxes": {
+      "personal": 0.8468357993864577,
+      "shared": 0.823966360193426
+     },
+     "business_property": {
+      "personal": 1.2591363409463718,
+      "shared": 1.2251324147928317
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 0.7753682618486453,
+      "shared": 0.8596821911763904
+     },
+     "other_production_taxes": {
+      "personal": 0.5845040601347257,
+      "shared": 0.6460882476709676
+     },
+     "business_property": {
+      "personal": 0.8690826534021713,
+      "shared": 0.9606504503904064
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 0.7819016147176628,
+      "shared": 0.8053651242764478
+     },
+     "other_production_taxes": {
+      "personal": 0.591901364771871,
+      "shared": 0.5865806940871999
+     },
+     "business_property": {
+      "personal": 0.8800814976760366,
+      "shared": 0.8721703420346939
+     }
+    },
+    "white_nh": {
+     "corporate": {
+      "personal": 1.0181332156315623,
+      "shared": 1.0093853352363915
+     },
+     "other_production_taxes": {
+      "personal": 0.6399355613079509,
+      "shared": 0.6400030677220375
+     },
+     "business_property": {
+      "personal": 0.9515021940073842,
+      "shared": 0.951602567396225
+     }
+    },
+    "black_nh": {
+     "corporate": {
+      "personal": 0.7727400580608814,
+      "shared": 0.7703865356007628
+     },
+     "other_production_taxes": {
+      "personal": 0.5594890049376654,
+      "shared": 0.5529631166568252
+     },
+     "business_property": {
+      "personal": 0.831888471133841,
+      "shared": 0.8221853113315514
+     }
+    },
+    "union": {
+     "corporate": {
+      "personal": 0.8344994653872897,
+      "shared": 0.858953591717684
+     },
+     "other_production_taxes": {
+      "personal": 0.6576211521821199,
+      "shared": 0.6573600346177728
+     },
+     "business_property": {
+      "personal": 0.9777984018498574,
+      "shared": 0.9774101534875546
+     }
+    },
+    "white_nh_all": {
+     "corporate": {
+      "personal": 1.0176632315467122,
+      "shared": 1.0176833784524661
+     },
+     "other_production_taxes": {
+      "personal": 0.6358681285043756,
+      "shared": 0.6371787151966207
+     },
+     "business_property": {
+      "personal": 0.945454442528816,
+      "shared": 0.9474031170333742
+     }
+    },
+    "black_nh_all": {
+     "corporate": {
+      "personal": 0.7931313810125651,
+      "shared": 0.7811702134306259
+     },
+     "other_production_taxes": {
+      "personal": 0.5638233400470894,
+      "shared": 0.5585526530006149
+     },
+     "business_property": {
+      "personal": 0.8383330721475469,
+      "shared": 0.8304962357685985
+     }
+    }
+   },
+   "central_bn": {
+    "low": {
+     "personal": 40.26527055197579,
+     "shared": 43.657210073574674
+    },
+    "high": {
+     "personal": 40.26527055197579,
+     "shared": 43.657210073574674
+    }
+   },
+   "net_cost_change_bn": {
+    "low": {
+     "personal": -40.26527055197579,
+     "shared": -43.657210073574674
+    },
+    "high": {
+     "personal": -40.26527055197579,
+     "shared": -43.657210073574674
+    }
+   }
+  },
+  "normal_return_share_0_25": {
+   "label": "the high reading's corporate response at Power and Frerick's 2003-2013 normal-return share (Treasury OTA Working Paper 111, abstract)",
+   "note": "",
+   "lines": {
+    "corporate": {
+     "national_bn": 663.685,
+     "response": {
+      "low": 1.0,
+      "high": 0.25
+     },
+     "key_share": {
+      "personal": 0.06269956350947474,
+      "shared": 0.06921488604899832
+     },
+     "group_bn": {
+      "personal": 41.61275980778574,
+      "shared": 45.936881647429445
+     },
+     "item_bn": {
+      "low": {
+       "personal": 41.61275980778574,
+       "shared": 45.936881647429445
+      },
+      "high": {
+       "personal": 10.403189951946436,
+       "shared": 11.484220411857361
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 651.507600108
+    },
+    "other_production_taxes": {
+     "national_bn": 145.258,
+     "response": {
+      "low": 1.0,
+      "high": 1.0
+     },
+     "key_share": {
+      "personal": 0.049409928833544337,
+      "shared": 0.05297038201825125
+     },
+     "group_bn": {
+      "personal": 7.177187442502984,
+      "shared": 7.69437175120714
+     },
+     "item_bn": {
+      "low": {
+       "personal": 7.177187442502984,
+       "shared": 7.69437175120714
+      },
+      "high": {
+       "personal": 7.177187442502984,
+       "shared": 7.69437175120714
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 90.16543379199999
+    },
+    "business_property": {
+     "national_bn": 273.445297051,
+     "response": {
+      "low": 0.8806493775433665,
+      "high": 0.8806493775433665
+     },
+     "key_share": {
+      "personal": 0.07346623399907791,
+      "shared": 0.07876017173580933
+     },
+     "group_bn": {
+      "personal": 20.088996179096135,
+      "shared": 21.536598556086158
+     },
+     "item_bn": {
+      "low": {
+       "personal": 17.691361980592077,
+       "shared": 18.96619211281864
+      },
+      "high": {
+       "personal": 17.691361980592077,
+       "shared": 18.96619211281864
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 252.37365882199998
+    }
+   },
+   "by_generation": {
+    "G1": {
+     "corporate": {
+      "personal": 13.213181978535765,
+      "shared": 11.022426191809235
+     },
+     "other_production_taxes": {
+      "personal": 2.4817880439363775,
+      "shared": 2.048852001248269
+     },
+     "business_property": {
+      "personal": 6.9465415153869134,
+      "shared": 5.734750604632586
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 14.304856664327346,
+      "shared": 15.72229742397846
+     },
+     "other_production_taxes": {
+      "personal": 2.3601580165952196,
+      "shared": 2.5861158549555494
+     },
+     "business_property": {
+      "personal": 6.606098246291451,
+      "shared": 7.2385557637130145
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 14.094721164922625,
+      "shared": 19.192158031641757
+     },
+     "other_production_taxes": {
+      "personal": 2.335241381971387,
+      "shared": 3.0594038950033227
+     },
+     "business_property": {
+      "personal": 6.536356417417769,
+      "shared": 8.563292187740558
+     }
+    }
+   },
+   "factor": {
+    "G1": {
+     "corporate": {
+      "personal": 0.9867792204944273,
+      "shared": 0.97018409446659
+     },
+     "other_production_taxes": {
+      "personal": 0.8468357993864577,
+      "shared": 0.823966360193426
+     },
+     "business_property": {
+      "personal": 1.2591363409463718,
+      "shared": 1.2251324147928317
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 0.7753682618486453,
+      "shared": 0.8596821911763904
+     },
+     "other_production_taxes": {
+      "personal": 0.5845040601347257,
+      "shared": 0.6460882476709676
+     },
+     "business_property": {
+      "personal": 0.8690826534021713,
+      "shared": 0.9606504503904064
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 0.7819016147176628,
+      "shared": 0.8053651242764478
+     },
+     "other_production_taxes": {
+      "personal": 0.591901364771871,
+      "shared": 0.5865806940871999
+     },
+     "business_property": {
+      "personal": 0.8800814976760366,
+      "shared": 0.8721703420346939
+     }
+    },
+    "white_nh": {
+     "corporate": {
+      "personal": 1.0181332156315623,
+      "shared": 1.0093853352363915
+     },
+     "other_production_taxes": {
+      "personal": 0.6399355613079509,
+      "shared": 0.6400030677220375
+     },
+     "business_property": {
+      "personal": 0.9515021940073842,
+      "shared": 0.951602567396225
+     }
+    },
+    "black_nh": {
+     "corporate": {
+      "personal": 0.7727400580608814,
+      "shared": 0.7703865356007628
+     },
+     "other_production_taxes": {
+      "personal": 0.5594890049376654,
+      "shared": 0.5529631166568252
+     },
+     "business_property": {
+      "personal": 0.831888471133841,
+      "shared": 0.8221853113315514
+     }
+    },
+    "union": {
+     "corporate": {
+      "personal": 0.8344994653872897,
+      "shared": 0.858953591717684
+     },
+     "other_production_taxes": {
+      "personal": 0.6576211521821199,
+      "shared": 0.6573600346177728
+     },
+     "business_property": {
+      "personal": 0.9777984018498574,
+      "shared": 0.9774101534875546
+     }
+    },
+    "white_nh_all": {
+     "corporate": {
+      "personal": 1.0176632315467122,
+      "shared": 1.0176833784524661
+     },
+     "other_production_taxes": {
+      "personal": 0.6358681285043756,
+      "shared": 0.6371787151966207
+     },
+     "business_property": {
+      "personal": 0.945454442528816,
+      "shared": 0.9474031170333742
+     }
+    },
+    "black_nh_all": {
+     "corporate": {
+      "personal": 0.7931313810125651,
+      "shared": 0.7811702134306259
+     },
+     "other_production_taxes": {
+      "personal": 0.5638233400470894,
+      "shared": 0.5585526530006149
+     },
+     "business_property": {
+      "personal": 0.8383330721475469,
+      "shared": 0.8304962357685985
+     }
+    }
+   },
+   "central_bn": {
+    "low": {
+     "personal": 66.48130923088081,
+     "shared": 72.59744551145522
+    },
+    "high": {
+     "personal": 35.2717393750415,
+     "shared": 38.14478427588314
+    }
+   },
+   "net_cost_change_bn": {
+    "low": {
+     "personal": -66.48130923088081,
+     "shared": -72.59744551145522
+    },
+    "high": {
+     "personal": -35.2717393750415,
+     "shared": -38.14478427588314
+    }
+   }
+  },
+  "normal_return_share_by_industry": {
+   "label": "the high reading's corporate response at each industry's normal-return share (Power and Frerick Table 1, 2011-2013), as the union's personal effective share",
+   "note": "one response for every group and allocation; each group's own effective share is in effective_high_corporate_response",
+   "lines": {
+    "corporate": {
+     "national_bn": 663.685,
+     "response": {
+      "low": 1.0,
+      "high": 0.2926118076183057
+     },
+     "key_share": {
+      "personal": 0.06269956350947474,
+      "shared": 0.06921488604899832
+     },
+     "group_bn": {
+      "personal": 41.61275980778574,
+      "shared": 45.936881647429445
+     },
+     "item_bn": {
+      "low": {
+       "personal": 41.61275980778574,
+       "shared": 45.936881647429445
+      },
+      "high": {
+       "personal": 12.176384867342565,
+       "shared": 13.441673975202502
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 651.507600108
+    },
+    "other_production_taxes": {
+     "national_bn": 145.258,
+     "response": {
+      "low": 1.0,
+      "high": 1.0
+     },
+     "key_share": {
+      "personal": 0.049409928833544337,
+      "shared": 0.05297038201825125
+     },
+     "group_bn": {
+      "personal": 7.177187442502984,
+      "shared": 7.69437175120714
+     },
+     "item_bn": {
+      "low": {
+       "personal": 7.177187442502984,
+       "shared": 7.69437175120714
+      },
+      "high": {
+       "personal": 7.177187442502984,
+       "shared": 7.69437175120714
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 90.16543379199999
+    },
+    "business_property": {
+     "national_bn": 273.445297051,
+     "response": {
+      "low": 0.8806493775433665,
+      "high": 0.8806493775433665
+     },
+     "key_share": {
+      "personal": 0.07346623399907791,
+      "shared": 0.07876017173580933
+     },
+     "group_bn": {
+      "personal": 20.088996179096135,
+      "shared": 21.536598556086158
+     },
+     "item_bn": {
+      "low": {
+       "personal": 17.691361980592077,
+       "shared": 18.96619211281864
+      },
+      "high": {
+       "personal": 17.691361980592077,
+       "shared": 18.96619211281864
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 252.37365882199998
+    }
+   },
+   "by_generation": {
+    "G1": {
+     "corporate": {
+      "personal": 13.213181978535765,
+      "shared": 11.022426191809235
+     },
+     "other_production_taxes": {
+      "personal": 2.4817880439363775,
+      "shared": 2.048852001248269
+     },
+     "business_property": {
+      "personal": 6.9465415153869134,
+      "shared": 5.734750604632586
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 14.304856664327346,
+      "shared": 15.72229742397846
+     },
+     "other_production_taxes": {
+      "personal": 2.3601580165952196,
+      "shared": 2.5861158549555494
+     },
+     "business_property": {
+      "personal": 6.606098246291451,
+      "shared": 7.2385557637130145
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 14.094721164922625,
+      "shared": 19.192158031641757
+     },
+     "other_production_taxes": {
+      "personal": 2.335241381971387,
+      "shared": 3.0594038950033227
+     },
+     "business_property": {
+      "personal": 6.536356417417769,
+      "shared": 8.563292187740558
+     }
+    }
+   },
+   "factor": {
+    "G1": {
+     "corporate": {
+      "personal": 0.9867792204944273,
+      "shared": 0.97018409446659
+     },
+     "other_production_taxes": {
+      "personal": 0.8468357993864577,
+      "shared": 0.823966360193426
+     },
+     "business_property": {
+      "personal": 1.2591363409463718,
+      "shared": 1.2251324147928317
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 0.7753682618486453,
+      "shared": 0.8596821911763904
+     },
+     "other_production_taxes": {
+      "personal": 0.5845040601347257,
+      "shared": 0.6460882476709676
+     },
+     "business_property": {
+      "personal": 0.8690826534021713,
+      "shared": 0.9606504503904064
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 0.7819016147176628,
+      "shared": 0.8053651242764478
+     },
+     "other_production_taxes": {
+      "personal": 0.591901364771871,
+      "shared": 0.5865806940871999
+     },
+     "business_property": {
+      "personal": 0.8800814976760366,
+      "shared": 0.8721703420346939
+     }
+    },
+    "white_nh": {
+     "corporate": {
+      "personal": 1.0181332156315623,
+      "shared": 1.0093853352363915
+     },
+     "other_production_taxes": {
+      "personal": 0.6399355613079509,
+      "shared": 0.6400030677220375
+     },
+     "business_property": {
+      "personal": 0.9515021940073842,
+      "shared": 0.951602567396225
+     }
+    },
+    "black_nh": {
+     "corporate": {
+      "personal": 0.7727400580608814,
+      "shared": 0.7703865356007628
+     },
+     "other_production_taxes": {
+      "personal": 0.5594890049376654,
+      "shared": 0.5529631166568252
+     },
+     "business_property": {
+      "personal": 0.831888471133841,
+      "shared": 0.8221853113315514
+     }
+    },
+    "union": {
+     "corporate": {
+      "personal": 0.8344994653872897,
+      "shared": 0.858953591717684
+     },
+     "other_production_taxes": {
+      "personal": 0.6576211521821199,
+      "shared": 0.6573600346177728
+     },
+     "business_property": {
+      "personal": 0.9777984018498574,
+      "shared": 0.9774101534875546
+     }
+    },
+    "white_nh_all": {
+     "corporate": {
+      "personal": 1.0176632315467122,
+      "shared": 1.0176833784524661
+     },
+     "other_production_taxes": {
+      "personal": 0.6358681285043756,
+      "shared": 0.6371787151966207
+     },
+     "business_property": {
+      "personal": 0.945454442528816,
+      "shared": 0.9474031170333742
+     }
+    },
+    "black_nh_all": {
+     "corporate": {
+      "personal": 0.7931313810125651,
+      "shared": 0.7811702134306259
+     },
+     "other_production_taxes": {
+      "personal": 0.5638233400470894,
+      "shared": 0.5585526530006149
+     },
+     "business_property": {
+      "personal": 0.8383330721475469,
+      "shared": 0.8304962357685985
+     }
+    }
+   },
+   "central_bn": {
+    "low": {
+     "personal": 66.48130923088081,
+     "shared": 72.59744551145522
+    },
+    "high": {
+     "personal": 37.044934290437624,
+     "shared": 40.10223783922828
+    }
+   },
+   "net_cost_change_bn": {
+    "low": {
+     "personal": -66.48130923088081,
+     "shared": -72.59744551145522
+    },
+    "high": {
+     "personal": -37.044934290437624,
+     "shared": -40.10223783922828
+    }
+   },
+   "effective_high_corporate_response": {
+    "G1": {
+     "personal": 0.31088503338269774,
+     "shared": 0.30665837127843354
+    },
+    "G2": {
+     "personal": 0.29223023103027945,
+     "shared": 0.2891731652980185
+    },
+    "G3plus": {
+     "personal": 0.2758687265597811,
+     "shared": 0.28074768001665457
+    },
+    "white_nh": {
+     "personal": 0.25808954779870724,
+     "shared": 0.25930053615845877
+    },
+    "black_nh": {
+     "personal": 0.2513178157932173,
+     "shared": 0.2520218500486177
+    },
+    "white_nh_all": {
+     "personal": 0.25474295485500664,
+     "shared": 0.25481638324159905
+    },
+    "black_nh_all": {
+     "personal": 0.24318674490690617,
+     "shared": 0.24478156349313407
+    },
+    "union": {
+     "personal": 0.2926118076183057,
+     "shared": 0.2898485735155947
+    }
+   }
+  },
+  "plain_wage_share": {
+   "label": "the plain wage share in place of the industry key: every line's base at each group's share of all CPS wages on this lane's frame",
+   "note": "the base that responds (mining and the residential parts out); the receipt lane's ceiling on the case's frame is minus plain_wage_share x the three lines' national, every line at 1",
+   "lines": {
+    "corporate": {
+     "national_bn": 663.685,
+     "response": {
+      "low": 1.0,
+      "high": 0.37
+     },
+     "key_share": {
+      "personal": 0.07734577453856478,
+      "shared": 0.08278767382062537
+     },
+     "group_bn": {
+      "personal": 51.33323037462736,
+      "shared": 54.944937299641744
+     },
+     "item_bn": {
+      "low": {
+       "personal": 51.33323037462736,
+       "shared": 54.944937299641744
+      },
+      "high": {
+       "personal": 18.993295238612124,
+       "shared": 20.329626800867445
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 651.507600108
+    },
+    "other_production_taxes": {
+     "national_bn": 145.258,
+     "response": {
+      "low": 1.0,
+      "high": 1.0
+     },
+     "key_share": {
+      "personal": 0.04890791232147872,
+      "shared": 0.05234897855343731
+     },
+     "group_bn": {
+      "personal": 7.104265527993357,
+      "shared": 7.604107926715197
+     },
+     "item_bn": {
+      "low": {
+       "personal": 7.104265527993357,
+       "shared": 7.604107926715197
+      },
+      "high": {
+       "personal": 7.104265527993357,
+       "shared": 7.604107926715197
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 90.16543379199999
+    },
+    "business_property": {
+     "national_bn": 273.445297051,
+     "response": {
+      "low": 0.8806493775433665,
+      "high": 0.8806493775433665
+     },
+     "key_share": {
+      "personal": 0.07271979976098684,
+      "shared": 0.07783622439402985
+     },
+     "group_bn": {
+      "personal": 19.884887247132287,
+      "shared": 21.283949500753785
+     },
+     "item_bn": {
+      "low": {
+       "personal": 17.511613576707074,
+       "shared": 18.743696879503265
+      },
+      "high": {
+       "personal": 17.511613576707074,
+       "shared": 18.743696879503265
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 252.37365882199998
+    }
+   },
+   "by_generation": {
+    "G1": {
+     "corporate": {
+      "personal": 15.877661457076304,
+      "shared": 13.02275786574835
+     },
+     "other_production_taxes": {
+      "personal": 2.197389919384648,
+      "shared": 1.8022853638832963
+     },
+     "business_property": {
+      "personal": 6.1505092416345395,
+      "shared": 5.044608919354237
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 18.019943987746505,
+      "shared": 18.678849509069988
+     },
+     "other_production_taxes": {
+      "personal": 2.493871240018332,
+      "shared": 2.5850605095651913
+     },
+     "business_property": {
+      "personal": 6.980362462696071,
+      "shared": 7.2356018447184125
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 17.435624929804554,
+      "shared": 23.2433299248234
+     },
+     "other_production_taxes": {
+      "personal": 2.4130043685903777,
+      "shared": 3.2167620532667094
+     },
+     "business_property": {
+      "personal": 6.754015542801677,
+      "shared": 9.003738736681136
+     }
+    }
+   },
+   "factor": {
+    "G1": {
+     "corporate": {
+      "personal": 1.1857663370821454,
+      "shared": 1.1462514992232293
+     },
+     "other_production_taxes": {
+      "personal": 0.749793461811659,
+      "shared": 0.7248071165726219
+     },
+     "business_property": {
+      "personal": 1.1148468175587098,
+      "shared": 1.0776953233260742
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 0.9767376896010275,
+      "shared": 1.0213440085493533
+     },
+     "other_production_taxes": {
+      "personal": 0.6176187589959736,
+      "shared": 0.645824591171342
+     },
+     "business_property": {
+      "personal": 0.9183199680983328,
+      "shared": 0.960258426939153
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 0.9672375300445014,
+      "shared": 0.9753654207432848
+     },
+     "other_production_taxes": {
+      "personal": 0.6116115404581469,
+      "shared": 0.6167510347359688
+     },
+     "business_property": {
+      "personal": 0.9093880037503185,
+      "shared": 0.9170297732926225
+     }
+    },
+    "white_nh": {
+     "corporate": {
+      "personal": 0.9816518380074886,
+      "shared": 0.9816518380074886
+     },
+     "other_production_taxes": {
+      "personal": 0.6207261134808408,
+      "shared": 0.6207261134808408
+     },
+     "business_property": {
+      "personal": 0.9229402061170942,
+      "shared": 0.922940206117094
+     }
+    },
+    "black_nh": {
+     "corporate": {
+      "personal": 0.9816518380074885,
+      "shared": 0.9816518380074887
+     },
+     "other_production_taxes": {
+      "personal": 0.6207261134808408,
+      "shared": 0.6207261134808408
+     },
+     "business_property": {
+      "personal": 0.9229402061170942,
+      "shared": 0.9229402061170942
+     }
+    },
+    "union": {
+     "corporate": {
+      "personal": 1.0294331234482126,
+      "shared": 1.0273912714071043
+     },
+     "other_production_taxes": {
+      "personal": 0.6509395664184321,
+      "shared": 0.6496484458472604
+     },
+     "business_property": {
+      "personal": 0.9678637398240264,
+      "shared": 0.9659440089472359
+     }
+    },
+    "white_nh_all": {
+     "corporate": {
+      "personal": 0.9816518380074886,
+      "shared": 0.9816518380074887
+     },
+     "other_production_taxes": {
+      "personal": 0.6207261134808408,
+      "shared": 0.6207261134808408
+     },
+     "business_property": {
+      "personal": 0.9229402061170942,
+      "shared": 0.922940206117094
+     }
+    },
+    "black_nh_all": {
+     "corporate": {
+      "personal": 0.9816518380074886,
+      "shared": 0.9816518380074887
+     },
+     "other_production_taxes": {
+      "personal": 0.6207261134808408,
+      "shared": 0.6207261134808408
+     },
+     "business_property": {
+      "personal": 0.9229402061170942,
+      "shared": 0.9229402061170942
+     }
+    }
+   },
+   "central_bn": {
+    "low": {
+     "personal": 75.94910947932779,
+     "shared": 81.2927421058602
+    },
+    "high": {
+     "personal": 43.60917434331255,
+     "shared": 46.67743160708591
+    }
+   },
+   "net_cost_change_bn": {
+    "low": {
+     "personal": -75.94910947932779,
+     "shared": -81.2927421058602
+    },
+    "high": {
+     "personal": -43.60917434331255,
+     "shared": -46.67743160708591
+    }
+   }
+  },
+  "foreign_source_removed": {
+   "label": "federal tax on foreign-source corporate income removed from the corporate base (IRS SOI TY2021)",
+   "note": "",
+   "lines": {
+    "corporate": {
+     "national_bn": 663.685,
+     "response": {
+      "low": 1.0,
+      "high": 0.37
+     },
+     "key_share": {
+      "personal": 0.05753534215976117,
+      "shared": 0.06333867669281694
+     },
+     "group_bn": {
+      "personal": 38.18534356130109,
+      "shared": 42.03692964087221
+     },
+     "item_bn": {
+      "low": {
+       "personal": 38.18534356130109,
+       "shared": 42.03692964087221
+      },
+      "high": {
+       "personal": 14.128577117681402,
+       "shared": 15.553663967122716
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 573.02296754
+    },
+    "other_production_taxes": {
+     "national_bn": 145.258,
+     "response": {
+      "low": 1.0,
+      "high": 1.0
+     },
+     "key_share": {
+      "personal": 0.049409928833544337,
+      "shared": 0.05297038201825125
+     },
+     "group_bn": {
+      "personal": 7.177187442502984,
+      "shared": 7.69437175120714
+     },
+     "item_bn": {
+      "low": {
+       "personal": 7.177187442502984,
+       "shared": 7.69437175120714
+      },
+      "high": {
+       "personal": 7.177187442502984,
+       "shared": 7.69437175120714
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 90.16543379199999
+    },
+    "business_property": {
+     "national_bn": 273.445297051,
+     "response": {
+      "low": 0.8806493775433665,
+      "high": 0.8806493775433665
+     },
+     "key_share": {
+      "personal": 0.07346623399907791,
+      "shared": 0.07876017173580933
+     },
+     "group_bn": {
+      "personal": 20.088996179096135,
+      "shared": 21.536598556086158
+     },
+     "item_bn": {
+      "low": {
+       "personal": 17.691361980592077,
+       "shared": 18.96619211281864
+      },
+      "high": {
+       "personal": 17.691361980592077,
+       "shared": 18.96619211281864
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 252.37365882199998
+    }
+   },
+   "by_generation": {
+    "G1": {
+     "corporate": {
+      "personal": 12.130930628543869,
+      "shared": 10.151140998327804
+     },
+     "other_production_taxes": {
+      "personal": 2.4817880439363775,
+      "shared": 2.048852001248269
+     },
+     "business_property": {
+      "personal": 6.9465415153869134,
+      "shared": 5.734750604632586
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 13.180790318521913,
+      "shared": 14.353917642265976
+     },
+     "other_production_taxes": {
+      "personal": 2.3601580165952196,
+      "shared": 2.5861158549555494
+     },
+     "business_property": {
+      "personal": 6.606098246291451,
+      "shared": 7.2385557637130145
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 12.873622614235305,
+      "shared": 17.53187100027843
+     },
+     "other_production_taxes": {
+      "personal": 2.335241381971387,
+      "shared": 3.0594038950033227
+     },
+     "business_property": {
+      "personal": 6.536356417417769,
+      "shared": 8.563292187740558
+     }
+    }
+   },
+   "factor": {
+    "G1": {
+     "corporate": {
+      "personal": 0.9059551506179304,
+      "shared": 0.8934943510516534
+     },
+     "other_production_taxes": {
+      "personal": 0.8468357993864577,
+      "shared": 0.823966360193426
+     },
+     "business_property": {
+      "personal": 1.2591363409463718,
+      "shared": 1.2251324147928317
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 0.7144403274273814,
+      "shared": 0.7848603189409787
+     },
+     "other_production_taxes": {
+      "personal": 0.5845040601347257,
+      "shared": 0.6460882476709676
+     },
+     "business_property": {
+      "personal": 0.8690826534021713,
+      "shared": 0.9606504503904064
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 0.7141614361543607,
+      "shared": 0.7356941019170035
+     },
+     "other_production_taxes": {
+      "personal": 0.591901364771871,
+      "shared": 0.5865806940871999
+     },
+     "business_property": {
+      "personal": 0.8800814976760366,
+      "shared": 0.8721703420346939
+     }
+    },
+    "white_nh": {
+     "corporate": {
+      "personal": 0.9040567917105912,
+      "shared": 0.8974058662439774
+     },
+     "other_production_taxes": {
+      "personal": 0.6399355613079509,
+      "shared": 0.6400030677220375
+     },
+     "business_property": {
+      "personal": 0.9515021940073842,
+      "shared": 0.951602567396225
+     }
+    },
+    "black_nh": {
+     "corporate": {
+      "personal": 0.7065864470132637,
+      "shared": 0.7054927137594251
+     },
+     "other_production_taxes": {
+      "personal": 0.5594890049376654,
+      "shared": 0.5529631166568252
+     },
+     "business_property": {
+      "personal": 0.831888471133841,
+      "shared": 0.8221853113315514
+     }
+    },
+    "union": {
+     "corporate": {
+      "personal": 0.7657662922316844,
+      "shared": 0.7860301005397323
+     },
+     "other_production_taxes": {
+      "personal": 0.6576211521821199,
+      "shared": 0.6573600346177728
+     },
+     "business_property": {
+      "personal": 0.9777984018498574,
+      "shared": 0.9774101534875546
+     }
+    },
+    "white_nh_all": {
+     "corporate": {
+      "personal": 0.9003540526316747,
+      "shared": 0.8997452558548761
+     },
+     "other_production_taxes": {
+      "personal": 0.6358681285043756,
+      "shared": 0.6371787151966207
+     },
+     "business_property": {
+      "personal": 0.945454442528816,
+      "shared": 0.9474031170333742
+     }
+    },
+    "black_nh_all": {
+     "corporate": {
+      "personal": 0.7188579053532068,
+      "shared": 0.7094965220180603
+     },
+     "other_production_taxes": {
+      "personal": 0.5638233400470894,
+      "shared": 0.5585526530006149
+     },
+     "business_property": {
+      "personal": 0.8383330721475469,
+      "shared": 0.8304962357685985
+     }
+    }
+   },
+   "central_bn": {
+    "low": {
+     "personal": 63.05389298439615,
+     "shared": 68.69749350489799
+    },
+    "high": {
+     "personal": 38.99712654077646,
+     "shared": 42.2142278311485
+    }
+   },
+   "net_cost_change_bn": {
+    "low": {
+     "personal": -63.05389298439615,
+     "shared": -68.69749350489799
+    },
+    "high": {
+     "personal": -38.99712654077646,
+     "shared": -42.2142278311485
+    }
+   }
+  },
+  "business_land_at_0": {
+   "label": "business land at response 0: the land part of business property tax stays",
+   "note": "response tau + (1 - tau)(1 - lambda_b)",
+   "lines": {
+    "corporate": {
+     "national_bn": 663.685,
+     "response": {
+      "low": 1.0,
+      "high": 0.37
+     },
+     "key_share": {
+      "personal": 0.06269956350947474,
+      "shared": 0.06921488604899832
+     },
+     "group_bn": {
+      "personal": 41.61275980778574,
+      "shared": 45.936881647429445
+     },
+     "item_bn": {
+      "low": {
+       "personal": 41.61275980778574,
+       "shared": 45.936881647429445
+      },
+      "high": {
+       "personal": 15.396721128880724,
+       "shared": 16.996646209548896
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 651.507600108
+    },
+    "other_production_taxes": {
+     "national_bn": 145.258,
+     "response": {
+      "low": 1.0,
+      "high": 1.0
+     },
+     "key_share": {
+      "personal": 0.049409928833544337,
+      "shared": 0.05297038201825125
+     },
+     "group_bn": {
+      "personal": 7.177187442502984,
+      "shared": 7.69437175120714
+     },
+     "item_bn": {
+      "low": {
+       "personal": 7.177187442502984,
+       "shared": 7.69437175120714
+      },
+      "high": {
+       "personal": 7.177187442502984,
+       "shared": 7.69437175120714
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 90.16543379199999
+    },
+    "business_property": {
+     "national_bn": 273.445297051,
+     "response": {
+      "low": 0.8059008161087242,
+      "high": 0.8059008161087242
+     },
+     "key_share": {
+      "personal": 0.07346623399907791,
+      "shared": 0.07876017173580933
+     },
+     "group_bn": {
+      "personal": 20.088996179096135,
+      "shared": 21.536598556086158
+     },
+     "item_bn": {
+      "low": {
+       "personal": 16.189738415538617,
+       "shared": 17.356362352555806
+      },
+      "high": {
+       "personal": 16.189738415538617,
+       "shared": 17.356362352555806
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 252.37365882199998
+    }
+   },
+   "by_generation": {
+    "G1": {
+     "corporate": {
+      "personal": 13.213181978535765,
+      "shared": 11.022426191809235
+     },
+     "other_production_taxes": {
+      "personal": 2.4817880439363775,
+      "shared": 2.048852001248269
+     },
+     "business_property": {
+      "personal": 6.9465415153869134,
+      "shared": 5.734750604632586
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 14.304856664327346,
+      "shared": 15.72229742397846
+     },
+     "other_production_taxes": {
+      "personal": 2.3601580165952196,
+      "shared": 2.5861158549555494
+     },
+     "business_property": {
+      "personal": 6.606098246291451,
+      "shared": 7.2385557637130145
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 14.094721164922625,
+      "shared": 19.192158031641757
+     },
+     "other_production_taxes": {
+      "personal": 2.335241381971387,
+      "shared": 3.0594038950033227
+     },
+     "business_property": {
+      "personal": 6.536356417417769,
+      "shared": 8.563292187740558
+     }
+    }
+   },
+   "factor": {
+    "G1": {
+     "corporate": {
+      "personal": 0.9867792204944273,
+      "shared": 0.97018409446659
+     },
+     "other_production_taxes": {
+      "personal": 0.8468357993864577,
+      "shared": 0.823966360193426
+     },
+     "business_property": {
+      "personal": 1.2591363409463718,
+      "shared": 1.2251324147928317
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 0.7753682618486453,
+      "shared": 0.8596821911763904
+     },
+     "other_production_taxes": {
+      "personal": 0.5845040601347257,
+      "shared": 0.6460882476709676
+     },
+     "business_property": {
+      "personal": 0.8690826534021713,
+      "shared": 0.9606504503904064
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 0.7819016147176628,
+      "shared": 0.8053651242764478
+     },
+     "other_production_taxes": {
+      "personal": 0.591901364771871,
+      "shared": 0.5865806940871999
+     },
+     "business_property": {
+      "personal": 0.8800814976760366,
+      "shared": 0.8721703420346939
+     }
+    },
+    "white_nh": {
+     "corporate": {
+      "personal": 1.0181332156315623,
+      "shared": 1.0093853352363915
+     },
+     "other_production_taxes": {
+      "personal": 0.6399355613079509,
+      "shared": 0.6400030677220375
+     },
+     "business_property": {
+      "personal": 0.9515021940073842,
+      "shared": 0.951602567396225
+     }
+    },
+    "black_nh": {
+     "corporate": {
+      "personal": 0.7727400580608814,
+      "shared": 0.7703865356007628
+     },
+     "other_production_taxes": {
+      "personal": 0.5594890049376654,
+      "shared": 0.5529631166568252
+     },
+     "business_property": {
+      "personal": 0.831888471133841,
+      "shared": 0.8221853113315514
+     }
+    },
+    "union": {
+     "corporate": {
+      "personal": 0.8344994653872897,
+      "shared": 0.858953591717684
+     },
+     "other_production_taxes": {
+      "personal": 0.6576211521821199,
+      "shared": 0.6573600346177728
+     },
+     "business_property": {
+      "personal": 0.9777984018498574,
+      "shared": 0.9774101534875546
+     }
+    },
+    "white_nh_all": {
+     "corporate": {
+      "personal": 1.0176632315467122,
+      "shared": 1.0176833784524661
+     },
+     "other_production_taxes": {
+      "personal": 0.6358681285043756,
+      "shared": 0.6371787151966207
+     },
+     "business_property": {
+      "personal": 0.945454442528816,
+      "shared": 0.9474031170333742
+     }
+    },
+    "black_nh_all": {
+     "corporate": {
+      "personal": 0.7931313810125651,
+      "shared": 0.7811702134306259
+     },
+     "other_production_taxes": {
+      "personal": 0.5638233400470894,
+      "shared": 0.5585526530006149
+     },
+     "business_property": {
+      "personal": 0.8383330721475469,
+      "shared": 0.8304962357685985
+     }
+    }
+   },
+   "central_bn": {
+    "low": {
+     "personal": 64.97968566582735,
+     "shared": 70.9876157511924
+    },
+    "high": {
+     "personal": 38.763646986922325,
+     "shared": 42.04738031331184
+    }
+   },
+   "net_cost_change_bn": {
+    "low": {
+     "personal": -64.97968566582735,
+     "shared": -70.9876157511924
+    },
+    "high": {
+     "personal": -38.763646986922325,
+     "shared": -42.04738031331184
+    }
+   }
+  },
+  "business_land_at_1": {
+   "label": "business land at response 1: the whole business property tax leaves",
+   "note": "",
+   "lines": {
+    "corporate": {
+     "national_bn": 663.685,
+     "response": {
+      "low": 1.0,
+      "high": 0.37
+     },
+     "key_share": {
+      "personal": 0.06269956350947474,
+      "shared": 0.06921488604899832
+     },
+     "group_bn": {
+      "personal": 41.61275980778574,
+      "shared": 45.936881647429445
+     },
+     "item_bn": {
+      "low": {
+       "personal": 41.61275980778574,
+       "shared": 45.936881647429445
+      },
+      "high": {
+       "personal": 15.396721128880724,
+       "shared": 16.996646209548896
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 651.507600108
+    },
+    "other_production_taxes": {
+     "national_bn": 145.258,
+     "response": {
+      "low": 1.0,
+      "high": 1.0
+     },
+     "key_share": {
+      "personal": 0.049409928833544337,
+      "shared": 0.05297038201825125
+     },
+     "group_bn": {
+      "personal": 7.177187442502984,
+      "shared": 7.69437175120714
+     },
+     "item_bn": {
+      "low": {
+       "personal": 7.177187442502984,
+       "shared": 7.69437175120714
+      },
+      "high": {
+       "personal": 7.177187442502984,
+       "shared": 7.69437175120714
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 90.16543379199999
+    },
+    "business_property": {
+     "national_bn": 273.445297051,
+     "response": {
+      "low": 1.0,
+      "high": 1.0
+     },
+     "key_share": {
+      "personal": 0.07346623399907791,
+      "shared": 0.07876017173580933
+     },
+     "group_bn": {
+      "personal": 20.088996179096135,
+      "shared": 21.536598556086158
+     },
+     "item_bn": {
+      "low": {
+       "personal": 20.088996179096135,
+       "shared": 21.536598556086158
+      },
+      "high": {
+       "personal": 20.088996179096135,
+       "shared": 21.536598556086158
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 252.37365882199998
+    }
+   },
+   "by_generation": {
+    "G1": {
+     "corporate": {
+      "personal": 13.213181978535765,
+      "shared": 11.022426191809235
+     },
+     "other_production_taxes": {
+      "personal": 2.4817880439363775,
+      "shared": 2.048852001248269
+     },
+     "business_property": {
+      "personal": 6.9465415153869134,
+      "shared": 5.734750604632586
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 14.304856664327346,
+      "shared": 15.72229742397846
+     },
+     "other_production_taxes": {
+      "personal": 2.3601580165952196,
+      "shared": 2.5861158549555494
+     },
+     "business_property": {
+      "personal": 6.606098246291451,
+      "shared": 7.2385557637130145
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 14.094721164922625,
+      "shared": 19.192158031641757
+     },
+     "other_production_taxes": {
+      "personal": 2.335241381971387,
+      "shared": 3.0594038950033227
+     },
+     "business_property": {
+      "personal": 6.536356417417769,
+      "shared": 8.563292187740558
+     }
+    }
+   },
+   "factor": {
+    "G1": {
+     "corporate": {
+      "personal": 0.9867792204944273,
+      "shared": 0.97018409446659
+     },
+     "other_production_taxes": {
+      "personal": 0.8468357993864577,
+      "shared": 0.823966360193426
+     },
+     "business_property": {
+      "personal": 1.2591363409463718,
+      "shared": 1.2251324147928317
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 0.7753682618486453,
+      "shared": 0.8596821911763904
+     },
+     "other_production_taxes": {
+      "personal": 0.5845040601347257,
+      "shared": 0.6460882476709676
+     },
+     "business_property": {
+      "personal": 0.8690826534021713,
+      "shared": 0.9606504503904064
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 0.7819016147176628,
+      "shared": 0.8053651242764478
+     },
+     "other_production_taxes": {
+      "personal": 0.591901364771871,
+      "shared": 0.5865806940871999
+     },
+     "business_property": {
+      "personal": 0.8800814976760366,
+      "shared": 0.8721703420346939
+     }
+    },
+    "white_nh": {
+     "corporate": {
+      "personal": 1.0181332156315623,
+      "shared": 1.0093853352363915
+     },
+     "other_production_taxes": {
+      "personal": 0.6399355613079509,
+      "shared": 0.6400030677220375
+     },
+     "business_property": {
+      "personal": 0.9515021940073842,
+      "shared": 0.951602567396225
+     }
+    },
+    "black_nh": {
+     "corporate": {
+      "personal": 0.7727400580608814,
+      "shared": 0.7703865356007628
+     },
+     "other_production_taxes": {
+      "personal": 0.5594890049376654,
+      "shared": 0.5529631166568252
+     },
+     "business_property": {
+      "personal": 0.831888471133841,
+      "shared": 0.8221853113315514
+     }
+    },
+    "union": {
+     "corporate": {
+      "personal": 0.8344994653872897,
+      "shared": 0.858953591717684
+     },
+     "other_production_taxes": {
+      "personal": 0.6576211521821199,
+      "shared": 0.6573600346177728
+     },
+     "business_property": {
+      "personal": 0.9777984018498574,
+      "shared": 0.9774101534875546
+     }
+    },
+    "white_nh_all": {
+     "corporate": {
+      "personal": 1.0176632315467122,
+      "shared": 1.0176833784524661
+     },
+     "other_production_taxes": {
+      "personal": 0.6358681285043756,
+      "shared": 0.6371787151966207
+     },
+     "business_property": {
+      "personal": 0.945454442528816,
+      "shared": 0.9474031170333742
+     }
+    },
+    "black_nh_all": {
+     "corporate": {
+      "personal": 0.7931313810125651,
+      "shared": 0.7811702134306259
+     },
+     "other_production_taxes": {
+      "personal": 0.5638233400470894,
+      "shared": 0.5585526530006149
+     },
+     "business_property": {
+      "personal": 0.8383330721475469,
+      "shared": 0.8304962357685985
+     }
+    }
+   },
+   "central_bn": {
+    "low": {
+     "personal": 68.87894342938486,
+     "shared": 75.16785195472275
+    },
+    "high": {
+     "personal": 42.66290475047984,
+     "shared": 46.2276165168422
+    }
+   },
+   "net_cost_change_bn": {
+    "low": {
+     "personal": -68.87894342938486,
+     "shared": -75.16785195472275
+    },
+    "high": {
+     "personal": -42.66290475047984,
+     "shared": -46.2276165168422
+    }
+   }
+  },
+  "floor": {
+   "label": "the floor: CBO's labour share of corporate tax only, at the case's wage key; the other lines at response 0",
+   "note": "corporate base 25% of the whole corporate national (corporate_labor's 165.92125bn), mining included",
+   "lines": {
+    "corporate": {
+     "national_bn": 663.685,
+     "response": {
+      "low": 1.0,
+      "high": 1.0
+     },
+     "key_share": {
+      "personal": 0.01878358408539764,
+      "shared": 0.020145118058816646
+     },
+     "group_bn": {
+      "personal": 12.466383003717132,
+      "shared": 13.370012678865725
+     },
+     "item_bn": {
+      "low": {
+       "personal": 12.466383003717132,
+       "shared": 13.370012678865725
+      },
+      "high": {
+       "personal": 12.466383003717132,
+       "shared": 13.370012678865725
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 165.92124999950002
+    },
+    "other_production_taxes": {
+     "national_bn": 145.258,
+     "response": {
+      "low": 0.0,
+      "high": 0.0
+     },
+     "key_share": {
+      "personal": 0.049409928833544337,
+      "shared": 0.05297038201825125
+     },
+     "group_bn": {
+      "personal": 7.177187442502984,
+      "shared": 7.69437175120714
+     },
+     "item_bn": {
+      "low": {
+       "personal": 0.0,
+       "shared": 0.0
+      },
+      "high": {
+       "personal": 0.0,
+       "shared": 0.0
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 90.16543379199999
+    },
+    "business_property": {
+     "national_bn": 273.445297051,
+     "response": {
+      "low": 0.0,
+      "high": 0.0
+     },
+     "key_share": {
+      "personal": 0.07346623399907791,
+      "shared": 0.07876017173580933
+     },
+     "group_bn": {
+      "personal": 20.088996179096135,
+      "shared": 21.536598556086158
+     },
+     "item_bn": {
+      "low": {
+       "personal": 0.0,
+       "shared": 0.0
+      },
+      "high": {
+       "personal": 0.0,
+       "shared": 0.0
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 252.37365882199998
+    }
+   },
+   "by_generation": {
+    "G1": {
+     "corporate": {
+      "personal": 3.347552751433969,
+      "shared": 2.8402924389922566
+     },
+     "other_production_taxes": {
+      "personal": 2.4817880439363775,
+      "shared": 2.048852001248269
+     },
+     "business_property": {
+      "personal": 6.9465415153869134,
+      "shared": 5.734750604632586
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 4.612278245107162,
+      "shared": 4.5721249042092715
+     },
+     "other_production_taxes": {
+      "personal": 2.3601580165952196,
+      "shared": 2.5861158549555494
+     },
+     "business_property": {
+      "personal": 6.606098246291451,
+      "shared": 7.2385557637130145
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 4.5065520071759995,
+      "shared": 5.957595335664196
+     },
+     "other_production_taxes": {
+      "personal": 2.335241381971387,
+      "shared": 3.0594038950033227
+     },
+     "business_property": {
+      "personal": 6.536356417417769,
+      "shared": 8.563292187740558
+     }
+    }
+   },
+   "factor": {
+    "G1": {
+     "corporate": {
+      "personal": 0.24999999999924669,
+      "shared": 0.24999999999924666
+     },
+     "other_production_taxes": {
+      "personal": 0.8468357993864577,
+      "shared": 0.823966360193426
+     },
+     "business_property": {
+      "personal": 1.2591363409463718,
+      "shared": 1.2251324147928317
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 0.24999999999924666,
+      "shared": 0.24999999999924666
+     },
+     "other_production_taxes": {
+      "personal": 0.5845040601347257,
+      "shared": 0.6460882476709676
+     },
+     "business_property": {
+      "personal": 0.8690826534021713,
+      "shared": 0.9606504503904064
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 0.24999999999924666,
+      "shared": 0.24999999999924666
+     },
+     "other_production_taxes": {
+      "personal": 0.591901364771871,
+      "shared": 0.5865806940871999
+     },
+     "business_property": {
+      "personal": 0.8800814976760366,
+      "shared": 0.8721703420346939
+     }
+    },
+    "white_nh": {
+     "corporate": {
+      "personal": 0.24999999999924669,
+      "shared": 0.24999999999924666
+     },
+     "other_production_taxes": {
+      "personal": 0.6399355613079509,
+      "shared": 0.6400030677220375
+     },
+     "business_property": {
+      "personal": 0.9515021940073842,
+      "shared": 0.951602567396225
+     }
+    },
+    "black_nh": {
+     "corporate": {
+      "personal": 0.24999999999924669,
+      "shared": 0.24999999999924666
+     },
+     "other_production_taxes": {
+      "personal": 0.5594890049376654,
+      "shared": 0.5529631166568252
+     },
+     "business_property": {
+      "personal": 0.831888471133841,
+      "shared": 0.8221853113315514
+     }
+    },
+    "union": {
+     "corporate": {
+      "personal": 0.24999999999924796,
+      "shared": 0.2499999999992452
+     },
+     "other_production_taxes": {
+      "personal": 0.6576211521821199,
+      "shared": 0.6573600346177728
+     },
+     "business_property": {
+      "personal": 0.9777984018498574,
+      "shared": 0.9774101534875546
+     }
+    },
+    "white_nh_all": {
+     "corporate": {
+      "personal": 0.24999999999924669,
+      "shared": 0.24999999999924669
+     },
+     "other_production_taxes": {
+      "personal": 0.6358681285043756,
+      "shared": 0.6371787151966207
+     },
+     "business_property": {
+      "personal": 0.945454442528816,
+      "shared": 0.9474031170333742
+     }
+    },
+    "black_nh_all": {
+     "corporate": {
+      "personal": 0.24999999999924666,
+      "shared": 0.2499999999992467
+     },
+     "other_production_taxes": {
+      "personal": 0.5638233400470894,
+      "shared": 0.5585526530006149
+     },
+     "business_property": {
+      "personal": 0.8383330721475469,
+      "shared": 0.8304962357685985
+     }
+    }
+   },
+   "central_bn": {
+    "low": {
+     "personal": 12.466383003717132,
+     "shared": 13.370012678865725
+    },
+    "high": {
+     "personal": 12.466383003717132,
+     "shared": 13.370012678865725
+    }
+   },
+   "net_cost_change_bn": {
+    "low": {
+     "personal": -12.466383003717132,
+     "shared": -13.370012678865725
+    },
+    "high": {
+     "personal": -12.466383003717132,
+     "shared": -13.370012678865725
+    }
+   }
+  },
+  "case_wage_key": {
+   "label": "the case's wage key (the status rules at the on-books lane's shares) in place of all CPS wages: each generation's targets times its share of the case's wage key over its plain share on this lane's frame",
+   "note": "[INFERENCE] the off-books wages take each generation's own industry mix",
+   "lines": {
+    "corporate": {
+     "national_bn": 663.685,
+     "response": {
+      "low": 1.0,
+      "high": 0.37
+     },
+     "key_share": {
+      "personal": 0.059697442828628204,
+      "shared": 0.06609576447527955
+     },
+     "group_bn": {
+      "personal": 39.62029734371811,
+      "shared": 43.866767445775906
+     },
+     "item_bn": {
+      "low": {
+       "personal": 39.62029734371811,
+       "shared": 43.866767445775906
+      },
+      "high": {
+       "personal": 14.6595100171757,
+       "shared": 16.230703954937084
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 651.507600108
+    },
+    "other_production_taxes": {
+     "national_bn": 145.258,
+     "response": {
+      "low": 1.0,
+      "high": 1.0
+     },
+     "key_share": {
+      "personal": 0.04679022734120864,
+      "shared": 0.050388793143339605
+     },
+     "group_bn": {
+      "personal": 6.796654843129286,
+      "shared": 7.3193753144152245
+     },
+     "item_bn": {
+      "low": {
+       "personal": 6.796654843129286,
+       "shared": 7.3193753144152245
+      },
+      "high": {
+       "personal": 6.796654843129286,
+       "shared": 7.3193753144152245
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 90.16543379199999
+    },
+    "business_property": {
+     "national_bn": 273.445297051,
+     "response": {
+      "low": 0.8806493775433665,
+      "high": 0.8806493775433665
+     },
+     "key_share": {
+      "personal": 0.06957107350416712,
+      "shared": 0.07492167982022584
+     },
+     "group_bn": {
+      "personal": 19.023882860503935,
+      "shared": 20.486980994001566
+     },
+     "item_bn": {
+      "low": {
+       "personal": 16.753370599560707,
+       "shared": 18.04184706011026
+      },
+      "high": {
+       "personal": 16.753370599560707,
+       "shared": 18.04184706011026
+      }
+     },
+     "plain_wage_share": {
+      "personal": 0.07513433634181657,
+      "shared": 0.08058047223550988
+     },
+     "lane_plain_wage_share": {
+      "personal": 0.07879145287962547,
+      "shared": 0.08433506729704082
+     },
+     "base_bn": 252.37365882199998
+    }
+   },
+   "by_generation": {
+    "G1": {
+     "corporate": {
+      "personal": 10.938701807874391,
+      "shared": 9.439625542757275
+     },
+     "other_production_taxes": {
+      "personal": 2.054579994967744,
+      "shared": 1.7546405253939803
+     },
+     "business_property": {
+      "personal": 5.750783297791063,
+      "shared": 4.911250694430541
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 14.376827050368632,
+      "shared": 15.11128673077546
+     },
+     "other_production_taxes": {
+      "personal": 2.3720324091570397,
+      "shared": 2.485612448956516
+     },
+     "business_property": {
+      "personal": 6.639334751358844,
+      "shared": 6.957246050780762
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 14.304768485475087,
+      "shared": 19.31585517224317
+     },
+     "other_production_taxes": {
+      "personal": 2.3700424390045014,
+      "shared": 3.0791223400647283
+     },
+     "business_property": {
+      "personal": 6.633764811354027,
+      "shared": 8.618484248790262
+     }
+    }
+   },
+   "factor": {
+    "G1": {
+     "corporate": {
+      "personal": 0.8169178068333419,
+      "shared": 0.830867397062645
+     },
+     "other_production_taxes": {
+      "personal": 0.7010638546240564,
+      "shared": 0.7056462674101994
+     },
+     "business_property": {
+      "personal": 1.0423921347215663,
+      "shared": 1.0492055954552106
+     }
+    },
+    "G2": {
+     "corporate": {
+      "personal": 0.7792692833295922,
+      "shared": 0.82627263292927
+     },
+     "other_production_taxes": {
+      "personal": 0.5874448084300581,
+      "shared": 0.6209795235809576
+     },
+     "business_property": {
+      "personal": 0.8734551693619516,
+      "shared": 0.9233169944844255
+     }
+    },
+    "G3plus": {
+     "corporate": {
+      "personal": 0.7935539444931409,
+      "shared": 0.8105558570147285
+     },
+     "other_production_taxes": {
+      "personal": 0.6007222058688266,
+      "shared": 0.5903613191982976
+     },
+     "business_property": {
+      "personal": 0.8931969583007352,
+      "shared": 0.8777916472182579
+     }
+    },
+    "white_nh": {
+     "corporate": {
+      "personal": 1.0181332156315623,
+      "shared": 1.0093853352363915
+     },
+     "other_production_taxes": {
+      "personal": 0.6399355613079509,
+      "shared": 0.6400030677220375
+     },
+     "business_property": {
+      "personal": 0.9515021940073842,
+      "shared": 0.951602567396225
+     }
+    },
+    "black_nh": {
+     "corporate": {
+      "personal": 0.7727400580608814,
+      "shared": 0.7703865356007628
+     },
+     "other_production_taxes": {
+      "personal": 0.5594890049376654,
+      "shared": 0.5529631166568252
+     },
+     "business_property": {
+      "personal": 0.831888471133841,
+      "shared": 0.8221853113315514
+     }
+    },
+    "union": {
+     "corporate": {
+      "personal": 0.7945427581477571,
+      "shared": 0.8202454346768241
+     },
+     "other_production_taxes": {
+      "personal": 0.6227542508439938,
+      "shared": 0.6253226339511879
+     },
+     "business_property": {
+      "personal": 0.9259557865482446,
+      "shared": 0.9297746431822183
+     }
+    },
+    "white_nh_all": {
+     "corporate": {
+      "personal": 1.0176632315467122,
+      "shared": 1.0176833784524661
+     },
+     "other_production_taxes": {
+      "personal": 0.6358681285043756,
+      "shared": 0.6371787151966207
+     },
+     "business_property": {
+      "personal": 0.945454442528816,
+      "shared": 0.9474031170333742
+     }
+    },
+    "black_nh_all": {
+     "corporate": {
+      "personal": 0.7931313810125651,
+      "shared": 0.7811702134306259
+     },
+     "other_production_taxes": {
+      "personal": 0.5638233400470894,
+      "shared": 0.5585526530006149
+     },
+     "business_property": {
+      "personal": 0.8383330721475469,
+      "shared": 0.8304962357685985
+     }
+    }
+   },
+   "central_bn": {
+    "low": {
+     "personal": 63.1703227864081,
+     "shared": 69.22798982030139
+    },
+    "high": {
+     "personal": 38.20953545986569,
+     "shared": 41.59192632946257
+    }
+   },
+   "net_cost_change_bn": {
+    "low": {
+     "personal": -63.1703227864081,
+     "shared": -69.22798982030139
+    },
+    "high": {
+     "personal": -38.20953545986569,
+     "shared": -41.59192632946257
+    }
+   }
+  }
+ },
+ "beside_net_cost_change_bn": {
+  "beside_normal_return_share_by_industry_tp5": {
+   "low": {
+    "personal": -66.481309231,
+    "shared": -72.597445511
+   },
+   "high": {
+    "personal": -42.89962463,
+    "shared": -46.377341382
+   }
+  },
+  "beside_mgmt_own": {
+   "low": {
+    "personal": -67.061632524,
+    "shared": -73.135465773
+   },
+   "high": {
+    "personal": -40.47999017,
+    "shared": -43.85627757
+   }
+  },
+  "beside_no_lessor_realloc": {
+   "low": {
+    "personal": -66.634823282,
+    "shared": -72.644048577
+   },
+   "high": {
+    "personal": -40.393006262,
+    "shared": -43.69195801
+   }
+  },
+  "beside_bea_housing_split": {
+   "low": {
+    "personal": -74.419216199,
+    "shared": -81.107353832
+   },
+   "high": {
+    "personal": -48.20317752,
+    "shared": -52.167118394
+   }
+  },
+  "beside_delta_group_owner_tax": {
+   "low": {
+    "personal": -66.509328675,
+    "shared": -72.627484021
+   },
+   "high": {
+    "personal": -40.293289996,
+    "shared": -43.687248584
+   }
+  },
+  "beside_delta_national_share_group_population": {
+   "low": {
+    "personal": -65.576009882,
+    "shared": -71.626910773
+   },
+   "high": {
+    "personal": -39.359971203,
+    "shared": -42.686675335
+   }
+  },
+  "beside_rb_whole_line": {
+   "low": {
+    "personal": -66.133992903,
+    "shared": -72.225101753
+   },
+   "high": {
+    "personal": -39.917954224,
+    "shared": -43.284866315
+   }
+  },
+  "beside_mining_plain_share": {
+   "low": {
+    "personal": -71.145556851,
+    "shared": -77.589860584
+   },
+   "high": {
+    "personal": -44.325048903,
+    "shared": -48.002626587
+   }
+  },
+  "beside_mining_severance_0": {
+   "low": {
+    "personal": -71.248066181,
+    "shared": -77.600510476
+   },
+   "high": {
+    "personal": -44.076207161,
+    "shared": -47.657052651
+   }
+  },
+  "beside_agriculture_0": {
+   "low": {
+    "personal": -63.971560578,
+    "shared": -69.977817402
+   },
+   "high": {
+    "personal": -38.014830484,
+    "shared": -41.308234623
+   }
+  },
+  "beside_top_wages_out": {
+   "low": {
+    "personal": -67.536911565,
+    "shared": -73.893695228
+   },
+   "high": {
+    "personal": -41.014514973,
+    "shared": -44.539243727
+   }
+  },
+  "beside_top_wages_own_industry": {
+   "low": {
+    "personal": -65.652852193,
+    "shared": -71.733125886
+   },
+   "high": {
+    "personal": -39.811155175,
+    "shared": -43.189681804
+   }
+  },
+  "beside_earnings_key": {
+   "low": {
+    "personal": -65.79092573,
+    "shared": -71.849815374
+   },
+   "high": {
+    "personal": -39.70013477,
+    "shared": -43.06738289
+   }
+  },
+  "beside_no_pooling": {
+   "low": {
+    "personal": -66.423168727,
+    "shared": -72.489247502
+   },
+   "high": {
+    "personal": -39.856435399,
+    "shared": -43.178195808
+   }
+  },
+  "beside_pool_300": {
+   "low": {
+    "personal": -67.596639681,
+    "shared": -73.826148931
+   },
+   "high": {
+    "personal": -40.70282575,
+    "shared": -44.184786038
+   }
+  },
+  "beside_structures": {
+   "low": {
+    "personal": -66.545473988,
+    "shared": -72.497011498
+   },
+   "high": {
+    "personal": -40.329435309,
+    "shared": -43.55677606
+   }
+  },
+  "beside_structures_equipment": {
+   "low": {
+    "personal": -66.774718896,
+    "shared": -72.760442453
+   },
+   "high": {
+    "personal": -40.558680217,
+    "shared": -43.820207015
+   }
+  },
+  "beside_for_profit": {
+   "low": {
+    "personal": -67.242240844,
+    "shared": -73.396825428
+   },
+   "high": {
+    "personal": -40.905317913,
+    "shared": -44.361158374
+   }
+  },
+  "beside_published_weights": {
+   "low": {
+    "personal": -68.670886487,
+    "shared": -74.302703123
+   },
+   "high": {
+    "personal": -41.617615485,
+    "shared": -44.711914176
+   }
+  },
+  "beside_no_fill_in": {
+   "low": {
+    "personal": -68.008184931,
+    "shared": -73.821932849
+   },
+   "high": {
+    "personal": -41.213621649,
+    "shared": -44.414972609
+   }
+  },
+  "beside_fill_in_one_rate": {
+   "low": {
+    "personal": -66.590763139,
+    "shared": -72.668805377
+   },
+   "high": {
+    "personal": -40.354650255,
+    "shared": -43.72119336
+   }
+  }
+ },
+ "upstream_gates": {
+  "national.py": 76,
+  "case_keys.cjs": 16,
+  "all_passed": true
+ },
+ "gates": [
+  {
+   "name": "national.py's gates all passed",
+   "passed": true,
+   "value": "76 gates"
+  },
+  {
+   "name": "case_keys.cjs's gates all passed",
+   "passed": true,
+   "value": "16 gates"
+  },
+  {
+   "name": "national lines are case_keys.json's (1e-6 bn)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "every person has 161 replicate weights",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "pwwgt0 is MARSUPWT / 100 (0.01)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "every person has a household state",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "the crosswalk names one cell per code, all of them national.py's cells or GOV / NOIND",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "every wage-bearing industry code maps to a cell",
+   "passed": true,
+   "value": "[]"
+  },
+  {
+   "name": "personal: the union's wage total is the builder's (1e-9 relative)",
+   "passed": true,
+   "value": "998,727,640,207.0337"
+  },
+  {
+   "name": "personal: the national civilian wage total is the builder's (1e-9 relative)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "personal: the wage share and its SE are the builder's (1e-9)",
+   "passed": true,
+   "value": "0.083234408 (SE 0.001400974)"
+  },
+  {
+   "name": "shared: the union's wage total is the builder's (1e-9 relative)",
+   "passed": true,
+   "value": "1,072,319,445,551.3252"
+  },
+  {
+   "name": "shared: the national civilian wage total is the builder's (1e-9 relative)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "shared: the wage share and its SE are the builder's (1e-9)",
+   "passed": true,
+   "value": "0.087823776 (SE 0.001399602)"
+  },
+  {
+   "name": "row 4 naturalized: records, CPS population and main factor are production_row4.json's",
+   "passed": true,
+   "value": "943 records, factor 0.855625589750"
+  },
+  {
+   "name": "row 4 naturalized: the replicate factors' range is production_row4.json's (1e-12)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "row 4 noncitizen: records, CPS population and main factor are production_row4.json's",
+   "passed": true,
+   "value": "2139 records, factor 0.778126999947"
+  },
+  {
+   "name": "row 4 noncitizen: the replicate factors' range is production_row4.json's (1e-12)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "row 4 moves no civilian outside the union",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "the union on row 4 is the account's 39,712,493 (1e-3)",
+   "passed": true,
+   "value": "39,712,493.331"
+  },
+  {
+   "name": "the union's G3+ on row 4 is the case's identified G3+ (1e-3)",
+   "passed": true,
+   "value": "14,342,574.606"
+  },
+  {
+   "name": "the case's account union is row 4's (1e-3)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "personal: spreading the wages at or above $1M keeps every group's total in every weight column (1e-12)",
+   "passed": true,
+   "value": "7.8e-16"
+  },
+  {
+   "name": "personal: the generations add to the union in every cell and weight column (1e-12 of the largest cell)",
+   "passed": true,
+   "value": "2.5e-15"
+  },
+  {
+   "name": "personal: each fill-in method's change on the wage key splits into the generations' (1e-9 bn)",
+   "passed": true,
+   "value": "6.4e-15"
+  },
+  {
+   "name": "shared: spreading the wages at or above $1M keeps every group's total in every weight column (1e-12)",
+   "passed": true,
+   "value": "8.9e-16"
+  },
+  {
+   "name": "shared: the generations add to the union in every cell and weight column (1e-12 of the largest cell)",
+   "passed": true,
+   "value": "2.6e-15"
+  },
+  {
+   "name": "shared: each fill-in method's change on the wage key splits into the generations' (1e-9 bn)",
+   "passed": true,
+   "value": "2.6e-14"
+  },
+  {
+   "name": "personal: the corrected generations add to the union's fill-in change (1e-12)",
+   "passed": true,
+   "value": "-0.020841929"
+  },
+  {
+   "name": "shared: the corrected generations add to the union's fill-in change (1e-12)",
+   "passed": true,
+   "value": "-0.015620391"
+  },
+  {
+   "name": "every cell with a tax amount has national CPS wages under both allocations",
+   "passed": true,
+   "value": "[]"
+  },
+  {
+   "name": "every cell has a sector",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "counties: every land share is positive and every implied land-price fall in [0, 1]",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "the high reading's corporate response is TP-5's normal-return share, twice OTA's 2021 labor share (1e-12)",
+   "passed": true,
+   "value": "0.37"
+  },
+  {
+   "name": "mining's cells carry no tax in the item's vectors, and every other cell keeps its own",
+   "passed": true,
+   "value": "c_and_i_property 21.072 bn out, other_production_taxes 28.463 bn out, corporate 12.177 bn out"
+  },
+  {
+   "name": "the nonprofit cut stays inside each cell's stock (scaled share <= 1)",
+   "passed": true,
+   "value": "scale 1.794 / 1.597"
+  },
+  {
+   "name": "the plain-wage-share ceiling reproduces the receipt lane's -86.848983 / -80.976701 (1e-6)",
+   "passed": true,
+   "value": "-86.848983 / -80.976702"
+  },
+  {
+   "name": "low, personal: the generations' items add to the union's, and the union's is the central (1e-9 bn)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "high, personal: the generations' items add to the union's, and the union's is the central (1e-9 bn)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "low, shared: the generations' items add to the union's, and the union's is the central (1e-9 bn)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "high, shared: the generations' items add to the union's, and the union's is the central (1e-9 bn)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "low, personal: the sectors' parts add to the central (1e-9 bn)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "high, personal: the sectors' parts add to the central (1e-9 bn)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "low, shared: the sectors' parts add to the central (1e-9 bn)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "high, shared: the sectors' parts add to the central (1e-9 bn)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "low, personal: per-person items sum to the union's item (1e-6 bn)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "low, shared: per-person items sum to the union's item (1e-6 bn)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "high, personal: per-person items sum to the union's item (1e-6 bn)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "high, shared: per-person items sum to the union's item (1e-6 bn)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "low, personal: mining's components add to what the arm adds to the central (1e-9 bn)",
+   "passed": true,
+   "value": "-7.3586 bn"
+  },
+  {
+   "name": "high, personal: mining's components add to what the arm adds to the central (1e-9 bn)",
+   "passed": true,
+   "value": "-6.4028 bn"
+  },
+  {
+   "name": "low, shared: mining's components add to what the arm adds to the central (1e-9 bn)",
+   "passed": true,
+   "value": "-7.7190 bn"
+  },
+  {
+   "name": "high, shared: mining's components add to what the arm adds to the central (1e-9 bn)",
+   "passed": true,
+   "value": "-6.7157 bn"
+  },
+  {
+   "name": "the residential parts are the RESIDENTIAL cell's other production taxes (1e-6 bn)",
+   "passed": true,
+   "value": "26.629311"
+  },
+  {
+   "name": "v6's owner and tenant property responses are the same at both ends",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "the residential parts' generations add to the union (1e-9 bn)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "item file central: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "item file mining_as_other_industries: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "item file normal_return_share: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "item file normal_return_share_0_25: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "item file normal_return_share_by_industry: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "item file plain_wage_share: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "item file foreign_source_removed: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "item file business_land_at_0: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "item file business_land_at_1: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "item file floor: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "item file case_wage_key: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "item file central: the lines' nationals are the case's (1e-6); corporate responds 1 low and TP-5's share high, the other two lines alike at both",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "item file: the central and six arms are items.csv's at both readings (1e-9 bn)",
+   "passed": true,
+   "value": "2.1e-14"
+  },
+  {
+   "name": "item file normal_return_share_by_industry: personal is items.csv's at the high reading (1e-9 bn), shared within 0.25 bn (one response, the personal one, for both allocations)",
+   "passed": true,
+   "value": "shared -0.1269 bn"
+  }
+ ]
+}

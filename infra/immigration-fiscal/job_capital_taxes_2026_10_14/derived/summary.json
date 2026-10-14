@@ -1,0 +1,2180 @@
+{
+ "meta": {
+  "item": "taxes on the business capital that serves the group's jobs: business property, other production taxes, corporate",
+  "frame": "CPS ASEC 2025 civilian household persons, income 2024; the union on row 4's weights (39,712,493); wages WSAL_VAL",
+  "readings": {
+   "low": "the band's low end: corporate at 1",
+   "high": "the band's high end: corporate at the normal-return share"
+  },
+  "mining": "BEA 211, 212 and 213 respond at 0 on all three lines at both readings (their cells out of the item's vectors)",
+  "fill_in": {
+   "methods": [
+    "b_hotdeck_union_matched",
+    "b_matched_over_pooled"
+   ],
+   "rel_change": {
+    "personal": -0.020841929,
+    "shared": -0.015620391
+   },
+   "rel_change_se": {
+    "personal": 0.007178967,
+    "shared": 0.006604322
+   },
+   "generation_parts": {
+    "personal": {
+     "G1": 1.157648168,
+     "G2": -0.308095001,
+     "G3plus": 0.150446833
+    },
+    "shared": {
+     "G1": 1.080658263,
+     "G2": 0.101771657,
+     "G3plus": -0.18242992
+    }
+   },
+   "generation_factors": {
+    "personal": {
+     "G1": 0.926212248,
+     "G2": 1.019037284,
+     "G3plus": 0.990659851
+    },
+    "shared": {
+     "G1": 0.932530798,
+     "G2": 0.995272021,
+     "G3plus": 1.00689028
+    }
+   },
+   "rule": "the union's wages move by the two methods' mean wage rel_change (status_combination_keys.csv), split across the generations as the same methods' wage-key change splits in generation_account_2026_09_24 stack_by_generation.json (components D_<method>, convention a): G's cell wages x (1 + rc x part_G x union wages / G's wages); whites and Blacks uncorrected"
+  },
+  "inputs_sha256": {
+   "cps": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+   "builder_keys": "942b63bd737a547394dc5b44f3dbd40f36137f52927e551d156ac0c2893c859c",
+   "row4": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+   "fill_in": "83b7e5517b2c643bf86b19240522ca5fa4f2cd24f152005bc7c2a8c2fc5f7c94",
+   "counties": "42fe3b780dfdf1a1523f46b21c737541f7c8c76eb5a3e377af67ffc03e42cda1",
+   "v6_corrections": "f8d346aacf05bcdaed8495f870ba23ac6154ab3eaf34cc0bcf85861f0c85d091",
+   "stack_by_generation": "35039234a00eee6e7e08d2ab920ab40d369b542adc4b3eaac90f4d7d8a0404f1",
+   "crosswalk": "25bcaf038773cbb337227c19de547895d6b370892d14222e407962f326432a92"
+  },
+  "sign": "negative = the group's net cost falls (taxes the case counts at zero that leave with the group)"
+ },
+ "parameters": {
+  "lambda_b": 0.22221599,
+  "tau": 0.126529176,
+  "delta_L": {
+   "group_population": 0.385104975,
+   "group_owner_tax": 0.392290816,
+   "national_share_group_population": 0.152932751
+  },
+  "r_b": {
+   "group_population": 0.863360493,
+   "group_owner_tax": 0.864957302,
+   "national_share_group_population": 0.811768113
+  },
+  "business_property_response": 0.880649378,
+  "corporate_response": {
+   "low": 1.0,
+   "high": 0.37
+  },
+  "normal_return_share": 0.37,
+  "power_frerick_2003_2013": 0.25,
+  "power_frerick_mining": 0.44,
+  "foreign_removed_national_bn": 78.475353791
+ },
+ "central": {
+  "low": {
+   "personal": {
+    "value_bn": -66.481309231,
+    "se_bn": 2.005886371,
+    "by_line_bn": {
+     "c_and_i_property": -17.691361981,
+     "other_production_taxes": -7.177187443,
+     "corporate": -41.612759808
+    },
+    "fill_in_se_bn": 0.487426039
+   },
+   "shared": {
+    "value_bn": -72.597445511,
+    "se_bn": 2.172113327,
+    "by_line_bn": {
+     "c_and_i_property": -18.966192113,
+     "other_production_taxes": -7.694371751,
+     "corporate": -45.936881647
+    },
+    "fill_in_se_bn": 0.48706508
+   }
+  },
+  "high": {
+   "personal": {
+    "value_bn": -40.265270552,
+    "se_bn": 1.10693017,
+    "by_line_bn": {
+     "c_and_i_property": -17.691361981,
+     "other_production_taxes": -7.177187443,
+     "corporate": -15.396721129
+    },
+    "fill_in_se_bn": 0.295215927
+   },
+   "shared": {
+    "value_bn": -43.657210074,
+    "se_bn": 1.164135764,
+    "by_line_bn": {
+     "c_and_i_property": -18.966192113,
+     "other_production_taxes": -7.694371751,
+     "corporate": -16.99664621
+    },
+    "fill_in_se_bn": 0.292901525
+   }
+  }
+ },
+ "arms": {
+  "mining_as_other_industries": {
+   "low": {
+    "personal": {
+     "value_bn": -73.839902381,
+     "se_bn": 2.886670537
+    },
+    "shared": {
+     "value_bn": -80.316408725,
+     "se_bn": 3.166108112
+    }
+   },
+   "high": {
+    "personal": {
+     "value_bn": -46.668043361,
+     "se_bn": 2.115328206
+    },
+    "shared": {
+     "value_bn": -50.3729509,
+     "se_bn": 2.236989963
+    }
+   }
+  },
+  "normal_return_share": {
+   "low": {
+    "personal": {
+     "value_bn": -40.265270552,
+     "se_bn": 1.10693017
+    },
+    "shared": {
+     "value_bn": -43.657210074,
+     "se_bn": 1.164135764
+    }
+   },
+   "high": {
+    "personal": {
+     "value_bn": -40.265270552,
+     "se_bn": 1.10693017
+    },
+    "shared": {
+     "value_bn": -43.657210074,
+     "se_bn": 1.164135764
+    }
+   }
+  },
+  "normal_return_share_0_25": {
+   "low": {
+    "personal": {
+     "value_bn": -66.481309231,
+     "se_bn": 2.005886371
+    },
+    "shared": {
+     "value_bn": -72.597445511,
+     "se_bn": 2.172113327
+    }
+   },
+   "high": {
+    "personal": {
+     "value_bn": -35.271739375,
+     "se_bn": 0.95082147
+    },
+    "shared": {
+     "value_bn": -38.144784276,
+     "se_bn": 0.985770167
+    }
+   }
+  },
+  "normal_return_share_by_industry": {
+   "low": {
+    "personal": {
+     "value_bn": -66.481309231,
+     "se_bn": 2.005886371
+    },
+    "shared": {
+     "value_bn": -72.597445511,
+     "se_bn": 2.172113327
+    }
+   },
+   "high": {
+    "personal": {
+     "value_bn": -37.04493429,
+     "se_bn": 0.942120521
+    },
+    "shared": {
+     "value_bn": -39.975303481,
+     "se_bn": 0.959359697
+    }
+   }
+  },
+  "foreign_removed": {
+   "low": {
+    "personal": {
+     "value_bn": -63.053892984,
+     "se_bn": 1.776307271
+    },
+    "shared": {
+     "value_bn": -68.697493505,
+     "se_bn": 1.903457523
+    }
+   },
+   "high": {
+    "personal": {
+     "value_bn": -38.997126541,
+     "se_bn": 1.034030373
+    },
+    "shared": {
+     "value_bn": -42.214227831,
+     "se_bn": 1.073770895
+    }
+   }
+  },
+  "land_0": {
+   "low": {
+    "personal": {
+     "value_bn": -64.979685666,
+     "se_bn": 1.974091386
+    },
+    "shared": {
+     "value_bn": -70.987615751,
+     "se_bn": 2.140295873
+    }
+   },
+   "high": {
+    "personal": {
+     "value_bn": -38.763646987,
+     "se_bn": 1.070087377
+    },
+    "shared": {
+     "value_bn": -42.047380313,
+     "se_bn": 1.127916476
+    }
+   }
+  },
+  "land_1": {
+   "low": {
+    "personal": {
+     "value_bn": -68.878943429,
+     "se_bn": 2.057297097
+    },
+    "shared": {
+     "value_bn": -75.167851955,
+     "se_bn": 2.223458045
+    }
+   },
+   "high": {
+    "personal": {
+     "value_bn": -42.66290475,
+     "se_bn": 1.166276676
+    },
+    "shared": {
+     "value_bn": -46.227616517,
+     "se_bn": 1.222444753
+    }
+   }
+  },
+  "plain_wage_share_ceiling": {
+   "shared": -86.848982824,
+   "personal": -80.976701596
+  }
+ },
+ "floor_corporate_labor_bn": {
+  "shared": -13.35859238,
+  "personal": -12.454583529
+ },
+ "beside_bn": {
+  "beside_normal_return_share_by_industry_tp5": {
+   "low": {
+    "personal": -66.481309231,
+    "shared": -72.597445511
+   },
+   "high": {
+    "personal": -42.89962463,
+    "shared": -46.377341382
+   }
+  },
+  "beside_mgmt_own": {
+   "low": {
+    "personal": -67.061632524,
+    "shared": -73.135465773
+   },
+   "high": {
+    "personal": -40.47999017,
+    "shared": -43.85627757
+   }
+  },
+  "beside_no_lessor_realloc": {
+   "low": {
+    "personal": -66.634823282,
+    "shared": -72.644048577
+   },
+   "high": {
+    "personal": -40.393006262,
+    "shared": -43.69195801
+   }
+  },
+  "beside_bea_housing_split": {
+   "low": {
+    "personal": -74.419216199,
+    "shared": -81.107353832
+   },
+   "high": {
+    "personal": -48.20317752,
+    "shared": -52.167118394
+   }
+  },
+  "beside_delta_group_owner_tax": {
+   "low": {
+    "personal": -66.509328675,
+    "shared": -72.627484021
+   },
+   "high": {
+    "personal": -40.293289996,
+    "shared": -43.687248584
+   }
+  },
+  "beside_delta_national_share_group_population": {
+   "low": {
+    "personal": -65.576009882,
+    "shared": -71.626910773
+   },
+   "high": {
+    "personal": -39.359971203,
+    "shared": -42.686675335
+   }
+  },
+  "beside_rb_whole_line": {
+   "low": {
+    "personal": -66.133992903,
+    "shared": -72.225101753
+   },
+   "high": {
+    "personal": -39.917954224,
+    "shared": -43.284866315
+   }
+  },
+  "beside_mining_plain_share": {
+   "low": {
+    "personal": -71.145556851,
+    "shared": -77.589860584
+   },
+   "high": {
+    "personal": -44.325048903,
+    "shared": -48.002626587
+   }
+  },
+  "beside_mining_severance_0": {
+   "low": {
+    "personal": -71.248066181,
+    "shared": -77.600510476
+   },
+   "high": {
+    "personal": -44.076207161,
+    "shared": -47.657052651
+   }
+  },
+  "beside_agriculture_0": {
+   "low": {
+    "personal": -63.971560578,
+    "shared": -69.977817402
+   },
+   "high": {
+    "personal": -38.014830484,
+    "shared": -41.308234623
+   }
+  },
+  "beside_top_wages_out": {
+   "low": {
+    "personal": -67.536911565,
+    "shared": -73.893695228
+   },
+   "high": {
+    "personal": -41.014514973,
+    "shared": -44.539243727
+   }
+  },
+  "beside_top_wages_own_industry": {
+   "low": {
+    "personal": -65.652852193,
+    "shared": -71.733125886
+   },
+   "high": {
+    "personal": -39.811155175,
+    "shared": -43.189681804
+   }
+  },
+  "beside_earnings_key": {
+   "low": {
+    "personal": -65.79092573,
+    "shared": -71.849815374
+   },
+   "high": {
+    "personal": -39.70013477,
+    "shared": -43.06738289
+   }
+  },
+  "beside_no_pooling": {
+   "low": {
+    "personal": -66.423168727,
+    "shared": -72.489247502
+   },
+   "high": {
+    "personal": -39.856435399,
+    "shared": -43.178195808
+   }
+  },
+  "beside_pool_300": {
+   "low": {
+    "personal": -67.596639681,
+    "shared": -73.826148931
+   },
+   "high": {
+    "personal": -40.70282575,
+    "shared": -44.184786038
+   }
+  },
+  "beside_structures": {
+   "low": {
+    "personal": -66.545473988,
+    "shared": -72.497011498
+   },
+   "high": {
+    "personal": -40.329435309,
+    "shared": -43.55677606
+   }
+  },
+  "beside_structures_equipment": {
+   "low": {
+    "personal": -66.774718896,
+    "shared": -72.760442453
+   },
+   "high": {
+    "personal": -40.558680217,
+    "shared": -43.820207015
+   }
+  },
+  "beside_for_profit": {
+   "low": {
+    "personal": -67.242240844,
+    "shared": -73.396825428
+   },
+   "high": {
+    "personal": -40.905317913,
+    "shared": -44.361158374
+   }
+  },
+  "beside_published_weights": {
+   "low": {
+    "personal": -68.670886487,
+    "shared": -74.302703123
+   },
+   "high": {
+    "personal": -41.617615485,
+    "shared": -44.711914176
+   }
+  },
+  "beside_no_fill_in": {
+   "low": {
+    "personal": -68.008184931,
+    "shared": -73.821932849
+   },
+   "high": {
+    "personal": -41.213621649,
+    "shared": -44.414972609
+   }
+  },
+  "beside_fill_in_one_rate": {
+   "low": {
+    "personal": -66.590763139,
+    "shared": -72.668805377
+   },
+   "high": {
+    "personal": -40.354650255,
+    "shared": -43.72119336
+   }
+  }
+ },
+ "keys": {
+  "personal": {
+   "plain_wage_share": 0.078791453,
+   "plain_wage_share_se": 0.001428537,
+   "case_wage_key_share": 0.07513433634181657,
+   "lane_over_case_wage_share": 1.048674371,
+   "industry_weighted_share_of_base_by_line": {
+    "c_and_i_property": 0.07960021,
+    "other_production_taxes": 0.07960021,
+    "corporate": 0.063871488
+   },
+   "industry_weighted_share_of_base_all": 0.069291457,
+   "base_bn": {
+    "c_and_i_property": 252.373658822,
+    "other_production_taxes": 90.165433792,
+    "corporate": 651.507600108
+   },
+   "case_employer_hi_sept27": 0.074812987,
+   "case_employer_hi_v6": 0.080742675,
+   "noind_national_wages_bn": 0.0
+  },
+  "shared": {
+   "plain_wage_share": 0.084335067,
+   "plain_wage_share_se": 0.001434998,
+   "case_wage_key_share": 0.08058047223550988,
+   "lane_over_case_wage_share": 1.046594354,
+   "industry_weighted_share_of_base_by_line": {
+    "c_and_i_property": 0.085336159,
+    "other_production_taxes": 0.085336159,
+    "corporate": 0.070508589
+   },
+   "industry_weighted_share_of_base_all": 0.075618029,
+   "base_bn": {
+    "c_and_i_property": 252.373658822,
+    "other_production_taxes": 90.165433792,
+    "corporate": 651.507600108
+   },
+   "case_employer_hi_sept27": 0.080238287,
+   "case_employer_hi_v6": 0.087786078,
+   "noind_national_wages_bn": 0.0
+  }
+ },
+ "generations": {
+  "low": {
+   "personal": {
+    "union": {
+     "persons": 39712493.33118789,
+     "wages_bn": 942.573034124,
+     "item_bn": -66.481309231,
+     "item_se_bn": 2.005886371,
+     "by_line_bn": {
+      "c_and_i_property": -17.691361981,
+      "other_production_taxes": -7.177187443,
+      "corporate": -41.612759808
+     },
+     "per_wage_dollar": 0.070531733,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.018769221,
+      "other_production_taxes": 0.007614463,
+      "corporate": 0.044148048
+     },
+     "per_wage_dollar_se": 0.001717746,
+     "per_person_usd": -1674.065354609
+    },
+    "G1": {
+     "persons": 11036701.061391931,
+     "wages_bn": 291.543225025,
+     "item_bn": -21.812437484,
+     "item_se_bn": 1.096574472,
+     "by_line_bn": {
+      "c_and_i_property": -6.117467462,
+      "other_production_taxes": -2.481788044,
+      "corporate": -13.213181979
+     },
+     "per_wage_dollar": 0.074817165,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.020983055,
+      "other_production_taxes": 0.00851259,
+      "corporate": 0.04532152
+     },
+     "per_wage_dollar_se": 0.003048318,
+     "per_person_usd": -1976.354833092
+    },
+    "G2": {
+     "persons": 14333217.663520351,
+     "wages_bn": 330.879493757,
+     "item_bn": -22.48267099,
+     "item_se_bn": 1.124632926,
+     "by_line_bn": {
+      "c_and_i_property": -5.817656309,
+      "other_production_taxes": -2.360158017,
+      "corporate": -14.304856664
+     },
+     "per_wage_dollar": 0.067948215,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.017582402,
+      "other_production_taxes": 0.007132984,
+      "corporate": 0.043232829
+     },
+     "per_wage_dollar_se": 0.002701654,
+     "per_person_usd": -1568.571099477
+    },
+    "G3plus": {
+     "persons": 14342574.60627561,
+     "wages_bn": 320.150315341,
+     "item_bn": -22.186200757,
+     "item_se_bn": 1.156049009,
+     "by_line_bn": {
+      "c_and_i_property": -5.75623821,
+      "other_production_taxes": -2.335241382,
+      "corporate": -14.094721165
+     },
+     "per_wage_dollar": 0.069299325,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.017979799,
+      "other_production_taxes": 0.007294203,
+      "corporate": 0.044025323
+     },
+     "per_wage_dollar_se": 0.002625175,
+     "per_person_usd": -1546.877137915
+    },
+    "white": {
+     "persons": 173053893.39728963,
+     "wages_bn": 6704.144716462,
+     "item_bn": -559.182637754,
+     "item_se_bn": 5.497332364,
+     "by_line_bn": {
+      "c_and_i_property": -128.407610134,
+      "other_production_taxes": -52.093529486,
+      "corporate": -378.681498133
+     },
+     "per_wage_dollar": 0.083408497,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.019153466,
+      "other_production_taxes": 0.007770347,
+      "corporate": 0.056484684
+     },
+     "per_wage_dollar_se": 0.000966372,
+     "per_person_usd": -3231.262971183
+    },
+    "black": {
+     "persons": 32620043.773007136,
+     "wages_bn": 845.282637652,
+     "item_bn": -56.135056212,
+     "item_se_bn": 2.165956941,
+     "by_line_bn": {
+      "c_and_i_property": -14.154829509,
+      "other_production_taxes": -5.742455822,
+      "corporate": -36.237770881
+     },
+     "per_wage_dollar": 0.066409806,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.016745676,
+      "other_production_taxes": 0.006793533,
+      "corporate": 0.042870596
+     },
+     "per_wage_dollar_se": 0.002092829,
+     "per_person_usd": -1720.876176712
+    },
+    "white_all": {
+     "persons": 192270582.79640454,
+     "wages_bn": 7577.125631347,
+     "item_bn": -630.502440238,
+     "item_se_bn": 5.430522287,
+     "by_line_bn": {
+      "c_and_i_property": -144.205785189,
+      "other_production_taxes": -58.502672194,
+      "corporate": -427.793982855
+     },
+     "per_wage_dollar": 0.083211296,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.019031727,
+      "other_production_taxes": 0.007720958,
+      "corporate": 0.05645861
+     },
+     "per_wage_dollar_se": 0.000863197,
+     "per_person_usd": -3279.245483463
+    },
+    "black_all": {
+     "persons": 41954493.28529818,
+     "wages_bn": 1147.131767019,
+     "item_bn": -77.687717493,
+     "item_se_bn": 2.882161159,
+     "by_line_bn": {
+      "c_and_i_property": -19.358312425,
+      "other_production_taxes": -7.853450571,
+      "corporate": -50.475954497
+     },
+     "per_wage_dollar": 0.067723447,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.016875404,
+      "other_production_taxes": 0.006846163,
+      "corporate": 0.04400188
+     },
+     "per_wage_dollar_se": 0.002056113,
+     "per_person_usd": -1851.713878766
+    },
+    "national": {
+     "wages_bn": 11962.884293604,
+     "per_wage_dollar": 0.080576366
+    }
+   },
+   "shared": {
+    "union": {
+     "persons": 39712493.33118789,
+     "wages_bn": 1027.30079946,
+     "item_bn": -72.597445511,
+     "item_se_bn": 2.172113327,
+     "by_line_bn": {
+      "c_and_i_property": -18.966192113,
+      "other_production_taxes": -7.694371751,
+      "corporate": -45.936881647
+     },
+     "per_wage_dollar": 0.070668149,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.01846216,
+      "other_production_taxes": 0.007489892,
+      "corporate": 0.044716096
+     },
+     "per_wage_dollar_se": 0.001742862,
+     "per_person_usd": -1828.075736923
+    },
+    "G1": {
+     "persons": 11036701.061391931,
+     "wages_bn": 243.485391451,
+     "item_bn": -18.121582743,
+     "item_se_bn": 0.930707674,
+     "by_line_bn": {
+      "c_and_i_property": -5.05030455,
+      "other_production_taxes": -2.048852001,
+      "corporate": -11.022426192
+     },
+     "per_wage_dollar": 0.074425749,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.020741715,
+      "other_production_taxes": 0.008414681,
+      "corporate": 0.045269353
+     },
+     "per_wage_dollar_se": 0.003066033,
+     "per_person_usd": -1641.938351197
+    },
+    "G2": {
+     "persons": 14333217.663520351,
+     "wages_bn": 349.23685378,
+     "item_bn": -24.683042907,
+     "item_se_bn": 1.047363384,
+     "by_line_bn": {
+      "c_and_i_property": -6.374629628,
+      "other_production_taxes": -2.586115855,
+      "corporate": -15.722297424
+     },
+     "per_wage_dollar": 0.070677085,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.018253027,
+      "other_production_taxes": 0.007405049,
+      "corporate": 0.04501901
+     },
+     "per_wage_dollar_se": 0.002299662,
+     "per_person_usd": -1722.08665814
+    },
+    "G3plus": {
+     "persons": 14342574.60627561,
+     "wages_bn": 434.578554229,
+     "item_bn": -29.792819862,
+     "item_se_bn": 1.346420127,
+     "by_line_bn": {
+      "c_and_i_property": -7.541257935,
+      "other_production_taxes": -3.059403895,
+      "corporate": -19.192158032
+     },
+     "per_wage_dollar": 0.068555661,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.017353037,
+      "other_production_taxes": 0.007039933,
+      "corporate": 0.04416269
+     },
+     "per_wage_dollar_se": 0.002259859,
+     "per_person_usd": -2077.22955462
+    },
+    "white": {
+     "persons": 173053893.39728963,
+     "wages_bn": 6696.990902579,
+     "item_bn": -545.402326825,
+     "item_se_bn": 5.334203353,
+     "by_line_bn": {
+      "c_and_i_property": -125.985155009,
+      "other_production_taxes": -51.110766569,
+      "corporate": -368.306405247
+     },
+     "per_wage_dollar": 0.081439909,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.018812203,
+      "other_production_taxes": 0.0076319,
+      "corporate": 0.054995805
+     },
+     "per_wage_dollar_se": 0.000914486,
+     "per_person_usd": -3151.632801307
+    },
+    "black": {
+     "persons": 32620043.773007136,
+     "wages_bn": 859.439274841,
+     "item_bn": -55.710410727,
+     "item_se_bn": 1.988894764,
+     "by_line_bn": {
+      "c_and_i_property": -13.969117505,
+      "other_production_taxes": -5.667114542,
+      "corporate": -36.07417868
+     },
+     "per_wage_dollar": 0.064821812,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.016253757,
+      "other_production_taxes": 0.006593967,
+      "corporate": 0.041974087
+     },
+     "per_wage_dollar_se": 0.001877223,
+     "per_person_usd": -1707.858245512
+    },
+    "white_all": {
+     "persons": 192270582.79640454,
+     "wages_bn": 7556.118987291,
+     "item_bn": -617.904080493,
+     "item_se_bn": 5.132440976,
+     "by_line_bn": {
+      "c_and_i_property": -141.519947263,
+      "other_production_taxes": -57.413057824,
+      "corporate": -418.971075406
+     },
+     "per_wage_dollar": 0.081775324,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.018729185,
+      "other_production_taxes": 0.00759822,
+      "corporate": 0.055447919
+     },
+     "per_wage_dollar_se": 0.000850411,
+     "per_person_usd": -3213.721368636
+    },
+    "black_all": {
+     "persons": 41954493.28529818,
+     "wages_bn": 1155.882429063,
+     "item_bn": -75.872477241,
+     "item_se_bn": 2.721931669,
+     "by_line_bn": {
+      "c_and_i_property": -18.977342288,
+      "other_production_taxes": -7.698895252,
+      "corporate": -49.196239701
+     },
+     "per_wage_dollar": 0.065640307,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.016418056,
+      "other_production_taxes": 0.006660621,
+      "corporate": 0.04256163
+     },
+     "per_wage_dollar_se": 0.001908707,
+     "per_person_usd": -1808.446993388
+    },
+    "national": {
+     "wages_bn": 12181.181949394,
+     "per_wage_dollar": 0.079132365
+    }
+   }
+  },
+  "high": {
+   "personal": {
+    "union": {
+     "persons": 39712493.33118789,
+     "wages_bn": 942.573034124,
+     "item_bn": -40.265270552,
+     "item_se_bn": 1.10693017,
+     "by_line_bn": {
+      "c_and_i_property": -17.691361981,
+      "other_production_taxes": -7.177187443,
+      "corporate": -15.396721129
+     },
+     "per_wage_dollar": 0.042718462,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.018769221,
+      "other_production_taxes": 0.007614463,
+      "corporate": 0.016334778
+     },
+     "per_wage_dollar_se": 0.000922113,
+     "per_person_usd": -1013.919479096
+    },
+    "G1": {
+     "persons": 11036701.061391931,
+     "wages_bn": 291.543225025,
+     "item_bn": -13.488132838,
+     "item_se_bn": 0.620895706,
+     "by_line_bn": {
+      "c_and_i_property": -6.117467462,
+      "other_production_taxes": -2.481788044,
+      "corporate": -4.888877332
+     },
+     "per_wage_dollar": 0.046264607,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.020983055,
+      "other_production_taxes": 0.00851259,
+      "corporate": 0.016768962
+     },
+     "per_wage_dollar_se": 0.00168676,
+     "per_person_usd": -1222.116351849
+    },
+    "G2": {
+     "persons": 14333217.663520351,
+     "wages_bn": 330.879493757,
+     "item_bn": -13.470611291,
+     "item_se_bn": 0.59664738,
+     "by_line_bn": {
+      "c_and_i_property": -5.817656309,
+      "other_production_taxes": -2.360158017,
+      "corporate": -5.292796966
+     },
+     "per_wage_dollar": 0.040711533,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.017582402,
+      "other_production_taxes": 0.007132984,
+      "corporate": 0.015996147
+     },
+     "per_wage_dollar_se": 0.001337006,
+     "per_person_usd": -939.817674385
+    },
+    "G3plus": {
+     "persons": 14342574.60627561,
+     "wages_bn": 320.150315341,
+     "item_bn": -13.306526423,
+     "item_se_bn": 0.649704068,
+     "by_line_bn": {
+      "c_and_i_property": -5.75623821,
+      "other_production_taxes": -2.335241382,
+      "corporate": -5.215046831
+     },
+     "per_wage_dollar": 0.041563371,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.017979799,
+      "other_production_taxes": 0.007294203,
+      "corporate": 0.01628937
+     },
+     "per_wage_dollar_se": 0.001389915,
+     "per_person_usd": -927.764141981
+    },
+    "white": {
+     "persons": 173053893.39728963,
+     "wages_bn": 6704.144716462,
+     "item_bn": -320.61329393,
+     "item_se_bn": 2.869098317,
+     "by_line_bn": {
+      "c_and_i_property": -128.407610134,
+      "other_production_taxes": -52.093529486,
+      "corporate": -140.112154309
+     },
+     "per_wage_dollar": 0.047823146,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.019153466,
+      "other_production_taxes": 0.007770347,
+      "corporate": 0.020899333
+     },
+     "per_wage_dollar_se": 0.000512964,
+     "per_person_usd": -1852.678883068
+    },
+    "black": {
+     "persons": 32620043.773007136,
+     "wages_bn": 845.282637652,
+     "item_bn": -33.305260557,
+     "item_se_bn": 1.133526057,
+     "by_line_bn": {
+      "c_and_i_property": -14.154829509,
+      "other_production_taxes": -5.742455822,
+      "corporate": -13.407975226
+     },
+     "per_wage_dollar": 0.03940133,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.016745676,
+      "other_production_taxes": 0.006793533,
+      "corporate": 0.015862121
+     },
+     "per_wage_dollar_se": 0.001032002,
+     "per_person_usd": -1021.006004444
+    },
+    "white_all": {
+     "persons": 192270582.79640454,
+     "wages_bn": 7577.125631347,
+     "item_bn": -360.992231039,
+     "item_se_bn": 2.772194177,
+     "by_line_bn": {
+      "c_and_i_property": -144.205785189,
+      "other_production_taxes": -58.502672194,
+      "corporate": -158.283773656
+     },
+     "per_wage_dollar": 0.047642371,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.019031727,
+      "other_production_taxes": 0.007720958,
+      "corporate": 0.020889686
+     },
+     "per_wage_dollar_se": 0.000458221,
+     "per_person_usd": -1877.52190579
+    },
+    "black_all": {
+     "persons": 41954493.28529818,
+     "wages_bn": 1147.131767019,
+     "item_bn": -45.88786616,
+     "item_se_bn": 1.473188968,
+     "by_line_bn": {
+      "c_and_i_property": -19.358312425,
+      "other_production_taxes": -7.853450571,
+      "corporate": -18.676103164
+     },
+     "per_wage_dollar": 0.040002263,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.016875404,
+      "other_production_taxes": 0.006846163,
+      "corporate": 0.016280696
+     },
+     "per_wage_dollar_se": 0.0010028,
+     "per_person_usd": -1093.753316188
+    },
+    "national": {
+     "wages_bn": 11962.884293604,
+     "per_wage_dollar": 0.046266096
+    }
+   },
+   "shared": {
+    "union": {
+     "persons": 39712493.33118789,
+     "wages_bn": 1027.30079946,
+     "item_bn": -43.657210074,
+     "item_se_bn": 1.164135764,
+     "by_line_bn": {
+      "c_and_i_property": -18.966192113,
+      "other_production_taxes": -7.694371751,
+      "corporate": -16.99664621
+     },
+     "per_wage_dollar": 0.042497008,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.01846216,
+      "other_production_taxes": 0.007489892,
+      "corporate": 0.016544956
+     },
+     "per_wage_dollar_se": 0.000923733,
+     "per_person_usd": -1099.33188303
+    },
+    "G1": {
+     "persons": 11036701.061391931,
+     "wages_bn": 243.485391451,
+     "item_bn": -11.177454243,
+     "item_se_bn": 0.512134569,
+     "by_line_bn": {
+      "c_and_i_property": -5.05030455,
+      "other_production_taxes": -2.048852001,
+      "corporate": -4.078297691
+     },
+     "per_wage_dollar": 0.045906057,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.020741715,
+      "other_production_taxes": 0.008414681,
+      "corporate": 0.016749661
+     },
+     "per_wage_dollar_se": 0.00161639,
+     "per_person_usd": -1012.753193221
+    },
+    "G2": {
+     "persons": 14333217.663520351,
+     "wages_bn": 349.23685378,
+     "item_bn": -14.777995529,
+     "item_se_bn": 0.565629806,
+     "by_line_bn": {
+      "c_and_i_property": -6.374629628,
+      "other_production_taxes": -2.586115855,
+      "corporate": -5.817250047
+     },
+     "per_wage_dollar": 0.042315109,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.018253027,
+      "other_production_taxes": 0.007405049,
+      "corporate": 0.016657034
+     },
+     "per_wage_dollar_se": 0.001180409,
+     "per_person_usd": -1031.031264324
+    },
+    "G3plus": {
+     "persons": 14342574.60627561,
+     "wages_bn": 434.578554229,
+     "item_bn": -17.701760302,
+     "item_se_bn": 0.723539419,
+     "by_line_bn": {
+      "c_and_i_property": -7.541257935,
+      "other_production_taxes": -3.059403895,
+      "corporate": -7.101098472
+     },
+     "per_wage_dollar": 0.040733166,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.017353037,
+      "other_production_taxes": 0.007039933,
+      "corporate": 0.016340195
+     },
+     "per_wage_dollar_se": 0.001164838,
+     "per_person_usd": -1234.210787638
+    },
+    "white": {
+     "persons": 173053893.39728963,
+     "wages_bn": 6696.990902579,
+     "item_bn": -313.369291519,
+     "item_se_bn": 2.753133713,
+     "by_line_bn": {
+      "c_and_i_property": -125.985155009,
+      "other_production_taxes": -51.110766569,
+      "corporate": -136.273369941
+     },
+     "per_wage_dollar": 0.046792551,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.018812203,
+      "other_production_taxes": 0.0076319,
+      "corporate": 0.020348448
+     },
+     "per_wage_dollar_se": 0.00048301,
+     "per_person_usd": -1810.819077035
+    },
+    "black": {
+     "persons": 32620043.773007136,
+     "wages_bn": 859.439274841,
+     "item_bn": -32.983678158,
+     "item_se_bn": 1.051268932,
+     "by_line_bn": {
+      "c_and_i_property": -13.969117505,
+      "other_production_taxes": -5.667114542,
+      "corporate": -13.347446112
+     },
+     "per_wage_dollar": 0.038378137,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.016253757,
+      "other_production_taxes": 0.006593967,
+      "corporate": 0.015530412
+     },
+     "per_wage_dollar_se": 0.000929469,
+     "per_person_usd": -1011.147575028
+    },
+    "white_all": {
+     "persons": 192270582.79640454,
+     "wages_bn": 7556.118987291,
+     "item_bn": -353.952302987,
+     "item_se_bn": 2.591962378,
+     "by_line_bn": {
+      "c_and_i_property": -141.519947263,
+      "other_production_taxes": -57.413057824,
+      "corporate": -155.0192979
+     },
+     "per_wage_dollar": 0.046843135,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.018729185,
+      "other_production_taxes": 0.00759822,
+      "corporate": 0.02051573
+     },
+     "per_wage_dollar_se": 0.000450529,
+     "per_person_usd": -1840.9072144
+    },
+    "black_all": {
+     "persons": 41954493.28529818,
+     "wages_bn": 1155.882429063,
+     "item_bn": -44.878846229,
+     "item_se_bn": 1.40075679,
+     "by_line_bn": {
+      "c_and_i_property": -18.977342288,
+      "other_production_taxes": -7.698895252,
+      "corporate": -18.202608689
+     },
+     "per_wage_dollar": 0.03882648,
+     "per_wage_dollar_by_line": {
+      "c_and_i_property": 0.016418056,
+      "other_production_taxes": 0.006660621,
+      "corporate": 0.015747803
+     },
+     "per_wage_dollar_se": 0.000932914,
+     "per_person_usd": -1069.70297375
+    },
+    "national": {
+     "wages_bn": 12181.181949394,
+     "per_wage_dollar": 0.045436966
+    }
+   }
+  }
+ },
+ "central_by_sector_bn": {
+  "low": {
+   "personal": {
+    "agriculture": -2.509748653,
+    "mining": -0.0,
+    "utilities": -2.945901055,
+    "construction": -3.80265633,
+    "durable": -9.686492875,
+    "nondurable": -8.671590777,
+    "wholesale": -6.646906162,
+    "retail": -7.473897387,
+    "transportation": -2.543025855,
+    "information": -3.99190216,
+    "finance": -5.182961055,
+    "real_estate": -0.73238995,
+    "professional": -2.012398345,
+    "management": -0.694492074,
+    "administrative": -1.924349436,
+    "education": -0.553641876,
+    "health": -2.365093665,
+    "arts": -0.557246807,
+    "accommodation_food": -2.892528173,
+    "other_services": -1.191602282,
+    "government": -0.102484313,
+    "households": -0.0,
+    "none": -0.0
+   },
+   "shared": {
+    "agriculture": -2.619628109,
+    "mining": -0.0,
+    "utilities": -2.922586598,
+    "construction": -3.945148074,
+    "durable": -10.62971974,
+    "nondurable": -9.780596351,
+    "wholesale": -7.670247053,
+    "retail": -7.52961392,
+    "transportation": -2.808832191,
+    "information": -4.556915065,
+    "finance": -6.220217245,
+    "real_estate": -0.761460131,
+    "professional": -2.07368532,
+    "management": -0.741981919,
+    "administrative": -2.075213577,
+    "education": -0.539595612,
+    "health": -2.510543217,
+    "arts": -0.6392037,
+    "accommodation_food": -3.149603271,
+    "other_services": -1.31090124,
+    "government": -0.11175318,
+    "households": -0.0,
+    "none": -0.0
+   }
+  },
+  "high": {
+   "personal": {
+    "agriculture": -2.250440068,
+    "mining": -0.0,
+    "utilities": -2.727965079,
+    "construction": -2.320433121,
+    "durable": -4.765437196,
+    "nondurable": -4.373047465,
+    "wholesale": -3.207210811,
+    "retail": -4.29987884,
+    "transportation": -1.863575477,
+    "information": -1.833629723,
+    "finance": -2.624197077,
+    "real_estate": -0.619210144,
+    "professional": -1.283391298,
+    "management": -0.677700743,
+    "administrative": -1.278816884,
+    "education": -0.523041352,
+    "health": -1.903675476,
+    "arts": -0.487403917,
+    "accommodation_food": -2.066011799,
+    "other_services": -1.070010493,
+    "government": -0.090193589,
+    "households": -0.0,
+    "none": -0.0
+   },
+   "shared": {
+    "agriculture": -2.348975451,
+    "mining": -0.0,
+    "utilities": -2.706375412,
+    "construction": -2.40738354,
+    "durable": -5.225981896,
+    "nondurable": -4.920781641,
+    "wholesale": -3.700984891,
+    "retail": -4.332891881,
+    "transportation": -2.079750262,
+    "information": -2.076392489,
+    "finance": -3.156593391,
+    "real_estate": -0.642399063,
+    "professional": -1.326602425,
+    "management": -0.724042385,
+    "administrative": -1.378109342,
+    "education": -0.509771444,
+    "health": -2.021836093,
+    "arts": -0.559030721,
+    "accommodation_food": -2.263803738,
+    "other_services": -1.177136116,
+    "government": -0.098367895,
+    "households": -0.0,
+    "none": -0.0
+   }
+  }
+ },
+ "mining": {
+  "cells": [
+   "211",
+   "212",
+   "213"
+  ],
+  "national_bn": {
+   "corporate": {
+    "211": 9.124050688,
+    "212": 2.18979666,
+    "213": 0.863552542
+   },
+   "c_and_i_property": {
+    "211": 17.474344793,
+    "212": 2.121687805,
+    "213": 1.475605633
+   },
+   "otp_licenses_and_other": {
+    "211": 5.578786114,
+    "212": 0.67736116,
+    "213": 0.471095673
+   },
+   "otp_severance": {
+    "211": 16.583047741,
+    "212": 4.016892983,
+    "213": 0.335059277
+   },
+   "otp_documentary": {
+    "211": 0.385168007,
+    "212": 0.04676606,
+    "213": 0.032525173
+   },
+   "otp_special_assessments": {
+    "211": 0.279097891,
+    "212": 0.033887313,
+    "213": 0.023568175
+   }
+  },
+  "union_share": {
+   "personal": {
+    "211": 0.123575038,
+    "212": 0.123575038,
+    "213": 0.137879309
+   },
+   "shared": {
+    "211": 0.129427439,
+    "212": 0.129427439,
+    "213": 0.148333999
+   }
+  },
+  "union_target_bn": {
+   "personal": {
+    "corporate": {
+     "211": 1.127504911,
+     "212": 0.270604206,
+     "213": 0.119066028
+    },
+    "c_and_i_property": {
+     "211": 2.159392823,
+     "212": 0.262187651,
+     "213": 0.203455485
+    },
+    "otp_licenses_and_other": {
+     "211": 0.689398706,
+     "212": 0.083704931,
+     "213": 0.064954346
+    },
+    "otp_severance": {
+     "211": 2.049250756,
+     "212": 0.496387703,
+     "213": 0.046197742
+    },
+    "otp_documentary": {
+     "211": 0.047597151,
+     "212": 0.005779118,
+     "213": 0.004484548
+    },
+    "otp_special_assessments": {
+     "211": 0.034489533,
+     "212": 0.004187626,
+     "213": 0.003249564
+    }
+   },
+   "shared": {
+    "corporate": {
+     "211": 1.180902512,
+     "212": 0.283419773,
+     "213": 0.128094202
+    },
+    "c_and_i_property": {
+     "211": 2.261659691,
+     "212": 0.274604618,
+     "213": 0.218882485
+    },
+    "otp_licenses_and_other": {
+     "211": 0.722047998,
+     "212": 0.08766912,
+     "213": 0.069879505
+    },
+    "otp_severance": {
+     "211": 2.146301396,
+     "212": 0.519896171,
+     "213": 0.049700683
+    },
+    "otp_documentary": {
+     "211": 0.049851309,
+     "212": 0.006052811,
+     "213": 0.004824589
+    },
+    "otp_special_assessments": {
+     "211": 0.036122925,
+     "212": 0.004385948,
+     "213": 0.003495962
+    }
+   }
+  },
+  "added_by_the_arm_bn": {
+   "low": {
+    "personal": {
+     "value_bn": -7.35859315,
+     "se_bn": 2.058556939
+    },
+    "shared": {
+     "value_bn": -7.718963214,
+     "se_bn": 2.056335175
+    }
+   },
+   "high": {
+    "personal": {
+     "value_bn": -6.402772809,
+     "se_bn": 1.790351862
+    },
+    "shared": {
+     "value_bn": -6.715740827,
+     "se_bn": 1.78826572
+    }
+   }
+  },
+  "reproducible_only_bn": {
+   "personal": {
+    "value_bn": -3.917138869,
+    "se_bn": 1.099075946
+   },
+   "shared": {
+    "value_bn": -4.111311731,
+    "se_bn": 1.098484926
+   }
+  },
+  "reproducible_rule": "[INFERENCE] corporate at Power and Frerick's mining normal-return share (Table 1), business property at the central response (its key is the Fixed Assets stock), severance at 0, licenses, documentary taxes and special assessments at 1, at both readings"
+ },
+ "normal_return": {
+  "tp5": 0.37,
+  "power_frerick": {
+   "1992_2002": 0.4,
+   "2003_2013": 0.25
+  },
+  "power_frerick_by_industry_effective": {
+   "G1": {
+    "personal": 0.310885033,
+    "shared": 0.306658371
+   },
+   "G2": {
+    "personal": 0.292230231,
+    "shared": 0.289173165
+   },
+   "G3plus": {
+    "personal": 0.275868727,
+    "shared": 0.28074768
+   },
+   "white_nh": {
+    "personal": 0.258089548,
+    "shared": 0.259300536
+   },
+   "black_nh": {
+    "personal": 0.251317816,
+    "shared": 0.25202185
+   },
+   "white_nh_all": {
+    "personal": 0.254742955,
+    "shared": 0.254816383
+   },
+   "black_nh_all": {
+    "personal": 0.243186745,
+    "shared": 0.244781563
+   },
+   "union": {
+    "personal": 0.292611808,
+    "shared": 0.289848574
+   }
+  },
+  "power_frerick_national_effective": 0.249860995,
+  "rule": "effective = the group's corporate target with each cell at its industry's Table 1 share over its target at 1, on the item's base (mining out); national on the cells' corporate tax"
+ },
+ "residential_parts": {
+  "parts_bn": {
+   "documentary": 15.440742244,
+   "special_assessments": 11.188568397
+  },
+  "owner_share_of_value": 0.819303832,
+  "responses": {
+   "owner": 0.772698646,
+   "tenant": 0.718912397
+  },
+  "by_group": {
+   "union": {
+    "personal": {
+     "target_bn": 1.931436225,
+     "lost_bn": 1.462741253
+    },
+    "shared": {
+     "target_bn": 1.931436225,
+     "lost_bn": 1.462741253
+    }
+   },
+   "G1": {
+    "personal": {
+     "target_bn": 0.542465641,
+     "lost_bn": 0.410055103
+    },
+    "shared": {
+     "target_bn": 0.542465641,
+     "lost_bn": 0.410055103
+    }
+   },
+   "G2": {
+    "personal": {
+     "target_bn": 0.66699603,
+     "lost_bn": 0.504366572
+    },
+    "shared": {
+     "target_bn": 0.66699603,
+     "lost_bn": 0.504366572
+    }
+   },
+   "G3plus": {
+    "personal": {
+     "target_bn": 0.721974554,
+     "lost_bn": 0.548319579
+    },
+    "shared": {
+     "target_bn": 0.721974554,
+     "lost_bn": 0.548319579
+    }
+   }
+  },
+  "rule": "beside, outside the item: the residential parts of documentary and stamp taxes and special assessments (Z.1 residential share) split owner / tenant by Z.1 market value, at the case's owner and tenant property keys and v6's responses for those lines"
+ },
+ "pooling": {
+  "n_min": 100,
+  "pooled_cells": [
+   "113FF",
+   "211",
+   "212",
+   "313TT",
+   "315AL",
+   "324",
+   "483",
+   "486",
+   "55"
+  ],
+  "rule": "a cell with fewer CPS civilian wage earners than n_min takes its sector's pooled share (a sector below n_min: every private cell's), in every weight column",
+  "top_wages": {
+   "threshold_usd": 1000000.0,
+   "union_share_of_top_wages": {
+    "personal": 0.046296062,
+    "shared": 0.048706345
+   },
+   "rule": "each group's wages at or above the threshold are spread over the cells as the nation's such wages are (group totals unchanged); the public file caps each earnings source at $1,099,999"
+  }
+ },
+ "firm_size_wage_shares": {
+  "union": {
+   "niu": 0.0,
+   "under 10": 0.127773404,
+   "10-24": 0.161745147,
+   "25-99": 0.078406089,
+   "100-499": 0.139639459,
+   "500-999": 0.057149365,
+   "1000+": 0.435286537
+  },
+  "national": {
+   "niu": 0.0,
+   "under 10": 0.114450204,
+   "10-24": 0.123184138,
+   "25-99": 0.06388447,
+   "100-499": 0.128388728,
+   "500-999": 0.05717488,
+   "1000+": 0.512917581
+  }
+ },
+ "top_wages_by_sector": {
+  "agriculture": {
+   "records": 856,
+   "records_at_top": 5,
+   "union_records_at_top": 0,
+   "top_share_of_wages": 0.137455323,
+   "union_wage_share": 0.211527779,
+   "union_wage_share_top_out": 0.245236896,
+   "union_earner_share": 0.335594183
+  },
+  "mining": {
+   "records": 359,
+   "records_at_top": 3,
+   "union_records_at_top": 3,
+   "top_share_of_wages": 0.096706402,
+   "union_wage_share": 0.218062877,
+   "union_wage_share_top_out": 0.134348871,
+   "union_earner_share": 0.149747452
+  },
+  "utilities": {
+   "records": 534,
+   "records_at_top": 0,
+   "union_records_at_top": 0,
+   "top_share_of_wages": 0.0,
+   "union_wage_share": 0.08540399,
+   "union_wage_share_top_out": 0.08540399,
+   "union_earner_share": 0.108506244
+  },
+  "construction": {
+   "records": 4640,
+   "records_at_top": 20,
+   "union_records_at_top": 3,
+   "top_share_of_wages": 0.065780737,
+   "union_wage_share": 0.170611787,
+   "union_wage_share_top_out": 0.170479241,
+   "union_earner_share": 0.219861071
+  },
+  "durable": {
+   "records": 3928,
+   "records_at_top": 22,
+   "union_records_at_top": 2,
+   "top_share_of_wages": 0.060109613,
+   "union_wage_share": 0.071739164,
+   "union_wage_share_top_out": 0.072164657,
+   "union_earner_share": 0.100431536
+  },
+  "nondurable": {
+   "records": 2213,
+   "records_at_top": 7,
+   "union_records_at_top": 1,
+   "top_share_of_wages": 0.022169832,
+   "union_wage_share": 0.07346394,
+   "union_wage_share_top_out": 0.072874233,
+   "union_earner_share": 0.110705184
+  },
+  "wholesale": {
+   "records": 1260,
+   "records_at_top": 7,
+   "union_records_at_top": 0,
+   "top_share_of_wages": 0.063841514,
+   "union_wage_share": 0.078848924,
+   "union_wage_share_top_out": 0.084226042,
+   "union_earner_share": 0.121195113
+  },
+  "retail": {
+   "records": 7196,
+   "records_at_top": 10,
+   "union_records_at_top": 1,
+   "top_share_of_wages": 0.033799009,
+   "union_wage_share": 0.099046012,
+   "union_wage_share_top_out": 0.101442144,
+   "union_earner_share": 0.123118009
+  },
+  "transportation": {
+   "records": 2954,
+   "records_at_top": 6,
+   "union_records_at_top": 0,
+   "top_share_of_wages": 0.047140754,
+   "union_wage_share": 0.090684173,
+   "union_wage_share_top_out": 0.095170586,
+   "union_earner_share": 0.11855347
+  },
+  "information": {
+   "records": 1024,
+   "records_at_top": 6,
+   "union_records_at_top": 0,
+   "top_share_of_wages": 0.059199501,
+   "union_wage_share": 0.037478989,
+   "union_wage_share_top_out": 0.03983734,
+   "union_earner_share": 0.066839397
+  },
+  "finance": {
+   "records": 3023,
+   "records_at_top": 25,
+   "union_records_at_top": 0,
+   "top_share_of_wages": 0.080922493,
+   "union_wage_share": 0.036585405,
+   "union_wage_share_top_out": 0.039806659,
+   "union_earner_share": 0.068818739
+  },
+  "real_estate": {
+   "records": 1060,
+   "records_at_top": 5,
+   "union_records_at_top": 0,
+   "top_share_of_wages": 0.040675567,
+   "union_wage_share": 0.085868955,
+   "union_wage_share_top_out": 0.089509818,
+   "union_earner_share": 0.102892657
+  },
+  "professional": {
+   "records": 5386,
+   "records_at_top": 39,
+   "union_records_at_top": 0,
+   "top_share_of_wages": 0.062921173,
+   "union_wage_share": 0.048699623,
+   "union_wage_share_top_out": 0.051969612,
+   "union_earner_share": 0.065934342
+  },
+  "management": {
+   "records": 59,
+   "records_at_top": 0,
+   "union_records_at_top": 0,
+   "top_share_of_wages": 0.0,
+   "union_wage_share": 0.022173269,
+   "union_wage_share_top_out": 0.022173269,
+   "union_earner_share": 0.081574802
+  },
+  "administrative": {
+   "records": 2604,
+   "records_at_top": 4,
+   "union_records_at_top": 0,
+   "top_share_of_wages": 0.034007554,
+   "union_wage_share": 0.131448175,
+   "union_wage_share_top_out": 0.136075779,
+   "union_earner_share": 0.173614032
+  },
+  "education": {
+   "records": 2570,
+   "records_at_top": 8,
+   "union_records_at_top": 0,
+   "top_share_of_wages": 0.061411217,
+   "union_wage_share": 0.054637071,
+   "union_wage_share_top_out": 0.058211937,
+   "union_earner_share": 0.072930281
+  },
+  "health": {
+   "records": 8987,
+   "records_at_top": 28,
+   "union_records_at_top": 1,
+   "top_share_of_wages": 0.044242435,
+   "union_wage_share": 0.059056027,
+   "union_wage_share_top_out": 0.060991603,
+   "union_earner_share": 0.082567288
+  },
+  "arts": {
+   "records": 1225,
+   "records_at_top": 4,
+   "union_records_at_top": 0,
+   "top_share_of_wages": 0.102869688,
+   "union_wage_share": 0.063188158,
+   "union_wage_share_top_out": 0.070433646,
+   "union_earner_share": 0.10545914
+  },
+  "accommodation_food": {
+   "records": 4801,
+   "records_at_top": 5,
+   "union_records_at_top": 1,
+   "top_share_of_wages": 0.022776421,
+   "union_wage_share": 0.154528651,
+   "union_wage_share_top_out": 0.151184847,
+   "union_earner_share": 0.167268155
+  },
+  "other_services": {
+   "records": 2657,
+   "records_at_top": 3,
+   "union_records_at_top": 1,
+   "top_share_of_wages": 0.033803306,
+   "union_wage_share": 0.093176149,
+   "union_wage_share_top_out": 0.088271048,
+   "union_earner_share": 0.105085595
+  },
+  "government": {
+   "records": 10517,
+   "records_at_top": 26,
+   "union_records_at_top": 2,
+   "top_share_of_wages": 0.04338764,
+   "union_wage_share": 0.079871738,
+   "union_wage_share_top_out": 0.082232919,
+   "union_earner_share": 0.090807073
+  },
+  "households": {
+   "records": 277,
+   "records_at_top": 0,
+   "union_records_at_top": 0,
+   "top_share_of_wages": 0.0,
+   "union_wage_share": 0.176434827,
+   "union_wage_share_top_out": 0.176434827,
+   "union_earner_share": 0.154991335
+  }
+ },
+ "lineage_inference": {
+  "counts": {
+   "added": 3039719.593185237,
+   "identified_g3plus": 14342574.606276,
+   "lineage_population": 42752212.92438524
+  },
+  "members": {
+   "g3plus": 1956998.3691152572,
+   "white": 1082721.22406998
+  },
+  "by_reading": {
+   "low": {
+    "personal": {
+     "added_bn": -5.626107327,
+     "union_plus_added_bn": -72.107416558,
+     "g3plus_per_person_usd": 1546.877137915,
+     "white_at_g3plus_ages_per_person_usd": 2400.314349475,
+     "white_per_person_usd": 3231.262971183
+    },
+    "shared": {
+     "added_bn": -7.572949038,
+     "union_plus_added_bn": -80.17039455,
+     "g3plus_per_person_usd": 2077.22955462,
+     "white_at_g3plus_ages_per_person_usd": 3239.812898955,
+     "white_per_person_usd": 3151.632801307
+    }
+   },
+   "high": {
+    "personal": {
+     "added_bn": -3.309901855,
+     "union_plus_added_bn": -43.575172407,
+     "g3plus_per_person_usd": 927.764141981,
+     "white_at_g3plus_ages_per_person_usd": 1380.104970075,
+     "white_per_person_usd": 1852.678883068
+    },
+    "shared": {
+     "added_bn": -4.429901434,
+     "union_plus_added_bn": -48.087111507,
+     "g3plus_per_person_usd": 1234.210787638,
+     "white_at_g3plus_ages_per_person_usd": 1860.638630045,
+     "white_per_person_usd": 1810.819077035
+    }
+   }
+  },
+  "rule": "[INFERENCE] added people priced as the G3+'s per-person item and as whites' per-person item at the G3+'s five-year age mix; v7 prices them with its own machinery and the factors"
+ },
+ "gates": [
+  {
+   "gate": "national.py's gates all passed",
+   "passed": true,
+   "detail": "76 gates"
+  },
+  {
+   "gate": "case_keys.cjs's gates all passed",
+   "passed": true,
+   "detail": "16 gates"
+  },
+  {
+   "gate": "national lines are case_keys.json's (1e-6 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "every person has 161 replicate weights",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "pwwgt0 is MARSUPWT / 100 (0.01)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "every person has a household state",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the crosswalk names one cell per code, all of them national.py's cells or GOV / NOIND",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "every wage-bearing industry code maps to a cell",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "gate": "personal: the union's wage total is the builder's (1e-9 relative)",
+   "passed": true,
+   "detail": "998,727,640,207.0337"
+  },
+  {
+   "gate": "personal: the national civilian wage total is the builder's (1e-9 relative)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "personal: the wage share and its SE are the builder's (1e-9)",
+   "passed": true,
+   "detail": "0.083234408 (SE 0.001400974)"
+  },
+  {
+   "gate": "shared: the union's wage total is the builder's (1e-9 relative)",
+   "passed": true,
+   "detail": "1,072,319,445,551.3252"
+  },
+  {
+   "gate": "shared: the national civilian wage total is the builder's (1e-9 relative)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "shared: the wage share and its SE are the builder's (1e-9)",
+   "passed": true,
+   "detail": "0.087823776 (SE 0.001399602)"
+  },
+  {
+   "gate": "row 4 naturalized: records, CPS population and main factor are production_row4.json's",
+   "passed": true,
+   "detail": "943 records, factor 0.855625589750"
+  },
+  {
+   "gate": "row 4 naturalized: the replicate factors' range is production_row4.json's (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "row 4 noncitizen: records, CPS population and main factor are production_row4.json's",
+   "passed": true,
+   "detail": "2139 records, factor 0.778126999947"
+  },
+  {
+   "gate": "row 4 noncitizen: the replicate factors' range is production_row4.json's (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "row 4 moves no civilian outside the union",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the union on row 4 is the account's 39,712,493 (1e-3)",
+   "passed": true,
+   "detail": "39,712,493.331"
+  },
+  {
+   "gate": "the union's G3+ on row 4 is the case's identified G3+ (1e-3)",
+   "passed": true,
+   "detail": "14,342,574.606"
+  },
+  {
+   "gate": "the case's account union is row 4's (1e-3)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "personal: spreading the wages at or above $1M keeps every group's total in every weight column (1e-12)",
+   "passed": true,
+   "detail": "7.8e-16"
+  },
+  {
+   "gate": "personal: the generations add to the union in every cell and weight column (1e-12 of the largest cell)",
+   "passed": true,
+   "detail": "2.5e-15"
+  },
+  {
+   "gate": "personal: each fill-in method's change on the wage key splits into the generations' (1e-9 bn)",
+   "passed": true,
+   "detail": "6.4e-15"
+  },
+  {
+   "gate": "shared: spreading the wages at or above $1M keeps every group's total in every weight column (1e-12)",
+   "passed": true,
+   "detail": "8.9e-16"
+  },
+  {
+   "gate": "shared: the generations add to the union in every cell and weight column (1e-12 of the largest cell)",
+   "passed": true,
+   "detail": "2.6e-15"
+  },
+  {
+   "gate": "shared: each fill-in method's change on the wage key splits into the generations' (1e-9 bn)",
+   "passed": true,
+   "detail": "2.6e-14"
+  },
+  {
+   "gate": "personal: the corrected generations add to the union's fill-in change (1e-12)",
+   "passed": true,
+   "detail": "-0.020841929"
+  },
+  {
+   "gate": "shared: the corrected generations add to the union's fill-in change (1e-12)",
+   "passed": true,
+   "detail": "-0.015620391"
+  },
+  {
+   "gate": "every cell with a tax amount has national CPS wages under both allocations",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "gate": "every cell has a sector",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "counties: every land share is positive and every implied land-price fall in [0, 1]",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the high reading's corporate response is TP-5's normal-return share, twice OTA's 2021 labor share (1e-12)",
+   "passed": true,
+   "detail": "0.37"
+  },
+  {
+   "gate": "mining's cells carry no tax in the item's vectors, and every other cell keeps its own",
+   "passed": true,
+   "detail": "c_and_i_property 21.072 bn out, other_production_taxes 28.463 bn out, corporate 12.177 bn out"
+  },
+  {
+   "gate": "the nonprofit cut stays inside each cell's stock (scaled share <= 1)",
+   "passed": true,
+   "detail": "scale 1.794 / 1.597"
+  },
+  {
+   "gate": "the plain-wage-share ceiling reproduces the receipt lane's -86.848983 / -80.976701 (1e-6)",
+   "passed": true,
+   "detail": "-86.848983 / -80.976702"
+  },
+  {
+   "gate": "low, personal: the generations' items add to the union's, and the union's is the central (1e-9 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "high, personal: the generations' items add to the union's, and the union's is the central (1e-9 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "low, shared: the generations' items add to the union's, and the union's is the central (1e-9 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "high, shared: the generations' items add to the union's, and the union's is the central (1e-9 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "low, personal: the sectors' parts add to the central (1e-9 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "high, personal: the sectors' parts add to the central (1e-9 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "low, shared: the sectors' parts add to the central (1e-9 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "high, shared: the sectors' parts add to the central (1e-9 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "low, personal: per-person items sum to the union's item (1e-6 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "low, shared: per-person items sum to the union's item (1e-6 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "high, personal: per-person items sum to the union's item (1e-6 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "high, shared: per-person items sum to the union's item (1e-6 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "low, personal: mining's components add to what the arm adds to the central (1e-9 bn)",
+   "passed": true,
+   "detail": "-7.3586 bn"
+  },
+  {
+   "gate": "high, personal: mining's components add to what the arm adds to the central (1e-9 bn)",
+   "passed": true,
+   "detail": "-6.4028 bn"
+  },
+  {
+   "gate": "low, shared: mining's components add to what the arm adds to the central (1e-9 bn)",
+   "passed": true,
+   "detail": "-7.7190 bn"
+  },
+  {
+   "gate": "high, shared: mining's components add to what the arm adds to the central (1e-9 bn)",
+   "passed": true,
+   "detail": "-6.7157 bn"
+  },
+  {
+   "gate": "the residential parts are the RESIDENTIAL cell's other production taxes (1e-6 bn)",
+   "passed": true,
+   "detail": "26.629311"
+  },
+  {
+   "gate": "v6's owner and tenant property responses are the same at both ends",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the residential parts' generations add to the union (1e-9 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "item file central: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "item file mining_as_other_industries: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "item file normal_return_share: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "item file normal_return_share_0_25: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "item file normal_return_share_by_industry: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "item file plain_wage_share: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "item file foreign_source_removed: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "item file business_land_at_0: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "item file business_land_at_1: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "item file floor: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "item file case_wage_key: group_bn = key_share x national, the generations add to it, factor.union = key_share / plain_wage_share (1e-9), plain_wage_share is the case's wage key and both readings have a response",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "item file central: the lines' nationals are the case's (1e-6); corporate responds 1 low and TP-5's share high, the other two lines alike at both",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "item file: the central and six arms are items.csv's at both readings (1e-9 bn)",
+   "passed": true,
+   "detail": "2.1e-14"
+  },
+  {
+   "gate": "item file normal_return_share_by_industry: personal is items.csv's at the high reading (1e-9 bn), shared within 0.25 bn (one response, the personal one, for both allocations)",
+   "passed": true,
+   "detail": "shared -0.1269 bn"
+  }
+ ]
+}

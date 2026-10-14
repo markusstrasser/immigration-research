@@ -1,0 +1,62 @@
+{
+ "bea_SUPPLY-USE.zip": {
+  "url": "https://apps.bea.gov/industry/release/zip/SUPPLY-USE.zip",
+  "bytes": 4882928,
+  "sha256": "3f16466e11eef0ed562d3663907f4a4a65856c134aa9f8baf7da6460bd11987d"
+ },
+ "bea_Section6All_xls.xlsx": {
+  "url": "https://apps.bea.gov/national/Release/XLS/Survey/Section6All_xls.xlsx",
+  "bytes": 324268,
+  "sha256": "4abc98d1379d94f815556f7d70650ae82dda33832200b87901a7556f893c8511"
+ },
+ "bea_fa_Section3All_xls.xlsx": {
+  "url": "https://apps.bea.gov/national/FixedAssets/Release/XLS/Section3All_xls.xlsx",
+  "bytes": 2040002,
+  "sha256": "5e02af61a2093c049514ef963f8b1e5fbbc41d64615c577383241e1b2e81a8a5"
+ },
+ "bea_fa_Section4All_xls.xlsx": {
+  "url": "https://apps.bea.gov/national/FixedAssets/Release/XLS/Section4All_xls.xlsx",
+  "bytes": 576795,
+  "sha256": "c34e8b206989b846fff18d439c096e66776a88e7e2fd2c43b97eadb24efa773a"
+ },
+ "bea_fa_Section5All_xls.xlsx": {
+  "url": "https://apps.bea.gov/national/FixedAssets/Release/XLS/Section5All_xls.xlsx",
+  "bytes": 115854,
+  "sha256": "90eaae674cec8d3df318b3a424d36c191737adec5697d5b37ee4413f0c578db8"
+ },
+ "census_2022_industry_code_list.xlsx": {
+  "url": "https://www2.census.gov/programs-surveys/demo/guidance/industry-occupation/2022-Census-Industry-Code-List-with-Crosswalk.xlsx",
+  "bytes": 102789,
+  "sha256": "c9d2e004b2735c3975f0768e7dac704df6d2e0b36b24d33f5dbc7109cab5628c"
+ },
+ "frb_z1_20260911_csv_files.zip": {
+  "url": "https://www.federalreserve.gov/releases/z1/20260911/z1_csv_files.zip",
+  "bytes": 8336582,
+  "sha256": "b63af9755437df0fb88b7cf346f8f9eaeb22bf1aa2b5df1709334135c43de4b6"
+ },
+ "irs_p5655_ty2021.pdf": {
+  "url": "https://www.irs.gov/pub/irs-prior/p5655--2024.pdf",
+  "bytes": 282791,
+  "sha256": "143ecac3eb4f9409899d72775de76b5628d5e3a52940554114dfc9176d325b4a"
+ },
+ "irs_soi_coftc_ty2021.pdf": {
+  "url": "https://www.irs.gov/pub/irs-soi/soi-a-coftc-id2503.pdf",
+  "bytes": 926902,
+  "sha256": "b8e49373b95da839c38ebd5811217cbde2a8623ab4da57bb1f5aae9bdf4945cf"
+ },
+ "taxfoundation_tpp_2023.html": {
+  "url": "https://taxfoundation.org/research/all/state/personal-property-tax-exemption-small-business/",
+  "bytes": 151362,
+  "sha256": "2b2e393db5e24a6754e42d86e60f22b1fc1b5010719092276759fc1b4f420e3d"
+ },
+ "treasury_ota_summary_2021.pdf": {
+  "url": "https://home.treasury.gov/system/files/131/Summary-of-OTA-Distribution-Methodology-05102021.pdf",
+  "bytes": 158381,
+  "sha256": "a9b3af8c7cde0297f1b04747613e1ba65fcdf6432716797b03bb9aaf304c85a7"
+ },
+ "treasury_ota_wp111_2016.pdf": {
+  "url": "https://home.treasury.gov/system/files/131/wp-111.pdf",
+  "bytes": 366790,
+  "sha256": "24ed934b0be75c5f3f6f6067aeb1653dae7792bfc485dc08fd780306da4233e1"
+ }
+}

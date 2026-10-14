@@ -1,0 +1,306 @@
+census_code,description,naics,bea_industry,sector,pf_industry,cps_wage_earners,national_wages_bn,union_wages_bn,union_wage_share
+0170,Crop production,111,111CA,agriculture,,533,55.947290,14.385533,0.257126532
+0180,Animal production and aquaculture,112,111CA,agriculture,,239,23.619902,3.928733,0.166331448
+0190,Forestry except logging,"1131, 1132",113FF,agriculture,,27,2.986638,0.068117,0.022807390
+0270,Logging,1133,113FF,agriculture,,22,1.638315,0.017936,0.010947539
+0280,"Fishing, hunting, and trapping",114,113FF,agriculture,,13,1.212783,0.243521,0.200795488
+0290,Support activities for agriculture and forestry,115,113FF,agriculture,,53,11.865103,1.275283,0.107481828
+0370,Oil and gas extraction,211,211,mining,Mining,39,11.585411,4.408274,0.380502170
+0380,Coal mining,2121,212,mining,Mining,31,2.737104,0.286447,0.104653448
+0390,Metal ore mining,2122,212,mining,Mining,20,2.804586,0.552412,0.196967355
+0470,Nonmetallic mineral mining and quarrying,2123,212,mining,Mining,40,4.917199,0.557792,0.113437039
+0490,Support activities for mining,213,213,mining,Mining,228,42.330149,8.358294,0.197454859
+0570,"Electric power generation, transmission and distribution",2211,22,utilities,Utilities,383,93.492947,7.290174,0.077975661
+0580,Natural gas distribution,2212,22,utilities,Utilities,54,10.124994,1.579933,0.156042855
+0590,"Electric and gas, and other combinations","Pts. 2211, 2212",22,utilities,Utilities,51,16.733586,0.879395,0.052552683
+0670,"Water, steam, air-conditioning, and irrigation systems","22131, 22133",22,utilities,Utilities,125,21.238201,3.437419,0.161850747
+0680,Sewage treatment facilities,22132,22,utilities,Utilities,49,6.227478,0.991943,0.159284815
+0690,Not specified utilities,Part of 22,22,utilities,Utilities,8,3.204053,0.330585,0.103177220
+0770,Construction,23,23,construction,Construction,4824,804.525933,134.552407,0.167244338
+1070,"Animal food, grain and oilseed milling","3111, 3112",311FT,nondurable,Nondurable Manufacturing,79,14.352334,0.927016,0.064589913
+1080,Sugar and confectionery products,3113,311FT,nondurable,Nondurable Manufacturing,39,6.820436,0.473650,0.069445754
+1090,Fruit and vegetable preserving and specialty food manufacturing,3114,311FT,nondurable,Nondurable Manufacturing,43,6.236855,0.585077,0.093809603
+1170,Dairy product manufacturing,3115,311FT,nondurable,Nondurable Manufacturing,74,10.135356,1.061604,0.104742651
+1180,Animal slaughtering and processing,3116,311FT,nondurable,Nondurable Manufacturing,235,19.927323,2.640873,0.132525204
+1190,Retail bakeries,311811,311FT,nondurable,Nondurable Manufacturing,107,8.339955,0.862719,0.103444127
+1270,"Bakeries and tortilla manufacturing, except retail bakeries",3118 exc. 311811,311FT,nondurable,Nondurable Manufacturing,72,7.985289,1.134813,0.142112920
+1280,"Seafood and other miscellaneous foods, n.e.c.","3117, 3119",311FT,nondurable,Nondurable Manufacturing,110,20.867673,3.363200,0.161167960
+1290,Not specified food industries,Part of 311,311FT,nondurable,Nondurable Manufacturing,42,9.890378,0.900468,0.091044868
+1370,Beverage manufacturing,3121,311FT,nondurable,Nondurable Manufacturing,114,21.474663,1.066811,0.049677651
+1390,Tobacco manufacturing,3122,311FT,nondurable,Nondurable Manufacturing,4,0.962493,0.000000,0.000000000
+1470,"Fiber, yarn, and thread mills",3131,313TT,nondurable,Nondurable Manufacturing,5,0.386372,0.000000,0.000000000
+1480,"Fabric mills, except knitting",3132 exc. 31324,313TT,nondurable,Nondurable Manufacturing,31,3.608621,0.147023,0.040742257
+1490,Textile and fabric finishing and coating mills,3133,313TT,nondurable,Nondurable Manufacturing,5,0.584169,0.000000,0.000000000
+1570,Carpet and rug mills,31411,313TT,nondurable,Nondurable Manufacturing,16,2.256155,0.066257,0.029367340
+1590,"Textile product mills, except carpets and rugs",314 exc. 31411,313TT,nondurable,Nondurable Manufacturing,18,1.991950,0.057139,0.028685067
+1670,"Knitting fabric mills, and apparel knitting mills","31324, 3151",315AL,nondurable,Nondurable Manufacturing,3,0.956135,0.068738,0.071891022
+1691,"Cut and sew, and apparel accessories and other apparel manufacturing","3152, 3159",315AL,nondurable,Nondurable Manufacturing,55,8.690803,0.690245,0.079422503
+1770,Footwear manufacturing,3162,315AL,nondurable,Nondurable Manufacturing,14,2.520106,0.061864,0.024548265
+1790,"Leather and hide tanning and finishing, and other leather and allied product manufacturing","3161, 3169",315AL,nondurable,Nondurable Manufacturing,10,0.652240,0.079609,0.122054312
+1870,"Pulp, paper, and paperboard mills",3221,322,nondurable,Nondurable Manufacturing,83,15.979515,2.069271,0.129495239
+1880,Paperboard containers and boxes,32221,322,nondurable,Nondurable Manufacturing,23,5.409536,0.343316,0.063465028
+1890,Miscellaneous paper and pulp products,"32222, 32223, 32229",322,nondurable,Nondurable Manufacturing,27,4.663556,0.170354,0.036528786
+1990,Printing and related support activities,3231,323,nondurable,Nondurable Manufacturing,135,19.563197,1.196286,0.061149802
+2070,Petroleum refining,32411,324,nondurable,Fossil Fuel,59,13.584000,1.704893,0.125507424
+2090,Miscellaneous petroleum and coal products,32419,324,nondurable,Fossil Fuel,14,2.619490,0.137912,0.052648473
+2170,"Resin, synthetic rubber and fibers, and filaments manufacturing",3252,325,nondurable,Chemical Manufacturing,82,15.468124,0.855205,0.055288222
+2180,Agricultural chemical manufacturing,3253,325,nondurable,Chemical Manufacturing,19,3.749397,0.030082,0.008023233
+2190,Pharmaceutical and medicine manufacturing,3254,325,nondurable,Chemical Manufacturing,264,81.908441,3.084383,0.037656474
+2270,"Paint, coating, and adhesive manufacturing",3255,325,nondurable,Chemical Manufacturing,15,3.903509,0.420690,0.107772284
+2280,"Soap, cleaning compound, and cosmetics manufacturing",3256,325,nondurable,Chemical Manufacturing,56,14.032268,1.016148,0.072415128
+2290,Industrial and miscellaneous chemicals,"3251, 3259",325,nondurable,Chemical Manufacturing,214,56.570000,3.261043,0.057646149
+2370,Plastics product manufacturing,3261,326,nondurable,Nondurable Manufacturing,117,17.048479,1.362505,0.079919450
+2380,Tire manufacturing,32621,326,nondurable,Nondurable Manufacturing,29,4.013841,0.182244,0.045403989
+2390,"Rubber products, except tires, manufacturing","32622, 32629",326,nondurable,Nondurable Manufacturing,13,2.172097,0.000000,0.000000000
+2470,"Pottery, ceramics, and plumbing fixture manufacturing",32711,327,durable,Metal and Machinery Manufacturing,5,0.740646,0.000000,0.000000000
+2480,Clay building material and refractories manufacturing,327120,327,durable,Metal and Machinery Manufacturing,12,2.649549,0.293871,0.110913704
+2490,Glass and glass product manufacturing,3272,327,durable,Metal and Machinery Manufacturing,41,7.313617,0.254538,0.034803313
+2570,"Cement, concrete, lime, and gypsum product manufacturing","3273, 3274",327,durable,Metal and Machinery Manufacturing,66,12.993189,1.501790,0.115582854
+2590,Miscellaneous nonmetallic mineral product manufacturing,3279,327,durable,Metal and Machinery Manufacturing,17,2.684354,0.220814,0.082259798
+2670,Iron and steel mills and steel product manufacturing,"3311, 3312",331,durable,Metal and Machinery Manufacturing,91,16.845201,2.099239,0.124619423
+2680,Aluminum production and processing,3313,331,durable,Metal and Machinery Manufacturing,23,3.163584,0.101489,0.032080263
+2690,Nonferrous metal (except aluminum) production and processing,3314,331,durable,Metal and Machinery Manufacturing,6,0.986775,0.000000,0.000000000
+2770,Foundries,3315,331,durable,Metal and Machinery Manufacturing,32,4.610954,0.359675,0.078004555
+2780,Metal forgings and stampings,3321,332,durable,Metal and Machinery Manufacturing,7,1.212765,0.333937,0.275351930
+2790,Cutlery and hand tool manufacturing,3322,332,durable,Metal and Machinery Manufacturing,18,2.536142,0.025703,0.010134868
+2870,"Structural metals, and boiler, tank, and shipping container manufacturing","3323, 3324",332,durable,Metal and Machinery Manufacturing,130,20.265046,1.674762,0.082642868
+2880,"Machine shops; turned product; screw, nut and bolt manufacturing",3327,332,durable,Metal and Machinery Manufacturing,99,18.085487,2.671259,0.147701778
+2890,"Coating, engraving, heat treating and allied activities",3328,332,durable,Metal and Machinery Manufacturing,21,3.657857,1.578405,0.431510947
+2970,Ordnance,"332992, 332993, 332994, 332996",332,durable,Metal and Machinery Manufacturing,34,4.852491,0.000000,0.000000000
+2980,Miscellaneous fabricated metal products manufacturing,"3325, 3326, 3329 exc. 332992, 332993, 332994, 332996",332,durable,Metal and Machinery Manufacturing,123,21.532265,1.807889,0.083961840
+2990,Not specified metal industries,Part of 331 and 332,332,durable,Metal and Machinery Manufacturing,13,1.266471,0.360875,0.284945118
+3070,Agricultural implement manufacturing,33311,333,durable,Metal and Machinery Manufacturing,50,5.814010,0.345980,0.059507998
+3080,"Construction, and mining and oil and gas field machinery manufacturing","33312, 33313",333,durable,Metal and Machinery Manufacturing,71,17.080088,0.665505,0.038963773
+3095,Commercial and service industry machinery manufacturing,3333,333,durable,Metal and Machinery Manufacturing,34,5.930368,0.423816,0.071465407
+3170,Metalworking machinery manufacturing,3335,333,durable,Metal and Machinery Manufacturing,19,3.360502,0.183909,0.054726640
+3180,"Engine, turbine, and power transmission equipment manufacturing",3336,333,durable,Metal and Machinery Manufacturing,28,5.933265,0.175876,0.029642434
+3291,"Machinery manufacturing, n.e.c. or not specified","3332, 3334, 3339, Part of 333",333,durable,Metal and Machinery Manufacturing,344,91.920988,6.446020,0.070125666
+3365,Computer and peripheral equipment manufacturing,3341,334,durable,Technology,42,11.561901,0.918685,0.079457947
+3370,"Communications, audio, and video equipment manufacturing","3342, 3343",334,durable,Technology,43,13.368874,1.009212,0.075489645
+3380,"Navigational, measuring, electromedical, and control instruments manufacturing",3345,334,durable,Technology,70,22.268305,1.231602,0.055307378
+3390,"Electronic component and product manufacturing, n.e.c.","3344, 3346",334,durable,Technology,285,92.431911,3.346799,0.036208261
+3470,Household appliance manufacturing,3352,335,durable,Metal and Machinery Manufacturing,33,5.191830,0.291578,0.056160951
+3490,"Electric lighting and electrical equipment manufacturing, and other electrical component manufacturing, n.e.c.","3351, 3353, 3359",335,durable,Metal and Machinery Manufacturing,147,29.178348,2.030153,0.069577363
+3570,Motor vehicles and motor vehicle equipment manufacturing,"3361, 3362, 3363",3361MV,durable,Metal and Machinery Manufacturing,524,117.050767,9.639160,0.082350254
+3580,Aircraft and parts manufacturing,"336411, 336412, 336413",3364OT,durable,Metal and Machinery Manufacturing,399,124.082073,8.108016,0.065343977
+3590,Aerospace products and parts manufacturing,"336414, 336415, 336419",3364OT,durable,Metal and Machinery Manufacturing,20,3.786275,0.169713,0.044823215
+3670,Railroad rolling stock manufacturing,3365,3364OT,durable,Metal and Machinery Manufacturing,11,2.992312,0.201236,0.067251014
+3680,Ship and boat building,3366,3364OT,durable,Metal and Machinery Manufacturing,120,21.664587,0.851215,0.039290614
+3690,Other transportation equipment manufacturing,3369,3364OT,durable,Metal and Machinery Manufacturing,19,2.079863,0.000000,0.000000000
+3770,Sawmills and wood preservation,3211,321,durable,Metal and Machinery Manufacturing,66,7.835006,1.033971,0.131968087
+3780,"Veneer, plywood, and engineered wood products",3212,321,durable,Metal and Machinery Manufacturing,14,3.282113,0.198056,0.060344154
+3790,Prefabricated wood buildings and mobile homes manufacturing,"321991, 321992",321,durable,Metal and Machinery Manufacturing,14,2.542396,0.000000,0.000000000
+3875,Miscellaneous wood products,"3219 exc. 321991, 321992",321,durable,Metal and Machinery Manufacturing,63,6.463777,1.630738,0.252288764
+3895,Furniture and related product manufacturing,337,337,durable,Metal and Machinery Manufacturing,150,22.988471,2.448428,0.106506785
+3960,Medical equipment and supplies manufacturing,3391,339,durable,Metal and Machinery Manufacturing,303,79.415469,3.038880,0.038265596
+3970,"Sporting and athletic goods, and doll, toy and game manufacturing","33992, 33993",339,durable,Metal and Machinery Manufacturing,37,5.907103,0.233928,0.039601222
+3980,"Miscellaneous manufacturing, n.e.c.","3399 exc. 33992, 33993",339,durable,Metal and Machinery Manufacturing,201,35.643994,3.723994,0.104477463
+3990,Not specified manufacturing industries,"Part of 31, 32, 33",339,durable,Metal and Machinery Manufacturing,134,20.602671,2.569075,0.124696229
+4070,Motor vehicle and motor vehicle parts and supplies merchant wholesalers,4231,42,wholesale,Wholesale and Retail Trade,46,7.107125,0.492047,0.069232875
+4080,Furniture and home furnishing merchant wholesalers,4232,42,wholesale,Wholesale and Retail Trade,26,5.162447,0.424391,0.082207397
+4090,Lumber and other construction materials merchant wholesalers,4233,42,wholesale,Wholesale and Retail Trade,74,16.746875,0.859861,0.051344576
+4170,Professional and commercial equipment and supplies merchant wholesalers,4234,42,wholesale,Wholesale and Retail Trade,95,23.315354,1.435392,0.061564217
+4180,"Metals and minerals, except petroleum merchant wholesalers",4235,42,wholesale,Wholesale and Retail Trade,16,4.919648,0.163223,0.033177830
+4195,Household appliances and electrical and electronic goods merchant wholesalers,4236,42,wholesale,Wholesale and Retail Trade,71,14.718760,0.199761,0.013571893
+4265,"Hardware, and plumbing and heating equipment, and supplies merchant wholesalers",4237,42,wholesale,Wholesale and Retail Trade,58,10.588612,0.468419,0.044237977
+4270,"Machinery, equipment, and supplies merchant wholesalers",4238,42,wholesale,Wholesale and Retail Trade,145,26.451800,2.857010,0.108008143
+4280,Recyclable material merchant wholesalers,42393,42,wholesale,Wholesale and Retail Trade,26,3.060419,0.022856,0.007468340
+4290,Miscellaneous durable goods merchant wholesalers,4239 exc. 42393,42,wholesale,Wholesale and Retail Trade,44,14.804471,1.318897,0.089087723
+4370,Paper and paper products merchant wholesalers,4241,42,wholesale,Wholesale and Retail Trade,14,3.411172,0.000000,0.000000000
+4380,"Drugs, sundries, and chemical and allied products merchant wholesalers","4242, 4246",42,wholesale,Wholesale and Retail Trade,85,26.390943,0.806581,0.030562784
+4390,"Apparel, piece goods, and notions merchant wholesalers",4243,42,wholesale,Wholesale and Retail Trade,29,5.444248,0.341960,0.062811228
+4470,Grocery and related product merchant wholesalers,4244,42,wholesale,Wholesale and Retail Trade,314,57.146645,8.587900,0.150278281
+4480,Farm product raw material merchant wholesalers,4245,42,wholesale,Wholesale and Retail Trade,17,3.865580,0.051483,0.013318381
+4490,Petroleum and petroleum products merchant wholesalers,4247,42,wholesale,Wholesale and Retail Trade,46,12.778706,0.083476,0.006532448
+4560,Alcoholic beverages merchant wholesalers,4248,42,wholesale,Wholesale and Retail Trade,48,9.838870,0.146807,0.014921127
+4570,Farm supplies merchant wholesalers,42491,42,wholesale,Wholesale and Retail Trade,24,5.184606,1.354158,0.261188295
+4580,Miscellaneous nondurable goods merchant wholesalers,4249 exc. 42491,42,wholesale,Wholesale and Retail Trade,49,8.858022,0.864386,0.097582296
+4585,Wholesale electronic markets and agents and brokers,4251,42,wholesale,Wholesale and Retail Trade,9,3.240997,0.158136,0.048792305
+4590,Not specified wholesale trade,Part of 42,42,wholesale,Wholesale and Retail Trade,28,4.243872,0.401728,0.094660696
+4670,Automobile dealers,4411,441,retail,Wholesale and Retail Trade,508,101.047201,8.880737,0.087887014
+4680,Other motor vehicle dealers,4412,441,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+4690,"Auto parts, accessories, and tire stores",4413,441,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+4770,Furniture and home furnishings stores,442,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+4780,Household appliance stores,443141,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+4795,Electronics stores,443142,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+4870,Building material and supplies dealers,4441 exc. 44413,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+4880,Hardware stores,44413,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+4890,Lawn and garden equipment and supplies stores,4442,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+4971,Supermarkets and Other Grocery (except Convenience) Stores,44511,445,retail,Wholesale and Retail Trade,1077,97.453439,14.542898,0.149229195
+4972,Convenience Stores,44512,445,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+4980,Specialty food stores,4452,445,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+4990,"Beer, wine, and liquor stores",4453,445,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5070,Pharmacies and drug stores,44611,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5080,"Health and personal care, except drug, stores",446 exc. 44611,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5090,Gasoline stations,447,4A0,retail,Wholesale and Retail Trade,245,18.332353,1.869375,0.101971348
+5170,Clothing stores,4481,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5180,Shoe stores,44821,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5190,"Jewelry, luggage, and leather goods stores",4483,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5275,"Sporting goods, and hobby and toy stores","45111, 45112",4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5280,"Sewing, needlework, and piece goods stores",45113,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5295,Musical instrument and supplies stores,45114,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5370,Book stores and news dealers,45121,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5381,Department stores,45221,452,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5391,"General merchandise stores, including warehouse clubs and supercenters",4523,452,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5470,Florists,4531,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5480,Office supplies and stationery stores,45321,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5490,Used merchandise stores,4533,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5570,"Gift, novelty, and souvenir shops",45322,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5580,Miscellaneous retail stores,4539,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5593,Electronic shopping and mail-order houses,454110,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5670,Vending machine operators,4542,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5680,Fuel dealers,454310,4A0,retail,Wholesale and Retail Trade,37,9.731646,0.934411,0.096017731
+5690,Other direct selling establishments,45439,4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+5790,Not specified retail trade,"Part of 44, 45",4A0,retail,Wholesale and Retail Trade,0,0.000000,0.000000,
+6070,Air transportation,481,481,transportation,Transportation and Warehousing,345,104.665278,2.728904,0.026072681
+6080,Rail transportation,482,482,transportation,Transportation and Warehousing,111,20.628164,0.721603,0.034981436
+6090,Water transportation,483,483,transportation,Transportation and Warehousing,47,8.648537,1.038068,0.120028214
+6170,Truck transportation,484,484,transportation,Transportation and Warehousing,784,142.074459,13.503776,0.095047172
+6180,Bus service and urban transit,"4851, 4852, 4854, 4855, 4859",485,transportation,Transportation and Warehousing,196,28.256193,2.059558,0.072888722
+6190,Taxi and limousine service,4853,485,transportation,Transportation and Warehousing,174,22.827436,0.913271,0.040007624
+6270,Pipeline transportation,486,486,transportation,Transportation and Warehousing,24,4.059941,0.163223,0.040203353
+6280,Scenic and sightseeing transportation,487,487OS,transportation,Transportation and Warehousing,23,2.092723,0.172920,0.082629186
+6290,Services incidental to transportation,488,487OS,transportation,Transportation and Warehousing,373,61.691002,5.604044,0.090840544
+6370,Postal Service,491,GOV,government,,285,44.851886,3.163661,0.070535735
+6380,Couriers and messengers,492,487OS,transportation,Transportation and Warehousing,554,63.151822,7.445493,0.117898311
+6390,Warehousing and storage,493,493,transportation,Transportation and Warehousing,471,56.139581,12.179030,0.216941948
+6470,Newspaper publishers,51111,511,information,Information,0,0.000000,0.000000,
+6480,"Periodical, book, and directory publishers",5111 exc. 51111,511,information,Information,0,0.000000,0.000000,
+6490,Software publishing,5112,511,information,Information,71,31.767398,0.282992,0.008908262
+6570,Motion pictures and video industries,5121,512,information,Information,175,45.559203,2.088286,0.045836747
+6590,Sound recording industries,5122,512,information,Information,11,1.779589,0.127732,0.071776232
+6670,Broadcasting (except internet),515,513,information,Information,0,0.000000,0.000000,
+6672,Internet publishing and broadcasting and web search portals,51913,514,information,Information,0,0.000000,0.000000,
+6680,Wired telecommunications carriers,517311,513,information,Information,154,38.293729,1.749646,0.045690132
+6690,"Telecommunications, except wired telecommunications carriers",517 exc. 517311,513,information,Information,176,42.385785,3.098329,0.073098307
+6695,"Data processing, hosting, and related services",5182,514,information,Information,97,40.779786,1.702664,0.041752654
+6770,Libraries and archives,51912,514,information,Information,96,10.100738,0.467422,0.046276007
+6780,"Other information services, except libraries and archives, and internet publishing and broadcasting and web search portals","5191 exc. 51912, 51913",514,information,Information,0,0.000000,0.000000,
+6870,Banking and related activities,"521, 52211, 52219",521CI,finance,,0,0.000000,0.000000,
+6880,"Savings institutions, including credit unions","52212, 52213",521CI,finance,,0,0.000000,0.000000,
+6890,Nondepository credit and related activities,"5222, 5223",521CI,finance,,432,163.799141,4.219166,0.025758167
+6970,"Securities, commodities, funds, trusts, and other financial investments","523, 525",523,finance,,537,246.357890,6.733457,0.027332014
+6991,Insurance carriers,5241,524,finance,,640,146.460343,8.254448,0.056359612
+6992,"Agencies, brokerages, and other insurance related activities",5242,524,finance,,468,108.587298,3.706792,0.034136512
+7071,"Lessors of real estate, and offices of real estate agents and brokers","5311, 5312",ORE,real_estate,,766,158.709676,13.479039,0.084928905
+7072,"Real estate property managers, offices of real estate appraisers, and other activities related to real estate",5313,ORE,real_estate,,183,43.222315,2.396728,0.055451179
+7080,Automotive equipment rental and leasing,5321,532RL,real_estate,,72,8.706515,0.468919,0.053858417
+7181,Other consumer goods rental,"53221, 532281, 532282, 532283, 532284, 532289, 5323",532RL,real_estate,,41,8.221984,1.130440,0.137489950
+7190,"Commercial, industrial, and other intangible assets rental and leasing","5324, 533",532RL,real_estate,,37,6.570144,0.576821,0.087794251
+7270,Legal services,5411,5411,professional,Service,683,245.895040,11.414160,0.046418831
+7280,"Accounting, tax preparation, bookkeeping, and payroll services",5412,5412OP,professional,Service,486,125.236255,7.067748,0.056435318
+7290,"Architectural, engineering, and related services",5413,5412OP,professional,Service,807,214.421865,14.263273,0.066519674
+7370,Specialized design services,5414,5412OP,professional,Service,169,42.332573,2.672173,0.063123321
+7380,Computer systems design and related services,5415,5415,professional,Service,1605,628.263696,22.499293,0.035811863
+7390,"Management, scientific, and technical consulting services",5416,5412OP,professional,Service,798,224.752968,8.340041,0.037107590
+7460,Scientific research and development services,5417,5412OP,professional,Service,398,107.011880,8.106651,0.075754679
+7470,"Advertising, public relations, and related services",5418,5412OP,professional,Service,230,68.466304,3.838592,0.056065415
+7480,Veterinary services,54194,5412OP,professional,Service,196,35.512327,3.487893,0.098216401
+7490,"Other professional, scientific, and technical services",5419 exc. 54194,5412OP,professional,Service,170,32.801114,2.486536,0.075806450
+7570,Management of companies and enterprises,55,55,management,Service,59,17.713379,0.392764,0.022173269
+7580,Employment services,5613,561,administrative,Service,321,55.402488,5.997405,0.108251554
+7590,Business support services,5614,561,administrative,Service,182,28.209451,2.697161,0.095611955
+7670,Travel arrangements and reservation services,5615,561,administrative,Service,163,33.583182,1.250649,0.037240342
+7680,Investigation and security services,5616,561,administrative,Service,341,43.544543,3.555042,0.081641508
+7690,Services to buildings and dwellings (except cleaning during construction and immediately after construction),5617 exc. 56173,561,administrative,Service,691,62.776159,10.251683,0.163305355
+7770,Landscaping services,56173,561,administrative,Service,578,60.346335,13.229788,0.219231008
+7780,Other administrative and other support services,"5611, 5612, 5619",561,administrative,Service,182,27.564064,3.303429,0.119845512
+7790,Waste management and remediation services,562,562,administrative,Service,268,42.642177,6.925136,0.162401098
+7860,Elementary and secondary schools,6111,61,education,Service,4397,582.499538,48.434836,0.083149999
+7870,"Colleges, universities, and professional schools, including junior colleges","6112, 6113",61,education,Service,1936,339.687333,14.535927,0.042792079
+7880,"Business, technical, and trade schools and training","6114, 6115",61,education,Service,38,10.187757,0.049660,0.004874481
+7890,"Other schools and instruction, and educational support services","6116, 6117",61,education,Service,421,53.566802,2.344949,0.043776159
+7970,Offices of physicians,6211,621,health,Service,686,155.764353,7.643341,0.049069896
+7980,Offices of dentists,6212,621,health,Service,431,77.675460,4.230089,0.054458501
+7990,Offices of chiropractors,62131,621,health,Service,50,9.690510,0.310501,0.032041751
+8070,Offices of optometrists,62132,621,health,Service,75,10.337399,0.843528,0.081599661
+8080,Offices of other health practitioners,"6213 exc. 62131, 62132",621,health,Service,168,33.600483,0.802426,0.023881388
+8090,Outpatient care centers,6214,621,health,Service,1072,193.723863,10.507936,0.054241826
+8170,Home health care services,6216,621,health,Service,605,61.287865,3.844925,0.062735505
+8180,Other health care services,"6215, 6219",621,health,Service,722,160.590499,9.313656,0.057996308
+8191,"General medical and surgical hospitals, and specialty (except psychiatric and substance abuse) hospitals","6221, 6223",622,health,Service,3250,679.325946,38.132609,0.056133008
+8192,Psychiatric and substance abuse hospitals,6222,622,health,Service,60,11.315498,0.320777,0.028348440
+8270,Nursing care facilities (skilled nursing facilities),6231,623,health,Service,625,72.557433,3.736451,0.051496463
+8290,"Residential care facilities, except skilled nursing facilities","6232, 6233, 6239",623,health,Service,432,46.459187,4.032178,0.086789676
+8370,Individual and family services,6241,624,health,Service,909,122.124190,14.365816,0.117632847
+8380,"Community food and housing, and emergency services",6242,624,health,Service,78,9.540038,0.820736,0.086030713
+8390,Vocational rehabilitation services,6243,624,health,Service,44,4.521949,0.626069,0.138451078
+8470,Child day care services,6244,624,health,Service,599,39.843146,5.006610,0.125657994
+8561,Performing arts companies,7111,711AS,arts,Service,52,7.732059,0.031883,0.004123510
+8562,Spectator sports,7112,711AS,arts,Service,49,10.682066,0.839228,0.078564183
+8563,"Promoters of performing arts, sports, and similar events, agents and managers for artists, athletes, entertainers, and other public figures","7113, 7114",711AS,arts,Service,62,17.220430,0.451611,0.026225325
+8564,"Independent artists, writers, and performers",7115,711AS,arts,Service,68,12.690485,0.100450,0.007915346
+8570,"Museums, art galleries, historical sites, and similar institutions",712,711AS,arts,Service,163,17.073084,0.809379,0.047406736
+8580,Bowling centers,71395,713,arts,Service,15,0.497412,0.065590,0.131861941
+8590,"Other amusement, gambling, and recreation industries",713 exc. 71395,713,arts,Service,1028,101.124402,8.698168,0.086014533
+8660,Traveler accommodation,7211,721,accommodation_food,Service,578,59.135364,7.378574,0.124774301
+8670,"Recreational vehicle parks and camps, and rooming and boarding houses, dormitories, and workers' camps","7212, 7213",721,accommodation_food,Service,45,4.875655,0.042058,0.008626063
+8680,Restaurants and other food services,722 exc. 7224,722,accommodation_food,Service,4132,312.395268,51.113934,0.163619423
+8690,"Drinking places, alcoholic beverages",7224,722,accommodation_food,Service,83,7.588682,0.712196,0.093849758
+8770,Automotive repair and maintenance,8111 exc. 811192,81,other_services,Service,485,65.020778,8.579718,0.131953486
+8780,Car washes,811192,81,other_services,Service,94,6.454802,1.726746,0.267513400
+8790,Electronic and precision equipment repair and maintenance,8112,81,other_services,Service,41,6.530068,0.417956,0.064004819
+8870,Commercial and industrial machinery and equipment repair and maintenance,8113,81,other_services,Service,139,20.545224,3.757382,0.182883482
+8891,Personal and household goods repair and maintenance,8114,81,other_services,Service,63,6.874848,1.105693,0.160831580
+8970,Barber shops,812111,81,other_services,Service,39,3.213099,0.360236,0.112114847
+8980,Beauty salons,812112,81,other_services,Service,252,25.702183,1.851796,0.072048196
+8990,Nail salons and other personal care services,"812113, 81219",81,other_services,Service,187,29.538873,1.986700,0.067257149
+9070,Dry cleaning and laundry services,8123,81,other_services,Service,89,9.382564,0.916654,0.097697607
+9080,"Funeral homes, cemeteries, and crematories",8122,81,other_services,Service,49,9.367788,0.279921,0.029881194
+9090,Other personal services,8129,81,other_services,Service,161,17.618053,2.202088,0.124990407
+9160,Religious organizations,8131,81,other_services,Service,460,52.988373,3.943752,0.074426745
+9170,"Civic, social, advocacy organizations, and grant making and giving services","8132, 8133, 8134",81,other_services,Service,489,72.071785,3.505150,0.048634155
+9180,Labor unions,81393,81,other_services,Service,39,6.418457,1.045707,0.162921847
+9190,"Business, professional, political, and similar organizations",8139 exc. 81393,81,other_services,Service,87,15.911720,0.702953,0.044178294
+9290,Private households,814,HH814,households,,277,15.048342,2.655052,0.176434827
+9370,Executive offices and legislative bodies,"92111, 92112, 92114, pt. 92115",GOV,government,,701,108.216176,11.191521,0.103418186
+9380,Public finance activities,92113,GOV,government,,133,24.217129,2.614556,0.107963102
+9390,Other general government and support,92119,GOV,government,,93,11.343261,1.126765,0.099333394
+9470,"Justice, public order, and safety activities","922, pt. 92115",GOV,government,,1112,236.091685,21.281951,0.090142739
+9480,Administration of human resource programs,923,GOV,government,,817,126.294362,7.743040,0.061309466
+9490,Administration of environmental quality and housing programs,"924, 925",GOV,government,,149,27.172591,1.522444,0.056028679
+9570,Administration of economic programs and space research,"926, 927",GOV,government,,309,55.631143,2.111367,0.037952970
+9590,National security and international affairs,928,GOV,government,,506,110.954248,7.388128,0.066587155
+9890,Military,928110,GOV,government,,62,8.259296,0.892128,0.108014975
+0480,Not specified type of mining,Part of 21,212,mining,Mining,3,0.428067,0.000000,0.000000000
+4681,Other motor vehicle dealers,4412,441,retail,Wholesale and Retail Trade,59,8.828598,0.405797,0.045963926
+4691,"Automotive parts, accessories, and tire retailers",4413,441,retail,Wholesale and Retail Trade,230,23.751785,3.603721,0.151724236
+4771,Furniture and home furnishings retailers,4491,4A0,retail,Wholesale and Retail Trade,202,28.118650,2.500106,0.088912736
+4796,Electronics and appliance retailers,4492,4A0,retail,Wholesale and Retail Trade,189,34.423157,3.024013,0.087848231
+4871,"Building material and supplies dealers, except hardware retailers",4441 exc. 44414,4A0,retail,Wholesale and Retail Trade,479,70.124959,8.663262,0.123540348
+4881,Hardware retailers,44414,4A0,retail,Wholesale and Retail Trade,118,13.083375,1.081505,0.082662502
+4891,Lawn and garden equipment and supplies retailers,4442,4A0,retail,Wholesale and Retail Trade,157,19.770074,0.277869,0.014055043
+4973,Convenience retailers and vending machine operators,44513,445,retail,Wholesale and Retail Trade,159,13.384020,1.081065,0.080772817
+4981,Specialty food retailers,4452,445,retail,Wholesale and Retail Trade,105,11.765172,1.374865,0.116858927
+4991,"Beer, wine, and liquor retailers",4453,445,retail,Wholesale and Retail Trade,87,12.613985,0.902589,0.071554663
+5071,Pharmacies and drug retailers,45611,4A0,retail,Wholesale and Retail Trade,374,69.582126,1.967890,0.028281546
+5081,"Health and personal care, except pharmacies and drug, retailers",4561 exc. 45611,4A0,retail,Wholesale and Retail Trade,218,33.885620,2.586138,0.076319637
+5171,Clothing and clothing accessories retailers,4581,4A0,retail,Wholesale and Retail Trade,357,29.176342,3.556215,0.121886950
+5181,Shoe retailers,4582,4A0,retail,Wholesale and Retail Trade,79,6.955274,0.548301,0.078832359
+5191,"Jewelry, luggage, and leather goods retailers",4583,4A0,retail,Wholesale and Retail Trade,57,5.145417,0.194755,0.037850234
+5276,"Sporting goods, and hobby, toy, and game retailers","45911, 45912",4A0,retail,Wholesale and Retail Trade,216,26.952261,1.296822,0.048115502
+5281,"Sewing, needlework, and piece goods retailers",45913,4A0,retail,Wholesale and Retail Trade,22,2.539697,0.316004,0.124425916
+5296,Musical instrument and supplies retailers,45914,4A0,retail,Wholesale and Retail Trade,11,4.246415,0.065293,0.015376046
+5371,Book retailers and news dealers,45921,4A0,retail,Wholesale and Retail Trade,45,3.012591,0.178473,0.059242416
+5382,Department stores,4551,452,retail,Wholesale and Retail Trade,168,14.372079,2.334850,0.162457389
+5392,"Warehouse clubs, supercenters, and other general merchandise retailers",4552,452,retail,Wholesale and Retail Trade,1389,156.669589,18.814266,0.120088819
+5471,Florists,4593,4A0,retail,Wholesale and Retail Trade,42,4.397134,0.120413,0.027384381
+5481,Office supplies and stationery retailers,45941,4A0,retail,Wholesale and Retail Trade,30,4.876728,0.493200,0.101133349
+5491,Used merchandise retailers,4595,4A0,retail,Wholesale and Retail Trade,99,7.855895,0.540922,0.068855567
+5571,"Gift, novelty, and souvenir retailers",45942,4A0,retail,Wholesale and Retail Trade,64,3.665512,0.432709,0.118048657
+5581,Other miscellaneous retailers,4599,4A0,retail,Wholesale and Retail Trade,236,27.367403,1.804394,0.065932231
+5791,Not specified retail trade,"Part of 44, 45",4A0,retail,Wholesale and Retail Trade,170,31.675480,3.966356,0.125218495
+6471,Newspaper publishers,51311,511,information,Information,50,9.792470,0.350386,0.035781215
+6481,"Periodical, book, and directory and mailing list, and other publishers",5131 exc. 51311,511,information,Information,74,14.668949,0.594044,0.040496729
+6671,Broadcasting and content providers,516,513,information,Information,166,45.806134,1.689844,0.036891215
+6781,Web search portals and all other information services,51929,514,information,Information,34,25.191575,0.080092,0.003179318
+6871,"Monetary authorities-central bank, and commercial banking","521, 52211",521CI,finance,,851,219.537045,8.689673,0.039581809
+6881,"Credit unions, and savings institutions and other depository credit intermediation","52213, 52218",521CI,finance,,139,20.041457,1.457731,0.072735774
+9670,U. S. Army,pt. 92811,GOV,government,,0,0.000000,0.000000,
+9680,U. S. Air Force,pt. 92811,GOV,government,,0,0.000000,0.000000,
+9690,U. S. Navy,pt. 92811,GOV,government,,0,0.000000,0.000000,
+9770,U. S. Marines,pt. 92811,GOV,government,,0,0.000000,0.000000,
+9780,U. S. Coast Guard,pt. 92811,GOV,government,,0,0.000000,0.000000,
+9790,"Armed Forces, Branch not specified",pt. 92811,GOV,government,,0,0.000000,0.000000,
+9870,Military Reserves or National Guard,pt. 92811,GOV,government,,0,0.000000,0.000000,
+9920,"Unemployed, last worked 5 years ago or earlier or never worked",nan,NOIND,none,,0,0.000000,0.000000,

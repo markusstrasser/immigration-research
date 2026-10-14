@@ -1,0 +1,805 @@
+{
+ "meta": {
+  "year": 2024,
+  "lines": "assumption_explorer_2026_09_21/derived/model.json: remaining_production_property less the BEA tenant split (receipt_side_long_run_2026_09_28 housing.json), other_production_taxes, corporate_capital + corporate_labor",
+  "model_sha256": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd",
+  "housing_sha256": "3839430f4139716559eec7945ae134400ad58b9ce28603ca73e1e405a0e1c726",
+  "inputs": {
+   "bea_SUPPLY-USE.zip": "3f16466e11eef0ed562d3663907f4a4a65856c134aa9f8baf7da6460bd11987d",
+   "bea_Section6All_xls.xlsx": "4abc98d1379d94f815556f7d70650ae82dda33832200b87901a7556f893c8511",
+   "bea_fa_Section3All_xls.xlsx": "5e02af61a2093c049514ef963f8b1e5fbbc41d64615c577383241e1b2e81a8a5",
+   "bea_fa_Section4All_xls.xlsx": "c34e8b206989b846fff18d439c096e66776a88e7e2fd2c43b97eadb24efa773a",
+   "bea_fa_Section5All_xls.xlsx": "90eaae674cec8d3df318b3a424d36c191737adec5697d5b37ee4413f0c578db8",
+   "census_2022_industry_code_list.xlsx": "c9d2e004b2735c3975f0768e7dac704df6d2e0b36b24d33f5dbc7109cab5628c",
+   "frb_z1_20260911_csv_files.zip": "b63af9755437df0fb88b7cf346f8f9eaeb22bf1aa2b5df1709334135c43de4b6",
+   "irs_p5655_ty2021.pdf": "143ecac3eb4f9409899d72775de76b5628d5e3a52940554114dfc9176d325b4a",
+   "irs_soi_coftc_ty2021.pdf": "b8e49373b95da839c38ebd5811217cbde2a8623ab4da57bb1f5aae9bdf4945cf",
+   "taxfoundation_tpp_2023.html": "2b2e393db5e24a6754e42d86e60f22b1fc1b5010719092276759fc1b4f420e3d",
+   "treasury_ota_summary_2021.pdf": "a9b3af8c7cde0297f1b04747613e1ba65fcdf6432716797b03bb9aaf304c85a7",
+   "treasury_ota_wp111_2016.pdf": "24ed934b0be75c5f3f6f6067aeb1653dae7792bfc485dc08fd780306da4233e1",
+   "nipa_section3": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+   "treasury_tp5": "48a3a3e48f1ff50102527791c322d0e5d9c2443282c3a58ca9fd98abe0b55c4c"
+  },
+  "cells": "BEA 2024 summary use table industries; HS left out; 525 with 523; GOVF = GFGD+GFGN+GFE; GOVSL = GSLG+GSLE; HH814 private households (zero); RESIDENTIAL holds the residential parts outside the item",
+  "lessors": "ORE and 532RL amounts go to the industries buying their commodity (use table intermediate uses); the part sold to final demand and to housing stays with the lessor; the two lessors' cross purchases solved exactly",
+  "vintages": {
+   "model_lines": "NIPA 3.1-3.3 published 2026-08-26; 3.5 published 2025-09-26",
+   "patterns": "6.18D and the supply-use tables published 2026-09-30; Fixed Assets file of 2026-09-28; Z.1 of 2026-09-11"
+  }
+ },
+ "national_bn": {
+  "c_and_i_property": 273.445297051,
+  "other_production_taxes": 145.258,
+  "corporate": 663.685,
+  "tenant_split": 83.840225,
+  "property_total": 752.148,
+  "c_and_i_bea_housing_split": 396.137
+ },
+ "other_production_components_bn": {
+  "federal_other": 1.58,
+  "severance": 20.935,
+  "documentary": 21.468,
+  "special_assessments": 15.556,
+  "motor_vehicle_licenses": 15.01,
+  "other_licenses": 57.527,
+  "sl_other": 13.182
+ },
+ "corporate": {
+  "federal_bn": 491.66,
+  "state_local_bn": 172.025,
+  "table_618d_2024_bn": 660.908,
+  "scale_to_model": 1.004200276
+ },
+ "land": {
+  "lambda_b": 0.22221599,
+  "lambda_noncorporate": 0.523945017,
+  "lambda_corporate": 0.093062151,
+  "business_real_estate_mn": 22340881.0,
+  "business_structures_mn": 17376380.0,
+  "z1_mn": {
+   "nfc_real_estate": 15644373.0,
+   "noncorp_nonres_real_estate": 6696508.0,
+   "noncorp_nonres_structures": 3187906.0,
+   "noncorp_res_real_estate": 10341836.0,
+   "household_owner_real_estate": 46891453.0
+  },
+  "fa_nfc_nonres_structures_mn": 13818860.0,
+  "fa_corporate_residential_mn": 369614.0,
+  "rule": "lambda_b = 1 - (FA 4.1 line 39 nonfinancial corporate structures + FA 5.1 line 3 corporate residential + Z.1 FL115013665 noncorporate nonresidential structures) / (Z.1 LM105035005 nonfinancial corporate real estate + LM115035035 noncorporate nonresidential real estate), 2024 yearend"
+ },
+ "residential_split": {
+  "residential_share": 0.719244561,
+  "residential_real_estate_mn": 57233289.0,
+  "residential_parts_bn": {
+   "documentary": 15.440742244,
+   "special_assessments": 11.188568397
+  },
+  "rule": "documentary and stamp taxes and special assessments split by market value: households' owner-occupied real estate + noncorporate residential real estate against nonfinancial corporate + noncorporate nonresidential real estate (Z.1, 2024)"
+ },
+ "tpp": {
+  "all_property_share": 0.054000000000000006,
+  "ex_car_share": 0.046,
+  "tau_of_business_line": 0.126529176,
+  "source": "Tax Foundation, Personal Property Tax Exemptions for Small Businesses (Hulehan, 2023-12-07), tax year 2021",
+  "rule": "tau = the ex-car share x NIPA property taxes / the business property line"
+ },
+ "structures_base": {
+  "nonprofit_structures_mn": 2980418.0,
+  "nonprofit_equipment_mn": 687912.0,
+  "residential_structures_removed_from_real_estate_mn": 34270710.0,
+  "residential_equipment_removed_from_real_estate_mn": 100088.0
+ },
+ "foreign": {
+  "soi_column19_all_k": 59280288.0,
+  "soi_column18_all_k": 155809855.0,
+  "soi_column2_all_k": 96529525.0,
+  "p5655_after_credits_bn": 371.4,
+  "share_of_federal": 0.159613053,
+  "removed_bn": 78.475353791,
+  "federal_fraction_used": 0.740803243,
+  "rows_k": {
+   "Agricultural, forestry, fishing and hunting": 17677.0,
+   "Oil and gas extraction": 14886.0,
+   "All Other mining": 10369.0,
+   "Construction": 3554.0,
+   "Food manufacturing": 106512.0,
+   "Beverage and tobacco products": 74293.0,
+   "Paper manufacturing": 128609.0,
+   "Printing and related support activities": 8266.0,
+   "Petroleum and coal product manufacturing": 240988.0,
+   "Chemical manufacturing": 10285909.0,
+   "Plastics and rubber product manufacturing": 99771.0,
+   "Nonmetallic mineral product manufacturing": 43425.0,
+   "Primary metal manufacturing": 23055.0,
+   "Fabricated metal products": 89672.0,
+   "Machinery manufacturing": 638649.0,
+   "Computer and electronic product manufacturing": 11795505.0,
+   "Electrical equipment, appliance and component manufacturing": 555696.0,
+   "Motor vehicles and related manufacturing": 458882.0,
+   "Other transportation equipment manufacturing": 155703.0,
+   "Furniture and related product manufacturing": -231.0,
+   "Miscellaneous manufacturing and manufacturing not allocable": 904429.0,
+   "Wholesale trade": 2987812.0,
+   "Retail trade": 1445672.0,
+   "Transportation and warehousing": 756068.0,
+   "Publishing (except internet)": 7657926.0,
+   "Motion picture and sound recording": 2781.0,
+   "Broadcasting and internet publishing": 166022.0,
+   "Telecommunications": 212766.0,
+   "Other information services": 11351419.0,
+   "Depository credit intermediation": 35171.0,
+   "Securities, commodity contracts, and other financial investments": 1133222.0,
+   "Insurance and related activities": 4672612.0,
+   "All other finance industries": 215021.0,
+   "Real estate and rental and leasing": 119562.0,
+   "Professional, scientific, and technical services": 690736.0,
+   "Bank holding companies": 1130264.0,
+   "Other holding companies": 584061.0,
+   "Administrative and support and waste management and remediation": 246632.0,
+   "Education services, health care, and social assistance": 114775.0,
+   "Arts, entertainment, and recreation": 12808.0,
+   "Accommodation and food services": 87412.0,
+   "Other services": 1153.0,
+   "All other industries": 775.0
+  },
+  "rule": "federal corporate tax x (SOI TY2021 Table 1 column 19, all industries / Pub. 5655 total income tax after credits), spread over SOI's industries by column 19 and within each over cells by their corporate tax; state taxes kept (water's-edge apportionment taxes little foreign income) [ASSUMPTION]"
+ },
+ "normal_return": {
+  "share": 0.37,
+  "source": "Treasury OTA Technical Paper 5 (Cronin, Lin, Power and Cooper, May 2012), p. 7: \"we find that 63 percent of current corporate taxable income is due to supernormal returns\" and \"the remaining 37 percent of the corporate tax on the taxable income attributable to normal returns\"",
+  "ota_2021_labor_share_pct": 18.5,
+  "ota_2021_source": "Treasury OTA, Treasury's Distribution Methodology and Results (July 2021; Summary-of-OTA-Distribution-Methodology-05102021.pdf), p. 3 note 4: \"split between capital income (81.5 percent) and labor income (18.5 percent)\"",
+  "power_frerick": {
+   "1992_2002": 0.4,
+   "2003_2013": 0.25,
+   "table1_2011_2013": {
+    "Mining": {
+     "risk_free": 0.44,
+     "worldwide_income": 0.03
+    },
+    "Utilities": {
+     "risk_free": 0.85,
+     "worldwide_income": 0.03
+    },
+    "Construction": {
+     "risk_free": 0.71,
+     "worldwide_income": 0.01
+    },
+    "Nondurable Manufacturing": {
+     "risk_free": 0.15,
+     "worldwide_income": 0.08
+    },
+    "Fossil Fuel": {
+     "risk_free": 0.06,
+     "worldwide_income": 0.09
+    },
+    "Chemical Manufacturing": {
+     "risk_free": 0.1,
+     "worldwide_income": 0.13
+    },
+    "Technology": {
+     "risk_free": 0.16,
+     "worldwide_income": 0.11
+    },
+    "Metal and Machinery Manufacturing": {
+     "risk_free": 0.45,
+     "worldwide_income": 0.15
+    },
+    "Wholesale and Retail Trade": {
+     "risk_free": 0.4,
+     "worldwide_income": 0.15
+    },
+    "Transportation and Warehousing": {
+     "risk_free": 0.25,
+     "worldwide_income": 0.03
+    },
+    "Information": {
+     "risk_free": 0.08,
+     "worldwide_income": 0.15
+    },
+    "Service": {
+     "risk_free": 0.16,
+     "worldwide_income": 0.05
+    },
+    "Pharmaceuticals": {
+     "risk_free": 0.1,
+     "worldwide_income": null
+    },
+    "Software": {
+     "risk_free": 0.09,
+     "worldwide_income": null
+    }
+   },
+   "table1_income_weighted_mean": 0.246336634,
+   "cells": {
+    "211": "Mining",
+    "212": "Mining",
+    "213": "Mining",
+    "22": "Utilities",
+    "23": "Construction",
+    "321": "Metal and Machinery Manufacturing",
+    "327": "Metal and Machinery Manufacturing",
+    "331": "Metal and Machinery Manufacturing",
+    "332": "Metal and Machinery Manufacturing",
+    "333": "Metal and Machinery Manufacturing",
+    "334": "Technology",
+    "335": "Metal and Machinery Manufacturing",
+    "3361MV": "Metal and Machinery Manufacturing",
+    "3364OT": "Metal and Machinery Manufacturing",
+    "337": "Metal and Machinery Manufacturing",
+    "339": "Metal and Machinery Manufacturing",
+    "311FT": "Nondurable Manufacturing",
+    "313TT": "Nondurable Manufacturing",
+    "315AL": "Nondurable Manufacturing",
+    "322": "Nondurable Manufacturing",
+    "323": "Nondurable Manufacturing",
+    "324": "Fossil Fuel",
+    "325": "Chemical Manufacturing",
+    "326": "Nondurable Manufacturing",
+    "42": "Wholesale and Retail Trade",
+    "441": "Wholesale and Retail Trade",
+    "445": "Wholesale and Retail Trade",
+    "452": "Wholesale and Retail Trade",
+    "4A0": "Wholesale and Retail Trade",
+    "481": "Transportation and Warehousing",
+    "482": "Transportation and Warehousing",
+    "483": "Transportation and Warehousing",
+    "484": "Transportation and Warehousing",
+    "485": "Transportation and Warehousing",
+    "486": "Transportation and Warehousing",
+    "487OS": "Transportation and Warehousing",
+    "493": "Transportation and Warehousing",
+    "511": "Information",
+    "512": "Information",
+    "513": "Information",
+    "514": "Information",
+    "5411": "Service",
+    "5415": "Service",
+    "5412OP": "Service",
+    "55": "Service",
+    "561": "Service",
+    "562": "Service",
+    "61": "Service",
+    "621": "Service",
+    "622": "Service",
+    "623": "Service",
+    "624": "Service",
+    "711AS": "Service",
+    "713": "Service",
+    "721": "Service",
+    "722": "Service",
+    "81": "Service"
+   },
+   "source": "Power and Frerick, Have Excess Returns To Corporations Been Increasing Over Time?, Treasury OTA Working Paper 111 (November 2016; National Tax Journal 69(4), 2016): abstract p. 2, the risk-free share of the C corporation base \"averaging 40 percent from 1992-2002 and 25 percent from 2003-2013\"; Table 1 p. 16, three-year averages 2011-2013 by industry",
+   "rule": "cells take their Table 1 industry's share; cells outside its industries take the 2003-2013 average [INFERENCE: the industry map in PF_INDUSTRY]"
+  }
+ },
+ "lessor_shares": {
+  "ORE": {
+   "111CA": 0.001361927,
+   "113FF": 2.7665e-05,
+   "211": 0.001568839,
+   "212": 0.00015965,
+   "213": 0.00040633,
+   "22": 0.002835668,
+   "23": 0.023892807,
+   "321": 0.000441488,
+   "327": 0.000731395,
+   "331": 0.000304316,
+   "332": 0.003457555,
+   "333": 0.001293341,
+   "334": 0.002042027,
+   "335": 0.000645518,
+   "3361MV": 0.001337144,
+   "3364OT": 0.000859346,
+   "337": 0.000773469,
+   "339": 0.001032829,
+   "311FT": 0.002938259,
+   "313TT": 0.000270887,
+   "315AL": 0.000103744,
+   "322": 0.001093346,
+   "323": 0.001191326,
+   "324": 9.9709e-05,
+   "325": 0.004550901,
+   "326": 0.001772869,
+   "42": 0.074904858,
+   "441": 0.02353662,
+   "445": 0.021907263,
+   "452": 0.012467141,
+   "4A0": 0.100919805,
+   "481": 0.000394803,
+   "482": 0.000149852,
+   "483": 0.00069739,
+   "484": 0.006772174,
+   "485": 0.003185516,
+   "486": 0.000280109,
+   "487OS": 0.004105955,
+   "493": 0.006554888,
+   "511": 0.006438465,
+   "512": 0.002947481,
+   "513": 0.018579964,
+   "514": 0.012825634,
+   "521CI": 0.010331744,
+   "523": 0.02271589,
+   "524": 0.011563416,
+   "525": 0.000692203,
+   "532RL": 0.011695977,
+   "5411": 0.012789323,
+   "5415": 0.00562638,
+   "5412OP": 0.047971777,
+   "55": 0.029922636,
+   "561": 0.01874192,
+   "562": 0.002605126,
+   "61": 0.02684951,
+   "621": 0.043691187,
+   "622": 0.065156962,
+   "623": 0.020719971,
+   "624": 0.009223413,
+   "711AS": 0.013074043,
+   "713": 0.018114846,
+   "721": 0.002612042,
+   "722": 0.05206217,
+   "81": 0.068298674,
+   "GFGD": 0.000421892,
+   "GFGN": 0.010447592,
+   "GFE": 0.000572897,
+   "GSLG": 0.018758058,
+   "GSLE": 0.001793618,
+   "stay": 0.121686462
+  },
+  "532RL": {
+   "111CA": 0.003814216,
+   "113FF": 0.000150428,
+   "211": 0.005866689,
+   "212": 0.003623288,
+   "213": 0.004389892,
+   "22": 0.002531239,
+   "23": 0.059131192,
+   "321": 0.000539516,
+   "327": 0.001648921,
+   "331": 0.001048656,
+   "332": 0.003821448,
+   "333": 0.0024054,
+   "334": 0.001311905,
+   "335": 0.001131102,
+   "3361MV": 0.012340875,
+   "3364OT": 0.001894813,
+   "337": 0.00045273,
+   "339": 0.001194745,
+   "311FT": 0.006491543,
+   "313TT": 0.000102696,
+   "315AL": 0.003756359,
+   "322": 0.002121902,
+   "323": 0.000859175,
+   "324": 0.002474829,
+   "325": 0.006430794,
+   "326": 0.001922295,
+   "42": 0.05886939,
+   "441": 0.00258765,
+   "445": 0.002871148,
+   "452": 0.006705614,
+   "4A0": 0.018501188,
+   "481": 0.026078995,
+   "482": 0.012664874,
+   "483": 0.016933266,
+   "484": 0.054734068,
+   "485": 0.003563985,
+   "486": 0.00010125,
+   "487OS": 0.004183053,
+   "493": 0.001899153,
+   "511": 0.003390414,
+   "512": 0.001883242,
+   "513": 0.014727472,
+   "514": 0.026442047,
+   "521CI": 0.003928483,
+   "523": 0.015721164,
+   "524": 0.002327294,
+   "525": 3.9053e-05,
+   "ORE": 0.005920207,
+   "5411": 0.00402684,
+   "5415": 0.007877216,
+   "5412OP": 0.038035122,
+   "55": 0.047199654,
+   "561": 0.01781703,
+   "562": 0.005243281,
+   "61": 0.002502311,
+   "621": 0.011512075,
+   "622": 0.007316004,
+   "623": 0.000973442,
+   "624": 0.00112387,
+   "711AS": 0.007007916,
+   "713": 0.005675761,
+   "721": 0.005860903,
+   "722": 0.048999003,
+   "81": 0.004748605,
+   "GFGD": 0.001358191,
+   "GFGN": 0.000766604,
+   "GFE": 0.000147535,
+   "GSLG": 0.016223073,
+   "GSLE": 0.001838403,
+   "stay": 0.348217501
+  }
+ },
+ "gates": [
+  {
+   "gate": "NIPA 3.1 line 5 is the model's corporate lines (1e-6 bn)",
+   "passed": true,
+   "detail": "663.685"
+  },
+  {
+   "gate": "federal (3.2 line 8) + state and local (3.3 line 11) = 3.1 line 5 (1e-6 bn)",
+   "passed": true,
+   "detail": "491.660 + 172.025"
+  },
+  {
+   "gate": "Table 3.5's seven components are the model's other production taxes (1e-6 bn)",
+   "passed": true,
+   "detail": "145.258"
+  },
+  {
+   "gate": "Table 3.5 line 36's footnote: documentary and stamp taxes",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "property taxes (3.5 line 38) = the model's owner line + business property + the tenant split (1e-6 bn)",
+   "passed": true,
+   "detail": "752.148"
+  },
+  {
+   "gate": "no housing tax inside business property: the owner and tenant lines hold more than BEA's housing taxes",
+   "passed": true,
+   "detail": "owner 394.862 + tenant 83.840 vs BEA housing 356.011"
+  },
+  {
+   "gate": "use table: the 2024 sheet's title and units",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "use table: industries' other taxes on production add to the total (1 $mn)",
+   "passed": true,
+   "detail": "873,958"
+  },
+  {
+   "gate": "use table: ORE's industry uses add to its intermediate total (rounding, 35.5 $mn)",
+   "passed": true,
+   "detail": "1,744,661 vs 1,744,660"
+  },
+  {
+   "gate": "use table: ORE's intermediate and final uses add to its total use (rounding)",
+   "passed": true,
+   "detail": "1,951,601 vs 1,951,599"
+  },
+  {
+   "gate": "use table: 532RL's industry uses add to its intermediate total (rounding, 35.5 $mn)",
+   "passed": true,
+   "detail": "480,022 vs 480,020"
+  },
+  {
+   "gate": "use table: 532RL's intermediate and final uses add to its total use (rounding)",
+   "passed": true,
+   "detail": "713,236 vs 713,234"
+  },
+  {
+   "gate": "ORE: users' shares and what stays add to 1",
+   "passed": true,
+   "detail": "stays 0.1217"
+  },
+  {
+   "gate": "532RL: users' shares and what stays add to 1",
+   "passed": true,
+   "detail": "stays 0.3482"
+  },
+  {
+   "gate": "lessor reallocation keeps the pattern's total (1e-6 $mn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "Z.1 LM105035005.Q is 'Nonfinancial corporate business; real estate at market value'",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "Z.1 LM105035005.Q has one 2024:Q4 value",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "Z.1 LM115035035.Q is 'Nonfinancial noncorporate business; nonresidential real estate at market value'",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "Z.1 LM115035035.Q has one 2024:Q4 value",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "Z.1 FL115013665.Q is 'Nonfinancial noncorporate business; nonresidential structures, current cost basis'",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "Z.1 FL115013665.Q has one 2024:Q4 value",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "Z.1 LM115035023.Q is 'Nonfinancial noncorporate business; residential real estate at market value'",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "Z.1 LM115035023.Q has one 2024:Q4 value",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "Z.1 LM155035015.A is 'Households; owner-occupied real estate including vacant land and mobile homes at market value'",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "Z.1 LM155035015.A has one 2024 value",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "FA 4.1 line 39 sits under 'Nonfinancial' corporate (line 37)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "lambda_b in (0, 1)",
+   "passed": true,
+   "detail": "0.222216"
+  },
+  {
+   "gate": "Tax Foundation's national TPP share sentence found",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "tau in (0, 1)",
+   "passed": true,
+   "detail": "0.126529"
+  },
+  {
+   "gate": "the structures cells add to private nonresidential structures (FA 4.1 line 3, rounding 33 $mn)",
+   "passed": true,
+   "detail": "21,458,949"
+  },
+  {
+   "gate": "the equipment cells add to private nonresidential equipment (FA 4.1 line 2, rounding 33 $mn)",
+   "passed": true,
+   "detail": "9,369,520"
+  },
+  {
+   "gate": "real estate keeps positive nonresidential structures and equipment",
+   "passed": true,
+   "detail": "2,064,640 / 160,218"
+  },
+  {
+   "gate": "FA 4.1 lines 66-67 sit under 'Nonprofit institutions' (line 65)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D is 'Taxes on Corporate Income by Industry', published September 30, 2026",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D: domestic industries are the total (no rest-of-world line in 2024)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D 2024: sectors add to the total (1 $mn)",
+   "passed": true,
+   "detail": "660,909"
+  },
+  {
+   "gate": "6.18D 2024: durable + nondurable = manufacturing",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D 2023: Agriculture, forestry, fishing, and hunting's detail adds to the sector (1 $mn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D 2023: Mining's detail adds to the sector (1 $mn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D 2023: Durable goods's detail adds to the sector (1 $mn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D 2023: Nondurable goods's detail adds to the sector (1 $mn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D 2023: Transportation and warehousing's detail adds to the sector (1 $mn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D 2023: Information's detail adds to the sector (1 $mn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D 2023: Finance and insurance's detail adds to the sector (1 $mn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D 2023: Real estate and rental and leasing's detail adds to the sector (1 $mn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D 2023: Professional, scientific, and technical services's detail adds to the sector (1 $mn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D 2023: Administrative and waste management services's detail adds to the sector (1 $mn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D 2023: Health care and social assistance's detail adds to the sector (1 $mn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D 2023: Arts, entertainment, and recreation's detail adds to the sector (1 $mn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "6.18D 2023: Accommodation and food services's detail adds to the sector (1 $mn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "corporate cells add to the model's line (1e-6 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "SOI Table 1 column 19 is 'Difference between limitation and foreign tax credit'",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "SOI column 19: major industries add to all industries (10 $k)",
+   "passed": true,
+   "detail": "59,280,288 vs 59,280,288"
+  },
+  {
+   "gate": "SOI Table 1 column 2 is 'Foreign tax credit claimed'",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "SOI: column 19 is column 18 less column 2 within 0.01% (footnote 2's adjustments)",
+   "passed": true,
+   "detail": "155,809,855 - 96,529,525 vs 59,280,288"
+  },
+  {
+   "gate": "SOI footnote 2: the column is 'one way to measure the U.S. tax owed on foreign-source corporate income'",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "SOI rows used add to all industries (10 $k)",
+   "passed": true,
+   "detail": "59,280,289"
+  },
+  {
+   "gate": "Publication 5655: total income tax after credits, Tax Year 2021",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "no cell loses more than its federal corporate tax",
+   "passed": true,
+   "detail": "min federal left 0.081 bn"
+  },
+  {
+   "gate": "TP-5: the supernormal and normal shares are printed and add to 100",
+   "passed": true,
+   "detail": "63 + 37"
+  },
+  {
+   "gate": "OTA 2021: labor's corporate share is half the normal-return share (TP-5's rule unchanged)",
+   "passed": true,
+   "detail": "18.5"
+  },
+  {
+   "gate": "Power and Frerick: the abstract's 1992-2002 and 2003-2013 averages are printed",
+   "passed": true,
+   "detail": "40 / 25"
+  },
+  {
+   "gate": "Power and Frerick Table 1: its title, and every industry's share (the major ones with their income shares)",
+   "passed": true,
+   "detail": "14 rows"
+  },
+  {
+   "gate": "Power and Frerick Table 1: the income shares add to 1 (0.02) and their weighted risk-free share is the 2003-2013 average's (0.02)",
+   "passed": true,
+   "detail": "1.01; 0.2463"
+  },
+  {
+   "gate": "corporate: cells add to the national amount (1e-6 bn)",
+   "passed": true,
+   "detail": "663.685000"
+  },
+  {
+   "gate": "corporate_mgmt_own: cells add to the national amount (1e-6 bn)",
+   "passed": true,
+   "detail": "663.685000"
+  },
+  {
+   "gate": "corporate_no_lessor_realloc: cells add to the national amount (1e-6 bn)",
+   "passed": true,
+   "detail": "663.685000"
+  },
+  {
+   "gate": "corporate_ex_foreign: cells add to the national amount (1e-6 bn)",
+   "passed": true,
+   "detail": "585.209646"
+  },
+  {
+   "gate": "c_and_i_property: cells add to the national amount (1e-6 bn)",
+   "passed": true,
+   "detail": "273.445297"
+  },
+  {
+   "gate": "c_and_i_property_no_lessor_realloc: cells add to the national amount (1e-6 bn)",
+   "passed": true,
+   "detail": "273.445297"
+  },
+  {
+   "gate": "c_and_i_property_bea_housing_split: cells add to the national amount (1e-6 bn)",
+   "passed": true,
+   "detail": "396.137000"
+  },
+  {
+   "gate": "other_production_taxes: cells add to the national amount (1e-6 bn)",
+   "passed": true,
+   "detail": "145.258000"
+  },
+  {
+   "gate": "no negative cell in any column",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the RESIDENTIAL cell holds only the residential parts of documentary taxes and special assessments",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "private households and the residential cell carry no corporate or business property tax",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "Power and Frerick: every industry the cells name is in Table 1, and every cell with corporate tax outside its industries is agriculture, finance, real estate and rental, or government",
+   "passed": true,
+   "detail": ""
+  }
+ ]
+}

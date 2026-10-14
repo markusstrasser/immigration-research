@@ -1,0 +1,767 @@
+{
+ "meta": {
+  "sept27_package": "infra/immigration-fiscal/main_case_long_run_2026_09_27/package.cjs",
+  "v6_package": "infra/immigration-fiscal/main_case_2026_10_07/package.cjs",
+  "model": "infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json",
+  "model_sha256": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd",
+  "rule": "each end averages the two fill-in methods (probe.cjs lineAt); share = amount_bn / national_bn",
+  "tenant_split": "business property = remaining_production_property less the BEA tenant tax (receipt lane housing.json bea_housing.tenant_taxes_bn)"
+ },
+ "national_bn": {
+  "c_and_i_property": 273.445297051,
+  "other_production_taxes": 145.258,
+  "corporate": 663.685,
+  "tenant_occupied_property": 83.840225,
+  "total": 1082.388297051
+ },
+ "sept27": {
+  "specs": {
+   "11": {
+    "allocation": "personal",
+    "methods": [
+     "b_hotdeck_union_matched",
+     "b_matched_over_pooled"
+    ],
+    "lines": {
+     "employer_hi": {
+      "national_bn": 175.011,
+      "key": "wage",
+      "response_by_method": [
+       1,
+       1
+      ],
+      "amount_bn_by_method": [
+       13.116279228,
+       13.069911952
+      ],
+      "share_by_method": [
+       0.074945456,
+       0.074680517
+      ],
+      "amount_bn": 13.09309559,
+      "share": 0.074812987
+     },
+     "corporate_labor": {
+      "national_bn": 165.92125,
+      "key": "wage",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       12.476636568,
+       12.432530489
+      ],
+      "share_by_method": [
+       0.075196134,
+       0.074930309
+      ],
+      "amount_bn": 12.454583529,
+      "share": 0.075063221
+     },
+     "corporate_capital": {
+      "national_bn": 497.76375,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       12.85030255,
+       12.461620216
+      ],
+      "share_by_method": [
+       0.025816067,
+       0.02503521
+      ],
+      "amount_bn": 12.655961383,
+      "share": 0.025425639
+     },
+     "remaining_production_property": {
+      "national_bn": 357.285522051,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       9.22370714,
+       8.944718221
+      ],
+      "share_by_method": [
+       0.025816067,
+       0.02503521
+      ],
+      "amount_bn": 9.084212681,
+      "share": 0.025425639
+     },
+     "other_production_taxes": {
+      "national_bn": 145.258,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       3.749990327,
+       3.636564594
+      ],
+      "share_by_method": [
+       0.025816067,
+       0.02503521
+      ],
+      "amount_bn": 3.693277461,
+      "share": 0.025425639
+     }
+    }
+   },
+   "48": {
+    "allocation": "shared",
+    "methods": [
+     "b_hotdeck_union_matched",
+     "b_matched_over_pooled"
+    ],
+    "lines": {
+     "employer_hi": {
+      "national_bn": 175.011,
+      "key": "wage",
+      "response_by_method": [
+       1,
+       1
+      ],
+      "amount_bn_by_method": [
+       14.090134767,
+       13.995030947
+      ],
+      "share_by_method": [
+       0.080509995,
+       0.079966579
+      ],
+      "amount_bn": 14.042582857,
+      "share": 0.080238287
+     },
+     "corporate_labor": {
+      "national_bn": 165.92125,
+      "key": "wage",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       13.403828117,
+       13.313356644
+      ],
+      "share_by_method": [
+       0.080784276,
+       0.080239009
+      ],
+      "amount_bn": 13.35859238,
+      "share": 0.080511643
+     },
+     "corporate_capital": {
+      "national_bn": 497.76375,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       15.671822396,
+       15.518077982
+      ],
+      "share_by_method": [
+       0.031484459,
+       0.031175589
+      ],
+      "amount_bn": 15.594950189,
+      "share": 0.031330024
+     },
+     "remaining_production_property": {
+      "national_bn": 357.285522051,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       11.248941382,
+       11.138586514
+      ],
+      "share_by_method": [
+       0.031484459,
+       0.031175589
+      ],
+      "amount_bn": 11.193763948,
+      "share": 0.031330024
+     },
+     "other_production_taxes": {
+      "national_bn": 145.258,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       4.57336955,
+       4.528503675
+      ],
+      "share_by_method": [
+       0.031484459,
+       0.031175589
+      ],
+      "amount_bn": 4.550936613,
+      "share": 0.031330024
+     }
+    }
+   }
+  },
+  "ceiling_bn": {
+   "spec48": -86.848982891,
+   "spec11": -80.976701115
+  },
+  "floor_corporate_labor_bn": {
+   "spec48": -13.35859238,
+   "spec11": -12.454583529
+  },
+  "employer_hi_share": {
+   "spec48": 0.080238287,
+   "spec11": 0.074812987
+  }
+ },
+ "v6": {
+  "specs": {
+   "11": {
+    "allocation": "personal",
+    "methods": [
+     "b_hotdeck_union_matched",
+     "b_matched_over_pooled"
+    ],
+    "lines": {
+     "employer_hi": {
+      "national_bn": 175.011,
+      "key": "wage",
+      "response_by_method": [
+       1,
+       1
+      ],
+      "amount_bn_by_method": [
+       14.154061915,
+       14.107650711
+      ],
+      "share_by_method": [
+       0.08087527,
+       0.08061008
+      ],
+      "amount_bn": 14.130856313,
+      "share": 0.080742675
+     },
+     "corporate_labor": {
+      "national_bn": 165.92125,
+      "key": "wage",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       13.463838488,
+       13.419690623
+      ],
+      "share_by_method": [
+       0.081145956,
+       0.080879879
+      ],
+      "amount_bn": 13.441764556,
+      "share": 0.081012918
+     },
+     "corporate_capital": {
+      "national_bn": 497.76375,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       14.845882461,
+       14.457200127
+      ],
+      "share_by_method": [
+       0.029825158,
+       0.029044301
+      ],
+      "amount_bn": 14.651541294,
+      "share": 0.029434729
+     },
+     "remaining_production_property": {
+      "national_bn": 273.445297051,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       8.155549173,
+       7.942027484
+      ],
+      "share_by_method": [
+       0.029825158,
+       0.029044301
+      ],
+      "amount_bn": 8.048788328,
+      "share": 0.029434729
+     },
+     "tenant_occupied_property": {
+      "national_bn": 83.840225,
+      "key": "renter_contract_rent",
+      "response_by_method": [
+       0.718912397,
+       0.718912397
+      ],
+      "amount_bn_by_method": [
+       10.275834801,
+       10.275834801
+      ],
+      "share_by_method": [
+       0.122564495,
+       0.122564495
+      ],
+      "amount_bn": 10.275834801,
+      "share": 0.122564495
+     },
+     "other_production_taxes": {
+      "national_bn": 145.258,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       4.332342792,
+       4.218917059
+      ],
+      "share_by_method": [
+       0.029825158,
+       0.029044301
+      ],
+      "amount_bn": 4.275629925,
+      "share": 0.029434729
+     }
+    }
+   },
+   "16": {
+    "allocation": "personal",
+    "methods": [
+     "b_hotdeck_union_matched",
+     "b_matched_over_pooled"
+    ],
+    "lines": {
+     "employer_hi": {
+      "national_bn": 175.011,
+      "key": "wage",
+      "response_by_method": [
+       1,
+       1
+      ],
+      "amount_bn_by_method": [
+       14.154061915,
+       14.107650711
+      ],
+      "share_by_method": [
+       0.08087527,
+       0.08061008
+      ],
+      "amount_bn": 14.130856313,
+      "share": 0.080742675
+     },
+     "corporate_labor": {
+      "national_bn": 165.92125,
+      "key": "wage",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       13.463838488,
+       13.419690623
+      ],
+      "share_by_method": [
+       0.081145956,
+       0.080879879
+      ],
+      "amount_bn": 13.441764556,
+      "share": 0.081012918
+     },
+     "corporate_capital": {
+      "national_bn": 497.76375,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       14.845882461,
+       14.457200127
+      ],
+      "share_by_method": [
+       0.029825158,
+       0.029044301
+      ],
+      "amount_bn": 14.651541294,
+      "share": 0.029434729
+     },
+     "remaining_production_property": {
+      "national_bn": 273.445297051,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       8.155549173,
+       7.942027484
+      ],
+      "share_by_method": [
+       0.029825158,
+       0.029044301
+      ],
+      "amount_bn": 8.048788328,
+      "share": 0.029434729
+     },
+     "tenant_occupied_property": {
+      "national_bn": 83.840225,
+      "key": "renter_contract_rent",
+      "response_by_method": [
+       0.718912397,
+       0.718912397
+      ],
+      "amount_bn_by_method": [
+       10.275834801,
+       10.275834801
+      ],
+      "share_by_method": [
+       0.122564495,
+       0.122564495
+      ],
+      "amount_bn": 10.275834801,
+      "share": 0.122564495
+     },
+     "other_production_taxes": {
+      "national_bn": 145.258,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       4.332342792,
+       4.218917059
+      ],
+      "share_by_method": [
+       0.029825158,
+       0.029044301
+      ],
+      "amount_bn": 4.275629925,
+      "share": 0.029434729
+     }
+    }
+   },
+   "48": {
+    "allocation": "shared",
+    "methods": [
+     "b_hotdeck_union_matched",
+     "b_matched_over_pooled"
+    ],
+    "lines": {
+     "employer_hi": {
+      "national_bn": 175.011,
+      "key": "wage",
+      "response_by_method": [
+       1,
+       1
+      ],
+      "amount_bn_by_method": [
+       15.411121928,
+       15.315936804
+      ],
+      "share_by_method": [
+       0.088058019,
+       0.087514138
+      ],
+      "amount_bn": 15.363529366,
+      "share": 0.087786078
+     },
+     "corporate_labor": {
+      "national_bn": 165.92125,
+      "key": "wage",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       14.658952531,
+       14.568403713
+      ],
+      "share_by_method": [
+       0.088348855,
+       0.087803122
+      ],
+      "amount_bn": 14.613678122,
+      "share": 0.088075989
+     },
+     "corporate_capital": {
+      "national_bn": 497.76375,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       18.104469128,
+       17.950724715
+      ],
+      "share_by_method": [
+       0.03637161,
+       0.03606274
+      ],
+      "amount_bn": 18.027596922,
+      "share": 0.036217175
+     },
+     "remaining_production_property": {
+      "national_bn": 273.445297051,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       9.945645778,
+       9.861186661
+      ],
+      "share_by_method": [
+       0.03637161,
+       0.03606274
+      ],
+      "amount_bn": 9.90341622,
+      "share": 0.036217175
+     },
+     "tenant_occupied_property": {
+      "national_bn": 83.840225,
+      "key": "renter_contract_rent",
+      "response_by_method": [
+       0.718912397,
+       0.718912397
+      ],
+      "amount_bn_by_method": [
+       10.275834801,
+       10.275834801
+      ],
+      "share_by_method": [
+       0.122564495,
+       0.122564495
+      ],
+      "amount_bn": 10.275834801,
+      "share": 0.122564495
+     },
+     "other_production_taxes": {
+      "national_bn": 145.258,
+      "key": "capital",
+      "response_by_method": [
+       0,
+       0
+      ],
+      "amount_bn_by_method": [
+       5.283267366,
+       5.238401492
+      ],
+      "share_by_method": [
+       0.03637161,
+       0.03606274
+      ],
+      "amount_bn": 5.260834429,
+      "share": 0.036217175
+     }
+    }
+   }
+  }
+ },
+ "case_wage_key": {
+  "rule": "the union's and each generation's share of corporate_labor's wage key at cbo_collective on the September 29 payload model (main_case_2026_10_07/package.cjs SEPT29; generations from generation_account_2026_09_24 model_<G>.json with generation_corrections_sept29.json payloads.a): target over the line's national",
+  "reference": "cbo_collective",
+  "line": "corporate_labor",
+  "key": {
+   "personal": "wage",
+   "shared": "wage"
+  },
+  "national_bn": 165.92125,
+  "shares": {
+   "union": {
+    "personal": 0.07513433634181657,
+    "shared": 0.08058047223550988
+   },
+   "G1": {
+    "personal": 0.02017555166347925,
+    "shared": 0.01711831630367307
+   },
+   "G2": {
+    "personal": 0.02779799600787157,
+    "shared": 0.02755599360674446
+   },
+   "G3plus": {
+    "personal": 0.027160788670466136,
+    "shared": 0.03590616232509187
+   }
+  },
+  "base_model_union": {
+   "personal": 0.08323440807612045,
+   "shared": 0.08782377602025057
+  }
+ },
+ "case_housing_key": {
+  "rule": "the union's and each generation's share of the case's owner and tenant property lines at cbo_collective on the September 29 payload model (as case_wage_key), and v6's responses for them (main_case_2026_10_07/derived/corrections.json meta.responses)",
+  "reference": "cbo_collective",
+  "corrections_sha256": "f8d346aacf05bcdaed8495f870ba23ac6154ab3eaf34cc0bcf85861f0c85d091",
+  "responses": {
+   "modeled_owner_property": {
+    "low": 0.772698646,
+    "high": 0.772698646
+   },
+   "tenant_occupied_property": {
+    "low": 0.718912397,
+    "high": 0.718912397
+   }
+  },
+  "lines": {
+   "modeled_owner_property": {
+    "key": {
+     "personal": "modeled_owner_property",
+     "shared": "modeled_owner_property"
+    },
+    "national_bn": 394.862477948,
+    "shares": {
+     "union": {
+      "personal": 0.063237316,
+      "shared": 0.063237316
+     },
+     "G1": {
+      "personal": 0.017102811,
+      "shared": 0.017102811
+     },
+     "G2": {
+      "personal": 0.021180446,
+      "shared": 0.021180446
+     },
+     "G3plus": {
+      "personal": 0.024954059,
+      "shared": 0.024954059
+     }
+    }
+   },
+   "tenant_occupied_property": {
+    "key": {
+     "personal": "renter_contract_rent",
+     "shared": "renter_contract_rent"
+    },
+    "national_bn": 83.840225,
+    "shares": {
+     "union": {
+      "personal": 0.114667,
+      "shared": 0.114667
+     },
+     "G1": {
+      "personal": 0.035189455,
+      "shared": 0.035189455
+     },
+     "G2": {
+      "personal": 0.042580971,
+      "shared": 0.042580971
+     },
+     "G3plus": {
+      "personal": 0.036896574,
+      "shared": 0.036896574
+     }
+    }
+   }
+  }
+ },
+ "gates": [
+  {
+   "gate": "the three lines' national total is probe.json's business taxes (1e-6 bn)",
+   "passed": true,
+   "detail": "1082.388297"
+  },
+  {
+   "gate": "employer_hi shares at 48 / 11 round to probe.json's wage_share",
+   "passed": true,
+   "detail": "0.080238287 / 0.074812987"
+  },
+  {
+   "gate": "the plain-wage-share ceiling reproduces probe.json's use_key_at_1_bn (1e-6 bn)",
+   "passed": true,
+   "detail": "-86.848983 / -80.976701"
+  },
+  {
+   "gate": "corporate_labor at 48 / 11 is trace.csv's floor (4 places)",
+   "passed": true,
+   "detail": "13.3586 / 12.4546"
+  },
+  {
+   "gate": "Sept 27 nationals are model.json's (1e-9 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "v6 carries the tenant split: business property's national is model.json's less the BEA tenant tax (1e-9 bn)",
+   "passed": true,
+   "detail": "273.445297"
+  },
+  {
+   "gate": "v6 other production and corporate nationals are model.json's (1e-9 bn)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "v6: the three lines respond 0 at 48, 11 and 16, both methods (the zero this lane prices)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "v6: specification 48 is the shared allocation, 11 and 16 personal",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "set: corporate_labor at cbo_collective is keyed by wage, and the generations' shares add to the union's (1e-12)",
+   "passed": true,
+   "detail": "union 0.075134336 / 0.080580472"
+  },
+  {
+   "gate": "set: the owner and tenant property lines' generation shares add to the union's (1e-12)",
+   "passed": true,
+   "detail": "modeled_owner_property 0.063237, tenant_occupied_property 0.114667"
+  },
+  {
+   "gate": "cash: corporate_labor at cbo_collective is keyed by wage, and the generations' shares add to the union's (1e-12)",
+   "passed": true,
+   "detail": "union 0.075134336 / 0.080580472"
+  },
+  {
+   "gate": "cash: the owner and tenant property lines' generation shares add to the union's (1e-12)",
+   "passed": true,
+   "detail": "modeled_owner_property 0.063237, tenant_occupied_property 0.114667"
+  },
+  {
+   "gate": "the case's wage-key shares are the same in the set and the cash set (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the case's owner and tenant property shares are the same in the set and the cash set (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "v6 sets a response for the owner and tenant property lines at both ends",
+   "passed": true,
+   "detail": "{\"modeled_owner_property\":{\"low\":0.7726986463443216,\"high\":0.7726986463443216},\"tenant_occupied_property\":{\"low\":0.7189123969969125,\"high\":0.7189123969969125}}"
+  }
+ ]
+}
