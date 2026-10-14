@@ -1,0 +1,886 @@
+{
+ "lane": "mixed_unit_credits_2026_10_14",
+ "income_year": 2024,
+ "reading": "R3_with_status",
+ "sets": "both: the set and the cash set take the same edits (current-year flows)",
+ "sign": "net_bn, by_generation and a part's cost_bn: positive raises the group's net cost; a part's bn and the edits: the change to the group's target on the line, so a receipt part's bn is minus its cost_bn",
+ "scope": "the identified union on audit row 4's weights (39,712,493 people) at the personal allocation; the 3.04M added descendants are out of scope (see lineage); the shared cell is 0",
+ "reading_rule": "a non-member child's credit continues after the member claimant leaves only where the claimant's non-member spouse or a non-member parent of the child stays in the household (R3), and the head-of-household status effects (C, Cr) are included",
+ "net_bn": {
+  "personal": 4.298545384947592
+ },
+ "se_bn": {
+  "personal": 0.3257543954928641
+ },
+ "by_generation": {
+  "G1": {
+   "personal": -0.02369960059629791
+  },
+  "G2": {
+   "personal": 1.2533646075883418
+  },
+  "G3plus": {
+   "personal": 3.068880377955548
+  }
+ },
+ "parts": {
+  "A_receipt_G1": {
+   "bn": -0.024950195161482235,
+   "cost_bn": 0.024950195161482235,
+   "line": "federal_income_tax",
+   "side": "receipt",
+   "generation": "G1",
+   "term": "A"
+  },
+  "A_receipt_G2": {
+   "bn": -0.4886480625807886,
+   "cost_bn": 0.4886480625807886,
+   "line": "federal_income_tax",
+   "side": "receipt",
+   "generation": "G2",
+   "term": "A"
+  },
+  "A_receipt_G3plus": {
+   "bn": -1.414573076586947,
+   "cost_bn": 1.414573076586947,
+   "line": "federal_income_tax",
+   "side": "receipt",
+   "generation": "G3plus",
+   "term": "A"
+  },
+  "A_spending_G1": {
+   "bn": 0.02978058984179869,
+   "cost_bn": 0.02978058984179869,
+   "line": "refundable_tax_credits",
+   "side": "spending",
+   "generation": "G1",
+   "term": "A"
+  },
+  "A_spending_G2": {
+   "bn": 1.0252374472976467,
+   "cost_bn": 1.0252374472976467,
+   "line": "refundable_tax_credits",
+   "side": "spending",
+   "generation": "G2",
+   "term": "A"
+  },
+  "A_spending_G3plus": {
+   "bn": 1.6985763431271512,
+   "cost_bn": 1.6985763431271512,
+   "line": "refundable_tax_credits",
+   "side": "spending",
+   "generation": "G3plus",
+   "term": "A"
+  },
+  "B_receipt_G1": {
+   "bn": 0.07437889726879024,
+   "cost_bn": -0.07437889726879024,
+   "line": "federal_income_tax",
+   "side": "receipt",
+   "generation": "G1",
+   "term": "B"
+  },
+  "B_receipt_G2": {
+   "bn": 0.1834938902982987,
+   "cost_bn": -0.1834938902982987,
+   "line": "federal_income_tax",
+   "side": "receipt",
+   "generation": "G2",
+   "term": "B"
+  },
+  "B_receipt_G3plus": {
+   "bn": 0.19626061880562612,
+   "cost_bn": -0.19626061880562612,
+   "line": "federal_income_tax",
+   "side": "receipt",
+   "generation": "G3plus",
+   "term": "B"
+  },
+  "B_spending_G1": {
+   "bn": -0.005434856520491263,
+   "cost_bn": -0.005434856520491263,
+   "line": "refundable_tax_credits",
+   "side": "spending",
+   "generation": "G1",
+   "term": "B"
+  },
+  "B_spending_G2": {
+   "bn": -0.14884286070122352,
+   "cost_bn": -0.14884286070122352,
+   "line": "refundable_tax_credits",
+   "side": "spending",
+   "generation": "G2",
+   "term": "B"
+  },
+  "B_spending_G3plus": {
+   "bn": -0.07576483834626209,
+   "cost_bn": -0.07576483834626209,
+   "line": "refundable_tax_credits",
+   "side": "spending",
+   "generation": "G3plus",
+   "term": "B"
+  },
+  "C_receipt_G1": {
+   "bn": -0.003471039152044451,
+   "cost_bn": 0.003471039152044451,
+   "line": "federal_income_tax",
+   "side": "receipt",
+   "generation": "G1",
+   "term": "C"
+  },
+  "C_receipt_G2": {
+   "bn": -0.0747453125669331,
+   "cost_bn": 0.0747453125669331,
+   "line": "federal_income_tax",
+   "side": "receipt",
+   "generation": "G2",
+   "term": "C"
+  },
+  "C_receipt_G3plus": {
+   "bn": -0.2387008627224222,
+   "cost_bn": 0.2387008627224222,
+   "line": "federal_income_tax",
+   "side": "receipt",
+   "generation": "G3plus",
+   "term": "C"
+  },
+  "Cr_receipt_G1": {
+   "bn": 0.0020876709623417855,
+   "cost_bn": -0.0020876709623417855,
+   "line": "federal_income_tax",
+   "side": "receipt",
+   "generation": "G1",
+   "term": "Cr"
+  },
+  "Cr_receipt_G2": {
+   "bn": 0.0029294638575043416,
+   "cost_bn": -0.0029294638575043416,
+   "line": "federal_income_tax",
+   "side": "receipt",
+   "generation": "G2",
+   "term": "Cr"
+  },
+  "Cr_receipt_G3plus": {
+   "bn": 0.010944447329084422,
+   "cost_bn": -0.010944447329084422,
+   "line": "federal_income_tax",
+   "side": "receipt",
+   "generation": "G3plus",
+   "term": "Cr"
+  }
+ },
+ "edits": [
+  {
+   "side": "receipt",
+   "line": "federal_income_tax",
+   "scenario": "cbo_collective",
+   "by": {
+    "personal": -1.774993560248972,
+    "shared": 0.0
+   }
+  },
+  {
+   "side": "receipt",
+   "line": "federal_income_tax",
+   "scenario": "corporate_all_capital",
+   "by": {
+    "personal": -1.774993560248972,
+    "shared": 0.0
+   }
+  },
+  {
+   "side": "receipt",
+   "line": "federal_income_tax",
+   "scenario": "medicare_income_weighted",
+   "by": {
+    "personal": -1.774993560248972,
+    "shared": 0.0
+   }
+  },
+  {
+   "side": "receipt",
+   "line": "federal_income_tax",
+   "scenario": "nas_80",
+   "by": {
+    "personal": -1.774993560248972,
+    "shared": 0.0
+   }
+  },
+  {
+   "side": "receipt",
+   "line": "federal_income_tax",
+   "scenario": "property_residual_consumption",
+   "by": {
+    "personal": -1.774993560248972,
+    "shared": 0.0
+   }
+  },
+  {
+   "side": "receipt",
+   "line": "federal_income_tax",
+   "scenario": "public_assets_tax_base",
+   "by": {
+    "personal": -1.774993560248972,
+    "shared": 0.0
+   }
+  },
+  {
+   "side": "receipt",
+   "line": "federal_income_tax",
+   "scenario": "treasury_815",
+   "by": {
+    "personal": -1.774993560248972,
+    "shared": 0.0
+   }
+  },
+  {
+   "side": "spending",
+   "line": "refundable_tax_credits",
+   "key": "refundable_credits",
+   "by": {
+    "personal": 2.5235518246986195,
+    "shared": 0.0
+   }
+  }
+ ],
+ "edits_note": "the receipt edit is listed once for each of the seven federal_liability rules; federal_gap_high_agi is absent: its key (observed_liability_plus_positive_gap_high_agi) is not computed here",
+ "lineage": {
+  "g3plus_per_member_usd": 213.9699783477279,
+  "g3plus_term_bn": 3.068880377955548,
+  "identified_g3plus": 14342574.606276,
+  "rule": "the v7 lane applies it to the lineage's G3+-priced members (later losses plus (1 \u2212 C3) of the G3-rate attriters); the white-priced part takes 0, not measured"
+ },
+ "arms": {
+  "R1_with_status": {
+   "net_bn": {
+    "personal": 3.183644938161555
+   },
+   "by_generation": {
+    "G1": {
+     "personal": -0.1405965194497338
+    },
+    "G2": {
+     "personal": 0.5300207363322567
+    },
+    "G3plus": {
+     "personal": 2.7942207212790295
+    }
+   },
+   "se_bn": {
+    "personal": 0.3698960389555683
+   },
+   "edits_personal": {
+    "receipt": -1.390177317955728,
+    "spending": 1.793467620205826
+   }
+  },
+  "R2_with_status": {
+   "net_bn": {
+    "personal": 4.405497867023963
+   },
+   "by_generation": {
+    "G1": {
+     "personal": -0.020541329140447522
+    },
+    "G2": {
+     "personal": 1.2989199158529738
+    },
+    "G3plus": {
+     "personal": 3.1271192803114345
+    }
+   },
+   "se_bn": {
+    "personal": 0.31813341028201053
+   },
+   "edits_personal": {
+    "receipt": -1.81251587309998,
+    "spending": 2.592981993923983
+   }
+  },
+  "R3_without_status": {
+   "net_bn": {
+    "personal": 3.997589752655125
+   },
+   "by_generation": {
+    "G1": {
+     "personal": -0.025082968786000588
+    },
+    "G2": {
+     "personal": 1.1815487588789129
+    },
+    "G3plus": {
+     "personal": 2.84112396256221
+    }
+   },
+   "se_bn": {
+    "personal": 0.3163313661035777
+   },
+   "edits_personal": {
+    "receipt": -1.4740379279565046,
+    "spending": 2.5235518246986195
+   }
+  }
+ },
+ "beside": {
+  "joint_split_D_bn": 2.279133775,
+  "joint_split_D_se_bn": 2.972589821377728,
+  "state_credits_on_crossing_returns_bound_cps_bn": {
+   "forward": 0.3785015154223668,
+   "reverse_R1": 0.18132804669085084,
+   "reverse_R2": 0.06490661023391911,
+   "reverse_R3": 0.09519861570237463
+  }
+ },
+ "gates": [
+  {
+   "name": "cps_source_is_the_accounts",
+   "passed": true,
+   "value": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b"
+  },
+  {
+   "name": "replicates_join_every_person",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "full_weight_is_marsupwt",
+   "passed": true,
+   "value": 0.005049970000015946
+  },
+  {
+   "name": "every_person_has_a_household",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "refundable_credit_identity",
+   "passed": true,
+   "value": 0.0
+  },
+  {
+   "name": "row4_every_person_has_a_state",
+   "passed": true,
+   "value": {
+    "missing": 0
+   }
+  },
+  {
+   "name": "row4_mask_is_production_row4s_naturalized",
+   "passed": true,
+   "value": {
+    "records": 943,
+    "cps_population": 1677809.80045101,
+    "want": {
+     "records": 943,
+     "cps_population": 1677809.80045101,
+     "acs_population": 1435577.0,
+     "factor": 0.8556255897504617,
+     "replicate_factor_range": [
+      0.7951610892471739,
+      0.9255685433204576
+     ]
+    }
+   }
+  },
+  {
+   "name": "row4_mask_moves_no_civilian_outside_the_union_naturalized",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "row4_mask_is_production_row4s_noncitizen",
+   "passed": true,
+   "value": {
+    "records": 2139,
+    "cps_population": 4250103.13255449,
+    "want": {
+     "records": 2139,
+     "cps_population": 4250103.13255449,
+     "acs_population": 3307120.0,
+     "factor": 0.7781269999470055,
+     "replicate_factor_range": [
+      0.7396314679741801,
+      0.8160947275477066
+     ]
+    }
+   }
+  },
+  {
+   "name": "row4_mask_moves_no_civilian_outside_the_union_noncitizen",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "row4_union_is_the_accounts_count",
+   "passed": true,
+   "value": {
+    "union": 39712493.33118789,
+    "row4": 39712493.33118789
+   }
+  },
+  {
+   "name": "row4_replicate_factors_are_production_row4s_naturalized",
+   "passed": true,
+   "value": {
+    "got": [
+     0.7951610892471739,
+     0.9255685433204576
+    ],
+    "want": [
+     0.7951610892471739,
+     0.9255685433204576
+    ]
+   }
+  },
+  {
+   "name": "row4_replicate_factors_are_production_row4s_noncitizen",
+   "passed": true,
+   "value": {
+    "got": [
+     0.7396314679741801,
+     0.8160947275477066
+    ],
+    "want": [
+     0.7396314679741801,
+     0.8160947275477066
+    ]
+   }
+  },
+  {
+   "name": "row4_full_column_is_population_basis_reweight",
+   "passed": true,
+   "value": 0.0
+  },
+  {
+   "name": "row4_union_is_39712493",
+   "passed": true,
+   "value": 39712493.33118789
+  },
+  {
+   "name": "lineage_identified_g3plus_is_the_cases",
+   "passed": true,
+   "value": 14342574.60627561
+  },
+  {
+   "name": "impute_status_still_reports_its_medicaid_caveat",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "row4_status_frame_reproduces_the_adopted_stacks_civilian_m",
+   "passed": true,
+   "value": {
+    "got": 335.5437221788498,
+    "want": 335.5437221788498
+   }
+  },
+  {
+   "name": "row4_status_frame_reproduces_the_adopted_stacks_flagged_m",
+   "passed": true,
+   "value": {
+    "got": 9.992830839426174,
+    "want": 9.992830839426174
+   }
+  },
+  {
+   "name": "row4_status_frame_reproduces_the_adopted_stacks_flagged_union_m",
+   "passed": true,
+   "value": {
+    "got": 4.607452947057153,
+    "want": 4.607452947057154
+   }
+  },
+  {
+   "name": "row4_status_frame_reproduces_the_adopted_stacks_union_m",
+   "passed": true,
+   "value": {
+    "got": 39.712493331187886,
+    "want": 39.712493331187886
+   }
+  },
+  {
+   "name": "household_fraction_is_the_accounts",
+   "passed": true,
+   "value": 0.9900527030312051
+  },
+  {
+   "name": "allocation_check_reproduces_model_jsons_personal_share_refundable_credits",
+   "passed": true,
+   "value": {
+    "got": 0.2301728339975643,
+    "model_json": 0.230172834
+   }
+  },
+  {
+   "name": "allocation_check_reproduces_model_jsons_shared_share_refundable_credits",
+   "passed": true,
+   "value": {
+    "got": 0.24457467234181712,
+    "model_json": 0.244574672
+   }
+  },
+  {
+   "name": "weighted_members_only_sharing_is_the_personal_share_refundable_credits",
+   "passed": true,
+   "value": 0.23017283399756427
+  },
+  {
+   "name": "allocation_check_reproduces_model_jsons_personal_share_social_security",
+   "passed": true,
+   "value": {
+    "got": 0.0417970146621542,
+    "model_json": 0.041797015
+   }
+  },
+  {
+   "name": "allocation_check_reproduces_model_jsons_shared_share_social_security",
+   "passed": true,
+   "value": {
+    "got": 0.04375254416175907,
+    "model_json": 0.043752544
+   }
+  },
+  {
+   "name": "weighted_members_only_sharing_is_the_personal_share_social_security",
+   "passed": true,
+   "value": 0.04179701466215419
+  },
+  {
+   "name": "allocation_check_reproduces_model_jsons_personal_share_federal_liability",
+   "passed": true,
+   "value": {
+    "got": 0.053348298668109355,
+    "model_json": 0.053348299
+   }
+  },
+  {
+   "name": "allocation_check_reproduces_model_jsons_shared_share_federal_liability",
+   "passed": true,
+   "value": {
+    "got": 0.057399419379125495,
+    "model_json": 0.057399419
+   }
+  },
+  {
+   "name": "weighted_members_only_sharing_is_the_personal_share_federal_liability",
+   "passed": true,
+   "value": 0.05334829866810938
+  },
+  {
+   "name": "allocation_check_reproduces_model_jsons_personal_share_wage_oasdi",
+   "passed": true,
+   "value": {
+    "got": 0.09033905545635806,
+    "model_json": 0.090339055
+   }
+  },
+  {
+   "name": "allocation_check_reproduces_model_jsons_shared_share_wage_oasdi",
+   "passed": true,
+   "value": {
+    "got": 0.09497098222247664,
+    "model_json": 0.094970982
+   }
+  },
+  {
+   "name": "weighted_members_only_sharing_is_the_personal_share_wage_oasdi",
+   "passed": true,
+   "value": 0.09033905545635806
+  },
+  {
+   "name": "one_record_per_return",
+   "passed": true,
+   "value": {
+    "max": 1
+   }
+  },
+  {
+   "name": "joint_units_hold_exactly_two_filers",
+   "passed": true,
+   "value": [
+    2
+   ]
+  },
+  {
+   "name": "filers_without_amounts_are_joint_spouses_only",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "every_unit_with_a_filer_has_one_carrier",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "one_spouse_per_joint_unit",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "every_joint_head_has_a_spouse",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "dependents_without_a_return_have_nonfiler_claimants",
+   "passed": true,
+   "value": {
+    "other": [
+     6
+    ]
+   }
+  },
+  {
+   "name": "head_of_household_is_an_unmarried_head_with_a_dependent",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "dependent_filers_carry_no_credits",
+   "passed": true,
+   "value": {
+    "largest_credit": 0.0,
+    "returns": 3300
+   }
+  },
+  {
+   "name": "rule_reproduces_ctc_crd_on_every_return",
+   "passed": true,
+   "value": 1.0
+  },
+  {
+   "name": "rule_reproduces_actc_crd_999_of_positive_returns",
+   "passed": true,
+   "value": 0.9997962094966375
+  },
+  {
+   "name": "rule_reproduces_eit_cred_998_of_positive_returns",
+   "passed": true,
+   "value": 0.9990743189632373
+  },
+  {
+   "name": "rule_reproduces_the_care_credit_97_of_positive_gaps",
+   "passed": true,
+   "value": 0.9940174873446848
+  },
+  {
+   "name": "the_actual_scenario_returns_the_census_values",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "A_and_B_move_tax_only_through_the_credits",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "C_changes_no_credit",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "Cr_changes_no_credit",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "A_nonref_has_a_generation_wherever_it_is_nonzero",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "A_care_has_a_generation_wherever_it_is_nonzero",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "A_actc_has_a_generation_wherever_it_is_nonzero",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "A_eitc_has_a_generation_wherever_it_is_nonzero",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "B_nonref_has_a_generation_wherever_it_is_nonzero",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "B_care_has_a_generation_wherever_it_is_nonzero",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "B_actc_has_a_generation_wherever_it_is_nonzero",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "B_eitc_has_a_generation_wherever_it_is_nonzero",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "C_status_has_a_generation_wherever_it_is_nonzero",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "Cr_status_has_a_generation_wherever_it_is_nonzero",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "D_receipts_has_a_generation_wherever_it_is_nonzero",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "D_spending_has_a_generation_wherever_it_is_nonzero",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "published_refundable_key_share_is_model_jsons",
+   "passed": true,
+   "value": {
+    "got": 0.2301728339975643
+   }
+  },
+  {
+   "name": "tax_key_frame_is_this_frame",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "irs_key_ratio_is_constant_within_each_cell",
+   "passed": true,
+   "value": {
+    "max": 4.440892098500626e-16
+   }
+  },
+  {
+   "name": "every_return_with_a_tax_change_has_an_irs_key_cell",
+   "passed": true,
+   "value": {
+    "missing": 0
+   }
+  },
+  {
+   "name": "tax_key_civilians_are_this_frames",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "tax_key_sums_to_1_over_civilians_on_pwwgt0",
+   "passed": true,
+   "value": 0.9999999999999993
+  },
+  {
+   "name": "ctc_crd_attributed_to_members_and_others_adds_to_the_cps_total",
+   "passed": true,
+   "value": {
+    "cps_total_bn": 88.84274467295728,
+    "members_bn": 11.081995315741691,
+    "others_bn": 77.76074935721559
+   }
+  },
+  {
+   "name": "actc_crd_attributed_to_members_and_others_adds_to_the_cps_total",
+   "passed": true,
+   "value": {
+    "cps_total_bn": 21.589355248758604,
+    "members_bn": 5.018589948864699,
+    "others_bn": 16.570765299893907
+   }
+  },
+  {
+   "name": "eit_cred_attributed_to_members_and_others_adds_to_the_cps_total",
+   "passed": true,
+   "value": {
+    "cps_total_bn": 42.62437313601435,
+    "members_bn": 9.904325411171122,
+    "others_bn": 32.720047724843226
+   }
+  },
+  {
+   "name": "every_member_dependent_is_civilian",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "an_example_return_exists",
+   "passed": true,
+   "value": 3
+  },
+  {
+   "name": "refundable_tax_credits_preferred_key_is_refundable_credits",
+   "passed": true,
+   "value": "refundable_credits"
+  },
+  {
+   "name": "item_receipt_edit_covers_the_seven_federal_liability_rules",
+   "passed": true,
+   "value": {
+    "listed": [
+     "cbo_collective",
+     "corporate_all_capital",
+     "medicare_income_weighted",
+     "nas_80",
+     "property_residual_consumption",
+     "public_assets_tax_base",
+     "treasury_815"
+    ],
+    "absent": [
+     "federal_gap_high_agi"
+    ]
+   }
+  },
+  {
+   "name": "item_federal_liability_rules_share_the_reference_target",
+   "passed": true,
+   "value": 128.208871988
+  },
+  {
+   "name": "item_is_the_summarys_r3_with_status",
+   "passed": true,
+   "value": 4.298545384947592
+  },
+  {
+   "name": "item_parts_add_to_the_two_edits_and_the_net",
+   "passed": true,
+   "value": {
+    "receipt": -1.774993560248972,
+    "spending": 2.5235518246986195,
+    "net": 4.298545384947592
+   }
+  },
+  {
+   "name": "item_generations_add_to_the_net",
+   "passed": true,
+   "value": {
+    "G1": -0.02369960059629791,
+    "G2": 1.2533646075883418,
+    "G3plus": 3.068880377955548
+   }
+  },
+  {
+   "name": "item_arm_R1_with_status_is_the_summarys",
+   "passed": true,
+   "value": 3.183644938161555
+  },
+  {
+   "name": "item_arm_R2_with_status_is_the_summarys",
+   "passed": true,
+   "value": 4.405497867023963
+  },
+  {
+   "name": "item_arm_R3_without_status_is_the_summarys",
+   "passed": true,
+   "value": 3.997589752655125
+  }
+ ]
+}

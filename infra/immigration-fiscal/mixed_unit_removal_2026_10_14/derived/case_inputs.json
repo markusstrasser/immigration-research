@@ -1,0 +1,606 @@
+{
+  "case": "oct14",
+  "allocation": "personal",
+  "lines": {
+    "general_sales_tax": {
+      "national_bn": 602.43,
+      "union_target_bn": 54.99276006061159,
+      "lineage_target_bn": 4.918883738766226,
+      "full_target_bn": 59.91164379937781
+    },
+    "excise_selective_sales": {
+      "national_bn": 371.262,
+      "union_target_bn": 31.715893986142355,
+      "lineage_target_bn": 2.804394573948528,
+      "full_target_bn": 34.52028856009088
+    },
+    "customs_duties": {
+      "national_bn": 83.587,
+      "union_target_bn": 6.844117742597007,
+      "lineage_target_bn": 0.6414447328951542,
+      "full_target_bn": 7.485562475492161
+    },
+    "personal_current_transfers": {
+      "national_bn": 141.065,
+      "union_target_bn": 11.55042613515794,
+      "lineage_target_bn": 1.0825295948661111,
+      "full_target_bn": 12.632955730024051
+    }
+  },
+  "bands": {
+    "set": [
+      339.5520178295269,
+      423.6492607005069
+    ],
+    "cash": [
+      264.4255736155054,
+      348.52281648648557
+    ]
+  },
+  "responses": {
+    "set": [
+      {
+        "general_sales_tax": 1,
+        "excise_selective_sales": 1,
+        "customs_duties": 1,
+        "personal_current_transfers": 1
+      },
+      {
+        "general_sales_tax": 1,
+        "excise_selective_sales": 1,
+        "customs_duties": 1,
+        "personal_current_transfers": 1
+      }
+    ],
+    "cash": [
+      {
+        "general_sales_tax": 1,
+        "excise_selective_sales": 1,
+        "customs_duties": 1,
+        "personal_current_transfers": 1
+      },
+      {
+        "general_sales_tax": 1,
+        "excise_selective_sales": 1,
+        "customs_duties": 1,
+        "personal_current_transfers": 1
+      }
+    ]
+  },
+  "endpoints": {
+    "set": [
+      16,
+      11
+    ],
+    "cash": [
+      16,
+      11
+    ]
+  },
+  "lineage": {
+    "lane": "main_case_lineage_2026_10_05",
+    "payload": "main_case_2026_10_07/derived/lineage_payload.json",
+    "builds_on": "main_case_2026_09_29/derived/corrections.json",
+    "arm": "b",
+    "source_arm": "b_one_step",
+    "rho": 0.5,
+    "generation": "G3plus",
+    "counting": {
+      "rule": "whole",
+      "definition": "whole people: every added person counts as one member, as the union counts its mixed-ancestry identifiers",
+      "rules_with_payloads": [
+        "whole"
+      ]
+    },
+    "counts": {
+      "added": 3039719.593185237,
+      "at_g3_rate": 1944891.7263696424,
+      "later_losses": 1094827.8668155947,
+      "lineage_population": 42752212.92438524,
+      "account_union": 39712493.3312,
+      "identified_g3plus": 14342574.606276
+    },
+    "c3": {
+      "value": 0.5567,
+      "se": 0.2457,
+      "label": "pooled with CPS monthly 1994-2026 (central)",
+      "measure": "ba_plus",
+      "source": "generation_carryover_2026_09_27/summarize.py SPLIT_C3 (imported)",
+      "override": false
+    },
+    "members": {
+      "g3plus": 1956998.3691152572,
+      "white": 1082721.22406998,
+      "rule": "later losses priced as identified G3+ members; G3-rate attriters at (1 - C3) G3+ member + C3 third-plus non-Hispanic white at the G3+'s ages: m_G = later + (1 - C3) x at_g3_rate G3+ members, m_W = C3 x at_g3_rate whites"
+    },
+    "frame_factor": 0.9971889122261052,
+    "s": {
+      "v4": 0.12024478903339636,
+      "v5": 0.12918222328408055
+    },
+    "k_metro": 1.0770924847748014,
+    "edits": {
+      "first": 416,
+      "count": 336,
+      "row8_edit_index": 751,
+      "row8_edit_bn": -0.00798742966671706
+    },
+    "production": "the union's grid plus the added G3+ members' P and F (whites carry none)",
+    "responses_changed": [
+      "general_government",
+      "row8_factor",
+      "economic_affairs_services",
+      "recreation_culture",
+      "roads_vmt_sl",
+      "roads_vmt_fed",
+      "state_price_recreation_culture",
+      "modeled_owner_property",
+      "tenant_occupied_property",
+      "capital_return long_run_subfunction values"
+    ],
+    "g3plus_model": "generation_account_2026_09_24/derived/model_G3plus.json + generation_corrections_sept29.json payloads.a.G3plus",
+    "white": "main_case_lineage_2026_10_05/derived/white_lines.json (g3plus_ages, accrual)",
+    "age_mix": {
+      "item": "added_age_mix",
+      "arm": null,
+      "measured": "basic monthly CPS 1994-2026 (IPUMS-CPS, months in sample 1 and 5): identity loss by age for G3anc and G4anc, the 2007-26 cross-section central",
+      "reading": "cross_section_2007_2026",
+      "route": "keys",
+      "rule": "each count part at its own mix: the G3-rate persons and the later losses priced as G3+ members at their mixes, the white end of the G3-rate blend at the G3-rate persons' mix; counts, C3 and the group-size responses are v5's, so only the ages move (meta.members' 'at the G3+'s ages' holds for the identified mix only)",
+      "route_rule": "the engine's own keys by five-year band (g3_age_keys.json): each G3+ cell times f = sum_b (pi'_b / pi_b) T_b / sum_b T_b; the set's Social Security, Medicare and federal income tax cells take the profile of what the pension rule puts in them; production follows the wage key",
+      "under_20_share": {
+        "identified": 0.4671630040016608,
+        "g3_rate": 0.4544483403794164,
+        "later": 0.6150379282993519,
+        "printed": "45.4% of the G3-rate persons and 61.5% of the later losses are under 20, against 46.7% of the identified third-plus"
+      },
+      "bands": [
+        "0-4",
+        "5-9",
+        "10-14",
+        "15-19",
+        "20-24",
+        "25-29",
+        "30-34",
+        "35-39",
+        "40-44",
+        "45-49",
+        "50-54",
+        "55-59",
+        "60-64",
+        "65-69",
+        "70-74",
+        "75-79",
+        "80+"
+      ],
+      "mixes": {
+        "identified": [
+          0.1378948412746499,
+          0.11276370017680144,
+          0.109100519689395,
+          0.10740394286081448,
+          0.07810195301363031,
+          0.07490770576258791,
+          0.059537889415888945,
+          0.05755193567490248,
+          0.05272116148272389,
+          0.043157357054626914,
+          0.0382145353377262,
+          0.02849067945175556,
+          0.03071791692721147,
+          0.024395586277564572,
+          0.019566886329411053,
+          0.012759895838953256,
+          0.012713493431356531
+        ],
+        "g3_rate": [
+          0.11550512057507968,
+          0.11394987786822339,
+          0.11654055457610438,
+          0.10845278736000895,
+          0.09250012234704288,
+          0.08990798868350394,
+          0.07146036356805542,
+          0.05925285373850772,
+          0.05427930848244888,
+          0.044432850699294854,
+          0.030624527350991474,
+          0.022831982239419117,
+          0.02461685530882724,
+          0.01955023900194312,
+          0.01568059483840487,
+          0.01022557976074758,
+          0.010188393601396459
+        ],
+        "later": [
+          0.18168417572050954,
+          0.14713410817205724,
+          0.14871238676351722,
+          0.1375072576432679,
+          0.09078217310293289,
+          0.06222277967289683,
+          0.04945569935161991,
+          0.041830282767632045,
+          0.038319147163316816,
+          0.03136791887064123,
+          0.01625697975572095,
+          0.01212032005572161,
+          0.013067816976191141,
+          0.010378212079208,
+          0.008324017867245789,
+          0.005428232124392325,
+          0.005408491913128473
+        ]
+      },
+      "edits": "the 335 cell edits and the production grid are v5's addition (the identified mix) plus later x (G_L - G) + (1 - C3) g3 x (G_3 - G) + C3 g3 x (W_3 - W); row 8's edit is v5's",
+      "replaces": {
+        "set": "main_case_lineage_2026_10_05/derived/lineage_payload.json",
+        "cash": "main_case_lineage_2026_10_05/derived/lineage_payload_cash.json"
+      },
+      "source": {
+        "lane": "added_age_mix_2026_10_07",
+        "commit": "21d9a21d",
+        "files": {
+          "age_mix": {
+            "file": "added_age_mix_2026_10_07/derived/age_mix.json",
+            "sha256": "01b6653fc6291365339be9ad2bdedf9053d2b45c6c98f856c9081f8ccfe713e3"
+          },
+          "band_lines": {
+            "file": "added_age_mix_2026_10_07/derived/band_lines.json",
+            "sha256": "a6be49b3aed84d20caec08a26ffb59d4096ae6da86a900972599efea9d90a346"
+          },
+          "age_keys": {
+            "file": "added_age_mix_2026_10_07/derived/g3_age_keys.json",
+            "sha256": "9feb49b958510ffcb4b86e60cb2ea86f4f458c8a4d0b54a837d0b6308cb6df09"
+          },
+          "price_summary": {
+            "file": "added_age_mix_2026_10_07/derived/price_summary.json",
+            "sha256": "b03c72af40fb20f0ff7c3cea3599aaf0df50efd78bb04f0021bdff395dc109c0"
+          },
+          "summary": {
+            "file": "added_age_mix_2026_10_07/derived/summary.json",
+            "sha256": "5d04c9805717e2f80459ecb46486629c6e09d1a293d0eea8a458250b89422e19"
+          }
+        },
+        "white": "main_case_lineage_2026_10_05/derived/white_lines.json",
+        "g3plus_model": "generation_account_2026_09_24/derived/model_G3plus.json + generation_account_2026_09_24/derived/generation_corrections_sept29.json / generation_account_2026_09_24/derived/generation_corrections_sept29_cash.json payloads.a.G3plus"
+      }
+    }
+  },
+  "child_credits": {
+    "rule": "the child-related credits and head-of-household status that cross the group's boundary in mixed tax units, which the personal allocation misses: credits non-member filers claim for member children (a removal ends them) less credits member filers claim for non-member children whose claim continues; fixed cell shifts on the group's personal cells (shared 0), in both sets (credits are paid when claimed), each line responding at its case response (1); the receipt edit at every incidence rule is the reference edit times the rule's union target on federal_income_tax over the reference's",
+    "stub": false,
+    "reading": "R3_with_status",
+    "reading_rule": "a non-member child's credit continues after the member claimant leaves only where the claimant's non-member spouse or a non-member parent of the child stays in the household (R3), and the head-of-household status effects (C, Cr) are included",
+    "sign": "net_bn, by_generation and a part's cost_bn: positive raises the group's net cost; a part's bn and the edits: the change to the group's target on the line, so a receipt part's bn is minus its cost_bn",
+    "scope": "the identified union on audit row 4's weights (39,712,493 people) at the personal allocation; the 3.04M added descendants are out of scope (see lineage); the shared cell is 0",
+    "net_bn": 4.298545384947592,
+    "se_bn": 0.3257543954928641,
+    "by_generation": {
+      "G1": -0.02369960059629791,
+      "G2": 1.2533646075883418,
+      "G3plus": 3.068880377955548
+    },
+    "edits": [
+      {
+        "side": "receipt",
+        "line": "federal_income_tax",
+        "scenario": "cbo_collective",
+        "by": {
+          "personal": -1.774993560248972,
+          "shared": 0
+        }
+      },
+      {
+        "side": "receipt",
+        "line": "federal_income_tax",
+        "scenario": "corporate_all_capital",
+        "by": {
+          "personal": -1.774993560248972,
+          "shared": 0
+        }
+      },
+      {
+        "side": "receipt",
+        "line": "federal_income_tax",
+        "scenario": "medicare_income_weighted",
+        "by": {
+          "personal": -1.774993560248972,
+          "shared": 0
+        }
+      },
+      {
+        "side": "receipt",
+        "line": "federal_income_tax",
+        "scenario": "nas_80",
+        "by": {
+          "personal": -1.774993560248972,
+          "shared": 0
+        }
+      },
+      {
+        "side": "receipt",
+        "line": "federal_income_tax",
+        "scenario": "property_residual_consumption",
+        "by": {
+          "personal": -1.774993560248972,
+          "shared": 0
+        }
+      },
+      {
+        "side": "receipt",
+        "line": "federal_income_tax",
+        "scenario": "public_assets_tax_base",
+        "by": {
+          "personal": -1.774993560248972,
+          "shared": 0
+        }
+      },
+      {
+        "side": "receipt",
+        "line": "federal_income_tax",
+        "scenario": "treasury_815",
+        "by": {
+          "personal": -1.774993560248972,
+          "shared": 0
+        }
+      },
+      {
+        "side": "spending",
+        "line": "refundable_tax_credits",
+        "key": "refundable_credits",
+        "by": {
+          "personal": 2.5235518246986195,
+          "shared": 0
+        }
+      }
+    ],
+    "edits_note": "the receipt edit is listed once for each of the seven federal_liability rules; federal_gap_high_agi is absent: its key (observed_liability_plus_positive_gap_high_agi) is not computed here",
+    "receipt_rule": {
+      "rule": "the lane's reference edit times each scenario's union target on federal_income_tax over the reference's (model.json), the case's expand rule; the lane's own edits at its scenarios follow it (1e-12)",
+      "synthesized": [
+        {
+          "tag": "[APPROX]",
+          "why": "the lane computes no key for this scenario",
+          "line": "federal_income_tax",
+          "scenario": "federal_gap_high_agi",
+          "ratio": 0.925207989647569,
+          "by_personal": -1.6422382235153326
+        }
+      ]
+    },
+    "parts": {
+      "A_receipt_G1": {
+        "bn": -0.024950195161482235,
+        "cost_bn": 0.024950195161482235,
+        "line": "federal_income_tax",
+        "side": "receipt",
+        "generation": "G1",
+        "term": "A"
+      },
+      "A_receipt_G2": {
+        "bn": -0.4886480625807886,
+        "cost_bn": 0.4886480625807886,
+        "line": "federal_income_tax",
+        "side": "receipt",
+        "generation": "G2",
+        "term": "A"
+      },
+      "A_receipt_G3plus": {
+        "bn": -1.414573076586947,
+        "cost_bn": 1.414573076586947,
+        "line": "federal_income_tax",
+        "side": "receipt",
+        "generation": "G3plus",
+        "term": "A"
+      },
+      "A_spending_G1": {
+        "bn": 0.02978058984179869,
+        "cost_bn": 0.02978058984179869,
+        "line": "refundable_tax_credits",
+        "side": "spending",
+        "generation": "G1",
+        "term": "A"
+      },
+      "A_spending_G2": {
+        "bn": 1.0252374472976467,
+        "cost_bn": 1.0252374472976467,
+        "line": "refundable_tax_credits",
+        "side": "spending",
+        "generation": "G2",
+        "term": "A"
+      },
+      "A_spending_G3plus": {
+        "bn": 1.6985763431271512,
+        "cost_bn": 1.6985763431271512,
+        "line": "refundable_tax_credits",
+        "side": "spending",
+        "generation": "G3plus",
+        "term": "A"
+      },
+      "B_receipt_G1": {
+        "bn": 0.07437889726879024,
+        "cost_bn": -0.07437889726879024,
+        "line": "federal_income_tax",
+        "side": "receipt",
+        "generation": "G1",
+        "term": "B"
+      },
+      "B_receipt_G2": {
+        "bn": 0.1834938902982987,
+        "cost_bn": -0.1834938902982987,
+        "line": "federal_income_tax",
+        "side": "receipt",
+        "generation": "G2",
+        "term": "B"
+      },
+      "B_receipt_G3plus": {
+        "bn": 0.19626061880562612,
+        "cost_bn": -0.19626061880562612,
+        "line": "federal_income_tax",
+        "side": "receipt",
+        "generation": "G3plus",
+        "term": "B"
+      },
+      "B_spending_G1": {
+        "bn": -0.005434856520491263,
+        "cost_bn": -0.005434856520491263,
+        "line": "refundable_tax_credits",
+        "side": "spending",
+        "generation": "G1",
+        "term": "B"
+      },
+      "B_spending_G2": {
+        "bn": -0.14884286070122352,
+        "cost_bn": -0.14884286070122352,
+        "line": "refundable_tax_credits",
+        "side": "spending",
+        "generation": "G2",
+        "term": "B"
+      },
+      "B_spending_G3plus": {
+        "bn": -0.07576483834626209,
+        "cost_bn": -0.07576483834626209,
+        "line": "refundable_tax_credits",
+        "side": "spending",
+        "generation": "G3plus",
+        "term": "B"
+      },
+      "C_receipt_G1": {
+        "bn": -0.003471039152044451,
+        "cost_bn": 0.003471039152044451,
+        "line": "federal_income_tax",
+        "side": "receipt",
+        "generation": "G1",
+        "term": "C"
+      },
+      "C_receipt_G2": {
+        "bn": -0.0747453125669331,
+        "cost_bn": 0.0747453125669331,
+        "line": "federal_income_tax",
+        "side": "receipt",
+        "generation": "G2",
+        "term": "C"
+      },
+      "C_receipt_G3plus": {
+        "bn": -0.2387008627224222,
+        "cost_bn": 0.2387008627224222,
+        "line": "federal_income_tax",
+        "side": "receipt",
+        "generation": "G3plus",
+        "term": "C"
+      },
+      "Cr_receipt_G1": {
+        "bn": 0.0020876709623417855,
+        "cost_bn": -0.0020876709623417855,
+        "line": "federal_income_tax",
+        "side": "receipt",
+        "generation": "G1",
+        "term": "Cr"
+      },
+      "Cr_receipt_G2": {
+        "bn": 0.0029294638575043416,
+        "cost_bn": -0.0029294638575043416,
+        "line": "federal_income_tax",
+        "side": "receipt",
+        "generation": "G2",
+        "term": "Cr"
+      },
+      "Cr_receipt_G3plus": {
+        "bn": 0.010944447329084422,
+        "cost_bn": -0.010944447329084422,
+        "line": "federal_income_tax",
+        "side": "receipt",
+        "generation": "G3plus",
+        "term": "Cr"
+      }
+    },
+    "scales": {
+      "federal_income_tax|cbo_collective": 1,
+      "federal_income_tax|corporate_all_capital": 1,
+      "federal_income_tax|federal_gap_high_agi": 0.925207989647569,
+      "federal_income_tax|medicare_income_weighted": 1,
+      "federal_income_tax|nas_80": 1,
+      "federal_income_tax|property_residual_consumption": 1,
+      "federal_income_tax|public_assets_tax_base": 1,
+      "federal_income_tax|treasury_815": 1,
+      "refundable_tax_credits|refundable_credits": 1
+    },
+    "added_people": {
+      "applied": true,
+      "term_bn": 0.41873889866613045,
+      "rule": "the lane's G3+ term per member on the lineage's G3+-priced added people (later losses plus (1 - C3) of the G3-rate attriters, meta.lineage.members.g3plus), split across the two lines in G3+'s own receipt and spending proportions (item.json's G3plus parts); the white-priced added people take 0 [ASSUMPTION: not measured]",
+      "g3plus_by_line": {
+        "federal_income_tax": -1.4460688731746585,
+        "refundable_tax_credits": 1.622811504780889
+      },
+      "added_g3plus_priced": 1956998.3691152572,
+      "identified_g3plus": 14342574.606276,
+      "scale": 0.13644679723394412,
+      "per_member_usd": 213.9699783477279,
+      "counts": {
+        "later": 1094827.8668155947,
+        "g3_rate": 1944891.7263696424,
+        "c3": 0.5567
+      }
+    },
+    "arms": {
+      "R1_with_status": {
+        "net_bn": 3.183644938161555,
+        "by_generation": {
+          "G1": -0.1405965194497338,
+          "G2": 0.5300207363322567,
+          "G3plus": 2.7942207212790295
+        },
+        "se_bn": 0.3698960389555683,
+        "edits_personal": {
+          "receipt": -1.390177317955728,
+          "spending": 1.793467620205826
+        }
+      },
+      "R2_with_status": {
+        "net_bn": 4.405497867023963,
+        "by_generation": {
+          "G1": -0.020541329140447522,
+          "G2": 1.2989199158529738,
+          "G3plus": 3.1271192803114345
+        },
+        "se_bn": 0.31813341028201053,
+        "edits_personal": {
+          "receipt": -1.81251587309998,
+          "spending": 2.592981993923983
+        }
+      },
+      "R3_without_status": {
+        "net_bn": 3.997589752655125,
+        "by_generation": {
+          "G1": -0.025082968786000588,
+          "G2": 1.1815487588789129,
+          "G3plus": 2.84112396256221
+        },
+        "se_bn": 0.3163313661035777,
+        "edits_personal": {
+          "receipt": -1.4740379279565046,
+          "spending": 2.5235518246986195
+        }
+      }
+    },
+    "beside": {
+      "joint_split_D_bn": 2.279133775,
+      "joint_split_D_se_bn": 2.972589821377728,
+      "state_credits_on_crossing_returns_bound_cps_bn": {
+        "forward": 0.3785015154223668,
+        "reverse_R1": 0.18132804669085084,
+        "reverse_R2": 0.06490661023391911,
+        "reverse_R3": 0.09519861570237463
+      }
+    },
+    "source": {
+      "lane": "mixed_unit_credits_2026_10_14",
+      "file": "mixed_unit_credits_2026_10_14/derived/item.json",
+      "sha256": "2773e34d4cb02a70dd21544f915b2b83bbdc00855d24d468ed67e81e0310b5ac",
+      "stub": false,
+      "verdict": "The personal allocation misses a net **+$4.30bn** (SE $0.33bn) of child-credit and filing-status cost"
+    }
+  }
+}

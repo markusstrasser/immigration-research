@@ -1,0 +1,231 @@
+{
+  "ACA": {
+    "missing": [
+      "Form 1095-A enrollment premiums and SLCSP",
+      "APTC paid",
+      "monthly marketplace coverage",
+      "employer coverage affordability",
+      "legal tax-family MAGI and immigration eligibility"
+    ],
+    "status": "unidentifiable; spending held"
+  },
+  "Medicaid_CHIP": {
+    "groups": {
+      "adults": {
+        "lost_proxy_eligibility": {
+          "persons": 65979.68670795,
+          "se_persons": 13754.669206034145
+        },
+        "newly_proxy_eligible": {
+          "persons": 353166.6910452,
+          "se_persons": 33927.71413150242
+        },
+        "proxy_eligible_after": {
+          "persons": 528733.95210556,
+          "se_persons": 41888.915629150135
+        },
+        "proxy_eligible_before": {
+          "persons": 241546.94776831003,
+          "se_persons": 26241.592279533757
+        },
+        "reported_covered": {
+          "persons": 638138.59220412,
+          "se_persons": 43935.38735309839
+        },
+        "reported_covered_but_proxy_ineligible_before": {
+          "persons": 493683.95529345004,
+          "se_persons": 40137.70040430803
+        },
+        "reported_covered_losing_proxy_eligibility": {
+          "persons": 46064.01882751,
+          "se_persons": 12338.95670898674
+        },
+        "survivors": {
+          "persons": 4350795.5240804795,
+          "se_persons": 113933.67687106763
+        }
+      },
+      "children": {
+        "lost_proxy_eligibility": {
+          "persons": 35702.95381244,
+          "se_persons": 11478.348350130926
+        },
+        "newly_proxy_eligible": {
+          "persons": 330072.65963551,
+          "se_persons": 46838.28472364488
+        },
+        "proxy_eligible_after": {
+          "persons": 971792.12880825,
+          "se_persons": 80703.04568374256
+        },
+        "proxy_eligible_before": {
+          "persons": 677422.4229851799,
+          "se_persons": 63962.84690454941
+        },
+        "reported_covered": {
+          "persons": 619196.28839534,
+          "se_persons": 58488.052104478316
+        },
+        "reported_covered_but_proxy_ineligible_before": {
+          "persons": 186500.74867256003,
+          "se_persons": 27980.426616659657
+        },
+        "reported_covered_losing_proxy_eligibility": {
+          "persons": 14480.89422859,
+          "se_persons": 5848.668539843184
+        },
+        "survivors": {
+          "persons": 1594151.09604877,
+          "se_persons": 99087.88111740889
+        }
+      }
+    },
+    "missing": [
+      "legal MAGI household",
+      "monthly MAGI",
+      "qualified status and five-year eligibility",
+      "pregnancy",
+      "state 2024 within-year threshold changes",
+      "continuous eligibility/takeup",
+      "special CHIP counties and optional age-19/20/demonstration routes"
+    ],
+    "spending_rule": "fixed MEPS age-by-birth expected payment key, unchanged by simulated eligibility",
+    "status": "[DEGRADED] income eligibility proxy only; all Medicaid/CHIP spending held",
+    "threshold_vintage": "CMS December 1, 2023 snapshot held across calendar 2024",
+    "unsupported_survivors": 1003813.1523070299
+  },
+  "adoptable": false,
+  "assumptions": [
+    "SPM unit is proxy assistance unit",
+    "Annual incomes treated as steady monthly incomes",
+    "SPM total-income residual held on surviving unit",
+    "CPS deduction totals pro-rated by persons remaining",
+    "SNAP shelter deduction zero vs maximum; not observed rent or utility costs",
+    "Federal income tests only; assets, BBCE, ABAWD, students and status not identified",
+    "SNAP reported annual level residual held; existing participation vs full-takeup proxy",
+    "Original mean person weight is unit event weight; survivor weights unchanged",
+    "Health eligibility uses SPM income proxy; neither receipt nor expected spending changes are inferred"
+  ],
+  "calibration": {
+    "account_bn_per_cps_bn": 2.0981427407954722,
+    "baseline_fit": {
+      "cap": {
+        "dollars_on_reported_units_failing_proxy_income_test_bn": 7.296261732709341,
+        "raw_schedule_bn": 509.2833063158895,
+        "reported_benefit_units_failing_proxy_income_test": 982,
+        "reported_bn": 45.90383921811443,
+        "residual_l1_bn": 483.11326516171675
+      },
+      "zero": {
+        "dollars_on_reported_units_failing_proxy_income_test_bn": 17.20148505052327,
+        "raw_schedule_bn": 77.16361141836362,
+        "reported_benefit_units_failing_proxy_income_test": 2659,
+        "reported_bn": 45.90383921811443,
+        "residual_l1_bn": 81.97427402486086
+      }
+    },
+    "household_fraction": 0.9900527030312051,
+    "original_national_snap_key_bn": 45.955988087042826,
+    "published_snap_target_share": 0.14814983969377055
+  },
+  "frame": {
+    "excluded_alaska_units": 26,
+    "excluded_noncivilian_units": 58,
+    "identified_only": true,
+    "lineage": "No mixed-unit records for added people; no extrapolation",
+    "mixed_spm_units": 2331,
+    "priced_snap_units": 2252,
+    "signed_replicate_weights": 132,
+    "surviving_persons": 6935945.06422439
+  },
+  "national_closure_max_bn": 4.119873046875e-13,
+  "recommended": "withhold M4; publish partial-stack and conditional scenarios beside it",
+  "status": "[DEGRADED] conditional SNAP; Medicaid/CHIP and ACA spending changes unidentified",
+  "status_rule": "Imputed unauthorized flag is not a legal eligibility record; legal program status remains unidentified",
+  "summaries": {
+    "SNAP_cap_existing_participation": {
+      "bn": -0.06900960139103442,
+      "by_generation_bn": {
+        "G1": -0.1408873716788896,
+        "G2": 0.04551103994985021,
+        "G3+": 0.02636673033800498
+      },
+      "by_generation_se_bn": {
+        "G1": 0.07669673151221287,
+        "G2": 0.07679649735982082,
+        "G3+": 0.08763450205954132
+      },
+      "se_bn": 0.13614208527051058
+    },
+    "SNAP_cap_full_takeup_proxy": {
+      "bn": -3.6488518357791877,
+      "by_generation_bn": {
+        "G1": -0.9640756074818368,
+        "G2": -1.2508730639666747,
+        "G3+": -1.433903164330676
+      },
+      "by_generation_se_bn": {
+        "G1": 0.21632817555279926,
+        "G2": 0.1912229353333866,
+        "G3+": 0.1986132548215184
+      },
+      "se_bn": 0.37451600784242384
+    },
+    "SNAP_envelope_high": {
+      "bn": 2.046602144946868,
+      "by_generation_bn": {
+        "G1": 0.1521614844344973,
+        "G2": 0.8546071021768329,
+        "G3+": 1.0398335583355374
+      },
+      "by_generation_se_bn": {
+        "G1": 0.033189513475728266,
+        "G2": 0.15057929511560006,
+        "G3+": 0.1615668846114451
+      },
+      "se_bn": 0.22835120548850882
+    },
+    "SNAP_envelope_low": {
+      "bn": -46.06071820631645,
+      "by_generation_bn": {
+        "G1": -6.216668927011038,
+        "G2": -14.383464720216292,
+        "G3+": -25.46058455908912
+      },
+      "by_generation_se_bn": {
+        "G1": 0.4412227498653852,
+        "G2": 0.7099926821713503,
+        "G3+": 1.0341358104717493
+      },
+      "se_bn": 1.5413860497570304
+    },
+    "SNAP_zero_existing_participation": {
+      "bn": -1.0695006981700632,
+      "by_generation_bn": {
+        "G1": -0.22275956071699993,
+        "G2": -0.3128857434037063,
+        "G3+": -0.533855394049357
+      },
+      "by_generation_se_bn": {
+        "G1": 0.06742256880959735,
+        "G2": 0.08811762093143669,
+        "G3+": 0.0985324896609233
+      },
+      "se_bn": 0.16759405387611173
+    },
+    "SNAP_zero_full_takeup_proxy": {
+      "bn": -5.6057218538099285,
+      "by_generation_bn": {
+        "G1": -1.2529320961346875,
+        "G2": -1.90607892466857,
+        "G3+": -2.4467108330066716
+      },
+      "by_generation_se_bn": {
+        "G1": 0.21731861599777214,
+        "G2": 0.22012862146162496,
+        "G3+": 0.2225151266758868
+      },
+      "se_bn": 0.430880520187698
+    }
+  }
+}

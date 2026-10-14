@@ -1,0 +1,16 @@
+{
+  "benefit_snap24_max.pdf": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Maximum-Allotments-and-Deductions.pdf",
+  "benefit_snap24_income.pdf": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Income-Eligibility-Standards.pdf",
+  "benefit_snap24_min.pdf": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Minimum-Allotments.pdf",
+  "benefit_snap25_max.pdf": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Maximum-Allotments-Deductions.pdf",
+  "benefit_snap25_income.pdf": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Income-Eligibility-Standards.pdf",
+  "benefit_snap25_min.pdf": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Minimum-Allotments.pdf",
+  "benefit_medicaid.html": "https://www.medicaid.gov/medicaid/national-medicaid-chip-program-information/medicaid-childrens-health-insurance-program-basic-health-program-eligibility-levels",
+  "benefit_fpl24.pdf": "https://www.medicaid.gov/sites/default/files/2024-01/cib012424_0.pdf",
+  "benefit_fpl24_fr.pdf": "https://www.govinfo.gov/content/pkg/FR-2024-01-17/pdf/2024-00796.pdf",
+  "benefit_ptc24.pdf": "https://www.irs.gov/pub/irs-prior/i8962--2024.pdf",
+  "benefit_snap_deductions.xml": "https://www.govinfo.gov/content/pkg/CFR-2024-title7-vol4/xml/CFR-2024-title7-vol4-sec273-9.xml",
+  "benefit_snap_benefits.xml": "https://www.govinfo.gov/content/pkg/CFR-2024-title7-vol4/xml/CFR-2024-title7-vol4-sec273-10.xml",
+  "benefit_magi_law.xml": "https://www.govinfo.gov/content/pkg/CFR-2024-title42-vol4/xml/CFR-2024-title42-vol4-sec435-603.xml",
+  "benefit_states.json": "local archived primary API response: apportionment_2026_09_18/_cache/acs5_2020_states.json"
+}

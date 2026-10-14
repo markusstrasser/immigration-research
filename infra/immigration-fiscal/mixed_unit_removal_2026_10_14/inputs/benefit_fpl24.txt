@@ -1,0 +1,100 @@
+    DEPARTMENT OF HEALTH & HUMAN SERVICES
+    Centers for Medicare & Medicaid Services
+    7500 Security Boulevard, Mail Stop S2-26-12
+    Baltimore, Maryland 21244-1850
+
+
+    CMCS Informational Bulletin
+
+
+    DATE:          January 24, 2024
+
+    FROM:          Daniel Tsai, Deputy Administrator and Director
+                   Center for Medicaid and CHIP Services
+
+    SUBJECT: 2024 Federal Poverty Level Standards
+
+    As required by Section 673(2) of the Omnibus Budget Reconciliation Act (OBRA) of 1981 (42
+    U.S.C. 9902(2)), the Department of Health and Human Services (HHS) updates the poverty
+    guidelines at least annually and by law these updates are applied to eligibility criteria for
+    programs such as Medicaid and the Children’s Health Insurance Program (CHIP). These annual
+    updates account for the increase in the Census Bureau’s current official poverty thresholds by the
+    relevant percentage change in the Consumer Price Index for All Urban Consumers (CPI–U).
+
+    The 2024 guidelines reflect the 4.1 percent price increase between calendar years 2022 and 2023.
+    After this inflation adjustment, the guidelines are rounded and adjusted to standardize the
+    differences between family and household sizes. For a family or household of 4 persons living
+    in one of the 48 contiguous states or the District of Columbia, the poverty guideline for 2024 is
+    $31,200. Separate poverty guideline figures are developed for Alaska and Hawaii, and different
+    guidelines may apply to the Territories. The guidelines can be found at
+    https://www.federalregister.gov/documents/2024/01/17/2024-00796/annual-update-of-the-hhs-
+    poverty-guidelines. To determine eligibility for Medicaid and CHIP, states generally use a
+    percentage multiple of the guidelines (for example, 133 percent or 185 percent of the guidelines).
+
+    Included with this informational bulletin is the 2024 Dual Eligible Standards chart that displays
+    the new standards for the Medicare Savings Program categories. These standards are also
+    available on Medicaid.gov at https://www.medicaid.gov/medicaid/eligibility/seniors-medicare-
+    and-medicaid-enrollees/index.html. The asset limits are not derived from the poverty levels but
+    are instead based on a statutory formula described in section 1905(p)(1)(C) of the Social
+    Security Act. 1 Please note that the income figures for the Qualified Disabled Working
+    Individual (QDWI) program identified in the chart incorporate earned income disregards, in
+    addition to the $20 general income disregard.
+
+    Please update your standards in accordance with this information. If you have any questions or
+    need additional information, please contact Sarah Lichtman Spector, Director of the Division
+    of Medicaid Eligibility Policy, at 410-786-3031 or Sarah.Spector@cms.hhs.gov.
+
+    Attachment:
+
+
+
+
+1
+ For more information on this formula, please see the CMCS Informational Bulletin “2024 SSI, Spousal
+Impoverishment, and Medicare Savings Program Resources Standards,” available here:
+https://www.medicaid.gov/sites/default/files/2023-11/cib11142024.pdf.
+                            2024 Dual Eligible Standards
+                                (Based on Percentage of Federal Poverty Level)
+
+
+ Qualified Medicare Beneficiary (QMB):
+ Monthly Income Limits: (100% FPL + $20)*
+
+                                   QMB                           Individual        Couple
+                All States and DC (Except Alaska & Hawaii):      $ 1,275.00      $ 1,724.00
+                Alaska:                                          $ 1,588.00      $ 2,149.00
+                Hawaii:                                          $ 1,463.00      $ 1,979.00
+                Asset Limits:                                    $ 9,430.00      $ 14,130.00
+
+
+ Specified Low-Income Medicare Beneficiary (SLMB):
+ Monthly Income Limits: (120% FPL + $20)*
+
+                                   SLMB                          Individual        Couple
+                All States and DC (Except Alaska & Hawaii):      $ 1,526.00      $ 2,064.00
+                Alaska:                                          $ 1,901.00      $ 2,574.00
+                Hawaii:                                          $ 1,751.00      $ 2,370.00
+                Asset Limits:                                    $ 9,430.00      $ 14,130.00
+
+ Qualifying Individual (QI):
+ Monthly Income Limits: (135% FPL + $20)*
+
+                                    QI                           Individual        Couple
+                All States and DC (Except Alaska & Hawaii):      $ 1,715.00      $ 2,320.00
+                Alaska:                                          $ 2,137.00      $ 2,894.00
+                Hawaii:                                          $ 1,968.00      $ 2,664.00
+                Asset Limits:                                    $ 9,430.00      $ 14,130.00
+
+ Qualified Disabled Working Individual (QDWI):
+ Monthly Income Limits: (200% FPL + $20)*
+
+ (Figures include additional earned income disregards)
+
+                                    QDWI                          Individual       Couple
+                 All States and DC (Except Alaska & Hawaii):      $ 5,105.00     $ 6,899.00
+                 Alaska:                                          $ 6,355.00     $ 8,599.00
+                 Hawaii:                                          $ 5,855.00     $ 7,919.00
+                 Asset Limits:                                    $ 4,000.00     $ 6,000.00
+
+*$20 = Amount of the Monthly SSI Income Disregard
+

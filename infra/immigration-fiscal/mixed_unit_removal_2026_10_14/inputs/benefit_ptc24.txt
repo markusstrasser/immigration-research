@@ -1,0 +1,1483 @@
+2024
+Instructions for Form 8962
+Premium Tax Credit (PTC)
+Section references are to the Internal Revenue Code           Small Employer Health Reimbursement Arrangement in
+unless otherwise noted.                                       Pub. 974, Premium Tax Credit, for information on
+                                                              determining QSEHRA affordability; and Notice 2017-67
+Future Developments                                           for additional guidance on QSEHRA coordination with the
+                                                              PTC. Notice 2017-67 is available at IRS.gov/irb/
+For the latest information about developments related to      2017-47_IRB#NOT-2017-67.
+Form 8962 and its instructions, such as legislation
+                                                              Report changes in circumstances when you re-enroll
+enacted after they were published, go to IRS.gov/
+                                                              in coverage and during the year. If advance payment
+Form8962.
+                                                              of the premium tax credit (APTC) is being paid for an
+                                                              individual in your tax family (described later) and you have
+Reminders                                                     had certain changes in circumstances (see the examples
+New employer-coverage affordability rule for family           later), it is important that you report them to the
+members of employees. For tax years beginning after           Marketplace where you enrolled in coverage. Reporting
+December 31, 2022, for purposes of determining eligibility    changes in circumstances promptly will allow the
+for the PTC, affordability of employer coverage for an        Marketplace to adjust your APTC to reflect the PTC you
+employee’s spouse or dependents allowed to enroll in the      are estimated to be able to take on your tax return.
+employer coverage is no longer based on the cost of           Adjusting your APTC when you re-enroll in coverage and
+covering only the employee. Affordability of the employer     during the year can help you avoid owing tax when you file
+coverage for these family members is now based on the         your tax return. Changes that you should report to the
+employee’s cost for coverage of the employee and these        Marketplace include the following.
+other family members.                                         • Changes in household income.
+                                                              • Moving to a different address.
+Applicable federal poverty line percentages. For tax          • Gaining or losing eligibility for other health care
+years 2023 through 2025, taxpayers with household             coverage.
+income that exceeds 400% of the federal poverty line for      • Gaining, losing, or other changes to employment.
+their family size may be allowed a PTC.                       • Birth or adoption.
+Health Coverage Tax Credit (HCTC). The HCTC                   • Marriage or divorce.
+expired on December 31, 2021. Beginning in tax year           • Other changes affecting the composition of your tax
+2022, Form 8885 and its instructions have been                family.
+discontinued by the IRS.                                         For more information on how to report a change in
+Health reimbursement arrangements (HRAs).                     circumstances to the Marketplace, go to HealthCare.gov
+Beginning in 2020, employers can offer individual             or your State Marketplace website.
+coverage health reimbursement arrangements (individual        Health insurance options. If you need health coverage,
+coverage HRAs) to help employees and their families with      go to HealthCare.gov to learn about health insurance
+their medical expenses. If you are offered an individual      options that are available for you and your family, how to
+coverage HRA, see Individual coverage HRAs, later, for        purchase health insurance, and how you might qualify to
+more information on whether you can claim a PTC for you       get financial assistance with the cost of insurance.
+or a member of your family for Marketplace coverage.
+                                                              Additional information. For additional information about
+Qualified small employer health reimbursement ar-             the tax provisions of the Affordable Care Act (ACA), go to
+rangement (QSEHRA). Under a QSEHRA, an eligible               IRS.gov/Affordable-Care-Act/Individuals-and-Families or
+employer can reimburse eligible employees for medical         call the IRS Healthcare Hotline for ACA questions at
+expenses, including premiums for Marketplace health           800-919-0452.
+insurance. If you were covered under a QSEHRA, your
+employer should have reported the annual permitted            Purpose of Form
+benefit in box 12 of your Form W-2 with code FF. If the
+QSEHRA is affordable for a month, no PTC is allowed for       Use Form 8962 to figure the amount of your PTC and
+the month. If the QSEHRA is unaffordable for a month,         reconcile it with APTC.
+you must reduce the monthly PTC (but not below -0-) by
+the monthly permitted benefit amount and you must enter       You may take the PTC (and APTC may be paid) only for
+“QSEHRA” in the top margin on page 1 of Form 8962 to          health insurance coverage in a qualified health plan
+explain your entry and avoid delay in the processing of       (defined later) purchased through a Health Insurance
+your return. For more information, see Column (e) under       Marketplace (Marketplace, also known as an Exchange).
+Line 11 or Lines 12 Through 23, later. Also see Qualified     As a result, you should complete Form 8962 only for
+                                                              health insurance coverage in a qualified health plan
+                                Instructions for Form 8962 (2024) Catalog Number 60401R
+Jan 13, 2025                 Department of the Treasury Internal Revenue Service www.irs.gov
+purchased through a Marketplace. This includes a                Deductions for health insurance premiums. You
+qualified health plan purchased on HealthCare.gov or            cannot deduct the portion of your health insurance
+through a State Marketplace.                                    premium on your tax return that is paid for by the PTC or
+If you or a member of your family enrolled in health            APTC (after you determine how much of any excess APTC
+insurance coverage for 2024 through a Marketplace, you          you must repay). If you are deducting medical expenses
+should have received Form 1095-A, Health Insurance              as an itemized deduction, see Pub. 502, Medical and
+Marketplace Statement, from the Marketplace. Form               Dental Expenses. If you are claiming the self-employed
+1095-A shows the months of coverage purchased through           health insurance deduction, see Pub. 974.
+the Marketplace and any APTC paid to your insurance             Form 1095-A, Health Insurance Marketplace State-
+company to help cover your monthly premium. If APTC             ment. You will need Form 1095-A to complete Form
+was paid on your behalf, or if APTC was not paid on your        8962. The Marketplace uses Form 1095-A to report
+behalf but you wish to take the PTC, you must file Form         certain information to the IRS about individuals who
+8962 and attach it to your tax return (Form 1040,               enrolled in a qualified health plan through the
+1040-SR, or 1040-NR).                                           Marketplace. The Marketplace sends copies to individuals
+         At enrollment, the Marketplace may have referred       to allow them to accurately file a tax return taking the PTC
+         to APTC as your “subsidy” or “tax credit” or           and reconciling APTC. For coverage in 2024, the
+    !
+ CAUTION “advance payment.” The term “APTC” is used             Marketplace is required to provide or send Form 1095-A to
+throughout these instructions to clearly distinguish APTC       the individual(s) identified in the Marketplace enrollment
+from the PTC.                                                   application by January 31, 2025. If you are expecting to
+                                                                receive Form 1095-A for a qualified health plan and you
+                                                                do not receive it by early February, contact the
+General Instructions                                            Marketplace.
+                                                                   Under certain circumstances, for example, where two
+What Is the Premium Tax Credit                                  spouses enroll in a qualified health plan and divorce
+(PTC)?                                                          during the year, the Marketplace will provide Form 1095-A
+                                                                to one taxpayer, but another taxpayer will also need the
+Premium tax credit (PTC). The PTC is a tax credit for           information from that form to complete Form 8962. The
+certain people who enroll, or whose family member               recipient of Form 1095-A should provide a copy to other
+enrolls, in a qualified health plan. The credit provides        taxpayers as needed.
+financial assistance to pay the premiums for the qualified        VOID box. If you received a Form 1095-A with the
+health plan offered through a Marketplace by reducing the       VOID box checked at the top of the form, that means you
+amount of tax you owe, giving you a refund, or increasing       previously received a Form 1095-A for the policy shown in
+your refund amount. You must file Form 8962 to compute          Part I that was sent in error. You should not have received
+and take the PTC on your tax return.                            a Form 1095-A for the policy shown in Part I of the Form
+Advance payment of the premium tax credit (APTC).               1095-A. Do not use the information on the Form 1095-A
+APTC is a payment during the year to your insurance             with the VOID box checked or the previously received
+provider that pays for part or all of the premiums for a        Form 1095-A to complete Form 8962.
+qualified health plan covering you or an individual in your       CORRECTED box. If you receive a Form 1095-A with
+tax family. Your APTC eligibility is based on the               the CORRECTED box checked at the top of the form, use
+Marketplace’s estimate of the PTC you will be able to take      the information on the Form 1095-A with the
+on your tax return. If APTC was paid for you or an              CORRECTED box checked to figure the PTC and
+individual in your tax family, you must file Form 8962 to       reconcile any APTC on Form 8962. Do not use the
+reconcile (compare) this APTC with your PTC. If the APTC        information on the original Form 1095-A you received for
+is more than your PTC, you have excess APTC and you             the policy shown in Part I of the corrected Form 1095-A.
+must repay the excess, subject to certain limitations. If the   Additional information. For additional information on
+APTC is less than the PTC, you can get a credit for the         the PTC, see Pub. 974. You can also go to IRS.gov and
+difference, which reduces your tax payment or increases         enter “premium tax credit” in the search box.
+your refund.
+                                                                   Also see How To Avoid Common Mistakes in
+Changes in circumstances. The Marketplace                       Completing Form 8962 at the end of these instructions.
+determined your eligibility for and the amount of your 2024
+APTC using projections of your income and the number of         Who Must File
+individuals you certified to the Marketplace would be in        You must file Form 8962 with your income tax return (Form
+your tax family (yourself, your spouse, and your                1040, 1040-SR, or 1040-NR) if any of the following apply
+dependents) when you enrolled in a qualified health plan.       to you.
+If this information changed during 2024 and you did not         • You are taking the PTC.
+promptly report it to the Marketplace, the amount of APTC       • APTC was paid for you or another individual in your tax
+paid may be substantially different from the amount of          family.
+PTC you can take on your tax return. See Report changes         • APTC was paid for an individual you told the
+in circumstances when you re-enroll in coverage and             Marketplace would be in your tax family and neither you
+during the year, earlier, for changes that can affect the       nor anyone else included that individual in a tax family.
+amount of your PTC.                                             See Individual you enrolled who is not included in a tax
+                                                                family under Lines 12 Through 23, later.
+
+2                                                                                         Instructions for Form 8962 (2024)
+    If any of the circumstances above apply to you, you        Unlawfully present in the United States. You are not
+must file an income tax return and attach Form 8962 even       entitled to the PTC for health coverage for an individual for
+if you are not otherwise required to file. You must use        any period during which the individual is not lawfully
+Form 1040, 1040-SR, or 1040-NR. For help determining           present in the United States.
+which of these forms to file, see the Instructions for Form
+1040 or the Instructions for Form 1040-NR.                     Individual coverage HRAs. Starting in 2020, employers
+                                                               can offer individual coverage HRAs to help employees
+          If you are filing Form 8962, you cannot file Form    and their families with their medical expenses. Under an
+  !       1040-SS.                                             individual coverage HRA, employers can reimburse
+CAUTION
+                                                               eligible employees for medical expenses, including
+   If someone else enrolled an individual in your tax family   premiums for Marketplace health insurance.
+in coverage, and APTC was paid for that individual’s              If you were covered under an individual coverage HRA
+coverage, you must file Form 8962 to reconcile the APTC.       for 2024, you are not allowed a PTC for your 2024
+You need to obtain a copy of the Form 1095-A from the          Marketplace health insurance. Also, if another member of
+person who enrolled the individual.                            your tax family was covered under an individual coverage
+                                                               HRA for 2024, you are not allowed a PTC for the family
+          If you are claimed as a dependent on another
+                                                               member's 2024 Marketplace health insurance. If you or a
+ TIP person's tax return, the person who claims you will       family member could have been covered by an individual
+         file Form 8962 to take the PTC and, if necessary,
+                                                               coverage HRA for 2024, but you opted out of receiving
+repay excess APTC for your coverage. You do not need to
+                                                               reimbursements under the individual coverage HRA, you
+file Form 8962.
+                                                               may be allowed a PTC for your, and your family member's,
+                                                               Marketplace health insurance if the individual coverage
+Who Can Take the PTC                                           HRA is considered unaffordable. See Pub. 974 for
+You can take the PTC for 2024 if you meet the conditions       guidance on determining whether an individual coverage
+under (1), (2), and (3) below.                                 HRA is affordable.
+   1. For at least 1 month of the year, all of the following      For additional requirements and more details, see
+were true.                                                     Applicable taxpayer, later.
+   a. An individual in your tax family was enrolled in one
+or more qualified health plans offered through the
+                                                               Terms You May Need To Know
+Marketplace on the first day of the month.                     Tax family. For purposes of the PTC, your tax family
+   b. That individual was not eligible for minimum             consists of the following individuals.
+essential coverage (MEC) for the month, other than             • You, if you file a tax return for the year and you can’t be
+coverage in the individual market. An individual is            claimed as a dependent on someone else’s 2024 tax
+generally considered eligible for MEC for the month only if    return.
+they were eligible for every day of the month (see             • Your spouse if filing jointly and your spouse can’t be
+Minimum essential coverage, later).                            claimed as a dependent on someone else’s 2024 tax
+   c. The portion of the enrollment premiums (described        return.
+later) for the month for which you are responsible was paid    • Your dependents whom you claim on your 2024 tax
+by the due date of your tax return (not including              return. If you are filing Form 1040-NR, you should include
+extensions). However, if you became eligible for APTC          your dependents in your tax family only if you are a U.S.
+because of a successful eligibility appeal and you             national; a resident of Canada, Mexico, or South Korea; or
+retroactively enrolled in the plan, then the portion of the    a resident of India who was a student or business
+enrollment premium for which you are responsible must          apprentice.
+be paid on or before the 120th day following the date of          Your family size equals the number of qualifying
+the appeals decision.                                          individuals in your tax family (including yourself). See
+   2. No one can claim you as a dependent for the year.        Line 1, later, for more information on figuring your tax
+                                                               family size.
+   3. You are an applicable taxpayer for 2024. To be an
+applicable taxpayer, you must meet the requirements            Note. Listing your dependent by name and social security
+under (a) and (b) below.                                       number (SSN) or individual taxpayer identification number
+   a. Your household income for 2024 is at least 100% of       (ITIN) on your tax return is the same as claiming them as a
+the federal poverty line for your family size (see Line 4,     dependent. If you have more than four dependents, see
+later). However, having household income below 100% of         the Instructions for Form 1040 or the Instructions for Form
+the federal poverty line will not disqualify you from taking   1040-NR.
+the PTC if you meet certain requirements described under       Household income. For purposes of the PTC,
+Household income below 100% of the federal poverty line,       household income is the modified adjusted gross income
+later.                                                         (modified AGI) of you and your spouse (if filing a joint
+   b. If you were married at the end of 2024, generally        return) (see Line 2a, later) plus the modified AGI of each
+you must file a joint return. However, filing a separate       individual whom you claim as a dependent and who is
+return from your spouse will not disqualify you from being     required to file an income tax return because their income
+an applicable taxpayer if you meet certain requirements        meets the income tax return filing threshold (see Line 2b,
+described under Married taxpayers, later.                      later). Household income does not include the modified
+
+Instructions for Form 8962 (2024)                                                                                          3
+AGI of those individuals whom you claim as dependents              by the due date of your tax return (not including
+and who are filing a 2024 return only to claim a refund of         extensions). However, if you became eligible for APTC
+withheld income tax or estimated tax.                              because of a successful eligibility appeal and you
+   Modified AGI. For purposes of the PTC, modified AGI             retroactively enrolled in the plan, the portion of the
+is the AGI on your tax return plus certain income that is not      enrollment premium for which you are responsible must
+subject to tax (foreign earned income, tax-exempt interest,        be paid on or before the 120th day following the date of
+and the portion of social security benefits that is not            the appeals decision. Premiums another person pays on
+taxable). Use Worksheet 1-1 and Worksheet 1-2 to                   your behalf are treated as paid by you.
+determine your modified AGI.                                          If your share of the enrollment premiums is not paid, the
+   Taxpayer’s tax return including income of a                     issuer may terminate coverage. The termination is
+dependent child. A taxpayer who includes the gross                 generally effective no sooner than the second month of
+income of a dependent child on the taxpayer’s tax return           nonpayment. For any months you were covered but did
+must include on Worksheet 1-2 the child’s tax-exempt               not pay your share of the premiums, you are not allowed a
+interest and the portion of the child’s social security            monthly credit amount.
+benefits that is not taxable.                                        Applicable SLCSP premium. The applicable SLCSP
+Coverage family. Your coverage family includes all                 premium is the second lowest cost silver plan premium
+individuals in your tax family who are enrolled in a               offered through the Marketplace where you reside that
+qualified health plan and are not eligible for MEC (other          applies to your coverage family (described earlier). The
+than coverage in the individual market). The individuals           SLCSP premium is not the same as your enrollment
+included in your coverage family may change from month             premium, unless you enroll in the applicable SLCSP. Form
+to month. If an individual in your tax family is not enrolled      1095-A, Part III, column B, generally reports the applicable
+in a qualified health plan, or is enrolled in a qualified health   SLCSP premium. If no APTC was paid for your coverage,
+plan but is eligible for MEC (other than coverage in the           Form 1095-A, Part III, column B, may be wrong or blank or
+individual market), that individual is not part of your            may report your applicable SLCSP premium as -0-. Also, if
+coverage family. Your PTC is available to help you pay only        you had a change in circumstances during 2024 that you
+for the coverage of the individuals included in your               did not report to the Marketplace, the SLCSP premium
+coverage family.                                                   reported in Part III, column B, may be wrong. In either
+                                                                   case, you must determine your correct applicable SLCSP
+Monthly credit amount. The monthly credit amount is                premium. You do not have to request a corrected Form
+the amount of your tax credit for a month. Your PTC for the        1095-A from the Marketplace. See Missing or incorrect
+year is the sum of all of your monthly credit amounts. Your        SLCSP premium on Form 1095-A, later.
+credit amount for each month is the lesser of:                       Monthly contribution amount. Your monthly
+• The enrollment premiums (described next) for the                 contribution amount is used to calculate your monthly
+month for one or more qualified health plans in which you          credit amount. It is the amount of your household income
+or any individual in your tax family enrolled, or                  you would be responsible for paying as your share of
+• The amount of the monthly applicable second lowest               premiums each month if you enrolled in the applicable
+cost silver plan (SLCSP) premium (described later) less            SLCSP. It is not based on the amount of premiums you
+your monthly contribution amount (described later).                paid out of pocket during the year. You will compute your
+   To qualify for a monthly credit amount, at least one            monthly contribution amount in Part I of Form 8962.
+individual in your tax family must be enrolled in a qualified
+health plan on the first day of that month. Generally, if          Qualified health plan. For purposes of the PTC, a
+coverage in a qualified health plan began after the first day      qualified health plan is a health insurance plan or policy
+of the month, you are not allowed a monthly credit amount          purchased through a Marketplace at the bronze, silver,
+for the coverage for that month. However, if an individual         gold, or platinum level. Throughout these instructions, a
+in your tax family enrolled in a qualified health plan in 2024     qualified health plan is also referred to as a “policy.”
+and the enrollment was effective on the date of the                Catastrophic health plans and stand-alone dental plans
+individual's birth, adoption, or placement for adoption or in      purchased through the Marketplace, and all plans
+foster care, or on the effective date of a court order placing     purchased through the Small Business Health Options
+the individual with your family, the individual is treated as      Program (SHOP), are not qualified health plans for
+enrolled as of the first day of that month. Therefore, the         purposes of the PTC. Therefore, they do not qualify a
+individual may be a member of your tax family and                  taxpayer to take the PTC.
+coverage family for the entire month for purposes of               Minimum essential coverage (MEC). An individual in
+computing your monthly credit amount.                              your tax family who is eligible for MEC (except coverage in
+   Enrollment premiums. The enrollment premiums are                the individual market) for a month is not in your coverage
+the total amount of the premiums for the month, reduced            family for that month. Therefore, you cannot take the PTC
+by any premium amounts for that month that were                    for that individual’s coverage for the months that individual
+refunded in 2024, for one or more qualified health plans in        is eligible for MEC. In addition to qualified health plans
+which any individual in your tax family enrolled. Form             and other coverage in the individual market, MEC
+1095-A, Part III, column A, reports the enrollment                 includes:
+premiums.                                                          • Most coverage through government-sponsored
+   You are generally not allowed a monthly credit amount           programs (including Medicaid coverage, Medicare Part A
+for the month if any part of the enrollment premiums for           or C, the Children’s Health Insurance Program (CHIP),
+which you are responsible that month has not been paid
+
+4                                                                                            Instructions for Form 8962 (2024)
+certain benefits for veterans and their families, TRICARE,      affordable and that Don was eligible for APTC. Don
+and health coverage for Peace Corps volunteers);                enrolled in the qualified health plan for 2024. Don got a
+• Most types of employer-sponsored coverage; and                new job with employer coverage that Don could have
+• Other health coverage the Department of Health and            enrolled in as of September 1, 2024, but chose not to. Don
+Human Services designates as MEC.                               did not return to the Marketplace to determine if he was
+Eligibility for MEC. In most cases, you are considered          eligible for APTC for the months September through
+eligible for MEC if the coverage is available to you,           December 2024 and remained enrolled in the qualified
+whether or not you enroll in it. However, special rules         health plan. Don is not considered eligible for
+apply to certain types of MEC, as explained below.              employer-sponsored coverage for the months January
+                                                                through August of 2024 because he gave accurate
+   Employer-sponsored coverage. Even if you and
+                                                                information to the Marketplace about the availability of
+other members of your tax family had the opportunity to
+                                                                employer coverage and the Marketplace determined that
+enroll in a plan that is MEC offered by your employer for
+                                                                he was eligible for APTC for coverage in a qualified health
+2024, you are considered eligible for MEC under the plan
+                                                                plan. The Marketplace determination does not apply,
+for a month only if the offer of coverage met a minimum
+                                                                however, for the months September through December of
+standard of affordability and provided a minimum level of
+                                                                2024 because Don did not provide information to the
+benefits, referred to as “minimum value.” The coverage
+                                                                Marketplace about his new employer’s offer of coverage.
+offered by your employer is generally considered
+                                                                Whether Don is considered eligible for
+affordable for you if your share of the annual cost for
+                                                                employer-sponsored coverage and ineligible for the PTC
+self-only coverage, which is sometimes referred to as the
+                                                                for the months September through December of 2024 is
+“employee required contribution,” is not more than 8.39%
+                                                                determined under the eligibility rules described under
+of your household income. The coverage offered by your
+                                                                Employer-Sponsored Plans in Pub. 974.
+employer is generally considered affordable for the other
+members of your tax family allowed to enroll in the                Waiting periods and post-employment coverage. If
+coverage if your share of the annual cost for coverage for      you cannot get benefits under an employer-sponsored
+yourself and the other members of your tax family allowed       plan until after a waiting period has expired, you are not
+to enroll in the coverage is not more than 8.39% of your        treated as eligible for that coverage during the waiting
+household income. If your employer coverage is                  period. Also, if you leave your employment and are offered
+affordable for you but not affordable for your other family     post-employment coverage such as COBRA or retiree
+members, you may be able to take the PTC for your other         coverage, you are not considered eligible for that
+family members if they enroll in a Marketplace qualified        post-employment coverage unless you actually enroll in
+health plan. However, employer-sponsored coverage is            the coverage. See Coverage after employment ends
+not considered affordable if, when you or a family member       under Employer-Sponsored Plans in Pub. 974 for more
+enrolled in a qualified health plan, you gave accurate          information.
+information about the availability of employer coverage to         Medicaid and CHIP. You are generally considered
+the Marketplace, and the Marketplace determined that            eligible for coverage under a government-sponsored
+you were eligible for APTC for the individual’s coverage in     program for a month if you met the eligibility criteria for
+the qualified health plan. In addition, if you or your family   that month, even if you did not enroll. However, if a
+member enrolls in employer-sponsored coverage for a             Marketplace made a determination that you or a family
+month, you or your family member is considered eligible         member was ineligible for Medicaid or CHIP and was
+for employer-sponsored coverage for that month, even if         eligible for APTC when the individual enrolls in a qualified
+the coverage does not satisfy the affordability and             health plan, the individual is treated as not eligible for
+minimum value standards. Finally, if your employer offered      Medicaid or CHIP for purposes of the PTC for the duration
+coverage for you but not your family, you may be able to        of the period of coverage under the qualified health plan
+take the PTC for your family members. For more                  (generally, the rest of the plan year), even if your actual
+information on affordability and minimum value, see Pub.        2024 income suggests that the individual may have been
+974.                                                            eligible for Medicaid or CHIP.
+   Your employer may have sent you a Form 1095-C,                  However, in order to rely on a Marketplace's
+Employer-Provided Health Insurance Offer and Coverage,          determination that you or a family member was ineligible
+with information about the coverage offered to you, if any.     for Medicaid, CHIP, or a similar program, you must provide
+See Form 1095-C, line 14, and the Instructions for              accurate information to the Marketplace when you enroll in
+Recipient included with that form, for information about        a qualified health plan. You or the family member may be
+whether you and other members of your tax family were           treated as eligible for Medicaid, CHIP, or the similar
+offered coverage. See Pub. 974 for more information on          program, and not eligible for the PTC, if the Marketplace
+how to determine whether the coverage you were offered          determination is later found to be based on incorrect
+was affordable and provided minimum value, including on         information that was given with an intentional or reckless
+how to use Form 1095-C.                                         disregard for the facts. See Pub. 974 for more information.
+                                                                   For more information about eligibility for Medicaid,
+   Example. Don was eligible to enroll in his employer’s
+                                                                CHIP, and other forms of government-sponsored MEC,
+coverage for 2024 but instead applied for coverage in a
+                                                                see Pub. 974.
+qualified health plan through the Marketplace for coverage
+in 2024. Don provided accurate information about his               Example. Married taxpayers Tom and Nicole applied
+employer’s coverage to the Marketplace, and the                 for insurance affordability programs at the Marketplace for
+Marketplace determined that the offer of coverage was not       themselves and their two children whom they claim as
+
+Instructions for Form 8962 (2024)                                                                                         5
+dependents, Kim and Chris. The Marketplace determined             line 33C, in line 11, column (f). If you checked “Yes” on
+that Kim and Chris were eligible for coverage under CHIP.         line 9, complete lines 12 through 23, column (f), as
+Instead of enrolling Kim and Chris in CHIP, the entire tax        instructed later under Column (f).
+family enrolled in a qualified health plan (with APTC paid        • Line 24. Enter -0-.
+only for Tom and Nicole’s coverage). Because Kim and              • Lines 25, 27, and 29. Enter the amount from line 11,
+Chris were eligible for CHIP, which is MEC, Tom and               column (f) (or the total of lines 12 through 23, column (f)),
+Nicole are not eligible for the PTC for coverage of Kim and       on each line. Then, follow the instructions for line 29, later.
+Chris, but may be eligible for the PTC for their own                 For more information about who is treated as lawfully
+coverage.                                                         present for this purpose, go to HealthCare.gov. See
+  Coverage in the individual market outside the                   Individuals Not Lawfully Present in the United States
+Marketplace. While coverage purchased in the individual           Enrolled in a Qualified Health Plan in Pub. 974 for more
+market outside the Marketplace is MEC, eligibility for this       information on reconciling APTC when an unlawfully
+type of coverage does not prevent you from being eligible         present person is enrolled individually or with lawfully
+for the PTC for Marketplace coverage. Coverage                    present family members.
+purchased in the individual market outside the
+Marketplace does not qualify for the PTC.                         Married taxpayers. If you are considered married for
+                                                                  federal income tax purposes, you must file a joint return
+   For more details on eligibility for MEC, including             with your spouse to take the PTC unless one of the two
+additional special eligibility rules, see Minimum Essential       exceptions below applies to you.
+Coverage in Pub. 974.
+                                                                      You are not considered married for federal income tax
+Applicable taxpayer. You must be an applicable                    purposes if you are divorced or legally separated
+taxpayer to take the PTC. Generally, you are an applicable        according to your state law under a decree of divorce or
+taxpayer if your household income for 2024 (described             separate maintenance. In that case, you cannot file a joint
+earlier) is at least 100% of the federal poverty line for your    return but may be able to take the PTC on your separate
+family size (provided in Tables 1-1, 1-2, and 1-3) and no         return. See Pub. 501, Dependents, Standard Deduction,
+one can claim you as a dependent for 2024. In addition, if        and Filing Information.
+you were married at the end of 2024, you must file a joint
+                                                                      If you are considered married for federal income tax
+return to be an applicable taxpayer unless you meet one
+                                                                  purposes, you may be eligible to take the PTC without
+of the exceptions described under Married taxpayers,
+                                                                  filing a joint return if one of the two exceptions below
+later.
+                                                                  applies to you. If Exception 1 applies, you can file a return
+    For individuals with household income below 100% of           using head of household or single filing status and take
+the federal poverty line, see Household income below              the PTC. If Exception 2 applies, you are treated as married
+100% of the federal poverty line under Line 5, later.             but can take the PTC with the filing status of married filing
+   Individuals who are incarcerated. Individuals who              separately.
+are incarcerated (other than pending disposition of                   Exception 1—Certain married persons living apart.
+charges, for example, awaiting trial) are not eligible for        You may file your return as if you are unmarried and take
+coverage in a qualified health plan through a Marketplace.        the PTC if one of the following applies to you.
+However, these individuals may be applicable taxpayers            • You file a separate return from your spouse on Form
+and take the PTC for the coverage of individuals in their         1040 or 1040-SR because you meet the requirements for
+tax families who are eligible for coverage in a qualified         Married persons who live apart under Head of Household
+health plan.                                                      in the Instructions for Form 1040.
+   Individuals who are not lawfully present. Individuals          • You file as single on your Form 1040-NR because you
+who are not lawfully present in the United States are not         meet the requirements for the exception for married
+eligible for the PTC even if they have coverage in a              persons who live apart under Married Filing Separately in
+qualified health plan through a Marketplace. They cannot          the Instructions for Form 1040-NR.
+take the PTC for their own coverage and are not eligible              Exception 2—Victim of domestic abuse or spousal
+for the repayment limitations in Table 5 for APTC paid for        abandonment. If you are a victim of domestic abuse or
+their own coverage.                                               spousal abandonment, you can file a return as married
+    However, these individuals may be applicable                  filing separately and take the PTC for 2024 if all of the
+taxpayers and take the PTC for the coverage of individuals        following apply to you.
+in their tax families, such as their children, who are lawfully   • You are living apart from your spouse at the time you file
+present and eligible for coverage in a qualified health plan.     your 2024 tax return.
+    If all family members enrolled in a qualified health plan     • You are unable to file a joint return because you are a
+are not lawfully present, complete the following lines as         victim of domestic abuse (described next) or spousal
+explained below. Leave all other lines blank.                     abandonment (described later).
+• Lines 1, 2a, 3, 4, and 5. Enter -0-.                            • You check the box on your Form 8962 to certify that you
+• Line 9. See Line 9, later, to determine whether you             are a victim of domestic abuse or spousal abandonment.
+must complete Part IV for an allocation of policy amounts.        • You do not meet the 3-year limit for Exception 2,
+Complete Part IV if instructed to do so by Table 3. Do not        described below.
+complete Part V.                                                      Domestic abuse. Domestic abuse includes physical,
+• Line 11, column (f) (or lines 12 through 23, column             psychological, sexual, or emotional abuse, including
+(f), if you complete Part IV). If you checked "No" on             efforts to control, isolate, humiliate, and intimidate, or to
+line 9, enter the total of your Form(s) 1095-A, Part III,         undermine the victim's ability to reason independently. All
+
+6                                                                                            Instructions for Form 8962 (2024)
+the facts and circumstances are considered in                    (TTY), or 1-855-812-1001 (video phone, only for deaf
+determining whether an individual is abused, including the       callers). For additional information and resources, see
+effects of alcohol or drug abuse by the victim’s spouse.         Pub. 3865, available at IRS.gov/Pub3865; and Part V of
+Depending on the facts and circumstances, abuse of an            Form 8857, available at IRS.gov/Form8857.
+individual’s child or other family member living in the          Married filing separately. If APTC was paid for your
+household may constitute abuse of the individual. If you         coverage but you cannot take the PTC because you are
+have concerns about your safety, please consider                 married filing a separate return and you do not qualify for
+contacting the confidential 24-hour National Domestic            an exception to the joint filing requirement, complete lines
+Violence Hotline at 1-800-799-SAFE (7233), or                    1 through 5 to figure your separate household income as a
+1-800-787-3224 (TTY), or 1-855-812-1001 (video phone,            percentage of the federal poverty line. Skip lines 7 through
+only for deaf callers). For additional information and           8b and complete lines 9 and 10 (and Part IV, if applicable).
+resources, see Pub. 3865, Tax Information for Survivors of       When completing line 11 or lines 12 through 23, complete
+Domestic Abuse, available at IRS.gov/Pub3865; and Part           only column (f). Then, complete the rest of the form to
+V of Form 8857, Request for Innocent Spouse Relief,
+                                                                 determine how much you must repay.
+available at IRS.gov/Form8857.
+   Spousal abandonment. A taxpayer is a victim of                Part I—Annual and Monthly
+spousal abandonment for a tax year if, taking into account
+all facts and circumstances, the taxpayer is unable to           Contribution Amount
+locate their spouse after reasonable diligence.
+                                                                 Line 1
+   Three-year limit for Exception 2. You cannot claim
+the PTC using this exception for more than 3 consecutive         Enter on line 1 your tax family size.
+years. For example, if you used this exception to claim the         Determine the number of individuals in your tax family
+PTC on your tax returns for 2021, 2022, and 2023, you            using your tax return. Your tax family generally includes
+cannot use this exception to claim the PTC on your 2024          you, your spouse if you are filing a joint return, and your
+return.                                                          dependents. If you checked the “Someone can claim you
+   Married filing separately. If you file as married filing      as a dependent” box, or if you are filing jointly and you
+separately and are not a victim of domestic abuse or             checked the “Someone can claim your spouse as a
+spousal abandonment (see Exception 2 under Married               dependent” box on your tax return, you or your spouse is
+taxpayers, earlier), then you are not an applicable              not included in the tax family size calculation for purposes
+taxpayer and you cannot take the PTC. You must generally         of Form 8962, line 1.
+repay all of the APTC paid for a qualified health plan that
+covered only individuals in your tax family. If the policy       Note. If an individual in your tax family was enrolled in a
+also covered at least one individual in your spouse’s tax        policy with an individual in another tax family and you are
+family, you must generally repay half of the APTC paid for       not taking the PTC, the taxpayer who is claiming the
+the policy. See Line 9, later. However, the amount of APTC       individual not in your tax family may agree to reconcile all
+you have to repay may be limited. See Line 28, later.            APTC paid for the policy. See the instructions for line 9
+                                                                 and Part IV, later, for more information about this rule. If
+Specific Instructions                                            you and the other taxpayer agree that they will reconcile
+                                                                 all APTC paid and you are not taking the PTC, enter -0- on
+Name. Print or type your name exactly as you entered it          line 1. Then check “Yes” on line 9 and follow the
+on your tax return. If you are married and filing a joint        instructions under Line 9 and Part IV, later. (Specifically, in
+return, enter the name that appears first on your return.        the instructions under Part IV, see Policy amounts
+                                                                 allocated 100% under either Allocation Situation 1 or
+Social security number (SSN). The SSN on this form               Allocation Situation 4, later.)
+should match the SSN on your tax return. If you are
+married and filing a joint return, enter the first SSN that      Line 2a
+appears on your tax return.                                      Enter your modified AGI on line 2a. Use the worksheet
+  If you entered an ITIN on your tax return, enter this          next to figure your modified AGI using information from
+number on Form 8962.                                             your tax return.
+Victims of domestic abuse or spousal abandonment.
+Check the box on line A, above Part I of Form 8962, if you
+are filing as married filing separately, are a victim of
+domestic abuse or spousal abandonment, and qualify for
+Exception 2 under Married taxpayers, earlier. By checking
+this box, you are certifying that you qualify for an exception
+to the requirement to file a joint return with your spouse.
+Do not attach documentation of the abuse or
+abandonment to your tax return. Keep any documentation
+you may have with your tax return records. For examples
+of what documentation to keep, see Pub. 974. If you have
+concerns about your safety, please consider contacting
+the confidential 24-hour National Domestic Violence
+Hotline at 1-800-799-SAFE (7233), or 1-800-787-3224
+
+Instructions for Form 8962 (2024)                                                                                              7
+Worksheet 1-1. Taxpayer's Modified AGI—Line 2a                                 residence for the family size you entered on line 1 of Form
+                                                                               8962. (For 2024, the 2023 federal poverty lines are used
+1. Enter your AGI* from Form 1040, 1040-SR, or                                 for this purpose and are shown below.) If you moved
+   1040-NR, line 11 . . . . . . . . . . . . . . . . . .       1.               during 2024 and you lived in Alaska and/or Hawaii, or you
+2. Enter any tax-exempt interest from Form 1040,                               are filing jointly and you and your spouse lived in different
+   1040-SR, or 1040-NR, line 2a . . . . . . . . . .           2.               states, use the table with the higher dollar amounts for
+3. Enter any amounts from Form 2555, lines 45 and                              your family size.
+   50 . . . . . . . . . . . . . . . . . . . . . . . . . . .   3.
+4. Form 1040 or 1040-SR filers: If line 6a is more                             Table 1-1. Federal Poverty Line for the 48
+   than line 6b, subtract line 6b from line 6a and                             Contiguous States and the District of Columbia
+   enter the result . . . . . . . . . . . . . . . . . . .     4.
+5. Add lines 1 through 4. Enter here and on Form                                   IF your Family Size* from            THEN enter the amount below on
+   8962, line 2a . . . . . . . . . . . . . . . . . . . . .    5.                   Form 8962, line 1, was . . .             Form 8962, line 4 . . .
+* If you are filing Form 8814 and the amount on Form 8814, line 4, is more                        1                                    $14,580
+than $1,300, you must enter certain amounts from that form on Worksheet                           2                                    $19,720
+1-2. See Form 8814 under Line 2b below.
+                                                                                                  3                                    $24,860
+                                                                                                  4                                    $30,000
+                                                                                                  5                                    $35,140
+Line 2b                                                                                           6                                    $40,280
+                                                                                                  7                                    $45,420
+Enter on line 2b the combined modified AGI for your
+                                                                                                  8                                    $50,560
+dependents who are required to file an income tax return
+because their income meets the income tax return filing                        * If your family size was more than 8 people, add $5,140 for each additional
+threshold. Use Worksheet 1-2 to figure these dependents’                       person. For example, if your family size is 11, you have 3 additional people.
+combined modified AGI. Do not include the modified AGI                         Multiply $5,140 by 3 and add the result of $15,420 to $50,560. Enter the result
+                                                                               of $65,980 on Form 8962, line 4.
+of dependents who are filing a tax return only to claim a
+refund of tax withheld or estimated tax.
+
+Form 8814. If you are filing Form 8814, Parents' Election                      Table 1-2. Federal Poverty Line for Alaska
+To Report Child's Interest and Dividends, and the amount
+on Form 8814, line 4, is more than $1,300, you must                                IF your Family Size* from            THEN enter the amount below on
+include on line 1 of Worksheet 1-2 the sum of the                                  Form 8962, line 1, was . . .             Form 8962, line 4 . . .
+tax-exempt interest from Form 8814, line 1b; the lesser of                                        1                                    $18,210
+Form 8814, line 4 or line 5; and any nontaxable social                                            2                                    $24,640
+security benefits your child received.                                                            3                                    $31,070
+                                                                                                  4                                    $37,500
+Worksheet 1-2. Dependents' Combined Modified                                                      5                                    $43,930
+AGI—Line 2b                                                                                       6                                    $50,360
+                                                                                                  7                                    $56,790
+1. Enter the AGI* for your dependents from Form                                                   8                                    $63,220
+   1040, 1040-SR, or 1040-NR, line 11 . . . . . .             1.
+                                                                               * If your family size was more than 8 people, add $6,430 for each additional
+2. Enter any tax-exempt interest for your
+                                                                               person. For example, if your family size is 11, you have 3 additional people.
+   dependents from Form 1040, 1040-SR, or
+                                                                               Multiply $6,430 by 3 and add the result of $19,290 to $63,220. Enter the result
+   1040-NR, line 2a . . . . . . . . . . . . . . . . . .       2.
+                                                                               of $82,510 on Form 8962, line 4.
+3. Enter any amounts for your dependents from
+   Form 2555, lines 45 and 50 . . . . . . . . . . .           3.
+4. For each dependent filing Form 1040 or
+   1040-SR: If line 6a is more than line 6b, subtract                          Table 1-3. Federal Poverty Line for Hawaii
+   line 6b from line 6a and enter the result . . . .          4.
+5. Add lines 1 through 4. Enter here and on Form                                   IF your Family Size* from            THEN enter the amount below on
+   8962, line 2b . . . . . . . . . . . . . . . . . . . . .    5.                   Form 8962, line 1, was . . .             Form 8962, line 4 . . .
+
+* Only include your dependents who are required to file an income tax return                      1                                    $16,770
+because their income meets the income tax return filing threshold.                                2                                    $22,680
+                                                                                                  3                                    $28,590
+                                                                                                  4                                    $34,500
+                                                                                                  5                                    $40,410
+Line 3                                                                                            6                                    $46,320
+Add the amounts on lines 2a and 2b. Combine them even                                             7                                    $52,230
+if one or both of them are negative. If the total is less than                                    8                                    $58,140
+zero, enter -0- on line 3.                                                     * If your family size was more than 8, add $5,910 for each additional person.
+                                                                               For example, if your family size is 11, you have 3 additional people. Multiply
+Line 4                                                                         $5,910 by 3 and add the result of $17,730 to $58,140. Enter the result of
+Check the box to indicate your state of residence in 2024.                     $75,870 on Form 8962, line 4.
+Enter on line 4 the amount from Table 1-1, 1-2, or 1-3 that
+represents the federal poverty line for your state of
+
+8                                                                                                                 Instructions for Form 8962 (2024)
+Line 5                                                                     • APTC was paid for the coverage of 1 or more months
+Figure your household income as a percentage of the                        during 2024.
+federal poverty line using Worksheet 2.                                    • You otherwise qualify as an applicable taxpayer (except
+                                                                           for the federal poverty line percentage).
+Worksheet 2. Household Income as a Percentage                                      You do not meet the requirements under
+of the Federal Poverty Line                                                  !     Estimated household income at least 100% of the
+                                                                           CAUTION federal poverty line, earlier, if:
+
+1. Enter the amount from line 3 of Form
+   8962 . . . . . . . . . . . . . . . . . . . . . . .           1.         • No APTC was paid for your or your family's coverage; or
+2. Enter the amount from line 4 of Form                                    • You, with intentional or reckless disregard for the facts,
+   8962 . . . . . . . . . . . . . . . . . . . . . . .   2.                 provided incorrect information to a Marketplace for the
+3. Multiply the amount on line 2 by 4.0 . . .                   3.         year of coverage. See Pub. 974 for more information.
+4. Is the amount on line 1 more than the                                      Alien lawfully present in the United States. Certain
+   amount on line 3?                                                       aliens with household income below 100% of the federal
+    • Yes. The amount on line 1 above is                                   poverty line are not eligible for Medicaid because of their
+   more than 400% of the federal poverty line.
+                                                                           immigration status. You may qualify for the PTC if your
+   Enter 401 here and on line 5 of Form 8962.
+                                                                           household income is less than 100% of the federal
+    • No. Divide the amount on line 1 above
+   by the amount on line 2 above. Do not                                   poverty line if you meet all of the following requirements.
+   round; instead, multiply this number by 100                             • No one can claim you as a dependent for the year.
+   (to express it as a percentage) and then                                • You or an individual in your tax family enrolled in a
+   drop any numbers after the decimal point.                               qualified health plan through a Marketplace.
+   For example, for 0.9984, enter the result as                            • The enrolled individual is lawfully present in the United
+   99; for 1.8565, enter the result as 185; and                            States and is not eligible for Medicaid because of
+   for 3.997, enter the result as 399.* Enter                              immigration status.
+   the result here and on line 5 of Form
+   8962 . . . . . . . . . . . . . . . . . . . . . . .           4.
+                                                                           • You otherwise qualify as an applicable taxpayer (except
+                                                                           for the federal poverty line percentage).
+* If line 4 is below 100, see Household income below 100% of the federal
+poverty line below.
+                                                                              If you meet all of the requirements under either
+                                                                           Estimated household income at least 100% of the federal
+                                                                           poverty line or Alien lawfully present in the United States,
+                                                                           earlier, continue to line 7.
+Household income below 100% of the federal pover-
+ty line. If the amount on line 5 is less than 100%, you can                   If your household income is less than 100% of the
+take the PTC if you meet the requirements under                            federal poverty line, and you do not meet the requirements
+Estimated household income at least 100% of the federal                    under Estimated household income at least 100% of the
+poverty line next or Alien lawfully present in the United                  federal poverty line or Alien lawfully present in the United
+States, later.                                                             States, earlier, you are not an applicable taxpayer and you
+  Estimated household income at least 100% of the                          are not eligible to take the PTC. If APTC was paid for any
+federal poverty line. You may qualify for the PTC if your                  individuals in your tax family, skip lines 7 and 8, and go to
+household income is less than 100% of the federal                          line 9. However, if no APTC was paid for any individuals in
+poverty line and you meet all of the following                             your tax family, stop; do not complete Form 8962.
+requirements.
+                                                                           Line 7
+• No one can claim you as a dependent for the year.
+• You or an individual in your tax family enrolled in a                    Enter on line 7 the decimal number from Table 2 that
+qualified health plan through a Marketplace.                               applies to the amount you entered on line 5. This number
+• The Marketplace estimated at the time of enrollment                      is used to calculate your contribution amount.
+that your household income would be at least 100% of the
+federal poverty line for your family size for 2024.
+
+
+
+
+Instructions for Form 8962 (2024)                                                                                                     9
+Table 2. Applicable Figure
+
+     TIP
+                If the amount on line 5 is 150 or less, your applicable figure is 0.0000. If the amount on line 5 is 400 or more, your applicable
+                figure is 0.0850.
+                                ENTER         IF Form       ENTER         IF Form       ENTER         IF Form       ENTER
+                                                                                                                                     IF Form       ENTER on
+     IF Form 8962, line 5,     on Form         8962,       on Form         8962,       on Form         8962,       on Form
+                                                                                                                                      8962,       Form 8962,
+            is . . .             8962,         line 5,       8962,         line 5,       8962,         line 5,       8962,
+                                                                                                                                  line 5, is . . . line 7 . . .
+                               line 7 . . .     is . . .   line 7 . . .     is . . .   line 7 . . .     is . . .   line 7 . . .
+           less than 150        0.0000          200         0.0200          251         0.0404          302         0.0605            353           0.0733
+                150             0.0000          201         0.0204          252         0.0408          303         0.0608            354           0.0735
+                151             0.0004          202         0.0208          253         0.0412          304         0.0610            355           0.0738
+                152             0.0008          203         0.0212          254         0.0416          305         0.0613            356           0.0740
+                153             0.0012          204         0.0216          255         0.0420          306         0.0615            357           0.0743
+                154             0.0016          205         0.0220          256         0.0424          307         0.0618            358           0.0745
+                155             0.0020          206         0.0224          257         0.0428          308         0.0620            359           0.0748
+                156             0.0024          207         0.0228          258         0.0432          309         0.0623            360           0.0750
+                157             0.0028          208         0.0232          259         0.0436          310         0.0625            361           0.0753
+                158             0.0032          209         0.0236          260         0.0440          311         0.0628            362           0.0755
+                159             0.0036          210         0.0240          261         0.0444          312         0.0630            363           0.0758
+                160             0.0040          211         0.0244          262         0.0448          313         0.0633            364           0.0760
+                161             0.0044          212         0.0248          263         0.0452          314         0.0635            365           0.0763
+                162             0.0048          213         0.0252          264         0.0456          315         0.0638            366           0.0765
+                163             0.0052          214         0.0256          265         0.0460          316         0.0640            367           0.0768
+                164             0.0056          215         0.0260          266         0.0464          317         0.0643            368           0.0770
+                165             0.0060          216         0.0264          267         0.0468          318         0.0645            369           0.0773
+                166             0.0064          217         0.0268          268         0.0472          319         0.0648            370           0.0775
+                167             0.0068          218         0.0272          269         0.0476          320         0.0650            371           0.0778
+                168             0.0072          219         0.0276          270         0.0480          321         0.0653            372           0.0780
+                169             0.0076          220         0.0280          271         0.0484          322         0.0655            373           0.0783
+                170             0.0080          221         0.0284          272         0.0488          323         0.0658            374           0.0785
+                171             0.0084          222         0.0288          273         0.0492          324         0.0660            375           0.0788
+                172             0.0088          223         0.0292          274         0.0496          325         0.0663            376           0.0790
+                173             0.0092          224         0.0296          275         0.0500          326         0.0665            377           0.0793
+                174             0.0096          225         0.0300          276         0.0504          327         0.0668            378           0.0795
+                175             0.0100          226         0.0304          277         0.0508          328         0.0670            379           0.0798
+                176             0.0104          227         0.0308          278         0.0512          329         0.0673            380           0.0800
+                177             0.0108          228         0.0312          279         0.0516          330         0.0675            381           0.0803
+                178             0.0112          229         0.0316          280         0.0520          331         0.0678            382           0.0805
+                179             0.0116          230         0.0320          281         0.0524          332         0.0680            383           0.0808
+                180             0.0120          231         0.0324          282         0.0528          333         0.0683            384           0.0810
+                181             0.0124          232         0.0328          283         0.0532          334         0.0685            385           0.0813
+                182             0.0128          233         0.0332          284         0.0536          335         0.0688            386           0.0815
+                183             0.0132          234         0.0336          285         0.0540          336         0.0690            387           0.0818
+                184             0.0136          235         0.0340          286         0.0544          337         0.0693            388           0.0820
+                185             0.0140          236         0.0344          287         0.0548          338         0.0695            389           0.0823
+                186             0.0144          237         0.0348          288         0.0552          339         0.0698            390           0.0825
+                187             0.0148          238         0.0352          289         0.0556          340         0.0700            391           0.0828
+                188             0.0152          239         0.0356          290         0.0560          341         0.0703            392           0.0830
+                189             0.0156          240         0.0360          291         0.0564          342         0.0705            393           0.0833
+                190             0.0160          241         0.0364          292         0.0568          343         0.0708            394           0.0835
+                191             0.0164          242         0.0368          293         0.0572          344         0.0710            395           0.0838
+                192             0.0168          243         0.0372          294         0.0576          345         0.0713            396           0.0840
+                193             0.0172          244         0.0376          295         0.0580          346         0.0715            397           0.0843
+                194             0.0176          245         0.0380          296         0.0584          347         0.0718            398           0.0845
+                195             0.0180          246         0.0384          297         0.0588          348         0.0720            399           0.0848
+                196             0.0184          247         0.0388          298         0.0592          349         0.0723        400 or more       0.0850
+                197             0.0188          248         0.0392          299         0.0596          350         0.0725
+                198             0.0192          249         0.0396          300         0.0600          351         0.0728
+                199             0.0196          250         0.0400          301         0.0603          352         0.0730
+
+
+
+
+10                                                                                                                     Instructions for Form 8962 (2024)
+Line 8a                                                         using a filing status of single. Bret and Paulette must
+Multiply line 3 by line 7 and enter the result on line 8a,      allocate the amounts from Form 1095-A for the months of
+rounded to the nearest whole dollar amount.                     January through December on their tax returns using the
+                                                                instructions in Table 3.
+Line 8b                                                         Multiple allocations in the same month. If a qualified
+Divide line 8a by 12.0 and enter the result on line 8b,         health plan covers individuals in your tax family and
+rounded to the nearest whole dollar amount.                     individuals in two or more other tax families for 1 or more
+                                                                months, see the rules in Pub. 974 under Allocation of
+Part II—Premium Tax Credit Claim                                Policy Amounts Among Three or More Taxpayers.
+and Reconciliation of Advance                                      Example. One qualified health plan covers Bret, his
+Payment of Premium Tax Credit                                   spouse Paulette, and their daughter Sophia from January
+                                                                through August, and APTC is paid for the coverage of all
+Line 9                                                          three. Bret and Paulette divorce on August 26. Bret and
+                                                                Paulette each file a tax return using a filing status of single.
+Before you complete line 10, you must complete Part IV if
+                                                                Sophia is claimed as a dependent by her grandfather,
+you are allocating policy amounts (see below) with
+                                                                Mike. Bret, Paulette, and Mike must allocate the amounts
+another taxpayer and complete Part V if you want to use
+                                                                from Form 1095-A for the months of January through
+the alternative calculation for year of marriage (see
+                                                                August on their tax returns using the worksheets and
+below). Both of these situations may apply to you, so be
+                                                                instructions in Pub. 974 because amounts on Form
+sure to read the rest of the instructions for line 9.
+                                                                1095-A must be allocated among three tax families
+Allocating policy amounts. You need to allocate policy          (Bret’s, Paulette’s, and Mike’s).
+amounts (enrollment premiums, SLCSP premiums, and/or
+                                                                Multiple allocations in different months. You may
+APTC) on a Form 1095-A between your tax family and
+                                                                need to allocate policy amounts under a qualified health
+another tax family if:
+                                                                plan using different rules for different months if you had a
+   1. The policy covered at least one individual in your tax    change in circumstances. Use Table 3 to determine which
+family and at least one individual in another tax family; and   allocation rule to use for each month.
+   2. Either:                                                      Example. Henry enrolled himself, his spouse Cara,
+   a. You received a Form 1095-A for the policy that does       and their two dependent children, Heidi and Matt, in a
+not accurately represent the members of your tax family         policy for 2024 purchased through a Marketplace. APTC
+who were enrolled in the policy (meaning that it either lists   was paid on behalf of each. The couple divorced on June
+someone who is not in your tax family or does not list a        30. Henry purchased different health insurance for himself
+member of your tax family who was enrolled in the policy),      through a Marketplace for July through December. Cara
+or                                                              also purchased different health insurance through a
+   b. The other tax family received a Form 1095-A for the       Marketplace for July through December for herself, Heidi,
+policy that includes a member of your tax family.               and Matt. Henry claims Heidi as a dependent on his tax
+                                                                return. Cara claims Matt as a dependent on her tax return.
+   If both (1) and (2) above apply, check “Yes”. For each       According to Table 3, Henry and Cara will allocate the
+policy to which (1) and (2) above apply, follow the             amounts from the policy for January through June on
+instructions in Table 3 to determine which allocation rule      line 30 using the rules under Allocation Situation 1, later.
+applies for that qualified health plan.                         For the months Henry and Cara were divorced (July
+   A qualified health plan may have covered at least one        through December), they will allocate the amounts from
+individual in your tax family and one individual not in your    the policy on line 31 using the rules under Allocation
+tax family if:                                                  Situation 4, later.
+• You got divorced during the year,                             Alternative calculation for year of marriage. If you got
+• You are married but filing a separate return from your        married during 2024 and APTC was paid for an individual
+spouse,                                                         in your tax family, you may want to use the alternative
+• You or an individual in your tax family was enrolled in a     calculation for year of marriage, an optional calculation
+qualified health plan by someone who is not part of your        that may allow you to repay less excess APTC than you
+tax family (for example, your ex-spouse enrolled a child        would under the general rules. Follow the instructions in
+whom you are claiming as a dependent), or                       Table 4 to determine whether you qualify for the alternative
+• You or an individual in your tax family enrolled someone      calculation.
+not part of your tax family in a qualified health plan (for
+example, you enrolled a child whom your ex-spouse is                If you need to allocate policy amounts and are also
+claiming as a dependent).                                       using the alternative calculation for year of marriage,
+                                                                follow the instructions in Table 3 and complete Part IV
+    Example. One qualified health plan covers Bret, his         before you follow the instructions for Table 4 and complete
+spouse Paulette, and their daughter Sophia from January         Part V.
+through August, and APTC is paid for the coverage of all
+three. Bret and Paulette divorce on December 10. Bret               If you are not allocating policy amounts and not using
+                                                                the alternative calculation for year of marriage, check “No”
+files a tax return using head of household filing status and
+                                                                and go to line 10.
+claims Sophia as a dependent. Paulette files a tax return
+
+
+
+Instructions for Form 8962 (2024)                                                                                            11
+Table 3. Allocation of Policy Amounts—Line 9
+Follow Steps 1–3 below to determine which allocation rule to use in Part IV, later, to allocate the policy amounts for each qualified health plan
+identified in the instructions for line 9. For each policy, if your answer directs you to Part IV, skip directly to the section of the Part IV instructions
+identified. You do not need to complete the remaining steps below.
+                                                                                 STEP 1
+    IF:
+     • You divorced or legally separated from a spouse in 2024; and
+     • For 1 or more months of marriage, the policy covered at least one individual in your tax family AND at least one individual in your former
+    spouse's tax family…
+    THEN allocate using the rules in Allocation Situation 1 under Part IV, later.
+    Otherwise, continue to Step 2.
+                                                                           STEP 2
+    IF:
+     • You were married at the end of 2024 but are filing a separate return from your spouse; and
+     • The policy covered at least one individual in your tax family AND at least one individual in your spouse's tax family…*
+    THEN allocate using the rules in Allocation Situation 2 under Part IV, later.
+    Otherwise, continue to Step 3.
+* Also follow these instructions if you meet the rules in Exception 1 or Exception 2 under Married taxpayers, earlier, and a policy covered at least one individual in
+your tax family AND at least one individual in your spouse's tax family.
+                                                                                 STEP 3
+    IF:
+    • No APTC was paid for the policy...
+    THEN allocate using the rules in Allocation Situation 3 under Part IV, later.
+    Otherwise, allocate using the rules in Allocation Situation 4 under Part IV, later.
+
+
+
+Table 4. Alternative Calculation for Year of Marriage Eligibility
+Answer questions 1–5 below to determine whether you may be eligible to elect the alternative calculation for year of marriage.
+1         Were you and your spouse each unmarried on January 1, 2024?
+            Yes. Continue to the next question in this table.
+            No. You are not eligible to elect the alternative calculation. Do not complete Part V. If you did not complete Part IV, check “No” on line 9 and
+          continue to line 10. If you completed Part IV, check “No” on line 10, skip line 11, and continue to Lines 12 Through 23, later.
+2         Were you married on December 31, 2024?
+            Yes. Continue to the next question in this table.
+            No. You are not eligible to elect the alternative calculation. Do not complete Part V. If you did not complete Part IV, check “No” on line 9 and
+          continue to line 10. If you completed Part IV, check “No” on line 10, skip line 11, and continue to Lines 12 Through 23, later.
+3         Are you filing a joint return with your spouse for 2024?
+            Yes. Continue to the next question in this table.
+            No. You are not eligible to elect the alternative calculation. Do not complete Part V. If you did not complete Part IV, check “No” on line 9 and
+          continue to line 10. If you completed Part IV, check “No” on line 10, skip line 11, and continue to Lines 12 Through 23, later.
+4         Was anyone in your tax family enrolled in a qualified health plan before your first full month of marriage? (For example, if you got married on
+          July 15, your first full month of marriage was August.)
+            Yes. Continue to the next question in this table.
+            No. You are not eligible to elect the alternative calculation. Do not complete Part V. If you did not complete Part IV, check “No” on line 9 and
+          continue to line 10. If you completed Part IV, check “No” on line 10, skip line 11, and continue to Lines 12 Through 23, later.
+5         Was APTC paid for anyone in your tax family during 2024?
+             Yes. You are eligible to elect the alternative calculation for year of marriage if excess APTC was paid during 2024. Continue to Worksheet 3
+          to determine whether excess APTC was paid during 2024. Also see Alternative Calculation for Year of Marriage in Pub. 974 to determine if
+          electing the alternative calculation reduces your repayment amount.
+             No. You are not eligible to elect the alternative calculation. Do not complete Part V. If you did not complete Part IV, check “No” on line 9 and
+          continue to line 10. If you completed Part IV, check “No” on line 10, skip line 11, and continue to Lines 12 Through 23, later.
+
+
+
+
+12                                                                                                                           Instructions for Form 8962 (2024)
+Worksheet 3. Alternative Calculation for Marriage Eligibility
+ If you checked "Yes" on line 5 of Table 4, complete this worksheet to determine whether you received excess APTC in 2024.
+   !
+ CAUTION
+            If Part IV applies to you, do not complete this worksheet until you have completed Part IV.
+                             (a) Form(s)             (b) Form(s)           (c) Form 8962,          (d) Subtract             (e) Smaller of        (f) Form(s) 1095-A,
+            Monthly
+                           1095-A, lines 21–       1095-A, lines 21–            line 8b          column (c) from            column (a) or              lines 21–32,
+           Calculation
+                            32, column A*           32, column B**                                  column (b)                column (d)               column C***
+  1          January
+  2          February
+  3          March
+  4          April
+  5          May
+  6          June
+  7          July
+  8          August
+  9          September
+10           October
+11           November
+12           December
+13           Totals: Enter the total of column (e), lines 1–12, and the total of column (f), lines 1–12   .........
+14           Is line 13, column (e), less than line 13, column (f)?
+                 Yes. Excess APTC was paid in 2024. You are eligible to elect the alternative calculation. See Alternative Calculation for Year of Marriage in
+             Pub. 974 to determine if electing the alternative calculation reduces your repayment amount.
+                 No. There was no excess APTC paid in 2024. You are not eligible to elect the alternative calculation. Do not complete Part V.
+              • If you did not complete Part IV, check “No” on line 9 and continue to line 10. If you are required to use lines 12 through 23 of Form 8962,
+             enter the amounts from lines 1 through 12 of this worksheet on the lines for the corresponding months and columns on Form 8962.
+              • If you completed Part IV, check “No” on line 10, skip line 11, and enter the amounts from lines 1 through 12 of this worksheet on the lines for
+             the corresponding months and columns of lines 12 through 23 of Form 8962.
+ * See Column (a) under Lines 12 Through 23, later, for instructions for the amounts to enter on lines 1 through 12, column (a), of this worksheet. These are the
+ amounts of the monthly premiums reported on Form(s) 1095-A, lines 21 through 32, column A.
+
+ ** See Column (b) under Lines 12 Through 23, later, for instructions for the amounts to enter on lines 1 through 12, column (b), of this worksheet. These are the
+ amounts of the monthly premium for the applicable SLCSP reported on Form(s) 1095-A, lines 21 through 32, column B.
+
+ *** See Column (f) under Lines 12 Through 23, later, for instructions for the amounts to enter on lines 1 through 12, column (f), of this worksheet. These are the
+ amounts of the monthly APTC reported on Form(s) 1095-A, lines 21 through 32, column C.
+
+
+
+
+Line 10                                                                                  • Your SLCSP premium is the same for every month of
+Read the following instructions to determine whether you                                 2024. Your SLCSP premium is reported in Part III, lines 21
+should check “Yes” or “No” and then proceed as                                           through 32, column B, of Form 1095-A. But see Missing or
+directed.                                                                                incorrect SLCSP premium on Form 1095-A next.
+     If you were enrolled in a qualified health plan for                                 Missing or incorrect SLCSP premium on Form
+ TIP fewer than 12 months during 2024, check “No”                                        1095-A. Generally, there are two situations where your
+     and continue to lines 12 through 23.                                                SLCSP premium may not be accurately reflected on your
+                                                                                         Form 1095-A. If either of these two situations applies to
+Full-year coverage with no changes on Form 1095-A,                                       you, or if you have reason to believe the Marketplace
+Part III, column A or B. Check “Yes” and continue to                                     reported the wrong applicable SLCSP premium, you must
+line 11 if all of the following apply for each qualified health                          determine the correct applicable SLCSP premium for
+plan you or a member of your tax family was enrolled in for                              every month. If the correct applicable SLCSP premium is
+2024. Otherwise, check “No” and continue to lines 12                                     not the same for every month of 2024, check “No” and
+through 23.                                                                              continue to lines 12 through 23. The two situations in
+• You were enrolled in the qualified health plan for all 12                              which your SLCSP may not be accurately reflected on
+months during 2024.                                                                      your Form 1095-A are the following.
+• Your enrollment premium was the same for every month                                      1. No APTC was paid for your coverage. If no APTC
+of 2024. Your enrollment premium is reported in Part III,                                was paid for your or your family member’s coverage, the
+lines 21 through 32, column A, of Form 1095-A.                                           SLCSP premium reported in Part III, lines 21 through 32,
+                                                                                         column B, of Form 1095-A may be wrong, left blank, or
+
+Instructions for Form 8962 (2024)                                                                                                                                     13
+reported as -0-. To determine your applicable SLCSP             notify the Marketplace. Because Mike is eligible for other
+premium for each month, see Pub. 974 or, if you enrolled        MEC, their coverage family changed starting in August. As
+through the federally facilitated Marketplace, go to            a result, the applicable SLCSP premium reported on Form
+HealthCare.gov/Tax-Tool/. If your correct applicable            1095-A for August through December is incorrect and
+SLCSP premium is not the same for all 12 months, check          Mike and Susan must determine the correct applicable
+“No” and continue to lines 12 through 23.                       SLCSP premium for these months by following the
+   2. Change in circumstances affecting SLCSP. If               instructions in Pub. 974. Because the SLCSP premium is
+you had a change in circumstances during 2024 that you          not the same for every month of the year, Mike and Susan
+did not report to the Marketplace, the SLCSP premium            cannot use line 11 and must complete lines 12 through 23
+reported in Part III, lines 21 through 32, column B, of Form    on Form 8962. Mike and Susan check “No” on Form
+1095-A may be wrong. Examples of changes in                     8962, line 10, and complete lines 12 through 23. They
+circumstances that may affect your applicable SLCSP             determine that the applicable SLCSP premium for the
+premium include the following.                                  coverage family of one (Susan) for August through
+• You enrolled an individual newly added to your tax            December is $400 each month. Mike and Susan enter
+family during 2024 (for example, a newborn).                    $850 in Form 8962, lines 12 through 18, column (b); and
+• An individual in your tax family was enrolled in your         $400 in lines 19 through 23, column (b).
+qualified health plan for some but not all of 2024.
+                                                                Line 11—Annual Totals
+• An individual in your coverage family became eligible
+for or lost eligibility for employer coverage or other MEC      Note. If you checked “Yes” on line 10 and you are
+during 2024.                                                    completing line 11, do not complete lines 12 through 23.
+• You are including an individual in your tax family for the    Once you complete line 11, skip to line 24.
+year of coverage but you did not indicate to the                   If you are using filing status married filing separately
+Marketplace at enrollment that you would do so.                 and Exception 2, earlier, does not apply to you, skip
+• You indicated to the Marketplace at enrollment that you       columns (a) through (e), and complete only column (f).
+would include an individual in your tax family for the year
+of coverage but you are not doing so.                           Column (a). Enter the annual enrollment premiums from
+• An individual enrolled in the coverage died during 2024.      Form 1095-A, line 33, column A. If you have more than
+• You moved during 2024.                                        one Form 1095-A, add the amounts together and enter
+                                                                the total on Form 8962, line 11, column (a). This amount is
+   If any of the above apply and you did not notify the         the total of your enrollment premiums for the year,
+Marketplace or if you have reason to believe the                including the portion paid by APTC.
+Marketplace reported the wrong applicable SLCSP
+premium, determine the correct applicable SLCSP                         If you or a member of your tax family was enrolled
+premium for the months affected. See Pub. 974 for                TIP in a stand-alone dental plan that provided
+information on determining the correct applicable SLCSP                  pediatric benefits, the portion of the dental plan
+premium or, if you enrolled through the federally facilitated   premiums for the pediatric benefits will be included in the
+Marketplace, go to HealthCare.gov/Tax-Tool/. If your            amount in column A on the Form 1095-A that reports the
+correct applicable SLCSP premium is not the same for all        coverage in your primary health plan. If your plan covered
+12 months, check “No” and continue to lines 12 through          benefits that are not essential health benefits, such as
+23.                                                             adult dental or vision benefits, the amount in this column
+   Example 1. Lee receives a Form 1095-A, which reports         will be reduced by the premiums for the nonessential
+in column A $1,000 on lines 21 through 32 for January           benefits.
+through December and in column B $900 on lines 21
+                                                                Column (b). Enter the annual applicable SLCSP
+through 31 for January through November. However,
+                                                                premium from Form 1095-A, line 33, column B. If you have
+column B reports $650 for December on line 32 because
+                                                                more than one Form 1095-A, enter the amount as follows.
+an individual included in Lee's coverage family was
+eligible for MEC (other than coverage in the individual
+                                                                • If individuals in your coverage family enrolled in more
+                                                                than one policy in the same state, you will receive a Form
+market) for the entire month of December and Lee
+                                                                1095-A for each policy. The Marketplace should have
+reported the change to the Marketplace. Lee checks “No”
+                                                                entered the same SLCSP premium, which applies to all
+on line 10 and completes lines 12 through 23.
+                                                                members of your coverage family, on each Form 1095-A.
+   Example 2. Mike and Susan enroll together in a               Enter the amount from column B of only one Form
+qualified health plan through the Marketplace. They do not      1095-A—do not add the amounts from each form.
+have a change in circumstances during the year. They            However, if you got married in December of 2024 and you
+receive a Form 1095-A, which reports $800 for the               and your spouse, or individuals in your and your spouse's
+enrollment premiums in column A on lines 21 through 32          tax family, were enrolled in separate qualified health plans,
+and $850 for the applicable SLCSP premium in column B           add the amounts from Form 1095-A, column B, for each
+on lines 21 through 32 for January through December.            plan (or plans) and enter the total. If you got married in a
+They check “Yes” on Form 8962, line 10, and complete            month other than December, your applicable SLCSP
+line 11 because for each of columns A and B there is an         premium may not be the same for every month. If it is not
+amount for all 12 months and the amounts did not change.        the same for every month, you cannot use line 11.
+   Example 3. The facts are the same as in Example 2            • For individuals enrolled in qualified health plans in
+above, but starting on August 1, Mike is eligible for MEC       different states, add together the amounts from column B
+(other than individual market coverage) and does not
+
+14                                                                                         Instructions for Form 8962 (2024)
+of the Forms 1095-A from each state and enter the total            the total of your enrollment premiums for the month,
+on Form 8962, line 11, column (b).                                 including the portion paid by APTC.
+  Need to determine applicable SLCSP premium. If,                     You are not allowed a monthly credit amount for any
+during 2024, your coverage family changed or you moved             month that the enrollment premiums for the month were
+and you did not notify the Marketplace, or if no APTC was          not paid by the due date of your return (not including
+paid, the applicable SLCSP premium reported on your                extensions). If a -0- appears on any of lines 21 through 32,
+Form(s) 1095-A may be missing or incorrect. See Missing            column A, of Form 1095-A, you may not have paid your
+or incorrect SLCSP premium on Form 1095-A under                    enrollment premiums for the month by the due date of the
+Line 10, earlier, to determine your correct applicable             premium. If so, and the premiums for the month are not
+SLCSP premium to enter in column (b).                              paid by the due date of your return (not including
+Column (c). Enter the amount from line 8a of Form 8962.            extensions), enter -0- for the month on the appropriate line
+                                                                   on Form 8962, column (a). If the enrollment premiums for
+Column (d). Subtract the amount in column (c) from the             the month are paid by the due date of your return (not
+amount in column (b). If the result is zero or less, enter -0-.    including extensions), enter the enrollment premiums for
+Column (e). Enter the lesser of the amount in column (a)           the month on the appropriate line on Form 8962, column
+or the amount in column (d).                                       (a), even if your Form 1095-A shows -0- as the enrollment
+   Note. Do not follow this instruction if you were provided       premium for the month.
+a QSEHRA. See Qualified Small Employer Health                         If you completed Part IV for any Form 1095-A, add the
+Reimbursement Arrangement in Pub. 974 for instructions             monthly premium amounts allocated to you, if any, using
+on how to figure the amounts to enter in column (e). If the        the allocation percentage you entered on Form 8962, lines
+QSEHRA was unaffordable for a month and you had to                 30 through 33, column (e), to the monthly premiums for
+reduce the monthly PTC (but not below -0-) by the monthly          other policies that you did not allocate.
+permitted benefit amount, enter “QSEHRA” in the top                Column (b). Enter on lines 12 through 23, column (b),
+margin on page 1 of Form 8962 to explain your entry and            the amount of the monthly applicable SLCSP premium
+avoid delay in the processing of your return.                      reported on Form 1095-A, lines 21 through 32, column B,
+Column (f). Enter the APTC amount from Form 1095-A,                for the corresponding month. If you have more than one
+line 33, column C. If you have more than one Form                  Form 1095-A showing coverage in a particular month, use
+1095-A, add the amounts together and enter the total on            the following rules to determine the amounts to enter on
+Form 8962, line 11, column (f).                                    Form 8962, column (b), for that month.
+   Not an applicable taxpayer. If you are not an                   • If individuals in your coverage family enrolled in
+applicable taxpayer because you are using filing status            separate policies in the same state, you will receive a
+married filing separately and Exception 2, earlier, does not       Form 1095-A for each policy. The Marketplace should
+apply to you, you cannot take the PTC. You must repay              have entered the same SLCSP premium, which applies to
+some or all of the APTC entered on line 11, column (f). To         all members of your coverage family for coverage that
+complete the rest of the form, skip lines 12 through 23,           month, on each Form 1095-A. Enter the amount from
+enter -0- on line 24, and enter the amount from line 11,           column B of only one Form 1095-A—do not add the
+column (f), on lines 25 and 27. Then, complete lines 28 (if        amounts from each form. Enter this amount on Form
+it applies to you) and 29. Enter the amount from line 29 on        8962, lines 12 through 23, column (b). See Marriage in
+your Schedule 2 (Form 1040), line 1a.                              2024, later, if you got married during 2024.
+                                                                   • If individuals in your coverage family enrolled in
+Lines 12 Through 23—Monthly Calculation                            qualified health plans in different states, add together the
+Note. If you checked “No” on line 10 and you are                   amounts from column B of Forms 1095-A from each state
+completing lines 12 through 23, do not complete line 11.           and enter the total on Form 8962, lines 12 through 23,
+                                                                   column (b).
+    If you did not elect the alternative calculation for year of   • If you completed Part IV for any Form 1095-A, add the
+marriage or you are using filing status married filing             amounts of applicable SLCSP premium allocated to you, if
+separately and Exception 2, earlier, does not apply to you,        any, using the allocation percentage you entered on Form
+skip columns (a) through (e), and complete only column             8962, lines 30 through 33, column (f), to the applicable
+(f).                                                               SLCSP premium shown on the Form(s) 1095-A that you
+   If you or a family member isn't lawfully present in the         did not allocate.
+United States and was enrolled in a qualified health plan,         • If a -0- appears on Form 1095-A, on any of lines 21
+see Individuals Not Lawfully Present in the United States          through 32, column A, because your enrollment premiums
+Enrolled in a Qualified Health Plan in Pub. 974 for                were not paid, then you are not entitled to a monthly credit
+instructions on what amounts to enter in columns (a) and           amount for that month. If your enrollment premiums for a
+(b).                                                               month were unpaid, enter -0- on the appropriate line on
+                                                                   Form 8962, column (b). However, if your enrollment
+Column (a). Enter on lines 12 through 23, column (a),              premiums for the month were paid by the due date of your
+the amount of the monthly premiums reported on Form                return, not including extensions, enter your applicable
+1095-A, lines 21 through 32, column A, for the                     SLCSP premium for the month on the appropriate line on
+corresponding month. If you have more than one Form                Form 8962, column (b), even if your Form 1095-A
+1095-A affecting a particular month, add the amounts               shows -0- as the enrollment premium for the month.
+together for that month and enter the total on the
+appropriate line on Form 8962, column (a). This amount is
+
+Instructions for Form 8962 (2024)                                                                                           15
+   Need to determine correct applicable SLCSP                     23, column (f), on lines 25 and 27. Then complete lines 28
+premium. If, during 2024, your coverage family changed            (if it applies to you) and 29. Enter the amount from line 29
+or you moved and you did not notify the Marketplace, or if        on your Schedule 2 (Form 1040), line 1a.
+no APTC was paid, the applicable SLCSP premium                       Example. Melissa and Ryan have been married since
+reported on your Form(s) 1095-A may be missing or                 2022 and have no dependents. They were enrolled under
+incorrect. See Missing or incorrect SLCSP premium on              the same qualified health plan from January through April
+Form 1095-A under Line 10, earlier, to determine your             2024. Monthly APTC of $1,000 was paid for them, for a
+correct applicable SLCSP premium to enter in column (b).          total of $4,000. In April, Ryan took a new job and enrolled
+   Marriage in 2024. If you got married in 2024, and              in his employer’s coverage for May through December.
+someone in your tax family who you enrolled in a qualified        Melissa enrolled in single coverage from May through
+health plan (including yourself) and someone in your tax          December. Monthly APTC of $400 was paid for her, for a
+family who your spouse enrolled in a QHP (including your          total of $3,200. Melissa and Ryan lived apart for most of
+spouse) prior to your first month of marriage receives            2024 and each filed a separate return for 2024.
+separate Forms 1095-A, add together the amounts from                   At the end of the year, Melissa or Ryan will receive a
+column B of the Forms 1095-A for each month before the            Form 1095-A reporting their coverage for January through
+first full month of marriage and enter the total. If you          April. The recipient of the Form 1095-A should provide a
+completed Part V, use the instructions in Pub. 974 for the        copy to the nonrecipient. Melissa will receive a Form
+entries to make for your pre-marriage months.                     1095-A reporting her coverage for May through
+Column (c). If you did not complete Part V, enter on lines        December. Because Melissa and Ryan are married but
+12 through 23, column (c), your monthly contribution              not filing a joint return and neither Exception 1 nor
+amount from line 8b. If columns (a) and (b) of any of lines       Exception 2, earlier, applies, neither spouse is allowed a
+12 through 23 are blank, leave column (c) of the                  PTC for 2024. According to Table 3, they follow the rules
+corresponding line blank.                                         under Allocation Situation 2, earlier, to allocate the APTC
+                                                                  for the January through April coverage. (The other policy
+  If you completed Part V, see Pub. 974 for how to
+                                                                  amounts are not allocated because neither spouse is
+complete column (c).
+                                                                  allowed a PTC.) Under Allocation Situation 2, earlier, 50%
+Column (d). Subtract the amount in column (c) from the            of the $4,000 APTC ($2,000) is allocated to Melissa and
+amount in column (b). If the result is zero or less, enter -0-.   50% is allocated to Ryan. Melissa must add this amount to
+Column (e). Enter for each month the lesser of the                her APTC of $3,200 for her single coverage. She enters
+amount in column (a) or the amount in column (d) for that         the monthly amounts on lines 12 through 23, column (f)
+month.                                                            ($500 for January through April and $400 for May through
+                                                                  December), and the total of $5,200 on Form 8962, lines
+   Note. Do not follow this instruction if you were provided      25 and 27. She then completes lines 28 (if it applies to
+a QSEHRA. See Qualified Small Employer Health                     her) and 29. Melissa enters the amount from line 29 on the
+Reimbursement Arrangement in Pub. 974 for instructions            applicable line of her tax return.
+on how to figure the amounts to enter in column (e). If the
+QSEHRA was unaffordable for a month and you had to                     Ryan enters the monthly amounts allocated to him on
+reduce the monthly PTC (but not below -0-) by the monthly         Form 8962, lines 12 through 15, column (f) ($500 for
+permitted benefit amount, enter “QSEHRA” in the top               January through April), and the total of $2,000 on lines 25
+margin on page 1 of Form 8962 to explain your entry and           and 27. He then completes lines 28 (if it applies to him)
+avoid delay in the processing of your return.                     and 29. Ryan enters the amount from line 29 on the
+                                                                  applicable line of his tax return.
+Column (f). Enter on lines 12 through 23, column (f), the            Individual you enrolled who is not included in a tax
+amount of the monthly APTC reported on Form 1095-A,               family. If you indicated to the Marketplace at enrollment
+lines 21 through 32, column C. If you have more than one          that you would claim an individual in your tax family for the
+Form 1095-A affecting a particular month, add the                 year of coverage but the individual is not included in any
+amounts together for that month and enter the total on the        tax family for the year of coverage, you must report any
+appropriate line on Form 8962, column (f).                        APTC paid for that individual's coverage. Follow the rules
+   If you completed Part IV for any Form 1095-A, include          under Column (f), earlier, to report this APTC.
+only the amounts of the monthly APTC allocated to you, if
+any, using the allocation percentage you entered on Form          Line 24
+8962, lines 30 through 33, column (g), and combine that           Enter the amount from line 11(e) or add lines 12(e)
+amount with the amounts of the monthly APTC for other             through 23(e) and enter the total.
+policies that you did not allocate.
+   Not an applicable taxpayer. If you are not an                  Line 25
+applicable taxpayer because you are using filing status           Enter the amount from line 11(f) or add lines 12(f) through
+married filing separately and Exception 2, earlier, does not      23(f) and enter the total.
+apply to you, then you must repay all of the total APTC
+entered on lines 12 through 23, column (f) (unless the            Line 26
+alternative calculation for year of marriage rule applies to      If line 24 is greater than line 25, subtract line 25 from
+you and you are able to reduce your repayment amount,             line 24 and enter the result on line 26. This result is the
+or you are filing married filing separately and a repayment       amount of your PTC that is more than the APTC paid, your
+limitation applies). To complete the rest of the form,            net PTC. This amount will reduce the amount of tax you
+enter -0- on line 24, and enter the total of lines 12 through
+
+16                                                                                          Instructions for Form 8962 (2024)
+must pay with your tax return or increase your refund. Also                Line 29
+enter the amount from line 26 on Schedule 3 (Form 1040),                   Enter the smaller of line 27 or line 28. If line 28 is blank,
+line 9. Skip lines 27 through 29. If line 24 is equal to                   enter the amount from line 27 on line 29. Also enter the
+line 25, enter -0- on line 26 and skip lines 27 through 29.                amount from Form 8962, line 29, on Schedule 2 (Form
+   If you elected the alternative calculation for year of                  1040), line 1a.
+marriage, and line 24 is greater than line 25, enter -0- on
+line 26 and skip lines 27 through 29.                                      Part IV—Allocation of Policy Amounts
+   If line 25 is greater than line 24, leave line 26 blank and             See Line 1 and Line 9, earlier, to determine whether you
+go to Part III.                                                            need to complete Part IV. If you complete Part IV, check
+                                                                           “No” on line 10.
+Part III—Repayment of Excess
+                                                                           Specific Allocation Situations
+Advance Payment of the Premium Tax
+                                                                           Allocation Situation 1—Taxpayers divorced or legally
+Credit                                                                     separated in 2024. You and your former spouse must
+Complete this part to figure the amount of excess APTC                     allocate policy amounts on your separate returns to figure
+you must repay.                                                            your PTC and reconcile it with your APTC if both of the
+                                                                           following apply.
+Line 27                                                                    • You and your former spouse were married to each other
+If line 25 is greater than line 24, subtract line 24 from                  at some point during 2024 but were no longer married to
+line 25 and enter the result.                                              each other at the end of 2024.
+                                                                           • For 1 or more months of marriage, you and your former
+Line 28                                                                    spouse were enrolled in the same qualified health plan, or
+The excess APTC you must repay may be limited to the                       you or an individual in your tax family (as shown on your
+amounts in Table 5. Enter the appropriate amount from                      tax return) was enrolled in the same policy as your former
+Table 5 on line 28. If you were married at the end of 2024                 spouse or as an individual in your former spouse's tax
+but are filing separately from your spouse, the repayment                  family.
+limitations shown in Table 5 apply to you and your spouse                      You will allocate between you and your former spouse
+separately based on the household income reported on                       the total enrollment premiums, the applicable SLCSP
+each return.                                                               premium, and APTC for coverage under the plan during
+   If your entry on Form 8962, line 5, is 400 or more, there               the months you were married. You will find these amounts
+is no repayment limitation. You must repay the amount                      on your Form(s) 1095-A, Part III, columns A, B, and C,
+shown on line 27. Leave line 28 blank and enter the                        respectively. You and your former spouse may agree to
+amount from line 27 on line 29.                                            allocate any percentage (from 0% to 100%) of these
+                                                                           amounts to one of you (with the remainder allocated to the
+   If you are self-employed and are claiming the
+                                                                           other), but you must allocate all three amounts using the
+self-employed health insurance deduction, see
+                                                                           same percentage. If you do not agree on a percentage,
+Self-Employed Health Insurance Deduction and PTC in
+                                                                           you and your former spouse must allocate 50% of each of
+Pub. 974 for the amount to enter on line 28.
+                                                                           these amounts to you and 50% of each to your former
+   If APTC was paid for the coverage in a qualified health                 spouse.
+plan of an individual who was not lawfully present, the                       Policy amounts allocated 100%. If 100% of policy
+repayment limitation does not apply to APTC paid for                       amounts are allocated to you, check “Yes” on line 9 and
+individuals who are not lawfully present. See Individuals                  complete Part IV by entering 100 in the appropriate
+Not Lawfully Present in the United States Enrolled in a                    box(es) for your allocation percentage. If 0% of the policy
+Qualified Health Plan in Pub. 974 for more information.                    amounts are allocated to you, complete Part IV by
+Pub. 974 provides a calculation necessary to figure the                    entering -0- in the appropriate box(es) for your allocation
+repayment limitation if an individual not lawfully present is              percentage.
+enrolled with one or more family members who are                              Example 1. Keith and Stephanie are married at the
+lawfully present for 1 or more months of the year.                         beginning of 2024 and have three children, Ben, Grace,
+Table 5. Repayment Limitation                                              and Max. In January, Keith enrolls Ben, Grace, and Max in
+                                                                           a qualified health plan beginning in January. Keith and
+   IF the amount on Form 8962,            THEN enter on line 28 . . .      Stephanie divorce in July. The children become eligible for
+            line 5, is . . .                                               and enroll in government-sponsored health coverage and
+                                         for a filing     for any other    disenroll from the qualified health plan, effective August 1.
+                                          status of       filing status—   According to Table 3, Keith and Stephanie follow the rules
+                                          Single—                          under Allocation Situation 1, earlier.
+ Less than 200 . . . . . . . . . . .        $375               $750            Keith claims Ben and Grace as dependents and
+ At least 200 but less than                                                Stephanie claims Max as a dependent for 2024. Keith and
+ 300 . . . . . . . . . . . . . . . . .      $950              $1,900
+                                                                           Stephanie agree to allocate the policy amounts 33% to
+ At least 300 but less than
+                                                                           Stephanie and 67% to Keith. Therefore, 33% of the
+ 400 . . . . . . . . . . . . . . . . .     $1,575             $3,150
+                                                                           enrollment premium, the applicable SLCSP premiums,
+ 400 or more . . . . . . . . . . . .           leave line 28 blank         and APTC are allocated to Stephanie and 67% of these
+
+
+Instructions for Form 8962 (2024)                                                                                                          17
+amounts are allocated to Keith. The allocation is only for      appropriate line in Part IV to allocate the APTC. Leave
+the months Keith and Stephanie were married.                    columns (e) and (f) blank. You must repay the APTC
+   On her Form 8962, Part IV, line 30, Stephanie enters         allocated to you subject to the limit on line 28 because you
+Keith’s SSN in column (b) and enters “0.33” in columns          are not an applicable taxpayer. See Example 3 and
+(e), (f), and (g). On his Form 8962, Part IV, line 30, Keith    Example 4, later.
+enters Stephanie’s SSN in column (b) and enters “0.67” in          Example 1. John and Carol are married at the end of
+columns (e), (f), and (g). Stephanie and Keith both enter       2024 and have one child, Mark. John and Carol enrolled in
+“01” in column (c) and “07” in column (d).                      a qualified health plan for 2024. The plan covered John,
+   Example 2. The facts are the same as in Example 1,           Carol, and Mark, with an annual premium of $14,000 and
+except that Keith and Stephanie cannot agree on an              APTC of $8,500, which applied to the coverage for all of
+allocation percentage. Therefore, 50% of the enrollment         the individuals. John moved out of the residence on May
+premiums, the applicable SLCSP premium, and APTC are            15. Carol and Mark continued to reside at the residence.
+allocated to each taxpayer. On their Forms 8962, Part IV,       John and Carol file separate returns for 2024. Carol
+line 30, Keith and Stephanie each enter “0.50” in columns       qualifies to file her return as head of household. John files
+(e), (f), and (g).                                              his return as married filing separately. Carol claims Mark
+                                                                as her dependent. Because Carol and John are not filing a
+Allocation Situation 2—Taxpayers married at year                joint return, they each have their own tax families, which
+end but filing separate returns. You and your spouse            are different from the tax family they indicated to the
+must equally allocate (50% to each spouse) certain policy       Marketplace they expected to have when they enrolled.
+amounts if all of the following conditions are met.             Carol’s family size is two because John is not in her tax
+• You were married at the end of 2024.                          family. Carol’s federal poverty line percentage is
+• You are filing a separate return from your spouse.            determined using only her and Mark's modified AGI.
+• You or an individual in your tax family was enrolled in       John’s modified AGI is not included because he is not in
+the same policy as your spouse or an individual in your         Carol’s tax family. According to Table 3, John and Carol
+spouse's tax family at any time during 2024.                    follow the rules under Allocation Situation 2, earlier.
+   Married individuals who file separate returns are                Because John is not in Carol’s tax family, he is not in
+generally not eligible to take the PTC. However, you may        her coverage family, which consists of Carol and her
+be able to take the PTC if you meet either of the following     dependent, Mark, for purposes of determining her
+conditions.                                                     applicable SLCSP premium. If neither John nor Carol
+• You file a return as single or head of household (see         notifies the Marketplace about the change in family
+Exception 1 under Married taxpayers, earlier).                  circumstances, the Form 1095-A that Carol or John
+• You file a return as married filing separately due to         receives will report in column B the applicable SLCSP
+domestic abuse or spousal abandonment (see Exception            premium that covers Carol, Mark, and John, which will be
+2 under Married taxpayers, earlier).                            incorrect. Carol looks up the SLCSP premium that applies
+   If Exception 1 or Exception 2 applies, follow the rules in   to her and Mark.
+the next paragraph. If neither exception applies, see               Carol takes into account $7,000 ($14,000 x 0.50) of the
+Married filing separately (not in Exception 2—Victim of         premiums of the plan in which she and Mark were enrolled
+domestic abuse or spousal abandonment), later.                  in figuring her PTC. Carol must then reconcile $4,250
+  Exception 1—Certain married persons living apart              ($8,500 x 0.50) of the APTC for her coverage. Amounts
+or Exception 2—Victim of domestic abuse or spousal              from this policy are allocated for all months Carol and
+abandonment. Enter “0.50” in columns (e) and (g) of the         John were enrolled. On her Form 8962, Part IV, line 30,
+appropriate line in Part IV to allocate the enrollment          Carol enters John’s SSN in column (b) and enters “0.50”
+premium and APTC. Leave column (f) blank because you            in columns (e) and (g). Column (f) is left blank. Instead of
+do not allocate the applicable SLCSP premium. Instead,          allocating the applicable SLCSP premium, Carol will enter
+enter the SLCSP premium that applies to your coverage           the applicable SLCSP premium that applies to her and
+family on lines 12 through 23. See Example 1 and                Mark.
+Example 2, later.
+                                                                    Because John is filing his tax return as married filing
+         If you enrolled in coverage in the Marketplace with    separately and no exception to the married filing jointly
+     !   your spouse, or with another individual who is not     requirement applies, he is not an applicable taxpayer and
+ CAUTION in your tax family, your coverage family and           must repay the $4,250 in APTC allocated to him, subject
+applicable SLCSP premium may be different from the              to the repayment limitations on line 28. On his Form 8962,
+coverage family and applicable SLCSP premium the                Part IV, line 30, John enters Carol’s SSN in column (b) and
+Marketplace used to determine the amount of your APTC.          enters “0.50” in column (g). John leaves columns (e) and
+In that case, you must use a different applicable SLCSP         (f) blank because he is not an applicable taxpayer and
+premium to calculate your credit than the amount reported       cannot take the PTC.
+on Form 1095-A, Part III, column B. See Pub. 974 for               Example 2. Kevin and Nancy are married at the end of
+information on determining the correct applicable SLCSP         2024 and have no dependents. Kevin and Nancy are
+premium or, if you enrolled through the federally facilitated   enrolled in a qualified health plan for 2024 with an annual
+Marketplace, go to HealthCare.gov/Tax-Tool/.                    premium of $10,000 and APTC of $6,500. According to
+  Married filing separately (not in Exception                   Table 3, Kevin and Nancy follow the rules under Allocation
+2—Victim of domestic abuse or spousal                           Situation 2, earlier. Nancy is a victim of domestic abuse
+abandonment). Enter “0.50” in column (g) of the                 and is unable to file a joint return under the rules outlined
+
+
+18                                                                                        Instructions for Form 8962 (2024)
+in Exception 2 under Married taxpayers, earlier. Nancy            Example. Gary and his 25-year-old nondependent son,
+files her return using the filing status married filing        Jim, enroll in a qualified health plan. Jim has no
+separately and checks the box on the front of Form 8962.       dependents. The policy covers Gary, Jim, and Gary’s two
+    Nancy’s family size for 2024 is one (Nancy). Nancy is      young daughters who are Gary’s dependents. No APTC is
+the only person in her coverage family. If neither Kevin nor   paid for this policy. The Form 1095-A furnished by the
+Nancy notifies the Marketplace about the change in family      Marketplace to Gary shows an enrollment premium of
+circumstances, the Form 1095-A that Kevin or Nancy             $15,000 for the year and the SLCSP premium that applies
+receives will report in column B the premium for the           to a coverage family that incorrectly includes Gary, Gary's
+applicable SLCSP that covers Nancy and Kevin, which will       daughters, and Jim. (Some states may report -0- or leave
+be incorrect. Nancy must determine the correct premium         column B blank on the Form 1095-A when no APTC is
+for the applicable SLCSP covering only Nancy. Nancy            paid.) Gary and Jim determine that the SLCSP premium
+looks up her correct premium for the applicable SLCSP.         that applies to Gary and his two dependents is $12,000
+                                                               and the SLCSP premium that applies to Jim is $6,000.
+    Nancy’s federal poverty line percentage is determined
+                                                               Gary and Jim are applicable taxpayers and each can take
+using Nancy's modified AGI and her family size of one.
+                                                               the PTC. According to Table 3, Gary and Jim use the rules
+Nancy takes into account $5,000 ($10,000 x 0.50) of the
+                                                               under Allocation Situation 3, earlier.
+enrollment premiums in figuring her PTC. Nancy must
+reconcile $3,250 ($6,500 x 0.50) of the APTC for her              Gary computes his credit using his household income
+coverage. On her Form 8962, Part IV, line 30, Nancy            and family size of three, and the applicable SLCSP
+enters Kevin’s SSN in column (b) and enters “0.50” in          premium for a coverage family of three of $12,000. Jim
+columns (e) and (g). Column (f) is left blank. Instead of      computes his credit using his household income and
+allocating the applicable SLCSP premium, Nancy will            family size of one, and the applicable SLCSP premium for
+enter the applicable SLCSP premium that applies to             a coverage family of one of $6,000.
+Nancy. Nancy enters this amount on the applicable lines           Gary and Jim must allocate the enrollment premiums of
+in column (b), lines 12 through 23.                            $15,000 reported on the Form 1095-A, Part III, column A,
+   Example 3. For 2024, Michael and Colleen are married        in proportion to each taxpayer's applicable SLCSP
+with no dependents and are enrolled in a qualified health      premium as follows. Gary’s allocated enrollment premiums
+plan. APTC of $8,700 is paid for them during 2024.             are $10,000 ($15,000 x $12,000/$18,000) (67% of the
+Michael and Colleen each file their returns for 2024 as        total premiums of $15,000) and Jim’s allocated enrollment
+married filing separately and Exception 2, earlier, does not   premiums are $5,000 ($15,000 x $6,000/$18,000) (33% of
+apply to either of them. According to Table 3, Michael and     the total premiums of $15,000).
+Colleen follow the rules under Allocation Situation 2,            Gary enters Jim’s SSN on line 30, column (b), and
+earlier. Michael and Colleen are not applicable taxpayers      enters “0.67” in column (e). Jim enters Gary’s SSN on
+and cannot take the PTC. They must allocate the $8,700         line 30, column (b), and enters “0.33” in column (e). Gary
+APTC one-half (50%) to Michael and one-half (50%) to           and Jim leave line 30, columns (f) and (g), blank.
+Colleen. On her Form 8962, Part IV, line 30, Colleen
+enters Michael’s SSN in column (b) and enters “0.50” in        Allocation Situation 4—Other situations where a poli-
+column (g). On his Form 8962, Part IV, line 30, Michael        cy is shared between two tax families. Complete Part
+enters Colleen’s SSN in column (b) and enters “0.50” in        IV using the rules in this section if you need to allocate
+column (g).                                                    policy amounts and Allocation Situations 1 through 3 do
+                                                               not apply.
+   Example 4. The facts are the same as in Example 3,
+except that only Colleen is covered under the policy.             Allocation Situation 4 generally applies if another
+Because Michael and Colleen are not applicable                 taxpayer indicated to the Marketplace that their tax family
+taxpayers and cannot take the PTC, Colleen does not            would include an individual you are including in your tax
+complete Part IV of her Form 8962. She reports all of the      family, or you indicated to the Marketplace that you would
+APTC on line 11 or lines 12 through 23, whichever applies.     include in your tax family an individual being included in
+Michael does not file Form 8962 because he was not             the tax family of another taxpayer, and APTC was paid on
+enrolled in a qualified health plan.                           behalf of that individual. In such cases, the Form 1095-A
+                                                               sent by the Marketplace for the policy does not accurately
+Allocation Situation 3—No APTC. If this allocation             reflect the members of your coverage family and the other
+situation applies, the enrollment premiums are allocated in    taxpayer's coverage family. Therefore, you and the other
+proportion to the SLCSP premium that applies to each           tax family must allocate the enrollment premiums, the
+taxpayer’s coverage family. If no APTC was paid for the        APTC, and the applicable SLCSP premium so that each
+policy, the Marketplace may not know which enrollees are       family is able to compute their PTC and reconcile their
+in which tax family, and therefore may furnish only one        PTC with the APTC paid for their coverage.
+Form 1095-A showing the total premium. When this
+happens, the taxpayer receiving the Form 1095-A should            Under the rules in this section, you and the other
+provide a copy to the other taxpayers. You and the other       taxpayer may agree on any allocation of the policy
+taxpayer(s) must complete only column (e) on the               amounts between the two of you. You may use the
+appropriate line in Part IV to allocate the enrollment         percentage you agreed on for every month for which this
+premiums to each family. See Missing or incorrect SLCSP        allocation rule applies, or you may agree on different
+premium on Form 1095-A under Line 10, earlier, to              percentages for different months. However, you must use
+determine your correct applicable SLCSP premium.               the same allocation percentage for all policy amounts
+                                                               (enrollment premiums, applicable SLCSP premiums, and
+                                                               APTC) in a month. If you cannot agree on an allocation
+
+Instructions for Form 8962 (2024)                                                                                      19
+percentage, each taxpayer’s allocation percentage is                Example 2. The facts are the same as in Example 1,
+equal to the number of individuals enrolled by one               except that Joe and Alice do not agree on an allocation
+taxpayer who are included in the tax family of the other         percentage. Therefore, the allocation percentage equals
+taxpayer for the tax year divided by the total number of         the number of individuals Joe enrolled in a qualified health
+individuals enrolled in the same policy as the individual(s).    plan who are included in Alice’s tax family (1—Jane),
+The allocation percentage you use and that you put on            divided by the number of individuals enrolled in the plan
+line 30 of Form 8962 is the percentage of the policy             (3—Joe, Chris, and Jane). Thus, 33% of the policy
+amounts for the coverage that you will use to compute            amounts are allocated to Jane's coverage. Alice is
+your PTC and reconcile APTC.                                     allocated 33% of the enrollment premiums, APTC, and
+   Policy amounts allocated 100%. If 100% of the policy          applicable SLCSP premiums for the policy, and the
+amounts are allocated to you, check “Yes” on line 9 and          remaining 67% of each is allocated to Joe.
+complete Part IV by entering 100 in the appropriate
+box(es) for your allocation percentage. If 0% of the policy      Lines 30 Through 33, Columns (a) Through (g)
+amounts are allocated to you, complete Part IV by                If you shared a policy with another taxpayer in one of the
+entering -0- in the appropriate box(es) for your allocation      situations described under Specific Allocation Situations,
+percentage.                                                      earlier, complete line 30, columns (a) through (g), as
+                                                                 applicable. If you shared a policy with another taxpayer
+Note. If APTC is paid for coverage of an individual who is       and you are not making an allocation in all three columns,
+not included in a tax family, the taxpayer who certifies to      (e), (f), and (g), leave the column blank that does not
+the Marketplace their intention to include the individual in     apply.
+their tax family for the year of coverage is responsible for
+reporting and reconciling the APTC for the individual’s             If you shared multiple policies during the year or must
+coverage. See Individual you enrolled who is not included        do more than one allocation for a single policy, complete
+in a tax family under Lines 12 Through 23, earlier.              lines 31 through 33 for each separate allocation, as
+   Example 1. Joe and Alice have been divorced since             needed. For instructions on making more than four
+January 2022 and have two children, Chris and Jane. Joe          separate allocations, see Line 34, later.
+enrolls himself, Chris, and Jane in a qualified health plan      Not an applicable taxpayer. If you are not an applicable
+for 2024. The annual enrollment premium for the plan is          taxpayer because you are using filing status married filing
+$13,000. The applicable SLCSP premium is $12,000,                separately and Exception 2, earlier, does not apply to you,
+APTC is $7,145, and Joe's household income is $74,936.           you cannot take the PTC. Unless you are electing the
+   Jane lives with Alice for more than half of 2024 and          alternative calculation for year of marriage, do not enter
+Alice claims Jane as a dependent. Joe receives a Form            any percentages in column (e) or (f) when completing Part
+1095-A showing policy amounts for the qualified health           IV.
+plan. Joe and Alice agree to allocate 20% of the policy          Lines 30 through 33, column (a). Enter the
+amounts for the qualified health plan for Jane's coverage.       Marketplace-assigned policy number from Form 1095-A,
+Therefore, 20% of the enrollment premiums, APTC, and             line 2. If the policy number on the Form 1095-A is more
+the applicable SLCSP premium are allocated to Alice and          than 15 characters, enter only the last 15 characters.
+80% are allocated to Joe. According to Table 3, Joe and
+Alice use the rules under Allocation Situation 4, earlier.       Lines 30 through 33, column (b). Enter the SSN of the
+                                                                 taxpayer with whom you are allocating policy amounts.
+   In computing PTC, Joe takes into account $10,400 of
+                                                                 This SSN may or may not be reported on your Form
+enrollment premiums ($13,000 x 0.80). Joe must reconcile
+                                                                 1095-A, depending on your relationship to the other
+$5,716 of APTC ($7,145 x 0.80). Joe’s tax family for 2024
+                                                                 taxpayer.
+includes only Joe and Chris, and Joe’s household income
+of $74,936 is 380% of the federal poverty line for a family      Lines 30 through 33, column (c). Enter the first month
+size of two. Joe’s applicable SLCSP premium for 2024 is          you are allocating policy amounts. For example, if you
+$9,600 ($12,000 x 0.80). Joe’s PTC for 2024 is $4,359            were enrolled in a policy with your former spouse from
+(the lesser of $4,359, the excess of Joe’s applicable            January through June, enter “01” in column (c).
+SLCSP premium of $9,600 minus the contribution amount            Lines 30 through 33, column (d). Enter the last month
+of $5,995 ($74,936 x 0.0800), or $10,400, Joe's                  you are allocating policy amounts. For example, if you
+enrollment premiums). Joe has excess APTC of $1,357              were enrolled in a policy with your former spouse from
+(the excess of the APTC of $5,716 over the PTC of                January through June, enter “06” in column (d).
+$4,359).
+   When Joe completes Part IV of Form 8962, he enters            Lines 30 through 33, column (e). If your allocation
+Alice’s SSN on line 30, column (b), and enters “0.80” in         situation requires you to allocate the enrollment premiums
+columns (e), (f), and (g). Alice is responsible for              on Form 1095-A, lines 21 through 32, column A, enter
+reconciling $1,429 ($7,145 x 0.20) of APTC for Jane’s            your allocation percentage for that policy in column (e).
+coverage. If Alice is eligible for the PTC, she will take into   Enter your allocation percentage as a decimal rounded to
+account $2,600 ($13,000 x 0.20) of the enrollment                two places (for example, for 40%, enter “0.40”).
+premiums for Jane and $2,400 ($12,000 x 0.20) of the             Otherwise, leave column (e) blank.
+applicable SLCSP premiums. Alice must compute her                Lines 30 through 33, column (f). If your allocation
+contribution amount using the federal poverty line               situation requires you to allocate the applicable SLCSP
+percentage for the household income and family size              premium on Form 1095-A, lines 21 through 32, column B,
+reported on her Form 8962.                                       enter your allocation percentage for that policy in column
+
+20                                                                                         Instructions for Form 8962 (2024)
+(f). Enter your allocation percentage as a decimal rounded     Line 35. Complete line 35, columns (a) through (d), as
+to two places (for example, for 67%, enter “0.67”). You will   indicated in Pub. 974 under Alternative Calculation for
+enter an allocation percentage in column (f) in the            Year of Marriage.
+following two circumstances.
+• You allocated the policy amounts under Allocation            Line 36. Complete line 36, columns (a) through (d), as
+Situation 1, earlier.                                          indicated in Pub. 974 under Alternative Calculation for
+• You allocated the policy amounts under Allocation            Year of Marriage.
+Situation 4, earlier.                                          How To Avoid Common Mistakes in
+    In all other situations, leave column (f) blank because
+you do not allocate the applicable SLCSP premium               Completing Form 8962
+reported in those situations. Instead, you must determine      Mistakes in completing Form 8962 can cause you to pay
+the correct applicable SLCSP premium for your coverage         too much tax, delay the processing of your return or
+family and enter that amount on Form 8962, lines 12            refund, or cause you to receive correspondence from the
+through 23, column (b). See Pub. 974 for information on        IRS. To avoid making common mistakes on your Form
+determining the correct premium for the applicable             8962 and on your income tax return, carefully review all of
+SLCSP or, if you enrolled through the federally facilitated    the following before attaching Form 8962 to your tax
+Marketplace, go to HealthCare.gov/Tax-Tool/.                   return.
+Lines 30 through 33, column (g). If your allocation            Entering amounts from Form 1095-A. Form 8962 and
+situation requires you to allocate the APTC on Form            the IRS electronic filing program provide for entries of
+1095-A, lines 21 through 32, column C, enter your              dollars only. Your Form 1095-A may include amounts in
+allocation percentage for that policy in column (g). Enter     dollars and cents. You should round the amounts on Form
+your allocation percentage as a decimal rounded to two         1095-A to the nearest whole dollar and enter dollars only
+places (for example, for 80%, enter “0.80”). Otherwise,        on Form 8962. If you file a paper return and do not round
+leave column (g) blank.                                        amounts to whole dollars, be sure to enter the decimal
+                                                               point to separate dollars and cents.
+Line 34
+                                                               Check your math. Check your math, especially when
+If you have completed your required allocations of policy      completing line 11, or lines 12 through 23, and entering
+amounts shown on Forms 1095-A using lines 30 through           the totals on lines 24 and 25. Review your entries on
+33, check “Yes” on line 34. If you must make more than         line 11, or lines 12 through 23, if your entries on lines 24
+four allocations of policy amounts shown on Forms              and 25 seem higher than expected (for example, greater
+1095-A, check “No” on line 34 and attach a statement to        than $25,000). Examples of math errors include the
+your return providing the information shown on lines 30        following.
+through 33, columns (a) through (g), for each additional       • Dollar and cents amounts from Form 1095-A entered as
+allocation.                                                    dollars on Form 8962.
+    If you got married in 2024 and APTC was paid for an        • Transposition of numbers or errors in amounts (for
+individual in your tax family, see Table 4 under Line 9 in     example, line 12, column (a), monthly enrollment premium
+the instructions for Part II, earlier, to determine if you     of $1,200 entered as “$12,000”).
+should complete Part V. If you do not complete Part V,         • Annual totals from Form 1095-A, line 33, entered as
+check “No” on Form 8962, line 10; skip line 11; and            monthly amounts on Form 8962, lines 12 through 23.
+continue to Lines 12 Through 23 in the instructions for Part   Line 2b. Complete line 2b only if your dependent(s) is
+II, earlier.                                                   required to file an income tax return. You enter your and
+                                                               your spouse's (if filing a joint return) modified AGI on
+Part V—Alternative Calculation for                             line 2a. If you are not required to complete line 2b, enter
+Year of Marriage                                               your modified AGI from line 2a on line 3.
+Complete Part V to elect the alternative calculation for       Line 5. Review your entries on Worksheet 2 for accuracy.
+your pre-marriage months. Electing the alternative             An incorrect entry on this line will impact the amount of
+calculation is optional but may reduce the amount of           your PTC.
+excess APTC you must repay. To be eligible to make this
+election, you must meet either of the following conditions.    Line 11. Use the amounts shown on Form 1095-A,
+• You answered “Yes” to all five questions in Table 4.         line 33 (columns A, B, and C), for completing line 11. Do
+• You checked “Yes” on line 14 of Worksheet 3.                 not use monthly amounts from Form 1095-A, lines 21
+                                                               through 32 (columns A, B, and C). If you are instructed to
+   If you, your spouse, or any individual in your tax family   complete line 11, do not complete lines 12 through 23.
+had coverage under a qualified health plan for at least 1
+month before your first full month of marriage, use the        Lines 12 through 23. Use the monthly amounts from
+worksheets and instructions necessary to complete the          Form 1095-A, lines 12 through 32 (columns A, B, and C),
+alternative calculation in Pub. 974.                           when completing lines 12 through 23. Do not use total
+                                                               amounts from Form 1095-A, line 33. If you are instructed
+        Do not go to Pub. 974 until you have completed         to complete lines 12 through 23, do not complete line 11.
+  !     Table 4 to determine whether you meet the
+CAUTION requirements to elect the alternative calculation.
+                                                               Line 24. If your filing status is married filing separately
+                                                               and you are not eligible to check the box for item A above
+                                                               Part I on Form 8962, your entry on line 24 should be -0-. If
+
+Instructions for Form 8962 (2024)                                                                                            21
+you enter an amount greater than -0-, the IRS will reduce     months. These months should be inclusive of all months
+your entry to -0-.                                            you are using a reduced monthly contribution. Either you
+                                                              or your spouse should have a start month that is the same
+Line 26. If you have an amount on line 26 (other than -0-),
+                                                              as the first month you claim the PTC on lines 12 through
+be sure to enter that amount on Schedule 3 (Form 1040),
+                                                              23. For example, if your first monthly entry in Part II is on
+line 9.
+                                                              line 14 for March, either you or your spouse should enter
+Line 29. If you have an amount on line 29, be sure to         “03” as the alternate start month in Part V.
+enter that amount on Schedule 2 (Form 1040), line 1a.
+Part V—Alternative calculation for year of marriage
+election. Confirm your entries for alternate start and stop
+
+
+
+
+22                                                                                      Instructions for Form 8962 (2024)
+Index
+
+                                                                         Minimum essential coverage
+A                                     D                                    (MEC) 4
+Abandonment 6                         Domestic abuse 6                   Modified AGI 4
+Advance payment of the premium                                           Monthly credit amount 4
+   tax credit (APTC) 2                E
+Alien lawfully present in the         Employer-sponsored coverage 5      P
+   United States 9                                                       Premium tax credit (PTC) 2
+Allocating policy amounts 11          H
+Allocation policy amounts:            Household income 3                 Q
+   Divorced or legally separated 17                                      Qualified health plan 4
+   Married but not filing a joint     I
+     return 18
+                                      Individuals who are                S
+   No APTC 19                           incarcerated 6                   Spousal abandonment 7
+   Two or more tax families 19        Individuals who are not lawfully
+Alternative calculation for year of     present 6                        T
+   marriage 11
+                                                                         Tax family 3
+Applicable SLCSP premium 4            M
+Applicable taxpayer 6                 Married filing separately 7
+C                                     Married taxpayers 6
+Coverage family 4
+
+
+
+
+                                                                                                      23
+

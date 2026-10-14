@@ -1,0 +1,527 @@
+{
+  "status": "[DEGRADED] conditional calibrated local TAXSIM sensitivity; not adoptable",
+  "recommended_adopt": false,
+  "scope": "identified union, mixed civilian joint returns only",
+  "source_pins": {
+    "_cache/state_taxsimtest_osx": {
+      "url": "https://taxsim.nber.org/stata/taxsimtest/osx",
+      "sha256": "2864598c347af98af663c39d2d1b5e93449facfc5159a74d4cd21f862a2b52a7"
+    },
+    "inputs/state_tax_parameters.xlsx": {
+      "url": "https://www2.census.gov/library/working-papers/2026/demo/Federal_and_State_Tax_Parameter_Workbook_TY2025.xlsx",
+      "sha256": "314416c7b7f84944a1d146074f49c7c481281bd33122a52adc0c2b2884f7f82e"
+    },
+    "inputs/state_taxsim_documentation.html": {
+      "url": "https://taxsim.nber.org/taxsimtest/",
+      "sha256": "0a00cf4bca01a4e9a68e5aea94824ce893d55ae3a61780e6c5bad050694dba5b"
+    },
+    "inputs/state_workbook_documentation.pdf": {
+      "url": "https://www2.census.gov/library/working-papers/2026/demo/Federal_and_State_Tax_Parameter_Workbook_Documentation_TY2025.pdf",
+      "sha256": "7dfa16f4706a1a22512ac484c4aaab9c12d96a1b3c91e66e81493891a7dbfdae"
+    },
+    "inputs/state_parameters_2024.json": {
+      "generated_from": "inputs/state_tax_parameters.xlsx",
+      "sha256": "962107e3dc5470bf2f7d76b0a705c47da21340941bfb0cca17f9f07aaa898970"
+    }
+  },
+  "source_year": 2024,
+  "returns": 1323,
+  "additional_continuing_returns": 0,
+  "national_line_bn": 536.167,
+  "national_ruled_cps_key_bn": 486.9547339904077,
+  "raw_surviving_signed_cps_bn": 7.068285949309813,
+  "surviving_positive_calibrated_cps_bn": 6.978501991311535,
+  "original_nonmember_positive_cps_bn": 6.322425597741971,
+  "union_bn": 0.7223803100309144,
+  "union_se_bn": 0.5797780417264602,
+  "uncalibrated_union_bn": 0.8618608018542488,
+  "uncalibrated_union_se_bn": 0.5894032318896882,
+  "generation_bn": {
+    "G1": -0.3035262383552485,
+    "G2": 0.4062910171256446,
+    "G3+": 0.6196155312605185
+  },
+  "generation_se_bn": {
+    "G1": 0.19406675550465138,
+    "G2": 0.3904144270899798,
+    "G3+": 0.38461674587961386
+  },
+  "state_calibration": [
+    {
+      "fips": 1,
+      "returns": 1091,
+      "cps_positive_bn": 6.786913074935523,
+      "taxsim_positive_bn": 7.1206481551488885,
+      "calibration_factor": 0.953131362069611,
+      "structural_zero": false,
+      "raw_mae_usd": 374.70184616372416
+    },
+    {
+      "fips": 2,
+      "returns": 702,
+      "cps_positive_bn": 0.0,
+      "taxsim_positive_bn": 0.0,
+      "calibration_factor": 0.0,
+      "structural_zero": true,
+      "raw_mae_usd": 0.0
+    },
+    {
+      "fips": 4,
+      "returns": 1145,
+      "cps_positive_bn": 6.126318593358528,
+      "taxsim_positive_bn": 6.150512726185553,
+      "calibration_factor": 0.9960663226133947,
+      "structural_zero": false,
+      "raw_mae_usd": 114.893680370091
+    },
+    {
+      "fips": 5,
+      "returns": 1114,
+      "cps_positive_bn": 2.9910426347001104,
+      "taxsim_positive_bn": 3.11776459329285,
+      "calibration_factor": 0.9593548663470768,
+      "structural_zero": false,
+      "raw_mae_usd": 361.3982295142113
+    },
+    {
+      "fips": 6,
+      "returns": 6295,
+      "cps_positive_bn": 91.25748167023004,
+      "taxsim_positive_bn": 95.80647906826624,
+      "calibration_factor": 0.9525188959841135,
+      "structural_zero": false,
+      "raw_mae_usd": 658.6181756365829
+    },
+    {
+      "fips": 8,
+      "returns": 880,
+      "cps_positive_bn": 9.42569295705172,
+      "taxsim_positive_bn": 9.144569208018774,
+      "calibration_factor": 1.0307421533631602,
+      "structural_zero": false,
+      "raw_mae_usd": 274.56954828602846
+    },
+    {
+      "fips": 9,
+      "returns": 760,
+      "cps_positive_bn": 9.168264107956709,
+      "taxsim_positive_bn": 8.781303539969777,
+      "calibration_factor": 1.044066415222479,
+      "structural_zero": false,
+      "raw_mae_usd": 505.5288328093642
+    },
+    {
+      "fips": 10,
+      "returns": 764,
+      "cps_positive_bn": 1.9694205132327174,
+      "taxsim_positive_bn": 1.8874110997088944,
+      "calibration_factor": 1.0434507424145547,
+      "structural_zero": false,
+      "raw_mae_usd": 487.77312516223117
+    },
+    {
+      "fips": 11,
+      "returns": 1119,
+      "cps_positive_bn": 3.6972553824844905,
+      "taxsim_positive_bn": 3.646867723730956,
+      "calibration_factor": 1.0138166949203151,
+      "structural_zero": false,
+      "raw_mae_usd": 700.9032368287266
+    },
+    {
+      "fips": 12,
+      "returns": 3046,
+      "cps_positive_bn": 0.0,
+      "taxsim_positive_bn": 0.0,
+      "calibration_factor": 0.0,
+      "structural_zero": true,
+      "raw_mae_usd": 0.0
+    },
+    {
+      "fips": 13,
+      "returns": 1461,
+      "cps_positive_bn": 17.122522479508422,
+      "taxsim_positive_bn": 16.235885194012983,
+      "calibration_factor": 1.0546097286905176,
+      "structural_zero": false,
+      "raw_mae_usd": 427.8730764939883
+    },
+    {
+      "fips": 15,
+      "returns": 1222,
+      "cps_positive_bn": 2.8766110696457243,
+      "taxsim_positive_bn": 3.357796892961272,
+      "calibration_factor": 0.8566959710028245,
+      "structural_zero": false,
+      "raw_mae_usd": 907.3991820638657
+    },
+    {
+      "fips": 16,
+      "returns": 1085,
+      "cps_positive_bn": 2.4966080497307255,
+      "taxsim_positive_bn": 2.4517056761526823,
+      "calibration_factor": 1.0183147487950126,
+      "structural_zero": false,
+      "raw_mae_usd": 246.50174805087153
+    },
+    {
+      "fips": 17,
+      "returns": 1615,
+      "cps_positive_bn": 26.699363120294926,
+      "taxsim_positive_bn": 25.576465989914595,
+      "calibration_factor": 1.043903529550295,
+      "structural_zero": false,
+      "raw_mae_usd": 278.8194069297853
+    },
+    {
+      "fips": 18,
+      "returns": 929,
+      "cps_positive_bn": 11.473680129765661,
+      "taxsim_positive_bn": 7.125237465987186,
+      "calibration_factor": 1.610287402284635,
+      "structural_zero": false,
+      "raw_mae_usd": 1416.5516021412782
+    },
+    {
+      "fips": 19,
+      "returns": 795,
+      "cps_positive_bn": 4.543512403866492,
+      "taxsim_positive_bn": 4.782350455918308,
+      "calibration_factor": 0.9500584379473391,
+      "structural_zero": false,
+      "raw_mae_usd": 228.22263367709658
+    },
+    {
+      "fips": 20,
+      "returns": 789,
+      "cps_positive_bn": 5.148924815618088,
+      "taxsim_positive_bn": 5.530465123507962,
+      "calibration_factor": 0.9310111718690555,
+      "structural_zero": false,
+      "raw_mae_usd": 607.6482531792453
+    },
+    {
+      "fips": 21,
+      "returns": 596,
+      "cps_positive_bn": 5.138047650484396,
+      "taxsim_positive_bn": 5.036679845739347,
+      "calibration_factor": 1.0201259178366873,
+      "structural_zero": false,
+      "raw_mae_usd": 232.278336032579
+    },
+    {
+      "fips": 22,
+      "returns": 1248,
+      "cps_positive_bn": 3.394939531148793,
+      "taxsim_positive_bn": 4.831724113815039,
+      "calibration_factor": 0.7026352190601819,
+      "structural_zero": false,
+      "raw_mae_usd": 833.9882844891278
+    },
+    {
+      "fips": 23,
+      "returns": 452,
+      "cps_positive_bn": 3.0427813767743577,
+      "taxsim_positive_bn": 2.7643480932401308,
+      "calibration_factor": 1.1007229459325694,
+      "structural_zero": false,
+      "raw_mae_usd": 682.2766208690886
+    },
+    {
+      "fips": 24,
+      "returns": 791,
+      "cps_positive_bn": 21.897866717273907,
+      "taxsim_positive_bn": 13.890885939360345,
+      "calibration_factor": 1.5764197339800683,
+      "structural_zero": false,
+      "raw_mae_usd": 2707.9873191919046
+    },
+    {
+      "fips": 25,
+      "returns": 1501,
+      "cps_positive_bn": 18.693359196062005,
+      "taxsim_positive_bn": 18.79058309441771,
+      "calibration_factor": 0.9948259243543864,
+      "structural_zero": false,
+      "raw_mae_usd": 393.4533327244348
+    },
+    {
+      "fips": 26,
+      "returns": 1285,
+      "cps_positive_bn": 15.163226445986282,
+      "taxsim_positive_bn": 13.919528471914774,
+      "calibration_factor": 1.0893491454528004,
+      "structural_zero": false,
+      "raw_mae_usd": 302.65615824918103
+    },
+    {
+      "fips": 27,
+      "returns": 825,
+      "cps_positive_bn": 15.055691846719958,
+      "taxsim_positive_bn": 14.985068655690934,
+      "calibration_factor": 1.0047129040681573,
+      "structural_zero": false,
+      "raw_mae_usd": 578.0638331832566
+    },
+    {
+      "fips": 28,
+      "returns": 971,
+      "cps_positive_bn": 2.0644061742944273,
+      "taxsim_positive_bn": 2.1410153413580306,
+      "calibration_factor": 0.9642183007362243,
+      "structural_zero": false,
+      "raw_mae_usd": 194.9825400359846
+    },
+    {
+      "fips": 29,
+      "returns": 887,
+      "cps_positive_bn": 8.001184805790922,
+      "taxsim_positive_bn": 8.067199403410317,
+      "calibration_factor": 0.9918169126213134,
+      "structural_zero": false,
+      "raw_mae_usd": 235.78396391681147
+    },
+    {
+      "fips": 30,
+      "returns": 1041,
+      "cps_positive_bn": 2.1714347177231406,
+      "taxsim_positive_bn": 2.087962079998414,
+      "calibration_factor": 1.0399780429560244,
+      "structural_zero": false,
+      "raw_mae_usd": 259.4979541937141
+    },
+    {
+      "fips": 31,
+      "returns": 862,
+      "cps_positive_bn": 3.7877935685513946,
+      "taxsim_positive_bn": 3.802153965609734,
+      "calibration_factor": 0.9962230890205319,
+      "structural_zero": false,
+      "raw_mae_usd": 241.3697156325024
+    },
+    {
+      "fips": 32,
+      "returns": 1011,
+      "cps_positive_bn": 0.0,
+      "taxsim_positive_bn": 0.0,
+      "calibration_factor": 0.0,
+      "structural_zero": true,
+      "raw_mae_usd": 0.0
+    },
+    {
+      "fips": 33,
+      "returns": 725,
+      "cps_positive_bn": 0.11667065449622985,
+      "taxsim_positive_bn": 0.11555078076879495,
+      "calibration_factor": 1.0096916154091216,
+      "structural_zero": false,
+      "raw_mae_usd": 2.0758139624962726
+    },
+    {
+      "fips": 34,
+      "returns": 1148,
+      "cps_positive_bn": 23.04117875238248,
+      "taxsim_positive_bn": 22.95192158879918,
+      "calibration_factor": 1.0038888754145472,
+      "structural_zero": false,
+      "raw_mae_usd": 362.72408046339865
+    },
+    {
+      "fips": 35,
+      "returns": 1053,
+      "cps_positive_bn": 2.6656143636826837,
+      "taxsim_positive_bn": 2.44995755433973,
+      "calibration_factor": 1.0880247124938756,
+      "structural_zero": false,
+      "raw_mae_usd": 347.89942540116647
+    },
+    {
+      "fips": 36,
+      "returns": 2500,
+      "cps_positive_bn": 53.4036509023333,
+      "taxsim_positive_bn": 48.6556517866258,
+      "calibration_factor": 1.0975837120943184,
+      "structural_zero": false,
+      "raw_mae_usd": 1641.5284633220112
+    },
+    {
+      "fips": 37,
+      "returns": 1465,
+      "cps_positive_bn": 14.92870316534018,
+      "taxsim_positive_bn": 14.797856458639954,
+      "calibration_factor": 1.0088422743568262,
+      "structural_zero": false,
+      "raw_mae_usd": 156.65689937037214
+    },
+    {
+      "fips": 38,
+      "returns": 906,
+      "cps_positive_bn": 0.22418380207596397,
+      "taxsim_positive_bn": 0.23029934645043323,
+      "calibration_factor": 0.973445237823176,
+      "structural_zero": false,
+      "raw_mae_usd": 45.107577036195124
+    },
+    {
+      "fips": 39,
+      "returns": 1573,
+      "cps_positive_bn": 9.824302828090278,
+      "taxsim_positive_bn": 11.295945099575583,
+      "calibration_factor": 0.8697194206848087,
+      "structural_zero": false,
+      "raw_mae_usd": 348.68271787115896
+    },
+    {
+      "fips": 40,
+      "returns": 961,
+      "cps_positive_bn": 5.445736774957882,
+      "taxsim_positive_bn": 5.401571065293769,
+      "calibration_factor": 1.0081764562810045,
+      "structural_zero": false,
+      "raw_mae_usd": 156.6749871082352
+    },
+    {
+      "fips": 41,
+      "returns": 1000,
+      "cps_positive_bn": 13.027771219098858,
+      "taxsim_positive_bn": 13.19168415667835,
+      "calibration_factor": 0.9875745253121065,
+      "structural_zero": false,
+      "raw_mae_usd": 521.268953630571
+    },
+    {
+      "fips": 42,
+      "returns": 1707,
+      "cps_positive_bn": 16.262197623268516,
+      "taxsim_positive_bn": 16.597258627634282,
+      "calibration_factor": 0.9798122682858063,
+      "structural_zero": false,
+      "raw_mae_usd": 60.37848036631046
+    },
+    {
+      "fips": 44,
+      "returns": 573,
+      "cps_positive_bn": 2.0609119980035997,
+      "taxsim_positive_bn": 2.0522551334323107,
+      "calibration_factor": 1.0042182204494288,
+      "structural_zero": false,
+      "raw_mae_usd": 210.31721404436485
+    },
+    {
+      "fips": 45,
+      "returns": 1026,
+      "cps_positive_bn": 8.969103411980415,
+      "taxsim_positive_bn": 8.692235407492014,
+      "calibration_factor": 1.0318523361953316,
+      "structural_zero": false,
+      "raw_mae_usd": 321.79915702183723
+    },
+    {
+      "fips": 46,
+      "returns": 703,
+      "cps_positive_bn": 0.0,
+      "taxsim_positive_bn": 0.0,
+      "calibration_factor": 0.0,
+      "structural_zero": true,
+      "raw_mae_usd": 0.0
+    },
+    {
+      "fips": 47,
+      "returns": 1137,
+      "cps_positive_bn": 0.0,
+      "taxsim_positive_bn": 0.0,
+      "calibration_factor": 0.0,
+      "structural_zero": true,
+      "raw_mae_usd": 0.0
+    },
+    {
+      "fips": 48,
+      "returns": 4097,
+      "cps_positive_bn": 0.0,
+      "taxsim_positive_bn": 0.0,
+      "calibration_factor": 0.0,
+      "structural_zero": true,
+      "raw_mae_usd": 0.0
+    },
+    {
+      "fips": 49,
+      "returns": 1069,
+      "cps_positive_bn": 5.669821441167979,
+      "taxsim_positive_bn": 6.1802931198809175,
+      "calibration_factor": 0.9174033223325864,
+      "structural_zero": false,
+      "raw_mae_usd": 369.3980736793454
+    },
+    {
+      "fips": 50,
+      "returns": 801,
+      "cps_positive_bn": 1.1565817248971852,
+      "taxsim_positive_bn": 1.1131413110694457,
+      "calibration_factor": 1.039025066625193,
+      "structural_zero": false,
+      "raw_mae_usd": 379.02393269124894
+    },
+    {
+      "fips": 51,
+      "returns": 1204,
+      "cps_positive_bn": 20.069555516237912,
+      "taxsim_positive_bn": 19.53305691166693,
+      "calibration_factor": 1.0274661875505282,
+      "structural_zero": false,
+      "raw_mae_usd": 404.2221866903774
+    },
+    {
+      "fips": 53,
+      "returns": 1232,
+      "cps_positive_bn": 0.0,
+      "taxsim_positive_bn": 0.02014176520174,
+      "calibration_factor": 0.0,
+      "structural_zero": false,
+      "raw_mae_usd": 5.3377861983531085
+    },
+    {
+      "fips": 54,
+      "returns": 1193,
+      "cps_positive_bn": 2.250002466246171,
+      "taxsim_positive_bn": 2.240373823431731,
+      "calibration_factor": 1.0042977840187808,
+      "structural_zero": false,
+      "raw_mae_usd": 158.33492906528573
+    },
+    {
+      "fips": 55,
+      "returns": 837,
+      "cps_positive_bn": 10.448386520345188,
+      "taxsim_positive_bn": 10.549802074757844,
+      "calibration_factor": 0.9903869708934815,
+      "structural_zero": false,
+      "raw_mae_usd": 402.82068361563114
+    },
+    {
+      "fips": 56,
+      "returns": 769,
+      "cps_positive_bn": 0.0,
+      "taxsim_positive_bn": 0.0,
+      "calibration_factor": 0.0,
+      "structural_zero": true,
+      "raw_mae_usd": 0.0
+    }
+  ],
+  "gates": {
+    "state_calibration_closure_bn": 7.62939453125e-15,
+    "generation_closure_bn": 1.3322676295501878e-15,
+    "survivor_head_spouse_swap_max_input_difference": 0.0,
+    "original_weights_preserved": true,
+    "survivor_own_weights_preserved": true
+  },
+  "held": [
+    "zero unobserved itemized deductions/rents/property taxes",
+    "zero unobserved attributable childcare",
+    "all dividends qualified; capital gains long-term; pensions taxable",
+    "self-employment non-QBI; no shared unexplained original AGI residual",
+    "positive after-credit tax floor; negative state refunds not spending",
+    "state-level calibration factor transports across refiling/income change",
+    "identified union; added lineage extrapolation external and assumed",
+    "other_personal_tax held (same proxy key does not establish same behavioral response)"
+  ]
+}

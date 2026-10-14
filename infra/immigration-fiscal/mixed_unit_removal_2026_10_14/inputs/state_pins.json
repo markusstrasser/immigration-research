@@ -1,0 +1,22 @@
+{
+  "_cache/state_taxsimtest_osx": {
+    "url": "https://taxsim.nber.org/stata/taxsimtest/osx",
+    "sha256": "2864598c347af98af663c39d2d1b5e93449facfc5159a74d4cd21f862a2b52a7"
+  },
+  "inputs/state_tax_parameters.xlsx": {
+    "url": "https://www2.census.gov/library/working-papers/2026/demo/Federal_and_State_Tax_Parameter_Workbook_TY2025.xlsx",
+    "sha256": "314416c7b7f84944a1d146074f49c7c481281bd33122a52adc0c2b2884f7f82e"
+  },
+  "inputs/state_taxsim_documentation.html": {
+    "url": "https://taxsim.nber.org/taxsimtest/",
+    "sha256": "0a00cf4bca01a4e9a68e5aea94824ce893d55ae3a61780e6c5bad050694dba5b"
+  },
+  "inputs/state_workbook_documentation.pdf": {
+    "url": "https://www2.census.gov/library/working-papers/2026/demo/Federal_and_State_Tax_Parameter_Workbook_Documentation_TY2025.pdf",
+    "sha256": "7dfa16f4706a1a22512ac484c4aaab9c12d96a1b3c91e66e81493891a7dbfdae"
+  },
+  "inputs/state_parameters_2024.json": {
+    "generated_from": "inputs/state_tax_parameters.xlsx",
+    "sha256": "962107e3dc5470bf2f7d76b0a705c47da21340941bfb0cca17f9f07aaa898970"
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/credits.py": {
+    "sha256": "d41e16a5fdce5dfcc141aa8c6c11dde9842c614ee185f70b84ecfa2b89782481"
+  },
+  "repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/derived/item.json": {
+    "sha256": "2773e34d4cb02a70dd21544f915b2b83bbdc00855d24d468ed67e81e0310b5ac"
+  },
+  "repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/derived/summary.json": {
+    "sha256": "e648553401f4b3fe8fc61ff0ff768af30ef21aadeb9e23a238ec660fcbaabf46"
+  },
+  "repo:infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": {
+    "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b"
+  },
+  "repo:infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json": {
+    "sha256": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd"
+  },
+  "repo:infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json": {
+    "sha256": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958"
+  },
+  "repo:infra/immigration-fiscal/main_case_2026_10_14/derived/corrections_cash.json": {
+    "sha256": "581701613b7f3c8086437100334e3818ebe062dc57e2e486f14897208b05de97"
+  },
+  "repo:infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json": {
+    "sha256": "b30720cff0c29637ab6f74d809829fdbfc4b82a00a45fa286e3f0c1c5c183582"
+  },
+  "repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/cps_arrays.npz": {
+    "sha256": "7f47ada81fac1957aaa3387e8a697e36ac70246be4691c907d6d5b289c12e163"
+  },
+  "repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/ce_pumd_2024.csv": {
+    "sha256": "c0c7a6c5d54cd25eb7ff78b43e3fc93ab31f635df5c510b2ccd675cc4d71d9af"
+  },
+  "repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/sources/bls_cpi_u_2003_2012.json": {
+    "sha256": "045b03ac89232cef5f263bdb3939b21f625cf9fca15914f17a6c61e363419e1f"
+  },
+  "repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/sources/bls_cpi_u_2015_2024.json": {
+    "sha256": "a218eed4cb47914528f3cc13c3d2c8eb8d70c115381f9a6a0a139116855fecff"
+  },
+  "repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/sources/cu-income-deciles-before-taxes-2024.xlsx": {
+    "sha256": "ba34aca4e319d04ea466cd15af49d209b5df03e8fde0c446e03e79fd26d01ca1"
+  },
+  "repo:infra/immigration-fiscal/consumption_key_2026_09_24/derived/key_specs.csv": {
+    "sha256": "efc460c84be27509aead447a05badbe41095416eed866041f7736551d7e3a34f"
+  },
+  "repo:infra/immigration-fiscal/consumption_key_2026_09_24/derived/sender_rates.csv": {
+    "sha256": "dc7e8174a5af7828c55a4306d6cd992746cd86c46ffe31d80cece5a7cc0048aa"
+  },
+  "repo:infra/immigration-fiscal/external_benchmarks_2026_09_24/_cache/cps25_frame.parquet": {
+    "sha256": "915993b7bd9d050e615b8d485f9703bf6c084e54af71d82f989a93add14afcc5"
+  },
+  "repo:infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_group_shares.csv": {
+    "sha256": "fc73f97db7e8da645e22e546cf6f637c3f059c66fb328c058689f2c1c1d1f24b"
+  },
+  "repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/_cache/irs_f2441_2024/f2441--2024.pdf": {
+    "sha256": "aaaf70baeb4b9ba3443b482dc69df96de510f05a951fc0b8c654feb6d35f4df7"
+  },
+  "repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/_cache/irs_rp_2023_34/rp-23-34.pdf": {
+    "sha256": "544ba41c7ba64f77da521e0d174a7b7394dc72b5c7c73d10adb19952d5aaae57"
+  },
+  "repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/_cache/irs_s8812_2024/f1040s8--2024.pdf": {
+    "sha256": "8b5143ca127b754b2e65904f6be14712b5be612056989bdf06e096ecc500f977"
+  },
+  "_cache/state_taxsimtest_osx": {
+    "url": "https://taxsim.nber.org/stata/taxsimtest/osx",
+    "sha256": "2864598c347af98af663c39d2d1b5e93449facfc5159a74d4cd21f862a2b52a7"
+  },
+  "inputs/state_tax_parameters.xlsx": {
+    "url": "https://www2.census.gov/library/working-papers/2026/demo/Federal_and_State_Tax_Parameter_Workbook_TY2025.xlsx",
+    "sha256": "314416c7b7f84944a1d146074f49c7c481281bd33122a52adc0c2b2884f7f82e"
+  },
+  "inputs/state_taxsim_documentation.html": {
+    "url": "https://taxsim.nber.org/taxsimtest/",
+    "sha256": "0a00cf4bca01a4e9a68e5aea94824ce893d55ae3a61780e6c5bad050694dba5b"
+  },
+  "inputs/state_workbook_documentation.pdf": {
+    "url": "https://www2.census.gov/library/working-papers/2026/demo/Federal_and_State_Tax_Parameter_Workbook_Documentation_TY2025.pdf",
+    "sha256": "7dfa16f4706a1a22512ac484c4aaab9c12d96a1b3c91e66e81493891a7dbfdae"
+  },
+  "inputs/state_parameters_2024.json": {
+    "generated_from": "inputs/state_tax_parameters.xlsx",
+    "sha256": "962107e3dc5470bf2f7d76b0a705c47da21340941bfb0cca17f9f07aaa898970"
+  },
+  "inputs/benefit_fpl24.pdf": {
+    "sha256": "bc8e34debcab427d1ed53bf64175212d35ac51a3d8c5881634a28b27965c89c7",
+    "source": "https://www.medicaid.gov/sites/default/files/2024-01/cib012424_0.pdf"
+  },
+  "inputs/benefit_fpl24.txt": {
+    "extract": "pdftotext -layout",
+    "sha256": "520331eb867c1ab196bddc9c32ade24bd7859c60b937c6d670cfc3edf40f4b95",
+    "source": "https://www.medicaid.gov/sites/default/files/2024-01/cib012424_0.pdf"
+  },
+  "inputs/benefit_fpl24_fr.pdf": {
+    "sha256": "9bf6ec5bed0ca08d7cad8acb44fe802ffa4bbb420a9f86fd76cbf8d33a9a01fb",
+    "source": "https://www.govinfo.gov/content/pkg/FR-2024-01-17/pdf/2024-00796.pdf"
+  },
+  "inputs/benefit_fpl24_fr.txt": {
+    "extract": "pdftotext -layout",
+    "sha256": "70b3aa1a74b81ebb5b7d0fea076a081d81f5abba731c581e403a4b0e4e87304c",
+    "source": "https://www.govinfo.gov/content/pkg/FR-2024-01-17/pdf/2024-00796.pdf"
+  },
+  "inputs/benefit_magi_law.xml": {
+    "sha256": "3ec0bd686ac9d62f7b567f38f92e46ebdf13ce04d212987717391da03d45e6a7",
+    "source": "https://www.govinfo.gov/content/pkg/CFR-2024-title42-vol4/xml/CFR-2024-title42-vol4-sec435-603.xml"
+  },
+  "inputs/benefit_medicaid.html": {
+    "sha256": "741c85c56d3e42d2813197b505e9e444d4735e1b8a98555ae1260c1b362a7617",
+    "source": "https://www.medicaid.gov/medicaid/national-medicaid-chip-program-information/medicaid-childrens-health-insurance-program-basic-health-program-eligibility-levels"
+  },
+  "inputs/benefit_ptc24.pdf": {
+    "sha256": "c7aade0f20fe7e32a2a34e6af6d30288f563bc46efc43a682626134e48b899b9",
+    "source": "https://www.irs.gov/pub/irs-prior/i8962--2024.pdf"
+  },
+  "inputs/benefit_ptc24.txt": {
+    "extract": "pdftotext -layout",
+    "sha256": "3de44a1f66b99a5dfc5e53035e72a2ef03628edbf43ad5c81aeb20fb898c4ad7",
+    "source": "https://www.irs.gov/pub/irs-prior/i8962--2024.pdf"
+  },
+  "inputs/benefit_snap24_income.pdf": {
+    "sha256": "eb0943b442e5c3ad24e8a5d83f888433bb1cd338ad320987206ad3bf43c2dcd4",
+    "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Income-Eligibility-Standards.pdf"
+  },
+  "inputs/benefit_snap24_income.txt": {
+    "extract": "pdftotext -layout",
+    "sha256": "b76b5668bfd6f99cb3b358f3df004b749a1397eb3427240eb220e0d9f62cd7ed",
+    "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Income-Eligibility-Standards.pdf"
+  },
+  "inputs/benefit_snap24_max.pdf": {
+    "sha256": "9744852251f83c71cd7df7842abcc6f63e980f4c572b44fc72ba081cdcd93caa",
+    "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Maximum-Allotments-and-Deductions.pdf"
+  },
+  "inputs/benefit_snap24_max.txt": {
+    "extract": "pdftotext -layout",
+    "sha256": "b6f691aa472c2ee529359aa2a6bb3340fd0c8081fdd93ead8601838f489978ba",
+    "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Maximum-Allotments-and-Deductions.pdf"
+  },
+  "inputs/benefit_snap24_min.pdf": {
+    "sha256": "700786e17005eb38438993618f7a1b683b6407ce8881b7702d6433995dc9b5f6",
+    "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Minimum-Allotments.pdf"
+  },
+  "inputs/benefit_snap24_min.txt": {
+    "extract": "pdftotext -layout",
+    "sha256": "bb7fef09f590d51cc144c760c43443bc46e41bb7d70c17a226840ce64c17ead4",
+    "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Minimum-Allotments.pdf"
+  },
+  "inputs/benefit_snap25_income.pdf": {
+    "sha256": "384cca1b2f2446ed5273583ad96e55c8511160bd78c8d832640d3af02076a5d1",
+    "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Income-Eligibility-Standards.pdf"
+  },
+  "inputs/benefit_snap25_income.txt": {
+    "extract": "pdftotext -layout",
+    "sha256": "8d707b28c2e51ce75f827ac553e748a7487f502a923fa710a9a87c240ca5992d",
+    "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Income-Eligibility-Standards.pdf"
+  },
+  "inputs/benefit_snap25_max.pdf": {
+    "sha256": "9e0d5854853672defdc5526046bc6c026b4ef1bdd6a91fc95ffeefce0bbdb06a",
+    "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Maximum-Allotments-Deductions.pdf"
+  },
+  "inputs/benefit_snap25_max.txt": {
+    "extract": "pdftotext -layout",
+    "sha256": "d63c4ccae4336fb4ef818b88323b5bdd9b1f63d50a23c93d488a018cc33a6c9e",
+    "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Maximum-Allotments-Deductions.pdf"
+  },
+  "inputs/benefit_snap25_min.pdf": {
+    "sha256": "bfde7230e0e2e1204d9caf47f16190f931a31cfcc67471b5b1567337b1d6e6ef",
+    "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Minimum-Allotments.pdf"
+  },
+  "inputs/benefit_snap25_min.txt": {
+    "extract": "pdftotext -layout",
+    "sha256": "70374cf25fb4b289b96a8d6e2d5b77d6daba3bf7aec8a02d5ed24cedfa59d07c",
+    "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Minimum-Allotments.pdf"
+  },
+  "inputs/benefit_snap_benefits.xml": {
+    "sha256": "a6f5916cc00d079ee9b7d9627c27128e5d716b7faace3be78e1e479967c92c75",
+    "source": "https://www.govinfo.gov/content/pkg/CFR-2024-title7-vol4/xml/CFR-2024-title7-vol4-sec273-10.xml"
+  },
+  "inputs/benefit_snap_deductions.xml": {
+    "sha256": "7c0be86c6f6926b8e2d4f84694c55f4135ee95be31d711d569cd4c3357349ff0",
+    "source": "https://www.govinfo.gov/content/pkg/CFR-2024-title7-vol4/xml/CFR-2024-title7-vol4-sec273-9.xml"
+  },
+  "inputs/benefit_states.json": {
+    "sha256": "f96a0c7d6d25dc298e522e955a94dd9a3da4d892827d406d64cab388adecc47c",
+    "source": "local archived primary API response: apportionment_2026_09_18/_cache/acs5_2020_states.json"
+  }
+}

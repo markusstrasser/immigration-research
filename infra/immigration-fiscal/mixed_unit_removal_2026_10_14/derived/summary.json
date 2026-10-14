@@ -1,0 +1,2077 @@
+{
+  "case": "oct14",
+  "allocation": "personal",
+  "income_year": 2024,
+  "sign": "positive raises group net cost",
+  "frame": {
+    "union": 39712493.33118789,
+    "lineage": 42752212.92438524
+  },
+  "positive_control": {
+    "original_gates": 83,
+    "item5b_union_bn": 4.298545384947592,
+    "D_union_bn": 2.279133775
+  },
+  "adopted_new_edit_bn": null,
+  "recommended": "withhold adoption; conditional tax result crosses review bar, but own-return inputs and person consumption are not identified",
+  "M1_M3": {
+    "new_nonfiler_claimants": 0,
+    "transferred_dependents": 20,
+    "nonmember_dependents_without_remaining_claimant": 155,
+    "rule": "staying same return: CPS residual plus TAXSIM delta; newly filed: own TAXSIM income/flags/cell; subtract item 5b once",
+    "unsupported_positive_survivor_IRS_cells": 0,
+    "adoptable": false,
+    "unknown_inputs": [
+      "itemized deductions",
+      "QBI eligibility",
+      "qualified dividend/capital-gain character",
+      "other refundable credits and actual care attribution"
+    ],
+    "baseline_rule_federal_bn": 2010.3751130582648,
+    "baseline_CPS_federal_bn": 1984.5874616072465,
+    "baseline_rule_EITC_bn": 42.896916421993424,
+    "baseline_CPS_EITC_bn": 42.62437313601434,
+    "baseline_rule_ACTC_bn": 26.449176190481843,
+    "baseline_CPS_ACTC_bn": 21.589355248758615,
+    "mixed_joint_returns": 1364,
+    "swap_max_dollars": 0.0,
+    "IRS_rule": "own AGI bin, remaining-household CBO group at original national rank thresholds; benchmark multipliers fixed",
+    "weights": "actual amount: actual carrier weights; new amount: survivor own weights; all 160 replicates",
+    "IRS_replication": "full-sample benchmark mass held across replicates, matching original item 5b; benchmark uncertainty not included",
+    "swap_scope": "survivor tax calculation and IRS multiplier; changing the frozen baseline carrier changes its personal ledger by definition"
+  },
+  "M2": {
+    "status": "[DEGRADED] conditional calibrated local TAXSIM sensitivity; not adoptable",
+    "recommended_adopt": false,
+    "scope": "identified union, mixed civilian joint returns plus continuing returns' state credits",
+    "source_pins": {
+      "_cache/state_taxsimtest_osx": {
+        "url": "https://taxsim.nber.org/stata/taxsimtest/osx",
+        "sha256": "2864598c347af98af663c39d2d1b5e93449facfc5159a74d4cd21f862a2b52a7"
+      },
+      "inputs/state_tax_parameters.xlsx": {
+        "url": "https://www2.census.gov/library/working-papers/2026/demo/Federal_and_State_Tax_Parameter_Workbook_TY2025.xlsx",
+        "sha256": "314416c7b7f84944a1d146074f49c7c481281bd33122a52adc0c2b2884f7f82e"
+      },
+      "inputs/state_taxsim_documentation.html": {
+        "url": "https://taxsim.nber.org/taxsimtest/",
+        "sha256": "0a00cf4bca01a4e9a68e5aea94824ce893d55ae3a61780e6c5bad050694dba5b"
+      },
+      "inputs/state_workbook_documentation.pdf": {
+        "url": "https://www2.census.gov/library/working-papers/2026/demo/Federal_and_State_Tax_Parameter_Workbook_Documentation_TY2025.pdf",
+        "sha256": "7dfa16f4706a1a22512ac484c4aaab9c12d96a1b3c91e66e81493891a7dbfdae"
+      },
+      "inputs/state_parameters_2024.json": {
+        "generated_from": "inputs/state_tax_parameters.xlsx",
+        "sha256": "962107e3dc5470bf2f7d76b0a705c47da21340941bfb0cca17f9f07aaa898970"
+      }
+    },
+    "source_year": 2024,
+    "returns": 1323,
+    "additional_continuing_returns": 55318,
+    "national_line_bn": 536.167,
+    "national_ruled_cps_key_bn": 486.9547339904077,
+    "raw_surviving_signed_cps_bn": 449.2145016071325,
+    "surviving_positive_calibrated_cps_bn": 465.4215329325877,
+    "original_nonmember_positive_cps_bn": 464.6488083991749,
+    "union_bn": 0.8508170595471941,
+    "union_se_bn": 0.5807429975559927,
+    "uncalibrated_union_bn": -14.453660481648757,
+    "uncalibrated_union_se_bn": 1.5618568489203086,
+    "generation_bn": {
+      "G1": -0.3042455947627926,
+      "G2": 0.44410641551666824,
+      "G3+": 0.7109562387933185
+    },
+    "generation_se_bn": {
+      "G1": 0.1939214989882696,
+      "G2": 0.3932275008721159,
+      "G3+": 0.3827036816485947
+    },
+    "state_calibration": [
+      {
+        "fips": 1,
+        "returns": 1091,
+        "cps_positive_bn": 6.786913074935523,
+        "taxsim_positive_bn": 7.119889544779598,
+        "calibration_factor": 0.953232916360589,
+        "structural_zero": false,
+        "raw_mae_usd": 374.4432757538251
+      },
+      {
+        "fips": 2,
+        "returns": 702,
+        "cps_positive_bn": 0.0,
+        "taxsim_positive_bn": 0.0,
+        "calibration_factor": 0.0,
+        "structural_zero": true,
+        "raw_mae_usd": 0.0
+      },
+      {
+        "fips": 4,
+        "returns": 1145,
+        "cps_positive_bn": 6.126318593358528,
+        "taxsim_positive_bn": 6.150512726185553,
+        "calibration_factor": 0.9960663226133947,
+        "structural_zero": false,
+        "raw_mae_usd": 114.893680370091
+      },
+      {
+        "fips": 5,
+        "returns": 1114,
+        "cps_positive_bn": 2.9910426347001104,
+        "taxsim_positive_bn": 3.1117477652400805,
+        "calibration_factor": 0.9612098602951331,
+        "structural_zero": false,
+        "raw_mae_usd": 361.73400556468255
+      },
+      {
+        "fips": 6,
+        "returns": 6295,
+        "cps_positive_bn": 91.25748167023004,
+        "taxsim_positive_bn": 95.79874579719491,
+        "calibration_factor": 0.9525957872498801,
+        "structural_zero": false,
+        "raw_mae_usd": 658.6025032622073
+      },
+      {
+        "fips": 8,
+        "returns": 880,
+        "cps_positive_bn": 9.42569295705172,
+        "taxsim_positive_bn": 9.144569208018774,
+        "calibration_factor": 1.0307421533631602,
+        "structural_zero": false,
+        "raw_mae_usd": 274.56954828602846
+      },
+      {
+        "fips": 9,
+        "returns": 760,
+        "cps_positive_bn": 9.168264107956709,
+        "taxsim_positive_bn": 8.781303539969777,
+        "calibration_factor": 1.044066415222479,
+        "structural_zero": false,
+        "raw_mae_usd": 505.5288328093642
+      },
+      {
+        "fips": 10,
+        "returns": 764,
+        "cps_positive_bn": 1.9694205132327174,
+        "taxsim_positive_bn": 1.8861588404981813,
+        "calibration_factor": 1.044143510581826,
+        "structural_zero": false,
+        "raw_mae_usd": 485.37045453617367
+      },
+      {
+        "fips": 11,
+        "returns": 1119,
+        "cps_positive_bn": 3.6972553824844905,
+        "taxsim_positive_bn": 3.64034695381219,
+        "calibration_factor": 1.0156326936400129,
+        "structural_zero": false,
+        "raw_mae_usd": 698.476580684904
+      },
+      {
+        "fips": 12,
+        "returns": 3046,
+        "cps_positive_bn": 0.0,
+        "taxsim_positive_bn": 0.0,
+        "calibration_factor": 0.0,
+        "structural_zero": true,
+        "raw_mae_usd": 0.0
+      },
+      {
+        "fips": 13,
+        "returns": 1461,
+        "cps_positive_bn": 17.122522479508422,
+        "taxsim_positive_bn": 16.205495652996476,
+        "calibration_factor": 1.0565873976426252,
+        "structural_zero": false,
+        "raw_mae_usd": 431.5271271844308
+      },
+      {
+        "fips": 15,
+        "returns": 1222,
+        "cps_positive_bn": 2.8766110696457243,
+        "taxsim_positive_bn": 3.343148045072951,
+        "calibration_factor": 0.8604498008651464,
+        "structural_zero": false,
+        "raw_mae_usd": 887.067283622696
+      },
+      {
+        "fips": 16,
+        "returns": 1085,
+        "cps_positive_bn": 2.4966080497307255,
+        "taxsim_positive_bn": 2.4401890492549527,
+        "calibration_factor": 1.0231207498013313,
+        "structural_zero": false,
+        "raw_mae_usd": 239.06577355131117
+      },
+      {
+        "fips": 17,
+        "returns": 1615,
+        "cps_positive_bn": 26.699363120294926,
+        "taxsim_positive_bn": 25.576465989914595,
+        "calibration_factor": 1.043903529550295,
+        "structural_zero": false,
+        "raw_mae_usd": 278.8194069297853
+      },
+      {
+        "fips": 18,
+        "returns": 929,
+        "cps_positive_bn": 11.473680129765661,
+        "taxsim_positive_bn": 7.125237465987186,
+        "calibration_factor": 1.610287402284635,
+        "structural_zero": false,
+        "raw_mae_usd": 1416.5516021412782
+      },
+      {
+        "fips": 19,
+        "returns": 795,
+        "cps_positive_bn": 4.543512403866492,
+        "taxsim_positive_bn": 4.774668151073347,
+        "calibration_factor": 0.9515870548710509,
+        "structural_zero": false,
+        "raw_mae_usd": 223.52253425662622
+      },
+      {
+        "fips": 20,
+        "returns": 789,
+        "cps_positive_bn": 5.148924815618088,
+        "taxsim_positive_bn": 5.507065819059403,
+        "calibration_factor": 0.9349670014471544,
+        "structural_zero": false,
+        "raw_mae_usd": 591.3476806565229
+      },
+      {
+        "fips": 21,
+        "returns": 596,
+        "cps_positive_bn": 5.138047650484396,
+        "taxsim_positive_bn": 5.025823701978548,
+        "calibration_factor": 1.0223294638173774,
+        "structural_zero": false,
+        "raw_mae_usd": 230.15999833110286
+      },
+      {
+        "fips": 22,
+        "returns": 1248,
+        "cps_positive_bn": 3.394939531148793,
+        "taxsim_positive_bn": 4.828228495894648,
+        "calibration_factor": 0.7031439241194665,
+        "structural_zero": false,
+        "raw_mae_usd": 832.1403177753579
+      },
+      {
+        "fips": 23,
+        "returns": 452,
+        "cps_positive_bn": 3.0427813767743577,
+        "taxsim_positive_bn": 2.7643480932401308,
+        "calibration_factor": 1.1007229459325694,
+        "structural_zero": false,
+        "raw_mae_usd": 682.2766208690886
+      },
+      {
+        "fips": 24,
+        "returns": 791,
+        "cps_positive_bn": 21.897866717273907,
+        "taxsim_positive_bn": 13.848297029061634,
+        "calibration_factor": 1.581267839021627,
+        "structural_zero": false,
+        "raw_mae_usd": 2721.846422434571
+      },
+      {
+        "fips": 25,
+        "returns": 1501,
+        "cps_positive_bn": 18.693359196062005,
+        "taxsim_positive_bn": 18.79058309441771,
+        "calibration_factor": 0.9948259243543864,
+        "structural_zero": false,
+        "raw_mae_usd": 393.4533327244348
+      },
+      {
+        "fips": 26,
+        "returns": 1285,
+        "cps_positive_bn": 15.163226445986282,
+        "taxsim_positive_bn": 13.919528471914774,
+        "calibration_factor": 1.0893491454528004,
+        "structural_zero": false,
+        "raw_mae_usd": 302.65615824918103
+      },
+      {
+        "fips": 27,
+        "returns": 825,
+        "cps_positive_bn": 15.055691846719958,
+        "taxsim_positive_bn": 14.985068655690934,
+        "calibration_factor": 1.0047129040681573,
+        "structural_zero": false,
+        "raw_mae_usd": 578.0638331832566
+      },
+      {
+        "fips": 28,
+        "returns": 971,
+        "cps_positive_bn": 2.0644061742944273,
+        "taxsim_positive_bn": 2.1400817611697356,
+        "calibration_factor": 0.9646389272370861,
+        "structural_zero": false,
+        "raw_mae_usd": 194.2253505524954
+      },
+      {
+        "fips": 29,
+        "returns": 887,
+        "cps_positive_bn": 8.001184805790922,
+        "taxsim_positive_bn": 8.067296125295139,
+        "calibration_factor": 0.9918050213507195,
+        "structural_zero": false,
+        "raw_mae_usd": 235.7768308624377
+      },
+      {
+        "fips": 30,
+        "returns": 1041,
+        "cps_positive_bn": 2.1714347177231406,
+        "taxsim_positive_bn": 2.087962079998414,
+        "calibration_factor": 1.0399780429560244,
+        "structural_zero": false,
+        "raw_mae_usd": 259.4979541937141
+      },
+      {
+        "fips": 31,
+        "returns": 862,
+        "cps_positive_bn": 3.7877935685513946,
+        "taxsim_positive_bn": 3.7555947637466396,
+        "calibration_factor": 1.0085735567414182,
+        "structural_zero": false,
+        "raw_mae_usd": 266.45225107149736
+      },
+      {
+        "fips": 32,
+        "returns": 1011,
+        "cps_positive_bn": 0.0,
+        "taxsim_positive_bn": 0.0,
+        "calibration_factor": 0.0,
+        "structural_zero": true,
+        "raw_mae_usd": 0.0
+      },
+      {
+        "fips": 33,
+        "returns": 725,
+        "cps_positive_bn": 0.11667065449622985,
+        "taxsim_positive_bn": 0.11555078076879495,
+        "calibration_factor": 1.0096916154091216,
+        "structural_zero": false,
+        "raw_mae_usd": 2.0758139624962726
+      },
+      {
+        "fips": 34,
+        "returns": 1148,
+        "cps_positive_bn": 23.04117875238248,
+        "taxsim_positive_bn": 22.94550524404946,
+        "calibration_factor": 1.0041695969347995,
+        "structural_zero": false,
+        "raw_mae_usd": 361.80218066184614
+      },
+      {
+        "fips": 35,
+        "returns": 1053,
+        "cps_positive_bn": 2.6656143636826837,
+        "taxsim_positive_bn": 2.44995755433973,
+        "calibration_factor": 1.0880247124938756,
+        "structural_zero": false,
+        "raw_mae_usd": 347.89942540116647
+      },
+      {
+        "fips": 36,
+        "returns": 2500,
+        "cps_positive_bn": 53.4036509023333,
+        "taxsim_positive_bn": 48.6556517866258,
+        "calibration_factor": 1.0975837120943184,
+        "structural_zero": false,
+        "raw_mae_usd": 1641.5284633220112
+      },
+      {
+        "fips": 37,
+        "returns": 1465,
+        "cps_positive_bn": 14.92870316534018,
+        "taxsim_positive_bn": 14.797856458639954,
+        "calibration_factor": 1.0088422743568262,
+        "structural_zero": false,
+        "raw_mae_usd": 156.65689937037214
+      },
+      {
+        "fips": 38,
+        "returns": 906,
+        "cps_positive_bn": 0.22418380207596397,
+        "taxsim_positive_bn": 0.23029934645043323,
+        "calibration_factor": 0.973445237823176,
+        "structural_zero": false,
+        "raw_mae_usd": 45.107577036195124
+      },
+      {
+        "fips": 39,
+        "returns": 1573,
+        "cps_positive_bn": 9.824302828090278,
+        "taxsim_positive_bn": 11.295945099575583,
+        "calibration_factor": 0.8697194206848087,
+        "structural_zero": false,
+        "raw_mae_usd": 348.68271787115896
+      },
+      {
+        "fips": 40,
+        "returns": 961,
+        "cps_positive_bn": 5.445736774957882,
+        "taxsim_positive_bn": 5.40108908187326,
+        "calibration_factor": 1.0082664241244355,
+        "structural_zero": false,
+        "raw_mae_usd": 156.4135262470632
+      },
+      {
+        "fips": 41,
+        "returns": 1000,
+        "cps_positive_bn": 13.027771219098858,
+        "taxsim_positive_bn": 13.1501136379475,
+        "calibration_factor": 0.9906964744018943,
+        "structural_zero": false,
+        "raw_mae_usd": 522.717614074311
+      },
+      {
+        "fips": 42,
+        "returns": 1707,
+        "cps_positive_bn": 16.262197623268516,
+        "taxsim_positive_bn": 16.423434527161103,
+        "calibration_factor": 0.9901825100209134,
+        "structural_zero": false,
+        "raw_mae_usd": 33.40087912926056
+      },
+      {
+        "fips": 44,
+        "returns": 573,
+        "cps_positive_bn": 2.0609119980035997,
+        "taxsim_positive_bn": 2.048361533454552,
+        "calibration_factor": 1.0061270749055131,
+        "structural_zero": false,
+        "raw_mae_usd": 203.94344573370012
+      },
+      {
+        "fips": 45,
+        "returns": 1026,
+        "cps_positive_bn": 8.969103411980415,
+        "taxsim_positive_bn": 8.66657239578526,
+        "calibration_factor": 1.0349078046520772,
+        "structural_zero": false,
+        "raw_mae_usd": 320.0233848267741
+      },
+      {
+        "fips": 46,
+        "returns": 703,
+        "cps_positive_bn": 0.0,
+        "taxsim_positive_bn": 0.0,
+        "calibration_factor": 0.0,
+        "structural_zero": true,
+        "raw_mae_usd": 0.0
+      },
+      {
+        "fips": 47,
+        "returns": 1137,
+        "cps_positive_bn": 0.0,
+        "taxsim_positive_bn": 0.0,
+        "calibration_factor": 0.0,
+        "structural_zero": true,
+        "raw_mae_usd": 0.0
+      },
+      {
+        "fips": 48,
+        "returns": 4097,
+        "cps_positive_bn": 0.0,
+        "taxsim_positive_bn": 0.0,
+        "calibration_factor": 0.0,
+        "structural_zero": true,
+        "raw_mae_usd": 0.0
+      },
+      {
+        "fips": 49,
+        "returns": 1069,
+        "cps_positive_bn": 5.669821441167979,
+        "taxsim_positive_bn": 6.1802931198809175,
+        "calibration_factor": 0.9174033223325864,
+        "structural_zero": false,
+        "raw_mae_usd": 369.3980736793454
+      },
+      {
+        "fips": 50,
+        "returns": 801,
+        "cps_positive_bn": 1.1565817248971852,
+        "taxsim_positive_bn": 1.1062764852136378,
+        "calibration_factor": 1.0454725743120472,
+        "structural_zero": false,
+        "raw_mae_usd": 358.19851742795197
+      },
+      {
+        "fips": 51,
+        "returns": 1204,
+        "cps_positive_bn": 20.069555516237912,
+        "taxsim_positive_bn": 19.491389168238406,
+        "calibration_factor": 1.0296626547758656,
+        "structural_zero": false,
+        "raw_mae_usd": 398.0940457768448
+      },
+      {
+        "fips": 53,
+        "returns": 1232,
+        "cps_positive_bn": 0.0,
+        "taxsim_positive_bn": 0.02014176520174,
+        "calibration_factor": 0.0,
+        "structural_zero": false,
+        "raw_mae_usd": 5.3377861983531085
+      },
+      {
+        "fips": 54,
+        "returns": 1193,
+        "cps_positive_bn": 2.250002466246171,
+        "taxsim_positive_bn": 2.2316957956184207,
+        "calibration_factor": 1.0082030313735826,
+        "structural_zero": false,
+        "raw_mae_usd": 147.3111342636691
+      },
+      {
+        "fips": 55,
+        "returns": 837,
+        "cps_positive_bn": 10.448386520345188,
+        "taxsim_positive_bn": 10.463464058503002,
+        "calibration_factor": 0.9985590299662221,
+        "structural_zero": false,
+        "raw_mae_usd": 373.5622947284012
+      },
+      {
+        "fips": 56,
+        "returns": 769,
+        "cps_positive_bn": 0.0,
+        "taxsim_positive_bn": 0.0,
+        "calibration_factor": 0.0,
+        "structural_zero": true,
+        "raw_mae_usd": 0.0
+      }
+    ],
+    "gates": {
+      "state_calibration_closure_bn": 7.62939453125e-15,
+      "generation_closure_bn": 1.7763568394002505e-15,
+      "survivor_head_spouse_swap_max_input_difference": 0.0,
+      "original_weights_preserved": true,
+      "survivor_own_weights_preserved": true
+    },
+    "held": [
+      "zero unobserved itemized deductions/rents/property taxes",
+      "shared canonical childcare attribution held as supplied by driver",
+      "all dividends qualified; capital gains long-term; pensions taxable",
+      "self-employment non-QBI; no shared unexplained original AGI residual",
+      "positive after-credit tax floor; negative state refunds not spending",
+      "state-level calibration factor transports across refiling/income change",
+      "identified union; added lineage extrapolation external and assumed",
+      "other_personal_tax held (same proxy key does not establish same behavioral response)"
+    ]
+  },
+  "M4": {
+    "ACA": {
+      "missing": [
+        "Form 1095-A enrollment premiums and SLCSP",
+        "APTC paid",
+        "monthly marketplace coverage",
+        "employer coverage affordability",
+        "legal tax-family MAGI and immigration eligibility"
+      ],
+      "status": "unidentifiable; spending held"
+    },
+    "Medicaid_CHIP": {
+      "groups": {
+        "adults": {
+          "lost_proxy_eligibility": {
+            "persons": 65979.68670795,
+            "se_persons": 13754.669206034145
+          },
+          "newly_proxy_eligible": {
+            "persons": 353166.6910452,
+            "se_persons": 33927.71413150242
+          },
+          "proxy_eligible_after": {
+            "persons": 528733.95210556,
+            "se_persons": 41888.915629150135
+          },
+          "proxy_eligible_before": {
+            "persons": 241546.94776831003,
+            "se_persons": 26241.592279533757
+          },
+          "reported_covered": {
+            "persons": 638138.59220412,
+            "se_persons": 43935.38735309839
+          },
+          "reported_covered_but_proxy_ineligible_before": {
+            "persons": 493683.95529345004,
+            "se_persons": 40137.70040430803
+          },
+          "reported_covered_losing_proxy_eligibility": {
+            "persons": 46064.01882751,
+            "se_persons": 12338.95670898674
+          },
+          "survivors": {
+            "persons": 4350795.5240804795,
+            "se_persons": 113933.67687106763
+          }
+        },
+        "children": {
+          "lost_proxy_eligibility": {
+            "persons": 35702.95381244,
+            "se_persons": 11478.348350130926
+          },
+          "newly_proxy_eligible": {
+            "persons": 330072.65963551,
+            "se_persons": 46838.28472364488
+          },
+          "proxy_eligible_after": {
+            "persons": 971792.12880825,
+            "se_persons": 80703.04568374256
+          },
+          "proxy_eligible_before": {
+            "persons": 677422.4229851799,
+            "se_persons": 63962.84690454941
+          },
+          "reported_covered": {
+            "persons": 619196.28839534,
+            "se_persons": 58488.052104478316
+          },
+          "reported_covered_but_proxy_ineligible_before": {
+            "persons": 186500.74867256003,
+            "se_persons": 27980.426616659657
+          },
+          "reported_covered_losing_proxy_eligibility": {
+            "persons": 14480.89422859,
+            "se_persons": 5848.668539843184
+          },
+          "survivors": {
+            "persons": 1594151.09604877,
+            "se_persons": 99087.88111740889
+          }
+        }
+      },
+      "missing": [
+        "legal MAGI household",
+        "monthly MAGI",
+        "qualified status and five-year eligibility",
+        "pregnancy",
+        "state 2024 within-year threshold changes",
+        "continuous eligibility/takeup",
+        "special CHIP counties and optional age-19/20/demonstration routes"
+      ],
+      "spending_rule": "fixed MEPS age-by-birth expected payment key, unchanged by simulated eligibility",
+      "status": "[DEGRADED] income eligibility proxy only; all Medicaid/CHIP spending held",
+      "threshold_vintage": "CMS December 1, 2023 snapshot held across calendar 2024",
+      "unsupported_survivors": 1003813.1523070299
+    },
+    "adoptable": false,
+    "assumptions": [
+      "SPM unit is proxy assistance unit",
+      "Annual incomes treated as steady monthly incomes",
+      "SPM total-income residual held on surviving unit",
+      "CPS deduction totals pro-rated by persons remaining",
+      "SNAP shelter deduction zero vs maximum; not observed rent or utility costs",
+      "Federal income tests only; assets, BBCE, ABAWD, students and status not identified",
+      "SNAP reported annual level residual held; existing participation vs full-takeup proxy",
+      "Original mean person weight is unit event weight; survivor weights unchanged",
+      "Health eligibility uses SPM income proxy; neither receipt nor expected spending changes are inferred"
+    ],
+    "calibration": {
+      "account_bn_per_cps_bn": 2.0981427407954722,
+      "baseline_fit": {
+        "cap": {
+          "dollars_on_reported_units_failing_proxy_income_test_bn": 7.296261732709341,
+          "raw_schedule_bn": 509.2833063158895,
+          "reported_benefit_units_failing_proxy_income_test": 982,
+          "reported_bn": 45.90383921811443,
+          "residual_l1_bn": 483.11326516171675
+        },
+        "zero": {
+          "dollars_on_reported_units_failing_proxy_income_test_bn": 17.20148505052327,
+          "raw_schedule_bn": 77.16361141836362,
+          "reported_benefit_units_failing_proxy_income_test": 2659,
+          "reported_bn": 45.90383921811443,
+          "residual_l1_bn": 81.97427402486086
+        }
+      },
+      "household_fraction": 0.9900527030312051,
+      "original_national_snap_key_bn": 45.955988087042826,
+      "published_snap_target_share": 0.14814983969377055
+    },
+    "frame": {
+      "excluded_alaska_units": 26,
+      "excluded_noncivilian_units": 58,
+      "identified_only": true,
+      "lineage": "No mixed-unit records for added people; no extrapolation",
+      "mixed_spm_units": 2331,
+      "priced_snap_units": 2252,
+      "signed_replicate_weights": 132,
+      "surviving_persons": 6935945.06422439
+    },
+    "national_closure_max_bn": 4.119873046875e-13,
+    "recommended": "withhold M4; publish partial-stack and conditional scenarios beside it",
+    "status": "[DEGRADED] conditional SNAP; Medicaid/CHIP and ACA spending changes unidentified",
+    "status_rule": "Imputed unauthorized flag is not a legal eligibility record; legal program status remains unidentified",
+    "summaries": {
+      "SNAP_cap_existing_participation": {
+        "bn": -0.06900960139103442,
+        "by_generation_bn": {
+          "G1": -0.1408873716788896,
+          "G2": 0.04551103994985021,
+          "G3+": 0.02636673033800498
+        },
+        "by_generation_se_bn": {
+          "G1": 0.07669673151221287,
+          "G2": 0.07679649735982082,
+          "G3+": 0.08763450205954132
+        },
+        "se_bn": 0.13614208527051058
+      },
+      "SNAP_cap_full_takeup_proxy": {
+        "bn": -3.6488518357791877,
+        "by_generation_bn": {
+          "G1": -0.9640756074818368,
+          "G2": -1.2508730639666747,
+          "G3+": -1.433903164330676
+        },
+        "by_generation_se_bn": {
+          "G1": 0.21632817555279926,
+          "G2": 0.1912229353333866,
+          "G3+": 0.1986132548215184
+        },
+        "se_bn": 0.37451600784242384
+      },
+      "SNAP_envelope_high": {
+        "bn": 2.046602144946868,
+        "by_generation_bn": {
+          "G1": 0.1521614844344973,
+          "G2": 0.8546071021768329,
+          "G3+": 1.0398335583355374
+        },
+        "by_generation_se_bn": {
+          "G1": 0.033189513475728266,
+          "G2": 0.15057929511560006,
+          "G3+": 0.1615668846114451
+        },
+        "se_bn": 0.22835120548850882
+      },
+      "SNAP_envelope_low": {
+        "bn": -46.06071820631645,
+        "by_generation_bn": {
+          "G1": -6.216668927011038,
+          "G2": -14.383464720216292,
+          "G3+": -25.46058455908912
+        },
+        "by_generation_se_bn": {
+          "G1": 0.4412227498653852,
+          "G2": 0.7099926821713503,
+          "G3+": 1.0341358104717493
+        },
+        "se_bn": 1.5413860497570304
+      },
+      "SNAP_zero_existing_participation": {
+        "bn": -1.0695006981700632,
+        "by_generation_bn": {
+          "G1": -0.22275956071699993,
+          "G2": -0.3128857434037063,
+          "G3+": -0.533855394049357
+        },
+        "by_generation_se_bn": {
+          "G1": 0.06742256880959735,
+          "G2": 0.08811762093143669,
+          "G3+": 0.0985324896609233
+        },
+        "se_bn": 0.16759405387611173
+      },
+      "SNAP_zero_full_takeup_proxy": {
+        "bn": -5.6057218538099285,
+        "by_generation_bn": {
+          "G1": -1.2529320961346875,
+          "G2": -1.90607892466857,
+          "G3+": -2.4467108330066716
+        },
+        "by_generation_se_bn": {
+          "G1": 0.21731861599777214,
+          "G2": 0.22012862146162496,
+          "G3+": 0.2225151266758868
+        },
+        "se_bn": 0.430880520187698
+      }
+    }
+  },
+  "M5": {
+    "adoptable": false,
+    "rule": "positive own cash disposable income; joint tax bills split by positive AGI components; normalize inside each mixed SPM pool separately for every weight column; equal if all zero",
+    "mixed_SPM_units": 2284,
+    "zero_income_mixed_units": 13,
+    "original_consumption_share": 0.08598575001754469,
+    "unit_closure_max_bn": 7.934868335723877e-16,
+    "saving_remittances": "adopted consumption lane both_corridor_net_h2 held",
+    "conversion": "calibrate raw weighted union receipt exposure to v7 union-only target; added people fixed; CBO federal excise retained",
+    "unidentified": "person spending and intrahousehold transfers; no claim that a child with zero own income consumes zero",
+    "interaction_scope": "this is an allocation of the fixed pre-removal pool; tax/benefit-induced post-removal consumption held, not estimated"
+  },
+  "M6": {
+    "candidate_children_million": 0.97087738398367,
+    "candidate_children_se_million": 0.08380478947420658,
+    "by_member_parent_generation_million": [
+      0.10974625087744999,
+      0.48661587737338,
+      0.37451525573284
+    ],
+    "linked_tax_dependents_million": 0.9145328230937602,
+    "age_rows": [
+      {
+        "ages": "0-4",
+        "million": 0.31768529080029995,
+        "se_million": 0.043056829407146446
+      },
+      {
+        "ages": "5-9",
+        "million": 0.25496680125248,
+        "se_million": 0.03796303329481006
+      },
+      {
+        "ages": "10-14",
+        "million": 0.22658741182373,
+        "se_million": 0.027095760886192925
+      },
+      {
+        "ages": "15-17",
+        "million": 0.17163788010716,
+        "se_million": 0.02020083683861195
+      }
+    ],
+    "added_lineage_count_million": 3.039719593185237,
+    "overlap_identified": false,
+    "duplicate_count_added": 0,
+    "rule": "roster children under 18, native, outside identified union, with a member parent; generations assigned to member parents equally",
+    "reconciliation": "v5 aggregate loss estimate has no PH_SEQ/PPPOS crosswalk; preserve full added count and costs; no new child cost or credit added",
+    "direction": "if candidates are added members, their own costs already belong in the aggregate addition; treating them as survivors can overstate continuing credits; exact net correction needs membership crosswalk plus replacement of aggregate costs",
+    "adoptable": false,
+    "cost_delta_bn": null,
+    "holding_fixed": "3.04M addition, item 5b lineage extrapolation and all v7 child costs; zero booked edit means withheld, not measured zero"
+  },
+  "M6_generation_count_million": [
+    0.10974625087744999,
+    0.48661587737338,
+    0.37451525573284
+  ],
+  "results": [
+    {
+      "component": "M1",
+      "generation": "G1",
+      "union_delta_low_bn": -0.2333666590284883,
+      "union_delta_high_bn": -0.2333666590284883,
+      "union_se_bn": 1.182350987481439,
+      "lineage_added_held_delta_low_bn": -0.2333666590284883,
+      "lineage_added_held_delta_high_bn": -0.2333666590284883,
+      "lineage_G3_transport_delta_bn": -0.2333666590284883,
+      "lineage_G3_transport_se_bn": 1.182350987481439,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M1",
+      "generation": "G2",
+      "union_delta_low_bn": 1.317402847742005,
+      "union_delta_high_bn": 1.317402847742005,
+      "union_se_bn": 2.317133757621596,
+      "lineage_added_held_delta_low_bn": 1.317402847742005,
+      "lineage_added_held_delta_high_bn": 1.317402847742005,
+      "lineage_G3_transport_delta_bn": 1.317402847742005,
+      "lineage_G3_transport_se_bn": 2.317133757621596,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M1",
+      "generation": "G3+",
+      "union_delta_low_bn": 5.639926180309997,
+      "union_delta_high_bn": 5.639926180309997,
+      "union_se_bn": 2.365471488896294,
+      "lineage_added_held_delta_low_bn": 5.639926180309997,
+      "lineage_added_held_delta_high_bn": 5.639926180309997,
+      "lineage_G3_transport_delta_bn": 6.409476044249168,
+      "lineage_G3_transport_se_bn": 2.6882324975044027,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M1",
+      "generation": "all",
+      "union_delta_low_bn": 6.723962369023514,
+      "union_delta_high_bn": 6.723962369023514,
+      "union_se_bn": 3.5707327499834407,
+      "lineage_added_held_delta_low_bn": 6.723962369023514,
+      "lineage_added_held_delta_high_bn": 6.723962369023514,
+      "lineage_G3_transport_delta_bn": 7.4935122329626855,
+      "lineage_G3_transport_se_bn": 3.798971428500542,
+      "crosses_5bn_point_estimate": true,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M2",
+      "generation": "G1",
+      "union_delta_low_bn": -0.3042455947627926,
+      "union_delta_high_bn": -0.3042455947627926,
+      "union_se_bn": 0.1939214989882696,
+      "lineage_added_held_delta_low_bn": -0.3042455947627926,
+      "lineage_added_held_delta_high_bn": -0.3042455947627926,
+      "lineage_G3_transport_delta_bn": -0.3042455947627926,
+      "lineage_G3_transport_se_bn": 0.1939214989882696,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M2",
+      "generation": "G2",
+      "union_delta_low_bn": 0.44410641551666824,
+      "union_delta_high_bn": 0.44410641551666824,
+      "union_se_bn": 0.3932275008721159,
+      "lineage_added_held_delta_low_bn": 0.44410641551666824,
+      "lineage_added_held_delta_high_bn": 0.44410641551666824,
+      "lineage_G3_transport_delta_bn": 0.44410641551666824,
+      "lineage_G3_transport_se_bn": 0.3932275008721159,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M2",
+      "generation": "G3+",
+      "union_delta_low_bn": 0.7109562387933185,
+      "union_delta_high_bn": 0.7109562387933185,
+      "union_se_bn": 0.3827036816485947,
+      "lineage_added_held_delta_low_bn": 0.7109562387933185,
+      "lineage_added_held_delta_high_bn": 0.7109562387933185,
+      "lineage_G3_transport_delta_bn": 0.807963940550158,
+      "lineage_G3_transport_se_bn": 0.43492237329918443,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M2",
+      "generation": "all",
+      "union_delta_low_bn": 0.8508170595471941,
+      "union_delta_high_bn": 0.8508170595471941,
+      "union_se_bn": 0.5807429975559927,
+      "lineage_added_held_delta_low_bn": 0.8508170595471941,
+      "lineage_added_held_delta_high_bn": 0.8508170595471941,
+      "lineage_G3_transport_delta_bn": 0.9478247613040336,
+      "lineage_G3_transport_se_bn": 0.6173765858891853,
+      "crosses_5bn_point_estimate": false,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M3",
+      "generation": "G1",
+      "union_delta_low_bn": 0.3797075749406283,
+      "union_delta_high_bn": 0.3797075749406283,
+      "union_se_bn": 0.13229254260495005,
+      "lineage_added_held_delta_low_bn": 0.3797075749406283,
+      "lineage_added_held_delta_high_bn": 0.3797075749406283,
+      "lineage_G3_transport_delta_bn": 0.3797075749406283,
+      "lineage_G3_transport_se_bn": 0.13229254260495005,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M3",
+      "generation": "G2",
+      "union_delta_low_bn": -0.58556912461131,
+      "union_delta_high_bn": -0.58556912461131,
+      "union_se_bn": 0.1890039701284163,
+      "lineage_added_held_delta_low_bn": -0.58556912461131,
+      "lineage_added_held_delta_high_bn": -0.58556912461131,
+      "lineage_G3_transport_delta_bn": -0.58556912461131,
+      "lineage_G3_transport_se_bn": 0.1890039701284163,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M3",
+      "generation": "G3+",
+      "union_delta_low_bn": -0.5946029277908824,
+      "union_delta_high_bn": -0.5946029277908824,
+      "union_se_bn": 0.1293990369010341,
+      "lineage_added_held_delta_low_bn": -0.5946029277908824,
+      "lineage_added_held_delta_high_bn": -0.5946029277908824,
+      "lineage_G3_transport_delta_bn": -0.6757345929138744,
+      "lineage_G3_transport_se_bn": 0.14705512105133717,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M3",
+      "generation": "all",
+      "union_delta_low_bn": -0.8004644774615641,
+      "union_delta_high_bn": -0.8004644774615641,
+      "union_se_bn": 0.18654605234800936,
+      "lineage_added_held_delta_low_bn": -0.8004644774615641,
+      "lineage_added_held_delta_high_bn": -0.8004644774615641,
+      "lineage_G3_transport_delta_bn": -0.8815961425845562,
+      "lineage_G3_transport_se_bn": 0.19549159882220318,
+      "crosses_5bn_point_estimate": false,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M4_conditional_SNAP",
+      "generation": "G1",
+      "union_delta_low_bn": -0.22275956071699993,
+      "union_delta_high_bn": -0.22275956071699993,
+      "union_se_bn": 0.06742256880959735,
+      "lineage_added_held_delta_low_bn": -0.22275956071699993,
+      "lineage_added_held_delta_high_bn": -0.22275956071699993,
+      "lineage_G3_transport_delta_bn": -0.22275956071699993,
+      "lineage_G3_transport_se_bn": 0.06742256880959735,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M4_conditional_SNAP",
+      "generation": "G2",
+      "union_delta_low_bn": -0.3128857434037063,
+      "union_delta_high_bn": -0.3128857434037063,
+      "union_se_bn": 0.08811762093143669,
+      "lineage_added_held_delta_low_bn": -0.3128857434037063,
+      "lineage_added_held_delta_high_bn": -0.3128857434037063,
+      "lineage_G3_transport_delta_bn": -0.3128857434037063,
+      "lineage_G3_transport_se_bn": 0.08811762093143669,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M4_conditional_SNAP",
+      "generation": "G3+",
+      "union_delta_low_bn": -0.533855394049357,
+      "union_delta_high_bn": -0.533855394049357,
+      "union_se_bn": 0.0985324896609233,
+      "lineage_added_held_delta_low_bn": -0.533855394049357,
+      "lineage_added_held_delta_high_bn": -0.533855394049357,
+      "lineage_G3_transport_delta_bn": -0.6066982527534569,
+      "lineage_G3_transport_se_bn": 0.11197693229864299,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M4_conditional_SNAP",
+      "generation": "all",
+      "union_delta_low_bn": -1.0695006981700632,
+      "union_delta_high_bn": -1.0695006981700632,
+      "union_se_bn": 0.16759405387611173,
+      "lineage_added_held_delta_low_bn": -1.0695006981700632,
+      "lineage_added_held_delta_high_bn": -1.0695006981700632,
+      "lineage_G3_transport_delta_bn": -1.1423435568741631,
+      "lineage_G3_transport_se_bn": 0.17754134570739577,
+      "crosses_5bn_point_estimate": false,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M5_fixed_pool",
+      "generation": "G1",
+      "union_delta_low_bn": -0.8107914654145348,
+      "union_delta_high_bn": -0.8107914654145348,
+      "union_se_bn": 0.16563131815857093,
+      "lineage_added_held_delta_low_bn": -0.8107914654145348,
+      "lineage_added_held_delta_high_bn": -0.8107914654145348,
+      "lineage_G3_transport_delta_bn": -0.8107914654145348,
+      "lineage_G3_transport_se_bn": 0.16563131815857093,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M5_fixed_pool",
+      "generation": "G2",
+      "union_delta_low_bn": 0.13213170319223233,
+      "union_delta_high_bn": 0.13213170319223233,
+      "union_se_bn": 0.27471661026802363,
+      "lineage_added_held_delta_low_bn": 0.13213170319223233,
+      "lineage_added_held_delta_high_bn": 0.13213170319223233,
+      "lineage_G3_transport_delta_bn": 0.13213170319223233,
+      "lineage_G3_transport_se_bn": 0.27471661026802363,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M5_fixed_pool",
+      "generation": "G3+",
+      "union_delta_low_bn": 5.051196026181351,
+      "union_delta_high_bn": 5.051196026181351,
+      "union_se_bn": 0.32519272451843206,
+      "lineage_added_held_delta_low_bn": 5.051196026181351,
+      "lineage_added_held_delta_high_bn": 5.051196026181351,
+      "lineage_G3_transport_delta_bn": 5.7404155461546225,
+      "lineage_G3_transport_se_bn": 0.3695642302627524,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M5_fixed_pool",
+      "generation": "all",
+      "union_delta_low_bn": 4.372536263959049,
+      "union_delta_high_bn": 4.372536263959049,
+      "union_se_bn": 0.3464872420888679,
+      "lineage_added_held_delta_low_bn": 4.372536263959049,
+      "lineage_added_held_delta_high_bn": 4.372536263959049,
+      "lineage_G3_transport_delta_bn": 5.06175578393232,
+      "lineage_G3_transport_se_bn": 0.37686957863836185,
+      "crosses_5bn_point_estimate": false,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "tax_only_stack",
+      "generation": "G1",
+      "union_delta_low_bn": -0.15790467885065257,
+      "union_delta_high_bn": -0.15790467885065257,
+      "union_se_bn": 1.289561232992447,
+      "lineage_added_held_delta_low_bn": -0.15790467885065257,
+      "lineage_added_held_delta_high_bn": -0.15790467885065257,
+      "lineage_G3_transport_delta_bn": -0.15790467885065257,
+      "lineage_G3_transport_se_bn": 1.289561232992447,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "tax_only_stack",
+      "generation": "G2",
+      "union_delta_low_bn": 1.1759401386473631,
+      "union_delta_high_bn": 1.1759401386473631,
+      "union_se_bn": 2.669948165052595,
+      "lineage_added_held_delta_low_bn": 1.1759401386473631,
+      "lineage_added_held_delta_high_bn": 1.1759401386473631,
+      "lineage_G3_transport_delta_bn": 1.1759401386473631,
+      "lineage_G3_transport_se_bn": 2.669948165052595,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "tax_only_stack",
+      "generation": "G3+",
+      "union_delta_low_bn": 5.7562794913124335,
+      "union_delta_high_bn": 5.7562794913124335,
+      "union_se_bn": 2.6912034347466087,
+      "lineage_added_held_delta_low_bn": 5.7562794913124335,
+      "lineage_added_held_delta_high_bn": 5.7562794913124335,
+      "lineage_G3_transport_delta_bn": 6.5417053918854515,
+      "lineage_G3_transport_se_bn": 3.058409524122773,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "tax_only_stack",
+      "generation": "all",
+      "union_delta_low_bn": 6.774314951109144,
+      "union_delta_high_bn": 6.774314951109144,
+      "union_se_bn": 4.075206682864712,
+      "lineage_added_held_delta_low_bn": 6.774314951109144,
+      "lineage_added_held_delta_high_bn": 6.774314951109144,
+      "lineage_G3_transport_delta_bn": 7.559740851682163,
+      "lineage_G3_transport_se_bn": 4.335479534171972,
+      "crosses_5bn_point_estimate": true,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "conditional_fixed_pool_stack",
+      "generation": "G1",
+      "union_delta_low_bn": -1.1914557049821872,
+      "union_delta_high_bn": -1.1914557049821872,
+      "union_se_bn": 1.2925348452401253,
+      "lineage_added_held_delta_low_bn": -1.1914557049821872,
+      "lineage_added_held_delta_high_bn": -1.1914557049821872,
+      "lineage_G3_transport_delta_bn": -1.1914557049821872,
+      "lineage_G3_transport_se_bn": 1.2925348452401253,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "conditional_fixed_pool_stack",
+      "generation": "G2",
+      "union_delta_low_bn": 0.9951860984358892,
+      "union_delta_high_bn": 0.9951860984358892,
+      "union_se_bn": 2.71514096275186,
+      "lineage_added_held_delta_low_bn": 0.9951860984358892,
+      "lineage_added_held_delta_high_bn": 0.9951860984358892,
+      "lineage_G3_transport_delta_bn": 0.9951860984358892,
+      "lineage_G3_transport_se_bn": 2.71514096275186,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "conditional_fixed_pool_stack",
+      "generation": "G3+",
+      "union_delta_low_bn": 10.273620123444427,
+      "union_delta_high_bn": 10.273620123444427,
+      "union_se_bn": 2.794343824183354,
+      "lineage_added_held_delta_low_bn": 10.273620123444427,
+      "lineage_added_held_delta_high_bn": 10.273620123444427,
+      "lineage_G3_transport_delta_bn": 11.675422685286616,
+      "lineage_G3_transport_se_bn": 3.175623089363624,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "conditional_fixed_pool_stack",
+      "generation": "all",
+      "union_delta_low_bn": 10.077350516898129,
+      "union_delta_high_bn": 10.077350516898129,
+      "union_se_bn": 4.163753225376441,
+      "lineage_added_held_delta_low_bn": 10.077350516898129,
+      "lineage_added_held_delta_high_bn": 10.077350516898129,
+      "lineage_G3_transport_delta_bn": 11.479153078740318,
+      "lineage_G3_transport_se_bn": 4.437798936372008,
+      "crosses_5bn_point_estimate": true,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M1_original_head_IRS_cell",
+      "generation": "G1",
+      "union_delta_low_bn": 0.20823164123270854,
+      "union_delta_high_bn": 0.20823164123270854,
+      "union_se_bn": 0.6439978390331224,
+      "lineage_added_held_delta_low_bn": 0.20823164123270854,
+      "lineage_added_held_delta_high_bn": 0.20823164123270854,
+      "lineage_G3_transport_delta_bn": 0.20823164123270854,
+      "lineage_G3_transport_se_bn": 0.6439978390331224,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M1_original_head_IRS_cell",
+      "generation": "G2",
+      "union_delta_low_bn": 1.2857866391254207,
+      "union_delta_high_bn": 1.2857866391254207,
+      "union_se_bn": 1.932714672260637,
+      "lineage_added_held_delta_low_bn": 1.2857866391254207,
+      "lineage_added_held_delta_high_bn": 1.2857866391254207,
+      "lineage_G3_transport_delta_bn": 1.2857866391254207,
+      "lineage_G3_transport_se_bn": 1.932714672260637,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M1_original_head_IRS_cell",
+      "generation": "G3+",
+      "union_delta_low_bn": 3.5041580078716574,
+      "union_delta_high_bn": 3.5041580078716574,
+      "union_se_bn": 2.3226646228288144,
+      "lineage_added_held_delta_low_bn": 3.5041580078716574,
+      "lineage_added_held_delta_high_bn": 3.5041580078716574,
+      "lineage_G3_transport_delta_bn": 3.9822891450474227,
+      "lineage_G3_transport_se_bn": 2.639584771662393,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M1_original_head_IRS_cell",
+      "generation": "all",
+      "union_delta_low_bn": 4.998176288229787,
+      "union_delta_high_bn": 4.998176288229787,
+      "union_se_bn": 3.081160365057996,
+      "lineage_added_held_delta_low_bn": 4.998176288229787,
+      "lineage_added_held_delta_high_bn": 4.998176288229787,
+      "lineage_G3_transport_delta_bn": 5.476307425405552,
+      "lineage_G3_transport_se_bn": 3.3263545945710935,
+      "crosses_5bn_point_estimate": false,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_zero_existing_participation",
+      "generation": "G1",
+      "union_delta_low_bn": -0.22275956071699993,
+      "union_delta_high_bn": -0.22275956071699993,
+      "union_se_bn": 0.06742256880959735,
+      "lineage_added_held_delta_low_bn": -0.22275956071699993,
+      "lineage_added_held_delta_high_bn": -0.22275956071699993,
+      "lineage_G3_transport_delta_bn": -0.22275956071699993,
+      "lineage_G3_transport_se_bn": 0.06742256880959735,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_zero_existing_participation",
+      "generation": "G2",
+      "union_delta_low_bn": -0.3128857434037063,
+      "union_delta_high_bn": -0.3128857434037063,
+      "union_se_bn": 0.08811762093143669,
+      "lineage_added_held_delta_low_bn": -0.3128857434037063,
+      "lineage_added_held_delta_high_bn": -0.3128857434037063,
+      "lineage_G3_transport_delta_bn": -0.3128857434037063,
+      "lineage_G3_transport_se_bn": 0.08811762093143669,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_zero_existing_participation",
+      "generation": "G3+",
+      "union_delta_low_bn": -0.533855394049357,
+      "union_delta_high_bn": -0.533855394049357,
+      "union_se_bn": 0.0985324896609233,
+      "lineage_added_held_delta_low_bn": -0.533855394049357,
+      "lineage_added_held_delta_high_bn": -0.533855394049357,
+      "lineage_G3_transport_delta_bn": -0.6066982527534569,
+      "lineage_G3_transport_se_bn": 0.11197693229864299,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_zero_existing_participation",
+      "generation": "all",
+      "union_delta_low_bn": -1.0695006981700632,
+      "union_delta_high_bn": -1.0695006981700632,
+      "union_se_bn": 0.16759405387611173,
+      "lineage_added_held_delta_low_bn": -1.0695006981700632,
+      "lineage_added_held_delta_high_bn": -1.0695006981700632,
+      "lineage_G3_transport_delta_bn": -1.1423435568741631,
+      "lineage_G3_transport_se_bn": 0.17754134570739577,
+      "crosses_5bn_point_estimate": false,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_zero_full_takeup_proxy",
+      "generation": "G1",
+      "union_delta_low_bn": -1.2529320961346875,
+      "union_delta_high_bn": -1.2529320961346875,
+      "union_se_bn": 0.21731861599777214,
+      "lineage_added_held_delta_low_bn": -1.2529320961346875,
+      "lineage_added_held_delta_high_bn": -1.2529320961346875,
+      "lineage_G3_transport_delta_bn": -1.2529320961346875,
+      "lineage_G3_transport_se_bn": 0.21731861599777214,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_zero_full_takeup_proxy",
+      "generation": "G2",
+      "union_delta_low_bn": -1.90607892466857,
+      "union_delta_high_bn": -1.90607892466857,
+      "union_se_bn": 0.22012862146162496,
+      "lineage_added_held_delta_low_bn": -1.90607892466857,
+      "lineage_added_held_delta_high_bn": -1.90607892466857,
+      "lineage_G3_transport_delta_bn": -1.90607892466857,
+      "lineage_G3_transport_se_bn": 0.22012862146162496,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_zero_full_takeup_proxy",
+      "generation": "G3+",
+      "union_delta_low_bn": -2.4467108330066716,
+      "union_delta_high_bn": -2.4467108330066716,
+      "union_se_bn": 0.2225151266758868,
+      "lineage_added_held_delta_low_bn": -2.4467108330066716,
+      "lineage_added_held_delta_high_bn": -2.4467108330066716,
+      "lineage_G3_transport_delta_bn": -2.7805566899280274,
+      "lineage_G3_transport_se_bn": 0.2528766030469169,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_zero_full_takeup_proxy",
+      "generation": "all",
+      "union_delta_low_bn": -5.6057218538099285,
+      "union_delta_high_bn": -5.6057218538099285,
+      "union_se_bn": 0.430880520187698,
+      "lineage_added_held_delta_low_bn": -5.6057218538099285,
+      "lineage_added_held_delta_high_bn": -5.6057218538099285,
+      "lineage_G3_transport_delta_bn": -5.939567710731284,
+      "lineage_G3_transport_se_bn": 0.4530016350992468,
+      "crosses_5bn_point_estimate": true,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_cap_existing_participation",
+      "generation": "G1",
+      "union_delta_low_bn": -0.1408873716788896,
+      "union_delta_high_bn": -0.1408873716788896,
+      "union_se_bn": 0.07669673151221287,
+      "lineage_added_held_delta_low_bn": -0.1408873716788896,
+      "lineage_added_held_delta_high_bn": -0.1408873716788896,
+      "lineage_G3_transport_delta_bn": -0.1408873716788896,
+      "lineage_G3_transport_se_bn": 0.07669673151221287,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_cap_existing_participation",
+      "generation": "G2",
+      "union_delta_low_bn": 0.04551103994985021,
+      "union_delta_high_bn": 0.04551103994985021,
+      "union_se_bn": 0.07679649735982082,
+      "lineage_added_held_delta_low_bn": 0.04551103994985021,
+      "lineage_added_held_delta_high_bn": 0.04551103994985021,
+      "lineage_G3_transport_delta_bn": 0.04551103994985021,
+      "lineage_G3_transport_se_bn": 0.07679649735982082,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_cap_existing_participation",
+      "generation": "G3+",
+      "union_delta_low_bn": 0.02636673033800498,
+      "union_delta_high_bn": 0.02636673033800498,
+      "union_se_bn": 0.08763450205954132,
+      "lineage_added_held_delta_low_bn": 0.02636673033800498,
+      "lineage_added_held_delta_high_bn": 0.02636673033800498,
+      "lineage_G3_transport_delta_bn": 0.029964386246156827,
+      "lineage_G3_transport_se_bn": 0.09959194919275721,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_cap_existing_participation",
+      "generation": "all",
+      "union_delta_low_bn": -0.06900960139103442,
+      "union_delta_high_bn": -0.06900960139103442,
+      "union_se_bn": 0.13614208527051058,
+      "lineage_added_held_delta_low_bn": -0.06900960139103442,
+      "lineage_added_held_delta_high_bn": -0.06900960139103442,
+      "lineage_G3_transport_delta_bn": -0.06541194548288257,
+      "lineage_G3_transport_se_bn": 0.14463371559756558,
+      "crosses_5bn_point_estimate": false,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_cap_full_takeup_proxy",
+      "generation": "G1",
+      "union_delta_low_bn": -0.9640756074818368,
+      "union_delta_high_bn": -0.9640756074818368,
+      "union_se_bn": 0.21632817555279926,
+      "lineage_added_held_delta_low_bn": -0.9640756074818368,
+      "lineage_added_held_delta_high_bn": -0.9640756074818368,
+      "lineage_G3_transport_delta_bn": -0.9640756074818368,
+      "lineage_G3_transport_se_bn": 0.21632817555279926,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_cap_full_takeup_proxy",
+      "generation": "G2",
+      "union_delta_low_bn": -1.2508730639666747,
+      "union_delta_high_bn": -1.2508730639666747,
+      "union_se_bn": 0.1912229353333866,
+      "lineage_added_held_delta_low_bn": -1.2508730639666747,
+      "lineage_added_held_delta_high_bn": -1.2508730639666747,
+      "lineage_G3_transport_delta_bn": -1.2508730639666747,
+      "lineage_G3_transport_se_bn": 0.1912229353333866,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_cap_full_takeup_proxy",
+      "generation": "G3+",
+      "union_delta_low_bn": -1.433903164330676,
+      "union_delta_high_bn": -1.433903164330676,
+      "union_se_bn": 0.1986132548215184,
+      "lineage_added_held_delta_low_bn": -1.433903164330676,
+      "lineage_added_held_delta_high_bn": -1.433903164330676,
+      "lineage_G3_transport_delta_bn": -1.6295546586472147,
+      "lineage_G3_transport_se_bn": 0.22571339733012377,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_cap_full_takeup_proxy",
+      "generation": "all",
+      "union_delta_low_bn": -3.6488518357791877,
+      "union_delta_high_bn": -3.6488518357791877,
+      "union_se_bn": 0.37451600784242384,
+      "lineage_added_held_delta_low_bn": -3.6488518357791877,
+      "lineage_added_held_delta_high_bn": -3.6488518357791877,
+      "lineage_G3_transport_delta_bn": -3.8445033300957263,
+      "lineage_G3_transport_se_bn": 0.39197947901727187,
+      "crosses_5bn_point_estimate": false,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_envelope_low",
+      "generation": "G1",
+      "union_delta_low_bn": -6.216668927011038,
+      "union_delta_high_bn": -6.216668927011038,
+      "union_se_bn": 0.4412227498653852,
+      "lineage_added_held_delta_low_bn": -6.216668927011038,
+      "lineage_added_held_delta_high_bn": -6.216668927011038,
+      "lineage_G3_transport_delta_bn": -6.216668927011038,
+      "lineage_G3_transport_se_bn": 0.4412227498653852,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_envelope_low",
+      "generation": "G2",
+      "union_delta_low_bn": -14.383464720216292,
+      "union_delta_high_bn": -14.383464720216292,
+      "union_se_bn": 0.7099926821713503,
+      "lineage_added_held_delta_low_bn": -14.383464720216292,
+      "lineage_added_held_delta_high_bn": -14.383464720216292,
+      "lineage_G3_transport_delta_bn": -14.383464720216292,
+      "lineage_G3_transport_se_bn": 0.7099926821713503,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_envelope_low",
+      "generation": "G3+",
+      "union_delta_low_bn": -25.46058455908912,
+      "union_delta_high_bn": -25.46058455908912,
+      "union_se_bn": 1.0341358104717493,
+      "lineage_added_held_delta_low_bn": -25.46058455908912,
+      "lineage_added_held_delta_high_bn": -25.46058455908912,
+      "lineage_G3_transport_delta_bn": -28.93459977788084,
+      "lineage_G3_transport_se_bn": 1.1752403297155483,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_envelope_low",
+      "generation": "all",
+      "union_delta_low_bn": -46.06071820631645,
+      "union_delta_high_bn": -46.06071820631645,
+      "union_se_bn": 1.5413860497570304,
+      "lineage_added_held_delta_low_bn": -46.06071820631645,
+      "lineage_added_held_delta_high_bn": -46.06071820631645,
+      "lineage_G3_transport_delta_bn": -49.53473342510817,
+      "lineage_G3_transport_se_bn": 1.6603208535429483,
+      "crosses_5bn_point_estimate": true,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_envelope_high",
+      "generation": "G1",
+      "union_delta_low_bn": 0.1521614844344973,
+      "union_delta_high_bn": 0.1521614844344973,
+      "union_se_bn": 0.033189513475728266,
+      "lineage_added_held_delta_low_bn": 0.1521614844344973,
+      "lineage_added_held_delta_high_bn": 0.1521614844344973,
+      "lineage_G3_transport_delta_bn": 0.1521614844344973,
+      "lineage_G3_transport_se_bn": 0.033189513475728266,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_envelope_high",
+      "generation": "G2",
+      "union_delta_low_bn": 0.8546071021768329,
+      "union_delta_high_bn": 0.8546071021768329,
+      "union_se_bn": 0.15057929511560006,
+      "lineage_added_held_delta_low_bn": 0.8546071021768329,
+      "lineage_added_held_delta_high_bn": 0.8546071021768329,
+      "lineage_G3_transport_delta_bn": 0.8546071021768329,
+      "lineage_G3_transport_se_bn": 0.15057929511560006,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_envelope_high",
+      "generation": "G3+",
+      "union_delta_low_bn": 1.0398335583355374,
+      "union_delta_high_bn": 1.0398335583355374,
+      "union_se_bn": 0.1615668846114451,
+      "lineage_added_held_delta_low_bn": 1.0398335583355374,
+      "lineage_added_held_delta_high_bn": 1.0398335583355374,
+      "lineage_G3_transport_delta_bn": 1.181715517026797,
+      "lineage_G3_transport_se_bn": 0.18361216855574297,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "SNAP_envelope_high",
+      "generation": "all",
+      "union_delta_low_bn": 2.046602144946868,
+      "union_delta_high_bn": 2.046602144946868,
+      "union_se_bn": 0.22835120548850882,
+      "lineage_added_held_delta_low_bn": 2.046602144946868,
+      "lineage_added_held_delta_high_bn": 2.046602144946868,
+      "lineage_G3_transport_delta_bn": 2.1884841036381277,
+      "lineage_G3_transport_se_bn": 0.245055179777334,
+      "crosses_5bn_point_estimate": false,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M5_half_equal_half_own",
+      "generation": "G1",
+      "union_delta_low_bn": -0.40539573270726725,
+      "union_delta_high_bn": -0.40539573270726725,
+      "union_se_bn": 0.08281565907928548,
+      "lineage_added_held_delta_low_bn": -0.40539573270726725,
+      "lineage_added_held_delta_high_bn": -0.40539573270726725,
+      "lineage_G3_transport_delta_bn": -0.40539573270726725,
+      "lineage_G3_transport_se_bn": 0.08281565907928548,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M5_half_equal_half_own",
+      "generation": "G2",
+      "union_delta_low_bn": 0.06606585159611614,
+      "union_delta_high_bn": 0.06606585159611614,
+      "union_se_bn": 0.13735830513401184,
+      "lineage_added_held_delta_low_bn": 0.06606585159611614,
+      "lineage_added_held_delta_high_bn": 0.06606585159611614,
+      "lineage_G3_transport_delta_bn": 0.06606585159611614,
+      "lineage_G3_transport_se_bn": 0.13735830513401184,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M5_half_equal_half_own",
+      "generation": "G3+",
+      "union_delta_low_bn": 2.525598013090675,
+      "union_delta_high_bn": 2.525598013090675,
+      "union_se_bn": 0.1625963622592161,
+      "lineage_added_held_delta_low_bn": 2.525598013090675,
+      "lineage_added_held_delta_high_bn": 2.525598013090675,
+      "lineage_G3_transport_delta_bn": 2.8702077730773103,
+      "lineage_G3_transport_se_bn": 0.18478211513137624,
+      "crosses_5bn_point_estimate": "",
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    },
+    {
+      "component": "M5_half_equal_half_own",
+      "generation": "all",
+      "union_delta_low_bn": 2.1862681319795243,
+      "union_delta_high_bn": 2.1862681319795243,
+      "union_se_bn": 0.17324362104443394,
+      "lineage_added_held_delta_low_bn": 2.1862681319795243,
+      "lineage_added_held_delta_high_bn": 2.1862681319795243,
+      "lineage_G3_transport_delta_bn": 2.53087789196616,
+      "lineage_G3_transport_se_bn": 0.18843478931918095,
+      "crosses_5bn_point_estimate": false,
+      "estimate_kind": "conditional simulation; no new adopted edit"
+    }
+  ],
+  "gates": [
+    {
+      "name": "all_used_acquisition_inputs_are_registered",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/credits.py",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/derived/item.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/derived/summary.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/main_case_2026_10_14/derived/corrections_cash.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/cps_arrays.npz",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/ce_pumd_2024.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/sources/bls_cpi_u_2003_2012.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/sources/bls_cpi_u_2015_2024.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/sources/cu-income-deciles-before-taxes-2024.xlsx",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/consumption_key_2026_09_24/derived/key_specs.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/consumption_key_2026_09_24/derived/sender_rates.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/external_benchmarks_2026_09_24/_cache/cps25_frame.parquet",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_group_shares.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/_cache/irs_f2441_2024/f2441--2024.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/_cache/irs_rp_2023_34/rp-23-34.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/_cache/irs_s8812_2024/f1040s8--2024.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha__cache/state_taxsimtest_osx",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/state_tax_parameters.xlsx",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/state_taxsim_documentation.html",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/state_workbook_documentation.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/state_parameters_2024.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_fpl24.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_fpl24.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_fpl24_fr.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_fpl24_fr.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_magi_law.xml",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_medicaid.html",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_ptc24.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_ptc24.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap24_income.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap24_income.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap24_max.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap24_max.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap24_min.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap24_min.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap25_income.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap25_income.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap25_max.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap25_max.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap25_min.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap25_min.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap_benefits.xml",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap_deductions.xml",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_states.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "case_personal_end_specifications",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "positive_control_bytes_allocation_check.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "positive_control_bytes_example.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "positive_control_bytes_item.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "positive_control_bytes_summary.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "positive_control_bytes_terms.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "positive_control_bytes_validation.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "positive_control_item_5b",
+      "passed": true,
+      "value": 4.298545384947592
+    },
+    {
+      "name": "positive_control_D",
+      "passed": true,
+      "value": {
+        "bn": {
+          "G1": -0.577511403,
+          "G2": 0.227009548,
+          "G3+": 2.62963563,
+          "total": 2.279133775
+        },
+        "se_bn": {
+          "G1": 0.5947874855158252,
+          "G2": 1.872423253853895,
+          "G3+": 2.252614169273534,
+          "total": 2.972589821377728
+        },
+        "cps_bn": {
+          "G1": -0.320782774,
+          "G2": 1.110614918,
+          "G3+": 1.902287001,
+          "total": 2.692119145
+        }
+      }
+    },
+    {
+      "name": "additional_CPS_fields_exist",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "additional_CPS_fields_join_every_person",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "survivor_dependents_each_assigned_once",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "survivor_dependents_counts_close",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "CBO_fixed_rank_boundaries_ordered",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "all_nonzero_survivor_changes_have_generation",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "federal_generation_closure",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "refundable_generation_closure",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "head_spouse_swap_survivor_kernel_1e9",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "CBO_fixed_rank_boundaries_ordered",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "head_spouse_swap_IRS_cell_1e9",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "state_expanded_registry_has_no_unmodeled_new_filers",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "consumption_cache_exists_read_only",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "consumption_person_join_bijective",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "consumption_original_frame_reproduces_key",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "consumption_saving_remittance_positive_control",
+      "passed": true,
+      "value": 0.08598575001754469
+    },
+    {
+      "name": "all_consumption_persons_have_CBO_group",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "consumption_all_unit_weight_columns_conserve",
+      "passed": true,
+      "value": 7.934868335723877e-16
+    },
+    {
+      "name": "M6_candidate_children_do_not_intersect_identified_union",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "M6_parent_generation_counts_close",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "stack_generation_closure",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "process_peak_RSS_under_2_5GB",
+      "passed": true,
+      "value": {
+        "limit_bytes": 2500000000
+      }
+    }
+  ],
+  "stack": {
+    "label": "conditional fixed-pool partial stack",
+    "M6_included": false,
+    "Medicaid_CHIP_ACA_spending_identified": false,
+    "added_persons": "held in primary result; G3 transport shown separately as assumption",
+    "interactions_bn": 0.0,
+    "interaction_rule": "M1/M2/M3 solved on one shared after-return; item 5b subtracted once; SNAP uses gross income; fixed pre-removal consumption pool does not respond to taxes or benefits",
+    "unidentified_interactions": [
+      "consumption response to survivor taxes/refunds/SNAP",
+      "takeup/eligibility/ACA changes",
+      "identity-loss membership and aggregate substitution"
+    ]
+  }
+}

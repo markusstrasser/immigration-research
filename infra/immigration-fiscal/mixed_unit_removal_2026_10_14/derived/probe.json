@@ -1,0 +1,542 @@
+{
+  "persons": 142125,
+  "columns": [
+    "PH_SEQ",
+    "A_LINENO",
+    "PENATVTY",
+    "PEMNTVTY",
+    "PEFNTVTY",
+    "PEPAR1",
+    "PEPAR2",
+    "PRDTHSP",
+    "PRPERTYP",
+    "PRCITSHP",
+    "A_AGE",
+    "A_ENRLW",
+    "MARSUPWT",
+    "ACTC_CRD",
+    "AGI",
+    "ANN_VAL",
+    "CAP_VAL",
+    "CTC_CRD",
+    "DIV_VAL",
+    "EIT_CRED",
+    "FEDTAX_AC",
+    "FEDTAX_BC",
+    "FRSE_VAL",
+    "INT_VAL",
+    "PNSN_VAL",
+    "PPPOS",
+    "RNT_VAL",
+    "SEMP_VAL",
+    "SPM_ID",
+    "SS_VAL",
+    "STATETAX_A",
+    "STATETAX_B",
+    "TAX_INC",
+    "UC_VAL",
+    "WSAL_VAL",
+    "TAX_ID",
+    "DEP_STAT",
+    "FILESTAT",
+    "pwwgt0",
+    "GESTFIPS",
+    "HCHCARE_VAL",
+    "H_SEQ",
+    "PRDISFLG",
+    "FICA",
+    "MCAID",
+    "MCARE",
+    "PARENT",
+    "PAW_VAL",
+    "PCHIP",
+    "PEARNVAL",
+    "PRIV",
+    "PTOTVAL",
+    "PUB",
+    "SPM_ACTC",
+    "SPM_CAPHOUSESUB",
+    "SPM_CAPWKCCXPNS",
+    "SPM_CHILDCAREXPNS",
+    "SPM_CHILDSUPPD",
+    "SPM_EITC",
+    "SPM_ENGVAL",
+    "SPM_FEDTAX",
+    "SPM_FICA",
+    "SPM_HEAD",
+    "SPM_MEDXPNS",
+    "SPM_NUMPER",
+    "SPM_RESOURCES",
+    "SPM_SNAPSUB",
+    "SPM_STTAX",
+    "SPM_TOTVAL",
+    "SPM_WEIGHT",
+    "SPM_WICVAL",
+    "SPM_WKXPNS",
+    "SSI_VAL",
+    "H_TENURE",
+    "HFDVAL",
+    "HFOODMO",
+    "HFOODNO",
+    "HFOODSP"
+  ],
+  "gates": [
+    {
+      "name": "all_used_acquisition_inputs_are_registered",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/credits.py",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/derived/item.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/derived/summary.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/main_case_2026_10_14/derived/corrections_cash.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/cps_arrays.npz",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/ce_pumd_2024.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/sources/bls_cpi_u_2003_2012.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/sources/bls_cpi_u_2015_2024.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/consumption_key_2026_09_24/_cache/sources/cu-income-deciles-before-taxes-2024.xlsx",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/consumption_key_2026_09_24/derived/key_specs.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/consumption_key_2026_09_24/derived/sender_rates.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/external_benchmarks_2026_09_24/_cache/cps25_frame.parquet",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_group_shares.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/_cache/irs_f2441_2024/f2441--2024.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/_cache/irs_rp_2023_34/rp-23-34.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_repo:infra/immigration-fiscal/mixed_unit_credits_2026_10_14/_cache/irs_s8812_2024/f1040s8--2024.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha__cache/state_taxsimtest_osx",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/state_tax_parameters.xlsx",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/state_taxsim_documentation.html",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/state_workbook_documentation.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/state_parameters_2024.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_fpl24.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_fpl24.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_fpl24_fr.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_fpl24_fr.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_magi_law.xml",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_medicaid.html",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_ptc24.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_ptc24.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap24_income.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap24_income.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap24_max.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap24_max.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap24_min.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap24_min.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap25_income.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap25_income.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap25_max.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap25_max.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap25_min.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap25_min.txt",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap_benefits.xml",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_snap_deductions.xml",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "input_sha_inputs/benefit_states.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "case_personal_end_specifications",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "positive_control_bytes_allocation_check.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "positive_control_bytes_example.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "positive_control_bytes_item.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "positive_control_bytes_summary.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "positive_control_bytes_terms.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "positive_control_bytes_validation.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "positive_control_item_5b",
+      "passed": true,
+      "value": 4.298545384947592
+    },
+    {
+      "name": "positive_control_D",
+      "passed": true,
+      "value": {
+        "bn": {
+          "G1": -0.577511403,
+          "G2": 0.227009548,
+          "G3+": 2.62963563,
+          "total": 2.279133775
+        },
+        "se_bn": {
+          "G1": 0.5947874855158252,
+          "G2": 1.872423253853895,
+          "G3+": 2.252614169273534,
+          "total": 2.972589821377728
+        },
+        "cps_bn": {
+          "G1": -0.320782774,
+          "G2": 1.110614918,
+          "G3+": 1.902287001,
+          "total": 2.692119145
+        }
+      }
+    },
+    {
+      "name": "additional_CPS_fields_exist",
+      "passed": true,
+      "value": []
+    },
+    {
+      "name": "additional_CPS_fields_join_every_person",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "survivor_dependents_each_assigned_once",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "survivor_dependents_counts_close",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "CBO_fixed_rank_boundaries_ordered",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "all_nonzero_survivor_changes_have_generation",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "federal_generation_closure",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "refundable_generation_closure",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "head_spouse_swap_survivor_kernel_1e9",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "CBO_fixed_rank_boundaries_ordered",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "head_spouse_swap_IRS_cell_1e9",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "state_expanded_registry_has_no_unmodeled_new_filers",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "consumption_cache_exists_read_only",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "consumption_person_join_bijective",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "consumption_original_frame_reproduces_key",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "consumption_saving_remittance_positive_control",
+      "passed": true,
+      "value": 0.08598575001754469
+    },
+    {
+      "name": "all_consumption_persons_have_CBO_group",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "consumption_all_unit_weight_columns_conserve",
+      "passed": true,
+      "value": 7.934868335723877e-16
+    },
+    {
+      "name": "M6_candidate_children_do_not_intersect_identified_union",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "M6_parent_generation_counts_close",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "stack_generation_closure",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "process_peak_RSS_under_2_5GB",
+      "passed": true,
+      "value": {
+        "limit_bytes": 2500000000
+      }
+    }
+  ],
+  "federal": {
+    "new_nonfiler_claimants": 0,
+    "transferred_dependents": 20,
+    "nonmember_dependents_without_remaining_claimant": 155,
+    "rule": "staying same return: CPS residual plus TAXSIM delta; newly filed: own TAXSIM income/flags/cell; subtract item 5b once",
+    "unsupported_positive_survivor_IRS_cells": 0,
+    "adoptable": false,
+    "unknown_inputs": [
+      "itemized deductions",
+      "QBI eligibility",
+      "qualified dividend/capital-gain character",
+      "other refundable credits and actual care attribution"
+    ],
+    "baseline_rule_federal_bn": 2010.3751130582648,
+    "baseline_CPS_federal_bn": 1984.5874616072465,
+    "baseline_rule_EITC_bn": 42.896916421993424,
+    "baseline_CPS_EITC_bn": 42.62437313601434,
+    "baseline_rule_ACTC_bn": 26.449176190481843,
+    "baseline_CPS_ACTC_bn": 21.589355248758615,
+    "mixed_joint_returns": 1364,
+    "swap_max_dollars": 0.0,
+    "IRS_rule": "own AGI bin, remaining-household CBO group at original national rank thresholds; benchmark multipliers fixed",
+    "weights": "actual amount: actual carrier weights; new amount: survivor own weights; all 160 replicates",
+    "IRS_replication": "full-sample benchmark mass held across replicates, matching original item 5b; benchmark uncertainty not included",
+    "swap_scope": "survivor tax calculation and IRS multiplier; changing the frozen baseline carrier changes its personal ledger by definition"
+  },
+  "M1_bn": [
+    -0.2333666590284883,
+    1.317402847742005,
+    5.639926180309997
+  ],
+  "M3_bn": [
+    0.3797075749406283,
+    -0.58556912461131,
+    -0.5946029277908824
+  ]
+}

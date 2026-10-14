@@ -1,0 +1,105 @@
+{
+  "files": {
+    "benefit_fpl24.pdf": {
+      "sha256": "bc8e34debcab427d1ed53bf64175212d35ac51a3d8c5881634a28b27965c89c7",
+      "source": "https://www.medicaid.gov/sites/default/files/2024-01/cib012424_0.pdf"
+    },
+    "benefit_fpl24.txt": {
+      "extract": "pdftotext -layout",
+      "sha256": "520331eb867c1ab196bddc9c32ade24bd7859c60b937c6d670cfc3edf40f4b95",
+      "source": "https://www.medicaid.gov/sites/default/files/2024-01/cib012424_0.pdf"
+    },
+    "benefit_fpl24_fr.pdf": {
+      "sha256": "9bf6ec5bed0ca08d7cad8acb44fe802ffa4bbb420a9f86fd76cbf8d33a9a01fb",
+      "source": "https://www.govinfo.gov/content/pkg/FR-2024-01-17/pdf/2024-00796.pdf"
+    },
+    "benefit_fpl24_fr.txt": {
+      "extract": "pdftotext -layout",
+      "sha256": "70b3aa1a74b81ebb5b7d0fea076a081d81f5abba731c581e403a4b0e4e87304c",
+      "source": "https://www.govinfo.gov/content/pkg/FR-2024-01-17/pdf/2024-00796.pdf"
+    },
+    "benefit_magi_law.xml": {
+      "sha256": "3ec0bd686ac9d62f7b567f38f92e46ebdf13ce04d212987717391da03d45e6a7",
+      "source": "https://www.govinfo.gov/content/pkg/CFR-2024-title42-vol4/xml/CFR-2024-title42-vol4-sec435-603.xml"
+    },
+    "benefit_medicaid.html": {
+      "sha256": "741c85c56d3e42d2813197b505e9e444d4735e1b8a98555ae1260c1b362a7617",
+      "source": "https://www.medicaid.gov/medicaid/national-medicaid-chip-program-information/medicaid-childrens-health-insurance-program-basic-health-program-eligibility-levels"
+    },
+    "benefit_ptc24.pdf": {
+      "sha256": "c7aade0f20fe7e32a2a34e6af6d30288f563bc46efc43a682626134e48b899b9",
+      "source": "https://www.irs.gov/pub/irs-prior/i8962--2024.pdf"
+    },
+    "benefit_ptc24.txt": {
+      "extract": "pdftotext -layout",
+      "sha256": "3de44a1f66b99a5dfc5e53035e72a2ef03628edbf43ad5c81aeb20fb898c4ad7",
+      "source": "https://www.irs.gov/pub/irs-prior/i8962--2024.pdf"
+    },
+    "benefit_snap24_income.pdf": {
+      "sha256": "eb0943b442e5c3ad24e8a5d83f888433bb1cd338ad320987206ad3bf43c2dcd4",
+      "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Income-Eligibility-Standards.pdf"
+    },
+    "benefit_snap24_income.txt": {
+      "extract": "pdftotext -layout",
+      "sha256": "b76b5668bfd6f99cb3b358f3df004b749a1397eb3427240eb220e0d9f62cd7ed",
+      "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Income-Eligibility-Standards.pdf"
+    },
+    "benefit_snap24_max.pdf": {
+      "sha256": "9744852251f83c71cd7df7842abcc6f63e980f4c572b44fc72ba081cdcd93caa",
+      "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Maximum-Allotments-and-Deductions.pdf"
+    },
+    "benefit_snap24_max.txt": {
+      "extract": "pdftotext -layout",
+      "sha256": "b6f691aa472c2ee529359aa2a6bb3340fd0c8081fdd93ead8601838f489978ba",
+      "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Maximum-Allotments-and-Deductions.pdf"
+    },
+    "benefit_snap24_min.pdf": {
+      "sha256": "700786e17005eb38438993618f7a1b683b6407ce8881b7702d6433995dc9b5f6",
+      "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Minimum-Allotments.pdf"
+    },
+    "benefit_snap24_min.txt": {
+      "extract": "pdftotext -layout",
+      "sha256": "bb7fef09f590d51cc144c760c43443bc46e41bb7d70c17a226840ce64c17ead4",
+      "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY24-Minimum-Allotments.pdf"
+    },
+    "benefit_snap25_income.pdf": {
+      "sha256": "384cca1b2f2446ed5273583ad96e55c8511160bd78c8d832640d3af02076a5d1",
+      "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Income-Eligibility-Standards.pdf"
+    },
+    "benefit_snap25_income.txt": {
+      "extract": "pdftotext -layout",
+      "sha256": "8d707b28c2e51ce75f827ac553e748a7487f502a923fa710a9a87c240ca5992d",
+      "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Income-Eligibility-Standards.pdf"
+    },
+    "benefit_snap25_max.pdf": {
+      "sha256": "9e0d5854853672defdc5526046bc6c026b4ef1bdd6a91fc95ffeefce0bbdb06a",
+      "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Maximum-Allotments-Deductions.pdf"
+    },
+    "benefit_snap25_max.txt": {
+      "extract": "pdftotext -layout",
+      "sha256": "d63c4ccae4336fb4ef818b88323b5bdd9b1f63d50a23c93d488a018cc33a6c9e",
+      "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Maximum-Allotments-Deductions.pdf"
+    },
+    "benefit_snap25_min.pdf": {
+      "sha256": "bfde7230e0e2e1204d9caf47f16190f931a31cfcc67471b5b1567337b1d6e6ef",
+      "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Minimum-Allotments.pdf"
+    },
+    "benefit_snap25_min.txt": {
+      "extract": "pdftotext -layout",
+      "sha256": "70374cf25fb4b289b96a8d6e2d5b77d6daba3bf7aec8a02d5ed24cedfa59d07c",
+      "source": "https://www.fna.usda.gov/sites/default/files/media/file/FY2025-Minimum-Allotments.pdf"
+    },
+    "benefit_snap_benefits.xml": {
+      "sha256": "a6f5916cc00d079ee9b7d9627c27128e5d716b7faace3be78e1e479967c92c75",
+      "source": "https://www.govinfo.gov/content/pkg/CFR-2024-title7-vol4/xml/CFR-2024-title7-vol4-sec273-10.xml"
+    },
+    "benefit_snap_deductions.xml": {
+      "sha256": "7c0be86c6f6926b8e2d4f84694c55f4135ee95be31d711d569cd4c3357349ff0",
+      "source": "https://www.govinfo.gov/content/pkg/CFR-2024-title7-vol4/xml/CFR-2024-title7-vol4-sec273-9.xml"
+    },
+    "benefit_states.json": {
+      "sha256": "f96a0c7d6d25dc298e522e955a94dd9a3da4d892827d406d64cab388adecc47c",
+      "source": "local archived primary API response: apportionment_2026_09_18/_cache/acs5_2020_states.json"
+    }
+  }
+}
