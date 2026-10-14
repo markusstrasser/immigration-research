@@ -1,0 +1,420 @@
+{
+ "set": {
+  "case": "oct15",
+  "basis": "set",
+  "source": "coverage_bound_2026_10_14/_cache/oct15_final_routing/set/pricing.npz",
+  "source_sha256": "529d7ff806d534e874e22f6aee98cfe6fa775c87a035e2f40390835e90f5e192",
+  "policy": {
+   "fixes": [
+    "minors",
+    "credits",
+    "tags",
+    "state_prices"
+   ],
+   "minor_scale": 0.3364796386770656,
+   "production_rule": "aumann_shapley",
+   "central": true,
+   "parent_measurement": "inputs/minor_parent_measurement_oct15.json"
+  },
+  "rows": [
+   {
+    "case": "oct15",
+    "end": "low",
+    "convention": "a",
+    "rule": "A_AGE>=18; source credit owner ages; remaining person keys; coverage own age block",
+    "fixes": "minors|credits|tags|state_prices",
+    "minor_scale": 0.3364796386770656,
+    "production_rule": "aumann_shapley",
+    "g2_adults_direct_bn": 9.233884150243366,
+    "first_order_generic_adult_bn": 19.844450596432534,
+    "credit_owner_age_correction_bn": -13.088767876058023,
+    "g2_minors_direct_bn": 141.8081381878096,
+    "g2_total_a_bn": 151.0420223380527,
+    "g2_adults_residual_bn": 37.263182928481996,
+    "direct_minus_residual_bn": -28.02929877823863,
+    "adults": 9613496.451020814,
+    "per_adult_usd": 960.5125666076323,
+    "conditional_sdr_se_bn": 1.615245592071032,
+    "conditional_per_adult_sdr_se_usd": 166.48186253939093,
+    "coverage_adult_cost_bn": 2.4782014298688564,
+    "coverage_minor_cost_bn": 3.4924278493845593
+   },
+   {
+    "case": "oct15",
+    "end": "high",
+    "convention": "a",
+    "rule": "A_AGE>=18; source credit owner ages; remaining person keys; coverage own age block",
+    "fixes": "minors|credits|tags|state_prices",
+    "minor_scale": 0.3364796386770656,
+    "production_rule": "aumann_shapley",
+    "g2_adults_direct_bn": 30.64081602074458,
+    "first_order_generic_adult_bn": 39.85789088942397,
+    "credit_owner_age_correction_bn": -13.088767876058023,
+    "g2_minors_direct_bn": 149.96096059492285,
+    "g2_total_a_bn": 180.60177661566706,
+    "g2_adults_residual_bn": 60.13337652598061,
+    "direct_minus_residual_bn": -29.49256050523603,
+    "adults": 9613496.451020814,
+    "per_adult_usd": 3187.270747625955,
+    "conditional_sdr_se_bn": 1.686712118439952,
+    "conditional_per_adult_sdr_se_usd": 176.9054104091537,
+    "coverage_adult_cost_bn": 3.8716930073786315,
+    "coverage_minor_cost_bn": 3.698052693657283
+   }
+  ],
+  "gates": [
+   {
+    "end": "low",
+    "all_replicate_partition_gap_bn": 9.663381206337363e-13,
+    "final_G2_a_gap_bn": 8.242295734817162e-13,
+    "pass": true
+   },
+   {
+    "end": "high",
+    "all_replicate_partition_gap_bn": 1.1084466677857563e-12,
+    "final_G2_a_gap_bn": 9.094947017729282e-13,
+    "pass": true
+   }
+  ],
+  "credit_owner_age_corrections": [
+   {
+    "end": "low",
+    "source_sha256": "11064bfabb6a916ac8bf53bec3bdb88b7e1460212fb2a76d219b220dd9ce4a90",
+    "generic_adult_share": {
+     "receipt": 0.9991331307586121,
+     "spending": 1.0
+    },
+    "adult_correction_bn": -13.088767876058023,
+    "conditional_sdr_se_bn": 0.7221972888703272,
+    "r6_parts": [
+     {
+      "component": "A_receipt_G2",
+      "selected_amount_bn": -0.4886480625807886,
+      "adult_owner_edit_bn": -0.036861863094967744,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "B_receipt_G2",
+      "selected_amount_bn": 0.1834938902982987,
+      "adult_owner_edit_bn": 0.1834938902982987,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "C_receipt_G2",
+      "selected_amount_bn": -0.0747453125669331,
+      "adult_owner_edit_bn": -0.011656452753430453,
+      "scenario_scale": 0.9999999999999998
+     },
+     {
+      "component": "Cr_receipt_G2",
+      "selected_amount_bn": 0.0029294638575043416,
+      "adult_owner_edit_bn": 0.0029294638575043416,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "A_spending_G2",
+      "selected_amount_bn": 1.0252374472976467,
+      "adult_owner_edit_bn": 0.07907129972563536,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "B_spending_G2",
+      "selected_amount_bn": -0.14884286070122352,
+      "adult_owner_edit_bn": -0.14884286070122352,
+      "scenario_scale": 1.0
+     }
+    ],
+    "item10_parts": [
+     {
+      "side": "receipt",
+      "selected_amount_bn": -0.05052498680555456,
+      "adult_owner_edit_bn": -0.05272673725931472,
+      "scenario_scale": 1.000000000000003
+     },
+     {
+      "side": "spending",
+      "selected_amount_bn": 0.1299226350802456,
+      "adult_owner_edit_bn": 0.1299226350802456,
+      "scenario_scale": 1.0
+     }
+    ],
+    "item10_source_sha256": "1dbc3555431ef071db0d43c1b41c5a7eac5b4abba869970dcdbd4ed8097399f7",
+    "rule": "undo generic cash-FIT/refund key allocation of P7 base/R6 and item10 credit changes; add source claimant/dependent age allocation; benefit-tax component untouched"
+   },
+   {
+    "end": "high",
+    "source_sha256": "11064bfabb6a916ac8bf53bec3bdb88b7e1460212fb2a76d219b220dd9ce4a90",
+    "generic_adult_share": {
+     "receipt": 0.9991331307586121,
+     "spending": 1.0
+    },
+    "adult_correction_bn": -13.088767876058023,
+    "conditional_sdr_se_bn": 0.7221972888703272,
+    "r6_parts": [
+     {
+      "component": "A_receipt_G2",
+      "selected_amount_bn": -0.4886480625807886,
+      "adult_owner_edit_bn": -0.036861863094967744,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "B_receipt_G2",
+      "selected_amount_bn": 0.1834938902982987,
+      "adult_owner_edit_bn": 0.1834938902982987,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "C_receipt_G2",
+      "selected_amount_bn": -0.0747453125669331,
+      "adult_owner_edit_bn": -0.011656452753430453,
+      "scenario_scale": 0.9999999999999998
+     },
+     {
+      "component": "Cr_receipt_G2",
+      "selected_amount_bn": 0.0029294638575043416,
+      "adult_owner_edit_bn": 0.0029294638575043416,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "A_spending_G2",
+      "selected_amount_bn": 1.0252374472976467,
+      "adult_owner_edit_bn": 0.07907129972563536,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "B_spending_G2",
+      "selected_amount_bn": -0.14884286070122352,
+      "adult_owner_edit_bn": -0.14884286070122352,
+      "scenario_scale": 1.0
+     }
+    ],
+    "item10_parts": [
+     {
+      "side": "receipt",
+      "selected_amount_bn": -0.05052498680555456,
+      "adult_owner_edit_bn": -0.05272673725931472,
+      "scenario_scale": 1.000000000000003
+     },
+     {
+      "side": "spending",
+      "selected_amount_bn": 0.1299226350802456,
+      "adult_owner_edit_bn": 0.1299226350802456,
+      "scenario_scale": 1.0
+     }
+    ],
+    "item10_source_sha256": "1dbc3555431ef071db0d43c1b41c5a7eac5b4abba869970dcdbd4ed8097399f7",
+    "rule": "undo generic cash-FIT/refund key allocation of P7 base/R6 and item10 credit changes; add source claimant/dependent age allocation; benefit-tax component untouched"
+   }
+  ],
+  "uncertainty": "conditional person allocation plus actual credit-owner age replicates; remaining national/generation totals fixed; excludes full fiscal-model uncertainty, parent misreporting and modeled coverage uncertainty"
+ },
+ "cash": {
+  "case": "oct15_cash",
+  "basis": "cash",
+  "source": "coverage_bound_2026_10_14/_cache/oct15_final_routing/cash/pricing.npz",
+  "source_sha256": "f55063f75fc9c8111813eac10c2e765211d3b904b0b3e2200677ceb441fe0b49",
+  "policy": {
+   "fixes": [
+    "minors",
+    "credits",
+    "tags",
+    "state_prices"
+   ],
+   "minor_scale": 0.3364796386770656,
+   "production_rule": "aumann_shapley",
+   "central": true,
+   "parent_measurement": "inputs/minor_parent_measurement_oct15.json"
+  },
+  "rows": [
+   {
+    "case": "oct15_cash",
+    "end": "low",
+    "convention": "a",
+    "rule": "A_AGE>=18; source credit owner ages; remaining person keys; coverage own age block",
+    "fixes": "minors|credits|tags|state_prices",
+    "minor_scale": 0.3364796386770656,
+    "production_rule": "aumann_shapley",
+    "g2_adults_direct_bn": -28.80057179157772,
+    "first_order_generic_adult_bn": -14.545618904752,
+    "credit_owner_age_correction_bn": -13.088767876058023,
+    "g2_minors_direct_bn": 141.92047661786546,
+    "g2_total_a_bn": 113.11990482628711,
+    "g2_adults_residual_bn": -0.6847301585430472,
+    "direct_minus_residual_bn": -28.115841633034673,
+    "adults": 9613496.451020814,
+    "per_adult_usd": -2995.847758233636,
+    "conditional_sdr_se_bn": 1.6439823041540047,
+    "conditional_per_adult_sdr_se_usd": 187.52641284977722,
+    "coverage_adult_cost_bn": -1.1661850107676939,
+    "coverage_minor_cost_bn": 3.4991277621053367
+   },
+   {
+    "case": "oct15_cash",
+    "end": "high",
+    "convention": "a",
+    "rule": "A_AGE>=18; source credit owner ages; remaining person keys; coverage own age block",
+    "fixes": "minors|credits|tags|state_prices",
+    "minor_scale": 0.3364796386770656,
+    "production_rule": "aumann_shapley",
+    "g2_adults_direct_bn": -7.393639921076615,
+    "first_order_generic_adult_bn": 5.467821388239328,
+    "credit_owner_age_correction_bn": -13.088767876058023,
+    "g2_minors_direct_bn": 150.07329902497824,
+    "g2_total_a_bn": 142.67965910390149,
+    "g2_adults_residual_bn": 22.18546343895555,
+    "direct_minus_residual_bn": -29.579103360032168,
+    "adults": 9613496.451020814,
+    "per_adult_usd": -769.089577215324,
+    "conditional_sdr_se_bn": 1.713563667174845,
+    "conditional_per_adult_sdr_se_usd": 180.93882462408402,
+    "coverage_adult_cost_bn": 0.22730656674208038,
+    "coverage_minor_cost_bn": 3.7047526063780607
+   }
+  ],
+  "gates": [
+   {
+    "end": "low",
+    "all_replicate_partition_gap_bn": 4.689582056016661e-13,
+    "final_G2_a_gap_bn": 7.247535904753022e-13,
+    "pass": true
+   },
+   {
+    "end": "high",
+    "all_replicate_partition_gap_bn": 8.242295734817162e-13,
+    "final_G2_a_gap_bn": 3.979039320256561e-13,
+    "pass": true
+   }
+  ],
+  "credit_owner_age_corrections": [
+   {
+    "end": "low",
+    "source_sha256": "11064bfabb6a916ac8bf53bec3bdb88b7e1460212fb2a76d219b220dd9ce4a90",
+    "generic_adult_share": {
+     "receipt": 0.9991331307586121,
+     "spending": 1.0
+    },
+    "adult_correction_bn": -13.088767876058023,
+    "conditional_sdr_se_bn": 0.7221972888703272,
+    "r6_parts": [
+     {
+      "component": "A_receipt_G2",
+      "selected_amount_bn": -0.4886480625807886,
+      "adult_owner_edit_bn": -0.036861863094967744,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "B_receipt_G2",
+      "selected_amount_bn": 0.1834938902982987,
+      "adult_owner_edit_bn": 0.1834938902982987,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "C_receipt_G2",
+      "selected_amount_bn": -0.0747453125669331,
+      "adult_owner_edit_bn": -0.011656452753430453,
+      "scenario_scale": 0.9999999999999998
+     },
+     {
+      "component": "Cr_receipt_G2",
+      "selected_amount_bn": 0.0029294638575043416,
+      "adult_owner_edit_bn": 0.0029294638575043416,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "A_spending_G2",
+      "selected_amount_bn": 1.0252374472976467,
+      "adult_owner_edit_bn": 0.07907129972563536,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "B_spending_G2",
+      "selected_amount_bn": -0.14884286070122352,
+      "adult_owner_edit_bn": -0.14884286070122352,
+      "scenario_scale": 1.0
+     }
+    ],
+    "item10_parts": [
+     {
+      "side": "receipt",
+      "selected_amount_bn": -0.05052498680555456,
+      "adult_owner_edit_bn": -0.05272673725931472,
+      "scenario_scale": 1.000000000000003
+     },
+     {
+      "side": "spending",
+      "selected_amount_bn": 0.1299226350802456,
+      "adult_owner_edit_bn": 0.1299226350802456,
+      "scenario_scale": 1.0
+     }
+    ],
+    "item10_source_sha256": "1dbc3555431ef071db0d43c1b41c5a7eac5b4abba869970dcdbd4ed8097399f7",
+    "rule": "undo generic cash-FIT/refund key allocation of P7 base/R6 and item10 credit changes; add source claimant/dependent age allocation; benefit-tax component untouched"
+   },
+   {
+    "end": "high",
+    "source_sha256": "11064bfabb6a916ac8bf53bec3bdb88b7e1460212fb2a76d219b220dd9ce4a90",
+    "generic_adult_share": {
+     "receipt": 0.9991331307586121,
+     "spending": 1.0
+    },
+    "adult_correction_bn": -13.088767876058023,
+    "conditional_sdr_se_bn": 0.7221972888703272,
+    "r6_parts": [
+     {
+      "component": "A_receipt_G2",
+      "selected_amount_bn": -0.4886480625807886,
+      "adult_owner_edit_bn": -0.036861863094967744,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "B_receipt_G2",
+      "selected_amount_bn": 0.1834938902982987,
+      "adult_owner_edit_bn": 0.1834938902982987,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "C_receipt_G2",
+      "selected_amount_bn": -0.0747453125669331,
+      "adult_owner_edit_bn": -0.011656452753430453,
+      "scenario_scale": 0.9999999999999998
+     },
+     {
+      "component": "Cr_receipt_G2",
+      "selected_amount_bn": 0.0029294638575043416,
+      "adult_owner_edit_bn": 0.0029294638575043416,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "A_spending_G2",
+      "selected_amount_bn": 1.0252374472976467,
+      "adult_owner_edit_bn": 0.07907129972563536,
+      "scenario_scale": 1.0
+     },
+     {
+      "component": "B_spending_G2",
+      "selected_amount_bn": -0.14884286070122352,
+      "adult_owner_edit_bn": -0.14884286070122352,
+      "scenario_scale": 1.0
+     }
+    ],
+    "item10_parts": [
+     {
+      "side": "receipt",
+      "selected_amount_bn": -0.05052498680555456,
+      "adult_owner_edit_bn": -0.05272673725931472,
+      "scenario_scale": 1.000000000000003
+     },
+     {
+      "side": "spending",
+      "selected_amount_bn": 0.1299226350802456,
+      "adult_owner_edit_bn": 0.1299226350802456,
+      "scenario_scale": 1.0
+     }
+    ],
+    "item10_source_sha256": "1dbc3555431ef071db0d43c1b41c5a7eac5b4abba869970dcdbd4ed8097399f7",
+    "rule": "undo generic cash-FIT/refund key allocation of P7 base/R6 and item10 credit changes; add source claimant/dependent age allocation; benefit-tax component untouched"
+   }
+  ],
+  "uncertainty": "conditional person allocation plus actual credit-owner age replicates; remaining national/generation totals fixed; excludes full fiscal-model uncertainty, parent misreporting and modeled coverage uncertainty"
+ }
+}

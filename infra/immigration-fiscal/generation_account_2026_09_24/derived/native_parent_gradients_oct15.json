@@ -1,0 +1,1406 @@
+{
+ "contract": "oct15 native parent full-case gradients v1",
+ "provenance": "[WORKTREE INPUT] exact final input hashes",
+ "convention": "b",
+ "historical_minor_share": 0.3364796386770656,
+ "fixes": [
+  "minors",
+  "credits",
+  "tags",
+  "state_prices"
+ ],
+ "production_rule": "aumann_shapley",
+ "source_sha256": {
+  "infra/immigration-fiscal/added_age_mix_2026_10_07/age_mix.py": "46576434bf7cc0fe47c886b90c43e6cb294d95a268952229a695b83114014a06",
+  "infra/immigration-fiscal/added_age_mix_2026_10_07/derived/band_lines.json": "a6be49b3aed84d20caec08a26ffb59d4096ae6da86a900972599efea9d90a346",
+  "infra/immigration-fiscal/added_age_mix_2026_10_07/derived/g3_age_keys.json": "9feb49b958510ffcb4b86e60cb2ea86f4f458c8a4d0b54a837d0b6308cb6df09",
+  "infra/immigration-fiscal/added_age_mix_2026_10_07/measure_loss.py": "47d3358f85335c1b2ee8eb3dfcd4e0d613de2e42e10848fe5630856dcf8b9d73",
+  "infra/immigration-fiscal/admin_tax_checks_2026_09_19/derived/group_components.csv": "93806bcf46edb47cdb80526edfd21f8aab3314fc8d77ca14a57d7f9e8456620a",
+  "infra/immigration-fiscal/assumption_explorer_2026_09_21/engine.js": "055e0503ea4d10ba040942c89d583f4853c5a80924f4ac1043c5f83772def491",
+  "infra/immigration-fiscal/build/meps_health_transport_2024.py": "8a3eda7a2fce7b27f2e4cb0aa865526d7c188893644c39b7693d05e6632fd587",
+  "infra/immigration-fiscal/build/paths.py": "f4148ed20555d4e2a5cc4d4c681fde205be3cb9b5a1e6bf29f7f0a58308750f3",
+  "infra/immigration-fiscal/build/public_mvp_io.py": "e3775ce460a8f47408a3fec96737e738f7077ab996c9316f119d123732b1fba5",
+  "infra/immigration-fiscal/california_medical_status_2026_09_23/cps_ca_status.py": "55c6b0e32b191e9a06a8a45a34d260edd44a144a75ad8757edb64b0ffbe5ea70",
+  "infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/oct15_base/lines.json": "fe1cd51f0f393f5f6b2ecad53952e05fe7d4b3dc15f728f9d718f44ee4adb003",
+  "infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/oct15_base/lines_cash.json": "74d9a08c4707556b4fbb6badbf665eda0fc67f094382b4b56992faff6fd95116",
+  "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_onbooks_lane.py": "c4c6e05b784b23da7985652f03cac13a1ce678a3cb3b33a0aeea9eebc3f3c42f",
+  "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/combine_status.py": "b69b1fdcb039910768c71ddfeacd2273eaebfe4db5cb04bf4da711b6cf3423c5",
+  "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/common.py": "490e3c38d191b47259595ee2eac6dbc0ff8361362fbfe5c204f5aece3b1506a6",
+  "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/hotdeck.py": "eb380679abf00e140c070d19d8ca9abe8900faa28e4003e73480699e79d15ac2",
+  "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/ipw.py": "fb6318da5aace1aeb0b8e718735b49f8a9494a22bcd209f88ece2296e19c11b8",
+  "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/run_hotdeck.py": "9f38fbdabebe33fa3687774cf2d9b6f1857f17a730674ba0e4fa220facda1903",
+  "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/taxcalc.py": "2b062e5575b8902150a16bd0bb8b5eb0a31717b9ae533295fdc4581d4b241cce",
+  "infra/immigration-fiscal/cps_imputation_keys_2026_09_23/translate.py": "0bed2558c39310b9c832c698dd1bcafa1285df2d3e3282b54d79df59d4ee9340",
+  "infra/immigration-fiscal/dataset_integrity_2026_09_23/_cache/acs_person_2023.parquet": "e378293a55a4845f489d4c40cec447134e53e90a1963f20f5bd4884480115f8c",
+  "infra/immigration-fiscal/dataset_integrity_2026_09_23/_cache/acs_person_2024.parquet": "7f8fa127db584862759cf1cf59bd14036e9788bea9d5300338527bf35e4f35d0",
+  "infra/immigration-fiscal/full_account_receipts_2026_09_20/derived/category_allocations.csv": "d9059d842778e373ad4dda5fe9b004b8ba88c81425c415a27653fd13c0d67447",
+  "infra/immigration-fiscal/g3_identity_pooled_2026_10_05/analyze.py": "3200a3499fcda7064be3ec987e386d10516cd4b26538c7eba928d0e1fbe1f479",
+  "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+  "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/state_parameters.csv": "00b0bb778861cc8406a04c8159938368146494965348d477e0514c4b0efccff2",
+  "infra/immigration-fiscal/generation_account_2026_09_24/_cache/asec25_generation.parquet": "664c67d7a4a33c1ed726acf9f0c7162671e6b1e137a4d64e6d75a6258529c452",
+  "infra/immigration-fiscal/generation_account_2026_09_24/age_routing.cjs": "f7742bbc46fcd3b44a6f08d3e3d5f15be29e0ef66a7230a67ffbf2b1641fad03",
+  "infra/immigration-fiscal/generation_account_2026_09_24/credit_routing.py": "7b196427f5ccd54609b77e1b960b0e60f1fcd9a16654ed9d451d48a63bc217ea",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/credit_replicates_oct15.json": "11064bfabb6a916ac8bf53bec3bdb88b7e1460212fb2a76d219b220dd9ce4a90",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/credit_routing.json": "806ca072824be95968b4750585e1b7a1028c6e8232cf1685e80b1d89e250b00d",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_corrections_sept29.json": "818adc1715640818ff799e2b20e871d569639e6c635c40c4edf032ed54c7dbfc",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_corrections_sept29_cash.json": "50c3500e2a5484e77b918f192a3f8a631459535e105ca7deb4047f5a617f4677",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_key_shares.json": "6b76a90b3d6ec3a701a2272afed4afd3151906b1f13b694b13fa69987c7e19d9",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_keys.csv": "a9b02c55bbe5778716aa24d1f60eb81074c17a34b68fc19c91a815a7c065568f",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_state_indexes.json": "f489153af4e277d21aa0c28a9cde66b1b054386f187c95841a1afebee504c21f",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_G1.json": "8a5dc446fcd52cd46f8e0c81c88afae4a4f5bedf9978831b934b6ee1c2a5a50f",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_G2.json": "14ff14a27f6f2118624effc63b49b564db5271d52058d9200380f90d3ba67c67",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_G3plus.json": "31435455243c290248b569a340276ab0f58aac67533e5b17602db62f956ac33e",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_b_G1.json": "edd5fc7c1d1ff680422c8d40176559bd6abee2dc94ef1cff683cf316ad730e97",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_b_G2.json": "369ffe88b428098d677b349eeedb134c4a631f8cae5844a191525f12ce236784",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_b_G3plus.json": "1ef7691420e2376da8f4af022661d1f1eaff7c3d663c8c264b1ae3ed7ca4046f",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/stack_by_generation.json": "35039234a00eee6e7e08d2ab920ab40d369b542adc4b3eaac90f4d7d8a0404f1",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/union_credit_age_oct15.json": "1dbc3555431ef071db0d43c1b41c5a7eac5b4abba869970dcdbd4ed8097399f7",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/v4_inputs.json": "31a77369be8beb73869387f2eecb1f84a27daa251944b369df803c6eeb52126c",
+  "infra/immigration-fiscal/generation_account_2026_09_24/frame.py": "455c80718f27fefdf07489cf22a29625767c731c6a629733827a2f4a773c2c1c",
+  "infra/immigration-fiscal/generation_account_2026_09_24/inputs/baseline.json": "bf2fc44f7bad16a2c47824212c8499438647ba909975b78f56a38f22c4891e0b",
+  "infra/immigration-fiscal/generation_account_2026_09_24/inputs/case_final_oct15.txt": "49fd2a709eb872a723620c5b79aabbfc6c8fda0fc64421155fd0756eed3b93be",
+  "infra/immigration-fiscal/generation_account_2026_09_24/inputs/credit_pins.json": "ef1a916c350a7e9673e62507135e2e5c570e91f2f30a78c4e472bd6401d5f4f9",
+  "infra/immigration-fiscal/generation_account_2026_09_24/inputs/minor_parent_measurement_oct15.json": "29d78bbcff60cd900eaf8a93fd4e945242074cb1616fe0658e37d565284a2552",
+  "infra/immigration-fiscal/generation_account_2026_09_24/inputs/pins.json": "55d90442e5c36df678b185ddcdbab6c517970beddc6f142e38238baef8e97c83",
+  "infra/immigration-fiscal/generation_account_2026_09_24/inputs/routing.json": "ee64de0f418b24ce3faba48f4927576fe43338c62444e1a45c62090f991252a2",
+  "infra/immigration-fiscal/generation_account_2026_09_24/inputs/state_pins.json": "89985a48e7e0d872cedcbd6bb66c56ae016033de86fae54dd8f672673a8cb891",
+  "infra/immigration-fiscal/generation_account_2026_09_24/keys.py": "20992d3a390987825da075394145ee84a865243338f0a347d936fe4875959468",
+  "infra/immigration-fiscal/generation_account_2026_09_24/measure_minor_parents_v8.py": "d4547d7f44e5e720c02bd208eb8580881a3206ca019f2a274090d2bcaa59e9f9",
+  "infra/immigration-fiscal/generation_account_2026_09_24/native_parent_gradients_v8.cjs": "8f01bd843cf8fba0c2f34e70a33e8da6ddff6007eacae1844f119d0c35964bb9",
+  "infra/immigration-fiscal/generation_account_2026_09_24/state_price_routing.py": "c9c7b0cd8d159671f60f7fcb2c1c86644a93e17c99cdb242d5c1232eeac4cb25",
+  "infra/immigration-fiscal/generation_account_2026_09_24/union_credit_age_v8.py": "2e762582ef50fbb83928a09a9c1f978703fcba8bc51f97975e5d3430db80fbb9",
+  "infra/immigration-fiscal/generation_account_2026_09_24/v4_split.cjs": "613b49cd746189d1c1db43702fb71d8c0ac118d5755b157306da09be78451d2f",
+  "infra/immigration-fiscal/generation_account_2026_09_24/v5_split.cjs": "9edf433eae10df6897d8abce551ec50da931bedfeaac18026c764971f99d49f4",
+  "infra/immigration-fiscal/generation_account_2026_09_24/v6_split.cjs": "f1317f7dc7dacac29a43e909dc16f539f4f2b4d53e2639d505066023b9e953fc",
+  "infra/immigration-fiscal/generation_account_2026_09_24/v7_split.cjs": "23b2f68aa38937cc4d57a19a5f9480c2918bff03179c284481df5afbd9e79e39",
+  "infra/immigration-fiscal/generation_account_2026_09_24/v8_split.cjs": "e4232cf9aa193f0c85dfa9f4db31142c0da2566a6f0f3f3e2912db0783ba388a",
+  "infra/immigration-fiscal/identity_loss_propagation_2026_09_27/propagate.py": "28056a6e3a24d8e474120ddee7d84ee0b60390d75def6576af8f05e29d9176c1",
+  "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922",
+  "infra/immigration-fiscal/macro_closure_2026_09_19/_cache/finance_2024_state_combined.json": "e5e0b320c1125fcfb67e8243b4a5fb1ccbcc52fddefea2f75e6a706a24cb736c",
+  "infra/immigration-fiscal/macro_closure_2026_09_19/_cache/finance_2024_us_combined.json": "85c4d95d3216c882240b034846e938dfb1a7cf39a7a1c68243680b7c6fd6f068",
+  "infra/immigration-fiscal/macro_closure_2026_09_19/census_sources.json": "9e6f9a31bd36fe08b577e5e9f264c9835d54e47902d85f3250310e6948f0bb80",
+  "infra/immigration-fiscal/macro_closure_2026_09_19/finance_vintage.py": "ab018214a7d8b00baa7cd9adc806245cba26ad98bd555f9bae4111dfe77d8e3d",
+  "infra/immigration-fiscal/main_case_2026_09_24/package.cjs": "be7b3a1cec727122bc1396008e5f7d2dc6fd4de71f675bdce1b312863b5f4907",
+  "infra/immigration-fiscal/main_case_2026_09_26/package.cjs": "2c2f13545f4241f5a632a14d5bb543ea03034c384b103a54d7e3a986e998541a",
+  "infra/immigration-fiscal/main_case_2026_09_29/package.cjs": "57ea6f9ebbf17244515a5aa6a0a6272007fd5c94237fdac7ea9799061ac994f0",
+  "infra/immigration-fiscal/main_case_2026_10_05/package.cjs": "17f9e22bbc727e4b76e1df2906d614b9028a2819ffafc120511916f16d90ea0a",
+  "infra/immigration-fiscal/main_case_2026_10_07/item_age_mix.cjs": "6f94386fe460afca36a732982848d0345e96755ee8469fbc481569b7a555c7b5",
+  "infra/immigration-fiscal/main_case_2026_10_07/item_user_fees.cjs": "ed1c8c203ebd44e5f1c5fe8db2876d8e465352f2486825ce6d3be75a03cb7116",
+  "infra/immigration-fiscal/main_case_2026_10_07/lineage_count.cjs": "1fba05c2b5b868f07654e05c92cfeb4534ce1971fb5ad8a7dffb61171d03ba1d",
+  "infra/immigration-fiscal/main_case_2026_10_07/package.cjs": "a7003f087c2a0d4cfa399f8cb7afd3d8b27cf1e41669032e8c2273463928e275",
+  "infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958",
+  "infra/immigration-fiscal/main_case_2026_10_14/derived/corrections_cash.json": "581701613b7f3c8086437100334e3818ebe062dc57e2e486f14897208b05de97",
+  "infra/immigration-fiscal/main_case_2026_10_14/item_child_credits.cjs": "82007b4d94712f344ac72b2a6228bf6470c34c1f3296a45ca5cb5a46b41bd077",
+  "infra/immigration-fiscal/main_case_2026_10_14/item_job_capital.cjs": "69d93ef3bae160bee3986ddd6920d7bfa9f83fca61f725440fb2efe0e4626f2d",
+  "infra/immigration-fiscal/main_case_2026_10_14/item_row4.cjs": "c81c45825382a973f4fde10bebe6a4100114e5e0b14283f115cd5e038e8a66f2",
+  "infra/immigration-fiscal/main_case_2026_10_14/package.cjs": "ec00d49b40c118e61d2a6543ad21a54021b6364ebf49e0e4b3a97260fa3cc907",
+  "infra/immigration-fiscal/main_case_2026_10_14/sources.cjs": "19bdae6f3654002e18ce36b7576c2342e070fec8b9dc62eb3cc2b42dd9d3f041",
+  "infra/immigration-fiscal/main_case_2026_10_15/child_records.cjs": "821fad331f969f88f89b8666486612d52c56c994b52f2c8cd961d11607462d1b",
+  "infra/immigration-fiscal/main_case_2026_10_15/coverage.cjs": "ddc8beae4caa14353fd031741c2e1df33762f39eff8285d2d22782c12b355e81",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections.json": "08229ee9409c48820002cc2b0831968f7c1d6066b078be9e7303922d788793c7",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections_cash.json": "b88998981a07591cc3b28307eac929d857fe0cc7d1edc0aa3821195221ff9439",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/main_case_bands.csv": "050f2bcc04ae2835386706feea4af0f020b0b2ba6c6d6c49e3557a4d46b02cb3",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/summary.json": "3f7bcd56a7de8e7b1f253b640fab3135ce93fc420f73de5251611d0472127f04",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/union_people.json": "47aa2d549f937f37d14d5a078fed8e6bbf5c6eb1d18aea5f5c9c0fdc5a1a6470",
+  "infra/immigration-fiscal/main_case_2026_10_15/item_foreign.cjs": "015c3ba0a32b8982733583134a8549d701ccf6012cb94430f3b0f91eec7b8a58",
+  "infra/immigration-fiscal/main_case_2026_10_15/item_mixed.cjs": "3d156ec3931edec56a662e0fa135b120d686867a997d69f43aefa60419b47f97",
+  "infra/immigration-fiscal/main_case_2026_10_15/item_union.cjs": "cea17e43b89c9b104890362d1d57baefa84b23cf33d95a2c0b5a5abfc4dff2a5",
+  "infra/immigration-fiscal/main_case_2026_10_15/package.cjs": "aa220e35714d0d3bd0360e3e5b8c84117aecdcd7d20329aed7d7b7b8e3c87d39",
+  "infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+  "infra/immigration-fiscal/main_case_candidate_2026_09_28/package.cjs": "ed7f3dc5d8d9cb2728a3ceca6c3dffbdb86083c147c6f6a153baad0c5ebd1ca5",
+  "infra/immigration-fiscal/main_case_candidate_v2_2026_09_28/package.cjs": "029cf65a0ec698f2786c30da06892ff2584c28ec5ad91c30124250550f30d3b8",
+  "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/package.cjs": "8896705eab97ec3e6e177948cbd8003e09fc444aa0e3d59ca24a9cb1e5b17f72",
+  "infra/immigration-fiscal/main_case_candidate_v4_2026_09_29/consumer.cjs": "be7f08a1ff40e1dc0f39fd29d8d2c5db81761729031ac29e618ada87a2bf59a7",
+  "infra/immigration-fiscal/main_case_candidate_v4_2026_09_29/package.cjs": "47dbc843a870cfa1461fcd7d8e8d8f765239189ef420468e1caf35effc74d68b",
+  "infra/immigration-fiscal/main_case_candidate_v4_2026_09_29/payload.cjs": "7df5f6408a49895b757b6446e4e8aef12cf95224a137c1c266330a565035d959",
+  "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/age_bins.csv": "73785096958005ddb334846c297e10b0696abb91e266e0971f320ec7a3c15664",
+  "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/headcount.csv": "a40d606e42c931782358da8d7ca8a8dad28fffa5f4aa9af59da5a14a0631273e",
+  "infra/immigration-fiscal/main_case_lineage_2026_10_05/derived/population.json": "3d4ba08461260a8419ca5c7933e3c69d9ee2dd3bea1c2d3b238addacb0159468",
+  "infra/immigration-fiscal/main_case_lineage_2026_10_05/population.py": "680ea019c1086a12308226bfcee7e3a7df1abb3a6c0f932882176bb6418d95d5",
+  "infra/immigration-fiscal/main_case_long_run_2026_09_27/package.cjs": "b4f22b35371c715771d8e53436acfc6320c214ab5abf686714020eb2c8fe2a7a",
+  "infra/immigration-fiscal/main_case_schools_full_2026_09_26/package.cjs": "d8c5b71d3887459e232442cca458b329b8ee60885ae1ae33bb2f2910b135deb4",
+  "infra/immigration-fiscal/mexborn_count_2026_09_23/derived/annual_series.csv": "91bd1f987621e9d8956130d8962ae7b5d3c51e1490371121023689b7b53dadb6",
+  "infra/immigration-fiscal/mexican_origin_population_total_2026_09_19/bounds_coverage_fiscal.py": "93caf05691c8e300932e05eeecc3960756e4f9a280466333bef9b7473015fe35",
+  "infra/immigration-fiscal/mexican_origin_population_total_2026_09_19/dt_replication.py": "91de624c398f8272b72fb0f731ea5ac646e878c14d2908d463108437a3e94929",
+  "infra/immigration-fiscal/receipt_side_long_run_2026_09_28/derived/states.csv": "6ddb2c0156119aa0149dfde5f872e6638fd5c93bbecbb9cbd488a527551dcafb",
+  "infra/immigration-fiscal/receipt_side_long_run_2026_09_28/items.cjs": "b8a88b3aa38f0990ca2c3f1b5ef51d42b306ead1894d2d29b5816909dd7aec23",
+  "infra/immigration-fiscal/school_enrollment_2026_09_20/derived/national_rates.csv": "baf3e4f6a20a20f8d5a71c8a9930e6588ac47d70fb82d1e3e8557056c9c2272f",
+  "infra/immigration-fiscal/school_enrollment_2026_09_20/measurement.py": "ca273a066357c6a2636d8cd8ea2ef5591b9995222f695f1c8e9bb94a08f12529",
+  "infra/immigration-fiscal/scripts/memory_budget.py": "52fcbf8baa838a0cfe67b8355ccc2186eda143e53230010e94ac36909348589f",
+  "infra/immigration-fiscal/status_impute_2026_09_16/impute_status.py": "68dc38e36735e49aeee8d2a7fc0806f3756ee053504596a003efb950c8a6429c",
+  "infra/immigration-fiscal/union_completion_2026_10_14/completion.py": "672038bbae3ec4760d00e1b6bc96de56719e79f35d0bc8b42132b100552b3319",
+  "infra/immigration-fiscal/union_completion_2026_10_14/derived/added_band_prices.json": "58ae4a2eb332936e9285a1aacd38269bd33664722ec9dbe43e8f559f9bf58fcc",
+  "infra/immigration-fiscal/union_completion_2026_10_14/job_record_key.py": "87d641e0d4f520176d5080e0797b39e177e46a43893bf898ebd541e3732d53fe",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct14/shared_allocation/lines.json": "598307741c88d1d483044916e72f684cd8a2a250acfbad00276c50d097b08975",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct15/completion_jobs.json": "2719484192ef313c8708e1d80540cdb3efa4126a2ddce7f0766fe0b8d10de235",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct15/completion_jobs.npz": "9b705b349785c176dbfd507201e0e304f4b7d51e8d1cc48e667c0e1de3389a89",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/sept29/person_accrual.parquet": "30e3499e847aee10b2b3a6105bdb0ab3c3a038bf4ea814a98e232d1ea3760ad0",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/completion_keys.py": "28c09b54e4f8a252c8ce2dbfba1891ec49efed80342f744ec85e2b2207f36157",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/derived/reporter_b_inputs.json": "284d67f5ca8b3df8ac8cb876ebe5e811933fa5f782a9d40ef23ce51e018688fb",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/derived/reporter_b_routes.json": "60d9a8a898eb7e163207953dfc038a9d9f3baa30b7fd6335ccf7875e5db13965",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/derived/sept29/person_accrual_model.json": "46e6f06d5cf19a1bf405a099ed89dba8a8df54f75e2361251f2e6a66e8ef8b72",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py": "08b13cca82fc915a2b1d8069efb9efe4c47181d17f30c3894ed9aa7c6453ccbe",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/inputs/reporter_b_base_models.json": "48eda3936254652e48ccec2c2d72fac4621937376a7c762aef93c66f4b21ea77",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/reporter_b_inputs.cjs": "54f1ecc3bc2fcaa4a9cdca76f3601386158dc28e05513b1da32467bb1909d8bc",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/reporter_b_routes.py": "e934c2a113ed558331ac92c2c39ff79cb349d26d9d3fd224596064b33f47d65d"
+ },
+ "sets": {
+  "set": {
+   "specifications": {
+    "low": 16,
+    "high": 11
+   },
+   "central_cost_bn": {
+    "low": {
+     "G1": 155.3827183385127,
+     "G2": 100.65654576151265,
+     "G3plus": 112.95167015533889
+    },
+    "high": {
+     "G1": 186.4427109578332,
+     "G2": 127.51474749526268,
+     "G3plus": 145.24541828982723
+    }
+   },
+   "state_price_rule": "[ASSUMPTION] G3plus state weights proxy for added geography; joint centering preserves adopted case total",
+   "by_rate_class": {
+    "g3_rate": {
+     "0": {
+      "low": {
+       "G1": 0,
+       "G2": 0.0000014623599469132387,
+       "G3plus": -0.0000014623599895458028
+      },
+      "high": {
+       "G1": 0,
+       "G2": 0.000002241742578235062,
+       "G3plus": -0.000002241742635078481
+      }
+     },
+     "1": {
+      "low": {
+       "G1": 0,
+       "G2": 0.00001967054708984506,
+       "G3plus": -0.000019670547118266768
+      },
+      "high": {
+       "G1": 0,
+       "G2": 0.00002097620570395975,
+       "G3plus": -0.000020976205661327185
+      }
+     },
+     "2": {
+      "low": {
+       "G1": 0,
+       "G2": 0.00001977827830046408,
+       "G3plus": -0.00001977827838572921
+      },
+      "high": {
+       "G1": 0,
+       "G2": 0.000021099639809563087,
+       "G3plus": -0.000021099639837984796
+      }
+     },
+     "3": {
+      "low": {
+       "G1": 0,
+       "G2": 0.000014438332883059957,
+       "G3plus": -0.000014438332868849102
+      },
+      "high": {
+       "G1": 0,
+       "G2": 0.000015850983615450787,
+       "G3plus": -0.000015850983515974804
+      }
+     }
+    },
+    "later": {
+     "0": {
+      "low": {
+       "G1": 0,
+       "G2": 0.000005783836897421679,
+       "G3plus": -0.000005783836911632534
+      },
+      "high": {
+       "G1": 0,
+       "G2": 0.000006748769592945791,
+       "G3plus": -0.000006748769550313227
+      }
+     },
+     "1": {
+      "low": {
+       "G1": 0,
+       "G2": 0.0000257874863507368,
+       "G3plus": -0.000025787486208628252
+      },
+      "high": {
+       "G1": 0,
+       "G2": 0.000027293299780239977,
+       "G3plus": -0.000027293299723396558
+      }
+     },
+     "3": {
+      "low": {
+       "G1": 0,
+       "G2": 0.00002047822718509451,
+       "G3plus": -0.00002047822718509451
+      },
+      "high": {
+       "G1": 0,
+       "G2": 0.000021959820074357594,
+       "G3plus": -0.00002195982006014674
+      }
+     }
+    }
+   },
+   "gradients": [
+    {
+     "rate_class": "g3_rate",
+     "age_band": 0,
+     "source_people": 10374.3943467,
+     "central_G2_equivalents": 10374.3943467,
+     "perturbation_people": -1,
+     "two_person_linearity_probe": true,
+     "by_end": {
+      "low": {
+       "specification": 16,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.0000014623599469132387,
+        "G3plus": -0.0000014623599895458028
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 1462.3599469132387,
+        "G3plus": -1462.3599895458028
+       }
+      },
+      "high": {
+       "specification": 11,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000002241742578235062,
+        "G3plus": -0.000002241742635078481
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 2241.742578235062,
+        "G3plus": -2241.742635078481
+       }
+      }
+     }
+    },
+    {
+     "rate_class": "g3_rate",
+     "age_band": 1,
+     "source_people": 14552.4192229,
+     "central_G2_equivalents": 14552.4192229,
+     "perturbation_people": -1,
+     "two_person_linearity_probe": true,
+     "by_end": {
+      "low": {
+       "specification": 16,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.00001967054708984506,
+        "G3plus": -0.000019670547118266768
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 19670.54708984506,
+        "G3plus": -19670.547118266768
+       }
+      },
+      "high": {
+       "specification": 11,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.00002097620570395975,
+        "G3plus": -0.000020976205661327185
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 20976.20570395975,
+        "G3plus": -20976.205661327185
+       }
+      }
+     }
+    },
+    {
+     "rate_class": "g3_rate",
+     "age_band": 2,
+     "source_people": 7160.8178338,
+     "central_G2_equivalents": 7160.8178338,
+     "perturbation_people": -1,
+     "two_person_linearity_probe": true,
+     "by_end": {
+      "low": {
+       "specification": 16,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.00001977827830046408,
+        "G3plus": -0.00001977827838572921
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 19778.27830046408,
+        "G3plus": -19778.27838572921
+       }
+      },
+      "high": {
+       "specification": 11,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000021099639809563087,
+        "G3plus": -0.000021099639837984796
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 21099.639809563087,
+        "G3plus": -21099.639837984796
+       }
+      }
+     }
+    },
+    {
+     "rate_class": "g3_rate",
+     "age_band": 3,
+     "source_people": 6501.5874142,
+     "central_G2_equivalents": 6501.5874142,
+     "perturbation_people": -1,
+     "two_person_linearity_probe": true,
+     "by_end": {
+      "low": {
+       "specification": 16,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000014438332883059957,
+        "G3plus": -0.000014438332868849102
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 14438.332883059957,
+        "G3plus": -14438.332868849102
+       }
+      },
+      "high": {
+       "specification": 11,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000015850983615450787,
+        "G3plus": -0.000015850983515974804
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 15850.983615450787,
+        "G3plus": -15850.983515974804
+       }
+      }
+     }
+    },
+    {
+     "rate_class": "later",
+     "age_band": 0,
+     "source_people": 12564.798315,
+     "central_G2_equivalents": 0,
+     "perturbation_people": 1,
+     "two_person_linearity_probe": true,
+     "by_end": {
+      "low": {
+       "specification": 16,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000005783836897421679,
+        "G3plus": -0.000005783836911632534
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 5783.836897421679,
+        "G3plus": -5783.836911632534
+       }
+      },
+      "high": {
+       "specification": 11,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000006748769592945791,
+        "G3plus": -0.000006748769550313227
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 6748.769592945791,
+        "G3plus": -6748.769550313227
+       }
+      }
+     }
+    },
+    {
+     "rate_class": "later",
+     "age_band": 1,
+     "source_people": 4586.2554251,
+     "central_G2_equivalents": 0,
+     "perturbation_people": 1,
+     "two_person_linearity_probe": true,
+     "by_end": {
+      "low": {
+       "specification": 16,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.0000257874863507368,
+        "G3plus": -0.000025787486208628252
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 25787.4863507368,
+        "G3plus": -25787.486208628252
+       }
+      },
+      "high": {
+       "specification": 11,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000027293299780239977,
+        "G3plus": -0.000027293299723396558
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 27293.299780239977,
+        "G3plus": -27293.299723396558
+       }
+      }
+     }
+    },
+    {
+     "rate_class": "later",
+     "age_band": 3,
+     "source_people": 4759.6069077,
+     "central_G2_equivalents": 0,
+     "perturbation_people": 1,
+     "two_person_linearity_probe": true,
+     "by_end": {
+      "low": {
+       "specification": 16,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.00002047822718509451,
+        "G3plus": -0.00002047822718509451
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 20478.22718509451,
+        "G3plus": -20478.22718509451
+       }
+      },
+      "high": {
+       "specification": 11,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000021959820074357594,
+        "G3plus": -0.00002195982006014674
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 21959.820074357594,
+        "G3plus": -21959.82006014674
+       }
+      }
+     }
+    }
+   ]
+  },
+  "cash": {
+   "specifications": {
+    "low": 16,
+    "high": 11
+   },
+   "central_cost_bn": {
+    "low": {
+     "G1": 139.97288043289439,
+     "G2": 62.78768015495235,
+     "G3plus": 82.19100708810505
+    },
+    "high": {
+     "G1": 171.03287305221497,
+     "G2": 89.64588188870238,
+     "G3plus": 114.48475522259318
+    }
+   },
+   "state_price_rule": "[ASSUMPTION] G3plus state weights proxy for added geography; joint centering preserves adopted case total",
+   "by_rate_class": {
+    "g3_rate": {
+     "0": {
+      "low": {
+       "G1": 0,
+       "G2": 0.0000014657485962743522,
+       "G3plus": -0.0000014657485678526427
+      },
+      "high": {
+       "G1": 0,
+       "G2": 0.000002245131256017885,
+       "G3plus": -0.000002245131298650449
+      }
+     },
+     "1": {
+      "low": {
+       "G1": 0,
+       "G2": 0.000019676763173492873,
+       "G3plus": -0.000019676763187703727
+      },
+      "high": {
+       "G1": 0,
+       "G2": 0.000020982421730764145,
+       "G3plus": -0.00002098242177339671
+      }
+     },
+     "2": {
+      "low": {
+       "G1": 0,
+       "G2": 0.000019779157945265524,
+       "G3plus": -0.000019779157995003516
+      },
+      "high": {
+       "G1": 0,
+       "G2": 0.000021100519489891667,
+       "G3plus": -0.000021100519546735086
+      }
+     },
+     "3": {
+      "low": {
+       "G1": 0,
+       "G2": 0.000014265081347275554,
+       "G3plus": -0.000014265081318853845
+      },
+      "high": {
+       "G1": 0,
+       "G2": 0.000015677732108088094,
+       "G3plus": -0.000015677731994401256
+      }
+     }
+    },
+    "later": {
+     "0": {
+      "low": {
+       "G1": 0,
+       "G2": 0.00000578576203480452,
+       "G3plus": -0.000005785762112964221
+      },
+      "high": {
+       "G1": 0,
+       "G2": 0.00000675069470901235,
+       "G3plus": -0.000006750694637958077
+      }
+     },
+     "1": {
+      "low": {
+       "G1": 0,
+       "G2": 0.00002578947371034701,
+       "G3plus": -0.00002578947371034701
+      },
+      "high": {
+       "G1": 0,
+       "G2": 0.00002729528711142848,
+       "G3plus": -0.00002729528705458506
+      }
+     },
+     "3": {
+      "low": {
+       "G1": 0,
+       "G2": 0.000020375616841761257,
+       "G3plus": -0.000020375616813339548
+      },
+      "high": {
+       "G1": 0,
+       "G2": 0.000021857209688391777,
+       "G3plus": -0.000021857209645759212
+      }
+     }
+    }
+   },
+   "gradients": [
+    {
+     "rate_class": "g3_rate",
+     "age_band": 0,
+     "source_people": 10374.3943467,
+     "central_G2_equivalents": 10374.3943467,
+     "perturbation_people": -1,
+     "two_person_linearity_probe": true,
+     "by_end": {
+      "low": {
+       "specification": 16,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.0000014657485962743522,
+        "G3plus": -0.0000014657485678526427
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 1465.7485962743522,
+        "G3plus": -1465.7485678526427
+       }
+      },
+      "high": {
+       "specification": 11,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000002245131256017885,
+        "G3plus": -0.000002245131298650449
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 2245.131256017885,
+        "G3plus": -2245.131298650449
+       }
+      }
+     }
+    },
+    {
+     "rate_class": "g3_rate",
+     "age_band": 1,
+     "source_people": 14552.4192229,
+     "central_G2_equivalents": 14552.4192229,
+     "perturbation_people": -1,
+     "two_person_linearity_probe": true,
+     "by_end": {
+      "low": {
+       "specification": 16,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000019676763173492873,
+        "G3plus": -0.000019676763187703727
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 19676.763173492873,
+        "G3plus": -19676.763187703727
+       }
+      },
+      "high": {
+       "specification": 11,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000020982421730764145,
+        "G3plus": -0.00002098242177339671
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 20982.421730764145,
+        "G3plus": -20982.42177339671
+       }
+      }
+     }
+    },
+    {
+     "rate_class": "g3_rate",
+     "age_band": 2,
+     "source_people": 7160.8178338,
+     "central_G2_equivalents": 7160.8178338,
+     "perturbation_people": -1,
+     "two_person_linearity_probe": true,
+     "by_end": {
+      "low": {
+       "specification": 16,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000019779157945265524,
+        "G3plus": -0.000019779157995003516
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 19779.157945265524,
+        "G3plus": -19779.157995003516
+       }
+      },
+      "high": {
+       "specification": 11,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000021100519489891667,
+        "G3plus": -0.000021100519546735086
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 21100.519489891667,
+        "G3plus": -21100.519546735086
+       }
+      }
+     }
+    },
+    {
+     "rate_class": "g3_rate",
+     "age_band": 3,
+     "source_people": 6501.5874142,
+     "central_G2_equivalents": 6501.5874142,
+     "perturbation_people": -1,
+     "two_person_linearity_probe": true,
+     "by_end": {
+      "low": {
+       "specification": 16,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000014265081347275554,
+        "G3plus": -0.000014265081318853845
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 14265.081347275554,
+        "G3plus": -14265.081318853845
+       }
+      },
+      "high": {
+       "specification": 11,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000015677732108088094,
+        "G3plus": -0.000015677731994401256
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 15677.732108088094,
+        "G3plus": -15677.731994401256
+       }
+      }
+     }
+    },
+    {
+     "rate_class": "later",
+     "age_band": 0,
+     "source_people": 12564.798315,
+     "central_G2_equivalents": 0,
+     "perturbation_people": 1,
+     "two_person_linearity_probe": true,
+     "by_end": {
+      "low": {
+       "specification": 16,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.00000578576203480452,
+        "G3plus": -0.000005785762112964221
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 5785.76203480452,
+        "G3plus": -5785.762112964221
+       }
+      },
+      "high": {
+       "specification": 11,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.00000675069470901235,
+        "G3plus": -0.000006750694637958077
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 6750.69470901235,
+        "G3plus": -6750.694637958077
+       }
+      }
+     }
+    },
+    {
+     "rate_class": "later",
+     "age_band": 1,
+     "source_people": 4586.2554251,
+     "central_G2_equivalents": 0,
+     "perturbation_people": 1,
+     "two_person_linearity_probe": true,
+     "by_end": {
+      "low": {
+       "specification": 16,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.00002578947371034701,
+        "G3plus": -0.00002578947371034701
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 25789.47371034701,
+        "G3plus": -25789.47371034701
+       }
+      },
+      "high": {
+       "specification": 11,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.00002729528711142848,
+        "G3plus": -0.00002729528705458506
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 27295.28711142848,
+        "G3plus": -27295.28705458506
+       }
+      }
+     }
+    },
+    {
+     "rate_class": "later",
+     "age_band": 3,
+     "source_people": 4759.6069077,
+     "central_G2_equivalents": 0,
+     "perturbation_people": 1,
+     "two_person_linearity_probe": true,
+     "by_end": {
+      "low": {
+       "specification": 16,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000020375616841761257,
+        "G3plus": -0.000020375616813339548
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 20375.616841761257,
+        "G3plus": -20375.616813339548
+       }
+      },
+      "high": {
+       "specification": 11,
+       "bn_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 0.000021857209688391777,
+        "G3plus": -0.000021857209645759212
+       },
+       "usd_per_G2_equivalent_person": {
+        "G1": 0,
+        "G2": 21857.209688391777,
+        "G3plus": -21857.209645759212
+       }
+      }
+     }
+    }
+   ]
+  }
+ },
+ "gates": [
+  {
+   "name": "set final coverage present",
+   "passed": true
+  },
+  {
+   "name": "set original split base equals case base",
+   "passed": true
+  },
+  {
+   "name": "set exact personal ends",
+   "passed": true
+  },
+  {
+   "name": "set/low central generations close case",
+   "passed": true
+  },
+  {
+   "name": "set/high central generations close case",
+   "passed": true
+  },
+  {
+   "name": "set/g3_rate/0/low opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.0000014623599469132387,
+    "G3plus": -0.0000014623599895458028
+   }
+  },
+  {
+   "name": "set/g3_rate/0/low two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 4.263256414560601e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "set/g3_rate/0/high opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000002241742578235062,
+    "G3plus": -0.000002241742635078481
+   }
+  },
+  {
+   "name": "set/g3_rate/0/high two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 2.842170943040401e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "set/g3_rate/1/low opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.00001967054708984506,
+    "G3plus": -0.000019670547118266768
+   }
+  },
+  {
+   "name": "set/g3_rate/1/low two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 3.552713678800501e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "set/g3_rate/1/high opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.00002097620570395975,
+    "G3plus": -0.000020976205661327185
+   }
+  },
+  {
+   "name": "set/g3_rate/1/high two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 7.105427357601002e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "set/g3_rate/2/low opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.00001977827830046408,
+    "G3plus": -0.00001977827838572921
+   }
+  },
+  {
+   "name": "set/g3_rate/2/low two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 6.394884621840902e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "set/g3_rate/2/high opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000021099639809563087,
+    "G3plus": -0.000021099639837984796
+   }
+  },
+  {
+   "name": "set/g3_rate/2/high two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 1.4210854715202004e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "set/g3_rate/3/low opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000014438332883059957,
+    "G3plus": -0.000014438332868849102
+   }
+  },
+  {
+   "name": "set/g3_rate/3/low two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 8.526512829121202e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "set/g3_rate/3/high opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000015850983615450787,
+    "G3plus": -0.000015850983515974804
+   }
+  },
+  {
+   "name": "set/g3_rate/3/high two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 7.105427357601002e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "set/later/0/low opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000005783836897421679,
+    "G3plus": -0.000005783836911632534
+   }
+  },
+  {
+   "name": "set/later/0/low two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 9.947598300641403e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "set/later/0/high opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000006748769592945791,
+    "G3plus": -0.000006748769550313227
+   }
+  },
+  {
+   "name": "set/later/0/high two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 5.684341886080802e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "set/later/1/low opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.0000257874863507368,
+    "G3plus": -0.000025787486208628252
+   }
+  },
+  {
+   "name": "set/later/1/low two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 8.526512829121202e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "set/later/1/high opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000027293299780239977,
+    "G3plus": -0.000027293299723396558
+   }
+  },
+  {
+   "name": "set/later/1/high two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 3.552713678800501e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "set/later/3/low opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.00002047822718509451,
+    "G3plus": -0.00002047822718509451
+   }
+  },
+  {
+   "name": "set/later/3/low two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 6.394884621840902e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "set/later/3/high opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000021959820074357594,
+    "G3plus": -0.00002195982006014674
+   }
+  },
+  {
+   "name": "set/later/3/high two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 4.263256414560601e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "set stage source hashes unchanged",
+   "passed": true
+  },
+  {
+   "name": "cash final coverage present",
+   "passed": true
+  },
+  {
+   "name": "cash original split base equals case base",
+   "passed": true
+  },
+  {
+   "name": "cash exact personal ends",
+   "passed": true
+  },
+  {
+   "name": "cash/low central generations close case",
+   "passed": true
+  },
+  {
+   "name": "cash/high central generations close case",
+   "passed": true
+  },
+  {
+   "name": "cash/g3_rate/0/low opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.0000014657485962743522,
+    "G3plus": -0.0000014657485678526427
+   }
+  },
+  {
+   "name": "cash/g3_rate/0/low two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 6.039613253960852e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "cash/g3_rate/0/high opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000002245131256017885,
+    "G3plus": -0.000002245131298650449
+   }
+  },
+  {
+   "name": "cash/g3_rate/0/high two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 5.684341886080802e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "cash/g3_rate/1/low opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000019676763173492873,
+    "G3plus": -0.000019676763187703727
+   }
+  },
+  {
+   "name": "cash/g3_rate/1/low two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 6.750155989720952e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "cash/g3_rate/1/high opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000020982421730764145,
+    "G3plus": -0.00002098242177339671
+   }
+  },
+  {
+   "name": "cash/g3_rate/1/high two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 4.263256414560601e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "cash/g3_rate/2/low opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000019779157945265524,
+    "G3plus": -0.000019779157995003516
+   }
+  },
+  {
+   "name": "cash/g3_rate/2/low two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 3.552713678800501e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "cash/g3_rate/2/high opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000021100519489891667,
+    "G3plus": -0.000021100519546735086
+   }
+  },
+  {
+   "name": "cash/g3_rate/2/high two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 5.684341886080802e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "cash/g3_rate/3/low opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000014265081347275554,
+    "G3plus": -0.000014265081318853845
+   }
+  },
+  {
+   "name": "cash/g3_rate/3/low two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 8.881784197001252e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "cash/g3_rate/3/high opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000015677732108088094,
+    "G3plus": -0.000015677731994401256
+   }
+  },
+  {
+   "name": "cash/g3_rate/3/high two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 8.526512829121202e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "cash/later/0/low opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.00000578576203480452,
+    "G3plus": -0.000005785762112964221
+   }
+  },
+  {
+   "name": "cash/later/0/low two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 7.460698725481052e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "cash/later/0/high opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.00000675069470901235,
+    "G3plus": -0.000006750694637958077
+   }
+  },
+  {
+   "name": "cash/later/0/high two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 7.105427357601002e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "cash/later/1/low opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.00002578947371034701,
+    "G3plus": -0.00002578947371034701
+   }
+  },
+  {
+   "name": "cash/later/1/low two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 1.4210854715202004e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "cash/later/1/high opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.00002729528711142848,
+    "G3plus": -0.00002729528705458506
+   }
+  },
+  {
+   "name": "cash/later/1/high two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 7.105427357601002e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "cash/later/3/low opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000020375616841761257,
+    "G3plus": -0.000020375616813339548
+   }
+  },
+  {
+   "name": "cash/later/3/low two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 2.1316282072803006e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "cash/later/3/high opposite G2/G3 and zero G1",
+   "passed": true,
+   "detail": {
+    "G1": 0,
+    "G2": 0.000021857209688391777,
+    "G3plus": -0.000021857209645759212
+   }
+  },
+  {
+   "name": "cash/later/3/high two-person linearity",
+   "passed": true,
+   "detail": {
+    "max_gap_bn_per_person": 2.842170943040401e-14,
+    "tolerance": 1e-9
+   }
+  },
+  {
+   "name": "cash stage source hashes unchanged",
+   "passed": true
+  },
+  {
+   "name": "declared initial inputs unchanged",
+   "passed": true
+  }
+ ],
+ "uncertainty_rule": "For each source band: fixed central total people multiplied by replicate G2-equivalents / replicate persons; these full-case gradients price the resulting parent-fraction variation jointly with the other actual SDR stacks. This tool does not reconstruct SE or use convention-a household unit prices."
+}

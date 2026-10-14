@@ -1,7 +1,8 @@
 """Run a command with Python timing/RSS, preserving its exit status.
 
 Native-First: stdlib subprocess, perf_counter and getrusage; ps/sysctl are denied.
-Darwin reports ru_maxrss in bytes. Exit 1 if a successful child exceeds 2.5 GB.
+Darwin reports ru_maxrss in bytes. RSS is informational; physical-footprint
+gates run inside the Python producers, where the child's footprint is available.
 """
 import resource
 import subprocess
@@ -18,7 +19,7 @@ def main(argv):
     if sys.platform != "darwin":
         peak *= 1024
     print(f"[measured] seconds={time.perf_counter()-start:.3f} peak_bytes={peak} exit={completed.returncode}", flush=True)
-    return completed.returncode if completed.returncode else (1 if peak > 2_500_000_000 else 0)
+    return completed.returncode
 
 
 if __name__ == "__main__":

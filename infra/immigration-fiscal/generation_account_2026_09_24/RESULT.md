@@ -1640,3 +1640,102 @@ Identification note: the added children's joint parental generations are also
 unobserved. Assigning the G3-rate class wholly to G2 does not estimate the NAS
 half-split for added children with G2/G3+ mixed parents. The requested reading
 and its floor-scaled sensitivity must retain that limitation.
+
+## Oct15 propagation, base and final, 2026-10-15
+
+- 2026-10-15 00:27:59 JST (`date`): **BASE, coverage off**, personal ends 16/11. Set **356.9891157917944 / 443.3429994363898bn**, cash **281.0007234181748 / 367.35460706277007bn**, population **43,269,648.68157841**. These are candidate base figures, not an adopted coverage-on result. [CALCULATION: `derived/generation_summary_oct15{,_cash}.json`, `union.cost_bn`, `union.population`]
+- Added `v8_split.cjs` / `run_generations_v8.cjs`; `run_all.sh` computes only oct15 and oct15_cash. Historical outputs stay unchanged. Exact new part/cell/value declarations and reporter carrier selectors are in `inputs/routing.json` `oct15`; source pins extend `inputs/pins.json`. Every inherited P7 routing fix remains; convention (b) extends the G3-rate minor assignment to observed completion children on their native age-specific cells and production. Reporters and measured credit-side parts follow the source generation labels. [DATA: main-case Consumers R10–R13; CALCULATION: `v8_split.cjs`]
+- Item 9 transports domestic corporate fractions on each generation's R7 job-capital cells. Item 10's children use native line cells and a declared production delta once; reporter carriers activate only their selected parent key and evaluated response. Item 11 and coverage are scoped post-engine amounts in each generation payload; their full source generation/covariance stacks are retained. An uncorrected model takes neither post amount. [CALCULATION: `v8_split.cjs`, `payloadOf`, `evaluator`]
+- The original case's four-decimal Mexico-born frame differs from full-precision generation weights by **0.000012099742889404297 person**. The new denominator is the case's authoritative `population_v8`; an explicit G1 rounding reconciliation (gated below 0.0001 person) makes both population sums exact at the existing 1e-6 tolerance. It changes no dollar cell. [CALCULATION: summaries `population_rounding`]
+- Base gates: 22 set / 20 cash, both conventions, every 32 personal specifications. Largest generation cost discrepancy **1.8e-12bn**, independent-package discrepancy **7.4e-13bn**, cell closure below **1.4e-12bn**, grid below **1.2e-13bn**. All ten no-fix/independent/combined routing variants pass on both sets. The inherited P7 G4 source control runs read-only and emits no prior-case outputs. [CALCULATION: summaries `gates`; `derived/routing_audit_oct15.json`]
+- Timing defects fixed before the final rerun: the independent package check now prepares zero carriers once per model; the routing audit shares immutable native-unit caches across variants in `routing_variants.cjs`. A wrapper reports child RSS but never fails on RSS alone; `credit_routing.py` retains its in-process physical-footprint gate. The first base audit took 158.006s; later receipts below establish the final runtime and byte identity. [CALCULATION: `measured_run.py`; `_cache/routing_audit/oct15_runs.log`]
+
+Live reproduction (coverage off only for the explicit base; remove `COVERAGE=0` for the adopted final case):
+
+```sh
+bash infra/immigration-fiscal/generation_account_2026_09_24/run_all.sh
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/generation_account_2026_09_24 \
+  "bash {lane}/run_all.sh" \
+  --allow-unrun infra/immigration-fiscal/generation_account_2026_09_24/v8_split.cjs \
+  --allow-unrun infra/immigration-fiscal/generation_account_2026_09_24/routing_variants.cjs \
+  --allow-unrun infra/immigration-fiscal/generation_account_2026_09_24/atomic_file_v8.cjs
+```
+
+All three allowed modules execute through the live runner/audit; they are not
+skipped. The harness does not resolve the wrapper's `$LANE` paths to inspect
+their static dependency closure; the executed runner directly requires both
+`v8_split.cjs` and `atomic_file_v8.cjs`, and the audit invokes `routing_variants.cjs`.
+
+### Adopted final route and uncertainty, 2026-10-15
+
+The immutable adoption marker is `inputs/case_final_oct15.txt`, commit
+`b35ac8fb533b26c797abd2e03f3610b79bbadd73`. Both conventions close the adopted
+set **368.9909342553624 / 459.20287674292126bn**, cash
+**284.95156767595086 / 375.1635101635089bn**, and
+**45,230,062.30075857 people**. Every 32 personal specifications retains
+cell/cost/capital closure at1e-9bn and production-grid closure at1e-12bn.
+Historical case outputs are not recomputed. [DATA: final case `derived/summary.json`;
+CALCULATION: `derived/generation_summary_oct15{,_cash}.json`]
+
+Central added-minor routing uses principal linked parents' own birth records:
+126 records,277,881.58972969 people,272,467.65052669 G2-equivalents;
+share **0.3364796386770656**, conditional SDR SE **0.04514239824596425**.
+The child-report and strict-intersection screens remain sensitivities. Actual
+native children use their own completed-parent links,38,589.218818 G2-equivalents,
+rather than that historical share. New reporters'339 parts use their actual
+204 records' source drivers and completed-parent ownership. Original P7 parent,
+state and credit matrices remain frozen; the completed frame's six old-minor
+changes are diagnostic. This is a stated composite vintage. [CALCULATION:
+`inputs/minor_parent_measurement_oct15.json`; `v8_split.cjs`]
+
+Four extrapolated personal veterans-key carriers have zero observed raw mass.
+The explicit `source_anchor` branch retains the source's declared anchor
+ownership; all four have exactly zero evaluated effect at every current
+specification in both sets. Unknown drivers or changed declarations still stop.
+[CALCULATION: summaries `routing.reporter_parent_driver_limit`, source-control gate]
+
+Direct G2-adult costs under convention(a) are **9.233884150243366 /
+30.64081602074458bn** on accrual and **−28.80057179157772 /
+−7.393639921076615bn** on cash. Actual age≥18 credit owners replace generic
+refund/FIT age spreading; adult+minor cells close their generation at1e-9bn.
+Coverage is an independent age-priced block. Remaining person-key allocation
+is first-order; these are modeled allocations, not observed individual costs.
+The older residual remains beside them and is never labelled an age cell.
+[CALCULATION: `derived/g2_adults_direct_oct15.csv`]
+
+Convention(b) accrual G2−G3+ differences per adult are **−170.53 /−419.03USD**,
+conditional joint SDR SE **531.50 /593.35USD**. Cash G3+−G2 differences are
+**1,211.78 /1,460.29USD**, SE **479.47 /529.15USD**. The same161 columns retain
+parent/reporter/credit/state/post covariance and adult-denominator covariance.
+Native fraction variation is zero for the actual observed all1/all0 bands.
+Modeled loss, coverage, imputation, fiscal-incidence and full-model uncertainty
+remain outside this sampling calculation; full fiscal-model SE is unidentified,
+and these differences are not a measured generation ranking. [CALCULATION:
+`derived/per_adult_differences_oct15.csv`, `derived/allocation_uncertainty_oct15.json`]
+
+Run the live wrapper above with `OPENBLAS_NUM_THREADS=1`,
+`PYTHONDONTWRITEBYTECODE=1`, and `GIT_OPTIONAL_LOCKS=0`. For the full rerun,
+set `TMPDIR` to an absolute lane-owned `_cache/repro-temp` directory first.
+Physical budget checks remain in Python processes,2,500,000,000 bytes; wrapper
+child RSS is diagnostic. Final replay receipts are appended after comparison.
+
+- 2026-10-15 03:55 JST: final current-source wrapper exit0,327.365s.
+  All30 policy/set variants pass their25/23 gates; routing audit183.784s,
+  reduced from356.151s after the recorded clone hotspot repair. Set/cash
+  central8.762/12.142s, native gradients77.810s/69gates,17Node tests and
+  28Python tests pass. Python tests physical peak1,754,990,632bytes;
+  measurement1,775,274,120bytes. CSV/JSON publication is atomic and failed
+  serialization preserves the old file. Full protected-TMPDIR comparison
+  follows; this execution receipt alone is not byte reproducibility.
+- 2026-10-15 04:01 JST: full frozen-source protected-TMPDIR reproduction
+  **exit0, IDENTICAL126/126**,211.660s. The live wrapper reran all producers,
+  set/cash consumers,30policy variants, native gradients, direct-adult/joint
+  uncertainty outputs and17Node/28Python tests. No NOTRUN/EOL failures.
+  The three named imported modules execute through the wrapper as documented.
+  Earlier case files and frozen credit routing remain unchanged. Complete
+  changed paths, including ignored diagnostics, are in `changed-paths.txt`.
+- 2026-10-15 04:10 JST: final own-process physical-budget guard added to
+  `routing_audit.py` before its CSV/JSON publication; child RSS remains
+  diagnostic. Required protected fullwrapper replay again **exit0,
+  IDENTICAL126/126**,282.289s, all producers/30variants/17Node/28Python tests
+  executed. Numerical bytes unchanged. Ruff/compile and final diff checks pass.

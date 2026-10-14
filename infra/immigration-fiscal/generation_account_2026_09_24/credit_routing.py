@@ -17,6 +17,7 @@ import sys
 
 sys.dont_write_bytecode = True
 import gc
+import ast
 import hashlib
 import importlib.util
 import json
@@ -38,6 +39,9 @@ OUT = HERE / "derived"
 CACHE = HERE / "_cache" / "credit_routing"
 GENS = ("G1", "G2", "G3plus")
 METHODS = ("b_hotdeck_union_matched", "b_matched_over_pooled")
+AGE_CELLS = tuple(f"{g}_{age}" for g in GENS for age in ("adult", "minor"))
+REPLICATE_VERSION = 1
+OUTPUT_VERSION = 2
 GATES = []
 
 
@@ -89,6 +93,69 @@ def sha(path):
         return hashlib.file_digest(f, "sha256").hexdigest()
 
 
+def output_digest(output):
+    return hashlib.sha256(json.dumps(output, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+
+def export_cache_valid(saved, source_pins):
+    out = saved.get("output")
+    valid = (saved.get("pins") == source_pins and saved.get("replicate_contract") == OUTPUT_VERSION
+            and isinstance(out, dict) and out.get("replicate_contract") == OUTPUT_VERSION
+            and saved.get("output_sha256") == output_digest(out)
+            and all(k in out for k in ("mean_base_credit_net_cost_bn", "mean_base_credit_spending_bn",
+                                      "base_credit_receipt_edit_bn", "r6_age_parts_edit_bn")))
+    if not valid or not (OUT / "credit_routing.json").is_file():
+        return False
+    if out.get("meta", {}).get("frozen_credit_routing_sha256") != sha(OUT / "credit_routing.json"):
+        return False
+    try:
+        for conv in ("a", "b", "a_age", "b_age"):
+            labels = AGE_CELLS if conv.endswith("_age") else GENS
+            spending = out["mean_base_credit_spending_bn"][conv]
+            net = out["mean_base_credit_net_cost_bn"][conv]
+            receipt = out["base_credit_receipt_edit_bn"][conv]
+            if set(spending) != set(labels) or set(net) != set(labels) or set(receipt) != set(labels):
+                return False
+            for cell in labels:
+                if set(net[cell]) != set(receipt[cell]) or not net[cell]:
+                    return False
+                values = [spending[cell], *net[cell].values(), *receipt[cell].values()]
+                if any(np.asarray(v).shape != (161,) or not np.isfinite(v).all() for v in values):
+                    return False
+    except (KeyError, TypeError, ValueError):
+        return False
+    return True
+
+
+def source_algorithm_cache_valid(metadata, source_pins, directory):
+    """Reuse proven unchanged source statistics after output-only producer edits.
+
+    The original complete code/data pins were verified before this migration;
+    an explicit contract records the exact AST of every source-stage function.
+    All other source hashes, constants and the original NPZ hash must match.
+    """
+    file = directory / "algorithm_contract.json"
+    if not file.exists():
+        return False
+    contract = json.loads(file.read_text())
+    own = "generation_account_2026_09_24/credit_routing.py"
+    before = metadata.get("pins", {})
+    if (contract.get("producer_sha256") != before.get(own)
+        or contract.get("data_sha256") != metadata.get("data_sha256")
+        or {k:v for k,v in before.items() if k != own} != {k:v for k,v in source_pins.items() if k != own}):
+        return False
+    constants = dict(GENS=list(GENS), AGE_CELLS=list(AGE_CELLS), REPLICATE_VERSION=REPLICATE_VERSION)
+    if constants != contract.get("source_constants"):
+        return False
+    names = set(contract["source_functions"])
+    tree = ast.parse(Path(__file__).read_text())
+    functions = [n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name in names]
+    if {n.name for n in functions} != names:
+        return False
+    content = "\n".join(ast.dump(n, include_attributes=False) for n in functions)
+    return hashlib.sha256(content.encode()).hexdigest() == contract.get("source_algorithms_sha256")
+
+
 def gate(name, ok, value=True):
     if not ok:
         raise RuntimeError(f"[BLOCKED] {name}: {value}")
@@ -125,7 +192,7 @@ def transfer_owner(omega, heads, drows, ri, eligible, union):
     moved = eligible & union[drows] & union[heads][ri]
     frac = np.bincount(ri, weights=moved.astype(float), minlength=n) / np.maximum(denom, 1)
     child = np.stack([np.bincount(ri, weights=moved * omega[drows, j], minlength=n)
-                      / np.maximum(denom, 1) for j in range(3)])
+                      / np.maximum(denom, 1) for j in range(omega.shape[1])])
     result = child - omega[heads].T * frac
     gate("transfer_owner_preserves_union", float(np.abs(result.sum(axis=0)).max()) < 1e-12)
     return result
@@ -141,7 +208,7 @@ def capture_credit_replay(C):
     captured = {}
     wanted = {"item", "d", "civ", "union", "W", "h", "drows", "ri", "base", "mts", "model", "hf", "ref_line",
               "flag", "onbooks", "f_other", "per_fit", "wr", "R", "dmem", "dgen", "owner", "comp_ruled",
-              "side", "account", "keep_of"}
+              "side", "account", "keep_of", "dm1", "dm2"}
     def profile(frame, event, arg):
         if event == "return" and frame.f_code.co_name in (
                 "read_csv", "read_parquet", "load", "row4_weights", "person_keys", "status_flag"):
@@ -176,13 +243,15 @@ def refundable_stats(d, W, civ, union, heads, delta, flag=None, onbooks=None):
                                     for conv, v in delta.items()}}
 
 
-def route_r6(L, om, source):
+def route_r6(L, om, source, replicate_sink=None):
     R, dr, ri, dm = (L[k] for k in ("R", "drows", "ri", "dmem"))
     n = len(R)
     owner_b = np.stack([np.bincount(ri, weights=dm * om["b"][dr, j], minlength=n)
                         / np.maximum(R.n_mem.to_numpy(), 1) for j in range(3)])
     out = []
     net_shift = np.zeros((3,161))
+    if replicate_sink is not None:
+        replicate_sink["parts"] = {}
     for key, part in source["parts"].items():
         term, side, source_gen = part["term"], part["side"], part["generation"]
         ix = GENS.index(source_gen)
@@ -210,7 +279,95 @@ def route_r6(L, om, source):
         signed = values * (-1 if side == "receipt" else 1)
         net_shift += signed
         net_shift[ix] -= signed.sum(axis=0)
+        if replicate_sink is not None:
+            replicate_sink["parts"][key] = {g: values[j].tolist() for j, g in enumerate(GENS)}
+    if replicate_sink is not None:
+        replicate_sink["net_cost_shift"] = {g: net_shift[j].tolist() for j, g in enumerate(GENS)}
     return out, {g:{"bn":float(net_shift[j,0]),"se_bn":sdr(net_shift[j])} for j,g in enumerate(GENS)}
+
+
+def age_ownership(d, omega):
+    adult = d.A_AGE.ge(18).to_numpy()
+    return {f"{conv}_age": np.column_stack([om[:, j] * mask for j in range(3)
+                                             for mask in (adult, ~adult)])
+            for conv, om in omega.items()}
+
+
+def route_r6_age(L, omega, source):
+    """Actual dependent/filer age cells, retaining the source's joint owners."""
+    R, dr, ri, dm = (L[k] for k in ("R", "drows", "ri", "dmem"))
+    n = len(R)
+    out = {}
+    for conv, om in omega.items():
+        part_out = {}
+        for key, part in source["parts"].items():
+            term, side, ix = part["term"], part["side"], GENS.index(part["generation"])
+            values = np.zeros((6, 161))
+            for component, amount in L["comp_ruled"].items():
+                if component.split("_")[0] != term or L["side"][component] != ("receipts" if side == "receipt" else "spending"):
+                    continue
+                if term in ("A", "C"):
+                    joint = np.stack([np.bincount(ri, weights=dm * (L["dgen"] == ix) * om[dr, j], minlength=n)
+                                      / np.maximum(R.n_mem.to_numpy(), 1) for j in range(6)])
+                elif term in ("B", "Cr"):
+                    joint = L["owner"][component][ix] * om[L["h"]].T
+                elif term == "D":
+                    spouse = np.maximum(R.spouse.to_numpy(), 0)
+                    own = (om[spouse].T * L["dm1"] + om[L["h"]].T * L["dm2"])
+                    joint = L["owner"][component][ix] * own
+                else:
+                    raise RuntimeError(f"[BLOCKED] unknown actual age owner {term}")
+                for j in range(6):
+                    x = amount * L["keep_of"]("R3", component) * joint[j]
+                    values[j] += L["account"](x, component) * (-1 if side == "receipt" else 1)
+            gate(f"r6_{conv}_{key}_actual_age_preserves_part", abs(values[:, 0].sum() - part["bn"]) < 1e-9)
+            part_out[key] = {cell: values[j].tolist() for j, cell in enumerate(AGE_CELLS)}
+        out[conv] = part_out
+    return out
+
+
+def mean_credit_replicates(spending, receipt, fit_line, scenarios, conventions):
+    """Full method mean before SDR; covariance never reconstructed from SE."""
+    reference = fit_line["cells"][fit_line["_reference"]]["personal"]["target_bn"]
+    out = {}
+    for conv in conventions:
+        labels = AGE_CELLS if conv.endswith("_age") else GENS
+        mean = np.mean([spending[m][conv] for m in METHODS], axis=0)
+        out[conv] = {g: {sc: (mean[j] - receipt[conv][j]
+                    * fit_line["cells"][sc]["personal"]["target_bn"] / reference).tolist()
+                        for sc in scenarios} for j, g in enumerate(labels)}
+    return out
+
+
+def validate_replicate_export(output, frozen, source):
+    """Admission is exact central/SDR parity with the frozen scientific output."""
+    for conv in "ab":
+        for g in GENS:
+            for sc, values in output["mean_base_credit_net_cost_bn"][conv][g].items():
+                want = frozen["average_net_cost_se"][conv][g][sc]
+                gate(f"credit_{conv}_{g}_{sc}_actual161_SDR_matches_frozen", abs(sdr(values) - want) < 1e-12)
+                j = GENS.index(g)
+                age = sum(np.asarray(output["mean_base_credit_net_cost_bn"][f"{conv}_age"][AGE_CELLS[2*j+k]][sc]) for k in (0, 1))
+                gap = float(np.abs(age - values).max())
+                gate(f"credit_{conv}_{g}_{sc}_actual_age_closes161", gap < 1e-9, gap)
+    for p in frozen["r6_b_parts"]:
+        key = p["part"]
+        for g in GENS:
+            values = output["r6_b_parts_edit_bn"][key][g]
+            gate(f"r6_{key}_{g}_actual161_matches_frozen", abs(values[0] - p["per_generation_bn"][g]) < 1e-12
+                 and abs(sdr(values) - p["se_bn"][g]) < 1e-12)
+            j = GENS.index(g)
+            age = sum(np.asarray(output["r6_age_parts_edit_bn"]["b_age"][key][AGE_CELLS[2*j+k]]) for k in (0, 1))
+            gap = float(np.abs(age - values).max())
+            gate(f"r6_{key}_{g}_actual_age_closes161", gap < 1e-9, gap)
+    for g in GENS:
+        values = output["r6_b_net_cost_shift_bn"][g]
+        gate(f"r6_{g}_actual161_net_shift_matches_frozen", abs(values[0] - frozen["r6_b_net_shift"][g]["bn"]) < 1e-12
+             and abs(sdr(values) - frozen["r6_b_net_shift"][g]["se_bn"]) < 1e-12)
+    for conv in ("a_age", "b_age"):
+        for key, cells in output["r6_age_parts_edit_bn"][conv].items():
+            total = sum(np.asarray(v) for v in cells.values())
+            gate(f"r6_{conv}_{key}_central_part_closes", abs(total[0] - source["parts"][key]["bn"]) < 1e-9)
 
 
 def pins():
@@ -239,7 +396,7 @@ def pins():
     return {str(p.relative_to(FISCAL)): sha(p) for p in paths}
 
 
-def replay_source():
+def replay_source(export=False):
     """Compute replay statistics in a process that exits before hotdeck starts."""
     start = time.perf_counter()
     CACHE.mkdir(parents=True, exist_ok=True)
@@ -251,6 +408,8 @@ def replay_source():
     d, civ, union, W, heads, dr, ri, base = (L[k] for k in ("d", "civ", "union", "W", "h", "drows", "ri", "base"))
     row4_union = float(W[union, 0].sum())  # source replay already gates this on the authoritative row-4 count
     omega = aligned_omega(F, d)
+    if export:
+        omega.update(age_ownership(d, omega))
     age = d.A_AGE.to_numpy()[dr]
     student = d.A_ENRLW.eq(1).to_numpy()[dr]
     kinds = {"actc": age < 17, "eitc": (age < 19) | ((age < 24) & student),
@@ -277,7 +436,9 @@ def replay_source():
     mts, model, hf = L["mts"], L["model"], L["hf"]
     ref_line = L["ref_line"]
     gate("raw_refund_share_matches_model", abs(raw["union"][0] - ref_line["keys"]["refundable_credits"]["personal"]["share"]) < 1e-9)
-    r6, r6_net = route_r6(L, omega, source_item)
+    r6_replicates = {} if export else None
+    r6, r6_net = route_r6(L, omega, source_item, r6_replicates)
+    r6_age = route_r6_age(L, {k:v for k,v in omega.items() if k.endswith("_age")}, source_item) if export else None
     # Capture only small statistics before discarding the source replay's large locals.
     receipt = {}
     for conv, v in delta.items():
@@ -299,6 +460,9 @@ def replay_source():
     metadata = {"pins": source_pins, "data_sha256": sha(pending), "row4_union": row4_union,
                 "mts": mts, "model": model, "hf": hf, "ref_line": ref_line,
                 "r6": r6, "r6_net": r6_net, "gates": GATES}
+    if export:
+        metadata.update(replicate_contract=REPLICATE_VERSION, r6_replicates=r6_replicates,
+                        r6_age_replicates=r6_age)
     text = json.dumps(metadata, sort_keys=True, indent=1) + "\n"
     if pins() != source_pins:
         raise RuntimeError("[BLOCKED] source replay provenance changed during replay")
@@ -308,12 +472,15 @@ def replay_source():
     print(f"[timing] source replay {time.perf_counter()-start:.3f}s; peak_footprint_bytes {peak}", flush=True)
 
 
-def read_source_statistics(source_pins):
+def read_source_statistics(source_pins, replicate_contract=None):
     """Fail closed on stale or incomplete subprocess output; never replay here."""
     directory = CACHE / "source_replay"
     metadata = json.loads((directory / "statistics.json").read_text())
-    if metadata.get("pins") != source_pins or sha(directory / "statistics.npz") != metadata.get("data_sha256"):
+    if (metadata.get("pins") != source_pins and not source_algorithm_cache_valid(metadata, source_pins, directory)) \
+            or sha(directory / "statistics.npz") != metadata.get("data_sha256"):
         raise RuntimeError("[BLOCKED] source replay cache provenance mismatch")
+    if replicate_contract is not None and metadata.get("replicate_contract") != replicate_contract:
+        raise RuntimeError("[BLOCKED] source replay lacks genuine replicate export contract")
     with np.load(directory / "statistics.npz", allow_pickle=False) as stored:
         arrays = {key: stored[key] for key in stored.files}
     return metadata, arrays
@@ -323,25 +490,38 @@ def main():
     start = time.perf_counter()
     CACHE.mkdir(parents=True, exist_ok=True)
     source_pins = pins()
-    cache = CACHE / "sufficient_statistics.json"
+    export = "--export-oct15-replicates" in sys.argv
+    cache = CACHE / ("sufficient_statistics_oct15.json" if export else "sufficient_statistics.json")
     if "--refresh" not in sys.argv and cache.exists():
         saved = json.loads(cache.read_text())
-        if saved.get("pins") == source_pins:
+        if (export_cache_valid(saved, source_pins) if export else saved.get("pins") == source_pins):
             gate("cached_statistics_sources_match", True)
             peak = require_within_budget("credit cache, nothing written")
             OUT.mkdir(exist_ok=True)
-            (OUT / "credit_routing.json").write_text(json.dumps(saved["output"], sort_keys=True, indent=1) + "\n")
+            (OUT / ("credit_replicates_oct15.json" if export else "credit_routing.json")).write_text(json.dumps(saved["output"], sort_keys=True, indent=1) + "\n")
             print(f"[timing] cache {time.perf_counter()-start:.3f}s; peak_footprint_bytes {peak}")
             return
-    subprocess.run([sys.executable, str(Path(__file__).resolve()), "--source-replay"], check=True)
-    metadata, arrays = read_source_statistics(source_pins)
+    metadata = arrays = None
+    if export:
+        try:
+            metadata, arrays = read_source_statistics(source_pins, REPLICATE_VERSION)
+        except (FileNotFoundError, RuntimeError):
+            pass  # Cold/new-contract cache is rebuilt; no stale statistics used.
+    if metadata is None:
+        command = [sys.executable, str(Path(__file__).resolve()), "--source-replay"]
+        if export:
+            command.append("--export-oct15-replicates")
+        subprocess.run(command, check=True)
+        metadata, arrays = read_source_statistics(source_pins, REPLICATE_VERSION if export else None)
     GATES.extend(metadata["gates"])
     row4_union, mts, model, hf, ref_line, r6, r6_net = (
         metadata[k] for k in ("row4_union", "mts", "model", "hf", "ref_line", "r6", "r6_net"))
     delta = {conv: {kind: arrays[f"delta_{conv}_{kind}"] for kind in ("actc", "eitc", "nonref", "care")}
-             for conv in "ab"}
-    raw = {"union": arrays["raw_union"], "delta": {conv: arrays[f"raw_{conv}"] for conv in "ab"}}
-    receipt = {conv: arrays[f"receipt_{conv}"] for conv in "ab"}
+             for conv in ("a", "b", "a_age", "b_age") if f"raw_{conv}" in arrays}
+    if export:
+        gate("source cache contains actual age transfer arrays", set(delta) == {"a", "b", "a_age", "b_age"})
+    raw = {"union": arrays["raw_union"], "delta": {conv: arrays[f"raw_{conv}"] for conv in delta}}
+    receipt = {conv: arrays[f"receipt_{conv}"] for conv in delta}
     head_keys = pd.MultiIndex.from_arrays([arrays["head_ph"], arrays["head_pp"]])
     F = load_module(HERE / "frame.py", "routing_generation_frame")
     omega = delta  # Only convention keys are needed after the replay.
@@ -467,7 +647,8 @@ def main():
             spending_reps[method][conv] = spending
             net_se[method][conv] = {}
             base_out[method][conv], se_out[method][conv] = {}, {}
-            for j,g in enumerate(GENS):
+            labels = AGE_CELLS if conv.endswith("_age") else GENS
+            for j,g in enumerate(labels):
                 receipts = {sc: float(receipt[conv][j,0]*fit_line["cells"][sc]["personal"]["target_bn"]
                                       /fit_line["cells"][reference]["personal"]["target_bn"])
                             for sc in model["receipts"]["scenarios"]}
@@ -484,11 +665,12 @@ def main():
             for label, values in {**parts,"receipt":receipt[conv]}.items():
                 gap = float(np.abs(values.sum(axis=0)).max())
                 gate(f"{method}_{conv}_{label}_all_replicates_preserve_union", gap<1e-9, gap)
-            components[method][conv] = {label:{g:float(v[j,0]) for j,g in enumerate(GENS)} for label,v in parts.items()}
+            components[method][conv] = {label:{g:float(v[j,0]) for j,g in enumerate(labels)} for label,v in parts.items()}
     mean_net_se = {conv:{g:{sc:sdr(np.mean([spending_reps[m][conv][j] for m in METHODS],axis=0)
                                   -receipt[conv][j]*fit_line["cells"][sc]["personal"]["target_bn"]
                                   /fit_line["cells"][reference]["personal"]["target_bn"])
-                            for sc in model["receipts"]["scenarios"]} for j,g in enumerate(GENS)} for conv in omega}
+                            for sc in model["receipts"]["scenarios"]}
+                         for j,g in enumerate(AGE_CELLS if conv.endswith("_age") else GENS)} for conv in omega}
     output = {"base":base_out,"se":se_out,"net_cost_se":net_se,"average_net_cost_se":mean_net_se,
               "components":components,"r6_b_parts":r6,"r6_b_net_shift":r6_net,"gates":GATES,
               "meta":{"sign":"spending positive raises spending; receipt positive raises receipts",
@@ -501,6 +683,53 @@ def main():
                                       "receipt credits use the base return credits; hotdeck does not persist or recompute CTC_CRD/care components"],
                       "se_rule":"160 SDR survey replicates, conditional on fixed five hotdeck seeds; no imputation SE added",
                       "source_pins":"inputs/credit_pins.json"}}
+    if export:
+        fit_line["_reference"] = reference
+        frozen = json.loads((OUT / "credit_routing.json").read_text())
+        frozen_sha = sha(OUT / "credit_routing.json")
+        for key in ("base", "se", "net_cost_se", "average_net_cost_se", "components"):
+            built = output[key]
+            if key in ("base", "se", "net_cost_se", "components"):
+                built = {method:{conv:v[conv] for conv in "ab"} for method,v in built.items()}
+            else:
+                built = {conv:built[conv] for conv in "ab"}
+            gate(f"oct15_{key}_historical_scientific_fields_identical", built == frozen[key])
+        mean_spending = {conv:np.mean([spending_reps[m][conv] for m in METHODS], axis=0) for conv in omega}
+        receipt_arrays = {conv:{g:{sc:(receipt[conv][j]*fit_line["cells"][sc]["personal"]["target_bn"]
+                                     /fit_line["cells"][reference]["personal"]["target_bn"]).tolist()
+                                  for sc in model["receipts"]["scenarios"]}
+                                for j,g in enumerate(AGE_CELLS if conv.endswith("_age") else GENS)} for conv in omega}
+        output = {"replicate_contract":OUTPUT_VERSION,
+                  "mean_base_credit_spending_bn":{conv:{g:mean_spending[conv][j].tolist()
+                      for j,g in enumerate(AGE_CELLS if conv.endswith("_age") else GENS)} for conv in omega},
+                  "base_credit_receipt_edit_bn":receipt_arrays,
+                  "mean_base_credit_net_cost_bn":mean_credit_replicates(spending_reps, receipt, fit_line,
+                                                                       model["receipts"]["scenarios"], omega),
+                  "r6_b_parts_edit_bn":metadata["r6_replicates"]["parts"],
+                  "r6_b_net_cost_shift_bn":metadata["r6_replicates"]["net_cost_shift"],
+                  "r6_age_parts_edit_bn":metadata["r6_age_replicates"],
+                  "replicate_order":F.REPS, "source_pins":source_pins,
+                  "meta":{"case":"oct15", "frozen_credit_routing_sha256":frozen_sha,
+                          "source_statistics":{"data_sha256":metadata["data_sha256"],
+                              "producer_sha256":metadata["pins"]["generation_account_2026_09_24/credit_routing.py"],
+                              "algorithm_contract_sha256":sha(CACHE / "source_replay/algorithm_contract.json")
+                                  if (CACHE / "source_replay/algorithm_contract.json").exists() else None},
+                          "net_sign":"positive spending minus receipts raises cost; R6 part arrays retain edit side's sign",
+                          "age_rule":"actual record A_AGE >= 18; source claimant/dependent identity and weight follow credits; six cells collapse to original generation totals",
+                          "uncertainty":"160 SDR weights conditional on fixed five hotdeck seeds; no synthetic covariance or imputation/coverage/loss-model SE",
+                          "scope":"identified canonical union only; native completion and modeled added descendants excluded"}}
+        source = json.loads((FISCAL / "mixed_unit_credits_2026_10_14/derived/item.json").read_text())
+        validate_replicate_export(output, frozen, source)
+        output["gates"] = GATES
+        gate("frozen historical output unchanged", sha(OUT / "credit_routing.json") == frozen_sha)
+        gate("credit replicate export source pins unchanged", pins() == source_pins)
+        peak = require_within_budget("credit replicate export, nothing written")
+        OUT.mkdir(exist_ok=True)
+        (OUT / "credit_replicates_oct15.json").write_text(json.dumps(output, sort_keys=True, indent=1)+"\n")
+        cache.write_text(json.dumps({"replicate_contract":OUTPUT_VERSION,"pins":source_pins,"output":output,
+                                     "output_sha256":output_digest(output)},sort_keys=True,indent=1)+"\n")
+        print(f"[timing] actual161 export total {time.perf_counter()-start:.3f}s; peak_footprint_bytes {peak}")
+        return
     peak = require_within_budget("credit replay, nothing written")
     OUT.mkdir(exist_ok=True)
     (OUT / "credit_routing.json").write_text(json.dumps(output, sort_keys=True, indent=1)+"\n")
@@ -511,7 +740,7 @@ def main():
 
 
 if __name__ == "__main__":
-    if sys.argv[1:] == ["--source-replay"]:
-        replay_source()
+    if "--source-replay" in sys.argv:
+        replay_source("--export-oct15-replicates" in sys.argv)
     else:
         main()
