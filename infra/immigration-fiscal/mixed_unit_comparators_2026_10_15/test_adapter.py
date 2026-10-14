@@ -20,6 +20,21 @@ def test_masks_keep_distinct_race_origin_generation_boundaries():
     assert black.tolist() == [False, False, True, False, True, False]
 
 
+def test_children_rule_adds_only_members_biological_minor_children():
+    # One household: a white member parent (line 1), her non-member Hispanic child (line 2, biological), a step child
+    # (line 3), an adult non-member (line 4) and a white member's own white child (line 5, already a member).
+    d = pd.DataFrame({'PH_SEQ': [7] * 5, 'A_LINENO': [1, 2, 3, 4, 5], 'PEPAR1': [-1, 1, 1, -1, 1], 'PEPAR2': [-1] * 5,
+                      'PEPAR1TYP': [-1, 1, 2, -1, 1], 'PEPAR2TYP': [-1] * 5, 'A_AGE': [40, 10, 9, 45, 8],
+                      'PRCITSHP': [1] * 5, 'PEFNTVTY': [57] * 5, 'PEMNTVTY': [57] * 5,
+                      'PEHSPNON': [2, 1, 1, 1, 2], 'PRDTRACE': [1, 1, 1, 1, 1]})
+    civ = np.ones(5, bool)
+    white, _ = adapter.membership(d, civ, 'white')
+    children, gen = adapter.membership(d, civ, 'white_children')
+    assert white.tolist() == [True, False, False, False, True]
+    assert children.tolist() == [True, True, False, False, True]
+    assert (gen[children] == 2).all() and (gen[~children] == -1).all()
+
+
 def test_frozen_sibling_loader_imports_pension_membership():
     pension = adapter.source_module('pensions', 'fixture')
     import membership
@@ -66,7 +81,7 @@ def test_kernel_reuse_is_exact_input_and_does_not_alias_results():
     assert cache.bytes <= 64_000_000
 
 
-@pytest.mark.parametrize('group', ['white', 'black'])
+@pytest.mark.parametrize('group', adapter.GROUPS)
 def test_actual_stacks_close_and_se_uses_signed_paired_replicates(group):
     summary = json.loads((adapter.OUT / f'{group}_summary.json').read_text())
     reps = pd.read_csv(adapter.OUT / f'{group}_replicates.csv')

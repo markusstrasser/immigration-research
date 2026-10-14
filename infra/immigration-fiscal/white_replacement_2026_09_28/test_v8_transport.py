@@ -30,15 +30,23 @@ def test_post_engine_carried_once_and_base_unchanged(suffix, payload_name):
 def test_completed_population_and_comparator_asymmetry():
     payload = load(CASE / 'derived/corrections.json')['meta']
     results = pd.read_csv(HERE / 'derived/symmetric_results_oct15.csv')
-    lineage = results[results.group.eq('mexican_origin_engine')]
+    current = results[results.membership_rule.eq('current')]
+    lineage = current[current.group.eq('mexican_origin_engine')]
     assert (lineage.population - payload['population_v8']['with_coverage']).abs().max() < 1e-6
-    white = results[results.group.eq('A1_third_plus_nh_white')]
+    white = current[current.group.eq('A1_third_plus_nh_white')]
     assert (white.population - payload['population_v8']['with_coverage']).abs().max() < 1e-6
+    # Round 3's children rule adds the lineage's outside-definition children block to both sides' count.
+    children = results[results.membership_rule.eq('children')]
+    block = children[children.group.eq('mexican_origin_engine')].lineage_children_block_population
+    assert (block > 0).all()
+    for group in ('mexican_origin_engine', 'mexican_origin_rough', 'A1_third_plus_nh_white'):
+        sub = children[children.group.eq(group)]
+        assert (sub.population - payload['population_v8']['with_coverage'] - block.iloc[0]).abs().max() < 1e-6
     audit = load(HERE / 'derived/symmetric_audit_oct15.json')['v8_asymmetry']
     assert audit['union_completion']['total'] > 0
     assert audit['comparator_completion'].startswith('unmeasured')
     assert audit['comparator_mixed_unit_removal'].startswith('measured for A1')
-    assert audit['comparator_coverage'].startswith('none')
+    assert audit['comparator_coverage'].startswith('round 3')
 
 
 def test_full_union_split_closes_after_synthetic_and_post_engine():

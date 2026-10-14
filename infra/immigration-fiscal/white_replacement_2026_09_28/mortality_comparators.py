@@ -189,6 +189,30 @@ def output_row(name, basis, population, o, a, rel, n):
                 multiplier_oasdi_tax_bn=o["tax_bn"], multiplier_hi_tax_bn=a["hi_tax_bn"])
 
 
+SCORE = FISCAL / "pension_accrual_2026_09_28/derived/national_score.json"
+SHARE_BANDS = (("15-24", 24), ("25-34", 34), ("35-44", 44), ("45-54", 54), ("55-61", 61))
+
+
+def left_out_share():
+    """Round 3 (C3 fix 3a): the share of the ratio route's cost that the formula route leaves out, by age:
+    disability, children's and young survivors' benefits (pension_accrual RESULT, "The formula route: where its gap
+    sits"). A group life table moves only the retirement part, so this share keeps the whole-population factor. Ages
+    under 15 take the 15-24 band; from 62 both routes value benefits alike and the share is zero."""
+    ratio = json.loads(SCORE.read_text())["formula_gap"]["formula_over_ratio_by_age"]
+    gate("left-out share bands", sorted(ratio) == sorted(b for b, _ in SHARE_BANDS)
+         and all(0.5 < ratio[b] < 1 for b, _ in SHARE_BANDS))
+
+    def share(age):
+        age = np.floor(np.asarray(age, float))
+        out = np.zeros(len(age))
+        lo = -np.inf
+        for band, hi in SHARE_BANDS:
+            out[(age > lo) & (age <= hi)] = 1 - ratio[band]
+            lo = hi
+        return out
+    return share
+
+
 def dependency_manifest(status=None):
     paths = dict(status.source_info["source_sha256"]) if status is not None else {}
     for path in (Path(__file__), LANE / "status_keys_oct14.py", LANE / "accrual_white.py",
@@ -200,7 +224,7 @@ def dependency_manifest(status=None):
                  FISCAL / "california_medical_status_2026_09_23/cps_ca_status.py",
                  FISCAL / "tax_key_heldout_2026_09_28/reads/irs_table_1_2_ty2023.md",
                  FISCAL / "external_benchmarks_2026_09_24/derived/cbo_group_shares.csv",
-                 FISCAL / "main_case_2026_10_15/derived/corrections.json"):
+                 FISCAL / "main_case_2026_10_15/derived/corrections.json", SCORE):
         paths[str(path.relative_to(FISCAL))] = file_sha256(path)
     for lane in (LANE, BLACK):
         for entry in json.loads((lane / "inputs/pins.json").read_text())["symmetric_sources"].values():
@@ -371,7 +395,8 @@ def run(which):
         scenario_weights[name] = (sc, weights)
     checkpoint("scenario weights built")
 
-    def price(frame, name, grid, taus, econ, fiscal_paths, population):
+    def price(frame, name, grid, taus, econ, fiscal_paths, population, mix=None):
+        gate(f"{population} mortality mixes the whole-population factor", (mix is None) == (population == "general"))
         f = frame.copy()
         if name != "union":
             selection = frame.attrs.get("scenario_selection",
@@ -399,18 +424,18 @@ def run(which):
         with TP.on_path(P, fiscal_paths):
             qq = f[f.union & f.tax_oasdi.gt(0)].reset_index(drop=True)
             o = module.oasdi_ratio(qq, {"payable": grid}, P.S.quotes()["note151_eligible_share"]["value"]["end_of_projection"],
-                                   taus, scens=("payable",), g=g)["payable"]
+                                   taus, scens=("payable",), g=g, mix=mix)["payable"]
             a = module.part_a(f[f.union].copy(), econ, P.S.quotes()["note151_eligible_share"]["value"]["end_of_projection"],
                               "payable", population=population)
         return output_row(name, "cps", population, o, a, rel[name], float(f.w[f.union].sum()))
 
-    def append_scenario_rows(grid, taus, econ, fiscal_paths, population):
+    def append_scenario_rows(grid, taus, econ, fiscal_paths, population, mix=None):
         for scenario_name, (sc, weights) in scenario_weights.items():
             for basis in ("row4", "symmetric"):
                 f = (p4 if basis == "row4" else symmetric).copy()
                 f["w"] = weights
                 f.attrs["scenario_selection"] = weights > 0
-                row = price(f, group, grid, taus, econ, fiscal_paths, population)
+                row = price(f, group, grid, taus, econ, fiscal_paths, population, mix)
                 row.update(basis=basis, scenario_name=scenario_name,
                            age_mix=scenario_name, population_basis="exact comparator scenario cps_w")
                 rows.append(row)
@@ -490,8 +515,14 @@ def run(which):
                 row.update(basis="added_profile", age_mix=key)
                 rows.append(row)
         checkpoint("general rows priced")
-        # Retain only the denominator's money-worth array; release the unused general grid's large k arrays.
+        # Retain the denominator's money-worth array and, for round 3's mix (C3 fix 3a), the central method's
+        # whole-population factor; release the general grid's other k arrays.
         denominator = dict(mwr={TP.BASE: grid["mwr"][TP.BASE]})
+        gate("general grid key is the central run", (P.CENTRAL["rate"], "general") == TP.G and TP.BASE == P.BASE)
+        method = P.CENTRAL["method"]
+        mix = dict(g=TP.G, share=left_out_share(),
+                   grid=dict(fams=grid["fams"], k={method: {TP.G: grid["k"][method][TP.G]}},
+                             mwr={TP.G: grid["mwr"][TP.G], TP.BASE: grid["mwr"][TP.BASE]}))
         del grid
         arms = [(group, "nh_white" if which == "white" else "nh_black")]
         if which == "white":
@@ -508,7 +539,7 @@ def run(which):
             timings[f"{population}_grid_seconds"] = time.perf_counter() - t0
             checkpoint(f"{population} grid built")
             for basis, frame in (("cps", p), ("row4", p4)):
-                row = price(frame, name, grid, taus, econ, fiscal_paths, population)
+                row = price(frame, name, grid, taus, econ, fiscal_paths, population, mix)
                 row["basis"] = basis
                 control = next(r for r in rows if r["group"] == name and r["basis"] == basis and r["mortality"] == "general")
                 gate(f"{population} {basis} payroll conserved", abs(row["cps_oasdi_tax_bn"] - control["cps_oasdi_tax_bn"]) < 1e-9
@@ -517,7 +548,7 @@ def run(which):
                      ("oasdi_per_tax_dollar_net", "part_a_per_hi_tax_dollar")))
                 rows.append(row)
             if name == group:
-                row = price(symmetric, name, grid, taus, econ, fiscal_paths, population)
+                row = price(symmetric, name, grid, taus, econ, fiscal_paths, population, mix)
                 row["basis"] = "symmetric"
                 control = next(r for r in rows if r["group"] == name and r["basis"] == "symmetric" and r["mortality"] == "general")
                 gate(f"symmetric {name} mortality payroll conserved", abs(row["cps_oasdi_tax_bn"] - control["cps_oasdi_tax_bn"]) < 1e-9
@@ -526,10 +557,10 @@ def run(which):
                 sc = comparison.R.scenario("w3" if which == "white" else "blk", scaled=False)
                 for end in comparison.ENDS:
                     rows.append(renormalized_row(row, comparison, status, sc, end))
-                append_scenario_rows(grid, taus, econ, fiscal_paths, population)
+                append_scenario_rows(grid, taus, econ, fiscal_paths, population, mix)
             if which == "white" and population == "hispanic":
                 for name, key, weights in extra:
-                    row = price(added_frame(weights), name, grid, taus, econ, fiscal_paths, population)
+                    row = price(added_frame(weights), name, grid, taus, econ, fiscal_paths, population, mix)
                     row.update(basis="added_profile", age_mix=key)
                     control = next(r for r in rows if r["group"] == name and r["basis"] == "added_profile"
                                    and r["age_mix"] == key and r["mortality"] == "general")

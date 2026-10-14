@@ -11,12 +11,25 @@ import math
 
 HERE = Path(__file__).resolve().parent
 SOURCE = HERE.parent / 'lineage_mortality_2026_10_14'
+# Round 3 (C3 fix 3a): the source's central rows repriced with the whole-population factor on the left-out share.
+MIX = HERE / 'derived/lineage_mortality_mix_oct15.csv'
 MIXED = 'mixed mortality conventions'
 OWN = 'own-group mortality'
 GENERAL = 'whole-population mortality'
 OWN_ARMS = {'combined_before_round2', 'combined_bracket_only', 'combined_payroll_only',
             'combined_bracket_payroll_joint', 'mortality_group', 'mortality_symmetric_frame_status',
-            'combined_rules_only', 'combined_zero_production'}
+            'combined_rules_only', 'combined_zero_production',
+            # round 3's derived arms on combined_rules_only (DERIVED below) and its school-key diagnostic
+            'combined_rules_coverage', 'combined_rules_members', 'combined_rules_rough_school'}
+# Round 3 (C3 fixes 1, 2, 3b): arms symmetric_comparators_oct14.py derives after the evaluator from
+# members_coverage_oct15.py's runs, which rebuild A1 and Black on combined_rules_only's settings (own-group mortality)
+# or combined_rules_general's (whole-population): rule 'current' or 'children' (members' biological minor children
+# depart and count as members), every comparator at its own Census coverage (central arm). The lineage's coverage is
+# the case's; under the children rule it adds its outside-definition children block and their item 11 shift.
+DERIVED = {'combined_rules_coverage': dict(base='combined_rules_only', rule='current', mortality='specific'),
+           'combined_rules_members': dict(base='combined_rules_only', rule='children', mortality='specific'),
+           'combined_rules_members_general': dict(base='combined_rules_general', rule='children', mortality='general')}
+CENTRAL = dict(arm='combined_rules_members', mortality_convention=OWN)
 
 
 def read_rows(path):
@@ -31,14 +44,20 @@ def one(rows, **keys):
     return selected[0]
 
 
-def coefficients():
+def coefficients(mix=True):
+    """Own-group rows from lineage_mortality_mix_oct15.py (mix left_out_share), or with mix=False the source's own
+    central rows (its frozen positive control); general rows from the source."""
     rows = read_rows(SOURCE / 'derived/accrual_ratios.csv')
+    if mix:
+        mixed = [r for r in read_rows(MIX) if r['mix'] == 'left_out_share' and r['arm'] == 'central']
+    else:
+        mixed = [r for r in rows if r['arm'] == 'central']
     controls = read_rows(SOURCE / 'derived/reproduced_ratios.csv')
     union = one(controls, group='union', basis='row4', mortality='general')
     generations = {}
     for g in ('G1', 'G2', 'G3plus'):
         ref = one(rows, group=g, basis='row4', arm='general')
-        own = one(rows, group=g, basis='row4', arm='central')
+        own = one(mixed, group=g, basis='row4')
         generations[g] = {}
         for metric, tax, key in (('oasdi_per_tax_dollar_net', 'cps_oasdi_tax_bn', 'ss'),
                                  ('part_a_per_hi_tax_dollar', 'cps_hi_tax_bn', 'pa')):
@@ -46,8 +65,8 @@ def coefficients():
                                                * float(ref[tax]) / float(union[tax]))
             generations[g][key + '_factor'] = float(own[metric]) / float(ref[metric]) - 1
     profiles = []
-    for own in rows:
-        if own['basis'] != 'added_profile' or own['arm'] != 'central':
+    for own in mixed:
+        if own['basis'] != 'added_profile':
             continue
         ref = one(controls, group=own['group'], basis='added_profile',
                   age_mix=own['age_mix'], mortality='general')
@@ -76,7 +95,7 @@ def amounts(dump, carriers=None):
     return result
 
 
-def source_change(full, union, meta, end, include_coverage=False):
+def source_change(full, union, meta, end, include_coverage=False, mix=True):
     """Source nativity coefficients on current taxes and current overlay stocks.
 
     Source generation payer proportions are held fixed, exactly as the producer
@@ -84,7 +103,7 @@ def source_change(full, union, meta, end, include_coverage=False):
     source's three measured profiles, also for completed reporters/children.
     Coverage uses its exported generation pension parts rather than headcount.
     """
-    gen, profiles = coefficients()
+    gen, profiles = coefficients(mix)
     carriers = meta.get('union_completion', {}).get('carriers', {})
     cash = amounts(union['cash'][end])
     se = cash['receipts|self_employment_oasdi_hi']
@@ -134,6 +153,13 @@ def source_change(full, union, meta, end, include_coverage=False):
 
 def convention(arm):
     return MIXED if arm in OWN_ARMS else GENERAL
+
+
+def stated(label):
+    """Round 3 (C3 fix 3b): a stated comparison claim pairs both sides on one mortality convention."""
+    if label not in (MIXED, OWN, GENERAL):
+        raise ValueError(f'[BLOCKED] unknown mortality convention {label!r}')
+    return label != MIXED
 
 
 def validate_pair(lineage, comparator, label):

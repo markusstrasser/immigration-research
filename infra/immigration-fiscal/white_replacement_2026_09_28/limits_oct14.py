@@ -190,8 +190,9 @@ def pell_hispanic(rows):
 def theta_arms(rows, scen):
     """3. A race's tuition residency θ at 0.5 and 1.5."""
     summary = pd.read_csv(DER / "rekey_summary_oct15.csv")
-    from comparison_contract import load_mixed_unit, comparator_removal
+    from comparison_contract import load_mixed_unit, comparator_removal, scenario_reweight
     mixed = load_mixed_unit()
+    reweight = scenario_reweight(W.R, scen)     # round 3 (C3 fix 5): A3 takes A1's item 11, reweighted
     saved = {r: W.IK["races"][r]["tuition"] for r in W.IK["races"]}
     cost = {}
     try:
@@ -217,7 +218,7 @@ def theta_arms(rows, scen):
                 union = cost[(arm, basis, end, "mexican_origin_rough")]
                 for g in GROUPS[1:]:
                     c = cost[(arm, basis, end, g)]
-                    correction = comparator_removal(mixed, g, basis, end, scen[g]['population'])['bn']
+                    correction = comparator_removal(mixed, g, basis, end, scen[g]['population'], reweight=reweight)['bn']
                     c += correction
                     value = c if g == "nh_black_rough" else union - c
                     rows.append(dict(item="theta_" + ("nh_black_cost" if g == "nh_black_rough" else g.split("_")[0] + "_gap"),

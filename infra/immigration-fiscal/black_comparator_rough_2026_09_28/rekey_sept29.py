@@ -138,6 +138,9 @@ def main(case="sept29"):
     print("[this lane's September 27 rows through the library, published weights]", flush=True)
     # setup() leaves the frame on row 4; the published-weight check runs on a fresh copy of the weights and shares.
     w4, n4 = R.w.copy(), R.TARGET
+    # The September 27 rows keyed schools on persons aged 5-17; round 3's school key (oct15) returns after the check.
+    school = R.K["k12"]
+    R.K["k12"] = W.K12_ROUGH
     W.set_frame(W.PUBLISHED_W.copy(), W.DUMP27["low"]["target_population"], W.DUMP27)
     ref = pd.read_csv(DER / "rekey_summary.csv")
     for lab, g in GROUPS.items():
@@ -149,6 +152,7 @@ def main(case="sept29"):
                 W.gate(f"{lab} {end} {col} reproduces rekey_summary.csv", abs(r[col] - float(want[col])) < 5e-5,
                        f"{r[col]:.4f} vs {float(want[col]):.4f}")
     W.stop_if_failed()
+    R.K["k12"] = school
     W.set_frame(w4, n4, W.DUMP["cash"])
     W.UNION_SC = R.scenario("mex")
 

@@ -22,12 +22,12 @@ accrual,mexican_origin_rough,low,"capital, property, production taxes",-92.9121,
 accrual,mexican_origin_rough,low,Social Security,109.9912,2432,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,low,Medicare,77.4264,1712,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,low,Medicaid,127.6645,2823,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,mexican_origin_rough,low,schools and colleges,223.3866,4939,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,schools and colleges,225.6681,4989,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,low,"police, courts, prisons",82.3433,1821,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,2759,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,low,veterans and military medical,12.7030,281,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",80.5849,1782,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,mexican_origin_rough,low,capital return,37.6866,833,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,capital return,37.8236,836,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,low,production gain (subtracted),-11.9095,-263,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,low,lineage post-engine mixed_unit_removal_bn,10.7400,237,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,low,lineage post-engine coverage_bn,8.8028,195,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -38,12 +38,12 @@ accrual,nh_black_rough,low,"capital, property, production taxes",-87.9473,-2096,
 accrual,nh_black_rough,low,Social Security,134.6255,3209,-24.6343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,Medicare,127.8455,3047,-50.4190,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,Medicaid,181.2461,4320,-53.5815,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,nh_black_rough,low,schools and colleges,173.9840,4147,49.4027,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,nh_black_rough,low,schools and colleges,178.6145,4257,47.0537,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,"police, courts, prisons",106.3305,2534,-23.9872,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914,-39.4537,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,veterans and military medical,41.5391,990,-28.8361,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",79.7973,1902,0.7877,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,nh_black_rough,low,capital return,35.6347,849,2.0519,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,nh_black_rough,low,capital return,35.9126,856,1.9109,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,lineage post-engine coverage_bn,0.0000,0,8.8028,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -54,12 +54,12 @@ accrual,A1_third_plus_nh_white,low,"capital, property, production taxes",-188.51
 accrual,A1_third_plus_nh_white,low,Social Security,175.9639,3890,-65.9727,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,Medicare,177.6285,3927,-100.2021,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,Medicaid,105.5518,2334,22.1127,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A1_third_plus_nh_white,low,schools and colleges,143.3741,3170,80.0125,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,schools and colleges,137.3575,3037,88.3106,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,"police, courts, prisons",57.3514,1268,24.9919,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",75.4378,1668,49.3298,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,veterans and military medical,37.8464,837,-25.1435,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",104.0568,2301,-23.4719,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A1_third_plus_nh_white,low,capital return,36.1178,799,1.5688,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,capital return,35.7567,791,2.0669,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,lineage post-engine coverage_bn,0.0000,0,8.8028,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -70,12 +70,12 @@ accrual,A2_us_born_nh_white,low,"capital, property, production taxes",-188.8177,
 accrual,A2_us_born_nh_white,low,Social Security,175.1738,3873,-65.1826,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,low,Medicare,177.3151,3920,-99.8887,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,low,Medicaid,105.5943,2335,22.0702,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A2_us_born_nh_white,low,schools and colleges,146.7453,3244,76.6413,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,schools and colleges,141.4604,3128,84.2077,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,low,"police, courts, prisons",57.6025,1274,24.7408,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",75.8834,1678,48.8842,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,low,veterans and military medical,37.9147,838,-25.2117,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,low,"per-head lines: government, defense, interest, roads, other",104.1756,2303,-23.5906,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A2_us_born_nh_white,low,capital return,36.2803,802,1.4063,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,capital return,35.9631,795,1.8605,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,low,lineage post-engine coverage_bn,0.0000,0,8.8028,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -86,12 +86,12 @@ accrual,A3_third_plus_nh_white_at_union_ages,low,"capital, property, production 
 accrual,A3_third_plus_nh_white_at_union_ages,low,Social Security,162.2420,3587,-52.2508,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,low,Medicare,96.4709,2133,-19.0445,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,low,Medicaid,88.2950,1952,39.3695,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A3_third_plus_nh_white_at_union_ages,low,schools and colleges,236.8181,5236,-13.4315,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,schools and colleges,225.5113,4986,0.1569,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,low,"police, courts, prisons",59.1969,1309,23.1464,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",77.5192,1714,47.2484,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,low,veterans and military medical,24.0609,532,-11.3579,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,low,"per-head lines: government, defense, interest, roads, other",90.3668,1998,-9.7819,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A3_third_plus_nh_white_at_union_ages,low,capital return,40.4027,893,-2.7161,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,capital return,39.7240,878,-1.9004,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,low,lineage post-engine coverage_bn,0.0000,0,8.8028,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -102,12 +102,12 @@ accrual,A4_third_plus_nh_white_stationary,low,"capital, property, production tax
 accrual,A4_third_plus_nh_white_stationary,low,Social Security,165.9085,3668,-55.9173,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,low,Medicare,160.7791,3555,-83.3527,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,low,Medicaid,101.9038,2253,25.7608,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A4_third_plus_nh_white_stationary,low,schools and colleges,166.7227,3686,56.6640,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,schools and colleges,159.0945,3517,66.5736,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,low,"police, courts, prisons",56.9613,1259,25.3820,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,low,"SNAP, SSI, housing, cash aid, credits, other welfare",75.0006,1658,49.7670,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,low,veterans and military medical,34.9160,772,-22.2130,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,low,"per-head lines: government, defense, interest, roads, other",99.4496,2199,-18.8646,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A4_third_plus_nh_white_stationary,low,capital return,36.9044,816,0.7823,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,capital return,36.4464,806,1.3771,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,low,lineage post-engine coverage_bn,0.0000,0,8.8028,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -118,12 +118,12 @@ accrual,all_residents_slice,low,"capital, property, production taxes",-163.2607,
 accrual,all_residents_slice,low,Social Security,164.6522,3640,-54.6610,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,low,Medicare,152.3205,3368,-74.8940,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,low,Medicaid,128.6227,2844,-0.9581,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,all_residents_slice,low,schools and colleges,174.0053,3847,49.3813,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,all_residents_slice,low,schools and colleges,174.0053,3847,51.6628,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,low,"police, courts, prisons",69.9818,1547,12.3615,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,low,"SNAP, SSI, housing, cash aid, credits, other welfare",103.2162,2282,21.5514,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,low,veterans and military medical,31.9532,706,-19.2502,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,low,"per-head lines: government, defense, interest, roads, other",114.8560,2539,-34.2710,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,all_residents_slice,low,capital return,38.2115,845,-0.5249,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,all_residents_slice,low,capital return,38.2115,845,-0.3879,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,low,lineage post-engine coverage_bn,0.0000,0,8.8028,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -150,12 +150,12 @@ accrual,mexican_origin_rough,high,"capital, property, production taxes",-66.6845
 accrual,mexican_origin_rough,high,Social Security,109.9912,2432,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,high,Medicare,77.4264,1712,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,high,Medicaid,127.6972,2823,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,mexican_origin_rough,high,schools and colleges,224.2369,4958,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,schools and colleges,226.5184,5008,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,high,"police, courts, prisons",82.3433,1821,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,2759,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,high,veterans and military medical,12.7030,281,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",105.6003,2335,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,mexican_origin_rough,high,capital return,61.9795,1370,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,capital return,62.1849,1375,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,high,production gain (subtracted),-7.8343,-173,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,high,lineage post-engine mixed_unit_removal_bn,14.5317,321,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,high,lineage post-engine coverage_bn,12.6388,279,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -166,12 +166,12 @@ accrual,nh_black_rough,high,"capital, property, production taxes",-59.6174,-1421
 accrual,nh_black_rough,high,Social Security,134.6255,3209,-24.6343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,Medicare,127.8455,3047,-50.4190,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,Medicaid,181.2461,4320,-53.5488,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,nh_black_rough,high,schools and colleges,173.9840,4147,50.2529,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,nh_black_rough,high,schools and colleges,178.6145,4257,47.9039,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,"police, courts, prisons",106.3305,2534,-23.9872,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914,-39.4537,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,veterans and military medical,41.5391,990,-28.8361,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",104.2367,2485,1.3636,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,nh_black_rough,high,capital return,58.5882,1396,3.3913,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,nh_black_rough,high,capital return,59.0052,1406,3.1798,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,lineage post-engine coverage_bn,0.0000,0,12.6388,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -182,12 +182,12 @@ accrual,A1_third_plus_nh_white,high,"capital, property, production taxes",-133.1
 accrual,A1_third_plus_nh_white,high,Social Security,175.9639,3890,-65.9727,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,high,Medicare,177.6285,3927,-100.2021,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,high,Medicaid,105.5518,2334,22.1454,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A1_third_plus_nh_white,high,schools and colleges,143.3741,3170,80.8628,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,schools and colleges,137.3575,3037,89.1608,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,high,"police, courts, prisons",57.3514,1268,24.9919,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",75.4378,1668,49.3298,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,high,veterans and military medical,37.8464,837,-25.1435,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",135.5448,2997,-29.9445,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A1_third_plus_nh_white,high,capital return,61.3353,1356,0.6442,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,capital return,60.7936,1344,1.3914,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,high,lineage post-engine coverage_bn,0.0000,0,12.6388,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -198,12 +198,12 @@ accrual,A2_us_born_nh_white,high,"capital, property, production taxes",-133.7373
 accrual,A2_us_born_nh_white,high,Social Security,175.1738,3873,-65.1826,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,high,Medicare,177.3151,3920,-99.8887,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,high,Medicaid,105.5943,2335,22.1029,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A2_us_born_nh_white,high,schools and colleges,146.7453,3244,77.4916,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,schools and colleges,141.4604,3128,85.0579,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,high,"police, courts, prisons",57.6025,1274,24.7408,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",75.8834,1678,48.8842,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,high,veterans and military medical,37.9147,838,-25.2117,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,high,"per-head lines: government, defense, interest, roads, other",135.5807,2998,-29.9803,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A2_us_born_nh_white,high,capital return,61.5544,1361,0.4251,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,capital return,61.0785,1350,1.1064,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,high,lineage post-engine coverage_bn,0.0000,0,12.6388,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -214,12 +214,12 @@ accrual,A3_third_plus_nh_white_at_union_ages,high,"capital, property, production
 accrual,A3_third_plus_nh_white_at_union_ages,high,Social Security,162.2420,3587,-52.2508,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,high,Medicare,96.4709,2133,-19.0445,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,high,Medicaid,88.2950,1952,39.4022,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A3_third_plus_nh_white_at_union_ages,high,schools and colleges,236.8181,5236,-12.5812,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,schools and colleges,225.5113,4986,1.0071,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,high,"police, courts, prisons",59.1969,1309,23.1464,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",77.5192,1714,47.2484,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,high,veterans and military medical,24.0609,532,-11.3579,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,high,"per-head lines: government, defense, interest, roads, other",120.1729,2657,-14.5725,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A3_third_plus_nh_white_at_union_ages,high,capital return,67.1290,1484,-5.1495,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,capital return,66.1109,1462,-3.9260,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,high,lineage post-engine coverage_bn,0.0000,0,12.6388,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -230,12 +230,12 @@ accrual,A4_third_plus_nh_white_stationary,high,"capital, property, production ta
 accrual,A4_third_plus_nh_white_stationary,high,Social Security,165.9085,3668,-55.9173,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,high,Medicare,160.7791,3555,-83.3527,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,high,Medicaid,101.9038,2253,25.7935,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A4_third_plus_nh_white_stationary,high,schools and colleges,166.7227,3686,57.5142,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,schools and colleges,159.0945,3517,67.4239,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,high,"police, courts, prisons",56.9613,1259,25.3820,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,high,"SNAP, SSI, housing, cash aid, credits, other welfare",75.0006,1658,49.7670,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,high,veterans and military medical,34.9160,772,-22.2130,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,high,"per-head lines: government, defense, interest, roads, other",129.9611,2873,-24.3607,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A4_third_plus_nh_white_stationary,high,capital return,62.2142,1376,-0.2347,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,capital return,61.5273,1360,0.6576,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,high,lineage post-engine coverage_bn,0.0000,0,12.6388,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -246,12 +246,12 @@ accrual,all_residents_slice,high,"capital, property, production taxes",-114.5987
 accrual,all_residents_slice,high,Social Security,164.6522,3640,-54.6610,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,high,Medicare,152.3205,3368,-74.8940,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,high,Medicaid,128.6227,2844,-0.9254,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,all_residents_slice,high,schools and colleges,174.0053,3847,50.2316,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,all_residents_slice,high,schools and colleges,174.0053,3847,52.5131,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,high,"police, courts, prisons",69.9818,1547,12.3615,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,high,"SNAP, SSI, housing, cash aid, credits, other welfare",103.2162,2282,21.5514,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,high,veterans and military medical,31.9532,706,-19.2502,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,high,"per-head lines: government, defense, interest, roads, other",144.8022,3201,-39.2019,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,all_residents_slice,high,capital return,63.9294,1413,-1.9499,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,all_residents_slice,high,capital return,63.9294,1413,-1.7445,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,high,lineage post-engine coverage_bn,0.0000,0,12.6388,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -278,12 +278,12 @@ cash,mexican_origin_rough,low,"capital, property, production taxes",-92.9121,-20
 cash,mexican_origin_rough,low,Social Security,63.9148,1413,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,low,Medicare,55.5530,1228,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,low,Medicaid,127.6645,2823,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,mexican_origin_rough,low,schools and colleges,223.3866,4939,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,mexican_origin_rough,low,schools and colleges,225.6681,4989,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,low,"police, courts, prisons",82.3433,1821,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,2759,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,low,veterans and military medical,12.7030,281,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",80.5849,1782,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,mexican_origin_rough,low,capital return,37.6866,833,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,mexican_origin_rough,low,capital return,37.8236,836,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,low,production gain (subtracted),-11.9095,-263,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,low,lineage post-engine mixed_unit_removal_bn,10.7400,237,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,low,lineage post-engine coverage_bn,0.7518,17,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -294,12 +294,12 @@ cash,nh_black_rough,low,"capital, property, production taxes",-87.9473,-2096,-4.
 cash,nh_black_rough,low,Social Security,141.5057,3373,-77.5909,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,low,Medicare,113.0022,2693,-57.4492,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,low,Medicaid,181.2461,4320,-53.5815,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,nh_black_rough,low,schools and colleges,173.9840,4147,49.4027,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,nh_black_rough,low,schools and colleges,178.6145,4257,47.0537,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,low,"police, courts, prisons",106.3305,2534,-23.9872,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914,-39.4537,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,low,veterans and military medical,41.5391,990,-28.8361,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",79.7973,1902,0.7877,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,nh_black_rough,low,capital return,35.6347,849,2.0519,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,nh_black_rough,low,capital return,35.9126,856,1.9109,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,low,lineage post-engine coverage_bn,0.0000,0,0.7518,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -310,12 +310,12 @@ cash,A1_third_plus_nh_white,low,"capital, property, production taxes",-188.5185,
 cash,A1_third_plus_nh_white,low,Social Security,266.0173,5881,-202.1024,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,low,Medicare,193.7063,4283,-138.1533,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,low,Medicaid,105.5518,2334,22.1127,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A1_third_plus_nh_white,low,schools and colleges,143.3741,3170,80.0125,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,schools and colleges,137.3575,3037,88.3106,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,low,"police, courts, prisons",57.3514,1268,24.9919,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",75.4378,1668,49.3298,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,low,veterans and military medical,37.8464,837,-25.1435,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",104.0568,2301,-23.4719,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A1_third_plus_nh_white,low,capital return,36.1178,799,1.5688,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,capital return,35.7567,791,2.0669,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,low,lineage post-engine coverage_bn,0.0000,0,0.7518,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -326,12 +326,12 @@ cash,A2_us_born_nh_white,low,"capital, property, production taxes",-188.8177,-41
 cash,A2_us_born_nh_white,low,Social Security,266.2923,5888,-202.3775,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,low,Medicare,193.7063,4283,-138.1533,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,low,Medicaid,105.5943,2335,22.0702,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A2_us_born_nh_white,low,schools and colleges,146.7453,3244,76.6413,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,schools and colleges,141.4604,3128,84.2077,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,low,"police, courts, prisons",57.6025,1274,24.7408,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",75.8834,1678,48.8842,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,low,veterans and military medical,37.9147,838,-25.2117,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,low,"per-head lines: government, defense, interest, roads, other",104.1756,2303,-23.5906,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A2_us_born_nh_white,low,capital return,36.2803,802,1.4063,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,capital return,35.9631,795,1.8605,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,low,lineage post-engine coverage_bn,0.0000,0,0.7518,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -342,12 +342,12 @@ cash,A3_third_plus_nh_white_at_union_ages,low,"capital, property, production tax
 cash,A3_third_plus_nh_white_at_union_ages,low,Social Security,96.3977,2131,-32.4829,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,low,Medicare,71.2527,1575,-15.6997,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,low,Medicaid,88.2950,1952,39.3695,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A3_third_plus_nh_white_at_union_ages,low,schools and colleges,236.8181,5236,-13.4315,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,schools and colleges,225.5113,4986,0.1569,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,low,"police, courts, prisons",59.1969,1309,23.1464,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",77.5192,1714,47.2484,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,low,veterans and military medical,24.0609,532,-11.3579,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,low,"per-head lines: government, defense, interest, roads, other",90.3668,1998,-9.7819,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A3_third_plus_nh_white_at_union_ages,low,capital return,40.4027,893,-2.7161,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,capital return,39.7240,878,-1.9004,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,low,lineage post-engine coverage_bn,0.0000,0,0.7518,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -358,12 +358,12 @@ cash,A4_third_plus_nh_white_stationary,low,"capital, property, production taxes"
 cash,A4_third_plus_nh_white_stationary,low,Social Security,238.6589,5277,-174.7440,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,low,Medicare,172.1193,3805,-116.5664,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,low,Medicaid,101.9038,2253,25.7608,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A4_third_plus_nh_white_stationary,low,schools and colleges,166.7227,3686,56.6640,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,schools and colleges,159.0945,3517,66.5736,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,low,"police, courts, prisons",56.9613,1259,25.3820,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,low,"SNAP, SSI, housing, cash aid, credits, other welfare",75.0006,1658,49.7670,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,low,veterans and military medical,34.9160,772,-22.2130,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,low,"per-head lines: government, defense, interest, roads, other",99.4496,2199,-18.8646,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A4_third_plus_nh_white_stationary,low,capital return,36.9044,816,0.7823,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,capital return,36.4464,806,1.3771,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,low,lineage post-engine coverage_bn,0.0000,0,0.7518,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -374,12 +374,12 @@ cash,all_residents_slice,low,"capital, property, production taxes",-163.2607,-36
 cash,all_residents_slice,low,Social Security,197.2379,4361,-133.3231,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,low,Medicare,148.5938,3285,-93.0408,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,low,Medicaid,128.6227,2844,-0.9581,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,all_residents_slice,low,schools and colleges,174.0053,3847,49.3813,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,all_residents_slice,low,schools and colleges,174.0053,3847,51.6628,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,low,"police, courts, prisons",69.9818,1547,12.3615,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,low,"SNAP, SSI, housing, cash aid, credits, other welfare",103.2162,2282,21.5514,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,low,veterans and military medical,31.9532,706,-19.2502,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,low,"per-head lines: government, defense, interest, roads, other",114.8560,2539,-34.2710,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,all_residents_slice,low,capital return,38.2115,845,-0.5249,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,all_residents_slice,low,capital return,38.2115,845,-0.3879,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,low,lineage post-engine coverage_bn,0.0000,0,0.7518,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -406,12 +406,12 @@ cash,mexican_origin_rough,high,"capital, property, production taxes",-66.6845,-1
 cash,mexican_origin_rough,high,Social Security,63.9148,1413,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,high,Medicare,55.5530,1228,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,high,Medicaid,127.6972,2823,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,mexican_origin_rough,high,schools and colleges,224.2369,4958,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,mexican_origin_rough,high,schools and colleges,226.5184,5008,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,high,"police, courts, prisons",82.3433,1821,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,2759,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,high,veterans and military medical,12.7030,281,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",105.6003,2335,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,mexican_origin_rough,high,capital return,61.9795,1370,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,mexican_origin_rough,high,capital return,62.1849,1375,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,high,production gain (subtracted),-7.8343,-173,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,high,lineage post-engine mixed_unit_removal_bn,14.5317,321,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,high,lineage post-engine coverage_bn,4.5878,101,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -422,12 +422,12 @@ cash,nh_black_rough,high,"capital, property, production taxes",-59.6174,-1421,-7
 cash,nh_black_rough,high,Social Security,141.5057,3373,-77.5909,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,high,Medicare,113.0022,2693,-57.4492,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,high,Medicaid,181.2461,4320,-53.5488,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,nh_black_rough,high,schools and colleges,173.9840,4147,50.2529,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,nh_black_rough,high,schools and colleges,178.6145,4257,47.9039,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,high,"police, courts, prisons",106.3305,2534,-23.9872,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914,-39.4537,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,high,veterans and military medical,41.5391,990,-28.8361,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",104.2367,2485,1.3636,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,nh_black_rough,high,capital return,58.5882,1396,3.3913,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,nh_black_rough,high,capital return,59.0052,1406,3.1798,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,high,lineage post-engine coverage_bn,0.0000,0,4.5878,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -438,12 +438,12 @@ cash,A1_third_plus_nh_white,high,"capital, property, production taxes",-133.1515
 cash,A1_third_plus_nh_white,high,Social Security,266.0173,5881,-202.1024,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,high,Medicare,193.7063,4283,-138.1533,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,high,Medicaid,105.5518,2334,22.1454,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A1_third_plus_nh_white,high,schools and colleges,143.3741,3170,80.8628,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,schools and colleges,137.3575,3037,89.1608,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,high,"police, courts, prisons",57.3514,1268,24.9919,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",75.4378,1668,49.3298,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,high,veterans and military medical,37.8464,837,-25.1435,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",135.5448,2997,-29.9445,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A1_third_plus_nh_white,high,capital return,61.3353,1356,0.6442,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,capital return,60.7936,1344,1.3914,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,high,lineage post-engine coverage_bn,0.0000,0,4.5878,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -454,12 +454,12 @@ cash,A2_us_born_nh_white,high,"capital, property, production taxes",-133.7373,-2
 cash,A2_us_born_nh_white,high,Social Security,266.2923,5888,-202.3775,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,high,Medicare,193.7063,4283,-138.1533,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,high,Medicaid,105.5943,2335,22.1029,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A2_us_born_nh_white,high,schools and colleges,146.7453,3244,77.4916,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,schools and colleges,141.4604,3128,85.0579,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,high,"police, courts, prisons",57.6025,1274,24.7408,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",75.8834,1678,48.8842,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,high,veterans and military medical,37.9147,838,-25.2117,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,high,"per-head lines: government, defense, interest, roads, other",135.5807,2998,-29.9803,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A2_us_born_nh_white,high,capital return,61.5544,1361,0.4251,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,capital return,61.0785,1350,1.1064,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,high,lineage post-engine coverage_bn,0.0000,0,4.5878,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -470,12 +470,12 @@ cash,A3_third_plus_nh_white_at_union_ages,high,"capital, property, production ta
 cash,A3_third_plus_nh_white_at_union_ages,high,Social Security,96.3977,2131,-32.4829,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,high,Medicare,71.2527,1575,-15.6997,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,high,Medicaid,88.2950,1952,39.4022,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A3_third_plus_nh_white_at_union_ages,high,schools and colleges,236.8181,5236,-12.5812,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,schools and colleges,225.5113,4986,1.0071,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,high,"police, courts, prisons",59.1969,1309,23.1464,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",77.5192,1714,47.2484,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,high,veterans and military medical,24.0609,532,-11.3579,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,high,"per-head lines: government, defense, interest, roads, other",120.1729,2657,-14.5725,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A3_third_plus_nh_white_at_union_ages,high,capital return,67.1290,1484,-5.1495,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,capital return,66.1109,1462,-3.9260,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,high,lineage post-engine coverage_bn,0.0000,0,4.5878,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -486,12 +486,12 @@ cash,A4_third_plus_nh_white_stationary,high,"capital, property, production taxes
 cash,A4_third_plus_nh_white_stationary,high,Social Security,238.6589,5277,-174.7440,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,high,Medicare,172.1193,3805,-116.5664,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,high,Medicaid,101.9038,2253,25.7935,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A4_third_plus_nh_white_stationary,high,schools and colleges,166.7227,3686,57.5142,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,schools and colleges,159.0945,3517,67.4239,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,high,"police, courts, prisons",56.9613,1259,25.3820,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,high,"SNAP, SSI, housing, cash aid, credits, other welfare",75.0006,1658,49.7670,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,high,veterans and military medical,34.9160,772,-22.2130,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,high,"per-head lines: government, defense, interest, roads, other",129.9611,2873,-24.3607,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A4_third_plus_nh_white_stationary,high,capital return,62.2142,1376,-0.2347,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,capital return,61.5273,1360,0.6576,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,high,lineage post-engine coverage_bn,0.0000,0,4.5878,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -502,12 +502,12 @@ cash,all_residents_slice,high,"capital, property, production taxes",-114.5987,-2
 cash,all_residents_slice,high,Social Security,197.2379,4361,-133.3231,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,high,Medicare,148.5938,3285,-93.0408,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,high,Medicaid,128.6227,2844,-0.9254,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,all_residents_slice,high,schools and colleges,174.0053,3847,50.2316,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,all_residents_slice,high,schools and colleges,174.0053,3847,52.5131,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,high,"police, courts, prisons",69.9818,1547,12.3615,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,high,"SNAP, SSI, housing, cash aid, credits, other welfare",103.2162,2282,21.5514,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,high,veterans and military medical,31.9532,706,-19.2502,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,high,"per-head lines: government, defense, interest, roads, other",144.8022,3201,-39.2019,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,all_residents_slice,high,capital return,63.9294,1413,-1.9499,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,all_residents_slice,high,capital return,63.9294,1413,-1.7445,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,high,lineage post-engine coverage_bn,0.0000,0,4.5878,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality

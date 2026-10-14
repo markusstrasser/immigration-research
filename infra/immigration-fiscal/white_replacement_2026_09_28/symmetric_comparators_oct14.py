@@ -7,6 +7,7 @@ the two comparator lanes. Legacy rough tables remain positive-control evidence.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import copy
 import csv
 import hashlib
@@ -31,6 +32,10 @@ from mortality_comparators import read_verified_ratio_table, select_verified_rat
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 BLACK = W.BLACK_LANE
+MEMBERS = HERE / 'derived/members_coverage_oct15.json'
+LINEAGE_ROUND2 = W.FISCAL / 'mixed_unit_removal_2026_10_14/derived/round2_summary.json'
+DERIVED, CENTRAL = MC.DERIVED, MC.CENTRAL       # round 3's derived arms and the central reading
+DERIVED_GROUPS = ('mexican_origin_engine', 'mexican_origin_rough', 'A1_third_plus_nh_white', 'nh_black_rough')
 
 
 def digest(path):
@@ -53,6 +58,8 @@ def check_pins(pin=False):
     paths += [HERE / 'mortality_conventions.py',
               W.FISCAL / 'coverage_bound_2026_10_14/derived/coverage_bound_oct15.json',
               W.FISCAL / 'job_capital_taxes_2026_10_14/derived/item.json']
+    # Round 3 (C3): the mortality mix, the school key, the coverage and children terms, the lineage's children shift.
+    paths += [MC.MIX, HERE / 'derived/school_key_oct15.json', MEMBERS, LINEAGE_ROUND2]
     hashes = {str(p.relative_to(ROOT)): digest(p) for p in paths}
     target = HERE / 'inputs/pins.json'
     data = json.loads(target.read_text())
@@ -65,10 +72,144 @@ def check_pins(pin=False):
 
 
 def write(lane, name, rows):
+    # Rows of the round-3 derived arms carry a few extra columns; every row takes the union schema.
+    fields = list(dict.fromkeys(key for row in rows for key in row))
     with (lane / 'derived' / name).open('w', newline='') as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator='\n')
+        writer = csv.DictWriter(stream, fieldnames=fields, restval='', lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
+
+
+@contextlib.contextmanager
+def school_key(rough, groups):
+    """Yield the arm's scenarios: round 3's school key (the default), or the rough key on persons aged 5-17 for the
+    diagnostic arm that isolates C3 fix 4; the frame's key totals and the union scenario follow, then are restored."""
+    if not rough:
+        yield groups
+        return
+    saved, union = W.R.K['k12'], W.UNION_SC
+    W.R.K['k12'] = W.K12_ROUGH
+    W.R.KTOT['k12'] = float((W.R.w * W.R.K['k12']).sum())
+    W.UNION_SC = W.R.scenario('mex')
+    try:
+        yield W.scenarios()
+    finally:
+        W.R.K['k12'] = saved
+        W.R.KTOT['k12'] = float((W.R.w * saved).sum())
+        W.UNION_SC = union
+
+
+def coverage_label(name, spec):
+    if name.startswith('mexican_'):
+        return "lineage: the case's coverage (item 12)"
+    return 'none' if spec is None else 'own group, 2020 PES central (members_coverage_oct15.py)'
+
+
+def members_terms():
+    """members_coverage_oct15.py's runs by (scenario, rule, coverage, mortality, basis, end), and its counts."""
+    data = json.loads(MEMBERS.read_text())
+    if data.get('case') != 'oct15' or data.get('arm') != 'combined_rules_only':
+        raise SystemExit('[BLOCKED] members and coverage terms are not on oct15 combined rules')
+    runs = {}
+    for r in data['runs']:
+        key = r['scenario'], r['rule'], r['coverage'], r['mortality'], r['basis'], r['end']
+        if key in runs:
+            raise SystemExit(f'[BLOCKED] duplicate members/coverage run {key}')
+        runs[key] = r
+    return runs, data['counts']
+
+
+def lineage_children_shift():
+    """The lineage's item 11 under the children rule, by set and end: its children outside its definition and outside
+    the added-descendant universe depart with their member parents, as the comparators' children do.
+
+    Federal tax: the source's all-biological-children arm less the adopted biological-children term (both solved by
+    the source). Health and SNAP: the latent children's benefit interaction at each end's reading, per child, on the
+    outside count [ASSUMPTION: the outside children's per-child interaction is the latent children's]. State tax is
+    not solved for them [DEGRADED: 0]."""
+    data = json.loads(LINEAGE_ROUND2.read_text())
+    m = data['membership']
+    ratio = m['outside_existing_addition_definition'] / m['latent_children_with_two_US_parents']
+    out = {}
+    for method in ('set', 'cash'):
+        for end in W.ENDS:
+            comp = {}
+            for r in data['results']:
+                if (r['method'], r['end']) == (method, end):
+                    if r['component'] in comp:
+                        raise SystemExit(f'[BLOCKED] duplicate round-2 component {r["component"]}')
+                    comp[r['component']] = r['bn']
+            if method == 'set':
+                W.gate(f'lineage item 11 {end}: the case takes the source\'s bounded_{end} reading (1e-9bn)',
+                       abs(comp[f'bounded_{end}'] - W.META['mixed_unit_removal']['by_end'][end]['total_bn']) < 1e-9)
+            federal = comp['M6_all_biological_federal_tax_arm'] - comp['M6_biological_children']
+            benefits = comp[f'bounded_{end}_membership_benefit_interaction'] * ratio
+            out[method, end] = dict(federal_bn=federal, benefits_bn=benefits, state_bn=0., total_bn=federal + benefits,
+                                    outside_children=m['outside_existing_addition_definition'],
+                                    latent_children=m['latent_children_with_two_US_parents'])
+    W.stop_if_failed()
+    return out
+
+
+def derived_rows(arm, spec, lookup, legacy, mixed, members, shift):
+    """One derived arm's rows for the lineage (rough and case engines), A1 and Black, from its base arm's rows."""
+    runs, counts = members
+    out = []
+    for basis in W.BASES:
+        for end in W.ENDS:
+            method = 'set' if basis == 'accrual' else 'cash'
+            block = (runs['lineage_block', 'children', 'central', spec['mortality'], basis, end]
+                     if spec['rule'] == 'children' else None)
+            delta = shift[method, end]['total_bn'] if block is not None else 0.
+            for name in DERIVED_GROUPS:
+                base = lookup[spec['base'], basis, end, name]
+                common = dict(membership_rule=spec['rule'], comparator_coverage=coverage_label(name, spec),
+                              production_sampling_se_bn=None, se_scope='not estimated (round-3 derived arm)')
+                if name.startswith('mexican_'):
+                    row = dict(base, arm=arm, **common)
+                    add = 0. if block is None else block['cost_bn'] + delta
+                    if block is not None:
+                        population = base['population'] + block['population']
+                        cost = base['cost_bn'] + add
+                        row.update(population=population, cost_bn=cost, cost_one_sided_bn=base['cost_one_sided_bn'] + add,
+                                   cost_without_item11_bn=base['cost_without_item11_bn'] + block['cost_bn'],
+                                   mixed_unit_removal_bn=base['mixed_unit_removal_bn'] + delta,
+                                   change_from_raw_bn=base['change_from_raw_bn'] + add,
+                                   exceeds_5bn=abs(base['change_from_raw_bn'] + add) >= 5,
+                                   cost_per_person=cost * 1e9 / population,
+                                   allocated_balance_bn=base['allocated_balance_bn'] + block['balance_bn'],
+                                   responsive_budget_cost_bn=base['responsive_budget_cost_bn'] + block['net_budget_bn'] + delta,
+                                   capital_resource_cost_bn=base['capital_resource_cost_bn'] + block['capital_bn'],
+                                   production_gain_bn=base['production_gain_bn'] + block['production_gain_bn'],
+                                   contribution_to_others_bn=-cost,
+                                   lineage_children_block_bn=block['cost_bn'], lineage_children_block_population=block['population'],
+                                   lineage_children_item11_bn=delta,
+                                   lineage_children_item11_rule=lineage_children_shift.__doc__.split('\n\n')[1].replace('\n', ' '))
+                    row['change_from_base_arm_bn'] = add
+                else:
+                    r = runs[name, spec['rule'], 'central', spec['mortality'], basis, end]
+                    true_own = counts[f'{name}/{spec["rule"]}/central']['true_own_scale']
+                    term = CC.true_count_removal(mixed, name, basis, end, r['population'], true_own, spec['rule'])
+                    cost = r['cost_bn'] + term['bn']
+                    W.gate(f'{arm}/{basis}/{end}/{name}: rebuilt run cost identity (1e-9bn)',
+                           abs(r['cost_bn'] - (r['spending_saved_bn'] - r['taxes_lost_bn'] + r['capital_bn']
+                                               - r['production_gain_bn'])) < 1e-9)
+                    change = r['cost_bn'] - legacy[basis, end, name]['cost']
+                    row = dict(arm=arm, basis=basis, end=end, group=name, allocation='personal', population=r['population'],
+                               engine=CC.engine_for(name), mixed_unit_removal_bn=term['bn'], comparator_item11_bn=term['bn'],
+                               item11_spending_bn=term['spending_bn'], item11_receipt_bn=term['receipt_bn'],
+                               item11_paired_se_bn=term['paired_se_bn'], **common,
+                               mixed_unit_asymmetry=term['scope'], framing=CC.MIXED_FRAME,
+                               balance_scope='allocated member lines; survivor post-engine term excluded, as on lineage side',
+                               cost_one_sided_bn=r['cost_bn'], cost_without_item11_bn=r['cost_bn'], cost_bn=cost,
+                               change_from_raw_bn=change, exceeds_5bn=abs(change) >= 5,
+                               cost_per_person=cost * 1e9 / r['population'], allocated_balance_bn=r['balance_bn'],
+                               responsive_budget_cost_bn=r['net_budget_bn'] + term['bn'], capital_resource_cost_bn=r['capital_bn'],
+                               production_gain_bn=r['production_gain_bn'], contribution_to_others_bn=-cost,
+                               true_own_count=true_own, change_from_base_arm_bn=cost - base['cost_bn'])
+                out.append(MC.tag(row))
+    W.stop_if_failed()
+    return out
 
 
 def mortality_params(mortality='specific', basis='row4', payroll_basis='legacy', scenario_ages=True, ratio_tables=None):
@@ -248,6 +389,12 @@ def main(pin=False):
     before_round2['union'] = coupled['union']
     payroll_only = mortality_params('specific', 'symmetric', payroll_basis='renormalized_status', scenario_ages=False, ratio_tables=ratio_tables)
     payroll_only['union'] = coupled['union']
+    # Round 3 (C3 fix 3b): the same combined rules with every group at whole-population mortality.
+    normalized_general = mortality_params('general', 'symmetric', payroll_basis='renormalized_status', ratio_tables=ratio_tables)
+    normalized_general['union'] = coupled['union']
+    reweight = CC.scenario_reweight(W.R, groups)     # round 3 (C3 fix 5): A3 and A4 take A1's item 11, reweighted
+    members = members_terms()
+    shift = lineage_children_shift()
     # Four cells isolate post-status bracket conservation and pension denominators.
     # The final cell also preserves A3/A4's actual scenario age weights.
     arms = {
@@ -267,15 +414,18 @@ def main(pin=False):
         'combined_bracket_payroll_joint': ('own', status, payroll_only, 'rules_only'),
         'combined_rules_only': ('own', status, normalized_specific, 'rules_only'),
         'combined_zero_production': ('zero', status, normalized_specific, 'rules_only'),
+        'combined_rules_general': ('own', status, normalized_general, 'rules_only'),
+        # round 3 (C3 fix 4) diagnostic: combined_rules_only on the rough school key (persons aged 5-17) for every group
+        'combined_rules_rough_school': ('own', status, normalized_specific, 'rules_only'),
     }
     results, program_rows, bridges = [], [], []
     lookup = {}
     for arm, (policy, sk, accrual, rule) in arms.items():
-        with W.patched(vars(W), ACC=accrual):
+        with W.patched(vars(W), ACC=accrual), school_key(arm == 'combined_rules_rough_school', groups) as arm_groups:
             for basis in W.BASES:
                 for end in W.ENDS:
                     runs = {}
-                    for name, sc in groups.items():
+                    for name, sc in arm_groups.items():
                         run = W.run29(sc, end, basis, production=policy, production_model=production,
                                       status_keys=sk, status_rule=rule)
                         runs[name] = run
@@ -283,18 +433,21 @@ def main(pin=False):
                         W.gate(f'{arm}/{basis}/{end}/{name}: cost identity (1e-9bn)',
                                abs(r['cost'] - (r['spending_saved'] - r['taxes_lost'] + r['capital'] - r['production_gain'])) < 1e-9)
                         before = legacy[basis, end, name]
-                        correction = CC.comparator_removal(mixed, name, basis, end, r['population'])
+                        correction = CC.comparator_removal(mixed, name, basis, end, r['population'], reweight=reweight)
                         comparator_item11 = correction['bn']
                         # Publication only: run29 remains the unadjusted M5 calibration input.
                         r = dict(r, cost=r['cost'] + comparator_item11,
                                  net_budget=r['net_budget'] + comparator_item11,
-                                 spending_saved=r['spending_saved'] + comparator_item11)
+                                 spending_saved=r['spending_saved'] + correction['spending_bn'],
+                                 taxes_lost=r['taxes_lost'] - correction['receipt_bn'])
                         se = sampling_se(production.evaluate(sc, end)) if policy == 'own' and sc != 'eng' and sc['name'] != 'mex' else None
                         item11 = W.META['mixed_unit_removal']['by_end'][end]['total_bn'] if name.startswith('mexican_') else comparator_item11
                         row = dict(arm=arm, basis=basis, end=end, group=name, allocation='personal', population=r['population'],
                                    engine=CC.engine_for(name), mixed_unit_removal_bn=item11,
                                    comparator_item11_bn=comparator_item11,
+                                   item11_spending_bn=correction['spending_bn'], item11_receipt_bn=correction['receipt_bn'],
                                    item11_paired_se_bn=correction['paired_se_bn'],
+                                   membership_rule='current', comparator_coverage=coverage_label(name, None),
                                    mixed_unit_asymmetry=correction['scope'] if not name.startswith('mexican_') else 'lineage measured; A1/Black counterparts measured',
                                    framing=CC.MIXED_FRAME,
                                    balance_scope='allocated member lines; survivor post-engine term excluded, as on lineage side',
@@ -327,13 +480,32 @@ def main(pin=False):
                                         case_engine='case', rough_engine='rough', **part)
                                    for part in CC.bridge_parts(runs['mexican_origin_engine'], runs['mexican_origin_rough'],
                                                               W.META['union_completion']['carriers']))
+    # Round 3 (C3): the derived arms, after the evaluator. Their bridges are their base arms': the lineage's children
+    # block and item 11 shift enter its case and rough rows alike.
+    arm_names = list(arms) + list(DERIVED)
+    for arm, spec in DERIVED.items():
+        for row in derived_rows(arm, spec, lookup, legacy, mixed, members, shift):
+            results.append(row)
+            lookup[arm, row['basis'], row['end'], row['group']] = row
+        bridges.extend([dict(b, arm=arm, mortality_convention=MC.convention(arm)) for b in bridges if b['arm'] == spec['base']])
+
+    def item11_at(arm, name, basis, end, population):
+        """Item 11 for `population` people under the arm's rule: observed own count, or the true own count."""
+        spec = DERIVED.get(arm)
+        if spec is None:
+            term = CC.comparator_removal(mixed, name, basis, end, population, reweight=reweight)
+            return dict(term, frame_own_count=term['own_count'],
+                        se_scope='paired lineage-minus-comparator replicate SE')
+        true_own = members[1][f'{name}/{spec["rule"]}/central']['true_own_scale']
+        term = CC.true_count_removal(mixed, name, basis, end, population, true_own, spec['rule'])
+        return dict(term, frame_own_count=true_own, se_scope='comparator-side SE only; lineage term not replicated under this rule')
     mortality_changes = {end: MC.source_change(W.FULL, W.DUMP, W.META, end, include_coverage=True)
                          for end in W.ENDS}
     for original in list(bridges):
         if original['arm'] in MC.OWN_ARMS:
             for bound in ('low', 'high'):
                 bridges.append(dict(original, mortality_convention=MC.OWN, mortality_bound=bound))
-    for arm in arms:
+    for arm in arm_names:
         if arm in MC.OWN_ARMS:
             for basis in W.BASES:
                 for end in W.ENDS:
@@ -379,8 +551,8 @@ def main(pin=False):
                 source_line='social_security_and_medicare_part_a', carrier_kind='mortality_sensitivity',
                 national_bn=0., amount_bn=r['mortality_delta_bn'], response=1.))
     comparisons, scaled, white_scaled = [], [], []
-    readings = [(arm, MC.convention(arm), 'none') for arm in arms]
-    readings += [(arm, MC.OWN, bound) for arm in arms if arm in MC.OWN_ARMS for bound in ('low', 'high')]
+    readings = [(arm, MC.convention(arm), 'none') for arm in arm_names]
+    readings += [(arm, MC.OWN, bound) for arm in arm_names if arm in MC.OWN_ARMS for bound in ('low', 'high')]
     for arm, mortality_convention, mortality_bound in readings:
         for basis in W.BASES:
             for end in W.ENDS:
@@ -391,10 +563,10 @@ def main(pin=False):
                 for comparator in (w, b):
                     MC.validate_pair(u, comparator, mortality_convention)
                 item11 = u['mixed_unit_removal_bn']
-                white_own = CC.comparator_removal(mixed, 'A1_third_plus_nh_white', basis, end, w['population'])['own_count']
+                white_own = item11_at(arm, 'A1_third_plus_nh_white', basis, end, w['population'])['frame_own_count']
                 for frame, population in (('own_count', white_own), ('lineage_count', e['population'])):
                     f = population / w['population']
-                    correction = CC.comparator_removal(mixed, 'A1_third_plus_nh_white', basis, end, population)
+                    correction = item11_at(arm, 'A1_third_plus_nh_white', basis, end, population)
                     white_scaled.append(dict(case='oct15', arm=arm, basis=basis, end=end,
                         mortality_convention=mortality_convention, mortality_bound=mortality_bound,
                         population_basis=frame, population=population,
@@ -404,22 +576,32 @@ def main(pin=False):
                         lineage_minus_comparator_bn=u['cost_bn'] - w['cost_bn'] * f,
                         one_sided_gap_bn=u['cost_bn'] - (w['cost_bn'] - w['comparator_item11_bn']) * f,
                         comparator_item11_bn=correction['bn'], item11_paired_se_bn=correction['paired_se_bn'],
+                        item11_se_scope=correction['se_scope'], membership_rule=w['membership_rule'],
                         framing=CC.MIXED_FRAME,
+                        population_warning=('own count differs from the lineage count: not an as-many comparison'
+                                            if frame == 'own_count' else ''),
                         rule='linear standardization of comparator per-person price; lineage held at live count; no new removal solve'))
                 comparisons.append(dict(case='oct15', mortality_convention=mortality_convention, mortality_bound=mortality_bound,
                     arm=arm, basis=basis, end=end,
                     **CC.gap_fields(u, w, b, item11),
                     case_minus_rough_bridge_bn=e['cost_bn'] - u['cost_bn'],
+                    membership_rule=w['membership_rule'], comparator_coverage=w['comparator_coverage'],
+                    item11_se_scope=item11_at(arm, 'A1_third_plus_nh_white', basis, end, w['population'])['se_scope'],
+                    stated_claim=MC.stated(mortality_convention),
+                    central=arm == CENTRAL['arm'] and mortality_convention == CENTRAL['mortality_convention'],
                     full_row13_symmetric=False))
                 factor = e['population'] / b['population']
                 for frame, f in (('own_count', 1.), ('scaled_to_lineage', factor)):
-                    correction = CC.comparator_removal(mixed, 'nh_black_rough', basis, end, b['population'] * f)
+                    correction = item11_at(arm, 'nh_black_rough', basis, end, b['population'] * f)
                     scaled.append(dict(case='oct15', mortality_convention=mortality_convention, mortality_bound=mortality_bound,
                         arm=arm, basis=basis, end=end, population_basis=frame,
                         population=b['population'] * f, cost_bn=b['cost_bn'] * f,
                         lineage_engine=u['engine'], comparator_engine=b['engine'],
                         mixed_unit_removal_bn=item11, mixed_unit_asymmetry=u['mixed_unit_asymmetry'],
                         comparator_item11_bn=correction['bn'], item11_paired_se_bn=correction['paired_se_bn'],
+                        item11_se_scope=correction['se_scope'], membership_rule=b['membership_rule'],
+                        comparator_coverage=b['comparator_coverage'], stated_claim=MC.stated(mortality_convention),
+                        central=arm == CENTRAL['arm'] and mortality_convention == CENTRAL['mortality_convention'],
                         framing=CC.MIXED_FRAME,
                         cost_per_person=b['cost_per_person'], scaling_delta_bn=b['cost_bn'] * (f - 1),
                         black_minus_rough_lineage_bn=b['cost_bn'] * f - u['cost_bn'],
@@ -514,10 +696,21 @@ def main(pin=False):
                                   'mixed_unit_removal': W.META['mixed_unit_removal']['by_end'],
                                   'coverage': W.META.get('coverage', {}),
                                   'comparator_completion': 'unmeasured; no counterpart invented',
-                                  'comparator_mixed_unit_removal': 'measured for A1 whites and Black on own masks; A2/A3/A4 unmeasured',
-                                  'comparator_coverage': 'none; NH-white PES rates exist but no own-price cohort/base-adjusted term; Black rates absent from source export',
+                                  'comparator_mixed_unit_removal': ('measured for A1 whites and Black on own masks under the current '
+                                      'and children rules; A3/A4 take A1\'s term reweighted (' + CC.REWEIGHT_RULE + '); A2 unmeasured'),
+                                  'comparator_coverage': ('round 3: every comparator at its own 2020 PES coverage by age and sex '
+                                      '(NH white alone; Black alone or in combination, Table C\'s universe; non-Hispanic q), '
+                                      'priced on its own rough-engine records: members_coverage_oct15.py, derived arms ' + ', '.join(DERIVED)),
                                   'coverage_age_mix': 'coverage people take completed observed overlay age shares; generation-only source supplies no own-age people',
-                                  'lineage_mortality': 'whole-population headline; explicit mixed and own-group comparisons beside'})
+                                  'lineage_mortality': ('central: every group at its own mortality (combined_rules_members, own-group); '
+                                      'whole-population pair beside (combined_rules_members_general); the mixed pair labelled, '
+                                      'never a stated claim (stated_claim false)')},
+                    round3=dict(central=CENTRAL, derived_arms=DERIVED,
+                                membership_rule="children: members' biological minor children outside the group's definition depart with them and count as members, at their own costs",
+                                school_key='every group keys K-12 on its own cell\'s October public K-12 rates at state spending per pupil (school_key_oct15.py)',
+                                mortality_mix='group survival factors move only the retirement share the formula route models; disability, children\'s and young survivors\' shares keep the whole-population factor (mortality_comparators.left_out_share; lineage_mortality_mix_oct15.py)',
+                                lineage_children_shift={f'{m}/{e}': v for (m, e), v in shift.items()},
+                                members_source_sha256=digest(MEMBERS)))
     for lane in (HERE, BLACK):
         (lane / 'derived/symmetric_audit_oct15.json').write_text(json.dumps(metadata, indent=2) + '\n')
     elapsed = time.perf_counter() - started

@@ -8,7 +8,7 @@ for subset in union latent; do
   uv run --no-project python3 "$lane/adapter.py" --policy snap --group lineage --subset "$subset"
 done
 uv run --no-project python3 "$lane/adapter.py" --tax lineage
-for group in white black; do
+for group in white black white_children black_children; do
   uv run --no-project python3 "$lane/adapter.py" --policy health --group "$group"
   uv run --no-project python3 "$lane/adapter.py" --policy snap --group "$group"
   uv run --no-project python3 "$lane/adapter.py" --tax "$group"

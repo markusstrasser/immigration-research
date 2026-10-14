@@ -14,15 +14,19 @@
     "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections.json": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68",
     "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections_cash.json": "9af66b4c6a87ddb96d22c208364cd6798d23411590252bbe9520f3019b6446ea",
     "infra/immigration-fiscal/main_case_2026_10_15/derived/summary.json": "1d999c666d68696ed2728b9e6fd48c44ab85371e875e3e6f1b16d0b16971013a",
-    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/accrual_ratios_mortality_oct15.csv": "7d0baf35be884d6cdae4bfc42757c62c735ef50e3765e746e58d7ea4d529da6c",
-    "infra/immigration-fiscal/black_comparator_rough_2026_09_28/derived/accrual_ratios_mortality_oct15.csv": "02722278d01776979f2931d33494b7864f26b71bcd5898682da4eaaeddeb3043",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/accrual_ratios_mortality_oct15.csv": "9917d41324af191632c8a6175cc16b007c5a94320672d1f91a04acc757fa0397",
+    "infra/immigration-fiscal/black_comparator_rough_2026_09_28/derived/accrual_ratios_mortality_oct15.csv": "737c6c2457762f632ea25df5f24a002d1facc9acd8939159e8dcf40c3bb93917",
     "infra/immigration-fiscal/lineage_mortality_2026_10_14/derived/accrual_ratios.csv": "62964c5407d76e246d2bfd908b54244d19d89af0c73f744ba8aeb68ce20d657a",
     "infra/immigration-fiscal/lineage_mortality_2026_10_14/derived/reproduced_ratios.csv": "a9c1c3dc190057611f30002f1b057375c4c75432006e33210149420e8cf2564f",
     "infra/immigration-fiscal/lineage_mortality_2026_10_14/derived/case_changes.csv": "114f60cb38a93e89884752894dffcad66f28775d6b25c90d3e0a4c00d171d677",
     "infra/immigration-fiscal/lineage_mortality_2026_10_14/derived/comparisons.csv": "b5a9c874b53d55175cbb5eeabd753a2fd1271f841e94b43b904de8061e9f8fe7",
-    "infra/immigration-fiscal/white_replacement_2026_09_28/mortality_conventions.py": "7bb231e41b0a7e31c77d24a9e93bfd11b3efa5f2ec0d676a096b97e90e7e6e0c",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/mortality_conventions.py": "9112fef4da7d618fdac04d6c19aa1165b7506ed51b8ff210c97719f71055cc05",
     "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/coverage_bound_oct15.json": "3456126cc53c353ef0806059dcff33ccc1448cfe8de39d2c92583c6c7d3d073c",
-    "infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/item.json": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283"
+    "infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/item.json": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/lineage_mortality_mix_oct15.csv": "05c392e9e0eeb523ce69493fe0b60dab406448c97f086978ff5294566e5926bd",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/school_key_oct15.json": "f4e7a6e6994c288c1bffaadc1cad4b031f1ca8471541c966f7a03f534b3c5d90",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/members_coverage_oct15.json": "7a95b71120c8c242d4edd6301b5985b37d29370c7da76eba807284c4405b4b4e",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/derived/round2_summary.json": "acbb2ba55a6f1fdf4f2a66c2e236608bdaebd24090f7b814333417c7ed3bbc01"
   },
   "scalar_policies": {
     "production_gain_bn": "production_policy",
@@ -761,7 +765,9 @@
   "comparator_item11_source_sha256": {
     "white_summary.json": "121b787f04637b43d698555fade2b115686f15fa7f30d4d5167ac5c3d4477081",
     "black_summary.json": "2cf7a859a12a3775a385440347ebf7851630302b56b95dbbd00847b26d7c2409",
-    "gaps.csv": "b28eced6679186982310efef4192e718a6f58a74cfbbb3e35e8d02566babb794"
+    "white_children_summary.json": "647223a2ca64fdc17688ffda01d1614c7f533e3650fc02ac56682f58daaf99d3",
+    "black_children_summary.json": "b2ac50210518879a49c6f7fa085117c0606a6e0c4fbd501be6ac3bb65951c9b9",
+    "gaps.csv": "18112e8cf04bb4afe6a5db603b70e1761ca024f787fcf02f05b6da9e0d4831ef"
   },
   "production_point_weight_rounding_max": 0.005049970000015946,
   "source_proxy_limit": "diagnostic only: old R9 union ratio held on changed denominator; do not interpret as status correction",
@@ -770,12 +776,12 @@
   "bridge": "lineage_engine_bridge_oct15.csv: evaluated lines, capital, production and post amounts; case minus rough; 1e-9bn closure",
   "mortality_substitution_bn": {
     "low": {
-      "low": 3.739718396542731,
-      "high": 3.7436258644701184
+      "low": 3.384508955694919,
+      "high": 3.388561809222941
     },
     "high": {
-      "low": 3.739718396542731,
-      "high": 3.7436258644701184
+      "low": 3.384508955694919,
+      "high": 3.388561809222941
     }
   },
   "mortality_substitution_rule": "central Fenelon Models 1/3 source coefficients on live pension amounts; source payer-generation shares held; completion/child overlay pension profiles bounded over source profiles; coverage on exported generation pension stocks; cash unchanged",
@@ -16755,9 +16761,70 @@
       ]
     },
     "comparator_completion": "unmeasured; no counterpart invented",
-    "comparator_mixed_unit_removal": "measured for A1 whites and Black on own masks; A2/A3/A4 unmeasured",
-    "comparator_coverage": "none; NH-white PES rates exist but no own-price cohort/base-adjusted term; Black rates absent from source export",
+    "comparator_mixed_unit_removal": "measured for A1 whites and Black on own masks under the current and children rules; A3/A4 take A1's term reweighted (A1's item 11 by part, each part scaled by the scenario's share of weight on A1 members in mixed units of the part's kind (tax unit, SPM unit, household) over A1's share [ASSUMPTION: survivor terms uniform per departing member within a mixed unit of that kind]); A2 unmeasured",
+    "comparator_coverage": "round 3: every comparator at its own 2020 PES coverage by age and sex (NH white alone; Black alone or in combination, Table C's universe; non-Hispanic q), priced on its own rough-engine records: members_coverage_oct15.py, derived arms combined_rules_coverage, combined_rules_members, combined_rules_members_general",
     "coverage_age_mix": "coverage people take completed observed overlay age shares; generation-only source supplies no own-age people",
-    "lineage_mortality": "whole-population headline; explicit mixed and own-group comparisons beside"
+    "lineage_mortality": "central: every group at its own mortality (combined_rules_members, own-group); whole-population pair beside (combined_rules_members_general); the mixed pair labelled, never a stated claim (stated_claim false)"
+  },
+  "round3": {
+    "central": {
+      "arm": "combined_rules_members",
+      "mortality_convention": "own-group mortality"
+    },
+    "derived_arms": {
+      "combined_rules_coverage": {
+        "base": "combined_rules_only",
+        "rule": "current",
+        "mortality": "specific"
+      },
+      "combined_rules_members": {
+        "base": "combined_rules_only",
+        "rule": "children",
+        "mortality": "specific"
+      },
+      "combined_rules_members_general": {
+        "base": "combined_rules_general",
+        "rule": "children",
+        "mortality": "general"
+      }
+    },
+    "membership_rule": "children: members' biological minor children outside the group's definition depart with them and count as members, at their own costs",
+    "school_key": "every group keys K-12 on its own cell's October public K-12 rates at state spending per pupil (school_key_oct15.py)",
+    "mortality_mix": "group survival factors move only the retirement share the formula route models; disability, children's and young survivors' shares keep the whole-population factor (mortality_comparators.left_out_share; lineage_mortality_mix_oct15.py)",
+    "lineage_children_shift": {
+      "set/low": {
+        "federal_bn": 0.6406312241471568,
+        "benefits_bn": 0.4170259193295325,
+        "state_bn": 0.0,
+        "total_bn": 1.0576571434766893,
+        "outside_children": 335604.26043439,
+        "latent_children": 517863.29300860997
+      },
+      "set/high": {
+        "federal_bn": 0.6406312241471568,
+        "benefits_bn": 0.17484869955694882,
+        "state_bn": 0.0,
+        "total_bn": 0.8154799237041056,
+        "outside_children": 335604.26043439,
+        "latent_children": 517863.29300860997
+      },
+      "cash/low": {
+        "federal_bn": 0.6406312241471568,
+        "benefits_bn": 0.4170259193295325,
+        "state_bn": 0.0,
+        "total_bn": 1.0576571434766893,
+        "outside_children": 335604.26043439,
+        "latent_children": 517863.29300860997
+      },
+      "cash/high": {
+        "federal_bn": 0.6406312241471568,
+        "benefits_bn": 0.17484869955694882,
+        "state_bn": 0.0,
+        "total_bn": 0.8154799237041056,
+        "outside_children": 335604.26043439,
+        "latent_children": 517863.29300860997
+      }
+    },
+    "members_source_sha256": "7a95b71120c8c242d4edd6301b5985b37d29370c7da76eba807284c4405b4b4e"
   }
 }

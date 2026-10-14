@@ -32,9 +32,20 @@ def test_source_method_reproduces_frozen_central_change():
     source = M.read_rows(M.SOURCE / 'derived/case_changes.csv')
     for end in ('low', 'high'):
         expected = M.one(source, arm='central', basis='accrual', end=end)
-        actual = M.source_change(full, union, meta, end)
+        actual = M.source_change(full, union, meta, end, mix=False)
         for bound in ('low', 'high'):
             assert actual[bound] == pytest.approx(float(expected[f'lineage_delta_{bound}_bn']), abs=1e-9)
+
+
+def test_round3_mix_moves_only_oasdi_and_keeps_part_a():
+    """The left-out-share mix changes the own-group OASDI coefficients only, and by less than the factor itself."""
+    mixed, mixed_profiles = M.coefficients()
+    plain, plain_profiles = M.coefficients(mix=False)
+    for g in ('G1', 'G2', 'G3plus'):
+        assert mixed[g]['pa_factor'] == pytest.approx(plain[g]['pa_factor'], abs=1e-12)
+        assert abs(mixed[g]['ss_factor']) < abs(plain[g]['ss_factor'])
+        assert mixed[g]['ss_factor'] * plain[g]['ss_factor'] > 0
+    assert len(mixed_profiles) == len(plain_profiles) == 3
 
 
 def test_live_delivered_comparisons_trace_tagged_cost_rows():

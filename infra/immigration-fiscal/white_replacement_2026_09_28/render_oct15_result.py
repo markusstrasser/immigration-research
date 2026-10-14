@@ -1,59 +1,123 @@
-"""Append the measured C40 comparison; retain earlier round-2 evidence."""
+"""Append the live comparator tables after the marker; text before it is the RESULT's record and stays.
+
+Round 3 (C3 fix 7): the central reading is round 3's (members' children depart and count as members, every group at
+its own Census coverage and its own mortality); the whole-population pair, the current rule and the mixed pair are
+beside it, each labelled; the case-minus-rough bridge travels with every reading. Every number is read from the files.
+"""
 from pathlib import Path
 import pandas as pd
 import comparison_contract as CC
+import mortality_conventions as MC
+from mortality_conventions import CENTRAL, DERIVED
 
 HERE = Path(__file__).resolve().parent
 BLACK = HERE.parent / 'black_comparator_rough_2026_09_28'
 MARKER = '<!-- oct15 C40 measured comparator mixed-unit removal -->'
 STAMP = '2026-10-15'
+READINGS = [  # arm, mortality convention, profile bound, label
+    ('combined_rules_members', MC.OWN, 'low', 'Central: children rule, own coverage, own mortality (lineage profile bound low)'),
+    ('combined_rules_members', MC.OWN, 'high', 'Central, lineage profile bound high'),
+    ('combined_rules_members_general', MC.GENERAL, 'none', 'Beside: the same at whole-population mortality'),
+    ('combined_rules_coverage', MC.OWN, 'low', 'Beside: current rule (children stay), own coverage, own mortality (bound low)'),
+    ('combined_rules_coverage', MC.OWN, 'high', 'Beside: current rule, bound high'),
+    ('combined_rules_only', MC.OWN, 'low', 'Beside: current rule, comparators without coverage, own mortality (bound low)'),
+    ('combined_rules_members', MC.MIXED, 'none', 'Labelled, not for claims: lineage at whole-population, comparators at own mortality'),
+]
+
+
+def pair(frame, column, sign=1.):
+    x = frame.set_index('end')
+    return f"{sign * x.loc['low', column]:.3f} / {sign * x.loc['high', column]:.3f}"
+
+
+def select(frame, arm, convention, bound, basis, **more):
+    sub = frame[(frame.arm == arm) & (frame.mortality_convention == convention) & (frame.mortality_bound == bound)
+                & (frame.basis == basis)]
+    for k, v in more.items():
+        sub = sub[sub[k] == v]
+    if len(sub) != 2:
+        raise SystemExit(f'[BLOCKED] reading {arm}/{convention}/{bound}/{basis} {more} is not one row per end')
+    return sub
 
 
 def render():
     c = pd.read_csv(HERE / 'derived/symmetric_comparisons_oct15.csv')
     pop = pd.read_csv(BLACK / 'derived/symmetric_population_oct15.csv')
+    whites = pd.read_csv(HERE / 'derived/symmetric_white_population_oct15.csv')
+    results = pd.read_csv(HERE / 'derived/symmetric_results_oct15.csv')
     source = CC.load_mixed_unit()
-    lines = [MARKER, '', f'## Measured comparator mixed-unit removal (R2C40) — {STAMP}', '',
-        'This section supersedes every earlier C40 reading with the comparator side at zero. '
-        'Item 11 now enters A1 White and Black published costs after evaluation. The evaluator remains '
-        'the unadjusted M5 calibration input. Other membership or age-standardized White definitions '
-        '(A2/A3/A4) remain unmeasured; their own-age removal term is not silently reused. '
-        '[CALCULATION: comparison_contract.py; symmetric_comparators_oct14.py]', '',
-        '[FRAMING-SENSITIVE] Both sides rest on whole-person static removal. These are conditional '
-        '2024 modeled amounts, with current-year survivor terms in both sets and no spousal-pension model. '
-        'Only the item11 gap uncertainty is reported: it uses the signed lineage-minus-comparator '
-        'replicate vectors in the pinned source gaps.csv, never component-SE quadrature. '
-        '[DATA: ../mixed_unit_comparators_2026_10_15/derived/{white,black}_summary.json and gaps.csv]', '',
-        '| Own-mask item11, $bn | Low / high | Own count |', '|---|---:|---:|',
-        '| A1 White | -35.394141 / -17.804446 | 173,053,897.03 |',
-        '| Black | -2.333671 / +0.646664 | 41,954,493.92 |', '',
-        'A1 scales by the exact live lineage count / own count; Black central stays at its own count. '
-        'Both groups also have separately labeled population standardizations. All contrasts below '
-        'use the rough engine on both sides; the exact case-minus-rough bridge remains separate. '
-        'Completion and coverage remain lineage-specific under the earlier source limitations. '
-        '[CALCULATION: symmetric_comparisons_oct15.csv; symmetric_population_oct15.csv; '
-        'symmetric_white_population_oct15.csv; lineage_engine_bridge_oct15.csv]', '',
-        '| Basis / mortality / profile; lineage-minus-comparator, $bn low / high | A1 at lineage count | Black own count | Black at lineage count |',
-        '|---|---:|---:|---:|']
-    def pair(frame, column, sign=1.):
-        x = frame.set_index('end')
-        return f"{sign * x.loc['low', column]:.6f} / {sign * x.loc['high', column]:.6f}"
-    readings = [('mixed mortality conventions', 'none'), ('own-group mortality', 'low'), ('own-group mortality', 'high')]
-    for basis in ('accrual', 'cash'):
-        for convention, bound in readings:
-            sub = c[(c.arm == 'combined_rules_only') & (c.basis == basis)
-                    & (c.mortality_convention == convention) & (c.mortality_bound == bound)]
-            black = pop[(pop.arm == 'combined_rules_only') & (pop.basis == basis)
-                        & (pop.mortality_convention == convention) & (pop.mortality_bound == bound)]
-            own = black[black.population_basis == 'own_count']
-            equal = black[black.population_basis == 'scaled_to_lineage']
-            lines.append(f"| {basis}, {convention}, {bound}: measured both sides | {pair(sub, 'white_gap_rough_lineage_bn')} | {pair(own, 'black_minus_rough_lineage_bn', -1)} | {pair(equal, 'black_minus_rough_lineage_bn', -1)} |")
-            lines.append(f"| One-sided gap (comparator item11 at zero) | {pair(sub, 'white_gap_one_sided_bn')} | {pair(own, 'black_minus_lineage_one_sided_bn', -1)} | {pair(equal, 'black_minus_lineage_one_sided_bn', -1)} |")
-            lines.append(f"| Item11 paired gap SE (conditional, not full-cost SE) | {pair(sub, 'white_item11_paired_se_bn')} | {pair(own, 'item11_paired_se_bn')} | {pair(equal, 'item11_paired_se_bn')} |")
-    lines += ['', 'The measured own-count and equal-count base-route gaps are also retained in the '
-        'pinned source below. This base route uses whole-population mortality and its original status/production '
-        'rules; it is distinct from the combined-rule sensitivities above. [DATA: source gaps.csv]', '',
-        '| Base route / basis / count, $bn low / high | Measured both sides |', '|---|---:|']
+    central = c[c.central.astype(bool)]
+    if set(central.arm) != {CENTRAL['arm']} or set(central.mortality_convention) != {CENTRAL['mortality_convention']}:
+        raise SystemExit('[BLOCKED] the central comparison rows are not the declared central reading')
+    CC.require_stated(CENTRAL['mortality_convention'])
+    lines = [MARKER, '',
+        f'## Comparators on round 3\'s rules (R3C3) — {STAMP}', '',
+        'This section is regenerated by `render_oct15_result.py`; it replaces the R2C40 tables that stood here earlier '
+        'on 2026-10-15 (git keeps them). Round 3 put one rule on all three groups: each comparator carries its own 2020 '
+        'Census coverage by age and sex, members\' biological minor children outside a group\'s definition depart with '
+        'them and count as members (the lineage\'s 0.336M such children too), every group keys K-12 on its own '
+        'enrollment at state spending per pupil, group survival factors move only the retirement share of the accrual, '
+        'and A3/A4 take A1\'s item 11 reweighted. [CALCULATION: symmetric_comparators_oct14.py; members_coverage_oct15.py; '
+        'school_key_oct15.py; lineage_mortality_mix_oct15.py; comparison_contract.py]', '',
+        '[FRAMING-SENSITIVE] Whole-person static removal on the rough engine on both sides; conditional 2024 modeled '
+        'amounts. "As many whites" scales A1\'s per-person cost to the lineage\'s true count (its own coverage and the '
+        'children rule included); Black is shown at its own true count and at the lineage\'s. A stated claim uses a '
+        'reading with one mortality convention on both sides; the mixed pair is labelled and refused by the guard '
+        '(`comparison_contract.require_stated`). Item 11 under round 3\'s rules carries comparator-side SEs only; the '
+        'paired replicate SE exists for the current rule without coverage. [DATA: symmetric_comparisons_oct15.csv; '
+        'symmetric_population_oct15.csv]', '',
+        '| Reading, $bn low / high end | Set | Lineage − as many whites | Black − lineage, Black\'s count | '
+        'Black − lineage, lineage\'s count | Case − rough lineage (bridge) | Stated claim |',
+        '|---|---|---:|---:|---:|---:|---|']
+    for arm, convention, bound, label in READINGS:
+        for basis in ('accrual', 'cash'):
+            sub = select(c, arm, convention, bound, basis)
+            own = select(pop, arm, convention, bound, basis, population_basis='own_count')
+            equal = select(pop, arm, convention, bound, basis, population_basis='scaled_to_lineage')
+            claim = 'yes' if MC.stated(convention) else 'no (mixed pair)'
+            lines.append(f"| {label} | {basis} | {pair(sub, 'white_gap_rough_lineage_bn')} | "
+                         f"{pair(own, 'black_minus_rough_lineage_bn')} | {pair(equal, 'black_minus_rough_lineage_bn')} | "
+                         f"{pair(sub, 'case_minus_rough_bridge_bn')} | {claim} |")
+    lines += ['', 'The bridge column is the case engine\'s lineage cost less the rough engine\'s on the same reading: '
+              'row-13 lines and the exact keys the rough engine does not carry. The comparison itself is rough on both '
+              'sides. [CALCULATION: lineage_engine_bridge_oct15.csv closes it line by line to 1e-9bn]', '',
+              '### Counts and item 11 by rule', '',
+              '| Group, rule | Observed own count | True own count (coverage) | Item 11 own count, set, $bn low / high |',
+              '|---|---:|---:|---:|']
+    for arm, rule in (('combined_rules_only', 'current, no coverage'), ('combined_rules_coverage', 'current'),
+                      ('combined_rules_members', 'children')):
+        for group, label in (('A1_third_plus_nh_white', 'A1 white'), ('nh_black_rough', 'Black')):
+            rows = results[(results.arm == arm) & (results.group == group) & (results.basis == 'accrual')
+                           & (results.mortality_convention == MC.MIXED)].set_index('end')
+            if len(rows) != 2:
+                raise SystemExit(f'[BLOCKED] {arm}/{group} result rows')
+            spec = DERIVED.get(arm)
+            if spec is None:
+                term = {e: CC.comparator_removal(source, group, 'accrual', e, rows.loc[e, 'population']) for e in ('low', 'high')}
+                true = None
+                own_bn = {e: term[e]['bn'] * term[e]['own_count'] / rows.loc[e, 'population'] for e in term}
+            else:
+                true = float(rows.loc['low', 'true_own_count'])
+                term = {e: CC.true_count_removal(source, group, 'accrual', e, true, true, spec['rule']) for e in ('low', 'high')}
+                own_bn = {e: term[e]['bn'] for e in term}
+            lines.append(f"| {label}, {rule} | {term['low']['own_count']:,.0f} | {'' if true is None else f'{true:,.0f}'} | "
+                         f"{own_bn['low']:.3f} / {own_bn['high']:.3f} |")
+    lines += ['', 'Under the children rule the observed count includes the members\' children; the lineage\'s own children '
+              'block (cost and item 11 shift) is in `symmetric_results_oct15.csv` (`lineage_children_*`).', '',
+              '### A1 white at its own count', '',
+              'A1 at its own count is a different population from the lineage: not an as-many comparison. It is shown '
+              'for scale only. [DATA: symmetric_white_population_oct15.csv, population_warning]', '',
+              '| Reading | Set | A1 own count | Lineage − A1 at its own count, $bn low / high |', '|---|---|---:|---:|']
+    for arm, convention, bound, label in READINGS[:1] + READINGS[3:4]:
+        for basis in ('accrual', 'cash'):
+            sub = select(whites, arm, convention, bound, basis, population_basis='own_count')
+            lines.append(f"| {label} | {basis} | {sub.population.iloc[0]:,.0f} | {pair(sub, 'lineage_minus_comparator_bn')} |")
+    lines += ['', '### Base route (not the comparison central)', '',
+              'The mixed-unit lane\'s own gaps on the base route: whole-population mortality, the original status and '
+              'production rules, the current membership rule, no comparator coverage. Kept as that lane\'s record; '
+              'the tables above supersede it for every comparison claim. [DATA: ../mixed_unit_comparators_2026_10_15/derived/gaps.csv]', '',
+              '| Base route: group, set, count | Lineage − comparator, measured both sides, $bn low / high | Comparator item 11 at zero |',
+              '|---|---:|---:|']
     gaps = pd.DataFrame(source['gaps'])
     for group in ('white', 'black'):
         for method in ('set', 'cash'):
@@ -61,8 +125,8 @@ def render():
                 sub = gaps[(gaps.group == group) & (gaps.method == method) & (gaps.population_basis == frame)].copy()
                 for col in ('both_sided_rough_gap_bn', 'one_sided_rough_gap_bn'):
                     sub[col] = pd.to_numeric(sub[col])
-                lines.append(f"| {group}, {method}, {frame}: measured both sides | {pair(sub, 'both_sided_rough_gap_bn')} |")
-                lines.append(f"| One-sided gap (comparator item11 at zero) | {pair(sub, 'one_sided_rough_gap_bn')} |")
+                lines.append(f"| {group}, {method}, {frame} | {pair(sub, 'both_sided_rough_gap_bn')} | "
+                             f"{pair(sub, 'one_sided_rough_gap_bn')} |")
     lines += ['', 'Reproduce with `sh infra/immigration-fiscal/white_replacement_2026_09_28/run_oct15.sh`. '
               'The SHA256 pins stop `[BLOCKED]` on a changed summary or paired-SE source. [CALCULATION: run_oct15.sh]', '']
     addition = '\n'.join(lines)

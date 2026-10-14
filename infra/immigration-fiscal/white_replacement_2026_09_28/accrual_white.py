@@ -37,7 +37,7 @@ STORED = dict(payable=1.018378, scheduled=1.297788, part_a=41.137128, timing=0.0
 G = (P.CENTRAL["rate"], P.CENTRAL["mortality"])
 
 
-def oasdi_ratio(q, grids, u_long, taus, scens=None, g=G):
+def oasdi_ratio(q, grids, u_long, taus, scens=None, g=G, mix=None):
     """Per-person central accrual (both scenarios) and the benefit-tax timing, as pension_accrual.central_accrual."""
     fam = SS.family_vector(q, "observed_family")
     level = P.career_levels(q, P.CENTRAL["mapping"])
@@ -48,6 +48,14 @@ def oasdi_ratio(q, grids, u_long, taus, scens=None, g=G):
     out = {}
     for scen in scens or P.SCENARIOS:
         fac = P.model_factor(grids[scen], P.CENTRAL["method"], g, fam, entry, birth, lvl, q.age.to_numpy().astype(float))
+        if mix is not None:
+            # Round 3 (C3 fix 3a): a group life table moves only the retirement benefits the formula route models.
+            # Disability, children's and young survivors' benefits, the left-out share s(age) of the ratio route,
+            # keep the whole-population factor.
+            general = P.model_factor(mix["grid"], P.CENTRAL["method"], mix["g"], fam, entry, birth, lvl,
+                                     q.age.to_numpy().astype(float))
+            s = mix["share"](q.age.to_numpy())
+            fac = (1 - s) * fac + s * general
         acc = tax * P.note_mwr(q, P.S.mwr_table(P.MWR_TABLE[scen]), level, fam) * fac * np.where(q.unauth, u_long, 1.0)
         tau = P.person_tau(taus, fam, birth)[(g, scen)]
         out[scen] = dict(ratio=float((w * acc).sum() / (w * tax).sum()),

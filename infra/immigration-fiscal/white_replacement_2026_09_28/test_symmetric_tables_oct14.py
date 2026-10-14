@@ -10,27 +10,44 @@ HERE = Path(__file__).resolve().parent
 
 def test_actual_comparator_publications_match_pinned_terms_and_paired_se():
     import comparison_contract as C
+    import mortality_conventions as MC
     source = C.load_mixed_unit()
     d = pd.read_csv(HERE / 'derived/symmetric_results_oct15.csv')
     for row in d[d.group.isin(C.MIXED_GROUPS)].itertuples():
-        term = C.comparator_removal(source, row.group, row.basis, row.end, row.population)
+        spec = MC.DERIVED.get(row.arm)
+        if spec is None:
+            term = C.comparator_removal(source, row.group, row.basis, row.end, row.population)
+        else:
+            term = C.true_count_removal(source, row.group, row.basis, row.end, row.population, row.true_own_count, spec['rule'])
         assert row.comparator_item11_bn == pytest.approx(term['bn'], abs=1e-9)
         assert row.item11_paired_se_bn == pytest.approx(term['paired_se_bn'], abs=1e-9)
+        assert row.item11_spending_bn + row.item11_receipt_bn == pytest.approx(term['bn'], abs=1e-9)
         assert row.cost_bn - row.cost_one_sided_bn == pytest.approx(term['bn'], abs=1e-9)
         assert row.cost_bn - row.cost_without_item11_bn == pytest.approx(term['bn'], abs=1e-9)
         assert '[FRAMING-SENSITIVE]' in row.framing
+    # Round 3 (C3 fix 5): A3 and A4 carry A1's term reweighted, labelled; A2 stays unmeasured at zero.
+    for row in d[d.group.str.startswith(('A3_', 'A4_'))].itertuples():
+        assert row.mixed_unit_asymmetry.startswith('reweighted from A1')
+        assert row.cost_bn - row.cost_one_sided_bn == pytest.approx(row.comparator_item11_bn, abs=1e-9)
+    a2 = d[d.group.eq('A2_us_born_nh_white')]
+    assert (a2.comparator_item11_bn == 0).all() and a2.mixed_unit_asymmetry.str.startswith('unmeasured').all()
     own = pd.read_csv(HERE / 'derived/symmetric_white_population_oct15.csv')
+    lineage = d[d.group.eq('mexican_origin_engine')].set_index(['arm', 'basis', 'end', 'mortality_convention', 'mortality_bound'])
     for row in own.itertuples():
         assert row.lineage_minus_comparator_bn == pytest.approx(row.lineage_cost_bn - row.comparator_cost_bn, abs=1e-9)
         assert row.lineage_minus_comparator_bn - row.one_sided_gap_bn == pytest.approx(-row.comparator_item11_bn, abs=1e-9)
-        # The source paired vector leaves the lineage at its live count in both frames.
-        assert row.lineage_population == pytest.approx(float(source['gaps'][0]['lineage_count']), abs=1e-6)
+        # The lineage stays at its live count under its arm's rule in both frames.
+        key = row.arm, row.basis, row.end, row.mortality_convention, row.mortality_bound
+        assert row.lineage_population == pytest.approx(lineage.loc[key, 'population'], abs=1e-6)
+        if row.membership_rule == 'current':
+            assert row.lineage_population == pytest.approx(float(source['gaps'][0]['lineage_count']), abs=1e-6)
+        assert (row.population_warning == row.population_warning) == (row.population_basis == 'own_count')
 
 
 def test_published_base_budget_identity_and_member_balance_definition():
     for lane in (HERE, HERE.parent / 'black_comparator_rough_2026_09_28'):
         d = pd.read_csv(lane / 'derived/rekey_summary_oct15.csv')
-        for row in d[d.group.isin(('A1_third_plus_nh_white', 'nh_black_rough'))].itertuples():
+        for row in d[d.group.str.startswith(('A1_', 'A3_', 'A4_', 'nh_black'))].itertuples():
             assert row.cost - row.cost_evaluator_bn == pytest.approx(row.comparator_item11_bn, abs=5e-5)
             assert row.cost == pytest.approx(row.net_budget + row.capital - row.production_gain, abs=2e-4)
             assert row.balance == pytest.approx(row.taxes_paid - row.spending_drawn, abs=1e-4)
@@ -72,10 +89,16 @@ def test_black_population_standardization_is_per_person():
     d = pd.read_csv(HERE.parent / 'black_comparator_rough_2026_09_28/derived/symmetric_population_oct15.csv')
     principal = json.loads((HERE.parent / 'main_case_2026_10_15/derived/corrections.json').read_text())
     count = principal['meta']['population_v8']['with_coverage']
-    for _, pair in d.groupby(['arm', 'basis', 'end', 'mortality_convention', 'mortality_bound']):
+    results = pd.read_csv(HERE / 'derived/symmetric_results_oct15.csv')
+    lineage = results[results.group.eq('mexican_origin_engine')].set_index(
+        ['arm', 'basis', 'end', 'mortality_convention', 'mortality_bound']).population
+    for key, pair in d.groupby(['arm', 'basis', 'end', 'mortality_convention', 'mortality_bound']):
         pair = pair.set_index('population_basis')
         own, scaled = pair.loc['own_count'], pair.loc['scaled_to_lineage']
-        assert scaled.population == pytest.approx(count, abs=1e-6)
+        # the lineage's count under the arm's rule: the case's, plus its children block under the children rule
+        assert scaled.population == pytest.approx(lineage.loc[key], abs=1e-6)
+        if own.membership_rule == 'current':
+            assert scaled.population == pytest.approx(count, abs=1e-6)
         assert scaled.cost_per_person == own.cost_per_person
         assert scaled.cost_bn / scaled.population == pytest.approx(own.cost_bn / own.population, abs=1e-15)
 
@@ -91,7 +114,7 @@ def test_report_render_preserves_history_and_is_byte_idempotent(tmp_path, monkey
     white, black = tmp_path / 'white', tmp_path / 'black'
     for lane in (white, black):
         (lane / 'derived').mkdir(parents=True)
-    for name in ('symmetric_results_oct15.csv', 'symmetric_comparisons_oct15.csv',
+    for name in ('symmetric_results_oct15.csv', 'symmetric_comparisons_oct15.csv', 'symmetric_white_population_oct15.csv',
                   'symmetric_hispanic_arm_oct15.csv', 'symmetric_status_sampling_oct15.csv', 'round2_changes_oct15.csv'):
         shutil.copyfile(HERE / 'derived' / name, white / 'derived' / name)
     shutil.copyfile(HERE / 'derived/domestic_source_changes_oct15.csv', white / 'derived/domestic_source_changes_oct15.csv')

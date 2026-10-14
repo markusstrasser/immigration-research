@@ -167,6 +167,13 @@ v4_inputs.py and the Black lane's accrual_black.py:
 and, after engine_lines.cjs oct05 / oct05_cash / oct05_union / oct05_union_cash, the archived library uses --case oct05.
 The live route is run_oct14.sh. The parent's 2026-10-14 wave-2 rule adds only the registered R9 union pension
 parts to the legacy pension amounts. Rough owner and state keys already use row 4 and receive no second shift.
+
+The case's school key (round 3, C3 fix 4, 2026-10-15; SCHOOL_CASES). On oct15 every group, the rough union too, keys the
+school part of education_services, and the K-12 capital stock, on the case's school construction in place of persons aged
+5-17: public K-12 pupils at October 2024 CPS rates by age band, each record at its own cell's rate (Mexican-origin, NH
+Black, A1 white, other NH white, everyone else), priced at the state's current spending per pupil (school_key_oct15.py,
+derived/school_key_oct15.json). The case already keys the union this way, so the comparison carries the school pricing on
+both sides and the case-to-rough bridge keeps only what has no comparator counterpart.
 """
 from __future__ import annotations
 
@@ -192,6 +199,7 @@ sys.path.insert(0, str(LANE))
 import rekey_white as R  # noqa: E402
 import state_white as S  # noqa: E402
 import v4_inputs as V  # noqa: E402
+import school_key_oct15 as SK  # noqa: E402
 sys.path.insert(0, str(FISCAL / "generation_account_2026_09_24"))
 import frame as F  # noqa: E402  (puts the CPS lane on sys.path)
 import combine_onbooks_lane as L  # noqa: E402
@@ -235,6 +243,9 @@ TAX_CASES = ("oct05", "oct14", "oct15")
 TAX_ALLOC = "shared"
 CASE_TAX_KEY = {"federal_income_tax": "fit_case", "state_local_income_tax": "sit_case", "other_personal_tax": "sit_case"}
 TAX_K: dict = {}     # the case's key vectors on the rough frame's rows (case_tax_keys()), added to R.K on TAX_CASES
+# Round 3 (C3 fix 4): the cases whose groups take the case's school key (module docstring); the rough key is kept
+SCHOOL_CASES = ("oct15",)
+K12_ROUGH = R.K["k12"].copy()
 
 
 def union_item_shifts(payload, item_id):
@@ -1617,6 +1628,8 @@ def setup():
     """Positive controls on the September 27 dump, then the sept29 frame (row-4 weights, the case's shares). Returns
     the row-4 union count."""
     global ACC, UNION_SC
+    R.K["k12"] = K12_ROUGH    # the September 27 controls below run on the rough school key
+    R.KTOT["k12"] = float((R.w * K12_ROUGH).sum())
     print("[the case: dumps and rules]", flush=True)
     case_dump = FULL if LINEAGE_ON else DUMP     # oct05: the case is the full dump; DUMP is its identified union
     for b in BASES:
@@ -1723,6 +1736,9 @@ def setup():
         TAX_K["fit_case"] = TAX_K[f"fit_case_{TAX_ALLOC}"]
         TAX_K["sit_case"] = TAX_K[f"sit_case_{TAX_ALLOC}"]
         R.K.update({k: v for k, v in TAX_K.items() if not k.startswith("_")})
+    if CASE in SCHOOL_CASES:
+        print("[the case's school key]", flush=True)
+        R.K["k12"] = SK.exposure(R)
     print(f"[the {CASE} frame: row-4 weights, the case's shares]", flush=True)
     set_frame(w4, n4, DUMP["cash"])
     ACC = accrual_params()
@@ -1998,8 +2014,9 @@ def main(case="sept29"):
             gate(f"the IPEDS terms' cost is the summary's {r['group']} {r['basis']} {r['end']}", abs(float(r["cost_bn"]) - want) < 5e-5)
     stop_if_failed()
     if CASE == 'oct15':
-        from comparison_contract import publish_base_summary, load_mixed_unit, comparator_removal
+        from comparison_contract import publish_base_summary, load_mixed_unit, comparator_removal, scenario_reweight
         mixed = load_mixed_unit()
+        reweight = scenario_reweight(R, scen)      # round 3 (C3 fix 5): A3/A4 take A1's item 11, reweighted
         for (basis, group, end), (result, *_) in res.items():
             if group in ('A1_third_plus_nh_white', 'nh_black_rough'):
                 term = comparator_removal(mixed, group, basis, end, result['population'])['bn']
@@ -2007,7 +2024,7 @@ def main(case="sept29"):
                     bucket='comparator post-engine mixed_unit_removal', cost_bn=f'{term:.4f}',
                     per_member=f"{term * 1e9 / result['population']:.0f}", delta_vs_union_rough_bn=f'{-term:.4f}',
                     engine='rough', mixed_unit_asymmetry='measured comparator survivor term; post-evaluator'))
-        publish_base_summary(summary, META['population_v8']['with_coverage'])
+        publish_base_summary(summary, META['population_v8']['with_coverage'], reweight=reweight)
     if LINEAGE_ON:
         hl = headline_lineage(summary, st, n4)     # its identified pass runs gates of its own; nothing is written yet
         stop_if_failed()

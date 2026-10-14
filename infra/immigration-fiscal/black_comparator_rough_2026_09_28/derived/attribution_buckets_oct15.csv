@@ -70,12 +70,12 @@ a,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,w
 1,cash,low,mexican_origin_rough,Social Security,59.6827,-0.0000,0.0000,oct15,whole-population mortality
 1,cash,low,mexican_origin_rough,Medicare,52.4192,0.0000,0.0000,oct15,whole-population mortality
 1,cash,low,mexican_origin_rough,Medicaid,117.6400,-0.1034,0.0000,oct15,whole-population mortality
-1,cash,low,mexican_origin_rough,schools and colleges,198.3183,-2.4766,0.0000,oct15,whole-population mortality
+1,cash,low,mexican_origin_rough,schools and colleges,200.5998,-0.1951,0.0000,oct15,whole-population mortality
 1,cash,low,mexican_origin_rough,"police, courts, prisons",69.9304,0.2750,0.0000,oct15,whole-population mortality
 1,cash,low,mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",116.1351,1.9323,0.0000,oct15,whole-population mortality
 1,cash,low,mexican_origin_rough,veterans and military medical,11.5868,0.0000,0.0000,oct15,whole-population mortality
 1,cash,low,mexican_origin_rough,"per-head lines: government, defense, interest, roads, other",69.7236,4.1070,0.0000,oct15,whole-population mortality
-1,cash,low,mexican_origin_rough,capital return,33.2084,-0.2832,0.0000,oct15,whole-population mortality
+1,cash,low,mexican_origin_rough,capital return,33.3453,-0.1462,0.0000,oct15,whole-population mortality
 1,cash,low,mexican_origin_rough,production gain (subtracted),-11.6799,1.6427,0.0000,oct15,whole-population mortality
 1,cash,low,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
 1,cash,low,mexican_origin_rough,lineage post-engine coverage_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
@@ -86,12 +86,12 @@ a,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,w
 1,cash,low,nh_black_rough,Social Security,141.5057,0.0000,-81.8230,oct15,whole-population mortality
 1,cash,low,nh_black_rough,Medicare,113.0022,0.0000,-60.5830,oct15,whole-population mortality
 1,cash,low,nh_black_rough,Medicaid,181.2461,0.0000,-63.6060,oct15,whole-population mortality
-1,cash,low,nh_black_rough,schools and colleges,173.9840,-11.7180,24.3343,oct15,whole-population mortality
+1,cash,low,nh_black_rough,schools and colleges,178.6145,-7.0876,21.9854,oct15,whole-population mortality
 1,cash,low,nh_black_rough,"police, courts, prisons",111.6660,0.4391,-41.7356,oct15,whole-population mortality
 1,cash,low,nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,-1.6480,-48.0861,oct15,whole-population mortality
 1,cash,low,nh_black_rough,veterans and military medical,41.5391,0.0000,-29.9522,oct15,whole-population mortality
 1,cash,low,nh_black_rough,"per-head lines: government, defense, interest, roads, other",80.7605,1.3772,-11.0368,oct15,whole-population mortality
-1,cash,low,nh_black_rough,capital return,35.5408,0.5317,-2.3325,oct15,whole-population mortality
+1,cash,low,nh_black_rough,capital return,35.8188,0.8097,-2.4735,oct15,whole-population mortality
 1,cash,low,nh_black_rough,production gain (subtracted),0.0000,0.0000,-11.6799,oct15,whole-population mortality
 1,cash,low,nh_black_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
 1,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
@@ -102,12 +102,12 @@ a,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,w
 2,cash,low,mexican_origin_rough,Social Security,59.6827,0.0000,0.0000,oct15,whole-population mortality
 2,cash,low,mexican_origin_rough,Medicare,52.4192,0.0000,0.0000,oct15,whole-population mortality
 2,cash,low,mexican_origin_rough,Medicaid,117.6400,0.0000,0.0000,oct15,whole-population mortality
-2,cash,low,mexican_origin_rough,schools and colleges,198.3183,0.0000,0.0000,oct15,whole-population mortality
+2,cash,low,mexican_origin_rough,schools and colleges,200.5998,0.0000,0.0000,oct15,whole-population mortality
 2,cash,low,mexican_origin_rough,"police, courts, prisons",76.6344,6.7040,0.0000,oct15,whole-population mortality
 2,cash,low,mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",116.1351,0.0000,0.0000,oct15,whole-population mortality
 2,cash,low,mexican_origin_rough,veterans and military medical,11.5868,0.0000,0.0000,oct15,whole-population mortality
 2,cash,low,mexican_origin_rough,"per-head lines: government, defense, interest, roads, other",74.2636,4.5400,0.0000,oct15,whole-population mortality
-2,cash,low,mexican_origin_rough,capital return,34.1721,0.9638,0.0000,oct15,whole-population mortality
+2,cash,low,mexican_origin_rough,capital return,34.3091,0.9638,0.0000,oct15,whole-population mortality
 2,cash,low,mexican_origin_rough,production gain (subtracted),-11.6799,0.0000,0.0000,oct15,whole-population mortality
 2,cash,low,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
 2,cash,low,mexican_origin_rough,lineage post-engine coverage_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
@@ -118,12 +118,12 @@ a,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,w
 2,cash,low,nh_black_rough,Social Security,141.5057,0.0000,-81.8230,oct15,whole-population mortality
 2,cash,low,nh_black_rough,Medicare,113.0022,0.0000,-60.5830,oct15,whole-population mortality
 2,cash,low,nh_black_rough,Medicaid,181.2461,0.0000,-63.6060,oct15,whole-population mortality
-2,cash,low,nh_black_rough,schools and colleges,173.9840,0.0000,24.3343,oct15,whole-population mortality
+2,cash,low,nh_black_rough,schools and colleges,178.6145,0.0000,21.9854,oct15,whole-population mortality
 2,cash,low,nh_black_rough,"police, courts, prisons",106.3305,-5.3355,-29.6961,oct15,whole-population mortality
 2,cash,low,nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,0.0000,-48.0861,oct15,whole-population mortality
 2,cash,low,nh_black_rough,veterans and military medical,41.5391,0.0000,-29.9522,oct15,whole-population mortality
 2,cash,low,nh_black_rough,"per-head lines: government, defense, interest, roads, other",79.7973,-0.9632,-5.5336,oct15,whole-population mortality
-2,cash,low,nh_black_rough,capital return,35.6347,0.0938,-1.4626,oct15,whole-population mortality
+2,cash,low,nh_black_rough,capital return,35.9126,0.0938,-1.6036,oct15,whole-population mortality
 2,cash,low,nh_black_rough,production gain (subtracted),0.0000,0.0000,-11.6799,oct15,whole-population mortality
 2,cash,low,nh_black_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
 2,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
@@ -134,12 +134,12 @@ a,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,w
 3,accrual,low,mexican_origin_rough,Social Security,101.3768,41.6941,0.0000,oct15,whole-population mortality
 3,accrual,low,mexican_origin_rough,Medicare,72.5106,20.0914,0.0000,oct15,whole-population mortality
 3,accrual,low,mexican_origin_rough,Medicaid,117.6400,0.0000,0.0000,oct15,whole-population mortality
-3,accrual,low,mexican_origin_rough,schools and colleges,198.3183,0.0000,0.0000,oct15,whole-population mortality
+3,accrual,low,mexican_origin_rough,schools and colleges,200.5998,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,low,mexican_origin_rough,"police, courts, prisons",76.6344,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,low,mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",116.1351,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,low,mexican_origin_rough,veterans and military medical,11.5868,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,low,mexican_origin_rough,"per-head lines: government, defense, interest, roads, other",74.2636,0.0000,0.0000,oct15,whole-population mortality
-3,accrual,low,mexican_origin_rough,capital return,34.1721,0.0000,0.0000,oct15,whole-population mortality
+3,accrual,low,mexican_origin_rough,capital return,34.3091,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,low,mexican_origin_rough,production gain (subtracted),-11.6799,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,low,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,low,mexican_origin_rough,lineage post-engine coverage_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
@@ -150,12 +150,12 @@ a,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,w
 3,accrual,low,nh_black_rough,Social Security,134.6255,-6.8802,-33.2487,oct15,whole-population mortality
 3,accrual,low,nh_black_rough,Medicare,127.8455,14.8433,-55.3349,oct15,whole-population mortality
 3,accrual,low,nh_black_rough,Medicaid,181.2461,0.0000,-63.6060,oct15,whole-population mortality
-3,accrual,low,nh_black_rough,schools and colleges,173.9840,0.0000,24.3343,oct15,whole-population mortality
+3,accrual,low,nh_black_rough,schools and colleges,178.6145,0.0000,21.9854,oct15,whole-population mortality
 3,accrual,low,nh_black_rough,"police, courts, prisons",106.3305,0.0000,-29.6961,oct15,whole-population mortality
 3,accrual,low,nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,0.0000,-48.0861,oct15,whole-population mortality
 3,accrual,low,nh_black_rough,veterans and military medical,41.5391,0.0000,-29.9522,oct15,whole-population mortality
 3,accrual,low,nh_black_rough,"per-head lines: government, defense, interest, roads, other",79.7973,0.0000,-5.5336,oct15,whole-population mortality
-3,accrual,low,nh_black_rough,capital return,35.6347,0.0000,-1.4626,oct15,whole-population mortality
+3,accrual,low,nh_black_rough,capital return,35.9126,0.0000,-1.6036,oct15,whole-population mortality
 3,accrual,low,nh_black_rough,production gain (subtracted),0.0000,0.0000,-11.6799,oct15,whole-population mortality
 3,accrual,low,nh_black_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
@@ -166,12 +166,12 @@ a,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,w
 4,accrual,low,mexican_origin_rough,Social Security,109.9912,8.6144,0.0000,oct15,whole-population mortality
 4,accrual,low,mexican_origin_rough,Medicare,77.4264,4.9158,0.0000,oct15,whole-population mortality
 4,accrual,low,mexican_origin_rough,Medicaid,127.6645,10.0245,0.0000,oct15,whole-population mortality
-4,accrual,low,mexican_origin_rough,schools and colleges,223.3866,25.0683,0.0000,oct15,whole-population mortality
+4,accrual,low,mexican_origin_rough,schools and colleges,225.6681,25.0683,0.0000,oct15,whole-population mortality
 4,accrual,low,mexican_origin_rough,"police, courts, prisons",82.3433,5.7089,0.0000,oct15,whole-population mortality
 4,accrual,low,mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,8.6325,0.0000,oct15,whole-population mortality
 4,accrual,low,mexican_origin_rough,veterans and military medical,12.7030,1.1161,0.0000,oct15,whole-population mortality
 4,accrual,low,mexican_origin_rough,"per-head lines: government, defense, interest, roads, other",80.5849,6.3213,0.0000,oct15,whole-population mortality
-4,accrual,low,mexican_origin_rough,capital return,37.6866,3.5145,0.0000,oct15,whole-population mortality
+4,accrual,low,mexican_origin_rough,capital return,37.8236,3.5145,0.0000,oct15,whole-population mortality
 4,accrual,low,mexican_origin_rough,production gain (subtracted),-11.9095,-0.2296,0.0000,oct15,whole-population mortality
 4,accrual,low,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,10.7400,10.7400,0.0000,oct15,whole-population mortality
 4,accrual,low,mexican_origin_rough,lineage post-engine coverage_bn,8.8028,8.8028,0.0000,oct15,whole-population mortality
@@ -182,12 +182,12 @@ a,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,w
 4,accrual,low,nh_black_rough,Social Security,134.6255,0.0000,-24.6343,oct15,whole-population mortality
 4,accrual,low,nh_black_rough,Medicare,127.8455,0.0000,-50.4190,oct15,whole-population mortality
 4,accrual,low,nh_black_rough,Medicaid,181.2461,0.0000,-53.5815,oct15,whole-population mortality
-4,accrual,low,nh_black_rough,schools and colleges,173.9840,0.0000,49.4027,oct15,whole-population mortality
+4,accrual,low,nh_black_rough,schools and colleges,178.6145,0.0000,47.0537,oct15,whole-population mortality
 4,accrual,low,nh_black_rough,"police, courts, prisons",106.3305,0.0000,-23.9872,oct15,whole-population mortality
 4,accrual,low,nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,0.0000,-39.4537,oct15,whole-population mortality
 4,accrual,low,nh_black_rough,veterans and military medical,41.5391,0.0000,-28.8361,oct15,whole-population mortality
 4,accrual,low,nh_black_rough,"per-head lines: government, defense, interest, roads, other",79.7973,0.0000,0.7877,oct15,whole-population mortality
-4,accrual,low,nh_black_rough,capital return,35.6347,0.0000,2.0519,oct15,whole-population mortality
+4,accrual,low,nh_black_rough,capital return,35.9126,0.0000,1.9109,oct15,whole-population mortality
 4,accrual,low,nh_black_rough,production gain (subtracted),0.0000,0.0000,-11.9095,oct15,whole-population mortality
 4,accrual,low,nh_black_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,10.7400,oct15,whole-population mortality
 4,accrual,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,8.8028,oct15,whole-population mortality
@@ -198,12 +198,12 @@ a,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,w
 5,accrual,low,mexican_origin_rough,Social Security,109.9912,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,low,mexican_origin_rough,Medicare,77.4264,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,low,mexican_origin_rough,Medicaid,127.6645,0.0000,0.0000,oct15,whole-population mortality
-5,accrual,low,mexican_origin_rough,schools and colleges,223.3866,0.0000,0.0000,oct15,whole-population mortality
+5,accrual,low,mexican_origin_rough,schools and colleges,225.6681,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,low,mexican_origin_rough,"police, courts, prisons",82.3433,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,low,mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,low,mexican_origin_rough,veterans and military medical,12.7030,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,low,mexican_origin_rough,"per-head lines: government, defense, interest, roads, other",80.5849,0.0000,0.0000,oct15,whole-population mortality
-5,accrual,low,mexican_origin_rough,capital return,37.6866,0.0000,0.0000,oct15,whole-population mortality
+5,accrual,low,mexican_origin_rough,capital return,37.8236,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,low,mexican_origin_rough,production gain (subtracted),-11.9095,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,low,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,10.7400,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,low,mexican_origin_rough,lineage post-engine coverage_bn,8.8028,0.0000,0.0000,oct15,whole-population mortality
@@ -214,12 +214,12 @@ a,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,w
 5,accrual,low,nh_black_rough,Social Security,134.6255,0.0000,-24.6343,oct15,whole-population mortality
 5,accrual,low,nh_black_rough,Medicare,127.8455,0.0000,-50.4190,oct15,whole-population mortality
 5,accrual,low,nh_black_rough,Medicaid,181.2461,0.0000,-53.5815,oct15,whole-population mortality
-5,accrual,low,nh_black_rough,schools and colleges,173.9840,0.0000,49.4027,oct15,whole-population mortality
+5,accrual,low,nh_black_rough,schools and colleges,178.6145,0.0000,47.0537,oct15,whole-population mortality
 5,accrual,low,nh_black_rough,"police, courts, prisons",106.3305,0.0000,-23.9872,oct15,whole-population mortality
 5,accrual,low,nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,0.0000,-39.4537,oct15,whole-population mortality
 5,accrual,low,nh_black_rough,veterans and military medical,41.5391,0.0000,-28.8361,oct15,whole-population mortality
 5,accrual,low,nh_black_rough,"per-head lines: government, defense, interest, roads, other",79.7973,0.0000,0.7877,oct15,whole-population mortality
-5,accrual,low,nh_black_rough,capital return,35.6347,0.0000,2.0519,oct15,whole-population mortality
+5,accrual,low,nh_black_rough,capital return,35.9126,0.0000,1.9109,oct15,whole-population mortality
 5,accrual,low,nh_black_rough,production gain (subtracted),0.0000,0.0000,-11.9095,oct15,whole-population mortality
 5,accrual,low,nh_black_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,10.7400,oct15,whole-population mortality
 5,accrual,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,8.8028,oct15,whole-population mortality
@@ -294,12 +294,12 @@ a,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,
 1,cash,high,mexican_origin_rough,Social Security,59.6827,-0.0000,0.0000,oct15,whole-population mortality
 1,cash,high,mexican_origin_rough,Medicare,52.4192,0.0000,0.0000,oct15,whole-population mortality
 1,cash,high,mexican_origin_rough,Medicaid,117.6400,-0.1034,0.0000,oct15,whole-population mortality
-1,cash,high,mexican_origin_rough,schools and colleges,199.1126,-1.7057,0.0000,oct15,whole-population mortality
+1,cash,high,mexican_origin_rough,schools and colleges,201.3941,0.5757,0.0000,oct15,whole-population mortality
 1,cash,high,mexican_origin_rough,"police, courts, prisons",69.9304,0.2750,0.0000,oct15,whole-population mortality
 1,cash,high,mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",116.1351,1.9323,0.0000,oct15,whole-population mortality
 1,cash,high,mexican_origin_rough,veterans and military medical,11.5868,0.0000,0.0000,oct15,whole-population mortality
 1,cash,high,mexican_origin_rough,"per-head lines: government, defense, interest, roads, other",91.7644,4.2029,0.0000,oct15,whole-population mortality
-1,cash,high,mexican_origin_rough,capital return,54.2842,-0.4348,0.0000,oct15,whole-population mortality
+1,cash,high,mexican_origin_rough,capital return,54.4896,-0.2293,0.0000,oct15,whole-population mortality
 1,cash,high,mexican_origin_rough,production gain (subtracted),-7.6832,1.1074,0.0000,oct15,whole-population mortality
 1,cash,high,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
 1,cash,high,mexican_origin_rough,lineage post-engine coverage_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
@@ -310,12 +310,12 @@ a,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,
 1,cash,high,nh_black_rough,Social Security,141.5057,0.0000,-81.8230,oct15,whole-population mortality
 1,cash,high,nh_black_rough,Medicare,113.0022,0.0000,-60.5830,oct15,whole-population mortality
 1,cash,high,nh_black_rough,Medicaid,181.2461,0.0000,-63.6060,oct15,whole-population mortality
-1,cash,high,nh_black_rough,schools and colleges,173.9840,-11.7180,25.1286,oct15,whole-population mortality
+1,cash,high,nh_black_rough,schools and colleges,178.6145,-7.0876,22.7796,oct15,whole-population mortality
 1,cash,high,nh_black_rough,"police, courts, prisons",111.6660,0.4391,-41.7356,oct15,whole-population mortality
 1,cash,high,nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,-1.6480,-48.0861,oct15,whole-population mortality
 1,cash,high,nh_black_rough,veterans and military medical,41.5391,0.0000,-29.9522,oct15,whole-population mortality
 1,cash,high,nh_black_rough,"per-head lines: government, defense, interest, roads, other",105.1702,1.4356,-13.4058,oct15,whole-population mortality
-1,cash,high,nh_black_rough,capital return,58.3957,0.7857,-4.1115,oct15,whole-population mortality
+1,cash,high,nh_black_rough,capital return,58.8126,1.2026,-4.3230,oct15,whole-population mortality
 1,cash,high,nh_black_rough,production gain (subtracted),0.0000,0.0000,-7.6832,oct15,whole-population mortality
 1,cash,high,nh_black_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
 1,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
@@ -326,12 +326,12 @@ a,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,
 2,cash,high,mexican_origin_rough,Social Security,59.6827,0.0000,0.0000,oct15,whole-population mortality
 2,cash,high,mexican_origin_rough,Medicare,52.4192,0.0000,0.0000,oct15,whole-population mortality
 2,cash,high,mexican_origin_rough,Medicaid,117.6400,0.0000,0.0000,oct15,whole-population mortality
-2,cash,high,mexican_origin_rough,schools and colleges,199.1126,0.0000,0.0000,oct15,whole-population mortality
+2,cash,high,mexican_origin_rough,schools and colleges,201.3941,0.0000,0.0000,oct15,whole-population mortality
 2,cash,high,mexican_origin_rough,"police, courts, prisons",76.6344,6.7040,0.0000,oct15,whole-population mortality
 2,cash,high,mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",116.1351,0.0000,0.0000,oct15,whole-population mortality
 2,cash,high,mexican_origin_rough,veterans and military medical,11.5868,0.0000,0.0000,oct15,whole-population mortality
 2,cash,high,mexican_origin_rough,"per-head lines: government, defense, interest, roads, other",97.1669,5.4025,0.0000,oct15,whole-population mortality
-2,cash,high,mexican_origin_rough,capital return,56.2616,1.9774,0.0000,oct15,whole-population mortality
+2,cash,high,mexican_origin_rough,capital return,56.4670,1.9774,0.0000,oct15,whole-population mortality
 2,cash,high,mexican_origin_rough,production gain (subtracted),-7.6832,0.0000,0.0000,oct15,whole-population mortality
 2,cash,high,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
 2,cash,high,mexican_origin_rough,lineage post-engine coverage_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
@@ -342,12 +342,12 @@ a,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,
 2,cash,high,nh_black_rough,Social Security,141.5057,0.0000,-81.8230,oct15,whole-population mortality
 2,cash,high,nh_black_rough,Medicare,113.0022,0.0000,-60.5830,oct15,whole-population mortality
 2,cash,high,nh_black_rough,Medicaid,181.2461,0.0000,-63.6060,oct15,whole-population mortality
-2,cash,high,nh_black_rough,schools and colleges,173.9840,0.0000,25.1286,oct15,whole-population mortality
+2,cash,high,nh_black_rough,schools and colleges,178.6145,0.0000,22.7796,oct15,whole-population mortality
 2,cash,high,nh_black_rough,"police, courts, prisons",106.3305,-5.3355,-29.6961,oct15,whole-population mortality
 2,cash,high,nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,0.0000,-48.0861,oct15,whole-population mortality
 2,cash,high,nh_black_rough,veterans and military medical,41.5391,0.0000,-29.9522,oct15,whole-population mortality
 2,cash,high,nh_black_rough,"per-head lines: government, defense, interest, roads, other",104.2367,-0.9335,-7.0698,oct15,whole-population mortality
-2,cash,high,nh_black_rough,capital return,58.5882,0.1925,-2.3266,oct15,whole-population mortality
+2,cash,high,nh_black_rough,capital return,59.0052,0.1925,-2.5382,oct15,whole-population mortality
 2,cash,high,nh_black_rough,production gain (subtracted),0.0000,0.0000,-7.6832,oct15,whole-population mortality
 2,cash,high,nh_black_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
 2,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
@@ -358,12 +358,12 @@ a,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,
 3,accrual,high,mexican_origin_rough,Social Security,101.3768,41.6941,0.0000,oct15,whole-population mortality
 3,accrual,high,mexican_origin_rough,Medicare,72.5106,20.0914,0.0000,oct15,whole-population mortality
 3,accrual,high,mexican_origin_rough,Medicaid,117.6400,0.0000,0.0000,oct15,whole-population mortality
-3,accrual,high,mexican_origin_rough,schools and colleges,199.1126,0.0000,0.0000,oct15,whole-population mortality
+3,accrual,high,mexican_origin_rough,schools and colleges,201.3941,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,high,mexican_origin_rough,"police, courts, prisons",76.6344,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,high,mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",116.1351,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,high,mexican_origin_rough,veterans and military medical,11.5868,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,high,mexican_origin_rough,"per-head lines: government, defense, interest, roads, other",97.1669,0.0000,0.0000,oct15,whole-population mortality
-3,accrual,high,mexican_origin_rough,capital return,56.2616,0.0000,0.0000,oct15,whole-population mortality
+3,accrual,high,mexican_origin_rough,capital return,56.4670,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,high,mexican_origin_rough,production gain (subtracted),-7.6832,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,high,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,high,mexican_origin_rough,lineage post-engine coverage_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
@@ -374,12 +374,12 @@ a,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,
 3,accrual,high,nh_black_rough,Social Security,134.6255,-6.8802,-33.2487,oct15,whole-population mortality
 3,accrual,high,nh_black_rough,Medicare,127.8455,14.8433,-55.3349,oct15,whole-population mortality
 3,accrual,high,nh_black_rough,Medicaid,181.2461,0.0000,-63.6060,oct15,whole-population mortality
-3,accrual,high,nh_black_rough,schools and colleges,173.9840,0.0000,25.1286,oct15,whole-population mortality
+3,accrual,high,nh_black_rough,schools and colleges,178.6145,0.0000,22.7796,oct15,whole-population mortality
 3,accrual,high,nh_black_rough,"police, courts, prisons",106.3305,0.0000,-29.6961,oct15,whole-population mortality
 3,accrual,high,nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,0.0000,-48.0861,oct15,whole-population mortality
 3,accrual,high,nh_black_rough,veterans and military medical,41.5391,0.0000,-29.9522,oct15,whole-population mortality
 3,accrual,high,nh_black_rough,"per-head lines: government, defense, interest, roads, other",104.2367,0.0000,-7.0698,oct15,whole-population mortality
-3,accrual,high,nh_black_rough,capital return,58.5882,0.0000,-2.3266,oct15,whole-population mortality
+3,accrual,high,nh_black_rough,capital return,59.0052,0.0000,-2.5382,oct15,whole-population mortality
 3,accrual,high,nh_black_rough,production gain (subtracted),0.0000,0.0000,-7.6832,oct15,whole-population mortality
 3,accrual,high,nh_black_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
 3,accrual,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,0.0000,oct15,whole-population mortality
@@ -390,12 +390,12 @@ a,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,
 4,accrual,high,mexican_origin_rough,Social Security,109.9912,8.6144,0.0000,oct15,whole-population mortality
 4,accrual,high,mexican_origin_rough,Medicare,77.4264,4.9158,0.0000,oct15,whole-population mortality
 4,accrual,high,mexican_origin_rough,Medicaid,127.6972,10.0572,0.0000,oct15,whole-population mortality
-4,accrual,high,mexican_origin_rough,schools and colleges,224.2369,25.1243,0.0000,oct15,whole-population mortality
+4,accrual,high,mexican_origin_rough,schools and colleges,226.5184,25.1243,0.0000,oct15,whole-population mortality
 4,accrual,high,mexican_origin_rough,"police, courts, prisons",82.3433,5.7089,0.0000,oct15,whole-population mortality
 4,accrual,high,mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,8.6325,0.0000,oct15,whole-population mortality
 4,accrual,high,mexican_origin_rough,veterans and military medical,12.7030,1.1161,0.0000,oct15,whole-population mortality
 4,accrual,high,mexican_origin_rough,"per-head lines: government, defense, interest, roads, other",105.6003,8.4334,0.0000,oct15,whole-population mortality
-4,accrual,high,mexican_origin_rough,capital return,61.9795,5.7179,0.0000,oct15,whole-population mortality
+4,accrual,high,mexican_origin_rough,capital return,62.1849,5.7179,0.0000,oct15,whole-population mortality
 4,accrual,high,mexican_origin_rough,production gain (subtracted),-7.8343,-0.1510,0.0000,oct15,whole-population mortality
 4,accrual,high,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,14.5317,14.5317,0.0000,oct15,whole-population mortality
 4,accrual,high,mexican_origin_rough,lineage post-engine coverage_bn,12.6388,12.6388,0.0000,oct15,whole-population mortality
@@ -406,12 +406,12 @@ a,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,
 4,accrual,high,nh_black_rough,Social Security,134.6255,0.0000,-24.6343,oct15,whole-population mortality
 4,accrual,high,nh_black_rough,Medicare,127.8455,0.0000,-50.4190,oct15,whole-population mortality
 4,accrual,high,nh_black_rough,Medicaid,181.2461,0.0000,-53.5488,oct15,whole-population mortality
-4,accrual,high,nh_black_rough,schools and colleges,173.9840,0.0000,50.2529,oct15,whole-population mortality
+4,accrual,high,nh_black_rough,schools and colleges,178.6145,0.0000,47.9039,oct15,whole-population mortality
 4,accrual,high,nh_black_rough,"police, courts, prisons",106.3305,0.0000,-23.9872,oct15,whole-population mortality
 4,accrual,high,nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,0.0000,-39.4537,oct15,whole-population mortality
 4,accrual,high,nh_black_rough,veterans and military medical,41.5391,0.0000,-28.8361,oct15,whole-population mortality
 4,accrual,high,nh_black_rough,"per-head lines: government, defense, interest, roads, other",104.2367,0.0000,1.3636,oct15,whole-population mortality
-4,accrual,high,nh_black_rough,capital return,58.5882,0.0000,3.3913,oct15,whole-population mortality
+4,accrual,high,nh_black_rough,capital return,59.0052,0.0000,3.1798,oct15,whole-population mortality
 4,accrual,high,nh_black_rough,production gain (subtracted),0.0000,0.0000,-7.8343,oct15,whole-population mortality
 4,accrual,high,nh_black_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,14.5317,oct15,whole-population mortality
 4,accrual,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,12.6388,oct15,whole-population mortality
@@ -422,12 +422,12 @@ a,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,
 5,accrual,high,mexican_origin_rough,Social Security,109.9912,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,high,mexican_origin_rough,Medicare,77.4264,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,high,mexican_origin_rough,Medicaid,127.6972,0.0000,0.0000,oct15,whole-population mortality
-5,accrual,high,mexican_origin_rough,schools and colleges,224.2369,0.0000,0.0000,oct15,whole-population mortality
+5,accrual,high,mexican_origin_rough,schools and colleges,226.5184,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,high,mexican_origin_rough,"police, courts, prisons",82.3433,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,high,mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,high,mexican_origin_rough,veterans and military medical,12.7030,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,high,mexican_origin_rough,"per-head lines: government, defense, interest, roads, other",105.6003,0.0000,0.0000,oct15,whole-population mortality
-5,accrual,high,mexican_origin_rough,capital return,61.9795,0.0000,0.0000,oct15,whole-population mortality
+5,accrual,high,mexican_origin_rough,capital return,62.1849,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,high,mexican_origin_rough,production gain (subtracted),-7.8343,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,high,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,14.5317,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,high,mexican_origin_rough,lineage post-engine coverage_bn,12.6388,0.0000,0.0000,oct15,whole-population mortality
@@ -438,12 +438,12 @@ a,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,
 5,accrual,high,nh_black_rough,Social Security,134.6255,0.0000,-24.6343,oct15,whole-population mortality
 5,accrual,high,nh_black_rough,Medicare,127.8455,0.0000,-50.4190,oct15,whole-population mortality
 5,accrual,high,nh_black_rough,Medicaid,181.2461,0.0000,-53.5488,oct15,whole-population mortality
-5,accrual,high,nh_black_rough,schools and colleges,173.9840,0.0000,50.2529,oct15,whole-population mortality
+5,accrual,high,nh_black_rough,schools and colleges,178.6145,0.0000,47.9039,oct15,whole-population mortality
 5,accrual,high,nh_black_rough,"police, courts, prisons",106.3305,0.0000,-23.9872,oct15,whole-population mortality
 5,accrual,high,nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,0.0000,-39.4537,oct15,whole-population mortality
 5,accrual,high,nh_black_rough,veterans and military medical,41.5391,0.0000,-28.8361,oct15,whole-population mortality
 5,accrual,high,nh_black_rough,"per-head lines: government, defense, interest, roads, other",104.2367,0.0000,1.3636,oct15,whole-population mortality
-5,accrual,high,nh_black_rough,capital return,58.5882,0.0000,3.3913,oct15,whole-population mortality
+5,accrual,high,nh_black_rough,capital return,59.0052,0.0000,3.1798,oct15,whole-population mortality
 5,accrual,high,nh_black_rough,production gain (subtracted),0.0000,0.0000,-7.8343,oct15,whole-population mortality
 5,accrual,high,nh_black_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,14.5317,oct15,whole-population mortality
 5,accrual,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,12.6388,oct15,whole-population mortality

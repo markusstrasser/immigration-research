@@ -32,6 +32,9 @@ SOURCE = FISCAL / 'mixed_unit_removal_2026_10_14'
 sys.path.insert(0, str(SOURCE))
 OUT = LANE / 'derived'
 CACHE = LANE / '_cache'
+# Round 3 (C3 fix 2): the children-rule groups' own-count targets, built by the white lane on its rough engine.
+CHILDREN_TARGETS = FISCAL / 'white_replacement_2026_09_28/derived/children_targets_oct15.json'
+GROUPS = ('white', 'black', 'white_children', 'black_children')
 sys.path.insert(0, str(FISCAL / 'scripts'))
 from memory_budget import require_within_budget
 
@@ -70,14 +73,20 @@ def source_module(name, group):
 
 
 def membership(d, civ, group):
+    """The comparator mask; '<group>_children' adds members' biological minor children outside the group, who depart
+    with them and count as members (the source's own-parent rule, membership.py:biological_children)."""
+    base = group.removesuffix('_children')
     native = d.PRCITSHP.isin([1, 2, 3]).to_numpy()
     parents = d.PEFNTVTY.isin([57, 60, 66, 69, 73, 78]).to_numpy() & d.PEMNTVTY.isin([57, 60, 66, 69, 73, 78]).to_numpy()
-    if group == 'white':
+    if base == 'white':
         mask = civ & native & parents & d.PEHSPNON.eq(2).to_numpy() & d.PRDTRACE.eq(1).to_numpy()
-    elif group == 'black':
+    elif base == 'black':
         mask = civ & d.PEHSPNON.eq(2).to_numpy() & d.PRDTRACE.eq(2).to_numpy()
     else:
         raise ValueError(group)
+    if group.endswith('_children'):
+        bio, _, _ = source_module('membership', group).biological_children(d, mask, civ)
+        mask = mask | bio
     # Source's three-row ownership contract; no comparator generation claim.
     return mask, np.where(mask, 2, -1)
 
@@ -113,7 +122,8 @@ def frame(group):
     m = source_module('removal', group)
     d = m.add_fields(d, c)
     h = source_module('health', group)
-    d = join_extra(d, c, list(dict.fromkeys(h.EXTRA + ['PEHSPNON', 'PRDTRACE'])))
+    extra = ['PEHSPNON', 'PRDTRACE'] + (['PEPAR1TYP', 'PEPAR2TYP'] if group.endswith('_children') else [])
+    d = join_extra(d, c, list(dict.fromkeys(h.EXTRA + extra)))
     if group != 'lineage':
         union, gen = membership(d, civ, group)
         W = comparator_weights(d, W)
@@ -229,6 +239,11 @@ def prepare():
                         'lines': {lid: {'side': side, 'national_bn': national, 'union_target_bn': target, 'response': response}
                                   for side, lid, national, target, response in rows}}
             groups[group] = entries
+        children = json.loads(CHILDREN_TARGETS.read_text())
+        require(set(children) == {'white_children', 'black_children'}, 'children-rule targets name both groups')
+        groups.update(children)
+        write_json(OUT / 'children_targets_source.json', {'path': str(CHILDREN_TARGETS.relative_to(FISCAL.parent.parent)),
+                                                          'sha256': digest(CHILDREN_TARGETS)})
     (CACHE / 'comparator_targets.log').write_text(log.getvalue())
     write_json(OUT / 'comparator_targets.json', groups)
 
@@ -449,9 +464,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--prepare', action='store_true')
     parser.add_argument('--profile', action='store_true')
-    parser.add_argument('--tax', choices=('lineage', 'white', 'black'))
+    parser.add_argument('--tax', choices=('lineage',) + GROUPS)
     parser.add_argument('--policy', choices=('health', 'snap'))
-    parser.add_argument('--group', choices=('lineage', 'white', 'black'))
+    parser.add_argument('--group', choices=('lineage',) + GROUPS)
     parser.add_argument('--subset', choices=('union', 'latent'), default='union')
     args = parser.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)

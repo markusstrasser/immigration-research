@@ -1,0 +1,20 @@
+{
+  "dhc-p12-us.json": {
+    "url": "https://api.census.gov/data/2020/dec/dhc?get=group(P12)&for=us:1 (key omitted)",
+    "bytes": 1943,
+    "sha256": "e92fbb4675df2a047312c746ddab6356018fe96279961f9b6c272f2cbacbfa12",
+    "fetched": "2026-10-15"
+  },
+  "dhc-p12-variables.json": {
+    "url": "https://api.census.gov/data/2020/dec/dhc/groups/P12.json",
+    "bytes": 62810,
+    "sha256": "a0fc12175ac3b22163a11ab61c630475145a2d38174bca987593de3495e0c9f3",
+    "fetched": "2026-10-15"
+  },
+  "da_black_alone.xlsx": {
+    "url": "https://www2.census.gov/programs-surveys/popest/tables/2020/2020-demographic-analysis-estimates/table-1a.xlsx",
+    "bytes": 30987,
+    "sha256": "ff53d5623bf1e2ad8fa275c84179f545b9dac7313a24271b29bad16be6635ce2",
+    "fetched": "2026-10-15"
+  }
+}

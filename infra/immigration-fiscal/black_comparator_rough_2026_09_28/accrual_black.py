@@ -67,7 +67,7 @@ TOP_RATE = 0.37
 THRESHOLDS = {"single": (25_000, 34_000), "joint": (32_000, 44_000)}
 
 
-def oasdi_ratio(q, grids, u_long, taus, scens=None, g=G):
+def oasdi_ratio(q, grids, u_long, taus, scens=None, g=G, mix=None):
     """accrual_white.oasdi_ratio with the entry age as a column (q.entry); scens: the scenarios (all by default)."""
     fam = SS.family_vector(q, "observed_family")
     level = P.career_levels(q, P.CENTRAL["mapping"])
@@ -78,6 +78,14 @@ def oasdi_ratio(q, grids, u_long, taus, scens=None, g=G):
     out = {}
     for scen in scens or P.SCENARIOS:
         fac = P.model_factor(grids[scen], P.CENTRAL["method"], g, fam, entry, birth, lvl, q.age.to_numpy().astype(float))
+        if mix is not None:
+            # Round 3 (C3 fix 3a): a group life table moves only the retirement benefits the formula route models.
+            # Disability, children's and young survivors' benefits, the left-out share s(age) of the ratio route,
+            # keep the whole-population factor.
+            general = P.model_factor(mix["grid"], P.CENTRAL["method"], mix["g"], fam, entry, birth, lvl,
+                                     q.age.to_numpy().astype(float))
+            s = mix["share"](q.age.to_numpy())
+            fac = (1 - s) * fac + s * general
         acc = tax * P.note_mwr(q, P.S.mwr_table(P.MWR_TABLE[scen]), level, fam) * fac * np.where(q.unauth, u_long, 1.0)
         tau = P.person_tau(taus, fam, birth)[(g, scen)]
         out[scen] = dict(ratio=float((w * acc).sum() / (w * tax).sum()),
