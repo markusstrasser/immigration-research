@@ -125,8 +125,11 @@ const CASES = {
   oct14: { lane: "main_case_2026_10_14", suffix: "_oct14", lineage: true, items: true, ages: "g3plus_ages_oct07.csv" },
   oct14_cash: { lane: "main_case_2026_10_14", suffix: "_oct14_cash", lineage: true, items: true, ages: "g3plus_ages_oct07.csv",
     cash: "main_case_2026_10_14/derived/corrections_cash.json" },
+  oct15: { lane: "main_case_2026_10_15", suffix: "_oct15", lineage: true, items: true, ages: "g3plus_ages_oct07.csv", v8: true },
+  oct15_cash: { lane: "main_case_2026_10_15", suffix: "_oct15_cash", lineage: true, items: true, ages: "g3plus_ages_oct07.csv", v8: true,
+    cash: "main_case_2026_10_15/derived/corrections_cash.json" },
 };
-const CASE_KEY = argOf("--case", "oct14");
+const CASE_KEY = argOf("--case", "oct15");
 const CASE_DEF = CASES[CASE_KEY];
 if (!CASE_DEF) throw new Error(`[BLOCKED] unknown case ${CASE_KEY}: ${Object.keys(CASES).join(", ")}`);
 // The added people's ages: the case's measured mix (v6) or the identified G3+'s (v5's rule, the only one v5 has).
@@ -134,7 +137,10 @@ const PLACEMENT = argOf("--placement", CASE_DEF.items ? "measured" : "identified
 if (!["measured", "identified"].includes(PLACEMENT) || (PLACEMENT === "measured" && !CASE_DEF.items)) {
   throw new Error(`[BLOCKED] --placement ${PLACEMENT}: measured (a case with meta.lineage.age_mix) or identified`);
 }
-const P0 = require(path.join(FISCAL, CASE_DEF.lane, "package.cjs"));
+const V8_ATTRIBUTION = argOf("--v8-attribution", "sequential");
+if (CASE_DEF.v8 && V8_ATTRIBUTION !== "sequential") throw new Error("[BLOCKED] v8 attribution requires the explicit sequential convention");
+const V8 = CASE_DEF.v8 ? require(path.join(FISCAL, CASE_DEF.lane, "package.cjs")) : null;
+const P0 = V8 ? V8.OCT14 : require(path.join(FISCAL, CASE_DEF.lane, "package.cjs"));
 const P = CASE_DEF.payload ? P0.forPayload(P0.readJson(CASE_DEF.payload)) : CASE_DEF.cash ? P0.CASH : P0;
 const { Engine, MODEL, readJson } = P;
 const IN = path.join(HERE, "derived");
@@ -162,28 +168,36 @@ const REF = MODEL.receipts.reference;
 // ---------------------------------------------------------------------------------------------------
 // The case.
 const CORR_FILE = CASE_DEF.payload || CASE_DEF.cash || `${CASE_DEF.lane}/derived/corrections.json`;
-const CORR = readJson(CORR_FILE);
+const LIVE_CORR = readJson(CORR_FILE);
+const CORR = V8 ? P.correctionsPayload() : LIVE_CORR;
 const CASE_SUMMARY = readJson(`${CASE_DEF.lane}/derived/summary.json`);
 const CASE = CASE_KEY.endsWith("_cash") ? CASE_SUMMARY.cash_set.band_bn : CASE_SUMMARY.main_case;
 console.log(CASE_KEY === "sept27" ? "[case]" : `[case ${CASE_KEY}]`);
 gate(CASE_KEY === "sept27" ? "corrections.json is main_case_long_run_2026_09_27's payload" : `${CORR_FILE} is the package's payload`,
-  JSON.stringify(P.correctionsPayload()) === JSON.stringify(CORR), `${CORR.lines.length} lines, ${CORR.edits.length} edits`);
+  JSON.stringify((V8 ? CASE_DEF.cash ? V8.CASH : V8 : P).correctionsPayload()) === JSON.stringify(LIVE_CORR), `${LIVE_CORR.lines.length} lines, ${LIVE_CORR.edits.length} edits`);
 const UNION = Engine.applyCorrections(MODEL, CORR);
 const SPECS = P.MAIN_SPECS;
-const unionCost = SPECS.map((s) => P.evaluateFull(UNION, s).cost_bn);
+const V8_API = V8 && (CASE_DEF.cash ? V8.CASH : V8);
+const unionCost = SPECS.map((s, i) => V8 ? V8_API.evaluateFull(V8_API.payloadModel(), V8_API.MAIN_SPECS[i]).cost_bn : P.evaluateFull(UNION, s).cost_bn);
 const LO = unionCost.indexOf(Math.min(...unionCost)), HI = unionCost.indexOf(Math.max(...unionCost));
 gate("(b) the corrected union reproduces the case at both ends", rel(unionCost[LO], CASE[0]) < 1e-12 && rel(unionCost[HI], CASE[1]) < 1e-12,
   `${unionCost[LO].toFixed(4)} / ${unionCost[HI].toFixed(4)} vs ${CASE[0].toFixed(4)} / ${CASE[1].toFixed(4)}`);
 if (CASE_SUMMARY.v7) {
   const variant = CASE_DEF.cash ? "cash_set" : "adopted";
-  const oracle = P.csvRows(`${CASE_DEF.lane}/derived/main_case_bands.csv`).filter((r) => r.variant === variant && r.profile === P.MAIN_PROFILE);
+  const oracle = (V8_API || P).csvRows(`${CASE_DEF.lane}/derived/main_case_bands.csv`).filter((r) => r.variant === variant && r.profile === P.MAIN_PROFILE);
   gate(`the case equals main_case_bands.csv ${variant} (four-decimal printing, 5e-5 bn)`, oracle.length === 1
     && Math.abs(unionCost[LO] - Number(oracle[0].cost_low_bn)) < 5e-5
     && Math.abs(unionCost[HI] - Number(oracle[0].cost_high_bn)) < 5e-5);
 }
-const EXPECTED_ENDS = CASE_SUMMARY.v7 ? CASE_SUMMARY.v7.end_specifications[CASE_DEF.cash ? "cash" : "set"] : [48, 11];
+const EXPECTED_ENDS = V8 ? CASE_SUMMARY.v8.end_specifications[CASE_DEF.cash ? "cash" : "set"][0]
+  : CASE_SUMMARY.v7 ? CASE_SUMMARY.v7.end_specifications[CASE_DEF.cash ? "cash" : "set"] : [48, 11];
 gate("the ends are the case's end specifications", LO === EXPECTED_ENDS[0] && HI === EXPECTED_ENDS[1], `${LO} / ${HI}`);
 const ENDS = [["low", LO], ["high", HI]];
+const V8_CHAIN = V8 ? require("./v8_attribution.cjs").build(V8, !!CASE_DEF.cash, ENDS, gate) : null;
+if (argv.includes("--probe-only")) {
+  console.log("[probe] payload, external band, ends and native item transitions checked; no outputs written");
+  process.exit(fails.length ? 1 : 0);
+}
 
 // ---------------------------------------------------------------------------------------------------
 // Age profiles (profiles.py).
@@ -853,6 +867,7 @@ if ((CORR.meta.items || []).some((it) => it.id === "job_capital_taxes" && it.app
   GROUP_NAMES.push("job_capital_taxes");
   for (const id of GROUPS.job_capital_taxes) GROUP_OF[id] = "job_capital_taxes";
 }
+if (V8_CHAIN) GROUP_NAMES.push(...V8_CHAIN.ids);
 
 function evaluateState(plan, st) {
   const m = stateModel(plan, st);
@@ -900,6 +915,16 @@ function evaluateState(plan, st) {
   }
   const comps = P.componentsFor(plan.spec.capital_variant);
   for (const c of full.capital.components) add(CAPITAL_GROUP(comps.find((x) => x.id === c.id), comps), c.return_bn);
+  if (V8_CHAIN) {
+    const end = plan.spec.reading, changes = V8_CHAIN.changes[end];
+    const national = P.evaluateFull(stateModel(plan, "NNN"), plan.spec).cost_bn / V8_CHAIN.base_population;
+    for (const id of V8_CHAIN.ids) {
+      const factor = id === "foreign_source_tax" || id === "mixed_unit_removal" ? st[1] : st[2];
+      const value = factor === "G" ? changes[id] : (V8_CHAIN.count[id] || 0) * national;
+      add(id, value);
+      full.cost_bn += value;
+    }
+  }
   const zeroResponse = { receipts: sum(ev.receipts.filter((x) => x.response === 0).map((x) => x.amount_bn)),
     spending: sum(ev.spending.filter((x) => x.response === 0).map((x) => x.amount_bn)) };
   const parts = { receipts_bn: -sum(ev.receipts.map((x) => x.effect_bn)), operating_bn: -sum(ev.spending.map((x) => x.effect_bn)),
@@ -954,6 +979,7 @@ for (const [end, i] of ENDS) {
   }
   const ggg = r.states.GGG;
   const u = P.evaluateFull(UNION, SPECS[i]);
+  if (V8_CHAIN) u.cost_bn = unionCost[i];
   const sameLines = u.evaluation.receipts.every((x, k) => ggg.full.evaluation.receipts[k].amount_bn === x.amount_bn)
     && u.evaluation.spending.every((x, k) => ggg.full.evaluation.spending[k].amount_bn === x.amount_bn);
   gate(`${end} end: state GGG is the union, line by line and in cost`, sameLines && Math.abs(ggg.cost - u.cost_bn) < 1e-9,
@@ -1022,7 +1048,8 @@ for (const [end, i] of ENDS) {
     if (row.side === "receipt") m.receipts.lines[ri.get(row.id)].cells[REF][plan.a].target_bn *= 2;
     else m.spending.lines[si.get(row.id)].keys[row.key][plan.a].target_bn *= 2;
   }
-  const c2 = P.evaluateFull(m, spec).cost_bn;
+  const extra = V8_CHAIN ? (V8_CHAIN.population / V8_CHAIN.base_population - 1) * P.evaluateFull(stateModel(plan, "NNN"), spec).cost_bn : 0;
+  const c2 = P.evaluateFull(m, spec).cost_bn + 2 * extra;
   gate(`(c) ${end} end: twice the average residents cost twice part 1`, Math.abs(c2 - 2 * D[end].shared) < 1e-9,
     `${c2.toFixed(6)} vs 2 x ${D[end].shared.toFixed(6)}`);
   linearity[end] = { part1_bn: D[end].shared, twice_bn: c2 };
@@ -1110,9 +1137,9 @@ const f6 = (x) => (Math.abs(x) < 5e-13 ? 0 : x).toFixed(6);
 // Per member: the September 27 outputs divide by the record's 40,896,574, as they were written; v4's divide by the
 // 39,712,493 people the account prices (the row-4 union, this lane's finding, which the decision of 2026-09-29 adopts).
 // v5's divide by the lineage's 42,752,213, the row-4 union plus the added people.
-const PER_MEMBER = SUFFIX ? FRAME.row4.NG : MEMBERS;
+const PER_MEMBER = V8_CHAIN ? V8_CHAIN.population : SUFFIX ? FRAME.row4.NG : MEMBERS;
 if (SUFFIX && !LINEAGE) gate("v4's per-member count is the account's 39,712,493 (the row-4 union)", Math.round(PER_MEMBER) === 39712493, PER_MEMBER.toFixed(2));
-if (LINEAGE) gate("v5's per-member count is the lineage's 42,752,213 (the row-4 union plus the added people)",
+if (LINEAGE && !V8_CHAIN) gate("v5's per-member count is the lineage's 42,752,213 (the row-4 union plus the added people)",
   Math.round(PER_MEMBER) === 42752213 && Math.abs(PER_MEMBER - LINEAGE.L.counts.lineage_population) < 1e-3, PER_MEMBER.toFixed(2));
 const perMember = (bn) => Math.round(bn * 1e9 / PER_MEMBER);
 const lines = [["part", "order", "low_bn", "high_bn", "per_member_low", "per_member_high", "share_of_total", "share_low", "share_high"].join(",")];
@@ -1142,7 +1169,9 @@ for (const [end] of ENDS) {
 const sl = [["state", "age", "receipts", "use", "low_bn", "high_bn"].join(",")];
 for (const st of STATES) sl.push([st, st[0], st[1], st[2], f6(costs.low[st]), f6(costs.high[st])].join(","));
 
-const round = (x) => (typeof x === "number" ? Number(x.toPrecision(12)) : x);
+// v8 summaries are a downstream numerical contract: retain full precision for
+// the 1e-9 closure gate. Historical summaries retain their established bytes.
+const round = (x) => (typeof x === "number" && !V8_CHAIN ? Number(x.toPrecision(12)) : x);
 const deep = (o) => JSON.parse(JSON.stringify(o, (k, v) => round(v)));
 const lineTable = Object.fromEntries(ENDS.map(([end]) => [end, main[end].plan.rows.map((r) => ({
   side: r.side, id: r.id, key: r.key, class: r.cls, response: r.response, corrected_bn: r.A,
@@ -1153,7 +1182,8 @@ const summary = {
   lane: "main_case_decomposition_2026_09_29",
   case: Object.assign({ lane: CASE_DEF.lane, bn: CASE, ends: { low: LO, high: HI } }, SUFFIX ? { key: CASE_KEY, payload: CORR_FILE } : {}),
   members: PER_MEMBER,
-  frame: { published: FRAME.published, row4: FRAME.row4, household_fraction: HF,
+  frame: { published: FRAME.published, row4: V8_CHAIN ? {...FRAME.row4, NG: V8_CHAIN.population} : FRAME.row4,
+    ...(V8_CHAIN ? {profile_row4: FRAME.row4} : {}), household_fraction: HF,
     note: "row4: the stack's audit row 4 weights; the case's per-head lines are charged at this union count" },
   parts: Object.fromEntries(ENDS.map(([end]) => [end, { shared: D[end].shared, shapley: Object.fromEntries(FACTORS.map((f) => [PART_OF[f], D[end].shapley[f]])),
     by_order: Object.fromEntries(Object.entries(D[end].byOrder).map(([k, v]) => [k, Object.fromEntries(FACTORS.map((f) => [PART_OF[f], v[f]]))])) }])),
@@ -1338,6 +1368,9 @@ if (CASE_SUMMARY.v7) {
 }
 
 console.log("\nParts ($bn, Shapley mean; low / high):");
+if (V8_CHAIN) summary.v8 = {...V8_CHAIN, source_line_groups: {...GROUP_OF,
+  education_services: "education", [P.SYN.school]: "schools", [P.SYN.college]: "colleges_other_education",
+  education_benefits: "colleges_other_education"}};
 console.log(`  shared ${D.low.shared.toFixed(2)} / ${D.high.shared.toFixed(2)}`);
 for (const f of FACTORS) console.log(`  ${PART_OF[f]} ${D.low.shapley[f].toFixed(2)} / ${D.high.shapley[f].toFixed(2)}`);
 console.log(`  total ${costs.low.GGG.toFixed(4)} / ${costs.high.GGG.toFixed(4)}`);

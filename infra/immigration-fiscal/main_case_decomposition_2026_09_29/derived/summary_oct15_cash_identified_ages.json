@@ -1,0 +1,6142 @@
+{
+ "lane": "main_case_decomposition_2026_09_29",
+ "case": {
+  "lane": "main_case_2026_10_15",
+  "bn": [
+   281.75256367607324,
+   371.9424180095669
+  ],
+  "ends": {
+   "low": 16,
+   "high": 11
+  },
+  "key": "oct15_cash",
+  "payload": "main_case_2026_10_15/derived/corrections_cash.json"
+ },
+ "members": 45230062.30075857,
+ "frame": {
+  "published": {
+   "NG": 40896574.152351856,
+   "NC": 336727803.00001407
+  },
+  "row4": {
+   "NG": 45230062.30075857,
+   "NC": 335543722.17885005
+  },
+  "profile_row4": {
+   "NG": 42752212.92437313,
+   "NC": 335543722.17885005
+  },
+  "household_fraction": 0.990052703031206,
+  "note": "row4: the stack's audit row 4 weights; the case's per-head lines are charged at this union count"
+ },
+ "parts": {
+  "low": {
+   "shared": -7.257745536268547,
+   "shapley": {
+    "age_structure": -6.302277540901768,
+    "taxes_at_given_ages": 350.37696045042236,
+    "service_use_at_given_ages": -55.06437369717838
+   },
+   "by_order": {
+    "A-R-U": {
+     "age_structure": -3.397602108128104,
+     "taxes_at_given_ages": 321.4470712173161,
+     "service_use_at_given_ages": -29.039159896845717
+    },
+    "A-U-R": {
+     "age_structure": -3.397602108128104,
+     "taxes_at_given_ages": 321.4470712173156,
+     "service_use_at_given_ages": -29.039159896845305
+    },
+    "R-A-U": {
+     "age_structure": -61.25738057434097,
+     "taxes_at_given_ages": 379.3068496835289,
+     "service_use_at_given_ages": -29.039159896845717
+    },
+    "R-U-A": {
+     "age_structure": -9.20695297367564,
+     "taxes_at_given_ages": 379.3068496835289,
+     "service_use_at_given_ages": -81.08958749751105
+    },
+    "U-A-R": {
+     "age_structure": 48.65282549253785,
+     "taxes_at_given_ages": 321.4470712173156,
+     "service_use_at_given_ages": -81.08958749751126
+    },
+    "U-R-A": {
+     "age_structure": -9.20695297367564,
+     "taxes_at_given_ages": 379.30684968352915,
+     "service_use_at_given_ages": -81.08958749751126
+    }
+   }
+  },
+  "high": {
+   "shared": 104.68048521847696,
+   "shapley": {
+    "age_structure": -14.525897130037222,
+    "taxes_at_given_ages": 340.59492377619654,
+    "service_use_at_given_ages": -58.807093855069496
+   },
+   "by_order": {
+    "A-R-U": {
+     "age_structure": -14.179644986984286,
+     "taxes_at_given_ages": 313.9023406917812,
+     "service_use_at_given_ages": -32.46076291370707
+    },
+    "A-U-R": {
+     "age_structure": -14.179644986984286,
+     "taxes_at_given_ages": 313.9023406917812,
+     "service_use_at_given_ages": -32.46076291370713
+    },
+    "R-A-U": {
+     "age_structure": -67.56481115581494,
+     "taxes_at_given_ages": 367.2875068606118,
+     "service_use_at_given_ages": -32.46076291370707
+    },
+    "R-U-A": {
+     "age_structure": -14.872149273090201,
+     "taxes_at_given_ages": 367.2875068606118,
+     "service_use_at_given_ages": -85.1534247964318
+    },
+    "U-A-R": {
+     "age_structure": 38.51301689574056,
+     "taxes_at_given_ages": 313.9023406917812,
+     "service_use_at_given_ages": -85.15342479643198
+    },
+    "U-R-A": {
+     "age_structure": -14.872149273090201,
+     "taxes_at_given_ages": 367.287506860612,
+     "service_use_at_given_ages": -85.15342479643198
+    }
+   }
+  }
+ },
+ "states_bn": {
+  "low": {
+   "NNN": -7.257745536268547,
+   "NNG": -88.3473330337798,
+   "NGN": 372.0491041472604,
+   "NGG": 290.95951664974933,
+   "GNN": -10.65534764439665,
+   "GNG": -39.694507541241954,
+   "GGN": 310.7917235729194,
+   "GGG": 281.7525636760737
+  },
+  "high": {
+   "NNN": 104.68048521847696,
+   "NNG": 19.527060422044983,
+   "NGN": 471.9679920790888,
+   "NGG": 386.814567282657,
+   "GNN": 90.50084023149267,
+   "GNG": 58.040077317785546,
+   "GGN": 404.40318092327385,
+   "GGG": 371.9424180095668
+  }
+ },
+ "production": {
+  "low": {
+   "group_P_plus_F_bn": 11.909644857418181,
+   "at_national_ages_factor": 1.0472550755794077
+  },
+  "high": {
+   "group_P_plus_F_bn": 7.834383237811649,
+   "at_national_ages_factor": 1.0472550755794077
+  }
+ },
+ "row8_bn": 1.890338502102105,
+ "receipt_ratios": {
+  "low": {
+   "income_taxes": {
+    "at_group_ages": 0.42804507248254936,
+    "at_national_ages": 0.4137057981865608,
+    "GG": 139.49003070099954,
+    "GN": 325.87696873133916,
+    "NG": 155.45153194859415,
+    "NN": 375.7538149815663
+   },
+   "payroll_taxes": {
+    "at_group_ages": 0.7305195742075138,
+    "at_national_ages": 0.7296357080375245,
+    "GG": 162.85582353473572,
+    "GN": 222.9314987369173,
+    "NG": 178.78412226424774,
+    "NN": 245.0320348837053
+   },
+   "consumption_taxes": {
+    "at_group_ages": 0.7909864481140458,
+    "at_national_ages": 0.7779833249380547,
+    "GG": 114.55045056498491,
+    "GN": 144.8197384899682,
+    "NG": 118.7849108006351,
+    "NN": 152.68310642788276
+   }
+  },
+  "high": {
+   "income_taxes": {
+    "at_group_ages": 0.42804507248254936,
+    "at_national_ages": 0.4137057981865608,
+    "GG": 139.49003070099954,
+    "GN": 325.87696873133916,
+    "NG": 155.45153194859415,
+    "NN": 375.7538149815663
+   },
+   "payroll_taxes": {
+    "at_group_ages": 0.7305195742075138,
+    "at_national_ages": 0.7296357080375245,
+    "GG": 162.85582353473572,
+    "GN": 222.9314987369173,
+    "NG": 178.78412226424774,
+    "NN": 245.0320348837053
+   },
+   "consumption_taxes": {
+    "at_group_ages": 0.7909864481140458,
+    "at_national_ages": 0.7779833249380547,
+    "GG": 114.55045056498491,
+    "GN": 144.8197384899682,
+    "NG": 118.7849108006351,
+    "NN": 152.68310642788276
+   }
+  }
+ },
+ "part1_composition": {
+  "low": {
+   "receipts_bn": -952.1073013127027,
+   "operating_bn": 909.2319870557991,
+   "production_bn": 0,
+   "capital_bn": 36.01517153911779,
+   "amounts_at_zero_response_bn": {
+    "receipts": 29.479917018314,
+    "spending": 252.09892319928528
+   }
+  },
+  "high": {
+   "receipts_bn": -898.8337028150438,
+   "operating_bn": 937.4946076095163,
+   "production_bn": 0,
+   "capital_bn": 60.28484423699064,
+   "amounts_at_zero_response_bn": {
+    "receipts": 29.479917018314,
+    "spending": 252.07108069611957
+   }
+  }
+ },
+ "zero_response_at_average_residents": {
+  "low": {
+   "receipts": {
+    "government_asset_income": 25.009779866079942,
+    "business_current_transfers": 17.834587151394643,
+    "source_rounding": 0.00025482350047714816
+   },
+   "receipts_total_bn": 42.84462184097506,
+   "spending": {
+    "defense": 107.98207217452976,
+    "domestic_interest": 141.13912633530816,
+    "agricultural_subsidies": 1.0385464147922387,
+    "transport_subsidies": 0.05108846082726305,
+    "other_subsidies": 3.1964977712662854,
+    "roads_vmt_fed": 0
+   },
+   "spending_total_bn": 253.40733115672373
+  },
+  "high": {
+   "receipts": {
+    "government_asset_income": 25.009779866079942,
+    "business_current_transfers": 17.834587151394643,
+    "source_rounding": 0.00025482350047714816
+   },
+   "receipts_total_bn": 42.84462184097506,
+   "spending": {
+    "defense": 107.98207217452976,
+    "domestic_interest": 141.13912633530816,
+    "agricultural_subsidies": 1.0385464147922387,
+    "transport_subsidies": 0.05108846082726305,
+    "other_subsidies": 3.1964977712662854
+   },
+   "spending_total_bn": 253.40733115672373
+  }
+ },
+ "by_component": {
+  "low": {
+   "shared": {
+    "receipts_bn": -952.1073013127027,
+    "operating_bn": 909.2319870557991,
+    "production_bn": 0,
+    "capital_bn": 36.01517153911779
+   },
+   "shapley": {
+    "age_structure": {
+     "receipts_bn": 88.83453189906568,
+     "operating_bn": -98.53052070244208,
+     "production_bn": 0.2813955839305997,
+     "capital_bn": 3.1123156785438617
+    },
+    "taxes_at_given_ages": {
+     "receipts_bn": 348.0533587568941,
+     "operating_bn": 0,
+     "production_bn": -12.19104044134878,
+     "capital_bn": 0
+    },
+    "service_use_at_given_ages": {
+     "receipts_bn": -1.9831704387276923,
+     "operating_bn": -54.27982120592019,
+     "production_bn": 0,
+     "capital_bn": -2.0113327967040635
+    }
+   }
+  },
+  "high": {
+   "shared": {
+    "receipts_bn": -898.8337028150438,
+    "operating_bn": 937.4946076095163,
+    "production_bn": 0,
+    "capital_bn": 60.28484423699064
+   },
+   "shapley": {
+    "age_structure": {
+     "receipts_bn": 79.33242908405566,
+     "operating_bn": -98.52361954221243,
+     "production_bn": 0.18510718601041676,
+     "capital_bn": 4.480186142108959
+    },
+    "taxes_at_given_ages": {
+     "receipts_bn": 332.6861124330402,
+     "operating_bn": 0,
+     "production_bn": -8.019490423822065,
+     "capital_bn": 0
+    },
+    "service_use_at_given_ages": {
+     "receipts_bn": -1.9831704387276734,
+     "operating_bn": -54.87971298555209,
+     "production_bn": 0,
+     "capital_bn": -3.7007739998786806
+    }
+   }
+  }
+ },
+ "linearity": {
+  "low": {
+   "part1_bn": -7.257745536268547,
+   "twice_bn": -14.51549107253709,
+   "finite_removal_at_2s": {
+    "s": 0.12918222328408055,
+    "general_government_response": [
+     0.6005266346459308,
+     0.6295622210638909
+    ],
+    "general_government_change_bn": 2.9504395718646075,
+    "long_run_responses": {
+     "economic_affairs_services": [
+      0.3844994797314016,
+      0.39200010995624435
+     ],
+     "recreation_culture": [
+      0.8563914832367988,
+      0.8597099290041054
+     ]
+    },
+    "long_run_change_bn": 0.9030958588778575,
+    "note": "engine operating lines only; the capital return's long-run subfunction responses and row 8's finite factor are not re-read"
+   }
+  },
+  "high": {
+   "part1_bn": 104.68048521847696,
+   "twice_bn": 209.3609704369539,
+   "finite_removal_at_2s": {
+    "s": 0.12918222328408055,
+    "general_government_response": [
+     0.8510539647701243,
+     0.8611863384319283
+    ],
+    "general_government_change_bn": 1.0295971219032607,
+    "long_run_responses": {
+     "economic_affairs_services": [
+      0.6387399411939584,
+      0.6401925092782507
+     ],
+     "recreation_culture": [
+      1,
+      1
+     ]
+    },
+    "long_run_change_bn": 0.16605947114593048,
+    "note": "engine operating lines only; the capital return's long-run subfunction responses and row 8's finite factor are not re-read"
+   }
+  }
+ },
+ "sensitivities": {
+  "justice_flat_18_64": {
+   "low": {
+    "shared": -7.257745536268547,
+    "age_structure": -9.0401137798988,
+    "taxes_at_given_ages": 350.3769604504224,
+    "service_use_at_given_ages": -52.32653745818136,
+    "total": 281.7525636760737
+   },
+   "high": {
+    "shared": 104.68048521847696,
+    "age_structure": -17.283460699352407,
+    "taxes_at_given_ages": 340.59492377619654,
+    "service_use_at_given_ages": -56.04953028575434,
+    "total": 371.9424180095668
+   }
+  },
+  "corrections_fixed_dollars": {
+   "low": {
+    "shared": -7.257745536268547,
+    "age_structure": -20.295131240197612,
+    "taxes_at_given_ages": 354.12985993468254,
+    "service_use_at_given_ages": -44.82441948214274,
+    "total": 281.7525636760737
+   },
+   "high": {
+    "shared": 104.68048521847696,
+    "age_structure": -26.74621728004454,
+    "taxes_at_given_ages": 342.58900586129914,
+    "service_use_at_given_ages": -48.58085579016478,
+    "total": 371.9424180095668
+   }
+  },
+  "part1_at_published_count": {
+   "not_computed": "the lineage's added people are counted on the account's frame (audit row 4) only"
+  }
+ },
+ "lines": {
+  "low": [
+   {
+    "side": "receipt",
+    "id": "federal_income_tax",
+    "key": "federal_liability",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 112.48585429785412,
+    "kappa": 0.8518060111109435,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 306.2012694674615,
+     "GN": 264.0419494368443,
+     "NG": 125.74200153516674,
+     "GG": 112.48585429785412
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "state_local_income_tax",
+    "key": "state_liability",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 26.527608417168892,
+    "kappa": 0.9696582672428891,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 68.31397588922468,
+     "GN": 60.733880923700006,
+     "NG": 29.185218512110318,
+     "GG": 26.527608417168892
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "personal_motor_vehicle",
+    "key": "adults",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 3.575832776052499,
+    "kappa": 1.2227845140214895,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 3.3286319752039595,
+     "GN": 2.9243360011915036,
+     "NG": 4.070199632156164,
+     "GG": 3.575832776052499
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "personal_property_tax",
+    "key": "household_vehicles",
+    "class": "profile_acs",
+    "response": 1,
+    "corrected_bn": 1.403790822498509,
+    "kappa": 0.9671608014779534,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.6548238120985999,
+     "GN": 1.540342030711228,
+     "NG": 1.4808377212179415,
+     "GG": 1.403790822498509
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "other_personal_tax",
+    "key": "state_liability",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.4765679859765222,
+    "kappa": 0.9608035703996298,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.2385696248801232,
+     "GN": 1.101138370794874,
+     "NG": 0.5243119013170925,
+     "GG": 0.4765679859765222
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "employee_oasdi",
+    "key": "wage_oasdi",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 53.91781721140484,
+    "kappa": 0.952473231024733,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 77.7720049345727,
+     "GN": 73.90396446599692,
+     "NG": 56.067944288283535,
+     "GG": 53.91781721140484
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "employee_hi",
+    "key": "wage",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 15.886040584824329,
+    "kappa": 0.9457538063064694,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 25.068134447757867,
+     "GN": 23.63214616642532,
+     "NG": 16.636736633317735,
+     "GG": 15.886040584824329
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "self_employment_oasdi_hi",
+    "key": "self_payroll",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 6.395853937908699,
+    "kappa": 0.7061596171580496,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 11.066347567058848,
+     "GN": 9.601217613438315,
+     "NG": 7.231796865155403,
+     "GG": 6.395853937908699
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "employer_oasdi",
+    "key": "wage_oasdi",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 54.3834156385346,
+    "kappa": 0.9524732310243917,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 78.44359226964237,
+     "GN": 74.54214997488995,
+     "NG": 56.55210978353474,
+     "GG": 54.3834156385346
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "employer_hi",
+    "key": "wage",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 14.130856313125296,
+    "kappa": 0.9457538063055696,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 22.298457820767755,
+     "GN": 21.021126067615516,
+     "NG": 14.798610996203779,
+     "GG": 14.130856313125296
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "medicare_supplementary_premiums",
+    "key": "medicare",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 7.541017110234034,
+    "kappa": 0.9727960853145066,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 18.489610958645954,
+     "GN": 8.577897932413732,
+     "NG": 16.692551240193627,
+     "GG": 7.541017110234034
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "other_domestic_social_contributions",
+    "key": "positive_fica_worker",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 10.600822738703933,
+    "kappa": 0.9414193091266215,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 11.893886885259795,
+     "GN": 11.652996516137572,
+     "NG": 10.80437245755892,
+     "GG": 10.600822738703933
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "corporate_capital",
+    "key": "capital",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 33.81458256999403,
+    "kappa": 2.116012871586044,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 63.420950592828504,
+     "GN": 45.845118871108916,
+     "NG": 44.66053023799763,
+     "GG": 33.81458256999403
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "corporate_labor",
+    "key": "wage",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 11.271527523331267,
+    "kappa": 0.795711672271475,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 21.14031686377304,
+     "GN": 19.929327376569688,
+     "NG": 11.80416440834166,
+     "GG": 11.271527523331267
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "general_sales_tax",
+    "key": "consumption",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 59.91164379937781,
+    "kappa": 1.17120132335978,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 76.75666069589649,
+     "GN": 72.80359818061041,
+     "NG": 62.12633149435971,
+     "GG": 59.91164379937781
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "modeled_owner_property",
+    "key": "modeled_owner_property",
+    "class": "profile",
+    "response": 0.7726986463443216,
+    "corrected_bn": 26.90487211475465,
+    "kappa": 1.023279801729313,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 50.31011941843124,
+     "GN": 43.185490367052466,
+     "NG": 31.20287159306796,
+     "GG": 26.90487211475465
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "remaining_production_property",
+    "key": "capital",
+    "class": "profile",
+    "response": 0.8806493775433665,
+    "corrected_bn": 21.556359644478896,
+    "kappa": 2.4555144971826866,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 34.840143892082274,
+     "GN": 25.18490377846314,
+     "NG": 28.470511198257014,
+     "GG": 21.556359644478896
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "excise_selective_sales",
+    "key": "consumption",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 34.52028856009088,
+    "kappa": 1.0950169134526442,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 47.303141216664834,
+     "GN": 44.866971212608384,
+     "NG": 35.79636201514857,
+     "GG": 34.52028856009088
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "customs_duties",
+    "key": "consumption",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 7.485562475492161,
+    "kappa": 1.0546603300428707,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 10.649965967973502,
+     "GN": 10.101479610237524,
+     "NG": 7.762273012095112,
+     "GG": 7.485562475492161
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "other_production_taxes",
+    "key": "capital",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 7.701431787197984,
+    "kappa": 1.6514633995654049,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 18.507576016664746,
+     "GN": 13.37857623654137,
+     "NG": 10.17164788286465,
+     "GG": 7.701431787197984
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "rest_world_tax_contributions",
+    "key": "none",
+    "class": "zero",
+    "response": 0,
+    "corrected_bn": 0,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0,
+     "GG": 0
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "government_asset_income",
+    "key": "resident_population",
+    "class": "per_head",
+    "response": 0,
+    "corrected_bn": 25.359512963301167,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 25.359512963301167,
+     "GN": 25.359512963301167,
+     "NG": 25.359512963301167,
+     "GG": 25.359512963301167
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "business_current_transfers",
+    "key": "capital",
+    "class": "held_zero_response",
+    "response": 0,
+    "corrected_bn": 4.120155684872796,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 4.120155684872796,
+     "GN": 4.120155684872796,
+     "NG": 4.120155684872796,
+     "GG": 4.120155684872796
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "personal_current_transfers",
+    "key": "consumption",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 12.632955730024051,
+    "kappa": 1.054660330123827,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 17.973338547347947,
+     "GN": 17.0476894865119,
+     "NG": 13.099944279031712,
+     "GG": 12.632955730024051
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "rest_world_current_transfers",
+    "key": "none",
+    "class": "zero",
+    "response": 0,
+    "corrected_bn": 0,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0,
+     "GG": 0
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "enterprise_surplus",
+    "key": "resident_population",
+    "class": "per_head",
+    "response": 1,
+    "corrected_bn": -0.9034458177695179,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": -0.9034458177695179,
+     "GN": -0.9034458177695179,
+     "NG": -0.9034458177695179,
+     "GG": -0.9034458177695179
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "source_rounding",
+    "key": "population",
+    "class": "per_head",
+    "response": 0,
+    "corrected_bn": 0.0002483701400386852,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.0002483701400386852,
+     "GN": 0.0002483701400386852,
+     "NG": 0.0002483701400386852,
+     "GG": 0.0002483701400386852
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "housing_enterprise_surplus",
+    "key": "housing_support",
+    "class": "follows_rental",
+    "response": 1,
+    "corrected_bn": -3.7178213606483306,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": -5.7466080636639765,
+     "GN": -5.7242592374595915,
+     "NG": -3.7867050630198964,
+     "GG": -3.7178213606483306
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "tenant_occupied_property",
+    "key": "renter_contract_rent",
+    "class": "profile_acs",
+    "response": 0.7189123969969125,
+    "corrected_bn": 10.275834801018515,
+    "kappa": 0.9753916021459202,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 10.682229807645852,
+     "GN": 10.949283929376131,
+     "NG": 9.87855008024662,
+     "GG": 10.275834801018515
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "user_fees_key_k12",
+    "key": "capital_key_offset",
+    "class": "carrier",
+    "response": 0,
+    "corrected_bn": 9.75296263696325e-12,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 7.107290592065424e-12,
+     "GG": 9.75296263696325e-12
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "user_fees_key_college",
+    "key": "capital_key_offset",
+    "class": "carrier",
+    "response": 0,
+    "corrected_bn": -3.854858618402715e-11,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": -2.8095106040170948e-11,
+     "GG": -3.854858618402715e-11
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "user_fees_key_health",
+    "key": "capital_key_offset",
+    "class": "carrier",
+    "response": 0,
+    "corrected_bn": -2.079886038647402e-12,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": -2.7932582845444517e-12,
+     "GG": -2.079886038647402e-12
+    }
+   },
+   {
+    "side": "spending",
+    "id": "general_public_services",
+    "key": "population",
+    "class": "per_head",
+    "response": 0.6005266346459308,
+    "corrected_bn": 50.807301243958996,
+    "kappa": 0.9999999993221431,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 50.807301243958996,
+     "GN": 50.807301243958996,
+     "NG": 50.807301243958996,
+     "GG": 50.807301243958996
+    }
+   },
+   {
+    "side": "spending",
+    "id": "defense",
+    "key": "population",
+    "class": "per_head",
+    "response": 0,
+    "corrected_bn": 107.98207210147714,
+    "kappa": 0.999999999322141,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 107.98207210147714,
+     "GN": 107.98207210147714,
+     "NG": 107.98207210147714,
+     "GG": 107.98207210147714
+    }
+   },
+   {
+    "side": "spending",
+    "id": "public_order_safety",
+    "key": "use",
+    "class": "justice",
+    "response": 1,
+    "corrected_bn": 74.55015591898928,
+    "kappa": 1.0256873853747153,
+    "theta": 1.101228146171932,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 65.74675091240216,
+     "GN": 68.83578131805062,
+     "NG": 71.06104721368662,
+     "GG": 74.55015591898928
+    }
+   },
+   {
+    "side": "spending",
+    "id": "economic_affairs_services",
+    "key": "resources",
+    "class": "profile",
+    "response": 0.3844994797314016,
+    "corrected_bn": 39.74695404491953,
+    "kappa": 1.0433813914825079,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 57.16064979729939,
+     "GN": 54.21680596649058,
+     "NG": 41.216235881536555,
+     "GG": 39.74695404491953
+    }
+   },
+   {
+    "side": "spending",
+    "id": "housing_community_services",
+    "key": "population",
+    "class": "per_head",
+    "response": 1,
+    "corrected_bn": 1.8603381688340848,
+    "kappa": 0.9999999993219381,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.8603381688340848,
+     "GN": 1.8603381688340848,
+     "NG": 1.8603381688340848,
+     "GG": 1.8603381688340848
+    }
+   },
+   {
+    "side": "spending",
+    "id": "health_services",
+    "key": "health_other",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 19.352173965499816,
+    "kappa": 0.7891219323898845,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 38.89771400179689,
+     "GN": 27.176239125069333,
+     "NG": 25.989702920565506,
+     "GG": 19.352173965499816
+    }
+   },
+   {
+    "side": "spending",
+    "id": "recreation_culture",
+    "key": "population",
+    "class": "per_head",
+    "response": 0.8563914832367988,
+    "corrected_bn": 6.87280537242713,
+    "kappa": 0.9999999993221974,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 6.87280537242713,
+     "GN": 6.87280537242713,
+     "NG": 6.87280537242713,
+     "GG": 6.87280537242713
+    }
+   },
+   {
+    "side": "spending",
+    "id": "education_services",
+    "key": "education_mix",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 216.30440866145693,
+    "kappa": 0.9900407231695694,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 154.70303260369724,
+     "GN": 213.10532052441198,
+     "NG": 157.64768308981942,
+     "GG": 216.30440866145693
+    }
+   },
+   {
+    "side": "spending",
+    "id": "income_security_services",
+    "key": "cash_assistance",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 29.852907934124666,
+    "kappa": 1.022285378593861,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 21.22561773008647,
+     "GN": 21.259188728438872,
+     "NG": 31.66046781425609,
+     "GG": 29.852907934124666
+    }
+   },
+   {
+    "side": "spending",
+    "id": "social_security",
+    "key": "social_security",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 56.616999290096324,
+    "kappa": 0.9074669034867578,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 182.6526004494947,
+     "GN": 85.58862198690522,
+     "NG": 119.3087154675854,
+     "GG": 56.616999290096324
+    }
+   },
+   {
+    "side": "spending",
+    "id": "medicare",
+    "key": "medicare",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 55.07260928711663,
+    "kappa": 0.8338782323528596,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 139.05623086664238,
+     "GN": 68.67397194207038,
+     "NG": 112.32442358186842,
+     "GG": 55.07260928711663
+    }
+   },
+   {
+    "side": "spending",
+    "id": "unemployment",
+    "key": "unemployment",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 4.970777568679642,
+    "kappa": 1.1889136675706868,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 4.600232072562638,
+     "GN": 4.1604532753026895,
+     "NG": 5.581407624881824,
+     "GG": 4.970777568679642
+    }
+   },
+   {
+    "side": "spending",
+    "id": "railroad_retirement",
+    "key": "social_security",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.5666919925903448,
+    "kappa": 0.9074669035175522,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.828210032231888,
+     "GN": 0.8566753332626628,
+     "NG": 1.1941871619739357,
+     "GG": 0.5666919925903448
+    }
+   },
+   {
+    "side": "spending",
+    "id": "pension_guaranty",
+    "key": "age65plus",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.0400478999095943,
+    "kappa": 0.9828520162246397,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.0972572923680109,
+     "GN": 0.04074662232817864,
+     "NG": 0.09558952589644877,
+     "GG": 0.0400478999095943
+    }
+   },
+   {
+    "side": "spending",
+    "id": "veterans_life_insurance",
+    "key": "veterans",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.024839598503763237,
+    "kappa": 1.045792049783987,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.056638813204851195,
+     "GN": 0.04128483971801404,
+     "NG": 0.035332094741158636,
+     "GG": 0.024839598503763237
+    }
+   },
+   {
+    "side": "spending",
+    "id": "workers_compensation",
+    "key": "workers_comp",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 1.6429051721203116,
+    "kappa": 0.6923743569836935,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.5040190577535142,
+     "GN": 1.2326911415854005,
+     "NG": 2.210663726070173,
+     "GG": 1.6429051721203116
+    }
+   },
+   {
+    "side": "spending",
+    "id": "military_medical",
+    "key": "tricare",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.35084208277747103,
+    "kappa": 0.5153873874860412,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.9028150970851382,
+     "GN": 0.7300972594352607,
+     "NG": 0.4127188139320218,
+     "GG": 0.35084208277747103
+    }
+   },
+   {
+    "side": "spending",
+    "id": "veterans_pension_disability",
+    "key": "veterans",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 9.987012112445596,
+    "kappa": 1.045792050727807,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 22.772208371854234,
+     "GN": 16.598987857618006,
+     "NG": 14.205626475185081,
+     "GG": 9.987012112445596
+    }
+   },
+   {
+    "side": "spending",
+    "id": "veterans_readjustment",
+    "key": "veterans",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.6301734104846313,
+    "kappa": 1.045792050748432,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.4369102642613032,
+     "GN": 1.0473844099564578,
+     "NG": 0.8963649971729141,
+     "GG": 0.6301734104846313
+    }
+   },
+   {
+    "side": "spending",
+    "id": "veterans_other",
+    "key": "va_medical",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 1.7351783283012046,
+    "kappa": 0.7088183127013712,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 4.733692792409173,
+     "GN": 2.942622840128895,
+     "NG": 2.620530275443757,
+     "GG": 1.7351783283012046
+    }
+   },
+   {
+    "side": "spending",
+    "id": "snap",
+    "key": "snap",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 14.62549462768213,
+    "kappa": 0.9622503089565259,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 12.2853241690679,
+     "GN": 13.050813397337636,
+     "NG": 14.19878516801168,
+     "GG": 14.62549462768213
+    }
+   },
+   {
+    "side": "spending",
+    "id": "black_lung",
+    "key": "workers_comp",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.0349191384374209,
+    "kappa": 1.0142182893824012,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.02182297218817875,
+     "GN": 0.01788606624414275,
+     "NG": 0.046986566235958045,
+     "GG": 0.0349191384374209
+    }
+   },
+   {
+    "side": "spending",
+    "id": "ssi",
+    "key": "ssi",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 5.462842350283602,
+    "kappa": 0.9812861023743398,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 8.216285945115553,
+     "GN": 6.810558602772022,
+     "NG": 6.931904541411162,
+     "GG": 5.462842350283602
+    }
+   },
+   {
+    "side": "spending",
+    "id": "refundable_tax_credits",
+    "key": "refundable_credits",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 37.17045293380809,
+    "kappa": 0.7082986748116344,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 28.862962057834892,
+     "GN": 29.60386737180472,
+     "NG": 36.795190049705035,
+     "GG": 37.17045293380809
+    }
+   },
+   {
+    "side": "spending",
+    "id": "other_federal_benefits",
+    "key": "all_cash",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 6.9803647089112975,
+    "kappa": 0.9495161385671312,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 8.40467735691704,
+     "GN": 4.345198672756259,
+     "NG": 8.664931253030442,
+     "GG": 6.9803647089112975
+    }
+   },
+   {
+    "side": "spending",
+    "id": "temporary_disability",
+    "key": "workers_comp",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 2.6518360696783936,
+    "kappa": 1.0142182894202356,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.6572844401001872,
+     "GN": 1.3583071556621356,
+     "NG": 3.5682630417169423,
+     "GG": 2.6518360696783936
+    }
+   },
+   {
+    "side": "spending",
+    "id": "medicaid_and_chip_other_medical",
+    "key": "uninsured_use_low",
+    "class": "uninsured",
+    "response": 1,
+    "corrected_bn": 126.08688622828268,
+    "kappa": 0.9862581113724381,
+    "theta": null,
+    "arm": {
+     "year": 2013,
+     "sl": "per_head",
+     "n": 42.67
+    },
+    "amounts_bn": {
+     "NN": 120.39820907674881,
+     "GN": 128.4715004843397,
+     "NG": 120.71178423192555,
+     "GG": 126.08688622828268
+    }
+   },
+   {
+    "side": "spending",
+    "id": "family_and_general_assistance",
+    "key": "cash_assistance",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 12.3610870900053,
+    "kappa": 1.129396186118161,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 7.955293289206072,
+     "GN": 7.967875591464641,
+     "NG": 13.10953696122081,
+     "GG": 12.3610870900053
+    }
+   },
+   {
+    "side": "spending",
+    "id": "energy_assistance",
+    "key": "energy",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.6045528356789629,
+    "kappa": 1.0292992901087725,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.6582212068896627,
+     "GN": 0.5685394061662137,
+     "NG": 0.7409629416896013,
+     "GG": 0.6045528356789629
+    }
+   },
+   {
+    "side": "spending",
+    "id": "other_state_welfare",
+    "key": "wic",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 5.601730122075813,
+    "kappa": 1.0234415209586185,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 2.823741223507364,
+     "GN": 3.679322347672957,
+     "NG": 4.397579312107306,
+     "GG": 5.601730122075813
+    }
+   },
+   {
+    "side": "spending",
+    "id": "education_benefits",
+    "key": "postsecondary",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 9.603967561678482,
+    "kappa": 1.0055639110760617,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 8.133661396961163,
+     "GN": 8.158438466665816,
+     "NG": 9.696469177956413,
+     "GG": 9.603967561678482
+    }
+   },
+   {
+    "side": "spending",
+    "id": "employment_training",
+    "key": "working_age",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.17711346126243668,
+    "kappa": 1.0008932301260174,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.17370076704830187,
+     "GN": 0.17695539936875906,
+     "NG": 0.17385592180634177,
+     "GG": 0.17711346126243668
+    }
+   },
+   {
+    "side": "spending",
+    "id": "other_state_benefits",
+    "key": "population",
+    "class": "per_head",
+    "response": 1,
+    "corrected_bn": 0.3626649997065471,
+    "kappa": 0.9999999993213375,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.3626649997065471,
+     "GN": 0.3626649997065471,
+     "NG": 0.3626649997065471,
+     "GG": 0.3626649997065471
+    }
+   },
+   {
+    "side": "spending",
+    "id": "foreign_territory_social_benefits",
+    "key": "external",
+    "class": "zero",
+    "response": 0,
+    "corrected_bn": 0,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0,
+     "GG": 0
+    }
+   },
+   {
+    "side": "spending",
+    "id": "other_foreign_current_transfers",
+    "key": "external",
+    "class": "zero",
+    "response": 0,
+    "corrected_bn": 0,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0,
+     "GG": 0
+    }
+   },
+   {
+    "side": "spending",
+    "id": "domestic_interest",
+    "key": "population",
+    "class": "per_head",
+    "response": 0,
+    "corrected_bn": 141.1391262396452,
+    "kappa": 0.9999999993221425,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 141.1391262396452,
+     "GN": 141.1391262396452,
+     "NG": 141.1391262396452,
+     "GG": 141.1391262396452
+    }
+   },
+   {
+    "side": "spending",
+    "id": "foreign_interest",
+    "key": "external",
+    "class": "zero",
+    "response": 0,
+    "corrected_bn": 0,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0,
+     "GG": 0
+    }
+   },
+   {
+    "side": "spending",
+    "id": "agricultural_subsidies",
+    "key": "wages",
+    "class": "held_zero_response",
+    "response": 0,
+    "corrected_bn": 0.6916564401244311,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.6916564401244311,
+     "GN": 0.6916564401244311,
+     "NG": 0.6916564401244311,
+     "GG": 0.6916564401244311
+    }
+   },
+   {
+    "side": "spending",
+    "id": "housing_subsidies",
+    "key": "housing_support",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 4.488824290011592,
+    "kappa": 0.6103142877095451,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 6.938341399182504,
+     "GN": 6.911357866573504,
+     "NG": 4.571993115621194,
+     "GG": 4.488824290011592
+    }
+   },
+   {
+    "side": "spending",
+    "id": "transport_subsidies",
+    "key": "resources",
+    "class": "held_zero_response",
+    "response": 0,
+    "corrected_bn": 0.03552462564258004,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.03552462564258004,
+     "GN": 0.03552462564258004,
+     "NG": 0.03552462564258004,
+     "GG": 0.03552462564258004
+    }
+   },
+   {
+    "side": "spending",
+    "id": "other_subsidies",
+    "key": "resources",
+    "class": "held_zero_response",
+    "response": 0,
+    "corrected_bn": 2.2227012892301903,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 2.2227012892301903,
+     "GN": 2.2227012892301903,
+     "NG": 2.2227012892301903,
+     "GG": 2.2227012892301903
+    }
+   },
+   {
+    "side": "spending",
+    "id": "source_rounding",
+    "key": "external",
+    "class": "zero",
+    "response": 0,
+    "corrected_bn": 0,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0,
+     "GG": 0
+    }
+   },
+   {
+    "side": "spending",
+    "id": "school_reprice",
+    "key": "k",
+    "class": "synthetic",
+    "response": 0.7153278156243373,
+    "corrected_bn": 0.42236802296048814,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0.28793486692432346,
+     "GG": 0.42236802296048814
+    }
+   },
+   {
+    "side": "spending",
+    "id": "college_rekey",
+    "key": "k",
+    "class": "synthetic",
+    "response": 0.28467218437566266,
+    "corrected_bn": -5.184946926866755,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": -3.7789098938040935,
+     "GG": -5.184946926866755
+    }
+   },
+   {
+    "side": "spending",
+    "id": "lane_constants",
+    "key": "k",
+    "class": "synthetic",
+    "response": 1,
+    "corrected_bn": -5.40010769452897,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.890338502102105,
+     "GN": 1.890338502102105,
+     "NG": -5.40010769452897,
+     "GG": -5.40010769452897
+    }
+   },
+   {
+    "side": "spending",
+    "id": "roads_vmt_sl",
+    "key": "k",
+    "class": "roads_vmt",
+    "response": 0.7401981546463505,
+    "corrected_bn": 3.0632087295166937,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 3.1592710618883726,
+     "GG": 3.0632087295166937
+    }
+   },
+   {
+    "side": "spending",
+    "id": "roads_vmt_fed",
+    "key": "k",
+    "class": "held_zero_response",
+    "response": 0,
+    "corrected_bn": 0.027842503165727218,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.027842503165727218,
+     "GN": 0.027842503165727218,
+     "NG": 0.027842503165727218,
+     "GG": 0.027842503165727218
+    }
+   },
+   {
+    "side": "spending",
+    "id": "state_price_public_order_safety",
+    "key": "k",
+    "class": "state_price",
+    "response": 1,
+    "corrected_bn": 6.931151541634829,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 6.606758642873231,
+     "GG": 6.931151541634829
+    }
+   },
+   {
+    "side": "spending",
+    "id": "state_price_health_services",
+    "key": "k",
+    "class": "state_price",
+    "response": 1,
+    "corrected_bn": 1.9700870661101257,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 2.6457997776958413,
+     "GG": 1.9700870661101257
+    }
+   },
+   {
+    "side": "spending",
+    "id": "state_price_recreation_culture",
+    "key": "k",
+    "class": "state_price",
+    "response": 0.8563914832367988,
+    "corrected_bn": 0.4397297100874745,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0.4397297100874745,
+     "GG": 0.4397297100874745
+    }
+   }
+  ],
+  "high": [
+   {
+    "side": "receipt",
+    "id": "federal_income_tax",
+    "key": "federal_liability",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 112.48585429785412,
+    "kappa": 0.8518060111109435,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 306.2012694674615,
+     "GN": 264.0419494368443,
+     "NG": 125.74200153516674,
+     "GG": 112.48585429785412
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "state_local_income_tax",
+    "key": "state_liability",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 26.527608417168892,
+    "kappa": 0.9696582672428891,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 68.31397588922468,
+     "GN": 60.733880923700006,
+     "NG": 29.185218512110318,
+     "GG": 26.527608417168892
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "personal_motor_vehicle",
+    "key": "adults",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 3.575832776052499,
+    "kappa": 1.2227845140214895,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 3.3286319752039595,
+     "GN": 2.9243360011915036,
+     "NG": 4.070199632156164,
+     "GG": 3.575832776052499
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "personal_property_tax",
+    "key": "household_vehicles",
+    "class": "profile_acs",
+    "response": 1,
+    "corrected_bn": 1.403790822498509,
+    "kappa": 0.9671608014779534,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.6548238120985999,
+     "GN": 1.540342030711228,
+     "NG": 1.4808377212179415,
+     "GG": 1.403790822498509
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "other_personal_tax",
+    "key": "state_liability",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.4765679859765222,
+    "kappa": 0.9608035703996298,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.2385696248801232,
+     "GN": 1.101138370794874,
+     "NG": 0.5243119013170925,
+     "GG": 0.4765679859765222
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "employee_oasdi",
+    "key": "wage_oasdi",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 53.91781721140484,
+    "kappa": 0.952473231024733,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 77.7720049345727,
+     "GN": 73.90396446599692,
+     "NG": 56.067944288283535,
+     "GG": 53.91781721140484
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "employee_hi",
+    "key": "wage",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 15.886040584824329,
+    "kappa": 0.9457538063064694,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 25.068134447757867,
+     "GN": 23.63214616642532,
+     "NG": 16.636736633317735,
+     "GG": 15.886040584824329
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "self_employment_oasdi_hi",
+    "key": "self_payroll",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 6.395853937908699,
+    "kappa": 0.7061596171580496,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 11.066347567058848,
+     "GN": 9.601217613438315,
+     "NG": 7.231796865155403,
+     "GG": 6.395853937908699
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "employer_oasdi",
+    "key": "wage_oasdi",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 54.3834156385346,
+    "kappa": 0.9524732310243917,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 78.44359226964237,
+     "GN": 74.54214997488995,
+     "NG": 56.55210978353474,
+     "GG": 54.3834156385346
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "employer_hi",
+    "key": "wage",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 14.130856313125296,
+    "kappa": 0.9457538063055696,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 22.298457820767755,
+     "GN": 21.021126067615516,
+     "NG": 14.798610996203779,
+     "GG": 14.130856313125296
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "medicare_supplementary_premiums",
+    "key": "medicare",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 7.541017110234034,
+    "kappa": 0.9727960853145066,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 18.489610958645954,
+     "GN": 8.577897932413732,
+     "NG": 16.692551240193627,
+     "GG": 7.541017110234034
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "other_domestic_social_contributions",
+    "key": "positive_fica_worker",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 10.600822738703933,
+    "kappa": 0.9414193091266215,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 11.893886885259795,
+     "GN": 11.652996516137572,
+     "NG": 10.80437245755892,
+     "GG": 10.600822738703933
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "corporate_capital",
+    "key": "capital",
+    "class": "profile",
+    "response": 0.37,
+    "corrected_bn": 33.81458256999403,
+    "kappa": 2.116012871586044,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 63.420950592828504,
+     "GN": 45.845118871108916,
+     "NG": 44.66053023799763,
+     "GG": 33.81458256999403
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "corporate_labor",
+    "key": "wage",
+    "class": "profile",
+    "response": 0.37,
+    "corrected_bn": 11.271527523331267,
+    "kappa": 0.795711672271475,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 21.14031686377304,
+     "GN": 19.929327376569688,
+     "NG": 11.80416440834166,
+     "GG": 11.271527523331267
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "general_sales_tax",
+    "key": "consumption",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 59.91164379937781,
+    "kappa": 1.17120132335978,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 76.75666069589649,
+     "GN": 72.80359818061041,
+     "NG": 62.12633149435971,
+     "GG": 59.91164379937781
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "modeled_owner_property",
+    "key": "modeled_owner_property",
+    "class": "profile",
+    "response": 0.7726986463443216,
+    "corrected_bn": 26.90487211475465,
+    "kappa": 1.023279801729313,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 50.31011941843124,
+     "GN": 43.185490367052466,
+     "NG": 31.20287159306796,
+     "GG": 26.90487211475465
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "remaining_production_property",
+    "key": "capital",
+    "class": "profile",
+    "response": 0.8806493775433665,
+    "corrected_bn": 21.556359644478896,
+    "kappa": 2.4555144971826866,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 34.840143892082274,
+     "GN": 25.18490377846314,
+     "NG": 28.470511198257014,
+     "GG": 21.556359644478896
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "excise_selective_sales",
+    "key": "consumption",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 34.52028856009088,
+    "kappa": 1.0950169134526442,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 47.303141216664834,
+     "GN": 44.866971212608384,
+     "NG": 35.79636201514857,
+     "GG": 34.52028856009088
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "customs_duties",
+    "key": "consumption",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 7.485562475492161,
+    "kappa": 1.0546603300428707,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 10.649965967973502,
+     "GN": 10.101479610237524,
+     "NG": 7.762273012095112,
+     "GG": 7.485562475492161
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "other_production_taxes",
+    "key": "capital",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 7.701431787197984,
+    "kappa": 1.6514633995654049,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 18.507576016664746,
+     "GN": 13.37857623654137,
+     "NG": 10.17164788286465,
+     "GG": 7.701431787197984
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "rest_world_tax_contributions",
+    "key": "none",
+    "class": "zero",
+    "response": 0,
+    "corrected_bn": 0,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0,
+     "GG": 0
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "government_asset_income",
+    "key": "resident_population",
+    "class": "per_head",
+    "response": 0,
+    "corrected_bn": 25.359512963301167,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 25.359512963301167,
+     "GN": 25.359512963301167,
+     "NG": 25.359512963301167,
+     "GG": 25.359512963301167
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "business_current_transfers",
+    "key": "capital",
+    "class": "held_zero_response",
+    "response": 0,
+    "corrected_bn": 4.120155684872796,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 4.120155684872796,
+     "GN": 4.120155684872796,
+     "NG": 4.120155684872796,
+     "GG": 4.120155684872796
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "personal_current_transfers",
+    "key": "consumption",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 12.632955730024051,
+    "kappa": 1.054660330123827,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 17.973338547347947,
+     "GN": 17.0476894865119,
+     "NG": 13.099944279031712,
+     "GG": 12.632955730024051
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "rest_world_current_transfers",
+    "key": "none",
+    "class": "zero",
+    "response": 0,
+    "corrected_bn": 0,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0,
+     "GG": 0
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "enterprise_surplus",
+    "key": "resident_population",
+    "class": "per_head",
+    "response": 1,
+    "corrected_bn": -0.9034458177695179,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": -0.9034458177695179,
+     "GN": -0.9034458177695179,
+     "NG": -0.9034458177695179,
+     "GG": -0.9034458177695179
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "source_rounding",
+    "key": "population",
+    "class": "per_head",
+    "response": 0,
+    "corrected_bn": 0.0002483701400386852,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.0002483701400386852,
+     "GN": 0.0002483701400386852,
+     "NG": 0.0002483701400386852,
+     "GG": 0.0002483701400386852
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "housing_enterprise_surplus",
+    "key": "housing_support",
+    "class": "follows_rental",
+    "response": 1,
+    "corrected_bn": -3.7178213606483306,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": -5.7466080636639765,
+     "GN": -5.7242592374595915,
+     "NG": -3.7867050630198964,
+     "GG": -3.7178213606483306
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "tenant_occupied_property",
+    "key": "renter_contract_rent",
+    "class": "profile_acs",
+    "response": 0.7189123969969125,
+    "corrected_bn": 10.275834801018515,
+    "kappa": 0.9753916021459202,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 10.682229807645852,
+     "GN": 10.949283929376131,
+     "NG": 9.87855008024662,
+     "GG": 10.275834801018515
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "user_fees_key_k12",
+    "key": "capital_key_offset",
+    "class": "carrier",
+    "response": 0,
+    "corrected_bn": 9.75296263696325e-12,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 7.107290592065424e-12,
+     "GG": 9.75296263696325e-12
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "user_fees_key_college",
+    "key": "capital_key_offset",
+    "class": "carrier",
+    "response": 0,
+    "corrected_bn": -3.854858618402715e-11,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": -2.8095106040170948e-11,
+     "GG": -3.854858618402715e-11
+    }
+   },
+   {
+    "side": "receipt",
+    "id": "user_fees_key_health",
+    "key": "capital_key_offset",
+    "class": "carrier",
+    "response": 0,
+    "corrected_bn": -2.079886038647402e-12,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": -2.7932582845444517e-12,
+     "GG": -2.079886038647402e-12
+    }
+   },
+   {
+    "side": "spending",
+    "id": "general_public_services",
+    "key": "population",
+    "class": "per_head",
+    "response": 0.8510539647701243,
+    "corrected_bn": 50.807301243958996,
+    "kappa": 0.9999999993221431,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 50.807301243958996,
+     "GN": 50.807301243958996,
+     "NG": 50.807301243958996,
+     "GG": 50.807301243958996
+    }
+   },
+   {
+    "side": "spending",
+    "id": "defense",
+    "key": "population",
+    "class": "per_head",
+    "response": 0,
+    "corrected_bn": 107.98207210147714,
+    "kappa": 0.999999999322141,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 107.98207210147714,
+     "GN": 107.98207210147714,
+     "NG": 107.98207210147714,
+     "GG": 107.98207210147714
+    }
+   },
+   {
+    "side": "spending",
+    "id": "public_order_safety",
+    "key": "use",
+    "class": "justice",
+    "response": 1,
+    "corrected_bn": 74.55015591898928,
+    "kappa": 1.0256873853747153,
+    "theta": 1.101228146171932,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 65.74675091240216,
+     "GN": 68.83578131805062,
+     "NG": 71.06104721368662,
+     "GG": 74.55015591898928
+    }
+   },
+   {
+    "side": "spending",
+    "id": "economic_affairs_services",
+    "key": "resources",
+    "class": "profile",
+    "response": 0.6387399411939584,
+    "corrected_bn": 39.74695404491953,
+    "kappa": 1.0433813914825079,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 57.16064979729939,
+     "GN": 54.21680596649058,
+     "NG": 41.216235881536555,
+     "GG": 39.74695404491953
+    }
+   },
+   {
+    "side": "spending",
+    "id": "housing_community_services",
+    "key": "population",
+    "class": "per_head",
+    "response": 1,
+    "corrected_bn": 1.8603381688340848,
+    "kappa": 0.9999999993219381,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.8603381688340848,
+     "GN": 1.8603381688340848,
+     "NG": 1.8603381688340848,
+     "GG": 1.8603381688340848
+    }
+   },
+   {
+    "side": "spending",
+    "id": "health_services",
+    "key": "health_other",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 19.352173965499816,
+    "kappa": 0.7891219323898845,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 38.89771400179689,
+     "GN": 27.176239125069333,
+     "NG": 25.989702920565506,
+     "GG": 19.352173965499816
+    }
+   },
+   {
+    "side": "spending",
+    "id": "recreation_culture",
+    "key": "population",
+    "class": "per_head",
+    "response": 1,
+    "corrected_bn": 6.87280537242713,
+    "kappa": 0.9999999993221974,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 6.87280537242713,
+     "GN": 6.87280537242713,
+     "NG": 6.87280537242713,
+     "GG": 6.87280537242713
+    }
+   },
+   {
+    "side": "spending",
+    "id": "education_services",
+    "key": "education_mix",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 216.30440866145693,
+    "kappa": 0.9900407231695694,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 154.70303260369724,
+     "GN": 213.10532052441198,
+     "NG": 157.64768308981942,
+     "GG": 216.30440866145693
+    }
+   },
+   {
+    "side": "spending",
+    "id": "income_security_services",
+    "key": "cash_assistance",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 29.852907934124666,
+    "kappa": 1.022285378593861,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 21.22561773008647,
+     "GN": 21.259188728438872,
+     "NG": 31.66046781425609,
+     "GG": 29.852907934124666
+    }
+   },
+   {
+    "side": "spending",
+    "id": "social_security",
+    "key": "social_security",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 56.616999290096324,
+    "kappa": 0.9074669034867578,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 182.6526004494947,
+     "GN": 85.58862198690522,
+     "NG": 119.3087154675854,
+     "GG": 56.616999290096324
+    }
+   },
+   {
+    "side": "spending",
+    "id": "medicare",
+    "key": "medicare",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 55.07260928711663,
+    "kappa": 0.8338782323528596,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 139.05623086664238,
+     "GN": 68.67397194207038,
+     "NG": 112.32442358186842,
+     "GG": 55.07260928711663
+    }
+   },
+   {
+    "side": "spending",
+    "id": "unemployment",
+    "key": "unemployment",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 4.970777568679642,
+    "kappa": 1.1889136675706868,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 4.600232072562638,
+     "GN": 4.1604532753026895,
+     "NG": 5.581407624881824,
+     "GG": 4.970777568679642
+    }
+   },
+   {
+    "side": "spending",
+    "id": "railroad_retirement",
+    "key": "social_security",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.5666919925903448,
+    "kappa": 0.9074669035175522,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.828210032231888,
+     "GN": 0.8566753332626628,
+     "NG": 1.1941871619739357,
+     "GG": 0.5666919925903448
+    }
+   },
+   {
+    "side": "spending",
+    "id": "pension_guaranty",
+    "key": "age65plus",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.0400478999095943,
+    "kappa": 0.9828520162246397,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.0972572923680109,
+     "GN": 0.04074662232817864,
+     "NG": 0.09558952589644877,
+     "GG": 0.0400478999095943
+    }
+   },
+   {
+    "side": "spending",
+    "id": "veterans_life_insurance",
+    "key": "veterans",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.024839598503763237,
+    "kappa": 1.045792049783987,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.056638813204851195,
+     "GN": 0.04128483971801404,
+     "NG": 0.035332094741158636,
+     "GG": 0.024839598503763237
+    }
+   },
+   {
+    "side": "spending",
+    "id": "workers_compensation",
+    "key": "workers_comp",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 1.6429051721203116,
+    "kappa": 0.6923743569836935,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.5040190577535142,
+     "GN": 1.2326911415854005,
+     "NG": 2.210663726070173,
+     "GG": 1.6429051721203116
+    }
+   },
+   {
+    "side": "spending",
+    "id": "military_medical",
+    "key": "tricare",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.35084208277747103,
+    "kappa": 0.5153873874860412,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.9028150970851382,
+     "GN": 0.7300972594352607,
+     "NG": 0.4127188139320218,
+     "GG": 0.35084208277747103
+    }
+   },
+   {
+    "side": "spending",
+    "id": "veterans_pension_disability",
+    "key": "veterans",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 9.987012112445596,
+    "kappa": 1.045792050727807,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 22.772208371854234,
+     "GN": 16.598987857618006,
+     "NG": 14.205626475185081,
+     "GG": 9.987012112445596
+    }
+   },
+   {
+    "side": "spending",
+    "id": "veterans_readjustment",
+    "key": "veterans",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.6301734104846313,
+    "kappa": 1.045792050748432,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.4369102642613032,
+     "GN": 1.0473844099564578,
+     "NG": 0.8963649971729141,
+     "GG": 0.6301734104846313
+    }
+   },
+   {
+    "side": "spending",
+    "id": "veterans_other",
+    "key": "va_medical",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 1.7351783283012046,
+    "kappa": 0.7088183127013712,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 4.733692792409173,
+     "GN": 2.942622840128895,
+     "NG": 2.620530275443757,
+     "GG": 1.7351783283012046
+    }
+   },
+   {
+    "side": "spending",
+    "id": "snap",
+    "key": "snap",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 14.62549462768213,
+    "kappa": 0.9622503089565259,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 12.2853241690679,
+     "GN": 13.050813397337636,
+     "NG": 14.19878516801168,
+     "GG": 14.62549462768213
+    }
+   },
+   {
+    "side": "spending",
+    "id": "black_lung",
+    "key": "workers_comp",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.0349191384374209,
+    "kappa": 1.0142182893824012,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.02182297218817875,
+     "GN": 0.01788606624414275,
+     "NG": 0.046986566235958045,
+     "GG": 0.0349191384374209
+    }
+   },
+   {
+    "side": "spending",
+    "id": "ssi",
+    "key": "ssi",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 5.462842350283602,
+    "kappa": 0.9812861023743398,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 8.216285945115553,
+     "GN": 6.810558602772022,
+     "NG": 6.931904541411162,
+     "GG": 5.462842350283602
+    }
+   },
+   {
+    "side": "spending",
+    "id": "refundable_tax_credits",
+    "key": "refundable_credits",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 37.17045293380809,
+    "kappa": 0.7082986748116344,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 28.862962057834892,
+     "GN": 29.60386737180472,
+     "NG": 36.795190049705035,
+     "GG": 37.17045293380809
+    }
+   },
+   {
+    "side": "spending",
+    "id": "other_federal_benefits",
+    "key": "all_cash",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 6.9803647089112975,
+    "kappa": 0.9495161385671312,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 8.40467735691704,
+     "GN": 4.345198672756259,
+     "NG": 8.664931253030442,
+     "GG": 6.9803647089112975
+    }
+   },
+   {
+    "side": "spending",
+    "id": "temporary_disability",
+    "key": "workers_comp",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 2.6518360696783936,
+    "kappa": 1.0142182894202356,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.6572844401001872,
+     "GN": 1.3583071556621356,
+     "NG": 3.5682630417169423,
+     "GG": 2.6518360696783936
+    }
+   },
+   {
+    "side": "spending",
+    "id": "medicaid_and_chip_other_medical",
+    "key": "uninsured_use_high",
+    "class": "uninsured",
+    "response": 1,
+    "corrected_bn": 128.2086413877093,
+    "kappa": 0.9865576425881001,
+    "theta": null,
+    "arm": {
+     "year": 2017,
+     "sl": "health_other",
+     "n": 51.204
+    },
+    "amounts_bn": {
+     "NN": 120.4126687314999,
+     "GN": 129.028837581447,
+     "NG": 122.44560246922703,
+     "GG": 128.2086413877093
+    }
+   },
+   {
+    "side": "spending",
+    "id": "family_and_general_assistance",
+    "key": "cash_assistance",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 12.3610870900053,
+    "kappa": 1.129396186118161,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 7.955293289206072,
+     "GN": 7.967875591464641,
+     "NG": 13.10953696122081,
+     "GG": 12.3610870900053
+    }
+   },
+   {
+    "side": "spending",
+    "id": "energy_assistance",
+    "key": "energy",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.6045528356789629,
+    "kappa": 1.0292992901087725,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.6582212068896627,
+     "GN": 0.5685394061662137,
+     "NG": 0.7409629416896013,
+     "GG": 0.6045528356789629
+    }
+   },
+   {
+    "side": "spending",
+    "id": "other_state_welfare",
+    "key": "wic",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 5.601730122075813,
+    "kappa": 1.0234415209586185,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 2.823741223507364,
+     "GN": 3.679322347672957,
+     "NG": 4.397579312107306,
+     "GG": 5.601730122075813
+    }
+   },
+   {
+    "side": "spending",
+    "id": "education_benefits",
+    "key": "postsecondary",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 9.603967561678482,
+    "kappa": 1.0055639110760617,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 8.133661396961163,
+     "GN": 8.158438466665816,
+     "NG": 9.696469177956413,
+     "GG": 9.603967561678482
+    }
+   },
+   {
+    "side": "spending",
+    "id": "employment_training",
+    "key": "working_age",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 0.17711346126243668,
+    "kappa": 1.0008932301260174,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.17370076704830187,
+     "GN": 0.17695539936875906,
+     "NG": 0.17385592180634177,
+     "GG": 0.17711346126243668
+    }
+   },
+   {
+    "side": "spending",
+    "id": "other_state_benefits",
+    "key": "population",
+    "class": "per_head",
+    "response": 1,
+    "corrected_bn": 0.3626649997065471,
+    "kappa": 0.9999999993213375,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.3626649997065471,
+     "GN": 0.3626649997065471,
+     "NG": 0.3626649997065471,
+     "GG": 0.3626649997065471
+    }
+   },
+   {
+    "side": "spending",
+    "id": "foreign_territory_social_benefits",
+    "key": "external",
+    "class": "zero",
+    "response": 0,
+    "corrected_bn": 0,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0,
+     "GG": 0
+    }
+   },
+   {
+    "side": "spending",
+    "id": "other_foreign_current_transfers",
+    "key": "external",
+    "class": "zero",
+    "response": 0,
+    "corrected_bn": 0,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0,
+     "GG": 0
+    }
+   },
+   {
+    "side": "spending",
+    "id": "domestic_interest",
+    "key": "population",
+    "class": "per_head",
+    "response": 0,
+    "corrected_bn": 141.1391262396452,
+    "kappa": 0.9999999993221425,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 141.1391262396452,
+     "GN": 141.1391262396452,
+     "NG": 141.1391262396452,
+     "GG": 141.1391262396452
+    }
+   },
+   {
+    "side": "spending",
+    "id": "foreign_interest",
+    "key": "external",
+    "class": "zero",
+    "response": 0,
+    "corrected_bn": 0,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0,
+     "GG": 0
+    }
+   },
+   {
+    "side": "spending",
+    "id": "agricultural_subsidies",
+    "key": "wages",
+    "class": "held_zero_response",
+    "response": 0,
+    "corrected_bn": 0.6916564401244311,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.6916564401244311,
+     "GN": 0.6916564401244311,
+     "NG": 0.6916564401244311,
+     "GG": 0.6916564401244311
+    }
+   },
+   {
+    "side": "spending",
+    "id": "housing_subsidies",
+    "key": "housing_support",
+    "class": "profile",
+    "response": 1,
+    "corrected_bn": 4.488824290011592,
+    "kappa": 0.6103142877095451,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 6.938341399182504,
+     "GN": 6.911357866573504,
+     "NG": 4.571993115621194,
+     "GG": 4.488824290011592
+    }
+   },
+   {
+    "side": "spending",
+    "id": "transport_subsidies",
+    "key": "resources",
+    "class": "held_zero_response",
+    "response": 0,
+    "corrected_bn": 0.03552462564258004,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0.03552462564258004,
+     "GN": 0.03552462564258004,
+     "NG": 0.03552462564258004,
+     "GG": 0.03552462564258004
+    }
+   },
+   {
+    "side": "spending",
+    "id": "other_subsidies",
+    "key": "resources",
+    "class": "held_zero_response",
+    "response": 0,
+    "corrected_bn": 2.2227012892301903,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 2.2227012892301903,
+     "GN": 2.2227012892301903,
+     "NG": 2.2227012892301903,
+     "GG": 2.2227012892301903
+    }
+   },
+   {
+    "side": "spending",
+    "id": "source_rounding",
+    "key": "external",
+    "class": "zero",
+    "response": 0,
+    "corrected_bn": 0,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0,
+     "GG": 0
+    }
+   },
+   {
+    "side": "spending",
+    "id": "school_reprice",
+    "key": "k",
+    "class": "synthetic",
+    "response": 0.8651608840454027,
+    "corrected_bn": 0.42236802296048814,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0.28793486692432346,
+     "GG": 0.42236802296048814
+    }
+   },
+   {
+    "side": "spending",
+    "id": "college_rekey",
+    "key": "k",
+    "class": "synthetic",
+    "response": 0.1348391159545973,
+    "corrected_bn": -5.184946926866755,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": -3.7789098938040935,
+     "GG": -5.184946926866755
+    }
+   },
+   {
+    "side": "spending",
+    "id": "lane_constants",
+    "key": "k",
+    "class": "synthetic",
+    "response": 1,
+    "corrected_bn": -5.40010769452897,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 1.890338502102105,
+     "GN": 1.890338502102105,
+     "NG": -5.40010769452897,
+     "GG": -5.40010769452897
+    }
+   },
+   {
+    "side": "spending",
+    "id": "roads_vmt_sl",
+    "key": "k",
+    "class": "roads_vmt",
+    "response": 1,
+    "corrected_bn": 3.0632087295166937,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 3.1592710618883726,
+     "GG": 3.0632087295166937
+    }
+   },
+   {
+    "side": "spending",
+    "id": "roads_vmt_fed",
+    "key": "k",
+    "class": "roads_vmt",
+    "response": 1,
+    "corrected_bn": 0.027842503165727218,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0.02871564503405416,
+     "GG": 0.027842503165727218
+    }
+   },
+   {
+    "side": "spending",
+    "id": "state_price_public_order_safety",
+    "key": "k",
+    "class": "state_price",
+    "response": 1,
+    "corrected_bn": 6.931151541634829,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 6.606758642873231,
+     "GG": 6.931151541634829
+    }
+   },
+   {
+    "side": "spending",
+    "id": "state_price_health_services",
+    "key": "k",
+    "class": "state_price",
+    "response": 1,
+    "corrected_bn": 1.9700870661101257,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 2.6457997776958413,
+     "GG": 1.9700870661101257
+    }
+   },
+   {
+    "side": "spending",
+    "id": "state_price_recreation_culture",
+    "key": "k",
+    "class": "state_price",
+    "response": 1,
+    "corrected_bn": 0.4397297100874745,
+    "kappa": null,
+    "theta": null,
+    "arm": null,
+    "amounts_bn": {
+     "NN": 0,
+     "GN": 0,
+     "NG": 0.4397297100874745,
+     "GG": 0.4397297100874745
+    }
+   }
+  ]
+ },
+ "v4": {
+  "rules": {
+   "pension_accrual": null,
+   "property_taxes": "modeled_owner_property on the account's CPS key (profiles_sept29.py; published-share gate); tenant_occupied_property on ACS contract rent and personal_property_tax on ACS household vehicles (per-person rates by age x the frame's headcount; kappa = the measured share over the standardized one); factor R",
+   "housing_enterprise_surplus": "its national over housing_subsidies' national x housing_subsidies' amount at (A, U); factor U",
+   "state_price": "the parent's amount at (A, G) x the line's amount over the parent's at GG; 0 at U = N",
+   "roads_vmt": "the case's amount x the group's persons 5+ at national ages over its own at A = N; 0 at U = N",
+   "national_scale": "a scaled line's uncorrected cell is model.json's x (payload national / model.json national)"
+  },
+  "accrual": null,
+  "accrual_national_ratio": null,
+  "kappas": {
+   "low": {
+    "personal_property_tax": 0.9671608014779534,
+    "modeled_owner_property": 1.023279801729313,
+    "tenant_occupied_property": 0.9753916021459202
+   },
+   "high": {
+    "personal_property_tax": 0.9671608014779534,
+    "modeled_owner_property": 1.023279801729313,
+    "tenant_occupied_property": 0.9753916021459202
+   }
+  },
+  "line_parts": {
+   "low": {
+    "social_security": {
+     "shared": 182.6526004494947,
+     "age_structure": -79.87784732003928,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -46.1577538393591,
+     "total": 56.616999290096324
+    },
+    "medicare": {
+     "shared": 139.05623086664238,
+     "age_structure": -63.8170366096619,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -20.16658496986386,
+     "total": 55.07260928711663
+    },
+    "federal_income_tax": {
+     "shared": -306.2012694674615,
+     "age_structure": 27.707733633964917,
+     "taxes_at_given_ages": 166.00768153564243,
+     "service_use_at_given_ages": 0,
+     "total": -112.48585429785412
+    },
+    "modeled_owner_property": {
+     "shared": -38.87456117204299,
+     "age_structure": 4.413124801293551,
+     "taxes_at_given_ages": 13.672078107611433,
+     "service_use_at_given_ages": 0,
+     "total": -20.789358263138002
+    },
+    "tenant_occupied_property": {
+     "shared": -7.679587436286546,
+     "age_structure": -0.23880071484069632,
+     "taxes_at_given_ages": 0.5309631231827305,
+     "service_use_at_given_ages": 0,
+     "total": -7.387425027944512
+    },
+    "personal_property_tax": {
+     "shared": -1.6548238120985999,
+     "age_structure": 0.09576434005340216,
+     "taxes_at_given_ages": 0.15526864954668873,
+     "service_use_at_given_ages": 0,
+     "total": -1.403790822498509
+    },
+    "housing_enterprise_surplus": {
+     "shared": 5.7466080636639765,
+     "age_structure": -0.045616264287975376,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -1.98317043872767,
+     "total": 3.7178213606483306
+    },
+    "housing_subsidies": {
+     "shared": 6.938341399182504,
+     "age_structure": -0.055076179109301286,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -2.3944409300616107,
+     "total": 4.488824290011592
+    },
+    "roads_vmt_sl": {
+     "shared": 0,
+     "age_structure": -0.03555258057627042,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": 2.3029340294611194,
+     "total": 2.2673814488848487
+    },
+    "roads_vmt_fed": {
+     "shared": 0,
+     "age_structure": 0,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": 0,
+     "total": 0
+    },
+    "state_price_public_order_safety": {
+     "shared": 0,
+     "age_structure": 0.16219644938079902,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": 6.76895509225403,
+     "total": 6.931151541634829
+    },
+    "state_price_health_services": {
+     "shared": 0,
+     "age_structure": -0.3378563557928578,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": 2.3079434219029835,
+     "total": 1.9700870661101257
+    },
+    "state_price_recreation_culture": {
+     "shared": 0,
+     "age_structure": 0,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": 0.3765807786450998,
+     "total": 0.37658077864509987
+    }
+   },
+   "high": {
+    "social_security": {
+     "shared": 182.6526004494947,
+     "age_structure": -79.87784732003928,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -46.1577538393591,
+     "total": 56.616999290096324
+    },
+    "medicare": {
+     "shared": 139.05623086664238,
+     "age_structure": -63.8170366096619,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -20.16658496986386,
+     "total": 55.07260928711663
+    },
+    "federal_income_tax": {
+     "shared": -306.2012694674615,
+     "age_structure": 27.707733633964917,
+     "taxes_at_given_ages": 166.00768153564243,
+     "service_use_at_given_ages": 0,
+     "total": -112.48585429785412
+    },
+    "modeled_owner_property": {
+     "shared": -38.87456117204299,
+     "age_structure": 4.413124801293551,
+     "taxes_at_given_ages": 13.672078107611433,
+     "service_use_at_given_ages": 0,
+     "total": -20.789358263138002
+    },
+    "tenant_occupied_property": {
+     "shared": -7.679587436286546,
+     "age_structure": -0.23880071484069632,
+     "taxes_at_given_ages": 0.5309631231827305,
+     "service_use_at_given_ages": 0,
+     "total": -7.387425027944512
+    },
+    "personal_property_tax": {
+     "shared": -1.6548238120985999,
+     "age_structure": 0.09576434005340216,
+     "taxes_at_given_ages": 0.15526864954668873,
+     "service_use_at_given_ages": 0,
+     "total": -1.403790822498509
+    },
+    "housing_enterprise_surplus": {
+     "shared": 5.7466080636639765,
+     "age_structure": -0.045616264287975376,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -1.98317043872767,
+     "total": 3.7178213606483306
+    },
+    "housing_subsidies": {
+     "shared": 6.938341399182504,
+     "age_structure": -0.055076179109301286,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -2.3944409300616107,
+     "total": 4.488824290011592
+    },
+    "roads_vmt_sl": {
+     "shared": 0,
+     "age_structure": -0.04803116618583947,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": 3.111239895702533,
+     "total": 3.0632087295166937
+    },
+    "roads_vmt_fed": {
+     "shared": 0,
+     "age_structure": -0.00043657093416347124,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": 0.028279074099890687,
+     "total": 0.027842503165727218
+    },
+    "state_price_public_order_safety": {
+     "shared": 0,
+     "age_structure": 0.16219644938079902,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": 6.76895509225403,
+     "total": 6.931151541634829
+    },
+    "state_price_health_services": {
+     "shared": 0,
+     "age_structure": -0.3378563557928578,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": 2.3079434219029835,
+     "total": 1.9700870661101257
+    },
+    "state_price_recreation_culture": {
+     "shared": 0,
+     "age_structure": 0,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": 0.43972971008747447,
+     "total": 0.4397297100874745
+    }
+   }
+  },
+  "state_price_parents": {
+   "state_price_public_order_safety": "public_order_safety",
+   "state_price_health_services": "health_services",
+   "state_price_recreation_culture": "recreation_culture"
+  },
+  "road_lines": [
+   "roads_vmt_sl",
+   "roads_vmt_fed"
+  ],
+  "classes": {
+   "low": {
+    "state_price": [
+     "state_price_public_order_safety",
+     "state_price_health_services",
+     "state_price_recreation_culture"
+    ],
+    "roads_vmt": [
+     "roads_vmt_sl"
+    ],
+    "follows_rental": [
+     "housing_enterprise_surplus"
+    ],
+    "profile_acs": [
+     "personal_property_tax",
+     "tenant_occupied_property"
+    ],
+    "accrual": [],
+    "medicare_accrual": [],
+    "income_tax_less_benefit_tax": []
+   },
+   "high": {
+    "state_price": [
+     "state_price_public_order_safety",
+     "state_price_health_services",
+     "state_price_recreation_culture"
+    ],
+    "roads_vmt": [
+     "roads_vmt_sl",
+     "roads_vmt_fed"
+    ],
+    "follows_rental": [
+     "housing_enterprise_surplus"
+    ],
+    "profile_acs": [
+     "personal_property_tax",
+     "tenant_occupied_property"
+    ],
+    "accrual": [],
+    "medicare_accrual": [],
+    "income_tax_less_benefit_tax": []
+   }
+  }
+ },
+ "v5": {
+  "rules": {
+   "added_people": "meta.lineage.counts.added placed at the identified G3+'s ages (g3plus_ages_oct07.csv's g3plus column: convention a, the ASEC person weights, this lane's bins); every row-4 union key vector is scaled by (union + added) / union in each bin, so the added people carry the union's per-person key at their ages; the lineage's own amounts (its edits) enter through each line's kappa, as the corrections do; the published frame stays model.json's",
+   "justice": "the added people's keyed parts at the union's relative risk theta on the row-4 frame (theta held)",
+   "pension_accrual": "social_security = the group's ratio (the case's amount over its OASDI receipts) x the OASDI receipts at (A, R); medicare's Part A accrual = part_a_accrual_bn + the lineage's set Medicare less (1 - part_a_share) x its cash Medicare; the tax on current benefits = benefit_tax_receipt_bn + the lineage's cash less its set federal income tax",
+   "lane_constants": "the lineage's edit is the added people's own (0 at U = N), as the line's amount beyond row 8; at U = N row 8 is c x v5's row8_factor (row8_in_lineage gives the part of the edit that is G3+'s share of row 8)",
+   "finite_removal_note": "the linearity note's 2s is twice v5's group share (meta.lineage.s.v5)",
+   "part1_at_published_count": "not computed: the lineage's added people are counted on the account's frame only"
+  },
+  "added": {
+   "persons": 3039719.593185237,
+   "members": 45230062.30075857,
+   "identified_g3plus": 14342574.606275612,
+   "by_bin": {
+    "0": 81061.67663641059,
+    "1": 80383.20182272677,
+    "2": 92655.44315708011,
+    "3": 81754.74200788415,
+    "4": 83306.60603480802,
+    "5": 69749.23571006428,
+    "6": 69327.52097746382,
+    "7": 69740.96133115278,
+    "8": 63116.227062825004,
+    "9": 70836.08877667433,
+    "10": 76613.8031140277,
+    "11": 67720.3327454874,
+    "12": 56916.401737751745,
+    "13": 74787.95478178609,
+    "14": 55596.45289768377,
+    "15": 78782.84249794194,
+    "16": 64461.53761121976,
+    "17": 68551.44890267595,
+    "18": 62635.39945863776,
+    "19": 52046.66299374937,
+    "20": 55397.65810498361,
+    "21": 48380.816265862784,
+    "22": 52168.23724992206,
+    "23": 39665.92797910267,
+    "24": 41795.4051095926,
+    "25": 227698.43915864744,
+    "30": 180978.47079461644,
+    "35": 174941.75026480167,
+    "40": 160257.5509460631,
+    "45": 131186.26910469218,
+    "50": 116161.46599427347,
+    "55": 86603.68031867952,
+    "60": 93373.8402073432,
+    "65": 74155.74253639638,
+    "70": 59477.83959075884,
+    "75": 38786.50241676532,
+    "80": 24922.0471404519,
+    "85": 13723.409744232073
+   },
+   "scale_by_bin": {
+    "0": 1.137631628743094,
+    "1": 1.1263494166644712,
+    "2": 1.1382727040196348,
+    "3": 1.1284441966213454,
+    "4": 1.1315767039753795,
+    "5": 1.1195759998996613,
+    "6": 1.1100517229690197,
+    "7": 1.110922939430136,
+    "8": 1.1030338542567917,
+    "9": 1.106894484874563,
+    "10": 1.1073910041772324,
+    "11": 1.1040101678359886,
+    "12": 1.092127381608859,
+    "13": 1.1000756197796153,
+    "14": 1.082892855303534,
+    "15": 1.1009721661552423,
+    "16": 1.0885854605362142,
+    "17": 1.0799595133251598,
+    "18": 1.0802376718649074,
+    "19": 1.0711304349204918,
+    "20": 1.0739381122141771,
+    "21": 1.0678540531962823,
+    "22": 1.0722629785435733,
+    "23": 1.0682976193122045,
+    "24": 1.0615620280547073,
+    "25": 1.0727854609381684,
+    "30": 1.061034681556324,
+    "35": 1.0641148155219051,
+    "40": 1.059810184130562,
+    "45": 1.0546371048566106,
+    "50": 1.0521382583735364,
+    "55": 1.0460174733251084,
+    "60": 1.0572833092097604,
+    "65": 1.0620126779683088,
+    "70": 1.0755406483081613,
+    "75": 1.0749336712287847,
+    "80": 1.0746202518311552,
+    "85": 1.0593421067871565
+   }
+  },
+  "accrual": null,
+  "justice_theta": {
+   "low": 1.101228146171932,
+   "high": 1.101228146171932
+  },
+  "row8": {
+   "v4_bn": 1.8983259317688221,
+   "v5_bn": 1.890338502102105,
+   "lineage_edit_bn": -0.00798742966671706
+  },
+  "row8_in_lineage": {
+   "low": {
+    "allocation": "personal",
+    "lineage_edit_bn": -0.19064619663107382,
+    "september_29_cell_bn": -5.201474068231179,
+    "row8_part_bn": 0.06957808769407871
+   },
+   "high": {
+    "allocation": "personal",
+    "lineage_edit_bn": -0.19064619663107382,
+    "september_29_cell_bn": -5.201474068231179,
+    "row8_part_bn": 0.06957808769407871
+   }
+  }
+ },
+ "v6": {
+  "rules": {
+   "added_people": "beside the case: v5's rule, the added people at the identified G3+'s ages rather than the measured mix the case prices them at",
+   "edit_sets": "each item edit enters as the payload's other corrections do: a cell shift through its line's rule (kappa on a profile line: the group's own measurement, moving the amounts at U = G and none at U = N; a synthetic line's own rule), a national-scale edit through its line's uncorrected cell (natScale, every state); the parts named lineage_* (the added people's) join the lineage's own amounts on the accrual lines (v5.rules.pension_accrual)",
+   "carriers": "an item's carrier receipt line corrects the key of the component its offsets correct (of_component, a lines-keyed component): 0 at U = N; at U = G the case's value x that key's lines at (A, G) over at (G, G), kappa on the key; the offsets' returns join that component's line group",
+   "split_basis": "an item part whose split basis (the item meta's splits.split_basis) is a line other than the one it edits stays on its line, at that line's response, and takes the basis line's age profile as a correction on that line enters it (0 at U = N; at U = G the basis line's uncorrected amount at (A, G) over at (G, G)); its cost joins the basis line's group (education_services: schools and colleges by the school fraction) [ASSUMPTION, the case's splits rule]",
+   "pension_inputs": "none: the cash set has no pension accrual"
+  },
+  "placement": {
+   "rule": "identified",
+   "ages_file": "g3plus_ages_oct07.csv",
+   "added_persons": 3039719.593185236,
+   "added_under_18": 1305362.4778056645,
+   "added_18_to_64": 1523291.5739509678,
+   "added_65_plus": 211065.5414286045
+  },
+  "items": [
+   {
+    "id": "pension_tr2026",
+    "kind": "edit_set",
+    "applied": false,
+    "edits": null,
+    "lineage_parts": [],
+    "carriers": []
+   },
+   {
+    "id": "retiree_health",
+    "kind": "edit_set",
+    "applied": true,
+    "edits": [
+     {
+      "index": 750,
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "key": null,
+      "kind": "national_scale",
+      "class": "profile"
+     },
+     {
+      "index": 751,
+      "side": "spending",
+      "line": "general_public_services",
+      "key": null,
+      "kind": "national_scale",
+      "class": "per_head"
+     },
+     {
+      "index": 752,
+      "side": "spending",
+      "line": "defense",
+      "key": null,
+      "kind": "national_scale",
+      "class": "per_head"
+     },
+     {
+      "index": 753,
+      "side": "spending",
+      "line": "public_order_safety",
+      "key": null,
+      "kind": "national_scale",
+      "class": "justice"
+     },
+     {
+      "index": 754,
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "key": null,
+      "kind": "national_scale",
+      "class": "profile"
+     },
+     {
+      "index": 755,
+      "side": "spending",
+      "line": "housing_community_services",
+      "key": null,
+      "kind": "national_scale",
+      "class": "per_head"
+     },
+     {
+      "index": 756,
+      "side": "spending",
+      "line": "health_services",
+      "key": null,
+      "kind": "national_scale",
+      "class": "profile"
+     },
+     {
+      "index": 757,
+      "side": "spending",
+      "line": "recreation_culture",
+      "key": null,
+      "kind": "national_scale",
+      "class": "per_head"
+     },
+     {
+      "index": 758,
+      "side": "spending",
+      "line": "education_services",
+      "key": null,
+      "kind": "national_scale",
+      "class": "profile"
+     },
+     {
+      "index": 759,
+      "side": "spending",
+      "line": "income_security_services",
+      "key": null,
+      "kind": "national_scale",
+      "class": "profile"
+     }
+    ],
+    "lineage_parts": [],
+    "carriers": []
+   },
+   {
+    "id": "added_age_mix",
+    "kind": "lineage",
+    "applied": true,
+    "edits": null,
+    "lineage_parts": [],
+    "carriers": []
+   },
+   {
+    "id": "user_fees",
+    "kind": "edit_set",
+    "applied": true,
+    "edits": [
+     {
+      "index": 760,
+      "side": "spending",
+      "line": "education_services",
+      "key": "education_mix",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 761,
+      "side": "spending",
+      "line": "school_reprice",
+      "key": "k",
+      "kind": "cell_shift",
+      "class": "synthetic"
+     },
+     {
+      "index": 762,
+      "side": "spending",
+      "line": "college_rekey",
+      "key": "k",
+      "kind": "cell_shift",
+      "class": "synthetic"
+     },
+     {
+      "index": 763,
+      "side": "spending",
+      "line": "health_services",
+      "key": "health_other",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 764,
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "key": "all_cash",
+      "kind": "cell_shift",
+      "class": "profile"
+     }
+    ],
+    "lineage_parts": [],
+    "carriers": [
+     "user_fees_key_k12",
+     "user_fees_key_college",
+     "user_fees_key_health"
+    ]
+   },
+   {
+    "id": "personal_allocation",
+    "kind": "allocation",
+    "applied": true,
+    "edits": [],
+    "lineage_parts": [],
+    "carriers": []
+   },
+   {
+    "id": "child_credits",
+    "kind": "edit_set",
+    "applied": true,
+    "edits": [
+     {
+      "index": 765,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "cbo_collective",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 766,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "corporate_all_capital",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 767,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "federal_gap_high_agi",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 768,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "medicare_income_weighted",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 769,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "nas_80",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 770,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "property_residual_consumption",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 771,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "public_assets_tax_base",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 772,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "treasury_815",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 773,
+      "side": "spending",
+      "line": "refundable_tax_credits",
+      "key": "refundable_credits",
+      "kind": "cell_shift",
+      "class": "profile"
+     }
+    ],
+    "lineage_parts": [
+     {
+      "part": "lineage_g3plus:federal_income_tax:cbo_collective",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -0.19731146632438068,
+       "shared": 0
+      }
+     },
+     {
+      "part": "lineage_g3plus:federal_income_tax:corporate_all_capital",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -0.19731146632438068,
+       "shared": 0
+      }
+     },
+     {
+      "part": "lineage_g3plus:federal_income_tax:federal_gap_high_agi",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -0.18255414509239426,
+       "shared": 0
+      }
+     },
+     {
+      "part": "lineage_g3plus:federal_income_tax:medicare_income_weighted",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -0.19731146632438068,
+       "shared": 0
+      }
+     },
+     {
+      "part": "lineage_g3plus:federal_income_tax:nas_80",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -0.19731146632438068,
+       "shared": 0
+      }
+     },
+     {
+      "part": "lineage_g3plus:federal_income_tax:property_residual_consumption",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -0.19731146632438068,
+       "shared": 0
+      }
+     },
+     {
+      "part": "lineage_g3plus:federal_income_tax:public_assets_tax_base",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -0.19731146632438068,
+       "shared": 0
+      }
+     },
+     {
+      "part": "lineage_g3plus:federal_income_tax:treasury_815",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -0.19731146632438068,
+       "shared": 0
+      }
+     },
+     {
+      "part": "lineage_g3plus:refundable_tax_credits",
+      "line": "refundable_tax_credits",
+      "by": {
+       "personal": 0.22142743234174972,
+       "shared": 0
+      }
+     }
+    ],
+    "carriers": []
+   },
+   {
+    "id": "job_capital_taxes",
+    "kind": "edit_set",
+    "applied": true,
+    "edits": [
+     {
+      "index": 774,
+      "side": "receipt",
+      "line": "corporate_capital",
+      "key": "cbo_collective",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 775,
+      "side": "receipt",
+      "line": "corporate_capital",
+      "key": "corporate_all_capital",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 776,
+      "side": "receipt",
+      "line": "corporate_capital",
+      "key": "federal_gap_high_agi",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 777,
+      "side": "receipt",
+      "line": "corporate_capital",
+      "key": "medicare_income_weighted",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 778,
+      "side": "receipt",
+      "line": "corporate_capital",
+      "key": "nas_80",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 779,
+      "side": "receipt",
+      "line": "corporate_capital",
+      "key": "property_residual_consumption",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 780,
+      "side": "receipt",
+      "line": "corporate_capital",
+      "key": "public_assets_tax_base",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 781,
+      "side": "receipt",
+      "line": "corporate_capital",
+      "key": "treasury_815",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 782,
+      "side": "receipt",
+      "line": "corporate_labor",
+      "key": "cbo_collective",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 783,
+      "side": "receipt",
+      "line": "corporate_labor",
+      "key": "corporate_all_capital",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 784,
+      "side": "receipt",
+      "line": "corporate_labor",
+      "key": "federal_gap_high_agi",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 785,
+      "side": "receipt",
+      "line": "corporate_labor",
+      "key": "medicare_income_weighted",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 786,
+      "side": "receipt",
+      "line": "corporate_labor",
+      "key": "nas_80",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 787,
+      "side": "receipt",
+      "line": "corporate_labor",
+      "key": "property_residual_consumption",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 788,
+      "side": "receipt",
+      "line": "corporate_labor",
+      "key": "public_assets_tax_base",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 789,
+      "side": "receipt",
+      "line": "corporate_labor",
+      "key": "treasury_815",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 790,
+      "side": "receipt",
+      "line": "remaining_production_property",
+      "key": "cbo_collective",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 791,
+      "side": "receipt",
+      "line": "remaining_production_property",
+      "key": "corporate_all_capital",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 792,
+      "side": "receipt",
+      "line": "remaining_production_property",
+      "key": "federal_gap_high_agi",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 793,
+      "side": "receipt",
+      "line": "remaining_production_property",
+      "key": "medicare_income_weighted",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 794,
+      "side": "receipt",
+      "line": "remaining_production_property",
+      "key": "nas_80",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 795,
+      "side": "receipt",
+      "line": "remaining_production_property",
+      "key": "property_residual_consumption",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 796,
+      "side": "receipt",
+      "line": "remaining_production_property",
+      "key": "public_assets_tax_base",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 797,
+      "side": "receipt",
+      "line": "remaining_production_property",
+      "key": "treasury_815",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 798,
+      "side": "receipt",
+      "line": "other_production_taxes",
+      "key": "cbo_collective",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 799,
+      "side": "receipt",
+      "line": "other_production_taxes",
+      "key": "corporate_all_capital",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 800,
+      "side": "receipt",
+      "line": "other_production_taxes",
+      "key": "federal_gap_high_agi",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 801,
+      "side": "receipt",
+      "line": "other_production_taxes",
+      "key": "medicare_income_weighted",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 802,
+      "side": "receipt",
+      "line": "other_production_taxes",
+      "key": "nas_80",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 803,
+      "side": "receipt",
+      "line": "other_production_taxes",
+      "key": "property_residual_consumption",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 804,
+      "side": "receipt",
+      "line": "other_production_taxes",
+      "key": "public_assets_tax_base",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 805,
+      "side": "receipt",
+      "line": "other_production_taxes",
+      "key": "treasury_815",
+      "kind": "cell_shift",
+      "class": "profile"
+     }
+    ],
+    "lineage_parts": [
+     {
+      "part": "lineage_g3plus:corporate_capital:cbo_collective",
+      "line": "corporate_capital",
+      "by": {
+       "personal": 0.7367983422193144,
+       "shared": 0.9850973355133018
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_capital:cbo_collective",
+      "line": "corporate_capital",
+      "by": {
+       "personal": -0.12736553870129086,
+       "shared": -0.13910640415696784
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_capital:corporate_all_capital",
+      "line": "corporate_capital",
+      "by": {
+       "personal": 0.9823977896149586,
+       "shared": 1.3134631140177362
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_capital:corporate_all_capital",
+      "line": "corporate_capital",
+      "by": {
+       "personal": 0.32812632754494286,
+       "shared": 0.31247184027070785
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_capital:federal_gap_high_agi",
+      "line": "corporate_capital",
+      "by": {
+       "personal": 0.7367983422193144,
+       "shared": 0.9850973355133018
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_capital:federal_gap_high_agi",
+      "line": "corporate_capital",
+      "by": {
+       "personal": -0.12736553870129086,
+       "shared": -0.13910640415696784
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_capital:medicare_income_weighted",
+      "line": "corporate_capital",
+      "by": {
+       "personal": 0.7367983422193144,
+       "shared": 0.9850973355133018
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_capital:medicare_income_weighted",
+      "line": "corporate_capital",
+      "by": {
+       "personal": -0.12736553870129086,
+       "shared": -0.13910640415696784
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_capital:nas_80",
+      "line": "corporate_capital",
+      "by": {
+       "personal": 0.7277126718456404,
+       "shared": 0.9834713753887132
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_capital:nas_80",
+      "line": "corporate_capital",
+      "by": {
+       "personal": -0.036267165452044114,
+       "shared": -0.04879075527143284
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_capital:property_residual_consumption",
+      "line": "corporate_capital",
+      "by": {
+       "personal": 0.7367983422193144,
+       "shared": 0.9850973355133018
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_capital:property_residual_consumption",
+      "line": "corporate_capital",
+      "by": {
+       "personal": -0.12736553870129086,
+       "shared": -0.13910640415696784
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_capital:public_assets_tax_base",
+      "line": "corporate_capital",
+      "by": {
+       "personal": 0.7367983422193144,
+       "shared": 0.9850973355133018
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_capital:public_assets_tax_base",
+      "line": "corporate_capital",
+      "by": {
+       "personal": -0.12736553870129086,
+       "shared": -0.13910640415696784
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_capital:treasury_815",
+      "line": "corporate_capital",
+      "by": {
+       "personal": 0.8006541985318196,
+       "shared": 1.0704724379092325
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_capital:treasury_815",
+      "line": "corporate_capital",
+      "by": {
+       "personal": -0.00893765347727049,
+       "shared": -0.021696060605772116
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_labor:cbo_collective",
+      "line": "corporate_labor",
+      "by": {
+       "personal": -0.11515640838521984,
+       "shared": -0.1549850275272311
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_labor:cbo_collective",
+      "line": "corporate_labor",
+      "by": {
+       "personal": 0.008112427826001356,
+       "shared": 0.0041988060074424904
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_labor:corporate_all_capital",
+      "line": "corporate_labor",
+      "by": {
+       "personal": 0,
+       "shared": 0
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_labor:corporate_all_capital",
+      "line": "corporate_labor",
+      "by": {
+       "personal": -0.4473794384202328,
+       "shared": -0.4473794384202328
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_labor:federal_gap_high_agi",
+      "line": "corporate_labor",
+      "by": {
+       "personal": -0.11515640838521984,
+       "shared": -0.1549850275272311
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_labor:federal_gap_high_agi",
+      "line": "corporate_labor",
+      "by": {
+       "personal": 0.008112427826001356,
+       "shared": 0.0041988060074424904
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_labor:medicare_income_weighted",
+      "line": "corporate_labor",
+      "by": {
+       "personal": -0.11515640838521984,
+       "shared": -0.1549850275272311
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_labor:medicare_income_weighted",
+      "line": "corporate_labor",
+      "by": {
+       "personal": 0.008112427826001356,
+       "shared": 0.0041988060074424904
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_labor:nas_80",
+      "line": "corporate_labor",
+      "by": {
+       "personal": -0.09212512671582229,
+       "shared": -0.12398802204364301
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_labor:nas_80",
+      "line": "corporate_labor",
+      "by": {
+       "personal": -0.08298594542324544,
+       "shared": -0.08611684287809257
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_labor:property_residual_consumption",
+      "line": "corporate_labor",
+      "by": {
+       "personal": -0.11515640838521984,
+       "shared": -0.1549850275272311
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_labor:property_residual_consumption",
+      "line": "corporate_labor",
+      "by": {
+       "personal": 0.008112427826001356,
+       "shared": 0.0041988060074424904
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_labor:public_assets_tax_base",
+      "line": "corporate_labor",
+      "by": {
+       "personal": -0.11515640838521984,
+       "shared": -0.1549850275272311
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_labor:public_assets_tax_base",
+      "line": "corporate_labor",
+      "by": {
+       "personal": 0.008112427826001356,
+       "shared": 0.0041988060074424904
+      }
+     },
+     {
+      "part": "lineage_g3plus:corporate_labor:treasury_815",
+      "line": "corporate_labor",
+      "by": {
+       "personal": -0.08521574220735656,
+       "shared": -0.11468892038217315
+      }
+     },
+     {
+      "part": "lineage_whites:corporate_labor:treasury_815",
+      "line": "corporate_labor",
+      "by": {
+       "personal": -0.11031545739801946,
+       "shared": -0.11321153754375307
+      }
+     },
+     {
+      "part": "lineage_g3plus:remaining_production_property:cbo_collective",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": 0.490191554040423,
+       "shared": 0.6288301845263644
+      }
+     },
+     {
+      "part": "lineage_whites:remaining_production_property:cbo_collective",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": -0.11909502544136186,
+       "shared": -0.11902102010195903
+      }
+     },
+     {
+      "part": "lineage_g3plus:remaining_production_property:corporate_all_capital",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": 0.490191554040423,
+       "shared": 0.6288301845263644
+      }
+     },
+     {
+      "part": "lineage_whites:remaining_production_property:corporate_all_capital",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": -0.11909502544136186,
+       "shared": -0.11902102010195903
+      }
+     },
+     {
+      "part": "lineage_g3plus:remaining_production_property:federal_gap_high_agi",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": 0.490191554040423,
+       "shared": 0.6288301845263644
+      }
+     },
+     {
+      "part": "lineage_whites:remaining_production_property:federal_gap_high_agi",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": -0.11909502544136186,
+       "shared": -0.11902102010195903
+      }
+     },
+     {
+      "part": "lineage_g3plus:remaining_production_property:medicare_income_weighted",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": 0.490191554040423,
+       "shared": 0.6288301845263644
+      }
+     },
+     {
+      "part": "lineage_whites:remaining_production_property:medicare_income_weighted",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": -0.11909502544136186,
+       "shared": -0.11902102010195903
+      }
+     },
+     {
+      "part": "lineage_g3plus:remaining_production_property:nas_80",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": 0.490191554040423,
+       "shared": 0.6288301845263644
+      }
+     },
+     {
+      "part": "lineage_whites:remaining_production_property:nas_80",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": -0.11909502544136186,
+       "shared": -0.11902102010195903
+      }
+     },
+     {
+      "part": "lineage_g3plus:remaining_production_property:property_residual_consumption",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": -0.2817942724410035,
+       "shared": 0.05998560691231036
+      }
+     },
+     {
+      "part": "lineage_whites:remaining_production_property:property_residual_consumption",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": -0.11909502544136197,
+       "shared": -0.11902102010195914
+      }
+     },
+     {
+      "part": "lineage_g3plus:remaining_production_property:public_assets_tax_base",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": 0.490191554040423,
+       "shared": 0.6288301845263644
+      }
+     },
+     {
+      "part": "lineage_whites:remaining_production_property:public_assets_tax_base",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": -0.11909502544136186,
+       "shared": -0.11902102010195903
+      }
+     },
+     {
+      "part": "lineage_g3plus:remaining_production_property:treasury_815",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": 0.490191554040423,
+       "shared": 0.6288301845263644
+      }
+     },
+     {
+      "part": "lineage_whites:remaining_production_property:treasury_815",
+      "line": "remaining_production_property",
+      "by": {
+       "personal": -0.11909502544136186,
+       "shared": -0.11902102010195903
+      }
+     },
+     {
+      "part": "lineage_g3plus:other_production_taxes:cbo_collective",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": 0.1271863879365262,
+       "shared": 0.1349533994409844
+      }
+     },
+     {
+      "part": "lineage_whites:other_production_taxes:cbo_collective",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": -0.18529450796325397,
+       "shared": -0.1852680681058595
+      }
+     },
+     {
+      "part": "lineage_g3plus:other_production_taxes:corporate_all_capital",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": 0.1271863879365262,
+       "shared": 0.1349533994409844
+      }
+     },
+     {
+      "part": "lineage_whites:other_production_taxes:corporate_all_capital",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": -0.18529450796325397,
+       "shared": -0.1852680681058595
+      }
+     },
+     {
+      "part": "lineage_g3plus:other_production_taxes:federal_gap_high_agi",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": 0.1271863879365262,
+       "shared": 0.1349533994409844
+      }
+     },
+     {
+      "part": "lineage_whites:other_production_taxes:federal_gap_high_agi",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": -0.18529450796325397,
+       "shared": -0.1852680681058595
+      }
+     },
+     {
+      "part": "lineage_g3plus:other_production_taxes:medicare_income_weighted",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": 0.1271863879365262,
+       "shared": 0.1349533994409844
+      }
+     },
+     {
+      "part": "lineage_whites:other_production_taxes:medicare_income_weighted",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": -0.18529450796325397,
+       "shared": -0.1852680681058595
+      }
+     },
+     {
+      "part": "lineage_g3plus:other_production_taxes:nas_80",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": 0.1271863879365262,
+       "shared": 0.1349533994409844
+      }
+     },
+     {
+      "part": "lineage_whites:other_production_taxes:nas_80",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": -0.18529450796325397,
+       "shared": -0.1852680681058595
+      }
+     },
+     {
+      "part": "lineage_g3plus:other_production_taxes:property_residual_consumption",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": 0.1271863879365262,
+       "shared": 0.1349533994409844
+      }
+     },
+     {
+      "part": "lineage_whites:other_production_taxes:property_residual_consumption",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": -0.18529450796325397,
+       "shared": -0.1852680681058595
+      }
+     },
+     {
+      "part": "lineage_g3plus:other_production_taxes:public_assets_tax_base",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": 0.1271863879365262,
+       "shared": 0.1349533994409844
+      }
+     },
+     {
+      "part": "lineage_whites:other_production_taxes:public_assets_tax_base",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": -0.18529450796325397,
+       "shared": -0.1852680681058595
+      }
+     },
+     {
+      "part": "lineage_g3plus:other_production_taxes:treasury_815",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": 0.1271863879365262,
+       "shared": 0.1349533994409844
+      }
+     },
+     {
+      "part": "lineage_whites:other_production_taxes:treasury_815",
+      "line": "other_production_taxes",
+      "by": {
+       "personal": -0.18529450796325397,
+       "shared": -0.1852680681058595
+      }
+     }
+    ],
+    "carriers": []
+   },
+   {
+    "id": "white_end_tax_keys",
+    "kind": "edit_set",
+    "applied": true,
+    "edits": [
+     {
+      "index": 806,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "cbo_collective",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 807,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "corporate_all_capital",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 808,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "federal_gap_high_agi",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 809,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "medicare_income_weighted",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 810,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "nas_80",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 811,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "property_residual_consumption",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 812,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "public_assets_tax_base",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 813,
+      "side": "receipt",
+      "line": "federal_income_tax",
+      "key": "treasury_815",
+      "kind": "cell_shift",
+      "class": "profile"
+     }
+    ],
+    "lineage_parts": [
+     {
+      "part": "lineage_whites:income_tax_keys:federal_income_tax:cbo_collective",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -1.08644,
+       "shared": 1.748323
+      }
+     },
+     {
+      "part": "lineage_whites:income_tax_keys:federal_income_tax:corporate_all_capital",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -1.08644,
+       "shared": 1.748323
+      }
+     },
+     {
+      "part": "lineage_whites:income_tax_keys:federal_income_tax:federal_gap_high_agi",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -1.005182968272705,
+       "shared": 1.6281197445057944
+      }
+     },
+     {
+      "part": "lineage_whites:income_tax_keys:federal_income_tax:medicare_income_weighted",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -1.08644,
+       "shared": 1.748323
+      }
+     },
+     {
+      "part": "lineage_whites:income_tax_keys:federal_income_tax:nas_80",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -1.08644,
+       "shared": 1.748323
+      }
+     },
+     {
+      "part": "lineage_whites:income_tax_keys:federal_income_tax:property_residual_consumption",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -1.08644,
+       "shared": 1.748323
+      }
+     },
+     {
+      "part": "lineage_whites:income_tax_keys:federal_income_tax:public_assets_tax_base",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -1.08644,
+       "shared": 1.748323
+      }
+     },
+     {
+      "part": "lineage_whites:income_tax_keys:federal_income_tax:treasury_815",
+      "line": "federal_income_tax",
+      "by": {
+       "personal": -1.08644,
+       "shared": 1.748323
+      }
+     }
+    ],
+    "carriers": []
+   },
+   {
+    "id": "row4_frame",
+    "kind": "edit_set",
+    "applied": true,
+    "edits": [
+     {
+      "index": 814,
+      "side": "receipt",
+      "line": "modeled_owner_property",
+      "key": "cbo_collective",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 815,
+      "side": "spending",
+      "line": "state_price_public_order_safety",
+      "key": "k",
+      "kind": "cell_shift",
+      "class": "state_price"
+     },
+     {
+      "index": 816,
+      "side": "spending",
+      "line": "state_price_health_services",
+      "key": "k",
+      "kind": "cell_shift",
+      "class": "state_price"
+     },
+     {
+      "index": 817,
+      "side": "spending",
+      "line": "state_price_recreation_culture",
+      "key": "k",
+      "kind": "cell_shift",
+      "class": "state_price"
+     },
+     {
+      "index": 818,
+      "side": "receipt",
+      "line": "general_sales_tax",
+      "key": "cbo_collective",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 819,
+      "side": "receipt",
+      "line": "general_sales_tax",
+      "key": "corporate_all_capital",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 820,
+      "side": "receipt",
+      "line": "general_sales_tax",
+      "key": "federal_gap_high_agi",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 821,
+      "side": "receipt",
+      "line": "general_sales_tax",
+      "key": "medicare_income_weighted",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 822,
+      "side": "receipt",
+      "line": "general_sales_tax",
+      "key": "nas_80",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 823,
+      "side": "receipt",
+      "line": "general_sales_tax",
+      "key": "property_residual_consumption",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 824,
+      "side": "receipt",
+      "line": "general_sales_tax",
+      "key": "public_assets_tax_base",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 825,
+      "side": "receipt",
+      "line": "general_sales_tax",
+      "key": "treasury_815",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 826,
+      "side": "receipt",
+      "line": "personal_motor_vehicle",
+      "key": "cbo_collective",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 827,
+      "side": "receipt",
+      "line": "personal_motor_vehicle",
+      "key": "corporate_all_capital",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 828,
+      "side": "receipt",
+      "line": "personal_motor_vehicle",
+      "key": "federal_gap_high_agi",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 829,
+      "side": "receipt",
+      "line": "personal_motor_vehicle",
+      "key": "medicare_income_weighted",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 830,
+      "side": "receipt",
+      "line": "personal_motor_vehicle",
+      "key": "nas_80",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 831,
+      "side": "receipt",
+      "line": "personal_motor_vehicle",
+      "key": "property_residual_consumption",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 832,
+      "side": "receipt",
+      "line": "personal_motor_vehicle",
+      "key": "public_assets_tax_base",
+      "kind": "cell_shift",
+      "class": "profile"
+     },
+     {
+      "index": 833,
+      "side": "receipt",
+      "line": "personal_motor_vehicle",
+      "key": "treasury_815",
+      "kind": "cell_shift",
+      "class": "profile"
+     }
+    ],
+    "lineage_parts": [
+     {
+      "part": "lineage_g3plus:owner_national_key:modeled_owner_property:cbo_collective",
+      "line": "modeled_owner_property",
+      "by": {
+       "personal": 0.0014810807413254109,
+       "shared": 0.0014810807413254109
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:state_price_public_order_safety:k",
+      "line": "state_price_public_order_safety",
+      "by": {
+       "personal": 0.013178227500483582,
+       "shared": 0.013178227500483582
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:state_price_health_services:k",
+      "line": "state_price_health_services",
+      "by": {
+       "personal": 0.004667229215143805,
+       "shared": 0.004667229215143805
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:state_price_recreation_culture:k",
+      "line": "state_price_recreation_culture",
+      "by": {
+       "personal": -0.0002328528395929933,
+       "shared": -0.0002328528395929933
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:general_sales_tax:cbo_collective",
+      "line": "general_sales_tax",
+      "by": {
+       "personal": -0.00069890374318139,
+       "shared": -0.00069901610784684
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:general_sales_tax:corporate_all_capital",
+      "line": "general_sales_tax",
+      "by": {
+       "personal": -0.00069890374318139,
+       "shared": -0.00069901610784684
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:general_sales_tax:federal_gap_high_agi",
+      "line": "general_sales_tax",
+      "by": {
+       "personal": -0.00069890374318139,
+       "shared": -0.00069901610784684
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:general_sales_tax:medicare_income_weighted",
+      "line": "general_sales_tax",
+      "by": {
+       "personal": -0.00069890374318139,
+       "shared": -0.00069901610784684
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:general_sales_tax:nas_80",
+      "line": "general_sales_tax",
+      "by": {
+       "personal": -0.00069890374318139,
+       "shared": -0.00069901610784684
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:general_sales_tax:property_residual_consumption",
+      "line": "general_sales_tax",
+      "by": {
+       "personal": -0.00069890374318139,
+       "shared": -0.00069901610784684
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:general_sales_tax:public_assets_tax_base",
+      "line": "general_sales_tax",
+      "by": {
+       "personal": -0.00069890374318139,
+       "shared": -0.00069901610784684
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:general_sales_tax:treasury_815",
+      "line": "general_sales_tax",
+      "by": {
+       "personal": -0.00069890374318139,
+       "shared": -0.00069901610784684
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:personal_motor_vehicle:cbo_collective",
+      "line": "personal_motor_vehicle",
+      "by": {
+       "personal": 0.0014309929467791144,
+       "shared": 0.0015622082907080527
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:personal_motor_vehicle:corporate_all_capital",
+      "line": "personal_motor_vehicle",
+      "by": {
+       "personal": 0.0014309929467791144,
+       "shared": 0.0015622082907080527
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:personal_motor_vehicle:federal_gap_high_agi",
+      "line": "personal_motor_vehicle",
+      "by": {
+       "personal": 0.0014309929467791144,
+       "shared": 0.0015622082907080527
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:personal_motor_vehicle:medicare_income_weighted",
+      "line": "personal_motor_vehicle",
+      "by": {
+       "personal": 0.0014309929467791144,
+       "shared": 0.0015622082907080527
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:personal_motor_vehicle:nas_80",
+      "line": "personal_motor_vehicle",
+      "by": {
+       "personal": 0.0014309929467791144,
+       "shared": 0.0015622082907080527
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:personal_motor_vehicle:property_residual_consumption",
+      "line": "personal_motor_vehicle",
+      "by": {
+       "personal": 0.0014309929467791144,
+       "shared": 0.0015622082907080527
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:personal_motor_vehicle:public_assets_tax_base",
+      "line": "personal_motor_vehicle",
+      "by": {
+       "personal": 0.0014309929467791144,
+       "shared": 0.0015622082907080527
+      }
+     },
+     {
+      "part": "lineage_g3plus:state_index:personal_motor_vehicle:treasury_815",
+      "line": "personal_motor_vehicle",
+      "by": {
+       "personal": 0.0014309929467791144,
+       "shared": 0.0015622082907080527
+      }
+     }
+    ],
+    "carriers": []
+   }
+  ],
+  "carriers": {
+   "low": {
+    "user_fees_key_k12": {
+     "item": "user_fees",
+     "lines": [
+      "education_services",
+      "school_reprice"
+     ],
+     "components": [
+      "k12_user_fees"
+     ],
+     "of": [
+      "k12"
+     ],
+     "group": "schools",
+     "key_values": {
+      "NN": 0,
+      "GN": 0,
+      "NG": 0.007107290592065424,
+      "GG": 0.00975296263696325
+     }
+    },
+    "user_fees_key_college": {
+     "item": "user_fees",
+     "lines": [
+      "education_services",
+      "college_rekey"
+     ],
+     "components": [
+      "college_user_fees"
+     ],
+     "of": [
+      "college"
+     ],
+     "group": "colleges_other_education",
+     "key_values": {
+      "NN": 0,
+      "GN": 0,
+      "NG": -0.028095106040170945,
+      "GG": -0.03854858618402715
+     }
+    },
+    "user_fees_key_health": {
+     "item": "user_fees",
+     "lines": [
+      "health_services"
+     ],
+     "components": [
+      "health_sl_user_fees",
+      "health_fed_user_fees"
+     ],
+     "of": [
+      "health_sl",
+      "health_fed"
+     ],
+     "group": "health_veterans",
+     "key_values": {
+      "NN": 0,
+      "GN": 0,
+      "NG": -0.0027932582845444517,
+      "GG": -0.002079886038647402
+     }
+    }
+   },
+   "high": {
+    "user_fees_key_k12": {
+     "item": "user_fees",
+     "lines": [
+      "education_services",
+      "school_reprice"
+     ],
+     "components": [
+      "k12_user_fees"
+     ],
+     "of": [
+      "k12"
+     ],
+     "group": "schools",
+     "key_values": {
+      "NN": 0,
+      "GN": 0,
+      "NG": 0.007107290592065424,
+      "GG": 0.00975296263696325
+     }
+    },
+    "user_fees_key_college": {
+     "item": "user_fees",
+     "lines": [
+      "education_services",
+      "college_rekey"
+     ],
+     "components": [
+      "college_user_fees"
+     ],
+     "of": [
+      "college"
+     ],
+     "group": "colleges_other_education",
+     "key_values": {
+      "NN": 0,
+      "GN": 0,
+      "NG": -0.028095106040170945,
+      "GG": -0.03854858618402715
+     }
+    },
+    "user_fees_key_health": {
+     "item": "user_fees",
+     "lines": [
+      "health_services"
+     ],
+     "components": [
+      "health_sl_user_fees",
+      "health_fed_user_fees"
+     ],
+     "of": [
+      "health_sl",
+      "health_fed"
+     ],
+     "group": "health_veterans",
+     "key_values": {
+      "NN": 0,
+      "GN": 0,
+      "NG": -0.0027932582845444517,
+      "GG": -0.002079886038647402
+     }
+    }
+   }
+  },
+  "offset_parts": {
+   "low": {
+    "k12_user_fees": {
+     "shared": 0,
+     "age_structure": 0.07206597667270995,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": 0.4592597250450547,
+     "total": 0.5313257017177646
+    },
+    "college_user_fees": {
+     "shared": 0,
+     "age_structure": -0.12527320973615763,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -0.7986497433106665,
+     "total": -0.9239229530468241
+    },
+    "health_sl_user_fees": {
+     "shared": 0,
+     "age_structure": 0.002610792611811563,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -0.017834684862574314,
+     "total": -0.015223892250762752
+    },
+    "health_fed_user_fees": {
+     "shared": 0,
+     "age_structure": 0.0007563101213775928,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -0.005166458880004771,
+     "total": -0.0044101487586271785
+    }
+   },
+   "high": {
+    "k12_user_fees": {
+     "shared": 0,
+     "age_structure": 0.1080989650090649,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": 0.6888895875675818,
+     "total": 0.7969885525766468
+    },
+    "college_user_fees": {
+     "shared": 0,
+     "age_structure": -0.1879098146042365,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -1.1979746149659998,
+     "total": -1.3858844295702362
+    },
+    "health_sl_user_fees": {
+     "shared": 0,
+     "age_structure": 0.003916188917717344,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -0.026752027293861474,
+     "total": -0.022835838376144127
+    },
+    "health_fed_user_fees": {
+     "shared": 0,
+     "age_structure": 0.0011344651820663896,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -0.007749688320007156,
+     "total": -0.006615223137940767
+    }
+   }
+  },
+  "split_parts": {
+   "low": {
+    "union_k12_weight_school": {
+     "item": "user_fees",
+     "line": "school_reprice",
+     "basis": "education_services",
+     "group": "schools, colleges_other_education",
+     "shared": 0,
+     "age_structure": -0.07227731524046174,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -0.4607869422804285,
+     "total": -0.5330642575208903
+    },
+    "union_k12_weight_other": {
+     "item": "user_fees",
+     "line": "college_rekey",
+     "basis": "education_services",
+     "group": "schools, colleges_other_education",
+     "shared": 0,
+     "age_structure": -0.023438447230532664,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -0.14942628119524123,
+     "total": -0.1728647284257739
+    },
+    "union_key_pell": {
+     "item": "user_fees",
+     "line": "other_federal_benefits",
+     "basis": "education_services",
+     "group": "schools, colleges_other_education",
+     "shared": 0,
+     "age_structure": 0.5382031483724012,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": 3.4311869808549114,
+     "total": 3.969390129227313
+    }
+   },
+   "high": {
+    "union_k12_weight_school": {
+     "item": "user_fees",
+     "line": "school_reprice",
+     "basis": "education_services",
+     "group": "schools, colleges_other_education",
+     "shared": 0,
+     "age_structure": -0.08741657263151259,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -0.557303699971415,
+     "total": -0.6447202726029277
+    },
+    "union_k12_weight_other": {
+     "item": "user_fees",
+     "line": "college_rekey",
+     "basis": "education_services",
+     "group": "schools, colleges_other_education",
+     "shared": 0,
+     "age_structure": -0.011101961053359932,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": -0.07077792900960345,
+     "total": -0.08187989006296338
+    },
+    "union_key_pell": {
+     "item": "user_fees",
+     "line": "other_federal_benefits",
+     "basis": "education_services",
+     "group": "schools, colleges_other_education",
+     "shared": 0,
+     "age_structure": 0.5382031483724012,
+     "taxes_at_given_ages": 0,
+     "service_use_at_given_ages": 3.4311869808549114,
+     "total": 3.969390129227313
+    }
+   }
+  },
+  "split_basis_edited_line": {
+   "rule": "beside the case: each item part on a model line on that line's rule instead of its split basis (Pell on other_federal_benefits' all_cash profile and line group; the parts on payload lines keep their split basis), the same run's decomposition",
+   "parts": {
+    "low": {
+     "shared": -7.257745536268547,
+     "age_structure": -8.660386180263131,
+     "taxes_at_given_ages": 350.37696045042236,
+     "service_use_at_given_ages": -52.706265057817035,
+     "move_from_case": {
+      "shared": 0,
+      "age_structure": -2.3581086393613635,
+      "taxes_at_given_ages": 0,
+      "service_use_at_given_ages": 2.3581086393613475
+     },
+     "groups_move_from_case": {
+      "age_structure": {
+       "schools": -0.5392968400109055,
+       "colleges_other_education": 0.001093691638493044,
+       "cash_food_housing_benefits": -1.819905490988944
+      },
+      "taxes_at_given_ages": {},
+      "service_use_at_given_ages": {
+       "schools": -3.202988521943468,
+       "colleges_other_education": -0.22819845891144142,
+       "cash_food_housing_benefits": 5.789295620216265
+      }
+     }
+    },
+    "high": {
+     "shared": 104.68048521847696,
+     "age_structure": -16.884005769398588,
+     "taxes_at_given_ages": 340.59492377619654,
+     "service_use_at_given_ages": -56.44898521570815,
+     "move_from_case": {
+      "shared": 0,
+      "age_structure": -2.3581086393613653,
+      "taxes_at_given_ages": 0,
+      "service_use_at_given_ages": 2.3581086393613475
+     },
+     "groups_move_from_case": {
+      "age_structure": {
+       "schools": -0.5392968400109055,
+       "colleges_other_education": 0.001093691638493377,
+       "cash_food_housing_benefits": -1.819905490988944
+      },
+      "taxes_at_given_ages": {},
+      "service_use_at_given_ages": {
+       "schools": -3.2029885219434666,
+       "colleges_other_education": -0.22819845891144097,
+       "cash_food_housing_benefits": 5.789295620216265
+      }
+     }
+    }
+   }
+  },
+  "pension": null
+ },
+ "v7": {
+  "allocation": "personal",
+  "end_specifications": [
+   16,
+   11
+  ],
+  "rules": {
+   "lineage_parts": "R6-R9: all tagged lineage parts join the added people's amounts; the effective union pension amounts include R9's named shifts",
+   "pension_identities": "subtract R9's union pension shifts before comparison to meta.pension_accrual; the actual state calculations retain those shifts",
+   "child_credits": "receipt and refundable spending shifts are separate line groups, on their host lines' correction age profiles [ASSUMPTION]",
+   "job_capital_taxes": "all four responsive receipt lines form one line group, using the existing account-key age profiles [ASSUMPTION: no industry-by-age job-capital profile is measured here]"
+  },
+  "pension_by_end": {
+   "low": {},
+   "high": {}
+  }
+ },
+ "v8": {
+  "ids": [
+   "foreign_source_tax",
+   "union_completion",
+   "mixed_unit_removal",
+   "coverage"
+  ],
+  "changes": {
+   "low": {
+    "foreign_source_tax": 3.7746258621754123,
+    "union_completion": 2.0605076677927627,
+    "mixed_unit_removal": 10.74001627270179,
+    "coverage": 0.7518402578983028
+   },
+   "high": {
+    "foreign_source_tax": 1.3966115690049037,
+    "union_completion": 2.903488809305486,
+    "mixed_unit_removal": 14.531690197973472,
+    "coverage": 4.587810946797321
+   }
+  },
+  "source_parts": {
+   "low": {
+    "foreign_source_tax": {
+     "receipts_by_line": {
+      "federal_income_tax": 0,
+      "state_local_income_tax": 0,
+      "personal_motor_vehicle": 0,
+      "personal_property_tax": 0,
+      "other_personal_tax": 0,
+      "employee_oasdi": 0,
+      "employee_hi": 0,
+      "self_employment_oasdi_hi": 0,
+      "employer_oasdi": 0,
+      "employer_hi": 0,
+      "medicare_supplementary_premiums": 0,
+      "other_domestic_social_contributions": 0,
+      "corporate_capital": 2.830969396631467,
+      "corporate_labor": 0.9436564655438229,
+      "general_sales_tax": 0,
+      "modeled_owner_property": 0,
+      "remaining_production_property": 0,
+      "excise_selective_sales": 0,
+      "customs_duties": 0,
+      "other_production_taxes": 0,
+      "rest_world_tax_contributions": 0,
+      "government_asset_income": 0,
+      "business_current_transfers": 0,
+      "personal_current_transfers": 0,
+      "rest_world_current_transfers": 0,
+      "enterprise_surplus": 0,
+      "source_rounding": 0,
+      "housing_enterprise_surplus": 0,
+      "tenant_occupied_property": 0,
+      "user_fees_key_k12": 0,
+      "user_fees_key_college": 0,
+      "user_fees_key_health": 0
+     },
+     "spending_by_line": {
+      "general_public_services": 0,
+      "defense": 0,
+      "public_order_safety": 0,
+      "economic_affairs_services": 0,
+      "housing_community_services": 0,
+      "health_services": 0,
+      "recreation_culture": 0,
+      "education_services": 0,
+      "income_security_services": 0,
+      "social_security": 0,
+      "medicare": 0,
+      "unemployment": 0,
+      "railroad_retirement": 0,
+      "pension_guaranty": 0,
+      "veterans_life_insurance": 0,
+      "workers_compensation": 0,
+      "military_medical": 0,
+      "veterans_pension_disability": 0,
+      "veterans_readjustment": 0,
+      "veterans_other": 0,
+      "snap": 0,
+      "black_lung": 0,
+      "ssi": 0,
+      "refundable_tax_credits": 0,
+      "other_federal_benefits": 0,
+      "temporary_disability": 0,
+      "medicaid_and_chip_other_medical": 0,
+      "family_and_general_assistance": 0,
+      "energy_assistance": 0,
+      "other_state_welfare": 0,
+      "education_benefits": 0,
+      "employment_training": 0,
+      "other_state_benefits": 0,
+      "foreign_territory_social_benefits": 0,
+      "other_foreign_current_transfers": 0,
+      "domestic_interest": 0,
+      "foreign_interest": 0,
+      "agricultural_subsidies": 0,
+      "housing_subsidies": 0,
+      "transport_subsidies": 0,
+      "other_subsidies": 0,
+      "source_rounding": 0,
+      "school_reprice": 0,
+      "college_rekey": 0,
+      "lane_constants": 0,
+      "roads_vmt_sl": 0,
+      "roads_vmt_fed": 0,
+      "state_price_public_order_safety": 0,
+      "state_price_health_services": 0,
+      "state_price_recreation_culture": 0
+     },
+     "production_bn": 0,
+     "public_capital_bn": 0
+    },
+    "union_completion": {
+     "receipts_by_line": {
+      "federal_income_tax": -2.485374993250929,
+      "state_local_income_tax": -0.7867167726466491,
+      "personal_motor_vehicle": -0.0344058892202872,
+      "personal_property_tax": -0.01909795833013961,
+      "other_personal_tax": -0.013875870715763294,
+      "employee_oasdi": -0.7231934559807129,
+      "employee_hi": -0.20788903370362988,
+      "self_employment_oasdi_hi": -0.06731440948516187,
+      "employer_oasdi": -0.7294384739184281,
+      "employer_hi": -0.18492021650459733,
+      "medicare_supplementary_premiums": -0.08601288017731346,
+      "other_domestic_social_contributions": -0.10805999375032194,
+      "corporate_capital": -0.2397734129021707,
+      "corporate_labor": -0.07992447096738964,
+      "general_sales_tax": -0.8767023632558519,
+      "modeled_owner_property": -0.38368366514751884,
+      "remaining_production_property": -0.2505731455412423,
+      "excise_selective_sales": -0.484656544546894,
+      "customs_duties": -0.11039312194641315,
+      "other_production_taxes": -0.1016547191341246,
+      "rest_world_tax_contributions": 0,
+      "government_asset_income": 0,
+      "business_current_transfers": 0,
+      "personal_current_transfers": -0.18630415910881126,
+      "rest_world_current_transfers": 0,
+      "enterprise_surplus": 0.010934525696019493,
+      "source_rounding": 0,
+      "housing_enterprise_surplus": 0.06793457065334652,
+      "tenant_occupied_property": -0.08033475267977597,
+      "user_fees_key_k12": 0,
+      "user_fees_key_college": 0,
+      "user_fees_key_health": 0
+     },
+     "spending_by_line": {
+      "general_public_services": 0.3692803839303238,
+      "defense": 0,
+      "public_order_safety": 0.794654535110979,
+      "economic_affairs_services": 0.21499438225038503,
+      "housing_community_services": 0.022515921940141848,
+      "health_services": 0.23270244534954543,
+      "recreation_culture": 0.0712367705368182,
+      "education_services": 3.58089387834886,
+      "income_security_services": 0.5353054428287223,
+      "social_security": 0.5932696729563816,
+      "medicare": 0.4803503733984016,
+      "unemployment": 0.0033818547804047583,
+      "railroad_retirement": 0.005938166580891524,
+      "pension_guaranty": 0.0003911289506622201,
+      "veterans_life_insurance": 0.0000011387462243231394,
+      "workers_compensation": 2.716530751456503e-7,
+      "military_medical": 0.005535458012129568,
+      "veterans_pension_disability": 0.00045784445262953,
+      "veterans_readjustment": 0.00002888966158864914,
+      "veterans_other": 0.024253026189641425,
+      "snap": 0.19742766470374384,
+      "black_lung": 3.9416239161482736e-9,
+      "ssi": 0.07261398178771916,
+      "refundable_tax_credits": 0.34889555749215617,
+      "other_federal_benefits": 0.07598398047926302,
+      "temporary_disability": 2.993355781022444e-7,
+      "medicaid_and_chip_other_medical": 1.5776577637482916,
+      "family_and_general_assistance": 0.21694842876912546,
+      "energy_assistance": 0.010531022359424047,
+      "other_state_welfare": 0.11039692539257207,
+      "education_benefits": 0.10746357235526105,
+      "employment_training": 0.0015827842513065071,
+      "other_state_benefits": 0.004389383048842788,
+      "foreign_territory_social_benefits": 0,
+      "other_foreign_current_transfers": 0,
+      "domestic_interest": 0,
+      "foreign_interest": 0,
+      "agricultural_subsidies": 0,
+      "housing_subsidies": 0.08202286266574976,
+      "transport_subsidies": 0,
+      "other_subsidies": 0,
+      "source_rounding": 0,
+      "school_reprice": -0.034135720963364424,
+      "college_rekey": -0.032814039450967725,
+      "lane_constants": -0.048314593344788825,
+      "roads_vmt_sl": -0.004734963355179644,
+      "roads_vmt_fed": 0,
+      "state_price_public_order_safety": 0.06732711899188537,
+      "state_price_health_services": 0.022091969269158573,
+      "state_price_recreation_culture": 0.004075327837440468
+     },
+     "production_bn": 0.00018941817884510215,
+     "public_capital_bn": 0.5071485411851526
+    },
+    "mixed_unit_removal": {
+     "post_engine_bn": 10.74001627270179
+    },
+    "coverage": {
+     "receipts_by_line": {
+      "federal_income_tax": -6.339198476596791,
+      "state_local_income_tax": -1.5648333338678335,
+      "personal_motor_vehicle": -0.21754842386767617,
+      "personal_property_tax": -0.05440605276244326,
+      "other_personal_tax": -0.028121242494522997,
+      "employee_oasdi": -3.4147962794807913,
+      "employee_hi": -0.9888956657467125,
+      "self_employment_oasdi_hi": -0.33176112062383667,
+      "employer_oasdi": -3.4442841901374357,
+      "employer_hi": -0.879636589541076,
+      "medicare_supplementary_premiums": -0.12351355586447366,
+      "other_domestic_social_contributions": -0.6882317622644714,
+      "corporate_capital": -1.2305745422404135,
+      "corporate_labor": -0.6259792563652585,
+      "general_sales_tax": -2.899917262377786,
+      "modeled_owner_property": -0.884705821473569,
+      "remaining_production_property": -0.7589374922975264,
+      "excise_selective_sales": -1.6769067963314135,
+      "customs_duties": -0.3631881367789211,
+      "other_production_taxes": -0.3078924418221841,
+      "personal_current_transfers": -0.6129318496267948,
+      "enterprise_surplus": 0.041427738223536445,
+      "housing_enterprise_surplus": 0.13397771721939597,
+      "tenant_occupied_property": -0.36701554593741137
+     },
+     "spending_by_line": {
+      "general_public_services": 1.3990959920759467,
+      "public_order_safety": 1.4465553603818475,
+      "economic_affairs_services": 0.7410376622323042,
+      "housing_community_services": 0.0853062808525555,
+      "health_services": 0.7050180841840223,
+      "recreation_culture": 0.26989540870071954,
+      "education_services": 6.05202206535541,
+      "income_security_services": 2.0958084928217313,
+      "social_security": 0.9059221454834141,
+      "medicare": 0.9807988506190934,
+      "unemployment": 0.2885999287617851,
+      "railroad_retirement": 0.009067573912277268,
+      "pension_guaranty": 0.00045096490838209425,
+      "veterans_life_insurance": 0.0008962583473771231,
+      "workers_compensation": 0.05014012034201909,
+      "military_medical": 0.013804196174736607,
+      "veterans_pension_disability": 0.3603497444185415,
+      "veterans_readjustment": 0.02273781435842577,
+      "veterans_other": 0.06062121997060447,
+      "snap": 0.5766153296885037,
+      "black_lung": 0.0010657248339206453,
+      "ssi": 0.24385573515569214,
+      "refundable_tax_credits": 3.1371839938553814,
+      "other_federal_benefits": 0.18196318426111543,
+      "temporary_disability": 0.08093348465600919,
+      "medicaid_and_chip_other_medical": 5.180352105870584,
+      "family_and_general_assistance": 0.8679129516328439,
+      "energy_assistance": 0.02221771806769993,
+      "other_state_welfare": 0.21363571882543894,
+      "education_benefits": 0.4389658948077537,
+      "employment_training": 0.011389298241868467,
+      "other_state_benefits": 0.01663009598934897,
+      "housing_subsidies": 0.1617620571392526,
+      "school_reprice": -0.014771861995989758,
+      "college_rekey": -0.08280136906747768,
+      "roads_vmt_sl": 0.1283639593945431,
+      "state_price_public_order_safety": 0.1390715497116693,
+      "state_price_health_services": 0.07453225317580525,
+      "state_price_recreation_culture": 0.018437322250196675,
+      "lane_constants": 0
+     },
+     "production_bn": -0.5905095115170867,
+     "public_capital_bn": 1.4418425406334041,
+     "post_engine_bn": 0.6429343014430462
+    }
+   },
+   "high": {
+    "foreign_source_tax": {
+     "receipts_by_line": {
+      "federal_income_tax": 0,
+      "state_local_income_tax": 0,
+      "personal_motor_vehicle": 0,
+      "personal_property_tax": 0,
+      "other_personal_tax": 0,
+      "employee_oasdi": 0,
+      "employee_hi": 0,
+      "self_employment_oasdi_hi": 0,
+      "employer_oasdi": 0,
+      "employer_hi": 0,
+      "medicare_supplementary_premiums": 0,
+      "other_domestic_social_contributions": 0,
+      "corporate_capital": 1.047458676753644,
+      "corporate_labor": 0.3491528922512144,
+      "general_sales_tax": 0,
+      "modeled_owner_property": 0,
+      "remaining_production_property": 0,
+      "excise_selective_sales": 0,
+      "customs_duties": 0,
+      "other_production_taxes": 0,
+      "rest_world_tax_contributions": 0,
+      "government_asset_income": 0,
+      "business_current_transfers": 0,
+      "personal_current_transfers": 0,
+      "rest_world_current_transfers": 0,
+      "enterprise_surplus": 0,
+      "source_rounding": 0,
+      "housing_enterprise_surplus": 0,
+      "tenant_occupied_property": 0,
+      "user_fees_key_k12": 0,
+      "user_fees_key_college": 0,
+      "user_fees_key_health": 0
+     },
+     "spending_by_line": {
+      "general_public_services": 0,
+      "defense": 0,
+      "public_order_safety": 0,
+      "economic_affairs_services": 0,
+      "housing_community_services": 0,
+      "health_services": 0,
+      "recreation_culture": 0,
+      "education_services": 0,
+      "income_security_services": 0,
+      "social_security": 0,
+      "medicare": 0,
+      "unemployment": 0,
+      "railroad_retirement": 0,
+      "pension_guaranty": 0,
+      "veterans_life_insurance": 0,
+      "workers_compensation": 0,
+      "military_medical": 0,
+      "veterans_pension_disability": 0,
+      "veterans_readjustment": 0,
+      "veterans_other": 0,
+      "snap": 0,
+      "black_lung": 0,
+      "ssi": 0,
+      "refundable_tax_credits": 0,
+      "other_federal_benefits": 0,
+      "temporary_disability": 0,
+      "medicaid_and_chip_other_medical": 0,
+      "family_and_general_assistance": 0,
+      "energy_assistance": 0,
+      "other_state_welfare": 0,
+      "education_benefits": 0,
+      "employment_training": 0,
+      "other_state_benefits": 0,
+      "foreign_territory_social_benefits": 0,
+      "other_foreign_current_transfers": 0,
+      "domestic_interest": 0,
+      "foreign_interest": 0,
+      "agricultural_subsidies": 0,
+      "housing_subsidies": 0,
+      "transport_subsidies": 0,
+      "other_subsidies": 0,
+      "source_rounding": 0,
+      "school_reprice": 0,
+      "college_rekey": 0,
+      "lane_constants": 0,
+      "roads_vmt_sl": 0,
+      "roads_vmt_fed": 0,
+      "state_price_public_order_safety": 0,
+      "state_price_health_services": 0,
+      "state_price_recreation_culture": 0
+     },
+     "production_bn": 0,
+     "public_capital_bn": 0
+    },
+    "union_completion": {
+     "receipts_by_line": {
+      "federal_income_tax": -2.485374993250929,
+      "state_local_income_tax": -0.7867167726466491,
+      "personal_motor_vehicle": -0.0344058892202872,
+      "personal_property_tax": -0.01909795833013961,
+      "other_personal_tax": -0.013875870715763294,
+      "employee_oasdi": -0.7231934559807129,
+      "employee_hi": -0.20788903370362988,
+      "self_employment_oasdi_hi": -0.06731440948516187,
+      "employer_oasdi": -0.7294384739184281,
+      "employer_hi": -0.18492021650459733,
+      "medicare_supplementary_premiums": -0.08601288017731346,
+      "other_domestic_social_contributions": -0.10805999375032194,
+      "corporate_capital": -0.08871616277380312,
+      "corporate_labor": -0.029572054257934077,
+      "general_sales_tax": -0.8767023632558519,
+      "modeled_owner_property": -0.38368366514751884,
+      "remaining_production_property": -0.2505731455412423,
+      "excise_selective_sales": -0.484656544546894,
+      "customs_duties": -0.11039312194641315,
+      "other_production_taxes": -0.1016547191341246,
+      "rest_world_tax_contributions": 0,
+      "government_asset_income": 0,
+      "business_current_transfers": 0,
+      "personal_current_transfers": -0.18630415910881126,
+      "rest_world_current_transfers": 0,
+      "enterprise_surplus": 0.010934525696019493,
+      "source_rounding": 0,
+      "housing_enterprise_surplus": 0.06793457065334652,
+      "tenant_occupied_property": -0.08033475267977597,
+      "user_fees_key_k12": 0,
+      "user_fees_key_college": 0,
+      "user_fees_key_health": 0
+     },
+     "spending_by_line": {
+      "general_public_services": 0.5233365461650763,
+      "defense": 0,
+      "public_order_safety": 0.794654535110979,
+      "economic_affairs_services": 0.3571539268962738,
+      "housing_community_services": 0.022515921940141848,
+      "health_services": 0.23270244534954543,
+      "recreation_culture": 0.08318248363187042,
+      "education_services": 3.58089387834886,
+      "income_security_services": 0.5353054428287223,
+      "social_security": 0.5932696729563816,
+      "medicare": 0.4803503733984016,
+      "unemployment": 0.0033818547804047583,
+      "railroad_retirement": 0.005938166580891524,
+      "pension_guaranty": 0.0003911289506622201,
+      "veterans_life_insurance": 0.0000011387462243231394,
+      "workers_compensation": 2.716530751456503e-7,
+      "military_medical": 0.005535458012129568,
+      "veterans_pension_disability": 0.00045784445262953,
+      "veterans_readjustment": 0.00002888966158864914,
+      "veterans_other": 0.024253026189641425,
+      "snap": 0.19742766470374384,
+      "black_lung": 3.9416239161482736e-9,
+      "ssi": 0.07261398178771916,
+      "refundable_tax_credits": 0.34889555749215617,
+      "other_federal_benefits": 0.07598398047926302,
+      "temporary_disability": 2.993355781022444e-7,
+      "medicaid_and_chip_other_medical": 1.5846295613062296,
+      "family_and_general_assistance": 0.21694842876912546,
+      "energy_assistance": 0.010531022359424047,
+      "other_state_welfare": 0.11039692539257207,
+      "education_benefits": 0.10746357235526105,
+      "employment_training": 0.0015827842513065071,
+      "other_state_benefits": 0.004389383048842788,
+      "foreign_territory_social_benefits": 0,
+      "other_foreign_current_transfers": 0,
+      "domestic_interest": 0,
+      "foreign_interest": 0,
+      "agricultural_subsidies": 0,
+      "housing_subsidies": 0.08202286266574976,
+      "transport_subsidies": 0,
+      "other_subsidies": 0,
+      "source_rounding": 0,
+      "school_reprice": -0.041285813135080285,
+      "college_rekey": -0.01554284652071558,
+      "lane_constants": -0.048314593344788825,
+      "roads_vmt_sl": -0.006396886192510554,
+      "roads_vmt_fed": -0.000058143384859665054,
+      "state_price_public_order_safety": 0.06732711899188537,
+      "state_price_health_services": 0.022091969269158573,
+      "state_price_recreation_culture": 0.004758720651958703
+     },
+     "production_bn": 0.0001246027583032827,
+     "public_capital_bn": 0.8245671863977364
+    },
+    "mixed_unit_removal": {
+     "post_engine_bn": 14.531690197973472
+    },
+    "coverage": {
+     "receipts_by_line": {
+      "federal_income_tax": -6.33919847659679,
+      "state_local_income_tax": -1.5648333338678335,
+      "personal_motor_vehicle": -0.21754842386767623,
+      "personal_property_tax": -0.05440605276244326,
+      "other_personal_tax": -0.02812124249452299,
+      "employee_oasdi": -3.4147962794807913,
+      "employee_hi": -0.9888956657467126,
+      "self_employment_oasdi_hi": -0.33176112062383667,
+      "employer_oasdi": -3.444284190137436,
+      "employer_hi": -0.879636589541076,
+      "medicare_supplementary_premiums": -0.12351355586447366,
+      "other_domestic_social_contributions": -0.6882317622644714,
+      "corporate_capital": -0.455312580628953,
+      "corporate_labor": -0.23161232485514563,
+      "general_sales_tax": -2.899917262377786,
+      "modeled_owner_property": -0.884705821473569,
+      "remaining_production_property": -0.7589374922975264,
+      "excise_selective_sales": -1.6769067963314135,
+      "customs_duties": -0.36318813677892103,
+      "other_production_taxes": -0.3078924418221841,
+      "personal_current_transfers": -0.6129318496267948,
+      "enterprise_surplus": 0.041427738223536445,
+      "housing_enterprise_surplus": 0.13397771721939597,
+      "tenant_occupied_property": -0.3670155459374114
+     },
+     "spending_by_line": {
+      "general_public_services": 1.982769992961699,
+      "public_order_safety": 1.4465553603818475,
+      "economic_affairs_services": 1.2310298914511484,
+      "housing_community_services": 0.0853062808525555,
+      "health_services": 0.7050180841840223,
+      "recreation_culture": 0.3151542419369104,
+      "education_services": 6.052022065355409,
+      "income_security_services": 2.0958084928217313,
+      "social_security": 0.905922145483414,
+      "medicare": 0.9807988506190936,
+      "unemployment": 0.28859992876178514,
+      "railroad_retirement": 0.009067573912277268,
+      "pension_guaranty": 0.00045096490838209425,
+      "veterans_life_insurance": 0.0008962583473771231,
+      "workers_compensation": 0.05014012034201909,
+      "military_medical": 0.013804196174736607,
+      "veterans_pension_disability": 0.3603497444185415,
+      "veterans_readjustment": 0.02273781435842577,
+      "veterans_other": 0.06062121997060447,
+      "snap": 0.5766153296885037,
+      "black_lung": 0.0010657248339206453,
+      "ssi": 0.24385573515569214,
+      "refundable_tax_credits": 3.1371839938553814,
+      "other_federal_benefits": 0.18196318426111538,
+      "temporary_disability": 0.08093348465600919,
+      "medicaid_and_chip_other_medical": 5.290822108073576,
+      "family_and_general_assistance": 0.8679129516328439,
+      "energy_assistance": 0.022217718067699933,
+      "other_state_welfare": 0.21363571882543894,
+      "education_benefits": 0.4389658948077537,
+      "employment_training": 0.01138929824186847,
+      "other_state_benefits": 0.016630095989348972,
+      "housing_subsidies": 0.1617620571392526,
+      "school_reprice": -0.017865986620823344,
+      "college_rekey": -0.039220071428389056,
+      "roads_vmt_sl": 0.1734183726192517,
+      "roads_vmt_fed": 0.0015762561467394947,
+      "state_price_public_order_safety": 0.13907154971166927,
+      "state_price_health_services": 0.07453225317580525,
+      "state_price_recreation_culture": 0.021529081747183397,
+      "lane_constants": 0
+     },
+     "production_bn": -0.38844800782799777,
+     "public_capital_bn": 2.424268174194067,
+     "post_engine_bn": 0.8051842925442765
+    }
+   }
+  },
+  "count": {
+   "union_completion": 517435.75719317,
+   "coverage": 1960413.6191801599
+  },
+  "base_population": 42752212.92438524,
+  "population": 45230062.30075857,
+  "coverage_execution": "Coverage remains an additive post-engine item; source_parts expose its typed fiscal lines, capital return and signed P/F production split. Only its explicit unclassified remainder stays in post_engine_bn; source classification does not apply the coverage amount a second time.",
+  "coverage_production_rule": "generation_ratio",
+  "rule": "sequential [ASSUMPTION]: measured base profiles held; item9 and item11 on receipt factor, item10 and item12 on use factor; no new age transport. At national profile completion and coverage counts cost the base's NNN per person, so the shared comparator includes every counted member. At group profile each own line group equals the exact item change.",
+  "source_line_groups": {
+   "federal_income_tax": "income_taxes",
+   "state_local_income_tax": "income_taxes",
+   "other_personal_tax": "income_taxes",
+   "employee_oasdi": "payroll_taxes",
+   "employee_hi": "payroll_taxes",
+   "self_employment_oasdi_hi": "payroll_taxes",
+   "employer_oasdi": "payroll_taxes",
+   "employer_hi": "payroll_taxes",
+   "other_domestic_social_contributions": "payroll_taxes",
+   "medicare_supplementary_premiums": "payroll_taxes",
+   "general_sales_tax": "consumption_taxes",
+   "excise_selective_sales": "consumption_taxes",
+   "customs_duties": "consumption_taxes",
+   "personal_current_transfers": "consumption_taxes",
+   "personal_motor_vehicle": "other_receipts",
+   "corporate_capital": "job_capital_taxes",
+   "corporate_labor": "job_capital_taxes",
+   "remaining_production_property": "job_capital_taxes",
+   "other_production_taxes": "job_capital_taxes",
+   "rest_world_tax_contributions": "other_receipts",
+   "government_asset_income": "other_receipts",
+   "business_current_transfers": "other_receipts",
+   "rest_world_current_transfers": "other_receipts",
+   "source_rounding": "other_receipts",
+   "medicaid_and_chip_other_medical": "medicaid",
+   "public_order_safety": "justice",
+   "state_price_public_order_safety": "justice",
+   "refundable_tax_credits": "refundable_credits",
+   "social_security": "social_security_medicare",
+   "railroad_retirement": "social_security_medicare",
+   "medicare": "social_security_medicare",
+   "pension_guaranty": "social_security_medicare",
+   "health_services": "health_veterans",
+   "veterans_pension_disability": "health_veterans",
+   "veterans_readjustment": "health_veterans",
+   "veterans_other": "health_veterans",
+   "veterans_life_insurance": "health_veterans",
+   "military_medical": "health_veterans",
+   "state_price_health_services": "health_veterans",
+   "income_security_services": "cash_food_housing_benefits",
+   "snap": "cash_food_housing_benefits",
+   "ssi": "cash_food_housing_benefits",
+   "family_and_general_assistance": "cash_food_housing_benefits",
+   "other_state_welfare": "cash_food_housing_benefits",
+   "energy_assistance": "cash_food_housing_benefits",
+   "unemployment": "cash_food_housing_benefits",
+   "other_federal_benefits": "cash_food_housing_benefits",
+   "housing_subsidies": "cash_food_housing_benefits",
+   "workers_compensation": "cash_food_housing_benefits",
+   "temporary_disability": "cash_food_housing_benefits",
+   "black_lung": "cash_food_housing_benefits",
+   "employment_training": "cash_food_housing_benefits",
+   "housing_enterprise_surplus": "cash_food_housing_benefits",
+   "economic_affairs_services": "roads_economic_affairs",
+   "agricultural_subsidies": "roads_economic_affairs",
+   "transport_subsidies": "roads_economic_affairs",
+   "other_subsidies": "roads_economic_affairs",
+   "roads_vmt_sl": "roads_economic_affairs",
+   "roads_vmt_fed": "roads_economic_affairs",
+   "general_public_services": "per_head_government_and_enterprises",
+   "recreation_culture": "per_head_government_and_enterprises",
+   "housing_community_services": "per_head_government_and_enterprises",
+   "other_state_benefits": "per_head_government_and_enterprises",
+   "defense": "per_head_government_and_enterprises",
+   "domestic_interest": "per_head_government_and_enterprises",
+   "foreign_interest": "per_head_government_and_enterprises",
+   "foreign_territory_social_benefits": "per_head_government_and_enterprises",
+   "other_foreign_current_transfers": "per_head_government_and_enterprises",
+   "enterprise_surplus": "per_head_government_and_enterprises",
+   "state_price_recreation_culture": "per_head_government_and_enterprises",
+   "lane_constants": "care_shelter_audit_constants",
+   "modeled_owner_property": "property_taxes",
+   "tenant_occupied_property": "property_taxes",
+   "personal_property_tax": "property_taxes",
+   "user_fees_key_k12": "schools",
+   "user_fees_key_college": "colleges_other_education",
+   "user_fees_key_health": "health_veterans",
+   "education_services": "education",
+   "school_reprice": "schools",
+   "college_rekey": "colleges_other_education",
+   "education_benefits": "colleges_other_education"
+  }
+ }
+}

@@ -1240,3 +1240,37 @@ uv run --no-project python3 -m pytest infra/immigration-fiscal/main_case_decompo
 ```
 
 Log: 2026-10-14 18:23:25 JST (`date`): moved to adopted 148ed1ea; computed oct14 only and preserved earlier case files.
+
+## 2026-10-15: live case oct15 (v8)
+
+The live set is 368.990934 / 459.202877bn, cash 284.951568 / 375.163510bn, personal specifications 16 / 11. The denominator is the complete 45,230,062.30075857-person lineage, including completion and coverage. [DATA: `derived/summary_oct15.json`, `summary_oct15_cash.json`; adopted case b35ac8fb `summary.json` `v8`]
+
+R10–R13 are distinct change steps. `--v8-attribution sequential` holds the measured v7 age profiles, places item 9 and the mixed-unit net delta on the receipt factor, and completion/coverage on the use factor. At national profile, additional people cost the base NNN amount per member; at group profile, each step is the complete native item change. The 9×10 interaction belongs to completion in this declared sequential order. These are attribution assumptions, not measured counterfactual age profiles. [ASSUMPTION; CALCULATION: `v8_attribution.cjs`; `summary_oct15.json` `v8.rule`]
+
+The set's shared part is −29.963273 / 81.974958bn. Its excess at the case's ends is 398.954207 / 377.227919bn: age 89.605687 / 81.067159, taxes 297.823869 / 288.401224, use 11.524651 / 7.759536. These are at the case's low/high ends, not the extrema of the excess. [DATA: `summary_oct15.json` `parts`]
+
+Each step exposes its source-side line, production, capital and explicit post-engine parts and closes at 1e-9. Coverage stays one additive post-engine execution amount; its typed source decomposition exposes fiscal lines, capital, signed P/F production and the explicit unclassified remainder. Its source `generation_ratio` P/F allocation remains approximate. Mixed-unit removal retains its declared net post-engine component. No new age profile or fiscal split is invented for that net amount. Nondefault `item6_low_corporate_response` stops until a distinct attribution step is declared. [CALCULATION: `v8_attribution.cjs`; DATA: `summary_oct15.json` `v8.source_parts`, `v8.coverage_execution`, `v8.coverage_production_rule`]
+
+The counted frame and underlying measured profile frame are separate fields (`frame.row4`, `frame.profile_row4`). v8 JSON retains full precision for downstream 1e-9 closure; historical JSON rounding and all older case artifacts remain unchanged. External adopted/cash band gates use the existing 5e-5bn tolerance. The four live variants pass 77 / 69 / 75 / 67 gates (set, cash, identified-age set, identified-age cash); three regressions cover a failed band oracle without output, unassigned optional response, and dropped coverage fiscal parts. [CALCULATION: final runs after CASE_FINAL; `test_decomposition.py`]
+
+Reproduce the live case only; the older commands above describe historical executions:
+
+```sh
+node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs --case oct15 --v8-attribution sequential
+node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs --case oct15_cash --v8-attribution sequential
+node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs --case oct15 --placement identified --v8-attribution sequential
+node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs --case oct15_cash --placement identified --v8-attribution sequential
+node --check infra/immigration-fiscal/main_case_decomposition_2026_09_29/v8_attribution.cjs
+GIT_OPTIONAL_LOCKS=0 uv run --no-project python3 -m pytest infra/immigration-fiscal/main_case_decomposition_2026_09_29/test_decomposition.py -q
+```
+
+Log: 2026-10-15 02:13 JST — after CASE_FINAL b35ac8fb, all live gates pass; initial Node runs 3.35–3.76s, peak physical footprints 0.386–0.398GB, under the shared 2.5GB budget. Reproduction receipt follows below.
+
+Validation 2026-10-15 02:19:18 JST (from `date`): `scripts/rerun_lane.py` IDENTICAL 85/85, exit 0 (20.04s); no uncovered scripts or EOL conversion failures. GIT_OPTIONAL_LOCKS=0 used for all read-only Git probes. Older keyed artifacts unchanged.
+
+Parent rerun 2026-10-15 05:32 JST (from `date`), on the corrected v8 (d1a24d47: coverage no longer charges the people the Census
+misses for administratively counted justice use; same key `oct15`). The live set is **365.791930 / 455.981785bn**,
+cash 281.752564 / 371.942418bn; the figures above are the pre-correction run. The shared part is unchanged
+(−29.963273 / 81.974958bn); the excess at the ends is 395.755203 / 374.006827bn: age 89.605687 / 81.067159 and
+taxes 297.823869 / 288.401224 unchanged, use 8.325647 / 4.538444 (−3.199004 / −3.221092). Reproduction IDENTICAL
+85/85, exit 0. [DATA: `derived/summary_oct15.json` `parts`]
