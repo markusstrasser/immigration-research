@@ -890,67 +890,100 @@ def main() -> None:
         excluded_noncivilian=dict(returns=int((~civ_ok & ((nm_h & (n_mem > 0)) | (m_h & (n_non > 0)) | d1 | d2)).sum())),
     )
 
-    # --- 9. the item for main case v7: the recommended reading on the identified union, at the personal allocation ------
+    # --- 9. the item for main case v7 (the lead's contract): R3 with head-of-household status, identified union ------
     rec = "R3"
-    net_keys = A + B + ["C_status", "Cr_status"]
-    names = {"A_nonref": "forward_nonrefundable_ctc_odc", "A_care": "forward_care_credit",
-             "A_actc": "forward_refundable_actc", "A_eitc": "forward_child_related_eitc",
-             "C_status": "forward_head_of_household_status", "B_nonref": "reverse_nonrefundable_ctc_odc",
-             "B_care": "reverse_care_credit", "B_actc": "reverse_refundable_actc", "B_eitc": "reverse_child_related_eitc",
-             "Cr_status": "reverse_head_of_household_status"}
+    status_keys = ["C_status", "Cr_status"]
+    terms_of = {"A": A, "B": B, "C": ["C_status"], "Cr": ["Cr_status"]}
     G_OUT = {"G1": "G1", "G2": "G2", "G3+": "G3plus"}
-    lines = {"receipts": dict(line="federal_income_tax", side="receipt",
-                              key="federal_liability, re-keyed by v4 item 3 (irs_2023_raked)"),
-             "spending": dict(line="refundable_tax_credits", side="spending", key="refundable_credits")}
+    SIDE_OUT = {"receipts": "receipt", "spending": "spending"}
+    LINE_OF = {"receipts": "federal_income_tax", "spending": "refundable_tax_credits"}
 
-    def bn(k, reading, g=None):
-        """Component k's account $bn on the full weights, at a reading, for one generation (index) or all."""
-        x = comp_ruled[k] * keep_of(reading, k) * (1.0 if g is None else owner[k][g])
-        return float(account(x, k)[0])
+    def bn(keys, reading, g=None, on=None):
+        """Net-cost $bn of the components `keys` (only those on side `on`, if given) at a reading, on the full weights,
+        for one generation (index into GENS) or all."""
+        out = 0.0
+        for k in keys:
+            if on is None or side[k] == on:
+                out += float(account(comp_ruled[k] * keep_of(reading, k) * (1.0 if g is None else owner[k][g]), k)[0])
+        return out
 
-    parts = {names[k]: dict(bn=bn(k, rec), **lines[side[k]], component=k,
-                            by_generation={G_OUT[g]: {"personal": bn(k, rec, i)} for i, g in enumerate(GENS)},
-                            readings={r: bn(k, r) for r in READINGS}) for k in net_keys}
-    net = sum(v["bn"] for v in parts.values())
-    by_gen = {G_OUT[g]: {"personal": sum(bn(k, rec, i) for k in net_keys)} for i, g in enumerate(GENS)}
-    receipt_term = sum(v["bn"] for v in parts.values() if v["side"] == "receipt")
-    spending_term = sum(v["bn"] for v in parts.values() if v["side"] == "spending")
+    # A part's bn is its change to the group's target on its line, so the parts add to the two edits; cost_bn is its
+    # effect on the group's net cost (a receipt part's cost_bn is minus its bn).
+    parts = {}
+    for term, keys in terms_of.items():
+        for sd in ("receipts", "spending"):
+            if any(side[k] == sd for k in keys):
+                for i, g in enumerate(GENS):
+                    cost = bn(keys, rec, i, sd)
+                    parts[f"{term}_{SIDE_OUT[sd]}_{G_OUT[g]}"] = dict(
+                        bn=-cost if sd == "receipts" else cost, cost_bn=cost, line=LINE_OF[sd], side=SIDE_OUT[sd],
+                        generation=G_OUT[g], term=term)
+    receipt_edit = sum(v["bn"] for v in parts.values() if v["side"] == "receipt")
+    spending_edit = sum(v["bn"] for v in parts.values() if v["side"] == "spending")
+    net = sum(v["cost_bn"] for v in parts.values())
+    by_gen = {G_OUT[g]: {"personal": sum(v["cost_bn"] for v in parts.values() if v["generation"] == G_OUT[g])}
+              for g in GENS}
     fit_cells = next(x for x in model["receipts"]["lines"] if x["id"] == "federal_income_tax")["cells"]
     ref_sc = model["receipts"]["reference"]
-    # main_case_2026_09_24/package.cjs expand(): a receipt change is measured on the reference rule, and every other
-    # rule takes the same proportional change to the group's share of the line.
-    edits = [dict(side="receipt", line="federal_income_tax", scenario=sc,
-                  by=dict(personal=-receipt_term * fit_cells[sc]["personal"]["target_bn"]
-                          / fit_cells[ref_sc]["personal"]["target_bn"], shared=0.0))
-             for sc in model["receipts"]["scenarios"]]
+    on_key = [sc for sc in model["receipts"]["scenarios"] if fit_cells[sc]["personal"]["key"] == "federal_liability"]
+    absent = sorted(set(model["receipts"]["scenarios"]) - set(on_key))
+    edits = [dict(side="receipt", line="federal_income_tax", scenario=sc, by=dict(personal=receipt_edit, shared=0.0))
+             for sc in on_key]
     edits.append(dict(side="spending", line="refundable_tax_credits", key=ref_line["preferred_key"],
-                      by=dict(personal=spending_term, shared=0.0)))
+                      by=dict(personal=spending_edit, shared=0.0)))
     gate("refundable_tax_credits_preferred_key_is_refundable_credits", ref_line["preferred_key"] == "refundable_credits",
          value=ref_line["preferred_key"])
-    gate("item_parts_add_to_the_net", abs(net - summary["account"][rec]["child_credit_and_status_net"]["bn"]["total"])
-         < 1e-6, value=net)
-    gate("item_generations_add_to_the_net", abs(sum(v["personal"] for v in by_gen.values()) - net) < 1e-9,
+    gate("item_receipt_edit_covers_the_seven_federal_liability_rules", len(on_key) == 7 and absent == ["federal_gap_high_agi"]
+         and ref_sc in on_key, value=dict(listed=on_key, absent=absent))
+    # main_case_2026_09_24/package.cjs expand(): other rules take the reference edit times their target over the
+    # reference's; on the seven federal_liability rules that ratio is exactly 1.
+    gate("item_federal_liability_rules_share_the_reference_target",
+         all(fit_cells[sc]["personal"]["target_bn"] == fit_cells[ref_sc]["personal"]["target_bn"] for sc in on_key),
+         value=fit_cells[ref_sc]["personal"]["target_bn"])
+    gate("item_is_the_summarys_r3_with_status",
+         abs(net - summary["account"][rec]["child_credit_and_status_net"]["bn"]["total"]) < 1e-6, value=net)
+    gate("item_parts_add_to_the_two_edits_and_the_net", abs(spending_edit - receipt_edit - net) < 1e-12
+         and abs(receipt_edit + bn(A + B + status_keys, rec, None, "receipts")) < 1e-9
+         and abs(spending_edit - bn(A + B + status_keys, rec, None, "spending")) < 1e-9,
+         value=dict(receipt=receipt_edit, spending=spending_edit, net=net))
+    gate("item_generations_add_to_the_net", abs(sum(v["personal"] for v in by_gen.values()) - net) < 1e-12,
          value={g: v["personal"] for g, v in by_gen.items()})
-    ref_edit = next(e for e in edits if e.get("scenario") == ref_sc)["by"]["personal"]
-    gate("item_edits_carry_the_net_on_the_reference_rule", abs(spending_term - ref_edit - net) < 1e-9,
-         value=dict(receipt=ref_edit, spending=spending_term))
-    gate("item_has_an_edit_for_every_receipt_scenario", sorted(e["scenario"] for e in edits if e["side"] == "receipt")
-         == sorted(model["receipts"]["scenarios"]), value=len(model["receipts"]["scenarios"]))
+
+    def arm(reading, keys):
+        return dict(net_bn={"personal": bn(keys, reading)},
+                    by_generation={G_OUT[g]: {"personal": bn(keys, reading, i)} for i, g in enumerate(GENS)},
+                    se_bn={"personal": agg_se(reading, keys)["total"]},
+                    edits_personal=dict(receipt=-bn(keys, reading, None, "receipts"),
+                                        spending=bn(keys, reading, None, "spending")))
+
+    arms = {"R1_with_status": arm("R1", A + B + status_keys), "R2_with_status": arm("R2", A + B + status_keys),
+            "R3_without_status": arm("R3", A + B)}
+    for name, x in arms.items():
+        gate(f"item_arm_{name}_is_the_summarys", abs(x["net_bn"]["personal"] - summary["account"][name[:2]][
+            "child_credit_net_A_plus_B" if name.endswith("without_status") else "child_credit_and_status_net"][
+            "bn"]["total"]) < 1e-6, value=x["net_bn"]["personal"])
+    per_member = by_gen["G3plus"]["personal"] * 1e9 / lineage_counts["identified_g3plus"]
     summary["gates"] = len(GATES)
     item = dict(
-        lane="mixed_unit_credits_2026_10_14", income_year=2024, reading=rec,
-        sign="positive raises the group's net cost; a receipt edit is minus its receipt parts",
+        lane="mixed_unit_credits_2026_10_14", income_year=2024, reading="R3_with_status",
+        sets="both: the set and the cash set take the same edits (current-year flows)",
+        sign=("net_bn, by_generation and a part's cost_bn: positive raises the group's net cost; a part's bn and the "
+              "edits: the change to the group's target on the line, so a receipt part's bn is minus its cost_bn"),
         scope=("the identified union on audit row 4's weights (39,712,493 people) at the personal allocation; the 3.04M "
-               "added descendants are out of scope, and the shared cell is 0 by the contract"),
+               "added descendants are out of scope (see lineage); the shared cell is 0"),
         reading_rule=("a non-member child's credit continues after the member claimant leaves only where the claimant's "
-                      "non-member spouse or a non-member parent of the child stays in the household (R3); R1 keeps every "
-                      "such credit, R2 only the spouse's"),
-        net_bn={"personal": net}, by_generation=by_gen,
+                      "non-member spouse or a non-member parent of the child stays in the household (R3), and the "
+                      "head-of-household status effects (C, Cr) are included"),
+        net_bn={"personal": net},
         se_bn={"personal": summary["account"][rec]["child_credit_and_status_net"]["se_bn"]["total"]},
-        readings={r: dict(net_bn=summary["account"][r]["child_credit_and_status_net"]["bn"]["total"],
-                          se_bn=summary["account"][r]["child_credit_and_status_net"]["se_bn"]["total"])
-                  for r in READINGS},
-        parts=parts, edits=edits,
+        by_generation=by_gen, parts=parts, edits=edits,
+        edits_note=("the receipt edit is listed once for each of the seven federal_liability rules; federal_gap_high_agi "
+                    "is absent: its key (observed_liability_plus_positive_gap_high_agi) is not computed here"),
+        lineage=dict(g3plus_per_member_usd=per_member, g3plus_term_bn=by_gen["G3plus"]["personal"],
+                     identified_g3plus=lineage_counts["identified_g3plus"],
+                     rule=("the v7 lane applies it to the lineage's G3+-priced members (later losses plus (1 − C3) of "
+                           "the G3-rate attriters); the white-priced part takes 0, not measured")),
+        arms=arms,
         beside=dict(joint_split_D_bn=summary["account"][rec]["joint_split_D"]["bn"]["total"],
                     joint_split_D_se_bn=summary["account"][rec]["joint_split_D"]["se_bn"]["total"],
                     state_credits_on_crossing_returns_bound_cps_bn=summary[

@@ -212,31 +212,43 @@ def test_item_follows_the_v7_contract():
     s = json.loads((DER / "summary.json").read_text())
     model = json.loads((LANE.parent / "assumption_explorer_2026_09_21/derived/model.json").read_text())
     net = item["net_bn"]["personal"]
-    assert item["reading"] == "R3"
+    assert item["reading"] == "R3_with_status"
     assert abs(net - s["account"]["R3"]["child_credit_and_status_net"]["bn"]["total"]) < 1e-6
     assert set(item["by_generation"]) == {"G1", "G2", "G3plus"}
-    assert abs(sum(v["personal"] for v in item["by_generation"].values()) - net) < 1e-9
-    assert abs(sum(p["bn"] for p in item["parts"].values()) - net) < 1e-9
-    for p in item["parts"].values():
+    assert abs(sum(v["personal"] for v in item["by_generation"].values()) - net) < 1e-12
+    parts = item["parts"]
+    assert len(parts) == 18 and {p["term"] for p in parts.values()} == {"A", "B", "C", "Cr"}
+    assert abs(sum(p["cost_bn"] for p in parts.values()) - net) < 1e-12
+    for p in parts.values():
         assert (p["side"], p["line"]) in {("receipt", "federal_income_tax"), ("spending", "refundable_tax_credits")}
-        assert abs(sum(v["personal"] for v in p["by_generation"].values()) - p["bn"]) < 1e-9
-        assert (p["bn"] > 0) == p["component"].startswith(("A_", "C_"))       # forward pieces raise the cost
-    # one receipt edit per scenario, the case's proportional rule off the reference; the spending edit on the
-    # preferred key; shared stays 0
+        assert p["bn"] == (-p["cost_bn"] if p["side"] == "receipt" else p["cost_bn"])
+        assert p["generation"] in {"G1", "G2", "G3plus"}
+    for g, v in item["by_generation"].items():
+        assert abs(sum(p["cost_bn"] for p in parts.values() if p["generation"] == g) - v["personal"]) < 1e-12
+    # the receipt edit once per federal_liability rule (seven), the gap rule absent; the parts add to the two edits
     cells = next(x for x in model["receipts"]["lines"] if x["id"] == "federal_income_tax")["cells"]
-    ref = model["receipts"]["reference"]
-    receipt = sum(p["bn"] for p in item["parts"].values() if p["side"] == "receipt")
-    spending = sum(p["bn"] for p in item["parts"].values() if p["side"] == "spending")
-    edits = item["edits"]
-    assert sorted(e["scenario"] for e in edits if e["side"] == "receipt") == sorted(model["receipts"]["scenarios"])
-    for e in edits:
-        assert e["by"]["shared"] == 0
-        if e["side"] == "receipt":
-            want = -receipt * cells[e["scenario"]]["personal"]["target_bn"] / cells[ref]["personal"]["target_bn"]
-            assert abs(e["by"]["personal"] - want) < 1e-9
-        else:
-            assert (e["line"], e["key"]) == ("refundable_tax_credits", "refundable_credits")
-            assert abs(e["by"]["personal"] - spending) < 1e-9
+    rules = [sc for sc in model["receipts"]["scenarios"] if cells[sc]["personal"]["key"] == "federal_liability"]
+    receipt = [e for e in item["edits"] if e["side"] == "receipt"]
+    spending = [e for e in item["edits"] if e["side"] == "spending"]
+    assert sorted(e["scenario"] for e in receipt) == sorted(rules) and len(rules) == 7
+    assert "federal_gap_high_agi" not in {e["scenario"] for e in receipt} and "federal_gap_high_agi" in item["edits_note"]
+    assert len(spending) == 1 and (spending[0]["line"], spending[0]["key"]) == ("refundable_tax_credits", "refundable_credits")
+    assert all(e["by"]["shared"] == 0 for e in item["edits"])
+    r_sum = sum(p["bn"] for p in parts.values() if p["side"] == "receipt")
+    s_sum = sum(p["bn"] for p in parts.values() if p["side"] == "spending")
+    assert all(abs(e["by"]["personal"] - r_sum) < 1e-12 for e in receipt)
+    assert abs(spending[0]["by"]["personal"] - s_sum) < 1e-12 and abs(s_sum - r_sum - net) < 1e-12
+    # lineage: the G3+ term per identified G3+ member
+    lin = item["lineage"]
+    assert abs(lin["g3plus_per_member_usd"] - item["by_generation"]["G3plus"]["personal"] * 1e9 / lin["identified_g3plus"]) < 1e-9
+    assert abs(lin["identified_g3plus"] - s["frame"]["lineage_counts"]["identified_g3plus"]) < 1e-9
+    # arms
+    assert set(item["arms"]) == {"R1_with_status", "R2_with_status", "R3_without_status"}
+    for name, a in item["arms"].items():
+        assert abs(sum(v["personal"] for v in a["by_generation"].values()) - a["net_bn"]["personal"]) < 1e-9
+        assert abs(a["edits_personal"]["spending"] - a["edits_personal"]["receipt"] - a["net_bn"]["personal"]) < 1e-9
+    assert abs(item["arms"]["R3_without_status"]["net_bn"]["personal"]
+               - s["account"]["R3"]["child_credit_net_A_plus_B"]["bn"]["total"]) < 1e-6
     assert all(g["passed"] for g in item["gates"]) and len(item["gates"]) == s["gates"]
 
 

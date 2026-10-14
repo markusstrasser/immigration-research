@@ -9,10 +9,10 @@ nonrefundable child and other-dependent credit, $1.13bn of refundable child cred
 $0.12bn of care credit. The reverse term is −$0.68bn on R3: credits that member filers claim for non-member children
 whose claim would continue. It is −$1.69bn if every such credit continued (R1) and −$0.59bn if only a non-member
 spouse who stays could claim (R2). Head-of-household status adds +$0.32bn forward and −$0.02bn reverse. By generation
-on R3: G1 −$0.02bn, G2 +$1.25bn, G3+ +$3.07bn. `derived/item.json` carries the term in the v7 contract, at the
-personal allocation with shared 0 and both lines at response 1:
-- `federal_income_tax`: −$1.775bn of the group's receipts on the reference rule, −$1.642bn on
-  `federal_gap_high_agi` by the case's proportional rule;
+on R3: G1 −$0.02bn, G2 +$1.25bn, G3+ +$3.07bn. `derived/item.json` carries the term as `R3_with_status` for both
+sets, at the personal allocation with shared 0 and both lines at response 1:
+- `federal_income_tax`: −$1.775bn of the group's receipts, listed once for each of the seven `federal_liability`
+  rules (`federal_gap_high_agi` is absent);
 - `refundable_tax_credits`: +$2.524bn of its spending.
 
 The term is below the review's $10bn bar, as the review expected. The review also claims that the personal total
@@ -109,40 +109,39 @@ R1 is the bound if every such child stays and someone claims them at the same cr
 
 ## How to apply it to the case (`derived/item.json`)
 
-The contract's fields, all unrounded in the file:
+The item is `R3_with_status`: A + B + C + Cr on reading R3. It applies to both sets, because these are current-year
+flows. Values are unrounded in the file. [CALCULATION: `derived/item.json`, gated against `summary.json`; its sha256
+is in the Log]
 
-- `net_bn.personal`: +4.2985.
-- `by_generation`: G1 −0.0237, G2 +1.2534, G3plus +3.0689.
-- `parts`: ten pieces, each with its line and side, its generations and its value under each reading.
-- `edits` and `gates`: 79 gates, all passed.
+- **`net_bn.personal`**: +4.2985 (SE 0.3258). **`by_generation`**: G1 −0.0237, G2 +1.2534, G3plus +3.0689.
+- **`parts`**: 18 pieces, the terms A, B, C and Cr by side and generation.
+  - A part's `bn` is its change to the group's target on its line, so the receipt parts add to the receipt edit and
+    the spending parts to the spending edit. Its `cost_bn` is its effect on the net cost; for a receipt part that is
+    minus `bn`.
+  - In cost terms, the receipt side is A +1.928 (nonrefundable and care credits), B −0.454, C +0.317 and Cr −0.016,
+    together +1.775. The spending side is A +2.754 (refundable child credit and EITC) and B −0.230, together +2.524.
+- **`edits`**, the two fixed edits with shared 0:
 
-Scope: the identified union on row 4's weights at the personal allocation. The 3.04M added descendants are out of
-scope, and the shared cell is 0 by the contract.
+| Edit | `by.personal` | `by.shared` |
+|---|---|---|
+| `receipt`, `federal_income_tax`, once each for `cbo_collective`, `corporate_all_capital`, `medicare_income_weighted`, `nas_80`, `property_residual_consumption`, `public_assets_tax_base` and `treasury_815` | −1.775 | 0 |
+| `spending`, `refundable_tax_credits`, key `refundable_credits` | +2.524 | 0 |
 
-| Edit (`side`, `line`, `scenario` or `key`) | `by.personal` | `by.shared` | G1 / G2 / G3+ (R3) |
-|---|---|---|---|
-| `receipt`, `federal_income_tax`, `cbo_collective` (the reference) and the six other `federal_liability` rules | −1.775 | 0 | +0.048 / −0.377 / −1.446 |
-| `receipt`, `federal_income_tax`, `federal_gap_high_agi` | −1.642 | 0 | |
-| `spending`, `refundable_tax_credits`, key `refundable_credits` | +2.524 | 0 | +0.024 / +0.877 / +1.623 |
-
-[CALCULATION: `derived/item.json` `edits`, gated against its parts; spending G2 printed by controlled rounding, file
-value 0.8764]
-
-- **The receipt edit** is minus the receipt parts (+1.775): forward nonrefundable credit +1.804, care credit +0.124
-  and head-of-household status +0.317; reverse −0.436, −0.018 and −0.016.
-- **The spending edit** is the spending parts: forward refundable child credit +1.125 and child-related EITC
-  +1.629; reverse −0.104 and −0.126. The EITC part is the credit with the children minus the credit without them,
-  where any childless credit stays.
-- **Other receipt rules.** Each takes the reference edit times its group target over the reference's: 118.620 /
-  128.209 on `federal_gap_high_agi`, 1 on the rest.
+  - `federal_gap_high_agi` is absent: its key, `observed_liability_plus_positive_gap_high_agi`, is not computed
+    here.
+  - The seven `federal_liability` rules share the reference's group target exactly, so the case's proportional rule
+    gives each the same edit (`main_case_2026_09_24/package.cjs:120–136`; gated).
+- **`lineage`**: the G3+ term per identified G3+ member, $213.97 (the G3+ term of $3.0689bn over 14,342,575). The
+  rule: the v7 lane applies it to the lineage's G3+-priced members, the later losses plus (1 − C3) of the G3-rate
+  attriters; the white-priced part takes 0, not measured.
+- **`arms`**, each with its generations and its two edit amounts:
+  - R1_with_status: +3.1836 (SE 0.3699);
+  - R2_with_status: +4.4055 (SE 0.3181);
+  - R3_without_status: +3.9976 (SE 0.3163).
+- **`gates`**: 83, each with its value, all passed.
 - **Responses.** `federal_income_tax` is a direct receipt and `refundable_tax_credits` a household transfer. The
   engine passes both at 1 (`assumption_explorer_2026_09_21/engine.js:40`, `:43`, `:165`, `:202`), so the edits add
-  $4.30bn to both ends. They are current-year flows, so the cash set moves by the same amount [INFERENCE].
-- **Readings.** The R1 and R2 values are in `readings`, for the net and for each part.
-- **The added descendants** are out of scope. Suppose v7 re-prices the 1.94M it prices at the G3+ rate from the
-  corrected account. They would then carry G3+'s per-member term, +$0.42bn (3.069 × 1.945 / 14.343) [CALCULATION].
-  Do not apply the lineage factor 1.212 (+$0.65bn): R3 already treats the main identity-loss class as inside the
-  lineage [INFERENCE].
+  $4.30bn to both ends of both sets [INFERENCE for the cash set: current-year flows].
 
 ## Personal allocation and sharing among members only
 
@@ -251,10 +250,10 @@ return keeps the residual the rules do not explain.
 
 An imputed unauthorized head's EITC counts at 0 and the rest of the return at the on-books share (central:
 Mexico-born 0.5263, other Latin American-born 0.5501). This is the adopted stack `row4+status_state_aware|central`.
-Its four stored frame totals are reproduced exactly [DATA: `backtest_admin_totals_2026_09_28/derived/prediction_audit.json`
-`asec2025_adopted`]. Non-civilian claimants (48 returns) are outside the account's frame and are left out.
+Its four stored frame totals are reproduced exactly
+[DATA: `backtest_admin_totals_2026_09_28/derived/prediction_audit.json` `asec2025_adopted`]. Non-civilian claimants (48 returns) are outside the account's frame and are left out.
 
-**Gates.** The script stops `[BLOCKED]` on any of its 79 gates, and `item.json` lists each with its value. They
+**Gates.** The script stops `[BLOCKED]` on any of its 83 gates, and `item.json` lists each with its value. They
 cover:
 - inputs: the CPS file's sha256, the replicates joining every person;
 - frame: row 4's full and replicate factors, its 39,712,493 people, the lineage's identified G3+, the adopted
@@ -265,7 +264,7 @@ cover:
   conservation of each credit;
 - keys: the IRS key's constant cell ratios, its civilians and its sum of 1;
 - allocation check: the reproduced `model.json` shares;
-- the item's sums.
+- the item: its sums, the seven `federal_liability` rules and the arms against `summary.json`.
 
 `test_credits.py` adds 14 tests.
 
@@ -350,3 +349,18 @@ A run takes 10–11 s of CPU (wall 9–64 s, depending on the disk cache) with a
   to personal only under a weight-keeping split (79 gates, 14 tests).
 - 2026-10-14 15:08:08 JST: corrected the frame limit (the stack puts both lines on row 4); `rerun_lane.py`
   IDENTICAL 9/9, exit 0, at 15:09:52.
+- 2026-10-14 15:14:02 JST: the lead's decision: the item is R3 with head-of-household status, for both sets. Rewrote
+  `item.json` to the revised contract.
+  - `reading` `R3_with_status`; 18 `parts` (A, B, C, Cr by side and generation) that add to the two edits.
+  - The receipt edit is listed once per `federal_liability` rule (seven); `federal_gap_high_agi` is absent.
+  - `lineage` is the G3+ term per identified G3+ member, with the lead's rule, replacing the scaled shortcut.
+  - `arms` R1 and R2 with status, R3 without; 83 gates, 14 tests.
+  - A timed run spent 8 s loading and 31 s in all. The slower walls (up to 77 s on 11–12 s of CPU) came with the
+    machine's swap at 9.8 of 10.2 GB.
+- 2026-10-14 15:17:48 JST: `rerun_lane.py` IDENTICAL 9/9, exit 0, at 15:18:53. `derived/item.json` sha256
+  2773e34d4cb02a70dd21544f915b2b83bbdc00855d24d468ed67e81e0310b5ac.
+- 2026-10-14 15:22:26 JST: the lead asked what changed in `item.json` after 41ac0da5 (the lead's commit, 15:12:36).
+  Diffed the two field by field: the revised contract above. The parts' `bn` is now in edit sign, with the cost sign
+  in `cost_bn`; the gap rule's edit and `readings` are gone, and `sets`, `edits_note`, `lineage` and `arms` are new.
+  Net, SE, generations and `beside` are unchanged (within 1e-14, from summation order). `rerun_lane.py` IDENTICAL
+  9/9, exit 0, at 15:23:14; `item.json` sha256 2773e34d4cb02a70dd21544f915b2b83bbdc00855d24d468ed67e81e0310b5ac.
