@@ -49,7 +49,7 @@ def test_old_case_rebuilds_committed_files(tmp_path, case, commit):
     assert not any((tmp_path / n).exists() for n in PARTS)
 
 
-@pytest.mark.parametrize("case", ["sept27", "sept29", "oct05", "oct07"])
+@pytest.mark.parametrize("case", ["sept27", "sept29", "oct05", "oct07", "oct14"])
 def test_case_components_rebuild(tmp_path, case):
     run = subprocess.run(["node", str(HERE / "case_components.cjs"), "--case", case, "--out-dir", str(tmp_path)], cwd=ROOT,
                          capture_output=True, text=True)
@@ -58,18 +58,39 @@ def test_case_components_rebuild(tmp_path, case):
     assert (tmp_path / name).read_bytes() == (HERE / "derived" / name).read_bytes()
 
 
-def test_default_rebuilds_derived(tmp_path):
-    rebuild(tmp_path)
+def test_archived_sept27_rebuilds_derived(tmp_path):
+    rebuild(tmp_path, "--case", "sept27")
     differ = [n for n in DEFAULT_NAMES if (tmp_path / n).read_bytes() != (HERE / "derived" / n).read_bytes()]
     assert not differ, differ
 
 
-@pytest.mark.parametrize("case", ["sept29", "oct05", "oct07"])
+@pytest.mark.parametrize("case", ["sept29", "oct05", "oct07", "oct14"])
 def test_case_rebuilds_its_directory(tmp_path, case):
     rebuild(tmp_path, "--case", case)
     assert sorted(p.name for p in tmp_path.iterdir()) == sorted(p.name for p in (HERE / "derived" / case).iterdir())
     differ = [n for n in DEFAULT_NAMES if (tmp_path / n).read_bytes() != (HERE / "derived" / case / n).read_bytes()]
     assert not differ, differ
+
+
+def test_live_case_default_and_lineage_denominator():
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("backcast_live", HERE / "backcast.py")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    assert module.DEFAULT_CASE == "oct14"
+    assert "oct07" not in module.later_cases("oct14")
+    import json
+    import pandas as pd
+
+    annual = pd.read_csv(HERE / "derived/oct14/backcast_annual.csv").set_index("year")
+    summary = json.loads((HERE.parent / "main_case_2026_10_14/derived/summary.json").read_text())
+    per_member = summary["v7"]["per_member_usd"]
+    assert abs(annual.loc[2024, "lineage_millions"] - per_member["population"] / 1e6) < 5e-5
+    for name, want in zip(module.PER_LINEAGE_MEMBER["oct14"], per_member["set"]):
+        for rule in ("ratio", "income"):
+            assert abs(annual.loc[2024, f"{name}__{rule}__per_lineage_member_usd"] - want) < 0.01
 
 
 @pytest.mark.skipif(not (HERE.parent / "g3_identity_pooled_2026_10_05/_cache/asec_pooled.csv.gz").exists(),

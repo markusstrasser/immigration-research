@@ -84,8 +84,13 @@
  * the capital return equals
  * capital_at_end_specifications (1e-9).
  *
- * Run from anywhere: node case_components.cjs [--case sept27|sept29|oct05|oct07] [--out-dir DIR]
- * -> derived/case_components_<case>.json (the default case is sept27, whose file backcast.py's default run reads).
+ * October 14: v7 is evaluated on its 32 personal specifications. Historical steps keep v6's numbering and
+ * responses; v7 edit sets have distinct union/lineage components from meta.items. Job-capital components use
+ * ITEM_DETAIL's whole targets, because those receipts responded at zero before the item. Old case commands
+ * remain available for scratch regression checks; the default computes only the live case.
+ *
+ * Run from anywhere: node case_components.cjs [--case sept27|sept29|oct05|oct07|oct14] [--out-dir DIR]
+ * -> derived/case_components_<case>.json (default oct14).
  */
 "use strict";
 const fs = require("fs");
@@ -96,8 +101,9 @@ const FISCAL = path.resolve(__dirname, "..");
 const SEPT29_LANE = "main_case_2026_09_29";
 const OCT05_LANE = "main_case_2026_10_05";
 const OCT07_LANE = "main_case_2026_10_07";
-const CASES = { sept27: "main_case_long_run_2026_09_27", sept29: SEPT29_LANE, oct05: OCT05_LANE, oct07: OCT07_LANE };
-const DEFAULT_CASE = "sept27";
+const OCT14_LANE = "main_case_2026_10_14";
+const CASES = { sept27: "main_case_long_run_2026_09_27", sept29: SEPT29_LANE, oct05: OCT05_LANE, oct07: OCT07_LANE, oct14: OCT14_LANE };
+const DEFAULT_CASE = "oct14";
 const argv = process.argv.slice(2);
 const opt = (name, dflt) => (argv.includes(name) ? argv[argv.indexOf(name) + 1] : dflt);
 const CASE = opt("--case", DEFAULT_CASE);
@@ -107,13 +113,15 @@ const OUT = path.resolve(opt("--out-dir", path.join(__dirname, "derived")));
 
 // October 7: the case's package (P6) is October 5's with an item registry; P is October 5's package, so every October 5
 // part below is computed as --case oct05 computes it, and PC is the case.
-const V6 = CASE === "oct07";
-const P6 = V6 ? require(path.join(FISCAL, LANE, "package.cjs")) : null;
+const V7 = CASE === "oct14";
+const V6 = CASE === "oct07" || V7;
+const P7 = V7 ? require(path.join(FISCAL, LANE, "package.cjs")) : null;
+const P6 = V6 ? require(path.join(FISCAL, OCT07_LANE, "package.cjs")) : null;
 if (V6 && P6.OCT05 !== require(path.join(FISCAL, OCT05_LANE, "package.cjs"))) {
   throw new Error("[BLOCKED] the case's package does not build on October 5's package");
 }
 const P = V6 ? P6.OCT05 : require(path.join(FISCAL, LANE, "package.cjs"));
-const PC = V6 ? P6 : P;
+const PC = V7 ? P7 : V6 ? P6 : P;
 // September 29 takes the schools case and September 27's additions from September 27's package; October 5 takes every
 // September 29 part from September 29's package (P29, its SEPT29) and adds the lineage's change.
 const V5 = CASE === "oct05" || V6;
@@ -143,8 +151,9 @@ const near = (a, b, tol) => Math.abs(a - b) <= tol;
 const mean = (xs) => xs.reduce((a, b) => a + b, 0) / xs.length;
 
 const summary = readJson(`${LANE}/derived/summary.json`);
+const change6 = V7 ? summary.change_at_fixed_specifications.oct07_case : summary.change_at_fixed_specifications;
 // October 5's change from September 29 (October 7 keeps it under change_at_fixed_specifications.oct05_case).
-const CH5 = V6 ? summary.change_at_fixed_specifications.oct05_case : summary.change_at_fixed_specifications;
+const CH5 = V6 ? change6.oct05_case : summary.change_at_fixed_specifications;
 const bands = csv(`${LANE}/derived/main_case_bands.csv`);
 const schools = readJson("main_case_schools_full_2026_09_26/derived/summary.json");
 const bandRow = (profile, variant) => {
@@ -162,7 +171,13 @@ const RECEIPT = P27.ENTERPRISE_LINE;
 const MODELS = METHODS.map((m) => PC.modelFor("central", m, PC.withCentral({})));
 const SCHOOL_MODELS = METHODS.map((m) => P27.modelFor("central", m, P27.withCentral({ enterprise_rekey: false })));
 const MODELS27 = V4 ? METHODS.map((m) => P27.modelFor("central", m, P27.withCentral({}))) : MODELS;
-const SPECS = PC.MAIN_SPECS;
+// Keep v6's numbering for the historical steps; the live band uses only the package's personal specifications.
+const SPECS = V7 ? P6.MAIN_SPECS : PC.MAIN_SPECS;
+const CASE_SPECS = V7 ? PC.ALL_SPECS : SPECS;
+const IN_BAND = new Set(CASE_SPECS.flatMap((s, i) => !V7 || s.allocation === "personal" ? [i] : []));
+if (V7 && (IN_BAND.size !== 32 || JSON.stringify([...IN_BAND].map((i) => CASE_SPECS[i])) !== JSON.stringify(PC.MAIN_SPECS))) {
+  throw new Error("[BLOCKED] oct14 MAIN_SPECS are not its 32 personal ALL_SPECS in order");
+}
 if (SPECS.length !== S.MAIN_SPECS.length) throw new Error("[BLOCKED] the case and the schools case differ in specifications");
 // October 7 also needs October 5's models (P's).
 const MODELS5 = V6 ? METHODS.map((m) => P.modelFor("central", m, P.withCentral({}))) : MODELS;
@@ -203,7 +218,7 @@ const nationalsOf = (m) => new Map(m.spending.lines.map((l) => [lineKey("spendin
   .concat(m.receipts.lines.map((l) => [lineKey("receipt", l.id), l.national_bn])));
 const ROW8 = V6 ? P.LINEAGE_EDITS[P.LINEAGE_EDITS.length - 1] : null;
 // The capital components an item adds beside the payload's (its offsets) and the component whose stock each takes.
-const OF_COMPONENT = V6 ? Object.fromEntries((PC.ITEM_COMPONENTS || []).map((c) => [c.id, c.of_component])) : {};
+const OF_COMPONENT = V6 ? Object.fromEntries((P6.ITEM_COMPONENTS || []).map((c) => [c.id, c.of_component])) : {};
 if (Object.values(OF_COMPONENT).some((x) => !x)) throw new Error("[BLOCKED] an item's capital component names no component whose stock it takes (of_component)");
 // One edit set on the union twins (one per method): a cell shift takes the sum of its union_ parts (an edit with no
 // parts cannot be split, so the run stops); a national-scale edit takes the line's national total in the case after the
@@ -235,13 +250,13 @@ const STEPS = [];
 if (V6) {
   gate("the case's specifications are October 5's, every field, and its cash package's are its set's",
     P.MAIN_SPECS.length === SPECS.length && SPECS.every((s, i) => JSON.stringify(s) === JSON.stringify(P.MAIN_SPECS[i]))
-    && PC.CASH.MAIN_SPECS.length === SPECS.length && SPECS.every((s, i) => JSON.stringify(s) === JSON.stringify(PC.CASH.MAIN_SPECS[i])),
+    && P6.CASH.MAIN_SPECS.length === SPECS.length && SPECS.every((s, i) => JSON.stringify(s) === JSON.stringify(P6.CASH.MAIN_SPECS[i])),
     `${SPECS.length} specifications`);
   gate("the case's profiles are October 5's", JSON.stringify(PC.ALL_PROFILES) === JSON.stringify(P.ALL_PROFILES) && PC.MAIN_PROFILE === P.MAIN_PROFILE);
   gate("October 5's last lineage edit is audit row 8's change on lane_constants (meta.lineage.edits.row8_edit_bn)",
     ROW8.line === "lane_constants" && ROW8.key === "k" && ALLOCS.every((a) => ROW8.by[a] === P.LINEAGE_META.edits.row8_edit_bn), String(ROW8.by.shared));
-  const lin = PC.LINEAGE_ITEM;
-  const order = [...(lin ? [lin] : []), ...PC.ITEM_IDS.filter((id) => id !== lin)];
+  const lin = P6.LINEAGE_ITEM;
+  const order = [...(lin ? [lin] : []), ...P6.ITEM_IDS.filter((id) => id !== lin)];
   const twinOf = (Q) => METHODS.map((m) => {
     const x = Q.modelFor("central", m, Q.withCentral({}));
     return Engine.applyCorrections(x, { edits: [ROW8], meta: x.corrections });
@@ -249,8 +264,8 @@ if (V6) {
   let prev = { id: null, kind: "base", Q: P, models: MODELS5, cashModels: CASH_MODELS, twins: twinOf(P29), cashTwins: twinOf(C29) };
   STEPS.push(prev);
   order.forEach((id, k) => {
-    const ids = PC.ITEM_IDS.filter((x) => order.slice(0, k + 1).includes(x));
-    const arms = Object.fromEntries(Object.entries(PC.ITEM_ARMS).filter(([x]) => ids.includes(x)));
+    const ids = P6.ITEM_IDS.filter((x) => order.slice(0, k + 1).includes(x));
+    const arms = Object.fromEntries(Object.entries(P6.ITEM_ARMS).filter(([x]) => ids.includes(x)));
     const Q = P6.caseOf(P6.OCT05, ids, arms);
     const rec = Q.CASE_ITEMS.find((x) => x.id === id), recCash = Q.CASH.CASE_ITEMS.find((x) => x.id === id);
     const of = (p, r) => p.edits.slice(r.edits.first, r.edits.first + r.edits.count);
@@ -276,8 +291,31 @@ if (V6) {
   });
   const last = STEPS[STEPS.length - 1].Q;
   gate("the last step is the case: its set and cash set payloads are the case's",
-    JSON.stringify(last.correctionsPayload()) === JSON.stringify(PC.correctionsPayload())
-    && JSON.stringify(last.CASH.correctionsPayload()) === JSON.stringify(PC.CASH.correctionsPayload()), `steps: ${order.join(", ")}`);
+    JSON.stringify(last.correctionsPayload()) === JSON.stringify(P6.correctionsPayload())
+    && JSON.stringify(last.CASH.correctionsPayload()) === JSON.stringify(P6.CASH.correctionsPayload()), `steps: ${order.join(", ")}`);
+}
+const STEPS7 = [];
+if (V7) {
+  gate("oct14 keeps v6's specification numbering and fields, adding only line responses",
+    CASE_SPECS.length === SPECS.length && CASE_SPECS.every((s, i) => without(s, ["line_responses"]) === without(SPECS[i], ["line_responses"])));
+  gate("oct14's set and cash specifications agree", JSON.stringify(CASE_SPECS) === JSON.stringify(PC.CASH.ALL_SPECS));
+  gate("oct14's band is personal", PC.MAIN_SPECS.every((s) => s.allocation === "personal"));
+  const ids = [...P6.ITEM_IDS];
+  for (const id of PC.ITEM_IDS.filter((id) => !ids.includes(id))) {
+    ids.push(id);
+    const Q = PC.caseOf(PC.OCT05, ids);
+    const rec = Q.CASE_ITEMS.find((x) => x.id === id);
+    if (rec.kind === "allocation") {
+      if (id !== "personal_allocation" || rec.edits.count !== 0) throw new Error(`[BLOCKED] allocation item ${id} has no backcast rule`);
+      continue; // It chooses the band; no historical amount is added.
+    }
+    if (rec.kind !== "edit_set") throw new Error(`[BLOCKED] oct14 item ${id} has no component rule`);
+    STEPS7.push({ id, Q, rec, recCash: Q.CASH.CASE_ITEMS.find((x) => x.id === id), models: METHODS.map((m) => Q.modelFor("central", m, Q.withCentral({}))),
+      cashModels: METHODS.map((m) => Q.CASH.modelFor("central", m, Q.CASH.withCentral({}))) });
+  }
+  const last = STEPS7.at(-1).Q;
+  gate("oct14's last item step has the case's payloads", JSON.stringify(last.correctionsPayload()) === JSON.stringify(PC.correctionsPayload())
+    && JSON.stringify(last.CASH.correctionsPayload()) === JSON.stringify(PC.CASH.correctionsPayload()));
 }
 {
   const costs = SCHOOL_MODELS.map((m) => S.MAIN_SPECS.map((s) => -Engine.evaluate(m, S.stateFor(m, s, S.MAIN_PROFILE)).welfare_bn));
@@ -454,13 +492,92 @@ const changeItem = (acc, st, r1, r0, c1, c0, t1, t0, tc1, tc0) => {
     step_gap: Math.abs(own.sum + capital - (r1.cost_bn - r0.cost_bn)) };
 };
 
+// R6 fixed shifts follow their tagged paths. R7's response starts at zero, so its parts are the whole new
+// job-capital targets, from ITEM_DETAIL, rather than response times the shifts. Gate every line to its actual move.
+function changeItem7(acc, st, before, after, cashBefore, cashAfter, spec) {
+  const row = (run, side, id) => run.evaluation[side].find((x) => x.id === id);
+  const info = new Map();
+  const amounts = (api, rec, b0, a0, which) => {
+    const payload = api.correctionsPayload();
+    const edits = payload.edits.slice(rec.edits.first, rec.edits.first + rec.edits.count);
+    const values = new Map();
+    for (const [tag, part] of Object.entries(rec.parts)) {
+    const pathName = tag.startsWith("union_") ? "union" : tag.startsWith("lineage_") ? "lineage" : null;
+    if (!pathName) throw new Error(`[BLOCKED] item ${st.id} part ${tag} has no union/lineage path`);
+    const edit = edits[part.edit];
+    if (!edit || !edit.by) throw new Error(`[BLOCKED] item ${st.id} part ${tag} has no cell shift`);
+    const side = edit.side === "receipt" ? "receipts" : "spending";
+    const a = row(a0, side, edit.line), b = row(b0, side, edit.line);
+    if (!a || !b) throw new Error(`[BLOCKED] item ${st.id} moves an unknown line ${edit.line}`);
+    if ((edit.side === "receipt" && edit.scenario !== PC.MODEL.receipts.reference) || (edit.side === "spending" && edit.key !== a.key)) continue;
+    let amount = part.by[spec.allocation];
+    if (st.id === "job_capital_taxes") {
+      if (b.response !== 0) throw new Error(`[BLOCKED] job-capital line ${edit.line} responded before its item`);
+      const targets = st.Q.ITEM_DETAIL.job_capital_taxes[which].new_parts[`${edit.line}|${edit.scenario}`];
+      const target = targets && targets[tag.split(":")[0]];
+      if (!target) throw new Error(`[BLOCKED] job-capital part ${tag} has no whole target`);
+      amount = target[spec.allocation];
+    } else if (a.response !== b.response) throw new Error(`[BLOCKED] item ${st.id} changes ${edit.line}'s response without a whole-target rule`);
+    const value = (side === "receipts" ? -1 : 1) * a.response * amount;
+    const name = `v6_${st.id}_${pathName}_${edit.line}`;
+    values.set(name, (values.get(name) || 0) + value);
+    info.set(name, { item: st.id, path: pathName, side: edit.side, line: edit.line, national_bn: a.national_bn,
+      parent: PARENT5[edit.line] || null, rule: PER_PERSON.includes(edit.line) ? "per_person" : "line" });
+    }
+  const allLines = ["receipts", "spending"].flatMap((side) => a0.evaluation[side].map((a) => {
+    const b = row(b0, side, a.id);
+    const actual = -(a.effect_bn - (b ? b.effect_bn : 0));
+    const got = ["union", "lineage"].reduce((t, p) => t + (values.get(`v6_${st.id}_${p}_${a.id}`) || 0), 0);
+    return Math.abs(actual - got);
+  }));
+  const componentGap = Math.max(...allLines);
+  if (componentGap > 1e-9) throw new Error(`[BLOCKED] item ${st.id}'s ${which} tagged parts do not add to each line's move (${componentGap})`);
+  const capital = a0.capital.total_bn - b0.capital.total_bn;
+  const production = Math.abs(a0.evaluation.private_wtp_bn - b0.evaluation.private_wtp_bn)
+    + Math.abs(a0.evaluation.induced_receipts_bn - b0.evaluation.induced_receipts_bn);
+  if (Math.abs(capital) > 1e-9 || production > 1e-9) throw new Error(`[BLOCKED] item ${st.id} moves capital or production without a component rule`);
+    return values;
+  };
+  const values = amounts(st.Q, st.rec, before, after, "set");
+  const cashValues = amounts(st.Q.CASH, st.recCash, cashBefore, cashAfter, "cash");
+  let sum = 0, union = 0;
+  const add = (name, value, meta) => {
+    if (name in acc.change) throw new Error(`[BLOCKED] duplicate component ${name}`);
+    acc.change[name] = value;
+    acc.meta[name] = meta;
+    sum += value;
+    if (meta.path === "union") union += value;
+  };
+  for (const name of new Set([...values.keys(), ...cashValues.keys()])) {
+    const dp = values.get(name) || 0, cp = cashValues.get(name) || 0, meta = info.get(name);
+    if (meta.side === "spending" && ["social_security", "medicare"].includes(meta.line)) {
+      const ss = meta.line === "social_security", kept = ss ? 0 : 1 - PA.part_a_share;
+      add(ss ? `${name}_accrual` : name.replace(/medicare$/, "medicare_part_a_accrual"), dp - kept * cp,
+        { ...meta, rule: "accrual", contributions: ss ? "oasdi" : "hi" });
+      if (cp !== 0) {
+        add(`${name}_benefits`, cp, { ...meta, rule: "benefits" });
+        add(`${name}_cash`, -(1 - kept) * cp, { ...meta, rule: "benefits" });
+      }
+    } else add(name, dp, meta);
+  }
+  const cashSum = [...cashValues.values()].reduce((a, b) => a + b, 0);
+  acc.lines.push(...["receipts", "spending"].flatMap((side) => after.evaluation[side]
+    .filter((a) => a.effect_bn !== (row(cashAfter, side, a.id) || {}).effect_bn).map((a) => `${side}:${a.id}`)));
+  acc.items[st.id] = { total: after.cost_bn - before.cost_bn, parts: sum,
+    union, cash: cashSum,
+    cash_union: [...cashValues].filter(([name]) => info.get(name).path === "union").reduce((t, [, v]) => t + v, 0),
+    step_gap: Math.max(Math.abs(sum - (after.cost_bn - before.cost_bn)), Math.abs(cashSum - (cashAfter.cost_bn - cashBefore.cost_bn))) };
+}
+
 const out = { case: CASE, lane: LANE, rule: "each fill-in method's end specifications of the case, averaged; base = the schools case's cost at those specifications",
   inputs: Object.fromEntries([`${LANE}/derived/summary.json`, `${LANE}/derived/main_case_bands.csv`, `${LANE}/derived/corrections.json`,
     `${LANE}/package.cjs`, ...(V4 ? [`${CASES.sept27}/package.cjs`, `${CASES.sept27}/derived/corrections.json`] : []),
     ...(V5 ? [`${LANE}/derived/corrections_cash.json`, `${SEPT29_LANE}/package.cjs`, `${SEPT29_LANE}/derived/corrections.json`,
       `${SEPT29_LANE}/derived/main_case_bands.csv`, P.BASE_FILES.cash, ...Object.values(P.LINEAGE_FILES)] : []),
     ...(V6 ? [`${OCT05_LANE}/package.cjs`, `${OCT05_LANE}/derived/corrections.json`, `${OCT05_LANE}/derived/corrections_cash.json`,
-      `${OCT05_LANE}/derived/main_case_bands.csv`, `${LANE}/item_age_mix.cjs`, ...Object.values(PC.LINEAGE_FILES)] : [])]
+      `${OCT05_LANE}/derived/main_case_bands.csv`, `${OCT07_LANE}/item_age_mix.cjs`, ...Object.values(PC.LINEAGE_FILES)] : []),
+    ...(V7 ? [`${OCT07_LANE}/derived/summary.json`, `${OCT07_LANE}/package.cjs`, `${OCT07_LANE}/derived/corrections.json`,
+      `${OCT07_LANE}/derived/corrections_cash.json`, `${LANE}/item_child_credits.cjs`, `${LANE}/item_job_capital.cjs`, `${LANE}/item_row4.cjs`] : [])]
     .map((rel) => [rel, sha256(rel)])),
   concepts: {} };
 if (V4) {
@@ -492,15 +609,28 @@ if (V6) {
   out.v6_items = STEPS.slice(1).map((st) => ({ id: st.id, kind: st.kind, label: st.rec.label, source: st.rec.source, arm: st.rec.arm,
     cash_applied: st.cash_applied }));
 }
+if (V7) {
+  out.allocation = PC.correctionsPayload().meta.allocation;
+  out.v7_change_rule = "The band uses the package's 32 personal specifications in v6's numbering. Earlier steps are evaluated "
+    + "directly at those specifications, not compared to their summaries' shared low end. New edit sets use tagged union/lineage "
+    + "components, named v6_<item>_<path>_<line> for the existing debt consumer; job capital takes its whole responsive targets "
+    + "from ITEM_DETAIL rather than its cell shifts. Every new component sums to its line's evaluated move at 1e-9.";
+  out.v7_items = STEPS7.map((st) => ({ id: st.id, kind: st.rec.kind, label: st.rec.label, source: st.rec.source, arm: st.rec.arm }));
+}
 for (const [concept, profile] of Object.entries(CONCEPTS)) {
   const base = P.ALL_PROFILES[profile].base;
-  const runs = MODELS.map((m) => SPECS.map((s) => PC.evaluateFull(m, s, profile)));
+  const runs = MODELS.map((m) => CASE_SPECS.map((s) => PC.evaluateFull(m, s, profile)));
   const costs = runs.map((xs) => xs.map((r) => r.cost_bn));
-  const ends = costs.map((xs) => [xs.indexOf(Math.min(...xs)), xs.indexOf(Math.max(...xs))]);
-  const band = [mean(costs.map((xs) => Math.min(...xs))), mean(costs.map((xs) => Math.max(...xs)))];
+  const ends = costs.map((xs) => {
+    const ix = [...IN_BAND];
+    return [ix.reduce((a, b) => xs[a] <= xs[b] ? a : b), ix.reduce((a, b) => xs[a] >= xs[b] ? a : b)];
+  });
+  const band = [0, 1].map((e) => mean(costs.map((xs, m) => xs[ends[m][e]])));
   const adopted = bandRow(profile, "adopted");
   gate(`${concept} (${profile}): the band is main_case_bands.csv's adopted row (1e-4)`,
     near(band[0], adopted[0], 1e-4) && near(band[1], adopted[1], 1e-4), `${band.map((x) => x.toFixed(4)).join("/")}; ends ${JSON.stringify(ends)}`);
+  if (V7 && profile === P.MAIN_PROFILE) gate(`${concept}: the live end specifications are v7.end_specifications.by_method.set`,
+    JSON.stringify(ends) === JSON.stringify(summary.v7.end_specifications.by_method.set), JSON.stringify(ends));
   // The parts at one method's end specification.
   const partsAt = (m, i) => {
     const r = runs[m][i];
@@ -552,6 +682,13 @@ for (const [concept, profile] of Object.entries(CONCEPTS)) {
         const tc1 = st.mode === "twin" ? C5.evaluateFull(st.cashTwins[m], SPECS[i], profile) : tc0;
         changeItem(acc, st, r1, r0, c1, c0, t1, t0, tc1, tc0);
         [r0, c0, t0, tc0] = [r1, c1, t1, tc1];
+      }
+      if (V7) for (const st of STEPS7) {
+        const r1 = st.Q.evaluateFull(st.models[m], st.Q.ALL_SPECS[i], profile);
+        const c1 = st.Q.CASH.evaluateFull(st.cashModels[m], st.Q.CASH.ALL_SPECS[i], profile);
+        changeItem7(acc, st, r0, r1, c0, c1, st.Q.ALL_SPECS[i]);
+        r0 = r1;
+        c0 = c1;
       }
       Object.assign(extra, { v6_last: r0.cost_bn - r.cost_bn, v6_cash: c0.cost_bn, v6_twin_move: twinMove, v6_capital: acc.capital,
         v6_meta: acc.meta, v6_items: acc.items, v6_production: acc.production, v6_set_cash_lines: [...new Set(acc.lines)].sort() });
@@ -632,7 +769,7 @@ for (const [concept, profile] of Object.entries(CONCEPTS)) {
     if (profile === P.MAIN_PROFILE) {
       // The twin at October 5 is the union at the case's responses: less September 29, the lineage line's union move.
       const got = [0, 1].map((e) => mean(at.map((pair) => pair[e].v6_twin_move)));
-      gate(`${concept}: the union twin at October 5 less September 29 is change_at_fixed_specifications.oct05_case.union_response_move (1e-9)`,
+      if (!V7) gate(`${concept}: the union twin at October 5 less September 29 is change_at_fixed_specifications.oct05_case.union_response_move (1e-9)`,
         [0, 1].every((e) => near(got[e], CH5.union_response_move[e], 1e-9)), got.map((x) => x.toFixed(4)).join("/"));
       // The set at the end specifications is the case's band unrounded (main_case_bands.csv prints 4 decimals).
       const set = [0, 1].map((e) => mean(at.map((pair) => pair[e].cost)));
@@ -644,6 +781,11 @@ for (const [concept, profile] of Object.entries(CONCEPTS)) {
         const cash = [0, 1].map((e) => mean(at.map((pair) => pair[e].v6_cash)));
         gate(`${concept}: the cash set's last step at the case's end specifications is summary.json cash_set.band_bn (1e-9)`,
           [0, 1].every((e) => near(cash[e], cs.band_bn[e], 1e-9)), cash.map((x) => x.toFixed(4)).join("/"));
+        if (V7) {
+          const want = bandRow(profile, "cash_set");
+          gate(`${concept}: the cash set is main_case_bands.csv's cash_set row (1e-4)`,
+            cash.every((v, e) => near(v, want[e], 1e-4)), cash.map((x) => x.toFixed(4)).join("/"));
+        }
       } else console.log(`  note ${concept}: the cash set's end specifications are not the set's; no cash band check`);
     }
   }
@@ -680,7 +822,7 @@ for (const [concept, profile] of Object.entries(CONCEPTS)) {
       ["rental_assistance", (e) => E[e].additions_bn.rental_assistance], ["enterprise_surplus_receipt", (e) => E[e].additions_bn.enterprise_surplus],
       ["capital_core", (e) => sumOf(e, "core")], ["capital_block", (e) => sumOf(e, "block")], ["capital_enterprise", (e) => sumOf(e, "enterprise")]];
     const worst = Math.max(...pairs.flatMap(([k, f]) => ["low", "high"].map((e, j) => Math.abs(f(e) - c[k][j]))));
-    gate(`${concept}: the ${V4 ? "September 27 " : ""}parts equal summary.json change_at_fixed_specifications${V5 ? ".sept29_case" : ""}${V4 ? ".sept27_case" : ""} (1e-9)`,
+    if (!V7) gate(`${concept}: the ${V4 ? "September 27 " : ""}parts equal summary.json change_at_fixed_specifications${V5 ? ".sept29_case" : ""}${V4 ? ".sept27_case" : ""} (1e-9)`,
       worst < 1e-9, `max |diff| ${worst.toExponential(1)}`);
     // The case's capital return by component (October 5: September 29's and the lineage's change).
     // (October 7: and the items' change on both paths.)
@@ -689,7 +831,7 @@ for (const [concept, profile] of Object.entries(CONCEPTS)) {
     const worstC = Math.max(...ids.flatMap((id) => ["low", "high"].map((e, j) => Math.abs(capOf(e, id) - cap[id].return_bn[j]))));
     gate(`${concept}: each capital component equals summary.json capital_at_end_specifications (1e-9)`, worstC < 1e-9,
       `${ids.length} components, max |diff| ${worstC.toExponential(1)}`);
-    if (V4) {
+    if (V4 && !V7) {
       const changeAt = (e) => partIds.filter((k) => k.startsWith("v4_")).reduce((a, k) => a + E[e].additions_bn[k], 0)
         + ids.reduce((a, id) => a + E[e].capital_bn[id] - cap27(e, id), 0);
       const total = change.total;
@@ -697,7 +839,7 @@ for (const [concept, profile] of Object.entries(CONCEPTS)) {
       gate(`${concept}: the v4 parts and the capital return's change equal change_at_fixed_specifications${V5 ? ".sept29_case" : ""}.total (1e-9)`, worstT < 1e-9,
         `${["low", "high"].map((e) => changeAt(e).toFixed(4)).join("/")}, max |diff| ${worstT.toExponential(1)}`);
     }
-    if (V5) {
+    if (V5 && !V7) {
       const changeAt = (e) => partIds.filter((k) => k.startsWith("v5_")).reduce((a, k) => a + E[e].additions_bn[k], 0)
         + ids.reduce((a, id) => a + E[e].v5_capital_bn[id], 0);
       const total = CH5.total;
@@ -705,7 +847,7 @@ for (const [concept, profile] of Object.entries(CONCEPTS)) {
       gate(`${concept}: the lineage's parts and its capital change equal change_at_fixed_specifications${V6 ? ".oct05_case" : ""}.total (1e-9)`, worstT < 1e-9,
         `${["low", "high"].map((e) => changeAt(e).toFixed(4)).join("/")}, max |diff| ${worstT.toExponential(1)}`);
     }
-    if (V6) {
+    if (V6 && !V7) {
       const ch = summary.change_at_fixed_specifications;
       const changeAt = (e) => partIds.filter((k) => k.startsWith("v6_")).reduce((a, k) => a + E[e].additions_bn[k], 0)
         + ids.reduce((a, id) => a + E[e].v6_capital_bn.union[id] + E[e].v6_capital_bn.lineage[id], 0);
@@ -733,10 +875,29 @@ for (const [concept, profile] of Object.entries(CONCEPTS)) {
         done.push(st.id);
       }
     }
+    if (V7) {
+      // Earlier summary deltas are recorded at v6's shared low end. They are not an oracle at v7's personal end.
+      // All historical steps remain gated by their direct package evaluations above; v7 items have their own oracle.
+      for (const st of STEPS7) {
+        const want = summary.v7.change_by_item[st.id];
+        if (!want) throw new Error(`[BLOCKED] v7 summary has no change for item ${st.id}`);
+        const got = [0, 1].map((e) => avg(e, (x) => x.v6_items[st.id].parts));
+        const union = [0, 1].map((e) => avg(e, (x) => x.v6_items[st.id].union));
+        const cash = [0, 1].map((e) => avg(e, (x) => x.v6_items[st.id].cash));
+        const cashUnion = [0, 1].map((e) => avg(e, (x) => x.v6_items[st.id].cash_union));
+        gate(`${concept}: ${st.id}'s distinct components match v7.change_by_item (1e-9)`,
+          got.every((v, e) => near(v, want.at_end_specifications_bn[e], 1e-9))
+          && union.every((v, e) => near(v, want.union[e], 1e-9))
+          && cash.every((v, e) => near(v, want.cash.at_end_specifications_bn[e], 1e-9))
+          && cashUnion.every((v, e) => near(v, want.cash.union[e], 1e-9)), got.map((v) => v.toFixed(6)).join("/"));
+      }
+    }
   }
   const E = out.concepts[concept].ends;
-  const baseGap = Math.max(...["low", "high"].map((e, j) => Math.abs(E[e].base_bn - bandRow(profile, "schools_case")[j])));
-  gate(`${concept}: the base is the profile's schools_case band, so the ends do not move (1e-4, the file's rounding)`, baseGap < 1e-4,
+  const baseOracle = V7 ? [0, 1].map((e) => mean(SCHOOL_MODELS.map((m, j) => -Engine.evaluate(m, S.stateFor(m, S.MAIN_SPECS[ends[j][e]], base)).welfare_bn)))
+    : bandRow(profile, "schools_case");
+  const baseGap = Math.max(...["low", "high"].map((e, j) => Math.abs(E[e].base_bn - baseOracle[j])));
+  gate(`${concept}: the base is the schools case at ${V7 ? "the live personal ends (1e-9)" : "its band ends (1e-4, file rounding)"}`, baseGap < (V7 ? 1e-9 : 1e-4),
     `max |diff| ${baseGap.toExponential(1)}`);
 }
 if (failed) {

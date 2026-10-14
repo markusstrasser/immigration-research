@@ -15,7 +15,9 @@ Assumed: the group's 2024 per-person position relative to the nation. Three rule
 This is not a measured historical account. No year before 2024 has group taxes,
 benefits or services observed here.
 
-Cases (--case), one entry each in LATER_CASES. sept27, the default, adds the main case of 2026-09-27
+Cases (--case), one entry each in LATER_CASES. The default is oct14, the live personal case, written to derived/oct14/.
+Its historical base and items are separate components; the superseded oct07 concepts are not computed beside it.
+Explicit earlier-case commands remain available for scratch regressions. sept27 adds the main case of 2026-09-27
 as the `*_sept27_*` concepts: the schools case's cost at the case's end specifications under these
 rules, plus each addition carried back with its own national series (see ADDITIONS).
 sept26_schools adds the main case with schools at full average cost (`*_schools_full_*`); sept26
@@ -87,6 +89,7 @@ class Case(NamedTuple):
 SEPT29_LANE = "main_case_2026_09_29"
 OCT05_LANE = "main_case_2026_10_05"
 OCT07_LANE = "main_case_2026_10_07"
+OCT14_LANE = "main_case_2026_10_14"
 LATER_CASES = {"sept26": Case("main_case_2026_09_26", "_sept26_", "adopted_2026_09_24", "_corrected_", "adopted_2026_09_24"),
                "sept26_schools": Case("main_case_schools_full_2026_09_26", "_schools_full_", "adopted_2026_09_26",
                                       "_sept26_", "adopted_2026_09_26"),
@@ -103,12 +106,15 @@ LATER_CASES = {"sept26": Case("main_case_2026_09_26", "_sept26_", "adopted_2026_
                # October 5's parts and the items' on the same schools-case base; case_components.cjs gates that the case
                # less the items is October 5's band (the case lane's oct05_case row).
                "oct07": Case(OCT07_LANE, "_oct07_", "schools_case", "_schools_full_", "adopted_2026_09_26_schools",
-                             "case_components_oct07.json", "adopted_2026_09_27", "oct07", True, True)}
-DEFAULT_CASE = "sept27"
+                             "case_components_oct07.json", "adopted_2026_09_27", "oct07", True, True),
+               "oct14": Case(OCT14_LANE, "_oct14_", "schools_case", "_schools_full_", "adopted_2026_09_26_schools",
+                             "case_components_oct14.json", "adopted_2026_09_27", "oct14", True, True)}
+DEFAULT_CASE = "oct14"
 # October 5: the identified third-plus generation by year (CPS ASEC, cps_g3plus_path.py), the lineage's path.
 G3PLUS_PATH = HERE / "inputs/cps_g3plus_path.csv"
-# v6 (oct07): the concepts carried per member of the lineage the case counts, under the ratio and income rules.
-PER_LINEAGE_MEMBER = ("net_cost_cbo_informed_oct07_low", "net_cost_cbo_informed_oct07_high")
+# The concepts carried per member of each case's lineage, under the ratio and income rules.
+PER_LINEAGE_MEMBER = {case: tuple(f"net_cost_cbo_informed_{case}_{end}" for end in ("low", "high"))
+                      for case in ("oct07", "oct14")}
 # A case's additions and the national series each is carried back with: the account's own source cell
 # (full_account_spending_2026_09_20/derived/categories.csv; the receipt in model.json), real, 2024 = 1,
 # times the group's population-share path, the share path this back-cast gives every line. The capital
@@ -161,6 +167,9 @@ V4_GDP = ("T10105-A:1", 29298.013)            # nominal GDP and its 2024 value i
 def later_cases(case: str) -> list[str]:
     """The cases after September 24 up to and including `case`, in adoption order."""
     names = list(LATER_CASES)
+    if case == "oct14":
+        # Keep the starting schools-case dependency, but compute no superseded consumer case beside the live one.
+        return ["sept26", "sept26_schools", "oct14"]
     return names[:names.index(case) + 1] if case in LATER_CASES else []
 
 
@@ -343,8 +352,19 @@ def v4_series(data: dict, book: pd.ExcelFile, gdp_book: pd.ExcelFile, real: pd.S
             if not -1 < subsidy < 0:
                 raise ValueError(f"[BLOCKED] {lid}: the consolidated subsidy is not a part of housing subsidies ({subsidy})")
             nominal = deficit + subsidy * subsidies
+        elif lid == "other_production_taxes":
+            # The account's production-tax remainder (receipt builder s(1)-s(20)-s(38)-s(4)-s(23)-s(15)).
+            # NIPA 3.5 line 17 is not this total; retain every component and gate the result to the account.
+            nominal = cells("T30500-A:1") - cells("T30500-A:20;T30500-A:38;T30500-A:4;T30500-A:23;T30500-A:15")
         elif lid in V4_RECEIPT_CELLS:
             nominal = cells(V4_RECEIPT_CELLS[lid])
+            if lid in ("corporate_capital", "corporate_labor"):
+                # CBO's incidence splits one measured corporate-tax line into two account lines. Each follows
+                # the same national series, with its 2024 share fixed; neither equals the whole BEA line alone.
+                corporate = sum(receipt_national[x] for x in ("corporate_capital", "corporate_labor"))
+                if abs(corporate - nominal[2024]) > 1e-3 or abs(want - receipt_national[lid]) > 1e-9:
+                    raise ValueError(f"[BLOCKED] {lid}: corporate incidence parts do not reconstruct their national line")
+                want = nominal[2024]
             if lid in V4_CARVED:
                 if not 0 < want <= nominal[2024] + 1e-3:
                     raise ValueError(f"[BLOCKED] {lid} {want} is not a part of {V4_RECEIPT_CELLS[lid]} {nominal[2024]}")
@@ -445,29 +465,31 @@ def anchors(allocation: str) -> dict[str, float]:
                 gap=-float(a.normalized_gap_bn))
 
 
-def per_lineage_member(annual: pd.DataFrame) -> None:
-    """v6 (oct07): adds `lineage_millions`, the lineage's count by year, and each PER_LINEAGE_MEMBER concept per
+def per_lineage_member(annual: pd.DataFrame, case: str) -> None:
+    """Adds `lineage_millions`, the lineage's count by year, and each case's PER_LINEAGE_MEMBER concept per
     lineage member under the ratio and income rules ($, 2024 dollars). The count is the union on the group's path, put
     on the account's frame (the group's count times the case's union over the group's 2024 count), plus the added
     descendants on the identified third-plus path (2024 = 1), the lineage rule above; both counts are the case lane's.
     The frame is a constant factor, so a change against 2024 is the same on the group's frame. Gates: the union and the
     added descendants make the case's per-member population (1e-9 million), and 2024 per member is the case's
-    v6.per_member_usd.set at each end ($0.01)."""
-    summary = json.loads((FISCAL / OCT07_LANE / "derived/summary.json").read_text())
-    counts, per_member = summary["v5"]["lineage"]["counts"], summary["v6"]["per_member_usd"]
+    version's per_member_usd.set at each end ($0.01)."""
+    lane = LATER_CASES[case].lane
+    version = "v7" if case == "oct14" else "v6"
+    summary = json.loads((FISCAL / lane / "derived/summary.json").read_text())
+    counts, per_member = summary["v5"]["lineage"]["counts"], summary[version]["per_member_usd"]
     union, added, lineage = (counts[k] / 1e6 for k in ("account_union", "added", "lineage_population"))
     if abs(union + added - lineage) > 1e-9 or abs(per_member["population"] / 1e6 - lineage) > 1e-9:
-        raise ValueError(f"[BLOCKED] {OCT07_LANE}: its union and added people are not its per-member population")
+        raise ValueError(f"[BLOCKED] {lane}: its union and added people are not its per-member population")
     group, g3 = annual["group_millions"], annual["g3plus_millions_cps"]
     count = group * union / group[2024] + added * g3 / g3[2024]
     annual["lineage_millions"] = count
-    for name, want in zip(PER_LINEAGE_MEMBER, per_member["set"]):
+    for name, want in zip(PER_LINEAGE_MEMBER[case], per_member["set"]):
         for rule in ("ratio", "income"):
             column = f"{name}__{rule}__per_lineage_member_usd"
             annual[column] = annual[f"{name}__{rule}"] * 1e3 / count
             if abs(annual.loc[2024, column] - want) > 0.01:
                 raise ValueError(f"[BLOCKED] {column} is {annual.loc[2024, column]} in 2024, not the case's "
-                                 f"v6.per_member_usd.set {want}")
+                                 f"{version}.per_member_usd.set {want}")
 
 
 def main() -> None:
@@ -475,7 +497,7 @@ def main() -> None:
     parser.add_argument("--bea-dir", type=Path,
                         default=ROOT / "sources/immigration-fiscal/data/external/bea_nipa")
     parser.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24"), default=DEFAULT_CASE,
-                        help="a case after September 24 (default: sept27, long-run road and park responses, rental "
+                        help="a case after September 24 (default: oct14, the live personal case; sept27: long-run road and park responses, rental "
                              "assistance, the enterprises and the return on public capital; oct07: main case v6, "
                              "October 5 plus the items; oct05: the main case "
                              "adopted 2026-10-05, v5, with the lineage; sept29: the main case adopted 2026-09-29, "
@@ -483,7 +505,7 @@ def main() -> None:
                              "response, 0.63-0.66) or sept24: the files as of 2026-09-24")
     parser.add_argument("--out-dir", type=Path, default=None,
                         help="default: derived/, or the case's own directory under it (sept29: derived/sept29/; oct05: "
-                             "derived/oct05/; oct07: derived/oct07/)")
+                             "derived/oct05/; oct07: derived/oct07/; oct14: derived/oct14/)")
     args = parser.parse_args()
     if args.out_dir is None:
         own = LATER_CASES[args.case].out if args.case in LATER_CASES else None
@@ -595,8 +617,8 @@ def main() -> None:
             if not np.isclose(annual.loc[2024, f"{name}__{rule}"], value, rtol=1e-6):
                 raise ValueError(f"[BLOCKED] {name}/{rule} does not reproduce its 2024 anchor: "
                                  f"{annual.loc[2024, f'{name}__{rule}']} vs {value}")
-    if args.case == "oct07":
-        per_lineage_member(annual)
+    if args.case in PER_LINEAGE_MEMBER:
+        per_lineage_member(annual, args.case)
     args.out_dir.mkdir(parents=True, exist_ok=True)
     annual.round(4).to_csv(args.out_dir / "backcast_annual.csv", index_label="year")
 

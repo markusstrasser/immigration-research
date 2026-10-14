@@ -381,3 +381,77 @@ is inside national expenditure but was not paid in proportion to population. Tot
 current expenditure is a coarse scaler for the benefits and services actually charged
 in the net-cost cases. Receipts need not move one for one with income. A measured
 series requires rebuilding the account on each CPS ASEC file from 2005.
+
+## Live v7 propagation (oct14), 2026-10-14
+
+The live default is now `oct14`. Earlier commands and numeric sections above describe their dated runs; do not
+regenerate those archived outputs during the live run. `case_components.cjs` writes only
+`derived/case_components_oct14.json`, and `backcast.py` writes only the four files in `derived/oct14/`. Its live
+concepts are `net_cost_cbo_informed_oct14` and `net_cost_full_proportional_oct14`, beside the unchanged schools-case
+dependencies; it does not compute the superseded oct07 consumer beside oct14.
+
+R5 takes the case package's 32 personal specifications in its existing numbering. Every historical step is evaluated
+at those personal ends. The old summaries describe the shared low end, so their fixed-end deltas are not substituted
+for evaluations at the new ends. The schools base, every historical addition, each item step and the final total
+remain gated against their directly evaluated package costs (1e-9); the live profile bands match
+`main_case_bands.csv` adopted rows at the existing 1e-4 tolerance.
+
+R6 and R7 are distinct components, named `v6_<item>_<union|lineage>_<line>` to keep the existing debt consumer
+contract. R6 follows the item registry parts; R7 uses the whole targets in `ITEM_DETAIL`, because these four receipts
+responded at zero before the item. The tagged components must add to each evaluated line move at 1e-9. Union
+components follow the union path and lineage components the identified third-plus path. Corporate capital and labor
+follow the national corporate-tax series, with their incidence-part totals gated to the whole. Other-production
+taxes follow the receipt builder remainder, NIPA 3.5 lines 1−20−38−4−23−15, gated to the account national; line 17
+alone is not the remainder.
+
+The new job-capital terms inherit the back-cast's fixed-2024 attribution rule: the measured national tax series
+provides their historical path; the group's earlier industry mix and job-capital taxes are not re-measured.
+
+Items 7 (`white_end_tax_keys`) and 8 (`row4_frame`) follow their registry parts on the same union/lineage paths.
+The set and cash shifts are priced separately. Row 4's Social Security and Part A changes retain the existing
+`*_social_security_accrual` / `*_medicare_part_a_accrual` component convention (and benefits/cash rests where
+present), so the debt consumer removes set-only pension shifts when forming cash. Ordinary federal-income-tax
+parts keep their line names; the debt consumer reads their actual set-minus-cash tax. The lineage child credits
+follow the lineage-tagged parts that the final case publishes.
+
+`per_lineage_member()` divides the live annual values by `lineage_millions`, including both the union and added
+people on their existing paths. The 2024 population must match the case (1e-9 million), and both ratio/income
+per-member figures must match `summary.json` `v7.per_member_usd.set` within $0.01. Earlier explicit-case regression
+commands use scratch output directories and preserve archived files.
+
+Live run and reproduction commands (after CASE_FINAL and adoption):
+
+```sh
+node infra/immigration-fiscal/historical_backcast_2026_09_20/case_components.cjs --case oct14
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/backcast.py --case oct14
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/historical_backcast_2026_09_20/test_backcast.py -q --import-mode=importlib
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/historical_backcast_2026_09_20 \
+  "node {lane}/case_components.cjs --case oct14" \
+  "uv run --no-project python3 {lane}/backcast.py --case oct14" \
+  "uv run --no-project python3 -m pytest {lane}/test_backcast.py -q --import-mode=importlib"
+```
+
+Log (append-only):
+
+- 2026-10-14 — v7 adopted at `148ed1ea`; CASE_FINAL and the final Consumers R5–R9 plus adoption decision read.
+  The four live case inputs (set/cash payloads, summary and bands) byte-match that commit. The Node build passes
+  48 gates: the adopted band at 339.5520 / 423.6493bn and cash set at 264.4256 / 348.5228bn (CSV oracle tolerance
+  1e-4), every end's components and each new item's set/cash, union/lineage parts at 1e-9. The per-lineage-member
+  2024 figures are $7,942.3257 / $9,909.4122 under both ratio and income, matching `v7.per_member_usd.set` within
+  $0.01; `lineage_millions` is 42.7522 in the rounded annual file. `test_backcast.py`: 15 passed in 39.27s,
+  including scratch rebuilds of every archived case. No earlier derived output changed.
+
+The modeled live totals, trillions of 2024 dollars, from `derived/oct14/backcast_windows.csv` (the
+`net_cost_cbo_informed_oct14_{low,high}` rows; capital return included as a resource cost, no interest):
+
+| Rule | 2015–2024 | 2010–2024 | 2005–2024 |
+|---|---|---|---|
+| flat | 3.2212 / 4.0185 | 4.6933 / 5.8548 | 5.9572 / 7.4312 |
+| ratio | 3.0072 / 3.6966 | 4.2467 / 5.2261 | 5.1362 / 6.3629 |
+| income | 3.3048 / 3.9942 | 4.8313 / 5.8106 | 5.9520 / 7.1787 |
+
+These are back-cast rules on measured national/population paths, not observed historical group accounts.
+
+- 2026-10-14 18:18:43 JST (`date`) — live reproduction chain (Node, Python and the full scratch-regression pytest
+  command), with `GIT_OPTIONAL_LOCKS=0` and `PYTHONDONTWRITEBYTECODE=1`: IDENTICAL 37/37, exit 0. Archived outputs
+  preserved. Git diff check passes. No Git metadata writes, stages or commits by this worker.
