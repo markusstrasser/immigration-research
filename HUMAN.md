@@ -107,3 +107,18 @@ built from the adopted fixes. Each ask has my recommendation; the work proceeds 
 - **Push (recommend: yes, after the v8 docs pass audits clean).** main is 22 commits ahead of origin (ed8fc58b); they
   carry new findings (the corrected world ledger, comparators, social rows, back-cast, coverage) and the repo is
   public.
+- **Item 6's low end (recommend: keep corporate taxes at response 1; correct the stated premise).** The low end
+  holds if the capital serving the group's jobs leaves the US base and its owners earn the same after-tax return
+  elsewhere, which is the rule the payload already applies; v7's decision called it "rents scale with the market",
+  which is wrong. The pure-rent share φ is unmeasured for 2024. Fixed rents would raise the low end by φ × $28.4bn
+  (over $5bn once φ > 0.18); rents vanishing with demand would lower it by up to $13.8bn. Both go beside. Evidence:
+  `infra/immigration-fiscal/corporate_rents_2026_10_14/RESULT.md`.
+- **The mixed-unit removal in v8's central (recommend: yes, as built).** It computes what happens to the
+  non-members who stay in mixed units (their own returns, state taxes, refunds, benefits, consumption, property):
+  +$10.7bn at the low end, +$14.5bn at the high, SE $4.4bn, replacing item 5b and the tax recomputation D. The lane
+  itself recommended keeping it as an arm; I put it in because leaving those consequences of the same removal at
+  zero is a convention zero. Off, it reproduces v7's items. Evidence:
+  `infra/immigration-fiscal/mixed_unit_removal_2026_10_14/RESULT.md`.
+- **Who wins (recommend: the stationary financing frame as the verdict, the cohort frame beside).** With every
+  channel and the corrected payer pool, 4.6% / 8.4% of other residents come out ahead under rules a / b (was 19.6% /
+  18.7%); the cohort frame moves that by under 0.2 points. Evidence: `winners_losers_2026_09_24/RESULT.md` (P7).
