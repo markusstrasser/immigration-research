@@ -1,0 +1,1088 @@
+{
+  "key": "oct14",
+  "case": "main_case_2026_10_14",
+  "allocation": "personal",
+  "specifications": [
+    16,
+    11
+  ],
+  "ends": {
+    "low": {
+      "coverage_bn": 11.093426119946695,
+      "case_with_coverage_bn": 350.64544394947353,
+      "cps_replicate_se_bn": 0.4302443917140886,
+      "change_from_central_bn": 0.0,
+      "over_5bn_from_central": false
+    },
+    "high": {
+      "coverage_bn": 14.83042387562593,
+      "case_with_coverage_bn": 438.47968457613274,
+      "cps_replicate_se_bn": 0.40905531285379565,
+      "change_from_central_bn": 0.0,
+      "over_5bn_from_central": false
+    }
+  },
+  "legacy_positive_control": {
+    "low": {
+      "coverage_bn": 15.21084452173455,
+      "case_with_coverage_bn": 354.7628623512614
+    },
+    "high": {
+      "coverage_bn": 18.395079172508154,
+      "case_with_coverage_bn": 442.04433987301496
+    }
+  },
+  "scenarios": {
+    "central": {
+      "ends": {
+        "low": {
+          "coverage_bn": 11.093426119946695,
+          "case_with_coverage_bn": 350.64544394947353,
+          "cps_replicate_se_bn": 0.4302443917140886,
+          "change_from_central_bn": 0.0,
+          "over_5bn_from_central": false
+        },
+        "high": {
+          "coverage_bn": 14.83042387562593,
+          "case_with_coverage_bn": 438.47968457613274,
+          "cps_replicate_se_bn": 0.40905531285379565,
+          "change_from_central_bn": 0.0,
+          "over_5bn_from_central": false
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 1.9367013051656876,
+            "cps_replicate_se_bn": 0.1715396087323252
+          },
+          "G2": {
+            "coverage_bn": 5.441409051744222,
+            "cps_replicate_se_bn": 0.31275954117586036
+          },
+          "G3plus": {
+            "coverage_bn": 3.7153157630367857,
+            "cps_replicate_se_bn": 0.23002042956423022
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 2.787534916272239,
+            "cps_replicate_se_bn": 0.151218935853125
+          },
+          "G2": {
+            "coverage_bn": 7.013719100337368,
+            "cps_replicate_se_bn": 0.3079971375250613
+          },
+          "G3plus": {
+            "coverage_bn": 5.029169859016324,
+            "cps_replicate_se_bn": 0.21768478166562447
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 446105.1075376299,
+        "G2": 824190.8641341948,
+        "G3plus": 667194.5884692172,
+        "added": 0.0
+      }
+    },
+    "pes_only": {
+      "ends": {
+        "low": {
+          "coverage_bn": 9.988391808576257,
+          "case_with_coverage_bn": 349.5404096381031,
+          "cps_replicate_se_bn": 0.43237588248105885,
+          "change_from_central_bn": -1.1050343113704386,
+          "over_5bn_from_central": false
+        },
+        "high": {
+          "coverage_bn": 13.661254789694771,
+          "case_with_coverage_bn": 437.3105154902016,
+          "cps_replicate_se_bn": 0.41170300511416985,
+          "change_from_central_bn": -1.1691690859311592,
+          "over_5bn_from_central": false
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 1.9266407044416503,
+            "cps_replicate_se_bn": 0.17135403776577313
+          },
+          "G2": {
+            "coverage_bn": 4.933591833223493,
+            "cps_replicate_se_bn": 0.3175920355341015
+          },
+          "G3plus": {
+            "coverage_bn": 3.1281592709111146,
+            "cps_replicate_se_bn": 0.23196319467345822
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 2.7764134669674188,
+            "cps_replicate_se_bn": 0.1509906010834071
+          },
+          "G2": {
+            "coverage_bn": 6.477224392782454,
+            "cps_replicate_se_bn": 0.3134734388093432
+          },
+          "G3plus": {
+            "coverage_bn": 4.407616929944899,
+            "cps_replicate_se_bn": 0.22069485909111275
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 445762.00883126404,
+        "G2": 805374.3247946325,
+        "G3plus": 644630.8982276763,
+        "added": 0.0
+      }
+    },
+    "da_low": {
+      "ends": {
+        "low": {
+          "coverage_bn": -15.861444622360922,
+          "case_with_coverage_bn": 323.6905732071659,
+          "cps_replicate_se_bn": 0.344957736425915,
+          "change_from_central_bn": -26.95487074230762,
+          "over_5bn_from_central": true
+        },
+        "high": {
+          "coverage_bn": -16.21956597344311,
+          "case_with_coverage_bn": 407.42969472706375,
+          "cps_replicate_se_bn": 0.32989362856483795,
+          "change_from_central_bn": -31.049989849069043,
+          "over_5bn_from_central": true
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 0.7823856560844383,
+            "cps_replicate_se_bn": 0.14620905016976407
+          },
+          "G2": {
+            "coverage_bn": -8.58879702986279,
+            "cps_replicate_se_bn": 0.26269321893599623
+          },
+          "G3plus": {
+            "coverage_bn": -8.055033248582571,
+            "cps_replicate_se_bn": 0.22936333412547324
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 1.1208274077026863,
+            "cps_replicate_se_bn": 0.13339758041594824
+          },
+          "G2": {
+            "coverage_bn": -8.996315845942533,
+            "cps_replicate_se_bn": 0.25610483692522157
+          },
+          "G3plus": {
+            "coverage_bn": -8.344077535203262,
+            "cps_replicate_se_bn": 0.22344798676096644
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 186227.99999375595,
+        "G2": -372615.6465877973,
+        "G3plus": -272769.4721491869,
+        "added": 0.0
+      }
+    },
+    "da_middle": {
+      "ends": {
+        "low": {
+          "coverage_bn": 5.957325050892311,
+          "case_with_coverage_bn": 345.5093428804192,
+          "cps_replicate_se_bn": 0.26709852603654366,
+          "change_from_central_bn": -5.1361010690543845,
+          "over_5bn_from_central": true
+        },
+        "high": {
+          "coverage_bn": 7.7821864309513895,
+          "case_with_coverage_bn": 431.43144713145824,
+          "cps_replicate_se_bn": 0.24739216558402116,
+          "change_from_central_bn": -7.048237444674541,
+          "over_5bn_from_central": true
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 1.5134721742432204,
+            "cps_replicate_se_bn": 0.12911396929775437
+          },
+          "G2": {
+            "coverage_bn": 2.3889921654650794,
+            "cps_replicate_se_bn": 0.1726924185992411
+          },
+          "G3plus": {
+            "coverage_bn": 2.054860711184011,
+            "cps_replicate_se_bn": 0.13873429247076613
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 2.052278124395991,
+            "cps_replicate_se_bn": 0.1133163489186502
+          },
+          "G2": {
+            "coverage_bn": 3.0406817782628623,
+            "cps_replicate_se_bn": 0.16530612428940625
+          },
+          "G3plus": {
+            "coverage_bn": 2.689226528292537,
+            "cps_replicate_se_bn": 0.12925261504534066
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 282221.00610008783,
+        "G2": 296889.49204405677,
+        "G3plus": 294912.2099374094,
+        "added": 0.0
+      }
+    },
+    "da_high": {
+      "ends": {
+        "low": {
+          "coverage_bn": 22.644615839243322,
+          "case_with_coverage_bn": 362.1966336687702,
+          "cps_replicate_se_bn": 0.31411097507358837,
+          "change_from_central_bn": 11.551189719296627,
+          "over_5bn_from_central": true
+        },
+        "high": {
+          "coverage_bn": 26.39011561958646,
+          "case_with_coverage_bn": 450.0393763200933,
+          "cps_replicate_se_bn": 0.29313290683623083,
+          "change_from_central_bn": 11.55969174396053,
+          "over_5bn_from_central": true
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 2.1145828683011154,
+            "cps_replicate_se_bn": 0.152733762591865
+          },
+          "G2": {
+            "coverage_bn": 10.86806098723092,
+            "cps_replicate_se_bn": 0.1941226536795157
+          },
+          "G3plus": {
+            "coverage_bn": 9.661971983711284,
+            "cps_replicate_se_bn": 0.15846900605586786
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 2.852511286383248,
+            "cps_replicate_se_bn": 0.13905531388652406
+          },
+          "G2": {
+            "coverage_bn": 12.45135817854528,
+            "cps_replicate_se_bn": 0.19018765180783873
+          },
+          "G3plus": {
+            "coverage_bn": 11.08624615465793,
+            "cps_replicate_se_bn": 0.14465989163115966
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 380593.9028877476,
+        "G2": 876926.2373928137,
+        "G3plus": 772966.5848948145,
+        "added": 0.0
+      }
+    },
+    "pes_nce_minus_1se": {
+      "ends": {
+        "low": {
+          "coverage_bn": 13.399475708360018,
+          "case_with_coverage_bn": 352.95149353788685,
+          "cps_replicate_se_bn": 0.4553446292874746,
+          "change_from_central_bn": 2.306049588413323,
+          "over_5bn_from_central": false
+        },
+        "high": {
+          "coverage_bn": 17.808942455648957,
+          "case_with_coverage_bn": 441.4582031561558,
+          "cps_replicate_se_bn": 0.43412651101991573,
+          "change_from_central_bn": 2.9785185800230263,
+          "over_5bn_from_central": false
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 2.293226153041869,
+            "cps_replicate_se_bn": 0.1839611850006084
+          },
+          "G2": {
+            "coverage_bn": 6.524133779809008,
+            "cps_replicate_se_bn": 0.3332315311246526
+          },
+          "G3plus": {
+            "coverage_bn": 4.582115775509141,
+            "cps_replicate_se_bn": 0.24316335847393156
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 3.327001598646581,
+            "cps_replicate_se_bn": 0.16429397678201224
+          },
+          "G2": {
+            "coverage_bn": 8.350798491402598,
+            "cps_replicate_se_bn": 0.32871527883323887
+          },
+          "G3plus": {
+            "coverage_bn": 6.1311423655997785,
+            "cps_replicate_se_bn": 0.23111528730030528
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 532886.4926410656,
+        "G2": 953075.0685810128,
+        "G3plus": 781145.2138790416,
+        "added": 0.0
+      }
+    },
+    "pes_nce_plus_1se": {
+      "ends": {
+        "low": {
+          "coverage_bn": 8.835590679543163,
+          "case_with_coverage_bn": 348.38760850907,
+          "cps_replicate_se_bn": 0.407381297974411,
+          "change_from_central_bn": -2.2578354404035323,
+          "over_5bn_from_central": false
+        },
+        "high": {
+          "coverage_bn": 11.913265174748364,
+          "case_with_coverage_bn": 435.5625258752552,
+          "cps_replicate_se_bn": 0.3861865923142524,
+          "change_from_central_bn": -2.9171587008775663,
+          "over_5bn_from_central": false
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 1.5863074100404406,
+            "cps_replicate_se_bn": 0.16074870649792353
+          },
+          "G2": {
+            "coverage_bn": 4.382197070449699,
+            "cps_replicate_se_bn": 0.2939716947572101
+          },
+          "G3plus": {
+            "coverage_bn": 2.867086199053024,
+            "cps_replicate_se_bn": 0.2183823456304194
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 2.257462708972489,
+            "cps_replicate_se_bn": 0.1396785347733238
+          },
+          "G2": {
+            "coverage_bn": 5.705385349176758,
+            "cps_replicate_se_bn": 0.28901067362307886
+          },
+          "G3plus": {
+            "coverage_bn": 3.950417116599116,
+            "cps_replicate_se_bn": 0.2058841039335598
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 360874.6581018587,
+        "G2": 698046.2839864632,
+        "G3plus": 555566.3731416968,
+        "added": 0.0
+      }
+    },
+    "proportional_pricing": {
+      "ends": {
+        "low": {
+          "coverage_bn": 15.992085974484594,
+          "case_with_coverage_bn": 355.54410380401146,
+          "cps_replicate_se_bn": 0.10081998122365449,
+          "change_from_central_bn": 4.8986598545378985,
+          "over_5bn_from_central": false
+        },
+        "high": {
+          "coverage_bn": 19.782590476548773,
+          "case_with_coverage_bn": 443.4318511770556,
+          "cps_replicate_se_bn": 0.12179674779912777,
+          "change_from_central_bn": 4.952166600922842,
+          "over_5bn_from_central": false
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 2.0184334746186883,
+            "cps_replicate_se_bn": 0.0364083132450396
+          },
+          "G2": {
+            "coverage_bn": 7.93502780685092,
+            "cps_replicate_se_bn": 0.10529046753251436
+          },
+          "G3plus": {
+            "coverage_bn": 6.038624693014986,
+            "cps_replicate_se_bn": 0.08188935044410164
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 2.967060431565139,
+            "cps_replicate_se_bn": 0.05351955710593526
+          },
+          "G2": {
+            "coverage_bn": 9.51625055095199,
+            "cps_replicate_se_bn": 0.12627182841139598
+          },
+          "G3plus": {
+            "coverage_bn": 7.299279494031645,
+            "cps_replicate_se_bn": 0.09898499854901739
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 446105.1075376299,
+        "G2": 824190.8641341948,
+        "G3plus": 667194.5884692172,
+        "added": 0.0
+      }
+    },
+    "age_priced_all_age_rate": {
+      "ends": {
+        "low": {
+          "coverage_bn": 15.156026551072241,
+          "case_with_coverage_bn": 354.70804438059906,
+          "cps_replicate_se_bn": 0.1169036041703138,
+          "change_from_central_bn": 4.062600431125546,
+          "over_5bn_from_central": false
+        },
+        "high": {
+          "coverage_bn": 18.922896448809333,
+          "case_with_coverage_bn": 442.5721571493162,
+          "cps_replicate_se_bn": 0.11263006169721701,
+          "change_from_central_bn": 4.092472573183402,
+          "over_5bn_from_central": false
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 2.1437792344522877,
+            "cps_replicate_se_bn": 0.10271850234254361
+          },
+          "G2": {
+            "coverage_bn": 6.795281875067813,
+            "cps_replicate_se_bn": 0.053482418662317344
+          },
+          "G3plus": {
+            "coverage_bn": 6.21696544155214,
+            "cps_replicate_se_bn": 0.02990345827092471
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 3.2067676954119295,
+            "cps_replicate_se_bn": 0.09831449322924536
+          },
+          "G2": {
+            "coverage_bn": 8.152685987427306,
+            "cps_replicate_se_bn": 0.052066378002905526
+          },
+          "G3plus": {
+            "coverage_bn": 7.563442765970097,
+            "cps_replicate_se_bn": 0.03142044267275102
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 501497.6853092207,
+        "G2": 675653.9112166039,
+        "G3plus": 651396.1965509288,
+        "added": 0.0
+      }
+    },
+    "proportional": {
+      "ends": {
+        "low": {
+          "coverage_bn": 14.669662931165806,
+          "case_with_coverage_bn": 354.22168076069266,
+          "cps_replicate_se_bn": 0.04393599344761961,
+          "change_from_central_bn": 3.576236811219111,
+          "over_5bn_from_central": false
+        },
+        "high": {
+          "coverage_bn": 18.26313656915156,
+          "case_with_coverage_bn": 441.9123972696584,
+          "cps_replicate_se_bn": 0.0554519593961376,
+          "change_from_central_bn": 3.4327126935256285,
+          "over_5bn_from_central": false
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 2.269061031511592,
+            "cps_replicate_se_bn": 0.018868078336029524
+          },
+          "G2": {
+            "coverage_bn": 6.504964816545658,
+            "cps_replicate_se_bn": 0.036243218241670004
+          },
+          "G3plus": {
+            "coverage_bn": 5.895637083108556,
+            "cps_replicate_se_bn": 0.032815249724399295
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 3.3354783737305396,
+            "cps_replicate_se_bn": 0.027735731375087266
+          },
+          "G2": {
+            "coverage_bn": 7.80121715086246,
+            "cps_replicate_se_bn": 0.0434654488876283
+          },
+          "G3plus": {
+            "coverage_bn": 7.126441044558559,
+            "cps_replicate_se_bn": 0.03966593248986866
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 501497.6853092207,
+        "G2": 675653.9112166039,
+        "G3plus": 651396.1965509288,
+        "added": 0.0
+      }
+    },
+    "post_arrival_rate": {
+      "ends": {
+        "low": {
+          "coverage_bn": 11.340178102203355,
+          "case_with_coverage_bn": 350.8921959317302,
+          "cps_replicate_se_bn": 0.42381125922399876,
+          "change_from_central_bn": 0.24675198225665973,
+          "over_5bn_from_central": false
+        },
+        "high": {
+          "coverage_bn": 15.263597093306434,
+          "case_with_coverage_bn": 438.91285779381326,
+          "cps_replicate_se_bn": 0.4026573220971699,
+          "change_from_central_bn": 0.433173217680503,
+          "over_5bn_from_central": false
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 2.183453287422347,
+            "cps_replicate_se_bn": 0.1840042616921639
+          },
+          "G2": {
+            "coverage_bn": 5.441409051744222,
+            "cps_replicate_se_bn": 0.31275954117586036
+          },
+          "G3plus": {
+            "coverage_bn": 3.7153157630367857,
+            "cps_replicate_se_bn": 0.23002042956423022
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 3.2207081339527406,
+            "cps_replicate_se_bn": 0.16026684628240925
+          },
+          "G2": {
+            "coverage_bn": 7.013719100337368,
+            "cps_replicate_se_bn": 0.3079971375250613
+          },
+          "G3plus": {
+            "coverage_bn": 5.029169859016324,
+            "cps_replicate_se_bn": 0.21768478166562447
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 537095.1659288025,
+        "G2": 824190.8641341948,
+        "G3plus": 667194.5884692172,
+        "added": 0.0
+      }
+    },
+    "arrival27_none_pre2020": {
+      "ends": {
+        "low": {
+          "coverage_bn": 11.068911055494766,
+          "case_with_coverage_bn": 350.6209288850216,
+          "cps_replicate_se_bn": 0.4305363629235546,
+          "change_from_central_bn": -0.02451506445192919,
+          "over_5bn_from_central": false
+        },
+        "high": {
+          "coverage_bn": 14.796506417237516,
+          "case_with_coverage_bn": 438.44576711774437,
+          "cps_replicate_se_bn": 0.4092855066660351,
+          "change_from_central_bn": -0.03391745838841409,
+          "over_5bn_from_central": false
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 1.9121862407137584,
+            "cps_replicate_se_bn": 0.17184116759246523
+          },
+          "G2": {
+            "coverage_bn": 5.441409051744222,
+            "cps_replicate_se_bn": 0.31275954117586036
+          },
+          "G3plus": {
+            "coverage_bn": 3.7153157630367857,
+            "cps_replicate_se_bn": 0.23002042956423022
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 2.753617457883824,
+            "cps_replicate_se_bn": 0.15186758613671497
+          },
+          "G2": {
+            "coverage_bn": 7.013719100337368,
+            "cps_replicate_se_bn": 0.3079971375250613
+          },
+          "G3plus": {
+            "coverage_bn": 5.029169859016324,
+            "cps_replicate_se_bn": 0.21768478166562447
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 441397.52358743944,
+        "G2": 824190.8641341948,
+        "G3plus": 667194.5884692172,
+        "added": 0.0
+      }
+    },
+    "arrival27_all_pre2020": {
+      "ends": {
+        "low": {
+          "coverage_bn": 11.265031571110203,
+          "case_with_coverage_bn": 350.8170494006371,
+          "cps_replicate_se_bn": 0.4307632017229496,
+          "change_from_central_bn": 0.1716054511635079,
+          "over_5bn_from_central": false
+        },
+        "high": {
+          "coverage_bn": 15.06784608434484,
+          "case_with_coverage_bn": 438.7171067848517,
+          "cps_replicate_se_bn": 0.4099791066894495,
+          "change_from_central_bn": 0.2374222087189093,
+          "over_5bn_from_central": false
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 2.1083067563291946,
+            "cps_replicate_se_bn": 0.17580373289216542
+          },
+          "G2": {
+            "coverage_bn": 5.441409051744222,
+            "cps_replicate_se_bn": 0.31275954117586036
+          },
+          "G3plus": {
+            "coverage_bn": 3.7153157630367857,
+            "cps_replicate_se_bn": 0.23002042956423022
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 3.0249571249911473,
+            "cps_replicate_se_bn": 0.15351301036108306
+          },
+          "G2": {
+            "coverage_bn": 7.013719100337368,
+            "cps_replicate_se_bn": 0.3079971375250613
+          },
+          "G3plus": {
+            "coverage_bn": 5.029169859016324,
+            "cps_replicate_se_bn": 0.21768478166562447
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 479058.19518896344,
+        "G2": 824190.8641341948,
+        "G3plus": 667194.5884692172,
+        "added": 0.0
+      }
+    },
+    "added_white": {
+      "ends": {
+        "low": {
+          "coverage_bn": 10.761064688334312,
+          "case_with_coverage_bn": 350.3130825178612,
+          "cps_replicate_se_bn": 0.43021323591608013,
+          "change_from_central_bn": -0.33236143161238374,
+          "over_5bn_from_central": false
+        },
+        "high": {
+          "coverage_bn": 14.407190312507367,
+          "case_with_coverage_bn": 438.0564510130142,
+          "cps_replicate_se_bn": 0.4090560584027277,
+          "change_from_central_bn": -0.4232335631185631,
+          "over_5bn_from_central": false
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 1.9367013051656876,
+            "cps_replicate_se_bn": 0.1715396087323252
+          },
+          "G2": {
+            "coverage_bn": 5.441409051744222,
+            "cps_replicate_se_bn": 0.31275954117586036
+          },
+          "G3plus": {
+            "coverage_bn": 3.7153157630367857,
+            "cps_replicate_se_bn": 0.23002042956423022
+          },
+          "added": {
+            "coverage_bn": -0.3323614316123839,
+            "cps_replicate_se_bn": 0.0015263206351724095
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 2.787534916272239,
+            "cps_replicate_se_bn": 0.151218935853125
+          },
+          "G2": {
+            "coverage_bn": 7.013719100337368,
+            "cps_replicate_se_bn": 0.3079971375250613
+          },
+          "G3plus": {
+            "coverage_bn": 5.029169859016324,
+            "cps_replicate_se_bn": 0.21768478166562447
+          },
+          "added": {
+            "coverage_bn": -0.4232335631185631,
+            "cps_replicate_se_bn": 0.001583635909297868
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 446105.1075376299,
+        "G2": 824190.8641341948,
+        "G3plus": 667194.5884692172,
+        "added": -42276.02566934397
+      }
+    },
+    "birthday_younger": {
+      "ends": {
+        "low": {
+          "coverage_bn": 11.038464162955268,
+          "case_with_coverage_bn": 350.5904819924821,
+          "cps_replicate_se_bn": 0.4310149546304029,
+          "change_from_central_bn": -0.05496195699142703,
+          "over_5bn_from_central": false
+        },
+        "high": {
+          "coverage_bn": 14.775349265430252,
+          "case_with_coverage_bn": 438.42460996593707,
+          "cps_replicate_se_bn": 0.4097357521654489,
+          "change_from_central_bn": -0.055074610195678275,
+          "over_5bn_from_central": false
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 1.9368208042109827,
+            "cps_replicate_se_bn": 0.17179229093863974
+          },
+          "G2": {
+            "coverage_bn": 5.4128413917680644,
+            "cps_replicate_se_bn": 0.31325504672145277
+          },
+          "G3plus": {
+            "coverage_bn": 3.6888019669762224,
+            "cps_replicate_se_bn": 0.2298948820007887
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 2.78923678504994,
+            "cps_replicate_se_bn": 0.15145464418307664
+          },
+          "G2": {
+            "coverage_bn": 6.983891362966223,
+            "cps_replicate_se_bn": 0.30841850302076557
+          },
+          "G3plus": {
+            "coverage_bn": 5.00222111741409,
+            "cps_replicate_se_bn": 0.21758663796764183
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 446926.3921397843,
+        "G2": 822997.0320314994,
+        "G3plus": 666446.9743485437,
+        "added": 0.0
+      }
+    },
+    "birthday_older": {
+      "ends": {
+        "low": {
+          "coverage_bn": 12.218529710124326,
+          "case_with_coverage_bn": 351.77054753965115,
+          "cps_replicate_se_bn": 0.4241463289887989,
+          "change_from_central_bn": 1.1251035901776305,
+          "over_5bn_from_central": false
+        },
+        "high": {
+          "coverage_bn": 15.957833543160998,
+          "case_with_coverage_bn": 439.6070942436678,
+          "cps_replicate_se_bn": 0.4045885468651862,
+          "change_from_central_bn": 1.1274096675350673,
+          "over_5bn_from_central": false
+        }
+      },
+      "parts": {
+        "low": {
+          "G1": {
+            "coverage_bn": 1.9342550894149215,
+            "cps_replicate_se_bn": 0.16825546507471378
+          },
+          "G2": {
+            "coverage_bn": 6.026205855962092,
+            "cps_replicate_se_bn": 0.31075162752695523
+          },
+          "G3plus": {
+            "coverage_bn": 4.258068764747311,
+            "cps_replicate_se_bn": 0.2416788765328125
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        },
+        "high": {
+          "G1": {
+            "coverage_bn": 2.7526966612934194,
+            "cps_replicate_se_bn": 0.1484717081221806
+          },
+          "G2": {
+            "coverage_bn": 7.624310430052542,
+            "cps_replicate_se_bn": 0.3077953363062615
+          },
+          "G3plus": {
+            "coverage_bn": 5.580826451815035,
+            "cps_replicate_se_bn": 0.22785360934857665
+          },
+          "added": {
+            "coverage_bn": 0.0,
+            "cps_replicate_se_bn": 0.0
+          }
+        }
+      },
+      "implied_net_missing_people": {
+        "G1": 429292.92862294166,
+        "G2": 848629.3095305455,
+        "G3plus": 682498.6892924157,
+        "added": 0.0
+      }
+    }
+  },
+  "denominator_arm": {
+    "low": {
+      "coverage_bn": 7.793153341991076,
+      "change_from_central_bn": -3.3002727779556196,
+      "scope": "actual declared consumer driver masses, with coefficients/responses fixed; not an engine rerun",
+      "gross_piece_bn_with_parent": 1475.860353869724,
+      "gross_piece_bn_held": 0.0,
+      "case_with_coverage_bn": 347.3451711715179,
+      "over_5bn_from_central": false
+    },
+    "high": {
+      "coverage_bn": 11.090478729594391,
+      "change_from_central_bn": -3.7399451460315394,
+      "scope": "actual declared consumer driver masses, with coefficients/responses fixed; not an engine rerun",
+      "gross_piece_bn_with_parent": 1512.2947110184068,
+      "gross_piece_bn_held": 0.0,
+      "case_with_coverage_bn": 434.7397394301012,
+      "over_5bn_from_central": false
+    }
+  },
+  "range_bn": {
+    "low": [
+      -15.861444622360922,
+      22.644615839243322
+    ],
+    "high": [
+      -16.21956597344311,
+      26.39011561958646
+    ]
+  },
+  "range_label": "construction sensitivity envelope, not confidence interval or bound",
+  "gates": {
+    "legacy_reproduction_1e_6bn": true,
+    "pricing_every_replicate_1e_6bn": true,
+    "coverage_generation_closure_1e_6bn": true,
+    "finite_positive_inputs": true,
+    "metadata": true
+  },
+  "fixed": [
+    "national budgets and key masses in central",
+    "case per-member prices and responses"
+  ],
+  "limitations": [
+    "PES household-to-resident and Hispanic-to-Mexican-origin transfer assumptions",
+    "birth/arrival dates inside public-use bands modelled; missed-member survival/emigration unobserved",
+    "within-G3+ pricing proxy and per-head calibration separate exact net totals",
+    "denominator arm holds composite receipt coefficients and case responses fixed; not an engine rerun",
+    "CPS replicate SE excludes PES covariance, DA series range and transfer uncertainty"
+  ],
+  "population_basis": {
+    "identified_union": 39712493.33118789,
+    "added_nonhispanic": 3039719.5931852367,
+    "lineage": 42752212.92437313
+  },
+  "hispanic_reporting_population": {
+    "G1": 10883767.700901452,
+    "G2": 13923880.600801542,
+    "G3plus": 14342574.60627561
+  }
+}

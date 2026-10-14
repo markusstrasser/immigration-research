@@ -1,0 +1,76 @@
+{
+  "source_sha256": "bd73c4c7504bdbc25904e19de8bbde00cb6d9acacd50cd1d9a6838f62c51a94e",
+  "units": "bn; receipt_edit is signed raw target shift, spending_edit likewise",
+  "results": {
+    "one_us_parent": {
+      "G1": {
+        "receipt_edit_bn": -0.0,
+        "spending_edit_bn": 0.0
+      },
+      "G2": {
+        "receipt_edit_bn": -0.045338878067045174,
+        "spending_edit_bn": 0.06994311504432849
+      },
+      "G3+": {
+        "receipt_edit_bn": -0.055658682978418916,
+        "spending_edit_bn": -0.03164423395788063
+      }
+    },
+    "all_outsiders": {
+      "G1": {
+        "receipt_edit_bn": -0.00012142282073009103,
+        "spending_edit_bn": -0.00016341877675905836
+      },
+      "G2": {
+        "receipt_edit_bn": -0.04866807900468911,
+        "spending_edit_bn": 0.06709398367480313
+      },
+      "G3+": {
+        "receipt_edit_bn": -0.089146695391916,
+        "spending_edit_bn": 0.054206138776080826
+      }
+    },
+    "observed_biological_siblings": {
+      "G1": {
+        "receipt_edit_bn": -0.0,
+        "spending_edit_bn": 0.0
+      },
+      "G2": {
+        "receipt_edit_bn": -0.005186108738509332,
+        "spending_edit_bn": 0.05997952003591722
+      },
+      "G3+": {
+        "receipt_edit_bn": -0.04554595175288689,
+        "spending_edit_bn": 0.07547629877026929
+      }
+    },
+    "one_us_parent_plus_observed": {
+      "G1": {
+        "receipt_edit_bn": -0.0,
+        "spending_edit_bn": 0.0
+      },
+      "G2": {
+        "receipt_edit_bn": -0.05052498680555456,
+        "spending_edit_bn": 0.1299226350802456
+      },
+      "G3+": {
+        "receipt_edit_bn": -0.10120463473130581,
+        "spending_edit_bn": 0.04383206481238866
+      }
+    },
+    "all_outsiders_plus_observed": {
+      "G1": {
+        "receipt_edit_bn": -0.00012142282073009103,
+        "spending_edit_bn": -0.00016341877675905836
+      },
+      "G2": {
+        "receipt_edit_bn": -0.0538541877431985,
+        "spending_edit_bn": 0.12707350371072024
+      },
+      "G3+": {
+        "receipt_edit_bn": -0.1346926471448029,
+        "spending_edit_bn": 0.1296824375463499
+      }
+    }
+  }
+}

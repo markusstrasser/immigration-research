@@ -1,0 +1,108 @@
+{
+ "gate": "G3: with the new items off (v7's items, none of v8's), this package reproduces v7's derived outputs byte for byte",
+ "pass": true,
+ "stub": false,
+ "verdict": "PASS",
+ "method": "v7's main_case.cjs, sign_reversal.cjs and lineage_addition.cjs, unmodified, each run in a child process with its package resolved to v8 package.cjs caseOf(OCT05, V7.CANDIDATE), the module's exports restricted to exactly v7's original symbols, its registry and identity; the scripts' fs redirects derived writes into main_case_2026_10_15/_cache/g3/derived and stops any other write; every other require resolves as in v7",
+ "not_compared": [
+  "main_case_2026_10_14/derived/api_check.json (that lane's own gate record; its script is not run here)",
+  "main_case_2026_10_14/derived/contract.json (that lane's own gate record; its script is not run here)",
+  "main_case_2026_10_14/derived/generality.json (that lane's own gate record; its script is not run here)",
+  "main_case_2026_10_14/derived/zero_items.json (that lane's own gate record; its script is not run here)"
+ ],
+ "payload": {
+  "file": "main_case_2026_10_14/derived/corrections.json",
+  "sha256": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958"
+ },
+ "runs": [
+  {
+   "script": "main_case_2026_10_14/main_case.cjs",
+   "sha256": "d47a893b24f6952a119d2461db4e0a6e3246ea3d460d919a69999ce71cfbac49",
+   "exit_code": 0,
+   "gates_passed": 128,
+   "gates_failed": 0,
+   "all_gates_passed": true,
+   "stub": false
+  },
+  {
+   "script": "main_case_2026_10_14/sign_reversal.cjs",
+   "sha256": "63fc98415578fb7a8f7686fbce2850ac73bb09f2e7aa5205e9ef10612c87fb7d",
+   "exit_code": 0,
+   "gates_passed": 24,
+   "gates_failed": 0,
+   "all_gates_passed": true,
+   "stub": false
+  },
+  {
+   "script": "main_case_2026_10_14/lineage_addition.cjs",
+   "sha256": "1b33f7eed24bf0af1b20d3ae8d7bdba3c3d660ac0a3f4bc6e0aa48fb22355ab4",
+   "exit_code": 0,
+   "gates_passed": 56,
+   "gates_failed": 0,
+   "all_gates_passed": true,
+   "stub": false
+  }
+ ],
+ "files": [
+  {
+   "file": "components.csv",
+   "identical": true,
+   "bytes": 2646,
+   "sha256": "a2e73a69aeaac447e57d42e62839199e206cb82a3590823a0c6222169befebdf"
+  },
+  {
+   "file": "corrections.json",
+   "identical": true,
+   "bytes": 624782,
+   "sha256": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958"
+  },
+  {
+   "file": "corrections_cash.json",
+   "identical": true,
+   "bytes": 602311,
+   "sha256": "581701613b7f3c8086437100334e3818ebe062dc57e2e486f14897208b05de97"
+  },
+  {
+   "file": "lineage_addition.json",
+   "identical": true,
+   "bytes": 23532,
+   "sha256": "fde51a608e49d7bd3a88a4044f8d9637b6c20cbb3ac52f244b478e14c5311a49"
+  },
+  {
+   "file": "lineage_payload.json",
+   "identical": true,
+   "bytes": 321895,
+   "sha256": "e376750d79e96c0b6e8e1f274f1c9460cfc14dab12f9a1c6d632c3f24a73d18b"
+  },
+  {
+   "file": "lineage_payload_cash.json",
+   "identical": true,
+   "bytes": 321935,
+   "sha256": "0c1f120bb51da24f486b9853c6e20ea5a32a21393938e3976025c008f7fb513a"
+  },
+  {
+   "file": "main_case_bands.csv",
+   "identical": true,
+   "bytes": 7799,
+   "sha256": "9b953c9c5825acb69505070d4ca5cfec7626cd6fe8aa08e5221c2ac39a361cdb"
+  },
+  {
+   "file": "per_spec.csv",
+   "identical": true,
+   "bytes": 144822,
+   "sha256": "c4a0fb1996bb7a11640a90d69019f9b188c174c7d45dab9a852a881f6bf0ea03"
+  },
+  {
+   "file": "sign_reversal.csv",
+   "identical": true,
+   "bytes": 1447,
+   "sha256": "d5078fd4859db35f10095ab7c1520222204779c22e385096d5627cddccf004b7"
+  },
+  {
+   "file": "summary.json",
+   "identical": true,
+   "bytes": 257461,
+   "sha256": "b30720cff0c29637ab6f74d809829fdbfc4b82a00a45fa286e3f0c1c5c183582"
+  }
+ ]
+}

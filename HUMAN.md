@@ -131,6 +131,11 @@ built from the adopted fixes. Each ask has my recommendation; the work proceeds 
   consumed: 2026-10-15 who wins — the stationary frame stays the verdict, the cohort frame beside — session 75b08f57
   (coverage, the mixed-unit removal and item 6's wording get their receipts at v8's adoption; the UIs and the push
   after v8's docs pass.)
+  consumed: 2026-10-15 Census coverage — in v8's central as item 12 (+$12.0 / 15.9bn on v8), decision
+  2026-10-15-main-case-v8 — session 75b08f57
+  consumed: 2026-10-15 the mixed-unit removal — in v8's central as item 11 (+$10.7 / 14.5bn) — session 75b08f57
+  consumed: 2026-10-15 item 6's low end — kept at response 1; the decision states the corrected premise in the rents
+  lane's wording — session 75b08f57
 
 ## Open ask, 2026-10-15 00:45 JST: the Codex weekly plan
 session: 75b08f57-63cc-4e3d-96dc-60050327b5c1

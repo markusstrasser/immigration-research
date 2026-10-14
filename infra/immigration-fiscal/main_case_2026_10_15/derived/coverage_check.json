@@ -1,0 +1,53 @@
+{
+ "pass": true,
+ "checks": [
+  {
+   "name": "all ten original stub constructions retain generation/count closure",
+   "pass": true
+  },
+  {
+   "name": "explicit set/cash live schema accepted",
+   "pass": true
+  },
+  {
+   "name": "source decomposition retained with whole-case total explicitly scoped",
+   "pass": true
+  },
+  {
+   "name": "live case key required",
+   "pass": true
+  },
+  {
+   "name": "live cash prices required",
+   "pass": true
+  },
+  {
+   "name": "unknown accounting set rejected",
+   "pass": true
+  },
+  {
+   "name": "failed source control rejected",
+   "pass": true
+  },
+  {
+   "name": "nonfinite decomposition total rejected",
+   "pass": true
+  },
+  {
+   "name": "extra_total",
+   "pass": true
+  },
+  {
+   "name": "missing_generation",
+   "pass": true
+  },
+  {
+   "name": "nonfinite_count",
+   "pass": true
+  },
+  {
+   "name": "generation dollars must close",
+   "pass": true
+  }
+ ]
+}

@@ -1,0 +1,228 @@
+{
+  "checks": [
+    {
+      "which": "set",
+      "arm": "central",
+      "end": "low",
+      "got_bn": 2.8932108549188342,
+      "want_bn": 2.8932108549186455,
+      "gap_bn": 1.887379141862766e-13,
+      "pass": true
+    },
+    {
+      "which": "set",
+      "arm": "central",
+      "end": "high",
+      "got_bn": 3.75461632908997,
+      "want_bn": 3.754616329090181,
+      "gap_bn": -2.1094237467877974e-13,
+      "pass": true
+    },
+    {
+      "which": "set",
+      "arm": "broad_report",
+      "end": "low",
+      "got_bn": 5.559586154961153,
+      "want_bn": 5.559586154960886,
+      "gap_bn": 2.6645352591003757e-13,
+      "pass": true
+    },
+    {
+      "which": "set",
+      "arm": "broad_report",
+      "end": "high",
+      "got_bn": 6.749876584200308,
+      "want_bn": 6.749876584200254,
+      "gap_bn": 5.417888360170764e-14,
+      "pass": true
+    },
+    {
+      "which": "set",
+      "arm": "all_age_extrapolation",
+      "end": "low",
+      "got_bn": 3.939292979618415,
+      "want_bn": 3.939292979618359,
+      "gap_bn": 5.595524044110789e-14,
+      "pass": true
+    },
+    {
+      "which": "set",
+      "arm": "all_age_extrapolation",
+      "end": "high",
+      "got_bn": 5.284973452481211,
+      "want_bn": 5.284973452481406,
+      "gap_bn": -1.9539925233402755e-13,
+      "pass": true
+    },
+    {
+      "which": "cash",
+      "arm": "central",
+      "end": "low",
+      "got_bn": 2.0312626953205495,
+      "want_bn": 2.031262695320139,
+      "gap_bn": 4.1033842990145786e-13,
+      "pass": true
+    },
+    {
+      "which": "cash",
+      "arm": "central",
+      "end": "high",
+      "got_bn": 2.8926681694915715,
+      "want_bn": 2.8926681694916807,
+      "gap_bn": -1.092459456231154e-13,
+      "pass": true
+    },
+    {
+      "which": "cash",
+      "arm": "broad_report",
+      "end": "low",
+      "got_bn": 4.4339871926100045,
+      "want_bn": 4.433987192609766,
+      "gap_bn": 2.389199948993337e-13,
+      "pass": true
+    },
+    {
+      "which": "cash",
+      "arm": "broad_report",
+      "end": "high",
+      "got_bn": 5.624277621849274,
+      "want_bn": 5.624277621849145,
+      "gap_bn": 1.2878587085651816e-13,
+      "pass": true
+    },
+    {
+      "which": "cash",
+      "arm": "all_age_extrapolation",
+      "end": "low",
+      "got_bn": 2.7114354573189416,
+      "want_bn": 2.7114354573187027,
+      "gap_bn": 2.389199948993337e-13,
+      "pass": true
+    },
+    {
+      "which": "cash",
+      "arm": "all_age_extrapolation",
+      "end": "high",
+      "got_bn": 4.057115930181624,
+      "want_bn": 4.0571159301817525,
+      "gap_bn": -1.2878587085651816e-13,
+      "pass": true
+    }
+  ],
+  "native_child_gates": [
+    {
+      "which": "set",
+      "name": "native child service spending is zero when service response is zero",
+      "lines": 12,
+      "max_gap_bn": 0,
+      "pass": true
+    },
+    {
+      "which": "cash",
+      "name": "native child service spending is zero when service response is zero",
+      "lines": 12,
+      "max_gap_bn": 0,
+      "pass": true
+    }
+  ],
+  "options": [
+    {
+      "option": "arm_a",
+      "which": "set",
+      "c3": 0.5567,
+      "children_bn": [
+        0.8317787509462278,
+        0.9037994000780714
+      ],
+      "lineage_population": 42036887.74976477,
+      "pass": true
+    },
+    {
+      "option": "arm_a",
+      "which": "cash",
+      "c3": 0.5567,
+      "children_bn": [
+        0.8303291716227648,
+        0.9023498207544094
+      ],
+      "lineage_population": 42036887.74976477,
+      "pass": true
+    },
+    {
+      "option": "arm_c",
+      "which": "set",
+      "c3": 0.5567,
+      "children_bn": [
+        0.8314233663266464,
+        0.9034345629585232
+      ],
+      "lineage_population": 44502409.613392055,
+      "pass": true
+    },
+    {
+      "option": "arm_c",
+      "which": "cash",
+      "c3": 0.5567,
+      "children_bn": [
+        0.8299737870028139,
+        0.9019849836349181
+      ],
+      "lineage_population": 44502409.613392055,
+      "pass": true
+    },
+    {
+      "option": "c3_minus_se",
+      "which": "set",
+      "c3": 0.31099999999999994,
+      "children_bn": [
+        0.9275547283378955,
+        1.002555411913761
+      ],
+      "lineage_population": 43269648.68157841,
+      "pass": true
+    },
+    {
+      "option": "c3_minus_se",
+      "which": "cash",
+      "c3": 0.31099999999999994,
+      "children_bn": [
+        0.9262774618107414,
+        1.001278145386209
+      ],
+      "lineage_population": 43269648.68157841,
+      "pass": true
+    },
+    {
+      "option": "c3_plus_se",
+      "which": "set",
+      "c3": 0.8024,
+      "children_bn": [
+        0.7356470796993904,
+        0.8046782601327891
+      ],
+      "lineage_population": 43269648.68157841,
+      "pass": true
+    },
+    {
+      "option": "c3_plus_se",
+      "which": "cash",
+      "c3": 0.8024,
+      "children_bn": [
+        0.7340251875792205,
+        0.8030563680128466
+      ],
+      "lineage_population": 43269648.68157841,
+      "pass": true
+    }
+  ],
+  "counts": {
+    "central_reporters": 456935.87772777,
+    "observed_nonreporters": 60499.8794654
+  },
+  "person_key": [
+    "PH_SEQ",
+    "PPPOS"
+  ],
+  "credit_interaction_bn": 0.3254843214294949,
+  "credit_interaction_se_bn": 0.1297461439433784
+}
