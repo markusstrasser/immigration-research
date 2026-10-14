@@ -166,3 +166,11 @@ session: 75b08f57-63cc-4e3d-96dc-60050327b5c1
   myself, without Codex; the critique rounds keep their small GPT axis. If you want no credits spent, the lanes after
   100% wait for the reset (2026-10-20 14:57 JST) and v8 is pushed with its docs once the fix lands, or the remaining
   lanes run as Claude workers.
+  update 2026-10-15 06:10 JST: the weekly plan reached 100% at 06:02 with no Sol lane running; no credits have been
+  drawn (balance still 55,113.75). Round 3's coverage fix landed without Codex (d1a24d47: v8 is $365.8–456.0bn), and
+  I reran and committed the consumer lanes myself. Waiting on your word: the comparators' fix lane (round 3 found five
+  problems over the $5bn bar, all on the comparator side: Census coverage, members' children, the mortality pairing,
+  the school reprice; for example the Black comparison moves +$5.9–18.8bn), then the who-wins and world-ledger lanes
+  on corrected v8. **Recommend: yes to credits for those three lanes**, because each is a multi-hour build the Sol
+  workers already know and the docs pass needs their numbers. Without credits I start the comparator fixes myself
+  (slower, on the Claude plan) and the other two wait for the 10-20 reset.
