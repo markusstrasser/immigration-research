@@ -2,12 +2,10 @@
 
 **Verdict:** No new paper overturns a measured number. One argument changes what the headline means. If the
 federal budget is eventually closed and the lineage pays its share of the fix, the cost to other residents is
-**$357.1–429.5bn** a year instead of $389–461bn under current law (main case v6). That is 7–8% lower on Auerbach &
+**$307.6–391.7bn** a year instead of $340–424bn under current law (main case v7). That is 8–9% lower on Auerbach &
 Gale's 2026 current-law gap, net of the Social Security and Part A shortfall the account already treats as cut, split
-by household as AEI proposes; it ranges $347–451bn across current-law gaps and sharing rules
-([lane](../infra/immigration-fiscal/closed_budget_2026_10_06/RESULT.md)) [FRAMING-SENSITIVE]. The first version
-of this memo put it at $235–345bn, 25–40% lower. That figure used a 2013 infinite-horizon gap that also paid
-scheduled benefits, and it is withdrawn.
+by household as AEI proposes; it ranges $297–414bn across current-law gaps and sharing rules
+([lane](../infra/immigration-fiscal/closed_budget_2026_10_06/RESULT.md)) [FRAMING-SENSITIVE].
 
 Several further items each move a priced line by about $3bn or more, or bear on a qualitative claim:
 - a school-spending response slightly below full cost (−$15–19bn, inside the stated low side);
@@ -67,26 +65,28 @@ permanent yearly fix and s the lineage's share of it, other residents pay G − 
   account values those promises at payable benefits, so for the account the funds are already closed. Net of the
   post-depletion shortfall over each window (1.19% of GDP over 2027–2056 on current law's separate OASI and DI
   funds, from the 2026 Trustees tables and CBO's 2026 long-term data), Auerbach–Gale's current-law fix is 1.14% of
-  GDP, $332.9bn. On the pooled funds the shortfall is 1.07% and the fix $370.1bn, which v5's arm used.
+  GDP, $332.9bn. The pooled-fund alternative assumes a change in law and stays beside.
 - s: the lineage is 12.74% of residents but 9.61% of households (3.31 people per household against 2.49), on the
   CPS ASEC 2025 household weights in the account's frame.
 
 | Reading | Cost to other residents |
 |---|---|
-| Headline: others carry the lineage's share of the deficit (current law) | $389.1–461.5bn |
-| **Central: Auerbach–Gale current law, general fund, per household** | **$357.1–429.5bn** |
-| Current law: two gaps, six sharing rules, both trust-fund readings | $346.7–451.4bn |
-| Current policy: three gaps, six rules | $278.3–451.9bn |
-| AEI's 2013 gap as published, per person | $231.2–303.6bn |
-| The account's whole 2024 deficit shared per head (ladder 269) | $284.1–302.5bn |
+| Headline: others carry the lineage's share of the deficit (current law) | $339.6–423.6bn |
+| **Central: Auerbach–Gale current law, general fund, per household** | **$307.6–391.7bn** |
+| Current law: two gaps, six sharing rules, both trust-fund readings | $297.1–413.8bn |
+| Current policy: three gaps, six rules | $228.7–414.2bn |
+| AEI's 2013 gap as published, per person | $181.6–265.7bn |
+| Excess over as many average residents, under the case's rules (ladder 269) | $346.2–367.9bn |
 
 The current-law headline stands as the statement about current law: current law schedules no closure, the
 debt-legacy lane already charges the interest on past gaps beside the account, and the NRC 1997 rule of holding
 debt at its 2016 share of GDP failed (FAQ 5). Most of the group's cost falls on state and local budgets, which
-balance each year, so no federal fix shares it: the federal part of the 2024 cash gap is $34.0 / 63.8bn
-(`debt_legacy_2026_09_23/derived/oct07/federal_split_2024.csv`). The label "cost to other residents" does assume
+balance each year, so no federal fix shares it: the federal part of the 2024 cash gap is $18.3 / 57.2bn
+(`debt_legacy_2026_09_23/derived/oct14/federal_split_2024.csv`). The label "cost to other residents" does assume
 that others carry the lineage's whole share of a deficit it would help close. The INDEX and FAQ 20 now say so, with
 the arm beside the headline. Repo: HAD-PARTS (ladder 269's two slices; FAQ 18; FAQ 5).
+
+[CALCULATION: `closed_budget_2026_10_06/derived/oct14/summary.json`, `sets.main`; `debt_legacy_2026_09_23/derived/oct14/federal_split_2024.csv`, central.]
 
 ## Worth mentioning ($3bn and up, or a qualitative claim)
 
@@ -337,6 +337,8 @@ Staged under `sources/immigration-fiscal/data/external/stage3/`, each with `ACQU
 `federal_register/public_charge_2026_final_rule/`, `census/research_matters_nonresponse/`, `census/sehsd_wp2026_16/`.
 
 ## Revisions
+
+- 2026-10-14 (main case v7, [decision](../decisions/2026-10-14-main-case-v7.md)): live case and committed consumer figures use `oct14` with both ends personal; pending wave 2 numbers are left for the next pass. Concept affected: the live fiscal account and its named companion readings.
 
 - 2026-10-07 (full-text reads; [closed-budget lane](../infra/immigration-fiscal/closed_budget_2026_10_06/RESULT.md),
   [public-charge share](../infra/immigration-fiscal/public_charge_share_2026_10_07/RESULT.md)):

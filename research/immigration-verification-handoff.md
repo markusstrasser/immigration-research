@@ -72,8 +72,8 @@ What they cannot settle cleanly:
 Use first:
 
 1. `research/immigration-complete-annual-account-2026-09-20.md`: every tax and spending line, federal and
-   state-local, with the adopted main case at the top ($389–461bn a year in 2024;
-   [main-case lane](../infra/immigration-fiscal/main_case_2026_10_07/RESULT.md))
+   state-local, with the adopted main case at the top ($340–424bn a year in 2024;
+   [main-case lane](../infra/immigration-fiscal/main_case_2026_10_14/RESULT.md))
 2. `research/immigration-objections-faq-2026-09-21.md`: the standard objections, each routed to its executed
    table
 3. `research/immigration-yearly-lifetime-cost-repair-2026-09-19.md`: the generation ledger against third-plus
@@ -391,6 +391,8 @@ For each commentator claim:
 6. `Notes on category slip or scope inflation`
 
 ## Revisions
+
+- 2026-10-14 (main case v7, [decision](../decisions/2026-10-14-main-case-v7.md)): live case figures and their source paths now use `oct14`, at the personal allocation at both ends, with mixed-unit child credits, taxes on job capital and the two measured frame/key corrections. Phase 1 updates committed sources; pending comparator and distribution consumers await their committed reruns. Concept affected: the live account and its companions.
 
 - 2026-10-05 ([decision](../decisions/2026-10-05-main-case-v5.md), ladder 281): the adopted main case named in §2 is the October 5 case, $390–461bn, which counts the 3.04M descendants who no longer report Mexican origin as whole people. Concept affected: the headline main case.
 - 2026-10-07 ([decision](../decisions/2026-10-07-main-case-v6.md), ladder 295): the adopted main case named in §2 is the October 7 case, $389–461bn: the October 5 case with the pension accrual on the 2026 Trustees and separate funds, retiree health on accrual, the added descendants at their measured ages, and user fees with the education keys. Concept affected: the headline main case.

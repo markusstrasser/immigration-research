@@ -326,9 +326,9 @@ def span_lines(path, spans):
 
 # Markdown spans in scope: current results only (coverage and reasons in RESULT.md).
 INDEX_SPANS = [
-    ("**Adopted main case (October 7): $389–461bn/year", "Treat an Astra accusation as a lead to verify"),
+    ("**Adopted main case (October 14): $340–424bn/year", "Treat an Astra accusation as a lead to verify"),
     ("**Earlier cases.** Each main case replaced the one before.",
-     "[decision](../decisions/2026-10-07-main-case-v6.md), ladder 295 |"),
+     "[decision](../decisions/2026-10-14-main-case-v7.md), ladder 299 |"),
     ("[By generation](immigration-adopted-account-by-generation-2026-09-25.md) (ladder 224,",
      "([scope memo](immigration-education-administration-scope-2026-09-20.md))."),
     ("[Real fiscal and social costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) (ladder 188–193)",
@@ -359,7 +359,7 @@ FAQ_SPANS = [
     ("Finding: only income-year 2024 is a complete account.", "of other programmes before 2024 is unmeasured."),
     ("No. The account describes a resident stock in a stationary comparison.",
      "neither is cash that a removal would free in the year."),
-    ("figures are not the $389–461bn complete account. [SOURCE:", "figures are not the $389–461bn complete account. [SOURCE:"),
+    ("figures are not the $340–424bn complete account. [SOURCE:", "figures are not the $340–424bn complete account. [SOURCE:"),
     ("Two other corrections also run in opposite directions:", "service budget does (entry 2)."),
     ("Steel-man: one year of a price surge, pandemic programmes and a migration wave", "which flatters the year."),
     # entry 5's split of the adopted account by generation (in scope since the v4 restatement, 5e9112e)
@@ -368,7 +368,7 @@ FAQ_SPANS = [
     # entry 6 also sets the white gap beside the main case (since the comparators' income-tax keys, cc793ccf)
     ("the renters' payments cancel in dollars but not by income", "(ladder 194)."),
     ("many average residents, the main case's gap counting benefits when paid",
-     "falls inside the main case's $389–461bn."),
+     "falls inside the main case's $340–424bn."),
     ("**What about obligations left by past years?**",
      "[decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]"),
     # entry 19, the lineage counted as whole people (main case v5, 2026-10-05)
@@ -401,12 +401,12 @@ MEMO_SPANS = {
         # ends on the next bullet's opening words, which carry no number, so the closing sentence stays in scope
         ("| Channel | Bottom fifth | 2nd | 3rd | 4th | Top fifth | Total |",
          "- **Housing.** Renters pay about the same extra rent in every fifth"),
-        ("**The fiscal cost's incidence is a financing convention.**", "and 19.9% and 0.71% under"),
+        ("**The fiscal cost's incidence is a financing convention.**", "and 18.3% and 0.55% under"),
         ("**Weighted by income.**", "weight (2.24), not a larger harm."),
     ],
     # the v6 verdicts (2026-10-07)
     BY_GENERATION: [
-        ("**Verdict (2026-10-07, main case v6):**", "state mix are not computed."),
+        ("**Verdict (2026-10-14, main case v7):**", "state mix are not computed."),
     ],
     WINNERS: [
         ("**Verdict (2026-10-07, main case v6,", "whose pooled net under tax shares is −$636 a year."),

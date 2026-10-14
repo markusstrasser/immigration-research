@@ -11,9 +11,9 @@ A record's other values are the numbers a memo may still quote after the record 
     registry    the registry's own value of a record in ADOPTED. The registry follows the evidence map, which moves
                 to a new main case only when the operator asks. While the map lags, a record in ADOPTED takes its
                 current value from the adopted lane, and its registry value becomes an earlier vintage. ADOPTED is
-                empty since 2026-10-07, when the map moved to main case v6 (3834b1c8). The September 27 values
-                reach the sweep through the records' `supersedes` (case.sept27, pairing.total_sept27).
-    earlier     the values a record in EARLIER held on the cases v6 replaced, newest first: the October 5 case (v5)
+                 populated for v7 since 2026-10-14 while the map remains on v6. The September 27 values reach the
+                 sweep through the records' `supersedes` (case.sept27, pairing.total_sept27).
+    earlier     the values a record in EARLIER held on the cases v7 replaced, newest first: the October 7 case (v6), the October 5 case (v5)
                 and the September 29 case (v4), both earlier vintages ("$390–461bn" and "$371–435bn" as the main
                 case, "$490–571bn" and "$463–536bn" as the pairing, are flagged, and pass when named).
 An other value that equals the record's current value at the precision it is printed with is dropped.
@@ -114,11 +114,8 @@ ALLOW = {
 }
 
 # the records whose current value comes from an adopted lane the evidence map does not show yet: record id → (path,
-# field, expr). Empty since 2026-10-07: the map and its registry are on main case v6 (ladder 295; 3834b1c8). The next
-# time the main case moves ahead of the map, list its records here (current_values stops on a record whose registry
-# row already reads the adopted file). The v6 bridge read main_case_2026_10_07's summary (`json:main_case`,
-# `json:v6.per_member_usd.set`, `json:cash_set.band_bn`) and the propagation lane's oct07 pairing, with
-# _pairing("oct07").
+# field, expr). The map and its registry remain on v6; these records bridge to adopted v7. current_values stops
+# once a registry row reads the adopted file, requiring its bridge entry to be removed.
 _PAIR = "csv:section=7&column=pairing_on_priced_count&item=published pairing"
 
 
@@ -133,7 +130,14 @@ def _pairing(case):
     }
 
 
-ADOPTED = {}
+ADOPTED_LANE = "infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json"
+ADOPTED_PAIRING_LANE = "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct14/real_costs_totals.csv"
+ADOPTED = {
+    "case.main": (ADOPTED_LANE, "a=json:main_case", "(a[0], a[1])"),
+    "case.per_member": (ADOPTED_LANE, "a=json:v7.per_member_usd.set", "(a[0]/1e3, a[1]/1e3)"),
+    "case.cash_set": (ADOPTED_LANE, "a=json:cash_set.band_bn", "(a[0], a[1])"),
+    **{rid: (ADOPTED_PAIRING_LANE, field, expr) for rid, (field, expr) in _pairing("oct14").items()},
+}
 
 
 def current_values(recs):
@@ -175,6 +179,20 @@ EARLIER = {
               _V4 + (_UNION if rid == "pairing.per_member_priced" else ""))]
        for rid in _pairing("oct05")},
 }
+
+# The presentation registry stays on v6; its value is already a registry-vintage check above.
+# Keep an explicit v6 entry as well so the earlier-case ledger remains complete when the map moves.
+for _rid in ("case.main", "case.per_member", "case.cash_set"):
+    _field, _expr = {
+        "case.main": ("a=json:main_case", "(a[0], a[1])"),
+        "case.per_member": ("a=json:v6.per_member_usd.set", "(a[0]/1e3, a[1]/1e3)"),
+        "case.cash_set": ("a=json:cash_set.band_bn", "(a[0], a[1])"),
+    }[_rid]
+    EARLIER[_rid].insert(0, ("infra/immigration-fiscal/main_case_2026_10_07/derived/summary.json",
+                            _field, _expr, "the October 7 case (v6)"))
+for _rid, (_field, _expr) in _pairing("oct07").items():
+    EARLIER[_rid].insert(0, ("infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct07/real_costs_totals.csv",
+                            _field, _expr, "the October 7 case (v6)"))
 
 
 def earlier_values():
@@ -697,7 +715,7 @@ CONTROLS = [
     ("a Revisions section", "## Revisions\n\n- Crashes that group drivers cause were $42.3bn a year.\n", set()),
     ("a bracketed note", "Crashes charged by fault [2026-09-29: $42.3bn on the\nlane's count] now cost $40.6bn.",
      set()),
-    ("the adopted case as the main case", "The main case costs other residents $389–461bn a year.", set()),
+    ("the adopted case as the main case", "The main case costs other residents $340–424bn a year.", set()),
     ("the October 5 case quoted as current", "The main case costs other residents $390–461bn a year.",
      {("case.main", "vintage_unlabelled")}),
     ("the October 5 case named", "The October 5 case cost other residents $390–461bn a year.",
@@ -720,50 +738,50 @@ CONTROLS = [
      {("case.main", "vintage_labelled")}),
     ("the September 27 case after \"now\"", "The main case now costs $322–387bn a year.",
      {("case.main", "vintage_as_current")}),
-    ("the adopted case per member", "The main case is $9.1–10.8k a year per member.", set()),
+    ("the adopted case per member", "The main case is $7.9–9.9k a year per member.", set()),
     # v5's per-member band prints as v6's at one decimal ($9.1–10.8k), so its controls print two
     ("the October 5 case per member quoted as current", "The main case is $9.13–10.79k a year per member.",
      {("case.per_member", "vintage_unlabelled")}),
     ("the October 5 case per member named",
-     "The main case is $9.10–10.79k a year per member (October 5: $9.13–10.79k).",
+      "The main case is $7.94–9.91k a year per member (October 5: $9.13–10.79k).",
      {("case.per_member", "vintage_labelled")}),
     ("the September 29 case per member quoted as current", "The main case is $9.4–10.9k a year per member.",
      {("case.per_member", "vintage_unlabelled")}),
     ("the September 29 case per member named",
-     "The main case is $9.1–10.8k a year per member (September 29: $9.4–10.9k).",
+      "The main case is $7.9–9.9k a year per member (September 29: $9.4–10.9k).",
      {("case.per_member", "vintage_labelled")}),
     ("the September 27 case per member quoted as current", "The main case is $8.1–9.8k a year per member.",
      {("case.per_member", "vintage_unlabelled")}),
     ("the September 27 case per member named",
-     "The main case is $9.1–10.8k a year per member (September 27: $8.1–9.8k).",
+      "The main case is $7.9–9.9k a year per member (September 27: $8.1–9.8k).",
      {("case.per_member", "vintage_labelled")}),
-    ("the adopted cash set", "Counting benefits when paid, the main case costs others $307.4–385.4bn a year.", set()),
+    ("the adopted cash set", "Counting benefits when paid, the main case costs others $264.4–348.5bn a year.", set()),
     ("the October 5 cash set quoted as current",
      "Counting benefits when paid, the main case costs others $307.4–383.4bn a year.",
      {("case.cash_set", "vintage_unlabelled")}),
     ("the October 5 cash set named",
-     "Counting benefits when paid, the main case costs others $307.4–385.4bn a year (October 5: $307.4–383.4bn).",
+      "Counting benefits when paid, the main case costs others $264.4–348.5bn a year (October 5: $307.4–383.4bn).",
      {("case.cash_set", "vintage_labelled")}),
     ("the September 29 cash set quoted as current",
      "Counting benefits when paid, the main case costs others $294.7–361.8bn a year.",
      {("case.cash_set", "vintage_unlabelled")}),
-    ("the adopted pairing", "Fiscal and social costs together come to $489–571bn a year.", set()),
-    ("the adopted pairing per member", "Fiscal and social costs together are $11.4–13.3k a year per member.", set()),
+    ("the adopted pairing", "Fiscal and social costs together come to $439–533bn a year.", set()),
+    ("the adopted pairing per member", "Fiscal and social costs together are $10.3–12.5k a year per member.", set()),
     ("the October 5 pairing quoted as current", "Fiscal and social costs together come to $490–571bn a year.",
      {("pairing.total", "vintage_unlabelled")}),
     ("the October 5 pairing named",
-     "Fiscal and social costs together come to $489–571bn a year (October 5: $490–571bn).",
+      "Fiscal and social costs together come to $439–533bn a year (October 5: $490–571bn).",
      {("pairing.total", "vintage_labelled")}),
     ("the October 5 pairing per member quoted as current",
      "Fiscal and social costs together are $11.5–13.3k a year per member.",
      {("pairing.per_member_priced", "vintage_unlabelled")}),
     ("the October 5 pairing's fiscal footing quoted as current",
-     "The pairing's low end takes the fiscal main case at the Hispanic footing, $385.4bn.",
+      "The pairing's low end uses the Hispanic fiscal footing, $385.4bn.",
      {("pairing.fiscal_footing", "vintage_unlabelled")}),
     ("the September 29 pairing quoted as current", "Fiscal and social costs together come to $463–536bn a year.",
      {("pairing.total", "vintage_unlabelled")}),
     ("the September 29 pairing named",
-     "Fiscal and social costs together come to $489–571bn a year (September 29: $463–536bn).",
+      "Fiscal and social costs together come to $439–533bn a year (September 29: $463–536bn).",
      {("pairing.total", "vintage_labelled")}),
     ("the September 29 pairing per member quoted as current",
      "Fiscal and social costs together are $11.7–13.5k a year per member.",
@@ -774,7 +792,7 @@ CONTROLS = [
     ("the September 27 pairing quoted as current", "Fiscal and social costs together come to $414–488bn a year.",
      {("pairing.total", "vintage_unlabelled")}),
     ("the September 27 pairing named",
-     "Fiscal and social costs together come to $489–571bn a year (September 27: $414–488bn).",
+      "Fiscal and social costs together come to $439–533bn a year (September 27: $414–488bn).",
      {("pairing.total", "vintage_labelled")}),
     ("the September 27 pairing per member quoted as current",
      "Fiscal and social costs together are $10.4–12.3k a year per member.",

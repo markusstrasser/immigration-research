@@ -1,6 +1,6 @@
 # Outside red team of main case v6 and its docs, 2026-10-08
 
-**Verdict:** No finding moves the headline. The case stays at $389.1–461.5bn. Four claims in the docs were
+**Verdict:** No finding moves the headline. The v6 case, as reviewed on 2026-10-08, stays at $389.1–461.5bn. Four claims in the docs were
 stronger than their evidence and are corrected:
 - FAQ 19's "count it twice" defense of whole-person counting was false.
 - FAQ 14 read an occupation-overlap sketch as an estimate of the production elasticity, and carried an earlier
@@ -57,7 +57,7 @@ grounds to reopen it.
 2. **Accrual pensions against a cash federal budget, and closing the budget** (A5, A8; B10, B11, B13, B35).
    - Both follow current law. Trust funds cannot borrow, so payable benefits; the general fund can, and current law
      schedules no closure (FAQ 20, ladder 282, memory `immigration-current-law-first`).
-   - The closed-budget arm, $357.1–429.5bn, and the cash set, $307.4–385.4bn, are stated beside the headline.
+   - Under v6 as reviewed on 2026-10-08, the closed-budget arm, $357.1–429.5bn, and the cash set, $307.4–385.4bn, are stated beside the headline.
 3. **Whole people against ancestry shares, mixed parentage and replacement children** (A6, A9; B6, B14, B23, B31,
    B34).
    - The frame is the operator's (decision 2026-10-05). The ancestry share, $274.9–374.8bn, and full replacement,

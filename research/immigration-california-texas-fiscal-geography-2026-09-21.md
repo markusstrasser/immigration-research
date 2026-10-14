@@ -2,7 +2,7 @@
 
 Date: 2026-09-21. [ROUTING] Pair the two large settlement states. Numbers are 2024 dollars
 per standardized person per year unless noted. This is the older **shared all-age partial
-ledger**, not the $389–461bn complete account and not the generation-ledger −$7k to −$9k.
+ledger**, not the $340–424bn complete account and not the generation-ledger −$7k to −$9k.
 Do not scale one onto the other. [FRAMING-SENSITIVE]
 
 ## Verdict
@@ -121,5 +121,7 @@ correction).
 LLM-assisted routing of executed tables. Consult `notes/llm-bias-caveat.md`.
 
 ## Revisions
+
+- 2026-10-14 (main case v7, [decision](../decisions/2026-10-14-main-case-v7.md)): live case figures and their source paths now use `oct14`, at the personal allocation at both ends, with mixed-unit child credits, taxes on job capital and the two measured frame/key corrections. Phase 1 updates committed sources; pending comparator and distribution consumers await their committed reruns. Concept affected: the live account and its companions.
 
 - 2026-10-08: restated the state and metro gaps with the income tax the survey misses, put the survey-tax figures and the few-records caveat beside them, and named the live complete account, because the white-reference ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T; [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)) and the state and metro lanes print it beside the survey's taxes: California −$12,133 → −$15,228, Texas −$7,479 → −$9,267, Los Angeles −$17,196 → −$21,083, Houston −$7,493 → −$8,977, Dallas–Fort Worth −$9,823 → −$14,744; Riverside's interval now reaches +$79, so not every named interval is adverse; metro matching narrows the national per-person gap by $92 instead of widening it by $63; the generation-ledger range −$6k to −$8k → −$7k to −$9k; the complete account $165–197bn → $389–461bn. Concept affected: state and metro geography of the white-reference gap.

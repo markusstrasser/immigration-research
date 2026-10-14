@@ -26,7 +26,7 @@ its appropriation sits inside OMB function 750, which item R charges per capita.
 expanded partial account, not a marginal effect of immigration and not a lifetime value.
 [SOURCE: [repaired calculation index](immigration-yearly-lifetime-cost-repair-2026-09-19.md)]
 
-It is not the main case ($389–461bn to other residents), not the
+It is not the main case ($340–424bn to other residents), not the
 generation-vs-white gaps, and not the later annual vintages (−$234bn finance refresh,
 −$259bn enrollment correction). The FAQ's
 [combining rules](immigration-objections-faq-2026-09-21.md#before-combining-numbers-from-different-entries)
@@ -110,7 +110,7 @@ settings are admitted, and it has three layers, each its own object:
 
 1. **Conventions.** The practitioner hull, each arm tagged with the class of modeler that
    runs it; the design hull disclosed beside it; dropped cells listed with the reason.
-   The main case already reports this way ($389–461bn on long-run budget responses,
+   The main case already reports this way ($340–424bn on long-run budget responses,
    beside $289–336bn on CBO's first-year response).
 2. **Parameters inside a convention.** One-at-a-time moves at source-given alternatives,
    which is what the table in §2 is, with the replicate SE beside each so the reader
@@ -178,6 +178,8 @@ state/estimates.csv, school_estimates.csv] [DATA: 2022 Census of Governments Tab
 `derived/audit.json`, `test_recut.py`]
 
 ## Revisions
+
+- 2026-10-14 (main case v7, [decision](../decisions/2026-10-14-main-case-v7.md)): live case figures and their source paths now use `oct14`, at the personal allocation at both ends, with mixed-unit child credits, taxes on job capital and the two measured frame/key corrections. Phase 1 updates committed sources; pending comparator and distribution consumers await their committed reruns. Concept affected: the live account and its companions.
 
 - 2026-09-22: created. [Decision](../decisions/2026-09-22-practitioner-hull-as-ledger-range.md):
   the practitioner hull is the ledger's reported range; the design hull and the second

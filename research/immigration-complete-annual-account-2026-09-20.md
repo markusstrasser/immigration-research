@@ -3,39 +3,33 @@
 Date:2026-09-20. [MODEL / FRAMING-SENSITIVE] Evidence and calculations only;
 narrative authorship remains operator-owned.
 
-**Current main case (2026-10-07): $389.1–461.5bn/year**, a 42.75M-person lineage at $9,101–10,794 per member. Its
-four newest items each replace an assumption with a measurement or put a line on the rule
-its neighbours already follow ([main-case lane](../infra/immigration-fiscal/main_case_2026_10_07/RESULT.md),
-[decision](../decisions/2026-10-07-main-case-v6.md), ladder 295):
-- the pension accrual on the 2026 Trustees Reports and current law's separate OASI and DI funds: −$2.8 / −$2.7bn
-  (ladder 286); the combined fund is an arm [FRAMING-SENSITIVE];
-- retiree health on accrual, as the account already treats pensions: +$0.6 / +$0.7bn (ladder 288);
-- the 3.04M added descendants at their measured ages, younger than the identified third-plus (51.2% under 20,
-  against 46.7%): +$1.3 / +$2.9bn (ladder 292);
-- user fees and the education keys: −$0.3 / −$0.7bn (ladder 294), priced on the identified 39.71M only; at their
-  per-member terms the added people would add −$0.02 / 0.06bn [ASSUMPTION];
-- the items interact by +$0.0 / +$0.1bn.
+**Current main case (2026-10-14): $339.6–423.6bn/year**, a 42.75M-person lineage at $7,942–9,909 per member.
+The group total uses the personal allocation at both ends. Its newest items follow child credits across mixed tax
+units, count source taxes on the business capital serving the group's jobs, put the added people priced as whites
+on the case's income-tax keys, and put the remaining frame corrections on audit row 4
+([main-case lane](../infra/immigration-fiscal/main_case_2026_10_14/RESULT.md),
+[decision](../decisions/2026-10-14-main-case-v7.md), ladder 299). Mining's taxes stay; corporate taxes respond in
+full at the low end and only on the normal-return share at the high end. Current law's separate OASI and DI funds,
+retiree health on accrual, measured descendant ages, user fees and education keys remain in the account.
 
-The 3.04M descendants of Mexican immigrants who no longer report Mexican origin, whom the survey cannot see, are
-counted as whole people and priced under the same rules: +$20.0 / +$29.2bn. The 1.09M lost after the third
-generation cost what an identified third-plus member of the same ages costs, $9,603 / 14,030 a year; the 1.94M lost
-at the third-generation rate, with their descendants, cost (1 − C3) of that plus C3 times a third-plus non-Hispanic
-white at the same ages, $5,054 / 7,257, with C3 = 0.557 (SE 0.246). Counted by share of Mexican-immigrant ancestry
-instead of whole, the lineage costs $274.9–374.8bn, beside the headline.
+The 3.04M descendants who no longer report Mexican origin are counted as whole people and add $21.5 / $27.5bn.
+The later losses cost an identified third-plus member's amount at their own ages, $11,819 / 13,557 a year;
+the losses at the third-generation rate blend that generation with whites at their own ages, $4,561 / 6,682,
+using C3 = 0.557 (SE 0.246). Counted by ancestry share instead of whole, the lineage costs $226.0–342.4bn,
+beside the headline; the rest of the case's rules are held fixed.
 
-Counting benefits when paid, the cash set is $307.4–385.4bn ($7,190–9,014 per member); it has no pension item. The
-low side is $361.3–434.9bn, the outer range $311.9–515.6bn, and the sign break-even −3.7% to 5.4%: the low end is a
-net cost at every service response. Capital at 7% ($480.5–542.9bn), enterprises out ($372.3–438.6bn) and land [GAP]
-sit beside the account.
-[CALCULATION: `main_case_2026_10_07/derived/summary.json` (`main_case`, `cash_set`, `change_at_fixed_specifications`);
-`derived/main_case_bands.csv` (`adopted` and its range, `school_within_district`, `capital_return_at_7pct`,
-`enterprises_out_option_a`, `ancestry_share_*`); `derived/sign_reversal.csv` (`oct07`); the added people's parts in
-`derived/lineage_addition.json`. Printed items use controlled rounding: the high end's interactions, +0.043, print as
-+0.1 so the parts add to $461.5bn.]
+Counting benefits when paid, the cash set is $264.4–348.5bn ($6,185–8,152 per member). Only the members' Social
+Security and Part A switch; public employees' pensions and retiree health remain on accrual in both sets.
+The low side with schools at the within-district response is $310.5–397.1bn, the outer range $262.3–477.7bn.
+With enterprises and their capital moving with services, the sign break-even is 4.6% at the low end and 18.2% at
+the high; each becomes a net gain below its threshold. Capital at 7% ($432.3–505.1bn), enterprises out
+($322.8–400.8bn) and land [GAP] sit beside the account.
+[CALCULATION: `main_case_2026_10_14/derived/summary.json`, `main_case`, `v7`, `cash_set`, `school`, `range`,
+`beside_the_account`; `derived/sign_reversal.csv`, personal `oct14` rows; `derived/lineage_addition.json`.]
 
 With CBO-style first-year budget responses the current case gives $288.9–336.5bn, and $207.3–260.3bn counting
 benefits when paid ([lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md)); with every
-service proportional, the current case gives $418.1–475.8bn (`main_case_bands.csv`, `proportional_reference`).
+service proportional, the current case gives $368.6–438.0bn (`main_case_bands.csv`, `proportional_reference`).
 The main cases since September 20 are listed, each with its decision, in the
 [topic index](immigration-INDEX.md#core-state) ("Earlier cases"); social costs and benefits are in the
 [real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md). Everything below is the account as
@@ -363,6 +357,8 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+- 2026-10-14 (main case v7, [decision](../decisions/2026-10-14-main-case-v7.md)): live case figures and their source paths now use `oct14`, at the personal allocation at both ends, with mixed-unit child credits, taxes on job capital and the two measured frame/key corrections. Phase 1 updates committed sources; pending comparator and distribution consumers await their committed reruns. Concept affected: the live account and its companions.
 
 2026-10-08: living text states only the live case, at the operator's request; earlier-case figures removed,
 recoverable at 0e0c5e28.

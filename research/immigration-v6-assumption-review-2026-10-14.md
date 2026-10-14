@@ -264,6 +264,17 @@ Each group ends with the record that answers it and the reason this review gave 
 
 ## Revisions
 
+- 2026-10-14 (adopted in [main case v7](../decisions/2026-10-14-main-case-v7.md)): items 1–3 are acted on.
+  Item 1 became the personal allocation at both ends and item 5b's child credits crossing mixed tax units.
+  Item 2 became item 6: mining's source taxes respond at 0; corporate taxes at 1 at the low end and 0.37 at the
+  high, business property at its land/structure response and other production taxes on their business base.
+  The production module's separate capital-tax term remains zero, so the taxes count once. Item 3 is now a
+  priced Census coverage upper bound beside the headline, holding the Mexico-born count and the case's
+  group-size responses fixed ([coverage lane](../infra/immigration-fiscal/coverage_bound_2026_10_14/RESULT.md)).
+  Open: the model/BEA housing property-tax conflict, the residential shares of documentary taxes and special
+  assessments, and the domestic-sales rent split. Concept affected: allocation, taxes on job capital and
+  population coverage; the record above retains the review's original status.
+
 - 2026-10-14: written after the review. Concept affected: the low end's allocation rule (open, for the operator);
   the cash set's definition; the ledger's benefit basis in FAQ 1 and 10; FAQ 15's weights; the v6 age-mix
   rationale; the schools decision's unpriced upside.
