@@ -159,7 +159,11 @@ if (!V4) {
   gate("the adopted package's payload is its derived/corrections.json", JSON.stringify(P.correctionsPayload()) === JSON.stringify(corrections));
 }
 const unionModel = V4 ? P.payloadModel() : Engine.applyCorrections(MODEL, corrections);
-const uCost = MAIN_SPECS.map((s) => P.evaluateFull(unionModel, s, PROFILE).cost_bn);
+// v8's shared companion excludes item 11 (the stayers' consequences of a removal belong to the removal total, not to
+// a rule for sharing the group's total among its members); one definition: the case's companions.adjustedRun.
+const COMP = C.v8 && C.shared ? require(path.join(FISCAL, C.lane, "companions.cjs")) : null;
+const unionCost = (api, m, s) => COMP ? COMP.adjustedRun(api, m, s, "shared").cost_bn : api.evaluateFull(m, s, PROFILE).cost_bn;
+const uCost = MAIN_SPECS.map((s) => unionCost(P, unionModel, s));
 const indices = MAIN_SPECS.map((s, i) => i).filter((i) => !C.live || MAIN_SPECS[i].allocation === ALLOCATION);
 const lo = indices.reduce((a, i) => uCost[i] < uCost[a] ? i : a), hi = indices.reduce((a, i) => uCost[i] > uCost[a] ? i : a);
 gate("the corrected union reproduces the adopted case", Math.abs(uCost[lo] - C.band[0]) < 1e-4 && Math.abs(uCost[hi] - C.band[1]) < 1e-4,
@@ -220,11 +224,12 @@ function selectedPost(api, spec, generation) {
     return [k, value];
   }));
 }
-function dump(m, spec, api = P, generation = null) {
+function dump(m, spec, api = P, generation = null, personal = false) {
   const full = C.v8 && generation ? v8Evaluator(apiPayloads.get(api)[generation], api).evaluateFull(m, spec)
     : api.evaluateFull(m, spec, PROFILE);
   const state = full.state || (V4 ? api.stateFor(m, spec, PROFILE) : api.stateFor(api.withSyntheticLines ? api.withSyntheticLines(m) : m, spec));
   const post = selectedPost(api, spec, generation);
+  if (COMP && !personal && Object.hasOwn(post, "mixed_unit_removal")) post.mixed_unit_removal = 0;
   const cost = full.cost_bn - (full.post_engine?.total_bn || 0) + Object.values(post).reduce((s,v)=>s+v,0);
   const ev = full.evaluation, fw = state.fiscal_weight;
   const rows = [];
@@ -434,6 +439,8 @@ if (C.v8) {
   out.meta.union_completion = corrections.meta.union_completion;
   out.meta.coverage = corrections.meta.coverage || null;
   out.meta.mixed_unit_removal = corrections.meta.mixed_unit_removal;
+  if (COMP) out.meta.shared_post_engine_rule = "shared companion: item 11 (mixed_unit_removal) excluded from every " +
+    "generation and the union (companions.adjustedRun); coverage at central personal prices; the personal-ends oracle keeps item 11";
   out.meta.population_v8 = corrections.meta.population_v8;
   const lineage = read(path.join(FISCAL,C.lane,"derived/lineage_addition.json")).v8;
   if (!lineage) throw Error("[BLOCKED] v8 lineage addition contract absent");
@@ -472,7 +479,7 @@ for (const g of GENS) {
     out.generations[g][end] = d;
     // The generation result file reports personal ends. Keep its oracle on the shared companion's input model too.
     const publishedCost = C.shared
-      ? dump(m1, P.MAIN_SPECS[endsOf("set")[end === "low" ? 0 : 1]], P, g).cost_bn : d.cost_bn;
+      ? dump(m1, P.MAIN_SPECS[endsOf("set")[end === "low" ? 0 : 1]], P, g, true).cost_bn : d.cost_bn;
     gate(`${g} ${end}: rows sum to their evaluateFull(); the model at the published ends matches ${C.genResults}`,
       Math.abs(d.sum_bn - d.cost_bn) < 1e-9 && Math.abs(publishedCost - published[`${g}|${end}`]) < 1e-6,
       `${d.cost_bn.toFixed(6)} at this end; published ${publishedCost.toFixed(6)} vs ${published[`${g}|${end}`]}`);
@@ -587,7 +594,7 @@ if (V4) {
   if (C.cash.package) {
     gate(`the package's cash set (${C.cash.package}) has the cash payload, exactly`, JSON.stringify(PC.correctionsPayload()) === JSON.stringify(cashPayload));
   }
-  const uCash = [lo, hi].map((i) => PC.evaluateFull(PC.payloadModel(), MAIN_SPECS[i], PROFILE).cost_bn);
+  const uCash = [lo, hi].map((i) => unionCost(PC, PC.payloadModel(), MAIN_SPECS[i]));
   if (C.live) gate(`the ${ALLOCATION} cash set's ends match the case summary`,
     JSON.stringify([lo, hi]) === JSON.stringify(C.shared ? sharedEnds("cash") : endsOf("cash")));
   gate("the cash set's union reproduces its band at the same specifications (1e-4)",
@@ -649,7 +656,7 @@ if (V4) {
           && moved.every((k) => PENSION.has(k) || (C.v8 && k.startsWith("spending|union_completion_")))
           && capSame && prodSame && byId.size === setRows.length,
         moved.join(", "));
-      const publishedCash = C.shared ? dump(mc, P.MAIN_SPECS[endsOf("cash")[j]], PC, g).cost_bn : cashDump.cost_bn;
+      const publishedCash = C.shared ? dump(mc, P.MAIN_SPECS[endsOf("cash")[j]], PC, g, true).cost_bn : cashDump.cost_bn;
       gate(`${g} ${end}: the cash model at the published ends matches ${C.cash.genResults} (1e-6 bn)`,
         Math.abs(publishedCash - cashResults[`${g}|${end}`]) < 1e-6, `${publishedCash.toFixed(6)} vs ${cashResults[`${g}|${end}`]}`);
       const setOf = (side, id) => setRows.find((r) => r.side === side && r.id === id);

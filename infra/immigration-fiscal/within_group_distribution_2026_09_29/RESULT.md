@@ -1327,3 +1327,19 @@ rank or contributor classification. [ASSUMPTION; CALCULATION: `age_band_factors`
   Final personal set/cash pricing lines remain byte-identical after generation provenance refresh. No git
   staging, commit or merge occurred in this delegated lane. [CALCULATION: `_cache/oct15-rerun-final.log`,
   `_cache/final-rerun-wrapper-complete.log`, `_cache/oct15-final-*.log`, `derived/reporter_b_routes.json`]
+
+Parent rerun 2026-10-15 05:38 JST (from `date`), on the corrected v8 (d1a24d47; same key `oct15`). Two changes:
+
+- **Coverage.** The people the Census misses stay outside observed households, so the personal allocation's
+  household figures are unchanged (members net positive 18.66% / 15.01%, households 26.39% / 21.95%, located net
+  cost $8,375 / 10,371 per member at the low / high end); only `people_survey_misses.csv` and the controls move
+  with the corrected coverage block. [DATA: `derived/oct15/net_positive_shares.csv`, `control.csv`]
+- **Shared allocation without item 11.** The case's shared companion now excludes item 11 (the stayers' consequences of
+  a removal belong to the removal total, not to a rule for sharing the group's total among its members;
+  `main_case_2026_10_15/companions.cjs` `adjustedRun`). `export_lines.cjs --allocation shared` applies that one
+  definition to the union cost and to every generation's post-engine amount; the generation oracle at the personal
+  ends keeps item 11. Located members net positive move from 20.20% to 20.72% (low) and 16.21% to 16.79% (high),
+  households from 28.64% to 29.25% and 23.95% to 24.75%; located net cost $7,391 / 9,360 per member (was $7,639 /
+  9,696). [DATA: `derived/oct15/shared_allocation/net_positive_shares.csv`]
+
+All export and household gates pass; 26 tests pass; reproduction IDENTICAL 198/198, exit 0.
