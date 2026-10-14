@@ -1843,3 +1843,74 @@ byte.
   confidence ladder, one of the audit's inputs, so derived/ described a commit that HEAD had already left.
 - 2026-10-14 13:18:34–13:19:47 JST: the refresh repeated at 4f395c1a, with a guard that fails it if HEAD moves during
   the run; all clean.
+
+## Citation freshness: living prose, 2026-10-14
+
+`citation_freshness.py` reads `../live_case.json`, the single live-case declaration (`oct14`,
+`main_case_2026_10_14`, adopted 2026-10-14). It gates the package's literal STATUS, case key, lane,
+adoption date and decision, both fiscal payloads' adoption/source/decision, the existence of the
+decision, and adoption of a newer package. Superseded consumer keys are newest first: `oct07`,
+`oct05`, `sept29`, `sept27`, `sept26`, `sept24`, `sept23`; a consumer output key missing from that
+list blocks. These keys occur in consumer `derived/<key>/` directories or `*_<key>.csv/json`
+filenames and correspond to the INDEX case table. September 20 appears in that table but has
+no named `sept20` consumer output here, so no such key is invented.
+
+The check reuses `memo_sweep`'s living-memo scope/exemptions, record masks, sentence/clause and
+table helpers, and historical/current labels. Root `CLAUDE.md` is added; INDEX and FAQ are in
+the memo scope. The INDEX case table, fenced code, comments, Revisions and bracketed historical
+notes stay unread. Citation-bearing SOURCE, DATA, CALCULATION and DERIVATION tags remain readable;
+nested tags inside historical records stay masked. Historical labels apply to the citation's
+clause, and current markers override them. October 7's historical date is derived from the
+manifest because the existing sweep's VINTAGE_LABEL predates v7. Consumer lane creation dates
+and prose enumerating `oct05/oct07` joins are not source vintages. A version selector beside
+`summary.json` is checked against versions derived from decision filenames.
+
+The controls run first, before scanning or writing. No `--out` means no writes; `--out DIR`
+writes only `DIR/citation_freshness.csv` with LF endings. Each flag prints `STALE-CITATION`,
+document/line, key, reference and sentence start. Exit 1 means stale citations; 2 means a failed
+gate. The script is a citation locator, not a scientific-validity check or automatic replacer.
+
+### Current checkout flags, grouped by document
+
+At 2026-10-14 22:57:29 JST (`date`), 170 living docs, 11/11 runtime controls and four flags:
+
+| Document | Line | Key | Reference | Existing live equivalent |
+|---|---:|---|---|---|
+| `research/immigration-objections-faq-2026-09-21.md` | 624 | sept26 | `../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md` | `../infra/immigration-fiscal/main_case_2026_10_14/RESULT.md` |
+| `research/immigration-v6-assumption-review-2026-10-14.md` | 71 | oct07 | `main_case_2026_10_07/derived/per_spec.csv` | `main_case_2026_10_14/derived/per_spec.csv` |
+| same document | 113 | oct07 | `main_case_2026_10_07/derived/per_spec.csv` | `main_case_2026_10_14/derived/per_spec.csv` |
+| `research/immigration-validation-and-backtesting-2026-09-28.md` | 18 | sept27 | `../infra/immigration-fiscal/main_case_long_run_2026_09_27/RESULT.md` | `../infra/immigration-fiscal/main_case_2026_10_14/RESULT.md` |
+
+[CALCULATION: `citation_freshness.py --out <scratch>`; all live equivalents verified on disk.]
+The FAQ's reported `rekey_summary_oct07.csv` defects are already absent in this checkout. The
+remaining FAQ citation names a specific prior component run; the v6 review and validation memo
+also preserve historical calculations. The parent should decide between explicit historical
+labels and updating the claim with its source, rather than mechanically replacing these links.
+The v6 review's directory/name is not a sentence-local vintage label; the validation memo's
+link explicitly says "current case". No research docs were edited.
+
+### Verification
+
+- Targeted pytest: 39 passed. Tests include current versus historical references, evidence tags,
+  nested record masks, mixed current/historical clauses, summary selectors, live keys, consumer
+  lane dates, manifest/package/payload mismatches, a newer adoption, missing superseded keys,
+  failed-control no-write behavior, default no-write behavior and LF CSV output.
+- Independent diff-scoped code review reproduced two missing detections (evidence tags and
+  mixed past/current clauses); both fixed and covered by regression tests.
+- `ruff check --select F,E9` on the two new Python files: clean. The environment's standalone
+  `ruff` is used; the project Python environment does not install it.
+- Initial `scripts/rerun_lane.py` replay: `IDENTICAL: 21/21`, exit 0 (2026-10-14 22:58:35 JST).
+  It names the citation scan and its tests; no `--allow-unrun` needed. Existing audit/sweep
+  scripts and tracked derived outputs are unchanged and need no replay commands in this task.
+  Since four detected flags deliberately produce scanner exit 1, the scratch measurement
+  wrapper requires exactly that status, returning 0 to the rerun driver; a crash/blocked gate
+  cannot pass. Final replay also compares the scratch CSV byte for byte because the driver's
+  lane snapshot does not cover external `--out` directories.
+- Python `time.perf_counter`/`resource.getrusage` measurement: standalone live scan 0.609 s,
+  child peak RSS 44,826,624 bytes; initial replay 3.468 s, 50,823,168 bytes. No `ps`, `sysctl`
+  or `/usr/bin/time -l`. Profiling located repeated date formatting in key recognition;
+  cached key patterns and a cheap candidate filter removed that hotspot.
+
+Run the scanner with the command in its docstring. Clean docs return 0; the current four-flag
+checkout returns 1. Its CSV, runtime measurements, exact replay command and parent handoff are
+kept in the task's scratch `p7/lanes/freshness-*` artifacts. Git metadata was left untouched.
