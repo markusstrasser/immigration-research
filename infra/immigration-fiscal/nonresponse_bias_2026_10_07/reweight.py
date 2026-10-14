@@ -224,7 +224,7 @@ def main():
     write(OUT/"controls.csv", pd.DataFrame(controls))
     quantiles = pd.DataFrame(quantile_rows)
     lines = price_lines(shares)
-    price_v5(lines, shares, quantiles)
+    price_case(lines, shares, quantiles)
 
 
 def price_lines(shares):
@@ -256,11 +256,11 @@ def price_lines(shares):
 # Income-type keys: their national totals should fall by the published all-household bias.
 INCOME_KEYS = {"federal_liability", "federal_liability_irs_bins", "state_liability", "wage", "wage_oasdi",
                "self_payroll", "capital", "consumption", "resources"}
-ACCRUAL = FISCAL/"main_case_2026_10_05/derived/corrections.json"
+ACCRUAL = FISCAL/"main_case_2026_10_14/derived/corrections.json"
 
 
-def price_v5(lines, shares, quantiles):
-    """Move the line changes onto v5's rules, on the pinned count.
+def price_case(lines, shares, quantiles):
+    """Move the line changes onto the live case's pension rules, on the pinned union count.
 
     - Social Security is accrual in v5: ratio_net x the group's OASDI receipts (meta.pension_accrual), so its change
       follows the OASDI receipt lines, not the benefit key.
@@ -299,10 +299,10 @@ def price_v5(lines, shares, quantiles):
             for o in out:
                 rows.append(dict(curve=curve, denominator=denominator, shortfall=shortfall, **o))
     v5 = pd.DataFrame(rows)
-    write(OUT/"v5_line_changes.csv", v5)
+    write(OUT/"v7_line_changes.csv", v5)
     summary = v5.groupby(["curve", "denominator", "side"]).net_cost_change_bn.sum().unstack("side")
     summary["net_cost_change_bn"] = summary.sum(axis=1)
-    write(OUT/"v5_summary.csv", summary.reset_index())
+    write(OUT/"v7_summary.csv", summary.reset_index())
     print(summary.round(2).to_string())
 
 

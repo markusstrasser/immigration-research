@@ -1,0 +1,5 @@
+curve,denominator,receipt,spending,net_cost_change_bn
+raw,calibrated,3.146672174,-0.06554814225,3.081124032
+raw,reweighted,5.776269912,-1.163233285,4.613036627
+smooth,calibrated,1.87359421,0.03124139276,1.904835602
+smooth,reweighted,4.663363681,-1.131824904,3.531538777

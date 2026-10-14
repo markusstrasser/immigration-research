@@ -118,3 +118,14 @@ can be compared.
 So the reading is: **+$0.2–1.5bn net of the income tax, which is new; up to +$1.9–4.6bn only if the tax-record
 benchmark is set aside.** The benchmark is Hispanic-wide and covers joint returns only, so the overlap is likely,
 not proven. Not adopted either way.
+
+
+## 2026-10-14: live case oct14 (v7)
+
+The pension-parameter reader now takes `main_case_2026_10_14/derived/corrections.json` instead of oct05. The live keyed outputs are `v7_line_changes.csv` and `v7_summary.csv`; the older v5 files remain unchanged.
+
+The four existing first-order arms give 1.904836 to 4.613037bn. [DATA: `derived/v7_summary.csv` `net_cost_change_bn`] This is the existing linear exposure sensitivity with v7's pension metadata, not a rerun of v7's whole engine or a new job-capital/nonresponse measurement. R9's separate frame shifts and the added people's full account are not rebuilt here. The earlier overlap-with-tax-records warning still applies.
+
+Reweight/control run exits 0; reproduction IDENTICAL 12/12, exit 0. Run `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/nonresponse_bias_2026_10_07/reweight.py`.
+
+Log: 2026-10-14 18:23:25 JST (`date`): moved to adopted 148ed1ea; computed oct14 only and preserved earlier case files.
