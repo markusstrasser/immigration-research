@@ -211,7 +211,7 @@ substituting a web summary or declaring a measurement unavailable:
   - the Census coverage upper bound, the 2020 PES Hispanic undercount on the US-born members with the
     Mexico-born count fixed: +$15.2 / 18.4bn, $354.8–442.0bn, beside, never added, because how much the
     2024 controls absorb is unmeasured (ladder 303);
-  - first-year budget response with CBO's 0.63–0.66: $236–298bn, $161–223bn counting benefits when paid
+  - first-year budget response with CBO's 0.63–0.66, business-capital taxes at their first-year part: $273–326bn, $198–251bn counting benefits when paid
     (ladder 270's lane);
   - Earlier cases: the decision records and the INDEX's case table.
 

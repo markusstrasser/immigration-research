@@ -14,7 +14,7 @@ Social Security and Part A promises members earn as they work, at the benefits c
 pay; counting benefits when paid, it is $264–349bn. It charges the return on public capital, lets
 roads, parks, rental assistance and government enterprises respond, and takes long-run property
 taxes. With every service proportional it is $369–438bn. CBO-style first-year budget responses
-give $236–298bn ($161–223bn counting benefits when paid), and other residents' social costs and
+give $273–326bn ($198–251bn counting benefits when paid), and other residents' social costs and
 benefits bring the total to $439–533bn.
 The second anchor is the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
 (same-age gap against third-plus non-Hispanic whites: Mexico-born −$8,849, second generation
@@ -60,7 +60,7 @@ end assumes it sits above that average, as custody does (fiscal $423.6bn, victim
 added descendants' own social rows, $8.4 / 8.5bn, take their share of each row's key [ASSUMPTION].
 Figures normalized against the average resident and the crash figure charged by fault ($40.6bn)
 sit beside it and are never added. Property values stay out. The first-year budget response
-($236–298bn, or $161–223bn counting benefits when paid)
+($273–326bn, or $198–251bn counting benefits when paid)
 and fully proportional services ($369–438bn) are scenarios of the same account, not
 earlier estimates.
 
@@ -117,7 +117,7 @@ about respond as follows ([decision](../decisions/2026-09-27-main-case-capital-r
   stock gives far less and stays beside.
 - **Schools** are charged at their full average cost per pupil: across 2019 districts spending rises
   1.004% per 1% more pupils (pupil-weighted) and across states 0.973%. CBO's year-to-year 63–66%
-  belongs to the first-year budget response ($236–298bn), and
+  belongs to the first-year budget response ($273–326bn), and
   the within-district 0.836 gives the low side, $311–397bn
   ([decision](../decisions/2026-09-26-main-case-schools-full-cost.md)).
 - **General public services** respond at 0.60–0.85 of average cost: removing a group that is 13%
@@ -193,7 +193,7 @@ and corporate rents treated separately from normal returns
 ([decision](../decisions/2026-10-14-main-case-v7.md), item 6). Omitted benefits would have to reach
 $340–424bn a year to offset the main case. That threshold is conditional on the service-response share,
 which is assumed and unmeasured.
-- It is $236–298bn with CBO's first-year responses ($161–223bn counting benefits when paid). It is
+- It is $273–326bn with CBO's first-year responses ($198–251bn counting benefits when paid). It is
   $276–390bn if non-school education budgets
   are also held fixed.
 - It reaches zero below a 4.6% service response at the low end and 18.2% at the high, with enterprises and their
@@ -402,7 +402,7 @@ of an admission rule, a removal policy or one more arrival, it contains no trans
 and most of the people in it are US-born citizens. In the first years, budgets would not shed the
 full average cost of the group's pupils, nor the long-run road and park costs. With CBO's
 year-to-year responses, no capital response and benefits counted when paid, the main case gives
-$161–223bn ($236–298bn with the pension accrual). The return on
+$198–251bn ($273–326bn with the pension accrual). The return on
 public capital ($37–61bn of the case) is an opportunity cost, and the pension accrual ($75bn) a
 promise of future benefits; neither is cash that a removal would free in the year.
 Schools show how slowly budgets shrink: across US districts whose enrollment fell over twenty-year spans, spending
@@ -559,8 +559,8 @@ all ages and generations in income-year 2024, state and local services included:
 case charges the return on public capital, long-run road and park
 responses, rental assistance, government enterprises and the pension promises members earn as they
 work, none of which CBO's projection carries;
-with CBO-style first-year budget responses the main case gives −$236 to −298bn, or −$161 to
-−223bn counting benefits when paid (entry 2).
+with CBO-style first-year budget responses the main case gives −$273 to −326bn, or −$198 to
+−251bn counting benefits when paid (entry 2).
 Where the two overlap they agree: a young recent inflow is net positive on the measured items
 here too, +$3,495 per person for Mexico-born arrivals of 2016–2025 on the partial account with
 taxes as the survey reports them, and about break-even (−$1,299, interval −$3,151 to +$554) once
@@ -1011,3 +1011,7 @@ they get more prominence.
   the ledger's benefit basis next to an accrual headline; the induced-tax claim in entry 4.
 
 - 2026-10-14, wave 2 ([decision](../decisions/2026-10-14-main-case-v7.md)): the first-year budget response, white/average-resident comparisons and federal legacy comparisons follow the committed `oct14` files. Entry 6 now states that third-plus whites contribute on accrual at both ends under the case's job-capital receipt responses, so the white gap exceeds the no-reference headline. Concept affected: live-case companion comparisons.
+- 2026-10-14, later (v7 assumption review, round 1; break conditions cfb7df47): the first-year budget response holds
+  item 6 at its first-year part (business property still assessed, profits and production taxes at 0.65 of their
+  long-run fall): $273–326bn, $198–251bn counting benefits when paid, in entries 2, 11 and 16 and the summary.
+  Concept affected: the first-year budget reading.

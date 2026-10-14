@@ -27,9 +27,10 @@ the high; each becomes a net gain below its threshold. Capital at 7% ($432.3–5
 [CALCULATION: `main_case_2026_10_14/derived/summary.json`, `main_case`, `v7`, `cash_set`, `school`, `range`,
 `beside_the_account`; `derived/sign_reversal.csv`, personal `oct14` rows; `derived/lineage_addition.json`.]
 
-With CBO-style first-year budget responses (0.63–0.66), the current case gives $236–298bn, and $161–223bn counting
+With CBO-style first-year budget responses (0.63–0.66), the current case gives $273–326bn, and $198–251bn counting
 benefits when paid, holding the case's other rules fixed except for the horizon's roads and property-tax
-responses ([lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md),
+responses and item 6 at its first-year part (business property still assessed; profits and production taxes at 0.65
+of their long-run fall) ([lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md),
 `derived/c1_arms_oct14.csv`, `first_year_horizon` and `first_year_horizon_cash`); with every
 service proportional, the current case gives $368.6–438.0bn (`main_case_bands.csv`, `proportional_reference`).
 The main cases since September 20 are listed, each with its decision, in the
@@ -361,6 +362,7 @@ Method decision: [complete account and fiscal response](../decisions/2026-09-20-
 ## Revisions
 
 - 2026-10-14 (main case v7, [decision](../decisions/2026-10-14-main-case-v7.md)): live case figures and their source paths now use `oct14`, at the personal allocation at both ends, with mixed-unit child credits, taxes on job capital and the two measured frame/key corrections. Phase 1 updates committed sources; pending comparator and distribution consumers await their committed reruns. Concept affected: the live account and its companions.
+- 2026-10-14, later (v7 assumption review, round 1; break conditions cfb7df47): the first-year arm had kept item 6, the source taxes on business capital, at its long-run size. Year one has the capital standing, so business property stays assessed and profits and production taxes fall by 0.65 of their long-run fall: the first-year reading is $273–326bn, $198–251bn counting benefits when paid. Concept affected: the first-year budget reading of the live case.
 - 2026-10-14 (first-year companion, [decision](../decisions/2026-10-14-main-case-v7.md)): the committed break-conditions run puts the first-year arm at $236–298bn, or $161–223bn counting benefits when paid, under CBO's 0.63–0.66 general-service response and the first-year roads and property-tax rules. Concept affected: the first-year budget reading of the live case.
 
 2026-10-08: living text states only the live case, at the operator's request; earlier-case figures removed,
