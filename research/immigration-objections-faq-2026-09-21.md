@@ -25,7 +25,10 @@ include what the survey misses, placed on the main case's own keys (item T).
 
 **The two anchors are different objects.** The generation gaps and the age structures (entries
 1, 3, 5, 10) come from the generation ledger: per-person balances against
-a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on
+a reference group, or the group's own balance re-weighted by age. The ledger counts Social Security
+and Medicare when they are paid, while the main case counts the Social Security and Part A that its
+members earn as they work, so an older age mix on the ledger adds retirement costs the main case
+already charges during working years. Entries 7 and 9 rest on
 separate partial accounts. The $389–461bn (entries 2, 4, 11 and 15–19) is the complete account's
 change for all other residents in the main case, under a stated service-response assumption and
 with no reference group. Its return on public capital ($36.6–61.1bn) is an imputed resource cost,
@@ -87,6 +90,9 @@ pyramid would run +$4,852 per person, against +$299 at their own ages, so the yo
 structure is worth about $4,550 a year. Over a full life course at today's rates the gap is
 −$8,154. [SOURCE: [age structures](immigration-yearly-lifetime-cost-repair-2026-09-19.md#same-rates-under-different-age-structures);
 `infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv`]
+These are the ledger's figures, with Social Security and Medicare counted when paid. The main case
+charges a young population for the pensions its workers earn now, which narrows this advantage
+[INFERENCE; not run on that basis].
 Would change it: younger cohorts earning more at the same ages than today's adults do.
 
 ## 2. "Defense, interest and administration do not grow with population. Average cost is not marginal cost."
@@ -380,8 +386,11 @@ save $31bn; under-65 institutional cost falls $1.3bn while nursing cost rises $9
 is a composition exercise on the generation ledger, not a forecast. [SOURCE: age structures
 section, `age_normalizations_by_category.csv`] Would change it: US-born cohorts reaching 65 with
 higher covered earnings than the 0.5m second-generation and 1.0m third-plus residents born
-before about 1960 whose rates fill the 65+ cells today (ladder 161). The sign of the
-composition effect at today's rates is solid; its size for future cohorts is not measured.
+before about 1960 whose rates fill the 65+ cells today (ladder 161). On the ledger's basis,
+which counts Social Security and Medicare when paid, the sign of the composition effect at today's
+rates is solid; its size for future cohorts is not measured. The main case already charges the
+Social Security and Part A that its working members earn, so part of this shift is inside the
+$389–461bn; the re-weighting has not been run on that basis.
 
 ## 11. "So ending this migration would save $389–461bn?"
 
@@ -515,8 +524,9 @@ the survey reports them the four are −$12,133, −$7,479, −$17,196 and −$7
 rests on few records: the ten largest white households carry 67% of whites' added tax in
 California and 98% in Texas, and the intervals widen by 60–80%. Every named union interval is adverse;
 Texas is smaller than California, not zero. Matching on metro barely moves the national
-per-person gap (−$6,910 age-only → −$6,818 metro×age vs whites); it **widens** the national
-total (−$339bn → −$492bn) because Mexican-origin residents live where the local white
+per-person gap, which weights places and ages by whites' own mix (−$6,910 age-only → −$6,818
+metro×age vs whites); it **widens** the national total, which weights them by where
+Mexican-origin residents live (−$339bn → −$492bn), because they live where the local white
 benchmark is higher. Share catch-up toward 32% is already realized in Texas and does not produce
 Los Angeles–sized dollars. Nominal dollars; no regional price parity. New York is 1.4%
 of US Mexican-origin (0.50m); San Francisco has no published single-metro gap. These

@@ -75,7 +75,9 @@ with a measurement or put a line on the rule its neighbours already follow:
   (294).
 
 The items interact by +$0.0 / +$0.1bn.
-Counting benefits when paid, the cash set is $307.4–385.4bn ($7.2–9.0k per member); it has no pension item. The
+Counting benefits when paid, the cash set is $307.4–385.4bn ($7.2–9.0k per member); it has no pension item. Only
+the members' Social Security and Part A change: public employees' pensions and retiree health stay at their accrual
+cost in both sets, as BEA books employee compensation, and the capital return stays in. The
 3.04M added descendants of Mexican immigrants who no longer report Mexican origin, whom the survey cannot see, are
 counted as whole people and add $20.0 / $29.2bn:
 - the 1.09M lost after the third generation cost what an identified third-plus member of the same ages costs,
@@ -642,6 +644,7 @@ Latest supplied-data audit: [immigration-new-datasets-and-conclusions-2026-09-17
 | `immigration-recent-papers-2026-09-05.md` | June–September primary papers/revisions with designs, dates and access limits | Quoting recent labor, housing, fiscal or enforcement research |
 | `immigration-recent-papers-2026-10-06.md` | July 2025–October 2026 scan across seven lanes, graded against the account's claims and revised 2026-10-07 after full-text reads: the closed-budget estimand ($354.6–425.6bn central), school decline asymmetry, surge wages, Hispanic identity, survey income tax and nonresponse, the 2026 public-charge rule ($5.0bn for the lineage) and the 2025 budget law | Asking whether new work shows the account wrong, or answering a reader who cites it |
 | `immigration-v6-red-team-2026-10-08.md` | Outside red team of main case v6 and its docs (GPT-6 Astra and Gemini 3.8 Flash, 57 findings): no headline mover; FAQ 19's double-count defense withdrawn, FAQ 14's occupation sketch relabelled, FAQ 11's Lee–Scafidi timing and FAQ 17's sign claim scoped, the payload consumer's capital fail-open closed; every rejected attack routed to its answering entry | Before re-raising a known attack on the case (capital double count, accrual against cash, whole people, school stickiness, fourth-plus pricing) |
+| `immigration-v6-assumption-review-2026-10-14.md` | Cross-lab review of main case v6's assumptions (Gemini 4 Argon, GPT-6 Astra and Opus 5.5 on three packets: which budgets respond, receipts and accrual, who is counted): one finding over the bar, the low end's shared allocation, which credits the lineage with co-resident non-members' taxes, left for the operator; two recorded bounds missing from beside the headline (Hispanic census coverage, corporate tax on foreign-owned capital); five statements corrected or scoped (FAQ 1, 10 and 15 with "Before combining", the INDEX's cash-set line, two decision records); every rejected finding routed to its answer | Before re-raising an attack on the v6 assumptions, or before choosing how a group total splits mixed households |
 | `immigration-recent-narratives-2026-09-05.md` | Current essays/news and selective official X sample; counterexamples and claim checks | Repeating current public arguments |
 | `immigration-dataset-proxy-refresh-2026-09-05.md` | BLS/BPS/ICE acquisitions and BEA audit, provenance and principal checks | Using recent outcomes, capacity proxies or enforcement counts |
 | `immigration-conceptual-audit-2026-09-05.md` | Material audit: SIPP household/person and education errors; GDP/incumbent and CRS mistakes; Cato mischaracterization; global-gains arithmetic; conditional crime-bias sign | Reusing June fiscal-proxy figures or the dismantling synthesis; these corrections supersede the specified claims |

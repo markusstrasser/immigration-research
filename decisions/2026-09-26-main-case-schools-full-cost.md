@@ -127,3 +127,11 @@ He added "but we don't have to update all the uis ... we're still researching ..
 None. It refines the finite-removal decision of the same day: its school part is replaced, and its
 general-government part stands. It revises the school coefficient of the 2026-09-20 category-response
 decision. It limits the 2026-09-25 dilution decision to responses below 1.
+
+## Correction, 2026-10-14
+
+The first reason under alternative 4, "new seats at today's construction cost (the account carries depreciation on
+existing buildings only)", no longer holds. Since 2026-09-27 the case charges current-cost depreciation plus a real
+return on the current-cost stock (decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), which
+is the steady-state cost of seats at today's prices; building new seats belongs to a period of growth. The other two
+reasons stand. Concept affected: the unpriced upside on schools. Source: the assumption review of 2026-10-14.
