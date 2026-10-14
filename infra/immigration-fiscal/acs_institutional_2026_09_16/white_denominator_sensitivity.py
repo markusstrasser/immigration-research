@@ -49,5 +49,5 @@ print(f"{'year':6}{'white definition':34}{'white_native_%':>15}{'mex_native_%':>
 for r in rows:
     print(f"{r[0]:6}{r[1]:34}{r[2]:15.3f}{r[3]:13.2f}{r[4]:7.3f}")
 with open(HERE / "white_denominator_sensitivity.csv", "w", newline="") as f:
-    wtr = csv.writer(f); wtr.writerow(["year", "white_definition", "white_native_inst_pct", "mexican_native_inst_pct", "ratio"])
+    wtr = csv.writer(f, lineterminator="\n"); wtr.writerow(["year", "white_definition", "white_native_inst_pct", "mexican_native_inst_pct", "ratio"])
     wtr.writerows(rows)

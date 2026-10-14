@@ -98,7 +98,10 @@ set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
   (`infra/immigration-fiscal/number_drift_audit_2026_09_29/`; no MISMATCH or STALE). A new number
   in an audited span needs a `source_map.csv` row; without `--out` the audit rewrites its tracked `derived/`.
 - Python `csv.writer` defaults to CRLF; pass `lineterminator="\n"`. The repo stores LF
-  (`core.autocrlf=input`), so CRLF outputs never byte-match on rerun (e2476da).
+  (`core.autocrlf=input`), so CRLF outputs never byte-match on rerun (e2476da), and a fresh clone
+  fails any pin of a CRLF file. `rerun_lane.py` fails on a lane file git would convert (an EOL line). A
+  pinned raw download with CRLF goes in `.gitattributes` as `-text`, which also lists the older
+  writers' outputs stored byte for byte.
 - Before asserting that a line's key biases a result, read how the engine keys it (schools have
   been state-priced since 2026-09-20, not national-average). The adopted case is one engine
   run plus a post-engine return on public capital:

@@ -131,3 +131,29 @@ def test_online_flag_and_caller_value_win(tmp_path: Path) -> None:
     assert rerun_env(repo, {"UV_OFFLINE": "0"}, f"{sys.executable} {{lane}}/envcheck.py 0").returncode == 0
     r = rerun_env(repo, {}, f"{sys.executable} {{lane}}/envcheck.py unset")
     assert r.returncode == 1 and "FAILED at command 2" in r.stdout, r.stdout
+
+
+def crlf_lane(tmp: Path, attributes: str = "") -> Path:
+    # 2026-10-14: the coverage lane pinned three CRLF Census pages and git stored them as LF, so a fresh
+    # clone failed the pins.
+    repo = lane_repo(tmp)
+    git(repo, "config", "core.autocrlf", "input")
+    (repo / "lane" / "build.py").write_text("open('lane/derived/out.txt', 'wb').write(b'1\\r\\n')\n")
+    (repo / "lane" / "derived" / "out.txt").write_bytes(b"1\r\n")
+    if attributes:
+        (repo / ".gitattributes").write_text(attributes)
+    git(repo, "add", ".")
+    git(repo, "commit", "-q", "-m", "crlf output")
+    return repo
+
+
+def test_output_git_would_convert_is_flagged(tmp_path: Path) -> None:
+    r = rerun(crlf_lane(tmp_path))
+    assert r.returncode == 4, r.stdout
+    assert "IDENTICAL" in r.stdout and "EOL lane/derived/out.txt" in r.stdout
+
+
+def test_output_stored_byte_for_byte_passes(tmp_path: Path) -> None:
+    r = rerun(crlf_lane(tmp_path, "lane/derived/out.txt -text\n"))
+    assert r.returncode == 0, r.stdout
+    assert "[rerun] EOL" not in r.stdout

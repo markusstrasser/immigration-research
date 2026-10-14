@@ -23,7 +23,7 @@ for base in ("2009", "2009r"):
                            per100k_2009=round(r09, 1), per100k_2021=round(r21, 1), per100k_change_pct=round(100 * (r21 / r09 - 1), 1),
                            share2009_pct=round(100 * a[off] / a["total"], 1), share2021_pct=round(100 * b[off] / b["total"], 1)))
 with open(HERE / "bjs_offense_by_ethnicity.csv", "w", newline="") as f:
-    w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
+    w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n"); w.writeheader(); w.writerows(rows)
 for r in rows:
     print(f"{r['group']:8s} {r['offence']:13s} n {r['n2009']:>7,} -> {r['n2021']:>7,} ({r['count_change_pct']:+6.1f}%)  per100k {r['per100k_2009']:6.1f} -> {r['per100k_2021']:6.1f} ({r['per100k_change_pct']:+6.1f}%)  share {r['share2009_pct']:5.1f} -> {r['share2021_pct']:5.1f}")
 print("\nMale imprisonment rate per 100k (state+federal), 2010 -> 2022, white / Hispanic / ratio")

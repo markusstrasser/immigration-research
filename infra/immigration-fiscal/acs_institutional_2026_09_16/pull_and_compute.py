@@ -78,7 +78,7 @@ for yr, gq in YEARS.items():
                          population=sum(v[1] for v in fb), pct=round(100 * sum(v[0] for v in fb) / sum(v[1] for v in fb), 3),
                          pct_adj_generic_hispanic=None))
 with open(HERE / "acs_institutional_rates.csv", "w", newline="") as f:
-    w = csv.DictWriter(f, fieldnames=list(rows_out[0])); w.writeheader(); w.writerows(rows_out)
+    w = csv.DictWriter(f, fieldnames=list(rows_out[0]), lineterminator="\n"); w.writeheader(); w.writerows(rows_out)
 for row in rows_out:
     if row["group"] in ("Mexican", "NH White", "All", "Salvadoran", "Vietnamese", "Cambodian") :
         print(row)

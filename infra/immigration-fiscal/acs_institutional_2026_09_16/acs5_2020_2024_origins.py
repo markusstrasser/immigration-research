@@ -31,7 +31,7 @@ for code, name in HISP.items():
 # RAC2P is not exposed on the 5-year PUMS API (unknown predicate/dimension, 2026-09-16); Asian detail stays 1-year only.
 white = next(r[5] for r in rows if r[1] == "NH White" and r[2] == "native")
 with open(HERE / "acs5_2020_2024_origins.csv", "w", newline="") as f:
-    w = csv.writer(f); w.writerow(["block", "group", "nativity", "institutional", "population", "pct", "ratio_to_nh_white_native"])
+    w = csv.writer(f, lineterminator="\n"); w.writerow(["block", "group", "nativity", "institutional", "population", "pct", "ratio_to_nh_white_native"])
     for r in rows:
         w.writerow([*r, round(r[5] / white, 3)])
 print(f"{'group':28}{'nativity':>13}{'inst':>10}{'pop':>12}{'pct':>7}{'ratio':>7}")

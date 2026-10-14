@@ -25,6 +25,13 @@ asking PyPI on every call. On 2026-09-29 a PyPI connect timeout failed two white
 at `uv run --with statsmodels`: a transport failure, not a lane failure. A package missing from the
 cache fails loudly with a hint; pass `--online` to resolve against the index. A UV_OFFLINE the caller
 sets wins.
+
+A lane file a commit would carry whose bytes git would convert on the way in (CRLF, under
+core.autocrlf=input) is listed as EOL and the exit code is 4: this checkout and a fresh clone would
+hold different bytes, so pins fail and reruns differ in the clone. On 2026-10-14 the coverage lane
+pinned three Census pages with CRLF, git stored them as LF, and 94 tracked files were in the same
+state. Write LF (`csv.writer(f, lineterminator="\\n")`), or list a pinned raw download as `-text` in
+.gitattributes.
 """
 from __future__ import annotations
 
@@ -73,6 +80,20 @@ def output_files(lane: Path) -> set[Path]:
     if derived.is_dir():
         files |= {p.relative_to(ROOT) for p in derived.rglob("*")}
     return {p for p in files if (ROOT / p).is_file() and "__pycache__" not in p.parts}
+
+
+def converted_on_commit(lane: Path) -> list[str]:
+    """Lane files a commit would carry whose stored bytes would differ from the bytes on disk."""
+    r = subprocess.run(["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z", "--", str(lane)],
+                       cwd=ROOT, capture_output=True, text=True, check=True)
+    paths = sorted(p for p in r.stdout.split("\0") if p and (ROOT / p).is_file() and not (ROOT / p).is_symlink())
+    if not paths:
+        return []
+    stdin = "\n".join(paths) + "\n"
+    stored, raw = (subprocess.run(["git", "hash-object", *flags, "--stdin-paths"], cwd=ROOT, input=stdin,
+                                  capture_output=True, text=True, check=True).stdout.split()
+                   for flags in ([], ["--no-filters"]))
+    return [p for p, s, w in zip(paths, stored, raw) if s != w]
 
 
 def child_env(online: bool) -> dict[str, str]:
@@ -129,6 +150,13 @@ def main(argv: list[str]) -> int:
     ok = not (changed or added or missing)
     print(f"[rerun] {'IDENTICAL' if ok else 'DIFFERS'}: {len(old & new) - len(changed)}/{len(old)} files unchanged"
           f" (backup: {backup})")
+    converted = converted_on_commit(lane)
+    for path in converted:
+        print(f"[rerun] EOL {path}")
+    if converted:
+        print("[rerun] CLONE DIFFERS: git would store these files with other bytes than this run left on disk"
+              " (CRLF converted to LF), so a fresh clone fails pins and reruns. Write LF"
+              " (csv.writer(f, lineterminator=\"\\n\")), or list a pinned raw download as -text in .gitattributes.")
     unrun = unrun_scripts(lane, [c.replace("{lane}", str(lane)) for c in argv[1:]], allowed)
     for path in unrun:
         print(f"[rerun] NOT RUN {path}")
@@ -136,8 +164,9 @@ def main(argv: list[str]) -> int:
         print("[rerun] UNCOVERED: new or modified scripts that no command runs. A worker may still be writing,"
               " or the reproduce list misses them; check ListAgents and the RESULT, then add a command or pass"
               " --allow-unrun <path>.")
-        return 3 if ok else 1
-    return 0 if ok else 1
+    if not ok:
+        return 1
+    return 4 if converted else 3 if unrun else 0
 
 
 if __name__ == "__main__":
