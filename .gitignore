@@ -64,6 +64,9 @@ infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/oct15_base/superseded_
 .model-review/assumptions-v7-*
 .model-review/*-assumptions-v7-*/
 .model-review/*-assumptions-v7-*.md
+.model-review/assumptions-v8-*
+.model-review/*-assumptions-v8-*/
+.model-review/*-assumptions-v8-*.md
 .model-review/dispatch.json
 # worker lists of the paths a lane run touched (review aids, rederivable)
 changed-paths.txt
