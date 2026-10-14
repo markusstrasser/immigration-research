@@ -595,3 +595,5 @@ At the inspected pairing snapshot79329619e41cd39afa8c3882abe97250aae8661462d49cc
 ## R2C40 final receipt — 2026-10-15T03:58:49+09:00
 
 Own-mask comparator item11 is now measured and applied post-evaluator, with pinned paired gap SEs. [FRAMING-SENSITIVE] The labeled one-sided gap is preserved immediately below the measured row. Full White 210/210, full Black 96/96, C8 source-only 77/77, legacy annual-only 39/39, pension 43/43, Indian independent fiscal 71/71: all IDENTICAL, exit 0. Exact baselines unchanged; no feedback into M5; no annual charge to legacy stock. Break tables and Indian social/combined rows remain withheld. [CALCULATION: parent scratch c40-*-rerun.json/log; c40-validation.json; prop-d-result.md]
+
+Log: 2026-10-15 06:19:49 JST (`date`, parent): rerun on corrected v8 (`d1a24d47`: the coverage term no longer charges the missed people's custody, arrests and ICE a second time, −$3.199004 / −$3.221092bn on the lineage), IDENTICAL 71/71, exit 0. The Mexican-origin reference rows fall by the correction (engine $368.9909 / 459.2029bn → $365.7919 / 455.9818bn; rough $345.2043 / 433.3482bn → $342.0053 / 430.1271bn); the Indian-origin rows are unchanged.
