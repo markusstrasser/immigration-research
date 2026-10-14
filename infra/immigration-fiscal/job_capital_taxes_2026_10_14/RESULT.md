@@ -98,9 +98,12 @@ The union's share is pooled at 0.1236 in 211 and 212 and is its own 0.1379 in 21
 
 The data can split mining's corporate base. Power and Frerick's Table 1 puts mining's normal-return share at 0.44 and
 petroleum and coal products' ("Fossil Fuel") at 0.06. [SOURCE: Treasury OTA Working Paper 111, Table 1, p. 16] The
-business property key is the Fixed Assets stock, so it is reproducible by construction. No table splits the property
-tax between mineral reserves and reproducible capital. [DATA: `national.py` pattern; INFERENCE] A reading that lets
-only the reproducible part respond is $3.92bn (beside, personal). In it:
+business property key is the T00OTOP tax-payment pattern (`national.py:651`), which includes mineral-property taxes, so
+it is not reproducible capital by construction (corrected 2026-10-14 after the parent's review; the Fixed Assets
+stocks are separate beside rows). No table splits the property tax between mineral reserves and reproducible capital.
+[DATA: `national.py` pattern; INFERENCE] A reading that lets mining's corporate base respond at its normal share and
+its property tax respond like other industries' is $3.92bn (beside, personal); its property part, about $2.31bn, is
+not identified as reproducible-property tax. In it:
 - corporate responds at 0.44;
 - business property responds at 0.8806;
 - severance responds at 0;
@@ -378,7 +381,9 @@ Two small-sample rules:
   households are the one other exception, and they carry none of these taxes. [CALCULATION: same] BLS's 2024 annual
   average puts Hispanic workers at 22.7% of mining employment, and the ASEC gives 23.5%. [SOURCE: BLS CPS Table 18,
   2024 annual averages, https://www.bls.gov/cps/cpsaat18.htm, read from the Wayback capture of 2025-12-31;
-  CALCULATION: scratch tabulation on published weights] With mining at 0 the rule matters less. Taking the top wages
+  CALCULATION: scratch tabulation on published weights] That check confirms the sample's headcount, not the three
+  records' wages; the spreading is a small-cell rule, not a validated correction (parent's review, 2026-10-14). With
+  mining at 0 the rule matters less. Taking the top wages
   in their own industries now gives −$65.65bn at the low end against −$66.48bn. [CALCULATION: items.csv]
 - **A cell with fewer than 100 CPS wage earners takes its sector's pooled share** (a one-cell sector takes every
   private cell's). The pooled cells are 113FF, 211 (38 earners), 212, 313TT, 315AL, 324, 483, 486 and 55. Without
@@ -581,3 +586,6 @@ uv run --no-project python3 -m pytest -p no:cacheprovider infra/immigration-fisc
   before this line was added. `derived/item.json` sha256
   a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283. The v7 reader, in a scratch copy, passes on the
   central and all ten arms, on set and cash. Final.
+- 2026-10-14 16:59 JST: parent's read-only construct review (GPT-6.1 Sol): no central defect over $1bn. Two prose
+  corrections: mining's property key is the T00OTOP tax pattern, not Fixed Assets; the BLS check validates the headcount,
+  not the capped wages. No output changed.
