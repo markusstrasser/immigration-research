@@ -1,0 +1,7 @@
+end,valuation,real_discount_rate,source_footing,baseline_legacy_lineage_victim_bn,replacement_lineage_victim_bn,legacy_price_delta_bn,mortality_channel_bn,scope
+low,dot_uniform,0.0,envelope_low,17.305616399504984,19.657571143972476,2.3519547444674913,6.803244846362763,envelope; matching selected mortality basis/rate on every death; frozen v7 exposure
+low,dot_life_years,0.0,envelope_low,17.305616399504984,19.988816282918215,2.6831998834132307,7.1344899853085,envelope; matching selected mortality basis/rate on every death; frozen v7 exposure
+low,dot_life_years,0.03,envelope_low,17.305616399504984,19.580620084737966,2.2750036852329814,6.726293787128251,envelope; matching selected mortality basis/rate on every death; frozen v7 exposure
+high,dot_uniform,0.0,envelope_high,43.00938542220953,49.63807486072807,6.628689438518535,19.174092259564674,envelope; matching selected mortality basis/rate on every death; frozen v7 exposure
+high,dot_life_years,0.0,envelope_high,43.00938542220953,51.668457326470744,8.65907190426121,21.20447472530735,envelope; matching selected mortality basis/rate on every death; frozen v7 exposure
+high,dot_life_years,0.03,envelope_high,43.00938542220953,50.00350415269878,6.994118730489248,19.539521551535383,envelope; matching selected mortality basis/rate on every death; frozen v7 exposure

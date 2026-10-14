@@ -121,13 +121,13 @@ def victim_age_profile() -> pd.DataFrame:
 
 def active_victim_detail(footing="mixed", vsl_standard="legacy", real_discount_rate=0.0,
                          missing_age_arm="central") -> pd.DataFrame:
-    if footing not in FOOTINGS or vsl_standard not in valuation.STANDARDS:
+    if footing not in (*FOOTINGS, "custody_unmixed") or vsl_standard not in valuation.STANDARDS:
         raise ValueError("[BLOCKED] unknown footing or vsl_standard")
     vc, setup = context()
     nc, base = dict(setup["nc"]), dict(setup["base"])
     if footing in ("mixed", "custody", "envelope_low", "envelope_high"):
         nc["I"] = mixed_matrix(nc["I"])
-    if footing == "custody":
+    if footing in ("custody", "custody_unmixed"):
         # The victim lane's ratio declaration owns its source and naming.
         ratios = vc.institutional_ratio()
         base["ratio"] = ratios["ratio_generic_reallocated"]

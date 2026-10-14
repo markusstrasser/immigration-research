@@ -1,0 +1,32 @@
+{
+  "case": "oct15",
+  "source_quantity_case": "frozen v7 social frame",
+  "inputs_sha256": {
+    "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/derived/p7_payload.json": "8208c9993b58c078c075a2109bdb761b70de543b86499c34e6a6f138a6a16974",
+    "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/oct15/mortality_receipt.json": "97d915f62fdf26e813c879b319255a1b694be3b9b49cd6ffa9872dc1c098e0bc",
+    "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/baseline_totals_oct14.json": "a9503beaba2e28abba2d8e1e5024b9933c33e647ce5d0e7776587ffa85cb0b80",
+    "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/mortality_oct15.py": "df613b6fbe0ab0a4f2fd1289224f14756b678a7d6f57d85953d1724f32f24f7d",
+    "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/p7_crime.py": "0078b53087e131dc026ab0e8e2d1d5282b345885857a0fd92be7e7e15c2f1735",
+    "infra/immigration-fiscal/population_basis_2026_09_29/derived/frame_counts.csv": "57d068d5ba8be325048baa07da831910ff318a762f7721bf192b0122b08f3527",
+    "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/oct15/mortality_arms.csv": "842c6421a255b1293f4d358a76e9978f7d49839c927575f4cdde760ca5e92ea0"
+  },
+  "producer_receipt_sha256": "97d915f62fdf26e813c879b319255a1b694be3b9b49cd6ffa9872dc1c098e0bc",
+  "baseline_contract": "exact p7_payload.lineage_crime_rows[end].victims; apply_p7_crime sets these boundary-adjusted rows directly",
+  "central_round2_victim_delta_bn": {
+    "low": 7.105427357601002e-15,
+    "high": -7.105427357601002e-15
+  },
+  "gates": {
+    "source_pins": true,
+    "current_P7_uniform_baseline_1e_9": true,
+    "union_added_closure_1e_9": true,
+    "complete_basis_rate_coverage": true,
+    "fear_security_held": true
+  },
+  "assumptions": "C3 sender/offending keys and descendant recipient exposure remain at P7/v7; no v8 crime membership repricing. Life-year arms use primary SHR victim ages and NVSS common period mortality; matching environment/crash arms required in joint consumer.",
+  "outputs_sha256": {
+    "mortality_pairing_rows.csv": "b70d0b2314f08b0813306ad7fa3cd6908271ee87734fde73fba430c9e7fcce13",
+    "mortality_envelope_rows.csv": "ecba4f4bdfeaef1ed2defefd5d7ce4eaf8760610ab48a0c850db82d0dc8045d7",
+    "mortality_standalone_rows.csv": "226710cb8c5d90af3a61f557dc9bae8fe8bdb1e798b1b5cdffbb0f6d6d1e603a"
+  }
+}

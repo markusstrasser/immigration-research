@@ -1,0 +1,7 @@
+end,valuation,real_discount_rate,source_footing,baseline_legacy_lineage_victim_bn,replacement_lineage_victim_bn,legacy_price_delta_bn,mortality_channel_bn,scope
+low,dot_uniform,0.0,equal,30.19826122810442,35.24896132484139,5.050700096736968,14.609613337364395,standalone_unmixed; matching selected mortality basis/rate on every death; frozen v7 exposure
+low,dot_life_years,0.0,equal,30.19826122810442,36.803413111766154,6.605151883661733,16.16406512428916,standalone_unmixed; matching selected mortality basis/rate on every death; frozen v7 exposure
+low,dot_life_years,0.03,equal,30.19826122810442,35.53329365150207,5.335032423397649,14.893945664025077,standalone_unmixed; matching selected mortality basis/rate on every death; frozen v7 exposure
+high,dot_uniform,0.0,custody_unmixed,33.63004614018747,39.254716912140246,5.624670771952779,16.269876166532644,standalone_unmixed; matching selected mortality basis/rate on every death; frozen v7 exposure
+high,dot_life_years,0.0,custody_unmixed,33.63004614018747,40.98581940582702,7.355773265639556,18.000978660219435,standalone_unmixed; matching selected mortality basis/rate on every death; frozen v7 exposure
+high,dot_life_years,0.03,custody_unmixed,33.63004614018747,39.57136127760611,5.941315137418641,16.58652053199851,standalone_unmixed; matching selected mortality basis/rate on every death; frozen v7 exposure

@@ -511,3 +511,23 @@ gates and every arm). Raw pulls are in `_cache/` (ignored), with sha256 values i
 `cost_by_offence_central.csv`, `outside_victim_shares_central.csv`,
 `ncvs_sampling_error_central.csv`, `arms.csv`, `property_proxy.csv`, `offender_rate_crosscheck.csv`,
 `fbi_2019_table43c_adult_arrests.csv` and the three console logs.
+
+## 2026-10-15 Round-2 corrections
+
+[CALCULATION: mortality_oct15.py → derived/oct15/] The current P7 pairing already uses DOT's uniform $13.7M on every central death. Independently rebuilding its source-frame and boundary-adjusted victim rows gives $37.341853694137 / $41.585449347833bn, with round-2 uniform replacement delta zero at both ends (absolute residual <1e-9bn). The review's positive estimate describes an earlier correction, not a further change to the current P7 baseline.
+
+The new keyed exporter applies the selected basis to every homicide, including unmixed high and envelope high. Both life-year rates use the lane's own primary SHR2024 victim-age distribution and common NVSS2024 period life table. At 0% the paired victim replacements are $38.896305481062 / $43.316551841520bn (deltas +$1.554451786925 / +$1.731102493687bn); at 3% they are $37.626186020798 / $41.902093713299bn (+$0.284332326661 / +$0.316644365466bn). Envelope and standalone rows expose the same basis/rate choices. Fear and private security remain on their existing source account.
+
+The native receipt verifies six primary pins, 56 actual repository source reads/imports, all 27 footing/basis/rate cells, unchanged nonfatal prices, each uniform homicide at $13.7M, and row/age closure. The pairing verifies every native output hash, the frozen P7 source hashes, exact baseline reproduction, union-plus-added closure and the complete six-cell registry. Producers publish files with the receipt last; a partial publication fails hash validation. Gates are explicit failures, not asserts. Conditional scope: fixed v7 sender/offending and recipient exposure keys transported to oct15 fiscal; custody shares remain a modelled residence proxy. This does not reprice v8 crime membership. Root owns the joined environmental/crime registry and final pairing.
+
+Validation: native producer normal run 7.534s, peak physical footprint 2.165GB; seven mortality tests and three pairing/source-contract tests pass. Native rerun IDENTICAL44/44 exit0 (11.431s); social rerun IDENTICAL71/71 exit0 (2.554s). Historical keyed outputs were preserved. No git writes or network calls.
+
+Reproduce from repo root:
+```
+OPENBLAS_NUM_THREADS=1 GIT_OPTIONAL_LOCKS=0 uv run --no-project python3 infra/immigration-fiscal/crime_victim_cost_2026_09_23/mortality_oct15.py
+OPENBLAS_NUM_THREADS=1 GIT_OPTIONAL_LOCKS=0 uv run --no-project python3 infra/immigration-fiscal/social_costs_unpriced_2026_09_28/mortality_oct15.py
+uv run --no-project python3 -m pytest infra/immigration-fiscal/crime_victim_cost_2026_09_23/test_mortality_arms.py -q
+uv run --no-project python3 -m pytest infra/immigration-fiscal/social_costs_unpriced_2026_09_28/test_mortality_oct15.py -q --import-mode=importlib
+```
+
+Log: 2026-10-15 06:01:26 JST (`date`, parent): rerun on corrected v8 (`d1a24d47`): crime IDENTICAL 44/44, social IDENTICAL 71/71, exit 0. The victim rows read no fiscal amount, so every figure above stands. The joint pairing they feed is in `sept24_propagation_2026_09_24/RESULT.md` ($462.163473 / 561.630823bn on the corrected case).

@@ -1,0 +1,292 @@
+{
+  "route": "crime mortality oct15 fixed-v7 quantities",
+  "runtime": {
+    "python": "3.13.15",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "pyarrow": "25.0.1"
+  },
+  "method": "actual Python read paths, pandas Parquet paths, and imported repository modules",
+  "files": [
+    {
+      "path": "infra/immigration-fiscal/acs_institutional_2026_09_16/acs5_2020_2024_origins.csv",
+      "bytes": 1390,
+      "sha256": "541c74c073ad2cba35794a0115d7f2dee93c203788eb812118956bf2d66e04af"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/_cache/restage/AZ-2022.pkl",
+      "bytes": 18826882,
+      "sha256": "40e8f8feb5e6b78c7d87e88b3ef59d0f86b87d845c47ca5904231e63879d3d8b"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/_cache/restage/AZ-2023.pkl",
+      "bytes": 20272221,
+      "sha256": "c32c699ca688dbb55df7b408418315df79b9d14bb118dcfafa1cc296faaffe95"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/_cache/restage/CA-2022.pkl",
+      "bytes": 63246380,
+      "sha256": "30326d9a599cb445d313239f4e80e83df54a6a35f42f18298abe2e9fee95db17"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/_cache/restage/CA-2023.pkl",
+      "bytes": 97909573,
+      "sha256": "efff44e17079d8bb1b6e50b6c39087cddc0fb752b5855c64f9d2ecb2d9457313"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/_cache/restage/TX-2022.pkl",
+      "bytes": 157648472,
+      "sha256": "489d2a36027e7a88e6f9a2dc32f5e84dbefb74cd1241f205ca9804ba56b9c79b"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/_cache/restage/TX-2023.pkl",
+      "bytes": 157366016,
+      "sha256": "0cca7357ddba5aa8e15463c34f71d31727bf654d8786850cabf8d333c333f93d"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/derived/ncvs_victimization_factor.csv",
+      "bytes": 475,
+      "sha256": "9764e924d954b83d11ae6c9aef0337715dcca080e51796911785d14008214822"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/derived/nibrs_mixed_group_hispanic_fraction.csv",
+      "bytes": 208,
+      "sha256": "ff14af43b24e1f268ae4cde46d7a2ecf6c2f745a0ed36ef26635fb44e751c1de"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/dollar_effects.py",
+      "bytes": 13065,
+      "sha256": "b54ced1930b4c6787551a9b280ed6d7d5519ea93877ec00ec899d99f2c581eb4"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/nibrs_base.py",
+      "bytes": 2799,
+      "sha256": "244d4c7cb5d6efefeb62ad604c1a2c7ae59f953e64e7ed2f809192e6551a5ad2"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/nibrs_impute.py",
+      "bytes": 23369,
+      "sha256": "94bd2f92a97ebea97092def06b22bf6f3acc4849c10fa009cd45b503d85fc5ea"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_victim_cost_2026_09_23/_cache/oai_PMC2835847.xml",
+      "bytes": 170722,
+      "sha256": "b104da52717f5a9e9810bb436e1e2fe9810482eb4f83a866386a4111140b79e2"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/fbi_2019_table43c_adult_arrests.csv",
+      "bytes": 1575,
+      "sha256": "fc89a8182663fa76bdfdc04e552fe2c726b56c1de3fcc3b0651089164a734ed4"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/mexican_share_of_hispanic_exposure.csv",
+      "bytes": 219,
+      "sha256": "5206d31a889b7f3cf5269a2cda279113ba1ffcf43e36b9e491df728e2960f6a7"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/shr_p_offender_given_victim.csv",
+      "bytes": 1057,
+      "sha256": "0fa66853b235c688b5c7f939cfa7561bd14be1cba63aea85d93edc0c5797942c"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/target_population_cps2025.csv",
+      "bytes": 610,
+      "sha256": "7c0211ff8491f88acafdd8998f3daf27bc7d559461719081316787a3dc982c53"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/wonder_2024_homicide_victims.csv",
+      "bytes": 173,
+      "sha256": "3c9bfe8e30704c1a242ceb20bf5fd0b7d97ab4b56d36d452e9a886b902b25dda"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_victim_cost_2026_09_23/inputs/dot_vsl_table_web.txt",
+      "bytes": 641,
+      "sha256": "7094dd8578affc5688c3b6d0f4500928876c4ae96dc50bbfe98f5ab313993996"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_victim_cost_2026_09_23/inputs/lt2024_Table01.xlsx",
+      "bytes": 20584,
+      "sha256": "d9ce5588403433666c26eaf178ed7afd0cd591c65b3b08dcba2b76fcf5dcdd3c"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_victim_cost_2026_09_23/inputs/pins.json",
+      "bytes": 1211,
+      "sha256": "339327b4dcf414bbeac053e37edab09953b07a19206d0539ee29335ea8c686ad"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_victim_cost_2026_09_23/mortality_arms.py",
+      "bytes": 13095,
+      "sha256": "1994186d437b5adfadcf59912374b930ad4ad5f86a78a8832cd7ca15708b718b"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_victim_cost_2026_09_23/mortality_oct15.py",
+      "bytes": 5744,
+      "sha256": "b07a6dba7dc53e725552cac0f187dac94b5bb17400fad08f796b54245b5b33eb"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_victim_cost_2026_09_23/vsl_standard.py",
+      "bytes": 5734,
+      "sha256": "001a0a1ac1363f5ae38b5133bc6b65219a728e6a6056327f0deee81280821aa5"
+    },
+    {
+      "path": "infra/immigration-fiscal/homicide_cost_2026_09_18/_cache/SHR76_25a.csv",
+      "bytes": 352107592,
+      "sha256": "eeedbf5e58a4a2e91d88e8078341210bd2034b57e6d42d0e2de2667020b88a12"
+    },
+    {
+      "path": "infra/immigration-fiscal/homicide_cost_2026_09_18/derived/c1b_matrix_joint_impute.csv",
+      "bytes": 190,
+      "sha256": "f2fe1483255078e530c8a65899486286b4f0b8ebbf0c82ff91becc781fbb51f3"
+    },
+    {
+      "path": "infra/immigration-fiscal/homicide_cost_2026_09_18/derived/external_params.json",
+      "bytes": 16205,
+      "sha256": "55df0c9e9f2a34050395a7de8b9ef549b3da00d5a0e9df3a5c21648c584b1e58"
+    },
+    {
+      "path": "infra/immigration-fiscal/homicide_cost_2026_09_18/shr_analysis.py",
+      "bytes": 9845,
+      "sha256": "40cb8b2209f59da445d8f7b4cdae0e96c693b7e36ecf06387a42e7ca0073b934"
+    },
+    {
+      "path": "infra/immigration-fiscal/ncvs_victim_offender_2026_09_18/_cache/cv24/cv24t01.csv",
+      "bytes": 3934,
+      "sha256": "08a96e5597913995f054ea92b541173c02b431f0c3e2d9dccab24eb6f9475a57"
+    },
+    {
+      "path": "infra/immigration-fiscal/ncvs_victim_offender_2026_09_18/_cache/miller2021_jbca.txt",
+      "bytes": 148730,
+      "sha256": "11365051245c85b55447a5e783156d53a95b0ef5b1064c37a572700f84bd093b"
+    },
+    {
+      "path": "infra/immigration-fiscal/ncvs_victim_offender_2026_09_18/derived/cpi_u_annual.csv",
+      "bytes": 456,
+      "sha256": "682c0afd2835c3e8e91d108b70381ee0d1e62cf60859afd3c6d1606ac20faa7f"
+    },
+    {
+      "path": "infra/immigration-fiscal/ncvs_victim_offender_2026_09_18/derived/cv_matrix_violent.csv",
+      "bytes": 7581,
+      "sha256": "67ed1cba283276a293d02439002de10003814e2503d386e84f715b242f5c6d57"
+    },
+    {
+      "path": "infra/immigration-fiscal/ncvs_victim_offender_2026_09_18/derived/cv_population_12plus.csv",
+      "bytes": 1882,
+      "sha256": "3b71509726cc7d87e4d9f072e59cc61561b6c5be31be18f0e499f2b70d8ccb8f"
+    },
+    {
+      "path": "infra/immigration-fiscal/ncvs_victim_offender_2026_09_18/derived/matrix_by_crime_type_2019.csv",
+      "bytes": 2190,
+      "sha256": "1a5e114109e64ffee714da7719be417d12396326b3eaa5374e3d1166ee202b8a"
+    },
+    {
+      "path": "infra/immigration-fiscal/ncvs_victim_offender_2026_09_18/derived/matrix_pooled_2022_2024.csv",
+      "bytes": 2138,
+      "sha256": "d73452ec306dfecc29a5617a0e2386ea37c144c08a5c95c1b1ea50499ab76a11"
+    },
+    {
+      "path": "infra/immigration-fiscal/ncvs_victim_offender_2026_09_18/derived/miller2021_price_set.csv",
+      "bytes": 240,
+      "sha256": "8b49eea7343e62e73066925c27c64172a654033915a1d682412dd86024a60ac5"
+    },
+    {
+      "path": "infra/immigration-fiscal/ncvs_victim_offender_2026_09_18/derived/ndash_rate_by_victim_race.csv",
+      "bytes": 82389,
+      "sha256": "09b507cc26bf6629e76826f43f0be28790c79d68cf42dccc1045f5b10f9835ca"
+    },
+    {
+      "path": "infra/immigration-fiscal/ncvs_victim_offender_2026_09_18/derived/rates_by_victim_and_offender_2022_2024.csv",
+      "bytes": 490,
+      "sha256": "b267dc82c7accd672d685694941075f6f5b56a46a3a8a4a0eea771d4b1a2b280"
+    },
+    {
+      "path": "infra/immigration-fiscal/ncvs_victim_offender_2026_09_18/derived/simple_assault_unit_cost.csv",
+      "bytes": 2021,
+      "sha256": "eee42f60b4c11e186d734796ad841a34faf1a265500896154c9dbe9012046150"
+    },
+    {
+      "path": "infra/immigration-fiscal/nibrs_arrests_2026_09_16/_cache/nc-est2024-alldata-h-file08.csv",
+      "bytes": 282121,
+      "sha256": "74d5c4be10b4c14d101c7bf4f8e91a3df3a92a22fc33ee73f44ad7c6c8717d45"
+    },
+    {
+      "path": "infra/immigration-fiscal/nibrs_arrests_2026_09_16/_cache/nc-est2024-alldata-h-file10.csv",
+      "bytes": 282803,
+      "sha256": "d17b66e5661c4dc1c2d0fd129c922d15b928d6b548c0893c016171bf5e33b5f8"
+    },
+    {
+      "path": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/_cache/cde_agencies_AZ.json",
+      "bytes": 31240,
+      "sha256": "55a593cb2eaee7914d246445a13ceb70cf06ea16f4728833e746f64fc478da12"
+    },
+    {
+      "path": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/_cache/cde_agencies_CA.json",
+      "bytes": 221187,
+      "sha256": "2a969077000efccee6805c7cf33188459c064c0f97e69477b6da48bcf1f10241"
+    },
+    {
+      "path": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/_cache/cde_agencies_TX.json",
+      "bytes": 431098,
+      "sha256": "f5baec7c8e5ee588cca0490070226a9b91558858e0a745f858e042a10129ed77"
+    },
+    {
+      "path": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/_cache/stage/AZ-2022.pkl",
+      "bytes": 2648058,
+      "sha256": "e244d477f8411367b7e7f1628abc228b6e659cad289deb71061d22b62e32c80d"
+    },
+    {
+      "path": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/_cache/stage/AZ-2023.pkl",
+      "bytes": 2650896,
+      "sha256": "c18cbe4003c5a9c455435e9aa9121d9db0162504b9c266a4301e3edd099172ce"
+    },
+    {
+      "path": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/_cache/stage/CA-2022.pkl",
+      "bytes": 12783139,
+      "sha256": "9bdc8b23e39513c0eba33c7388c02aed4786b1896d87bb5f9fe26d384f95718e"
+    },
+    {
+      "path": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/_cache/stage/CA-2023.pkl",
+      "bytes": 16044207,
+      "sha256": "9e711da9c15c033cf4f8dd4b6f70c865874028341cc8c55554b0390a9da1d749"
+    },
+    {
+      "path": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/_cache/stage/TX-2022.pkl",
+      "bytes": 17233417,
+      "sha256": "8669794e9f5e24e3cb3d50a75108f661038ae5df9d6d78f337c3c3863fd61624"
+    },
+    {
+      "path": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/_cache/stage/TX-2023.pkl",
+      "bytes": 17984138,
+      "sha256": "3cc65f878b53dc706a125e3cf4e561b53182d518272a6ef0e301a9c0642b9a58"
+    },
+    {
+      "path": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/derived/acs5_place_county_groups.csv",
+      "bytes": 1120156,
+      "sha256": "26029ee2a2a22b34535f764a7342310bd508ea6f3073d28535e70707351ed40f"
+    },
+    {
+      "path": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/nibrs_rates.py",
+      "bytes": 45550,
+      "sha256": "96a53d825c5e5b0263d569c5ce5e26329fb62c2cae79ffb0c21e00dd055ea4af"
+    },
+    {
+      "path": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/nibrs_stage.py",
+      "bytes": 12477,
+      "sha256": "8a9a1ad543252fd2b471300d24d9539886830cfef1881618d43e1cc793eddfeb"
+    },
+    {
+      "path": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/victim_cost_rerun.py",
+      "bytes": 19151,
+      "sha256": "b215cc4cb418ef332dcdbd977715c664386c8791f47d2780d05f5e6226395d04"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 602,
+      "sha256": "0ef9c8e68ffcb1b2cfab8a443787ae47d81dbe2ad69a18c862ede105c9726fd6"
+    },
+    {
+      "path": "uv.lock",
+      "bytes": 179568,
+      "sha256": "fda4346826789712bcd76fc60dedeb709be3ffaa3bd09db25c9f628587094aa2"
+    }
+  ]
+}
