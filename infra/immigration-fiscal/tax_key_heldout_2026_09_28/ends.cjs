@@ -1,4 +1,8 @@
-// Translate a change in the income-tax key's share into the adopted main case (main_case_long_run_2026_09_27).
+// Default: measure the remaining tax-key residual on the live oct14 case.
+// node ends.cjs --case oct14
+// The September 27 translation is a frozen upstream measurement used by the
+// candidate-v2 package. heldout.py explicitly selects --historical-sept27 when
+// reproducing that measurement; live propagation never regenerates its files.
 //
 // Reads the share changes heldout.py computes (argv[2]) and writes the case's numbers (argv[3]). For each fill-in
 // method it takes the corrected model's final union federal income tax per allocation, checks that it is the
@@ -6,14 +10,21 @@
 // change as a receipt edit of stack factor x national x share change. It then reruns every specification: the
 // band is each method's minimum and maximum, averaged over the methods, as the case computes it.
 //
-//   node ends.cjs derived/translation_inputs.json derived/main_case_translation.json
+//   node ends.cjs --historical-sept27 derived/translation_inputs.json derived/main_case_translation.json
 "use strict";
 const fs = require("fs");
 const path = require("path");
 
+if (process.argv[2] !== "--historical-sept27") {
+  if (process.argv.length > 2 && (process.argv[2] !== "--case" || process.argv[3] !== "oct14" || process.argv.length !== 4))
+    throw new Error("[BLOCKED] use --case oct14 for the live residual or --historical-sept27 for the frozen measurement");
+  require("./ends_oct14.cjs");
+} else {
+if (process.argv.length !== 5) throw new Error("[BLOCKED] --historical-sept27 needs an input path and an output path");
+
 const P = require(path.join(__dirname, "..", "main_case_long_run_2026_09_27", "package.cjs"));
 const LINE = "federal_income_tax";
-const [inPath, outPath] = process.argv.slice(2);
+const [inPath, outPath] = process.argv.slice(3);
 const input = JSON.parse(fs.readFileSync(inPath, "utf8"));
 const oo = P.withCentral({});
 const specs = P.MAIN_SPECS;
@@ -74,3 +85,4 @@ for (const name of Object.keys(input.share_change)) {
   };
 }
 fs.writeFileSync(outPath, JSON.stringify(result, null, 1) + "\n");
+}

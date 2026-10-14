@@ -188,7 +188,37 @@ It cannot identify:
   `translation_inputs.json`, `summary.json` and `gates.json` (11 gates);
 - `reads/`: the IRS cells for both years and the availability record.
 
-## Reproduce
+## Live-case reproduction (oct14)
+
+`ends.cjs` defaults to the live oct14 residual. It reads personal end specifications from
+`summary.json` `v7.end_specifications`, the `white_end_tax_keys` item from the case's registry, and
+the independent receipt-only white-lane measurement in `income_tax_keys_oct14_meta.json`. Its hashes
+tie it to the final case, canonical key code, frame, raw inputs and exported CSVs. An applied item must leave a measured
+and priced residual of zero at 1e-9, in both the set and the cash set. Totals gate against the case's
+full-precision `summary.json` at 1e-9 and its four-decimal `main_case_bands.csv` at 5e-5. The white
+lane must run first. `test_keys.py` checks A1's person-level tax shares against that lane's live
+`income_tax_keys_oct14.csv` at both allocations.
+
+The original held-out key translation is a frozen input to the candidate-v2 package, which v7
+still consumes. Its files, IRS reads and person-key definition remain source measurements;
+live propagation does not regenerate them. `heldout.py` explicitly selects the translator's
+`--historical-sept27` route when reproducing that historical measurement. The new consumer writes
+`main_case_translation_oct14.json` and `main_case_change_oct14.csv` only after all gates pass.
+
+```sh
+node infra/immigration-fiscal/tax_key_heldout_2026_09_28/ends.cjs --case oct14
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest -p no:cacheprovider infra/immigration-fiscal/tax_key_heldout_2026_09_28/test_keys.py -q
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/tax_key_heldout_2026_09_28 \
+  "node {lane}/ends.cjs --case oct14" \
+  "uv run --no-project python3 -m pytest -p no:cacheprovider {lane}/test_keys.py -q" \
+  --allow-unrun infra/immigration-fiscal/tax_key_heldout_2026_09_28/ends_oct14.cjs \
+  --allow-unrun infra/immigration-fiscal/tax_key_heldout_2026_09_28/heldout.py
+```
+
+The module `ends_oct14.cjs` is executed by `ends.cjs`; `heldout.py` has only the historical caller
+flag updated, syntax-checked during propagation. These are the two explicit rerun coverage declarations.
+
+## Historical reproduction (key measurement; not the live consumer)
 
 ```sh
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/tax_key_heldout_2026_09_28/acquire.py   # network, once
@@ -225,3 +255,12 @@ Two consecutive runs of `heldout.py` wrote byte-identical `derived/` and `reads/
   probe statuses were unchanged.
 - Final runs: 11 gates pass, and two consecutive runs are byte-identical.
 - Parent's integration rerun (2026-09-28, 04:24 JST) ran `acquire.py` again: both tables' hashes and every probe status were unchanged, so only the check time in `reads/soi_availability.md` (2026-09-27T19:24:51Z) and the `_cache/acquisition.json` hash in `derived/summary.json` moved. `heldout.py` alone then reran byte-identical, 16 of 16 files.
+- 2026-10-14 18:39:13 JST — Live consumer and person-key tests moved to oct14 after CASE_FINAL (`148ed1ea`); the frozen historical key measurement remains an input. Five key tests pass for both allocations. Their explicit test-only rerun is IDENTICAL: 19/19, exit 0; it excludes the blocked live residual translator and historical `heldout.py`, so it is not a full-lane pass. Final white receipt-only metadata passes source-hash, W-count (1e-9), applied-item and residual-arithmetic (1e-12) gates. Independently measured W movement is 1.086440193243434bn; the adopted item's six-decimal source supplies 1.08644bn. Both sets' low/high residuals are +1.932434339213529e-7bn (about $193.24), exceeding the required 1e-9bn ($1) zero gate. The live command exits 1 before pricing or writing either oct14 translation output; no full consumer rerun is claimed. **STOP / exact question:** should item 7 consume the full-precision measurement and the parent rebuild the frozen case, or is there an authoritative precision convention reconciling the six-decimal source with this zero-at-1e-9 contract? No tolerance is loosened and no residual rounded to zero. [DATA: `../white_replacement_2026_09_28/derived/income_tax_keys_oct14_meta.json`, `../main_case_2026_10_14/derived/corrections{,_cash}.json`; CALCULATION: scratch `tax-residual-final.log`; pytest and test-only `rerun_lane.py` stdout recorded in the propagation session]
+
+## v7 wave 2: frozen-source representation bound (2026-10-14)
+
+The parent explicitly resolves the prior precision stop: item 7 reads limits_oct07.csv printed to six-decimal bn, frozen in adopted case 148ed1ea. The measured-versus-input check therefore uses 5e-7bn (half a printing unit). Every other residual keeps 1e-9; source hashes/count and arithmetic keep their existing stricter checks. The independent measured remainder is exactly +1.932434339213529e-7bn, about $193.24, at both ends and on both bases; it remains in the JSON and CSV. Neither the source nor frozen case is rebuilt. [DATA: ../white_replacement_2026_09_28/derived/income_tax_keys_oct14_meta.json; CALCULATION: ends_oct14.cjs]
+
+Live commands: node infra/immigration-fiscal/tax_key_heldout_2026_09_28/ends.cjs --case oct14; OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest -p no:cacheprovider infra/immigration-fiscal/tax_key_heldout_2026_09_28/test_keys.py -q. The live full rerun allows ends_oct14.cjs as the module executed by ends.cjs, and heldout.py as the preserved historical caller (compile-checked, not regenerated).
+
+- 2026-10-14 19:11:30 JST — live translation exits 0 with 45 gates; five person-key tests pass. Full live-consumer rerun IDENTICAL 21/21, exit 0. Both full-precision baseline totals reproduce the adopted case at 1e-9; the engine prices the preserved remainder at 1e-9. [CALCULATION: ends.cjs --case oct14; test_keys.py; wave-2 rerun]

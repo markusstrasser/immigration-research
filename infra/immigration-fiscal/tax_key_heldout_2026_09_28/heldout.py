@@ -353,7 +353,7 @@ def main() -> int:
     inputs = {"line": LINE, "national_bn": national, "reweighted_share": s_final,
               "share_change": {n: {a: float(v[a][0]) for a in ALLOCS} for n, v in variants.items()}}
     (OUT / "translation_inputs.json").write_text(json.dumps(inputs, indent=1, sort_keys=True) + "\n")
-    done = subprocess.run(["node", str(HERE / "ends.cjs"), str(OUT / "translation_inputs.json"),
+    done = subprocess.run(["node", str(HERE / "ends.cjs"), "--historical-sept27", str(OUT / "translation_inputs.json"),
                            str(OUT / "main_case_translation.json")], capture_output=True, text=True, cwd=ROOT)
     if done.returncode:
         print(done.stdout + done.stderr)

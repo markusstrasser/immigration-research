@@ -1,0 +1,309 @@
+{
+ "case": "oct14",
+ "ends": {
+  "set": [
+   16,
+   11
+  ],
+  "cash": [
+   16,
+   11
+  ],
+  "by_method": {
+   "set": [
+    [
+     16,
+     11
+    ],
+    [
+     16,
+     11
+    ]
+   ],
+   "cash": [
+    [
+     16,
+     11
+    ],
+    [
+     16,
+     11
+    ]
+   ]
+  }
+ },
+ "allocation_at_end": {
+  "low": "personal",
+  "high": "personal"
+ },
+ "source": "white_replacement_2026_09_28/derived/income_tax_keys_oct14_meta.json",
+ "tolerance_bn": 1e-9,
+ "item7_source_printing_tolerance_bn": 5e-7,
+ "sets": {
+  "set": {
+   "absorbed": true,
+   "baseline_bn": [
+    339.5520178295269,
+    423.6492607005069
+   ],
+   "measured_residual_bn": {
+    "low": 1.932434339213529e-7,
+    "high": 1.932434339213529e-7
+   },
+   "residual_bn": [
+    1.9324340883031255e-7,
+    1.9324340883031255e-7
+   ],
+   "residual_cost_bn": [
+    339.5520180227703,
+    423.6492608937503
+   ]
+  },
+  "cash": {
+   "absorbed": true,
+   "baseline_bn": [
+    264.4255736155054,
+    348.52281648648557
+   ],
+   "measured_residual_bn": {
+    "low": 1.932434339213529e-7,
+    "high": 1.932434339213529e-7
+   },
+   "residual_bn": [
+    1.9324352251715027e-7,
+    1.9324340883031255e-7
+   ],
+   "residual_cost_bn": [
+    264.42557380874894,
+    348.522816679729
+   ]
+  }
+ },
+ "gates": [
+  {
+   "name": "raw key measurement is live oct14 at personal allocation",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: main_case_2026_10_14/derived/corrections.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: main_case_2026_10_14/derived/corrections_cash.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: main_case_2026_10_14/derived/summary.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: white_replacement_2026_09_28/export_keys_oct14.py",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: white_replacement_2026_09_28/rekey_sept29.py",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: white_replacement_2026_09_28/rekey_white.py",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: white_replacement_2026_09_28/check_dumps_oct14.py",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: white_replacement_2026_09_28/derived/engine_lines_sept29_cash.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: tax_key_heldout_2026_09_28/keys.py",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: external_benchmarks_2026_09_24/frame.py",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: tax_key_heldout_2026_09_28/derived/bins.csv",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: external_benchmarks_2026_09_24/derived/cbo_group_shares.csv",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: white_replacement_2026_09_28/derived/engine_lines_oct14.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: white_replacement_2026_09_28/derived/engine_lines_oct14_cash.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: white_replacement_2026_09_28/derived/engine_lines_oct14_union.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: white_replacement_2026_09_28/derived/engine_lines_oct14_union_cash.json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: white_replacement_2026_09_28/derived/income_tax_keys_oct14.csv",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw key source hash: black_comparator_rough_2026_09_28/derived/income_tax_keys_oct14.csv",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "raw W movement is the sum of its receipt parts (1e-12)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "case ends are two personal specifications per set",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "case CSV has its declared columns",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "set: adopted oct14 payload",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "set: white_end_tax_keys is a registered edit set",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "set: raw W count is the case's W count (1e-9)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "set: measurement subtracts the actual adopted item (1e-12)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "set: white measurement gives full-precision residuals",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "set: residual equals raw movement minus applied item (1e-12)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "set: measured white-key residual is within source printing tolerance (5e-7bn)",
+   "pass": true,
+   "detail": "1.932434339213529e-7 / 1.932434339213529e-7"
+  },
+  {
+   "name": "set: total matches the full-precision case (1e-9)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "set: total matches main_case_bands.csv (5e-5: four decimal places)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "set: engine prices the remaining receipt shift exactly (1e-9)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "set: priced residual on oct14 is within source printing tolerance (5e-7bn)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cash: adopted oct14 payload",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cash: white_end_tax_keys is a registered edit set",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cash: raw W count is the case's W count (1e-9)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cash: measurement subtracts the actual adopted item (1e-12)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cash: white measurement gives full-precision residuals",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cash: residual equals raw movement minus applied item (1e-12)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cash: measured white-key residual is within source printing tolerance (5e-7bn)",
+   "pass": true,
+   "detail": "1.932434339213529e-7 / 1.932434339213529e-7"
+  },
+  {
+   "name": "cash: total matches the full-precision case (1e-9)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cash: total matches main_case_bands.csv (5e-5: four decimal places)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cash: engine prices the remaining receipt shift exactly (1e-9)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "cash: priced residual on oct14 is within source printing tolerance (5e-7bn)",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}
