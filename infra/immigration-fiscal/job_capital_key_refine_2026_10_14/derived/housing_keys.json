@@ -1,0 +1,48 @@
+{
+  "gates": [
+    {
+      "name": "modeled_owner_property union plus added closes live v7",
+      "passed": true,
+      "gap_bn": 0
+    },
+    {
+      "name": "tenant_occupied_property union plus added closes live v7",
+      "passed": true,
+      "gap_bn": 1.7763568394002505e-15
+    }
+  ],
+  "lines": {
+    "modeled_owner_property": {
+      "national_bn": 394.86247794800005,
+      "union_target_bn": 24.52911319700066,
+      "added_target_bn": 2.3757589177539873,
+      "union_share": 0.06212064849633784,
+      "lineage_share": 0.06813732278278867,
+      "response": {
+        "receipt": true,
+        "override": "receipt:modeled_owner_property",
+        "low": 0.7726986463443216,
+        "high": 0.7726986463443216,
+        "rule": "owner-occupied property tax at the long-run owner response (the metro land-price fall), in every profile; the line keeps its key",
+        "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs RESPONSES.owner.central (derived/housing.json)"
+      },
+      "key": "modeled_owner_property"
+    },
+    "tenant_occupied_property": {
+      "national_bn": 83.840225,
+      "union_target_bn": 9.613707080075,
+      "added_target_bn": 0.6621277209435156,
+      "union_share": 0.114667,
+      "lineage_share": 0.12256449456115504,
+      "response": {
+        "receipt": true,
+        "override": "receipt:tenant_occupied_property",
+        "low": 0.7189123969969125,
+        "high": 0.7189123969969125,
+        "rule": "the tax on tenant-occupied housing, split out of remaining_production_property (BEA Table 7.4.5 housing taxes on production x the tenant share of housing output), keyed by the group's share of contract rent, at the long-run renter response in every profile",
+        "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs splitTenant, RESPONSES.renter.central"
+      },
+      "key": "renter_contract_rent"
+    }
+  }
+}

@@ -1,0 +1,3348 @@
+{
+ "sources": {
+  "k4_22co01ccr.xlsx": {
+   "url": "https://www.irs.gov/pub/irs-soi/22co01ccr.xlsx",
+   "sha256": "3297b4f94cda92993399685a623d0f8c6583f5ae271a33ece4e2368d77cc19ae",
+   "bytes": 61549
+  },
+  "k4_22co53ccr.xlsx": {
+   "url": "https://www.irs.gov/pub/irs-soi/22co53ccr.xlsx",
+   "sha256": "7910f63206962599a97b0c83e7f88e91edda9cfc224432524253ac2ab425e791",
+   "bytes": 144283
+  },
+  "k4_p16_ty2022.pdf": {
+   "url": "https://www.irs.gov/pub/irs-pdf/p16.pdf",
+   "sha256": "65912d6c5fb53074964f25e26b45dadae60437075f8b3acfdfaea988bea30356",
+   "bytes": 1777846
+  },
+  "k4_bea_supply_use.zip": {
+   "url": "https://apps.bea.gov/industry/release/zip/SUPPLY-USE.zip",
+   "sha256": "3f16466e11eef0ed562d3663907f4a4a65856c134aa9f8baf7da6460bd11987d",
+   "bytes": 4882928
+  },
+  "k4_census_industry.xlsx": {
+   "url": "https://www2.census.gov/programs-surveys/demo/guidance/industry-occupation/2022-Census-Industry-Code-List-with-Crosswalk.xlsx",
+   "sha256": "c9d2e004b2735c3975f0768e7dac704df6d2e0b36b24d33f5dbc7109cab5628c",
+   "bytes": 102789
+  }
+ },
+ "source_totals_bn": {
+  "allform": 448.720584,
+  "conly": 448.500023,
+  "allform_sector_sum": 448.720586,
+  "raw_rounding_gap": 2e-06
+ },
+ "coverage": {
+  "allform": {
+   "refined_cells": [
+    "311FT",
+    "322",
+    "324",
+    "325",
+    "326",
+    "327",
+    "331",
+    "332",
+    "333",
+    "334",
+    "3364OT",
+    "339",
+    "42",
+    "441",
+    "445",
+    "4A0",
+    "511",
+    "512",
+    "514",
+    "521CI",
+    "524",
+    "5412OP"
+   ],
+   "refined_tax_bn": 488.30256156000013,
+   "limitations": [
+    {
+     "cell": "311FT",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [
+      1290
+     ],
+     "national_wage_fraction": 0.0779963208303641
+    },
+    {
+     "cell": "322",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "324",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "325",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "326",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "327",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "331",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "332",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [
+      2990
+     ],
+     "national_wage_fraction": 0.017310944934320355
+    },
+    {
+     "cell": "333",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "333",
+     "reason": "3291 includes part of 333, beyond its named n.e.c. classes; fuller arm treats it as 3332/3334/3339, strict arm excludes whole cell"
+    },
+    {
+     "cell": "334",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "3364OT",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "339",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [
+      3990
+     ],
+     "national_wage_fraction": 0.14663772827689495
+    },
+    {
+     "cell": "42",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [
+      4590
+     ],
+     "national_wage_fraction": 0.01590537210422125
+    },
+    {
+     "cell": "441",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "445",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "4A0",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [
+      5791
+     ],
+     "national_wage_fraction": 0.06918733189310897
+    },
+    {
+     "cell": "511",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "512",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "514",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "521CI",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "524",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "5412OP",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    }
+   ]
+  },
+  "conly": {
+   "refined_cells": [
+    "322",
+    "324",
+    "332",
+    "511",
+    "512",
+    "514",
+    "524"
+   ],
+   "refined_tax_bn": 138.820892825,
+   "limitations": [
+    {
+     "cell": "311FT",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "322",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "324",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "325",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "326",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "327",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "331",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "332",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [
+      2990
+     ],
+     "national_wage_fraction": 0.017310944934320355
+    },
+    {
+     "cell": "333",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "334",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "3364OT",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "339",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "42",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "441",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "445",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "4A0",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "511",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "512",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "514",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "521CI",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "524",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "5412OP",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    }
+   ]
+  },
+  "strict_allform": {
+   "refined_cells": [
+    "322",
+    "324",
+    "325",
+    "326",
+    "327",
+    "331",
+    "334",
+    "3364OT",
+    "441",
+    "445",
+    "511",
+    "512",
+    "514",
+    "521CI",
+    "524",
+    "5412OP"
+   ],
+   "refined_tax_bn": 331.553319906,
+   "limitations": [
+    {
+     "cell": "311FT",
+     "reason": "public nonspecified industry can cross bins; strict arm retains whole frozen cell"
+    },
+    {
+     "cell": "322",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "324",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "325",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "326",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "327",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "331",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "332",
+     "reason": "public nonspecified industry can cross bins; strict arm retains whole frozen cell"
+    },
+    {
+     "cell": "333",
+     "reason": "public nonspecified industry can cross bins; strict arm retains whole frozen cell"
+    },
+    {
+     "cell": "334",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "3364OT",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "339",
+     "reason": "public nonspecified industry can cross bins; strict arm retains whole frozen cell"
+    },
+    {
+     "cell": "42",
+     "reason": "public nonspecified industry can cross bins; strict arm retains whole frozen cell"
+    },
+    {
+     "cell": "441",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "445",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "4A0",
+     "reason": "public nonspecified industry can cross bins; strict arm retains whole frozen cell"
+    },
+    {
+     "cell": "511",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "512",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "514",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "521CI",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "524",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "5412OP",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    }
+   ]
+  },
+  "strict_conly": {
+   "refined_cells": [
+    "322",
+    "324",
+    "511",
+    "512",
+    "514",
+    "524"
+   ],
+   "refined_tax_bn": 131.225092983,
+   "limitations": [
+    {
+     "cell": "311FT",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "322",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "324",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "325",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "326",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "327",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "331",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "332",
+     "reason": "public nonspecified industry can cross bins; strict arm retains whole frozen cell"
+    },
+    {
+     "cell": "333",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "334",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "3364OT",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "339",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "42",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "441",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "445",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "4A0",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "511",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "512",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "514",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "521CI",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    },
+    {
+     "cell": "524",
+     "reason": "unmatched CPS code wages held at frozen share",
+     "codes": [],
+     "national_wage_fraction": 0.0
+    },
+    {
+     "cell": "5412OP",
+     "reason": "IRS suppressed minor tax; retain frozen cell key"
+    }
+   ]
+  }
+ },
+ "results": {
+  "allform": {
+   "low": {
+    "net_cost_change_union_bn": -0.3577992801130563,
+    "union_change_se_bn": 0.6845452073439044,
+    "net_cost_change_lineage_bn": -0.3495028820811814,
+    "lineage_change_conditional_se_bn": 0.7245119894894992,
+    "over_5bn": false
+   },
+   "high": {
+    "net_cost_change_union_bn": -0.13238573364183082,
+    "union_change_se_bn": 0.25328172671724464,
+    "net_cost_change_lineage_bn": -0.12931606637003712,
+    "lineage_change_conditional_se_bn": 0.2680694361111147,
+    "over_5bn": false
+   }
+  },
+  "conly": {
+   "low": {
+    "net_cost_change_union_bn": -0.048593596353022406,
+    "union_change_se_bn": 0.18456326983517699,
+    "net_cost_change_lineage_bn": -0.05004234315167159,
+    "lineage_change_conditional_se_bn": 0.19373945735827489,
+    "over_5bn": false
+   },
+   "high": {
+    "net_cost_change_union_bn": -0.01797963065061829,
+    "union_change_se_bn": 0.06828840983901549,
+    "net_cost_change_lineage_bn": -0.018515666966118484,
+    "lineage_change_conditional_se_bn": 0.07168359922256169,
+    "over_5bn": false
+   }
+  },
+  "strict_allform": {
+   "low": {
+    "net_cost_change_union_bn": 0.4257873502778651,
+    "union_change_se_bn": 0.43364715114998975,
+    "net_cost_change_lineage_bn": 0.45097775692421105,
+    "lineage_change_conditional_se_bn": 0.46089263058101376,
+    "over_5bn": false
+   },
+   "high": {
+    "net_cost_change_union_bn": 0.15754131960281006,
+    "union_change_se_bn": 0.1604494459254962,
+    "net_cost_change_lineage_bn": 0.16686177006195807,
+    "lineage_change_conditional_se_bn": 0.1705302733149751,
+    "over_5bn": false
+   }
+  },
+  "strict_conly": {
+   "low": {
+    "net_cost_change_union_bn": -0.21147022528424486,
+    "union_change_se_bn": 0.16790578699412734,
+    "net_cost_change_lineage_bn": -0.21780512291641738,
+    "lineage_change_conditional_se_bn": 0.1775411680868998,
+    "over_5bn": false
+   },
+   "high": {
+    "net_cost_change_union_bn": -0.0782439833551706,
+    "union_change_se_bn": 0.06212514118782711,
+    "net_cost_change_lineage_bn": -0.08058789547907444,
+    "lineage_change_conditional_se_bn": 0.06569023219215292,
+    "over_5bn": false
+   }
+  }
+ },
+ "gates": [
+  {
+   "name": "all frozen core gates passed",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS national inside published sector rounding intervals before normalization",
+   "passed": true,
+   "detail": 2
+  },
+  {
+   "name": "IRS source documents rounding nonclosure",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS reconciled national closure <=1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "union code-cell aggregate positive control reproduces frozen shares <=1e-9",
+   "passed": true,
+   "detail": 6.245004513516506e-16
+  },
+  {
+   "name": "G1 code-cell aggregate positive control reproduces frozen shares <=1e-9",
+   "passed": true,
+   "detail": 4.996003610813204e-16
+  },
+  {
+   "name": "G2 code-cell aggregate positive control reproduces frozen shares <=1e-9",
+   "passed": true,
+   "detail": 2.8449465006019636e-16
+  },
+  {
+   "name": "G3plus code-cell aggregate positive control reproduces frozen shares <=1e-9",
+   "passed": true,
+   "detail": 2.5673907444456745e-16
+  },
+  {
+   "name": "white code-cell aggregate positive control reproduces frozen shares <=1e-9",
+   "passed": true,
+   "detail": 4.6629367034256575e-15
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 35/26",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 36/27",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 37/28",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 38/29",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 39/30",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 40/31",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 41/32",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 43/33",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 44/34",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 45/35",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 46/36",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 57/44",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 58/45",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 61/47",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 62/48",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 64/49",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 65/50",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 66/51",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 67/52",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 68/53",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 69/54",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 71/55",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 72/56",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 74/57",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 75/58",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 76/59",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 78/60",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 79/61",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 80/62",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 82/63",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 83/64",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 84/65",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 85/66",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 86/67",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 87/68",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 89/69",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 90/70",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 91/71",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 92/72",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 93/73",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 94/74",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 95/75",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 97/76",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 98/77",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 99/78",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 100/79",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 101/80",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 108/85",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 109/86",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 110/87",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 113/89",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 114/90",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 117/92",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 118/93",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 119/94",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 120/95",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 121/96",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 122/97",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 123/98",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 124/99",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 126/100",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 127/101",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 128/102",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 129/103",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 130/104",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 131/105",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 132/106",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 133/107",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 134/108",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 135/109",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 138/111",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 139/112",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 141/113",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 142/114",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 143/115",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 144/116",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 146/117",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 147/118",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 149/119",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 150/120",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 152/122",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 153/123",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 154/124",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 155/125",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 168/136",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 169/137",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 171/138",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 172/139",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 173/140",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 174/141",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 175/142",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 178/145",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 179/146",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 182/148",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 183/149",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 185/150",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 186/151",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 187/152",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 188/153",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 194/157",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 195/158",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 196/159",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 197/160",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 214/173",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 215/174",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 216/175",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 218/177",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 219/178",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 220/179",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "IRS concordance exact normalized labels or named exception 221/180",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1070 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1070 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1080 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1080 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1090 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1090 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1170 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1170 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1180 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1180 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1280 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1280 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1190 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1190 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1270 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1270 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1370 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1370 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1390 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1390 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1870 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1870 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1880 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1880 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1890 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 1890 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2070 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2070 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2090 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2090 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2180 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2180 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2290 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2290 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2170 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2170 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2190 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2190 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2270 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2270 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2280 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2280 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2370 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2370 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2380 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2380 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2390 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2390 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2470 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2470 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2480 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2480 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2590 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2590 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2490 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2490 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2570 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2570 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2670 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2670 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2680 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2680 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2690 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2690 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2770 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2770 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2780 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2780 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2790 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2790 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2880 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2880 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2970 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2970 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2980 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2980 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2870 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2870 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2890 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 2890 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3070 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3070 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3080 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3080 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3291 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3291 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3095 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3095 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3170 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3170 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3180 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3180 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3365 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3365 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3370 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3370 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3390 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3390 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3380 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3380 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3580 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3580 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3590 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3590 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3680 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3680 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3670 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3670 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3690 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3690 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3960 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3960 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3970 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3970 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3980 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 3980 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4070 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4070 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4090 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4090 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4170 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4170 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4180 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4180 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4195 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4195 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4265 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4265 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4270 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4270 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4080 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4080 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4280 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4280 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4290 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4290 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4370 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4370 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4380 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4380 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4570 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4570 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4580 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4580 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4390 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4390 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4470 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4470 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4480 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4480 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4490 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4490 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4560 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4560 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4585 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4585 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4670 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4670 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4681 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4681 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4691 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4691 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4971 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4971 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4973 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4973 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4981 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4981 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4991 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4991 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4771 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4771 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4796 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4796 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4871 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4871 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4881 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4881 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4891 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 4891 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5071 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5071 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5081 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5081 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5090 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5090 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5680 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5680 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5171 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5171 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5181 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5181 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5191 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5191 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5276 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5276 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5281 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5281 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5296 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5296 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5371 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5371 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5471 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5471 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5481 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5481 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5491 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5491 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5571 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5571 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5581 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 5581 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6471 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6471 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6481 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6481 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6490 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6490 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6570 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6570 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6590 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6590 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6695 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6695 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6770 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6770 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6781 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6781 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6871 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6871 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6881 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6881 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6890 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6890 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6991 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6991 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6992 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 6992 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7280 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7280 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7290 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7290 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7370 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7370 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7390 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7390 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7460 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7460 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7470 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7470 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7480 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7480 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7490 exists in primary 2022 list",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "CPS live code 7490 primary NAICS agrees or named 2022 change",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 311FT bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 311FT every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 311FT tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 322 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 322 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 322 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 324 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 324 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 324 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 325 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 325 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 325 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 326 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 326 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 326 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 327 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 327 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 327 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 331 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 331 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 331 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 332 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 332 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 332 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 333 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 333 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 333 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 334 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 334 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 334 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 3364OT bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 3364OT every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 3364OT tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 339 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 339 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 339 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 42 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 42 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 42 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 441 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 441 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 441 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 445 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 445 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 445 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 4A0 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 4A0 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 4A0 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 511 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 511 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 511 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 512 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 512 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 512 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 514 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 514 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 514 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 521CI bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 521CI every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 521CI tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 524 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 524 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 524 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 5412OP bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 5412OP every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "allform 5412OP tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 322 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 322 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 322 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 324 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 324 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 324 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 332 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 332 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 332 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 511 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 511 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 511 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 512 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 512 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 512 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 514 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 514 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 514 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 524 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 524 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "conly 524 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 311FT bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 322 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 322 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 322 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 324 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 324 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 324 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 325 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 325 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 325 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 326 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 326 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 326 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 327 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 327 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 327 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 331 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 331 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 331 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 332 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 333 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 334 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 334 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 334 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 3364OT bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 3364OT every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 3364OT tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 339 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 42 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 441 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 441 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 441 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 445 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 445 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 445 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 4A0 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 511 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 511 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 511 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 512 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 512 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 512 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 514 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 514 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 514 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 521CI bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 521CI every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 521CI tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 524 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 524 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 524 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 5412OP bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 5412OP every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_allform 5412OP tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 322 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 322 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 322 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 324 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 324 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 324 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 332 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 511 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 511 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 511 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 512 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 512 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 512 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 514 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 514 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 514 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 524 bins disjoint",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 524 every bin has national wages",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "strict_conly 524 tax closes within 1e-6bn",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "fine targets generations add to union",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "frozen national tax preserved <=1e-6bn",
+   "passed": true,
+   "detail": 663.6849999980001
+  },
+  {
+   "name": "property-pattern analogue has detailed other-production-tax row",
+   "passed": true,
+   "detail": null
+  }
+ ],
+ "business_property_analogue": {
+  "file": "Use_SUT_Detail.xlsx",
+  "years": [
+   "2007",
+   "2012",
+   "2017"
+  ],
+  "otop_rows_latest": [
+   411
+  ],
+  "limitation": "Detailed other taxes on production exist only through 2017; not a 2024 business-property-tax-only minor table. No property key changed."
+ },
+ "method": "Within each frozen summary cell, IRS minor taxes partition the unchanged corporate amount. Public CPS codes aggregated to identifiable IRS bins; bins under 100 earners and unresolved code wages retain frozen parent share. Corporate response, other lines, national tax and lineage rule unchanged. All-form and C-only limited arms are separate.",
+ "uncertainty": "160 CPS SDR replicates. Lineage wage shares and denominator calibration held fixed; excludes added-ancestry count/C3 and source-table uncertainty."
+}

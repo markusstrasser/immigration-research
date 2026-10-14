@@ -1,0 +1,177 @@
+{
+  "K2": {
+    "soi_column19_all_k": 59280288.0,
+    "soi_column18_all_k": 155809855.0,
+    "soi_column2_all_k": 96529525.0,
+    "p5655_after_credits_bn": 371.4,
+    "share_of_federal": 0.159613053,
+    "removed_bn": 78.475353791,
+    "federal_fraction_used": 0.740803243,
+    "rows_k": {
+      "Agricultural, forestry, fishing and hunting": 17677.0,
+      "Oil and gas extraction": 14886.0,
+      "All Other mining": 10369.0,
+      "Construction": 3554.0,
+      "Food manufacturing": 106512.0,
+      "Beverage and tobacco products": 74293.0,
+      "Paper manufacturing": 128609.0,
+      "Printing and related support activities": 8266.0,
+      "Petroleum and coal product manufacturing": 240988.0,
+      "Chemical manufacturing": 10285909.0,
+      "Plastics and rubber product manufacturing": 99771.0,
+      "Nonmetallic mineral product manufacturing": 43425.0,
+      "Primary metal manufacturing": 23055.0,
+      "Fabricated metal products": 89672.0,
+      "Machinery manufacturing": 638649.0,
+      "Computer and electronic product manufacturing": 11795505.0,
+      "Electrical equipment, appliance and component manufacturing": 555696.0,
+      "Motor vehicles and related manufacturing": 458882.0,
+      "Other transportation equipment manufacturing": 155703.0,
+      "Furniture and related product manufacturing": -231.0,
+      "Miscellaneous manufacturing and manufacturing not allocable": 904429.0,
+      "Wholesale trade": 2987812.0,
+      "Retail trade": 1445672.0,
+      "Transportation and warehousing": 756068.0,
+      "Publishing (except internet)": 7657926.0,
+      "Motion picture and sound recording": 2781.0,
+      "Broadcasting and internet publishing": 166022.0,
+      "Telecommunications": 212766.0,
+      "Other information services": 11351419.0,
+      "Depository credit intermediation": 35171.0,
+      "Securities, commodity contracts, and other financial investments": 1133222.0,
+      "Insurance and related activities": 4672612.0,
+      "All other finance industries": 215021.0,
+      "Real estate and rental and leasing": 119562.0,
+      "Professional, scientific, and technical services": 690736.0,
+      "Bank holding companies": 1130264.0,
+      "Other holding companies": 584061.0,
+      "Administrative and support and waste management and remediation": 246632.0,
+      "Education services, health care, and social assistance": 114775.0,
+      "Arts, entertainment, and recreation": 12808.0,
+      "Accommodation and food services": 87412.0,
+      "Other services": 1153.0,
+      "All other industries": 775.0
+    },
+    "rule": "federal corporate tax x (SOI TY2021 Table 1 column 19, all industries / Pub. 5655 total income tax after credits), spread over SOI's industries by column 19 and within each over cells by their corporate tax; state taxes kept (water's-edge apportionment taxes little foreign income) [ASSUMPTION]"
+  },
+  "K3": {
+    "components": {
+      "documentary": {
+        "national_bn": 15.440742244,
+        "owner_bn": 12.650659290603421,
+        "tenant_bn": 2.7900829533965803,
+        "union_delta_bn": -0.8372404509383246,
+        "lineage_delta_bn": -0.9118953221958881
+      },
+      "special_assessments": {
+        "national_bn": 11.188568397,
+        "owner_bn": 9.166836963103952,
+        "tenant_bn": 2.0217314338960475,
+        "union_delta_bn": -0.6066756313932137,
+        "lineage_delta_bn": -0.6607715498429276
+      }
+    },
+    "owner_fraction": 0.8193038320757697,
+    "housing": {
+      "gates": [
+        {
+          "name": "modeled_owner_property union plus added closes live v7",
+          "passed": true,
+          "gap_bn": 0
+        },
+        {
+          "name": "tenant_occupied_property union plus added closes live v7",
+          "passed": true,
+          "gap_bn": 1.7763568394002505e-15
+        }
+      ],
+      "lines": {
+        "modeled_owner_property": {
+          "national_bn": 394.86247794800005,
+          "union_target_bn": 24.52911319700066,
+          "added_target_bn": 2.3757589177539873,
+          "union_share": 0.06212064849633784,
+          "lineage_share": 0.06813732278278867,
+          "response": {
+            "receipt": true,
+            "override": "receipt:modeled_owner_property",
+            "low": 0.7726986463443216,
+            "high": 0.7726986463443216,
+            "rule": "owner-occupied property tax at the long-run owner response (the metro land-price fall), in every profile; the line keeps its key",
+            "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs RESPONSES.owner.central (derived/housing.json)"
+          },
+          "key": "modeled_owner_property"
+        },
+        "tenant_occupied_property": {
+          "national_bn": 83.840225,
+          "union_target_bn": 9.613707080075,
+          "added_target_bn": 0.6621277209435156,
+          "union_share": 0.114667,
+          "lineage_share": 0.12256449456115504,
+          "response": {
+            "receipt": true,
+            "override": "receipt:tenant_occupied_property",
+            "low": 0.7189123969969125,
+            "high": 0.7189123969969125,
+            "rule": "the tax on tenant-occupied housing, split out of remaining_production_property (BEA Table 7.4.5 housing taxes on production x the tenant share of housing output), keyed by the group's share of contract rent, at the long-run renter response in every profile",
+            "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs splitTenant, RESPONSES.renter.central"
+          },
+          "key": "renter_contract_rent"
+        }
+      }
+    },
+    "recommendation": "Gross requested pricing is a sensitivity. Withhold special-assessment addition: ACS 2023 B25103 includes assessments, feeding the modeled-owner rate; rental base is BEA housing taxes on production. Documentary transfer-tax candidate is separate and still requires housing-tax reconciliation.",
+    "overlap_chain": [
+      "gen_ledger_extension_2026_09_16/stage_inputs.py:34-39 ACS2023 B25103/B25077",
+      "extend_ledger.py:173-178 state property rate",
+      "generation_account_2026_09_24/keys.py:50-57 modeled owner amount",
+      "full_account_receipts_2026_09_20/builder.py:209-214 owner amount subtracted from NIPA property pool"
+    ]
+  },
+  "K6": {
+    "recommendation": "Size only. Support plus equipment is not proof of a net capital departure: mining jobs may refill at fixed output. Equipment tax share is a national proxy, not measured mining property composition.",
+    "equipment_proxy_tau": 0.126529176
+  },
+  "gates": [
+    {
+      "name": "national primary parser positive control: national.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "national primary parser positive control: national_by_industry.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "national parser import leaves frozen interpreter caches untouched",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ACS 2023 real-estate tax includes special assessments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ACS 2024 real-estate tax includes special assessments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "K3 documentary owner+tenant national closure",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "K3 special_assessments owner+tenant national closure",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "K2 federal foreign national amounts match parsed source",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

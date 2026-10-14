@@ -1,0 +1,211 @@
+mode,cell,source_row,allform_label,allform_tax_thousand,conly_column,conly_label,conly_tax_thousand
+allform,311FT,35,Animal food manufacturing and grain and oilseed milling,2279653,26,Animal food manufacturing and grain and oilseed milling,d
+allform,311FT,36,Sugar and confectionery product,204758,27,Sugar and confectionery product,204758
+allform,311FT,37,"Fruit and vegetable preserving, and specialty food manufacturing",1199379,28,Fruit and vegetable preserving and specialty food manufacturing,1199379
+allform,311FT,38,Dairy product,428598,29,Dairy product,428598
+allform,311FT,39,Meat and seafood processing,1657879,30,Meat and seafood processing,1657879
+allform,311FT,41,"Other food (including coffee, tea, flavorings and seasonings)",3210075,32,"Other food (including coffee, tea, flavorings, and seasonings)",3210075
+allform,311FT,40,Bakeries and tortilla manufacturing,338512,31,Bakeries and tortilla manufacturing,338512
+allform,311FT,43,Soft drink and ice,1793511,33,Soft drink and ice,1793511
+allform,311FT,44,Breweries,163594,34,Breweries,163594
+allform,311FT,45,Wineries and distilleries,594431,35,Wineries and distilleries,d
+allform,311FT,46,Tobacco manufacturing,3749656,36,Tobacco manufacturing,3749656
+allform,322,57,"Pulp, paper, and paperboard mills",696541,44,"Pulp, paper, and paperboard mills",696541
+allform,322,58,Converted paper product,1634476,45,Converted paper product,1634476
+allform,324,61,Petroleum refineries (including integrated),12696473,47,Petroleum refineries (including integrated),12696473
+allform,324,62,"Asphalt paving, roofing, other petroleum and coal products",264026,48,"Asphalt paving, roofing, other petroleum and coal products",264026
+allform,325,64,Basic chemical,2940408,49,Basic chemical,d
+allform,325,69,Other chemical product and preparation,1748410,54,Other chemical product and preparation,1748410
+allform,325,65,"Resin, synthetic rubber, and artificial and synthetic fibers and filaments",1567671,50,"Resin, synthetic rubber, and artificial and synthetic fibers and filaments",1567671
+allform,325,66,Pharmaceutical and medicine,31561265,51,Pharmaceutical and medicine,31561265
+allform,325,67,"Paint, coating, and adhesive",1057580,52,"Paint, coating, and adhesive",1057580
+allform,325,68,"Soap, cleaning compound, and toilet preparation",3897542,53,"Soap, cleaning compound, and toilet preparation",3897542
+allform,326,71,Plastics product,1456982,55,Plastics product,d
+allform,326,72,Rubber product,811310,56,Rubber product,811310
+allform,327,74,"Clay, refractory, and other nonmetallic mineral product",518050,57,"Clay, refractory, and other nonmetallic mineral product",d
+allform,327,75,Glass and glass product,80132,58,Glass and glass product,80132
+allform,327,76,"Cement, concrete, lime, and gypsum product",1715923,59,"Cement, concrete, lime, and gypsum product",1715923
+allform,331,78,"Iron, steel mills, and steel product",4342510,60,"Iron, steel mills, and steel product",d
+allform,331,79,Nonferrous metal production and processing,657565,61,Nonferrous metal production and processing,d
+allform,331,80,Foundries ,222679,62,Foundries,222679
+allform,332,82,Forging and stamping,51312,63,Forging and stamping,51312
+allform,332,83,"Cutlery, hardware, spring, and wire, machine shops; screw, nut, and bolt",928738,64,"Cutlery, hardware, spring and wire, machine shops; screw, nut, and bolt",928738
+allform,332,87,Other fabricated metal product,1745013,68,Other fabricated metal product,1745013
+allform,332,84,Architectural and structural metals,1124628,65,Architectural and structural metals,1124628
+allform,332,85,"Boiler, tank, and shipping container",225837,66,"Boiler, tank, and shipping container",225837
+allform,332,86,"Coating, engraving, heat treating, and allied activities",68796,67,"Coating, engraving, heat treating, and allied activities",68796
+allform,333,89,"Agriculture, construction, and mining machinery",2322596,69,"Agriculture, construction, and mining machinery",2322596
+allform,333,90,Industrial machinery,1437743,70,Industrial machinery,1437743
+allform,333,92,"Ventilation, heating, air-conditioning, and commercial refrigeration equipment",1351122,72,"Ventilation, heating, air-conditioning, and commercial refrigeration equipment",1351122
+allform,333,95,Other general purpose machinery,1358995,75,Other general purpose machinery,d
+allform,333,91,Commercial and service industry machinery,461024,71,Commercial and service industry machinery,461024
+allform,333,93,Metalworking machinery ,76498,73,Metalworking machinery,76498
+allform,333,94,"Engine, turbine, and power transmission equipment",654485,74,"Engine, turbine, and power transmission equipment",654485
+allform,334,97,Computer and peripheral equipment,12341625,76,Computer and peripheral equipment,12341625
+allform,334,98,Communications equipment,1144426,77,Communications equipment,1144426
+allform,334,99,Audio and video equipment manufacturing and reproducing magnetic and optical media,593423,78,Audio and video equipment manufacturing and reproducing magnetic and optical media,593423
+allform,334,100,Semiconductor and other electronic component,12138712,79,Semiconductor and other electronic component,d
+allform,334,101,"Navigational, measuring, electromedical, and control instruments",4483295,80,"Navigational, measuring, electromedical, and control instruments",4483295
+allform,3364OT,108,Aerospace product and parts ,5475919,85,Aerospace product and parts,5475919
+allform,3364OT,109,Ship and boat building,868015,86,Ship and boat building,868015
+allform,3364OT,110,Other transportation equipment and railroad rolling stock ,358350,87,Other transportation equipment and railroad rolling stock,d
+allform,339,113,Medical equipment and supplies ,3408008,89,Medical equipment and supplies,d
+allform,339,114,Other miscellaneous manufacturing ,1303643,90,Other miscellaneous manufacturing,d
+allform,42,117,Motor vehicle and motor vehicle parts and supplies,2182478,92,Motor vehicle and motor vehicle parts and supplies,d
+allform,42,118,Lumber and other construction materials,1321040,93,Lumber and other construction materials,d
+allform,42,119,Professional and commercial equipment and supplies,4584330,94,Professional and commercial equipment and supplies,4584330
+allform,42,120,Metal and mineral (except petroleum) ,1651065,95,Metal and mineral (except petroleum),1651065
+allform,42,121,Electrical and electronic goods ,3422932,96,Electrical and electronic goods,d
+allform,42,122,"Hardware, plumbing, and heating equipment and supplies",1781909,97,"Hardware, plumbing, heating equipment, and supplies",d
+allform,42,123,"Machinery, equipment, and supplies ",3241989,98,"Machinery, equipment, and supplies",d
+allform,42,124,"Furniture, sports, toys, recyclable, jewelry, and other durable goods",1524005,99,"Furniture, sports, toys, recycle, jewelry, and other durable goods",d
+allform,42,126,Paper and paper product ,296748,100,Paper and paper product,296748
+allform,42,127,Drugs and druggists’ sundries ,8636834,101,Drugs and druggists' sundries,8636834
+allform,42,131,Chemical and allied products,604782,105,Chemical and allied products,d
+allform,42,134,Miscellaneous nondurable goods ,1487654,108,Miscellaneous nondurable goods,1480544
+allform,42,128,"Apparel, piece goods, and notions ",1365998,102,"Apparel, piece goods, and notions",d
+allform,42,129,Grocery and related product ,4752457,103,Grocery and related product,4752457
+allform,42,130,Farm product raw material,533575,104,Farm product raw material,d
+allform,42,132,Petroleum and petroleum products ,3639821,106,Petroleum and petroleum products,d
+allform,42,133,"Beer, wine, and distilled alcoholic beverage",314319,107,"Beer, wine, and distilled alcoholic beverage",d
+allform,42,135,Wholesale trade agents and brokers  ,220571,109,Wholesale trade agents and brokers,220571
+allform,441,138,New and used car dealers,2008456,111,New and used car dealers,d
+allform,441,139,Other motor vehicle and parts dealers,977313,112,Other motor vehicle and parts dealers,d
+allform,445,146,Food and beverage retailers,2664106,117,Food and beverage retailers,d
+allform,445,147,"Beer, wine, and liquor retailers",29376,118,"Beer, wine, and liquor retailers",29376
+allform,4A0,149,Furniture and home furnishings retailers,567748,119,Furniture and home furnishings retailers,567748
+allform,4A0,150,Electronics & appliance retailers (including computers),494240,120,Electronics and appliance retailers (including computers),494240
+allform,4A0,141,Home centers; paint and wallpaper stores,6354698,113,Home centers; paint and wallpaper retailers,6354698
+allform,4A0,143,Other building material dealers,1227659,115,Other building materials dealers,d
+allform,4A0,142,Hardware retailers,71841,114,Hardware retailers,71841
+allform,4A0,144,Lawn and garden equipment and supplies retailers,273607,116,Lawn and garden equipment and supplies retailers,273607
+allform,4A0,152,Health and personal care retailers,3996243,122,Health and personal care retailers,3996243
+allform,4A0,153,Gasoline stations & fuel dealers,1212066,123,Gasoline stations and fuel dealers,1212066
+allform,4A0,154,Clothing and clothing accessories retailers,2986200,124,Clothing and clothing accessories retailers,2986200
+allform,4A0,155,"Sporting goods, hobby, book, music, and miscellaneous retailers",1912578,125,"Sporting goods, hobby, book, music, and miscellaneous retailers",d
+allform,511,171,Newspaper publishers,32361,138,Newspaper publishers,32361
+allform,511,172,Periodical publishers,311726,139,Periodical publishers,311726
+allform,511,173,Book publishers,390027,140,Book publishers,390027
+allform,511,174,Database directory and other publishers,48138,141,Database directory and other publishers,48138
+allform,511,175,Software publishers,20416884,142,Software publishers,20416884
+allform,512,168,Motion picture and video industries (except video rental),1585556,136,Motion picture and video industries (except video rental),1585556
+allform,512,169,Sound recording industries,191856,137,Sound recoding industries,191856
+allform,514,178,"Computing infrastructure providers, data processing, web hosting & related services",6296157,145,"Computing infrastructure providers, data processing, web hosting and related services",6296157
+allform,514,179,"Web search portals, libraries, archives, & other info. services",15291127,146,"Web search portals, libraries, archives, and other info. services",15291127
+allform,521CI,182,Commercial banking,4018556,148,Commercial banking,d
+allform,521CI,183,Savings institutions & other depository credit intermediation,2557470,149,Savings institutions and other depository credit intermediation,d
+allform,521CI,185,Credit card issuing and other consumer credit,5152646,150,Credit card issuing and other consumer credit,5152646
+allform,521CI,186,Real estate credit (including mortgage bankers and originators),188043,151,Real estate credit (including mortgage bankers and originators),188043
+allform,521CI,187,"International, secondary financing, and other nondepository credit intermediation",4434555,152,"International, secondary financing, and other nondepository credit intermediation",4434555
+allform,521CI,188,"Activities related to credit intermediation (loan brokers, check clearing, and money transmitting)",6111981,153,"Activities related to credit intermediation (including loan brokers, check clearing, and money transmitting)",6111981
+allform,524,194,Life insurance (Form 1120-L),5184407,157,Life insurance (Form 1120L),5184407
+allform,524,195,Property and casualty insurance (Form 1120-PC),13589398,158,Property and casualty insurance (Form 1120PC),13589398
+allform,524,196,Insurance agencies and brokerages,1579508,159,Insurance agencies and brokerages,1579508
+allform,524,197,"Other insurance related activities
+(including third-party administration of insurance and pension funds)",1024478,160,Other insurance related activities (including third-party administrator of insurance and pension funds),1024478
+allform,5412OP,214,"Accounting, tax preparation, bookkeeping, and payroll services ",1396814,173,"Accounting, tax preparation, bookkeeping, and payroll services",1396814
+allform,5412OP,215,"Architectural, engineering, and related services ",1122812,174,"Architectural, engineering, and related services",1121473
+allform,5412OP,216,Specialized design services,36326,175,Specialized design services,d
+allform,5412OP,218,"Management, scientific, and technical consulting services",2992647,177,"Management, scientific, and technical consulting services",d
+allform,5412OP,219,Scientific research and development services,2493984,178,Scientific research and development services,2493984
+allform,5412OP,220,Advertising and related services,1205030,179,Advertising and related services,1205030
+allform,5412OP,221,"Other professional, scientific, and technical services",1184372,180,"Other professional, scientific, and technical services",1184372
+conly,322,57,"Pulp, paper, and paperboard mills",696541,44,"Pulp, paper, and paperboard mills",696541
+conly,322,58,Converted paper product,1634476,45,Converted paper product,1634476
+conly,324,61,Petroleum refineries (including integrated),12696473,47,Petroleum refineries (including integrated),12696473
+conly,324,62,"Asphalt paving, roofing, other petroleum and coal products",264026,48,"Asphalt paving, roofing, other petroleum and coal products",264026
+conly,332,82,Forging and stamping,51312,63,Forging and stamping,51312
+conly,332,83,"Cutlery, hardware, spring, and wire, machine shops; screw, nut, and bolt",928738,64,"Cutlery, hardware, spring and wire, machine shops; screw, nut, and bolt",928738
+conly,332,87,Other fabricated metal product,1745013,68,Other fabricated metal product,1745013
+conly,332,84,Architectural and structural metals,1124628,65,Architectural and structural metals,1124628
+conly,332,85,"Boiler, tank, and shipping container",225837,66,"Boiler, tank, and shipping container",225837
+conly,332,86,"Coating, engraving, heat treating, and allied activities",68796,67,"Coating, engraving, heat treating, and allied activities",68796
+conly,511,171,Newspaper publishers,32361,138,Newspaper publishers,32361
+conly,511,172,Periodical publishers,311726,139,Periodical publishers,311726
+conly,511,173,Book publishers,390027,140,Book publishers,390027
+conly,511,174,Database directory and other publishers,48138,141,Database directory and other publishers,48138
+conly,511,175,Software publishers,20416884,142,Software publishers,20416884
+conly,512,168,Motion picture and video industries (except video rental),1585556,136,Motion picture and video industries (except video rental),1585556
+conly,512,169,Sound recording industries,191856,137,Sound recoding industries,191856
+conly,514,178,"Computing infrastructure providers, data processing, web hosting & related services",6296157,145,"Computing infrastructure providers, data processing, web hosting and related services",6296157
+conly,514,179,"Web search portals, libraries, archives, & other info. services",15291127,146,"Web search portals, libraries, archives, and other info. services",15291127
+conly,524,194,Life insurance (Form 1120-L),5184407,157,Life insurance (Form 1120L),5184407
+conly,524,195,Property and casualty insurance (Form 1120-PC),13589398,158,Property and casualty insurance (Form 1120PC),13589398
+conly,524,196,Insurance agencies and brokerages,1579508,159,Insurance agencies and brokerages,1579508
+conly,524,197,"Other insurance related activities
+(including third-party administration of insurance and pension funds)",1024478,160,Other insurance related activities (including third-party administrator of insurance and pension funds),1024478
+strict_allform,322,57,"Pulp, paper, and paperboard mills",696541,44,"Pulp, paper, and paperboard mills",696541
+strict_allform,322,58,Converted paper product,1634476,45,Converted paper product,1634476
+strict_allform,324,61,Petroleum refineries (including integrated),12696473,47,Petroleum refineries (including integrated),12696473
+strict_allform,324,62,"Asphalt paving, roofing, other petroleum and coal products",264026,48,"Asphalt paving, roofing, other petroleum and coal products",264026
+strict_allform,325,64,Basic chemical,2940408,49,Basic chemical,d
+strict_allform,325,69,Other chemical product and preparation,1748410,54,Other chemical product and preparation,1748410
+strict_allform,325,65,"Resin, synthetic rubber, and artificial and synthetic fibers and filaments",1567671,50,"Resin, synthetic rubber, and artificial and synthetic fibers and filaments",1567671
+strict_allform,325,66,Pharmaceutical and medicine,31561265,51,Pharmaceutical and medicine,31561265
+strict_allform,325,67,"Paint, coating, and adhesive",1057580,52,"Paint, coating, and adhesive",1057580
+strict_allform,325,68,"Soap, cleaning compound, and toilet preparation",3897542,53,"Soap, cleaning compound, and toilet preparation",3897542
+strict_allform,326,71,Plastics product,1456982,55,Plastics product,d
+strict_allform,326,72,Rubber product,811310,56,Rubber product,811310
+strict_allform,327,74,"Clay, refractory, and other nonmetallic mineral product",518050,57,"Clay, refractory, and other nonmetallic mineral product",d
+strict_allform,327,75,Glass and glass product,80132,58,Glass and glass product,80132
+strict_allform,327,76,"Cement, concrete, lime, and gypsum product",1715923,59,"Cement, concrete, lime, and gypsum product",1715923
+strict_allform,331,78,"Iron, steel mills, and steel product",4342510,60,"Iron, steel mills, and steel product",d
+strict_allform,331,79,Nonferrous metal production and processing,657565,61,Nonferrous metal production and processing,d
+strict_allform,331,80,Foundries ,222679,62,Foundries,222679
+strict_allform,334,97,Computer and peripheral equipment,12341625,76,Computer and peripheral equipment,12341625
+strict_allform,334,98,Communications equipment,1144426,77,Communications equipment,1144426
+strict_allform,334,99,Audio and video equipment manufacturing and reproducing magnetic and optical media,593423,78,Audio and video equipment manufacturing and reproducing magnetic and optical media,593423
+strict_allform,334,100,Semiconductor and other electronic component,12138712,79,Semiconductor and other electronic component,d
+strict_allform,334,101,"Navigational, measuring, electromedical, and control instruments",4483295,80,"Navigational, measuring, electromedical, and control instruments",4483295
+strict_allform,3364OT,108,Aerospace product and parts ,5475919,85,Aerospace product and parts,5475919
+strict_allform,3364OT,109,Ship and boat building,868015,86,Ship and boat building,868015
+strict_allform,3364OT,110,Other transportation equipment and railroad rolling stock ,358350,87,Other transportation equipment and railroad rolling stock,d
+strict_allform,441,138,New and used car dealers,2008456,111,New and used car dealers,d
+strict_allform,441,139,Other motor vehicle and parts dealers,977313,112,Other motor vehicle and parts dealers,d
+strict_allform,445,146,Food and beverage retailers,2664106,117,Food and beverage retailers,d
+strict_allform,445,147,"Beer, wine, and liquor retailers",29376,118,"Beer, wine, and liquor retailers",29376
+strict_allform,511,171,Newspaper publishers,32361,138,Newspaper publishers,32361
+strict_allform,511,172,Periodical publishers,311726,139,Periodical publishers,311726
+strict_allform,511,173,Book publishers,390027,140,Book publishers,390027
+strict_allform,511,174,Database directory and other publishers,48138,141,Database directory and other publishers,48138
+strict_allform,511,175,Software publishers,20416884,142,Software publishers,20416884
+strict_allform,512,168,Motion picture and video industries (except video rental),1585556,136,Motion picture and video industries (except video rental),1585556
+strict_allform,512,169,Sound recording industries,191856,137,Sound recoding industries,191856
+strict_allform,514,178,"Computing infrastructure providers, data processing, web hosting & related services",6296157,145,"Computing infrastructure providers, data processing, web hosting and related services",6296157
+strict_allform,514,179,"Web search portals, libraries, archives, & other info. services",15291127,146,"Web search portals, libraries, archives, and other info. services",15291127
+strict_allform,521CI,182,Commercial banking,4018556,148,Commercial banking,d
+strict_allform,521CI,183,Savings institutions & other depository credit intermediation,2557470,149,Savings institutions and other depository credit intermediation,d
+strict_allform,521CI,185,Credit card issuing and other consumer credit,5152646,150,Credit card issuing and other consumer credit,5152646
+strict_allform,521CI,186,Real estate credit (including mortgage bankers and originators),188043,151,Real estate credit (including mortgage bankers and originators),188043
+strict_allform,521CI,187,"International, secondary financing, and other nondepository credit intermediation",4434555,152,"International, secondary financing, and other nondepository credit intermediation",4434555
+strict_allform,521CI,188,"Activities related to credit intermediation (loan brokers, check clearing, and money transmitting)",6111981,153,"Activities related to credit intermediation (including loan brokers, check clearing, and money transmitting)",6111981
+strict_allform,524,194,Life insurance (Form 1120-L),5184407,157,Life insurance (Form 1120L),5184407
+strict_allform,524,195,Property and casualty insurance (Form 1120-PC),13589398,158,Property and casualty insurance (Form 1120PC),13589398
+strict_allform,524,196,Insurance agencies and brokerages,1579508,159,Insurance agencies and brokerages,1579508
+strict_allform,524,197,"Other insurance related activities
+(including third-party administration of insurance and pension funds)",1024478,160,Other insurance related activities (including third-party administrator of insurance and pension funds),1024478
+strict_allform,5412OP,214,"Accounting, tax preparation, bookkeeping, and payroll services ",1396814,173,"Accounting, tax preparation, bookkeeping, and payroll services",1396814
+strict_allform,5412OP,215,"Architectural, engineering, and related services ",1122812,174,"Architectural, engineering, and related services",1121473
+strict_allform,5412OP,216,Specialized design services,36326,175,Specialized design services,d
+strict_allform,5412OP,218,"Management, scientific, and technical consulting services",2992647,177,"Management, scientific, and technical consulting services",d
+strict_allform,5412OP,219,Scientific research and development services,2493984,178,Scientific research and development services,2493984
+strict_allform,5412OP,220,Advertising and related services,1205030,179,Advertising and related services,1205030
+strict_allform,5412OP,221,"Other professional, scientific, and technical services",1184372,180,"Other professional, scientific, and technical services",1184372
+strict_conly,322,57,"Pulp, paper, and paperboard mills",696541,44,"Pulp, paper, and paperboard mills",696541
+strict_conly,322,58,Converted paper product,1634476,45,Converted paper product,1634476
+strict_conly,324,61,Petroleum refineries (including integrated),12696473,47,Petroleum refineries (including integrated),12696473
+strict_conly,324,62,"Asphalt paving, roofing, other petroleum and coal products",264026,48,"Asphalt paving, roofing, other petroleum and coal products",264026
+strict_conly,511,171,Newspaper publishers,32361,138,Newspaper publishers,32361
+strict_conly,511,172,Periodical publishers,311726,139,Periodical publishers,311726
+strict_conly,511,173,Book publishers,390027,140,Book publishers,390027
+strict_conly,511,174,Database directory and other publishers,48138,141,Database directory and other publishers,48138
+strict_conly,511,175,Software publishers,20416884,142,Software publishers,20416884
+strict_conly,512,168,Motion picture and video industries (except video rental),1585556,136,Motion picture and video industries (except video rental),1585556
+strict_conly,512,169,Sound recording industries,191856,137,Sound recoding industries,191856
+strict_conly,514,178,"Computing infrastructure providers, data processing, web hosting & related services",6296157,145,"Computing infrastructure providers, data processing, web hosting and related services",6296157
+strict_conly,514,179,"Web search portals, libraries, archives, & other info. services",15291127,146,"Web search portals, libraries, archives, and other info. services",15291127
+strict_conly,524,194,Life insurance (Form 1120-L),5184407,157,Life insurance (Form 1120L),5184407
+strict_conly,524,195,Property and casualty insurance (Form 1120-PC),13589398,158,Property and casualty insurance (Form 1120PC),13589398
+strict_conly,524,196,Insurance agencies and brokerages,1579508,159,Insurance agencies and brokerages,1579508
+strict_conly,524,197,"Other insurance related activities
+(including third-party administration of insurance and pension funds)",1024478,160,Other insurance related activities (including third-party administrator of insurance and pension funds),1024478

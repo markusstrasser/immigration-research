@@ -1,0 +1,58 @@
+{
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/job_capital.py": {
+    "sha256": "c720e31f3d9803d4413443f0dbd65da8d45cab633029cb3e20b7e990a084c1b7",
+    "reuse": "read-only local authoritative source"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/item.json": {
+    "sha256": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283",
+    "reuse": "read-only local authoritative source"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/national.json": {
+    "sha256": "d3bf71be1bdd3c66e265db3721acdbdb06902548b74d2470d5d06df0395fd0a0",
+    "reuse": "read-only local authoritative source"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/national_by_industry.csv": {
+    "sha256": "95ff41e65fd36dcb87a12ebd502a6c0c54365cb5596da083d7c75ed3107087f8",
+    "reuse": "read-only local authoritative source"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/case_keys.json": {
+    "sha256": "d9048296ac9f3485b737f788225167b33450d3b5735bcbe085fafe7fd0b74063",
+    "reuse": "read-only local authoritative source"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/inputs/census_industry_crosswalk.csv": {
+    "sha256": "25bcaf038773cbb337227c19de547895d6b370892d14222e407962f326432a92",
+    "reuse": "read-only local authoritative source"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json": {
+    "sha256": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958",
+    "reuse": "read-only local authoritative source"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": {
+    "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+    "reuse": "read-only local authoritative source"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/full_account_receipts_2026_09_20/derived/allocation_keys.csv": {
+    "sha256": "942b63bd737a547394dc5b44f3dbd40f36137f52927e551d156ac0c2893c859c",
+    "reuse": "read-only local authoritative source"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json": {
+    "sha256": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+    "reuse": "read-only local authoritative source"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/cps_imputation_keys_2026_09_23/derived/status_combination_keys.csv": {
+    "sha256": "83b7e5517b2c643bf86b19240522ca5fa4f2cd24f152005bc7c2a8c2fc5f7c94",
+    "reuse": "read-only local authoritative source"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/receipt_side_long_run_2026_09_28/derived/counties.csv": {
+    "sha256": "42fe3b780dfdf1a1523f46b21c737541f7c8c76eb5a3e377af67ffc03e42cda1",
+    "reuse": "read-only local authoritative source"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/main_case_2026_10_07/derived/corrections.json": {
+    "sha256": "f8d346aacf05bcdaed8495f870ba23ac6154ab3eaf34cc0bcf85861f0c85d091",
+    "reuse": "read-only local authoritative source"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/generation_account_2026_09_24/derived/stack_by_generation.json": {
+    "sha256": "35039234a00eee6e7e08d2ab920ab40d369b542adc4b3eaac90f4d7d8a0404f1",
+    "reuse": "read-only local authoritative source"
+  }
+}

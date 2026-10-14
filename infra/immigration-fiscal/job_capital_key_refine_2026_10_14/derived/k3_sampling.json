@@ -1,0 +1,37 @@
+{
+  "owner_CPS_raw": {
+    "share": 0.062120648496795376,
+    "se": 0.0014735553873253175,
+    "group_bn": 24.49990808606591,
+    "national_bn": 394.3923426254926
+  },
+  "renter_ACS_proxy": {
+    "share": 0.11466713511121547,
+    "se": 0.0006329348739577873
+  },
+  "uncertainty": "Independent CPS owner-model and ACS renter-proxy sampling SEs, calibrated to live main keys; responses, nationwide taxes and lineage scaling fixed. Not a joint full-estimator SE.",
+  "components": {
+    "documentary": {
+      "union_conditional_se_bn": 0.014460060598964066,
+      "lineage_conditional_se_bn": 0.015857505431338334
+    },
+    "special_assessments": {
+      "union_conditional_se_bn": 0.010477953357400415,
+      "lineage_conditional_se_bn": 0.01149056057802346
+    }
+  },
+  "gates": [
+    {
+      "name": "ACS renter proxy reproduces frozen rounded key <=5e-7",
+      "passed": true
+    },
+    {
+      "name": "CPS modeled owner key reproduces live v7 <=1e-9",
+      "passed": true
+    }
+  ],
+  "gross": {
+    "union_conditional_se_bn": 0.024938013956364483,
+    "lineage_conditional_se_bn": 0.027348066009361793
+  }
+}

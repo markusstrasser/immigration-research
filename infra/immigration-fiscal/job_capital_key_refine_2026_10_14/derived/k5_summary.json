@@ -1,0 +1,254 @@
+{
+  "recommendation": "Keep agricultural subsidies at zero. Withhold the remaining K5 point revision until program identities and enterprise subsidy receipts are reconciled.",
+  "scope": "Both personal endpoints; identified union and v7 lineage using frozen ancestry wage factors. National/lineage factors fixed for replicate SEs.",
+  "national_bn": {
+    "all_subsidies": 94.239,
+    "housing_excluded": 60.261,
+    "nonhousing": 33.978,
+    "agricultural_fixed": 8.233,
+    "unclassified_residual": 25.34
+  },
+  "source_note": "1. Consists largely of subsidies to railroads, mass transit systems, and the Federal Crop Insurance Corporation (FCIC).",
+  "functional_rounding_bn": 0.0,
+  "definition_conflicts_bn": {
+    "agricultural_program_minus_function": 0.4120000000000008,
+    "housing_function_minus_program": 2.512999999999998
+  },
+  "sut_newer_vintage_total_bn": 96.05400000000002,
+  "sut_minus_frozen_nipa_bn": 1.815000000000012,
+  "plain_key_contract": "Plain-wage arms use each replicate's total corrected wages divided by total national wages directly; the diagnostic national vector is not an instruction to apply pooled cell shares. Read k5_changes.npz for exact changes.",
+  "arms": {
+    "named_transport_full_response": {
+      "union_delta_bn": 0.012604692058910384,
+      "union_se_bn": 0.0030149428604916606,
+      "lineage_delta_bn": 0.014686916256953945,
+      "lineage_conditional_se_bn": 0.003187052203274217,
+      "national_bn": 0.405,
+      "response_low": 1,
+      "response_high": 1,
+      "recommended": false,
+      "status": "Gross-spending sensitivity; unresolved program composition/enterprise offsets. Same move at both ends, set and cash."
+    },
+    "state_local_railroad_proxy_full_response": {
+      "union_delta_bn": 0.02721885674339015,
+      "union_se_bn": 0.017789179360858207,
+      "lineage_delta_bn": 0.03031545514436165,
+      "lineage_conditional_se_bn": 0.017858008562194914,
+      "national_bn": 0.713,
+      "response_low": 1,
+      "response_high": 1,
+      "recommended": false,
+      "status": "Gross-spending sensitivity; unresolved program composition/enterprise offsets. Same move at both ends, set and cash."
+    },
+    "unclassified_residual_plain_wage_full_response": {
+      "union_delta_bn": 1.99657541596971,
+      "union_se_bn": 0.0361991176559916,
+      "lineage_delta_bn": 2.1443545974537637,
+      "lineage_conditional_se_bn": 0.03768026895798676,
+      "national_bn": 25.34,
+      "response_low": 1,
+      "response_high": 1,
+      "recommended": false,
+      "status": "Gross-spending sensitivity; unresolved program composition/enterprise offsets. Same move at both ends, set and cash."
+    },
+    "all_nonfarm_nonhousing_plain_wage_full_response": {
+      "union_delta_bn": 2.0091801080286205,
+      "union_se_bn": 0.03704283190704204,
+      "lineage_delta_bn": 2.1590415137107177,
+      "lineage_conditional_se_bn": 0.038581750739742855,
+      "national_bn": 25.744999999999997,
+      "response_low": 1,
+      "response_high": 1,
+      "recommended": false,
+      "status": "Gross-spending sensitivity; unresolved program composition/enterprise offsets. Same move at both ends, set and cash."
+    },
+    "functional_mix_full_response_proxy": {
+      "union_delta_bn": 2.31650165871009,
+      "union_se_bn": 0.07645458518064911,
+      "lineage_delta_bn": 2.469309689749999,
+      "lineage_conditional_se_bn": 0.08000965335312406,
+      "national_bn": 26.156999999999996,
+      "response_low": 1,
+      "response_high": 1,
+      "recommended": false,
+      "status": "Gross-spending sensitivity; unresolved program composition/enterprise offsets. Same move at both ends, set and cash."
+    }
+  },
+  "gates": [
+    {
+      "name": "NIPA 3.13 labels exact",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "NIPA program components close to federal at 1e-6bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "NIPA government components close at 1e-6bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "agricultural_subsidies reproduces frozen national at 1e-6bn",
+      "passed": true,
+      "value": 8.233
+    },
+    {
+      "name": "housing_subsidies reproduces frozen national at 1e-6bn",
+      "passed": true,
+      "value": 60.261
+    },
+    {
+      "name": "other_subsidies reproduces frozen national at 1e-6bn",
+      "passed": true,
+      "value": 25.34
+    },
+    {
+      "name": "transport_subsidies reproduces frozen national at 1e-6bn",
+      "passed": true,
+      "value": 0.405
+    },
+    {
+      "name": "nonhousing programs close at 1e-6bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "Federal Other footnote identifies crop insurance and rail/transit",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "NIPA 3.17 total matches 3.13 at 1e-6bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "functional leaf amounts plus explicit rounding close at 1e-6bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "SUT T00OSUB title",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "SUT T00OSUB cells plus rounding close at 1e-6bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "SUT T00SUB title",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "SUT T00SUB cells plus rounding close at 1e-6bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "frozen positive control and weight-conservation gates passed",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "functional wage-pool national closure at 1e-6bn",
+      "passed": true,
+      "value": 10.822
+    },
+    {
+      "name": "functional wage-pool national closure at 1e-6bn",
+      "passed": true,
+      "value": 11.158
+    },
+    {
+      "name": "functional wage-pool national closure at 1e-6bn",
+      "passed": true,
+      "value": 0.657
+    },
+    {
+      "name": "functional wage-pool national closure at 1e-6bn",
+      "passed": true,
+      "value": 2.512999999999998
+    },
+    {
+      "name": "functional wage-pool national closure at 1e-6bn",
+      "passed": true,
+      "value": 1.007
+    },
+    {
+      "name": "functional responding total closes at 1e-6bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "engine spending response0 to1 raises modeled cost by target amount at 1e-9bn",
+      "passed": true,
+      "value": {
+        "welfare_move": -0.0324949609999976,
+        "target_bn": 0.032494961
+      }
+    },
+    {
+      "name": "named_transport_full_response finite nonnegative vector",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "named_transport_full_response generations close in all 161 replicates at 1e-9bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "state_local_railroad_proxy_full_response finite nonnegative vector",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "state_local_railroad_proxy_full_response generations close in all 161 replicates at 1e-9bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "unclassified_residual_plain_wage_full_response finite nonnegative vector",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "unclassified_residual_plain_wage_full_response generations close in all 161 replicates at 1e-9bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "all_nonfarm_nonhousing_plain_wage_full_response finite nonnegative vector",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "all_nonfarm_nonhousing_plain_wage_full_response generations close in all 161 replicates at 1e-9bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "functional_mix_full_response_proxy finite nonnegative vector",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "functional_mix_full_response_proxy generations close in all 161 replicates at 1e-9bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "peak RSS below 2.5GB",
+      "passed": true,
+      "value": null
+    }
+  ],
+  "offset": "Enterprise surplus already responds at 1 and includes subsidies from other government levels. Gross subsidy spending must be paired with its enterprise subsidy receipt to avoid counting an internal transfer as a net resource saving.",
+  "excluded": "Housing assistance already in case; capital investment grants, tax expenditures classified as negative taxes, business current transfers and benefits classified as social transfers are outside NIPA current subsidies."
+}

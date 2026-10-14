@@ -1,0 +1,27 @@
+{
+ "k4_22co01ccr.xlsx": {
+  "url": "https://www.irs.gov/pub/irs-soi/22co01ccr.xlsx",
+  "sha256": "3297b4f94cda92993399685a623d0f8c6583f5ae271a33ece4e2368d77cc19ae",
+  "bytes": 61549
+ },
+ "k4_22co53ccr.xlsx": {
+  "url": "https://www.irs.gov/pub/irs-soi/22co53ccr.xlsx",
+  "sha256": "7910f63206962599a97b0c83e7f88e91edda9cfc224432524253ac2ab425e791",
+  "bytes": 144283
+ },
+ "k4_p16_ty2022.pdf": {
+  "url": "https://www.irs.gov/pub/irs-pdf/p16.pdf",
+  "sha256": "65912d6c5fb53074964f25e26b45dadae60437075f8b3acfdfaea988bea30356",
+  "bytes": 1777846
+ },
+ "k4_bea_supply_use.zip": {
+  "url": "https://apps.bea.gov/industry/release/zip/SUPPLY-USE.zip",
+  "sha256": "3f16466e11eef0ed562d3663907f4a4a65856c134aa9f8baf7da6460bd11987d",
+  "bytes": 4882928
+ },
+ "k4_census_industry.xlsx": {
+  "url": "https://www2.census.gov/programs-surveys/demo/guidance/industry-occupation/2022-Census-Industry-Code-List-with-Crosswalk.xlsx",
+  "sha256": "c9d2e004b2735c3975f0768e7dac704df6d2e0b36b24d33f5dbc7109cab5628c",
+  "bytes": 102789
+ }
+}

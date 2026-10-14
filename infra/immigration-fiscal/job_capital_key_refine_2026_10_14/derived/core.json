@@ -1,0 +1,205 @@
+{
+  "control": {
+    "low": {
+      "union_bn": 66.4813092308808,
+      "lineage_bn": 71.77113658353456,
+      "union_se_bn": 2.0058863714772923,
+      "lineage_conditional_se_bn": 2.0799755964789415
+    },
+    "high": {
+      "union_bn": 40.26527055197578,
+      "lineage_bn": 43.3668872247396,
+      "union_se_bn": 1.10693016994514,
+      "lineage_conditional_se_bn": 1.1486839229076702
+    }
+  },
+  "responses": {
+    "low": {
+      "c_and_i_property": 0.8806493775433665,
+      "other_production_taxes": 1.0,
+      "corporate": 1.0
+    },
+    "high": {
+      "c_and_i_property": 0.8806493775433665,
+      "other_production_taxes": 1.0,
+      "corporate": 0.37
+    }
+  },
+  "lineage_rates": {
+    "G3plus": 0.11716321317972753,
+    "white": 0.0048113453495027825
+  },
+  "corr": {
+    "union": 1.0,
+    "G1": 0.9262122480237438,
+    "G2": 1.0190372843776214,
+    "G3plus": 0.9906598510453594,
+    "white": 1.0,
+    "black": 1.0,
+    "white_all": 1.0,
+    "black_all": 1.0
+  },
+  "gates": [
+    {
+      "name": "frozen positive control byte-identical: item.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frozen positive control byte-identical: summary.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frozen positive control byte-identical: industry_crosswalk.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frozen positive control byte-identical: items.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frozen positive control byte-identical: wages_by_industry.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source outputs untouched",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frozen interpreter caches unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all frozen replay gates passed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "NOEMP lies in the source's seven bins",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "national size split conserves frozen cell wages in all replicates",
+      "passed": true,
+      "detail": 6.103881165612235e-15
+    },
+    {
+      "name": "G1 size split conserves frozen cell wages in all replicates",
+      "passed": true,
+      "detail": 1.5409338918418315e-15
+    },
+    {
+      "name": "G2 size split conserves frozen cell wages in all replicates",
+      "passed": true,
+      "detail": 1.3342933800130823e-15
+    },
+    {
+      "name": "G3plus size split conserves frozen cell wages in all replicates",
+      "passed": true,
+      "detail": 1.398807439164263e-15
+    },
+    {
+      "name": "white size split conserves frozen cell wages in all replicates",
+      "passed": true,
+      "detail": 5.0968938028658685e-15
+    },
+    {
+      "name": "union size split conserves frozen cell wages in all replicates",
+      "passed": true,
+      "detail": 1.0686838226699178e-15
+    },
+    {
+      "name": "national code split conserves frozen total wages in all replicates",
+      "passed": true,
+      "detail": 1.2941086869766487e-15
+    },
+    {
+      "name": "G1 code split conserves frozen total wages in all replicates",
+      "passed": true,
+      "detail": 1.2143395984491312e-15
+    },
+    {
+      "name": "G2 code split conserves frozen total wages in all replicates",
+      "passed": true,
+      "detail": 1.2366115230907717e-15
+    },
+    {
+      "name": "G3plus code split conserves frozen total wages in all replicates",
+      "passed": true,
+      "detail": 9.037066682272657e-16
+    },
+    {
+      "name": "white code split conserves frozen total wages in all replicates",
+      "passed": true,
+      "detail": 1.4364005736555885e-15
+    },
+    {
+      "name": "union code split conserves frozen total wages in all replicates",
+      "passed": true,
+      "detail": 1.2693749580733426e-15
+    },
+    {
+      "name": "national code split conserves frozen total wages in all replicates",
+      "passed": true,
+      "detail": 1.941163030464973e-15
+    },
+    {
+      "name": "G1 code split conserves frozen total wages in all replicates",
+      "passed": true,
+      "detail": 1.2143395984491312e-15
+    },
+    {
+      "name": "G2 code split conserves frozen total wages in all replicates",
+      "passed": true,
+      "detail": 1.4132703121037391e-15
+    },
+    {
+      "name": "G3plus code split conserves frozen total wages in all replicates",
+      "passed": true,
+      "detail": 1.084448001872719e-15
+    },
+    {
+      "name": "white code split conserves frozen total wages in all replicates",
+      "passed": true,
+      "detail": 2.2982409178489415e-15
+    },
+    {
+      "name": "union code split conserves frozen total wages in all replicates",
+      "passed": true,
+      "detail": 1.2693749580733426e-15
+    },
+    {
+      "name": "low union control reproduces frozen central",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "low lineage control reproduces adopted v7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "high union control reproduces frozen central",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "high lineage control reproduces adopted v7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "previously pinned upstream bytes unchanged",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "uncertainty": "160 CPS SDR replicates. Lineage wage shares and denominator calibration held fixed; excludes added-ancestry count/C3 and source-table uncertainty."
+}

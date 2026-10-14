@@ -1,0 +1,27 @@
+{
+  "nipa": {
+    "path": "sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx",
+    "sha256": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+    "reuse": "read-only local primary file"
+  },
+  "sut": {
+    "path": "infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/bea_SUPPLY-USE.zip",
+    "sha256": "3f16466e11eef0ed562d3663907f4a4a65856c134aa9f8baf7da6460bd11987d",
+    "reuse": "read-only local primary file"
+  },
+  "model": {
+    "path": "infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json",
+    "sha256": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd",
+    "reuse": "read-only local primary file"
+  },
+  "methods": {
+    "path": "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/bea_mp5_government_transactions.txt",
+    "sha256": "480f951bcc315085f87799015c369cbba30a084e24e672f4ec51149c5149321b",
+    "reuse": "read-only local primary file"
+  },
+  "engine": {
+    "path": "infra/immigration-fiscal/assumption_explorer_2026_09_21/engine.js",
+    "sha256": "055e0503ea4d10ba040942c89d583f4853c5a80924f4ac1043c5f83772def491",
+    "reuse": "read-only engine sign verifier"
+  }
+}

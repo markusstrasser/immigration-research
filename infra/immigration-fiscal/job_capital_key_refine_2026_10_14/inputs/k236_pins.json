@@ -1,0 +1,78 @@
+{
+  "k3_acs2023_subjects.pdf": {
+    "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2023_ACSSubjectDefinitions.pdf",
+    "sha256": "6edcfa27b10eaea093867256523cdc6f256a6c7991f4b02823d9034de2e31033"
+  },
+  "k3_acs2024_subjects.pdf": {
+    "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2024_ACSSubjectDefinitions.pdf",
+    "sha256": "6e0c5b1a5d3ebf7e300e583ac6424cbd5f09de50d69e7ef03aa6d070d9c4a7a8"
+  },
+  "k3_bea_mp5.pdf": {
+    "url": "https://www.bea.gov/sites/default/files/methodologies/mp5.pdf",
+    "sha256": "7ec9cddb203418a8af23c7158c8345ae4a28606e46d05bae05cdddafa7346881"
+  },
+  "source:bea_SUPPLY-USE.zip": {
+    "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/bea_SUPPLY-USE.zip",
+    "sha256": "3f16466e11eef0ed562d3663907f4a4a65856c134aa9f8baf7da6460bd11987d",
+    "url": "https://apps.bea.gov/industry/release/zip/SUPPLY-USE.zip"
+  },
+  "source:bea_Section6All_xls.xlsx": {
+    "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/bea_Section6All_xls.xlsx",
+    "sha256": "4abc98d1379d94f815556f7d70650ae82dda33832200b87901a7556f893c8511",
+    "url": "https://apps.bea.gov/national/Release/XLS/Survey/Section6All_xls.xlsx"
+  },
+  "source:bea_fa_Section3All_xls.xlsx": {
+    "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/bea_fa_Section3All_xls.xlsx",
+    "sha256": "5e02af61a2093c049514ef963f8b1e5fbbc41d64615c577383241e1b2e81a8a5",
+    "url": "https://apps.bea.gov/national/FixedAssets/Release/XLS/Section3All_xls.xlsx"
+  },
+  "source:bea_fa_Section4All_xls.xlsx": {
+    "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/bea_fa_Section4All_xls.xlsx",
+    "sha256": "c34e8b206989b846fff18d439c096e66776a88e7e2fd2c43b97eadb24efa773a",
+    "url": "https://apps.bea.gov/national/FixedAssets/Release/XLS/Section4All_xls.xlsx"
+  },
+  "source:bea_fa_Section5All_xls.xlsx": {
+    "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/bea_fa_Section5All_xls.xlsx",
+    "sha256": "90eaae674cec8d3df318b3a424d36c191737adec5697d5b37ee4413f0c578db8",
+    "url": "https://apps.bea.gov/national/FixedAssets/Release/XLS/Section5All_xls.xlsx"
+  },
+  "source:census_2022_industry_code_list.xlsx": {
+    "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/census_2022_industry_code_list.xlsx",
+    "sha256": "c9d2e004b2735c3975f0768e7dac704df6d2e0b36b24d33f5dbc7109cab5628c",
+    "url": "https://www2.census.gov/programs-surveys/demo/guidance/industry-occupation/2022-Census-Industry-Code-List-with-Crosswalk.xlsx"
+  },
+  "source:frb_z1_20260911_csv_files.zip": {
+    "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/frb_z1_20260911_csv_files.zip",
+    "sha256": "b63af9755437df0fb88b7cf346f8f9eaeb22bf1aa2b5df1709334135c43de4b6",
+    "url": "https://www.federalreserve.gov/releases/z1/20260911/z1_csv_files.zip"
+  },
+  "source:irs_p5655_ty2021.pdf": {
+    "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/irs_p5655_ty2021.pdf",
+    "sha256": "143ecac3eb4f9409899d72775de76b5628d5e3a52940554114dfc9176d325b4a",
+    "url": "https://www.irs.gov/pub/irs-prior/p5655--2024.pdf"
+  },
+  "source:irs_soi_coftc_ty2021.pdf": {
+    "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/irs_soi_coftc_ty2021.pdf",
+    "sha256": "b8e49373b95da839c38ebd5811217cbde2a8623ab4da57bb1f5aae9bdf4945cf",
+    "url": "https://www.irs.gov/pub/irs-soi/soi-a-coftc-id2503.pdf"
+  },
+  "source:taxfoundation_tpp_2023.html": {
+    "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/taxfoundation_tpp_2023.html",
+    "sha256": "2b2e393db5e24a6754e42d86e60f22b1fc1b5010719092276759fc1b4f420e3d",
+    "url": "https://taxfoundation.org/research/all/state/personal-property-tax-exemption-small-business/"
+  },
+  "source:treasury_ota_summary_2021.pdf": {
+    "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/treasury_ota_summary_2021.pdf",
+    "sha256": "a9b3af8c7cde0297f1b04747613e1ba65fcdf6432716797b03bb9aaf304c85a7",
+    "url": "https://home.treasury.gov/system/files/131/Summary-of-OTA-Distribution-Methodology-05102021.pdf"
+  },
+  "source:treasury_ota_wp111_2016.pdf": {
+    "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/treasury_ota_wp111_2016.pdf",
+    "sha256": "24ed934b0be75c5f3f6f6067aeb1653dae7792bfc485dc08fd780306da4233e1",
+    "url": "https://home.treasury.gov/system/files/131/wp-111.pdf"
+  },
+  "source:bea_nipa3": {
+    "path": "/Users/alien/Projects/immigration-research/sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx",
+    "sha256": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e"
+  }
+}

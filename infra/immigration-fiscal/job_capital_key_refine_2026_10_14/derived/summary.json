@@ -1,0 +1,1038 @@
+{
+  "frame": {
+    "union_persons": 39712493.3312,
+    "lineage_persons": 42752212.92438524,
+    "allocation": "personal",
+    "end_specifications": [
+      16,
+      11
+    ]
+  },
+  "baseline": {
+    "low": {
+      "union_bn": 66.4813092308808,
+      "lineage_bn": 71.77113658353456,
+      "union_se_bn": 2.0058863714772923,
+      "lineage_conditional_se_bn": 2.0799755964789415
+    },
+    "high": {
+      "union_bn": 40.26527055197578,
+      "lineage_bn": 43.3668872247396,
+      "union_se_bn": 1.10693016994514,
+      "lineage_conditional_se_bn": 1.1486839229076702
+    }
+  },
+  "adopted_headline_bn": [
+    339.55201782952685,
+    423.64926070050683
+  ],
+  "adopted_cash_bn": [
+    264.4255736155055,
+    348.52281648648557
+  ],
+  "arms": {
+    "K1_size_only": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": 2.029207538513951,
+          "delta_conditional_se_bn": 0.5237316093933042,
+          "item_net_cost_bn": -64.45210169236685,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 2.0569853113253482,
+          "delta_conditional_se_bn": 0.5374511325261676,
+          "item_net_cost_bn": -69.71415127220921,
+          "over_5bn": false,
+          "headline_bn": 341.60900314085217,
+          "cash_headline_bn": 266.48255892683085
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": 0.750806789250162,
+          "delta_conditional_se_bn": 0.1937806954755226,
+          "item_net_cost_bn": -39.51446376272562,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 0.7610845651903788,
+          "delta_conditional_se_bn": 0.198856919034682,
+          "item_net_cost_bn": -42.60580265954922,
+          "over_5bn": false,
+          "headline_bn": 424.41034526569723,
+          "cash_headline_bn": 349.28390105167597
+        }
+      }
+    },
+    "K1_industry_size": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": 1.7918332564345576,
+          "delta_conditional_se_bn": 0.4780589840425956,
+          "item_net_cost_bn": -64.68947597444624,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 1.8135430599192277,
+          "delta_conditional_se_bn": 0.4916714183332749,
+          "item_net_cost_bn": -69.95759352361533,
+          "over_5bn": false,
+          "headline_bn": 341.3655608894461,
+          "cash_headline_bn": 266.2391166754248
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": 0.6629783048807864,
+          "delta_conditional_se_bn": 0.17688182409576042,
+          "item_net_cost_bn": -39.602292247094994,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 0.6710109321701143,
+          "delta_conditional_se_bn": 0.18191842478331172,
+          "item_net_cost_bn": -42.69587629256949,
+          "over_5bn": false,
+          "headline_bn": 424.32027163267696,
+          "cash_headline_bn": 349.1938274186557
+        }
+      }
+    },
+    "K1_industry_size_selection_min": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": 40.84727475926831,
+          "delta_conditional_se_bn": 1.5231813075373313,
+          "item_net_cost_bn": -25.634034471612487,
+          "over_5bn": true
+        },
+        "lineage": {
+          "delta_net_cost_bn": 43.06143717800317,
+          "delta_conditional_se_bn": 1.5800437409633188,
+          "item_net_cost_bn": -28.70969940553139,
+          "over_5bn": true,
+          "headline_bn": 382.61345500753004,
+          "cash_headline_bn": 307.4870107935087
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": 15.113491660929274,
+          "delta_conditional_se_bn": 0.5635770837888124,
+          "item_net_cost_bn": -25.151778891046508,
+          "over_5bn": true
+        },
+        "lineage": {
+          "delta_net_cost_bn": 15.932731755861171,
+          "delta_conditional_se_bn": 0.5846161841564275,
+          "item_net_cost_bn": -27.43415546887843,
+          "over_5bn": true,
+          "headline_bn": 439.581992456368,
+          "cash_headline_bn": 364.45554824234677
+        }
+      }
+    },
+    "K1_industry_size_selection_max": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": -34.491906256458556,
+          "delta_conditional_se_bn": 0.9267013159863787,
+          "item_net_cost_bn": -100.97321548733936,
+          "over_5bn": true
+        },
+        "lineage": {
+          "delta_net_cost_bn": -36.30304979219504,
+          "delta_conditional_se_bn": 0.9617474950570101,
+          "item_net_cost_bn": -108.0741863757296,
+          "over_5bn": true,
+          "headline_bn": 303.2489680373318,
+          "cash_headline_bn": 228.12252382331047
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": -12.762005314889665,
+          "delta_conditional_se_bn": 0.34287948691495995,
+          "item_net_cost_bn": -53.027275866865445,
+          "over_5bn": true
+        },
+        "lineage": {
+          "delta_net_cost_bn": -13.432128423112163,
+          "delta_conditional_se_bn": 0.3558465731710934,
+          "item_net_cost_bn": -56.79901564785176,
+          "over_5bn": true,
+          "headline_bn": 410.2171322773947,
+          "cash_headline_bn": 335.0906880633734
+        }
+      }
+    },
+    "K2_foreign_source_removed": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": 3.4274162464846327,
+          "delta_conditional_se_bn": 0.31371446929896507,
+          "item_net_cost_bn": -63.053892984396164,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 3.774625862175276,
+          "delta_conditional_se_bn": 0.3243545652221777,
+          "item_net_cost_bn": -67.99651072135929,
+          "over_5bn": false,
+          "headline_bn": 343.32664369170215,
+          "cash_headline_bn": 268.2001994776808
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": 1.268144011199314,
+          "delta_conditional_se_bn": 0.11607435364061709,
+          "item_net_cost_bn": -38.99712654077647,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 1.3966115690048522,
+          "delta_conditional_se_bn": 0.12001118913220579,
+          "item_net_cost_bn": -41.970275655734746,
+          "over_5bn": false,
+          "headline_bn": 425.0458722695117,
+          "cash_headline_bn": 349.9194280554904
+        }
+      }
+    },
+    "K4_allform": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": -0.3577992801130563,
+          "delta_conditional_se_bn": 0.6845452073439044,
+          "item_net_cost_bn": -66.83910851099385,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.3495028820811814,
+          "delta_conditional_se_bn": 0.7245119894894992,
+          "item_net_cost_bn": -72.12063946561574,
+          "over_5bn": false,
+          "headline_bn": 339.20251494744565,
+          "cash_headline_bn": 264.07607073342433
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": -0.13238573364183082,
+          "delta_conditional_se_bn": 0.25328172671724464,
+          "item_net_cost_bn": -40.397656285617614,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.12931606637003712,
+          "delta_conditional_se_bn": 0.2680694361111148,
+          "item_net_cost_bn": -43.49620329110964,
+          "over_5bn": false,
+          "headline_bn": 423.5199446341368,
+          "cash_headline_bn": 348.3935004201155
+        }
+      }
+    },
+    "K4_conly": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": -0.048593596353022406,
+          "delta_conditional_se_bn": 0.18456326983517699,
+          "item_net_cost_bn": -66.52990282723383,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.05004234315167159,
+          "delta_conditional_se_bn": 0.19373945735827489,
+          "item_net_cost_bn": -71.82117892668623,
+          "over_5bn": false,
+          "headline_bn": 339.50197548637516,
+          "cash_headline_bn": 264.37553127235384
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": -0.01797963065061829,
+          "delta_conditional_se_bn": 0.06828840983901549,
+          "item_net_cost_bn": -40.2832501826264,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.018515666966118484,
+          "delta_conditional_se_bn": 0.07168359922256169,
+          "item_net_cost_bn": -43.385402891705716,
+          "over_5bn": false,
+          "headline_bn": 423.63074503354073,
+          "cash_headline_bn": 348.5043008195195
+        }
+      }
+    },
+    "K4_strict_allform": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": 0.4257873502778651,
+          "delta_conditional_se_bn": 0.43364715114998975,
+          "item_net_cost_bn": -66.05552188060292,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 0.45097775692421105,
+          "delta_conditional_se_bn": 0.46089263058101376,
+          "item_net_cost_bn": -71.32015882661034,
+          "over_5bn": false,
+          "headline_bn": 340.00299558645105,
+          "cash_headline_bn": 264.87655137242973
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": 0.15754131960281006,
+          "delta_conditional_se_bn": 0.1604494459254962,
+          "item_net_cost_bn": -40.107729232372975,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 0.16686177006195807,
+          "delta_conditional_se_bn": 0.1705302733149751,
+          "item_net_cost_bn": -43.20002545467764,
+          "over_5bn": false,
+          "headline_bn": 423.8161224705688,
+          "cash_headline_bn": 348.68967825654755
+        }
+      }
+    },
+    "K4_strict_conly": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": -0.21147022528424486,
+          "delta_conditional_se_bn": 0.16790578699412734,
+          "item_net_cost_bn": -66.69277945616504,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.21780512291641738,
+          "delta_conditional_se_bn": 0.1775411680868998,
+          "item_net_cost_bn": -71.98894170645097,
+          "over_5bn": false,
+          "headline_bn": 339.3342127066104,
+          "cash_headline_bn": 264.2077684925891
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": -0.0782439833551706,
+          "delta_conditional_se_bn": 0.06212514118782711,
+          "item_net_cost_bn": -40.343514535330954,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.08058789547907444,
+          "delta_conditional_se_bn": 0.06569023219215292,
+          "item_net_cost_bn": -43.44747512021868,
+          "over_5bn": false,
+          "headline_bn": 423.56867280502775,
+          "cash_headline_bn": 348.4422285910065
+        }
+      }
+    },
+    "K6_support_only": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": -0.37092743144425555,
+          "delta_conditional_se_bn": 0.12361210050516135,
+          "item_net_cost_bn": -66.85223666232505,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.3956378603605524,
+          "delta_conditional_se_bn": 0.127355769336917,
+          "item_net_cost_bn": -72.16677444389511,
+          "over_5bn": false,
+          "headline_bn": 339.15637996916627,
+          "cash_headline_bn": 264.02993575514495
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": -0.2959158340490664,
+          "delta_conditional_se_bn": 0.09861437768869635,
+          "item_net_cost_bn": -40.56118638602485,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.3156291433451869,
+          "delta_conditional_se_bn": 0.10160097504128109,
+          "item_net_cost_bn": -43.682516368084784,
+          "over_5bn": false,
+          "headline_bn": 423.33363155716165,
+          "cash_headline_bn": 348.2071873431404
+        }
+      }
+    },
+    "K6_support_equipment_proxy": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": -0.6773280134347965,
+          "delta_conditional_se_bn": 0.20578922784858097,
+          "item_net_cost_bn": -67.1586372443156,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.7236420752539996,
+          "delta_conditional_se_bn": 0.211949641175781,
+          "item_net_cost_bn": -72.49477865878856,
+          "over_5bn": false,
+          "headline_bn": 338.8283757542728,
+          "cash_headline_bn": 263.7019315402515
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": -0.6023164160396073,
+          "delta_conditional_se_bn": 0.1810605017583072,
+          "item_net_cost_bn": -40.86758696801539,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.643633358238634,
+          "delta_conditional_se_bn": 0.18648431900729198,
+          "item_net_cost_bn": -44.01052058297823,
+          "over_5bn": false,
+          "headline_bn": 423.0056273422682,
+          "cash_headline_bn": 347.87918312824695
+        }
+      }
+    },
+    "stack_K1_industry_size_K2": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": 5.083107383117216,
+          "delta_conditional_se_bn": 0.5478216410573202,
+          "item_net_cost_bn": -61.39820184776358,
+          "over_5bn": true
+        },
+        "lineage": {
+          "delta_net_cost_bn": 5.44484718287435,
+          "delta_conditional_se_bn": 0.5644836515770864,
+          "item_net_cost_bn": -66.3262894006602,
+          "over_5bn": true,
+          "headline_bn": 344.9968650124012,
+          "cash_headline_bn": 269.8704207983799
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": 1.88074973175337,
+          "delta_conditional_se_bn": 0.20269400719120848,
+          "item_net_cost_bn": -38.38452082022241,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 2.014593457663509,
+          "delta_conditional_se_bn": 0.20885895108352195,
+          "item_net_cost_bn": -41.35229376707609,
+          "over_5bn": false,
+          "headline_bn": 425.66385415817035,
+          "cash_headline_bn": 350.5374099441491
+        }
+      }
+    },
+    "K3_gross_documentary_assessments": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": -1.4439160823315382,
+          "delta_conditional_se_bn": 0.024938013956364483,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -1.5726668720388157,
+          "delta_conditional_se_bn": 0.027348066009361793,
+          "over_5bn": false,
+          "headline_bn": 337.979350957488,
+          "cash_headline_bn": 262.8529067434667
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": -1.4439160823315382,
+          "delta_conditional_se_bn": 0.024938013956364483,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -1.5726668720388157,
+          "delta_conditional_se_bn": 0.027348066009361793,
+          "over_5bn": false,
+          "headline_bn": 422.076593828468,
+          "cash_headline_bn": 346.95014961444673
+        }
+      }
+    },
+    "K3_documentary_only": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": -0.8372404509383246,
+          "delta_conditional_se_bn": 0.014460060598964066,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.9118953221958881,
+          "delta_conditional_se_bn": 0.015857505431338334,
+          "over_5bn": false,
+          "headline_bn": 338.64012250733094,
+          "cash_headline_bn": 263.5136782933096
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": -0.8372404509383246,
+          "delta_conditional_se_bn": 0.014460060598964066,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.9118953221958881,
+          "delta_conditional_se_bn": 0.015857505431338334,
+          "over_5bn": false,
+          "headline_bn": 422.7373653783109,
+          "cash_headline_bn": 347.61092116428966
+        }
+      }
+    },
+    "K3_assessments_only": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": -0.6066756313932137,
+          "delta_conditional_se_bn": 0.010477953357400415,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.6607715498429276,
+          "delta_conditional_se_bn": 0.01149056057802346,
+          "over_5bn": false,
+          "headline_bn": 338.8912462796839,
+          "cash_headline_bn": 263.7648020656626
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": -0.6066756313932137,
+          "delta_conditional_se_bn": 0.010477953357400415,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.6607715498429276,
+          "delta_conditional_se_bn": 0.01149056057802346,
+          "over_5bn": false,
+          "headline_bn": 422.9884891506639,
+          "cash_headline_bn": 347.86204493664263
+        }
+      }
+    },
+    "K5_all_nonfarm_nonhousing_plain_wage_full_response": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": 2.0091801080286205,
+          "delta_conditional_se_bn": 0.03704283190704204,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 2.1590415137107177,
+          "delta_conditional_se_bn": 0.038581750739742855,
+          "over_5bn": false,
+          "headline_bn": 341.71105934323754,
+          "cash_headline_bn": 266.5846151292162
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": 2.0091801080286205,
+          "delta_conditional_se_bn": 0.03704283190704204,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 2.1590415137107177,
+          "delta_conditional_se_bn": 0.038581750739742855,
+          "over_5bn": false,
+          "headline_bn": 425.8083022142175,
+          "cash_headline_bn": 350.68185800019626
+        }
+      }
+    },
+    "K5_functional_mix_full_response_proxy": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": 2.31650165871009,
+          "delta_conditional_se_bn": 0.07645458518064911,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 2.469309689749999,
+          "delta_conditional_se_bn": 0.08000965335312406,
+          "over_5bn": false,
+          "headline_bn": 342.02132751927684,
+          "cash_headline_bn": 266.8948833052555
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": 2.31650165871009,
+          "delta_conditional_se_bn": 0.07645458518064911,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 2.469309689749999,
+          "delta_conditional_se_bn": 0.08000965335312406,
+          "over_5bn": false,
+          "headline_bn": 426.1185703902568,
+          "cash_headline_bn": 350.99212617623556
+        }
+      }
+    },
+    "K5_named_transport_full_response": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": 0.012604692058910384,
+          "delta_conditional_se_bn": 0.0030149428604916606,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 0.014686916256953945,
+          "delta_conditional_se_bn": 0.003187052203274217,
+          "over_5bn": false,
+          "headline_bn": 339.5667047457838,
+          "cash_headline_bn": 264.4402605317625
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": 0.012604692058910384,
+          "delta_conditional_se_bn": 0.0030149428604916606,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 0.014686916256953945,
+          "delta_conditional_se_bn": 0.003187052203274217,
+          "over_5bn": false,
+          "headline_bn": 423.6639476167638,
+          "cash_headline_bn": 348.5375034027425
+        }
+      }
+    },
+    "K5_state_local_railroad_proxy_full_response": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": 0.02721885674339015,
+          "delta_conditional_se_bn": 0.017789179360858207,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 0.03031545514436165,
+          "delta_conditional_se_bn": 0.017858008562194914,
+          "over_5bn": false,
+          "headline_bn": 339.5823332846712,
+          "cash_headline_bn": 264.4558890706499
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": 0.02721885674339015,
+          "delta_conditional_se_bn": 0.017789179360858207,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 0.03031545514436165,
+          "delta_conditional_se_bn": 0.017858008562194914,
+          "over_5bn": false,
+          "headline_bn": 423.6795761556512,
+          "cash_headline_bn": 348.55313194162994
+        }
+      }
+    },
+    "K5_unclassified_residual_plain_wage_full_response": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": 1.99657541596971,
+          "delta_conditional_se_bn": 0.0361991176559916,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 2.1443545974537637,
+          "delta_conditional_se_bn": 0.03768026895798676,
+          "over_5bn": false,
+          "headline_bn": 341.6963724269806,
+          "cash_headline_bn": 266.56992821295927
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": 1.99657541596971,
+          "delta_conditional_se_bn": 0.0361991176559916,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 2.1443545974537637,
+          "delta_conditional_se_bn": 0.03768026895798676,
+          "over_5bn": false,
+          "headline_bn": 425.79361529796057,
+          "cash_headline_bn": 350.6671710839393
+        }
+      }
+    }
+  },
+  "interactions": {
+    "low": {
+      "union_bn": -0.1361421198019741,
+      "lineage_bn": -0.14332173922015454,
+      "lineage_se_bn": 0.08393576458231321
+    },
+    "high": {
+      "union_bn": -0.05037258432673064,
+      "lineage_bn": -0.053029043511457395,
+      "lineage_se_bn": 0.031056232895455862
+    }
+  },
+  "gates": [
+    {
+      "name": "upstream source pin: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/job_capital.py",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream source pin: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/item.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream source pin: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/national.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream source pin: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/national_by_industry.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream source pin: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/case_keys.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream source pin: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/inputs/census_industry_crosswalk.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream source pin: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream source pin: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream source pin: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/full_account_receipts_2026_09_20/derived/allocation_keys.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream source pin: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream source pin: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/cps_imputation_keys_2026_09_23/derived/status_combination_keys.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream source pin: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/receipt_side_long_run_2026_09_28/derived/counties.csv",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream source pin: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/main_case_2026_10_07/derived/corrections.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream source pin: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/generation_account_2026_09_24/derived/stack_by_generation.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "low exact K1\u00d7K2 interaction equals cross product in every replicate",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_size_only low union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_size_only low lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_industry_size low union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_industry_size low lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_industry_size_selection_min low union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_industry_size_selection_min low lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_industry_size_selection_max low union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_industry_size_selection_max low lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K2_foreign_source_removed low union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K2_foreign_source_removed low lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K2 low reproduces exact adopted full-case arm",
+      "passed": true,
+      "value": -7.949196856316121e-14
+    },
+    {
+      "name": "K4_allform low union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K4_allform low lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K4_conly low union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K4_conly low lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K4_strict_allform low union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K4_strict_allform low lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K4_strict_conly low union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K4_strict_conly low lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K6_support_only low union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K6_support_only low lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K6_support_equipment_proxy low union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K6_support_equipment_proxy low lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "stack_K1_industry_size_K2 low union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "stack_K1_industry_size_K2 low lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "high exact K1\u00d7K2 interaction equals cross product in every replicate",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_size_only high union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_size_only high lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_industry_size high union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_industry_size high lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_industry_size_selection_min high union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_industry_size_selection_min high lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_industry_size_selection_max high union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K1_industry_size_selection_max high lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K2_foreign_source_removed high union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K2_foreign_source_removed high lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K2 high reproduces exact adopted full-case arm",
+      "passed": true,
+      "value": -5.1514348342607263e-14
+    },
+    {
+      "name": "K4_allform high union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K4_allform high lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K4_conly high union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K4_conly high lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K4_strict_allform high union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K4_strict_allform high lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K4_strict_conly high union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K4_strict_conly high lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K6_support_only high union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K6_support_only high lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K6_support_equipment_proxy high union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "K6_support_equipment_proxy high lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "stack_K1_industry_size_K2 high union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "stack_K1_industry_size_K2 high lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    }
+  ],
+  "recommendations": {
+    "K1": "Conditional industry-size payroll refinement recommended only as a labelled modelled key, not observed member C-corporation employment. Size-only diagnostic; excluded sectors keep original key. Selection envelope can exceed review bar.",
+    "K2": "Recommend exclusion of foreign-source residence tax from source tax at US jobs; retain historical SOI ratio as a year-mismatched proxy.",
+    "K3": "Withhold central addition pending owner/tenant overlap reconciliation. Gross and documentary-only requested pricing retained as sensitivities.",
+    "K4": "Keep central summary key; strict C-only minor refinement is a limited sizing check. No 2024 finer property-only analogue.",
+    "K5": "Keep agricultural response0 under fixed-land premise. Withhold residual subsidy change until programs and enterprise offsets reconciled.",
+    "K6": "Size only. Withhold departure assumption; extraction equipment fraction is a national proxy. Fixed output may refill support jobs.",
+    "stack": "K1 industry-size conditional proxy plus K2 exclusion; exact simultaneous cell rekey, interaction measured. Conditional candidate, not adoption."
+  },
+  "uncertainty": "160 CPS SDR replicates. Lineage wage shares and denominator calibration held fixed; excludes added-ancestry count/C3 and source-table uncertainty.",
+  "K3_uncertainty": "Independent CPS owner-model and ACS renter-proxy sampling SEs, calibrated to live main keys; responses, nationwide taxes and lineage scaling fixed. Not a joint full-estimator SE."
+}

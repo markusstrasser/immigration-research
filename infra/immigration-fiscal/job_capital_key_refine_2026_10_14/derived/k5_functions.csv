@@ -1,0 +1,29 @@
+source_table,source_line,label,series,national_bn
+3.17,78,Government,A107RC,94.239
+3.17,79,General Public Service,LA000215,0.0
+3.17,80,Economic affairs,G17079,30.459
+3.17,81,Transportation,G17084,10.822
+3.17,82,Other economic affairs,W696RC,19.636
+3.17,83,General economic and labor affairs,G17080,11.158
+3.17,84,Agriculture,G17081,7.821
+3.17,85,Energy,G17082,0.657
+3.17,86,Natural resources,G17083,0.0
+3.17,87,Housing and community services,G17087,62.774
+3.17,88,Health,LA000216,1.007
+3.17,89,Federal,B096RC,93.526
+3.17,90,General Public Service,LA000212,0.0
+3.17,91,Economic affairs,G17091,29.745
+3.17,92,Transportation,G17096,10.109
+3.17,93,Other economic affairs,W697RC,19.636
+3.17,94,General economic and labor affairs,G17092,11.158
+3.17,95,Agriculture,G17093,7.821
+3.17,96,Energy,LA000213,0.657
+3.17,97,Natural resources,G17095,0.0
+3.17,98,Housing and community services,G17098,62.774
+3.17,99,Health,LA000214,1.007
+3.17,100,State and local,B114RC,0.713
+3.17,101,Economic affairs,G17100,0.713
+3.17,102,Transportation,G17102,0.713
+3.17,103,Energy,G17101,0.0
+3.17,104,Housing and community services,G17104,0.0
+3.17,rounding,Published functional rounding remainder,CALCULATION,0.0

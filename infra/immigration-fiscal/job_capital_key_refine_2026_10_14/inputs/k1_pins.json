@@ -1,0 +1,80 @@
+{
+  "susb_2022.xlsx": {
+    "url": "https://www2.census.gov/programs-surveys/susb/tables/2022/us_state_naicssector_lfo_2022.xlsx",
+    "path": "_cache/k1_susb_2022.xlsx",
+    "sha256": "246200312e857ffe73ed945a309ac6ce599c99a2b7a29b3906c2f9fd9b7c6a8f",
+    "bytes": 4214634
+  },
+  "22co53ccr.xlsx": {
+    "url": "https://www.irs.gov/pub/irs-soi/22co53ccr.xlsx",
+    "path": "_cache/k1_22co53ccr.xlsx",
+    "sha256": "7910f63206962599a97b0c83e7f88e91edda9cfc224432524253ac2ab425e791",
+    "bytes": 144283
+  },
+  "22co61ccr.xlsx": {
+    "url": "https://www.irs.gov/pub/irs-soi/22co61ccr.xlsx",
+    "path": "_cache/k1_22co61ccr.xlsx",
+    "sha256": "d0eff09037b41fc25694171043b59b821c0dc8f0e3203eab992740ea30829b98",
+    "bytes": 137574
+  },
+  "p16_2022.pdf": {
+    "url": "https://www.irs.gov/pub/irs-pdf/p16.pdf",
+    "path": "_cache/k1_p16_2022.pdf",
+    "sha256": "65912d6c5fb53074964f25e26b45dadae60437075f8b3acfdfaea988bea30356",
+    "bytes": 1777846
+  },
+  "susb_methodology.html": {
+    "url": "https://www.census.gov/programs-surveys/susb/technical-documentation/methodology.html",
+    "path": "_cache/k1_susb_methodology.html",
+    "sha256": "ab85f15335278db959e567f9971e68af0b732c9c1a0b83f196499ea1a41526a1",
+    "bytes": 368431
+  },
+  "susb_glossary.html": {
+    "url": "https://www.census.gov/programs-surveys/susb/about/glossary.html",
+    "path": "_cache/k1_susb_glossary.html",
+    "sha256": "78a9c13e658a3dadde462c6096d0423f87450277bca4d190eff27b19380a9b88",
+    "bytes": 359185
+  },
+  "susb_lfo.html": {
+    "url": "https://www.census.gov/programs-surveys/susb/technical-documentation/data-user-resources/legal-form-of-organization.html",
+    "path": "_cache/k1_susb_lfo.html",
+    "sha256": "c4c22e88c989e5a39a4c528fff7435c099c600e927044633f95e1084f34019f2",
+    "bytes": 330808
+  },
+  "susb_tables.html": {
+    "url": "https://www.census.gov/programs-surveys/susb/data/tables.html",
+    "path": "_cache/k1_susb_tables.html",
+    "sha256": "e2b470b5ba08b50632a8f6fe9ba8be4372ac54165e49182090a1df3bb17ab96b",
+    "bytes": 379960
+  },
+  "irs_tables.html": {
+    "url": "https://www.irs.gov/statistics/soi-tax-stats-corporation-income-tax-returns-complete-report-publication-16",
+    "path": "_cache/k1_irs_tables.html",
+    "sha256": "b764abd9873aecd9b16f5cb22a0f34fcdf673532482c808b4903d6090ed5fec4",
+    "bytes": 180928
+  },
+  "ec2022_lfo_group.json": {
+    "url": "https://api.census.gov/data/2022/ecnsize/groups/EC2200SIZELFO.json",
+    "path": "_cache/k1_ec2022_lfo_group.json",
+    "sha256": "2190bd42658728ab34fb0bb970224181c6c1ac5e06cafb8236880d78dc9681db",
+    "bytes": 25731
+  },
+  "ec2022_firmsize_group.json": {
+    "url": "https://api.census.gov/data/2022/ecnsize/groups/EC2200SIZEEMPFIRM.json",
+    "path": "_cache/k1_ec2022_firmsize_group.json",
+    "sha256": "35155928a77bde791fc7dc3bfbe54106354cf7cbfa8e1a0f251e273bb5aa53e1",
+    "bytes": 26538
+  },
+  "abs2023_variables.json": {
+    "url": "https://api.census.gov/data/2023/abscs/variables.json",
+    "path": "_cache/k1_abs2023_variables.json",
+    "sha256": "44ea9431fac0761e5554c3d0daeb1abcae0bdca63d33b3492d52ba3ce3adc49b",
+    "bytes": 563567
+  },
+  "cbp2023_variables.json": {
+    "url": "https://api.census.gov/data/2023/cbp/variables.json",
+    "path": "_cache/k1_cbp2023_variables.json",
+    "sha256": "3607074b2883892aec2d09c37a15b0daf84891cffd309b047680db364f4e9905",
+    "bytes": 543719
+  }
+}

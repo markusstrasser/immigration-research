@@ -1,0 +1,1530 @@
+{
+  "status": "conditional sector-enterprise-size C-and-other-corporate payroll proxy",
+  "source_year": 2022,
+  "results": {
+    "size_only": {
+      "low": {
+        "union": {
+          "corporate_target_bn": 39.58355226927179,
+          "delta_net_cost_bn": 2.029207538513951,
+          "delta_conditional_se_bn": 0.5237316093933042,
+          "item_net_cost_bn": -64.45210169236685,
+          "over_5bn_review_bar": false
+        },
+        "lineage": {
+          "corporate_target_bn": 43.029124781999975,
+          "delta_net_cost_bn": 2.0569853113253487,
+          "delta_conditional_se_bn": 0.5374511325261677,
+          "item_net_cost_bn": -69.71415127220921,
+          "over_5bn_review_bar": false
+        }
+      },
+      "high": {
+        "union": {
+          "corporate_target_bn": 39.58355226927179,
+          "delta_net_cost_bn": 0.750806789250162,
+          "delta_conditional_se_bn": 0.1937806954755226,
+          "item_net_cost_bn": -39.51446376272562,
+          "over_5bn_review_bar": false
+        },
+        "lineage": {
+          "corporate_target_bn": 43.029124781999975,
+          "delta_net_cost_bn": 0.761084565190379,
+          "delta_conditional_se_bn": 0.19885691903468206,
+          "item_net_cost_bn": -42.60580265954922,
+          "over_5bn_review_bar": false
+        }
+      }
+    },
+    "industry_size": {
+      "low": {
+        "union": {
+          "corporate_target_bn": 39.820926551351185,
+          "delta_net_cost_bn": 1.7918332564345576,
+          "delta_conditional_se_bn": 0.4780589840425956,
+          "item_net_cost_bn": -64.68947597444624,
+          "over_5bn_review_bar": false
+        },
+        "lineage": {
+          "corporate_target_bn": 43.2725670334061,
+          "delta_net_cost_bn": 1.8135430599192262,
+          "delta_conditional_se_bn": 0.4916714183332747,
+          "item_net_cost_bn": -69.95759352361533,
+          "over_5bn_review_bar": false
+        }
+      },
+      "high": {
+        "union": {
+          "corporate_target_bn": 39.820926551351185,
+          "delta_net_cost_bn": 0.6629783048807864,
+          "delta_conditional_se_bn": 0.17688182409576042,
+          "item_net_cost_bn": -39.602292247094994,
+          "over_5bn_review_bar": false
+        },
+        "lineage": {
+          "corporate_target_bn": 43.2725670334061,
+          "delta_net_cost_bn": 0.6710109321701136,
+          "delta_conditional_se_bn": 0.18191842478331166,
+          "item_net_cost_bn": -42.69587629256949,
+          "over_5bn_review_bar": false
+        }
+      }
+    },
+    "industry_size_selection_min": {
+      "low": {
+        "union": {
+          "corporate_target_bn": 0.7654850485174346,
+          "delta_net_cost_bn": 40.84727475926831,
+          "delta_conditional_se_bn": 1.5231813075373313,
+          "item_net_cost_bn": -25.634034471612487,
+          "over_5bn_review_bar": true
+        },
+        "lineage": {
+          "corporate_target_bn": 2.0246729153221596,
+          "delta_net_cost_bn": 43.06143717800317,
+          "delta_conditional_se_bn": 1.5800437409633177,
+          "item_net_cost_bn": -28.70969940553139,
+          "over_5bn_review_bar": true
+        }
+      },
+      "high": {
+        "union": {
+          "corporate_target_bn": 0.7654850485174346,
+          "delta_net_cost_bn": 15.113491660929274,
+          "delta_conditional_se_bn": 0.5635770837888124,
+          "item_net_cost_bn": -25.151778891046508,
+          "over_5bn_review_bar": true
+        },
+        "lineage": {
+          "corporate_target_bn": 2.0246729153221596,
+          "delta_net_cost_bn": 15.932731755861171,
+          "delta_conditional_se_bn": 0.5846161841564275,
+          "item_net_cost_bn": -27.43415546887843,
+          "over_5bn_review_bar": true
+        }
+      }
+    },
+    "industry_size_selection_max": {
+      "low": {
+        "union": {
+          "corporate_target_bn": 76.1046660642443,
+          "delta_net_cost_bn": -34.491906256458556,
+          "delta_conditional_se_bn": 0.9267013159863787,
+          "item_net_cost_bn": -100.97321548733936,
+          "over_5bn_review_bar": true
+        },
+        "lineage": {
+          "corporate_target_bn": 81.38915988552037,
+          "delta_net_cost_bn": -36.30304979219505,
+          "delta_conditional_se_bn": 0.9617474950570103,
+          "item_net_cost_bn": -108.0741863757296,
+          "over_5bn_review_bar": true
+        }
+      },
+      "high": {
+        "union": {
+          "corporate_target_bn": 76.1046660642443,
+          "delta_net_cost_bn": -12.762005314889665,
+          "delta_conditional_se_bn": 0.34287948691495995,
+          "item_net_cost_bn": -53.027275866865445,
+          "over_5bn_review_bar": true
+        },
+        "lineage": {
+          "corporate_target_bn": 81.38915988552037,
+          "delta_net_cost_bn": -13.432128423112168,
+          "delta_conditional_se_bn": 0.35584657317109386,
+          "item_net_cost_bn": -56.79901564785177,
+          "over_5bn_review_bar": true
+        }
+      }
+    }
+  },
+  "irs_national_crosscheck": {
+    "sector": "--",
+    "irs_label": "All industries",
+    "susb_c_and_other_payroll_bn": 4659.260696,
+    "irs_c_ex_reit_ric_salary_deduction_bn": 3345.092703,
+    "irs_c_officer_compensation_bn": 212.91529,
+    "irs_salary_plus_officer_over_susb_payroll": 0.7636421795532001,
+    "irs_s_salary_plus_officer_bn": 1514.251813,
+    "susb_s_payroll_bn": 1946.72379,
+    "irs_c_share_of_c_and_s_salary_plus_officer": 0.7014640671188048,
+    "susb_c_share_of_c_and_s_payroll": 0.7053090581539098
+  },
+  "gates": [
+    {
+      "name": "pin susb_2022.xlsx",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "pin 22co53ccr.xlsx",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "pin 22co61ccr.xlsx",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "pin p16_2022.pdf",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "pin susb_methodology.html",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "pin susb_glossary.html",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "pin susb_lfo.html",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "pin susb_tables.html",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "pin irs_tables.html",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "pin ec2022_lfo_group.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "pin ec2022_firmsize_group.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "pin abs2023_variables.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "pin cbp2023_variables.json",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "primary workbook identifies enterprise employment size",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "S corporate category separated",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "SUSB size payroll closure --/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure --/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure --/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure --/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure --/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure --/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure --/7 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure --/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure --/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 11/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 11/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 11/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 11/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 11/5",
+      "passed": true,
+      "value": [
+        "9"
+      ]
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 11/6",
+      "passed": true,
+      "value": [
+        "9"
+      ]
+    },
+    {
+      "name": "SUSB size payroll closure 11/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 11/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 21/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 21/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 21/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 21/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 21/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 21/6",
+      "passed": true,
+      "value": [
+        "3",
+        "4",
+        "6",
+        "7",
+        "9"
+      ]
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 21/8",
+      "passed": true,
+      "value": [
+        "3",
+        "4"
+      ]
+    },
+    {
+      "name": "SUSB legal payroll closure 21/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 22/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 22/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 22/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 22/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 22/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 22/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 22/8",
+      "passed": true,
+      "value": [
+        "2",
+        "3",
+        "4",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "name": "SUSB legal payroll closure 22/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 23/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 23/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 23/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 23/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 23/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 23/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 23/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 23/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 31-33/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 31-33/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 31-33/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 31-33/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 31-33/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 31-33/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 31-33/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 31-33/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 42/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 42/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 42/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 42/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 42/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 42/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 42/7",
+      "passed": true,
+      "value": [
+        "2",
+        "3",
+        "4",
+        "9"
+      ]
+    },
+    {
+      "name": "SUSB size payroll closure 42/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 42/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 44-45/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 44-45/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 44-45/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 44-45/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 44-45/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 44-45/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 44-45/7 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 44-45/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 44-45/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 48-49/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 48-49/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 48-49/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 48-49/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 48-49/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 48-49/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 48-49/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 48-49/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 51/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 51/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 51/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 51/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 51/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 51/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 51/7",
+      "passed": true,
+      "value": [
+        "2",
+        "7",
+        "9"
+      ]
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 51/8",
+      "passed": true,
+      "value": [
+        "4"
+      ]
+    },
+    {
+      "name": "SUSB legal payroll closure 51/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 52/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 52/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 52/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 52/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 52/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 52/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 52/7",
+      "passed": true,
+      "value": [
+        "4",
+        "7"
+      ]
+    },
+    {
+      "name": "SUSB size payroll closure 52/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 52/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 53/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 53/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 53/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 53/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 53/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 53/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 53/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 53/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 54/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 54/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 54/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 54/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 54/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 54/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 54/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 54/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 55/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 55/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 55/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 55/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 55/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 55/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 55/8",
+      "passed": true,
+      "value": [
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "name": "SUSB legal payroll closure 55/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 56/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 56/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 56/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 56/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 56/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 56/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 56/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 56/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 61/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 61/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 61/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 61/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 61/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 61/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 61/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 61/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 62/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 62/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 62/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 62/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 62/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 62/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 62/7",
+      "passed": true,
+      "value": [
+        "4"
+      ]
+    },
+    {
+      "name": "SUSB size payroll closure 62/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 62/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 71/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 71/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 71/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 71/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 71/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 71/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 71/7 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 71/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 71/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 72/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 72/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 72/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 72/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 72/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 72/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 72/7",
+      "passed": true,
+      "value": [
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "name": "SUSB size payroll closure 72/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 72/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 81/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 81/2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 81/3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 81/4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 81/5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 81/6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB size payroll closure 81/8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB legal payroll closure 81/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 99/1",
+      "passed": true,
+      "value": [
+        "7",
+        "9"
+      ]
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 99/2",
+      "passed": true,
+      "value": [
+        "7",
+        "9"
+      ]
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 99/3",
+      "passed": true,
+      "value": [
+        "7",
+        "9"
+      ]
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 99/4",
+      "passed": true,
+      "value": [
+        "7",
+        "9"
+      ]
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 99/5",
+      "passed": true,
+      "value": [
+        "7",
+        "9"
+      ]
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 99/6",
+      "passed": true,
+      "value": [
+        "7",
+        "9"
+      ]
+    },
+    {
+      "name": "SUSB used all/C profiles completely published 99/8",
+      "passed": true,
+      "value": [
+        "3",
+        "4",
+        "6",
+        "7",
+        "9"
+      ]
+    },
+    {
+      "name": "SUSB legal payroll closure 99/1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB national sector payroll closure form 1 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB national sector payroll closure form 2 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB national sector payroll closure form 3 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB national sector payroll closure form 4 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB national sector payroll closure form 5 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB national sector payroll closure form 6 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB national sector payroll closure form 7 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "SUSB national sector payroll closure form 8 at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] --",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 11",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 21",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 22",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 23",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 31-33",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 42",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 44-45",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 48-49",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 51",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 52",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 53",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 54",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 55",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 56",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 61",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 62",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 71",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 72",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "C corporate payroll probabilities in [0,1] 81",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "IRS table excludes S, REIT and RIC",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "IRS 19 named sectors in primary header",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "IRS salaries 19-sector closure at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "IRS officers 19-sector closure at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "IRS S table is Form1120-S",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "EC legal-form table has no employment-size dimension",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "EC firm-size table has no legal-form dimension",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ABS public company summary lacks legal form",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "CBP legal-form size is establishment not enterprise",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "exact common-bin wage conservation",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "uncovered corporate cells are exactly government, crop/animal and rail cells",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "NOEMP0 contains no national wage dollars",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "neutral legal probabilities recover frozen pooled corporate union in all161 columns",
+      "passed": true,
+      "value": 7.105427357601002e-15
+    },
+    {
+      "name": "neutral legal probabilities recover frozen pooled corporate G1 in all161 columns",
+      "passed": true,
+      "value": 1.7763568394002505e-15
+    },
+    {
+      "name": "neutral legal probabilities recover frozen pooled corporate G2 in all161 columns",
+      "passed": true,
+      "value": 1.7763568394002505e-15
+    },
+    {
+      "name": "neutral legal probabilities recover frozen pooled corporate G3plus in all161 columns",
+      "passed": true,
+      "value": 1.7763568394002505e-15
+    },
+    {
+      "name": "neutral legal probabilities recover frozen pooled corporate white in all161 columns",
+      "passed": true,
+      "value": 5.684341886080802e-14
+    },
+    {
+      "name": "selection envelopes contain exchangeable proxy union all161 columns",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "selection envelopes contain exchangeable proxy G1 all161 columns",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "selection envelopes contain exchangeable proxy G2 all161 columns",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "selection envelopes contain exchangeable proxy G3plus all161 columns",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "selection envelopes contain exchangeable proxy white all161 columns",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "corporate generation conservation size_only all161 columns at1e-9bn",
+      "passed": true,
+      "value": 4.263256414560601e-14
+    },
+    {
+      "name": "corporate generation conservation industry_size all161 columns at1e-9bn",
+      "passed": true,
+      "value": 2.842170943040401e-14
+    }
+  ],
+  "source_pins": {
+    "susb_2022.xlsx": {
+      "url": "https://www2.census.gov/programs-surveys/susb/tables/2022/us_state_naicssector_lfo_2022.xlsx",
+      "path": "_cache/k1_susb_2022.xlsx",
+      "sha256": "246200312e857ffe73ed945a309ac6ce599c99a2b7a29b3906c2f9fd9b7c6a8f",
+      "bytes": 4214634
+    },
+    "22co53ccr.xlsx": {
+      "url": "https://www.irs.gov/pub/irs-soi/22co53ccr.xlsx",
+      "path": "_cache/k1_22co53ccr.xlsx",
+      "sha256": "7910f63206962599a97b0c83e7f88e91edda9cfc224432524253ac2ab425e791",
+      "bytes": 144283
+    },
+    "22co61ccr.xlsx": {
+      "url": "https://www.irs.gov/pub/irs-soi/22co61ccr.xlsx",
+      "path": "_cache/k1_22co61ccr.xlsx",
+      "sha256": "d0eff09037b41fc25694171043b59b821c0dc8f0e3203eab992740ea30829b98",
+      "bytes": 137574
+    },
+    "p16_2022.pdf": {
+      "url": "https://www.irs.gov/pub/irs-pdf/p16.pdf",
+      "path": "_cache/k1_p16_2022.pdf",
+      "sha256": "65912d6c5fb53074964f25e26b45dadae60437075f8b3acfdfaea988bea30356",
+      "bytes": 1777846
+    },
+    "susb_methodology.html": {
+      "url": "https://www.census.gov/programs-surveys/susb/technical-documentation/methodology.html",
+      "path": "_cache/k1_susb_methodology.html",
+      "sha256": "ab85f15335278db959e567f9971e68af0b732c9c1a0b83f196499ea1a41526a1",
+      "bytes": 368431
+    },
+    "susb_glossary.html": {
+      "url": "https://www.census.gov/programs-surveys/susb/about/glossary.html",
+      "path": "_cache/k1_susb_glossary.html",
+      "sha256": "78a9c13e658a3dadde462c6096d0423f87450277bca4d190eff27b19380a9b88",
+      "bytes": 359185
+    },
+    "susb_lfo.html": {
+      "url": "https://www.census.gov/programs-surveys/susb/technical-documentation/data-user-resources/legal-form-of-organization.html",
+      "path": "_cache/k1_susb_lfo.html",
+      "sha256": "c4c22e88c989e5a39a4c528fff7435c099c600e927044633f95e1084f34019f2",
+      "bytes": 330808
+    },
+    "susb_tables.html": {
+      "url": "https://www.census.gov/programs-surveys/susb/data/tables.html",
+      "path": "_cache/k1_susb_tables.html",
+      "sha256": "e2b470b5ba08b50632a8f6fe9ba8be4372ac54165e49182090a1df3bb17ab96b",
+      "bytes": 379960
+    },
+    "irs_tables.html": {
+      "url": "https://www.irs.gov/statistics/soi-tax-stats-corporation-income-tax-returns-complete-report-publication-16",
+      "path": "_cache/k1_irs_tables.html",
+      "sha256": "b764abd9873aecd9b16f5cb22a0f34fcdf673532482c808b4903d6090ed5fec4",
+      "bytes": 180928
+    },
+    "ec2022_lfo_group.json": {
+      "url": "https://api.census.gov/data/2022/ecnsize/groups/EC2200SIZELFO.json",
+      "path": "_cache/k1_ec2022_lfo_group.json",
+      "sha256": "2190bd42658728ab34fb0bb970224181c6c1ac5e06cafb8236880d78dc9681db",
+      "bytes": 25731
+    },
+    "ec2022_firmsize_group.json": {
+      "url": "https://api.census.gov/data/2022/ecnsize/groups/EC2200SIZEEMPFIRM.json",
+      "path": "_cache/k1_ec2022_firmsize_group.json",
+      "sha256": "35155928a77bde791fc7dc3bfbe54106354cf7cbfa8e1a0f251e273bb5aa53e1",
+      "bytes": 26538
+    },
+    "abs2023_variables.json": {
+      "url": "https://api.census.gov/data/2023/abscs/variables.json",
+      "path": "_cache/k1_abs2023_variables.json",
+      "sha256": "44ea9431fac0761e5554c3d0daeb1abcae0bdca63d33b3492d52ba3ce3adc49b",
+      "bytes": 563567
+    },
+    "cbp2023_variables.json": {
+      "url": "https://api.census.gov/data/2023/cbp/variables.json",
+      "path": "_cache/k1_cbp2023_variables.json",
+      "sha256": "3607074b2883892aec2d09c37a15b0daf84891cffd309b047680db364f4e9905",
+      "bytes": 543719
+    }
+  },
+  "assumptions": [
+    "Conditional C-and-other-corporate payroll propensity of the group's wages equals the national propensity within industry sector and matched enterprise size.",
+    "2022 SUSB propensity applies to 2024 wages.",
+    "Fine industries share their broad sector legal-form propensity.",
+    "NOEMP0 uses the source sector's all-size corporate payroll share, but this bin carries zero wage dollars in core.npz.",
+    "Common core's frozen thin-cell pools and top-wage spread retained.",
+    "Lineage added members inherit common core G3plus/white rates; ancestry-count uncertainty excluded.",
+    "Government enterprise, crop/animal production, and rail cells held at the frozen key because SUSB cannot match them.",
+    "SUSB excludes some funds inside merged523 and notaries inside5411: partial scope profile remains conditional.",
+    "Selection_min/max remove conditional exchangeability only; retaining transported national C payroll marginals. Lineage bounds are relaxed outer envelopes rather than sharp jointly feasible bounds."
+  ],
+  "irs_limit": "SOI salary deductions exclude cost-of-goods-sold labor and officer compensation; officers separately shown. SOI industry is consolidated return, Census establishment. SOI excludes REIT/RIC; Census category includes other corporate forms. No payroll-level parity claimed."
+}
