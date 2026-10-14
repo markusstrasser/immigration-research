@@ -61,6 +61,7 @@ from __future__ import annotations
 import csv
 import importlib.util
 import json
+import math
 import sys
 from pathlib import Path
 
@@ -70,6 +71,14 @@ import pandas as pd  # noqa: E402
 
 LANE = Path(__file__).resolve().parent
 FISCAL = LANE.parent
+_contract_spec = importlib.util.spec_from_file_location("indian_social_comparison_contract",
+    FISCAL / "white_replacement_2026_09_28/comparison_contract.py")
+COMPARISON = importlib.util.module_from_spec(_contract_spec)
+_contract_spec.loader.exec_module(COMPARISON)
+_mortality_spec = importlib.util.spec_from_file_location("indian_social_mortality",
+    FISCAL / "white_replacement_2026_09_28/mortality_conventions.py")
+MORTALITY = importlib.util.module_from_spec(_mortality_spec)
+_mortality_spec.loader.exec_module(MORTALITY)
 DER = LANE / "derived"
 _spec = importlib.util.spec_from_file_location("air_items", FISCAL / "air_pollution_2026_09_28/air_items.py")
 AIR = importlib.util.module_from_spec(_spec)
@@ -84,6 +93,13 @@ def gate(label, ok, detail=""):
         FAILS.append(label)
 
 
+def comparison_fiscal_level(case, group, fiscal, case_level, rough_level):
+    """Preserve absolute live amounts; retain the historical age-row calibration."""
+    if case != "oct15" and group == "mexican_origin_rough_white_ages":
+        return case_level + fiscal - rough_level
+    return fiscal
+
+
 PAIR = pd.read_csv(FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv")
 FRAME = pd.read_csv(FISCAL / "population_basis_2026_09_29/derived/frame_counts.csv").set_index("count")
 N_U = float(FRAME.loc["union|all", "row4"])
@@ -91,21 +107,30 @@ N_ALL = float(FRAME.loc["cps_all_civilian|all", "row4"])
 INST = pd.read_csv(DER / "acs_institutional.csv").set_index("group")
 # The case's inputs (load()): this lane's re-key on it, and for oct05 the added people's social rows and count
 OUT = DRV = KEYS = FIS = LIN_SOC = N_LINEAGE = None
+FISCAL_MORTALITY = None
 SUFFIX = ""      # oct05: the union rows that calibrate the union at white ages are the identified ones
 PAIRING = ""     # the pairing the added people's rows come from (oct05: v5's; oct07: v6's)
 # A lineage case's lane, and the name of the pairing that prices its added people's social rows.
 LINEAGE_CASES = {"oct05": ("main_case_2026_10_05", "v5 pairing"), "oct07": ("main_case_2026_10_07", "v6 pairing"),
-                 "oct14": ("main_case_2026_10_14", "v7 pairing")}
+                 "oct14": ("main_case_2026_10_14", "v7 pairing"),
+                 "oct15": ("main_case_2026_10_15", "v8 pairing")}
 
 
 def load(case):
-    global OUT, DRV, KEYS, FIS, LIN_SOC, N_LINEAGE, SUFFIX, PAIRING
+    global OUT, DRV, KEYS, FIS, LIN_SOC, N_LINEAGE, SUFFIX, PAIRING, FISCAL_MORTALITY
     OUT = DER if case == "sept29" else DER / case
-    if case == "oct14" and any(not (OUT / name).exists() for name in ("drivers.csv", "keys.csv", "rekey_summary.csv")):
-        raise SystemExit("[BLOCKED] oct14 Indian fiscal inputs absent: complete the R7 policy and re-key before social rows")
+    if case in ("oct14", "oct15") and any(not (OUT / name).exists() for name in ("drivers.csv", "keys.csv", "rekey_summary.csv")):
+        raise SystemExit(f"[BLOCKED] {case} Indian fiscal inputs absent: complete the R7 policy and re-key before social rows")
     DRV = pd.read_csv(OUT / "drivers.csv").set_index("group")
     KEYS = pd.read_csv(OUT / "keys.csv").set_index(["group", "key"]).value
     FIS = pd.read_csv(OUT / "rekey_summary.csv")
+    if case == "oct15":
+        if "mortality_convention" not in FIS or set(FIS.mortality_convention) != {MORTALITY.GENERAL}:
+            raise SystemExit("[BLOCKED] Indian base fiscal inputs have missing/wrong mortality labels")
+        FISCAL_MORTALITY = FIS.mortality_convention.iloc[0]
+    if case == "oct15" and ("engine" not in FIS or any(r.engine != COMPARISON.engine_for(r.group.replace("_identified", ""))
+                                                        for r in FIS.itertuples())):
+        raise SystemExit("[BLOCKED] Indian social fiscal inputs have missing or incorrect engine tags")
     if case in LINEAGE_CASES:
         lane, PAIRING = LINEAGE_CASES[case]
         src = FISCAL / f"sept24_propagation_2026_09_24/derived/{case}/real_costs_totals.json"
@@ -113,8 +138,21 @@ def load(case):
             raise SystemExit(f"[BLOCKED] {src.relative_to(FISCAL)} does not exist: run the pairing's {case} case first")
         lin = json.loads(src.read_text())
         LIN_SOC = {r["item"]: r for r in lin["lineage_social_rows"]["rows"]}
-        meta = json.loads((FISCAL / lane / "derived/corrections.json").read_text())["meta"]["lineage"]
-        N_LINEAGE, SUFFIX = meta["counts"]["lineage_population"], "_identified"
+        meta = json.loads((FISCAL / lane / "derived/corrections.json").read_text())["meta"]
+        N_LINEAGE = (meta["population_v8"]["with_coverage"] if case == "oct15"
+                     else meta["lineage"]["counts"]["lineage_population"])
+        SUFFIX = "_identified"
+        if case == "oct15":
+            paired_count = float(lin["per_member_population_m"][case]) * 1e6
+            fiscal_counts = FIS[FIS.group.isin(["mexican_origin_engine", "mexican_origin_rough"])].population
+            ok = (math.isfinite(N_LINEAGE) and N_LINEAGE > 0
+                  and abs(paired_count - N_LINEAGE) <= 0.01
+                  and len(fiscal_counts) == 8 and fiscal_counts.notna().all()
+                  and (fiscal_counts - N_LINEAGE).abs().max() <= 0.500001)
+            gate("oct15 pairing/fiscal use the complete lineage denominator (0.01 / 0.500001 people: printed fiscal count)",
+                 ok, f"payload {N_LINEAGE}; pairing {paired_count}")
+            if not ok:
+                raise SystemExit("[BLOCKED] oct15 social denominator differs from its pairing or fiscal rows")
 
 ITEMS = ["victims", "property_crime", "unreimbursed_care", "congestion", "housing_gain", "fear_avoidance",
          "private_security", "school_disruption", "pm25_consumption", "road_crash_externality", "scale_net_earnings",
@@ -201,7 +239,7 @@ def pm25(g, n, cons_ratio):
     return float(cen.others * cen.morb * AIR.VSL_DOT_2024 / 1e9), float(vals.min()), float(vals.max())
 
 
-def main(case="oct14"):
+def main(case="oct15"):
     load(case)
     u = DRV.loc["mexican_origin_rough"]
     uni = {it: {e: pair_value(it, e) for e in ("low", "high")} for it in ITEMS}
@@ -318,6 +356,8 @@ def main(case="oct14"):
     comb = []
     eng = FIS[(FIS.group == "mexican_origin_engine" + SUFFIX)].set_index(["basis", "end"])
     rough = FIS[(FIS.group == "mexican_origin_rough" + SUFFIX)].set_index(["basis", "end"])
+    eng_full = FIS[(FIS.group == "mexican_origin_engine")].set_index(["basis", "end"])
+    rough_full = FIS[(FIS.group == "mexican_origin_rough")].set_index(["basis", "end"])
     for g in GROUPS + ["mexican_origin_engine"]:
         sg = "mexican_origin" if g == "mexican_origin_engine" else LABEL.get(g, g)
         s = soc[soc.group == sg]
@@ -325,10 +365,7 @@ def main(case="oct14"):
             for e in ("low", "high"):
                 f = FIS[(FIS.group == g) & (FIS.basis == b) & (FIS.end == e)].iloc[0]
                 fis = float(f.cost_bn)
-                if g == "mexican_origin_rough_white_ages":   # the engine's level plus the rough method's age effect
-                    fis_cal = float(eng.loc[(b, e), "cost_bn"]) + fis - float(rough.loc[(b, e), "cost_bn"])
-                else:
-                    fis_cal = fis
+                fis_cal = comparison_fiscal_level(case, g, fis, float(eng.loc[(b,e),"cost_bn"]), float(rough.loc[(b,e),"cost_bn"]))
                 social = float(s[f"{e}_bn"].sum())
                 n = float(f.population)
                 comb.append({"group": g, "basis": b, "end": e, "population": f"{n:.0f}",
@@ -339,9 +376,22 @@ def main(case="oct14"):
                              "social_per_member": f"{social * 1e9 / n:.0f}",
                              "total_per_member": f"{(fis_cal + social) * 1e9 / n:.0f}",
                              "fiscal_top_tail_proportional_per_member": f"{float(f.cost_top_tail_proportional_bn) * 1e9 / n:.0f}"})
+                if case == "oct15":
+                    engine = COMPARISON.engine_for(g.replace("_identified", ""))
+                    if g == "mexican_origin_rough_white_ages":
+                        COMPARISON.require_same_engine({"engine": engine}, {"engine": COMPARISON.engine_for("mexican_origin_rough")})
+                    comb[-1].update(engine=engine, row_type="absolute",
+                        case_rough_bridge_bn=f"{float(eng_full.loc[(b,e),'cost_bn'])-float(rough_full.loc[(b,e),'cost_bn']):.4f}",
+                        identified_case_rough_bridge_bn=f"{float(eng.loc[(b,e),'cost_bn'])-float(rough.loc[(b,e),'cost_bn']):.4f}",
+                        removed_live_level_calibration_bn=f"{float(eng.loc[(b,e),'cost_bn'])-float(rough.loc[(b,e),'cost_bn']):.4f}" if g == "mexican_origin_rough_white_ages" else "0.0000",
+                        bridge_rule="case-versus-rough stated beside; live fiscal level stays on its own engine")
     for name, data in (("social_rows.csv", soc.assign(low_bn=soc.low_bn.map("{:.4f}".format),
                                                         high_bn=soc.high_bn.map("{:.4f}".format)).to_dict("records")),
                        ("combined.csv", comb)):
+        if case == "oct15":
+            for row in data:
+                row.update(case=case, mortality_convention=FISCAL_MORTALITY if name == "combined.csv" else "not_applicable_social_terms",
+                           indian_mortality="whole_population_tables")
         with open(OUT / name, "w", newline="") as fh:
             wr = csv.DictWriter(fh, fieldnames=list(data[0]), lineterminator="\n")
             wr.writeheader()
@@ -355,6 +405,9 @@ def main(case="oct14"):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct14", choices=["sept29", "oct05", "oct07", "oct14"],
-                    help="oct14 (default, live v7); prior cases are archived routes")
+    ap.add_argument("--case", default="oct15", choices=["sept29", "oct05", "oct07", "oct14", "oct15"],
+                    help="oct15 (default, live v8); prior cases are archived routes")
     main(ap.parse_args().case)
+    sys.path.insert(0, str(FISCAL / "scripts"))
+    from memory_budget import require_within_budget
+    print(f"[memory] peak physical footprint {require_within_budget('Indian social rows') / 1e9:.3f} GB")

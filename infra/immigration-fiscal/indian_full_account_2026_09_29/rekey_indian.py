@@ -103,6 +103,14 @@ import pandas as pd  # noqa: E402
 
 LANE = Path(__file__).resolve().parent
 FISCAL = LANE.parent
+_contract_spec = importlib.util.spec_from_file_location("indian_rekey_comparison_contract",
+    FISCAL / "white_replacement_2026_09_28/comparison_contract.py")
+COMPARISON = importlib.util.module_from_spec(_contract_spec)
+_contract_spec.loader.exec_module(COMPARISON)
+_mortality_spec = importlib.util.spec_from_file_location("indian_rekey_mortality",
+    FISCAL / "white_replacement_2026_09_28/mortality_conventions.py")
+MORTALITY = importlib.util.module_from_spec(_mortality_spec)
+_mortality_spec.loader.exec_module(MORTALITY)
 DER = LANE / "derived"
 _spec = importlib.util.spec_from_file_location("rekey_sept29_white", FISCAL / "white_replacement_2026_09_28/rekey_sept29.py")
 W = importlib.util.module_from_spec(_spec)
@@ -125,6 +133,7 @@ with zipfile.ZipFile(R.ZIP) as _z:
 if not _x[R.PC].equals(d[R.PC]):
     raise SystemExit("[BLOCKED] Indian-frame industry records do not align with fiscal persons")
 JOB_CALCULATOR = None
+JOB_ORIGINAL_CALCULATOR = None
 JOB_CONTROL = None
 ORIGINAL_RUN29 = W.run29
 ADULT = d.A_AGE.ge(18).to_numpy()
@@ -408,20 +417,21 @@ def drivers(scen, res):
 
 # Each case's accrual ratios (accrual_indian.py): the 2025 reports' serve sept29 and oct05, oct07 is on the 2026 path.
 ACCRUAL = {"sept29": DER / "accrual_ratios.csv", "oct05": DER / "accrual_ratios.csv", "oct07": DER / "oct07/accrual_ratios.csv",
-           "oct14": DER / "oct14/accrual_ratios.csv"}
+           "oct14": DER / "oct14/accrual_ratios.csv", "oct15": DER / "oct15/accrual_ratios.csv"}
 
 
-def main(case="oct14"):
-    global JOB_CALCULATOR, JOB_CONTROL
+def main(case="oct15"):
+    global JOB_CALCULATOR, JOB_ORIGINAL_CALCULATOR, JOB_CONTROL
     W.use_case(case)
     out = DER if case == "sept29" else DER / case
-    if case == "oct14":
+    if case in ("oct14", "oct15"):
         from job_capital_factors import Factors, run_positive_control
-        JOB_CONTROL = run_positive_control()
+        JOB_CONTROL = run_positive_control(foreign_source_removed=case == "oct15")
     W.setup()
-    if case == "oct14":
+    if case in ("oct14", "oct15"):
         frame = d.assign(INDUSTRY=_x.INDUSTRY.to_numpy(), LJCW=_x.LJCW.to_numpy())
-        JOB_CALCULATOR = Factors(frame, R.w)
+        JOB_CALCULATOR = Factors(frame, R.w, foreign_source_removed=case == "oct15")
+        JOB_ORIGINAL_CALCULATOR = Factors(frame, R.w) if case == "oct15" else None
         W.gate("Indian industry codes use the same CPS 2025 crosswalk; wage denominator matches (1e-9 relative)",
                abs(JOB_CALCULATOR.national_wages / R.KTOT["wage_job"] - 1) < 1e-9)
         W.run29 = run_with_job_factors
@@ -469,6 +479,13 @@ def main(case="oct14"):
                        abs(got - W.DUMP[b][end]["cost_bn"]) < 1e-9, f"{got:.6f}")
     wl = pd.read_csv(FISCAL / f"white_replacement_2026_09_28/derived/rekey_summary_{case}.csv")
     bl = pd.read_csv(FISCAL / f"black_comparator_rough_2026_09_28/derived/rekey_summary_{case}.csv")
+    if case == "oct15":
+        for label, table in (("white", wl), ("Black", bl)):
+            if "mortality_convention" not in table or set(table.mortality_convention) != {MORTALITY.GENERAL}:
+                raise SystemExit(f"[BLOCKED] Indian base {label} reference lacks its general-mortality label")
+        own_ratios = pd.read_csv(out / "accrual_ratios.csv")
+        if "mortality_convention" not in own_ratios or set(own_ratios.mortality_convention) != {"whole_population_tables"}:
+            raise SystemExit("[BLOCKED] Indian own accrual ratios lack their declared whole-population tables")
     for b in BASES:
         for end in ENDS:
             for lab, ref in (("A1_third_plus_nh_white", wl), ("nh_black_rough", bl), ("mexican_origin_rough", wl),
@@ -585,10 +602,37 @@ def main(case="oct14"):
                      "india_born_sample": int((G1 & R.civ & (R.cage == bnd)).sum())})
     drv = drivers(scen, res)
     out.mkdir(exist_ok=True)
+    if case == "oct15":
+        from job_capital_factors import source_tax_line_changes
+        item9 = []
+        for lab, sc in scen.items():
+            if sc == "eng" or "job_capital_factor" not in sc:
+                continue
+            before_sc = {**sc, "job_capital_factor": JOB_ORIGINAL_CALCULATOR.measure(sc["cps_w"])}
+            for basis in BASES:
+                for end in ENDS:
+                    before = W.run29(before_sc, end, basis, union_sc=W.UNION_SC)
+                    after = W.run29(sc, end, basis, union_sc=W.UNION_SC)
+                    changes = source_tax_line_changes(before[1], after[1])
+                    total = sum(row["net_cost_change_bn"] for row in changes)
+                    W.gate(f"item 9 own job lines reproduce {lab}/{basis}/{end} change (1e-9)",
+                           abs(total - (after[0]["cost"] - before[0]["cost"])) < 1e-9)
+                    item9.extend({"case": case, "group": lab, "basis": basis, "end": end,
+                                  "mortality_convention": "whole_population_tables",
+                                  "scope": "item 9 on same oct15 scenario; other policies held fixed",
+                                  **row} for row in changes)
+        W.stop_if_failed()
+        with (out / "item9_own_job_lines.csv").open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(item9[0]), lineterminator="\n")
+            writer.writeheader()
+            writer.writerows(item9)
     if JOB_CALCULATOR is not None:
         factors = [{"group": lab, "alias": sc["name"], "ages": sc["ages"], "line": k, "factor": v,
                     "plain_wage_share": sc["share"]["wage_job"], "replicates": "160; group factor remeasured, national fixed"}
                    for lab, sc in scen.items() if sc != "eng" for k, v in sc.get("job_capital_factor", {}).items()]
+        if case == "oct15":
+            for row in factors:
+                row.update(case=case, mortality_convention="not_applicable_job_keys")
         with (out / "job_capital_factors.csv").open("w", newline="") as stream:
             writer = csv.DictWriter(stream, fieldnames=list(factors[0]), lineterminator="\n")
             writer.writeheader()
@@ -604,10 +648,19 @@ def main(case="oct14"):
                                                                         for k, v in r.items()} for r in drv]),
                        *((("ipeds_terms.csv", ipeds),) if ipeds else ()),
                        *((("income_tax_keys.csv", W.tax_key_rows(scen)),) if W.TAX_ON else ())):
+        if case == "oct15":
+            for row in data:
+                row.update(case=case, mortality_convention=MORTALITY.GENERAL,
+                           indian_mortality="whole_population_tables")
+                if name in ("rekey_summary.csv", "rekey_buckets.csv", "drivers.csv"):
+                    row["engine"] = COMPARISON.engine_for(row["group"].replace("_identified", ""))
         with open(out / name, "w", newline="") as f:
             wr = csv.DictWriter(f, fieldnames=list(data[0]), lineterminator="\n")
             wr.writeheader()
             wr.writerows(data)
+    if case == "oct15":
+        rp["case"] = case
+        rp["mortality_convention"] = MORTALITY.GENERAL
     rp.to_csv(out / "rekey_replicates.csv", index=False, lineterminator="\n", float_format="%.6f")
     s = pd.DataFrame(summary)
     print(s[["basis", "group", "end", "population", "cost_bn", "cost_per_member", "cost_per_member_se",
@@ -617,6 +670,9 @@ def main(case="oct14"):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct14", choices=list(W.CASES),
-                    help="oct14 (default, live v7); prior cases are archived library routes")
+    ap.add_argument("--case", default="oct15", choices=list(W.CASES),
+                    help="oct15 (default, live v8); prior cases are archived library routes")
     main(ap.parse_args().case)
+    sys.path.insert(0, str(FISCAL / "scripts"))
+    from memory_budget import require_within_budget
+    print(f"[memory] peak physical footprint {require_within_budget('Indian fiscal rekey') / 1e9:.3f} GB")

@@ -99,7 +99,9 @@ def benefit_tax_proxy():
     return out
 
 
-def main(case="oct14"):
+def main(case="oct15"):
+    if case == "oct15" and G[1] != "general":
+        raise SystemExit("[BLOCKED] Indian base accrual route no longer uses declared general mortality")
     proxy = benefit_tax_proxy()
     for g, v in proxy.items():
         print(f"benefit-tax proxy {g:15s} rate {v['rate']:.5f} relative {v['relative_rate_proxy']:.4f} calibrated "
@@ -122,9 +124,10 @@ def main(case="oct14"):
     arrival_any = p.age - (2024.5 - p.PEINUSYR.map(mid))
     foreign = p.PRCITSHP.isin([4, 5]).to_numpy()
     prelim = P.S.scaled_factors().preliminary.to_numpy()
-    if case in ("oct07", "oct14"):  # 2026 path, payable only; v7 retains this published-weight pension metadata
+    if case in ("oct07", "oct14", "oct15"):  # 2026 path, payable only; published-weight metadata
         TP = A.tr2026_path()
-        case_lane = "main_case_2026_10_14" if case == "oct14" else "main_case_2026_10_07"
+        case_lane = {"oct07": "main_case_2026_10_07", "oct14": "main_case_2026_10_14",
+                     "oct15": "main_case_2026_10_15"}[case]
         TP.case_check(json.loads((FISCAL / case_lane / "derived/corrections.json").read_text())["meta"])
         econ, grid, taus, paths = TP.payable(P, prelim)
         grids, scens = {"payable": grid}, ("payable",)
@@ -172,7 +175,7 @@ def main(case="oct14"):
               f"per tax dollar payable {o['payable']['ratio']:.6f}{sched}; Part A payable "
               f"{a['payable']['accrual_bn']:.3f}bn on HI tax {a['payable']['hi_tax_bn']:.3f}bn")
     o, a, _ = res[("union", "lane")]
-    if case in ("oct07", "oct14"):
+    if case in ("oct07", "oct14", "oct15"):
         row = TP.union_row()
         for k, got, col in (("OASDI accrual per tax dollar", o["payable"]["ratio"], "per_tax_dollar"),
                             ("timing", o["payable"]["timing"], "timing"),
@@ -200,13 +203,16 @@ def main(case="oct14"):
                          "cps_oasdi_tax_bn": f"{o[scen]['tax_bn']:.4f}", "cps_hi_tax_bn": f"{a[scen]['hi_tax_bn']:.4f}",
                          "part_a_accrual_bn": f"{a[scen]['accrual_bn']:.4f}",
                          "p_qualify_65plus": f"{a[scen]['p_qualify']:.6f}", "sample_taxpayers": n})
-    out = DER / case if case in ("oct07", "oct14") else DER
+    out = DER / case if case in ("oct07", "oct14", "oct15") else DER
     out.mkdir(exist_ok=True)
+    if case == "oct15":
+        for row in rows:
+            row.update(case=case, mortality_convention="whole_population_tables")
     with open(out / "accrual_ratios.csv", "w", newline="") as f:
         wr = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         wr.writeheader()
         wr.writerows(rows)
-    if case in ("oct07", "oct14"):  # preserve the original proxy source; it does not read the pension path
+    if case in ("oct07", "oct14", "oct15"):  # preserve the original proxy source; it does not read the pension path
         print(pd.DataFrame(rows)[["group", "entry_rule", "scenario", "oasdi_per_tax_dollar", "oasdi_per_tax_dollar_net",
                                   "part_a_per_hi_tax_dollar", "p_qualify_65plus"]].to_string(index=False))
         return
@@ -223,6 +229,9 @@ def main(case="oct14"):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct14", choices=["sept29", "oct07", "oct14"],
-                    help="oct14 (default, live 2026 path); sept29 and oct07 are archived routes")
+    ap.add_argument("--case", default="oct15", choices=["sept29", "oct07", "oct14", "oct15"],
+                    help="oct15 (default, live 2026 path); prior cases are archived routes")
     main(ap.parse_args().case)
+    sys.path.insert(0, str(FISCAL / "scripts"))
+    from memory_budget import require_within_budget
+    print(f"[memory] peak physical footprint {require_within_budget('Indian accrual') / 1e9:.3f} GB")

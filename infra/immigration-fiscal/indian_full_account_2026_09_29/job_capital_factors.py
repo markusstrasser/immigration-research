@@ -31,10 +31,11 @@ spec.loader.exec_module(J)
 
 
 class Factors:
-    def __init__(self, frame, national_weights):
-        self.item = json.loads((SOURCE / "derived/item.json").read_text())
-        if any(not g["passed"] for g in self.item["gates"]):
+    def __init__(self, frame, national_weights, *, foreign_source_removed=False):
+        source_item = json.loads((SOURCE / "derived/item.json").read_text())
+        if any(not g["passed"] for g in source_item["gates"]):
             raise SystemExit("[BLOCKED] source job-capital item has failed gates")
+        self.item = source_item["arms"]["foreign_source_removed"] if foreign_source_removed else source_item
         self.provenance = {str(p.relative_to(HERE.parent)): hashlib.sha256(p.read_bytes()).hexdigest()
                            for p in (SOURCE / "job_capital.py", J.CROSSWALK,
                                      SOURCE / "derived/national_by_industry.csv", SOURCE / "derived/item.json")}
@@ -64,7 +65,8 @@ class Factors:
         high = self.wage >= J.TOP
         nat_high = np.bincount(idx, weights=np.where(high, self.wage * w, 0), minlength=len(cells))
         self.rate = {}
-        self.columns = {"corporate": "corporate_bn", "business_property": "c_and_i_property_bn",
+        self.columns = {"corporate": "corporate_ex_foreign_bn" if foreign_source_removed else "corporate_bn",
+                        "business_property": "c_and_i_property_bn",
                         "other_production_taxes": "other_production_taxes_bn"}
         for category, column in self.columns.items():
             vector = np.append(nat[column].to_numpy(float), 0.0)
@@ -93,11 +95,11 @@ class Factors:
                 for category, rate in self.rate.items()}
 
 
-def positive_control():
+def positive_control(*, foreign_source_removed=False):
     frame = J.load_frame()
     masks = J.masks(frame)
     weights = J.row4_weights(frame, masks, json.loads(J.checked(J.ROW4, J.ROW4_SHA).read_text()))[:, 0]
-    calculator = Factors(frame, weights)
+    calculator = Factors(frame, weights, foreign_source_removed=foreign_source_removed)
     measured = calculator.measure(weights * masks["white"])
     expected = calculator.item["factor"]["white_nh"]
     rows = [{"line": category, "measured": value, "committed": expected[category]["personal"],
@@ -109,9 +111,12 @@ def positive_control():
     return rows
 
 
-def run_positive_control():
+def run_positive_control(*, foreign_source_removed=False):
     """Keep the source's 161-column frame out of the already-loaded fiscal process."""
-    result = subprocess.run([sys.executable, str(Path(__file__).resolve()), "--json"],
+    command = [sys.executable, str(Path(__file__).resolve()), "--json"]
+    if foreign_source_removed:
+        command.append("--foreign-source-removed")
+    result = subprocess.run(command,
                             text=True, capture_output=True)
     print(result.stdout, end="", flush=True)
     if result.returncode:
@@ -120,7 +125,35 @@ def run_positive_control():
     return json.loads(result.stdout.splitlines()[-1])
 
 
+def source_tax_line_changes(before, after):
+    """Measure item 9 on evaluated own-group lines, rejecting unrelated changes."""
+    old = {(side, line): (national, amount, response) for side, line, national, amount, response in before}
+    new = {(side, line): (national, amount, response) for side, line, national, amount, response in after}
+    if len(old) != len(before) or len(new) != len(after) or old.keys() != new.keys():
+        raise SystemExit("[BLOCKED] item-9 comparison has duplicate or unmatched job lines")
+    rows = []
+    for (side, line), (national, amount, response) in new.items():
+        previous_national, previous_amount, previous_response = old[(side, line)]
+        if abs(national - previous_national) > 1e-9 or abs(response - previous_response) > 1e-9:
+            raise SystemExit("[BLOCKED] item-9 comparison changed a national total or response")
+        difference = amount - previous_amount
+        if line in ("corporate_capital", "corporate_labor"):
+            if side != "receipts":
+                raise SystemExit("[BLOCKED] item-9 corporate source line is not a receipt")
+            rows.append({"line": line, "national_bn": national, "response": response,
+                         "old_receipt_bn": previous_amount, "domestic_receipt_bn": amount,
+                         "receipt_change_bn": difference, "net_cost_change_bn": -difference * response})
+        elif abs(difference) > 1e-9:
+            raise SystemExit(f"[BLOCKED] item-9 comparison changed unrelated line {line}")
+    if len(rows) != 2:
+        raise SystemExit("[BLOCKED] item-9 comparison needs both corporate source lines")
+    return rows
+
+
 if __name__ == "__main__":
-    control = positive_control()
+    control = positive_control(foreign_source_removed="--foreign-source-removed" in sys.argv)
+    sys.path.insert(0, str(HERE.parent / "scripts"))
+    from memory_budget import require_within_budget
+    print(f"[memory] peak physical footprint {require_within_budget('Indian job-capital control') / 1e9:.3f} GB")
     if "--json" in sys.argv:
         print(json.dumps(control))

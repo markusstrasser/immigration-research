@@ -1,0 +1,18 @@
+band,third_plus_nh_white,union,indian_origin,india_born,lineage,indian_origin_sample,india_born_sample,case,mortality_convention,indian_mortality
+0-4,0.042972,0.079695,0.056352,0.005904,0.087564,124,9,oct15,whole-population mortality,whole_population_tables
+5-9,0.049599,0.078495,0.058459,0.016023,0.084644,144,30,oct15,whole-population mortality,whole_population_tables
+10-14,0.052857,0.085623,0.067468,0.032693,0.090321,162,50,oct15,whole-population mortality,whole_population_tables
+15-19,0.056313,0.097641,0.063148,0.037989,0.100730,150,61,oct15,whole-population mortality,whole_population_tables
+20-24,0.058262,0.086720,0.061152,0.047253,0.086859,112,60,oct15,whole-population mortality,whole_population_tables
+25-29,0.058591,0.078775,0.093979,0.104864,0.078900,210,158,oct15,whole-population mortality,whole_population_tables
+30-34,0.063969,0.074666,0.109491,0.132268,0.073343,249,212,oct15,whole-population mortality,whole_population_tables
+35-39,0.064064,0.068708,0.093221,0.117824,0.066977,249,219,oct15,whole-population mortality,whole_population_tables
+40-44,0.063330,0.067471,0.093376,0.112063,0.064535,225,191,oct15,whole-population mortality,whole_population_tables
+45-49,0.057892,0.060461,0.083802,0.107657,0.057699,191,169,oct15,whole-population mortality,whole_population_tables
+50-54,0.060174,0.056102,0.065771,0.087234,0.052353,149,137,oct15,whole-population mortality,whole_population_tables
+55-59,0.065483,0.047390,0.044789,0.058355,0.044052,97,87,oct15,whole-population mortality,whole_population_tables
+60-64,0.072976,0.041046,0.030290,0.037670,0.038352,71,59,oct15,whole-population mortality,whole_population_tables
+65-69,0.070126,0.030112,0.024060,0.032016,0.028427,53,50,oct15,whole-population mortality,whole_population_tables
+70-74,0.062879,0.019827,0.019838,0.022651,0.018893,50,42,oct15,whole-population mortality,whole_population_tables
+75-79,0.048566,0.013034,0.018053,0.024414,0.012560,39,38,oct15,whole-population mortality,whole_population_tables
+80+,0.051948,0.014233,0.016752,0.023122,0.013791,36,35,oct15,whole-population mortality,whole_population_tables

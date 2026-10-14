@@ -525,8 +525,69 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/indi
 
 - 2026-10-14 19:44 JST — full live reproducibility: all four commands above exit 0;
   **IDENTICAL 57/57, exit 0**, 89.79s, Python child peak RSS **2222.9MiB**. All archived outputs remain unchanged.
+
+## Live v8 propagation (oct15)
+
+The live accrual, fiscal and social commands now target oct15 and write `derived/oct15/`.
+Indian job-capital factors remeasure the source's `foreign_source_removed` industry vector on
+each group's own weights, including all 160 replicate weights. A separate white positive control
+checks the K2 source factors at 1e-9. Items 10 and 11 apply to the measured Mexican lineage;
+they have no invented Indian counterparts. Comparator coverage follows the shared comparator
+library's declared policy. The social route requires the completed oct15 pairing explicitly.
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/indian_full_account_2026_09_29/job_capital_factors.py --foreign-source-removed
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/indian_full_account_2026_09_29/accrual_indian.py --case oct15
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/indian_full_account_2026_09_29/rekey_indian.py --case oct15
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/indian_full_account_2026_09_29/social_rows.py --case oct15
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/indian_full_account_2026_09_29 "uv run --no-project python3 {lane}/job_capital_factors.py --foreign-source-removed" "uv run --no-project python3 {lane}/accrual_indian.py --case oct15" "uv run --no-project python3 {lane}/rekey_indian.py --case oct15" "uv run --no-project python3 {lane}/social_rows.py --case oct15"
+```
+
+- 2026-10-14 23:50 JST — Initial accrual probe stopped on unsupported oct15. Added live
+  mappings and K2 own-industry calculation. Candidate K2 positive control exits 0, maximum
+  factor discrepancy 2.22e-16; final case runs wait for CASE_FINAL. [CALCULATION: indian-candidate.log; indian-k2-probe.log]
   The first successful harness (134.77s) peaked at 2579.7MiB; isolating the source's 161-weight-column
   positive-control frame in a subprocess reduced the final peak without changing any output. The subprocess
   fails loudly on a failed control and returns the same three numerical receipts. The final harness above
   covers this resource fix. Frozen-case, archived-output, factor/replicate coverage, combined-table closure,
   source syntax, CSV LF and scoped whitespace checks pass. No Git writes.
+
+### 2026-10-15 Round-2 rules
+
+The headline lineage stays on whole-population mortality. The Indian accrual route also uses
+whole-population survival with its own careers and eligibility; no Indian-specific mortality
+schedule is measured here. Comparative oct15 rows explicitly carry case/mortality labels and
+state that Indian mortality remains whole-population. Fully own-mortality Indian comparisons
+remain unmeasured. The white/Black symmetric lane owns the requested two-convention annual
+contrasts; its scalar lineage mortality adjustment does not identify an Indian mortality
+schedule or a historical borrowing path. [DATA: accrual_indian.py; SOURCE: parent round-2 rules]
+
+Item 9 is additionally reported on the two evaluated corporate receipt lines in
+`derived/oct15/item9_own_job_lines.csv`: each Indian scenario takes its own before/after
+industry-weighted factors, with unchanged national totals and responses, and the line effects
+must reproduce its total cost change at 1e-9bn. New unit probes: 6 pass; K2 source positive
+control exits 0 in 5.970s. No final oct15 figure or reproduction is claimed before CASE_FINAL.
+[CALCULATION: test_job_source_scope.py; indian-k2-resume.json]
+
+
+### Round-2 comparator fixes: live source engine (2026-10-15)
+
+Before, the union-at-white-ages combined row added the rough age difference to the case fiscal level. For oct15 it now retains its own rough fiscal level, with the case-versus-rough bridge quoted in a separate column. Live fiscal input/output rows carry their source engine tag; the social consumer rejects missing/wrong source tags, and the age contrast requires two rough-engine tags. Archived calibration/rows are preserved. These are absolute source rows, not a newly invented historical mortality or Black stock comparison. [SOURCE: parent one-engine follow-up; CALCULATION: rekey_indian.py, social_rows.py]
+
+Absolute principal amounts are preserved. The live rough age-comparison row now quotes both the full-lineage and identified-union case/rough bridges and the removed level calibration separately. test_social_engine.py verifies principal preservation, live calibration removal and archived behavior without loading live data. The focused Indian check is: OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest -p no:cacheprovider infra/immigration-fiscal/indian_full_account_2026_09_29/test_social_engine.py infra/immigration-fiscal/indian_full_account_2026_09_29/test_job_source_scope.py -q (7 passed). Add the same explicit test command to the live rerun after CASE_FINAL. [CALCULATION: changed caller and fixture tests]
+
+
+### Correction: mortality labels on the base route (2026-10-15)
+
+The earlier mixed-mortality label was wrong for this base route. Plain K.run29 consumes the base general-mortality ratios; white rekey_sept29.py write() labels these diagnostic rows whole-population mortality. group_lines.py now inherits that actual upstream label and rejects missing, own-group or mixed labels. Legacy financing rows inherit the gated group-line label; Indian base references must both have the same authoritative general label. Indian mortality is independently traced: accrual_indian uses A.G (the white producer's P.CENTRAL mortality=general), passes that grid/default Part-A mortality to A.oasdi_ratio/A.part_a, and now gates G[1]=general on the live route. Its CSV's explicit whole_population_tables label is checked before downstream rekeying. Indian combined rows inherit their gated fiscal input label; pure social terms have not_applicable_social_terms. Pension employee-service stock rows retain not_applicable_service_share.
+
+Canonical display labels load mortality_conventions.py; no copied definition is introduced. The symmetric producer separately supplies its mixed/own-group convention comparisons; base diagnostic rows do not claim to be either of those. General-mortality inheritance and missing/wrong-label negative controls pass. Three legacy fixture probes and seven Indian source/level probes pass; changed callers compile. Historical rows and logs remain, with this dated correction superseding their misleading current-label statement. [DATA: white_replacement_2026_09_28/rekey_sept29.py write(), accrual_white.py G/part_a; pension_accrual_2026_09_28/pension_accrual.py CENTRAL; owned callers/tests]
+
+
+### Adopted v8 independent fiscal receipt and social stop, 2026-10-15
+
+CASE_FINAL b35ac8fb inspected. Independent job-factor/accrual/fiscal producers and7fixturetests reproduce IDENTICAL71/71,exit0,148.918s (Python perf_counter/resource; child RSS1,915,715,584bytes informational). social_rows.py is explicitly allow-unrun in this independent-only receipt; no full-lane PASS is claimed. Earlier direct fiscal rekey82.748s with2.278GB physical peak; accrual26.629s. Principal absolute case-lineage fiscal amounts remain368.9909 /459.2029bn (set),284.9516 /375.1635bn(cash). Indian-origin fiscal−120.3087 /−96.6921bn on set,−149.8736 /−126.2570bn on cash are model results under the declared general mortality and own-job source rules; inspect rekey_summary.csv for printed precision. [CALCULATION: derived/oct15/rekey_summary.csv,accrual_ratios.csv; scratch indian-leaf-repro.json]
+
+Actual social consumer exits1 before writing social_rows.csv or combined.csv. The new pairing explicitly identifies lineage_social_rows as P7 sender/recipient-boundary rows before environment, and v8_social_environment.current_social_rows as current replacements on frozen v7 source keys, with completion/coverage social effects unpriced. These are different estimands from this lane's preserved restated pair_value baseline: victims high39.008480793656645 vs31.873558bn (+7.134922793656646); private security low+0.49405030321520194 vs−0.490639bn. Old equality gate1e-6 is retained; no measured Indian incidence is fabricated. Missing rule: each Indian-origin/India-born/subgroup/age scenario's sender/receiver boundary and environment replacement incidence, and explicit transport for new completion/coverage people. Affected output rows: every live social item/group and their combined fiscal+social totals, including lineage/white-age rows that share that baseline. Independent fiscal rows remain valid outputs; pure social/combined outputs are withheld. Parent confirms no declared transport within scope. [DATA: ../sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json; CALCULATION: scratch indian-social-final.log]
+
+At the inspected pairing snapshot79329619e41cd39afa8c3882abe97250aae8661462d49cc196cd95574be62e22,30/31sources match; conditional_stacks.csv had changed from stored1bcdc243e6811d4b3b20bdec364c9f32e62922eb9e0af744013b7c01f620b781 to5c8d64eb428d7bc1543a5bd7e0e6b1fccc5018bfcda990460013ad97d45f99e3 during peer refresh. This additional source-order staleness is distinct from the independently demonstrated semantic stop and reported to the parent for regeneration. No stored hash edited.
