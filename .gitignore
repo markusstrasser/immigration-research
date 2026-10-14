@@ -59,4 +59,6 @@ infra/immigration-fiscal/homicide_cost_2026_09_18/derived/profile_source_audit.j
 .model-review/2026-10-08-v6-red-team-*/
 .model-review/assumptions-2026-10-14-*
 .model-review/2026-10-14-assumptions-*/
+.model-review/assumptions-v7-*
+.model-review/*-assumptions-v7-*/
 .model-review/dispatch.json
