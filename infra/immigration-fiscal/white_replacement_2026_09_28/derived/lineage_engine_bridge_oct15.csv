@@ -1,5 +1,5 @@
 case,arm,basis,end,mortality_convention,mortality_bound,case_engine,rough_engine,side,line,case_bn,rough_bn,case_minus_rough_bn
-oct15,legacy_raw,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,legacy_raw,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,legacy_raw,accrual,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,legacy_raw,accrual,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,legacy_raw,accrual,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -366,7 +366,7 @@ oct15,legacy_raw,accrual,low,whole-population mortality,none,case,rough,spending
 oct15,legacy_raw,accrual,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,legacy_raw,accrual,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,legacy_raw,accrual,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,legacy_raw,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,legacy_raw,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,legacy_raw,accrual,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,legacy_raw,accrual,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,legacy_raw,accrual,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -733,7 +733,7 @@ oct15,legacy_raw,accrual,high,whole-population mortality,none,case,rough,spendin
 oct15,legacy_raw,accrual,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,legacy_raw,accrual,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,legacy_raw,accrual,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,legacy_raw,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,legacy_raw,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,legacy_raw,cash,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,legacy_raw,cash,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,legacy_raw,cash,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -1100,7 +1100,7 @@ oct15,legacy_raw,cash,low,whole-population mortality,none,case,rough,spending,ve
 oct15,legacy_raw,cash,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,legacy_raw,cash,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,legacy_raw,cash,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,legacy_raw,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,legacy_raw,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,legacy_raw,cash,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,legacy_raw,cash,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,legacy_raw,cash,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -1467,7 +1467,7 @@ oct15,legacy_raw,cash,high,whole-population mortality,none,case,rough,spending,v
 oct15,legacy_raw,cash,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,legacy_raw,cash,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,legacy_raw,cash,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,production_own,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,production_own,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,production_own,accrual,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,production_own,accrual,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,production_own,accrual,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -1834,7 +1834,7 @@ oct15,production_own,accrual,low,whole-population mortality,none,case,rough,spen
 oct15,production_own,accrual,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,production_own,accrual,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,production_own,accrual,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,production_own,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,production_own,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,production_own,accrual,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,production_own,accrual,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,production_own,accrual,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -2201,7 +2201,7 @@ oct15,production_own,accrual,high,whole-population mortality,none,case,rough,spe
 oct15,production_own,accrual,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,production_own,accrual,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,production_own,accrual,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,production_own,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,production_own,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,production_own,cash,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,production_own,cash,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,production_own,cash,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -2568,7 +2568,7 @@ oct15,production_own,cash,low,whole-population mortality,none,case,rough,spendin
 oct15,production_own,cash,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,production_own,cash,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,production_own,cash,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,production_own,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,production_own,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,production_own,cash,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,production_own,cash,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,production_own,cash,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -2935,7 +2935,7 @@ oct15,production_own,cash,high,whole-population mortality,none,case,rough,spendi
 oct15,production_own,cash,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,production_own,cash,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,production_own,cash,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,production_zero,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,production_zero,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,production_zero,accrual,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,production_zero,accrual,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,production_zero,accrual,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -3302,7 +3302,7 @@ oct15,production_zero,accrual,low,whole-population mortality,none,case,rough,spe
 oct15,production_zero,accrual,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,production_zero,accrual,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,production_zero,accrual,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,production_zero,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,production_zero,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,production_zero,accrual,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,production_zero,accrual,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,production_zero,accrual,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -3669,7 +3669,7 @@ oct15,production_zero,accrual,high,whole-population mortality,none,case,rough,sp
 oct15,production_zero,accrual,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,production_zero,accrual,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,production_zero,accrual,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,production_zero,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,production_zero,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,production_zero,cash,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,production_zero,cash,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,production_zero,cash,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -4036,7 +4036,7 @@ oct15,production_zero,cash,low,whole-population mortality,none,case,rough,spendi
 oct15,production_zero,cash,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,production_zero,cash,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,production_zero,cash,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,production_zero,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,production_zero,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,production_zero,cash,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,production_zero,cash,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,production_zero,cash,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -4403,7 +4403,7 @@ oct15,production_zero,cash,high,whole-population mortality,none,case,rough,spend
 oct15,production_zero,cash,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,production_zero,cash,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,production_zero,cash,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,source_payroll_proxy,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,source_payroll_proxy,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,source_payroll_proxy,accrual,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,source_payroll_proxy,accrual,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,source_payroll_proxy,accrual,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -4770,7 +4770,7 @@ oct15,source_payroll_proxy,accrual,low,whole-population mortality,none,case,roug
 oct15,source_payroll_proxy,accrual,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,source_payroll_proxy,accrual,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,source_payroll_proxy,accrual,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,source_payroll_proxy,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,source_payroll_proxy,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,source_payroll_proxy,accrual,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,source_payroll_proxy,accrual,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,source_payroll_proxy,accrual,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -5137,7 +5137,7 @@ oct15,source_payroll_proxy,accrual,high,whole-population mortality,none,case,rou
 oct15,source_payroll_proxy,accrual,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,source_payroll_proxy,accrual,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,source_payroll_proxy,accrual,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,source_payroll_proxy,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,source_payroll_proxy,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,source_payroll_proxy,cash,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,source_payroll_proxy,cash,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,source_payroll_proxy,cash,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -5504,7 +5504,7 @@ oct15,source_payroll_proxy,cash,low,whole-population mortality,none,case,rough,s
 oct15,source_payroll_proxy,cash,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,source_payroll_proxy,cash,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,source_payroll_proxy,cash,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,source_payroll_proxy,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,source_payroll_proxy,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,source_payroll_proxy,cash,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,source_payroll_proxy,cash,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,source_payroll_proxy,cash,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -5871,7 +5871,7 @@ oct15,source_payroll_proxy,cash,high,whole-population mortality,none,case,rough,
 oct15,source_payroll_proxy,cash,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,source_payroll_proxy,cash,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,source_payroll_proxy,cash,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,status_rules_fixed_union_benefits,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,status_rules_fixed_union_benefits,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,status_rules_fixed_union_benefits,accrual,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,status_rules_fixed_union_benefits,accrual,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,status_rules_fixed_union_benefits,accrual,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -6238,7 +6238,7 @@ oct15,status_rules_fixed_union_benefits,accrual,low,whole-population mortality,n
 oct15,status_rules_fixed_union_benefits,accrual,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,status_rules_fixed_union_benefits,accrual,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,status_rules_fixed_union_benefits,accrual,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,status_rules_fixed_union_benefits,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,status_rules_fixed_union_benefits,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,status_rules_fixed_union_benefits,accrual,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,status_rules_fixed_union_benefits,accrual,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,status_rules_fixed_union_benefits,accrual,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -6605,7 +6605,7 @@ oct15,status_rules_fixed_union_benefits,accrual,high,whole-population mortality,
 oct15,status_rules_fixed_union_benefits,accrual,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,status_rules_fixed_union_benefits,accrual,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,status_rules_fixed_union_benefits,accrual,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,status_rules_fixed_union_benefits,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,status_rules_fixed_union_benefits,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,status_rules_fixed_union_benefits,cash,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,status_rules_fixed_union_benefits,cash,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,status_rules_fixed_union_benefits,cash,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -6972,7 +6972,7 @@ oct15,status_rules_fixed_union_benefits,cash,low,whole-population mortality,none
 oct15,status_rules_fixed_union_benefits,cash,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,status_rules_fixed_union_benefits,cash,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,status_rules_fixed_union_benefits,cash,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,status_rules_fixed_union_benefits,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,status_rules_fixed_union_benefits,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,status_rules_fixed_union_benefits,cash,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,status_rules_fixed_union_benefits,cash,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,status_rules_fixed_union_benefits,cash,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -7339,7 +7339,7 @@ oct15,status_rules_fixed_union_benefits,cash,high,whole-population mortality,non
 oct15,status_rules_fixed_union_benefits,cash,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,status_rules_fixed_union_benefits,cash,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,status_rules_fixed_union_benefits,cash,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,status_rules_coupled_accrual,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,status_rules_coupled_accrual,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,status_rules_coupled_accrual,accrual,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,status_rules_coupled_accrual,accrual,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,status_rules_coupled_accrual,accrual,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -7706,7 +7706,7 @@ oct15,status_rules_coupled_accrual,accrual,low,whole-population mortality,none,c
 oct15,status_rules_coupled_accrual,accrual,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,status_rules_coupled_accrual,accrual,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,status_rules_coupled_accrual,accrual,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,status_rules_coupled_accrual,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,status_rules_coupled_accrual,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,status_rules_coupled_accrual,accrual,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,status_rules_coupled_accrual,accrual,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,status_rules_coupled_accrual,accrual,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -8073,7 +8073,7 @@ oct15,status_rules_coupled_accrual,accrual,high,whole-population mortality,none,
 oct15,status_rules_coupled_accrual,accrual,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,status_rules_coupled_accrual,accrual,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,status_rules_coupled_accrual,accrual,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,status_rules_coupled_accrual,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,status_rules_coupled_accrual,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,status_rules_coupled_accrual,cash,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,status_rules_coupled_accrual,cash,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,status_rules_coupled_accrual,cash,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -8440,7 +8440,7 @@ oct15,status_rules_coupled_accrual,cash,low,whole-population mortality,none,case
 oct15,status_rules_coupled_accrual,cash,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,status_rules_coupled_accrual,cash,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,status_rules_coupled_accrual,cash,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,status_rules_coupled_accrual,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,status_rules_coupled_accrual,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,status_rules_coupled_accrual,cash,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,status_rules_coupled_accrual,cash,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,status_rules_coupled_accrual,cash,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -8807,7 +8807,7 @@ oct15,status_rules_coupled_accrual,cash,high,whole-population mortality,none,cas
 oct15,status_rules_coupled_accrual,cash,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,status_rules_coupled_accrual,cash,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,status_rules_coupled_accrual,cash,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_group,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,mortality_group,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,mortality_group,accrual,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,mortality_group,accrual,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,mortality_group,accrual,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -9174,7 +9174,7 @@ oct15,mortality_group,accrual,low,mixed mortality conventions,none,case,rough,sp
 oct15,mortality_group,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,mortality_group,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_group,accrual,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_group,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,mortality_group,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,mortality_group,accrual,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,mortality_group,accrual,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,mortality_group,accrual,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -9541,7 +9541,7 @@ oct15,mortality_group,accrual,high,mixed mortality conventions,none,case,rough,s
 oct15,mortality_group,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,mortality_group,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_group,accrual,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_group,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,mortality_group,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,mortality_group,cash,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,mortality_group,cash,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,mortality_group,cash,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -9908,7 +9908,7 @@ oct15,mortality_group,cash,low,mixed mortality conventions,none,case,rough,spend
 oct15,mortality_group,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,mortality_group,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_group,cash,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_group,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,mortality_group,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,mortality_group,cash,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,mortality_group,cash,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,mortality_group,cash,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -10275,7 +10275,7 @@ oct15,mortality_group,cash,high,mixed mortality conventions,none,case,rough,spen
 oct15,mortality_group,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,mortality_group,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_group,cash,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,accrual_row4,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,accrual_row4,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,accrual_row4,accrual,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,accrual_row4,accrual,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,accrual_row4,accrual,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -10642,7 +10642,7 @@ oct15,accrual_row4,accrual,low,whole-population mortality,none,case,rough,spendi
 oct15,accrual_row4,accrual,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,accrual_row4,accrual,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,accrual_row4,accrual,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,accrual_row4,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,accrual_row4,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,accrual_row4,accrual,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,accrual_row4,accrual,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,accrual_row4,accrual,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -11009,7 +11009,7 @@ oct15,accrual_row4,accrual,high,whole-population mortality,none,case,rough,spend
 oct15,accrual_row4,accrual,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,accrual_row4,accrual,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,accrual_row4,accrual,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,accrual_row4,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,accrual_row4,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,accrual_row4,cash,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,accrual_row4,cash,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,accrual_row4,cash,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -11376,7 +11376,7 @@ oct15,accrual_row4,cash,low,whole-population mortality,none,case,rough,spending,
 oct15,accrual_row4,cash,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,accrual_row4,cash,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,accrual_row4,cash,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,accrual_row4,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,accrual_row4,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,accrual_row4,cash,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,accrual_row4,cash,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,accrual_row4,cash,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -11743,7 +11743,7 @@ oct15,accrual_row4,cash,high,whole-population mortality,none,case,rough,spending
 oct15,accrual_row4,cash,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,accrual_row4,cash,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,accrual_row4,cash,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,pension_symmetric_frame_status,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,pension_symmetric_frame_status,accrual,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,pension_symmetric_frame_status,accrual,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,pension_symmetric_frame_status,accrual,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,pension_symmetric_frame_status,accrual,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -12110,7 +12110,7 @@ oct15,pension_symmetric_frame_status,accrual,low,whole-population mortality,none
 oct15,pension_symmetric_frame_status,accrual,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,pension_symmetric_frame_status,accrual,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,pension_symmetric_frame_status,accrual,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,pension_symmetric_frame_status,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,pension_symmetric_frame_status,accrual,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,pension_symmetric_frame_status,accrual,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,pension_symmetric_frame_status,accrual,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,pension_symmetric_frame_status,accrual,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -12477,7 +12477,7 @@ oct15,pension_symmetric_frame_status,accrual,high,whole-population mortality,non
 oct15,pension_symmetric_frame_status,accrual,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,pension_symmetric_frame_status,accrual,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,pension_symmetric_frame_status,accrual,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,pension_symmetric_frame_status,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,pension_symmetric_frame_status,cash,low,whole-population mortality,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,pension_symmetric_frame_status,cash,low,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,pension_symmetric_frame_status,cash,low,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,pension_symmetric_frame_status,cash,low,whole-population mortality,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -12844,7 +12844,7 @@ oct15,pension_symmetric_frame_status,cash,low,whole-population mortality,none,ca
 oct15,pension_symmetric_frame_status,cash,low,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,pension_symmetric_frame_status,cash,low,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,pension_symmetric_frame_status,cash,low,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,pension_symmetric_frame_status,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,pension_symmetric_frame_status,cash,high,whole-population mortality,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,pension_symmetric_frame_status,cash,high,whole-population mortality,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,pension_symmetric_frame_status,cash,high,whole-population mortality,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,pension_symmetric_frame_status,cash,high,whole-population mortality,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -13211,7 +13211,7 @@ oct15,pension_symmetric_frame_status,cash,high,whole-population mortality,none,c
 oct15,pension_symmetric_frame_status,cash,high,whole-population mortality,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,pension_symmetric_frame_status,cash,high,whole-population mortality,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,pension_symmetric_frame_status,cash,high,whole-population mortality,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_symmetric_frame_status,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,mortality_symmetric_frame_status,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,mortality_symmetric_frame_status,accrual,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,mortality_symmetric_frame_status,accrual,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,mortality_symmetric_frame_status,accrual,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -13578,7 +13578,7 @@ oct15,mortality_symmetric_frame_status,accrual,low,mixed mortality conventions,n
 oct15,mortality_symmetric_frame_status,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,mortality_symmetric_frame_status,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_symmetric_frame_status,accrual,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_symmetric_frame_status,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,mortality_symmetric_frame_status,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,mortality_symmetric_frame_status,accrual,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,mortality_symmetric_frame_status,accrual,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,mortality_symmetric_frame_status,accrual,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -13945,7 +13945,7 @@ oct15,mortality_symmetric_frame_status,accrual,high,mixed mortality conventions,
 oct15,mortality_symmetric_frame_status,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,mortality_symmetric_frame_status,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_symmetric_frame_status,accrual,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_symmetric_frame_status,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,mortality_symmetric_frame_status,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,mortality_symmetric_frame_status,cash,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,mortality_symmetric_frame_status,cash,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,mortality_symmetric_frame_status,cash,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -14312,7 +14312,7 @@ oct15,mortality_symmetric_frame_status,cash,low,mixed mortality conventions,none
 oct15,mortality_symmetric_frame_status,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,mortality_symmetric_frame_status,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_symmetric_frame_status,cash,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_symmetric_frame_status,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,mortality_symmetric_frame_status,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,mortality_symmetric_frame_status,cash,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,mortality_symmetric_frame_status,cash,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,mortality_symmetric_frame_status,cash,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -14679,7 +14679,7 @@ oct15,mortality_symmetric_frame_status,cash,high,mixed mortality conventions,non
 oct15,mortality_symmetric_frame_status,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,mortality_symmetric_frame_status,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_symmetric_frame_status,cash,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_before_round2,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,combined_before_round2,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,combined_before_round2,accrual,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_before_round2,accrual,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_before_round2,accrual,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -15046,7 +15046,7 @@ oct15,combined_before_round2,accrual,low,mixed mortality conventions,none,case,r
 oct15,combined_before_round2,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_before_round2,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_before_round2,accrual,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_before_round2,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,combined_before_round2,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,combined_before_round2,accrual,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_before_round2,accrual,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_before_round2,accrual,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -15413,7 +15413,7 @@ oct15,combined_before_round2,accrual,high,mixed mortality conventions,none,case,
 oct15,combined_before_round2,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_before_round2,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_before_round2,accrual,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_before_round2,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,combined_before_round2,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,combined_before_round2,cash,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_before_round2,cash,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_before_round2,cash,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -15780,7 +15780,7 @@ oct15,combined_before_round2,cash,low,mixed mortality conventions,none,case,roug
 oct15,combined_before_round2,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_before_round2,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_before_round2,cash,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_before_round2,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,combined_before_round2,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,combined_before_round2,cash,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_before_round2,cash,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_before_round2,cash,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -16147,7 +16147,7 @@ oct15,combined_before_round2,cash,high,mixed mortality conventions,none,case,rou
 oct15,combined_before_round2,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_before_round2,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_before_round2,cash,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_only,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,combined_bracket_only,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,combined_bracket_only,accrual,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_bracket_only,accrual,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_bracket_only,accrual,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -16514,7 +16514,7 @@ oct15,combined_bracket_only,accrual,low,mixed mortality conventions,none,case,ro
 oct15,combined_bracket_only,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_bracket_only,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_only,accrual,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_only,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,combined_bracket_only,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,combined_bracket_only,accrual,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_bracket_only,accrual,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_bracket_only,accrual,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -16881,7 +16881,7 @@ oct15,combined_bracket_only,accrual,high,mixed mortality conventions,none,case,r
 oct15,combined_bracket_only,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_bracket_only,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_only,accrual,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_only,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,combined_bracket_only,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,combined_bracket_only,cash,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_bracket_only,cash,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_bracket_only,cash,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -17248,7 +17248,7 @@ oct15,combined_bracket_only,cash,low,mixed mortality conventions,none,case,rough
 oct15,combined_bracket_only,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_bracket_only,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_only,cash,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_only,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,combined_bracket_only,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,combined_bracket_only,cash,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_bracket_only,cash,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_bracket_only,cash,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -17615,7 +17615,7 @@ oct15,combined_bracket_only,cash,high,mixed mortality conventions,none,case,roug
 oct15,combined_bracket_only,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_bracket_only,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_only,cash,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_payroll_only,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,combined_payroll_only,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,combined_payroll_only,accrual,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_payroll_only,accrual,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_payroll_only,accrual,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -17982,7 +17982,7 @@ oct15,combined_payroll_only,accrual,low,mixed mortality conventions,none,case,ro
 oct15,combined_payroll_only,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_payroll_only,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_payroll_only,accrual,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_payroll_only,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,combined_payroll_only,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,combined_payroll_only,accrual,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_payroll_only,accrual,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_payroll_only,accrual,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -18349,7 +18349,7 @@ oct15,combined_payroll_only,accrual,high,mixed mortality conventions,none,case,r
 oct15,combined_payroll_only,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_payroll_only,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_payroll_only,accrual,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_payroll_only,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,combined_payroll_only,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,combined_payroll_only,cash,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_payroll_only,cash,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_payroll_only,cash,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -18716,7 +18716,7 @@ oct15,combined_payroll_only,cash,low,mixed mortality conventions,none,case,rough
 oct15,combined_payroll_only,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_payroll_only,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_payroll_only,cash,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_payroll_only,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,combined_payroll_only,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,combined_payroll_only,cash,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_payroll_only,cash,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_payroll_only,cash,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -19083,7 +19083,7 @@ oct15,combined_payroll_only,cash,high,mixed mortality conventions,none,case,roug
 oct15,combined_payroll_only,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_payroll_only,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_payroll_only,cash,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_payroll_joint,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,combined_bracket_payroll_joint,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,combined_bracket_payroll_joint,accrual,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_bracket_payroll_joint,accrual,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_bracket_payroll_joint,accrual,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -19450,7 +19450,7 @@ oct15,combined_bracket_payroll_joint,accrual,low,mixed mortality conventions,non
 oct15,combined_bracket_payroll_joint,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_bracket_payroll_joint,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_payroll_joint,accrual,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_payroll_joint,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,combined_bracket_payroll_joint,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,combined_bracket_payroll_joint,accrual,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_bracket_payroll_joint,accrual,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_bracket_payroll_joint,accrual,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -19817,7 +19817,7 @@ oct15,combined_bracket_payroll_joint,accrual,high,mixed mortality conventions,no
 oct15,combined_bracket_payroll_joint,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_bracket_payroll_joint,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_payroll_joint,accrual,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_payroll_joint,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,combined_bracket_payroll_joint,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,combined_bracket_payroll_joint,cash,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_bracket_payroll_joint,cash,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_bracket_payroll_joint,cash,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -20184,7 +20184,7 @@ oct15,combined_bracket_payroll_joint,cash,low,mixed mortality conventions,none,c
 oct15,combined_bracket_payroll_joint,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_bracket_payroll_joint,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_payroll_joint,cash,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_payroll_joint,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,combined_bracket_payroll_joint,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,combined_bracket_payroll_joint,cash,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_bracket_payroll_joint,cash,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_bracket_payroll_joint,cash,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -20551,7 +20551,7 @@ oct15,combined_bracket_payroll_joint,cash,high,mixed mortality conventions,none,
 oct15,combined_bracket_payroll_joint,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_bracket_payroll_joint,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_payroll_joint,cash,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_rules_only,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,combined_rules_only,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,combined_rules_only,accrual,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_rules_only,accrual,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_rules_only,accrual,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -20918,7 +20918,7 @@ oct15,combined_rules_only,accrual,low,mixed mortality conventions,none,case,roug
 oct15,combined_rules_only,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_rules_only,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_rules_only,accrual,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_rules_only,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,combined_rules_only,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,combined_rules_only,accrual,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_rules_only,accrual,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_rules_only,accrual,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -21285,7 +21285,7 @@ oct15,combined_rules_only,accrual,high,mixed mortality conventions,none,case,rou
 oct15,combined_rules_only,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_rules_only,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_rules_only,accrual,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_rules_only,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,combined_rules_only,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,combined_rules_only,cash,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_rules_only,cash,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_rules_only,cash,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -21652,7 +21652,7 @@ oct15,combined_rules_only,cash,low,mixed mortality conventions,none,case,rough,s
 oct15,combined_rules_only,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_rules_only,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_rules_only,cash,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_rules_only,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,combined_rules_only,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,combined_rules_only,cash,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_rules_only,cash,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_rules_only,cash,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -22019,7 +22019,7 @@ oct15,combined_rules_only,cash,high,mixed mortality conventions,none,case,rough,
 oct15,combined_rules_only,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_rules_only,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_rules_only,cash,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_zero_production,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,combined_zero_production,accrual,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,combined_zero_production,accrual,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_zero_production,accrual,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_zero_production,accrual,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -22386,7 +22386,7 @@ oct15,combined_zero_production,accrual,low,mixed mortality conventions,none,case
 oct15,combined_zero_production,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_zero_production,accrual,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_zero_production,accrual,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_zero_production,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,combined_zero_production,accrual,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,combined_zero_production,accrual,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_zero_production,accrual,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_zero_production,accrual,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -22753,7 +22753,7 @@ oct15,combined_zero_production,accrual,high,mixed mortality conventions,none,cas
 oct15,combined_zero_production,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_zero_production,accrual,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_zero_production,accrual,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_zero_production,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,combined_zero_production,cash,low,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,combined_zero_production,cash,low,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_zero_production,cash,low,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_zero_production,cash,low,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-30.98516396649211,-30.98516396649207,-3.907985046680551e-14
@@ -23120,7 +23120,7 @@ oct15,combined_zero_production,cash,low,mixed mortality conventions,none,case,ro
 oct15,combined_zero_production,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_zero_production,cash,low,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_zero_production,cash,low,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_zero_production,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,combined_zero_production,cash,high,mixed mortality conventions,none,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,combined_zero_production,cash,high,mixed mortality conventions,none,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_zero_production,cash,high,mixed mortality conventions,none,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
 oct15,combined_zero_production,cash,high,mixed mortality conventions,none,case,rough,receipts,corporate_capital,-11.464510667602081,-11.464510667602067,-1.4210854715202004e-14
@@ -23487,8 +23487,8 @@ oct15,combined_zero_production,cash,high,mixed mortality conventions,none,case,r
 oct15,combined_zero_production,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_pension_disability,9.987469956898227,9.935508295352673,0.051961661545554705
 oct15,combined_zero_production,cash,high,mixed mortality conventions,none,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_zero_production,cash,high,mixed mortality conventions,none,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_group,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
-oct15,mortality_group,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,mortality_group,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
+oct15,mortality_group,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,mortality_group,accrual,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,mortality_group,accrual,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,mortality_group,accrual,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -24221,8 +24221,8 @@ oct15,mortality_group,accrual,low,own-group mortality,low,case,rough,spending,ve
 oct15,mortality_group,accrual,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_group,accrual,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,mortality_group,accrual,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_group,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
-oct15,mortality_group,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,mortality_group,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
+oct15,mortality_group,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,mortality_group,accrual,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,mortality_group,accrual,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,mortality_group,accrual,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -24955,8 +24955,8 @@ oct15,mortality_group,accrual,high,own-group mortality,low,case,rough,spending,v
 oct15,mortality_group,accrual,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_group,accrual,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,mortality_group,accrual,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_group,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
-oct15,mortality_group,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,mortality_group,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
+oct15,mortality_group,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,mortality_group,cash,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,mortality_group,cash,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,mortality_group,cash,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -25689,8 +25689,8 @@ oct15,mortality_group,cash,low,own-group mortality,low,case,rough,spending,veter
 oct15,mortality_group,cash,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_group,cash,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,mortality_group,cash,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_group,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
-oct15,mortality_group,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,mortality_group,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
+oct15,mortality_group,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,mortality_group,cash,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,mortality_group,cash,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,mortality_group,cash,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -26423,8 +26423,8 @@ oct15,mortality_group,cash,high,own-group mortality,low,case,rough,spending,vete
 oct15,mortality_group,cash,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_group,cash,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,mortality_group,cash,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_symmetric_frame_status,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
-oct15,mortality_symmetric_frame_status,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,mortality_symmetric_frame_status,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
+oct15,mortality_symmetric_frame_status,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,mortality_symmetric_frame_status,accrual,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,mortality_symmetric_frame_status,accrual,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,mortality_symmetric_frame_status,accrual,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -27157,8 +27157,8 @@ oct15,mortality_symmetric_frame_status,accrual,low,own-group mortality,low,case,
 oct15,mortality_symmetric_frame_status,accrual,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_symmetric_frame_status,accrual,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,mortality_symmetric_frame_status,accrual,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_symmetric_frame_status,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
-oct15,mortality_symmetric_frame_status,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,mortality_symmetric_frame_status,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
+oct15,mortality_symmetric_frame_status,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,mortality_symmetric_frame_status,accrual,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,mortality_symmetric_frame_status,accrual,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,mortality_symmetric_frame_status,accrual,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -27891,8 +27891,8 @@ oct15,mortality_symmetric_frame_status,accrual,high,own-group mortality,low,case
 oct15,mortality_symmetric_frame_status,accrual,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_symmetric_frame_status,accrual,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,mortality_symmetric_frame_status,accrual,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_symmetric_frame_status,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
-oct15,mortality_symmetric_frame_status,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,mortality_symmetric_frame_status,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
+oct15,mortality_symmetric_frame_status,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,mortality_symmetric_frame_status,cash,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,mortality_symmetric_frame_status,cash,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,mortality_symmetric_frame_status,cash,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -28625,8 +28625,8 @@ oct15,mortality_symmetric_frame_status,cash,low,own-group mortality,low,case,rou
 oct15,mortality_symmetric_frame_status,cash,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_symmetric_frame_status,cash,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,mortality_symmetric_frame_status,cash,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,mortality_symmetric_frame_status,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
-oct15,mortality_symmetric_frame_status,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,mortality_symmetric_frame_status,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
+oct15,mortality_symmetric_frame_status,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,mortality_symmetric_frame_status,cash,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,mortality_symmetric_frame_status,cash,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,mortality_symmetric_frame_status,cash,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -29359,8 +29359,8 @@ oct15,mortality_symmetric_frame_status,cash,high,own-group mortality,low,case,ro
 oct15,mortality_symmetric_frame_status,cash,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,mortality_symmetric_frame_status,cash,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,mortality_symmetric_frame_status,cash,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_before_round2,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
-oct15,combined_before_round2,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,combined_before_round2,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
+oct15,combined_before_round2,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,combined_before_round2,accrual,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_before_round2,accrual,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_before_round2,accrual,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -30093,8 +30093,8 @@ oct15,combined_before_round2,accrual,low,own-group mortality,low,case,rough,spen
 oct15,combined_before_round2,accrual,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_before_round2,accrual,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_before_round2,accrual,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_before_round2,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
-oct15,combined_before_round2,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,combined_before_round2,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
+oct15,combined_before_round2,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,combined_before_round2,accrual,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_before_round2,accrual,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_before_round2,accrual,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -30827,8 +30827,8 @@ oct15,combined_before_round2,accrual,high,own-group mortality,low,case,rough,spe
 oct15,combined_before_round2,accrual,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_before_round2,accrual,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_before_round2,accrual,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_before_round2,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
-oct15,combined_before_round2,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,combined_before_round2,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
+oct15,combined_before_round2,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,combined_before_round2,cash,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_before_round2,cash,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_before_round2,cash,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -31561,8 +31561,8 @@ oct15,combined_before_round2,cash,low,own-group mortality,low,case,rough,spendin
 oct15,combined_before_round2,cash,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_before_round2,cash,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_before_round2,cash,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_before_round2,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
-oct15,combined_before_round2,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,combined_before_round2,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
+oct15,combined_before_round2,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,combined_before_round2,cash,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_before_round2,cash,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_before_round2,cash,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -32295,8 +32295,8 @@ oct15,combined_before_round2,cash,high,own-group mortality,low,case,rough,spendi
 oct15,combined_before_round2,cash,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_before_round2,cash,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_before_round2,cash,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_only,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
-oct15,combined_bracket_only,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,combined_bracket_only,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
+oct15,combined_bracket_only,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,combined_bracket_only,accrual,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_bracket_only,accrual,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_bracket_only,accrual,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -33029,8 +33029,8 @@ oct15,combined_bracket_only,accrual,low,own-group mortality,low,case,rough,spend
 oct15,combined_bracket_only,accrual,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_only,accrual,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_bracket_only,accrual,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_only,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
-oct15,combined_bracket_only,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,combined_bracket_only,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
+oct15,combined_bracket_only,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,combined_bracket_only,accrual,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_bracket_only,accrual,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_bracket_only,accrual,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -33763,8 +33763,8 @@ oct15,combined_bracket_only,accrual,high,own-group mortality,low,case,rough,spen
 oct15,combined_bracket_only,accrual,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_only,accrual,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_bracket_only,accrual,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_only,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
-oct15,combined_bracket_only,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,combined_bracket_only,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
+oct15,combined_bracket_only,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,combined_bracket_only,cash,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_bracket_only,cash,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_bracket_only,cash,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -34497,8 +34497,8 @@ oct15,combined_bracket_only,cash,low,own-group mortality,low,case,rough,spending
 oct15,combined_bracket_only,cash,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_only,cash,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_bracket_only,cash,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_only,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
-oct15,combined_bracket_only,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,combined_bracket_only,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
+oct15,combined_bracket_only,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,combined_bracket_only,cash,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_bracket_only,cash,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_bracket_only,cash,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -35231,8 +35231,8 @@ oct15,combined_bracket_only,cash,high,own-group mortality,low,case,rough,spendin
 oct15,combined_bracket_only,cash,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_only,cash,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_bracket_only,cash,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_payroll_only,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
-oct15,combined_payroll_only,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,combined_payroll_only,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
+oct15,combined_payroll_only,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,combined_payroll_only,accrual,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_payroll_only,accrual,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_payroll_only,accrual,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -35965,8 +35965,8 @@ oct15,combined_payroll_only,accrual,low,own-group mortality,low,case,rough,spend
 oct15,combined_payroll_only,accrual,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_payroll_only,accrual,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_payroll_only,accrual,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_payroll_only,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
-oct15,combined_payroll_only,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,combined_payroll_only,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
+oct15,combined_payroll_only,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,combined_payroll_only,accrual,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_payroll_only,accrual,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_payroll_only,accrual,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -36699,8 +36699,8 @@ oct15,combined_payroll_only,accrual,high,own-group mortality,low,case,rough,spen
 oct15,combined_payroll_only,accrual,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_payroll_only,accrual,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_payroll_only,accrual,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_payroll_only,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
-oct15,combined_payroll_only,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,combined_payroll_only,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
+oct15,combined_payroll_only,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,combined_payroll_only,cash,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_payroll_only,cash,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_payroll_only,cash,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -37433,8 +37433,8 @@ oct15,combined_payroll_only,cash,low,own-group mortality,low,case,rough,spending
 oct15,combined_payroll_only,cash,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_payroll_only,cash,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_payroll_only,cash,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_payroll_only,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
-oct15,combined_payroll_only,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,combined_payroll_only,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
+oct15,combined_payroll_only,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,combined_payroll_only,cash,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_payroll_only,cash,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_payroll_only,cash,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -38167,8 +38167,8 @@ oct15,combined_payroll_only,cash,high,own-group mortality,low,case,rough,spendin
 oct15,combined_payroll_only,cash,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_payroll_only,cash,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_payroll_only,cash,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_payroll_joint,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
-oct15,combined_bracket_payroll_joint,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,combined_bracket_payroll_joint,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
+oct15,combined_bracket_payroll_joint,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,combined_bracket_payroll_joint,accrual,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_bracket_payroll_joint,accrual,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_bracket_payroll_joint,accrual,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -38901,8 +38901,8 @@ oct15,combined_bracket_payroll_joint,accrual,low,own-group mortality,low,case,ro
 oct15,combined_bracket_payroll_joint,accrual,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_payroll_joint,accrual,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_bracket_payroll_joint,accrual,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_payroll_joint,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
-oct15,combined_bracket_payroll_joint,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,combined_bracket_payroll_joint,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
+oct15,combined_bracket_payroll_joint,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,combined_bracket_payroll_joint,accrual,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_bracket_payroll_joint,accrual,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_bracket_payroll_joint,accrual,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -39635,8 +39635,8 @@ oct15,combined_bracket_payroll_joint,accrual,high,own-group mortality,low,case,r
 oct15,combined_bracket_payroll_joint,accrual,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_payroll_joint,accrual,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_bracket_payroll_joint,accrual,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_payroll_joint,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
-oct15,combined_bracket_payroll_joint,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,combined_bracket_payroll_joint,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
+oct15,combined_bracket_payroll_joint,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,combined_bracket_payroll_joint,cash,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_bracket_payroll_joint,cash,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_bracket_payroll_joint,cash,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -40369,8 +40369,8 @@ oct15,combined_bracket_payroll_joint,cash,low,own-group mortality,low,case,rough
 oct15,combined_bracket_payroll_joint,cash,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_payroll_joint,cash,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_bracket_payroll_joint,cash,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_bracket_payroll_joint,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
-oct15,combined_bracket_payroll_joint,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,combined_bracket_payroll_joint,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
+oct15,combined_bracket_payroll_joint,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,combined_bracket_payroll_joint,cash,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_bracket_payroll_joint,cash,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_bracket_payroll_joint,cash,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -41103,8 +41103,8 @@ oct15,combined_bracket_payroll_joint,cash,high,own-group mortality,low,case,roug
 oct15,combined_bracket_payroll_joint,cash,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_bracket_payroll_joint,cash,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_bracket_payroll_joint,cash,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_rules_only,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
-oct15,combined_rules_only,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,combined_rules_only,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
+oct15,combined_rules_only,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,combined_rules_only,accrual,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_rules_only,accrual,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_rules_only,accrual,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -41837,8 +41837,8 @@ oct15,combined_rules_only,accrual,low,own-group mortality,low,case,rough,spendin
 oct15,combined_rules_only,accrual,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_rules_only,accrual,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_rules_only,accrual,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_rules_only,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
-oct15,combined_rules_only,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,combined_rules_only,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
+oct15,combined_rules_only,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,combined_rules_only,accrual,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_rules_only,accrual,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_rules_only,accrual,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -42571,8 +42571,8 @@ oct15,combined_rules_only,accrual,high,own-group mortality,low,case,rough,spendi
 oct15,combined_rules_only,accrual,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_rules_only,accrual,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_rules_only,accrual,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_rules_only,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
-oct15,combined_rules_only,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,combined_rules_only,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
+oct15,combined_rules_only,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,combined_rules_only,cash,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_rules_only,cash,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_rules_only,cash,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -43305,8 +43305,8 @@ oct15,combined_rules_only,cash,low,own-group mortality,low,case,rough,spending,v
 oct15,combined_rules_only,cash,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_rules_only,cash,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_rules_only,cash,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_rules_only,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
-oct15,combined_rules_only,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,combined_rules_only,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
+oct15,combined_rules_only,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,combined_rules_only,cash,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_rules_only,cash,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_rules_only,cash,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -44039,8 +44039,8 @@ oct15,combined_rules_only,cash,high,own-group mortality,low,case,rough,spending,
 oct15,combined_rules_only,cash,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_rules_only,cash,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_rules_only,cash,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_zero_production,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
-oct15,combined_zero_production,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,12.001818463568476,12.001818463568476,0.0
+oct15,combined_zero_production,accrual,low,own-group mortality,low,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
+oct15,combined_zero_production,accrual,low,own-group mortality,high,case,rough,post_engine,coverage_bn,8.802814463690858,8.802814463690858,0.0
 oct15,combined_zero_production,accrual,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_zero_production,accrual,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_zero_production,accrual,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -44773,8 +44773,8 @@ oct15,combined_zero_production,accrual,low,own-group mortality,low,case,rough,sp
 oct15,combined_zero_production,accrual,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_zero_production,accrual,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_zero_production,accrual,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_zero_production,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
-oct15,combined_zero_production,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,15.859877306531986,15.859877306531986,0.0
+oct15,combined_zero_production,accrual,high,own-group mortality,low,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
+oct15,combined_zero_production,accrual,high,own-group mortality,high,case,rough,post_engine,coverage_bn,12.638785152590001,12.638785152590001,0.0
 oct15,combined_zero_production,accrual,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_zero_production,accrual,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_zero_production,accrual,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -45507,8 +45507,8 @@ oct15,combined_zero_production,accrual,high,own-group mortality,low,case,rough,s
 oct15,combined_zero_production,accrual,high,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_zero_production,accrual,high,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_zero_production,accrual,high,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_zero_production,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
-oct15,combined_zero_production,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,3.950844257775926,3.950844257775926,0.0
+oct15,combined_zero_production,cash,low,own-group mortality,low,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
+oct15,combined_zero_production,cash,low,own-group mortality,high,case,rough,post_engine,coverage_bn,0.7518402578983028,0.7518402578983028,0.0
 oct15,combined_zero_production,cash,low,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_zero_production,cash,low,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,10.74001627270179,10.74001627270179,0.0
 oct15,combined_zero_production,cash,low,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0
@@ -46241,8 +46241,8 @@ oct15,combined_zero_production,cash,low,own-group mortality,low,case,rough,spend
 oct15,combined_zero_production,cash,low,own-group mortality,high,case,rough,spending,veterans_readjustment,0.6302023001462199,0.626923556239357,0.003278743906862891
 oct15,combined_zero_production,cash,low,own-group mortality,low,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
 oct15,combined_zero_production,cash,low,own-group mortality,high,case,rough,spending,workers_compensation,1.642905443773387,2.3526061724644363,-0.7097007286910493
-oct15,combined_zero_production,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
-oct15,combined_zero_production,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,7.8089031007393,7.8089031007393,0.0
+oct15,combined_zero_production,cash,high,own-group mortality,low,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
+oct15,combined_zero_production,cash,high,own-group mortality,high,case,rough,post_engine,coverage_bn,4.587810946797321,4.587810946797321,0.0
 oct15,combined_zero_production,cash,high,own-group mortality,low,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_zero_production,cash,high,own-group mortality,high,case,rough,post_engine,mixed_unit_removal_bn,14.531690197973472,14.531690197973472,0.0
 oct15,combined_zero_production,cash,high,own-group mortality,low,case,rough,receipts,business_current_transfers,-0.0,-0.0,0.0

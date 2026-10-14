@@ -30,14 +30,14 @@ M6: a biological child outside the comparator definition stays. Biological links
 
 | Group / set / population | Current one-sided rough gap, low / high $bn | Both-sided rough gap, low / high $bn | Change, low / high $bn |
 |---|---:|---:|---:|
-| white / set / own_count | +1097.708339 / +757.053467 | +1133.102480 / +774.857913 | +35.394141 / +17.804446 |
-| white / set / lineage_count | +541.881803 / +517.953084 | +551.132559 / +522.606525 | +9.250755 / +4.653442 |
-| white / cash / own_count | +679.582398 / +338.927526 | +714.976539 / +356.731972 | +35.394141 / +17.804446 |
-| white / cash / lineage_count | +374.983922 / +351.055202 | +384.234677 / +355.708643 | +9.250755 / +4.653442 |
-| black / set / own_count | -81.751295 / -69.330384 | -79.417624 / -69.977048 | +2.333671 / -0.646664 |
-| black / set / lineage_count | -115.085563 / -108.576668 | -112.569692 / -109.273820 | +2.515871 / -0.697152 |
-| black / cash / own_count | -146.633067 / -134.212156 | -144.299396 / -134.858820 | +2.333671 / -0.646664 |
-| black / cash / lineage_count | -178.943011 / -172.434116 | -176.427141 / -173.131268 | +2.515871 / -0.697152 |
+| white / set / own_count | +1094.509335 / +753.832375 | +1129.903476 / +771.636821 | +35.394141 / +17.804446 |
+| white / set / lineage_count | +538.682799 / +514.731992 | +547.933555 / +519.385433 | +9.250755 / +4.653442 |
+| white / cash / own_count | +676.383394 / +335.706434 | +711.777535 / +353.510880 | +35.394141 / +17.804446 |
+| white / cash / lineage_count | +371.784918 / +347.834110 | +381.035673 / +352.487551 | +9.250755 / +4.653442 |
+| black / set / own_count | -84.950299 / -72.551476 | -82.616628 / -73.198141 | +2.333671 / -0.646664 |
+| black / set / lineage_count | -118.284567 / -111.797760 | -115.768696 / -112.494912 | +2.515871 / -0.697152 |
+| black / cash / own_count | -149.832071 / -137.433249 | -147.498400 / -138.079913 | +2.333671 / -0.646664 |
+| black / cash / lineage_count | -182.142015 / -175.655209 | -179.626145 / -176.352361 | +2.515871 / -0.697152 |
 
 Gap table: [CALCULATION: `derived/gaps.csv`]. The published comparator central is rough lineage against rough comparator, not the exact case lineage against rough comparator. Both comparisons are supplied in the CSV with explicit names. Population standardization is linear at fixed per-person amounts; it is not a fresh removal of a smaller universe. `item11_paired_se_bn` uses lineage-minus-comparator signed replicate vectors, not SE quadrature. The SE for changing the already one-sided gap is the comparator correction's SE. [CALCULATION: `finalize.py`] [ASSUMPTION]
 

@@ -1551,6 +1551,20 @@ Reproduce with `sh infra/immigration-fiscal/white_replacement_2026_09_28/run_oct
 
 Own-mask comparator item11 is now measured and applied post-evaluator, with pinned paired gap SEs. [FRAMING-SENSITIVE] The labeled one-sided gap is preserved immediately below the measured row. Full White 210/210, full Black 96/96, C8 source-only 77/77, legacy annual-only 39/39, pension 43/43, Indian independent fiscal 71/71: all IDENTICAL, exit 0. Exact baselines unchanged; no feedback into M5; no annual charge to legacy stock. Break tables and Indian social/combined rows remain withheld. [CALCULATION: parent scratch c40-*-rerun.json/log; c40-validation.json; prop-d-result.md]
 
+### Round-3 correction (2026-10-15 06:19:49 JST, `date`, parent)
+
+Rerun on corrected v8 (`d1a24d47`: the coverage term no longer charges the missed people's custody, arrests and ICE a second time, −$3.199004 / −$3.221092bn on the lineage). Every lineage-side figure in the round-2 sections above is on the uncorrected v8; the rendered R2C40
+block below is current. Combined rules, accrual, mixed mortality conventions: lineage minus as many A1 whites
+**$571.280870 / 542.581547bn** (was $574.48 / 545.80bn); Black minus the lineage at Black's own count
+**$41.419930 / 32.233133bn**, at the lineage's count $72.728086 / 69.704081bn. Own-group mortality on both sides:
+$575.020588 / 546.321265bn, $37.680211 / 28.493415bn and $68.988367 / 65.964363bn. Cash set, mixed conventions:
+$401.195895 / 372.496572bn, Black minus the lineage $131.387213 / 122.200416bn at own count. Comparator-side item 11 is
+unchanged (A1 −$35.394141 / −17.804446bn, Black −$2.333671 / +0.646664bn). `comparison_contract.py` re-pins the
+mixed-unit lane's `gaps.csv` (its lineage-side gap columns moved by the correction; the comparator columns it reads did
+not). Parent reruns IDENTICAL: white 210/210, Black 96/96, mixed-unit comparators 20/20, exit 0. Round 3's comparator
+review (C3) found five problems over the bar in these comparisons; they wait for the fix lane
+(`.model-review/2026-10-15-assumptions-v8-r3-c3-dispositions.md`).
+
 <!-- oct15 C40 measured comparator mixed-unit removal -->
 
 ## Measured comparator mixed-unit removal (R2C40) — 2026-10-15
@@ -1568,44 +1582,44 @@ A1 scales by the exact live lineage count / own count; Black central stays at it
 
 | Basis / mortality / profile; lineage-minus-comparator, $bn low / high | A1 at lineage count | Black own count | Black at lineage count |
 |---|---:|---:|---:|
-| accrual, mixed mortality conventions, none: measured both sides | 574.479874 / 545.802639 | -38.220926 / -29.012041 | -69.529082 / -66.482989 |
-| One-sided gap (comparator item11 at zero) | 565.229118 / 541.149197 | -40.554597 / -28.365377 | -72.044953 / -65.785837 |
+| accrual, mixed mortality conventions, none: measured both sides | 571.280870 / 542.581547 | -41.419930 / -32.233133 | -72.728086 / -69.704081 |
+| One-sided gap (comparator item11 at zero) | 562.030114 / 537.928105 | -43.753601 / -31.586469 | -75.243957 / -69.006929 |
 | Item11 paired gap SE (conditional, not full-cost SE) | 5.883572 / 5.843094 | 5.122122 / 5.120987 | 5.212657 / 5.213276 |
-| accrual, own-group mortality, low: measured both sides | 578.219592 / 549.542357 | -34.481207 / -25.272322 | -65.789363 / -62.743271 |
-| One-sided gap (comparator item11 at zero) | 568.968837 / 544.888916 | -36.814879 / -24.625658 | -68.305234 / -62.046119 |
+| accrual, own-group mortality, low: measured both sides | 575.020588 / 546.321265 | -37.680211 / -28.493415 | -68.988367 / -65.964363 |
+| One-sided gap (comparator item11 at zero) | 565.769833 / 541.667824 | -40.013883 / -27.846750 | -71.504238 / -65.267211 |
 | Item11 paired gap SE (conditional, not full-cost SE) | 5.883572 / 5.843094 | 5.122122 / 5.120987 | 5.212657 / 5.213276 |
-| accrual, own-group mortality, high: measured both sides | 578.223499 / 549.546265 | -34.477300 / -25.268415 | -65.785456 / -62.739363 |
-| One-sided gap (comparator item11 at zero) | 568.972744 / 544.892823 | -36.810971 / -24.621751 | -68.301327 / -62.042211 |
+| accrual, own-group mortality, high: measured both sides | 575.024495 / 546.325173 | -37.676304 / -28.489507 | -68.984460 / -65.960455 |
+| One-sided gap (comparator item11 at zero) | 565.773740 / 541.671731 | -40.009975 / -27.842843 | -71.500331 / -65.263303 |
 | Item11 paired gap SE (conditional, not full-cost SE) | 5.883572 / 5.843094 | 5.122122 / 5.120987 | 5.212657 / 5.213276 |
-| cash, mixed mortality conventions, none: measured both sides | 404.394899 / 375.717664 | -128.188209 / -118.979324 | -160.156061 / -157.109968 |
-| One-sided gap (comparator item11 at zero) | 395.144144 / 371.064223 | -130.521880 / -118.332659 | -162.671931 / -156.412816 |
+| cash, mixed mortality conventions, none: measured both sides | 401.195895 / 372.496572 | -131.387213 / -122.200416 | -163.355065 / -160.331060 |
+| One-sided gap (comparator item11 at zero) | 391.945140 / 367.843131 | -133.720884 / -121.553752 | -165.870935 / -159.633908 |
 | Item11 paired gap SE (conditional, not full-cost SE) | 5.883572 / 5.843094 | 5.122122 / 5.120987 | 5.212657 / 5.213276 |
-| cash, own-group mortality, low: measured both sides | 404.394899 / 375.717664 | -128.188209 / -118.979324 | -160.156061 / -157.109968 |
-| One-sided gap (comparator item11 at zero) | 395.144144 / 371.064223 | -130.521880 / -118.332659 | -162.671931 / -156.412816 |
+| cash, own-group mortality, low: measured both sides | 401.195895 / 372.496572 | -131.387213 / -122.200416 | -163.355065 / -160.331060 |
+| One-sided gap (comparator item11 at zero) | 391.945140 / 367.843131 | -133.720884 / -121.553752 | -165.870935 / -159.633908 |
 | Item11 paired gap SE (conditional, not full-cost SE) | 5.883572 / 5.843094 | 5.122122 / 5.120987 | 5.212657 / 5.213276 |
-| cash, own-group mortality, high: measured both sides | 404.394899 / 375.717664 | -128.188209 / -118.979324 | -160.156061 / -157.109968 |
-| One-sided gap (comparator item11 at zero) | 395.144144 / 371.064223 | -130.521880 / -118.332659 | -162.671931 / -156.412816 |
+| cash, own-group mortality, high: measured both sides | 401.195895 / 372.496572 | -131.387213 / -122.200416 | -163.355065 / -160.331060 |
+| One-sided gap (comparator item11 at zero) | 391.945140 / 367.843131 | -133.720884 / -121.553752 | -165.870935 / -159.633908 |
 | Item11 paired gap SE (conditional, not full-cost SE) | 5.883572 / 5.843094 | 5.122122 / 5.120987 | 5.212657 / 5.213276 |
 
 The measured own-count and equal-count base-route gaps are also retained in the pinned source below. This base route uses whole-population mortality and its original status/production rules; it is distinct from the combined-rule sensitivities above. [DATA: source gaps.csv]
 
 | Base route / basis / count, $bn low / high | Measured both sides |
 |---|---:|
-| white, set, own_count: measured both sides | 1133.102480 / 774.857913 |
-| One-sided gap (comparator item11 at zero) | 1097.708339 / 757.053467 |
-| white, set, lineage_count: measured both sides | 551.132559 / 522.606525 |
-| One-sided gap (comparator item11 at zero) | 541.881803 / 517.953084 |
-| white, cash, own_count: measured both sides | 714.976539 / 356.731972 |
-| One-sided gap (comparator item11 at zero) | 679.582398 / 338.927526 |
-| white, cash, lineage_count: measured both sides | 384.234677 / 355.708643 |
-| One-sided gap (comparator item11 at zero) | 374.983922 / 351.055202 |
-| black, set, own_count: measured both sides | -79.417624 / -69.977048 |
-| One-sided gap (comparator item11 at zero) | -81.751295 / -69.330384 |
-| black, set, lineage_count: measured both sides | -112.569692 / -109.273820 |
-| One-sided gap (comparator item11 at zero) | -115.085563 / -108.576668 |
-| black, cash, own_count: measured both sides | -144.299396 / -134.858820 |
-| One-sided gap (comparator item11 at zero) | -146.633067 / -134.212156 |
-| black, cash, lineage_count: measured both sides | -176.427141 / -173.131268 |
-| One-sided gap (comparator item11 at zero) | -178.943011 / -172.434116 |
+| white, set, own_count: measured both sides | 1129.903476 / 771.636821 |
+| One-sided gap (comparator item11 at zero) | 1094.509335 / 753.832375 |
+| white, set, lineage_count: measured both sides | 547.933555 / 519.385433 |
+| One-sided gap (comparator item11 at zero) | 538.682799 / 514.731992 |
+| white, cash, own_count: measured both sides | 711.777535 / 353.510880 |
+| One-sided gap (comparator item11 at zero) | 676.383394 / 335.706434 |
+| white, cash, lineage_count: measured both sides | 381.035673 / 352.487551 |
+| One-sided gap (comparator item11 at zero) | 371.784918 / 347.834110 |
+| black, set, own_count: measured both sides | -82.616628 / -73.198141 |
+| One-sided gap (comparator item11 at zero) | -84.950299 / -72.551476 |
+| black, set, lineage_count: measured both sides | -115.768696 / -112.494912 |
+| One-sided gap (comparator item11 at zero) | -118.284567 / -111.797760 |
+| black, cash, own_count: measured both sides | -147.498400 / -138.079913 |
+| One-sided gap (comparator item11 at zero) | -149.832071 / -137.433249 |
+| black, cash, lineage_count: measured both sides | -179.626145 / -176.352361 |
+| One-sided gap (comparator item11 at zero) | -182.142015 / -175.655209 |
 
 Reproduce with `sh infra/immigration-fiscal/white_replacement_2026_09_28/run_oct15.sh`. The SHA256 pins stop `[BLOCKED]` on a changed summary or paired-SE source. [CALCULATION: run_oct15.sh]

@@ -13,7 +13,7 @@ accrual,mexican_origin_engine,"per head: government, defense, interest, roads",8
 accrual,mexican_origin_engine,capital return,37.6233,832,,,oct15,whole-population mortality
 accrual,mexican_origin_engine,production gain (subtracted),-11.9095,-263,,,oct15,whole-population mortality
 accrual,mexican_origin_engine,lineage post-engine mixed_unit_removal_bn,10.7400,237,,,oct15,whole-population mortality
-accrual,mexican_origin_engine,lineage post-engine coverage_bn,12.0018,265,,,oct15,whole-population mortality
+accrual,mexican_origin_engine,lineage post-engine coverage_bn,8.8028,195,,,oct15,whole-population mortality
 accrual,mexican_origin_rough,income taxes,-153.4138,-3392,,,oct15,whole-population mortality
 accrual,mexican_origin_rough,payroll taxes and Medicare premiums,-176.7713,-3908,,,oct15,whole-population mortality
 accrual,mexican_origin_rough,"sales, excise, customs, fees",-119.0851,-2633,,,oct15,whole-population mortality
@@ -28,7 +28,7 @@ accrual,mexican_origin_rough,"per head: government, defense, interest, roads",80
 accrual,mexican_origin_rough,capital return,37.6866,833,,,oct15,whole-population mortality
 accrual,mexican_origin_rough,production gain (subtracted),-11.9095,-263,,,oct15,whole-population mortality
 accrual,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,10.7400,237,,,oct15,whole-population mortality
-accrual,mexican_origin_rough,lineage post-engine coverage_bn,12.0018,265,,,oct15,whole-population mortality
+accrual,mexican_origin_rough,lineage post-engine coverage_bn,8.8028,195,,,oct15,whole-population mortality
 accrual,nh_black_rough,income taxes,-212.7596,-5071,,,oct15,whole-population mortality
 accrual,nh_black_rough,payroll taxes and Medicare premiums,-194.3579,-4633,,,oct15,whole-population mortality
 accrual,nh_black_rough,"sales, excise, customs, fees",-123.2033,-2937,,,oct15,whole-population mortality
@@ -56,7 +56,7 @@ cash,mexican_origin_engine,"per head: government, defense, interest, roads",80.5
 cash,mexican_origin_engine,capital return,37.6233,832,,,oct15,whole-population mortality
 cash,mexican_origin_engine,production gain (subtracted),-11.9095,-263,,,oct15,whole-population mortality
 cash,mexican_origin_engine,lineage post-engine mixed_unit_removal_bn,10.7400,237,,,oct15,whole-population mortality
-cash,mexican_origin_engine,lineage post-engine coverage_bn,3.9508,87,,,oct15,whole-population mortality
+cash,mexican_origin_engine,lineage post-engine coverage_bn,0.7518,17,,,oct15,whole-population mortality
 cash,mexican_origin_rough,income taxes,-155.4146,-3436,-213.6932,-4725,oct15,whole-population mortality
 cash,mexican_origin_rough,payroll taxes and Medicare premiums,-176.7713,-3908,-64.3421,-1423,oct15,whole-population mortality
 cash,mexican_origin_rough,"sales, excise, customs, fees",-119.0851,-2633,-32.9533,-729,oct15,whole-population mortality
@@ -71,7 +71,7 @@ cash,mexican_origin_rough,"per head: government, defense, interest, roads",80.58
 cash,mexican_origin_rough,capital return,37.6866,833,,,oct15,whole-population mortality
 cash,mexican_origin_rough,production gain (subtracted),-11.9095,-263,,,oct15,whole-population mortality
 cash,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,10.7400,237,,,oct15,whole-population mortality
-cash,mexican_origin_rough,lineage post-engine coverage_bn,3.9508,87,,,oct15,whole-population mortality
+cash,mexican_origin_rough,lineage post-engine coverage_bn,0.7518,17,,,oct15,whole-population mortality
 cash,nh_black_rough,income taxes,-217.9163,-5194,-145.8745,-3477,oct15,whole-population mortality
 cash,nh_black_rough,payroll taxes and Medicare premiums,-194.3579,-4633,-42.8729,-1022,oct15,whole-population mortality
 cash,nh_black_rough,"sales, excise, customs, fees",-123.2033,-2937,-27.8414,-664,oct15,whole-population mortality

@@ -3,7 +3,7 @@
   "spec": 16,
   "allocation": "personal",
   "rate": 0.02,
-  "cost_bn": 368.9909342553624,
+  "cost_bn": 365.7919302554848,
   "capital_bn": 37.18595383512266,
   "welfare_bn": -309.0631456839695,
   "target_population": 45230062.30075857,
@@ -4091,15 +4091,15 @@
   ],
   "post_engine": {
    "mixed_unit_removal_bn": 10.74001627270179,
-   "coverage_bn": 12.001818463568476,
-   "total_bn": 22.741834736270267
+   "coverage_bn": 8.802814463690858,
+   "total_bn": 19.54283073639265
   }
  },
  "high": {
   "spec": 11,
   "allocation": "personal",
   "rate": 0.03,
-  "cost_bn": 459.20287674292126,
+  "cost_bn": 455.9817845889793,
   "capital_bn": 61.174573990654835,
   "welfare_bn": -367.63673524776095,
   "target_population": 45230062.30075857,
@@ -8187,8 +8187,8 @@
   ],
   "post_engine": {
    "mixed_unit_removal_bn": 14.531690197973472,
-   "coverage_bn": 15.859877306531986,
-   "total_bn": 30.39156750450546
+   "coverage_bn": 12.638785152590001,
+   "total_bn": 27.17047535056347
   }
  }
 }

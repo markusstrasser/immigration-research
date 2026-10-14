@@ -116,367 +116,367 @@ oct15,shares,,TX: share of the 50 states' and DC's income tax,unraked (FEDTAX_BC
 oct15,shares,,US: AGI $1M or more,"SOI state file, the 50 states and DC",,,0.308037,share
 oct15,shares,central,US: AGI $1M or more,the key (IRS Table 1.2),,,0.309878,share
 oct15,shares,,US: AGI $1M or more,unraked (FEDTAX_BC at personal),,,0.139319,share
-oct15,gaps,central,California,gap,accrual,low,251.5721,bn
-oct15,gaps,central,California,union cost,accrual,low,116.7950,bn
+oct15,gaps,central,California,gap,accrual,low,250.6597,bn
+oct15,gaps,central,California,union cost,accrual,low,115.8825,bn
 oct15,gaps,central,California,white cost at union ages,accrual,low,-134.7771,bn
-oct15,gaps,central,Texas,gap,accrual,low,116.7424,bn
-oct15,gaps,central,Texas,union cost,accrual,low,84.9895,bn
+oct15,gaps,central,Texas,gap,accrual,low,115.7259,bn
+oct15,gaps,central,Texas,union cost,accrual,low,83.9730,bn
 oct15,gaps,central,Texas,white cost at union ages,accrual,low,-31.7528,bn
-oct15,gaps,central,rest of US,gap,accrual,low,162.4010,bn
-oct15,gaps,central,rest of US,union cost,accrual,low,143.4198,bn
+oct15,gaps,central,rest of US,gap,accrual,low,161.1310,bn
+oct15,gaps,central,rest of US,union cost,accrual,low,142.1498,bn
 oct15,gaps,central,rest of US,white cost at union ages,accrual,low,-18.9812,bn
-oct15,gaps,central,"local gap (California, Texas, rest of US)",gap,accrual,low,530.7155,bn
-oct15,gaps,central,"local gap (California, Texas, rest of US)",union cost,accrual,low,345.2043,bn
+oct15,gaps,central,"local gap (California, Texas, rest of US)",gap,accrual,low,527.5165,bn
+oct15,gaps,central,"local gap (California, Texas, rest of US)",union cost,accrual,low,342.0053,bn
 oct15,gaps,central,"local gap (California, Texas, rest of US)",white cost at union ages,accrual,low,-185.5112,bn
-oct15,gaps,central,California,gap,accrual,high,239.4696,bn
-oct15,gaps,central,California,union cost,accrual,high,146.3574,bn
+oct15,gaps,central,California,gap,accrual,high,238.5508,bn
+oct15,gaps,central,California,union cost,accrual,high,145.4386,bn
 oct15,gaps,central,California,white cost at union ages,accrual,high,-93.1122,bn
-oct15,gaps,central,Texas,gap,accrual,high,111.5244,bn
-oct15,gaps,central,Texas,union cost,accrual,high,107.1148,bn
+oct15,gaps,central,Texas,gap,accrual,high,110.5009,bn
+oct15,gaps,central,Texas,union cost,accrual,high,106.0913,bn
 oct15,gaps,central,Texas,white cost at union ages,accrual,high,-4.4096,bn
-oct15,gaps,central,rest of US,gap,accrual,high,154.4419,bn
-oct15,gaps,central,rest of US,union cost,accrual,high,179.8759,bn
+oct15,gaps,central,rest of US,gap,accrual,high,153.1631,bn
+oct15,gaps,central,rest of US,union cost,accrual,high,178.5971,bn
 oct15,gaps,central,rest of US,white cost at union ages,accrual,high,25.4340,bn
-oct15,gaps,central,"local gap (California, Texas, rest of US)",gap,accrual,high,505.4359,bn
-oct15,gaps,central,"local gap (California, Texas, rest of US)",union cost,accrual,high,433.3482,bn
+oct15,gaps,central,"local gap (California, Texas, rest of US)",gap,accrual,high,502.2148,bn
+oct15,gaps,central,"local gap (California, Texas, rest of US)",union cost,accrual,high,430.1271,bn
 oct15,gaps,central,"local gap (California, Texas, rest of US)",white cost at union ages,accrual,high,-72.0878,bn
-oct15,gaps,central,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,low,541.8818,bn
-oct15,gaps,central,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,high,517.9531,bn
-oct15,gaps,central,California,gap,cash,low,271.0802,bn
-oct15,gaps,central,California,union cost,cash,low,90.4236,bn
+oct15,gaps,central,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,low,538.6828,bn
+oct15,gaps,central,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,high,514.7320,bn
+oct15,gaps,central,California,gap,cash,low,270.1678,bn
+oct15,gaps,central,California,union cost,cash,low,89.5111,bn
 oct15,gaps,central,California,white cost at union ages,cash,low,-180.6566,bn
-oct15,gaps,central,Texas,gap,cash,low,123.4305,bn
-oct15,gaps,central,Texas,union cost,cash,low,70.3059,bn
+oct15,gaps,central,Texas,gap,cash,low,122.4139,bn
+oct15,gaps,central,Texas,union cost,cash,low,69.2894,bn
 oct15,gaps,central,Texas,white cost at union ages,cash,low,-53.1246,bn
-oct15,gaps,central,rest of US,gap,cash,low,173.2846,bn
-oct15,gaps,central,rest of US,union cost,cash,low,106.4733,bn
+oct15,gaps,central,rest of US,gap,cash,low,172.0145,bn
+oct15,gaps,central,rest of US,union cost,cash,low,105.2032,bn
 oct15,gaps,central,rest of US,white cost at union ages,cash,low,-66.8113,bn
-oct15,gaps,central,"local gap (California, Texas, rest of US)",gap,cash,low,567.7952,bn
-oct15,gaps,central,"local gap (California, Texas, rest of US)",union cost,cash,low,267.2027,bn
+oct15,gaps,central,"local gap (California, Texas, rest of US)",gap,cash,low,564.5962,bn
+oct15,gaps,central,"local gap (California, Texas, rest of US)",union cost,cash,low,264.0037,bn
 oct15,gaps,central,"local gap (California, Texas, rest of US)",white cost at union ages,cash,low,-300.5925,bn
-oct15,gaps,central,California,gap,cash,high,258.9777,bn
-oct15,gaps,central,California,union cost,cash,high,119.9860,bn
+oct15,gaps,central,California,gap,cash,high,258.0589,bn
+oct15,gaps,central,California,union cost,cash,high,119.0672,bn
 oct15,gaps,central,California,white cost at union ages,cash,high,-138.9917,bn
-oct15,gaps,central,Texas,gap,cash,high,118.2125,bn
-oct15,gaps,central,Texas,union cost,cash,high,92.4312,bn
+oct15,gaps,central,Texas,gap,cash,high,117.1890,bn
+oct15,gaps,central,Texas,union cost,cash,high,91.4077,bn
 oct15,gaps,central,Texas,white cost at union ages,cash,high,-25.7813,bn
-oct15,gaps,central,rest of US,gap,cash,high,165.3254,bn
-oct15,gaps,central,rest of US,union cost,cash,high,142.9294,bn
+oct15,gaps,central,rest of US,gap,cash,high,164.0467,bn
+oct15,gaps,central,rest of US,union cost,cash,high,141.6506,bn
 oct15,gaps,central,rest of US,white cost at union ages,cash,high,-22.3961,bn
-oct15,gaps,central,"local gap (California, Texas, rest of US)",gap,cash,high,542.5157,bn
-oct15,gaps,central,"local gap (California, Texas, rest of US)",union cost,cash,high,355.3465,bn
+oct15,gaps,central,"local gap (California, Texas, rest of US)",gap,cash,high,539.2946,bn
+oct15,gaps,central,"local gap (California, Texas, rest of US)",union cost,cash,high,352.1254,bn
 oct15,gaps,central,"local gap (California, Texas, rest of US)",white cost at union ages,cash,high,-187.1691,bn
-oct15,gaps,central,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,low,374.9839,bn
-oct15,gaps,central,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,high,351.0552,bn
-oct15,gaps,i,California,gap,accrual,low,257.2245,bn
-oct15,gaps,i,California,gap: change from the central,accrual,low,5.6524,bn
-oct15,gaps,i,California,union cost,accrual,low,119.0824,bn
-oct15,gaps,i,California,union cost: change from the central,accrual,low,2.2874,bn
+oct15,gaps,central,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,low,371.7849,bn
+oct15,gaps,central,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,high,347.8341,bn
+oct15,gaps,i,California,gap,accrual,low,256.3120,bn
+oct15,gaps,i,California,gap: change from the central,accrual,low,5.6523,bn
+oct15,gaps,i,California,union cost,accrual,low,118.1700,bn
+oct15,gaps,i,California,union cost: change from the central,accrual,low,2.2875,bn
 oct15,gaps,i,California,white cost at union ages,accrual,low,-138.1421,bn
 oct15,gaps,i,California,white cost at union ages: change from the central,accrual,low,-3.3650,bn
-oct15,gaps,i,Texas,gap,accrual,low,115.7638,bn
+oct15,gaps,i,Texas,gap,accrual,low,114.7473,bn
 oct15,gaps,i,Texas,gap: change from the central,accrual,low,-0.9786,bn
-oct15,gaps,i,Texas,union cost,accrual,low,85.8133,bn
-oct15,gaps,i,Texas,union cost: change from the central,accrual,low,0.8238,bn
+oct15,gaps,i,Texas,union cost,accrual,low,84.7967,bn
+oct15,gaps,i,Texas,union cost: change from the central,accrual,low,0.8237,bn
 oct15,gaps,i,Texas,white cost at union ages,accrual,low,-29.9505,bn
 oct15,gaps,i,Texas,white cost at union ages: change from the central,accrual,low,1.8023,bn
-oct15,gaps,i,rest of US,gap,accrual,low,162.4063,bn
-oct15,gaps,i,rest of US,gap: change from the central,accrual,low,0.0053,bn
-oct15,gaps,i,rest of US,union cost,accrual,low,143.4198,bn
+oct15,gaps,i,rest of US,gap,accrual,low,161.1362,bn
+oct15,gaps,i,rest of US,gap: change from the central,accrual,low,0.0052,bn
+oct15,gaps,i,rest of US,union cost,accrual,low,142.1498,bn
 oct15,gaps,i,rest of US,union cost: change from the central,accrual,low,0.0000,bn
 oct15,gaps,i,rest of US,white cost at union ages,accrual,low,-18.9865,bn
 oct15,gaps,i,rest of US,white cost at union ages: change from the central,accrual,low,-0.0053,bn
-oct15,gaps,i,"local gap (California, Texas, rest of US)",gap,accrual,low,535.3946,bn
+oct15,gaps,i,"local gap (California, Texas, rest of US)",gap,accrual,low,532.1956,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",gap: change from the central,accrual,low,4.6791,bn
-oct15,gaps,i,"local gap (California, Texas, rest of US)",union cost,accrual,low,348.3155,bn
+oct15,gaps,i,"local gap (California, Texas, rest of US)",union cost,accrual,low,345.1165,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",union cost: change from the central,accrual,low,3.1112,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",white cost at union ages,accrual,low,-187.0791,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",white cost at union ages: change from the central,accrual,low,-1.5679,bn
-oct15,gaps,i,California,gap,accrual,high,245.1220,bn
+oct15,gaps,i,California,gap,accrual,high,244.2032,bn
 oct15,gaps,i,California,gap: change from the central,accrual,high,5.6524,bn
-oct15,gaps,i,California,union cost,accrual,high,148.6448,bn
-oct15,gaps,i,California,union cost: change from the central,accrual,high,2.2874,bn
+oct15,gaps,i,California,union cost,accrual,high,147.7261,bn
+oct15,gaps,i,California,union cost: change from the central,accrual,high,2.2875,bn
 oct15,gaps,i,California,white cost at union ages,accrual,high,-96.4771,bn
 oct15,gaps,i,California,white cost at union ages: change from the central,accrual,high,-3.3649,bn
-oct15,gaps,i,Texas,gap,accrual,high,110.5458,bn
+oct15,gaps,i,Texas,gap,accrual,high,109.5223,bn
 oct15,gaps,i,Texas,gap: change from the central,accrual,high,-0.9786,bn
-oct15,gaps,i,Texas,union cost,accrual,high,107.9386,bn
-oct15,gaps,i,Texas,union cost: change from the central,accrual,high,0.8238,bn
+oct15,gaps,i,Texas,union cost,accrual,high,106.9150,bn
+oct15,gaps,i,Texas,union cost: change from the central,accrual,high,0.8237,bn
 oct15,gaps,i,Texas,white cost at union ages,accrual,high,-2.6073,bn
 oct15,gaps,i,Texas,white cost at union ages: change from the central,accrual,high,1.8023,bn
-oct15,gaps,i,rest of US,gap,accrual,high,154.4471,bn
-oct15,gaps,i,rest of US,gap: change from the central,accrual,high,0.0052,bn
-oct15,gaps,i,rest of US,union cost,accrual,high,179.8759,bn
+oct15,gaps,i,rest of US,gap,accrual,high,153.1684,bn
+oct15,gaps,i,rest of US,gap: change from the central,accrual,high,0.0053,bn
+oct15,gaps,i,rest of US,union cost,accrual,high,178.5971,bn
 oct15,gaps,i,rest of US,union cost: change from the central,accrual,high,0.0000,bn
 oct15,gaps,i,rest of US,white cost at union ages,accrual,high,25.4288,bn
 oct15,gaps,i,rest of US,white cost at union ages: change from the central,accrual,high,-0.0052,bn
-oct15,gaps,i,"local gap (California, Texas, rest of US)",gap,accrual,high,510.1150,bn
+oct15,gaps,i,"local gap (California, Texas, rest of US)",gap,accrual,high,506.8939,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",gap: change from the central,accrual,high,4.6791,bn
-oct15,gaps,i,"local gap (California, Texas, rest of US)",union cost,accrual,high,436.4593,bn
+oct15,gaps,i,"local gap (California, Texas, rest of US)",union cost,accrual,high,433.2382,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",union cost: change from the central,accrual,high,3.1111,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",white cost at union ages,accrual,high,-73.6556,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",white cost at union ages: change from the central,accrual,high,-1.5678,bn
-oct15,gaps,i,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,low,545.4455,bn
+oct15,gaps,i,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,low,542.2464,bn
 oct15,gaps,i,A1 gap (third-plus non-Hispanic whites at their own ages),gap: change from the central,accrual,low,3.5636,bn
-oct15,gaps,i,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,high,521.5167,bn
+oct15,gaps,i,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,high,518.2956,bn
 oct15,gaps,i,A1 gap (third-plus non-Hispanic whites at their own ages),gap: change from the central,accrual,high,3.5636,bn
-oct15,gaps,i,California,gap,cash,low,276.7326,bn
-oct15,gaps,i,California,gap: change from the central,cash,low,5.6524,bn
-oct15,gaps,i,California,union cost,cash,low,92.7110,bn
-oct15,gaps,i,California,union cost: change from the central,cash,low,2.2874,bn
+oct15,gaps,i,California,gap,cash,low,275.8201,bn
+oct15,gaps,i,California,gap: change from the central,cash,low,5.6523,bn
+oct15,gaps,i,California,union cost,cash,low,91.7986,bn
+oct15,gaps,i,California,union cost: change from the central,cash,low,2.2875,bn
 oct15,gaps,i,California,white cost at union ages,cash,low,-184.0216,bn
 oct15,gaps,i,California,white cost at union ages: change from the central,cash,low,-3.3650,bn
-oct15,gaps,i,Texas,gap,cash,low,122.4519,bn
-oct15,gaps,i,Texas,gap: change from the central,cash,low,-0.9786,bn
-oct15,gaps,i,Texas,union cost,cash,low,71.1296,bn
+oct15,gaps,i,Texas,gap,cash,low,121.4354,bn
+oct15,gaps,i,Texas,gap: change from the central,cash,low,-0.9785,bn
+oct15,gaps,i,Texas,union cost,cash,low,70.1131,bn
 oct15,gaps,i,Texas,union cost: change from the central,cash,low,0.8237,bn
 oct15,gaps,i,Texas,white cost at union ages,cash,low,-51.3223,bn
 oct15,gaps,i,Texas,white cost at union ages: change from the central,cash,low,1.8023,bn
-oct15,gaps,i,rest of US,gap,cash,low,173.2898,bn
-oct15,gaps,i,rest of US,gap: change from the central,cash,low,0.0052,bn
-oct15,gaps,i,rest of US,union cost,cash,low,106.4733,bn
+oct15,gaps,i,rest of US,gap,cash,low,172.0198,bn
+oct15,gaps,i,rest of US,gap: change from the central,cash,low,0.0053,bn
+oct15,gaps,i,rest of US,union cost,cash,low,105.2032,bn
 oct15,gaps,i,rest of US,union cost: change from the central,cash,low,0.0000,bn
 oct15,gaps,i,rest of US,white cost at union ages,cash,low,-66.8166,bn
 oct15,gaps,i,rest of US,white cost at union ages: change from the central,cash,low,-0.0053,bn
-oct15,gaps,i,"local gap (California, Texas, rest of US)",gap,cash,low,572.4743,bn
+oct15,gaps,i,"local gap (California, Texas, rest of US)",gap,cash,low,569.2753,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",gap: change from the central,cash,low,4.6791,bn
-oct15,gaps,i,"local gap (California, Texas, rest of US)",union cost,cash,low,270.3139,bn
+oct15,gaps,i,"local gap (California, Texas, rest of US)",union cost,cash,low,267.1149,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",union cost: change from the central,cash,low,3.1112,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",white cost at union ages,cash,low,-302.1604,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",white cost at union ages: change from the central,cash,low,-1.5679,bn
-oct15,gaps,i,California,gap,cash,high,264.6301,bn
+oct15,gaps,i,California,gap,cash,high,263.7113,bn
 oct15,gaps,i,California,gap: change from the central,cash,high,5.6524,bn
-oct15,gaps,i,California,union cost,cash,high,122.2734,bn
+oct15,gaps,i,California,union cost,cash,high,121.3546,bn
 oct15,gaps,i,California,union cost: change from the central,cash,high,2.2874,bn
 oct15,gaps,i,California,white cost at union ages,cash,high,-142.3567,bn
 oct15,gaps,i,California,white cost at union ages: change from the central,cash,high,-3.3650,bn
-oct15,gaps,i,Texas,gap,cash,high,117.2339,bn
+oct15,gaps,i,Texas,gap,cash,high,116.2104,bn
 oct15,gaps,i,Texas,gap: change from the central,cash,high,-0.9786,bn
-oct15,gaps,i,Texas,union cost,cash,high,93.2549,bn
+oct15,gaps,i,Texas,union cost,cash,high,92.2314,bn
 oct15,gaps,i,Texas,union cost: change from the central,cash,high,0.8237,bn
 oct15,gaps,i,Texas,white cost at union ages,cash,high,-23.9790,bn
 oct15,gaps,i,Texas,white cost at union ages: change from the central,cash,high,1.8023,bn
-oct15,gaps,i,rest of US,gap,cash,high,165.3307,bn
-oct15,gaps,i,rest of US,gap: change from the central,cash,high,0.0053,bn
-oct15,gaps,i,rest of US,union cost,cash,high,142.9294,bn
+oct15,gaps,i,rest of US,gap,cash,high,164.0519,bn
+oct15,gaps,i,rest of US,gap: change from the central,cash,high,0.0052,bn
+oct15,gaps,i,rest of US,union cost,cash,high,141.6506,bn
 oct15,gaps,i,rest of US,union cost: change from the central,cash,high,0.0000,bn
 oct15,gaps,i,rest of US,white cost at union ages,cash,high,-22.4013,bn
 oct15,gaps,i,rest of US,white cost at union ages: change from the central,cash,high,-0.0052,bn
-oct15,gaps,i,"local gap (California, Texas, rest of US)",gap,cash,high,547.1947,bn
+oct15,gaps,i,"local gap (California, Texas, rest of US)",gap,cash,high,543.9736,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",gap: change from the central,cash,high,4.6790,bn
-oct15,gaps,i,"local gap (California, Texas, rest of US)",union cost,cash,high,358.4577,bn
+oct15,gaps,i,"local gap (California, Texas, rest of US)",union cost,cash,high,355.2366,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",union cost: change from the central,cash,high,3.1112,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",white cost at union ages,cash,high,-188.7370,bn
 oct15,gaps,i,"local gap (California, Texas, rest of US)",white cost at union ages: change from the central,cash,high,-1.5679,bn
-oct15,gaps,i,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,low,378.5476,bn
+oct15,gaps,i,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,low,375.3486,bn
 oct15,gaps,i,A1 gap (third-plus non-Hispanic whites at their own ages),gap: change from the central,cash,low,3.5636,bn
-oct15,gaps,i,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,high,354.6188,bn
+oct15,gaps,i,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,high,351.3978,bn
 oct15,gaps,i,A1 gap (third-plus non-Hispanic whites at their own ages),gap: change from the central,cash,high,3.5636,bn
-oct15,gaps,ii,California,gap,accrual,low,264.7468,bn
-oct15,gaps,ii,California,gap: change from the central,accrual,low,13.1747,bn
-oct15,gaps,ii,California,union cost,accrual,low,117.0249,bn
+oct15,gaps,ii,California,gap,accrual,low,263.8343,bn
+oct15,gaps,ii,California,gap: change from the central,accrual,low,13.1746,bn
+oct15,gaps,ii,California,union cost,accrual,low,116.1124,bn
 oct15,gaps,ii,California,union cost: change from the central,accrual,low,0.2299,bn
 oct15,gaps,ii,California,white cost at union ages,accrual,low,-147.7219,bn
 oct15,gaps,ii,California,white cost at union ages: change from the central,accrual,low,-12.9448,bn
-oct15,gaps,ii,Texas,gap,accrual,low,113.0405,bn
+oct15,gaps,ii,Texas,gap,accrual,low,112.0240,bn
 oct15,gaps,ii,Texas,gap: change from the central,accrual,low,-3.7019,bn
-oct15,gaps,ii,Texas,union cost,accrual,low,87.0427,bn
+oct15,gaps,ii,Texas,union cost,accrual,low,86.0262,bn
 oct15,gaps,ii,Texas,union cost: change from the central,accrual,low,2.0532,bn
 oct15,gaps,ii,Texas,white cost at union ages,accrual,low,-25.9978,bn
 oct15,gaps,ii,Texas,white cost at union ages: change from the central,accrual,low,5.7550,bn
-oct15,gaps,ii,rest of US,gap,accrual,low,162.3980,bn
+oct15,gaps,ii,rest of US,gap,accrual,low,161.1280,bn
 oct15,gaps,ii,rest of US,gap: change from the central,accrual,low,-0.0030,bn
-oct15,gaps,ii,rest of US,union cost,accrual,low,143.6518,bn
+oct15,gaps,ii,rest of US,union cost,accrual,low,142.3818,bn
 oct15,gaps,ii,rest of US,union cost: change from the central,accrual,low,0.2320,bn
 oct15,gaps,ii,rest of US,white cost at union ages,accrual,low,-18.7462,bn
 oct15,gaps,ii,rest of US,white cost at union ages: change from the central,accrual,low,0.2350,bn
-oct15,gaps,ii,"local gap (California, Texas, rest of US)",gap,accrual,low,540.1853,bn
+oct15,gaps,ii,"local gap (California, Texas, rest of US)",gap,accrual,low,536.9863,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",gap: change from the central,accrual,low,9.4698,bn
-oct15,gaps,ii,"local gap (California, Texas, rest of US)",union cost,accrual,low,347.7195,bn
+oct15,gaps,ii,"local gap (California, Texas, rest of US)",union cost,accrual,low,344.5205,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",union cost: change from the central,accrual,low,2.5152,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",white cost at union ages,accrual,low,-192.4659,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",white cost at union ages: change from the central,accrual,low,-6.9547,bn
-oct15,gaps,ii,California,gap,accrual,high,252.6443,bn
+oct15,gaps,ii,California,gap,accrual,high,251.7255,bn
 oct15,gaps,ii,California,gap: change from the central,accrual,high,13.1747,bn
-oct15,gaps,ii,California,union cost,accrual,high,146.5873,bn
+oct15,gaps,ii,California,union cost,accrual,high,145.6685,bn
 oct15,gaps,ii,California,union cost: change from the central,accrual,high,0.2299,bn
 oct15,gaps,ii,California,white cost at union ages,accrual,high,-106.0570,bn
 oct15,gaps,ii,California,white cost at union ages: change from the central,accrual,high,-12.9448,bn
-oct15,gaps,ii,Texas,gap,accrual,high,107.8226,bn
+oct15,gaps,ii,Texas,gap,accrual,high,106.7991,bn
 oct15,gaps,ii,Texas,gap: change from the central,accrual,high,-3.7018,bn
-oct15,gaps,ii,Texas,union cost,accrual,high,109.1680,bn
+oct15,gaps,ii,Texas,union cost,accrual,high,108.1445,bn
 oct15,gaps,ii,Texas,union cost: change from the central,accrual,high,2.0532,bn
 oct15,gaps,ii,Texas,white cost at union ages,accrual,high,1.3454,bn
 oct15,gaps,ii,Texas,white cost at union ages: change from the central,accrual,high,5.7550,bn
-oct15,gaps,ii,rest of US,gap,accrual,high,154.4389,bn
+oct15,gaps,ii,rest of US,gap,accrual,high,153.1601,bn
 oct15,gaps,ii,rest of US,gap: change from the central,accrual,high,-0.0030,bn
-oct15,gaps,ii,rest of US,union cost,accrual,high,180.1080,bn
+oct15,gaps,ii,rest of US,union cost,accrual,high,178.8292,bn
 oct15,gaps,ii,rest of US,union cost: change from the central,accrual,high,0.2321,bn
 oct15,gaps,ii,rest of US,white cost at union ages,accrual,high,25.6691,bn
 oct15,gaps,ii,rest of US,white cost at union ages: change from the central,accrual,high,0.2351,bn
-oct15,gaps,ii,"local gap (California, Texas, rest of US)",gap,accrual,high,514.9057,bn
+oct15,gaps,ii,"local gap (California, Texas, rest of US)",gap,accrual,high,511.6846,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",gap: change from the central,accrual,high,9.4698,bn
-oct15,gaps,ii,"local gap (California, Texas, rest of US)",union cost,accrual,high,435.8633,bn
+oct15,gaps,ii,"local gap (California, Texas, rest of US)",union cost,accrual,high,432.6422,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",union cost: change from the central,accrual,high,2.5151,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",white cost at union ages,accrual,high,-79.0425,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",white cost at union ages: change from the central,accrual,high,-6.9547,bn
-oct15,gaps,ii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,low,544.0794,bn
+oct15,gaps,ii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,low,540.8804,bn
 oct15,gaps,ii,A1 gap (third-plus non-Hispanic whites at their own ages),gap: change from the central,accrual,low,2.1976,bn
-oct15,gaps,ii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,high,520.1507,bn
+oct15,gaps,ii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,high,516.9296,bn
 oct15,gaps,ii,A1 gap (third-plus non-Hispanic whites at their own ages),gap: change from the central,accrual,high,2.1976,bn
-oct15,gaps,ii,California,gap,cash,low,284.2549,bn
-oct15,gaps,ii,California,gap: change from the central,cash,low,13.1747,bn
-oct15,gaps,ii,California,union cost,cash,low,90.6535,bn
+oct15,gaps,ii,California,gap,cash,low,283.3424,bn
+oct15,gaps,ii,California,gap: change from the central,cash,low,13.1746,bn
+oct15,gaps,ii,California,union cost,cash,low,89.7410,bn
 oct15,gaps,ii,California,union cost: change from the central,cash,low,0.2299,bn
 oct15,gaps,ii,California,white cost at union ages,cash,low,-193.6014,bn
 oct15,gaps,ii,California,white cost at union ages: change from the central,cash,low,-12.9448,bn
-oct15,gaps,ii,Texas,gap,cash,low,119.7286,bn
-oct15,gaps,ii,Texas,gap: change from the central,cash,low,-3.7019,bn
-oct15,gaps,ii,Texas,union cost,cash,low,72.3591,bn
+oct15,gaps,ii,Texas,gap,cash,low,118.7121,bn
+oct15,gaps,ii,Texas,gap: change from the central,cash,low,-3.7018,bn
+oct15,gaps,ii,Texas,union cost,cash,low,71.3426,bn
 oct15,gaps,ii,Texas,union cost: change from the central,cash,low,2.0532,bn
 oct15,gaps,ii,Texas,white cost at union ages,cash,low,-47.3696,bn
 oct15,gaps,ii,Texas,white cost at union ages: change from the central,cash,low,5.7550,bn
-oct15,gaps,ii,rest of US,gap,cash,low,173.2815,bn
-oct15,gaps,ii,rest of US,gap: change from the central,cash,low,-0.0031,bn
-oct15,gaps,ii,rest of US,union cost,cash,low,106.7053,bn
-oct15,gaps,ii,rest of US,union cost: change from the central,cash,low,0.2320,bn
+oct15,gaps,ii,rest of US,gap,cash,low,172.0115,bn
+oct15,gaps,ii,rest of US,gap: change from the central,cash,low,-0.0030,bn
+oct15,gaps,ii,rest of US,union cost,cash,low,105.4353,bn
+oct15,gaps,ii,rest of US,union cost: change from the central,cash,low,0.2321,bn
 oct15,gaps,ii,rest of US,white cost at union ages,cash,low,-66.5763,bn
 oct15,gaps,ii,rest of US,white cost at union ages: change from the central,cash,low,0.2350,bn
-oct15,gaps,ii,"local gap (California, Texas, rest of US)",gap,cash,low,577.2651,bn
+oct15,gaps,ii,"local gap (California, Texas, rest of US)",gap,cash,low,574.0661,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",gap: change from the central,cash,low,9.4699,bn
-oct15,gaps,ii,"local gap (California, Texas, rest of US)",union cost,cash,low,269.7178,bn
+oct15,gaps,ii,"local gap (California, Texas, rest of US)",union cost,cash,low,266.5188,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",union cost: change from the central,cash,low,2.5151,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",white cost at union ages,cash,low,-307.5472,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",white cost at union ages: change from the central,cash,low,-6.9547,bn
-oct15,gaps,ii,California,gap,cash,high,272.1524,bn
+oct15,gaps,ii,California,gap,cash,high,271.2336,bn
 oct15,gaps,ii,California,gap: change from the central,cash,high,13.1747,bn
-oct15,gaps,ii,California,union cost,cash,high,120.2159,bn
+oct15,gaps,ii,California,union cost,cash,high,119.2971,bn
 oct15,gaps,ii,California,union cost: change from the central,cash,high,0.2299,bn
 oct15,gaps,ii,California,white cost at union ages,cash,high,-151.9365,bn
 oct15,gaps,ii,California,white cost at union ages: change from the central,cash,high,-12.9448,bn
-oct15,gaps,ii,Texas,gap,cash,high,114.5107,bn
-oct15,gaps,ii,Texas,gap: change from the central,cash,high,-3.7018,bn
-oct15,gaps,ii,Texas,union cost,cash,high,94.4844,bn
+oct15,gaps,ii,Texas,gap,cash,high,113.4871,bn
+oct15,gaps,ii,Texas,gap: change from the central,cash,high,-3.7019,bn
+oct15,gaps,ii,Texas,union cost,cash,high,93.4609,bn
 oct15,gaps,ii,Texas,union cost: change from the central,cash,high,2.0532,bn
 oct15,gaps,ii,Texas,white cost at union ages,cash,high,-20.0263,bn
 oct15,gaps,ii,Texas,white cost at union ages: change from the central,cash,high,5.7550,bn
-oct15,gaps,ii,rest of US,gap,cash,high,165.3224,bn
-oct15,gaps,ii,rest of US,gap: change from the central,cash,high,-0.0030,bn
-oct15,gaps,ii,rest of US,union cost,cash,high,143.1614,bn
+oct15,gaps,ii,rest of US,gap,cash,high,164.0436,bn
+oct15,gaps,ii,rest of US,gap: change from the central,cash,high,-0.0031,bn
+oct15,gaps,ii,rest of US,union cost,cash,high,141.8826,bn
 oct15,gaps,ii,rest of US,union cost: change from the central,cash,high,0.2320,bn
 oct15,gaps,ii,rest of US,white cost at union ages,cash,high,-22.1610,bn
 oct15,gaps,ii,rest of US,white cost at union ages: change from the central,cash,high,0.2351,bn
-oct15,gaps,ii,"local gap (California, Texas, rest of US)",gap,cash,high,551.9855,bn
+oct15,gaps,ii,"local gap (California, Texas, rest of US)",gap,cash,high,548.7644,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",gap: change from the central,cash,high,9.4698,bn
-oct15,gaps,ii,"local gap (California, Texas, rest of US)",union cost,cash,high,357.8617,bn
+oct15,gaps,ii,"local gap (California, Texas, rest of US)",union cost,cash,high,354.6406,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",union cost: change from the central,cash,high,2.5152,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",white cost at union ages,cash,high,-194.1238,bn
 oct15,gaps,ii,"local gap (California, Texas, rest of US)",white cost at union ages: change from the central,cash,high,-6.9547,bn
-oct15,gaps,ii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,low,377.1815,bn
+oct15,gaps,ii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,low,373.9825,bn
 oct15,gaps,ii,A1 gap (third-plus non-Hispanic whites at their own ages),gap: change from the central,cash,low,2.1976,bn
-oct15,gaps,ii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,high,353.2528,bn
+oct15,gaps,ii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,high,350.0317,bn
 oct15,gaps,ii,A1 gap (third-plus non-Hispanic whites at their own ages),gap: change from the central,cash,high,2.1976,bn
-oct15,gaps,iii,California,gap,accrual,low,264.7674,bn
-oct15,gaps,iii,California,gap: change from the central,accrual,low,13.1953,bn
-oct15,gaps,iii,California,union cost,accrual,low,117.0453,bn
+oct15,gaps,iii,California,gap,accrual,low,263.8549,bn
+oct15,gaps,iii,California,gap: change from the central,accrual,low,13.1952,bn
+oct15,gaps,iii,California,union cost,accrual,low,116.1328,bn
 oct15,gaps,iii,California,union cost: change from the central,accrual,low,0.2503,bn
 oct15,gaps,iii,California,white cost at union ages,accrual,low,-147.7221,bn
 oct15,gaps,iii,California,white cost at union ages: change from the central,accrual,low,-12.9450,bn
-oct15,gaps,iii,Texas,gap,accrual,low,113.0500,bn
+oct15,gaps,iii,Texas,gap,accrual,low,112.0335,bn
 oct15,gaps,iii,Texas,gap: change from the central,accrual,low,-3.6924,bn
-oct15,gaps,iii,Texas,union cost,accrual,low,87.0551,bn
+oct15,gaps,iii,Texas,union cost,accrual,low,86.0386,bn
 oct15,gaps,iii,Texas,union cost: change from the central,accrual,low,2.0656,bn
 oct15,gaps,iii,Texas,white cost at union ages,accrual,low,-25.9949,bn
 oct15,gaps,iii,Texas,white cost at union ages: change from the central,accrual,low,5.7579,bn
-oct15,gaps,iii,rest of US,gap,accrual,low,162.1938,bn
+oct15,gaps,iii,rest of US,gap,accrual,low,160.9238,bn
 oct15,gaps,iii,rest of US,gap: change from the central,accrual,low,-0.2072,bn
-oct15,gaps,iii,rest of US,union cost,accrual,low,143.4025,bn
-oct15,gaps,iii,rest of US,union cost: change from the central,accrual,low,-0.0173,bn
+oct15,gaps,iii,rest of US,union cost,accrual,low,142.1324,bn
+oct15,gaps,iii,rest of US,union cost: change from the central,accrual,low,-0.0174,bn
 oct15,gaps,iii,rest of US,white cost at union ages,accrual,low,-18.7914,bn
 oct15,gaps,iii,rest of US,white cost at union ages: change from the central,accrual,low,0.1898,bn
-oct15,gaps,iii,"local gap (California, Texas, rest of US)",gap,accrual,low,540.0112,bn
+oct15,gaps,iii,"local gap (California, Texas, rest of US)",gap,accrual,low,536.8122,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",gap: change from the central,accrual,low,9.2957,bn
-oct15,gaps,iii,"local gap (California, Texas, rest of US)",union cost,accrual,low,347.5028,bn
+oct15,gaps,iii,"local gap (California, Texas, rest of US)",union cost,accrual,low,344.3038,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",union cost: change from the central,accrual,low,2.2985,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",white cost at union ages,accrual,low,-192.5084,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",white cost at union ages: change from the central,accrual,low,-6.9972,bn
-oct15,gaps,iii,California,gap,accrual,high,252.6649,bn
+oct15,gaps,iii,California,gap,accrual,high,251.7461,bn
 oct15,gaps,iii,California,gap: change from the central,accrual,high,13.1953,bn
-oct15,gaps,iii,California,union cost,accrual,high,146.6077,bn
+oct15,gaps,iii,California,union cost,accrual,high,145.6889,bn
 oct15,gaps,iii,California,union cost: change from the central,accrual,high,0.2503,bn
 oct15,gaps,iii,California,white cost at union ages,accrual,high,-106.0572,bn
 oct15,gaps,iii,California,white cost at union ages: change from the central,accrual,high,-12.9450,bn
-oct15,gaps,iii,Texas,gap,accrual,high,107.8320,bn
+oct15,gaps,iii,Texas,gap,accrual,high,106.8085,bn
 oct15,gaps,iii,Texas,gap: change from the central,accrual,high,-3.6924,bn
-oct15,gaps,iii,Texas,union cost,accrual,high,109.1804,bn
+oct15,gaps,iii,Texas,union cost,accrual,high,108.1569,bn
 oct15,gaps,iii,Texas,union cost: change from the central,accrual,high,2.0656,bn
 oct15,gaps,iii,Texas,white cost at union ages,accrual,high,1.3484,bn
 oct15,gaps,iii,Texas,white cost at union ages: change from the central,accrual,high,5.7580,bn
-oct15,gaps,iii,rest of US,gap,accrual,high,154.2347,bn
+oct15,gaps,iii,rest of US,gap,accrual,high,152.9559,bn
 oct15,gaps,iii,rest of US,gap: change from the central,accrual,high,-0.2072,bn
-oct15,gaps,iii,rest of US,union cost,accrual,high,179.8586,bn
+oct15,gaps,iii,rest of US,union cost,accrual,high,178.5798,bn
 oct15,gaps,iii,rest of US,union cost: change from the central,accrual,high,-0.0173,bn
 oct15,gaps,iii,rest of US,white cost at union ages,accrual,high,25.6239,bn
 oct15,gaps,iii,rest of US,white cost at union ages: change from the central,accrual,high,0.1899,bn
-oct15,gaps,iii,"local gap (California, Texas, rest of US)",gap,accrual,high,514.7316,bn
+oct15,gaps,iii,"local gap (California, Texas, rest of US)",gap,accrual,high,511.5105,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",gap: change from the central,accrual,high,9.2957,bn
-oct15,gaps,iii,"local gap (California, Texas, rest of US)",union cost,accrual,high,435.6467,bn
+oct15,gaps,iii,"local gap (California, Texas, rest of US)",union cost,accrual,high,432.4256,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",union cost: change from the central,accrual,high,2.2985,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",white cost at union ages,accrual,high,-79.0849,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",white cost at union ages: change from the central,accrual,high,-6.9971,bn
-oct15,gaps,iii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,low,543.8285,bn
+oct15,gaps,iii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,low,540.6295,bn
 oct15,gaps,iii,A1 gap (third-plus non-Hispanic whites at their own ages),gap: change from the central,accrual,low,1.9467,bn
-oct15,gaps,iii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,high,519.8997,bn
+oct15,gaps,iii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,accrual,high,516.6786,bn
 oct15,gaps,iii,A1 gap (third-plus non-Hispanic whites at their own ages),gap: change from the central,accrual,high,1.9467,bn
-oct15,gaps,iii,California,gap,cash,low,284.2755,bn
-oct15,gaps,iii,California,gap: change from the central,cash,low,13.1953,bn
-oct15,gaps,iii,California,union cost,cash,low,90.6739,bn
+oct15,gaps,iii,California,gap,cash,low,283.3630,bn
+oct15,gaps,iii,California,gap: change from the central,cash,low,13.1952,bn
+oct15,gaps,iii,California,union cost,cash,low,89.7614,bn
 oct15,gaps,iii,California,union cost: change from the central,cash,low,0.2503,bn
 oct15,gaps,iii,California,white cost at union ages,cash,low,-193.6016,bn
 oct15,gaps,iii,California,white cost at union ages: change from the central,cash,low,-12.9450,bn
-oct15,gaps,iii,Texas,gap,cash,low,119.7381,bn
+oct15,gaps,iii,Texas,gap,cash,low,118.7215,bn
 oct15,gaps,iii,Texas,gap: change from the central,cash,low,-3.6924,bn
-oct15,gaps,iii,Texas,union cost,cash,low,72.3714,bn
+oct15,gaps,iii,Texas,union cost,cash,low,71.3549,bn
 oct15,gaps,iii,Texas,union cost: change from the central,cash,low,2.0655,bn
 oct15,gaps,iii,Texas,white cost at union ages,cash,low,-47.3666,bn
 oct15,gaps,iii,Texas,white cost at union ages: change from the central,cash,low,5.7580,bn
-oct15,gaps,iii,rest of US,gap,cash,low,173.0774,bn
-oct15,gaps,iii,rest of US,gap: change from the central,cash,low,-0.2072,bn
-oct15,gaps,iii,rest of US,union cost,cash,low,106.4559,bn
-oct15,gaps,iii,rest of US,union cost: change from the central,cash,low,-0.0174,bn
+oct15,gaps,iii,rest of US,gap,cash,low,171.8074,bn
+oct15,gaps,iii,rest of US,gap: change from the central,cash,low,-0.2071,bn
+oct15,gaps,iii,rest of US,union cost,cash,low,105.1859,bn
+oct15,gaps,iii,rest of US,union cost: change from the central,cash,low,-0.0173,bn
 oct15,gaps,iii,rest of US,white cost at union ages,cash,low,-66.6215,bn
 oct15,gaps,iii,rest of US,white cost at union ages: change from the central,cash,low,0.1898,bn
-oct15,gaps,iii,"local gap (California, Texas, rest of US)",gap,cash,low,577.0909,bn
+oct15,gaps,iii,"local gap (California, Texas, rest of US)",gap,cash,low,573.8919,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",gap: change from the central,cash,low,9.2957,bn
-oct15,gaps,iii,"local gap (California, Texas, rest of US)",union cost,cash,low,269.5012,bn
+oct15,gaps,iii,"local gap (California, Texas, rest of US)",union cost,cash,low,266.3022,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",union cost: change from the central,cash,low,2.2985,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",white cost at union ages,cash,low,-307.5897,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",white cost at union ages: change from the central,cash,low,-6.9972,bn
-oct15,gaps,iii,California,gap,cash,high,272.1730,bn
+oct15,gaps,iii,California,gap,cash,high,271.2542,bn
 oct15,gaps,iii,California,gap: change from the central,cash,high,13.1953,bn
-oct15,gaps,iii,California,union cost,cash,high,120.2363,bn
+oct15,gaps,iii,California,union cost,cash,high,119.3175,bn
 oct15,gaps,iii,California,union cost: change from the central,cash,high,0.2503,bn
 oct15,gaps,iii,California,white cost at union ages,cash,high,-151.9367,bn
 oct15,gaps,iii,California,white cost at union ages: change from the central,cash,high,-12.9450,bn
-oct15,gaps,iii,Texas,gap,cash,high,114.5201,bn
+oct15,gaps,iii,Texas,gap,cash,high,113.4966,bn
 oct15,gaps,iii,Texas,gap: change from the central,cash,high,-3.6924,bn
-oct15,gaps,iii,Texas,union cost,cash,high,94.4968,bn
-oct15,gaps,iii,Texas,union cost: change from the central,cash,high,2.0656,bn
+oct15,gaps,iii,Texas,union cost,cash,high,93.4732,bn
+oct15,gaps,iii,Texas,union cost: change from the central,cash,high,2.0655,bn
 oct15,gaps,iii,Texas,white cost at union ages,cash,high,-20.0233,bn
 oct15,gaps,iii,Texas,white cost at union ages: change from the central,cash,high,5.7580,bn
-oct15,gaps,iii,rest of US,gap,cash,high,165.1183,bn
-oct15,gaps,iii,rest of US,gap: change from the central,cash,high,-0.2071,bn
-oct15,gaps,iii,rest of US,union cost,cash,high,142.9120,bn
-oct15,gaps,iii,rest of US,union cost: change from the central,cash,high,-0.0174,bn
+oct15,gaps,iii,rest of US,gap,cash,high,163.8395,bn
+oct15,gaps,iii,rest of US,gap: change from the central,cash,high,-0.2072,bn
+oct15,gaps,iii,rest of US,union cost,cash,high,141.6333,bn
+oct15,gaps,iii,rest of US,union cost: change from the central,cash,high,-0.0173,bn
 oct15,gaps,iii,rest of US,white cost at union ages,cash,high,-22.2062,bn
 oct15,gaps,iii,rest of US,white cost at union ages: change from the central,cash,high,0.1899,bn
-oct15,gaps,iii,"local gap (California, Texas, rest of US)",gap,cash,high,551.8114,bn
+oct15,gaps,iii,"local gap (California, Texas, rest of US)",gap,cash,high,548.5903,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",gap: change from the central,cash,high,9.2957,bn
-oct15,gaps,iii,"local gap (California, Texas, rest of US)",union cost,cash,high,357.6451,bn
+oct15,gaps,iii,"local gap (California, Texas, rest of US)",union cost,cash,high,354.4240,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",union cost: change from the central,cash,high,2.2986,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",white cost at union ages,cash,high,-194.1663,bn
 oct15,gaps,iii,"local gap (California, Texas, rest of US)",white cost at union ages: change from the central,cash,high,-6.9972,bn
-oct15,gaps,iii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,low,376.9306,bn
+oct15,gaps,iii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,low,373.7316,bn
 oct15,gaps,iii,A1 gap (third-plus non-Hispanic whites at their own ages),gap: change from the central,cash,low,1.9467,bn
-oct15,gaps,iii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,high,353.0019,bn
+oct15,gaps,iii,A1 gap (third-plus non-Hispanic whites at their own ages),gap,cash,high,349.7808,bn
 oct15,gaps,iii,A1 gap (third-plus non-Hispanic whites at their own ages),gap: change from the central,cash,high,1.9467,bn

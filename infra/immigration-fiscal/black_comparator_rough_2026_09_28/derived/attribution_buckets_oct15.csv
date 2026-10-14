@@ -174,7 +174,7 @@ a,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,w
 4,accrual,low,mexican_origin_rough,capital return,37.6866,3.5145,0.0000,oct15,whole-population mortality
 4,accrual,low,mexican_origin_rough,production gain (subtracted),-11.9095,-0.2296,0.0000,oct15,whole-population mortality
 4,accrual,low,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,10.7400,10.7400,0.0000,oct15,whole-population mortality
-4,accrual,low,mexican_origin_rough,lineage post-engine coverage_bn,12.0018,12.0018,0.0000,oct15,whole-population mortality
+4,accrual,low,mexican_origin_rough,lineage post-engine coverage_bn,8.8028,8.8028,0.0000,oct15,whole-population mortality
 4,accrual,low,nh_black_rough,income taxes,-184.2219,0.0000,34.3534,oct15,whole-population mortality
 4,accrual,low,nh_black_rough,payroll taxes and Medicare premiums,-194.3579,0.0000,17.5866,oct15,whole-population mortality
 4,accrual,low,nh_black_rough,"sales, excise, customs, fees",-123.2033,0.0000,4.1183,oct15,whole-population mortality
@@ -190,7 +190,7 @@ a,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,w
 4,accrual,low,nh_black_rough,capital return,35.6347,0.0000,2.0519,oct15,whole-population mortality
 4,accrual,low,nh_black_rough,production gain (subtracted),0.0000,0.0000,-11.9095,oct15,whole-population mortality
 4,accrual,low,nh_black_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,10.7400,oct15,whole-population mortality
-4,accrual,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,12.0018,oct15,whole-population mortality
+4,accrual,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,8.8028,oct15,whole-population mortality
 5,accrual,low,mexican_origin_rough,income taxes,-153.4138,-3.5453,0.0000,oct15,whole-population mortality
 5,accrual,low,mexican_origin_rough,payroll taxes and Medicare premiums,-176.7713,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,low,mexican_origin_rough,"sales, excise, customs, fees",-119.0851,0.0000,0.0000,oct15,whole-population mortality
@@ -206,7 +206,7 @@ a,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,w
 5,accrual,low,mexican_origin_rough,capital return,37.6866,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,low,mexican_origin_rough,production gain (subtracted),-11.9095,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,low,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,10.7400,0.0000,0.0000,oct15,whole-population mortality
-5,accrual,low,mexican_origin_rough,lineage post-engine coverage_bn,12.0018,0.0000,0.0000,oct15,whole-population mortality
+5,accrual,low,mexican_origin_rough,lineage post-engine coverage_bn,8.8028,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,low,nh_black_rough,income taxes,-212.7596,-28.5377,59.3457,oct15,whole-population mortality
 5,accrual,low,nh_black_rough,payroll taxes and Medicare premiums,-194.3579,0.0000,17.5866,oct15,whole-population mortality
 5,accrual,low,nh_black_rough,"sales, excise, customs, fees",-123.2033,0.0000,4.1183,oct15,whole-population mortality
@@ -222,7 +222,7 @@ a,cash,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,w
 5,accrual,low,nh_black_rough,capital return,35.6347,0.0000,2.0519,oct15,whole-population mortality
 5,accrual,low,nh_black_rough,production gain (subtracted),0.0000,0.0000,-11.9095,oct15,whole-population mortality
 5,accrual,low,nh_black_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,10.7400,oct15,whole-population mortality
-5,accrual,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,12.0018,oct15,whole-population mortality
+5,accrual,low,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,8.8028,oct15,whole-population mortality
 a,cash,high,mexican_origin_rough,income taxes,-141.3373,,0.0000,oct15,whole-population mortality
 a,cash,high,mexican_origin_rough,payroll taxes and Medicare premiums,-168.9896,,0.0000,oct15,whole-population mortality
 a,cash,high,mexican_origin_rough,"sales, excise, customs, fees",-101.9563,,0.0000,oct15,whole-population mortality
@@ -398,7 +398,7 @@ a,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,
 4,accrual,high,mexican_origin_rough,capital return,61.9795,5.7179,0.0000,oct15,whole-population mortality
 4,accrual,high,mexican_origin_rough,production gain (subtracted),-7.8343,-0.1510,0.0000,oct15,whole-population mortality
 4,accrual,high,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,14.5317,14.5317,0.0000,oct15,whole-population mortality
-4,accrual,high,mexican_origin_rough,lineage post-engine coverage_bn,15.8599,15.8599,0.0000,oct15,whole-population mortality
+4,accrual,high,mexican_origin_rough,lineage post-engine coverage_bn,12.6388,12.6388,0.0000,oct15,whole-population mortality
 4,accrual,high,nh_black_rough,income taxes,-184.2219,0.0000,34.3534,oct15,whole-population mortality
 4,accrual,high,nh_black_rough,payroll taxes and Medicare premiums,-194.3579,0.0000,17.5866,oct15,whole-population mortality
 4,accrual,high,nh_black_rough,"sales, excise, customs, fees",-123.2033,0.0000,4.1183,oct15,whole-population mortality
@@ -414,7 +414,7 @@ a,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,
 4,accrual,high,nh_black_rough,capital return,58.5882,0.0000,3.3913,oct15,whole-population mortality
 4,accrual,high,nh_black_rough,production gain (subtracted),0.0000,0.0000,-7.8343,oct15,whole-population mortality
 4,accrual,high,nh_black_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,14.5317,oct15,whole-population mortality
-4,accrual,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,15.8599,oct15,whole-population mortality
+4,accrual,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,12.6388,oct15,whole-population mortality
 5,accrual,high,mexican_origin_rough,income taxes,-153.4138,-3.5453,0.0000,oct15,whole-population mortality
 5,accrual,high,mexican_origin_rough,payroll taxes and Medicare premiums,-176.7713,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,high,mexican_origin_rough,"sales, excise, customs, fees",-119.0851,0.0000,0.0000,oct15,whole-population mortality
@@ -430,7 +430,7 @@ a,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,
 5,accrual,high,mexican_origin_rough,capital return,61.9795,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,high,mexican_origin_rough,production gain (subtracted),-7.8343,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,high,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,14.5317,0.0000,0.0000,oct15,whole-population mortality
-5,accrual,high,mexican_origin_rough,lineage post-engine coverage_bn,15.8599,0.0000,0.0000,oct15,whole-population mortality
+5,accrual,high,mexican_origin_rough,lineage post-engine coverage_bn,12.6388,0.0000,0.0000,oct15,whole-population mortality
 5,accrual,high,nh_black_rough,income taxes,-212.7596,-28.5377,59.3457,oct15,whole-population mortality
 5,accrual,high,nh_black_rough,payroll taxes and Medicare premiums,-194.3579,0.0000,17.5866,oct15,whole-population mortality
 5,accrual,high,nh_black_rough,"sales, excise, customs, fees",-123.2033,0.0000,4.1183,oct15,whole-population mortality
@@ -446,4 +446,4 @@ a,cash,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,,0.0000,oct15,
 5,accrual,high,nh_black_rough,capital return,58.5882,0.0000,3.3913,oct15,whole-population mortality
 5,accrual,high,nh_black_rough,production gain (subtracted),0.0000,0.0000,-7.8343,oct15,whole-population mortality
 5,accrual,high,nh_black_rough,lineage post-engine mixed_unit_removal_bn,0.0000,0.0000,14.5317,oct15,whole-population mortality
-5,accrual,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,15.8599,oct15,whole-population mortality
+5,accrual,high,nh_black_rough,lineage post-engine coverage_bn,0.0000,0.0000,12.6388,oct15,whole-population mortality

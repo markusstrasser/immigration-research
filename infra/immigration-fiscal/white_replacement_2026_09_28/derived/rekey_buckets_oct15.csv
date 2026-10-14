@@ -14,7 +14,7 @@ accrual,mexican_origin_engine,low,"per-head lines: government, defense, interest
 accrual,mexican_origin_engine,low,capital return,37.6233,832,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_engine,low,production gain (subtracted),-11.9095,-263,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_engine,low,lineage post-engine mixed_unit_removal_bn,10.7400,237,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,mexican_origin_engine,low,lineage post-engine coverage_bn,12.0018,265,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,lineage post-engine coverage_bn,8.8028,195,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,low,income taxes,-153.4138,-3392,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,low,payroll taxes and Medicare premiums,-176.7713,-3908,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,low,"sales, excise, customs, fees",-119.0851,-2633,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -30,7 +30,7 @@ accrual,mexican_origin_rough,low,"per-head lines: government, defense, interest,
 accrual,mexican_origin_rough,low,capital return,37.6866,833,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,low,production gain (subtracted),-11.9095,-263,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,low,lineage post-engine mixed_unit_removal_bn,10.7400,237,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,mexican_origin_rough,low,lineage post-engine coverage_bn,12.0018,265,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,lineage post-engine coverage_bn,8.8028,195,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,income taxes,-212.7596,-5071,59.3457,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,payroll taxes and Medicare premiums,-194.3579,-4633,17.5866,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,"sales, excise, customs, fees",-123.2033,-2937,4.1183,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -46,7 +46,7 @@ accrual,nh_black_rough,low,"per-head lines: government, defense, interest, roads
 accrual,nh_black_rough,low,capital return,35.6347,849,2.0519,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,nh_black_rough,low,lineage post-engine coverage_bn,0.0000,0,12.0018,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,nh_black_rough,low,lineage post-engine coverage_bn,0.0000,0,8.8028,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,income taxes,-454.2290,-10043,300.8151,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,payroll taxes and Medicare premiums,-283.8824,-6276,107.1111,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,"sales, excise, customs, fees",-183.3763,-4054,64.2913,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -62,7 +62,7 @@ accrual,A1_third_plus_nh_white,low,"per-head lines: government, defense, interes
 accrual,A1_third_plus_nh_white,low,capital return,36.1178,799,1.5688,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A1_third_plus_nh_white,low,lineage post-engine coverage_bn,0.0000,0,12.0018,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,lineage post-engine coverage_bn,0.0000,0,8.8028,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,low,income taxes,-453.8700,-10035,300.4562,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,low,payroll taxes and Medicare premiums,-282.6117,-6248,105.8404,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,low,"sales, excise, customs, fees",-183.6439,-4060,64.5588,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -78,7 +78,7 @@ accrual,A2_us_born_nh_white,low,"per-head lines: government, defense, interest, 
 accrual,A2_us_born_nh_white,low,capital return,36.2803,802,1.4063,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A2_us_born_nh_white,low,lineage post-engine coverage_bn,0.0000,0,12.0018,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,lineage post-engine coverage_bn,0.0000,0,8.8028,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,low,income taxes,-373.4541,-8257,220.0403,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,low,payroll taxes and Medicare premiums,-249.9545,-5526,73.1832,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,low,"sales, excise, customs, fees",-168.0888,-3716,49.0037,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -94,7 +94,7 @@ accrual,A3_third_plus_nh_white_at_union_ages,low,"per-head lines: government, de
 accrual,A3_third_plus_nh_white_at_union_ages,low,capital return,40.4027,893,-2.7161,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A3_third_plus_nh_white_at_union_ages,low,lineage post-engine coverage_bn,0.0000,0,12.0018,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,lineage post-engine coverage_bn,0.0000,0,8.8028,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,low,income taxes,-420.1512,-9289,266.7374,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,low,payroll taxes and Medicare premiums,-266.5694,-5894,89.7981,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,low,"sales, excise, customs, fees",-177.8706,-3933,58.7855,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -110,7 +110,7 @@ accrual,A4_third_plus_nh_white_stationary,low,"per-head lines: government, defen
 accrual,A4_third_plus_nh_white_stationary,low,capital return,36.9044,816,0.7823,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A4_third_plus_nh_white_stationary,low,lineage post-engine coverage_bn,0.0000,0,12.0018,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,lineage post-engine coverage_bn,0.0000,0,8.8028,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,low,income taxes,-384.7531,-8507,231.3393,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,low,payroll taxes and Medicare premiums,-259.2337,-5731,82.4624,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,low,"sales, excise, customs, fees",-165.6767,-3663,46.5916,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -126,7 +126,7 @@ accrual,all_residents_slice,low,"per-head lines: government, defense, interest, 
 accrual,all_residents_slice,low,capital return,38.2115,845,-0.5249,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,all_residents_slice,low,lineage post-engine coverage_bn,0.0000,0,12.0018,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,all_residents_slice,low,lineage post-engine coverage_bn,0.0000,0,8.8028,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_engine,high,income taxes,-140.7752,-3112,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_engine,high,payroll taxes and Medicare premiums,-164.9627,-3647,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_engine,high,"sales, excise, customs, fees",-119.8187,-2649,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -142,7 +142,7 @@ accrual,mexican_origin_engine,high,"per-head lines: government, defense, interes
 accrual,mexican_origin_engine,high,capital return,61.8888,1368,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_engine,high,production gain (subtracted),-7.8343,-173,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_engine,high,lineage post-engine mixed_unit_removal_bn,14.5317,321,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,mexican_origin_engine,high,lineage post-engine coverage_bn,15.8599,351,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,lineage post-engine coverage_bn,12.6388,279,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,high,income taxes,-153.4138,-3392,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,high,payroll taxes and Medicare premiums,-176.7713,-3908,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,high,"sales, excise, customs, fees",-119.0851,-2633,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -158,7 +158,7 @@ accrual,mexican_origin_rough,high,"per-head lines: government, defense, interest
 accrual,mexican_origin_rough,high,capital return,61.9795,1370,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,high,production gain (subtracted),-7.8343,-173,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,mexican_origin_rough,high,lineage post-engine mixed_unit_removal_bn,14.5317,321,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,mexican_origin_rough,high,lineage post-engine coverage_bn,15.8599,351,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,lineage post-engine coverage_bn,12.6388,279,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,income taxes,-212.7596,-5071,59.3457,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,payroll taxes and Medicare premiums,-194.3579,-4633,17.5866,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,"sales, excise, customs, fees",-123.2033,-2937,4.1183,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -174,7 +174,7 @@ accrual,nh_black_rough,high,"per-head lines: government, defense, interest, road
 accrual,nh_black_rough,high,capital return,58.5882,1396,3.3913,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,nh_black_rough,high,lineage post-engine coverage_bn,0.0000,0,15.8599,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,nh_black_rough,high,lineage post-engine coverage_bn,0.0000,0,12.6388,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,high,income taxes,-454.2290,-10043,300.8151,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,high,payroll taxes and Medicare premiums,-283.8824,-6276,107.1111,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,high,"sales, excise, customs, fees",-183.3763,-4054,64.2913,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -190,7 +190,7 @@ accrual,A1_third_plus_nh_white,high,"per-head lines: government, defense, intere
 accrual,A1_third_plus_nh_white,high,capital return,61.3353,1356,0.6442,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A1_third_plus_nh_white,high,lineage post-engine coverage_bn,0.0000,0,15.8599,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,lineage post-engine coverage_bn,0.0000,0,12.6388,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,high,income taxes,-453.8700,-10035,300.4562,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,high,payroll taxes and Medicare premiums,-282.6117,-6248,105.8404,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,high,"sales, excise, customs, fees",-183.6439,-4060,64.5588,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -206,7 +206,7 @@ accrual,A2_us_born_nh_white,high,"per-head lines: government, defense, interest,
 accrual,A2_us_born_nh_white,high,capital return,61.5544,1361,0.4251,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A2_us_born_nh_white,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A2_us_born_nh_white,high,lineage post-engine coverage_bn,0.0000,0,15.8599,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,lineage post-engine coverage_bn,0.0000,0,12.6388,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,high,income taxes,-373.4541,-8257,220.0403,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,high,payroll taxes and Medicare premiums,-249.9545,-5526,73.1832,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,high,"sales, excise, customs, fees",-168.0888,-3716,49.0037,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -222,7 +222,7 @@ accrual,A3_third_plus_nh_white_at_union_ages,high,"per-head lines: government, d
 accrual,A3_third_plus_nh_white_at_union_ages,high,capital return,67.1290,1484,-5.1495,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A3_third_plus_nh_white_at_union_ages,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A3_third_plus_nh_white_at_union_ages,high,lineage post-engine coverage_bn,0.0000,0,15.8599,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,lineage post-engine coverage_bn,0.0000,0,12.6388,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,high,income taxes,-420.1512,-9289,266.7374,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,high,payroll taxes and Medicare premiums,-266.5694,-5894,89.7981,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,high,"sales, excise, customs, fees",-177.8706,-3933,58.7855,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -238,7 +238,7 @@ accrual,A4_third_plus_nh_white_stationary,high,"per-head lines: government, defe
 accrual,A4_third_plus_nh_white_stationary,high,capital return,62.2142,1376,-0.2347,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,A4_third_plus_nh_white_stationary,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,A4_third_plus_nh_white_stationary,high,lineage post-engine coverage_bn,0.0000,0,15.8599,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,lineage post-engine coverage_bn,0.0000,0,12.6388,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,high,income taxes,-384.7531,-8507,231.3393,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,high,payroll taxes and Medicare premiums,-259.2337,-5731,82.4624,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,high,"sales, excise, customs, fees",-165.6767,-3663,46.5916,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -254,7 +254,7 @@ accrual,all_residents_slice,high,"per-head lines: government, defense, interest,
 accrual,all_residents_slice,high,capital return,63.9294,1413,-1.9499,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,all_residents_slice,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-accrual,all_residents_slice,high,lineage post-engine coverage_bn,0.0000,0,15.8599,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+accrual,all_residents_slice,high,lineage post-engine coverage_bn,0.0000,0,12.6388,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_engine,low,income taxes,-142.7760,-3157,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_engine,low,payroll taxes and Medicare premiums,-164.9627,-3647,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_engine,low,"sales, excise, customs, fees",-119.8187,-2649,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -270,7 +270,7 @@ cash,mexican_origin_engine,low,"per-head lines: government, defense, interest, r
 cash,mexican_origin_engine,low,capital return,37.6233,832,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_engine,low,production gain (subtracted),-11.9095,-263,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_engine,low,lineage post-engine mixed_unit_removal_bn,10.7400,237,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,mexican_origin_engine,low,lineage post-engine coverage_bn,3.9508,87,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,mexican_origin_engine,low,lineage post-engine coverage_bn,0.7518,17,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,low,income taxes,-155.4146,-3436,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,low,payroll taxes and Medicare premiums,-176.7713,-3908,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,low,"sales, excise, customs, fees",-119.0851,-2633,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -286,7 +286,7 @@ cash,mexican_origin_rough,low,"per-head lines: government, defense, interest, ro
 cash,mexican_origin_rough,low,capital return,37.6866,833,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,low,production gain (subtracted),-11.9095,-263,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,low,lineage post-engine mixed_unit_removal_bn,10.7400,237,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,mexican_origin_rough,low,lineage post-engine coverage_bn,3.9508,87,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,mexican_origin_rough,low,lineage post-engine coverage_bn,0.7518,17,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,low,income taxes,-217.9163,-5194,62.5017,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,low,payroll taxes and Medicare premiums,-194.3579,-4633,17.5866,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,low,"sales, excise, customs, fees",-123.2033,-2937,4.1183,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -302,7 +302,7 @@ cash,nh_black_rough,low,"per-head lines: government, defense, interest, roads, o
 cash,nh_black_rough,low,capital return,35.6347,849,2.0519,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,nh_black_rough,low,lineage post-engine coverage_bn,0.0000,0,3.9508,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,nh_black_rough,low,lineage post-engine coverage_bn,0.0000,0,0.7518,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,low,income taxes,-471.4638,-10424,316.0492,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,low,payroll taxes and Medicare premiums,-283.8824,-6276,107.1111,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,low,"sales, excise, customs, fees",-183.3763,-4054,64.2913,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -318,7 +318,7 @@ cash,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, 
 cash,A1_third_plus_nh_white,low,capital return,36.1178,799,1.5688,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A1_third_plus_nh_white,low,lineage post-engine coverage_bn,0.0000,0,3.9508,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,lineage post-engine coverage_bn,0.0000,0,0.7518,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,low,income taxes,-471.1227,-10416,315.7081,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,low,payroll taxes and Medicare premiums,-282.6117,-6248,105.8404,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,low,"sales, excise, customs, fees",-183.6439,-4060,64.5588,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -334,7 +334,7 @@ cash,A2_us_born_nh_white,low,"per-head lines: government, defense, interest, roa
 cash,A2_us_born_nh_white,low,capital return,36.2803,802,1.4063,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A2_us_born_nh_white,low,lineage post-engine coverage_bn,0.0000,0,3.9508,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,lineage post-engine coverage_bn,0.0000,0,0.7518,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,low,income taxes,-379.6996,-8395,224.2849,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,low,payroll taxes and Medicare premiums,-249.9545,-5526,73.1832,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,low,"sales, excise, customs, fees",-168.0888,-3716,49.0037,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -350,7 +350,7 @@ cash,A3_third_plus_nh_white_at_union_ages,low,"per-head lines: government, defen
 cash,A3_third_plus_nh_white_at_union_ages,low,capital return,40.4027,893,-2.7161,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A3_third_plus_nh_white_at_union_ages,low,lineage post-engine coverage_bn,0.0000,0,3.9508,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,lineage post-engine coverage_bn,0.0000,0,0.7518,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,low,income taxes,-435.6136,-9631,280.1990,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,low,payroll taxes and Medicare premiums,-266.5694,-5894,89.7981,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,low,"sales, excise, customs, fees",-177.8706,-3933,58.7855,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -366,7 +366,7 @@ cash,A4_third_plus_nh_white_stationary,low,"per-head lines: government, defense,
 cash,A4_third_plus_nh_white_stationary,low,capital return,36.9044,816,0.7823,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A4_third_plus_nh_white_stationary,low,lineage post-engine coverage_bn,0.0000,0,3.9508,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,lineage post-engine coverage_bn,0.0000,0,0.7518,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,low,income taxes,-397.5319,-8789,242.1173,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,low,payroll taxes and Medicare premiums,-259.2337,-5731,82.4624,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,low,"sales, excise, customs, fees",-165.6767,-3663,46.5916,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -382,7 +382,7 @@ cash,all_residents_slice,low,"per-head lines: government, defense, interest, roa
 cash,all_residents_slice,low,capital return,38.2115,845,-0.5249,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,low,production gain (subtracted),0.0000,0,-11.9095,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,all_residents_slice,low,lineage post-engine coverage_bn,0.0000,0,3.9508,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,all_residents_slice,low,lineage post-engine coverage_bn,0.0000,0,0.7518,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_engine,high,income taxes,-142.7760,-3157,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_engine,high,payroll taxes and Medicare premiums,-164.9627,-3647,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_engine,high,"sales, excise, customs, fees",-119.8187,-2649,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -398,7 +398,7 @@ cash,mexican_origin_engine,high,"per-head lines: government, defense, interest, 
 cash,mexican_origin_engine,high,capital return,61.8888,1368,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_engine,high,production gain (subtracted),-7.8343,-173,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_engine,high,lineage post-engine mixed_unit_removal_bn,14.5317,321,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,mexican_origin_engine,high,lineage post-engine coverage_bn,7.8089,173,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,mexican_origin_engine,high,lineage post-engine coverage_bn,4.5878,101,,case,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,high,income taxes,-155.4146,-3436,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,high,payroll taxes and Medicare premiums,-176.7713,-3908,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,high,"sales, excise, customs, fees",-119.0851,-2633,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -414,7 +414,7 @@ cash,mexican_origin_rough,high,"per-head lines: government, defense, interest, r
 cash,mexican_origin_rough,high,capital return,61.9795,1370,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,high,production gain (subtracted),-7.8343,-173,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,mexican_origin_rough,high,lineage post-engine mixed_unit_removal_bn,14.5317,321,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,mexican_origin_rough,high,lineage post-engine coverage_bn,7.8089,173,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,mexican_origin_rough,high,lineage post-engine coverage_bn,4.5878,101,0.0000,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,high,income taxes,-217.9163,-5194,62.5017,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,high,payroll taxes and Medicare premiums,-194.3579,-4633,17.5866,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,high,"sales, excise, customs, fees",-123.2033,-2937,4.1183,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -430,7 +430,7 @@ cash,nh_black_rough,high,"per-head lines: government, defense, interest, roads, 
 cash,nh_black_rough,high,capital return,58.5882,1396,3.3913,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,nh_black_rough,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,nh_black_rough,high,lineage post-engine coverage_bn,0.0000,0,7.8089,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,nh_black_rough,high,lineage post-engine coverage_bn,0.0000,0,4.5878,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,high,income taxes,-471.4638,-10424,316.0492,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,high,payroll taxes and Medicare premiums,-283.8824,-6276,107.1111,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,high,"sales, excise, customs, fees",-183.3763,-4054,64.2913,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -446,7 +446,7 @@ cash,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest,
 cash,A1_third_plus_nh_white,high,capital return,61.3353,1356,0.6442,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A1_third_plus_nh_white,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A1_third_plus_nh_white,high,lineage post-engine coverage_bn,0.0000,0,7.8089,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,lineage post-engine coverage_bn,0.0000,0,4.5878,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,high,income taxes,-471.1227,-10416,315.7081,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,high,payroll taxes and Medicare premiums,-282.6117,-6248,105.8404,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,high,"sales, excise, customs, fees",-183.6439,-4060,64.5588,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -462,7 +462,7 @@ cash,A2_us_born_nh_white,high,"per-head lines: government, defense, interest, ro
 cash,A2_us_born_nh_white,high,capital return,61.5544,1361,0.4251,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A2_us_born_nh_white,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A2_us_born_nh_white,high,lineage post-engine coverage_bn,0.0000,0,7.8089,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,lineage post-engine coverage_bn,0.0000,0,4.5878,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,high,income taxes,-379.6996,-8395,224.2849,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,high,payroll taxes and Medicare premiums,-249.9545,-5526,73.1832,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,high,"sales, excise, customs, fees",-168.0888,-3716,49.0037,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -478,7 +478,7 @@ cash,A3_third_plus_nh_white_at_union_ages,high,"per-head lines: government, defe
 cash,A3_third_plus_nh_white_at_union_ages,high,capital return,67.1290,1484,-5.1495,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A3_third_plus_nh_white_at_union_ages,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A3_third_plus_nh_white_at_union_ages,high,lineage post-engine coverage_bn,0.0000,0,7.8089,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,lineage post-engine coverage_bn,0.0000,0,4.5878,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,high,income taxes,-435.6136,-9631,280.1990,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,high,payroll taxes and Medicare premiums,-266.5694,-5894,89.7981,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,high,"sales, excise, customs, fees",-177.8706,-3933,58.7855,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -494,7 +494,7 @@ cash,A4_third_plus_nh_white_stationary,high,"per-head lines: government, defense
 cash,A4_third_plus_nh_white_stationary,high,capital return,62.2142,1376,-0.2347,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,A4_third_plus_nh_white_stationary,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,A4_third_plus_nh_white_stationary,high,lineage post-engine coverage_bn,0.0000,0,7.8089,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,lineage post-engine coverage_bn,0.0000,0,4.5878,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,high,income taxes,-397.5319,-8789,242.1173,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,high,payroll taxes and Medicare premiums,-259.2337,-5731,82.4624,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,high,"sales, excise, customs, fees",-165.6767,-3663,46.5916,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
@@ -510,7 +510,7 @@ cash,all_residents_slice,high,"per-head lines: government, defense, interest, ro
 cash,all_residents_slice,high,capital return,63.9294,1413,-1.9499,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,high,production gain (subtracted),0.0000,0,-7.8343,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 cash,all_residents_slice,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
-cash,all_residents_slice,high,lineage post-engine coverage_bn,0.0000,0,7.8089,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
+cash,all_residents_slice,high,lineage post-engine coverage_bn,0.0000,0,4.5878,rough,evaluator components; comparator survivor term is post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,low,comparator post-engine mixed_unit_removal,-2.3337,-56,2.3337,rough,measured comparator survivor term; post-evaluator,oct15,whole-population mortality
 accrual,A1_third_plus_nh_white,low,comparator post-engine mixed_unit_removal,-9.2508,-205,9.2508,rough,measured comparator survivor term; post-evaluator,oct15,whole-population mortality
 accrual,nh_black_rough,high,comparator post-engine mixed_unit_removal,0.6467,15,-0.6467,rough,measured comparator survivor term; post-evaluator,oct15,whole-population mortality
