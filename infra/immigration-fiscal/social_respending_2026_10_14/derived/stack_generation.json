@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "../inputs/pins.json": "3384b98f5df14706925d3066869c34816f71f72d496a73958912e430f28dff16",
+    "../stack.py": "90d7b634f0e3cfb5bb8bdc97ef7b7baab3e0d71eed967dc5678f1a59f0392028",
+    "../valuation_registry.py": "9df958ca079dc2dd980c6e557e8782c7a677b0e640a47c8ab15f9b8274deb6da",
+    "case_inputs.json": "fecd574ecbea58e2291bc9f2a4352276970ae1084b7abe14723ffcaf6a74eea0",
+    "respending_generation.json": "3c48d02d589f95d1b881490216cc4450c7f7243e8a5e74bd6fbe2865b60db9da"
+  },
+  "files": {
+    "conditional_stacks.csv": "f0037fc17ae38a5b97c84e7e829ddea2f93b59253675abccf674aeba541d1a0b",
+    "integration.json": "db72fa4c72652035cae513d2ad1612e12f7d8d09e60fb24f773cd1ff77b64e74",
+    "one_fix_deltas.csv": "f501bbb4ec2ea542b9c1991bfa1032bfe71c78aa6e587b5004097400d338e841"
+  }
+}

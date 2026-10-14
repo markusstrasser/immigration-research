@@ -35,13 +35,18 @@
     "source": "pre-P7 baseline social pairing, preserved by peer's social_costs_unpriced inputs"
   },
   {
+    "path": "../sept24_propagation_2026_09_24/derived/oct14/real_costs_totals.json",
+    "sha256": "5e17dff7745b9be95bec1cc6d83d930c6438152c1abedccc6b537d6eadb45449",
+    "source": "preserved original PM/crash sender keys and gross levels embedded in the frozen social pairing; crime separately replaces its pre-P7 baseline"
+  },
+  {
     "path": "../air_pollution_2026_09_28/_cache/owid-co2-data.csv",
     "sha256": "7f78e2b218ce4bb8c538bbec04fdc9a7982e8d40bff972e650df603899edd5f6",
     "source": "https://github.com/owid/co2-data; Global Carbon Budget consumption-based series, pinned original lane file"
   },
   {
     "path": "../air_pollution_2026_09_28/air_items.py",
-    "sha256": "22d311969df3c55455152ed052108dbd9cbc792ae843268f17e9c95e3a4fe04e",
+    "sha256": "0b693159db53f8201b7caae791ced23a6024b0e5a067ecf4760bcda436fb4dcc",
     "source": "inherited PM/CO2 model assumptions and positive control"
   },
   {
@@ -96,12 +101,12 @@
   },
   {
     "path": "../air_pollution_2026_09_28/derived/mortality_items.csv",
-    "sha256": "40397ebc10f8f9f7620017acd938d0e64f1d43882849f11cf73c7b3a4ea5e3f3",
+    "sha256": "dc301cbcc8daf4d0c8d13b90a15e78fdd2b8b4c4d52a57f8478e40aaf3814500",
     "source": "mortality producer; uniform/VSLY alternative replacement rows"
   },
   {
     "path": "../air_pollution_2026_09_28/derived/mortality_context.json",
-    "sha256": "072608c32959c6b8b7b93477fa39ab487d1655405b3947c93099c908a3c7e279",
+    "sha256": "1a6a7b4c2e44f44dfdd4a722090896b8ff1f02e14909509dac7f8a01c7b8091e",
     "source": "mortality producer; source/receptor/valuation primitives"
   },
   {
@@ -113,6 +118,21 @@
     "path": "../road_crash_externality_2026_09_28/derived/capacity_items.csv",
     "sha256": "a024d9a66f45f19a203190161894a1779015db3bcacf4e8b79b673f402dcd7a7",
     "source": "crash producer; density-interpretation and recipient-boundary alternatives"
+  },
+  {
+    "path": "../road_crash_externality_2026_09_28/derived/capacity_items_oct15.csv",
+    "sha256": "6b2b4c45321947633cd4022805fd40785429f5596b2383490cffb27f7dfddd8e",
+    "source": "oct15 live-road capacity; uniform/life-year fatality basis and preserved nonmortality dollars"
+  },
+  {
+    "path": "../service_response_long_run_2026_09_27/derived/net_change_oct15.json",
+    "sha256": "bf52fd1c61a381e86e117dc19096e588fed6d165f31037e311d33bc5680442b4",
+    "source": "oct15 native road-key congestion/capacity receipt; source traffic quantity transport declared"
+  },
+  {
+    "path": "../social_costs_unpriced_2026_09_28/derived/oct15/mortality_pairing_rows.csv",
+    "sha256": "b70d0b2314f08b0813306ad7fa3cd6908271ee87734fde73fba430c9e7fcce13",
+    "source": "all-channel selected crime victim mortality basis; independent current-P7 baseline equality"
   },
   {
     "path": "../benefits_inventory_2026_09_28/derived/volunteering_flows.csv",

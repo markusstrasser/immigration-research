@@ -1,17 +1,24 @@
 {
   "comparator": "2024 removal, frozen P7 baseline $439.435316/$532.847640bn; personal endpoints; all other social channels fixed",
   "warning": "No unconditional stack identified. Source-key lineage extensions have explicit PM/crash recipient-boundary arms. Parent's outside-lineage receiver corrections to other channels are separate; do not apply PM/crash correction twice.",
-  "components": "one_fix_deltas are isolated; conditional_stacks reprice the spending/mortality interaction rather than summing task1+task2 blindly; CO2 excluded; VSL and VSLY alternatives; demand and displacement explicit",
+  "components": "one_fix_deltas are isolated; conditional_stacks reprice the spending/mortality interaction and replace legacy crime victims under the same three-channel basis; PM-only life-year pseudo-pairings removed; CO2 excluded; demand and displacement explicit",
   "fiscal_pairing_low_current_budget_adjustment_bn": -4.772189454378008,
   "funding": "cash available in 2024 for both cash and accrual totals; capital and accrued pensions excluded; all-spent conditional",
+  "central": {
+    "spending_denominator": "PCE",
+    "crash_arm": "multivehicle_only",
+    "mortality_valuation": "uniform"
+  },
   "gates": {
     "baseline_pairing": true,
     "unique_producer_keys": true,
     "city_tax_no_double_count": true,
-    "stack_closure_1e9": true
+    "stack_closure_1e9": true,
+    "accounting_basis_contract": true,
+    "mortality_registry": true
   },
   "counts": {
-    "independent_fix_rows": 52,
+    "independent_fix_rows": 44,
     "conditional_stack_rows": 576
   }
 }

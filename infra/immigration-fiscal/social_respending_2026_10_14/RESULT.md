@@ -94,3 +94,28 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/soci
 ```
 
 Log: 2026-10-14 22:07:41 JST, recorded parent checkpoint from `date`; producer first successful run 2.975s, RSS197,918,720 bytes. Final rerun evidence is appended in the task's external result file, measured with Python perf_counter/resource. Git metadata remains untouched. [DATA: execution outputs]
+
+## Round-2 corrections
+
+2026-10-15 JST. Earlier sections/logs above remain the round-1 record. Source sender/receiver quantities and H retain the frozen v7 producer frame; road capacity uses the native oct15 key. The Sept24 consumer applies the oct15 resource account and complete denominator. [CALCULATION: producer tables; Sept24 consumer]
+
+- Denominator: CE central → PCE central. CE is a labelled units sensitivity. Both standalone stack execution and consumers require the complete source-pin registry and matching funding/denominator accounting bases.
+- Crash rule: all-density → multivehicle-only. On PCE, uniform DOT VSL, zero incoming displacement and the identified-union PM/crash receiver boundary: 441.175 / 532.107 → 446.686 / 539.849bn. These named producer scenarios retain their declared frozen social quantities; the native oct15 road capacity and all-channel crime valuation are applied.
+- PM mortality: total plume deaths are reweighted for receptor mortality before membership shares. Nonfatal illness retains exposure dollars. The source lane's dated correction records the before/after deaths and harm; national source attribution and local reference-mixture assumptions remain explicit.
+- One mortality basis: crime, PM and crashes use uniform DOT VSL centrally. Life-year readings apply to all three together and preserve nonmortality dollars. The PM-only life-year pseudo-pairings are removed. The registry fails on a missing channel, mixed basis or discount rate.
+- All-channel life-year producer scenarios beside: 401.190 / 496.475bn at 0%, 406.449 / 501.259bn at 3%. These are alternatives to the uniform scenario, never added to it.
+- Re-spending funding: the consumer moves frozen v7 H to v8 resource arithmetic under an explicit current-resource treatment of unclassified cash amounts. Completion production lacks separate P/F. Resource alternatives add capital and subtract signed private production income plus city earnings/taxes, deferring promises or adding the set-minus-cash bridge as wealth-equivalent promises. Fixed labour supply makes native private WTP equal included after-tax market income; other timing/spendability assumptions remain conditional.
+- One joint pairing: the consumer joins crime, PM, crash capacity, congestion and volunteering replacements, with accounting interaction closure ≤1e-9bn and with/without round-1 readings. The producer's pre-round-1 crime replacement and the consumer's already-corrected P7 delta are separate fields, preventing double counting. Behavioural cross-channel interactions are unmeasured.
+- Publication: outputs are staged before rename; readers verify generation hash receipts before and after loading. Interrupted multi-file publication fails closed. Scientific gates raise explicitly under python -O.
+
+Below-bar log only: CPI-only fear WTP versus income-updated VSL; shared descendant exposure; within-age mortality; PM-only re-spending; government mirror both ends and legacy .55; outsider source–receptor bound; saving/propensities; SO2 cap offset. No extra central adjustment is made. [DATA: round-2 review packets]
+
+[CALCULATION: derived/integration.json; 576 conditional rows; derived/conditional_stacks.csv. Reproduce with the commands above and this lane's full pytest suite.]
+
+### Execution log
+
+2026-10-15 03:23:39 JST (`date`): source dependency receipts now bind the exact pin registry, case-input bytes, producer code and upstream generation. Both publication and readers reject missing edges, changed inputs and individually valid bundles from different generations. The original frozen pairing's PM/crash sender levels are pinned separately and removed before inserting exact new levels; historical producer deltas cannot silently substitute for that baseline. All gates raise explicitly. Thirteen basis, publication, sender-level and mortality-registry regressions pass. Final seven-command reproduction is recorded in the parent result. [CALCULATION: `test_publication_contract.py`, `test_accounting_basis.py`, `test_valuation_registry.py`]
+
+Below-bar reviewer estimates retained only as unverified log leads: CPI-only fear inflation versus income-updated VSL +$2.5–2.8bn; one shared descendant-exposure perturbation across crime/PM/crashes −$0.7–5.7bn jointly. No estimate is adopted or independently verified here. [UNVERIFIED: round-2 review packets]
+
+2026-10-15 06:01:26 JST (`date`, parent): rerun on corrected v8 (`d1a24d47`), IDENTICAL 25/25, exit 0. The producer scenarios price on the frozen v7 package, so none of this lane's figures move; `inputs/pins.json` re-pins `service_response_long_run_2026_09_27/derived/net_change_oct15.json`, whose values are unchanged (its recorded source hashes moved). The Sept24 consumer carries the corrected fiscal row: joint pairing $462.163473 / 561.630823bn.

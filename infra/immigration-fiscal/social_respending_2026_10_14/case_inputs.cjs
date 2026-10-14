@@ -52,6 +52,7 @@ fs.writeFileSync(path.join(HERE,"derived/case_inputs.json"),JSON.stringify({
   source:"frozen main_case_2026_10_14/package.cjs CASH; personal specs 16/11",
   H_rule:"H=-direct_fiscal_response-induced_receipts=cash_set_cost-capital_return+private_wtp; accrued benefit promises and capital return finance no current spending; private WTP is not a budget saving",
   union_rule:"declared lineage edit block and lineage_* item parts excluded; base production restored; full-case national totals, specifications and response rules held fixed; contribution, not standalone removal case",
+  funding_accounting_basis:"national_accounts",
   lineage:payload.meta.lineage.counts,rows,gates:{frozen_cash_band:true,capital_return:true,budget_identity:true}
 },null,2)+"\n");
 console.log(rows);

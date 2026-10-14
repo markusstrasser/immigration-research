@@ -8,7 +8,8 @@
     "primary_pdf_table_shapes": true,
     "carbon_closure": true,
     "spending_fraction_0_1": true,
-    "input_sha256": true
+    "input_sha256": true,
+    "accounting_basis_contract": true
   },
   "controls": {
     "pm_bn": 69.68079837017989,

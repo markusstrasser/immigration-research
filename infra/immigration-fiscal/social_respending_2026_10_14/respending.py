@@ -8,16 +8,105 @@ from __future__ import annotations
 import csv
 import hashlib
 import importlib.util
+import io
 import json
 from pathlib import Path
 import re
 import resource
 import subprocess
+import sys
 import time
+import tempfile
+import os
 
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
 OUT = HERE / "derived"
+sys.path.insert(0, str(FISCAL / "scripts"))
+from memory_budget import require_within_budget
+
+BUNDLE_DEPENDENCIES = {
+    "respending": ["../inputs/pins.json", "case_inputs.json", "../case_inputs.cjs", "../respending.py"],
+    "stack": ["respending_generation.json", "../inputs/pins.json", "case_inputs.json", "../stack.py", "../valuation_registry.py"],
+}
+
+
+def hard_gate(condition, label):
+    if not bool(condition):
+        raise ValueError(f"[BLOCKED] {label}")
+
+
+def verify_pins():
+    from pin_inputs import INPUTS
+    rows = json.loads((HERE / "inputs/pins.json").read_text())
+    hard_gate(set(INPUTS)=={row["path"] for row in rows}, "input pin coverage differs from source registry")
+    for row in rows:
+        p = HERE / row["path"]
+        hard_gate(p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest() == row["sha256"],
+                  f"changed pinned input {row['path']}")
+
+
+def csv_text(rows):
+    stream = io.StringIO(newline="")
+    writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(rows)
+    return stream.getvalue()
+
+
+def dependency_snapshot(directory, paths):
+    directory = Path(directory)
+    return {key: hashlib.sha256((directory/key).read_bytes()).hexdigest() for key in paths}
+
+
+def publish_bundle(name, payloads, *, dependencies=None):
+    """Publish staged files, then their generation receipt; readers verify it.
+
+    POSIX renames are per-file, so readers must reject any in-flight mixture
+    against the last complete receipt. No partial generation is accepted.
+    """
+    require_within_budget(f"social {name} publication")
+    OUT.mkdir(exist_ok=True)
+    dependencies = {} if dependencies is None else dependencies
+    if name in BUNDLE_DEPENDENCIES:
+        hard_gate(set(dependencies) == set(BUNDLE_DEPENDENCIES[name]), f"{name} receipt lacks required dependency edges")
+    hard_gate(dependencies == dependency_snapshot(OUT, dependencies),
+              f"{name} dependencies changed during computation")
+    hashes = {key: hashlib.sha256(value.encode()).hexdigest() for key,value in payloads.items()}
+    receipt = json.dumps(dict(files=hashes, dependencies=dependencies), sort_keys=True, indent=2)+"\n"
+    payloads = {**payloads, f"{name}_generation.json": receipt}
+    with tempfile.TemporaryDirectory(prefix=f'.{name}-', dir=OUT) as temporary:
+        for key,value in payloads.items():
+            (Path(temporary)/key).write_text(value)
+        for key in payloads:
+            os.replace(Path(temporary)/key, OUT/key)
+
+
+def verify_bundle(name, directory=None):
+    directory = OUT if directory is None else Path(directory)
+    path = directory/f"{name}_generation.json"
+    first = path.read_bytes()
+    receipt = json.loads(first)
+    hard_gate("dependencies" in receipt, f"{name} receipt lacks dependency generation")
+    if name in BUNDLE_DEPENDENCIES:
+        hard_gate(set(receipt["dependencies"]) == set(BUNDLE_DEPENDENCIES[name]), f"{name} receipt lacks required dependency edges")
+    for key,digest in receipt["files"].items():
+        hard_gate(hashlib.sha256((directory/key).read_bytes()).hexdigest()==digest,
+                  f"mixed or stale {name} generation: {key}")
+    hard_gate(receipt.get("dependencies", {}) == dependency_snapshot(directory, receipt.get("dependencies", {})),
+              f"stale {name} dependency generation")
+    if "respending_generation.json" in receipt.get("dependencies", {}):
+        verify_bundle("respending", directory)
+    hard_gate(first==path.read_bytes(), f"{name} generation changed during read")
+    return first
+
+
+def spending_basis_gate(funding_basis, denominator_basis, *, units_sensitivity=False):
+    """A national-accounts saving requires a national-accounts denominator."""
+    if funding_basis != denominator_basis and not units_sensitivity:
+        raise ValueError("[BLOCKED] re-spending funding/denominator accounting basis differs")
+    if funding_basis != "national_accounts" or denominator_basis not in ("national_accounts", "CE_survey"):
+        raise ValueError("[BLOCKED] undeclared re-spending accounting basis")
 
 
 def read_csv(path):
@@ -46,12 +135,8 @@ def load_air():
 
 def main():
     start = time.perf_counter()
-    pins = json.loads((HERE / "inputs/pins.json").read_text())
-    for row in pins:
-        p = HERE / row["path"]
-        got = hashlib.sha256(p.read_bytes()).hexdigest()
-        if got != row["sha256"]:
-            raise RuntimeError(f"[BLOCKED] changed pinned input {row['path']}")
+    verify_pins()
+    dependencies = dependency_snapshot(OUT, BUNDLE_DEPENDENCIES["respending"])
     air = load_air()
     case = json.loads((OUT / "case_inputs.json").read_text())
     counts = case["lineage"]
@@ -66,30 +151,30 @@ def main():
     pm_control = central.others * central.morb * vsl / 1e9
     stored = next(r for r in read_csv(FISCAL / "air_pollution_2026_09_28/derived/items.csv")
                   if r["item"] == "pm25_consumption" and r["group"] == "mexican_origin" and r["measure"] == "absolute")
-    assert abs(pm_control-float(stored["central_bn"])) < 5e-5
+    hard_gate(abs(pm_control-float(stored["central_bn"])) < 5e-5, "legacy PM positive control")
     gov = next(r for r in read_csv(FISCAL / "air_pollution_2026_09_28/derived/items.csv")
                if r["item"] == "pm25_government_use" and r["group"] == "mexican_origin" and r["measure"] == "absolute")
     gov_legacy = central.D * air.THETA_GOVERNMENT * legacy_n / pop_all * air.GOV["use"]["mexican_origin"][1] * air.GOV["response"][1] * (1-central.sigma) * vsl * 1.03 / 1e9
-    assert abs(gov_legacy-float(gov["central_bn"])) < 5e-5
+    hard_gate(abs(gov_legacy-float(gov["central_bn"])) < 5e-5, "legacy government positive control")
     # Independent official national-accounts denominator, fixed vintage Feb 2025.
     bea = source_text("bea_gdp4q24_2nd.pdf")
     line = next(x for x in bea.splitlines() if re.match(r"\s*34 Personal consumption expenditures\s", x))
     nums = [float(x.replace(",", "")) for x in re.findall(r"[\d,]+\.\d+", line)]
-    assert len(nums) == 8, line
+    hard_gate(len(nums) == 8, f"BEA PCE table shape: {line}")
     pce_bn = nums[2]  # Table 8: annual 2022, 2023, 2024; then quarters.
     epa = source_text("epa_scghg_2023.pdf")
     # A continued-page heading repeats after 2024: splitting on the last
     # heading would discard the requested row. Identify its numeric schema.
     epa_rows = [x for x in epa.splitlines() if re.match(r"\s*2024\s+(?:[\d,]+\s+){8}[\d,]+\s*$", x)]
-    assert len(epa_rows) == 1, "[BLOCKED] EPA annual SC-GHG 2024 row is not unique"
+    hard_gate(len(epa_rows) == 1, "EPA annual SC-GHG 2024 row is not unique")
     line = epa_rows[0]
     numbers = [float(x.replace(",", "")) for x in re.findall(r"[\d,]+", line)]
-    assert len(numbers) == 10, line
+    hard_gate(len(numbers) == 10, f"EPA table shape: {line}")
     epa_2020 = numbers[2]  # year, 2.5%, 2.0%, 1.5%, ...
     iwg = source_text("iwg_2021.pdf").split("Table A-1: Annual SC-CO")[-1]
     line = next(x for x in iwg.splitlines() if re.match(r"\s*2024\s+", x))
     numbers = [float(x.replace(",", "")) for x in re.findall(r"[\d,]+", line)]
-    assert len(numbers) == 5, line
+    hard_gate(len(numbers) == 5, f"IWG table shape: {line}")
     iwg_2020 = numbers[2]  # year, 5%, 3%, 2.5%, 95th.
     cpi_ratio = air.cpi(2024)/air.cpi(2020)
     sccs = {"epa2023_2pct": epa_2020*cpi_ratio, "iwg2021_3pct": iwg_2020*cpi_ratio}
@@ -108,7 +193,7 @@ def main():
     consumer = {r["item"]:float(r["central_bn"]) for r in read_csv(FISCAL / "population_basis_2026_09_29/derived/consumer_scale_rerun/row4/items.csv") if r["measure"]=="absolute"}
     frame = read_csv(FISCAL / "main_case_decomposition_2026_09_29/derived/headcount.csv")
     row4 = next(r for r in frame if r["cut"]=="all" and r["group"]=="union")
-    assert abs(float(row4["row4"])-counts["account_union"]) < 1e-4
+    hard_gate(abs(float(row4["row4"])-counts["account_union"]) < 1e-4, "frozen row4 union count")
     key = json.loads((HERE / "inputs/band_variants.json").read_text())["lineage_social_keys"]
     rows, components, co2 = [], [], []
 
@@ -140,6 +225,9 @@ def main():
         # which describes emissions originating from group-associated locations.
         receptors = 1-n/national_n
         for denom,spend_bn in [("CE",ce_all*national_n/1e9),("PCE",pce_bn)]:
+            spending_basis_gate(case["funding_accounting_basis"],
+                                "national_accounts" if denom == "PCE" else "CE_survey",
+                                units_sensitivity=denom == "CE")
             unit = central.D*air.THETA_CONSUMPTION*vsl*central.morb/1e9/spend_bn*receptors
             dpm = -H*unit
             add("pm25_respending",basis,end,denom,dpm,note="H spent in 2024 at national-average consumption-associated emissions per dollar; removes former group receptors by population share; mortality-weighted interaction is separate",overlap="counterflow to pm25_consumption; do not add together with a net replacement row")
@@ -152,7 +240,7 @@ def main():
             # A demand-equivalent sensitivity, not population restored by money.
             group_spend = ce_group*n/1e9 if denom=="CE" else pce_bn*s*float(ce["mexican_origin"]["total_ratio_to_all"])*factor
             fraction = H/group_spend
-            assert 0<=fraction<1
+            hard_gate(0<=fraction<1, "spending fraction within demand support")
             rest_new = -Erest*((1-psi*(1-fraction))**(-1/(sig-1))-1)
             dr = rest_new-rest_base
             add("restaurant_respending_demand_arm",basis,end,denom,dr,note="replace psi by psi*(1-H/group_spending); same spending mix, same cross-group substitutability; original restaurant row carries no headcount; lineage demand extrapolation is only a sensitivity",overlap="replaces restaurant market-size benefit; no cuisine-composition change")
@@ -169,7 +257,7 @@ def main():
             private_mt = national_n*fbar*(1-air.CO2["w_gov"])/1e6
             re_mt = H*private_mt/spend_bn
             net_mt = gross_mt-origin_mt+remit_mt-re_mt
-            assert abs(net_mt-(gross_mt-origin_mt+remit_mt-re_mt))<1e-9
+            hard_gate(abs(net_mt-(gross_mt-origin_mt+remit_mt-re_mt))<1e-9, "carbon source closure")
             for valuation,scc in sccs.items():
                 # Same 11% US-damage assumption as the original lane; income
                 # weighting needs no synthetic precision absent origin cells.
@@ -187,19 +275,23 @@ def main():
                     overlap="outside social stack; alternative SCC valuations, never add both; original gross footprint already carries government CO2")
                 rows[-1]["valuation"]=f"{valuation}, annual 2024 SCC inflated from 2020 dollars; 11% US damage share times other-US income share"
             components.append(dict(population_basis=basis,end=end,spending_denominator=denom,
+                                   funding_accounting_basis=case["funding_accounting_basis"],
+                                   denominator_accounting_basis="national_accounts" if denom == "PCE" else "CE_survey",
+                                   units_sensitivity=denom == "CE",
                                    current_saving_bn=H,national_spending_bn=spend_bn,group_spending_bn=group_spend,
                                    respending_fraction=fraction,receiver_remaining_fraction=receptors,
                                    pm_harm_bn_per_bn_spent=unit,pm_baseline_bn=own_pm,
                                    pm_respending_bn=dpm,government_mirror_bn=gov_case,
                                    government_budget_mix_arm_bn=gov_budget,restaurant_delta_bn=dr,consumer_scale_demand_arm_bn=dc))
-    write_csv("items.csv",rows)
-    write_csv("spending_components.csv",components)
-    write_csv("co2_beside.csv",co2)
-    (OUT/"audit.json").write_text(json.dumps(dict(gates={"frozen_case_cash_and_capital":True,"budget_identity":True,
+    require_within_budget("social re-spending producer")
+    audit = json.dumps(dict(gates={"frozen_case_cash_and_capital":True,"budget_identity":True,
           "legacy_pm_positive_control":True,"legacy_government_positive_control":True,"row4_count":True,
-          "primary_pdf_table_shapes":True,"carbon_closure":True,"spending_fraction_0_1":True,"input_sha256":True},
+           "primary_pdf_table_shapes":True,"carbon_closure":True,"spending_fraction_0_1":True,"input_sha256":True,
+           "accounting_basis_contract":True},
           controls=dict(pm_bn=pm_control,government_pm_bn=gov_legacy,pce_2024_bn=pce_bn,scc_2020usd=dict(epa2=epa_2020,iwg3=iwg_2020)),
-          assumptions=["spend all H in 2024; MPC and marginal sector mix not identified", "CE vs PCE is a denominator sensitivity, not confidence interval", "original Tessum personal-consumption attribution includes allocated private investment", "no replicate SE for causal spending propensity or assumed emissions parameters", "mortality weighting and VSLY interaction reported separately" ]),indent=2)+"\n")
+          assumptions=["spend all H in 2024; MPC and marginal sector mix not identified", "CE vs PCE is a denominator sensitivity, not confidence interval", "original Tessum personal-consumption attribution includes allocated private investment", "no replicate SE for causal spending propensity or assumed emissions parameters", "mortality weighting and VSLY interaction reported separately" ]),indent=2)+"\n"
+    publish_bundle("respending", {"items.csv":csv_text(rows), "spending_components.csv":csv_text(components),
+                                 "co2_beside.csv":csv_text(co2), "audit.json":audit}, dependencies=dependencies)
     print(f"rows={len(rows)} carbon={len(co2)} elapsed_s={time.perf_counter()-start:.3f} maxrss_bytes={resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}")
 
 

@@ -16,6 +16,7 @@ INPUTS = {
     "inputs/band_variants.json": "snapshot sept24_propagation_2026_09_24/derived/oct14/band_variants.json; lineage_social_keys",
     "inputs/band_variants.csv": "snapshot oct14 band_variants.csv; exact justice footing difference for social pairing",
     "inputs/baseline_totals_oct14.csv": "pre-P7 baseline social pairing, preserved by peer's social_costs_unpriced inputs",
+    "../sept24_propagation_2026_09_24/derived/oct14/real_costs_totals.json": "preserved original PM/crash sender keys and gross levels embedded in the frozen social pairing; crime separately replaces its pre-P7 baseline",
     "../air_pollution_2026_09_28/_cache/owid-co2-data.csv": "https://github.com/owid/co2-data; Global Carbon Budget consumption-based series, pinned original lane file",
     "../air_pollution_2026_09_28/air_items.py": "inherited PM/CO2 model assumptions and positive control",
     "../air_pollution_2026_09_28/derived/items.csv": "legacy producer controls",
@@ -32,19 +33,29 @@ INPUTS = {
     "../air_pollution_2026_09_28/derived/mortality_context.json": "mortality producer; source/receptor/valuation primitives",
     "../air_pollution_2026_09_28/derived/binding_caps.json": "air producer; primary program facts and unidentified marginal cap share",
     "../road_crash_externality_2026_09_28/derived/capacity_items.csv": "crash producer; density-interpretation and recipient-boundary alternatives",
+    "../road_crash_externality_2026_09_28/derived/capacity_items_oct15.csv": "oct15 live-road capacity; uniform/life-year fatality basis and preserved nonmortality dollars",
+    "../service_response_long_run_2026_09_27/derived/net_change_oct15.json": "oct15 native road-key congestion/capacity receipt; source traffic quantity transport declared",
+    "../social_costs_unpriced_2026_09_28/derived/oct15/mortality_pairing_rows.csv": "all-channel selected crime victim mortality basis; independent current-P7 baseline equality",
     "../benefits_inventory_2026_09_28/derived/volunteering_flows.csv": "benefits producer; measured food receipt with conditional incoming labour/displacement",
     "../benefits_inventory_2026_09_28/derived/city_tax_decomposition.csv": "benefits producer; existing gross includes induced receipts",
 }
-if sys.argv[1:] == ["--freeze"]:
-    rows = [{"path": p, "sha256": hashlib.sha256((HERE/p).read_bytes()).hexdigest(), "source":s}
-            for p,s in INPUTS.items()]
-    (HERE/"inputs/pins.json").write_text(json.dumps(rows,indent=2)+"\n")
-    print(f"pinned {len(rows)} inputs; intentional evidence refresh")
-elif sys.argv[1:] == ["--check"]:
-    rows = json.loads((HERE/"inputs/pins.json").read_text())
-    assert set(INPUTS) == {r["path"] for r in rows}, "[BLOCKED] pin coverage changed"
-    for r in rows:
-        assert hashlib.sha256((HERE/r["path"]).read_bytes()).hexdigest()==r["sha256"], f"[BLOCKED] changed input {r['path']}"
-    print(f"verified {len(rows)} pins")
-else:
-    raise SystemExit("use --freeze for an intentional evidence refresh, --check for reproduction")
+def main():
+    if sys.argv[1:] == ["--freeze"]:
+        rows = [{"path": p, "sha256": hashlib.sha256((HERE/p).read_bytes()).hexdigest(), "source":s}
+                for p,s in INPUTS.items()]
+        (HERE/"inputs/pins.json").write_text(json.dumps(rows,indent=2)+"\n")
+        print(f"pinned {len(rows)} inputs; intentional evidence refresh")
+    elif sys.argv[1:] == ["--check"]:
+        rows = json.loads((HERE/"inputs/pins.json").read_text())
+        if set(INPUTS) != {r["path"] for r in rows}:
+            raise ValueError("[BLOCKED] pin coverage changed")
+        for r in rows:
+            if hashlib.sha256((HERE/r["path"]).read_bytes()).hexdigest()!=r["sha256"]:
+                raise ValueError(f"[BLOCKED] changed input {r['path']}")
+        print(f"verified {len(rows)} pins")
+    else:
+        raise SystemExit("use --freeze for an intentional evidence refresh, --check for reproduction")
+
+
+if __name__ == "__main__":
+    main()

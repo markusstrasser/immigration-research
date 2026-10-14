@@ -1,11 +1,9 @@
 task,arm,end,spending_denominator,delta_bn,changed_pairing_bn,over_5bn,note
 1,respending_plus_old_government_mirror,low,CE,-13.212233586695332,426.22308241330467,True,all H spent; marginal mix unmeasured; current low-end justice footing respected
-2,mortality_self_share,low,CE,6.902311757111008,446.337627757111,True,common NVSS age rates; ACS receiver ages; original source attribution held
+2,mortality_self_share,low,CE,6.327843132601657,445.7631591326017,True,common NVSS age rates; ACS receiver ages; original source attribution held
 7,city_size_tax,low,CE,0.0,439.435316,False,induced taxes already inside the adopted city earnings row
-3,VSLY_0,low,CE,-42.614945566389,396.820370433611,True,"alternative mortality valuation, never added to uniform-VSL fix"
-3,VSLY_0.03,low,CE,-35.56320259758899,403.872113402411,True,"alternative mortality valuation, never added to uniform-VSL fix"
-4,all_density,low,CE,-3.8036085945388236,435.63170740546116,False,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
-4,multivehicle_only,low,CE,0.4257822219858531,439.86109822198586,False,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
+4,all_density,low,CE,-4.955866821934547,434.47944917806547,False,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
+4,multivehicle_only,low,CE,0.5547679091741825,439.9900839091742,False,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
 5,primary_food_displacement_0.0,low,CE,0.0,439.435316,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
 5,primary_food_displacement_0.5,low,CE,1.3390739178320819,440.7743899178321,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
 5,primary_food_displacement_1.0,low,CE,2.6781478356641637,442.11346383566416,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
@@ -13,12 +11,10 @@ task,arm,end,spending_denominator,delta_bn,changed_pairing_bn,over_5bn,note
 5,any_food_displacement_0.5,low,CE,2.8780060482409513,442.31332204824093,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
 5,any_food_displacement_1.0,low,CE,5.756012096481903,445.1913280964819,True,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
 1,respending_plus_old_government_mirror,low,PCE,-4.087007471599792,435.3483085284002,False,all H spent; marginal mix unmeasured; current low-end justice footing respected
-2,mortality_self_share,low,PCE,6.902311757111008,446.337627757111,True,common NVSS age rates; ACS receiver ages; original source attribution held
+2,mortality_self_share,low,PCE,6.327843132601657,445.7631591326017,True,common NVSS age rates; ACS receiver ages; original source attribution held
 7,city_size_tax,low,PCE,0.0,439.435316,False,induced taxes already inside the adopted city earnings row
-3,VSLY_0,low,PCE,-42.614945566389,396.820370433611,True,"alternative mortality valuation, never added to uniform-VSL fix"
-3,VSLY_0.03,low,PCE,-35.56320259758899,403.872113402411,True,"alternative mortality valuation, never added to uniform-VSL fix"
-4,all_density,low,PCE,-3.8036085945388236,435.63170740546116,False,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
-4,multivehicle_only,low,PCE,0.4257822219858531,439.86109822198586,False,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
+4,all_density,low,PCE,-4.955866821934547,434.47944917806547,False,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
+4,multivehicle_only,low,PCE,0.5547679091741825,439.9900839091742,False,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
 5,primary_food_displacement_0.0,low,PCE,0.0,439.435316,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
 5,primary_food_displacement_0.5,low,PCE,1.3390739178320819,440.7743899178321,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
 5,primary_food_displacement_1.0,low,PCE,2.6781478356641637,442.11346383566416,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
@@ -26,12 +22,10 @@ task,arm,end,spending_denominator,delta_bn,changed_pairing_bn,over_5bn,note
 5,any_food_displacement_0.5,low,PCE,2.8780060482409513,442.31332204824093,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
 5,any_food_displacement_1.0,low,PCE,5.756012096481903,445.1913280964819,True,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
 1,respending_plus_old_government_mirror,high,CE,-19.015497528361735,513.8321424716382,True,all H spent; marginal mix unmeasured; current low-end justice footing respected
-2,mortality_self_share,high,CE,6.902311757111008,539.7499517571109,True,common NVSS age rates; ACS receiver ages; original source attribution held
+2,mortality_self_share,high,CE,6.327843132601657,539.1754831326016,True,common NVSS age rates; ACS receiver ages; original source attribution held
 7,city_size_tax,high,CE,0.0,532.84764,False,induced taxes already inside the adopted city earnings row
-3,VSLY_0,high,CE,-42.614945566389,490.23269443361096,True,"alternative mortality valuation, never added to uniform-VSL fix"
-3,VSLY_0.03,high,CE,-35.56320259758899,497.28443740241096,True,"alternative mortality valuation, never added to uniform-VSL fix"
-4,all_density,high,CE,-5.3140654660717175,527.5335745339282,True,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
-4,multivehicle_only,high,CE,0.5948652564227999,533.4425052564228,False,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
+4,all_density,high,CE,-6.9630077721216255,525.8846322278783,True,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
+4,multivehicle_only,high,CE,0.779450578899055,533.627090578899,False,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
 5,primary_food_displacement_0.0,high,CE,0.0,532.84764,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
 5,primary_food_displacement_0.5,high,CE,1.3390739178320819,534.1867139178321,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
 5,primary_food_displacement_1.0,high,CE,2.6781478356641637,535.5257878356641,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
@@ -39,12 +33,10 @@ task,arm,end,spending_denominator,delta_bn,changed_pairing_bn,over_5bn,note
 5,any_food_displacement_0.5,high,CE,2.8780060482409513,535.725646048241,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
 5,any_food_displacement_1.0,high,CE,5.756012096481903,538.6036520964818,True,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
 1,respending_plus_old_government_mirror,high,PCE,-7.209777137784302,525.6378628622157,True,all H spent; marginal mix unmeasured; current low-end justice footing respected
-2,mortality_self_share,high,PCE,6.902311757111008,539.7499517571109,True,common NVSS age rates; ACS receiver ages; original source attribution held
+2,mortality_self_share,high,PCE,6.327843132601657,539.1754831326016,True,common NVSS age rates; ACS receiver ages; original source attribution held
 7,city_size_tax,high,PCE,0.0,532.84764,False,induced taxes already inside the adopted city earnings row
-3,VSLY_0,high,PCE,-42.614945566389,490.23269443361096,True,"alternative mortality valuation, never added to uniform-VSL fix"
-3,VSLY_0.03,high,PCE,-35.56320259758899,497.28443740241096,True,"alternative mortality valuation, never added to uniform-VSL fix"
-4,all_density,high,PCE,-5.3140654660717175,527.5335745339282,True,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
-4,multivehicle_only,high,PCE,0.5948652564227999,533.4425052564228,False,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
+4,all_density,high,PCE,-6.9630077721216255,525.8846322278783,True,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
+4,multivehicle_only,high,PCE,0.779450578899055,533.627090578899,False,fixed identified-union recipient boundary; full lineage source-road-key extrapolation
 5,primary_food_displacement_0.0,high,PCE,0.0,532.84764,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
 5,primary_food_displacement_0.5,high,PCE,1.3390739178320819,534.1867139178321,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions
 5,primary_food_displacement_1.0,high,PCE,2.6781478356641637,535.5257878356641,False,measured household food-use share; received volunteer hours and displacement are proxies/assumptions

@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "../case_inputs.cjs": "c9fa58b0e7ca59c996038791aca97a85433ee8043918c77c2660d60a106ce5ae",
+    "../inputs/pins.json": "3384b98f5df14706925d3066869c34816f71f72d496a73958912e430f28dff16",
+    "../respending.py": "87fe0d4b44011d68eb0403b94eeafe060b90b944266abc76dd5d4e245fafb1d3",
+    "case_inputs.json": "fecd574ecbea58e2291bc9f2a4352276970ae1084b7abe14723ffcaf6a74eea0"
+  },
+  "files": {
+    "audit.json": "0e0210c02e0973aa96d96bbe4d7e9c48253e240e01fe67e2297d80069130c343",
+    "co2_beside.csv": "fa522887a37e886cf5c5ee1c63bab9fa6887ad49cd0432a1846862ea2c44748b",
+    "items.csv": "f0a36994257e4aaccc0887c1b0e5227f85bf9dda8de50802e2baa54a1e0ba4ab",
+    "spending_components.csv": "d5535c058e41130371b3e9d7b0502d72d354011dd31c6b7a3805b35f36482eea"
+  }
+}
