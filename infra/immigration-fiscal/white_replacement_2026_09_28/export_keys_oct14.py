@@ -64,9 +64,9 @@ def white_tax_residual():
 
 def main():
     D.main()  # standalone key exports must reject stale engine leaves before deriving any keys
-    W.use_case("oct14")
-    if W.META.get("adopted") != "2026-10-14":
-        raise SystemExit("[BLOCKED] the key leaf requires the adopted October 14 case")
+    W.use_case("oct15")
+    if W.META.get("adopted") != "2026-10-15":
+        raise SystemExit("[BLOCKED] the key leaf requires the adopted October 15 case")
     w4, n4 = W.row4_weights()
     W.set_frame(w4, n4, W.DUMP["cash"])
     keys, W.TAX_K["_fedtax_bc"] = W.case_tax_keys()
@@ -77,9 +77,9 @@ def main():
     W.stop_if_failed()
     groups = W.scenarios()
     residual = white_tax_residual()
-    W.write("income_tax_keys_oct14.csv", W.tax_key_rows(groups))
+    W.write("income_tax_keys_oct15.csv", W.tax_key_rows(groups))
     black = W.tax_key_rows({g: groups[g] for g in ("mexican_origin_rough", "nh_black_rough")})
-    black_path = W.BLACK_LANE / "derived/income_tax_keys_oct14.csv"
+    black_path = W.BLACK_LANE / "derived/income_tax_keys_oct15.csv"
     with black_path.open("w", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=list(black[0]), lineterminator="\n")
         writer.writeheader()
@@ -89,14 +89,19 @@ def main():
               Path(D.__file__),
               W.DER / 'engine_lines_sept29_cash.json', Path(W.TK.__file__), Path(W.TK.benchmark_frame().__file__), W.R.ZIP,
               W.TK.HERE / "derived/bins.csv", W.TK.BENCH / "derived/cbo_group_shares.csv"]
-    files += [W.DER / f'engine_lines_{case}.json' for case in ('oct14', 'oct14_cash', 'oct14_union', 'oct14_union_cash')]
-    metadata = {"case": "oct14", "scope": "raw income-tax keys only; no pension pricing or validated rough totals",
+    files += [W.DER / f'engine_lines_{case}.json' for case in ('oct15', 'oct15_cash', 'oct15_union', 'oct15_union_cash')]
+    metadata = {"case": "oct15", "scope": "raw income-tax keys only; no pension pricing or validated rough totals",
                 "allocation": W.TAX_ALLOC, "lineage_counts": W.LINEAGE["counts"],
+                "comparison_population": W.META["population_v8"]["with_coverage"],
+                "comparison_population_rule": "population_v8.with_coverage; full oct15 A1 comparison frame",
+                "tax_key_control_baseline_population": W.META["lineage"]["counts"]["lineage_population"],
+                "baseline_lineage_counts": W.META["lineage"]["counts"],
+                "item7_measurement_rule": "unchanged baseline white-priced members and source age mix; new A1 CSV frame is a separate comparison",
                 "inputs_sha256": {str(p.relative_to(W.FISCAL)) if p.is_relative_to(W.FISCAL) else str(p): digest(p) for p in files},
-                "csv_sha256": {str(p.relative_to(W.FISCAL)): digest(p) for p in (W.DER / "income_tax_keys_oct14.csv", black_path)},
+                "csv_sha256": {str(p.relative_to(W.FISCAL)): digest(p) for p in (W.DER / "income_tax_keys_oct15.csv", black_path)},
                 **residual}
     for lane in (W.LANE, W.BLACK_LANE):
-        (lane / "derived/income_tax_keys_oct14_meta.json").write_text(json.dumps(metadata, indent=2) + "\n")
+        (lane / "derived/income_tax_keys_oct15_meta.json").write_text(json.dumps(metadata, indent=2) + "\n")
     print("[PASS] final raw key leaf exported; rough pricing is checked separately")
 
 

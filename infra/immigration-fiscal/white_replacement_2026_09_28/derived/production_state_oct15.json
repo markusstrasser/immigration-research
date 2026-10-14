@@ -1,0 +1,26 @@
+{
+  "low": {
+    "spec": 16,
+    "proxy": "PEARNVAL",
+    "split": "hs_or_less",
+    "normalization": "gdp",
+    "labor_share": 0.65,
+    "sigma": 2,
+    "capital_adjustment": 1,
+    "labor_supply_elasticity": 0,
+    "capital_tax_retention": 1,
+    "excluded_capital_owner_share": 0
+  },
+  "high": {
+    "spec": 11,
+    "proxy": "PEARNVAL",
+    "split": "hs_or_less",
+    "normalization": "cash",
+    "labor_share": 0.65,
+    "sigma": 2,
+    "capital_adjustment": 1,
+    "labor_supply_elasticity": 0,
+    "capital_tax_retention": 1,
+    "excluded_capital_owner_share": 0
+  }
+}

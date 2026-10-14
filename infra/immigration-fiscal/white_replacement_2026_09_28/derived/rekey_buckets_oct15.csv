@@ -1,0 +1,513 @@
+basis,group,end,bucket,cost_bn,per_member,delta_vs_union_rough_bn,engine,mixed_unit_asymmetry,case,mortality_convention
+accrual,mexican_origin_engine,low,income taxes,-140.7752,-3112,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,payroll taxes and Medicare premiums,-164.9627,-3647,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,"sales, excise, customs, fees",-119.8187,-2649,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,"capital, property, production taxes",-94.0320,-2079,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,Social Security,109.9375,2431,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,Medicare,77.4264,1712,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,Medicaid,127.6645,2823,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,schools and colleges,228.3559,5049,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,"police, courts, prisons",82.3433,1821,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,"SNAP, SSI, housing, cash aid, credits, other welfare",121.0459,2676,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,veterans and military medical,12.7583,282,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,"per-head lines: government, defense, interest, roads, other",80.5920,1782,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,capital return,37.6233,832,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,production gain (subtracted),-11.9095,-263,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,lineage post-engine mixed_unit_removal_bn,10.7400,237,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,low,lineage post-engine coverage_bn,12.0018,265,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,income taxes,-153.4138,-3392,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,payroll taxes and Medicare premiums,-176.7713,-3908,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,"sales, excise, customs, fees",-119.0851,-2633,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,"capital, property, production taxes",-92.9121,-2054,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,Social Security,109.9912,2432,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,Medicare,77.4264,1712,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,Medicaid,127.6645,2823,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,schools and colleges,223.3866,4939,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,"police, courts, prisons",82.3433,1821,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,2759,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,veterans and military medical,12.7030,281,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",80.5849,1782,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,capital return,37.6866,833,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,production gain (subtracted),-11.9095,-263,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,lineage post-engine mixed_unit_removal_bn,10.7400,237,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,low,lineage post-engine coverage_bn,12.0018,265,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,income taxes,-212.7596,-5071,59.3457,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,payroll taxes and Medicare premiums,-194.3579,-4633,17.5866,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,"sales, excise, customs, fees",-123.2033,-2937,4.1183,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,"capital, property, production taxes",-87.9473,-2096,-4.9648,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,Social Security,134.6255,3209,-24.6343,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,Medicare,127.8455,3047,-50.4190,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,Medicaid,181.2461,4320,-53.5815,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,schools and colleges,173.9840,4147,49.4027,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,"police, courts, prisons",106.3305,2534,-23.9872,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914,-39.4537,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,veterans and military medical,41.5391,990,-28.8361,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",79.7973,1902,0.7877,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,capital return,35.6347,849,2.0519,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,production gain (subtracted),0.0000,0,-11.9095,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,low,lineage post-engine coverage_bn,0.0000,0,12.0018,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,income taxes,-454.2290,-10043,300.8151,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,payroll taxes and Medicare premiums,-283.8824,-6276,107.1111,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,"sales, excise, customs, fees",-183.3763,-4054,64.2913,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,"capital, property, production taxes",-188.5185,-4168,95.6064,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,Social Security,175.9639,3890,-65.9727,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,Medicare,177.6285,3927,-100.2021,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,Medicaid,105.5518,2334,22.1127,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,schools and colleges,143.3741,3170,80.0125,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,"police, courts, prisons",57.3514,1268,24.9919,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",75.4378,1668,49.3298,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,veterans and military medical,37.8464,837,-25.1435,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",104.0568,2301,-23.4719,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,capital return,36.1178,799,1.5688,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,production gain (subtracted),0.0000,0,-11.9095,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,low,lineage post-engine coverage_bn,0.0000,0,12.0018,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,income taxes,-453.8700,-10035,300.4562,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,payroll taxes and Medicare premiums,-282.6117,-6248,105.8404,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,"sales, excise, customs, fees",-183.6439,-4060,64.5588,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,"capital, property, production taxes",-188.8177,-4175,95.9056,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,Social Security,175.1738,3873,-65.1826,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,Medicare,177.3151,3920,-99.8887,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,Medicaid,105.5943,2335,22.0702,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,schools and colleges,146.7453,3244,76.6413,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,"police, courts, prisons",57.6025,1274,24.7408,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",75.8834,1678,48.8842,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,veterans and military medical,37.9147,838,-25.2117,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,"per-head lines: government, defense, interest, roads, other",104.1756,2303,-23.5906,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,capital return,36.2803,802,1.4063,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,production gain (subtracted),0.0000,0,-11.9095,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,low,lineage post-engine coverage_bn,0.0000,0,12.0018,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,income taxes,-373.4541,-8257,220.0403,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,payroll taxes and Medicare premiums,-249.9545,-5526,73.1832,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,"sales, excise, customs, fees",-168.0888,-3716,49.0037,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,"capital, property, production taxes",-169.1011,-3739,76.1891,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,Social Security,162.2420,3587,-52.2508,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,Medicare,96.4709,2133,-19.0445,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,Medicaid,88.2950,1952,39.3695,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,schools and colleges,236.8181,5236,-13.4315,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,"police, courts, prisons",59.1969,1309,23.1464,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",77.5192,1714,47.2484,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,veterans and military medical,24.0609,532,-11.3579,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,"per-head lines: government, defense, interest, roads, other",90.3668,1998,-9.7819,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,capital return,40.4027,893,-2.7161,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,production gain (subtracted),0.0000,0,-11.9095,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,low,lineage post-engine coverage_bn,0.0000,0,12.0018,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,income taxes,-420.1512,-9289,266.7374,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,payroll taxes and Medicare premiums,-266.5694,-5894,89.7981,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,"sales, excise, customs, fees",-177.8706,-3933,58.7855,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,"capital, property, production taxes",-178.5381,-3947,85.6260,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,Social Security,165.9085,3668,-55.9173,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,Medicare,160.7791,3555,-83.3527,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,Medicaid,101.9038,2253,25.7608,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,schools and colleges,166.7227,3686,56.6640,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,"police, courts, prisons",56.9613,1259,25.3820,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,"SNAP, SSI, housing, cash aid, credits, other welfare",75.0006,1658,49.7670,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,veterans and military medical,34.9160,772,-22.2130,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,"per-head lines: government, defense, interest, roads, other",99.4496,2199,-18.8646,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,capital return,36.9044,816,0.7823,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,production gain (subtracted),0.0000,0,-11.9095,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,low,lineage post-engine coverage_bn,0.0000,0,12.0018,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,income taxes,-384.7531,-8507,231.3393,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,payroll taxes and Medicare premiums,-259.2337,-5731,82.4624,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,"sales, excise, customs, fees",-165.6767,-3663,46.5916,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,"capital, property, production taxes",-163.2607,-3610,70.3486,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,Social Security,164.6522,3640,-54.6610,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,Medicare,152.3205,3368,-74.8940,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,Medicaid,128.6227,2844,-0.9581,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,schools and colleges,174.0053,3847,49.3813,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,"police, courts, prisons",69.9818,1547,12.3615,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,"SNAP, SSI, housing, cash aid, credits, other welfare",103.2162,2282,21.5514,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,veterans and military medical,31.9532,706,-19.2502,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,"per-head lines: government, defense, interest, roads, other",114.8560,2539,-34.2710,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,capital return,38.2115,845,-0.5249,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,production gain (subtracted),0.0000,0,-11.9095,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,low,lineage post-engine coverage_bn,0.0000,0,12.0018,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,income taxes,-140.7752,-3112,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,payroll taxes and Medicare premiums,-164.9627,-3647,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,"sales, excise, customs, fees",-119.8187,-2649,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,"capital, property, production taxes",-67.8043,-1499,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,Social Security,109.9375,2431,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,Medicare,77.4264,1712,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,Medicaid,129.7933,2870,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,schools and colleges,229.2062,5068,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,"police, courts, prisons",82.3433,1821,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,"SNAP, SSI, housing, cash aid, credits, other welfare",121.0459,2676,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,veterans and military medical,12.7583,282,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,"per-head lines: government, defense, interest, roads, other",105.6069,2335,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,capital return,61.8888,1368,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,production gain (subtracted),-7.8343,-173,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,lineage post-engine mixed_unit_removal_bn,14.5317,321,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_engine,high,lineage post-engine coverage_bn,15.8599,351,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,income taxes,-153.4138,-3392,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,payroll taxes and Medicare premiums,-176.7713,-3908,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,"sales, excise, customs, fees",-119.0851,-2633,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,"capital, property, production taxes",-66.6845,-1474,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,Social Security,109.9912,2432,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,Medicare,77.4264,1712,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,Medicaid,127.6972,2823,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,schools and colleges,224.2369,4958,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,"police, courts, prisons",82.3433,1821,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,2759,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,veterans and military medical,12.7030,281,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",105.6003,2335,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,capital return,61.9795,1370,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,production gain (subtracted),-7.8343,-173,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,lineage post-engine mixed_unit_removal_bn,14.5317,321,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,mexican_origin_rough,high,lineage post-engine coverage_bn,15.8599,351,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,income taxes,-212.7596,-5071,59.3457,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,payroll taxes and Medicare premiums,-194.3579,-4633,17.5866,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,"sales, excise, customs, fees",-123.2033,-2937,4.1183,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,"capital, property, production taxes",-59.6174,-1421,-7.0671,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,Social Security,134.6255,3209,-24.6343,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,Medicare,127.8455,3047,-50.4190,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,Medicaid,181.2461,4320,-53.5488,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,schools and colleges,173.9840,4147,50.2529,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,"police, courts, prisons",106.3305,2534,-23.9872,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914,-39.4537,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,veterans and military medical,41.5391,990,-28.8361,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",104.2367,2485,1.3636,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,capital return,58.5882,1396,3.3913,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,production gain (subtracted),0.0000,0,-7.8343,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,nh_black_rough,high,lineage post-engine coverage_bn,0.0000,0,15.8599,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,income taxes,-454.2290,-10043,300.8151,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,payroll taxes and Medicare premiums,-283.8824,-6276,107.1111,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,"sales, excise, customs, fees",-183.3763,-4054,64.2913,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,"capital, property, production taxes",-133.1515,-2944,66.4670,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,Social Security,175.9639,3890,-65.9727,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,Medicare,177.6285,3927,-100.2021,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,Medicaid,105.5518,2334,22.1454,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,schools and colleges,143.3741,3170,80.8628,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,"police, courts, prisons",57.3514,1268,24.9919,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",75.4378,1668,49.3298,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,veterans and military medical,37.8464,837,-25.1435,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",135.5448,2997,-29.9445,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,capital return,61.3353,1356,0.6442,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,production gain (subtracted),0.0000,0,-7.8343,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A1_third_plus_nh_white,high,lineage post-engine coverage_bn,0.0000,0,15.8599,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,income taxes,-453.8700,-10035,300.4562,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,payroll taxes and Medicare premiums,-282.6117,-6248,105.8404,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,"sales, excise, customs, fees",-183.6439,-4060,64.5588,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,"capital, property, production taxes",-133.7373,-2957,67.0529,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,Social Security,175.1738,3873,-65.1826,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,Medicare,177.3151,3920,-99.8887,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,Medicaid,105.5943,2335,22.1029,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,schools and colleges,146.7453,3244,77.4916,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,"police, courts, prisons",57.6025,1274,24.7408,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",75.8834,1678,48.8842,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,veterans and military medical,37.9147,838,-25.2117,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,"per-head lines: government, defense, interest, roads, other",135.5807,2998,-29.9803,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,capital return,61.5544,1361,0.4251,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,production gain (subtracted),0.0000,0,-7.8343,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A2_us_born_nh_white,high,lineage post-engine coverage_bn,0.0000,0,15.8599,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,income taxes,-373.4541,-8257,220.0403,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,payroll taxes and Medicare premiums,-249.9545,-5526,73.1832,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,"sales, excise, customs, fees",-168.0888,-3716,49.0037,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,"capital, property, production taxes",-118.0318,-2610,51.3473,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,Social Security,162.2420,3587,-52.2508,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,Medicare,96.4709,2133,-19.0445,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,Medicaid,88.2950,1952,39.4022,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,schools and colleges,236.8181,5236,-12.5812,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,"police, courts, prisons",59.1969,1309,23.1464,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",77.5192,1714,47.2484,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,veterans and military medical,24.0609,532,-11.3579,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,"per-head lines: government, defense, interest, roads, other",120.1729,2657,-14.5725,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,capital return,67.1290,1484,-5.1495,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,production gain (subtracted),0.0000,0,-7.8343,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A3_third_plus_nh_white_at_union_ages,high,lineage post-engine coverage_bn,0.0000,0,15.8599,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,income taxes,-420.1512,-9289,266.7374,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,payroll taxes and Medicare premiums,-266.5694,-5894,89.7981,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,"sales, excise, customs, fees",-177.8706,-3933,58.7855,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,"capital, property, production taxes",-126.4073,-2795,59.7229,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,Social Security,165.9085,3668,-55.9173,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,Medicare,160.7791,3555,-83.3527,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,Medicaid,101.9038,2253,25.7935,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,schools and colleges,166.7227,3686,57.5142,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,"police, courts, prisons",56.9613,1259,25.3820,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,"SNAP, SSI, housing, cash aid, credits, other welfare",75.0006,1658,49.7670,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,veterans and military medical,34.9160,772,-22.2130,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,"per-head lines: government, defense, interest, roads, other",129.9611,2873,-24.3607,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,capital return,62.2142,1376,-0.2347,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,production gain (subtracted),0.0000,0,-7.8343,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,A4_third_plus_nh_white_stationary,high,lineage post-engine coverage_bn,0.0000,0,15.8599,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,income taxes,-384.7531,-8507,231.3393,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,payroll taxes and Medicare premiums,-259.2337,-5731,82.4624,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,"sales, excise, customs, fees",-165.6767,-3663,46.5916,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,"capital, property, production taxes",-114.5987,-2534,47.9142,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,Social Security,164.6522,3640,-54.6610,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,Medicare,152.3205,3368,-74.8940,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,Medicaid,128.6227,2844,-0.9254,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,schools and colleges,174.0053,3847,50.2316,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,"police, courts, prisons",69.9818,1547,12.3615,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,"SNAP, SSI, housing, cash aid, credits, other welfare",103.2162,2282,21.5514,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,veterans and military medical,31.9532,706,-19.2502,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,"per-head lines: government, defense, interest, roads, other",144.8022,3201,-39.2019,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,capital return,63.9294,1413,-1.9499,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,production gain (subtracted),0.0000,0,-7.8343,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+accrual,all_residents_slice,high,lineage post-engine coverage_bn,0.0000,0,15.8599,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,income taxes,-142.7760,-3157,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,payroll taxes and Medicare premiums,-164.9627,-3647,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,"sales, excise, customs, fees",-119.8187,-2649,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,"capital, property, production taxes",-94.0320,-2079,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,Social Security,57.8233,1278,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,Medicare,55.5530,1228,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,Medicaid,127.6645,2823,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,schools and colleges,228.3559,5049,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,"police, courts, prisons",82.3433,1821,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,"SNAP, SSI, housing, cash aid, credits, other welfare",121.0459,2676,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,veterans and military medical,12.7583,282,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,"per-head lines: government, defense, interest, roads, other",80.5920,1782,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,capital return,37.6233,832,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,production gain (subtracted),-11.9095,-263,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,lineage post-engine mixed_unit_removal_bn,10.7400,237,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,low,lineage post-engine coverage_bn,3.9508,87,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,income taxes,-155.4146,-3436,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,payroll taxes and Medicare premiums,-176.7713,-3908,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,"sales, excise, customs, fees",-119.0851,-2633,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,"capital, property, production taxes",-92.9121,-2054,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,Social Security,63.9148,1413,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,Medicare,55.5530,1228,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,Medicaid,127.6645,2823,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,schools and colleges,223.3866,4939,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,"police, courts, prisons",82.3433,1821,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,2759,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,veterans and military medical,12.7030,281,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",80.5849,1782,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,capital return,37.6866,833,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,production gain (subtracted),-11.9095,-263,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,lineage post-engine mixed_unit_removal_bn,10.7400,237,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,low,lineage post-engine coverage_bn,3.9508,87,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,income taxes,-217.9163,-5194,62.5017,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,payroll taxes and Medicare premiums,-194.3579,-4633,17.5866,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,"sales, excise, customs, fees",-123.2033,-2937,4.1183,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,"capital, property, production taxes",-87.9473,-2096,-4.9648,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,Social Security,141.5057,3373,-77.5909,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,Medicare,113.0022,2693,-57.4492,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,Medicaid,181.2461,4320,-53.5815,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,schools and colleges,173.9840,4147,49.4027,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,"police, courts, prisons",106.3305,2534,-23.9872,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914,-39.4537,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,veterans and military medical,41.5391,990,-28.8361,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",79.7973,1902,0.7877,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,capital return,35.6347,849,2.0519,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,production gain (subtracted),0.0000,0,-11.9095,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,low,lineage post-engine coverage_bn,0.0000,0,3.9508,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,income taxes,-471.4638,-10424,316.0492,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,payroll taxes and Medicare premiums,-283.8824,-6276,107.1111,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,"sales, excise, customs, fees",-183.3763,-4054,64.2913,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,"capital, property, production taxes",-188.5185,-4168,95.6064,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,Social Security,266.0173,5881,-202.1024,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,Medicare,193.7063,4283,-138.1533,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,Medicaid,105.5518,2334,22.1127,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,schools and colleges,143.3741,3170,80.0125,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,"police, courts, prisons",57.3514,1268,24.9919,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",75.4378,1668,49.3298,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,veterans and military medical,37.8464,837,-25.1435,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",104.0568,2301,-23.4719,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,capital return,36.1178,799,1.5688,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,production gain (subtracted),0.0000,0,-11.9095,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,low,lineage post-engine coverage_bn,0.0000,0,3.9508,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,income taxes,-471.1227,-10416,315.7081,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,payroll taxes and Medicare premiums,-282.6117,-6248,105.8404,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,"sales, excise, customs, fees",-183.6439,-4060,64.5588,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,"capital, property, production taxes",-188.8177,-4175,95.9056,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,Social Security,266.2923,5888,-202.3775,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,Medicare,193.7063,4283,-138.1533,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,Medicaid,105.5943,2335,22.0702,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,schools and colleges,146.7453,3244,76.6413,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,"police, courts, prisons",57.6025,1274,24.7408,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",75.8834,1678,48.8842,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,veterans and military medical,37.9147,838,-25.2117,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,"per-head lines: government, defense, interest, roads, other",104.1756,2303,-23.5906,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,capital return,36.2803,802,1.4063,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,production gain (subtracted),0.0000,0,-11.9095,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,low,lineage post-engine coverage_bn,0.0000,0,3.9508,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,income taxes,-379.6996,-8395,224.2849,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,payroll taxes and Medicare premiums,-249.9545,-5526,73.1832,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,"sales, excise, customs, fees",-168.0888,-3716,49.0037,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,"capital, property, production taxes",-169.1011,-3739,76.1891,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,Social Security,96.3977,2131,-32.4829,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,Medicare,71.2527,1575,-15.6997,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,Medicaid,88.2950,1952,39.3695,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,schools and colleges,236.8181,5236,-13.4315,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,"police, courts, prisons",59.1969,1309,23.1464,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",77.5192,1714,47.2484,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,veterans and military medical,24.0609,532,-11.3579,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,"per-head lines: government, defense, interest, roads, other",90.3668,1998,-9.7819,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,capital return,40.4027,893,-2.7161,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,production gain (subtracted),0.0000,0,-11.9095,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,low,lineage post-engine coverage_bn,0.0000,0,3.9508,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,income taxes,-435.6136,-9631,280.1990,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,payroll taxes and Medicare premiums,-266.5694,-5894,89.7981,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,"sales, excise, customs, fees",-177.8706,-3933,58.7855,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,"capital, property, production taxes",-178.5381,-3947,85.6260,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,Social Security,238.6589,5277,-174.7440,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,Medicare,172.1193,3805,-116.5664,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,Medicaid,101.9038,2253,25.7608,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,schools and colleges,166.7227,3686,56.6640,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,"police, courts, prisons",56.9613,1259,25.3820,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,"SNAP, SSI, housing, cash aid, credits, other welfare",75.0006,1658,49.7670,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,veterans and military medical,34.9160,772,-22.2130,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,"per-head lines: government, defense, interest, roads, other",99.4496,2199,-18.8646,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,capital return,36.9044,816,0.7823,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,production gain (subtracted),0.0000,0,-11.9095,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,low,lineage post-engine coverage_bn,0.0000,0,3.9508,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,income taxes,-397.5319,-8789,242.1173,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,payroll taxes and Medicare premiums,-259.2337,-5731,82.4624,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,"sales, excise, customs, fees",-165.6767,-3663,46.5916,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,"capital, property, production taxes",-163.2607,-3610,70.3486,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,Social Security,197.2379,4361,-133.3231,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,Medicare,148.5938,3285,-93.0408,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,Medicaid,128.6227,2844,-0.9581,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,schools and colleges,174.0053,3847,49.3813,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,"police, courts, prisons",69.9818,1547,12.3615,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,"SNAP, SSI, housing, cash aid, credits, other welfare",103.2162,2282,21.5514,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,veterans and military medical,31.9532,706,-19.2502,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,"per-head lines: government, defense, interest, roads, other",114.8560,2539,-34.2710,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,capital return,38.2115,845,-0.5249,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,production gain (subtracted),0.0000,0,-11.9095,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,lineage post-engine mixed_unit_removal_bn,0.0000,0,10.7400,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,low,lineage post-engine coverage_bn,0.0000,0,3.9508,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,income taxes,-142.7760,-3157,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,payroll taxes and Medicare premiums,-164.9627,-3647,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,"sales, excise, customs, fees",-119.8187,-2649,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,"capital, property, production taxes",-67.8043,-1499,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,Social Security,57.8233,1278,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,Medicare,55.5530,1228,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,Medicaid,129.7933,2870,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,schools and colleges,229.2062,5068,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,"police, courts, prisons",82.3433,1821,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,"SNAP, SSI, housing, cash aid, credits, other welfare",121.0459,2676,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,veterans and military medical,12.7583,282,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,"per-head lines: government, defense, interest, roads, other",105.6069,2335,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,capital return,61.8888,1368,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,production gain (subtracted),-7.8343,-173,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,lineage post-engine mixed_unit_removal_bn,14.5317,321,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_engine,high,lineage post-engine coverage_bn,7.8089,173,,case,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,income taxes,-155.4146,-3436,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,payroll taxes and Medicare premiums,-176.7713,-3908,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,"sales, excise, customs, fees",-119.0851,-2633,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,"capital, property, production taxes",-66.6845,-1474,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,Social Security,63.9148,1413,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,Medicare,55.5530,1228,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,Medicaid,127.6972,2823,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,schools and colleges,224.2369,4958,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,"police, courts, prisons",82.3433,1821,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,2759,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,veterans and military medical,12.7030,281,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",105.6003,2335,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,capital return,61.9795,1370,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,production gain (subtracted),-7.8343,-173,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,lineage post-engine mixed_unit_removal_bn,14.5317,321,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,mexican_origin_rough,high,lineage post-engine coverage_bn,7.8089,173,0.0000,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,income taxes,-217.9163,-5194,62.5017,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,payroll taxes and Medicare premiums,-194.3579,-4633,17.5866,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,"sales, excise, customs, fees",-123.2033,-2937,4.1183,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,"capital, property, production taxes",-59.6174,-1421,-7.0671,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,Social Security,141.5057,3373,-77.5909,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,Medicare,113.0022,2693,-57.4492,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,Medicaid,181.2461,4320,-53.5488,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,schools and colleges,173.9840,4147,50.2529,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,"police, courts, prisons",106.3305,2534,-23.9872,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914,-39.4537,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,veterans and military medical,41.5391,990,-28.8361,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",104.2367,2485,1.3636,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,capital return,58.5882,1396,3.3913,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,production gain (subtracted),0.0000,0,-7.8343,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,nh_black_rough,high,lineage post-engine coverage_bn,0.0000,0,7.8089,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,income taxes,-471.4638,-10424,316.0492,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,payroll taxes and Medicare premiums,-283.8824,-6276,107.1111,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,"sales, excise, customs, fees",-183.3763,-4054,64.2913,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,"capital, property, production taxes",-133.1515,-2944,66.4670,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,Social Security,266.0173,5881,-202.1024,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,Medicare,193.7063,4283,-138.1533,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,Medicaid,105.5518,2334,22.1454,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,schools and colleges,143.3741,3170,80.8628,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,"police, courts, prisons",57.3514,1268,24.9919,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",75.4378,1668,49.3298,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,veterans and military medical,37.8464,837,-25.1435,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",135.5448,2997,-29.9445,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,capital return,61.3353,1356,0.6442,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,production gain (subtracted),0.0000,0,-7.8343,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A1_third_plus_nh_white,high,lineage post-engine coverage_bn,0.0000,0,7.8089,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,income taxes,-471.1227,-10416,315.7081,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,payroll taxes and Medicare premiums,-282.6117,-6248,105.8404,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,"sales, excise, customs, fees",-183.6439,-4060,64.5588,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,"capital, property, production taxes",-133.7373,-2957,67.0529,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,Social Security,266.2923,5888,-202.3775,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,Medicare,193.7063,4283,-138.1533,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,Medicaid,105.5943,2335,22.1029,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,schools and colleges,146.7453,3244,77.4916,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,"police, courts, prisons",57.6025,1274,24.7408,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",75.8834,1678,48.8842,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,veterans and military medical,37.9147,838,-25.2117,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,"per-head lines: government, defense, interest, roads, other",135.5807,2998,-29.9803,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,capital return,61.5544,1361,0.4251,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,production gain (subtracted),0.0000,0,-7.8343,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A2_us_born_nh_white,high,lineage post-engine coverage_bn,0.0000,0,7.8089,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,income taxes,-379.6996,-8395,224.2849,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,payroll taxes and Medicare premiums,-249.9545,-5526,73.1832,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,"sales, excise, customs, fees",-168.0888,-3716,49.0037,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,"capital, property, production taxes",-118.0318,-2610,51.3473,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,Social Security,96.3977,2131,-32.4829,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,Medicare,71.2527,1575,-15.6997,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,Medicaid,88.2950,1952,39.4022,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,schools and colleges,236.8181,5236,-12.5812,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,"police, courts, prisons",59.1969,1309,23.1464,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",77.5192,1714,47.2484,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,veterans and military medical,24.0609,532,-11.3579,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,"per-head lines: government, defense, interest, roads, other",120.1729,2657,-14.5725,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,capital return,67.1290,1484,-5.1495,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,production gain (subtracted),0.0000,0,-7.8343,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A3_third_plus_nh_white_at_union_ages,high,lineage post-engine coverage_bn,0.0000,0,7.8089,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,income taxes,-435.6136,-9631,280.1990,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,payroll taxes and Medicare premiums,-266.5694,-5894,89.7981,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,"sales, excise, customs, fees",-177.8706,-3933,58.7855,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,"capital, property, production taxes",-126.4073,-2795,59.7229,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,Social Security,238.6589,5277,-174.7440,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,Medicare,172.1193,3805,-116.5664,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,Medicaid,101.9038,2253,25.7935,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,schools and colleges,166.7227,3686,57.5142,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,"police, courts, prisons",56.9613,1259,25.3820,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,"SNAP, SSI, housing, cash aid, credits, other welfare",75.0006,1658,49.7670,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,veterans and military medical,34.9160,772,-22.2130,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,"per-head lines: government, defense, interest, roads, other",129.9611,2873,-24.3607,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,capital return,62.2142,1376,-0.2347,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,production gain (subtracted),0.0000,0,-7.8343,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,A4_third_plus_nh_white_stationary,high,lineage post-engine coverage_bn,0.0000,0,7.8089,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,income taxes,-397.5319,-8789,242.1173,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,payroll taxes and Medicare premiums,-259.2337,-5731,82.4624,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,"sales, excise, customs, fees",-165.6767,-3663,46.5916,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,"capital, property, production taxes",-114.5987,-2534,47.9142,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,Social Security,197.2379,4361,-133.3231,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,Medicare,148.5938,3285,-93.0408,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,Medicaid,128.6227,2844,-0.9254,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,schools and colleges,174.0053,3847,50.2316,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,"police, courts, prisons",69.9818,1547,12.3615,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,"SNAP, SSI, housing, cash aid, credits, other welfare",103.2162,2282,21.5514,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,veterans and military medical,31.9532,706,-19.2502,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,"per-head lines: government, defense, interest, roads, other",144.8022,3201,-39.2019,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,capital return,63.9294,1413,-1.9499,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,production gain (subtracted),0.0000,0,-7.8343,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,lineage post-engine mixed_unit_removal_bn,0.0000,0,14.5317,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality
+cash,all_residents_slice,high,lineage post-engine coverage_bn,0.0000,0,7.8089,rough,lineage only; comparator counterpart unmeasured,oct15,whole-population mortality

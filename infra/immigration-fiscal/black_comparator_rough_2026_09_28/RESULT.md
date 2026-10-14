@@ -731,3 +731,48 @@ The parent defines the rough union as legacy pension amounts plus only R9 union 
 Live reproduction: sh infra/immigration-fiscal/black_comparator_rough_2026_09_28/run_oct14.sh after white run_oct14.sh. The full reproducibility receipt executes every wrapper child explicitly, profiling accrual_black.py during that required repeat; run_oct14.sh is the only allow-unrun entry (its equivalent child sequence is run, and shell syntax checked). Earlier keyed outputs remain unchanged.
 
 - 2026-10-14 19:09:57 JST — full live producer sequence rerun: IDENTICAL 62/62, exit 0, 83.15s, max RSS 1776.7MiB. Every producer was rerun; the pension child was profiled during this repeat. [CALCULATION: wave-2 rerun_black_wave2.py and rerun_lane.py]
+
+### Round-2 final execution — 2026-10-15
+
+Adopted b35ac8fb, personal16/11, coverage-inclusive lineage45,230,062.30075857. Full actual producer route passed66tests; full White byte rerun208/208, full standalone Black96/96, both exit0 with no script-coverage exemptions. The later renderer-only trailing-newline fix and this appended receipt are checked separately for byte idempotence; no numerical artifact changes. Mixed conventions and both own-mortality profile bounds remain explicitly beside each other. Item11 is lineage-only and every gap includes its exclusion. [CALCULATION: prop8/d-white-final-rerun.log, d-black-final-rerun.log, d-render-final-rerun.log; DATA: derived/symmetric_*_oct15.csv]
+
+<!-- oct15 second round-2 comparator fixes -->
+
+## Round-2 comparator fixes — 2026-10-15
+
+This section supersedes the earlier mixed-engine comparison readings. Every gap uses the complete lineage and comparator on the rough engine at the personal ends. The exact case lineage is reported separately in the bridge, itemized by evaluated line, public-capital return, production and post-engine amount. [CALCULATION: symmetric_comparisons_oct15.csv; lineage_engine_bridge_oct15.csv]
+
+The two mortality conventions are lineage whole-population with comparators own-group (mixed conventions), and every group on its own mortality. The own-lineage sensitivity transports source coefficients onto live pension amounts and bounds the unresolved added-profile split; it is not an independent status-specific mortality remeasurement. Cash is unchanged. [CALCULATION: mortality_conventions.py; symmetric_audit_oct15.json]
+
+| Mortality / profile; accrual, $bn low / high | Rough lineage | White | White gap | Without item 11 | Case minus rough bridge |
+|---|---:|---:|---:|---:|---:|
+| mixed mortality conventions, none | 362.784 / 450.927 | -202.445 / -90.222 | 565.229 / 541.149 | 554.489 / 526.618 | 6.207 / 8.275 |
+| own-group mortality, low | 366.523 / 454.667 | -202.445 / -90.222 | 568.969 / 544.889 | 558.229 / 530.357 | 6.207 / 8.275 |
+| own-group mortality, high | 366.527 / 454.671 | -202.445 / -90.222 | 568.973 / 544.893 | 558.233 / 530.361 | 6.207 / 8.275 |
+
+Item 11 is measured for the lineage only; white and Black mixed-unit removal remains unmeasured. Every gap row carries this label and the exact lineage-only amount. Removing item 11 shows its arithmetic size; it does not measure the comparator counterpart. Item 10 also remains lineage-only. Comparator coverage remains absent under the recorded own-price source limitation. [DATA: symmetric_audit_oct15.json; CALCULATION: comparison_contract.py]
+
+| Black minus rough lineage; accrual, $bn low / high | Own count | Equal lineage count | Equal count without item 11 |
+|---|---:|---:|---:|
+| mixed mortality conventions, none | 40.555 / 28.365 | 72.045 / 65.786 | 82.785 / 80.318 |
+| own-group mortality, low | 36.815 / 24.626 | 68.305 / 62.046 | 79.045 / 76.578 |
+| own-group mortality, high | 36.811 / 24.622 | 68.301 / 62.042 | 79.041 / 76.574 |
+
+Equal-count Black costs hold each end’s per-person cost fixed at the lineage count from population_v8.with_coverage; own-count results are beside them. This linear accounting standardization does not solve a new CES removal. [CALCULATION: symmetric_population_oct15.csv]
+
+| Item 9, own job-capital domestic-source change ($bn) | Low | High |
+|---|---:|---:|
+| A1_third_plus_nh_white | 11.089 | 4.103 |
+| A3_third_plus_nh_white_at_union_ages | 10.229 | 3.785 |
+| nh_black_rough | 4.210 | 1.558 |
+
+| Status and pension fixes; accrual, $bn low / high | Before cost | Bracket only change | Payroll only change | Joint change | Exact scenario selection change | After cost |
+|---|---:|---:|---:|---:|---:|---:|
+| A1_third_plus_nh_white | -202.081 / -89.858 | 0.114 / 0.114 | -0.478 / -0.478 | -0.364 / -0.364 | 0.000 / 0.000 | -202.445 / -90.222 |
+| A3_third_plus_nh_white_at_union_ages | -89.713 / 17.968 | -0.002 / -0.002 | -0.390 / -0.390 | -0.392 / -0.392 | -5.100 / -5.100 | -95.205 / 12.477 |
+| A4_third_plus_nh_white_stationary | -149.590 / -41.507 | 0.082 / 0.082 | -0.438 / -0.438 | -0.356 / -0.356 | -1.140 / -1.140 | -151.086 / -43.003 |
+| nh_black_rough | 404.233 / 480.187 | -0.330 / -0.330 | -0.564 / -0.564 | -0.894 / -0.894 | 0.000 / 0.000 | 403.338 / 479.293 |
+
+The bracket and payroll cells hold the other fix off; the joint cell applies both. The final scenario selection step includes the exact civilian record mask, population scaling and A3/A4 age weights; it is not an isolated age effect. Pension numerator conservation and status-input hash checks are enforced before selection. [CALCULATION: round2_changes_oct15.csv; mortality_comparators.py; status_keys_oct14.py]
+
+Reproduce with `sh infra/immigration-fiscal/white_replacement_2026_09_28/run_oct15.sh`. These are modeled annual removal costs. [CALCULATION: run_oct15.sh]

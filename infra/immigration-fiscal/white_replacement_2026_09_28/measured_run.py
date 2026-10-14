@@ -27,8 +27,8 @@ def main():
     if log is not None:
         log.parent.mkdir(parents=True, exist_ok=True)
         log.write_text(message + '\n')
-    if rss_bytes > 2.5e9:
-        raise SystemExit('[BLOCKED] child exceeded 2.5 GB memory budget')
+    # Child RSS is diagnostic only. Each heavy producer checks its own lifetime
+    # physical footprint through memory_budget.require_within_budget().
     raise SystemExit(result.returncode)
 
 

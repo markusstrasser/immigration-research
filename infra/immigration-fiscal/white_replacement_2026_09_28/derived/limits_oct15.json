@@ -1,0 +1,55 @@
+{
+  "case": "oct15",
+  "payload_sha256": {
+    "accrual": "08229ee9409c48820002cc2b0831968f7c1d6066b078be9e7303922d788793c7",
+    "cash": "b88998981a07591cc3b28307eac929d857fe0cc7d1edc0aa3821195221ff9439"
+  },
+  "white_end_tax_keys_residual": {
+    "accrual": {
+      "low": 1.9324343014659462e-07,
+      "high": 1.932434332552191e-07
+    },
+    "cash": {
+      "low": 1.9324343014659462e-07,
+      "high": 1.9324343014659462e-07
+    }
+  },
+  "white_end_tax_keys_rows": [
+    {
+      "basis": "accrual",
+      "end": "low",
+      "source_count": 1082721.22406998,
+      "raw_move_bn": 1.0864401932434302,
+      "applied_move_bn": 1.08644,
+      "residual_bn": 1.9324343014659462e-07,
+      "item_applied": true
+    },
+    {
+      "basis": "accrual",
+      "end": "high",
+      "source_count": 1082721.22406998,
+      "raw_move_bn": 1.0864401932434333,
+      "applied_move_bn": 1.08644,
+      "residual_bn": 1.932434332552191e-07,
+      "item_applied": true
+    },
+    {
+      "basis": "cash",
+      "end": "low",
+      "source_count": 1082721.22406998,
+      "raw_move_bn": 1.0864401932434302,
+      "applied_move_bn": 1.08644,
+      "residual_bn": 1.9324343014659462e-07,
+      "item_applied": true
+    },
+    {
+      "basis": "cash",
+      "end": "high",
+      "source_count": 1082721.22406998,
+      "raw_move_bn": 1.0864401932434302,
+      "applied_move_bn": 1.08644,
+      "residual_bn": 1.9324343014659462e-07,
+      "item_applied": true
+    }
+  ]
+}

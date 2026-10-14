@@ -1,0 +1,25 @@
+{
+  "case": "oct15",
+  "dependencies": {
+    "black_comparator_rough_2026_09_28/accrual_black.py": "120786461977ea23deb1f61475b742b202a3050ba0ef3422646f6bd6c7423721",
+    "california_medical_status_2026_09_23/cps_ca_status.py": "55c6b0e32b191e9a06a8a45a34d260edd44a144a75ad8757edb64b0ffbe5ea70",
+    "cps_imputation_keys_2026_09_23/_cache/asec25_lane.parquet": "c5b881660ac06c80ff8cf424c2d4be0120a661a8e31357252ba1d98b92f447fb",
+    "cps_imputation_keys_2026_09_23/combine_onbooks_lane.py": "c4c6e05b784b23da7985652f03cac13a1ce678a3cb3b33a0aeea9eebc3f3c42f",
+    "cps_imputation_keys_2026_09_23/combine_status.py": "b69b1fdcb039910768c71ddfeacd2273eaebfe4db5cb04bf4da711b6cf3423c5",
+    "cps_imputation_keys_2026_09_23/common.py": "490e3c38d191b47259595ee2eac6dbc0ff8361362fbfe5c204f5aece3b1506a6",
+    "external_benchmarks_2026_09_24/_cache/cps25_frame.parquet": "915993b7bd9d050e615b8d485f9703bf6c084e54af71d82f989a93add14afcc5",
+    "external_benchmarks_2026_09_24/derived/cbo_group_shares.csv": "fc73f97db7e8da645e22e546cf6f637c3f059c66fb328c058689f2c1c1d1f24b",
+    "gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+    "main_case_2026_10_15/derived/corrections.json": "08229ee9409c48820002cc2b0831968f7c1d6066b078be9e7303922d788793c7",
+    "onbooks_share_2026_09_23/derived/onbooks_inputs.json": "886f317acb33d74ac07ba6e24924d6f59619b4c11324baba7771a040ed75cd9d",
+    "onbooks_share_2026_09_23/derived/onbooks_split.csv": "6a652151547df2c33a35c46a016bb5be3d8cc4f84c359ac6f422b45766553564",
+    "status_impute_2026_09_16/impute_status.py": "68dc38e36735e49aeee8d2a7fc0806f3756ee053504596a003efb950c8a6429c",
+    "tax_key_heldout_2026_09_28/keys.py": "cbf2ee35ebc6205bb718fff398ef59f19f4d95d9db98e91beff7a490c6168934",
+    "tax_key_heldout_2026_09_28/reads/irs_table_1_2_ty2023.md": "47d5d93d51e3f74b8b87763a79e1c4a47da86e1fa83d0b3201a7c32b2fdf64c6",
+    "white_replacement_2026_09_28/accrual_white.py": "20cc8129fe2c3662825efbb8402e75fcd29ed2b5a5bb60c76262defc09c738c7",
+    "white_replacement_2026_09_28/mortality_comparators.py": "f9ce287749ad939a34cf2c6af707b9ee8a541ffe2c8a24abbed8f7cd9c522ada",
+    "white_replacement_2026_09_28/rekey_sept29.py": "6b540f00f7603c9ad824681610f012239e7efb4b28e54487f0987e2570d3e5fa",
+    "white_replacement_2026_09_28/status_keys_oct14.py": "d0c47fd15d85ed04bdcc4108b53679337ec9fcbcb6f014c36e0d4413dcce6e4d"
+  },
+  "output_sha256": "02722278d01776979f2931d33494b7864f26b71bcd5898682da4eaaeddeb3043"
+}

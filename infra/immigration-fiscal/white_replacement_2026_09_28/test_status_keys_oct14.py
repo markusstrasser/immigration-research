@@ -85,3 +85,20 @@ def test_engine_accrual_rates_close_to_post_edit_dumps():
     assert p["net"] * (20 + 0.8*4) == pytest.approx(27)
     assert p["part_a"] * (6 + 0.2*4) + 0.6*10 == pytest.approx(16)
     assert p["per_rel_ben"] * 20 * 0.5 == pytest.approx(2)
+
+
+def test_bracket_rake_preserves_receipts_in_unaffected_cells():
+    w = np.array([2., 3., 5., 7.])
+    base = np.array([.01, .02, .03, .04])
+    adjusted = base * np.array([.4, 1., 1., 1.])
+    cells = np.array(["low", "low", "high", "high"])
+    result, rows = S.rerake_cells(base, adjusted, w, cells)
+    assert np.array_equal(result[2:], base[2:])
+    assert result[0] < base[0] and result[1] > base[1]
+    assert all(abs(row["error_share"]) < 1e-12 for row in rows)
+    assert w @ result == pytest.approx(w @ base, abs=1e-12)
+
+
+def test_bracket_rake_rejects_lost_support():
+    with pytest.raises(SystemExit, match="empty post-status bracket"):
+        S.rerake_cells(np.ones(2), np.array([0., 1.]), np.ones(2), np.array(["a", "b"]))

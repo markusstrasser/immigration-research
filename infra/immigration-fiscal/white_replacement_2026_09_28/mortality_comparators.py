@@ -8,6 +8,7 @@ arm is a pooled-Hispanic proxy, held beside the general central; it does not ide
 from __future__ import annotations
 
 import csv
+import io
 import hashlib
 import importlib.util
 import json
@@ -16,6 +17,7 @@ import sys
 import time
 import zipfile
 from contextlib import contextmanager
+from dataclasses import dataclass
 from pathlib import Path
 
 sys.dont_write_bytecode = True
@@ -24,7 +26,15 @@ import pandas as pd
 
 LANE = Path(__file__).resolve().parent
 FISCAL = LANE.parent
+sys.path.insert(0, str(FISCAL / 'scripts'))
+from memory_budget import peak_bytes, require_within_budget
 BLACK = FISCAL / "black_comparator_rough_2026_09_28"
+
+
+def file_sha256(path):
+    """Hash the same input bytes without retaining an input-sized buffer."""
+    with path.open("rb") as stream:
+        return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
 def load(name, path):
@@ -171,23 +181,159 @@ def output_row(name, basis, population, o, a, rel, n):
                 oasdi_per_tax_dollar=o["ratio"], benefit_tax_timing=o["timing"], relative_benefit_tax_rate=rel,
                 future_share=rel * o["timing"], oasdi_per_tax_dollar_net=o["ratio"] * (1 - rel * o["timing"]),
                 part_a_per_hi_tax_dollar=a["accrual_bn"] / a["hi_tax_bn"], cps_oasdi_tax_bn=o["tax_bn"],
-                cps_hi_tax_bn=a["hi_tax_bn"], part_a_accrual_bn=a["accrual_bn"], p_qualify_65plus=a["p_qualify"])
+                cps_hi_tax_bn=a["hi_tax_bn"], part_a_accrual_bn=a["accrual_bn"], p_qualify_65plus=a["p_qualify"],
+                scenario_name="observed", end="", payroll_basis="legacy",
+                population_basis="published CPS" if basis == "cps" else "row4 pension frame",
+                oasdi_accrual_gross_bn=o["ratio"] * o["tax_bn"],
+                oasdi_accrual_net_bn=o["ratio"] * (1 - rel * o["timing"]) * o["tax_bn"],
+                multiplier_oasdi_tax_bn=o["tax_bn"], multiplier_hi_tax_bn=a["hi_tax_bn"])
+
+
+def dependency_manifest(status=None):
+    paths = dict(status.source_info["source_sha256"]) if status is not None else {}
+    for path in (Path(__file__), LANE / "status_keys_oct14.py", LANE / "accrual_white.py",
+                 BLACK / "accrual_black.py", LANE / "rekey_sept29.py",
+                 FISCAL / "tax_key_heldout_2026_09_28/keys.py",
+                 FISCAL / "external_benchmarks_2026_09_24/_cache/cps25_frame.parquet",
+                 FISCAL / "gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+                 FISCAL / "status_impute_2026_09_16/impute_status.py",
+                 FISCAL / "california_medical_status_2026_09_23/cps_ca_status.py",
+                 FISCAL / "tax_key_heldout_2026_09_28/reads/irs_table_1_2_ty2023.md",
+                 FISCAL / "external_benchmarks_2026_09_24/derived/cbo_group_shares.csv",
+                 FISCAL / "main_case_2026_10_15/derived/corrections.json"):
+        paths[str(path.relative_to(FISCAL))] = file_sha256(path)
+    for lane in (LANE, BLACK):
+        for entry in json.loads((lane / "inputs/pins.json").read_text())["symmetric_sources"].values():
+            path = FISCAL / entry["file"]
+            paths[entry["file"]] = file_sha256(path)
+    return dict(case="oct15", dependencies=paths)
+
+
+def write_ratio_dependencies(lane, filename, status=None):
+    ratio = lane / "derived" / filename
+    manifest = dependency_manifest(status)
+    manifest["output_sha256"] = file_sha256(ratio)
+    ratio.with_suffix(".dependencies.json").write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
+
+
+def verify_ratio_dependencies(lane, filename="accrual_ratios_mortality_oct15.csv"):
+    path = (lane / "derived" / filename).with_suffix(".dependencies.json")
+    gate("pension status dependency manifest exists", path.exists())
+    manifest = json.loads(path.read_text())
+    for name, expected in manifest["dependencies"].items():
+        source = FISCAL / name
+        gate(f"pension status dependency hash {name}", source.exists()
+             and file_sha256(source) == expected)
+    ratio = lane / "derived" / filename
+    gate("pension output matches dependency manifest", ratio.exists()
+         and file_sha256(ratio) == manifest["output_sha256"])
+    return manifest
+
+
+@dataclass(frozen=True)
+class VerifiedRatioTable:
+    lane: Path
+    manifest: dict
+    rows: pd.DataFrame
+
+
+def read_verified_ratio_table(lane):
+    """One fresh source verification and one exact ratio snapshot, scoped to a run."""
+    manifest = verify_ratio_dependencies(lane)
+    data = (lane / "derived/accrual_ratios_mortality_oct15.csv").read_bytes()
+    gate("pension snapshot matches verified output", hashlib.sha256(data).hexdigest() == manifest["output_sha256"])
+    return VerifiedRatioTable(lane, manifest, pd.read_csv(io.BytesIO(data), keep_default_na=False))
+
+
+def select_verified_ratio(table, group, mortality, basis, scenario_name="observed", end="", payroll_basis="legacy"):
+    """Pure exact selection from one already-verified option-set snapshot."""
+    rows = table.rows
+    selected = rows[(rows.group == group) & (rows.mortality == mortality) & (rows.basis == basis)
+                    & (rows.scenario_name == scenario_name) & (rows.end == end)
+                    & (rows.payroll_basis == payroll_basis) & (rows.scenario == "payable")]
+    gate(f"exactly one pension ratio {group}/{scenario_name}/{mortality}/{payroll_basis}/{end}", len(selected) == 1)
+    return selected.iloc[0].to_dict()
+
+
+def require_ratio_snapshot_fresh(table):
+    """Reject source changes and valid newer producer snapshots before publication."""
+    current = verify_ratio_dependencies(table.lane)
+    gate("pension option-set snapshot remains current", current == table.manifest)
+
+
+def select_ratio(lane, group, mortality, basis, scenario_name="observed", end="", payroll_basis="legacy"):
+    """Standalone selection always starts with a fresh dependency gate."""
+    return select_verified_ratio(read_verified_ratio_table(lane), group, mortality, basis,
+                                 scenario_name, end, payroll_basis)
+
+
+def renormalized_row(row, m, status, sc, end):
+    """Preserve the priced numerator; use the exact payroll dollars run29 multiplies."""
+    lines = {x["id"]: x["national_bn"] for x in m.DUMP["cash"][end]["lines"] if x["side"] == "receipts"}
+    se = status.receipt_amount(sc, "self_employment_oasdi_hi", lines["self_employment_oasdi_hi"])
+    oasdi = sum(status.receipt_amount(sc, lid, lines[lid]) for lid in ("employee_oasdi", "employer_oasdi")) + m.SE_SHARE * se
+    hi = sum(status.receipt_amount(sc, lid, lines[lid]) for lid in ("employee_hi", "employer_hi")) + (1-m.SE_SHARE) * se
+    gate(f"{sc['name']} nonempty renormalized payroll", oasdi > 0 and hi > 0)
+    result = dict(row, end=end, payroll_basis="renormalized_status", multiplier_oasdi_tax_bn=oasdi,
+                  multiplier_hi_tax_bn=hi, oasdi_per_tax_dollar=row["oasdi_accrual_gross_bn"] / oasdi,
+                  oasdi_per_tax_dollar_net=row["oasdi_accrual_net_bn"] / oasdi,
+                  part_a_per_hi_tax_dollar=row["part_a_accrual_bn"] / hi)
+    gate(f"{sc['name']}/{end} renormalized numerator closure", abs(result["oasdi_per_tax_dollar_net"] * oasdi
+         - row["oasdi_accrual_net_bn"]) < 1e-9 and abs(result["part_a_per_hi_tax_dollar"] * hi-row["part_a_accrual_bn"]) < 1e-9)
+    return result
+
+
+def write_mortality_output(lane, rows, dependencies):
+    """Admit the complete in-memory result before touching either previous output."""
+    buffer = io.StringIO(newline="")
+    writer = csv.DictWriter(buffer, fieldnames=list(rows[0]), lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(rows)
+    csv_text = buffer.getvalue()
+    manifest = dict(dependencies, output_sha256=hashlib.sha256(csv_text.encode()).hexdigest())
+    manifest_text = json.dumps(manifest, indent=2, sort_keys=True) + "\n"
+    footprint = require_within_budget("comparator mortality")
+    dest = lane / "derived/accrual_ratios_mortality_oct15.csv"
+    dest.write_text(csv_text)
+    dest.with_suffix(".dependencies.json").write_text(manifest_text)
+    return footprint
 
 
 def run(which):
     started = time.perf_counter()
+    profile = []
+
+    def checkpoint(stage):
+        record = dict(stage=stage, seconds=time.perf_counter() - started,
+                      peak_footprint_bytes=peak_bytes())
+        profile.append(record)
+        print("RESOURCE_PROFILE " + json.dumps(record, sort_keys=True), flush=True)
     W = load("mortality_white_accrual", LANE / "accrual_white.py")
     B = load("mortality_black_accrual", BLACK / "accrual_black.py")
     P = W.P
     gate("white and Black share the same pension module", B.P is P)
     TP = B.tr2026_path()
-    meta = json.loads((FISCAL / "main_case_2026_10_14/derived/corrections.json").read_text())["meta"]
+    meta = json.loads((FISCAL / "main_case_2026_10_15/derived/corrections.json").read_text())["meta"]
     TP.case_check(meta)
     lane = LANE if which == "white" else BLACK
     paths = verify_tables(lane)
+    # Status build is the measured peak. Do it before retaining three actuarial
+    # dataframes; their rows are independent of the comparator's setup order.
+    import rekey_sept29 as comparison
+    from status_keys_oct14 import build as status_build
+    checkpoint("comparison imported")
+    comparison.use_case("oct15")
+    comparison.setup()
+    comparison.stop_if_failed()
+    checkpoint("comparison setup")
+    status = status_build(comparison)
+    checkpoint("status built")
+    dependencies = dependency_manifest(status)
+    checkpoint("dependencies hashed")
     p = P.frame()
     p4 = row4_frame(p, B.ZIP)
     symmetric = symmetric_frame(p4, P, B.ZIP, lane)
+    checkpoint("actuarial frames built")
     with zipfile.ZipFile(B.ZIP) as z:
         race = pd.read_csv(z.open("pppub25.csv"), usecols=["PH_SEQ", "A_LINENO", "PEHSPNON", "PRDTRACE"])
     race = p[["PH_SEQ", "A_LINENO"]].merge(race, on=["PH_SEQ", "A_LINENO"], validate="one_to_one", how="left")
@@ -203,15 +349,39 @@ def run(which):
         rel["G3plus"] = float(upstream_g3.future_share / upstream_g3.timing)
     mid = P.entry_midpoints()
 
+    # Map the consumer's record weights through actual person IDs, preserving
+    # the actuarial frame order. A3/A4 must retain their scenario age tilts.
+    with zipfile.ZipFile(B.ZIP) as z:
+        ids = pd.read_csv(z.open("pppub25.csv"), usecols=["PH_SEQ", "PPPOS", "A_LINENO"])
+    gate("pension scenario raw IDs unique", not ids.duplicated(["PH_SEQ", "PPPOS"]).any())
+    gate("pension scenario rough IDs align", np.array_equal(ids.PH_SEQ, comparison.R.d.PH_SEQ))
+    lookup = p[["PH_SEQ", "A_LINENO"]].merge(ids.assign(rough_index=np.arange(len(ids))),
+                 on=["PH_SEQ", "A_LINENO"], how="left", validate="one_to_one")
+    gate("pension scenario IDs fully covered", lookup.rough_index.notna().all())
+    order = lookup.rough_index.to_numpy(int)
+    all_scenarios = comparison.scenarios()
+    scenario_names = (("A1_third_plus_nh_white", "A2_us_born_nh_white",
+                       "A3_third_plus_nh_white_at_union_ages", "A4_third_plus_nh_white_stationary")
+                      if which == "white" else ("nh_black_rough",))
+    scenario_weights = {}
+    for name in scenario_names:
+        sc = all_scenarios[name]
+        weights = np.asarray(sc["cps_w"], float)[order]
+        gate(f"{name} scenario pension weight closure", abs(float(weights.sum()) - sc["population"]) < 1e-6)
+        scenario_weights[name] = (sc, weights)
+    checkpoint("scenario weights built")
+
     def price(frame, name, grid, taus, econ, fiscal_paths, population):
         f = frame.copy()
         if name != "union":
-            selection = p.mexican_third_plus_selfid.to_numpy() if name == "G3plus" else mask
+            selection = frame.attrs.get("scenario_selection",
+                        p.mexican_third_plus_selfid.to_numpy() if name == "G3plus" else mask)
             if frame.attrs.get("symmetric_eligibility"):
                 selection = selection & frame.civilian.to_numpy(bool)
                 gate(f"symmetric {name} civilian coverage", not bool((selection & ~frame.civilian.to_numpy(bool)).any()))
-                gate(f"symmetric {name} person weight closure", abs(float(frame.w[selection].sum())
-                     - float(p4.w[selection].sum())) < 1e-6)
+                if "scenario_selection" not in frame.attrs:
+                    gate(f"symmetric {name} person weight closure", abs(float(frame.w[selection].sum())
+                         - float(p4.w[selection].sum())) < 1e-6)
                 newly = selection & f.unauth.to_numpy(bool) & ~p.unauth.to_numpy(bool)
                 old_tax = float((p4.w * p.tax_oasdi)[selection].sum())
                 print(f"[diagnostic] symmetric {name}: civilian population {float(frame.w[selection].sum()):.6f}; "
@@ -234,6 +404,19 @@ def run(which):
                               "payable", population=population)
         return output_row(name, "cps", population, o, a, rel[name], float(f.w[f.union].sum()))
 
+    def append_scenario_rows(grid, taus, econ, fiscal_paths, population):
+        for scenario_name, (sc, weights) in scenario_weights.items():
+            for basis in ("row4", "symmetric"):
+                f = (p4 if basis == "row4" else symmetric).copy()
+                f["w"] = weights
+                f.attrs["scenario_selection"] = weights > 0
+                row = price(f, group, grid, taus, econ, fiscal_paths, population)
+                row.update(basis=basis, scenario_name=scenario_name,
+                           age_mix=scenario_name, population_basis="exact comparator scenario cps_w")
+                rows.append(row)
+                for end in comparison.ENDS:
+                    rows.append(renormalized_row(row, comparison, status, sc, end))
+
     def added_frames(name):
         """Reweight each source profile to the case's measured added mix, holding its within-band people fixed."""
         am = meta["lineage"]["age_mix"]
@@ -255,17 +438,23 @@ def run(which):
             gate(f"{name} {key} population conserved", abs(float(f.w[selection].sum()) - n) < 1e-6)
             realized = np.bincount(band[selection], weights=f.w[selection], minlength=len(target)) / n
             gate(f"{name} {key} age shares close", bool(np.max(np.abs(realized - target)) < 1e-12))
-            out.append((key, f))
+            out.append((key, f.w.to_numpy().copy()))
         return out
+
+    def added_frame(weights):
+        f = p.copy()
+        f["w"] = weights
+        return f
 
     rows, timings = [], {}
     with table_context(P, paths):
         t0 = time.perf_counter()
         econ, grid, taus, fiscal_paths = TP.payable(P, P.S.scaled_factors().preliminary.to_numpy())
         timings["general_grid_seconds"] = time.perf_counter() - t0
+        checkpoint("general grid built")
         for name in ("union", group):
             row = price(p, name, grid, taus, econ, fiscal_paths, "general")
-            central = pd.read_csv(lane / "derived/accrual_ratios_oct14.csv")
+            central = pd.read_csv(lane / "derived/accrual_ratios_oct15.csv")
             ref = central[(central.group == name) & central.scenario.eq("payable")]
             if "entry_rule" in ref:
                 ref = ref[ref.entry_rule.eq(row["entry_rule"])]
@@ -285,6 +474,10 @@ def run(which):
                 row = price(symmetric, name, grid, taus, econ, fiscal_paths, "general")
                 row["basis"] = "symmetric"
                 rows.append(row)
+                sc = comparison.R.scenario("w3" if which == "white" else "blk", scaled=False)
+                for end in comparison.ENDS:
+                    rows.append(renormalized_row(row, comparison, status, sc, end))
+        append_scenario_rows(grid, taus, econ, fiscal_paths, "general")
         if which == "white":
             observed_g3 = price(p, "G3plus", grid, taus, econ, fiscal_paths, "general")
             for k, col in (("oasdi_per_tax_dollar", "per_tax_dollar"), ("oasdi_per_tax_dollar_net", "net_per_tax_dollar"),
@@ -292,10 +485,11 @@ def run(which):
                 gate(f"G3plus upstream {col}", abs(observed_g3[k] - float(upstream_g3[col])) < 5e-9 * max(1, abs(float(upstream_g3[col]))))
             rows.append(observed_g3)
             extra = [(name, key, frame) for name in ("G3plus", group) for key, frame in added_frames(name)]
-            for name, key, frame in extra:
-                row = price(frame, name, grid, taus, econ, fiscal_paths, "general")
+            for name, key, weights in extra:
+                row = price(added_frame(weights), name, grid, taus, econ, fiscal_paths, "general")
                 row.update(basis="added_profile", age_mix=key)
                 rows.append(row)
+        checkpoint("general rows priced")
         # Retain only the denominator's money-worth array; release the unused general grid's large k arrays.
         denominator = dict(mwr={TP.BASE: grid["mwr"][TP.BASE]})
         del grid
@@ -312,6 +506,7 @@ def run(which):
                     taus = P.tob_timing(econ, P.S.scaled_factors().preliminary.to_numpy(), TP.TR.tob_share_tr2026(),
                                         runs=[(g, "payable")])
             timings[f"{population}_grid_seconds"] = time.perf_counter() - t0
+            checkpoint(f"{population} grid built")
             for basis, frame in (("cps", p), ("row4", p4)):
                 row = price(frame, name, grid, taus, econ, fiscal_paths, population)
                 row["basis"] = basis
@@ -328,9 +523,13 @@ def run(which):
                 gate(f"symmetric {name} mortality payroll conserved", abs(row["cps_oasdi_tax_bn"] - control["cps_oasdi_tax_bn"]) < 1e-9
                      and abs(row["cps_hi_tax_bn"] - control["cps_hi_tax_bn"]) < 1e-9)
                 rows.append(row)
+                sc = comparison.R.scenario("w3" if which == "white" else "blk", scaled=False)
+                for end in comparison.ENDS:
+                    rows.append(renormalized_row(row, comparison, status, sc, end))
+                append_scenario_rows(grid, taus, econ, fiscal_paths, population)
             if which == "white" and population == "hispanic":
-                for name, key, frame in extra:
-                    row = price(frame, name, grid, taus, econ, fiscal_paths, population)
+                for name, key, weights in extra:
+                    row = price(added_frame(weights), name, grid, taus, econ, fiscal_paths, population)
                     row.update(basis="added_profile", age_mix=key)
                     control = next(r for r in rows if r["group"] == name and r["basis"] == "added_profile"
                                    and r["age_mix"] == key and r["mortality"] == "general")
@@ -338,12 +537,10 @@ def run(which):
                          and abs(row["cps_hi_tax_bn"] - control["cps_hi_tax_bn"]) < 1e-9)
                     rows.append(row)
             del grid
-    dest = lane / "derived/accrual_ratios_mortality_oct14.csv"
-    with dest.open("w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
-        w.writeheader()
-        w.writerows(rows)
+            checkpoint(f"{population} rows priced")
+    checkpoint("all rows priced before admission")
+    timings["peak_footprint_bytes"] = write_mortality_output(lane, rows, dependencies)
     timings["total_seconds"] = time.perf_counter() - started
-    timings["peak_memory_bytes"] = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    timings["resource_profile"] = profile
     print(pd.DataFrame(rows).to_string(index=False), flush=True)
     print(json.dumps(timings, sort_keys=True), flush=True)

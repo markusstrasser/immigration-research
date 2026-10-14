@@ -1,0 +1,21 @@
+basis,region,end,spec,union_persons,white_cps_sample,white_rates_from,cost_union_bn,cost_white_union_ages_bn,cost_white_own_ages_bn,delta_union_ages_bn,delta_own_ages_bn,delta_union_ages_per_person,delta_own_ages_per_person,delta_union_ages_both_arms_per_person,case,mortality_convention
+accrual,California,low,16,14656597,3073,California,116.7950,-134.7771,-181.2819,251.5721,298.0769,17164,20337,17794,oct15,whole-population mortality
+accrual,Texas,low,16,11514722,3045,Texas,84.9895,-31.7528,-61.6865,116.7424,146.6760,10139,12738,10444,oct15,whole-population mortality
+accrual,rest of US,low,16,19058744,74163,national,143.4198,-18.9812,-84.8077,162.4010,228.2275,8521,11975,8731,oct15,whole-population mortality
+accrual,Los Angeles metro,low,16,4989998,787,Los Angeles metro,37.2846,-84.9350,-102.8691,122.2196,140.1536,24493,28087,25436,oct15,whole-population mortality
+accrual,"sum of CA, TX and rest",low,16,45230064,,state,345.2043,-185.5112,-327.7761,530.7155,672.9804,11734,14879,12104,oct15,whole-population mortality
+accrual,California,high,11,14656597,3073,California,146.3574,-93.1122,-139.1314,239.4696,285.4888,16339,19479,17823,oct15,whole-population mortality
+accrual,Texas,high,11,11514722,3045,Texas,107.1148,-4.4096,-32.3901,111.5244,139.5050,9685,12115,10569,oct15,whole-population mortality
+accrual,rest of US,high,11,19058744,74163,national,179.8759,25.4340,-37.5861,154.4419,217.4621,8103,11410,8845,oct15,whole-population mortality
+accrual,Los Angeles metro,high,11,4989998,787,Los Angeles metro,47.2935,-68.8891,-86.2526,116.1826,133.5462,23283,26763,25376,oct15,whole-population mortality
+accrual,"sum of CA, TX and rest",high,11,45230064,,state,433.3482,-72.0878,-209.1077,505.4359,642.4558,11175,14204,12193,oct15,whole-population mortality
+cash,California,low,16,14656597,3073,California,90.4236,-180.6566,-159.3856,271.0802,249.8091,18495,17044,19125,oct15,whole-population mortality
+cash,Texas,low,16,11514722,3045,Texas,70.3059,-53.1246,-48.4536,123.4305,118.7595,10719,10314,11025,oct15,whole-population mortality
+cash,rest of US,low,16,19058744,74163,national,106.4733,-66.8113,-48.4986,173.2846,154.9718,9092,8131,9302,oct15,whole-population mortality
+cash,Los Angeles metro,low,16,4989998,787,Los Angeles metro,28.1552,-104.3737,-106.1869,132.5289,134.3421,26559,26922,27502,oct15,whole-population mortality
+cash,"sum of CA, TX and rest",low,16,45230064,,state,267.2027,-300.5925,-256.3377,567.7952,523.5404,12553,11575,12924,oct15,whole-population mortality
+cash,California,high,11,14656597,3073,California,119.9860,-138.9917,-117.2350,258.9777,237.2210,17670,16185,19154,oct15,whole-population mortality
+cash,Texas,high,11,11514722,3045,Texas,92.4312,-25.7813,-19.1572,118.2125,111.5884,10266,9691,11150,oct15,whole-population mortality
+cash,rest of US,high,11,19058744,74163,national,142.9294,-22.3961,-1.2770,165.3254,144.2064,8675,7566,9416,oct15,whole-population mortality
+cash,Los Angeles metro,high,11,4989998,787,Los Angeles metro,38.1641,-88.3278,-89.5705,126.4919,127.7346,25349,25598,27442,oct15,whole-population mortality
+cash,"sum of CA, TX and rest",high,11,45230064,,state,355.3465,-187.1691,-137.6693,542.5157,493.0158,11995,10900,13013,oct15,whole-population mortality

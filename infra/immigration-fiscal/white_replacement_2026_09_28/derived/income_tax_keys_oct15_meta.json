@@ -1,0 +1,72 @@
+{
+  "case": "oct15",
+  "scope": "raw income-tax keys only; no pension pricing or validated rough totals",
+  "allocation": "personal",
+  "lineage_counts": {
+    "added": 5517568.969558565,
+    "at_g3_rate": 1944891.7263696424,
+    "later_losses": 1094827.8668155947,
+    "lineage_population": 45230062.30075857,
+    "account_union": 39712493.3312,
+    "identified_g3plus": 14342574.606276
+  },
+  "comparison_population": 45230062.30075857,
+  "comparison_population_rule": "population_v8.with_coverage; full oct15 A1 comparison frame",
+  "tax_key_control_baseline_population": 42752212.92438524,
+  "baseline_lineage_counts": {
+    "added": 3039719.593185237,
+    "at_g3_rate": 1944891.7263696424,
+    "later_losses": 1094827.8668155947,
+    "lineage_population": 42752212.92438524,
+    "account_union": 39712493.3312,
+    "identified_g3plus": 14342574.606276
+  },
+  "item7_measurement_rule": "unchanged baseline white-priced members and source age mix; new A1 CSV frame is a separate comparison",
+  "inputs_sha256": {
+    "main_case_2026_10_15/derived/corrections.json": "08229ee9409c48820002cc2b0831968f7c1d6066b078be9e7303922d788793c7",
+    "main_case_2026_10_15/derived/corrections_cash.json": "b88998981a07591cc3b28307eac929d857fe0cc7d1edc0aa3821195221ff9439",
+    "main_case_2026_10_15/derived/summary.json": "3f7bcd56a7de8e7b1f253b640fab3135ce93fc420f73de5251611d0472127f04",
+    "white_replacement_2026_09_28/export_keys_oct14.py": "13c67dd1d0d97d61c1f8f5bdadcf4010b69f307e63976b0ac86bccdf01775538",
+    "white_replacement_2026_09_28/rekey_sept29.py": "6b540f00f7603c9ad824681610f012239e7efb4b28e54487f0987e2570d3e5fa",
+    "white_replacement_2026_09_28/rekey_white.py": "bef5e563bb2233262367b3a62d2d26da1c87e44b1ddc4060de81ab1070ad027f",
+    "white_replacement_2026_09_28/check_dumps_oct14.py": "480ae1daf0c0af1a92c5bc7087082b4ae039943f09aefbdc20c861a6b351b471",
+    "white_replacement_2026_09_28/derived/engine_lines_sept29_cash.json": "616a060be37d285e17a7330015b7254995178e146746350ed053edfe82813ed0",
+    "tax_key_heldout_2026_09_28/keys.py": "cbf2ee35ebc6205bb718fff398ef59f19f4d95d9db98e91beff7a490c6168934",
+    "external_benchmarks_2026_09_24/frame.py": "c5ba5e8c7e6fceef6f4f853b8cf596ebd639b3be8cc6f8a376125831f8e5b6ad",
+    "gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+    "tax_key_heldout_2026_09_28/derived/bins.csv": "950d83f07ab7f63ade40e47570c4b751ea416c72c7753e56f595d2219d8369cb",
+    "external_benchmarks_2026_09_24/derived/cbo_group_shares.csv": "fc73f97db7e8da645e22e546cf6f637c3f059c66fb328c058689f2c1c1d1f24b",
+    "white_replacement_2026_09_28/derived/engine_lines_oct15.json": "6b25154a04d5ded82a40be79f43c2fbb55936b28a549c7defcdf7828f6530301",
+    "white_replacement_2026_09_28/derived/engine_lines_oct15_cash.json": "97df97105c04f42923417c1a70288e8c277472e55c13a39d1192d899db9d6932",
+    "white_replacement_2026_09_28/derived/engine_lines_oct15_union.json": "df43a09b59502f6fa9e894f6dddcb3c734f6aecf50380ad62edb43f7572daf7b",
+    "white_replacement_2026_09_28/derived/engine_lines_oct15_union_cash.json": "7cc7d7b07255125898fbb30be08efb23c1a9c5e00c57cb23f99555bc8edba491"
+  },
+  "csv_sha256": {
+    "white_replacement_2026_09_28/derived/income_tax_keys_oct15.csv": "c965fdc92a8ae0db82315db79655c8f3b1a5f983f63677c455efecdb6afa4743",
+    "black_comparator_rough_2026_09_28/derived/income_tax_keys_oct15.csv": "71a36f6ad11f309ff00a957ca160b6ecdf6462649e3cb857e29fd5623b0b1a17"
+  },
+  "source_count": 1082721.22406998,
+  "raw_move_bn": 1.086440193243434,
+  "parts_bn": {
+    "federal_income_tax": 0.7578184242392856,
+    "state_local_income_tax": 0.3270835817760852,
+    "other_personal_tax": 0.0015381872280632602
+  },
+  "applied_move_bn": {
+    "accrual": 1.08644,
+    "cash": 1.08644
+  },
+  "item_applied": true,
+  "residual_zero_tolerance_bn": 1e-09,
+  "white_end_tax_keys_residual": {
+    "accrual": {
+      "low": 1.932434339213529e-07,
+      "high": 1.932434339213529e-07
+    },
+    "cash": {
+      "low": 1.932434339213529e-07,
+      "high": 1.932434339213529e-07
+    }
+  },
+  "measurement_scope": "receipt-key arithmetic only; a nonzero residual is reported, never rounded to pass"
+}

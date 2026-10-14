@@ -53,7 +53,7 @@ def read_replicates(z, ids, fields, chunk_size=2048):
 class Production:
     def __init__(self, W):
         self.W, self.cache = W, {}
-        self.states = json.loads((HERE / 'derived/production_state_oct14.json').read_text())
+        self.states = json.loads((HERE / 'derived/production_state_oct15.json').read_text())
         row4 = json.loads((HERE.parent / 'main_case_candidate_2026_09_28/derived/production_row4.json').read_text())
         R = W.R
         with zipfile.ZipFile(R.ZIP) as z:

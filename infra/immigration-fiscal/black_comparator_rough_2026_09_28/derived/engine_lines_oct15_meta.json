@@ -1,0 +1,411 @@
+{
+  "case": "oct15",
+  "scope": "engine dump leaf only; rough comparator pricing has separate gates",
+  "gates": [
+    {
+      "gate": "white_replacement_2026_09_28 accrual low full cost accounting",
+      "actual": 368.9909342553624,
+      "expected": 368.99093425536245,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual low union cost accounting",
+      "actual": 321.17039586928337,
+      "expected": 321.1703958692834,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual low authoritative band",
+      "actual": 368.9909342553624,
+      "expected": 368.9909,
+      "tolerance": 5e-05
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual low full less base union line/post-engine split",
+      "actual": 47.82053838607902,
+      "expected": 47.82053838607942,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual low corporate_capital R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual low corporate_labor R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual low other_production_taxes R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual low remaining_production_property R7 response",
+      "actual": 0.8806493775433665,
+      "expected": 0.8806493775433665,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual high full cost accounting",
+      "actual": 459.20287674292126,
+      "expected": 459.20287674292126,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual high union cost accounting",
+      "actual": 397.0788735465335,
+      "expected": 397.0788735465335,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual high authoritative band",
+      "actual": 459.20287674292126,
+      "expected": 459.2029,
+      "tolerance": 5e-05
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual high full less base union line/post-engine split",
+      "actual": 62.124003196387775,
+      "expected": 62.12400319638814,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual high corporate_capital R7 response",
+      "actual": 0.37,
+      "expected": 0.37,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual high corporate_labor R7 response",
+      "actual": 0.37,
+      "expected": 0.37,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual high other_production_taxes R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 accrual high remaining_production_property R7 response",
+      "actual": 0.8806493775433665,
+      "expected": 0.8806493775433665,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash low full cost accounting",
+      "actual": 284.95156767595086,
+      "expected": 284.95156767595086,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash low union cost accounting",
+      "actual": 251.55847464558698,
+      "expected": 251.55847464558698,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash low authoritative band",
+      "actual": 284.95156767595086,
+      "expected": 284.9516,
+      "tolerance": 5e-05
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash low full less base union line/post-engine split",
+      "actual": 33.39309303036387,
+      "expected": 33.3930930303636,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash low corporate_capital R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash low corporate_labor R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash low other_production_taxes R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash low remaining_production_property R7 response",
+      "actual": 0.8806493775433665,
+      "expected": 0.8806493775433665,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash high full cost accounting",
+      "actual": 375.1635101635089,
+      "expected": 375.1635101635089,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash high union cost accounting",
+      "actual": 327.4669523228371,
+      "expected": 327.4669523228371,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash high authoritative band",
+      "actual": 375.1635101635089,
+      "expected": 375.1635,
+      "tolerance": 5e-05
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash high full less base union line/post-engine split",
+      "actual": 47.6965578406718,
+      "expected": 47.696557840672185,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash high corporate_capital R7 response",
+      "actual": 0.37,
+      "expected": 0.37,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash high corporate_labor R7 response",
+      "actual": 0.37,
+      "expected": 0.37,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash high other_production_taxes R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "white_replacement_2026_09_28 cash high remaining_production_property R7 response",
+      "actual": 0.8806493775433665,
+      "expected": 0.8806493775433665,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual low full cost accounting",
+      "actual": 368.9909342553624,
+      "expected": 368.99093425536245,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual low union cost accounting",
+      "actual": 321.17039586928337,
+      "expected": 321.1703958692834,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual low authoritative band",
+      "actual": 368.9909342553624,
+      "expected": 368.9909,
+      "tolerance": 5e-05
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual low full less base union line/post-engine split",
+      "actual": 47.82053838607902,
+      "expected": 47.82053838607942,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual low corporate_capital R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual low corporate_labor R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual low other_production_taxes R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual low remaining_production_property R7 response",
+      "actual": 0.8806493775433665,
+      "expected": 0.8806493775433665,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual high full cost accounting",
+      "actual": 459.20287674292126,
+      "expected": 459.20287674292126,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual high union cost accounting",
+      "actual": 397.0788735465335,
+      "expected": 397.0788735465335,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual high authoritative band",
+      "actual": 459.20287674292126,
+      "expected": 459.2029,
+      "tolerance": 5e-05
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual high full less base union line/post-engine split",
+      "actual": 62.124003196387775,
+      "expected": 62.12400319638814,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual high corporate_capital R7 response",
+      "actual": 0.37,
+      "expected": 0.37,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual high corporate_labor R7 response",
+      "actual": 0.37,
+      "expected": 0.37,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual high other_production_taxes R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 accrual high remaining_production_property R7 response",
+      "actual": 0.8806493775433665,
+      "expected": 0.8806493775433665,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash low full cost accounting",
+      "actual": 284.95156767595086,
+      "expected": 284.95156767595086,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash low union cost accounting",
+      "actual": 251.55847464558698,
+      "expected": 251.55847464558698,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash low authoritative band",
+      "actual": 284.95156767595086,
+      "expected": 284.9516,
+      "tolerance": 5e-05
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash low full less base union line/post-engine split",
+      "actual": 33.39309303036387,
+      "expected": 33.3930930303636,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash low corporate_capital R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash low corporate_labor R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash low other_production_taxes R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash low remaining_production_property R7 response",
+      "actual": 0.8806493775433665,
+      "expected": 0.8806493775433665,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash high full cost accounting",
+      "actual": 375.1635101635089,
+      "expected": 375.1635101635089,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash high union cost accounting",
+      "actual": 327.4669523228371,
+      "expected": 327.4669523228371,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash high authoritative band",
+      "actual": 375.1635101635089,
+      "expected": 375.1635,
+      "tolerance": 5e-05
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash high full less base union line/post-engine split",
+      "actual": 47.6965578406718,
+      "expected": 47.696557840672185,
+      "tolerance": 1e-09
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash high corporate_capital R7 response",
+      "actual": 0.37,
+      "expected": 0.37,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash high corporate_labor R7 response",
+      "actual": 0.37,
+      "expected": 0.37,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash high other_production_taxes R7 response",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "gate": "black_comparator_rough_2026_09_28 cash high remaining_production_property R7 response",
+      "actual": 0.8806493775433665,
+      "expected": 0.8806493775433665,
+      "tolerance": 1e-12
+    }
+  ],
+  "inputs_sha256": {
+    "main_case_2026_10_15/derived/corrections.json": "08229ee9409c48820002cc2b0831968f7c1d6066b078be9e7303922d788793c7",
+    "main_case_2026_10_15/derived/corrections_cash.json": "b88998981a07591cc3b28307eac929d857fe0cc7d1edc0aa3821195221ff9439",
+    "main_case_2026_10_15/derived/summary.json": "3f7bcd56a7de8e7b1f253b640fab3135ce93fc420f73de5251611d0472127f04",
+    "main_case_2026_10_15/derived/lineage_addition.json": "9fef6a450b75bedb47c0e4e51137bb83de3732ca7635bb7af6b79f6aada0dc46",
+    "main_case_2026_10_15/derived/main_case_bands.csv": "050f2bcc04ae2835386706feea4af0f020b0b2ba6c6d6c49e3557a4d46b02cb3",
+    "main_case_2026_10_15/package.cjs": "aa220e35714d0d3bd0360e3e5b8c84117aecdcd7d20329aed7d7b7b8e3c87d39",
+    "job_capital_taxes_2026_10_14/derived/item.json": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283",
+    "white_replacement_2026_09_28/engine_lines.cjs": "dd8f9b47e2b56abedc46abe778862a6037e5438de7cc7e1b9a061d45a1bae0b0",
+    "black_comparator_rough_2026_09_28/engine_lines.cjs": "18b6465e790a24a414d0d7c5eea0f556bf45b8d47f35a0ac121a84fb0dba013c"
+  },
+  "outputs_sha256": {
+    "white_replacement_2026_09_28/derived/engine_lines_oct15.json": "6b25154a04d5ded82a40be79f43c2fbb55936b28a549c7defcdf7828f6530301",
+    "white_replacement_2026_09_28/derived/engine_lines_oct15_union.json": "df43a09b59502f6fa9e894f6dddcb3c734f6aecf50380ad62edb43f7572daf7b",
+    "white_replacement_2026_09_28/derived/engine_lines_oct15_cash.json": "97df97105c04f42923417c1a70288e8c277472e55c13a39d1192d899db9d6932",
+    "white_replacement_2026_09_28/derived/engine_lines_oct15_union_cash.json": "7cc7d7b07255125898fbb30be08efb23c1a9c5e00c57cb23f99555bc8edba491",
+    "black_comparator_rough_2026_09_28/derived/engine_lines_oct15.json": "6b25154a04d5ded82a40be79f43c2fbb55936b28a549c7defcdf7828f6530301",
+    "black_comparator_rough_2026_09_28/derived/engine_lines_oct15_union.json": "df43a09b59502f6fa9e894f6dddcb3c734f6aecf50380ad62edb43f7572daf7b",
+    "black_comparator_rough_2026_09_28/derived/engine_lines_oct15_cash.json": "97df97105c04f42923417c1a70288e8c277472e55c13a39d1192d899db9d6932",
+    "black_comparator_rough_2026_09_28/derived/engine_lines_oct15_union_cash.json": "7cc7d7b07255125898fbb30be08efb23c1a9c5e00c57cb23f99555bc8edba491"
+  }
+}

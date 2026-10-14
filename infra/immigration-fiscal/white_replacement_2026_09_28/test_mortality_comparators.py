@@ -1,5 +1,7 @@
 """Substantive checks of source refusal, mortality API scope and row-4 conservation."""
 import json
+import hashlib
+from types import SimpleNamespace
 import sys
 from pathlib import Path
 
@@ -81,3 +83,106 @@ def test_symmetric_source_pin_mismatch_fails_before_frame_build(tmp_path):
         name: {"file": name, "sha256": "invalid source hash"}}}))
     with pytest.raises(SystemExit, match="symmetric source hash"):
         M.symmetric_frame(None, W.P, None, lane=tmp_path)
+
+
+def ratio_fixture(tmp_path, monkeypatch):
+    monkeypatch.setattr(M, "FISCAL", tmp_path)
+    source = tmp_path / "status.py"
+    source.write_text("old status\n")
+    lane = tmp_path / "lane"
+    (lane / "derived").mkdir(parents=True)
+    ratio = lane / "derived/accrual_ratios_mortality_oct15.csv"
+    ratio.write_text("group,mortality,basis,scenario_name,end,payroll_basis,scenario,population,age_mix\n"
+                     "white,general,symmetric,A3,,legacy,payable,100,A3\n"
+                     "white,general,symmetric,A4,,legacy,payable,100,A4\n")
+    manifest = {"dependencies": {"status.py": hashlib.sha256(source.read_bytes()).hexdigest()},
+                "output_sha256": hashlib.sha256(ratio.read_bytes()).hexdigest()}
+    (lane / "derived/accrual_ratios_mortality_oct15.dependencies.json").write_text(json.dumps(manifest))
+    return lane, source
+
+
+def test_stale_status_dependency_blocks_pension_selection(tmp_path, monkeypatch):
+    lane, source = ratio_fixture(tmp_path, monkeypatch)
+    source.write_text("newer status\n")
+    with pytest.raises(SystemExit, match="pension status dependency hash"):
+        M.select_ratio(lane, "white", "general", "symmetric", scenario_name="A3")
+
+
+def test_pension_selection_preserves_scenario_age_weights(tmp_path, monkeypatch):
+    lane, _ = ratio_fixture(tmp_path, monkeypatch)
+    row = M.select_ratio(lane, "white", "general", "symmetric", scenario_name="A4")
+    assert row["age_mix"] == "A4" and row["population"] == 100
+    with pytest.raises(SystemExit, match="exactly one pension ratio"):
+        M.select_ratio(lane, "white", "general", "symmetric", scenario_name="observed")
+
+
+def test_ratio_denominator_repair_preserves_actuarial_numerators():
+    amounts = dict(employee_oasdi=10., employer_oasdi=10., employee_hi=3., employer_hi=3.,
+                   self_employment_oasdi_hi=4.)
+    frame = SimpleNamespace(DUMP={"cash": {"low": {"lines": [dict(side="receipts", id=k, national_bn=v)
+                                          for k, v in amounts.items()]}}}, SE_SHARE=.8)
+    status = SimpleNamespace(receipt_amount=lambda sc, lid, national: national * 1.1)
+    row = dict(oasdi_accrual_gross_bn=25., oasdi_accrual_net_bn=23., part_a_accrual_bn=7.)
+    repaired = M.renormalized_row(row, frame, status, {"name": "age_tilt"}, "low")
+    assert repaired["multiplier_oasdi_tax_bn"] == pytest.approx(23.2*1.1)
+    assert repaired["oasdi_per_tax_dollar_net"] * repaired["multiplier_oasdi_tax_bn"] == pytest.approx(23.)
+    assert repaired["part_a_per_hi_tax_dollar"] * repaired["multiplier_hi_tax_bn"] == pytest.approx(7.)
+
+
+def test_memory_budget_failure_preserves_previous_valid_outputs(tmp_path, monkeypatch):
+    derived = tmp_path / "derived"
+    derived.mkdir()
+    ratio = derived / "accrual_ratios_mortality_oct15.csv"
+    manifest = ratio.with_suffix(".dependencies.json")
+    ratio.write_bytes(b"previous valid ratio\n")
+    manifest.write_bytes(b"previous valid dependency manifest\n")
+    before = (ratio.read_bytes(), manifest.read_bytes())
+
+    def blocked(_label):
+        raise SystemExit("[BLOCKED] forced physical footprint budget failure")
+
+    monkeypatch.setattr(M, "require_within_budget", blocked)
+    with pytest.raises(SystemExit, match="physical footprint budget failure"):
+        M.write_mortality_output(tmp_path, [{"group": "new ratio", "amount": 1.}], {"dependencies": {}})
+    assert (ratio.read_bytes(), manifest.read_bytes()) == before
+
+
+def test_mortality_output_admission_hashes_exact_written_csv(tmp_path, monkeypatch):
+    (tmp_path / "derived").mkdir()
+    monkeypatch.setattr(M, "require_within_budget", lambda _label: 123)
+    assert M.write_mortality_output(tmp_path, [{"group": "white", "amount": 1.25}], {"dependencies": {}}) == 123
+    ratio = tmp_path / "derived/accrual_ratios_mortality_oct15.csv"
+    manifest = json.loads(ratio.with_suffix(".dependencies.json").read_text())
+    assert ratio.read_bytes() == b"group,amount\nwhite,1.25\n"
+    assert manifest["output_sha256"] == hashlib.sha256(ratio.read_bytes()).hexdigest()
+
+
+def test_streamed_hash_preserves_source_digest(tmp_path):
+    source = tmp_path / "source.bin"
+    source.write_bytes(bytes(range(256)) * 5000)
+    assert M.file_sha256(source) == hashlib.sha256(source.read_bytes()).hexdigest()
+
+
+def test_option_snapshot_rejects_valid_newer_source_and_ratio_pair(tmp_path, monkeypatch):
+    lane, source = ratio_fixture(tmp_path, monkeypatch)
+    table = M.read_verified_ratio_table(lane)
+    source.write_text("recomputed status\n")
+    ratio = lane / "derived/accrual_ratios_mortality_oct15.csv"
+    ratio.write_text(ratio.read_text().replace(",100,A4", ",120,A4"))
+    manifest = {"dependencies": {"status.py": M.file_sha256(source)}, "output_sha256": M.file_sha256(ratio)}
+    ratio.with_suffix(".dependencies.json").write_text(json.dumps(manifest))
+    # The replacement is a valid current producer result, but cannot authorize
+    # publication of the option-set prices computed from the old snapshot.
+    M.verify_ratio_dependencies(lane)
+    with pytest.raises(SystemExit, match="option-set snapshot remains current"):
+        M.require_ratio_snapshot_fresh(table)
+    assert M.select_verified_ratio(table, "white", "general", "symmetric", scenario_name="A4")["population"] == 100
+    assert M.select_ratio(lane, "white", "general", "symmetric", scenario_name="A4")["population"] == 120
+
+
+def test_option_snapshot_rejects_in_flight_status_change(tmp_path, monkeypatch):
+    lane, source = ratio_fixture(tmp_path, monkeypatch)
+    table = M.read_verified_ratio_table(lane)
+    source.write_text("changed while calculating options\n")
+    with pytest.raises(SystemExit, match="pension status dependency hash"):
+        M.require_ratio_snapshot_fresh(table)

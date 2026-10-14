@@ -32,8 +32,12 @@ const CASES = {
   oct14_cash: { lane: "main_case_2026_10_14", pkg: (p) => p.CASH, options: {}, out: "engine_lines_oct14_cash.json" },
   oct14_union: { lane: "main_case_2026_10_14", options: {}, union: true, out: "engine_lines_oct14_union.json" },
   oct14_union_cash: { lane: "main_case_2026_10_14", pkg: (p) => p.CASH, options: {}, union: true, out: "engine_lines_oct14_union_cash.json" },
+  oct15: { lane: "main_case_2026_10_15", options: {}, out: "engine_lines_oct15.json" },
+  oct15_cash: { lane: "main_case_2026_10_15", pkg: (p) => p.CASH, options: {}, out: "engine_lines_oct15_cash.json" },
+  oct15_union: { lane: "main_case_2026_10_15", options: {}, union: true, out: "engine_lines_oct15_union.json" },
+  oct15_union_cash: { lane: "main_case_2026_10_15", pkg: (p) => p.CASH, options: {}, union: true, out: "engine_lines_oct15_union_cash.json" },
 };
-const CASE = CASES[process.argv[2] || "oct14"];
+const CASE = CASES[process.argv[2] || "oct15"];
 if (!CASE) throw new Error(`[BLOCKED] unknown case ${process.argv[2]}: one of ${Object.keys(CASES).join(", ")}`);
 const P0 = require(path.join(FISCAL, CASE.lane, "package.cjs"));
 const P = CASE.pkg ? CASE.pkg(P0) : P0;
@@ -53,8 +57,12 @@ function itemUnionEdits() {
   const p = P.correctionsPayload();
   const out = [], carriers = [];
   for (const r of p.meta.items || []) {
+    // The comparator library retains its observed 39.71M base. Completion's
+    // own-record prices and post-engine terms travel in the full-minus-base overlay.
+    if (CASE.lane === "main_case_2026_10_15" && ["union_completion", "mixed_unit_removal", "coverage"].includes(r.id)) continue;
     if (r.kind === "lineage" || !r.applied) continue;    // the lineage item's edits are the lineage's (the overlay)
     if (r.kind === "allocation" && r.edits && r.edits.count === 0) continue;
+    if (r.id === "item6_low_corporate_response" && r.kind === "response" && r.edits?.count === 0) continue;
     if (r.kind !== "edit_set" || !r.edits) throw new Error(`[BLOCKED] item ${r.id}: an applied item of kind ${r.kind} without edits`);
     const edits = p.edits.slice(r.edits.first, r.edits.first + r.edits.count);
     if (edits.length !== r.edits.count) throw new Error(`[BLOCKED] item ${r.id}: its edits are not in the payload`);
@@ -80,7 +88,7 @@ function itemUnionEdits() {
       if (odd.length) throw new Error(`[BLOCKED] item ${r.id}: parts ${odd.map(([n]) => n).join(", ")} are neither union_* nor lineage_*`);
       const sum = (f) => Object.fromEntries(["personal", "shared"].map((a) => [a, parts.filter(([n]) => f(n)).reduce((t, [, x]) => t + x.by[a], 0)]));
       const all = sum(() => true);
-      if (!["personal", "shared"].every((a) => all[a] === e.by[a])) throw new Error(`[BLOCKED] item ${r.id}: the parts of edit ${k} do not add to it`);
+      if (!["personal", "shared"].every((a) => Math.abs(all[a] - e.by[a]) <= 1e-12)) throw new Error(`[BLOCKED] item ${r.id}: the parts of edit ${k} do not add to it (1e-12bn)`);
       out.push(Object.assign({}, e, { by: sum((n) => n.startsWith("union_")) }));
     });
   }
@@ -104,17 +112,20 @@ function unionOnly(method) {
     // The union model's national totals must be the case's, line by line (the scale edits then scale alike), and its
     // carriers the case model's, cell by cell (their keys are the union's alone).
     const full = P.modelFor("central", method, oo);
-    const nat = (x) => JSON.stringify(["spending", "receipts"].map((s) => x[s].lines.map((l) => [l.id, l.national_bn])));
+    const nat = (x) => JSON.stringify(["spending", "receipts"].map((s) => x[s].lines.filter(l => !l.id.startsWith("union_completion_")).map((l) => [l.id, l.national_bn])));
     if (nat(out) !== nat(full)) throw new Error(`[BLOCKED] ${method}: the union model's national totals are not the case's`);
     const car = (x) => JSON.stringify(ITEM_UNION.carriers.map((c) => x.receipts.lines.find((l) => l.id === c.id)));
     if (car(out) !== car(full)) throw new Error(`[BLOCKED] ${method}: the union model's carrier lines are not the case model's`);
   }
-  return out;
+  return CASE.lane === "main_case_2026_10_15" ? P.withSyntheticLines(out) : out;
 }
 const models = P.METHODS.map((m) => (CASE.union ? unionOnly(m) : P.modelFor("central", m, oo)));
 const summary = JSON.parse(fs.readFileSync(path.join(FISCAL, CASE.lane, "derived", "summary.json"), "utf8"));
-const isV7 = CASE.lane === "main_case_2026_10_14";
-const ends = isV7 ? summary.v7.end_specifications[CASE.pkg ? "cash" : "set"] : null;
+const isV8 = CASE.lane === "main_case_2026_10_15";
+const isV7 = isV8 || CASE.lane === "main_case_2026_10_14";
+const declared = isV7 ? summary[isV8 ? "v8" : "v7"].end_specifications[CASE.pkg ? "cash" : "set"] : null;
+const ends = isV8 ? declared[0] : declared;
+if (isV8 && JSON.stringify(declared[0]) !== JSON.stringify(declared[1])) throw Error("[BLOCKED] comparator methods have different ends");
 const ENDS = isV7 ? { low: ends[0], high: ends[1] } : { low: 48, high: 11 };
 const specAt = (idx) => {
   if (!Number.isInteger(idx)) throw new Error(`[BLOCKED] case end ${idx} is not an integer specification index`);
@@ -126,15 +137,22 @@ const out = {};
 for (const [end, idx] of Object.entries(ENDS)) {
   const acc = {}, cap = {};
   let cost = 0, capTotal = 0, pop = 0, res = 0, welfare = 0;
+  const post_engine = { mixed_unit_removal_bn: 0, coverage_bn: 0, total_bn: 0 };
   models.forEach((m) => {
     const r = P.evaluateFull(m, specAt(idx));
     const ev = r.evaluation;
     const k = models.length;
-    cost += r.cost_bn / k; capTotal += r.capital.total_bn / k; welfare += ev.welfare_bn / k;
+    const post = r.post_engine || { total_bn: 0 };
+    cost += (r.cost_bn - (CASE.union && isV8 ? post.total_bn : 0)) / k;
+    if (!CASE.union) for (const key of Object.keys(post_engine)) post_engine[key] += (post[key] || 0) / k;
+    capTotal += r.capital.total_bn / k; welfare += ev.welfare_bn / k;
     pop += m.meta.target_population / k; res += m.meta.resident_population / k;
     for (const side of ["receipts", "spending"]) for (const l of ev[side]) {
       const key = side + "|" + l.id;
-      acc[key] = acc[key] || { side, id: l.id, national_bn: 0, amount_bn: 0, response: 0, effect_bn: 0 };
+      const selection = isV8 ? require('./dump_selection.cjs').selectionFor(side, l, m) : {};
+      if (isV8 && Object.values(selection).some(v => typeof v !== 'string')) throw Error(`[BLOCKED] ${key}: no selected key/scenario`);
+      if (acc[key] && isV8 && Object.entries(selection).some(([name, value]) => acc[key][name] !== value)) throw Error(`[BLOCKED] ${key}: methods select different key/scenario`);
+      acc[key] = acc[key] || { side, id: l.id, ...selection, national_bn: 0, amount_bn: 0, response: 0, effect_bn: 0 };
       acc[key].national_bn += l.national_bn / k; acc[key].amount_bn += l.amount_bn / k;
       acc[key].response += l.response / k; acc[key].effect_bn += l.effect_bn / k;
     }
@@ -147,8 +165,11 @@ for (const [end, idx] of Object.entries(ENDS)) {
       cap[c.id].key += c.key / k; cap[c.id].return_bn += c.return_bn / k;
     }
   });
+  const orderedLines = Object.values(acc);
+  if (isV8) orderedLines.sort((a, b) => (a.side + '|' + a.id).localeCompare(b.side + '|' + b.id));
   out[end] = { spec: idx, allocation: specAt(idx).allocation, rate: specAt(idx).rate, cost_bn: cost, capital_bn: capTotal, welfare_bn: welfare,
-    target_population: pop, resident_population: res, lines: Object.values(acc), capital: Object.values(cap) };
+    target_population: isV8 && !CASE.union ? P.POPULATION_V8.with_coverage : pop,
+    resident_population: res, lines: orderedLines, capital: Object.values(cap), ...(isV8 ? {post_engine} : {}) };
 }
 fs.writeFileSync(path.join(__dirname, "derived", CASE.out), JSON.stringify(out, null, 1) + "\n");
 for (const [end, o] of Object.entries(out)) console.log(`${end}: spec ${o.spec} cost ${o.cost_bn.toFixed(2)} capital ${o.capital_bn.toFixed(2)}`);

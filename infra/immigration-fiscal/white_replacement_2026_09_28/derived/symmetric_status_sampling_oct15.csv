@@ -1,0 +1,7 @@
+group,end,population,receipt_change_bn,receipt_sampling_se_bn,uncertainty_scope,case,mortality_convention,mortality_bound
+mex,low,39712493.3312,-14.063229208518779,1.40739888290407,"receipt shift only; conditional fixed count, status flags, IRS/CBO carrier and age mix; no reimputation/reraking uncertainty",oct15,whole-population mortality,none
+mex,high,39712493.3312,-14.063229208518779,1.40739888290407,"receipt shift only; conditional fixed count, status flags, IRS/CBO carrier and age mix; no reimputation/reraking uncertainty",oct15,whole-population mortality,none
+blk,low,41954493.92,1.3708608725699867,0.38788665712713194,"receipt shift only; conditional fixed count, status flags, IRS/CBO carrier and age mix; no reimputation/reraking uncertainty",oct15,whole-population mortality,none
+blk,high,41954493.92,1.3708608725699867,0.38788665712713194,"receipt shift only; conditional fixed count, status flags, IRS/CBO carrier and age mix; no reimputation/reraking uncertainty",oct15,whole-population mortality,none
+w3,low,45230062.30075857,5.655118133135108,0.402741924268986,"receipt shift only; conditional fixed count, status flags, IRS/CBO carrier and age mix; no reimputation/reraking uncertainty",oct15,whole-population mortality,none
+w3,high,45230062.30075857,5.655118133135108,0.402741924268986,"receipt shift only; conditional fixed count, status flags, IRS/CBO carrier and age mix; no reimputation/reraking uncertainty",oct15,whole-population mortality,none

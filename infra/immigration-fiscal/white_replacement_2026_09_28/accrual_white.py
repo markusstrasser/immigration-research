@@ -169,7 +169,7 @@ def main():
              "delta_like_for_like_accrual_bn"]].to_string(index=False))
 
 
-def main_oct07(case="oct14"):
+def main_oct07(case="oct15"):
     """--case oct07 (main case v6, item 1): the payable ratios of the union and the third-plus NH white reference on the
     pension accrual's 2026 path, the arm all_2026_inputs_separate_funds of pension_tr2026_2026_10_06 that the case's
     meta.pension_accrual takes (tr2026_path.py rebuilds its grid, timing and Part A path through that lane's code), by
@@ -181,7 +181,7 @@ def main_oct07(case="oct14"):
     (accrual_ratios.csv's columns), read by rekey_sept29.py --case oct07."""
     import json
     import tr2026_path as TP
-    TP.case_check(json.loads((FISCAL / "main_case_2026_10_14/derived/corrections.json").read_text())["meta"])
+    TP.case_check(json.loads((FISCAL / "main_case_2026_10_15/derived/corrections.json").read_text())["meta"])
     q = P.S.quotes()
     u_long = q["note151_eligible_share"]["value"]["end_of_projection"]
     p = P.frame()
@@ -207,7 +207,9 @@ def main_oct07(case="oct14"):
             raise SystemExit(f"[BLOCKED] the union's {k} {got} does not reproduce {TP.ARM}'s {col} {row[col]}")
     print(f"[gate] the union's ratio, timing and Part A accrual reproduce {TP.ARM}'s union row of arms.csv")
     rel = {"union": STORED["rel_union"], "third_plus_nh_white": WHITE_REL_RATE}
-    rows = [{"group": name, "scenario": "payable", "oasdi_per_tax_dollar": f"{o['ratio']:.6f}",
+    rows = [{"group": name, "scenario": "payable", "population": float(p.w[p.union].sum()) if name == "union" else float(white.w[white.union].sum()),
+             "population_basis": "published CPS pension frame", "age_mix": "observed",
+             "oasdi_per_tax_dollar": f"{o['ratio']:.6f}",
              "benefit_tax_timing": f"{o['timing']:.6f}", "relative_benefit_tax_rate": f"{rel[name]:.6f}",
              "future_share": f"{rel[name] * o['timing']:.6f}",
              "oasdi_per_tax_dollar_net": f"{o['ratio'] * (1 - rel[name] * o['timing']):.6f}",
@@ -219,19 +221,21 @@ def main_oct07(case="oct14"):
         wr = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         wr.writeheader()
         wr.writerows(rows)
+    from mortality_comparators import write_ratio_dependencies
+    write_ratio_dependencies(LANE, f"accrual_ratios_{case}.csv")
     print(pd.DataFrame(rows).to_string(index=False))
 
 
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct14", choices=["sept29", "oct14"],
-                    help="oct14 (default, live v7 on the 2026 path); sept29 is the archived 2025 path")
+    ap.add_argument("--case", default="oct15", choices=["sept29", "oct15"],
+                    help="oct15 (default, live v7 on the 2026 path); sept29 is the archived 2025 path")
     ap.add_argument("--mortality", action="store_true", help="write separate group-mortality and row-4 arms")
     args = ap.parse_args()
     if args.mortality:
-        if args.case != "oct14":
-            raise SystemExit("[BLOCKED] mortality arms require the live oct14 path")
+        if args.case != "oct15":
+            raise SystemExit("[BLOCKED] mortality arms require the live oct15 path")
         from mortality_comparators import run
         run("white")
     else:

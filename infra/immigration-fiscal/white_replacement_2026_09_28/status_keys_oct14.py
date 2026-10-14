@@ -4,8 +4,9 @@ Use build(rekey_sept29) after setup(), then receipt_amount(sc, lid, national_bn)
 The source_proxy arm separates the change from PEARNVAL to the account's wage and
 self-payroll proxies from the status rule itself. rules_only additionally applies
 the state-aware unauthorized flag and origin-specific central on-books fractions.
-Income tax holds the existing IRS/CBO raked personal carrier key and applies the
-source status fraction before national normalization. The adopted row-13 net
+Income tax applies the source status fraction within the existing IRS/CBO cells,
+then restores each cell's pre-status row4 total. The explicit global arm retains
+the historical national scalar. The adopted row-13 net
 method is a ratio of group shares, not a closed additive person vector; requesting
 it stops. No summary multiplier is used as a record substitute.
 """
@@ -14,6 +15,7 @@ from __future__ import annotations
 import csv
 import json
 import resource
+import sys
 import time
 import zipfile
 from dataclasses import dataclass
@@ -23,6 +25,8 @@ import numpy as np
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parent / 'scripts'))
+from memory_budget import require_within_budget
 LINE_KEYS = {
     "federal_income_tax": "fit_case", "state_local_income_tax": "sit_case",
     "other_personal_tax": "sit_case", "employee_oasdi": "oasdi",
@@ -49,6 +53,48 @@ def normalized(vectors, weights):
         out[k] = v / total
         require(abs(float(weights @ out[k]) - 1) <= 1e-12, f"national key closure {k}")
     return out
+
+
+def rerake_cells(base, adjusted, weights, cells):
+    """Restore each IRS/CBO cell's pre-status row-4 total, never a national scalar.
+
+    Empty adjusted support with a positive target is a genuine identification stop.
+    Cells with no unauthorized records therefore cannot gain displaced receipts.
+    """
+    base, adjusted, weights = (np.asarray(x, float) for x in (base, adjusted, weights))
+    cells = np.asarray(cells)
+    require(base.shape == adjusted.shape == weights.shape == cells.shape, "rake cell alignment")
+    require(np.isfinite(adjusted).all() and (adjusted >= 0).all(), "invalid adjusted bracket vector")
+    result = np.zeros_like(base)
+    rows = []
+    for cell in np.unique(cells):
+        mask = cells == cell
+        target, got = float(weights[mask] @ base[mask]), float(weights[mask] @ adjusted[mask])
+        require(target == 0 or got > 0, f"empty post-status bracket {cell} with positive target")
+        result[mask] = adjusted[mask] * (target / got if got > 0 else 0)
+        restored = float(weights[mask] @ result[mask])
+        require(abs(restored - target) <= 1e-12, f"row13 bracket tax conservation {cell}")
+        rows.append(dict(cell=str(cell), target_share=target, adjusted_share=got,
+                         restored_share=restored, error_share=restored-target))
+    require(abs(float(weights @ result) - float(weights @ base)) <= 1e-12,
+            "row13 national tax conservation")
+    return result, rows
+
+
+def income_cells(m, ids):
+    """Use the authoritative income-key module's exact CBO groups and 14 AGI bins."""
+    tk = m.TK
+    d = tk.load_frame(tk.TAX_COLS + ["PPPOS"])
+    require(not d.duplicated(["PH_SEQ", "PPPOS"]).any(), "duplicate income-bracket source IDs")
+    edges, _ = tk.bin_edges(tk.irs_2023()[0])
+    agi = d.AGI.to_numpy(float)
+    b19 = np.where(agi <= 0, 0, np.searchsorted(edges, agi, side="right") + 1)
+    b14 = np.where(b19 <= 1, 0, np.minimum(b19 - 1, 13))
+    d["status_cell"] = np.array([f"{g}|{b}" for g, b in zip(tk.cbo_groups(d), b14)])
+    out = ids.merge(d[["PH_SEQ", "PPPOS", "status_cell"]], on=["PH_SEQ", "PPPOS"],
+                    how="left", validate="one_to_one")
+    require(out.status_cell.notna().all(), "missing income-bracket source IDs")
+    return out.status_cell.to_numpy()
 
 
 @dataclass
@@ -118,9 +164,10 @@ def engine_accrual_rates(m, end):
                 / cash["spending|social_security"] / m.REL_UNION)
 
 
-def build(m):
+def build(m, income_rake="within_bracket"):
     """Build on the current row-4 national frame, without modifying it or upstream caches."""
-    require(m.CASE == "oct14" and m.TAX_ALLOC == "personal", "requires oct14 personal case keys")
+    require(m.CASE == "oct15" and m.TAX_ALLOC == "personal", "requires oct15 personal case keys")
+    require(income_rake in ("within_bracket", "global"), "unsupported income rake")
     c, cs, lane = m.L.c, m.L.cs, m.L
     require((c.CACHE / "asec25_lane.parquet").exists(), "missing existing authoritative source frame")
     # This computation uses point record vectors, not the 160 replicate columns.
@@ -157,6 +204,11 @@ def build(m):
              "oasdi": adjusted["wage_oasdi"], "hi": adjusted["wage"],
              "self_payroll": adjusted["self_payroll"]}
     vectors = {name: normalized(v, w) for name, v in zip(RULES, (raw, source, rules))}
+    cells = income_cells(m, ids)
+    fit, bracket_closure = rerake_cells(vectors["source_proxy"]["fit_case"],
+                                       source["fit_case"] * factor / float(w @ source["fit_case"]), w, cells)
+    if income_rake == "within_bracket":
+        vectors["rules_only"]["fit_case"] = fit
     # Positive control: every old raw share is the existing scenario's own key.
     for sc in (m.R.scenario("mex"), m.R.scenario("blk", scaled=False), m.R.scenario("w3")):
         for key, old in (("fit_case", "fit_case"), ("sit_case", "sit_case"),
@@ -167,20 +219,22 @@ def build(m):
                 status="combine_onbooks_lane.state_aware_flag(STATUS_BLIND_2024)",
                 rules="combine_status.status_vectors; origin central share_configs",
                 allocation="personal", row13="not applied; nonlinear ratio has no closed additive definition",
-                income_tax="existing IRS/CBO-raked carrier key times source status factor, normalized on row4",
+                income_tax=("status adjustment then restore each IRS/CBO cell's original row4 total"
+                            if income_rake == "within_bracket" else "historical national scalar after status adjustment"),
+                income_rake=income_rake, bracket_closure=bracket_closure,
                 payroll="source wage_oasdi / wage / self_payroll vectors, separate SE key",
                 civilian_population=float(w.sum()), union_population=float(w[union].sum()),
                 unauthorized_population=float(w[unauthorized].sum()))
     info["source_sha256"] = {str(p.relative_to(HERE.parent)): c.sha(p) for p in (
         c.CACHE / "asec25_lane.parquet", Path(c.__file__), Path(cs.__file__), Path(lane.__file__),
-        lane.ONBOOKS / "onbooks_split.csv", lane.ONBOOKS / "onbooks_inputs.json")}
+        lane.ONBOOKS / "onbooks_split.csv", lane.ONBOOKS / "onbooks_inputs.json", c.CPS_ZIP)}
     return StatusKeys(vectors, w, unauthorized, on_books, info)
 
 
 def main():
     import rekey_sept29 as m
     started = time.perf_counter()
-    m.use_case("oct14")
+    m.use_case("oct15")
     m.setup()
     m.stop_if_failed()
     status = build(m)
@@ -188,7 +242,7 @@ def main():
     closure = status.closure(nationals)
     rows = []
     white = m.R.scenario("w3")
-    lineage_population = m.META["lineage"]["counts"]["lineage_population"]
+    lineage_population = m.LINEAGE["counts"]["lineage_population"]
     scale = lineage_population / white["population"]
     white_lineage = {**white, "cps_w": white["cps_w"] * scale, "population": lineage_population}
     for group, sc in (("identified_union", m.R.scenario("mex")),
@@ -207,7 +261,7 @@ def main():
                                      engine_union_bn=ln["amount_bn"] if sc["name"] == "mex" else ""))
     # This stored headline-scope positive control is distinct from the eight
     # identified-union receipt lines above: full lineage, after the pension rule.
-    stored = pd.read_csv(m.BLACK_LANE / "derived/rekey_by_program_oct14.csv")
+    stored = pd.read_csv(m.BLACK_LANE / "derived/rekey_by_program_oct15.csv")
     require({"cost_bn", "program", "basis", "group"} <= set(stored), "stored by-program control schema changed")
     controls = []
     for basis in ("accrual", "cash"):
@@ -215,18 +269,18 @@ def main():
             sub = stored.query("basis == @basis and program == @bucket")
             engine = sub[sub.group.eq("mexican_origin_engine")].iloc[0]
             rough = sub[sub.group.eq("mexican_origin_rough")].iloc[0]
-            controls.append(dict(basis=basis, bucket=bucket, source="black_comparator_rough_2026_09_28/derived/rekey_by_program_oct14.csv",
+            controls.append(dict(basis=basis, bucket=bucket, source="black_comparator_rough_2026_09_28/derived/rekey_by_program_oct15.csv",
                                  rough_less_engine_bn=float(engine.cost_bn)-float(rough.cost_bn)))
-    for filename, records in (("status_receipts_oct14.csv", rows), ("status_closure_oct14.csv", closure),
-                              ("status_stored_control_oct14.csv", controls)):
+    for filename, records in (("status_receipts_oct15.csv", rows), ("status_closure_oct15.csv", closure),
+                              ("status_stored_control_oct15.csv", controls)):
         with (HERE / "derived" / filename).open("w", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=list(records[0]), lineterminator="\n")
             writer.writeheader()
             writer.writerows(records)
     # Timing is printed, not fingerprinted into the deterministic provenance output.
-    (HERE / "derived/status_method_oct14.json").write_text(json.dumps(status.source_info, indent=2, sort_keys=True)+"\n")
+    (HERE / "derived/status_method_oct15.json").write_text(json.dumps(status.source_info, indent=2, sort_keys=True)+"\n")
     print(f"[PASS] raw positive controls and {len(closure)} national closure gates; "
-          f"elapsed={time.perf_counter()-started:.3f}s maxrss={resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}")
+          f"elapsed={time.perf_counter()-started:.3f}s peak_footprint_bytes={require_within_budget('comparator status')}")
 
 
 if __name__ == "__main__":

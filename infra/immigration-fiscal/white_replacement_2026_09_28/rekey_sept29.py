@@ -171,6 +171,8 @@ parts to the legacy pension amounts. Rough owner and state keys already use row 
 from __future__ import annotations
 
 import csv
+import copy
+import os
 import importlib.util
 import json
 import sys
@@ -205,14 +207,14 @@ BASES = ("accrual", "cash")
 DUMP27 = R.case
 # The cases this library re-keys, by key: the case lane. Outputs carry the key (rekey_summary_<case>.csv, ...).
 # oct05 (v5) is the September 29 rules on the identified union at v5's responses, plus the lineage (see use_case()).
-CASES = {"sept29": "main_case_2026_09_29", "oct05": "main_case_2026_10_05", "oct14": "main_case_2026_10_14"}
-LINEAGE_CASES = ("oct05", "oct07", "oct14")  # earlier keys locate preserved files, never recomputed
+CASES = {"sept29": "main_case_2026_09_29", "oct05": "main_case_2026_10_05", "oct14": "main_case_2026_10_14", "oct15": "main_case_2026_10_15"}
+LINEAGE_CASES = ("oct05", "oct07", "oct14", "oct15")  # earlier keys locate preserved files, never recomputed
 # The accrual ratios each case reads (rule 3): sept29 and oct05 on the 2025 Trustees Reports, oct07 on the 2026
 # separate-funds path (accrual_white.py and the Black lane's accrual_black.py, --case oct07).
-ACCRUAL_FILES = {"sept29": "accrual_ratios.csv", "oct05": "accrual_ratios.csv", "oct14": "accrual_ratios_oct14.csv"}
+ACCRUAL_FILES = {"sept29": "accrual_ratios.csv", "oct05": "accrual_ratios.csv", "oct14": "accrual_ratios_oct14.csv", "oct15": "accrual_ratios_oct15.csv"}
 # The IPEDS keys (module docstring): the cases that take them, and those that also take item 4's fee terms.
-IPEDS_CASES = ("oct05", "oct14")
-FEE_CASES = ("oct14",)
+IPEDS_CASES = ("oct05", "oct14", "oct15")
+FEE_CASES = ("oct14", "oct15")
 IPEDS_LINES = ("other_federal_benefits", "education_services")
 # A scenario's race for the IPEDS keys, by its name (an importer adds its groups), and each race's CPS persons
 IPEDS_RACE = {"mex": "union", "union_piece": "union", "w3": "white", "wus": "white", "wall": "white", "blk": "black",
@@ -229,7 +231,7 @@ BENEFIT_TAX_RULE = "shared"   # rule 3: the shared rule at both ends; "by_end" (
 REL_UNION = 0.5233824966647924     # the union's measured relative benefit-tax rate (pension lane, accrual_white.py)
 # Round 2 (2026-10-07): the cases whose central keys every group's income taxes on the case's own keys (module
 # docstring), the allocation the comparators take, and each income-tax line's key
-TAX_CASES = ("oct05", "oct14")
+TAX_CASES = ("oct05", "oct14", "oct15")
 TAX_ALLOC = "shared"
 CASE_TAX_KEY = {"federal_income_tax": "fit_case", "state_local_income_tax": "sit_case", "other_personal_tax": "sit_case"}
 TAX_K: dict = {}     # the case's key vectors on the rough frame's rows (case_tax_keys()), added to R.K on TAX_CASES
@@ -265,11 +267,13 @@ def use_case(case):
     stem = "engine_lines_" + case + ("_union" if case in LINEAGE_CASES else "")
     DUMP = {"accrual": json.loads((DER / f"{stem}.json").read_text()), "cash": json.loads((DER / f"{stem}_cash.json").read_text())}
     META = json.loads((CASE_LANE / "derived/corrections.json").read_text())["meta"]
-    TAX_ALLOC = "personal" if case == "oct14" else "shared"
-    JOB_CAPITAL = json.loads((FISCAL / "job_capital_taxes_2026_10_14/derived/item.json").read_text()) if case == "oct14" else None
+    TAX_ALLOC = "personal" if case in ("oct14", "oct15") else "shared"
+    JOB_CAPITAL = json.loads((FISCAL / "job_capital_taxes_2026_10_14/derived/item.json").read_text()) if case in ("oct14", "oct15") else None
+    if case == "oct15":
+        JOB_CAPITAL = JOB_CAPITAL["arms"]["foreign_source_removed"]
     CREDIT_SHIFTS = {}
     FRAME_SHIFTS = {}
-    if case == "oct14":
+    if case in ("oct14", "oct15"):
         for b, name in (("accrual", "corrections.json"), ("cash", "corrections_cash.json")):
             p = json.loads((CASE_LANE / "derived" / name).read_text())
             CREDIT_SHIFTS[b] = union_item_shifts(p, "child_credits")
@@ -297,7 +301,12 @@ def use_case(case):
     if case in LINEAGE_CASES:
         FULL = {"accrual": json.loads((DER / f"engine_lines_{case}.json").read_text()),
                 "cash": json.loads((DER / f"engine_lines_{case}_cash.json").read_text())}
-        LINEAGE = META["lineage"]
+        LINEAGE = copy.deepcopy(META["lineage"])
+        if case == "oct15":
+            count = META["population_v8"]["with_coverage"]
+            LINEAGE["counts"]["lineage_population"] = count
+            LINEAGE["counts"]["added"] += count - META["lineage"]["counts"]["lineage_population"]
+            UNION_LINES |= set(META["union_completion"]["carriers"])
         LIN = {b: {end: lineage_part(FULL[b][end], DUMP[b][end]) for end in ENDS} for b in BASES}
         STEPS = STEPS_SEPT29[:2] + (STEPS_IDENTIFIED_V6 + [STEP_LINEAGE_V6] if "items" in META
                                     else STEPS_IDENTIFIED + [STEP_LINEAGE])
@@ -325,8 +334,8 @@ def lineage_part(full, union):
     full_scalars, union_scalars = validate_scalars(full), validate_scalars(union)
     if full_scalars.keys() != union_scalars.keys():
         raise SystemExit("[BLOCKED] case and union do not declare the same comparator scalars")
-    fl = [x for x in full["lines"] if x["side"] != "scalar"]
-    ul = [x for x in union["lines"] if x["side"] != "scalar"]
+    fl = sorted((x for x in full["lines"] if x["side"] != "scalar"), key=lambda x: (x["side"], x["id"]))
+    ul = sorted((x for x in union["lines"] if x["side"] != "scalar"), key=lambda x: (x["side"], x["id"]))
     if [(x["side"], x["id"]) for x in fl] != [(x["side"], x["id"]) for x in ul]:
         raise SystemExit("[BLOCKED] the case and union dumps do not have the same lines")
     for a, b in zip(fl, ul):
@@ -337,7 +346,9 @@ def lineage_part(full, union):
     prod = lambda e: next(x for x in e["lines"] if x["side"] == "scalar" and x["id"] == "production_gain_bn")["effect_bn"]  # noqa: E731
     return {"lines": {a["side"] + "|" + a["id"]: a["amount_bn"] - b["amount_bn"] for a, b in zip(fl, ul)},
             "capital_bn": full["capital_bn"] - union["capital_bn"], "production_gain_bn": prod(full) - prod(union),
-            "cost_bn": full["cost_bn"] - union["cost_bn"]}
+            "cost_bn": full["cost_bn"] - union["cost_bn"],
+            "post_engine": {k: full.get("post_engine", {}).get(k, 0.0) - union.get("post_engine", {}).get(k, 0.0)
+                            for k in ("mixed_unit_removal_bn", "coverage_bn", "total_bn")}}
 CAP29 = {**R.CAP_LINES, "tenant_occupied_property": "rent"}   # the capital-side arm: every capital-side line at 1
 BUCKETS = {k: list(v) for k, v in R.BUCKETS.items()}
 BUCKETS["capital, property, production taxes"] += list(NEW_RECEIPTS)
@@ -547,7 +558,7 @@ def acc_entry(row, rel=None):
 
 
 def require_rough_pension_rule():
-    if CASE == "oct14" and META.get("row4_frame"):
+    if CASE in ("oct14", "oct15") and META.get("row4_frame"):
         record = next((r for r in META["items"] if r["id"] == "row4_frame" and r.get("applied")), None)
         if record is None or not record.get("parts"):
             raise SystemExit("[BLOCKED] R9 rough pension rule needs the registered row4_frame parts")
@@ -579,6 +590,10 @@ def union_pension_params(p):
 def accrual_params():
     require_rough_pension_rule()
     name = ACCRUAL_FILES[CASE]
+    if CASE == 'oct15':
+        from mortality_comparators import verify_ratio_dependencies
+        for lane in (LANE, BLACK_LANE):
+            verify_ratio_dependencies(lane, filename=name)
     wr = {(r["group"], r["scenario"]): r for r in csv.DictReader(open(DER / name))}
     br = {(r["group"], r["entry_rule"], r["scenario"]): r for r in csv.DictReader(open(BLACK_LANE / "derived" / name))}
     u, wt = wr[("union", "payable")], wr[("third_plus_nh_white", "payable")]
@@ -587,7 +602,7 @@ def accrual_params():
     gate("the white lane's union net OASDI ratio is the case's ratio_net (1e-6)",
          abs(float(u["oasdi_per_tax_dollar_net"]) - PA["ratio_net"]) < 1e-6, f"{u['oasdi_per_tax_dollar_net']} vs {PA['ratio_net']:.6f}")
     union = {**acc_entry(u), "net": PA["ratio_net"], "rel": REL_UNION}
-    if CASE == "oct14":
+    if CASE in ("oct14", "oct15"):
         union = union_pension_params(union)
     return {"union": union,
             "white": acc_entry(wt), "black": acc_entry(b), "all": acc_entry(a)}
@@ -601,7 +616,7 @@ GROUP_OF = {"mex": "union", "union_piece": "union", "w3": "white", "wus": "white
 def receipt_per_rel_benefit(end):
     """Tax on union benefits per benefit dollar per relative rate. V7 reads each end's explicit allocation;
     archived routes retain the shared-low rule and their by-end companion."""
-    if CASE == "oct14":
+    if CASE in ("oct14", "oct15"):
         at = end
         allocation = DUMP["cash"][at]["allocation"]
     else:
@@ -879,6 +894,29 @@ def job_factor(group, category):
     return JOB_CAPITAL["factor"][factor_group][category]["personal"]
 
 
+def v8_items_gates(s):
+    """v8's complete overlay includes measured completion and declared post-engine amounts."""
+    for b, key in (("accrual", "set"), ("cash", "cash")):
+        ends = s["v8"]["end_specifications"][key]
+        gate(f"{b}: both methods have the same personal ends", ends[0] == ends[1])
+        payload = json.loads((CASE_LANE / "derived" / ("corrections_cash.json" if b == "cash" else "corrections.json")).read_text())
+        for i, end in enumerate(ENDS):
+            full, union = FULL[b][end], DUMP[b][end]
+            gate(f"{b}/{end}: personal end {ends[0][i]}", full["spec"] == union["spec"] == ends[0][i]
+                 and full["allocation"] == union["allocation"] == "personal")
+            post = sum(payload["meta"].get(item, {}).get("by_end", {}).get(end, {}).get("total_bn", 0.0)
+                       for item in ("mixed_unit_removal", "coverage"))
+            gate(f"{b}/{end}: full post-engine terms once (1e-9)", abs(full["post_engine"]["total_bn"] - post) < 1e-9)
+            gate(f"{b}/{end}: base union has no completion/post-engine overlay", union["post_engine"]["total_bn"] == 0
+                 and all(x["amount_bn"] == 0 for x in union["lines"] if x["side"] == "spending" and x["id"].startswith("union_completion_")))
+            gate(f"{b}/{end}: declared case population (1e-6 people)",
+                 abs(full["target_population"] - META["population_v8"]["with_coverage"]) < 1e-6)
+            for lid, category in JOB_LINES.items():
+                line = next(x for x in union["lines"] if x["side"] == "receipts" and x["id"] == lid)
+                response = META["responses"][lid][end]
+                gate(f"{b}/{end}: {lid} case response (1e-12)", abs(line["response"] - response) < 1e-12)
+
+
 def v7_items_gates(s):
     """Gate v7 at its own personal ends and split using the authoritative lineage addition output."""
     v7 = s["v7"]
@@ -1002,9 +1040,12 @@ def run29(sc, end, basis="accrual", top=None, cap=False, v4=True, dump=None, uni
         amt["spending|health_services"] += hospital_term(sc, amt, nat)
     if v4 and g != "eng" and basis == "accrual":
         p = ACC[GROUP_OF[g]]
+        scenario_name = sc.get('scenario_name')
+        if scenario_name in p.get('by_scenario', {}):
+            p = p['by_scenario'][scenario_name]
         p = p.get("by_end", {}).get(end, p)
         acc = apply_accrual(amt, p, p.get("per_rel_ben", receipt_per_rel_benefit(end)))
-    if CASE == "oct14" and v4 and dump is None and g in ("mex", "union_piece"):
+    if CASE in ("oct14", "oct15") and v4 and dump is None and g in ("mex", "union_piece"):
         fraction = 1.0 if g == "mex" else sc["population"] / UNION_SC["population"]
         for k, shift in CREDIT_SHIFTS[basis].items():
             amt[k] += shift * fraction
@@ -1017,26 +1058,38 @@ def run29(sc, end, basis="accrual", top=None, cap=False, v4=True, dump=None, uni
     rec_amt = rec_eff = sp_amt = sp_eff = alloc_bal = 0.0
     old = dict(bal=0.0, net=0.0, alloc=0.0)
     rows, buckets = [], {}
+    carrier_capital = carrier_production = 0.0
     for ln in lines:
         side, lid = ln["side"], ln["id"]
         k = side + "|" + lid
         eff = amt[k] * resp[k]
+        source = META.get("union_completion", {}).get("carriers", {}).get(lid) if CASE == "oct15" and v4 and dump is None else None
+        parent = source.get("parent_line", lid) if source else lid
+        rows.append((side, lid, nat[k], amt[k], ln["response"]))
+        if source and source["kind"] in ("capital", "production"):
+            if source["kind"] == "capital":
+                carrier_capital += eff
+            else:
+                carrier_production -= eff
+            continue  # resource terms are separate from assigned budget lines
+        economic_side = "receipts" if source and source.get("side") == "receipt" else side
+        economic_amount = -amt[k] if economic_side != side else amt[k]
+        economic_effect = -eff if economic_side != side else eff
         if lid not in R.ZERO:
             alloc_bal += nat[k] if side == "receipts" else -nat[k]
-        if lid in R.OLD_AGE:
-            sgn = 1 if side == "receipts" else -1
-            old["bal"] += sgn * amt[k]
-            old["net"] -= sgn * eff
+        if parent in R.OLD_AGE:
+            sgn = 1 if economic_side == "receipts" else -1
+            old["bal"] += sgn * economic_amount
+            old["net"] -= sgn * economic_effect
             old["alloc"] += sgn * nat[k]
-        if side == "receipts":
-            rec_amt += amt[k]
-            rec_eff += eff
+        if economic_side == "receipts":
+            rec_amt += economic_amount
+            rec_eff += economic_effect
         else:
             sp_amt += amt[k]
             sp_eff += eff
-        b = next((x for x, v in (BUCKETS if v4 else R.BUCKETS).items() if lid in v), R.PER_HEAD)
+        b = next((x for x, v in (BUCKETS if v4 else R.BUCKETS).items() if parent in v), R.PER_HEAD)
         buckets[b] = buckets.get(b, 0.0) + (eff if side == "spending" else -eff)
-        rows.append((side, lid, nat[k], amt[k], ln["response"]))
     sg = R.scenario("mex")["share"] if g == "eng" else sc["share"]
     ph = sg["pc"] * R.pc_scale
     ck = {"k12": sg["k12"], "college": sg["college"], "hwy": sg["hi"], "air": sg["hi"]}
@@ -1072,11 +1125,22 @@ def run29(sc, end, basis="accrual", top=None, cap=False, v4=True, dump=None, uni
     if lin is not None:
         cap_bn += lin["capital_bn"]
         prod += lin["production_gain_bn"]
+    cap_bn += carrier_capital
+    prod += carrier_production
     if production == "zero":
         prod = 0.0     # applies to the added people as well as the identified union
-    buckets["capital return"] = cap_bn
-    buckets["production gain (subtracted)"] = -prod
+    buckets["capital return"] = buckets.get("capital return", 0.0) + cap_bn
+    buckets["production gain (subtracted)"] = buckets.get("production gain (subtracted)", 0.0) - prod
     net = sp_eff - rec_eff
+    post_parts = {item: (e.get("post_engine", {}).get(item, 0.0) if g == "eng" else 0.0)
+                        + (lin["post_engine"].get(item, 0.0) if lin is not None else 0.0)
+                  for item in ("mixed_unit_removal_bn", "coverage_bn")}
+    post = sum(post_parts.values())
+    net += post
+    sp_eff += post
+    for item, amount in post_parts.items():
+        if amount:
+            buckets["lineage post-engine " + item] = amount
     popg = (R.TARGET + (LINEAGE["counts"]["added"] if lin is not None else 0.0)) if g in ("eng", "mex") else sc["population"]
     sh = popg / e["resident_population"]
     bal = rec_amt - sp_amt
@@ -1230,12 +1294,16 @@ def scenarios():
     """The groups; on oct05 the scaled slices are on the lineage's count and A3 at its ages (on_lineage)."""
     mex = R.scenario("mex")
     with on_lineage():
-        return {"mexican_origin_engine": "eng", "mexican_origin_rough": mex,
+        result = {"mexican_origin_engine": "eng", "mexican_origin_rough": mex,
                 "nh_black_rough": R.scenario("blk", scaled=False),
                 "A1_third_plus_nh_white": R.scenario("w3"), "A2_us_born_nh_white": R.scenario("wus"),
                 "A3_third_plus_nh_white_at_union_ages": R.scenario("w3", "union"),
                 "A4_third_plus_nh_white_stationary": R.scenario("w3", "stationary"),
                 "all_residents_slice": R.scenario("avg")}
+        for name, sc in result.items():
+            if sc != 'eng':
+                sc['scenario_name'] = name
+        return result
 
 
 # ------------------------------------------------------------------ the designed rules' alternatives
@@ -1289,8 +1357,26 @@ def age_tilt(g3):
     ident = R.structure(g3, R.w, R.cage)
     gate("the frame's identified G3+ ages are the age-mix lane's identified mix, exactly",
          [float(x) for x in ident] == am["mixes"]["identified"])
-    mix = (c["at_g3_rate"] * np.asarray(am["mixes"]["g3_rate"], float)
-           + c["later_losses"] * np.asarray(am["mixes"]["later"], float)) / c["added"]
+    ages = (c["at_g3_rate"] * np.asarray(am["mixes"]["g3_rate"], float)
+            + c["later_losses"] * np.asarray(am["mixes"]["later"], float))
+    if CASE == "oct15":
+        completion = META["union_completion"]
+        for record in completion["observed_records"]:
+            if record["central_reporter"] or record["observed_nonreporter"]:
+                ages[min(int(record["age"]) // 5, 16)] += record["people"]
+        missing = META.get("coverage", {}).get("net_missing_people", 0.0)
+        # Coverage supplies generation counts, no own age records: explicitly
+        # carry the completed lineage's measured five-year mix for these people.
+        coverage_age_rule = os.environ.get('COMPARATOR_COVERAGE_AGE_RULE', 'completed_overlay')
+        if coverage_age_rule == 'completed_overlay':
+            ages += missing * ages / ages.sum()
+        elif coverage_age_rule == 'historical_added':
+            original = (c['at_g3_rate'] * np.asarray(am['mixes']['g3_rate'], float)
+                        + c['later_losses'] * np.asarray(am['mixes']['later'], float))
+            ages += missing * original / original.sum()
+        else:
+            raise SystemExit('[BLOCKED] unknown COMPARATOR_COVERAGE_AGE_RULE')
+    mix = ages / c["added"]
     gate("the added people's mix sums to 1 and has no band without identified G3+ (1e-12)",
          abs(mix.sum() - 1) < 1e-12 and not ((ident <= 0) & (mix > 0)).any())
     t = np.divide(mix, ident, out=np.zeros(len(mix)), where=ident > 0)
@@ -1340,7 +1426,7 @@ def run_alternative(rule, sc, end, basis, acc=None):
             part_a = u.get("by_end", {}).get(end, u)["part_a"]
             acc = {g: p if g == "union" else {**p, "net": u["gross"] * (1 - p["rel"] * p["timing"]), "part_a": part_a}
                    for g, p in ACC.items()}
-            if CASE == "oct14":
+            if CASE in ("oct14", "oct15"):
                 # The source's rule-3 calibration uses its shared receipt/relative-rate ratio, even at personal ends.
                 k = META["row4_frame"]["values"]["white_rule3_ratio"]
                 for g, p in acc.items():
@@ -1364,11 +1450,11 @@ def alternatives(groups, extra=()):
     for rule, text, bases, acc in [(r, t, b, None) for r, t, b in ALTERNATIVES] + list(extra):
         if rule == "rule 3a":
             text = text.format(gross=ACC["union"]["gross"], part_a=ACC["union"]["part_a"])
-            if CASE == "oct14":
+            if CASE in ("oct14", "oct15"):
                 text = (f"other groups at the legacy published-weight OASDI gross ratio {ACC['union']['gross']:.6f}, "
                         "with their own benefit-tax rate and timing; Part A at the effective R9 union per-HI-tax ratio "
                         "at each end; benefit-tax receipt calibration times item_row4's white_rule3_ratio")
-        if rule == "rule 3b" and CASE == "oct14":
+        if rule == "rule 3b" and CASE in ("oct14", "oct15"):
             text = "the tax on benefits at each personal case end (the central rule at both ends)"
         for b in bases:
             for end in ENDS:
@@ -1424,6 +1510,13 @@ STEP_TAX = ("5", "+ the case's own income-tax keys for every group (round 2): fe
                  "key, state and other personal taxes on the state-liability key, the shared allocation: the case", "accrual")
 STEP_COST: dict = {}    # (step, label, end) -> (cost, population, buckets); steps a and 0 are filled by setup()
 ALL_BUCKETS = list(BUCKETS) + [R.PER_HEAD, "capital return", "production gain (subtracted)"]
+
+
+def attribution_bucket_names():
+    return ALL_BUCKETS + (["lineage post-engine mixed_unit_removal_bn", "lineage post-engine coverage_bn"]
+                         if CASE == 'oct15' else [])
+
+
 use_case("sept29")
 
 
@@ -1483,7 +1576,8 @@ def attribution(groups):
                      f"{r['cost']:.6f} vs {want:.6f}")
     for (step, lab, end), (c, _, bk) in STEP_COST.items():
         gate(f"attribution step {step} {lab} {end}: the buckets add to the cost (1e-9)",
-             abs(sum(bk.get(b, 0.0) for b in ALL_BUCKETS) - c) < 1e-9 and set(bk) <= set(ALL_BUCKETS))
+              abs(sum(bk.get(b, 0.0) for b in attribution_bucket_names()) - c) < 1e-9
+              and set(bk) <= set(attribution_bucket_names()))
     rows = []
     for end in ENDS:
         prev = None
@@ -1511,7 +1605,7 @@ def attribution_buckets(groups):
             for lab in groups:
                 bk = STEP_COST[(step, lab, end)][2]
                 pb = STEP_COST[(STEPS[i - 1][0], lab, end)][2] if i else None
-                for b in ALL_BUCKETS:
+                for b in attribution_bucket_names():
                     rows.append({"step": step, "basis": basis, "end": end, "group": lab, "bucket": b,
                                  "cost_bn": f"{bk.get(b, 0.0):.4f}",
                                  "change_bn": "" if pb is None else f"{bk.get(b, 0.0) - pb.get(b, 0.0):.4f}",
@@ -1549,7 +1643,7 @@ def setup():
         ss = PA["ratio_net"] * (cash["receipts|employee_oasdi"] + cash["receipts|employer_oasdi"] + SE_SHARE * se)
         mc = (1 - PART_A_SHARE) * cash["spending|medicare"] + PA["part_a_accrual_bn"]
         fit = cash["receipts|federal_income_tax"] - rule
-        if CASE == "oct14":
+        if CASE in ("oct14", "oct15"):
             # row4_frame is an explicit post-pension edit. Reconstruct its exact union delta; the underlying
             # pension rule remains gated and the rough re-key needs its own stated frame rule.
             def frame_delta(key):
@@ -1633,7 +1727,7 @@ def setup():
     set_frame(w4, n4, DUMP["cash"])
     ACC = accrual_params()
     UNION_SC = R.scenario("mex")
-    if CASE == "oct14":
+    if CASE in ("oct14", "oct15"):
         with identified():
             for end in ENDS:
                 cash = {l["side"] + "|" + l["id"]: l["amount_bn"] for l in DUMP["cash"][end]["lines"] if l["side"] != "scalar"}
@@ -1688,7 +1782,10 @@ def lineage_gates():
     oct07 (a payload with meta.items): items_gates()."""
     s = json.loads((CASE_LANE / "derived/summary.json").read_text())
     if "items" in META:
-        v7_items_gates(s) if CASE == "oct14" else items_gates(s)
+        if CASE == "oct15":
+            v8_items_gates(s)
+            return
+        v7_items_gates(s) if CASE in ("oct14", "oct15") else items_gates(s)
         return
     ch, s29 = s["change_at_fixed_specifications"], s["adopted_2026_09_29"]
     m29 = json.loads((FISCAL / CASES["sept29"] / "derived/corrections.json").read_text())["meta"]
@@ -1838,20 +1935,33 @@ def main(case="sept29"):
                         **{k: f"{v:.4f}" for k, v in r.items() if k not in ("population", "pop_share")},
                         "population": f"{r['population']:.0f}", "pop_share": f"{r['pop_share']:.6f}",
                         "cost_per_member": f"{r['cost'] * 1e9 / r['population']:.0f}",
-                        "delta_like_for_like_bn": f"{u['cost'] - r['cost']:.4f}",
-                        "delta_vs_engine_union_bn": f"{eg['cost'] - r['cost']:.4f}",
+                        "delta_like_for_like_bn": f"{u['cost'] - r['cost']:.4f}" if CASE != "oct15" or lab != "mexican_origin_engine" else "",
+                        "delta_vs_engine_union_bn": f"{eg['cost'] - r['cost']:.4f}" if CASE != "oct15" else "",
+                        **({"engine": "case" if lab == "mexican_origin_engine" else "rough",
+                            "comparison_engine": "rough" if lab != "mexican_origin_engine" else "not a comparison",
+                            "case_minus_rough_bridge_bn": f"{eg['cost'] - u['cost']:.9f}",
+                            "mixed_unit_removal_bn": META['mixed_unit_removal']['by_end'][end]['total_bn'],
+                            "mixed_unit_asymmetry": "lineage only; comparator counterpart unmeasured",
+                            "delta_without_item11_bn": f"{u['cost'] - r['cost'] - META['mixed_unit_removal']['by_end'][end]['total_bn']:.9f}"
+                            if not lab.startswith('mexican_') else ""} if CASE == "oct15" else {}),
                         **({"delta_like_for_like_cps_bn": f"{u['cost_cps'] - r['cost_cps']:.4f}"} if TAX_ON else {}),
                         "delta_like_for_like_top_tail_proportional_bn": f"{u['cost_top_tail_proportional'] - r['cost_top_tail_proportional']:.4f}",
                         "delta_like_for_like_capital_taxes_respond_bn": f"{u['cost_capital_taxes_respond'] - r['cost_capital_taxes_respond']:.4f}",
                         "delta_like_for_like_both_arms_bn": f"{u['cost_both_arms'] - r['cost_both_arms']:.4f}",
                         "delta_like_for_like_others_at_national_prices_bn":
                             f"{u['cost_others_at_national_prices'] - r['cost_others_at_national_prices']:.4f}"})
+        if CASE == 'oct15' and lab == 'mexican_origin_engine':
+            for key in summary[-1]:
+                if key.startswith('delta_like_for_like'):
+                    summary[-1][key] = ''
         ub = res[(b, "mexican_origin_rough", end)][2]
-        for bucket in list(BUCKETS) + [R.PER_HEAD, "capital return", "production gain (subtracted)"]:
+        for bucket in attribution_bucket_names():
             v = bk.get(bucket, 0.0)
             bucket_rows.append({"basis": b, "group": lab, "end": end, "bucket": bucket, "cost_bn": f"{v:.4f}",
                                 "per_member": f"{v * 1e9 / r['population']:.0f}",
-                                "delta_vs_union_rough_bn": f"{ub.get(bucket, 0.0) - v:.4f}"})
+                                "delta_vs_union_rough_bn": f"{ub.get(bucket, 0.0) - v:.4f}" if CASE != 'oct15' or lab != 'mexican_origin_engine' else '',
+                                **({'engine': 'case' if lab == 'mexican_origin_engine' else 'rough',
+                                    'mixed_unit_asymmetry': 'lineage only; comparator counterpart unmeasured'} if CASE == 'oct15' else {})})
         if terms is not None and b == "accrual":
             term_rows.append({"group": lab, "end": end, **{f"index_{k}": f"{v:.6f}" for k, v in terms["index"].items()},
                               "rho_miles": f"{terms['rho']:.6f}", "under5_share": f"{terms['u5']:.6f}",
@@ -1917,6 +2027,8 @@ def main(case="sept29"):
 
 
 def write(name, rows):
+    if CASE == 'oct15':
+        rows = [dict(r, case=CASE, mortality_convention='whole-population mortality') for r in rows]
     with open(DER / name, "w", newline="") as f:
         wr = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         wr.writeheader()
@@ -2017,7 +2129,7 @@ def headline_lineage(summary, st, n4):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct14", choices=list(CASES),
+    ap.add_argument("--case", default="oct15", choices=list(CASES),
                     help="oct14 (default, live v7); sept29 and oct05 are archived input-library routes")
     ap.add_argument("--preflight", action="store_true", help="check the rough pension consumer rule without writing")
     args = ap.parse_args()

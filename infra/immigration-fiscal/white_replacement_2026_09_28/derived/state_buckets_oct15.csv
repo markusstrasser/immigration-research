@@ -1,0 +1,113 @@
+basis,region,bucket,cost_union_bn,cost_white_union_ages_bn,delta_cost_bn,delta_cost_per_person,case,mortality_convention
+accrual,California,income taxes,-56.7101,-221.4468,164.7367,11240,oct15,whole-population mortality
+accrual,California,payroll taxes and Medicare premiums,-62.5722,-100.5255,37.9533,2589,oct15,whole-population mortality
+accrual,California,"sales, excise, customs, fees",-37.3209,-65.3987,28.0777,1916,oct15,whole-population mortality
+accrual,California,"capital, property, production taxes",-34.0195,-80.7570,46.7375,3189,oct15,whole-population mortality
+accrual,California,Social Security,38.9065,65.4122,-26.5057,-1808,oct15,whole-population mortality
+accrual,California,Medicare,28.6272,38.7862,-10.1590,-693,oct15,whole-population mortality
+accrual,California,Medicaid,41.6144,29.3640,12.2504,836,oct15,whole-population mortality
+accrual,California,schools and colleges,70.3781,75.5527,-5.1746,-353,oct15,whole-population mortality
+accrual,California,"police, courts, prisons",36.3305,31.5258,4.8047,328,oct15,whole-population mortality
+accrual,California,"SNAP, SSI, housing, cash aid, credits, other welfare",43.8816,34.8753,9.0063,614,oct15,whole-population mortality
+accrual,California,veterans and military medical,3.0389,7.7836,-4.7447,-324,oct15,whole-population mortality
+accrual,California,"per-head lines: government, defense, interest, roads, other",30.0873,36.3609,-6.2736,-428,oct15,whole-population mortality
+accrual,California,capital return,12.3654,13.6901,-1.3247,-90,oct15,whole-population mortality
+accrual,California,production gain (subtracted),-4.2423,0.0000,-4.2423,-289,oct15,whole-population mortality
+accrual,Texas,income taxes,-33.4599,-91.8458,58.3860,5071,oct15,whole-population mortality
+accrual,Texas,payroll taxes and Medicare premiums,-43.1795,-63.5354,20.3559,1768,oct15,whole-population mortality
+accrual,Texas,"sales, excise, customs, fees",-32.0802,-51.3613,19.2811,1674,oct15,whole-population mortality
+accrual,Texas,"capital, property, production taxes",-21.6554,-42.3796,20.7242,1800,oct15,whole-population mortality
+accrual,Texas,Social Security,26.5881,41.0332,-14.4451,-1254,oct15,whole-population mortality
+accrual,Texas,Medicare,20.6682,26.1075,-5.4393,-472,oct15,whole-population mortality
+accrual,Texas,Medicaid,32.1017,22.7509,9.3508,812,oct15,whole-population mortality
+accrual,Texas,schools and colleges,53.3927,61.1451,-7.7524,-673,oct15,whole-population mortality
+accrual,Texas,"police, courts, prisons",15.3362,12.7476,2.5887,225,oct15,whole-population mortality
+accrual,Texas,"SNAP, SSI, housing, cash aid, credits, other welfare",30.5437,13.5791,16.9645,1473,oct15,whole-population mortality
+accrual,Texas,veterans and military medical,4.7936,7.4265,-2.6329,-229,oct15,whole-population mortality
+accrual,Texas,"per-head lines: government, defense, interest, roads, other",18.3310,22.2372,-3.9062,-339,oct15,whole-population mortality
+accrual,Texas,capital return,9.2671,10.3421,-1.0750,-93,oct15,whole-population mortality
+accrual,Texas,production gain (subtracted),-2.8421,0.0000,-2.8421,-247,oct15,whole-population mortality
+accrual,rest of US,income taxes,-63.2439,-147.7188,84.4749,4432,oct15,whole-population mortality
+accrual,rest of US,payroll taxes and Medicare premiums,-71.0196,-100.9227,29.9031,1569,oct15,whole-population mortality
+accrual,rest of US,"sales, excise, customs, fees",-49.5318,-69.4592,19.9274,1046,oct15,whole-population mortality
+accrual,rest of US,"capital, property, production taxes",-37.2373,-68.6309,31.3936,1647,oct15,whole-population mortality
+accrual,rest of US,Social Security,44.4966,65.8580,-21.3614,-1121,oct15,whole-population mortality
+accrual,rest of US,Medicare,28.1311,35.9770,-7.8460,-412,oct15,whole-population mortality
+accrual,rest of US,Medicaid,53.9485,36.1809,17.7676,932,oct15,whole-population mortality
+accrual,rest of US,schools and colleges,99.6158,108.4589,-8.8431,-464,oct15,whole-population mortality
+accrual,rest of US,"police, courts, prisons",30.6766,25.0648,5.6118,294,oct15,whole-population mortality
+accrual,rest of US,"SNAP, SSI, housing, cash aid, credits, other welfare",50.3423,32.5881,17.7542,932,oct15,whole-population mortality
+accrual,rest of US,veterans and military medical,4.8704,9.1806,-4.3101,-226,oct15,whole-population mortality
+accrual,rest of US,"per-head lines: government, defense, interest, roads, other",32.1666,37.0231,-4.8565,-255,oct15,whole-population mortality
+accrual,rest of US,capital return,16.0738,17.4189,-1.3451,-71,oct15,whole-population mortality
+accrual,rest of US,production gain (subtracted),-4.8250,0.0000,-4.8250,-253,oct15,whole-population mortality
+accrual,Los Angeles metro,income taxes,-19.7812,-102.3510,82.5697,16547,oct15,whole-population mortality
+accrual,Los Angeles metro,payroll taxes and Medicare premiums,-21.7960,-40.0829,18.2869,3665,oct15,whole-population mortality
+accrual,Los Angeles metro,"sales, excise, customs, fees",-12.5726,-25.2789,12.7062,2546,oct15,whole-population mortality
+accrual,Los Angeles metro,"capital, property, production taxes",-11.7649,-33.4979,21.7330,4355,oct15,whole-population mortality
+accrual,Los Angeles metro,Social Security,13.5030,26.0747,-12.5717,-2519,oct15,whole-population mortality
+accrual,Los Angeles metro,Medicare,10.1880,15.3521,-5.1641,-1035,oct15,whole-population mortality
+accrual,Los Angeles metro,Medicaid,14.2245,10.2088,4.0157,805,oct15,whole-population mortality
+accrual,Los Angeles metro,schools and colleges,21.3010,24.0752,-2.7743,-556,oct15,whole-population mortality
+accrual,Los Angeles metro,"police, courts, prisons",12.4487,10.8283,1.6205,325,oct15,whole-population mortality
+accrual,Los Angeles metro,"SNAP, SSI, housing, cash aid, credits, other welfare",15.4655,8.8910,6.5745,1318,oct15,whole-population mortality
+accrual,Los Angeles metro,veterans and military medical,1.2569,3.0506,-1.7937,-359,oct15,whole-population mortality
+accrual,Los Angeles metro,"per-head lines: government, defense, interest, roads, other",10.2153,13.1670,-2.9517,-592,oct15,whole-population mortality
+accrual,Los Angeles metro,capital return,4.0888,4.6278,-0.5390,-108,oct15,whole-population mortality
+accrual,Los Angeles metro,production gain (subtracted),-1.4785,0.0000,-1.4785,-296,oct15,whole-population mortality
+cash,California,income taxes,-57.4073,-223.6238,166.2165,11341,oct15,whole-population mortality
+cash,California,payroll taxes and Medicare premiums,-62.5722,-100.5255,37.9533,2589,oct15,whole-population mortality
+cash,California,"sales, excise, customs, fees",-37.3209,-65.3987,28.0777,1916,oct15,whole-population mortality
+cash,California,"capital, property, production taxes",-34.0195,-80.7570,46.7375,3189,oct15,whole-population mortality
+cash,California,Social Security,22.4508,33.6016,-11.1508,-761,oct15,whole-population mortality
+cash,California,Medicare,21.7051,26.8943,-5.1892,-354,oct15,whole-population mortality
+cash,California,Medicaid,41.6144,29.3640,12.2504,836,oct15,whole-population mortality
+cash,California,schools and colleges,70.3781,75.5527,-5.1746,-353,oct15,whole-population mortality
+cash,California,"police, courts, prisons",36.3305,31.5258,4.8047,328,oct15,whole-population mortality
+cash,California,"SNAP, SSI, housing, cash aid, credits, other welfare",43.8816,34.8753,9.0063,614,oct15,whole-population mortality
+cash,California,veterans and military medical,3.0389,7.7836,-4.7447,-324,oct15,whole-population mortality
+cash,California,"per-head lines: government, defense, interest, roads, other",30.0873,36.3609,-6.2736,-428,oct15,whole-population mortality
+cash,California,capital return,12.3654,13.6901,-1.3247,-90,oct15,whole-population mortality
+cash,California,production gain (subtracted),-4.2423,0.0000,-4.2423,-289,oct15,whole-population mortality
+cash,Texas,income taxes,-34.0636,-93.6001,59.5365,5170,oct15,whole-population mortality
+cash,Texas,payroll taxes and Medicare premiums,-43.1795,-63.5354,20.3559,1768,oct15,whole-population mortality
+cash,Texas,"sales, excise, customs, fees",-32.0802,-51.3613,19.2811,1674,oct15,whole-population mortality
+cash,Texas,"capital, property, production taxes",-21.6554,-42.3796,20.7242,1800,oct15,whole-population mortality
+cash,Texas,Social Security,19.2402,27.0773,-7.8370,-681,oct15,whole-population mortality
+cash,Texas,Medicare,16.4944,20.4460,-3.9516,-343,oct15,whole-population mortality
+cash,Texas,Medicaid,32.1017,22.7509,9.3508,812,oct15,whole-population mortality
+cash,Texas,schools and colleges,53.3927,61.1451,-7.7524,-673,oct15,whole-population mortality
+cash,Texas,"police, courts, prisons",15.3362,12.7476,2.5887,225,oct15,whole-population mortality
+cash,Texas,"SNAP, SSI, housing, cash aid, credits, other welfare",30.5437,13.5791,16.9645,1473,oct15,whole-population mortality
+cash,Texas,veterans and military medical,4.7936,7.4265,-2.6329,-229,oct15,whole-population mortality
+cash,Texas,"per-head lines: government, defense, interest, roads, other",18.3310,22.2372,-3.9062,-339,oct15,whole-population mortality
+cash,Texas,capital return,9.2671,10.3421,-1.0750,-93,oct15,whole-population mortality
+cash,Texas,production gain (subtracted),-2.8421,0.0000,-2.8421,-247,oct15,whole-population mortality
+cash,rest of US,income taxes,-63.9438,-149.8032,85.8594,4505,oct15,whole-population mortality
+cash,rest of US,payroll taxes and Medicare premiums,-71.0196,-100.9227,29.9031,1569,oct15,whole-population mortality
+cash,rest of US,"sales, excise, customs, fees",-49.5318,-69.4592,19.9274,1046,oct15,whole-population mortality
+cash,rest of US,"capital, property, production taxes",-37.2373,-68.6309,31.3936,1647,oct15,whole-population mortality
+cash,rest of US,Social Security,22.2239,32.1726,-9.9487,-522,oct15,whole-population mortality
+cash,rest of US,Medicare,17.3534,23.9168,-6.5634,-344,oct15,whole-population mortality
+cash,rest of US,Medicaid,53.9485,36.1809,17.7676,932,oct15,whole-population mortality
+cash,rest of US,schools and colleges,99.6158,108.4589,-8.8431,-464,oct15,whole-population mortality
+cash,rest of US,"police, courts, prisons",30.6766,25.0648,5.6118,294,oct15,whole-population mortality
+cash,rest of US,"SNAP, SSI, housing, cash aid, credits, other welfare",50.3423,32.5881,17.7542,932,oct15,whole-population mortality
+cash,rest of US,veterans and military medical,4.8704,9.1806,-4.3101,-226,oct15,whole-population mortality
+cash,rest of US,"per-head lines: government, defense, interest, roads, other",32.1666,37.0231,-4.8565,-255,oct15,whole-population mortality
+cash,rest of US,capital return,16.0738,17.4189,-1.3451,-71,oct15,whole-population mortality
+cash,rest of US,production gain (subtracted),-4.8250,0.0000,-4.8250,-253,oct15,whole-population mortality
+cash,Los Angeles metro,income taxes,-20.0155,-103.1683,83.1528,16664,oct15,whole-population mortality
+cash,Los Angeles metro,payroll taxes and Medicare premiums,-21.7960,-40.0829,18.2869,3665,oct15,whole-population mortality
+cash,Los Angeles metro,"sales, excise, customs, fees",-12.5726,-25.2789,12.7062,2546,oct15,whole-population mortality
+cash,Los Angeles metro,"capital, property, production taxes",-11.7649,-33.4979,21.7330,4355,oct15,whole-population mortality
+cash,Los Angeles metro,Social Security,7.5651,12.6149,-5.0497,-1012,oct15,whole-population mortality
+cash,Los Angeles metro,Medicare,7.9407,10.1906,-2.2499,-451,oct15,whole-population mortality
+cash,Los Angeles metro,Medicaid,14.2245,10.2088,4.0157,805,oct15,whole-population mortality
+cash,Los Angeles metro,schools and colleges,21.3010,24.0752,-2.7743,-556,oct15,whole-population mortality
+cash,Los Angeles metro,"police, courts, prisons",12.4487,10.8283,1.6205,325,oct15,whole-population mortality
+cash,Los Angeles metro,"SNAP, SSI, housing, cash aid, credits, other welfare",15.4655,8.8910,6.5745,1318,oct15,whole-population mortality
+cash,Los Angeles metro,veterans and military medical,1.2569,3.0506,-1.7937,-359,oct15,whole-population mortality
+cash,Los Angeles metro,"per-head lines: government, defense, interest, roads, other",10.2153,13.1670,-2.9517,-592,oct15,whole-population mortality
+cash,Los Angeles metro,capital return,4.0888,4.6278,-0.5390,-108,oct15,whole-population mortality
+cash,Los Angeles metro,production gain (subtracted),-1.4785,0.0000,-1.4785,-296,oct15,whole-population mortality
