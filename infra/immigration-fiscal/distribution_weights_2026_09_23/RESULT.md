@@ -1012,6 +1012,71 @@ Log, 2026-10-07 JST, times from `date`:
 - 15:05:15–15:07:49: `pytest`, 12 passed in 154 s.
 - 15:14:43–15:15:59: the check at HEAD (gate 5).
 
+## v7 consumer route (oct14), 2026-10-14
+
+2026-10-14 17:11 JST (from `date`): migrated the producer routes to **only the live case
+`oct14`**, pending the parent's `CASE_FINAL` adoption marker. No oct14 headline is claimed
+until the adopted-case runs below. Earlier derived files, including the unkeyed September
+27 files and `derived/oct07/`, are frozen; historical commands above are retained as records.
+
+`case_ends.cjs` evaluates the complete v7 package over its 32 personal specifications per
+method and gates the ends against `summary.json` `v7.end_specifications` (16 / 11). This
+carries all item edits and receipt responses through the package. The adopted row is gated
+at 1e-4 (CSV rounding), the summary and set/cash identity at 1e-9. `distribute.py` now takes
+the engine's A directly at those personal ends, instead of replaying deltas from each prior
+band under the old shared-low premise. It records separately v6's allocation move and v7's
+change from v6's personal band, and gates the production change against the frozen v6 grid
+at the same cells. The row-4 production and lineage distribution rules remain those above.
+This lane distributes effects among other residents; it does not report a shared-allocation
+distribution within the group, so it does not add that companion reading. [SOURCE:
+`main_case_2026_10_14/RESULT.md`, Consumers R5–R7; `summary.json` `v7`]
+
+The live outputs are `derived/case_ends_oct14.json` and the thirteen files in
+`derived/oct14/`. The default and `--case oct14` run the same case. The tests rebuild only
+this case into scratch, reject an oct07 producer run, and check that A is the personal-end
+engine A. Reproduction commands, to run after `CASE_FINAL` exists:
+
+```sh
+node infra/immigration-fiscal/distribution_weights_2026_09_23/case_ends.cjs --case oct14
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py --case oct14
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/distribution_weights_2026_09_23 \
+  "node {lane}/case_ends.cjs --case oct14" \
+  "uv run --no-project python3 {lane}/distribute.py --case oct14" \
+  "uv run --no-project python3 -m pytest {lane}/test_distribute.py -q --import-mode=importlib -p no:cacheprovider"
+```
+
+2026-10-14 18:17:42 JST (from `date`): final run on adopted case **148ed1ea**. The
+`CASE_FINAL` hashes for both payloads and the summary matched the current bytes and the
+commit. Re-read final Consumers R5–R9 and the decision; whole-package evaluation carries
+all five items, including the added people's child-credit term, white income-tax-key
+correction and row-4-frame correction. No distribution-specific schema change was needed.
+
+- **Case gate:** `inputs.json` `fiscal.adopted.band` is
+  `[339.55201782952685, 423.64926070050683]` ($bn cost); its cash set is
+  `[264.42557361550553, 348.52281648648557]`, set less the accrual. These match
+  `main_case_bands.csv` `adopted` and `cash_set` at 1e-4, and the case's summary at
+  1e-9. Both methods use personal specifications 16 / 11.
+- **Central modeled distribution among other residents:** on SPM income ranks,
+  `channel_by_quintile.csv` (`measure=spm`, `quintile=0`) has fiscal −$373.4bn
+  (`fiscal_a` `bn=-373.42252888200335`) and all channels −$417.1bn
+  (`TOTAL_a` `bn=-417.1196257790325`; `TOTAL_b` −417.1196257790313). The fiscal
+  columns are cash −$249.2bn, resource −$49.1bn and accrual −$75.1bn, with the
+  capped beneficiaries' −$8.8bn carried separately. These are the lane's central
+  channel totals, not the case's endpoint band.
+- **Quintiles, low to high:** convention (a), budget financed on the existing tax
+  distribution, gives −$40.6 / −49.3 / −62.4 / −78.2 / −186.6bn; convention (b),
+  equal per person, gives −$104.0 / −100.1 / −96.9 / −86.9 / −29.3bn.
+  [CALCULATION: `derived/oct14/channel_by_quintile.csv`, `measure=spm`, channels
+  `TOTAL_a`, `TOTAL_b`, quintiles 1–5, `bn`]
+- **Income-weighted sums:** η=1.3, the fifth-percentile floor, −$568.3bn (a) /
+  −$1,110.9bn (b); these are weighted sums. [CALCULATION:
+  `derived/oct14/weighted_totals.csv`, `measure=spm`, channels `TOTAL_a`, `TOTAL_b`,
+  `eta=1.3`, `person_p5` −568.327661 / −1110.883371]
+- **Verification:** endpoint producer exit 0, 16 gates; distribution exit 0,
+  276 gates; five tests pass in 40.54s. The stable sequential three-command rerun
+  above exited 0 with **IDENTICAL: 75/75**. All 56 tracked historical derived
+  files equal HEAD byte for byte. No historical case was regenerated.
+
 ## Revisions
 
 2026-09-23: Connecticut planning regions (09110–09190) now map to 2013 CBSAs in the shared crosswalk; the housing lane's metro-local inputs moved (renters' extra rent −$33.86bn → −$33.86bn, landlords $37.36bn → $37.37bn, +$0.002bn each). The verdict's figures are unchanged at $0.1bn (bottom four fifths −$80.7bn, top fifth +$46.0bn, total −$262.6bn; at η = 1.3, −$407.1bn and −$738.3bn); the largest unweighted flow move is $0.003bn (renters, metro-local high). Four weighted-table cells change in their last printed digit: (b) η = 1 per person −557.0 → −557.1 (also in the headline η table), (a) η = 1.4 floored quintiles −419.9 → −420.0, (a) η = 2 quintile bins −781.0 → −781.1, and (b) η = 2 quintile bins −1,567.4 → −1,567.5. Owner-occupiers' top-fifth stock goes $815bn → $816bn, or $31,892 → $31,895 per household. Detail: [`CT_PLANNING_REGIONS.md`](../hedonic_composition_2026_09_19/CT_PLANNING_REGIONS.md).

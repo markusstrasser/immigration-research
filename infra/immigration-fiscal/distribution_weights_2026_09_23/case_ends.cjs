@@ -1,46 +1,11 @@
-/* The amounts distribute.py splits out of a main case's direct fiscal response A at each band end.
- *
- * September 27 (main_case_long_run_2026_09_27) needs two splits the band file does not carry:
- *   - the return on public capital, an imputed resource cost, total and by level (federal, state and local);
- *   - the capped programs, rental assistance (housing_subsidies) and LIHEAP (energy_assistance): the group's amount
- *     times its response. Their slots go to eligible households without the group, so distribute.py charges them to
- *     eligible non-recipients instead of the budget.
- * TANF-type aid (family_and_general_assistance) is recorded for reference; it stays with the budget.
- * Methods are averaged at their own end specifications, as the case lane does.
- *
- * September 29 (SEPT29_LANE, candidate v4 adopted) also replaces the engine's production grid (row-4 weights), which
- * moves the private term P and the induced receipts F, never A. For a case whose corrections.json carries a production
- * grid the file gains a `production` block: at each end, the engine's P and F on the case's grid, P and F on
- * model.json's grid (the earlier cases') at the same production cell, the cell's normalization, and the engine's A (its
- * direct response less the capital return). distribute.py moves A by the case's change less the production change and
- * gates the result against that A. Two more September 29 splits: public housing's enterprise deficit (the receipt line
- * housing_enterprise_surplus, at the rental line's key) is capped like rental assistance where the model has it, and
- * the pension accrual (the case less its cash set, a `pension_accrual` block) is recorded at each end, as the debt lane
- * books both (displaced beneficiaries; an accrual never financed today).
- *
- * October 5 (OCT05_LANE, main case v5) adds 3.04M people whose payload builds on September 29's: its production grid is
- * September 29's plus the added G3+ members' P and F (meta.lineage.production). The production block then also gives P
- * and F on the previous case's grid at the same cell (`previous`), so distribute.py moves A by the change less the
- * lineage's production delta. v5's summary has no item_pension: its accrual is the case less its cash set read from
- * cash_set (change_from_main_case_bn, at the same end specifications).
- *
- * October 7 (OCT07_LANE, main case v6) is v5 with the lineage item's additions in place and the edit sets after them
- * (meta.items). The lineage item (the added people at their measured age mix) re-values the added G3+ members' P and F,
- * so the case's grid differs from v5's: `previous` is v5's grid at the same cell, and distribute.py moves A by the
- * change less that difference. Its accrual is read as v5's is, from cash_set.
- *
- * Gates (exit 1, nothing written): the band equals summary.json's main_case (1e-9) and main_case_bands.csv's
- * adopted row (1e-4); the capital return equals summary.json's capital_at_end_specifications, in total and by level
- * (1e-9); rental assistance equals lines_at_end_specifications.housing_subsidies.added_bn (1e-9); both capped lines
- * respond at 1 at every end specification. With a production grid: every method's end specification reads the same
- * production cell at each end, P and F there are the payload's grid values and model.json's (exact), and
- * cost = -(P + F) - A at each end (1e-9).
- *
- * With a previous case's grid: the two grids have the same cells. Without item_pension: the cash set's end
- * specifications are the case's, and its band is the case's plus change_from_main_case_bn (1e-9).
- *
- * Run from anywhere: node case_ends.cjs [--case sept27|sept29|oct05|oct07] [--out-dir DIR] -> derived/case_ends_<case>.json
- * (the default case is sept27, whose file the evidence map's readers take).
+/* Live main case v7 (oct14) at its personal band ends.
+ * Complete package evaluation carries every spending/receipt edit and response.
+ * Capital return, capped programs and the set-minus-cash accrual are exported
+ * alongside the engine's A, P and F. The preceding v6 grid is read as frozen
+ * provenance, never rerun. Gates compare the band to summary.json (1e-9), the
+ * adopted CSV row (1e-4), v7's personal set/cash ends, and cost = -(P+F)-A.
+ * Earlier derived case files are frozen.
+ * Run: node case_ends.cjs [--case oct14] [--out-dir DIR]
  */
 "use strict";
 const fs = require("fs");
@@ -48,14 +13,12 @@ const path = require("path");
 const crypto = require("crypto");
 
 const FISCAL = path.resolve(__dirname, "..");
-const SEPT29_LANE = "main_case_2026_09_29";
-const OCT05_LANE = "main_case_2026_10_05";
 const OCT07_LANE = "main_case_2026_10_07";
-const CASES = { sept27: "main_case_long_run_2026_09_27", sept29: SEPT29_LANE, oct05: OCT05_LANE, oct07: OCT07_LANE };
-// A case whose payload builds on an earlier case's production grid: that case's lane (the case before it in
-// distribute.py's chain, whose grid at the same cell it differs from).
-const PREVIOUS_GRID = { oct05: SEPT29_LANE, oct07: OCT05_LANE };
-const DEFAULT_CASE = "sept27";
+const OCT14_LANE = "main_case_2026_10_14";
+const CASES = { oct14: OCT14_LANE };
+// The preceding adopted case's frozen production grid, compared at the live case's cells.
+const PREVIOUS_GRID = { oct14: OCT07_LANE };
+const DEFAULT_CASE = "oct14";
 const argv = process.argv.slice(2);
 const opt = (name, dflt) => (argv.includes(name) ? argv[argv.indexOf(name) + 1] : dflt);
 const CASE = opt("--case", DEFAULT_CASE);
@@ -91,6 +54,9 @@ const models = METHODS.map((m) => P.modelFor("central", m, P.withCentral({})));
 const runs = models.map((m) => P.MAIN_SPECS.map((s) => P.evaluateFull(m, s, P.MAIN_PROFILE)));
 const costs = runs.map((xs) => xs.map((r) => r.cost_bn));
 const ends = costs.map((xs) => [xs.indexOf(Math.min(...xs)), xs.indexOf(Math.max(...xs))]);
+gate("the live case uses personal specifications and the v7 set ends", P.MAIN_SPECS.length === 32
+  && P.MAIN_SPECS.every((s) => s.allocation === "personal")
+  && JSON.stringify(ends) === JSON.stringify(summary.v7.end_specifications.by_method.set), JSON.stringify(ends));
 const at = (e, f) => mean(ends.map((ij, m) => f(runs[m][ij[e]])));
 const row = (r, id, side = "spending") => {
   const x = r.evaluation[side].find((l) => l.id === id);
@@ -179,6 +145,9 @@ if (payload.meta.pension_accrual && summary.change_at_fixed_specifications.item_
 } else if (payload.meta.pension_accrual) {
   // v5: no item_pension; the case less its cash set, from cash_set itself.
   const cash = summary.cash_set, item = cash.change_from_main_case_bn.map((x) => -x);
+  gate("the cash band and ends are v7's personal cash set (1e-9)",
+    JSON.stringify(cash.end_specifications) === JSON.stringify(summary.v7.end_specifications.by_method.cash)
+    && worst(cash.band_bn.map((x, j) => x - summary.v7.cash_set_bn[j])) < 1e-9);
   gate("the pension accrual is the case less its cash set (cash_set at the case's end specifications; its band is the case's "
     + "plus change_from_main_case_bn, 1e-9)", JSON.stringify(cash.end_specifications) === JSON.stringify(ends)
     && worst(cash.band_bn.map((x, j) => x - band[j] - cash.change_from_main_case_bn[j])) < 1e-9, item.map((x) => x.toFixed(4)).join(" / "));

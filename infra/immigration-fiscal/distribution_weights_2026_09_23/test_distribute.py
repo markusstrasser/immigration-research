@@ -1,18 +1,10 @@
-"""Permanent gates: `distribute.py --case sept23`, `--case sept24`, `--case sept26` and `--case sept26_schools`
-rebuild the files committed for those cases byte for byte, and the default run rebuilds the derived/ files,
-its case_ends.cjs input included.
+"""Live-case reproducibility and retirement of historical producer routes.
 
-Since 2026-09-27 the default run is the main case of that day (sept27). The files of each earlier case are the
-ones committed at its commit below, the last commit whose derived/ held that run (SEPT23_COMMIT is also the
-ledger lane's base). The case adopted on 2026-09-29 (sept29) writes derived/sept29/ and derived/case_ends_sept29.json
-beside them; its run rebuilds both. So do the case adopted on 2026-10-05 (oct05: derived/oct05/,
-derived/case_ends_oct05.json) and main case v6 (oct07: derived/oct07/, derived/case_ends_oct07.json).
-
-Run from the repository root (about a minute per case with the ACS cache in _cache/):
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/distribution_weights_2026_09_23/ -q --import-mode=importlib
+Earlier derived files stay frozen. These tests rebuild only oct14 into scratch.
 """
 from __future__ import annotations
 
+import importlib.util
 import os
 import subprocess
 import sys
@@ -22,57 +14,46 @@ import pytest
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-SEPT23_COMMIT = "5b8957e"
-SEPT24_COMMIT = "6e554a3"
-SEPT26_COMMIT = "f697514"
-SCHOOLS_COMMIT = "39b854b"
-DERIVED = "infra/immigration-fiscal/distribution_weights_2026_09_23/derived"
 
 
-def git(*args: str) -> bytes:
-    return subprocess.run(["git", *args], cwd=ROOT, capture_output=True, check=True).stdout
+def run(cmd, *, ok=True):
+    result = subprocess.run(cmd, cwd=ROOT, env={**os.environ, "OPENBLAS_NUM_THREADS": "1"},
+                            capture_output=True, text=True)
+    assert (result.returncode == 0) == ok, result.stdout[-2000:] + result.stderr[-2000:]
+    return result
 
 
-def rebuild(tmp_path: Path, *args: str) -> None:
-    run = subprocess.run([sys.executable, str(HERE / "distribute.py"), *args, "--out-dir", str(tmp_path)],
-                         cwd=ROOT, env={**os.environ, "OPENBLAS_NUM_THREADS": "1"}, capture_output=True, text=True)
-    assert run.returncode == 0, run.stderr[-2000:]
-
-
-@pytest.mark.parametrize("case, commit, count", [("sept23", SEPT23_COMMIT, 12), ("sept24", SEPT24_COMMIT, 13),
-                                                 ("sept26", SEPT26_COMMIT, 13), ("sept26_schools", SCHOOLS_COMMIT, 13)])
-def test_old_case_rebuilds_committed_files(tmp_path, case, commit, count):
-    names = git("ls-tree", "--name-only", f"{commit}:{DERIVED}").decode().split()
-    assert len(names) == count, names
-    rebuild(tmp_path, "--case", case)
-    differ = [n for n in names if (tmp_path / n).read_bytes() != git("show", f"{commit}:{DERIVED}/{n}")]
-    assert not differ, differ
-
-
-@pytest.mark.parametrize("case", ["sept27", "sept29", "oct05", "oct07"])
-def test_case_ends_rebuild(tmp_path, case):
-    run = subprocess.run(["node", str(HERE / "case_ends.cjs"), "--case", case, "--out-dir", str(tmp_path)], cwd=ROOT,
-                         capture_output=True, text=True)
-    assert run.returncode == 0, run.stdout[-2000:] + run.stderr[-2000:]
-    name = f"case_ends_{case}.json"
+def test_case_ends_rebuild(tmp_path):
+    run(["node", str(HERE / "case_ends.cjs"), "--out-dir", str(tmp_path)])
+    name = "case_ends_oct14.json"
     assert (tmp_path / name).read_bytes() == (HERE / "derived" / name).read_bytes()
 
 
-def test_default_rebuilds_derived(tmp_path):
-    names = sorted(p.name for p in (HERE / "derived").iterdir()
-                   if p.is_file() and not (p.name.startswith("case_ends_") and p.suffix == ".json"))
+def test_live_case_rebuilds_its_directory(tmp_path):
+    source = HERE / "derived" / "oct14"
+    names = sorted(p.name for p in source.iterdir())
     assert len(names) == 13, names
-    rebuild(tmp_path)
+    run([sys.executable, str(HERE / "distribute.py"), "--out-dir", str(tmp_path)])
     assert sorted(p.name for p in tmp_path.iterdir()) == names
-    differ = [n for n in names if (tmp_path / n).read_bytes() != (HERE / "derived" / n).read_bytes()]
-    assert not differ, differ
+    assert all((tmp_path / n).read_bytes() == (source / n).read_bytes() for n in names)
 
 
-@pytest.mark.parametrize("case", ["sept29", "oct05", "oct07"])
-def test_later_case_rebuilds_its_directory(tmp_path, case):
-    names = sorted(p.name for p in (HERE / "derived" / case).iterdir())
-    assert len(names) == 13, names
-    rebuild(tmp_path, "--case", case)
-    assert sorted(p.name for p in tmp_path.iterdir()) == names
-    differ = [n for n in names if (tmp_path / n).read_bytes() != (HERE / "derived" / case / n).read_bytes()]
-    assert not differ, differ
+@pytest.mark.parametrize("script,runner", [("case_ends.cjs", "node"), ("distribute.py", sys.executable)])
+def test_previous_case_is_not_computed(tmp_path, script, runner):
+    result = run([runner, str(HERE / script), "--case", "oct07", "--out-dir", str(tmp_path)], ok=False)
+    assert "unknown case oct07" in result.stderr or "invalid choice" in result.stderr
+    assert not list(tmp_path.iterdir())
+
+
+def test_allocation_change_is_not_replayed_as_same_allocation():
+    spec = importlib.util.spec_from_file_location("distribution_live", HERE / "distribute.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    assert module.DEFAULT_CASE == "oct14"
+    assert list(module.LATER_CASES) == ["oct14"]
+    fiscal = module.fiscal_totals()
+    adopted = fiscal["adopted"]
+    assert adopted["allocation"] == "personal"
+    assert adopted["allocation_move_from_v6_all"][0] > 0
+    for end, key in (("low", "A_low_cost"), ("high", "A_high_cost")):
+        assert adopted[key] == adopted["production"]["ends"][end]["A_bn"]

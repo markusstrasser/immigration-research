@@ -1,88 +1,28 @@
-"""Who among other residents gains and loses from the Mexican-origin union's presence, by income,
-and the income-weighted net.
+"""Distribute the live case's fiscal and private channels among other residents.
 
-Frame (brief, not changed): the complete annual account's stationary 2024 comparison with and
-without the 40.896574m CPS Mexican-origin residents, effects on all other US residents, a dollar
-counted as a dollar. Each channel's total is taken as given from its lane and divided among other
-residents; no total is re-estimated.
+Income-year 2024 CPS ASEC supplies person-level income ranks and channel keys.
+Other surveys are mapped through 1,000 percentile cells; binned sources retain
+their own bins. Income weights use eta in {0, 1, 1.3, 1.4, 2}, with percentile
+floors as sensitivities. Signs are from other residents' perspective.
 
-Income frame: CPS ASEC 2025 (income year 2024), the account's sha-gated archive and canonical
-target. Every other resident gets an equivalized income y_i and a person-weighted percentile:
-SPM resources / SPM equivalence scale (central) or household money income / sqrt(size) (check).
-Persons living with target members keep their own place; only non-target persons count.
+Only main case v7 (oct14) is computed, at its 32 personal specifications per
+method. case_ends.cjs evaluates the complete case package, including the mixed
+tax-unit credits and job-capital receipt responses. Its gated engine A supplies
+the fiscal band directly; a historical shared-low band delta is not treated as
+a fixed-allocation change. The v6 comparison records separately the move to its
+personal ends and v7's subsequent change from those personal ends.
 
-Resolution: channels measured on the CPS are carried per person. Channels whose input is another
-survey (ACS rents and capital income, SCF rental holdings) are placed in 1,000 percentile cells
-of that survey's own other-resident ranking and spread over the CPS persons in the same cell.
-Binned inputs (NCVS income brackets, CBO and ITEP tax groups, CEX quintiles) are spread within
-each bin by the microdata's distribution of the channel's base. Quintiles, deciles and the
-percentile table (derived/channel_by_percentile.csv, central channels only) are for display only.
+Capital return, capped programs and pension accrual retain their existing
+distribution rules. Row-4 production scenarios use September 29's grid, then
+take the lineage delta to oct14. The added descendants remain in the CPS's
+other-resident frame because they cannot be individually identified there;
+their wage effects follow the union's skill cells [ASSUMPTION].
 
-Weights: (max(y_i, y_floor) / ybar)^(-eta), eta in {0, 1, 1.3, 1.4, 2}, ybar the unfloored
-person-weighted mean over other residents, y_floor the 5th percentile (1st and 10th as
-sensitivities). The quintile-bin version sum_q (ybar_q / ybar)^(-eta) Delta_q is reported beside
-it, with unfloored and floored bin means, and each weighted sum is also given relative to the
-median and as an equal-split equivalent (divided by the mean weight). Signs are from other
-residents' point of view: a cost is negative.
-
-Cases: the fiscal channel is the adopted main case's direct response A plus the central induced
-receipts F. --case sept24 moves A at each band end by the change from the September 23 to the
-September 24 case (main_case_2026_09_24/derived/main_case_bands.csv); the package edits receipts
-and keyed spending only, so P and F do not move. Each later case (LATER_CASES, one entry per case)
-moves A again by its change at each band end (the lane's summary.json "change"): --case sept26 (CBO's
-one-year school response, 0.63-0.66) by the consumption key and the finite-removal responses, then
---case sept26_schools (the default since the second decision of 2026-09-26) by schools at full
-average cost. These edit receipts and the responses of general government and schools, never P or F,
-and each case keeps the allocation at each band end (shared low, personal high), so again only A
-moves. --case sept23, sept24 or sept26 with --out-dir <dir> reproduces the files committed before
-each switch byte for byte. Every channel outside the budget is the same in every case.
-
---case sept27 (the default since 2026-09-27) moves A again, by the long-run road and park responses, rental
-assistance, the government enterprises and the return on public capital. Two parts of its A are split out at
-each band end (node case_ends.cjs writes derived/case_ends_sept27.json; run it first):
-  - the return on public capital, an imputed resource cost of the budgets that hold the capital. It stays in the
-    fiscal channel under both conventions and is also reported alone (fiscal_resource_*, beside fiscal_cash_*);
-  - the capped programs, rental assistance and LIHEAP. Without the group their slots go to eligible households,
-    so their amount falls on eligible non-recipients (displaced_beneficiaries), not on the budget, under both
-    conventions. TANF-type aid is a block grant that states can move to other uses, so it stays with the budget.
-The range variants of the fiscal channel carry the displaced beneficiaries at the same band end.
-
---case sept29 (candidate v4, adopted 2026-09-29; SEPT29_LANE) writes derived/sept29/ and leaves the September 27
-files, the default, as they are (node case_ends.cjs --case sept29 first). Its payload also puts the engine's production
-term on the account's row-4 weights, which moves P and F, never A. So A moves by the case's change less the engine's
-change in P + F at each band end (case_ends_sept29.json production; gated against the engine's own A), and the lane's
-production scenarios are re-solved on row-4 weights (row4_nest_rows, gated against the case's grid): their P goes to
-the wage channel and their F to the fiscal channel. The published September 20 band keeps the published production.
-Two more splits follow the debt lane's financing columns: public housing's enterprise deficit (a receipt line at the
-rental line's key) is capped like rental assistance, on rental assistance's eligible non-recipients (CAPPED_KEY_OF);
-and the pension accrual (the case less its cash set, $76.7/73.0bn at the band ends) stays in the fiscal channel but
-leaves its cash part: fiscal_accrual_* reports it, so fiscal = cash + resource + accrual.
-
---case oct05 (main case v5, adopted 2026-10-05; OCT05_LANE) writes derived/oct05/ (node case_ends.cjs --case oct05
-first). v5 adds 3.04M people, descendants who no longer report Mexican origin, priced at G3+ members' and third-plus
-whites' amounts; its production grid is September 29's plus the added G3+ members' P and F (whites carry none). So A
-moves by the change from September 29 less that production delta at each band end (case_ends_oct05.json production
-`previous`, the September 29 grid at the same cell). The lane's production scenarios are solved on row-4 weights as for
-September 29 (gated against September 29's grid) and then take the lineage's delta (lineage_rows): within each scenario
-the wage changes by skill cell and the capital columns are scaled so that P and F reach the v5 grid at the scenario's
-cell [ASSUMPTION: the added members' effects fall on other residents' cells as the union's do].
-The added people cannot be found in the CPS frame: they do not report Mexican origin, so they sit there among the
-other residents, as natives, and this lane leaves them there [ASSUMPTION: about 3.04M of the frame's other residents,
-about 1%, are the added people].
-
---case oct07 (main case v6; OCT07_LANE) writes derived/oct07/ (node case_ends.cjs --case oct07 first). v6 is v5 plus
-the items of its meta.items (the 2026 pension paths, retiree health on accrual, the added people at their measured age
-mix and, where the case carries it, user fees and the education keys). They edit receipts and keyed spending, which
-move A, and the age mix also re-values the added G3+ members' P and F, so the case's grid is not v5's: A moves by the
-change from v5 less the grid's change at each band end's cell (case_ends_oct07.json production `previous`, v5's grid;
-Case.prev_grid). The lane's production scenarios are solved on row-4 weights against September 29's grid, as for v5,
-and lineage_rows adds the lineage's production delta to v6's grid.
-
-Run from the repository root:
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 \
-    infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py [--case sept24 --out-dir DIR]
-The first run reads the ACS PUMS ZIPs in chunks (about two minutes) and caches the needed
-columns in _cache/; later runs take seconds.
+The historical published-band comparison is retained as a fixed comparison,
+and earlier derived case files are frozen. Outputs go to derived/oct14/.
+Run case_ends.cjs first, then:
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 \\
+    infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py
 """
 from __future__ import annotations
 
@@ -178,46 +118,23 @@ PATHS = dict(
     crime_arms=FISCAL / "crime_victim_cost_2026_09_23/derived/arms.csv",
     uncompensated=FISCAL / "uncompensated_care_2026_09_23/derived/added_cost_arms.csv",
     cex=FISCAL / "consumer_price_benefit_2026_09_18/derived/partA_price_results.csv",
-    main_case_bands=FISCAL / "main_case_2026_09_23/derived/main_case_bands.csv",
     main_case_inputs=FISCAL / "main_case_2026_09_23/derived/inputs.json",
-    main_case24_bands=FISCAL / "main_case_2026_09_24/derived/main_case_bands.csv",
-    main_case24_summary=FISCAL / "main_case_2026_09_24/derived/summary.json",
 )
 
 
 class Case(NamedTuple):
     lane: str                     # the main-case lane
-    base: str                     # the lane's summary.json key and band variant for the case it starts from
     profile: str = "cbo_category_lag_non_school_full"   # the case's profile in main_case_bands.csv
     ends: str | None = None       # case_ends.cjs output in derived/: capital return and capped programs at the ends
     out: str | None = None        # its files' directory under derived/ when they sit beside the default case's
-    summary: str | None = None    # the summary.json key for the case it starts from, where it is not `base`
     grid_base: str | None = None  # the lane whose production grid the row-4 solve reproduces, where the case's adds to it
-    prev_grid: str | None = None  # the lane whose grid the case's production change is taken against, where not grid_base
 
 
-# Main cases after September 24, in adoption order. Adding a case is one entry here. September 29 (candidate v4,
-# adopted 2026-09-29) writes derived/sept29/, beside the September 27 files, which stay the default; so do October 5
-# (main case v5, derived/oct05/) and October 7 (main case v6, derived/oct07/).
+# The live consumer case. Earlier case outputs are retained as frozen evidence.
 SEPT29_LANE = "main_case_2026_09_29"
-OCT05_LANE = "main_case_2026_10_05"
-OCT07_LANE = "main_case_2026_10_07"
-LATER_CASES = {"sept26": Case("main_case_2026_09_26", "adopted_2026_09_24"),
-               "sept26_schools": Case("main_case_schools_full_2026_09_26", "adopted_2026_09_26"),
-               "sept27": Case("main_case_long_run_2026_09_27", "schools_case", "long_run_non_school_full",
-                              "case_ends_sept27.json"),
-               # Its summary.json names September 27 adopted_2026_09_27; its band variant is sept27_case.
-               "sept29": Case(SEPT29_LANE, "sept27_case", "long_run_non_school_full", "case_ends_sept29.json", "sept29",
-                              "adopted_2026_09_27"),
-               # v5's summary.json names September 29 adopted_2026_09_29; its band variant is sept29_case. Its grid is
-               # September 29's plus the lineage's production delta.
-               "oct05": Case(OCT05_LANE, "sept29_case", "long_run_non_school_full", "case_ends_oct05.json", "oct05",
-                             "adopted_2026_09_29", SEPT29_LANE),
-               # v6's summary.json names v5 adopted_2026_10_05; its band variant is oct05_case. Its grid is September
-               # 29's plus the age-mix lineage's production delta, and its production change is taken against v5's.
-               "oct07": Case(OCT07_LANE, "oct05_case", "long_run_non_school_full", "case_ends_oct07.json", "oct07",
-                             "adopted_2026_10_05", SEPT29_LANE, OCT05_LANE)}
-DEFAULT_CASE = "sept27"
+OCT14_LANE = "main_case_2026_10_14"
+LATER_CASES = {"oct14": Case(OCT14_LANE, "long_run_non_school_full", "case_ends_oct14.json", "oct14", SEPT29_LANE)}
+DEFAULT_CASE = "oct14"
 # From September 29 the case's production grid is the account's row-4 weights (production_row4.json): the Mexico-born
 # outside California and Texas raked by citizenship to ACS 2024 totals. Its P and F move the wage and fiscal channels,
 # never A. The lane's own production scenarios are re-solved on those weights (row4_nest_rows).
@@ -377,12 +294,8 @@ def per_person(d, key, total_bn, mask=None):
 
 
 # ------------------------------------------------------------------------- channel totals
-def fiscal_totals(case="sept23"):
-    """Direct fiscal response A of the published main case and of the adopted main case.
-    A = welfare - (P + F); the adopted case adds general government (0.59-0.84), justice by use
-    and the under-charged part of uncompensated care to A (main_case_2026_09_23). With case
-    "sept24" the adopted case is the September 24 one and the September 23 one is kept beside it;
-    with a later case (LATER_CASES) it is that case, and every earlier one is kept beside it."""
+def fiscal_totals(case=DEFAULT_CASE):
+    """Published comparison and the live personal-allocation engine A, in $bn."""
     cases = pd.read_csv(PATHS["service_cases"])
     main = cases[cases.profile == "cbo_category_lag_non_school_full"].copy()
     heads = pd.read_csv(PATHS["headline_cases"])
@@ -396,97 +309,57 @@ def fiscal_totals(case="sept23"):
     A = np.unique(main.A_bn.round(9))
     pub = dict(A_low_cost=float(A.max()), A_high_cost=float(A.min()), A_mid=float((A.max() + A.min()) / 2),
                band=[float(-main.welfare_bn.max()), float(-main.welfare_bn.min())])
-    bands = pd.read_csv(PATHS["main_case_bands"])
-    bands = bands[bands.profile == "cbo_category_lag_non_school_full"].set_index("variant")
     inp = json.loads(PATHS["main_case_inputs"].read_text())
-    gg_lo = bands.loc["gg_0.59", "cost_low_bn"] - bands.loc["published", "cost_low_bn"]
-    gg_hi = bands.loc["gg_0.84", "cost_high_bn"] - bands.loc["published", "cost_high_bn"]
-    just = inp["justice_change_bn"]["central"]
     unc = (inp["uncompensated_inside_bn"]["equal_low"], inp["uncompensated_inside_bn"]["equal_high"])
-    d_lo, d_hi = gg_lo + just + unc[0], gg_hi + just + unc[1]
-    gate("adopted_band_is_published_plus_changes",
-         np.isclose(bands.loc["adopted", "cost_low_bn"], pub["band"][0] + d_lo, atol=1e-3)
-         and np.isclose(bands.loc["adopted", "cost_high_bn"], pub["band"][1] + d_hi, atol=1e-3),
-         adopted=[float(bands.loc["adopted", "cost_low_bn"]), float(bands.loc["adopted", "cost_high_bn"])],
-         rebuilt=[pub["band"][0] + d_lo, pub["band"][1] + d_hi])
-    ado = dict(A_low_cost=pub["A_low_cost"] - d_lo, A_high_cost=pub["A_high_cost"] - d_hi,
-               band=[float(bands.loc["adopted", "cost_low_bn"]), float(bands.loc["adopted", "cost_high_bn"])],
-               general_government=[float(gg_lo), float(gg_hi)], justice=float(just))
-    ado["A_mid"] = (ado["A_low_cost"] + ado["A_high_cost"]) / 2
-    out = dict(published=pub, adopted=ado, uncomp_inside=list(unc),
+    out = dict(published=pub, uncomp_inside=list(unc),
                PF_cash=float(pf.loc["cash", "min"]), PF_gdp=float(pf.loc["gdp", "min"]))
-    if case == "sept23":
-        return out
-    # September 24: the package edits receipts and keyed spending, never P or F, so its change at
-    # each band end moves A at that end.
-    b24 = pd.read_csv(PATHS["main_case24_bands"])
-    b24 = b24[b24.profile == "cbo_category_lag_non_school_full"].set_index("variant")
-    s24 = json.loads(PATHS["main_case24_summary"].read_text())
-    base24 = [float(b24.loc["adopted_2026_09_23", "cost_low_bn"]), float(b24.loc["adopted_2026_09_23", "cost_high_bn"])]
-    band24 = [float(x) for x in s24["main_case"]]
-    gate("sept24_base_is_sept23_adopted", np.allclose(base24, ado["band"], atol=1e-4), sept24_file=base24, sept23_file=ado["band"])
-    gate("sept24_summary_matches_bands", np.allclose(band24, [b24.loc["adopted", "cost_low_bn"], b24.loc["adopted", "cost_high_bn"]],
-                                                     atol=1e-4), summary=band24)
-    change = [band24[0] - s24["adopted_2026_09_23"][0], band24[1] - s24["adopted_2026_09_23"][1]]
-    gate("sept24_change_matches_summary", np.allclose(change, s24["change"], atol=1e-12), change=change)
-    rebuilt = [pub["band"][0] + d_lo + change[0], pub["band"][1] + d_hi + change[1]]
-    gate("sept24_band_rebuilt_from_A", np.allclose(rebuilt, band24, atol=1e-3), rebuilt=rebuilt, band=band24)
-    a24 = dict(A_low_cost=ado["A_low_cost"] - change[0], A_high_cost=ado["A_high_cost"] - change[1], band=band24,
-               general_government=ado["general_government"], justice=ado["justice"], sept24_change=change)
-    a24["A_mid"] = (a24["A_low_cost"] + a24["A_high_cost"]) / 2
-    if case == "sept24":
-        out.update(adopted=a24, adopted_2026_09_23=ado, case=case)
-        return out
-    # Later cases: the consumption key edits receipts, and the responses (engine state, corrections.json
-    # meta.responses) act on general government and schools, never on P or F; the allocation at each
-    # band end stays (shared low, personal high), so the change at each band end again moves A there.
-    prev_case, prev, prev_band, prev_rebuilt = "sept24", a24, band24, rebuilt
-    kept, changes = dict(adopted_2026_09_23=ado, adopted_2026_09_24=a24), dict(sept24_change=change)
-    for name, c in LATER_CASES.items():
-        lane, base_key, summary_key = c.lane, c.base, c.summary or c.base
-        kept.setdefault(base_key, prev)
-        b = pd.read_csv(FISCAL / lane / "derived/main_case_bands.csv")
-        b = b[b.profile == c.profile].set_index("variant")
-        s = json.loads((FISCAL / lane / "derived/summary.json").read_text())
-        responses = json.loads((FISCAL / lane / "derived/corrections.json").read_text())["meta"]["responses"]
-        if responses != s["responses"]:
-            raise SystemExit(f"[BLOCKED] {name}: corrections.json meta.responses differ from summary.json's")
-        base = [float(b.loc[base_key, "cost_low_bn"]), float(b.loc[base_key, "cost_high_bn"])]
-        band = [float(x) for x in s["main_case"]]
-        gate(f"{name}_base_is_{prev_case}_adopted", np.allclose(base, prev_band, atol=1e-4)
-             and np.allclose(s[summary_key], prev_band, rtol=0, atol=1e-9), **{f"{name}_file": base, f"{prev_case}_file": prev_band})
-        gate(f"{name}_summary_matches_bands", np.allclose(band, [b.loc["adopted", "cost_low_bn"], b.loc["adopted", "cost_high_bn"]],
-                                                         atol=1e-4), summary=band)
-        ch = [band[0] - s[summary_key][0], band[1] - s[summary_key][1]]
-        gate(f"{name}_change_matches_summary", np.allclose(ch, s["change"], rtol=0, atol=1e-12), change=ch)
-        now_rebuilt = [prev_rebuilt[0] + ch[0], prev_rebuilt[1] + ch[1]]
-        gate(f"{name}_band_rebuilt_from_A", np.allclose(now_rebuilt, band, atol=1e-3), rebuilt=now_rebuilt, band=band)
-        changes[f"{name}_change"] = ch
-        ends = case_ends(name, c, band) if c.ends else {}
-        # A case that replaces the production grid moves P + F by d_pf at each end; since cost = -(P + F) - A,
-        # A moves by -(change + d_pf). Before September 29, d_pf = 0. A grid after another case's (October 5 on
-        # September 29's) moves P + F by its difference from that grid at the same cell.
-        prod = ends.pop("production", None)
-        if prod and "production" in prev:
-            d_pf = production_change_after(name, prod, prev["production"], prev_case)
-        else:
-            d_pf = production_change(name, prod, pf) if prod else [0.0, 0.0]
-        entry = dict(A_low_cost=prev["A_low_cost"] - ch[0] - d_pf[0], A_high_cost=prev["A_high_cost"] - ch[1] - d_pf[1],
-                     band=band, responses=responses, justice=ado["justice"], **changes)
-        entry["A_mid"] = (entry["A_low_cost"] + entry["A_high_cost"]) / 2
-        entry.update(ends)
-        if prod:
-            engine_A = [prod["ends"][e]["A_bn"] for e in ("low", "high")]
-            gate(f"{name}_A_is_the_engine_A_after_the_production_change",
-                 np.allclose([entry["A_low_cost"], entry["A_high_cost"]], engine_A, rtol=0, atol=1e-3),
-                 A=[entry["A_low_cost"], entry["A_high_cost"]], engine=engine_A,
-                 A_if_production_were_booked_in_A=[prev["A_low_cost"] - ch[0], prev["A_high_cost"] - ch[1]])
-            entry["production"] = dict(prod, change_P_plus_F_bn=d_pf)
-        if name == case:
-            out.update(adopted=entry, **kept, case=case)
-            return out
-        prev_case, prev, prev_band, prev_rebuilt = name, entry, band, now_rebuilt
-    raise SystemExit(f"[BLOCKED] unknown case {case}")
+    # The live case's own engine A is authoritative at its personal ends. The old
+    # change chain assumed the low end remained shared, which v7 no longer does.
+    if case not in LATER_CASES:
+        raise SystemExit(f"[BLOCKED] only the live case {DEFAULT_CASE} is computed")
+    c = LATER_CASES[case]
+    s = json.loads((FISCAL / c.lane / "derived/summary.json").read_text())
+    b = pd.read_csv(FISCAL / c.lane / "derived/main_case_bands.csv")
+    b = b[b.profile == c.profile].set_index("variant")
+    payload = json.loads((FISCAL / c.lane / "derived/corrections.json").read_text())
+    responses = payload["meta"]["responses"]
+    if responses != s["responses"] or payload["meta"]["allocation"]["group_total"] != "personal":
+        raise SystemExit(f"[BLOCKED] {case}: payload responses or personal allocation differ from the case")
+    band = [float(x) for x in s["v7"]["band_bn"]]
+    gate(f"{case}_summary_matches_bands", np.allclose(band, s["main_case"], rtol=0, atol=1e-9)
+         and np.allclose(band, b.loc["adopted", ["cost_low_bn", "cost_high_bn"]].to_numpy(float), rtol=0, atol=1e-4),
+         summary=band)
+    ends = case_ends(case, c, band)
+    prod = ends.pop("production")
+    previous_grid = json.loads((FISCAL / "main_case_2026_10_07/derived/corrections.json").read_text())["production"]
+    for end in ("low", "high"):
+        x = prod["ends"][end]
+        prev = x["previous"]
+        gate(f"{case}_{end}_previous_grid_is_frozen_v6_at_the_personal_cell",
+             prev["lane"] == "main_case_2026_10_07"
+             and prev["P_bn"] == previous_grid["private_wtp_bn"][x["cell_index"]]
+             and prev["F_bn"] == previous_grid["induced_receipts_bn"][x["cell_index"]], cell=x["cell_index"])
+    prod["change_P_plus_F_bn"] = [
+        prod["ends"][e]["case"]["P_bn"] + prod["ends"][e]["case"]["F_bn"]
+        - prod["ends"][e]["previous"]["P_bn"] - prod["ends"][e]["previous"]["F_bn"] for e in ("low", "high")]
+    A = [prod["ends"][e]["A_bn"] for e in ("low", "high")]
+    pf_ends = [prod["ends"][e]["case"]["P_bn"] + prod["ends"][e]["case"]["F_bn"] for e in ("low", "high")]
+    gate(f"{case}_band_rebuilt_from_personal_A", np.allclose([-A[j] - pf_ends[j] for j in (0, 1)], band,
+         rtol=0, atol=1e-9), A=A, band=band)
+    cash_band = b.loc["cash_set", ["cost_low_bn", "cost_high_bn"]].to_numpy(float)
+    gate(f"{case}_cash_set_rebuilt_from_A_less_accrual",
+         np.allclose(np.asarray(band) - ends["pension_accrual"], s["v7"]["cash_set_bn"], rtol=0, atol=1e-9)
+         and np.allclose(s["v7"]["cash_set_bn"], cash_band, rtol=0, atol=1e-4), cash=cash_band.tolist())
+    base_personal = s["v7"]["base"]["personal_band_bn"]
+    allocation_move = s["v7"]["change_by_item"]["personal_allocation"]["band_bn"]
+    gate(f"{case}_allocation_move_is_v6_personal_less_v6_all", np.allclose(
+         np.asarray(base_personal) - s["adopted_2026_10_07"], allocation_move, rtol=0, atol=1e-9), move=allocation_move)
+    entry = dict(A_low_cost=A[0], A_high_cost=A[1], A_mid=sum(A) / 2, band=band,
+                 responses=responses, allocation="personal", production=prod, **ends,
+                 oct14_change_from_v6_personal=[band[j] - base_personal[j] for j in (0, 1)],
+                 allocation_move_from_v6_all=allocation_move)
+    out.update(adopted=entry, case=case)
+    return out
 
 
 def case_ends(name, c, band):
@@ -508,41 +381,6 @@ def case_ends(name, c, band):
     if "pension_accrual" in e:    # the pension switch's accrual inside A (September 29 on)
         out["pension_accrual"] = [e["pension_accrual"]["ends"]["low"], e["pension_accrual"]["ends"]["high"]]
     return out
-
-
-def production_change(name, prod, pf):
-    """The case's P + F at each band end less model.json's at the same production cell, $bn (case_ends.cjs).
-
-    model.json's grid is every earlier case's, so its P + F at each end must be the account's production term for
-    that end's normalization (headline_cases.csv, from which fiscal_totals takes every earlier A); gated to 1e-8,
-    the grid's 1e-9 rounding of P and of F."""
-    d = []
-    for end in ("low", "high"):
-        x = prod["ends"][end]
-        base = x["model_json"]["P_bn"] + x["model_json"]["F_bn"]
-        account = float(pf.loc[x["normalization"], "min"])
-        gate(f"{name}_{end}_model_json_production_is_the_account_term", np.isclose(base, account, rtol=0, atol=1e-8),
-             model_json=base, account=account, normalization=x["normalization"])
-        d.append(x["case"]["P_bn"] + x["case"]["F_bn"] - base)
-    return d
-
-
-def production_change_after(name, prod, prev_prod, prev_case):
-    """A grid built on an earlier case's: the case's P + F at each band end less the earlier grid's at the same cell, $bn.
-
-    case_ends.cjs gives the earlier grid's P and F there (`previous`); they must be the earlier case's own P and F at its
-    end (same cell, exact), so A moves only by what the later grid adds (October 5: the lineage's production delta;
-    October 7: the age mix's change to it, against v5's grid, Case.prev_grid)."""
-    d = []
-    c = LATER_CASES[name]
-    for end in ("low", "high"):
-        x, y = prod["ends"][end], prev_prod["ends"][end]
-        gate(f"{name}_{end}_previous_grid_is_{prev_case}_s_production",
-             x["previous"]["lane"] == (c.prev_grid or c.grid_base) and x["cell_index"] == y["cell_index"]
-             and x["normalization"] == y["normalization"] and x["previous"]["P_bn"] == y["case"]["P_bn"]
-             and x["previous"]["F_bn"] == y["case"]["F_bn"], previous=x["previous"], earlier_case=y["case"], cell=x["cell_index"])
-        d.append(x["case"]["P_bn"] + x["case"]["F_bn"] - x["previous"]["P_bn"] - x["previous"]["F_bn"])
-    return d
 
 
 def nest_rows(normalization="cash"):
@@ -1199,15 +1037,10 @@ def by_bin(delta, d, R, nbin=5):
 
 def main():
     ap = argparse.ArgumentParser(description="Distribution of the account's channels among other residents.")
-    ap.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24", "sept23"), default=DEFAULT_CASE,
-                    help="a case after September 24 (default sept27: long-run responses, rental assistance, government "
-                         "enterprises and the return on public capital; sept29: candidate v4, adopted 2026-09-29, "
-                         "written to derived/sept29/; oct05: main case v5, adopted 2026-10-05, written to "
-                         "derived/oct05/; oct07: main case v6, written to derived/oct07/; sept26_schools: schools at "
-                         "full average cost; sept26: CBO's "
-                         "one-year school response, 0.63-0.66), or an earlier adopted case")
+    ap.add_argument("--case", choices=list(LATER_CASES), default=DEFAULT_CASE,
+                    help="live main case v7 (oct14), written to derived/oct14/; earlier case files stay frozen")
     ap.add_argument("--out-dir", type=Path, default=None,
-                    help="default derived/, or derived/<dir> for a case whose files sit beside the default case's")
+                    help="override the live case's default derived/oct14/ output directory")
     args = ap.parse_args()
     sub = LATER_CASES[args.case].out if args.case in LATER_CASES else None
     out_dir = args.out_dir or (DERIVED / sub if sub else DERIVED)
