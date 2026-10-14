@@ -1,0 +1,19 @@
+{
+  "arp_auction_2024_usd_per_ton": 0.02,
+  "csapr_annual_feb2024_price_low": 2.0,
+  "csapr_annual_feb2024_price_high": 3.0,
+  "csapr_group3_feb28_2024_price": 925.0,
+  "csapr_2024_12state_budget": 96975.0,
+  "csapr_2024_12state_start_bank": 56869.0,
+  "csapr_2024_12state_available_after_rule": 155525.0,
+  "csapr_2024_12state_emissions": 84189.0,
+  "csapr_2024_12state_residual": 71336.0,
+  "csapr_2024_12state_emissions_over_budget": 0.8681515854601701,
+  "arp_2024_banked_allowances": null,
+  "csapr_annual_2024_banked_allowances": null,
+  "arp_bank_gap": "Exact 2024 ARP bank not obtained: current primary progress page exposes data through 2022; CAMPD public account API probe returned HTTP 403; no number substituted",
+  "csapr_annual_bank_gap": "2024 annual SO2/NOx banks not obtained; seasonal 12-state carry-in is not a proxy for annual programs",
+  "seasonal_residual_status": "Arithmetic availability minus emissions after May 2025 retrospective rule, not an independently observed year-end bank",
+  "binding_marginal_precursor_share": null,
+  "limitation": "12-state seasonal program evidence is not all US annual NOx/SO2; positive prices and banks do not identify binding current-year cap; no marginal sector/spending/source-receptor bridge"
+}

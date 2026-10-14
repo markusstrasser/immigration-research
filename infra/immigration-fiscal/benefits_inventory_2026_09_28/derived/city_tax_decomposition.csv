@@ -1,0 +1,4 @@
+frame,gross_earnings_bn,induced_tax_bn,private_after_tax_bn,additional_tax_credit_bn,low_end_delta_bn,high_end_delta_bn,rate_hs_or_less,rate_some_college_plus,overlap
+published_union,13.927466764218613,5.959734945102332,7.967731819116281,0.0,0.0,0.0,0.384,0.426,"included in scale_net_earnings, already counted whole; production P+F uses CES labour changes only"
+identified_union_row4,13.67435594428904,5.850257482775606,7.824098461513434,0.0,0.0,0.0,0.384,0.426,"included in scale_net_earnings, already counted whole; production P+F uses CES labour changes only"
+lineage_key_extrapolation,14.721034311758554,6.29805465701146,8.422979654747095,0.0,0.0,0.0,0.384,0.426,"included in scale_net_earnings, already counted whole; production P+F uses CES labour changes only"

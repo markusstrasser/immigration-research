@@ -1,0 +1,104 @@
+{
+  "status": "beside; no new measured central",
+  "adopted_delta_bn": [
+    0.0,
+    0.0
+  ],
+  "rows": {
+    "formal_volunteering_reverse_food_proxy": "conditional add-on to existing volunteering, already row4/lineage priced; do not rescale",
+    "formal_volunteering_net_food_proxy": "pre-P7 outgoing reference only; use delta columns on a consumer that separately adjusts the lineage boundary; never sum net with outgoing or reverse",
+    "city_tax_decomposition": "decomposition of existing scale_net_earnings; additional tax delta is exactly zero"
+  },
+  "delta_table": {
+    "file": "derived/volunteering_flows.csv",
+    "keys": [
+      "year",
+      "frame",
+      "food_task_proxy",
+      "displacement"
+    ],
+    "year": 2024,
+    "columns": [
+      "low_end_delta_bn",
+      "high_end_delta_bn"
+    ],
+    "applies_to": "fiscal-plus-social total only; identical on set and cash set; main fiscal account unchanged",
+    "base": "existing outgoing credit; incoming displacement is the only change",
+    "outside_supply_lineage": "holds measured outside-union supply fixed; added beneficiaries use the headcount key; recipient identity of added people unobserved"
+  },
+  "population": {
+    "identified_union": 39712493.3312,
+    "lineage": 42752212.92438524
+  },
+  "sources": [
+    {
+      "file": "_cache/dec23pub.csv",
+      "sha256": "0f155abc1e3ffc32d08e21276b408fc680b10092362cbf480bcdec411007e0ff",
+      "url": "https://www2.census.gov/programs-surveys/cps/datasets/2023/supp/dec23pub.csv"
+    },
+    {
+      "file": "_cache/dec23hhrep.csv",
+      "sha256": "cf118948d125a4b47fe20b4fdc1fadcb74e56481d810582b845f563571a96f5e",
+      "url": "https://www2.census.gov/programs-surveys/cps/datasets/2023/supp/dec23hhrep.csv"
+    },
+    {
+      "file": "_cache/cpsdec23.pdf",
+      "sha256": "4b1e2c1e74ce7f2eb9592ddc826fb9ef417ec6e8cbb71b1e1f318cfc86a26248",
+      "url": "https://www2.census.gov/programs-surveys/cps/techdocs/cpsdec23.pdf"
+    },
+    {
+      "file": "_cache/dec24pub.csv",
+      "sha256": "0939a44220f72970d658386cc8c40b607a98b7aa4c571153735d91191ba93c14",
+      "url": "https://www2.census.gov/programs-surveys/cps/datasets/2024/supp/dec24pub.csv"
+    },
+    {
+      "file": "_cache/dec24hhrep.csv",
+      "sha256": "c26170dd5dfaca4a9ae5f1fc06db9c781f428af952a17da9e7ce9c05596d5beb",
+      "url": "https://www2.census.gov/programs-surveys/cps/datasets/2024/supp/dec24hhrep.csv"
+    },
+    {
+      "file": "_cache/cpsdec24.pdf",
+      "sha256": "3a16593620999be69c77530769a38022ac7204fe2bb81d3790a01e2603296081",
+      "url": "https://www2.census.gov/programs-surveys/cps/techdocs/cpsdec24.pdf"
+    },
+    {
+      "file": "_cache/sep23pub.csv",
+      "sha256": "0999276047a2ee3b62abae6c2bfdac14073bed949585bd768e52f02b2878f76f",
+      "url": "https://www2.census.gov/programs-surveys/cps/datasets/2023/supp/sep23pub.csv"
+    },
+    {
+      "file": "_cache/sep23nrrep.csv",
+      "sha256": "7dd7ef3b9449c4bc2c3e4523cbeff4a022de9aaa5ac1266211bef4b25f8736cc",
+      "url": "https://www2.census.gov/programs-surveys/cps/datasets/2023/supp/sep23nrrep.csv"
+    },
+    {
+      "file": "_cache/cpssep23.pdf",
+      "sha256": "3fb6d648fb86bc3eef53453cb9d4714940d64bc1fcb1dabdc0cebdd1e3db4dcc",
+      "url": "https://www2.census.gov/programs-surveys/cps/techdocs/cpssep23.pdf"
+    },
+    {
+      "file": "_cache/cpssept15.pdf",
+      "sha256": "24144608ed05bcf3ecdf4348d83969580cd56fa1bc7e6676436552df1469f6fe",
+      "url": "https://www2.census.gov/programs-surveys/cps/techdocs/cpssept15.pdf"
+    },
+    {
+      "file": "_cache/sep15pub.dat.gz",
+      "sha256": "e5fd271cfcfa2e317927700ac4c9eb9f5b0ba20c0337106ee67508348e734b14",
+      "url": "https://www2.census.gov/programs-surveys/cps/datasets/2015/supp/sep15pub.dat.gz"
+    }
+  ],
+  "unit_value_usd_hour": 33.50701402805611,
+  "national_mean_hours": 65.91809775429326,
+  "food_person_shares_2015": {
+    "primary_food": 0.11437056071190253,
+    "any_food": 0.24581104977570065
+  },
+  "gaps": [
+    "No observed volunteer hours or dollar services by beneficiary origin",
+    "No measured displacement elasticity; 0, 0.5, 1 are scenarios, not estimates",
+    "2023 CEV has no organization-type item; 2015 types/food activities transported",
+    "Monthly origin-union and case lineage differ; added people use case keys, not direct receipt observations",
+    "Food-task person share is not hours share; primary/any are alternative proxies, not statistical bounds",
+    "FSS covers household food aid, not all charity or volunteering; cannot identify total incoming net"
+  ]
+}

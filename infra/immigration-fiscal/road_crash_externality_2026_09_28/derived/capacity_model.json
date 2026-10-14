@@ -1,0 +1,5142 @@
+{
+  "case": "oct14",
+  "original_positive_control": [
+    -57.68194568815933,
+    11.053646414958754,
+    74.33739035802955
+  ],
+  "fixed_network_priced_span": [
+    -55.071430136871754,
+    10.56636607587607,
+    70.84337667940756
+  ],
+  "ends": {
+    "low": {
+      "lane_cut": 0.05905067710729579,
+      "highway_response": 0.732546883435717,
+      "key": 0.08061009942509387,
+      "added_road_share": 0.07597445096482147
+    },
+    "high": {
+      "lane_cut": 0.08061009942509387,
+      "highway_response": 1.0,
+      "key": 0.08061009942509387,
+      "added_road_share": 0.07597445096482147
+    }
+  },
+  "recipient_share": 0.010275181579126574,
+  "lineage_rule": "existing v7 added-people road-key extrapolation; lineage removes exchangeable added recipients; lineage_gross retains them for boundary-independent comparison [ASSUMPTION]",
+  "capacity_rule": "remaining VMT/lane = (1-s)/(1-cut); ratio of finite density reduction to original s multiplies density terms only [ASSUMPTION]",
+  "replicate_se": "not available: full factorial sensitivity span, no joint replicate inputs for crash/capacity parameters",
+  "all_passed": true,
+  "gates": [
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/road_crash_externality_2026_09_28/crash_model.py",
+      "passed": true,
+      "detail": "bb0c44a40201815a3d9109d0a0e4c07e38d48b021aa6475bed33cd54a0b72cac"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/road_crash_externality_2026_09_28/derived/model.json",
+      "passed": true,
+      "detail": "e48658172661a9008dc157730f0bee24a7fed34519d08b47cce0ac6d0b33bda3"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/road_crash_externality_2026_09_28/derived/fars_group_2023.json",
+      "passed": true,
+      "detail": "bc3077e26d0ae98882d1c003cfd892cebe6a7dd76038769853a4455c8b168134"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/crash_volume_elasticity_2026_09_28/derived/x_band.json",
+      "passed": true,
+      "detail": "8f78b20a1a94c972d016c0caffa8f56e83c68578ace47819d3664e7b05cd4092"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/ccrs_nonfatal_involvement_2026_09_28/derived/crash_component_revision.csv",
+      "passed": true,
+      "detail": "e082475c45f411e6ffee663934945a37f89c70f53937a60de3adac4c86e0b53c"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/target_population_cps2025.csv",
+      "passed": true,
+      "detail": "7c0211ff8491f88acafdd8998f3daf27bc7d559461719081316787a3dc982c53"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/population_basis_2026_09_29/derived/frame_counts.csv",
+      "passed": true,
+      "detail": "57d068d5ba8be325048baa07da831910ff318a762f7721bf192b0122b08f3527"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/population_basis_2026_09_29/derived/reeval.csv",
+      "passed": true,
+      "detail": "4b91d6bc4a5a15286a9787aeeb463040d451b01994f99500e3a70e0b9216bf3f"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/age_bins.csv",
+      "passed": true,
+      "detail": "73785096958005ddb334846c297e10b0696abb91e266e0971f320ec7a3c15664"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/social_spans_priced_count_2026_09_29/derived/priced_spans.csv",
+      "passed": true,
+      "detail": "7f8e4d8de643830f6da6d60e57f42461d0304d3536e24f91532cccf28320519a"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct14/band_variants.json",
+      "passed": true,
+      "detail": "f32aea1f87c6ab86a69cc4cf6c3a988a8281d2b78ce5c542818454f9cf8c7dcd"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/net_change.json",
+      "passed": true,
+      "detail": "f6bc46a8b15b0b5ba64e1491df10669d90796d9713d25f380c944905f16f2660"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+      "passed": true,
+      "detail": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/candidate_band.json",
+      "passed": true,
+      "detail": "21cfa28f8dcfbf9cdac9343c57b619ef83dcf138c66929930b533c0a061e9d91"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/congestion_2026_09_23/derived/pums_commute_checks.json",
+      "passed": true,
+      "detail": "e1bafbde310747d52427826b7058b3f2e0d69d0406366505ecd40344fbf224ba"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/congestion_2026_09_23/derived/ua_exposure.csv",
+      "passed": true,
+      "detail": "cf5aa113703068cd264eacf330e3c79a221887f1c172e8e5834cc0f94f466a63"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/congestion_2026_09_23/derived/nhts_ratios.csv",
+      "passed": true,
+      "detail": "a8db143550f5b67612d93134c716038037e6f9f77f3cfdb05694768ea3e903c3"
+    },
+    {
+      "gate": "pinned dependency infra/immigration-fiscal/congestion_2026_09_23/arms.py",
+      "passed": true,
+      "detail": "919cca2da97ec4859a390da7be5367629fd06ffe3197c91efc0142076dfc4531"
+    },
+    {
+      "gate": "original full-grid span reproduces model.json",
+      "passed": true,
+      "detail": "[-57.68194568815933, 11.053646414958754, 74.33739035802955]"
+    },
+    {
+      "gate": "original published values reproduce before changes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "full factorial count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "national crash components close",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "one authoritative congestion TARGET declaration",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "congestion TARGET matches published rounded union",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Akron OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Albany-Schenectady NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Albuquerque NM",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Allentown PA-NJ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Anchorage AK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Atlanta GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Austin TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bakersfield CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Baltimore MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Baton Rouge LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Beaumont TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Birmingham AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Boise ID",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Boston MA-NH-RI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Boulder CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bridgeport-Stamford CT-NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Brownsville TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Buffalo NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cape Coral FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Charleston-North Charleston SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Charlotte NC-SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Chicago IL-IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cincinnati OH-KY-IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cleveland OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Colorado Springs CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Columbia SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Columbus OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Corpus Christi TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Dallas-Fort Worth-Arlington TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Dayton OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Denver-Aurora CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Detroit MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights El Paso TX-NM",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Eugene OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fresno CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Grand Rapids MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Greensboro NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hartford CT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Honolulu HI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Houston TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Indianapolis IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Indio-Cathedral City CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Jackson MS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Jacksonville FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kansas City MO-KS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Knoxville TN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lancaster-Palmdale CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Laredo TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Las Vegas-Henderson NV",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Little Rock AR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Los Angeles-Long Beach-Anaheim CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Louisville-Jefferson County KY-IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Madison WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights McAllen TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Memphis TN-MS-AR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Miami FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Milwaukee WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Minneapolis-St. Paul MN-WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Nashville-Davidson TN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights New Haven CT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights New Orleans LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights New York-Newark NY-NJ-CT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Oklahoma City OK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Omaha NE-IA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Orlando FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Oxnard CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Pensacola FL-AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Philadelphia PA-NJ-DE-MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Phoenix-Mesa AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Pittsburgh PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Portland OR-WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Poughkeepsie-Newburgh NY-NJ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Providence RI-MA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Provo-Orem UT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Raleigh NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Richmond VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Riverside-San Bernardino CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Rochester NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sacramento CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Salem OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Salt Lake City-West Valley City UT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights San Antonio TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights San Diego CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights San Francisco-Oakland CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights San Jose CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sarasota-Bradenton FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Seattle WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Spokane WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Springfield MA-CT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights St. Louis MO-IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Stockton CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Tampa-St. Petersburg FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Toledo OH-MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Tucson AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Tulsa OK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Virginia Beach VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Washington DC-VA-MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Wichita KS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Winston-Salem NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Worcester MA-CT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Aberdeen-Bel Air S-Bel Air N MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Abilene TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Albany GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Albany OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Alexandria LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Alton IL-MO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Altoona PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Amarillo TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Ames IA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Anderson IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Anderson SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Ann Arbor MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Anniston-Oxford AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Antioch CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Appleton WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Arroyo Grande-Grover Beach CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Asheville NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Athens-Clarke County GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Atlantic City NJ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Auburn AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Augusta-Richmond County GA-SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Avondale-Goodyear AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bangor ME",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Barnstable Town MA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Battle Creek MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bay City MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Beckley WV",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bellingham WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Beloit WI-IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bend OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Benton Harbor-St. Joseph-Fair Plain MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Billings MT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Binghamton NY-PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bismarck ND",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Blacksburg VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bloomington IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bloomington-Normal IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bloomsburg-Berwick PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bonita Springs FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bowling Green KY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bremerton WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bristol TN-VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Brunswick GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Burlington NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Burlington VT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Camarillo CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Canton OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cape Girardeau MO-IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Carbondale IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Carson City NV",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cartersville GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Casa Grande AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Casper WY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cedar Rapids IA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Chambersburg PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Champaign IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Charleston WV",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Charlottesville VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Chattanooga TN-GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cheyenne WY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Chico CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Clarksville TN-KY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cleveland TN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Coeur d'Alene ID",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights College Station-Bryan TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Columbia MO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Columbus GA-AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Columbus IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Concord CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Concord NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Conroe-The Woodlands TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Conway AR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Corvallis OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cumberland MD-WV-PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Dalton GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Danbury CT-NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Danville IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Daphne-Fairhope AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Davenport IA-IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Davis CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights DeKalb IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Decatur AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Decatur IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Delano CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Deltona FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Denton-Lewisville TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Des Moines IA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Dothan AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Dover DE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Dover-Rochester NH-ME",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Dubuque IA-IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Duluth MN-WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Durham NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights East Stoudsburg PA-NJ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Eau Claire WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights El Centro-Calexico CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights El Paso de Robles-Atascadero CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Elizabethtown-Radcliff KY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Elkhart IN-MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Elmira NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Erie PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Evansville IN-KY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fairbanks AK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fairfield CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fargo ND-MN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Farmington NM",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fayetteville NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fayetteville-Springdale-Rogers AR-MO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Flagstaff AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Flint MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Florence AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Florence SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fond du Lac WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fort Collins CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fort Smith AR-OK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fort Walton Beach-Navarre-Wright FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fort Wayne IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Frederick MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fredericksburg VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Gadsden AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Gainesville FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Gainesville GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Gastonia NC-SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Gilroy-Morgan Hill CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Glens Falls NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Goldsboro NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Grand Forks ND-MN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Grand Island NE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Grand Junction CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Grants Pass OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Great Falls MT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Greeley CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Green Bay WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Greenville NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Greenville SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Gulfport MS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hagerstown MD-WV-PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hammond LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hanford CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hanover PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Harlingen TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Harrisburg PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Harrisonburg VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hattiesburg MS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hazleton PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hemet CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hickory NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights High Point NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hilton Head Island SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hinesville GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Holland MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Homosassa Spr-Beverly Hills-Citrus Spr FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hot Springs AR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Houma LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Huntington WV-KY-OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Huntsville AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Idaho Falls ID",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Iowa City IA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Ithaca NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Jackson MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Jackson TN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Jacksonville NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Janesville WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Jefferson City MO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Johnson City TN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Johnstown PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Jonesboro AR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Joplin MO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kahului HI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kailua (Honolulu County)-Kaneohe HI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kalamazoo MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kankakee IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kennewick-Pasco WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kenosha WI-IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Killeen TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kingsport TN-VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kingston NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kissimmee FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kokomo IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights La Crosse WI-MN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lady Lake-The Villages FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lafayette IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lafayette LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lafayette-Louisville-Erie CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lake Charles LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lake Havasu City AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lake Jackson-Angleton TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lakeland FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lancaster PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lansing MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Las Cruces NM",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lawrence KS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lawton OK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lebanon PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Leesburg-Eustis-Tavares FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Leominster-Fitchburg MA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lewiston ID-WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lewiston ME",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lexington Park-Cal-Ches Ranch Est MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lexington-Fayette KY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lima OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lincoln NE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Livermore CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lodi CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Logan UT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lompoc CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Longmont CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Longview TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Longview WA-OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lorain-Elyria OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Los Lunas NM",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lubbock TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lynchburg VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Macon GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Madera CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Manchester NH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Mandeville-Covington LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Manhattan KS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Mankato MN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Mansfield OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Manteca CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Marysville WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Mauldin-Simpsonville SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights McKinney TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Medford OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Merced CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Michigan City-La Porte IN-MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Middletown OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Midland MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Midland TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Mission Viejo-Lake Forest-San Clem CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Missoula MT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Mobile AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Modesto CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Monessen-California PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Monroe LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Monroe MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Montgomery AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Morgantown WV",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Morristown TN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Mount Vernon WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Muncie IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Murrieta-Temecula-Menifee CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Muskegon MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Myrtle Beach-Socastee SC-NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Nampa ID",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Napa CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Nashua NH-MA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights New Bedford MA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights New Bern NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Newark OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Norman OK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights North Port-Port Charlotte FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Norwich-New London CT-RI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Ocala FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Odessa TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Ogden-Layton UT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Olympia-Lacey WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Oshkosh WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Owensboro KY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Palm Bay-Melbourne FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Palm Coast-Daytona Bch-Port Orange FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Panama City FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Parkersburg WV-OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Pascagoula MS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Peoria IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Petaluma CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Pine Bluff AR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Pittsfield MA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Pocatello ID",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Port Arthur TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Port Huron MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Port St. Lucie FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Porterville CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Portland ME",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Portsmouth NH-ME",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Prescott Valley-Prescott AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Pueblo CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Racine WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Rapid City SD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Reading PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Redding CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Reno NV-CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Roanoke VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Rochester MN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Rock Hill SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Rockford IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Rocky Mount NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Rome GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Round Lake Bch-McHenry-Grayslake IL-WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Saginaw MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Salinas CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Salisbury MD-DE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights San Angelo TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights San Luis Obispo CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights San Marcos TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Santa Barbara CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Santa Clarita CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Santa Cruz CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Santa Fe NM",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Santa Maria CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Santa Rosa CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Saratoga Springs NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Savannah GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Scranton PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Seaside-Monterey CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sebastian-Vero Bch S-Florida Ridge FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sebring-Avon Park FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sheboygan WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sherman TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Shreveport LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sierra Vista AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Simi Valley CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sioux City IA-NE-SD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sioux Falls SD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Slidell LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights South Bend IN-MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights South Lyon-Howell MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Spartanburg SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Spring Hill FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Springfield IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Springfield MO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Springfield OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights St. Augustine FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights St. Cloud MN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights St. George UT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights St. Joseph MO-KS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights State College PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Staunton-Waynesboro VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sumter SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Syracuse NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Tallahassee FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Temple TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Terre Haute IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Texarkana TX-AR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Texas City TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Thousand Oaks CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Titusville FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Topeka KS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Tracy CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Trenton NJ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Turlock CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Tuscaloosa AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Tyler TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Uniontown-Connellsville PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Utica NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Vacaville CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Valdosta GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Vallejo CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Victoria TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Victorville-Hesperia CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Villas NJ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Vineland NJ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Visalia CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Waco TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Waldorf MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Walla Walla-WA-OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Warner Robins GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Waterbury CT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Waterloo IA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Watertown NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Watsonville CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Wausau WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Weirton-Steubenville WV-OH-PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Wenatchee WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights West Bend WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Westminster-Eldersburg MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Wheeling WV-OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Wichita Falls TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Williamsburg VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Williamsport PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Wilmington NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Winchester VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Winter Haven FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Woodland CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Yakima WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights York PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Youngstown OH-PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Yuba City CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Yuma AZ-CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Zephyrhills FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "traffic weights conserved per area",
+      "passed": true,
+      "detail": "2.1633500304494254e-16"
+    },
+    {
+      "gate": "original traffic self-share reproduced",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Akron OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Albany-Schenectady NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Albuquerque NM",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Allentown PA-NJ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Anchorage AK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Atlanta GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Austin TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bakersfield CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Baltimore MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Baton Rouge LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Beaumont TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Birmingham AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Boise ID",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Boston MA-NH-RI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Boulder CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bridgeport-Stamford CT-NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Brownsville TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Buffalo NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cape Coral FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Charleston-North Charleston SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Charlotte NC-SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Chicago IL-IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cincinnati OH-KY-IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cleveland OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Colorado Springs CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Columbia SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Columbus OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Corpus Christi TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Dallas-Fort Worth-Arlington TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Dayton OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Denver-Aurora CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Detroit MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights El Paso TX-NM",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Eugene OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fresno CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Grand Rapids MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Greensboro NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hartford CT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Honolulu HI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Houston TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Indianapolis IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Indio-Cathedral City CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Jackson MS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Jacksonville FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kansas City MO-KS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Knoxville TN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lancaster-Palmdale CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Laredo TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Las Vegas-Henderson NV",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Little Rock AR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Los Angeles-Long Beach-Anaheim CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Louisville-Jefferson County KY-IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Madison WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights McAllen TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Memphis TN-MS-AR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Miami FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Milwaukee WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Minneapolis-St. Paul MN-WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Nashville-Davidson TN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights New Haven CT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights New Orleans LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights New York-Newark NY-NJ-CT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Oklahoma City OK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Omaha NE-IA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Orlando FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Oxnard CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Pensacola FL-AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Philadelphia PA-NJ-DE-MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Phoenix-Mesa AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Pittsburgh PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Portland OR-WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Poughkeepsie-Newburgh NY-NJ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Providence RI-MA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Provo-Orem UT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Raleigh NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Richmond VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Riverside-San Bernardino CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Rochester NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sacramento CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Salem OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Salt Lake City-West Valley City UT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights San Antonio TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights San Diego CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights San Francisco-Oakland CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights San Jose CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sarasota-Bradenton FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Seattle WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Spokane WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Springfield MA-CT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights St. Louis MO-IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Stockton CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Tampa-St. Petersburg FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Toledo OH-MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Tucson AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Tulsa OK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Virginia Beach VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Washington DC-VA-MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Wichita KS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Winston-Salem NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Worcester MA-CT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Aberdeen-Bel Air S-Bel Air N MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Abilene TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Albany GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Albany OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Alexandria LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Alton IL-MO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Altoona PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Amarillo TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Ames IA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Anderson IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Anderson SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Ann Arbor MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Anniston-Oxford AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Antioch CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Appleton WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Arroyo Grande-Grover Beach CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Asheville NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Athens-Clarke County GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Atlantic City NJ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Auburn AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Augusta-Richmond County GA-SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Avondale-Goodyear AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bangor ME",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Barnstable Town MA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Battle Creek MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bay City MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Beckley WV",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bellingham WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Beloit WI-IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bend OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Benton Harbor-St. Joseph-Fair Plain MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Billings MT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Binghamton NY-PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bismarck ND",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Blacksburg VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bloomington IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bloomington-Normal IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bloomsburg-Berwick PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bonita Springs FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bowling Green KY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bremerton WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Bristol TN-VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Brunswick GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Burlington NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Burlington VT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Camarillo CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Canton OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cape Girardeau MO-IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Carbondale IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Carson City NV",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cartersville GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Casa Grande AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Casper WY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cedar Rapids IA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Chambersburg PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Champaign IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Charleston WV",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Charlottesville VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Chattanooga TN-GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cheyenne WY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Chico CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Clarksville TN-KY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cleveland TN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Coeur d'Alene ID",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights College Station-Bryan TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Columbia MO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Columbus GA-AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Columbus IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Concord CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Concord NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Conroe-The Woodlands TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Conway AR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Corvallis OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Cumberland MD-WV-PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Dalton GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Danbury CT-NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Danville IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Daphne-Fairhope AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Davenport IA-IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Davis CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights DeKalb IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Decatur AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Decatur IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Delano CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Deltona FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Denton-Lewisville TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Des Moines IA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Dothan AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Dover DE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Dover-Rochester NH-ME",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Dubuque IA-IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Duluth MN-WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Durham NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights East Stoudsburg PA-NJ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Eau Claire WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights El Centro-Calexico CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights El Paso de Robles-Atascadero CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Elizabethtown-Radcliff KY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Elkhart IN-MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Elmira NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Erie PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Evansville IN-KY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fairbanks AK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fairfield CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fargo ND-MN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Farmington NM",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fayetteville NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fayetteville-Springdale-Rogers AR-MO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Flagstaff AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Flint MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Florence AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Florence SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fond du Lac WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fort Collins CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fort Smith AR-OK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fort Walton Beach-Navarre-Wright FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fort Wayne IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Frederick MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Fredericksburg VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Gadsden AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Gainesville FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Gainesville GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Gastonia NC-SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Gilroy-Morgan Hill CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Glens Falls NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Goldsboro NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Grand Forks ND-MN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Grand Island NE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Grand Junction CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Grants Pass OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Great Falls MT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Greeley CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Green Bay WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Greenville NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Greenville SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Gulfport MS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hagerstown MD-WV-PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hammond LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hanford CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hanover PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Harlingen TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Harrisburg PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Harrisonburg VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hattiesburg MS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hazleton PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hemet CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hickory NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights High Point NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hilton Head Island SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hinesville GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Holland MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Homosassa Spr-Beverly Hills-Citrus Spr FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Hot Springs AR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Houma LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Huntington WV-KY-OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Huntsville AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Idaho Falls ID",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Iowa City IA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Ithaca NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Jackson MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Jackson TN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Jacksonville NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Janesville WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Jefferson City MO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Johnson City TN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Johnstown PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Jonesboro AR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Joplin MO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kahului HI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kailua (Honolulu County)-Kaneohe HI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kalamazoo MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kankakee IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kennewick-Pasco WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kenosha WI-IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Killeen TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kingsport TN-VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kingston NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kissimmee FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Kokomo IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights La Crosse WI-MN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lady Lake-The Villages FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lafayette IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lafayette LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lafayette-Louisville-Erie CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lake Charles LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lake Havasu City AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lake Jackson-Angleton TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lakeland FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lancaster PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lansing MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Las Cruces NM",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lawrence KS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lawton OK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lebanon PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Leesburg-Eustis-Tavares FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Leominster-Fitchburg MA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lewiston ID-WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lewiston ME",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lexington Park-Cal-Ches Ranch Est MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lexington-Fayette KY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lima OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lincoln NE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Livermore CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lodi CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Logan UT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lompoc CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Longmont CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Longview TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Longview WA-OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lorain-Elyria OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Los Lunas NM",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lubbock TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Lynchburg VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Macon GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Madera CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Manchester NH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Mandeville-Covington LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Manhattan KS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Mankato MN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Mansfield OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Manteca CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Marysville WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Mauldin-Simpsonville SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights McKinney TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Medford OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Merced CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Michigan City-La Porte IN-MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Middletown OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Midland MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Midland TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Mission Viejo-Lake Forest-San Clem CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Missoula MT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Mobile AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Modesto CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Monessen-California PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Monroe LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Monroe MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Montgomery AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Morgantown WV",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Morristown TN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Mount Vernon WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Muncie IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Murrieta-Temecula-Menifee CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Muskegon MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Myrtle Beach-Socastee SC-NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Nampa ID",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Napa CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Nashua NH-MA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights New Bedford MA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights New Bern NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Newark OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Norman OK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights North Port-Port Charlotte FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Norwich-New London CT-RI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Ocala FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Odessa TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Ogden-Layton UT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Olympia-Lacey WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Oshkosh WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Owensboro KY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Palm Bay-Melbourne FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Palm Coast-Daytona Bch-Port Orange FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Panama City FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Parkersburg WV-OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Pascagoula MS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Peoria IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Petaluma CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Pine Bluff AR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Pittsfield MA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Pocatello ID",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Port Arthur TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Port Huron MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Port St. Lucie FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Porterville CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Portland ME",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Portsmouth NH-ME",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Prescott Valley-Prescott AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Pueblo CO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Racine WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Rapid City SD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Reading PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Redding CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Reno NV-CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Roanoke VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Rochester MN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Rock Hill SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Rockford IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Rocky Mount NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Rome GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Round Lake Bch-McHenry-Grayslake IL-WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Saginaw MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Salinas CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Salisbury MD-DE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights San Angelo TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights San Luis Obispo CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights San Marcos TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Santa Barbara CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Santa Clarita CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Santa Cruz CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Santa Fe NM",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Santa Maria CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Santa Rosa CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Saratoga Springs NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Savannah GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Scranton PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Seaside-Monterey CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sebastian-Vero Bch S-Florida Ridge FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sebring-Avon Park FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sheboygan WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sherman TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Shreveport LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sierra Vista AZ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Simi Valley CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sioux City IA-NE-SD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sioux Falls SD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Slidell LA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights South Bend IN-MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights South Lyon-Howell MI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Spartanburg SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Spring Hill FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Springfield IL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Springfield MO",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Springfield OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights St. Augustine FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights St. Cloud MN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights St. George UT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights St. Joseph MO-KS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights State College PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Staunton-Waynesboro VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Sumter SC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Syracuse NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Tallahassee FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Temple TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Terre Haute IN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Texarkana TX-AR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Texas City TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Thousand Oaks CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Titusville FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Topeka KS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Tracy CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Trenton NJ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Turlock CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Tuscaloosa AL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Tyler TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Uniontown-Connellsville PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Utica NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Vacaville CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Valdosta GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Vallejo CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Victoria TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Victorville-Hesperia CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Villas NJ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Vineland NJ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Visalia CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Waco TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Waldorf MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Walla Walla-WA-OR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Warner Robins GA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Waterbury CT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Waterloo IA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Watertown NY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Watsonville CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Wausau WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Weirton-Steubenville WV-OH-PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Wenatchee WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights West Bend WI",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Westminster-Eldersburg MD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Wheeling WV-OH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Wichita Falls TX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Williamsburg VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Williamsport PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Wilmington NC",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Winchester VA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Winter Haven FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Woodland CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Yakima WA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights York PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Youngstown OH-PA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Yuba City CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Yuma AZ-CA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "nonnegative scaled traffic weights Zephyrhills FL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "traffic weights conserved per area",
+      "passed": true,
+      "detail": "2.1633500304494254e-16"
+    },
+    {
+      "gate": "row-4 fixed-network central reproduced",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "age weights conserve row-4 populations",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "live fixed-network 5+ central reproduced",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "live fixed-network full span reproduced",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "lineage count closes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "low: same capacity cut as congestion case",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "low: valid capacity fraction",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "low: personal end specification",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "low all_density: component closure",
+      "passed": true,
+      "detail": "1.4210854715202004e-14"
+    },
+    {
+      "gate": "low all_density: all nondensity terms conserved",
+      "passed": true,
+      "detail": "7.105427357601002e-15"
+    },
+    {
+      "gate": "low all_density: zero capacity cut reproduces fixed network",
+      "passed": true,
+      "detail": "4.440892098500626e-16"
+    },
+    {
+      "gate": "low all_density: capacity matching traffic removes density term",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "low multivehicle_only: component closure",
+      "passed": true,
+      "detail": "1.4210854715202004e-14"
+    },
+    {
+      "gate": "low multivehicle_only: all nondensity terms conserved",
+      "passed": true,
+      "detail": "7.105427357601002e-15"
+    },
+    {
+      "gate": "low multivehicle_only: zero capacity cut reproduces fixed network",
+      "passed": true,
+      "detail": "4.440892098500626e-16"
+    },
+    {
+      "gate": "low multivehicle_only: capacity matching traffic removes density term",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "high: same capacity cut as congestion case",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "high: valid capacity fraction",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "high: personal end specification",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "high all_density: component closure",
+      "passed": true,
+      "detail": "1.4210854715202004e-14"
+    },
+    {
+      "gate": "high all_density: all nondensity terms conserved",
+      "passed": true,
+      "detail": "7.105427357601002e-15"
+    },
+    {
+      "gate": "high all_density: zero capacity cut reproduces fixed network",
+      "passed": true,
+      "detail": "4.440892098500626e-16"
+    },
+    {
+      "gate": "high all_density: capacity matching traffic removes density term",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "high multivehicle_only: component closure",
+      "passed": true,
+      "detail": "1.1546319456101628e-14"
+    },
+    {
+      "gate": "high multivehicle_only: all nondensity terms conserved",
+      "passed": true,
+      "detail": "1.4210854715202004e-14"
+    },
+    {
+      "gate": "high multivehicle_only: zero capacity cut reproduces fixed network",
+      "passed": true,
+      "detail": "4.440892098500626e-16"
+    },
+    {
+      "gate": "high multivehicle_only: capacity matching traffic removes density term",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "no duplicate row keys",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "input_pins": {
+    "rule": "Local authoritative producer inputs; no new external acquisition or fitted source parameter",
+    "sha256": {
+      "infra/immigration-fiscal/road_crash_externality_2026_09_28/crash_model.py": "bb0c44a40201815a3d9109d0a0e4c07e38d48b021aa6475bed33cd54a0b72cac",
+      "infra/immigration-fiscal/road_crash_externality_2026_09_28/derived/model.json": "e48658172661a9008dc157730f0bee24a7fed34519d08b47cce0ac6d0b33bda3",
+      "infra/immigration-fiscal/road_crash_externality_2026_09_28/derived/fars_group_2023.json": "bc3077e26d0ae98882d1c003cfd892cebe6a7dd76038769853a4455c8b168134",
+      "infra/immigration-fiscal/crash_volume_elasticity_2026_09_28/derived/x_band.json": "8f78b20a1a94c972d016c0caffa8f56e83c68578ace47819d3664e7b05cd4092",
+      "infra/immigration-fiscal/ccrs_nonfatal_involvement_2026_09_28/derived/crash_component_revision.csv": "e082475c45f411e6ffee663934945a37f89c70f53937a60de3adac4c86e0b53c",
+      "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/target_population_cps2025.csv": "7c0211ff8491f88acafdd8998f3daf27bc7d559461719081316787a3dc982c53",
+      "infra/immigration-fiscal/population_basis_2026_09_29/derived/frame_counts.csv": "57d068d5ba8be325048baa07da831910ff318a762f7721bf192b0122b08f3527",
+      "infra/immigration-fiscal/population_basis_2026_09_29/derived/reeval.csv": "4b91d6bc4a5a15286a9787aeeb463040d451b01994f99500e3a70e0b9216bf3f",
+      "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/age_bins.csv": "73785096958005ddb334846c297e10b0696abb91e266e0971f320ec7a3c15664",
+      "infra/immigration-fiscal/social_spans_priced_count_2026_09_29/derived/priced_spans.csv": "7f8e4d8de643830f6da6d60e57f42461d0304d3536e24f91532cccf28320519a",
+      "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct14/band_variants.json": "f32aea1f87c6ab86a69cc4cf6c3a988a8281d2b78ce5c542818454f9cf8c7dcd",
+      "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/net_change.json": "f6bc46a8b15b0b5ba64e1491df10669d90796d9713d25f380c944905f16f2660",
+      "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+      "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/candidate_band.json": "21cfa28f8dcfbf9cdac9343c57b619ef83dcf138c66929930b533c0a061e9d91",
+      "infra/immigration-fiscal/congestion_2026_09_23/derived/pums_commute_checks.json": "e1bafbde310747d52427826b7058b3f2e0d69d0406366505ecd40344fbf224ba",
+      "infra/immigration-fiscal/congestion_2026_09_23/derived/ua_exposure.csv": "cf5aa113703068cd264eacf330e3c79a221887f1c172e8e5834cc0f94f466a63",
+      "infra/immigration-fiscal/congestion_2026_09_23/derived/nhts_ratios.csv": "a8db143550f5b67612d93134c716038037e6f9f77f3cfdb05694768ea3e903c3",
+      "infra/immigration-fiscal/congestion_2026_09_23/arms.py": "919cca2da97ec4859a390da7be5367629fd06ffe3197c91efc0142076dfc4531"
+    }
+  }
+}

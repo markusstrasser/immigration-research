@@ -1,0 +1,92 @@
+{
+  "files": [
+    {
+      "path": "infra/immigration-fiscal/air_pollution_2026_09_28/_cache/acs2024_dictionary.pdf",
+      "sha256": "929c2752995b0af1c16d5c64de8cdc43b4aa7d388ee2d45b4b4df90fecce1dff",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2024.pdf",
+      "kind": "primary"
+    },
+    {
+      "path": "infra/immigration-fiscal/air_pollution_2026_09_28/_cache/arp2024_auction.html",
+      "sha256": "ffe9cad7f2e7b47b409fee1a65d2d53c897dbba39688b91ae7f5ef82908ab403",
+      "url": "https://www.epa.gov/power-sector/2024-so2-allowance-auction",
+      "kind": "primary"
+    },
+    {
+      "path": "infra/immigration-fiscal/air_pollution_2026_09_28/_cache/bekbulat_marshall200.pdf",
+      "sha256": "5a40be6214e2596dabc981f39db318eaf77be5e3c573dabf3d86b8de0c7efb12",
+      "kind": "Bekbulat author primary PDF"
+    },
+    {
+      "path": "infra/immigration-fiscal/air_pollution_2026_09_28/_cache/csapr2024_bank_2025_rule.pdf",
+      "sha256": "0ae4ca1e0ee5c54693c60fb4e46c8ba62ff51a07012723d39ee12e71625d8cd7",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2025-05-20/pdf/2025-08964.pdf",
+      "kind": "primary"
+    },
+    {
+      "path": "infra/immigration-fiscal/air_pollution_2026_09_28/_cache/csapr2024_feb_prices.pdf",
+      "sha256": "d738dfed27bbe5035a4360e5ebc7d6ac57ddd288994eb296acabd256f8d0858e",
+      "url": "https://19january2025snapshot.epa.gov/system/files/documents/2024-03/basis-for-partial-denial-of-petitions-for-reconsideration-of-good-neighbo.pdf",
+      "kind": "primary"
+    },
+    {
+      "path": "infra/immigration-fiscal/air_pollution_2026_09_28/_cache/db548.html",
+      "sha256": "dc96f7a1635477ab63123b064a274ab8af47dd01d55f4e360e75bee92d9d6be1",
+      "url": "https://www.cdc.gov/nchs/products/databriefs/db548.htm",
+      "kind": "primary"
+    },
+    {
+      "path": "infra/immigration-fiscal/air_pollution_2026_09_28/_cache/epa_allowance_data.html",
+      "sha256": "ac7c63d9be1dbd31ae6a9ec3f3a104deaac9bc4ff369a276511ee6069f1de376",
+      "url": "https://www.epa.gov/power-sector/allowance-data",
+      "kind": "primary"
+    },
+    {
+      "path": "infra/immigration-fiscal/air_pollution_2026_09_28/_cache/epa_market_activity.html",
+      "sha256": "ec4d86884edf9f02b974ac9ba2b3ceedb0e8f3a603995192b9116d0764ab06fb",
+      "url": "https://www.epa.gov/power-sector/progress-report-program-compliance-and-market-activity",
+      "kind": "primary"
+    },
+    {
+      "path": "infra/immigration-fiscal/air_pollution_2026_09_28/_cache/lt2024_Table01.xlsx",
+      "sha256": "d9ce5588403433666c26eaf178ed7afd0cd591c65b3b08dcba2b76fcf5dcdd3c",
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/NVSR/75-05/Table01.xlsx",
+      "kind": "primary"
+    },
+    {
+      "path": "infra/immigration-fiscal/air_pollution_2026_09_28/inputs/band_variants_oct14_positive_control.json",
+      "sha256": "f32aea1f87c6ab86a69cc4cf6c3a988a8281d2b78ce5c542818454f9cf8c7dcd",
+      "kind": "2026-10-14 consumer snapshot; source sept24_propagation_2026_09_24/derived/oct14/band_variants.json before P7 edits"
+    },
+    {
+      "path": "infra/immigration-fiscal/congestion_2026_09_23/_cache/xwalk_puma22_ua20.csv",
+      "sha256": "f279af7bb319931f16233ae9285dc5488b4a35b23afef509b016c25073fa19e2",
+      "kind": "Missouri Census Data Center PUMA2022-UA2020 allocation"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json",
+      "sha256": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958",
+      "kind": "frozen case declaration"
+    },
+    {
+      "path": "infra/immigration-fiscal/population_basis_2026_09_29/derived/frame_counts.csv",
+      "sha256": "57d068d5ba8be325048baa07da831910ff318a762f7721bf192b0122b08f3527",
+      "kind": "current source population frame"
+    },
+    {
+      "path": "infra/immigration-fiscal/population_basis_2026_09_29/derived/reeval.csv",
+      "sha256": "4b91d6bc4a5a15286a9787aeeb463040d451b01994f99500e3a70e0b9216bf3f",
+      "kind": "current row4 PM positive control"
+    },
+    {
+      "path": "sources/immigration-fiscal/data/external/acs_pums_2024_1yr/csv_pus.zip",
+      "sha256": "afdc6d90c6e2f0bab365ed32d95ba4c4d8ac651162f46ac7861295b2dc469894",
+      "kind": "Census ACS 2024 one-year PUMS"
+    }
+  ],
+  "snapshot_origin": {
+    "path": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct14/band_variants.json",
+    "sha256": "f32aea1f87c6ab86a69cc4cf6c3a988a8281d2b78ce5c542818454f9cf8c7dcd",
+    "kind": "case consumer lineage consumption key"
+  }
+}

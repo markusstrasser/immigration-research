@@ -1,0 +1,407 @@
+[
+  {
+    "name": "source pin _cache/dec23pub.csv",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "source pin _cache/dec23hhrep.csv",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "source pin _cache/cpsdec23.pdf",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "source pin _cache/dec24pub.csv",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "source pin _cache/dec24hhrep.csv",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "source pin _cache/cpsdec24.pdf",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "source pin _cache/sep23pub.csv",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "source pin _cache/sep23nrrep.csv",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "source pin _cache/cpssep23.pdf",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "source pin _cache/cpssept15.pdf",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "source pin _cache/sep15pub.dat.gz",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2023 codebook unique tally HESC3",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2023 unweighted tally HESC3",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2023 codebook unique tally HESC4",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2023 unweighted tally HESC4",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2023 codebook unique tally HRSUPINT",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2023 unweighted tally HRSUPINT",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2023 every interviewed HH has replicate weights",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2023 replicate zero equals main weight",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2023 household-weight scale",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2023 pantry beneficiary-weight conservation",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2023 free_meal beneficiary-weight conservation",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2023 either beneficiary-weight conservation",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2024 codebook unique tally HESC3",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2024 unweighted tally HESC3",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2024 codebook unique tally HESC4",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2024 unweighted tally HESC4",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2024 codebook unique tally HRSUPINT",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2024 unweighted tally HRSUPINT",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2024 every interviewed HH has replicate weights",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2024 replicate zero equals main weight",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2024 household-weight scale",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2024 pantry beneficiary-weight conservation",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2024 free_meal beneficiary-weight conservation",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2024 either beneficiary-weight conservation",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "CEV every respondent matched",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "CEV replicate zero matches",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "CEV 2023 published 28.3% rounded rate",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "CEV volunteer count conservation",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2015 unique dictionary field PRTAGE",
+    "passed": true,
+    "detail": "[('122', '123')]"
+  },
+  {
+    "name": "2015 unique dictionary field PRDTHSP",
+    "passed": true,
+    "detail": "[('141', '142')]"
+  },
+  {
+    "name": "2015 unique dictionary field PENATVTY",
+    "passed": true,
+    "detail": "[('163', '165')]"
+  },
+  {
+    "name": "2015 unique dictionary field PEMNTVTY",
+    "passed": true,
+    "detail": "[('166', '168')]"
+  },
+  {
+    "name": "2015 unique dictionary field PEFNTVTY",
+    "passed": true,
+    "detail": "[('169', '171')]"
+  },
+  {
+    "name": "2015 unique dictionary field PRSUPINT",
+    "passed": true,
+    "detail": "[('1134', '1135')]"
+  },
+  {
+    "name": "2015 unique dictionary field PRSUPVOL",
+    "passed": true,
+    "detail": "[('1136', '1137')]"
+  },
+  {
+    "name": "2015 unique dictionary field PWNRWGT",
+    "passed": true,
+    "detail": "[('1140', '1149')]"
+  },
+  {
+    "name": "2015 unique dictionary field PTS4M1",
+    "passed": true,
+    "detail": "[('1128', '1129')]"
+  },
+  {
+    "name": "2015 unique dictionary field PES85",
+    "passed": true,
+    "detail": "[('1042', '1043')]"
+  },
+  {
+    "name": "2015 unique dictionary field PES8A",
+    "passed": true,
+    "detail": "[('1060', '1061')]"
+  },
+  {
+    "name": "2015 unique dictionary field PES81",
+    "passed": true,
+    "detail": "[('1034', '1035')]"
+  },
+  {
+    "name": "2015 unique dictionary field PES82",
+    "passed": true,
+    "detail": "[('1036', '1037')]"
+  },
+  {
+    "name": "2015 unique dictionary field PES83",
+    "passed": true,
+    "detail": "[('1038', '1039')]"
+  },
+  {
+    "name": "2015 unique dictionary field PES84",
+    "passed": true,
+    "detail": "[('1040', '1041')]"
+  },
+  {
+    "name": "2015 unique dictionary field PES86",
+    "passed": true,
+    "detail": "[('1044', '1045')]"
+  },
+  {
+    "name": "2015 unique dictionary field PES87",
+    "passed": true,
+    "detail": "[('1046', '1047')]"
+  },
+  {
+    "name": "2015 unique dictionary field PES88",
+    "passed": true,
+    "detail": "[('1048', '1049')]"
+  },
+  {
+    "name": "2015 unique dictionary field PES89",
+    "passed": true,
+    "detail": "[('1050', '1051')]"
+  },
+  {
+    "name": "2015 unique dictionary field PES810",
+    "passed": true,
+    "detail": "[('1052', '1053')]"
+  },
+  {
+    "name": "2015 unique dictionary field PES811",
+    "passed": true,
+    "detail": "[('1054', '1055')]"
+  },
+  {
+    "name": "2015 unique dictionary field PES812",
+    "passed": true,
+    "detail": "[('1056', '1057')]"
+  },
+  {
+    "name": "2015 unique dictionary field PES813",
+    "passed": true,
+    "detail": "[('1058', '1059')]"
+  },
+  {
+    "name": "2015 codebook tally found PES85",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2015 unweighted tally PES85",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2015 codebook tally found PRSUPINT",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2015 unweighted tally PRSUPINT",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2015 codebook tally found PRSUPVOL",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2015 unweighted tally PRSUPVOL",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2015 plausible volunteer population",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "food volunteer share ordering",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "2015 organization counts close nationally",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "legacy valuation constants located",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "v7 personal end specifications",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "v7 both ends share adult multiplier",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "existing volunteering central positive control",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "adopted outgoing central and controlled rounding",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "city earnings positive control",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "city tax positive control",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "city private plus tax published_union",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "city row4 reproduces adopted whole earnings",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "city private plus tax identified_union_row4",
+    "passed": true,
+    "detail": ""
+  }
+]

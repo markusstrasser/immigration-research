@@ -1,0 +1,29 @@
+{
+  "gates": {
+    "frozen_case_cash_and_capital": true,
+    "budget_identity": true,
+    "legacy_pm_positive_control": true,
+    "legacy_government_positive_control": true,
+    "row4_count": true,
+    "primary_pdf_table_shapes": true,
+    "carbon_closure": true,
+    "spending_fraction_0_1": true,
+    "input_sha256": true
+  },
+  "controls": {
+    "pm_bn": 69.68079837017989,
+    "government_pm_bn": 6.220408689592708,
+    "pce_2024_bn": 19827.2,
+    "scc_2020usd": {
+      "epa2": 208.0,
+      "iwg3": 55.0
+    }
+  },
+  "assumptions": [
+    "spend all H in 2024; MPC and marginal sector mix not identified",
+    "CE vs PCE is a denominator sensitivity, not confidence interval",
+    "original Tessum personal-consumption attribution includes allocated private investment",
+    "no replicate SE for causal spending propensity or assumed emissions parameters",
+    "mortality weighting and VSLY interaction reported separately"
+  ]
+}

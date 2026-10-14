@@ -1,0 +1,127 @@
+[
+  {
+    "path": "_cache/epa_scghg_2023.pdf",
+    "sha256": "3b4e653e745d5f4136a773f19444841e94861d7605f520c944e34e393ebac430",
+    "source": "https://www.epa.gov/system/files/documents/2023-12/epa_scghg_2023_report_final.pdf Table A.5.1"
+  },
+  {
+    "path": "_cache/iwg_2021.pdf",
+    "sha256": "40efa3577e72ba87e0560c5c98fe668b2fce8c8a5de30e131592f13a5b8c6825",
+    "source": "https://bidenwhitehouse.archives.gov/wp-content/uploads/2021/02/TechnicalSupportDocument_SocialCostofCarbonMethaneNitrousOxide.pdf Table A-1"
+  },
+  {
+    "path": "_cache/bea_gdp4q24_2nd.pdf",
+    "sha256": "3ece95673338834f87fd95650ad848b2a51889dc307f02a7720609dc4ac7ba3b",
+    "source": "https://www.bea.gov/sites/default/files/2025-02/gdp4q24-2nd.pdf Table 8, annual 2024; fixed Feb 2025 vintage"
+  },
+  {
+    "path": "_cache/bea_pi0125.pdf",
+    "sha256": "afbf41666a07c1f1b4f76819f676cf832365f11d6a1a844138023ddd27dbd8ce",
+    "source": "https://www.bea.gov/sites/default/files/2025-02/pi0125.pdf; acquisition probe, monthly table not used for annual PCE"
+  },
+  {
+    "path": "inputs/band_variants.json",
+    "sha256": "f32aea1f87c6ab86a69cc4cf6c3a988a8281d2b78ce5c542818454f9cf8c7dcd",
+    "source": "snapshot sept24_propagation_2026_09_24/derived/oct14/band_variants.json; lineage_social_keys"
+  },
+  {
+    "path": "inputs/band_variants.csv",
+    "sha256": "de63eda6a47a2363eb5e1d4cc04b261261b3853e72f8d117ee2f022cb95dc870",
+    "source": "snapshot oct14 band_variants.csv; exact justice footing difference for social pairing"
+  },
+  {
+    "path": "inputs/baseline_totals_oct14.csv",
+    "sha256": "d1ce84dc9bd8fac231b714dc3ad2cae672e19d37051a0b2db2b3468695375343",
+    "source": "pre-P7 baseline social pairing, preserved by peer's social_costs_unpriced inputs"
+  },
+  {
+    "path": "../air_pollution_2026_09_28/_cache/owid-co2-data.csv",
+    "sha256": "7f78e2b218ce4bb8c538bbec04fdc9a7982e8d40bff972e650df603899edd5f6",
+    "source": "https://github.com/owid/co2-data; Global Carbon Budget consumption-based series, pinned original lane file"
+  },
+  {
+    "path": "../air_pollution_2026_09_28/air_items.py",
+    "sha256": "22d311969df3c55455152ed052108dbd9cbc792ae843268f17e9c95e3a4fe04e",
+    "source": "inherited PM/CO2 model assumptions and positive control"
+  },
+  {
+    "path": "../air_pollution_2026_09_28/derived/items.csv",
+    "sha256": "738fbc088877d59210078f2b43bdc0d0839e5b2392bedee564edb947e6f30c03",
+    "source": "legacy producer controls"
+  },
+  {
+    "path": "../air_pollution_2026_09_28/derived/ce_group_spending.csv",
+    "sha256": "ef7dfabc4db0f97fffa7e65388d32f4de1c97f97cd18b24de931aad9f714c4e7",
+    "source": "CE 2024 Interview spending, parsed by ce_energy.py"
+  },
+  {
+    "path": "../consumption_key_2026_09_24/_cache/sources/bls_cpi_u_2015_2024.json",
+    "sha256": "a218eed4cb47914528f3cc13c3d2c8eb8d70c115381f9a6a0a139116855fecff",
+    "source": "BLS CPI-U annual inflation 2020 to 2024"
+  },
+  {
+    "path": "../main_case_2026_10_14/derived/corrections_cash.json",
+    "sha256": "581701613b7f3c8086437100334e3818ebe062dc57e2e486f14897208b05de97",
+    "source": "frozen v7 cash payload"
+  },
+  {
+    "path": "../main_case_2026_10_14/derived/corrections.json",
+    "sha256": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958",
+    "source": "frozen v7 accrual payload"
+  },
+  {
+    "path": "../main_case_2026_10_14/derived/summary.json",
+    "sha256": "b30720cff0c29637ab6f74d809829fdbfc4b82a00a45fa286e3f0c1c5c183582",
+    "source": "frozen v7 endpoints and capital controls"
+  },
+  {
+    "path": "../main_case_decomposition_2026_09_29/derived/headcount.csv",
+    "sha256": "a40d606e42c931782358da8d7ca8a8dad28fffa5f4aa9af59da5a14a0631273e",
+    "source": "published and row4 population bridge"
+  },
+  {
+    "path": "../disease_food_2026_09_28/derived/items.csv",
+    "sha256": "aa7091880821cb99c2b13be57515502999953940a6cfc70aab02fa33d8e808df",
+    "source": "legacy restaurant model output"
+  },
+  {
+    "path": "../disease_food_2026_09_28/derived/inputs.csv",
+    "sha256": "14742ae4df49b72e88e446e8751270dd7f1c07b81be12755c65ac72680a6d842",
+    "source": "legacy restaurant model assumptions"
+  },
+  {
+    "path": "../population_basis_2026_09_29/derived/consumer_scale_rerun/row4/items.csv",
+    "sha256": "02e952e76fc8761ee5f672f3410a73bcfa52401cef2a2ed6dc6f613a73625605",
+    "source": "row4 consumer scale output"
+  },
+  {
+    "path": "../air_pollution_2026_09_28/derived/mortality_items.csv",
+    "sha256": "40397ebc10f8f9f7620017acd938d0e64f1d43882849f11cf73c7b3a4ea5e3f3",
+    "source": "mortality producer; uniform/VSLY alternative replacement rows"
+  },
+  {
+    "path": "../air_pollution_2026_09_28/derived/mortality_context.json",
+    "sha256": "072608c32959c6b8b7b93477fa39ab487d1655405b3947c93099c908a3c7e279",
+    "source": "mortality producer; source/receptor/valuation primitives"
+  },
+  {
+    "path": "../air_pollution_2026_09_28/derived/binding_caps.json",
+    "sha256": "890036cb1bbfc8373e1a55839acd8e81accfb0103780b1a97d7338aa7a794f34",
+    "source": "air producer; primary program facts and unidentified marginal cap share"
+  },
+  {
+    "path": "../road_crash_externality_2026_09_28/derived/capacity_items.csv",
+    "sha256": "a024d9a66f45f19a203190161894a1779015db3bcacf4e8b79b673f402dcd7a7",
+    "source": "crash producer; density-interpretation and recipient-boundary alternatives"
+  },
+  {
+    "path": "../benefits_inventory_2026_09_28/derived/volunteering_flows.csv",
+    "sha256": "5e30c84bc810efbdd4ffed2d9d28b92432e3da3986009ccf0a631c9901a6ca0e",
+    "source": "benefits producer; measured food receipt with conditional incoming labour/displacement"
+  },
+  {
+    "path": "../benefits_inventory_2026_09_28/derived/city_tax_decomposition.csv",
+    "sha256": "2e288beadcd65788c1ce4c0f704a02a2d5d7b8ece505f6d7683b2b7a317cebf2",
+    "source": "benefits producer; existing gross includes induced receipts"
+  }
+]

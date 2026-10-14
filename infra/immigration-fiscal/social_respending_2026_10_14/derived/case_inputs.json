@@ -1,0 +1,68 @@
+{
+  "source": "frozen main_case_2026_10_14/package.cjs CASH; personal specs 16/11",
+  "H_rule": "H=-direct_fiscal_response-induced_receipts=cash_set_cost-capital_return+private_wtp; accrued benefit promises and capital return finance no current spending; private WTP is not a budget saving",
+  "union_rule": "declared lineage edit block and lineage_* item parts excluded; base production restored; full-case national totals, specifications and response rules held fixed; contribution, not standalone removal case",
+  "lineage": {
+    "added": 3039719.593185237,
+    "at_g3_rate": 1944891.7263696424,
+    "later_losses": 1094827.8668155947,
+    "lineage_population": 42752212.92438524,
+    "account_union": 39712493.3312,
+    "identified_g3plus": 14342574.606276
+  },
+  "rows": [
+    {
+      "population_basis": "lineage",
+      "end": "low",
+      "specification": 16,
+      "cash_set_cost_bn": 264.4255736155054,
+      "capital_return_bn": 37.116154420957585,
+      "private_wtp_bn": -0.704457336742795,
+      "induced_receipts_bn": 12.614102194160976,
+      "current_budget_saving_bn": 226.60496185780502,
+      "government_consumption_removed_bn": 398.57083198690856,
+      "government_consumption_national_bn": 4005.3818592730004
+    },
+    {
+      "population_basis": "lineage",
+      "end": "high",
+      "specification": 11,
+      "cash_set_cost_bn": 348.52281648648557,
+      "capital_return_bn": 61.064256379220915,
+      "private_wtp_bn": -0.46340498128760943,
+      "induced_receipts_bn": 8.297788219099258,
+      "current_budget_saving_bn": 286.995155125977,
+      "government_consumption_removed_bn": 424.11870676179694,
+      "government_consumption_national_bn": 4005.3818592730004
+    },
+    {
+      "population_basis": "identified_union_at_case_responses",
+      "end": "low",
+      "specification": 16,
+      "cash_set_cost_bn": 248.1390458287691,
+      "capital_return_bn": 34.1088022810645,
+      "private_wtp_bn": -0.695081604,
+      "induced_receipts_bn": 12.374960074,
+      "current_budget_saving_bn": 213.3351619437046,
+      "government_consumption_removed_bn": 366.0655527996374,
+      "government_consumption_national_bn": 4005.3818592730004
+    },
+    {
+      "population_basis": "identified_union_at_case_responses",
+      "end": "high",
+      "specification": 11,
+      "cash_set_cost_bn": 326.20679574130446,
+      "capital_return_bn": 56.170882202004215,
+      "private_wtp_bn": -0.457237452,
+      "induced_receipts_bn": 8.140476138,
+      "current_budget_saving_bn": 269.5786760873002,
+      "government_consumption_removed_bn": 389.7625233183281,
+      "government_consumption_national_bn": 4005.3818592730004
+    }
+  ],
+  "gates": {
+    "frozen_cash_band": true,
+    "capital_return": true,
+    "budget_identity": true
+  }
+}

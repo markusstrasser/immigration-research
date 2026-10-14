@@ -1,0 +1,68 @@
+[
+  {
+    "file": "_cache/dec23pub.csv",
+    "url": "https://www2.census.gov/programs-surveys/cps/datasets/2023/supp/dec23pub.csv",
+    "sha256": "0f155abc1e3ffc32d08e21276b408fc680b10092362cbf480bcdec411007e0ff",
+    "bytes": 184076865
+  },
+  {
+    "file": "_cache/dec23hhrep.csv",
+    "url": "https://www2.census.gov/programs-surveys/cps/datasets/2023/supp/dec23hhrep.csv",
+    "sha256": "cf118948d125a4b47fe20b4fdc1fadcb74e56481d810582b845f563571a96f5e",
+    "bytes": 48049180
+  },
+  {
+    "file": "_cache/cpsdec23.pdf",
+    "url": "https://www2.census.gov/programs-surveys/cps/techdocs/cpsdec23.pdf",
+    "sha256": "4b1e2c1e74ce7f2eb9592ddc826fb9ef417ec6e8cbb71b1e1f318cfc86a26248",
+    "bytes": 2575963
+  },
+  {
+    "file": "_cache/dec24pub.csv",
+    "url": "https://www2.census.gov/programs-surveys/cps/datasets/2024/supp/dec24pub.csv",
+    "sha256": "0939a44220f72970d658386cc8c40b607a98b7aa4c571153735d91191ba93c14",
+    "bytes": 185278360
+  },
+  {
+    "file": "_cache/dec24hhrep.csv",
+    "url": "https://www2.census.gov/programs-surveys/cps/datasets/2024/supp/dec24hhrep.csv",
+    "sha256": "c26170dd5dfaca4a9ae5f1fc06db9c781f428af952a17da9e7ce9c05596d5beb",
+    "bytes": 49951242
+  },
+  {
+    "file": "_cache/cpsdec24.pdf",
+    "url": "https://www2.census.gov/programs-surveys/cps/techdocs/cpsdec24.pdf",
+    "sha256": "3a16593620999be69c77530769a38022ac7204fe2bb81d3790a01e2603296081",
+    "bytes": 2214460
+  },
+  {
+    "file": "_cache/sep23pub.csv",
+    "url": "https://www2.census.gov/programs-surveys/cps/datasets/2023/supp/sep23pub.csv",
+    "sha256": "0999276047a2ee3b62abae6c2bfdac14073bed949585bd768e52f02b2878f76f",
+    "bytes": 152304957
+  },
+  {
+    "file": "_cache/sep23nrrep.csv",
+    "url": "https://www2.census.gov/programs-surveys/cps/datasets/2023/supp/sep23nrrep.csv",
+    "sha256": "7dd7ef3b9449c4bc2c3e4523cbeff4a022de9aaa5ac1266211bef4b25f8736cc",
+    "bytes": 80762255
+  },
+  {
+    "file": "_cache/cpssep23.pdf",
+    "url": "https://www2.census.gov/programs-surveys/cps/techdocs/cpssep23.pdf",
+    "sha256": "3fb6d648fb86bc3eef53453cb9d4714940d64bc1fcb1dabdc0cebdd1e3db4dcc",
+    "bytes": 1987146
+  },
+  {
+    "file": "_cache/cpssept15.pdf",
+    "url": "https://www2.census.gov/programs-surveys/cps/techdocs/cpssept15.pdf",
+    "sha256": "24144608ed05bcf3ecdf4348d83969580cd56fa1bc7e6676436552df1469f6fe",
+    "bytes": 802661
+  },
+  {
+    "file": "_cache/sep15pub.dat.gz",
+    "url": "https://www2.census.gov/programs-surveys/cps/datasets/2015/supp/sep15pub.dat.gz",
+    "sha256": "e5fd271cfcfa2e317927700ac4c9eb9f5b0ba20c0337106ee67508348e734b14",
+    "bytes": 14853627
+  }
+]

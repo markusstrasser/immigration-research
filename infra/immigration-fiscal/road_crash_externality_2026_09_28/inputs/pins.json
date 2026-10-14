@@ -1,0 +1,23 @@
+{
+  "rule": "Local authoritative producer inputs; no new external acquisition or fitted source parameter",
+  "sha256": {
+    "infra/immigration-fiscal/road_crash_externality_2026_09_28/crash_model.py": "bb0c44a40201815a3d9109d0a0e4c07e38d48b021aa6475bed33cd54a0b72cac",
+    "infra/immigration-fiscal/road_crash_externality_2026_09_28/derived/model.json": "e48658172661a9008dc157730f0bee24a7fed34519d08b47cce0ac6d0b33bda3",
+    "infra/immigration-fiscal/road_crash_externality_2026_09_28/derived/fars_group_2023.json": "bc3077e26d0ae98882d1c003cfd892cebe6a7dd76038769853a4455c8b168134",
+    "infra/immigration-fiscal/crash_volume_elasticity_2026_09_28/derived/x_band.json": "8f78b20a1a94c972d016c0caffa8f56e83c68578ace47819d3664e7b05cd4092",
+    "infra/immigration-fiscal/ccrs_nonfatal_involvement_2026_09_28/derived/crash_component_revision.csv": "e082475c45f411e6ffee663934945a37f89c70f53937a60de3adac4c86e0b53c",
+    "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/target_population_cps2025.csv": "7c0211ff8491f88acafdd8998f3daf27bc7d559461719081316787a3dc982c53",
+    "infra/immigration-fiscal/population_basis_2026_09_29/derived/frame_counts.csv": "57d068d5ba8be325048baa07da831910ff318a762f7721bf192b0122b08f3527",
+    "infra/immigration-fiscal/population_basis_2026_09_29/derived/reeval.csv": "4b91d6bc4a5a15286a9787aeeb463040d451b01994f99500e3a70e0b9216bf3f",
+    "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/age_bins.csv": "73785096958005ddb334846c297e10b0696abb91e266e0971f320ec7a3c15664",
+    "infra/immigration-fiscal/social_spans_priced_count_2026_09_29/derived/priced_spans.csv": "7f8e4d8de643830f6da6d60e57f42461d0304d3536e24f91532cccf28320519a",
+    "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct14/band_variants.json": "f32aea1f87c6ab86a69cc4cf6c3a988a8281d2b78ce5c542818454f9cf8c7dcd",
+    "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/net_change.json": "f6bc46a8b15b0b5ba64e1491df10669d90796d9713d25f380c944905f16f2660",
+    "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+    "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/candidate_band.json": "21cfa28f8dcfbf9cdac9343c57b619ef83dcf138c66929930b533c0a061e9d91",
+    "infra/immigration-fiscal/congestion_2026_09_23/derived/pums_commute_checks.json": "e1bafbde310747d52427826b7058b3f2e0d69d0406366505ecd40344fbf224ba",
+    "infra/immigration-fiscal/congestion_2026_09_23/derived/ua_exposure.csv": "cf5aa113703068cd264eacf330e3c79a221887f1c172e8e5834cc0f94f466a63",
+    "infra/immigration-fiscal/congestion_2026_09_23/derived/nhts_ratios.csv": "a8db143550f5b67612d93134c716038037e6f9f77f3cfdb05694768ea3e903c3",
+    "infra/immigration-fiscal/congestion_2026_09_23/arms.py": "919cca2da97ec4859a390da7be5367629fd06ffe3197c91efc0142076dfc4531"
+  }
+}
