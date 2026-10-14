@@ -1,0 +1,1714 @@
+{
+ "average_net_cost_se": {
+  "a": {
+   "G1": {
+    "cbo_collective": 1.3457702738999535,
+    "corporate_all_capital": 1.3457702738999535,
+    "federal_gap_high_agi": 1.3426674047374283,
+    "medicare_income_weighted": 1.3457702738999535,
+    "nas_80": 1.3457702738999535,
+    "property_residual_consumption": 1.3457702738999535,
+    "public_assets_tax_base": 1.3457702738999535,
+    "treasury_815": 1.3457702738999535
+   },
+   "G2": {
+    "cbo_collective": 1.0553288181625882,
+    "corporate_all_capital": 1.0553288181625882,
+    "federal_gap_high_agi": 1.0485280273572168,
+    "medicare_income_weighted": 1.0553288181625882,
+    "nas_80": 1.0553288181625882,
+    "property_residual_consumption": 1.0553288181625882,
+    "public_assets_tax_base": 1.0553288181625882,
+    "treasury_815": 1.0553288181625882
+   },
+   "G3plus": {
+    "cbo_collective": 0.5983797072664271,
+    "corporate_all_capital": 0.5983797072664271,
+    "federal_gap_high_agi": 0.5934482998292323,
+    "medicare_income_weighted": 0.5983797072664271,
+    "nas_80": 0.5983797072664271,
+    "property_residual_consumption": 0.5983797072664271,
+    "public_assets_tax_base": 0.5983797072664271,
+    "treasury_815": 0.5983797072664271
+   }
+  },
+  "b": {
+   "G1": {
+    "cbo_collective": 0.24082248734755815,
+    "corporate_all_capital": 0.24082248734755815,
+    "federal_gap_high_agi": 0.23786546548986945,
+    "medicare_income_weighted": 0.24082248734755815,
+    "nas_80": 0.24082248734755815,
+    "property_residual_consumption": 0.24082248734755815,
+    "public_assets_tax_base": 0.24082248734755815,
+    "treasury_815": 0.24082248734755815
+   },
+   "G2": {
+    "cbo_collective": 0.2527522263935081,
+    "corporate_all_capital": 0.2527522263935081,
+    "federal_gap_high_agi": 0.2492531550544213,
+    "medicare_income_weighted": 0.2527522263935081,
+    "nas_80": 0.2527522263935081,
+    "property_residual_consumption": 0.2527522263935081,
+    "public_assets_tax_base": 0.2527522263935081,
+    "treasury_815": 0.2527522263935081
+   },
+   "G3plus": {
+    "cbo_collective": 0.12158254517689321,
+    "corporate_all_capital": 0.12158254517689321,
+    "federal_gap_high_agi": 0.1200104579524271,
+    "medicare_income_weighted": 0.12158254517689321,
+    "nas_80": 0.12158254517689321,
+    "property_residual_consumption": 0.12158254517689321,
+    "public_assets_tax_base": 0.12158254517689321,
+    "treasury_815": 0.12158254517689321
+   }
+  }
+ },
+ "base": {
+  "b_hotdeck_union_matched": {
+   "a": {
+    "G1": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 2.7973398515978802,
+        "corporate_all_capital": 2.7973398515978802,
+        "federal_gap_high_agi": 2.588121180457904,
+        "medicare_income_weighted": 2.7973398515978802,
+        "nas_80": 2.7973398515978802,
+        "property_residual_consumption": 2.7973398515978802,
+        "public_assets_tax_base": 2.7973398515978802,
+        "treasury_815": 2.7973398515978802
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": -6.890891968729804
+      }
+     }
+    },
+    "G2": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": -0.6565762560437394,
+        "corporate_all_capital": -0.6565762560437394,
+        "federal_gap_high_agi": -0.6074695979045556,
+        "medicare_income_weighted": -0.6565762560437394,
+        "nas_80": -0.6565762560437394,
+        "property_residual_consumption": -0.6565762560437394,
+        "public_assets_tax_base": -0.6565762560437394,
+        "treasury_815": -0.6565762560437394
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 2.566990374288057
+      }
+     }
+    },
+    "G3plus": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": -2.140763595554139,
+        "corporate_all_capital": -2.140763595554139,
+        "federal_gap_high_agi": -1.9806515825533464,
+        "medicare_income_weighted": -2.140763595554139,
+        "nas_80": -2.140763595554139,
+        "property_residual_consumption": -2.140763595554139,
+        "public_assets_tax_base": -2.140763595554139,
+        "treasury_815": -2.140763595554139
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 4.323901594441748
+      }
+     }
+    }
+   },
+   "b": {
+    "G1": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 0.15655874983663037,
+        "corporate_all_capital": 0.15655874983663037,
+        "federal_gap_high_agi": 0.14484940619808545,
+        "medicare_income_weighted": 0.15655874983663037,
+        "nas_80": 0.15655874983663037,
+        "property_residual_consumption": 0.15655874983663037,
+        "public_assets_tax_base": 0.15655874983663037,
+        "treasury_815": 0.15655874983663037
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": -0.30667878320547204
+      }
+     }
+    },
+    "G2": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": -0.041564137878038754,
+        "corporate_all_capital": -0.041564137878038754,
+        "federal_gap_high_agi": -0.03845547244757461,
+        "medicare_income_weighted": -0.041564137878038754,
+        "nas_80": -0.041564137878038754,
+        "property_residual_consumption": -0.041564137878038754,
+        "public_assets_tax_base": -0.041564137878038754,
+        "treasury_815": -0.041564137878038754
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 0.19651327919932626
+      }
+     }
+    },
+    "G3plus": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": -0.1149946119585913,
+        "corporate_all_capital": -0.1149946119585913,
+        "federal_gap_high_agi": -0.10639393375051054,
+        "medicare_income_weighted": -0.1149946119585913,
+        "nas_80": -0.1149946119585913,
+        "property_residual_consumption": -0.1149946119585913,
+        "public_assets_tax_base": -0.1149946119585913,
+        "treasury_815": -0.1149946119585913
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 0.110165504006146
+      }
+     }
+    }
+   }
+  },
+  "b_matched_over_pooled": {
+   "a": {
+    "G1": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 2.7973398515978802,
+        "corporate_all_capital": 2.7973398515978802,
+        "federal_gap_high_agi": 2.588121180457904,
+        "medicare_income_weighted": 2.7973398515978802,
+        "nas_80": 2.7973398515978802,
+        "property_residual_consumption": 2.7973398515978802,
+        "public_assets_tax_base": 2.7973398515978802,
+        "treasury_815": 2.7973398515978802
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": -6.82829855638796
+      }
+     }
+    },
+    "G2": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": -0.6565762560437394,
+        "corporate_all_capital": -0.6565762560437394,
+        "federal_gap_high_agi": -0.6074695979045556,
+        "medicare_income_weighted": -0.6565762560437394,
+        "nas_80": -0.6565762560437394,
+        "property_residual_consumption": -0.6565762560437394,
+        "public_assets_tax_base": -0.6565762560437394,
+        "treasury_815": -0.6565762560437394
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 2.567195708401286
+      }
+     }
+    },
+    "G3plus": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": -2.140763595554139,
+        "corporate_all_capital": -2.140763595554139,
+        "federal_gap_high_agi": -1.9806515825533464,
+        "medicare_income_weighted": -2.140763595554139,
+        "nas_80": -2.140763595554139,
+        "property_residual_consumption": -2.140763595554139,
+        "public_assets_tax_base": -2.140763595554139,
+        "treasury_815": -2.140763595554139
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 4.261102847986684
+      }
+     }
+    }
+   },
+   "b": {
+    "G1": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 0.15655874983663037,
+        "corporate_all_capital": 0.15655874983663037,
+        "federal_gap_high_agi": 0.14484940619808545,
+        "medicare_income_weighted": 0.15655874983663037,
+        "nas_80": 0.15655874983663037,
+        "property_residual_consumption": 0.15655874983663037,
+        "public_assets_tax_base": 0.15655874983663037,
+        "treasury_815": 0.15655874983663037
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": -0.296342329330608
+      }
+     }
+    },
+    "G2": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": -0.041564137878038754,
+        "corporate_all_capital": -0.041564137878038754,
+        "federal_gap_high_agi": -0.03845547244757461,
+        "medicare_income_weighted": -0.041564137878038754,
+        "nas_80": -0.041564137878038754,
+        "property_residual_consumption": -0.041564137878038754,
+        "public_assets_tax_base": -0.041564137878038754,
+        "treasury_815": -0.041564137878038754
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 0.19817004701904217
+      }
+     }
+    },
+    "G3plus": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": -0.1149946119585913,
+        "corporate_all_capital": -0.1149946119585913,
+        "federal_gap_high_agi": -0.10639393375051054,
+        "medicare_income_weighted": -0.1149946119585913,
+        "nas_80": -0.1149946119585913,
+        "property_residual_consumption": -0.1149946119585913,
+        "public_assets_tax_base": -0.1149946119585913,
+        "treasury_815": -0.1149946119585913
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 0.09817228231156616
+      }
+     }
+    }
+   }
+  }
+ },
+ "components": {
+  "b_hotdeck_union_matched": {
+   "a": {
+    "base": {
+     "G1": -25.119716423036568,
+     "G2": 16.702659195383294,
+     "G3plus": 8.417057227653277
+    },
+    "ota": {
+     "G1": 0.09899429089835952,
+     "G2": -0.03329962094412571,
+     "G3plus": -0.06569466995423338
+    },
+    "row1_ptc_removal": {
+     "G1": 12.995998417275324,
+     "G2": -8.641328939064929,
+     "G3plus": -4.354669478210398
+    },
+    "status_row4_hotdeck": {
+     "G1": 5.133831746133081,
+     "G2": -5.461040261086183,
+     "G3plus": 0.32720851495310066
+    }
+   },
+   "b": {
+    "base": {
+     "G1": -2.5000395126841966,
+     "G2": 2.177918650273171,
+     "G3plus": 0.3221208624110258
+    },
+    "ota": {
+     "G1": 0.06358499012972249,
+     "G2": -0.05150169004132096,
+     "G3plus": -0.01208330008840152
+    },
+    "row1_ptc_removal": {
+     "G1": 1.2934266057308466,
+     "G2": -1.1267733622162845,
+     "G3plus": -0.1666532435145619
+    },
+    "status_row4_hotdeck": {
+     "G1": 0.8363491336181553,
+     "G2": -0.803130318816239,
+     "G3plus": -0.033218814801916324
+    }
+   }
+  },
+  "b_matched_over_pooled": {
+   "a": {
+    "base": {
+     "G1": -25.119716423036568,
+     "G2": 16.702659195383294,
+     "G3plus": 8.417057227653277
+    },
+    "ota": {
+     "G1": 0.09899429089835952,
+     "G2": -0.03329962094412571,
+     "G3plus": -0.06569466995423338
+    },
+    "row1_ptc_removal": {
+     "G1": 12.995998417275324,
+     "G2": -8.641328939064929,
+     "G3plus": -4.354669478210398
+    },
+    "status_row4_hotdeck": {
+     "G1": 5.196425158474923,
+     "G2": -5.460834926972954,
+     "G3plus": 0.2644097684980366
+    }
+   },
+   "b": {
+    "base": {
+     "G1": -2.5000395126841966,
+     "G2": 2.177918650273171,
+     "G3plus": 0.3221208624110258
+    },
+    "ota": {
+     "G1": 0.06358499012972249,
+     "G2": -0.05150169004132096,
+     "G3plus": -0.01208330008840152
+    },
+    "row1_ptc_removal": {
+     "G1": 1.2934266057308466,
+     "G2": -1.1267733622162845,
+     "G3plus": -0.1666532435145619
+    },
+    "status_row4_hotdeck": {
+     "G1": 0.8466855874930195,
+     "G2": -0.8014735509965232,
+     "G3plus": -0.04521203649649616
+    }
+   }
+  }
+ },
+ "gates": [
+  {
+   "name": "source_replay_completed",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "item5b_replay_reproduces_frozen_parts",
+   "passed": true,
+   "value": 0.0
+  },
+  {
+   "name": "every_person_has_generation_frame_row",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "transfer_owner_preserves_union",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "transfer_owner_preserves_union",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "transfer_owner_preserves_union",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "transfer_owner_preserves_union",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "transfer_owner_preserves_union",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "transfer_owner_preserves_union",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "transfer_owner_preserves_union",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "transfer_owner_preserves_union",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "every_row4_changed_person_has_raw_published_weights",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "refundable_national_key_positive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "refundable_national_key_positive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "raw_refund_share_matches_model",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_nonref_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_care_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_receipt_G1_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_nonref_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_care_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_receipt_G2_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_nonref_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_care_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_receipt_G3plus_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_actc_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_eitc_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_spending_G1_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_actc_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_eitc_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_spending_G2_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_actc_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_eitc_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_A_spending_G3plus_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_nonref_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_care_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_receipt_G1_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_nonref_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_care_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_receipt_G2_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_nonref_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_care_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_receipt_G3plus_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_actc_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_eitc_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_spending_G1_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_actc_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_eitc_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_spending_G2_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_actc_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_eitc_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_B_spending_G3plus_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_C_status_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_C_receipt_G1_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_C_status_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_C_receipt_G2_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_C_status_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_C_receipt_G3plus_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_Cr_status_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_Cr_receipt_G1_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_Cr_status_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_Cr_receipt_G2_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_Cr_status_b_owner_exhaustive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "r6_Cr_receipt_G3plus_preserves_frozen_part",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "every_person_has_generation_frame_row",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "every_credit_return_head_is_in_hotdeck_frame",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "hotdeck_row4_weights_match_credit_replay_union",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "refundable_national_key_positive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "hotdeck_20260923_matched_source_positive_control",
+   "passed": true,
+   "value": 1.5265566588595902e-15
+  },
+  {
+   "name": "refundable_national_key_positive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "hotdeck_20260923_pooled_source_positive_control",
+   "passed": true,
+   "value": 1.1379786002407855e-15
+  },
+  {
+   "name": "refundable_national_key_positive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "hotdeck_20260924_matched_source_positive_control",
+   "passed": true,
+   "value": 1.2490009027033011e-15
+  },
+  {
+   "name": "refundable_national_key_positive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "hotdeck_20260924_pooled_source_positive_control",
+   "passed": true,
+   "value": 4.718447854656915e-16
+  },
+  {
+   "name": "refundable_national_key_positive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "hotdeck_20260925_matched_source_positive_control",
+   "passed": true,
+   "value": 9.43689570931383e-16
+  },
+  {
+   "name": "refundable_national_key_positive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "hotdeck_20260925_pooled_source_positive_control",
+   "passed": true,
+   "value": 1.1657341758564144e-15
+  },
+  {
+   "name": "refundable_national_key_positive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "hotdeck_20260926_matched_source_positive_control",
+   "passed": true,
+   "value": 1.0547118733938987e-15
+  },
+  {
+   "name": "refundable_national_key_positive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "hotdeck_20260926_pooled_source_positive_control",
+   "passed": true,
+   "value": 1.0547118733938987e-15
+  },
+  {
+   "name": "refundable_national_key_positive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "hotdeck_20260927_matched_source_positive_control",
+   "passed": true,
+   "value": 6.38378239159465e-16
+  },
+  {
+   "name": "refundable_national_key_positive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "hotdeck_20260927_pooled_source_positive_control",
+   "passed": true,
+   "value": 1.2490009027033011e-15
+  },
+  {
+   "name": "refundable_national_key_positive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "b_hotdeck_union_matched_row4_ssn_stack_source_positive_control",
+   "passed": true,
+   "value": -1.3677947663381929e-13
+  },
+  {
+   "name": "b_matched_over_pooled_row4_ssn_stack_source_positive_control",
+   "passed": true,
+   "value": -3.6415315207705135e-14
+  },
+  {
+   "name": "every_credit_head_is_in_ota_frame",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "ota_source_positive_control",
+   "passed": true,
+   "value": 3.885780586188048e-16
+  },
+  {
+   "name": "refundable_national_key_positive",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "row1_all_replicate_share_gaps_nonzero",
+   "passed": true,
+   "value": true
+  },
+  {
+   "name": "b_hotdeck_union_matched_a_base_all_replicates_preserve_union",
+   "passed": true,
+   "value": 4.440892098500626e-14
+  },
+  {
+   "name": "b_hotdeck_union_matched_a_status_row4_hotdeck_all_replicates_preserve_union",
+   "passed": true,
+   "value": 2.248201624865942e-14
+  },
+  {
+   "name": "b_hotdeck_union_matched_a_ota_all_replicates_preserve_union",
+   "passed": true,
+   "value": 9.575673587391975e-16
+  },
+  {
+   "name": "b_hotdeck_union_matched_a_row1_ptc_removal_all_replicates_preserve_union",
+   "passed": true,
+   "value": 2.220446049250313e-14
+  },
+  {
+   "name": "b_hotdeck_union_matched_a_receipt_all_replicates_preserve_union",
+   "passed": true,
+   "value": 7.105427357601002e-15
+  },
+  {
+   "name": "b_hotdeck_union_matched_b_base_all_replicates_preserve_union",
+   "passed": true,
+   "value": 3.3861802251067274e-15
+  },
+  {
+   "name": "b_hotdeck_union_matched_b_status_row4_hotdeck_all_replicates_preserve_union",
+   "passed": true,
+   "value": 1.4155343563970746e-15
+  },
+  {
+   "name": "b_hotdeck_union_matched_b_ota_all_replicates_preserve_union",
+   "passed": true,
+   "value": 5.377642775528102e-17
+  },
+  {
+   "name": "b_hotdeck_union_matched_b_row1_ptc_removal_all_replicates_preserve_union",
+   "passed": true,
+   "value": 1.4988010832439613e-15
+  },
+  {
+   "name": "b_hotdeck_union_matched_b_receipt_all_replicates_preserve_union",
+   "passed": true,
+   "value": 3.3306690738754696e-16
+  },
+  {
+   "name": "b_matched_over_pooled_a_base_all_replicates_preserve_union",
+   "passed": true,
+   "value": 4.440892098500626e-14
+  },
+  {
+   "name": "b_matched_over_pooled_a_status_row4_hotdeck_all_replicates_preserve_union",
+   "passed": true,
+   "value": 2.3925306180672123e-14
+  },
+  {
+   "name": "b_matched_over_pooled_a_ota_all_replicates_preserve_union",
+   "passed": true,
+   "value": 9.575673587391975e-16
+  },
+  {
+   "name": "b_matched_over_pooled_a_row1_ptc_removal_all_replicates_preserve_union",
+   "passed": true,
+   "value": 2.220446049250313e-14
+  },
+  {
+   "name": "b_matched_over_pooled_a_receipt_all_replicates_preserve_union",
+   "passed": true,
+   "value": 7.105427357601002e-15
+  },
+  {
+   "name": "b_matched_over_pooled_b_base_all_replicates_preserve_union",
+   "passed": true,
+   "value": 3.3861802251067274e-15
+  },
+  {
+   "name": "b_matched_over_pooled_b_status_row4_hotdeck_all_replicates_preserve_union",
+   "passed": true,
+   "value": 1.7069679003611782e-15
+  },
+  {
+   "name": "b_matched_over_pooled_b_ota_all_replicates_preserve_union",
+   "passed": true,
+   "value": 5.377642775528102e-17
+  },
+  {
+   "name": "b_matched_over_pooled_b_row1_ptc_removal_all_replicates_preserve_union",
+   "passed": true,
+   "value": 1.4988010832439613e-15
+  },
+  {
+   "name": "b_matched_over_pooled_b_receipt_all_replicates_preserve_union",
+   "passed": true,
+   "value": 3.3306690738754696e-16
+  }
+ ],
+ "meta": {
+  "childless_eitc": "no eligible dependent means zero transfer",
+  "limitations": [
+   "equal allocation within a return is an attribution assumption, not child-specific observed tax dollars",
+   "care credit uses the source lane's model anchored on Census tax; disability exceptions are not observed",
+   "receipt credits use the base return credits; hotdeck does not persist or recompute CTC_CRD/care components"
+  ],
+  "owner_rule": "equal qualifying dependents; union claimant weights follow dollars; outside-union portions retain claimant",
+  "ptc": "MRKS person component unchanged",
+  "receipt_rule": "Census CTC/ODC and modeled care credit, state-aware onbooks and IRS raked personal key; high-AGI scenario scaled like item5b",
+  "scope": "identified union only; no transfer changes the case or added lineage total",
+  "se_rule": "160 SDR survey replicates, conditional on fixed five hotdeck seeds; no imputation SE added",
+  "sign": "spending positive raises spending; receipt positive raises receipts",
+  "source_pins": "inputs/credit_pins.json"
+ },
+ "net_cost_se": {
+  "b_hotdeck_union_matched": {
+   "a": {
+    "G1": {
+     "cbo_collective": 1.3466783886509224,
+     "corporate_all_capital": 1.3466783886509224,
+     "federal_gap_high_agi": 1.3436100021220452,
+     "medicare_income_weighted": 1.3466783886509224,
+     "nas_80": 1.3466783886509224,
+     "property_residual_consumption": 1.3466783886509224,
+     "public_assets_tax_base": 1.3466783886509224,
+     "treasury_815": 1.3466783886509224
+    },
+    "G2": {
+     "cbo_collective": 1.0644693705872432,
+     "corporate_all_capital": 1.0644693705872432,
+     "federal_gap_high_agi": 1.0576133660849554,
+     "medicare_income_weighted": 1.0644693705872432,
+     "nas_80": 1.0644693705872432,
+     "property_residual_consumption": 1.0644693705872432,
+     "public_assets_tax_base": 1.0644693705872432,
+     "treasury_815": 1.0644693705872432
+    },
+    "G3plus": {
+     "cbo_collective": 0.5970055515687193,
+     "corporate_all_capital": 0.5970055515687193,
+     "federal_gap_high_agi": 0.5919678259134181,
+     "medicare_income_weighted": 0.5970055515687193,
+     "nas_80": 0.5970055515687193,
+     "property_residual_consumption": 0.5970055515687193,
+     "public_assets_tax_base": 0.5970055515687193,
+     "treasury_815": 0.5970055515687193
+    }
+   },
+   "b": {
+    "G1": {
+     "cbo_collective": 0.24086660331012646,
+     "corporate_all_capital": 0.24086660331012646,
+     "federal_gap_high_agi": 0.23784748286318677,
+     "medicare_income_weighted": 0.24086660331012646,
+     "nas_80": 0.24086660331012646,
+     "property_residual_consumption": 0.24086660331012646,
+     "public_assets_tax_base": 0.24086660331012646,
+     "treasury_815": 0.24086660331012646
+    },
+    "G2": {
+     "cbo_collective": 0.2492342178144475,
+     "corporate_all_capital": 0.2492342178144475,
+     "federal_gap_high_agi": 0.24567248235879827,
+     "medicare_income_weighted": 0.2492342178144475,
+     "nas_80": 0.2492342178144475,
+     "property_residual_consumption": 0.2492342178144475,
+     "public_assets_tax_base": 0.2492342178144475,
+     "treasury_815": 0.2492342178144475
+    },
+    "G3plus": {
+     "cbo_collective": 0.11996731573636107,
+     "corporate_all_capital": 0.11996731573636107,
+     "federal_gap_high_agi": 0.11839269080810857,
+     "medicare_income_weighted": 0.11996731573636107,
+     "nas_80": 0.11996731573636107,
+     "property_residual_consumption": 0.11996731573636107,
+     "public_assets_tax_base": 0.11996731573636107,
+     "treasury_815": 0.11996731573636107
+    }
+   }
+  },
+  "b_matched_over_pooled": {
+   "a": {
+    "G1": {
+     "cbo_collective": 1.3476763474793279,
+     "corporate_all_capital": 1.3476763474793279,
+     "federal_gap_high_agi": 1.3445455148396563,
+     "medicare_income_weighted": 1.3476763474793279,
+     "nas_80": 1.3476763474793279,
+     "property_residual_consumption": 1.3476763474793279,
+     "public_assets_tax_base": 1.3476763474793279,
+     "treasury_815": 1.3476763474793279
+    },
+    "G2": {
+     "cbo_collective": 1.053410583181955,
+     "corporate_all_capital": 1.053410583181955,
+     "federal_gap_high_agi": 1.046712513049759,
+     "medicare_income_weighted": 1.053410583181955,
+     "nas_80": 1.053410583181955,
+     "property_residual_consumption": 1.053410583181955,
+     "public_assets_tax_base": 1.053410583181955,
+     "treasury_815": 1.053410583181955
+    },
+    "G3plus": {
+     "cbo_collective": 0.6063023648704834,
+     "corporate_all_capital": 0.6063023648704834,
+     "federal_gap_high_agi": 0.601529301313457,
+     "medicare_income_weighted": 0.6063023648704834,
+     "nas_80": 0.6063023648704834,
+     "property_residual_consumption": 0.6063023648704834,
+     "public_assets_tax_base": 0.6063023648704834,
+     "treasury_815": 0.6063023648704834
+    }
+   },
+   "b": {
+    "G1": {
+     "cbo_collective": 0.24373628399907976,
+     "corporate_all_capital": 0.24373628399907976,
+     "federal_gap_high_agi": 0.2408769190777292,
+     "medicare_income_weighted": 0.24373628399907976,
+     "nas_80": 0.24373628399907976,
+     "property_residual_consumption": 0.24373628399907976,
+     "public_assets_tax_base": 0.24373628399907976,
+     "treasury_815": 0.24373628399907976
+    },
+    "G2": {
+     "cbo_collective": 0.25920224060445063,
+     "corporate_all_capital": 0.25920224060445063,
+     "federal_gap_high_agi": 0.2558034851033687,
+     "medicare_income_weighted": 0.25920224060445063,
+     "nas_80": 0.25920224060445063,
+     "property_residual_consumption": 0.25920224060445063,
+     "public_assets_tax_base": 0.25920224060445063,
+     "treasury_815": 0.25920224060445063
+    },
+    "G3plus": {
+     "cbo_collective": 0.12571387233905407,
+     "corporate_all_capital": 0.12571387233905407,
+     "federal_gap_high_agi": 0.12417606355173012,
+     "medicare_income_weighted": 0.12571387233905407,
+     "nas_80": 0.12571387233905407,
+     "property_residual_consumption": 0.12571387233905407,
+     "public_assets_tax_base": 0.12571387233905407,
+     "treasury_815": 0.12571387233905407
+    }
+   }
+  }
+ },
+ "r6_b_net_shift": {
+  "G1": {
+   "bn": 0.9298849241952386,
+   "se_bn": 0.14392851857139333
+  },
+  "G2": {
+   "bn": -0.3374683270225922,
+   "se_bn": 0.16681709931191813
+  },
+  "G3plus": {
+   "bn": -0.5924165971726462,
+   "se_bn": 0.10542504459405277
+  }
+ },
+ "r6_b_parts": [
+  {
+   "line": "federal_income_tax",
+   "part": "A_receipt_G1",
+   "per_generation_bn": {
+    "G1": -0.024950195161482235,
+    "G2": 0.0,
+    "G3plus": 0.0
+   },
+   "se_bn": {
+    "G1": 0.01001785631682945,
+    "G2": 0.0,
+    "G3plus": 0.0
+   },
+   "side": "receipt",
+   "source_generation": "G1"
+  },
+  {
+   "line": "federal_income_tax",
+   "part": "A_receipt_G2",
+   "per_generation_bn": {
+    "G1": -0.33068380285204696,
+    "G2": -0.15195199135855564,
+    "G3plus": -0.0060122683701861685
+   },
+   "se_bn": {
+    "G1": 0.05161654638597828,
+    "G2": 0.02900347835397357,
+    "G3plus": 0.00603015201461864
+   },
+   "side": "receipt",
+   "source_generation": "G2"
+  },
+  {
+   "line": "federal_income_tax",
+   "part": "A_receipt_G3plus",
+   "per_generation_bn": {
+    "G1": -0.04284174146764605,
+    "G2": -0.24579241479403188,
+    "G3plus": -1.1259389203252692
+   },
+   "se_bn": {
+    "G1": 0.021084846915347236,
+    "G2": 0.04010890500461953,
+    "G3plus": 0.08666386193247227
+   },
+   "side": "receipt",
+   "source_generation": "G3plus"
+  },
+  {
+   "line": "refundable_tax_credits",
+   "part": "A_spending_G1",
+   "per_generation_bn": {
+    "G1": 0.02978058984179869,
+    "G2": 0.0,
+    "G3plus": 0.0
+   },
+   "se_bn": {
+    "G1": 0.015568265725131532,
+    "G2": 0.0,
+    "G3plus": 0.0
+   },
+   "side": "spending",
+   "source_generation": "G1"
+  },
+  {
+   "line": "refundable_tax_credits",
+   "part": "A_spending_G2",
+   "per_generation_bn": {
+    "G1": 0.5072104496672445,
+    "G2": 0.5180269976304023,
+    "G3plus": 0.0
+   },
+   "se_bn": {
+    "G1": 0.11954589660289834,
+    "G2": 0.1020795752658324,
+    "G3plus": 0.0
+   },
+   "side": "spending",
+   "source_generation": "G2"
+  },
+  {
+   "line": "refundable_tax_credits",
+   "part": "A_spending_G3plus",
+   "per_generation_bn": {
+    "G1": 0.03346779002790587,
+    "G2": 0.25903882704662545,
+    "G3plus": 1.4060697260526198
+   },
+   "se_bn": {
+    "G1": 0.025054800285833918,
+    "G2": 0.08067927166658799,
+    "G3plus": 0.19775799740564998
+   },
+   "side": "spending",
+   "source_generation": "G3plus"
+  },
+  {
+   "line": "federal_income_tax",
+   "part": "B_receipt_G1",
+   "per_generation_bn": {
+    "G1": 0.07437889726879024,
+    "G2": 0.0,
+    "G3plus": 0.0
+   },
+   "se_bn": {
+    "G1": 0.034142324830775436,
+    "G2": 0.0,
+    "G3plus": 0.0
+   },
+   "side": "receipt",
+   "source_generation": "G1"
+  },
+  {
+   "line": "federal_income_tax",
+   "part": "B_receipt_G2",
+   "per_generation_bn": {
+    "G1": 0.0,
+    "G2": 0.1834938902982987,
+    "G3plus": 0.0
+   },
+   "se_bn": {
+    "G1": 0.0,
+    "G2": 0.03895140565831925,
+    "G3plus": 0.0
+   },
+   "side": "receipt",
+   "source_generation": "G2"
+  },
+  {
+   "line": "federal_income_tax",
+   "part": "B_receipt_G3plus",
+   "per_generation_bn": {
+    "G1": 0.0,
+    "G2": 0.0,
+    "G3plus": 0.19626061880562612
+   },
+   "se_bn": {
+    "G1": 0.0,
+    "G2": 0.0,
+    "G3plus": 0.03577676321868779
+   },
+   "side": "receipt",
+   "source_generation": "G3plus"
+  },
+  {
+   "line": "refundable_tax_credits",
+   "part": "B_spending_G1",
+   "per_generation_bn": {
+    "G1": -0.005434856520491263,
+    "G2": 0.0,
+    "G3plus": 0.0
+   },
+   "se_bn": {
+    "G1": 0.0036678083349415587,
+    "G2": 0.0,
+    "G3plus": 0.0
+   },
+   "side": "spending",
+   "source_generation": "G1"
+  },
+  {
+   "line": "refundable_tax_credits",
+   "part": "B_spending_G2",
+   "per_generation_bn": {
+    "G1": 0.0,
+    "G2": -0.14884286070122352,
+    "G3plus": 0.0
+   },
+   "se_bn": {
+    "G1": 0.0,
+    "G2": 0.07670126516991105,
+    "G3plus": 0.0
+   },
+   "side": "spending",
+   "source_generation": "G2"
+  },
+  {
+   "line": "refundable_tax_credits",
+   "part": "B_spending_G3plus",
+   "per_generation_bn": {
+    "G1": 0.0,
+    "G2": 0.0,
+    "G3plus": -0.07576483834626209
+   },
+   "se_bn": {
+    "G1": 0.0,
+    "G2": 0.0,
+    "G3plus": 0.024777863236657854
+   },
+   "side": "spending",
+   "source_generation": "G3plus"
+  },
+  {
+   "line": "federal_income_tax",
+   "part": "C_receipt_G1",
+   "per_generation_bn": {
+    "G1": -0.003471039152044451,
+    "G2": 0.0,
+    "G3plus": 0.0
+   },
+   "se_bn": {
+    "G1": 0.002345226899284187,
+    "G2": 0.0,
+    "G3plus": 0.0
+   },
+   "side": "receipt",
+   "source_generation": "G1"
+  },
+  {
+   "line": "federal_income_tax",
+   "part": "C_receipt_G2",
+   "per_generation_bn": {
+    "G1": -0.015681140180395268,
+    "G2": -0.05906417238653786,
+    "G3plus": 0.0
+   },
+   "se_bn": {
+    "G1": 0.0108378668583776,
+    "G2": 0.016316941033551205,
+    "G3plus": 0.0
+   },
+   "side": "receipt",
+   "source_generation": "G2"
+  },
+  {
+   "line": "federal_income_tax",
+   "part": "C_receipt_G3plus",
+   "per_generation_bn": {
+    "G1": 0.0,
+    "G2": -0.01728809220662309,
+    "G3plus": -0.2214127705157991
+   },
+   "se_bn": {
+    "G1": 0.0,
+    "G2": 0.01161019108618145,
+    "G3plus": 0.03207605773439171
+   },
+   "side": "receipt",
+   "source_generation": "G3plus"
+  },
+  {
+   "line": "federal_income_tax",
+   "part": "Cr_receipt_G1",
+   "per_generation_bn": {
+    "G1": 0.0020876709623417855,
+    "G2": 0.0,
+    "G3plus": 0.0
+   },
+   "se_bn": {
+    "G1": 0.002125005472622656,
+    "G2": 0.0,
+    "G3plus": 0.0
+   },
+   "side": "receipt",
+   "source_generation": "G1"
+  },
+  {
+   "line": "federal_income_tax",
+   "part": "Cr_receipt_G2",
+   "per_generation_bn": {
+    "G1": 0.0,
+    "G2": 0.0029294638575043416,
+    "G3plus": 0.0
+   },
+   "se_bn": {
+    "G1": 0.0,
+    "G2": 0.002106480010119437,
+    "G3plus": 0.0
+   },
+   "side": "receipt",
+   "source_generation": "G2"
+  },
+  {
+   "line": "federal_income_tax",
+   "part": "Cr_receipt_G3plus",
+   "per_generation_bn": {
+    "G1": 0.0,
+    "G2": 0.0,
+    "G3plus": 0.010944447329084422
+   },
+   "se_bn": {
+    "G1": 0.0,
+    "G2": 0.0,
+    "G3plus": 0.008183603031014109
+   },
+   "side": "receipt",
+   "source_generation": "G3plus"
+  }
+ ],
+ "se": {
+  "b_hotdeck_union_matched": {
+   "a": {
+    "G1": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 0.15460272467083214,
+        "corporate_all_capital": 0.15460272467083214,
+        "federal_gap_high_agi": 0.14303967608673723,
+        "medicare_income_weighted": 0.15460272467083214,
+        "nas_80": 0.15460272467083214,
+        "property_residual_consumption": 0.15460272467083214,
+        "public_assets_tax_base": 0.15460272467083214,
+        "treasury_815": 0.15460272467083214
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 1.3135015535789634
+      }
+     }
+    },
+    "G2": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 0.22298429475172818,
+        "corporate_all_capital": 0.22298429475172818,
+        "federal_gap_high_agi": 0.2063068510702274,
+        "medicare_income_weighted": 0.22298429475172818,
+        "nas_80": 0.22298429475172818,
+        "property_residual_consumption": 0.22298429475172818,
+        "public_assets_tax_base": 0.22298429475172818,
+        "treasury_815": 0.22298429475172818
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 0.9922560079864011
+      }
+     }
+    },
+    "G3plus": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 0.16045258155419212,
+        "corporate_all_capital": 0.16045258155419212,
+        "federal_gap_high_agi": 0.14845201041351672,
+        "medicare_income_weighted": 0.16045258155419212,
+        "nas_80": 0.16045258155419212,
+        "property_residual_consumption": 0.16045258155419212,
+        "public_assets_tax_base": 0.16045258155419212,
+        "treasury_815": 0.16045258155419212
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 0.5478595528100931
+      }
+     }
+    }
+   },
+   "b": {
+    "G1": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 0.06624897917970778,
+        "corporate_all_capital": 0.06624897917970778,
+        "federal_gap_high_agi": 0.061294084843061085,
+        "medicare_income_weighted": 0.06624897917970778,
+        "nas_80": 0.06624897917970778,
+        "property_residual_consumption": 0.06624897917970778,
+        "public_assets_tax_base": 0.06624897917970778,
+        "treasury_815": 0.06624897917970778
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 0.20676845720068557
+      }
+     }
+    },
+    "G2": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 0.07235933754026662,
+        "corporate_all_capital": 0.07235933754026662,
+        "federal_gap_high_agi": 0.06694743721785994,
+        "medicare_income_weighted": 0.07235933754026662,
+        "nas_80": 0.07235933754026662,
+        "property_residual_consumption": 0.07235933754026662,
+        "public_assets_tax_base": 0.07235933754026662,
+        "treasury_815": 0.07235933754026662
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 0.20831126851719403
+      }
+     }
+    },
+    "G3plus": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 0.04111371096050367,
+        "corporate_all_capital": 0.04111371096050367,
+        "federal_gap_high_agi": 0.03803873386471882,
+        "medicare_income_weighted": 0.04111371096050367,
+        "nas_80": 0.04111371096050367,
+        "property_residual_consumption": 0.04111371096050367,
+        "public_assets_tax_base": 0.04111371096050367,
+        "treasury_815": 0.04111371096050367
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 0.10458386855160866
+      }
+     }
+    }
+   }
+  },
+  "b_matched_over_pooled": {
+   "a": {
+    "G1": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 0.15460272467083214,
+        "corporate_all_capital": 0.15460272467083214,
+        "federal_gap_high_agi": 0.14303967608673723,
+        "medicare_income_weighted": 0.15460272467083214,
+        "nas_80": 0.15460272467083214,
+        "property_residual_consumption": 0.15460272467083214,
+        "public_assets_tax_base": 0.15460272467083214,
+        "treasury_815": 0.15460272467083214
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 1.31363923780539
+      }
+     }
+    },
+    "G2": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 0.22298429475172818,
+        "corporate_all_capital": 0.22298429475172818,
+        "federal_gap_high_agi": 0.2063068510702274,
+        "medicare_income_weighted": 0.22298429475172818,
+        "nas_80": 0.22298429475172818,
+        "property_residual_consumption": 0.22298429475172818,
+        "public_assets_tax_base": 0.22298429475172818,
+        "treasury_815": 0.22298429475172818
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 0.9836658522110646
+      }
+     }
+    },
+    "G3plus": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 0.16045258155419212,
+        "corporate_all_capital": 0.16045258155419212,
+        "federal_gap_high_agi": 0.14845201041351672,
+        "medicare_income_weighted": 0.16045258155419212,
+        "nas_80": 0.16045258155419212,
+        "property_residual_consumption": 0.16045258155419212,
+        "public_assets_tax_base": 0.16045258155419212,
+        "treasury_815": 0.16045258155419212
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 0.5606611043854977
+      }
+     }
+    }
+   },
+   "b": {
+    "G1": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 0.06624897917970778,
+        "corporate_all_capital": 0.06624897917970778,
+        "federal_gap_high_agi": 0.061294084843061085,
+        "medicare_income_weighted": 0.06624897917970778,
+        "nas_80": 0.06624897917970778,
+        "property_residual_consumption": 0.06624897917970778,
+        "public_assets_tax_base": 0.06624897917970778,
+        "treasury_815": 0.06624897917970778
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 0.21199257987096798
+      }
+     }
+    },
+    "G2": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 0.07235933754026662,
+        "corporate_all_capital": 0.07235933754026662,
+        "federal_gap_high_agi": 0.06694743721785994,
+        "medicare_income_weighted": 0.07235933754026662,
+        "nas_80": 0.07235933754026662,
+        "property_residual_consumption": 0.07235933754026662,
+        "public_assets_tax_base": 0.07235933754026662,
+        "treasury_815": 0.07235933754026662
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 0.22051483235988917
+      }
+     }
+    },
+    "G3plus": {
+     "receipt": {
+      "federal_income_tax": {
+       "personal": {
+        "cbo_collective": 0.04111371096050367,
+        "corporate_all_capital": 0.04111371096050367,
+        "federal_gap_high_agi": 0.03803873386471882,
+        "medicare_income_weighted": 0.04111371096050367,
+        "nas_80": 0.04111371096050367,
+        "property_residual_consumption": 0.04111371096050367,
+        "public_assets_tax_base": 0.04111371096050367,
+        "treasury_815": 0.04111371096050367
+       }
+      }
+     },
+     "spending": {
+      "refundable_tax_credits": {
+       "personal": 0.11058874240985912
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+ "infra/immigration-fiscal/state_priced_services_2026_09_29/derived/state_per_capita.csv": "7e344c1b172eb8a759dfc4e735814fdf1f9d7feffd69e464864176843081ce15",
+ "infra/immigration-fiscal/state_priced_services_2026_09_29/derived/prison_cost_by_state.csv": "9d0327c153dc48e1b7d50d7b76c011f93bc5af190e1960cb6d42f2bf0e0e0865",
+ "infra/immigration-fiscal/state_priced_services_2026_09_29/derived/corrections.csv": "faa2f7692b19e59d78db16eddf60d612839c501712819752e22441be42a2bde7",
+ "infra/immigration-fiscal/state_priced_services_2026_09_29/derived/receipts_corrections.csv": "4c28816fa601c25fc5d868db6be111ef12b96678b849b7672c31450f89184266",
+ "infra/immigration-fiscal/state_priced_services_2026_09_29/derived/indexes.csv": "e2dcbdcb502c0fdede8cdd929835268dff2a21cbceae591bc5bc849dc182ceed",
+ "infra/immigration-fiscal/state_priced_services_2026_09_29/derived/receipt_indexes.csv": "edd8e15b5cd7ae68e40ec672d08d1900dd3ee0024913d4b6781f3c184276fb74",
+ "infra/immigration-fiscal/state_priced_services_2026_09_29/_cache/SAPCE.zip": "d93e91e178bf35c1448fd2692deb4b08c6e3953d83a2c430595787822515a9b1",
+ "sources/immigration-fiscal/data/external/census_popest_2024/NST-EST2024-ALLDATA.csv": "b8b50bd345d8a5f33d5c8a28c95aeaa0a50971356f000d9b48276a65fd9022a7",
+ "infra/immigration-fiscal/detention_reconciliation_2026_09_20/_cache/census_2024_units.zip": "0967c4d30466593796acb26f2b30c1afb37b5b9a5de43766dc65e4ccc95bd89a",
+ "infra/immigration-fiscal/state_priced_services_2026_09_29/state_price.py": "3654c17529884ed9f11724d06e4c69b35faf19c6236f175ffb4aca8a9d6d3cb5",
+ "infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac"
+}

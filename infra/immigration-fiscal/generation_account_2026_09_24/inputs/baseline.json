@@ -1,0 +1,563 @@
+{
+ "split_commit": "1a02fbbb48b16904c3d490866359c4b6332aa44b",
+ "cases": {
+  "oct14": {
+   "sha256": "776e26c707799b146973bb3440aa10071491fed656e0a7638272e29963ff220f",
+   "union": {
+    "cost_bn": [
+     339.5520178295269,
+     423.6492607005069
+    ],
+    "uncorrected_bn": [
+     284.2910701827103,
+     353.5501210734848
+    ],
+    "population": 42752212.92437314,
+    "adults": 29274258.282217387,
+    "per_member_usd": [
+     7942.326130115886,
+     9909.411273047423
+    ],
+    "per_adult_usd": [
+     11598.996447872,
+     14471.733378052899
+    ]
+   },
+   "conventions": {
+    "a": {
+     "G1": {
+      "population": 11036701.061391935,
+      "adults": 10566524.710023813,
+      "cost_bn": [
+       49.93631880754394,
+       73.40547880076987
+      ],
+      "own_span_bn": [
+       49.93631880754394,
+       73.40547880076987
+      ],
+      "uncorrected_cost_bn": [
+       41.49046918496068,
+       63.23539883310084
+      ],
+      "correction_bn": [
+       8.44584962258326,
+       10.170079967669032
+      ],
+      "per_member_usd": [
+       4524.569301077548,
+       6651.034434334136
+      ],
+      "per_adult_usd": [
+       4725.898076987642,
+       6946.984066685104
+      ]
+     },
+     "G2": {
+      "population": 14333217.663520353,
+      "adults": 8914882.943565348,
+      "cost_bn": [
+       137.99531840377472,
+       165.49381511365692
+      ],
+      "own_span_bn": [
+       137.99531840377472,
+       165.49381511365692
+      ],
+      "uncorrected_cost_bn": [
+       123.41886076266411,
+       146.73841883571538
+      ],
+      "correction_bn": [
+       14.576457641110608,
+       18.755396277941543
+      ],
+      "per_member_usd": [
+       9627.658048826559,
+       11546.173301676514
+      ],
+      "per_adult_usd": [
+       15479.206993220032,
+       18563.767596422374
+      ]
+     },
+     "G3plus": {
+      "population": 17382294.199460845,
+      "adults": 9792850.628628222,
+      "cost_bn": [
+       151.62038061820977,
+       184.74996678608122
+      ],
+      "own_span_bn": [
+       151.62038061820977,
+       184.74996678608122
+      ],
+      "uncorrected_cost_bn": [
+       119.38174023508549,
+       143.5763034046684
+      ],
+      "correction_bn": [
+       32.23864038312428,
+       41.17366338141281
+      ],
+      "per_member_usd": [
+       8722.690968083642,
+       10628.629608156769
+      ],
+      "per_adult_usd": [
+       15482.762514008517,
+       18865.800551065986
+      ]
+     }
+    },
+    "b": {
+     "G1": {
+      "population": 15672846.093122507,
+      "adults": 10566524.710023813,
+      "cost_bn": [
+       153.41210526249503,
+       183.55509863549017
+      ],
+      "own_span_bn": [
+       153.41210526249503,
+       183.55509863549017
+      ],
+      "uncorrected_cost_bn": [
+       153.7329025539363,
+       181.7525635616015
+      ],
+      "correction_bn": [
+       -0.32079729144126645,
+       1.802535073888663
+      ],
+      "per_member_usd": [
+       9788.401184505647,
+       11711.66344292994
+      ],
+      "per_adult_usd": [
+       14518.690815814058,
+       17371.37835501986
+      ]
+     },
+     "G2": {
+      "population": 12208153.065691093,
+      "adults": 8914882.943565348,
+      "cost_bn": [
+       83.8677350696897,
+       108.04540052426381
+      ],
+      "own_span_bn": [
+       83.8677350696897,
+       108.04540052426381
+      ],
+      "uncorrected_cost_bn": [
+       64.57787320200715,
+       84.95583677524407
+      ],
+      "correction_bn": [
+       19.289861867682546,
+       23.089563749019746
+      ],
+      "per_member_usd": [
+       6869.813526944177,
+       8850.265879112112
+      ],
+      "per_adult_usd": [
+       9407.609230609627,
+       12119.665643198337
+      ]
+     },
+     "G3plus": {
+      "population": 14871213.76555953,
+      "adults": 9792850.628628222,
+      "cost_bn": [
+       102.27217749734379,
+       132.0487615407543
+      ],
+      "own_span_bn": [
+       102.27217749734379,
+       132.0487615407543
+      ],
+      "uncorrected_cost_bn": [
+       65.98029442676663,
+       86.841720736639
+      ],
+      "correction_bn": [
+       36.29188307057716,
+       45.207040804115294
+      ],
+      "per_member_usd": [
+       6877.191002001295,
+       8879.48782274706
+      ],
+      "per_adult_usd": [
+       10443.55534213535,
+       13484.200520196398
+      ]
+     }
+    }
+   },
+   "gates": {
+    "failed": [],
+    "checks": [
+     {
+      "check": "September 29 generation payload declares the case's base",
+      "pass": true,
+      "detail": "main_case_2026_09_29/derived/corrections.json"
+     },
+     {
+      "check": "a: base models add cell by cell and on the production grid",
+      "pass": true,
+      "detail": "{\"gap\":1.3073986337985843e-12,\"grid\":5.684341886080802e-14}"
+     },
+     {
+      "check": "a: v7 models add cell by cell and on the production grid",
+      "pass": true,
+      "detail": "{\"gap\":1.3216094885137863e-12,\"grid\":5.684341886080802e-14}"
+     },
+     {
+      "check": "a: split shares and amounts close",
+      "pass": true,
+      "detail": "4.107825191113079e-15 / 4.440892098500626e-15"
+     },
+     {
+      "check": "b: base models add cell by cell and on the production grid",
+      "pass": true,
+      "detail": "{\"gap\":1.2931877790833823e-12,\"grid\":5.684341886080802e-14}"
+     },
+     {
+      "check": "b: v7 models add cell by cell and on the production grid",
+      "pass": true,
+      "detail": "{\"gap\":1.3073986337985843e-12,\"grid\":5.684341886080802e-14}"
+     },
+     {
+      "check": "b: split shares and amounts close",
+      "pass": true,
+      "detail": "4.440892098500626e-15 / 5.329070518200751e-15"
+     },
+     {
+      "check": "32 personal specifications agree with the package",
+      "pass": true
+     },
+     {
+      "check": "consumer response overrides agree with every package specification",
+      "pass": true
+     },
+     {
+      "check": "case ends and published band",
+      "pass": true,
+      "detail": "16 / 11"
+     },
+     {
+      "check": "case full-precision band",
+      "pass": true,
+      "detail": "339.5520178295269 / 423.6492607005069"
+     },
+     {
+      "check": "every published personal specification",
+      "pass": true
+     },
+     {
+      "check": "a: generations add at every specification, corrected and uncorrected; every capital component",
+      "pass": true,
+      "detail": "1.5347723092418164e-12 / 3.552713678800501e-14"
+     },
+     {
+      "check": "b: generations add at every specification, corrected and uncorrected; every capital component",
+      "pass": true,
+      "detail": "1.6484591469634324e-12 / 3.552713678800501e-14"
+     },
+     {
+      "check": "package and independent consumer agree for all models/specifications",
+      "pass": true,
+      "detail": 0
+     },
+     {
+      "check": "G4 pattern 3 reference: row 8 on G3+, pension union by receipts; split still closes",
+      "pass": true
+     },
+     {
+      "check": "headcount equals the case lineage",
+      "pass": true,
+      "detail": 42752212.92437314
+     }
+    ]
+   }
+  },
+  "oct14_cash": {
+   "sha256": "29842684bdf3303a44b5c4f71baccaaed032a72c11afb4f51b4f757b72008584",
+   "union": {
+    "cost_bn": [
+     264.4255736155054,
+     348.52281648648557
+    ],
+    "uncorrected_bn": [
+     284.2910701827103,
+     353.5501210734848
+    ],
+    "population": 42752212.92437314,
+    "adults": 29274258.282217387,
+    "per_member_usd": [
+     6185.073368792934,
+     8152.158511724474
+    ],
+    "per_adult_usd": [
+     9032.699345148922,
+     11905.43627532983
+    ]
+   },
+   "conventions": {
+    "a": {
+     "G1": {
+      "population": 11036701.061391935,
+      "adults": 10566524.710023813,
+      "cost_bn": [
+       35.90660825665994,
+       59.37576824988592
+      ],
+      "own_span_bn": [
+       35.90660825665994,
+       59.37576824988592
+      ],
+      "uncorrected_cost_bn": [
+       41.49046918496068,
+       63.23539883310084
+      ],
+      "correction_bn": [
+       -5.583860928300737,
+       -3.8596305832149156
+      ],
+      "per_member_usd": [
+       3253.3823338086722,
+       5379.847467065265
+      ],
+      "per_adult_usd": [
+       3398.147379771662,
+       5619.23336946913
+      ]
+     },
+     "G2": {
+      "population": 14333217.663520353,
+      "adults": 8914882.943565348,
+      "cost_bn": [
+       103.71088741992486,
+       131.20938412980712
+      ],
+      "own_span_bn": [
+       103.71088741992486,
+       131.20938412980712
+      ],
+      "uncorrected_cost_bn": [
+       123.41886076266411,
+       146.73841883571538
+      ],
+      "correction_bn": [
+       -19.70797334273925,
+       -15.52903470590826
+      ],
+      "per_member_usd": [
+       7235.701700385162,
+       9154.216953235122
+      ],
+      "per_adult_usd": [
+       11633.45476059022,
+       14718.015363792569
+      ]
+     },
+     "G3plus": {
+      "population": 17382294.199460845,
+      "adults": 9792850.628628222,
+      "cost_bn": [
+       124.80807793892217,
+       157.93766410679368
+      ],
+      "own_span_bn": [
+       124.80807793892217,
+       157.93766410679368
+      ],
+      "uncorrected_cost_bn": [
+       119.38174023508549,
+       143.5763034046684
+      ],
+      "correction_bn": [
+       5.42633770383668,
+       14.361360702125268
+      ],
+      "per_member_usd": [
+       7180.184416783913,
+       9086.123056857046
+      ],
+      "per_adult_usd": [
+       12744.815853114387,
+       16127.853890171866
+      ]
+     }
+    },
+    "b": {
+     "G1": {
+      "population": 15672846.093122507,
+      "adults": 10566524.710023813,
+      "cost_bn": [
+       139.40591816144175,
+       169.54891153443694
+      ],
+      "own_span_bn": [
+       139.40591816144175,
+       169.54891153443694
+      ],
+      "uncorrected_cost_bn": [
+       153.7329025539363,
+       181.7525635616015
+      ],
+      "correction_bn": [
+       -14.326984392494552,
+       -12.203652027164566
+      ],
+      "per_member_usd": [
+       8894.741729303096,
+       10818.003987727392
+      ],
+      "per_adult_usd": [
+       13193.16634249631,
+       16045.853881702118
+      ]
+     },
+     "G2": {
+      "population": 12208153.065691093,
+      "adults": 8914882.943565348,
+      "cost_bn": [
+       49.651461681710295,
+       73.8291271362844
+      ],
+      "own_span_bn": [
+       49.651461681710295,
+       73.8291271362844
+      ],
+      "uncorrected_cost_bn": [
+       64.57787320200715,
+       84.95583677524407
+      ],
+      "correction_bn": [
+       -14.92641152029686,
+       -11.126709638959667
+      ],
+      "per_member_usd": [
+       4067.073980358844,
+       6047.526332526778
+      ],
+      "per_adult_usd": [
+       5569.502369915928,
+       8281.558782504637
+      ]
+     },
+     "G3plus": {
+      "population": 14871213.76555953,
+      "adults": 9792850.628628222,
+      "cost_bn": [
+       75.36819377235501,
+       105.14477781576552
+      ],
+      "own_span_bn": [
+       75.36819377235501,
+       105.14477781576552
+      ],
+      "uncorrected_cost_bn": [
+       65.98029442676663,
+       86.841720736639
+      ],
+      "correction_bn": [
+       9.38789934558838,
+       18.303057079126518
+      ],
+      "per_member_usd": [
+       5068.059336683154,
+       7070.356157428919
+      ],
+      "per_adult_usd": [
+       7696.246642629792,
+       10736.89182069084
+      ]
+     }
+    }
+   },
+   "gates": {
+    "failed": [],
+    "checks": [
+     {
+      "check": "September 29 generation payload declares the case's base",
+      "pass": true,
+      "detail": "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json"
+     },
+     {
+      "check": "a: base models add cell by cell and on the production grid",
+      "pass": true,
+      "detail": "{\"gap\":1.3358203432289883e-12,\"grid\":5.684341886080802e-14}"
+     },
+     {
+      "check": "a: v7 models add cell by cell and on the production grid",
+      "pass": true,
+      "detail": "{\"gap\":1.3358203432289883e-12,\"grid\":5.684341886080802e-14}"
+     },
+     {
+      "check": "a: split shares and amounts close",
+      "pass": true,
+      "detail": "4.107825191113079e-15 / 4.440892098500626e-15"
+     },
+     {
+      "check": "b: base models add cell by cell and on the production grid",
+      "pass": true,
+      "detail": "{\"gap\":1.3073986337985843e-12,\"grid\":5.684341886080802e-14}"
+     },
+     {
+      "check": "b: v7 models add cell by cell and on the production grid",
+      "pass": true,
+      "detail": "{\"gap\":1.3073986337985843e-12,\"grid\":5.684341886080802e-14}"
+     },
+     {
+      "check": "b: split shares and amounts close",
+      "pass": true,
+      "detail": "4.440892098500626e-15 / 5.329070518200751e-15"
+     },
+     {
+      "check": "32 personal specifications agree with the package",
+      "pass": true
+     },
+     {
+      "check": "consumer response overrides agree with every package specification",
+      "pass": true
+     },
+     {
+      "check": "case ends and published band",
+      "pass": true,
+      "detail": "16 / 11"
+     },
+     {
+      "check": "case full-precision band",
+      "pass": true,
+      "detail": "264.4255736155054 / 348.52281648648557"
+     },
+     {
+      "check": "a: generations add at every specification, corrected and uncorrected; every capital component",
+      "pass": true,
+      "detail": "1.5916157281026244e-12 / 3.552713678800501e-14"
+     },
+     {
+      "check": "b: generations add at every specification, corrected and uncorrected; every capital component",
+      "pass": true,
+      "detail": "1.7053025658242404e-12 / 3.552713678800501e-14"
+     },
+     {
+      "check": "package and independent consumer agree for all models/specifications",
+      "pass": true,
+      "detail": 0
+     },
+     {
+      "check": "headcount equals the case lineage",
+      "pass": true,
+      "detail": 42752212.92437314
+     }
+    ]
+   }
+  }
+ }
+}

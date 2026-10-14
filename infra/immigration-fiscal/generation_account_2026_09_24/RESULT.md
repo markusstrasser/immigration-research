@@ -1,4 +1,13 @@
-**Verdict:** Split by generation, the main case adopted on 2026-09-29 ($371.4–434.8bn a year, with the pension
+**Verdict:** The live v7 routing fixes preserve the $339.552–423.649bn set and
+$264.426–348.523bn cash set. Under the requested G2-parent assignment for the
+G3-rate pricing-class minors, G2 costs more per adult than G3+ under convention
+(b). That assignment is an assumption: the pricing class also includes later
+descendants. The new results, independent changes and narrower sensitivity are
+in "P7 generation routing, 2026-10-14" below. [CALCULATION: `derived/routing_audit_oct14.json`]
+
+## Preserved September 29 verdict (superseded)
+
+Split by generation, the main case adopted on 2026-09-29 ($371.4–434.8bn a year, with the pension
 accrual) leaves all three Mexican-origin generations as net costs to other US residents at every one of its 64
 specifications, under both ways of counting children. Counted in their own generation, the Mexico-born cost others
 $97.2bn at the union's low end and $87.1bn at its high end ($8.8k / 7.9k per member). The second generation costs
@@ -1397,3 +1406,237 @@ Covered: every input the brief names, through `model.json`'s reproduction (step 
   `time -l`'s clock-rate query, so that wrapper returned 1 after successful
   child runs; the replacement measurement preserves child failures
   (a deliberate exit-7 probe returned 7). No failed wrapper is counted as a pass.
+
+## P7 generation routing, 2026-10-14
+
+**Verdict:** The requested routing changes leave the frozen v7 total unchanged.
+The G3-rate-minor assignment flips FAQ 5's G2-versus-G3+ per-adult ordering under
+(b), at both accrual ends. The smaller floor-only minor reassignment does not
+flip it alone. The credit replay moves $9.657bn out of G1(a), with conditional
+SDR SE $1.346bn; the review's $13–20bn estimate is not reproduced.
+[CALCULATION: `routing_audit.py` → `derived/routing_changes_oct14.csv`,
+`derived/routing_audit_oct14.json`; `credit_routing.py` → `derived/credit_routing.json`]
+
+These are **modeled allocations of one income-year-2024 net account for other US
+residents**, in $bn per year at personal specifications 16 / 11. They are not
+generation-specific removal counterfactuals. The identified union is 39.712493M;
+the case's added people bring it to 42.752213M. The per-person denominator is the
+assigned generation's population; under (b), per-adult figures divide by its
+adults while including its assigned children. No white-reference ledger gap is
+used here. [DATA: frozen payload `meta.lineage.counts`; `derived/v4_inputs.json`;
+CALCULATION: `derived/generation_results_oct14.csv` and `_cash.csv`]
+
+### 1. One change at a time from the original central
+
+The table shows the accrual redistribution. Its positive sign raises the named
+generation's cost. Every union/headline change is **0**. Thus none clears the
+review's $5bn **headline** bar. The minor rule clears its alternative criterion,
+a flipped stated claim; the credit and state corrections should not be promoted
+to changes in the national headline because their generation moves are large.
+[CALCULATION: `derived/routing_changes_oct14.csv`, `headline_change_bn`]
+
+| Fix, convention | G1 change | G2 change | G3+ change | Identified-union versus lineage scope |
+|---|---:|---:|---:|---|
+| Added G3-rate minors, (b) | 0 / 0 | +9.954 / +11.185 | −9.954 / −11.185 | Identified routing 0; added people only |
+| Floor-scaled minor sensitivity, (b) | 0 / 0 | +4.092 / +4.598 | −4.092 / −4.598 | Identified routing 0; added people only |
+| Base credits, (a) | −9.657 / −9.657 | +3.224 / +3.224 | +6.433 / +6.433 | Identified union only; same moves inside full lineage |
+| Base credits, (b) | −0.458 / −0.458 | +0.239 / +0.239 | +0.219 / +0.219 | Identified union only |
+| R6/R8/R9 convention routing, (b) | +0.965 / +0.965 | +0.022 / +0.023 | −0.988 / −0.988 | Identified parts +0.965 / +0.965; −0.349 / −0.349; −0.616 / −0.616; remainder added people |
+| Generation state prices, (a) | +0.760 / +0.763 | +1.196 / +1.205 | −1.955 / −1.968 | Identified union; added geography held fixed |
+| Generation state prices, (b) | +0.531 / +0.536 | +1.772 / +1.781 | −2.304 / −2.316 | Identified union; added geography held fixed |
+
+All other minor/tag convention-(a) changes are zero. The CSV also carries every
+cash row, both ends, each routing change per member of the 42.75M lineage and
+the separate identified-union routing change. The cash minor change is slightly
+different because its pension cells count payments rather than accrual.
+[CALCULATION: `derived/routing_changes_oct14.csv`; `tags_union` isolates the
+identified-union component by setting the lineage routing scale to zero]
+
+**Credit uncertainty.** The mean-method net SDR SEs are G1/G2/G3+: 1.346 / 1.055 /
+0.598bn under (a), and 0.241 / 0.253 / 0.122bn under (b), at each personal end,
+on both sets. Spending/receipt and between-method covariance are retained; the
+five imputation seeds are held fixed. R6 alone moves +0.930 / −0.337 / −0.592bn
+under (b), SE 0.144 / 0.167 / 0.105bn. These are not SEs of the whole account.
+[CALCULATION: `derived/credit_routing.json`, `average_net_cost_se`, `r6_b_net_shift`]
+
+State-price index replicates and their SEs are in `generation_state_indexes.json`;
+net state-price routing SEs at the ends preserve covariance across its lines and
+are in `routing_changes_oct14.csv`. They condition on fixed charge keys, finance
+tables and row-4 factors. A direct engine probe checks the linear propagation at
+1e-9bn. There are no person-level replicate observations of the added people's
+parent generations, so no invented SE is attached to that assignment.
+[CALCULATION: `state_price_routing.py`; `run_generations_v7.cjs`,
+`state_price_conditional_se`]
+
+### 2. FAQ 5's split, both conventions, all fixes together
+
+| Method / convention | G1 cost, low / high | G2 cost | G3+ cost |
+|---|---:|---:|---:|
+| Accrual (a), own generation | 41.039 / 64.512 | 142.415 / 169.922 | 156.098 / 189.215 |
+| Accrual (b), children assigned to parents | 154.451 / 184.598 | 95.855 / 121.273 | 89.246 / 117.778 |
+| Cash (a) | 27.009 / 50.482 | 108.130 / 135.638 | 129.286 / 162.403 |
+| Cash (b) | 140.447 / 170.594 | 61.610 / 87.027 | 62.369 / 90.902 |
+
+Accrual per member under (a), G1/G2/G3+: **$3,718–5,845 / $9,936–11,855 /
+$8,980–10,886**. Under (b), the corresponding per-adult figures are
+**$14,617–17,470 / $10,752–13,603 / $9,113–12,027**. On the cash set (b), they
+are $13,292–16,145 / $6,911–9,762 / $6,369–9,282. All three generation accounts
+remain net costs at all 32 personal specifications; the G2/G3+ ordering depends
+on the added-minor rule. With **all fixes** and the floor-scaled added assignment,
+the accrual ordering still flips narrowly, but the cash ordering does not.
+[CALCULATION: `derived/generation_summary_oct14.json`, `_cash.json`,
+`conventions`; `derived/routing_audit_oct14.json`, `ordering_b`]
+
+### 3. The requested G2-adult residual
+
+Publish the specified arithmetic **G2(a) − [G1(b) − G1(a)]**. This is an allocation
+residual, not a separately measured adult-only cell: both conventions can move
+credits, mixed-parent minors and other allocated items. The label must travel
+with the number. [FRAMING-SENSITIVE]
+
+| Reading, $bn low / high | Accrual | Cash |
+|---|---:|---:|
+| Original central, positive control | 34.520 / 55.344 | 0.212 / 21.036 |
+| All routing fixes | 29.003 / 49.836 | −5.308 / 15.526 |
+| All fixes; identified production split by positive labour income | 27.398 / 48.781 | −6.912 / 14.470 |
+
+The labour arm changes the corrected residual by **−1.604 / −1.055bn**, on both
+sets. Its union production grid is unchanged; its identified part follows the
+row-4 positive `PEARNVAL`/`WSAL_VAL` share for the grid's proxy, while the added
+people's existing production term and minor routing stay fixed. No additional
+capital-tax term is added. The low cash residual changes sign after the credit
+correction; that does not establish a separately measured G2-adult fiscal surplus.
+[CALCULATION: `derived/g2_adults_alone_oct14.csv`; `--production-rule labour_income`]
+
+### 4. Routing rules and identification limits
+
+1. **Added minors:** all 335 lineage pricing cells are decomposed by the source's
+   own age keys, with the pension profiles rebuilt from payroll, HI and cash
+   benefits. Rebuilding the complete mix matches the frozen cells within
+   4e-15bn. The existing 15–19-band split uses theta 0.3512705435, inferred from
+   identified G3+'s adult share; it is not a measured single-age loss split. The
+   G3-rate class has 809,759.70 minors, and the later class 620,478.01. Only the
+   former move to G2; adults and the later class stay on G3+.
+   [CALCULATION: `age_routing.cjs`; `v6_split.cjs:addedAdults`]
+2. **The brief's premise is too strong:** the G3anc *rate sample* has a linked
+   Mexico-born grandparent (`measure_loss.py`); the 1.945M *pricing count* includes
+   descendants of attriters at later generations (`population.py:8–11`). The
+   requested assignment is therefore **[ASSUMPTION]**, not observed parental
+   identity. The 799,442.26-person direct-G3 floor is itself all-age extrapolation;
+   the floor arm multiplies the same G3-rate minor amounts/counts by 0.41104718.
+   It is a narrower sensitivity, not a measured-parent lower bound.
+   [DATA: `main_case_lineage_2026_10_05/derived/population.json`, `arms.floor`]
+3. **White band amounts:** weighted unit-band white lines can differ from the
+   frozen mixed-age price because some keys involve ratios. Their minor
+   contribution is normalized to the frozen mixed-age amount, conserving it.
+   The maximum unnormalized difference is 1.4545e-9bn per person.
+   **[APPROX]** The R8 white tax-key *gap* uses the white federal-tax age profile;
+   it is not a new age-specific rerun of the gap.
+   [DATA: `added_age_mix_2026_10_07/derived/band_lines.json`; CALCULATION: `age_routing.cjs`]
+4. **Credits:** all within-union child-related refundable components follow
+   qualified dependents, then their convention-(b) assigned parents. Claimant
+   weights travel with the dollars. Childless EITC and Marketplace persons keep
+   their owners. SSN/on-books, all ten hotdeck runs, OTA and the exact booked PTC
+   subtraction are traced separately. **[ASSUMPTION]** Qualifying dependents
+   share observed return-level credit dollars equally. **[APPROX]** The
+   nonrefundable CTC/care decomposition uses the source lane's base return
+   credits and final IRS/on-books rules; hotdeck does not expose recomputed
+   child-specific credit components. See `credit-evidence.md`.
+   OTA retains its original source-frame classifier, including the recorded
+   `[DEGRADED]` Medicaid-clause limitation. This preserves the frozen case's
+   correction and does not repair that upstream classifier.
+5. **R6/R8/R9:** R6's identified parts use the joint old-dependent/new-parent
+   matrix, not a product of marginal shares. **[APPROX]** Its added fixed term
+   uses the refundable-key age profile. R9's owner/state parts are re-keyed on
+   each convention's cells; pension parts follow OASDI/HI; benefit-tax parts
+   use the cash-SSA profile, keeping within-generation tax rates fixed and
+   renormalizing to the frozen part. This latter is a profile allocation, not
+   a person-level benefit-tax rerun. Difference lineage parts use the accrual
+   minus cash profile (Part A removes the kept non-Part-A cash share).
+6. **State prices:** existing primary-derived Census/BEA/BJS price relatives
+   are applied to each generation's CPS state distribution, using the state's
+   incarceration exposure for prison prices and adults for motor licences.
+   Raw indexes are centered on each edited cell's charge weights; their sum
+   preserves the frozen case. This is a **normalized redistribution**, not a
+   new estimate of the union's geographic correction. Added people retain
+   the case's geography because their own state distribution is unmeasured.
+   [CALCULATION: `state_price_routing.py`, `v7_split.cjs` state branch]
+7. **Contract:** `inputs/routing.json` declares every inherited item/part and
+   every v7 part's exact identity, cell, amount, generation and pricing class.
+   The live consumer removes inherited wildcard rules; it neither infers a
+   generation from a prefix nor accepts an unknown lineage-like part. Source,
+   output and declaration hashes are checked in `inputs/pins.json`. The
+   negative controls reject unknown names, changed amounts and changed cells.
+   Production sensitivities clone payloads so they cannot mutate frozen inputs.
+
+These allocation assumptions are disclosed in both directions, and the smaller
+review estimates are not substituted for executed results. The LLM instrument
+can bias politically charged interpretation; the empirical controls and
+explicit assumptions, rather than model agreement, support these numbers.
+[SOURCE: repo `notes/llm-bias-caveat.md`; `notes/quant-bias-checklist.md`]
+
+### 5. Gates, reproduction and log
+
+The original code first reproduced all six committed live outputs byte for byte
+(set 17 gates, cash 15). The saved numerical baseline is `inputs/baseline.json`,
+split commit `1a02fbbb48b16904c3d490866359c4b6332aa44b`; the audit's no-fix run
+then matches its costs and per-person numbers at 1e-9. No earlier case files are
+regenerated. The current consumer retains the existing cell/cost/capital
+1e-9bn, production-grid 1e-12bn and independent-package checks across every
+personal specification and convention. The state-price source has nine
+principal controls; credits retain the original 83 source gates, ten hotdeck
+controls and all-replicate conservation. [CALCULATION: all current `gates` outputs]
+
+```sh
+bash infra/immigration-fiscal/generation_account_2026_09_24/run_all.sh
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/generation_account_2026_09_24 \
+  "bash {lane}/run_all.sh" \
+  --allow-unrun infra/immigration-fiscal/generation_account_2026_09_24/v7_split.cjs \
+  --allow-unrun infra/immigration-fiscal/generation_account_2026_09_24/age_routing.cjs \
+  --allow-unrun infra/immigration-fiscal/generation_account_2026_09_24/test_credit_routing.py
+```
+
+The allowed modules are imported by the live runner; the Python test file is
+collected by the wrapper's directory-wide pytest command. None is skipped.
+Direct profiling uses `time.perf_counter` and `resource.getrusage`; no `ps`,
+`sysctl` or `time -l` is used. The wrapper's exit-7 negative control verifies
+that timing cannot turn a failed child into a pass.
+
+- 2026-10-14 21:32:50 JST (`date`, credit worker): exact source replay and 13
+  source controls passed; final worker peak 2,280,636,416 bytes, 91.960s.
+- 2026-10-14 21:43 JST (run receipts): all ten independent/combined variants
+  passed for both sets; node tests six, pytest nine. Main set 3.202s /
+  353,599,488 bytes; cash 1.699s / 334,610,432 bytes; audit 49.145s.
+- 2026-10-14 21:46:16 JST (`date`): a source replay exceeded the 2.5GB cap.
+  The same exact weights were being retained in multiple frames. The helper
+  now restores only changed raw-weight rows and omits unused replicate columns
+  from hotdeck copies; attribution still uses all 161 weights. A fail-loud cap
+  runs before the helper's admitted outputs/cache are written. The final
+  refresh and byte-for-byte receipt follow below.
+- Scoped Astra static review: no material defect confirmed; the required
+  profile/parent/residual disclosures above were retained (`review-evidence.md`).
+- 2026-10-14 21:54:59 JST (`date`): the final exact credit refresh exited 0,
+  40.518s, peak **2,240,004,096 bytes**. It restores only row-4-changed raw
+  weights; all 113 helper gates and the original 13 source controls pass.
+  The live wrapper passes six node regression tests and nine Python tests.
+  The current consumers pass 21 set and 19 cash gates, including the new
+  covariance-preserving state-replicate probe (largest linearity error below
+  5e-14bn). Ruff and compile checks pass. The last whole-lane byte-identity receipt is
+  recorded below after it completes.
+- 2026-10-14, final source refresh: exit 0, **75.296s / 2,042,413,056 bytes**;
+  the hotdeck population guard now reads the source replay's gated count rather
+  than a typed literal. All source controls and numerical transfers remain the
+  same. One earlier byte-identity attempt was correctly rejected when this
+  pinned source changed; it is not counted as a pass. The complete inventory,
+  including ignored lane replay files, is `changed-paths.txt`.
+- 2026-10-14 **22:03:23 JST** (`date`): final sequential whole-lane rerun
+  **IDENTICAL: 92/92, exit 0**. The wrapper ran both producers, both live
+  consumers, all ten audit variants on both sets, six node tests and nine
+  Python tests. The two imported modules and the directory-collected credit
+  test are the only named `--allow-unrun` entries; all execute through the
+  wrapper. No prior case output, frozen case, stage, merge or commit changed.
+
+Identification note: the added children's joint parental generations are also
+unobserved. Assigning the G3-rate class wholly to G2 does not estimate the NAS
+half-split for added children with G2/G3+ mixed parents. The requested reading
+and its floor-scaled sensitivity must retain that limitation.

@@ -1,0 +1,629 @@
+{
+ "source": "routing_audit.py",
+ "positive_controls": [
+  {
+   "case": "oct14",
+   "original_split_gap": 0.0,
+   "pass": true
+  },
+  {
+   "case": "oct14_cash",
+   "original_split_gap": 0.0,
+   "pass": true
+  }
+ ],
+ "minor_floor_scale": 0.4110471815052536,
+ "headline": {
+  "oct14": [
+   339.5520178295269,
+   423.6492607005069
+  ],
+  "oct14_cash": [
+   264.4255736155054,
+   348.52281648648557
+  ]
+ },
+ "all": {
+  "oct14": {
+   "conventions": {
+    "a": {
+     "G1": {
+      "population": 11036701.061391935,
+      "adults": 10566524.710023813,
+      "cost_bn": [
+       41.03906213538065,
+       64.51167290974517
+      ],
+      "own_span_bn": [
+       41.03906213538065,
+       64.51167290974517
+      ],
+      "uncorrected_cost_bn": [
+       41.49046918496068,
+       63.23539883310084
+      ],
+      "correction_bn": [
+       -0.45140704958003397,
+       1.2762740766443343
+      ],
+      "per_member_usd": [
+       3718.4174788371815,
+       5845.195276278421
+      ],
+      "per_adult_usd": [
+       3883.8750924842307,
+       6105.287658916551
+      ],
+      "production": [
+       {
+        "private_wtp_bn": -0.5087460318568775,
+        "induced_receipts_bn": 7.92828000479671,
+        "production_gain_bn": 7.419533972939832
+       },
+       {
+        "private_wtp_bn": -0.3346624885232174,
+        "induced_receipts_bn": 5.215368276624157,
+        "production_gain_bn": 4.88070578810094
+       }
+      ]
+     },
+     "G2": {
+      "population": 14333217.663520353,
+      "adults": 8914882.943565348,
+      "cost_bn": [
+       142.4145100509388,
+       169.92216123482007
+      ],
+      "own_span_bn": [
+       142.4145100509388,
+       169.92216123482007
+      ],
+      "uncorrected_cost_bn": [
+       123.41886076266411,
+       146.73841883571538
+      ],
+      "correction_bn": [
+       18.995649288274677,
+       23.183742399104688
+      ],
+      "per_member_usd": [
+       9935.976233264055,
+       11855.13017550072
+      ],
+      "per_adult_usd": [
+       15974.916434963603,
+       19060.503913567118
+      ],
+      "production": [
+       {
+        "private_wtp_bn": -0.10631273486899767,
+        "induced_receipts_bn": 2.405577630384593,
+        "production_gain_bn": 2.2992648955155954
+       },
+       {
+        "private_wtp_bn": -0.06993447061023361,
+        "induced_receipts_bn": 1.5824331699781096,
+        "production_gain_bn": 1.512498699367876
+       }
+      ]
+     },
+     "G3plus": {
+      "population": 17382294.199460845,
+      "adults": 9792850.628628222,
+      "cost_bn": [
+       156.09844564320906,
+       189.21542655594286
+      ],
+      "own_span_bn": [
+       156.09844564320906,
+       189.21542655594286
+      ],
+      "uncorrected_cost_bn": [
+       119.38174023508549,
+       143.5763034046684
+      ],
+      "correction_bn": [
+       36.71670540812357,
+       45.63912315127445
+      ],
+      "per_member_usd": [
+       8980.31317684468,
+       10885.52663904468
+      ],
+      "per_adult_usd": [
+       15940.04152242188,
+       19321.792369914667
+      ],
+      "production": [
+       {
+        "private_wtp_bn": -0.08939857001691982,
+        "induced_receipts_bn": 2.2802445589796747,
+        "production_gain_bn": 2.1908459889627547
+       },
+       {
+        "private_wtp_bn": -0.05880802215415847,
+        "induced_receipts_bn": 1.499986772496991,
+        "production_gain_bn": 1.4411787503428326
+       }
+      ]
+     }
+    },
+    "b": {
+     "G1": {
+      "population": 15672846.093122507,
+      "adults": 10566524.710023813,
+      "cost_bn": [
+       154.45089910653667,
+       184.59789106429585
+      ],
+      "own_span_bn": [
+       154.45089910653667,
+       184.59789106429585
+      ],
+      "uncorrected_cost_bn": [
+       153.7329025539363,
+       181.7525635616015
+      ],
+      "correction_bn": [
+       0.7179965526003684,
+       2.845327502694346
+      ],
+      "per_member_usd": [
+       9854.68103169291,
+       11778.19841830134
+      ],
+      "per_adult_usd": [
+       14617.000702228861,
+       17470.066661480396
+      ],
+      "production": [
+       {
+        "private_wtp_bn": -0.5108074309398926,
+        "induced_receipts_bn": 7.95896052288623,
+        "production_gain_bn": 7.448153091946337
+       },
+       {
+        "private_wtp_bn": -0.3360185147204996,
+        "induced_receipts_bn": 5.235550485206305,
+        "production_gain_bn": 4.899531970485806
+       }
+      ]
+     },
+     "G2": {
+      "population": 13017912.763478301,
+      "adults": 8914882.943565348,
+      "cost_bn": [
+       95.85540363700565,
+       121.27293753958797
+      ],
+      "own_span_bn": [
+       95.85540363700565,
+       121.27293753958797
+      ],
+      "uncorrected_cost_bn": [
+       64.57787320200715,
+       84.95583677524407
+      ],
+      "correction_bn": [
+       31.277530434998496,
+       36.317100764343905
+      ],
+      "per_member_usd": [
+       7363.346596232199,
+       9315.851146261994
+      ],
+      "per_adult_usd": [
+       10752.289653583493,
+       13603.424555015752
+      ],
+      "production": [
+       {
+        "private_wtp_bn": -0.10577495716997737,
+        "induced_receipts_bn": 2.3979784185242603,
+        "production_gain_bn": 2.292203461354283
+       },
+       {
+        "private_wtp_bn": -0.0695807105575615,
+        "induced_receipts_bn": 1.5774342687738454,
+        "production_gain_bn": 1.507853558216284
+       }
+      ]
+     },
+     "G3plus": {
+      "population": 14061454.067772321,
+      "adults": 9792850.628628222,
+      "cost_bn": [
+       89.24571508598622,
+       117.77843209662453
+      ],
+      "own_span_bn": [
+       89.24571508598622,
+       117.77843209662453
+      ],
+      "uncorrected_cost_bn": [
+       65.98029442676663,
+       86.841720736639
+      ],
+      "correction_bn": [
+       23.265420659219586,
+       30.936711359985523
+      ],
+      "per_member_usd": [
+       6346.834022701105,
+       8375.978154817065
+      ],
+      "per_adult_usd": [
+       9113.354065167408,
+       12026.981372748955
+      ],
+      "production": [
+       {
+        "private_wtp_bn": -0.08787494863292512,
+        "induced_receipts_bn": 2.2571632527504875,
+        "production_gain_bn": 2.169288304117562
+       },
+       {
+        "private_wtp_bn": -0.05780575600954842,
+        "induced_receipts_bn": 1.4848034651191084,
+        "production_gain_bn": 1.42699770910956
+       }
+      ]
+     }
+    }
+   },
+   "g2_adults_alone": {
+    "formula": "G2(a) - [G1(b) - G1(a)] (cost allocation residual; not a measured age cell)",
+    "cost_bn": [
+     29.002673079782767,
+     49.83594308026939
+    ],
+    "population": 8914882.943565348,
+    "production_rule": "aumann_shapley"
+   }
+  },
+  "oct14_cash": {
+   "conventions": {
+    "a": {
+     "G1": {
+      "population": 11036701.061391935,
+      "adults": 10566524.710023813,
+      "cost_bn": [
+       27.009351584496645,
+       50.481962358861196
+      ],
+      "own_span_bn": [
+       27.009351584496645,
+       50.481962358861196
+      ],
+      "uncorrected_cost_bn": [
+       41.49046918496068,
+       63.23539883310084
+      ],
+      "correction_bn": [
+       -14.481117600464035,
+       -12.753436474239642
+      ],
+      "per_member_usd": [
+       2447.2305115683057,
+       4574.008309009547
+      ],
+      "per_adult_usd": [
+       2556.1243952682507,
+       4777.536961700574
+      ],
+      "production": [
+       {
+        "private_wtp_bn": -0.5087460318568775,
+        "induced_receipts_bn": 7.92828000479671,
+        "production_gain_bn": 7.419533972939832
+       },
+       {
+        "private_wtp_bn": -0.3346624885232174,
+        "induced_receipts_bn": 5.215368276624157,
+        "production_gain_bn": 4.88070578810094
+       }
+      ]
+     },
+     "G2": {
+      "population": 14333217.663520353,
+      "adults": 8914882.943565348,
+      "cost_bn": [
+       108.13007906708894,
+       135.63773025097026
+      ],
+      "own_span_bn": [
+       108.13007906708894,
+       135.63773025097026
+      ],
+      "uncorrected_cost_bn": [
+       123.41886076266411,
+       146.73841883571538
+      ],
+      "correction_bn": [
+       -15.288781695575167,
+       -11.100688584745114
+      ],
+      "per_member_usd": [
+       7544.019884822661,
+       9463.173827059329
+      ],
+      "per_adult_usd": [
+       12129.164202333794,
+       15214.751680937314
+      ],
+      "production": [
+       {
+        "private_wtp_bn": -0.10631273486899767,
+        "induced_receipts_bn": 2.405577630384593,
+        "production_gain_bn": 2.2992648955155954
+       },
+       {
+        "private_wtp_bn": -0.06993447061023361,
+        "induced_receipts_bn": 1.5824331699781096,
+        "production_gain_bn": 1.512498699367876
+       }
+      ]
+     },
+     "G3plus": {
+      "population": 17382294.199460845,
+      "adults": 9792850.628628222,
+      "cost_bn": [
+       129.2861429639214,
+       162.40312387665526
+      ],
+      "own_span_bn": [
+       129.2861429639214,
+       162.40312387665526
+      ],
+      "uncorrected_cost_bn": [
+       119.38174023508549,
+       143.5763034046684
+      ],
+      "correction_bn": [
+       9.904402728835919,
+       18.82682047198685
+      ],
+      "per_member_usd": [
+       7437.8066255449485,
+       9343.020087744952
+      ],
+      "per_adult_usd": [
+       13202.094861527745,
+       16583.84570902054
+      ],
+      "production": [
+       {
+        "private_wtp_bn": -0.08939857001691982,
+        "induced_receipts_bn": 2.2802445589796747,
+        "production_gain_bn": 2.1908459889627547
+       },
+       {
+        "private_wtp_bn": -0.05880802215415847,
+        "induced_receipts_bn": 1.499986772496991,
+        "production_gain_bn": 1.4411787503428326
+       }
+      ]
+     }
+    },
+    "b": {
+     "G1": {
+      "population": 15672846.093122507,
+      "adults": 10566524.710023813,
+      "cost_bn": [
+       140.44695931058493,
+       170.5939512683441
+      ],
+      "own_span_bn": [
+       140.44695931058493,
+       170.5939512683441
+      ],
+      "uncorrected_cost_bn": [
+       153.7329025539363,
+       181.7525635616015
+      ],
+      "correction_bn": [
+       -13.285943243351369,
+       -11.158612293257391
+      ],
+      "per_member_usd": [
+       8961.16496493992,
+       10884.682351548354
+      ],
+      "per_adult_usd": [
+       13291.688910484592,
+       16144.75486973613
+      ],
+      "production": [
+       {
+        "private_wtp_bn": -0.5108074309398926,
+        "induced_receipts_bn": 7.95896052288623,
+        "production_gain_bn": 7.448153091946337
+       },
+       {
+        "private_wtp_bn": -0.3360185147204996,
+        "induced_receipts_bn": 5.235550485206305,
+        "production_gain_bn": 4.899531970485806
+       }
+      ]
+     },
+     "G2": {
+      "population": 13017912.763478301,
+      "adults": 8914882.943565348,
+      "cost_bn": [
+       61.60964980155388,
+       87.02718370413622
+      ],
+      "own_span_bn": [
+       61.60964980155388,
+       87.02718370413622
+      ],
+      "uncorrected_cost_bn": [
+       64.57787320200715,
+       84.95583677524407
+      ],
+      "correction_bn": [
+       -2.968223400453276,
+       2.0713469288921544
+      ],
+      "per_member_usd": [
+       4732.682644363656,
+       6685.187194393452
+      ],
+      "per_adult_usd": [
+       6910.875912961141,
+       9762.010814393403
+      ],
+      "production": [
+       {
+        "private_wtp_bn": -0.10577495716997737,
+        "induced_receipts_bn": 2.3979784185242603,
+        "production_gain_bn": 2.292203461354283
+       },
+       {
+        "private_wtp_bn": -0.0695807105575615,
+        "induced_receipts_bn": 1.5774342687738454,
+        "production_gain_bn": 1.507853558216284
+       }
+      ]
+     },
+     "G3plus": {
+      "population": 14061454.067772321,
+      "adults": 9792850.628628222,
+      "cost_bn": [
+       62.36896450336825,
+       90.90168151400658
+      ],
+      "own_span_bn": [
+       62.36896450336825,
+       90.90168151400658
+      ],
+      "uncorrected_cost_bn": [
+       65.98029442676663,
+       86.841720736639
+      ],
+      "correction_bn": [
+       -3.6113299233983867,
+       4.0599607773675785
+      ],
+      "per_member_usd": [
+       4435.456262401248,
+       6464.60039451721
+      ],
+      "per_adult_usd": [
+       6368.826286499262,
+       9282.453594080811
+      ],
+      "production": [
+       {
+        "private_wtp_bn": -0.08787494863292512,
+        "induced_receipts_bn": 2.2571632527504875,
+        "production_gain_bn": 2.169288304117562
+       },
+       {
+        "private_wtp_bn": -0.05780575600954842,
+        "induced_receipts_bn": 1.4848034651191084,
+        "production_gain_bn": 1.42699770910956
+       }
+      ]
+     }
+    }
+   },
+   "g2_adults_alone": {
+    "formula": "G2(a) - [G1(b) - G1(a)] (cost allocation residual; not a measured age cell)",
+    "cost_bn": [
+     -5.307528658999345,
+     15.525741341487347
+    ],
+    "population": 8914882.943565348,
+    "production_rule": "aumann_shapley"
+   }
+  }
+ },
+ "ordering_b": {
+  "oct14": {
+   "baseline": [
+    true,
+    true
+   ],
+   "minors": [
+    false,
+    false
+   ],
+   "credits": [
+    true,
+    true
+   ],
+   "tags": [
+    true,
+    true
+   ],
+   "tags_union": [
+    true,
+    true
+   ],
+   "state_prices": [
+    true,
+    true
+   ],
+   "all": [
+    false,
+    false
+   ],
+   "floor_minors": [
+    true,
+    true
+   ],
+   "floor": [
+    false,
+    false
+   ],
+   "labour_income": [
+    false,
+    false
+   ]
+  },
+  "oct14_cash": {
+   "baseline": [
+    true,
+    true
+   ],
+   "minors": [
+    false,
+    true
+   ],
+   "credits": [
+    true,
+    true
+   ],
+   "tags": [
+    true,
+    true
+   ],
+   "tags_union": [
+    true,
+    true
+   ],
+   "state_prices": [
+    true,
+    true
+   ],
+   "all": [
+    false,
+    false
+   ],
+   "floor_minors": [
+    true,
+    true
+   ],
+   "floor": [
+    true,
+    true
+   ],
+   "labour_income": [
+    false,
+    false
+   ]
+  }
+ },
+ "uncertainty": "credit net SE keeps covariance and fixed imputation seeds; state-price index SE conditional on finance/row4 factors; no invented account-wide or added-parent SE"
+}
