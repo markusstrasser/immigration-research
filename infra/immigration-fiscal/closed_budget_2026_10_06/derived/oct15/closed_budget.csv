@@ -1,0 +1,337 @@
+fix,law,window,basis,pct_gdp,trust_funds_pct_gdp,fix_bn,rule,set,end,share,case_bn,offset_bn,cost_to_others_bn,change_pct
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,per_person,main,low,0.134796,365.791930,26.407008,339.384922,-7.219
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,per_person,main,low,0.134796,365.791930,27.746171,338.045759,-7.585
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,per_person,main,low,0.134796,365.791930,29.406340,336.385591,-8.039
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,per_person,main,low,0.134796,365.791930,43.152662,322.639268,-11.797
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,per_person,main,low,0.134796,365.791930,44.868170,320.923760,-12.266
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,per_person,main,low,0.134796,365.791930,75.041117,290.750813,-20.515
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,per_person,main,low,0.134796,365.791930,86.597520,279.194411,-23.674
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,per_person,main,low,0.134796,365.791930,88.313027,277.478903,-24.143
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,per_person,main,low,0.134796,365.791930,92.024107,273.767824,-25.158
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,per_person,main,low,0.134796,365.791930,94.788779,271.003151,-25.913
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,per_person,main,low,0.134796,365.791930,117.246255,248.545675,-32.053
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,per_person,main,low,0.134796,365.791930,135.468964,230.322967,-37.034
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,per_person,main,low,0.134796,365.791930,167.065223,198.726707,-45.672
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,per_person,main,low,0.134796,365.791930,185.628026,180.163904,-50.747
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,per_household,main,low,0.101567,365.791930,19.897348,345.894582,-5.440
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,per_household,main,low,0.101567,365.791930,20.906391,344.885540,-5.715
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,per_household,main,low,0.101567,365.791930,22.157307,343.634624,-6.057
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,per_household,main,low,0.101567,365.791930,32.514988,333.276942,-8.889
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,per_household,main,low,0.101567,365.791930,33.807601,331.984329,-9.242
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,per_household,main,low,0.101567,365.791930,56.542537,309.249393,-15.458
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,per_household,main,low,0.101567,365.791930,65.250141,300.541789,-17.838
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,per_household,main,low,0.101567,365.791930,66.542754,299.249176,-18.191
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,per_household,main,low,0.101567,365.791930,69.339006,296.452924,-18.956
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,per_household,main,low,0.101567,365.791930,71.422152,294.369778,-19.525
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,per_household,main,low,0.101567,365.791930,88.343577,277.448353,-24.151
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,per_household,main,low,0.101567,365.791930,102.074159,263.717771,-27.905
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,per_household,main,low,0.101567,365.791930,125.881543,239.910387,-34.413
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,per_household,main,low,0.101567,365.791930,139.868381,225.923549,-38.237
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,federal_benefits,main,low,0.108056,365.791930,21.168580,344.623351,-5.787
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,federal_benefits,main,low,0.108056,365.791930,22.242089,343.549841,-6.081
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,federal_benefits,main,low,0.108056,365.791930,23.572925,342.219005,-6.444
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,federal_benefits,main,low,0.108056,365.791930,34.592354,331.199577,-9.457
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,federal_benefits,main,low,0.108056,365.791930,35.967551,329.824379,-9.833
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,federal_benefits,main,low,0.108056,365.791930,60.155010,305.636920,-16.445
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,federal_benefits,main,low,0.108056,365.791930,69.418938,296.372992,-18.978
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,federal_benefits,main,low,0.108056,365.791930,70.794136,294.997794,-19.354
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,federal_benefits,main,low,0.108056,365.791930,73.769039,292.022891,-20.167
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,federal_benefits,main,low,0.108056,365.791930,75.985276,289.806654,-20.773
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,federal_benefits,main,low,0.108056,365.791930,93.987803,271.804128,-25.694
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,federal_benefits,main,low,0.108056,365.791930,108.595624,257.196307,-29.688
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,federal_benefits,main,low,0.108056,365.791930,133.924049,231.867881,-36.612
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,federal_benefits,main,low,0.108056,365.791930,148.804499,216.987431,-40.680
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,all_taxes,main,low,0.074231,365.791930,14.542094,351.249836,-3.976
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,all_taxes,main,low,0.074231,365.791930,15.279559,350.512372,-4.177
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,all_taxes,main,low,0.074231,365.791930,16.193798,349.598132,-4.427
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,all_taxes,main,low,0.074231,365.791930,23.763770,342.028160,-6.497
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,all_taxes,main,low,0.074231,365.791930,24.708485,341.083446,-6.755
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,all_taxes,main,low,0.074231,365.791930,41.324446,324.467484,-11.297
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,all_taxes,main,low,0.074231,365.791930,47.688450,318.103480,-13.037
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,all_taxes,main,low,0.074231,365.791930,48.633164,317.158766,-13.295
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,all_taxes,main,low,0.074231,365.791930,50.676821,315.115109,-13.854
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,all_taxes,main,low,0.074231,365.791930,52.199301,313.592630,-14.270
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,all_taxes,main,low,0.074231,365.791930,64.566424,301.225506,-17.651
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,all_taxes,main,low,0.074231,365.791930,74.601500,291.190430,-20.395
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,all_taxes,main,low,0.074231,365.791930,92.001267,273.790663,-25.151
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,all_taxes,main,low,0.074231,365.791930,102.223630,263.568300,-27.946
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,federal_taxes,main,low,0.068058,365.791930,13.332757,352.459173,-3.645
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,federal_taxes,main,low,0.068058,365.791930,14.008893,351.783037,-3.830
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,federal_taxes,main,low,0.068058,365.791930,14.847103,350.944827,-4.059
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,federal_taxes,main,low,0.068058,365.791930,21.787548,344.004383,-5.956
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,federal_taxes,main,low,0.068058,365.791930,22.653698,343.138232,-6.193
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,federal_taxes,main,low,0.068058,365.791930,37.887857,327.904073,-10.358
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,federal_taxes,main,low,0.068058,365.791930,43.722623,322.069307,-11.953
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,federal_taxes,main,low,0.068058,365.791930,44.588773,321.203157,-12.190
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,federal_taxes,main,low,0.068058,365.791930,46.462478,319.329453,-12.702
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,federal_taxes,main,low,0.068058,365.791930,47.858346,317.933584,-13.083
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,federal_taxes,main,low,0.068058,365.791930,59.197005,306.594925,-16.183
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,federal_taxes,main,low,0.068058,365.791930,68.397553,297.394378,-18.698
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,federal_taxes,main,low,0.068058,365.791930,84.350335,281.441596,-23.060
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,federal_taxes,main,low,0.068058,365.791930,93.722594,272.069336,-25.622
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,income_tax,main,low,0.051961,365.791930,10.179292,355.612638,-2.783
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,income_tax,main,low,0.051961,365.791930,10.695508,355.096422,-2.924
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,income_tax,main,low,0.051961,365.791930,11.335465,354.456466,-3.099
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,income_tax,main,low,0.051961,365.791930,16.634355,349.157576,-4.547
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,income_tax,main,low,0.051961,365.791930,17.295643,348.496287,-4.728
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,income_tax,main,low,0.051961,365.791930,28.926617,336.865313,-7.908
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,income_tax,main,low,0.051961,365.791930,33.381344,332.410587,-9.126
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,income_tax,main,low,0.051961,365.791930,34.042632,331.749298,-9.307
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,income_tax,main,low,0.051961,365.791930,35.473168,330.318763,-9.698
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,income_tax,main,low,0.051961,365.791930,36.538885,329.253045,-9.989
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,income_tax,main,low,0.051961,365.791930,45.195723,320.596207,-12.356
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,income_tax,main,low,0.051961,365.791930,52.220157,313.571774,-14.276
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,income_tax,main,low,0.051961,365.791930,64.399785,301.392145,-17.606
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,income_tax,main,low,0.051961,365.791930,71.555317,294.236614,-19.562
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,per_person,main,high,0.134796,455.981785,26.407008,429.574776,-5.791
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,per_person,main,high,0.134796,455.981785,27.746171,428.235614,-6.085
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,per_person,main,high,0.134796,455.981785,29.406340,426.575445,-6.449
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,per_person,main,high,0.134796,455.981785,43.152662,412.829122,-9.464
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,per_person,main,high,0.134796,455.981785,44.868170,411.113615,-9.840
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,per_person,main,high,0.134796,455.981785,75.041117,380.940668,-16.457
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,per_person,main,high,0.134796,455.981785,86.597520,369.384265,-18.991
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,per_person,main,high,0.134796,455.981785,88.313027,367.668758,-19.368
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,per_person,main,high,0.134796,455.981785,92.024107,363.957678,-20.182
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,per_person,main,high,0.134796,455.981785,94.788779,361.193005,-20.788
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,per_person,main,high,0.134796,455.981785,117.246255,338.735529,-25.713
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,per_person,main,high,0.134796,455.981785,135.468964,320.512821,-29.709
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,per_person,main,high,0.134796,455.981785,167.065223,288.916561,-36.639
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,per_person,main,high,0.134796,455.981785,185.628026,270.353759,-40.710
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,per_household,main,high,0.101567,455.981785,19.897348,436.084436,-4.364
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,per_household,main,high,0.101567,455.981785,20.906391,435.075394,-4.585
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,per_household,main,high,0.101567,455.981785,22.157307,433.824478,-4.859
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,per_household,main,high,0.101567,455.981785,32.514988,423.466797,-7.131
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,per_household,main,high,0.101567,455.981785,33.807601,422.174183,-7.414
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,per_household,main,high,0.101567,455.981785,56.542537,399.439248,-12.400
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,per_household,main,high,0.101567,455.981785,65.250141,390.731644,-14.310
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,per_household,main,high,0.101567,455.981785,66.542754,389.439030,-14.593
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,per_household,main,high,0.101567,455.981785,69.339006,386.642779,-15.207
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,per_household,main,high,0.101567,455.981785,71.422152,384.559633,-15.663
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,per_household,main,high,0.101567,455.981785,88.343577,367.638207,-19.374
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,per_household,main,high,0.101567,455.981785,102.074159,353.907626,-22.386
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,per_household,main,high,0.101567,455.981785,125.881543,330.100242,-27.607
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,per_household,main,high,0.101567,455.981785,139.868381,316.113404,-30.674
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,federal_benefits,main,high,0.108488,455.981785,21.253108,434.728677,-4.661
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,federal_benefits,main,high,0.108488,455.981785,22.330904,433.650881,-4.897
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,federal_benefits,main,high,0.108488,455.981785,23.667054,432.314730,-5.190
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,federal_benefits,main,high,0.108488,455.981785,34.730484,421.251301,-7.617
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,federal_benefits,main,high,0.108488,455.981785,36.111173,419.870612,-7.919
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,federal_benefits,main,high,0.108488,455.981785,60.395215,395.586570,-13.245
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,federal_benefits,main,high,0.108488,455.981785,69.696134,386.285650,-15.285
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,federal_benefits,main,high,0.108488,455.981785,71.076823,384.904961,-15.588
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,federal_benefits,main,high,0.108488,455.981785,74.063605,381.918179,-16.243
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,federal_benefits,main,high,0.108488,455.981785,76.288692,379.693093,-16.731
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,federal_benefits,main,high,0.108488,455.981785,94.363104,361.618680,-20.694
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,federal_benefits,main,high,0.108488,455.981785,109.029256,346.952529,-23.911
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,federal_benefits,main,high,0.108488,455.981785,134.458820,321.522965,-29.488
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,federal_benefits,main,high,0.108488,455.981785,149.398689,306.583096,-32.764
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,all_taxes,main,high,0.074750,455.981785,14.643699,441.338086,-3.211
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,all_taxes,main,high,0.074750,455.981785,15.386316,440.595469,-3.374
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,all_taxes,main,high,0.074750,455.981785,16.306943,439.674842,-3.576
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,all_taxes,main,high,0.074750,455.981785,23.929806,432.051979,-5.248
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,all_taxes,main,high,0.074750,455.981785,24.881120,431.100664,-5.457
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,all_taxes,main,high,0.074750,455.981785,41.613176,414.368608,-9.126
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,all_taxes,main,high,0.074750,455.981785,48.021644,407.960140,-10.531
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,all_taxes,main,high,0.074750,455.981785,48.972959,407.008825,-10.740
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,all_taxes,main,high,0.074750,455.981785,51.030895,404.950890,-11.191
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,all_taxes,main,high,0.074750,455.981785,52.564012,403.417773,-11.528
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,all_taxes,main,high,0.074750,455.981785,65.017543,390.964241,-14.259
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,all_taxes,main,high,0.074750,455.981785,75.122734,380.859051,-16.475
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,all_taxes,main,high,0.074750,455.981785,92.644071,363.337713,-20.317
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,all_taxes,main,high,0.074750,455.981785,102.937857,353.043928,-22.575
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,federal_taxes,main,high,0.068058,455.981785,13.332757,442.649028,-2.924
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,federal_taxes,main,high,0.068058,455.981785,14.008893,441.972892,-3.072
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,federal_taxes,main,high,0.068058,455.981785,14.847103,441.134682,-3.256
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,federal_taxes,main,high,0.068058,455.981785,21.787548,434.194237,-4.778
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,federal_taxes,main,high,0.068058,455.981785,22.653698,433.328086,-4.968
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,federal_taxes,main,high,0.068058,455.981785,37.887857,418.093927,-8.309
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,federal_taxes,main,high,0.068058,455.981785,43.722623,412.259162,-9.589
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,federal_taxes,main,high,0.068058,455.981785,44.588773,411.393011,-9.779
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,federal_taxes,main,high,0.068058,455.981785,46.462478,409.519307,-10.190
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,federal_taxes,main,high,0.068058,455.981785,47.858346,408.123439,-10.496
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,federal_taxes,main,high,0.068058,455.981785,59.197005,396.784780,-12.982
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,federal_taxes,main,high,0.068058,455.981785,68.397553,387.584232,-15.000
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,federal_taxes,main,high,0.068058,455.981785,84.350335,371.631450,-18.499
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,federal_taxes,main,high,0.068058,455.981785,93.722594,362.259190,-20.554
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,income_tax,main,high,0.051961,455.981785,10.179292,445.802493,-2.232
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,income_tax,main,high,0.051961,455.981785,10.695508,445.286277,-2.346
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,income_tax,main,high,0.051961,455.981785,11.335465,444.646320,-2.486
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,income_tax,main,high,0.051961,455.981785,16.634355,439.347430,-3.648
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,income_tax,main,high,0.051961,455.981785,17.295643,438.686141,-3.793
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,income_tax,main,high,0.051961,455.981785,28.926617,427.055167,-6.344
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,income_tax,main,high,0.051961,455.981785,33.381344,422.600441,-7.321
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,income_tax,main,high,0.051961,455.981785,34.042632,421.939152,-7.466
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,income_tax,main,high,0.051961,455.981785,35.473168,420.508617,-7.780
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,income_tax,main,high,0.051961,455.981785,36.538885,419.442900,-8.013
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,income_tax,main,high,0.051961,455.981785,45.195723,410.786061,-9.912
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,income_tax,main,high,0.051961,455.981785,52.220157,403.761628,-11.452
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,income_tax,main,high,0.051961,455.981785,64.399785,391.582000,-14.123
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,income_tax,main,high,0.051961,455.981785,71.555317,384.426468,-15.693
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,per_person,cash,low,0.134796,281.752564,26.407008,255.345555,-9.372
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,per_person,cash,low,0.134796,281.752564,27.746171,254.006393,-9.848
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,per_person,cash,low,0.134796,281.752564,29.406340,252.346224,-10.437
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,per_person,cash,low,0.134796,281.752564,43.152662,238.599901,-15.316
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,per_person,cash,low,0.134796,281.752564,44.868170,236.884394,-15.925
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,per_person,cash,low,0.134796,281.752564,75.041117,206.711447,-26.634
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,per_person,cash,low,0.134796,281.752564,86.597520,195.155044,-30.735
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,per_person,cash,low,0.134796,281.752564,88.313027,193.439537,-31.344
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,per_person,cash,low,0.134796,281.752564,92.024107,189.728457,-32.661
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,per_person,cash,low,0.134796,281.752564,94.788779,186.963784,-33.643
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,per_person,cash,low,0.134796,281.752564,117.246255,164.506308,-41.613
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,per_person,cash,low,0.134796,281.752564,135.468964,146.283600,-48.081
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,per_person,cash,low,0.134796,281.752564,167.065223,114.687340,-59.295
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,per_person,cash,low,0.134796,281.752564,185.628026,96.124538,-65.883
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,per_household,cash,low,0.101567,281.752564,19.897348,261.855215,-7.062
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,per_household,cash,low,0.101567,281.752564,20.906391,260.846173,-7.420
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,per_household,cash,low,0.101567,281.752564,22.157307,259.595257,-7.864
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,per_household,cash,low,0.101567,281.752564,32.514988,249.237576,-11.540
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,per_household,cash,low,0.101567,281.752564,33.807601,247.944962,-11.999
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,per_household,cash,low,0.101567,281.752564,56.542537,225.210027,-20.068
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,per_household,cash,low,0.101567,281.752564,65.250141,216.502423,-23.159
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,per_household,cash,low,0.101567,281.752564,66.542754,215.209809,-23.617
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,per_household,cash,low,0.101567,281.752564,69.339006,212.413558,-24.610
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,per_household,cash,low,0.101567,281.752564,71.422152,210.330412,-25.349
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,per_household,cash,low,0.101567,281.752564,88.343577,193.408986,-31.355
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,per_household,cash,low,0.101567,281.752564,102.074159,179.678405,-36.228
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,per_household,cash,low,0.101567,281.752564,125.881543,155.871021,-44.678
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,per_household,cash,low,0.101567,281.752564,139.868381,141.884183,-49.642
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,federal_benefits,cash,low,0.085695,281.752564,16.787825,264.964738,-5.958
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,federal_benefits,cash,low,0.085695,281.752564,17.639176,264.113388,-6.261
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,federal_benefits,cash,low,0.085695,281.752564,18.694601,263.057962,-6.635
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,federal_benefits,cash,low,0.085695,281.752564,27.433602,254.318962,-9.737
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,federal_benefits,cash,low,0.085695,281.752564,28.524208,253.228356,-10.124
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,federal_benefits,cash,low,0.085695,281.752564,47.706168,234.046396,-16.932
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,federal_benefits,cash,low,0.085695,281.752564,55.052962,226.699601,-19.539
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,federal_benefits,cash,low,0.085695,281.752564,56.143568,225.608995,-19.927
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,federal_benefits,cash,low,0.085695,281.752564,58.502827,223.249737,-20.764
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,federal_benefits,cash,low,0.085695,281.752564,60.260422,221.492141,-21.388
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,federal_benefits,cash,low,0.085695,281.752564,74.537397,207.215167,-26.455
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,federal_benefits,cash,low,0.085695,281.752564,86.122187,195.630377,-30.567
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,federal_benefits,cash,low,0.085695,281.752564,106.208994,175.543570,-37.696
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,federal_benefits,cash,low,0.085695,281.752564,118.009993,163.742570,-41.884
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,all_taxes,cash,low,0.073635,281.752564,14.425285,267.327278,-5.120
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,all_taxes,cash,low,0.073635,281.752564,15.156826,266.595738,-5.379
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,all_taxes,cash,low,0.073635,281.752564,16.063722,265.688842,-5.701
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,all_taxes,cash,low,0.073635,281.752564,23.572889,258.179675,-8.367
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,all_taxes,cash,low,0.073635,281.752564,24.510014,257.242549,-8.699
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,all_taxes,cash,low,0.073635,281.752564,40.992509,240.760055,-14.549
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,all_taxes,cash,low,0.073635,281.752564,47.305394,234.447170,-16.790
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,all_taxes,cash,low,0.073635,281.752564,48.242520,233.510044,-17.122
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,all_taxes,cash,low,0.073635,281.752564,50.269761,231.482803,-17.842
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,all_taxes,cash,low,0.073635,281.752564,51.780011,229.972552,-18.378
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,all_taxes,cash,low,0.073635,281.752564,64.047796,217.704767,-22.732
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,all_taxes,cash,low,0.073635,281.752564,74.002266,207.750297,-26.265
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,all_taxes,cash,low,0.073635,281.752564,91.262270,190.490294,-32.391
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,all_taxes,cash,low,0.073635,281.752564,101.402522,180.350041,-35.990
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,federal_taxes,cash,low,0.067554,281.752564,13.234105,268.518458,-4.697
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,federal_taxes,cash,low,0.067554,281.752564,13.905238,267.847325,-4.935
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,federal_taxes,cash,low,0.067554,281.752564,14.737246,267.015317,-5.231
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,federal_taxes,cash,low,0.067554,281.752564,21.626337,260.126226,-7.676
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,federal_taxes,cash,low,0.067554,281.752564,22.486079,259.266484,-7.981
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,federal_taxes,cash,low,0.067554,281.752564,37.607518,244.145046,-13.348
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,federal_taxes,cash,low,0.067554,281.752564,43.399111,238.353453,-15.403
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,federal_taxes,cash,low,0.067554,281.752564,44.258853,237.493711,-15.708
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,federal_taxes,cash,low,0.067554,281.752564,46.118693,235.633871,-16.369
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,federal_taxes,cash,low,0.067554,281.752564,47.504233,234.248331,-16.860
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,federal_taxes,cash,low,0.067554,281.752564,58.758995,222.993568,-20.855
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,federal_taxes,cash,low,0.067554,281.752564,67.891466,213.861097,-24.096
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,federal_taxes,cash,low,0.067554,281.752564,83.726211,198.026353,-29.716
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,federal_taxes,cash,low,0.067554,281.752564,93.029123,188.723441,-33.018
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,income_tax,cash,low,0.051103,281.752564,10.011150,271.741414,-3.553
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,income_tax,cash,low,0.051103,281.752564,10.518839,271.233724,-3.733
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,income_tax,cash,low,0.051103,281.752564,11.148225,270.604339,-3.957
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,income_tax,cash,low,0.051103,281.752564,16.359588,265.392976,-5.806
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,income_tax,cash,low,0.051103,281.752564,17.009953,264.742611,-6.037
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,income_tax,cash,low,0.051103,281.752564,28.448806,253.303757,-10.097
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,income_tax,cash,low,0.051103,281.752564,32.829949,248.922614,-11.652
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,income_tax,cash,low,0.051103,281.752564,33.480315,248.272249,-11.883
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,income_tax,cash,low,0.051103,281.752564,34.887220,246.865343,-12.382
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,income_tax,cash,low,0.051103,281.752564,35.935334,245.817229,-12.754
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,income_tax,cash,low,0.051103,281.752564,44.449179,237.303385,-15.776
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,income_tax,cash,low,0.051103,281.752564,51.357582,230.394982,-18.228
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,income_tax,cash,low,0.051103,281.752564,63.336027,218.416537,-22.479
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,income_tax,cash,low,0.051103,281.752564,70.373363,211.379201,-24.977
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,per_person,cash,high,0.134796,371.942418,26.407008,345.535410,-7.100
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,per_person,cash,high,0.134796,371.942418,27.746171,344.196247,-7.460
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,per_person,cash,high,0.134796,371.942418,29.406340,342.536078,-7.906
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,per_person,cash,high,0.134796,371.942418,43.152662,328.789756,-11.602
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,per_person,cash,high,0.134796,371.942418,44.868170,327.074248,-12.063
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,per_person,cash,high,0.134796,371.942418,75.041117,296.901301,-20.175
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,per_person,cash,high,0.134796,371.942418,86.597520,285.344899,-23.283
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,per_person,cash,high,0.134796,371.942418,88.313027,283.629391,-23.744
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,per_person,cash,high,0.134796,371.942418,92.024107,279.918311,-24.741
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,per_person,cash,high,0.134796,371.942418,94.788779,277.153639,-25.485
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,per_person,cash,high,0.134796,371.942418,117.246255,254.696163,-31.523
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,per_person,cash,high,0.134796,371.942418,135.468964,236.473454,-36.422
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,per_person,cash,high,0.134796,371.942418,167.065223,204.877195,-44.917
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,per_person,cash,high,0.134796,371.942418,185.628026,186.314392,-49.908
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,per_household,cash,high,0.101567,371.942418,19.897348,352.045070,-5.350
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,per_household,cash,high,0.101567,371.942418,20.906391,351.036027,-5.621
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,per_household,cash,high,0.101567,371.942418,22.157307,349.785111,-5.957
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,per_household,cash,high,0.101567,371.942418,32.514988,339.427430,-8.742
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,per_household,cash,high,0.101567,371.942418,33.807601,338.134817,-9.089
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,per_household,cash,high,0.101567,371.942418,56.542537,315.399881,-15.202
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,per_household,cash,high,0.101567,371.942418,65.250141,306.692277,-17.543
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,per_household,cash,high,0.101567,371.942418,66.542754,305.399664,-17.891
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,per_household,cash,high,0.101567,371.942418,69.339006,302.603412,-18.642
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,per_household,cash,high,0.101567,371.942418,71.422152,300.520266,-19.202
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,per_household,cash,high,0.101567,371.942418,88.343577,283.598841,-23.752
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,per_household,cash,high,0.101567,371.942418,102.074159,269.868259,-27.444
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,per_household,cash,high,0.101567,371.942418,125.881543,246.060875,-33.844
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,per_household,cash,high,0.101567,371.942418,139.868381,232.074037,-37.605
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,federal_benefits,cash,high,0.086125,371.942418,16.872213,355.070205,-4.536
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,federal_benefits,cash,high,0.086125,371.942418,17.727843,354.214575,-4.766
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,federal_benefits,cash,high,0.086125,371.942418,18.788573,353.153845,-5.051
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,federal_benefits,cash,high,0.086125,371.942418,27.571502,344.370916,-7.413
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,federal_benefits,cash,high,0.086125,371.942418,28.667590,343.274828,-7.708
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,federal_benefits,cash,high,0.086125,371.942418,47.945971,323.996447,-12.891
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,federal_benefits,cash,high,0.086125,371.942418,55.329696,316.612722,-14.876
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,federal_benefits,cash,high,0.086125,371.942418,56.425784,315.516634,-15.171
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,federal_benefits,cash,high,0.086125,371.942418,58.796902,313.145516,-15.808
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,federal_benefits,cash,high,0.086125,371.942418,60.563332,311.379086,-16.283
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,federal_benefits,cash,high,0.086125,371.942418,74.912073,297.030345,-20.141
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,federal_benefits,cash,high,0.086125,371.942418,86.555096,285.387322,-23.271
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,federal_benefits,cash,high,0.086125,371.942418,106.742873,265.199545,-28.699
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,federal_benefits,cash,high,0.086125,371.942418,118.603192,253.339226,-31.888
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,all_taxes,cash,high,0.074112,371.942418,14.518762,357.423656,-3.903
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,all_taxes,cash,high,0.074112,371.942418,15.255043,356.687375,-4.101
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,all_taxes,cash,high,0.074112,371.942418,16.167816,355.774602,-4.347
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,all_taxes,cash,high,0.074112,371.942418,23.725642,348.216776,-6.379
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,all_taxes,cash,high,0.074112,371.942418,24.668840,347.273578,-6.632
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,all_taxes,cash,high,0.074112,371.942418,41.258142,330.684276,-11.093
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,all_taxes,cash,high,0.074112,371.942418,47.611935,324.330483,-12.801
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,all_taxes,cash,high,0.074112,371.942418,48.555133,323.387285,-13.054
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,all_taxes,cash,high,0.074112,371.942418,50.595511,321.346907,-13.603
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,all_taxes,cash,high,0.074112,371.942418,52.115548,319.826870,-14.012
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,all_taxes,cash,high,0.074112,371.942418,64.462829,307.479589,-17.331
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,all_taxes,cash,high,0.074112,371.942418,74.481804,297.460614,-20.025
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,all_taxes,cash,high,0.074112,371.942418,91.853653,280.088765,-24.696
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,all_taxes,cash,high,0.074112,371.942418,102.059615,269.882803,-27.440
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,federal_taxes,cash,high,0.067554,371.942418,13.234105,358.708313,-3.558
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,federal_taxes,cash,high,0.067554,371.942418,13.905238,358.037180,-3.739
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,federal_taxes,cash,high,0.067554,371.942418,14.737246,357.205172,-3.962
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,federal_taxes,cash,high,0.067554,371.942418,21.626337,350.316081,-5.814
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,federal_taxes,cash,high,0.067554,371.942418,22.486079,349.456339,-6.046
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,federal_taxes,cash,high,0.067554,371.942418,37.607518,334.334900,-10.111
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,federal_taxes,cash,high,0.067554,371.942418,43.399111,328.543307,-11.668
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,federal_taxes,cash,high,0.067554,371.942418,44.258853,327.683565,-11.899
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,federal_taxes,cash,high,0.067554,371.942418,46.118693,325.823725,-12.399
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,federal_taxes,cash,high,0.067554,371.942418,47.504233,324.438185,-12.772
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,federal_taxes,cash,high,0.067554,371.942418,58.758995,313.183423,-15.798
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,federal_taxes,cash,high,0.067554,371.942418,67.891466,304.050952,-18.253
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,federal_taxes,cash,high,0.067554,371.942418,83.726211,288.216207,-22.511
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,federal_taxes,cash,high,0.067554,371.942418,93.029123,278.913295,-25.012
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,general fund (trustees 75-year obligations),0.6686,1.7314,195.903,income_tax,cash,high,0.051103,371.942418,10.011150,361.931268,-2.692
+cbo2026_debt_stable,current law,2026-2056,general fund (trustees reading),0.7025,1.1975,205.838,income_tax,cash,high,0.051103,371.942418,10.518839,361.423579,-2.828
+cbo2026_debt_stable,current law,2026-2056,general fund (cbo reading),0.7446,1.1554,218.154,income_tax,cash,high,0.051103,371.942418,11.148225,360.794193,-2.997
+ag2026_cl,current law,2027-2056,general fund (trustees reading),1.0926,1.2374,320.132,income_tax,cash,high,0.051103,371.942418,16.359588,355.582830,-4.398
+ag2026_cl,current law,2027-2056,general fund (cbo reading),1.1360,1.1940,332.859,income_tax,cash,high,0.051103,371.942418,17.009953,354.932465,-4.573
+cbo2026_debt_stable,current law,2026-2056,as published,1.9000,0.0000,556.700,income_tax,cash,high,0.051103,371.942418,28.448806,343.493612,-7.649
+ag2026_cp,current policy,2027-2056,general fund (trustees reading),2.1926,1.2374,642.432,income_tax,cash,high,0.051103,371.942418,32.829949,339.112469,-8.827
+ag2026_cp,current policy,2027-2056,general fund (cbo reading),2.2360,1.1940,655.159,income_tax,cash,high,0.051103,371.942418,33.480315,338.462103,-9.001
+ag2026_cl,current law,2027-2056,as published,2.3300,0.0000,682.690,income_tax,cash,high,0.051103,371.942418,34.887220,337.055198,-9.380
+treasury_fy2025_75yr_real_discretionary,current policy,2026-2100,as published,2.4000,0.0000,703.200,income_tax,cash,high,0.051103,371.942418,35.935334,336.007084,-9.662
+treasury_fy2025_75yr,current policy,2026-2100,general fund (trustees 75-year obligations),2.9686,1.7314,869.803,income_tax,cash,high,0.051103,371.942418,44.449179,327.493239,-11.951
+ag2026_cp,current policy,2027-2056,as published,3.4300,0.0000,1004.990,income_tax,cash,high,0.051103,371.942418,51.357582,320.584836,-13.808
+aei_auerbach_gale_2013_low,current policy (2013),infinite,as published,4.2300,0.0000,1239.390,income_tax,cash,high,0.051103,371.942418,63.336027,308.606391,-17.028
+treasury_fy2025_75yr,current policy,2026-2100,as published,4.7000,0.0000,1377.100,income_tax,cash,high,0.051103,371.942418,70.373363,301.569055,-18.920

@@ -1,0 +1,19 @@
+{
+ "lane": "closed_budget_2026_10_06",
+ "rule": "per_household: each household an equal part, split equally over its civilian members",
+ "share": 0.10156733785004345,
+ "share_householder": 0.09556803427774244,
+ "per_person_share": 0.13479632998959892,
+ "ratio_to_per_person": 0.7534874121415659,
+ "households_row4": 134571250.21126488,
+ "households_cps_weights": 134963892.8,
+ "households_person_weight_split": 138021946.8655338,
+ "lineage_household_equivalents": 13668043.63511027,
+ "persons_per_household_lineage": 3.3091833409545264,
+ "persons_per_household_all": 2.4934279918784736,
+ "frame": {
+  "NG": 45230062.300746456,
+  "NC": 335543722.1788498
+ },
+ "placement": "the added people on the identified G3+ records at the measured age mix (meta.lineage.age_mix), by five-year band; item10 on its own observed PH_SEQ/PPPOS records; coverage proportional to current lineage weights within generation [ASSUMPTION]"
+}

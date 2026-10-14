@@ -1,6 +1,6 @@
 """Consistency of the closed-budget arm's committed outputs: every row is G - s * F, the cost falls as the fix grows,
 the household rule carries less than per head, the general-fund gaps net the trust-fund shortfall from the published
-gaps, and the summary's central row is the one the docs quote. Each check runs on the live oct14 outputs.
+gaps, and the summary's central row is the one the docs quote. Each check runs on the live oct15 outputs.
 Historical outputs are retained without regeneration."""
 import csv
 import json
@@ -10,7 +10,7 @@ import pytest
 
 LANE = Path(__file__).resolve().parent
 D = LANE / "derived"
-CASE_DIRS = pytest.mark.parametrize("d", [D / "oct14"], ids=["oct14"])
+CASE_DIRS = pytest.mark.parametrize("d", [D / "oct15"], ids=["oct15"])
 
 
 def rows(d):

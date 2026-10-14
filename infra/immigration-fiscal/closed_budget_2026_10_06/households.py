@@ -58,7 +58,9 @@ CASES = {"oct05": dict(decomp=DECOMP, out=OUT),
          "oct07": dict(decomp=FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct07.json", out=OUT / "oct07",
                        payload=FISCAL / "main_case_2026_10_07/derived/corrections.json"),
          "oct14": dict(decomp=FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct14.json", out=OUT / "oct14",
-                       payload=FISCAL / "main_case_2026_10_14/derived/corrections.json")}
+                       payload=FISCAL / "main_case_2026_10_14/derived/corrections.json"),
+         "oct15": dict(decomp=FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct15.json", out=OUT / "oct15",
+                       payload=FISCAL / "main_case_2026_10_15/derived/corrections.json")}
 sys.path.insert(0, str(FISCAL / "world_ledger_2026_09_27"))
 from population_basis import g3plus, reweight  # noqa: E402
 
@@ -95,7 +97,7 @@ def age_tilted(d, payload_file: Path) -> np.ndarray:
     return lw
 
 
-def main(case: str = "oct14") -> None:
+def main(case: str = "oct15") -> None:
     conf = CASES[case]
     spec = importlib.util.spec_from_file_location("dist_base", FISCAL / "distribution_weights_2026_09_23/distribute.py")
     B = importlib.util.module_from_spec(spec)
@@ -108,10 +110,32 @@ def main(case: str = "oct14") -> None:
     d = reweight(d, B.PATHS["cps"], gate, "lineage")
 
     frame = json.loads(conf["decomp"].read_text())["frame"]["row4"]
-    civ, tgt = d.civ.to_numpy(), d.target.to_numpy()
-    lw, r4 = d.pw.to_numpy(float), d.pw_row4.to_numpy(float)
+    civ, tgt = d.civ.to_numpy(), d.target.to_numpy(copy=True)
+    lw, r4 = d.pw.to_numpy(float, copy=True), d.pw_row4.to_numpy(float)
     if "payload" in conf:
         lw = age_tilted(d, conf["payload"])
+    if case == "oct15":
+        meta = json.loads(conf["payload"].read_text())["meta"]
+        people = json.loads((FISCAL / "main_case_2026_10_15/derived/union_people.json").read_text())["records"]
+        index = pd.MultiIndex.from_frame(d[["PH_SEQ", "PPPOS"]])
+        gate("completion_person_keys_unique", index.is_unique)
+        extra = np.zeros(len(d))
+        for row in people:
+            if not (row["central_reporter"] or row["observed_nonreporter"]):
+                continue
+            loc = index.get_loc((row["PH_SEQ"], row["PPPOS"]))
+            gate("completion_record_outside_previous_target", not tgt[loc] and civ[loc])
+            tgt[loc] = True
+            lw[loc] = row["people"]
+            extra[loc] = row["people"]
+        gate("completion_people_are_payloads", abs(extra.sum() - meta["union_completion"]["counts"]["total"]) < 1e-6)
+        g1 = tgt & d.PRCITSHP.isin([4, 5]).to_numpy() & d.PENATVTY.eq(303).to_numpy()
+        g2 = tgt & ~g1 & (d.PEFNTVTY.eq(303) | d.PEMNTVTY.eq(303)).to_numpy()
+        groups = {"G1": g1, "G2": g2, "G3plus": tgt & ~g1 & ~g2}
+        for generation, mask in groups.items():
+            missing = meta["coverage"]["counts_by_generation"][generation]
+            gate(f"coverage_{generation}_has_placement", lw[mask].sum() > 0)
+            lw[mask] *= 1 + missing / lw[mask].sum()
     gate("lineage_is_the_decompositions_NG", abs(lw[tgt].sum() - frame["NG"]) < 1e-2, frame=lw[tgt].sum(), NG=frame["NG"])
     gate("row4_civilians_are_the_decompositions_NC", abs(r4[civ].sum() - frame["NC"]) < 1.0, frame=r4[civ].sum(),
          NC=frame["NC"])
@@ -158,6 +182,12 @@ def main(case: str = "oct14") -> None:
     if "payload" in conf:
         out["placement"] = ("the added people on the identified G3+ records at the measured age mix "
                             "(meta.lineage.age_mix), by five-year band")
+    if case == "oct15":
+        out["placement"] += "; item10 on its own observed PH_SEQ/PPPOS records; coverage proportional to current lineage weights within generation [ASSUMPTION]"
+    sys.path.insert(0, str(FISCAL / "scripts"))
+    from memory_budget import require_within_budget
+    peak = require_within_budget("closed-budget households")
+    print(f"peak physical footprint {peak / 1e9:.3f} GB")
     conf["out"].mkdir(parents=True, exist_ok=True)
     (conf["out"] / "household_share.json").write_text(json.dumps(out, indent=1) + "\n")
     print(f"per-household share {share:.6f} (householder {share_head:.6f}; per person {per_person:.6f}); "
@@ -166,6 +196,6 @@ def main(case: str = "oct14") -> None:
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct14", choices=list(CASES),
-                    help="live case oct14 (default), or a historical case explicitly")
+    ap.add_argument("--case", default="oct15", choices=list(CASES),
+                    help="live case oct15 (default), or a historical case explicitly")
     main(ap.parse_args().case)

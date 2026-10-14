@@ -1,0 +1,212 @@
+{
+ "lane": "closed_budget_2026_10_06",
+ "gdp_2024_bn": 29300.0,
+ "sets": {
+  "main": {
+   "case_bn": [
+    365.7919302554848,
+    455.9817845889793
+   ],
+   "central": {
+    "definition": {
+     "fix": "ag2026_cl",
+     "basis": "general fund (cbo reading)",
+     "rule": "per_household"
+    },
+    "fix_bn": 332.859,
+    "offset_bn": [
+     33.807601,
+     33.807601
+    ],
+    "cost_bn": [
+     331.984329,
+     422.174183
+    ],
+    "change_pct": [
+     -9.242,
+     -7.414
+    ]
+   },
+   "current law": {
+    "fixes": [
+     "ag2026_cl",
+     "cbo2026_debt_stable"
+    ],
+    "fix_bn": [
+     205.838,
+     332.859
+    ],
+    "offset_bn": [
+     9.892367,
+     44.86817
+    ],
+    "cost_bn": [
+     320.92376,
+     446.089417
+    ],
+    "change_pct": [
+     -12.266,
+     -2.169
+    ]
+   },
+   "current policy": {
+    "fixes": [
+     "ag2026_cp",
+     "treasury_fy2025_75yr",
+     "treasury_fy2025_75yr_real_discretionary"
+    ],
+    "fix_bn": [
+     195.903,
+     869.803
+    ],
+    "offset_bn": [
+     9.414915,
+     117.246255
+    ],
+    "cost_bn": [
+     248.545675,
+     446.56687
+    ],
+    "change_pct": [
+     -32.053,
+     -2.065
+    ]
+   },
+   "aei_as_published_per_person": {
+    "cost_bn": [
+     198.726707,
+     288.916561
+    ]
+   },
+   "pooled_funds_arm": {
+    "trust_funds": "infra/immigration-fiscal/closed_budget_2026_10_06/derived/trust_funds.json",
+    "central": {
+     "fix_bn": 370.137,
+     "cost_bn": [
+      328.198087,
+      418.387941
+     ]
+    },
+    "current law": {
+     "cost_bn": [
+      315.898803,
+      444.601455
+     ]
+    },
+    "switch_bn": {
+     "central_fix_bn": -37.27800000000002,
+     "central_cost_bn": [
+      3.7862420000000157,
+      3.7862420000000157
+     ],
+     "rule": "separate funds less pooled: the general-fund fix nets OASI's post-depletion shortfall from 2032 Q4 instead of the pooled fund's from 2034 Q3"
+    }
+   }
+  },
+  "cash": {
+   "case_bn": [
+    281.75256367607324,
+    371.9424180095669
+   ],
+   "central": {
+    "definition": {
+     "fix": "ag2026_cl",
+     "basis": "general fund (cbo reading)",
+     "rule": "per_household"
+    },
+    "fix_bn": 332.859,
+    "offset_bn": [
+     33.807601,
+     33.807601
+    ],
+    "cost_bn": [
+     247.944962,
+     338.134817
+    ],
+    "change_pct": [
+     -11.999,
+     -9.089
+    ]
+   },
+   "current law": {
+    "fixes": [
+     "ag2026_cl",
+     "cbo2026_debt_stable"
+    ],
+    "fix_bn": [
+     205.838,
+     332.859
+    ],
+    "offset_bn": [
+     9.735858,
+     44.86817
+    ],
+    "cost_bn": [
+     236.884394,
+     362.20656
+    ],
+    "change_pct": [
+     -15.925,
+     -2.618
+    ]
+   },
+   "current policy": {
+    "fixes": [
+     "ag2026_cp",
+     "treasury_fy2025_75yr",
+     "treasury_fy2025_75yr_real_discretionary"
+    ],
+    "fix_bn": [
+     195.903,
+     869.803
+    ],
+    "offset_bn": [
+     9.265959,
+     117.246255
+    ],
+    "cost_bn": [
+     164.506308,
+     362.676459
+    ],
+    "change_pct": [
+     -41.613,
+     -2.491
+    ]
+   },
+   "aei_as_published_per_person": {
+    "cost_bn": [
+     114.68734,
+     204.877195
+    ]
+   },
+   "pooled_funds_arm": {
+    "trust_funds": "infra/immigration-fiscal/closed_budget_2026_10_06/derived/trust_funds.json",
+    "central": {
+     "fix_bn": 370.137,
+     "cost_bn": [
+      244.15872,
+      334.348575
+     ]
+    },
+    "current law": {
+     "cost_bn": [
+      231.859437,
+      360.742139
+     ]
+    },
+    "switch_bn": {
+     "central_fix_bn": -37.27800000000002,
+     "central_cost_bn": [
+      3.7862420000000157,
+      3.7862420000000157
+     ],
+     "rule": "separate funds less pooled: the general-fund fix nets OASI's post-depletion shortfall from 2032 Q4 instead of the pooled fund's from 2034 Q3"
+    }
+   }
+  }
+ },
+ "v8_sharing": {
+  "switch": "legacy-baskets",
+  "rule": "Completion and coverage enter per-person and own-record household rules. Category-specific fixes use base baskets plus item9 corporate receipts and, under source-baskets, item10 source-side native/parent lines and item12 classified source fiscal lines. Production and public-capital parts never become taxes/benefits. [ASSUMPTION] Mixed-unit net amounts and coverage's explicit unclassified remainder retain no invented category split; their counted frame is still complete."
+ }
+}

@@ -109,6 +109,17 @@ CASES = {
                   trust_funds=OUT / "trust_funds_separate.json", households=OUT / "oct14/household_share.json",
                   out=OUT / "oct14", pooled=TRUST_FUNDS,
                   bands={"main": (339.552018, 423.649261), "cash": (264.425574, 348.522816)}),
+    "oct15": dict(case=ROOT / "infra/immigration-fiscal/main_case_2026_10_15/derived/summary.json", decomp="oct15",
+                  sets={"main": ("oct15", "main_case"), "cash": ("oct15_cash", "cash_set")},
+                  # summary_oct15.json: sum(parts.<end>.shapley), 395.755203 / 374.006827bn on the case corrected
+                  # in place (d1a24d47; adopted b35ac8fb had 398.954207109 / 377.227918842bn).
+                  # These are at the case's ends, not the extrema of the excess.
+                  excess={"low": 395.8, "high": 374.0},
+                  trust_funds=OUT / "trust_funds_separate.json", households=OUT / "oct15/household_share.json",
+                  out=OUT / "oct15", pooled=TRUST_FUNDS,
+                  # the corrected case's bands to 6 decimals (d1a24d47; adopted b35ac8fb: 368.990934 / 459.202877,
+                  # cash 284.951568 / 375.163510), gated at 1e-6
+                  bands={"main": (365.791930, 455.981785), "cash": (281.752564, 371.942418)}),
 }
 
 
@@ -136,10 +147,20 @@ def case_ends(summary: dict, name: str) -> dict:
     return {"low": float(band[0]), "high": float(band[1])}
 
 
-def ratios(parts: dict, household_ratio: float) -> dict:
+def ratios(parts: dict, household_ratio: float, completion_parts=None, line_groups=None) -> dict:
     """The group's amount over as many average residents', by sharing rule."""
-    sh, tot = parts["shared"], parts["total"]
+    sh, tot = parts["shared"], dict(parts["total"])
+    if completion_parts is not None:
+        for side in ("receipts", "spending"):
+            for line, amount in completion_parts[f"{side}_by_line"].items():
+                group = line_groups.get(line)
+                if group:
+                    tot[group] = tot.get(group, 0) + amount
+                elif amount != 0:
+                    blocked(f"completion source line {side}/{line} has no category sharing rule")
     tax_keys = TAXES + (["job_capital_taxes", "child_credits_receipt"] if "job_capital_taxes" in tot else [])
+    if "foreign_source_tax" in tot:
+        tax_keys.append("foreign_source_tax")
     benefit_keys = FEDERAL_BENEFITS + (["child_credits_spending"] if "child_credits_spending" in tot else [])
     tax = lambda d, ks: -sum(d[k] for k in ks)  # receipts carry negative signs
     benefits = lambda d: sum(d[k] for k in benefit_keys)
@@ -185,9 +206,15 @@ def span(rows: list[dict], key: str) -> list[float]:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="The closed-budget arm on a main case.")
-    ap.add_argument("--case", choices=tuple(CASES), default="oct14",
-                    help="live case oct14 (default), or a historical case explicitly")
-    conf = CASES[ap.parse_args().case]
+    ap.add_argument("--case", choices=tuple(CASES), default="oct15",
+                    help="live case oct15 (default), or a historical case explicitly")
+    ap.add_argument("--v8-sharing", choices=("source-baskets", "legacy-baskets"), default="source-baskets",
+                    help="v8 source-baskets adds source-side completion/coverage lines; legacy-baskets keeps the pre-completion baskets beside")
+    ap.add_argument("--out-dir", type=Path, help="write an alternate sharing arm beside the central files")
+    args = ap.parse_args()
+    conf = dict(CASES[args.case])
+    if args.out_dir is not None:
+        conf["out"] = args.out_dir
     if conf["excess"] is None:
         blocked("the case's excess over average residents is not pinned (CASES excess)")
     sets, excess_printed, out_dir = conf["sets"], conf["excess"], conf["out"]
@@ -201,6 +228,7 @@ def main() -> None:
     tf = json.loads(conf["trust_funds"].read_text())
 
     lines = {s: read_lines(key) for s, (key, _) in sets.items()}
+    decomposition = {s: json.loads((DECOMP / f"summary_{key}.json").read_text()) for s, (key, _) in sets.items()}
     G = {s: case_ends(summary, name) for s, (_, name) in sets.items()}
 
     gates = []
@@ -211,6 +239,11 @@ def main() -> None:
                       "detail": f"{got[0]:.6f} / {got[1]:.6f} vs {band[0]} / {band[1]}"})
     for s in sets:
         for end in ("low", "high"):
+            exact = decomposition[s]["parts"][end]
+            exact_parts = exact["shared"] + sum(exact["shapley"].values())
+            gates.append({"gate": f"{s} {end}: exact decomposition parts add to the case (1e-9)",
+                          "pass": abs(exact_parts - G[s][end]) < 1e-9,
+                          "detail": f"parts {exact_parts:.12f}, case {G[s][end]:.12f}"})
             p = lines[s][end]
             total = sum(p["total"].values())
             parts = sum(sum(p[k].values()) for k in PARTS)
@@ -237,7 +270,22 @@ def main() -> None:
         share_rows, out_rows = [], []
         for s in sets:
             for end in ("low", "high"):
-                rat = ratios(lines[s][end], hh["share"] / share)
+                v8 = decomposition[s].get("v8")
+                source = None
+                if v8 and args.v8_sharing == "source-baskets":
+                    source = {f"{side}_by_line": {} for side in ("receipts", "spending")}
+                    for item in ("union_completion", "coverage"):
+                        for side in ("receipts", "spending"):
+                            basket = source[f"{side}_by_line"]
+                            for line, amount in v8["source_parts"][end][item][f"{side}_by_line"].items():
+                                basket[line] = basket.get(line, 0) + amount
+                rat = ratios(lines[s][end], hh["share"] / share, source, v8["source_line_groups"] if source else None)
+                if args.case == "oct15":
+                    # The sequential decomposition keeps category baskets on the
+                    # measured base profile frame. Correct their denominator so
+                    # adding people never silently flat-scales their receipts.
+                    for rule in ("federal_benefits", "all_taxes", "federal_taxes", "income_tax"):
+                        rat[rule] *= dsum["frame"]["profile_row4"]["NG"] / NG
                 for rule in RULES:
                     r = rat[rule]
                     sr = share * r
@@ -280,6 +328,9 @@ def main() -> None:
 
     general = lambda r: r["basis"].startswith("general fund")
     summ = {"lane": "closed_budget_2026_10_06", "gdp_2024_bn": GDP_2024_BN, "sets": {}}
+    if args.case == "oct15":
+        summ["v8_sharing"] = {"switch": args.v8_sharing,
+                              "rule": "Completion and coverage enter per-person and own-record household rules. Category-specific fixes use base baskets plus item9 corporate receipts and, under source-baskets, item10 source-side native/parent lines and item12 classified source fiscal lines. Production and public-capital parts never become taxes/benefits. [ASSUMPTION] Mixed-unit net amounts and coverage's explicit unclassified remainder retain no invented category split; their counted frame is still complete."}
     for s in sets:
         central = {e: pick(s, end=e, **CENTRAL)[0] for e in ("low", "high")}
         block = {"case_bn": [G[s]["low"], G[s]["high"]],
@@ -310,6 +361,10 @@ def main() -> None:
                                       "shortfall from 2032 Q4 instead of the pooled fund's from 2034 Q3"}}
         summ["sets"][s] = block
 
+    sys.path.insert(0, str(ROOT / "infra/immigration-fiscal/scripts"))
+    from memory_budget import require_within_budget
+    peak = require_within_budget("closed-budget arm")
+    print(f"peak physical footprint {peak / 1e9:.3f} GB")
     out_dir.mkdir(exist_ok=True)
     for name, rows in (("closed_budget.csv", out_rows), ("shares.csv", share_rows)):
         with open(out_dir / name, "w", newline="") as f:

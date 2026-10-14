@@ -200,3 +200,37 @@ uv run --no-project python3 -m pytest infra/immigration-fiscal/closed_budget_202
 ```
 
 Log: 2026-10-14 18:23:25 JST (`date`): moved to adopted 148ed1ea; computed oct14 only and preserved earlier case files.
+
+## 2026-10-15: live case oct15 (v8)
+
+Central closed-budget cost is set **335.183333 / 425.395276bn**, cash **251.143966 / 341.355909bn**, on the adopted 368.990934 / 459.202877bn set and 284.951568 / 375.163510bn cash. The complete lineage's household share is 0.10156733785004345; its 45,230,062.30075857 people enter the per-person rule. [DATA: `derived/oct15/summary.json` `sets.*.central.cost_bn`; `household_share.json`]
+
+The decomposition excess is re-pinned at 399.0 / 377.2bn, from exact 398.95420710899765 / 377.2279188418112 (`summary_oct15.json` `parts`). These refer to the case's ends. The 13 gates include exact summary closure at 1e-9, rounded line-table closure at the existing 1e-4, adopted band pins at 1e-6, excess reproduction and the household frame. [DATA: `derived/oct15/audit.json`]
+
+Completion enters households on its own observed PH_SEQ/PPPOS records. Coverage people are placed proportionally to current lineage weights within generation; this is an allocation assumption for constructed people, not observed households. The measured profile frame remains distinct from the complete counted frame. [ASSUMPTION; DATA: `household_share.json` `placement`; CALCULATION: `households.py`]
+
+`--v8-sharing source-baskets` is central: category fixes use measured base baskets, the foreign-source receipt change, completion's source-side native/parent lines and coverage's classified source fiscal lines. Capital return and production stay separate; the mixed-unit net and coverage's explicit unclassified remainder receive no invented tax/benefit split. `--v8-sharing legacy-baskets` retains the older baskets beside, with the complete per-person/household frame. `--out-dir` writes that arm beside the central artifacts. The household central is unchanged by the basket choice; category rules differ by 0 to −8.886318bn across all published gap readings. Current-law general-fund range: set 324.122764–448.507369bn, cash 240.083398–364.644671bn. [ASSUMPTION; DATA: `derived/oct15/summary.json`, `derived/oct15_legacy_baskets/summary.json`; CALCULATION: paired `closed_budget.csv` rows]
+
+The initial v8 household run stopped on a pandas read-only target view before output publication. Mutable membership and weights now use explicit local copies; the actual route and reproduction exercise that failure regression. The shared physical-footprint guard runs before writing household and closed-budget outputs. Imputed capital return remains a resource cost, never borrowing. Earlier cases are preserved. [CALCULATION: `households.py`, `closed_budget.py`]
+
+Reproduce after the live decomposition; older commands above describe historical executions:
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/closed_budget_2026_10_06/households.py --case oct15
+uv run --no-project --with openpyxl python3 infra/immigration-fiscal/closed_budget_2026_10_06/trust_funds.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/closed_budget_2026_10_06/closed_budget.py --case oct15 --v8-sharing source-baskets
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/closed_budget_2026_10_06/closed_budget.py --case oct15 --v8-sharing legacy-baskets --out-dir infra/immigration-fiscal/closed_budget_2026_10_06/derived/oct15_legacy_baskets
+GIT_OPTIONAL_LOCKS=0 uv run --no-project python3 -m pytest infra/immigration-fiscal/closed_budget_2026_10_06/test_closed_budget.py -q
+```
+
+Log: 2026-10-15 02:13 JST — after CASE_FINAL b35ac8fb, 13 gates per sharing arm and six tests pass. Household route 5.92s / 0.368GB physical footprint; closed-budget 0.034s / 0.028GB; trust-fund source replay 0.118s / 0.046GB. Reproduction receipt follows below.
+
+Validation 2026-10-15 02:19:18 JST (from `date`): `scripts/rerun_lane.py` IDENTICAL 34/34, exit 0 (4.75s); no uncovered scripts or EOL conversion failures. GIT_OPTIONAL_LOCKS=0 used for all read-only Git probes. Older keyed artifacts unchanged.
+
+Parent rerun 2026-10-15 05:49 JST (from `date`), on the corrected v8 (d1a24d47; same key `oct15`). The oct15 pins in
+`closed_budget.py` now hold the corrected case: bands 365.791930 / 455.981785bn (cash 281.752564 / 371.942418bn),
+printed excess 395.8 / 374.0 from exact 395.755203 / 374.006827bn; the adopted b35ac8fb values stay in the comment.
+Central closed-budget cost is set **331.984329 / 422.174183bn**, cash 247.944962 / 338.134817bn; current law set
+320.92376 / 445.286277bn (the figures above are the pre-correction run). The household share and the 0.10157 complete
+share are unchanged. 13 gates per arm and 6 tests pass; reproduction IDENTICAL 34/34, exit 0. [DATA:
+`derived/oct15/summary.json` `sets.main.central.cost_bn`, `sets.cash.central.cost_bn`]
