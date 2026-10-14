@@ -420,7 +420,7 @@ mexican_origin_engine,cash,low,16,spending,veterans_other,37.5260000000,1.735349
 mexican_origin_engine,cash,low,16,spending,veterans_pension_disability,180.5250000000,9.9874699569,1.0000000000,oct15,whole-population mortality,case
 mexican_origin_engine,cash,low,16,spending,veterans_readjustment,11.3910000000,0.6302023001,1.0000000000,oct15,whole-population mortality,case
 mexican_origin_engine,cash,low,16,spending,workers_compensation,11.9230000000,1.6429054438,1.0000000000,oct15,whole-population mortality,case
-mexican_origin_engine,cash,low,16,scalar,cost_bn,,284.9515676760,,oct15,whole-population mortality,case
+mexican_origin_engine,cash,low,16,scalar,cost_bn,,281.7525636761,,oct15,whole-population mortality,case
 mexican_origin_engine,cash,low,16,scalar,population,,45230062.3008,,oct15,whole-population mortality,case
 mexican_origin_engine,cash,low,16,scalar,production_gain_bn,,11.9094554392,,oct15,whole-population mortality,case
 mexican_origin_rough,cash,low,16,receipt,business_current_transfers,139.9760000000,5.7157106042,0.0000000000,oct15,whole-population mortality,rough
@@ -844,7 +844,7 @@ mexican_origin_rough,cash,low,16,spending,veterans_other,37.5260000000,1.7353498
 mexican_origin_rough,cash,low,16,spending,veterans_pension_disability,180.5250000000,9.9355082954,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,low,16,spending,veterans_readjustment,11.3910000000,0.6269235562,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,low,16,spending,workers_compensation,11.9230000000,2.3526061725,1.0000000000,oct15,whole-population mortality,rough
-mexican_origin_rough,cash,low,16,scalar,cost_bn,,267.2027078457,,oct15,whole-population mortality,rough
+mexican_origin_rough,cash,low,16,scalar,cost_bn,,264.0037038458,,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,low,16,scalar,population,,45230062.3008,,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,low,16,scalar,production_gain_bn,,11.9094554392,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,low,16,receipt,business_current_transfers,139.9760000000,26.0550674220,0.0000000000,oct15,whole-population mortality,rough
@@ -2116,7 +2116,7 @@ mexican_origin_engine,cash,high,11,spending,veterans_other,37.5260000000,1.73534
 mexican_origin_engine,cash,high,11,spending,veterans_pension_disability,180.5250000000,9.9874699569,1.0000000000,oct15,whole-population mortality,case
 mexican_origin_engine,cash,high,11,spending,veterans_readjustment,11.3910000000,0.6302023001,1.0000000000,oct15,whole-population mortality,case
 mexican_origin_engine,cash,high,11,spending,workers_compensation,11.9230000000,1.6429054438,1.0000000000,oct15,whole-population mortality,case
-mexican_origin_engine,cash,high,11,scalar,cost_bn,,375.1635101635,,oct15,whole-population mortality,case
+mexican_origin_engine,cash,high,11,scalar,cost_bn,,371.9424180096,,oct15,whole-population mortality,case
 mexican_origin_engine,cash,high,11,scalar,population,,45230062.3008,,oct15,whole-population mortality,case
 mexican_origin_engine,cash,high,11,scalar,production_gain_bn,,7.8342586351,,oct15,whole-population mortality,case
 mexican_origin_rough,cash,high,11,receipt,business_current_transfers,139.9760000000,5.7157106042,0.0000000000,oct15,whole-population mortality,rough
@@ -2540,7 +2540,7 @@ mexican_origin_rough,cash,high,11,spending,veterans_other,37.5260000000,1.735349
 mexican_origin_rough,cash,high,11,spending,veterans_pension_disability,180.5250000000,9.9355082954,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,high,11,spending,veterans_readjustment,11.3910000000,0.6269235562,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,high,11,spending,workers_compensation,11.9230000000,2.3526061725,1.0000000000,oct15,whole-population mortality,rough
-mexican_origin_rough,cash,high,11,scalar,cost_bn,,355.3465418680,,oct15,whole-population mortality,rough
+mexican_origin_rough,cash,high,11,scalar,cost_bn,,352.1254497141,,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,high,11,scalar,population,,45230062.3008,,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,high,11,scalar,production_gain_bn,,7.8342586351,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,high,11,receipt,business_current_transfers,139.9760000000,26.0550674220,0.0000000000,oct15,whole-population mortality,rough
@@ -3812,7 +3812,7 @@ mexican_origin_engine,accrual,low,16,spending,veterans_other,37.5260000000,1.735
 mexican_origin_engine,accrual,low,16,spending,veterans_pension_disability,180.5250000000,9.9874699569,1.0000000000,oct15,whole-population mortality,case
 mexican_origin_engine,accrual,low,16,spending,veterans_readjustment,11.3910000000,0.6302023001,1.0000000000,oct15,whole-population mortality,case
 mexican_origin_engine,accrual,low,16,spending,workers_compensation,11.9230000000,1.6429054438,1.0000000000,oct15,whole-population mortality,case
-mexican_origin_engine,accrual,low,16,scalar,cost_bn,,368.9909342554,,oct15,whole-population mortality,case
+mexican_origin_engine,accrual,low,16,scalar,cost_bn,,365.7919302555,,oct15,whole-population mortality,case
 mexican_origin_engine,accrual,low,16,scalar,population,,45230062.3008,,oct15,whole-population mortality,case
 mexican_origin_engine,accrual,low,16,scalar,production_gain_bn,,11.9094554392,,oct15,whole-population mortality,case
 mexican_origin_rough,accrual,low,16,receipt,business_current_transfers,139.9760000000,5.7157106042,0.0000000000,oct15,whole-population mortality,rough
@@ -4236,7 +4236,7 @@ mexican_origin_rough,accrual,low,16,spending,veterans_other,37.5260000000,1.7353
 mexican_origin_rough,accrual,low,16,spending,veterans_pension_disability,180.5250000000,9.9355082954,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,low,16,spending,veterans_readjustment,11.3910000000,0.6269235562,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,low,16,spending,workers_compensation,11.9230000000,2.3526061725,1.0000000000,oct15,whole-population mortality,rough
-mexican_origin_rough,accrual,low,16,scalar,cost_bn,,345.2043302768,,oct15,whole-population mortality,rough
+mexican_origin_rough,accrual,low,16,scalar,cost_bn,,342.0053262769,,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,low,16,scalar,population,,45230062.3008,,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,low,16,scalar,production_gain_bn,,11.9094554392,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,low,16,receipt,business_current_transfers,139.9760000000,26.0550674220,0.0000000000,oct15,whole-population mortality,rough
@@ -5508,7 +5508,7 @@ mexican_origin_engine,accrual,high,11,spending,veterans_other,37.5260000000,1.73
 mexican_origin_engine,accrual,high,11,spending,veterans_pension_disability,180.5250000000,9.9874699569,1.0000000000,oct15,whole-population mortality,case
 mexican_origin_engine,accrual,high,11,spending,veterans_readjustment,11.3910000000,0.6302023001,1.0000000000,oct15,whole-population mortality,case
 mexican_origin_engine,accrual,high,11,spending,workers_compensation,11.9230000000,1.6429054438,1.0000000000,oct15,whole-population mortality,case
-mexican_origin_engine,accrual,high,11,scalar,cost_bn,,459.2028767429,,oct15,whole-population mortality,case
+mexican_origin_engine,accrual,high,11,scalar,cost_bn,,455.9817845890,,oct15,whole-population mortality,case
 mexican_origin_engine,accrual,high,11,scalar,population,,45230062.3008,,oct15,whole-population mortality,case
 mexican_origin_engine,accrual,high,11,scalar,production_gain_bn,,7.8342586351,,oct15,whole-population mortality,case
 mexican_origin_rough,accrual,high,11,receipt,business_current_transfers,139.9760000000,5.7157106042,0.0000000000,oct15,whole-population mortality,rough
@@ -5932,7 +5932,7 @@ mexican_origin_rough,accrual,high,11,spending,veterans_other,37.5260000000,1.735
 mexican_origin_rough,accrual,high,11,spending,veterans_pension_disability,180.5250000000,9.9355082954,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,high,11,spending,veterans_readjustment,11.3910000000,0.6269235562,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,high,11,spending,workers_compensation,11.9230000000,2.3526061725,1.0000000000,oct15,whole-population mortality,rough
-mexican_origin_rough,accrual,high,11,scalar,cost_bn,,433.3481642991,,oct15,whole-population mortality,rough
+mexican_origin_rough,accrual,high,11,scalar,cost_bn,,430.1270721452,,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,high,11,scalar,population,,45230062.3008,,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,high,11,scalar,production_gain_bn,,7.8342586351,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,high,11,receipt,business_current_transfers,139.9760000000,26.0550674220,0.0000000000,oct15,whole-population mortality,rough
