@@ -141,6 +141,9 @@ built from the adopted fixes. Each ask has my recommendation; the work proceeds 
   consumed: 2026-10-15 the mixed-unit removal — in v8's central as item 11 (+$10.7 / 14.5bn) — session 75b08f57
   consumed: 2026-10-15 item 6's low end — kept at response 1; the decision states the corrected premise in the rents
   lane's wording — session 75b08f57
+  consumed: 2026-10-15 map, explorer and figures — overtaken at 19:02 JST ("you can delete map and explorer ...
+  unneeded") and 19:05 ("ok maybe not the map"): the explorer's page is deleted (INDEX tombstones; the engine stays);
+  the map and the figures page move to the live case after its docs pass — session 75b08f57
 
 ## Open ask, 2026-10-15 00:45 JST: the Codex weekly plan
 session: 75b08f57-63cc-4e3d-96dc-60050327b5c1

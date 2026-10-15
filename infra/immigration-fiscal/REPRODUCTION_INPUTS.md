@@ -107,7 +107,7 @@ The headline is one engine run, `node infra/immigration-fiscal/main_case_2026_10
 package is the October 5 case's (`main_case_2026_10_05`, which applies the lineage lane's committed payload on top of the
 September 29 case's) plus an item registry. Each of the four items reads its source lane's committed outputs, pinned
 by commit: `pension_tr2026_2026_10_06`, `public_pension_legacy_2026_10_07`, `added_age_mix_2026_10_07` and
-`user_fee_allocation_2026_10_07`. Every file it reads is committed except two that the assumption explorer generates.
+`user_fee_allocation_2026_10_07`. Every file it reads is committed except two that the engine's directory generates (`assumption_explorer_2026_09_21`, named for the page it served until 2026-10-15).
 Checked on 2026-10-07 from a clean checkout of a2e439f4: the run stops at the first missing file, and with only these
 two copied in it passes, the lane's other five scripts exit 0, and all 13 tracked files in its `derived/` are
 reproduced byte for byte.

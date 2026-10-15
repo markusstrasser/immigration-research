@@ -179,10 +179,12 @@ substituting a web summary or declaring a measurement unavailable:
   descendants or the missed people, so a lane that re-keys the CPS takes their cost from the case lane
   or covers the union and says so (ladder 281); it takes item 10's people from
   `union_completion_2026_10_14`'s flags.
-- The evidence map (`overview_2026_09_28/`), assumption explorer (`assumption_explorer_2026_09_21/`)
-  and figures page (`figures_2026_09_22/`) move to a new main case only when the operator asks. All
-  three are on main case v6, at his request: the map since 2026-10-07, the explorer and the figures
-  page since 2026-10-08. The figures page's unlinked prototypes stay on the September 24 account.
+- The evidence map (`overview_2026_09_28/`) and figures page (`figures_2026_09_22/`) move to a new
+  main case only when the operator asks. Both are on main case v6, at his request: the map since
+  2026-10-07, the figures page since 2026-10-08. The figures page's unlinked prototypes stay on the
+  September 24 account. The assumption explorer's page was deleted on 2026-10-15 at his word; its
+  directory (`assumption_explorer_2026_09_21/`) keeps the engine, the model builder and the scaling
+  check, which the case lanes import by that path.
 - Only income-year 2024 is a measured account. Earlier years are a
   [model back-cast](research/immigration-historical-backcast-2026-09-20.md).
 - The headline's "CBO-informed" label covers CBO's tax-incidence rules and its category rule for

@@ -862,6 +862,33 @@ is also on GitHub at origin/main 01e7d0b.
 | `research/immigration-surge-threshold-dataset-frontier-2026-04-21.md` | `3cd30c5` (2026-06-16) | [dataset-register § Lost](immigration-dataset-register.md#lost-not-rebuilt-or-on-the-ssd-only) |
 | `research/immigration-theory-verdicts-2026-06-25.md` | `c69ee5a` (2026-09-05) | [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
 
+### Deleted 2026-10-15: the assumption explorer's page (tombstones)
+
+The operator retired the assumption explorer's page on 2026-10-15; the evidence map and the figures page stay. The
+directory keeps the engine, the model builder, the scaling check and the engine's tests, which the case lanes and 36
+other lanes import by its path ([README](../infra/immigration-fiscal/assumption_explorer_2026_09_21/README.md)). The page
+was last on main case v6. Recover a file with `git show <last commit>:<path>`; every one is also on GitHub at origin/main
+ed8fc58b.
+
+| Path | Last commit | Successor |
+|---|---|---|
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/BRIEF.md` | `e9b03235` (2026-09-23) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/BRIEF_context.md` | `b741e4f5` (2026-09-23) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/BRIEF_corrections.md` | `2ca1a15e` (2026-09-24) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/build_context.py` | `9daa64b4` (2026-10-08) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/build_ui.py` | `116ed758` (2026-10-08) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/cards/build_inventory.py` | `ca86dde8` (2026-10-08) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/cards/reanchor.py` | `a072a06d` (2026-09-27) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/case.js` | `116ed758` (2026-10-08) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/check_sources.py` | `e9b03235` (2026-09-23) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/context.json` | `ca86dde8` (2026-10-08) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/ladder.py` | `ccf10617` (2026-09-21) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/presets.json` | `116ed758` (2026-10-08) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/sources.json` | `116ed758` (2026-10-08) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/sources_check.json` | `116ed758` (2026-10-08) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/template.html` | `116ed758` (2026-10-08) | — |
+| `infra/immigration-fiscal/assumption_explorer_2026_09_21/ui.js` | `116ed758` (2026-10-08) | — |
+
 ## Revisions
 
 - 2026-10-15 (main case v8, [decision](../decisions/2026-10-15-main-case-v8.md), including its same-day correction): the case and committed phase-1 consumers use `oct15`, including Census coverage, the completed union and mixed-unit stayers. The social pairing follows round 3 with both budget sides central and the fiscal low end on the case. WAVE2 comparator, winners and world-ledger figures remain pending. Concept affected: the live fiscal account, population and fiscal-plus-social pairing.

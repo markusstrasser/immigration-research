@@ -1,18 +1,19 @@
-/* Gate engine.js and case.js. Run: node test_engine.js   (after build_model.py). Exit code 1 on any mismatch.
+/* Gate engine.js, the formula the main case runs on. Run: node test_engine.js   (after build_model.py). Exit code 1
+ * on any mismatch.
  *
  * 1. engine.js against rows selected from the executed exports (derived/test_vectors.json) and the published
  *    September 20 headline spans.
  * 2. engine.js against the bands of the main-case lanes of September 23, 24 and 26, which executed it. Their states
- *    are written out below as the page loaded them before it moved to the case of 2026-10-07 (presets.json at
- *    d434f272): a regression gate on the engine, not cases the page shows.
- * 3. case.js and presets.json against the adopted main case (main_case_2026_10_07): the central preset as loaded at
- *    1e-6, every lane reading, the per-member figures, the readouts' files, the case's fail-loud guards and
- *    attribution closure. */
+ *    are written out below as the explorer page loaded them before it moved to the case of 2026-10-07 (presets.json at
+ *    d434f272): a regression gate on the engine.
+ * 3. Shapley attribution closure, and applyCorrections keeping every edited cell's base on the September 26 payload.
+ *
+ * The explorer page, its case loader (case.js) and its presets were deleted on 2026-10-15; their checks against main
+ * case v6 went with them. The live case's gates are in its own lane. */
 "use strict";
 const fs = require("fs");
 const path = require("path");
 const Engine = require("./engine.js");
-const Case = require("./case.js");
 
 const derived = path.join(__dirname, "derived");
 const read = (...parts) => JSON.parse(fs.readFileSync(path.join(...parts), "utf8"));
@@ -179,115 +180,8 @@ const dataParts = Engine.attribute(model, on26, off26, ["data_corrections", "gen
 check("engine attribution closure with the data switch", dataParts.reduce((s, p) => s + p.effect_bn, 0),
   Engine.evaluate(model, off26).welfare_bn - Engine.evaluate(model, on26).welfare_bn);
 
-/* ---------- 3. case.js and presets.json against the adopted main case ---------- */
-const CASE = path.join(__dirname, "..", "main_case_2026_10_07", "derived");
-const payloads = { accrual: read(CASE, "corrections.json"), cash: read(CASE, "corrections_cash.json") };
-const caseModel = read(derived, "model.json");
-const C = Case.create(caseModel, payloads), R = C.responses;
-const summary = read(CASE, "summary.json");
-const presetsFile = read(__dirname, "presets.json"), PRESETS = presetsFile.presets;
-const byId = Object.fromEntries(PRESETS.map((p) => [p.id, p]));
-const numbers = Object.assign({}, evidence, { responses: R });
-function readValue(name) {
-  const value = name.split(".").reduce((o, k) => (o == null ? undefined : o[k]), numbers);
-  if (typeof value !== "number") throw new Error(`value_from names no number: ${name}`);
-  return value;
-}
-function valueOf(s) { return s.value_from === undefined ? s.value : Array.isArray(s.value_from) ? s.value_from.map(readValue) : readValue(s.value_from); }
-function setPath(state, p, v) {  // a null value removes the field, as for a band a preset drops
-  const keys = p.split("."), last = keys.pop(), o = keys.reduce((x, k) => x[k], state);
-  if (v === null) delete o[last]; else o[last] = JSON.parse(JSON.stringify(v));
-}
-function presetState(p) {  // as ui.js loads a preset: the case's defaults, the base's settings, then its own
-  const s = C.defaultState();
-  for (const x of (p.extends ? byId[p.extends].settings : []).concat(p.settings || [])) if (x.path) setPath(s, x.path, valueOf(x));
-  return s;
-}
-const caseBand = (s) => { const r = C.range(s, "welfare_bn"); return [-r[1], -r[0]]; };
-function fieldOf(node, dotted) { return dotted.split(".").reduce((o, k) => (o == null ? undefined : o[k]), node); }
-function checkFull(label, band, want) {
-  if (!Array.isArray(want) || want.length !== 2) { failures += 1; console.error(`MISMATCH ${label}: no band in the lane's file`); return; }
-  check(`${label} low`, band[0], want[0]); check(`${label} high`, band[1], want[1]); adoptedChecks += 1;
-}
-
-const centrals = PRESETS.filter((p) => p.central);
-checkSame("exactly one central preset", centrals.length, 1);
-const CENTRAL = presetState(centrals[0]), loaded = caseBand(CENTRAL);
-checkFull(`central preset ${centrals[0].id} as loaded vs summary.json main_case`, loaded, summary.main_case);
-checkSame("central preset's general-government responses as loaded",
-  [CENTRAL.general_government_response, CENTRAL.general_government_response_band], [R.general_government.low, [R.general_government.low, R.general_government.high]]);
-checkSame("central preset's school response and readings as loaded", [CENTRAL.school_response, CENTRAL.reading, CENTRAL.reading_band], [R.school.growth, "low", ["low", "high"]]);
-
-// Every state the case lane ran too: the central preset with stated changes, against summary.json at full precision
-// or the bands CSV at its printed precision.
-const bandsCase = readBands(CASE), lane = presetsFile.lane_readings, laneStates = [];
-for (const row of lane.rows) {
-  const s = JSON.parse(JSON.stringify(CENTRAL));
-  Object.entries(row.changes).forEach(([p, v]) => setPath(s, p, v));
-  laneStates.push(s);
-  const band = caseBand(s);
-  if (row.field) checkFull(`lane reading ${row.label} vs summary.json ${row.field}`, band, fieldOf(summary, row.field));
-  else checkBand(`lane reading ${row.label}`, band, bandsCase, `long_run_non_school_full/${row.csv_variant}`, "main_case_2026_10_07");
-}
-// A preset that is a lane reading is gated as one: the cash set and the proportional benchmark.
-const canon = (v) => Array.isArray(v) ? `[${v.map(canon).join(",")}]` : v && typeof v === "object"
-  ? `{${Object.keys(v).sort().map((k) => `${JSON.stringify(k)}:${canon(v[k])}`).join(",")}}` : JSON.stringify(v);
-for (const id of ["cash_set", "proportional"]) {
-  checkSame(`preset ${id} is a lane reading`, laneStates.some((s) => canon(s) === canon(presetState(byId[id]))), true);
-}
-// Per-member figures divide by the lineage the case counts.
-const perMember = summary.v6.per_member_usd;
-check("lineage population", C.lineage_population, perMember.population);
-const cashBand = caseBand(Object.assign(JSON.parse(JSON.stringify(CENTRAL)), { benefits: "cash" }));
-[["set", loaded], ["cash", cashBand]].forEach(([k, band]) => band.forEach((x, i) => check(`per member, ${k} ${i ? "high" : "low"}`, x * 1e9 / C.lineage_population, perMember[k][i])));
-
-// Every preset loads and evaluates to a finite band; its paths exist in the case's state.
-const known = new Set(Object.keys(C.defaultState()).concat(["school_response_band", "general_government_response_band", "reading_band"]));
-for (const p of PRESETS) {
-  for (const x of p.settings || []) if (x.path && !known.has(x.path.split(".")[0])) { failures += 1; console.error(`MISMATCH preset ${p.id}: unknown path ${x.path}`); }
-  const band = caseBand(presetState(p));
-  if (!band.every(Number.isFinite)) { failures += 1; console.error(`MISMATCH preset ${p.id}: band ${band}`); }
-}
-
-// Readouts: the lane file holds the band, and a CSV readout's file is on this case.
-for (const r of presetsFile.readouts) {
-  if (r.source.csv) {
-    const rows = {};
-    const [head, ...lines] = fs.readFileSync(path.join(__dirname, "..", r.source.csv), "utf8").trim().split("\n");
-    const cols = head.split(",");
-    lines.forEach((line) => { const cells = line.split(","); rows[cells[0]] = [Number(cells[cols.indexOf("cost_low_bn")]), Number(cells[cols.indexOf("cost_high_bn")])]; });
-    [r.source.arm, r.source.cash_arm].forEach((arm) => { if (!rows[arm] || !rows[arm].every(Number.isFinite)) { failures += 1; console.error(`MISMATCH readout ${r.id}: no arm ${arm}`); } });
-    check(`readout ${r.id}: its file's adopted low`, rows[r.source.adopted_arm][0], summary.main_case[0], PRINTED);
-    check(`readout ${r.id}: its file's adopted high`, rows[r.source.adopted_arm][1], summary.main_case[1], PRINTED);
-  } else {
-    const node = read(__dirname, "..", r.source.json), band = fieldOf(node, r.source.path);
-    if (!(Array.isArray(band) && band.length === 2 && band.every(Number.isFinite)) || typeof fieldOf(node, r.source.rule_path) !== "string") {
-      failures += 1; console.error(`MISMATCH readout ${r.id}: no band at ${r.source.path} or rule at ${r.source.rule_path}`);
-    }
-  }
-}
-
-// Attribution over the case's own fields closes exactly.
-const away = Object.assign(JSON.parse(JSON.stringify(CENTRAL)), { benefits: "cash", long_run: 0, capital: "private", enterprises: "A", service_response: 0.5, general_government_response: 0.84 });
-away.production.sigma = caseModel.production.dims.sigma[0];
-const casePaths = ["benefits", "long_run", "capital", "enterprises", "service_response", "general_government_response", "production.sigma"];
-const caseParts = C.attribute(CENTRAL, away, casePaths, "welfare_bn");
-check("case attribution closure", caseParts.reduce((s, p) => s + p.effect_bn, 0), C.evaluate(away).welfare_bn - C.evaluate(CENTRAL).welfare_bn, 1e-9);
-checkSame("case attribution covers every changed field", caseParts.length, casePaths.length);
-
-// The case refuses a payload pair that is not one adopted case.
-const tamper = (fn) => { const p = JSON.parse(JSON.stringify(payloads)); fn(p); return p; };
-checkThrows("guard: cash set with other responses", () => Case.create(caseModel, tamper((p) => { p.cash.meta.responses.general_government.low += 0.01; })), /\[BLOCKED\] the cash set differs/);
-checkThrows("guard: no capital components", () => Case.create(caseModel, tamper((p) => { p.accrual.meta.capital_return.components = []; })), /\[BLOCKED\].*no meta.capital_return components/);
-checkThrows("guard: two adoptions", () => Case.create(caseModel, tamper((p) => { p.cash.meta.adopted = "2026-10-05"; })), /\[BLOCKED\] the two payloads are not one adopted case/);
-
 // applyCorrections keeps every edited cell's base: target / share moves only with the line's national total. A cell
 // whose national amount is zero has no base, and an edit there gives the group part of nothing: it must stay zero.
-// One such cell is known, in the case's payload: the added descendants' edit (edit 521, in meta.lineage's edits)
-// carries +0.4474bn of corporate tax borne by labor to the all-capital rule, under which that line is zero nationally
-// (others take −0.4474bn). The reference rule is unaffected, and the page counts the line only when the reader moves the
-// indirect-receipt response off 0 under that rule. Reported to the case lane on 2026-10-08; any other such cell fails.
-const ZERO_CELL_KNOWN = new Set(["main case receipts/corporate_labor/corporate_all_capital", "cash set receipts/corporate_labor/corporate_all_capital"]);
 let baseChecks = 0;
 function checkBases(label, before, after) {
   let n = 0;
@@ -298,7 +192,7 @@ function checkBases(label, before, after) {
         const edited = (side === "receipts" ? fixed.cells : fixed.keys)[k], where = `${label} ${side}/${line.id}/${k}`;
         for (const a of ["personal", "shared"]) {
           if (cell[a].target_bn === 0 && cell[a].other_bn === 0) {
-            if (edited[a].target_bn !== 0 && !ZERO_CELL_KNOWN.has(where)) { failures += 1; console.error(`MISMATCH ${where}/${a}: an edit on a zero national amount (${edited[a].target_bn} bn)`); }
+            if (edited[a].target_bn !== 0) { failures += 1; console.error(`MISMATCH ${where}/${a}: an edit on a zero national amount (${edited[a].target_bn} bn)`); }
             continue;
           }
           if (!cell[a].share || edited[a].target_bn === cell[a].target_bn) continue;
@@ -312,14 +206,11 @@ function checkBases(label, before, after) {
   baseChecks += n;
 }
 checkBases("September 26", model, model.corrected);
-checkBases("main case", caseModel, C.models.accrual);
-checkBases("cash set", caseModel, C.models.cash);
 
 const counts = `${vectors.grid.length} grid rows, ${vectors.service.length} service cases, ${vectors.accounts.length} accounting cases`;
 if (failures) { console.error(`FAIL: ${failures} mismatches over ${counts}; worst gap ${worst}`); process.exit(1); }
 const bn = (b) => `${b[0].toFixed(4)} to ${b[1].toFixed(4)} bn`;
-console.log(`PASS: ${counts}, 4 headline bounds, ${adoptedChecks} lane bands (earlier lanes' central: September 23 ` +
+console.log(`PASS: ${counts}, 4 headline bounds, ${adoptedChecks} lane bands (central: September 23 ` +
   `${bn(result["sept23/cbo_category_lag_non_school_full"])}, September 24 ${bn(result["sept24/cbo_category_lag_non_school_full"])}, ` +
-  `September 26 ${bn(result["sept26/cbo_category_lag_non_school_full"])}); main case as loaded ${bn(loaded)}, cash set ${bn(cashBand)}, ` +
-  `${lane.rows.length} lane readings, ${PRESETS.length} presets, ${presetsFile.readouts.length} readouts, per-member figures, ` +
-  `attribution closure, 3 case guards, ${baseChecks} corrected shares on their base; worst gap ${worst.toExponential(2)} bn`);
+  `September 26 ${bn(result["sept26/cbo_category_lag_non_school_full"])}), attribution closure, ` +
+  `${baseChecks} corrected shares on their base; worst gap ${worst.toExponential(2)} bn`);
