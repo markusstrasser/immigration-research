@@ -1,0 +1,2648 @@
+{
+  "results": [
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "real_rate": 0.02,
+      "baseline_bn": 365.7919302554848,
+      "oasdi_delta_bn": 0,
+      "part_a_delta_bn": 0,
+      "capital_delta_bn": 0,
+      "delta_bn": 0,
+      "cost_bn": 365.7919302554848,
+      "per_member_usd": 8087.362953938491,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "real_rate": 0.02,
+      "baseline_bn": 365.7919302554848,
+      "oasdi_delta_bn": 1.4148558379405873,
+      "part_a_delta_bn": 0.3727677697091059,
+      "capital_delta_bn": 0,
+      "delta_bn": 1.7876236076496932,
+      "cost_bn": 367.5795538631345,
+      "per_member_usd": 8126.885862303349,
+      "delta_per_member_usd": 39.52290836485786
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "real_rate": 0.020810698764237804,
+      "baseline_bn": 365.7919302554848,
+      "oasdi_delta_bn": 0,
+      "part_a_delta_bn": 0,
+      "capital_delta_bn": 1.5835032591935332,
+      "delta_bn": 1.5835032591935332,
+      "cost_bn": 367.3754335146783,
+      "per_member_usd": 8122.372926922034,
+      "delta_per_member_usd": 35.00997298354319
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "real_rate": 0.03,
+      "baseline_bn": 455.9817845889793,
+      "oasdi_delta_bn": 0,
+      "part_a_delta_bn": 0,
+      "capital_delta_bn": 0,
+      "delta_bn": 0,
+      "cost_bn": 455.9817845889793,
+      "per_member_usd": 10081.387497477133,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "real_rate": 0.03,
+      "baseline_bn": 455.9817845889793,
+      "oasdi_delta_bn": -23.580802517132113,
+      "part_a_delta_bn": -13.119549898754684,
+      "capital_delta_bn": 0,
+      "delta_bn": -36.700352415886805,
+      "cost_bn": 419.28143217309247,
+      "per_member_usd": 9269.972466212157,
+      "delta_per_member_usd": -811.4150312649755
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "real_rate": 0.020810698764237804,
+      "baseline_bn": 455.9817845889793,
+      "oasdi_delta_bn": 0,
+      "part_a_delta_bn": 0,
+      "capital_delta_bn": -19.69974578001161,
+      "delta_bn": -19.69974578001161,
+      "cost_bn": 436.2820388089677,
+      "per_member_usd": 9645.842092984485,
+      "delta_per_member_usd": -435.54540449264914
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "real_rate": 0.02,
+      "baseline_bn": 455.9817845889793,
+      "oasdi_delta_bn": 1.4148558379405873,
+      "part_a_delta_bn": 0.3727677697091059,
+      "capital_delta_bn": -21.437697246604227,
+      "delta_bn": -19.650073638954535,
+      "cost_bn": 436.3317109500247,
+      "per_member_usd": 9646.940303743664,
+      "delta_per_member_usd": -434.447193733469
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "real_rate": 0.03,
+      "baseline_bn": 455.9817845889793,
+      "oasdi_delta_bn": -23.580802517132113,
+      "part_a_delta_bn": -13.119549898754684,
+      "capital_delta_bn": 0,
+      "delta_bn": -36.700352415886805,
+      "cost_bn": 419.28143217309247,
+      "per_member_usd": 9269.972466212157,
+      "delta_per_member_usd": -811.4150312649755
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "real_rate": 0.02,
+      "baseline_bn": 281.75256367607324,
+      "oasdi_delta_bn": 0,
+      "part_a_delta_bn": 0,
+      "capital_delta_bn": 0,
+      "delta_bn": 0,
+      "cost_bn": 281.75256367607324,
+      "per_member_usd": 6229.320707156043,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "real_rate": 0.02,
+      "baseline_bn": 281.75256367607324,
+      "oasdi_delta_bn": 0,
+      "part_a_delta_bn": 0,
+      "capital_delta_bn": 0,
+      "delta_bn": 0,
+      "cost_bn": 281.75256367607324,
+      "per_member_usd": 6229.320707156043,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "real_rate": 0.020810698764237804,
+      "baseline_bn": 281.75256367607324,
+      "oasdi_delta_bn": 0,
+      "part_a_delta_bn": 0,
+      "capital_delta_bn": 1.5835032591935332,
+      "delta_bn": 1.5835032591935332,
+      "cost_bn": 283.3360669352668,
+      "per_member_usd": 6264.330680139586,
+      "delta_per_member_usd": 35.00997298354319
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "real_rate": 0.03,
+      "baseline_bn": 371.9424180095669,
+      "oasdi_delta_bn": 0,
+      "part_a_delta_bn": 0,
+      "capital_delta_bn": 0,
+      "delta_bn": 0,
+      "cost_bn": 371.9424180095669,
+      "per_member_usd": 8223.345250694667,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "real_rate": 0.03,
+      "baseline_bn": 371.9424180095669,
+      "oasdi_delta_bn": 0,
+      "part_a_delta_bn": 0,
+      "capital_delta_bn": 0,
+      "delta_bn": 0,
+      "cost_bn": 371.9424180095669,
+      "per_member_usd": 8223.345250694667,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "real_rate": 0.020810698764237804,
+      "baseline_bn": 371.9424180095669,
+      "oasdi_delta_bn": 0,
+      "part_a_delta_bn": 0,
+      "capital_delta_bn": -19.69974578001161,
+      "delta_bn": -19.69974578001161,
+      "cost_bn": 352.2426722295553,
+      "per_member_usd": 7787.799846202019,
+      "delta_per_member_usd": -435.54540449264914
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "real_rate": 0.02,
+      "baseline_bn": 371.9424180095669,
+      "oasdi_delta_bn": 0,
+      "part_a_delta_bn": 0,
+      "capital_delta_bn": -21.437697246604227,
+      "delta_bn": -21.437697246604227,
+      "cost_bn": 350.5047207629627,
+      "per_member_usd": 7749.375148596339,
+      "delta_per_member_usd": -473.9701020983269
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "real_rate": 0.03,
+      "baseline_bn": 371.9424180095669,
+      "oasdi_delta_bn": 0,
+      "part_a_delta_bn": 0,
+      "capital_delta_bn": 0,
+      "delta_bn": 0,
+      "cost_bn": 371.9424180095669,
+      "per_member_usd": 8223.345250694667,
+      "delta_per_member_usd": 0
+    }
+  ],
+  "components": [
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_engine",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_reporter",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_union",
+      "delta_bn": 1.2008075246370424,
+      "delta_per_member_usd": 26.548880623958446
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_original_descendants",
+      "delta_bn": 0.09962719616211231,
+      "delta_per_member_usd": 2.202676518542877
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": 0.016254415689003095,
+      "delta_per_member_usd": 0.3593719500300243
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": 0.00007149132666438414,
+      "delta_per_member_usd": 0.0015806152595811288
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": 0.09809521012576516,
+      "delta_per_member_usd": 2.1688055495806817
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_union",
+      "delta_bn": 0.3128311800295833,
+      "delta_per_member_usd": 6.916443712798881
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_original_descendants",
+      "delta_bn": 0.027158769094986435,
+      "delta_per_member_usd": 0.6004583613967506
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item10_reporters",
+      "delta_bn": 0.004186765508023251,
+      "delta_per_member_usd": 0.09256599029608309
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item10_native_children",
+      "delta_bn": 0.000018451349352651425,
+      "delta_per_member_usd": 0.00040794437181975693
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item12_coverage",
+      "delta_bn": 0.028572603727160237,
+      "delta_per_member_usd": 0.6317170986227236
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_engine",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_reporter",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_engine",
+      "delta_bn": 1.5073303410569003,
+      "delta_per_member_usd": 33.32585153285584
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_reporter",
+      "delta_bn": 0.017727919840782886,
+      "delta_per_member_usd": 0.39194993194792843
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_coverage",
+      "delta_bn": 0.05844499829584989,
+      "delta_per_member_usd": 1.2921715187394223
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_engine",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_reporter",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_union",
+      "delta_bn": -20.441329154803185,
+      "delta_per_member_usd": -451.94121155257295
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_original_descendants",
+      "delta_bn": -1.5165897121726923,
+      "delta_per_member_usd": -33.53056871971757
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": -0.2476047619795565,
+      "delta_per_member_usd": -5.474340502409696
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": -0.0010882872820425207,
+      "delta_per_member_usd": -0.024061149303883856
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": -1.3741906008946407,
+      "delta_per_member_usd": -30.382239842097093
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_union",
+      "delta_bn": -11.462474791108743,
+      "delta_per_member_usd": -253.42602260613074
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_original_descendants",
+      "delta_bn": -0.7578120873527379,
+      "delta_per_member_usd": -16.754610734640274
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_reporters",
+      "delta_bn": -0.11942227003602214,
+      "delta_per_member_usd": -2.6403295498891954
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_native_children",
+      "delta_bn": -0.0005148486486447058,
+      "delta_per_member_usd": -0.011382886126072638
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item12_coverage",
+      "delta_bn": -0.779325901608535,
+      "delta_per_member_usd": -17.230263722087876
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_engine",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_reporter",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_engine",
+      "delta_bn": -18.73838627898501,
+      "delta_per_member_usd": -414.2905255001328
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_reporter",
+      "delta_bn": -0.21878181672858257,
+      "delta_per_member_usd": -4.837088555699674
+    },
+    {
+      "arm": "B",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_coverage",
+      "delta_bn": -0.7425776842980165,
+      "delta_per_member_usd": -16.417790436816677
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_union",
+      "delta_bn": 1.2008075246370424,
+      "delta_per_member_usd": 26.548880623958446
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_original_descendants",
+      "delta_bn": 0.09962719616211231,
+      "delta_per_member_usd": 2.202676518542877
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": 0.016254415689003095,
+      "delta_per_member_usd": 0.3593719500300243
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": 0.00007149132666438414,
+      "delta_per_member_usd": 0.0015806152595811288
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": 0.09809521012576516,
+      "delta_per_member_usd": 2.1688055495806817
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_union",
+      "delta_bn": 0.3128311800295833,
+      "delta_per_member_usd": 6.916443712798881
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_original_descendants",
+      "delta_bn": 0.027158769094986435,
+      "delta_per_member_usd": 0.6004583613967506
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_reporters",
+      "delta_bn": 0.004186765508023251,
+      "delta_per_member_usd": 0.09256599029608309
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_native_children",
+      "delta_bn": 0.000018451349352651425,
+      "delta_per_member_usd": 0.00040794437181975693
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item12_coverage",
+      "delta_bn": 0.028572603727160237,
+      "delta_per_member_usd": 0.6317170986227236
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_engine",
+      "delta_bn": -20.391524663551607,
+      "delta_per_member_usd": -450.8400746379165
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_reporter",
+      "delta_bn": -0.2380831916546002,
+      "delta_per_member_usd": -5.263826303653073
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_coverage",
+      "delta_bn": -0.8080893913980219,
+      "delta_per_member_usd": -17.8662011567574
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_union",
+      "delta_bn": -20.441329154803185,
+      "delta_per_member_usd": -451.94121155257295
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_original_descendants",
+      "delta_bn": -1.5165897121726923,
+      "delta_per_member_usd": -33.53056871971757
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": -0.2476047619795565,
+      "delta_per_member_usd": -5.474340502409696
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": -0.0010882872820425207,
+      "delta_per_member_usd": -0.024061149303883856
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": -1.3741906008946407,
+      "delta_per_member_usd": -30.382239842097093
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_union",
+      "delta_bn": -11.462474791108743,
+      "delta_per_member_usd": -253.42602260613074
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_original_descendants",
+      "delta_bn": -0.7578120873527379,
+      "delta_per_member_usd": -16.754610734640274
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_reporters",
+      "delta_bn": -0.11942227003602214,
+      "delta_per_member_usd": -2.6403295498891954
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_native_children",
+      "delta_bn": -0.0005148486486447058,
+      "delta_per_member_usd": -0.011382886126072638
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item12_coverage",
+      "delta_bn": -0.779325901608535,
+      "delta_per_member_usd": -17.230263722087876
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_engine",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_reporter",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_engine",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_reporter",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_engine",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_reporter",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "part_a_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_engine",
+      "delta_bn": 1.5073303410569003,
+      "delta_per_member_usd": 33.32585153285584
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_reporter",
+      "delta_bn": 0.017727919840782886,
+      "delta_per_member_usd": 0.39194993194792843
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "component": "capital_coverage",
+      "delta_bn": 0.05844499829584989,
+      "delta_per_member_usd": 1.2921715187394223
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_engine",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_reporter",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "unchanged",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_engine",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_reporter",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "A",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_engine",
+      "delta_bn": -18.73838627898501,
+      "delta_per_member_usd": -414.2905255001328
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_reporter",
+      "delta_bn": -0.21878181672858257,
+      "delta_per_member_usd": -4.837088555699674
+    },
+    {
+      "arm": "B",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_coverage",
+      "delta_bn": -0.7425776842980166,
+      "delta_per_member_usd": -16.41779043681668
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_engine",
+      "delta_bn": -20.391524663551607,
+      "delta_per_member_usd": -450.8400746379165
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_reporter",
+      "delta_bn": -0.2380831916546002,
+      "delta_per_member_usd": -5.263826303653073
+    },
+    {
+      "arm": "both_lowrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_coverage",
+      "delta_bn": -0.808089391398022,
+      "delta_per_member_usd": -17.866201156757402
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "oasdi_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_union",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_original_descendants",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_reporters",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item10_native_children",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "part_a_item12_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "retiree_health_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "public_pensions_external",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_engine",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_reporter",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    },
+    {
+      "arm": "both_highrate",
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "component": "capital_coverage",
+      "delta_bn": 0,
+      "delta_per_member_usd": 0
+    }
+  ],
+  "baselines": [
+    {
+      "which": "set",
+      "end": "low",
+      "specification": 16,
+      "cost_bn": 365.7919302554848,
+      "capital": {
+        "engine": 37.18595383512266,
+        "reporter": 0.4373491270200751,
+        "coverage": 1.4418425406334041
+      }
+    },
+    {
+      "which": "set",
+      "end": "high",
+      "specification": 11,
+      "cost_bn": 455.9817845889793,
+      "capital": {
+        "engine": 61.174573990654835,
+        "reporter": 0.7142495749638008,
+        "coverage": 2.4242681741940664
+      }
+    },
+    {
+      "which": "cash",
+      "end": "low",
+      "specification": 16,
+      "cost_bn": 281.75256367607324,
+      "capital": {
+        "engine": 37.18595383512266,
+        "reporter": 0.4373491270200751,
+        "coverage": 1.4418425406334041
+      }
+    },
+    {
+      "which": "cash",
+      "end": "high",
+      "specification": 11,
+      "cost_bn": 371.9424180095669,
+      "capital": {
+        "engine": 61.174573990654835,
+        "reporter": 0.7142495749638008,
+        "coverage": 2.424268174194067
+      }
+    }
+  ],
+  "native": {
+    "ss": 0.00528344003887159,
+    "pa": 0.0017342515762981737
+  },
+  "original_descendants": {
+    "oasdi_receipts_bn": 7.906335718789129,
+    "accrual": 7.362771705643136,
+    "part_a": 2.552666323372721,
+    "benefit_tax": 0.1890112719870096,
+    "items_bn": {
+      "accrual": -0.16449232398602928,
+      "part_a": -0.07085535100906905,
+      "benefit_tax": -0.002190184478765333
+    }
+  },
+  "transfers": {
+    "unchanged": {
+      "old": {
+        "unionSS": 100.75420841657427,
+        "unionPA": 39.754519672581225,
+        "ss": {
+          "G1": 31.621061998500526,
+          "G2": 34.21449454129844,
+          "G3plus": 34.918651876775314
+        },
+        "pa": {
+          "G1": 11.180761028215873,
+          "G2": 15.600371931215058,
+          "G3plus": 12.973386713150301
+        }
+      },
+      "next": {
+        "unionSS": 100.75420841657427,
+        "unionPA": 39.754519672581225,
+        "ss": {
+          "G1": 31.621061998500526,
+          "G2": 34.21449454129844,
+          "G3plus": 34.918651876775314
+        },
+        "pa": {
+          "G1": 11.180761028215873,
+          "G2": 15.600371931215058,
+          "G3plus": 12.973386713150301
+        }
+      },
+      "fss": 1,
+      "fpa": 1,
+      "rounding_residue": {
+        "ss": {
+          "G1": 3.4710758711753442e-9,
+          "G2": -2.417254307829353e-8,
+          "G3plus": 2.070147786525922e-8
+        },
+        "pa": {
+          "G1": -1.1964438684231027e-7,
+          "G2": 6.324335419805038e-7,
+          "G3plus": -5.127891533618367e-7
+        }
+      },
+      "pooledSS": 1,
+      "pooledPA": 1,
+      "generationSS": {
+        "G1": 1,
+        "G2": 1,
+        "G3plus": 1
+      },
+      "generationPA": {
+        "G1": 1,
+        "G2": 1,
+        "G3plus": 1
+      }
+    },
+    "flat_2": {
+      "old": {
+        "unionSS": 100.75420841657427,
+        "unionPA": 39.754519672581225,
+        "ss": {
+          "G1": 31.621061998500526,
+          "G2": 34.21449454129844,
+          "G3plus": 34.918651876775314
+        },
+        "pa": {
+          "G1": 11.180761028215873,
+          "G2": 15.600371931215058,
+          "G3plus": 12.973386713150301
+        }
+      },
+      "next": {
+        "unionSS": 101.95501594121131,
+        "unionPA": 40.06735085261081,
+        "ss": {
+          "G1": 31.490316703002797,
+          "G2": 35.07397296949657,
+          "G3plus": 35.390726268711944
+        },
+        "pa": {
+          "G1": 11.045513481305221,
+          "G2": 15.91437848042296,
+          "G3plus": 13.107458890882626
+        }
+      },
+      "fss": 1.013531208102752,
+      "fpa": 1.0106393729749616,
+      "rounding_residue": {
+        "ss": {
+          "G1": 3.4710758711753442e-9,
+          "G2": -2.417254307829353e-8,
+          "G3plus": 2.070147786525922e-8
+        },
+        "pa": {
+          "G1": -1.1964438684231027e-7,
+          "G2": 6.324335419805038e-7,
+          "G3plus": -5.127891533618367e-7
+        }
+      },
+      "pooledSS": 1.0135213419903977,
+      "pooledPA": 1.0103845418051862,
+      "generationSS": {
+        "G1": 0.9958652465402987,
+        "G2": 1.025120301782062,
+        "G3plus": 1.0135213419903977
+      },
+      "generationPA": {
+        "G1": 0.9879035473015353,
+        "G2": 1.0201281450591315,
+        "G3plus": 1.0103845418051862
+      }
+    },
+    "flat_3": {
+      "old": {
+        "unionSS": 100.75420841657427,
+        "unionPA": 39.754519672581225,
+        "ss": {
+          "G1": 31.621061998500526,
+          "G2": 34.21449454129844,
+          "G3plus": 34.918651876775314
+        },
+        "pa": {
+          "G1": 11.180761028215873,
+          "G2": 15.600371931215058,
+          "G3plus": 12.973386713150301
+        }
+      },
+      "next": {
+        "unionSS": 80.31287926177109,
+        "unionPA": 28.29204488147248,
+        "ss": {
+          "G1": 25.7542305201284,
+          "G2": 26.832181331534823,
+          "G3plus": 27.726467410107865
+        },
+        "pa": {
+          "G1": 8.553026357721146,
+          "G2": 10.606731611978757,
+          "G3plus": 9.132286911772578
+        }
+      },
+      "fss": 0.7940191855995868,
+      "fpa": 0.7031292024288253,
+      "rounding_residue": {
+        "ss": {
+          "G1": 3.4710758711753442e-9,
+          "G2": -2.417254307829353e-8,
+          "G3plus": 2.070147786525922e-8
+        },
+        "pa": {
+          "G1": -1.1964438684231027e-7,
+          "G2": 6.324335419805038e-7,
+          "G3plus": -5.127891533618367e-7
+        }
+      },
+      "pooledSS": 0.7940283594788554,
+      "pooledPA": 0.7037938825848322,
+      "generationSS": {
+        "G1": 0.8144644389663341,
+        "G2": 0.784234333760131,
+        "G3plus": 0.7940283594788554
+      },
+      "generationPA": {
+        "G1": 0.7649771188326671,
+        "G2": 0.6799024830142391,
+        "G3plus": 0.7037938825848322
+      }
+    }
+  },
+  "method": "Additive revaluation of the existing accrual amounts, preserving the case's normalized generation split and fixed G3/white age profiles; item10 reporter own-record profile shares and item12 coverage profiles retain their source calibration. B/D, current benefit taxes and all other amounts are fixed.",
+  "basis": {
+    "pre_v8": "within_group_distribution_2026_09_29/_cache/oct14/lines.json",
+    "scope": "historical pre-v8 generation and original-descendant split, used only for pension valuation coefficients",
+    "external_accruals": "retiree health and public pension normal costs are external booked inputs; this account does not compute their present values"
+  },
+  "gates": {
+    "unchanged_v8_ends": true,
+    "component_closure": true,
+    "union_and_pooled_generation_closure": true
+  }
+}

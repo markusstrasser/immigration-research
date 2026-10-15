@@ -1,0 +1,539 @@
+{
+  "arms": {
+    "flat_2": {
+      "case": {
+        "high": {
+          "case_bn": 387.37005494938376,
+          "case_on_accrual_net_bn": 459.97049012931274,
+          "delta_oasdi_net_bn": 51.17543020433137,
+          "delta_part_a_bn": 21.425004975597606,
+          "oasdi_accrual_net_bn": 102.3809258854441,
+          "oasdi_tax_bn": 106.13263289529047
+        },
+        "low": {
+          "case_bn": 321.81935699039354,
+          "case_on_accrual_net_bn": 398.02868800474033,
+          "delta_oasdi_net_bn": 54.78432603874915,
+          "delta_part_a_bn": 21.425004975597606,
+          "oasdi_accrual_net_bn": 108.95181474454388,
+          "oasdi_tax_bn": 112.9443092798048
+        }
+      },
+      "future_share_group": 0.04579115282473823,
+      "groups": {
+        "G1": {
+          "accrual_bn": 37.58905472793067,
+          "covered_workers_m": 7.98985063332217,
+          "future_share_own_rate": 0.03508875885867209,
+          "hi_tax_bn": 8.74356885990831,
+          "net_own_rate": 1.0225821059342899,
+          "part_a_bn": 12.454709344080158,
+          "part_a_per_covered_worker_usd": 1558.8162927773662,
+          "part_a_per_hi_tax_dollar": 1.4244423008079066,
+          "per_tax_dollar": 1.0597680515409345,
+          "tax_bn": 35.46913371588723,
+          "timing": 0.0861874835669917
+        },
+        "G2": {
+          "accrual_bn": 38.26445440926787,
+          "covered_workers_m": 6.69240574772574,
+          "future_share_own_rate": 0.057777168943527975,
+          "hi_tax_bn": 9.729653062518564,
+          "net_own_rate": 0.9162671388966781,
+          "part_a_bn": 15.570180220883515,
+          "part_a_per_covered_worker_usd": 2326.5445652596127,
+          "part_a_per_hi_tax_dollar": 1.600281132414099,
+          "per_tax_dollar": 0.9724527030079595,
+          "tax_bn": 39.34839637023938,
+          "timing": 0.08856582100287164
+        },
+        "G3plus": {
+          "accrual_bn": 39.106846556926925,
+          "covered_workers_m": 5.84943938532207,
+          "future_share_own_rate": 0.050556794985829635,
+          "hi_tax_bn": 9.68465365711179,
+          "net_own_rate": 0.9545302868296999,
+          "part_a_bn": 13.063224057803778,
+          "part_a_per_covered_worker_usd": 2233.243768724773,
+          "part_a_per_hi_tax_dollar": 1.3488581543864484,
+          "per_tax_dollar": 1.0053579632659055,
+          "tax_bn": 38.898430196830915,
+          "timing": 0.08769166578861336
+        },
+        "union": {
+          "accrual_bn": 114.96035569412545,
+          "covered_workers_m": 20.531695766369978,
+          "future_share_own_rate": 0.04579115282473823,
+          "hi_tax_bn": 28.157875579538665,
+          "net_own_rate": 0.9646507685006951,
+          "part_a_bn": 41.08811362276745,
+          "part_a_per_covered_worker_usd": 2001.204093919412,
+          "part_a_per_hi_tax_dollar": 1.459205027975361,
+          "per_tax_dollar": 1.010943014578354,
+          "tax_bn": 113.71596028295752,
+          "timing": 0.08749079901704433
+        }
+      },
+      "part_a_bn": 41.08811362276745,
+      "part_a_pv_at_2024_payable": {
+        "female_age_25": 87931.83005330877,
+        "female_age_45": 100238.05598984912,
+        "female_age_64": 124157.01234071517,
+        "male_age_25": 74430.82244083629,
+        "male_age_45": 85256.78877042118,
+        "male_age_64": 110307.45040394977
+      },
+      "ratio_net": 0.9646507685006951,
+      "result_row4": {
+        "case": {
+          "high": {
+            "case_bn": 387.37005494938376,
+            "case_on_accrual_net_bn": 459.13012599132816,
+            "delta_oasdi_net_bn": 51.355828836503456,
+            "delta_part_a_bn": 20.404242205440962,
+            "oasdi_accrual_net_bn": 102.56132451761619,
+            "oasdi_tax_bn": 106.13263289529047
+          },
+          "low": {
+            "case_bn": 321.81935699039354,
+            "case_on_accrual_net_bn": 397.19990199375627,
+            "delta_oasdi_net_bn": 54.9763027979218,
+            "delta_part_a_bn": 20.404242205440962,
+            "oasdi_accrual_net_bn": 109.14379150371653,
+            "oasdi_tax_bn": 112.9443092798048
+          }
+        },
+        "future_share_group": 0.04580037287648811,
+        "groups": {
+          "G1": {
+            "accrual_bn": 34.459870421451235,
+            "covered_workers_m": 7.18029474443704,
+            "future_share_own_rate": 0.035063851056487835,
+            "hi_tax_bn": 7.918259120286334,
+            "net_own_rate": 1.0333578420637872,
+            "part_a_bn": 11.433946573923514,
+            "part_a_per_covered_worker_usd": 1592.4062981929826,
+            "part_a_per_hi_tax_dollar": 1.4439975252426507,
+            "per_tax_dollar": 1.0709080006953708,
+            "tax_bn": 32.17818001086504,
+            "timing": 0.08612630326705314
+          },
+          "G2": {
+            "accrual_bn": 38.26445440926787,
+            "covered_workers_m": 6.69240574772574,
+            "future_share_own_rate": 0.057777168943527975,
+            "hi_tax_bn": 9.729653062518564,
+            "net_own_rate": 0.9162671388966781,
+            "part_a_bn": 15.570180220883515,
+            "part_a_per_covered_worker_usd": 2326.5445652596127,
+            "part_a_per_hi_tax_dollar": 1.600281132414099,
+            "per_tax_dollar": 0.9724527030079595,
+            "tax_bn": 39.34839637023938,
+            "timing": 0.08856582100287164
+          },
+          "G3plus": {
+            "accrual_bn": 39.106846556926925,
+            "covered_workers_m": 5.84943938532207,
+            "future_share_own_rate": 0.050556794985829635,
+            "hi_tax_bn": 9.68465365711179,
+            "net_own_rate": 0.9545302868296999,
+            "part_a_bn": 13.063224057803778,
+            "part_a_per_covered_worker_usd": 2233.243768724773,
+            "part_a_per_hi_tax_dollar": 1.3488581543864484,
+            "per_tax_dollar": 1.0053579632659055,
+            "tax_bn": 38.898430196830915,
+            "timing": 0.08769166578861336
+          },
+          "union": {
+            "accrual_bn": 111.83117138764602,
+            "covered_workers_m": 19.72213987748485,
+            "future_share_own_rate": 0.04580037287648811,
+            "hi_tax_bn": 27.33256583991669,
+            "net_own_rate": 0.9663505155742466,
+            "part_a_bn": 40.06735085261081,
+            "part_a_per_covered_worker_usd": 2031.592469250886,
+            "part_a_per_hi_tax_dollar": 1.4659198513333915,
+            "per_tax_dollar": 1.0127341156979532,
+            "tax_bn": 110.42500657793535,
+            "timing": 0.08750841529540411
+          }
+        },
+        "part_a_bn": 40.06735085261081,
+        "part_a_pv_at_2024_payable": {
+          "female_age_25": 87931.83005330877,
+          "female_age_45": 100238.05598984912,
+          "female_age_64": 124157.01234071517,
+          "male_age_25": 74430.82244083629,
+          "male_age_45": 85256.78877042118,
+          "male_age_64": 110307.45040394977
+        },
+        "ratio_net": 0.9663505155742466
+      }
+    },
+    "flat_3": {
+      "case": {
+        "high": {
+          "case_bn": 387.37005494938376,
+          "case_on_accrual_net_bn": 426.25571704201457,
+          "delta_oasdi_net_bn": 29.48842858404699,
+          "delta_part_a_bn": 9.397233508583863,
+          "oasdi_accrual_net_bn": 80.69392426515972,
+          "oasdi_tax_bn": 106.13263289529047
+        },
+        "low": {
+          "case_bn": 321.81935699039354,
+          "case_on_accrual_net_bn": 362.9220259879217,
+          "delta_oasdi_net_bn": 31.705435488944296,
+          "delta_part_a_bn": 9.397233508583863,
+          "oasdi_accrual_net_bn": 85.87292419473903,
+          "oasdi_tax_bn": 112.9443092798048
+        }
+      },
+      "future_share_group": 0.04558790448177374,
+      "groups": {
+        "G1": {
+          "accrual_bn": 30.69241926201358,
+          "covered_workers_m": 7.98985063332217,
+          "future_share_own_rate": 0.03490686911948396,
+          "hi_tax_bn": 8.74356885990831,
+          "net_own_rate": 0.8351216930512846,
+          "part_a_bn": 9.609430432204572,
+          "part_a_per_covered_worker_usd": 1202.7046403255454,
+          "part_a_per_hi_tax_dollar": 1.0990283928873115,
+          "per_tax_dollar": 0.8653275692568133,
+          "tax_bn": 35.46913371588723,
+          "timing": 0.08574071316481183
+        },
+        "G2": {
+          "accrual_bn": 29.26675116960431,
+          "covered_workers_m": 6.69240574772574,
+          "future_share_own_rate": 0.057601663193452335,
+          "hi_tax_bn": 9.729653062518564,
+          "net_own_rate": 0.7009418469421195,
+          "part_a_bn": 10.362472703134904,
+          "part_a_per_covered_worker_usd": 1548.3927744004989,
+          "part_a_per_hi_tax_dollar": 1.0650403088938643,
+          "per_tax_dollar": 0.7437851061127313,
+          "tax_bn": 39.34839637023938,
+          "timing": 0.08829679067254571
+        },
+        "G3plus": {
+          "accrual_bn": 30.630230300106813,
+          "covered_workers_m": 5.84943938532207,
+          "future_share_own_rate": 0.05034587082228747,
+          "hi_tax_bn": 9.68465365711179,
+          "net_own_rate": 0.7477968785622241,
+          "part_a_bn": 9.08843902041423,
+          "part_a_per_covered_worker_usd": 1553.7282159414704,
+          "part_a_per_hi_tax_dollar": 0.9384371751632297,
+          "per_tax_dollar": 0.7874412963483107,
+          "tax_bn": 38.898430196830915,
+          "timing": 0.08732581405174462
+        },
+        "union": {
+          "accrual_bn": 90.5894007317247,
+          "covered_workers_m": 20.531695766369978,
+          "future_share_own_rate": 0.04558790448177374,
+          "hi_tax_bn": 28.157875579538665,
+          "net_own_rate": 0.7603120931219303,
+          "part_a_bn": 29.06034215575371,
+          "part_a_per_covered_worker_usd": 1415.3892833028083,
+          "part_a_per_hi_tax_dollar": 1.0320502366617046,
+          "per_tax_dollar": 0.7966287274566615,
+          "tax_bn": 113.71596028295752,
+          "timing": 0.08710246286851114
+        }
+      },
+      "part_a_bn": 29.06034215575371,
+      "part_a_pv_at_2024_payable": {
+        "female_age_25": 53406.49256095686,
+        "female_age_45": 74250.66486274122,
+        "female_age_64": 111371.83101835355,
+        "male_age_25": 45553.13112726373,
+        "male_age_45": 63664.01105286704,
+        "male_age_64": 99782.66770193892
+      },
+      "ratio_net": 0.7603120931219303,
+      "result_row4": {
+        "case": {
+          "high": {
+            "case_bn": 387.37005494938376,
+            "case_on_accrual_net_bn": 425.58387916377234,
+            "delta_oasdi_net_bn": 29.584887980085956,
+            "delta_part_a_bn": 8.628936234302635,
+            "oasdi_accrual_net_bn": 80.79038366119869,
+            "oasdi_tax_bn": 106.13263289529047
+          },
+          "low": {
+            "case_bn": 321.81935699039354,
+            "case_on_accrual_net_bn": 362.256378950066,
+            "delta_oasdi_net_bn": 31.808085725369857,
+            "delta_part_a_bn": 8.628936234302635,
+            "oasdi_accrual_net_bn": 85.97557443116459,
+            "oasdi_tax_bn": 112.9443092798048
+          }
+        },
+        "future_share_group": 0.04559731560030306,
+        "groups": {
+          "G1": {
+            "accrual_bn": 28.176773779042616,
+            "covered_workers_m": 7.18029474443704,
+            "future_share_own_rate": 0.03488025445014792,
+            "hi_tax_bn": 7.918259120286334,
+            "net_own_rate": 0.8451056191140471,
+            "part_a_bn": 8.841133157923352,
+            "part_a_per_covered_worker_usd": 1231.305047020953,
+            "part_a_per_hi_tax_dollar": 1.1165501183552637,
+            "per_tax_dollar": 0.8756484602152347,
+            "tax_bn": 32.17818001086504,
+            "timing": 0.08567534033742628
+          },
+          "G2": {
+            "accrual_bn": 29.26675116960431,
+            "covered_workers_m": 6.69240574772574,
+            "future_share_own_rate": 0.057601663193452335,
+            "hi_tax_bn": 9.729653062518564,
+            "net_own_rate": 0.7009418469421195,
+            "part_a_bn": 10.362472703134904,
+            "part_a_per_covered_worker_usd": 1548.3927744004989,
+            "part_a_per_hi_tax_dollar": 1.0650403088938643,
+            "per_tax_dollar": 0.7437851061127313,
+            "tax_bn": 39.34839637023938,
+            "timing": 0.08829679067254571
+          },
+          "G3plus": {
+            "accrual_bn": 30.630230300106813,
+            "covered_workers_m": 5.84943938532207,
+            "future_share_own_rate": 0.05034587082228747,
+            "hi_tax_bn": 9.68465365711179,
+            "net_own_rate": 0.7477968785622241,
+            "part_a_bn": 9.08843902041423,
+            "part_a_per_covered_worker_usd": 1553.7282159414704,
+            "part_a_per_hi_tax_dollar": 0.9384371751632297,
+            "per_tax_dollar": 0.7874412963483107,
+            "tax_bn": 38.898430196830915,
+            "timing": 0.08732581405174462
+          },
+          "union": {
+            "accrual_bn": 88.07375524875373,
+            "covered_workers_m": 19.72213987748485,
+            "future_share_own_rate": 0.04559731560030306,
+            "hi_tax_bn": 27.33256583991669,
+            "net_own_rate": 0.7612209502133597,
+            "part_a_bn": 28.29204488147248,
+            "part_a_per_covered_worker_usd": 1434.5322088386154,
+            "part_a_per_hi_tax_dollar": 1.0351038774469743,
+            "per_tax_dollar": 0.7975888612385398,
+            "tax_bn": 110.42500657793535,
+            "timing": 0.08712044420833295
+          }
+        },
+        "part_a_bn": 28.29204488147248,
+        "part_a_pv_at_2024_payable": {
+          "female_age_25": 53406.49256095686,
+          "female_age_45": 74250.66486274122,
+          "female_age_64": 111371.83101835355,
+          "male_age_25": 45553.13112726373,
+          "male_age_45": 63664.01105286704,
+          "male_age_64": 99782.66770193892
+        },
+        "ratio_net": 0.7612209502133597
+      }
+    },
+    "unchanged": {
+      "case": {
+        "high": {
+          "case_bn": 387.37005494938376,
+          "case_on_accrual_net_bn": 458.48666784729994,
+          "delta_oasdi_net_bn": 49.99694215167768,
+          "delta_part_a_bn": 21.119670746238537,
+          "oasdi_accrual_net_bn": 101.20243783279041,
+          "oasdi_tax_bn": 106.13263289529047
+        },
+        "low": {
+          "case_bn": 321.81935699039354,
+          "case_on_accrual_net_bn": 396.4692294267203,
+          "delta_oasdi_net_bn": 53.53020169008824,
+          "delta_part_a_bn": 21.119670746238537,
+          "oasdi_accrual_net_bn": 107.69769039588297,
+          "oasdi_tax_bn": 112.9443092798048
+        }
+      },
+      "future_share_group": 0.04574894017784298,
+      "groups": {
+        "G1": {
+          "accrual_bn": 37.724670345810836,
+          "covered_workers_m": 7.98985063332217,
+          "future_share_own_rate": 0.035066009870357864,
+          "hi_tax_bn": 8.74356885990831,
+          "net_own_rate": 1.0262956229687572,
+          "part_a_bn": 12.598717456830473,
+          "part_a_per_covered_worker_usd": 1576.8401732426305,
+          "part_a_per_hi_tax_dollar": 1.4409124762085526,
+          "per_tax_dollar": 1.063591534205227,
+          "tax_bn": 35.46913371588723,
+          "timing": 0.08613160589789559
+        },
+        "G2": {
+          "accrual_bn": 37.32445447225063,
+          "covered_workers_m": 6.69240574772574,
+          "future_share_own_rate": 0.05772918188375674,
+          "hi_tax_bn": 9.729653062518564,
+          "net_own_rate": 0.893803750485502,
+          "part_a_bn": 15.258359250613573,
+          "part_a_per_covered_worker_usd": 2279.951309855768,
+          "part_a_per_hi_tax_dollar": 1.5682326134929911,
+          "per_tax_dollar": 0.94856354808097,
+          "tax_bn": 39.34839637023938,
+          "timing": 0.08849226230444687
+        },
+        "G3plus": {
+          "accrual_bn": 38.58291641837651,
+          "covered_workers_m": 5.84943938532207,
+          "future_share_own_rate": 0.050511686118785,
+          "hi_tax_bn": 9.68465365711179,
+          "net_own_rate": 0.9417868039746438,
+          "part_a_bn": 12.925702685964337,
+          "part_a_per_covered_worker_usd": 2209.7335888971943,
+          "part_a_per_hi_tax_dollar": 1.334658227707764,
+          "per_tax_dollar": 0.9918887786253104,
+          "tax_bn": 38.898430196830915,
+          "timing": 0.08761342365134794
+        },
+        "union": {
+          "accrual_bn": 113.63204123643796,
+          "covered_workers_m": 20.531695766369978,
+          "future_share_own_rate": 0.04574894017784298,
+          "hi_tax_bn": 28.157875579538665,
+          "net_own_rate": 0.9535468505020114,
+          "part_a_bn": 40.78277939340838,
+          "part_a_per_covered_worker_usd": 1986.332734396386,
+          "part_a_per_hi_tax_dollar": 1.4483613750692113,
+          "per_tax_dollar": 0.9992620293025645,
+          "tax_bn": 113.71596028295752,
+          "timing": 0.08741014548513555
+        }
+      },
+      "part_a_bn": 40.78277939340838,
+      "part_a_pv_at_2024_payable": {
+        "female_age_25": 84449.45792040926,
+        "female_age_45": 101109.63169189371,
+        "female_age_64": 127561.5103109539,
+        "male_age_25": 71621.87970565372,
+        "male_age_45": 86173.98910165747,
+        "male_age_64": 113302.57783502837
+      },
+      "ratio_net": 0.9535468505020114,
+      "result_row4": {
+        "case": {
+          "high": {
+            "case_bn": 387.37005494938376,
+            "case_on_accrual_net_bn": 457.6093195192444,
+            "delta_oasdi_net_bn": 50.14785354444928,
+            "delta_part_a_bn": 20.09141102541138,
+            "oasdi_accrual_net_bn": 101.35334922556201,
+            "oasdi_tax_bn": 106.13263289529047
+          },
+          "low": {
+            "case_bn": 321.81935699039354,
+            "case_on_accrual_net_bn": 395.60156671130113,
+            "delta_oasdi_net_bn": 53.69079869549618,
+            "delta_part_a_bn": 20.09141102541138,
+            "oasdi_accrual_net_bn": 107.85828740129091,
+            "oasdi_tax_bn": 112.9443092798048
+          }
+        },
+        "future_share_group": 0.045757969448729445,
+        "groups": {
+          "G1": {
+            "accrual_bn": 34.601733339196834,
+            "covered_workers_m": 7.18029474443704,
+            "future_share_own_rate": 0.035041462372795845,
+            "hi_tax_bn": 7.918259120286334,
+            "net_own_rate": 1.0376360002673828,
+            "part_a_bn": 11.570457736003311,
+            "part_a_per_covered_worker_usd": 1611.4182144079205,
+            "part_a_per_hi_tax_dollar": 1.4612375725821043,
+            "per_tax_dollar": 1.075316668858011,
+            "tax_bn": 32.17818001086504,
+            "timing": 0.08607131060357473
+          },
+          "G2": {
+            "accrual_bn": 37.32445447225063,
+            "covered_workers_m": 6.69240574772574,
+            "future_share_own_rate": 0.05772918188375674,
+            "hi_tax_bn": 9.729653062518564,
+            "net_own_rate": 0.893803750485502,
+            "part_a_bn": 15.258359250613573,
+            "part_a_per_covered_worker_usd": 2279.951309855768,
+            "part_a_per_hi_tax_dollar": 1.5682326134929911,
+            "per_tax_dollar": 0.94856354808097,
+            "tax_bn": 39.34839637023938,
+            "timing": 0.08849226230444687
+          },
+          "G3plus": {
+            "accrual_bn": 38.58291641837651,
+            "covered_workers_m": 5.84943938532207,
+            "future_share_own_rate": 0.050511686118785,
+            "hi_tax_bn": 9.68465365711179,
+            "net_own_rate": 0.9417868039746438,
+            "part_a_bn": 12.925702685964337,
+            "part_a_per_covered_worker_usd": 2209.7335888971943,
+            "part_a_per_hi_tax_dollar": 1.334658227707764,
+            "per_tax_dollar": 0.9918887786253104,
+            "tax_bn": 38.898430196830915,
+            "timing": 0.08761342365134794
+          },
+          "union": {
+            "accrual_bn": 110.50910422982396,
+            "covered_workers_m": 19.72213987748485,
+            "future_share_own_rate": 0.045757969448729445,
+            "hi_tax_bn": 27.33256583991669,
+            "net_own_rate": 0.9549687637124422,
+            "part_a_bn": 39.754519672581225,
+            "part_a_per_covered_worker_usd": 2015.7305403743587,
+            "part_a_per_hi_tax_dollar": 1.4544744867868724,
+            "per_tax_dollar": 1.000761581588218,
+            "tax_bn": 110.42500657793535,
+            "timing": 0.08742739724831831
+          }
+        },
+        "part_a_bn": 39.754519672581225,
+        "part_a_pv_at_2024_payable": {
+          "female_age_25": 84449.45792040926,
+          "female_age_45": 101109.63169189371,
+          "female_age_64": 127561.5103109539,
+          "male_age_25": 71621.87970565372,
+          "male_age_45": 86173.98910165747,
+          "male_age_64": 113302.57783502837
+        },
+        "ratio_net": 0.9549687637124422
+      }
+    }
+  },
+  "trustees_capital": {
+    "annuity_factor": 48.05220676772528,
+    "derivation": "inverse PV of annual end-year constant-real perpetuity; 2025-2200 discount/COLA factors from imported Economy, then ultimate-rate tail",
+    "flat_real_equivalent": 0.020810698764237804,
+    "real_path_2024_2040": {
+      "2024": 0.017560975609756113,
+      "2025": 0.014591439688715901,
+      "2026": 0.014605647517039966,
+      "2027": 0.0166015625,
+      "2028": 0.0166015625,
+      "2029": 0.0166015625,
+      "2030": 0.0166015625,
+      "2031": 0.0166015625,
+      "2032": 0.0166015625,
+      "2033": 0.0166015625,
+      "2034": 0.0166015625,
+      "2035": 0.0166015625,
+      "2036": 0.017578125,
+      "2037": 0.0185546875,
+      "2038": 0.01953125,
+      "2039": 0.0205078125,
+      "2040": 0.021484375
+    },
+    "ultimate_real_rate": 0.0224609375
+  }
+}

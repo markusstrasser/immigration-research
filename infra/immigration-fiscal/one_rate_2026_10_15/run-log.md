@@ -1,0 +1,11 @@
+All wall-clock entries below were read with `date -u '+%Y-%m-%d %H:%M:%S UTC'`.
+
+- 2026-10-15 01:57:39 UTC: imported pension runs produced 2%/3% factors; source-schema gate was being repaired (see failure catalog).
+- 2026-10-15 01:58:55 UTC: unchanged and flat-2 published/row-4 runs completed; unchanged pension controls passed after source-schema repair.
+- 2026-10-15 02:00:54 UTC: first five deterministic tests passed; Trustees capital perpetuity equivalent is 2.0810698764% real.
+- 2026-10-15 02:04:31 UTC: complete first build passed, 50.946s via `perf_counter`, Python peak RSS 429,096,960 bytes, maximum child RSS 571,359,232 bytes; nine tests passed. This preceded the native-child key correction.
+- 2026-10-15 02:05:23 UTC: review found the alternative-key sum; corrected actual-key selection and added the independent payload regression. The source read and rate controls were unchanged.
+- 2026-10-15 02:07:19 UTC: corrected build completed with all evaluator controls, 119.969s, Python peak RSS 271,155,200 bytes and maximum child RSS 395,493,376 bytes; all ten tests passed in 1.88s. Per-stage timers were added to locate this run's slower phases before the final reproduction.
+- First reproduction: both commands exited 0 and files were IDENTICAL 15/15, but the final auditor exit was 3 because the pytest command named the directory rather than the test file. The command now names the actual test file explicitly (failure catalog); no script exemption is used.
+- 2026-10-15 02:12:07 UTC: final reproduction confirmed: both commands and the final auditor exited **0**, **IDENTICAL 15/15**, with all ten tests passing. Timed build: **75.894s**, Python peak RSS **295,927,808 bytes**, maximum child RSS **446,087,168 bytes**. Source loading 1.300s, row-4 loading 0.222s, individual pension arms 11.523/18.182/15.003s, full evaluator 6.616s, external normal-cost probe 15.848s. This phase profile locates the repeated work in the imported pension computations and independent OPEB probe; no individual opaque gate exceeds two minutes. No upstream performance change was made under this lane-only brief.
+- The final log entry and its rendered RESULT were added after that complete numerical reproduction; the renderer was checked twice for identical bytes. Numerical inputs and derived outputs were unchanged.
