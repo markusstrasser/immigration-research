@@ -1,0 +1,134 @@
+{
+  "v8_unchanged_gate": true,
+  "post_engine_item_closure_1e_9": true,
+  "rows": [
+    {
+      "basis": "set",
+      "end": "low",
+      "scenario": "unchanged",
+      "baseline_bn": 365.7919302554848,
+      "change_bn": 0,
+      "result_bn": 365.7919302554848
+    },
+    {
+      "basis": "set",
+      "end": "low",
+      "scenario": "item16",
+      "baseline_bn": 365.7919302554848,
+      "change_bn": -4.1939855904630905,
+      "result_bn": 361.59794466502166
+    },
+    {
+      "basis": "set",
+      "end": "low",
+      "scenario": "item17",
+      "baseline_bn": 365.7919302554848,
+      "change_bn": 3.7604508119684428,
+      "result_bn": 369.5523810674532
+    },
+    {
+      "basis": "set",
+      "end": "low",
+      "scenario": "joint",
+      "baseline_bn": 365.7919302554848,
+      "change_bn": -0.4400877924753557,
+      "result_bn": 365.3518424630094
+    },
+    {
+      "basis": "set",
+      "end": "high",
+      "scenario": "unchanged",
+      "baseline_bn": 455.9817845889793,
+      "change_bn": 0,
+      "result_bn": 455.9817845889793
+    },
+    {
+      "basis": "set",
+      "end": "high",
+      "scenario": "item16",
+      "baseline_bn": 455.9817845889793,
+      "change_bn": -4.556858662650336,
+      "result_bn": 451.42492592632897
+    },
+    {
+      "basis": "set",
+      "end": "high",
+      "scenario": "item17",
+      "baseline_bn": 455.9817845889793,
+      "change_bn": 3.6159022284508096,
+      "result_bn": 459.5976868174301
+    },
+    {
+      "basis": "set",
+      "end": "high",
+      "scenario": "joint",
+      "baseline_bn": 455.9817845889793,
+      "change_bn": -0.9477732280467541,
+      "result_bn": 455.03401136093254
+    },
+    {
+      "basis": "cash",
+      "end": "low",
+      "scenario": "unchanged",
+      "baseline_bn": 281.75256367607324,
+      "change_bn": 0,
+      "result_bn": 281.75256367607324
+    },
+    {
+      "basis": "cash",
+      "end": "low",
+      "scenario": "item16",
+      "baseline_bn": 281.75256367607324,
+      "change_bn": -4.210464271306171,
+      "result_bn": 277.54209940476704
+    },
+    {
+      "basis": "cash",
+      "end": "low",
+      "scenario": "item17",
+      "baseline_bn": 281.75256367607324,
+      "change_bn": 4.181807481350864,
+      "result_bn": 285.9343711574241
+    },
+    {
+      "basis": "cash",
+      "end": "low",
+      "scenario": "joint",
+      "baseline_bn": 281.75256367607324,
+      "change_bn": -0.033416933296233076,
+      "result_bn": 281.719146742777
+    },
+    {
+      "basis": "cash",
+      "end": "high",
+      "scenario": "unchanged",
+      "baseline_bn": 371.9424180095669,
+      "change_bn": 0,
+      "result_bn": 371.9424180095669
+    },
+    {
+      "basis": "cash",
+      "end": "high",
+      "scenario": "item16",
+      "baseline_bn": 371.9424180095669,
+      "change_bn": -4.573337343493382,
+      "result_bn": 367.3690806660735
+    },
+    {
+      "basis": "cash",
+      "end": "high",
+      "scenario": "item17",
+      "baseline_bn": 371.9424180095669,
+      "change_bn": 4.037258897833231,
+      "result_bn": 375.9796769074001
+    },
+    {
+      "basis": "cash",
+      "end": "high",
+      "scenario": "joint",
+      "baseline_bn": 371.9424180095669,
+      "change_bn": -0.5411023688675964,
+      "result_bn": 371.4013156406993
+    }
+  ]
+}

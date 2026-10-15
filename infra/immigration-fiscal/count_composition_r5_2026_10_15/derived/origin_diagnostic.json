@@ -1,0 +1,137 @@
+{
+  "sets": {
+    "set": {
+      "all_parent_types_minor_only": {
+        "coverage_increment_bn": {
+          "low": 0.20074410690721614,
+          "high": 0.2151636804155302
+        },
+        "net_missing_people": 8192.62039044148,
+        "supported_latent_base_people": 540633.2770628509,
+        "zero_denominator_proxy_people": 0.0,
+        "status": "conditional beside only; not in items16/17",
+        "adult_rule": "none: adults withheld",
+        "price_rule": "existing blended latent profile; G3/G4 origin fractions blended by case age-specific descendant count parts"
+      },
+      "all_parent_types_child_to_adult_transport": {
+        "coverage_increment_bn": {
+          "low": 0.06916255274438277,
+          "high": 0.18297367227623468
+        },
+        "net_missing_people": 55400.30529772934,
+        "supported_latent_base_people": 1172389.7316830084,
+        "zero_denominator_proxy_people": 0.0,
+        "status": "conditional beside only; not in items16/17",
+        "adult_rule": "UNVERIFIED transfer of same-sex linked-child pooled fractions to latent adults",
+        "price_rule": "existing blended latent profile; G3/G4 origin fractions blended by case age-specific descendant count parts"
+      },
+      "biological_minor_only": {
+        "coverage_increment_bn": {
+          "low": 0.2255526011797545,
+          "high": 0.24196119295274776
+        },
+        "net_missing_people": 9320.860625715646,
+        "supported_latent_base_people": 569868.4713672746,
+        "zero_denominator_proxy_people": 0.0,
+        "status": "conditional beside only; not in items16/17",
+        "adult_rule": "none: adults withheld",
+        "price_rule": "existing blended latent profile; G3/G4 origin fractions blended by case age-specific descendant count parts"
+      },
+      "biological_child_to_adult_transport": {
+        "coverage_increment_bn": {
+          "low": 0.08233794564111976,
+          "high": 0.20768314812810484
+        },
+        "net_missing_people": 61082.84233918707,
+        "supported_latent_base_people": 1262529.2253384981,
+        "zero_denominator_proxy_people": 0.0,
+        "status": "conditional beside only; not in items16/17",
+        "adult_rule": "UNVERIFIED transfer of same-sex linked-child pooled fractions to latent adults",
+        "price_rule": "existing blended latent profile; G3/G4 origin fractions blended by case age-specific descendant count parts"
+      },
+      "observed_completion_nonreporter_hispanic": {
+        "coverage_increment_bn": {
+          "low": 0.01578868059588851,
+          "high": 0.017407225812117507
+        },
+        "net_missing_people": 1031.2117126278768,
+        "status": "beside: observed origin in item10 nonreporter records, own existing case prices"
+      }
+    },
+    "cash": {
+      "all_parent_types_minor_only": {
+        "coverage_increment_bn": {
+          "low": 0.20065220647748302,
+          "high": 0.21507177998580448
+        },
+        "net_missing_people": 8192.62039044148,
+        "supported_latent_base_people": 540633.2770628509,
+        "zero_denominator_proxy_people": 0.0,
+        "status": "conditional beside only; not in items16/17",
+        "adult_rule": "none: adults withheld",
+        "price_rule": "existing blended latent profile; G3/G4 origin fractions blended by case age-specific descendant count parts"
+      },
+      "all_parent_types_child_to_adult_transport": {
+        "coverage_increment_bn": {
+          "low": -0.18657654628470607,
+          "high": -0.07276542675280478
+        },
+        "net_missing_people": 55400.30529772934,
+        "supported_latent_base_people": 1172389.7316830084,
+        "zero_denominator_proxy_people": 0.0,
+        "status": "conditional beside only; not in items16/17",
+        "adult_rule": "UNVERIFIED transfer of same-sex linked-child pooled fractions to latent adults",
+        "price_rule": "existing blended latent profile; G3/G4 origin fractions blended by case age-specific descendant count parts"
+      },
+      "biological_minor_only": {
+        "coverage_increment_bn": {
+          "low": 0.22524505502668438,
+          "high": 0.24165364679968582
+        },
+        "net_missing_people": 9320.860625715646,
+        "supported_latent_base_people": 569868.4713672746,
+        "zero_denominator_proxy_people": 0.0,
+        "status": "conditional beside only; not in items16/17",
+        "adult_rule": "none: adults withheld",
+        "price_rule": "existing blended latent profile; G3/G4 origin fractions blended by case age-specific descendant count parts"
+      },
+      "biological_child_to_adult_transport": {
+        "coverage_increment_bn": {
+          "low": -0.19825771203243595,
+          "high": -0.07291250954539658
+        },
+        "net_missing_people": 61082.84233918707,
+        "supported_latent_base_people": 1262529.2253384981,
+        "zero_denominator_proxy_people": 0.0,
+        "status": "conditional beside only; not in items16/17",
+        "adult_rule": "UNVERIFIED transfer of same-sex linked-child pooled fractions to latent adults",
+        "price_rule": "existing blended latent profile; G3/G4 origin fractions blended by case age-specific descendant count parts"
+      },
+      "observed_completion_nonreporter_hispanic": {
+        "coverage_increment_bn": {
+          "low": 0.015592946246969277,
+          "high": 0.017211491463199193
+        },
+        "net_missing_people": 1031.2117126278768,
+        "status": "beside: observed origin in item10 nonreporter records, own existing case prices"
+      }
+    }
+  },
+  "fixed_G2_price_screen_bn": {
+    "set": {
+      "low": -6.74398152365255,
+      "high": -7.268651923033161
+    },
+    "cash": {
+      "low": -6.678079628201649,
+      "high": -7.202750027582246
+    }
+  },
+  "central_items_include_origin_diagnostic": false,
+  "text_correction": "Non-Mexican reporters are not necessarily non-Hispanic; PRDTHSP distinguishes both. Linked native children falsify the categorical premise. Their origin fractions do not identify latent adults' origin.",
+  "limitations": [
+    "No latent adult origin data; no joint latent-stock re-estimation.",
+    "Child age-sex origin cells can be sparse; zero denominator cells explicitly expose unsupported proxy mass.",
+    "Minor-only coverage is a modeled transfer to latent minors, not directly observed omitted persons."
+  ]
+}

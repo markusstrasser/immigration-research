@@ -1,0 +1,13 @@
+{
+  "infra/immigration-fiscal/count_composition_r5_2026_10_15/derived/native_person_factors.parquet": "712efac2bb35ea19ad1b9950998b5a0fa425f33fccd0c662669646f65cebff45",
+  "infra/immigration-fiscal/coverage_bound_2026_10_14/_cache/oct15_final_routing/cash/pricing.npz": "5dba837e66da3ed75915b0c4a3b4e899cd86dde8d5a67af11646fb14b53b9815",
+  "infra/immigration-fiscal/coverage_bound_2026_10_14/_cache/oct15_final_routing/set/pricing.npz": "58105f8fec99702772ab7f837b0f1bf634f17c6bbae2e8d7e574399d569d260e",
+  "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/coverage_bound_oct15.json": "3456126cc53c353ef0806059dcff33ccc1448cfe8de39d2c92583c6c7d3d073c",
+  "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/pricing_audit_oct15_final_routing_cash.json": "ebfa3a58e7316df20bd818be839644946076eba154bbc47866b08e74e36fe963",
+  "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/pricing_audit_oct15_final_routing_set.json": "8fe337330d2eb3fd9407f8d2cce8a0f2c888d7345f3f89dab5cf217ee5fb4d83",
+  "infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/pricing_dependencies_oct15_final_routing_cash.json": "ce460fbe7f28a557c4e0a21c90c93550aa18e373d65a420d042313c598720795",
+  "infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/pricing_dependencies_oct15_final_routing_set.json": "b4c608039ce599478fcbf6581ffcc241283ce92b3dc942424a56b4b210bd27b4",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections.json": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections_cash.json": "9af66b4c6a87ddb96d22c208364cd6798d23411590252bbe9520f3019b6446ea",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/summary.json": "1d999c666d68696ed2728b9e6fd48c44ab85371e875e3e6f1b16d0b16971013a"
+}

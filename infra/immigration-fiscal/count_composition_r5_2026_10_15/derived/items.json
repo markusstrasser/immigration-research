@@ -1,0 +1,621 @@
+{
+  "case": "oct15",
+  "accounting_year": 2024,
+  "population_v8": 45230062.30075857,
+  "sets": {
+    "set": {
+      "unchanged": {
+        "by_end": {
+          "low": {
+            "total_bn": 0.0,
+            "by_generation_bn": {
+              "G1": 0.0,
+              "G2": 0.0,
+              "G3plus": 0.0
+            },
+            "observed_bn": 0.0,
+            "coverage_bn": 0.0,
+            "per_v8_member_usd": 0.0,
+            "v8_plus_change_bn": 365.7919302554848
+          },
+          "high": {
+            "total_bn": 0.0,
+            "by_generation_bn": {
+              "G1": 0.0,
+              "G2": 0.0,
+              "G3plus": 0.0
+            },
+            "observed_bn": 0.0,
+            "coverage_bn": 0.0,
+            "per_v8_member_usd": 0.0,
+            "v8_plus_change_bn": 455.9817845889793
+          }
+        },
+        "observed_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": 0.0,
+          "G3plus": 0.0
+        },
+        "coverage_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": 0.0,
+          "G3plus": 0.0
+        },
+        "population_change": 0.0,
+        "coverage_counts_by_generation": {
+          "G1": 446105.1075376299,
+          "G2": 824190.8641341948,
+          "G3plus": 690117.6475083351
+        },
+        "scope": "fixed-roster survey calibration at v8 signed piece prices; national key masses, coefficients and production attribution fixed"
+      },
+      "item16": {
+        "by_end": {
+          "low": {
+            "total_bn": -4.1939855904630905,
+            "by_generation_bn": {
+              "G1": 0.0,
+              "G2": -2.4052120110631336,
+              "G3plus": -1.7887735793999566
+            },
+            "observed_bn": -3.968822665993305,
+            "coverage_bn": -0.22516292446978545,
+            "per_v8_member_usd": -92.72562046399727,
+            "v8_plus_change_bn": 361.59794466502166
+          },
+          "high": {
+            "total_bn": -4.556858662650336,
+            "by_generation_bn": {
+              "G1": 0.0,
+              "G2": -2.591666649823789,
+              "G3plus": -1.9651920128265465
+            },
+            "observed_bn": -4.3177046703027395,
+            "coverage_bn": -0.2391539923475962,
+            "per_v8_member_usd": -100.7484498329756,
+            "v8_plus_change_bn": 451.42492592632897
+          }
+        },
+        "observed_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": -143984.78723026856,
+          "G3plus": -174349.89016499883
+        },
+        "coverage_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": -5385.143912610431,
+          "G3plus": -3268.393205469739
+        },
+        "population_change": -326988.2145133476,
+        "coverage_counts_by_generation": {
+          "G1": 446105.1075376299,
+          "G2": 818805.7202215843,
+          "G3plus": 686849.2543028654
+        },
+        "scope": "fixed-roster survey calibration at v8 signed piece prices; national key masses, coefficients and production attribution fixed"
+      },
+      "item17": {
+        "by_end": {
+          "low": {
+            "total_bn": 3.7604508119684428,
+            "by_generation_bn": {
+              "G1": 0.752551193124401,
+              "G2": 1.4048317064132745,
+              "G3plus": 1.6030679124307674
+            },
+            "observed_bn": 0.0,
+            "coverage_bn": 3.7604508119684428,
+            "per_v8_member_usd": 83.14051806878398,
+            "v8_plus_change_bn": 369.5523810674532
+          },
+          "high": {
+            "total_bn": 3.6159022284508096,
+            "by_generation_bn": {
+              "G1": 0.702156684341965,
+              "G2": 1.3745170277503622,
+              "G3plus": 1.5392285163584822
+            },
+            "observed_bn": 0.0,
+            "coverage_bn": 3.615902228450809,
+            "per_v8_member_usd": 79.94466610297297,
+            "v8_plus_change_bn": 459.5976868174301
+          }
+        },
+        "observed_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": 0.0,
+          "G3plus": 0.0
+        },
+        "coverage_people_change_by_generation": {
+          "G1": 3.637978807091713e-12,
+          "G2": 3.637978807091713e-12,
+          "G3plus": 1.0913936421275139e-11
+        },
+        "population_change": 1.8189894035458565e-11,
+        "coverage_counts_by_generation": {
+          "G1": 446105.1075376299,
+          "G2": 824190.8641341948,
+          "G3plus": 690117.6475083351
+        },
+        "scope": "fixed-roster survey calibration at v8 signed piece prices; national key masses, coefficients and production attribution fixed"
+      },
+      "joint": {
+        "by_end": {
+          "low": {
+            "total_bn": -0.4400877924753557,
+            "by_generation_bn": {
+              "G1": 0.752551193124401,
+              "G2": -1.0077389211498187,
+              "G3plus": -0.18490006444993798
+            },
+            "observed_bn": -3.968822665993305,
+            "coverage_bn": 3.528734873517949,
+            "per_v8_member_usd": -9.729984220427987,
+            "v8_plus_change_bn": 365.3518424630094
+          },
+          "high": {
+            "total_bn": -0.9477732280467541,
+            "by_generation_bn": {
+              "G1": 0.7021566843419649,
+              "G2": -1.2246971242725526,
+              "G3plus": -0.42523278811616644
+            },
+            "observed_bn": -4.3177046703027395,
+            "coverage_bn": 3.369931442255985,
+            "per_v8_member_usd": -20.954497514164572,
+            "v8_plus_change_bn": 455.03401136093254
+          }
+        },
+        "observed_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": -143984.78723026856,
+          "G3plus": -174349.89016499883
+        },
+        "coverage_people_change_by_generation": {
+          "G1": 5.4569682106375694e-12,
+          "G2": -5385.143912610423,
+          "G3plus": -3268.3932054697343
+        },
+        "population_change": -326988.21451334754,
+        "coverage_counts_by_generation": {
+          "G1": 446105.1075376299,
+          "G2": 818805.7202215844,
+          "G3plus": 686849.2543028654
+        },
+        "scope": "fixed-roster survey calibration at v8 signed piece prices; national key masses, coefficients and production attribution fixed"
+      },
+      "item17_count_transfer": {
+        "by_end": {
+          "low": {
+            "total_bn": 2.0459383641588946,
+            "by_generation_bn": {
+              "G1": 0.5660653086492068,
+              "G2": 0.8391193690449781,
+              "G3plus": 0.6407536864647096
+            },
+            "observed_bn": 0.0,
+            "coverage_bn": 2.0459383641588946,
+            "per_v8_member_usd": 45.23403816148583,
+            "v8_plus_change_bn": 367.83786861964364
+          },
+          "high": {
+            "total_bn": 1.720632090333928,
+            "by_generation_bn": {
+              "G1": 0.5475977894172877,
+              "G2": 0.6895400731123699,
+              "G3plus": 0.48349422780427054
+            },
+            "observed_bn": 0.0,
+            "coverage_bn": 1.720632090333928,
+            "per_v8_member_usd": 38.04178024103829,
+            "v8_plus_change_bn": 457.7024166793132
+          }
+        },
+        "observed_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": 0.0,
+          "G3plus": 0.0
+        },
+        "coverage_people_change_by_generation": {
+          "G1": 9824.437385514664,
+          "G2": -56152.52935127481,
+          "G3plus": -55825.005124904
+        },
+        "population_change": -102153.09709066415,
+        "coverage_counts_by_generation": {
+          "G1": 455929.54492314457,
+          "G2": 768038.33478292,
+          "G3plus": 634292.6423834311
+        },
+        "scope": "fixed-roster survey calibration at v8 signed piece prices; national key masses, coefficients and production attribution fixed"
+      },
+      "joint_count_transfer": {
+        "by_end": {
+          "low": {
+            "total_bn": -2.101026241806572,
+            "by_generation_bn": {
+              "G1": 0.5660653086492068,
+              "G2": -1.5543448977684304,
+              "G3plus": -1.1127466526873484
+            },
+            "observed_bn": -3.968822665993305,
+            "coverage_bn": 1.8677964241867329,
+            "per_v8_member_usd": -46.45198646501389,
+            "v8_plus_change_bn": 363.6909040136782
+          },
+          "high": {
+            "total_bn": -2.7865063639754384,
+            "by_generation_bn": {
+              "G1": 0.5475977894172877,
+              "G2": -1.8895745741094685,
+              "G3plus": -1.4445295792832573
+            },
+            "observed_bn": -4.3177046703027395,
+            "coverage_bn": 1.5311983063273011,
+            "per_v8_member_usd": -61.60739610408861,
+            "v8_plus_change_bn": 453.19527822500385
+          }
+        },
+        "observed_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": -143984.78723026856,
+          "G3plus": -174349.89016499883
+        },
+        "coverage_people_change_by_generation": {
+          "G1": 9824.437385514662,
+          "G2": -60942.08615323591,
+          "G3plus": -57927.45239501948
+        },
+        "population_change": -427379.77855800814,
+        "coverage_counts_by_generation": {
+          "G1": 455929.54492314457,
+          "G2": 763248.7779809589,
+          "G3plus": 632190.1951133156
+        },
+        "scope": "fixed-roster survey calibration at v8 signed piece prices; national key masses, coefficients and production attribution fixed"
+      }
+    },
+    "cash": {
+      "unchanged": {
+        "by_end": {
+          "low": {
+            "total_bn": 0.0,
+            "by_generation_bn": {
+              "G1": 0.0,
+              "G2": 0.0,
+              "G3plus": 0.0
+            },
+            "observed_bn": 0.0,
+            "coverage_bn": 0.0,
+            "per_v8_member_usd": 0.0,
+            "v8_plus_change_bn": 281.75256367607324
+          },
+          "high": {
+            "total_bn": 0.0,
+            "by_generation_bn": {
+              "G1": 0.0,
+              "G2": 0.0,
+              "G3plus": 0.0
+            },
+            "observed_bn": 0.0,
+            "coverage_bn": 0.0,
+            "per_v8_member_usd": 0.0,
+            "v8_plus_change_bn": 371.9424180095669
+          }
+        },
+        "observed_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": 0.0,
+          "G3plus": 0.0
+        },
+        "coverage_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": 0.0,
+          "G3plus": 0.0
+        },
+        "population_change": 0.0,
+        "coverage_counts_by_generation": {
+          "G1": 446105.1075376299,
+          "G2": 824190.8641341948,
+          "G3plus": 690117.6475083351
+        },
+        "scope": "fixed-roster survey calibration at v8 signed piece prices; national key masses, coefficients and production attribution fixed"
+      },
+      "item16": {
+        "by_end": {
+          "low": {
+            "total_bn": -4.210464271306171,
+            "by_generation_bn": {
+              "G1": 0.0,
+              "G2": -2.4190799333749946,
+              "G3plus": -1.7913843379311767
+            },
+            "observed_bn": -3.984452903641279,
+            "coverage_bn": -0.2260113676648926,
+            "per_v8_member_usd": -93.0899507347253,
+            "v8_plus_change_bn": 277.54209940476704
+          },
+          "high": {
+            "total_bn": -4.573337343493382,
+            "by_generation_bn": {
+              "G1": 0.0,
+              "G2": -2.6055345721356504,
+              "G3plus": -1.967802771357731
+            },
+            "observed_bn": -4.333334907950678,
+            "coverage_bn": -0.24000243554270284,
+            "per_v8_member_usd": -101.11278010370285,
+            "v8_plus_change_bn": 367.3690806660735
+          }
+        },
+        "observed_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": -143984.78723026856,
+          "G3plus": -174349.89016499883
+        },
+        "coverage_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": -5385.143912610431,
+          "G3plus": -3268.393205469739
+        },
+        "population_change": -326988.2145133476,
+        "coverage_counts_by_generation": {
+          "G1": 446105.1075376299,
+          "G2": 818805.7202215843,
+          "G3plus": 686849.2543028654
+        },
+        "scope": "fixed-roster survey calibration at v8 signed piece prices; national key masses, coefficients and production attribution fixed"
+      },
+      "item17": {
+        "by_end": {
+          "low": {
+            "total_bn": 4.181807481350864,
+            "by_generation_bn": {
+              "G1": 0.9023295935195143,
+              "G2": 1.57683188515862,
+              "G3plus": 1.7026460026727301
+            },
+            "observed_bn": 0.0,
+            "coverage_bn": 4.181807481350864,
+            "per_v8_member_usd": 92.45637234686562,
+            "v8_plus_change_bn": 285.9343711574241
+          },
+          "high": {
+            "total_bn": 4.037258897833231,
+            "by_generation_bn": {
+              "G1": 0.8519350847370782,
+              "G2": 1.5465172064957078,
+              "G3plus": 1.638806606600445
+            },
+            "observed_bn": 0.0,
+            "coverage_bn": 4.037258897833231,
+            "per_v8_member_usd": 89.26052038105463,
+            "v8_plus_change_bn": 375.9796769074001
+          }
+        },
+        "observed_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": 0.0,
+          "G3plus": 0.0
+        },
+        "coverage_people_change_by_generation": {
+          "G1": 3.637978807091713e-12,
+          "G2": 3.637978807091713e-12,
+          "G3plus": 1.0913936421275139e-11
+        },
+        "population_change": 1.8189894035458565e-11,
+        "coverage_counts_by_generation": {
+          "G1": 446105.1075376299,
+          "G2": 824190.8641341948,
+          "G3plus": 690117.6475083351
+        },
+        "scope": "fixed-roster survey calibration at v8 signed piece prices; national key masses, coefficients and production attribution fixed"
+      },
+      "joint": {
+        "by_end": {
+          "low": {
+            "total_bn": -0.03341693329623352,
+            "by_generation_bn": {
+              "G1": 0.9023295935195143,
+              "G2": -0.848495144086749,
+              "G3plus": -0.0872513827289988
+            },
+            "observed_bn": -3.984452903641279,
+            "coverage_bn": 3.9510359703450453,
+            "per_v8_member_usd": -0.7388212970839324,
+            "v8_plus_change_bn": 281.719146742777
+          },
+          "high": {
+            "total_bn": -0.5411023688675964,
+            "by_generation_bn": {
+              "G1": 0.8519350847370782,
+              "G2": -1.0654533472094831,
+              "G3plus": -0.3275841063951916
+            },
+            "observed_bn": -4.333334907950678,
+            "coverage_bn": 3.7922325390830816,
+            "per_v8_member_usd": -11.963334590819729,
+            "v8_plus_change_bn": 371.4013156406993
+          }
+        },
+        "observed_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": -143984.78723026856,
+          "G3plus": -174349.89016499883
+        },
+        "coverage_people_change_by_generation": {
+          "G1": 5.4569682106375694e-12,
+          "G2": -5385.143912610423,
+          "G3plus": -3268.3932054697343
+        },
+        "population_change": -326988.21451334754,
+        "coverage_counts_by_generation": {
+          "G1": 446105.1075376299,
+          "G2": 818805.7202215844,
+          "G3plus": 686849.2543028654
+        },
+        "scope": "fixed-roster survey calibration at v8 signed piece prices; national key masses, coefficients and production attribution fixed"
+      },
+      "item17_count_transfer": {
+        "by_end": {
+          "low": {
+            "total_bn": 3.1384369624832393,
+            "by_generation_bn": {
+              "G1": 0.7230974541544213,
+              "G2": 1.3378206702871922,
+              "G3plus": 1.0775188380416256
+            },
+            "observed_bn": 0.0,
+            "coverage_bn": 3.1384369624832393,
+            "per_v8_member_usd": 69.38829625336605,
+            "v8_plus_change_bn": 284.8910006385565
+          },
+          "high": {
+            "total_bn": 2.813130688658282,
+            "by_generation_bn": {
+              "G1": 0.7046299349225021,
+              "G2": 1.1882413743545839,
+              "G3plus": 0.9202593793811962
+            },
+            "observed_bn": 0.0,
+            "coverage_bn": 2.813130688658282,
+            "per_v8_member_usd": 62.196038332918725,
+            "v8_plus_change_bn": 374.7555486982252
+          }
+        },
+        "observed_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": 0.0,
+          "G3plus": 0.0
+        },
+        "coverage_people_change_by_generation": {
+          "G1": 9824.437385514664,
+          "G2": -56152.52935127481,
+          "G3plus": -55825.005124904
+        },
+        "population_change": -102153.09709066415,
+        "coverage_counts_by_generation": {
+          "G1": 455929.54492314457,
+          "G2": 768038.33478292,
+          "G3plus": 634292.6423834311
+        },
+        "scope": "fixed-roster survey calibration at v8 signed piece prices; national key masses, coefficients and production attribution fixed"
+      },
+      "joint_count_transfer": {
+        "by_end": {
+          "low": {
+            "total_bn": -1.0234396324632153,
+            "by_generation_bn": {
+              "G1": 0.7230974541544213,
+              "G2": -1.068527770110139,
+              "G3plus": -0.6780093165074975
+            },
+            "observed_bn": -3.984452903641279,
+            "coverage_bn": 2.9610132711780635,
+            "per_v8_member_usd": -22.627420357235522,
+            "v8_plus_change_bn": 280.72912404361
+          },
+          "high": {
+            "total_bn": -1.7089197546320372,
+            "by_generation_bn": {
+              "G1": 0.7046299349225023,
+              "G2": -1.4037574464511777,
+              "G3plus": -1.0097922431033617
+            },
+            "observed_bn": -4.333334907950678,
+            "coverage_bn": 2.6244151533186413,
+            "per_v8_member_usd": -37.78282999630925,
+            "v8_plus_change_bn": 370.23349825493483
+          }
+        },
+        "observed_people_change_by_generation": {
+          "G1": 0.0,
+          "G2": -143984.78723026856,
+          "G3plus": -174349.89016499883
+        },
+        "coverage_people_change_by_generation": {
+          "G1": 9824.437385514662,
+          "G2": -60942.08615323591,
+          "G3plus": -57927.45239501948
+        },
+        "population_change": -427379.77855800814,
+        "coverage_counts_by_generation": {
+          "G1": 455929.54492314457,
+          "G2": 763248.7779809589,
+          "G3plus": 632190.1951133156
+        },
+        "scope": "fixed-roster survey calibration at v8 signed piece prices; national key masses, coefficients and production attribution fixed"
+      }
+    }
+  },
+  "metadata": {
+    "set": {
+      "row4_original_union": 39712493.3311879,
+      "final_routing_gap_held_fixed_bn": {
+        "low": 0.01627076774804337,
+        "high": 0.016390851683027563
+      },
+      "reporter_records": 204,
+      "nonreporter_records": 27,
+      "native_weight_change_reporters": -7164.8953327895215,
+      "native_weight_change_observed_nonreporters": 3611.0497317657196,
+      "central_tenure_rule": "Table D all-age net-omission odds, normalized within exact current age x sex x generation PES cells; DA under-five part unchanged",
+      "transfer_arm": "actual Table D tenure x Census-age x sex cells, with V2024 absorption; counts may change",
+      "no_cash_rent_rule": "H_TENURE 3 included in renter; same occupied nonowner definition as Census tenure",
+      "fixed": [
+        "national budgets/key masses",
+        "response settings including item9",
+        "latent nonreporting stock/age mix",
+        "household rosters/keys and filing units",
+        "item11 generation allocation rule",
+        "production coefficients"
+      ]
+    },
+    "cash": {
+      "row4_original_union": 39712493.3311879,
+      "final_routing_gap_held_fixed_bn": {
+        "low": 0.01627076774803493,
+        "high": 0.016390851683020458
+      },
+      "reporter_records": 204,
+      "nonreporter_records": 27,
+      "native_weight_change_reporters": -7164.8953327895215,
+      "native_weight_change_observed_nonreporters": 3611.0497317657196,
+      "central_tenure_rule": "Table D all-age net-omission odds, normalized within exact current age x sex x generation PES cells; DA under-five part unchanged",
+      "transfer_arm": "actual Table D tenure x Census-age x sex cells, with V2024 absorption; counts may change",
+      "no_cash_rent_rule": "H_TENURE 3 included in renter; same occupied nonowner definition as Census tenure",
+      "fixed": [
+        "national budgets/key masses",
+        "response settings including item9",
+        "latent nonreporting stock/age mix",
+        "household rosters/keys and filing units",
+        "item11 generation allocation rule",
+        "production coefficients"
+      ]
+    }
+  },
+  "sign": "positive raises annual net cost to other residents; $bn",
+  "v8_unchanged": {
+    "set": [
+      365.7919302554848,
+      455.9817845889793
+    ],
+    "cash": [
+      281.75256367607324,
+      371.9424180095669
+    ]
+  },
+  "item_ids": {
+    "16": "native_minor_calibration",
+    "17": "coverage_tenure"
+  },
+  "interaction": "item17 after item16 = joint minus item16; do not stack the standalone item17 on item16",
+  "measured_vs_model": "survey counts and replicate sampling variance measured; reassignment, missing people and prices modeled/conditional",
+  "limitations": [
+    "Survey-weight calibration keeps actual household identities and generation masks. Identity reassignment would require a new joint household assignment model and survivor solve.",
+    "Household/spending/receipt pieces retain v8 calibration coefficients and keys; no new nonlinear behavioral or production solve.",
+    "All-age tenure contrast transferred conditionally to exact age-sex-generation cell totals; not an identified distribution of omitted residents.",
+    "No new benefit take-up, legal-status, income or eligibility assumption; tenure only selects observed case price cells.",
+    "Original nonreporting descendants remain at fixed counts and price profile; linked-child origin diagnostic is separate, not an extra adopted correction."
+  ]
+}

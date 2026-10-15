@@ -1,0 +1,6 @@
+**Verdict:** Resolved implementation failures; no upstream files or Git metadata changed.
+
+- Native ACS read exceeded 2.5GB on one first-pass rerun. Cause: materializing all persons' 81 replicate columns before the minor/Hispanic predicate. The reader now pushes the predicate into Parquet, checks joins, and fails if final RSS exceeds 2.5GB. Full replay measures every child process and fails on the limit.
+- First origin diagnostic repeatedly filtered a pandas table inside its person loop and was interrupted. The same finite set of generation/age/sex ratios is now computed once and looked up. The replay records elapsed time. Missing source cells fail loudly; zero support is exposed in the output.
+- The first item17 adapter inferred sibling item16 selection from the base payload. The v8 registry builds siblings against one base, so that lost the interaction. The adapter now requires explicit `ctx.selectedItems`; missing selection fails. `test_item_contract.py` checks simultaneous-sibling and standalone closure against measured parts.
+- Balancing other-Hispanic weights were initially generated but omitted from existing lineage members. The central factor now applies both origin-stratum factors, including actual item10 nonreporting children, while synthetic descendants remain fixed. The regression checks a G2 other-Hispanic child's balancing factor.

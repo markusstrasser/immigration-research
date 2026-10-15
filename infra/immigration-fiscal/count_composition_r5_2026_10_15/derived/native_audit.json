@@ -1,0 +1,42 @@
+{
+  "inputs": {
+    "infra/immigration-fiscal/mexican_origin_population_total_2026_09_19/_cache/cps_asec2025_person_subset.parquet": {
+      "bytes": 166548403,
+      "sha256": "4355a988f298d6c60ee5f2615e81177f8d1a365ce763e9fd9df9a44de9d50b01"
+    },
+    "infra/immigration-fiscal/mexican_origin_population_total_2026_09_19/_cache/acs2024_ancestry_subset.parquet": {
+      "bytes": 371927251,
+      "sha256": "22dd17e646a0cbd9b349d4ef50cc482c59dfe22841cfc478c7824e4b79ef4b58"
+    },
+    "infra/immigration-fiscal/dataset_integrity_2026_09_23/_cache/acs_person_2024.parquet": {
+      "bytes": 71940027,
+      "sha256": "7f8fa127db584862759cf1cf59bd14036e9788bea9d5300338527bf35e4f35d0"
+    },
+    "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": {
+      "bytes": 147271429,
+      "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b"
+    }
+  },
+  "universe": "native citizenship codes 1\u20133; ages 0\u201317; CPS household survey; ACS excludes RELSHIPP=37 and MIL=1/2, retains noninstitutional GQ. native_verifier_universe.csv retains MIL=1/2 for verifier comparison",
+  "comparison_assumption": "2025 March CPS versus 2024 annual ACS; timing and classification differences unresolved; independent-survey SDR standard errors",
+  "calibration_policy": "preserve_CPS_Hispanic_total",
+  "national_hispanic_z": -0.9928909142892409,
+  "sparse_state_rule": "descriptive: both raw n>=30 and both CV<=0.30; age\u00d7region calibrations only",
+  "rows": {
+    "cps": 142125,
+    "acs_native_Hispanic_minors": 126612,
+    "person_factors": 142125
+  },
+  "gates": {
+    "unique_CPS_keys": true,
+    "all_ACS_universe_links": true,
+    "every_CPS_replicate_Mexican_target_closes": true,
+    "ancestry_G2_preserved_under_reclassification": true
+  },
+  "limits": [
+    "ACS cannot identify parental-birthplace G2 versus G3; conditional CPS mix held.",
+    "Origin transfer probabilities are fractional calibration, not observed individual reclassification.",
+    "Do not additionally multiply a coverage count by a separate generic native ratio: recount its base with the person factors first.",
+    "Central uses central_member_factor with household kernels and keeps membership masks fixed. native_member_factor and new_member_probability are diagnostic identity-transfer arms only."
+  ]
+}
