@@ -1,0 +1,5800 @@
+{
+ "case": "oct15",
+ "completion_carriers": {
+  "union_completion_air_fed_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "air_fed",
+    "source_cost_bn": 0.0012324550015790246
+   }
+  },
+  "union_completion_air_fed_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "air_fed",
+    "source_cost_bn": 0
+   }
+  },
+  "union_completion_black_lung_age65plus": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "age65plus"
+    },
+    "kind": "line",
+    "parent_key": "age65plus",
+    "parent_line": "black_lung",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "workers_comp"
+    ]
+   }
+  },
+  "union_completion_black_lung_workers_comp": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "workers_comp"
+    },
+    "kind": "line",
+    "parent_key": "workers_comp",
+    "parent_line": "black_lung",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "workers_comp"
+    ]
+   }
+  },
+  "union_completion_college_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "college",
+    "source_cost_bn": 0.08299523962278253
+   }
+  },
+  "union_completion_college_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "college",
+    "source_cost_bn": 0.05533015974852173
+   }
+  },
+  "union_completion_college_rekey_k": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "k"
+    },
+    "kind": "line",
+    "parent_key": "k",
+    "parent_line": "college_rekey",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "k"
+    ]
+   }
+  },
+  "union_completion_college_user_fees_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "college_user_fees",
+    "source_cost_bn": -0.016803690836043307
+   }
+  },
+  "union_completion_college_user_fees_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "college_user_fees",
+    "source_cost_bn": -0.011202460557362215
+   }
+  },
+  "union_completion_corporate_capital_cbo_collective": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "corporate_capital",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_capital_corporate_all_capital": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "corporate_capital",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_capital_federal_gap_high_agi": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "corporate_capital",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_capital_medicare_income_weighted": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "corporate_capital",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_capital_nas_80": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "corporate_capital",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_capital_property_residual_consumption": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "corporate_capital",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_capital_public_assets_tax_base": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "corporate_capital",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_capital_treasury_815": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "corporate_capital",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_labor_cbo_collective": {
+   "economic_payer": "group_workers_via_measured_wages",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "corporate_labor",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_labor_corporate_all_capital": {
+   "economic_payer": "group_workers_via_measured_wages",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "corporate_labor",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_labor_federal_gap_high_agi": {
+   "economic_payer": "group_workers_via_measured_wages",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "corporate_labor",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_labor_medicare_income_weighted": {
+   "economic_payer": "group_workers_via_measured_wages",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "corporate_labor",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_labor_nas_80": {
+   "economic_payer": "group_workers_via_measured_wages",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "corporate_labor",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_labor_property_residual_consumption": {
+   "economic_payer": "group_workers_via_measured_wages",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "corporate_labor",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_labor_public_assets_tax_base": {
+   "economic_payer": "group_workers_via_measured_wages",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "corporate_labor",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_corporate_labor_treasury_815": {
+   "economic_payer": "group_workers_via_measured_wages",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "corporate_labor",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_customs_duties_cbo_collective": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "customs_duties",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_customs_duties_corporate_all_capital": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "customs_duties",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_customs_duties_federal_gap_high_agi": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "customs_duties",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_customs_duties_medicare_income_weighted": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "customs_duties",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_customs_duties_nas_80": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "customs_duties",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_customs_duties_property_residual_consumption": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "customs_duties",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_customs_duties_public_assets_tax_base": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "customs_duties",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_customs_duties_treasury_815": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "customs_duties",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_economic_affairs_services_population": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "population"
+    },
+    "kind": "line",
+    "parent_key": "population",
+    "parent_line": "economic_affairs_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "resources"
+    ]
+   }
+  },
+  "union_completion_economic_affairs_services_resources": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "resources"
+    },
+    "kind": "line",
+    "parent_key": "resources",
+    "parent_line": "economic_affairs_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "resources"
+    ]
+   }
+  },
+  "union_completion_economic_affairs_services_wages": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "wages"
+    },
+    "kind": "line",
+    "parent_key": "wages",
+    "parent_line": "economic_affairs_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "resources"
+    ]
+   }
+  },
+  "union_completion_education_benefits_age18_24": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "age18_24"
+    },
+    "kind": "line",
+    "parent_key": "age18_24",
+    "parent_line": "education_benefits",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "postsecondary"
+    ]
+   }
+  },
+  "union_completion_education_benefits_postsecondary": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "postsecondary"
+    },
+    "kind": "line",
+    "parent_key": "postsecondary",
+    "parent_line": "education_benefits",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "postsecondary"
+    ]
+   }
+  },
+  "union_completion_education_services_age5_24": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "age5_24"
+    },
+    "kind": "line",
+    "parent_key": "age5_24",
+    "parent_line": "education_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "education_mix"
+    ]
+   }
+  },
+  "union_completion_education_services_education_mix": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "education_mix"
+    },
+    "kind": "line",
+    "parent_key": "education_mix",
+    "parent_line": "education_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "education_mix"
+    ]
+   }
+  },
+  "union_completion_education_services_school_operating": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "school_operating"
+    },
+    "kind": "line",
+    "parent_key": "school_operating",
+    "parent_line": "education_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "education_mix"
+    ]
+   }
+  },
+  "union_completion_employee_hi_cbo_collective": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "employee_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_hi_corporate_all_capital": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "employee_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_hi_federal_gap_high_agi": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "employee_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_hi_medicare_income_weighted": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "employee_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_hi_nas_80": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "employee_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_hi_property_residual_consumption": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "employee_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_hi_public_assets_tax_base": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "employee_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_hi_treasury_815": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "employee_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_oasdi_cbo_collective": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "employee_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_oasdi_corporate_all_capital": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "employee_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_oasdi_federal_gap_high_agi": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "employee_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_oasdi_medicare_income_weighted": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "employee_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_oasdi_nas_80": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "employee_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_oasdi_property_residual_consumption": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "employee_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_oasdi_public_assets_tax_base": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "employee_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employee_oasdi_treasury_815": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "employee_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_hi_cbo_collective": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "employer_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_hi_corporate_all_capital": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "employer_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_hi_federal_gap_high_agi": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "employer_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_hi_medicare_income_weighted": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "employer_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_hi_nas_80": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "employer_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_hi_property_residual_consumption": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "employer_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_hi_public_assets_tax_base": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "employer_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_hi_treasury_815": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "employer_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_oasdi_cbo_collective": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "employer_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_oasdi_corporate_all_capital": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "employer_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_oasdi_federal_gap_high_agi": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "employer_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_oasdi_medicare_income_weighted": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "employer_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_oasdi_nas_80": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "employer_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_oasdi_property_residual_consumption": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "employer_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_oasdi_public_assets_tax_base": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "employer_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employer_oasdi_treasury_815": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "employer_oasdi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_employment_training_unemployment": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "unemployment"
+    },
+    "kind": "line",
+    "parent_key": "unemployment",
+    "parent_line": "employment_training",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "working_age"
+    ]
+   }
+  },
+  "union_completion_employment_training_working_age": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "working_age"
+    },
+    "kind": "line",
+    "parent_key": "working_age",
+    "parent_line": "employment_training",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "working_age"
+    ]
+   }
+  },
+  "union_completion_energy_assistance_cash_assistance": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "cash_assistance"
+    },
+    "kind": "line",
+    "parent_key": "cash_assistance",
+    "parent_line": "energy_assistance",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "energy"
+    ]
+   }
+  },
+  "union_completion_energy_assistance_energy": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "energy"
+    },
+    "kind": "line",
+    "parent_key": "energy",
+    "parent_line": "energy_assistance",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "energy"
+    ]
+   }
+  },
+  "union_completion_ent_airports_sl_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "ent_airports_sl",
+    "source_cost_bn": 0.024098864567194508
+   }
+  },
+  "union_completion_ent_airports_sl_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "ent_airports_sl",
+    "source_cost_bn": 0.016065909711463017
+   }
+  },
+  "union_completion_ent_housing_sl_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "housing_voucher",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "ent_housing_sl",
+    "source_cost_bn": 0.017190234966294862
+   }
+  },
+  "union_completion_ent_housing_sl_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "housing_voucher",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "ent_housing_sl",
+    "source_cost_bn": 0.01146015664419657
+   }
+  },
+  "union_completion_ent_other_fed_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "ent_other_fed",
+    "source_cost_bn": 0.0022938192182914326
+   }
+  },
+  "union_completion_ent_other_fed_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "ent_other_fed",
+    "source_cost_bn": 0.001529212812194289
+   }
+  },
+  "union_completion_ent_other_sl_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "ent_other_sl",
+    "source_cost_bn": 0.0030529591144259982
+   }
+  },
+  "union_completion_ent_other_sl_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "ent_other_sl",
+    "source_cost_bn": 0.0020353060762839984
+   }
+  },
+  "union_completion_ent_ports_sl_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "ent_ports_sl",
+    "source_cost_bn": 0.0038195470279179036
+   }
+  },
+  "union_completion_ent_ports_sl_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "ent_ports_sl",
+    "source_cost_bn": 0.002546364685278604
+   }
+  },
+  "union_completion_ent_power_fed_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "ent_power_fed",
+    "source_cost_bn": 0.0011189849178982086
+   }
+  },
+  "union_completion_ent_power_fed_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "ent_power_fed",
+    "source_cost_bn": 0.0007459899452654721
+   }
+  },
+  "union_completion_ent_power_sl_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "ent_power_sl",
+    "source_cost_bn": 0.021924548901742204
+   }
+  },
+  "union_completion_ent_power_sl_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "ent_power_sl",
+    "source_cost_bn": 0.014616365934494798
+   }
+  },
+  "union_completion_ent_sewer_sl_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "ent_sewer_sl",
+    "source_cost_bn": 0.04954329941601789
+   }
+  },
+  "union_completion_ent_sewer_sl_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "ent_sewer_sl",
+    "source_cost_bn": 0.03302886627734526
+   }
+  },
+  "union_completion_ent_tolls_sl_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "ent_tolls_sl",
+    "source_cost_bn": 0.020271349943633134
+   }
+  },
+  "union_completion_ent_tolls_sl_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "ent_tolls_sl",
+    "source_cost_bn": 0.013514233295755422
+   }
+  },
+  "union_completion_ent_transit_sl_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "ent_transit_sl",
+    "source_cost_bn": 0.020458008788913115
+   }
+  },
+  "union_completion_ent_transit_sl_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "ent_transit_sl",
+    "source_cost_bn": 0.013638672525942072
+   }
+  },
+  "union_completion_ent_water_sl_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "ent_water_sl",
+    "source_cost_bn": 0.037047236417257996
+   }
+  },
+  "union_completion_ent_water_sl_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "ent_water_sl",
+    "source_cost_bn": 0.02469815761150531
+   }
+  },
+  "union_completion_enterprise_surplus_cbo_collective": {
+   "economic_payer": "group_enterprise_customers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_enterprise_surplus_corporate_all_capital": {
+   "economic_payer": "group_enterprise_customers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_enterprise_surplus_federal_gap_high_agi": {
+   "economic_payer": "group_enterprise_customers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_enterprise_surplus_medicare_income_weighted": {
+   "economic_payer": "group_enterprise_customers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_enterprise_surplus_nas_80": {
+   "economic_payer": "group_enterprise_customers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_enterprise_surplus_property_residual_consumption": {
+   "economic_payer": "group_enterprise_customers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_enterprise_surplus_public_assets_tax_base": {
+   "economic_payer": "group_enterprise_customers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_enterprise_surplus_treasury_815": {
+   "economic_payer": "group_enterprise_customers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_excise_selective_sales_cbo_collective": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "excise_selective_sales",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_excise_selective_sales_corporate_all_capital": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "excise_selective_sales",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_excise_selective_sales_federal_gap_high_agi": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "excise_selective_sales",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_excise_selective_sales_medicare_income_weighted": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "excise_selective_sales",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_excise_selective_sales_nas_80": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "excise_selective_sales",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_excise_selective_sales_property_residual_consumption": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "excise_selective_sales",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_excise_selective_sales_public_assets_tax_base": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "excise_selective_sales",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_excise_selective_sales_treasury_815": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "excise_selective_sales",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_family_and_general_assistance_all_cash": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "all_cash"
+    },
+    "kind": "line",
+    "parent_key": "all_cash",
+    "parent_line": "family_and_general_assistance",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cash_assistance"
+    ]
+   }
+  },
+  "union_completion_family_and_general_assistance_cash_assistance": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cash_assistance"
+    },
+    "kind": "line",
+    "parent_key": "cash_assistance",
+    "parent_line": "family_and_general_assistance",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cash_assistance"
+    ]
+   }
+  },
+  "union_completion_federal_income_tax_cbo_collective": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "federal_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_federal_income_tax_corporate_all_capital": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "federal_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_federal_income_tax_federal_gap_high_agi": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "federal_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_federal_income_tax_medicare_income_weighted": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "federal_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_federal_income_tax_nas_80": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "federal_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_federal_income_tax_property_residual_consumption": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "federal_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_federal_income_tax_public_assets_tax_base": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "federal_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_federal_income_tax_treasury_815": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "federal_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_general_public_services_population": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "population"
+    },
+    "kind": "line",
+    "parent_key": "population",
+    "parent_line": "general_public_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "population"
+    ]
+   }
+  },
+  "union_completion_general_public_services_wages": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "wages"
+    },
+    "kind": "line",
+    "parent_key": "wages",
+    "parent_line": "general_public_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "population"
+    ]
+   }
+  },
+  "union_completion_general_sales_tax_cbo_collective": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "general_sales_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_general_sales_tax_corporate_all_capital": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "general_sales_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_general_sales_tax_federal_gap_high_agi": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "general_sales_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_general_sales_tax_medicare_income_weighted": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "general_sales_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_general_sales_tax_nas_80": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "general_sales_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_general_sales_tax_property_residual_consumption": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "general_sales_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_general_sales_tax_public_assets_tax_base": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "general_sales_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_general_sales_tax_treasury_815": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "general_sales_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_gps_fed_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "gps_fed",
+    "source_cost_bn": 0.005238076649607957
+   }
+  },
+  "union_completion_gps_fed_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "gps_fed",
+    "source_cost_bn": 0.0024640854537398213
+   }
+  },
+  "union_completion_gps_sl_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "gps_sl",
+    "source_cost_bn": 0.04450621650935887
+   }
+  },
+  "union_completion_gps_sl_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "gps_sl",
+    "source_cost_bn": 0.020936524613459864
+   }
+  },
+  "union_completion_health_fed_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "health_fed",
+    "source_cost_bn": 0.0022613811455983067
+   }
+  },
+  "union_completion_health_fed_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "health_fed",
+    "source_cost_bn": 0.001507587430398873
+   }
+  },
+  "union_completion_health_fed_user_fees_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "health_fed_user_fees",
+    "source_cost_bn": -6.884624944867218e-05
+   }
+  },
+  "union_completion_health_fed_user_fees_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "health_fed_user_fees",
+    "source_cost_bn": -4.589749963244812e-05
+   }
+  },
+  "union_completion_health_services_health_other": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "health_other"
+    },
+    "kind": "line",
+    "parent_key": "health_other",
+    "parent_line": "health_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "health_other"
+    ]
+   }
+  },
+  "union_completion_health_services_population": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "population"
+    },
+    "kind": "line",
+    "parent_key": "population",
+    "parent_line": "health_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "health_other"
+    ]
+   }
+  },
+  "union_completion_health_services_veterans": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "veterans"
+    },
+    "kind": "line",
+    "parent_key": "veterans",
+    "parent_line": "health_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "health_other"
+    ]
+   }
+  },
+  "union_completion_health_sl_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "health_sl",
+    "source_cost_bn": 0.007806317832510433
+   }
+  },
+  "union_completion_health_sl_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "health_sl",
+    "source_cost_bn": 0.005204211888340289
+   }
+  },
+  "union_completion_health_sl_user_fees_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "health_sl_user_fees",
+    "source_cost_bn": -0.00023765817001646496
+   }
+  },
+  "union_completion_health_sl_user_fees_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "health_sl_user_fees",
+    "source_cost_bn": -0.00015843878001097668
+   }
+  },
+  "union_completion_housing_community_services_population": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "population"
+    },
+    "kind": "line",
+    "parent_key": "population",
+    "parent_line": "housing_community_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "population"
+    ]
+   }
+  },
+  "union_completion_housing_community_services_resources": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "resources"
+    },
+    "kind": "line",
+    "parent_key": "resources",
+    "parent_line": "housing_community_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "population"
+    ]
+   }
+  },
+  "union_completion_housing_enterprise_surplus_cbo_collective": {
+   "economic_payer": "public_housing_enterprise",
+   "incidence_class": "housing_voucher",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "housing_enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_housing_enterprise_surplus_corporate_all_capital": {
+   "economic_payer": "public_housing_enterprise",
+   "incidence_class": "housing_voucher",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "housing_enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_housing_enterprise_surplus_federal_gap_high_agi": {
+   "economic_payer": "public_housing_enterprise",
+   "incidence_class": "housing_voucher",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "housing_enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_housing_enterprise_surplus_medicare_income_weighted": {
+   "economic_payer": "public_housing_enterprise",
+   "incidence_class": "housing_voucher",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "housing_enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_housing_enterprise_surplus_nas_80": {
+   "economic_payer": "public_housing_enterprise",
+   "incidence_class": "housing_voucher",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "housing_enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_housing_enterprise_surplus_property_residual_consumption": {
+   "economic_payer": "public_housing_enterprise",
+   "incidence_class": "housing_voucher",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "housing_enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_housing_enterprise_surplus_public_assets_tax_base": {
+   "economic_payer": "public_housing_enterprise",
+   "incidence_class": "housing_voucher",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "housing_enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_housing_enterprise_surplus_treasury_815": {
+   "economic_payer": "public_housing_enterprise",
+   "incidence_class": "housing_voucher",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "housing_enterprise_surplus",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_housing_subsidies_housing_support": {
+   "economic_payer": "government_budget",
+   "incidence_class": "housing_voucher",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "housing_support"
+    },
+    "kind": "line",
+    "parent_key": "housing_support",
+    "parent_line": "housing_subsidies",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "housing_support"
+    ]
+   }
+  },
+  "union_completion_housing_subsidies_resources": {
+   "economic_payer": "government_budget",
+   "incidence_class": "housing_voucher",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "resources"
+    },
+    "kind": "line",
+    "parent_key": "resources",
+    "parent_line": "housing_subsidies",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "housing_support"
+    ]
+   }
+  },
+  "union_completion_housing_subsidies_wages": {
+   "economic_payer": "government_budget",
+   "incidence_class": "housing_voucher",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "wages"
+    },
+    "kind": "line",
+    "parent_key": "wages",
+    "parent_line": "housing_subsidies",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "housing_support"
+    ]
+   }
+  },
+  "union_completion_hwy_fed_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "hwy_fed",
+    "source_cost_bn": 0.0018189304091705523
+   }
+  },
+  "union_completion_hwy_fed_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "hwy_fed",
+    "source_cost_bn": 0
+   }
+  },
+  "union_completion_hwy_sl_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "hwy_sl",
+    "source_cost_bn": 0.14628489626428323
+   }
+  },
+  "union_completion_hwy_sl_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "hwy_sl",
+    "source_cost_bn": 0.07218654017830353
+   }
+  },
+  "union_completion_income_security_services_all_cash": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "all_cash"
+    },
+    "kind": "line",
+    "parent_key": "all_cash",
+    "parent_line": "income_security_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cash_assistance"
+    ]
+   }
+  },
+  "union_completion_income_security_services_cash_assistance": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cash_assistance"
+    },
+    "kind": "line",
+    "parent_key": "cash_assistance",
+    "parent_line": "income_security_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cash_assistance"
+    ]
+   }
+  },
+  "union_completion_income_security_services_population": {
+   "economic_payer": "government_budget",
+   "incidence_class": "services",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "population"
+    },
+    "kind": "line",
+    "parent_key": "population",
+    "parent_line": "income_security_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cash_assistance"
+    ]
+   }
+  },
+  "union_completion_k12_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "k12",
+    "source_cost_bn": 0.19283987364270544
+   }
+  },
+  "union_completion_k12_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "k12",
+    "source_cost_bn": 0.1285599157618036
+   }
+  },
+  "union_completion_k12_user_fees_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "k12_user_fees",
+    "source_cost_bn": 0.009663395411345092
+   }
+  },
+  "union_completion_k12_user_fees_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "k12_user_fees",
+    "source_cost_bn": 0.006442263607563393
+   }
+  },
+  "union_completion_lane_constants_k": {
+   "economic_payer": "government_budget",
+   "incidence_class": "correction",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "k"
+    },
+    "kind": "line",
+    "parent_key": "k",
+    "parent_line": "lane_constants",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "k"
+    ]
+   }
+  },
+  "union_completion_medicaid_and_chip_other_medical_medicaid": {
+   "economic_payer": "government_budget",
+   "incidence_class": "medicaid",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicaid"
+    },
+    "kind": "line",
+    "parent_key": "medicaid",
+    "parent_line": "medicaid_and_chip_other_medical",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "uninsured_use_low",
+     "uninsured_use_high"
+    ]
+   }
+  },
+  "union_completion_medicaid_and_chip_other_medical_medicaid_covered": {
+   "economic_payer": "government_budget",
+   "incidence_class": "medicaid",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicaid_covered"
+    },
+    "kind": "line",
+    "parent_key": "medicaid_covered",
+    "parent_line": "medicaid_and_chip_other_medical",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "uninsured_use_low",
+     "uninsured_use_high"
+    ]
+   }
+  },
+  "union_completion_medicaid_and_chip_other_medical_uninsured_use_07_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "medicaid",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "uninsured_use_07_high"
+    },
+    "kind": "line",
+    "parent_key": "uninsured_use_07_high",
+    "parent_line": "medicaid_and_chip_other_medical",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "uninsured_use_low",
+     "uninsured_use_high"
+    ]
+   }
+  },
+  "union_completion_medicaid_and_chip_other_medical_uninsured_use_07_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "medicaid",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "uninsured_use_07_low"
+    },
+    "kind": "line",
+    "parent_key": "uninsured_use_07_low",
+    "parent_line": "medicaid_and_chip_other_medical",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "uninsured_use_low",
+     "uninsured_use_high"
+    ]
+   }
+  },
+  "union_completion_medicaid_and_chip_other_medical_uninsured_use_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "medicaid",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "uninsured_use_high"
+    },
+    "kind": "line",
+    "parent_key": "uninsured_use_high",
+    "parent_line": "medicaid_and_chip_other_medical",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "uninsured_use_low",
+     "uninsured_use_high"
+    ]
+   }
+  },
+  "union_completion_medicaid_and_chip_other_medical_uninsured_use_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "medicaid",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "uninsured_use_low"
+    },
+    "kind": "line",
+    "parent_key": "uninsured_use_low",
+    "parent_line": "medicaid_and_chip_other_medical",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "uninsured_use_low",
+     "uninsured_use_high"
+    ]
+   }
+  },
+  "union_completion_medicare_age65plus": {
+   "economic_payer": "government_budget",
+   "incidence_class": "medicare",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "age65plus"
+    },
+    "kind": "line",
+    "parent_key": "age65plus",
+    "parent_line": "medicare",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "medicare"
+    ]
+   }
+  },
+  "union_completion_medicare_medicare": {
+   "economic_payer": "government_budget",
+   "incidence_class": "medicare",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "medicare"
+    },
+    "kind": "line",
+    "parent_key": "medicare",
+    "parent_line": "medicare",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "medicare"
+    ]
+   }
+  },
+  "union_completion_medicare_supplementary_premiums_cbo_collective": {
+   "economic_payer": "group_enrollees",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "medicare_supplementary_premiums",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_medicare_supplementary_premiums_corporate_all_capital": {
+   "economic_payer": "group_enrollees",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "medicare_supplementary_premiums",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_medicare_supplementary_premiums_federal_gap_high_agi": {
+   "economic_payer": "group_enrollees",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "medicare_supplementary_premiums",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_medicare_supplementary_premiums_medicare_income_weighted": {
+   "economic_payer": "group_enrollees",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "medicare_supplementary_premiums",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_medicare_supplementary_premiums_nas_80": {
+   "economic_payer": "group_enrollees",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "medicare_supplementary_premiums",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_medicare_supplementary_premiums_property_residual_consumption": {
+   "economic_payer": "group_enrollees",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "medicare_supplementary_premiums",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_medicare_supplementary_premiums_public_assets_tax_base": {
+   "economic_payer": "group_enrollees",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "medicare_supplementary_premiums",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_medicare_supplementary_premiums_treasury_815": {
+   "economic_payer": "group_enrollees",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "medicare_supplementary_premiums",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_military_medical_population": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "population"
+    },
+    "kind": "line",
+    "parent_key": "population",
+    "parent_line": "military_medical",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "tricare"
+    ]
+   }
+  },
+  "union_completion_military_medical_tricare": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "tricare"
+    },
+    "kind": "line",
+    "parent_key": "tricare",
+    "parent_line": "military_medical",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "tricare"
+    ]
+   }
+  },
+  "union_completion_military_medical_veterans": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "veterans"
+    },
+    "kind": "line",
+    "parent_key": "veterans",
+    "parent_line": "military_medical",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "tricare"
+    ]
+   }
+  },
+  "union_completion_modeled_owner_property_cbo_collective": {
+   "economic_payer": "group_homeowners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "modeled_owner_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_modeled_owner_property_corporate_all_capital": {
+   "economic_payer": "group_homeowners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "modeled_owner_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_modeled_owner_property_federal_gap_high_agi": {
+   "economic_payer": "group_homeowners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "modeled_owner_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_modeled_owner_property_medicare_income_weighted": {
+   "economic_payer": "group_homeowners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "modeled_owner_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_modeled_owner_property_nas_80": {
+   "economic_payer": "group_homeowners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "modeled_owner_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_modeled_owner_property_property_residual_consumption": {
+   "economic_payer": "group_homeowners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "modeled_owner_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_modeled_owner_property_public_assets_tax_base": {
+   "economic_payer": "group_homeowners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "modeled_owner_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_modeled_owner_property_treasury_815": {
+   "economic_payer": "group_homeowners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "modeled_owner_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_domestic_social_contributions_cbo_collective": {
+   "economic_payer": "group_contributors",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "other_domestic_social_contributions",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_domestic_social_contributions_corporate_all_capital": {
+   "economic_payer": "group_contributors",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "other_domestic_social_contributions",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_domestic_social_contributions_federal_gap_high_agi": {
+   "economic_payer": "group_contributors",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "other_domestic_social_contributions",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_domestic_social_contributions_medicare_income_weighted": {
+   "economic_payer": "group_contributors",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "other_domestic_social_contributions",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_domestic_social_contributions_nas_80": {
+   "economic_payer": "group_contributors",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "other_domestic_social_contributions",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_domestic_social_contributions_property_residual_consumption": {
+   "economic_payer": "group_contributors",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "other_domestic_social_contributions",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_domestic_social_contributions_public_assets_tax_base": {
+   "economic_payer": "group_contributors",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "other_domestic_social_contributions",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_domestic_social_contributions_treasury_815": {
+   "economic_payer": "group_contributors",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "other_domestic_social_contributions",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_federal_benefits_all_cash": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "all_cash"
+    },
+    "kind": "line",
+    "parent_key": "all_cash",
+    "parent_line": "other_federal_benefits",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "all_cash"
+    ]
+   }
+  },
+  "union_completion_other_federal_benefits_health_other": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "health_other"
+    },
+    "kind": "line",
+    "parent_key": "health_other",
+    "parent_line": "other_federal_benefits",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "all_cash"
+    ]
+   }
+  },
+  "union_completion_other_federal_benefits_population": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "population"
+    },
+    "kind": "line",
+    "parent_key": "population",
+    "parent_line": "other_federal_benefits",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "all_cash"
+    ]
+   }
+  },
+  "union_completion_other_personal_tax_cbo_collective": {
+   "economic_payer": "group_taxpayers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "other_personal_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_personal_tax_corporate_all_capital": {
+   "economic_payer": "group_taxpayers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "other_personal_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_personal_tax_federal_gap_high_agi": {
+   "economic_payer": "group_taxpayers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "other_personal_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_personal_tax_medicare_income_weighted": {
+   "economic_payer": "group_taxpayers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "other_personal_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_personal_tax_nas_80": {
+   "economic_payer": "group_taxpayers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "other_personal_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_personal_tax_property_residual_consumption": {
+   "economic_payer": "group_taxpayers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "other_personal_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_personal_tax_public_assets_tax_base": {
+   "economic_payer": "group_taxpayers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "other_personal_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_personal_tax_treasury_815": {
+   "economic_payer": "group_taxpayers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "other_personal_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_production_taxes_cbo_collective": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "other_production_taxes",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_production_taxes_corporate_all_capital": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "other_production_taxes",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_production_taxes_federal_gap_high_agi": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "other_production_taxes",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_production_taxes_medicare_income_weighted": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "other_production_taxes",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_production_taxes_nas_80": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "other_production_taxes",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_production_taxes_property_residual_consumption": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "other_production_taxes",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_production_taxes_public_assets_tax_base": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "other_production_taxes",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_production_taxes_treasury_815": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "other_production_taxes",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_other_state_benefits_population": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "population"
+    },
+    "kind": "line",
+    "parent_key": "population",
+    "parent_line": "other_state_benefits",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "population"
+    ]
+   }
+  },
+  "union_completion_other_state_benefits_veterans": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "veterans"
+    },
+    "kind": "line",
+    "parent_key": "veterans",
+    "parent_line": "other_state_benefits",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "population"
+    ]
+   }
+  },
+  "union_completion_other_state_welfare_cash_assistance": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "cash_assistance"
+    },
+    "kind": "line",
+    "parent_key": "cash_assistance",
+    "parent_line": "other_state_welfare",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "wic"
+    ]
+   }
+  },
+  "union_completion_other_state_welfare_wic": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "wic"
+    },
+    "kind": "line",
+    "parent_key": "wic",
+    "parent_line": "other_state_welfare",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "wic"
+    ]
+   }
+  },
+  "union_completion_pension_guaranty_age65plus": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "age65plus"
+    },
+    "kind": "line",
+    "parent_key": "age65plus",
+    "parent_line": "pension_guaranty",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "age65plus"
+    ]
+   }
+  },
+  "union_completion_pension_guaranty_social_security": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "social_security"
+    },
+    "kind": "line",
+    "parent_key": "social_security",
+    "parent_line": "pension_guaranty",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "age65plus"
+    ]
+   }
+  },
+  "union_completion_personal_current_transfers_cbo_collective": {
+   "economic_payer": "group_payers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "personal_current_transfers",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_current_transfers_corporate_all_capital": {
+   "economic_payer": "group_payers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "personal_current_transfers",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_current_transfers_federal_gap_high_agi": {
+   "economic_payer": "group_payers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "personal_current_transfers",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_current_transfers_medicare_income_weighted": {
+   "economic_payer": "group_payers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "personal_current_transfers",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_current_transfers_nas_80": {
+   "economic_payer": "group_payers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "personal_current_transfers",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_current_transfers_property_residual_consumption": {
+   "economic_payer": "group_payers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "personal_current_transfers",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_current_transfers_public_assets_tax_base": {
+   "economic_payer": "group_payers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "personal_current_transfers",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_current_transfers_treasury_815": {
+   "economic_payer": "group_payers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "personal_current_transfers",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_motor_vehicle_cbo_collective": {
+   "economic_payer": "group_vehicle_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "personal_motor_vehicle",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_motor_vehicle_corporate_all_capital": {
+   "economic_payer": "group_vehicle_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "personal_motor_vehicle",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_motor_vehicle_federal_gap_high_agi": {
+   "economic_payer": "group_vehicle_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "personal_motor_vehicle",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_motor_vehicle_medicare_income_weighted": {
+   "economic_payer": "group_vehicle_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "personal_motor_vehicle",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_motor_vehicle_nas_80": {
+   "economic_payer": "group_vehicle_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "personal_motor_vehicle",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_motor_vehicle_property_residual_consumption": {
+   "economic_payer": "group_vehicle_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "personal_motor_vehicle",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_motor_vehicle_public_assets_tax_base": {
+   "economic_payer": "group_vehicle_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "personal_motor_vehicle",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_motor_vehicle_treasury_815": {
+   "economic_payer": "group_vehicle_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "personal_motor_vehicle",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_property_tax_cbo_collective": {
+   "economic_payer": "group_property_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "personal_property_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_property_tax_corporate_all_capital": {
+   "economic_payer": "group_property_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "personal_property_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_property_tax_federal_gap_high_agi": {
+   "economic_payer": "group_property_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "personal_property_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_property_tax_medicare_income_weighted": {
+   "economic_payer": "group_property_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "personal_property_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_property_tax_nas_80": {
+   "economic_payer": "group_property_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "personal_property_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_property_tax_property_residual_consumption": {
+   "economic_payer": "group_property_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "personal_property_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_property_tax_public_assets_tax_base": {
+   "economic_payer": "group_property_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "personal_property_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_personal_property_tax_treasury_815": {
+   "economic_payer": "group_property_owners",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "personal_property_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_pos_fed_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "justice",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "pos_fed",
+    "source_cost_bn": 0.004689794402003769
+   }
+  },
+  "union_completion_pos_fed_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "justice",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "pos_fed",
+    "source_cost_bn": 0.003126529601335845
+   }
+  },
+  "union_completion_pos_sl_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "justice",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "pos_sl",
+    "source_cost_bn": 0.01231913661462102
+   }
+  },
+  "union_completion_pos_sl_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "justice",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "pos_sl",
+    "source_cost_bn": 0.008212757743080683
+   }
+  },
+  "union_completion_production_high": {
+   "economic_payer": "group_workers_and_capital_owners",
+   "incidence_class": "production",
+   "source": {
+    "end": "high",
+    "kind": "production",
+    "parent_line": "production",
+    "source_cost_bn": 0.0002454152767376039
+   }
+  },
+  "union_completion_production_low": {
+   "economic_payer": "group_workers_and_capital_owners",
+   "incidence_class": "production",
+   "source": {
+    "end": "low",
+    "kind": "production",
+    "parent_line": "production",
+    "source_cost_bn": 0.0003730745236037031
+   }
+  },
+  "union_completion_public_order_safety_adults": {
+   "economic_payer": "government_budget",
+   "incidence_class": "justice",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "adults"
+    },
+    "kind": "line",
+    "parent_key": "adults",
+    "parent_line": "public_order_safety",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "use"
+    ]
+   }
+  },
+  "union_completion_public_order_safety_population": {
+   "economic_payer": "government_budget",
+   "incidence_class": "justice",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "population"
+    },
+    "kind": "line",
+    "parent_key": "population",
+    "parent_line": "public_order_safety",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "use"
+    ]
+   }
+  },
+  "union_completion_public_order_safety_use": {
+   "economic_payer": "government_budget",
+   "incidence_class": "justice",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "use"
+    },
+    "kind": "line",
+    "parent_key": "use",
+    "parent_line": "public_order_safety",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "use"
+    ]
+   }
+  },
+  "union_completion_public_order_safety_use_raw_coding": {
+   "economic_payer": "government_budget",
+   "incidence_class": "justice",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "use_raw_coding"
+    },
+    "kind": "line",
+    "parent_key": "use_raw_coding",
+    "parent_line": "public_order_safety",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "use"
+    ]
+   }
+  },
+  "union_completion_railroad_retirement_age65plus": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "age65plus"
+    },
+    "kind": "line",
+    "parent_key": "age65plus",
+    "parent_line": "railroad_retirement",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "social_security"
+    ]
+   }
+  },
+  "union_completion_railroad_retirement_social_security": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "social_security"
+    },
+    "kind": "line",
+    "parent_key": "social_security",
+    "parent_line": "railroad_retirement",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "social_security"
+    ]
+   }
+  },
+  "union_completion_rec_fed_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "rec_fed",
+    "source_cost_bn": 0.0016919158737807346
+   }
+  },
+  "union_completion_rec_fed_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "rec_fed",
+    "source_cost_bn": 0
+   }
+  },
+  "union_completion_rec_sl_high": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "end": "high",
+    "kind": "capital",
+    "parent_line": "rec_sl",
+    "source_cost_bn": 0.017193287560375085
+   }
+  },
+  "union_completion_rec_sl_low": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "end": "low",
+    "kind": "capital",
+    "parent_line": "rec_sl",
+    "source_cost_bn": 0.01090611231080854
+   }
+  },
+  "union_completion_recreation_culture_population": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "population"
+    },
+    "kind": "line",
+    "parent_key": "population",
+    "parent_line": "recreation_culture",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "population"
+    ]
+   }
+  },
+  "union_completion_recreation_culture_resources": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "resources"
+    },
+    "kind": "line",
+    "parent_key": "resources",
+    "parent_line": "recreation_culture",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "population"
+    ]
+   }
+  },
+  "union_completion_refundable_tax_credits_refundable_credits": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "refundable_credits"
+    },
+    "kind": "line",
+    "parent_key": "refundable_credits",
+    "parent_line": "refundable_tax_credits",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "refundable_credits"
+    ]
+   }
+  },
+  "union_completion_refundable_tax_credits_working_age": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "working_age"
+    },
+    "kind": "line",
+    "parent_key": "working_age",
+    "parent_line": "refundable_tax_credits",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "refundable_credits"
+    ]
+   }
+  },
+  "union_completion_remaining_production_property_cbo_collective": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "remaining_production_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_remaining_production_property_corporate_all_capital": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "remaining_production_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_remaining_production_property_federal_gap_high_agi": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "remaining_production_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_remaining_production_property_medicare_income_weighted": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "remaining_production_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_remaining_production_property_nas_80": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "remaining_production_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_remaining_production_property_property_residual_consumption": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "remaining_production_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_remaining_production_property_public_assets_tax_base": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "remaining_production_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_remaining_production_property_treasury_815": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "remaining_production_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_roads_vmt_fed_k": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "k"
+    },
+    "kind": "line",
+    "parent_key": "k",
+    "parent_line": "roads_vmt_fed",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "k"
+    ]
+   }
+  },
+  "union_completion_roads_vmt_sl_k": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "k"
+    },
+    "kind": "line",
+    "parent_key": "k",
+    "parent_line": "roads_vmt_sl",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "k"
+    ]
+   }
+  },
+  "union_completion_school_reprice_k": {
+   "economic_payer": "government_budget",
+   "incidence_class": "education",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "k"
+    },
+    "kind": "line",
+    "parent_key": "k",
+    "parent_line": "school_reprice",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "k"
+    ]
+   }
+  },
+  "union_completion_self_employment_oasdi_hi_cbo_collective": {
+   "economic_payer": "group_self_employed",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "self_employment_oasdi_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_self_employment_oasdi_hi_corporate_all_capital": {
+   "economic_payer": "group_self_employed",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "self_employment_oasdi_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_self_employment_oasdi_hi_federal_gap_high_agi": {
+   "economic_payer": "group_self_employed",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "self_employment_oasdi_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_self_employment_oasdi_hi_medicare_income_weighted": {
+   "economic_payer": "group_self_employed",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "self_employment_oasdi_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_self_employment_oasdi_hi_nas_80": {
+   "economic_payer": "group_self_employed",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "self_employment_oasdi_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_self_employment_oasdi_hi_property_residual_consumption": {
+   "economic_payer": "group_self_employed",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "self_employment_oasdi_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_self_employment_oasdi_hi_public_assets_tax_base": {
+   "economic_payer": "group_self_employed",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "self_employment_oasdi_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_self_employment_oasdi_hi_treasury_815": {
+   "economic_payer": "group_self_employed",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "self_employment_oasdi_hi",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_snap_cash_assistance": {
+   "economic_payer": "government_budget",
+   "incidence_class": "snap",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "cash_assistance"
+    },
+    "kind": "line",
+    "parent_key": "cash_assistance",
+    "parent_line": "snap",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "snap"
+    ]
+   }
+  },
+  "union_completion_snap_snap": {
+   "economic_payer": "government_budget",
+   "incidence_class": "snap",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "snap"
+    },
+    "kind": "line",
+    "parent_key": "snap",
+    "parent_line": "snap",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "snap"
+    ]
+   }
+  },
+  "union_completion_social_security_age65plus": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "age65plus"
+    },
+    "kind": "line",
+    "parent_key": "age65plus",
+    "parent_line": "social_security",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "social_security"
+    ]
+   }
+  },
+  "union_completion_social_security_social_security": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "social_security"
+    },
+    "kind": "line",
+    "parent_key": "social_security",
+    "parent_line": "social_security",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "social_security"
+    ]
+   }
+  },
+  "union_completion_ssi_all_cash": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "all_cash"
+    },
+    "kind": "line",
+    "parent_key": "all_cash",
+    "parent_line": "ssi",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "ssi"
+    ]
+   }
+  },
+  "union_completion_ssi_population": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "population"
+    },
+    "kind": "line",
+    "parent_key": "population",
+    "parent_line": "ssi",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "ssi"
+    ]
+   }
+  },
+  "union_completion_ssi_ssi": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "ssi"
+    },
+    "kind": "line",
+    "parent_key": "ssi",
+    "parent_line": "ssi",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "ssi"
+    ]
+   }
+  },
+  "union_completion_state_local_income_tax_cbo_collective": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "state_local_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_state_local_income_tax_corporate_all_capital": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "state_local_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_state_local_income_tax_federal_gap_high_agi": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "state_local_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_state_local_income_tax_medicare_income_weighted": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "state_local_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_state_local_income_tax_nas_80": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "state_local_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_state_local_income_tax_property_residual_consumption": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "state_local_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_state_local_income_tax_public_assets_tax_base": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "state_local_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_state_local_income_tax_treasury_815": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "state_local_income_tax",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_state_price_health_services_k": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "k"
+    },
+    "kind": "line",
+    "parent_key": "k",
+    "parent_line": "state_price_health_services",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "k"
+    ]
+   }
+  },
+  "union_completion_state_price_public_order_safety_k": {
+   "economic_payer": "government_budget",
+   "incidence_class": "justice",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "k"
+    },
+    "kind": "line",
+    "parent_key": "k",
+    "parent_line": "state_price_public_order_safety",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "k"
+    ]
+   }
+  },
+  "union_completion_state_price_recreation_culture_k": {
+   "economic_payer": "government_budget",
+   "incidence_class": "public_good",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "k"
+    },
+    "kind": "line",
+    "parent_key": "k",
+    "parent_line": "state_price_recreation_culture",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "k"
+    ]
+   }
+  },
+  "union_completion_temporary_disability_workers_comp": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "workers_comp"
+    },
+    "kind": "line",
+    "parent_key": "workers_comp",
+    "parent_line": "temporary_disability",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "workers_comp"
+    ]
+   }
+  },
+  "union_completion_temporary_disability_working_age": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "working_age"
+    },
+    "kind": "line",
+    "parent_key": "working_age",
+    "parent_line": "temporary_disability",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "workers_comp"
+    ]
+   }
+  },
+  "union_completion_tenant_occupied_property_cbo_collective": {
+   "economic_payer": "group_tenants",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "cbo_collective"
+    },
+    "kind": "line",
+    "parent_key": "cbo_collective",
+    "parent_line": "tenant_occupied_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_tenant_occupied_property_corporate_all_capital": {
+   "economic_payer": "group_tenants",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "corporate_all_capital"
+    },
+    "kind": "line",
+    "parent_key": "corporate_all_capital",
+    "parent_line": "tenant_occupied_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_tenant_occupied_property_federal_gap_high_agi": {
+   "economic_payer": "group_tenants",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "federal_gap_high_agi"
+    },
+    "kind": "line",
+    "parent_key": "federal_gap_high_agi",
+    "parent_line": "tenant_occupied_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_tenant_occupied_property_medicare_income_weighted": {
+   "economic_payer": "group_tenants",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "medicare_income_weighted"
+    },
+    "kind": "line",
+    "parent_key": "medicare_income_weighted",
+    "parent_line": "tenant_occupied_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_tenant_occupied_property_nas_80": {
+   "economic_payer": "group_tenants",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "nas_80"
+    },
+    "kind": "line",
+    "parent_key": "nas_80",
+    "parent_line": "tenant_occupied_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_tenant_occupied_property_property_residual_consumption": {
+   "economic_payer": "group_tenants",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "property_residual_consumption"
+    },
+    "kind": "line",
+    "parent_key": "property_residual_consumption",
+    "parent_line": "tenant_occupied_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_tenant_occupied_property_public_assets_tax_base": {
+   "economic_payer": "group_tenants",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "public_assets_tax_base"
+    },
+    "kind": "line",
+    "parent_key": "public_assets_tax_base",
+    "parent_line": "tenant_occupied_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_tenant_occupied_property_treasury_815": {
+   "economic_payer": "group_tenants",
+   "incidence_class": "tax",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "treasury_815"
+    },
+    "kind": "line",
+    "parent_key": "treasury_815",
+    "parent_line": "tenant_occupied_property",
+    "side": "receipt",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "cbo_collective"
+    ]
+   }
+  },
+  "union_completion_unemployment_unemployment": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "unemployment"
+    },
+    "kind": "line",
+    "parent_key": "unemployment",
+    "parent_line": "unemployment",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "unemployment"
+    ]
+   }
+  },
+  "union_completion_unemployment_working_age": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "working_age"
+    },
+    "kind": "line",
+    "parent_key": "working_age",
+    "parent_line": "unemployment",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "unemployment"
+    ]
+   }
+  },
+  "union_completion_veterans_life_insurance_adults": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "adults"
+    },
+    "kind": "line",
+    "parent_key": "adults",
+    "parent_line": "veterans_life_insurance",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "veterans"
+    ]
+   }
+  },
+  "union_completion_veterans_life_insurance_veterans": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "veterans"
+    },
+    "kind": "line",
+    "parent_key": "veterans",
+    "parent_line": "veterans_life_insurance",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "veterans"
+    ]
+   }
+  },
+  "union_completion_veterans_other_va_medical": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "va_medical"
+    },
+    "kind": "line",
+    "parent_key": "va_medical",
+    "parent_line": "veterans_other",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "va_medical"
+    ]
+   }
+  },
+  "union_completion_veterans_other_veterans": {
+   "economic_payer": "government_budget",
+   "incidence_class": "health_services",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "veterans"
+    },
+    "kind": "line",
+    "parent_key": "veterans",
+    "parent_line": "veterans_other",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "va_medical"
+    ]
+   }
+  },
+  "union_completion_veterans_pension_disability_adults": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "adults"
+    },
+    "kind": "line",
+    "parent_key": "adults",
+    "parent_line": "veterans_pension_disability",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "veterans"
+    ]
+   }
+  },
+  "union_completion_veterans_pension_disability_veterans": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "veterans"
+    },
+    "kind": "line",
+    "parent_key": "veterans",
+    "parent_line": "veterans_pension_disability",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "veterans"
+    ]
+   }
+  },
+  "union_completion_veterans_readjustment_age18_24": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "age18_24"
+    },
+    "kind": "line",
+    "parent_key": "age18_24",
+    "parent_line": "veterans_readjustment",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "veterans"
+    ]
+   }
+  },
+  "union_completion_veterans_readjustment_veterans": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "veterans"
+    },
+    "kind": "line",
+    "parent_key": "veterans",
+    "parent_line": "veterans_readjustment",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "veterans"
+    ]
+   }
+  },
+  "union_completion_workers_compensation_wages": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "wages"
+    },
+    "kind": "line",
+    "parent_key": "wages",
+    "parent_line": "workers_compensation",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "workers_comp"
+    ]
+   }
+  },
+  "union_completion_workers_compensation_workers_comp": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": false,
+    "keys": {
+     "k": "workers_comp"
+    },
+    "kind": "line",
+    "parent_key": "workers_comp",
+    "parent_line": "workers_compensation",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "workers_comp"
+    ]
+   }
+  },
+  "union_completion_workers_compensation_working_age": {
+   "economic_payer": "government_budget",
+   "incidence_class": "cash",
+   "source": {
+    "extrapolated_key": true,
+    "keys": {
+     "k": "working_age"
+    },
+    "kind": "line",
+    "parent_key": "working_age",
+    "parent_line": "workers_compensation",
+    "side": "spending",
+    "signed_spending_carrier": true,
+    "source_keys": [
+     "workers_comp"
+    ]
+   }
+  }
+ },
+ "pins": {
+  "basis": "oct15",
+  "debt": "5a8502c9",
+  "dirs": {
+   "distribution": "infra/immigration-fiscal/distribution_weights_2026_09_23/derived/oct15",
+   "winners": "infra/immigration-fiscal/winners_losers_2026_09_24/derived/oct15"
+  },
+  "distribution": "60a228cc",
+  "files": {
+   "generation": {
+    "generation_corrections.json": "generation_corrections_oct15.json",
+    "generation_results.csv": "generation_results_oct15.csv"
+   }
+  },
+  "generation": "3aa9b48f",
+  "main_case": "d1a24d47",
+  "model": "adopted_2026_10_15",
+  "provenance": "[COMMITTED INPUT] corrected v8 and parent-supplied generation/winners/distribution commits; every consumed pinned file must match its working-tree bytes",
+  "winners": "c2249ce8"
+ },
+ "provenance": "[COMMITTED INPUT]",
+ "receipts": {
+  "business_current_transfers": {
+   "economic_payer": "group_under_account_incidence",
+   "incidence_class": "tax"
+  },
+  "corporate_capital": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax"
+  },
+  "corporate_labor": {
+   "economic_payer": "group_workers_via_measured_wages",
+   "incidence_class": "source_tax"
+  },
+  "customs_duties": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax"
+  },
+  "employee_hi": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax"
+  },
+  "employee_oasdi": {
+   "economic_payer": "group_workers",
+   "incidence_class": "tax"
+  },
+  "employer_hi": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax"
+  },
+  "employer_oasdi": {
+   "economic_payer": "group_workers_via_total_compensation",
+   "incidence_class": "tax"
+  },
+  "enterprise_surplus": {
+   "economic_payer": "group_enterprise_customers",
+   "incidence_class": "tax"
+  },
+  "excise_selective_sales": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax"
+  },
+  "federal_income_tax": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax"
+  },
+  "general_sales_tax": {
+   "economic_payer": "group_consumers",
+   "incidence_class": "tax"
+  },
+  "government_asset_income": {
+   "economic_payer": "group_under_account_incidence",
+   "incidence_class": "tax"
+  },
+  "housing_enterprise_surplus": {
+   "economic_payer": "public_housing_enterprise",
+   "incidence_class": "housing_voucher"
+  },
+  "medicare_supplementary_premiums": {
+   "economic_payer": "group_enrollees",
+   "incidence_class": "tax"
+  },
+  "modeled_owner_property": {
+   "economic_payer": "group_homeowners",
+   "incidence_class": "tax"
+  },
+  "other_domestic_social_contributions": {
+   "economic_payer": "group_contributors",
+   "incidence_class": "tax"
+  },
+  "other_personal_tax": {
+   "economic_payer": "group_taxpayers",
+   "incidence_class": "tax"
+  },
+  "other_production_taxes": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax"
+  },
+  "personal_current_transfers": {
+   "economic_payer": "group_payers",
+   "incidence_class": "tax"
+  },
+  "personal_motor_vehicle": {
+   "economic_payer": "group_vehicle_owners",
+   "incidence_class": "tax"
+  },
+  "personal_property_tax": {
+   "economic_payer": "group_property_owners",
+   "incidence_class": "tax"
+  },
+  "remaining_production_property": {
+   "economic_payer": "business_capital_owners_outside_group",
+   "incidence_class": "source_tax"
+  },
+  "rest_world_current_transfers": {
+   "economic_payer": "rest_of_world",
+   "incidence_class": "tax"
+  },
+  "rest_world_tax_contributions": {
+   "economic_payer": "rest_of_world",
+   "incidence_class": "tax"
+  },
+  "self_employment_oasdi_hi": {
+   "economic_payer": "group_self_employed",
+   "incidence_class": "tax"
+  },
+  "source_rounding": {
+   "economic_payer": "account_rounding_no_economic_payment",
+   "incidence_class": "tax"
+  },
+  "state_local_income_tax": {
+   "economic_payer": "group_filers",
+   "incidence_class": "tax"
+  },
+  "tenant_occupied_property": {
+   "economic_payer": "group_tenants",
+   "incidence_class": "tax"
+  },
+  "user_fees_key_college": {
+   "economic_payer": "carrier_no_economic_payment",
+   "incidence_class": "tax"
+  },
+  "user_fees_key_health": {
+   "economic_payer": "carrier_no_economic_payment",
+   "incidence_class": "tax"
+  },
+  "user_fees_key_k12": {
+   "economic_payer": "carrier_no_economic_payment",
+   "incidence_class": "tax"
+  }
+ }
+}

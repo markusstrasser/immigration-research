@@ -64,8 +64,8 @@ HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
 DERIVED = HERE / "derived"
 STAGE = REPO / "sources/immigration-fiscal/data/external/stage3"
-CASE, BASIS = "oct14", "lineage"
-MEMBERS = 42_752_213                      # the lineage (main case v5 on), per-member figures divide by it
+CASE, BASIS = "oct15", "oct15"
+MEMBERS = 45_230_062.30075857  # complete v8 denominator; economic records must expose unlocated coverage
 # Staged with an ACQUIRED.md beside each (acquire_beside.py fetches a missing one): path, sha256, URL.
 SOURCES = {
     "bea_sarpp": (STAGE / "bea/rpp_2024/SARPP.zip", "38713c6224c4c26ae020ffecd4549b82dca84f43d34f93dfdb43f4070cf011da",
@@ -101,7 +101,8 @@ CITIES = {1: "valle_de_mexico", 2: "guadalajara", 3: "monterrey"}
 HEALTH_CLASSES = ("medicaid", "medicare", "health_services")
 SOCIAL_LINES = ("income_security_services",)
 WEIGHTINGS = ("equal", "equal_lambda_1.16", "equal_lambda_1.5", "equal_lambda_hendren_a")
-MONEY = dict(inc="compensation", net="income", tax="total_tax", ctax="ctax", employer="employer", cash="gross")
+MONEY = dict(inc="compensation", net="income", tax="total_tax", ctax="ctax", employer="employer", cash="gross",
+             formal="formal_gross", assets="employer_assets", withheld="withheld")
 
 
 def gate(name, ok, **detail):
@@ -209,7 +210,8 @@ def pay_ratios(en, sel, nat, young_nat):
             a["parent_cat"] = a.parent_cat.astype(int)
             ref, keys, by = young_nat.set_index(["sex", "band", "parent_cat"]), ["sex", "band", "parent_cat"], "band"
         idx = pd.MultiIndex.from_frame(a[keys])
-        cols = {k: f"{k}_per_person_mxn" for k in ("gross", "withheld", "ctax", "compensation", "total_tax", "employer")} | {"income": "income_per_person_mxn"}
+        cols = {k: f"{k}_per_person_mxn" for k in ("gross", "withheld", "ctax", "compensation", "total_tax", "employer",
+                                                      "formal_gross", "employer_assets")} | {"income": "income_per_person_mxn"}
         for k, c in cols.items():
             a[f"num_{k}"] = a.w * a[MX.MONEY[k]]
             a[f"den_{k}"] = a.w * ref[c].reindex(idx).to_numpy()
@@ -220,7 +222,10 @@ def pay_ratios(en, sel, nat, young_nat):
         a["den_hrs"] = np.where(hn, a.w * ref.weekly_hours_employed.reindex(idx).fillna(0).to_numpy(), 0.0)
         gate(f"pay_ratio_national_cells_found_{kind}", bool(np.isfinite(a[[c for c in a if c.startswith("den_")]]
                                                                          ).all().all()))
-        s = a[sel(a)]
+        selected = np.asarray(sel(a), bool)
+        gate("area_selection_matches_records", selected.shape == (len(a),))
+        is_national = bool(selected.all())
+        s = a[selected]
         parts = list(cols) + ["emp", "hrs"]
         sums = lambda t: pd.Series({"n": len(t), **{f"{p}_{x}": t[f"{x}_{p}"].sum() for p in parts
                                                      for x in ("num", "den")}})
@@ -235,8 +240,17 @@ def pay_ratios(en, sel, nat, young_nat):
                     r, level = (pooled.loc[b], "pooled_sex") if b in pooled.index else (None, None)
                 if r is None or r.n < MIN_RATIO_N:
                     r, level = everyone, "all"
+                formal_num, cash_num = float(r["formal_gross_num"]), float(r["gross_num"])
+                gate("area_source_formal_pay_is_cash_subset", np.isfinite([formal_num, cash_num]).all()
+                     and 0 <= formal_num <= cash_num + 1e-6, kind=kind, sex=sex, key=b)
+                # The same selected/pool-level raw wage mix governs this added
+                # formal-pay field. Separate ratios across ages can otherwise
+                # project formal pay above all pay. No cap or fallback is used.
+                formal_share = formal_num / cash_num if cash_num > 0 else 0.0
                 out.append(dict(kind=kind, sex=sex, key=b, n=int(full.loc[(sex, b)].n) if (sex, b) in full.index else 0,
                                 n_used=int(r.n), level=level,
+                                 formal_cash_share=formal_share, formal_cash_numerator_mxn=formal_num,
+                                 formal_cash_denominator_mxn=cash_num, is_national=is_national,
                                 **{f"R_{p}": float(r[f"{p}_num"] / r[f"{p}_den"]) for p in parts}))
     return pd.DataFrame(out)
 
@@ -253,8 +267,19 @@ def area_cells(ppp, ratios, price):
             out[pre + m] = {k: v * getattr(rk(k), f"R_{col}") / price for k, v in nat[pre + m].items()}
         # Rounded staged compensation totals cannot silently break cash-plus-employer closure.
         out[pre + "inc"] = {k: out[pre + "cash"][k] + out[pre + "employer"][k] for k in nat[pre + "inc"]}
-        out[pre + "tax"] = {k: (nat[pre + "tax"][k] - nat[pre + "employer"][k])
-                            * rk(k).R_withheld / price + out[pre + "employer"][k] for k in nat[pre + "tax"]}
+        out[pre + "formal"] = {}
+        for k in nat[pre + "formal"]:
+            r = rk(k)
+            gate("area_formal_cash_share_valid", np.isfinite(r.formal_cash_share)
+                 and 0 <= r.formal_cash_share <= 1, kind=kind, key=k)
+            # National selection is an identity control: retain the original
+            # age composition. In each non-national area apply its observed
+            # pooled formal-cash share to modeled cash [ASSUMPTION: flat within
+            # the selected sex/school or young-band pooling level].
+            out[pre + "formal"][k] = (nat[pre + "formal"][k] / price if r.is_national
+                                      else out[pre + "cash"][k] * r.formal_cash_share)
+        out[pre + "tax"] = {k: out[pre + "withheld"][k] + out[pre + "employer"][k]
+                            - out[pre + "assets"][k] for k in nat[pre + "tax"]}
         out[pre + "emp"] = {k: min(v * rk(k).R_emp, 1.0) for k, v in nat[pre + "emp"].items()}
         out[pre + "hrs"] = {k: v * rk(k).R_hrs for k, v in nat[pre + "hrs"].items()}
     return out
@@ -435,7 +460,7 @@ def residence_prices(d):
 def premium_table(d, parents, trans, cells_by_ppp):
     """The g2_premium.csv rows world_ledger.premium_rows reads (and the CMP check's), recomputed on the given US
     earnings (d.earn), Mexico cells and EMOVI transitions, as g2_premium.main builds them."""
-    rows = []
+    rows, g3_profiles = [], []
     for ppp in ("gdp", "consumption"):
         cells = cells_by_ppp[ppp]
         g1 = d[d.gen.eq("G1")]
@@ -450,25 +475,30 @@ def premium_table(d, parents, trans, cells_by_ppp):
         for sel, delta in G.G2_INHERITED.items():
             rows.append(G.summarize("G2", "rearing", g2, e, delta,
                                     dict(ppp=ppp, diploma_reread=0.25, mishra=False, selection=sel)))
-        if ppp != "gdp":
-            continue
         tmp = g2.assign(**{f"mx_{m}": v for m, v in e.items()}, band=np.where(g2.A_AGE < 15, "0-14", G.band_of(g2.A_AGE)))
         ratio = {m: {} for m in G.MONEY}
         for (sx, b), s in tmp[tmp.A_AGE >= 15].groupby(["sex", "band"]):
+            calibration = G.counted_donor_weights(s)
             for m in G.MONEY:
-                ratio[m][(sx, b)] = (s.pw * s[f"mx_{m}"]).sum() / max((s.pw * s.earn).sum(), 1.0)
+                ratio[m][(sx, b)] = (calibration * s[f"mx_{m}"]).sum() / max((calibration * s.earn).sum(), 1.0)
         e2 = G.mexico_own_schooling(g2, cells, 0.0, False)
         for sel, delta in G.G2_INHERITED.items():
             rows.append(G.summarize("G2", "own_us_schooling", g2, e2, delta,
                                     dict(ppp=ppp, diploma_reread=0.0, mishra=False, selection=sel)))
         g3 = d[d.gen.eq("G3+")]
-        e3 = {m: np.array([ratio[m].get((sx, b), np.nan) if a >= 15 else 0.0
+        legacy = {m: np.array([ratio[m].get((sx, b), np.nan) if a >= 15 else 0.0
                            for sx, b, a in zip(g3.sex, G.band_of(g3.A_AGE), g3.A_AGE)]) * g3.earn.to_numpy()
               for m in G.MONEY}
+        divisor = MX.ppp()["PA.NUS.PPP" if ppp == "gdp" else "PA.NUS.PRVT.PP"]
+        profile = G.MC.profile_frame(g3, legacy, ppp, divisor)
+        g3_profiles.append(profile)
+        e3 = G.MC.upper_arrays(MX, profile)
         e3["emp"] = e3["hw"] = np.zeros(len(g3))
         rows.append(G.summarize("G3+", "bound_upper_g2_ratio", g3, e3, 0.0,
                                 dict(ppp=ppp, diploma_reread=0.25, mishra=False, selection="none")))
-    return as_written(pd.DataFrame(rows))
+    out = as_written(pd.DataFrame(rows))
+    out.attrs["g3_pay_profiles"] = pd.concat(g3_profiles, ignore_index=True)
+    return out
 
 
 def premium_table_gate(table):
@@ -485,6 +515,7 @@ def premium_table_gate(table):
 def health_rows(rows, I, pgc, care_vg=None, mexico_health_vg=None):
     """build_rows' two health row families at other V/G: care received without pay (uncompensated_received_*) and
     Mexico's budget forgone (mexico_budget_lost_*, its health part); None keeps the lane's (health_vg)."""
+    from mexico_prices import budget_values
     rows = rows.copy().set_index("row")
     hv = I["health_vg"]
     cv, mv = care_vg or hv, mexico_health_vg or hv
@@ -495,13 +526,12 @@ def health_rows(rows, I, pgc, care_vg=None, mexico_health_vg=None):
         rows.loc[f"uncompensated_received_{g}", ["low", "central", "high"]] = [
             min(-unc.bn_low, -unc.bn_high) * cv[0] * pop[g], -unc.bn_central * cv[1] * pop[g],
             max(-unc.bn_low, -unc.bn_high) * cv[2] * pop[g]]
-        s = mx[mx.generation == g].set_index("item")
-        he = float(s.filter(like="health", axis=0).bn.iloc[0])
-        cash = float(s[s.cls == "cash"].bn.sum())
-        pg = float(s[s.cls == "public_good"].bn.iloc[0])
-        pg_val = pg if pgc == "average_cost" else pg * W.MEXICO_PUBLIC_RESPONSE[1]
+        if I.get("account_end"):
+            rows.loc[f"uncompensated_received_{g}", ["low", "central", "high"]] = (
+                -unc[f"bn_{I['account_end']}"] * cv[1] * pop[g])
+        lost = budget_values(mx, g, mv, W.MEXICO_PUBLIC_RESPONSE, pgc)[2]
         rows.loc[f"mexico_budget_lost_{g}", ["low", "central", "high"]] = [
-            -(he * mv[2] + cash + pg_val), -(he * mv[1] + cash + pg_val), -(he * mv[0] + cash + pg_val)]
+            lost[e] for e in ("low", "central", "high")]
     return rows.reset_index()
 
 
@@ -512,12 +542,16 @@ def services_at_prices(vgen, r_health, r_social, medicaid_vg=None):
     v = vgen.copy()
     vcols = ["V_low_bn", "V_central_bn", "V_high_bn"]
     health = v.cls.isin(HEALTH_CLASSES)
+    if "us_service_price_exemption" not in v:
+        v["us_service_price_exemption"] = None
+    v.loc[health | v.line.isin(SOCIAL_LINES), "us_service_price_exemption"] = "Mexican prices"
     overlay = v.line.str.startswith("state_price_")
     for c in vcols:
         v.loc[health & ~overlay, c] = v.loc[health & ~overlay, "G_bn"] * r_health
         v.loc[health & overlay, c] = v.loc[health & overlay, c] * r_health
         v.loc[v.line.isin(SOCIAL_LINES), c] = v.loc[v.line.isin(SOCIAL_LINES), "G_bn"] * r_social
     if medicaid_vg is not None:
+        v.loc[v.cls.eq("medicaid"), "us_service_price_exemption"] = "WTP"
         for c, x in zip(vcols, medicaid_vg):
             v.loc[v.cls.eq("medicaid"), c] = v.loc[v.cls.eq("medicaid"), "G_bn"] * x
     return v
@@ -528,6 +562,9 @@ def public_goods_at_prices(vgen, r):
     government services (Mexico's own stay at average cost)."""
     v = vgen.copy()
     m = v.cls.eq("public_good")
+    if "us_service_price_exemption" not in v:
+        v["us_service_price_exemption"] = None
+    v.loc[m, "us_service_price_exemption"] = "alternative category prices"
     for c in ("V_low_bn", "V_central_bn", "V_high_bn"):
         v.loc[m, c] = v.loc[m, c] * r
     return v
@@ -574,6 +611,8 @@ def finite_gate(name, values):
 
 def evaluate(I, fac, pgc="average_cost", care_vg=None, mexico_health_vg=None, remit_rows=None, budget_deflator=None,
              g3_bound="zero", end="central"):
+    from service_prices import money_price_inputs
+    I = money_price_inputs(I, MX.ppp(), I.get("operator_mexico_money", True))
     I = dict(I, account_end=end) if end in ("low", "high") else I
     rows, prem, _ = W.build_rows(I, pgc, g3_central=g3_bound)
     if care_vg is not None or mexico_health_vg is not None:

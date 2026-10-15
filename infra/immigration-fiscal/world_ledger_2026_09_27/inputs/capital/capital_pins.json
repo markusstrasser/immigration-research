@@ -1,0 +1,101 @@
+{
+  "capital-sat-itg2024-new.pdf": {
+    "url": "https://www.sat.gob.mx/minisitio/Transparencia/documentos/itg/ITG_2024_4T.pdf",
+    "retrieved": "2026-10-15",
+    "sha256": "3c7d9331e1e00f7e4f0a682aa2fdaa0472682b7caa0262aa63a3dc0f17291492"
+  },
+  "capital-sat-program.pdf": {
+    "url": "https://www.sat.gob.mx/minisitio/AdministracionSAT/documentos/InstrumentoDisenoProgramaPresupuestarioE013ServiciosRecaudacionContribucionesFederales.pdf",
+    "retrieved": "2026-10-15",
+    "sha256": "695e5e9f08b29f340288d3c516b5a5b7a17bf0d731faae99a6842930232bd0bd"
+  },
+  "capital-indetec2025.pdf": {
+    "url": "https://www.indetec.gob.mx/delivery?path=%2Fbiblioteca%2FEspeciales%2FPanorama-de-Ingresos-Propios%2FPanorama-de-Ingresos-Propios.pdf&sl=3&srv=0",
+    "retrieved": "2026-10-15",
+    "sha256": "e1b61fa31fcf51a6336623fbedf162639b8834667e5c410bd708436c45a48c37"
+  },
+  "capital-tabasco-law2023.pdf": {
+    "url": "https://congresotabasco.gob.mx/wp/wp-content/uploads/2024/01/Ley-de-Hacienda-del-Estado-de-Tabasco-Enero-2023.pdf",
+    "retrieved": "2026-10-15",
+    "sha256": "96a5dc36e7f58e491a6de44ebb39c181d647b71e2f79bef65106440cd87f9646"
+  },
+  "capital-sat-sector-isr.csv": {
+    "sha256": "8852fddea5dfe2a3aeb0ebdc234fae29f06d07bcc8e076b330065a96a4f8ee4c",
+    "kind": "rederivable ENIGH table or audited primary transcription"
+  },
+  "capital-isn-rates.csv": {
+    "sha256": "e0bdb7de6d9e3bf9d236b36da0bc36de15779f374b2fc5c738aae9cd5e083c2d",
+    "kind": "rederivable ENIGH table or audited primary transcription"
+  },
+  "capital-enigh-cells.json": {
+    "sha256": "da27dd20bc4c219bdd9503933004ef560112e9b9f3a817df530dc349cb7bfb45",
+    "kind": "rederivable ENIGH table or audited primary transcription"
+  },
+  "capital-enigh-industry.csv": {
+    "sha256": "bfcdfaf4acf8333538d0e47a8f24b865177b56047727a44df21fa5fd5c1b4140",
+    "kind": "rederivable ENIGH table or audited primary transcription"
+  },
+  "capital-enigh-meta.json": {
+    "sha256": "c54115282835d099748c7188e97924925ff3b336b714aaa3ad1103475145c369",
+    "kind": "rederivable ENIGH table or audited primary transcription"
+  },
+  "capital-enigh-own-cells.csv": {
+    "sha256": "9732e30025013bf3764489bbf6e9a1b85af6872362834218a12b79fb7c6d889c",
+    "kind": "rederivable ENIGH table or audited primary transcription"
+  },
+  "capital-enigh-parents-cells.csv": {
+    "sha256": "81bc191732430cf2afcabdc75ede6308047c221a20e7684f1210b0ce2862b9d1",
+    "kind": "rederivable ENIGH table or audited primary transcription"
+  },
+  "capital-isn-state-weights.csv": {
+    "sha256": "9cf1fd15f7e229ce483456536278f130da2ec0b90f159f159983a84dbb264f99",
+    "kind": "rederivable ENIGH table or audited primary transcription"
+  },
+  "meta": {
+    "source_date": "2026-10-15",
+    "corporate_receipts_national_mxn_million": 1154322,
+    "sector_sum_mxn_million": 1154321,
+    "rounding_gap_mxn_million": 1,
+    "generator": "capital_build.py --out-dir SCRATCH"
+  },
+  "repo:infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/wages_by_industry.csv": {
+    "sha256": "3bccaa790e713c2206ccba4a091b42a41b293b58eda41ee4aede4ee806202009",
+    "kind": "existing source; read only"
+  },
+  "repo:infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/item.json": {
+    "sha256": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283",
+    "kind": "existing source; read only"
+  },
+  "repo:infra/immigration-fiscal/world_ledger_2026_09_27/_cache/mexico/enigh/poblacion.csv": {
+    "sha256": "33278a600025f502ac2d10abadd480317d5b6eb1a32096d9be2db00c9bcaaa0f",
+    "kind": "extracted official ENIGH2024 CSV; existing read-only input",
+    "verified": "2026-10-15",
+    "source_url": "https://www.inegi.org.mx/contenidos/programas/enigh/nc/2024/microdatos/enigh2024_ns_poblacion_csv.zip"
+  },
+  "repo:infra/immigration-fiscal/world_ledger_2026_09_27/_cache/mexico/enigh/trabajos.csv": {
+    "sha256": "dc735ff389526d018a8a6c4c284f26a214cd2f2ce05a0ccb564c5fef67afb4d4",
+    "kind": "extracted official ENIGH2024 CSV; existing read-only input",
+    "verified": "2026-10-15",
+    "source_url": "https://www.inegi.org.mx/contenidos/programas/enigh/nc/2024/microdatos/enigh2024_ns_trabajos_csv.zip"
+  },
+  "repo:infra/immigration-fiscal/world_ledger_2026_09_27/_cache/mexico/enigh/ingresos.csv": {
+    "sha256": "152343691b5b28d31822a255b7fbc6802a91e7393d42933c12dbdd758aad5549",
+    "kind": "extracted official ENIGH2024 CSV; existing read-only input",
+    "verified": "2026-10-15",
+    "source_url": "https://www.inegi.org.mx/contenidos/programas/enigh/nc/2024/microdatos/enigh2024_ns_ingresos_csv.zip"
+  },
+  "repo:infra/immigration-fiscal/world_ledger_2026_09_27/_cache/mexico/enigh/concentradohogar.csv": {
+    "sha256": "e7a7396e92a64f994cd6c9df8dadb97855504122f9719da6676476a56c98d793",
+    "kind": "extracted official ENIGH2024 CSV; existing read-only input",
+    "verified": "2026-10-15",
+    "source_url": "https://www.inegi.org.mx/contenidos/programas/enigh/nc/2024/microdatos/enigh2024_ns_concentradohogar_csv.zip"
+  },
+  "repo:infra/immigration-fiscal/world_ledger_2026_09_27/derived/parents_schooling.csv": {
+    "sha256": "6b5379a9e49cfc5ea89bb19d3d1a7addc3e8bec4daccb04fe47216b648f335bc",
+    "kind": "fixed comparator/transition input, not live fiscal output"
+  },
+  "repo:infra/immigration-fiscal/world_ledger_2026_09_27/derived/mexico_transition.csv": {
+    "sha256": "c894dd4ee225054dff2be415734367b7c36a4b71da4ddc13943e4cb7e69aad48",
+    "kind": "fixed comparator/transition input, not live fiscal output"
+  }
+}

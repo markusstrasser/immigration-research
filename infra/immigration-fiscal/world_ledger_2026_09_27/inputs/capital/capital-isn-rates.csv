@@ -1,0 +1,33 @@
+state,state_name,rate_low,rate_high,pdf_page,table,qualification
+01,Aguascalientes,0.025,0.025,81,9,base statutory rate; exemptions not modeled
+02,Baja California,0.0425,0.0425,84,10,combined published rate
+03,Baja California Sur,0.025,0.025,87,11,base statutory rate
+04,Campeche,0.03,0.03,89,12,base statutory rate
+05,Coahuila,0.03,0.03,91,13,base statutory rate; other tax surcharge separate
+06,Colima,0.02,0.02,94,14,base statutory rate
+07,Chiapas,0.02,0.02,97,15,base statutory rate; other tax surcharge separate
+08,Chihuahua,0.03,0.03,100,16,base statutory rate; 10 percent and 5 percent ISN surcharges separate
+09,Ciudad de Mexico,0.03,0.03,103,17,2024 column; 2025 is 4 percent
+10,Durango,0.03,0.03,106,18,base statutory rate; other tax surcharge separate
+11,Guanajuato,0.03,0.03,109,19,base statutory rate
+12,Guerrero,0.02,0.02,112,20,2024 column; 2025 is 3 percent
+13,Hidalgo,0.03,0.03,115,21,base statutory rate
+14,Jalisco,0.03,0.03,117,22,base statutory rate
+15,Mexico,0.03,0.03,120,23,base statutory rate
+16,Michoacan,0.03,0.03,123,24,base statutory rate
+17,Morelos,0.02,0.02,125,25,2024 column; 2025 is 2.5 percent
+18,Nayarit,0.03,0.03,128,26,base statutory rate
+19,Nuevo Leon,0.03,0.03,130,27,base statutory rate
+20,Oaxaca,0.03,0.03,133,28,base statutory rate
+21,Puebla,0.03,0.03,136,29,base statutory rate
+22,Queretaro,0.03,0.03,138,30,base statutory rate
+23,Quintana Roo,0.04,0.04,141,31,base statutory rate
+24,San Luis Potosi,0.03,0.03,144,32,base statutory rate
+25,Sinaloa,0.024,0.03,146,33,employer monthly total payroll tariff; fixed amounts page147
+26,Sonora,0.03,0.03,149,34,base statutory rate; other contributions separate
+27,Tabasco,0.025,0.03,153,35,public versus private employer rate; page154 notes describe updated2025 rates
+28,Tamaulipas,0.03,0.03,156,36,base statutory rate
+29,Tlaxcala,0.03,0.03,158,37,base statutory rate
+30,Veracruz,0.03,0.03,161,38,base statutory rate; other tax surcharge separate
+31,Yucatan,0.03,0.03,163,39,base statutory rate; other tax surcharge separate
+32,Zacatecas,0.03,0.03,166,40,2024 column; 2025 is 3.5 percent

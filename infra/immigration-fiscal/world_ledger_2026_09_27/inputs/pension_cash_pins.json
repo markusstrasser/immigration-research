@@ -1,0 +1,18 @@
+{
+  "artifacts": {
+    "oct14_cash": {
+      "case": "oct14",
+      "package_set": "cash",
+      "path": "inputs/pension_cash_cells_v7.json",
+      "provenance": "[HISTORICAL PROBE] exact committed v7 set/cash generation and union cells; source-read hashes inside artifact",
+      "sha256": "161cde418d6615bcf0576401b17aa5ee049055cc6f1cb92e4b3382515a5ac6c9"
+    },
+    "oct15_cash": {
+      "case": "oct15",
+      "package_set": "cash",
+      "path": "inputs/pension_cash_cells_oct15.json",
+      "provenance": "[EXACT PACKAGE CASH] pinned v8 set/cash generation and union cells, all source hashes; debt split excluded",
+      "sha256": "ffd968440506014853ff8be79451572df08aa30c107d9288104d2d81b38b2d7d"
+    }
+  }
+}

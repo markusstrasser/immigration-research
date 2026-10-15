@@ -1,0 +1,21 @@
+{
+  "gross_subordinate_pay_mxn_bn": 7101.214231597485,
+  "formal_pay_mxn_bn": 4273.7409624488455,
+  "unmapped_wage_share": 0.003293536052915084,
+  "job_country_counts_before_domestic_filter": {
+    "1": 121890,
+    "2": 517
+  },
+  "state_mix": "national formal subordinate gross pay; not migrant-origin state mix",
+  "isn_base_rate_lower": 0.03002164839013894,
+  "isn_base_rate_upper": 0.030179550422114662,
+  "isn_scope": "base statutory rates only; exemptions/surcharges not silently modeled",
+  "wage_scope": "domestic subordinate wages main plus secondary; existing formal person gross-up; trapais1 per ENIGH2024 questionnaire",
+  "gaps": [
+    "OTHER/OTHER_AUX corporate tax sector has no identified industry; requires an explicit pooled-key allocation",
+    "Taxable corporate base by industry is not identical to ENIGH wage universe",
+    "Independent business income excluded to match US wage-only key",
+    "No employer aggregate payroll to apply Sinaloa tariff exactly",
+    "Tabasco institution-of-government code observed; productive state companies under private-company code need separate treatment"
+  ]
+}

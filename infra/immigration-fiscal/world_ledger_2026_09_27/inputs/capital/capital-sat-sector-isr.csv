@@ -1,0 +1,23 @@
+sector,label,corporate_gains_isr_mxn_million,page,scian_prefixes
+31_33,Industrias manufactureras,272474,11,31|32|33
+52,Servicios financieros y de seguros,186634,11,52
+43,Comercio al por mayor,145204,11,43
+46,Comercio al por menor,107564,11,46
+93,Actividades del gobierno y organismos internacionales,46,11,93
+54,Servicios profesionales cientificos y tecnicos,36628,11,54
+61,Servicios educativos,3461,11,61
+56,Servicios de apoyo a negocios y manejo de desechos,67660,11,56
+48_49,Transportes correos y almacenamiento,65321,11,48|49
+62,Servicios de salud y asistencia social,5813,11,62
+53,Servicios inmobiliarios y alquiler de bienes,57803,11,53
+23,Construccion,46898,11,23
+51,Informacion en medios masivos,27101,11,51
+21,Mineria,24455,11,21
+22,Electricidad agua y suministro de gas,19900,12,22
+OTHER,Contribuyentes con actividad pendiente de definir,19719,12,
+55,Direccion de corporativos y empresas,32833,12,55
+72,Alojamiento temporal y preparacion de alimentos,12400,12,72
+11,Agricultura ganaderia forestal pesca y caza,11839,12,11
+81,Otros servicios excepto gobierno,6214,12,81
+71,Esparcimiento culturales deportivos y recreativos,4229,12,71
+OTHER_AUX,Recaudacion por entidades federativas como auxiliar,125,12,

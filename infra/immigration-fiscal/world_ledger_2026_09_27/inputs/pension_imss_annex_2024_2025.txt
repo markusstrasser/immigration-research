@@ -1,0 +1,2190 @@
+# (no title)
+URL: https://www.imss.gob.mx/sites/all/statics/pdf/informes/20242025/15-anexos.pdf
+
+Este Anexo detalla las características de los regímenes de aseguramiento que comprende el 
+Seguro Social, así como los seguros y las prestaciones que brinda cada uno. La última sección 
+describe las fuentes de financiamiento asociadas. 
+A.1. Regímenes y modalidades de aseguramiento 
+del Instituto Mexicano del Seguro Social
+De conformidad con la Ley del Seguro Social (LSS), la afiliación al Instituto Mexicano del Seguro 
+Social comprende dos tipos de regímenes: el Obligatorio y el Voluntario179. 
+Los esquemas de prestaciones y requisitos de acceso, así como el financiamiento, son 
+diferentes en cada caso:
+i) En el Régimen Obligatorio, una persona es afiliada por su patrón por tener una relación 
+laboral subordinada y remunerada, lo que obliga a su aseguramiento. Hasta diciembre 
+de 2024, esta categoría tenía 70.8% de las personas aseguradas.
+ii) El Régimen Voluntario es producto de una decisión individual o colectiva. En este caso 
+están las personas afiliadas al Seguro de Salud para la Familia (SSFAM) y al Seguro 
+Facultativo (estudiantes), entre otros (cuadro A.1). Este grupo, hasta diciembre de 
+2024, tenía el restante 29.2% de los aseguramientos ante el IMSS.
+A.2. Prestaciones por tipo de régimen
+La Ley del Seguro Social establece que el esquema de prestaciones del Régimen Obligatorio 
+comprende todos los seguros ofrecidos por el IMSS:
+i) Riesgos de Trabajo (SRT).
+ii) Enfermedades y Maternidad (SEM).
+179Artículo 6 de la Ley del Seguro Social. Adicional a los regímenes Obligatorio y Voluntario, y como se detalla en el 
+Capítulo I de este Informe, en la afiliación al IMSS también se distingue entre personas aseguradas trabajadoras y 
+no trabajadoras.
+Prestaciones y fuentes 
+de financiamiento de los 
+ regímenes de aseguramiento
+del IMSS
+ANEXO A
+228
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+iii) Invalidez y Vida (SIV).
+iv) Retiro, Cesantía en Edad Avanzada y Vejez (SRCV)180.
+v) Guarderías y Prestaciones Sociales (SGPS). 
+En este régimen destaca la afiliación en la modalidad 10, con 97.1% del total de personas afiliadas al Régimen 
+Obligatorio del IMSS, en diciembre de 2024. En el Régimen Obligatorio también se precisa que la modalidad 30 de 
+productores de caña de azúcar tiene su origen en el Artículo Séptimo Transitorio de la Ley de 1995. Su incorporación 
+se efectúa mediante la formalización de convenios con los que han manifestado su voluntad de continuar en el 
+Régimen Obligatorio y con el esquema de aseguramiento previsto en la Ley que Incorpora al Régimen del Seguro Social 
+Obligatorio a productores de caña de azúcar y a sus personas trabajadoras, para los cuales no se contempla el Seguro de 
+Guarderías y Prestaciones Sociales. Por lo anterior, aunque este grupo no está obligado a afiliarse al IMSS, se le considera 
+Régimen Obligatorio.
+El Seguro Facultativo (estudiantes) concentró 89.8% del Régimen Voluntario hasta diciembre de 2024. El Seguro 
+de Salud para la Familia (modalidad 33), la continuación voluntaria (modalidad 40) y los seguros para trabajadores al 
+servicio de las administraciones pública federal, entidades federativas y municipios (modalidades 36, 38 y 42) abarcan 
+10.1%. Hasta diciembre de 2024, la menor afiliación se reporta en patrones, personas físicas, personas trabajadoras 
+independientes y la incorporación voluntaria de personas trabajadoras del campo, quienes, en conjunto, participan con 
+0.1% del aseguramiento voluntario (cuadro A.1). 
+Cuadro A.1. 
+Modalidades de aseguramiento por tipo de régimen 
+y esquema de prestaciones, diciembre de 2024
+Modalidad Descripción Personas 
+aseguradas
+Seguro Derecho 
+a subsidio1/
+SRT SEM SIV SRCV SGPS
+Régimen Obligatorio 21’755,405
+10 Trabajadores permanentes 
+y eventuales de la ciudad 21’118,364 x x x x x SRT, SEM
+13 Trabajadores permanentes 
+y eventuales del campo 481,833 x x x x x SRT, SEM
+14 Trabajadores eventuales 
+del campo cañero 25,822 x x x x x SRT, SEM
+17 Reversión de cuotas por subrogación 
+de servicios 59,210 x x x x x SRT, SEM
+30 Productores de caña de azúcar 70,176 x x x x SRT, SEM
+SRT: Seguro de Riesgos de Trabajo; SEM: Seguro de Enfermedades y Maternidad; SIV: Seguro de Invalidez y Vida; SRCV: Seguro de Retiro, Cesantía 
+y Vejez, y SGPS: Seguro de Guarderías y Prestaciones Sociales.
+1/ Se refiere al derecho a recibir una prestación en dinero que se otorgará a la persona trabajadora asegurada en caso de una enfermedad laboral 
+o no laboral que le incapacite para el trabajo.
+180Con la Ley del Seguro Social que entró en vigor en julio de 1997, el Seguro de Retiro, Cesantía y Vejez ya no es administrado por el Instituto, 
+sino que opera a través de las cuentas individuales de ahorro de las personas trabajadoras, con una garantía de pensión mínima por parte del 
+Gobierno Federal. Por ello, en este Informe no se profundiza en la situación de dicho seguro, más allá de los riesgos que cubre, cuáles son las 
+cuotas y aportaciones que lo financian.
+229
+ANEXO A. Prestaciones y fuentes de financiamiento de los regímenes de aseguramiento del IMSS
+Cuadro A.1. 
+(Continuación)
+Modalidad Descripción Personas 
+aseguradas
+Seguro Derecho 
+a subsidio1/
+SRT SEM SIV SRCV SGPS
+Régimen Voluntario 8’951,828
+32 Seguro Facultativo2/ 8’038,641 x No
+33 Seguro de Salud para la Familia 155,126 x No
+35 Patrones personas físicas 
+con trabajadores a su servicio 1,761 x x x x3/ SRT
+36
+Trabajadores al servicio de gobiernos 
+estatales, municipales y organismos 
+descentralizados4/
+161,444 x No
+38
+Trabajadores al servicio de las 
+administraciones pública federal, 
+entidades federativas y municipios4/
+281,465 x x No
+40 Continuación voluntaria en el Régimen 
+Obligatorio 275,087 x x No
+42
+Trabajadores al servicio de las 
+administraciones pública federal, 
+entidades federativas y municipios4/
+27,046 x x x x SRT
+43 Incorporación voluntaria del campo al 
+Régimen Obligatorio 4,339 x x x3/ No
+44 Trabajadores independientes 6,919 x x x3/ No
+Total 30’707,233
+1/ Se refiere al derecho a recibir una prestación en dinero que se otorgará a la persona trabajadora asegurada en caso de una enfermedad laboral 
+o no laboral que le incapacite para el trabajo. 
+2/ Seguro para estudiantes y familiares de las personas trabajadoras del IMSS y de la Comisión Federal de Electricidad. Incluye jóvenes construyendo 
+el futuro.
+3/ Solo tienen la cobertura de retiro y vejez, mas no la de cesantía.
+4/ En las modalidades, las personas aseguradas son población trabajadora al servicio de la administración pública estatal o municipal; la diferencia 
+entre las modalidades se relaciona con el tipo de seguros a los cuales se tiene derecho. 
+Fuente: Dirección de Incorporación y Recaudación, IMSS. 
+El Seguro de Salud para la Familia ofrece cobertura de manera individual a cada persona que conforma el núcleo 
+familiar mediante un convenio suscrito con el IMSS para el otorgamiento de las prestaciones en especie del Seguro 
+de Enfermedades y Maternidad181, donde el pago del aseguramiento es por persona y con base en la edad de la 
+persona interesada. De la misma manera, el Seguro Facultativo, compuesto en su gran mayoría por estudiantes 
+de instituciones públicas de nivel medio superior y superior, otorga las prestaciones en especie del Seguro de 
+Enfermedades y Maternidad.
+En el cuadro A.2 se presentan las coberturas y prestaciones que ampara cada uno de los seguros, tanto para las 
+personas aseguradas titulares, ya sea como trabajadoras o pensionadas, o sus beneficiarias, según sea el caso.
+181Artículo 240 de la Ley del Seguro Social.
+230
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Cuadro A.2.
+Cobertura y prestaciones por tipo de seguro
+Cobertura Prestaciones
+Enfermedades y Maternidad
+Personas aseguradas y pensionadas, así como familiares 
+directos que dependan económicamente de las primeras, 
+en casos de maternidad y de enfermedades que no 
+deriven del trabajo.
+Enfermedad
+En especie (personas aseguradas, pensionadas y beneficiarias): 
+asistencia médico-quirúrgica, farmacéutica y hospitalaria.
+En dinero (personas aseguradas): subsidio equivalente a 60% 
+del último salario diario de cotización a partir del cuarto día de la 
+incapacidad mientras dure esta y hasta por 52 semanas.
+Maternidad
+En especie (personas aseguradas y esposa o concubina de la persona 
+asegurada o pensionada): asistencia obstétrica, ayuda en especie 
+por 6 meses de lactancia y capacitación, y canastilla al nacer su 
+descendiente.
+En dinero (personas aseguradas): subsidio de 100% del último salario 
+diario de cotización por 42 días antes y después del parto.
+Ayuda para gastos de funeral
+En dinero (personas beneficiarias de la persona asegurada o 
+pensionada fallecida): 2 meses del salario mínimo general en la 
+Ciudad de México que rija a la fecha del fallecimiento1/.
+Riesgos de Trabajo
+Personas trabajadoras aseguradas que se accidentan 
+o enferman en ejercicio o con motivo de su trabajo. 
+También se considera accidente de trabajo el que 
+se produzca al trasladarse la persona trabajadora 
+directamente de su domicilio al lugar del trabajo, 
+o de este a aquel.
+En especie: asistencia médico-quirúrgica y farmacéutica, servicio de 
+hospitalización, aparatos de prótesis y ortopedia, y rehabilitación. 
+Servicios de carácter preventivo. 
+En dinero:
+i) Incapacidad temporal: subsidio equivalente a 100% del salario 
+registrado en el IMSS al inicio de la incapacidad, desde 1 día hasta 
+el término de 52 semanas, según lo determinen los servicios 
+médicos del IMSS.
+ii) Incapacidad permanente (parcial o total): pensión con carácter 
+provisional, por un periodo de adaptación de 2 años. Transcurrido 
+dicho periodo, se otorgará la pensión definitiva o indemnización 
+global, en los términos del artículo 58, fracciones II y III de la Ley 
+del Seguro Social.
+iii) Fallecimiento (persona trabajadora asegurada o pensionada): 
+pensiones de viudez, orfandad o ascendientes, ayuda asistencial y 
+asistencia médica. Ayuda para gastos de funeral.
+Invalidez y Vida
+Invalidez 
+Personas trabajadoras aseguradas cuando estén 
+imposibilitadas para procurarse una remuneración 
+superior a 50% de su remuneración habitual, derivado 
+de accidente o enfermedad no profesional.
+En especie: asistencia médico-quirúrgica, farmacéutica y hospitalaria.
+En dinero: pensiones temporales o definitivas (con pensión mínima 
+garantizada por el Gobierno Federal), asignaciones familiares y ayuda 
+asistencial.
+Vida
+Personas beneficiarias de la persona trabajadora 
+asegurada o pensionada, a la muerte de esta.
+En especie: asistencia médico-quirúrgica, farmacéutica y hospitalaria.
+En dinero: pensiones de viudez, orfandad o ascendientes y 
+ayuda asistencial.
+1/ En atención a los acuerdos del H. Consejo Técnico ACDO.SA2.HCT.250117/26.P.DJ, del 25 de enero de 2017, y ACDO.IN2.HCT.290317/72.P.DJ, del 
+29 de marzo de 2017, las Ayudas de Gastos de Funeral se pagan a partir de 2017 con base en la Unidad de Medida y Actualización.
+231
+ANEXO A. Prestaciones y fuentes de financiamiento de los regímenes de aseguramiento del IMSS
+Cuadro A.2.
+(Continuación)
+Cobertura Prestaciones
+Retiro, Cesantía en Edad Avanzada y Vejez2/
+Cesantía en edad avanzada 
+Personas aseguradas, a partir de los 60 años, que 
+quedan privadas de trabajos remunerados.
+Vejez 
+Personas aseguradas, a partir de los 65 años.
+En especie: asistencia médico-quirúrgica, farmacéutica y hospitalaria.
+En dinero: pensión, asignaciones familiares y ayuda asistencial; retiros 
+programados con cargo a la cuenta individual en las Administradoras de 
+Fondos para el Retiro (Afore), con pensión garantizada por el Gobierno 
+Federal conforme la tabla prevista en el artículo 170 de la LSS a las personas 
+aseguradas cuyos recursos acumulados en su cuenta individual resulten 
+insuficientes para contar con una renta vitalicia o un retiro programado de 
+al menos ese monto, si cotizaron mil o más semanas3/. Ayuda para gastos 
+de matrimonio.
+Guarderías y Prestaciones Sociales
+Guarderías
+Las personas trabajadoras aseguradas tendrán 
+derecho durante la jornada de trabajo a los 
+servicios de Guardería ―el aseo, la alimentación,
+el cuidado de la salud, la educación y la 
+recreación― para sus hijas e hijos desde la edad
+de 43 días hasta que cumplan 4 años.
+Este beneficio se podrá extender a las personas 
+aseguradas que por resolución judicial ejerzan la 
+patria potestad y la custodia de la niña o el niño, 
+siempre y cuando estén vigentes en sus derechos 
+ante el Instituto y no puedan proporcionar la 
+atención y cuidados a las niñas o los niños.
+Guarderías: cuidados y atención a niñas y niños con cobertura.
+Prestaciones Sociales
+Personas trabajadoras aseguradas 
+y sus familiares.
+Prestaciones sociales: promoción de la salud, impulso y desarrollo de 
+actividades culturales, deportivas y recreativas, capacitación para el trabajo 
+y el adiestramiento técnico, Centros Vacacionales y Velatorios, entre otros.
+2/ Las personas aseguradas antes del 1 de julio de 1997 que se pensionen en fecha posterior al 30 de junio de ese año, así como sus personas 
+beneficiarias, podrán elegir pensionarse en los términos de la Ley de 1973 o de la Ley de 1997 (actual). De acuerdo con la Ley de los Sistemas 
+de Ahorro para el Retiro, los recursos acumulados en el ramo de Retiro de la Subcuenta de Cesantía en Edad Avanzada y Vejez de personas 
+trabajadoras o beneficiarias, que a partir del 1 de julio de 1997 hubieren elegido pensionarse con los beneficios de la Ley de 1973, deberán ser 
+entregados a las mismas.
+3/ Las semanas de cotización que se requieren según el artículo 170 de la Ley del Seguro Social serán 750 y se incrementarán anualmente 25 semanas 
+hasta alcanzar 1,000 en 2031. En 2024 se requirieron 825 semanas.
+Fuente: Ley del Seguro Social, IMSS.
+A.3. Fuentes de financiamiento
+Los seguros del IMSS son financiados a partir de aportaciones de las personas empleadoras, trabajadoras y del 
+Gobierno Federal. La estructura de las tasas de contribución pagadas al Instituto, que varían en función del tipo 
+de seguro y del sujeto obligado, incluyen pagos en pesos por persona trabajadora (cuotas fijas), pagos en función del 
+salario base de cotización (cuotas proporcionales) y cuotas excedentes.
+El cuadro A.3 detalla las contribuciones del Seguro de Invalidez y Vida, del Seguro de Guarderías y Prestaciones 
+Sociales, de gastos médicos de personas pensionadas del Seguro de Enfermedades y Maternidad, y del Seguro de 
+Retiro, Cesantía en Edad Avanzada y Vejez que están establecidas como porcentaje del salario base de cotización de la 
+persona afiliada. Para el resto de los seguros, las cuotas y aportaciones están definidas como cantidades fijas (como 
+porcentaje de la Unidad de Medida y Actualización [UMA] o del salario mínimo [SM] vigente en 1997 y actualizado por la 
+variación del Índice Nacional de Precios al Consumidor) o variables (de acuerdo con la siniestralidad de cada empresa 
+en el caso del Seguro de Riesgos de Trabajo). En el caso de la cuota obrero-patronal del Seguro de Enfermedades y 
+Maternidad, también se cobra una cuota excedente para las personas afiliadas con salario superior a 3 veces la UMA, 
+contribución que solo aplica sobre el excedente.
+232
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Cuadro A.3. 
+Esquema de financiamiento por tipo de seguro, diciembre de 2024
+(tasas de contribución en porcentaje)
+Seguro Base de 
+cotización
+Aportación
+Patrón Persona 
+trabajadora
+Gobierno 
+Federal Total
+Riesgos de Trabajo SBC 1.93411/ 1.93411/
+Enfermedades y Maternidad
+Personas 
+aseguradas
+Prestaciones 
+en especie
+Cuota fija UMA2/ 20.40 14.893/ 35.303/
+Cuota 
+excedente
+Total del SBC 
+menos 3 UMA 1.10 0.40 1.50
+Prestaciones en dinero SBC 0.70 0.25 0.05 1.00
+Personas pensionadas SBC 1.05 0.375 0.075 1.50
+Invalidez y Vida SBC 1.75 0.625 0.1254/ 2.50
+Retiro, Cesantía en Edad Avanzada y Vejez5/ SBC 5.15 1.125 6.275
+Retiro SBC 2.00 2
+Cesantía y Vejez SBC 3.156/ 1.125 0.07/ 4.275
+Cuota social 1 SM-4 UMA 10.98/ 10.98/
+Guarderías y Prestaciones Sociales SBC 1.00 1.00
+SBC: salario base de cotización y UMA: Unidad de Medida y Actualización.
+1/ La prima de este seguro depende de la siniestralidad de cada empresa. La vigencia de la prima promedio ponderada corresponde al periodo de 
+marzo de 2024 a febrero de 2025.
+2/ Cifra igual a 108.57 pesos en diciembre de 2024. A partir de 2017, con la implementación de la UMA, las contribuciones pagadas al IMSS dejan 
+de hacer referencia al salario mínimo (SM). Esto es, desde 2017 la base de cotización para la cuota fija y excedente del Seguro de Enfermedades y 
+Maternidad y la cuota social del Seguro de Retiro, Cesantía en Edad Avanzada y Vejez es la UMA.
+3/ La Ley del Seguro Social estipula un pago diario por persona asegurada, el cual se actualiza de manera trimestral. Para diciembre de 2024 el monto 
+fue de 16.17 pesos, lo que equivale a 14.89% de la UMA.
+4/ Esta cuota se refiere a 7.143% de la cuota patronal de dicho seguro (7.143% x 1.75% = 0.125%).
+5/ El 1 de julio de 1997, el tope del salario base de cotización para el Seguro de Invalidez y Vida y el Seguro de Retiro, Cesantía en Edad Avanzada y Vejez 
+se fijó en 15 veces el salario mínimo, debiendo aumentar 1 salario mínimo por año hasta llegar a 25 en 2007, quedando fijo a partir de dicho año. 
+A partir de 2017, con la implementación de la UMA, el límite superior del salario base de cotización considerará el valor de esta.
+6/ Con la reforma del 16 de diciembre de 2020, para 1 salario mínimo, la cuota en 2024 es de 3.15% (artículo 168, fracción II). Dicha tasa se incrementa 
+dependiendo del nivel salarial de la persona asegurada en número de veces el salario de referencia, de la siguiente manera: de 1.01 SM a 1.5 
+UMA = 3.413%, de 1.51 UMA a 2 UMA = 4.000%, de 2.01 UMA a 2.5 UMA = 4.353%, de 2.51 UMA a 3 UMA = 4.588%, de 3.01 UMA a 3.5 UMA = 4.756%, 
+de 3.51 UMA a 4 UMA = 4.882% y de 4.01 UMA en adelante 5.331%.
+7/ Con la reforma del 16 de diciembre de 2020, vigente a partir del 1 de enero de 2021, se derogó la fracción III del artículo 168 de la Ley del Seguro 
+Social, referente al Seguro de Cesantía y Vejez del Gobierno Federal.
+8/ Con la reforma del 16 de diciembre de 2020, para 1 salario mínimo, la cuota en 2023 correspondió a 10.75 pesos, mismos que deben actualizarse 
+trimestralmente. Para diciembre de 2024, el Gobierno Federal cubrió mensualmente, en los ramos de cesantía en edad avanzada y vejez, una 
+cantidad por cada día de salario cotizado, por concepto de cuota social (artículo 168, fracción IV y Tercero Transitorio). Esta se depositó en la cuenta 
+individual de cada persona trabajadora asegurada, de manera progresiva dependiendo del salario de la persona en número de veces el salario de 
+referencia, de la siguiente manera: para 1 SM = 11.81 pesos, de 1.01 SM a 1.5 UMA = 10.98 pesos, de 1.51 UMA a 2 UMA = 10.16 pesos, de 2.01 UMA a 
+2.5 UMA = 9.34 pesos, de 2.51 UMA a 3 UMA = 8.51 pesos, de 3.01 UMA a 3.5 UMA = 7.69 pesos y de 3.51 UMA a 4 UMA = 6.86 pesos. La cuota de 
+11.81 pesos, equivale a 10.9% de la UMA vigente.
+Fuente: Ley del Seguro Social; Información Básica Anual de Riesgos de Trabajo, Dirección de Incorporación y Recaudación, IMSS.
+233
+ANEXO A. Prestaciones y fuentes de financiamiento de los regímenes de aseguramiento del IMSS
+En 2017, con la implementación de la UMA, las contribuciones pagadas al IMSS en cantidades fijas dejaron 
+de hacer referencia al salario mínimo. A partir de 2017, la base de cotización para la cuota fija y excedente del Seguro de 
+Enfermedades y Maternidad, la cuota social del Seguro de Retiro, Cesantía en Edad Avanzada y Vejez, así como la 
+determinación del límite superior del salario base de cotización, considerarán el valor de la UMA.
+En función del esquema mixto de cuotas fijas, proporcionales y excedentes, es posible calcular una tasa promedio 
+de contribución al IMSS, como porcentaje del salario base de cotización. El cuadro A.4 reporta dicha tasa efectiva.
+Cuadro A.4.
+Tasa efectiva de contribución por tipo de seguro, diciembre de 2024
+(porcentaje del salario base de cotización)1/
+Tipo de seguro Sector 
+patronal
+Personas 
+trabajadoras Gobierno Federal Total
+Enfermedades y Maternidad 6.06 0.81 2.89 9.77
+Personas aseguradas 5.01 0.44 2.82 8.27
+Personas pensionadas 1.05 0.38 0.08 1.50
+Invalidez y Vida 1.75 0.63 0.13 2.50
+Riesgos de Trabajo2/ 1.82 - - 1.82
+Guarderías y Prestaciones Sociales 1.00 - - 1.00
+Retiro, Cesantía en Edad Avanzada y Vejez3/ 7.12 1.12 0.79 9.04
+Total 17.75 2.56 3.81 24.12
+1/ Cálculos con base en la distribución de las personas trabajadoras aseguradas y masa salarial, al 31 de diciembre de 2024. Otras metodologías 
+podrían generar valores diferentes.
+2/ La vigencia de la prima promedio ponderada corresponde al periodo de marzo de 2024 a febrero de 2025. 
+3/ Se incluye el Seguro de Retiro, Cesantía en Edad Avanzada y Vejez por ser parte del Régimen Obligatorio, aunque no es administrado por el IMSS. 
+Para diciembre de 2024, el importe promedio de las cuotas sociales por rangos de UMA es de 9.34 pesos, lo que equivale a 8.60% de la UMA, con 
+base en los nuevos rangos convenidos en la reforma del 16 de diciembre de 2020.
+Fuente: Información Básica Anual de Riesgos de Trabajo, Dirección de Incorporación y Recaudación, IMSS.
+La tasa efectiva, incluyendo la parte patronal, obrera y del Gobierno Federal, se sitúa en promedio en 24.12% del 
+salario base de cotización. De este porcentaje, 9.04 puntos porcentuales corresponden al Seguro de Retiro, Cesantía 
+en Edad Avanzada y Vejez y 15.08 puntos porcentuales al financiamiento de los cuatro seguros administrados por el 
+IMSS (Riesgos de Trabajo, Invalidez y Vida, Enfermedades y Maternidad que incluye el rubro de gastos médicos de 
+personas pensionadas, y Seguro de Guarderías y Prestaciones Sociales)182. Del porcentaje total de las contribuciones 
+(24.1%), el sector patronal aporta 17.7%, las personas trabajadoras 2.6% y el Gobierno Federal 3.8%. 
+El financiamiento del Seguro de Salud para la Familia contempla dos fuentes:
+i) La cuota anual que pagan las personas aseguradas, que voluntariamente se incorporan, se establece de 
+acuerdo con el grupo de edad al que pertenezcan, como se aprecia en el cuadro A.5.
+ii) La aportación por familia que realiza el Gobierno Federal. 
+182Adicional a las contribuciones pagadas al IMSS, el sector patronal debe cubrir 5% del salario por concepto de Infonavit. Este porcentaje no se 
+incluye en la tasa efectiva debido a que esta prestación no se contempla en la Ley del Seguro Social. 
+234
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Cuadro A.5.
+Cuotas anuales anticipadas del Seguro de Salud para la Familia, 2024-20261/
+(periodos y pesos corriente de cada año)
+Grupo de edad
+Cuotas
+Grupo de edad
+Cuotas
+2024-2025 2025-2026 Variación
+(%) 2024-2025 2025-2026 Variación(%)
+0-19 8,550 8,900 4.1 50-59 13,700 14,250 4.0
+20-29 10,650 11,100 4.2 60-69 19,050 19,800 3.9
+30-39 11,400 11,850 3.9 70-79 19,850 20,650 4.0
+40-49 13,250 13,800 4.2 80 y más 20,500 21,300 3.9
+1/ Vigencia de marzo a febrero del siguiente año.
+Fuente: Dirección de Incorporación y Recaudación, IMSS.
+Las aportaciones del Gobierno Federal en el Seguro de Salud para la Familia se realizan por familia asegurada, 
+independientemente del número de miembros que la integren, y consisten en una cuota fija diaria equivalente a 
+13.9% de 1 salario mínimo del Distrito Federal en julio de 1997 y es ajustada trimestralmente conforme la variación 
+del Índice Nacional de Precios al Consumidor. 
+Conforme los gastos originados por el aseguramiento de estudiantes por medio del Seguro Facultativo, el Gobierno 
+Federal cubre en su totalidad el monto de las cuotas, las cuales se determinan tomando como base el monto de la UMA 
+vigente en el momento de la inscripción, elevado al año; a este monto se le aplica un factor de 1.723% multiplicado por 
+el número de estudiantes con aseguramiento183.
+183La cuota por estudiante fue de 1.79 pesos diarios durante 2023 y de 1.87 pesos diarios durante 2024. 
+Este Anexo describe la estructura de las Reservas y Fondo Laboral, el régimen de inversión 
+al que deberán sujetarse (los límites de inversión por clase de activos permitidos), así como 
+las fases que integran el proceso de inversión institucional.
+B.1. Estructura de las Reservas y Fondo Laboral
+El Instituto Mexicano del Seguro Social (IMSS) administra cuatro niveles de reservas, 
+así como un fondo orientado a cumplir con sus obligaciones como patrón. Tal como se 
+menciona en el Capítulo II, estas no forman parte de su patrimonio, y su uso está sujeto 
+a las condiciones que establece la Ley del Seguro Social (LSS). La estructura y finalidad de 
+estas Reservas y del Fondo Laboral se detallan en la gráfica B.1.
+Consideraciones adicionales 
+sobre las Reservas 
+y Fondo Laboral
+ANEXO B
+236
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Gráfica B.1. 
+Estructura y objeto de las Reservas y Fondo Laboral
+Reservas Operativas
+Reservas de Operación para Contingencias y Financiamiento
+Reserva General Financiera y Actuarial
+Reservas Financieras y Actuariales1/
+Fondo Laboral2/
+Hacer frente al 
+pago de prestaciones, 
+gastos administrativos, 
+así como para 
+construir las RFA, 
+la ROCF y la RGFA.
+Proveer estabilidad y
+certidumbre a la
+operación cotidiana del
+Instituto y facilitar la
+planeación de mediano
+plazo de las operaciones
+de los seguros que 
+establece la Ley del 
+Seguro Social, así como 
+apoyar programas 
+prioritarios de inversión 
+de ejercicios 
+posteriores,
+cuando al cierre del
+ejercicio fiscal existan
+ingresos excedentes a
+los presupuestos y 
+estos hayan sido 
+transferidos a la ROCF.
+Disponer de los 
+recursos necesarios 
+al momento de la 
+jubilación de las
+personas trabajadoras
+del IMSS.
+Enfrentar efectos
+catastróficos, 
+variaciones 
+significativas en los
+ingresos o incrementos
+drásticos en los 
+egresos, derivados 
+de problemas 
+epidemiológicos o
+económicos severos 
+y de larga duración, 
+que provoquen 
+insuficiencia de 
+cualquiera de las RFA.
+Cubrir las necesidades
+que correspondan a cada 
+seguro y cobertura, y solo 
+para enfrentar caídas de 
+los ingresos o incrementos 
+en los egresos derivados de
+problemas económicos
+de duración mayor a 
+11 años, así como
+fluctuaciones mayores a 
+las estimadas en materia 
+de siniestralidad o para el 
+pago de beneficios futuros 
+con el fin de efectuar la 
+provisión correspondiente.
+RFA: Reserva Financiera y Actuarial; ROCF: Reserva de Operación para Contingencias y Financiamiento, y RGFA: Reserva General Financiera y Actuarial.
+1/ Considera las Reservas Financieras y Actuariales de: Cobertura de Gastos Médicos para Pensionados, Seguro de Enfermedades y Maternidad, 
+Seguro de Invalidez y Vida, Seguro de Riesgos de Trabajo y Seguro de Guarderías y Prestaciones Sociales.
+2/ Incluye las siguientes: Cuenta Especial para el Régimen de Jubilaciones y Pensiones Subcuenta 1 y Cuenta Especial para el Régimen de 
+Jubilaciones y Pensiones Subcuenta 2.
+Fuente: Dirección de Finanzas, IMSS.
+B.2. Proceso integral de inversión
+La Unidad de Inversiones Financieras (UIF) es el órgano normativo del IMSS responsable de ejecutar el proceso 
+integral de inversión institucional, con el apoyo de la Coordinación de Administración de Riesgos Financieros (CARF), 
+dependiente de la Unidad de Riesgos Financieros y Actuariales (URFA). Este proceso se lleva a cabo conforme los 
+estándares internacionales y buenas prácticas del sector financiero, como se muestra en la gráfica B.2.
+Gráfica B.2.
+Proceso de inversión
+Asignación
+estratégica 
+de activos
+Definir la
+composición óptima
+por tipo de activo 
+y tasa.
+Concertación de 
+las inversiones
+Ejecutar la táctica de
+inversión (buscando
+optimizar el rendimiento 
+a negociar y los mejores
+precios disponibles en
+momentos oportunos).
+Administración de
+riesgos financieros
+Estimar las pérdidas
+potenciales a que están
+expuestas las
+inversiones y supervisar
+el cumplimiento de los
+límites y requisitos 
+de inversión.
+Evaluación 
+del desempeño
+Evaluar el desempeño
+de las inversiones 
+y comparar con los
+portafolios de inversión
+hipotéticos y 
+portafolios reales.
+Control de
+operaciones 
+de inversión
+Conciliar, confirmar,
+liquidar y registrar
+contablemente 
+las inversiones.
+Fuente: Dirección de Finanzas, IMSS.
+237
+ANEXO B. Consideraciones adicionales sobre las Reservas y Fondo Laboral
+La UIF asiste a la Comisión de Inversiones Financieras (CIF) del IMSS, instalada como órgano especializado del 
+H. Consejo Técnico en 1999, facultada para proponer las políticas y directrices de inversión de las reservas 
+señaladas en el Capítulo VII de la LSS y los excedentes de efectivo, así como para evaluar y supervisar su aplicación. 
+Además, es el órgano responsable de aprobar la asignación estratégica de activos (AEA) de las Reservas y 
+Subcuentas del Fondo Laboral.
+En septiembre de 2024, el H. Consejo Técnico aprobó las Políticas y Directrices para la Inversión de las 
+Reservas y Fondo Laboral, a propuesta de la CIF. Dicho documento fue resultado de un ejercicio de compilación 
+normativa, que integró: las Políticas y Directrices para la Inversión de la Reserva General Financiera y Actuarial 
+y las Reservas Financieras y Actuariales; las Políticas y Directrices para la Inversión de las Reservas Operativas y 
+la Reserva de Operación para Contingencias y Financiamiento, y las Políticas y Directrices para la inversión 
+del Fondo para el Cumplimiento de Obligaciones Laborales de Carácter Legal o Contractual, que estuvieron 
+vigentes hasta ese momento.
+El nuevo documento normativo tuvo como objetivo principal la consolidación del régimen de inversión de las 
+Reservas y Subcuentas del Fondo Laboral (en donde se definen los porcentajes de las clases de activos permitidos y 
+los plazos máximos para la inversión de los recursos financieros que las integran conforme lo dispuesto 
+en el Reglamento184 de la LSS), la alineación del proceso de inversión a mejores prácticas del mercado 
+financiero y el fortalecimiento de la gestión de riesgos a través de la revisión y actualización de los límites de 
+inversión que apoyen y faciliten su observancia diaria, así como de los riesgos de mercado y de crédito de los 
+portafolios institucionales. 
+El cuadro B.1 especifica el régimen de inversión de las Reservas y Fondo Laboral, vigente hasta diciembre de 
+2024. Adicionalmente, este documento incorpora un mecanismo para verificar el cumplimiento de la AEA. La 
+gráfica B.3 indica las principales consideraciones que apoyan el análisis y la definición de la AEA.
+184Reglamento de la Ley del Seguro Social para la Constitución, Inversión y Uso para la Operación de las Reservas Financieras y Actuariales y la 
+Reserva General Financiera y Actuarial, así como para la Determinación de los Costos Financieros que deberán reintegrarse a la Reserva de 
+Operación para Contingencias y Financiamiento, publicado en el Diario Oficial de la Federación el 20 de agosto de 2013.
+238
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Cuadro B.1.
+Régimen de inversión de las Reservas y Fondo Laboral, 2024
+(porcentajes)
+Clase de activo RO ROCF RGFA RFA SGPS RFA GMP1/ RFA SEM1/ RFA SIV RFA SRT Subcuenta 1 Subcuenta 2
+Deuda gubernamental 100 100 100 100 100 100 100 100 100 100
+Deuda cuasigubernamental 100 100 100 100 100 100 100 100 100 100
+Deuda de organismos 
+financieros multilaterales 15 15 15 15 15 15 15 15 15 15
+Deuda bancaria 100 100 100 100 100 100 100 100 100 100
+Deuda de instituciones 
+financieras no bancarias 5 5 5 5 5 5 5 5 5 5
+Deuda de gobiernos de 
+estados y municipios 5 5 5 5 5 5 5 5 5 5
+Deuda corporativa 10 10 10 10 10 10 10 10 10 10
+Bursatilizados - - - 5 5 5 5 5 5 5
+Acciones de empresas afines - - - - - - 100 100 - -
+Mercado accionario - - - 20 20 20 25 25 40 40
+Fibra - - - 10 10 10 10 10 10 10
+Mercancías2/ - - - 10 10 10 10 10 10 10
+CKD - - - 10 10 10 10 10 10 10
+Cerpi - - - 10 10 10 10 10 10 10
+Valores extranjeros 
+reconocidos en México 50 50 50 50 50 50 50 50 50 50
+Moneda extranjera 30 30 30 30 30 30 30 30 50 50
+Plazo máximo3/ (años) 1 5 5 - - - - - - -
+Duración Macaulay 
+máxima (años) - 2.5 2.5 6 6 6 8 8 8 8
+RO: Reserva Operativa; ROCF: Reserva de Operación para Contingencias y Financiamiento; RGFA: Reserva General Financiera y Actuarial; RFA: Reserva 
+Financiera y Actuarial; SGPS: Seguro de Guarderías y Prestaciones Sociales; GMP: Cobertura de Gastos Médicos para Pensionados; SEM: Seguro de 
+Enfermedades y Maternidad; SIV: Seguro de Invalidez y Vida; SRT: Seguro de Riesgos de Trabajo; Fibra: Fideicomisos de Infraestructura y Bienes Raíces; 
+CKD: Certificados de Capital de Desarrollo, y Cerpi: Certificados de Proyectos de Inversión.
+1/ Dada la estimación de usos para la RFA-GMP y la RFA-SEM, con independencia de los plazos máximos establecidos en el régimen de inversión, la 
+fecha de vencimiento de los instrumentos de deuda para la RFA-GMP no podrá ir más allá del 31 de diciembre de 2037, para la RFA-SEM del 31 de 
+diciembre de 2038 y para la RFA-SGPS del 31 de diciembre de 2049, con excepción de aquellos instrumentos amortizables.
+2/ Mercancías a través de vehículos (ETF: Exchange Traded Funds) con exposición física a oro y plata.
+3/ Para las RO, el plazo máximo será de 1 año, mientras que para la ROCF y la RGFA será de 5 años. Estos plazos aplican para las inversiones en instrumentos 
+de deuda gubernamental nacional y extranjera, instrumentos cuasigubernamentales con y sin garantía expresa del Gobierno Federal, deuda de 
+organismos financieros multilaterales, valores extranjeros reconocidos en México, instrumentos de deuda bancaria nacional y extranjera, deuda 
+de instituciones financieras no bancarias, deuda de estados y municipios y deuda corporativa; para los instrumentos de deuda bancaria será hasta 3 días 
+para las operaciones en reporto y hasta 1 año en reportos colateralizados y préstamo de valores. Para cualquier Reserva y Subcuenta del Fondo Laboral 
+se permite cualquier plazo en instrumentos de deuda gubernamental nacional y extranjera, así como en instrumentos de deuda cuasigubernamental 
+con garantía expresa del Gobierno Federal; hasta 20 años en instrumentos de deuda cuasigubernamental sin garantía expresa del Gobierno Federal; 
+hasta 20 años en instrumentos de deuda de organismos financieros multilaterales; para instrumentos de deuda bancaria serán hasta 3 días para 
+las operaciones en reporto, y hasta 1 año para las operaciones en reporto colateralizado y de préstamo de valores; hasta 15 años para valores 
+extranjeros reconocidos en México e instrumentos de deuda bancaria nacional y extranjera; hasta 5 años para la deuda de instituciones financieras 
+no bancarias; hasta 20 años para la deuda de estados y municipios; hasta 10 años para la deuda corporativa, y hasta 30 años para instrumentos 
+bursatilizados cuando estos sean emitidos a través de un vehículo. Por su naturaleza, las inversiones en acciones, CKD, Cerpi, ETF, Fibra y Fondos de 
+inversión no tendrán plazo definido.
+Fuente: Dirección de Finanzas, IMSS.
+239
+ANEXO B. Consideraciones adicionales sobre las Reservas y Fondo Laboral
+Gráfica B.3.
+Consideraciones para el análisis de la asignación estratégica de activos
+Estimaciones 
+de usos.
+Objetivos de
+creación y
+constitución.
+Perfil del
+portafolio y
+régimen de
+inversión.
+Estudios
+actuariales.
+Análisis de
+escenarios
+económicos.
+Expectativas
+económicas
+y financieras.
+Asignación
+estratégica 
+de activos
+Fuente: Dirección de Finanzas, IMSS.
+Durante 2024, la CIF del Instituto mantuvo la supervisión y evaluación constante de este proceso. En total, dicho 
+órgano colegiado celebró 23 sesiones: 22 ordinarias y 1 especial, en cumplimiento de los criterios de operación 
+establecidos en su Manual de Integración y Funcionamiento185.
+B.2.1. Asignación estratégica de activos
+Las Políticas y Directrices para la Inversión de las Reservas y Fondo Laboral, consideran la AEA como la guía para 
+realizar las inversiones, con excepción de la RO y la ROCF, dado su origen y naturaleza de corto plazo. La AEA se 
+define como el rango de la ponderación porcentual óptima que se asigna a cada clase y subclase de activo de 
+inversión. El análisis de la asignación toma en cuenta, entre otros, los objetivos de creación de cada reserva, su 
+constitución, estimaciones de usos, estudios actuariales, y escenarios económicos.
+B.2.2. Concertación de las inversiones
+Las decisiones de inversión se respaldan en un monitoreo diario del entorno económico, tanto local como 
+internacional. Este análisis considera indicadores clave y eventos relevantes que permiten anticipar movimientos 
+en los mercados y ajustar las estrategias en consecuencia. Antes de ejecutar cualquier operación, se verifica que 
+se respeten los límites de inversión establecidos, procurando que los portafolios se mantengan alineados con la 
+asignación estratégica de activos.
+En cuanto a la ejecución de operaciones, se emplean mecanismos que garantizan eficiencia, transparencia y 
+apego a las mejores prácticas del mercado. Entre ellos se incluyen plataformas electrónicas de negociación, torretas 
+financieras y solicitudes de cotización, con al menos dos contrapartes, a través de medios electrónicos o telefónicos. 
+El proceso operativo completo se ilustra en la gráfica B.4.
+185Manual de Integración y Funcionamiento de la Comisión de Inversiones Financieras del Instituto Mexicano del Seguro Social.
+240
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Gráfica B.4.
+Proceso para la ejecución de operaciones financieras
+Monitoreo 
+continuo del
+entorno global 
+y local.
+Cumplimiento:
+• Límites.
+• Asignación 
+estratégica.
+Cotización y
+posturas a niveles 
+de mercado.
+Mejor ejecución 
+a mercado.
+Fuente: Dirección de Finanzas, IMSS.
+B.2.3. Control de operaciones de inversión
+Para supervisar correctamente las inversiones de las Reservas Financieras y Fondo Laboral, se llevan a cabo los 
+procesos de confirmación, liquidación, control operativo y registro contable de cada transacción.
+La gestión de la confirmación y la liquidación de los instrumentos financieros se apoya en el sistema institucional 
+para la gestión de inversiones financieras, así como en el servicio de custodia y administración de valores, con el fin 
+de robustecer el control interno y reducir los riesgos inherentes en la operación diaria, implementando controles 
+y procedimientos que resguardan las inversiones del Instituto. La gráfica B.5 ilustra el proceso de confirmación y 
+liquidación de las inversiones.
+Gráfica B.5.
+Proceso diario de confirmación y liquidación de las inversiones financieras
+Confirmaciones y
+liquidaciones
+Autorizar ingresos, egresos y movimientos de recursos 
+solicitados por la Coordinación de Tesorería.
+Integrar la disponibilidad a invertir.
+Monitorear las inversiones y confirmar
+con intermediarios.
+Capturar en el sistema institucional e instruir la
+liquidación de las inversiones financieras a través 
+del custodio de valores.
+Compilar la información para los procesos contables y reportería.
+1
+2
+3
+4
+5
+Fuente: Dirección de Finanzas, IMSS.
+El Plan de Cuentas para los Entes Públicos del Sector Paraestatal Federal del Manual de Contabilidad 
+Gubernamental para el Sector Paraestatal Federal señala que las inversiones financieras se deben clasificar con 
+base en su plazo de recuperación: temporales, de corto y de largo plazo. Asimismo, de manera supletoria, de 
+acuerdo con las Normas de Información Financiera, los instrumentos financieros se clasifican contablemente 
+como: instrumentos financieros negociables, instrumentos financieros para cobrar o vender e instrumentos 
+financieros para cobrar principal e interés. 
+Por tanto, el registro y el valor contable de las posiciones de inversión se determinan en función de los objetivos 
+de creación, las estimaciones de usos y la estrategia de inversión de cada portafolio, así como para efectos de 
+valuación y elaboración de los Estados Financieros. El proceso de control operativo y registro contable de las 
+inversiones se muestra en la gráfica B.6.
+241
+ANEXO B. Consideraciones adicionales sobre las Reservas y Fondo Laboral
+Gráfica B.6.
+Proceso del control operativo y registro contable de las inversiones financieras
+Control operativo y
+registro contable
+Actualizar tasas de interés y fechas de pagos 
+de cupón de las inversiones.
+Validar documentación de las inversiones y expediente 
+para la póliza contable.
+Ejecutar en el sistema institucional los procesos 
+para generar la entrada contable diaria.
+Realizar conciliación bancaria mensual.
+Elaborar reportería.
+1
+2
+3
+4
+5
+Fuente: Dirección de Finanzas, IMSS.
+B.2.4. Administración de riesgos financieros 
+La gestión de los riesgos financieros consiste en identificar y evaluar posibles afectaciones a las Reservas y el 
+Fondo Laboral. Este proceso considera acciones y estrategias alineadas con la normatividad vigente, tales como: 
+i) el seguimiento del cumplimiento del régimen de inversión; ii) la estimación del valor en riesgo de mercado y la 
+sensibilidad a factores como tasa de interés, tipo de cambio y renta variable; iii) el análisis del riesgo de crédito, con 
+base en la información financiera de emisores, emisiones y contrapartes; iv) el monitoreo del riesgo de liquidez, y 
+v) la supervisión del riesgo operativo. Estas acciones contribuyen a preservar la estabilidad y la solidez del proceso 
+integral de inversión (gráfica B.7).
+Gráfica B.7.
+Administración de riesgos financieros
+Régimen de inversión
+Riesgo de crédito
+Riesgo de mercado
+Riesgo operativo Riesgo de liquidez
+S
+S
+Fuente: Dirección de Finanzas, IMSS.
+242
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Entre las acciones trimestrales destinadas a fortalecer la gestión de los riesgos financieros se incluye la aplicación
+de pruebas de estrés de mercado y de calificaciones crediticias en los instrumentos financieros de las Reservas 
+y Subcuentas del Fondo Laboral. Las pruebas de estrés de mercado permiten simular escenarios adversos que 
+podrían afectar el comportamiento de los activos financieros. Por su parte, el análisis de calificaciones crediticias 
+se enfoca en evaluar el riesgo asociado a los instrumentos de deuda no gubernamental. Ambas herramientas 
+permiten anticipar posibles afectaciones y definir estrategias de inversión fundamentadas.
+B.2.5. Evaluación del desempeño
+La evaluación del desempeño de la inversión de las Reservas y Subcuentas del Fondo Laboral, conforme lo establecido 
+en las políticas y directrices, se realiza con el enfoque de portafolio integral, mediante la construcción de índices 
+que reflejen las plusvalías y las minusvalías que presenta el valor de mercado de las inversiones individuales, 
+lo que permite explicar los efectos de los movimientos de los mercados financieros, el impacto de las estrategias de 
+inversión y la concertación de las operaciones financieras. 
+Por otra parte, se establecen portafolios de referencia (referencias de mercado) e indicadores estadísticos para 
+cada una de las Reservas y Subcuentas del Fondo Laboral, que relacionan el rendimiento ajustado por riesgo y que 
+permiten comparar el desempeño de las inversiones de las Reservas y Subcuentas del Fondo Laboral, como tasas 
+de rendimiento.
+Dichos portafolios de referencia son aprobados por la CIF, consideran la AEA vigente, así como las mejores 
+prácticas de mercado, cumpliendo los requisitos de ser claros, invertibles, medibles, además de estar alineados con 
+la naturaleza, los objetivos, el horizonte y el régimen de inversión de cada Reserva y Subcuenta del Fondo Laboral 
+y permiten evaluar eficazmente el desempeño de los portafolios institucionales. La gráfica B.8 resume el proceso 
+de evaluación del desempeño de las Reservas y Fondo Laboral.
+Gráfica B.8.
+Proceso de evaluación del desempeño de los portafolios institucionales
+1
+2
+4
+6
+3
+5
+Valuar a mercado 
+con enfoque de 
+portafolio integral.
+Calcular indicadores 
+de rendimiento ajustado 
+por riesgo.
+Evaluar la estrategia y los 
+resultados de la inversión. Optimizar el régimen 
+de inversión.
+Construir índices que reflejen los 
+cambios en el valor de mercado.
+Considerar las decisiones 
+de inversión y variables 
+económico-financieras. 
+Evaluación de
+desempeño
+Fuente: Dirección de Finanzas, IMSS.
+La evaluación de la situación financiera global y de los seguros que administra el Instituto 
+Mexicano del Seguro Social (IMSS) se realiza en cumplimiento a lo que establece el artículo 273 
+de la Ley del Seguro Social (LSS). 
+El presente Anexo tiene como propósito profundizar en la descripción de los supuestos 
+que se utilizan para realizarla, los cuales se desarrollan a partir de la información disponible; 
+por lo que, en caso de presentarse alguna variación o modificación, esta se verá reflejada en 
+las evaluaciones futuras.
+A continuación, se enlistan los seguros valuados de acuerdo con el régimen al 
+que pertenecen:
+i) Obligatorio:
+ a) Riesgos de Trabajo (SRT).
+ b) Enfermedades y Maternidad (SEM).
+ 1) Cobertura de personas aseguradas (SEM-Asegurados).
+ 2) Cobertura de Gastos Médicos para Pensionados (SEM-GMP).
+ c) Invalidez y Vida (SIV).
+ d) Guarderías y Prestaciones Sociales (SGPS).
+ii) Voluntario:
+ a) De Salud para la Familia (SSFAM).
+Como parte de la evaluación, se verifica si las primas de financiamiento que se determinan 
+para cada seguro son suficientes para cubrir el gasto actual y futuro que afrontará el Instituto 
+por los beneficios que se otorgan a la población derechohabiente conforme la LSS.
+Respecto al Seguro de Retiro, Cesantía en Edad Avanzada y Vejez (SRCV), las prestaciones 
+otorgadas no forman parte de la evaluación financiera que se presenta en este Informe, ya 
+que el costo de estos beneficios no representa un pasivo para el IMSS, debido a que el costo 
+de las rentas vitalicias que se otorgan a las personas aseguradas es con cargo a los saldos de 
+las cuentas individuales que manejan las Administradoras de Fondos para el Retiro (Afore) o, 
+en su caso, con cargo a los recursos del Gobierno Federal en términos de lo que establece el 
+artículo 170 de la LSS. De ahí que no se realice una valuación actuarial.
+Elementos técnicos 
+de la evaluación de 
+la situación financiera 
+global y de los seguros 
+que administra el IMSS
+ANEXO C
+244
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+La evaluación a que se refiere este Anexo se realiza bajo un escenario base y otro de riesgo con corte al 
+31 de diciembre de 2024, utilizando modelos financieros y actuariales que consideran de forma integral el análisis 
+tanto de los fenómenos demográficos (mortalidad, morbilidad, cambios en la composición de la fuerza laboral y 
+permanencia de la población asegurada), como de los fenómenos de carácter económico y financiero. Los modelos 
+empleados son auditados y dictaminados por un despacho externo186.
+El escenario base parte de supuestos que reflejan el comportamiento observado en los últimos años y supone 
+que no habrá modificaciones en las premisas demográficas, económicas, financieras o legales durante el periodo de 
+proyección. Los resultados de este escenario son un marco de referencia que permiten medir el impacto financiero 
+ante algún cambio en los supuestos adoptados y que podrían vulnerar la situación financiera de los seguros.
+Por otro lado, en el escenario de riesgo, los supuestos que se sensibilizan respecto al escenario base son:
+i) La disminución en los ingresos por cuotas debido a una reducción del tiempo en que la población asegurada 
+cuenta con empleo formal durante 1 año (de 337 en el escenario base a 321 días en el escenario de riesgo), 
+principalmente causada por un entorno económico adverso187.
+ii) El encarecimiento en la contratación de las rentas vitalicias que se otorgan al amparo de los seguros de 
+Riesgos de Trabajo (SRT) y de Invalidez y Vida (SIV). Esto se modela simulando una disminución en las tasas de 
+interés técnico utilizadas para determinar los montos constitutivos188, así como una disminución en el número 
+de personas aseguradas que cuentan con saldo en la Subcuenta de Vivienda al momento de tener derecho a 
+una pensión o en caso de fallecimiento.
+iii) El aumento en la esperanza de vida de las personas pensionadas, lo que implicaría un incremento en el gasto 
+en la Cobertura de Gastos Médicos para Pensionados del Seguro de Enfermedades y Maternidad (SEM-GMP), 
+ya que se brindarían prestaciones en especie con costos más elevados y, durante un mayor tiempo, a una 
+población más envejecida.
+iv) Un incremento en el número de personas trabajadoras del IMSS a consecuencia del aumento de la población 
+derechohabiente a lo largo del periodo de proyección, el cual se determina con la relación entre el número 
+de personas trabajadoras del Instituto y el número de personas aseguradas, con el fin de prevenir un rezago 
+en el personal disponible que brinda atención médica a la población derechohabiente. Para el periodo de 
+30 años, la relación es de 2.22% en el escenario base y de 2.24% en el de riesgo, y para el periodo de 100 años, 
+la relación es de 2.16% en el escenario base y de 2.37% en el de riesgo.
+C.1. Método de evaluación
+La evaluación de la situación financiera del IMSS se lleva a cabo mediante modelos actuariales y financieros que utilizan 
+supuestos basados en información histórica, así como en proyecciones demográficas, financieras y económicas del 
+país. Esto permite estimar de manera prospectiva el comportamiento de los ingresos y gastos a través de:
+i) Modelos predictivos de tendencia de corto y mediano plazo (3 a 11 años), que analizan el comportamiento 
+reciente de la operación del Instituto, proyectando la evolución de la población derechohabiente, de los 
+ingresos y los gastos relacionados con las prestaciones en dinero y en especie189.
+ii) Método de proyecciones demográficas y financieras, el cual es un modelo actuarial de largo plazo 
+(30 y 100 años). Este modelo permite:
+a) Proyectar la evolución de la población asegurada y las salidas de la actividad laboral por las contingencias a 
+las que está expuesta (incapacidad permanente total o parcial por riesgo o enfermedad de trabajo, invalidez 
+por motivos no laborales, fallecimiento o retiro190). Además de estimar los ingresos por cuotas derivados 
+de su afiliación, así como el costo de las prestaciones en dinero y en especie que se otorgan a la población 
+derechohabiente conforme lo establecido en la LSS. 
+b) Para las personas pensionadas en curso de pago y las personas trabajadoras que accederán a una pensión 
+por alguna de las contingencias valuadas y para sus personas beneficiarias, estimar el tiempo que recibirán 
+las prestaciones económicas y en especie, así como su costo asociado.
+186El proceso de auditoría y certificación se realizó por el despacho PRS Prime RE Solutions, S. A. de C. V.
+187La disminución del tiempo de cotización se realiza en un periodo de 10 años y a partir del año 11 de proyección, el supuesto de 321 días de 
+cotización por año se mantiene constante durante el periodo de proyección de 30 y 100 años.
+188El monto constitutivo es la cantidad de dinero que se requiere para contratar los seguros de renta vitalicia y de sobrevivencia con una institución 
+de seguros (Ley del Seguro Social, artículo 159 fracción VII).
+189Se refiere a los conceptos de gasto por prestaciones económicas (pensiones, subsidios, ayudas e indemnizaciones) y a los gastos relacionados 
+con la atención médica que se registran en los rubros de materiales y suministros, y servicios generales.
+190Se refiere a las pensiones por retiro, cesantía en edad avanzada o vejez.
+245
+ANEXO C Elementos técnicos de la evaluación de la situación financiera global y de los seguros que administra el IMSS
+c) Prever el comportamiento laboral y demográfico de las personas trabajadoras del Instituto y los costos 
+correspondientes al pago de nómina (servicios de personal)191. Asimismo, para las personas jubiladas y 
+pensionadas en curso de pago bajo los planes de pensiones establecidos en el Contrato Colectivo de Trabajo192
+y para las personas trabajadoras que accederán a una jubilación o pensión, estimar su comportamiento 
+demográfico y su costo para el IMSS en su carácter de patrón.
+C.2. Prestaciones valuadas y esquema de financiamiento
+La evaluación financiera del IMSS considera las prestaciones en especie y en dinero, de acuerdo con lo estipulado 
+en la LSS para cada seguro.
+La descripción detallada de las prestaciones valuadas y la fuente de financiamiento para cada seguro y cobertura 
+se presenta respectivamente en los cuadros A.2 y A.3 del Anexo A. Prestaciones y fuentes de financiamiento de los 
+regímenes de aseguramiento del IMSS.
+C.3. Población valuada
+La población valuada se conforma por la población asegurada y la población pensionada vigente al 31 de diciembre 
+de 2024, junto con las personas beneficiarias con derecho a las prestaciones que establece la LSS.
+Población asegurada
+Las personas aseguradas que se evalúan en cada seguro son las que se encuentran vigentes al 31 de diciembre 
+de 2024193, las cuales en promedio ascienden a 22 millones y registran una edad promedio de 38 años (cuadro C.1). 
+Para estimar los ingresos y los gastos de esta población se requiere del salario base de cotización (SBC) y, de 
+manera particular, para estimar el costo de las sumas aseguradas por el otorgamiento de pensiones bajo el SRT y el 
+SIV se utilizan los saldos en las cuentas individuales de las Subcuentas tanto de Retiro, Cesantía en Edad Avanzada y 
+Vejez (RCV)194, como de Vivienda (cuadro C.1).
+Cuadro C.1.
+Población asegurada vigente por seguro, 2024
+Seguro Población 
+asegurada
+Edad 
+promedio
+Salario base 
+de cotización 
+promedio diario 
+(pesos)
+Saldo promedio 
+en la cuenta individual
+(pesos)
+ RCV Vivienda Total 
+Seguro de Riesgos de Trabajo1/ 21’784,175 37.82 597.19 174,806 58,073 232,879
+Seguro de Enfermedades y Maternidad2/ 22’076,895 37.92 599.44
+Seguro de Invalidez y Vida 22’070,519 38.09 599.24 178,724 58,666 237,390
+Seguro de Guarderías y Prestaciones Sociales 21’685,192 37.78 579.40
+RCV: Subcuenta de Retiro, Cesantía en Edad Avanzada y Vejez.
+1/ Corresponde al total de personas aseguradas con derecho a los beneficios por pensión (99% del total), una vez que se cumplan con los requisitos y las 
+condiciones que establece la Ley del Seguro Social para este seguro. El total de personas aseguradas (22’065,637) accede a las prestaciones en especie 
+que ofrece este seguro.
+2/ Para evaluar el costo total de las prestaciones en especie, en adición a las personas aseguradas, se considera a las personas beneficiarias con derecho 
+(2.2 millones de personas), así como las personas pensionadas (5.8 millones de personas).
+Fuente: Dirección de Finanzas, IMSS.
+191Percepciones salariales, impuestos, cuotas obrero-patronales conforme lo establecido en la Ley del Seguro Social y pagos únicos por prima de 
+antigüedad e indemnizaciones al momento de la salida de la actividad laboral de la persona trabajadora.
+192Se refiere al Régimen de Jubilaciones y Pensiones y al Convenio Adicional para las Jubilaciones y Pensiones de los Trabajadores de Base de Nuevo 
+Ingreso, mismos que se reportan en el Capítulo VIII de este Informe.
+193La población asegurada se obtiene a partir de lo que se reporta en la Consulta Dinámica de información del Instituto Mexicano del Seguro Social. 
+imss.gob.mx/conoce-al-imss/cubos
+194Los saldos de la Subcuenta de Retiro, Cesantía en Edad Avanzada y Vejez y el saldo de la Subcuenta de Vivienda fueron proporcionados por la 
+Comisión Nacional del Sistema de Ahorro para el Retiro.
+246
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Para evaluar el costo por pensiones a cargo del SRT y del SIV, se identifica a la población asegurada en dos grupos:
+i) Generación asegurada en transición (afiliada antes del 1 de julio de 1997), puede optar por recibir su pensión 
+conforme la LSS 73 financiada por el Gobierno Federal195 o con base en la LSS vigente, con cargo a los ingresos 
+por cuotas de cada seguro que aportan la población asegurada y patrones.
+ii) Generación asegurada vigente (afiliada a partir del 1 de julio de 1997), solo puede recibir los beneficios 
+definidos en la LSS actual y sus reformas, financiados exclusivamente por los ingresos por cuotas de cada 
+seguro.
+Población pensionada
+Las personas pensionadas196 valuadas al 31 de diciembre de 2024 ascienden a 5.8 millones. Asimismo, para efectos 
+de la valuación de las prestaciones en especie bajo la cobertura del SEM-GMP se considera a su familia beneficiaria 
+(2.2 millones) registrada a la misma fecha. 
+De la población pensionada, las personas que tienen una pensión por incapacidad permanente parcial o total con 
+carácter provisional (31,550) y por invalidez con carácter temporal (31,778), continuarán generando un gasto en el SRT 
+y el SIV hasta el momento en que se les otorgue una pensión definitiva197, respectivamente, o en caso de fallecimiento, 
+a sus personas beneficiarias. Lo anterior, en términos de lo que establece la LSS.
+C.4. Supuestos demográficos, financieros y económicos
+Para la evaluación del escenario base, se definieron supuestos demográficos, económicos y financieros que reflejan 
+el comportamiento observado en los últimos años de los ingresos y de los gastos de los seguros, lo cual permite 
+estimar la tendencia futura a corto, mediano y largo plazo.
+C.4.1. Supuestos demográficos
+Para simular los cambios en la población valuada, se utilizaron los siguientes supuestos demográficos:
+i) Crecimiento anual de la población de empleo198, el cual se asocia al incremento de la población asegurada en 
+cada seguro.
+ii) Tiempo promedio en que la población asegurada tiene empleo formal durante 1 año (densidad de cotización).
+iii) Distribución de personas de nuevo ingreso afiliadas al IMSS por edad y sexo en cada año de proyección.
+iv) Bases biométricas de salida de la actividad laboral de las personas aseguradas y de mortalidad de las personas 
+aseguradas y de las pensionadas.
+v) Factores de distribución de pensiones iniciales.
+vi) Duración de las pensiones de incapacidad permanente total o parcial con carácter provisional, y de las 
+pensiones de invalidez con carácter temporal.
+vii) Componentes familiares de personas aseguradas, pensionadas directas y del fallecimiento de las personas 
+aseguradas.
+195Artículo Duodécimo Transitorio de la Ley del Seguro Social: “Estarán a cargo del Gobierno Federal las pensiones que se encuentren en curso de 
+pago, así como las prestaciones o pensiones de quienes se encuentren en periodo de conservación de derechos y las pensiones que se otorguen 
+a las personas aseguradas que opten por el esquema establecido por la Ley que se deroga”.
+196Incluye a la población jubilada y pensionada extrabajadora del IMSS.
+197De las personas pensionadas por incapacidad permanente parcial o total registradas a diciembre de 2024, 43% tiene derecho a elegir entre los 
+beneficios de pensiones de la LSS vigente y la LSS 73; de la población pensionada por invalidez a la misma fecha de corte, 50% tiene derecho a 
+elegir bajo qué LSS se otorgará su pensión. Para efectos de las valuaciones actuariales del Seguro de Riesgos de Trabajo y del Seguro de Invalidez 
+y Vida se simula que esta población pasa a una pensión definitiva bajo la LSS 73, por lo que no generará un gasto bajo la LSS vigente.
+198La población de empleo en el IMSS se conforma por las personas afiliadas en las siguientes modalidades de aseguramiento: Régimen Obligatorio: 
+modalidad 10 Trabajadores permanentes y eventuales de la ciudad; modalidad 13 Trabajadores permanentes y eventuales del campo; modalidad 
+14 Trabajadores eventuales del campo cañero; modalidad 17 Reversión de cuotas por subrogación de servicios; modalidad 30 Productores de 
+caña de azúcar, y Régimen Voluntario: modalidad 34 Trabajadores domésticos; modalidad 35 Patrones personas físicas con trabajadores a su 
+servicio; modalidad 36 Trabajadores al servicio de gobiernos estatales, municipales y organismos descentralizados; modalidad 38 Trabajadores 
+al servicio de las administraciones pública federal, entidades federativas y municipios; modalidad 42 Trabajadores al servicio de los gobiernos 
+de los estados; modalidad 43 Incorporación voluntaria del campo al Régimen Obligatorio, y modalidad 44 Trabajadores independientes. En la 
+valuación actuarial se toma como supuesto que el incremento de personas aseguradas en cada seguro y cobertura crece al mismo ritmo que 
+la población de empleo.
+247
+ANEXO C Elementos técnicos de la evaluación de la situación financiera global y de los seguros que administra el IMSS
+Crecimiento de la población asegurada
+Para estimar el comportamiento futuro de la población asegurada en cada seguro, se considera que esta crecerá 
+al mismo ritmo que la población de empleo. Esta proyección se determinó a partir de la relación del empleo y el 
+producto interno bruto (PIB), así como con la población económicamente activa. Los supuestos empleados están en 
+función del periodo de aplicación, conforme lo siguiente:
+i) Para el periodo 2005-2024 se tomaron las cifras observadas para el PIB del Instituto Nacional de Estadística 
+y Geografía. 
+ii) Para la expectativa de crecimiento económico de 2025-2026, se consideraron los Pre-criterios Generales de 
+Política Económica de la SHCP para el ejercicio fiscal 2026.
+iii) Para el periodo 2027-2035 se utilizaron los Pronósticos de Largo Plazo de la Organización para la Cooperación 
+y el Desarrollo Económico (OCDE).
+Respecto al número de personas aseguradas, se tomaron en cuenta los registros del periodo 2005-2024; 
+mientras que la expectativa de crecimiento del empleo 2025-2035 se estimó con base en el PIB y una elasticidad 
+empleo-producto cercana a la unidad.
+Para el periodo 2055-2124, se consideró la cifra de la proyección del Consejo Nacional de Población (Conapo)199, 
+que indica que la población total del país disminuirá a partir de 2053. Por lo tanto, se adoptó un criterio de decremento 
+para la población asegurada a partir de 2055 y hasta el año 100 de proyección, donde se prevé que 49.6% de la 
+población en edad laboral (de 20 a 70 años) que reporta Conapo, estará asegurada a partir de 2054. 
+En consecuencia, se anticipan decrementos a partir de 2051, debido a la transición demográfica que experimentará 
+el país por un proceso acelerado de envejecimiento poblacional (gráfica C.1).
+Gráfica C.1.
+Proyección de la población total mexicana y de personas aseguradas, 2025-2125
+(millones de personas)
+0
+20
+40
+60
+80
+100
+120
+140
+160
+2025 2035 2045 2055 2065 2075 2085 2095 2105 2115 2125
+Población total México (Conapo) Población mexicana en edad laboral (Conapo) Población asegurada proyectada IMSS
+Conapo: Consejo Nacional de Población.
+Fuente: Proyecciones de la Población de México y de las Entidades Federativas, 2020-2070. A partir de 2071 se toma la tasa de crecimiento de 2070 
+y se mantiene constante hasta el último año de proyección. Dirección de Finanzas, IMSS.
+199Consejo Nacional de Población. (2024). datos.gob.mx/busca/dataset/proyecciones-de-la-poblacion-de-mexico-y-de-las-entidadesfederativas-2020-2070
+248
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Tiempo promedio que cotiza la población asegurada
+Durante el periodo de evaluación se considera que la población asegurada cotiza en promedio 337 días al año. Este 
+supuesto refleja el tiempo promedio que una persona asegurada cuenta con empleo formal durante 1 año (densidad 
+de cotización) y, en consecuencia, realiza aportaciones al IMSS acumulando semanas cotizadas para acceder a las 
+prestaciones que requieren periodos de espera.
+Con base en el tiempo promedio anual de cotización se estima la antigüedad laboral (años cotizados) de la 
+población asegurada durante el periodo de proyección. Los años cotizados permiten simular si, ante un riesgo 
+no laboral, las personas aseguradas cumplen con los periodos de espera establecidos en el SIV para acceder a 
+prestaciones económicas.
+Además, el tiempo de cotización se utiliza para estimar las salidas de la actividad laboral por retiro, cesantía 
+en edad avanzada o vejez; y para calcular las aportaciones a las cuentas individuales de las personas aseguradas, 
+así como el saldo al momento de adquirir el derecho a una pensión. Este saldo se utiliza para financiar las sumas 
+aseguradas que el Instituto paga a las compañías aseguradoras por concepto de renta vitalicia.
+Este supuesto se sensibilizó para un escenario de riesgo a fin de evaluar el impacto en los ingresos por cuotas 
+considerando una reducción gradual de la densidad de cotización, pasando de 337 a 321 días promedio anuales a lo 
+largo de 11 años200, como posible consecuencia de un entorno económico adverso201.
+Distribución de la población de nuevo ingreso afiliada al IMSS por edad y sexo en cada año 
+de proyección
+Este supuesto asigna una distribución por edad a la población asegurada que se incorpora al IMSS en cada año del 
+periodo de proyección, y que estará sujeta a las distintas contingencias consideradas en las valuaciones actuariales 
+de los seguros del Régimen Obligatorio, según los supuestos adoptados.
+Para la evaluación de la situación financiera se actualizó este supuesto diferenciado para la población asegurada 
+y la población trabajadora del IMSS. El vector de distribución de personas de nuevo ingreso se construye para la 
+población de 15 a 58 años debido a que la población de 59 años o más corresponde en su mayoría a reincorporaciones 
+a la actividad laboral con el propósito de reactivar sus derechos y obtener una pensión por cesantía en edad 
+avanzada o vejez.
+Con la actualización del vector de personas de nuevo ingreso se observa que la edad promedio de ingreso de la 
+población asegurada y trabajadora del IMSS disminuyó en promedio 1.4 años respecto de la registrada en el vector 
+aplicado en las valuaciones actuariales con corte al 31 de diciembre de 2023 (gráfica C.2).
+200Para las valuaciones del Seguro de Riesgos de Trabajo y del Seguro de Invalidez y Vida que se realizan para un periodo de 100 años, el supuesto 
+alcanzado en el año 11 de proyección se mantiene hasta el año 100.
+201A lo largo de la vida laboral, la población trabajadora enfrenta situaciones que inciden directamente en el tiempo que cotizan, entre ellas: la 
+temporalidad del trabajo, los beneficios de permanecer en un empleo formal, la edad al inicio en la carrera laboral, incluso cuestiones de género 
+por situaciones de maternidad. La densidad de cotización es mayor para los hombres y para los grupos de personas que encuentran incentivos 
+para mantenerse constantes en empleo formales, se observó que a mayor antigüedad mayor es la probabilidad de continuar cotizando.
+249
+ANEXO C Elementos técnicos de la evaluación de la situación financiera global y de los seguros que administra el IMSS
+Gráfica C.2.
+Comparativo del vector de la población de nuevo ingreso empleado en la Valuación Actuarial de 2023 y 2024,
+desglosado por edad y sexo
+(porcentaje y edad en años)
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+15 18 21 24 27 30 33 36 39 42 45 48 51 54 57
+Población asegurada 
+Hombres
+0.00
+0.02
+0.04
+0.06
+0.08
+0.10
+0.12
+0.14
+0.16
+15 18 21 24 27 30 33 36 39 42 45 48 51 54 57
+Población asegurada 
+Mujeres
+0.00
+0.02
+0.04
+0.06
+0.08
+0.10
+0.12
+0.14
+0.16
+15 18 21 24 27 30 33 36 39 42 45 48 51 54 57
+Población trabajadora IMSS 
+Hombres
+0.00
+0.02
+0.04
+0.06
+0.08
+0.10
+0.12
+0.14
+0.16
+15 18 21 24 27 30 33 36 39 42 45 48 51 54 57
+Población trabajadora IMSS 
+Mujeres
+VA2023 VA2024
+VA2023: Valuación Actuarial con corte al 31 de diciembre de 2023, y VA2024: Valuación Actuarial con corte al 31 de diciembre de 2024.
+Fuente: Dirección de Finanzas, IMSS.
+Bases biométricas de salida de la actividad laboral y de mortalidad de las personas pensionadas
+Las bases biométricas empleadas para simular el comportamiento de la población asegurada y la población 
+pensionada se clasifican en dos grupos: las probabilidades de salida de la actividad laboral que se utilizan para la 
+población asegurada y las probabilidades de muerte que se aplican a la población pensionada.
+Probabilidades de salida de la actividad laboral
+Las probabilidades de salida de la actividad laboral se aplican diferenciadas para la población asegurada202 y 
+para la población trabajadora del IMSS203 con el propósito de estimar el número de personas que les ocurrirá alguna 
+contingencia que dé lugar al otorgamiento de una pensión o prestación en dinero. Las contingencias valuadas son: 
+incapacidad permanente derivada de un accidente o enfermedad laboral, invalidez por un accidente o enfermedad 
+no laboral, fallecimiento de la persona asegurada por causa laboral o no laboral, así como retiro, cesantía en edad 
+avanzada o vejez.
+202Las bases biométricas de salida de la actividad laboral aplicadas a las personas aseguradas fueron actualizadas conforme el estudio Actualización 
+de Bases Biométricas de Entrada a Pensión (2020) realizado por Lockton México, Agente de Seguros y de Fianzas, S. A. de C. V.
+203Las Bases Biométricas aplicables a las personas trabajadoras del Instituto Mexicano del Seguro Social fueron actualizadas conforme el estudio 
+Actualización de las Bases Biométricas que se Emplean en la Valuación Actuarial del Régimen de Jubilaciones y Pensiones y Prima de Antigüedad 
+e Indemnizaciones de los Trabajadores del IMSS (2021) realizado por el despacho externo Farell Grupo de Consultoría, S. C.
+250
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Probabilidades de muerte
+Las probabilidades de fallecimiento que se aplican a la población pensionada son las publicadas por la Comisión 
+Nacional de Seguros y Fianzas (CNSF). 
+Para las valuaciones actuariales del SRT y SIV, las probabilidades de fallecimiento se utilizan para estimar 
+los montos constitutivos derivados de la contratación de rentas vitalicias y de los seguros de sobrevivencia, y 
+corresponden a las que emplean las compañías aseguradoras, las cuales se basan en las tasas de requerimiento de 
+capital de solvencia que consideran un escenario en el que se anticipa una mortalidad menor204.
+Para la valuación actuarial del SEM-GMP, dichas probabilidades se emplean para estimar el momento en que una 
+persona pensionada titular fallece y deja personas beneficiarias con derecho a pensión, así como en el momento que 
+estas fallecen. En el caso particular de las personas en orfandad, además, se considera que dejan de tener derecho a 
+la prestación en especie, mediante la aplicación de la probabilidad de deserción escolar. 
+Para el escenario base de esta valuación, se aplican las probabilidades de fallecimiento bajo un enfoque 
+conservador, utilizando el modelo de tasas centrales205. Este modelo asume que la ocurrencia de defunciones en la 
+población valuada se mantendrá conforme la tendencia esperada.
+Las probabilidades utilizadas son:
+i) Experiencia demográfica de mortalidad para personas inválidas, conjunta para hombres y mujeres.
+ii) Experiencia demográfica de mortalidad para personas incapacitadas conjunta para hombres y mujeres.
+iii) Experiencia demográfica de mortalidad para personas en activo (no inválidas)206, separada para hombres y 
+mujeres, proyectada con factores de mejora para cada edad y año207. 
+iv) Experiencia demográfica de deserción escolar EMDE-IMSS-09. Esta probabilidad se aplica a la población 
+pensionada por orfandad para simular la deserción escolar y con ello, la extinción del beneficio de la prestación 
+económica o en especie.
+De manera particular, las probabilidades de mortalidad de personas en activo, señaladas en el inciso iii, se 
+aplican a los componentes familiares de personas inválidas e incapacitadas (esposa o esposo, hijas e hijos, y 
+madres y padres), así como a los componentes familiares de personas aseguradas fallecidas (viuda o viudo, 
+huérfanas y huérfanos, y ascendientes). 
+Factores de distribución de pensiones iniciales
+Para simular las pensiones iniciales que serán otorgadas de forma definitiva, así como aquellas que tendrán carácter 
+provisional (en el caso del SRT) o temporal (en el caso del SIV)208, mismas que posteriormente se convertirán en 
+pensiones definitivas (ya sea bajo el régimen de la LSS vigente con cargo a los ingresos por cuotas de los seguros, 
+o bajo el régimen de la LSS 73, que es la generación en transición financiada con recursos del Gobierno Federal), se 
+determinan los factores de distribución denominados árboles de decisión.
+Para la construcción de estos árboles se tomó en cuenta el número de pensiones iniciales209 otorgadas por 
+incapacidad permanente, invalidez y fallecimiento, derivadas de accidentes o enfermedades de causa laboral y no 
+laboral, validando si dichas pensiones fueron concedidas bajo el marco de la LSS vigente o si corresponden a personas 
+aseguradas de la generación en transición.
+204Experiencia demográfica de mortalidad de personas inválidas (EMSSI-IMSS-RCS-12), incapacitadas (EMSSInc-IMSS-RCS-12) y de no inválidos hombres 
+(EMSSAH-RCS-15) y mujeres (EMSSAM-RCS-15). Las probabilidades de no inválidos están proyectadas con mejoras en la mortalidad para cada edad y 
+año, con las cuales se estima una esperanza de vida al nacer de 88 años para la población masculina y de 93 años para la población femenina.
+205Experiencia demográfica de mortalidad de inválidos (EMSSInv-IMSS-12), incapacitados (EMSSInc-IMSS-12) y de activos (no inválidos) hombres 
+(EMSSAH-15) y mujeres (EMSSAM-15). Las probabilidades de no inválidos están proyectadas con mejoras en la mortalidad para cada edad y año, 
+con las cuales se estima una esperanza de vida al nacer de 81 años para la población masculina y de 88 años para la población femenina.
+206Tasas de mortalidad para activos EMSSAH-15, EMSSAM-15, EMSSI-IMSS-RCS-12 y EMSSInc-IMSS-RCS-12, establecidas en los anexos 14.2.5.d, 14.2.5.f, 
+14.2.5.k y 14.2.6-k de la Circular Única de Seguros y Fianzas, publicada en el Diario Oficial de la Federación el 11 de noviembre de 2022 por la Comisión 
+Nacional de Seguros y Fianzas.
+207Los factores de mejora modifican en el tiempo las probabilidades de mortalidad y simulan el aumento en la expectativa de vida de las 
+personas pensionadas.
+208La estimación del gasto de las pensiones provisionales y temporales, actuales y futuras, es con cargo a los ingresos por cuotas del Seguro de 
+Riesgos de Trabajo y del Seguro de Invalidez y Vida, según corresponda.
+209Se toman como pensiones iniciales aquellas que se tramitan en Prestaciones Económicas y Sociales de los Órganos de Operación Administrativa 
+Desconcentrada del IMSS, a partir de la fecha en que las personas beneficiarias las solicitan, previo cumplimiento de los requisitos estipulados 
+en la LSS. En el caso de las pensiones definitivas, únicamente se consideran como iniciales aquellas que no tienen antecedente de una pensión 
+temporal o provisional. El número de pensiones corresponde al periodo 2017-2022.
+251
+ANEXO C Elementos técnicos de la evaluación de la situación financiera global y de los seguros que administra el IMSS
+Particularmente, para el caso de las personas aseguradas de la generación en transición210 que enfrentaron una 
+contingencia por incapacidad permanente total o parcial, invalidez o fallecimiento, el árbol de decisión de ambos 
+seguros simula lo siguiente (gráficas C.3 y C.4):
+i) El número de pensiones definitivas que se otorgarán bajo la LSS vigente.
+ii) El número de pensiones que se otorgan con carácter provisional o temporal y que serán con cargo a los 
+ingresos por cuotas de cada seguro.
+iii) En caso de que una persona asegurada de la generación en transición fallezca, se estima la proporción de 
+pensiones derivadas bajo la LSS vigente (que actualmente es nula). Para las personas aseguradas fallecidas 
+con afiliación a partir del 1 de julio de 1997 se otorgarán bajo la LSS vigente y, por lo tanto, no hay factor de 
+distribución.
+iv) El número de pensiones provisionales o temporales a las que se les otorga una renta vitalicia, conforme lo 
+establecido en la LSS vigente211.
+v) Existe un número de pensiones provisionales o temporales que no pasarán a definitivas por incapacidad 
+permanente total o parcial ni por invalidez. Esto se debe a que, durante el tiempo de espera a una pensión 
+definitiva, las personas fallecen y no tienen personas beneficiarias con derecho, o bien, no continúan con el 
+tratamiento médico; por tal motivo, no se otorga la pensión definitiva. 
+Para la población asegurada perteneciente a la generación actual sujeta al régimen de la LSS 97, se simula 
+exclusivamente el número de pensiones que serán otorgadas con carácter definitivo, temporal o provisional.
+En cuanto a las personas aseguradas de la generación en transición se tienen las siguientes consideraciones:
+i) Para las que reciben una pensión por incapacidad permanente total o parcial o aquellas derivadas del 
+fallecimiento de personas aseguradas por un accidente o enfermedad de trabajo, tienen la opción de elegir 
+entre los beneficios establecidos en la LSS 73 o en la LSS vigente. Si bien el monto de la pensión es equivalente 
+en ambos regímenes, aquellas personas que optan por el beneficio conforme la LSS 73 cuentan con el 
+incentivo adicional de poder retirar los recursos acumulados en su cuenta individual correspondientes a 2% 
+de retiro, así como el saldo de la Subcuenta de Vivienda. Lo anterior, de acuerdo con lo previsto en el artículo 
+Noveno Transitorio de la reforma a la Ley de los Sistemas de Ahorro para el Retiro del 25 de abril de 1996212.
+ii) Para las que reciben una pensión por invalidez o aquellas derivadas del fallecimiento de personas aseguradas 
+por un accidente o enfermedad no laboral, cuando son otorgadas conforme la LSS 73, los montos de pensión 
+tienden a ser superiores en comparación con los calculados bajo la LSS vigente. Esta diferencia se debe a que, 
+en el régimen de la LSS 73, el cálculo de la pensión incluye incrementos adicionales a la cuantía básica cuando 
+la persona trabajadora ha cotizado más de 10 años. 
+Adicionalmente, desde 2019, el importe correspondiente a la pensión mínima garantizada en el marco de la LSS 73213 es 
+superior a la pensión garantizada bajo la LSS vigente214. Como resultado de esta situación, el supuesto considerado 
+en la valuación actuarial establece que, únicamente para la generación en transición, todas las pensiones otorgadas 
+inicialmente con carácter temporal se consolidan como definitivas bajo el régimen de la LSS 73.
+210Para las personas trabajadoras del IMSS de la generación en transición no se aplica el árbol de decisión, debido a que estas cuentan con derechos 
+bajo la Ley del Seguro Social de 1973.
+211Para estas rentas se analiza la información de pensiones iniciales del periodo 2017-2022, debido a que la información que se registra para esos 
+años está completa, es decir, que las pensiones que se otorgaron como provisionales o temporales a diciembre de 2022 en su mayoría ya pasaron 
+a definitivas o, en su caso, tuvieron una baja por fallecimiento o rehabilitación.
+212Artículo transitorio reformado el 24 de diciembre de 2002, mismo que establece: “Los trabajadores que opten por pensionarse conforme 
+el régimen establecido en la Ley del Seguro Social vigente hasta el 30 de junio de 1997, tendrán el derecho a retirar en una sola exhibición 
+los recursos que se hayan acumulado hasta esa fecha en las subcuentas del seguro de retiro y del Fondo Nacional de la Vivienda, así 
+como los recursos correspondientes al ramo de retiro que se hayan acumulado en la subcuenta del seguro de retiro, cesantía en edad 
+avanzada y vejez, vigente a partir del 1 de julio de 1997, incluyendo los rendimientos que se hayan generado por dichos conceptos.
+Igual derecho tendrán los beneficiarios que elijan acogerse a los beneficios de pensiones establecidos en la Ley del Seguro Social que estuvo 
+vigente hasta el 30 de junio de 1997. Los restantes recursos acumulados en la subcuenta del seguro de retiro, cesantía en edad avanzada y vejez, 
+previsto en la Ley del Seguro Social vigente a partir del 1 de julio de 1997, deberán ser entregados por las administradoras de fondos para el 
+retiro al Gobierno Federal”.
+213El importe mensual de la pensión mínima legal asciende a 7,571.62 pesos en 2024.
+214El importe mensual de la pensión mínima garantizada promedio asciende a 3,861.66 pesos en 2024.
+252
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Gráfica C.3.
+Árbol de decisión del Seguro de Riesgos de Trabajo
+(porcentaje de valoración promedio)
+Población asegurada 
+de la generación bajo 
+la LSS vigente
+Población asegurada de la 
+generación bajo la LSS 73
+Incapacidad
+Muerte
+Incapacidad
+LSS 73: 100%
+Ley vigente: 0%
+Definitivas: 21%
+Provisionales1/
+: 79%
+Pensiones 
+definitivas: 9%
+Pensiones 
+provisionales1/
+: 
+91%
+LSS 73: 100%
+Ley vigente: 0%
+Provisionales que pasan a 
+definitivas con personas 
+beneficiarias con 
+derecho2/
+: 45%
+Provisionales que no 
+reclaman lapensión 
+definitiva: 19% 
+Pensiones que derivan 
+en indemnizaciones 
+globales3/
+: 36% 
+Provisionales que pasan 
+a definitivas con
+personas beneficiarias
+con derecho2/
+: 38%
+Provisionales que no 
+reclaman la pensión 
+definitiva: 30%
+Provisionales que derivan 
+en indemnización 
+global3/
+: 32%
+Bajo 
+LSS 73: 100% 
+Bajo 
+Ley vigente: 0% 
+LSS: Ley del Seguro Social.
+1/ Los porcentajes para distribuir las pensiones provisionales durante el periodo de proyección se construyeron a partir de la información 
+observada relativa al número de pensiones provisionales que continúan vigentes al momento que cumplen el requisito de espera para otorgar 
+una pensión definitiva, es decir, no se contemplan las pensiones que causaron baja por motivo de fallecimiento. 
+2/ De acuerdo con lo que se establece en la Ley del Seguro Social únicamente para las personas con pensión definitiva de incapacidad permanente 
+total y con porcentaje de valoración igual a 100% se les calcula el seguro de sobrevivencia para que, en caso de fallecimiento, sus personas 
+beneficiarias con derecho accedan a una pensión, para el resto de las personas con pensión definitiva y con porcentaje de valoración menor a 
+100%, en caso de fallecimiento, se contrata para sus personas beneficiarias el seguro de muerte que corresponda, ya sea con cargo al Seguro 
+de Riesgos de Trabajo en caso de que la muerte esté asociada al riesgo laboral que dio origen a la pensión, o con cargo al Seguro de Invalidez
+y Vida en caso de que la muerte sea por una causa distinta.
+3/ Conforme lo que establece el último párrafo de la fracción III del artículo 58 de la Ley del Seguro Social vigente, si la valuación definitiva de la 
+incapacidad fuese de hasta 25%, se pagará a la persona asegurada, en sustitución de la pensión, una indemnización global equivalente a
+5 anualidades de la pensión que le hubiese correspondido.
+Fuente: Dirección de Finanzas, IMSS.
+253
+ANEXO C Elementos técnicos de la evaluación de la situación financiera global y de los seguros que administra el IMSS
+Gráfica C.4.
+Árbol de decisión del Seguro de Invalidez y Vida
+(porcentaje de valoración promedio)
+Invalidez Bajo LSS 73: 100% 
+Bajo Ley vigente: 0%
+Muerte
+LSS 73: 100%
+Ley vigente: 0% 
+Invalidez
+Definitivas: 26% 
+Población asegurada 
+de la generación bajo
+ la LSS vigente
+Población asegurada 
+de la generación bajo 
+la LSS 73
+Pensiones 
+definitivas: 
+42%
+Pensiones
+temporales1/: 58%
+Temporales1/: 74% 
+LSS 73: 100%
+Ley vigente: 0%
+Temporales que pasan 
+a definitivas con 
+personas beneficiarias 
+con derecho2/
+: 82%
+Temporales que no 
+reclaman la pensión 
+definitiva: 18%
+Temporales que 
+pasan a definitivas 
+con personas 
+beneficiarias con 
+derecho2/: 74%
+Temporales que no 
+reclaman la pensión 
+definitiva: 26%
+LSS: Ley del Seguro Social.
+1/ Los porcentajes para distribuir las pensiones temporales durante el periodo de proyección se construyeron a partir de la información observada 
+relativa al número de pensiones temporales que continúan vigentes al momento de que cumplen el requisito de espera para otorgar una pensión 
+definitiva, es decir, no se contemplan las pensiones que causaron baja por motivo de fallecimiento.
+2/ De acuerdo con lo que se establece en la Ley del Seguro Social para las personas con pensión definitiva de invalidez se les deberá calcular el 
+seguro de sobrevivencia para que, en caso de fallecimiento, sus personas beneficiarias con derecho accedan a una pensión.
+Fuente: Dirección de Finanzas, IMSS.
+Duración de las pensiones de carácter provisional o temporal
+Un supuesto adicional considerado en el modelo de valuación del SRT y del SIV se relaciona con el vencimiento de las 
+pensiones por incapacidad permanente total o parcial con carácter provisional, así como de las pensiones de invalidez 
+con carácter temporal. 
+Para las pensiones provisionales que pasan a definitivas, se asume un periodo de espera estimado de 2.5 años. 
+Este plazo contempla los 2 años que establece la LSS215 para la asignación de una pensión definitiva, más un tiempo 
+adicional que corresponde al promedio necesario en la conclusión del proceso para ofertar ante las compañías 
+aseguradoras la contratación de una renta vitalicia. 
+En algunos casos, una pensión provisional no deriva en una pensión definitiva, sino en el pago de una indemnización 
+global, la cual se liquida en una sola exhibición equivalente a 5 anualidades del monto que habría correspondido como 
+pensión, calculado en función del porcentaje de valoración.
+Respecto a las pensiones temporales, la LSS no establece un plazo específico para su transición a una pensión 
+definitiva216. En este sentido, tanto a nivel internacional como en la práctica del IMSS, se prioriza la rehabilitación y la 
+reincorporación de las personas trabajadoras al mercado laboral. 
+215Ley del Seguro Social, artículo 61: “Al declararse la incapacidad permanente, sea parcial o total, se concederá a la persona asegurada la pensión 
+que le corresponda, con carácter provisional, por un periodo de adaptación de 2 años”.
+216Artículo 121 de la Ley del Seguro Social: “Pensión temporal es la que otorga el Instituto, con cargo a este seguro, por periodos renovables al 
+asegurado en los casos de existir posibilidad de recuperación para el trabajo o, cuando por la continuación de una enfermedad no profesional, 
+se termine el disfrute del subsidio y la enfermedad persista. Es pensión definitiva la que corresponde al estado de invalidez que se estima de 
+naturaleza permanente”.
+254
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+No obstante, para efectos del modelo de valuación, y con base en la experiencia observada, se considera un 
+periodo estimado de 3 años para la transición de las pensiones de invalidez, el cual contempla una duración promedio 
+de 2.5 años como pensión temporal, más un margen adicional de medio año destinado a completar el proceso de 
+dictaminación de la pensión definitiva y el proceso para ofertar ante las compañías aseguradoras la contratación 
+de la renta vitalicia. 
+Componentes familiares de personas aseguradas, pensionadas directas y del fallecimiento de 
+las personas aseguradas
+La estimación de los gastos derivados de la atención médica y de las prestaciones en dinero de las personas 
+beneficiarias con derecho, tanto de la población asegurada como de las personas pensionadas titulares, requiere 
+utilizar matrices de componentes familiares conforme lo siguiente:
+i) En el caso de la estimación de los componentes familiares por cada persona asegurada, esta permite simular 
+el número de personas beneficiarias con derecho a la cobertura del SEM-Asegurados y el gasto derivado del 
+uso de los servicios médicos. Dicha composición familiar se determina a partir del cálculo de la proporción 
+promedio de personas beneficiarias por cada persona asegurada (cuadro C.2).
+Cuadro C.2.
+Composición familiar promedio por cada persona asegurada en activo
+Sexo de la persona 
+asegurada
+Cónyuge Hijas e hijos Madre y padre
+Promedio
+Hombre Mujer Hombre Mujer Hombre Mujer
+Hombre 0.0008 0.4257 0.2550 0.2436 0.0777 0.1387 1.1415
+Mujer 0.1385 0.0018 0.2347 0.2259 0.0911 0.1642 0.8562
+Promedio 0.0564 0.2545 0.2468 0.2365 0.0831 0.1490 1.0262
+Fuente: Dirección de Finanzas, IMSS.
+ii) La estimación del número de componentes familiares por cada persona pensionada permite simular el 
+número de personas beneficiarias con derecho a las prestaciones en especie de la cobertura del SEM-GMP y 
+a una pensión bajo lo establecido en el SRT y el SIV. Dicha composición se determina aplicando matrices que 
+consideran la existencia de cónyuges, hijas, hijos, madre y padre de quienes reciben pensión por incapacidad 
+permanente e invalidez. 
+iii) El número promedio de personas beneficiarias por persona pensionada es de 1.31, con corte a diciembre 
+de 2024. Se espera que en un periodo de 100 años pase a 1.39, como consecuencia del reconocimiento del 
+derecho a los cónyuges de las mujeres pensionadas217, así como de las parejas del mismo sexo (cuadro C.3).
+217La ampliación de personas beneficiarias con derecho a una pensión se sustenta en la Medida de Reparación Tercera de la Resolución por 
+Disposición 9/2015 de la Comisión Nacional para Prevenir la Discriminación, enviada al Instituto Mexicano del Seguro Social, respecto a la 
+aplicación del principio por persona para el otorgamiento de la pensión por viudez a los hombres, sin imponer requisitos adicionales a los que 
+se les solicitan a las mujeres viudas, por motivo de su género.
+255
+ANEXO C Elementos técnicos de la evaluación de la situación financiera global y de los seguros que administra el IMSS
+Cuadro C.3.
+Composición familiar promedio por cada persona pensionada por incapacidad permanente o invalidez
+Persona pensionada
+Cónyuge Hijas e hijos Madre y padre
+Total
+Hombre Mujer Hombre Mujer Hombre Mujer
+Situación de la composición familiar promedio a diciembre de 20241/
+Hombre 0.0003 0.4692 0.51 0.50 0.02 0.03 1.53
+Mujer 0.0592 0.0017 0.31 0.30 0.02 0.04 0.73
+Promedio 0.0163 0.3425 0.45 0.45 0.02 0.04 1.31
+Situación de la composición familiar al año 100 de proyección2/
+Hombre 0.016 0.469 0.51 0.50 0.02 0.03 1.54
+Mujer 0.299 0.016 0.31 0.30 0.02 0.04 0.99
+Promedio 0.093 0.346 0.45 0.45 0.02 0.04 1.39
+Variación del año 100 respecto a la composición calculada para 2024 (%)
+Hombre 3.93 - - - - - 0.01
+Mujer 1.63 2.27 - - - - 0.30
+Promedio 1.76 0.01 - - - - 0.06
+1/ El cálculo de los indicadores se realiza a partir de la información observada en el periodo 1998-2024.
+2/ Durante el periodo de proyección se simula para las parejas del mismo sexo, que la composición familiar con derecho a 
+una prestación se incrementa de manera gradual en el tiempo, motivo por el cual para este grupo de población cambia la 
+composición familiar de 2025 al año 100 de proyección.
+Fuente: Dirección de Finanzas, IMSS.
+iv) La estimación del número de componentes familiares por cada persona asegurada o pensionada fallecida permite 
+simular el número de personas beneficiarias con derecho a las prestaciones en especie de la cobertura del 
+SEM-GMP y a una pensión derivada por viudez, orfandad o ascendencia, conforme lo establecido en el SRT y el SIV.
+El número promedio de personas beneficiarias por persona asegurada o pensionada fallecida es de 2.06, con corte 
+a diciembre de 2024. Se espera que en un periodo de 100 años pase a 2.08, esto como consecuencia del reconocimiento 
+del derecho a cónyuges de las parejas del mismo sexo (cuadro C.4).
+Cuadro C.4.
+Composición familiar promedio por cada persona asegurada o pensionada fallecida
+ (incapacidad permanente o invalidez)
+Persona asegurada o 
+pensionada fallecida
+Viudez Orfandad Ascendencia
+Total
+Hombre Mujer Hombre Mujer Hombre Mujer
+Situación de la composición familiar promedio a diciembre de 20241/
+Hombre 0.0009 0.8393 0.564 0.553 0.057 0.122 2.14
+Mujer 0.5321 0.0034 0.401 0.403 0.094 0.189 1.62
+Promedio 0.0754 0.7220 0.541 0.532 0.063 0.132 2.06
+Situación de la composición familiar al año 100 de proyección2/
+Hombre 0.0160 0.8393 0.564 0.553 0.057 0.122 2.15
+Mujer 0.5321 0.0161 0.401 0.403 0.094 0.189 1.63
+Promedio 0.0884 0.7238 0.541 0.532 0.063 0.132 2.08
+Variación del año 100 respecto a la composición calculada para 2024 (%)
+Hombre 2.91 - - - - - 0.01
+Mujer - 1.55 - - - - 0.01
+Promedio 0.16 - - - - - 0.01
+1/ El cálculo de los indicadores se realiza a partir de la información observada en el periodo 1998-2024.
+2/ Durante el periodo de proyección se simula para las parejas del mismo sexo que la composición familiar con derecho a 
+una prestación se incrementa de manera gradual en el tiempo, motivo por el cual para este grupo de población cambia la 
+composición familiar de 2025 al año 100 de proyección.
+Fuente: Dirección de Finanzas, IMSS.
+256
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+C.4.2. Supuestos económicos y financieros
+La evaluación de la situación financiera a nivel global y por seguro se realiza con base en los siguientes supuestos, los 
+cuales están alineados con las expectativas del país, así como con los parámetros del Instituto:
+i) Crecimiento real de los salarios de cotización.
+ii) Costo fiscal por el otorgamiento de pensiones mínimas.
+iii) Elementos para la estimación del gasto médico.
+iv) Elementos para la estimación de las sumas aseguradas.
+v) Costos adicionales.
+Crecimiento real de los salarios de cotización
+Para determinar el crecimiento real de los salarios base de cotización se tomaron en cuenta los datos observados 
+del periodo 2005-2024. El análisis se enfocó en la relación entre la variación del salario base de cotización de las 
+personas aseguradas asociadas a un empleo y la inflación218, por lo que el crecimiento del salario nominal se estimó 
+considerando una elasticidad entre el salario y la inflación de 1.1 a 1.5 (2025-2035).
+A su vez, el salario real para ese periodo se obtuvo con la aplicación de la inflación esperada considerando los 
+Pre-criterios de la Secretaría de Hacienda y Crédito Público. Derivado del análisis, el crecimiento real se mantiene 
+constante desde 2030 hasta 2054 (0.53%), a partir de 2055 el crecimiento real se reduce gradualmente a 0.33%219 en 
+el año 100 de proyección (gráfica C.5).
+Gráfica C.5.
+Supuesto del crecimiento real del salario base de cotización del IMSS, 2025-2054
+(porcentaje)
+Proyección 2024 Proyección 2025
+3.4
+0.53
+0.00
+0.50
+1.00
+1.50
+2.00
+2.50
+3.00
+3.50
+4.00
+2025 2030 2035 2040 2045 2050 2054
+Nota: el salario base de cotización del Instituto Mexicano del Seguro Social se refiere al salario registrado el último día de mes de personas con un empleo.
+Fuente: Dirección de Incorporación y Recaudación, IMSS.
+Costo fiscal por el otorgamiento de pensiones mínimas
+El costo fiscal que asume el Gobierno Federal por el pago de pensiones garantizadas a las personas pensionadas por 
+invalidez y vida se calcula con base en lo que establece el segundo párrafo del artículo 141 de la LSS220. Dicho artículo 
+señala que cuando el monto de la pensión de invalidez sea inferior a la pensión garantizada, el Estado aportará 
+218Los datos observados de la inflación se obtuvieron a partir del Índice Nacional de Precios al Consumidor del Instituto Nacional
+de Estadística y Geografía. En cuanto a la expectativa de inflación del periodo 2025-2035, se tomó en cuenta la Encuesta sobre las Expectativas
+de los Especialistas en Economía del Sector Privado del Banco de México (marzo de 2025).
+219 El crecimiento real está dado a partir de un crecimiento nominal de 3.61 y una elasticidad promedio de 1.09 que se obtiene de los datos históricos 
+de 1998 a 2024, y cuyos años no son atípicos.
+220Ley del Seguro Social, artículo 141 reformado el 16 de diciembre de 2020: “En el caso de que la cuantía de la pensión sea inferior al promedio de las 
+pensiones garantizadas, que corresponda a un salario mínimo y sesenta años de acuerdo con la tabla establecida en el artículo 170 de esta Ley, 
+el Estado aportará la diferencia a fin de que el trabajador pueda adquirir una pensión vitalicia. En ningún caso la pensión de invalidez, incluyendo 
+las asignaciones familiares y ayudas asistenciales, podrá ser inferior al promedio de las pensiones garantizadas, que corresponda a un salario 
+mínimo y sesenta años de acuerdo con la tabla establecida en el artículo 170 de esta Ley”.
+257
+ANEXO C Elementos técnicos de la evaluación de la situación financiera global y de los seguros que administra el IMSS
+la diferencia entre el monto de la pensión determinada y el promedio de las pensiones garantizadas, equivalente
+a 1 salario mínimo para personas de 60 años, cuyo valor es de 3,861.66 pesos mensuales de 2024, con el objetivo de 
+que la persona trabajadora pueda adquirir una pensión vitalicia (cuadro C.5).
+Cuadro C.5.
+Monto de la pensión garantizada para el Seguro de Invalidez y Vida, 
+enero de 2021 vs. diciembre de 2024
+Semanas 
+2021/2024 750/825 775/850 800/875 825/900 850/925 875/950 900/975 925/1,000 950/1,025 975/1,050
+1,000/
+1,075 o 
+más
+ Promedio 
+Monto 
+pensión 
+garantizada 
+a enero 
+de 20211/
+2,622 2,716 2,809 2,903 2,997 3,090 3,184 3,278 3,371 3,465 3,559 3,090.36
+Monto 
+pensión 
+garantizada 
+a diciembre 
+de 20242/
+3,276 3,394 3,510 3,628 3,745 3,861 3,979 4,096 4,212 4,330 4,447 3,861.66
+1/ Es el monto referido en el segundo párrafo del artículo 141 de la Ley del Seguro Social para aquellos casos en los que la cuantía de la pensión es 
+inferior al promedio de las pensiones garantizadas, que se establecen en el artículo 170, correspondientes a 1 salario mínimo y 60 años, al momento 
+de la entrada en vigor del Decreto por el que se reforman, adicionan y derogan diversas disposiciones de la Ley del Seguro Social, publicado en el 
+Diario Oficial de la Federación el 16 de diciembre de 2020.
+2/ Es el monto de la pensión garantizada actualizada a febrero de 2024 (vigente a diciembre del mismo año), conforme el Índice Nacional de Precios
+al Consumidor, para garantizar su poder adquisitivo.
+Fuente: Dirección de Finanzas, IMSS.
+El costo fiscal representa en promedio para el ramo de Invalidez 18% de los montos constitutivos221, mientras que 
+en el ramo de vida representa 16%. El porcentaje que paga el Gobierno Federal por el otorgamiento de pensiones 
+garantizadas presenta una tendencia a la baja a causa de los altos incrementos en el salario mínimo que se han 
+dado en los últimos años. Por lo tanto, a fin de no subestimar el gasto por sumas aseguradas, dichos porcentajes se 
+mantienen fijos hasta 2034, y a partir de 2035 este disminuye gradualmente hasta alcanzar un factor nulo en 2049, 
+mismo que se mantiene constante hasta el año 100 de proyección.
+Elementos para la estimación del gasto médico
+Para estimar el gasto médico de los seguros y coberturas que otorgan prestaciones en especie en el IMSS
+se adoptaron los siguientes supuestos:
+i) Estimación de los costos unitarios por atención médica.
+ii) Crecimiento real del gasto médico.
+iii) Distribución del gasto médico.
+Estimación de los costos unitarios por atención médica
+Para estimar el gasto médico de las personas aseguradas y de las pensionadas se realizó la estimación de los costos 
+médicos unitarios, tomando como base la información contenida en el Estado de Actividades por Seguro Ramo, los 
+perfiles de gasto médico y la población derechohabiente adscrita a las Unidades de Medicina Familiar.
+Los costos unitarios que se aplicaron para estimar el gasto médico de las personas aseguradas se determinaron 
+considerando tres características: edad, sexo y tipo de aseguramiento, así como las personas beneficiarias (cuadro C.6).
+221El porcentaje del costo fiscal se obtiene respecto a los montos constitutivos, el cual corresponde al promedio para el periodo 2021-2023.
+258
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Cuadro C.6.
+Costos médicos unitarios para personas aseguradas y personas beneficiarias
+(pesos de 2024)
+Edad
+Personas 
+aseguradas
+Personas 
+beneficiarias Edad
+Personas 
+aseguradas
+Personas 
+beneficiarias Edad
+Personas 
+aseguradas
+Personas 
+beneficiarias
+Hombre Mujer Hombre Mujer Hombre Mujer Hombre Mujer Hombre Mujer Hombre Mujer
+0 4,759 4,039 32 1,385 2,938 1,886 2,455 64 5,484 4,936 4,112 3,884 
+1 4,759 4,039 33 1,399 2,914 1,744 2,292 65 5,865 5,272 4,138 3,912 
+2 4,759 4,039 34 1,415 2,894 1,622 2,154 66 6,325 5,615 4,147 3,953 
+3 1,626 1,328 35 1,435 2,871 1,536 2,030 67 6,866 5,994 4,153 3,967 
+4 1,244 1,013 36 1,459 2,844 1,467 1,940 68 7,416 6,417 4,140 3,986 
+5 1,120 901 37 1,513 2,810 1,414 1,877 69 8,185 6,818 4,130 4,012 
+6 1,039 835 38 1,552 2,786 1,399 1,829 70 8,876 7,270 4,116 4,014 
+7 977 784 39 1,593 2,765 1,405 1,802 71 9,621 7,766 4,094 4,004 
+8 922 741 40 1,643 2,758 1,452 1,807 72 10,360 8,429 4,049 3,998 
+9 878 701 41 1,696 2,764 1,501 1,834 73 11,216 8,972 4,024 3,979 
+10 847 675 42 1,736 2,790 1,589 1,881 74 11,976 9,411 3,990 3,973 
+11 833 671 43 1,806 2,834 1,694 1,953 75 13,159 10,138 3,924 3,965 
+12 829 688 44 1,883 2,900 1,827 2,047 76 14,147 10,747 3,872 3,960 
+13 844 745 45 1,967 2,973 1,967 2,154 77 15,748 11,329 3,814 3,957 
+14 1,275 1,275 46 2,065 3,058 2,120 2,266 78 17,020 11,848 3,707 3,942 
+15 1,809 2,035 47 2,165 3,136 2,263 2,385 79 19,073 12,797 3,605 3,900 
+16 173 312 3,160 3,663 48 2,268 3,221 2,429 2,496 80 20,814 13,214 3,482 3,865 
+17 374 733 4,365 5,349 49 2,387 3,301 2,586 2,608 81 23,448 13,946 3,354 3,807 
+18 600 1,256 5,464 6,734 50 2,502 3,367 2,740 2,707 82 25,216 14,770 3,217 3,723 
+19 834 1,829 6,068 7,427 51 2,614 3,435 2,907 2,808 83 27,030 15,565 3,099 3,660 
+20 1,068 2,389 6,452 7,701 52 2,740 3,503 3,067 2,897 84 29,211 16,357 2,963 3,549 
+21 1,129 2,611 6,002 6,966 53 2,892 3,576 3,229 3,005 85 32,139 17,299 2,834 3,423 
+22 1,162 2,717 5,658 6,053 54 3,046 3,646 3,372 3,109 86 33,706 18,844 2,682 3,309 
+23 1,177 2,735 5,245 5,321 55 3,217 3,736 3,530 3,217 87 35,309 19,940 2,509 3,172 
+24 1,191 2,720 4,749 4,738 56 3,394 3,828 3,665 3,334 88 35,935 22,378 2,287 2,980 
+25 1,210 2,751 4,274 4,283 57 3,595 3,902 3,826 3,447 89 36,011 22,155 2,062 2,801 
+26 1,240 2,800 3,765 3,906 58 3,776 3,976 3,933 3,538 90 34,604 23,442 1,823 2,575 
+27 1,269 2,866 3,263 3,588 59 3,980 4,036 4,012 3,621 91 34,207 23,222 1,575 2,290 
+28 1,299 2,919 2,835 3,311 60 4,209 4,127 4,057 3,701 92 36,801 22,893 1,336 2,052 
+29 1,326 2,948 2,541 3,067 61 4,506 4,253 4,084 3,750 93 37,485 21,080 1,163 1,807 
+30 1,349 2,946 2,291 2,850 62 4,782 4,437 4,085 3,812 94 35,938 21,406 981 1,573 
+31 1,364 2,944 2,084 2,646 63 5,131 4,642 4,095 3,858 95 36,012 22,526 822 1,343 
+96 y 
+más
+ 30,117 19,183 648 1,113 
+Fuente: Dirección de Finanzas, IMSS.
+259
+ANEXO C Elementos técnicos de la evaluación de la situación financiera global y de los seguros que administra el IMSS
+Los costos unitarios que se aplicaron para estimar el gasto médico de las personas pensionadas y sus personas 
+beneficiarias se determinaron considerando: edad y sexo (cuadro C.7).
+Cuadro C.7.
+Costos médicos unitarios para personas pensionadas y personas beneficiarias
+(pesos de 2024)
+Edad
+Personas 
+pensionadas
+Personas 
+beneficiarias Edad
+Personas 
+pensionadas
+Personas 
+beneficiarias Edad
+Personas 
+pensionadas
+Personas 
+beneficiarias
+Hombre Mujer Hombre Mujer Hombre Mujer Hombre Mujer Hombre Mujer Hombre Mujer
+0 3,449 2,983 32 8,540 2,840 4,993 3,460 64 3,706 3,097 2,377 3,424 
+1 3,449 2,983 33 8,033 2,869 4,826 3,311 65 3,831 3,181 2,423 3,559 
+2 3,449 2,983 34 7,715 2,822 4,727 3,115 66 3,970 3,267 2,481 3,681 
+3 1,841 1,501 35 7,330 2,756 4,477 2,935 67 4,110 3,353 2,541 3,807 
+4 1,578 1,215 36 7,103 2,770 4,289 2,798 68 4,263 3,444 2,583 3,923 
+5 1,490 1,129 37 6,843 2,754 4,076 2,716 69 4,408 3,532 2,617 4,033 
+6 1,415 1,096 38 6,762 2,730 3,845 2,622 70 4,549 3,607 2,674 4,131 
+7 1,337 1,074 39 6,639 2,745 3,651 2,632 71 4,681 3,688 2,718 4,232 
+8 1,259 1,032 40 6,604 2,785 3,642 2,678 72 4,828 3,762 2,741 4,322 
+9 1,198 967 41 6,583 2,792 3,623 2,717 73 4,968 3,813 2,809 4,409 
+10 1,161 949 42 6,593 2,824 3,610 2,741 74 5,129 3,854 2,847 4,495 
+11 1,152 949 43 6,592 2,841 3,536 2,786 75 5,269 3,898 2,833 4,562 
+12 1,143 956 44 6,647 2,872 3,529 2,804 76 5,407 3,942 2,817 4,600 
+13 1,119 990 45 6,765 2,937 3,394 2,854 77 5,520 3,966 2,822 4,630 
+14 1,313 1,269 46 6,793 2,984 3,199 2,898 78 5,593 3,988 2,759 4,613 
+15 1,440 1,421 47 6,785 3,025 3,044 2,942 79 5,653 3,990 2,679 4,553 
+16 1,694 1,865 48 6,807 3,073 2,920 2,988 80 5,723 3,978 2,600 4,465 
+17 1,981 2,278 49 6,811 3,106 2,728 3,002 81 5,782 3,943 2,477 4,357 
+18 2,261 2,654 50 6,706 3,084 2,606 3,011 82 5,838 3,924 2,326 4,184 
+19 224 115 2,375 3,161 51 6,681 3,082 2,525 3,003 83 5,921 3,895 2,198 4,001 
+20 614 257 2,514 3,944 52 6,660 3,072 2,460 2,990 84 5,980 3,892 2,044 3,802 
+21 1,050 473 2,727 4,625 53 6,635 3,072 2,429 2,988 85 6,030 3,863 1,891 3,568 
+22 1,789 784 3,033 5,576 54 6,609 3,046 2,396 2,994 86 6,057 3,824 1,740 3,322 
+23 3,076 1,266 3,681 6,185 55 6,750 3,054 2,383 2,983 87 6,056 3,771 1,569 3,060 
+24 4,193 1,652 4,183 6,268 56 6,701 3,069 2,387 2,975 88 6,032 3,689 1,362 2,793 
+25 5,529 2,034 4,691 6,092 57 6,712 3,103 2,424 2,979 89 5,939 3,553 1,181 2,525 
+26 6,765 2,379 5,054 5,568 58 6,174 3,092 2,431 2,972 90 5,817 3,434 1,024 2,238 
+27 7,807 2,664 5,479 4,828 59 5,524 3,068 2,447 2,996 91 5,644 3,314 869 1,946 
+28 8,434 2,725 5,443 4,370 60 4,767 3,041 2,419 3,041 92 5,517 3,168 723 1,681 
+29 8,821 2,825 5,384 4,075 61 4,201 3,019 2,389 3,111 93 5,351 3,089 611 1,430 
+30 8,816 2,893 5,397 3,811 62 3,611 2,997 2,352 3,201 94 5,281 2,956 514 1,192 
+31 8,716 2,873 5,307 3,676 63 3,588 3,027 2,345 3,307 95 5,158 2,791 406 983 
+96 y 
+más
+ 5,058 2,567 298 741 
+Fuente: Dirección de Finanzas, IMSS.
+260
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Crecimiento real del gasto médico
+La planeación financiera del Instituto depende en gran medida de la estimación futura del gasto médico en los 
+seguros del Régimen Obligatorio de Enfermedades y Maternidad, para su cobertura de Asegurados y de Gastos 
+Médicos para Pensionados; y de Riesgos de Trabajo, así como para el Régimen Voluntario de Salud para la Familia.
+La estimación consideró diversas variables económicas y financieras, así como factores demográficos de la 
+población derechohabiente. Uno de los elementos clave en la proyección de dicho gasto es la tasa de incremento real 
+del gasto médico en el Instituto.
+Esta tasa se obtuvo a partir del comportamiento del gasto médico, el cual está relacionado directamente con 
+los procesos de adquisición y costos de medicamentos, vacunas, material quirúrgico, insumos y equipo médico, así 
+como servicios subrogados de atención médica. Además, de factores como la demanda de atención, la prevalencia 
+de enfermedades entre la población derechohabiente y la capacidad operativa institucional.
+Aunque la tasa de incremento real del gasto médico podría estimarse a partir de información externa, como el 
+Índice Nacional de Precios al Consumidor en salud y cuidado personal, se consideró que estos no reflejaban con 
+precisión el comportamiento del gasto médico en el IMSS.
+Por ello, es más adecuado utilizar información histórica del gasto médico en los seguros que otorgan prestaciones 
+en especie, y la variación del Índice Nacional de Precios al Consumidor (inflación anual), a fin de establecer un 
+parámetro más preciso para la proyección financiera a mediano y largo plazo.
+Con base en lo anterior, para el periodo 2006-2024, se calculó primero el gasto médico total, integrando los montos 
+de cada seguro; estos se componen de la suma de los gastos registrados en los capítulos de materiales y suministros, 
+mantenimiento y servicios generales. Posteriormente, se determinó la variación nominal del gasto médico per cápita, 
+relación del gasto médico total respecto a la población usuaria de Medicina Familiar. A partir de esta variación y la 
+inflación anual, se obtuvo la variación real anual del gasto médico. 
+Con la variación real, se proyectaron las tasas de incremento real para los próximos años, para tal fin, se 
+utilizó un modelo estocástico, denominado Modelo de Movimiento Browniano con Reversión a la Media y Difusión 
+con Saltos (MMBRMDS). Se realizaron 15 mil simulaciones con este modelo, y se consideró utilizar el percentil 
+46 a partir de los resultados simulados para cada año de proyección222. Así se construyó un vector con la tasa 
+de incremento real del gasto médico para el periodo 2025-2054, observándose un valor estable alrededor de
+1.61% a partir de 2034 (cuadro C.8).
+Cuadro C.8.
+Estimación de la tasa de incremento 
+real del gasto médico, 2025-2054
+Año Tasa (%)
+2025 5.22
+2026 3.70
+2027 2.65
+2028 2.10
+2029 1.71
+2030 1.59
+2031 1.58
+2032 1.51
+2033 1.62
+2034-2054 1.61
+Fuente: Dirección de Finanzas, IMSS.
+Distribución del gasto médico
+Para el cálculo del gasto médico del Instituto, se realizaron proyecciones demográficas que permitieron estimar el 
+comportamiento probable de la población derechohabiente para un periodo determinado. A partir de la población
+proyectada, de acuerdo con su tipo de afiliación, se determinaron los costos asociados a la atención médica que se 
+222Este percentil se seleccionó debido a que arrojó una tasa de incremento real del gasto médico similar a la observada históricamente.
+261
+ANEXO C Elementos técnicos de la evaluación de la situación financiera global y de los seguros que administra el IMSS
+brinda a esta población223. Estos costos consideraron el registro contable del gasto corriente de los seguros, del cual se 
+determinó el monto total del gasto médico (prestación en especie), y se distribuyó conforme su registro224 (cuadro C.9).
+Cuadro C.9.
+Distribución del gasto médico asignado a cada seguro
+(porcentaje)
+SRT SEM-A SEM-GMP SSFAM Total
+4.2 69.9 22.5 3.3 100
+SRT: Seguro de Riesgos de Trabajo; SEM-A: Seguro de Enfermedades 
+y Maternidad-Asegurados; GMP: Gastos Médicos para Pensionados, y 
+SSFAM: Seguro de Salud para la Familia.
+Nota: la suma de los valores no es igual a 100 por cuestiones 
+de redondeo.
+Fuente: Dirección de Finanzas, IMSS.
+Elementos para la estimación de las sumas aseguradas
+Para estimar el gasto por sumas aseguradas derivado del otorgamiento de las rentas vitalicias en el SRT y el SIV, se 
+simula el cálculo del monto constitutivo que ofertan las compañías aseguradoras. Los principales elementos que 
+se consideran se muestran a continuación (gráfica C.6).
+Gráfica C.6.
+Elementos que inciden en el costo de las sumas aseguradas
+Tasa de interés técnico3/
+Composición familiar
+Beneficio de ley
+Rendimiento RCV
+Comisiones Afore
+Suma asegurada
+Comisión y márgenes de riesgo 
+de aseguradoras por la CNSF
+Tablas de mortalidad y factores de 
+mejora emitidas por la CNSF2/ Aportaciones a la 
+Subcuenta de Vivienda
+Rendimiento vivienda
+Aportaciones a la 
+Subcuenta de RCV
+Monto constitutivo Saldo acumulado en la 
+cuenta individual1/
+CNSF: Comisión Nacional de Seguros y Fianzas, y RCV: Retiro, Cesantía en Edad Avanzada y Vejez.
+1/ El saldo acumulado en la cuenta individual de cada persona trabajadora es administrado por las Administradoras de Fondos para el Retiro.
+2/ Las tasas de mortalidad de requerimiento de capital de solvencia aplicables para los seguros de pensiones derivados de las leyes de seguridad 
+social relativas a la experiencia demográfica de mortalidad para activos (Anexo 14.2.6-k), de mortalidad para inválidos (Anexo 14.2.6-d), de 
+mortalidad para incapacitados (Anexo 14.2.6-f) y factores de mejora (Anexo 14.2.7-b), publicadas en la Circular Única de Seguros y Fianzas.
+3/ La tasa de interés técnico corresponde a la tasa de descuento que se utiliza para el cálculo del monto constitutivo.
+Fuente: Dirección de Finanzas, IMSS.
+223La estimación del gasto corresponde a la proporción por seguro que se registra en los Estados Financieros de 2024, en los rubros de gasto de 
+servicios generales y de materiales y suministros.
+224La distribución del gasto por seguro y cobertura se realizó a partir del uso de servicios médicos que registró la población afiliada en cada uno de ellos.
+262
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Supuestos para la estimación del saldo acumulado en la cuenta individual
+Para estimar el saldo acumulado en la cuenta individual se toma el saldo de la cuenta individual de las personas 
+aseguradas a diciembre de 2024225, los supuestos referentes a la tasa de interés real anual de las Subcuentas 
+de Retiro, de Cesantía en Edad Avanzada y Vejez, y de Vivienda; y la comisión que cobran las Afore por la 
+administración de los recursos.
+La tasa de interés real anual utilizada para la Subcuenta de Retiro, Cesantía en Edad Avanzada y Vejez, conforme 
+el esquema vigente de inversión de recursos de la cuenta individual, tomó como base el comportamiento histórico 
+de la tasa de rendimiento de precios de gestión de dicha subcuenta, la cual muestra que la tasa real anual de 
+rendimiento en el corto plazo se ubica en 3.10% (correspondiente a un periodo de 13 años), mientras que la tasa 
+real anual promedio de 1998 a 2024 asciende a 4.75% (cuadro C.10).
+Cuadro C.10.
+Tasa de interés real anual de la Subcuenta de Retiro, Cesantía en Edad Avanzada y Vejez
+(porcentaje)
+Periodo Tasa nominal anual de 
+rendimiento, precios de gestión1/
+Tasa de inflación 
+anual
+Tasa real anual de rendimiento, 
+precios de gestión1/
+1998-2024 (promedio) 10.46 5.46 3.71 
+2012-2024 (promedio) 7.70 4.52 2.59 
+1/ Información estadística conforme el rendimiento a los últimos 12 meses, precios de gestión valores nominales, ponderado con los 
+activos netos de las Sociedades de Inversión Especializadas en Fondos de Ahorro para el Retiro.
+Fuentes: Comisión Nacional del Sistema de Ahorro para el Retiro; Dirección de Finanzas, IMSS.
+Del cuadro anterior, se observa que la tasa real anual de rendimiento a precios de gestión en el corto plazo es de 
+2.59%. Por lo que, a efecto de tomar un supuesto conservador y alineado con la información de los últimos 13 años, 
+se utilizó una tasa de 3%, de 2025 en adelante.
+Para estimar el rendimiento de los recursos de las personas trabajadoras depositados en la Subcuenta de Vivienda, 
+se adoptó una tasa diferenciada para el corto y largo plazo, basada en el análisis de la política de inversión, en la 
+metodología para determinar el rendimiento de los recursos en dicha subcuenta, así como en la evolución de las tasas 
+de rendimiento observadas entre 2000 y 2023.
+Para el corto plazo, se utilizó la proyección de rendimientos del Escenario Central publicado en el Plan Estratégico 
+y Financiero 2024-2028 del Instituto del Fondo Nacional de la Vivienda para los Trabajadores (Infonavit), considerando 
+las tasas proyectadas para el periodo 2025-2028. Para el largo plazo, se tomó como referencia la información más 
+reciente disponible para el periodo 2019-2024, obteniendo una tasa real anual de 1.50% (cuadro C.11).
+Cuadro C.11.
+Rendimiento de la Subcuenta de Vivienda, 2017-2024
+(porcentaje)
+Periodo Tasa nominal anual de rendimiento Tasa de inflación anual Tasa real anual de rendimiento
+2017-2024 (promedio) 6.80 5.20 1.50 
+Fuente: reporte económico de octubre a diciembre de cada año, Instituto del Fondo Nacional de la Vivienda para los Trabajadores; Dirección de 
+Finanzas, IMSS.
+225 Información proporcionada por la Comisión Nacional del Sistema de Ahorro para el Retiro para efectos exclusivos de la evaluación de la situación 
+financiera del Instituto Mexicano del Seguro Social.
+263
+ANEXO C Elementos técnicos de la evaluación de la situación financiera global y de los seguros que administra el IMSS
+Con base en lo anterior, y a efecto de tomar un supuesto conservador, se utilizaron las siguientes tasas de 
+rendimiento (cuadro C.12).
+Cuadro C.12.
+Rendimiento de la Subcuenta de Vivienda
+Año Tasa de rendimiento
+2025 1.29
+2026 1.64
+2027 1.51
+2028 1.47
+2029 en adelante 1.60
+Nota: para el periodo 2025-2028 corresponde a la 
+proyección reportada en el Plan Estratégico y Financiero 
+2024-2028 del Instituto del Fondo Nacional de la Vivienda 
+para los Trabajadores. A partir de 2029 en adelante se 
+toma el rendimiento promedio del periodo 2017-2024, 
+excluyendo el rendimiento máximo y mínimo.
+Fuentes: Instituto del Fondo Nacional de la Vivienda 
+para los Trabajadores; Dirección de Finanzas, IMSS.
+Para el escenario de riesgo se sensibilizó el porcentaje de personas aseguradas que tienen saldo en la Subcuenta 
+de Vivienda en el momento de adquirir el derecho a una pensión del SRT o del SIV, con una reducción de 50% a 10%. 
+La comisión promedio autorizada para las Afore es de 0.55%226, sin considerar la Afore PENSIONISSSTE 
+(cuadro C.13). Dicha comisión fue la que se adoptó en el escenario base. 
+Cuadro C.13.
+Comisión cobrada por las Afore
+(porcentaje)
+Afore Comisión 2024 Comisión 2025
+Citibanamex 0.57 0.55
+XXI Banorte 0.57 0.55
+Profuturo 0.57 0.55
+Sura 0.57 0.55
+Coppel 0.57 0.55
+Principal 0.57 0.55
+Azteca 0.57 0.55
+Inbursa 0.57 0.55
+InverCap 0.57 0.55
+Promedio 0.57 0.55
+Fuentes: Comisión Nacional del Sistema de Ahorro para el Retiro. 
+Boletín de prensa No. 12/2023, 1 de diciembre de 2023 (Comisión 
+2024) y Boletín de prensa No. 13/2024, 29 de noviembre de 2024 
+(Comisión 2025); Dirección de Finanzas, IMSS.
+226De conformidad con el artículo 8 de la Ley de los Sistemas de Ahorro para el Retiro, corresponde a la Junta de Gobierno de la Comisión Nacional 
+de los Sistemas de Ahorro para el Retiro autorizar cada año las comisiones que los participantes en el Sistema de Ahorro para el Retiro podrán 
+cobrar por los servicios que prestan.
+264
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Tasa de interés real anual para el cálculo de los montos constitutivos
+Para la estimación del monto constitutivo necesario para otorgar una renta vitalicia a las personas trabajadoras o a 
+sus personas beneficiarias, se requiere de la tasa de interés técnico real anual por tipo de pensión227, a fin de simular 
+la tasa a la que las aseguradoras ofertarán las rentas vitalicias (cuadro C.14).
+Cuadro C.14.
+Tasa de interés real anual para el cálculo de los montos constitutivos, 2025-2124
+(porcentaje)
+Año
+Escenario base Escenario de riesgo
+Incapacidad Muerte RT Invalidez Vida SRCV Incapacidad Muerte RT Invalidez Vida SRCV
+2025 5.42 5.40 5.54 5.30 5.45 5.23 5.21 5.35 5.13 5.27
+2026 5.07 5.04 5.18 4.97 5.10 4.61 4.58 4.69 4.52 4.64
+2027 4.80 4.78 4.90 4.71 4.84 4.22 4.19 4.28 4.15 4.25
+2028 4.11 4.09 4.19 4.05 4.15 3.54 3.52 3.59 3.50 3.58
+2029 4.07 4.04 4.14 4.01 4.11 3.36 3.33 3.39 3.32 3.40
+2030 4.04 4.01 4.11 3.98 4.08 3.18 3.15 3.20 3.15 3.21
+2031 4.01 3.99 4.09 3.96 4.06 3.02 2.99 3.03 2.99 3.05
+2032 4.00 3.97 4.07 3.94 4.04 2.95 2.93 2.96 2.93 2.98
+2033 3.99 3.96 4.06 3.93 4.03 2.91 2.88 2.92 2.89 2.94
+2034 3.98 3.95 4.05 3.92 4.02 2.83 2.81 2.83 2.81 2.86
+2044 3.93 3.90 4.00 3.87 3.97 2.74 2.72 2.75 2.73 2.78
+2054 3.91 3.89 3.98 3.86 3.96 2.78 2.76 2.78 2.77 2.81
+2064 3.91 3.88 3.98 3.85 3.95 2.81 2.79 2.82 2.80 2.84
+2074 3.90 3.88 3.97 3.85 3.94 2.87 2.85 2.88 2.85 2.90
+2084 3.90 3.87 3.97 3.84 3.94 2.94 2.92 2.95 2.93 2.98
+2094 3.90 3.87 3.97 3.84 3.94 2.95 2.93 2.96 2.93 2.98
+2104 3.90 3.87 3.96 3.84 3.94 2.98 2.96 2.99 2.96 3.01
+2114 3.89 3.87 3.96 3.84 3.94 2.98 2.96 2.98 2.96 3.01
+2124 3.89 3.87 3.96 3.84 3.94 2.98 2.96 2.99 2.96 3.02
+RT: Riesgo de trabajo, y SRCV: Seguro de Retiro, Cesantía en Edad Avanzada y Vejez.
+Fuente: Dirección de Finanzas, IMSS.
+Costos adicionales
+La evaluación integral de la situación financiera de cada seguro requiere tomar en cuenta los rubros de gasto 
+referentes a servicios de personal y los que corresponden al Régimen de Jubilaciones y Pensiones.
+Servicios de personal
+El gasto anual por concepto de los servicios de personal se estima mediante proyecciones demográficas y financieras. 
+La estimación se basa en la información del personal adscrito al Régimen Ordinario del IMSS y sus percepciones 
+salariales, considerando la sobrevivencia del personal vigente a la fecha de valuación (31 de diciembre de 2024), así 
+como la incorporación de nuevas contrataciones por parte del Instituto a lo largo del tiempo.
+227 Dicha tasa se calcula utilizando la Metodología para la Determinación de la Tasa de Interés Técnico Real Anual para la Estimación de los Montos 
+Constitutivos, aprobada por la Comisión de Riesgos Financieros y Actuariales en febrero de 2025.
+265
+ANEXO C Elementos técnicos de la evaluación de la situación financiera global y de los seguros que administra el IMSS
+Este gasto se proyecta para cada año e incluye las erogaciones del IMSS en su carácter de patrón por los 
+siguientes conceptos:
+i) Los pagos de salarios, las cuotas de seguridad social, los impuestos sobre la renta por salarios, los pagos por 
+la prima de antigüedad y las indemnizaciones, 
+ii) Los costos derivados de otros gastos, como son: las percepciones extraordinarias (las guardias y el tiempo 
+extra), los pagos asociados a plazas no presupuestadas (honorarios, prestaciones de servicio social, personal de 
+afiliación y cobranza, campañas de prevención y profilaxis, y personas voluntarias de prestaciones sociales). 
+iii) Los gastos complementarios (ropa contractual, emolumentos, gastos del programa de formación de personal 
+investigador, incapacidades, anteojos, seguros de vida, distintivos y reconocimientos a méritos laborales, 
+entre otros).
+Una vez estimado el gasto total, este se distribuye entre los seguros y ramos, con base en la proporción promedio 
+observada en el Estado de Actividades por Seguro Ramo durante los últimos 10 años (cuadro C.15).
+Cuadro C.15.
+Distribución del gasto por servicios de personal asignado a cada seguro
+(porcentaje)
+SRT1/ SIV SEM-GMP SEM-Asegurados Guarderías Prestaciones Sociales SSFAM
+4.77 0.57 21.21 67.87 1.44 1.05 3.09
+SRT: Seguro de Riesgos de Trabajo; SIV: Seguro de Invalidez y Vida; SEM-GMP: Seguro de Enfermedades y Maternidad-Gastos 
+Médicos para Pensionados, y SSFAM: Seguro de Salud para la Familia.
+1/ Del total del gasto de servicios de personal que se asigna al Seguro de Riesgos de Trabajo, 84% está asociado al costo de las 
+prestaciones en especie y 16% a los gastos de administración.
+Fuente: Estado de Actividades por seguro ramo, promedio de 2015 a 2024; Dirección de Finanzas, IMSS.
+Debido a la relevancia que tiene el personal designado para atender a la población derechohabiente, en el 
+escenario de riesgo se sensibilizó un incremento en el número de personas trabajadoras del IMSS como consecuencia 
+del aumento en la población derechohabiente durante el periodo de proyección. 
+El supuesto adoptado en el escenario de riesgo se determinó a partir de la relación del número de personas 
+trabajadoras del Instituto respecto al número de personas aseguradas. Dicha relación, para el periodo de 30 años, 
+pasa de 2.22% en el escenario base a 2.24% en el escenario de riesgo; mientras que, para el periodo de 100 años, pasa 
+de 2.16% en el escenario base a 2.37% en el escenario de riesgo.
+Este supuesto toma como base la información disponible de los últimos 10 años (2015–2024), la cual ha registrado 
+una razón promedio de 1.33 médicas y médicos por cada 1,000 derechohabientes con adscripción a una unidad 
+médica. Este indicador es inferior al mínimo establecido por la Organización Panamericana de la Salud (OPS) para 
+América Latina (1.76 médicas y médicos por cada 1,000 habitantes).
+Por lo anterior, se evaluó el impacto financiero de un incremento gradual y sostenido en la razón de personal 
+médico por cada 1,000 personas usuarias, con el objetivo de alcanzar una relación de 1.46 hacia 2042 y mantenerla 
+constante a partir de ese año, en respuesta al crecimiento proyectado de la población derechohabiente. 
+Dicho impacto representa un aumento progresivo en el gasto por servicios de personal en el mediano y largo 
+plazo, así como el que se asocia a las prestaciones y pasivos laborales.
+Régimen de Jubilaciones y Pensiones
+Dentro de los gastos de administración se incluyen aquellos asociados al costo del Régimen de Jubilaciones y 
+Pensiones. Este costo se estima a partir de la valuación actuarial realizada por un despacho externo228, mismo que se 
+reporta en el Capítulo VIII de este Informe.
+La distribución del gasto del régimen se asigna entre los seguros y ramos, con base en la proporción promedio 
+observada en el Estado de Actividades por Seguro Ramo durante los últimos 10 años (cuadro C.16).
+228Lockton México, Agente de Seguros y de Fianzas, S. A. de C. V. (2025). Valuación Actuarial del Régimen de Jubilaciones y Pensiones y de la Prima 
+de Antigüedad e Indemnizaciones de los Trabajadores del Instituto Mexicano del Seguro Social al 31 de diciembre de 2024. Para efectos de este 
+Capítulo se hará referencia a este estudio con el nombre de Valuación Actuarial del Pasivo Laboral.
+266
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Cuadro C.16.
+Distribución del gasto del Régimen de Jubilaciones y Pensiones asignado a cada seguro
+(porcentaje)
+SRT SIV SEM-GMP SEM-Asegurados Guarderías Prestaciones Sociales SSFAM
+4.76 0.58 21.17 67.95 1.44 1.06 3.04
+SRT: Seguro de Riesgos de Trabajo; SIV: Seguro de Invalidez y Vida; SEM-GMP: Seguro de Enfermedades y Maternidad-Gastos 
+Médicos para Pensionados, y SSFAM: Seguro de Salud para la Familia.
+Fuente: Estado de Actividades por seguro ramo, promedio de 2015 a 2024; Dirección de Finanzas, IMSS.
+C.5. Supuesto del escenario catastrófico
+Con el propósito de hacer frente a efectos catastróficos derivados de problemas epidemiológicos que provoquen 
+insuficiencia de cualquiera de las reservas financieras y actuariales, se estableció un escenario que mide el aumento 
+del gasto como consecuencia de una mayor demanda de atención médica por parte de pacientes con diagnóstico de 
+diabetes. Lo anterior, con el propósito de determinar si se prevé la necesidad de realizar aportaciones a la Reserva 
+General Financiera y Actuarial.
+El impacto financiero se calculó como la diferencia entre el número estimado de pacientes con complicaciones 
+bajo el escenario inercial y el número de pacientes que potencialmente se obtendría al incrementar la prevalencia de 
+esta enfermedad en la población derechohabiente para el periodo 2025-2054. La variación del número de pacientes 
+se muestra en el cuadro C.17.
+Cuadro C.17.
+Pacientes que potencialmente tendrían complicaciones derivadas de diabetes, 2025-2054 
+(porcentaje)
+Año
+Incremento de pacientes 
+con complicaciones 
+por diabetes
+Año
+Incremento de pacientes 
+con complicaciones 
+por diabetes
+Año
+Incremento de pacientes 
+con complicaciones 
+por diabetes
+2025 20.1 2035 35.0 2045 46.0
+2026 22.6 2036 36.2 2046 46.1
+2027 25.1 2037 37.5 2047 46.1
+2028 27.1 2038 39.0 2048 46.0
+2029 28.7 2039 40.6 2049 45.8
+2030 30.0 2040 42.1 2050 45.7
+2031 31.0 2041 43.4 2051 45.6
+2032 31.8 2042 44.4 2052 45.7
+2033 32.7 2043 45.2 2053 45.7
+2034 33.8 2044 45.7 2054 45.7
+Fuente: Dirección de Finanzas, IMSS.
+Este Anexo detalla los elementos técnicos utilizados para la obtención de los resultados 
+presentados en el Capítulo VIII:
+i) La valuación de los beneficios correspondientes al pago de la prima de antigüedad y 
+las indemnizaciones.
+ii) El análisis de la evolución histórica de los beneficios y las aportaciones asociadas al 
+Régimen de Jubilaciones y Pensiones (RJP), incluyendo la valuación de sus beneficios y 
+sus respectivas fuentes de financiamiento.
+iii) Los fundamentos técnicos de la valuación actuarial aplicada al pago de la prima de 
+antigüedad, las indemnizaciones y al RJP.
+iv) Los criterios técnicos de la valuación actuarial empleada en el estudio para evaluar la 
+suficiencia financiera de la Subcuenta 2 del Fondo Laboral.
+D.1. Prima de antigüedad e indemnizaciones
+El costo por concepto de prima de antigüedad fue estimado con base en la valuación actuarial, 
+la cual incorpora las obligaciones laborales que el Instituto Mexicano del Seguro Social 
+(IMSS) otorga a su personal al término de la relación laboral. Dicha estimación considera las 
+prestaciones establecidas en el Contrato Colectivo de Trabajo o en el Estatuto de las Personas 
+Trabajadoras de Confianza A del Instituto Mexicano del Seguro Social, según corresponda 
+(cuadro D.1).
+Principales elementos 
+técnicos para la estimación 
+de los resultados del
+pasivo laboral
+ANEXO D
+268
+INFORME AL EJECUTIVO FEDERAL Y AL CONGRESO DE LA UNIÓN SOBRE LA SITUACIÓN FINANCIERA Y LOS RIESGOS DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL 2024-2025
+Cuadro D.1.
+Descripción de los beneficios por prima de antigüedad e indemnizaciones conforme el 
+Contrato Colectivo de Trabajo y Estatuto A
+Concepto Descripción del beneficio
+Contrato Colectivo de Trabajo
+Indemnizaciones
+Despido injustificado 150 días de salario más 50 días de salario por cada año de servicio1/.
+Separación por invalidez 190 días de sueldo tabular.
+Fallecimiento por enfermedad 
+general
+180 días del último salario y 50 días de salario por cada año de servicio, así como una 
+ayuda para gastos de funeral de 125 días de salario. Suma asegurada de acuerdo con la 
+cláusula 152 por muerte natural.
+Fallecimiento a causa de riesgo de 
+trabajo, incapacidad permanente 
+total e incapacidad permanente 
+parcial
+1,095 días del último salario y 50 días de salario por cada año de servicio. 
+Para el caso de incapacidad permanente parcial, la indemnización depende 
+del porcentaje de valoración de la incapacidad. 
+En caso de muerte se otorgará una ayuda para gastos de funeral de 100 días de salario. 
+Suma asegurada de acuerdo con la cláusula 152 por muerte accidental.
+Prima de antigüedad
+Separación por: invalidez, 
+incapacidad permanente total, 
+despido justificado y fallecimiento
+12 días del salario por cada año de servicio2/.
+Separación por: renuncia, 
+jubilación, edad avanzada o vejez
+Con 15 años o más de servicio se otorgarán 12 días del salario por cada año de servicio. 
+Con menos de 15 años de servicio, la indemnización no excederá de 3 meses de salario.
+Estatuto A
+Indemnizaciones
+Despido injustificado 3 meses de salario más 20 días de salario por cada uno de los años de servicio prestados.
+Invalidez por causas distintas a 
+riesgos de trabajo
+1 mes de salario.
+Fallecimiento por causas distintas a 
+riesgos de trabajo
+Importe de hasta 4 meses del salario de la persona trabajadora fallecida con requisito de 
+al menos 6 meses de antigüedad. 
+Prima de antigüedad
+Separación por: invalidez, 
+incapacidad, despido y 
+fallecimiento
+12 días de salario por cada año de servicio2/.
+Separación voluntaria Con 15 años o más de servicio se otorgarán 12 días del salario por cada año de servicio2/.
+1/ Conforme con lo establecido en la cláusula Tercera Transitoria del Contrato Colectivo de Trabajo, dentro de los 50 días de salario por cada año de 
+servicio que se otorgan por motivo de indemnización, se encuentran los que corresponden a la prima de antigüedad.
+2/ El monto del salario para el cálculo de las prestaciones no podrá ser inferior a 1 salario mínimo ni podrá exceder el doble del mismo. 
+Nota: los beneficios descritos para el Contrato Colectivo de Trabajo aplican para todo el personal de Base y Confianza B, así como para las personas 
+trabajadoras de Confianza A que iniciaron labores en el IMSS antes del 1 de enero de 2012.
+Fuente: Ley Federal del Trabajo; Contrato Colectivo de Trabajo y Estatuto de Trabajadores de Confianza A, IMSS.
+D.2. Régimen de Jubilaciones y Pensiones
+En este apartado se presenta un panorama y estructura del Régimen, incluyendo una descripción histórica de sus 
+beneficios, aportaciones y mecanismos de financiamiento. El RJP que forma parte del Contrato Colectivo de Trabajo 
+desde 1988, proporciona una protección más amplia a las personas trabajadoras del IMSS. Este régimen ofrece un 
+sistema de pensiones más favorable y complementario al plan de pensiones previsto en la Ley del Seguro Social (LSS). 
+Su finalidad es brindar una protección integral más allá de los beneficios otorgados por los seguros obligatorios 
+previstos en dicha Ley, relativos a los seguros de Riesgos de Trabajo, Invalidez y Vida, y de Retiro, Cesantía en Edad 
+Avanzada y Vejez. En este sentido, los beneficios por pensiones estipulados en la LSS están integrados en el monto 
+total de las jubilaciones y pensiones contempladas en este régimen (gráfica D.1).
+269
+ANEXO D Principales elementos técnicos para la estimación de los resultados del pasivo laboral
+Gráfica D.1.
+Integración del importe de las jubilaciones y pensiones otorgadas
+conforme el Régimen de Jubilaciones y Pensiones
+Importe de la jubilación
+o pensión otorgada
+conforme el Régimen
+de Jubilaciones 
+y Pensiones
+Importe complementario de la jubilación o pensión 
+otorgada conforme el Régimen de Jubilaciones y Pensiones
+Importe de la pensión que
+se determina conforme la Ley del Seguro Social
+Fuente: Régimen de Jubilaciones y Pensiones vigente desde 1988 que forma parte del Contrato Colectivo de Trabajo, IMSS.
+D.2.1. Descripción histórica de beneficios y aportaciones
+El RJP ha sufrido diversos cambios tanto en las aportaciones que realizan las personas trabajadoras para el financiamiento 
+del plan de pensiones, como en los conceptos que integran el salario base considerado para el cálculo de los beneficios y 
+de las aportaciones. Con base en lo anterior, se presenta un resumen con los principales cambios (cuadro D.2).
+Cuadro D.2.
+Evolución de la base de cálculo de los beneficios y aportaciones de las personas trabajadoras
+al Régimen de Jubilaciones y Pensiones
+Contrato 
+Colectivo 
+de Trabajo
+Principales modificaciones al RJP
+Conceptos que integran el 
+salario base para el cálculo de 
+los importes por jubilaciones 
+o pensiones1/
+Aportación 
+de las personas trabajadoras
+1987-1989 El RJP es un estatuto que crea 
+una protección más amplia y que 
+reemplaza al plan de pensiones 
+determinado por la Ley del Seguro 
+Social en el ramo de Invalidez, Vejez, 
+Cesantía y Muerte, y de Riesgos 
+de Trabajo.
+Sueldo tabular, ayuda 
+de renta, antigüedad, 
+aguinaldo, sobresueldo a 
+personal médico, horario 
+discontinuo, despensa y alto 
+costo de vida.
+1.25% del salario base.
+1989-1991 
+(vigente 
+a partir 
+del 16 de 
+marzo 
+de 1988)1/
+Se establece el RJP vigente, el cual 
+es complementario de los beneficios 
+por pensión que establece la 
+Ley del Seguro Social.
+Principales beneficios: jubilación con 
+100% del último salario base2/, un 
+aguinaldo mensual de 25% del monto 
+de la pensión, pago de un fondo de 
+ahorro, incrementos a la pensión 
+conforme el aumento salarial de 
+las personas trabajadoras en activo 
+y un aguinaldo anual de 15 días.
+Se adicionan los 
+conceptos de zona aislada, 
+infectocontagiosidad médica 
+y no médica, emanaciones 
+radiactivas médicas y no 
+médicas, compensación 
+por docencia y atención 
+integral continua.
+2.75% del salario base y del fondo de ahorro.
+1991-1993 Se incluye el concepto de 
+ayuda para libros.
+3% del salario base y del fondo de ahorro.
+1993-1995 Se adiciona el concepto de 
+riesgo por tránsito vehicular.
+3% del salario base y del fondo de ahorro.
+1995-2005 3% del salario base y del fondo de ahorro. 
+A partir del 16 de octubre de 2005, las personas 
+trabajadoras realizan una aportación adicional 
+conforme lo establecido en el Convenio Adicional 
+para las Jubilaciones y Pensiones de los Trabajadores 
+de Base de Nuevo Ingreso, la cual inició en 
+1% adicional, y se incrementó a partir de 2006 
+en 1 punto porcentual en cada revisión anual hasta 
+alcanzar 7%. La aportación adicional se destina al 
+financiamiento del plan de pensiones establecido 
+en el mencionado Convenio.
+RJP: Régimen de Jubilaciones y Pensiones.
+1/ El Régimen de Jubilaciones y Pensiones que se establece en el Contrato Colectivo de Trabajo 1989-1991 entró en vigor el 18 de marzo de 1988 
+y abrogó al anterior del 15 de diciembre de 1987.
+2/ El salario base que se utiliza para el cálculo de los importes por jubilaciones o pensiones se integra con los conceptos que se definen en el 
+artículo 5 del RJP.
+Fuente: Régimen de Jubilaciones y Pensiones, que forma parte del Contrato Colectivo de Trabajo, IMSS.

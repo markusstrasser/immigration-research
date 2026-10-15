@@ -40,11 +40,12 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 import numpy as np
 import pandas as pd
 
-from population_basis import BASES, suffixed
+from population_basis import BASES, economic_path, suffixed
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
@@ -80,11 +81,23 @@ def lane_file(case, lane, name):
 
 def require_pins(case, *lanes):
     """Stop before computation when the parent has not supplied a committed input for the live case."""
-    if case == "oct14":
+    if case in ("oct14", "oct15"):
         lanes = tuple(dict.fromkeys((*lanes, "main_case")))
     missing = [lane for lane in lanes if not PINS[case].get(lane)]
     if missing:
-        raise SystemExit(f"[BLOCKED] {case}: missing committed {'/'.join(missing)} pins; parent supplies oct14 inputs")
+        raise SystemExit(f"[BLOCKED] {case}: missing committed {'/'.join(missing)} pins; parent supplies live inputs")
+    if case == "oct15":
+        from committed_inputs import checked_bytes
+        files = {
+            "winners": ("channels.csv", "fiscal_specs.csv", "group_frame.csv", "fiscal_lines_band_ends.csv"),
+            "distribution": ("channel_by_percentile.csv",),
+            "generation": ("generation_corrections.json", "generation_results.csv"),
+        }
+        for lane in lanes:
+            paths = ([f"{CASE_LANES[case]}/derived/{name}" for name in ("summary.json", "corrections.json")]
+                     if lane == "main_case" else [lane_file(case, lane, name) for name in files.get(lane, ())])
+            for relative in paths:
+                checked_bytes(PINS[case][lane], relative)
 
 
 # Cases whose rows share the lane's multi-case files (valuation*.csv, valuation_meta.json, world_ledger.csv,
@@ -123,6 +136,8 @@ JUSTICE_FUNCTION_SHARE = {"fire": 1.0, "police": _POLICE_PER_HEAD, "protective_i
 # class: (basis, V/G low, central, high, source). basis 'effect' values what the group's presence adds,
 # 'amount' values the attributed amount at average cost, 'none' values nothing.
 CLASSES = {
+    "production": ("none", 0.0, 0.0, 0.0, "native production carrier; valued through the pay channel, not as a service"),
+    "nonmember_removal": ("none", 0.0, 0.0, 0.0, "item 11 changes the nonmembers who stay; no member service value"),
     "cash": ("effect", 1.0, 1.0, 1.0, "envelope theorem on observed flows: 'individuals are willing to pay for the "
              "mechanical cost' (HSK 2020 p.20); behavioral costs are already in observed earnings [INFERENCE]"),
     "snap": ("effect", 0.65, 1.0, 1.0, "low: Whitmore (2002) trade value 'at least 65%' (HSK fn 38); central/high: "
@@ -147,6 +162,8 @@ CLASSES = {
     "tax": ("effect", 1.0, 1.0, 1.0, "explicit group-borne receipt, $1 per $1"),
     "source_tax": ("none", 0.0, 0.0, 0.0, "item 6 source receipts on job capital; no additional debit from measured "
                    "group earnings; corporate labour incidence is already inside wages [INFERENCE]"),
+    "proportional_mix": ("none", 0.0, 0.0, 0.0, "[ASSUMPTION] signed classified component mix within generation; "
+                         "recipient_components_json retains separate service classes and receipts for pricing"),
 }
 LINES = {
     "cash": ["social_security", "ssi", "unemployment", "refundable_tax_credits", "family_and_general_assistance",
@@ -234,7 +251,9 @@ for _cls, _ids in CAPITAL_COMPONENTS.items():
         LINE_CLASS[f"capital_{_id}"] = LINE_CLASS[f"capital_return_{_id}"] = _cls
 # The case lane of each case whose pins name its commit ("main_case"); world_ledger.py imports it.
 CASE_LANES = {"sept29": f"{FISCAL_REL}/main_case_2026_09_29", "oct05": f"{FISCAL_REL}/main_case_2026_10_05",
-              "oct07": f"{FISCAL_REL}/main_case_2026_10_07", "oct14": f"{FISCAL_REL}/main_case_2026_10_14"}
+              "oct07": f"{FISCAL_REL}/main_case_2026_10_07", "oct14": f"{FISCAL_REL}/main_case_2026_10_14",
+              "oct15": f"{FISCAL_REL}/main_case_2026_10_15"}
+CASE_LANES.update({case: pin["case_lane"] for case, pin in PINS.items() if pin.get("case_lane")})
 # From oct07 (main case v6) an item may add capital components that offset one of the case's components (the
 # user-fee item's k12_user_fees, college_user_fees, health_sl_user_fees and health_fed_user_fees; meta.capital_return
 # .components' of_component). Each takes the class of the component it offsets, as it takes that component's level
@@ -250,12 +269,23 @@ def gate(name, ok, **detail):
 
 
 def pinned_csv(commit, rel):
+    if commit in {PINS["oct15"][k] for k in ("main_case", "generation", "winners", "distribution")}:
+        from committed_inputs import checked_bytes
+        return pd.read_csv(io.BytesIO(checked_bytes(commit, rel)))
     out = subprocess.run(["git", "-C", str(REPO), "show", f"{commit}:{rel}"], capture_output=True, check=True)
     return pd.read_csv(io.BytesIO(out.stdout))
 
 
 def case_payload(case):
     """The authoritative item registry and edits, read at the frozen case pin."""
+    if PINS[case].get("main_case") == "WORKTREE_SHA256":
+        import hashlib
+        rel = f"{CASE_LANES[case]}/derived/corrections.json"
+        record = json.loads((HERE / "inputs/oct15_source_hashes.json").read_text())
+        data = (REPO / rel).read_bytes()
+        gate("declared_worktree_case", record.get("case") == case and record.get("provenance") == "[WORKTREE INPUT]")
+        gate("exact_worktree_case_payload", hashlib.sha256(data).hexdigest() == record["sha256"].get(rel))
+        return json.loads(data)
     if not PINS[case].get("main_case"):
         return {"meta": {"items": []}, "edits": []}
     out = subprocess.run(["git", "-C", str(REPO), "show",
@@ -276,16 +306,90 @@ def item_edits(payload, item_id):
     return item, edits
 
 
+CARRIER_PAYER = {}
+CARRIER_RECEIPTS = set()
+# Prepared from the active case/basis, never inferred from a coverage line's name.
+_COVERAGE_VALUES = {}
+_CARRIER_ACTIVITY = {}
+
+
+def prepare_carrier_activity(lines, payload):
+    """Alternative completion carriers are services only at their active parent.
+
+    A genuine zero-response parent (defense, for example) remains active at
+    its selected key. Capital/production carriers activate at their declared
+    nonzero response. Raw inactive amounts are retained for fiscal provenance.
+    """
+    _CARRIER_ACTIVITY.clear()
+    end_column = "end" if "end" in lines else "band_end"
+    for end, frame in lines.groupby(end_column):
+        for line, source in payload["meta"].get("union_completion", {}).get("carriers", {}).items():
+            carrier = frame[frame.line.eq(line)]
+            gate("carrier_activity_unique", len(carrier) == 1, end=end, line=line)
+            row = carrier.iloc[0]
+            if source["kind"] == "line":
+                parent = frame[frame.line.eq(source["parent_line"]) & frame.side.eq(source["side"])]
+                # Receipt absence is separately fatal at the principal cash
+                # line-cell closure. Do not substitute another scenario here.
+                if parent.empty:
+                    continue
+                gate("carrier_parent_activity_unique", len(parent) == 1, end=end, line=line)
+                parent = parent.iloc[0]
+                selected = parent.key.split(":", 1)[0] if source["side"] == "receipt" else parent.key
+                active = selected == source["parent_key"] and abs(parent.response - row.response) < 1e-12
+            else:
+                gate("carrier_activity_kind_known", source["kind"] in ("capital", "production"), source=source)
+                active = row.response != 0
+            _CARRIER_ACTIVITY[(end, line)] = bool(active)
+
+
 def receipt_contract(case):
     classes, payers = dict(RECEIPT_CLASS), dict(RECEIPT_PAYER)
-    item, edits = item_edits(case_payload(case), "job_capital_taxes")
+    payload = case_payload(case)
+    item, edits = item_edits(payload, "job_capital_taxes")
     if item is not None:
         lines = {e["line"] for e in edits}
         gate("item6_explicit_receipt_incidence", all(e["side"] == "receipt" for e in edits)
              and lines == set(SOURCE_TAX_PAYER), lines=sorted(lines))
         for line in lines:
             classes[line], payers[line] = "source_tax", SOURCE_TAX_PAYER[line]
+    CARRIER_PAYER.clear()
+    CARRIER_RECEIPTS.clear()
+    for line, source in completion_incidence(payload, classes, payers).items():
+        ITEM_CLASS[line] = source["incidence_class"]
+        CARRIER_PAYER[line] = source["economic_payer"]
+        if source["source"].get("kind") == "line" and source["source"].get("side") == "receipt":
+            CARRIER_RECEIPTS.add(line)
+    if payload["meta"].get("mixed_unit_removal"):
+        ITEM_CLASS["mixed_unit_removal"] = "nonmember_removal"
     return classes, payers
+
+
+def completion_incidence(payload, classes, payers):
+    """Declared synthetic carriers inherit their authoritative parent's class and payer.
+
+    A receipt represented by a signed spending carrier retains receipt incidence;
+    unknown parent classes or payers fail. Capital/production are distinct rows.
+    """
+    declared = {}
+    for line, source in payload["meta"].get("union_completion", {}).get("carriers", {}).items():
+        kind, parent = source["kind"], source["parent_line"]
+        if kind == "line" and source["side"] == "receipt":
+            cls, payer = classes.get(parent), payers.get(parent)
+            gate(f"completion_receipt_incidence_{line}", bool(cls) and bool(payer), parent=parent)
+        elif kind == "line" and source["side"] == "spending":
+            cls, payer = LINE_CLASS.get(parent, ITEM_CLASS.get(parent)), "government_budget"
+            gate(f"completion_spending_class_{line}", bool(cls), parent=parent)
+        elif kind == "capital":
+            key = parent if parent.startswith("capital_") else f"capital_{parent}"
+            cls, payer = LINE_CLASS.get(key, ITEM_CLASS.get(key)), "government_budget"
+            gate(f"completion_capital_class_{line}", bool(cls), parent=parent)
+        elif kind == "production":
+            cls, payer = "production", "group_workers_and_capital_owners"
+        else:
+            gate(f"completion_unknown_source_{line}", False, source=source)
+        declared[line] = dict(incidence_class=cls, economic_payer=payer, source=source)
+    return declared
 
 
 def finite_rows(frame, name, columns):
@@ -300,6 +404,10 @@ def child_credit_adjustments(case, lines):
     neither the headline's removal cost nor its generation fiscal split changes. No total is inferred from prose.
     """
     payload = case_payload(case)
+    if payload["meta"].get("mixed_unit_removal"):
+        # Item11 replaces the crossing correction; inherited item5b is already
+        # subtracted in its principal. Applying the v7 reallocation again doubles it.
+        return {}
     item, edits = item_edits(payload, "child_credits")
     if item is None:
         return {}
@@ -356,13 +464,39 @@ def valuation_row(r, classes, payers, credit=0.0):
     """Keep the fiscal closure separate from who receives or bears the economic flow."""
     finite_rows(pd.DataFrame([{"amount_bn": r.amount_bn, "effect_bn": r.effect_bn, "response": r.response}]),
                 f"line_{r.line}", ("amount_bn", "effect_bn", "response"))
+    if r.side == "coverage":
+        end = getattr(r, "end", getattr(r, "band_end", None))
+        key = (end, r.line)
+        gate("coverage_value_prepared", key in _COVERAGE_VALUES, key=key)
+        value = dict(_COVERAGE_VALUES[key])
+        generation = getattr(r, "generation", None)
+        if generation is not None and str(generation) not in ("", "nan", "union"):
+            expected = value.pop("coverage_generation")
+            if generation.replace("G3plus", "G3+") != expected:
+                gate("coverage_other_generation_zero", abs(r.effect_bn) < 1e-12, line=r.line)
+                for name in ("amount_bn", "G_bn", "V_low_bn", "V_central_bn", "V_high_bn", "third_party_bn",
+                             "net_cost_bn", "source_tax_credit_bn"):
+                    value[name] = 0.0
+                if "recipient_components_json" in value:
+                    value["recipient_components_json"] = "[]"
+                return value
+        else:
+            value.pop("coverage_generation")
+        gate("coverage_prepared_amount_exact", abs(value["amount_bn"] - r.amount_bn) < 1e-6
+             and abs(value["net_cost_bn"] + r.effect_bn) < 1e-6, key=key)
+        return value
     cls, cost, values, third = value_line(r, receipt_classes=classes)
+    end = getattr(r, "end", getattr(r, "band_end", None))
+    if _CARRIER_ACTIVITY.get((end, r.line)) is False:
+        gate("inactive_carrier_has_zero_effect", abs(r.effect_bn) < 1e-12, end=end, line=r.line)
+        values, third = [0.0, 0.0, 0.0], 0.0
     values = [v - credit for v in values]
-    payer = payers.get(r.line) if r.side == "receipt" else "government_budget"
+    payer = CARRIER_PAYER.get(r.line) or (payers.get(r.line) if r.side == "receipt" else "government_budget")
     gate(f"economic_payer_{r.line}", bool(payer), side=r.side)
     if credit and r.side == "receipt":
         payer += ";item5b_delta_nonmember_filers"
-    return dict(cls=cls, economic_payer=payer, receipt_incidence_class=cls if r.side == "receipt" else "not_receipt",
+    return dict(cls=cls, economic_payer=payer,
+                receipt_incidence_class=cls if r.side == "receipt" or r.line in CARRIER_RECEIPTS else "not_receipt",
                 amount_bn=r.amount_bn, response=r.response, G_bn=cost, V_low_bn=values[0],
                 V_central_bn=values[1], V_high_bn=values[2], third_party_bn=third, net_cost_bn=cost,
                 source_tax_credit_bn=r.effect_bn if cls == "source_tax" else 0.0,
@@ -448,6 +582,8 @@ def value_case(case):
     gate("case_present", len(f) > 0, case=case, model=pin["model"])
     finite_rows(f, "case_inputs", ("amount_bn", "response", "effect_bn"))
     classes, payers = receipt_contract(case)
+    if case == "oct15":
+        coverage_source_contract(f, case_payload(case), classes, case=case)
     credit = {}
     if case == "oct14":
         glines = pd.read_csv(DERIVED / f"generation_lines_{case}.csv")
@@ -480,6 +616,142 @@ def value_case(case):
     return out, extremes
 
 
+def proportional_component_mix(donors, amount):
+    """Signed component shares conserve each residual; receipt/spending stay separate.
+
+    This is the parent's proportional-mix assumption, not a recovered source
+    decomposition. A negative residual reverses the same signed mix rather
+    than being silently relabeled as a tax receipt.
+    """
+    columns = ["net_cost_bn", "V_low_bn", "V_central_bn", "V_high_bn", "third_party_bn",
+               "source_tax_credit_bn"]
+    finite_rows(donors, "residual_mix_donors", columns)
+    donors = donors.copy()
+    if "component_line" not in donors:
+        donors["component_line"] = donors.cls
+    by = donors.groupby(["component_side", "component_line", "cls", "economic_payer"], dropna=False)[columns].sum().reset_index()
+    denominator = float(by.net_cost_bn.sum())
+    gate("residual_mix_nonzero_classified_net", abs(denominator) > 1e-12 or amount == 0,
+         denominator=denominator, residual=amount)
+    factor = amount / denominator if denominator else 0.0
+    by[columns] *= factor
+    gate("residual_mix_closes_each_row", abs(float(by.net_cost_bn.sum()) - amount) < 1e-10,
+         residual=amount, actual=float(by.net_cost_bn.sum()))
+    by["allocation_share"] = by.net_cost_bn / amount if amount else 0.0
+    by["assumption"] = "[ASSUMPTION] signed proportional counted-member component mix within generation; receipts/spending separate"
+    return by
+
+
+def prepare_coverage_values(case, generation_lines, union_lines, payload=None, basis="set"):
+    """Prepare exact line-cell recipient values on one active fiscal timing basis.
+
+    Classified rows inherit their declared source class. Residuals and the G3+
+    profile calibration use classified counted members in the same generation;
+    their fiscal signs and separate receipt/spending components are preserved.
+    """
+    payload = case_payload(case) if payload is None else payload
+    _COVERAGE_VALUES.clear()
+    prepare_carrier_activity(union_lines, payload)
+    classes, payers = receipt_contract(case)
+    declared = {}
+    for end, block in payload["meta"].get("coverage", {}).get("by_end", {}).items():
+        for index, source in enumerate(block["decomposition"]["line_parts"]):
+            if source["economic_class"] != "production":
+                declared[(end, f"coverage_{index}_{source['generation']}_{source['line']}")] = source
+    if not declared:
+        return pd.DataFrame()
+    observed = union_lines[union_lines.side.eq("coverage")].copy()
+    end_column = "end" if "end" in observed else "band_end"
+    observed = observed.set_index([end_column, "line"])
+    gate("coverage_source_keys_exact", observed.index.is_unique and set(observed.index) == set(declared))
+    g = generation_lines.copy()
+    g["generation"] = g.generation.str.replace("G3plus", "G3+", regex=False)
+    gend = "band_end" if "band_end" in g else "end"
+    donor_values = []
+    for r in g[~g.side.isin(["total", "coverage", "post_engine"])].itertuples():
+        side = "receipt" if r.side == "receipt" or r.line in CARRIER_RECEIPTS else "spending"
+        value = valuation_row(r, classes, payers)
+        if value["cls"] in ("correction", "production", "nonmember_removal"):
+            continue
+        donor_values.append(dict(end=getattr(r, gend), generation=r.generation,
+                                 component_side=side, component_line=r.line, **value))
+    donors = pd.DataFrame(donor_values)
+    contracts, mixes = [], []
+    for (end, name), source in declared.items():
+        row, amount = observed.loc[(end, name)], source["coverage_bn"]
+        gate("coverage_source_amount_exact", abs(row.amount_bn - amount) < 1e-6
+             and abs(row.effect_bn + amount) < 1e-6 and row.response == 1)
+        generation = source["generation"].replace("G3plus", "G3+")
+        parent, side = source.get("source_line"), source.get("source_side")
+        residual = source["economic_class"] == "unclassified_residual"
+        if residual:
+            mix = proportional_component_mix(donors[donors.end.eq(end) & donors.generation.eq(generation)], amount)
+            mixes.append(mix.assign(end=end, generation=generation, line=name, source_line=source["line"]))
+            value = dict(cls="proportional_mix", economic_payer="generation_classified_mix;see_component_contract",
+                         receipt_incidence_class="mixed_receipts_and_spending", amount_bn=amount, response=1.0,
+                         G_bn=amount, net_cost_bn=amount,
+                         **{column: float(mix[column].sum()) for column in
+                            ("V_low_bn", "V_central_bn", "V_high_bn", "third_party_bn", "source_tax_credit_bn")},
+                         child_credit_other_residents_bn=0.0, group_credit_adjustment_bn=0.0)
+            components = mix.rename(columns={"component_line": "line"}).assign(
+                G_bn=lambda d: d.net_cost_bn, amount_bn=lambda d: d.net_cost_bn)
+            value["recipient_components_json"] = json.dumps(components[["line", "cls", "component_side",
+                "economic_payer", "amount_bn", "G_bn", "net_cost_bn", "V_low_bn", "V_central_bn", "V_high_bn",
+                "third_party_bn", "source_tax_credit_bn"]].to_dict("records"),
+                sort_keys=True, separators=(",", ":"))
+            status = "[ASSUMPTION] proportional component mix"
+        else:
+            if side == "capital":
+                parent = parent if parent.startswith("capital_") else f"capital_{parent}"
+                side = "spending"
+            if side == "post_engine" and parent == "mixed_unit_removal":
+                ITEM_CLASS[parent] = "nonmember_removal"
+            gate("coverage_source_side_declared", side in ("receipt", "spending", "post_engine"), source=source)
+            response = source.get("source_response", 1.0)
+            # Coverage exports fiscal effects, while public goods are valued at
+            # average attributed cost. Recover that amount only from the export's
+            # own response; no new person-price allocation is constructed here.
+            base_amount = amount / response if response else 0.0
+            gate("coverage_zero_response_zero_effect", bool(response) or abs(amount) < 1e-12, source=source)
+            proxy = SimpleNamespace(side=side, line=parent, amount_bn=-base_amount if side == "receipt" else base_amount,
+                                    effect_bn=-amount, response=response)
+            value = valuation_row(proxy, classes, payers)
+            value.update(amount_bn=amount, response=1.0)
+            # Justice's export has already separated protection and offender use.
+            if source.get("category") == "justice_per_head":
+                value.update(V_low_bn=base_amount, V_central_bn=base_amount, V_high_bn=base_amount)
+            elif source.get("category") == "justice_use":
+                value.update(V_low_bn=0.0, V_central_bn=0.0, V_high_bn=0.0)
+            status = "source class identified"
+        _COVERAGE_VALUES[(end, name)] = dict(value, coverage_generation=generation)
+        contracts.append(dict(end=end, line=name, generation=generation, source_line=parent or source["line"],
+                              source_side=side or "signed_mix", economic_class=source["economic_class"],
+                              incidence_class=value["cls"], cost_bn=amount, V_central_bn=value["V_central_bn"],
+                              status=status, basis=basis))
+    contract = pd.DataFrame(contracts)
+    contract.to_csv(case_path(f"coverage_valuation_contract{'_cash' if basis == 'cash' else ''}.csv", case),
+                    index=False, lineterminator="\n", float_format="%.12f")
+    if mixes:
+        mixed = pd.concat(mixes, ignore_index=True)
+        mixed.to_csv(case_path(f"coverage_residual_mix{'_cash' if basis == 'cash' else ''}.csv", case),
+                     index=False, lineterminator="\n", float_format="%.12f")
+        comparison = contract[contract.economic_class.eq("unclassified_residual")].groupby("end").agg(
+            residual_net_bn=("cost_bn", "sum"), residual_gross_bn=("cost_bn", lambda x: x.abs().sum()),
+            convention_gap_bn=("V_central_bn", "sum")).reset_index()
+        comparison["zero_recipient_value_bn"] = 0.0
+        comparison["basis"] = basis
+        comparison["assumption"] = "[ASSUMPTION] proportional mix; zero recipient value is a beside convention"
+        comparison.to_csv(case_path(f"coverage_residual_comparison{'_cash' if basis == 'cash' else ''}.csv", case),
+                          index=False, lineterminator="\n", float_format="%.12f")
+    return contract
+
+
+def coverage_source_contract(lines, payload, receipt_classes, case="oct15"):
+    """Build the source contract from the active case's exact generation cells."""
+    generation_lines = pd.read_csv(DERIVED / f"generation_lines_{case}.csv")
+    return prepare_coverage_values(case, generation_lines, lines, payload=payload)
+
+
 def value_generations(case, union):
     """The generation lane's split of the case's lines (derived/generation_lines_<case>.csv, from
     generation_lines.cjs), valued line by line with the union's classes. The capital return's components are
@@ -496,7 +768,8 @@ def value_generations(case, union):
     tot = g[g.side == "total"].pivot_table(index=["band_end", "generation"], columns="line", values="effect_bn")
     lines = g[g.side != "total"].assign(side=lambda d: d.side.replace({"capital": "spending"}))
     # Gate: the three generations add to the case's lines, line by line (the same line set, the same amounts).
-    s = lines.groupby(["band_end", "side", "line"])[["amount_bn", "effect_bn"]].sum()
+    s = lines.assign(side=lambda d: d.side.replace({"coverage": "spending", "post_engine": "spending"})).groupby(
+        ["band_end", "side", "line"])[["amount_bn", "effect_bn"]].sum()
     u = union.set_index(["end", "side", "line"])
     u = pd.DataFrame({"amount_bn": u.amount_bn, "effect_bn": -u.net_cost_bn})
     gate("generation_lines_match_the_case_lines", s.index.sort_values().equals(u.index.sort_values()),
@@ -505,7 +778,8 @@ def value_generations(case, union):
     gate("generations_add_to_the_case_lines", bool((d < 1e-6).all()), max_abs_diff=d.to_dict())
     rows = []
     for r in lines.itertuples():
-        head = dict(case=case, end=r.band_end, generation=r.generation, side=r.side, line=r.line)
+        head = dict(case=case, end=r.band_end, generation=r.generation,
+                    side="receipt" if r.side == "receipt" else "spending", line=r.line)
         rows.append(dict(head, **valuation_row(r, classes, payers,
                          credit.get((r.band_end, r.generation, r.side, r.line), 0.0))))
     out = pd.DataFrame(rows)
@@ -525,17 +799,17 @@ def value_generations(case, union):
     return out
 
 
-def mexico_budget(basis="cps"):
+def mexico_budget(basis="cps", *, ages=None, premium=None, case=None):
     """The group's alternative world: what Mexico's budget would spend on the same people, by class, at the
     group's own ages (CPS ASEC 2025; 40.9m on the cps basis, the account's 39.71m on row4, main case v5's 42.75m on
     lineage), priced with Mexico's 2024 per-person spending (mexico.py). Case-independent."""
-    ages = pd.read_csv(suffixed(DERIVED / "group_ages.csv", basis))
+    ages = pd.read_csv(economic_path(DERIVED / "group_ages.csv", basis, case)) if ages is None else ages
     comp = pd.read_csv(DERIVED / "mexico_comparators_by_age.csv").set_index("age")
     meta = json.load(open(DERIVED / "mexico_meta.json"))["comparators"]
     # Taxes: the income tax and employee contributions withheld from formal pay are a measured lower bound, in the
     # central premium scenario (g2_premium.csv). world_ledger adds IVA, IEPS and the fuel excise at the household
     # decile's rate (SHCP 2026) in its central and bounds all taxes above. G3+ has bounds only.
-    g2 = pd.read_csv(suffixed(DERIVED / "g2_premium.csv", basis))
+    g2 = pd.read_csv(economic_path(DERIVED / "g2_premium.csv", basis, case)) if premium is None else premium
     g2 = g2[g2.ppp.eq("gdp") & g2.diploma_reread.eq(0.25) & ~g2.mishra]
     withheld = {"G1": g2[g2.convention.eq("own_schooling_all_ages") & g2.selection.eq("p56")].mexico_withheld_tax_bn.item(),
                 "G2": g2[g2.convention.eq("rearing")].mexico_withheld_tax_bn.mean(), "G3+": np.nan}
@@ -652,7 +926,7 @@ def incidence_summary(case, union, generations):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--case", default="oct14", choices=sorted(PINS))
+    ap.add_argument("--case", default="oct15", choices=sorted(PINS))
     case = ap.parse_args().case
     require_pins(case, "winners", "generation")
     DERIVED.mkdir(exist_ok=True)

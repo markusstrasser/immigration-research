@@ -1,0 +1,19 @@
+case,basis,end,generation,line,source_line,cls,recipient_value_bn,fiscal_cost_bn,native_splits,provenance
+oct15,cash,low,G1,defense,defense,public_good,1.126756970565215,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,low,G1,roads_vmt_fed,roads_vmt_fed,public_good,0.0016182279171328951,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,low,G1,roads_vmt_fed,roads_vmt_fed,public_good,0.00041404326272991043,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,low,G1,roads_vmt_fed,roads_vmt_fed,public_good,-0.0014670558195435516,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,low,G2,defense,defense,public_good,2.0817129989055392,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,low,G2,roads_vmt_fed,roads_vmt_fed,public_good,0.0029895086390831732,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,low,G2,roads_vmt_fed,roads_vmt_fed,public_good,0.00088000120829169882,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,low,G2,roads_vmt_fed,roads_vmt_fed,public_good,-0.0030536799446637124,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,low,G3+,defense,defense,public_good,1.6851771910370981,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,low,G3+,roads_vmt_fed,roads_vmt_fed,public_good,0.002412240940450101,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,low,G3+,roads_vmt_fed,roads_vmt_fed,public_good,0.00091032898867945326,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,low,G3+,roads_vmt_fed,roads_vmt_fed,public_good,-0.0031240985843010282,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,low,G3+,roads_vmt_fed,union_completion_roads_vmt_fed_k,public_good,-0.00019483716593687926,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,low,G3+,roads_vmt_fed,union_completion_roads_vmt_fed_k,public_good,-7.8778671590716751e-05,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,low,G3+,roads_vmt_fed,union_completion_roads_vmt_fed_k,public_good,0.00027035537640813872,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,high,G1,defense,defense,public_good,1.126756970565215,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,high,G2,defense,defense,public_good,2.0817129989055392,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights
+oct15,cash,high,G3+,defense,defense,public_good,1.6851771910370981,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights

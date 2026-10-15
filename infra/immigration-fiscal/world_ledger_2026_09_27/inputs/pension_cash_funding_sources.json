@@ -1,0 +1,33 @@
+{
+  "status": "[DEGRADED] s=1 all-public proxy; no reconciled P032 public share identified",
+  "arms": [
+    1,
+    0.5,
+    0
+  ],
+  "sources": [
+    {
+      "path": "inputs/pension_cash_enigh_conceptual_2024.pdf",
+      "url": "https://www.inegi.org.mx/contenidos/programas/enigh/nc/2024/doc/889463924487.pdf",
+      "retrieved_utc": "2026-10-15T02:39:27.613386+00:00",
+      "sha256": "dc348b558a1561dae5943ac030a9478ff0d093cf85619a743cca8e474f1c3bb8",
+      "bytes": 3437328,
+      "representation": "original PDF bytes",
+      "use": "Printed pp. 38 and 121 (PDF pp. 44 and 127): pension receipts comprise mixed employer/worker/government schemes; domestic pensions are receipts from households, institutions or firms. No public-funding share is supplied."
+    },
+    {
+      "path": "inputs/pension_cash_imss_j001_2024_web_receipt.txt",
+      "url": "https://www.imss.gob.mx/sites/all/statics/pdf/transparencia/evaluaciones/dpes/ppj001/dx/Diagnostico-Pp-J001-2024.pdf",
+      "retrieved_utc": "2026-10-15T02:39:27.693078+00:00",
+      "sha256": "4c2d4f895125ee4233bb5f25feff624df17b23da2bea3142e8203a6c2939751d",
+      "bytes": 337,
+      "representation": "primary-source verification receipt and paraphrase; not original PDF bytes",
+      "use": "Pp J001 identifies the Ley 73 payment programme as federal-funded. Programme coverage is not an ENIGH P032 reconciliation or an all-scheme public share."
+    }
+  ],
+  "rejected_shortcuts": [
+    "IMSS Ley 73 payer label is not the public share of all P032 receipts",
+    "Institution-level pensioner counts cannot identify income-weighted P032 funding shares",
+    "AFORE withdrawals include capital disbursements, not solely P032 periodic pensions"
+  ]
+}

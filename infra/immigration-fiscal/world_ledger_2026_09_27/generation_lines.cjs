@@ -41,6 +41,7 @@
 const fs = require("fs");
 const path = require("path");
 const { execFileSync } = require("child_process");
+const { capitalAmount } = require("./capital_amount.cjs");
 
 const HERE = __dirname;
 const FISCAL = path.join(HERE, "..");
@@ -55,11 +56,18 @@ const SEPT29 = "main_case_2026_09_29";
 const OCT05 = "main_case_2026_10_05";
 const OCT07 = "main_case_2026_10_07";
 const OCT14 = "main_case_2026_10_14";
-const CASES = { oct14: OCT14, oct07: OCT07, oct05: OCT05, sept29: SEPT29, sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_case_schools_full_2026_09_26" };
-const CASE = arg("--case", "oct14");
+const OCT15 = "main_case_2026_10_15";
+const CASES = { oct15: OCT15, oct14: OCT14, oct07: OCT07, oct05: OCT05, sept29: SEPT29, sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_case_schools_full_2026_09_26" };
+const CASE = arg("--case", "oct15");
+const SET = arg("--set", "set");
+if (!["set", "cash"].includes(SET)) throw Error("[BLOCKED] --set must be set or cash");
+const OUTPUT_CASE = CASE + (SET === "cash" ? "_cash" : "");
 if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
+if (CASE !== "oct15") throw new Error(`[BLOCKED] live case is oct15; ${CASE} outputs are frozen`);
+const SNAPSHOT = CASE === "oct15" ? require("./v8_snapshot.cjs") : null;
+if (SNAPSHOT) { SNAPSHOT.verify(); console.log("[COMMITTED INPUT] exact oct15 generation/core source bytes verified"); }
 // The cases that carry the return on public capital, which the lane evaluates with evaluateFull().
-const FULL = CASE === "sept27" || CASE === "sept29" || CASE === "oct05" || CASE === "oct07" || CASE === "oct14";
+const FULL = CASE === "sept27" || CASE === "sept29" || CASE === "oct05" || CASE === "oct07" || CASE === "oct14" || CASE === "oct15";
 const PINNED = JSON.parse(fs.readFileSync(path.join(HERE, "pins.json"), "utf8"))[CASE];
 if (!PINNED) throw new Error(`[BLOCKED] no input pins for ${CASE}`);
 const PIN = PINNED.generation;
@@ -69,13 +77,24 @@ if (CASE === "oct14" && !PINNED.main_case) throw new Error(`[BLOCKED] no final m
 // another directory ("dirs") or rename a file ("files"), as valuation.py's lane_file() reads them.
 const GREL = (PINNED.dirs || {}).generation || "infra/immigration-fiscal/generation_account_2026_09_24/derived";
 const GFILES = (PINNED.files || {}).generation || {};
-const gfile = (f) => GFILES[f] || f;
+const gfile = (f) => {
+  const mapped=GFILES[f] || f;
+  return SET === "cash" && ["generation_corrections.json","generation_results.csv"].includes(f)
+    ? mapped.replace(/(\.[^.]+)$/, "_cash$1") : mapped;
+};
 const show = (f) => {
+  if (SNAPSHOT) {
+    const body=execFileSync("git",["-C",REPO,"show",`${PIN}:${GREL}/${gfile(f)}`],{maxBuffer:256*1024*1024}).toString("utf8");
+    if(body!==SNAPSHOT.read(`${GREL}/${gfile(f)}`))throw Error(`[BLOCKED] generation pin does not match file ${gfile(f)}`);
+    return body;
+  }
   try { return execFileSync("git", ["-C", REPO, "show", `${PIN}:${GREL}/${gfile(f)}`], { maxBuffer: 1 << 30 }).toString("utf8"); }
   catch (e) { throw new Error(`[BLOCKED] ${CASE} generation input missing at ${PIN}: ${GREL}/${gfile(f)}`, { cause: e }); }
 };
-const P = require(path.join(FISCAL, CASES[CASE], "package.cjs"));
+const PACKAGE = require(path.join(FISCAL, CASES[CASE], "package.cjs"));
+const P = SET === "cash" ? PACKAGE.CASH : PACKAGE;
 const { Engine, MAIN_SPECS } = P;
+const CAPITAL_REGISTRY = P.correctionsPayload().meta.capital_return;
 const GENS = ["G1", "G2", "G3plus"];
 
 const fails = [];
@@ -88,7 +107,7 @@ function gate(label, ok, detail) {
 // the working tree, so the lane there, and every module the package loads, must be that commit's. The lane's Markdown
 // (RESULT.md and the like) is read by nothing here, so a later note there does not stop the run (2026-10-07: v5's lane
 // gained a RESULT note after its pin, 3cc9970, and the oct05 run stopped on it).
-if (PINNED.main_case) {
+if (PINNED.main_case && !SNAPSHOT) {
   const git = (...a) => execFileSync("git", ["-C", REPO, ...a]).toString("utf8").trim();
   const lane = `infra/immigration-fiscal/${CASES[CASE]}`;
   const notMarkdown = `:(exclude)${lane}/*.md`;
@@ -112,19 +131,26 @@ const raw = Object.fromEntries(GENS.map((g) => [g, show(`model_${g}.json`)]));
 // Each model is parsed on its own, so the corrected model never shares objects with the uncorrected one.
 const MODELS = {
   corrected: Object.fromEntries(GENS.map((g) => [g, Engine.applyCorrections(JSON.parse(raw[g]), corr.payloads.a[g])])),
-  uncorrected: Object.fromEntries(GENS.map((g) => [g, JSON.parse(raw[g])])),
+  uncorrected: Object.fromEntries(GENS.map((g) => [g, P.withSyntheticLines(JSON.parse(raw[g]))])),
 };
 // run_generations.cjs's partsAt(): evaluateFull() under the cases with the capital return, the engine on stateFor()
 // otherwise.
-const partsAt = (m, spec) => (FULL ? P.evaluateFull(m, spec, P.MAIN_PROFILE)
+const V8EV = CASE === "oct15" ? require("../generation_account_2026_09_24/v8_split.cjs").evaluator(P.correctionsPayload(), P) : null;
+const partsAt = (m, spec) => (V8EV ? V8EV.evaluateFull(m, spec) : FULL ? P.evaluateFull(m, spec, P.MAIN_PROFILE)
   : { evaluation: Engine.evaluate(m, P.stateFor(m, spec, P.MAIN_PROFILE)), capital: { total_bn: 0, components: [] } });
-const costOf = (r) => -r.evaluation.welfare_bn + r.capital.total_bn;
+const costOf = (r) => r.cost_bn ?? (-r.evaluation.welfare_bn + r.capital.total_bn);
 
 const union = MAIN_SPECS.map((s) => GENS.reduce((t, g) => t + costOf(partsAt(MODELS.corrected[g], s)), 0));
+if (CASE === "oct15") {
+  const unionModel=P.payloadModel();
+  const worst=Math.max(...MAIN_SPECS.map((s,i)=>Math.abs(union[i]-P.evaluateFull(unionModel,s,P.MAIN_PROFILE).cost_bn)));
+  gate("generation costs add to the case at every specification (1e-9)",worst<1e-9,`max |diff| ${worst.toExponential(2)} bn`);
+}
 const lo = union.indexOf(Math.min(...union)), hi = union.indexOf(Math.max(...union));
-if (CASE === "oct14") {
-  const summary = JSON.parse(fs.readFileSync(path.join(FISCAL, OCT14, "derived", "summary.json"), "utf8"));
-  const ends = summary.v7.end_specifications.set;
+if (CASE === "oct14" || CASE === "oct15") {
+  const summary = JSON.parse(fs.readFileSync(path.join(FISCAL, CASES[CASE], "derived", "summary.json"), "utf8"));
+  const listed = summary[CASE === "oct15" ? "v8" : "v7"].end_specifications[SET];
+  const ends = Array.isArray(listed[0]) ? listed[0] : listed;
   gate("oct14 spans only the case's personal specifications", MAIN_SPECS.length === 32
     && MAIN_SPECS.every((s) => s.allocation === "personal"));
   gate("oct14 ends are the case's v7.end_specifications.set", lo === ends[0] && hi === ends[1],
@@ -134,7 +160,7 @@ if (CASE === "oct14") {
 const [bandHead, ...bandRows] = fs.readFileSync(path.join(FISCAL, CASES[CASE], "derived", "main_case_bands.csv"), "utf8")
   .trim().split("\n").map((l) => l.split(","));
 const bc = Object.fromEntries(bandHead.map((k, i) => [k, i]));
-const adopted = bandRows.filter((r) => r[bc.profile] === P.MAIN_PROFILE && r[bc.variant] === "adopted");
+const adopted = bandRows.filter((r) => r[bc.profile] === P.MAIN_PROFILE && r[bc.variant] === (SET === "cash" ? "cash_set" : "adopted"));
 gate(`the generations' union at the band ends (specs ${lo} and ${hi}) is ${CASES[CASE]}'s adopted band (main_case_bands.csv, `
   + `${P.MAIN_PROFILE}; tolerance 5e-5, half the last printed digit)`, adopted.length === 1
   && Math.abs(union[lo] - Number(adopted[0][bc.cost_low_bn])) < 5.01e-5 && Math.abs(union[hi] - Number(adopted[0][bc.cost_high_bn])) < 5.01e-5,
@@ -162,19 +188,24 @@ for (const [end, i] of [["low", lo], ["high", hi]]) {
       const r = partsAt(m, spec), ev = r.evaluation;
       const scenario = P.stateFor(m, spec, P.MAIN_PROFILE).receipt_scenario;
       const put = (side, id, key, amount, response, effect) =>
-        out[which].push([CASE, end, i, spec.allocation, g, side, id, key, f(amount), f(response), f(effect)].join(","));
+        out[which].push([OUTPUT_CASE, end, i, spec.allocation, g, side, id, key, f(amount), f(response), f(effect)].join(","));
       for (const x of ev.spending) put("spending", x.id, x.key, x.amount_bn, x.response, x.effect_bn);
       for (const x of ev.receipts) put("receipt", x.id, `${scenario}:${x.key}`, x.amount_bn, x.response, x.effect_bn);
       for (const c of r.capital.components) {
-        const amount = c.stock_charged_bn * spec.rate * c.key;
+        const amount = capitalAmount(c, CAPITAL_REGISTRY, spec.reading);
         capWorst = Math.max(capWorst, Math.abs(amount * c.response - c.return_bn));
         put("capital", `capital_${c.id}`, "", amount, c.response, -c.return_bn);
+      }
+      for (const id of ["mixed_unit_removal", "coverage"]) {
+        const amount = r.post_engine?.[`${id}_bn`] || 0;
+        if (CASE === "oct15") put("post_engine", id, "", amount, 1, -amount);
       }
       // Totals, as positive costs to other residents: the direct response (spending less receipts), the capital
       // return, the production term (private gain plus induced receipts, signed as a cost) and the cost itself.
       const lines = ev.spending.reduce((t, x) => t - x.effect_bn, 0) - ev.receipts.reduce((t, x) => t + x.effect_bn, 0);
       put("total", "direct_fiscal", "", 0, 0, -ev.direct_fiscal_response_bn);
       put("total", "capital_return", "", 0, 0, r.capital.total_bn);
+      if (CASE === "oct15") put("total", "post_engine", "", 0, 0, r.post_engine?.total_bn || 0);
       put("total", "production", "", 0, 0, -(ev.private_wtp_bn + ev.induced_receipts_bn));
       put("total", "cost", "", 0, 0, costOf(r));
       worst = Math.max(worst, Math.abs(lines + ev.direct_fiscal_response_bn));
@@ -192,7 +223,7 @@ if (fails.length) {
   console.log(`✗ ${fails.length} gate(s) failed, nothing written`);
   process.exit(1);
 }
-fs.writeFileSync(path.join(HERE, "derived", `generation_lines_${CASE}.csv`), out.corrected.join("\n") + "\n");
-fs.writeFileSync(path.join(HERE, "derived", `generation_lines_uncorrected_${CASE}.csv`), out.uncorrected.join("\n") + "\n");
+fs.writeFileSync(path.join(HERE, "derived", `generation_lines_${OUTPUT_CASE}.csv`), out.corrected.join("\n") + "\n");
+fs.writeFileSync(path.join(HERE, "derived", `generation_lines_uncorrected_${OUTPUT_CASE}.csv`), out.uncorrected.join("\n") + "\n");
 console.log(`  wrote derived/generation_lines_${CASE}.csv and generation_lines_uncorrected_${CASE}.csv: band ends ${lo} and ${hi}, `
   + `${out.corrected.length - 1} and ${out.uncorrected.length - 1} rows`);

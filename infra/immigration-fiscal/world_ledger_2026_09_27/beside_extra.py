@@ -99,10 +99,14 @@ import json
 import re
 import sys
 import zipfile
+from pathlib import Path
 
 import numpy as np
 import openpyxl
 import pandas as pd
+from mexico_prices import budget_from_gdp, mixture_divisor, price_budget
+from service_prices import money_price_inputs
+HERE = Path(__file__).resolve().parent
 
 import beside_arms as B
 import g2_premium as G
@@ -231,9 +235,10 @@ OFF_LIST = {9890}
 LAMBDA_COLS = {"equal_lambda_1.16": 1.16, "equal_lambda_1.5": 1.5}
 PARTY_THETA = dict(others_today="o", future_taxpayers="f", mexico_residents="o")
 MONEY_COLS = ("mexico_earnings_bn", "mexico_take_home_bn", "mexico_withheld_tax_bn", "mexico_consumption_tax_bn",
-              "mexico_cash_earnings_bn", "mexico_employer_contributions_bn")
+              "mexico_cash_earnings_bn", "mexico_employer_contributions_bn", "mexico_formal_cash_earnings_bn",
+              "mexico_employer_assets_bn", "mexico_employee_public_tax_bn")
 KEYS = ["generation", "convention", "ppp", "diploma_reread", "mishra", "selection"]
-CELL_MONEY = ("inc", "net", "tax", "ctax", "cash", "employer")
+CELL_MONEY = ("inc", "net", "tax", "ctax", "cash", "employer", "formal", "assets", "withheld")
 # HI's part of the self-employment tax (15.3%: OASDI 12.4, HI 2.9).
 SE_HI_SHARE = 2.9 / 15.3
 WAGE_TAX_LINES = {"federal_income_tax", "state_local_income_tax", "employee_oasdi", "employee_hi",
@@ -241,6 +246,12 @@ WAGE_TAX_LINES = {"federal_income_tax", "state_local_income_tax", "employee_oasd
                   "other_domestic_social_contributions"}
 # Readings whose world total uses arm 5 take their private gain from the twin at consumption PPP.
 PRIVATE_GAIN_TWIN = {"reading2": "reading2_consumption", "combined_low": "combined_low_consumption"}
+
+
+def private_gain_twin(name):
+    """Price comparisons inherit the original output/consumption reading twin."""
+    base, separator, suffix = name.partition('__price_')
+    return PRIVATE_GAIN_TWIN.get(base, base) + (separator + suffix if separator else '')
 SHOW_THETA = ("theta_central",)
 
 
@@ -278,15 +289,21 @@ def cells_dicts(c, y):
         cols = dict(inc=f"compensation_per_person_ppp_{ppp}", net=f"income_per_person_ppp_{ppp}",
                     tax=f"total_tax_per_person_ppp_{ppp}", cash=f"gross_per_person_ppp_{ppp}",
                     employer=f"employer_per_person_ppp_{ppp}", ctax=f"ctax_per_person_ppp_{ppp}", emp="employment_rate",
+                    formal=f"formal_gross_per_person_ppp_{ppp}", assets=f"employer_assets_per_person_ppp_{ppp}",
+                    withheld=f"withheld_per_person_ppp_{ppp}",
                     hrs="weekly_hours_employed")
         o = {k: {(r.sex, r.band, r.cat): getattr(r, col) for r in c.itertuples()} for k, col in cols.items()}
         o.update({f"y{k}": {(r.sex, r.band, r.parent_cat): getattr(r, col) for r in y.itertuples()}
                   for k, col in cols.items()})
         for pre, source, keys in (("", c, ("sex", "band", "cat")), ("y", y, ("sex", "band", "parent_cat"))):
             o[pre + "inc"] = {k: o[pre + "cash"][k] + o[pre + "employer"][k] for k in o[pre + "cash"]}
+            o[pre + "assets"] = {tuple(getattr(r, key) for key in keys):
+                                 getattr(r, f"employer_retirement_per_person_ppp_{ppp}")
+                                 + getattr(r, f"employer_housing_per_person_ppp_{ppp}")
+                                 for r in source.itertuples()}
             employee = {tuple(getattr(r, key) for key in keys): getattr(r, f"withheld_per_person_ppp_{ppp}")
                         for r in source.itertuples()}
-            o[pre + "tax"] = {k: employee[k] + o[pre + "employer"][k] for k in employee}
+            o[pre + "tax"] = {k: employee[k] + o[pre + "employer"][k] - o[pre + "assets"][k] for k in employee}
         out[ppp] = o
     return out
 
@@ -339,6 +356,11 @@ def with_central(tab, ppp="gdp", g1_sel="p56"):
     """The premium table with the rows world_ledger.premium_rows reads as central (G1 at GDP PPP and p56; G2's rearing
     rows at GDP PPP) holding the values of the given PPP's rows and G1 selection; every other row unchanged."""
     t = tab.copy()
+    rates = MX.ppp()
+    if "source_ppp_divisor" not in t:
+        t["source_ppp_divisor"] = t.ppp.map({"gdp": rates["PA.NUS.PPP"], "consumption": rates["PA.NUS.PRVT.PP"]})
+    t.attrs["central_ppp"] = ppp
+    t.attrs["central_selection"] = g1_sel
     num = [c for c in t.columns if c not in KEYS and pd.api.types.is_numeric_dtype(t[c])]
 
     def put(gen, conv, sel_to, sel_from):
@@ -477,10 +499,51 @@ def industry_table(d, ratio, e_mx, employer_us=None):
 
 # ------------------------------------------------------------------ arm 3: Mexico's budget and the US services
 def mexico_budget_at(mxb, factors):
-    m = mxb.copy()
-    for cls, f in factors.items():
-        m.loc[m.cls == cls, "bn"] = m.loc[m.cls == cls, "bn"] * f
+    rates = MX.ppp()
+    m = mxb if "fiscal_cost_pesos_bn" in mxb else budget_from_gdp(mxb, rates["PA.NUS.PPP"])
+    divisors = {cls: rates["PA.NUS.PPP"] / factors.get(cls, 1.0)
+                for cls in ("education", "health", "cash", "public_good")}
+    m = price_budget(m, divisors)
+    m["bn"] = m.recipient_value_bn
     return m
+
+
+def fiscal_price_inputs(I, ratios, rates, *, education_category=True, tax_mix="national"):
+    """R1: lost taxes fund the national service mix; savings fund the group's use mix.
+
+    ICP2021 relative category prices transported to 2024 GDP PPP, the existing
+    lane's transport assumption. Show GDP-held education and group-tax-mix as
+    separate companions; neither is silently substituted.
+    """
+    path = HERE / "inputs/icp_education_2021.json"
+    pins = json.load(open(HERE / "inputs/pins.json"))
+    import hashlib
+    entry = pins["files"]["icp_education_2021.json"]
+    gate("education_ppp_source_hash", hashlib.sha256(path.read_bytes()).hexdigest() == entry["sha256"])
+    values = {}
+    for row in json.load(open(path))["source"]["data"]:
+        k = {v["concept"]: v["id"] for v in row["variable"]}
+        values[(k["Country"], k["Series"])] = row["value"]
+    gate("education_ppp_us_anchor", values[("USA", "9120000")] == 1)
+    education_ratio = values[("MEX", "9120000")] / values[("MEX", "1000000")]
+    gdp = rates["PA.NUS.PPP"]
+    divisors = dict(education=gdp * education_ratio if education_category else gdp,
+                    health=gdp * ratios[B.ICP_HEALTH], public_good=gdp * ratios[B.ICP_GOV_COLL],
+                    cash=rates["PA.NUS.PRVT.PP"])
+    mxb = price_budget(I["mxb"], divisors)
+    mxb["bn"] = mxb.recipient_value_bn
+    meta = json.load(open(DERIVED / "mexico_meta.json"))["comparators"]
+    national = dict(education=meta["public_students_m"] * meta["education_per_public_student_ppp"] / 1e3 * gdp,
+                    health=meta["population_2024"] * meta["health_per_capita_ppp_2023"] / 1e9 * gdp,
+                    public_good=meta["population_2024"] * meta["other_gov_consumption_per_capita_ppp"] / 1e9 * gdp,
+                    cash=(meta["transfers_total_ppp_bn"] + meta["pensions_total_ppp_bn"]) * gdp)
+    group = I["mxb"][I["mxb"].cls.isin(divisors)].groupby("cls").fiscal_cost_pesos_bn.sum().to_dict()
+    gate("tax_service_mix_named", tax_mix in ("national", "group"))
+    mix = national if tax_mix == "national" else group
+    return dict(mxb=mxb, household_price_basis="consumption", mexico_tax_ppp_divisor=mixture_divisor(mix, divisors),
+                mexico_tax_mix=f"{tax_mix}-service-mix", mexico_price_divisors=divisors,
+                mexico_national_mix_pesos_bn=national, mexico_group_mix_pesos_bn=group,
+                education_price_rule="ICP category" if education_category else "GDP held")
 
 
 def services_mexican_numeraire(vgen, r_health, r_social, r_public, r_food, r_cons):
@@ -489,6 +552,7 @@ def services_mexican_numeraire(vgen, r_health, r_social, r_public, r_food, r_con
     v = B.services_at_prices(vgen, r_health, r_social)
     for cls, f in (("public_good", r_public), ("justice", r_public), ("snap", r_food), ("cash", r_cons)):
         m = v.cls.eq(cls)
+        v.loc[m, "us_service_price_exemption"] = "Mexican prices"
         for c in ("V_low_bn", "V_central_bn", "V_high_bn"):
             v.loc[m, c] = v.loc[m, c] * f
     return v
@@ -527,19 +591,15 @@ def public_goods_wtp(vgen, pos, elasticity):
     B.finite_gate("wtp_incomes_finite", income)
     gate("wtp_incomes_positive", bool((income > 0).all()))
     v = vgen.copy()
+    if "us_service_price_exemption" not in v:
+        v["us_service_price_exemption"] = None
     factors = {g: float((income[g] / income["other_residents"]) ** elasticity) for g in W.GENS}
     for g, factor in factors.items():
         m = v.generation.eq(g) & v.cls.eq("public_good")
+        v.loc[m, "us_service_price_exemption"] = "WTP"
         for c in ("V_low_bn", "V_central_bn", "V_high_bn"):
             v.loc[m, c] = v.loc[m, c] * factor
     return v, factors
-
-
-def mexico_public_goods_responsive(mxb):
-    out = mxb.copy()
-    m = out.cls.eq("public_good")
-    out.loc[m, "bn"] = out.loc[m, "bn"] * W.MEXICO_PUBLIC_RESPONSE[1]
-    return out
 
 
 def mobility_evidence(d):
@@ -562,6 +622,7 @@ def mobility_evidence(d):
 def evaluate(I, fac, pgc="average_cost", care_vg=None, mexico_health_vg=None, remit_rows=None, keep_rows=None,
              g3_bound="zero", end="central"):
     """beside_arms.evaluate, with keep_rows: rows (indexed by row id) whose values replace the scenario's."""
+    I = money_price_inputs(I, MX.ppp(), I.get("operator_mexico_money", True))
     I = dict(I, account_end=end) if end in ("low", "high") else I
     rows, prem, _ = W.build_rows(I, pgc, g3_central=g3_bound)
     if care_vg is not None or mexico_health_vg is not None:
@@ -575,9 +636,58 @@ def evaluate(I, fac, pgc="average_cost", care_vg=None, mexico_health_vg=None, re
     return rows, prem, W.totals(rows, prem, I, "central", fac, I["pos"])
 
 
+def operator_reading_scenarios(scenarios, baseline, published_mexico_budget, brief_price):
+    """Keep published specifications and the superseded brief beside each reading.
+
+    Side-only comparisons hold all other inputs fixed. Every variant travels
+    through the same evaluators and G3+/endpoint expansion as the central.
+    """
+    result = []
+    for name, arm, label, inputs, keywords in scenarios:
+        if arm == 'price_companion' or (name != 'baseline' and not (name.startswith(('reading', 'combined_low'))
+                                       or arm.startswith('p7_'))):
+            result.append((name, arm, label, inputs, keywords))
+            continue
+        published = dict(inputs, operator_mexico_money=False, operator_us_general=False)
+        # Published R1 stacks arm 3; its fiscal tax divisor and remittance basis
+        # came from the base ledger, before fix 2's numeric contracts.
+        if inputs.get('household_price_basis') == 'consumption' and arm != 'reading_2':
+            for key in ('mexico_tax_ppp_divisor', 'mexico_tax_mix', 'mexico_fiscal_money_rule',
+                        'remittance_price_basis'):
+                published.pop(key, None)
+            published['mxb'] = published_mexico_budget
+            # The household basis belongs to the reading's wage and welfare
+            # comparison. Hold it fixed in every side-only price comparison.
+        if name == 'baseline':
+            published = dict(baseline, operator_mexico_money=False, operator_us_general=False)
+        for suffix, mx, us, rule in (
+                ('', True, True, 'operator price ruling'),
+                ('__price_published', False, False, 'published price rule'),
+                ('__price_mexico_only', True, False, 'Mexico price ruling alone'),
+                ('__price_us_only', False, True, 'US price ruling alone')):
+            source = inputs if not suffix else published
+            result.append((name + suffix, arm, label + '; ' + rule,
+                           dict(source, operator_mexico_money=mx, operator_us_general=us), keywords))
+        result.append((name + '__price_brief_category', 'price_companion',
+                       label + '; superseded brief category-prices-both-ways rule',
+                       dict(inputs, **brief_price, operator_mexico_money=False, operator_us_general=False), keywords))
+    return result
+
+
 # ------------------------------------------------------------------ arm 4: theta
 def fiscal_parts():
     """The case's parts at the ledger's central (the mean of the two band ends), $bn: the debt lane's split."""
+    if CASE == "oct15":
+        from debt_current import load
+        parts, contract = load(W.PINS[CASE])
+        parts.to_csv(DERIVED / "debt_split_parts_oct15.csv", index=False, lineterminator="\n", float_format="%.12f")
+        if parts.status.ne("identified").any() or not contract["financing_complete"]:
+            raise SystemExit("[BLOCKED: no oct15 federal split] current flows close the case; unlocated financing remains")
+        selected = parts[parts.basis.eq("set")].set_index("end")
+        mid = lambda c: float(selected[c].mean())
+        return dict(state_local=mid("state_local_bn"), federal=mid("federal_bn"),
+                    capital_return=mid("resource_cost_bn"), capital_return_federal=mid("resource_cost_federal_bn"),
+                    accrual=mid("accrual_bn"), displaced=mid("displaced_bn"), net_cost=mid("net_cost_bn")), selected
     if not SPLIT.is_file():
         raise SystemExit(f"[BLOCKED] {CASE}: missing live debt split {SPLIT}; wait for the debt lane")
     W.require_pins(CASE, "main_case")
@@ -787,7 +897,7 @@ def endpoint_readings(scenarios, fac, persons, g1_adults):
             output.extend(dict(x, end=end, delta_from_r1_bn=x["world_change_bn"]) for x in got)
             if B.base_name(name).startswith("arm5_"):
                 continue
-            src = B.bound_name(PRIVATE_GAIN_TWIN.get(B.base_name(name), B.base_name(name)), bound)
+            src = B.bound_name(private_gain_twin(B.base_name(name)), bound)
             si, skw = specs[src][2:]
             sr, sp, _ = evaluated[src]
             inp, _ = private_gain_inputs(si["vgen"][si["vgen"].end.eq(end)])
@@ -877,6 +987,7 @@ def summary_rows(name, arm, label, tot, prem, budget_bn, base, eqw):
 
 
 def main():
+    gate("live_extra_case_oct15_only", CASE == "oct15", case=CASE)
     needed = [SPLIT, GENERATION_RESULTS, DERIVED / f"world_ledger_{CASE}.csv",
               DERIVED / f"beside_arms_{CASE}.csv", DERIVED / f"beside_arms_summary_{CASE}.csv",
               DERIVED / f"beside_arms_meta_{CASE}.json"]
@@ -993,6 +1104,11 @@ def main():
     r2 = output_prices(with_central(T["rpp_urban"], "gdp", "p70"), {g: F_state[g]["services"] for g in F_state})
     r2c = with_central(T["rpp_urban"], "consumption", "p70")
     r1 = with_central(T["rpp_urban"], "consumption", "p56")
+    r1_brief_price = fiscal_price_inputs(I, ratio, rates)
+    r1_price = money_price_inputs(dict(I, household_price_basis="consumption"), rates)
+    r1_price = {k: v for k, v in r1_price.items() if k not in I or k in ("mxb",)}
+    r1_price_gdp_education = fiscal_price_inputs(I, ratio, rates, education_category=False)
+    r1_price_group_mix = fiscal_price_inputs(I, ratio, rates, tax_mix="group")
     sp = lambda tab, k: same_person(tab, ratios[k], e_us_nom)[0]   # noqa: E731
 
     # ---- the scenarios: (name, arm, label, inputs, evaluate's keywords)
@@ -1013,7 +1129,7 @@ def main():
         one(k, arm, label, sp(tab0, k))
     one("arm2_state_rpp", "2", "2: US earnings at national prices, state RPP", T["rpp_national"], remit_rows=remit0)
     S.append(("arm3_us_numeraire", "3", "3: Mexico's services forgone and saved at ICP category PPPs (US-price "
-              "numeraire)", dict(I, mxb=mx_us), {}))
+              "numeraire); Mexico's services at US prices (beside)", dict(I, mxb=mx_us, operator_mexico_money=False), {}))
     S.append(("arm3a", "3a", "3a: US health and social services at Mexican relative prices", dict(I, vgen=v3a), kw3a))
     S.append(("arm3b", "3b", "3b: public goods at their responsive cost [FRAMING-SENSITIVE]", I,
               dict(pgc="response_only")))
@@ -1023,37 +1139,38 @@ def main():
         output_prices(tab0, {g: F[g]["services"] for g in F}))
     one("arm5_output_prices_goods_too", "5", "5 with goods at their own category PPPs too",
         output_prices(tab0, {g: F[g]["goods_too"] for g in F}))
-    S.append(("reading1", "reading_1", "Reading 1 (recommended): 1a + 2 + 3", dict(I, g2=r1, mxb=mx_us),
+    S.append(("reading1", "reading_1", "Reading 1: household consumption PPP; Mexico's budget at GDP money; US services at US general prices", dict(I, g2=r1, **r1_price),
               dict(remit_rows=remit0)))
+    S.append(("reading1_education_gdp", "price_companion", "Superseded brief with education held at GDP PPP (beside)", dict(I, g2=r1, **r1_price_gdp_education, operator_mexico_money=False, operator_us_general=False), dict(remit_rows=remit0)))
+    S.append(("reading1_tax_group_mix", "price_companion", "Superseded brief with lost taxes funding the group's service mix (beside)", dict(I, g2=r1, **r1_price_group_mix, operator_mexico_money=False, operator_us_general=False), dict(remit_rows=remit0)))
     S.append(("reading1_deflated", "reading_1", f"Reading 1 with 1a's urban pay deflated ({P_urban:.4f})",
-              dict(I, g2=with_central(T["rpp_urban_deflated"], "consumption"), mxb=mx_us), dict(remit_rows=remit0)))
+              dict(I, g2=with_central(T["rpp_urban_deflated"], "consumption"), **r1_price), dict(remit_rows=remit0)))
     S.append(("reading2", "reading_2", "Reading 2 (the operator's framing): urban p70 + 2 + 5 + 3a + 3b",
               dict(I, g2=r2, vgen=v3a), dict(kw3ab, remit_rows=remit0)))
     S.append(("reading2_consumption", "reading_2", "Reading 2 at consumption PPP in place of 5 (its private gain)",
               dict(I, g2=r2c, vgen=v3a), dict(kw3ab, remit_rows=remit0)))
     # Report-only, each one change from reading 1, never adopted as the convention.
     S.append(("p7_g3_k12_at_cost", "p7_6a", "R1, G3+ K-12 at cost beside its V=0 [FRAMING-SENSITIVE]",
-              dict(I, g2=r1, mxb=mx_us, vgen=g3_k12_at_cost(I["vgen"], I["specs"])), dict(remit_rows=remit0)))
-    S.append(("p7_mexico_goods_responsive", "p7_6b", "R1, US public goods at average cost and Mexican goods forgone at responsive share",
-              dict(I, g2=r1, mxb=mexico_public_goods_responsive(mx_us)), dict(remit_rows=remit0)))
+              dict(I, g2=r1, **r1_price, vgen=g3_k12_at_cost(I["vgen"], I["specs"])), dict(remit_rows=remit0)))
     wtp_factors = {}
     for elasticity in (0.5, 1.0):
         vw, factors = public_goods_wtp(I["vgen"], I["pos"], elasticity)
         wtp_factors[str(elasticity)] = factors
         S.append((f"p7_goods_wtp_{elasticity:g}", "p7_11", f"R1, US public goods WTP at income elasticity {elasticity:g}; beside 3b [ASSUMPTION; FRAMING-SENSITIVE]",
-                  dict(I, g2=r1, mxb=mx_us, vgen=vw), dict(remit_rows=remit0)))
+                  dict(I, g2=r1, **r1_price, vgen=vw), dict(remit_rows=remit0)))
     # Same-person pay: parameter rows only, never a reading or a low end (the module docstring).
     S.append(("reading1_same_person_cmp", "same_person", f"{SP_LABEL} reading 1 with G1 at CMP's Re 2.46",
-              dict(I, g2=sp(r1, "arm1b_cmp_re"), mxb=mx_us), dict(remit_rows=remit0)))
+              dict(I, g2=sp(r1, "arm1b_cmp_re"), **r1_price), dict(remit_rows=remit0)))
     S.append(("reading3_mmp_annual", "same_person", f"{SP_LABEL} reading 1 with G1 at MMP's 2.0 read as a year",
-              dict(I, g2=sp(r1, "arm1c_mmp_annual"), mxb=mx_us), dict(remit_rows=remit0)))
+              dict(I, g2=sp(r1, "arm1c_mmp_annual"), **r1_price), dict(remit_rows=remit0)))
     S.append(("reading3", "same_person", f"{SP_LABEL} reading 1 with G1 at MMP's 2.0 an hour (1.59 a year)",
-              dict(I, g2=sp(r1, "arm1c_mmp_per_person"), mxb=mx_us), dict(remit_rows=remit0)))
+              dict(I, g2=sp(r1, "arm1c_mmp_per_person"), **r1_price), dict(remit_rows=remit0)))
     S.append(("combined_low", "same_person", f"{SP_LABEL} reading 2 with G1 at 1.59 (part 2's combined low, withdrawn "
               "as a low end)", dict(I, g2=sp(r2, "arm1c_mmp_per_person"), vgen=v3a), dict(kw3ab, remit_rows=remit0)))
     S.append(("combined_low_consumption", "same_person", f"{SP_LABEL} reading 2 with G1 at 1.59, consumption PPP in "
               "place of 5 (its private gain)", dict(I, g2=sp(r2c, "arm1c_mmp_per_person"), vgen=v3a),
               dict(kw3ab, remit_rows=remit0)))
+    S = operator_reading_scenarios(S, I, mx_us, r1_brief_price)
     S = B.bound_scenarios(S)
     names = [s[0] for s in S]
     gate("scenario_names_unique", len(names) == len(set(names)))
@@ -1072,7 +1189,7 @@ def main():
     arm_of = {s[0]: s[1] for s in S}
     for bound in B.G3_BOUNDS:
         name = B.bound_name("arm3_us_numeraire_group_only", bound)
-        rows_g, _, t_g = evaluate(dict(I, mxb=mx_us), fac, keep_rows=keep, g3_bound=bound)
+        rows_g, _, t_g = evaluate(dict(I, mxb=mx_us, operator_mexico_money=False), fac, keep_rows=keep, g3_bound=bound)
         evaluated[name] = (rows_g, evaluated[B.bound_name("arm3_us_numeraire", bound)][1], dict(I, mxb=mx_us))
         long = pd.concat([long, t_g.assign(scenario=name, arm="3", g3_bound=bound)], ignore_index=True)
         labels[name] = f"3's check: the group's rows only (Mexico's budget saved at GDP PPP); {B.G3_LABELS[bound]}"
@@ -1139,7 +1256,7 @@ def main():
     for name in evaluated:
         if B.base_name(name).startswith("arm5_"):
             continue                       # output at common prices: not a purchasing-power figure
-        src = B.bound_name(PRIVATE_GAIN_TWIN.get(B.base_name(name), B.base_name(name)), B.scenario_bound(name))
+        src = B.bound_name(private_gain_twin(B.base_name(name)), B.scenario_bound(name))
         pg += private_gain(name, evaluated[src][0], inp, persons, float(g1_adults[0]), src, evaluated[src][1])
     pg = pd.DataFrame(pg)
     endpoint_summary, endpoint_private = endpoint_readings(S, fac, persons, float(g1_adults[0]))

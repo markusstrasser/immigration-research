@@ -1,0 +1,5 @@
+basis,end,v7_cost_bn,v8_cost_bn,delta_case_cost_bn,delta_other_residents_case_bn,scope
+set,low,339.552017829527,365.791930255485,26.239912425958,-26.239912425958,fiscal-account bridge only; not world welfare or a reading delta
+set,high,423.649260700507,455.981784588979,32.332523888472,-32.332523888472,fiscal-account bridge only; not world welfare or a reading delta
+cash,low,264.425573615506,281.752563676073,17.326990060568,-17.326990060568,fiscal-account bridge only; not world welfare or a reading delta
+cash,high,348.522816486486,371.942418009567,23.419601523081,-23.419601523081,fiscal-account bridge only; not world welfare or a reading delta

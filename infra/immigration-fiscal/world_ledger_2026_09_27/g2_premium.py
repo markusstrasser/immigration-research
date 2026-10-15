@@ -27,6 +27,8 @@ group_ages.csv, g2_meta.json. --basis row4 counts the group on the account's row
 and writes g2_premium_row4.csv, group_ages_row4.csv and g2_meta_row4.json; the other two files do not depend on the
 basis (IPUMS parents; G2 by age, whose records row 4 leaves alone). --basis lineage counts it on main case v5's
 42.75M (row 4, with the G3+ records carrying the added people) and writes the same three files with _lineage.
+--basis oct15 adds exact observed completion records to Phase B's uniform latent proxy, then item 12's
+canonical coverage donor mass. Counted-only economic figures remain in counted_* scope columns.
 Run from the repository root:
     OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/world_ledger_2026_09_27/g2_premium.py [--basis row4|lineage]
 """
@@ -41,7 +43,10 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from population_basis import BASES, lineage, reweight, row4, suffixed
+import mexico as MX
+import mexico_compensation as MC
+
+from population_basis import BASES, economic_path, lineage, reweight, row4, suffixed
 
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
@@ -86,6 +91,11 @@ def band_of(age):
     return lab[i]
 
 
+def counted_donor_weights(people):
+    """Estimate donor component ratios before transporting missing mass."""
+    return people.pw_counted if "pw_counted" in people else people.pw
+
+
 def parent_bin(birth_year):
     """Birth-cohort bins of the IPUMS parents' table; earlier cohorts take the first bin (flagged)."""
     edges = [1981, 1986, 1991, 1996, 2001, 2006, 2011]
@@ -99,14 +109,14 @@ def emovi_cohort(birth_year):
 
 
 # ------------------------------------------------------------------ US side: CPS ASEC 2025
-def load_asec(basis="cps"):
+def load_asec(basis="cps", case=None):
     spec = importlib.util.spec_from_file_location("dist_base", FISCAL / "distribution_weights_2026_09_23/distribute.py")
     B = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(B)
     d = B.load_cps()
     d["pw_cps"] = d.pw
     if basis != "cps":
-        d = reweight(d, B.PATHS["cps"], gate, basis)
+        d = reweight(d, B.PATHS["cps"], gate, basis, case=case)
     extra = ["PH_SEQ", "PPPOS", "A_SEX", "WORKYN", "HRSWK", "PEINUSYR"]
     with zipfile.ZipFile(B.PATHS["cps"]) as z:
         p = pd.read_csv(z.open("pppub25.csv"), usecols=extra)
@@ -135,6 +145,13 @@ def load_asec(basis="cps"):
     mid = np.select([code == 1, code == 2, code == 3, code == 4, code == 5, code == 6, code == 28],
                     [1945, 1955, 1962, 1967, 1972, 1977, 2023], 1980.5 + 2 * (code - 7))
     d["arrival_age"] = np.where(code > 0, d.A_AGE - (2025 - mid), np.nan)
+    if basis == "oct15":
+        from coverage_transport import transport_weights
+        d = transport_weights(d, case or basis, "cash")
+        d.attrs["population_oct15"].update(
+            coverage_in_economic_record_weights=True,
+            coverage_economic_inputs="option A: canonical coverage donor component means",
+            coverage_economic_counterfactual=d.attrs["coverage_economic_counterfactual"])
     return d
 
 
@@ -224,7 +241,7 @@ def transitions():
 
 
 # gross pay, pay as received, income tax and employee contributions withheld, consumption taxes (IVA and IEPS)
-MONEY = ("inc", "net", "tax", "ctax", "employer", "cash")
+MONEY = ("inc", "net", "tax", "ctax", "employer", "cash", "formal", "assets", "withheld")
 
 
 def mexico_cells(ppp):
@@ -235,15 +252,18 @@ def mexico_cells(ppp):
     cols = dict(inc=f"compensation_per_person_ppp_{ppp}", net=f"income_per_person_ppp_{ppp}",
                 tax=f"total_tax_per_person_ppp_{ppp}", ctax=f"ctax_per_person_ppp_{ppp}",
                 employer=f"employer_per_person_ppp_{ppp}", cash=f"gross_per_person_ppp_{ppp}", emp="employment_rate",
-                hrs="weekly_hours_employed")
+                hrs="weekly_hours_employed", formal=f"formal_gross_per_person_ppp_{ppp}",
+                assets=f"employer_assets_per_person_ppp_{ppp}", withheld=f"withheld_per_person_ppp_{ppp}")
     c = pd.read_csv(DERIVED / "mexico_earnings_cells.csv")
     y = pd.read_csv(DERIVED / "mexico_young_by_parent.csv")
     # Reconstruct identities from the same serialized terms instead of independently rounded totals.
     for table in (c, y):
         table[f"compensation_per_person_ppp_{ppp}"] = (table[f"gross_per_person_ppp_{ppp}"]
             + table[f"employer_per_person_ppp_{ppp}"])
+        table[f"employer_assets_per_person_ppp_{ppp}"] = (table[f"employer_retirement_per_person_ppp_{ppp}"]
+            + table[f"employer_housing_per_person_ppp_{ppp}"])
         table[f"total_tax_per_person_ppp_{ppp}"] = (table[f"withheld_per_person_ppp_{ppp}"]
-            + table[f"employer_per_person_ppp_{ppp}"])
+            + table[f"employer_per_person_ppp_{ppp}"] - table[f"employer_assets_per_person_ppp_{ppp}"])
     out = {k: {(r.sex, r.band, r.cat): getattr(r, col) for r in c.itertuples()} for k, col in cols.items()}
     out.update({f"y{k}": {(r.sex, r.band, r.parent_cat): getattr(r, col) for r in y.itertuples()}
                 for k, col in cols.items()})
@@ -321,7 +341,7 @@ def summarize(gen, convention, people, e, delta, extra):
          and all(np.isfinite(e[m]).all() for m in MONEY))
     gate("mexico_compensation_identity", abs(float((w * (e["inc"] - e["cash"] - e["employer"])).sum())) < 1e-3)
     emp_mx, hw_mx = e["emp"], e["hw"]
-    return dict(generation=gen, convention=convention, **extra, selection_delta=round(delta, 6),
+    result = dict(generation=gen, convention=convention, **extra, selection_delta=round(delta, 6),
                 income_basis="US cash intermediate; Mexico total compensation; world_ledger adds US employer receipts",
                 persons_m=w.sum() / 1e6, persons_15plus_m=w[adult].sum() / 1e6,
                 us_earnings_bn=E_US / 1e9, mexico_earnings_bn=E_MX / 1e9, gain_bn=(E_US - E_MX) / 1e9,
@@ -332,21 +352,30 @@ def summarize(gen, convention, people, e, delta, extra):
                 us_cash_earnings_bn=E_US / 1e9,
                 mexico_cash_earnings_bn=(w * e["cash"] * (1 + delta)).sum() / 1e9,
                 mexico_employer_contributions_bn=(w * e["employer"] * (1 + delta)).sum() / 1e9,
+                mexico_formal_cash_earnings_bn=(w * e["formal"] * (1 + delta)).sum() / 1e9,
+                mexico_employer_assets_bn=(w * e["assets"] * (1 + delta)).sum() / 1e9,
+                mexico_employee_public_tax_bn=(w * e["withheld"] * (1 + delta)).sum() / 1e9,
                 employment_us_15plus=(w * works)[adult].sum() / w[adult].sum(),
                 employment_mx_15plus=(w * emp_mx)[adult].sum() / w[adult].sum(),
                 weekly_hours_us_workers=(w * hrs)[wk].sum() / w[wk].sum(),
                 weekly_hours_mx_workers=((w * hw_mx)[adult].sum() / (w * emp_mx)[adult].sum()
                                          if (w * emp_mx)[adult].sum() > 0 else np.nan))
+    if "pw_counted" in people:
+        counted = people.assign(pw=people.pw_counted).drop(columns="pw_counted")
+        scope = summarize(gen, convention, counted, e, delta, extra)
+        result.update({"counted_" + k: v for k, v in scope.items()
+                       if isinstance(v, (int, float, np.number)) and not isinstance(v, bool)})
+    return result
 
 
-def main(basis="cps"):
+def main(basis="cps", case=None):
     DERIVED.mkdir(exist_ok=True)
-    d = load_asec(basis)
+    d = load_asec(basis, case=case)
     parents, match_rate = parents_schooling()
     if basis == "cps":
         parents.to_csv(DERIVED / "parents_schooling.csv", index=False, lineterminator="\n", float_format="%.6g")
     trans = transitions()
-    rows, by_age = [], []
+    rows, by_age, g3_profiles = [], [], []
     for ppp in ("gdp", "consumption"):
         cells = mexico_cells(ppp)
         # ---- G1: the direct 2024 check on CMP, observably identical (own schooling), ages 25-64
@@ -367,17 +396,19 @@ def main(basis="cps"):
                 for sel, delta in G2_INHERITED.items():
                     rows.append(summarize("G2", "rearing", g2, e, delta,
                                           dict(ppp=ppp, diploma_reread=f, mishra=mishra, selection=sel)))
-                if ppp == "gdp" and f == 0.25 and not mishra:
+                if f == 0.25 and not mishra:
                     tmp = g2.assign(**{f"mx_{m}": v for m, v in e.items()},
                                     band=np.where(g2.A_AGE < 15, "0-14", band_of(g2.A_AGE)))
                     for b, s in tmp.groupby("band"):
-                        by_age.append(summarize("G2", "rearing", s, {m: s[f"mx_{m}"].to_numpy() for m in e}, 0.0,
-                                                dict(band=b)))
+                        if ppp == "gdp":
+                            by_age.append(summarize("G2", "rearing", s, {m: s[f"mx_{m}"].to_numpy() for m in e}, 0.0,
+                                                    dict(band=b)))
                     # G2's Mexico-to-US ratios by sex x age band, for the G3+ upper bound
                     ratio = {m: {} for m in MONEY}
                     for (sx, b), s in tmp[tmp.A_AGE >= 15].groupby(["sex", "band"]):
+                        calibration = counted_donor_weights(s)
                         for m in MONEY:
-                            ratio[m][(sx, b)] = (s.pw * s[f"mx_{m}"]).sum() / max((s.pw * s.earn).sum(), 1.0)
+                            ratio[m][(sx, b)] = (calibration * s[f"mx_{m}"]).sum() / max((calibration * s.earn).sum(), 1.0)
         for mishra in (False, True):
             e = mexico_own_schooling(g2, cells, 0.0, mishra)
             for sel, delta in G2_INHERITED.items():
@@ -385,25 +416,35 @@ def main(basis="cps"):
                                       dict(ppp=ppp, diploma_reread=0.0, mishra=mishra, selection=sel)))
         # ---- G3+: bounds only. Lower: no premium. Upper: G2's rearing ratio by sex x age band applied.
         g3 = d[d.gen.eq("G3+")]
-        if ppp == "gdp":
-            e3 = {m: np.array([ratio[m].get((sx, b), np.nan) if a >= 15 else 0.0
-                               for sx, b, a in zip(g3.sex, band_of(g3.A_AGE), g3.A_AGE)]) * g3.earn.to_numpy()
+        legacy = {m: np.array([ratio[m].get((sx, b), np.nan) if a >= 15 else 0.0
+                              for sx, b, a in zip(g3.sex, band_of(g3.A_AGE), g3.A_AGE)]) * g3.earn.to_numpy()
                   for m in MONEY}
-            e3["emp"] = e3["hw"] = np.zeros(len(g3))
-            rows.append(summarize("G3+", "bound_upper_g2_ratio", g3, e3, 0.0,
-                                  dict(ppp=ppp, diploma_reread=0.25, mishra=False, selection="none")))
+        divisor = MX.ppp()["PA.NUS.PPP" if ppp == "gdp" else "PA.NUS.PRVT.PP"]
+        profile = MC.profile_frame(g3, legacy, ppp, divisor)
+        g3_profiles.append(profile)
+        e3 = MC.upper_arrays(MX, profile)
+        e3["emp"] = e3["hw"] = np.zeros(len(g3))
+        rows.append(summarize("G3+", "bound_upper_g2_ratio", g3, e3, 0.0,
+                              dict(ppp=ppp, diploma_reread=0.25, mishra=False, selection="none")))
     out = pd.DataFrame(rows)
-    out.to_csv(suffixed(DERIVED / "g2_premium.csv", basis), index=False, lineterminator="\n", float_format="%.6g")
+    out.to_csv(economic_path(DERIVED / "g2_premium.csv", basis, case), index=False, lineterminator="\n", float_format="%.6g")
+    pd.concat(g3_profiles, ignore_index=True).to_csv(economic_path(DERIVED / "g3_pay_profiles.csv", basis, case),
+        index=False, lineterminator="\n", float_format="%.17g")
     if basis == "cps":
         pd.DataFrame(by_age).to_csv(DERIVED / "g2_premium_by_age.csv", index=False, lineterminator="\n",
                                     float_format="%.6g")
     ages = d[d.gen.ne("")].groupby(["gen", "A_AGE"]).pw.sum().rename("persons").reset_index()
     ages.rename(columns={"gen": "generation", "A_AGE": "age"}).to_csv(
-        suffixed(DERIVED / "group_ages.csv", basis), index=False, lineterminator="\n", float_format="%.6g")
+        economic_path(DERIVED / "group_ages.csv", basis, case), index=False, lineterminator="\n", float_format="%.6g")
     meta = dict(ipums_children_matched_share=match_rate,
                 persons_m={g: float(d.pw[d.gen.eq(g)].sum() / 1e6) for g in ("G1", "G2", "G3+")})
     if basis != "cps":
         meta["basis"] = basis
+    if basis == "oct15":
+        meta["population"] = d.attrs["population_oct15"]
+        meta["coverage_economic_counterfactual"] = d.attrs["coverage_economic_counterfactual"]
+        gate("oct15_premium_uses_case_completed_people",
+             abs(sum(meta["persons_m"].values()) * 1e6 - meta["population"]["complete_total"]) < 1e-3)
     if basis == "lineage":
         # The lineage factor must scale exactly this script's G3+ records, and the group must then be the case's
         # lineage: the identified G3+ plus the added people.
@@ -417,7 +458,7 @@ def main(basis="cps"):
              and abs(float(d.pw[g3].sum()) - c["identified_g3plus"] - c["added"]) < 1e-3,
              group=float(d.pw[d.gen.ne("")].sum()), lineage=c["lineage_population"])
         meta["lineage"] = dict(factor=f, added=c["added"], identified_g3plus_m=float(d.pw_row4[g3].sum() / 1e6))
-    json.dump(meta, open(suffixed(DERIVED / "g2_meta.json", basis), "w"), indent=1, sort_keys=True)
+    json.dump(meta, open(economic_path(DERIVED / "g2_meta.json", basis, case), "w"), indent=1, sort_keys=True)
     if basis == "cps":
         gate("g1_members", abs(meta["persons_m"]["G1"] - 12.22) < 0.05, got=meta["persons_m"]["G1"])
     else:
@@ -429,11 +470,14 @@ def main(basis="cps"):
         gate("row4_g1_falls_by_the_unions_fall", abs(fall - (pop["published"] - pop["row4"])) < 1e-3
              and float((d.pw_cps - r4)[d.gen.isin(["G2", "G3+"])].abs().sum()) == 0.0, g1_fall=fall,
              union_fall=pop["published"] - pop["row4"])
-    gate("g2_members", abs(meta["persons_m"]["G2"] - 14.33) < 0.05, got=meta["persons_m"]["G2"])
+    counted_g2 = float(d.loc[d.gen.eq("G2"), "pw_counted"].sum() / 1e6) if "pw_counted" in d else meta["persons_m"]["G2"]
+    gate("g2_members", abs(counted_g2 - 14.33) < 0.05, got=counted_g2)
     print(json.dumps(meta, indent=1), file=sys.stderr)
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--basis", default="cps", choices=BASES)
-    main(ap.parse_args().basis)
+    ap.add_argument("--case")
+    args = ap.parse_args()
+    main(args.basis, case=args.case)

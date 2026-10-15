@@ -1,0 +1,339 @@
+
+
+
+<!--
+Propiedad intelectual y descargo de responsabilidad ‘Uso de Software’,
+
+D.R. ©
+
+BANCO DE MÉXICO
+
+Avenida 5 de Mayo número 2, colonia Centro, código postal 06000, Demarcación Territorial
+Cuauhtémoc, Ciudad de México
+
+Año: 2021
+
+El Banco de México, pone a disposición del ‘Usuario’ el ‘Software’ en el estado en que se encuentra
+y no asume responsabilidad alguna por la descarga, instalación y uso del mismo o de su Código
+Fuente, tampoco del deterioro, uso indebido o ilícito y pérdida de información derivada de dichos
+usos, o bien, de cualquier otro problema relacionado con dichas actividades, por lo que la
+responsabilidad es exclusiva de quien lo descarga y de quien lo usa.
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Composición de aportaciones por Retiro (R), Cesantía (C) y Vejez (V) de trabajadores afiliados al IMSS por rango salarial | Banco de México</title>
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Calibri, Arial, Helvetica, sans-serif; 
+    }
+
+    h1 {
+        font-size: 1.7rem;
+        font-weight: normal;
+        text-align: center;
+
+        margin: 1em auto;
+        max-width: 50%;
+    }
+
+    aside {
+	    display: inline;
+	    position: sticky;
+	    top: 2rem;
+	    left: 60%;
+    }
+
+    aside button {
+	    padding: 0.7em 1.3em;
+
+	    cursor: pointer;
+
+	    border: 2px solid #007279;
+	    border-radius: 4px;
+	    box-shadow: 0px 3px 5px 2px #00727914;
+    }
+
+    aside button {
+	    background: white;
+	    color: #007279;
+    }
+    aside button:hover, aside button:focus, aside button:active {
+	    background: #23527c;
+	    color: white;
+    }
+
+    main {
+        margin: 2em 0;
+    }
+
+    table {
+        table-layout: fixed;
+        border-collapse: collapse;
+
+        margin: 0 auto;
+
+        background-color: white;
+    }
+
+    table tbody td {
+        font-variant-numeric: tabular-nums;
+        padding: 0.1em 0.3em;
+        border: 1px solid lightgrey;
+    }
+
+    table tbody tr:hover {
+        background-color: #f2f2f2;
+    }
+
+    table tbody tr.seleccionado {
+        background-color: #eaeaea;
+    }
+    table tfoot td {
+        text-align: justify;
+        font-size: 0.9rem;
+        padding-top: 1.5em;
+    }
+    a { color: #007279; }
+    a:hover, a:focus, a:active { color: #23527c; }
+    a:visited { color: #23527c; }
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #111;
+            color: #ccc;
+        }
+	aside button {
+		background: transparent;
+		color: #007279;
+	}
+	aside button:hover, aside button:focus, aside button:active {
+		color: #ccc;
+	}
+
+        table {
+            background-color: #222;
+        }
+        table tbody td {
+            border: 1px solid #444;
+            /*border: 1px solid black;*/
+        }
+        table tbody tr:hover {
+            background-color: #141414;
+        }
+        table tbody tr.seleccionado {
+            background-color: #020202;
+        }
+    }
+
+    
+    a:focus,
+    button:focus,
+    input:focus,
+    select:focus,
+    textarea:focus,
+    [tabindex]:focus {
+        outline: none;
+        box-shadow:
+            0px 0px 0pt 1.5pt #a7c7ff,
+            inset -1px -1px white, inset 1px 1px white; /* las sombras blancas es para hacer más fácil identificar la sombra cuando el color de la sombra se parece al color de fondo del elemento*/
+        transition-timing-function: ease-in;
+        transition: 0.1s;
+    }
+</style>
+<script>
+    try {
+        document.configura_selecciona_renglon = function () {
+            try {
+                var selecciona_renglon = function (ev) {
+                    try {
+                        var actual = document.renglon_seleccionado;
+                        var candidato = ev.target.parentNode;
+                        if (actual)
+                            actual.classList.remove('seleccionado');
+                        var deseleccionar = actual === candidato;
+                        if (deseleccionar) {
+                            delete document.renglon_seleccionado;
+                            return;
+                        }
+                        if (candidato.tagName !== 'TR')
+                            return;
+                        candidato.classList.add('seleccionado');
+                        document.renglon_seleccionado = candidato;
+                    } catch (error) {
+                        console.error(error);
+                    }
+                };
+                var tables = document.getElementsByTagName('TABLE');
+                for (var i = 0; i < tables.length; i++) {
+                    tables[i].addEventListener('click', selecciona_renglon);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        };
+    } catch (error) {
+        console.error(error);
+    }
+</script>
+
+		
+
+<style>
+    h1.breadcrumbs {
+        font-variant: small-caps; 
+        font-variant: all-small-caps;
+        font-size: 1.7rem;
+        letter-spacing: 2px;
+        margin-bottom: 1.6em;
+    }
+</style>
+
+		<script>
+			/* 
+ * Propiedad intelectual y descargo de responsabilidad 'Uso de Software',
+ * 
+ * D.R. ©
+ * 
+ * BANCO DE MÉXICO
+ * 
+ * Avenida 5 de Mayo número 2, colonia Centro, código postal 06000, Demarcación Territorial
+ * Cuauhtémoc, Ciudad de México
+ * 
+ * Año: 2021,2022
+ * 
+ * El Banco de México, pone a disposición del 'Usuario' el 'Software' en el estado en que se encuentra
+ * y no asume responsabilidad alguna por la descarga, instalación y uso del mismo o de su Código
+ * Fuente, tampoco del deterioro, uso indebido o ilícito y pérdida de información derivada de dichos
+ * usos, o bien, de cualquier otro problema relacionado con dichas actividades, por lo que la
+ * responsabilidad es exclusiva de quien lo descarga y de quien lo usa.
+ */
+
+
+// https://programacion.net/articulo/como_exportar_una_tabla_html_a_csv_mediante_javascript_1742
+// https://codepen.io/Doxxtor/pen/yLyaPPz
+function descargaArchivoCSV(nombreDeArchivo, textoCSV) {
+    var textoCSVBytes = stringToBytes(textoCSV); // workaround que los acentos se ven con dos caracteres por problemas de codificación
+    var liga = document.createElement("a");
+    liga.download = nombreDeArchivo;
+    liga.href = window.URL.createObjectURL(
+            new Blob(
+                    [textoCSVBytes.buffer],
+                    {type: "text/csv"}
+            ));
+
+    liga.style.display = "none";
+    document.body.appendChild(liga);
+
+    liga.click();
+    liga.remove();
+}
+
+// https://stackoverflow.com/a/61805834/264786
+function stringToBytes(text) {
+    const length = text.length;
+    const result = new Uint8Array(length); // arreglo de enteros sin signo de 8 bits
+    for (let i = 0; i < length; i++) {
+        const code = text.charCodeAt(i); // charCodeAt regresa el codepoint UTF16 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
+        const byte = code > 255 ? 32 : code; // pone espacio en blanco si si es un caracter que no se puede representar en 8 bits
+        result[i] = byte;
+    }
+    return result;
+}
+
+// https://stackoverflow.com/a/65639685/264786
+function tableToCVSRows(tableEle, separator = ',') {
+	let csvRows = []
+	//only get direct children of the table in question (thead, tbody)
+	Array.from(tableEle.children).forEach(function (node) {
+		//using scope to only get direct tr of node
+		node.querySelectorAll(':scope > tr').forEach(function (tr) {
+			let csvLine = []
+			//again scope to only get direct children
+			tr.querySelectorAll(':scope > td').forEach(function (td) {
+				//clone as to not remove anything from original
+				let copytd = td.cloneNode(true)
+				let data
+				if (copytd.dataset.val)
+					data = copytd.dataset.val.replace(/(\r\n|\n|\r)/gm, '')
+				else {
+					Array.from(copytd.children).forEach(function (remove) {
+						//remove nested elements before getting text
+						remove.parentNode.removeChild(remove)
+					})
+					data = copytd.textContent.replace(/(\r\n|\n|\r)/gm, '')
+				}
+				data = data.replace(/(\s\s)/gm, ' ').replace(/"/g, '""')
+				csvLine.push('"' + data + '"')
+			})
+			csvRows.push(csvLine.join(separator))
+		})
+	})
+	return csvRows;
+}
+
+
+			function configura_descarga_csv() {
+				if (document.querySelectorAll) {
+					const asideEl = document.getElementsByTagName("aside").item(0);
+					asideEl.innerHTML = "<button class=\"descargar\" onclick=\"document.descarga(event)\">&#x1f847; Descargar como CSV</a>";
+					document.descarga = function(evt) {
+						evt.preventDefault();
+						let tablaEl = document.querySelectorAll("main > table")[0];
+						let csvRows = tableToCVSRows(tablaEl);
+						descargaArchivoCSV('Tabla.csv', csvRows.join('\n'));
+					}
+				}
+			}
+		</script>
+	</head>
+	<body onload="document.configura_selecciona_renglon(); configura_descarga_csv()">
+
+		
+
+		<aside></aside>
+
+		<main>
+			<table style="min-width:545pt">
+<tbody>
+	<tr>	<td  colspan="16" valign="middle" style="text-align:center;width:545pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:9pt;font-weight:bolder;" >Composición de aportaciones por Retiro (R), Cesantía (C) y Vejez (V) de trabajadores afiliados al IMSS por rango salarial</td></tr>
+	<tr>	<td  colspan="16" valign="middle" style="text-align:center;width:545pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >Pesos por días cotizados, proporción de la cuota patronal (%) y proporción del salario base de cotización (%)</td></tr>
+	<tr>	<td  rowspan="3" valign="middle" style="text-align:center;width:66pt;height:63pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;font-weight:bolder;" >Rango salarial de contribución</td>	<td  colspan="3" valign="middle" style="text-align:center;width:99pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;font-weight:bolder;" >Cuota social</td>	<td  colspan="3" valign="middle" style="text-align:center;width:102pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;font-weight:bolder;" >Cuota estado (CV)</td>	<td  colspan="3" valign="middle" style="text-align:center;width:92pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;font-weight:bolder;" >Cuota patronal (CV) </td>	<td  colspan="3" valign="middle" style="text-align:center;width:92pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;font-weight:bolder;" >Cuota patronal (R )</td>	<td  colspan="3" valign="middle" style="text-align:center;width:92pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;font-weight:bolder;" >Cuota trabajador (CV)</td></tr>
+	<tr>	<td  colspan="3" valign="middle" style="text-align:center;width:99pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;font-weight:bolder;" >Pesos por días cotizados</td>	<td  colspan="12" valign="middle" style="text-align:center;width:378pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;font-weight:bolder;" >Proporción del salario base de cotización mensual</td></tr>
+	<tr>	<td  valign="middle" style="text-align:center;width:33pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >Previo reforma</td>	<td  valign="middle" style="text-align:center;width:33pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2023</td>	<td  valign="middle" style="text-align:center;width:33pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2024</td>	<td  valign="middle" style="text-align:center;width:33pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >Previo reforma</td>	<td  valign="middle" style="text-align:center;width:34pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2023</td>	<td  valign="middle" style="text-align:center;width:33pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2024</td>	<td  valign="middle" style="text-align:center;width:34pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >Previo reforma</td>	<td  valign="middle" style="text-align:center;width:27pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2023</td>	<td  valign="middle" style="text-align:center;width:30pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2024</td>	<td  valign="middle" style="text-align:center;width:34pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >Previo reforma</td>	<td  valign="middle" style="text-align:center;width:27pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2023</td>	<td  valign="middle" style="text-align:center;width:30pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2024</td>	<td  valign="middle" style="text-align:center;width:33pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >Previo reforma</td>	<td  valign="middle" style="text-align:center;width:27pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2023</td>	<td  valign="middle" style="text-align:center;width:31pt;height:33pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2024</td></tr>
+	<tr>	<td  valign="middle" style="text-align:center;width:66pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1 s.m.</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    3.87 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $ 10.75 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $ 10.75 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.225</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:31pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td></tr>
+	<tr>	<td  valign="middle" style="text-align:center;width:66pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.01 s.m.-1.5 UMA</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    3.87 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $ 10.00 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $ 10.00 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.225</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.281</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.413</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:31pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td></tr>
+	<tr>	<td  valign="middle" style="text-align:center;width:66pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.5-2 UMA</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    3.87 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    9.25 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    9.25 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.225</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.575</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >4.000</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:31pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td></tr>
+	<tr>	<td  valign="middle" style="text-align:center;width:66pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2-2.5 UMA</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    3.71 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    8.50 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    8.50 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.225</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.751</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >4.353</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:31pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td></tr>
+	<tr>	<td  valign="middle" style="text-align:center;width:66pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.5-3 UMA</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    3.71 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    7.75 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    7.75 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.225</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.869</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >4.588</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:31pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td></tr>
+	<tr>	<td  valign="middle" style="text-align:center;width:66pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3-3.5 UMA</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    3.71 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    7.00 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    7.00 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.225</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.953</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >4.756</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:31pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td></tr>
+	<tr>	<td  valign="middle" style="text-align:center;width:66pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.5-4 UMA</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    3.71 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    6.25 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    6.25 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.225</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >4.016</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >4.882</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:31pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td></tr>
+	<tr>	<td  valign="middle" style="text-align:center;width:66pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >4-5 UMA</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    3.71 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    2.45 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $           -   </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.225</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >4.241</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >5.331</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:31pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td></tr>
+	<tr>	<td  valign="middle" style="text-align:center;width:66pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >5-6 UMA</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    3.71 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    1.80 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $           -   </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.225</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >4.241</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >5.331</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:31pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td></tr>
+	<tr>	<td  valign="middle" style="text-align:center;width:66pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >6-7 UMA</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    3.71 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    1.00 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $           -   </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.225</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >4.241</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >5.331</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:31pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td></tr>
+	<tr>	<td  valign="middle" style="text-align:center;width:66pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >7-12 UMA</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    3.55 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $           -   </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $           -   </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.225</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >4.241</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >5.331</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:31pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td></tr>
+	<tr>	<td  valign="middle" style="text-align:center;width:66pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >12-18 UMA</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    3.39 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $           -   </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $           -   </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.225</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >4.241</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >5.331</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:31pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td></tr>
+	<tr>	<td  valign="middle" style="text-align:center;width:66pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >>18 UMA</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $    3.23 </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $           -   </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" > $           -   </td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.225</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >0.000</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >3.150</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >4.241</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >5.331</td>	<td  valign="middle" style="text-align:center;width:34pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:30pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >2.000</td>	<td  valign="middle" style="text-align:center;width:33pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:27pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td>	<td  valign="middle" style="text-align:center;width:31pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >1.125</td></tr>
+	<tr>	<td  colspan="16" valign="left" style="text-align:left;width:545pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >s.m. salario mínimo y Unidad de Medida y Actualización (UMA).</td></tr>
+	<tr>	<td  colspan="16" valign="left" style="text-align:left;width:545pt;height:23pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >Se marca con una línea punteada roja el renglón que indica el rango salarial utilizado en el ejemplo del cálculo de aportaciones para una persona trabajadora con un salario promedio presentado en la gráfica 5. La cuota social es 0 para salarios mayores a 24 UMA.</td></tr>
+	<tr>	<td  colspan="16" valign="left" style="text-align:left;width:545pt;height:15pt;font-family:Calibri,Arial,Helvetica,sans-serif;font-size:8pt;" >Fuente: Elaborado por el Banco de México con base en la Ley del Seguro Social vigente.</td>
+</tr>
+</tbody>
+<tfoot><tr><td colspan= "16"></td></tr></tfoot>
+</table>
+		</main>
+
+
+		
+
+	</body>
+</html>

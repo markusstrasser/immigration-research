@@ -29,13 +29,14 @@ import zipfile
 from pathlib import Path
 
 import pandas as pd
+import numpy as np
 
 REPO = Path(__file__).resolve().parents[3]
 ROW4_REL = "infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json"
 ROW4_PIN = "c313b53"               # the Sept 28 candidate's commit, which wrote production_row4.json
 LINEAGE_REL = "infra/immigration-fiscal/main_case_2026_10_05/derived/corrections.json"
 LINEAGE_PIN = "4bf0206"            # main case v5's adoption commit, which wrote the payload's meta.lineage
-BASES = ("cps", "row4", "lineage")
+BASES = ("cps", "row4", "lineage", "oct15")
 STATUS = {"naturalized": 4, "noncitizen": 5}      # PRCITSHP
 KEEP = (6, 48)                                    # GESTFIPS: California and Texas keep their weights
 MEXICO = 303                                      # PENATVTY
@@ -46,6 +47,16 @@ def suffixed(path, basis):
     if basis not in BASES:
         raise SystemExit(f"[BLOCKED] unknown population basis {basis!r}; one of {BASES}")
     return path if basis == "cps" else path.with_name(f"{path.stem}_{basis}{path.suffix}")
+
+
+def economic_path(path, basis, case=None):
+    """Keep the completed-frame schema separate from its case's output identity."""
+    original = suffixed(path, basis)
+    if basis != "oct15" or case is None:
+        return original
+    if not case or any(not (c.isalnum() or c == "_") for c in case):
+        raise SystemExit(f"[BLOCKED] invalid economic case key {case!r}")
+    return path.with_name(f"{path.stem}_{case}{path.suffix}")
 
 
 def row4():
@@ -68,9 +79,12 @@ def g3plus(d):
     return d.target.to_numpy() & usb & ~mexpar
 
 
-def reweight(d, cps_zip, gate, basis="row4"):
+def reweight(d, cps_zip, gate, basis="row4", *, payload=None, case=None):
     """The distribution lane's CPS frame (load_cps(): pw = pwwgt0, target = the union, civ = civilians) on row 4, or
     on the lineage: row 4's weights (kept as pw_row4), then the G3+ records' times the lineage factor."""
+    if basis == "oct15":
+        original = reweight(d, cps_zip, gate, "lineage")
+        return completed_frame(original, oct15_payload(case or basis) if payload is None else payload, gate)
     if basis not in ("row4", "lineage"):
         raise SystemExit(f"[BLOCKED] reweight() takes row4 or lineage, not {basis!r}")
     r = row4()
@@ -108,3 +122,89 @@ def reweight(d, cps_zip, gate, basis="row4"):
         d["pw_row4"] = pw
         d["pw"] = lw
     return d
+
+
+def oct15_payload(case="oct15"):
+    """Committed corrected case; the shared guard also checks working-tree bytes."""
+    from committed_inputs import checked_bytes
+
+    pins = json.loads((Path(__file__).resolve().parent / "pins.json").read_text())
+    pin = pins[case]
+    lane = pin.get("case_lane", f"infra/immigration-fiscal/main_case_{pin['model'].removeprefix('adopted_')}")
+    return json.loads(checked_bytes(pin["main_case"], f"{lane}/derived/corrections.json"))
+
+
+def completed_frame(d, payload, gate):
+    """Pure oct15 completion of Phase B's uniform latent-descendant proxy.
+
+    Takes the original union after reweight(..., 'lineage'). Located members get
+    actual CPS records/weights; coverage is metadata only, with no imputed pay,
+    household income, age or payer subtraction. No frame weights are rounded.
+    """
+    metadata = payload["meta"]
+    counts = metadata["population_v8"]
+    completion = metadata["union_completion"]
+    records = completion["observed_records"]
+    original = d.target.to_numpy(bool)
+    original_other = d.other_base.to_numpy(bool) if "other_base" in d else d.civ.to_numpy(bool) & ~original
+    gate("oct15_original_other_is_frozen_complement",
+         np.array_equal(original_other, d.civ.to_numpy(bool) & ~original))
+    gate("oct15_frame_has_unique_person_ids", not d.duplicated(["PH_SEQ", "PPPOS"]).any())
+    keys = [(int(r["PH_SEQ"]), int(r["PPPOS"])) for r in records]
+    gate("oct15_completion_unique_person_ids", len(keys) == len(set(keys)) and len(keys) > 0)
+    ids = pd.MultiIndex.from_frame(d[["PH_SEQ", "PPPOS"]])
+    member_ids = pd.MultiIndex.from_tuples(keys)
+    positions = ids.get_indexer(member_ids)
+    gate("oct15_completion_all_records_located", bool(np.all(positions >= 0)),
+         expected=len(records), located=int(np.sum(positions >= 0)))
+    completed = np.zeros(len(d), dtype=bool)
+    completed[positions] = True
+    gate("oct15_completion_outside_original_union", not bool(np.any(completed & original)))
+    gate("oct15_completion_is_civilian", bool(d.civ.to_numpy(bool)[completed].all()))
+    source_weight = d.pwwgt0.to_numpy(float)
+    expected_weight = np.array([float(r["people"]) for r in records])
+    gate("oct15_completion_own_source_weights", bool(np.isfinite(expected_weight).all())
+         and bool(np.all(expected_weight > 0))
+         and bool(np.allclose(source_weight[positions], expected_weight, rtol=0, atol=1e-8)))
+    gate("oct15_completion_own_ages", np.array_equal(d.A_AGE.to_numpy()[positions],
+                                                  np.array([r["age"] for r in records])))
+    gate("oct15_completion_own_generation", all(r["generation"] == "G3plus" for r in records)
+         and bool(d.PRCITSHP.isin([1, 2, 3]).to_numpy()[completed].all())
+         and not bool((d.PEFNTVTY.eq(MEXICO) | d.PEMNTVTY.eq(MEXICO)).to_numpy()[completed].any()))
+    weights = d.pw.to_numpy(float).copy()
+    weights[completed] = source_weight[completed]
+    target = original | completed
+    other = original_other & ~completed
+    gate("oct15_completion_people_close", abs(float(weights[completed].sum()) - completion["counts"]["total"]) < 1e-6)
+    gate("oct15_no_member_is_other", not bool(np.any(target & other)))
+    gate("oct15_original_proxy_weights_fixed", np.array_equal(weights[~completed], d.pw.to_numpy()[~completed]))
+    gate("oct15_located_count_is_case_without_coverage",
+         abs(float(weights[target].sum()) - counts["without_coverage"]) < 1e-3,
+         located=float(weights[target].sum()), expected=counts["without_coverage"])
+    usb = d.PRCITSHP.isin([1, 2, 3]).to_numpy()
+    mexpar = (d.PEFNTVTY.eq(MEXICO) | d.PEMNTVTY.eq(MEXICO)).to_numpy()
+    gens = {"G1": target & ~usb & d.PENATVTY.eq(MEXICO).to_numpy(),
+            "G2": target & usb & mexpar, "G3+": target & usb & ~mexpar}
+    gate("oct15_generations_exhaust_located_frame", np.array_equal(sum(x.astype(int) for x in gens.values()),
+                                                                  target.astype(int)))
+    located = {g: float(weights[m].sum()) for g, m in gens.items()}
+    coverage = {g: float(metadata["coverage"]["counts_by_generation"][g.replace("G3+", "G3plus")]) for g in gens}
+    gate("oct15_coverage_counts_nonnegative_finite", all(np.isfinite(x) and x >= 0 for x in coverage.values()))
+    gate("oct15_coverage_counts_close", abs(sum(coverage.values()) - counts["coverage"]) < 1e-6)
+    rounding = float(counts["without_coverage"] - sum(located.values()))
+    gate("oct15_source_rounding_less_than_ten_thousandth_person", abs(rounding) < 1e-4, people=rounding)
+    full = {g: located[g] + coverage[g] + (rounding if g == "G1" else 0.0) for g in gens}
+    gate("oct15_full_denominators_close", abs(sum(full.values()) - counts["with_coverage"]) < 1e-6)
+    out = d.copy()
+    out["target_oct14"], out["other_oct14"] = original, original_other
+    out["completion_member"] = completed
+    out["target"], out["other"], out["pw"] = target, other, weights
+    out.attrs["population_oct15"] = dict(
+        located_persons=located, unlocated_coverage_persons=coverage, complete_denominator_persons=full,
+        located_total=float(weights[target].sum()), complete_total=float(counts["with_coverage"]),
+        case_located_total=float(counts["without_coverage"]), completion_records=len(records),
+        completion_persons=float(weights[completed].sum()), source_rounding=dict(generation="G1", people=rounding),
+        latent_proxy="Phase B uniform G3+ age/earnings/income proxy retained",
+        coverage_economic_inputs="[UNLOCATED] no invented CPS records, household income or earnings",
+        coverage_in_economic_record_weights=False)
+    return out

@@ -25,9 +25,11 @@ def test_nonfinite_row_blocks_before_totals(bad):
 
 
 def test_price_mix_blocks():
+    from mexico_prices import numeric_row_metadata
     rows = pd.DataFrame([
-        dict(party="mexico_residents", price_basis=b, low=1, central=1, high=1)
-        for b in ("PPP-GDP", "PPP-consumption")])
+        dict(row=f"mexico_taxes_lost_{g}", party="mexico_residents", price_basis=b, low=1, central=1, high=1,
+             **numeric_row_metadata(dict.fromkeys(("low", "central", "high"), divisor), divisor, b))
+        for g, b, divisor in (("G1", "PPP-GDP", 10), ("G2", "PPP-consumption", 11))])
     with pytest.raises(SystemExit, match="one_price_basis"):
         W.validate_rows(rows)
 
@@ -50,8 +52,8 @@ def test_nonpositive_log_consumption_blocks():
         W.group_log(pd.DataFrame(rows), prem, I, "central")
 
 
-def test_employer_receipts_add_once_and_zero_bound_remains_zero():
-    I = W.load("oct14", "lineage")
+def test_employer_receipts_add_once_and_zero_bound_remains_zero(v7_inputs):
+    I = v7_inputs
     p = W.premium_rows(I)
     for g in W.GROUP:
         amount = -I["vgen"].loc[I["vgen"].generation.eq(g)
@@ -64,17 +66,16 @@ def test_employer_receipts_add_once_and_zero_bound_remains_zero():
     assert p["G3+"]["e_mx"]["central"] == p["G3+"]["e_us"]
 
 
-def test_nan_employer_receipt_blocks():
-    I = W.load("oct14", "lineage")
-    I["vgen"] = I["vgen"].copy()
+def test_nan_employer_receipt_blocks(v7_inputs):
+    I = copy.deepcopy(v7_inputs)
     m = I["vgen"].line.eq("employer_hi") & I["vgen"].generation.eq("G1")
     I["vgen"].loc[m, "net_cost_bn"] = np.nan
     with pytest.raises(SystemExit, match="employer_compensation"):
         W.premium_rows(I)
 
 
-def test_requested_weighting_reproduces_full_totals_exactly():
-    I = W.load("oct14", "lineage")
+def test_requested_weighting_reproduces_full_totals_exactly(v7_inputs):
+    I = v7_inputs
     rows, prem, _ = W.build_rows(I)
     fac = W.channel_factors(I, "money")
     fac["_lambda"] = {"equal_lambda_1.16": 1.16}

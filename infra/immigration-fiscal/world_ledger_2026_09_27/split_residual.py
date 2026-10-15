@@ -30,6 +30,7 @@ Output: derived/generation_split_residual_<case>.csv.
 import argparse
 import json
 import subprocess
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -49,6 +50,16 @@ def gate(name, ok, **detail):
 
 
 def git_json(pin, rel):
+    if pin == PINS["oct15"]["generation"] and pin != "WORKTREE_SHA256":
+        from committed_inputs import checked_bytes
+        return json.loads(checked_bytes(pin, rel))
+    if pin == "WORKTREE_SHA256":
+        import hashlib
+        record = json.loads((HERE / "inputs/oct15_source_hashes.json").read_text())
+        gate("declared_worktree_snapshot", record.get("provenance") == "[WORKTREE INPUT]" and record.get("case") == "oct15")
+        data = (REPO / rel).read_bytes()
+        gate(f"exact_snapshot_{rel}", hashlib.sha256(data).hexdigest() == record["sha256"].get(rel))
+        return json.loads(data)
     return json.loads(subprocess.run(["git", "-C", str(REPO), "show", f"{pin}:{rel}"], capture_output=True,
                                      check=True).stdout)
 
@@ -90,12 +101,20 @@ def edit_cost(model, edits, side, line, key, alloc, response):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--case", default="oct14", choices=sorted(PINS))
-    case = ap.parse_args().case
+    ap.add_argument("--case", default="oct15", choices=sorted(PINS))
+    ap.add_argument("--set", default="set", choices=("set", "cash"))
+    args = ap.parse_args()
+    case = args.case
+    output_case = case + ("_cash" if args.set == "cash" else "")
+    if case != "oct15":
+        raise SystemExit(f"[BLOCKED] live case is oct15; {case} outputs are frozen")
     require_pins(case, "generation")
     pin = PINS[case]["generation"]
     gate("generation_pin", bool(pin), case=case)
-    corr = git_json(pin, lane_file(case, "generation", "generation_corrections.json"))
+    corr_file = lane_file(case, "generation", "generation_corrections.json")
+    if args.set == "cash":
+        corr_file = corr_file.removesuffix(".json") + "_cash.json"
+    corr = git_json(pin, corr_file)
     models = {g: git_json(pin, lane_file(case, "generation", f"model_{g}.json")) for g in GENS}
     edits = {g: {} for g in GENS}
     for g in GENS:
@@ -103,9 +122,10 @@ def main():
             edits[g].setdefault((e["side"], e["line"]), []).append(e)
     only = {x["id"] for g in GENS for part in ("lines", "receipt_lines")
             for x in corr["payloads"]["a"][g].get(part, [])}
+    only.update(("mixed_unit_removal", "coverage"))
     keys = ["band_end", "generation", "side", "line"]
-    c = pd.read_csv(DERIVED / f"generation_lines_{case}.csv", keep_default_na=False, na_values=[""])
-    u = pd.read_csv(DERIVED / f"generation_lines_uncorrected_{case}.csv", keep_default_na=False, na_values=[""])
+    c = pd.read_csv(DERIVED / f"generation_lines_{output_case}.csv", keep_default_na=False, na_values=[""])
+    u = pd.read_csv(DERIVED / f"generation_lines_uncorrected_{output_case}.csv", keep_default_na=False, na_values=[""])
     tot = c[c.side == "total"].pivot_table(index=["band_end", "generation"], columns="line", values="effect_bn")
     c, u = (d[d.side != "total"].assign(cost=lambda x: -x.effect_bn).set_index(keys) for d in (c, u))
     # From sept27 the package lists the correction-only spending lines in the uncorrected models too, at zero.
@@ -119,11 +139,11 @@ def main():
     rows, worst = [], 0.0
     for (end, side, line), grp in c.reset_index().groupby(["band_end", "side", "line"], sort=False):
         C = grp.set_index("generation").reindex(GENS)
-        head = dict(case=case, band_end=end, spec=int(C.spec.iloc[0]), allocation=C.allocation.iloc[0], side=side,
+        head = dict(case=output_case, band_end=end, spec=int(C.spec.iloc[0]), allocation=C.allocation.iloc[0], side=side,
                     line=line, key=C.key.iloc[0])
         gate(f"one_allocation_per_line_{end}_{line}", C.allocation.nunique() == 1
              and head["allocation"] in ("personal", "shared"), allocations=C.allocation.tolist())
-        if case == "oct14":
+        if case in ("oct14", "oct15"):
             gate(f"oct14_personal_allocation_{end}_{line}", head["allocation"] == "personal")
         if line in only:
             for g in GENS:
@@ -161,12 +181,15 @@ def main():
     out = out.sort_values(["band_end", "generation", "side", "line"], kind="mergesort")
     # Gate: each generation's lines add to its direct response plus capital return.
     got = out.groupby(["band_end", "generation"], observed=True).lane_bn.sum()
-    want = tot.direct_fiscal + tot.capital_return
+    want = tot.direct_fiscal + tot.capital_return + (tot.post_engine if case == "oct15" else 0)
     d = max(abs(got[k] - want[k]) for k in want.index)
     gate("lines_add_to_the_direct_response_and_capital_return", d < 1e-6, max_abs_diff=d)
     cols = ["case", "band_end", "spec", "allocation", "generation", "side", "line", "key", "prorata_bn", "spec_key_bn",
             "key_step_bn", "unlisted_bn", "corrections_step_bn", "correction_only_bn", "lane_bn"]
-    out[cols].to_csv(DERIVED / f"generation_split_residual_{case}.csv", index=False, lineterminator="\n",
+    sys.path.insert(0, str(HERE.parent / "scripts"))
+    from memory_budget import require_within_budget
+    print(f"  footprint bytes: {require_within_budget('world split residual')}")
+    out[cols].to_csv(DERIVED / f"generation_split_residual_{output_case}.csv", index=False, lineterminator="\n",
                      float_format="%.9f")
     print(f"  ✓ gates pass: every line moves by its correction edit (max |diff| {worst:.1e} bn); the steps add up")
     s = out.groupby(["band_end", "generation"], observed=True)[steps + ["lane_bn"]].sum(min_count=1)

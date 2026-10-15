@@ -6,9 +6,10 @@ ENIGH records pay as received, after withholding (reads/enigh_2024_questionnaire
 Pay from formal jobs (subordinate, with SAR or AFORE) is grossed up by the 2024 statutory withholding (income
 tax, employee IMSS contributions, the worker's retirement-account deposit), reproducing OECD's rates at the
 average wage (gate); the withheld tax is kept as a Mexican tax the person would pay.
-P7 adds the formal employer's IMSS, SAR/CEAV and INFONAVIT contributions to total compensation and
-the ledger's avoided contributions, each once; cash gross and employee withholding stay as positive
-controls. The employer's occupational-risk and missing work-duration bounds are separate columns.
+Formal employer IMSS, SAR/CEAV and INFONAVIT contributions enter total compensation once.
+Pooled IMSS quotas enter public receipts; SAR/CEAV and housing deposits are worker assets,
+including minimum-wage employee CEAV paid by the employer. Cash gross and employee public
+withholding retain their positive controls. Occupational-risk and work-duration bounds are explicit.
 
 Consumption taxes: each person's gross labor income bears the IVA and IEPS their household's income decile pays
 as a share of its autonomous income, as SHCP measures them for 2024 on the same survey (reads/shcp_2026_incidence.md),
@@ -38,6 +39,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+import mexico_compensation as MC
 
 # The survey files are parsed chunk by chunk (low_memory=False held a whole file's fields, ~1 GB per ENOE quarter).
 # A column typed differently in two chunks would come back mixed, so stop instead (for every importer); columns that
@@ -145,6 +148,11 @@ def employer_parameters():
            "uma": number(r"Cifra igual a ([\d.]+) pesos en diciembre de 2024", table),
            "cap_uma": number(r"hasta llegar a (\d+) en 2007", table),
            "minimum_wage": number(r"general minimum wage is ([\d.]+)", oecd)}
+    out["employee_cash"] = number(r"Prestaciones en dinero SBC [\d.]+ ([\d.]+)", table) / 100
+    out["employee_pension_medical"] = number(r"Personas pensionadas SBC [\d.]+ ([\d.]+)", table) / 100
+    out["employee_disability_life"] = number(r"Invalidez y Vida SBC [\d.]+ ([\d.]+)", table) / 100
+    gate("mexico_employee_rates_match_withholding", abs(out["employee_cash"]
+         + out["employee_pension_medical"] + out["employee_disability_life"] - SSC_RATE) < 1e-12)
     # The table's footnote is the enacted gradual 2024 CEAV schedule, not its final 2030 rates.
     foot = table[table.index("6/ Con la reforma"):table.index("7/ Con la reforma")]
     first = number(r"cuota en 2024 es de ([\d.]+)%", foot)
@@ -179,36 +187,9 @@ def mx_employer_contributions(g, risk_rate=None, full_year=False):
     Above it, use the lane's existing 30.4*12 annualization and 25-UMA cap. Accident-history
     risk is unobserved: default IMSS's March-2024–February-2025 average, bounds LSS art74.
     SAR/CEAV and housing are mandatory individual-account deposits, separately disclosed;
-    total_tax follows the requested ledger convention, not a claim all are public revenue.
+    retirement and housing deposits are worker assets, excluded from total_tax.
     """
-    g = np.asarray(g, float)
-    gate("mexico_employer_pay_finite_nonnegative", np.isfinite(g).all() and (g >= 0).all())
-    p = employer_parameters()
-    risk = p["risk"] if risk_rate is None else float(risk_rate)
-    gate("mexico_employer_risk_inside_statute", np.isfinite(risk) and p["risk_min"] <= risk <= p["risk_max"])
-    exposure = np.where(g > 0, 1.0, 0.0) if full_year else np.minimum(g / MW_YEAR, 1.0)
-    annual = np.divide(g, exposure, out=np.zeros_like(g), where=exposure > 0)
-    annual = np.where(exposure > 0, np.maximum(annual, MW_YEAR), 0.0)
-    base = np.minimum(annual, p["cap_uma"] * UMA_YEAR)
-    excess = np.maximum(base - 3 * UMA_YEAR, 0.0)
-    # The minimum-wage tier takes precedence over UMA intervals (SM exceeds the first
-    # two UMA brackets in 2024). Bounds preserve the law's statutory discontinuities.
-    idx = np.searchsorted(p["ceav_upper_uma"], base / UMA_YEAR, side="left") + 1
-    ceav = np.where(base <= p["minimum_wage"] * 30.4 * 12, p["ceav_rates"][0], p["ceav_rates"][idx])
-    minimum = (annual > 0) & (annual <= MW_YEAR)
-    # LSS art36: employers also bear the worker shares at the minimum wage. Existing
-    # mx_withholding exempts that wage, so compute the shares directly at its capped SBC.
-    worker_ssc_assumed = np.where(minimum, base * SSC_RATE + excess * SSC_RATE_SUR, 0.0)
-    worker_afore_assumed = np.where(minimum, base * AFORE_RATE, 0.0)
-    out = {"imss": exposure * (p["fixed"] * UMA_YEAR * (g > 0) + p["excess"] * excess
-                                + base * (p["cash_benefit"] + p["pension_medical"] + p["disability_life"]
-                                          + p["daycare"] + risk) + worker_ssc_assumed),
-           "retirement": exposure * (base * (p["retirement"] + ceav) + worker_afore_assumed),
-           "housing": exposure * base * p["housing"]}
-    out["total"] = sum(out.values())
-    gate("mexico_employer_components_close", np.isfinite(out["total"]).all()
-         and np.allclose(out["total"], out["imss"] + out["retirement"] + out["housing"], rtol=0, atol=1e-9))
-    return out
+    return MC.employer_contributions(sys.modules[__name__], g, risk_rate, full_year)
 
 
 def fuel_ieps_by_decile():
@@ -343,16 +324,17 @@ def load_enigh():
     for component in ("imss", "retirement", "housing"):
         d[f"employer_{component}_mxn"] = employer[component]
     d["employer_mxn"] = employer["total"]
+    d["employer_assets_mxn"] = employer["assets"]
     p = employer_parameters()
     d["employer_risk_min_mxn"] = mx_employer_contributions(fg, p["risk_min"])["total"]
     d["employer_risk_max_mxn"] = mx_employer_contributions(fg, p["risk_max"])["total"]
     d["employer_full_year_mxn"] = mx_employer_contributions(fg, full_year=True)["total"]
     d["compensation_mxn"] = d.gross_mxn + d.employer_mxn
-    d["total_tax_mxn"] = d.withheld_tax_mxn + d.employer_mxn
+    d["total_tax_mxn"] = d.withheld_tax_mxn + d.employer_imss_mxn
     gate("mexico_employer_nonformal_zero", bool((d.employer_mxn[d.formal_net_mxn == 0] == 0).all()))
     gate("mexico_compensation_adds_each_employer_contribution_once",
          bool(np.allclose(d.compensation_mxn - d.total_tax_mxn,
-                          d.gross_mxn - d.withheld_tax_mxn, rtol=0, atol=1e-7)))
+                           d.gross_mxn - d.withheld_tax_mxn + d.employer_assets_mxn, rtol=0, atol=1e-7)))
     miss = (fg - t - s - a) - d.formal_net_mxn
     gate("gross_up_closes", ((miss >= 0) & (miss <= 10 + 5e-4 * d.formal_net_mxn)).all(),
          worst=float(miss.abs().max()))
@@ -429,7 +411,8 @@ MONEY = {"income": "labor_mxn", "gross": "gross_mxn", "withheld": "withheld_tax_
          "total_tax": "total_tax_mxn", "employer_imss": "employer_imss_mxn",
          "employer_retirement": "employer_retirement_mxn", "employer_housing": "employer_housing_mxn",
          "employer_risk_min": "employer_risk_min_mxn", "employer_risk_max": "employer_risk_max_mxn",
-         "employer_full_year": "employer_full_year_mxn"}
+         "employer_full_year": "employer_full_year_mxn", "formal_gross": "formal_gross_mxn",
+         "employer_assets": "employer_assets_mxn"}
 
 
 def cells(d, weight_col="w"):
@@ -688,8 +671,18 @@ def main():
                     "work-year fraction below the existing integrated minimum is gross/MW_YEAR; accident-history "
                     "risk at IMSS observed March-2024–February-2025 average, LSS bounds beside. Fixed/UMA quotas "
                     "use December-2024 UMA as existing model; no employer-location/industry accident record.",
-        account_deposits="SAR/CEAV and housing deposits belong to the worker. Including them in total_tax follows "
-                         "the requested ledger's contribution convention, not a claim they are public revenue.")
+         account_deposits="SAR/CEAV and housing deposits belong to the worker. They are included in compensation "
+                          "and excluded from pooled public taxes, including employee CEAV paid by minimum-wage employers.")
+    declarations = {k: dict(receipt_class=v[0], owner=v[1], remitter=v[2], statute=v[3])
+                    for k, v in MC.RECEIPTS.items()}
+    (DERIVED / "mexico_receipt_contract.json").write_text(json.dumps(declarations, indent=1, sort_keys=True) + "\n")
+    er = mx_employer_contributions(en.formal_gross_mxn.to_numpy())
+    receipts = MC.employee_receipts(sys.modules[__name__], en.formal_gross_mxn.to_numpy())
+    receipts += MC.receipt_rows({k: er[k] for k in MC.RECEIPTS if k in er})
+    payroll = pd.DataFrame([{k: v for k, v in r.items() if k != "amount_mxn"}
+                            | dict(amount_mxn_bn=float((en.w.to_numpy() * r["amount_mxn"]).sum()) / 1e9)
+                            for r in receipts])
+    payroll.to_csv(DERIVED / "mexico_payroll_receipts.csv", index=False, lineterminator="\n", float_format="%.17g")
     json.dump(meta, open(DERIVED / "mexico_meta.json", "w"), indent=1, sort_keys=True)
     print(json.dumps(meta, indent=1), file=sys.stderr)
 

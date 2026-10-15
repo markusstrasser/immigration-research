@@ -74,7 +74,7 @@
  "emovi_share_with_both_schooling": 0.9324653269176337,
  "emovi_weighted_share_with_both_schooling": 0.9463977217674255,
  "employer_contributions": {
-  "account_deposits": "SAR/CEAV and housing deposits belong to the worker. Including them in total_tax follows the requested ledger's contribution convention, not a claim they are public revenue.",
+  "account_deposits": "SAR/CEAV and housing deposits belong to the worker. They are included in compensation and excluded from pooled public taxes, including employee CEAV paid by minimum-wage employers.",
   "assumptions": "Formal gross cash approximates SBC; annualization 30.4*12 matches existing employee model; work-year fraction below the existing integrated minimum is gross/MW_YEAR; accident-history risk at IMSS observed March-2024\u2013February-2025 average, LSS bounds beside. Fixed/UMA quotas use December-2024 UMA as existing model; no employer-location/industry accident record.",
   "parameters": {
    "cap_uma": 25.0,
@@ -99,6 +99,9 @@
    ],
    "daycare": 0.01,
    "disability_life": 0.0175,
+   "employee_cash": 0.0025,
+   "employee_disability_life": 0.00625,
+   "employee_pension_medical": 0.00375,
    "excess": 0.011000000000000001,
    "fixed": 0.204,
    "housing": 0.05,
@@ -112,13 +115,14 @@
   },
   "source": "IMSS Informe 2024\u20132025 Annex A, Table A.3; LSS art74; INFONAVIT art29(II); exact retrieved text pinned",
   "totals_mxn_bn": {
-   "employer": 950.7337158839123,
+   "employer": 950.770866998724,
+   "employer_assets": 510.44085501639256,
    "employer_full_year": 970.7473782242537,
    "employer_housing": 208.43033501659798,
-   "employer_imss": 440.31045876400947,
-   "employer_retirement": 301.9929221033047,
-   "employer_risk_max": 1495.3996987425855,
-   "employer_risk_min": 890.9517271944515
+   "employer_imss": 440.3300119823314,
+   "employer_retirement": 302.01051999979455,
+   "employer_risk_max": 1495.4368498573974,
+   "employer_risk_min": 890.9888783092633
   }
  },
  "enigh_labor_income_gross_mxn_bn": 8410.64696749871,

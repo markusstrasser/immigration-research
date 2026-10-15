@@ -1,0 +1,72 @@
+{
+  "files": {
+    "pension_banxico_rcv_2024.html": {
+      "bytes": 44827,
+      "content_type": "text/html;charset=UTF-8",
+      "final_url": "https://www.banxico.org.mx/TablasWeb/informes-trimestrales/octubre-diciembre-2024/F68FA81A-0BE6-4127-BE3F-C963CCDB997A.html",
+      "path": "inputs/pension_banxico_rcv_2024.html",
+      "representation": "exact HTTP response bytes",
+      "retrieved_utc": "2026-10-14T15:38:04.531349+00:00",
+      "sha256": "4254c9047cea72a5c833473da118db2dc4983b7e74c42274ad71fdde48debe01",
+      "url": "https://www.banxico.org.mx/TablasWeb/informes-trimestrales/octubre-diciembre-2024/F68FA81A-0BE6-4127-BE3F-C963CCDB997A.html"
+    },
+    "pension_imss_annex_2024_2025.txt": {
+      "bytes": 139367,
+      "path": "inputs/pension_imss_annex_2024_2025.txt",
+      "representation": "exact stored Exa deterministic primary-source text extraction; not PDF bytes",
+      "retrieved_utc": "2026-10-14T15:44:43.758300+00:00",
+      "sha256": "e9641dcdd47c7228a0c7e4dad6f3a8ab85b97a80404962275328cd4b6eaa6d85",
+      "transport": "[DEGRADED] direct PDF/DOF transfer blocked; recovered primary text through Exa",
+      "url": "https://www.imss.gob.mx/sites/all/statics/pdf/informes/20242025/15-anexos.pdf"
+    },
+    "pension_infonavit_law.txt": {
+      "bytes": 262163,
+      "path": "inputs/pension_infonavit_law.txt",
+      "representation": "exact stored Exa deterministic primary-source text extraction; not PDF bytes",
+      "retrieved_utc": "2026-10-14T15:44:43.758655+00:00",
+      "sha256": "0d658ea15812cff87310484626ed44cae4291a12d1dd971668ea45d267b6637f",
+      "transport": "[DEGRADED] direct PDF/DOF transfer blocked; recovered primary text through Exa",
+      "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LIFNVT.pdf"
+    },
+    "pension_lss_1973.txt": {
+      "bytes": 233057,
+      "completeness": "full historical law text; pension table extraction is misaligned, not safe for automatic formula input",
+      "path": "inputs/pension_lss_1973.txt",
+      "representation": "exact stored Exa deterministic primary-source text extraction; not PDF bytes",
+      "retrieved_utc": "2026-10-14T15:44:43.758012+00:00",
+      "sha256": "6608e0952518d50b5608079841c206cb0806479e9728c6b9d4e9bfe2a110649c",
+      "transport": "[DEGRADED] direct PDF/DOF transfer blocked; recovered primary text through Exa",
+      "url": "https://imss.gob.mx/sites/all/statics/pdf/leyes/4129_LSS_1973.pdf"
+    },
+    "pension_lss_current_full.txt": {
+      "bytes": 512098,
+      "path": "inputs/pension_lss_current_full.txt",
+      "representation": "exact stored Exa deterministic primary-source text extraction; not PDF bytes",
+      "retrieved_utc": "2026-10-14T15:44:43.759221+00:00",
+      "sha256": "edd337dfd7a2fbac842b1f9a763dcee58e574add73afef9590a8a4b8464d10d7",
+      "transport": "[DEGRADED] direct PDF/DOF transfer blocked; recovered primary text through Exa",
+      "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LSS.pdf"
+    },
+    "pension_reform_2020.txt": {
+      "bytes": 29029,
+      "completeness": "text includes transition clauses but embedded tables omitted; CEAV numeric authority is IMSS annex A.3",
+      "path": "inputs/pension_reform_2020.txt",
+      "representation": "exact stored Exa deterministic primary-source text extraction; not PDF bytes",
+      "retrieved_utc": "2026-10-14T15:44:43.757454+00:00",
+      "sha256": "66f804ac5f616f0af790a6042b05b9c924e7c4bc4814603c121e6120d74dfecd",
+      "transport": "[DEGRADED] direct PDF/DOF transfer blocked; recovered primary text through Exa",
+      "url": "https://www.dof.gob.mx/nota_detalle.php?codigo=5607729&fecha=16/12/2020"
+    },
+    "pension_uma_2024.pdf": {
+      "bytes": 55116,
+      "content_type": "application/pdf",
+      "final_url": "https://inegi.org.mx/contenidos/saladeprensa/boletines/2024/UMA/UMA2024.pdf",
+      "path": "inputs/pension_uma_2024.pdf",
+      "representation": "exact HTTP response bytes",
+      "retrieved_utc": "2026-10-14T15:38:04.587331+00:00",
+      "sha256": "55aaab4ee7bbe2b8cb4405f1132c2411e3e944b4606020562f18b40b6539a847",
+      "url": "https://inegi.org.mx/contenidos/saladeprensa/boletines/2024/UMA/UMA2024.pdf"
+    }
+  },
+  "note": "Separate pension-source manifest; exact extraction/HTTP bytes, explicit transport degradations preserved"
+}

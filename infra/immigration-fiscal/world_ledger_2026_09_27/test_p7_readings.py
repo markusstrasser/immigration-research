@@ -9,6 +9,7 @@ import pytest
 import beside_arms as B
 import beside_extra as X
 import world_ledger as W
+from mexico_prices import budget_from_gdp, budget_values, price_budget
 
 D = Path(__file__).resolve().parent / "derived"
 
@@ -43,14 +44,19 @@ def test_direct_cells_compensation_closes_after_source_rounding():
                   weekly_hours_employed=40.0)
     for ppp in ("gdp", "consumption"):
         common.update({f"{field}_per_person_ppp_{ppp}": value for field, value in
-                       (("gross", 100.0123), ("employer", 20.00123), ("compensation", 120.014),
-                        ("withheld", 10.00123), ("total_tax", 30.003), ("income", 90.0), ("ctax", 8.0))})
+                        (("gross", 100.0123), ("employer", 20.00123), ("compensation", 120.014),
+                         ("withheld", 10.00123), ("total_tax", 30.003), ("income", 90.0), ("ctax", 8.0),
+                         ("formal_gross", 60.0123), ("employer_assets", 9.00123),
+                         ("employer_retirement", 6.00123), ("employer_housing", 3.00123))})
     got = X.cells_dicts(pd.DataFrame([common]), pd.DataFrame([common]))
     for ppp in got:
         for pre in ("", "y"):
             for key in got[ppp][pre + "cash"]:
                 assert got[ppp][pre + "inc"][key] == got[ppp][pre + "cash"][key] + got[ppp][pre + "employer"][key]
-                assert got[ppp][pre + "tax"][key] == 10.00123 + got[ppp][pre + "employer"][key]
+                assets = got[ppp][pre + "assets"][key]
+                assert assets == 6.00123 + 3.00123
+                assert got[ppp][pre + "formal"][key] == 60.0123
+                assert got[ppp][pre + "tax"][key] == 10.00123 + got[ppp][pre + "employer"][key] - assets
 
 
 def test_wages_and_services_are_symmetric_positive_control():
@@ -112,21 +118,32 @@ def test_wtp_identity_then_one_change(elasticity):
     pos = pd.DataFrame([dict(measure="money", party=g, mean_y_pc=100.0)
                         for g in (*W.GENS, "other_residents")])
     equal, factors = X.public_goods_wtp(v, pos, elasticity)
-    pd.testing.assert_frame_equal(equal, v)
+    pd.testing.assert_frame_equal(equal[v.columns], v)
+    assert equal.loc[v.cls.eq("public_good"), "us_service_price_exemption"].eq("WTP").all()
     assert set(factors.values()) == {1.0}
     pos.loc[pos.party.eq("G1"), "mean_y_pc"] = 25.0
     got, factors = X.public_goods_wtp(v, pos, elasticity)
     assert factors["G1"] == 0.25 ** elasticity
     selected = v.generation.eq("G1") & v.cls.eq("public_good")
-    pd.testing.assert_frame_equal(got[~selected], v[~selected])
+    pd.testing.assert_frame_equal(got.loc[~selected, v.columns], v[~selected])
     assert np.allclose(got.loc[selected, "V_central_bn"], 7 * factors["G1"], atol=1e-12, rtol=0)
 
 
-def test_mexico_responsive_is_one_change():
-    v = pd.DataFrame(dict(cls=["public_good", "health", "cash"], bn=[10.0, 4.0, 2.0]))
-    got = X.mexico_public_goods_responsive(v)
-    assert abs(got.bn.iloc[0] - 10 * W.MEXICO_PUBLIC_RESPONSE[1]) < 1e-12
-    pd.testing.assert_frame_equal(got.iloc[1:], v.iloc[1:])
+def test_mexico_recipient_value_cannot_move_fiscal_cost_and_response_floor():
+    raw = pd.DataFrame(dict(generation=["G1"] * 4,
+                            cls=["education", "public_good", "health", "cash"], bn=[3., 10., 4., 2.]))
+    base = budget_from_gdp(raw, 10.)
+    before, pesos_before, lost_before = budget_values(base, "G1", (1., 1., 1.), W.MEXICO_PUBLIC_RESPONSE)
+    recipient_divisors = dict(education=10., public_good=20., health=10., cash=10.)
+    valued = price_budget(base, recipient_divisors, recipient_only=True)
+    after, pesos_after, lost_after = budget_values(valued, "G1", (1., 1., 1.), W.MEXICO_PUBLIC_RESPONSE)
+    pd.testing.assert_series_equal(valued.fiscal_cost_bn, base.fiscal_cost_bn, check_exact=True)
+    assert before == after and pesos_before == pesos_after
+    assert before == {"low": 15., "central": 16.25, "high": 17.5}
+    assert lost_before == {end: -16. for end in ("low", "central", "high")}
+    assert lost_after == {end: -11. for end in ("low", "central", "high")}
+    with pytest.raises(SystemExit, match="public_response_floor"):
+        budget_values(valued, "G1", (1., 1., 1.), (0.526, 0.725, 0.85))
 
 
 def test_endpoint_theta_from_lambda_slopes():
@@ -145,8 +162,8 @@ def test_endpoint_theta_from_lambda_slopes():
     assert np.allclose(t.world_change_bn, np.where(t.scenario.eq("reading1"), 0, 2), atol=1e-12, rtol=0)
 
 
-def test_selected_theta_total_is_exact_full_positive_control():
-    inp = W.load("oct14", "lineage")
+def test_selected_theta_total_is_exact_full_positive_control(v7_inputs):
+    inp = v7_inputs
     fac = W.channel_factors(inp, "money")
     fac["_lambda"] = {"equal_lambda_theta": 1.2}
     rows, prem, _ = W.build_rows(inp)

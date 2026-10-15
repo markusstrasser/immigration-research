@@ -3718,3 +3718,160 @@ The per-command timing log uses Python time.perf_counter and resource.getrusage 
 - 2026-10-14 21:11 JST — independent audit's employer-residual finding repaired from the pinned BEA workbook. Profiling isolated redundant theta-weight computations; requested-weighting evaluation preserves exact values and every direct theta check. Final focused X run 40.85s, 1.222GB, versus its prior 79.12s. These are individual observed runs, not a normalized speedup.
 - 2026-10-14 21:18 JST — complete live wrapper exits 0; all 95 tests pass after the final finite-distribution guard; Python compile, Node syntax and shell syntax checks pass. No tolerance relaxed.
 - 2026-10-14 21:27 JST — final `rerun_lane.py` receipt: **IDENTICAL 188/188, exit 0**. Both commands succeeded: full oct14 route and all 95 tests. No allow-unrun exemption. The frozen main-case directory and historical case-keyed outputs have no diff. Per-command Python timing/RSS receipts are in `_cache/p7_timings.jsonl`; no Git metadata was written. The append-only validation receipt is retained by the document renderer on future reruns.
+
+## Oct15 propagation: generation core
+
+- 2026-10-15 00:05 JST — Initial oct15 probe stopped at the live oct14 switch before writes. The new phase-2 core reads an explicitly declared `[WORKTREE INPUT]` SHA256 snapshot of generation and case inputs; unknown or changed bytes stop. This is pre-review provenance, not a generation adoption commit. Case-final verification belongs to the parent. Set and cash cores use the generation lane's v8 evaluator, including scoped item 11 and coverage; their post-engine rows remain explicit. All-specification generation closure is 1e-9, engine line and capital identities 1e-9; existing rounded band and published generation-row tolerances remain 5.01e-5 and 1e-6.
+- Receipt lines retain explicit incidence class and economic payer. Declared completion carriers inherit their source parent's class and payer; unknown parents stop. A signed spending carrier representing a receipt keeps receipt incidence. Physical footprint is checked inside executed Python stages; wrapper `ru_maxrss` is diagnostic only. Five focused regression tests pass; source compile/syntax checks pass. Final outputs and reproduction await final case/generation readiness.
+- Full world valuation is **STOPPED** before execution because oct15 winners, distribution and debt inputs are pending. No oct14 inputs substitute and no oct15 world-welfare result is claimed. The phase-2 core command is `sh infra/immigration-fiscal/world_ledger_2026_09_27/run_core_oct15.sh`. Historical outputs stay byte for byte.
+
+```sh
+node infra/immigration-fiscal/world_ledger_2026_09_27/v8_snapshot.cjs --capture
+sh infra/immigration-fiscal/world_ledger_2026_09_27/run_core_oct15.sh
+OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 uv run --no-project python3 infra/immigration-fiscal/world_ledger_2026_09_27/check_tests.py
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/world_ledger_2026_09_27 "node {lane}/v8_snapshot.cjs --capture" "sh {lane}/run_core_oct15.sh" "uv run --no-project python3 {lane}/check_tests.py" "sh -n {lane}/run_all.sh" "uv run --no-project python3 {lane}/measured_run.py true"
+```
+
+The core-contract command imports and executes `valuation.py`'s receipt and completion incidence contracts. The full-world wrapper receives a shell syntax check only; its numerical run is deferred to the parent after the dependencies move.
+
+- 2026-10-15 00:22 JST — Broader regression run found one stale live-dispatch fixture (99 passed, 1 failed): it still requested oct14 after the live residual route moved. Migrated the fixture to oct15 and added nonzero mixed-unit/coverage rows while retaining its 100x personal/shared disconfirmation. Final **100/100 tests pass**, exit 0, 30.47s; in-process lifetime peak physical footprint **592,905,560 bytes**, under 2.5GB. These are measured validation-run values, not a claimed performance improvement. Final core numerical runs await final case/generation readiness.
+- 2026-10-15 00:43:45 JST — Swept every Python file in this lane after the parent's production-dimension-order defect. No local Python consumer enumerates production dimensions or computes a tensor-array index; generation lines evaluate through the Node engine/V8 evaluator. The imported distribution producer's index fix remains the parent's responsibility. No grid tolerance was loosened and no historical output regenerated.
+
+
+## Operator price ruling — 2026-10-15 01:36 JST
+
+Implemented 2026-10-15 02:04:34 JST. This replaces fix 2's central rule; earlier price conclusions remain historical.
+
+Mexico's lost public receipts, saved budget and services forgone use GDP PPP for the entire budget, including cash and education. Household purchasing power and remittance recipients use consumption PPP; each reading keeps its stated private-pay counterfactual. Mexico's category-price arm is beside, labelled **Mexico's services at US prices**, together with the superseded brief's national/use service mixes.
+
+US cost-valued recipient services take US GDP price level / category price level, both World=100, ICP 2021 source 90. Actual US fiscal costs and receipt dollars stay fixed; the difference is recipient value lost (negative loss where the specified ratio exceeds one). Medicaid, housing vouchers, SNAP and explicit WTP arms are exempt. Reading 2 keeps its own health/social-services 3a; those already-priced lines are exempt from a second adjustment. Response-only quantities are selected before pricing.
+
+ICP 2021 price spreads are transported to 2024 [ASSUMPTION]. Utility and residual-enterprise category mappings are explicit coarse proxies; the line table names them. Education retains V=0 except in an explicitly cost-valued companion. Source JSON, URL, retrieval date and SHA256 are in `inputs/icp_us_pli_2021.json` and `inputs/pins.json`. [SOURCE: World Bank ICP 2021 source 90, PX.WL]
+
+These executed comparisons isolate prices on frozen v7 inputs, holding the published upstream compensation, pension, capital and G3+ definitions fixed. They are not an oct15 adoption or the joint round-2 result. Published R1 and every reading's centre matched the stored oracle within 4.94453445299e-07bn; actual US fiscal-row error is 0bn. Both account ends, both G3+ bounds, all eight weightings and all four party totals appear in the CSV and full report. Every $5bn verdict is generated from abs(unrounded signed change) >= 5. [CALCULATION: operator_price_bridge.py; operator_price_changes_v7.csv]
+
+Full comparison: [price-report.md](/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/world/operator-price/price-report.md). Exact amounts: [operator_price_changes_v7.csv](/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/world/operator-price/operator_price_changes_v7.csv). Line receipts: [operator_us_service_factors_v7.csv](/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/world/operator-price/operator_us_service_factors_v7.csv).
+
+### world_total_bn
+
+| reading | end | G3+ | weights | published | brief category rule | Mexico-only Δ | US-only Δ | joint Δ | ruled | $5bn bar (MX / US / joint) |
+|---|---|---|---|---:|---:|---:|---:|---:|---:|---|
+| baseline | low | zero | equal | +509.209146 | +453.335543 | -9.494318 | -46.275266 | -55.769584 | +453.439562 | over / over / over |
+| baseline | high | zero | equal | +391.580849 | +335.707245 | -9.494318 | -47.343925 | -56.838243 | +334.742606 | over / over / over |
+| baseline | low | upper | equal | +834.330538 | +919.280455 | -9.494318 | -46.275266 | -55.769584 | +778.560954 | over / over / over |
+| baseline | high | upper | equal | +716.702240 | +801.652157 | -9.494318 | -47.343925 | -56.838243 | +659.863998 | over / over / over |
+| reading1 | low | zero | equal | +472.319768 | +392.866003 | -5.561693 | -46.275266 | -51.836959 | +420.482809 | over / over / over |
+| reading1 | high | zero | equal | +354.691471 | +275.237706 | -5.561693 | -47.343925 | -52.905618 | +301.785853 | over / over / over |
+| reading1 | low | upper | equal | +771.502159 | +829.509364 | -5.561693 | -46.275266 | -51.836959 | +719.665200 | over / over / over |
+| reading1 | high | upper | equal | +653.873862 | +711.881067 | -5.561693 | -47.343925 | -52.905618 | +600.968244 | over / over / over |
+| reading1_deflated | low | zero | equal | +479.366768 | +403.518866 | -5.380290 | -46.275266 | -51.655556 | +427.711212 | over / over / over |
+| reading1_deflated | high | zero | equal | +361.738471 | +285.890569 | -5.380290 | -47.343925 | -52.724215 | +309.014256 | over / over / over |
+| reading1_deflated | low | upper | equal | +782.794159 | +846.358055 | -5.380290 | -46.275266 | -51.655556 | +731.138603 | over / over / over |
+| reading1_deflated | high | upper | equal | +665.165862 | +728.729757 | -5.380290 | -47.343925 | -52.724215 | +612.441647 | over / over / over |
+| reading2 | low | zero | equal | +245.243646 | +162.130324 | -9.494318 | -4.405156 | -13.899473 | +231.344173 | over / under / over |
+| reading2 | high | zero | equal | +155.365891 | +72.252569 | -9.494318 | -6.606579 | -16.100897 | +139.264994 | over / over / over |
+| reading2 | low | upper | equal | +544.426038 | +598.773685 | -9.494318 | -4.405156 | -13.899473 | +530.526565 | over / under / over |
+| reading2 | high | upper | equal | +454.548282 | +508.895929 | -9.494318 | -6.606579 | -16.100897 | +438.447386 | over / over / over |
+| reading2_consumption | low | zero | equal | +264.258343 | +173.799341 | -15.711625 | -4.405156 | -20.116781 | +244.141562 | over / under / over |
+| reading2_consumption | high | zero | equal | +174.380588 | +83.921586 | -15.711625 | -6.606579 | -22.318204 | +152.062384 | over / over / over |
+| reading2_consumption | low | upper | equal | +563.440734 | +610.442702 | -15.711625 | -4.405156 | -20.116781 | +543.323954 | over / under / over |
+| reading2_consumption | high | upper | equal | +473.562979 | +520.564947 | -15.711625 | -6.606579 | -22.318204 | +451.244775 | over / over / over |
+| p7_g3_k12_at_cost | low | zero | equal | +553.826783 | +474.373019 | -5.561693 | -77.079415 | -82.641107 | +471.185676 | over / over / over |
+| p7_g3_k12_at_cost | high | zero | equal | +454.720730 | +375.266966 | -5.561693 | -85.148231 | -90.709924 | +364.010806 | over / over / over |
+| p7_g3_k12_at_cost | low | upper | equal | +853.009175 | +911.016380 | -5.561693 | -77.079415 | -82.641107 | +770.368067 | over / over / over |
+| p7_g3_k12_at_cost | high | upper | equal | +753.903122 | +811.910327 | -5.561693 | -85.148231 | -90.709924 | +663.193198 | over / over / over |
+| p7_goods_wtp_0.5 | low | zero | equal | +423.375827 | +343.922063 | -5.561693 | -35.952388 | -41.514081 | +381.861747 | over / over / over |
+| p7_goods_wtp_0.5 | high | zero | equal | +304.212052 | +224.758288 | -5.561693 | -36.848119 | -42.409811 | +261.802240 | over / over / over |
+| p7_goods_wtp_0.5 | low | upper | equal | +722.558219 | +780.565424 | -5.561693 | -35.952388 | -41.514081 | +681.044138 | over / over / over |
+| p7_goods_wtp_0.5 | high | upper | equal | +603.394443 | +661.401648 | -5.561693 | -36.848119 | -42.409811 | +560.984632 | over / over / over |
+| p7_goods_wtp_1 | low | zero | equal | +385.593676 | +306.139912 | -5.561693 | -35.952388 | -41.514081 | +344.079596 | over / over / over |
+| p7_goods_wtp_1 | high | zero | equal | +265.245580 | +185.791815 | -5.561693 | -36.848119 | -42.409811 | +222.835768 | over / over / over |
+| p7_goods_wtp_1 | low | upper | equal | +684.776068 | +742.783273 | -5.561693 | -35.952388 | -41.514081 | +643.261987 | over / over / over |
+| p7_goods_wtp_1 | high | upper | equal | +564.427971 | +622.435176 | -5.561693 | -36.848119 | -42.409811 | +522.018160 | over / over / over |
+| reading1_same_person_cmp | low | zero | equal | +453.247418 | +364.154119 | -6.046553 | -46.275266 | -52.321819 | +400.925599 | over / over / over |
+| reading1_same_person_cmp | high | zero | equal | +335.619121 | +246.525822 | -6.046553 | -47.343925 | -53.390478 | +282.228643 | over / over / over |
+| reading1_same_person_cmp | low | upper | equal | +752.429810 | +800.797480 | -6.046553 | -46.275266 | -52.321819 | +700.107990 | over / over / over |
+| reading1_same_person_cmp | high | upper | equal | +634.801512 | +683.169182 | -6.046553 | -47.343925 | -53.390478 | +581.411034 | over / over / over |
+| reading3_mmp_annual | low | zero | equal | +421.447768 | +316.282309 | -6.854968 | -46.275266 | -53.130235 | +368.317533 | over / over / over |
+| reading3_mmp_annual | high | zero | equal | +303.819471 | +198.654012 | -6.854968 | -47.343925 | -54.198894 | +249.620577 | over / over / over |
+| reading3_mmp_annual | low | upper | equal | +720.630159 | +752.925670 | -6.854968 | -46.275266 | -53.130235 | +667.499924 | over / over / over |
+| reading3_mmp_annual | high | upper | equal | +603.001862 | +635.297373 | -6.854968 | -47.343925 | -54.198894 | +548.802968 | over / over / over |
+| reading3 | low | zero | equal | +377.429577 | +250.016472 | -7.974006 | -46.275266 | -54.249272 | +323.180305 | over / over / over |
+| reading3 | high | zero | equal | +259.801280 | +132.388175 | -7.974006 | -47.343925 | -55.317931 | +204.483349 | over / over / over |
+| reading3 | low | upper | equal | +676.611969 | +686.659833 | -7.974006 | -46.275266 | -54.249272 | +622.362697 | over / over / over |
+| reading3 | high | upper | equal | +558.983671 | +569.031536 | -7.974006 | -47.343925 | -55.317931 | +503.665741 | over / over / over |
+| combined_low | low | zero | equal | +182.214344 | +71.325239 | -9.494318 | -4.405156 | -13.899473 | +168.314871 | over / under / over |
+| combined_low | high | zero | equal | +92.336589 | -18.552516 | -9.494318 | -6.606579 | -16.100897 | +76.235692 | over / over / over |
+| combined_low | low | upper | equal | +481.396736 | +507.968600 | -9.494318 | -4.405156 | -13.899473 | +467.497263 | over / under / over |
+| combined_low | high | upper | equal | +391.518981 | +418.090845 | -9.494318 | -6.606579 | -16.100897 | +375.418084 | over / over / over |
+| combined_low_consumption | low | zero | equal | +191.143152 | +63.730456 | -17.570363 | -4.405156 | -21.975519 | +169.167633 | over / under / over |
+| combined_low_consumption | high | zero | equal | +101.265397 | -26.147299 | -17.570363 | -6.606579 | -24.176942 | +77.088454 | over / over / over |
+| combined_low_consumption | low | upper | equal | +490.325544 | +500.373817 | -17.570363 | -4.405156 | -21.975519 | +468.350025 | over / under / over |
+| combined_low_consumption | high | upper | equal | +400.447788 | +410.496062 | -17.570363 | -6.606579 | -24.176942 | +376.270846 | over / over / over |
+
+
+
+### Operator price ruling validation — 2026-10-15
+
+146 lane tests pass; the 10 final service-price/coverage checks pass. Price-only replay is IDENTICAL 3/3 CSVs; generated report tables agree exactly. All 29 pre-existing oct14 keyed files retain their captured hashes. The US actual-cost difference is exactly zero, and every reading/end/bound's US value-loss receipt closes to its US-only group change at 1e-9bn. Scoped code review has no unresolved material findings; its two calculation/receipt defects and one report-coverage defect were corrected and regression-checked. [CALCULATION: /private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/world/operator-price/verification.json; /private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/world/operator-price/code-review.md]
+
+Full oct15 execution remains at the earlier brief's Phase C boundary and its existing source/pension gates; no prior case or cash proxy is silently substituted. No git metadata was written.
+
+Every path changed by this price-ruling task: [/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/world/operator-price/changed-paths.txt](/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/world/operator-price/changed-paths.txt).
+
+
+## Phase C — corrected oct15 execution, 2026-10-15 11:12:09 JST
+
+**Verdict:** STOPPED at verified valuation/pension/coverage inputs. Set and cash generation cores pass; full world readings and full-route reproduction do not. No R1/R2/R3 total, break-even weight, lambda-arm total or v7-to-v8 reading delta is claimed. The retained Phase B fixes and operator price rule stand.
+
+Committed pins: case `d1a24d47`, winners `c2249ce8`, distribution `60a228cc`, generation `3aa9b48f`; debt current flows `5a8502c9`. Working-file mismatches stop. The exact admitted generation source graph is expanded into the cached manifest, whose worktree hash format is retained for the late-arrival reader; committed roots are authoritative. No git metadata was written. [DATA: pins.json; inputs/oct15_source_hashes.json]
+
+| Basis | End | Case cost, bn | Rebuilt generation cost, bn | Absolute closure error, bn |
+|---|---|---:|---:|---:|
+| set | low | 365.791930 | 365.791930 | 5.150e-10 |
+| set | high | 455.981785 | 455.981785 | 2.100e-11 |
+| cash | low | 281.752564 | 281.752564 | 7.300e-11 |
+| cash | high | 371.942418 | 371.942418 | 5.670e-10 |
+
+The core evaluates every specification, retains personal ends 16/11, and closes at 1e-9bn before output rounding; published generation rows retain 1e-6bn. Set/cash remain separate timing accounts. The public-capital return stays a resource cost. [CALCULATION: generation_lines.cjs; split_residual.py; derived/case_closure_oct15.csv]
+
+| Basis | End | v7 cost, bn | v8 cost, bn | Case move, bn |
+|---|---|---:|---:|---:|
+| set | low | 339.552018 | 365.791930 | +26.239912 |
+| set | high | 423.649261 | 455.981785 | +32.332524 |
+| cash | low | 264.425574 | 281.752564 | +17.326990 |
+| cash | high | 348.522816 | 371.942418 | +23.419602 |
+
+This is the case ledger’s move only, from pinned v7 to corrected v8 at each case’s own declared ends. It does not estimate a world-welfare change or a reading change. No ownership, price, pension, capital, G3-bound or social-scope fix is added to that bridge. The missing v8 welfare values prevent the requested reading deltas; earlier Phase B figures remain historical. [CALCULATION: derived/case_fiscal_bridge_oct15.csv]
+
+The oct15 economic basis is now `oct15`: the retained uniform latent-descendant proxy plus the 231 observed completion records at their own weights. Located/proxied people are 43,269,648.68157841; the full denominator is 45,230,062.30075857, including 1,960,413.6191801599 explicitly unlocated coverage people. Coverage adds no invented CPS worker, household income rank or Mexican wage. Generation denominator checks keep the frozen microscopic rounding remainder separate. [DATA/CALCULATION: population_basis.py; g2_meta_oct15.json; test_oct15_population.py]
+
+Mexico’s budget/services use GDP money PPP, household purchasing power and remittance recipients use consumption PPP where the reading specifies them; US recipient services retain the general/category price factors and WTP exemptions. Actual fiscal dollars remain unchanged by the price rule. These definitions are held fixed; no new price-policy shock is folded into the case move. [DATA: note_world_prices.md; service_prices.py]
+
+The actual valuation route now traces coverage tax/service/capital rows to their authoritative source parents. Its remaining nonzero lane-residual and profile-calibration rows have no source recipient/incidence class; those rows stop valuation rather than receiving value zero. The retained full-accrual pension gate also lacks the Mexican histories/service-cost bridge. Only the v7 matched-cash artifact is pinned: it cannot authorize an oct15 cash reading. Coverage’s income/Mexico-pay counterfactual is still unlocated. No proxy is silently substituted. [CALCULATION: derived/coverage_valuation_contract_oct15.csv; mexico_pensions.py; inputs/pension_cash_pins.json]
+
+| Debt basis | End | Total responsive cost, bn | Unlocated net financing, bn | Recipe status |
+|---|---|---:|---:|---|
+| set | low | 365.791930 | 2.939947 | [BLOCKED: no oct15 federal split] |
+| set | high | 455.981785 | 6.893744 | [BLOCKED: no oct15 federal split] |
+| cash | low | 281.752564 | 2.952161 | [BLOCKED: no oct15 federal split] |
+| cash | high | 371.942418 | 6.905957 | [BLOCKED: no oct15 federal split] |
+
+Select current-flow rows by basis, end and `convention=central`. Map cash federal/state fields to federal/state; resource rows to capital return and its federal part; displaced rows to displaced amounts and its federal part; pension-accrual rows to accrual; all responsive rows, including private production and unlocated, to the case total. All total gates pass at 1e-6bn, but the government split does not close without the explicit unlocated rows. NaN government fields are not zeros; unknown categories and finite-but-wrong shares stop. Theta/MCPF/capital/R&D rows are `[BLOCKED: no oct15 federal split]` and enter no total. No oct14 split is read. The debt contract’s old adoption stamp is not used as proof of corrected totals; the direct corrected-summary gates are. [CALCULATION: debt_current.py; derived/debt_split_parts_oct15.csv]
+
+Channels are selected by unique id. The retained world scope reads/control-checks `main_case`, `fiscal`, `future_taxpayers`, `future_pension_accrual` (set only), `displaced_beneficiaries`, `wages`, `renters`, `landlords`, `crime_victims`, `property_crime`, `unreimbursed_care`, `congestion`, and `mobility`; remittance inputs come from the group frame. `unlocated_fiscal` is a control inside `fiscal`, never an extra cost. The appended `p7_social_pm25_government_side`, `p7_social_pm25_respending` and `p7_social_scale_net_earnings` stay beside the fixed Phase B scope. Adding them would be a social-scope change, not solely v7→v8. [DATA: derived/channels_scope_oct15.csv]
+
+All requested R1/R2/R3 × set/cash × low/high × zero/upper × eight weightings cells are enumerated in `derived/readings_status_oct15.csv`. Their four-party amounts, break-even weights and v7-to-v8 changes are empty with explicit blockers. Fixed lambda 1.16/1.5 and Hendren/log arms are named; no incomplete party sum is labeled a world total. [FRAMING-SENSITIVE; CALCULATION: phase_c_report.py]
+
+Validation: 176 lane tests pass (exit 0), measured 78.443s, in-process physical footprint 912,819,808 bytes; Python compile, Node and shell syntax checks pass. The requested full `rerun_lane.py … "sh {lane}/run_all.sh"` exits 1 at the explicit coverage-recipient contract, so it does not compare outputs and has no full IDENTICAL receipt. The repeated set/cash core is byte-identical 7/7 files; 82 historical keyed files match HEAD byte for byte. That core-only receipt is not a welfare reproduction pass. [CALCULATION: _cache/core_replay_oct15.json; _cache/oct15_test_runs.jsonl; scratch oct15-full-rerun-final.log]
+
+Scoped code review found an unknown-financing-category omission. The exhaustive category guard and government-share closure are now regression-checked. The carrier padding, capital registry lookup and offset-incidence defects found during execution were fixed without relaxing any numerical tolerance. Remaining items above require declared scientific inputs/allocation rules; no research memo, INDEX or FAQ was edited. No git writes. [DATA: failure-catalog.md; test_phase_c.py; scratch phase-c-code-review.md]
+
+Stopped for the parent. Every retained changed path, including inherited Phase B/handover edits and scratch evidence, is listed in `changed-paths.txt`; Phase C-only scratch list is `world/phase-c-changed-paths.txt`.
+
+
+## Phase C step 3 — 2026-10-15 13:11:58 JST
+
+Matched-cash R1/R2/R3 complete: 96 central, 192 funding and 96 partial-scope rows; exact cash 281.752564/371.942418bn. Full accrual and debt split remain blocked beside. Final [rerun] IDENTICAL: 309/309 files unchanged (backup removed), exit0; 212 tests pass; reading peak physical 2,081,540,880 bytes. Main tables: derived/readings_table_cash_oct15.md and readings_v7_bridge_oct15.csv. Full record: /private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/world-result.md. First failed memory run and repairs retained in failure-catalog.md. No git writes.
+
+PHASE C DONE

@@ -25,5 +25,9 @@
            "dirs": {"winners": "infra/immigration-fiscal/winners_losers_2026_09_24/derived/oct14",
                     "distribution": "infra/immigration-fiscal/distribution_weights_2026_09_23/derived/oct14"},
            "files": {"generation": {"generation_corrections.json": "generation_corrections_oct14.json",
-                                    "generation_results.csv": "generation_results_oct14.csv"}}}
+                                    "generation_results.csv": "generation_results_oct14.csv"}}},
+ "oct15": {"model": "adopted_2026_10_15", "generation": "3aa9b48f", "main_case": "d1a24d47", "winners": "c2249ce8", "distribution": "60a228cc", "debt": "5a8502c9", "basis": "oct15",
+           "provenance": "[COMMITTED INPUT] corrected v8 and parent-supplied generation/winners/distribution commits; every consumed pinned file must match its working-tree bytes",
+           "dirs": {"winners": "infra/immigration-fiscal/winners_losers_2026_09_24/derived/oct15", "distribution": "infra/immigration-fiscal/distribution_weights_2026_09_23/derived/oct15"},
+           "files": {"generation": {"generation_corrections.json": "generation_corrections_oct15.json", "generation_results.csv": "generation_results_oct15.csv"}}}
 }

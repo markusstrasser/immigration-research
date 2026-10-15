@@ -50,11 +50,19 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from mexico_prices import (budget_from_gdp, budget_values, numeric_row_metadata,
+                           validate_numeric_rows)
+from mexico_capital import mexico_source_tax, isn_on_formal_pay
+from mexico_pensions import pension_basis
+from service_prices import money_price_inputs, prepare_us_service_values
 
 from population_basis import BASES, suffixed
+import mexico as MX
+import mexico_compensation as MC
 from mexico import pinned_text
 from employer_ui_basis import allocate_group, load_basis as employer_other_basis
 from valuation import CASE_LANES, PINS, SHARED_OUTPUTS, basis_of, case_path, lane_file, require_pins
+from population_basis import economic_path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
@@ -97,6 +105,9 @@ def gate(name, ok, **detail):
 
 
 def git_show(commit, rel):
+    if commit in {PINS["oct15"][k] for k in ("main_case", "generation", "winners", "distribution")}:
+        from committed_inputs import checked_bytes
+        return checked_bytes(commit, rel)
     return subprocess.run(["git", "-C", str(REPO), "show", f"{commit}:{rel}"], capture_output=True,
                           check=True).stdout
 
@@ -106,10 +117,12 @@ def pinned_csv(commit, rel):
 
 
 # ------------------------------------------------------------------ inputs
-def load(case, basis):
+def load(case, basis, *, generation_lines=None):
     require_pins(case, "winners", "distribution", "generation")
     needed = [case_path("valuation.csv", case), case_path("valuation_by_generation.csv", case),
-              case_path("valuation_meta.json", case), DERIVED / f"generation_lines_{case}.csv"]
+              case_path("valuation_meta.json", case)]
+    if generation_lines is None:
+        needed.append(DERIVED / f"generation_lines_{case}.csv")
     missing = [str(p) for p in needed if not p.is_file()]
     if missing:
         raise SystemExit(f"[BLOCKED] {case}: missing live generation/valuation inputs: {missing}")
@@ -127,8 +140,9 @@ def load(case, basis):
         s = json.loads(git_show(pin["main_case"], f"{CASE_LANES[case]}/derived/summary.json"))
         pen, mc = ch.loc["future_pension_accrual"], ch.loc["main_case"]
         ends = (("low", 0), ("high", 1))
-        adopted_band = s["v7"]["band_bn"] if case == "oct14" else s["main_case"]
-        cash_band = s["v7"]["cash_set_bn"] if case == "oct14" else s["cash_set"]["band_bn"]
+        block = s.get("v9", s.get("v8", s.get("v7")))
+        adopted_band = block["band_bn"] if block else s["main_case"]
+        cash_band = block["cash_set_bn"] if block else s["cash_set"]["band_bn"]
         accrual_change = [cash_band[i] - adopted_band[i] for i in range(2)]
         diff = max([abs(-mc[f"bn_{e}"] - adopted_band[i]) for e, i in ends]
                    + [abs(pen[f"bn_{e}"] - accrual_change[i]) for e, i in ends]
@@ -153,7 +167,20 @@ def load(case, basis):
     # values. A case whose own basis is row 4 must count the same people (the generation lane's v4 results carry the
     # row-4 headcounts); on a basis beside it they differ by the audit's 1.18M, printed. On the lineage (oct05) G1 is
     # row 4's, and G3+ must also be the generation lane's: the identified G3+ plus the added people.
-    persons = json.load(open(suffixed(DERIVED / "g2_meta.json", basis)))["persons_m"]
+    ep = lambda name: economic_path(DERIVED / name, basis, case)
+    person_meta = json.load(open(ep("g2_meta.json")))
+    persons = person_meta["persons_m"]
+    if basis == "oct15":
+        population = person_meta.get("population")
+        gate("oct15_person_frame_declares_coverage", population is not None
+             and population.get("coverage_in_economic_record_weights") is True
+             and bool(population.get("coverage_economic_counterfactual")))
+        complete = population["complete_denominator_persons"]
+        for generation in GENS:
+            label = generation.replace("G3+", "G3plus")
+            target = gen[gen.convention.eq("a") & gen.generation.eq(label)].population.unique()
+            gate(f"oct15_complete_denominator_{generation}", len(target) == 1
+                 and abs(complete[generation] - target[0]) < 1e-3)
     g1 = persons["G1"] * 1e6
     g1_gen = gen[(gen.convention == "a") & (gen.generation == "G1")].population.unique()
     print(f"  G1 persons: {g1:,.2f} in the {basis} person-based rows, {', '.join(f'{x:,.2f}' for x in g1_gen)} "
@@ -175,15 +202,25 @@ def load(case, basis):
     vgen = pd.read_csv(case_path("valuation_by_generation.csv", case))
     vgen = vgen[vgen.case == case]
     gate("valuation_by_generation_has_case", len(vgen) > 0, case=case)
-    glines = pd.read_csv(DERIVED / f"generation_lines_{case}.csv").replace({"generation": {"G3plus": "G3+"}})
+    glines = (pd.read_csv(DERIVED / f"generation_lines_{case}.csv")
+              if generation_lines is None else generation_lines.copy()).replace({"generation": {"G3plus": "G3+"}})
+    rates = json.load(open(DERIVED / "mexico_meta.json"))["ppp_2024"]
+    g2 = pd.read_csv(ep("g2_premium.csv"))
+    g2["source_ppp_divisor"] = g2.ppp.map({"gdp": rates["PA.NUS.PPP"], "consumption": rates["PA.NUS.PRVT.PP"]})
+    mxb = budget_from_gdp(pd.read_csv(ep("mexico_budget.csv")), rates["PA.NUS.PPP"])
+    profile_path = ep("g3_pay_profiles.csv")
+    gate("g3_statutory_profile_source_present", profile_path.is_file(), path=str(profile_path))
+    profiles = pd.read_csv(profile_path, float_precision="round_trip")
     return dict(case=case, basis=basis, ch=ch, specs=specs, gf=gf, dist=dist, gen=gen, val=val, vgen=vgen, glines=glines,
                 # the group's person-based inputs, on the run's population basis
-                g2=pd.read_csv(suffixed(DERIVED / "g2_premium.csv", basis)),
-                ages=pd.read_csv(suffixed(DERIVED / "group_ages.csv", basis)),
-                mxb=pd.read_csv(suffixed(DERIVED / "mexico_budget.csv", basis)),
+                g2=g2, g3_pay_profiles=profiles, pension_basis="full_accrual",
+                coverage_economic_counterfactual=person_meta.get("coverage_economic_counterfactual"),
+                ages=pd.read_csv(ep("group_ages.csv")),
+                mxb=mxb,
                 gtab=pd.read_csv(DERIVED / "hendren_g.csv"),
-                pos=pd.read_csv(suffixed(DERIVED / "income_positions.csv", basis)),
-                wmeta=json.load(open(DERIVED / "weights_meta.json")),
+                pos=pd.read_csv(ep("income_positions.csv")),
+                wmeta=json.load(open(ep("weights_meta.json")
+                                    if basis == "oct15" else DERIVED / "weights_meta.json")),
                 # The Medicaid class (valuation.py), applied to hospital care received and Mexico's public health.
                 health_vg=tuple(json.load(open(case_path("valuation_meta.json", case)))["medicaid_vg"]))
 
@@ -236,7 +273,11 @@ def premium_rows(I, short_run=False, g3_central="zero"):
                            (a2.mexico_consumption_tax_bn + n2.mexico_consumption_tax_bn) / 2,
                            hi2.mexico_consumption_tax_bn), persons=a2.persons_m),
     }
-    g3 = g[(g.generation == "G3+")].iloc[0]
+    central_ppp = g.attrs.get("central_ppp", "gdp")
+    g3_rows = g[g.generation.eq("G3+") & g.ppp.eq(central_ppp) & g.diploma_reread.eq(0.25)
+                & g.mishra.eq(mis) & g.selection.eq("none")]
+    gate("g3_bound_has_one_selected_price_basis", len(g3_rows) == 1, basis=central_ppp, count=len(g3_rows))
+    g3 = g3_rows.iloc[0]
     up = dict(gain=g3.gain_bn, e_mx=g3.mexico_earnings_bn, tax=g3.mexico_withheld_tax_bn, home=g3.mexico_take_home_bn,
               ctax=g3.mexico_consumption_tax_bn)
     # No premium: in Mexico they would earn what they earn in the US, withheld and taxed on consumption at the upper
@@ -253,6 +294,24 @@ def premium_rows(I, short_run=False, g3_central="zero"):
     mid = {"zero": zero, "upper": up, "rearing": rearing}[g3_central]
     out["G3+"] = dict(**{k: lh(zero[k], mid[k], up[k]) for k in ("gain", "e_mx", "tax", "home", "ctax")},
                       e_us=g3.us_earnings_bn, persons=g3.persons_m)
+    ownership = I.get("mexico_asset_ownership", True)
+    fields = {"cash_mx": "mexico_cash_earnings_bn", "employer_mx": "mexico_employer_contributions_bn",
+              "assets_mx": "mexico_employer_assets_bn", "employee_public_tax_mx": "mexico_employee_public_tax_bn",
+              "formal_cash_mx": "mexico_formal_cash_earnings_bn"}
+    for name, chosen in (("G1", (lo1, c1, hi1)), ("G2", (lo2, None, hi2))):
+        for field, column in fields.items():
+            gate("premium_ownership_field_present", column in g, field=column)
+            low, center, high = chosen
+            middle = float(center[column]) if center is not None else (float(a2[column]) + float(n2[column])) / 2
+            out[name][field] = lh(low[column], middle, high[column])
+        if not ownership:
+            out[name]["tax"] = {e: out[name]["tax"][e] + out[name]["assets_mx"][e] for e in ("low", "central", "high")}
+    for name, selected in (("G1", c1), ("G2", a2), ("G3+", g3)):
+        gate("selected_premium_has_numeric_ppp", "source_ppp_divisor" in selected.index)
+        out[name]["mexico_ppp_divisor"] = float(selected.source_ppp_divisor)
+    gate("g2_selection_numeric_ppps_agree", abs(float(a2.source_ppp_divisor) - float(n2.source_ppp_divisor)) <= 1e-9)
+    gate("all_generations_share_central_ppp", len({p["mexico_ppp_divisor"] for p in out.values()}) == 1,
+         divisors={g: p["mexico_ppp_divisor"] for g, p in out.items()})
     if I.get("cash_positive_control"):
         for p in out.values():
             p["e_us_cash"], p["employer_us"] = p["e_us"], 0.0
@@ -266,9 +325,13 @@ def premium_rows(I, short_run=False, g3_central="zero"):
     employer.loc[other, "net_cost_bn"] *= employer_other_basis()["employer_fraction"]
     for gen in GROUP:
         s = employer[employer.generation.eq(gen)].groupby("end").net_cost_bn.sum()
+        transported_mix = (I.get("pension_basis") == "matched_cash" and "origin_line" in employer
+                           and employer.origin_line.str.startswith("coverage_").any())
         gate(f"employer_compensation_{gen}_finite", len(s) == 2 and np.isfinite(s).all()
-             and abs(s.loc["low"] - s.loc["high"]) < 1e-6, totals=s.to_dict())
-        add = -float(s.mean())
+             and (transported_mix or abs(s.loc["low"] - s.loc["high"]) < 1e-6), totals=s.to_dict())
+        # The parent's residual mix is end-specific. Its employer component is
+        # valued at that same end; a centre-only diagnostic takes the mean.
+        add = -float(s.loc[I["account_end"]] if I.get("account_end") else s.mean())
         if I.get("basis") == "row4" and gen == "G3+":
             case = I["case"]
             pin = PINS[case]
@@ -294,18 +357,51 @@ def premium_rows(I, short_run=False, g3_central="zero"):
         out[gen]["e_us"] += add
         for e in ("low", "central", "high"):
             out[gen]["gain"][e] += add
-    # A zero-premium bound means zero on the corrected compensation basis, not cash wages.
+    # Both G3 bounds use the same per-person pay, quota, asset and tax cells.
+    profile_all = g.attrs.get("g3_pay_profiles", I.get("g3_pay_profiles"))
+    gate("g3_projection_profiles_present", profile_all is not None)
+    profile = profile_all[profile_all.ppp.eq(central_ppp)].copy()
+    gate("g3_projection_profiles_selected", len(profile) > 0 and profile.ppp_divisor.nunique() == 1)
+    gate("g3_projection_divisor_matches_selected_row",
+         abs(float(profile.ppp_divisor.iloc[0]) - out["G3+"]["mexico_ppp_divisor"]) <= 1e-9)
     g3o = out["G3+"]
-    if g3_central == "rearing":
-        target = g3o["e_us"] * out["G2"]["e_mx"]["central"] / out["G2"]["e_us"]
-        f = target / g3o["e_mx"]["central"]
-        for k in ("e_mx", "tax", "home", "ctax"):
-            g3o[k]["central"] *= f
-        g3o["gain"]["central"] = g3o["e_us"] - target
+    g3o["e_us_cash"] = float((profile.pw * profile.us_cash).sum()) / 1e9
+    g3o["e_us"] = g3o["e_us_cash"] + g3o["employer_us"]
+    statutory = I.get("g3_statutory", True)
+    if I.get("mexico_isn", True):
+        isn_rate = I.get("mexico_isn_rate")
+        if isn_rate is None:
+            isn_rate = isn_on_formal_pay(1.0, rate_choice=I.get("mexico_isn_choice", "lower"))["rate"]
+    else:
+        isn_rate = 0.0
+    if isn_rate:
+        for name in ("G1", "G2"):
+            p = out[name]
+            for e in ("low", "central", "high"):
+                charge = p["formal_cash_mx"][e] * isn_rate
+                p["employer_mx"][e] += charge
+                p["e_mx"][e] += charge
+                p["gain"][e] -= charge
+                p["tax"][e] += charge
+    upper = MC.aggregate(profile, MC.upper_arrays(MX, profile, not ownership, statutory, isn_rate=isn_rate))
+    zero = MC.aggregate(profile, MC.zero_arrays(MX, profile, g3o["employer_us"], not ownership, statutory,
+                                               isn_rate=isn_rate))
+    rearing_profile = profile.copy()
+    ratio = out["G2"]["e_mx"]["central"] / out["G2"]["e_us"]
+    rearing_profile["us_cash"] *= ratio
+    rearing = MC.aggregate(rearing_profile, MC.zero_arrays(MX, rearing_profile, g3o["employer_us"] * ratio,
+                                                          not ownership, statutory, isn_rate=isn_rate))
+    middle = {"zero": zero, "upper": upper, "rearing": rearing}[g3_central]
+    for field, component in {"e_mx": "inc", "tax": "tax", "home": "net", "ctax": "ctax", "cash_mx": "cash",
+                             "employer_mx": "employer", "assets_mx": "assets", "formal_cash_mx": "formal",
+                             "employee_public_tax_mx": "withheld"}.items():
+        g3o[field] = lh(zero[component], middle[component], upper[component])
+    g3o["gain"] = {e: g3o["e_us"] - g3o["e_mx"][e] for e in ("low", "central", "high")}
+    for e in ("low", "central", "high"):
+        gate("g3_downstream_projection_closes", abs(g3o["e_mx"][e] - g3o["cash_mx"][e]
+                                                  - g3o["employer_mx"][e]) <= 1e-9, bound=g3_central, end=e)
+    gate("g3_zero_is_total_compensation_zero", abs(g3o["gain"]["low"]) <= 1e-9)
     for e in (["low", "central"] if g3_central == "zero" else ["low"]):
-        factor = g3o["e_us"] / g3o["e_mx"][e]
-        for k in ("e_mx", "tax", "home", "ctax"):
-            g3o[k][e] *= factor
         g3o["e_mx"][e] = g3o["e_us"]
         g3o["gain"][e] = 0.0
     return out
@@ -328,11 +424,7 @@ def fiscal_group_rows(I, pg_convention):
     lowest (low, at V_low) or highest (high, at V_high). Each generation's own minimum would mix the two ends'
     allocations, which move children's flows between generations, and would publish a split that is neither end's.
     The central is the mean of the two ends."""
-    v = I["vgen"].copy()
-    if pg_convention == "response_only":
-        m = v.cls.eq("public_good")
-        for c in ("V_low_bn", "V_central_bn", "V_high_bn"):
-            v.loc[m, c] = v.loc[m, "G_bn"]
+    v = prepare_us_service_values(I["vgen"], pg_convention, I.get("operator_us_general", True))
     sh = population_shares(I)
     value_cols = ["V_low_bn", "V_central_bn", "V_high_bn"]
     gate("fiscal_group_values_finite", np.isfinite(v[value_cols]).all().all())
@@ -396,16 +488,22 @@ def mexico_consumption_tax_rate():
     return rate, dict(taxes_on_goods_services_mxn_bn=tax / 1e9, household_consumption_mxn_bn=cons / 1e9)
 
 
-def mexico_tax_bound(I, prem):
+def mexico_tax_bound(I, prem, corporate_receipts_pesos_bn):
     """Upper bound on the Mexican taxes each generation would pay in the alternative world: Mexico's central-
     government tax revenue (WDI GC.TAX.TOTL.GD.ZS 2024 x GDP PPP) in proportion to the generation's share of
     Mexico's gross labor income (ENIGH 2024, grossed up), as if every tax fell on labor income; per scenario end."""
     tax_share = wdi_mexico_2024("GC.TAX.TOTL.GD.ZS") / 100
     meta = json.load(open(DERIVED / "mexico_meta.json"))
     gdp = meta["comparators"]["gdp_ppp_2024"] / 1e9
-    labor = meta["enigh_labor_income_gross_mxn_bn"] / meta["ppp_2024"]["PA.NUS.PPP"]
-    return ({g: {e: tax_share * gdp * prem[g]["e_mx"][e] / labor for e in ("low", "central", "high")} for g in GROUP},
-            dict(tax_share=tax_share, gdp_ppp_bn=gdp, labor_income_gross_ppp_bn=labor))
+    nominal_tax = tax_share * gdp * meta["ppp_2024"]["PA.NUS.PPP"]
+    gate("corporate_source_not_counted_again_in_labor_bound", np.isfinite(corporate_receipts_pesos_bn)
+         and 0 <= corporate_receipts_pesos_bn <= nominal_tax, corporate_receipts_pesos_bn=corporate_receipts_pesos_bn)
+    residual_tax = nominal_tax - corporate_receipts_pesos_bn
+    labor = meta["enigh_labor_income_gross_mxn_bn"]
+    return ({g: {e: residual_tax * prem[g]["cash_mx"][e] / labor for e in ("low", "central", "high")} for g in GROUP},
+            dict(tax_share=tax_share, gdp_ppp_bn=gdp, labor_income_gross_mxn_bn=labor,
+                 corporate_source_receipts_excluded_mxn_bn=corporate_receipts_pesos_bn,
+                 residual_tax_pesos_bn=residual_tax, rule="residual taxes only; corporate receipts have a separate source row"))
 
 
 # Every row's basis. The ledger is on the output basis: pay is gross on both sides, and each country's taxes on the
@@ -451,26 +549,57 @@ def validate_rows(rows, logarithmic=False):
     gate("row_amounts_finite", np.isfinite(rows[["low", "central", "high"]]).all().all())
     gate("row_parties_explicit", set(rows.party) <= set(PARTIES), parties=sorted(set(rows.party)))
     gate("row_price_basis_explicit", "price_basis" in rows and rows.price_basis.notna().all())
-    allowed = {"US$", "PPP-GDP", "PPP-consumption"}
+    allowed = {"US$", "PPP-GDP", "PPP-consumption", "PPP-category-services"}
     gate("row_price_basis_known", set(rows.price_basis) <= allowed)
-    for party, s in rows.groupby("party"):
-        gate(f"one_price_basis_{party}", s.price_basis.nunique() == 1, bases=sorted(set(s.price_basis)))
     if logarithmic:
         gate("log_mexico_rows_are_ppp", rows.loc[rows.party.eq("mexico_residents"), "price_basis"].ne("US$").all())
+    validate_numeric_rows(rows)
+    for party, s in rows.groupby("party"):
+        if party != "mexico_residents":
+            gate(f"one_price_basis_{party}", s.price_basis.nunique() == 1, bases=sorted(set(s.price_basis)))
+        else:
+            household = s.row.eq("remit_mexico")
+            gate("mexico_household_rows_are_ppp", s.loc[household, "price_basis"].isin(
+                ["PPP-GDP", "PPP-consumption"]).all())
+            fiscal = s.loc[~household]
+            # Explicit category-price companions can contain different budget
+            # mixes. Money-price readings must share a numeric divisor.
+            if not fiscal.price_basis.eq("PPP-category-services").any() and len(fiscal):
+                for end in ("low", "central", "high"):
+                    divisors = fiscal[f"mexico_ppp_divisor_{end}"]
+                    gate("one_price_basis_mexico_fiscal_money", divisors.max() - divisors.min() <= 1e-9,
+                         end=end, minimum=float(divisors.min()), maximum=float(divisors.max()))
 
 
 def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="withheld_consumption",
                g3_central="zero", accrual_today=False, remit_price_basis="gdp"):
+    I = money_price_inputs(I, MX.ppp(), I.get("operator_mexico_money", True))
+    mode = I.get("pension_basis", "full_accrual")
+    if mode == "legacy_mixed_diagnostic":
+        gate("legacy_pension_basis_historical_probe_only", I.get("historical_probe") and I.get("case") == "oct14")
+    elif mode == "matched_cash":
+        gate("matched_cash_cells_verified", "pension_cash_adapter" in I)
+        pension_basis(mode, "cash", metadata=I.get("pension_cash_adapter"), allow_p032_proxy=True)
+    else:
+        pension_basis(mode, "accrual", records=I.get("mexico_pension_histories"),
+                      metadata=I.get("mexico_pension_assumptions"))
+        gate("mexico_public_pension_accrual_computed", False,
+             reason="complete histories do not themselves compute the service-cost bridge")
+    if I.get("basis") == "oct15":
+        gate("oct15_coverage_economic_counterfactual_declared", I.get("coverage_economic_counterfactual") is not None,
+             reason="net-missing coverage has no located earnings/Mexico-pay/household-income counterfactual; no zero fallback")
     rows = []
 
     def add(rid, label, party, kind, vals, **meta):
-        prices = "PPP-GDP" if party == "mexico_residents" else "US$"
+        prices = meta.pop("price_basis", "PPP-GDP" if party == "mexico_residents" else "US$")
         rows.append(dict(row=rid, label=label, party=party, kind=kind, basis=row_basis(rid), price_basis=prices,
                          **vals, **meta))
 
     alt = "the same people in Mexico (descendants raised there by parents who stayed); the US without them"
     health_vg = I["health_vg"]
     prem = premium_rows(I, short_run, g3_central)
+    capital = (mexico_source_tax(I, prem, I.get("account_end", "low"), short_run=short_run)
+               if I.get("mexico_capital_source", True) else None)
     for gname in GENS:
         p = prem[gname]
         add(f"premium_{gname}", f"{gname} place premium: US earnings less the same person's in Mexico", gname,
@@ -487,7 +616,11 @@ def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="w
     ch, sp = I["ch"], I["specs"]
     A = {e: -sp.loc[e, "A_bn"] for e in ("low", "high")}          # direct response, positive = cost to others
     F = {e: sp.loc[e, "F_bn"] for e in ("low", "high")}
-    fut = ch.loc["future_taxpayers"]
+    pooled = I.get("financing_basis") == "pooled_no_debt_split"
+    # The readings value all other US residents together. The debt split is a
+    # separate calculation: no missing federal/state fraction enters this row.
+    fut = (pd.Series(dict(bn_low=0., bn_central=0., bn_high=0.)) if pooled
+           else ch.loc["future_taxpayers"])
     fisc = ch.loc["fiscal"]
     # Capped programs (rental assistance and LIHEAP, from the Sept 27 case on) are paid for by the eligible
     # households that go without them, not by taxpayers; the winners lane's fiscal channel then leaves them out.
@@ -516,6 +649,9 @@ def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="w
         "future_taxpayers", "transfer", lh(fut.bn_high, fut.bn_central, fut.bn_low), initial="with the group",
         alternative="without the group", window="2024 flow, paid later", comparator="measured (account)",
         weight="future", tag="[DATA: winners channels]")
+    if pooled:
+        rows[-1].update(label="Debt split beside: pooled with other US residents", comparator="explicit pooled convention",
+                        tag=f"[ASSUMPTION: no debt timing allocation; no {I['case']} federal split]")
     if pen is not None:
         # Its columns follow the band ends, as fiscal_others' do (low outer: the dearer end, where the accrual is the
         # smaller), so the three fiscal rows add to the direct cost at every end.
@@ -584,34 +720,36 @@ def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="w
     add("remit_G2", "G2: remittances sent to Mexico (1.6% of earnings, scenario)", "G2", "transfer",
         lh(-g2r, -g2r, -g2r), initial="sent", alternative="not sent", window="2024",
         comparator="scenario (0-5.2% of earnings)", weight="group_remit", tag="[INFERENCE: remit_leak arms]")
+    remit_price_basis = I.get("remittance_price_basis", I.get("household_price_basis", remit_price_basis))
+    rates = json.load(open(DERIVED / "mexico_meta.json"))["ppp_2024"]
+    household_divisor = rates["PA.NUS.PRVT.PP"] if remit_price_basis == "consumption" else rates["PA.NUS.PPP"]
     recipient = remit * remittance_price_factor(remit_price_basis)
     add("remit_mexico", "Mexico's residents: remittance principal received at Mexican prices", "mexico_residents", "transfer",
         lh(recipient, recipient, recipient), initial="received", alternative="not received", window="2024",
         comparator="measured principal; sender fees excluded", weight="mexico_recipients",
-        nominal_usd_bn=remit, tag="[DATA: Banxico via winners; WDI market exchange rate / PPP]")
+        nominal_usd_bn=remit, price_basis="PPP-consumption" if remit_price_basis == "consumption" else "PPP-GDP",
+        **numeric_row_metadata(lh(remit * rates["PA.NUS.FCRF"], remit * rates["PA.NUS.FCRF"],
+                                  remit * rates["PA.NUS.FCRF"]), household_divisor, "household-consumption" if
+                               remit_price_basis == "consumption" else "GDP-money"),
+        tag="[DATA: Banxico via winners; WDI market exchange rate / PPP]")
     gate("remittance_principal_conserves_market_pesos", abs(recipient / remittance_price_factor(remit_price_basis)
          - remit) < 1e-9)
     # Mexico's budget in the alternative world: the group loses its value, Mexico's residents save its cost.
     mx = I["mxb"]
     for gname in GENS:
-        s = mx[mx.generation == gname].set_index("item")
-        ed = float(s.filter(like="school", axis=0).bn.iloc[0])
-        he = float(s.filter(like="health", axis=0).bn.iloc[0])
-        cash = float(s[s.cls == "cash"].bn.sum())
-        pg = float(s[s.cls == "public_good"].bn.iloc[0])
-        pg_val = pg if pg_convention == "average_cost" else pg * MEXICO_PUBLIC_RESPONSE[1]
+        saved, saved_pesos, lost = budget_values(mx, gname, health_vg, MEXICO_PUBLIC_RESPONSE, pg_convention)
         add(f"mexico_budget_lost_{gname}", f"{gname}: Mexico's health, cash and public services forgone, as valued",
-            gname, "transfer (valued)", lh(-(he * health_vg[2] + cash + pg_val), -(he * health_vg[1] + cash + pg_val),
-                                           -(he * health_vg[0] + cash + pg_val)),
+            gname, "transfer (valued)", lost,
             initial="not in Mexico", alternative="Mexico's budget per person at the group's ages",
             window="2024", comparator="measured (ENIGH, WDI)", weight="group_mexico_budget",
             tag="[CALCULATION: valuation.py mexico_budget]")
         add(f"mexico_budget_saved_{gname}", f"Mexico's residents: budget not spent on {gname} (schools, health, cash, "
-            "public services)", "mexico_residents", "transfer", lh(ed + he + cash + pg * MEXICO_PUBLIC_RESPONSE[0],
-                                                                    ed + he + cash + pg * MEXICO_PUBLIC_RESPONSE[1],
-                                                                    ed + he + cash + pg * MEXICO_PUBLIC_RESPONSE[2]),
+            "public services)", "mexico_residents", "transfer", saved,
             initial="not spent", alternative="spent on the group", window="2024", comparator="measured (ENIGH, WDI)",
-            weight="mexico_budget", tag="[CALCULATION; INFERENCE: public services respond 0.60-0.85]")
+            weight="mexico_budget", price_basis="PPP-category-services" if mx.price_rule.eq("category services").any()
+            else "PPP-GDP", **numeric_row_metadata(saved_pesos, {e: saved_pesos[e] / saved[e] for e in saved},
+                                                      "group-use-service-mix"),
+            tag="[CALCULATION; INFERENCE: public services respond 0.60-0.85]")
     # Mexican taxes the group would pay, bounded on both sides (the premium is gross, so they are a transfer from
     # the group to Mexico's residents in the alternative world). 'withheld', the lower bound: the income tax and
     # employee contributions withheld from formal pay (2024 statute), with no consumption or other taxes.
@@ -627,19 +765,43 @@ def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="w
         tag = ("[CALCULATION: mexico.py withholding + SHCP 2026 IVA and IEPS incidence and the 2024 fuel excise by "
                "household decile x gross pay]")
     elif mexico_taxes == "proportional":
-        tb, _ = mexico_tax_bound(I, prem)
+        tb, _ = mexico_tax_bound(I, prem, 0.0 if capital is None else capital["national_corporate_receipts_pesos_bn"])
         how, tag = "upper bound: proportional to labor income", "[CALCULATION: WDI tax share x ENIGH gross labor-income share; upper bound]"
     else:
         raise SystemExit(f"[BLOCKED] unknown mexico_taxes {mexico_taxes!r}")
     comp = f"{'estimated' if mexico_taxes == 'withheld_consumption' else 'bounded'} ({how})"
     for gname in GROUP:
         t = tb[gname]
+        source_divisor = prem[gname]["mexico_ppp_divisor"]
+        tax_pesos = {e: -t[e] * source_divisor for e in t}
+        fiscal_divisor = I.get("mexico_tax_ppp_divisor", source_divisor)
+        tax_lost = {e: tax_pesos[e] / fiscal_divisor for e in t}
         add(f"mexico_taxes_avoided_{gname}", f"{gname}: Mexican taxes not paid ({how})", gname, "transfer",
             lh(t["low"], t["central"], t["high"]), initial="not paid", alternative="paid in Mexico", window="2024",
             comparator=comp, weight="group_mexico_budget", tag=tag)
         add(f"mexico_taxes_lost_{gname}", f"Mexico's residents: taxes {gname} would have paid ({how})",
-            "mexico_residents", "transfer", lh(-t["low"], -t["central"], -t["high"]), initial="not received",
-            alternative="received", window="2024", comparator=comp, weight="mexico_budget", tag=tag)
+            "mexico_residents", "transfer", tax_lost, initial="not received",
+            alternative="received", window="2024", comparator=comp, weight="mexico_budget",
+            price_basis="PPP-GDP" if I.get("mexico_fiscal_money_rule") else "PPP-category-services" if "mexico_tax_ppp_divisor" in I else
+            ("PPP-consumption" if remit_price_basis == "consumption" else "PPP-GDP"),
+            **numeric_row_metadata(tax_pesos, fiscal_divisor, I.get("mexico_tax_mix", "household-money")), tag=tag)
+    if capital is not None:
+        source = capital
+        divisor = I.get("mexico_tax_ppp_divisor", rates["PA.NUS.PPP"])
+        if I.get("account_end"):
+            capital_pesos = lh(-source["pesos_bn"], -source["pesos_bn"], -source["pesos_bn"])
+        else:
+            by = source["by_reading_pesos_bn"]
+            capital_pesos = lh(-by["high"], -(by["low"] + by["high"]) / 2, -by["low"])
+        charge = {e: capital_pesos[e] / divisor for e in capital_pesos}
+        add("mexico_taxes_lost_capital_source", "Mexico residents: corporate source receipts on the group's job capital",
+            "mexico_residents", "transfer", charge,
+            initial="group's jobs and capital in US", alternative="capital accommodates the group's jobs in Mexico",
+            window="2024 long-run comparison", comparator="industry wages × SAT corporate ISR, corporate labor included once",
+            weight="mexico_budget", price_basis="PPP-GDP" if I.get("mexico_fiscal_money_rule") else "PPP-category-services" if "mexico_tax_ppp_divisor" in I else "PPP-GDP",
+            **numeric_row_metadata(capital_pesos, divisor,
+                                   I.get("mexico_tax_mix", "GDP-money")),
+            tag="[SOURCE: SAT ITG2024 Cuadro6; CALCULATION: mexico_capital.py; ASSUMPTION: capital accommodates jobs]")
     if short_run:
         rows += mishra_rows(I, prem)
     # The child-related credit sits on the non-member filer's return. It is a benefit to other residents.
@@ -666,12 +828,9 @@ def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="w
             direct[cid] = ch.loc[cid, f"bn_{e}"]
         for rid, amount in direct.items():
             frame.loc[frame.row.eq(rid), ["low", "central", "high"]] = amount
-    if remit_price_basis == "consumption":
-        # This is a whole Mexican-party repricing arm, not a nominal/PPP mixture within a party.
-        rates = json.load(open(DERIVED / "mexico_meta.json"))["ppp_2024"]
-        m = frame.party.eq("mexico_residents") & frame.row.ne("remit_mexico")
-        frame.loc[m, ["low", "central", "high"]] *= rates["PA.NUS.PPP"] / rates["PA.NUS.PRVT.PP"]
-        frame.loc[frame.party.eq("mexico_residents"), "price_basis"] = "PPP-consumption"
+        for gen in GENS:
+            frame.loc[frame.row.eq(f"uncompensated_received_{gen}"), ["low", "central", "high"]] = (
+                -unc[f"bn_{e}"] * health_vg[1] * pop[gen])
     validate_rows(frame)
     return frame, prem, shares
 
@@ -740,7 +899,9 @@ def channel_factors(I, measure):
     g = np.interp(d.percentile, I["gtab"]["quantile"], I["gtab"]["g"])
     # Log weights per percentile: reference income per head over each person's household income per head
     # (weights.py log_weights_by_percentile.csv, on the distribution lane's own bins).
-    lwt = pd.read_csv(DERIVED / "log_weights_by_percentile.csv").set_index("percentile")
+    weight_file = (economic_path(DERIVED / "log_weights_by_percentile.csv", I["basis"], I["case"])
+                   if I["basis"] == "oct15" else DERIVED / "log_weights_by_percentile.csv")
+    lwt = pd.read_csv(weight_file).set_index("percentile")
     lwp = lwt.log_weight_pc
     lw = d.percentile.map(lwp).to_numpy()
     gate("log_weight_bins_complete", np.isfinite(lw).all())
@@ -858,7 +1019,7 @@ def row_weight(r, col, fac, pos, I, prem, conv):
             return G_MEXICO
         mx = I["wmeta"]["mexico"]                   # income per head, PPP (weights.py)
         y = mx["remittance_households_median_y"] if w == "mexico_recipients" else mx["median_y"]
-        if r.price_basis == "PPP-consumption":
+        if I.get("household_price_basis") == "consumption" or r.price_basis == "PPP-consumption":
             rates = json.load(open(DERIVED / "mexico_meta.json"))["ppp_2024"]
             y *= rates["PA.NUS.PPP"] / rates["PA.NUS.PRVT.PP"]
         return I["wmeta"]["us_reference"]["per_capita"]["y_ref_other_mean"] / y
@@ -965,9 +1126,10 @@ def write_case(name, new, case, basis):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--case", default="oct14", choices=sorted(PINS))
+    ap.add_argument("--case", default="oct15", choices=sorted(PINS))
     ap.add_argument("--basis", default=None, choices=BASES, help="default: the case's own (pins 'basis', else cps)")
     args = ap.parse_args()
+    gate("live_world_case_oct15_only", args.case == "oct15", requested=args.case)
     basis = args.basis or basis_of(args.case)
     I = load(args.case, basis)
     pos = I["pos"]
@@ -996,11 +1158,13 @@ def main():
     write_case("generation_split_check.csv", generation_split_check(I, args.case), args.case, basis)
     rows_c, prem_c, _ = build_rows(I)
     rate, rate_inputs = mexico_consumption_tax_rate()
+    source_meta = (mexico_source_tax(I, prem_c, "low") if I.get("mexico_capital_source", True) else None)
     meta = dict(case=args.case, pins=PINS[args.case], channel_factors=channel_factors(I, "money"),
                 lambda_hendren_tax_shares=channel_factors(I, "money")["fiscal_a"]["inv_g"],
                 generation_shares=shares, short_run_block=short_run_block(I), hours_beside=hours_beside(I),
                 saving_leak=saving_leak(I, rows_c, res), generation_breakeven=generation_breakeven(I, rows_c, res),
-                mexico_tax_bound=dict(zip(("by_generation_bn", "inputs"), mexico_tax_bound(I, prem_c))),
+                mexico_tax_bound=dict(zip(("by_generation_bn", "inputs"), mexico_tax_bound(
+                    I, prem_c, 0.0 if source_meta is None else source_meta["national_corporate_receipts_pesos_bn"]))),
                 mexico_withheld_tax_bn={g: prem_c[g]["tax"] for g in GROUP},
                 mexico_consumption_tax=dict(
                     by_generation_bn={g: prem_c[g]["ctax"] for g in GROUP},

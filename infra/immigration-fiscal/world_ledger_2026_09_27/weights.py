@@ -30,7 +30,7 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 
-from population_basis import BASES, lineage, reweight, suffixed
+from population_basis import BASES, economic_path, lineage, reweight, suffixed
 
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
@@ -109,7 +109,7 @@ def g_at(quantile, gtab):
     return np.interp(np.clip(quantile, 1, 100), gtab["quantile"], gtab["g"])
 
 
-def income_positions(gtab, basis="cps"):
+def income_positions(gtab, basis="cps", case=None):
     """Each party's position on two US scales: 'money' (household money income over the square root of household
     size, the scale Mexico's incomes can be put on) and 'spm' (SPM resources over the SPM equivalence scale). Both
     rank persons on other residents' distribution, as the distribution lane's channel_by_percentile does."""
@@ -118,7 +118,10 @@ def income_positions(gtab, basis="cps"):
     spec.loader.exec_module(B)
     d = B.load_cps()
     if basis != "cps":
-        d = reweight(d, B.PATHS["cps"], gate, basis)
+        d = reweight(d, B.PATHS["cps"], gate, basis, case=case)
+    if basis == "oct15":
+        from coverage_transport import transport_weights
+        d = transport_weights(d, case or basis, "cash")
     other, tgt = d.other.to_numpy(), d.target.to_numpy()
     w = d.pw.to_numpy(float)
     usb = d.PRCITSHP.isin([1, 2, 3]).to_numpy()
@@ -172,6 +175,12 @@ def income_positions(gtab, basis="cps"):
                              mean_log_weight_pc=np.average(ref_pc / np.maximum(ypc[m], floor_pc), weights=w[m]),
                              mean_y_pc=np.average(ypc[m], weights=w[m]),
                              share_below_floor=w[m & (y < floor)].sum() / w[m].sum()))
+            if "pw_counted" in d:
+                counted = d.pw_counted.to_numpy(float)
+                rows[-1].update(counted_persons_m=counted[m].sum() / 1e6,
+                    counted_mean_g=np.average(gp[m], weights=counted[m]),
+                    counted_mean_log_weight=np.average(logw[m], weights=counted[m]),
+                    counted_mean_log_weight_pc=np.average(ref_pc / np.maximum(ypc[m], floor_pc), weights=counted[m]))
     return pd.DataFrame(rows), ref, lw
 
 
@@ -206,13 +215,18 @@ def mexico_incomes():
     return out
 
 
-def main(basis="cps"):
+def main(basis="cps", case=None):
     DERIVED.mkdir(exist_ok=True)
     gtab, gmeta = digitize_g()
     if basis != "cps":
-        pos, _, _ = income_positions(gtab, basis)
-        pos.to_csv(suffixed(DERIVED / "income_positions.csv", basis), index=False, lineterminator="\n",
+        pos, ref, lw = income_positions(gtab, basis, case=case)
+        pos.to_csv(economic_path(DERIVED / "income_positions.csv", basis, case), index=False, lineterminator="\n",
                    float_format="%.6g")
+        lw.to_csv(economic_path(DERIVED / "log_weights_by_percentile.csv", basis, case), index=False,
+                  lineterminator="\n", float_format="%.12g")
+        meta = json.load(open(DERIVED / "weights_meta.json"))
+        meta.update(us_reference=ref, case=case or basis)
+        economic_path(DERIVED / "weights_meta.json", basis, case).write_text(json.dumps(meta, indent=1, sort_keys=True)+"\n")
         print(pos.round(3).to_string(), file=sys.stderr)
         return
     gtab.to_csv(DERIVED / "hendren_g.csv", index=False, lineterminator="\n")
@@ -230,4 +244,6 @@ def main(basis="cps"):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--basis", default="cps", choices=BASES)
-    main(ap.parse_args().basis)
+    ap.add_argument("--case")
+    args = ap.parse_args()
+    main(args.basis, case=args.case)

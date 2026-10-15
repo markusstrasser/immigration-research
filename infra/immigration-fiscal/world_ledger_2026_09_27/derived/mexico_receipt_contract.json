@@ -1,0 +1,164 @@
+{
+ "employee_ceav": {
+  "owner": "worker",
+  "receipt_class": "worker_asset",
+  "remitter": "worker",
+  "statute": "LSS168IIb,169"
+ },
+ "employee_disability_life": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "worker",
+  "statute": "LSS147"
+ },
+ "employee_health_cash": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "worker",
+  "statute": "LSS107"
+ },
+ "employee_health_excess": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "worker",
+  "statute": "LSS106II"
+ },
+ "employee_pension_medical": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "worker",
+  "statute": "LSS25"
+ },
+ "employer_ceav": {
+  "owner": "worker",
+  "receipt_class": "worker_asset",
+  "remitter": "employer",
+  "statute": "LSS168IIa,169"
+ },
+ "employer_daycare": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "employer",
+  "statute": "LSS211"
+ },
+ "employer_disability_life": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "employer",
+  "statute": "LSS147"
+ },
+ "employer_employee_ceav": {
+  "owner": "worker",
+  "receipt_class": "worker_asset",
+  "remitter": "employer",
+  "statute": "LSS36,168IIb,169"
+ },
+ "employer_employee_disability_life": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "employer",
+  "statute": "LSS36,147"
+ },
+ "employer_employee_health_cash": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "employer",
+  "statute": "LSS36,107"
+ },
+ "employer_employee_health_excess": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "employer",
+  "statute": "LSS36,106II"
+ },
+ "employer_employee_pension_medical": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "employer",
+  "statute": "LSS36,25"
+ },
+ "employer_health_cash": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "employer",
+  "statute": "LSS107"
+ },
+ "employer_health_excess": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "employer",
+  "statute": "LSS106II"
+ },
+ "employer_health_fixed": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "employer",
+  "statute": "LSS106I"
+ },
+ "employer_housing": {
+  "owner": "worker",
+  "receipt_class": "worker_asset",
+  "remitter": "employer",
+  "statute": "INFONAVIT29II"
+ },
+ "employer_pension_medical": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "employer",
+  "statute": "LSS25"
+ },
+ "employer_sar": {
+  "owner": "worker",
+  "receipt_class": "worker_asset",
+  "remitter": "employer",
+  "statute": "LSS168I,169"
+ },
+ "employer_state_payroll": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "employer",
+  "statute": "state_payroll_2024"
+ },
+ "employer_work_risk": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "employer",
+  "statute": "LSS74"
+ },
+ "government_cuota_social": {
+  "owner": "worker",
+  "receipt_class": "worker_asset",
+  "remitter": "government",
+  "statute": "LSS168IV,169"
+ },
+ "government_disability_life": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "government",
+  "statute": "LSS148"
+ },
+ "government_health_cash": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "government",
+  "statute": "LSS107"
+ },
+ "government_health_fixed": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "government",
+  "statute": "LSS106III"
+ },
+ "government_pension_medical": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "government",
+  "statute": "LSS25"
+ },
+ "income_tax": {
+  "owner": "mexico_public",
+  "receipt_class": "pooled_public",
+  "remitter": "worker",
+  "statute": "LISR96"
+ }
+}

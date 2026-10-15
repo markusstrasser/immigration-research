@@ -17,6 +17,24 @@
       "vintage": "2026-08-26",
       "year": 2024
     },
+    "icp_education_2021.json": {
+      "path": "inputs/icp_education_2021.json",
+      "representation": "original World Bank API JSON bytes",
+      "retrieved": "2026-10-15",
+      "retrieved_at": "2026-10-14T15:41:24.290440+00:00",
+      "sha256": "6a53d9955a72a66cd442bc264d2d005ea2062d07f42d7b8a6fc6e72ccc84bc71",
+      "url": "https://api.worldbank.org/v2/sources/90/country/MEX;USA/series/9120000;1000000;9080000;1400000/classification/PPPGlob/time/YR2021/data?format=json&per_page=500",
+      "values": {
+        "MEX:1000000": 9.94168567657471,
+        "MEX:1400000": 5.95883703231812,
+        "MEX:9080000": 8.08911609649658,
+        "MEX:9120000": 1.64548540115356,
+        "USA:1000000": 1,
+        "USA:1400000": 1,
+        "USA:9080000": 1,
+        "USA:9120000": 1
+      }
+    },
     "imss_financing_2024.txt": {
       "path": "inputs/imss_financing_2024.txt",
       "representation": "deterministic Exa text extraction of primary source",
@@ -78,6 +96,13 @@
       "representation": "existing World Bank JSON authority cached by acquire.py",
       "sha256": "9d290a97f3d9da7d46e89bcf77b8fae040a2cabf560337344c9cd4692b1376f6",
       "url": "https://api.worldbank.org/v2/country/MEX/indicator/PA.NUS.PRVT.PP?format=json"
+    },
+    "icp_us_pli_2021.json": {
+      "file": "icp_us_pli_2021.json",
+      "url": "https://api.worldbank.org/v2/sources/90/country/USA/series/1000000;9080000;9120000;1400000;9270000;9100000;1300000;9060000;9110000;1107000;1107300;1501200;9140000/classification/PX.WL/time/YR2021/data?format=json&per_page=500",
+      "sha256": "652cddd9d261117af2c2a0674ad95dc3a1cfe7f6b84593dec1fab1b3030722e8",
+      "retrieved_at": "2026-10-14T16:41:25.340979+00:00",
+      "bytes": 4218
     }
   },
   "note": "Rates parsed from pinned primary text; current consolidated law articles checked for pre-2024 reform dates; exact December2024 schedule from IMSS report. No model-extracted or hand-typed numeric table."

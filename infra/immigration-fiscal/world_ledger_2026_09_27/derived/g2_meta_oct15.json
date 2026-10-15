@@ -1,0 +1,104 @@
+{
+ "basis": "oct15",
+ "coverage_economic_counterfactual": {
+  "basis": "cash",
+  "case": "oct15",
+  "donor_csv_sha256": "3b3000fb40e40299360cdea8337f1358b1375597a37aba1ae600747d14ec37bf",
+  "economic_assumption": "Each classified economic component follows the case's same-age/sex/completed-generation canonical donor distribution; signed coverage weights retained.",
+  "export_remedy": "Published JSON lacks donor IDs; unchanged canonical factors callable exports its exact donors; principal central counts and fiscal amounts gate admission.",
+  "fiscal_bn": {
+   "high": 4.587810946797324,
+   "low": 0.751840257898303
+  },
+  "gates": {
+   "counts_close": true,
+   "fiscal_close": true
+  },
+  "missing_people": {
+   "G1": 446105.1075376299,
+   "G2": 824190.8641341948,
+   "G3+": 690117.6475083351
+  },
+  "rows": 18562,
+  "rule": "option_A_canonical_coverage_donors",
+  "scenario": "central",
+  "source_hashes": {
+   "infra/immigration-fiscal/coverage_bound_2026_10_14/_cache/oct15/cash/pricing.npz": "b890920914ff660c02e521899bacf2d3e046aa29acab2c78f298a7765f82cc69",
+   "infra/immigration-fiscal/coverage_bound_2026_10_14/coverage_bound.py": "20c23df7ecc783df7ad8da9e8205e55d88878a976f49ed50fcdc14895dbbadbf",
+   "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/coverage_bound_oct15.json": "3456126cc53c353ef0806059dcff33ccc1448cfe8de39d2c92583c6c7d3d073c",
+   "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/pricing_audit_oct15_cash.json": "a9ac741a814fe3ff7812b9c4c12134a883f9e3de4d42ae72a14c5437242e51fb",
+   "infra/immigration-fiscal/coverage_bound_2026_10_14/export_pricing.py": "41864c83d57cdf70ed4cf6fe525e8eb17c615869ba8f49132f52226d5ef5fc35",
+   "infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/pricing_dependencies_oct15_cash.json": "8f12eeead636277fee03b3017975f27e149f2d3211018a6afbb81281bf5ea6a9",
+   "infra/immigration-fiscal/coverage_bound_2026_10_14/source_tables.py": "3083c8b1dce1cf88fade72e13a57b524491f55afbc8f03248cc811ceecef8e7d",
+   "infra/immigration-fiscal/world_ledger_2026_09_27/coverage_transport.py": "81753c3e27d321d88b3f8f3abc19384babd0f02494aeb3dd1100b2d8760cdd28"
+  }
+ },
+ "ipums_children_matched_share": 0.8869536771485501,
+ "persons_m": {
+  "G1": 11.482806168929562,
+  "G2": 15.157408527654544,
+  "G3+": 18.58984760416235
+ },
+ "population": {
+  "case_located_total": 43269648.68157841,
+  "complete_denominator_persons": {
+   "G1": 11482806.168941675,
+   "G2": 15157408.527654545,
+   "G3+": 18589847.60416235
+  },
+  "complete_total": 45230062.30075857,
+  "completion_persons": 517435.75719317,
+  "completion_records": 231,
+  "coverage_economic_counterfactual": {
+   "basis": "cash",
+   "case": "oct15",
+   "donor_csv_sha256": "3b3000fb40e40299360cdea8337f1358b1375597a37aba1ae600747d14ec37bf",
+   "economic_assumption": "Each classified economic component follows the case's same-age/sex/completed-generation canonical donor distribution; signed coverage weights retained.",
+   "export_remedy": "Published JSON lacks donor IDs; unchanged canonical factors callable exports its exact donors; principal central counts and fiscal amounts gate admission.",
+   "fiscal_bn": {
+    "high": 4.587810946797324,
+    "low": 0.751840257898303
+   },
+   "gates": {
+    "counts_close": true,
+    "fiscal_close": true
+   },
+   "missing_people": {
+    "G1": 446105.1075376299,
+    "G2": 824190.8641341948,
+    "G3+": 690117.6475083351
+   },
+   "rows": 18562,
+   "rule": "option_A_canonical_coverage_donors",
+   "scenario": "central",
+   "source_hashes": {
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/_cache/oct15/cash/pricing.npz": "b890920914ff660c02e521899bacf2d3e046aa29acab2c78f298a7765f82cc69",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/coverage_bound.py": "20c23df7ecc783df7ad8da9e8205e55d88878a976f49ed50fcdc14895dbbadbf",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/coverage_bound_oct15.json": "3456126cc53c353ef0806059dcff33ccc1448cfe8de39d2c92583c6c7d3d073c",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/pricing_audit_oct15_cash.json": "a9ac741a814fe3ff7812b9c4c12134a883f9e3de4d42ae72a14c5437242e51fb",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/export_pricing.py": "41864c83d57cdf70ed4cf6fe525e8eb17c615869ba8f49132f52226d5ef5fc35",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/pricing_dependencies_oct15_cash.json": "8f12eeead636277fee03b3017975f27e149f2d3211018a6afbb81281bf5ea6a9",
+    "infra/immigration-fiscal/coverage_bound_2026_10_14/source_tables.py": "3083c8b1dce1cf88fade72e13a57b524491f55afbc8f03248cc811ceecef8e7d",
+    "infra/immigration-fiscal/world_ledger_2026_09_27/coverage_transport.py": "81753c3e27d321d88b3f8f3abc19384babd0f02494aeb3dd1100b2d8760cdd28"
+   }
+  },
+  "coverage_economic_inputs": "option A: canonical coverage donor component means",
+  "coverage_in_economic_record_weights": true,
+  "latent_proxy": "Phase B uniform G3+ age/earnings/income proxy retained",
+  "located_persons": {
+   "G1": 11036701.061391931,
+   "G2": 14333217.663520351,
+   "G3+": 17899729.956654016
+  },
+  "located_total": 43269648.6815663,
+  "source_rounding": {
+   "generation": "G1",
+   "people": 1.2114644050598145e-05
+  },
+  "unlocated_coverage_persons": {
+   "G1": 446105.1075376299,
+   "G2": 824190.8641341948,
+   "G3+": 690117.6475083351
+  }
+ }
+}

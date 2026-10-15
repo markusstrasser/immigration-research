@@ -18,15 +18,16 @@ def main():
     r = resource.getrusage(resource.RUSAGE_CHILDREN)
     memory_bytes = r.ru_maxrss if sys.platform == "darwin" else r.ru_maxrss * 1024
     entry = dict(started=started, command=command, exit_code=result.returncode,
-                 seconds=time.perf_counter() - t, peak_memory_bytes=memory_bytes)
+                 seconds=time.perf_counter() - t, peak_memory_bytes=memory_bytes,
+                 memory_metric="peak child RSS; diagnostic only, not physical footprint")
     log = Path(__file__).resolve().parent / "_cache/p7_timings.jsonl"
     log.parent.mkdir(parents=True, exist_ok=True)
     with log.open("a") as f:
         f.write(json.dumps(entry, sort_keys=True) + "\n")
-    print(f"[timing] rc={result.returncode} seconds={entry['seconds']:.2f} peak_GB={memory_bytes / 1e9:.3f}",
+    print(f"[timing] rc={result.returncode} seconds={entry['seconds']:.2f} peak_RSS_GB={memory_bytes / 1e9:.3f}",
           file=sys.stderr)
-    if memory_bytes > 2.5e9:
-        raise SystemExit("[BLOCKED] command exceeded 2.5 GB memory budget")
+    # ru_maxrss is diagnostic only: macOS RSS is not physical footprint.
+    # Each Python stage enforces memory_budget.require_within_budget() itself.
     raise SystemExit(result.returncode)
 
 

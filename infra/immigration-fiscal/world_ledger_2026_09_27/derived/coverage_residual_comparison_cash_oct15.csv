@@ -1,0 +1,3 @@
+end,residual_net_bn,residual_gross_bn,convention_gap_bn,zero_recipient_value_bn,basis,assumption
+high,0.204436681774,0.674452385249,0.047063417706,0.000000000000,cash,[ASSUMPTION] proportional mix; zero recipient value is a beside convention
+low,0.211700606894,0.681716310368,0.026198105129,0.000000000000,cash,[ASSUMPTION] proportional mix; zero recipient value is a beside convention

@@ -1,0 +1,31 @@
+{
+ "captured_sha256": "df4a637f35d7072c1c7238b67503ad852207eaed34466d809a2d53fd23476a98",
+ "comparison": "published and price-ruled v7; no current historical producer run",
+ "frozen_csv_sha256": "0e70f1883cdd5954101f827cb189c6c911169e00382b07632452979a30181d55",
+ "limitations": "Price-only bridge holds published upstream compensation/G3/pension/capital definitions; not oct15 adoption",
+ "published_max_abs_error_bn": 4.944534452988592e-07,
+ "readings": [
+  "baseline",
+  "reading1",
+  "reading1_deflated",
+  "reading2",
+  "reading2_consumption",
+  "p7_g3_k12_at_cost",
+  "p7_goods_wtp_0.5",
+  "p7_goods_wtp_1",
+  "reading1_same_person_cmp",
+  "reading3_mmp_annual",
+  "reading3",
+  "combined_low",
+  "combined_low_consumption"
+ ],
+ "reference": "f3148023",
+ "rows": 2080,
+ "source_csv_sha256": "3d985e625cab90adaa2e4bbd7e204112f0431297735fb80c8178380ed74238bb",
+ "source_sha256": {
+  "beside_arms": "40cb582914a97b1f3c582ae4d21fe2b4ebc69325cbcd2f0545e06ef360d07de4",
+  "beside_extra": "5bc3daccf11a2ab42543e858ccbd436443431c333ab2fb4f78e87cb0fa2971ba",
+  "world_ledger": "773afaf348c2b540dbf0bff76d7d113eada586292c3007d200040fee93f26374"
+ },
+ "us_cost_max_abs_error_bn": 0.0
+}
