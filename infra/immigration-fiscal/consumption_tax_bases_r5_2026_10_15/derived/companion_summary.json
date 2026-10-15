@@ -1,0 +1,604 @@
+{
+  "as_of": "2026-10-15",
+  "verdict": "PARTIAL: the legacy roughly-breaks-even statement is not certified for full current law or the v8 lineage.",
+  "replacement_lead": "The priced individual/eligibility subset approximately balances on the legacy v5 frame. Full current-law net effects for FY2028 and the 45.23M v8 lineage remain unidentified; business expensing is a conditional cost increase and the historical customs expansion is not a legally sustainable FY2028 projection.",
+  "headline_2024_law_change_bn": {
+    "set": [
+      0,
+      0
+    ],
+    "cash": [
+      0,
+      0
+    ]
+  },
+  "population_v8": {
+    "without_coverage": 43269648.68157841,
+    "with_coverage": 45230062.30075857,
+    "completion": 517435.75719317,
+    "coverage": 1960413.6191801599
+  },
+  "deflator_fy2028_to2024": 0.9059533088657484,
+  "scores": {
+    "70301": {
+      "fy2028_revenue_change_nominal_bn": -57.507,
+      "excel_cell": "'Title VII'!G478",
+      "comparison": "JCT/CBO January2025 current-law baseline, NOT frozen2024 law",
+      "corporate_pass_through_split": null
+    },
+    "70302": {
+      "fy2028_revenue_change_nominal_bn": -13.794,
+      "excel_cell": "'Title VII'!G482",
+      "comparison": "JCT/CBO January2025 current-law baseline, NOT frozen2024 law",
+      "corporate_pass_through_split": null
+    }
+  },
+  "legacy_companion_net_taken_bn": {
+    "central": -0.2798999999999996,
+    "benefit_low_tax_high": -4.2328,
+    "benefit_high_tax_low": 5.759600000000001
+  },
+  "customs_bridge": {
+    "bridge": [
+      {
+        "year": 2024,
+        "fy_cash_bn": 77.03690994489,
+        "subtract_prior_oct_dec_bn": 18.94339653806,
+        "add_current_oct_dec_bn": 20.82350657843,
+        "calendar_cash_bn": 78.91701998526,
+        "pinned_nipa_bn": 83.587,
+        "pinned_nipa_less_calendar_cash_bn": 4.6699800147400055,
+        "current_nipa_bn": 83.587,
+        "current_nipa_less_calendar_cash_bn": 4.6699800147400055
+      },
+      {
+        "year": 2025,
+        "fy_cash_bn": 194.86573987282,
+        "subtract_prior_oct_dec_bn": 20.82350657843,
+        "add_current_oct_dec_bn": 90.00183513672,
+        "calendar_cash_bn": 264.04406843111,
+        "pinned_nipa_bn": 265.098,
+        "pinned_nipa_less_calendar_cash_bn": 1.0539315688899933,
+        "current_nipa_bn": 268.663,
+        "current_nipa_less_calendar_cash_bn": 4.618931568889991
+      }
+    ],
+    "pinned_bea": {
+      "bn": {
+        "2024": 83.587,
+        "2025": 265.098
+      },
+      "vintage": "Data published August 26, 2026",
+      "table": "3.2 line 6, B235RC, annual; source units $million"
+    },
+    "current_bea": {
+      "bn": {
+        "2024": 83.587,
+        "2025": 268.663
+      },
+      "vintage": "Data published September 30, 2026",
+      "table": "3.2 line 6, B235RC, annual; source units $million"
+    },
+    "residual_interpretation": "Observed bridge residual, not identified wholly as accrual. BEA uses Treasury MTS customs; vintage, coverage and accounting adjustments are not separately identified here.",
+    "future_policy_assumption": null,
+    "fy2028_customs_bn": null,
+    "ieepa_refund_accounting": {
+      "source": "https://www.bea.gov/index.php/help/faq/1488",
+      "source_date": "2026-04-30",
+      "accrual_period": "2026Q1",
+      "capital_transfer_bn": 166,
+      "treatment": "One-time capital transfer, separate from current customs; interest separately property income. Not recurring FY2028 customs reduction."
+    }
+  },
+  "case_keys": {
+    "population": {
+      "without_coverage": 43269648.68157841,
+      "with_coverage": 45230062.30075857,
+      "completion": 517435.75719317,
+      "coverage": 1960413.6191801599
+    },
+    "rows": [
+      {
+        "which": "set",
+        "end": "low",
+        "spec": 16,
+        "reading": "low",
+        "methods": [
+          {
+            "method": "b_hotdeck_union_matched",
+            "cost_bn": 362.78077165128826,
+            "attributed_responsive_receipts_bn": {
+              "customs_duties": 7.974014432412636,
+              "corporate_capital": 32.453961128505114,
+              "corporate_labor": 11.033774785120155
+            },
+            "national_bn": {
+              "customs_duties": 83.587,
+              "corporate_capital": 497.76375,
+              "corporate_labor": 165.92125
+            }
+          },
+          {
+            "method": "b_matched_over_pooled",
+            "cost_bn": 368.80308885968134,
+            "attributed_responsive_receipts_bn": {
+              "customs_duties": 7.944273036022356,
+              "corporate_capital": 32.453961128505114,
+              "corporate_labor": 11.033774785120155
+            },
+            "national_bn": {
+              "customs_duties": 83.587,
+              "corporate_capital": 497.76375,
+              "corporate_labor": 165.92125
+            }
+          }
+        ],
+        "baseline_cost_bn": 365.7919302554848,
+        "corporate_share_after_response": 0.06552466292537164,
+        "customs_share_after_response": 0.09521987550955885
+      },
+      {
+        "which": "set",
+        "end": "high",
+        "spec": 11,
+        "reading": "high",
+        "methods": [
+          {
+            "method": "b_hotdeck_union_matched",
+            "cost_bn": 452.98324615500104,
+            "attributed_responsive_receipts_bn": {
+              "customs_duties": 7.974014432412636,
+              "corporate_capital": 12.007965617546892,
+              "corporate_labor": 4.082496670494457
+            },
+            "national_bn": {
+              "customs_duties": 83.587,
+              "corporate_capital": 497.76375,
+              "corporate_labor": 165.92125
+            }
+          },
+          {
+            "method": "b_matched_over_pooled",
+            "cost_bn": 458.9803230229575,
+            "attributed_responsive_receipts_bn": {
+              "customs_duties": 7.944273036022356,
+              "corporate_capital": 12.007965617546892,
+              "corporate_labor": 4.082496670494457
+            },
+            "national_bn": {
+              "customs_duties": 83.587,
+              "corporate_capital": 497.76375,
+              "corporate_labor": 165.92125
+            }
+          }
+        ],
+        "baseline_cost_bn": 455.9817845889793,
+        "corporate_share_after_response": 0.024244125282387508,
+        "customs_share_after_response": 0.09521987550955885
+      },
+      {
+        "which": "cash",
+        "end": "low",
+        "spec": 16,
+        "reading": "low",
+        "methods": [
+          {
+            "method": "b_hotdeck_union_matched",
+            "cost_bn": 279.266599558057,
+            "attributed_responsive_receipts_bn": {
+              "customs_duties": 7.974014432412636,
+              "corporate_capital": 32.453961128505114,
+              "corporate_labor": 11.033774785120155
+            },
+            "national_bn": {
+              "customs_duties": 83.587,
+              "corporate_capital": 497.76375,
+              "corporate_labor": 165.92125
+            }
+          },
+          {
+            "method": "b_matched_over_pooled",
+            "cost_bn": 284.2385277940894,
+            "attributed_responsive_receipts_bn": {
+              "customs_duties": 7.944273036022356,
+              "corporate_capital": 32.453961128505114,
+              "corporate_labor": 11.033774785120155
+            },
+            "national_bn": {
+              "customs_duties": 83.587,
+              "corporate_capital": 497.76375,
+              "corporate_labor": 165.92125
+            }
+          }
+        ],
+        "baseline_cost_bn": 281.75256367607324,
+        "corporate_share_after_response": 0.06552466292537164,
+        "customs_share_after_response": 0.09521987550955885
+      },
+      {
+        "which": "cash",
+        "end": "high",
+        "spec": 11,
+        "reading": "high",
+        "methods": [
+          {
+            "method": "b_hotdeck_union_matched",
+            "cost_bn": 369.46907406176956,
+            "attributed_responsive_receipts_bn": {
+              "customs_duties": 7.974014432412636,
+              "corporate_capital": 12.007965617546892,
+              "corporate_labor": 4.082496670494457
+            },
+            "national_bn": {
+              "customs_duties": 83.587,
+              "corporate_capital": 497.76375,
+              "corporate_labor": 165.92125
+            }
+          },
+          {
+            "method": "b_matched_over_pooled",
+            "cost_bn": 374.4157619573642,
+            "attributed_responsive_receipts_bn": {
+              "customs_duties": 7.944273036022356,
+              "corporate_capital": 12.007965617546892,
+              "corporate_labor": 4.082496670494457
+            },
+            "national_bn": {
+              "customs_duties": 83.587,
+              "corporate_capital": 497.76375,
+              "corporate_labor": 165.92125
+            }
+          }
+        ],
+        "baseline_cost_bn": 371.9424180095669,
+        "corporate_share_after_response": 0.024244125282387508,
+        "customs_share_after_response": 0.09521987550955885
+      }
+    ]
+  },
+  "rows": [
+    {
+      "part": "business_expensing_conditional",
+      "section": "70301",
+      "which": "set",
+      "end": "low",
+      "nominal_national_bn": 57.507,
+      "price_year": 2024,
+      "policy_year": "FY2028",
+      "item6_share_after_response": 0.06552466292537164,
+      "delta_net_cost_bn": 3.4137469343956397,
+      "delta_net_taken_bn": -3.4137469343956397,
+      "per_member_usd": 75.47517648098368,
+      "status": "conditional_allocation_of_entire_JCT_score; not frozen2024 law change"
+    },
+    {
+      "part": "business_expensing_conditional",
+      "section": "70302",
+      "which": "set",
+      "end": "low",
+      "nominal_national_bn": 13.794,
+      "price_year": 2024,
+      "policy_year": "FY2028",
+      "item6_share_after_response": 0.06552466292537164,
+      "delta_net_cost_bn": 0.8188433619046979,
+      "delta_net_taken_bn": -0.8188433619046979,
+      "per_member_usd": 18.103962724167303,
+      "status": "conditional_allocation_of_entire_JCT_score; not frozen2024 law change"
+    },
+    {
+      "part": "customs_historical_pinned_bea",
+      "section": "customs",
+      "which": "set",
+      "end": "low",
+      "nominal_national_bn": 181.51100000000002,
+      "price_year": 2024,
+      "policy_year": "CY2025 vs CY2024 historical",
+      "item6_share_after_response": "",
+      "delta_net_cost_bn": -16.603798219749276,
+      "delta_net_taken_bn": 16.603798219749276,
+      "per_member_usd": -367.0965144673437,
+      "status": "v8 household customs key fixed; item18 joint business-base update not applied; not FY2028 law"
+    },
+    {
+      "part": "customs_historical_current_bea",
+      "section": "customs",
+      "which": "set",
+      "end": "low",
+      "nominal_national_bn": 185.07600000000002,
+      "price_year": 2024,
+      "policy_year": "CY2025 vs CY2024 historical",
+      "item6_share_after_response": "",
+      "delta_net_cost_bn": -16.9341171511101,
+      "delta_net_taken_bn": 16.9341171511101,
+      "per_member_usd": -374.3995981810994,
+      "status": "v8 household customs key fixed; item18 joint business-base update not applied; not FY2028 law"
+    },
+    {
+      "part": "business_expensing_conditional",
+      "section": "70301",
+      "which": "set",
+      "end": "high",
+      "nominal_national_bn": 57.507,
+      "price_year": 2024,
+      "policy_year": "FY2028",
+      "item6_share_after_response": 0.024244125282387508,
+      "delta_net_cost_bn": 1.2630863657263869,
+      "delta_net_taken_bn": -1.2630863657263869,
+      "per_member_usd": 27.92581529796396,
+      "status": "conditional_allocation_of_entire_JCT_score; not frozen2024 law change"
+    },
+    {
+      "part": "business_expensing_conditional",
+      "section": "70302",
+      "which": "set",
+      "end": "high",
+      "nominal_national_bn": 13.794,
+      "price_year": 2024,
+      "policy_year": "FY2028",
+      "item6_share_after_response": 0.024244125282387508,
+      "delta_net_cost_bn": 0.3029720439047382,
+      "delta_net_taken_bn": -0.3029720439047382,
+      "per_member_usd": 6.698466207941901,
+      "status": "conditional_allocation_of_entire_JCT_score; not frozen2024 law change"
+    },
+    {
+      "part": "customs_historical_pinned_bea",
+      "section": "customs",
+      "which": "set",
+      "end": "high",
+      "nominal_national_bn": 181.51100000000002,
+      "price_year": 2024,
+      "policy_year": "CY2025 vs CY2024 historical",
+      "item6_share_after_response": "",
+      "delta_net_cost_bn": -16.603798219749276,
+      "delta_net_taken_bn": 16.603798219749276,
+      "per_member_usd": -367.0965144673437,
+      "status": "v8 household customs key fixed; item18 joint business-base update not applied; not FY2028 law"
+    },
+    {
+      "part": "customs_historical_current_bea",
+      "section": "customs",
+      "which": "set",
+      "end": "high",
+      "nominal_national_bn": 185.07600000000002,
+      "price_year": 2024,
+      "policy_year": "CY2025 vs CY2024 historical",
+      "item6_share_after_response": "",
+      "delta_net_cost_bn": -16.9341171511101,
+      "delta_net_taken_bn": 16.9341171511101,
+      "per_member_usd": -374.3995981810994,
+      "status": "v8 household customs key fixed; item18 joint business-base update not applied; not FY2028 law"
+    },
+    {
+      "part": "business_expensing_conditional",
+      "section": "70301",
+      "which": "cash",
+      "end": "low",
+      "nominal_national_bn": 57.507,
+      "price_year": 2024,
+      "policy_year": "FY2028",
+      "item6_share_after_response": 0.06552466292537164,
+      "delta_net_cost_bn": 3.4137469343956397,
+      "delta_net_taken_bn": -3.4137469343956397,
+      "per_member_usd": 75.47517648098368,
+      "status": "conditional_allocation_of_entire_JCT_score; not frozen2024 law change"
+    },
+    {
+      "part": "business_expensing_conditional",
+      "section": "70302",
+      "which": "cash",
+      "end": "low",
+      "nominal_national_bn": 13.794,
+      "price_year": 2024,
+      "policy_year": "FY2028",
+      "item6_share_after_response": 0.06552466292537164,
+      "delta_net_cost_bn": 0.8188433619046979,
+      "delta_net_taken_bn": -0.8188433619046979,
+      "per_member_usd": 18.103962724167303,
+      "status": "conditional_allocation_of_entire_JCT_score; not frozen2024 law change"
+    },
+    {
+      "part": "customs_historical_pinned_bea",
+      "section": "customs",
+      "which": "cash",
+      "end": "low",
+      "nominal_national_bn": 181.51100000000002,
+      "price_year": 2024,
+      "policy_year": "CY2025 vs CY2024 historical",
+      "item6_share_after_response": "",
+      "delta_net_cost_bn": -16.603798219749276,
+      "delta_net_taken_bn": 16.603798219749276,
+      "per_member_usd": -367.0965144673437,
+      "status": "v8 household customs key fixed; item18 joint business-base update not applied; not FY2028 law"
+    },
+    {
+      "part": "customs_historical_current_bea",
+      "section": "customs",
+      "which": "cash",
+      "end": "low",
+      "nominal_national_bn": 185.07600000000002,
+      "price_year": 2024,
+      "policy_year": "CY2025 vs CY2024 historical",
+      "item6_share_after_response": "",
+      "delta_net_cost_bn": -16.9341171511101,
+      "delta_net_taken_bn": 16.9341171511101,
+      "per_member_usd": -374.3995981810994,
+      "status": "v8 household customs key fixed; item18 joint business-base update not applied; not FY2028 law"
+    },
+    {
+      "part": "business_expensing_conditional",
+      "section": "70301",
+      "which": "cash",
+      "end": "high",
+      "nominal_national_bn": 57.507,
+      "price_year": 2024,
+      "policy_year": "FY2028",
+      "item6_share_after_response": 0.024244125282387508,
+      "delta_net_cost_bn": 1.2630863657263869,
+      "delta_net_taken_bn": -1.2630863657263869,
+      "per_member_usd": 27.92581529796396,
+      "status": "conditional_allocation_of_entire_JCT_score; not frozen2024 law change"
+    },
+    {
+      "part": "business_expensing_conditional",
+      "section": "70302",
+      "which": "cash",
+      "end": "high",
+      "nominal_national_bn": 13.794,
+      "price_year": 2024,
+      "policy_year": "FY2028",
+      "item6_share_after_response": 0.024244125282387508,
+      "delta_net_cost_bn": 0.3029720439047382,
+      "delta_net_taken_bn": -0.3029720439047382,
+      "per_member_usd": 6.698466207941901,
+      "status": "conditional_allocation_of_entire_JCT_score; not frozen2024 law change"
+    },
+    {
+      "part": "customs_historical_pinned_bea",
+      "section": "customs",
+      "which": "cash",
+      "end": "high",
+      "nominal_national_bn": 181.51100000000002,
+      "price_year": 2024,
+      "policy_year": "CY2025 vs CY2024 historical",
+      "item6_share_after_response": "",
+      "delta_net_cost_bn": -16.603798219749276,
+      "delta_net_taken_bn": 16.603798219749276,
+      "per_member_usd": -367.0965144673437,
+      "status": "v8 household customs key fixed; item18 joint business-base update not applied; not FY2028 law"
+    },
+    {
+      "part": "customs_historical_current_bea",
+      "section": "customs",
+      "which": "cash",
+      "end": "high",
+      "nominal_national_bn": 185.07600000000002,
+      "price_year": 2024,
+      "policy_year": "CY2025 vs CY2024 historical",
+      "item6_share_after_response": "",
+      "delta_net_cost_bn": -16.9341171511101,
+      "delta_net_taken_bn": 16.9341171511101,
+      "per_member_usd": -374.3995981810994,
+      "status": "v8 household customs key fixed; item18 joint business-base update not applied; not FY2028 law"
+    }
+  ],
+  "gaps": [
+    "No FY2028 tariff revenue under the surviving country/product schedules, their overlaps, and refunds is identified.",
+    "The legacy individual/benefit rows use 42.752M v5 people; their tax-unit/eligibility shares have not been recomputed on 45.230M v8 people.",
+    "JCT business scores compare with January-2025-law phase-down, whereas the companion describes a frozen-2024-law comparison; no baseline bridge is supplied.",
+    "JCT scores combine corporate and pass-through revenue effects; no industry/legal-form split isolates federal corporate source tax. Whole-score allocation on item6 is conditional.",
+    "Programme-wide benefit and other post-2024 tax changes omitted by the legacy companion remain outside the priced subtotal."
+  ],
+  "coherent_full_law_net_taken_bn": null,
+  "legal_status": {
+    "as_of_requested": "2026-10-15",
+    "complete_legal_certification": false,
+    "interpretation": "Primary acts and decisions below establish particular changes. No assertion that every later amendment or judicial disposition has been cleared. No numerical FY2028 tariff assumption is authorized by this ledger.",
+    "authorities": [
+      {
+        "authority": "IEEPA additional ad valorem tariffs",
+        "status_established": "Supreme Court held IEEPA does not authorize tariffs on 2026-02-20. Same-day executive order ended the enumerated IEEPA duties while preserving other authorities.",
+        "sources": [
+          "scotus_ieepa.pdf",
+          "ending_ieepa.html"
+        ],
+        "anchors": [
+          "Learning Resources, Inc. v. Trump, 24-1287, syllabus and holding",
+          "Ending Certain Tariff Actions, sections1-2"
+        ],
+        "fy2028_carry_fy2025_allowed": false
+      },
+      {
+        "authority": "IEEPA tariff refunds",
+        "status_established": "CIT 26-123 (2026-10-08) certifies the non-plaintiff importer class. Its account reports approximately 126bn duties plus interest refunded through October2; certification does not itself establish a final schedule for remaining cash payments. BEA accrues the one-time refund capital transfer in 2026Q1, separately from current customs and interest.",
+        "sources": [
+          "cit_refunds.pdf",
+          "bea_ieepa_refunds.html"
+        ],
+        "anchors": [
+          "CIT slip opinion26-123 pages4-8 and32-33",
+          "BEA FAQ1488, published2026-04-30"
+        ],
+        "fy2028_carry_fy2025_allowed": false
+      },
+      {
+        "authority": "Trade Act section122 temporary surcharge",
+        "status_established": "February20 proclamation imposes10% from February24 with endpoint July24,2026 unless Congress extends. That instrument alone provides no FY2028 authority. A complete audit of intervening legislation and Section122 litigation was not completed.",
+        "sources": [
+          "section122.html"
+        ],
+        "anchors": [
+          "Proclamation2026-02-20, operative clauses1 and9"
+        ],
+        "fy2028_carry_fy2025_allowed": false
+      },
+      {
+        "authority": "Trade Expansion Act section232",
+        "status_established": "Separate authority preserved by February20 order. April2 metals proclamation modified in June1 proclamation; some temporary equipment rates change on January1,2028. July20 aluminum proclamation adds a separate mechanism. These reviewed metals sources do not cover the complete autos, pharmaceuticals, lumber, semiconductors, drones, or other schedules and subsequent litigation.",
+        "sources": [
+          "ending_ieepa.html",
+          "section232_apr.html",
+          "section232_jun.html",
+          "section232_jul.html"
+        ],
+        "anchors": [
+          "2026-06-01 proclamation clauses2-3",
+          "2026-07-20 aluminum proclamation"
+        ],
+        "fy2028_carry_fy2025_allowed": false
+      },
+      {
+        "authority": "Trade Act section301",
+        "status_established": "July23 USTR final notice imposed forced-labor tariffs on60 economies from July24,10% or12.5% with exemptions, MFN ceiling rules, and phase-in provisions. CIT official court record lists September30 oral argument in In Re Section301 Forced Labor Cases,26-03555. No final disposition or complete subsequent-amendment clearance is certified. Earlier China and separate Brazil schedules also require separate reconstruction.",
+        "sources": [
+          "section301_final.pdf",
+          "cit_301_docket.html"
+        ],
+        "anchors": [
+          "USTR final notice pages1-2 and12-14 plus annexes",
+          "CIT public proceedings September30,2026,26-03555"
+        ],
+        "fy2028_carry_fy2025_allowed": false
+      },
+      {
+        "authority": "Tariff Act section338",
+        "status_established": "July20 Canadian motor-vehicle, alcohol, and dairy proclamations imposed50% duties subject to product annexes. September8 proclamations published September14 changed motor-vehicle/alcohol scope and added import exclusions for products linked to all three disputes. Latest applicable product scope, import prohibitions, stacking and subsequent litigation need explicit reconstruction, rather than July-only rates.",
+        "sources": [
+          "section338_vehicles.html",
+          "section338_alcohol.html",
+          "section338_dairy.html",
+          "section338_sept_alcohol_ban.pdf",
+          "section338_sept_alcohol_scope.pdf",
+          "section338_sept_dairy_ban.pdf",
+          "section338_sept_vehicles_ban.pdf",
+          "section338_sept_vehicles_scope.pdf"
+        ],
+        "anchors": [
+          "2026-07-20 proclamations",
+          "91FR58311,58319,58325,58331,58339"
+        ],
+        "fy2028_carry_fy2025_allowed": false
+      }
+    ],
+    "business_law": {
+      "bonus_depreciation": "IRS Publication946 confirms100% for qualifying property acquired and placed in service after January19,2025; JCT section70301 FY2028 score is not the same comparison as60% frozen2024 bonus rules.",
+      "domestic_research": "IRS Revenue Procedure2025-28, published in IRB2025-38, section2.04 confirms section174A domestic R&E deduction for amounts paid or incurred in tax years beginning after December31,2024, with elections and transitional rules.",
+      "sources": [
+        "irs_depreciation.html",
+        "irs_174a.html"
+      ]
+    },
+    "remaining_legal_gaps": [
+      "Comprehensive status as of October15 for all tariff instruments and judicial dispositions",
+      "Intervening enhanced-PTC law status and other legacy-companion legal premises",
+      "FY2028 weighted calendar/fiscal schedule and refund/capital-transfer bridge"
+    ]
+  },
+  "interactions": [
+    "Item9 domestic-source fractions are inside extracted item6 receipts.",
+    "Items10 and12 carriers/coverage receipts enter the extracted shares; the denominator is 45.230M.",
+    "Item11 held fixed: no current-law mixed-household resimulation.",
+    "Item18 customs base revision is excluded here to prevent counting it twice; historical customs uses the v8 household key.",
+    "Expensing score allocation is a sensitivity on the item6 corporate base. JCT actual corporate/pass-through and industry exposure is unresolved."
+  ]
+}

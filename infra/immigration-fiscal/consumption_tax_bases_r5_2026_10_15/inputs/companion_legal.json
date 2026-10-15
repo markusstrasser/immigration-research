@@ -1,0 +1,55 @@
+{
+  "as_of_requested": "2026-10-15",
+  "complete_legal_certification": false,
+  "interpretation": "Primary acts and decisions below establish particular changes. No assertion that every later amendment or judicial disposition has been cleared. No numerical FY2028 tariff assumption is authorized by this ledger.",
+  "authorities": [
+    {
+      "authority": "IEEPA additional ad valorem tariffs",
+      "status_established": "Supreme Court held IEEPA does not authorize tariffs on 2026-02-20. Same-day executive order ended the enumerated IEEPA duties while preserving other authorities.",
+      "sources": ["scotus_ieepa.pdf", "ending_ieepa.html"],
+      "anchors": ["Learning Resources, Inc. v. Trump, 24-1287, syllabus and holding", "Ending Certain Tariff Actions, sections1-2"],
+      "fy2028_carry_fy2025_allowed": false
+    },
+    {
+      "authority": "IEEPA tariff refunds",
+      "status_established": "CIT 26-123 (2026-10-08) certifies the non-plaintiff importer class. Its account reports approximately 126bn duties plus interest refunded through October2; certification does not itself establish a final schedule for remaining cash payments. BEA accrues the one-time refund capital transfer in 2026Q1, separately from current customs and interest.",
+      "sources": ["cit_refunds.pdf", "bea_ieepa_refunds.html"],
+      "anchors": ["CIT slip opinion26-123 pages4-8 and32-33", "BEA FAQ1488, published2026-04-30"],
+      "fy2028_carry_fy2025_allowed": false
+    },
+    {
+      "authority": "Trade Act section122 temporary surcharge",
+      "status_established": "February20 proclamation imposes10% from February24 with endpoint July24,2026 unless Congress extends. That instrument alone provides no FY2028 authority. A complete audit of intervening legislation and Section122 litigation was not completed.",
+      "sources": ["section122.html"],
+      "anchors": ["Proclamation2026-02-20, operative clauses1 and9"],
+      "fy2028_carry_fy2025_allowed": false
+    },
+    {
+      "authority": "Trade Expansion Act section232",
+      "status_established": "Separate authority preserved by February20 order. April2 metals proclamation modified in June1 proclamation; some temporary equipment rates change on January1,2028. July20 aluminum proclamation adds a separate mechanism. These reviewed metals sources do not cover the complete autos, pharmaceuticals, lumber, semiconductors, drones, or other schedules and subsequent litigation.",
+      "sources": ["ending_ieepa.html", "section232_apr.html", "section232_jun.html", "section232_jul.html"],
+      "anchors": ["2026-06-01 proclamation clauses2-3", "2026-07-20 aluminum proclamation"],
+      "fy2028_carry_fy2025_allowed": false
+    },
+    {
+      "authority": "Trade Act section301",
+      "status_established": "July23 USTR final notice imposed forced-labor tariffs on60 economies from July24,10% or12.5% with exemptions, MFN ceiling rules, and phase-in provisions. CIT official court record lists September30 oral argument in In Re Section301 Forced Labor Cases,26-03555. No final disposition or complete subsequent-amendment clearance is certified. Earlier China and separate Brazil schedules also require separate reconstruction.",
+      "sources": ["section301_final.pdf", "cit_301_docket.html"],
+      "anchors": ["USTR final notice pages1-2 and12-14 plus annexes", "CIT public proceedings September30,2026,26-03555"],
+      "fy2028_carry_fy2025_allowed": false
+    },
+    {
+      "authority": "Tariff Act section338",
+      "status_established": "July20 Canadian motor-vehicle, alcohol, and dairy proclamations imposed50% duties subject to product annexes. September8 proclamations published September14 changed motor-vehicle/alcohol scope and added import exclusions for products linked to all three disputes. Latest applicable product scope, import prohibitions, stacking and subsequent litigation need explicit reconstruction, rather than July-only rates.",
+      "sources": ["section338_vehicles.html", "section338_alcohol.html", "section338_dairy.html", "section338_sept_alcohol_ban.pdf", "section338_sept_alcohol_scope.pdf", "section338_sept_dairy_ban.pdf", "section338_sept_vehicles_ban.pdf", "section338_sept_vehicles_scope.pdf"],
+      "anchors": ["2026-07-20 proclamations", "91FR58311,58319,58325,58331,58339"],
+      "fy2028_carry_fy2025_allowed": false
+    }
+  ],
+  "business_law": {
+    "bonus_depreciation": "IRS Publication946 confirms100% for qualifying property acquired and placed in service after January19,2025; JCT section70301 FY2028 score is not the same comparison as60% frozen2024 bonus rules.",
+    "domestic_research": "IRS Revenue Procedure2025-28, published in IRB2025-38, section2.04 confirms section174A domestic R&E deduction for amounts paid or incurred in tax years beginning after December31,2024, with elections and transitional rules.",
+    "sources": ["irs_depreciation.html", "irs_174a.html"]
+  },
+  "remaining_legal_gaps": ["Comprehensive status as of October15 for all tariff instruments and judicial dispositions", "Intervening enhanced-PTC law status and other legacy-companion legal premises", "FY2028 weighted calendar/fiscal schedule and refund/capital-transfer bridge"]
+}

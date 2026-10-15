@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "tx2025": {
+      "url": "https://comptroller.texas.gov/transparency/reports/tax-exemptions-and-incidence/2025/96-463.pdf",
+      "path": "_cache/business_tx_2025.pdf",
+      "sha256": "28444dc0b211017f3a4282fa0c3ed575ff66da1847c377f6a60abae6d843e421",
+      "locator": "Table 1, printed page 51, initial distribution, FY2027 forecast",
+      "kind": "primary government model estimate, not observed purchaser receipts"
+    },
+    "tx2023": {
+      "url": "https://comptroller.texas.gov/transparency/reports/tax-exemptions-and-incidence/2023/96-463.pdf",
+      "path": "_cache/business_tx_2023.pdf",
+      "sha256": "211849e7501b1b38b14049bb6208f11adeb32d1df7500304573418956f7f05dd",
+      "locator": "Table 1, initial distribution, FY2025 forecast",
+      "kind": "primary government model estimate, not observed purchaser receipts"
+    },
+    "mn2026": {
+      "url": "https://www.revenue.state.mn.us/sites/default/files/2026-03/2026-tax-incidence-study-final-cover.pdf",
+      "path": "_cache/business_mn_2026.pdf",
+      "sha256": "9d99abd1f9a05913f1009a91e76902c3a430bc3d7ebde4bbef555ba88eab17d1",
+      "locator": "Table 1-2, printed page 10, CY2023 collections and initial taxpayer category",
+      "kind": "primary government historical model estimate, not observed purchaser receipts"
+    },
+    "mn2024": {
+      "url": "https://www.revenue.state.mn.us/sites/default/files/2024-03/2024-tax-incidence-study-final-online-revision_0.pdf",
+      "path": "_cache/business_mn_2024.pdf",
+      "sha256": "aeef4b9579127e32b9b88f50d0f279b5b135126c58da5b765a15799a564beedb",
+      "locator": "Table 1-2, printed page 8, CY2021 collections and initial taxpayer category",
+      "kind": "primary government historical model estimate, not observed purchaser receipts"
+    },
+    "bea2024": {
+      "url": "https://apps.bea.gov/industry/release/zip/SUPPLY-USE.zip",
+      "repo_path": "infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/bea_SUPPLY-USE.zip",
+      "sha256": "3f16466e11eef0ed562d3663907f4a4a65856c134aa9f8baf7da6460bd11987d",
+      "locator": "2024 Supply_Summary MDTY, TOP and T017; Use_Summary individual commodity/purchaser cells",
+      "kind": "primary BEA supply-use estimates, millions of dollars"
+    }
+  },
+  "state_source_estimates": [
+    {"state_fips":"48","source_id":"tx2025","year":2027,"period":"FY","forecast":true,"denominator":"state limited sales and use tax","business_million":22727.0,"total_million":54835.6,"published_business_percent":41.4,"industry_million":{"agriculture":616.5,"mining":3541.5,"utilities_transportation":3708.9,"construction":2971.7,"manufacturing":2490.7,"trade":2874.7,"information":1013.6,"finance_insurance_real_estate":1113.9,"other_services":4395.5},"usable_as_2024_central":false},
+    {"state_fips":"48","source_id":"tx2023","year":2025,"period":"FY","forecast":true,"denominator":"state limited sales and use tax","business_million":20232.3,"total_million":48389.0,"published_business_percent":41.8,"industry_million":{"agriculture":440.4,"mining":2972.9,"utilities_transportation":2909.0,"construction":3070.0,"manufacturing":1941.0,"trade":2587.1,"information":1176.4,"finance_insurance_real_estate":1058.4,"other_services":4077.2},"usable_as_2024_central":false},
+    {"state_fips":"27","source_id":"mn2026","year":2023,"period":"CY","forecast":false,"denominator":"state general sales/use tax","business_million":null,"total_million":8167.0,"published_business_percent":48.0,"usable_as_2024_central":false},
+    {"state_fips":"27","source_id":"mn2026","year":2023,"period":"CY","forecast":false,"denominator":"local sales taxes including lodging and other selective taxes (footnote 7)","business_million":null,"total_million":1004.0,"published_business_percent":46.6,"usable_as_2024_central":false,"compatible_with_general_sales_tax":false},
+    {"state_fips":"27","source_id":"mn2024","year":2021,"period":"CY","forecast":false,"denominator":"state general sales/use tax","business_million":null,"total_million":6873.0,"published_business_percent":48.4,"usable_as_2024_central":false},
+    {"state_fips":"27","source_id":"mn2024","year":2021,"period":"CY","forecast":false,"denominator":"local sales taxes including lodging and other selective taxes (footnote 7)","business_million":null,"total_million":749.0,"published_business_percent":46.7,"usable_as_2024_central":false,"compatible_with_general_sales_tax":false}
+  ],
+  "crosscheck_only": {
+    "url": "https://www.cost.org/globalassets/cost/state-tax-resources-pdf-pages/cost-studies-articles-reports/2511-10951-cs-50-state-report-final.pdf",
+    "locator":"printed page 2, FY2024; web PDF full-text retrieval verified, direct Python download returned HTTP403",
+    "business_general_sales_tax_bn":245.3,
+    "business_fraction_of_general_sales_tax":0.418,
+    "usable_as_central":false,
+    "reason":"COST/EY cross-check only per brief; FY state/local collection basis differs from NIPA CY2024"
+  },
+  "methodology_sources": [
+    {"url":"https://www.bea.gov/help/faq/1476","fact":"Supply tables contain commodity import duties; GDP final-expenditure components do not separately identify taxes from underlying source data."},
+    {"url":"https://www.bea.gov/help/faq/453","fact":"Import matrices impute each industry's commodity import share proportionally; they do not observe buyer-specific imported shares."},
+    {"url":"https://apps.bea.gov/scb/issues/2018/08-august/0818-industry-economic-accounts-preview.htm","fact":"Tax on products includes sales and excise taxes; it is not an excise-only vector."}
+  ]
+}

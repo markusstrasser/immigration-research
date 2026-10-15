@@ -1,0 +1,1560 @@
+{
+  "item_id": "consumption_tax_bases",
+  "item_number": 18,
+  "kind": "post_engine",
+  "identification_status": "WITHHOLD_FULL_ITEM",
+  "central": null,
+  "arms": {
+    "off": {
+      "label": "v8 unchanged identity control",
+      "status": "IDENTITY_CONTROL",
+      "receipt_ratios": {},
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    },
+    "household_grocery": {
+      "label": "state-law household basket: grocery",
+      "status": "CONDITIONAL_ARM_ONLY",
+      "receipt_ratios": {
+        "general_sales_tax": 0.9958728108882509
+      },
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [
+        "All collections remain on the current household proxy; business purchases held."
+      ],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    },
+    "household_snap": {
+      "label": "state-law household basket: snap",
+      "status": "CONDITIONAL_ARM_ONLY",
+      "receipt_ratios": {
+        "general_sales_tax": 0.9969723817141398
+      },
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [
+        "All collections remain on the current household proxy; business purchases held."
+      ],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    },
+    "household_joint": {
+      "label": "state-law household basket: joint",
+      "status": "CONDITIONAL_ARM_ONLY",
+      "receipt_ratios": {
+        "general_sales_tax": 0.9958131316033051
+      },
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [
+        "All collections remain on the current household proxy; business purchases held."
+      ],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    },
+    "business_sales_crosscheck": {
+      "label": "41.8% national sales share crosscheck at item6 aggregate production key",
+      "status": "CONDITIONAL_ARM_ONLY",
+      "receipt_ratios": {
+        "general_sales_tax": 0.8045614604227607
+      },
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [
+        "COST/EY business share is a crosscheck parameter, not a central source.",
+        "Purchaser industry/state weights transported from item6 other-production taxes."
+      ],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    },
+    "business_customs_carried": {
+      "label": "BEA proportional customs purchaser arm: carried",
+      "status": "CONDITIONAL_ARM_ONLY",
+      "receipt_ratios": {
+        "customs_duties": 1.0297061121714748
+      },
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [
+        "uniform duty intensity across positive domestic uses within each BEA summary commodity",
+        "exclude direct exports and changes in inventories from duty allocation; inputs used by exporters remain in intermediate purchases",
+        "PCE is household; investment and government final demand are separate nonhousehold buckets",
+        "source total rescales summed rounded commodity cells; caller keeps the case national customs total fixed",
+        "Final-demand key carried at old household key",
+        "National state composition transported from item6."
+      ],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    },
+    "business_customs_final_zero": {
+      "label": "BEA proportional customs purchaser arm: final_zero",
+      "status": "CONDITIONAL_ARM_ONLY",
+      "receipt_ratios": {
+        "customs_duties": 0.8806453235456488
+      },
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [
+        "uniform duty intensity across positive domestic uses within each BEA summary commodity",
+        "exclude direct exports and changes in inventories from duty allocation; inputs used by exporters remain in intermediate purchases",
+        "PCE is household; investment and government final demand are separate nonhousehold buckets",
+        "source total rescales summed rounded commodity cells; caller keeps the case national customs total fixed",
+        "Final-demand key final_zero",
+        "National state composition transported from item6."
+      ],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    },
+    "business_customs_final_one": {
+      "label": "BEA proportional customs purchaser arm: final_one",
+      "status": "CONDITIONAL_ARM_ONLY",
+      "receipt_ratios": {
+        "customs_duties": 2.5428365359756255
+      },
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [
+        "uniform duty intensity across positive domestic uses within each BEA summary commodity",
+        "exclude direct exports and changes in inventories from duty allocation; inputs used by exporters remain in intermediate purchases",
+        "PCE is household; investment and government final demand are separate nonhousehold buckets",
+        "source total rescales summed rounded commodity cells; caller keeps the case national customs total fixed",
+        "Final-demand key final_one",
+        "National state composition transported from item6."
+      ],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    },
+    "business_sales_customs": {
+      "label": "sales crosscheck + conditional customs; excise held",
+      "status": "CONDITIONAL_ARM_ONLY",
+      "receipt_ratios": {
+        "general_sales_tax": 0.8045614604227607,
+        "customs_duties": 1.0297061121714748
+      },
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [
+        "COST/EY business share is a crosscheck parameter, not a central source.",
+        "Purchaser industry/state weights transported from item6 other-production taxes.",
+        "uniform duty intensity across positive domestic uses within each BEA summary commodity",
+        "exclude direct exports and changes in inventories from duty allocation; inputs used by exporters remain in intermediate purchases",
+        "PCE is household; investment and government final demand are separate nonhousehold buckets",
+        "source total rescales summed rounded commodity cells; caller keeps the case national customs total fixed",
+        "Final-demand key carried at old household key",
+        "National state composition transported from item6."
+      ],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    },
+    "joint_sales_customs_household": {
+      "label": "conditional business + joint food/SNAP basket; excise held",
+      "status": "CONDITIONAL_ARM_ONLY",
+      "receipt_ratios": {
+        "general_sales_tax": 0.8021247030158841,
+        "customs_duties": 1.0297061121714748
+      },
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [
+        "COST/EY business share is a crosscheck parameter, not a central source.",
+        "Purchaser industry/state weights transported from item6 other-production taxes.",
+        "uniform duty intensity across positive domestic uses within each BEA summary commodity",
+        "exclude direct exports and changes in inventories from duty allocation; inputs used by exporters remain in intermediate purchases",
+        "PCE is household; investment and government final demand are separate nonhousehold buckets",
+        "source total rescales summed rounded commodity cells; caller keeps the case national customs total fixed",
+        "Final-demand key carried at old household key",
+        "National state composition transported from item6.",
+        "Household basket applies to household sales share only; business part is not grocery-exempted twice."
+      ],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    }
+  },
+  "baseline": {
+    "set": {
+      "band_bn": [
+        365.7919302554848,
+        455.9817845889793
+      ],
+      "end_specifications": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "job_production_share": 0.053021410484609795,
+      "item6": {
+        "rule": "the taxes on the business capital that serves the group's jobs: corporate tax (corporate_capital, corporate_labor), business property tax (remaining_production_property) and other taxes on production, re-keyed at every receipt scenario to the group's job-capital amount by cell shifts (national totals hold) and responding as meta.responses sets; the owners keep the same after-tax return, so P and F do not move, and the production module's capital-tax term stays 0 at every case specification (capital_tax_retention 1), so nothing counts twice",
+        "stub": false,
+        "arm": "central",
+        "amounts": "on each model line L of the lane's line g, at each scenario and allocation: J = (union_G1 + union_G2 + union_G3plus + lineage_g3plus + lineage_whites) x T / N_g, T the cell's total (target plus other) and N_g the national of g's model lines; union_G = the lane's by_generation[G][g]; lineage_x = the added people's share of the case's wage key (corporate_labor at cbo_collective) for part x times the lane's factor (G3plus for the G3+ members, white_nh for the whites) for g times g's national_bn",
+        "lines": {
+          "corporate": {
+            "model_lines": [
+              "corporate_capital",
+              "corporate_labor"
+            ],
+            "model_national_bn": 663.685,
+            "national_bn": 663.685,
+            "response": {
+              "low": 1,
+              "high": 0.37
+            },
+            "key_share": {
+              "personal": 0.06269956350947474,
+              "shared": 0.06921488604899832
+            },
+            "group_bn": {
+              "personal": 41.61275980778574,
+              "shared": 45.936881647429445
+            },
+            "plain_wage_share": {
+              "personal": 0.07513433634181657,
+              "shared": 0.08058047223550988
+            },
+            "factor_union": {
+              "personal": 0.8344994653872897,
+              "shared": 0.858953591717684
+            },
+            "group_before_bn": {
+              "personal": 28.09330584934746,
+              "shared": 32.64127504355397
+            },
+            "group_after_bn": {
+              "personal": 45.08611009332533,
+              "shared": 50.30839853305116
+            }
+          },
+          "other_production_taxes": {
+            "model_lines": [
+              "other_production_taxes"
+            ],
+            "model_national_bn": 145.258,
+            "national_bn": 145.258,
+            "response": {
+              "low": 1,
+              "high": 1
+            },
+            "key_share": {
+              "personal": 0.049409928833544337,
+              "shared": 0.05297038201825125
+            },
+            "group_bn": {
+              "personal": 7.177187442502984,
+              "shared": 7.69437175120714
+            },
+            "plain_wage_share": {
+              "personal": 0.07513433634181657,
+              "shared": 0.08058047223550988
+            },
+            "factor_union": {
+              "personal": 0.6576211521821199,
+              "shared": 0.6573600346177728
+            },
+            "group_before_bn": {
+              "personal": 4.275629925435037,
+              "shared": 5.260834428905633
+            },
+            "group_after_bn": {
+              "personal": 7.701431787197974,
+              "shared": 8.353954898748045
+            }
+          },
+          "business_property": {
+            "model_lines": [
+              "remaining_production_property"
+            ],
+            "model_national_bn": 273.445297051,
+            "national_bn": 273.445297051,
+            "response": {
+              "low": 0.8806493775433665,
+              "high": 0.8806493775433665
+            },
+            "key_share": {
+              "personal": 0.07346623399907791,
+              "shared": 0.07876017173580933
+            },
+            "group_bn": {
+              "personal": 20.088996179096135,
+              "shared": 21.536598556086158
+            },
+            "plain_wage_share": {
+              "personal": 0.07513433634181657,
+              "shared": 0.08058047223550988
+            },
+            "factor_union": {
+              "personal": 0.9777984018498574,
+              "shared": 0.9774101534875546
+            },
+            "group_before_bn": {
+              "personal": 8.048788328468557,
+              "shared": 9.903416219722578
+            },
+            "group_after_bn": {
+              "personal": 21.556359644478874,
+              "shared": 23.38277624570972
+            }
+          }
+        },
+        "by_generation": {
+          "G1": {
+            "corporate": {
+              "personal": 13.213181978535765,
+              "shared": 11.022426191809235
+            },
+            "other_production_taxes": {
+              "personal": 2.4817880439363775,
+              "shared": 2.048852001248269
+            },
+            "business_property": {
+              "personal": 6.9465415153869134,
+              "shared": 5.734750604632586
+            }
+          },
+          "G2": {
+            "corporate": {
+              "personal": 14.304856664327346,
+              "shared": 15.72229742397846
+            },
+            "other_production_taxes": {
+              "personal": 2.3601580165952196,
+              "shared": 2.5861158549555494
+            },
+            "business_property": {
+              "personal": 6.606098246291451,
+              "shared": 7.2385557637130145
+            }
+          },
+          "G3plus": {
+            "corporate": {
+              "personal": 14.094721164922625,
+              "shared": 19.192158031641757
+            },
+            "other_production_taxes": {
+              "personal": 2.335241381971387,
+              "shared": 3.0594038950033227
+            },
+            "business_property": {
+              "personal": 6.536356417417769,
+              "shared": 8.563292187740558
+            }
+          }
+        },
+        "factors": {
+          "G3plus": {
+            "corporate": {
+              "personal": 0.7819016147176628,
+              "shared": 0.8053651242764478
+            },
+            "other_production_taxes": {
+              "personal": 0.591901364771871,
+              "shared": 0.5865806940871999
+            },
+            "business_property": {
+              "personal": 0.8800814976760366,
+              "shared": 0.8721703420346939
+            }
+          },
+          "white_nh": {
+            "corporate": {
+              "personal": 1.0181332156315623,
+              "shared": 1.0093853352363915
+            },
+            "other_production_taxes": {
+              "personal": 0.6399355613079509,
+              "shared": 0.6400030677220375
+            },
+            "business_property": {
+              "personal": 0.9515021940073842,
+              "shared": 0.951602567396225
+            }
+          }
+        },
+        "lineage": {
+          "rule": "the added people's share of the case's wage key from their own cells on corporate_labor at cbo_collective, split into the G3+ members (later x G_L + (1 - C3) g3 x G_3) and the whites (C3 g3 x W_3) by the lineage item's part models, times the lane's G3plus and white_nh factors",
+          "wage_share": {
+            "g3plus": {
+              "personal": 0.003182245273127352,
+              "shared": 0.004799180361195339
+            },
+            "whites": {
+              "personal": 0.0026963359932512133,
+              "shared": 0.0026963359932512133
+            }
+          },
+          "counts": {
+            "later": 1094827.8668155947,
+            "g3_rate": 1944891.7263696424,
+            "c3": 0.5567
+          }
+        },
+        "effect_at_reference_bn": {
+          "low": {
+            "personal": 71.77113658353457,
+            "shared": 79.25438077781928
+          },
+          "high": {
+            "personal": 43.366887224739614,
+            "shared": 47.56008970199706
+          }
+        },
+        "production": {
+          "capital_tax_term_bn": 0,
+          "rule": "the production module's capital-tax term is 0.246 x (domestic capital gain - capital_tax_retention x opportunity income); at every case specification the state's production cell has capital_adjustment 1, capital_tax_retention 1 and no excluded owners, where the term is 0 (full_account_benefits_2026_09_20 upstream_replay scenarios.csv; main_case.cjs gates it)"
+        },
+        "arms": {
+          "mining_as_other_industries": {
+            "label": "mining's three taxes respond as other industries' do (the build before 2026-10-14)",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.37
+                },
+                "key_share": {
+                  "personal": 0.06498555030164843,
+                  "shared": 0.0716142418988127
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.07370932523700512,
+                  "shared": 0.07844387343952569
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8806493775433665,
+                  "high": 0.8806493775433665
+                },
+                "key_share": {
+                  "personal": 0.08306609176604009,
+                  "shared": 0.0888358498480131
+                }
+              }
+            }
+          },
+          "normal_return_share": {
+            "label": "corporate at TP-5's normal-return share (0.37) at both readings",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 0.37,
+                  "high": 0.37
+                },
+                "key_share": {
+                  "personal": 0.06269956350947474,
+                  "shared": 0.06921488604899832
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.049409928833544337,
+                  "shared": 0.05297038201825125
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8806493775433665,
+                  "high": 0.8806493775433665
+                },
+                "key_share": {
+                  "personal": 0.07346623399907791,
+                  "shared": 0.07876017173580933
+                }
+              }
+            }
+          },
+          "normal_return_share_0_25": {
+            "label": "the high reading's corporate response at Power and Frerick's 2003-2013 normal-return share (Treasury OTA Working Paper 111, abstract)",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.25
+                },
+                "key_share": {
+                  "personal": 0.06269956350947474,
+                  "shared": 0.06921488604899832
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.049409928833544337,
+                  "shared": 0.05297038201825125
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8806493775433665,
+                  "high": 0.8806493775433665
+                },
+                "key_share": {
+                  "personal": 0.07346623399907791,
+                  "shared": 0.07876017173580933
+                }
+              }
+            }
+          },
+          "normal_return_share_by_industry": {
+            "label": "the high reading's corporate response at each industry's normal-return share (Power and Frerick Table 1, 2011-2013), as the union's personal effective share",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.2926118076183057
+                },
+                "key_share": {
+                  "personal": 0.06269956350947474,
+                  "shared": 0.06921488604899832
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.049409928833544337,
+                  "shared": 0.05297038201825125
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8806493775433665,
+                  "high": 0.8806493775433665
+                },
+                "key_share": {
+                  "personal": 0.07346623399907791,
+                  "shared": 0.07876017173580933
+                }
+              }
+            }
+          },
+          "plain_wage_share": {
+            "label": "the plain wage share in place of the industry key: every line's base at each group's share of all CPS wages on this lane's frame",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.37
+                },
+                "key_share": {
+                  "personal": 0.07734577453856478,
+                  "shared": 0.08278767382062537
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.04890791232147872,
+                  "shared": 0.05234897855343731
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8806493775433665,
+                  "high": 0.8806493775433665
+                },
+                "key_share": {
+                  "personal": 0.07271979976098684,
+                  "shared": 0.07783622439402985
+                }
+              }
+            }
+          },
+          "foreign_source_removed": {
+            "label": "federal tax on foreign-source corporate income removed from the corporate base (IRS SOI TY2021)",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.37
+                },
+                "key_share": {
+                  "personal": 0.05753534215976117,
+                  "shared": 0.06333867669281694
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.049409928833544337,
+                  "shared": 0.05297038201825125
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8806493775433665,
+                  "high": 0.8806493775433665
+                },
+                "key_share": {
+                  "personal": 0.07346623399907791,
+                  "shared": 0.07876017173580933
+                }
+              }
+            }
+          },
+          "business_land_at_0": {
+            "label": "business land at response 0: the land part of business property tax stays",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.37
+                },
+                "key_share": {
+                  "personal": 0.06269956350947474,
+                  "shared": 0.06921488604899832
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.049409928833544337,
+                  "shared": 0.05297038201825125
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8059008161087242,
+                  "high": 0.8059008161087242
+                },
+                "key_share": {
+                  "personal": 0.07346623399907791,
+                  "shared": 0.07876017173580933
+                }
+              }
+            }
+          },
+          "business_land_at_1": {
+            "label": "business land at response 1: the whole business property tax leaves",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.37
+                },
+                "key_share": {
+                  "personal": 0.06269956350947474,
+                  "shared": 0.06921488604899832
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.049409928833544337,
+                  "shared": 0.05297038201825125
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.07346623399907791,
+                  "shared": 0.07876017173580933
+                }
+              }
+            }
+          },
+          "floor": {
+            "label": "the floor: CBO's labour share of corporate tax only, at the case's wage key; the other lines at response 0",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.01878358408539764,
+                  "shared": 0.020145118058816646
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 0,
+                  "high": 0
+                },
+                "key_share": {
+                  "personal": 0.049409928833544337,
+                  "shared": 0.05297038201825125
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0,
+                  "high": 0
+                },
+                "key_share": {
+                  "personal": 0.07346623399907791,
+                  "shared": 0.07876017173580933
+                }
+              }
+            }
+          },
+          "case_wage_key": {
+            "label": "the case's wage key (the status rules at the on-books lane's shares) in place of all CPS wages: each generation's targets times its share of the case's wage key over its plain share on this lane's frame",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.37
+                },
+                "key_share": {
+                  "personal": 0.059697442828628204,
+                  "shared": 0.06609576447527955
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.04679022734120864,
+                  "shared": 0.050388793143339605
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8806493775433665,
+                  "high": 0.8806493775433665
+                },
+                "key_share": {
+                  "personal": 0.06957107350416712,
+                  "shared": 0.07492167982022584
+                }
+              }
+            }
+          }
+        },
+        "source": {
+          "lane": "job_capital_taxes_2026_10_14",
+          "file": "job_capital_taxes_2026_10_14/derived/item.json",
+          "sha256": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283",
+          "stub": false,
+          "verdict": "Taxes on the business capital that serves the group's jobs come to **$66.5bn a year at the band's low end"
+        }
+      }
+    },
+    "cash": {
+      "band_bn": [
+        281.75256367607324,
+        371.9424180095669
+      ],
+      "end_specifications": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "job_production_share": 0.053021410484609795,
+      "item6": {
+        "rule": "the taxes on the business capital that serves the group's jobs: corporate tax (corporate_capital, corporate_labor), business property tax (remaining_production_property) and other taxes on production, re-keyed at every receipt scenario to the group's job-capital amount by cell shifts (national totals hold) and responding as meta.responses sets; the owners keep the same after-tax return, so P and F do not move, and the production module's capital-tax term stays 0 at every case specification (capital_tax_retention 1), so nothing counts twice",
+        "stub": false,
+        "arm": "central",
+        "amounts": "on each model line L of the lane's line g, at each scenario and allocation: J = (union_G1 + union_G2 + union_G3plus + lineage_g3plus + lineage_whites) x T / N_g, T the cell's total (target plus other) and N_g the national of g's model lines; union_G = the lane's by_generation[G][g]; lineage_x = the added people's share of the case's wage key (corporate_labor at cbo_collective) for part x times the lane's factor (G3plus for the G3+ members, white_nh for the whites) for g times g's national_bn",
+        "lines": {
+          "corporate": {
+            "model_lines": [
+              "corporate_capital",
+              "corporate_labor"
+            ],
+            "model_national_bn": 663.685,
+            "national_bn": 663.685,
+            "response": {
+              "low": 1,
+              "high": 0.37
+            },
+            "key_share": {
+              "personal": 0.06269956350947474,
+              "shared": 0.06921488604899832
+            },
+            "group_bn": {
+              "personal": 41.61275980778574,
+              "shared": 45.936881647429445
+            },
+            "plain_wage_share": {
+              "personal": 0.07513433634181657,
+              "shared": 0.08058047223550988
+            },
+            "factor_union": {
+              "personal": 0.8344994653872897,
+              "shared": 0.858953591717684
+            },
+            "group_before_bn": {
+              "personal": 28.09330584934746,
+              "shared": 32.64127504355397
+            },
+            "group_after_bn": {
+              "personal": 45.08611009332533,
+              "shared": 50.30839853305116
+            }
+          },
+          "other_production_taxes": {
+            "model_lines": [
+              "other_production_taxes"
+            ],
+            "model_national_bn": 145.258,
+            "national_bn": 145.258,
+            "response": {
+              "low": 1,
+              "high": 1
+            },
+            "key_share": {
+              "personal": 0.049409928833544337,
+              "shared": 0.05297038201825125
+            },
+            "group_bn": {
+              "personal": 7.177187442502984,
+              "shared": 7.69437175120714
+            },
+            "plain_wage_share": {
+              "personal": 0.07513433634181657,
+              "shared": 0.08058047223550988
+            },
+            "factor_union": {
+              "personal": 0.6576211521821199,
+              "shared": 0.6573600346177728
+            },
+            "group_before_bn": {
+              "personal": 4.275629925435037,
+              "shared": 5.260834428905633
+            },
+            "group_after_bn": {
+              "personal": 7.701431787197974,
+              "shared": 8.353954898748045
+            }
+          },
+          "business_property": {
+            "model_lines": [
+              "remaining_production_property"
+            ],
+            "model_national_bn": 273.445297051,
+            "national_bn": 273.445297051,
+            "response": {
+              "low": 0.8806493775433665,
+              "high": 0.8806493775433665
+            },
+            "key_share": {
+              "personal": 0.07346623399907791,
+              "shared": 0.07876017173580933
+            },
+            "group_bn": {
+              "personal": 20.088996179096135,
+              "shared": 21.536598556086158
+            },
+            "plain_wage_share": {
+              "personal": 0.07513433634181657,
+              "shared": 0.08058047223550988
+            },
+            "factor_union": {
+              "personal": 0.9777984018498574,
+              "shared": 0.9774101534875546
+            },
+            "group_before_bn": {
+              "personal": 8.048788328468557,
+              "shared": 9.903416219722578
+            },
+            "group_after_bn": {
+              "personal": 21.556359644478874,
+              "shared": 23.38277624570972
+            }
+          }
+        },
+        "by_generation": {
+          "G1": {
+            "corporate": {
+              "personal": 13.213181978535765,
+              "shared": 11.022426191809235
+            },
+            "other_production_taxes": {
+              "personal": 2.4817880439363775,
+              "shared": 2.048852001248269
+            },
+            "business_property": {
+              "personal": 6.9465415153869134,
+              "shared": 5.734750604632586
+            }
+          },
+          "G2": {
+            "corporate": {
+              "personal": 14.304856664327346,
+              "shared": 15.72229742397846
+            },
+            "other_production_taxes": {
+              "personal": 2.3601580165952196,
+              "shared": 2.5861158549555494
+            },
+            "business_property": {
+              "personal": 6.606098246291451,
+              "shared": 7.2385557637130145
+            }
+          },
+          "G3plus": {
+            "corporate": {
+              "personal": 14.094721164922625,
+              "shared": 19.192158031641757
+            },
+            "other_production_taxes": {
+              "personal": 2.335241381971387,
+              "shared": 3.0594038950033227
+            },
+            "business_property": {
+              "personal": 6.536356417417769,
+              "shared": 8.563292187740558
+            }
+          }
+        },
+        "factors": {
+          "G3plus": {
+            "corporate": {
+              "personal": 0.7819016147176628,
+              "shared": 0.8053651242764478
+            },
+            "other_production_taxes": {
+              "personal": 0.591901364771871,
+              "shared": 0.5865806940871999
+            },
+            "business_property": {
+              "personal": 0.8800814976760366,
+              "shared": 0.8721703420346939
+            }
+          },
+          "white_nh": {
+            "corporate": {
+              "personal": 1.0181332156315623,
+              "shared": 1.0093853352363915
+            },
+            "other_production_taxes": {
+              "personal": 0.6399355613079509,
+              "shared": 0.6400030677220375
+            },
+            "business_property": {
+              "personal": 0.9515021940073842,
+              "shared": 0.951602567396225
+            }
+          }
+        },
+        "lineage": {
+          "rule": "the added people's share of the case's wage key from their own cells on corporate_labor at cbo_collective, split into the G3+ members (later x G_L + (1 - C3) g3 x G_3) and the whites (C3 g3 x W_3) by the lineage item's part models, times the lane's G3plus and white_nh factors",
+          "wage_share": {
+            "g3plus": {
+              "personal": 0.003182245273127352,
+              "shared": 0.004799180361195339
+            },
+            "whites": {
+              "personal": 0.0026963359932512133,
+              "shared": 0.0026963359932512133
+            }
+          },
+          "counts": {
+            "later": 1094827.8668155947,
+            "g3_rate": 1944891.7263696424,
+            "c3": 0.5567
+          }
+        },
+        "effect_at_reference_bn": {
+          "low": {
+            "personal": 71.77113658353457,
+            "shared": 79.25438077781928
+          },
+          "high": {
+            "personal": 43.366887224739614,
+            "shared": 47.56008970199706
+          }
+        },
+        "production": {
+          "capital_tax_term_bn": 0,
+          "rule": "the production module's capital-tax term is 0.246 x (domestic capital gain - capital_tax_retention x opportunity income); at every case specification the state's production cell has capital_adjustment 1, capital_tax_retention 1 and no excluded owners, where the term is 0 (full_account_benefits_2026_09_20 upstream_replay scenarios.csv; main_case.cjs gates it)"
+        },
+        "arms": {
+          "mining_as_other_industries": {
+            "label": "mining's three taxes respond as other industries' do (the build before 2026-10-14)",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.37
+                },
+                "key_share": {
+                  "personal": 0.06498555030164843,
+                  "shared": 0.0716142418988127
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.07370932523700512,
+                  "shared": 0.07844387343952569
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8806493775433665,
+                  "high": 0.8806493775433665
+                },
+                "key_share": {
+                  "personal": 0.08306609176604009,
+                  "shared": 0.0888358498480131
+                }
+              }
+            }
+          },
+          "normal_return_share": {
+            "label": "corporate at TP-5's normal-return share (0.37) at both readings",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 0.37,
+                  "high": 0.37
+                },
+                "key_share": {
+                  "personal": 0.06269956350947474,
+                  "shared": 0.06921488604899832
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.049409928833544337,
+                  "shared": 0.05297038201825125
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8806493775433665,
+                  "high": 0.8806493775433665
+                },
+                "key_share": {
+                  "personal": 0.07346623399907791,
+                  "shared": 0.07876017173580933
+                }
+              }
+            }
+          },
+          "normal_return_share_0_25": {
+            "label": "the high reading's corporate response at Power and Frerick's 2003-2013 normal-return share (Treasury OTA Working Paper 111, abstract)",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.25
+                },
+                "key_share": {
+                  "personal": 0.06269956350947474,
+                  "shared": 0.06921488604899832
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.049409928833544337,
+                  "shared": 0.05297038201825125
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8806493775433665,
+                  "high": 0.8806493775433665
+                },
+                "key_share": {
+                  "personal": 0.07346623399907791,
+                  "shared": 0.07876017173580933
+                }
+              }
+            }
+          },
+          "normal_return_share_by_industry": {
+            "label": "the high reading's corporate response at each industry's normal-return share (Power and Frerick Table 1, 2011-2013), as the union's personal effective share",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.2926118076183057
+                },
+                "key_share": {
+                  "personal": 0.06269956350947474,
+                  "shared": 0.06921488604899832
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.049409928833544337,
+                  "shared": 0.05297038201825125
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8806493775433665,
+                  "high": 0.8806493775433665
+                },
+                "key_share": {
+                  "personal": 0.07346623399907791,
+                  "shared": 0.07876017173580933
+                }
+              }
+            }
+          },
+          "plain_wage_share": {
+            "label": "the plain wage share in place of the industry key: every line's base at each group's share of all CPS wages on this lane's frame",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.37
+                },
+                "key_share": {
+                  "personal": 0.07734577453856478,
+                  "shared": 0.08278767382062537
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.04890791232147872,
+                  "shared": 0.05234897855343731
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8806493775433665,
+                  "high": 0.8806493775433665
+                },
+                "key_share": {
+                  "personal": 0.07271979976098684,
+                  "shared": 0.07783622439402985
+                }
+              }
+            }
+          },
+          "foreign_source_removed": {
+            "label": "federal tax on foreign-source corporate income removed from the corporate base (IRS SOI TY2021)",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.37
+                },
+                "key_share": {
+                  "personal": 0.05753534215976117,
+                  "shared": 0.06333867669281694
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.049409928833544337,
+                  "shared": 0.05297038201825125
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8806493775433665,
+                  "high": 0.8806493775433665
+                },
+                "key_share": {
+                  "personal": 0.07346623399907791,
+                  "shared": 0.07876017173580933
+                }
+              }
+            }
+          },
+          "business_land_at_0": {
+            "label": "business land at response 0: the land part of business property tax stays",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.37
+                },
+                "key_share": {
+                  "personal": 0.06269956350947474,
+                  "shared": 0.06921488604899832
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.049409928833544337,
+                  "shared": 0.05297038201825125
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8059008161087242,
+                  "high": 0.8059008161087242
+                },
+                "key_share": {
+                  "personal": 0.07346623399907791,
+                  "shared": 0.07876017173580933
+                }
+              }
+            }
+          },
+          "business_land_at_1": {
+            "label": "business land at response 1: the whole business property tax leaves",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.37
+                },
+                "key_share": {
+                  "personal": 0.06269956350947474,
+                  "shared": 0.06921488604899832
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.049409928833544337,
+                  "shared": 0.05297038201825125
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.07346623399907791,
+                  "shared": 0.07876017173580933
+                }
+              }
+            }
+          },
+          "floor": {
+            "label": "the floor: CBO's labour share of corporate tax only, at the case's wage key; the other lines at response 0",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.01878358408539764,
+                  "shared": 0.020145118058816646
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 0,
+                  "high": 0
+                },
+                "key_share": {
+                  "personal": 0.049409928833544337,
+                  "shared": 0.05297038201825125
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0,
+                  "high": 0
+                },
+                "key_share": {
+                  "personal": 0.07346623399907791,
+                  "shared": 0.07876017173580933
+                }
+              }
+            }
+          },
+          "case_wage_key": {
+            "label": "the case's wage key (the status rules at the on-books lane's shares) in place of all CPS wages: each generation's targets times its share of the case's wage key over its plain share on this lane's frame",
+            "lines": {
+              "corporate": {
+                "national_bn": 663.685,
+                "response": {
+                  "low": 1,
+                  "high": 0.37
+                },
+                "key_share": {
+                  "personal": 0.059697442828628204,
+                  "shared": 0.06609576447527955
+                }
+              },
+              "other_production_taxes": {
+                "national_bn": 145.258,
+                "response": {
+                  "low": 1,
+                  "high": 1
+                },
+                "key_share": {
+                  "personal": 0.04679022734120864,
+                  "shared": 0.050388793143339605
+                }
+              },
+              "business_property": {
+                "national_bn": 273.445297051,
+                "response": {
+                  "low": 0.8806493775433665,
+                  "high": 0.8806493775433665
+                },
+                "key_share": {
+                  "personal": 0.06957107350416712,
+                  "shared": 0.07492167982022584
+                }
+              }
+            }
+          }
+        },
+        "source": {
+          "lane": "job_capital_taxes_2026_10_14",
+          "file": "job_capital_taxes_2026_10_14/derived/item.json",
+          "sha256": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283",
+          "stub": false,
+          "verdict": "Taxes on the business capital that serves the group's jobs come to **$66.5bn a year at the band's low end"
+        }
+      }
+    }
+  },
+  "population": {
+    "without_coverage": 43269648.68157841,
+    "with_coverage": 45230062.30075857,
+    "completion": 517435.75719317,
+    "coverage": 1960413.6191801599
+  },
+  "measurement": {
+    "basket_factors": {
+      "grocery": 0.9958728108882509,
+      "snap": 0.9969723817141398,
+      "joint": 0.9958131316033051
+    },
+    "ce_basket_factors": {
+      "grocery": 0.9958728108882509,
+      "snap": 0.9988078904683291,
+      "joint": 0.9958422463819238
+    },
+    "sales_crosscheck_business_fraction": 0.418,
+    "customs_producer": {
+      "share": 0.03752785800050562,
+      "union_normalization": 0.9535848571875417,
+      "raw_group_shares": {
+        "union": 0.03699541606421648,
+        "G3plus": 0.009942816769378287,
+        "white": 0.22281224413120285
+      },
+      "raw_plain_wage_shares": {
+        "G3plus": 0.02689247495921078,
+        "white": 0.559885836472721
+      },
+      "latent_wage_parts": {
+        "g3plus": {
+          "personal": 0.003182245273127352,
+          "shared": 0.004799180361195339
+        },
+        "whites": {
+          "personal": 0.0026963359932512133,
+          "shared": 0.0026963359932512133
+        }
+      },
+      "state_rule": "national item6 state/industry composition transported; not measured purchaser state",
+      "completion_rule": "additional item10 and coverage mix not re-estimated"
+    },
+    "customs_shares": {
+      "carried": 0.09234124448818742,
+      "final_zero": 0.07897387824319882,
+      "final_one": 0.2280346668690247
+    },
+    "customs_unresolved_purchaser_fraction": 0.1490607886258259
+  },
+  "unresolved": [
+    "2024 tax-matched state/local collection weights and business shares",
+    "purchaser industry/state mix",
+    "excise-category-specific bridge",
+    "explicit final-demand production response",
+    "State-law proxy omits exact county/city grocery rates and item exceptions.",
+    "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+    "A basket ratio is transported to latent, completion and missed-person line prices.",
+    "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+    "The excise business bridge is unmeasured and held, not estimated as zero.",
+    "Industry/state purchaser composition of investment/government final use is missing."
+  ],
+  "national_collection_rule": "Receipt cell target shifts against other; each national total remains fixed.",
+  "item9": "Corporate foreign-source correction held; none of the three consumption receipts is corporate tax.",
+  "item10": "Every receipt scenario and its signed reporter carriers move; observed-child receipts already inside cells.",
+  "item11": "held explicitly; full item must replace M5 on one joint mixed-unit basket before adoption",
+  "item12": "coverage receipt source parts transported by matching line ratios, not copied from set to cash",
+  "round5": "W14 tenure changes basket prices; joint tenure repricing required. W16 is a separate future-law companion; tariff base changes are not added to this 2024-law item."
+}

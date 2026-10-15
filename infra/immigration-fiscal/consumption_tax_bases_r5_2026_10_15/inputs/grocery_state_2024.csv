@@ -1,0 +1,52 @@
+state_fips,state,exempt_fraction,source,note
+1,AL,0.25,https://www.revenue.alabama.gov/notice-state-sales-and-use-tax-rate-reduced-on-food-beginning-september-1-2023/,State-law food/general rate ratio; local taxes excluded
+2,AK,0,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,No state general sales tax; no state-law adjustment; Alaska local sales taxes unresolved
+4,AZ,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+5,AR,0.9807692307692307,https://www.dfa.arkansas.gov/wp-content/uploads/2024_AR1000F_and_AR1000NR_Instructions.pdf,State-law food/general rate ratio; local taxes excluded
+6,CA,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+8,CO,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+9,CT,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+10,DE,0,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,No state general sales tax; no state-law adjustment; Alaska local sales taxes unresolved
+11,DC,1,https://code.dccouncil.gov/us/dc/council/code/sections/47-2005,State-law food/general rate ratio; local taxes excluded; DC food exemption
+12,FL,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+13,GA,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+15,HI,0,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+16,ID,0,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+17,IL,0.84,https://tax.illinois.gov/research/publications/pio-115.html,State-law food/general rate ratio; local taxes excluded
+18,IN,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+19,IA,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+20,KS,0.6923076923076923,https://www.ksrevenue.gov/taxnotices/notice24-21.pdf,State-law food/general rate ratio; local taxes excluded
+21,KY,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+22,LA,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+23,ME,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+24,MD,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+25,MA,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+26,MI,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+27,MN,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+28,MS,0,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+29,MO,0.7100591715976331,https://dor.mo.gov/taxation/business/tax-types/sales-use/reduction-on-food.html,State-law food/general rate ratio; local taxes excluded
+30,MT,0,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,No state general sales tax; no state-law adjustment; Alaska local sales taxes unresolved
+31,NE,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+32,NV,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+33,NH,0,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,No state general sales tax; no state-law adjustment; Alaska local sales taxes unresolved
+34,NJ,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+35,NM,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+36,NY,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+37,NC,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+38,ND,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+39,OH,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+40,OK,0.3415300546448088,https://www.ou.edu/content/dam/financialservices/Forms/OK%20Sales%20Tax%20Collection%20Matrix%202024.pdf,State-law food/general rate ratio; local taxes excluded; time-weighted pre-Aug29 state food tax; uniform daily purchases assumption
+41,OR,0,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,No state general sales tax; no state-law adjustment; Alaska local sales taxes unresolved
+42,PA,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+44,RI,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+45,SC,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+46,SD,0,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+47,TN,0.4285714285714286,https://www.tn.gov/revenue/news/2017/8/22/state-sales-tax-rate-on-food-is-4.html,State-law food/general rate ratio; local taxes excluded
+48,TX,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+49,UT,0.6391752577319587,https://tax.utah.gov/train/webinars/2024-08-15-presentation.pdf,State-law food/general rate ratio; local taxes excluded
+50,VT,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+51,VA,1,https://www.tax.virginia.gov/laws-rules-decisions/tax-bulletins/22-12,State-law food/general rate ratio; local taxes excluded; 1% local food levy excluded
+53,WA,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+54,WV,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+55,WI,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded
+56,WY,1,https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf,State-law food/general rate ratio; local taxes excluded

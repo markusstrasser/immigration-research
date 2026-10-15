@@ -1,0 +1,52 @@
+{
+  "bridge": [
+    {
+      "year": 2024,
+      "fy_cash_bn": 77.03690994489,
+      "subtract_prior_oct_dec_bn": 18.94339653806,
+      "add_current_oct_dec_bn": 20.82350657843,
+      "calendar_cash_bn": 78.91701998526,
+      "pinned_nipa_bn": 83.587,
+      "pinned_nipa_less_calendar_cash_bn": 4.6699800147400055,
+      "current_nipa_bn": 83.587,
+      "current_nipa_less_calendar_cash_bn": 4.6699800147400055
+    },
+    {
+      "year": 2025,
+      "fy_cash_bn": 194.86573987282,
+      "subtract_prior_oct_dec_bn": 20.82350657843,
+      "add_current_oct_dec_bn": 90.00183513672,
+      "calendar_cash_bn": 264.04406843111,
+      "pinned_nipa_bn": 265.098,
+      "pinned_nipa_less_calendar_cash_bn": 1.0539315688899933,
+      "current_nipa_bn": 268.663,
+      "current_nipa_less_calendar_cash_bn": 4.618931568889991
+    }
+  ],
+  "pinned_bea": {
+    "bn": {
+      "2024": 83.587,
+      "2025": 265.098
+    },
+    "vintage": "Data published August 26, 2026",
+    "table": "3.2 line 6, B235RC, annual; source units $million"
+  },
+  "current_bea": {
+    "bn": {
+      "2024": 83.587,
+      "2025": 268.663
+    },
+    "vintage": "Data published September 30, 2026",
+    "table": "3.2 line 6, B235RC, annual; source units $million"
+  },
+  "residual_interpretation": "Observed bridge residual, not identified wholly as accrual. BEA uses Treasury MTS customs; vintage, coverage and accounting adjustments are not separately identified here.",
+  "future_policy_assumption": null,
+  "fy2028_customs_bn": null,
+  "ieepa_refund_accounting": {
+    "source": "https://www.bea.gov/index.php/help/faq/1488",
+    "source_date": "2026-04-30",
+    "accrual_period": "2026Q1",
+    "capital_transfer_bn": 166,
+    "treatment": "One-time capital transfer, separate from current customs; interest separately property income. Not recurring FY2028 customs reduction."
+  }
+}

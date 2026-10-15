@@ -1,0 +1,48 @@
+{
+  "sd_grocery_2023": {
+    "url": "https://bfm.sd.gov/budget/FY2024/SalesTaxOnGroceriesStates.pdf",
+    "error": "The read operation timed out"
+  },
+  "bls_errata": {
+    "url": "https://www.bls.gov/cex/pumd/errata/errata-2023.htm",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  "snap_statute": {
+    "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap51-sec2013.htm",
+    "path": "infra/immigration-fiscal/consumption_tax_bases_r5_2026_10_15/_cache/household_snap_statute.html",
+    "sha256": "8846487ca28748b0c9979fdce5b13997d2b0cef2e154454959b5c87819e930af"
+  },
+  "alabama": {
+    "url": "https://www.revenue.alabama.gov/notice-state-sales-and-use-tax-rate-reduced-on-food-beginning-september-1-2023/",
+    "path": "infra/immigration-fiscal/consumption_tax_bases_r5_2026_10_15/_cache/household_alabama.html",
+    "sha256": "2c8f5f826ef8d774a656e8ab1e2420db15dacd86eaf35f08daad69a1176708e1"
+  },
+  "kansas": {
+    "url": "https://www.ksrevenue.gov/pub1223.html",
+    "error": "<urlopen error timed out>"
+  },
+  "virginia": {
+    "url": "https://www.tax.virginia.gov/laws-rules-decisions/tax-bulletins/22-12",
+    "path": "infra/immigration-fiscal/consumption_tax_bases_r5_2026_10_15/_cache/household_virginia.html",
+    "sha256": "4890e43db048ad1a61c42b92245326955003530443909f24b348a075632074ba"
+  },
+  "oklahoma": {
+    "url": "https://www.ou.edu/content/dam/financialservices/Forms/OK%20Sales%20Tax%20Collection%20Matrix%202024.pdf",
+    "path": "infra/immigration-fiscal/consumption_tax_bases_r5_2026_10_15/_cache/household_oklahoma.pdf",
+    "sha256": "63e1f8200f0b8ef5406ca507e4020843f37b45338df4afe6304454f5d34b0161"
+  },
+  "arkansas": {
+    "url": "https://www.dfa.arkansas.gov/wp-content/uploads/2024_AR1000F_and_AR1000NR_Instructions.pdf",
+    "path": "infra/immigration-fiscal/consumption_tax_bases_r5_2026_10_15/_cache/household_arkansas.pdf",
+    "sha256": "dcaab308e4c47b372a0f51acbf0eae42d0be006426ee83ab989bf59f19fe9297"
+  },
+  "illinois": {
+    "url": "https://tax.illinois.gov/research/publications/pio-115.html",
+    "path": "infra/immigration-fiscal/consumption_tax_bases_r5_2026_10_15/_cache/household_illinois.html",
+    "sha256": "c7b6c071a305d215f5b0bf8d81eba69425d2294273da53b4d988f9d2a1e8b8a1"
+  },
+  "utah": {
+    "url": "https://tax.utah.gov/train/webinars/2024-08-15-presentation.pdf",
+    "error": "HTTP Error 403: Forbidden"
+  }
+}

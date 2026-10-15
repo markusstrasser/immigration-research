@@ -1,0 +1,1843 @@
+{
+  "case_year": 2024,
+  "crosscheck_only": {
+    "business_fraction_of_general_sales_tax": 0.418,
+    "business_general_sales_tax_bn": 245.3,
+    "locator": "printed page 2, FY2024; web PDF full-text retrieval verified, direct Python download returned HTTP403",
+    "reason": "COST/EY cross-check only per brief; FY state/local collection basis differs from NIPA CY2024",
+    "url": "https://www.cost.org/globalassets/cost/state-tax-resources-pdf-pages/cost-studies-articles-reports/2511-10951-cs-50-state-report-final.pdf",
+    "usable_as_central": false
+  },
+  "customs_proportional_arm": {
+    "assumptions": [
+      "uniform duty intensity across positive domestic uses within each BEA summary commodity",
+      "exclude direct exports and changes in inventories from duty allocation; inputs used by exporters remain in intermediate purchases",
+      "PCE is household; investment and government final demand are separate nonhousehold buckets",
+      "source total rescales summed rounded commodity cells; caller keeps the case national customs total fixed"
+    ],
+    "central_business_share": null,
+    "commodities": [
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "111CA",
+        "domestic_positive_use_million": 811615.0,
+        "exports_excluded_million": 72559.0,
+        "import_duties_million": 181.0,
+        "inventories_excluded_million": -12696.0,
+        "pce_fraction_conditional": 0.3052260000123211
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "113FF",
+        "domestic_positive_use_million": 112927.0,
+        "exports_excluded_million": 6915.0,
+        "import_duties_million": 194.0,
+        "inventories_excluded_million": 10.0,
+        "pce_fraction_conditional": 0.12118448201050236
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "211",
+        "domestic_positive_use_million": 515750.0,
+        "exports_excluded_million": 149753.0,
+        "import_duties_million": 143.0,
+        "inventories_excluded_million": -1002.0,
+        "pce_fraction_conditional": 0.0
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "212",
+        "domestic_positive_use_million": 130824.0,
+        "exports_excluded_million": 28748.0,
+        "import_duties_million": 11.0,
+        "inventories_excluded_million": -265.0,
+        "pce_fraction_conditional": 0.0024001712224056746
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "321",
+        "domestic_positive_use_million": 248173.0,
+        "exports_excluded_million": 6420.0,
+        "import_duties_million": 572.0,
+        "inventories_excluded_million": 1523.0,
+        "pce_fraction_conditional": 0.035729108323629084
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "327",
+        "domestic_positive_use_million": 295039.0,
+        "exports_excluded_million": 12247.0,
+        "import_duties_million": 1881.0,
+        "inventories_excluded_million": 1155.0,
+        "pce_fraction_conditional": 0.10350496036117258
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "331",
+        "domestic_positive_use_million": 394965.0,
+        "exports_excluded_million": 40264.0,
+        "import_duties_million": 2470.0,
+        "inventories_excluded_million": -675.0,
+        "pce_fraction_conditional": 0.011193396883268137
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "332",
+        "domestic_positive_use_million": 678079.0,
+        "exports_excluded_million": 54294.0,
+        "import_duties_million": 6000.0,
+        "inventories_excluded_million": 2478.0,
+        "pce_fraction_conditional": 0.13488693795265744
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "333",
+        "domestic_positive_use_million": 815512.0,
+        "exports_excluded_million": 149666.0,
+        "import_duties_million": 7112.0,
+        "inventories_excluded_million": 905.0,
+        "pce_fraction_conditional": 0.06378569536683704
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "334",
+        "domestic_positive_use_million": 1046868.0,
+        "exports_excluded_million": 145551.0,
+        "import_duties_million": 5675.0,
+        "inventories_excluded_million": -389.0,
+        "pce_fraction_conditional": 0.22480580168655456
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "335",
+        "domestic_positive_use_million": 501962.0,
+        "exports_excluded_million": 50729.0,
+        "import_duties_million": 9352.0,
+        "inventories_excluded_million": 187.0,
+        "pce_fraction_conditional": 0.34057558141851374
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "3361MV",
+        "domestic_positive_use_million": 1504091.0,
+        "exports_excluded_million": 130283.0,
+        "import_duties_million": 9060.0,
+        "inventories_excluded_million": 17926.0,
+        "pce_fraction_conditional": 0.32159024952612575
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "3364OT",
+        "domestic_positive_use_million": 341789.0,
+        "exports_excluded_million": 110369.0,
+        "import_duties_million": 837.0,
+        "inventories_excluded_million": 6248.0,
+        "pce_fraction_conditional": 0.17973076956835943
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "337",
+        "domestic_positive_use_million": 261322.0,
+        "exports_excluded_million": 5573.0,
+        "import_duties_million": 2674.0,
+        "inventories_excluded_million": 134.0,
+        "pce_fraction_conditional": 0.5857907103114166
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "339",
+        "domestic_positive_use_million": 561266.0,
+        "exports_excluded_million": 54562.0,
+        "import_duties_million": 2715.0,
+        "inventories_excluded_million": 989.0,
+        "pce_fraction_conditional": 0.6427843482412974
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "311FT",
+        "domestic_positive_use_million": 2183645.0,
+        "exports_excluded_million": 100353.0,
+        "import_duties_million": 3404.0,
+        "inventories_excluded_million": -288.0,
+        "pce_fraction_conditional": 0.6993554355217996
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "313TT",
+        "domestic_positive_use_million": 170775.0,
+        "exports_excluded_million": 10110.0,
+        "import_duties_million": 2840.0,
+        "inventories_excluded_million": 442.0,
+        "pce_fraction_conditional": 0.6443390425999121
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "315AL",
+        "domestic_positive_use_million": 561065.0,
+        "exports_excluded_million": 6297.0,
+        "import_duties_million": 18955.0,
+        "inventories_excluded_million": 1215.0,
+        "pce_fraction_conditional": 0.9852922566904013
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "322",
+        "domestic_positive_use_million": 319476.0,
+        "exports_excluded_million": 26090.0,
+        "import_duties_million": 811.0,
+        "inventories_excluded_million": 480.0,
+        "pce_fraction_conditional": 0.24719227735416746
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "323",
+        "domestic_positive_use_million": 100717.0,
+        "exports_excluded_million": 3041.0,
+        "import_duties_million": 116.0,
+        "inventories_excluded_million": -27.0,
+        "pce_fraction_conditional": 0.15235759603641888
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "324",
+        "domestic_positive_use_million": 927323.0,
+        "exports_excluded_million": 174770.0,
+        "import_duties_million": 222.0,
+        "inventories_excluded_million": 2550.0,
+        "pce_fraction_conditional": 0.4826624595744956
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "325",
+        "domestic_positive_use_million": 1785760.0,
+        "exports_excluded_million": 241237.0,
+        "import_duties_million": 4155.0,
+        "inventories_excluded_million": 2842.0,
+        "pce_fraction_conditional": 0.47070994982528447
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "326",
+        "domestic_positive_use_million": 491703.0,
+        "exports_excluded_million": 37158.0,
+        "import_duties_million": 4058.0,
+        "inventories_excluded_million": 1047.0,
+        "pce_fraction_conditional": 0.23686046251497347
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "511",
+        "domestic_positive_use_million": 672349.0,
+        "exports_excluded_million": 53310.0,
+        "import_duties_million": 48.0,
+        "inventories_excluded_million": -910.0,
+        "pce_fraction_conditional": 0.3757170755069168
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "512",
+        "domestic_positive_use_million": 209126.0,
+        "exports_excluded_million": 20313.0,
+        "import_duties_million": 1.0,
+        "inventories_excluded_million": 156.0,
+        "pce_fraction_conditional": 0.15282652563526294
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "5412OP",
+        "domestic_positive_use_million": 3150635.0,
+        "exports_excluded_million": 238752.0,
+        "import_duties_million": 5.0,
+        "inventories_excluded_million": 0.0,
+        "pce_fraction_conditional": 0.03857666787806267
+      },
+      {
+        "clipped_negative_uses_million": 0,
+        "commodity": "81",
+        "domestic_positive_use_million": 1292400.0,
+        "exports_excluded_million": 106.0,
+        "import_duties_million": 7.0,
+        "inventories_excluded_million": 0.0,
+        "pce_fraction_conditional": 0.7217819560507582
+      },
+      {
+        "clipped_negative_uses_million": 169009.0,
+        "commodity": "Used",
+        "domestic_positive_use_million": 423018.0,
+        "exports_excluded_million": 52208.0,
+        "import_duties_million": 88.0,
+        "inventories_excluded_million": 10298.0,
+        "pce_fraction_conditional": 0.6575393954867169
+      }
+    ],
+    "conditional_household_share": 0.4621685640650344,
+    "conditional_intermediate_share": 0.3898013707980896,
+    "conditional_nonhousehold_share": 0.5378314359349656,
+    "conditional_unkeyed_final_demand_share": 0.14803006513687605,
+    "conditional_unkeyed_intermediate_share": 0.001030723488949873,
+    "identification_status": "CONDITIONAL_PROPORTIONAL_ARM_ONLY",
+    "measured_all_tax_on_products_bn": 1015.461,
+    "measured_total_import_duties_bn": 83.587,
+    "missing": [
+      "actual tariff rates/product composition within commodity by purchaser",
+      "purchaser industry and state for final investment/government uses",
+      "HS housing intermediate purchaser response: no item6 wage key",
+      "state mix for national industry intermediate customs purchases"
+    ],
+    "purchaser_weights": [
+      {
+        "conditional_duties_bn": 0.4560090295433997,
+        "io_code": "111CA",
+        "key": "111CA",
+        "kind": "intermediate",
+        "name": "111CA",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.005455501807020227
+      },
+      {
+        "conditional_duties_bn": 0.030319093779230206,
+        "io_code": "113FF",
+        "key": "113FF",
+        "kind": "intermediate",
+        "name": "113FF",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.00036272499047974215
+      },
+      {
+        "conditional_duties_bn": 0.3814692395599581,
+        "io_code": "211",
+        "key": "211",
+        "kind": "intermediate",
+        "name": "211",
+        "production_response": 0.0,
+        "response_status": "mining zero by parent rule",
+        "share_of_total_duties": 0.0045637388536489895
+      },
+      {
+        "conditional_duties_bn": 0.10195571922830807,
+        "io_code": "212",
+        "key": "212",
+        "kind": "intermediate",
+        "name": "212",
+        "production_response": 0.0,
+        "response_status": "mining zero by parent rule",
+        "share_of_total_duties": 0.001219755694405925
+      },
+      {
+        "conditional_duties_bn": 0.08019300683197271,
+        "io_code": "213",
+        "key": "213",
+        "kind": "intermediate",
+        "name": "213",
+        "production_response": 0.0,
+        "response_status": "mining zero by parent rule",
+        "share_of_total_duties": 0.000959395681529098
+      },
+      {
+        "conditional_duties_bn": 0.034112964746030754,
+        "io_code": "22",
+        "key": "22",
+        "kind": "intermediate",
+        "name": "22",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.00040811328012766037
+      },
+      {
+        "conditional_duties_bn": 6.644309941084901,
+        "io_code": "23",
+        "key": "23",
+        "kind": "intermediate",
+        "name": "23",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.07948975248645006
+      },
+      {
+        "conditional_duties_bn": 0.2976057786656573,
+        "io_code": "321",
+        "key": "321",
+        "kind": "intermediate",
+        "name": "321",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.003560431390834188
+      },
+      {
+        "conditional_duties_bn": 0.2552877370164454,
+        "io_code": "327",
+        "key": "327",
+        "kind": "intermediate",
+        "name": "327",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0030541559933535767
+      },
+      {
+        "conditional_duties_bn": 0.7001161367389797,
+        "io_code": "331",
+        "key": "331",
+        "kind": "intermediate",
+        "name": "331",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.00837589740915429
+      },
+      {
+        "conditional_duties_bn": 1.3770297932911064,
+        "io_code": "332",
+        "key": "332",
+        "kind": "intermediate",
+        "name": "332",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.01647421002417967
+      },
+      {
+        "conditional_duties_bn": 1.5786630062576834,
+        "io_code": "333",
+        "key": "333",
+        "kind": "intermediate",
+        "name": "333",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.018886465673581817
+      },
+      {
+        "conditional_duties_bn": 0.5997367154945461,
+        "io_code": "334",
+        "key": "334",
+        "kind": "intermediate",
+        "name": "334",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.007174999886280714
+      },
+      {
+        "conditional_duties_bn": 0.7934235082308615,
+        "io_code": "335",
+        "key": "335",
+        "kind": "intermediate",
+        "name": "335",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.009492187878867067
+      },
+      {
+        "conditional_duties_bn": 3.6513266903477244,
+        "io_code": "3361MV",
+        "key": "3361MV",
+        "kind": "intermediate",
+        "name": "3361MV",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.04368294938624097
+      },
+      {
+        "conditional_duties_bn": 0.6963567031117889,
+        "io_code": "3364OT",
+        "key": "3364OT",
+        "kind": "intermediate",
+        "name": "3364OT",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.008330921113472058
+      },
+      {
+        "conditional_duties_bn": 0.2640893407894116,
+        "io_code": "337",
+        "key": "337",
+        "kind": "intermediate",
+        "name": "337",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0031594547093377148
+      },
+      {
+        "conditional_duties_bn": 0.2572544656483088,
+        "io_code": "339",
+        "key": "339",
+        "kind": "intermediate",
+        "name": "339",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.003077685114291801
+      },
+      {
+        "conditional_duties_bn": 1.2142982367120037,
+        "io_code": "311FT",
+        "key": "311FT",
+        "kind": "intermediate",
+        "name": "311FT",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.014527357564118864
+      },
+      {
+        "conditional_duties_bn": 0.19457640433949677,
+        "io_code": "313TT",
+        "key": "313TT",
+        "kind": "intermediate",
+        "name": "313TT",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0023278309347087075
+      },
+      {
+        "conditional_duties_bn": 0.07139282813926953,
+        "io_code": "315AL",
+        "key": "315AL",
+        "kind": "intermediate",
+        "name": "315AL",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0008541140146107591
+      },
+      {
+        "conditional_duties_bn": 0.4162429269805754,
+        "io_code": "322",
+        "key": "322",
+        "kind": "intermediate",
+        "name": "322",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.004979756744237445
+      },
+      {
+        "conditional_duties_bn": 0.12074178140118948,
+        "io_code": "323",
+        "key": "323",
+        "kind": "intermediate",
+        "name": "323",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0014445043057076995
+      },
+      {
+        "conditional_duties_bn": 0.18850766149574377,
+        "io_code": "324",
+        "key": "324",
+        "kind": "intermediate",
+        "name": "324",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.002255227026879105
+      },
+      {
+        "conditional_duties_bn": 0.9788714361434591,
+        "io_code": "325",
+        "key": "325",
+        "kind": "intermediate",
+        "name": "325",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.011710809529513668
+      },
+      {
+        "conditional_duties_bn": 0.6820414031367881,
+        "io_code": "326",
+        "key": "326",
+        "kind": "intermediate",
+        "name": "326",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.008159658836144234
+      },
+      {
+        "conditional_duties_bn": 0.9709100576566362,
+        "io_code": "42",
+        "key": "42",
+        "kind": "intermediate",
+        "name": "42",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.011615562918356158
+      },
+      {
+        "conditional_duties_bn": 0.1230710661232969,
+        "io_code": "441",
+        "key": "441",
+        "kind": "intermediate",
+        "name": "441",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0014723708964707058
+      },
+      {
+        "conditional_duties_bn": 0.06482587718129677,
+        "io_code": "445",
+        "key": "445",
+        "kind": "intermediate",
+        "name": "445",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0007755497527282565
+      },
+      {
+        "conditional_duties_bn": 0.12054503734517379,
+        "io_code": "452",
+        "key": "452",
+        "kind": "intermediate",
+        "name": "452",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0014421505418925644
+      },
+      {
+        "conditional_duties_bn": 0.28119462487969393,
+        "io_code": "4A0",
+        "key": "4A0",
+        "kind": "intermediate",
+        "name": "4A0",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0033640951927894763
+      },
+      {
+        "conditional_duties_bn": 0.024982143217727827,
+        "io_code": "481",
+        "key": "481",
+        "kind": "intermediate",
+        "name": "481",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.000298875940250611
+      },
+      {
+        "conditional_duties_bn": 0.030742295981772128,
+        "io_code": "482",
+        "key": "482",
+        "kind": "intermediate",
+        "name": "482",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.00036778800509376007
+      },
+      {
+        "conditional_duties_bn": 0.020282775920716294,
+        "io_code": "483",
+        "key": "483",
+        "kind": "intermediate",
+        "name": "483",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.00024265467023240806
+      },
+      {
+        "conditional_duties_bn": 0.12986238575590325,
+        "io_code": "484",
+        "key": "484",
+        "kind": "intermediate",
+        "name": "484",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0015536194115819836
+      },
+      {
+        "conditional_duties_bn": 0.03368234087189586,
+        "io_code": "485",
+        "key": "485",
+        "kind": "intermediate",
+        "name": "485",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0004029614757306262
+      },
+      {
+        "conditional_duties_bn": 0.021545028424549473,
+        "io_code": "486",
+        "key": "486",
+        "kind": "intermediate",
+        "name": "486",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.00025775573264442405
+      },
+      {
+        "conditional_duties_bn": 0.07749289560753896,
+        "io_code": "487OS",
+        "key": "487OS",
+        "kind": "intermediate",
+        "name": "487OS",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0009270926771811281
+      },
+      {
+        "conditional_duties_bn": 0.050640470848921995,
+        "io_code": "493",
+        "key": "493",
+        "kind": "intermediate",
+        "name": "493",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0006058414687561701
+      },
+      {
+        "conditional_duties_bn": 0.0406174229826815,
+        "io_code": "511",
+        "key": "511",
+        "kind": "intermediate",
+        "name": "511",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.00048592990516086826
+      },
+      {
+        "conditional_duties_bn": 0.012828994123810241,
+        "io_code": "512",
+        "key": "512",
+        "kind": "intermediate",
+        "name": "512",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.00015348073413102802
+      },
+      {
+        "conditional_duties_bn": 0.40730278944414433,
+        "io_code": "513",
+        "key": "513",
+        "kind": "intermediate",
+        "name": "513",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.004872800668096047
+      },
+      {
+        "conditional_duties_bn": 0.19236370614494042,
+        "io_code": "514",
+        "key": "514",
+        "kind": "intermediate",
+        "name": "514",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0023013591365276947
+      },
+      {
+        "conditional_duties_bn": 0.015791994728025262,
+        "io_code": "521CI",
+        "key": "521CI",
+        "kind": "intermediate",
+        "name": "521CI",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.00018892883735539332
+      },
+      {
+        "conditional_duties_bn": 0.023082505249880484,
+        "io_code": "523",
+        "key": "523",
+        "kind": "intermediate",
+        "name": "523",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0002761494640300583
+      },
+      {
+        "conditional_duties_bn": 0.02836610045535258,
+        "io_code": "524",
+        "key": "524",
+        "kind": "intermediate",
+        "name": "524",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.00033936019303662746
+      },
+      {
+        "conditional_duties_bn": 0.006356405183605839,
+        "io_code": "525",
+        "key": "523",
+        "kind": "intermediate",
+        "name": "525",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 7.60453800663481e-05
+      },
+      {
+        "conditional_duties_bn": 0.08615508427085304,
+        "io_code": "HS",
+        "key": "HS",
+        "kind": "unkeyed_intermediate",
+        "name": "HS",
+        "production_response": null,
+        "response_status": "housing has no item6 wage purchaser key; response unidentified",
+        "share_of_total_duties": 0.001030723488949873
+      },
+      {
+        "conditional_duties_bn": 0.1253801145535123,
+        "io_code": "ORE",
+        "key": "ORE",
+        "kind": "intermediate",
+        "name": "ORE",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0014999953886790085
+      },
+      {
+        "conditional_duties_bn": 0.1689500647447188,
+        "io_code": "532RL",
+        "key": "532RL",
+        "kind": "intermediate",
+        "name": "532RL",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.002021248097727144
+      },
+      {
+        "conditional_duties_bn": 0.015363204847704277,
+        "io_code": "5411",
+        "key": "5411",
+        "kind": "intermediate",
+        "name": "5411",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0001837989740953052
+      },
+      {
+        "conditional_duties_bn": 0.18214306718130285,
+        "io_code": "5415",
+        "key": "5415",
+        "kind": "intermediate",
+        "name": "5415",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.002179083675467511
+      },
+      {
+        "conditional_duties_bn": 0.7715185289160731,
+        "io_code": "5412OP",
+        "key": "5412OP",
+        "kind": "intermediate",
+        "name": "5412OP",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.009230125843923971
+      },
+      {
+        "conditional_duties_bn": 0.21102586302206677,
+        "io_code": "55",
+        "key": "55",
+        "kind": "intermediate",
+        "name": "55",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.00252462539655768
+      },
+      {
+        "conditional_duties_bn": 0.5054314735460429,
+        "io_code": "561",
+        "key": "561",
+        "kind": "intermediate",
+        "name": "561",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.006046771310682796
+      },
+      {
+        "conditional_duties_bn": 0.17095278646982062,
+        "io_code": "562",
+        "key": "562",
+        "kind": "intermediate",
+        "name": "562",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.002045207825018491
+      },
+      {
+        "conditional_duties_bn": 0.07477454050739922,
+        "io_code": "61",
+        "key": "61",
+        "kind": "intermediate",
+        "name": "61",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0008945714107145753
+      },
+      {
+        "conditional_duties_bn": 0.618331058257811,
+        "io_code": "621",
+        "key": "621",
+        "kind": "intermediate",
+        "name": "621",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.00739745484654086
+      },
+      {
+        "conditional_duties_bn": 0.4727274815924396,
+        "io_code": "622",
+        "key": "622",
+        "kind": "intermediate",
+        "name": "622",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.005655514393296082
+      },
+      {
+        "conditional_duties_bn": 0.11190832708404909,
+        "io_code": "623",
+        "key": "623",
+        "kind": "intermediate",
+        "name": "623",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0013388245430993946
+      },
+      {
+        "conditional_duties_bn": 0.20088956313297548,
+        "io_code": "624",
+        "key": "624",
+        "kind": "intermediate",
+        "name": "624",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0024033589330036426
+      },
+      {
+        "conditional_duties_bn": 0.031406211645979315,
+        "io_code": "711AS",
+        "key": "711AS",
+        "kind": "intermediate",
+        "name": "711AS",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0003757308151504339
+      },
+      {
+        "conditional_duties_bn": 0.08294158412386714,
+        "io_code": "713",
+        "key": "713",
+        "kind": "intermediate",
+        "name": "713",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.000992278513690731
+      },
+      {
+        "conditional_duties_bn": 0.10482949847324377,
+        "io_code": "721",
+        "key": "721",
+        "kind": "intermediate",
+        "name": "721",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0012541363905062242
+      },
+      {
+        "conditional_duties_bn": 0.5070970373237618,
+        "io_code": "722",
+        "key": "722",
+        "kind": "intermediate",
+        "name": "722",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0060666974209358125
+      },
+      {
+        "conditional_duties_bn": 0.6209535583786342,
+        "io_code": "81",
+        "key": "81",
+        "kind": "intermediate",
+        "name": "81",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.007428829344020412
+      },
+      {
+        "conditional_duties_bn": 0.78295159174319,
+        "io_code": "GFGD",
+        "key": "GOVF",
+        "kind": "intermediate",
+        "name": "GFGD",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.009366906238328806
+      },
+      {
+        "conditional_duties_bn": 0.2884404725711722,
+        "io_code": "GFGN",
+        "key": "GOVF",
+        "kind": "intermediate",
+        "name": "GFGN",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0034507814919924416
+      },
+      {
+        "conditional_duties_bn": 0.04052439697599581,
+        "io_code": "GFE",
+        "key": "GOVF",
+        "kind": "intermediate",
+        "name": "GFE",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.0004848169808223265
+      },
+      {
+        "conditional_duties_bn": 1.222635752743512,
+        "io_code": "GSLG",
+        "key": "GOVSL",
+        "kind": "intermediate",
+        "name": "GSLG",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.014627104127956645
+      },
+      {
+        "conditional_duties_bn": 0.442577451951386,
+        "io_code": "GSLE",
+        "key": "GOVSL",
+        "kind": "intermediate",
+        "name": "GSLE",
+        "production_response": null,
+        "response_status": "caller supplies item6 purchaser response",
+        "share_of_total_duties": 0.00529481201564102
+      },
+      {
+        "conditional_duties_bn": 38.63128376450403,
+        "io_code": "F010",
+        "key": "F010",
+        "kind": "household",
+        "name": "household_pce",
+        "production_response": null,
+        "response_status": "existing household consumption key",
+        "share_of_total_duties": 0.4621685640650344
+      },
+      {
+        "conditional_duties_bn": 0.001463575812034347,
+        "io_code": "F02S",
+        "key": "F02S",
+        "kind": "unkeyed_final_demand",
+        "name": "private_investment_structures",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 1.7509610490080358e-05
+      },
+      {
+        "conditional_duties_bn": 10.792662262298048,
+        "io_code": "F02E",
+        "key": "F02E",
+        "kind": "unkeyed_final_demand",
+        "name": "private_investment_equipment",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 0.12911890918800828
+      },
+      {
+        "conditional_duties_bn": 0.019368879015071817,
+        "io_code": "F02N",
+        "key": "F02N",
+        "kind": "unkeyed_final_demand",
+        "name": "private_investment_intellectual_property",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 0.00023172118888190526
+      },
+      {
+        "conditional_duties_bn": 0.4139283490409895,
+        "io_code": "F02R",
+        "key": "F02R",
+        "kind": "unkeyed_final_demand",
+        "name": "private_residential_investment",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 0.004952066099285649
+      },
+      {
+        "conditional_duties_bn": 0.0,
+        "io_code": "F06C",
+        "key": "F06C",
+        "kind": "unkeyed_final_demand",
+        "name": "defense_consumption",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 0.0
+      },
+      {
+        "conditional_duties_bn": 0.0,
+        "io_code": "F06S",
+        "key": "F06S",
+        "kind": "unkeyed_final_demand",
+        "name": "defense_investment_structures",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 0.0
+      },
+      {
+        "conditional_duties_bn": 0.46865962531871874,
+        "io_code": "F06E",
+        "key": "F06E",
+        "kind": "unkeyed_final_demand",
+        "name": "defense_investment_equipment",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 0.0056068482577281
+      },
+      {
+        "conditional_duties_bn": 0.0007101176562715275,
+        "io_code": "F06N",
+        "key": "F06N",
+        "kind": "unkeyed_final_demand",
+        "name": "defense_investment_intellectual_property",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 8.495551416745756e-06
+      },
+      {
+        "conditional_duties_bn": 0.0,
+        "io_code": "F07C",
+        "key": "F07C",
+        "kind": "unkeyed_final_demand",
+        "name": "federal_nondefense_consumption",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 0.0
+      },
+      {
+        "conditional_duties_bn": 0.0,
+        "io_code": "F07S",
+        "key": "F07S",
+        "kind": "unkeyed_final_demand",
+        "name": "federal_nondefense_investment_structures",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 0.0
+      },
+      {
+        "conditional_duties_bn": 0.13258531262480383,
+        "io_code": "F07E",
+        "key": "F07E",
+        "kind": "unkeyed_final_demand",
+        "name": "federal_nondefense_investment_equipment",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 0.001586195372782895
+      },
+      {
+        "conditional_duties_bn": 0.0008673641522403081,
+        "io_code": "F07N",
+        "key": "F07N",
+        "kind": "unkeyed_final_demand",
+        "name": "federal_nondefense_investment_intellectual_property",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 1.0376782899736897e-05
+      },
+      {
+        "conditional_duties_bn": 0.0,
+        "io_code": "F10C",
+        "key": "F10C",
+        "kind": "unkeyed_final_demand",
+        "name": "state_local_consumption",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 0.0
+      },
+      {
+        "conditional_duties_bn": 0.001235276040263062,
+        "io_code": "F10S",
+        "key": "F10S",
+        "kind": "unkeyed_final_demand",
+        "name": "state_local_investment_structures",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 1.4778327254992548e-05
+      },
+      {
+        "conditional_duties_bn": 0.540340020411756,
+        "io_code": "F10E",
+        "key": "F10E",
+        "kind": "unkeyed_final_demand",
+        "name": "state_local_investment_equipment",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 0.006464402603416273
+      },
+      {
+        "conditional_duties_bn": 0.0015682722258581986,
+        "io_code": "F10N",
+        "key": "F10N",
+        "kind": "unkeyed_final_demand",
+        "name": "state_local_investment_intellectual_property",
+        "production_response": null,
+        "response_status": "final-demand purchaser industry unidentified",
+        "share_of_total_duties": 1.8762154711357014e-05
+      }
+    ],
+    "source_id": "bea2024",
+    "sum_rounded_commodity_duties_bn": 83.587
+  },
+  "excise_gap": "Supply TOP combines general sales, excise and other product taxes. A tax-category-by-commodity/purchaser crosswalk is missing; TOP must not substitute for excise_selective_sales.",
+  "identification_status": "INCOMPLETE_BUSINESS_BRIDGE",
+  "methodology_sources": [
+    {
+      "fact": "Supply tables contain commodity import duties; GDP final-expenditure components do not separately identify taxes from underlying source data.",
+      "url": "https://www.bea.gov/help/faq/1476"
+    },
+    {
+      "fact": "Import matrices impute each industry's commodity import share proportionally; they do not observe buyer-specific imported shares.",
+      "url": "https://www.bea.gov/help/faq/453"
+    },
+    {
+      "fact": "Tax on products includes sales and excise taxes; it is not an excise-only vector.",
+      "url": "https://apps.bea.gov/scb/issues/2018/08-august/0818-industry-economic-accounts-preview.htm"
+    }
+  ],
+  "national_taxes": {
+    "customs_duties": {
+      "central_business_share": null,
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0
+    },
+    "excise_selective_sales": {
+      "central_business_share": null,
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0
+    },
+    "general_sales_tax": {
+      "central_business_share": null,
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0
+    }
+  },
+  "required_for_central": [
+    "2024 tax-matched state/local collection weights and business shares",
+    "purchaser industry/state mix",
+    "excise-category-specific bridge",
+    "explicit final-demand production response"
+  ],
+  "schema_version": 1,
+  "sources": {
+    "bea2024": {
+      "kind": "primary BEA supply-use estimates, millions of dollars",
+      "locator": "2024 Supply_Summary MDTY, TOP and T017; Use_Summary individual commodity/purchaser cells",
+      "repo_path": "infra/immigration-fiscal/job_capital_taxes_2026_10_14/_cache/bea_SUPPLY-USE.zip",
+      "sha256": "3f16466e11eef0ed562d3663907f4a4a65856c134aa9f8baf7da6460bd11987d",
+      "url": "https://apps.bea.gov/industry/release/zip/SUPPLY-USE.zip"
+    },
+    "mn2024": {
+      "kind": "primary government historical model estimate, not observed purchaser receipts",
+      "locator": "Table 1-2, printed page 8, CY2021 collections and initial taxpayer category",
+      "path": "_cache/business_mn_2024.pdf",
+      "sha256": "aeef4b9579127e32b9b88f50d0f279b5b135126c58da5b765a15799a564beedb",
+      "url": "https://www.revenue.state.mn.us/sites/default/files/2024-03/2024-tax-incidence-study-final-online-revision_0.pdf"
+    },
+    "mn2026": {
+      "kind": "primary government historical model estimate, not observed purchaser receipts",
+      "locator": "Table 1-2, printed page 10, CY2023 collections and initial taxpayer category",
+      "path": "_cache/business_mn_2026.pdf",
+      "sha256": "9d99abd1f9a05913f1009a91e76902c3a430bc3d7ebde4bbef555ba88eab17d1",
+      "url": "https://www.revenue.state.mn.us/sites/default/files/2026-03/2026-tax-incidence-study-final-cover.pdf"
+    },
+    "tx2023": {
+      "kind": "primary government model estimate, not observed purchaser receipts",
+      "locator": "Table 1, initial distribution, FY2025 forecast",
+      "path": "_cache/business_tx_2023.pdf",
+      "sha256": "211849e7501b1b38b14049bb6208f11adeb32d1df7500304573418956f7f05dd",
+      "url": "https://comptroller.texas.gov/transparency/reports/tax-exemptions-and-incidence/2023/96-463.pdf"
+    },
+    "tx2025": {
+      "kind": "primary government model estimate, not observed purchaser receipts",
+      "locator": "Table 1, printed page 51, initial distribution, FY2027 forecast",
+      "path": "_cache/business_tx_2025.pdf",
+      "sha256": "28444dc0b211017f3a4282fa0c3ed575ff66da1847c377f6a60abae6d843e421",
+      "url": "https://comptroller.texas.gov/transparency/reports/tax-exemptions-and-incidence/2025/96-463.pdf"
+    }
+  },
+  "state_sales": [
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "01"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "02"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "04"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "05"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "06"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "08"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "09"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "10"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "11"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "12"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "13"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "15"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "16"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "17"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "18"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "19"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "20"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "21"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "22"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "23"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "24"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "25"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "26"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [
+        {
+          "business_million": null,
+          "business_share": 0.48,
+          "denominator": "state general sales/use tax",
+          "forecast": false,
+          "period": "CY",
+          "published_business_percent": 48.0,
+          "source_id": "mn2026",
+          "state_fips": "27",
+          "total_million": 8167.0,
+          "usable_as_2024_central": false,
+          "year": 2023
+        },
+        {
+          "business_million": null,
+          "business_share": 0.466,
+          "compatible_with_general_sales_tax": false,
+          "denominator": "local sales taxes including lodging and other selective taxes (footnote 7)",
+          "forecast": false,
+          "period": "CY",
+          "published_business_percent": 46.6,
+          "source_id": "mn2026",
+          "state_fips": "27",
+          "total_million": 1004.0,
+          "usable_as_2024_central": false,
+          "year": 2023
+        },
+        {
+          "business_million": null,
+          "business_share": 0.484,
+          "denominator": "state general sales/use tax",
+          "forecast": false,
+          "period": "CY",
+          "published_business_percent": 48.4,
+          "source_id": "mn2024",
+          "state_fips": "27",
+          "total_million": 6873.0,
+          "usable_as_2024_central": false,
+          "year": 2021
+        },
+        {
+          "business_million": null,
+          "business_share": 0.467,
+          "compatible_with_general_sales_tax": false,
+          "denominator": "local sales taxes including lodging and other selective taxes (footnote 7)",
+          "forecast": false,
+          "period": "CY",
+          "published_business_percent": 46.7,
+          "source_id": "mn2024",
+          "state_fips": "27",
+          "total_million": 749.0,
+          "usable_as_2024_central": false,
+          "year": 2021
+        }
+      ],
+      "identification_status": "DATED_SOURCE_ESTIMATE_ONLY",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "27"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "28"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "29"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "30"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "31"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "32"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "33"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "34"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "35"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "36"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "37"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "38"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "39"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "40"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "41"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "42"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "44"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "45"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "46"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "47"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [
+        {
+          "business_million": 22727.0,
+          "business_share": 0.4144570315634369,
+          "conditional_business_industry_weights": {
+            "agriculture": 0.027126325515906193,
+            "construction": 0.1307563690764289,
+            "finance_insurance_real_estate": 0.04901218814625776,
+            "information": 0.04459893518722225,
+            "manufacturing": 0.10959211510538126,
+            "mining": 0.1558278699344392,
+            "other_services": 0.19340432085185022,
+            "trade": 0.12648831785981432,
+            "utilities_transportation": 0.16319355832269988
+          },
+          "denominator": "state limited sales and use tax",
+          "forecast": true,
+          "industry_mapping_status": "broad sectors only; within-sector item6 cell mix must be supplied, never inferred from seller industry",
+          "industry_million": {
+            "agriculture": 616.5,
+            "construction": 2971.7,
+            "finance_insurance_real_estate": 1113.9,
+            "information": 1013.6,
+            "manufacturing": 2490.7,
+            "mining": 3541.5,
+            "other_services": 4395.5,
+            "trade": 2874.7,
+            "utilities_transportation": 3708.9
+          },
+          "mining_business_fraction": 0.1558278699344392,
+          "period": "FY",
+          "published_business_percent": 41.4,
+          "source_id": "tx2025",
+          "state_fips": "48",
+          "total_million": 54835.6,
+          "usable_as_2024_central": false,
+          "year": 2027
+        },
+        {
+          "business_million": 20232.3,
+          "business_share": 0.41811775403500795,
+          "conditional_business_industry_weights": {
+            "agriculture": 0.021767066685118915,
+            "construction": 0.1517368181728317,
+            "finance_insurance_real_estate": 0.052312133014372986,
+            "information": 0.05814436250766098,
+            "manufacturing": 0.0959352325972203,
+            "mining": 0.14693758525928707,
+            "other_services": 0.20151835669520174,
+            "trade": 0.12786916035665566,
+            "utilities_transportation": 0.1437792847116506
+          },
+          "denominator": "state limited sales and use tax",
+          "forecast": true,
+          "industry_mapping_status": "broad sectors only; within-sector item6 cell mix must be supplied, never inferred from seller industry",
+          "industry_million": {
+            "agriculture": 440.4,
+            "construction": 3070.0,
+            "finance_insurance_real_estate": 1058.4,
+            "information": 1176.4,
+            "manufacturing": 1941.0,
+            "mining": 2972.9,
+            "other_services": 4077.2,
+            "trade": 2587.1,
+            "utilities_transportation": 2909.0
+          },
+          "mining_business_fraction": 0.14693758525928707,
+          "period": "FY",
+          "published_business_percent": 41.8,
+          "source_id": "tx2023",
+          "state_fips": "48",
+          "total_million": 48389.0,
+          "usable_as_2024_central": false,
+          "year": 2025
+        }
+      ],
+      "identification_status": "DATED_SOURCE_ESTIMATE_ONLY",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "48"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "49"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "50"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "51"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "53"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "54"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "55"
+    },
+    {
+      "bound_status": "logical identification bounds, not confidence interval",
+      "central_2024_business_share": null,
+      "dated_source_estimates": [],
+      "identification_status": "NOT_IDENTIFIED",
+      "share_lower": 0.0,
+      "share_upper": 1.0,
+      "state_fips": "56"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "status": "state-law taxable-basket proxy; proposed, not adopted",
+  "row4_population": 39712493.33118789,
+  "remittance_theta": 0.27566534977041773,
+  "consumption": "adopted both_corridor_net_h2 per-person key; original saving ranks and calibration, then row4 weights",
+  "food": "BLS published 2024 decile Food at home / consumption; Interview grocery shape rescaled within decile; bottom decile pooled",
+  "snap": "central CPS annual SPM_SNAPSUB / actual SPM unit size capped at imputed food; CE annual FS_AMTXM * FS_MTHI rank-share sensitivity",
+  "overlap": "joint removes exempt_fraction*food + (1-exempt_fraction)*SNAP; never add isolated SNAP and food effects",
+  "normalization": "factor_state=(group taxable/group raw)/(state taxable/state raw); factor_national uses civilian national denominator. Keep each tax collection pool fixed.",
+  "white_definition": "CPS PRDTRACE==1 and not Hispanic, all civilian ages; not an ancestry-specific proxy",
+  "completion": "union_completed includes exact v8 observed IDs; original union retained for the row4 gate",
+  "limits": [
+    "State statutory food/general rate ratio only; local grocery levies not imputed without county data. Use as state-law arm, not exact combined state/local tax.",
+    "Food-category candy, soda, hot/prepared-food exceptions cannot be identified here; all food at home treated as qualifying groceries.",
+    "Consumer units are not SPM units; rank transport assumes equal food shares within income rank across origin, nativity, age and state.",
+    "CPS SNAP underreporting and benefit-redemption timing are not corrected; cap binds when reported benefit exceeds imputed food.",
+    "Latent descendants and PES-missed persons cannot be identified. g3plus/white are proxy factors for explicit caller choices; no full-lineage claim.",
+    "Item11 mixed-household fiscal response and item12 coverage-price response require parent integration; do not silently hold them fixed in an adopted item."
+  ],
+  "ce_rows": 23176,
+  "ce_dictionary_checks": {
+    "TFOODHOP": "trip groceries only",
+    "FS_AMTXM": "last SNAP receipt amount, imputation mean",
+    "FS_MTHI": "months received in past 12"
+  },
+  "snap_cap_weighted_bn": 7.095467171710425,
+  "source_sha256": {
+    "consumption_key_2026_09_24/_cache/sources/intrvw24.zip": "421ec90c2b8469c10f91eac27988f65f5d09fcfa9944e5069bb00b5460677f26",
+    "consumption_key_2026_09_24/_cache/sources/ce-pumd-interview-diary-dictionary.xlsx": "613810d32de105bcd32fa9030d378472afb4dab23d1922be7b71b0c522d0334c",
+    "consumption_key_2026_09_24/_cache/sources/cu-income-deciles-before-taxes-2024.xlsx": "ba34aca4e319d04ea466cd15af49d209b5df03e8fde0c446e03e79fd26d01ca1",
+    "consumption_key_2026_09_24/_cache/cps_arrays.npz": "7f47ada81fac1957aaa3387e8a697e36ac70246be4691c907d6d5b289c12e163",
+    "consumption_key_2026_09_24/derived/sender_rates_pooled.csv": "65cc6685900fd6d5f9f6ce7909becec5d8058d6c3f29999c2172f97c9c106c17",
+    "main_case_candidate_2026_09_28/derived/production_row4.json": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+    "main_case_2026_10_15/derived/corrections.json": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68",
+    "consumption_tax_bases_r5_2026_10_15/inputs/grocery_state_2024.csv": "1c711e6d0805558440a1d761c725de129a0a39fed734c479d889025b7a7a4119"
+  }
+}

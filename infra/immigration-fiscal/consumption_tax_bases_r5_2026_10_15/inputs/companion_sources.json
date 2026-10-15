@@ -1,0 +1,197 @@
+{
+  "as_of": "2026-10-15",
+  "sources": [
+    {
+      "path": "_cache/companion_mts_monthly.json",
+      "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_4?filter=record_date%3Agte%3A2023-10-01%2Crecord_date%3Alte%3A2025-12-31%2Cclassification_desc%3Aeq%3ACustoms+Duties&page%5Bsize%5D=10000&sort=record_date",
+      "sha256": "c9963c947fc5ff1e4e7f582e7df32f181240002c8e2324c3028859edef19c1ae",
+      "bytes": 26503
+    },
+    {
+      "path": "_cache/companion_bea_section3.xlsx",
+      "url": "https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx",
+      "sha256": "297661d99363ae05db43d531deffdb24c070be706e65763b0ef26f7eed93cce0",
+      "bytes": 2795540
+    },
+    {
+      "path": "_cache/companion_scotus_ieepa.pdf",
+      "url": "https://www.supremecourt.gov/opinions/25pdf/24-1287_4gcj.pdf",
+      "sha256": "6412456ead56a0b5b6f2e702f7da52365c3750d0a93a30ed45b04c538d60b13f",
+      "bytes": 756072
+    },
+    {
+      "path": "_cache/companion_cit_refunds.pdf",
+      "url": "https://www.cit.uscourts.gov/sites/cit/files/26-123.pdf",
+      "sha256": "6fb7afdc4d323dfce93964d3fbbc96a295db1ea2a1f8cad016c8bab54da501c9",
+      "bytes": 651174
+    },
+    {
+      "path": "_cache/companion_ending_ieepa.html",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/02/ending-certain-tariff-actions/",
+      "sha256": "1178500271af0cf40966f57c17579399aec50fe0f2bba6c65c579411321e5ca8",
+      "bytes": 298724
+    },
+    {
+      "path": "_cache/companion_section122.html",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/02/imposing-a-temporary-import-surcharge-to-address-fundamental-international-payments-problems/",
+      "sha256": "cc95bcf0fc57e0d24124af3b1dd585f0c2cffb10cd0ccaeb77ef2f64004ce61c",
+      "bytes": 322567
+    },
+    {
+      "path": "_cache/companion_section232_apr.html",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/04/strengthening-actions-taken-to-adjust-imports-of-aluminum-steel-and-copper-into-the-united-states/",
+      "sha256": "8b53f7a028104a5d1fc3657875eee84e63c888625a12218b810d1c27321f5921",
+      "bytes": 332631
+    },
+    {
+      "path": "_cache/companion_section232_jun.html",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/06/further-adjusting-the-tariff-regimes-for-imports-of-aluminum-steel-and-copper-into-the-united-states/",
+      "sha256": "a281adc5ded6b9ec5c25475508e3a52a256609840d2054197695c5ef8efbb41d",
+      "bytes": 319557
+    },
+    {
+      "path": "_cache/companion_section232_jul.html",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/07/further-strengthening-actions-taken-to-adjust-imports-of-aluminum-into-the-united-states/",
+      "sha256": "01759e65cfa083fdc1635c1f0460922d79159fb7654337fed5073bfdaee4f479",
+      "bytes": 342972
+    },
+    {
+      "path": "_cache/companion_section301_final.pdf",
+      "url": "https://ustr.gov/sites/default/files/files/Press/Releases/2026/FLIP%20301%20Investigation%20Final%20Action%20FRN%207-23-26%20FINAL.pdf",
+      "sha256": "589ec037c92df201c04e0698672eac2217fe3b68458b43b03ac52fea97e78638",
+      "bytes": 2793062
+    },
+    {
+      "path": "_cache/companion_section338_vehicles.html",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/07/imposing-additional-duties-to-offset-canadian-discrimination-against-the-commerce-of-the-united-states-with-respect-to-motor-vehicles/",
+      "sha256": "6bd1f43023fbe1bc4e468dfeef37033a149ac347df951d5b04f45f8170fed821",
+      "bytes": 316919
+    },
+    {
+      "path": "_cache/companion_section338_alcohol.html",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/07/imposing-additional-duties-to-offset-canadian-discrimination-against-the-commerce-of-the-united-states-with-respect-to-alcoholic-beverages/",
+      "sha256": "2358f1fb5973b04e799d43ea004f489663cf38453d7401c912c39547520ac920",
+      "bytes": 317139
+    },
+    {
+      "path": "_cache/companion_section338_dairy.html",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/07/imposing-additional-duties-to-offset-canadian-discrimination-against-the-commerce-of-the-united-states-with-respect-to-dairy/",
+      "sha256": "6d8102dae9b1dc7df7db182fd95d70b3477df415278088b69c33d0da27485c07",
+      "bytes": 315381
+    },
+    {
+      "path": "_cache/companion_bea_methods.html",
+      "url": "https://apps.bea.gov/scb/issues/2020/11-november/1120-nipa-methodologies.htm",
+      "sha256": "ba05d28c8fd2d5715d52527c7dbb4154113e96778cb4c191ec3da6ed975bc8ce",
+      "bytes": 169288
+    },
+    {
+      "path": "_cache/companion_bea_methods_2026.html",
+      "url": "https://apps.bea.gov/scb/issues/2026/09-september/0926-nipa-methodologies.htm",
+      "sha256": "d2dc4368ca442a24f11ceab0d37495d00d201bc1f0a5b877c24889721bb3f0fe",
+      "bytes": 181798
+    },
+    {
+      "path": "_cache/companion_bea_ieepa_refunds.html",
+      "url": "https://www.bea.gov/index.php/help/faq/1488",
+      "sha256": "55f9b4db16649fc3b3513a30ca5be067ded2ec6cc97fb29c862477c2b0647a79",
+      "bytes": 40872
+    },
+    {
+      "path": "_cache/companion_irs_depreciation.html",
+      "url": "https://www.irs.gov/publications/p946",
+      "sha256": "17babd4c862ce3da90e6a10d87567cabe10e304fd83623d0ccecee14bac41381",
+      "bytes": 814742
+    },
+    {
+      "path": "_cache/companion_irs_174a.html",
+      "url": "https://www.irs.gov/irb/2025-38_IRB",
+      "sha256": "795531bec6585fb2db78689716f258c6cc6218812293f1dd8f290635dfb34e0e",
+      "bytes": 262487
+    },
+    {
+      "path": "_cache/companion_section338_sept_alcohol_ban.pdf",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-14/pdf/2026-18835.pdf",
+      "sha256": "e513ee7008c626866c24f47aea8275c168970ef744156748229883b78b271408",
+      "bytes": 526857
+    },
+    {
+      "path": "_cache/companion_section338_sept_alcohol_scope.pdf",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-14/pdf/2026-18838.pdf",
+      "sha256": "f93f50ab4fa27f38f88152f787184b657b59e38f4bac255457fabf151f6401b7",
+      "bytes": 592680
+    },
+    {
+      "path": "_cache/companion_section338_sept_dairy_ban.pdf",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-14/pdf/2026-18836.pdf",
+      "sha256": "ad13f17a3df39898f5eff06c6ec517d56fe5a99193c6421baba4a65b064559e4",
+      "bytes": 292606
+    },
+    {
+      "path": "_cache/companion_section338_sept_vehicles_ban.pdf",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-14/pdf/2026-18837.pdf",
+      "sha256": "9a11e6f4dcf32f31fb1a432818ddd08023b06f1f69a0244cc9d3ebce8f3ffdce",
+      "bytes": 237207
+    },
+    {
+      "path": "_cache/companion_section338_sept_vehicles_scope.pdf",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-14/pdf/2026-18839.pdf",
+      "sha256": "137f6b30ef4b597cf514212e1a5f64bf9c9076a67b3f69f769d869d13826921d",
+      "bytes": 775547
+    },
+    {
+      "path": "_cache/companion_cit_301_docket.html",
+      "url": "https://www.cit.uscourts.gov/audio-recordings-select-public-court-proceedings",
+      "sha256": "db808994556b8827c471bc9ec92a8f8daf906793dda861e2c917d6a980e3ef00",
+      "bytes": 94002
+    },
+    {
+      "path": "sources/immigration-fiscal/data/external/stage3/cbo/pl119_21_estimate/61570-pl119-21-2025Recon-CLB.xlsx",
+      "root": "repo",
+      "sha256": "b6f7a7ae822633a70d4abaec1e26e4b4ac428e7ed09fc3aee9dbd5d83c7bc552",
+      "bytes": 228536
+    },
+    {
+      "path": "sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx",
+      "root": "repo",
+      "sha256": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+      "bytes": 2785842
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_15/package.cjs",
+      "root": "repo",
+      "sha256": "083236226e594247bfe095c6cdf0c71f6bb0ca73b405f5da98568ac8c95b90d6",
+      "bytes": 14988
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections.json",
+      "root": "repo",
+      "sha256": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68",
+      "bytes": 2876687
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections_cash.json",
+      "root": "repo",
+      "sha256": "9af66b4c6a87ddb96d22c208364cd6798d23411590252bbe9520f3019b6446ea",
+      "bytes": 2836933
+    },
+    {
+      "path": "infra/immigration-fiscal/post2024_law_2026_10_07/derived/summary.json",
+      "root": "repo",
+      "sha256": "a1a90009c2d3080ede85a459993729299d6ac0e0c2ce85b5a39d20c1ff2cfb5b",
+      "bytes": 3777
+    },
+    {
+      "path": "infra/immigration-fiscal/post2024_law_2026_10_07/derived/tax_summary.json",
+      "root": "repo",
+      "sha256": "48e4bdccd4497de4e491f65afaf5d10364125292e680dc7e8c6b0c24c285e2ed",
+      "bytes": 2783
+    },
+    {
+      "path": "infra/immigration-fiscal/consumption_tax_bases_r5_2026_10_15/inputs/companion_legal.json",
+      "root": "repo",
+      "sha256": "c564c02b02951a8801e8f60f025cda3b780d39c6702f865285210be927833277",
+      "bytes": 5188
+    }
+  ]
+}
