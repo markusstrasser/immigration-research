@@ -4,7 +4,7 @@
  "verdict": "PASS",
  "stub13": false,
  "coverage_mode": "repriced",
- "checks": 428,
+ "checks": 480,
  "records": [
   {
    "name": "v8 exported name Engine retained",
@@ -1486,15 +1486,15 @@
    "pass": true,
    "details": {
     "payload": [
-     309.5255307943964,
-     380.99531364610897
+     333.53198382080046,
+     405.00176667251304
     ],
     "central": [
-     309.5255307943965,
-     380.9953136461093
+     333.5319838208005,
+     405.0017666725134
     ],
     "difference": [
-     -1.1368683772161603e-13,
+     -5.684341886080802e-14,
      -3.410605131648481e-13
     ]
    }
@@ -1504,16 +1504,16 @@
    "pass": true,
    "details": {
     "payload": [
-     343.91477547655205,
-     412.44656345170563
+     367.9212285029561,
+     436.4530164781097
     ],
     "central": [
-     343.9147754765521,
-     412.4465634517057
+     367.9212285029562,
+     436.4530164781097
     ],
     "difference": [
      -5.684341886080802e-14,
-     -5.684341886080802e-14
+     0
     ]
    }
   },
@@ -1559,8 +1559,8 @@
    "pass": true,
    "details": {
     "G1": 0,
-    "G2": -2.37522862890822,
-    "G3plus": -1.7576523224612401
+    "G2": -2.407079956819605,
+    "G3plus": -1.790996749041256
    }
   },
   {
@@ -1568,8 +1568,8 @@
    "pass": true,
    "details": {
     "G1": 0,
-    "G2": -2.37522862890822,
-    "G3plus": -1.7576523224612401
+    "G2": -2.407079956819605,
+    "G3plus": -1.790996749041256
    }
   },
   {
@@ -1577,8 +1577,8 @@
    "pass": true,
    "details": {
     "G1": 0,
-    "G2": -2.476998288499215,
-    "G3plus": -1.8767235720740776
+    "G2": -2.5088496164106,
+    "G3plus": -1.9100679986540934
    }
   },
   {
@@ -1586,8 +1586,8 @@
    "pass": true,
    "details": {
     "G1": 0,
-    "G2": -2.476998288499215,
-    "G3plus": -1.8767235720740776
+    "G2": -2.5088496164106,
+    "G3plus": -1.9100679986540934
    }
   },
   {
@@ -1600,8 +1600,8 @@
    "pass": true,
    "details": {
     "G1": 0.7389793810735302,
-    "G2": 1.4444575339469627,
-    "G3plus": 1.6536947644836515
+    "G2": 1.4467853175287901,
+    "G3plus": 1.6542130533097974
    }
   },
   {
@@ -1609,8 +1609,8 @@
    "pass": true,
    "details": {
     "G1": 0.7389793810735302,
-    "G2": 1.4444575339469627,
-    "G3plus": 1.6536947644836515
+    "G2": 1.4467853175287901,
+    "G3plus": 1.6542130533097974
    }
   },
   {
@@ -1618,8 +1618,8 @@
    "pass": true,
    "details": {
     "G1": 0.6879900866088772,
-    "G2": 1.4097426386847103,
-    "G3plus": 1.5854225442786363
+    "G2": 1.4120704222665377,
+    "G3plus": 1.5859408331047822
    }
   },
   {
@@ -1627,8 +1627,49 @@
    "pass": true,
    "details": {
     "G1": 0.6879900866088772,
-    "G2": 1.4097426386847103,
-    "G3plus": 1.5854225442786363
+    "G2": 1.4120704222665377,
+    "G3plus": 1.5859408331047822
+   }
+  },
+  {
+   "name": "set/health_residual_key post-engine registry route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/health_residual_key/low generation parts close",
+   "pass": true,
+   "details": {
+    "G1": 21.76474229325258,
+    "G2": 1.6417628113081602,
+    "G3plus": 0.6356459449434524
+   }
+  },
+  {
+   "name": "set/health_residual_key/low generation consumer routes descendants to G3plus",
+   "pass": true,
+   "details": {
+    "G1": 21.76474229325258,
+    "G2": 1.6417628113081602,
+    "G3plus": 0.6356459449434524
+   }
+  },
+  {
+   "name": "set/health_residual_key/high generation parts close",
+   "pass": true,
+   "details": {
+    "G1": 22.06179858886471,
+    "G2": 1.6641938726394192,
+    "G3plus": 0.6449078122368446
+   }
+  },
+  {
+   "name": "set/health_residual_key/high generation consumer routes descendants to G3plus",
+   "pass": true,
+   "details": {
+    "G1": 22.06179858886471,
+    "G2": 1.6641938726394192,
+    "G3plus": 0.6449078122368446
    }
   },
   {
@@ -1712,6 +1753,91 @@
   },
   {
    "name": "set calibrated denominator available without coverage",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set population parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/16 long_run false rejects steady-state item13",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/16 first-year military source responses",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/16 first-year restoration excludes already-responsive pension",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/16 item21 allocation retained in first year",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/11 long_run false rejects steady-state item13",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/11 first-year military source responses",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/11 first-year restoration excludes already-responsive pension",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/11 item21 allocation retained in first year",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/16 long_run false rejects steady-state item13",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/16 first-year military source responses",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/16 first-year restoration excludes already-responsive pension",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/16 item21 allocation retained in first year",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/11 long_run false rejects steady-state item13",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/11 first-year military source responses",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/11 first-year restoration excludes already-responsive pension",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/11 item21 allocation retained in first year",
    "pass": true,
    "details": null
   },
@@ -1940,15 +2066,15 @@
    "pass": true,
    "details": {
     "payload": [
-     220.21270941165,
-     291.68249226336303
+     244.21916243805404,
+     315.6889452897671
     ],
     "central": [
-     220.21270941164983,
-     291.6824922633627
+     244.2191624380539,
+     315.68894528976676
     ],
     "difference": [
-     1.7053025658242404e-13,
+     1.4210854715202004e-13,
      3.410605131648481e-13
     ]
    }
@@ -1958,16 +2084,16 @@
    "pass": true,
    "details": {
     "payload": [
-     260.28212624851005,
-     328.81391422366323
+     284.28857927491407,
+     352.8203672500673
     ],
     "central": [
-     260.28212624851017,
-     328.81391422366363
+     284.28857927491424,
+     352.82036725006765
     ],
     "difference": [
-     -1.1368683772161603e-13,
-     -3.979039320256561e-13
+     -1.7053025658242404e-13,
+     -3.410605131648481e-13
     ]
    }
   },
@@ -2013,8 +2139,8 @@
    "pass": true,
    "details": {
     "G1": 0,
-    "G2": -2.3890965512200815,
-    "G3plus": -1.7602630809924602
+    "G2": -2.4209478791314663,
+    "G3plus": -1.793607507572476
    }
   },
   {
@@ -2022,8 +2148,8 @@
    "pass": true,
    "details": {
     "G1": 0,
-    "G2": -2.3890965512200815,
-    "G3plus": -1.7602630809924602
+    "G2": -2.4209478791314663,
+    "G3plus": -1.793607507572476
    }
   },
   {
@@ -2031,8 +2157,8 @@
    "pass": true,
    "details": {
     "G1": 0,
-    "G2": -2.490866210811076,
-    "G3plus": -1.8793343306052621
+    "G2": -2.522717538722461,
+    "G3plus": -1.912678757185278
    }
   },
   {
@@ -2040,8 +2166,8 @@
    "pass": true,
    "details": {
     "G1": 0,
-    "G2": -2.490866210811076,
-    "G3plus": -1.8793343306052621
+    "G2": -2.522717538722461,
+    "G3plus": -1.912678757185278
    }
   },
   {
@@ -2054,8 +2180,8 @@
    "pass": true,
    "details": {
     "G1": 0.8887577814686436,
-    "G2": 1.6175692333218936,
-    "G3plus": 1.7539542047358108
+    "G2": 1.619897016903721,
+    "G3plus": 1.7544724935619567
    }
   },
   {
@@ -2063,8 +2189,8 @@
    "pass": true,
    "details": {
     "G1": 0.8887577814686436,
-    "G2": 1.6175692333218936,
-    "G3plus": 1.7539542047358108
+    "G2": 1.619897016903721,
+    "G3plus": 1.7544724935619567
    }
   },
   {
@@ -2072,8 +2198,8 @@
    "pass": true,
    "details": {
     "G1": 0.8377684870039905,
-    "G2": 1.5828543380596407,
-    "G3plus": 1.6856819845307955
+    "G2": 1.585182121641468,
+    "G3plus": 1.6862002733569414
    }
   },
   {
@@ -2081,8 +2207,49 @@
    "pass": true,
    "details": {
     "G1": 0.8377684870039905,
-    "G2": 1.5828543380596407,
-    "G3plus": 1.6856819845307955
+    "G2": 1.585182121641468,
+    "G3plus": 1.6862002733569414
+   }
+  },
+  {
+   "name": "cash/health_residual_key post-engine registry route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/health_residual_key/low generation parts close",
+   "pass": true,
+   "details": {
+    "G1": 21.76474229325258,
+    "G2": 1.6417628113081602,
+    "G3plus": 0.6356459449434524
+   }
+  },
+  {
+   "name": "cash/health_residual_key/low generation consumer routes descendants to G3plus",
+   "pass": true,
+   "details": {
+    "G1": 21.76474229325258,
+    "G2": 1.6417628113081602,
+    "G3plus": 0.6356459449434524
+   }
+  },
+  {
+   "name": "cash/health_residual_key/high generation parts close",
+   "pass": true,
+   "details": {
+    "G1": 22.06179858886471,
+    "G2": 1.6641938726394192,
+    "G3plus": 0.6449078122368446
+   }
+  },
+  {
+   "name": "cash/health_residual_key/high generation consumer routes descendants to G3plus",
+   "pass": true,
+   "details": {
+    "G1": 22.06179858886471,
+    "G2": 1.6641938726394192,
+    "G3plus": 0.6449078122368446
    }
   },
   {
@@ -2170,6 +2337,91 @@
    "details": null
   },
   {
+   "name": "cash population parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/16 long_run false rejects steady-state item13",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/16 first-year military source responses",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/16 first-year restoration excludes already-responsive pension",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/16 item21 allocation retained in first year",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/11 long_run false rejects steady-state item13",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/11 first-year military source responses",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/11 first-year restoration excludes already-responsive pension",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/11 item21 allocation retained in first year",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/16 long_run false rejects steady-state item13",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/16 first-year military source responses",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/16 first-year restoration excludes already-responsive pension",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/16 item21 allocation retained in first year",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/11 long_run false rejects steady-state item13",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/11 first-year military source responses",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/11 first-year restoration excludes already-responsive pension",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/11 item21 allocation retained in first year",
+   "pass": true,
+   "details": null
+  },
+  {
    "name": "cash default household basket arm",
    "pass": true,
    "details": null
@@ -2181,6 +2433,46 @@
   },
   {
    "name": "cash default one-rate arm",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/16 old-key arm reproduces complete pre21 case",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/16 old-key source increment zero",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/11 old-key arm reproduces complete pre21 case",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/11 old-key source increment zero",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/16 old-key arm reproduces complete pre21 case",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/16 old-key source increment zero",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/11 old-key arm reproduces complete pre21 case",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/11 old-key source increment zero",
    "pass": true,
    "details": null
   },

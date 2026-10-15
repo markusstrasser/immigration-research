@@ -10,8 +10,16 @@ function apply({base,built,which,meta,population,selectedItems}){
  if(!required.every(id=>selectedItems.includes(id)))return {meta,population,coverageOverride:null};
  const file=path.join(__dirname,"../coverage_bound_2026_10_14/derived/coverage_bound_oct16.json");
  if(!fs.existsSync(file))throw Error("[BLOCKED] oct16 coverage file missing; build coverage_oct16.py");
- const bytes=fs.readFileSync(file),source=JSON.parse(bytes),data=source.sets[which];
+ const bytes=fs.readFileSync(file),source=JSON.parse(bytes),root=source.sets[which];
  require("./coverage_check.cjs").validate(source);
+ const health=built.find(b=>b.item.id==="health_residual_key"),healthArm=health?(health.arm||"central"):"off";
+ let data=healthArm==="central"?root:healthArm==="off"?root.without_item21:root.item21_arm_overrides?.[healthArm];
+ if(!data)throw Error("[BLOCKED] own item21 coverage/count arm absent "+healthArm);
+ if(healthArm!=="central"){
+  const armBytes=fs.readFileSync(path.join(__dirname,"..",data.file));
+  if(crypto.createHash("sha256").update(armBytes).digest("hex")!==data.sha256)throw Error("[BLOCKED] item21 arm kernel receipt mismatch "+healthArm);
+  data=JSON.parse(armBytes);
+ }
  if(source.key!=="oct16"||source.case!=="main_case_2026_10_16"||!data)throw Error("[BLOCKED] oct16 coverage identity");
  const scenario=base.POST_ENGINE.coverage?.construction||"central",q=data.scenarios[scenario];
  if(!q)throw Error("[BLOCKED] oct16 coverage scenario absent "+scenario);
@@ -22,7 +30,7 @@ function apply({base,built,which,meta,population,selectedItems}){
  const held=built.filter(b=>Object.hasOwn(centralArms,b.item.id)&&(b.arm||null)!==centralArms[b.item.id]);
  if(held.length&&mode==="require_own")throw Error("[BLOCKED] own-price item-arm kernel unavailable for "+held.map(b=>`${b.item.id}:${b.arm}`).join(", ")+"; V9_ARM_TRANSPORT=carry explicitly carries central coverage/count prices");
  const transport={mode,central_item_arm_prices:true,
-  count_kernel_scope:"items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
+  count_kernel_scope:"items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
   by_item:Object.fromEntries(held.map(b=>[b.item.id,{selected_arm:b.arm,central_arm:centralArms[b.item.id],
    observed_channels:"selected source arm on observed engine and completion amounts",
    coverage_channels:"central/default-arm item12 prices carried; not own prices for this selected item arm",

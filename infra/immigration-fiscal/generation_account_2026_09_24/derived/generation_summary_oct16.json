@@ -9,8 +9,8 @@
  },
  "union": {
   "cost_bn": [
-   344.02328615247654,
-   412.55507412763023
+   368.0297391788806,
+   436.5615271540343
   ],
   "population": 44903074.086245224
  },
@@ -20,36 +20,36 @@
     "population": 11482806.168941664,
     "adults": 11005336.671008185,
     "cost_bn": [
-     39.4020452619341,
-     59.54812793323538
+     61.19086987236287,
+     81.33695254366414
     ],
     "own_span_bn": [
-     39.4020452619341,
-     59.54812793323538
+     61.19086987236287,
+     81.33695254366414
     ]
    },
    "G2": {
     "population": 15008038.596511668,
     "adults": 9613496.451020809,
     "cost_bn": [
-     141.14050659971264,
-     162.85999327276323
+     142.75456435006143,
+     164.47405102311203
     ],
     "own_span_bn": [
-     141.14050659971264,
-     162.85999327276323
+     142.75456435006143,
+     164.47405102311203
     ]
    },
    "G3plus": {
     "population": 18412229.32079188,
     "adults": 10614897.773887573,
     "cost_bn": [
-     163.48073429083198,
-     190.14695292163373
+     164.0843049564585,
+     190.75052358726023
     ],
     "own_span_bn": [
-     163.48073429083198,
-     190.14695292163373
+     164.0843049564585,
+     190.75052358726023
     ]
    }
   },
@@ -58,36 +58,36 @@
     "population": 16131576.684615836,
     "adults": 11005336.671008185,
     "cost_bn": [
-     151.99417425378695,
-     175.3721336768909
+     174.62892290867066,
+     198.00688233177462
     ],
     "own_span_bn": [
-     151.99417425378695,
-     175.3721336768909
+     174.62892290867066,
+     198.00688233177462
     ]
    },
    "G2": {
     "population": 13329374.042330196,
     "adults": 9613496.451020809,
     "cost_bn": [
-     91.21061722968336,
-     111.72432099830777
+     92.46368194700067,
+     112.97738571562508
     ],
     "own_span_bn": [
-     91.21061722968336,
-     111.72432099830777
+     92.46368194700067,
+     112.97738571562508
     ]
    },
    "G3plus": {
     "population": 15442123.359299175,
     "adults": 10614897.773887573,
     "cost_bn": [
-     100.81849466900825,
-     125.4586194524335
+     100.9371343232113,
+     125.57725910663653
     ],
     "own_span_bn": [
-     100.81849466900825,
-     125.4586194524335
+     100.9371343232113,
+     125.57725910663653
     ]
    }
   }
@@ -113,9 +113,10 @@
    "native_minor_calibration",
    "coverage_tenure",
    "consumption_tax_bases",
-   "one_rate"
+   "one_rate",
+   "health_residual_key"
   ],
-  "new_posts": "declared selected16/17 generation parts; optional19 routes added_G3plus only when selected beside; other line/capital sources follow existing generation source amounts at each specification"
+  "new_posts": "declared selected16/17 generation parts; optional19 routes added_G3plus only when selected beside; item21 follows item13 health-subblock line/population/generation routing; other line/capital sources follow existing generation source amounts at each specification"
  },
  "gates": {
   "all_specifications_close": true

@@ -20,6 +20,7 @@ import numpy as np
 import coverage_bound as C
 from coverage_oct15 import DEFINITIONS, national_constructions
 from source_tables import load
+from coverage_item21_oct16 import attach as attach_item21
 
 LANE = Path(__file__).resolve().parent
 FISCAL = LANE.parent
@@ -77,8 +78,15 @@ def transform(data, audit, snapshot, basis):
         ratios[src["line"]] = 1-fraction
     traces = []
     new_pieces, new_base, new_constructed = [], [], []
+    # Keep the signed pre-item13 source prices. A zero steady-state factor
+    # cannot be inverted when the first-year companion restores entitlements.
+    # Only the six military subblocks need addbacks; dense zero matrices would
+    # duplicate the complete1168-row kernel for a few nonzero source rows.
+    first_year_base, first_year_constructed = {}, {}
     for i, piece in enumerate(audit["denominator_pieces"]):
         end, line = piece["end"], piece["source_line"]
+        before_base = data["base_piece_prices"][i].copy()
+        before_constructed = data["constructed_piece_prices"][i].copy()
         old_rate = .02 if end == "low" else .03
         factor, rules = 1., []
         if piece["source_side"] == "spending" and line in ratios:
@@ -112,20 +120,33 @@ def transform(data, audit, snapshot, basis):
                 observed_factor /= basket[line]
             data["base_piece_prices"][i] *= observed_factor
             data["constructed_piece_prices"][i] *= factor
+        military_factor = ratios.get(line, 1.) if piece["source_side"] == "spending" and line != "income_security_services" else 1.
+        if military_factor != 1:
+            # At this point the only spending factor on these lines is item13.
+            first_year_base[i] = before_base*(1-military_factor)
+            first_year_constructed[i] = before_constructed*(1-military_factor)
+            C.require(np.max(np.abs(data["base_piece_prices"][i]+first_year_base[i]-before_base)) < 1e-12,
+                      "first-year observed military kernel conservation")
+            C.require(np.max(np.abs(data["constructed_piece_prices"][i]+first_year_constructed[i]-before_constructed)) < 1e-12,
+                      "first-year constructed military kernel conservation")
     if new_pieces:
         audit["denominator_pieces"].extend(new_pieces)
         data["base_piece_prices"] = np.concatenate((data["base_piece_prices"], np.asarray(new_base)))
         data["constructed_piece_prices"] = np.concatenate((data["constructed_piece_prices"], np.asarray(new_constructed)))
+    data["item13_first_year_base_prices"] = first_year_base
+    data["item13_first_year_constructed_prices"] = first_year_constructed
     return traces
 
 
 def integrate(data, audit, mass, added_mass=None, observed=False):
     added_mass = np.zeros_like(mass) if added_mass is None else added_mass
     matrix = data["base_piece_prices" if observed else "constructed_piece_prices"]
+    first_year = data["item13_first_year_base_prices" if observed else "item13_first_year_constructed_prices"]
     lines = {end: [] for end in ENDS}
     for i, p in enumerate(audit["denominator_pieces"]):
         value = float(matrix[i] @ (mass+added_mass))
-        lines[p["end"]].append({**p, "coverage_bn": value})
+        lines[p["end"]].append({**p, "coverage_bn": value,
+            "item13_first_year_addback_bn": float(first_year[i] @ (mass+added_mass)) if i in first_year else 0.})
     for i, p in enumerate(audit["other_pieces"]):
         weights = {"both": mass+added_mass, "identified": mass, "added": added_mass}[p["population"]]
         value = float(data["other_piece_prices"][i] @ weights)
@@ -257,6 +278,7 @@ def calculate(basis, snapshot):
                     "category": a.get("category", "residual"), "economic_class": a["economic_class"], "level": a["level"],
                     "source_response": a.get("source_response"), "source_key": a.get("source_key"),
                     "observed_change_bn": a["coverage_bn"], "coverage_change_bn": b["coverage_bn"],
+                    "item13_first_year_addback_bn": a.get("item13_first_year_addback_bn", 0.)+b.get("item13_first_year_addback_bn", 0.),
                     "change_bn": a["coverage_bn"]+b["coverage_bn"], "complete_use_excluded": a.get("administratively_complete_use", False)})
     original_items = read(FISCAL / "count_composition_r5_2026_10_15/derived/items.json")["sets"][basis]
     count16 = copy.deepcopy(original_items["item16"])
@@ -310,7 +332,7 @@ def main():
         "specifications": [16, 11], "stub13": snapshot["stub13"],
         "item18_carrier_mode": os.environ.get("ITEM18_CARRIER_MODE", "source_evaluator"),
         "coverage_scope": "item12 before item16/17; add own-price item_overrides once",
-        "sets": {basis: calculate(basis, snapshot) for basis in ("set", "cash")},
+        "sets": {basis: attach_item21(calculate(basis, snapshot), basis, snapshot["rate"]) for basis in ("set", "cash")},
         "gates": {"principal_kernels_hash_verified": True, "own_price_count_builder_replayed": True},
         "limitations": ["No new behavioral or production solve; observed roster and driver coefficients held.",
             "Item15 observed item16 interaction transports the source additions' capital-use proxy; original-union U-capital offset has no declared person vector.",
@@ -320,6 +342,8 @@ def main():
     dependencies = [FISCAL / p for p in (
         "spending_keys_r5_2026_10_15/derived/item13.json", "spending_keys_r5_2026_10_15/derived/item14.json",
         "spending_keys_r5_2026_10_15/derived/item15.json", "consumption_tax_bases_r5_2026_10_15/derived/item.json",
+        "spending_keys_r5_2026_10_15/derived/item21.json", "spending_keys_r5_2026_10_15/derived/item21_coverage.json",
+        "spending_keys_r5_2026_10_15/derived/item21_v9_coverage.json", "coverage_bound_2026_10_14/coverage_item21_oct16.py",
         "passthrough_source_tax_r5_2026_10_15/derived/item.json", "one_rate_2026_10_15/derived/rates.json",
         "spending_keys_r5_2026_10_15/items.cjs", "count_composition_r5_2026_10_15/measure.py",
         "count_composition_r5_2026_10_15/tenure.py", "count_composition_r5_2026_10_15/derived/native_person_factors.parquet",

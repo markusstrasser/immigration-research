@@ -16,7 +16,9 @@ function validate(source){
   const q=source.sets?.[which];gate(which+" present",!!q);
   for(const end of ["low","high"]){
    const z=q.ends?.[end];gate(which+"/"+end+" finite exact generation closure",z&&Number.isFinite(z.total_bn)&&GENS.every(g=>Number.isFinite(z.by_generation_bn?.[g]))&&Math.abs(sum(GENS.map(g=>z.by_generation_bn[g]))-z.total_bn)<1e-9);
-   const interaction=q.interactions?.[end];gate(which+"/"+end+" declared coverage delta plus exact interaction",interaction&&Number.isFinite(interaction.item15_x_item20_bn)&&Math.abs(interaction.coverage_change_bn-interaction.declared_sum_bn-interaction.item15_x_item20_bn)<1e-9);
+   const interaction=q.interactions?.[end];gate(which+"/"+end+" declared coverage delta plus exact interaction",interaction&&Number.isFinite(interaction.item15_x_item20_bn)&&Number.isFinite(interaction.item21_x_item20_bn)&&Math.abs(interaction.coverage_change_bn-interaction.declared_sum_bn-interaction.item15_x_item20_bn-interaction.item21_x_item20_bn)<1e-9);
+   const restore=sum(z.decomposition.line_parts.map(p=>p.item13_first_year_addback_bn||0));
+   gate(which+"/"+end+" first-year coverage restores every item13 subblock",Number.isFinite(q.declared_item12_deltas_bn[end].veterans_compensation)&&Math.abs(restore+q.declared_item12_deltas_bn[end].veterans_compensation)<1e-9);
   }
   for(const id of ["native_minor_calibration","coverage_tenure"]){
    const z=q.item_overrides?.[id];gate(which+"/"+id+" present",!!z);

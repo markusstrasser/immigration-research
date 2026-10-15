@@ -14,7 +14,7 @@ function sourceModels(which,conv){
 }
 function generationParts(api,s,convention="a"){
  const p=api.correctionsPayload();
- const which=["native_minor_calibration","coverage_tenure","passthrough_source_tax","one_rate","consumption_tax_bases","veterans_compensation","income_security_administration","public_college_response"]
+ const which=["native_minor_calibration","coverage_tenure","passthrough_source_tax","one_rate","consumption_tax_bases","veterans_compensation","income_security_administration","public_college_response","health_residual_key"]
   .map(id=>p.meta[id]?.which).find(v=>v==="set"||v==="cash")||"set";
  const src=sourceModels(which,convention),old=src.L.api.payloadModel(),newModels={},evaluations={};
  const es=p.edits.slice(src.L.payload.edits.length);
@@ -62,7 +62,21 @@ function generationParts(api,s,convention="a"){
    if(!current)fail("repriced coverage generation metadata absent");
    put(id,Object.fromEntries(GENS.map(g=>[g,current[g]-prior[g]])),{delta_bn:total,rule:"own-price item12 generation delta"});continue;
   }
-  const parts=post.parts[id]||[];
+  let parts=post.parts[id]||[];
+  if(id==="health_residual_key"&&convention==="b"){
+   const source=p.meta[id].by_generation.b[s.reading].parts,selected=parts;
+   parts=selected.map(row=>{
+    if(row.population!=="original_union")return row;
+    const q=source.find(q=>q.line===row.line&&q.population===row.population&&q.generation===row.generation&&q.part===row.part);
+    if(!q)fail("item21 convention-b source part absent "+row.line+"/"+row.generation);
+    const rate=row.effective_capital_rate;
+    if(Number.isFinite(q.capital_stock_delta_bn)){
+     const before_bn=q.capital_stock_before_bn*rate,delta_bn=q.capital_stock_delta_bn*rate;
+     return {...row,...q,effective_capital_rate:rate,before_bn,after_bn:before_bn+delta_bn,delta_bn};
+    }
+    return {...row,...q};
+   });
+  }
   if(!parts.length){if(Math.abs(total)>1e-12)fail("undeclared post generation route "+id);continue;}
   for(const row of parts){
    const sh=shares(row);put(id,Object.fromEntries(GENS.map(g=>[g,row.delta_bn*sh[g]])),{...row,rule:"existing source line/capital amount shares at this specification"});

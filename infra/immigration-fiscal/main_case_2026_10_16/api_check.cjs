@@ -48,7 +48,7 @@ for(const [which,X]of [["set",P],["cash",P.CASH]]){
   gate(`${which}/${id} registry edit range`,rec&&rec.edits.count>0&&rec.edits.first+rec.edits.count<=pl.edits.length);
   gate(`${which}/${id} generation edit parts close`,Array.from({length:rec.edits.count},(_,j)=>{const e=pl.edits[rec.edits.first+j],parts=Object.entries(rec.parts).filter(([,p])=>p.edit===j);return parts.length>0&&parts.every(([name])=>/^(union_(G1|G2|G3plus):|lineage_)/.test(name))&&["personal","shared"].every(a=>near(sum(parts.map(([,p])=>p.by[a])),e.by[a]));}).every(Boolean));
  }
- for(const id of ["native_minor_calibration","coverage_tenure",...(P.CANDIDATE.includes(P.PASS.id)?[P.PASS.id]:[])]){
+ for(const id of ["native_minor_calibration","coverage_tenure","health_residual_key",...(P.CANDIDATE.includes(P.PASS.id)?[P.PASS.id]:[])]){
   const block=pl.meta[id],record=pl.meta.items.find(r=>r.id===id);
   gate(`${which}/${id} post-engine registry route`,!!block&&!!record&&record.kind==="post_engine"&&record.post_engine_by_end);
   for(const end of ["low","high"]){const z=block.by_end[end],parts=z.by_generation_bn;gate(`${which}/${id}/${end} generation parts close`,parts&&near(sum(Object.values(parts)),z.total_bn),parts);const routed=routeGenerations(parts);gate(`${which}/${id}/${end} generation consumer routes descendants to G3plus`,near(sum(Object.values(routed)),z.total_bn),routed);}
@@ -71,9 +71,27 @@ for(const [which,X]of [["set",P],["cash",P.CASH]]){
  const pop=pl.meta.population_v9,old=pl.meta.population_v8,cal=pl.meta.native_minor_calibration,ten=pl.meta.coverage_tenure;
  gate(`${which} calibrated denominator equals declared count changes`,near(pop.with_coverage,old.with_coverage+cal.population_change+ten.population_change,1e-6));
  gate(`${which} calibrated denominator available without coverage`,Number.isFinite(pop.without_coverage)&&pop.with_coverage>pop.without_coverage);
+ gate(`${which} population parts close`,near(pop.without_coverage+pop.coverage,pop.with_coverage,1e-6));
+ const firstOptions={long_run:false,rental:0,capital:false,enterprise_receipt:0,school_rule:"one_year",roads:"resources",property:"none",item6_first_year:true};
+ const firstSpecs=X.specsFor(firstOptions);
+ for(const method of P.METHODS)for(const i of [16,11]){
+  const s=firstSpecs[i],fm=X.modelFor("central",method,X.withCentral(firstOptions)),r=X.evaluateFull(fm,s),military=r.v9_post_engine.parts.veterans_compensation;
+  gate(`${which}/${i} long_run false rejects steady-state item13`,!s.long_run&&r.v9_post_engine.amounts.veterans_compensation===0&&military.length>0&&military.every(p=>p.delta_bn===0&&p.response===1));
+  gate(`${which}/${i} first-year military source responses`,military.every(p=>r.evaluation.spending.find(l=>l.id===p.source_line)?.response===1));
+  const expected=-sum(pl.meta.veterans_compensation.by_end[s.reading].by_method[method].parts.filter(p=>p.population!=="coverage").map(p=>p.delta_bn));
+  gate(`${which}/${i} first-year restoration excludes already-responsive pension`,near(sum(military.map(p=>p.first_year_restored_bn)),expected));
+  const health=r.v9_post_engine.parts.health_residual_key;
+  gate(`${which}/${i} item21 allocation retained in first year`,health.some(p=>p.source_line==="health_services"&&Math.abs(p.delta_bn)>1)&&health.filter(p=>Number.isFinite(p.capital_stock_delta_bn)).every(p=>p.delta_bn===0));
+ }
  gate(`${which} default household basket arm`,pl.meta.consumption_tax_bases.arm==="household_joint");
  gate(`${which} item19 switch controls central selection`,P.ITEM19==="1"?pl.meta.passthrough_source_tax?.arm===P.DEFAULT_ARMS.passthrough_source_tax:!Object.hasOwn(pl.meta,"passthrough_source_tax")&&!pl.meta.items.some(x=>x.id===P.PASS.id));
  gate(`${which} default one-rate arm`,pl.meta.one_rate.arm==="B");
+}
+const oldHealth=P.caseOf(P.OCT05,P.CANDIDATE,{health_residual_key:"old_key"});
+const offHealth=P.caseOf(P.OCT05,P.CANDIDATE.filter(id=>id!=="health_residual_key"));
+for(const [which,X,Y]of [["set",oldHealth,offHealth],["cash",oldHealth.CASH,offHealth.CASH]])for(const i of [16,11]){
+ gate(`${which}/${i} old-key arm reproduces complete pre21 case`,near(X.cost(X.payloadModel(),X.MAIN_SPECS[i]),Y.cost(Y.payloadModel(),Y.MAIN_SPECS[i])));
+ gate(`${which}/${i} old-key source increment zero`,X.postFor(X.payloadModel(),X.MAIN_SPECS[i]).parts.health_residual_key.every(p=>p.delta_bn===0));
 }
 const with19=P.REGISTRY.filter(x=>P.CANDIDATE.includes(x.id)||x.id===P.PASS.id).map(x=>x.id);
 const beside=P.caseOf(P.OCT05,with19);

@@ -3,12 +3,12 @@
  "stub13": false,
  "coverage_mode": "repriced",
  "band": [
-  344.02328615247666,
-  412.55507412763035
+  368.02973917888073,
+  436.56152715403437
  ],
  "cash": [
-  260.39059043224427,
-  328.922378407397
+  284.39704345864834,
+  352.92883143380107
  ],
  "changes": {
   "veterans_compensation": {
@@ -80,17 +80,27 @@
     1.5835032591934919,
     -19.699745780011597
    ]
+  },
+  "health_residual_key": {
+   "set": [
+    24.04215104950424,
+    24.370900273740972
+   ],
+   "cash": [
+    24.042151049504128,
+    24.370900273740972
+   ]
   }
  },
  "interactions": {
   "total": {
    "set": [
-    0.12229822481879182,
-    0.44593876982474967
+    0.0866002017186247,
+    0.08149152248779501
    ],
    "cash": [
-    0.12409109545899355,
-    0.4477316404645535
+    0.08839307235894012,
+    0.08328439312765568
    ]
   },
   "pairs": {
@@ -154,6 +164,16 @@
      -5.684341886080802e-14
     ]
    },
+   "veterans_compensation+health_residual_key": {
+    "set": [
+     -1.1368683772161603e-13,
+     -5.684341886080802e-14
+    ],
+    "cash": [
+     1.1368683772161603e-13,
+     0
+    ]
+   },
    "income_security_administration+public_college_response": {
     "set": [
      0,
@@ -204,6 +224,16 @@
      0
     ]
    },
+   "income_security_administration+health_residual_key": {
+    "set": [
+     -5.684341886080802e-14,
+     0
+    ],
+    "cash": [
+     5.684341886080802e-14,
+     0
+    ]
+   },
    "public_college_response+native_minor_calibration": {
     "set": [
      0,
@@ -244,6 +274,16 @@
      0.17554892662627708
     ]
    },
+   "public_college_response+health_residual_key": {
+    "set": [
+     0,
+     0
+    ],
+    "cash": [
+     5.684341886080802e-14,
+     0
+    ]
+   },
    "native_minor_calibration+coverage_tenure": {
     "set": [
      -0.006553013980692413,
@@ -274,6 +314,16 @@
      0.1311564651771846
     ]
    },
+   "native_minor_calibration+health_residual_key": {
+    "set": [
+     -1.1368683772161603e-13,
+     0
+    ],
+    "cash": [
+     1.1368683772161603e-13,
+     0
+    ]
+   },
    "coverage_tenure+consumption_tax_bases": {
     "set": [
      0,
@@ -294,6 +344,16 @@
      -0.008571509959949708
     ]
    },
+   "coverage_tenure+health_residual_key": {
+    "set": [
+     0,
+     0
+    ],
+    "cash": [
+     1.1368683772161603e-13,
+     0
+    ]
+   },
    "consumption_tax_bases+one_rate": {
     "set": [
      0,
@@ -303,16 +363,36 @@
      5.684341886080802e-14,
      0
     ]
+   },
+   "consumption_tax_bases+health_residual_key": {
+    "set": [
+     -1.1368683772161603e-13,
+     0
+    ],
+    "cash": [
+     1.1368683772161603e-13,
+     0
+    ]
+   },
+   "one_rate+health_residual_key": {
+    "set": [
+     0.026651658983269044,
+     -0.30209756525346165
+    ],
+    "cash": [
+     0.02665165898338273,
+     -0.3020975652535185
+    ]
    }
   },
   "higher_order": {
    "set": [
-    0.15437850796809016,
-    0.15462168182847336
+    0.0920288258850519,
+    0.09227199974503719
    ],
    "cash": [
-    0.15437850796666908,
-    0.15462168182824598
+    0.09202882588266448,
+    0.09227199974486666
    ]
   }
  },
@@ -1531,6 +1611,16 @@
    "details": null
   },
   {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
    "name": "source item13 set/low",
    "pass": true,
    "details": {
@@ -1624,6 +1714,86 @@
    "details": {
     "actual": -4.279311499191067,
     "expected": -4.279311499191054
+   }
+  },
+  {
+   "name": "source item21 explicit oracle set/low",
+   "pass": true,
+   "details": {
+    "case": "standalone_v8",
+    "which": "set",
+    "arm": "central",
+    "end": "low",
+    "specification": 16,
+    "before_bn": 365.7919302554848,
+    "change_bn": 24.042151049504184,
+    "after_bn": 389.83408130498896,
+    "baseline_source": "verified live v8 principal",
+    "original_union_bn": 22.877865004172524,
+    "added_lineage_bn": 0.14348234963061615,
+    "completion_bn": 0.03648613445818377,
+    "coverage_bn": 0.984317561242868,
+    "capital_rate": 0.02
+   }
+  },
+  {
+   "name": "source item21 explicit oracle set/high",
+   "pass": true,
+   "details": {
+    "case": "standalone_v8",
+    "which": "set",
+    "arm": "central",
+    "end": "high",
+    "specification": 11,
+    "before_bn": 455.9817845889793,
+    "change_bn": 24.37090027374097,
+    "after_bn": 480.35268486272025,
+    "baseline_source": "verified live v8 principal",
+    "original_union_bn": 23.190601746259876,
+    "added_lineage_bn": 0.1455057788670556,
+    "completion_bn": 0.03700008848464067,
+    "coverage_bn": 0.9977926601294018,
+    "capital_rate": 0.03
+   }
+  },
+  {
+   "name": "source item21 explicit oracle cash/low",
+   "pass": true,
+   "details": {
+    "case": "standalone_v8",
+    "which": "cash",
+    "arm": "central",
+    "end": "low",
+    "specification": 16,
+    "before_bn": 281.75256367607324,
+    "change_bn": 24.042151049504184,
+    "after_bn": 305.7947147255774,
+    "baseline_source": "verified live v8 principal",
+    "original_union_bn": 22.877865004172524,
+    "added_lineage_bn": 0.14348234963061615,
+    "completion_bn": 0.03648613445818377,
+    "coverage_bn": 0.984317561242868,
+    "capital_rate": 0.02
+   }
+  },
+  {
+   "name": "source item21 explicit oracle cash/high",
+   "pass": true,
+   "details": {
+    "case": "standalone_v8",
+    "which": "cash",
+    "arm": "central",
+    "end": "high",
+    "specification": 11,
+    "before_bn": 371.9424180095669,
+    "change_bn": 24.37090027374097,
+    "after_bn": 396.31331828330786,
+    "baseline_source": "verified live v8 principal",
+    "original_union_bn": 23.190601746259876,
+    "added_lineage_bn": 0.1455057788670556,
+    "completion_bn": 0.03700008848464067,
+    "coverage_bn": 0.9977926601294018,
+    "capital_rate": 0.03
    }
   },
   {
@@ -1753,6 +1923,76 @@
   },
   {
    "name": "source20 armB cash/1",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
    "pass": true,
    "details": null
   },
@@ -4078,7 +4318,19 @@
     "without_coverage": 42951314.00418314,
     "with_coverage": 44903074.086245224,
     "completion": 517435.75719317,
-    "coverage": 1960413.6191801599,
+    "coverage": 1951760.0820620805,
+    "native_minor_calibration": -326988.2145133476,
+    "tenure": 5.820766091346741e-11
+   }
+  },
+  {
+   "name": "population parts add to denominator",
+   "pass": true,
+   "details": {
+    "without_coverage": 42951314.00418314,
+    "with_coverage": 44903074.086245224,
+    "completion": 517435.75719317,
+    "coverage": 1951760.0820620805,
     "native_minor_calibration": -326988.2145133476,
     "tenure": 5.820766091346741e-11
    }
@@ -4140,6 +4392,16 @@
   },
   {
    "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "first-year ends searched in both methods set",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "first-year ends searched in both methods cash",
    "pass": true,
    "details": null
   },

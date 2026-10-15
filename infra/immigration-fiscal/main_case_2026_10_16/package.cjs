@@ -13,13 +13,21 @@ const HERE=__dirname,LANE="main_case_2026_10_16",CASE_KEY="oct16";
 const DECISION="decisions/2026-10-16-main-case-v9.md",STATUS=process.env.V9_STATUS||"candidate";
 const COVERAGE_MODE=process.env.V9_COVERAGE||"repriced";
 const clone=x=>JSON.parse(JSON.stringify(x)),sum=a=>a.reduce((x,y)=>x+y,0);
+const PRINCIPAL_LINEAGE=V8.correctionsPayload().meta.lineage;
 const meanNumbers=a=>sum(a)/a.length;
 const fail=s=>{throw Error("[BLOCKED] v9: "+s);};
 if(!["base","repriced"].includes(COVERAGE_MODE))fail("unknown V9_COVERAGE");
 if(!["candidate","adopted"].includes(STATUS))fail("unknown V9_STATUS");
 if(STATUS==="adopted"&&!fs.existsSync(path.resolve(HERE,"../../..",DECISION)))fail("adoption requires decision file");
-const NEW=SPEND.REGISTRY.concat(COUNT_ITEMS.REGISTRY,[BASKET.registry(),{id:PASS.id,kind:PASS.kind,label:"pass-through source taxes",arms:PASS.arms(),build:PASS.build},RATE.registry]);
+const NEW=SPEND.REGISTRY.filter(x=>x.number!==21).concat(COUNT_ITEMS.REGISTRY,[BASKET.registry(),{id:PASS.id,kind:PASS.kind,label:"pass-through source taxes",arms:PASS.arms(),build:PASS.build},RATE.registry],SPEND.REGISTRY.filter(x=>x.number===21));
 const NEW_IDS=NEW.map(x=>x.id),REGISTRY=V8.REGISTRY.concat(NEW);
+if(NEW_IDS.includes("health_residual_key")){
+ const receipt=path.join(HERE,"inputs/item21_ready.json");
+ if(!fs.existsSync(receipt))fail("item21 readiness receipt absent; run source_check first");
+ const ready=JSON.parse(fs.readFileSync(receipt,"utf8"));
+ for(const [relative,expected]of Object.entries(ready.hashes||{}))if(require("crypto").createHash("sha256").update(fs.readFileSync(path.join(HERE,"..",relative))).digest("hex")!==expected)fail("item21 readiness source changed "+relative);
+ if(ready.completion_marker!=="ITEM21_READY"||Object.keys(ready.hashes||{}).length!==6)fail("item21 readiness receipt incomplete");
+}
 const ITEM19=process.env.ITEM19||"0";
 if(!["0","1"].includes(ITEM19))fail("ITEM19 must be 0 (beside) or 1 (conditional central)");
 const CANDIDATE=V8.CANDIDATE.concat(NEW_IDS.filter(id=>ITEM19==="1"||id!==PASS.id));
@@ -78,6 +86,7 @@ function layer(base,built,which,identity){
   if(!out||!out.meta||!out.population)fail("invalid coverage integration");
   Object.assign(meta,out.meta);population=out.population;coverageOverride=out.coverageOverride;
  }
+ population.coverage=population.with_coverage-population.without_coverage;
  const stamp=identity.stamp;
  const payloadFor=o=>{
   const bp=base.correctionsPayload(o),out=clone(bp),ee=[],rr=clone(records);let m=V8.Engine.applyCorrections(V8.MODEL,bp);
@@ -92,6 +101,7 @@ function layer(base,built,which,identity){
   Object.assign(out.meta,clone(meta),{source:LANE+"/package.cjs",decision:DECISION,adopted:stamp==="adopted"?"2026-10-16":null,status:stamp+": main case v9",case:bp.meta.case+"; v9 "+stamp,population_v9:clone(population),items:(bp.meta.items||[]).concat(rr),v9:{coverage_mode:COVERAGE_MODE,stub13:STUB13,selected_items:identity.ids,default_arms:DEFAULT_ARMS,post_engine_rule:"evaluateFull or postFor; method-specific spending and specification-specific capital"}});
   return out;
  };
+ if(meta.health_residual_key)meta.health_residual_key.parent_transport={allocation:"delivered personal original-union/completion donor prices carried under shared specifications; own household donor calibration not measured",lineage:"source own-age profiles held; each added-lineage profile follows its declared count/C3 mass",coverage_count:"source-owned arm-specific signed coverage/count increments; central count kernel carried under lineage/DA options"};
  const payload=payloadFor();
  function apply(m,o){
   // modelFor's inherited incremental route does not carry v8's carrier index.
@@ -107,11 +117,26 @@ function layer(base,built,which,identity){
    if(Object.hasOwn(SPEND.IDS,13)&&Object.values(SPEND.IDS).includes(item.id)){
     const n=Number(Object.keys(SPEND.IDS).find(n=>SPEND.IDS[n]===item.id));
     let priceRun=r,priceSpec=s;
+    if(n===21)priceSpec={...s,health_residual_rate:s.rate?(meta.one_rate?RATE.rateFor(meta.one_rate,s):s.rate):0};
     if(n===15&&!s.rate){
      priceSpec={...s,rate:base.RATES[s.reading]};
      priceRun={...r,capital:base.capitalReturn(r.evaluation,priceSpec)};
     }
     let rows=SPEND.deltaParts(n,x.detail,sourceApi,priceRun,priceSpec,arm);
+    if(n===21){
+     const principal=PRINCIPAL_LINEAGE,current=p0.meta.lineage;
+     const masses=l=>({lineage_later_g3:l.counts.later_losses,lineage_g3_rate_g3:l.counts.at_g3_rate*(1-l.c3.value),lineage_g3_rate_white:l.counts.at_g3_rate*l.c3.value});
+     const before=masses(principal),after=masses(current);
+     rows=rows.map(q=>{
+      if(q.population!=="added_lineage")return q;
+      if(!Object.hasOwn(before,q.profile)||!(before[q.profile]>0))fail("item21 lineage profile absent "+q.profile);
+      const factor=after[q.profile]/before[q.profile],out={...q,lineage_count_factor:factor,lineage_rule:"source own-age profile held; each declared lineage part follows its own count/C3 mass"};
+      for(const key of ["delta_bn","change_bn","before_bn","after_bn","capital_stock_delta_bn","capital_stock_before_bn"])if(Number.isFinite(q[key]))out[key]=q[key]*factor;
+      return out;
+     });
+    }
+    // The inherited specs encode an explicit long_run:false request as null.
+    if(n===13&&!s.long_run)rows=rows.map(q=>({...q,after_bn:q.before_bn,delta_bn:0,response:1,first_year_restored_bn:-q.delta_bn,horizon_rule:"first year: removed entitlements stop; no replacement veterans yet"}));
     if(n===15&&!s.rate)rows=rows.map(q=>q.kind==="college_capital"?{...q,before_bn:0,after_bn:0,delta_bn:0}:q);
     if(coverageOverride)rows=rows.filter(q=>q.population!=="coverage");
     amounts[item.id]=sum(rows.map(q=>q.delta_bn));parts[item.id]=rows;

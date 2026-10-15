@@ -28,6 +28,9 @@ for(const arm of ["B","A","v8","both_highrate","capital_7pct"]){
   for(const [end,k]of [["low",0],["high",1]]){
    const r=runs[k],parts=r.v9_post_engine.parts.one_rate,of=component=>sum(parts.filter(p=>p.component===component).map(p=>p.delta_bn));
    gate(`${arm}/${which}/${end} component closure`,near(sum(parts.map(p=>p.delta_bn)),r.v9_post_engine.amounts.one_rate));
+   const health=r.v9_post_engine.parts.health_residual_key.filter(p=>Number.isFinite(p.capital_stock_delta_bn));
+   const effective=R.rateFor(X.POST_ENGINE.one_rate,X.MAIN_SPECS[k?11:16]);
+   gate(`${arm}/${which}/${end} item21 capital uses selected common rate once`,health.length>0&&health.every(p=>near(p.delta_bn,p.capital_stock_delta_bn*effective)));
    if(P.COVERAGE_MODE==="repriced"){
     const spec=X.MAIN_SPECS[k?11:16],target=R.rateFor(X.POST_ENGINE.one_rate,spec),cap=X.POST_ENGINE.coverage.by_end[end].decomposition.line_parts.filter(p=>p.source_side==="capital");
     gate(`${arm}/${which}/${end} own coverage rate`,near(of("capital_own_coverage_rate_interaction"),sum(cap.map(p=>p.coverage_bn))*(target/R.RATE-1)));

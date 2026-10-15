@@ -1,7 +1,7 @@
 {
   "pass": true,
   "source": "coverage_bound_2026_10_14/derived/coverage_bound_oct16.json",
-  "sha256": "9d8b88647e0845e0734b641afecb72df3de6d173b61848ceefdf019fe9804c27",
+  "sha256": "b38985b08a39687cb530baa147f72f8e4976012750dd36de0fd795ca007be402",
   "stub13": false,
   "checks": [
     {
@@ -21,11 +21,19 @@
       "pass": true
     },
     {
+      "check": "set/low first-year coverage restores every item13 subblock",
+      "pass": true
+    },
+    {
       "check": "set/high finite exact generation closure",
       "pass": true
     },
     {
       "check": "set/high declared coverage delta plus exact interaction",
+      "pass": true
+    },
+    {
+      "check": "set/high first-year coverage restores every item13 subblock",
       "pass": true
     },
     {
@@ -73,11 +81,19 @@
       "pass": true
     },
     {
+      "check": "cash/low first-year coverage restores every item13 subblock",
+      "pass": true
+    },
+    {
       "check": "cash/high finite exact generation closure",
       "pass": true
     },
     {
       "check": "cash/high declared coverage delta plus exact interaction",
+      "pass": true
+    },
+    {
+      "check": "cash/high first-year coverage restores every item13 subblock",
       "pass": true
     },
     {
@@ -130,6 +146,22 @@
     },
     {
       "check": "principal source consumption_tax_bases_r5_2026_10_15/derived/item.json",
+      "pass": true
+    },
+    {
+      "check": "principal source spending_keys_r5_2026_10_15/derived/item21.json",
+      "pass": true
+    },
+    {
+      "check": "principal source spending_keys_r5_2026_10_15/derived/item21_coverage.json",
+      "pass": true
+    },
+    {
+      "check": "principal source spending_keys_r5_2026_10_15/derived/item21_v9_coverage.json",
+      "pass": true
+    },
+    {
+      "check": "principal source coverage_bound_2026_10_14/coverage_item21_oct16.py",
       "pass": true
     },
     {

@@ -15703,7 +15703,7 @@
    "without_coverage": 42951314.00418314,
    "with_coverage": 44903074.086245224,
    "completion": 517435.75719317,
-   "coverage": 1960413.6191801599,
+   "coverage": 1951760.0820620805,
    "native_minor_calibration": -326988.2145133476,
    "tenure": 5.820766091346741e-11
   },
@@ -15714,7 +15714,8 @@
    "native_minor_calibration",
    "coverage_tenure",
    "consumption_tax_bases",
-   "one_rate"
+   "one_rate",
+   "health_residual_key"
   ],
   "corrections": "corrections.json",
   "rule": "original lineage construction retained as historical; full edits and post amounts in current corrections payload"

@@ -6,7 +6,7 @@ const CASE=arg("--case","oct16"),which=CASE==="oct16"?"set":CASE==="oct16_cash"?
 if(!which)throw Error("[BLOCKED] --case must be oct16 or oct16_cash");
 const api=which==="set"?P:P.CASH,OUT=path.resolve(arg("--out-dir",path.join(__dirname,"derived"))),start=performance.now();
 const all=api.MAIN_SPECS.map(s=>api.evaluateFull(api.payloadModel(),s,api.MAIN_PROFILE).cost_bn),ends=[all.indexOf(Math.min(...all)),all.indexOf(Math.max(...all))];
-const summary={case:CASE,set:which,lane:P.LANE,payload:`${P.LANE}/derived/corrections${which==="cash"?"_cash":""}.json`,specifications:{low_index:ends[0],high_index:ends[1]},union:{cost_bn:ends.map(i=>all[i]),population:api.POPULATION_V9.with_coverage},conventions:{},routing:{selected_items:P.CANDIDATE,new_posts:"declared selected16/17 generation parts; optional19 routes added_G3plus only when selected beside; other line/capital sources follow existing generation source amounts at each specification"},gates:{all_specifications_close:true}};
+const summary={case:CASE,set:which,lane:P.LANE,payload:`${P.LANE}/derived/corrections${which==="cash"?"_cash":""}.json`,specifications:{low_index:ends[0],high_index:ends[1]},union:{cost_bn:ends.map(i=>all[i]),population:api.POPULATION_V9.with_coverage},conventions:{},routing:{selected_items:P.CANDIDATE,new_posts:"declared selected16/17 generation parts; optional19 routes added_G3plus only when selected beside; item21 follows item13 health-subblock line/population/generation routing; other line/capital sources follow existing generation source amounts at each specification"},gates:{all_specifications_close:true}};
 const rows=[],payloads={};
 for(const convention of ["a","b"]){
  const values=api.MAIN_SPECS.map(s=>V.generationParts(api,s,convention));

@@ -1,0 +1,11 @@
+{
+ "completion_marker": "ITEM21_READY",
+ "hashes": {
+  "spending_keys_r5_2026_10_15/health_item.cjs": "7df269198cd6a1038277313689597bdb097955daf48ecc930896dbfcc4133213",
+  "spending_keys_r5_2026_10_15/derived/item21.json": "7d26a46cb18dec14819bd7d9be2bf260c6eee68f857488c0f02f23e8a0672b1d",
+  "spending_keys_r5_2026_10_15/derived/item21_coverage.json": "b0c81ec47cb2a5708d944fff0691fcd77a1bb21597af967d9c7bf6cc93a5abf9",
+  "spending_keys_r5_2026_10_15/derived/item21_v9_coverage.json": "c2baf2ce5db3b56d6109593d5f7d21a94bd1a61eeded1890efb1c27aac546317",
+  "spending_keys_r5_2026_10_15/derived/item21_v9_count_parts.csv": "d6ef71048f35da5a318739e12bade2dbc0c52d9c8640387c24c60b56c44bed41",
+  "spending_keys_r5_2026_10_15/derived/item21_case_changes.json": "e47508d9fb84e633dd11bf692b1897babd2ad01d8a4cb61c9883a1c9a984902c"
+ }
+}

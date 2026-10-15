@@ -75,7 +75,9 @@ function withCase(pkg, variant, f) {
     const cap = pkg.capitalReturn(ev, { share: st.school_share, reading, rate: P.RATES[reading], enterprises: P.ENTERPRISES, long_run: null });
     const ent = cap.components.filter(c => c.group === "enterprise").reduce((a, c) => a + c.return_bn, 0);
     const capital = cap.total_bn - (atS ? (1 - s) * ent : 0);
-    const spec={allocation:st.allocation,reading,share:st.school_share,school:st.service_response,gg:st.general_government_response,uc:st.uncompensated_care_response,rate:pkg.RATES[reading],enterprises:pkg.ENTERPRISES,long_run:null};
+    // This sweeps service responses in a steady-state account. null would be
+    // indistinguishable from specsFor(long_run:false)'s first-year horizon.
+    const spec={allocation:st.allocation,reading,share:st.school_share,school:st.service_response,gg:st.general_government_response,uc:st.uncompensated_care_response,rate:pkg.RATES[reading],enterprises:pkg.ENTERPRISES,long_run:true};
     const basePost=pkg.OCT15?pkg.OCT15.postEngine(spec):(pkg.postEngine?pkg.postEngine(spec):0);
     const adjustedCapital=atS?{...cap,total_bn:capital,components:cap.components.map(c=>c.group==="enterprise"?{...c,return_bn:c.return_bn*s}:c)}:cap;
     const added=pkg.postFor?pkg.postFor(m,spec,undefined,{evaluation:ev,capital:adjustedCapital}):{total_bn:0};

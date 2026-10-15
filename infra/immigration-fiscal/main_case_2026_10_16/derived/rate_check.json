@@ -88,6 +88,10 @@
    "pass": true
   },
   {
+   "check": "B/set/low item21 capital uses selected common rate once",
+   "pass": true
+  },
+  {
    "check": "B/set/low own coverage rate",
    "pass": true
   },
@@ -108,6 +112,10 @@
    "pass": true
   },
   {
+   "check": "B/set/high item21 capital uses selected common rate once",
+   "pass": true
+  },
+  {
    "check": "B/set/high own coverage rate",
    "pass": true
   },
@@ -125,6 +133,10 @@
   },
   {
    "check": "B/cash/low component closure",
+   "pass": true
+  },
+  {
+   "check": "B/cash/low item21 capital uses selected common rate once",
    "pass": true
   },
   {
@@ -152,6 +164,10 @@
    "pass": true
   },
   {
+   "check": "B/cash/high item21 capital uses selected common rate once",
+   "pass": true
+  },
+  {
    "check": "B/cash/high own coverage rate",
    "pass": true
   },
@@ -173,6 +189,10 @@
   },
   {
    "check": "A/set/low component closure",
+   "pass": true
+  },
+  {
+   "check": "A/set/low item21 capital uses selected common rate once",
    "pass": true
   },
   {
@@ -208,6 +228,10 @@
    "pass": true
   },
   {
+   "check": "A/set/high item21 capital uses selected common rate once",
+   "pass": true
+  },
+  {
    "check": "A/set/high own coverage rate",
    "pass": true
   },
@@ -240,6 +264,10 @@
    "pass": true
   },
   {
+   "check": "A/cash/low item21 capital uses selected common rate once",
+   "pass": true
+  },
+  {
    "check": "A/cash/low own coverage rate",
    "pass": true
   },
@@ -261,6 +289,10 @@
   },
   {
    "check": "A/cash/high component closure",
+   "pass": true
+  },
+  {
+   "check": "A/cash/high item21 capital uses selected common rate once",
    "pass": true
   },
   {
@@ -288,6 +320,10 @@
    "pass": true
   },
   {
+   "check": "v8/set/low item21 capital uses selected common rate once",
+   "pass": true
+  },
+  {
    "check": "v8/set/low own coverage rate",
    "pass": true
   },
@@ -308,6 +344,10 @@
    "pass": true
   },
   {
+   "check": "v8/set/high item21 capital uses selected common rate once",
+   "pass": true
+  },
+  {
    "check": "v8/set/high own coverage rate",
    "pass": true
   },
@@ -325,6 +365,10 @@
   },
   {
    "check": "v8/cash/low component closure",
+   "pass": true
+  },
+  {
+   "check": "v8/cash/low item21 capital uses selected common rate once",
    "pass": true
   },
   {
@@ -352,6 +396,10 @@
    "pass": true
   },
   {
+   "check": "v8/cash/high item21 capital uses selected common rate once",
+   "pass": true
+  },
+  {
    "check": "v8/cash/high own coverage rate",
    "pass": true
   },
@@ -373,6 +421,10 @@
   },
   {
    "check": "both_highrate/set/low component closure",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/set/low item21 capital uses selected common rate once",
    "pass": true
   },
   {
@@ -408,6 +460,10 @@
    "pass": true
   },
   {
+   "check": "both_highrate/set/high item21 capital uses selected common rate once",
+   "pass": true
+  },
+  {
    "check": "both_highrate/set/high own coverage rate",
    "pass": true
   },
@@ -440,6 +496,10 @@
    "pass": true
   },
   {
+   "check": "both_highrate/cash/low item21 capital uses selected common rate once",
+   "pass": true
+  },
+  {
    "check": "both_highrate/cash/low own coverage rate",
    "pass": true
   },
@@ -461,6 +521,10 @@
   },
   {
    "check": "both_highrate/cash/high component closure",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/cash/high item21 capital uses selected common rate once",
    "pass": true
   },
   {
@@ -488,6 +552,10 @@
    "pass": true
   },
   {
+   "check": "capital_7pct/set/low item21 capital uses selected common rate once",
+   "pass": true
+  },
+  {
    "check": "capital_7pct/set/low own coverage rate",
    "pass": true
   },
@@ -508,6 +576,10 @@
    "pass": true
   },
   {
+   "check": "capital_7pct/set/high item21 capital uses selected common rate once",
+   "pass": true
+  },
+  {
    "check": "capital_7pct/set/high own coverage rate",
    "pass": true
   },
@@ -525,6 +597,10 @@
   },
   {
    "check": "capital_7pct/cash/low component closure",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/cash/low item21 capital uses selected common rate once",
    "pass": true
   },
   {
@@ -549,6 +625,10 @@
   },
   {
    "check": "capital_7pct/cash/high component closure",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/cash/high item21 capital uses selected common rate once",
    "pass": true
   },
   {
@@ -583,52 +663,52 @@
  "arms": {
   "B": {
    "set": [
-    344.02328615247654,
-    412.55507412763023
+    368.0297391788806,
+    436.5615271540343
    ],
    "cash": [
-    260.39059043224484,
-    328.922378407397
+    284.39704345864885,
+    352.92883143380107
    ]
   },
   "A": {
    "set": [
-    344.24749162918414,
-    395.3631604017713
+    368.22736489544155,
+    419.67089601738905
    ],
    "cash": [
-    258.8325026429657,
-    348.32525863115575
+    282.8123759092231,
+    372.6329942467735
    ]
   },
   "v8": {
    "set": [
-    342.46519836319743,
-    431.95795435138893
+    366.44507162945484,
+    456.2656899670067
    ],
    "cash": [
-    258.8325026429657,
-    348.32525863115575
+    282.8123759092231,
+    372.6329942467735
    ]
   },
   "both_highrate": {
    "set": [
-    325.08947637977406,
-    395.3631604017713
+    349.3972119953918,
+    419.67089601738905
    ],
    "cash": [
-    278.05157460915996,
-    348.32525863115575
+    302.3593102247777,
+    372.6329942467735
    ]
   },
   "capital_7pct": {
    "set": [
-    438.5605581941688,
-    516.4165207905787
+    464.1797432072279,
+    542.0357058036379
    ],
    "cash": [
-    354.927862473937,
-    432.78382507034553
+    380.5470474869962,
+    458.40301008340464
    ]
   }
  },

@@ -25,6 +25,9 @@ function deltaParts(Q,which,s,r){
  const out=Object.fromEntries(G.slice(0,3).map(g=>[g,split.costs[g]-split.old_costs[g]]));out.added=0;
  const dm=descendantModels(X),a=X.postFor(dm.current,s),b=X.postFor(dm.strippedNew,s);
  let added=0;for(const id of ["veterans_compensation","income_security_administration","public_college_response","one_rate"])added+=(a.amounts[id]||0)-(b.amounts[id]||0);
+ // Item21 is additive, with declared population parts, so removing model edits
+ // cannot isolate its descendants. Use its own delivered population declaration.
+ added+=sum((a.parts.health_residual_key||[]).filter(p=>p.population==="added_lineage").map(p=>p.delta_bn));
  // The receipt edits also apply to native added-person cells. The matched
  // double difference isolates their actual source amount, without a headcount split.
  const E=X.OCT15.evaluateFull;
@@ -39,7 +42,7 @@ function countParts(block,end){
  if(!block?.parts_file)return [];
  const source=csv(block.parts_file),out=[];
  for(const [scenario,sign]of [[block.parts_scenario,1],[block.subtract_parts_scenario,-1]])if(scenario)
-  for(const p of source)if(p.scenario===scenario&&p.end===end)out.push({...p,value_bn:sign*Number(p.change_bn)});
+  for(const p of source)if(p.scenario===scenario&&p.end===end)out.push({...p,value_bn:sign*Number(p.change_bn),item13_first_year_addback_bn:sign*Number(p.item13_first_year_addback_bn||0)});
  if(!near(sum(out.map(p=>p.value_bn)),block.by_end[end].total_bn))fail(`count parts do not close ${block.parts_scenario}/${end}`);
  return out;
 }
@@ -61,9 +64,21 @@ function companionPost(X,s,r,rule="central"){
  const old=OLD.companionPost(X,s,r,rule),parts=[],by_item={};
  const central=X.OCT15.evaluateFull(X.OCT15.payloadModel(),X.OCT15.MAIN_SPECS[s.reading==="low"?16:11]);
  let extra=0;
+ if(rule==="first_year"){
+  let addback=0;
+  for(const [i,p] of X.POST_ENGINE.coverage.by_end[s.reading].decomposition.line_parts.entries()){
+   if(!p.item13_first_year_addback_bn)continue;
+   if(p.source_side!=="spending")fail("military addback has a non-spending source");
+   const v=(p.item13_first_year_addback_bn||0)*(p.source_response?responseAt(r,p)/p.source_response:1);
+   if(v){addback+=v;old.by_generation[p.generation].coverage_bn+=v;old.line_parts[i].coverage_bn+=v;old.line_parts[i].item13_restored_bn=v;}
+  }
+  old.coverage_bn+=addback;extra+=addback;
+  if(!near(sum(old.line_parts.map(p=>p.coverage_bn)),old.coverage_bn))fail("first-year restored coverage parts do not close");
+  by_item.item13_coverage_first_year={addback_bn:addback,rule:"restore each signed military coverage piece before first-year source-response transport"};
+ }
  for(const id of ["native_minor_calibration","coverage_tenure"]){
   const b=X.POST_ENGINE[id];if(!b)continue;
-  let total=0;for(const p of countParts(b,s.reading)){const scale=multiplier(X,s,r,p,rule,central),v=p.value_bn*scale;total+=v;parts.push({...p,item:id,multiplier:scale,companion_bn:v});}
+  let total=0;for(const p of countParts(b,s.reading)){const scale=multiplier(X,s,r,p,rule,central),restore=rule==="first_year"?p.item13_first_year_addback_bn:0,v=(p.value_bn+restore)*scale;total+=v;parts.push({...p,item:id,multiplier:scale,companion_bn:v});}
   by_item[id]={central_bn:b.by_end[s.reading].total_bn,companion_bn:total,rule:"source-line response transport; capital zero in first year; unclassified residuals held"};extra+=total-b.by_end[s.reading].total_bn;
  }
  const b=X.POST_ENGINE.passthrough_source_tax;
@@ -79,7 +94,22 @@ function firstYear(Q,which="set"){
  const o={long_run:false,rental:0,capital:false,enterprise_receipt:0,school_rule:"one_year",roads:"resources",property:"none",item6_first_year:true};
  const specs=X.specsFor(o);for(const s of specs)for(const id of ["corporate_capital","corporate_labor","remaining_production_property","other_production_taxes"])s.line_responses[`receipt:${id}`]*=FY.multiplier(id,"fixed_capital",c);
  const models=Q.METHODS.map(method=>X.modelFor("central",method,X.withCentral(o))),runs=models.map(m=>specs.map(s=>adjustedRun(X,m,s,"first_year"))),costs=runs.map(rs=>rs.map(r=>r.cost_bn)),ends=costs.map(v=>[v.indexOf(Math.min(...v)),v.indexOf(Math.max(...v))]);
- return {band_bn:[0,1].map(e=>sum(costs.map((v,k)=>v[ends[k][e]]))/costs.length),ends,options:o,item6_rule:"fixed_capital: business property at0; corporate and other production at labor share of long-run response",calibration:c,coverage:"computed from central source-line prices at first-year response ratios; capital/property zero; unclassified residuals held",item11:"without M5_owner_property by source generation",post_engine_at_ends:ends.map((ix,k)=>ix.map(i=>runs[k][i].companion_post_engine)),completion:"observed membership fixed; reporter parent-line carriers follow first-year responses; source endpoint capital/production transport retained; children use native cells",item19_rule:X.POST_ENGINE.passthrough_source_tax?"selected beside: conditional first-year labor-share scaling, switch V9_FIRST_YEAR_PASS=held":"absent centrally; item19 and W09 beside only",item20_rule:"capital absent in this reading; Trustees pension path unchanged"};
+ const military_restoration_at_ends=ends.map((ix,k)=>ix.map(i=>{
+  const r=runs[k][i],post=r.companion_post_engine;
+  const direct_bn=sum(r.v9_post_engine.parts.veterans_compensation.filter(p=>p.population!=="coverage").map(p=>p.first_year_restored_bn));
+  const coverage_bn=post.v9_by_item.item13_coverage_first_year.addback_bn;
+  const count_bn=sum(post.v9_line_parts.map(p=>p.item13_first_year_addback_bn*p.multiplier));
+  return {direct_bn,coverage_bn,count_bn,total_bn:direct_bn+coverage_bn+count_bn};
+ }));
+ return {band_bn:[0,1].map(e=>sum(costs.map((v,k)=>v[ends[k][e]]))/costs.length),ends,options:o,
+  item13_rule:"first year: no replacement veterans; all six service-earned subblocks at evaluated response1; own signed coverage/count addbacks",
+  military_restoration_at_ends,
+  item6_rule:"fixed_capital: business property at0; corporate and other production at labor share of long-run response",calibration:c,
+  coverage:"computed from central source-line prices at first-year response ratios; military pre-item13 prices restored; capital/property zero; unclassified residuals held",
+  item11:"without M5_owner_property by source generation",post_engine_at_ends:ends.map((ix,k)=>ix.map(i=>runs[k][i].companion_post_engine)),
+  completion:"observed membership fixed; reporter parent-line carriers follow first-year responses; source endpoint capital/production transport retained; children use native cells",
+  item19_rule:X.POST_ENGINE.passthrough_source_tax?"selected beside: conditional first-year labor-share scaling, switch V9_FIRST_YEAR_PASS=held":"absent centrally; item19 and W09 beside only",
+  item20_rule:"capital absent in this reading; Trustees pension path unchanged",item21_rule:"non-military residual allocation applies at first-year line responses"};
 }
 function coverageLabel(Q,{rule=null}={}){
  const p=Q.correctionsPayload(),construction=p.meta.coverage?.construction||"none",lineage=p.meta.lineage?.count_option?.name||Q.LINEAGE_OPTION||"central";

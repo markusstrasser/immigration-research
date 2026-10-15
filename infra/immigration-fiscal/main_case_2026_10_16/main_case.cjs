@@ -46,7 +46,12 @@ for(const id of P.NEW_IDS){
  }
 }
 const spend=JSON.parse(fs.readFileSync(path.join(HERE,"../spending_keys_r5_2026_10_15/derived/case_changes.json"),"utf8"));
-for(const row of spend.rows.filter(x=>[13,14,15].includes(x.item)&&x.arm===(x.item===13&&P.STUB13?"compensation_only":"central"))){const i=row.end==="low"?0:1;gate("source item"+row.item+" "+row.which+"/"+row.end,near(changes[row.id][row.which][i],row.change_bn,1e-6),{actual:changes[row.id][row.which][i],expected:row.change_bn});}
+for(const row of spend.rows.filter(x=>[13,14,15,21].includes(x.item)&&x.arm===(x.item===13&&P.STUB13?"compensation_only":"central"))){const i=row.end==="low"?0:1;gate("source item"+row.item+" "+row.which+"/"+row.end,near(changes[row.id][row.which][i],row.change_bn,1e-6),{actual:changes[row.id][row.which][i],expected:row.change_bn});}
+const health=JSON.parse(fs.readFileSync(path.join(HERE,"../spending_keys_r5_2026_10_15/derived/item21_case_changes.json"),"utf8"));
+for(const which of ["set","cash"])for(const [i,end]of ["low","high"].entries()){
+ const row=health.rows.find(x=>x.case==="standalone_v8"&&x.which===which&&x.end===end&&x.arm==="central");
+ gate("source item21 explicit oracle "+which+"/"+end,row&&near(changes.health_residual_key[which][i],row.change_bn,1e-6),row);
+}
 const counts=JSON.parse(fs.readFileSync(path.join(HERE,"../count_composition_r5_2026_10_15/derived/items.json"),"utf8"));
 for(const which of ["set","cash"])for(const [id,key]of [["native_minor_calibration","item16"],["coverage_tenure","item17"]])for(const [i,e]of ["low","high"].entries())gate("source "+id+" "+which+"/"+e,near(changes[id][which][i],counts.sets[which][key].by_end[e].total_bn,1e-6));
 const joint=P.caseOf(P.OCT05,V.CANDIDATE.concat(["native_minor_calibration","coverage_tenure"]));
@@ -70,6 +75,7 @@ const own=P.payloadModel(),previous=V.payloadModel();
 for(const side of ["spending","receipts"])for(const l of previous[side].lines)gate("national "+side+"/"+l.id,own[side].lines.find(n=>n.id===l.id)?.national_bn===l.national_bn);
 const pop=P.POPULATION_V9;
 gate("calibrated population",near(pop.with_coverage,counts.population_v8+counts.sets.set.joint.population_change,1e-6),pop);
+gate("population parts add to denominator",near(pop.without_coverage+pop.coverage,pop.with_coverage,1e-6),pop);
 const companions={},armTransports={},bands={adopted:r.band,cash_set:rc.band,oct15_case:base.band,oct15_cash_set:bc.band};
 const remember=(name,Q=P,o={},rule=null)=>{const a=run(Q,"set",o,false,rule),b=run(Q,"cash",o,false,rule);const out={band_bn:a.band,cash_set_bn:b.band,ends:a.ends,cash_ends:b.ends,population:Q.POPULATION_V9||Q.POPULATION_V8,...require("./companions.cjs").coverageLabel(Q,{rule})};companions[name]=out;bands[name]=a.band;bands[name+"_cash_set"]=b.band;return out;};
 if(!BASE_ONLY){
@@ -79,6 +85,7 @@ if(!BASE_ONLY){
  const C=require("./companions.cjs"),aset=C.ancestry(P,"set"),acash=C.ancestry(P,"cash");
  for(const a of aset){const c=acash.find(z=>z.scenario===a.scenario);companions["ancestry_share_"+a.scenario]={...a,cash_set_bn:c.band_bn,cash:c};bands["ancestry_share_"+a.scenario]=a.band_bn;bands["ancestry_share_"+a.scenario+"_cash_set"]=c.band_bn;}
  companions.first_year={...C.firstYear(P,"set"),cash:C.firstYear(P,"cash")};bands.first_year_v9=companions.first_year.band_bn;bands.first_year_v9_cash_set=companions.first_year.cash.band_bn;
+ for(const [which,row]of [["set",companions.first_year],["cash",companions.first_year.cash]])gate("first-year ends searched in both methods "+which,row.ends.length===P.METHODS.length&&row.ends.every(a=>a.length===2&&a.every(i=>i>=0&&i<P.MAIN_SPECS.length)));
  for(const arm of ["da_middle_0_17","da_middle"]){const Q=P.caseOf(P.OCT05,P.CANDIDATE,{coverage:arm});remember("coverage_"+arm,Q);}
  phase("new-item arms");
  for(const item of P.REGISTRY.filter(x=>P.NEW_IDS.includes(x.id)))for(const arm of Object.keys(item.arms||{})){

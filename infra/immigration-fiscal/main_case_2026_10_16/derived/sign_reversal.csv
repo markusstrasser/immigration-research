@@ -1,9 +1,9 @@
 measure,sept26_low,sept26_high,sept27_low,sept27_high,sept29_low,sept29_high,oct05_low,oct05_high,oct07_low,oct07_high,oct14_low,oct14_high,allocation,in_band,oct15_low,oct15_high,oct16_low,oct16_high
-service_break_even_personal,0.0575,0.1387,-0.0287,0.0680,-0.1097,-0.0239,-0.0876,-0.0037,-0.0905,-0.0066,-0.0032,0.1501,personal,true,-0.0631,0.1000,-0.0148,0.1323
-service_break_even_personal__enterprises_at_s,0.0575,0.1387,0.0283,0.1083,-0.0546,0.0150,-0.0338,0.0343,-0.0365,0.0316,0.0464,0.1823,personal,true,-0.0109,0.1339,0.0252,0.1666
-service_break_even_shared,0.0876,0.1697,-0.0021,0.0965,-0.0932,-0.0059,-0.0687,0.0171,-0.0703,0.0158,0.0458,0.2112,shared,false,-0.0151,0.1593,0.0431,0.2001
-service_break_even_shared__enterprises_at_s,0.0876,0.1697,0.0540,0.1360,-0.0383,0.0327,-0.0151,0.0549,-0.0163,0.0538,0.0938,0.2416,shared,false,0.0356,0.1915,0.0814,0.2322
-frozen_services_capital_fixed_welfare_bn_cbo_preferred,-21.6362,81.5243,-53.4864,57.7743,-86.6625,17.7766,-82.7242,28.2000,-83.6374,27.5185,-45.4013,109.2023,both,false,-72.0201,88.4368,-50.2636,103.9191
-frozen_services_capital_fixed_welfare_bn_cbo_preferred__enterprises_at_s,-21.6362,81.5243,-30.4882,74.9601,-65.4894,33.3137,-59.8946,44.9597,-60.8061,44.2798,-22.5699,125.9637,both,false,-49.0839,105.2943,-32.9133,121.2694
-frozen_services_capital_fixed_welfare_bn_cbo_preferred_personal,-21.6362,71.0890,-53.4864,47.3389,-86.6625,10.6637,-82.7242,19.4605,-83.6374,18.1165,-45.4013,84.7569,personal,true,-72.0201,64.0413,-50.2636,76.7903
-frozen_services_capital_fixed_welfare_bn_cbo_preferred_personal__enterprises_at_s,-21.6362,71.0890,-30.4882,64.5248,-65.4894,26.2009,-59.8946,36.2202,-60.8061,34.8778,-22.5699,101.5182,personal,true,-49.0839,80.8988,-32.9133,94.1406
+service_break_even_personal,0.0575,0.1387,-0.0287,0.0680,-0.1097,-0.0239,-0.0876,-0.0037,-0.0905,-0.0066,-0.0032,0.1501,personal,true,-0.0631,0.1000,-0.0717,0.0755
+service_break_even_personal__enterprises_at_s,0.0575,0.1387,0.0283,0.1083,-0.0546,0.0150,-0.0338,0.0343,-0.0365,0.0316,0.0464,0.1823,personal,true,-0.0109,0.1339,-0.0294,0.1120
+service_break_even_shared,0.0876,0.1697,-0.0021,0.0965,-0.0932,-0.0059,-0.0687,0.0171,-0.0703,0.0158,0.0458,0.2112,shared,false,-0.0151,0.1593,-0.0147,0.1422
+service_break_even_shared__enterprises_at_s,0.0876,0.1697,0.0540,0.1360,-0.0383,0.0327,-0.0151,0.0549,-0.0163,0.0538,0.0938,0.2416,shared,false,0.0356,0.1915,0.0260,0.1766
+frozen_services_capital_fixed_welfare_bn_cbo_preferred,-21.6362,81.5243,-53.4864,57.7743,-86.6625,17.7766,-82.7242,28.2000,-83.6374,27.5185,-45.4013,109.2023,both,false,-72.0201,88.4368,-74.2700,79.9127
+frozen_services_capital_fixed_welfare_bn_cbo_preferred__enterprises_at_s,-21.6362,81.5243,-30.4882,74.9601,-65.4894,33.3137,-59.8946,44.9597,-60.8061,44.2798,-22.5699,125.9637,both,false,-49.0839,105.2943,-56.9198,97.2630
+frozen_services_capital_fixed_welfare_bn_cbo_preferred_personal,-21.6362,71.0890,-53.4864,47.3389,-86.6625,10.6637,-82.7242,19.4605,-83.6374,18.1165,-45.4013,84.7569,personal,true,-72.0201,64.0413,-74.2700,52.7838
+frozen_services_capital_fixed_welfare_bn_cbo_preferred_personal__enterprises_at_s,-21.6362,71.0890,-30.4882,64.5248,-65.4894,26.2009,-59.8946,36.2202,-60.8061,34.8778,-22.5699,101.5182,personal,true,-49.0839,80.8988,-56.9198,70.1341
