@@ -328,9 +328,9 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
 - **The allocation base is not a total.** The lane's allocation base, the adopted fiscal band plus
   decision 4's victims figure, mixes crime footings. It also leaves out the social items added from
   September 28 on: fear, security, schools, pollution, crashes and five benefits. The published
-  fiscal-plus-social total is $439.4–532.8bn on the 42.75M lineage (ladders 274, 299,
-  [INDEX](immigration-INDEX.md); `sept24_propagation_2026_09_24/derived/oct14/real_costs_totals.csv`,
-  section `pairing_on_priced_count`, b0a2ccac).
+  fiscal-plus-social total is $477.7–573.4bn on the 45.23M-person lineage (ladders 304, 309,
+  [INDEX](immigration-INDEX.md); `sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json`,
+  `joint_social_stack.ends`, 7342b331). The distribution results above await their own committed v8 rerun.
 
 - **Instrument.** The analysis ran through an LLM with known dispositions on charged topics
   ([caveat](../notes/llm-bias-caveat.md)). Every figure here comes from scripts the parent re-ran
@@ -358,6 +358,8 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
   applied". Ruling 7 makes the pooled count central.
 
 ## Revisions
+
+- 2026-10-15 (corrected main case v8, [decision](../decisions/2026-10-15-main-case-v8.md)): the separate fiscal-plus-social total follows the current joint pairing. The lane's distribution/allocation results are left for the pending v8 rerun. Concept affected: the distinction between the allocation base and the complete published total.
 
 - 2026-09-25 (morning): the operator adopted the school-dilution relabel as priced beside the account
   (decision option 2), so §6 lists it as kept out of every total rather than proposed. No figure

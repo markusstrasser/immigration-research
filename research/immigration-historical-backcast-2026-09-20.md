@@ -2,19 +2,31 @@
 
 Date: 2026-09-20. [MODEL / FRAMING-SENSITIVE] Calculation record; narrative authorship remains operator-owned.
 
-**Main case v7 (adopted 2026-10-14; [decision](../decisions/2026-10-14-main-case-v7.md)):**
-on the $340–424bn anchor, the whole-budget rules give **$3.0–4.0tn over 2015–2024, $4.2–5.9tn over 2010–2024
-and $5.1–7.4tn over 2005–2024**. The case is carried back line by line at its personal specifications:
+**Corrected main case v8 (adopted 2026-10-15; [decision](../decisions/2026-10-15-main-case-v8.md)):**
+on the $366–456bn anchor, the joint programme/use/per-part-income model gives **$3.7–4.5tn over 2015–2024**.
+Holding current relative attribution rules fixed, the whole-budget rules span **$3.5–4.6tn over 2015–2024,
+$5.0–6.7tn over 2010–2024 and $6.1–8.2tn over 2005–2024**. The case is carried back line by line at its personal specifications:
 each part follows its line's national series and the path of the people it prices [ASSUMPTION]. Union parts
-follow the group's count; added-descendant parts follow the identified third-plus generation's. Job-capital
+follow the group's count; added-descendant and covered third-plus parts follow the identified third-plus generation's. Job-capital
 taxes inherit the fixed-2024 attribution rule: national tax series are measured, but the group's earlier industry
 mix is not re-measured. Retiree health follows NIPA series; its historical normal-cost ratio is unmeasured [APPROX].
 The public-capital return stays a resource cost, with no interest.
-[CALCULATION: `backcast.py --case oct14` → `derived/oct14/backcast_windows.csv`, concepts `*_oct14_*`;
-`derived/oct14/case_parts_windows.csv`; lane README section "Live v7 propagation (oct14)" (439b05eb)]
+[CALCULATION: `backcast.py --case oct15` → `derived/oct15/backcast_windows.csv`, concepts `*_oct15_*`;
+`derived/oct15/round2_windows.csv`, `joint/live_programme_measured_per_part_income`, $3,729.284421 / $4,467.674125bn;
+the whole-budget ranges use the current flat, ratio and income rows; lane README's v8/round-2 rules (997047de).]
 
 The 3.04M added descendants are carried back line by line, each part on its line's national series. The lineage's own count by year is not measured, so it follows the identified third-plus generation's count, held at its 2024 ratio of 3.04M to 14.34M [ASSUMPTION]. That count, from the CPS ASEC, grows ×1.75 over 2005–2024 against ×1.46 for the group, so the lineage weighs less in the early years than it would on the group's path. The pension accrual follows the OASDI and HI contributions that earn it, and the benefits it no longer charges follow their own benefit lines. Roads and parks are carried on NIPA 3.17, rental assistance on NIPA 3.13, the enterprise surplus on NIPA 3.1 line 19, and the return on public capital on BEA Fixed Assets Table 7.1 net stocks at a constant real rate; the return is an imputed resource cost, not a cash flow. The enterprises' national operating loss was $3.4bn in 2005 and $2.8bn in 2015 but $47.5bn in 2024, so their part is small before recent years; the loss is a trend, not a 2024 spike (NIPA 3.8: transit −$54.1bn → −$66.7bn and public housing −$27.5bn → −$40.3bn, 2019 → 2024; 2020–22 are distorted by relief). The cash set is not carried back as a concept of its own.
-[SOURCE: BEA NIPA Table 3.1 line 19 and Table 3.8, in the Section 3 workbook the [lane README](../infra/immigration-fiscal/historical_backcast_2026_09_20/README.md) pins ("Measured by year"); the carry-back rules are in its sections "Measured by year", "Rules" and "Live v7 propagation (oct14)"]
+[SOURCE: BEA NIPA Table 3.1 line 19 and Table 3.8, in the Section 3 workbook the [lane README](../infra/immigration-fiscal/historical_backcast_2026_09_20/README.md) pins ("Measured by year"); the live carry-back rules are its v8 and round-2 sections.]
+
+The joint model uses measured programme spending, pandemic transfer shares, school/Medicaid use and worker-income
+paths where available. Public-capital resource rates stay fixed; the OASDI earnings response follows the benefit
+formula and Part A follows covered workers, conditional on held legal/on-books participation. Historical statutes,
+the earlier descendants' own population and unobserved use remain transported assumptions. Item 11 follows its
+source programme/generation parts; coverage's classified pieces follow their programmes and its residual follows
+the declared population proxy. Per-member figures divide by `lineage_millions`, including the completion and
+coverage counts on their stated paths, and match the 45.23M-person lineage in 2024. These are model back-casts,
+not measured historical group attribution. [CALCULATION: `derived/oct15/round2_annual.csv`,
+`round2_income_parts.csv`, `round2_pension_audit.json`, `round2_programme_branches.csv`.]
 
 **Result on the September 20 anchor, which the tables below compute:** No historical cost is measured here. The account exists for income-year
 2024 only. Combining measured national budgets and measured Mexican-origin population
@@ -184,6 +196,8 @@ income series. The repository holds 2022–2026 only.
 series and each assumption are separately inspectable.
 
 ## Revisions
+
+- 2026-10-15 (corrected main case v8, [decision](../decisions/2026-10-15-main-case-v8.md), 997047de): the header uses the completed/covered lineage and current round-2 programme, use and per-part-income paths, with fixed public-capital resource rates. The historical assignment remains modelled; counts and costs follow the same generation paths. Concept affected: the back-cast anchor and historical transport.
 
 - 2026-10-14 (main case v7, [decision](../decisions/2026-10-14-main-case-v7.md)): live case figures and their source paths now use `oct14`, at the personal allocation at both ends, with mixed-unit child credits, taxes on job capital and the two measured frame/key corrections. Phase 1 updates committed sources; pending comparator and distribution consumers await their committed reruns. Concept affected: the live account and its companions.
 

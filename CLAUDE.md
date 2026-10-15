@@ -107,22 +107,26 @@ set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
   writers' outputs stored byte for byte.
 - Before asserting that a line's key biases a result, read how the engine keys it (schools have
   been state-priced since 2026-09-20, not national-average). The adopted case is one engine
-  run plus a post-engine return on public capital:
-  `infra/immigration-fiscal/main_case_2026_10_14/main_case.cjs`. Its package (`package.cjs`) is
-  v6's (`main_case_2026_10_07`, built on v5's and the September 29 case's) plus five items in the same
-  item registry: `meta.items` locates each item's edits, and `forItems`/`withItems` apply them. The
-  ends are the personal specifications 16 / 11 in both methods (`summary.json` `v7.end_specifications`). The line and receipt responses and
-  the capital return travel in `derived/corrections.json` → `meta.responses` and
-  `meta.capital_return`. A consumer that applies the payload must set all of them. The payload adds
-  eight spending and two receipt lines that `model.json` lacks, plus item 4's three carrier receipt
-  lines and four offset capital components: evaluate as `Engine.evaluate(withSyntheticLines(m),
-  stateFor(m, spec, profile))`, or call `evaluateFull` for the full cost. `meta.lineage` records the
-  added descendants (arm b, C3, the members priced as G3+ and as whites); their edits sit in every
-  engine cell, and the items' edits follow them, so the lineage no longer closes the payload. A
-  consumer that splits the case by generation, household or person needs a stated rule for both (the
-  Consumers tables: R1–R4 in v6's lane, R5–R9 in v7's; item 4 splits by `meta.user_fees.splits`, Pell
-  and the K-12 weight by the education line). Consumer lanes compute the live case only (`oct14`);
-  outputs of earlier cases stay in git and are not regenerated.
+  run plus three post-engine amounts, the return on public capital, the mixed-unit removal (item 11)
+  and the Census coverage (item 12): `infra/immigration-fiscal/main_case_2026_10_15/main_case.cjs`.
+  Its package (`package.cjs`) is v7's (`main_case_2026_10_14`, built on v6's, v5's and the September
+  29 case's) plus four items in the same item registry: `meta.items` locates each item's edits, and
+  `forItems`/`withItems` apply them. The ends are the personal specifications 16 / 11 in both methods
+  (`summary.json` `v8.end_specifications`). The line and receipt responses, the capital return and the
+  two post-engine items travel in `derived/corrections.json` → `meta.responses`, `meta.capital_return`,
+  `meta.mixed_unit_removal` and `meta.coverage`. A consumer that applies the payload must set all of
+  them; `evaluateFull` adds the post-engine amounts. The payload adds spending and receipt lines that
+  `model.json` lacks (item 4's carriers and capital components, v8's completion carriers and native child
+  cells): `withSyntheticLines` adds every absent line, so evaluate the engine part as
+  `Engine.evaluate(withSyntheticLines(m), stateFor(m, spec, profile))`, and call `evaluateFull` for the
+  full cost. `meta.lineage` records the added descendants (arm b, C3, the members
+  priced as G3+ and as whites) on the pre-v8 frame; per-member figures divide by
+  `meta.population_v8.with_coverage`. The descendants' edits sit in every engine cell, and the items'
+  edits follow them, so the lineage no longer closes the payload. A consumer that splits the case by
+  generation, household or person needs a stated rule for both (the Consumers tables: R1–R4 in v6's
+  lane, R5–R9 in v7's, R10–R13 in v8's; item 4 splits by `meta.user_fees.splits`, Pell and the K-12
+  weight by the education line). Consumer lanes compute the live case only (`oct15`); outputs of
+  earlier cases stay in git and are not regenerated.
 
 - Consumers of `ledger_absolute_2026_09_17` (the `lifetime.py` loaders, `age_normalizations.py`)
   verify stored source hashes, including upstream
@@ -161,16 +165,20 @@ substituting a web summary or declaring a measurement unavailable:
   the keys stops `[BLOCKED]` unless it passes `--off T` (decision 2026-10-07-ledger-item-t). The finance-refresh and
   enrollment accounts carry the all-generation union only; do not flat-scale the ledger's split
   onto any account total. The adopted main case has its own split, computed on the account with
-  no reference group: `infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_oct14.csv`,
+  no reference group: `infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_oct15.csv`,
   the added descendants counted in G3+ (ladder 224; earlier cases' files are in git).
 - The account prices 39,712,493 people (dataset audit row 4); the CPS ASEC's published weights give
   40.90M. A lane that sums CPS weights gates its total at row 4 (pattern:
   `world_ledger_2026_09_27/population_basis.py`) or states why the published frame is right; five
-  v4 items used the published weights (ladder 275). Since 2026-10-05 the main case adds 3.04M
-  descendants who no longer report Mexican origin (arm b, put on the account's frame by factor
-  0.997189, since row 4 reweights only the Mexico-born): a 42.75M lineage, which per-member figures
-  divide by. The CPS cannot see them, so a lane that re-keys the CPS either takes their cost from
-  the case lane or covers the 39.71M union and says so (ladder 281).
+  v4 items used the published weights (ladder 275). The main case adds three groups the survey's
+  union leaves out: since 2026-10-05, 3.04M descendants who no longer report Mexican origin (arm b,
+  put on the account's frame by factor 0.997189, since row 4 reweights only the Mexico-born); since
+  2026-10-15, the 0.52M US-born reporters with one US-born parent and their nonreporting children whom
+  v7's generation rule dropped (item 10), and the 1.96M members the Census misses (item 12).
+  Per-member figures divide by the 45.23M lineage (43.27M before coverage). The CPS cannot see the
+  descendants or the missed people, so a lane that re-keys the CPS takes their cost from the case lane
+  or covers the union and says so (ladder 281); it takes item 10's people from
+  `union_completion_2026_10_14`'s flags.
 - The evidence map (`overview_2026_09_28/`), assumption explorer (`assumption_explorer_2026_09_21/`)
   and figures page (`figures_2026_09_22/`) move to a new main case only when the operator asks. All
   three are on main case v6, at his request: the map since 2026-10-07, the explorer and the figures
@@ -204,20 +212,25 @@ substituting a web summary or declaring a measurement unavailable:
   personal allocation at both ends, follows child credits across mixed tax units, and counts the source
   taxes on the business capital that serves the group's jobs: mining at 0, corporate tax at 1 at the low
   end and at Treasury's normal-return share (0.37) at the high, and the production module's capital-tax
-  term stays zero, so nothing counts twice. It also folds in v6's two measured residuals: **$340–424bn**
-  ([decision](decisions/2026-10-14-main-case-v7.md)). Companion figures:
-  - $339.6–423.6bn unrounded; counting benefits when paid (the cash set), $264.4–348.5bn; per member
-    of the 42.75M lineage, $7,942–9,909;
-  - the count's arms a and c: $326.1–408.0bn and $353.0–439.3bn; C3 (0.557) ± 1 SE: $335.7–427.4bn;
+  term stays zero, so nothing counts twice; it also folds in v6's two measured residuals
+  ([decision](decisions/2026-10-14-main-case-v7.md)). Since 2026-10-15 it removes the US tax on
+  foreign-source income from item 6's corporate lines, completes the union's reporting rule, recomputes
+  the taxes, credits, benefits and spending of the non-members who stay in mixed households (replacing
+  the child-credit item), and carries the 2020 PES Hispanic undercount, which the 2024 population
+  controls keep: **$366–456bn** ([decision](decisions/2026-10-15-main-case-v8.md), corrected the same
+  day). Companion figures:
+  - $365.8–456.0bn unrounded; counting benefits when paid (the cash set), $281.8–371.9bn; per member
+    of the 45.23M lineage, $8,087–10,081;
+  - the count's arms a and c: $351.7–439.7bn and $379.9–472.3bn; C3 (0.557) ± 1 SE: $361.6–460.1bn;
   - counted by share of Mexican-immigrant ancestry instead of whole (beside, never the headline):
-    $226.0–342.4bn;
-  - low side with the within-district 0.836: $311–397bn;
-  - the shared allocation, for distribution inside the group, not the removal total: $307.8–394.9bn
-    ($7,200–9,237 per member);
-  - the Census coverage upper bound, the 2020 PES Hispanic undercount on the US-born members with the
-    Mexico-born count fixed: +$15.2 / 18.4bn, $354.8–442.0bn, beside, never added, because how much the
-    2024 controls absorb is unmeasured (ladder 303);
-  - first-year budget response with CBO's 0.63–0.66, business-capital taxes at their first-year part: $273–326bn, $198–251bn counting benefits when paid
+    $238.3–366.2bn;
+  - low side with the within-district 0.836: $335–428bn;
+  - the shared allocation, for distribution inside the group, not the removal total (it leaves out
+    item 11): $323.2–412.3bn ($7,147–9,116 per member);
+  - the Census coverage from demographic analysis instead of the PES (beside): through age 17,
+    $363.2–453.1bn; through 29, $362.0–450.2bn;
+  - first-year budget response with CBO's 0.63–0.66, business-capital taxes at their first-year part,
+    items 11 and 12 under the same rules: $294–352bn, $210–268bn counting benefits when paid
     (ladder 270's lane);
   - Earlier cases: the decision records and the INDEX's case table.
 

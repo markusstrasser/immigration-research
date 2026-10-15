@@ -4,7 +4,7 @@
 
 **Reader inputs (2026-09-19):** [Acquisition, joins and normalization](../infra/immigration-fiscal/REPRODUCTION_INPUTS.md) supplies official-download, cleared-mirror and browser/manual routes, plus the current lane recipes. The core warehouse build does not reproduce every September analysis, and no AWS mirror URL is registered in that guide yet.
 
-**Updated:** 2026-10-14. The current result heads the [topic index](immigration-INDEX.md) and the root README: the adopted main case puts the net cost of the Mexican-origin population to other US residents at $340–424bn a year (income year 2024), counting the pension promises members earn as they work and, as whole people, the descendants who no longer report Mexican origin (a 42.75M-person lineage), or $264–349bn counting benefits when paid. Other residents' social costs and benefits bring it to $439–533bn ([real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md)). The [objections FAQ](immigration-objections-faq-2026-09-21.md) routes the standard objections to their executed tables. The September 5 [repair report](immigration-material-repair-report-2026-09-05.md) records the errors found in earlier analyses; the household-donor fiscal schema and its figures are invalid. The claim tables in §5 cover the warehouse layer; the account's figures live in the memos of §4.
+**Updated:** 2026-10-15. The current result heads the [topic index](immigration-INDEX.md) and the root README: the corrected [main case v8](../decisions/2026-10-15-main-case-v8.md) puts the net cost of the Mexican-immigrant lineage to other US residents at $366–456bn a year (income year 2024), counting pension promises members earn as they work. It counts whole people in the completed union, nonreporting descendants and constructed Census coverage correction: 45.23M members. Counting benefits when paid gives $282–372bn. Other residents' social costs and benefits bring it to $478–573bn, including re-spending of the budget saving and the pollution of public purchases the same budget response removes ([real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md)). The [objections FAQ](immigration-objections-faq-2026-09-21.md) routes the standard objections to their executed tables. The September 5 [repair report](immigration-material-repair-report-2026-09-05.md) records the errors found in earlier analyses; the household-donor fiscal schema and its figures are invalid. The claim tables in §5 cover the warehouse layer; the account's figures live in the memos of §4.
 
 ---
 
@@ -206,6 +206,8 @@ Lists after download: `$PNY_DATA_ROOT/external/stage5_net_negative/kff_refs/MANU
 | SQL query pack | `queries/immigration/` |
 
 ## Revisions
+
+- 2026-10-15 (corrected main case v8, [decision](../decisions/2026-10-15-main-case-v8.md)): the living case figures and source pointers follow the completed reporting union and central Census coverage correction, with domestic-source corporate taxes and the mixed-unit stayers recomputed. Concept affected: the live annual account and its population.
 
 - 2026-10-14 (main case v7, [decision](../decisions/2026-10-14-main-case-v7.md)): live case figures and their source paths now use `oct14`, at the personal allocation at both ends, with mixed-unit child credits, taxes on job capital and the two measured frame/key corrections. Phase 1 updates committed sources; pending comparator and distribution consumers await their committed reruns. Concept affected: the live account and its companions.
 

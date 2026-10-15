@@ -3,36 +3,43 @@
 Date:2026-09-20. [MODEL / FRAMING-SENSITIVE] Evidence and calculations only;
 narrative authorship remains operator-owned.
 
-**Current main case (2026-10-14): $339.6–423.6bn/year**, a 42.75M-person lineage at $7,942–9,909 per member.
-The group total uses the personal allocation at both ends. Its newest items follow child credits across mixed tax
-units, count source taxes on the business capital serving the group's jobs, put the added people priced as whites
-on the case's income-tax keys, and put the remaining frame corrections on audit row 4
-([main-case lane](../infra/immigration-fiscal/main_case_2026_10_14/RESULT.md),
-[decision](../decisions/2026-10-14-main-case-v7.md), ladder 299). Mining's taxes stay; corporate taxes respond in
-full at the low end and only on the normal-return share at the high end. Current law's separate OASI and DI funds,
+**Current main case (2026-10-15, corrected the same day): $365.8–456.0bn/year**, or $8,087–10,081 per member of the
+45.23M-person lineage. The group total uses the personal allocation at both ends. It counts domestic-source taxes
+on the business capital serving the group's jobs, completes the reporting union, recomputes the non-members who
+stay in mixed units and includes the Census coverage correction
+([main-case lane](../infra/immigration-fiscal/main_case_2026_10_15/RESULT.md),
+[decision](../decisions/2026-10-15-main-case-v8.md), ladder 304). Mining's taxes stay; corporate taxes respond in
+full at the low end under mobile capital with the same after-tax return elsewhere, and only on the normal-return
+share at the high end. The stayers' consumption and owner-property response is an assumption, alongside the
+law-based tax and benefit recomputation [FRAMING-SENSITIVE]. Constructed coverage people take zero on
+administrative-use justice keys whose totals already include them. Current law's separate OASI and DI funds,
 retiree health on accrual, measured descendant ages, user fees and education keys remain in the account.
 
-The 3.04M descendants who no longer report Mexican origin are counted as whole people and add $21.5 / $27.5bn.
-The later losses cost an identified third-plus member's amount at their own ages, $11,819 / 13,557 a year;
-the losses at the third-generation rate blend that generation with whites at their own ages, $4,561 / 6,682,
-using C3 = 0.557 (SE 0.246). Counted by ancestry share instead of whole, the lineage costs $226.0–342.4bn,
+Holding the completed union, coverage and mixed-unit construction fixed, the original 3.04M descendants who no
+longer report Mexican origin cost $23.0 / $28.9bn. The later losses cost an identified third-plus member's amount
+at their own ages, $12,414 / 14,147 a year; the losses at the third-generation rate blend that generation with
+whites at their own ages, $4,821 / 6,885, using C3 = 0.557 (SE 0.246). The completion also identifies 60,500
+nonreporting children. Counted by ancestry share instead of whole, the lineage costs $238.3–366.2bn,
 beside the headline; the rest of the case's rules are held fixed.
 
-Counting benefits when paid, the cash set is $264.4–348.5bn ($6,185–8,152 per member). Only the members' Social
+Counting benefits when paid, the cash set is $281.8–371.9bn ($6,229–8,223 per member of the 45.23M-person lineage). Only the members' Social
 Security and Part A switch; public employees' pensions and retiree health remain on accrual in both sets.
-The low side with schools at the within-district response is $310.5–397.1bn, the outer range $262.3–477.7bn.
-With enterprises and their capital moving with services, the sign break-even is 4.6% at the low end and 18.2% at
-the high; each becomes a net gain below its threshold. Capital at 7% ($432.3–505.1bn), enterprises out
-($322.8–400.8bn) and land [GAP] sit beside the account.
-[CALCULATION: `main_case_2026_10_14/derived/summary.json`, `main_case`, `v7`, `cash_set`, `school`, `range`,
-`beside_the_account`; `derived/sign_reversal.csv`, personal `oct14` rows; `derived/lineage_addition.json`.]
+The low side with schools at the within-district response is $335.4–428.1bn, the outer range $286.8–511.4bn.
+With enterprises and their capital moving with services, sign break-evens span −1.1% to 13.4% across the admitted
+personal readings: the least favorable remains a cost at every nonnegative common service response, while the most
+favorable becomes a gain below 13.4%. Holding other case rules
+fixed, capital at 7% ($461.2–539.7bn), enterprises out ($348.6–432.6bn) and land [GAP] sit beside the account.
+[CALCULATION: `main_case_2026_10_15/derived/summary.json`, `v8`, `range`; `derived/main_case_bands.csv`,
+`capital_return_at_7pct`, `enterprises_out_option_a`; `derived/sign_reversal.csv`, personal `oct15` rows;
+`derived/lineage_addition.json`, `v8.set`.]
 
-With CBO-style first-year budget responses (0.63–0.66), the current case gives $273–326bn, and $198–251bn counting
+With CBO-style first-year budget responses (0.63–0.66), the current case gives $294–352bn, and $210–268bn counting
 benefits when paid, holding the case's other rules fixed except for the horizon's roads and property-tax
 responses and item 6 at its first-year part (business property still assessed; profits and production taxes at 0.65
 of their long-run fall) ([lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md),
-`derived/c1_arms_oct14.csv`, `first_year_horizon` and `first_year_horizon_cash`); with every
-service proportional, the current case gives $368.6–438.0bn (`main_case_bands.csv`, `proportional_reference`).
+`first_year_v8.cjs`; `main_case_2026_10_15/derived/summary.json`, `v8.companions.first_year`); coverage follows each
+line's first-year response and the stayers' owner property stays fixed. With every service proportional,
+the current case gives $395.2–470.5bn (`derived/main_case_bands.csv`, `proportional_reference`, `adopted`).
 The main cases since September 20 are listed, each with its decision, in the
 [topic index](immigration-INDEX.md#core-state) ("Earlier cases"); social costs and benefits are in the
 [real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md). Everything below is the account as
@@ -360,6 +367,8 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+- 2026-10-15 (main case v8, [decision](../decisions/2026-10-15-main-case-v8.md), including its correction): the live header follows the completed and covered lineage, domestic-source corporate taxes and the stayers' recomputation. Coverage is central and excludes already-counted justice use; companions use their own rules. Concept affected: the conditional annual removal account and its population.
 
 - 2026-10-14 (main case v7, [decision](../decisions/2026-10-14-main-case-v7.md)): live case figures and their source paths now use `oct14`, at the personal allocation at both ends, with mixed-unit child credits, taxes on job capital and the two measured frame/key corrections. Phase 1 updates committed sources; pending comparator and distribution consumers await their committed reruns. Concept affected: the live account and its companions.
 - 2026-10-14, later (v7 assumption review, round 1; break conditions cfb7df47): the first-year arm had kept item 6, the source taxes on business capital, at its long-run size. Year one has the capital standing, so business property stays assessed and profits and production taxes fall by 0.65 of their long-run fall: the first-year reading is $273–326bn, $198–251bn counting benefits when paid. Concept affected: the first-year budget reading of the live case.

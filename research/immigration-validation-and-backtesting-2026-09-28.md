@@ -23,6 +23,9 @@ longer report Mexican origin (ladder 281, [lane](../infra/immigration-fiscal/mai
 [2026-10-07: the main case is now the October 7 case, $389.1–461.5bn: the October 5 case with the pension accrual on the
 2026 Trustees and separate funds, retiree health on accrual, the added descendants at their measured ages, and user fees
 with the education keys (ladder 295, [lane](../infra/immigration-fiscal/main_case_2026_10_07/RESULT.md)).]
+[2026-10-15: the main case is now the October 15 case, $365.8–456.0bn: the October 14 case's personal ends, child credits
+and job-capital taxes (ladder 299), with the non-members who stay in mixed households, the people the Census misses and
+the union's completion (ladder 304, [lane](../infra/immigration-fiscal/main_case_2026_10_15/RESULT.md)).]
 
 ## 1. The useful cross-references we already have
 

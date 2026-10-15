@@ -39,8 +39,14 @@ totals: fiscal and total print their file values and the social rows take the ro
 | Indian-origin, white ages | −17,770 / −13,822 | +1,453 / +1,511 | **−16,317 / −12,311** |
 | India-born, actual ages | −27,353 / −21,963 | +887 / +990 | −26,466 / −20,973 |
 | India-born, white ages | −16,717 / −12,726 | +1,256 / +1,327 | −15,461 / −11,399 |
-| Mexican-origin union, actual ages, the 42.75M lineage | +7,942 / +9,909 | +2,448 / +2,555 | +10,390 / +12,464 |
+| Mexican-immigrant lineage, actual ages, corrected v8's 45.23M people | +8,087 / +10,081 | +2,474 / +2,597 | +10,561 / +12,678 |
 | Third-plus whites, a 42.75M slice | −4,594 / −1,961 | +2,238 / +2,277 | −2,356 / +316 |
+
+The row labelled corrected v8 reads the current case and social pairing directly; the other comparison rows
+await their committed comparator rerun. The v8 row's social values take controlled rounding so its displayed parts
+add. [CALCULATION: `main_case_2026_10_15/derived/summary.json`, `v8.per_member_usd.set`;
+`sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json`, `joint_social_stack.ends`, with the case's
+45.23M-person denominator. No current Indian combined social result is asserted.]
 
 - The union carries the 3.04M added descendants at the case lane's amounts and their own social rows from the
   oct14 pairing; the Indian-origin groups keep their CPS counts [ASSUMPTION]. Every group
@@ -58,8 +64,10 @@ totals: fiscal and total print their file values and the social rows take the ro
 - Ageing to white ages removes 17–19% of the group's lead over whites; the India-born alone
   lose 42–46% of their benefit (−$26.5k → −$15.5k at the low end), because their old age is still ahead of
   them.
-- The gate: the engine union is the case, $339.5520 / 423.6493bn, and the union rows reproduce the white
-  and Black lanes' v7 re-keys (5e-5) [CALCULATION: `derived/oct14/combined.csv`; lane's oct14 gates].
+- The case-only fiscal gate is the corrected lineage account, $365.7919 / 455.9818bn
+  [CALCULATION: `derived/oct15/rekey_summary.csv`, `mexican_origin_engine`, and
+  `main_case_2026_10_15/derived/summary.json`, `v8.band_bn`]. The independent fiscal route runs; the
+  combined Indian/white-age social comparison is withheld pending a declared sender/receiver transport rule.
 - Pooling ASEC 2022–26 for the second generation (941 adults, not 209), holding the social rows and job-capital
   industry factors fixed, moves the total by $155–156 per
   member. Self-employed and wage-earning India-born adults do not differ measurably
@@ -167,6 +175,8 @@ points and the projected G2 about 1 point [CALCULATION: §5 of the cohort lane].
    quoted.
 
 ## Revisions
+
+- 2026-10-15 (corrected main case v8, [decision](../decisions/2026-10-15-main-case-v8.md)): the case-only lineage row and fiscal gate use the completed/covered lineage. Comparator figures await their rerun; the Indian combined social route remains withheld for lack of a declared incidence transport. Concept affected: the case reference and the scope of the cross-origin comparison.
 
 - 2026-10-05, later (main case v5, [decision](../decisions/2026-10-05-main-case-v5.md), ladder 281; 594b67a4): the verdict and §2's table run main case v5. Indian-origin residents benefit others by $9,325–10,782 per member; the union, on the 42.75M lineage with the added descendants' social rows, costs $11,581–13,349, so the gap to it is $22,400–22,700 per member (September 29: $22,500–22,800). The lead over third-plus whites, about $13,500, does not move. Concept affected: the full-account comparison (ladder 276).
 - 2026-10-06 (correction to the September 29 table): its white-ages row carried the first run's values, social rows +1,467 / +1,525 and total −8,419 / −7,069 (about $1,470–1,530 and $7,100–8,400). Commit f14d3d76 changed the trade row for subgroups, and `derived/combined.csv` has carried the new values since: social rows +1,453 / +1,510, total −8,433 / −7,084 (about $1,450–1,510). The verdict's rounded $7,100–8,400 was unaffected. Concept affected: none; a stale table row.

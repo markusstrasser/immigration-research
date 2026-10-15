@@ -72,8 +72,8 @@ What they cannot settle cleanly:
 Use first:
 
 1. `research/immigration-complete-annual-account-2026-09-20.md`: every tax and spending line, federal and
-   state-local, with the adopted main case at the top ($340–424bn a year in 2024;
-   [main-case lane](../infra/immigration-fiscal/main_case_2026_10_14/RESULT.md))
+   state-local, with the adopted main case at the top ($366–456bn a year in 2024;
+   [main-case lane](../infra/immigration-fiscal/main_case_2026_10_15/RESULT.md))
 2. `research/immigration-objections-faq-2026-09-21.md`: the standard objections, each routed to its executed
    table
 3. `research/immigration-yearly-lifetime-cost-repair-2026-09-19.md`: the generation ledger against third-plus
@@ -391,6 +391,8 @@ For each commentator claim:
 6. `Notes on category slip or scope inflation`
 
 ## Revisions
+
+- 2026-10-15 (corrected main case v8, [decision](../decisions/2026-10-15-main-case-v8.md)): the living case figures and source pointers follow the completed reporting union and central Census coverage correction, with domestic-source corporate taxes and the mixed-unit stayers recomputed. Concept affected: the live annual account and its population.
 
 - 2026-10-14 (main case v7, [decision](../decisions/2026-10-14-main-case-v7.md)): live case figures and their source paths now use `oct14`, at the personal allocation at both ends, with mixed-unit child credits, taxes on job capital and the two measured frame/key corrections. Phase 1 updates committed sources; pending comparator and distribution consumers await their committed reruns. Concept affected: the live account and its companions.
 
