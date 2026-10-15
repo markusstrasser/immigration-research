@@ -1358,3 +1358,11 @@ $210.3427–267.7067bn); 7,282 minimal crossings down and 1,450 up. Parent rerun
 publication tests stay deselected until the who-wins lane is on oct15).
 
 Log: 2026-10-15 08:40:26 JST (`date`, parent): rerun on round 3's comparator code (4548e70f), IDENTICAL 77/77, exit 0. `tables_oct15.py` reads C8's A1 test on round 3's central (members' children depart, own coverage, own mortality, both lineage profile bounds) and accepts A3's item 11 only as A1's declared reweighted term; the tables stay withheld. The source check (`derived/c8_source_checks_oct15.json`) still records the current-rule readings, now with the school key: A1, mixed pair, accrual $579.865427 / 551.415167bn (was $571.280870 / 542.581547bn).
+
+### R4C4 downstream receipt — 2026-10-15 10:38:53 JST (`date`)
+
+Scheduled-benefit, first-year, minimal-subset, engine-break and C8 source checks plus supported fixtures reproduce **IDENTICAL 77/77, exit 0**, 127.138s. No consumer code change was needed. C8 verifies 12 bridge closures and 12 measured own-mask source rows, including the expanded source hashes. The source receipt retains its explicitly selected current-rule readings; full publication uses its separate central comparator selection. `tables_oct15.py` remains allow-unrun and two publication tests deselected: direct publication probe exits 1 because the debt federal_split_2024.csv is absent. No C1–C9 table PASS is claimed. The case headline remains 365.7919–455.9818bn. [CALCULATION: derived/c8_source_checks_oct15.json; scratch prop8/c4fix-break-{publication-probe,rerun}.log]
+
+### R4C4 final source-schema receipt — 2026-10-15 11:04:28 JST
+
+Following the A3/A4 own-count uncertainty-column completion, C8 source receipt rebuilt and the same supported six-command replay again ends **IDENTICAL 77/77, exit 0**, 289.062s. The new fields do not change comparison point estimates. Full publication remains withheld on the previously recorded debt source stop; tables_oct15.py stays explicitly allow-unrun and the same two publication tests deselected. [CALCULATION: derived/c8_source_checks_oct15.json; scratch prop8/c4fix-break-final-rerun.log]
