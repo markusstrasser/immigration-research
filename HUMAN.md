@@ -197,3 +197,25 @@ session: 75b08f57-63cc-4e3d-96dc-60050327b5c1
   choice, the Trustees' ~2% for both legs at both ends, lowers the high end by about $14–20bn instead and drops the
   rate from the band. A lane (`one_rate_2026_10_15`) is computing both arms on v8 now. I'll fold your choice into v9
   with the other round-5 fixes, so the consumer lanes rerun only once.
+  update 2026-10-15 11:45 JST: measured on v8 (2016e421, `one_rate_2026_10_15`). One rate per end (2% low, 3% high)
+  gives $367.6–419.3bn, and the cash set stays $281.8–371.9bn. The Trustees' path for both legs gives
+  $367.4–436.3bn, with the cash set at $283.3–352.2bn. Still recommend the one rate per end.
+
+## Open ask, 2026-10-15 11:45 JST: the excess burden of the taxes that pay the cost
+session: 75b08f57-63cc-4e3d-96dc-60050327b5c1
+
+- **Count the excess burden in the joint fiscal-plus-social figure (recommend: yes, 0.20 per dollar at the low end
+  and 0.25 at the high; the fiscal headline is unchanged).**
+  - Raising $1 of tax costs payers more than $1, because taxes change what people do. The best US figures are about
+    0.20 for a broad federal income-tax rise (Saez, Slemrod and Giertz 2012, at an elasticity of 0.25) and 0.25 for
+    the tax mix (OMB A-94, 1992 and 2023). The range is 0.10–0.50 (`excess_burden_2026_10_07`); the account has carried
+    it beside since v6.
+  - The fiscal headline stays a budget figure. The joint figure is different. It already follows the money the group
+    costs into what other residents would do with it (the re-spending channel), yet it treats the taxes that raise
+    that money as costing nothing extra. Round 5 flagged that pairing.
+  - The base is v8's cash financing, $242.0–307.1bn. It leaves out the capital return and the future pensions, which
+    no tax raises this year (current law pays the pensions by cutting benefits). On it, 0.20 / 0.25 adds $48.4 /
+    76.8bn to the joint $477.7–573.4bn.
+  - Zero is defensible only when the figure weights dollars by who receives them (Jacobs 2018), and the joint figure
+    uses no such weights.
+  - If yes, the term goes in with v9's social-lane rerun, on v9's base. If no, it stays beside, as now.
