@@ -133,6 +133,11 @@ built from the adopted fixes. Each ask has my recommendation; the work proceeds 
   after v8's docs pass.)
   consumed: 2026-10-15 Census coverage — in v8's central as item 12 (+$12.0 / 15.9bn on v8), decision
   2026-10-15-main-case-v8 — session 75b08f57
+  note 2026-10-15 09:3x JST: after round 3's correction (d1a24d47) item 12 is +$8.8 / 12.6bn. Asked at 09:24 why the
+  coverage lane advised keeping it out (its doubts: the DA and PES disagree for young adults; the all-Hispanic rate
+  stands in for Mexican origin), answered in chat: the only route to zero is controls that absorb the miss, and the
+  Vintage 2024 controls keep the Census Hispanic total, so zero is a convention; it stays central with the DA series
+  beside ($362.0–450.2bn through age 29) — session 75b08f57
   consumed: 2026-10-15 the mixed-unit removal — in v8's central as item 11 (+$10.7 / 14.5bn) — session 75b08f57
   consumed: 2026-10-15 item 6's low end — kept at response 1; the decision states the corrected premise in the rents
   lane's wording — session 75b08f57
@@ -174,3 +179,7 @@ session: 75b08f57-63cc-4e3d-96dc-60050327b5c1
   on corrected v8. **Recommend: yes to credits for those three lanes**, because each is a multi-hour build the Sol
   workers already know and the docs pass needs their numbers. Without credits I start the comparator fixes myself
   (slower, on the Claude plan) and the other two wait for the 10-20 reset.
+  [answered: 2026-10-15 09:24 JST, in chat: "gpt 6.1 sol limit is back ... use it for work/execution?"]
+  consumed: 2026-10-15 0dafb91c / dd14cb37 — Sol lanes resumed 09:35: who-wins phase B on v8 (p8-winners) and the
+  comparators' round-4 fixes (p8-c4fix); the world ledger on v8 follows who-wins, whose channels it pins. Round 3's
+  comparator fixes were done by the parent meanwhile (4548e70f, consumers 608fc28f) — session 75b08f57
