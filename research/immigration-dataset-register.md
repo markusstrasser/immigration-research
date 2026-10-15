@@ -1369,3 +1369,21 @@ levels differ from recent observations. Rebased/extended values through 2035
 are our scenario. No immigration status in these tables. The subtracted demand
 model is partial and covers ages 5–17, so its residual is not native-only.
 **Used in:** [national school comparison](../infra/immigration-fiscal/school_growth_1975_2025_2026_10_02/README.md#national-total-versus-partial-removal-2026-10-02).
+
+### NCES_CWIFT_2019 — Comparable outside-teacher wages by district
+
+**Source:** [NCES EDGE CWIFT](https://nces.ed.gov/programs/edge/economic/teacherwage),
+[2019 original ZIP](https://nces.ed.gov/programs/edge/data/EDGE_ACS_CWIFT2019.zip),
+[file documentation](https://nces.ed.gov/programs/edge/docs/EDGE_ACS_CWIFT_FILEDOC.pdf).
+**Acquired:** 2026-10-15. **Local:**
+`sources/immigration-fiscal/data/external/stage3/nces/cwift_2019/`; original ZIP,
+PDF and `ACQUIRED.md`. ZIP SHA256
+`6876d520b9f1c97917391addccdc8f7b4ce80e2b066b08ad0f08bc6650ef13db`.
+**Unit/keys:** LEA1920 member, district `LEAID` (seven-digit text), joined to
+Census F-33 `NCESID`; `LEA_CWIFTEST` and its `LEA_CWIFTSE`.
+**Quirks:** Latin-1 district names; 2019 wage estimates with 2019–20 LEA IDs;
+comparable wages outside teaching, not teacher pay or all input prices. An
+estimated ACS-based index, not an instrument for enrollment. Missing matches
+are excluded explicitly; index estimation uncertainty is not propagated.
+**Used in:** [v9 school-response audit](../infra/immigration-fiscal/school_response_audit_2026_10_15/README.md),
+same-sample within-state spending/enrollment fits with and without wage controls.

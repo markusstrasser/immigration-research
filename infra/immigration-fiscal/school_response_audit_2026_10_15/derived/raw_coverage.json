@@ -1,0 +1,166 @@
+{
+  "panels": [
+    {
+      "baseline_pupils_matched": 45194480.0,
+      "baseline_sample_districts": 13137,
+      "baseline_sample_pupil_share_matched": 0.9785231667023843,
+      "end_pupils_matched": 47096609.0,
+      "end_sample_districts": 12375,
+      "end_sample_pupil_share_matched": 0.9852103216725749,
+      "matched_districts": 11991,
+      "period": "2000-2019",
+      "stable_level_and_census_id_districts": 11861,
+      "unchanged_enrollment_districts": 18
+    },
+    {
+      "baseline_pupils_matched": 45753697.0,
+      "baseline_sample_districts": 13137,
+      "baseline_sample_pupil_share_matched": 0.9906309902621155,
+      "end_pupils_matched": 47673282.0,
+      "end_sample_districts": 12636,
+      "end_sample_pupil_share_matched": 0.9922217625103484,
+      "matched_districts": 12362,
+      "period": "2000-2010",
+      "stable_level_and_census_id_districts": 12252,
+      "unchanged_enrollment_districts": 28
+    },
+    {
+      "baseline_pupils_matched": 47556488.0,
+      "baseline_sample_districts": 12636,
+      "baseline_sample_pupil_share_matched": 0.9897909345146876,
+      "end_pupils_matched": 47394947.0,
+      "end_sample_districts": 12375,
+      "end_sample_pupil_share_matched": 0.9914512312239856,
+      "matched_districts": 12153,
+      "period": "2010-2019",
+      "stable_level_and_census_id_districts": 12105,
+      "unchanged_enrollment_districts": 51
+    }
+  ],
+  "years": [
+    {
+      "all_positive_enrollment_pupils": 46432782.0,
+      "all_positive_enrollment_rows": 14378,
+      "component_identity_max_abs_thousand_dollars": 0.0,
+      "component_identity_nonzero_rows": 0,
+      "enrollment_flag_counts": {
+        "A": 134,
+        "R": 15380
+      },
+      "filter_flow": [
+        {
+          "filter": "direct_public_level_01_02_03",
+          "remaining_pupils": 46305761.0,
+          "remaining_rows": 14257
+        },
+        {
+          "filter": "valid_seven_digit_nces_id",
+          "remaining_pupils": 46305761.0,
+          "remaining_rows": 14257
+        },
+        {
+          "filter": "exclude_dc",
+          "remaining_pupils": 46234999.0,
+          "remaining_rows": 14256
+        },
+        {
+          "filter": "own_year_enrollment_at_least_100",
+          "remaining_pupils": 46186418.0,
+          "remaining_rows": 13137
+        },
+        {
+          "filter": "positive_current_and_instruction",
+          "remaining_pupils": 46186418.0,
+          "remaining_rows": 13137
+        }
+      ],
+      "invalid_nces_ids": 186,
+      "raw_rows": 15514,
+      "trailing_blank_rows": 0,
+      "valid_unique_nces_ids": 15328,
+      "year": 2000
+    },
+    {
+      "all_positive_enrollment_pupils": 48266209.0,
+      "all_positive_enrollment_rows": 13515,
+      "component_identity_max_abs_thousand_dollars": 0.0,
+      "component_identity_nonzero_rows": 0,
+      "enrollment_flag_counts": {
+        "not_in_this_file": 14549
+      },
+      "filter_flow": [
+        {
+          "filter": "direct_public_level_01_02_03",
+          "remaining_pupils": 48131134.0,
+          "remaining_rows": 13420
+        },
+        {
+          "filter": "valid_seven_digit_nces_id",
+          "remaining_pupils": 48131134.0,
+          "remaining_rows": 13420
+        },
+        {
+          "filter": "exclude_dc",
+          "remaining_pupils": 48087268.0,
+          "remaining_rows": 13419
+        },
+        {
+          "filter": "own_year_enrollment_at_least_100",
+          "remaining_pupils": 48047003.0,
+          "remaining_rows": 12636
+        },
+        {
+          "filter": "positive_current_and_instruction",
+          "remaining_pupils": 48047003.0,
+          "remaining_rows": 12636
+        }
+      ],
+      "invalid_nces_ids": 6,
+      "raw_rows": 14549,
+      "trailing_blank_rows": 14549,
+      "valid_unique_nces_ids": 14543,
+      "year": 2010
+    },
+    {
+      "all_positive_enrollment_pupils": 48011255.0,
+      "all_positive_enrollment_rows": 13268,
+      "component_identity_max_abs_thousand_dollars": 0.0,
+      "component_identity_nonzero_rows": 0,
+      "enrollment_flag_counts": {
+        "not_in_this_file": 14197
+      },
+      "filter_flow": [
+        {
+          "filter": "direct_public_level_01_02_03",
+          "remaining_pupils": 47891292.0,
+          "remaining_rows": 13129
+        },
+        {
+          "filter": "valid_seven_digit_nces_id",
+          "remaining_pupils": 47891292.0,
+          "remaining_rows": 13129
+        },
+        {
+          "filter": "exclude_dc",
+          "remaining_pupils": 47842227.0,
+          "remaining_rows": 13128
+        },
+        {
+          "filter": "own_year_enrollment_at_least_100",
+          "remaining_pupils": 47804090.0,
+          "remaining_rows": 12377
+        },
+        {
+          "filter": "positive_current_and_instruction",
+          "remaining_pupils": 47803609.0,
+          "remaining_rows": 12375
+        }
+      ],
+      "invalid_nces_ids": 9,
+      "raw_rows": 14197,
+      "trailing_blank_rows": 14197,
+      "valid_unique_nces_ids": 14188,
+      "year": 2019
+    }
+  ]
+}

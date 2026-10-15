@@ -1,0 +1,16 @@
+{
+  "california_sensitivity": "After the initial raw estimates, an additional source-driven check excludes California for the 2000-2019 pupil-weighted current/instruction regressions only. Census school19doc.doc Appendix B says over 900 California charters were reclassified out of governmental-system coverage in FY2019, producing substantial per-pupil finance and enrollment changes. This addition is post-result, not preregistered. It does not replace the full sample.",
+  "california_source": "https://www2.census.gov/programs-surveys/school-finances/tables/2019/secondary-education-finance/school19doc.doc",
+  "declared_before_regressions": true,
+  "inference": "State-cluster sandwich CR1: G/(G-1)*(N-1)/(N-(G+1)); t intervals with G-1 df. These are model-based regression uncertainty, not F-33 sampling variance or causal-identification uncertainty.",
+  "inflation": "Nominal dollars: common state-level price levels or changes are absorbed by the state intercepts. No claim that district-specific inflation is removed.",
+  "inputs": "Original Census F-33 2000, 2010 and 2019 CSVs; official Table 8 workbooks; original documentation.",
+  "limits": "Matched IDs do not establish stable district geography; survival, migration, funding rules, prices and service mix remain confounders. Baseline pupil weights are not population-removal weights. Results do not identify school quality, a finite removal response or national equilibrium effects.",
+  "models": "2019 log spending on log enrollment with state intercepts; matched-ID 2000-2019, 2000-2010, 2010-2019 log differences with state intercepts.",
+  "outcomes": "TCURELSC (current spending) and TCURINST (instruction). Instruction is an input-composition check, not an educational-quality outcome.",
+  "purpose": "Descriptive audit of the association behind the school-response assumption; not a causal estimate of group removal.",
+  "selection": "Each year: SCHLEV 01/02/03, unique valid seven-digit NCESID, 50 states excluding DC, own-year V33 >= 100, positive TCURELSC and TCURINST. Every YRDATA must match its file.",
+  "sensitivities": "Separate growth and shrinkage regressions (each with its own state intercepts) in every long difference; 2000-2019 stable SCHLEV and IDCENSUS, abs(dlog enrollment) <= log(2), and both restrictions. No outcome-tail trimming.",
+  "validation": "Verify raw source hashes and unique IDs; identity TCURELSC=TCURINST+TCURSSVC+TCUROTH; compare all positive-enrollment-unit pp to original Table 8 without calibration. Published pp exclude spending for students outside reported enrollment, so mismatch is reported, not silently adjusted.",
+  "weights": "Equal district weight and baseline pupil weight; current pupils for cross section. WLS weights are normalized to mean one with no effect on slope or CR1 covariance."
+}

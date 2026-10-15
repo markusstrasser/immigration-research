@@ -1,0 +1,64 @@
+[
+  {
+    "results": [
+      {
+        "difference_dollars": -107.38340204223641,
+        "difference_percent": -1.0130455544534955,
+        "excel_cell": "C13",
+        "field": "TCURELSC",
+        "published_table8_pp": 10600.056588784539,
+        "raw_positive_enrollment_pp": 10492.673186742302
+      },
+      {
+        "difference_dollars": 14.791727879442078,
+        "difference_percent": 0.22879316118575854,
+        "excel_cell": "F13",
+        "field": "TCURINST",
+        "published_table8_pp": 6465.1092728393005,
+        "raw_positive_enrollment_pp": 6479.901000718743
+      }
+    ],
+    "sheet": "8",
+    "status": "Uncalibrated comparison; raw amounts and published pp use different exclusions/adjustments. Neither exact equality nor complete reconciliation is claimed.",
+    "table_notes": [
+      "SOURCE: 2010 Annual Survey of Local Government Finances - School Systems.  Data are not subject to sampling error, but for information on nonsampling error \nand definitions, see introductory text.  Data users who create their own estimates from these tables should cite the U.S. Census Bureau as the source of the original data only.",
+      "",
+      "1Includes amounts not shown separately.",
+      "Note: See Appendix B for a description of state-specific reporting anomalies.  Payments to other school systems are excluded from this table.  Expenditure for adult education,",
+      "community services, and other nonelementary-secondary programs are also excluded.  Enrollments used to calculate per pupil amounts represent fall 2009 memberships",
+      "collected by NCES on the CCD Agency file -  \"Local Education Agency (School District) Universe Survey: 2009-10.\"   Enrollments for private charter schools, state educational"
+    ],
+    "workbook": "elsec10_sttables.xls",
+    "year": 2010
+  },
+  {
+    "results": [
+      {
+        "difference_dollars": -4.427395076845642,
+        "difference_percent": -0.033573054279434356,
+        "excel_cell": "C11",
+        "field": "TCURELSC",
+        "published_table8_pp": 13187.34673346948,
+        "raw_positive_enrollment_pp": 13182.919338392634
+      },
+      {
+        "difference_dollars": 141.94672271278614,
+        "difference_percent": 1.7825734417054484,
+        "excel_cell": "F11",
+        "field": "TCURINST",
+        "published_table8_pp": 7963.022414211462,
+        "raw_positive_enrollment_pp": 8104.969136924248
+      }
+    ],
+    "sheet": "8",
+    "status": "Uncalibrated comparison; raw amounts and published pp use different exclusions/adjustments. Neither exact equality nor complete reconciliation is claimed.",
+    "table_notes": [
+      "",
+      "1Includes amounts not shown separately.",
+      "Note: See Appendix B for a description of state-specific reporting anomalies. Payments to other school systems are excluded from this table. Expenditures for adult education, community services, and other nonelementary-secondary programs are also excluded. Enrollments used to calculate per pupil amounts represent fall 2018 memberships collected by NCES on the CCD agency universe file - \"Local Education Agency (School District) Universe Survey: School Year 2018-19, Provisional Version 1a.\" Enrollments for state educational facilities, federal school systems, and charter schools whose charters are held by a nongovernmental entity have been excluded. Enrollments from the CCD agency universe file were subject to adjustment if the enrollments were inconsistent with the finances reported. Annual Survey of School System Finances statistics include the finances of charter schools whose charters are held directly by a government or a government agency. Charter schools whose charters are held by nongovernmental entities are deemed to be out of scope for the Annual Survey of School System Finances.",
+      "SOURCE: 2019 Annual Survey of School System Finances. Data are not subject to sampling error, but for information on nonsampling error and definitions, see introductory text. Data users who create their own estimates from these tables should cite the U.S. Census Bureau as the source of the original data only."
+    ],
+    "workbook": "elsec19_sumtables.xls",
+    "year": 2019
+  }
+]

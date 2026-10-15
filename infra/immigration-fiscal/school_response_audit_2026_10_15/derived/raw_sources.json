@@ -1,0 +1,72 @@
+{
+  "documentation_text": {
+    "file": "school15doc.txt",
+    "note": "Local text extraction; original PDF independently hash-pinned above.",
+    "sha256": "7008bc404167a1810f96c6bb032767e78b9da3508d18cd21f07779f5cde72d69"
+  },
+  "fixed_manifest_subset": [
+    {
+      "bytes": 14592790,
+      "checked_sha256": "75c2641e339890b50732c570692274b36c97b76371ae8ed61e181b3ea2d9d1d5",
+      "file": "elsec00.txt",
+      "fiscal_year": 2000,
+      "header_fields": 256,
+      "rows": 15514,
+      "sha256": "75c2641e339890b50732c570692274b36c97b76371ae8ed61e181b3ea2d9d1d5",
+      "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2000/secondary-education-finance/elsec00.txt"
+    },
+    {
+      "bytes": 7313233,
+      "checked_sha256": "5bebf41c59ddb0f8ddc4e00070abbcb522237fec1c9febac9078d8e3fc841896",
+      "file": "elsec10.txt",
+      "fiscal_year": 2010,
+      "header_fields": 141,
+      "rows": 14549,
+      "sha256": "5bebf41c59ddb0f8ddc4e00070abbcb522237fec1c9febac9078d8e3fc841896",
+      "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2010/secondary-education-finance/elsec10.txt"
+    },
+    {
+      "bytes": 7255007,
+      "checked_sha256": "0d3fe071e52fa01d40b5dddaabfe0e07c997a593b740d9c35b3c240a137ddb09",
+      "file": "elsec19.txt",
+      "fiscal_year": 2019,
+      "header_fields": 141,
+      "rows": 14197,
+      "sha256": "0d3fe071e52fa01d40b5dddaabfe0e07c997a593b740d9c35b3c240a137ddb09",
+      "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2019/secondary-education-finance/elsec19.txt"
+    },
+    {
+      "bytes": 473088,
+      "checked_sha256": "147511becbc8e968986f3df6db88f6afe19175076040025ded0c3d0f4d6be7cf",
+      "file": "elsec10_sttables.xls",
+      "fiscal_year": 2010,
+      "sha256": "147511becbc8e968986f3df6db88f6afe19175076040025ded0c3d0f4d6be7cf",
+      "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2010/secondary-education-finance/elsec10_sttables.xls"
+    },
+    {
+      "bytes": 533504,
+      "checked_sha256": "96807e7c1cb6b6390439f92310fc82d04df8be7e1a55d1b4c6a135ed431e76fc",
+      "file": "elsec19_sumtables.xls",
+      "fiscal_year": 2019,
+      "sha256": "96807e7c1cb6b6390439f92310fc82d04df8be7e1a55d1b4c6a135ed431e76fc",
+      "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2019/secondary-education-finance/elsec19_sumtables.xls"
+    },
+    {
+      "bytes": 689064,
+      "checked_sha256": "824553b59165613a1a4909084ee7dc9b8969228596d6dd1db8010421c0e0f9c8",
+      "file": "school15doc.pdf",
+      "fiscal_year": 2015,
+      "sha256": "824553b59165613a1a4909084ee7dc9b8969228596d6dd1db8010421c0e0f9c8",
+      "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2015/secondary-education-finance/school15doc.pdf"
+    }
+  ],
+  "manifest_path": "infra/immigration-fiscal/school_dilution_2026_09_24/derived/sources_f33.json",
+  "manifest_sha256": "582bb20e7b4150bc84765a36bc85c6e58da1c3ef295547ebadad3a22b9caa8cc",
+  "outputs_sha256": {
+    "raw_benchmarks.json": "0f9d76aa85421c63c2f13fb08bb455dd60281f6aa631397ed27a99242f1e393c",
+    "raw_coverage.json": "92f0639fe23953a4d8be660ca577b77b07eafcfa3cb42eef7f39da1471c67b1d",
+    "raw_estimates.csv": "229b9fab022d753ffce43697b1e0b73e7d0dfb30a11123a203a4b9ea695fd1d4",
+    "raw_method.json": "013913f954af598a5864127cb666d9728aadc85611d928f2080d07b3d691d86e"
+  },
+  "script_sha256": "0c0a3009750d3491b2e4e4b715b6451b071dcf2328bc8b965320f2a64bf53373"
+}
