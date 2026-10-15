@@ -1,6 +1,7 @@
 """Behavioral controls and fail-closed adoption checks for living citations."""
 import json
 import sys
+from datetime import date, timedelta
 from pathlib import Path
 
 import pytest
@@ -8,6 +9,10 @@ import pytest
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import citation_freshness as C  # noqa: E402
+
+# The live case moves at each adoption; tests that a live reference is not flagged read it from the manifest.
+LIVE = json.loads((C.ROOT / C.MANIFEST).read_text())["key"]
+LIVE_VERSION = next(v for v, k in C.versions(C.ROOT).items() if k == LIVE)
 
 
 @pytest.fixture
@@ -41,7 +46,7 @@ def test_current_citations_flag_with_original_line_and_reference(live, reference
     "[Superseded: `rekey_summary_oct07.csv`] The estimate is current.",
     "## Revisions\n\n`rekey_summary_oct07.csv`\n\n### Detail\n`generation_results_oct07.csv`",
     "```python\nrekey_summary_oct07.csv\n```\n<!-- rekey_summary_oct07.csv -->",
-    "The estimate uses `rekey_summary_oct14.csv`.",
+    f"The estimate uses `rekey_summary_{LIVE}.csv`.",
     "The estimate uses `rekey_summary_oct070.csv`.",
 ])
 def test_records_and_live_references_are_not_flagged(live, text):
@@ -70,12 +75,12 @@ def test_summary_version_selector(live):
     version_keys = C.versions(C.ROOT)
     rows = C.scan_text("synthetic.md", "Use `summary.json` key `v6` for the current estimate.", live, version_keys)
     assert [(r["key"], r["reference"]) for r in rows] == [("oct07", "summary.json key v6")]
-    assert C.scan_text("synthetic.md", "Use `summary.json` key `v7`.", live, version_keys) == []
+    assert C.scan_text("synthetic.md", f"Use `summary.json` key `{LIVE_VERSION}`.", live, version_keys) == []
     assert C.scan_text("synthetic.md", "The earlier case uses `summary.json` key `v6`.", live, version_keys) == []
 
 
 @pytest.mark.parametrize("reference", [
-    "sept24_propagation_2026_09_24/derived/oct14/real_costs_totals.csv",
+    f"sept24_propagation_2026_09_24/derived/{LIVE}/real_costs_totals.csv",
     "main_case_decomposition_2026_09_29/RESULT.md",
     "oct05/oct07",
 ])
@@ -133,9 +138,10 @@ def test_adoption_mismatch_blocks(tmp_path, live, mutation):
         data["meta"]["adopted"] = "2026-10-07"
         payload.write_text(json.dumps(data))
     elif mutation == "newer":
-        newer = package.parent.parent / "main_case_2026_10_15" / "package.cjs"
+        later = date.fromisoformat(live["adopted"]) + timedelta(days=1)
+        newer = package.parent.parent / ("main_case_" + later.strftime("%Y_%m_%d")) / "package.cjs"
         newer.parent.mkdir()
-        newer.write_text('const STATUS = "adopted";\nconst ADOPTED = "2026-10-15";\n')
+        newer.write_text(f'const STATUS = "adopted";\nconst ADOPTED = "{later.isoformat()}";\n')
     elif mutation == "missing-key":
         (package.parent / "derived" / "missing_oct07.csv").write_text("value\n")
         changed = dict(live, superseded=[k for k in live["superseded"] if k != "oct07"])
@@ -148,6 +154,23 @@ def test_adoption_mismatch_blocks(tmp_path, live, mutation):
             changed["key"] = "oct07"
         (tmp_path / C.MANIFEST).write_text(json.dumps(changed))
     with pytest.raises(ValueError, match="BLOCKED"):
+        C.load_live(tmp_path)
+
+
+def test_comma_declarations_parse_and_guard(tmp_path, live):
+    """v8's package declares `const STATUS="adopted", ADOPTED=...` on one line; the gate must read it."""
+    package = fake_repo(tmp_path, live)
+    package.write_text('const fs=require("fs"),path=require("path");\n'
+                       f'const HERE=__dirname,LANE="{live["lane"]}",CASE_KEY="{live["key"]}",DECISION="{live["decision"]}";\n'
+                       f'const STATUS="adopted", ADOPTED="{live["adopted"]}";\n'
+                       'const fail=s=>{throw Error(`[BLOCKED] v8: ${s}`);};\n')
+    assert C.load_live(tmp_path) == live
+    assert C.literal_consts(package.read_text())["LANE"] == [live["lane"]]
+    later = date.fromisoformat(live["adopted"]) + timedelta(days=1)
+    newer = package.parent.parent / ("main_case_" + later.strftime("%Y_%m_%d")) / "package.cjs"
+    newer.parent.mkdir()
+    newer.write_text(f'const X=1, STATUS="adopted", ADOPTED="{later.isoformat()}";\n')
+    with pytest.raises(ValueError, match="newer adopted package"):
         C.load_live(tmp_path)
 
 

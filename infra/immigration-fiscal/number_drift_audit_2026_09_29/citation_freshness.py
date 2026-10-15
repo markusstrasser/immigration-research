@@ -61,8 +61,40 @@ def blocked(message):
     raise ValueError(f"[BLOCKED] {message}")
 
 
+def literal_consts(text):
+    """String-literal `const` declarators by name, comma lists included (`const A="x", B="y";`).
+
+    Single-line statements only; a declarator whose initializer is not one string literal is skipped.
+    """
+    found = {}
+    for line in text.splitlines():
+        statement = re.match(r"const\s+(.+);\s*$", line)
+        if not statement:
+            continue
+        body, parts, depth, quote, start = statement[1], [], 0, None, 0
+        for i, ch in enumerate(body):
+            if quote:
+                if ch == quote and body[i - 1] != "\\":
+                    quote = None
+            elif ch in "\"'`":
+                quote = ch
+            elif ch in "([{":
+                depth += 1
+            elif ch in ")]}":
+                depth -= 1
+            elif ch == "," and depth == 0:
+                parts.append(body[start:i])
+                start = i + 1
+        parts.append(body[start:])
+        for part in parts:
+            d = re.fullmatch(r"\s*([A-Za-z_$][\w$]*)\s*=\s*([\"'])([^\"']*)\2\s*", part)
+            if d:
+                found.setdefault(d[1], []).append(d[3])
+    return found
+
+
 def declaration(text, name):
-    hits = re.findall(rf'^const {name}\s*=\s*[\"\']([^\"\']+)[\"\'];', text, re.M)
+    hits = literal_consts(text).get(name, [])
     if len(hits) != 1:
         blocked(f"package must declare one literal {name}, got {len(hits)}")
     return hits[0]
@@ -113,7 +145,7 @@ def load_live(root=ROOT):
     # still pass when a later package is adopted and the manifest is forgotten.
     for other in sorted((root / FISCAL).glob("main_case_*/package.cjs")):
         source = other.read_text()
-        if re.search(r'^const STATUS\s*=\s*[\"\']adopted[\"\'];', source, re.M):
+        if literal_consts(source).get("STATUS") == ["adopted"]:
             if date.fromisoformat(declaration(source, "ADOPTED")) > adopted:
                 blocked(f"newer adopted package {other.parent.name}: update live_case.json")
     return live
