@@ -15,6 +15,54 @@ def raws(text):
     return [t[2] for t in A.tokens(text)]
 
 
+def test_index_headline_boundary_survives_case_and_number_changes(tmp_path):
+    path = tmp_path / 'index.md'
+    start, end = A.INDEX_SPANS[0]
+    path.write_text('Outside $1bn\n**Adopted main case (October 15): $366–456bn/year**\n'
+                    f'{end} outside $2bn\n')
+    scanned = '\n'.join(text for _, text, _ in A.span_lines(path, [(start, end)]))
+    assert raws(scanned) == ['$366–456bn']
+
+
+def test_faq_complete_account_boundary_survives_number_change(tmp_path):
+    path = tmp_path / 'faq.md'
+    span = next(span for span in A.FAQ_SPANS if span[0] == 'figures are not the $')
+    path.write_text('Outside $1bn; figures are not the $366–456bn complete account. [SOURCE: outside $2bn\n')
+    scanned = '\n'.join(text for _, text, _ in A.span_lines(path, [span]))
+    assert raws(scanned) == ['$366–456bn']
+
+
+def test_index_history_and_social_boundaries_read_the_v8_rows(tmp_path):
+    for span, label in [(A.INDEX_SPANS[1], '$365.8–456.0bn'), (A.INDEX_SPANS[3], '$477.7–573.4bn')]:
+        path = tmp_path / 'index.md'
+        path.write_text(f'{span[0]}\n{label}\n{span[1]}\nOutside $1bn\n')
+        scanned = '\n'.join(text for _, text, _ in A.span_lines(path, [span]))
+        assert label in raws(scanned)
+        assert '$1bn' not in raws(scanned)
+
+
+def test_revised_generation_crime_and_incidence_spans_read_the_live_text(tmp_path):
+    spans = [A.MEMO_SPANS[A.BY_GENERATION][0],
+             next(s for s in A.FAQ_SPANS if s[0] == 'The main case does not isolate'),
+             next(s for s in A.INDEX_SPANS if s[0] == 'The [debt legacy lane]'),
+             A.MEMO_SPANS[A.REAL_COSTS][1]]
+    for start, end in spans:
+        path = tmp_path / 'memo.md'
+        path.write_text(f'{start}\n$365.8–456.0bn\n{end}\nOutside $1bn\n')
+        scanned = '\n'.join(text for _, text, _ in A.span_lines(path, [(start, end)]))
+        assert '$365.8–456.0bn' in raws(scanned)
+        assert '$1bn' not in raws(scanned)
+
+
+def test_world_ledger_bindings_use_the_renamed_other_resident_column():
+    rows = [r for r in A.load_map().values() if 'world_ledger' in r['source_path']
+            and 'other_us_residents_bn' in r['source_field']]
+    assert len(rows) == 2
+    assert all('|us_residents_bn' not in r['source_field'] for r in A.load_map().values()
+               if 'world_ledger' in r['source_path'])
+    assert all(A.resolve(r['source_path'], r['source_field'], r['expr']) for r in rows)
+
+
 def test_an_all_digit_hash_is_masked_only_when_it_names_a_commit():
     # After 9e316341 the INDEX cited 73934145 and "audit 4827413"; both met the audit as unsourced quantities.
     hashes = subprocess.run(["git", "-C", str(A.ROOT), "rev-list", "--all"], capture_output=True, text=True,

@@ -22,27 +22,28 @@ def _rounded(cases, places):
     return [[round(x, places) for x in v] for v, _label in cases]
 
 
-def test_v6_is_current_and_the_october_5_and_september_27_and_29_values_are_earlier():
+def test_v8_is_current_with_the_registry_on_v6_and_v7_retained_as_earlier():
     recs = M.Q.load_registry()
     values, registry = M.current_values(recs)
     earlier = M.earlier_values()
-    # main case v6 is current, and the evidence map and its registry show it (3834b1c8), so nothing is bridged
-    assert M.ADOPTED == {} and registry == {}
-    assert [round(x, 1) for x in values["case.main"]] == [389.1, 461.5]
-    assert [round(x, 2) for x in values["case.per_member"]] == [9.10, 10.79]
-    assert [round(x, 1) for x in values["case.cash_set"]] == [307.4, 385.4]
+    assert set(M.ADOPTED) == set(registry)
+    assert [round(x, 1) for x in registry["case.main"]] == [389.1, 461.5]
+    assert [round(x, 1) for x in values["case.main"]] == [365.8, 456.0]
+    assert [round(x, 2) for x in values["case.per_member"]] == [8.09, 10.08]
+    assert [round(x, 1) for x in values["case.cash_set"]] == [281.8, 371.9]
     # the earlier cases, newest first: the October 5 case (v5), then the September 29 case (v4)
-    assert [label for _v, label in earlier["case.main"]] == ["the October 5 case (v5)", "the September 29 case (v4)"]
-    assert _rounded(earlier["case.main"], 1) == [[390.3, 461.2], [371.4, 434.8]]
-    assert _rounded(earlier["case.per_member"], 2) == [[9.13, 10.79], [9.35, 10.95]]
-    assert _rounded(earlier["case.cash_set"], 1) == [[307.4, 383.4], [294.7, 361.8]]
+    assert [label for _v, label in earlier["case.main"]] == ["the October 14 case (v7)", "the October 7 case (v6)",
+                                                          "the October 5 case (v5)", "the September 29 case (v4)"]
+    assert _rounded(earlier["case.main"], 1) == [[339.6, 423.6], [389.1, 461.5], [390.3, 461.2], [371.4, 434.8]]
+    assert _rounded(earlier["case.per_member"], 2) == [[7.94, 9.91], [9.10, 10.79], [9.13, 10.79], [9.35, 10.95]]
+    assert _rounded(earlier["case.cash_set"], 1) == [[264.4, 348.5], [307.4, 385.4], [307.4, 383.4], [294.7, 361.8]]
     # the pairing is the propagation lane's v6 run; its v5 and September 29 runs are the earlier vintages
-    assert [round(x, 1) for x in values["pairing.total"]] == [489.0, 570.7]
-    assert [round(x, 2) for x in values["pairing.per_member_priced"]] == [11.44, 13.35]
-    assert [round(x, 1) for x in values["pairing.fiscal_footing"]] == [384.3, 461.5]
-    assert _rounded(earlier["pairing.total"], 1) == [[490.2, 570.7], [462.9, 535.5]]
-    assert _rounded(earlier["pairing.per_member_priced"], 2) == [[11.47, 13.35], [11.66, 13.48]]
-    assert _rounded(earlier["pairing.fiscal_footing"], 1) == [[385.4, 461.2], [366.7, 434.8]]
+    assert [round(x, 1) for x in values["pairing.total"]] == [477.7, 573.4]
+    assert [round(x, 2) for x in values["pairing.per_member_priced"]] == [10.56, 12.68]
+    assert [round(x, 1) for x in values["pairing.fiscal_footing"]] == [365.8, 456.0]
+    assert _rounded(earlier["pairing.total"], 1) == [[440.1, 537.5], [489.0, 570.7], [490.2, 570.7], [462.9, 535.5]]
+    assert _rounded(earlier["pairing.per_member_priced"], 2) == [[10.29, 12.57], [11.44, 13.35], [11.47, 13.35], [11.66, 13.48]]
+    assert _rounded(earlier["pairing.fiscal_footing"], 1) == [[334.8, 423.6], [384.3, 461.5], [385.4, 461.2], [366.7, 434.8]]
     others = M.other_values(recs, values, registry, earlier)
     # the September 27 case and pairing reach the sweep through `supersedes`, by record id
     for rid, ref, want in (("case.main", "case.sept27", [321.8, 387.4]),
@@ -51,8 +52,8 @@ def test_v6_is_current_and_the_october_5_and_september_27_and_29_values_are_earl
         assert hits and all(o["kind"] == "vintage" for o in hits)
         assert [round(x, 1) for x in values[ref]] == want
     for rid in M.EARLIER:
-        assert not any(o["origin"] == "registry" for o in others[rid])
-        assert [o["kind"] for o in others[rid] if o["origin"] == "earlier"] == ["vintage", "vintage"]
+        assert any(o["origin"] == "registry" for o in others[rid])
+        assert [o["kind"] for o in others[rid] if o["origin"] == "earlier"] == ["vintage"] * 4
 
 
 def test_an_exemption_holds_only_while_its_sentence_stands():
@@ -67,14 +68,14 @@ def test_an_allowance_passes_only_its_own_sentence_and_lapses_with_it():
     recs = M.Q.load_registry()
     values, registry = M.current_values(recs)
     others = M.other_values(recs, values, registry, M.earlier_values())
-    key, reason = next(iter(M.ALLOW.items()))
+    key, reason = next((k, v) for k, v in M.ALLOW.items() if k[1] == "case.per_member")
     path, rid, quoted, phrase = key
 
     def classes(memo, text):
         return {r["class"] for r in M.sweep_text(memo, text, recs, values, others)
                 if r["record"] == rid and r["quoted"] == quoted}
-    own = f"Members live in a household that pays more than it costs: {quoted} {phrase}."
-    other = f"About {quoted} of members live in a household that pays more than it costs."
+    own = f"The main case has a separate {quoted} {phrase}."
+    other = f"The main case is {quoted} per member."
     [allowed] = classes(path, own)
     assert allowed.endswith("_allowed")
     assert [r["label"] for r in M.sweep_text(path, own, recs, values, others)

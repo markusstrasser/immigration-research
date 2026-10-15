@@ -326,19 +326,19 @@ def span_lines(path, spans):
 
 # Markdown spans in scope: current results only (coverage and reasons in RESULT.md).
 INDEX_SPANS = [
-    ("**Adopted main case (October 14): $340–424bn/year", "Treat an Astra accusation as a lead to verify"),
+    ("**Adopted main case (", "Treat an Astra accusation as a lead to verify"),
     ("**Earlier cases.** Each main case replaced the one before.",
-     "[decision](../decisions/2026-10-14-main-case-v7.md), ladder 299 |"),
+     "[decision](../decisions/2026-10-15-main-case-v8.md), ladder 304 |"),
     ("[By generation](immigration-adopted-account-by-generation-2026-09-25.md) (ladder 224,",
      "([scope memo](immigration-education-administration-scope-2026-09-20.md))."),
     ("[Real fiscal and social costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) (ladder 188–193)",
-     "[decision](../decisions/2026-09-28-social-items-more-benefits.md))."),
+     "[re-spending](../infra/immigration-fiscal/social_respending_2026_10_14/RESULT.md)]"),
     ("Wages move **$66–166bn**", "charged nationally, the share ahead falls to 9.0%."),
     ("The [world ledger]", "premium over being raised in Mexico. [FRAMING-SENSITIVE]"),
     ("Benefits are priced to the same standard as the costs", "so both figures stand (ladder 199)."),
     # the dataset audit's fill-in correction, sized on the main case (the list's other sizes sit in the ladder)
     ("leaving them in would lower the main case by", "Federal tax the CPS misses at the top was"),
-    ("The [debt legacy lane]", "nor the stock to an annual figure."),
+    ("The [debt legacy lane]", "resource costs and pension accrual must not be compounded as borrowing or added as legacy debt."),
     ("**Legacy comparisons, stated separately (September 30).**",
      "[decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]"),
     ("[Cumulative 2005–2024 back-cast]", "Not comparable with ladder 137's forward debt path."),
@@ -359,7 +359,7 @@ FAQ_SPANS = [
     ("Finding: only income-year 2024 is a complete account.", "of other programmes before 2024 is unmeasured."),
     ("No. The account describes a resident stock in a stationary comparison.",
      "neither is cash that a removal would free in the year."),
-    ("figures are not the $340–424bn complete account. [SOURCE:", "figures are not the $340–424bn complete account. [SOURCE:"),
+    ("figures are not the $", " complete account. [SOURCE:"),
     ("Two other corrections also run in opposite directions:", "service budget does (entry 2)."),
     ("Steel-man: one year of a price surge, pandemic programmes and a migration wave", "which flatters the year."),
     # entry 5's split of the adopted account by generation (in scope since the v4 restatement, 5e9112e)
@@ -382,7 +382,7 @@ FAQ_SPANS = [
      "Where the two overlap they agree"),
     # entries 12, 14 and 17, the figures restated on the main case (2026-10-08): offending at the Hispanic average,
     # fear and private security on the priced count, the production term, the fill-in correction
-    ("The main case does not isolate", "lower at both ends"),
+    ("The main case does not isolate", "variant stays beside the central fiscal-plus-social pairing."),
     ("Beyond the victims, fear and avoidance", "fiscal-plus-social total (entry 4)."),
     ("substitutes; the main case credits", "Three limits keep it from being added as it stands."),
     ("Leaving the survey's", "And the income tax key was too flat"),
@@ -401,12 +401,12 @@ MEMO_SPANS = {
         # ends on the next bullet's opening words, which carry no number, so the closing sentence stays in scope
         ("| Channel | Bottom fifth | 2nd | 3rd | 4th | Top fifth | Total |",
          "- **Housing.** Renters pay about the same extra rent in every fifth"),
-        ("**The fiscal cost's incidence is a financing convention.**", "and 18.3% and 0.55% under"),
+        ("**The fiscal cost's incidence is a financing convention.**", "and 19.4% and 0.66% under"),
         ("**Weighted by income.**", "weight (2.24), not a larger harm."),
     ],
     # the v6 verdicts (2026-10-07)
     BY_GENERATION: [
-        ("**Verdict (2026-10-14, main case v7):**", "state mix are not computed."),
+        ("**Verdict (", "state mix are not computed."),
     ],
     WINNERS: [
         ("**Verdict (2026-10-14, main case v7,", "whose pooled net under tax shares is −$384 a year."),

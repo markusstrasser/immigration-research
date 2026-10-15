@@ -11,11 +11,12 @@ A record's other values are the numbers a memo may still quote after the record 
     registry    the registry's own value of a record in ADOPTED. The registry follows the evidence map, which moves
                 to a new main case only when the operator asks. While the map lags, a record in ADOPTED takes its
                 current value from the adopted lane, and its registry value becomes an earlier vintage. ADOPTED is
-                 populated for v7 since 2026-10-14 while the map remains on v6. The September 27 values reach the
-                 sweep through the records' `supersedes` (case.sept27, pairing.total_sept27).
-    earlier     the values a record in EARLIER held on the cases v7 replaced, newest first: the October 7 case (v6), the October 5 case (v5)
-                and the September 29 case (v4), both earlier vintages ("$390–461bn" and "$371–435bn" as the main
-                case, "$490–571bn" and "$463–536bn" as the pairing, are flagged, and pass when named).
+                populated for v8 since 2026-10-15 while the map remains on v6. The September 27 values reach the
+                sweep through the records' `supersedes` (case.sept27, pairing.total_sept27).
+    earlier     the values a record in EARLIER held on the cases v8 replaced, newest first: the October 14 case (v7),
+                the October 7 case (v6), the October 5 case (v5) and the September 29 case (v4), all earlier vintages
+                ("$390–461bn" and "$371–435bn" as the main case, "$490–571bn" and "$463–536bn" as the pairing, are
+                flagged, and pass when named).
 An other value that equals the record's current value at the precision it is printed with is dropped.
 
 A memo number quotes an other value when, after the audit's masks (dates, ladder and item references, hashes):
@@ -45,8 +46,8 @@ reader can see what passed). A quote that ALLOW names (its memo, record, number 
 different measure's current value that rounds to an other value by coincidence: "<kind>_allowed", which passes with
 the entry's reason. An entry whose memo no longer holds its phrase and number stops the run.
 
-Scope: research/immigration-*.md except the confidence ladder, dated audits (a name holding "audit" and a date) and
-the memos in EXEMPT, each with its reason and the sentence that earns it; an exempt memo that loses that sentence
+Scope: research/immigration-*.md except the confidence ladder, dated audits and reviews (a name holding "audit",
+"review" or "red-team" and a date: each quotes the case it reviewed, at its date) and the memos in EXEMPT, each with its reason and the sentence that earns it; an exempt memo that loses that sentence
 stops the run. All three go to the same skip list, memo_sweep_meta.json's memos_skipped. `--no-exempt` reads the
 EXEMPT memos too, which reproduces a pass made before their exemption.
 Skipped within a memo: fenced code, HTML comments, `Revisions` sections, bracketed record notes ("[2026-09-25: …]",
@@ -86,13 +87,17 @@ ROOT = A.ROOT
 MEMOS = "research"
 LADDER = Q.LADDER
 REGISTRY = f"{A.OVERVIEW}/quantity_registry.csv"
-DATED_AUDIT = re.compile(r"audit.*\d{4}-\d{2}-\d{2}")
+DATED_AUDIT = re.compile(r"(audit|review|red-team).*\d{4}-\d{2}-\d{2}")
 # records kept at their date that a name does not mark: path → (the sentence that earns the exemption, the reason)
 EXEMPT = {
     "research/immigration-outside-checks-2026-09-24.md": (
         "The proposals below are kept as computed on the September 23 case.",
         "a dated audit: its header keeps its proposals as computed on the September 23 case, so its figures are "
         "that case's by declaration"),
+    "research/immigration-validation-and-backtesting-2026-09-28.md": (
+        "September 28, 2026. Validation audit",
+        "a dated validation audit: its checks ran on the September 27 case, and later cases enter as bracketed "
+        "notes"),
 }
 # coincidences: (memo, record id, the number as printed, a phrase of its sentence) → why the number is current
 ALLOW = {
@@ -107,10 +112,16 @@ ALLOW = {
      "below same-age whites"): (
         "the same tax shortfall (the second generation's, 9,373 a person with item T), which reads like the September "
         "29 case's per-member low end"),
+    ("research/immigration-historical-backcast-2026-09-20.md", "case.per_member", "$7.9k", "same-age tax shortfall"): (
+        "the third-plus generation's same-age tax shortfall with item T (age_normalizations.csv, shared allocation, "
+        "white ages, receipts_gap_vs_white -7906.712114), which reads like v7's case per-member low end"),
+    ("research/immigration-second-generation-by-origin-2026-09-22.md", "case.per_member", "$7.9k",
+     "below same-age whites"): (
+        "the same third-plus tax shortfall, -7906.712114 a person, which reads like v7's case per-member low end"),
 }
 
 # the records whose current value comes from an adopted lane the evidence map does not show yet: record id → (path,
-# field, expr). The map and its registry remain on v6; these records bridge to adopted v7. current_values stops
+# field, expr). The map and its registry remain on v6; these records bridge to adopted v8. current_values stops
 # once a registry row reads the adopted file, requiring its bridge entry to be removed.
 _PAIR = "csv:section=7&column=pairing_on_priced_count&item=published pairing"
 
@@ -121,18 +132,18 @@ def _pairing(case):
         "pairing.total": (f"l={_PAIR} (low)|{case} ;; h={_PAIR} (high)|{case}", "(l, h)"),
         "pairing.per_member_priced": (f"l={_PAIR} per group member (low)|{case} ;; "
                                       f"h={_PAIR} per group member (high)|{case}", "(l, h)"),
-        "pairing.fiscal_footing": (f"f=csv:section=7&column=hispanic&item=fiscal main case (low)|{case} ;; "
+        "pairing.fiscal_footing": (f"f=csv:section=7&column={'custody' if case == 'oct15' else 'hispanic'}&item=fiscal main case (low)|{case} ;; "
                                    f"g=csv:section=7&column=custody&item=fiscal main case (high)|{case}", "(f, g)"),
     }
 
 
-ADOPTED_LANE = "infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json"
-ADOPTED_PAIRING_LANE = "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct14/real_costs_totals.csv"
+ADOPTED_LANE = "infra/immigration-fiscal/main_case_2026_10_15/derived/summary.json"
+ADOPTED_PAIRING_LANE = "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.csv"
 ADOPTED = {
     "case.main": (ADOPTED_LANE, "a=json:main_case", "(a[0], a[1])"),
-    "case.per_member": (ADOPTED_LANE, "a=json:v7.per_member_usd.set", "(a[0]/1e3, a[1]/1e3)"),
+    "case.per_member": (ADOPTED_LANE, "a=json:v8.per_member_usd.set", "(a[0]/1e3, a[1]/1e3)"),
     "case.cash_set": (ADOPTED_LANE, "a=json:cash_set.band_bn", "(a[0], a[1])"),
-    **{rid: (ADOPTED_PAIRING_LANE, field, expr) for rid, (field, expr) in _pairing("oct14").items()},
+    **{rid: (ADOPTED_PAIRING_LANE, field, expr) for rid, (field, expr) in _pairing("oct15").items()},
 }
 
 
@@ -189,6 +200,19 @@ for _rid in ("case.main", "case.per_member", "case.cash_set"):
 for _rid, (_field, _expr) in _pairing("oct07").items():
     EARLIER[_rid].insert(0, ("infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct07/real_costs_totals.csv",
                             _field, _expr, "the October 7 case (v6)"))
+
+
+for _rid in ("case.main", "case.per_member", "case.cash_set"):
+    _field, _expr = {
+        "case.main": ("a=json:main_case", "(a[0], a[1])"),
+        "case.per_member": ("a=json:v7.per_member_usd.set", "(a[0]/1e3, a[1]/1e3)"),
+        "case.cash_set": ("a=json:cash_set.band_bn", "(a[0], a[1])"),
+    }[_rid]
+    EARLIER[_rid].insert(0, ("infra/immigration-fiscal/main_case_2026_10_14/derived/summary.json",
+                            _field, _expr, "the October 14 case (v7)"))
+for _rid, (_field, _expr) in _pairing("oct14").items():
+    EARLIER[_rid].insert(0, ("infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct14/real_costs_totals.csv",
+                            _field, _expr, "the October 14 case (v7)"))
 
 
 def earlier_values():
@@ -711,7 +735,7 @@ CONTROLS = [
     ("a Revisions section", "## Revisions\n\n- Crashes that group drivers cause were $42.3bn a year.\n", set()),
     ("a bracketed note", "Crashes charged by fault [2026-09-29: $42.3bn on the\nlane's count] now cost $40.6bn.",
      set()),
-    ("the adopted case as the main case", "The main case costs other residents $340–424bn a year.", set()),
+    ("the adopted case as the main case", "The main case costs other residents $366–456bn a year.", set()),
     ("the October 5 case quoted as current", "The main case costs other residents $390–461bn a year.",
      {("case.main", "vintage_unlabelled")}),
     ("the October 5 case named", "The October 5 case cost other residents $390–461bn a year.",
@@ -734,7 +758,7 @@ CONTROLS = [
      {("case.main", "vintage_labelled")}),
     ("the September 27 case after \"now\"", "The main case now costs $322–387bn a year.",
      {("case.main", "vintage_as_current")}),
-    ("the adopted case per member", "The main case is $7.9–9.9k a year per member.", set()),
+    ("the adopted case per member", "The main case is $8.1–10.1k a year per member.", set()),
     # v5's per-member band prints as v6's at one decimal ($9.1–10.8k), so its controls print two
     ("the October 5 case per member quoted as current", "The main case is $9.13–10.79k a year per member.",
      {("case.per_member", "vintage_unlabelled")}),
@@ -751,7 +775,7 @@ CONTROLS = [
     ("the September 27 case per member named",
       "The main case is $7.9–9.9k a year per member (September 27: $8.1–9.8k).",
      {("case.per_member", "vintage_labelled")}),
-    ("the adopted cash set", "Counting benefits when paid, the main case costs others $264.4–348.5bn a year.", set()),
+    ("the adopted cash set", "Counting benefits when paid, the main case costs others $281.8–371.9bn a year.", set()),
     ("the October 5 cash set quoted as current",
      "Counting benefits when paid, the main case costs others $307.4–383.4bn a year.",
      {("case.cash_set", "vintage_unlabelled")}),
@@ -761,8 +785,8 @@ CONTROLS = [
     ("the September 29 cash set quoted as current",
      "Counting benefits when paid, the main case costs others $294.7–361.8bn a year.",
      {("case.cash_set", "vintage_unlabelled")}),
-    ("the adopted pairing", "Fiscal and social costs together come to $439–533bn a year.", set()),
-    ("the adopted pairing per member", "Fiscal and social costs together are $10.3–12.5k a year per member.", set()),
+    ("the adopted pairing", "Fiscal and social costs together come to $478–573bn a year.", set()),
+    ("the adopted pairing per member", "Fiscal and social costs together are $10.6–12.7k a year per member.", set()),
     ("the October 5 pairing quoted as current", "Fiscal and social costs together come to $490–571bn a year.",
      {("pairing.total", "vintage_unlabelled")}),
     ("the October 5 pairing named",
@@ -857,7 +881,7 @@ def memos(rev, exempt=True):
         if n == LADDER:
             skipped.append((n, "the confidence ladder"))
         elif DATED_AUDIT.search(Path(n).name):
-            skipped.append((n, "a dated audit"))
+            skipped.append((n, "a dated audit or review"))
         else:
             text = (ROOT / n).read_text() if rev is None else git("show", f"{rev}:{n}")
             reason = exemption(n, text) if exempt else None
