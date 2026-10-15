@@ -1,6 +1,7 @@
 # Assumption review of main case v7, 2026-10-14
 
 [2026-10-15: rounds 2–4 are under "Later rounds" below; the case converged at round 3.]
+[2026-10-15 09:59 JST: the convergence claim is withdrawn; see the last correction under "Later rounds".]
 
 **Verdict:** Round 1 found four corrections to the case over its $5bn bar, each executed in its own lane: US tax on
 foreign-source income sat in item 6's corporate lines; the union's reporting rule dropped US-born reporters with one
@@ -300,3 +301,11 @@ at the bar. Two claims were rejected:
 - D18: fix 6b's world delta runs +$6.9bn (equal weights) to −$2.2bn (λ 1.5), so it is over the bar at equal weights.
   The world ledger's RESULT carries the same correction (04357abf), and round 2 dropped 6b (D2 fix 5).
 - S04: reversed in S3, above.
+
+### Correction, 2026-10-15 09:59 JST: the case has not been shown to converge
+
+This section's verdict says the case converged. The evidence does not support that. Round 3 reviewed only v8's
+four new items. The two whole-case reviews so far each moved the headline by $25–50bn: the v6 review's findings
+became v7 ($389.1–461.5bn → $339.6–423.6bn, −$49.5 / −37.9bn), and round 1 on v7 became v8 (+$26.2 / +32.4bn).
+Whether the case has converged needs a whole-case review of v8. Round 5 runs one: the frame (F), the consumer
+lanes no round had reviewed (U1, U2), and whole-case packets on receipts, spending and who is counted.
