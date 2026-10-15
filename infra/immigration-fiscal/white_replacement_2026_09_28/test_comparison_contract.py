@@ -117,8 +117,71 @@ def test_true_count_removal_scales_the_measured_term_by_the_true_count():
             assert at_true['bn'] == pytest.approx(measured['bn'], abs=1e-12)
             half = C.true_count_removal(source, group, 'accrual', 'low', 0.6e8, 1.2e8, rule)
             assert half['bn'] == pytest.approx(measured['bn'] / 2, abs=1e-12)
+            assert half['comparator_se_bn'] == pytest.approx(measured['se_bn'] / 2, abs=1e-10)
+            if rule == 'children':
+                assert half['paired_se_bn'] is None
+                assert 'comparator-only' in half['se_scope']
     with pytest.raises(SystemExit, match='A1 and Black only'):
         C.true_count_removal(source, 'A2_us_born_nh_white', 'accrual', 'low', 1., 1., 'children')
+
+
+def test_children_reweighting_uses_expanded_departure_mask_and_lineage_precedence():
+    d = pd.DataFrame({'PH_SEQ': [1, 1, 2, 2, 3, 3], 'TAX_ID': [1, 1, 1, 1, 1, 1],
+                      'SPM_ID': [10, 10, 20, 20, 30, 30]})
+    civ = np.ones(6, bool)
+    # Household 1 child departs despite zero survey weight; it cannot turn its parent's unit into a mixed unit.
+    expanded = np.array([True, True, True, False, True, False])
+    base = np.array([1., 0., 1., 0., 1., 0.])
+    tilt = np.array([2., 0., 1., 0., 1., 0.])
+    ratios = C.reweight_ratios(d, civ, {'A1': base, 'tilt': tilt}, membership_rule='children',
+                               membership_mask=expanded, lineage_mask=np.array([0, 0, 0, 1, 0, 0], bool))
+    assert ratios['tilt'] == {'tax': 0.75, 'spm': 0.75, 'household': 0.75}
+    with pytest.raises(SystemExit, match='overlaps the precedence lineage'):
+        C.reweight_ratios(d, civ, {'A1': base}, membership_rule='children', membership_mask=expanded,
+                          lineage_mask=np.array([1, 0, 0, 0, 0, 0], bool))
+    with pytest.raises(SystemExit, match='unknown.*membership rule'):
+        C.reweight_ratios(d, civ, {'A1': base}, membership_rule='invented')
+
+
+def test_reweighted_true_count_uses_its_observed_count_and_signed_paired_parts():
+    source = C.load_mixed_unit()
+    group = 'A3_third_plus_nh_white_at_union_ages'
+    factors = {'tax': 1.2, 'spm': 0.8, 'household': 0.9}
+    row, gaps = C.entry(source, 'white_children', 'set', 'low')
+    source_own = float(gaps[0]['comparator_own_count'])
+    observed = source_own / 4
+    true = observed * 1.1
+    population = true / 2
+    lineage = np.linspace(10., 12., 161)
+    term = C.true_count_removal(source, group, 'accrual', 'low', population, true, 'children',
+                                reweight={group: factors}, observed_own=observed, lineage_replicates=lineage)
+    expected_parts = C.split(row['parts'], 1 / 8, factors)
+    assert term['bn'] == pytest.approx(sum(expected_parts.values()), abs=1e-12)
+    assert term['own_count'] == observed
+    comparator = C.item11_replicates(source, 'white_children', 'set', 'low', factors) / 8
+    assert term['comparator_se_bn'] == pytest.approx(C.sdr(comparator), abs=1e-12)
+    assert term['paired_se_bn'] == pytest.approx(C.sdr(lineage - comparator), abs=1e-12)
+    assert term['paired_se_bn'] != pytest.approx(np.hypot(C.sdr(lineage), C.sdr(comparator)), abs=1e-6)
+    with pytest.raises(SystemExit, match='observed own count'):
+        C.true_count_removal(source, group, 'accrual', 'low', population, true, 'children', reweight={group: factors})
+
+
+def test_a2_and_population_slice_cannot_be_published_as_central():
+    for group in ('A2_us_born_nh_white', 'all_residents_slice'):
+        reading = C.reading_scope(group)
+        assert reading['comparison_reading'] == 'current-rule reading'
+        assert not reading['central_eligible'] and reading['current_rule_reason']
+        with pytest.raises(SystemExit, match='current-rule reading, not a central'):
+            C.require_central_reading(group)
+    assert C.require_central_reading('A3_third_plus_nh_white_at_union_ages')['central_eligible']
+
+
+def test_uncertainty_without_expanded_lineage_vector_never_claims_pairing():
+    source = C.load_mixed_unit()
+    term = C.true_count_removal(source, 'A1_third_plus_nh_white', 'accrual', 'low', 1., 1., 'children')
+    assert term['paired_se_bn'] is None and term['comparator_se_bn'] > 0
+    with pytest.raises(SystemExit, match='160 finite signed replicates'):
+        C.sdr(np.ones(160))
 
 
 def test_mixed_mortality_pair_is_never_a_stated_claim():

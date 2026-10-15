@@ -34,7 +34,11 @@ OUT = LANE / 'derived'
 CACHE = LANE / '_cache'
 # Round 3 (C3 fix 2): the children-rule groups' own-count targets, built by the white lane on its rough engine.
 CHILDREN_TARGETS = FISCAL / 'white_replacement_2026_09_28/derived/children_targets_oct15.json'
-GROUPS = ('white', 'black', 'white_children', 'black_children')
+GROUPS = ('white', 'black', 'white_children', 'black_children',
+          'white_children_round3', 'black_children_round3', 'lineage_current', 'lineage_children',
+          'lineage_without_white_overlap', 'lineage_without_black_overlap')
+sys.path.insert(0, str(LANE))
+from membership_rules import lineage_membership_masks
 sys.path.insert(0, str(FISCAL / 'scripts'))
 from memory_budget import require_within_budget
 
@@ -75,7 +79,21 @@ def source_module(name, group):
 def membership(d, civ, group):
     """The comparator mask; '<group>_children' adds members' biological minor children outside the group, who depart
     with them and count as members (the source's own-parent rule, membership.py:biological_children)."""
-    base = group.removesuffix('_children')
+    base = group.split('_')[0]
+    if base == 'lineage':
+        masks = lineage_membership_masks(d, civ)
+        if group == 'lineage_current':
+            mem = source_module('membership', group)
+            mask = masks['original'] | mem.latent_mask(d, masks['original'], civ)
+        elif group == 'lineage_children':
+            mask = masks['all']
+        elif group.startswith('lineage_without_'):
+            comparator = group.split('_')[2]
+            overlap, _ = membership(d, civ, comparator + '_children_round3')
+            mask = masks['all'] & ~overlap
+        else:
+            raise ValueError(group)
+        return mask, np.where(mask, 2, -1)
     native = d.PRCITSHP.isin([1, 2, 3]).to_numpy()
     parents = d.PEFNTVTY.isin([57, 60, 66, 69, 73, 78]).to_numpy() & d.PEMNTVTY.isin([57, 60, 66, 69, 73, 78]).to_numpy()
     if base == 'white':
@@ -84,9 +102,11 @@ def membership(d, civ, group):
         mask = civ & d.PEHSPNON.eq(2).to_numpy() & d.PRDTRACE.eq(2).to_numpy()
     else:
         raise ValueError(group)
-    if group.endswith('_children'):
+    if '_children' in group:
         bio, _, _ = source_module('membership', group).biological_children(d, mask, civ)
         mask = mask | bio
+        if not group.endswith('_round3'):
+            mask &= ~lineage_membership_masks(d, civ)['all']
     # Source's three-row ownership contract; no comparator generation claim.
     return mask, np.where(mask, 2, -1)
 
@@ -122,7 +142,7 @@ def frame(group):
     m = source_module('removal', group)
     d = m.add_fields(d, c)
     h = source_module('health', group)
-    extra = ['PEHSPNON', 'PRDTRACE'] + (['PEPAR1TYP', 'PEPAR2TYP'] if group.endswith('_children') else [])
+    extra = ['PEHSPNON', 'PRDTRACE', 'PEPAR1TYP', 'PEPAR2TYP']
     d = join_extra(d, c, list(dict.fromkeys(h.EXTRA + extra)))
     if group != 'lineage':
         union, gen = membership(d, civ, group)
@@ -240,7 +260,7 @@ def prepare():
                                   for side, lid, national, target, response in rows}}
             groups[group] = entries
         children = json.loads(CHILDREN_TARGETS.read_text())
-        require(set(children) == {'white_children', 'black_children'}, 'children-rule targets name both groups')
+        require(set(GROUPS) - {'white', 'black'} <= set(children), 'expanded-rule targets name every solved group')
         groups.update(children)
         write_json(OUT / 'children_targets_source.json', {'path': str(CHILDREN_TARGETS.relative_to(FISCAL.parent.parent)),
                                                           'sha256': digest(CHILDREN_TARGETS)})
@@ -386,6 +406,11 @@ def tax(group, profile=False):
         return
     all_targets = json.loads((OUT / 'comparator_targets.json').read_text())[group]
     count = counts(d, x['W'], x['civ'], x['union'])
+    if group in ('white_children', 'black_children'):
+        overlap = x['union'] & lineage_membership_masks(d, x['civ'])['all']
+        require(not overlap.any(), 'central comparator and authoritative lineage have zero record overlap')
+        count['authoritative_lineage_overlap'] = {'records': int(overlap.sum()),
+            'weighted_persons': float(x['W'][overlap, 0].sum())}
     require(abs(count['members']['weighted_persons'] - all_targets['set']['low']['population']) < 1e-3,
             f"comparator count equals authoritative lane: {count['members']['weighted_persons']} vs {all_targets['set']['low']['population']}")
     vectors, summaries, allocations = {}, [], {}
@@ -401,9 +426,18 @@ def tax(group, profile=False):
             allocation_key = json.dumps([context['lines'], {lid: context['resourceLines'][lid]
                 for lid in ('modeled_owner_property', 'snap', 'housing_subsidies')}], sort_keys=True)
             if allocation_key not in allocations:
-                consumption = m.consumption_removal(c, x, d, context)
+                resource_x = x
+                if group == 'lineage_current':
+                    # Frozen round2 solves taxes/benefits on union+latent but
+                    # retains union-only M5 keys. Match that exact baseline so
+                    # the delta also repairs the omitted latent resource move.
+                    resource_x = dict(x)
+                    resource_x['union'] = lineage_membership_masks(d, x['civ'])['original']
+                    resource_x['gen'] = np.where(resource_x['union'], 2, -1)
+                    resource_x['model'] = declaration_model(d, x['civ'], resource_x['union'], x['model'])
+                consumption = m.consumption_removal(c, resource_x, d, context)
                 res = redirected(SOURCE / 'resource_keys.py', 'mixedcomp_resource')
-                resources = res.compute(d, x, context, m.disposable_income(d, x['R'], x['P'])[0])
+                resources = res.compute(d, resource_x, context, m.disposable_income(d, x['R'], x['P'])[0])
                 allocations[allocation_key] = consumption, resources
             consumption, resources = allocations[allocation_key]
             health = archive(target / 'health_union.npz')
@@ -436,6 +470,7 @@ def tax(group, profile=False):
 
 def positive_control(details, target):
     reference = json.loads((SOURCE / 'derived/round2_summary.json').read_text())
+    require(details['results'] == reference['results'], 'lineage 122 full result records are identical')
     keys = lambda row: (row['method'], row['end'], row['component'])
     old = {keys(r): r for r in reference['results']}
     maximum = 0.
@@ -449,6 +484,8 @@ def positive_control(details, target):
     require(generated.iloc[:, :4].equals(original.iloc[:, :4]), 'lineage replicate component keys')
     stack_gap = float(np.max(abs(generated.iloc[:, 4:].to_numpy() - original.iloc[:, 4:].to_numpy())))
     require(stack_gap <= 1e-6, 'lineage every component replicate reproduces')
+    require(digest(target / 'round2_replicates.csv') == digest(SOURCE / 'derived/round2_replicates.csv'),
+            'lineage control full replicate export is byte-identical')
     headline = [r for r in details['results'] if r['component'] in ('bounded_low', 'bounded_high')]
     write_json(OUT / 'positive_control.json', {'passed': True, 'tolerance_bn': 1e-6, 'maximum_part_or_se_gap_bn': maximum,
         'maximum_replicate_gap_bn': stack_gap, 'rows_checked': len(details['results']), 'headline': headline})

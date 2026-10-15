@@ -97,12 +97,18 @@
     "infra/immigration-fiscal/lineage_mortality_2026_10_14/derived/reproduced_ratios.csv": "a9c1c3dc190057611f30002f1b057375c4c75432006e33210149420e8cf2564f",
     "infra/immigration-fiscal/lineage_mortality_2026_10_14/derived/case_changes.csv": "114f60cb38a93e89884752894dffcad66f28775d6b25c90d3e0a4c00d171d677",
     "infra/immigration-fiscal/lineage_mortality_2026_10_14/derived/comparisons.csv": "b5a9c874b53d55175cbb5eeabd753a2fd1271f841e94b43b904de8061e9f8fe7",
-    "infra/immigration-fiscal/white_replacement_2026_09_28/mortality_conventions.py": "9112fef4da7d618fdac04d6c19aa1165b7506ed51b8ff210c97719f71055cc05",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/mortality_conventions.py": "12a80114906fee48e6012ec4c6c39e17b3fa77a69e7ab167a5afc598471ec5ae",
     "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/coverage_bound_oct15.json": "3456126cc53c353ef0806059dcff33ccc1448cfe8de39d2c92583c6c7d3d073c",
     "infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/item.json": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283",
     "infra/immigration-fiscal/white_replacement_2026_09_28/derived/lineage_mortality_mix_oct15.csv": "05c392e9e0eeb523ce69493fe0b60dab406448c97f086978ff5294566e5926bd",
     "infra/immigration-fiscal/white_replacement_2026_09_28/derived/school_key_oct15.json": "f4e7a6e6994c288c1bffaadc1cad4b031f1ca8471541c966f7a03f534b3c5d90",
-    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/members_coverage_oct15.json": "7a95b71120c8c242d4edd6301b5985b37d29370c7da76eba807284c4405b4b4e",
-    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/derived/round2_summary.json": "acbb2ba55a6f1fdf4f2a66c2e236608bdaebd24090f7b814333417c7ed3bbc01"
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/members_coverage_oct15.json": "638f92a85ba2e21cbd4eabe42976bbdf0c96ff63c296c7ccc8923db3a637898b",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/derived/round2_summary.json": "acbb2ba55a6f1fdf4f2a66c2e236608bdaebd24090f7b814333417c7ed3bbc01",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/district_prices_oct15.json": "51a1660e167068f717c75bb63e3fbc4287b0de50561b3a7a4663194ab868e6d6",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/r4_adjustments.py": "21fe4029ceb22ae790d8158535d975e46131f31b886aba90c53549676082a3e0",
+    "infra/immigration-fiscal/mixed_unit_comparators_2026_10_15/derived/lineage_children_delta_summary.json": "a948aadd16835494fcbb5d63f340710dad49b9f8de891d02c148de4dd47b332b",
+    "infra/immigration-fiscal/mixed_unit_comparators_2026_10_15/derived/lineage_children_total_replicates.csv": "443b2e5df7663c82acaf1d447ae2efb61580d8dd89744e21eb038f268bee882f",
+    "infra/immigration-fiscal/mixed_unit_comparators_2026_10_15/derived/lineage_half_white_total_replicates.csv": "4d6f522e15b54aadae16c793b8264607cedf67c334eb030c31a2b3b5cb4231aa",
+    "infra/immigration-fiscal/mixed_unit_comparators_2026_10_15/derived/lineage_half_black_total_replicates.csv": "fc44109caf595e2e33afa83562990b5f07aaafee998cb9779830410bb65a1ec0"
   }
 }

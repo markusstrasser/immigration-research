@@ -1,0 +1,5 @@
+{
+  "path": "infra/immigration-fiscal/white_replacement_2026_09_28/derived/members_coverage_oct15.json",
+  "sha256": "638f92a85ba2e21cbd4eabe42976bbdf0c96ff63c296c7ccc8923db3a637898b",
+  "reading": "overlap_{white,black}, none coverage, general mortality; half subtracted from full lineage count"
+}

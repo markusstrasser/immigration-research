@@ -47,6 +47,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parents[0] / 'scripts'))
 import symmetric_comparators_oct14 as SYM  # noqa: E402
+import r4_adjustments as R4  # noqa: E402
 from memory_budget import require_within_budget  # noqa: E402
 
 W = SYM.W
@@ -65,6 +66,7 @@ BANDS = [(0, 4), (5, 9), (10, 17), (18, 29), (30, 49), (50, 100)]
 BLACK_CODES = {2, 6, 10, 11, 12, 16, 17, 18, 22, 23}     # PRDTRACE codes that include Black [SOURCE: ASEC 2025 dictionary]
 RACE_GROUPS = ('hispanic', 'nh_white', 'black', 'nh_other')
 GROUPS = {'A1_third_plus_nh_white': 'w3', 'nh_black_rough': 'blk'}
+REWEIGHTED = ('A3_third_plus_nh_white_at_union_ages', 'A4_third_plus_nh_white_stationary')
 COVERAGE_ARMS = ('central', 'pes_only', 'da_middle', 'da_all_black')
 MORTALITY = ('specific', 'general')     # combined_rules_only's group tables; combined_rules_general's whole population
 FAILS: list[str] = []
@@ -107,6 +109,9 @@ def check_inputs():
     hashes.update({str((COV / 'inputs' / n).relative_to(ROOT)): digest(COV / 'inputs' / n) for n in used})
     hashes[str(SOURCE_MEMBERSHIP.relative_to(ROOT))] = digest(SOURCE_MEMBERSHIP)
     hashes[str((COV / 'coverage_bound.py').relative_to(ROOT))] = digest(COV / 'coverage_bound.py')
+    for path in (Path(__file__), HERE / 'r4_adjustments.py', HERE / 'district_prices_oct15.py',
+                 W.FISCAL / 'mixed_unit_comparators_2026_10_15/membership_rules.py'):
+        hashes[str(path.relative_to(ROOT))] = digest(path)
     return hashes
 
 
@@ -235,7 +240,7 @@ def frame_extra():
                                                        'PEPAR1', 'PEPAR2', 'PEPAR1TYP', 'PEPAR2TYP'])
     require(len(x) == len(R.d) and np.array_equal(x.PH_SEQ.to_numpy(), R.d.PH_SEQ.to_numpy())
             and np.array_equal(x.A_AGE.to_numpy(), R.d.A_AGE.to_numpy()), 'CPS extra fields align with the rough frame')
-    for k in ('PRCITSHP', 'PEFNTVTY', 'PEMNTVTY', 'PRDTHSP', 'PEHSPNON', 'PRDTRACE'):
+    for k in ('PRCITSHP', 'PENATVTY', 'PEFNTVTY', 'PEMNTVTY', 'PRDTHSP', 'PEHSPNON', 'PRDTRACE'):
         x[k] = R.d[k].to_numpy()
     return x
 
@@ -292,17 +297,20 @@ def published_meps(g, sc):
     if abs(sc['population'] - float(R.w[R.MASK[g]].sum())) < 1e-6:      # unscaled (Black at own count)
         return R.mw * mmask
     mfrac = (sc['population'] / R.CPS_TOTAL) * float(R.mw.sum())
+    if sc.get('ages', 'own') != 'own':
+        pi = R.structure(np.ones(len(R.w), bool), sc['cps_w'], R.cage)
+        return R.reweight(mmask, R.mw, R.mage, pi, mfrac)
     return R.mw * mmask * (mfrac / float(R.mw[mmask].sum()))
 
 
-def build(g, sc0, members, kids, f, total, extra, msex, mgroup, hold=None, own_rule=False):
+def build(g, sc0, members, kids, f, total, extra, msex, mgroup, hold=None, own_rule=False, base_weights=None):
     """A scenario of members plus kids with coverage factors f, `total` persons, keyed like the group.
 
     sc0: the published scenario whose MEPS convention (scaled or own count) the new one keeps. hold: (custody,
     arrests) of the same membership uncovered at this total. Missed people add none: at an equal count the observed
     people are observed / true of the total; at the own count the held totals stand.
     """
-    w = R.w
+    w = R.w if base_weights is None else base_weights
     mass = w * (members | kids) * (1 + f)
     observed = float((w * (members | kids)).sum())
     true = float(mass.sum())
@@ -356,7 +364,7 @@ def build(g, sc0, members, kids, f, total, extra, msex, mgroup, hold=None, own_r
     return sc, observed, true
 
 
-def children_targets(groups, kids, scs, extra, msex, mgroup):
+def children_targets(groups, kids, scs, extra, msex, mgroup, masks):
     """The children-rule groups' own-count line targets for the mixed-unit survivor solve, built as the adapter's
     prepare() builds the current groups' (default evaluator settings; the per-person cost of the lineage-count
     scenario; lines from the natural unscaled MEPS universe), with the lineage's children block on the lineage side."""
@@ -364,12 +372,18 @@ def children_targets(groups, kids, scs, extra, msex, mgroup):
     none = np.zeros(len(R.d), bool)
     block, block_base = scs['lineage_block', 'none'][0], scs['lineage_block_base', 'none'][0]
     out = {}
-    for group, name in (('white_children', 'A1_third_plus_nh_white'), ('black_children', 'nh_black_rough')):
+    for group, name, rule in (('white_children', 'A1_third_plus_nh_white', 'children'),
+                             ('black_children', 'nh_black_rough', 'children'),
+                             ('white_children_round3', 'A1_third_plus_nh_white', 'children_round3'),
+                             ('black_children_round3', 'nh_black_rough', 'children_round3')):
         g = GROUPS[name]
         members = R.MASK[g] & civ & (R.w > 0)
-        own = float(R.w[members | kids[name]].sum())
-        natural, _, _ = build(g, R.scenario(g, scaled=False), members, kids[name], np.zeros(len(R.d)), own, extra, msex, mgroup)
-        published = scs[name, 'children', 'none'][0]
+        if rule == 'children':
+            members &= ~masks['all']
+        k = kids[name, rule]
+        own = float(R.w[members | k].sum())
+        natural, _, _ = build(g, R.scenario(g, scaled=False), members, k, np.zeros(len(R.d)), own, extra, msex, mgroup)
+        published = scs[name, rule, 'none'][0]
         entries = {}
         for method, basis in (('set', 'accrual'), ('cash', 'cash')):
             entries[method] = {}
@@ -380,7 +394,7 @@ def children_targets(groups, kids, scs, extra, msex, mgroup):
                 blk = {'cost': blk['cost'] - W.run29(block_base, end, basis)[0]['cost'],
                        'population': scs['lineage_block', 'none'][2]}
                 entries[method][end] = {
-                    'population': own, 'members': float(R.w[members].sum()), 'children': float(R.w[kids[name]].sum()),
+                    'population': own, 'members': float(R.w[members].sum()), 'children': float(R.w[k].sum()),
                     'cost_bn': pub['cost'] * own / pub['population'],
                     'natural_unscaled_universe_cost_bn': amount['cost'],
                     'published_comparator_cost_bn': pub['cost'], 'published_comparator_population': pub['population'],
@@ -391,6 +405,34 @@ def children_targets(groups, kids, scs, extra, msex, mgroup):
                     'specification': W.DUMP[basis][end]['spec'],
                     'lines': {lid: {'side': side, 'national_bn': national, 'union_target_bn': target, 'response': response}
                               for side, lid, national, target, response in rows}}
+        out[group] = entries
+    # The two lineage solves differ only in actual departure membership. Both hold the
+    # source's national calibration fixed; their difference replaces the former partial
+    # federal/benefit patch and preserves the case's D and old-credit closure once.
+    context = json.loads((W.FISCAL / 'mixed_unit_removal_2026_10_14/derived/case_inputs.json').read_text())
+    mem = load_module(SOURCE_MEMBERSHIP, 'lineage_targets_membership')
+    lineage_targets = {'lineage_current': masks['original'] | mem.latent_mask(extra, masks['original'], civ),
+                       'lineage_children': masks['all']}
+    for comp, name in (('white', 'A1_third_plus_nh_white'), ('black', 'nh_black_rough')):
+        raw = R.MASK[GROUPS[name]] | kids[name, 'children_round3']
+        lineage_targets[f'lineage_without_{comp}_overlap'] = masks['all'] & ~raw
+    for group, mask in lineage_targets.items():
+        entries = {}
+        for method, basis in (('set', 'accrual'), ('cash', 'cash')):
+            entries[method] = {}
+            for end in W.ENDS:
+                full, rows, *_ = W.run29('eng', end, basis)
+                lines = {lid: {'side': side, 'national_bn': national, 'union_target_bn': target, 'response': response}
+                         for side, lid, national, target, response in rows}
+                for lid, line in {**context['lines'], **context['resourceLines']}.items():
+                    side = line.get('side', lines[lid]['side'])
+                    lines[lid] = {**lines[lid], **line,
+                                  'side': 'receipts' if side in ('receipt', 'receipts') else 'spending'}
+                entries[method][end] = dict(population=float(R.w[mask].sum()), cost_bn=full['cost'],
+                    rough_lineage_cost_bn=W.run29(W.UNION_SC, end, basis)[0]['cost'],
+                    case_lineage_cost_bn=full['cost'], lineage_population=full['population'],
+                    specification=W.DUMP[basis][end]['spec'], lines=lines,
+                    pricing='source national calibration held fixed; only lineage_children minus lineage_current is applied')
         out[group] = entries
     return out
 
@@ -455,17 +497,21 @@ def main():
     result['controls']['lineage_missing_people'] = {'rough_frame': missed_union, 'coverage_lane': ref}
 
     # children: members' biological minor children outside the group; the lineage's beyond its latent subset
+    rules = load_module(W.FISCAL / 'mixed_unit_comparators_2026_10_15/membership_rules.py', 'comparator_membership_rules')
+    masks = rules.lineage_membership_masks(extra, civ)
+    gate('keyed lineage original mask is rough union', np.array_equal(masks['original'], union))
     kids = {}
     for name, g in GROUPS.items():
         bio, step, _ = mem.biological_children(extra, R.MASK[g] & civ, civ)
-        kids[name] = bio
+        kids[name, 'children_round3'] = bio
+        kids[name, 'children'] = bio & ~masks['all']
     bio_l, _, _ = mem.biological_children(extra, union, civ)
     latent = mem.latent_mask(extra, union, civ)
-    kids['lineage'] = bio_l & ~latent
+    kids['lineage'] = masks['outside']
     counts_mixed = {n: json.loads((MIXED / f'{grp}_summary.json').read_text())['counts']
                     for n, grp in (('A1_third_plus_nh_white', 'white'), ('nh_black_rough', 'black'))}
     for name in GROUPS:
-        got = float(R.w[kids[name]].sum())
+        got = float(R.w[kids[name, 'children_round3']].sum())
         want = counts_mixed[name]['biological_children_outside_group_stay']['weighted_persons']
         gate(f'{name}: children count is the mixed-unit lane\'s (1 person)', abs(got - want) < 1.0, f'{got:,.1f} vs {want:,.1f}')
     src = json.loads((W.FISCAL / 'mixed_unit_removal_2026_10_14/derived/membership.json').read_text())
@@ -475,7 +521,25 @@ def main():
              f'{got:,.1f} vs {want:,.1f}')
     result['counts']['lineage_source'] = {'extra_children': src['extra_children'],
                                           'latent_children_with_two_US_parents': src['latent_children_with_two_US_parents']}
-    result['counts']['children'] = {n: float(R.w[k].sum()) for n, k in kids.items()}
+    result['counts']['children'] = {str(n): float(R.w[k].sum()) for n, k in kids.items()}
+    result['counts']['precedence'] = {}
+    for name, g in GROUPS.items():
+        base = R.MASK[g] & civ
+        raw = base | kids[name, 'children_round3']
+        central = raw & ~masks['all']
+        overlap = raw & masks['all']
+        gate(f'{name}: lineage/comparator membership has zero survey-weight overlap',
+             float(R.w[central & masks['all']].sum()) == 0.)
+        result['counts']['precedence'][name] = dict(round3=float(R.w[raw].sum()),
+            lineage_precedence=float(R.w[central].sum()), overlap=float(R.w[overlap].sum()),
+            survey_weight_overlap=float(R.w[central & masks['all']].sum()),
+            half_overlap=float(R.w[central].sum() + .5 * R.w[overlap].sum()),
+            lineage_observed=float(R.w[masks['all']].sum()),
+            lineage_half_overlap=float(R.w[masks['all']].sum() - .5 * R.w[overlap].sum()))
+    white_members = (R.MASK['w3'] | kids['A1_third_plus_nh_white', 'children']) & civ & ~masks['all']
+    black_members = (R.MASK['blk'] | kids['nh_black_rough', 'children']) & civ & ~masks['all']
+    result['controls']['overlap_gate_scope'] = 'each lineage-versus-comparator pair; White and Black are alternative removals'
+    result['controls']['alternative_white_black_overlap_people'] = float(R.w[white_members & black_members].sum())
 
     # The lineage's children block: natives under 18, keyed with the white rules. A children-only scenario has no
     # adults, and per-adult indices (v4_inputs licences) divide by zero, so the block is priced as the increment it
@@ -496,13 +560,36 @@ def main():
         sc['scenario_name'] = 'lineage_children_block'
         scs['lineage_block', arm] = (sc, obs - a1_own, true - a1_own)
 
+    # For the half-overlap beside arms price shared observed records with the same
+    # increment construction as the lineage's outside-definition block. Counts and
+    # direct costs are halved together; survivor costs interpolate whole solves.
+    for comp, name in (('white', 'A1_third_plus_nh_white'), ('black', 'nh_black_rough')):
+        overlap = (R.MASK[GROUPS[name]] | kids[name, 'children_round3']) & masks['all'] & civ
+        baseline = a1 & ~overlap
+        own = float(R.w[baseline].sum())
+        key = f'overlap_{comp}'
+        scs[key + '_base', 'none'] = build('w3', sc_w3, baseline, none, zero, own, extra, msex, mgroup)
+        for arm in ('none', 'central'):
+            f = zero if arm == 'none' else factors(extra, overlap, rates, tables, arm)
+            total = own + float((R.w * overlap * (1 + f)).sum())
+            sc, obs, true = build('w3', sc_w3, baseline, overlap, f, total, extra, msex, mgroup)
+            sc['scenario_name'] = 'lineage_children_block'
+            scs[key, arm] = (sc, obs - own, true - own)
+
     # A1 and Black: published (positive control), coverage only, children only, children with coverage
     L = groups['A1_third_plus_nh_white']['population']
-    for name, g in GROUPS.items():
+    for name, g in {**GROUPS, **{n: 'w3' for n in REWEIGHTED}}.items():
         sc0 = groups[name]
-        members = R.MASK[g] & civ & (R.w > 0)
-        for rule in ('current', 'children'):
-            k = kids[name] if rule == 'children' else np.zeros(len(R.d), bool)
+        base_members = R.MASK[g] & civ & (R.w > 0)
+        kid_name = 'A1_third_plus_nh_white' if name in REWEIGHTED else name
+        for rule in ('current', 'children', 'children_round3'):
+            members = base_members & ~masks['all'] if rule == 'children' else base_members
+            k = kids[kid_name, rule] if rule != 'current' else np.zeros(len(R.d), bool)
+            source_w = None
+            if name in REWEIGHTED:
+                pi = R.structure(np.ones(len(R.w), bool), sc0['cps_w'], R.cage)
+                own = float(R.w[members | k].sum())
+                source_w = R.reweight(members | k, R.w, R.cage, pi, own)
             for arm in ('none',) + COVERAGE_ARMS:
                 rows = members | k
                 f = np.zeros(len(R.d)) if arm == 'none' else factors(extra, rows, rates, tables, arm)
@@ -518,10 +605,20 @@ def main():
                     if g == 'w3' and abs(total - u['population']) > 1e-6:
                         # the uncovered scenario at this total: custody/arrests scale with the total linearly
                         hold = tuple(v * total / u['population'] for v in hold)
-                sc, obs, true = build(g, sc0, members, k, f, total, extra, msex, mgroup, hold=hold, own_rule=(g == 'blk'))
+                sc, obs, true = build(g, sc0, members, k, f, total, extra, msex, mgroup, hold=hold,
+                                      own_rule=(g == 'blk'), base_weights=source_w)
                 scs[name, rule, arm] = (sc, obs, true)
                 result['counts'][f'{name}/{rule}/{arm}'] = {'observed_own_scale': obs, 'true_own_scale': true,
                                                             'published_total': total}
+                if name in REWEIGHTED:
+                    baseline = scs['A1_third_plus_nh_white', rule, 'none'][0]['cps_w']
+                    # Share ratios are evaluated before the coverage multiplier: missed
+                    # people add no new measured mixed-unit term, under the shared rule.
+                    weights = {'A1': baseline, name: source_w}
+                    ratio = SYM.CC.reweight_ratios(extra.assign(TAX_ID=R.d.TAX_ID, SPM_ID=R.d.SPM_ID), civ,
+                        weights, membership_rule='children' if rule == 'children' else 'current', membership_mask=members | k,
+                        lineage_mask=masks['all'] if rule == 'children' else None)
+                    result['counts'][f'{name}/{rule}/{arm}']['item11_reweight'] = ratio[name]
                 if arm != 'none':
                     groups_r = race_group(extra)
                     by = []
@@ -539,7 +636,7 @@ def main():
     costs = {}
     for key, (sc, obs, true) in scs.items():
         costs[key] = run(sc)
-    for name in GROUPS:
+    for name in tuple(GROUPS) + REWEIGHTED:
         pub = run(groups[name])
         for be, r in pub.items():
             gate(f'{name}/{be[0]}/{be[1]}/{be[2]}: rebuilt published scenario reproduces its cost (1e-9bn)',
@@ -547,19 +644,23 @@ def main():
                  f"{costs[name, 'current', 'none'][be]['cost']:.9f} vs {r['cost']:.9f}")
     fields = ('cost', 'taxes_lost', 'spending_saved', 'capital', 'production_gain', 'balance', 'net_budget')
     for key, by in costs.items():
-        if key[0] == 'lineage_block_base':
+        if key[0].endswith('_base'):
             continue
         for (mortality, basis, end), r in by.items():
             row = {'scenario': key[0], 'rule': key[1] if len(key) == 3 else 'children', 'coverage': key[-1],
                    'mortality': mortality, 'basis': basis, 'end': end}
-            if key[0] == 'lineage_block':
-                b = costs['lineage_block_base', 'none'][mortality, basis, end]
+            if key[0] == 'lineage_block' or key[0].startswith('overlap_'):
+                b = costs[key[0] + '_base', 'none'][mortality, basis, end]
                 row.update({f + '_bn': r[f] - b[f] for f in fields}, population=scs[key][2],
                            pricing='increment over A1 at its own count')
+                adjustment = R4.scenario_adjustments(R, W, extra, scs[key][0])
+                baseline_adjustment = R4.scenario_adjustments(R, W, extra, scs[key[0] + '_base', 'none'][0])
+                row.update({field: adjustment[field] - baseline_adjustment[field] for field in adjustment})
             else:
                 row.update({f + '_bn': r[f] for f in fields}, population=r['population'], pricing='scenario')
+                row.update(R4.scenario_adjustments(R, W, extra, scs[key][0]))
             result['runs'].append(row)
-    targets = children_targets(groups, kids, scs, extra, msex, mgroup)
+    targets = children_targets(groups, kids, scs, extra, msex, mgroup, masks)
     if FAILS:
         raise SystemExit('[BLOCKED] ' + '; '.join(FAILS))
     (OUT / 'children_targets_oct15.json').write_text(json.dumps(targets, indent=1) + '\n')

@@ -1,0 +1,942 @@
+{
+  "interpretation": "source item11 plus expanded-minus-current full adapter solve, less already-booked item10 crossing credit; D and original credit subtraction retained once",
+  "completion_credit_already_booked": {
+    "path": "infra/immigration-fiscal/union_completion_2026_10_14/derived/credits_interaction.json",
+    "sha256": "49e4be015ce2e58284d84b885196997b380e4420162601acf77dd586a794880f",
+    "case_path": "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections.json",
+    "case_sha256": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68",
+    "already_booked_bn": 0.3254843214294949,
+    "subtraction_bn": -0.3254843214294949,
+    "replicates": 161
+  },
+  "results": [
+    {
+      "method": "set",
+      "end": "low",
+      "reading": "bounded_low",
+      "delta_bn": 4.205459737825904,
+      "delta_se_bn": 0.5965096578226008,
+      "source_item11_bn": 10.74001627270179,
+      "bn": 14.945476010527695,
+      "se_bn": 4.41108313694828,
+      "diagnostic_component_deltas": {
+        "M1_federal": {
+          "bn": 1.1091728105610787,
+          "se_bn": 0.43621267533893787
+        },
+        "M2_state": {
+          "bn": 0.2875133094900899,
+          "se_bn": 0.11186453199386853
+        },
+        "M3_refunds": {
+          "bn": 0.40052440876918016,
+          "se_bn": 0.14762729017376647
+        },
+        "M6_biological_children": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "D_added_residual": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "M5_consumption": {
+          "bn": 1.8399362989313497,
+          "se_bn": 0.18500162604608691
+        },
+        "M5_owner_property": {
+          "bn": 0.38499154539431,
+          "se_bn": 0.05675113315675569
+        },
+        "M5_SNAP_key": {
+          "bn": -0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "M5_housing_key": {
+          "bn": -0.0977106260648064,
+          "se_bn": 0.07538924732239208
+        },
+        "M4_SNAP_baseline_interaction": {
+          "bn": 0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "membership_benefit_interaction": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "Medicaid_low": {
+          "bn": 0.26203741562498295,
+          "se_bn": 0.07581695274305374
+        },
+        "Medicaid_high": {
+          "bn": 0.1362118766831265,
+          "se_bn": 0.054893158458752866
+        },
+        "ACA_low": {
+          "bn": -0.012986240860071996,
+          "se_bn": 0.029167117814310094
+        },
+        "ACA_high": {
+          "bn": -0.03108772031990298,
+          "se_bn": 0.015158213968245305
+        },
+        "SNAP_zero_observed_low_takeup": {
+          "bn": 0.2615391110418399,
+          "se_bn": 0.07624989728918363
+        },
+        "SNAP_zero_observed_high_takeup": {
+          "bn": 0.35746513740932007,
+          "se_bn": 0.09889606324098135
+        },
+        "SNAP_zero_observed_newly_eligible_low": {
+          "bn": 0.24737013609035507,
+          "se_bn": 0.06917664277542425
+        },
+        "SNAP_zero_observed_newly_eligible_high": {
+          "bn": 0.3432961624578299,
+          "se_bn": 0.09494733735827034
+        },
+        "SNAP_zero_observed_newly_ineligible": {
+          "bn": 0.053710002986946975,
+          "se_bn": 0.053153419856598376
+        },
+        "SNAP_cap_observed_low_takeup": {
+          "bn": 0.09178776581430098,
+          "se_bn": 0.050802433673611785
+        },
+        "SNAP_cap_observed_high_takeup": {
+          "bn": 0.13448155869483697,
+          "se_bn": 0.059722118649162645
+        },
+        "SNAP_cap_observed_newly_eligible_low": {
+          "bn": 0.11535302407685499,
+          "se_bn": 0.040850385156035264
+        },
+        "SNAP_cap_observed_newly_eligible_high": {
+          "bn": 0.15804681695739198,
+          "se_bn": 0.05312868988768879
+        },
+        "SNAP_cap_observed_newly_ineligible": {
+          "bn": 0.053710002986947,
+          "se_bn": 0.05315341985659836
+        },
+        "completion_credit_already_booked": {
+          "bn": -0.3254843214294949,
+          "se_bn": 0.1297461439433784
+        }
+      }
+    },
+    {
+      "method": "set",
+      "end": "low",
+      "reading": "bounded_high",
+      "delta_bn": 3.7958553478292076,
+      "delta_se_bn": 0.5900262491246804,
+      "source_item11_bn": 14.531690197973472,
+      "bn": 18.32754554580268,
+      "se_bn": 4.402606901310898,
+      "diagnostic_component_deltas": {
+        "M1_federal": {
+          "bn": 1.1091728105610787,
+          "se_bn": 0.43621267533893787
+        },
+        "M2_state": {
+          "bn": 0.2875133094900899,
+          "se_bn": 0.11186453199386853
+        },
+        "M3_refunds": {
+          "bn": 0.40052440876918016,
+          "se_bn": 0.14762729017376647
+        },
+        "M6_biological_children": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "D_added_residual": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "M5_consumption": {
+          "bn": 1.8399362989313497,
+          "se_bn": 0.18500162604608691
+        },
+        "M5_owner_property": {
+          "bn": 0.38499154539431,
+          "se_bn": 0.05675113315675569
+        },
+        "M5_SNAP_key": {
+          "bn": -0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "M5_housing_key": {
+          "bn": -0.0977106260648064,
+          "se_bn": 0.07538924732239208
+        },
+        "M4_SNAP_baseline_interaction": {
+          "bn": 0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "membership_benefit_interaction": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "Medicaid_low": {
+          "bn": 0.26203741562498295,
+          "se_bn": 0.07581695274305374
+        },
+        "Medicaid_high": {
+          "bn": 0.1362118766831265,
+          "se_bn": 0.054893158458752866
+        },
+        "ACA_low": {
+          "bn": -0.012986240860071996,
+          "se_bn": 0.029167117814310094
+        },
+        "ACA_high": {
+          "bn": -0.03108772031990298,
+          "se_bn": 0.015158213968245305
+        },
+        "SNAP_zero_observed_low_takeup": {
+          "bn": 0.2615391110418399,
+          "se_bn": 0.07624989728918363
+        },
+        "SNAP_zero_observed_high_takeup": {
+          "bn": 0.35746513740932007,
+          "se_bn": 0.09889606324098135
+        },
+        "SNAP_zero_observed_newly_eligible_low": {
+          "bn": 0.24737013609035507,
+          "se_bn": 0.06917664277542425
+        },
+        "SNAP_zero_observed_newly_eligible_high": {
+          "bn": 0.3432961624578299,
+          "se_bn": 0.09494733735827034
+        },
+        "SNAP_zero_observed_newly_ineligible": {
+          "bn": 0.053710002986946975,
+          "se_bn": 0.053153419856598376
+        },
+        "SNAP_cap_observed_low_takeup": {
+          "bn": 0.09178776581430098,
+          "se_bn": 0.050802433673611785
+        },
+        "SNAP_cap_observed_high_takeup": {
+          "bn": 0.13448155869483697,
+          "se_bn": 0.059722118649162645
+        },
+        "SNAP_cap_observed_newly_eligible_low": {
+          "bn": 0.11535302407685499,
+          "se_bn": 0.040850385156035264
+        },
+        "SNAP_cap_observed_newly_eligible_high": {
+          "bn": 0.15804681695739198,
+          "se_bn": 0.05312868988768879
+        },
+        "SNAP_cap_observed_newly_ineligible": {
+          "bn": 0.053710002986947,
+          "se_bn": 0.05315341985659836
+        },
+        "completion_credit_already_booked": {
+          "bn": -0.3254843214294949,
+          "se_bn": 0.1297461439433784
+        }
+      }
+    },
+    {
+      "method": "set",
+      "end": "high",
+      "reading": "bounded_low",
+      "delta_bn": 4.205459737825904,
+      "delta_se_bn": 0.5965096578226008,
+      "source_item11_bn": 10.74001627270179,
+      "bn": 14.945476010527695,
+      "se_bn": 4.41108313694828,
+      "diagnostic_component_deltas": {
+        "M1_federal": {
+          "bn": 1.1091728105610787,
+          "se_bn": 0.43621267533893787
+        },
+        "M2_state": {
+          "bn": 0.2875133094900899,
+          "se_bn": 0.11186453199386853
+        },
+        "M3_refunds": {
+          "bn": 0.40052440876918016,
+          "se_bn": 0.14762729017376647
+        },
+        "M6_biological_children": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "D_added_residual": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "M5_consumption": {
+          "bn": 1.8399362989313497,
+          "se_bn": 0.18500162604608691
+        },
+        "M5_owner_property": {
+          "bn": 0.38499154539431,
+          "se_bn": 0.05675113315675569
+        },
+        "M5_SNAP_key": {
+          "bn": -0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "M5_housing_key": {
+          "bn": -0.0977106260648064,
+          "se_bn": 0.07538924732239208
+        },
+        "M4_SNAP_baseline_interaction": {
+          "bn": 0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "membership_benefit_interaction": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "Medicaid_low": {
+          "bn": 0.26203741562498295,
+          "se_bn": 0.07581695274305374
+        },
+        "Medicaid_high": {
+          "bn": 0.1362118766831265,
+          "se_bn": 0.054893158458752866
+        },
+        "ACA_low": {
+          "bn": -0.012986240860071996,
+          "se_bn": 0.029167117814310094
+        },
+        "ACA_high": {
+          "bn": -0.03108772031990298,
+          "se_bn": 0.015158213968245305
+        },
+        "SNAP_zero_observed_low_takeup": {
+          "bn": 0.2615391110418399,
+          "se_bn": 0.07624989728918363
+        },
+        "SNAP_zero_observed_high_takeup": {
+          "bn": 0.35746513740932007,
+          "se_bn": 0.09889606324098135
+        },
+        "SNAP_zero_observed_newly_eligible_low": {
+          "bn": 0.24737013609035507,
+          "se_bn": 0.06917664277542425
+        },
+        "SNAP_zero_observed_newly_eligible_high": {
+          "bn": 0.3432961624578299,
+          "se_bn": 0.09494733735827034
+        },
+        "SNAP_zero_observed_newly_ineligible": {
+          "bn": 0.053710002986946975,
+          "se_bn": 0.053153419856598376
+        },
+        "SNAP_cap_observed_low_takeup": {
+          "bn": 0.09178776581430098,
+          "se_bn": 0.050802433673611785
+        },
+        "SNAP_cap_observed_high_takeup": {
+          "bn": 0.13448155869483697,
+          "se_bn": 0.059722118649162645
+        },
+        "SNAP_cap_observed_newly_eligible_low": {
+          "bn": 0.11535302407685499,
+          "se_bn": 0.040850385156035264
+        },
+        "SNAP_cap_observed_newly_eligible_high": {
+          "bn": 0.15804681695739198,
+          "se_bn": 0.05312868988768879
+        },
+        "SNAP_cap_observed_newly_ineligible": {
+          "bn": 0.053710002986947,
+          "se_bn": 0.05315341985659836
+        },
+        "completion_credit_already_booked": {
+          "bn": -0.3254843214294949,
+          "se_bn": 0.1297461439433784
+        }
+      }
+    },
+    {
+      "method": "set",
+      "end": "high",
+      "reading": "bounded_high",
+      "delta_bn": 3.7958553478292076,
+      "delta_se_bn": 0.5900262491246804,
+      "source_item11_bn": 14.531690197973472,
+      "bn": 18.32754554580268,
+      "se_bn": 4.402606901310898,
+      "diagnostic_component_deltas": {
+        "M1_federal": {
+          "bn": 1.1091728105610787,
+          "se_bn": 0.43621267533893787
+        },
+        "M2_state": {
+          "bn": 0.2875133094900899,
+          "se_bn": 0.11186453199386853
+        },
+        "M3_refunds": {
+          "bn": 0.40052440876918016,
+          "se_bn": 0.14762729017376647
+        },
+        "M6_biological_children": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "D_added_residual": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "M5_consumption": {
+          "bn": 1.8399362989313497,
+          "se_bn": 0.18500162604608691
+        },
+        "M5_owner_property": {
+          "bn": 0.38499154539431,
+          "se_bn": 0.05675113315675569
+        },
+        "M5_SNAP_key": {
+          "bn": -0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "M5_housing_key": {
+          "bn": -0.0977106260648064,
+          "se_bn": 0.07538924732239208
+        },
+        "M4_SNAP_baseline_interaction": {
+          "bn": 0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "membership_benefit_interaction": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "Medicaid_low": {
+          "bn": 0.26203741562498295,
+          "se_bn": 0.07581695274305374
+        },
+        "Medicaid_high": {
+          "bn": 0.1362118766831265,
+          "se_bn": 0.054893158458752866
+        },
+        "ACA_low": {
+          "bn": -0.012986240860071996,
+          "se_bn": 0.029167117814310094
+        },
+        "ACA_high": {
+          "bn": -0.03108772031990298,
+          "se_bn": 0.015158213968245305
+        },
+        "SNAP_zero_observed_low_takeup": {
+          "bn": 0.2615391110418399,
+          "se_bn": 0.07624989728918363
+        },
+        "SNAP_zero_observed_high_takeup": {
+          "bn": 0.35746513740932007,
+          "se_bn": 0.09889606324098135
+        },
+        "SNAP_zero_observed_newly_eligible_low": {
+          "bn": 0.24737013609035507,
+          "se_bn": 0.06917664277542425
+        },
+        "SNAP_zero_observed_newly_eligible_high": {
+          "bn": 0.3432961624578299,
+          "se_bn": 0.09494733735827034
+        },
+        "SNAP_zero_observed_newly_ineligible": {
+          "bn": 0.053710002986946975,
+          "se_bn": 0.053153419856598376
+        },
+        "SNAP_cap_observed_low_takeup": {
+          "bn": 0.09178776581430098,
+          "se_bn": 0.050802433673611785
+        },
+        "SNAP_cap_observed_high_takeup": {
+          "bn": 0.13448155869483697,
+          "se_bn": 0.059722118649162645
+        },
+        "SNAP_cap_observed_newly_eligible_low": {
+          "bn": 0.11535302407685499,
+          "se_bn": 0.040850385156035264
+        },
+        "SNAP_cap_observed_newly_eligible_high": {
+          "bn": 0.15804681695739198,
+          "se_bn": 0.05312868988768879
+        },
+        "SNAP_cap_observed_newly_ineligible": {
+          "bn": 0.053710002986947,
+          "se_bn": 0.05315341985659836
+        },
+        "completion_credit_already_booked": {
+          "bn": -0.3254843214294949,
+          "se_bn": 0.1297461439433784
+        }
+      }
+    },
+    {
+      "method": "cash",
+      "end": "low",
+      "reading": "bounded_low",
+      "delta_bn": 4.205459737825904,
+      "delta_se_bn": 0.5965096578226008,
+      "source_item11_bn": 10.74001627270179,
+      "bn": 14.945476010527695,
+      "se_bn": 4.41108313694828,
+      "diagnostic_component_deltas": {
+        "M1_federal": {
+          "bn": 1.1091728105610787,
+          "se_bn": 0.43621267533893787
+        },
+        "M2_state": {
+          "bn": 0.2875133094900899,
+          "se_bn": 0.11186453199386853
+        },
+        "M3_refunds": {
+          "bn": 0.40052440876918016,
+          "se_bn": 0.14762729017376647
+        },
+        "M6_biological_children": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "D_added_residual": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "M5_consumption": {
+          "bn": 1.8399362989313497,
+          "se_bn": 0.18500162604608691
+        },
+        "M5_owner_property": {
+          "bn": 0.38499154539431,
+          "se_bn": 0.05675113315675569
+        },
+        "M5_SNAP_key": {
+          "bn": -0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "M5_housing_key": {
+          "bn": -0.0977106260648064,
+          "se_bn": 0.07538924732239208
+        },
+        "M4_SNAP_baseline_interaction": {
+          "bn": 0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "membership_benefit_interaction": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "Medicaid_low": {
+          "bn": 0.26203741562498295,
+          "se_bn": 0.07581695274305374
+        },
+        "Medicaid_high": {
+          "bn": 0.1362118766831265,
+          "se_bn": 0.054893158458752866
+        },
+        "ACA_low": {
+          "bn": -0.012986240860071996,
+          "se_bn": 0.029167117814310094
+        },
+        "ACA_high": {
+          "bn": -0.03108772031990298,
+          "se_bn": 0.015158213968245305
+        },
+        "SNAP_zero_observed_low_takeup": {
+          "bn": 0.2615391110418399,
+          "se_bn": 0.07624989728918363
+        },
+        "SNAP_zero_observed_high_takeup": {
+          "bn": 0.35746513740932007,
+          "se_bn": 0.09889606324098135
+        },
+        "SNAP_zero_observed_newly_eligible_low": {
+          "bn": 0.24737013609035507,
+          "se_bn": 0.06917664277542425
+        },
+        "SNAP_zero_observed_newly_eligible_high": {
+          "bn": 0.3432961624578299,
+          "se_bn": 0.09494733735827034
+        },
+        "SNAP_zero_observed_newly_ineligible": {
+          "bn": 0.053710002986946975,
+          "se_bn": 0.053153419856598376
+        },
+        "SNAP_cap_observed_low_takeup": {
+          "bn": 0.09178776581430098,
+          "se_bn": 0.050802433673611785
+        },
+        "SNAP_cap_observed_high_takeup": {
+          "bn": 0.13448155869483697,
+          "se_bn": 0.059722118649162645
+        },
+        "SNAP_cap_observed_newly_eligible_low": {
+          "bn": 0.11535302407685499,
+          "se_bn": 0.040850385156035264
+        },
+        "SNAP_cap_observed_newly_eligible_high": {
+          "bn": 0.15804681695739198,
+          "se_bn": 0.05312868988768879
+        },
+        "SNAP_cap_observed_newly_ineligible": {
+          "bn": 0.053710002986947,
+          "se_bn": 0.05315341985659836
+        },
+        "completion_credit_already_booked": {
+          "bn": -0.3254843214294949,
+          "se_bn": 0.1297461439433784
+        }
+      }
+    },
+    {
+      "method": "cash",
+      "end": "low",
+      "reading": "bounded_high",
+      "delta_bn": 3.7958553478292076,
+      "delta_se_bn": 0.5900262491246804,
+      "source_item11_bn": 14.531690197973472,
+      "bn": 18.32754554580268,
+      "se_bn": 4.402606901310898,
+      "diagnostic_component_deltas": {
+        "M1_federal": {
+          "bn": 1.1091728105610787,
+          "se_bn": 0.43621267533893787
+        },
+        "M2_state": {
+          "bn": 0.2875133094900899,
+          "se_bn": 0.11186453199386853
+        },
+        "M3_refunds": {
+          "bn": 0.40052440876918016,
+          "se_bn": 0.14762729017376647
+        },
+        "M6_biological_children": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "D_added_residual": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "M5_consumption": {
+          "bn": 1.8399362989313497,
+          "se_bn": 0.18500162604608691
+        },
+        "M5_owner_property": {
+          "bn": 0.38499154539431,
+          "se_bn": 0.05675113315675569
+        },
+        "M5_SNAP_key": {
+          "bn": -0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "M5_housing_key": {
+          "bn": -0.0977106260648064,
+          "se_bn": 0.07538924732239208
+        },
+        "M4_SNAP_baseline_interaction": {
+          "bn": 0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "membership_benefit_interaction": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "Medicaid_low": {
+          "bn": 0.26203741562498295,
+          "se_bn": 0.07581695274305374
+        },
+        "Medicaid_high": {
+          "bn": 0.1362118766831265,
+          "se_bn": 0.054893158458752866
+        },
+        "ACA_low": {
+          "bn": -0.012986240860071996,
+          "se_bn": 0.029167117814310094
+        },
+        "ACA_high": {
+          "bn": -0.03108772031990298,
+          "se_bn": 0.015158213968245305
+        },
+        "SNAP_zero_observed_low_takeup": {
+          "bn": 0.2615391110418399,
+          "se_bn": 0.07624989728918363
+        },
+        "SNAP_zero_observed_high_takeup": {
+          "bn": 0.35746513740932007,
+          "se_bn": 0.09889606324098135
+        },
+        "SNAP_zero_observed_newly_eligible_low": {
+          "bn": 0.24737013609035507,
+          "se_bn": 0.06917664277542425
+        },
+        "SNAP_zero_observed_newly_eligible_high": {
+          "bn": 0.3432961624578299,
+          "se_bn": 0.09494733735827034
+        },
+        "SNAP_zero_observed_newly_ineligible": {
+          "bn": 0.053710002986946975,
+          "se_bn": 0.053153419856598376
+        },
+        "SNAP_cap_observed_low_takeup": {
+          "bn": 0.09178776581430098,
+          "se_bn": 0.050802433673611785
+        },
+        "SNAP_cap_observed_high_takeup": {
+          "bn": 0.13448155869483697,
+          "se_bn": 0.059722118649162645
+        },
+        "SNAP_cap_observed_newly_eligible_low": {
+          "bn": 0.11535302407685499,
+          "se_bn": 0.040850385156035264
+        },
+        "SNAP_cap_observed_newly_eligible_high": {
+          "bn": 0.15804681695739198,
+          "se_bn": 0.05312868988768879
+        },
+        "SNAP_cap_observed_newly_ineligible": {
+          "bn": 0.053710002986947,
+          "se_bn": 0.05315341985659836
+        },
+        "completion_credit_already_booked": {
+          "bn": -0.3254843214294949,
+          "se_bn": 0.1297461439433784
+        }
+      }
+    },
+    {
+      "method": "cash",
+      "end": "high",
+      "reading": "bounded_low",
+      "delta_bn": 4.205459737825904,
+      "delta_se_bn": 0.5965096578226008,
+      "source_item11_bn": 10.74001627270179,
+      "bn": 14.945476010527695,
+      "se_bn": 4.41108313694828,
+      "diagnostic_component_deltas": {
+        "M1_federal": {
+          "bn": 1.1091728105610787,
+          "se_bn": 0.43621267533893787
+        },
+        "M2_state": {
+          "bn": 0.2875133094900899,
+          "se_bn": 0.11186453199386853
+        },
+        "M3_refunds": {
+          "bn": 0.40052440876918016,
+          "se_bn": 0.14762729017376647
+        },
+        "M6_biological_children": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "D_added_residual": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "M5_consumption": {
+          "bn": 1.8399362989313497,
+          "se_bn": 0.18500162604608691
+        },
+        "M5_owner_property": {
+          "bn": 0.38499154539431,
+          "se_bn": 0.05675113315675569
+        },
+        "M5_SNAP_key": {
+          "bn": -0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "M5_housing_key": {
+          "bn": -0.0977106260648064,
+          "se_bn": 0.07538924732239208
+        },
+        "M4_SNAP_baseline_interaction": {
+          "bn": 0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "membership_benefit_interaction": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "Medicaid_low": {
+          "bn": 0.26203741562498295,
+          "se_bn": 0.07581695274305374
+        },
+        "Medicaid_high": {
+          "bn": 0.1362118766831265,
+          "se_bn": 0.054893158458752866
+        },
+        "ACA_low": {
+          "bn": -0.012986240860071996,
+          "se_bn": 0.029167117814310094
+        },
+        "ACA_high": {
+          "bn": -0.03108772031990298,
+          "se_bn": 0.015158213968245305
+        },
+        "SNAP_zero_observed_low_takeup": {
+          "bn": 0.2615391110418399,
+          "se_bn": 0.07624989728918363
+        },
+        "SNAP_zero_observed_high_takeup": {
+          "bn": 0.35746513740932007,
+          "se_bn": 0.09889606324098135
+        },
+        "SNAP_zero_observed_newly_eligible_low": {
+          "bn": 0.24737013609035507,
+          "se_bn": 0.06917664277542425
+        },
+        "SNAP_zero_observed_newly_eligible_high": {
+          "bn": 0.3432961624578299,
+          "se_bn": 0.09494733735827034
+        },
+        "SNAP_zero_observed_newly_ineligible": {
+          "bn": 0.053710002986946975,
+          "se_bn": 0.053153419856598376
+        },
+        "SNAP_cap_observed_low_takeup": {
+          "bn": 0.09178776581430098,
+          "se_bn": 0.050802433673611785
+        },
+        "SNAP_cap_observed_high_takeup": {
+          "bn": 0.13448155869483697,
+          "se_bn": 0.059722118649162645
+        },
+        "SNAP_cap_observed_newly_eligible_low": {
+          "bn": 0.11535302407685499,
+          "se_bn": 0.040850385156035264
+        },
+        "SNAP_cap_observed_newly_eligible_high": {
+          "bn": 0.15804681695739198,
+          "se_bn": 0.05312868988768879
+        },
+        "SNAP_cap_observed_newly_ineligible": {
+          "bn": 0.053710002986947,
+          "se_bn": 0.05315341985659836
+        },
+        "completion_credit_already_booked": {
+          "bn": -0.3254843214294949,
+          "se_bn": 0.1297461439433784
+        }
+      }
+    },
+    {
+      "method": "cash",
+      "end": "high",
+      "reading": "bounded_high",
+      "delta_bn": 3.7958553478292076,
+      "delta_se_bn": 0.5900262491246804,
+      "source_item11_bn": 14.531690197973472,
+      "bn": 18.32754554580268,
+      "se_bn": 4.402606901310898,
+      "diagnostic_component_deltas": {
+        "M1_federal": {
+          "bn": 1.1091728105610787,
+          "se_bn": 0.43621267533893787
+        },
+        "M2_state": {
+          "bn": 0.2875133094900899,
+          "se_bn": 0.11186453199386853
+        },
+        "M3_refunds": {
+          "bn": 0.40052440876918016,
+          "se_bn": 0.14762729017376647
+        },
+        "M6_biological_children": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "D_added_residual": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "M5_consumption": {
+          "bn": 1.8399362989313497,
+          "se_bn": 0.18500162604608691
+        },
+        "M5_owner_property": {
+          "bn": 0.38499154539431,
+          "se_bn": 0.05675113315675569
+        },
+        "M5_SNAP_key": {
+          "bn": -0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "M5_housing_key": {
+          "bn": -0.0977106260648064,
+          "se_bn": 0.07538924732239208
+        },
+        "M4_SNAP_baseline_interaction": {
+          "bn": 0.41928784866440205,
+          "se_bn": 0.12990534006647664
+        },
+        "membership_benefit_interaction": {
+          "bn": 0.0,
+          "se_bn": 0.0
+        },
+        "Medicaid_low": {
+          "bn": 0.26203741562498295,
+          "se_bn": 0.07581695274305374
+        },
+        "Medicaid_high": {
+          "bn": 0.1362118766831265,
+          "se_bn": 0.054893158458752866
+        },
+        "ACA_low": {
+          "bn": -0.012986240860071996,
+          "se_bn": 0.029167117814310094
+        },
+        "ACA_high": {
+          "bn": -0.03108772031990298,
+          "se_bn": 0.015158213968245305
+        },
+        "SNAP_zero_observed_low_takeup": {
+          "bn": 0.2615391110418399,
+          "se_bn": 0.07624989728918363
+        },
+        "SNAP_zero_observed_high_takeup": {
+          "bn": 0.35746513740932007,
+          "se_bn": 0.09889606324098135
+        },
+        "SNAP_zero_observed_newly_eligible_low": {
+          "bn": 0.24737013609035507,
+          "se_bn": 0.06917664277542425
+        },
+        "SNAP_zero_observed_newly_eligible_high": {
+          "bn": 0.3432961624578299,
+          "se_bn": 0.09494733735827034
+        },
+        "SNAP_zero_observed_newly_ineligible": {
+          "bn": 0.053710002986946975,
+          "se_bn": 0.053153419856598376
+        },
+        "SNAP_cap_observed_low_takeup": {
+          "bn": 0.09178776581430098,
+          "se_bn": 0.050802433673611785
+        },
+        "SNAP_cap_observed_high_takeup": {
+          "bn": 0.13448155869483697,
+          "se_bn": 0.059722118649162645
+        },
+        "SNAP_cap_observed_newly_eligible_low": {
+          "bn": 0.11535302407685499,
+          "se_bn": 0.040850385156035264
+        },
+        "SNAP_cap_observed_newly_eligible_high": {
+          "bn": 0.15804681695739198,
+          "se_bn": 0.05312868988768879
+        },
+        "SNAP_cap_observed_newly_ineligible": {
+          "bn": 0.053710002986947,
+          "se_bn": 0.05315341985659836
+        },
+        "completion_credit_already_booked": {
+          "bn": -0.3254843214294949,
+          "se_bn": 0.1297461439433784
+        }
+      }
+    }
+  ]
+}

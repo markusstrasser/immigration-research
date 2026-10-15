@@ -20,14 +20,21 @@
     "infra/immigration-fiscal/lineage_mortality_2026_10_14/derived/reproduced_ratios.csv": "a9c1c3dc190057611f30002f1b057375c4c75432006e33210149420e8cf2564f",
     "infra/immigration-fiscal/lineage_mortality_2026_10_14/derived/case_changes.csv": "114f60cb38a93e89884752894dffcad66f28775d6b25c90d3e0a4c00d171d677",
     "infra/immigration-fiscal/lineage_mortality_2026_10_14/derived/comparisons.csv": "b5a9c874b53d55175cbb5eeabd753a2fd1271f841e94b43b904de8061e9f8fe7",
-    "infra/immigration-fiscal/white_replacement_2026_09_28/mortality_conventions.py": "9112fef4da7d618fdac04d6c19aa1165b7506ed51b8ff210c97719f71055cc05",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/mortality_conventions.py": "12a80114906fee48e6012ec4c6c39e17b3fa77a69e7ab167a5afc598471ec5ae",
     "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/coverage_bound_oct15.json": "3456126cc53c353ef0806059dcff33ccc1448cfe8de39d2c92583c6c7d3d073c",
     "infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/item.json": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283",
     "infra/immigration-fiscal/white_replacement_2026_09_28/derived/lineage_mortality_mix_oct15.csv": "05c392e9e0eeb523ce69493fe0b60dab406448c97f086978ff5294566e5926bd",
     "infra/immigration-fiscal/white_replacement_2026_09_28/derived/school_key_oct15.json": "f4e7a6e6994c288c1bffaadc1cad4b031f1ca8471541c966f7a03f534b3c5d90",
-    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/members_coverage_oct15.json": "7a95b71120c8c242d4edd6301b5985b37d29370c7da76eba807284c4405b4b4e",
-    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/derived/round2_summary.json": "acbb2ba55a6f1fdf4f2a66c2e236608bdaebd24090f7b814333417c7ed3bbc01"
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/members_coverage_oct15.json": "638f92a85ba2e21cbd4eabe42976bbdf0c96ff63c296c7ccc8923db3a637898b",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/derived/round2_summary.json": "acbb2ba55a6f1fdf4f2a66c2e236608bdaebd24090f7b814333417c7ed3bbc01",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/district_prices_oct15.json": "51a1660e167068f717c75bb63e3fbc4287b0de50561b3a7a4663194ab868e6d6",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/r4_adjustments.py": "21fe4029ceb22ae790d8158535d975e46131f31b886aba90c53549676082a3e0",
+    "infra/immigration-fiscal/mixed_unit_comparators_2026_10_15/derived/lineage_children_delta_summary.json": "a948aadd16835494fcbb5d63f340710dad49b9f8de891d02c148de4dd47b332b",
+    "infra/immigration-fiscal/mixed_unit_comparators_2026_10_15/derived/lineage_children_total_replicates.csv": "443b2e5df7663c82acaf1d447ae2efb61580d8dd89744e21eb038f268bee882f",
+    "infra/immigration-fiscal/mixed_unit_comparators_2026_10_15/derived/lineage_half_white_total_replicates.csv": "4d6f522e15b54aadae16c793b8264607cedf67c334eb030c31a2b3b5cb4231aa",
+    "infra/immigration-fiscal/mixed_unit_comparators_2026_10_15/derived/lineage_half_black_total_replicates.csv": "fc44109caf595e2e33afa83562990b5f07aaafee998cb9779830410bb65a1ec0"
   },
+  "assumed_whole_education_bridge_transfer": false,
   "scalar_policies": {
     "production_gain_bn": "production_policy",
     "private_wtp_bn": "production_component_in_gain",
@@ -764,10 +771,22 @@
   "credit_crossing": "own-mask comparator survivor solve measured; applied after evaluator only",
   "comparator_item11_source_sha256": {
     "white_summary.json": "121b787f04637b43d698555fade2b115686f15fa7f30d4d5167ac5c3d4477081",
+    "white_replicates.csv": "3da68f4be49514508c0a601cff1eadb31a0e405c72b940c83c6bd2e4062720b0",
     "black_summary.json": "2cf7a859a12a3775a385440347ebf7851630302b56b95dbbd00847b26d7c2409",
-    "white_children_summary.json": "647223a2ca64fdc17688ffda01d1614c7f533e3650fc02ac56682f58daaf99d3",
-    "black_children_summary.json": "b2ac50210518879a49c6f7fa085117c0606a6e0c4fbd501be6ac3bb65951c9b9",
-    "gaps.csv": "18112e8cf04bb4afe6a5db603b70e1761ca024f787fcf02f05b6da9e0d4831ef"
+    "black_replicates.csv": "b78f9a6e60e5bf9bb72842c58e8385b415db5c27c0006a1ef932a81c7723c03d",
+    "white_children_summary.json": "9b06285b012453a8c7dd8720f4f67cde990795fce2de5c65c67481635eb228eb",
+    "white_children_replicates.csv": "852aaec100e3c589057b3de955f00641dc82f7cc3fbe014497d798f6005fcfd4",
+    "black_children_summary.json": "faedcc82ff1aaed64adac97783a6d4479b8ab339b1a5658e259e57c16ad5ff29",
+    "black_children_replicates.csv": "71c6a4e7c71f930126a339fc438c960362a996415309374b28f3a0b60c9bd8ad",
+    "white_children_round3_summary.json": "ded538a18d275a25a9beec85b2387f916346bddb2deb47c83e85c0e59abb141c",
+    "white_children_round3_replicates.csv": "e9d91836cb5be7201fa4a330d00d6947847f4e2cbf154e67d0e7d29fe820b1c7",
+    "black_children_round3_summary.json": "14f94cef3bbe8a2e7ee838220da68ca8487cf148a656c58043531f582be5519a",
+    "black_children_round3_replicates.csv": "0a8e64a32bb788ea8dd351450c4c6514ac4187618d21460ba6304670e1aadf30",
+    "white_children_half_summary.json": "c4aa4175ef98f1bb8a6a3806f5e8330bf00e558600e25bd39b85e2f1feaf9a42",
+    "white_children_half_replicates.csv": "ee12537d17ae6ee404fdfecd4e3bd038d2dda000a7f3794e6b3cc0cba94f6de9",
+    "black_children_half_summary.json": "046c6dddd22559588754931a8495296ccf8f38db56366609c2b6eccc79df0ae5",
+    "black_children_half_replicates.csv": "663875d6161b31f07e964832c885873d61feda927075922bc0ecec946153de8d",
+    "gaps.csv": "7ab68989d5b9e0f30e276c86fb2f83dc1f95c5703908deb8868822abd820c9d9"
   },
   "production_point_weight_rounding_max": 0.005049970000015946,
   "source_proxy_limit": "diagnostic only: old R9 union ratio held on changed denominator; do not interpret as status correction",
@@ -16762,9 +16781,19 @@
     },
     "comparator_completion": "unmeasured; no counterpart invented",
     "comparator_mixed_unit_removal": "measured for A1 whites and Black on own masks under the current and children rules; A3/A4 take A1's term reweighted (A1's item 11 by part, each part scaled by the scenario's share of weight on A1 members in mixed units of the part's kind (tax unit, SPM unit, household) over A1's share [ASSUMPTION: survivor terms uniform per departing member within a mixed unit of that kind]); A2 unmeasured",
-    "comparator_coverage": "round 3: every comparator at its own 2020 PES coverage by age and sex (NH white alone; Black alone or in combination, Table C's universe; non-Hispanic q), priced on its own rough-engine records: members_coverage_oct15.py, derived arms combined_rules_coverage, combined_rules_members, combined_rules_members_general",
+    "comparator_coverage": "round 3: every comparator at its own 2020 PES coverage by age and sex (NH white alone; Black alone or in combination, Table C's universe; non-Hispanic q), priced on its own rough-engine records: members_coverage_oct15.py, derived arms combined_rules_coverage, combined_rules_members, combined_rules_members_general, combined_rules_members_round3, combined_rules_members_no_district, combined_rules_members_round3_no_district, combined_rules_members_no_row8, combined_rules_members_partial_lineage, combined_rules_members_da_middle, combined_rules_members_da_all_black, combined_rules_members_half_white, combined_rules_members_half_black",
     "coverage_age_mix": "coverage people take completed observed overlay age shares; generation-only source supplies no own-age people",
     "lineage_mortality": "central: every group at its own mortality (combined_rules_members, own-group); whole-population pair beside (combined_rules_members_general); the mixed pair labelled, never a stated claim (stated_claim false)"
+  },
+  "round4": {
+    "membership": "completed-lineage precedence; zero overlap for each comparison pair",
+    "alternatives": "White and Black are separate counterfactual removals, not a three-way partition",
+    "school_prices": "own race/state F-33 FY2024 x CCD SY2023-24 differential, mapped to live evaluator school dollars",
+    "school_bridge": "incidence residual preserved; school_reprice already present in both engines; optional R4_LINEAGE_SCHOOL_BRIDGE=1 assumed transfer",
+    "row8": "2 * current row8_factor / identified base-union persons, on each comparator; inherited lineage part retained once",
+    "lineage_survivors": "full expanded-minus-current adapter delta; already-booked completion credit subtracted once",
+    "half_overlap": "conditional endpoint interpolation, including half count/cost and signed survivor vectors on both sides",
+    "limitations": "unmeasured school-level district premium for comparators; item-P versus CPS/IPEDS college incidence; A2/all-residents current-rule readings only"
   },
   "round3": {
     "central": {
@@ -16786,6 +16815,59 @@
         "base": "combined_rules_general",
         "rule": "children",
         "mortality": "general"
+      },
+      "combined_rules_members_round3": {
+        "base": "combined_rules_only",
+        "mortality": "specific",
+        "rule": "children_round3"
+      },
+      "combined_rules_members_no_district": {
+        "base": "combined_rules_only",
+        "rule": "children",
+        "mortality": "specific",
+        "district": false
+      },
+      "combined_rules_members_round3_no_district": {
+        "base": "combined_rules_only",
+        "mortality": "specific",
+        "rule": "children_round3",
+        "district": false
+      },
+      "combined_rules_members_no_row8": {
+        "base": "combined_rules_only",
+        "rule": "children",
+        "mortality": "specific",
+        "row8": false
+      },
+      "combined_rules_members_partial_lineage": {
+        "base": "combined_rules_only",
+        "rule": "children",
+        "mortality": "specific",
+        "partial_lineage": true
+      },
+      "combined_rules_members_da_middle": {
+        "base": "combined_rules_only",
+        "rule": "children",
+        "mortality": "specific",
+        "coverage": "da_middle"
+      },
+      "combined_rules_members_da_all_black": {
+        "base": "combined_rules_only",
+        "rule": "children",
+        "mortality": "specific",
+        "coverage": "da_all_black"
+      },
+      "combined_rules_members_half_white": {
+        "base": "combined_rules_only",
+        "rule": "children",
+        "mortality": "specific",
+        "half": "white"
+      },
+      "combined_rules_members_half_black": {
+        "base": "combined_rules_only",
+        "rule": "children",
+        "mortality": "specific",
+        "half": "black"
       }
     },
     "membership_rule": "children: members' biological minor children outside the group's definition depart with them and count as members, at their own costs",
@@ -16793,38 +16875,474 @@
     "mortality_mix": "group survival factors move only the retirement share the formula route models; disability, children's and young survivors' shares keep the whole-population factor (mortality_comparators.left_out_share; lineage_mortality_mix_oct15.py)",
     "lineage_children_shift": {
       "set/low": {
-        "federal_bn": 0.6406312241471568,
-        "benefits_bn": 0.4170259193295325,
-        "state_bn": 0.0,
-        "total_bn": 1.0576571434766893,
-        "outside_children": 335604.26043439,
-        "latent_children": 517863.29300860997
+        "method": "set",
+        "end": "low",
+        "reading": "bounded_low",
+        "delta_bn": 4.205459737825904,
+        "delta_se_bn": 0.5965096578226008,
+        "source_item11_bn": 10.74001627270179,
+        "bn": 14.945476010527695,
+        "se_bn": 4.41108313694828,
+        "diagnostic_component_deltas": {
+          "M1_federal": {
+            "bn": 1.1091728105610787,
+            "se_bn": 0.43621267533893787
+          },
+          "M2_state": {
+            "bn": 0.2875133094900899,
+            "se_bn": 0.11186453199386853
+          },
+          "M3_refunds": {
+            "bn": 0.40052440876918016,
+            "se_bn": 0.14762729017376647
+          },
+          "M6_biological_children": {
+            "bn": 0.0,
+            "se_bn": 0.0
+          },
+          "D_added_residual": {
+            "bn": 0.0,
+            "se_bn": 0.0
+          },
+          "M5_consumption": {
+            "bn": 1.8399362989313497,
+            "se_bn": 0.18500162604608691
+          },
+          "M5_owner_property": {
+            "bn": 0.38499154539431,
+            "se_bn": 0.05675113315675569
+          },
+          "M5_SNAP_key": {
+            "bn": -0.41928784866440205,
+            "se_bn": 0.12990534006647664
+          },
+          "M5_housing_key": {
+            "bn": -0.0977106260648064,
+            "se_bn": 0.07538924732239208
+          },
+          "M4_SNAP_baseline_interaction": {
+            "bn": 0.41928784866440205,
+            "se_bn": 0.12990534006647664
+          },
+          "membership_benefit_interaction": {
+            "bn": 0.0,
+            "se_bn": 0.0
+          },
+          "Medicaid_low": {
+            "bn": 0.26203741562498295,
+            "se_bn": 0.07581695274305374
+          },
+          "Medicaid_high": {
+            "bn": 0.1362118766831265,
+            "se_bn": 0.054893158458752866
+          },
+          "ACA_low": {
+            "bn": -0.012986240860071996,
+            "se_bn": 0.029167117814310094
+          },
+          "ACA_high": {
+            "bn": -0.03108772031990298,
+            "se_bn": 0.015158213968245305
+          },
+          "SNAP_zero_observed_low_takeup": {
+            "bn": 0.2615391110418399,
+            "se_bn": 0.07624989728918363
+          },
+          "SNAP_zero_observed_high_takeup": {
+            "bn": 0.35746513740932007,
+            "se_bn": 0.09889606324098135
+          },
+          "SNAP_zero_observed_newly_eligible_low": {
+            "bn": 0.24737013609035507,
+            "se_bn": 0.06917664277542425
+          },
+          "SNAP_zero_observed_newly_eligible_high": {
+            "bn": 0.3432961624578299,
+            "se_bn": 0.09494733735827034
+          },
+          "SNAP_zero_observed_newly_ineligible": {
+            "bn": 0.053710002986946975,
+            "se_bn": 0.053153419856598376
+          },
+          "SNAP_cap_observed_low_takeup": {
+            "bn": 0.09178776581430098,
+            "se_bn": 0.050802433673611785
+          },
+          "SNAP_cap_observed_high_takeup": {
+            "bn": 0.13448155869483697,
+            "se_bn": 0.059722118649162645
+          },
+          "SNAP_cap_observed_newly_eligible_low": {
+            "bn": 0.11535302407685499,
+            "se_bn": 0.040850385156035264
+          },
+          "SNAP_cap_observed_newly_eligible_high": {
+            "bn": 0.15804681695739198,
+            "se_bn": 0.05312868988768879
+          },
+          "SNAP_cap_observed_newly_ineligible": {
+            "bn": 0.053710002986947,
+            "se_bn": 0.05315341985659836
+          },
+          "completion_credit_already_booked": {
+            "bn": -0.3254843214294949,
+            "se_bn": 0.1297461439433784
+          }
+        },
+        "total_bn": 4.205459737825904
       },
       "set/high": {
-        "federal_bn": 0.6406312241471568,
-        "benefits_bn": 0.17484869955694882,
-        "state_bn": 0.0,
-        "total_bn": 0.8154799237041056,
-        "outside_children": 335604.26043439,
-        "latent_children": 517863.29300860997
+        "method": "set",
+        "end": "high",
+        "reading": "bounded_high",
+        "delta_bn": 3.7958553478292076,
+        "delta_se_bn": 0.5900262491246804,
+        "source_item11_bn": 14.531690197973472,
+        "bn": 18.32754554580268,
+        "se_bn": 4.402606901310898,
+        "diagnostic_component_deltas": {
+          "M1_federal": {
+            "bn": 1.1091728105610787,
+            "se_bn": 0.43621267533893787
+          },
+          "M2_state": {
+            "bn": 0.2875133094900899,
+            "se_bn": 0.11186453199386853
+          },
+          "M3_refunds": {
+            "bn": 0.40052440876918016,
+            "se_bn": 0.14762729017376647
+          },
+          "M6_biological_children": {
+            "bn": 0.0,
+            "se_bn": 0.0
+          },
+          "D_added_residual": {
+            "bn": 0.0,
+            "se_bn": 0.0
+          },
+          "M5_consumption": {
+            "bn": 1.8399362989313497,
+            "se_bn": 0.18500162604608691
+          },
+          "M5_owner_property": {
+            "bn": 0.38499154539431,
+            "se_bn": 0.05675113315675569
+          },
+          "M5_SNAP_key": {
+            "bn": -0.41928784866440205,
+            "se_bn": 0.12990534006647664
+          },
+          "M5_housing_key": {
+            "bn": -0.0977106260648064,
+            "se_bn": 0.07538924732239208
+          },
+          "M4_SNAP_baseline_interaction": {
+            "bn": 0.41928784866440205,
+            "se_bn": 0.12990534006647664
+          },
+          "membership_benefit_interaction": {
+            "bn": 0.0,
+            "se_bn": 0.0
+          },
+          "Medicaid_low": {
+            "bn": 0.26203741562498295,
+            "se_bn": 0.07581695274305374
+          },
+          "Medicaid_high": {
+            "bn": 0.1362118766831265,
+            "se_bn": 0.054893158458752866
+          },
+          "ACA_low": {
+            "bn": -0.012986240860071996,
+            "se_bn": 0.029167117814310094
+          },
+          "ACA_high": {
+            "bn": -0.03108772031990298,
+            "se_bn": 0.015158213968245305
+          },
+          "SNAP_zero_observed_low_takeup": {
+            "bn": 0.2615391110418399,
+            "se_bn": 0.07624989728918363
+          },
+          "SNAP_zero_observed_high_takeup": {
+            "bn": 0.35746513740932007,
+            "se_bn": 0.09889606324098135
+          },
+          "SNAP_zero_observed_newly_eligible_low": {
+            "bn": 0.24737013609035507,
+            "se_bn": 0.06917664277542425
+          },
+          "SNAP_zero_observed_newly_eligible_high": {
+            "bn": 0.3432961624578299,
+            "se_bn": 0.09494733735827034
+          },
+          "SNAP_zero_observed_newly_ineligible": {
+            "bn": 0.053710002986946975,
+            "se_bn": 0.053153419856598376
+          },
+          "SNAP_cap_observed_low_takeup": {
+            "bn": 0.09178776581430098,
+            "se_bn": 0.050802433673611785
+          },
+          "SNAP_cap_observed_high_takeup": {
+            "bn": 0.13448155869483697,
+            "se_bn": 0.059722118649162645
+          },
+          "SNAP_cap_observed_newly_eligible_low": {
+            "bn": 0.11535302407685499,
+            "se_bn": 0.040850385156035264
+          },
+          "SNAP_cap_observed_newly_eligible_high": {
+            "bn": 0.15804681695739198,
+            "se_bn": 0.05312868988768879
+          },
+          "SNAP_cap_observed_newly_ineligible": {
+            "bn": 0.053710002986947,
+            "se_bn": 0.05315341985659836
+          },
+          "completion_credit_already_booked": {
+            "bn": -0.3254843214294949,
+            "se_bn": 0.1297461439433784
+          }
+        },
+        "total_bn": 3.7958553478292076
       },
       "cash/low": {
-        "federal_bn": 0.6406312241471568,
-        "benefits_bn": 0.4170259193295325,
-        "state_bn": 0.0,
-        "total_bn": 1.0576571434766893,
-        "outside_children": 335604.26043439,
-        "latent_children": 517863.29300860997
+        "method": "cash",
+        "end": "low",
+        "reading": "bounded_low",
+        "delta_bn": 4.205459737825904,
+        "delta_se_bn": 0.5965096578226008,
+        "source_item11_bn": 10.74001627270179,
+        "bn": 14.945476010527695,
+        "se_bn": 4.41108313694828,
+        "diagnostic_component_deltas": {
+          "M1_federal": {
+            "bn": 1.1091728105610787,
+            "se_bn": 0.43621267533893787
+          },
+          "M2_state": {
+            "bn": 0.2875133094900899,
+            "se_bn": 0.11186453199386853
+          },
+          "M3_refunds": {
+            "bn": 0.40052440876918016,
+            "se_bn": 0.14762729017376647
+          },
+          "M6_biological_children": {
+            "bn": 0.0,
+            "se_bn": 0.0
+          },
+          "D_added_residual": {
+            "bn": 0.0,
+            "se_bn": 0.0
+          },
+          "M5_consumption": {
+            "bn": 1.8399362989313497,
+            "se_bn": 0.18500162604608691
+          },
+          "M5_owner_property": {
+            "bn": 0.38499154539431,
+            "se_bn": 0.05675113315675569
+          },
+          "M5_SNAP_key": {
+            "bn": -0.41928784866440205,
+            "se_bn": 0.12990534006647664
+          },
+          "M5_housing_key": {
+            "bn": -0.0977106260648064,
+            "se_bn": 0.07538924732239208
+          },
+          "M4_SNAP_baseline_interaction": {
+            "bn": 0.41928784866440205,
+            "se_bn": 0.12990534006647664
+          },
+          "membership_benefit_interaction": {
+            "bn": 0.0,
+            "se_bn": 0.0
+          },
+          "Medicaid_low": {
+            "bn": 0.26203741562498295,
+            "se_bn": 0.07581695274305374
+          },
+          "Medicaid_high": {
+            "bn": 0.1362118766831265,
+            "se_bn": 0.054893158458752866
+          },
+          "ACA_low": {
+            "bn": -0.012986240860071996,
+            "se_bn": 0.029167117814310094
+          },
+          "ACA_high": {
+            "bn": -0.03108772031990298,
+            "se_bn": 0.015158213968245305
+          },
+          "SNAP_zero_observed_low_takeup": {
+            "bn": 0.2615391110418399,
+            "se_bn": 0.07624989728918363
+          },
+          "SNAP_zero_observed_high_takeup": {
+            "bn": 0.35746513740932007,
+            "se_bn": 0.09889606324098135
+          },
+          "SNAP_zero_observed_newly_eligible_low": {
+            "bn": 0.24737013609035507,
+            "se_bn": 0.06917664277542425
+          },
+          "SNAP_zero_observed_newly_eligible_high": {
+            "bn": 0.3432961624578299,
+            "se_bn": 0.09494733735827034
+          },
+          "SNAP_zero_observed_newly_ineligible": {
+            "bn": 0.053710002986946975,
+            "se_bn": 0.053153419856598376
+          },
+          "SNAP_cap_observed_low_takeup": {
+            "bn": 0.09178776581430098,
+            "se_bn": 0.050802433673611785
+          },
+          "SNAP_cap_observed_high_takeup": {
+            "bn": 0.13448155869483697,
+            "se_bn": 0.059722118649162645
+          },
+          "SNAP_cap_observed_newly_eligible_low": {
+            "bn": 0.11535302407685499,
+            "se_bn": 0.040850385156035264
+          },
+          "SNAP_cap_observed_newly_eligible_high": {
+            "bn": 0.15804681695739198,
+            "se_bn": 0.05312868988768879
+          },
+          "SNAP_cap_observed_newly_ineligible": {
+            "bn": 0.053710002986947,
+            "se_bn": 0.05315341985659836
+          },
+          "completion_credit_already_booked": {
+            "bn": -0.3254843214294949,
+            "se_bn": 0.1297461439433784
+          }
+        },
+        "total_bn": 4.205459737825904
       },
       "cash/high": {
-        "federal_bn": 0.6406312241471568,
-        "benefits_bn": 0.17484869955694882,
-        "state_bn": 0.0,
-        "total_bn": 0.8154799237041056,
-        "outside_children": 335604.26043439,
-        "latent_children": 517863.29300860997
+        "method": "cash",
+        "end": "high",
+        "reading": "bounded_high",
+        "delta_bn": 3.7958553478292076,
+        "delta_se_bn": 0.5900262491246804,
+        "source_item11_bn": 14.531690197973472,
+        "bn": 18.32754554580268,
+        "se_bn": 4.402606901310898,
+        "diagnostic_component_deltas": {
+          "M1_federal": {
+            "bn": 1.1091728105610787,
+            "se_bn": 0.43621267533893787
+          },
+          "M2_state": {
+            "bn": 0.2875133094900899,
+            "se_bn": 0.11186453199386853
+          },
+          "M3_refunds": {
+            "bn": 0.40052440876918016,
+            "se_bn": 0.14762729017376647
+          },
+          "M6_biological_children": {
+            "bn": 0.0,
+            "se_bn": 0.0
+          },
+          "D_added_residual": {
+            "bn": 0.0,
+            "se_bn": 0.0
+          },
+          "M5_consumption": {
+            "bn": 1.8399362989313497,
+            "se_bn": 0.18500162604608691
+          },
+          "M5_owner_property": {
+            "bn": 0.38499154539431,
+            "se_bn": 0.05675113315675569
+          },
+          "M5_SNAP_key": {
+            "bn": -0.41928784866440205,
+            "se_bn": 0.12990534006647664
+          },
+          "M5_housing_key": {
+            "bn": -0.0977106260648064,
+            "se_bn": 0.07538924732239208
+          },
+          "M4_SNAP_baseline_interaction": {
+            "bn": 0.41928784866440205,
+            "se_bn": 0.12990534006647664
+          },
+          "membership_benefit_interaction": {
+            "bn": 0.0,
+            "se_bn": 0.0
+          },
+          "Medicaid_low": {
+            "bn": 0.26203741562498295,
+            "se_bn": 0.07581695274305374
+          },
+          "Medicaid_high": {
+            "bn": 0.1362118766831265,
+            "se_bn": 0.054893158458752866
+          },
+          "ACA_low": {
+            "bn": -0.012986240860071996,
+            "se_bn": 0.029167117814310094
+          },
+          "ACA_high": {
+            "bn": -0.03108772031990298,
+            "se_bn": 0.015158213968245305
+          },
+          "SNAP_zero_observed_low_takeup": {
+            "bn": 0.2615391110418399,
+            "se_bn": 0.07624989728918363
+          },
+          "SNAP_zero_observed_high_takeup": {
+            "bn": 0.35746513740932007,
+            "se_bn": 0.09889606324098135
+          },
+          "SNAP_zero_observed_newly_eligible_low": {
+            "bn": 0.24737013609035507,
+            "se_bn": 0.06917664277542425
+          },
+          "SNAP_zero_observed_newly_eligible_high": {
+            "bn": 0.3432961624578299,
+            "se_bn": 0.09494733735827034
+          },
+          "SNAP_zero_observed_newly_ineligible": {
+            "bn": 0.053710002986946975,
+            "se_bn": 0.053153419856598376
+          },
+          "SNAP_cap_observed_low_takeup": {
+            "bn": 0.09178776581430098,
+            "se_bn": 0.050802433673611785
+          },
+          "SNAP_cap_observed_high_takeup": {
+            "bn": 0.13448155869483697,
+            "se_bn": 0.059722118649162645
+          },
+          "SNAP_cap_observed_newly_eligible_low": {
+            "bn": 0.11535302407685499,
+            "se_bn": 0.040850385156035264
+          },
+          "SNAP_cap_observed_newly_eligible_high": {
+            "bn": 0.15804681695739198,
+            "se_bn": 0.05312868988768879
+          },
+          "SNAP_cap_observed_newly_ineligible": {
+            "bn": 0.053710002986947,
+            "se_bn": 0.05315341985659836
+          },
+          "completion_credit_already_booked": {
+            "bn": -0.3254843214294949,
+            "se_bn": 0.1297461439433784
+          }
+        },
+        "total_bn": 3.7958553478292076
       }
     },
-    "members_source_sha256": "7a95b71120c8c242d4edd6301b5985b37d29370c7da76eba807284c4405b4b4e"
+    "members_source_sha256": "638f92a85ba2e21cbd4eabe42976bbdf0c96ff63c296c7ccc8923db3a637898b"
   }
 }

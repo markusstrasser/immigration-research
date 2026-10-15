@@ -6,6 +6,7 @@ L=infra/immigration-fiscal/white_replacement_2026_09_28
 B=infra/immigration-fiscal/black_comparator_rough_2026_09_28
 # Round 3 (C3 fix 4): every group's K-12 key; rekey_sept29.py reads it on oct15.
 uv run --no-project python3 "$L/school_key_oct15.py"
+uv run --no-project python3 "$L/district_prices_oct15.py"
 uv run --no-project python3 "$L/accrual_white.py" --case oct15
 uv run --no-project python3 "$B/accrual_black.py" --case oct15
 node infra/immigration-fiscal/white_replacement_2026_09_28/dump_oct15.cjs
@@ -39,4 +40,5 @@ uv run --no-project python3 "$L/render_oct15_result.py"
 uv run --no-project python3 -m pytest -p no:cacheprovider "$L/test_job_policy_oct14.py" \
     "$L/test_scalar_policy_oct14.py" "$L/test_status_keys_oct14.py" "$L/test_mortality_comparators.py" \
     "$L/test_symmetric_tables_oct14.py" "$L/test_production_comparators_oct14.py" "$L/test_v8_transport.py" \
-    "$L/test_mortality_conventions.py" "$L/test_comparison_contract.py" -q
+    "$L/test_mortality_conventions.py" "$L/test_comparison_contract.py" \
+    "$L/test_district_prices_oct15.py" "$L/test_r4_adjustments.py" "$L/test_render_oct15_result.py" -q

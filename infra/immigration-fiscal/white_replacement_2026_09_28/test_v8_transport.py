@@ -35,13 +35,19 @@ def test_completed_population_and_comparator_asymmetry():
     assert (lineage.population - payload['population_v8']['with_coverage']).abs().max() < 1e-6
     white = current[current.group.eq('A1_third_plus_nh_white')]
     assert (white.population - payload['population_v8']['with_coverage']).abs().max() < 1e-6
-    # Round 3's children rule adds the lineage's outside-definition children block to both sides' count.
+    # The paired half-overlap arms may remove more lineage children than the
+    # outside block adds; each reading still uses its own exact common count.
     children = results[results.membership_rule.eq('children')]
-    block = children[children.group.eq('mexican_origin_engine')].lineage_children_block_population
-    assert (block > 0).all()
-    for group in ('mexican_origin_engine', 'mexican_origin_rough', 'A1_third_plus_nh_white'):
-        sub = children[children.group.eq(group)]
-        assert (sub.population - payload['population_v8']['with_coverage'] - block.iloc[0]).abs().max() < 1e-6
+    keys = ['arm', 'basis', 'end', 'mortality_convention', 'mortality_bound']
+    for key, reading in children.groupby(keys):
+        line = reading[reading.group.eq('mexican_origin_engine')].iloc[0]
+        block = line.lineage_children_block_population
+        if '_half_' not in key[0]:
+            assert block > 0
+        for group in ('mexican_origin_engine', 'mexican_origin_rough', 'A1_third_plus_nh_white'):
+            sub = reading[reading.group.eq(group)]
+            assert len(sub) == 1
+            assert (sub.population - payload['population_v8']['with_coverage'] - block).abs().max() < 1e-6
     audit = load(HERE / 'derived/symmetric_audit_oct15.json')['v8_asymmetry']
     assert audit['union_completion']['total'] > 0
     assert audit['comparator_completion'].startswith('unmeasured')

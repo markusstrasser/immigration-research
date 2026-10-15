@@ -12,6 +12,7 @@ import csv
 import hashlib
 import json
 import math
+from io import StringIO
 from pathlib import Path
 
 import numpy as np
@@ -20,11 +21,25 @@ import pandas as pd
 MIXED_SOURCE = Path(__file__).resolve().parent.parent / 'mixed_unit_comparators_2026_10_15/derived'
 MIXED_PINS = {
     'white_summary.json': '121b787f04637b43d698555fade2b115686f15fa7f30d4d5167ac5c3d4477081',
+    'white_replicates.csv': '3da68f4be49514508c0a601cff1eadb31a0e405c72b940c83c6bd2e4062720b0',
     'black_summary.json': '2cf7a859a12a3775a385440347ebf7851630302b56b95dbbd00847b26d7c2409',
-    'white_children_summary.json': '647223a2ca64fdc17688ffda01d1614c7f533e3650fc02ac56682f58daaf99d3',
-    'black_children_summary.json': 'b2ac50210518879a49c6f7fa085117c0606a6e0c4fbd501be6ac3bb65951c9b9',
-    'gaps.csv': '18112e8cf04bb4afe6a5db603b70e1761ca024f787fcf02f05b6da9e0d4831ef',
+    'black_replicates.csv': 'b78f9a6e60e5bf9bb72842c58e8385b415db5c27c0006a1ef932a81c7723c03d',
+    'white_children_summary.json': '9b06285b012453a8c7dd8720f4f67cde990795fce2de5c65c67481635eb228eb',
+    'white_children_replicates.csv': '852aaec100e3c589057b3de955f00641dc82f7cc3fbe014497d798f6005fcfd4',
+    'black_children_summary.json': 'faedcc82ff1aaed64adac97783a6d4479b8ab339b1a5658e259e57c16ad5ff29',
+    'black_children_replicates.csv': '71c6a4e7c71f930126a339fc438c960362a996415309374b28f3a0b60c9bd8ad',
+    'white_children_round3_summary.json': 'ded538a18d275a25a9beec85b2387f916346bddb2deb47c83e85c0e59abb141c',
+    'white_children_round3_replicates.csv': 'e9d91836cb5be7201fa4a330d00d6947847f4e2cbf154e67d0e7d29fe820b1c7',
+    'black_children_round3_summary.json': '14f94cef3bbe8a2e7ee838220da68ca8487cf148a656c58043531f582be5519a',
+    'black_children_round3_replicates.csv': '0a8e64a32bb788ea8dd351450c4c6514ac4187618d21460ba6304670e1aadf30',
+    'white_children_half_summary.json': 'c4aa4175ef98f1bb8a6a3806f5e8330bf00e558600e25bd39b85e2f1feaf9a42',
+    'white_children_half_replicates.csv': 'ee12537d17ae6ee404fdfecd4e3bd038d2dda000a7f3794e6b3cc0cba94f6de9',
+    'black_children_half_summary.json': '046c6dddd22559588754931a8495296ccf8f38db56366609c2b6eccc79df0ae5',
+    'black_children_half_replicates.csv': '663875d6161b31f07e964832c885873d61feda927075922bc0ecec946153de8d',
+    'gaps.csv': '7ab68989d5b9e0f30e276c86fb2f83dc1f95c5703908deb8868822abd820c9d9',
 }
+LINEAGE_REPLICATES = MIXED_SOURCE.parent.parent / 'mixed_unit_removal_2026_10_14/derived/round2_replicates.csv'
+LINEAGE_REPLICATES_PIN = '008472495fd84072c67b9cd5091001b5533aa7c5d0769b51f324b3603c1d0e40'
 MIXED_GROUPS = {'A1_third_plus_nh_white': 'white', 'nh_black_rough': 'black'}
 MIXED_FRAME = '[FRAMING-SENSITIVE] whole-person static removal; conditional survivor solve'
 # Every group a caller may pass: measured on its own mask, reweighted from a measured group's record-level parts,
@@ -53,7 +68,24 @@ PART_UNIT = {'M1_federal': 'tax', 'M2_state': 'tax', 'M3_refunds': 'tax', 'M6_bi
 REWEIGHT_RULE = ('A1\'s item 11 by part, each part scaled by the scenario\'s share of weight on A1 members in mixed '
                  'units of the part\'s kind (tax unit, SPM unit, household) over A1\'s share [ASSUMPTION: survivor terms '
                  'uniform per departing member within a mixed unit of that kind]')
-RULES = {'current': '', 'children': '_children'}
+RULES = {'current': '', 'children': '_children', 'children_round3': '_children_round3', 'children_half': '_children_half'}
+CURRENT_RULE_ONLY = {'A2_us_born_nh_white': REGISTRY['A2_us_born_nh_white'][1],
+                     'all_residents_slice': REGISTRY['all_residents_slice'][1]}
+
+
+def reading_scope(group):
+    """Publication eligibility is independent of the presence of a numeric cost."""
+    registered(group)
+    reason = CURRENT_RULE_ONLY.get(group, '')
+    return dict(comparison_reading='current-rule reading' if reason else 'registered comparison reading',
+                central_eligible=not bool(reason), current_rule_reason=reason)
+
+
+def require_central_reading(group):
+    scope = reading_scope(group)
+    if not scope['central_eligible']:
+        raise SystemExit(f'[BLOCKED] {group} is a current-rule reading, not a central: {scope["current_rule_reason"]}')
+    return scope
 
 
 def registered(group):
@@ -74,9 +106,14 @@ def load_mixed_unit(source=MIXED_SOURCE):
             raise SystemExit(f'[BLOCKED] comparator item11 sha256 mismatch: {path}')
         contents[name] = path.read_text()
     gaps = list(csv.DictReader(contents['gaps.csv'].splitlines()))
-    return {'summaries': {group: json.loads(contents[f'{group}_summary.json'])
-                          for group in ('white', 'black', 'white_children', 'black_children')},
-            'gaps': gaps, 'sha256': dict(MIXED_PINS)}
+    if hashlib.sha256(LINEAGE_REPLICATES.read_bytes()).hexdigest() != LINEAGE_REPLICATES_PIN:
+        raise SystemExit('[BLOCKED] lineage item11 replicate sha256 mismatch')
+    groups = [name.removesuffix('_summary.json') for name in contents if name.endswith('_summary.json')]
+    return {'summaries': {group: json.loads(contents[f'{group}_summary.json']) for group in groups},
+            'gaps': gaps, 'sha256': dict(MIXED_PINS),
+            'replicates': {group: pd.read_csv(StringIO(contents[f'{group}_replicates.csv']))
+                           for group in groups if f'{group}_replicates.csv' in contents},
+            'lineage_replicates': pd.read_csv(LINEAGE_REPLICATES)}
 
 
 def entry(source, mask, method, end):
@@ -94,6 +131,9 @@ def split(parts, scale=1., factors=None):
     """Spending and receipt parts of a scaled item 11; every part must have a side."""
     if set(parts) - set(PART_SIDE):
         raise SystemExit(f'[BLOCKED] item 11 part without a side: {sorted(set(parts) - set(PART_SIDE))}')
+    if factors is not None and any(kind not in factors or not math.isfinite(factors[kind]) or factors[kind] < 0
+                                   for kind in ('tax', 'spm', 'household')):
+        raise SystemExit('[BLOCKED] item11 reweighting factors must be finite nonnegative tax, spm and household ratios')
     out = {'spending': 0., 'receipts': 0.}
     for name, part in parts.items():
         out[PART_SIDE[name]] += part['bn'] * scale * (1. if factors is None else factors[PART_UNIT.get(name, 'spm')])
@@ -108,6 +148,68 @@ def checked(term):
     if abs(term['spending_bn'] + term['receipt_bn'] - term['bn']) > 1e-9:
         raise SystemExit('[BLOCKED] item11 spending and receipt parts do not add to the term (1e-9bn)')
     return term
+
+
+def sdr(vector):
+    vector = np.asarray(vector, float)
+    if vector.shape != (161,) or not np.isfinite(vector).all():
+        raise SystemExit('[BLOCKED] item11 SDR needs the full estimate and 160 finite signed replicates')
+    return float(np.sqrt(4 / 160 * np.square(vector[1:] - vector[0]).sum()))
+
+
+def item11_replicates(source, mask, method, end, factors=None):
+    """Use the selected endpoint's parts, preserving signs and cross-part covariance."""
+    row, _ = entry(source, mask, method, end)
+    table = source.get('replicates', {}).get(mask)
+    if table is None:
+        return None
+    cells = table[(table.method == method) & (table.end == end)]
+    def vector(component):
+        found = cells[cells.component == component]
+        if len(found) != 1:
+            raise SystemExit(f'[BLOCKED] item11 replicate component not unique: {mask}/{component}')
+        values = found[[f'r{i}' for i in range(161)]].iloc[0].to_numpy(float)
+        sdr(values)
+        return values
+    if factors is None:
+        result = vector(f'bounded_{end}')
+    else:
+        selected = dict(zip(('Medicaid', 'ACA', 'SNAP'), row['arm'].split('|')))
+        result = sum((vector(selected.get(part, part)) * factors[PART_UNIT.get(part, 'spm')]
+                      for part in row['parts']), np.zeros(161))
+    expected = sum(split(row['parts'], factors=factors).values())
+    if abs(result[0] - expected) > 1e-9:
+        raise SystemExit('[BLOCKED] item11 replicate full estimate does not match reweighted parts (1e-9bn)')
+    return result
+
+
+def lineage_item11_replicates(source, basis, end):
+    """Current-rule source vector; children-rule additions require an explicit expanded vector."""
+    table = source.get('lineage_replicates')
+    if table is None:
+        return None
+    method = 'set' if basis == 'accrual' else basis
+    rows = table[(table.method == method) & (table.end == end) & (table.component == f'bounded_{end}')]
+    if rows.empty:
+        raise SystemExit('[BLOCKED] lineage item11 replicate endpoint missing')
+    vector = rows[[f'r{i}' for i in range(161)]].sum().to_numpy(float)
+    sdr(vector)
+    return vector
+
+
+def uncertainty(source, mask, basis, end, scale, factors=None, lineage_replicates=None, rule='current'):
+    vector = item11_replicates(source, mask, 'set' if basis == 'accrual' else basis, end, factors)
+    if vector is None:
+        return dict(comparator_se_bn=None, paired_se_bn=None,
+                    se_scope='not computed: authenticated comparator replicate parts unavailable')
+    vector = vector * scale
+    if lineage_replicates is None and rule == 'current':
+        lineage_replicates = lineage_item11_replicates(source, basis, end)
+    paired = None if lineage_replicates is None else sdr(np.asarray(lineage_replicates, float) - vector)
+    return dict(comparator_se_bn=sdr(vector), paired_se_bn=paired,
+                se_scope=('signed paired item11 SDR; fixed counts and reweighting factors'
+                          if paired is not None else
+                          'comparator-only signed item11 SDR; expanded lineage replicate vector unavailable'))
 
 
 def comparator_removal(source, group, basis, end, population, reweight=None):
@@ -125,9 +227,10 @@ def comparator_removal(source, group, basis, end, population, reweight=None):
         factors = reweight[group]
         parts = split(row['parts'], population / own, factors)
         amount = parts['spending'] + parts['receipts']
-        return checked(dict(bn=amount, paired_se_bn=None, own_count=own, status=status,
+        se = uncertainty(source, mask, basis, end, population / own, factors)
+        return checked(dict(bn=amount, **se, own_count=own, status=status,
                             spending_bn=parts['spending'], receipt_bn=parts['receipts'],
-                            scope=f'reweighted from A1: {REWEIGHT_RULE}; paired SE not computed; ' + MIXED_FRAME))
+                            scope=f'reweighted from A1: {REWEIGHT_RULE}; ' + se['se_scope'] + '; ' + MIXED_FRAME))
     frame = 'own_count' if abs(population - own) < 1e-6 else 'lineage_count'
     paired = next(r for r in gaps if r['population_basis'] == frame)
     expected_population = own if frame == 'own_count' else float(paired['lineage_count'])
@@ -138,40 +241,67 @@ def comparator_removal(source, group, basis, end, population, reweight=None):
         raise SystemExit('[BLOCKED] comparator item11 own-count standardization mismatch')
     parts = split(row['parts'], population / own)
     return checked(dict(bn=amount, paired_se_bn=float(paired['item11_paired_se_bn']),
+                        comparator_se_bn=float(paired['comparator_adjustment_se_bn']),
+                        se_scope='signed paired item11 SDR; fixed population standardization',
                         own_count=own, status=status, spending_bn=parts['spending'], receipt_bn=parts['receipts'],
                         scope='measured own membership; linear population standardization; ' + MIXED_FRAME))
 
 
-def true_count_removal(source, group, basis, end, population, true_own, rule):
+def true_count_removal(source, group, basis, end, population, true_own, rule, reweight=None,
+                       observed_own=None, lineage_replicates=None):
     """Item 11 under a membership rule ('current', or 'children': members' biological minor children depart and count
     as members) for `population` people, from the term measured on the group's observed mask.
 
     Coverage's missed people add no mixed-unit term [ASSUMPTION, as their custody and arrests are held]: the per-person
-    amount is the measured term over the group's true count. The SE is the comparator side's, scaled the same way; a
-    paired SE was not computed for these readings."""
+    amount is the measured term over the group's true count. Reweighted scenarios must supply their observed own
+    count and factors computed on the same expanded mask. Counts and factors are conditioned in SDR uncertainty.
+    Children-rule pairing requires the expanded lineage's signed replicate vector; comparator-only SE is separate."""
     status, mask = registered(group)
-    if status != 'measured':
+    if status not in ('measured', 'reweighted'):
         raise SystemExit(f'[BLOCKED] true-count item 11 is measured for A1 and Black only, not {group}')
+    if rule not in RULES or not math.isfinite(population) or population <= 0:
+        raise SystemExit('[BLOCKED] true-count item11 needs a known membership rule and positive finite population')
     method = 'set' if basis == 'accrual' else basis
     row, gaps = entry(source, mask + RULES[rule], method, end)
     own = float(gaps[0]['comparator_own_count'])
     if not (math.isfinite(true_own) and true_own > 0):
         raise SystemExit('[BLOCKED] true-count item 11 needs a positive true own count')
     scale = population / true_own
-    parts = split(row['parts'], scale)
-    return checked(dict(bn=row['bn'] * scale, own_count=own, true_own_count=true_own, status='measured', rule=rule,
-                        paired_se_bn=float(gaps[0]['comparator_adjustment_se_bn']) * scale,
+    factors = None
+    if status == 'reweighted':
+        if reweight is None or group not in reweight:
+            raise SystemExit(f'[BLOCKED] {group} item 11 needs its record-level reweighting factors')
+        if observed_own is None or not math.isfinite(observed_own) or observed_own <= 0:
+            raise SystemExit('[BLOCKED] reweighted true-count item11 needs its positive observed own count')
+        factors = reweight[group]
+        scale *= observed_own / own
+    parts = split(row['parts'], scale, factors)
+    se = uncertainty(source, mask + RULES[rule], basis, end, scale, factors,
+                     lineage_replicates=lineage_replicates, rule=rule)
+    return checked(dict(bn=parts['spending'] + parts['receipts'], own_count=float(observed_own or own),
+                        true_own_count=true_own, status=status, rule=rule, **se,
                         spending_bn=parts['spending'], receipt_bn=parts['receipts'],
-                        scope=f'{rule} rule, own mask; measured term over the true count; comparator-side SE; ' + MIXED_FRAME))
+                        scope=f'{rule} rule; {status} term over the true count; ' + se['se_scope'] + '; ' + MIXED_FRAME))
 
 
-def reweight_ratios(d, civ, weights):
+def reweight_ratios(d, civ, weights, membership_rule='current', membership_mask=None, lineage_mask=None):
     """Per part kind, a reweighted scenario's share of weight on A1 members in mixed units over A1's share.
 
     d: the rough frame (PH_SEQ, TAX_ID, SPM_ID); civ: civilians; weights: {'A1': cw, name: cw}, each named scenario a
-    reweighting of A1's members (no weight outside them). A unit is mixed when it holds a civilian who is not a member."""
+    reweighting of A1's members (no weight outside them). Under children, A1 weights already include the authoritative
+    expanded mask, after lineage precedence. membership_mask preserves departing zero-weight records; lineage_mask
+    gates disjointness with the completed lineage including added children. No raw A1 mask is substituted here.
+    A unit is mixed when it holds a civilian who is not a member."""
+    if membership_rule not in RULES:
+        raise SystemExit('[BLOCKED] unknown item11 reweighting membership rule')
     base = np.asarray(weights['A1'], float)
-    member = base > 0
+    member = base > 0 if membership_mask is None else np.asarray(membership_mask, bool)
+    if base.shape != (len(d),) or member.shape != base.shape or not np.isfinite(base).all() or (base < 0).any():
+        raise SystemExit('[BLOCKED] A1 reweighting weights/membership are invalid')
+    if (base[~member] != 0).any() or not base.sum() > 0:
+        raise SystemExit('[BLOCKED] A1 reweighting weights extend outside its membership or have no mass')
+    if lineage_mask is not None and (member & np.asarray(lineage_mask, bool)).any():
+        raise SystemExit('[BLOCKED] item11 comparator membership overlaps the precedence lineage')
     other = np.asarray(civ, bool) & ~member
     units = {'tax': d.groupby(['PH_SEQ', 'TAX_ID'], sort=False).ngroup().to_numpy(),
              'spm': pd.factorize(d.SPM_ID, sort=False)[0], 'household': pd.factorize(d.PH_SEQ, sort=False)[0]}
@@ -187,6 +317,8 @@ def reweight_ratios(d, civ, weights):
         if name == 'A1':
             continue
         cw = np.asarray(cw, float)
+        if cw.shape != base.shape or not np.isfinite(cw).all() or (cw < 0).any():
+            raise SystemExit(f'[BLOCKED] {name} reweighting weights are invalid')
         if bool((cw[~member] != 0).any()) or not float(cw.sum()) > 0:
             raise SystemExit(f'[BLOCKED] {name} reweighting needs weight on A1 members only')
         out[name] = {kind: (float(cw[m].sum()) / float(cw.sum())) / (float(base[m].sum()) / float(base.sum()))

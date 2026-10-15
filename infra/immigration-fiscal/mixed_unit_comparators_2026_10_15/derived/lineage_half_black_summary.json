@@ -1,0 +1,94 @@
+{
+  "interpretation": "source item11 plus half full-expanded and half without-comparator-overlap, less current adapter baseline and already-booked item10 crossing credit",
+  "completion_credit_already_booked": {
+    "path": "infra/immigration-fiscal/union_completion_2026_10_14/derived/credits_interaction.json",
+    "sha256": "49e4be015ce2e58284d84b885196997b380e4420162601acf77dd586a794880f",
+    "case_path": "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections.json",
+    "case_sha256": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68",
+    "already_booked_bn": 0.3254843214294949,
+    "subtraction_bn": -0.3254843214294949,
+    "replicates": 161
+  },
+  "results": [
+    {
+      "method": "set",
+      "end": "low",
+      "reading": "bounded_low",
+      "delta_bn": 3.590685670045704,
+      "delta_se_bn": 0.6146256786450144,
+      "source_item11_bn": 10.74001627270179,
+      "bn": 14.330701942747496,
+      "se_bn": 4.422870140667537
+    },
+    {
+      "method": "set",
+      "end": "low",
+      "reading": "bounded_high",
+      "delta_bn": 3.2296260975371576,
+      "delta_se_bn": 0.6095640159746702,
+      "source_item11_bn": 14.531690197973472,
+      "bn": 17.76131629551063,
+      "se_bn": 4.412352841996335
+    },
+    {
+      "method": "set",
+      "end": "high",
+      "reading": "bounded_low",
+      "delta_bn": 3.590685670045704,
+      "delta_se_bn": 0.6146256786450144,
+      "source_item11_bn": 10.74001627270179,
+      "bn": 14.330701942747496,
+      "se_bn": 4.422870140667537
+    },
+    {
+      "method": "set",
+      "end": "high",
+      "reading": "bounded_high",
+      "delta_bn": 3.2296260975371576,
+      "delta_se_bn": 0.6095640159746702,
+      "source_item11_bn": 14.531690197973472,
+      "bn": 17.76131629551063,
+      "se_bn": 4.412352841996335
+    },
+    {
+      "method": "cash",
+      "end": "low",
+      "reading": "bounded_low",
+      "delta_bn": 3.590685670045704,
+      "delta_se_bn": 0.6146256786450144,
+      "source_item11_bn": 10.74001627270179,
+      "bn": 14.330701942747496,
+      "se_bn": 4.422870140667537
+    },
+    {
+      "method": "cash",
+      "end": "low",
+      "reading": "bounded_high",
+      "delta_bn": 3.2296260975371576,
+      "delta_se_bn": 0.6095640159746702,
+      "source_item11_bn": 14.531690197973472,
+      "bn": 17.76131629551063,
+      "se_bn": 4.412352841996335
+    },
+    {
+      "method": "cash",
+      "end": "high",
+      "reading": "bounded_low",
+      "delta_bn": 3.590685670045704,
+      "delta_se_bn": 0.6146256786450144,
+      "source_item11_bn": 10.74001627270179,
+      "bn": 14.330701942747496,
+      "se_bn": 4.422870140667537
+    },
+    {
+      "method": "cash",
+      "end": "high",
+      "reading": "bounded_high",
+      "delta_bn": 3.2296260975371576,
+      "delta_se_bn": 0.6095640159746702,
+      "source_item11_bn": 14.531690197973472,
+      "bn": 17.76131629551063,
+      "se_bn": 4.412352841996335
+    }
+  ]
+}

@@ -20,7 +20,12 @@ OWN_ARMS = {'combined_before_round2', 'combined_bracket_only', 'combined_payroll
             'combined_bracket_payroll_joint', 'mortality_group', 'mortality_symmetric_frame_status',
             'combined_rules_only', 'combined_zero_production',
             # round 3's derived arms on combined_rules_only (DERIVED below) and its school-key diagnostic
-            'combined_rules_coverage', 'combined_rules_members', 'combined_rules_rough_school'}
+            'combined_rules_coverage', 'combined_rules_members', 'combined_rules_rough_school',
+            'combined_rules_members_round3', 'combined_rules_members_no_district',
+            'combined_rules_members_round3_no_district', 'combined_rules_members_no_row8',
+            'combined_rules_members_partial_lineage',
+            'combined_rules_members_da_middle', 'combined_rules_members_da_all_black',
+            'combined_rules_members_half_white', 'combined_rules_members_half_black'}
 # Round 3 (C3 fixes 1, 2, 3b): arms symmetric_comparators_oct14.py derives after the evaluator from
 # members_coverage_oct15.py's runs, which rebuild A1 and Black on combined_rules_only's settings (own-group mortality)
 # or combined_rules_general's (whole-population): rule 'current' or 'children' (members' biological minor children
@@ -29,6 +34,19 @@ OWN_ARMS = {'combined_before_round2', 'combined_bracket_only', 'combined_payroll
 DERIVED = {'combined_rules_coverage': dict(base='combined_rules_only', rule='current', mortality='specific'),
            'combined_rules_members': dict(base='combined_rules_only', rule='children', mortality='specific'),
            'combined_rules_members_general': dict(base='combined_rules_general', rule='children', mortality='general')}
+for _arm, _options in {
+        'round3': dict(rule='children_round3'),
+        'no_district': dict(district=False),
+        'round3_no_district': dict(rule='children_round3', district=False),
+        'no_row8': dict(row8=False),
+        'partial_lineage': dict(partial_lineage=True),
+        'da_middle': dict(coverage='da_middle'),
+        'da_all_black': dict(coverage='da_all_black'),
+        'half_white': dict(half='white'),
+        'half_black': dict(half='black')}.items():
+    DERIVED['combined_rules_members_' + _arm] = dict(base='combined_rules_only', rule='children',
+                                                   mortality='specific', **_options) if 'rule' not in _options else {
+        'base': 'combined_rules_only', 'mortality': 'specific', **_options}
 CENTRAL = dict(arm='combined_rules_members', mortality_convention=OWN)
 
 

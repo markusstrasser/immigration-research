@@ -8,6 +8,7 @@ import pandas as pd
 import pytest
 
 import adapter
+import finalize
 
 
 def test_masks_keep_distinct_race_origin_generation_boundaries():
@@ -29,10 +30,48 @@ def test_children_rule_adds_only_members_biological_minor_children():
                       'PEHSPNON': [2, 1, 1, 1, 2], 'PRDTRACE': [1, 1, 1, 1, 1]})
     civ = np.ones(5, bool)
     white, _ = adapter.membership(d, civ, 'white')
-    children, gen = adapter.membership(d, civ, 'white_children')
+    children, gen = adapter.membership(d, civ, 'white_children_round3')
     assert white.tolist() == [True, False, False, False, True]
     assert children.tolist() == [True, True, False, False, True]
     assert (gen[children] == 2).all() and (gen[~children] == -1).all()
+
+
+def test_precedence_excludes_lineage_from_base_and_added_children(monkeypatch):
+    d = pd.DataFrame({'PH_SEQ': [7] * 3, 'A_LINENO': [1, 2, 3], 'PEPAR1': [-1, 1, -1],
+        'PEPAR2': [-1] * 3, 'PEPAR1TYP': [-1, 1, -1], 'PEPAR2TYP': [-1] * 3,
+        'A_AGE': [40, 10, 9], 'PRCITSHP': [1] * 3, 'PEFNTVTY': [57] * 3,
+        'PEMNTVTY': [57] * 3, 'PEHSPNON': [2, 1, 2], 'PRDTRACE': [1] * 3})
+    monkeypatch.setattr(adapter, 'lineage_membership_masks', lambda d, civ: {'all': np.array([False, True, True])})
+    mask, _ = adapter.membership(d, np.ones(3, bool), 'white_children')
+    assert mask.tolist() == [True, False, False]
+
+
+def test_completed_parent_children_enter_lineage_precedence():
+    d = pd.DataFrame({'PH_SEQ': [7] * 4, 'PPPOS': [1, 2, 3, 4], 'A_LINENO': [1, 2, 3, 4],
+        'PEPAR1': [-1, 1, -1, 3], 'PEPAR2': [-1] * 4, 'PEPAR1TYP': [-1, 1, -1, 1],
+        'PEPAR2TYP': [-1] * 4, 'A_AGE': [40, 10, 40, 9], 'PRCITSHP': [1] * 4,
+        'PEFNTVTY': [57] * 4, 'PEMNTVTY': [57] * 4, 'PENATVTY': [57] * 4,
+        'PRDTHSP': [0] * 4})
+    completion = [{'PH_SEQ': 7, 'PPPOS': 1, 'central_reporter': True}]
+    masks = adapter.lineage_membership_masks(d, np.ones(4, bool), completion=completion)
+    assert masks['union'].tolist() == [True, False, False, False]
+    assert masks['all'].tolist() == [True, True, False, False]
+    with pytest.raises(SystemExit, match='completion record missing'):
+        adapter.lineage_membership_masks(d.iloc[1:], np.ones(3, bool), completion=completion)
+
+
+def test_shared_original_union_rule_matches_frozen_principal():
+    d = pd.DataFrame({'PH_SEQ': range(6), 'PPPOS': [1] * 6, 'A_LINENO': [1] * 6,
+        'PEPAR1': [-1] * 6, 'PEPAR2': [-1] * 6, 'PEPAR1TYP': [-1] * 6, 'PEPAR2TYP': [-1] * 6,
+        'A_AGE': [40] * 6, 'PRPERTYP': [2, 2, 2, 2, 2, 1],
+        'PRCITSHP': [4, 1, 1, 1, 4, 1], 'PENATVTY': [303, 57, 57, 57, 57, 57],
+        'PEFNTVTY': [57, 303, 57, 57, 57, 57], 'PEMNTVTY': [57, 57, 57, 999, 57, 57],
+        'PRDTHSP': [0, 0, 1, 1, 0, 1]})
+    principal = adapter.load(adapter.FISCAL / 'mixed_unit_credits_2026_10_14/credits.py', 'fixture_principal_groups')
+    civ, union, _ = principal.groups(d)
+    masks = adapter.lineage_membership_masks(d, civ, completion=[])
+    assert union.tolist() == [True, True, True, False, False, False]
+    assert np.array_equal(masks['original'], union)
 
 
 def test_frozen_sibling_loader_imports_pension_membership():
@@ -79,6 +118,48 @@ def test_kernel_reuse_is_exact_input_and_does_not_alias_results():
     assert events.count('verify') == 3
     assert events.count('run') == 2
     assert cache.bytes <= 64_000_000
+
+
+def test_half_overlap_uncertainty_keeps_signed_covariance(tmp_path, monkeypatch):
+    monkeypatch.setattr(finalize, 'OUT', tmp_path)
+    for base in ('white', 'black'):
+        for suffix, direction, population in (('children', 1., 100.), ('children_round3', -1., 120.)):
+            v = np.full(161, 4.)
+            v[1:] += direction
+            pd.DataFrame([{'method': 'set', 'end': 'low', 'component': component,
+                **{f'r{i}': x for i, x in enumerate(v)}} for component in ('bounded_low', 'M1_federal')]).to_csv(
+                    tmp_path / f'{base}_{suffix}_replicates.csv', index=False)
+            (tmp_path / f'{base}_{suffix}_summary.json').write_text(json.dumps({'counts': {'members': {
+                'records': 10, 'weighted_persons': population, 'replicate_counts': [population] * 161}},
+                'results': [{'method': 'set', 'end': 'low', 'reading': 'bounded_low', 'arm': '',
+                             'parts': {'M1_federal': {'bn': 4., 'se_bn': 2.}}}]}))
+    finalize.interpolate_comparator_halves()
+    got = json.loads((tmp_path / 'white_children_half_summary.json').read_text())
+    assert got['results'][0]['bn'] == 4.
+    assert got['results'][0]['se_bn'] == 0.   # Opposing signed errors cancel; averaging SEs would not.
+    assert got['counts']['members']['weighted_persons'] == 110.
+
+
+def test_completion_credit_is_subtracted_once_from_each_paired_stack(monkeypatch):
+    credit, receipt = finalize.completion_credit_already_booked()
+    assert credit.shape == (161,) and abs(receipt['already_booked_bn'] - .3254843214294949) < 1e-12
+    rows = [{'method': method, 'end': end, 'component': reading,
+             **{f'r{i}': float(credit[i] + 1.) for i in range(161)}}
+            for method in ('set', 'cash') for end in ('low', 'high') for reading in ('bounded_low', 'bounded_high')]
+    corrected, _ = finalize.subtract_completion_credit(pd.DataFrame(rows).set_index(['method', 'end', 'component']))
+    for method in ('set', 'cash'):
+        for end in ('low', 'high'):
+            assert np.max(abs(corrected.loc[(method, end, 'bounded_low')].to_numpy(float) - 1.)) < 1e-12
+            assert np.array_equal(corrected.loc[(method, end, 'completion_credit_already_booked')].to_numpy(float), -credit)
+    monkeypatch.setattr(finalize, 'digest', lambda path: 'poison')
+    with pytest.raises(SystemExit, match='case source pin'):
+        finalize.completion_credit_already_booked()
+
+
+def test_missing_source_generation_cannot_silently_sum_to_zero():
+    missing = pd.DataFrame(columns=['method', 'end', 'component', 'generation'] + [f'r{i}' for i in range(161)])
+    with pytest.raises(SystemExit, match='exactly its three generation vectors'):
+        finalize.source_vector(missing, 'set', 'low', 'bounded_low')
 
 
 @pytest.mark.parametrize('group', adapter.GROUPS)
