@@ -1,0 +1,206 @@
+{
+ "gate": "G3: unmodified v8 scripts on v9 with new items off reproduce v8 outputs byte for byte",
+ "pass": true,
+ "stub": false,
+ "verdict": "PASS",
+ "method": "v8's item_union.cjs, main_case.cjs, sign_reversal.cjs and lineage_addition.cjs, unmodified, each run in a child with package.cjs resolved to v9 caseOf(OCT05, V8.CANDIDATE), exports restricted to v8's original symbols, registry and identity; fs redirects derived writes under v9/_cache/g3/derived and rejects all other writes. Python-produced bridge inputs are copied and hash-checked separately, not counted as executed producers.",
+ "inputs": [
+  {
+   "file": "union_people.json",
+   "classification": "immutable bridge input; copied, producer not executed",
+   "identical": true,
+   "sha256": "47aa2d549f937f37d14d5a078fed8e6bbf5c6eb1d18aea5f5c9c0fdc5a1a6470",
+   "bytes": 88889
+  },
+  {
+   "file": "union_credit_parts.json",
+   "classification": "immutable bridge input; copied, producer not executed",
+   "identical": true,
+   "sha256": "b085afc90d969be813347e2704c83f5bcba7fa679bdca6238b21c0e3620b95f2",
+   "bytes": 2101
+  },
+  {
+   "file": "mixed_overlap.json",
+   "classification": "immutable bridge input; copied, producer not executed",
+   "identical": true,
+   "sha256": "fec1eba4310700489f6f5543c0d2c0e7851a449870e27068130916136412ccce",
+   "bytes": 8349
+  }
+ ],
+ "executed_outputs": 12,
+ "child_old_space_limit_mib": 1536,
+ "case_cache": false,
+ "runtime_adapter": {
+  "scope": "isolated original v8/package and item_union source bytes; raw unit_models memo retained at most 2; matching evicted capture Module unlinked from isolated parent.children by exact unitModels identity; active returned values/model references and scalar memo unchanged; original modules and caches untouched",
+  "anchor": "const keyedRatesCache = new Map();",
+  "module_anchor": "const mod = new Module(file, module); mod.filename = file;",
+  "anchor_matches": 1,
+  "raw_cache_entries": 2,
+  "sources": [
+   {
+    "file": "main_case_2026_10_15/package.cjs",
+    "sha256": "083236226e594247bfe095c6cdf0c71f6bb0ca73b405f5da98568ac8c95b90d6"
+   },
+   {
+    "file": "main_case_2026_10_15/item_union.cjs",
+    "sha256": "cea17e43b89c9b104890362d1d57baefa84b23cf33d95a2c0b5a5abfc4dff2a5"
+   }
+  ]
+ },
+ "memory_metric": "canonical live lifetime peak physical footprint; Node maxRSS diagnostic only",
+ "not_compared": [
+  "main_case_2026_10_15/derived/api_check.json (that lane's own gate record; its script is not run here)",
+  "main_case_2026_10_15/derived/contract.json (that lane's own gate record; its script is not run here)",
+  "main_case_2026_10_15/derived/generality.json (that lane's own gate record; its script is not run here)",
+  "main_case_2026_10_15/derived/coverage_check.json (that lane's own gate record; its script is not run here)"
+ ],
+ "payload": {
+  "file": "main_case_2026_10_15/derived/corrections.json",
+  "sha256": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68"
+ },
+ "runs": [
+  {
+   "script": "main_case_2026_10_15/item_union.cjs",
+   "sha256": "cea17e43b89c9b104890362d1d57baefa84b23cf33d95a2c0b5a5abfc4dff2a5",
+   "exit_code": 0,
+   "gates_passed": 0,
+   "gates_failed": 0,
+   "all_gates_passed": true,
+   "stub": false
+  },
+  {
+   "script": "main_case_2026_10_15/main_case.cjs",
+   "sha256": "00e11bda307f6f900daa4314c23da4076db09c97dcb7b241ccf398b5b351b4c9",
+   "exit_code": 0,
+   "gates_passed": 1776,
+   "gates_failed": 0,
+   "all_gates_passed": true,
+   "stub": false
+  },
+  {
+   "script": "main_case_2026_10_15/sign_reversal.cjs",
+   "sha256": "cfcc482fefd24be584a1f52423c6d5c6dba17691029c2e3301cb63966a71b346",
+   "exit_code": 0,
+   "gates_passed": 17,
+   "gates_failed": 0,
+   "all_gates_passed": true,
+   "stub": false
+  },
+  {
+   "script": "main_case_2026_10_15/lineage_addition.cjs",
+   "sha256": "97ab4650c9e3bc35ed26954b4f26ce1e36ed53f51d28d23d95054083ab32bd89",
+   "exit_code": 0,
+   "gates_passed": 9,
+   "gates_failed": 0,
+   "all_gates_passed": true,
+   "stub": false
+  }
+ ],
+ "files": [
+  {
+   "file": "components.csv",
+   "classification": "executed case producer output",
+   "identical": true,
+   "bytes": 2616,
+   "sha256": "8bc95bbda4b72759444260c859c84ffda00181112a1f8efaa4c18aacfc2c561a"
+  },
+  {
+   "file": "corrections.json",
+   "classification": "executed case producer output",
+   "identical": true,
+   "bytes": 2876687,
+   "sha256": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68"
+  },
+  {
+   "file": "corrections_cash.json",
+   "classification": "executed case producer output",
+   "identical": true,
+   "bytes": 2836933,
+   "sha256": "9af66b4c6a87ddb96d22c208364cd6798d23411590252bbe9520f3019b6446ea"
+  },
+  {
+   "file": "g1.json",
+   "classification": "executed case producer output",
+   "identical": true,
+   "bytes": 1091,
+   "sha256": "124caf1ff47e9ad0c0684c28f59c84d0303373eb915971ea34d83e57540b593b"
+  },
+  {
+   "file": "lineage_addition.json",
+   "classification": "executed case producer output",
+   "identical": true,
+   "bytes": 1137392,
+   "sha256": "7727054aff8f1c8943f723d93e1970c38c02494783fec50bfc353b867f84709e"
+  },
+  {
+   "file": "lineage_payload.json",
+   "classification": "executed case producer output",
+   "identical": true,
+   "bytes": 321895,
+   "sha256": "e376750d79e96c0b6e8e1f274f1c9460cfc14dab12f9a1c6d632c3f24a73d18b"
+  },
+  {
+   "file": "lineage_payload_cash.json",
+   "classification": "executed case producer output",
+   "identical": true,
+   "bytes": 321935,
+   "sha256": "0c1f120bb51da24f486b9853c6e20ea5a32a21393938e3976025c008f7fb513a"
+  },
+  {
+   "file": "main_case_bands.csv",
+   "classification": "executed case producer output",
+   "identical": true,
+   "bytes": 10536,
+   "sha256": "fe8fe05bfdeb29f4f4b996bf5e515fcfc172b6094d96c10e67f7cf0840d34ba2"
+  },
+  {
+   "file": "mixed_overlap.json",
+   "classification": "immutable bridge input; copied, producer not executed",
+   "identical": true,
+   "bytes": 8349,
+   "sha256": "fec1eba4310700489f6f5543c0d2c0e7851a449870e27068130916136412ccce"
+  },
+  {
+   "file": "per_spec.csv",
+   "classification": "executed case producer output",
+   "identical": true,
+   "bytes": 171538,
+   "sha256": "56b9a3c3ef7c558aee0ffb68e75d9afea1b5df6081cc97898cce00833cce642f"
+  },
+  {
+   "file": "sign_reversal.csv",
+   "classification": "executed case producer output",
+   "identical": true,
+   "bytes": 1596,
+   "sha256": "d2943101700efe29aa5bb2fdabc562f611b0fc47a3b67bcb343866f351044f12"
+  },
+  {
+   "file": "summary.json",
+   "classification": "executed case producer output",
+   "identical": true,
+   "bytes": 7894725,
+   "sha256": "1d999c666d68696ed2728b9e6fd48c44ab85371e875e3e6f1b16d0b16971013a"
+  },
+  {
+   "file": "union_credit_parts.json",
+   "classification": "immutable bridge input; copied, producer not executed",
+   "identical": true,
+   "bytes": 2101,
+   "sha256": "b085afc90d969be813347e2704c83f5bcba7fa679bdca6238b21c0e3620b95f2"
+  },
+  {
+   "file": "union_people.json",
+   "classification": "immutable bridge input; copied, producer not executed",
+   "identical": true,
+   "bytes": 88889,
+   "sha256": "47aa2d549f937f37d14d5a078fed8e6bbf5c6eb1d18aea5f5c9c0fdc5a1a6470"
+  },
+  {
+   "file": "union_probe_checks.json",
+   "classification": "executed case producer output",
+   "identical": true,
+   "bytes": 5201,
+   "sha256": "24e6ddb12b8a37355284fb58ec6eefa572fb7bf37048d395cf06149fc03f1172"
+  }
+ ]
+}

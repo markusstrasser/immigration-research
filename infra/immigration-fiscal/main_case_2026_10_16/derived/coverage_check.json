@@ -1,0 +1,310 @@
+{
+  "pass": true,
+  "source": "coverage_bound_2026_10_14/derived/coverage_bound_oct16.json",
+  "sha256": "9d8b88647e0845e0734b641afecb72df3de6d173b61848ceefdf019fe9804c27",
+  "stub13": false,
+  "checks": [
+    {
+      "check": "case/key/allocation",
+      "pass": true
+    },
+    {
+      "check": "set present",
+      "pass": true
+    },
+    {
+      "check": "set/low finite exact generation closure",
+      "pass": true
+    },
+    {
+      "check": "set/low declared coverage delta plus exact interaction",
+      "pass": true
+    },
+    {
+      "check": "set/high finite exact generation closure",
+      "pass": true
+    },
+    {
+      "check": "set/high declared coverage delta plus exact interaction",
+      "pass": true
+    },
+    {
+      "check": "set/native_minor_calibration present",
+      "pass": true
+    },
+    {
+      "check": "set/native_minor_calibration/low generation closure",
+      "pass": true
+    },
+    {
+      "check": "set/native_minor_calibration/high generation closure",
+      "pass": true
+    },
+    {
+      "check": "set/native_minor_calibration population closure",
+      "pass": true
+    },
+    {
+      "check": "set/coverage_tenure present",
+      "pass": true
+    },
+    {
+      "check": "set/coverage_tenure/low generation closure",
+      "pass": true
+    },
+    {
+      "check": "set/coverage_tenure/high generation closure",
+      "pass": true
+    },
+    {
+      "check": "set/coverage_tenure population closure",
+      "pass": true
+    },
+    {
+      "check": "cash present",
+      "pass": true
+    },
+    {
+      "check": "cash/low finite exact generation closure",
+      "pass": true
+    },
+    {
+      "check": "cash/low declared coverage delta plus exact interaction",
+      "pass": true
+    },
+    {
+      "check": "cash/high finite exact generation closure",
+      "pass": true
+    },
+    {
+      "check": "cash/high declared coverage delta plus exact interaction",
+      "pass": true
+    },
+    {
+      "check": "cash/native_minor_calibration present",
+      "pass": true
+    },
+    {
+      "check": "cash/native_minor_calibration/low generation closure",
+      "pass": true
+    },
+    {
+      "check": "cash/native_minor_calibration/high generation closure",
+      "pass": true
+    },
+    {
+      "check": "cash/native_minor_calibration population closure",
+      "pass": true
+    },
+    {
+      "check": "cash/coverage_tenure present",
+      "pass": true
+    },
+    {
+      "check": "cash/coverage_tenure/low generation closure",
+      "pass": true
+    },
+    {
+      "check": "cash/coverage_tenure/high generation closure",
+      "pass": true
+    },
+    {
+      "check": "cash/coverage_tenure population closure",
+      "pass": true
+    },
+    {
+      "check": "source receipt nonempty",
+      "pass": true
+    },
+    {
+      "check": "principal source spending_keys_r5_2026_10_15/derived/item13.json",
+      "pass": true
+    },
+    {
+      "check": "principal source spending_keys_r5_2026_10_15/derived/item14.json",
+      "pass": true
+    },
+    {
+      "check": "principal source spending_keys_r5_2026_10_15/derived/item15.json",
+      "pass": true
+    },
+    {
+      "check": "principal source consumption_tax_bases_r5_2026_10_15/derived/item.json",
+      "pass": true
+    },
+    {
+      "check": "principal source passthrough_source_tax_r5_2026_10_15/derived/item.json",
+      "pass": true
+    },
+    {
+      "check": "principal source one_rate_2026_10_15/derived/rates.json",
+      "pass": true
+    },
+    {
+      "check": "principal source spending_keys_r5_2026_10_15/items.cjs",
+      "pass": true
+    },
+    {
+      "check": "principal source count_composition_r5_2026_10_15/measure.py",
+      "pass": true
+    },
+    {
+      "check": "principal source count_composition_r5_2026_10_15/tenure.py",
+      "pass": true
+    },
+    {
+      "check": "principal source count_composition_r5_2026_10_15/derived/native_person_factors.parquet",
+      "pass": true
+    },
+    {
+      "check": "principal source main_case_2026_10_16/coverage_snapshot.cjs",
+      "pass": true
+    },
+    {
+      "check": "principal source coverage_bound_2026_10_14/coverage_oct16.py",
+      "pass": true
+    }
+  ],
+  "negative_controls": [
+    {
+      "which": "set",
+      "kind": "missing_set",
+      "blocked": true
+    },
+    {
+      "which": "set",
+      "kind": "nonfinite",
+      "blocked": true
+    },
+    {
+      "which": "set",
+      "kind": "generation_gap",
+      "blocked": true
+    },
+    {
+      "which": "cash",
+      "kind": "missing_set",
+      "blocked": true
+    },
+    {
+      "which": "cash",
+      "kind": "nonfinite",
+      "blocked": true
+    },
+    {
+      "which": "cash",
+      "kind": "generation_gap",
+      "blocked": true
+    },
+    {
+      "which": "set",
+      "kind": "missing_added_count",
+      "blocked": true
+    },
+    {
+      "which": "set",
+      "kind": "wrong_folded_count",
+      "blocked": true
+    },
+    {
+      "which": "cash",
+      "kind": "missing_added_count",
+      "blocked": true
+    },
+    {
+      "which": "cash",
+      "kind": "wrong_folded_count",
+      "blocked": true
+    },
+    {
+      "which": "set",
+      "kind": "wrong_count_parts_scenario",
+      "blocked": true
+    },
+    {
+      "which": "cash",
+      "kind": "wrong_count_parts_scenario",
+      "blocked": true
+    }
+  ],
+  "typed_count_parts": [
+    {
+      "which": "set",
+      "id": "native_minor_calibration",
+      "arm": "fixed_count",
+      "parts_scenario": "item16",
+      "subtract_parts_scenario": null,
+      "pass": true
+    },
+    {
+      "which": "set",
+      "id": "coverage_tenure",
+      "arm": "fixed_count",
+      "parts_scenario": "joint",
+      "subtract_parts_scenario": "item16",
+      "pass": true
+    },
+    {
+      "which": "set",
+      "id": "native_minor_calibration",
+      "arm": "count_transfer",
+      "parts_scenario": "item16",
+      "subtract_parts_scenario": null,
+      "pass": true
+    },
+    {
+      "which": "set",
+      "id": "coverage_tenure",
+      "arm": "count_transfer",
+      "parts_scenario": "joint_count_transfer",
+      "subtract_parts_scenario": "item16",
+      "pass": true
+    },
+    {
+      "which": "cash",
+      "id": "native_minor_calibration",
+      "arm": "fixed_count",
+      "parts_scenario": "item16",
+      "subtract_parts_scenario": null,
+      "pass": true
+    },
+    {
+      "which": "cash",
+      "id": "coverage_tenure",
+      "arm": "fixed_count",
+      "parts_scenario": "joint",
+      "subtract_parts_scenario": "item16",
+      "pass": true
+    },
+    {
+      "which": "cash",
+      "id": "native_minor_calibration",
+      "arm": "count_transfer",
+      "parts_scenario": "item16",
+      "subtract_parts_scenario": null,
+      "pass": true
+    },
+    {
+      "which": "cash",
+      "id": "coverage_tenure",
+      "arm": "count_transfer",
+      "parts_scenario": "joint_count_transfer",
+      "subtract_parts_scenario": "item16",
+      "pass": true
+    }
+  ],
+  "arm_transport_controls": [
+    {
+      "which": "set",
+      "default_metadata_absent": true,
+      "nondefault13_carry_labeled": true,
+      "require_own_blocks": true
+    },
+    {
+      "which": "cash",
+      "default_metadata_absent": true,
+      "nondefault13_carry_labeled": true,
+      "require_own_blocks": true
+    }
+  ]
+}

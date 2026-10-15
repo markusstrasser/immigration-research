@@ -1,0 +1,4997 @@
+{
+ "pass": true,
+ "stub13": false,
+ "coverage_mode": "repriced",
+ "band": [
+  344.02328615247666,
+  412.55507412763035
+ ],
+ "cash": [
+  260.39059043224427,
+  328.922378407397
+ ],
+ "changes": {
+  "veterans_compensation": {
+   "set": [
+    -18.91843876565588,
+    -18.918438765655935
+   ],
+   "cash": [
+    -18.918438765655992,
+    -18.918438765655935
+   ]
+  },
+  "income_security_administration": {
+   "set": [
+    -0.2975116398897626,
+    -0.2975116398897626
+   ],
+   "cash": [
+    -0.29751163988981943,
+    -0.29751163988981943
+   ]
+  },
+  "public_college_response": {
+   "set": [
+    -4.088275290754382,
+    -4.279311499191067
+   ],
+   "cash": [
+    -4.088275290754382,
+    -4.279311499191067
+   ]
+  },
+  "native_minor_calibration": {
+   "set": [
+    -4.193985590463058,
+    -4.556858662650313
+   ],
+   "cash": [
+    -4.21046427130625,
+    -4.573337343493392
+   ]
+  },
+  "coverage_tenure": {
+   "set": [
+    3.7604508119684397,
+    3.615902228450807
+   ],
+   "cash": [
+    4.181807481350802,
+    4.037258897833226
+   ]
+  },
+  "consumption_tax_bases": {
+   "set": [
+    0.263314887774186,
+    0.26331488777424283
+   ],
+   "cash": [
+    0.263314887774186,
+    0.26331488777412915
+   ]
+  },
+  "one_rate": {
+   "set": [
+    1.5835032591935487,
+    -19.699745780011654
+   ],
+   "cash": [
+    1.5835032591934919,
+    -19.699745780011597
+   ]
+  }
+ },
+ "interactions": {
+  "total": {
+   "set": [
+    0.12229822481879182,
+    0.44593876982474967
+   ],
+   "cash": [
+    0.12409109545899355,
+    0.4477316404645535
+   ]
+  },
+  "pairs": {
+   "veterans_compensation+income_security_administration": {
+    "set": [
+     -1.1368683772161603e-13,
+     -5.684341886080802e-14
+    ],
+    "cash": [
+     5.684341886080802e-14,
+     0
+    ]
+   },
+   "veterans_compensation+public_college_response": {
+    "set": [
+     0,
+     0
+    ],
+    "cash": [
+     0,
+     0
+    ]
+   },
+   "veterans_compensation+native_minor_calibration": {
+    "set": [
+     -1.1368683772161603e-13,
+     -5.684341886080802e-14
+    ],
+    "cash": [
+     1.1368683772161603e-13,
+     0
+    ]
+   },
+   "veterans_compensation+coverage_tenure": {
+    "set": [
+     0,
+     0
+    ],
+    "cash": [
+     1.1368683772161603e-13,
+     0
+    ]
+   },
+   "veterans_compensation+consumption_tax_bases": {
+    "set": [
+     -1.1368683772161603e-13,
+     0
+    ],
+    "cash": [
+     1.1368683772161603e-13,
+     0
+    ]
+   },
+   "veterans_compensation+one_rate": {
+    "set": [
+     -5.684341886080802e-14,
+     0
+    ],
+    "cash": [
+     5.684341886080802e-14,
+     -5.684341886080802e-14
+    ]
+   },
+   "income_security_administration+public_college_response": {
+    "set": [
+     0,
+     0
+    ],
+    "cash": [
+     5.684341886080802e-14,
+     0
+    ]
+   },
+   "income_security_administration+native_minor_calibration": {
+    "set": [
+     0,
+     -5.684341886080802e-14
+    ],
+    "cash": [
+     5.684341886080802e-14,
+     5.684341886080802e-14
+    ]
+   },
+   "income_security_administration+coverage_tenure": {
+    "set": [
+     0,
+     -5.684341886080802e-14
+    ],
+    "cash": [
+     5.684341886080802e-14,
+     0
+    ]
+   },
+   "income_security_administration+consumption_tax_bases": {
+    "set": [
+     0,
+     0
+    ],
+    "cash": [
+     5.684341886080802e-14,
+     5.684341886080802e-14
+    ]
+   },
+   "income_security_administration+one_rate": {
+    "set": [
+     0,
+     0
+    ],
+    "cash": [
+     5.684341886080802e-14,
+     0
+    ]
+   },
+   "public_college_response+native_minor_calibration": {
+    "set": [
+     0,
+     0
+    ],
+    "cash": [
+     1.1368683772161603e-13,
+     0
+    ]
+   },
+   "public_college_response+coverage_tenure": {
+    "set": [
+     1.1368683772161603e-13,
+     0
+    ],
+    "cash": [
+     1.1368683772161603e-13,
+     0
+    ]
+   },
+   "public_college_response+consumption_tax_bases": {
+    "set": [
+     0,
+     5.684341886080802e-14
+    ],
+    "cash": [
+     1.1368683772161603e-13,
+     5.684341886080802e-14
+    ]
+   },
+   "public_college_response+one_rate": {
+    "set": [
+     -0.015487281810351305,
+     0.17554892662633392
+    ],
+    "cash": [
+     -0.015487281810408149,
+     0.17554892662627708
+    ]
+   },
+   "native_minor_calibration+coverage_tenure": {
+    "set": [
+     -0.006553013980692413,
+     -0.006816793847235658
+    ],
+    "cash": [
+     -0.004760143340831746,
+     -0.005023923207431835
+    ]
+   },
+   "native_minor_calibration+consumption_tax_bases": {
+    "set": [
+     0,
+     0
+    ],
+    "cash": [
+     1.1368683772161603e-13,
+     5.684341886080802e-14
+    ]
+   },
+   "native_minor_calibration+one_rate": {
+    "set": [
+     -0.010875697806284279,
+     0.1311564651771846
+    ],
+    "cash": [
+     -0.010875697806170592,
+     0.1311564651771846
+    ]
+   },
+   "coverage_tenure+consumption_tax_bases": {
+    "set": [
+     0,
+     0
+    ],
+    "cash": [
+     1.1368683772161603e-13,
+     5.684341886080802e-14
+    ]
+   },
+   "coverage_tenure+one_rate": {
+    "set": [
+     0.0008357104483138755,
+     -0.008571509959892865
+    ],
+    "cash": [
+     0.000835710448370719,
+     -0.008571509959949708
+    ]
+   },
+   "consumption_tax_bases+one_rate": {
+    "set": [
+     0,
+     5.684341886080802e-14
+    ],
+    "cash": [
+     5.684341886080802e-14,
+     0
+    ]
+   }
+  },
+  "higher_order": {
+   "set": [
+    0.15437850796809016,
+    0.15462168182847336
+   ],
+   "cash": [
+    0.15437850796666908,
+    0.15462168182824598
+   ]
+  }
+ },
+ "ends": {
+  "set": [
+   [
+    16,
+    11
+   ],
+   [
+    16,
+    11
+   ]
+  ],
+  "cash": [
+   [
+    16,
+    11
+   ],
+   [
+    16,
+    11
+   ]
+  ]
+ },
+ "checks": [
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "items off v8 payloads exactly",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "items off v8 bands exactly",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/0",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/1",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/2",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/3",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/4",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/5",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/6",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/7",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/8",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/9",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/10",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/11",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/12",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/13",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/14",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/15",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/16",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/17",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/18",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/19",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/20",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/21",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/22",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/23",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/24",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/25",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/26",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/27",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/28",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/29",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/30",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/31",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/32",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/33",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/34",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/35",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/36",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/37",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/38",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/39",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/40",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/41",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/42",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/43",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/44",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/45",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/46",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/47",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/48",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/49",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/50",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/51",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/52",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/53",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/54",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/55",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/56",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/57",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/58",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/59",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/60",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/61",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/62",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_hotdeck_union_matched/63",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/0",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/1",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/2",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/3",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/4",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/5",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/6",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/7",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/8",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/9",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/10",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/11",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/12",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/13",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/14",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/15",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/16",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/17",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/18",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/19",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/20",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/21",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/22",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/23",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/24",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/25",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/26",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/27",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/28",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/29",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/30",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/31",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/32",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/33",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/34",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/35",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/36",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/37",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/38",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/39",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/40",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/41",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/42",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/43",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/44",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/45",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/46",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/47",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/48",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/49",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/50",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/51",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/52",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/53",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/54",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/55",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/56",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/57",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/58",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/59",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/60",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/61",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/62",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v8 per_spec b_matched_over_pooled/63",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "64 specifications retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "ends agree across methods",
+   "pass": true,
+   "details": {
+    "set": [
+     [
+      16,
+      11
+     ],
+     [
+      16,
+      11
+     ]
+    ],
+    "cash": [
+     [
+      16,
+      11
+     ],
+     [
+      16,
+      11
+     ]
+    ]
+   }
+  },
+  {
+   "name": "set payload/method mean 0",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 1",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 2",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 3",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 4",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 5",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 6",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 7",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 8",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 9",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 10",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 11",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 12",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 13",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 14",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 15",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 16",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 17",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 18",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 19",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 20",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 21",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 22",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 23",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 24",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 25",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 26",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 27",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 28",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 29",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 30",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload/method mean 31",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 0",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 1",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 2",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 3",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 4",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 5",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 6",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 7",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 8",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 9",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 10",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 11",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 12",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 13",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 14",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 15",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 16",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 17",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 18",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 19",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 20",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 21",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 22",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 23",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 24",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 25",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 26",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 27",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 28",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 29",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 30",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload/method mean 31",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/set edit 0 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/set edit 1 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/set edit 2 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/set edit 3 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/set edit 4 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/set edit 5 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/set edit 6 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/set edit 7 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/cash edit 0 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/cash edit 1 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/cash edit 2 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/cash edit 3 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/cash edit 4 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/cash edit 5 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/cash edit 6 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "consumption_tax_bases/cash edit 7 parts",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source item13 set/low",
+   "pass": true,
+   "details": {
+    "actual": -18.91843876565588,
+    "expected": -18.91843876565596
+   }
+  },
+  {
+   "name": "source item13 set/high",
+   "pass": true,
+   "details": {
+    "actual": -18.918438765655935,
+    "expected": -18.91843876565596
+   }
+  },
+  {
+   "name": "source item14 set/low",
+   "pass": true,
+   "details": {
+    "actual": -0.2975116398897626,
+    "expected": -0.29751163988980034
+   }
+  },
+  {
+   "name": "source item14 set/high",
+   "pass": true,
+   "details": {
+    "actual": -0.2975116398897626,
+    "expected": -0.29751163988980034
+   }
+  },
+  {
+   "name": "source item15 set/low",
+   "pass": true,
+   "details": {
+    "actual": -4.088275290754382,
+    "expected": -4.088275290754355
+   }
+  },
+  {
+   "name": "source item15 set/high",
+   "pass": true,
+   "details": {
+    "actual": -4.279311499191067,
+    "expected": -4.279311499191054
+   }
+  },
+  {
+   "name": "source item13 cash/low",
+   "pass": true,
+   "details": {
+    "actual": -18.918438765655992,
+    "expected": -18.91843876565596
+   }
+  },
+  {
+   "name": "source item13 cash/high",
+   "pass": true,
+   "details": {
+    "actual": -18.918438765655935,
+    "expected": -18.91843876565596
+   }
+  },
+  {
+   "name": "source item14 cash/low",
+   "pass": true,
+   "details": {
+    "actual": -0.29751163988981943,
+    "expected": -0.29751163988980034
+   }
+  },
+  {
+   "name": "source item14 cash/high",
+   "pass": true,
+   "details": {
+    "actual": -0.29751163988981943,
+    "expected": -0.29751163988980034
+   }
+  },
+  {
+   "name": "source item15 cash/low",
+   "pass": true,
+   "details": {
+    "actual": -4.088275290754382,
+    "expected": -4.088275290754355
+   }
+  },
+  {
+   "name": "source item15 cash/high",
+   "pass": true,
+   "details": {
+    "actual": -4.279311499191067,
+    "expected": -4.279311499191054
+   }
+  },
+  {
+   "name": "source native_minor_calibration set/low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source native_minor_calibration set/high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source coverage_tenure set/low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source coverage_tenure set/high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source native_minor_calibration cash/low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source native_minor_calibration cash/high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source coverage_tenure cash/low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source coverage_tenure cash/high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source16+17 joint set/low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source16+17 joint set/high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source16+17 joint cash/low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source16+17 joint cash/high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source18 set/0",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source19 beside oracle set/0",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source20 armB set/0",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source18 set/1",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source19 beside oracle set/1",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source20 armB set/1",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source18 cash/0",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source19 beside oracle cash/0",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source20 armB cash/0",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source18 cash/1",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source19 beside oracle cash/1",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "source20 armB cash/1",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/general_public_services",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/defense",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/public_order_safety",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/economic_affairs_services",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/housing_community_services",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/health_services",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/recreation_culture",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/education_services",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/income_security_services",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/social_security",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/medicare",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/unemployment",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/railroad_retirement",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/pension_guaranty",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/veterans_life_insurance",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/workers_compensation",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/military_medical",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/veterans_pension_disability",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/veterans_readjustment",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/veterans_other",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/snap",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/black_lung",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/ssi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/refundable_tax_credits",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/other_federal_benefits",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/temporary_disability",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/medicaid_and_chip_other_medical",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/family_and_general_assistance",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/energy_assistance",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/other_state_welfare",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/education_benefits",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/employment_training",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/other_state_benefits",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/foreign_territory_social_benefits",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/other_foreign_current_transfers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/domestic_interest",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/foreign_interest",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/agricultural_subsidies",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/housing_subsidies",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/transport_subsidies",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/other_subsidies",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/source_rounding",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/school_reprice",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/college_rekey",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/lane_constants",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/roads_vmt_sl",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/roads_vmt_fed",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/state_price_public_order_safety",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/state_price_health_services",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/state_price_recreation_culture",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_federal_income_tax_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_federal_income_tax_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_federal_income_tax_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_federal_income_tax_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_federal_income_tax_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_federal_income_tax_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_federal_income_tax_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_federal_income_tax_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_state_local_income_tax_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_state_local_income_tax_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_state_local_income_tax_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_state_local_income_tax_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_state_local_income_tax_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_state_local_income_tax_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_state_local_income_tax_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_state_local_income_tax_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_motor_vehicle_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_motor_vehicle_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_motor_vehicle_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_motor_vehicle_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_motor_vehicle_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_motor_vehicle_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_motor_vehicle_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_motor_vehicle_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_property_tax_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_property_tax_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_property_tax_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_property_tax_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_property_tax_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_property_tax_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_property_tax_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_property_tax_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_personal_tax_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_personal_tax_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_personal_tax_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_personal_tax_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_personal_tax_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_personal_tax_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_personal_tax_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_personal_tax_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_oasdi_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_oasdi_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_oasdi_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_oasdi_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_oasdi_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_oasdi_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_oasdi_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_oasdi_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_hi_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_hi_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_hi_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_hi_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_hi_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_hi_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_hi_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employee_hi_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_self_employment_oasdi_hi_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_self_employment_oasdi_hi_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_self_employment_oasdi_hi_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_self_employment_oasdi_hi_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_self_employment_oasdi_hi_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_self_employment_oasdi_hi_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_self_employment_oasdi_hi_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_self_employment_oasdi_hi_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_oasdi_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_oasdi_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_oasdi_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_oasdi_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_oasdi_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_oasdi_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_oasdi_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_oasdi_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_hi_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_hi_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_hi_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_hi_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_hi_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_hi_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_hi_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employer_hi_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicare_supplementary_premiums_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicare_supplementary_premiums_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicare_supplementary_premiums_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicare_supplementary_premiums_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicare_supplementary_premiums_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicare_supplementary_premiums_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicare_supplementary_premiums_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicare_supplementary_premiums_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_domestic_social_contributions_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_domestic_social_contributions_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_domestic_social_contributions_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_domestic_social_contributions_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_domestic_social_contributions_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_domestic_social_contributions_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_domestic_social_contributions_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_domestic_social_contributions_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_general_sales_tax_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_general_sales_tax_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_general_sales_tax_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_general_sales_tax_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_general_sales_tax_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_general_sales_tax_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_general_sales_tax_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_general_sales_tax_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_modeled_owner_property_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_modeled_owner_property_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_modeled_owner_property_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_modeled_owner_property_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_modeled_owner_property_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_modeled_owner_property_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_modeled_owner_property_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_modeled_owner_property_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_excise_selective_sales_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_excise_selective_sales_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_excise_selective_sales_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_excise_selective_sales_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_excise_selective_sales_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_excise_selective_sales_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_excise_selective_sales_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_excise_selective_sales_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_customs_duties_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_customs_duties_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_customs_duties_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_customs_duties_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_customs_duties_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_customs_duties_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_customs_duties_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_customs_duties_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_current_transfers_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_current_transfers_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_current_transfers_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_current_transfers_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_current_transfers_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_current_transfers_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_current_transfers_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_personal_current_transfers_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_enterprise_surplus_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_enterprise_surplus_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_enterprise_surplus_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_enterprise_surplus_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_enterprise_surplus_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_enterprise_surplus_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_enterprise_surplus_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_enterprise_surplus_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_housing_enterprise_surplus_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_housing_enterprise_surplus_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_housing_enterprise_surplus_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_housing_enterprise_surplus_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_housing_enterprise_surplus_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_housing_enterprise_surplus_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_housing_enterprise_surplus_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_housing_enterprise_surplus_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_tenant_occupied_property_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_tenant_occupied_property_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_tenant_occupied_property_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_tenant_occupied_property_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_tenant_occupied_property_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_tenant_occupied_property_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_tenant_occupied_property_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_tenant_occupied_property_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_general_public_services_population",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_general_public_services_wages",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_public_order_safety_adults",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_public_order_safety_population",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_public_order_safety_use",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_public_order_safety_use_raw_coding",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_economic_affairs_services_population",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_economic_affairs_services_resources",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_economic_affairs_services_wages",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_housing_community_services_population",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_housing_community_services_resources",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_health_services_health_other",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_health_services_population",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_health_services_veterans",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_recreation_culture_population",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_recreation_culture_resources",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_education_services_age5_24",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_education_services_education_mix",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_education_services_school_operating",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_income_security_services_all_cash",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_income_security_services_cash_assistance",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_income_security_services_population",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_social_security_age65plus",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_social_security_social_security",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicare_age65plus",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicare_medicare",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_unemployment_unemployment",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_unemployment_working_age",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_railroad_retirement_age65plus",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_railroad_retirement_social_security",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_pension_guaranty_age65plus",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_pension_guaranty_social_security",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_veterans_life_insurance_adults",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_veterans_life_insurance_veterans",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_workers_compensation_wages",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_workers_compensation_workers_comp",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_workers_compensation_working_age",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_military_medical_population",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_military_medical_tricare",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_military_medical_veterans",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_veterans_pension_disability_adults",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_veterans_pension_disability_veterans",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_veterans_readjustment_age18_24",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_veterans_readjustment_veterans",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_veterans_other_va_medical",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_veterans_other_veterans",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_snap_cash_assistance",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_snap_snap",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_black_lung_age65plus",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_black_lung_workers_comp",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ssi_all_cash",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ssi_population",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ssi_ssi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_refundable_tax_credits_refundable_credits",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_refundable_tax_credits_working_age",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_federal_benefits_all_cash",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_federal_benefits_health_other",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_federal_benefits_population",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_temporary_disability_workers_comp",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_temporary_disability_working_age",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicaid_and_chip_other_medical_medicaid",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicaid_and_chip_other_medical_medicaid_covered",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicaid_and_chip_other_medical_uninsured_use_07_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicaid_and_chip_other_medical_uninsured_use_07_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicaid_and_chip_other_medical_uninsured_use_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_medicaid_and_chip_other_medical_uninsured_use_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_family_and_general_assistance_all_cash",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_family_and_general_assistance_cash_assistance",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_energy_assistance_cash_assistance",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_energy_assistance_energy",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_state_welfare_cash_assistance",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_state_welfare_wic",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_education_benefits_age18_24",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_education_benefits_postsecondary",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employment_training_unemployment",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_employment_training_working_age",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_state_benefits_population",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_state_benefits_veterans",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_housing_subsidies_housing_support",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_housing_subsidies_resources",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_housing_subsidies_wages",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_school_reprice_k",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_college_rekey_k",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_roads_vmt_sl_k",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_state_price_public_order_safety_k",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_state_price_health_services_k",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_state_price_recreation_culture_k",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_lane_constants_k",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_capital_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_capital_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_capital_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_capital_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_capital_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_capital_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_capital_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_capital_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_labor_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_labor_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_labor_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_labor_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_labor_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_labor_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_labor_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_corporate_labor_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_production_taxes_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_production_taxes_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_production_taxes_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_production_taxes_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_production_taxes_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_production_taxes_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_production_taxes_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_other_production_taxes_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_remaining_production_property_cbo_collective",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_remaining_production_property_corporate_all_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_remaining_production_property_federal_gap_high_agi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_remaining_production_property_medicare_income_weighted",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_remaining_production_property_nas_80",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_remaining_production_property_property_residual_consumption",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_remaining_production_property_public_assets_tax_base",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_remaining_production_property_treasury_815",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_roads_vmt_fed_k",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_k12_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_k12_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_college_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_college_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_pos_sl_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_pos_sl_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_pos_fed_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_pos_fed_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_health_sl_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_health_sl_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_health_fed_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_health_fed_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_gps_sl_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_gps_sl_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_gps_fed_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_gps_fed_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_hwy_sl_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_hwy_sl_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_rec_sl_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_rec_sl_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_hwy_fed_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_hwy_fed_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_air_fed_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_air_fed_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_rec_fed_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_rec_fed_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_housing_sl_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_housing_sl_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_transit_sl_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_transit_sl_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_airports_sl_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_airports_sl_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_ports_sl_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_ports_sl_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_power_sl_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_power_sl_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_water_sl_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_water_sl_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_sewer_sl_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_sewer_sl_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_tolls_sl_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_tolls_sl_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_power_fed_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_power_fed_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_other_sl_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_other_sl_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_other_fed_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_ent_other_fed_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_k12_user_fees_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_k12_user_fees_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_college_user_fees_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_college_user_fees_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_health_sl_user_fees_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_health_sl_user_fees_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_health_fed_user_fees_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_health_fed_user_fees_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_production_low",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national spending/union_completion_production_high",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/federal_income_tax",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/state_local_income_tax",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/personal_motor_vehicle",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/personal_property_tax",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/other_personal_tax",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/employee_oasdi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/employee_hi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/self_employment_oasdi_hi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/employer_oasdi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/employer_hi",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/medicare_supplementary_premiums",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/other_domestic_social_contributions",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/corporate_capital",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/corporate_labor",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/general_sales_tax",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/modeled_owner_property",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/remaining_production_property",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/excise_selective_sales",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/customs_duties",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/other_production_taxes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/rest_world_tax_contributions",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/government_asset_income",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/business_current_transfers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/personal_current_transfers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/rest_world_current_transfers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/enterprise_surplus",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/source_rounding",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/housing_enterprise_surplus",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/tenant_occupied_property",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/user_fees_key_k12",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/user_fees_key_college",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "national receipts/user_fees_key_health",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "calibrated population",
+   "pass": true,
+   "details": {
+    "without_coverage": 42951314.00418314,
+    "with_coverage": 44903074.086245224,
+    "completion": 517435.75719317,
+    "coverage": 1960413.6191801599,
+    "native_minor_calibration": -326988.2145133476,
+    "tenure": 5.820766091346741e-11
+   }
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "W09 set/low source extension closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "W09 set/low frozen source oracle",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "W09 set/low extension source oracle",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "W09 set/high source extension closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "W09 set/high frozen source oracle",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "W09 set/high extension source oracle",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form item19/set/0 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form item19/set/1 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form w09_frozen/set/0 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form w09_frozen/set/1 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form w09_extension/set/0 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form w09_extension/set/1 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form naive_pair_frozen/set/0 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form naive_pair_frozen/set/1 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form naive_pair_extension/set/0 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form naive_pair_extension/set/1 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "W09 cash/low source extension closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "W09 cash/low frozen source oracle",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "W09 cash/low extension source oracle",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "W09 cash/high source extension closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "W09 cash/high frozen source oracle",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "W09 cash/high extension source oracle",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form item19/cash/0 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form item19/cash/1 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form w09_frozen/cash/0 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form w09_frozen/cash/1 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form w09_extension/cash/0 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form w09_extension/cash/1 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form naive_pair_frozen/cash/0 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form naive_pair_frozen/cash/1 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form naive_pair_extension/cash/0 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "legal-form naive_pair_extension/cash/1 exact parts closure",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/0",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/1",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/2",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/3",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/4",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/5",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/6",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/7",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/8",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/9",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/10",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/11",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/12",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/13",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/14",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/15",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/16",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/17",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/18",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/19",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/20",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/21",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/22",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/23",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/24",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/25",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/26",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/27",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/28",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/29",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/30",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/31",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/32",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/33",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/34",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/35",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/36",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/37",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/38",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/39",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/40",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/41",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/42",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/43",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/44",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/45",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/46",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/47",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/48",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/49",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/50",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/51",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/52",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/53",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/54",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/55",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/56",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/57",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/58",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/59",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/60",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/61",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/62",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_hotdeck_union_matched/63",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/0",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/1",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/2",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/3",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/4",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/5",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/6",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/7",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/8",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/9",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/10",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/11",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/12",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/13",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/14",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/15",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/16",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/17",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/18",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/19",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/20",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/21",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/22",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/23",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/24",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/25",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/26",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/27",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/28",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/29",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/30",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/31",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/32",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/33",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/34",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/35",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/36",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/37",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/38",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/39",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/40",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/41",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/42",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/43",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/44",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/45",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/46",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/47",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/48",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/49",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/50",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/51",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/52",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/53",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/54",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/55",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/56",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/57",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/58",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/59",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/60",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/61",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/62",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "per_spec accounting b_matched_over_pooled/63",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "item changes plus interactions close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "coverage oct16 source gate",
+   "pass": true,
+   "details": null
+  }
+ ]
+}

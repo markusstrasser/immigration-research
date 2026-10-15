@@ -1,0 +1,48 @@
+{
+ "pass": true,
+ "readiness": {
+  "completion_marker": "L1 STEP 3 DONE",
+  "item13_source": "spending_keys_r5_2026_10_15/derived/item13.json",
+  "item13_sha256": "4b4635c75dc42f3cfada401a6e257f96d61355df8a7a4702bea0554febf56bbb",
+  "scope": "final source bridge accepted for candidate build; adoption remains null"
+ },
+ "hashes": {
+  "main_case_2026_10_15/package.cjs": "083236226e594247bfe095c6cdf0c71f6bb0ca73b405f5da98568ac8c95b90d6",
+  "main_case_2026_10_15/derived/summary.json": "1d999c666d68696ed2728b9e6fd48c44ab85371e875e3e6f1b16d0b16971013a",
+  "main_case_2026_10_15/derived/corrections.json": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68",
+  "main_case_2026_10_15/derived/corrections_cash.json": "9af66b4c6a87ddb96d22c208364cd6798d23411590252bbe9520f3019b6446ea",
+  "spending_keys_r5_2026_10_15/items.cjs": "a0eb34f9995cace572ab9c0065a9965dbec90832ed251362ffb628fa4b92e446",
+  "spending_keys_r5_2026_10_15/item13_generations.cjs": "3f6419386982502510cb4314c39060bb6801542c7da0d2f14533f8ad5265b670",
+  "spending_keys_r5_2026_10_15/derived/item13.json": "4b4635c75dc42f3cfada401a6e257f96d61355df8a7a4702bea0554febf56bbb",
+  "spending_keys_r5_2026_10_15/derived/item14.json": "9bd69d301b800efa291465349c64e6c1e00bfca7bcbd730569f37a83bd735c37",
+  "spending_keys_r5_2026_10_15/derived/item15.json": "f3f4ffe6aa39b985ddf7899dfcaaea2ca8000bf06058727de1af21f9da457de0",
+  "spending_keys_r5_2026_10_15/derived/case_changes.json": "f770d7ee6deb32dbc8c1d22fea17a924a7807af4952ccd7b55ac682e674b9f80",
+  "count_composition_r5_2026_10_15/items.cjs": "2883ee7185f6db592736035b36efbe3f21153f71b8786c1eb1cb32272ddb2fdb",
+  "count_composition_r5_2026_10_15/derived/items.json": "0180f3ecbcaac561c21c8dfa4b5c388dea784cd76b9d27f3ffbb3fe200814c93",
+  "count_composition_r5_2026_10_15/derived/line_parts_set.csv": "0e346410cbb1ac463b7af22e85bf2898d51add30d78a356c7fc60aa0fef44951",
+  "count_composition_r5_2026_10_15/derived/line_parts_cash.csv": "3a5c46fb7d1d49e820db39f80dabb61b608a910addbe44c9d6f0028d5fcf5662",
+  "consumption_tax_bases_r5_2026_10_15/item.cjs": "e2a1d83a3617949b1a5f334a4d991d7a593a87fee452c408af7dcc69e65cc164",
+  "consumption_tax_bases_r5_2026_10_15/evaluate.cjs": "95e27a4d6115bb3adfa1613bc09244dc54284115383c6d0756a591f151b7bf14",
+  "consumption_tax_bases_r5_2026_10_15/derived/item.json": "9bfa08fa88167845c3323162fb0e1ccaed18730fa57c8272efe7ab6009691eb7",
+  "consumption_tax_bases_r5_2026_10_15/derived/evaluation.json": "528c28ab6c74d537e85f38286cfc2b87aba4bbcdb65dde606ec11ba93c7be27c",
+  "passthrough_source_tax_r5_2026_10_15/item.cjs": "69fb5e22dfe1777b76013ab4a77f5fa7bffdd189cdace7f7e1bdcd31c7d1044b",
+  "passthrough_source_tax_r5_2026_10_15/derived/item.json": "9e37a8241ec602cd56901f84019e4f4b0456b8ecd6133cf15ebbf481bd02d4fc",
+  "passthrough_source_tax_r5_2026_10_15/derived/job_keys.json": "2c900907d14bd716540bbe91f2e579431ba9f1cc1221f6530de22c9f4de675f3",
+  "passthrough_source_tax_r5_2026_10_15/derived/v8.json": "44f40dc7fda906c87e1ea19443938a5fa9f11b98833e7cf1c21678f36f31a35c",
+  "passthrough_source_tax_r5_2026_10_15/derived/w09.json": "3eefbde309615a6f5ff11a822495a46757fd2f0d032e7c0bdb7698c80fbb2f30",
+  "one_rate_2026_10_15/evaluate.cjs": "7e6a858f0652055c8203a03ac63225b5e8fca5e03fd11d90786a929f9188f308",
+  "one_rate_2026_10_15/derived/rates.json": "69b34dac781b33b01f66df2603e1ffe8a07a75436d4240960589da50bec2ec94",
+  "one_rate_2026_10_15/derived/results.json": "4195f6700e22d4eafb0f2a4fe361f40d2e928d03306cbcc50ffe55470a0ef238",
+  "coverage_bound_2026_10_14/derived/coverage_bound_oct15.json": "3456126cc53c353ef0806059dcff33ccc1448cfe8de39d2c92583c6c7d3d073c"
+ },
+ "source18_contract": {
+  "modelFor_corrections_index_absent": true,
+  "evaluator": "consumption_tax_bases_r5_2026_10_15/evaluate.cjs:8",
+  "default": "source_evaluator",
+  "alternative": "declared_carriers"
+ },
+ "source19_contract": {
+  "default_numeric_intent": "foreign_full_ftc_individual_tangible_normal",
+  "literal_brief_name": "foreign_full_ftc_immediate_individual"
+ }
+}

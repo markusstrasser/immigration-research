@@ -1,0 +1,123 @@
+{
+ "case": "oct16_cash",
+ "set": "cash",
+ "lane": "main_case_2026_10_16",
+ "payload": "main_case_2026_10_16/derived/corrections_cash.json",
+ "specifications": {
+  "low_index": 16,
+  "high_index": 11
+ },
+ "union": {
+  "cost_bn": [
+   260.39059043224484,
+   328.922378407397
+  ],
+  "population": 44903074.086245224
+ },
+ "conventions": {
+  "a": {
+   "G1": {
+    "population": 11482806.168941664,
+    "adults": 11005336.671008185,
+    "cost_bn": [
+     24.11619018145145,
+     44.26227285275275
+    ],
+    "own_span_bn": [
+     24.11619018145145,
+     44.26227285275275
+    ]
+   },
+   "G2": {
+    "population": 15008038.596511668,
+    "adults": 9613496.451020809,
+    "cost_bn": [
+     103.3776328650101,
+     125.09711953806078
+    ],
+    "own_span_bn": [
+     103.3776328650101,
+     125.09711953806078
+    ]
+   },
+   "G3plus": {
+    "population": 18412229.32079188,
+    "adults": 10614897.773887573,
+    "cost_bn": [
+     132.8967673857837,
+     159.56298601658537
+    ],
+    "own_span_bn": [
+     132.8967673857837,
+     159.56298601658537
+    ]
+   }
+  },
+  "b": {
+   "G1": {
+    "population": 16131576.684615836,
+    "adults": 11005336.671008185,
+    "cost_bn": [
+     136.73411474856374,
+     160.11207417166779
+    ],
+    "own_span_bn": [
+     136.73411474856374,
+     160.11207417166779
+    ]
+   },
+   "G2": {
+    "population": 13329374.042330196,
+    "adults": 9613496.451020809,
+    "cost_bn": [
+     53.50099540018613,
+     74.01469916881054
+    ],
+    "own_span_bn": [
+     53.50099540018613,
+     74.01469916881054
+    ]
+   },
+   "G3plus": {
+    "population": 15442123.359299175,
+    "adults": 10614897.773887573,
+    "cost_bn": [
+     70.15548028349535,
+     94.79560506692043
+    ],
+    "own_span_bn": [
+     70.15548028349535,
+     94.79560506692043
+    ]
+   }
+  }
+ },
+ "routing": {
+  "selected_items": [
+   "pension_tr2026",
+   "retiree_health",
+   "added_age_mix",
+   "user_fees",
+   "personal_allocation",
+   "child_credits",
+   "job_capital_taxes",
+   "white_end_tax_keys",
+   "row4_frame",
+   "foreign_source_tax",
+   "union_completion",
+   "mixed_unit_removal",
+   "coverage",
+   "veterans_compensation",
+   "income_security_administration",
+   "public_college_response",
+   "native_minor_calibration",
+   "coverage_tenure",
+   "consumption_tax_bases",
+   "one_rate"
+  ],
+  "new_posts": "declared selected16/17 generation parts; optional19 routes added_G3plus only when selected beside; other line/capital sources follow existing generation source amounts at each specification"
+ },
+ "gates": {
+  "all_specifications_close": true
+ }
+}

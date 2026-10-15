@@ -1,0 +1,230 @@
+{
+  "status": "computed",
+  "quantity": "Original-unit item-11 dollar footprint containing central item-10 people; conservative household superset of tax/SPM units",
+  "interpretation": "Interaction exposure bound, not a joint-counterfactual estimate; full populations, calibrations, donor cells and policy assumptions fixed",
+  "counts_by_part": {
+    "tax": {
+      "counts": {
+        "reporters": {
+          "records": 204,
+          "people": 456935.87772777
+        },
+        "children": {
+          "records": 27,
+          "people": 60499.8794654
+        },
+        "all": {
+          "records": 231,
+          "people": 517435.7571931701
+        },
+        "households": 168,
+        "spm_units": 170,
+        "original_union_people_in_affected_households": 496897.7323156327
+      }
+    },
+    "resources": {
+      "counts": {
+        "reporters": {
+          "records": 204,
+          "people": 456935.87772777
+        },
+        "children": {
+          "records": 27,
+          "people": 60499.8794654
+        },
+        "all": {
+          "records": 231,
+          "people": 517435.7571931701
+        },
+        "households": 168,
+        "spm_units": 170,
+        "original_union_people_in_affected_households": 496897.7323156327
+      }
+    },
+    "consumption": {
+      "counts": {
+        "reporters": {
+          "records": 204,
+          "people": 456935.87772777
+        },
+        "children": {
+          "records": 27,
+          "people": 60499.8794654
+        },
+        "all": {
+          "records": 231,
+          "people": 517435.7571931701
+        },
+        "households": 168,
+        "spm_units": 170,
+        "original_union_people_in_affected_households": 496897.7323156327
+      }
+    },
+    "health": {
+      "counts": {
+        "reporters": {
+          "records": 204,
+          "people": 456935.87772777
+        },
+        "children": {
+          "records": 27,
+          "people": 60499.8794654
+        },
+        "all": {
+          "records": 231,
+          "people": 517435.7571931701
+        },
+        "households": 168,
+        "spm_units": 170,
+        "original_union_people_in_affected_households": 496897.7323156327
+      }
+    },
+    "snap": {
+      "counts": {
+        "reporters": {
+          "records": 204,
+          "people": 456935.87772777
+        },
+        "children": {
+          "records": 27,
+          "people": 60499.8794654
+        },
+        "all": {
+          "records": 231,
+          "people": 517435.7571931701
+        },
+        "households": 168,
+        "spm_units": 170,
+        "original_union_people_in_affected_households": 496897.7323156327
+      }
+    }
+  },
+  "by_reading": {
+    "low": {
+      "signed_observed_overlap_bn": -1.2069793439436953,
+      "observed_absolute_component_household_bound_bn": 3.3036126108578303,
+      "share_of_item11_absolute_bound": 0.30759847350089453,
+      "unlocated_D_residual_bn": 0.5454107092728235,
+      "including_all_unlocated_D_conservative_bn": 3.849023320130654,
+      "components": [
+        "M1_federal",
+        "M2_state",
+        "M3_refunds",
+        "M6_biological_children",
+        "M5_consumption",
+        "M5_owner_property",
+        "M5_housing_key",
+        "Medicaid_low",
+        "ACA_low",
+        "SNAP_zero_observed_high_takeup"
+      ],
+      "item11_total_bn": 10.740016272701766
+    },
+    "high": {
+      "signed_observed_overlap_bn": -0.8723770093911558,
+      "observed_absolute_component_household_bound_bn": 3.0980237250246816,
+      "share_of_item11_absolute_bound": 0.21319087338214168,
+      "unlocated_D_residual_bn": 0.5454107092728235,
+      "including_all_unlocated_D_conservative_bn": 3.643434434297505,
+      "components": [
+        "M1_federal",
+        "M2_state",
+        "M3_refunds",
+        "M6_biological_children",
+        "M5_consumption",
+        "M5_owner_property",
+        "M5_housing_key",
+        "Medicaid_high",
+        "ACA_high",
+        "SNAP_cap_observed_low_takeup"
+      ],
+      "item11_total_bn": 14.531690197973518
+    }
+  },
+  "components": {
+    "M1_federal": {
+      "global_bn": 6.723962369023481,
+      "overlap_bn": -0.3048999352575839,
+      "overlap_absolute_household_bn": 0.9581279760629519
+    },
+    "M2_state": {
+      "global_bn": 0.850817059547194,
+      "overlap_bn": -0.12056691867252853,
+      "overlap_absolute_household_bn": 0.314183567407287
+    },
+    "M3_refunds": {
+      "global_bn": -0.8004644774615642,
+      "overlap_bn": -0.23615443300191474,
+      "overlap_absolute_household_bn": 0.38390227966309054
+    },
+    "M6_biological_children": {
+      "global_bn": 1.8475283643004274,
+      "overlap_bn": 0.0,
+      "overlap_absolute_household_bn": 0.0
+    },
+    "M5_owner_property": {
+      "global_bn": 1.1334259005504612,
+      "overlap_bn": 0.0062161570341193115,
+      "overlap_absolute_household_bn": 0.19657577356564887
+    },
+    "M5_housing_key": {
+      "global_bn": -0.02578939457088847,
+      "overlap_bn": 0.037202861862366314,
+      "overlap_absolute_household_bn": 0.086688330516975
+    },
+    "M5_consumption": {
+      "global_bn": 4.372536263959044,
+      "overlap_bn": -0.16290478708167647,
+      "overlap_absolute_household_bn": 0.7898298373702534
+    },
+    "Medicaid_low": {
+      "global_bn": -1.0714764883431442,
+      "overlap_bn": -0.22555148194005964,
+      "overlap_absolute_household_bn": 0.25984899385039717
+    },
+    "Medicaid_high": {
+      "global_bn": -0.08704821962930369,
+      "overlap_bn": -0.10480577214107817,
+      "overlap_absolute_household_bn": 0.18747434428770327
+    },
+    "ACA_low": {
+      "global_bn": -0.49382764596583417,
+      "overlap_bn": -0.0221273953689225,
+      "overlap_absolute_household_bn": 0.04908412666718491
+    },
+    "ACA_high": {
+      "global_bn": 0.4486717244135759,
+      "overlap_bn": 0.029363427997445853,
+      "overlap_absolute_household_bn": 0.0422360817453655
+    },
+    "SNAP_zero_observed_high_takeup": {
+      "global_bn": -2.342106387610262,
+      "overlap_bn": -0.17819341151749513,
+      "overlap_absolute_household_bn": 0.26537172575404144
+    },
+    "SNAP_cap_observed_low_takeup": {
+      "global_bn": -0.4773601014317592,
+      "overlap_bn": -0.015827610130305474,
+      "overlap_absolute_household_bn": 0.13900553440540614
+    }
+  },
+  "source_sha256": {
+    "infra/immigration-fiscal/main_case_2026_10_15/mixed_overlap.py": "4b07eb9b5d27dedec22b986206815632c2a739ed8cbc2dc96fc160cf541a8cfb",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/round2.py": "cb558c339e985ef933c6a46429052ddcfb6e7fdf6dd2b9223ea689f767d9b0d8",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/removal.py": "1b906be4bc635ebab59295aae5854e1d73d206a9c7070f0fb3e1a86be67df19c",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/membership.py": "fb2a078a152481b4a4884faa4d4f5eb4cbdd57364054bf8c3621432b70fcb933",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/resource_keys.py": "a34dfb49ddfdf8f491c383716985ab9d27b297c2ce78f4776ed32302441b8400",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/state_tax.py": "c3d44bfc8910a24fd3291119cb8e7ecc216fef3eed100c2c831c8d8a3187534f",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/health.py": "7e8bdbc6082c79981771e283ec324ed5ca7eb4277b924310f93707a0cc158d9e",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/snap_arm.py": "dccd513d1d2d0eadd98e6f4f321c06941547d7839ca26ab76fdde7e812474953",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/benefits.py": "39ead147df74be8f1eaa194fed61cc7a40f9bfa97441a5a0a42d6a4d826c9b81",
+    "infra/immigration-fiscal/mixed_unit_credits_2026_10_14/credits.py": "d41e16a5fdce5dfcc141aa8c6c11dde9842c614ee185f70b84ecfa2b89782481",
+    "infra/immigration-fiscal/union_completion_2026_10_14/completion.py": "672038bbae3ec4760d00e1b6bc96de56719e79f35d0bc8b42132b100552b3319",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/derived/round2_summary.json": "acbb2ba55a6f1fdf4f2a66c2e236608bdaebd24090f7b814333417c7ed3bbc01"
+  },
+  "limitations": [
+    "absolute bound sums absolute component-by-household contributions; cancellations retained only in signed footprint",
+    "unlocated residual D has no observed person/unit crosswalk; include all its magnitude for the conservative bound",
+    "SNAP allocation key and its matching baseline interaction cancel exactly; neither is separately added"
+  ]
+}

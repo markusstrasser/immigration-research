@@ -1,0 +1,16 @@
+{
+  "DFII10": {
+    "series_url": "https://fred.stlouisfed.org/series/DFII10",
+    "download_url": "https://fred.stlouisfed.org/data/DFII10.txt",
+    "graph_url": "https://fred.stlouisfed.org/graph/?g=1&id=DFII10&cosd=2024-01-01&coed=2024-12-31",
+    "retrieved_utc": "2026-10-15T02:59:44+00:00",
+    "sha256": "69f0567227d190887b074ca23357bb65035f7749e7f0a2dabedef8b86d2fe20f"
+  },
+  "DFII30": {
+    "series_url": "https://fred.stlouisfed.org/series/DFII30",
+    "download_url": "https://fred.stlouisfed.org/data/DFII30.txt",
+    "graph_url": "https://fred.stlouisfed.org/graph/?g=1&id=DFII30&cosd=2024-01-01&coed=2024-12-31",
+    "retrieved_utc": "2026-10-15T02:59:44+00:00",
+    "sha256": "4d63972f070f3c54fcef031aed3bf34815a2b2cf68b4b1caac9fa4a73afc202f"
+  }
+}

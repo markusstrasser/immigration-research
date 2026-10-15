@@ -1,0 +1,13 @@
+**Verdict:** No material defect found in the focused item19 central-removal change. This is a source review, not certification of the in-progress rebuild or G1–G5 receipts.
+
+The selected central registry excludes item19 by default (`package.cjs:23–25`); builders, post-engine amounts and payload item records derive from that selection. Coverage/count repricing requires the seven remaining items, independently of item19 (`coverage_integration.cjs:8–10`). This preserves item13 and the household item18 arm. The custom lineage reconstruction also filters new items by the central selection (`lineage_addition.cjs:67`).
+
+The legal-form helper constructs separate central-off and item19-on packages, adds W09 by each specification's reading, searches the extrema separately for each method/accounting set, and reconciles the parts at those selected extrema (`legal_form_pair.cjs:9–40`). W09 frozen and extension amounts have explicit source-oracle checks. Its metadata and rendered prose identify the extension as transported G3/item12 profile proxies and the pair as naive, not jointly solved. Central interaction tables use only selected items (`main_case.cjs:38–68`).
+
+The inspected generation consumer iterates actual post amounts and skips absent metadata, so the residual registry references to item19 do not themselves select or charge it (`v9_split.cjs:50–57`; `run_generations_v9.cjs:21–26`). G4 explicitly checks absence of both item19 metadata and its item record centrally, plus optional-arm coverage identity (`api_check.cjs:75–84`). The coverage producer's item19 calculation is returned only as a withheld diagnostic (`coverage_oct16.py:280–299`), not added to coverage totals.
+
+Findings: none requiring a change within this review's scope. Confidence: medium overall; high for the traced selection and arithmetic paths. A failed full-run receipt, changed source bytes, or different set/cash endpoint readings would require reassessment. No project-specific convention was needed to excuse a defect.
+
+Covered: all seven requested files (`package.cjs`, `coverage_integration.cjs`, `main_case.cjs`, `legal_form_pair.cjs`, `lineage_addition.cjs`, `api_check.cjs`, `write_result.py`); adjacent item19 builder/repricing implementation; generation consumer selection/post routing; the coverage producer's item19 diagnostic boundary. Read-only syntax check: `node --check legal_form_pair.cjs`, exit 0.
+
+Skipped: full builders and test runs, as requested; independent re-estimation of economic inputs and the inherited engine; unrelated external consumers and adoption prose, which remain the parent's propagation scope. The running build's final output receipts were not used as evidence. Only this review artifact was written.

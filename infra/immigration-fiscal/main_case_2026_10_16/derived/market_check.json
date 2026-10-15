@@ -1,0 +1,52 @@
+{
+  "method": "Arithmetic mean of available daily 2024 observations; missing holidays excluded.",
+  "units": "percent per year, real",
+  "market": [
+    {
+      "series": "DFII10",
+      "maturity_years": 10,
+      "year": 2024,
+      "observations": 250,
+      "annual_average_percent": 1.93712,
+      "series_url": "https://fred.stlouisfed.org/series/DFII10",
+      "download_url": "https://fred.stlouisfed.org/data/DFII10.txt",
+      "graph_url": "https://fred.stlouisfed.org/graph/?g=1&id=DFII10&cosd=2024-01-01&coed=2024-12-31",
+      "retrieved_utc": "2026-10-15T02:59:44+00:00",
+      "sha256": "69f0567227d190887b074ca23357bb65035f7749e7f0a2dabedef8b86d2fe20f"
+    },
+    {
+      "series": "DFII30",
+      "maturity_years": 30,
+      "year": 2024,
+      "observations": 250,
+      "annual_average_percent": 2.15044,
+      "series_url": "https://fred.stlouisfed.org/series/DFII30",
+      "download_url": "https://fred.stlouisfed.org/data/DFII30.txt",
+      "graph_url": "https://fred.stlouisfed.org/graph/?g=1&id=DFII30&cosd=2024-01-01&coed=2024-12-31",
+      "retrieved_utc": "2026-10-15T02:59:44+00:00",
+      "sha256": "4d63972f070f3c54fcef031aed3bf34815a2b2cf68b4b1caac9fa4a73afc202f"
+    }
+  ],
+  "trustees_flat_equivalent_percent": 2.0810698764237805,
+  "interpretation": "Market TIPS yields are beside the Trustees' projected new-issue path; maturity, liquidity and inflation-risk conventions differ.",
+  "external_booked_rates": {
+    "source": "one_rate_2026_10_15/inventory.md",
+    "unchanged_imported_valuations": true,
+    "bea_state_local_pension_method": "Moody's AAA corporate-bond based; exact 2024 normal-cost parameter unavailable",
+    "bea_pension_interest_stock_diagnostic_nominal_percent": {
+      "state_local": 4.9433335,
+      "federal": 3.94285
+    },
+    "financial_report_fy2024_pension_nominal_percent": {
+      "FERS": 3.0,
+      "CSRS": 2.5,
+      "military": 3.0
+    },
+    "financial_report_fy2024_opeb_nominal_percent": {
+      "civilian": 3.2,
+      "military": 3.0
+    },
+    "state_opeb": "GASB75 blended funded-plan return and high-quality municipal yield; aggregate rate unavailable",
+    "qualification": "Interest/stock diagnostics and federal Financial Report cross-checks are not exact BEA normal-cost discount schedules; no re-discounting claimed."
+  }
+}

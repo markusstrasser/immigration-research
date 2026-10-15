@@ -1,0 +1,641 @@
+{
+ "case": "oct16",
+ "stub13": false,
+ "coverage_mode": "repriced",
+ "checks": [
+  {
+   "check": "source-owned B/set/low",
+   "pass": true,
+   "detail": {
+    "got": 367.3754335146783,
+    "want": 367.3754335146783
+   }
+  },
+  {
+   "check": "source-owned B/set/high",
+   "pass": true,
+   "detail": {
+    "got": 436.2820388089676,
+    "want": 436.2820388089677
+   }
+  },
+  {
+   "check": "source-owned B/cash/low",
+   "pass": true,
+   "detail": {
+    "got": 283.33606693526673,
+    "want": 283.3360669352668
+   }
+  },
+  {
+   "check": "source-owned B/cash/high",
+   "pass": true,
+   "detail": {
+    "got": 352.2426722295553,
+    "want": 352.2426722295553
+   }
+  },
+  {
+   "check": "source-owned A/set/low",
+   "pass": true,
+   "detail": {
+    "got": 367.5795538631345,
+    "want": 367.5795538631345
+   }
+  },
+  {
+   "check": "source-owned A/set/high",
+   "pass": true,
+   "detail": {
+    "got": 419.28143217309247,
+    "want": 419.28143217309247
+   }
+  },
+  {
+   "check": "source-owned A/cash/low",
+   "pass": true,
+   "detail": {
+    "got": 281.75256367607324,
+    "want": 281.75256367607324
+   }
+  },
+  {
+   "check": "source-owned A/cash/high",
+   "pass": true,
+   "detail": {
+    "got": 371.9424180095669,
+    "want": 371.9424180095669
+   }
+  },
+  {
+   "check": "source-owned both_highrate/set/high",
+   "pass": true,
+   "detail": {
+    "got": 419.28143217309247,
+    "want": 419.28143217309247
+   }
+  },
+  {
+   "check": "source-owned both_highrate/cash/high",
+   "pass": true,
+   "detail": {
+    "got": 371.9424180095669,
+    "want": 371.9424180095669
+   }
+  },
+  {
+   "check": "B/set/low component closure",
+   "pass": true
+  },
+  {
+   "check": "B/set/low own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "B/set/low joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "B/set/low count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "set/low defaultB retains kernel rate",
+   "pass": true
+  },
+  {
+   "check": "B/set/high component closure",
+   "pass": true
+  },
+  {
+   "check": "B/set/high own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "B/set/high joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "B/set/high count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "set/high defaultB retains kernel rate",
+   "pass": true
+  },
+  {
+   "check": "B/cash/low component closure",
+   "pass": true
+  },
+  {
+   "check": "B/cash/low own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "B/cash/low joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "B/cash/low count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "B/low cash has no pension revaluation",
+   "pass": true
+  },
+  {
+   "check": "cash/low defaultB retains kernel rate",
+   "pass": true
+  },
+  {
+   "check": "B/cash/high component closure",
+   "pass": true
+  },
+  {
+   "check": "B/cash/high own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "B/cash/high joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "B/cash/high count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "B/high cash has no pension revaluation",
+   "pass": true
+  },
+  {
+   "check": "cash/high defaultB retains kernel rate",
+   "pass": true
+  },
+  {
+   "check": "A/set/low component closure",
+   "pass": true
+  },
+  {
+   "check": "A/set/low own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "A/set/low coverage included",
+   "pass": true
+  },
+  {
+   "check": "A/set/low joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "A/set/low count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "A/low count pension equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "A/low count pension interaction included",
+   "pass": true
+  },
+  {
+   "check": "A/low selected16 and conditional17 both routed",
+   "pass": true
+  },
+  {
+   "check": "A/set/high component closure",
+   "pass": true
+  },
+  {
+   "check": "A/set/high own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "A/set/high coverage included",
+   "pass": true
+  },
+  {
+   "check": "A/set/high joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "A/set/high count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "A/high count pension equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "A/high count pension interaction included",
+   "pass": true
+  },
+  {
+   "check": "A/high selected16 and conditional17 both routed",
+   "pass": true
+  },
+  {
+   "check": "A/cash/low component closure",
+   "pass": true
+  },
+  {
+   "check": "A/cash/low own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "A/cash/low coverage included",
+   "pass": true
+  },
+  {
+   "check": "A/cash/low joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "A/cash/low count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "A/low cash has no pension revaluation",
+   "pass": true
+  },
+  {
+   "check": "A/cash/high component closure",
+   "pass": true
+  },
+  {
+   "check": "A/cash/high own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "A/cash/high coverage included",
+   "pass": true
+  },
+  {
+   "check": "A/cash/high joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "A/cash/high count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "A/high cash has no pension revaluation",
+   "pass": true
+  },
+  {
+   "check": "v8/set/low component closure",
+   "pass": true
+  },
+  {
+   "check": "v8/set/low own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "v8/set/low coverage included",
+   "pass": true
+  },
+  {
+   "check": "v8/set/low joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "v8/set/low count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "v8/set/high component closure",
+   "pass": true
+  },
+  {
+   "check": "v8/set/high own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "v8/set/high coverage included",
+   "pass": true
+  },
+  {
+   "check": "v8/set/high joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "v8/set/high count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "v8/cash/low component closure",
+   "pass": true
+  },
+  {
+   "check": "v8/cash/low own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "v8/cash/low coverage included",
+   "pass": true
+  },
+  {
+   "check": "v8/cash/low joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "v8/cash/low count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "v8/low cash has no pension revaluation",
+   "pass": true
+  },
+  {
+   "check": "v8/cash/high component closure",
+   "pass": true
+  },
+  {
+   "check": "v8/cash/high own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "v8/cash/high coverage included",
+   "pass": true
+  },
+  {
+   "check": "v8/cash/high joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "v8/cash/high count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "v8/high cash has no pension revaluation",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/set/low component closure",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/set/low own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/set/low coverage included",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/set/low joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/set/low count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/low count pension equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/low count pension interaction included",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/low selected16 and conditional17 both routed",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/set/high component closure",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/set/high own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/set/high coverage included",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/set/high joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/set/high count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/high count pension equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/high count pension interaction included",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/high selected16 and conditional17 both routed",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/cash/low component closure",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/cash/low own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/cash/low coverage included",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/cash/low joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/cash/low count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/low cash has no pension revaluation",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/cash/high component closure",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/cash/high own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/cash/high coverage included",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/cash/high joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/cash/high count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "both_highrate/high cash has no pension revaluation",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/set/low component closure",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/set/low own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/set/low coverage included",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/set/low joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/set/low count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/set/high component closure",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/set/high own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/set/high coverage included",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/set/high joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/set/high count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/cash/low component closure",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/cash/low own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/cash/low coverage included",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/cash/low joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/cash/low count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/low cash has no pension revaluation",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/cash/high component closure",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/cash/high own coverage rate",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/cash/high coverage included",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/cash/high joint count source contract",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/cash/high count capital equals joint, not standalone stack",
+   "pass": true
+  },
+  {
+   "check": "capital_7pct/high cash has no pension revaluation",
+   "pass": true
+  },
+  {
+   "check": "native child uses own G3 factor, not pooled reporter factor",
+   "pass": true
+  },
+  {
+   "check": "reporter uses pooled source factor",
+   "pass": true
+  }
+ ],
+ "arms": {
+  "B": {
+   "set": [
+    344.02328615247654,
+    412.55507412763023
+   ],
+   "cash": [
+    260.39059043224484,
+    328.922378407397
+   ]
+  },
+  "A": {
+   "set": [
+    344.24749162918414,
+    395.3631604017713
+   ],
+   "cash": [
+    258.8325026429657,
+    348.32525863115575
+   ]
+  },
+  "v8": {
+   "set": [
+    342.46519836319743,
+    431.95795435138893
+   ],
+   "cash": [
+    258.8325026429657,
+    348.32525863115575
+   ]
+  },
+  "both_highrate": {
+   "set": [
+    325.08947637977406,
+    395.3631604017713
+   ],
+   "cash": [
+    278.05157460915996,
+    348.32525863115575
+   ]
+  },
+  "capital_7pct": {
+   "set": [
+    438.5605581941688,
+    516.4165207905787
+   ],
+   "cash": [
+    354.927862473937,
+    432.78382507034553
+   ]
+  }
+ },
+ "residuals": {
+  "imported_public_pensions_and_opeb": "held at booked valuations",
+  "item15_alternative_coverage": "central response prices carried; capital rate itself revalued",
+  "lineage_and_DA_count_items": "central16/17 source kernel carried across options",
+  "noncentral_lineage_flat_rate_pension": "source-v8 original-descendant pension transfer held in A/3-percent arms; defaultB pension unchanged"
+ }
+}
