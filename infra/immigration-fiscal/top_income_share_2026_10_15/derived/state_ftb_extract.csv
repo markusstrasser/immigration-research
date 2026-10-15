@@ -1,0 +1,11 @@
+ftb_label,taxable_year,liability_million,source_pdf_page,source_table
+Negative to Zero,2023,7,15,"Exhibit A-10, page 5 of 5"
+"1 to 10,000",2023,7,15,"Exhibit A-10, page 5 of 5"
+"10,000 to 20,000",2023,26,15,"Exhibit A-10, page 5 of 5"
+"20,000 to 50,000",2023,1126,15,"Exhibit A-10, page 5 of 5"
+"50,000 to 100,000",2023,6272,15,"Exhibit A-10, page 5 of 5"
+"100,000 to 200,000",2023,15956,15,"Exhibit A-10, page 5 of 5"
+"200,000 to 500,000",2023,26145,15,"Exhibit A-10, page 5 of 5"
+"500,000 to 1,000,000",2023,14950,15,"Exhibit A-10, page 5 of 5"
+"1,000,000 and over",2023,32594,15,"Exhibit A-10, page 5 of 5"
+TOTAL,2023,97083,15,"Exhibit A-10, page 5 of 5"

@@ -1,0 +1,26 @@
+**Verdict:** No material scientific, accounting or software defect found in the reviewed federal pooling and fixed-other-corrections case translation. This verdict covers the conditional sensitivity the code actually computes; it does not establish that the proposed pooled rule identifies the true contemporary top-income share.
+
+Covered: the complete `federal_arms.py`, `price_v8.cjs` and `pool_cps.py`; the canonical `tax_key_heldout_2026_09_28/keys.py` raking and source definitions; the benchmark frame's union mask and personal allocation; the original case's stack and tax-key transformation; current derived cell, arm and evaluator outputs.
+
+Skipped: the state correction implementation (my own work, reviewed separately by the parent); outside-check implementation; independent re-reading of every historical Census dictionary and top-code documentation; the parent's pending result renderer. I did not alter the reviewed code or regenerate its outputs.
+
+Validation performed independently:
+
+- Rebuilt the baseline CPS CBO×AGI cells from `derived/cps_cells.csv` and recomputed the rake. The entire 8×14 mass matrix matches `derived/federal_arms.json` within 1e-15. Both its CBO row margins and IRS TY2023 column margins match the canonical `keys.py` sources within 1e-12.
+- Recomputed the baseline aggregate as the dot product of that matrix with the baseline within-cell union shares. It agrees with the saved 0.04932820842351211 and the original heldout translation. `pool_cps.py:279–282` additionally gates against the canonical person-level vector on the actual 2025 source frame.
+- Checked every federal arm's saved change against the IRS-mass-weighted upper-bin share changes. All agree within 1e-13. The pooled targets aggregate pooled within-CBO-cell shares on the **baseline** raked joint masses, as declared; they do not silently substitute pooled national marginal shares.
+- Verified that canonical 19-to-14 pooling maps the intended upper bins to indices 11, 12 and 13. The non-increasing fit starts at $200k, and `move_bin_share` reaches the targets while preserving bounded cell shares. The central and unconstrained aggregate equality follows weighted PAVA mean preservation, so it is not a separate empirical confirmation.
+- Traced the original case route to `main_case_candidate_v2_2026_09_28/package.cjs:108–119`: `stackFactor * national_bn * share_change`, expanded across receipt incidence rules. `price_v8.cjs:36–49` uses the same construction and adds the movement to the actual v8 model. Its evaluator checks both line-level movements and total cost closure at personal specifications 16/11.
+- Loaded the live case package and independently checked set/cash stack parity. Federal factors are 0.8882689072706234 and 0.8754733357625702 for the two methods; state factors are 0.89071093799363 and 0.8859386855690036. Set and cash use the same factors. Their different baselines remain separately evaluated.
+- Recomputed all final CSV cost-change identities and baseline-plus-change closures; every row passes within 1e-9. Every stored `v8_gates.json` gate passes.
+
+The pooling math is consistent with its stated estimand: real-2023 annual tax-dollar totals are summed, so the point estimate is a ratio of sums rather than an unweighted average of annual shares. CPI is anchored to each ASEC's preceding income year. The annual SDR factor is 4/160. Pooled replicates perturb one year at a time, then combine annual contributions under independence and under the Cauchy maximum-positive-covariance bound. Overlap across CPS years is therefore exposed rather than treated as known independence. [Code: `pool_cps.py:66–81,115–132,269–284`]
+
+Material interpretation limits to preserve in the result:
+
+1. The raw annual/pooled bin SEs are uncertainty estimates for those raw bin ratios. They are not SEs for the final fixed-CBO-joint-mass arm or the final dollar change; those would require replaying the transformation through the replicate cells. Do not attach a raw-bin SE to the final arm without naming this difference.
+2. Historical income groups use the existing benchmark definitions, with a current Medicare-value and payroll-cap proxy, and recompute ranks annually. Inflation adjustment does not remove tax-law, composition or time changes. Pooling adds observations, not independent identification of a stable top share.
+3. The CPS mask is the original tax-key mask. V8 completion members, unobserved descendants, white-end additions, mixed-unit removal, coverage and production remain fixed. The additive sensitivity is correctly labeled as holding those corrections fixed; it is not a complete adoption that has rebuilt their person-level keys.
+4. The carry-$500k arm is based on the final IRS/CBO joint rake's $500k–1M share, 2.5605%. The separate `carry_500k_pre_joint_rake` arm carries the earlier 2.3085% raw-bin reading used in the initial review arithmetic. The code preserves this important estimand distinction.
+
+The independent numerical probe was `/tmp/toptax_review_probe.py`; it printed `PASS canonical IRS/CBO margins, full cell-mass parity, arm dot products, CSV accounting, stored v8 gates`. No confirmed issue requires a code fix in this reviewed scope.

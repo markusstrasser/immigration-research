@@ -1,0 +1,24 @@
+{
+  "asec_years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "cpi_source_path": "infra/immigration-fiscal/consumption_key_2026_09_24/_cache/sources/bls_cpi_u_2015_2024.json",
+  "cpi_source_sha256": "a218eed4cb47914528f3cc13c3d2c8eb8d70c115381f9a6a0a139116855fecff",
+  "cpi_source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+  "cpi_series": "CUUR0000SA0",
+  "cpi_period": "M13",
+  "allocation": "personal; FEDTAX_BC on its carrier, state STATETAX_A clipped at zero",
+  "union": "external_benchmarks_2026_09_24/frame.py::masks, exactly as tax_key_heldout keys.py",
+  "weighting": "Historical estimates use each year's published weights; supplementary 2025 row4 baseline gates 39,712,493.33118789",
+  "pooling": "ratio of sums of annual tax dollars in 2023 CPI-U dollars; equal survey-year exposure, population evolves",
+  "uncertainty": "annual 160 SDR replicates; pooled one-year perturbations, independence SE plus arbitrary-positive-covariance bound",
+  "cbo_groups": "canonical keys.cbo_groups per year; fixed 2024 Medicare value/payroll cap proxy, ranks recomputed annually",
+  "bridge": "union/Hispanic personal tax carriers and dollars; union can include non-Hispanic parent-origin members; not a tax-unit count",
+  "bin14": "0 no AGI through <5k,1 5\u201310k,...,12 500k\u20131M,13 1M+"
+}

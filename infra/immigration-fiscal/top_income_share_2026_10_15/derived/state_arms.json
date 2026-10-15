@@ -1,0 +1,168 @@
+{
+  "CA_admin_bin_masses": [
+    0.0004120185820380499,
+    0.011598323084371105,
+    0.06460451366356623,
+    0.1643542123749781,
+    0.2693056456846204,
+    0.15399194503672115,
+    0.335733341573705
+  ],
+  "CA_admin_share_current": 0.1087628369972463,
+  "CA_bin_labels": [
+    "Under $20k (including losses)",
+    "$20k\u201350k",
+    "$50k\u2013100k",
+    "$100k\u2013200k",
+    "$200k\u2013500k",
+    "$500k\u20131M",
+    "$1M+"
+  ],
+  "CA_current_bin_shares": [
+    0.7361071959613074,
+    0.46428490091493146,
+    0.3091945290864833,
+    0.17814201804506763,
+    0.10306731728113795,
+    0.07397766219709424,
+    0.04370222223156301
+  ],
+  "CA_national_mass": 0.1859536176231271,
+  "CA_pooled_bin_shares": [
+    0.46597504912886367,
+    0.4229109090140546,
+    0.258653662980278,
+    0.1622440419673903,
+    0.09040896989070038,
+    0.061222867686571425,
+    0.06530560001594532
+  ],
+  "CA_raw_bin_masses": [
+    7.388777015622634e-06,
+    0.013732507354777082,
+    0.07277169003684188,
+    0.23792722344791062,
+    0.3843169009039439,
+    0.16408805026991477,
+    0.12715623920959618
+  ],
+  "CA_raw_share": 0.12857305145258177,
+  "arms": {
+    "carry_500k": {
+      "CA_admin_raked": true,
+      "CA_upper_bin_shares": [
+        0.10306731728113795,
+        0.07397766219709424,
+        0.07397766219709424
+      ],
+      "share": 0.048250597646826675,
+      "share_change": -0.001793660215685479,
+      "share_change_vs_CA_admin": 0.0018901208281741147
+    },
+    "current": {
+      "CA_admin_raked": false,
+      "CA_upper_bin_shares": [
+        0.10306731728113795,
+        0.07397766219709424,
+        0.04370222223156301
+      ],
+      "share": 0.050044257862512154,
+      "share_change": 0.0,
+      "share_change_vs_CA_admin": 0.0036837810438595936
+    },
+    "current_CA_admin": {
+      "CA_admin_raked": true,
+      "CA_upper_bin_shares": [
+        0.10306731728113795,
+        0.07397766219709424,
+        0.04370222223156301
+      ],
+      "share": 0.04636047681865256,
+      "share_change": -0.0036837810438595936,
+      "share_change_vs_CA_admin": 0.0
+    },
+    "fixed_1_5pct": {
+      "CA_admin_raked": true,
+      "CA_upper_bin_shares": [
+        0.10306731728113795,
+        0.07397766219709424,
+        0.015
+      ],
+      "share": 0.044568573278471996,
+      "share_change": -0.005475684584040158,
+      "share_change_vs_CA_admin": -0.0017919035401805644
+    },
+    "pooled_monotone_central": {
+      "CA_admin_raked": true,
+      "CA_upper_bin_shares": [
+        0.09040896989070038,
+        0.06402180293694187,
+        0.06402180293694187
+      ],
+      "share": 0.04671004622316099,
+      "share_change": -0.003334211639351166,
+      "share_change_vs_CA_admin": 0.0003495694045084277
+    },
+    "pooled_top_only": {
+      "CA_admin_raked": true,
+      "CA_upper_bin_shares": [
+        0.10306731728113795,
+        0.07397766219709424,
+        0.06530560001594532
+      ],
+      "share": 0.047709193612055514,
+      "share_change": -0.0023350642504566393,
+      "share_change_vs_CA_admin": 0.0013487167934029543
+    },
+    "pooled_unconstrained": {
+      "CA_admin_raked": true,
+      "CA_upper_bin_shares": [
+        0.09040896989070038,
+        0.061222867686571425,
+        0.06530560001594532
+      ],
+      "share": 0.04671004622316099,
+      "share_change": -0.003334211639351166,
+      "share_change_vs_CA_admin": 0.0003495694045084277
+    }
+  },
+  "assumptions": [
+    "CPS federal AGI bins proxy California AGI bins",
+    "California resident-return liability distribution proxies all CA liability",
+    "TY2023 preliminary administrative shape transported to income-year2024 case",
+    "Published CPS weights identify baseline; case row4/status stack applied downstream",
+    "Below $200k union shares remain baseline within common coarse bins",
+    "Under $20k pooled because CPS CA positive liability is zero under $10k",
+    "Other states and CA national tax-dollar mass stay at baseline CPS values"
+  ],
+  "baseline_model_share_rounded": 0.050044258,
+  "baseline_share": 0.050044257862512154,
+  "coverage": "California only; CA national share remains raw CPS; other states unchanged",
+  "inputs_sha256": {
+    "assumption_explorer_2026_09_21/derived/model.json": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd",
+    "top_income_share_2026_10_15/derived/cps_state_bins.csv": "294eb7783dc938ecf2173099d94b06b43fb954f72032dc744abe8e1d5099ec6a"
+  },
+  "interpretation": "Covered-state sensitivity, not a measured national correction; no federal-tax or SALT-deduction proxy",
+  "line": "state_local_income_tax",
+  "national_bn_held_fixed": 536.167,
+  "other_states_union_contribution_held_fixed": 0.026135633816060117,
+  "source": {
+    "amounts": [
+      40,
+      1126,
+      6272,
+      15956,
+      26145,
+      14950,
+      32594
+    ],
+    "amounts_unit": "$million",
+    "object": "California resident-return total tax liability; preliminary statistical sample",
+    "pdf_page": 15,
+    "sha256": "8d1aaffd9e4a1f7dc63c4dd9d11781a7f1a1b840d67aedfe0495f27bb104f9a9",
+    "table": "Exhibit A-10 page 5 of 5",
+    "taxable_year": 2023,
+    "url": "https://publish.data.ca.gov/dataset/1555a2c4-740a-4b1c-adf1-1ab7721e90b3/resource/ee16e82e-c2cf-4900-b6c6-121ded321241/download/dof_spring_2025_odp.pdf"
+  },
+  "stack": "No stack/status/coverage/lineage multiplication here; parent case machinery applies it"
+}
