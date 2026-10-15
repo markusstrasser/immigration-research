@@ -1,0 +1,92 @@
+{
+  "22co61ccr.xlsx": {
+    "url": "https://www.irs.gov/pub/irs-soi/22co61ccr.xlsx",
+    "path": "_cache/22co61ccr.xlsx",
+    "bytes": 137574,
+    "sha256": "d0eff09037b41fc25694171043b59b821c0dc8f0e3203eab992740ea30829b98"
+  },
+  "22co07ccr.xlsx": {
+    "url": "https://www.irs.gov/pub/irs-soi/22co07ccr.xlsx",
+    "path": "_cache/22co07ccr.xlsx",
+    "bytes": 31678,
+    "sha256": "304f8dfb80275cbbb08b59c7e4779d336b747992251c845f9135d746eae396ba"
+  },
+  "22pa01.xlsx": {
+    "url": "https://www.irs.gov/pub/irs-soi/22pa01.xlsx",
+    "path": "_cache/22pa01.xlsx",
+    "bytes": 143198,
+    "sha256": "afea3003158819b0d5c041259de3018fa318801c34d4ddd7798a02623d23ebd8"
+  },
+  "22pa03.xlsx": {
+    "url": "https://www.irs.gov/pub/irs-soi/22pa03.xlsx",
+    "path": "_cache/22pa03.xlsx",
+    "bytes": 76774,
+    "sha256": "69f107934292815ef45021e6dade4ddf3178cb6af0313937f8380dd8dc54db87"
+  },
+  "22pa05.xlsx": {
+    "url": "https://www.irs.gov/pub/irs-soi/22pa05.xlsx",
+    "path": "_cache/22pa05.xlsx",
+    "bytes": 19272,
+    "sha256": "062069cac4aeb287a54312ddf14cb1cde63782836d576d21ca852d8431b1014e"
+  },
+  "22sp01br.xls": {
+    "url": "https://www.irs.gov/pub/irs-soi/22sp01br.xls",
+    "path": "_cache/22sp01br.xls",
+    "bytes": 113152,
+    "sha256": "430de2010ed92ca07837c8695821402b372a720d3f99dcb92251fede3fc37c36"
+  },
+  "22sp02is.xls": {
+    "url": "https://www.irs.gov/pub/irs-soi/22sp02is.xls",
+    "path": "_cache/22sp02is.xls",
+    "bytes": 295936,
+    "sha256": "fd827fea302e0585b8cdcdd06f3e56debd91c07638972066cc7a3c7eaeb25c0e"
+  },
+  "income_partnership_terms.html": {
+    "url": "https://www.irs.gov/statistics/soi-tax-stats-partnership-study-explanation-of-selected-terms",
+    "path": "_cache/income_partnership_terms.html",
+    "bytes": 114251,
+    "sha256": "0d87fa26a50fc6f48cde8d8df2765ac1407f199ee99bb943ed2c7adf787b3833"
+  },
+  "income_s_compensation.html": {
+    "url": "https://www.irs.gov/businesses/small-businesses-self-employed/s-corporation-compensation-and-medical-insurance-issues",
+    "path": "_cache/income_s_compensation.html",
+    "bytes": 125709,
+    "sha256": "1a3a23592395bdf9eee6ef3885eded448d181bce5640e005a62b6f3adf213641"
+  },
+  "income_c_catalog.html": {
+    "url": "https://www.irs.gov/statistics/soi-tax-stats-corporation-income-tax-returns-complete-report-publication-16",
+    "path": "_cache/income_c_catalog.html",
+    "bytes": 180928,
+    "sha256": "579bf1a384349cfb8c50ed67a2bf5a776a45d2afbaf00e24c9384689c2ede74e"
+  },
+  "income_p_catalog.html": {
+    "url": "https://www.irs.gov/statistics/soi-tax-stats-partnership-statistics-by-sector-or-industry",
+    "path": "_cache/income_p_catalog.html",
+    "bytes": 163365,
+    "sha256": "f248e41fe8d3450a169be086618c12224d02975e8be0f7b64bbbd29c5c7d767b"
+  },
+  "income_sp_catalog.html": {
+    "url": "https://www.irs.gov/statistics/soi-tax-stats-nonfarm-sole-proprietorship-statistics",
+    "path": "_cache/income_sp_catalog.html",
+    "bytes": 137267,
+    "sha256": "e568af2a4e505f5803071ceeec7b9b6a8413ebcce85dfe6a01f31923f9e6c2fa"
+  },
+  "income_p16.pdf": {
+    "url": "https://www.irs.gov/pub/irs-pdf/p16.pdf",
+    "path": "_cache/income_p16.pdf",
+    "bytes": 1777846,
+    "sha256": "65912d6c5fb53074964f25e26b45dadae60437075f8b3acfdfaea988bea30356"
+  },
+  "income_i1120s_2022.pdf": {
+    "url": "https://www.irs.gov/pub/irs-prior/i1120s--2022.pdf",
+    "path": "_cache/income_i1120s_2022.pdf",
+    "bytes": 687228,
+    "sha256": "6bd5dcef9a23c2a092f12d29d7dc021423e6668045fb3df6201330a2fdefa463"
+  },
+  "income_i1040sc_2022.pdf": {
+    "url": "https://www.irs.gov/pub/irs-prior/i1040sc--2022.pdf",
+    "path": "_cache/income_i1040sc_2022.pdf",
+    "bytes": 456963,
+    "sha256": "3fe3eb7e0d8da42d4b9c2f5726c83c19abe1b1e8f7c0630db034a545748aa645"
+  }
+}

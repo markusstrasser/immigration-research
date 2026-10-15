@@ -1,0 +1,929 @@
+{
+  "default_central_rate": null,
+  "estimand": "Income-source-weighted all-return AGI-bin tax/AGI allocation; not linked-owner source tax or marginal rate",
+  "exclusions": [
+    "self-employment tax",
+    "state taxes",
+    "owner labor/capital split",
+    "pass-through-to-nonindividual-owner adjustment",
+    "industry-specific owner tax rates"
+  ],
+  "loss_rule": "Positive-income weights and signed-net weights are separate arms; signed-net loss offsets assume same allocated rate within AGI bin",
+  "no_agi_rule": "Exclude nonpositive-AGI bin from both weighted numerator and denominator; disclose its income and losses separately; no fabricated zero tax rate",
+  "schema_version": 1,
+  "status": "conditional proxy arms only",
+  "years": [
+    {
+      "bins": [
+        {
+          "agi_bin": "No adjusted gross income",
+          "agi_thousand_usd": -164160281.0,
+          "allocated_tax_after_credits_per_agi": null,
+          "allocated_total_income_tax_per_agi": null,
+          "excel_row": 10,
+          "income_tax_after_credits_thousand_usd": 128418.0,
+          "partnership": {
+            "loss_thousand_usd": 45083943.0,
+            "positive_income_thousand_usd": 3311266.0
+          },
+          "returns": 3254225.0,
+          "s_corporation": {
+            "loss_thousand_usd": 28337405.0,
+            "positive_income_thousand_usd": 5058593.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 24055163.0,
+            "positive_income_thousand_usd": 4257779.0
+          },
+          "total_income_tax_thousand_usd": 128418.0
+        },
+        {
+          "agi_bin": "$1 under $5,000",
+          "agi_thousand_usd": 19538869.0,
+          "allocated_tax_after_credits_per_agi": 0.000958806776379943,
+          "allocated_total_income_tax_per_agi": 0.000958806776379943,
+          "excel_row": 11,
+          "income_tax_after_credits_thousand_usd": 18734.0,
+          "partnership": {
+            "loss_thousand_usd": 513797.0,
+            "positive_income_thousand_usd": 157881.0
+          },
+          "returns": 8195781.0,
+          "s_corporation": {
+            "loss_thousand_usd": 690515.0,
+            "positive_income_thousand_usd": 246011.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 1243038.0,
+            "positive_income_thousand_usd": 4846784.0
+          },
+          "total_income_tax_thousand_usd": 18734.0
+        },
+        {
+          "agi_bin": "$5,000 under $10,000",
+          "agi_thousand_usd": 66070756.0,
+          "allocated_tax_after_credits_per_agi": 0.0006269490847054936,
+          "allocated_total_income_tax_per_agi": 0.0006269490847054936,
+          "excel_row": 12,
+          "income_tax_after_credits_thousand_usd": 41423.0,
+          "partnership": {
+            "loss_thousand_usd": 442121.0,
+            "positive_income_thousand_usd": 402096.0
+          },
+          "returns": 8747727.0,
+          "s_corporation": {
+            "loss_thousand_usd": 584635.0,
+            "positive_income_thousand_usd": 292912.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 3390070.0,
+            "positive_income_thousand_usd": 10536163.0
+          },
+          "total_income_tax_thousand_usd": 41423.0
+        },
+        {
+          "agi_bin": "$10,000 under $15,000",
+          "agi_thousand_usd": 120502825.0,
+          "allocated_tax_after_credits_per_agi": 0.0015616065432490897,
+          "allocated_total_income_tax_per_agi": 0.0015616065432490897,
+          "excel_row": 13,
+          "income_tax_after_credits_thousand_usd": 188178.0,
+          "partnership": {
+            "loss_thousand_usd": 250994.0,
+            "positive_income_thousand_usd": 355103.0
+          },
+          "returns": 9642321.0,
+          "s_corporation": {
+            "loss_thousand_usd": 848888.0,
+            "positive_income_thousand_usd": 486657.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 4750759.0,
+            "positive_income_thousand_usd": 23775556.0
+          },
+          "total_income_tax_thousand_usd": 188178.0
+        },
+        {
+          "agi_bin": "$15,000 under $20,000",
+          "agi_thousand_usd": 157738693.0,
+          "allocated_tax_after_credits_per_agi": 0.011004972635344456,
+          "allocated_total_income_tax_per_agi": 0.011007045684092234,
+          "excel_row": 14,
+          "income_tax_after_credits_thousand_usd": 1735910.0,
+          "partnership": {
+            "loss_thousand_usd": 472824.0,
+            "positive_income_thousand_usd": 462131.0
+          },
+          "returns": 9058382.0,
+          "s_corporation": {
+            "loss_thousand_usd": 546682.0,
+            "positive_income_thousand_usd": 583158.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 6523057.0,
+            "positive_income_thousand_usd": 25668295.0
+          },
+          "total_income_tax_thousand_usd": 1736237.0
+        },
+        {
+          "agi_bin": "$20,000 under $25,000",
+          "agi_thousand_usd": 180311082.0,
+          "allocated_tax_after_credits_per_agi": 0.021096978387606814,
+          "allocated_total_income_tax_per_agi": 0.021096978387606814,
+          "excel_row": 15,
+          "income_tax_after_credits_thousand_usd": 3804019.0,
+          "partnership": {
+            "loss_thousand_usd": 384642.0,
+            "positive_income_thousand_usd": 556069.0
+          },
+          "returns": 8035277.0,
+          "s_corporation": {
+            "loss_thousand_usd": 763518.0,
+            "positive_income_thousand_usd": 798350.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 6844014.0,
+            "positive_income_thousand_usd": 17560336.0
+          },
+          "total_income_tax_thousand_usd": 3804019.0
+        },
+        {
+          "agi_bin": "$25,000 under $30,000",
+          "agi_thousand_usd": 219958083.0,
+          "allocated_tax_after_credits_per_agi": 0.02898917335990785,
+          "allocated_total_income_tax_per_agi": 0.02898917335990785,
+          "excel_row": 16,
+          "income_tax_after_credits_thousand_usd": 6376403.0,
+          "partnership": {
+            "loss_thousand_usd": 745977.0,
+            "positive_income_thousand_usd": 797127.0
+          },
+          "returns": 8005289.0,
+          "s_corporation": {
+            "loss_thousand_usd": 1089706.0,
+            "positive_income_thousand_usd": 1214771.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 6144470.0,
+            "positive_income_thousand_usd": 16468043.0
+          },
+          "total_income_tax_thousand_usd": 6376403.0
+        },
+        {
+          "agi_bin": "$30,000 under $40,000",
+          "agi_thousand_usd": 550490149.0,
+          "allocated_tax_after_credits_per_agi": 0.03873309820118143,
+          "allocated_total_income_tax_per_agi": 0.0387333071059188,
+          "excel_row": 17,
+          "income_tax_after_credits_thousand_usd": 21322189.0,
+          "partnership": {
+            "loss_thousand_usd": 1149204.0,
+            "positive_income_thousand_usd": 1951910.0
+          },
+          "returns": 15771561.0,
+          "s_corporation": {
+            "loss_thousand_usd": 1858699.0,
+            "positive_income_thousand_usd": 2929046.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 10660469.0,
+            "positive_income_thousand_usd": 28615046.0
+          },
+          "total_income_tax_thousand_usd": 21322304.0
+        },
+        {
+          "agi_bin": "$40,000 under $50,000",
+          "agi_thousand_usd": 593955496.0,
+          "allocated_tax_after_credits_per_agi": 0.05102796287619502,
+          "allocated_total_income_tax_per_agi": 0.05102965323853153,
+          "excel_row": 18,
+          "income_tax_after_credits_thousand_usd": 30308339.0,
+          "partnership": {
+            "loss_thousand_usd": 1467106.0,
+            "positive_income_thousand_usd": 1850336.0
+          },
+          "returns": 13255063.0,
+          "s_corporation": {
+            "loss_thousand_usd": 1310679.0,
+            "positive_income_thousand_usd": 3082848.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 7999679.0,
+            "positive_income_thousand_usd": 23231693.0
+          },
+          "total_income_tax_thousand_usd": 30309343.0
+        },
+        {
+          "agi_bin": "$50,000 under $75,000",
+          "agi_thousand_usd": 1466486055.0,
+          "allocated_tax_after_credits_per_agi": 0.06826083729790393,
+          "allocated_total_income_tax_per_agi": 0.06826085911877287,
+          "excel_row": 19,
+          "income_tax_after_credits_thousand_usd": 100103566.0,
+          "partnership": {
+            "loss_thousand_usd": 3138594.0,
+            "positive_income_thousand_usd": 4589954.0
+          },
+          "returns": 23805797.0,
+          "s_corporation": {
+            "loss_thousand_usd": 3737931.0,
+            "positive_income_thousand_usd": 12311632.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 11430440.0,
+            "positive_income_thousand_usd": 45622131.0
+          },
+          "total_income_tax_thousand_usd": 100103598.0
+        },
+        {
+          "agi_bin": "$75,000 under $100,000",
+          "agi_thousand_usd": 1315619561.0,
+          "allocated_tax_after_credits_per_agi": 0.08595127448093637,
+          "allocated_total_income_tax_per_agi": 0.0859514584246897,
+          "excel_row": 20,
+          "income_tax_after_credits_thousand_usd": 113079178.0,
+          "partnership": {
+            "loss_thousand_usd": 2849233.0,
+            "positive_income_thousand_usd": 6021603.0
+          },
+          "returns": 15181035.0,
+          "s_corporation": {
+            "loss_thousand_usd": 3147742.0,
+            "positive_income_thousand_usd": 12098356.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 8340188.0,
+            "positive_income_thousand_usd": 37229434.0
+          },
+          "total_income_tax_thousand_usd": 113079420.0
+        },
+        {
+          "agi_bin": "$100,000 under $200,000",
+          "agi_thousand_usd": 3567047571.0,
+          "allocated_tax_after_credits_per_agi": 0.1114984978707479,
+          "allocated_total_income_tax_per_agi": 0.11150913159492595,
+          "excel_row": 21,
+          "income_tax_after_credits_thousand_usd": 397720446.0,
+          "partnership": {
+            "loss_thousand_usd": 11085367.0,
+            "positive_income_thousand_usd": 27193979.0
+          },
+          "returns": 25887136.0,
+          "s_corporation": {
+            "loss_thousand_usd": 10258755.0,
+            "positive_income_thousand_usd": 54285528.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 17942473.0,
+            "positive_income_thousand_usd": 102878354.0
+          },
+          "total_income_tax_thousand_usd": 397758377.0
+        },
+        {
+          "agi_bin": "$200,000 under $500,000",
+          "agi_thousand_usd": 2891064828.0,
+          "allocated_tax_after_credits_per_agi": 0.16537340338049314,
+          "allocated_total_income_tax_per_agi": 0.1670861830290303,
+          "excel_row": 22,
+          "income_tax_after_credits_thousand_usd": 478105230.0,
+          "partnership": {
+            "loss_thousand_usd": 17915360.0,
+            "positive_income_thousand_usd": 70924621.0
+          },
+          "returns": 10017626.0,
+          "s_corporation": {
+            "loss_thousand_usd": 10948036.0,
+            "positive_income_thousand_usd": 127744318.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 10344497.0,
+            "positive_income_thousand_usd": 103480907.0
+          },
+          "total_income_tax_thousand_usd": 483056987.0
+        },
+        {
+          "agi_bin": "$500,000 under $1,000,000",
+          "agi_thousand_usd": 1124299469.0,
+          "allocated_tax_after_credits_per_agi": 0.22617181721714394,
+          "allocated_total_income_tax_per_agi": 0.23150611129569074,
+          "excel_row": 23,
+          "income_tax_after_credits_thousand_usd": 254284854.0,
+          "partnership": {
+            "loss_thousand_usd": 14009247.0,
+            "positive_income_thousand_usd": 75395435.0
+          },
+          "returns": 1674608.0,
+          "s_corporation": {
+            "loss_thousand_usd": 5599460.0,
+            "positive_income_thousand_usd": 111710531.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 3813934.0,
+            "positive_income_thousand_usd": 43196167.0
+          },
+          "total_income_tax_thousand_usd": 260282198.0
+        },
+        {
+          "agi_bin": "$1,000,000 under $1,500,000",
+          "agi_thousand_usd": 435177502.0,
+          "allocated_tax_after_credits_per_agi": 0.2546534517310594,
+          "allocated_total_income_tax_per_agi": 0.2619698685618173,
+          "excel_row": 24,
+          "income_tax_after_credits_thousand_usd": 110819453.0,
+          "partnership": {
+            "loss_thousand_usd": 7453173.0,
+            "positive_income_thousand_usd": 44835141.0
+          },
+          "returns": 360882.0,
+          "s_corporation": {
+            "loss_thousand_usd": 2691171.0,
+            "positive_income_thousand_usd": 64784994.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 1560220.0,
+            "positive_income_thousand_usd": 15635538.0
+          },
+          "total_income_tax_thousand_usd": 114003393.0
+        },
+        {
+          "agi_bin": "$1,500,000 under $2,000,000",
+          "agi_thousand_usd": 254476785.0,
+          "allocated_tax_after_credits_per_agi": 0.2644148031027663,
+          "allocated_total_income_tax_per_agi": 0.2724754519356255,
+          "excel_row": 25,
+          "income_tax_after_credits_thousand_usd": 67287429.0,
+          "partnership": {
+            "loss_thousand_usd": 5555828.0,
+            "positive_income_thousand_usd": 30483673.0
+          },
+          "returns": 148221.0,
+          "s_corporation": {
+            "loss_thousand_usd": 1589080.0,
+            "positive_income_thousand_usd": 45248962.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 961547.0,
+            "positive_income_thousand_usd": 8068249.0
+          },
+          "total_income_tax_thousand_usd": 69338677.0
+        },
+        {
+          "agi_bin": "$2,000,000 under $5,000,000",
+          "agi_thousand_usd": 621044404.0,
+          "allocated_tax_after_credits_per_agi": 0.26733440947323955,
+          "allocated_total_income_tax_per_agi": 0.2766720364813077,
+          "excel_row": 26,
+          "income_tax_after_credits_thousand_usd": 166026539.0,
+          "partnership": {
+            "loss_thousand_usd": 14874495.0,
+            "positive_income_thousand_usd": 75289227.0
+          },
+          "returns": 208129.0,
+          "s_corporation": {
+            "loss_thousand_usd": 4769442.0,
+            "positive_income_thousand_usd": 121207183.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 2413058.0,
+            "positive_income_thousand_usd": 15476265.0
+          },
+          "total_income_tax_thousand_usd": 171825620.0
+        },
+        {
+          "agi_bin": "$5,000,000 under $10,000,000",
+          "agi_thousand_usd": 362815724.0,
+          "allocated_tax_after_credits_per_agi": 0.26590826862840156,
+          "allocated_total_income_tax_per_agi": 0.2763444866573644,
+          "excel_row": 27,
+          "income_tax_after_credits_thousand_usd": 96475701.0,
+          "partnership": {
+            "loss_thousand_usd": 9914133.0,
+            "positive_income_thousand_usd": 41778975.0
+          },
+          "returns": 52968.0,
+          "s_corporation": {
+            "loss_thousand_usd": 2809765.0,
+            "positive_income_thousand_usd": 72523417.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 1394148.0,
+            "positive_income_thousand_usd": 6585206.0
+          },
+          "total_income_tax_thousand_usd": 100262125.0
+        },
+        {
+          "agi_bin": "$10,000,000 or more",
+          "agi_thousand_usd": 1051519384.0,
+          "allocated_tax_after_credits_per_agi": 0.23879446429681794,
+          "allocated_total_income_tax_per_agi": 0.2532398565845173,
+          "excel_row": 28,
+          "income_tax_after_credits_thousand_usd": 251097008.0,
+          "partnership": {
+            "loss_thousand_usd": 38296260.0,
+            "positive_income_thousand_usd": 100737982.0
+          },
+          "returns": 34630.0,
+          "s_corporation": {
+            "loss_thousand_usd": 11443499.0,
+            "positive_income_thousand_usd": 176134053.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 3360952.0,
+            "positive_income_thousand_usd": 10433033.0
+          },
+          "total_income_tax_thousand_usd": 266286618.0
+        }
+      ],
+      "by_form": {
+        "partnership": {
+          "all_agi_loss_thousand_usd": 175602300.0,
+          "all_agi_positive_income_thousand_usd": 487094509.0,
+          "no_agi_loss_thousand_usd": 45083943.0,
+          "no_agi_positive_income_thousand_usd": 3311266.0,
+          "positive_tax_after_credits_rate_positive_agi_only": 0.22246625569266368,
+          "positive_total_income_tax_rate_positive_agi_only": 0.23009765310287886,
+          "signed_net_tax_after_credits_rate_positive_agi_only": 0.22792793446461312,
+          "signed_net_total_income_tax_rate_positive_agi_only": 0.2355469434938294
+        },
+        "s_corporation": {
+          "all_agi_loss_thousand_usd": 93025607.0,
+          "all_agi_positive_income_thousand_usd": 812741318.0,
+          "no_agi_loss_thousand_usd": 28337405.0,
+          "no_agi_positive_income_thousand_usd": 5058593.0,
+          "positive_tax_after_credits_rate_positive_agi_only": 0.21897733583271048,
+          "positive_total_income_tax_rate_positive_agi_only": 0.2265137043021084,
+          "signed_net_tax_after_credits_rate_positive_agi_only": 0.22350428594109933,
+          "signed_net_total_income_tax_rate_positive_agi_only": 0.23126557765633093
+        },
+        "schedule_c": {
+          "all_agi_loss_thousand_usd": 133172174.0,
+          "all_agi_positive_income_thousand_usd": 543564980.0,
+          "no_agi_loss_thousand_usd": 24055163.0,
+          "no_agi_positive_income_thousand_usd": 4257779.0,
+          "positive_tax_after_credits_rate_positive_agi_only": 0.11613964567900648,
+          "positive_total_income_tax_rate_positive_agi_only": 0.11790531514864865,
+          "signed_net_tax_after_credits_rate_positive_agi_only": 0.12289419379783562,
+          "signed_net_total_income_tax_rate_positive_agi_only": 0.1247751197026918
+        }
+      },
+      "money_unit": "thousand USD nominal",
+      "year": 2022
+    },
+    {
+      "bins": [
+        {
+          "agi_bin": "No adjusted gross income",
+          "agi_thousand_usd": -144194936.0,
+          "allocated_tax_after_credits_per_agi": null,
+          "allocated_total_income_tax_per_agi": null,
+          "excel_row": 10,
+          "income_tax_after_credits_thousand_usd": 113851.0,
+          "partnership": {
+            "loss_thousand_usd": 38234108.0,
+            "positive_income_thousand_usd": 2352519.0
+          },
+          "returns": 2180146.0,
+          "s_corporation": {
+            "loss_thousand_usd": 23184602.0,
+            "positive_income_thousand_usd": 4066224.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 31722463.0,
+            "positive_income_thousand_usd": 3278879.0
+          },
+          "total_income_tax_thousand_usd": 114270.0
+        },
+        {
+          "agi_bin": "$1 under $5,000",
+          "agi_thousand_usd": 17450063.0,
+          "allocated_tax_after_credits_per_agi": 0.0008642375675090686,
+          "allocated_total_income_tax_per_agi": 0.0008642375675090686,
+          "excel_row": 11,
+          "income_tax_after_credits_thousand_usd": 15081.0,
+          "partnership": {
+            "loss_thousand_usd": 480359.0,
+            "positive_income_thousand_usd": 237414.0
+          },
+          "returns": 7357751.0,
+          "s_corporation": {
+            "loss_thousand_usd": 951215.0,
+            "positive_income_thousand_usd": 246004.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 1301043.0,
+            "positive_income_thousand_usd": 4052701.0
+          },
+          "total_income_tax_thousand_usd": 15081.0
+        },
+        {
+          "agi_bin": "$5,000 under $10,000",
+          "agi_thousand_usd": 60949546.0,
+          "allocated_tax_after_credits_per_agi": 0.0006958378328199525,
+          "allocated_total_income_tax_per_agi": 0.0006958378328199525,
+          "excel_row": 12,
+          "income_tax_after_credits_thousand_usd": 42411.0,
+          "partnership": {
+            "loss_thousand_usd": 433477.0,
+            "positive_income_thousand_usd": 235058.0
+          },
+          "returns": 8077917.0,
+          "s_corporation": {
+            "loss_thousand_usd": 715163.0,
+            "positive_income_thousand_usd": 267197.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 3288623.0,
+            "positive_income_thousand_usd": 9716995.0
+          },
+          "total_income_tax_thousand_usd": 42411.0
+        },
+        {
+          "agi_bin": "$10,000 under $15,000",
+          "agi_thousand_usd": 112353814.0,
+          "allocated_tax_after_credits_per_agi": 0.0007875122067507206,
+          "allocated_total_income_tax_per_agi": 0.0007879839308347823,
+          "excel_row": 13,
+          "income_tax_after_credits_thousand_usd": 88480.0,
+          "partnership": {
+            "loss_thousand_usd": 382651.0,
+            "positive_income_thousand_usd": 339693.0
+          },
+          "returns": 8986005.0,
+          "s_corporation": {
+            "loss_thousand_usd": 1117906.0,
+            "positive_income_thousand_usd": 547696.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 5685539.0,
+            "positive_income_thousand_usd": 22516557.0
+          },
+          "total_income_tax_thousand_usd": 88533.0
+        },
+        {
+          "agi_bin": "$15,000 under $20,000",
+          "agi_thousand_usd": 151828408.0,
+          "allocated_tax_after_credits_per_agi": 0.008676373659927988,
+          "allocated_total_income_tax_per_agi": 0.008677348444567764,
+          "excel_row": 14,
+          "income_tax_after_credits_thousand_usd": 1317320.0,
+          "partnership": {
+            "loss_thousand_usd": 874649.0,
+            "positive_income_thousand_usd": 657344.0
+          },
+          "returns": 8702094.0,
+          "s_corporation": {
+            "loss_thousand_usd": 837356.0,
+            "positive_income_thousand_usd": 1063375.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 6486988.0,
+            "positive_income_thousand_usd": 26803518.0
+          },
+          "total_income_tax_thousand_usd": 1317468.0
+        },
+        {
+          "agi_bin": "$20,000 under $25,000",
+          "agi_thousand_usd": 178000708.0,
+          "allocated_tax_after_credits_per_agi": 0.018298674407519772,
+          "allocated_total_income_tax_per_agi": 0.018298674407519772,
+          "excel_row": 15,
+          "income_tax_after_credits_thousand_usd": 3257177.0,
+          "partnership": {
+            "loss_thousand_usd": 765496.0,
+            "positive_income_thousand_usd": 794604.0
+          },
+          "returns": 7925999.0,
+          "s_corporation": {
+            "loss_thousand_usd": 857701.0,
+            "positive_income_thousand_usd": 980205.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 9105920.0,
+            "positive_income_thousand_usd": 19378269.0
+          },
+          "total_income_tax_thousand_usd": 3257177.0
+        },
+        {
+          "agi_bin": "$25,000 under $30,000",
+          "agi_thousand_usd": 208919443.0,
+          "allocated_tax_after_credits_per_agi": 0.026574841097963296,
+          "allocated_total_income_tax_per_agi": 0.0265755973703223,
+          "excel_row": 16,
+          "income_tax_after_credits_thousand_usd": 5552001.0,
+          "partnership": {
+            "loss_thousand_usd": 653637.0,
+            "positive_income_thousand_usd": 819422.0
+          },
+          "returns": 7594157.0,
+          "s_corporation": {
+            "loss_thousand_usd": 845888.0,
+            "positive_income_thousand_usd": 1270820.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 7224986.0,
+            "positive_income_thousand_usd": 15364725.0
+          },
+          "total_income_tax_thousand_usd": 5552159.0
+        },
+        {
+          "agi_bin": "$30,000 under $40,000",
+          "agi_thousand_usd": 531782365.0,
+          "allocated_tax_after_credits_per_agi": 0.036533704911406756,
+          "allocated_total_income_tax_per_agi": 0.03653485199720754,
+          "excel_row": 17,
+          "income_tax_after_credits_thousand_usd": 19427980.0,
+          "partnership": {
+            "loss_thousand_usd": 920156.0,
+            "positive_income_thousand_usd": 1199991.0
+          },
+          "returns": 15210266.0,
+          "s_corporation": {
+            "loss_thousand_usd": 1709037.0,
+            "positive_income_thousand_usd": 2270499.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 12010163.0,
+            "positive_income_thousand_usd": 26639892.0
+          },
+          "total_income_tax_thousand_usd": 19428590.0
+        },
+        {
+          "agi_bin": "$40,000 under $50,000",
+          "agi_thousand_usd": 606242938.0,
+          "allocated_tax_after_credits_per_agi": 0.048811374360289865,
+          "allocated_total_income_tax_per_agi": 0.048811374360289865,
+          "excel_row": 18,
+          "income_tax_after_credits_thousand_usd": 29591551.0,
+          "partnership": {
+            "loss_thousand_usd": 1460563.0,
+            "positive_income_thousand_usd": 1990810.0
+          },
+          "returns": 13519034.0,
+          "s_corporation": {
+            "loss_thousand_usd": 2018606.0,
+            "positive_income_thousand_usd": 4309966.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 10006832.0,
+            "positive_income_thousand_usd": 21567623.0
+          },
+          "total_income_tax_thousand_usd": 29591551.0
+        },
+        {
+          "agi_bin": "$50,000 under $75,000",
+          "agi_thousand_usd": 1485510450.0,
+          "allocated_tax_after_credits_per_agi": 0.0651346148389599,
+          "allocated_total_income_tax_per_agi": 0.0651354913053624,
+          "excel_row": 19,
+          "income_tax_after_credits_thousand_usd": 96758151.0,
+          "partnership": {
+            "loss_thousand_usd": 2930308.0,
+            "positive_income_thousand_usd": 5396273.0
+          },
+          "returns": 24135884.0,
+          "s_corporation": {
+            "loss_thousand_usd": 3584691.0,
+            "positive_income_thousand_usd": 9833986.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 14092186.0,
+            "positive_income_thousand_usd": 46362313.0
+          },
+          "total_income_tax_thousand_usd": 96759453.0
+        },
+        {
+          "agi_bin": "$75,000 under $100,000",
+          "agi_thousand_usd": 1366616429.0,
+          "allocated_tax_after_credits_per_agi": 0.08356147092682141,
+          "allocated_total_income_tax_per_agi": 0.08356226119977371,
+          "excel_row": 20,
+          "income_tax_after_credits_thousand_usd": 114196479.0,
+          "partnership": {
+            "loss_thousand_usd": 3230709.0,
+            "positive_income_thousand_usd": 5207535.0
+          },
+          "returns": 15775468.0,
+          "s_corporation": {
+            "loss_thousand_usd": 3032692.0,
+            "positive_income_thousand_usd": 12637046.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 9417901.0,
+            "positive_income_thousand_usd": 36620793.0
+          },
+          "total_income_tax_thousand_usd": 114197559.0
+        },
+        {
+          "agi_bin": "$100,000 under $200,000",
+          "agi_thousand_usd": 3818295141.0,
+          "allocated_tax_after_credits_per_agi": 0.10723960769904245,
+          "allocated_total_income_tax_per_agi": 0.10725537808812355,
+          "excel_row": 21,
+          "income_tax_after_credits_thousand_usd": 409472473.0,
+          "partnership": {
+            "loss_thousand_usd": 11483737.0,
+            "positive_income_thousand_usd": 24877659.0
+          },
+          "returns": 27602755.0,
+          "s_corporation": {
+            "loss_thousand_usd": 10662727.0,
+            "positive_income_thousand_usd": 56614331.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 20006179.0,
+            "positive_income_thousand_usd": 103283569.0
+          },
+          "total_income_tax_thousand_usd": 409532689.0
+        },
+        {
+          "agi_bin": "$200,000 under $500,000",
+          "agi_thousand_usd": 3153877437.0,
+          "allocated_tax_after_credits_per_agi": 0.16101378323789314,
+          "allocated_total_income_tax_per_agi": 0.1627860968777399,
+          "excel_row": 22,
+          "income_tax_after_credits_thousand_usd": 507817738.0,
+          "partnership": {
+            "loss_thousand_usd": 17780842.0,
+            "positive_income_thousand_usd": 70268393.0
+          },
+          "returns": 10955818.0,
+          "s_corporation": {
+            "loss_thousand_usd": 10619744.0,
+            "positive_income_thousand_usd": 129920311.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 10909688.0,
+            "positive_income_thousand_usd": 103898578.0
+          },
+          "total_income_tax_thousand_usd": 513407398.0
+        },
+        {
+          "agi_bin": "$500,000 under $1,000,000",
+          "agi_thousand_usd": 1194934962.0,
+          "allocated_tax_after_credits_per_agi": 0.22388758008404477,
+          "allocated_total_income_tax_per_agi": 0.22919724395845403,
+          "excel_row": 23,
+          "income_tax_after_credits_thousand_usd": 267531097.0,
+          "partnership": {
+            "loss_thousand_usd": 12506987.0,
+            "positive_income_thousand_usd": 75602727.0
+          },
+          "returns": 1779720.0,
+          "s_corporation": {
+            "loss_thousand_usd": 5703594.0,
+            "positive_income_thousand_usd": 113950216.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 3760811.0,
+            "positive_income_thousand_usd": 42128714.0
+          },
+          "total_income_tax_thousand_usd": 273875800.0
+        },
+        {
+          "agi_bin": "$1,000,000 under $1,500,000",
+          "agi_thousand_usd": 443658405.0,
+          "allocated_tax_after_credits_per_agi": 0.2535032712836805,
+          "allocated_total_income_tax_per_agi": 0.260877419869911,
+          "excel_row": 24,
+          "income_tax_after_credits_thousand_usd": 112468857.0,
+          "partnership": {
+            "loss_thousand_usd": 7056739.0,
+            "positive_income_thousand_usd": 44441335.0
+          },
+          "returns": 368931.0,
+          "s_corporation": {
+            "loss_thousand_usd": 2764434.0,
+            "positive_income_thousand_usd": 62815764.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 1520349.0,
+            "positive_income_thousand_usd": 13958178.0
+          },
+          "total_income_tax_thousand_usd": 115740460.0
+        },
+        {
+          "agi_bin": "$1,500,000 under $2,000,000",
+          "agi_thousand_usd": 252903399.0,
+          "allocated_tax_after_credits_per_agi": 0.26446211978353046,
+          "allocated_total_income_tax_per_agi": 0.2729167787895172,
+          "excel_row": 25,
+          "income_tax_after_credits_thousand_usd": 66883369.0,
+          "partnership": {
+            "loss_thousand_usd": 5033890.0,
+            "positive_income_thousand_usd": 27275837.0
+          },
+          "returns": 147290.0,
+          "s_corporation": {
+            "loss_thousand_usd": 1717493.0,
+            "positive_income_thousand_usd": 45640463.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 789693.0,
+            "positive_income_thousand_usd": 7330469.0
+          },
+          "total_income_tax_thousand_usd": 69021581.0
+        },
+        {
+          "agi_bin": "$2,000,000 under $5,000,000",
+          "agi_thousand_usd": 602653109.0,
+          "allocated_tax_after_credits_per_agi": 0.270158427076164,
+          "allocated_total_income_tax_per_agi": 0.2795323387272196,
+          "excel_row": 26,
+          "income_tax_after_credits_thousand_usd": 162811816.0,
+          "partnership": {
+            "loss_thousand_usd": 13980586.0,
+            "positive_income_thousand_usd": 72910430.0
+          },
+          "returns": 203230.0,
+          "s_corporation": {
+            "loss_thousand_usd": 4523705.0,
+            "positive_income_thousand_usd": 121689639.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 2175187.0,
+            "positive_income_thousand_usd": 13958194.0
+          },
+          "total_income_tax_thousand_usd": 168461033.0
+        },
+        {
+          "agi_bin": "$5,000,000 under $10,000,000",
+          "agi_thousand_usd": 336334760.0,
+          "allocated_tax_after_credits_per_agi": 0.268944057402809,
+          "allocated_total_income_tax_per_agi": 0.27960974655132287,
+          "excel_row": 27,
+          "income_tax_after_credits_thousand_usd": 90455235.0,
+          "partnership": {
+            "loss_thousand_usd": 9309683.0,
+            "positive_income_thousand_usd": 40826929.0
+          },
+          "returns": 49262.0,
+          "s_corporation": {
+            "loss_thousand_usd": 2433800.0,
+            "positive_income_thousand_usd": 71564501.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 1051058.0,
+            "positive_income_thousand_usd": 5427866.0
+          },
+          "total_income_tax_thousand_usd": 94042477.0
+        },
+        {
+          "agi_bin": "$10,000,000 or more",
+          "agi_thousand_usd": 907900917.0,
+          "allocated_tax_after_credits_per_agi": 0.24318285163710215,
+          "allocated_total_income_tax_per_agi": 0.2571471452759861,
+          "excel_row": 28,
+          "income_tax_after_credits_thousand_usd": 220785934.0,
+          "partnership": {
+            "loss_thousand_usd": 41365525.0,
+            "positive_income_thousand_usd": 76643067.0
+          },
+          "returns": 30382.0,
+          "s_corporation": {
+            "loss_thousand_usd": 12263360.0,
+            "positive_income_thousand_usd": 157762619.0
+          },
+          "schedule_c": {
+            "loss_thousand_usd": 2885780.0,
+            "positive_income_thousand_usd": 8092186.0
+          },
+          "total_income_tax_thousand_usd": 233464129.0
+        }
+      ],
+      "by_form": {
+        "partnership": {
+          "all_agi_loss_thousand_usd": 168884100.0,
+          "all_agi_positive_income_thousand_usd": 452077038.0,
+          "no_agi_loss_thousand_usd": 38234108.0,
+          "no_agi_positive_income_thousand_usd": 2352519.0,
+          "positive_tax_after_credits_rate_positive_agi_only": 0.22163372639513398,
+          "positive_total_income_tax_rate_positive_agi_only": 0.22891342982218724,
+          "signed_net_tax_after_credits_rate_positive_agi_only": 0.2278885974818317,
+          "signed_net_total_income_tax_rate_positive_agi_only": 0.23501284728946084
+        },
+        "s_corporation": {
+          "all_agi_loss_thousand_usd": 89543715.0,
+          "all_agi_positive_income_thousand_usd": 797450861.0,
+          "no_agi_loss_thousand_usd": 23184602.0,
+          "no_agi_positive_income_thousand_usd": 4066224.0,
+          "positive_tax_after_credits_rate_positive_agi_only": 0.2180979430944964,
+          "positive_total_income_tax_rate_positive_agi_only": 0.22539873569363553,
+          "signed_net_tax_after_credits_rate_positive_agi_only": 0.22309501914414567,
+          "signed_net_total_income_tax_rate_positive_agi_only": 0.23061681155175748
+        },
+        "schedule_c": {
+          "all_agi_loss_thousand_usd": 153441387.0,
+          "all_agi_positive_income_thousand_usd": 530380019.0,
+          "no_agi_loss_thousand_usd": 31722463.0,
+          "no_agi_positive_income_thousand_usd": 3278879.0,
+          "positive_tax_after_credits_rate_positive_agi_only": 0.11201323439560777,
+          "positive_total_income_tax_rate_positive_agi_only": 0.11367562933432673,
+          "signed_net_tax_after_credits_rate_positive_agi_only": 0.12106352727173883,
+          "signed_net_total_income_tax_rate_positive_agi_only": 0.12290573112904314
+        }
+      },
+      "money_unit": "thousand USD nominal",
+      "year": 2023
+    }
+  ]
+}

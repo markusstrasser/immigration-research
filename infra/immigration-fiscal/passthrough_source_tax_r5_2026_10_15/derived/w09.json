@@ -1,0 +1,34 @@
+{
+  "set": {
+    "low": {
+      "total_bn": 3.4038730196547764,
+      "union_and_v6_descendants_bn": 3.2952991232200546,
+      "completion_G3_profile_proxy_bn": -0.003969307927531506,
+      "coverage_generation_profile_proxy_bn": 0.11254320436225318,
+      "proxy_warning": "item10 own size/legal form and item12 missing-person selection unobserved; profile transport arms, not exact own-record repricing"
+    },
+    "high": {
+      "total_bn": 1.2594330172722672,
+      "union_and_v6_descendants_bn": 1.2192606755914202,
+      "completion_G3_profile_proxy_bn": -0.001468643933186657,
+      "coverage_generation_profile_proxy_bn": 0.04164098561403369,
+      "proxy_warning": "item10 own size/legal form and item12 missing-person selection unobserved; profile transport arms, not exact own-record repricing"
+    }
+  },
+  "cash": {
+    "low": {
+      "total_bn": 3.4038730196547764,
+      "union_and_v6_descendants_bn": 3.2952991232200546,
+      "completion_G3_profile_proxy_bn": -0.003969307927531506,
+      "coverage_generation_profile_proxy_bn": 0.11254320436225321,
+      "proxy_warning": "item10 own size/legal form and item12 missing-person selection unobserved; profile transport arms, not exact own-record repricing"
+    },
+    "high": {
+      "total_bn": 1.2594330172722672,
+      "union_and_v6_descendants_bn": 1.2192606755914202,
+      "completion_G3_profile_proxy_bn": -0.001468643933186657,
+      "coverage_generation_profile_proxy_bn": 0.04164098561403369,
+      "proxy_warning": "item10 own size/legal form and item12 missing-person selection unobserved; profile transport arms, not exact own-record repricing"
+    }
+  }
+}

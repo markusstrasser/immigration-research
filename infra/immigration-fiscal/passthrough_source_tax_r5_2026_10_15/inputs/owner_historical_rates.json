@@ -1,0 +1,13 @@
+{
+  "estimand": "Federal tax change when removing sector income holding other income fixed; includes owner-type tracing/assumptions",
+  "locator": "printed p4 / PDF p5; Figures 7-9 and sections3-4",
+  "not_comparable_without_adjustment": "Industry operating profit after owner labor differs from the paper's all income base",
+  "rates": {
+    "partnership": 0.159,
+    "s_corporation": 0.249,
+    "schedule_c": 0.136
+  },
+  "source": "https://home.treasury.gov/system/files/131/wp-104.pdf",
+  "source_year": 2011,
+  "status": "historical sensitivity only; predates TCJA/199A; partnership base includes preferred income and nonindividual owners"
+}

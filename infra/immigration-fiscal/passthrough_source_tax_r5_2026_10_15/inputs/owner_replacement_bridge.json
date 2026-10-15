@@ -1,0 +1,57 @@
+{
+  "arms_status": "structural endpoints; no probability weights or identified central split",
+  "central_foreign_credit_fraction": null,
+  "central_normal_return_share": null,
+  "central_replacement_domestic_share": null,
+  "direct_formula": "I*tau*(1-d)*(1-q*(1-c)); d domestic share, c fraction of foreign tentative US tax offset, q foreign pre-tax replacement/source income",
+  "direct_q1_status": "same pre-tax income arm; not generally equal worldwide after-tax return",
+  "domestic_identical_tax_cancellation": 0,
+  "domestic_share_arms": [
+    0,
+    1
+  ],
+  "equal_after_tax_formula": "q=(1-tau)/(1-max(tau,f)); c=min(1,f/tau), with foreign tax rate f; proportional identical-base full-available-FTC arm",
+  "foreign_credit_fraction_arms": [
+    0,
+    1
+  ],
+  "gilti_2024": {
+    "corporate_rate": 0.21,
+    "formula": "a=G/T; H=a*F; U=.21*(1-.5)*(G+H); credit=min(.8*H,U,applicable904limit); residual=U-credit",
+    "inputs": "T sum positive pro-rata tested incomes after foreign tax; G actual8992 inclusion after QBAI/tested losses/interest; F pro-rata tested foreign taxes",
+    "section250_deduction_share": 0.5,
+    "section960d_credit_share": 0.8,
+    "sources": [
+      "https://www.irs.gov/pub/irs-prior/i8992--2024.pdf",
+      "https://www.irs.gov/pub/irs-prior/i8993--2024.pdf",
+      "https://www.irs.gov/pub/irs-prior/i1118--2023.pdf",
+      "https://www.irs.gov/pub/irs-prior/f1118--2022.pdf",
+      "https://www.irs.gov/pub/irs-prior/f1120--2024.pdf"
+    ],
+    "warning": "Only current inclusion tax for C corporation/962 electing individual; exclude distribution/residence taxes from automatic current correction; no measured CFC routing or QBAI values"
+  },
+  "human_capital": {
+    "labor_calibration": 0.75,
+    "locator": "TableIV; discussion printed pp46-47 / PDFpp46-47",
+    "six_estimate_average": 0.768,
+    "source": "https://eml.berkeley.edu/~yagan/Capitalists.pdf",
+    "status": "top-owner S corporation/partnership historical labor arm; not a normal-return fraction or ScheduleC estimate"
+  },
+  "law_year": 2024,
+  "normal_return_share_of_capital_arms": [
+    0,
+    1
+  ],
+  "source_tax_loss_positive_lowers_case_cost": true,
+  "state": {
+    "ca_elective_pte_rate": 0.093,
+    "ca_status": "2024 legal example only; not a national upper bound or additive new tax",
+    "national_source_rate": null,
+    "sources": [
+      "https://www.ftb.ca.gov/forms/2024/2024-3804-instructions.pdf",
+      "https://www.irs.gov/pub/irs-drop/n-20-75.pdf"
+    ],
+    "zero_additional_state_arm": 0,
+    "zero_status": "state correction withheld because unidentified, not measured zero liability"
+  }
+}

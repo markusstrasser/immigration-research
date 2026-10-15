@@ -1,0 +1,2802 @@
+[
+  {
+    "sector": "--",
+    "form": "2",
+    "size": "total",
+    "probability": 0.5197147093474851,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.1700154711832243,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.23227370368416048,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.35243011332359087,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.6820515842413427,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "3",
+    "size": "total",
+    "probability": 0.2171462501697468,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.5799816762111926,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.4981865524209695,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.31247599860131187,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.07082332139223087,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "4",
+    "size": "total",
+    "probability": 0.1113196640864122,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.11497118601468108,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.15572863174306678,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.16598050706507117,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.08603958883279607,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "5",
+    "size": "total",
+    "probability": 0.027642530646005782,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.08445134255703894,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.0360729456642204,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.03212954652037996,
+    "rule": "published"
+  },
+  {
+    "sector": "--",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.017328115641748472,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "2",
+    "size": "total",
+    "probability": 0.2966614180006528,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.14239040243396486,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.24841333734058804,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.3506855080205248,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.601220652787981,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "3",
+    "size": "total",
+    "probability": 0.4197540315493847,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.5437884312462264,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.4855142286896334,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.29170235840657827,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.1989600749306279,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "4",
+    "size": "total",
+    "probability": 0.17683435048654775,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.15670040240023475,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.16656989411643727,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.2265067417730944,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.18166165804888132,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "5",
+    "size": "total",
+    "probability": 0.06801356523111467,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.14234444515652458,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.057774348759559606,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.04050049369526862,
+    "rule": "published"
+  },
+  {
+    "sector": "11",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.06801356523111467,
+    "rule": "[DEGRADED] all-size form share; missing size cells"
+  },
+  {
+    "sector": "21",
+    "form": "2",
+    "size": "total",
+    "probability": 0.6231453453686735,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.2143642528338987,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.2635316517526142,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.4100066676511353,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.8350270552699347,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "3",
+    "size": "total",
+    "probability": 0.14657292268763955,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.4458596756235879,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.3727740878066901,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.1820016708481597,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.04255707006889007,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "4",
+    "size": "total",
+    "probability": 0.18546274531416596,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.25034141887008665,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.30906768850584043,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.33705782304001414,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.09259072171505227,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "5",
+    "size": "total",
+    "probability": 0.04060638598069312,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.08861264299712866,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.05239334190025299,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.06936203059398689,
+    "rule": "published"
+  },
+  {
+    "sector": "21",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.02387702294086254,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "2",
+    "size": "total",
+    "probability": 0.836969796708532,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.22598657388811252,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.14718484524607278,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.310545258158802,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.9416657287959986,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "3",
+    "size": "total",
+    "probability": 0.012960227767465849,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.2783260414136142,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.07895779146187924,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.02656899308586025,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.003841924467600093,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "4",
+    "size": "total",
+    "probability": 0.03967789179210898,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.14954769252231473,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.12573596439836687,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.13162412481096994,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.023719645248329035,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "5",
+    "size": "total",
+    "probability": 0.007355516188050648,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.0779517843355614,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.049739402264666194,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.009271930732608838,
+    "rule": "published"
+  },
+  {
+    "sector": "22",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.0033830846841060433,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "2",
+    "size": "total",
+    "probability": 0.2881696868136893,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.13982593058276524,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.19442104495948725,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.234319140040126,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.5850147605202888,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "3",
+    "size": "total",
+    "probability": 0.5685862006777349,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.671144772072935,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.6891492768534141,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.604615173373804,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.2735164223020932,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "4",
+    "size": "total",
+    "probability": 0.10249366673192795,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.08710692485950133,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.08802796562579185,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.12829865808377808,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.11599056646489925,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "5",
+    "size": "total",
+    "probability": 0.039929675005841936,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.10089629582043683,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.027486639748131182,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.031821863415141594,
+    "rule": "published"
+  },
+  {
+    "sector": "23",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.025050318854820952,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "2",
+    "size": "total",
+    "probability": 0.6925342136969261,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.2637938772037034,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.319394706167409,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.47943601409134584,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.8536104743667986,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "3",
+    "size": "total",
+    "probability": 0.20104099602339087,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.5204944277630089,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.523080929589759,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.368241025639677,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.06841490563760767,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "4",
+    "size": "total",
+    "probability": 0.07830760454572468,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.13593661895130119,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.12568813604086665,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.11985077982056422,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.05404648110072824,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "5",
+    "size": "total",
+    "probability": 0.02262041461778463,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.07816250440378897,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.030261412577997977,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.028322622535669348,
+    "rule": "published"
+  },
+  {
+    "sector": "31-33",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.016991138170899575,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "2",
+    "size": "total",
+    "probability": 0.6243926434812965,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.31744889129131026,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.347839807705053,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.4522623120950186,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.8276758173368659,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "3",
+    "size": "total",
+    "probability": 0.26186895354172796,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.5547826685087004,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.5190429604323912,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.39601989813211624,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.07991551442595432,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "4",
+    "size": "total",
+    "probability": 0.08306282784045622,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.0902191419520094,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.10374311112876626,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.11469847605066492,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.06407267817079851,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "5",
+    "size": "total",
+    "probability": 0.01996203481067873,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.03513296559156448,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.021070095986784016,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.021442265734743577,
+    "rule": "published"
+  },
+  {
+    "sector": "42",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.01710184876513895,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "2",
+    "size": "total",
+    "probability": 0.5704540729148633,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.18785298929672647,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.20031859338732044,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.24702727917094253,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.8236614110713484,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "3",
+    "size": "total",
+    "probability": 0.294172058251786,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.5980532794214377,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.6113484900615859,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.5474179030026365,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.08546106674927198,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "4",
+    "size": "total",
+    "probability": 0.09669633865172984,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.11703890220349566,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.14562582544284972,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.16078366638872296,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.06396706446265608,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "5",
+    "size": "total",
+    "probability": 0.027772525780511887,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.09245252116402283,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.03336556523673295,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.0250328774167282,
+    "rule": "published"
+  },
+  {
+    "sector": "44-45",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.0161171461512852,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "2",
+    "size": "total",
+    "probability": 0.6788530021239849,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.1888614064660198,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.2503120323830755,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.3969806986701033,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.8539484175276405,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "3",
+    "size": "total",
+    "probability": 0.2114514090425285,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.5654826228885451,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.5703688246110818,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.42204425768161874,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.07320916358693355,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "4",
+    "size": "total",
+    "probability": 0.0757805570934392,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.11763271650895553,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.12127020069424384,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.12696025373919728,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.054881117346203545,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "5",
+    "size": "total",
+    "probability": 0.028349894342069883,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.1259225233564203,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.05244623009437115,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.04342316808094085,
+    "rule": "published"
+  },
+  {
+    "sector": "48-49",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.012863928552046482,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "2",
+    "size": "total",
+    "probability": 0.8662107205498778,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.36725344049791786,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.4926947039564329,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.698425592728625,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.9301500295762368,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "3",
+    "size": "total",
+    "probability": 0.050149725840141574,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.44180000518458673,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.2679651160642368,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.12528736447851793,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.01237854170290705,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "4",
+    "size": "total",
+    "probability": 0.060094487647959,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.12178825654075734,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.14546857206790625,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.11073677155907635,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.04567630448136051,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "5",
+    "size": "total",
+    "probability": 0.011874497273530939,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.03660148489032439,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.042953729318874846,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.037583484277773194,
+    "rule": "published"
+  },
+  {
+    "sector": "51",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.005718925523515868,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "2",
+    "size": "total",
+    "probability": 0.7309030265581254,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.16392998332076442,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.35066367938252907,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.4856971140276695,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.8390797059425428,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "3",
+    "size": "total",
+    "probability": 0.07430420788283526,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.5609987393947221,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.28592815589454895,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.0989025423492992,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.020736570682613423,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "4",
+    "size": "total",
+    "probability": 0.12159147710802697,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.15995289399063775,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.2623360267286604,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.2596831597417765,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.08435879758490693,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "5",
+    "size": "total",
+    "probability": 0.027903488431180734,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.09916476535181147,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.03363665741873126,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.04909380357515303,
+    "rule": "published"
+  },
+  {
+    "sector": "52",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.020162664478539462,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "2",
+    "size": "total",
+    "probability": 0.4002624036397401,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.12642960556692417,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.210290394006762,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.3106504064650127,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.7030260765628833,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "3",
+    "size": "total",
+    "probability": 0.30320986405001304,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.5744819878349944,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.41516874545355126,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.29165447486551577,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.09203632058953855,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "4",
+    "size": "total",
+    "probability": 0.24215897456366917,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.23197624923341,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.308622779487317,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.3355027257104681,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.16785028474287117,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "5",
+    "size": "total",
+    "probability": 0.03708378419169974,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.05495975657383882,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.04329275012834841,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.038920958811892704,
+    "rule": "published"
+  },
+  {
+    "sector": "53",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.022748597084536016,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "2",
+    "size": "total",
+    "probability": 0.525368903785343,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.18517239123087562,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.31257560311030524,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.4919224396161823,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.6904463508067091,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "3",
+    "size": "total",
+    "probability": 0.2395957686669763,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.6409296913330371,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.4718515143862002,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.27174151755730835,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.05456471829561997,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "4",
+    "size": "total",
+    "probability": 0.17978212943346286,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.10441377658073452,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.17035085292298285,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.17985352825994522,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.19907244048721245,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "5",
+    "size": "total",
+    "probability": 0.028044290105337905,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.0616342281885886,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.027539416013838736,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.029777351967393003,
+    "rule": "published"
+  },
+  {
+    "sector": "54",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.020771282182873545,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "2",
+    "size": "total",
+    "probability": 0.7640740820132925,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.2705717420455931,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.3968080248727659,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.4714829607645499,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.7906221918774582,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "3",
+    "size": "total",
+    "probability": 0.06504438422947914,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.3998502290102924,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.37102355771260703,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.26766225114488695,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.04581594598152947,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "4",
+    "size": "total",
+    "probability": 0.059545931018273164,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.26770867800978737,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.14187014387292274,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.12514285029210656,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.053332747829119995,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "5",
+    "size": "total",
+    "probability": 0.015332099317573367,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.057674021699378276,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.02139722801424161,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.013060398747938417,
+    "rule": "published"
+  },
+  {
+    "sector": "55",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.015265480456176962,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "2",
+    "size": "total",
+    "probability": 0.5535615231349623,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.14908183100893757,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.1931031515060302,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.26397751964039523,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.6671903203112882,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "3",
+    "size": "total",
+    "probability": 0.28894393950291936,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.5997033227583829,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.5828149131861114,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.4770930490240267,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.20350337074038488,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "4",
+    "size": "total",
+    "probability": 0.11341171028091643,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.11611632905658764,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.14457184976154233,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.18964738451598925,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.09919254610844468,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "5",
+    "size": "total",
+    "probability": 0.02845437079304187,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.11842434760959059,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.05564803435532881,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.048003623599442484,
+    "rule": "published"
+  },
+  {
+    "sector": "56",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.01644685156871135,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "2",
+    "size": "total",
+    "probability": 0.09422816837458792,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.12798526395300067,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.07830191242708114,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.07773816980517455,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.10202047033286059,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "3",
+    "size": "total",
+    "probability": 0.06398181156029038,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.4262364915468868,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.1756281281825781,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.051370424290460584,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.014721143088096522,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "4",
+    "size": "total",
+    "probability": 0.029245913485129536,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.09575791444498502,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.05730860730723864,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.03188653964076201,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.016459369537995063,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "5",
+    "size": "total",
+    "probability": 0.013772650855193433,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.06837637932378972,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.03566954099082916,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.020898216871285333,
+    "rule": "published"
+  },
+  {
+    "sector": "61",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.0019455445749994183,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "2",
+    "size": "total",
+    "probability": 0.19366807385421522,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.12262595434356655,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.18555926725054497,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.18722696379879858,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.2041408382584669,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "3",
+    "size": "total",
+    "probability": 0.16535243827801066,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.6547898279950365,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.4669291570551706,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.1928715266773731,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.03490846118935989,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "4",
+    "size": "total",
+    "probability": 0.08906552290320331,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.07530626750209887,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.15098707982810047,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.15052156492085825,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.06215625519336763,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "5",
+    "size": "total",
+    "probability": 0.025028078527076354,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.09364993834533764,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.041436528262220905,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.02330358243556743,
+    "rule": "published"
+  },
+  {
+    "sector": "62",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.014399900471001412,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "2",
+    "size": "total",
+    "probability": 0.254860163592994,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.15454642841827376,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.13483877344646944,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.14678886936289784,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.4281330169753956,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "3",
+    "size": "total",
+    "probability": 0.20640736076139732,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.6084018858350807,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.26240302710045643,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.13507054279238553,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.046569562779532524,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "4",
+    "size": "total",
+    "probability": 0.2637516893560879,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.09644174176240242,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.24116153744127558,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.32952487851135376,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.30847000822660947,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "5",
+    "size": "total",
+    "probability": 0.06900144905293183,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.04082972526598521,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.048052474134224095,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.06366663489462762,
+    "rule": "published"
+  },
+  {
+    "sector": "71",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.09575812206421731,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "2",
+    "size": "total",
+    "probability": 0.30287538373812833,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.15125601457051702,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.10541772481484847,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.16791450334613786,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.5930488329038004,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "3",
+    "size": "total",
+    "probability": 0.3559015546392564,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.46292890301311396,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.527521608707358,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.41689272685344697,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.12845943134713156,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "4",
+    "size": "total",
+    "probability": 0.25896212551254794,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.24524435953463375,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.3051656912405773,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.342806660967769,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.18572673084400984,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "5",
+    "size": "total",
+    "probability": 0.06120247924496118,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.1326404313192962,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.05785317292956558,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.04917579257029339,
+    "rule": "published"
+  },
+  {
+    "sector": "72",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.05126409585653453,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "2",
+    "size": "total",
+    "probability": 0.18621480335121018,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "2",
+    "size": "under10",
+    "probability": 0.11478125709722822,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "2",
+    "size": "10-99",
+    "probability": 0.10974874849768775,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "2",
+    "size": "100-499",
+    "probability": 0.12062267814180047,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "2",
+    "size": "500plus",
+    "probability": 0.4838276447398131,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "3",
+    "size": "total",
+    "probability": 0.25196558427338533,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "3",
+    "size": "under10",
+    "probability": 0.379390418533124,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "3",
+    "size": "10-99",
+    "probability": 0.2968712375155907,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "3",
+    "size": "100-499",
+    "probability": 0.13854556219675948,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "3",
+    "size": "500plus",
+    "probability": 0.07301118537897439,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "4",
+    "size": "total",
+    "probability": 0.06707067339714294,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "4",
+    "size": "under10",
+    "probability": 0.06457846458819276,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "4",
+    "size": "10-99",
+    "probability": 0.063648130357532,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "4",
+    "size": "100-499",
+    "probability": 0.06728623505335045,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "4",
+    "size": "500plus",
+    "probability": 0.07711849902766504,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "5",
+    "size": "total",
+    "probability": 0.03757756300325121,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "5",
+    "size": "under10",
+    "probability": 0.08562610654294908,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "5",
+    "size": "10-99",
+    "probability": 0.02565975261880088,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "5",
+    "size": "100-499",
+    "probability": 0.014466363354393497,
+    "rule": "published"
+  },
+  {
+    "sector": "81",
+    "form": "5",
+    "size": "500plus",
+    "probability": 0.01319724633511419,
+    "rule": "published"
+  }
+]

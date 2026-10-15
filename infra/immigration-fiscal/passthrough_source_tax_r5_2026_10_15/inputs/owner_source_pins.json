@@ -1,0 +1,82 @@
+{
+  "22in12ms.xls": {
+    "bytes": 62464,
+    "sha256": "ffc483e16aa05762c5ac6dfdbfa86250cd4db5969b1cf6db2296539601a54503",
+    "url": "https://www.irs.gov/pub/irs-soi/22in12ms.xls"
+  },
+  "22in14ar.xls": {
+    "bytes": 115712,
+    "sha256": "93811f816933d4ac3250c402f7ddae5989a145b60ce47db413d0f19c71af6617",
+    "url": "https://www.irs.gov/pub/irs-soi/22in14ar.xls"
+  },
+  "23in12ms.xls": {
+    "bytes": 62464,
+    "sha256": "549861a1c7b38256abf9506a6111dcf82110266d0168199dfa465a5d61134490",
+    "url": "https://www.irs.gov/pub/irs-soi/23in12ms.xls"
+  },
+  "23in14ar.xls": {
+    "bytes": 115712,
+    "sha256": "b6c1f87fbb5533417e195f6938538e5de09b6a0825a6a54346bf9363a18d96af",
+    "url": "https://www.irs.gov/pub/irs-soi/23in14ar.xls"
+  },
+  "ca_3804_2024.pdf": {
+    "bytes": 76759,
+    "sha256": "1c221512af5498414d811845add70bbb2d66b0255e9002eafc78eb4d151f70b7",
+    "url": "https://www.ftb.ca.gov/forms/2024/2024-3804-instructions.pdf"
+  },
+  "ca_pte.html": {
+    "bytes": 38944,
+    "sha256": "b9a875097d3d597694fdd384e7c438ff61f2535508feca0801078efbf83a4328",
+    "url": "https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html"
+  },
+  "f1118--2022.pdf": {
+    "bytes": 445902,
+    "sha256": "14812ebf726f320f28f7ca1230cb77e839a22c1d84a35a2aa413e0856833f71e",
+    "url": "https://www.irs.gov/pub/irs-prior/f1118--2022.pdf"
+  },
+  "f1120--2024.pdf": {
+    "bytes": 330971,
+    "sha256": "abf0266bdbea750c05e53fc9f771f428d32d18e4508d1c0dd4827486aba2d7fc",
+    "url": "https://www.irs.gov/pub/irs-prior/f1120--2024.pdf"
+  },
+  "fed_h15_annual_10y.html": {
+    "bytes": 11444,
+    "sha256": "ab062fac38ccb0c9a4e18abb87e8614056f7e5f12cc9eb9ab4ef73ce08d2b00e",
+    "url": "https://www.federalreserve.gov/datadownload/Preview.aspx?pi=400&preview=H15%2FH15%2FRIFLGFCY10_N.A&rel=H15"
+  },
+  "i1118--2023.pdf": {
+    "bytes": 376252,
+    "sha256": "8d40897cf3d4cd17cfa42f46de1b6c4896960aca3061de7e5ae9b5dc26e6e9d2",
+    "url": "https://www.irs.gov/pub/irs-prior/i1118--2023.pdf"
+  },
+  "i8992--2024.pdf": {
+    "bytes": 166447,
+    "sha256": "726d57279a8f98cfe6f4f26b8bdc62e4a8c04e1186439bf351927e8b41cf807a",
+    "url": "https://www.irs.gov/pub/irs-prior/i8992--2024.pdf"
+  },
+  "i8993--2024.pdf": {
+    "bytes": 156377,
+    "sha256": "d687671928aed943cdf29d913307e0e98712be77b5591caf8a63f4417fa8b838",
+    "url": "https://www.irs.gov/pub/irs-prior/i8993--2024.pdf"
+  },
+  "irs_notice2020_75.pdf": {
+    "bytes": 110773,
+    "sha256": "161601b787ecb1878f7dddd7f30762e57ab2e5e80f7016573690fee6d070dc1c",
+    "url": "https://www.irs.gov/pub/irs-drop/n-20-75.pdf"
+  },
+  "p514--2024.pdf": {
+    "bytes": 1545867,
+    "sha256": "06cf057cccf31021ac2213a7e4a5e558a9f003f716dd69a7b099b3f40c2b33a5",
+    "url": "https://www.irs.gov/pub/irs-prior/p514--2024.pdf"
+  },
+  "smith_capitalists.pdf": {
+    "bytes": 2675659,
+    "sha256": "7810f0686e93d3b0a391d3a5cb5248f4f267e2795661d1c8d77994a55953f240",
+    "url": "https://eml.berkeley.edu/~yagan/Capitalists.pdf"
+  },
+  "treasury_wp104.pdf": {
+    "bytes": 3777557,
+    "sha256": "51d14698fa287144e50fe35219ed321002b87a177522f05c561820f78e052785",
+    "url": "https://home.treasury.gov/system/files/131/wp-104.pdf"
+  }
+}

@@ -1,0 +1,578 @@
+[
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_full_ftc_top_owner_labor",
+    "without_bn": 365.7919302554848,
+    "with_bn": 360.76940411882606,
+    "delta_cost_bn": -5.022526136658712
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "domestic_replacement",
+    "without_bn": 365.7919302554848,
+    "with_bn": 365.7919302554848,
+    "delta_cost_bn": 0
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_no_ftc_same_income",
+    "without_bn": 365.7919302554848,
+    "with_bn": 365.7919302554848,
+    "delta_cost_bn": 0
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_half_ftc_same_income",
+    "without_bn": 365.7919302554848,
+    "with_bn": 363.2806671871555,
+    "delta_cost_bn": -2.511263068329299
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "half_domestic_full_ftc",
+    "without_bn": 365.7919302554848,
+    "with_bn": 363.2806671871555,
+    "delta_cost_bn": -2.511263068329299
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_full_ftc_no_normal",
+    "without_bn": 365.7919302554848,
+    "with_bn": 360.76940411882606,
+    "delta_cost_bn": -5.022526136658712
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_full_ftc_all_profit_capital",
+    "without_bn": 365.7919302554848,
+    "with_bn": 341.5523000026624,
+    "delta_cost_bn": -24.239630252822394
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_full_ftc_sole_all_capital",
+    "without_bn": 365.7919302554848,
+    "with_bn": 356.6198784126385,
+    "delta_cost_bn": -9.172051842846258
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_full_ftc_immediate_individual",
+    "without_bn": 365.7919302554848,
+    "with_bn": 362.4236733409292,
+    "delta_cost_bn": -3.368256914555559
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_full_ftc_signed_owner_rate",
+    "without_bn": 365.7919302554848,
+    "with_bn": 360.6426275171883,
+    "delta_cost_bn": -5.149302738296456
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_full_ftc_2022_owner_rate",
+    "without_bn": 365.7919302554848,
+    "with_bn": 360.7497604744542,
+    "delta_cost_bn": -5.042169781030566
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_full_ftc_state_one_pp",
+    "without_bn": 365.7919302554848,
+    "with_bn": 360.54072833727696,
+    "delta_cost_bn": -5.251201918207812
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_full_ftc_half_outside_owners",
+    "without_bn": 365.7919302554848,
+    "with_bn": 363.2806671871555,
+    "delta_cost_bn": -2.511263068329299
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_cfc_no_foreign_tax_no_qbai",
+    "without_bn": 365.7919302554848,
+    "with_bn": 363.18423600208484,
+    "delta_cost_bn": -2.607694253399927
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_cfc_ten_pct_tax_no_qbai",
+    "without_bn": 365.7919302554848,
+    "with_bn": 361.34436409103057,
+    "delta_cost_bn": -4.4475661644542015
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_cfc_normal_covered_by_qbai",
+    "without_bn": 365.7919302554848,
+    "with_bn": 360.76940411882606,
+    "delta_cost_bn": -5.022526136658712
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_full_ftc_tangible_normal_proxy",
+    "without_bn": 365.7919302554848,
+    "with_bn": 360.76940411882606,
+    "delta_cost_bn": -5.022526136658712
+  },
+  {
+    "which": "set",
+    "end": "low",
+    "arm": "foreign_full_ftc_individual_tangible_normal",
+    "without_bn": 365.7919302554848,
+    "with_bn": 362.4236733409292,
+    "delta_cost_bn": -3.368256914555559
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_full_ftc_top_owner_labor",
+    "without_bn": 455.9817845889793,
+    "with_bn": 450.95925845232057,
+    "delta_cost_bn": -5.022526136658712
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "domestic_replacement",
+    "without_bn": 455.9817845889793,
+    "with_bn": 455.9817845889793,
+    "delta_cost_bn": 0
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_no_ftc_same_income",
+    "without_bn": 455.9817845889793,
+    "with_bn": 455.9817845889793,
+    "delta_cost_bn": 0
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_half_ftc_same_income",
+    "without_bn": 455.9817845889793,
+    "with_bn": 453.4705215206499,
+    "delta_cost_bn": -2.511263068329356
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "half_domestic_full_ftc",
+    "without_bn": 455.9817845889793,
+    "with_bn": 453.4705215206499,
+    "delta_cost_bn": -2.511263068329356
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_full_ftc_no_normal",
+    "without_bn": 455.9817845889793,
+    "with_bn": 455.9817845889793,
+    "delta_cost_bn": 0
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_full_ftc_all_profit_capital",
+    "without_bn": 455.9817845889793,
+    "with_bn": 431.74215433615683,
+    "delta_cost_bn": -24.23963025282245
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_full_ftc_sole_all_capital",
+    "without_bn": 455.9817845889793,
+    "with_bn": 446.809732746133,
+    "delta_cost_bn": -9.172051842846258
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_full_ftc_immediate_individual",
+    "without_bn": 455.9817845889793,
+    "with_bn": 452.6135276744237,
+    "delta_cost_bn": -3.368256914555559
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_full_ftc_signed_owner_rate",
+    "without_bn": 455.9817845889793,
+    "with_bn": 450.8324818506828,
+    "delta_cost_bn": -5.149302738296456
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_full_ftc_2022_owner_rate",
+    "without_bn": 455.9817845889793,
+    "with_bn": 450.9396148079487,
+    "delta_cost_bn": -5.042169781030566
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_full_ftc_state_one_pp",
+    "without_bn": 455.9817845889793,
+    "with_bn": 450.73058267077147,
+    "delta_cost_bn": -5.251201918207812
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_full_ftc_half_outside_owners",
+    "without_bn": 455.9817845889793,
+    "with_bn": 453.4705215206499,
+    "delta_cost_bn": -2.511263068329356
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_cfc_no_foreign_tax_no_qbai",
+    "without_bn": 455.9817845889793,
+    "with_bn": 453.3740903355793,
+    "delta_cost_bn": -2.607694253399984
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_cfc_ten_pct_tax_no_qbai",
+    "without_bn": 455.9817845889793,
+    "with_bn": 451.534218424525,
+    "delta_cost_bn": -4.447566164454258
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_cfc_normal_covered_by_qbai",
+    "without_bn": 455.9817845889793,
+    "with_bn": 450.95925845232057,
+    "delta_cost_bn": -5.022526136658712
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_full_ftc_tangible_normal_proxy",
+    "without_bn": 455.9817845889793,
+    "with_bn": 454.78855664271924,
+    "delta_cost_bn": -1.1932279462600377
+  },
+  {
+    "which": "set",
+    "end": "high",
+    "arm": "foreign_full_ftc_individual_tangible_normal",
+    "without_bn": 455.9817845889793,
+    "with_bn": 455.3079077020374,
+    "delta_cost_bn": -0.673876886941855
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_full_ftc_top_owner_labor",
+    "without_bn": 281.75256367607324,
+    "with_bn": 276.7300375394145,
+    "delta_cost_bn": -5.022526136658712
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "domestic_replacement",
+    "without_bn": 281.75256367607324,
+    "with_bn": 281.75256367607324,
+    "delta_cost_bn": 0
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_no_ftc_same_income",
+    "without_bn": 281.75256367607324,
+    "with_bn": 281.75256367607324,
+    "delta_cost_bn": 0
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_half_ftc_same_income",
+    "without_bn": 281.75256367607324,
+    "with_bn": 279.2413006077438,
+    "delta_cost_bn": -2.511263068329413
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "half_domestic_full_ftc",
+    "without_bn": 281.75256367607324,
+    "with_bn": 279.2413006077438,
+    "delta_cost_bn": -2.511263068329413
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_full_ftc_no_normal",
+    "without_bn": 281.75256367607324,
+    "with_bn": 276.7300375394145,
+    "delta_cost_bn": -5.022526136658712
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_full_ftc_all_profit_capital",
+    "without_bn": 281.75256367607324,
+    "with_bn": 257.5129334232508,
+    "delta_cost_bn": -24.23963025282245
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_full_ftc_sole_all_capital",
+    "without_bn": 281.75256367607324,
+    "with_bn": 272.580511833227,
+    "delta_cost_bn": -9.172051842846258
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_full_ftc_immediate_individual",
+    "without_bn": 281.75256367607324,
+    "with_bn": 278.3843067615177,
+    "delta_cost_bn": -3.368256914555559
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_full_ftc_signed_owner_rate",
+    "without_bn": 281.75256367607324,
+    "with_bn": 276.6032609377768,
+    "delta_cost_bn": -5.149302738296456
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_full_ftc_2022_owner_rate",
+    "without_bn": 281.75256367607324,
+    "with_bn": 276.71039389504267,
+    "delta_cost_bn": -5.042169781030566
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_full_ftc_state_one_pp",
+    "without_bn": 281.75256367607324,
+    "with_bn": 276.5013617578654,
+    "delta_cost_bn": -5.251201918207812
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_full_ftc_half_outside_owners",
+    "without_bn": 281.75256367607324,
+    "with_bn": 279.2413006077438,
+    "delta_cost_bn": -2.511263068329413
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_cfc_no_foreign_tax_no_qbai",
+    "without_bn": 281.75256367607324,
+    "with_bn": 279.1448694226732,
+    "delta_cost_bn": -2.607694253400041
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_cfc_ten_pct_tax_no_qbai",
+    "without_bn": 281.75256367607324,
+    "with_bn": 277.3049975116189,
+    "delta_cost_bn": -4.447566164454315
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_cfc_normal_covered_by_qbai",
+    "without_bn": 281.75256367607324,
+    "with_bn": 276.7300375394145,
+    "delta_cost_bn": -5.022526136658712
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_full_ftc_tangible_normal_proxy",
+    "without_bn": 281.75256367607324,
+    "with_bn": 276.7300375394145,
+    "delta_cost_bn": -5.022526136658712
+  },
+  {
+    "which": "cash",
+    "end": "low",
+    "arm": "foreign_full_ftc_individual_tangible_normal",
+    "without_bn": 281.75256367607324,
+    "with_bn": 278.3843067615177,
+    "delta_cost_bn": -3.368256914555559
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_full_ftc_top_owner_labor",
+    "without_bn": 371.9424180095669,
+    "with_bn": 366.9198918729082,
+    "delta_cost_bn": -5.022526136658712
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "domestic_replacement",
+    "without_bn": 371.9424180095669,
+    "with_bn": 371.9424180095669,
+    "delta_cost_bn": 0
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_no_ftc_same_income",
+    "without_bn": 371.9424180095669,
+    "with_bn": 371.9424180095669,
+    "delta_cost_bn": 0
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_half_ftc_same_income",
+    "without_bn": 371.9424180095669,
+    "with_bn": 369.43115494123754,
+    "delta_cost_bn": -2.511263068329356
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "half_domestic_full_ftc",
+    "without_bn": 371.9424180095669,
+    "with_bn": 369.43115494123754,
+    "delta_cost_bn": -2.511263068329356
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_full_ftc_no_normal",
+    "without_bn": 371.9424180095669,
+    "with_bn": 371.9424180095669,
+    "delta_cost_bn": 0
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_full_ftc_all_profit_capital",
+    "without_bn": 371.9424180095669,
+    "with_bn": 347.70278775674444,
+    "delta_cost_bn": -24.23963025282245
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_full_ftc_sole_all_capital",
+    "without_bn": 371.9424180095669,
+    "with_bn": 362.77036616672063,
+    "delta_cost_bn": -9.172051842846258
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_full_ftc_immediate_individual",
+    "without_bn": 371.9424180095669,
+    "with_bn": 368.57416109501133,
+    "delta_cost_bn": -3.368256914555559
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_full_ftc_signed_owner_rate",
+    "without_bn": 371.9424180095669,
+    "with_bn": 366.79311527127044,
+    "delta_cost_bn": -5.149302738296456
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_full_ftc_2022_owner_rate",
+    "without_bn": 371.9424180095669,
+    "with_bn": 366.9002482285363,
+    "delta_cost_bn": -5.042169781030566
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_full_ftc_state_one_pp",
+    "without_bn": 371.9424180095669,
+    "with_bn": 366.6912160913591,
+    "delta_cost_bn": -5.251201918207812
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_full_ftc_half_outside_owners",
+    "without_bn": 371.9424180095669,
+    "with_bn": 369.43115494123754,
+    "delta_cost_bn": -2.511263068329356
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_cfc_no_foreign_tax_no_qbai",
+    "without_bn": 371.9424180095669,
+    "with_bn": 369.3347237561669,
+    "delta_cost_bn": -2.607694253399984
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_cfc_ten_pct_tax_no_qbai",
+    "without_bn": 371.9424180095669,
+    "with_bn": 367.49485184511263,
+    "delta_cost_bn": -4.447566164454258
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_cfc_normal_covered_by_qbai",
+    "without_bn": 371.9424180095669,
+    "with_bn": 366.9198918729082,
+    "delta_cost_bn": -5.022526136658712
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_full_ftc_tangible_normal_proxy",
+    "without_bn": 371.9424180095669,
+    "with_bn": 370.74919006330686,
+    "delta_cost_bn": -1.1932279462600377
+  },
+  {
+    "which": "cash",
+    "end": "high",
+    "arm": "foreign_full_ftc_individual_tangible_normal",
+    "without_bn": 371.9424180095669,
+    "with_bn": 371.26854112262504,
+    "delta_cost_bn": -0.673876886941855
+  }
+]

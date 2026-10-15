@@ -1,0 +1,49 @@
+{
+  "description": "Market yield on US Treasury securities at10-year constant maturity, quoted on investment basis",
+  "frequency": "annual",
+  "high_end_rule": "For S/P only, normal taxable-income proxy=min(max(capital_profit,0), r*max(book_net_equity,0)); exclude ScheduleC if net equity unavailable",
+  "limits": [
+    "booknetequity differs from market-value reproducible capital",
+    "yearend assets versus annual profit timing",
+    "depreciation and expensing differ between tax and economics",
+    "risk and intangibles excluded by nominal riskfree convention",
+    "equity basis avoids charging debt normal return twice but bookequity can mismeasure true equity"
+  ],
+  "observations": [
+    {
+      "rate": 0.029500000000000002,
+      "reported_percent": 2.95,
+      "source_cells": [
+        "H15/H15/RIFLGFCY10_N.A",
+        "2022-12-31",
+        "2.95"
+      ],
+      "year": 2022
+    },
+    {
+      "rate": 0.039599999999999996,
+      "reported_percent": 3.96,
+      "source_cells": [
+        "H15/H15/RIFLGFCY10_N.A",
+        "2023-12-31",
+        "3.96"
+      ],
+      "year": 2023
+    },
+    {
+      "rate": 0.0421,
+      "reported_percent": 4.21,
+      "source_cells": [
+        "H15/H15/RIFLGFCY10_N.A",
+        "2024-12-31",
+        "4.21"
+      ],
+      "year": 2024
+    }
+  ],
+  "rule_status": "conditional tax-book proxy; observed nominal Treasury yield is not an identified normal taxable-profit share",
+  "series": "H15/H15/RIFLGFCY10_N.A",
+  "source": "https://www.federalreserve.gov/datadownload/Preview.aspx?pi=400&preview=H15%2FH15%2FRIFLGFCY10_N.A&rel=H15",
+  "timing": "Use2022 yield with TY2022 income/assets;2024 yield alongside frozen2022 inputs is a sensitivity, not a matched2024 measurement",
+  "unit": "percent per year"
+}
