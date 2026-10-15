@@ -183,3 +183,17 @@ session: 75b08f57-63cc-4e3d-96dc-60050327b5c1
   consumed: 2026-10-15 0dafb91c / dd14cb37 — Sol lanes resumed 09:35: who-wins phase B on v8 (p8-winners) and the
   comparators' round-4 fixes (p8-c4fix); the world ledger on v8 follows who-wins, whose channels it pins. Round 3's
   comparator fixes were done by the parent meanwhile (4548e70f, consumers 608fc28f) — session 75b08f57
+
+## Open ask, 2026-10-15 11:00 JST: one interest rate per end of the band
+session: 75b08f57-63cc-4e3d-96dc-60050327b5c1
+
+- **Use one rate for every present value within each end (recommend: yes, 2% at the low end and 3% at the high).**
+  Round 5 found, and I checked at source, that the account calls two rates "what the money costs the government"
+  but uses them differently. The return on public capital is charged at 2% at the low end and 3% at the high (your
+  2026-09-27 choice, tied to each end). The Social Security and Part A promises are discounted at the Trustees'
+  ~2% at both ends. So the high end pairs a 3% capital charge with promises valued at 2%, and both choices raise the
+  cost. On the September 28 case, valuing the promises at 3% at the high end lowered it by $32.5bn (low end +$2.4bn);
+  scaled to v8 that is about −$36bn, giving roughly $368–420bn before the other round-5 fixes. The other consistent
+  choice, the Trustees' ~2% for both legs at both ends, lowers the high end by about $14–20bn instead and drops the
+  rate from the band. A lane (`one_rate_2026_10_15`) is computing both arms on v8 now. I'll fold your choice into v9
+  with the other round-5 fixes, so the consumer lanes rerun only once.
