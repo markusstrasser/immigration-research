@@ -21,12 +21,18 @@ HERE = Path(__file__).resolve().parent
 GATES = {}
 PINS = {}
 CUT_CACHE = {}
+GATE_COUNTS = {}
+GATE_SCOPE = "setup"
 
 
 def require(name, ok, **detail):
-    GATES[name] = dict(passed=bool(ok), **detail)
+    scoped = f"{GATE_SCOPE}/{name}"
+    occurrence = GATE_COUNTS.get(scoped, 0) + 1
+    GATE_COUNTS[scoped] = occurrence
+    key = scoped if occurrence == 1 else f"{scoped}/check_{occurrence}"
+    GATES[key] = dict(passed=bool(ok), **detail)
     if not ok:
-        raise RuntimeError(f"[BLOCKED] P7 {name}: {detail}")
+        raise RuntimeError(f"[BLOCKED] P7 {scoped}: {detail}")
 
 
 def pin(path, wl):
@@ -35,9 +41,9 @@ def pin(path, wl):
     value = wl.file_sha(path)
     require(f"within_run_pin_{key}",key not in PINS or PINS[key]==value,path=key)
     manifest = HERE / "inputs/pins.json"
-    if manifest.exists():
-        expected = json.loads(manifest.read_text())["sha256"]
-        require(f"pin_{key}", key in expected and expected[key] == value, path=key)
+    require("pin_manifest_exists", manifest.is_file(), path=str(manifest))
+    expected = json.loads(manifest.read_text())["sha256"]
+    require(f"pin_{key}", key in expected and expected[key] == value, path=key)
     PINS[key] = value
     return path
 
@@ -45,9 +51,9 @@ def pin(path, wl):
 def pin_generated(path, logical_key, wl):
     value=wl.file_sha(path)
     manifest=HERE/"inputs/pins.json"
-    if manifest.exists():
-        expected=json.loads(manifest.read_text())["sha256"]
-        require(f"pin_{logical_key}",expected.get(logical_key)==value)
+    require("pin_manifest_exists", manifest.is_file(), path=str(manifest))
+    expected=json.loads(manifest.read_text())["sha256"]
+    require(f"pin_{logical_key}",expected.get(logical_key)==value)
     PINS[logical_key]=value
     return Path(path)
 
@@ -80,6 +86,41 @@ def pooler(d, weights, include=None):
         mean = np.divide(num, den, out=np.zeros_like(num), where=den > 0)
         return np.where(use, mean[codes], 0.0)
     return pool
+
+
+def mixed_resource_change(d, other_weights, member_weights, resources, presence):
+    """Presence effect (before minus after) on an equal per-person scale.
+
+    All co-residents pool their own net cash/noncash levels before departure.
+    Remaining residents pool their own levels minus presence effects afterward.
+    Survey weighted dollars are conserved in each unit in both worlds. No
+    re-partnering or household economies of scale are estimated by this arm.
+    """
+    other = d.other.to_numpy(bool)
+    member = d.target.to_numpy(bool)
+    combined_weights = np.where(member, member_weights, other_weights)
+    before = pooler(d, combined_weights, member | other)(resources)
+    after = pooler(d, other_weights)(resources - presence)
+    change = np.where(other, before - after, 0.)
+    check_total("mixed_before_levels_conserved", before, combined_weights,
+                total(np.where(member | other, resources, 0), combined_weights))
+    check_total("mixed_after_levels_conserved", after, other_weights,
+                total(np.where(other, resources - presence, 0), other_weights))
+    forward = pooler(d, combined_weights, member | other)(np.where(member, resources, 0))
+    reverse = pooler(d, combined_weights, member | other)(np.where(other, resources, 0))
+    forward_bn = total(np.where(other, forward, 0), other_weights)
+    reverse_bn = total(np.where(member, reverse, 0), member_weights)
+    # Presence receives the forward contribution and pays the reverse one.
+    boundary_bn = forward_bn - reverse_bn
+    check_total("mixed_bidirectional_boundary", change, other_weights,
+                total(presence, other_weights) + boundary_bn)
+    return change, dict(other_before_level_bn=total(np.where(other, before, 0), other_weights),
+                        other_after_level_bn=total(after, other_weights),
+                        forward_member_to_other_bn=forward_bn,
+                        reverse_other_to_member_bn=reverse_bn,
+                        presence_boundary_change_bn=boundary_bn,
+                        presence_net_bn=total(change, other_weights),
+                        removal_level_change_diagnostic_bn=-total(change, other_weights))
 
 
 def unequal_wages(d, wages, weights, retention):
@@ -133,7 +174,7 @@ def lineage_payers(d, weights, lineage, wl):
     return out, pd.DataFrame(rows)
 
 
-def transport(x, old_weights, new_weights, d, by_state=True):
+def transport(x, old_weights, new_weights, d, by_state=True, source_other=None):
     """Preserve each signed channel's national totals, and state totals if asked.
 
     Reweighting the payer population changes who bears a fixed national channel.
@@ -142,13 +183,17 @@ def transport(x, old_weights, new_weights, d, by_state=True):
     """
     out = np.zeros(len(d))
     other = d.other.to_numpy()
+    source_other = other if source_other is None else np.asarray(source_other, bool)
     groups = np.unique(d.st[other]) if by_state else [None]
     for state in groups:
         m = other if state is None else other & d.st.eq(state).to_numpy()
         for positive in (True, False):
             sign = x > 0 if positive else x < 0
             active = m & sign
-            old, new = np.dot(old_weights[active], x[active]), np.dot(new_weights[active], x[active])
+            source_active = source_other & sign
+            if state is not None:
+                source_active &= d.st.eq(state).to_numpy()
+            old, new = np.dot(old_weights[source_active], x[source_active]), np.dot(new_weights[active], x[active])
             if old == 0:
                 continue
             require(f"transport_has_mass_{state}_{positive}", new != 0)
@@ -281,10 +326,12 @@ def property_key(d, I, B, weights):
     return key, missing
 
 
-def social_channels(wl, d, I, ch, meta, weights, population, rule, ctx):
+def social_channels(wl, d, I, ch, meta, weights, population, rule, ctx, *, notes, source_data=None):
     """Allocate every row of the authoritative live social set or fail closed."""
-    source = pin(HERE/"inputs/social_oct14.json",wl)
-    data = json.loads(source.read_text())
+    data = source_data
+    if data is None:
+        source = pin(HERE/"inputs/social_oct14.json",wl)
+        data = json.loads(source.read_text())
     primary = data["lineage_social_rows"]
     state_share = {wl.POSTAL[k]: v for k, v in meta["group_state_share"].items()}
     ones = np.ones(len(d))
@@ -311,6 +358,8 @@ def social_channels(wl, d, I, ch, meta, weights, population, rule, ctx):
         "private_security": (crimekey, "crime victim risk within group states; signed net may be a benefit"),
         "school_disruption": (pupils, "ages 5-17 in group states; school type unavailable"),
         "pm25_consumption": (place_key, "35% local group-state resident exposure, 65% national residents; assumed dispersion"),
+        "pm25_respending": (place_key, "age-mortality recipients; budget-saving counterflow"),
+        "pm25_government_side": (place_key, "age-mortality recipients; paired removed public purchases"),
         "road_crash_externality": (d.metro_worker.to_numpy(float), "state group vehicle-minutes by urban area, receiving metro workers; driving proxy"),
         "restaurant_variety_market_size": (consumer, "SPM resources within group states, consumption proxy"),
         "formal_volunteering_outside_group": (place_key, "all other residents nationally; beneficiary location unobserved"),
@@ -352,17 +401,17 @@ def social_channels(wl, d, I, ch, meta, weights, population, rule, ctx):
             for L in wl.LEVELS:
                 fiscal_key = ctx["tax_fed"] + ctx["tax_sl"] if rule == "a" else ctx["programme_receipts"] if rule == "c" else ones
                 arrs[L] = wl.alloc_states(dd, earn, {s: amount[L] * private_share * v for s, v in meta["scale"]["state_share"].items()},
-                                             notes={}) + wl.alloc(dd, fiscal_key, amount[L] * (1-private_share))
+                                             notes=notes, label=f"{population}/{rule}/{item}/{L}") + wl.alloc(dd, fiscal_key, amount[L] * (1-private_share))
         elif item in keys:
             key, key_name = keys[item]
             for L in wl.LEVELS:
-                if item == "pm25_consumption":
-                    arrs[L] = wl.alloc_states(dd,key,{s:amount[L]*local_fraction*v for s,v in state_share.items()},notes={}) + wl.alloc(dd,key,amount[L]*(1-local_fraction))
+                if item in ("pm25_consumption", "pm25_respending", "pm25_government_side"):
+                    arrs[L] = wl.alloc_states(dd,key,{s:amount[L]*local_fraction*v for s,v in state_share.items()},notes=notes,label=f"{population}/{rule}/{item}/{L}") + wl.alloc(dd,key,amount[L]*(1-local_fraction))
                 elif item in ("formal_volunteering_outside_group","total_consumer_scale","total_trade_travel_fdi"):
                     arrs[L] = wl.alloc(dd,key,amount[L])
                 else:
                     shares = drive_state if item == "road_crash_externality" else pupil_state if item == "school_disruption" else state_share
-                    arrs[L] = wl.alloc_states(dd, key, {s: amount[L] * v for s, v in shares.items()}, notes={})
+                    arrs[L] = wl.alloc_states(dd, key, {s: amount[L] * v for s, v in shares.items()}, notes=notes,label=f"{population}/{rule}/{item}/{L}")
         else:
             raise RuntimeError(f"[BLOCKED] adopted social channel has no allocation/exclusion declaration: {item}")
         arrays[item], values[item] = arrs, amount
@@ -484,9 +533,11 @@ def replicate_weights(d, B, chunk_size=10000):
 def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
     wl = types.SimpleNamespace(**namespace)
     GATES.clear()
+    GATE_COUNTS.clear()
     PINS.clear()
     CUT_CACHE.clear()
     out = wl.DERIVED
+    allocation_notes = {}
     w = d.pw.to_numpy().copy()
     other = d.other.to_numpy()
     # Compare actual arrays to the committed live control, not rounded numbers
@@ -596,7 +647,7 @@ def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
             kf=ks=(low+high)/2
             programme_key_rows.extend(dict(population=population,level=L,**r) for L,rs in (("low",rlow),("high",rhigh)) for r in rs)
         social_ctx=dict(ctx,programme_receipts=kf)
-        soc, social_totals, cov = social_channels(wl,dd,I,channels,meta,weights,population,rule,social_ctx)
+        soc, social_totals, cov = social_channels(wl,dd,I,channels,meta,weights,population,rule,social_ctx,notes=allocation_notes)
         coverage.extend(cov.to_dict("records"))
         pkey, property_missing = property_key(d,I,B,weights)
         gross_owner = {}
@@ -675,7 +726,7 @@ def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
             raise RuntimeError(f"unknown financing frame {frame}")
         keysl = cx["property_key"] if cap_geo else cx["ks"]
         state_share = {wl.POSTAL[k]:v for k,v in meta["group_state_share"].items()}
-        slarr = -wl.alloc_states(dd,keysl,{s:f["state_local"]*v for s,v in state_share.items()},notes={})
+        slarr = -wl.alloc_states(dd,keysl,{s:f["state_local"]*v for s,v in state_share.items()},notes=allocation_notes,label=f"{population}/{rule}/{frame}/{L}")
         if cap_geo:
             require("capitalization_renters_zero", not np.any(slarr[d.H_TENURE.ne(1).to_numpy()]))
         wages = cx["statew"][L] if wage_geo else cx["ch"]["wages"][L]
@@ -952,7 +1003,7 @@ def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
               mixed_resources="CPS personal cash income minus own taxes/FICA plus per-capita SPM noncash benefits; observed resources proxy, no removal behavioral response",
               owner_types=owner_meta,replicate_se="160 official SDR weights; conditional on fixed allocations, sharing assignments and model; not total estimation uncertainty",
               union_population=member_info["row4_members_m"],lineage_population=member_info["members_m"],
-              nest_sensitivities=nest_info,
+              nest_sensitivities=nest_info, allocation_notes=allocation_notes,
               instrument="LLM implementation; deterministic closure and signed, matched sensitivity arms are the verification evidence")
     (out/"p7_inputs.json").write_text(json.dumps(info,indent=1,default=float)+"\n")
     if "years" in cohort:
@@ -963,10 +1014,6 @@ def run(namespace, B, d, I, ch, totals, meta, fin, ctx, nets, pnets):
         actual=out/"p7_trust_inputs.json" if path=="generated:p7_trust_inputs.json" else wl.ROOT/path
         require(f"final_source_pin_{path}",wl.file_sha(actual)==digest)
     (out/"p7_gates.json").write_text(json.dumps(GATES,indent=1,default=float)+"\n")
-    manifest=HERE/"inputs/pins.json"
-    if not manifest.exists():
-        manifest.parent.mkdir(exist_ok=True)
-        manifest.write_text(json.dumps(dict(sha256=PINS),indent=1)+"\n")
     # Clear the obsolete proposed status without rewriting the hybrid arrays.
     registry=pd.read_csv(out/"channels.csv")
     registry.loc[registry.id.eq("scale"),["status","in_net","note"]]=[

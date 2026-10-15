@@ -39,6 +39,17 @@ def frame():
         PRIV=[1, 1, 2, 1, 2, 1, 1, 1]))
 
 
+def test_state_fallback_notice_is_persisted_or_fails_loudly():
+    d = frame()
+    notes = {}
+    amounts = {6: 1.}
+    result = wl.alloc_states(d,np.zeros(len(d)),amounts,notes=notes,label="fixture")
+    assert np.dot(d.pw,result)/1e9 == pytest.approx(1.)
+    assert notes["state_fallbacks"] == ["[DEGRADED] fixture: CA step 2"]
+    with pytest.raises(RuntimeError,match="unrecorded state allocation fallback"):
+        wl.alloc_states(d,np.zeros(len(d)),amounts,label="fixture")
+
+
 def context(d):
     tax = d.earn.to_numpy() * 0.2 + 100.0
     naics = pd.DataFrame(dict(census_code=[8680, 770], naics=["722", "23"], exclude=["", ""],
@@ -201,7 +212,7 @@ def test_alloc_states_falls_back_and_records():
     tx = d.st.eq(48).to_numpy()
     assert weighted_total(d, np.where(tx, out, 0)) == pytest.approx(0.5, rel=1e-12)
     assert out[4] > 0 and out[3] == 0 and out[5] == 0    # Texas: only the earner, by the fallback
-    assert notes["state_fallbacks"] == ["t: TX step 1"]
+    assert notes["state_fallbacks"] == ["[DEGRADED] t: TX step 1"]
 
 
 def test_counterfactual_phrasings():
@@ -276,7 +287,8 @@ def test_cases_chain_and_configure(tmp_path):
         c = wl.CASES[case]
         assert c["prev"] in wl.CASES and wl.CASES[c["prev"]]["model"] != c["model"]
         assert c["consumption_proposal"] == (case == "sept24")   # inside the fiscal channel from Sept 26 on
-    assert wl.DEFAULT_CASE == "oct14" and wl.RUNNABLE == ("oct14",)
+    assert wl.DEFAULT_CASE == "oct15" and wl.RUNNABLE == ("oct15",)
+    assert wl.CASES["oct15"]["prev"] == "oct14"
     assert wl.CASES["oct14"]["prev"] == "oct07"
     assert wl.CASES["sept26_schools"]["prev"] == "sept26"
     assert len({wl.CASES[c]["model"] for c in wl.CASES}) == len(wl.CASES)

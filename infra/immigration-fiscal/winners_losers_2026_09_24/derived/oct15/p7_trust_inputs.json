@@ -1,0 +1,3083 @@
+{
+ "case": "oct15",
+ "rows": {
+  "low": {
+   "payroll_bn": 155.68611312092014,
+   "cash_benefits_bn": 79.32271811176655,
+   "accrual_bn": 84.05157975515105,
+   "hi_payout_fraction": 0.28103172788422814,
+   "trust_cost_bn": 7.688184745997461,
+   "set_cost_bn": 365.79193025548454,
+   "cash_cost_bn": 281.7525636760737
+  },
+  "high": {
+   "payroll_bn": 155.68611312092014,
+   "cash_benefits_bn": 79.32271811176655,
+   "accrual_bn": 84.05157975515105,
+   "hi_payout_fraction": 0.28103172788422814,
+   "trust_cost_bn": 7.688184745997461,
+   "set_cost_bn": 455.9817845889791,
+   "cash_cost_bn": 371.9424180095667
+  }
+ },
+ "programmes": {
+  "low": [
+   {
+    "id": "general_public_services",
+    "source_id": "general_public_services",
+    "source_side": "spending",
+    "source_parent": "general_public_services",
+    "national_bn": 402.771128442,
+    "response": 0.6005266346459308,
+    "amount_bn": 30.554314815439792,
+    "federal_share": 0.11433631720719539,
+    "state_local_bn": 27.060846984653157,
+    "jurisdiction": {
+     "federal": 0.11433631720719539,
+     "state_local": 0.8856636827928046
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "public_order_safety",
+    "source_id": "public_order_safety",
+    "source_side": "spending",
+    "source_parent": "public_order_safety",
+    "national_bn": 521.2025117960001,
+    "response": 1,
+    "amount_bn": 74.60544789447195,
+    "federal_share": 0.15712907371574752,
+    "state_local_bn": 62.882762972665105,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "state-local service delivery; funding retains grants"
+   },
+   {
+    "id": "economic_affairs_services",
+    "source_id": "economic_affairs_services",
+    "source_side": "spending",
+    "source_parent": "economic_affairs_services",
+    "national_bn": 453.136829594,
+    "response": 0.3844994797314016,
+    "amount_bn": 15.295516210865138,
+    "federal_share": 0.07117592782448227,
+    "state_local_bn": 14.206843653002403,
+    "jurisdiction": {
+     "federal": 0.07117592782448227,
+     "state_local": 0.9288240721755178
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "housing_community_services",
+    "source_id": "housing_community_services",
+    "source_side": "spending",
+    "source_parent": "housing_community_services",
+    "national_bn": 14.747693443000001,
+    "response": 1,
+    "amount_bn": 1.8629707866117102,
+    "federal_share": 0.19013551626883124,
+    "state_local_bn": 1.5087538743055422,
+    "jurisdiction": {
+     "federal": 0.19013551626883124,
+     "state_local": 0.8098644837311688
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "health_services",
+    "source_id": "health_services",
+    "source_side": "spending",
+    "source_parent": "health_services",
+    "national_bn": 308.35875489899996,
+    "response": 1,
+    "amount_bn": 19.36563373598015,
+    "federal_share": 0.7595529841582421,
+    "state_local_bn": 4.6564088417009,
+    "jurisdiction": {
+     "federal": 0.7595529841582421,
+     "state_local": 0.24044701584175787
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "recreation_culture",
+    "source_id": "recreation_culture",
+    "source_side": "spending",
+    "source_parent": "recreation_culture",
+    "national_bn": 54.483657029,
+    "response": 0.8563914832367988,
+    "amount_bn": 5.894141167860749,
+    "federal_share": 0.015602952904848567,
+    "state_local_bn": 5.802175160804088,
+    "jurisdiction": {
+     "federal": 0.015602952904848567,
+     "state_local": 0.9843970470951514
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "education_k12",
+    "source_id": "education_services",
+    "source_side": "spending",
+    "source_parent": "education_services",
+    "national_bn": 950.2544781031669,
+    "response": 1,
+    "amount_bn": 168.09902996665343,
+    "federal_share": 0.08203253380425621,
+    "state_local_bn": 154.30944060845124,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "state-local service delivery; funding retains grants"
+   },
+   {
+    "id": "education_college_other",
+    "source_id": "education_services",
+    "source_side": "spending",
+    "source_parent": "education_services",
+    "national_bn": 276.1423870558331,
+    "response": 1,
+    "amount_bn": 48.84930138863505,
+    "federal_share": 0.08203253380425621,
+    "state_local_bn": 44.84206942115754,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "state-local service delivery; funding retains grants"
+   },
+   {
+    "id": "income_security_services",
+    "source_id": "income_security_services",
+    "source_side": "spending",
+    "source_parent": "income_security_services",
+    "national_bn": 168.26451691100002,
+    "response": 1,
+    "amount_bn": 29.87690988958276,
+    "federal_share": 0.7303160328342441,
+    "state_local_bn": 8.057323585676485,
+    "jurisdiction": {
+     "federal": 0.7303160328342441,
+     "state_local": 0.26968396716575593
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "social_security",
+    "source_id": "social_security",
+    "source_side": "spending",
+    "source_parent": "social_security",
+    "national_bn": 1447.965,
+    "response": 1,
+    "amount_bn": 108.12226356225642,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "federal programme authority"
+   },
+   {
+    "id": "medicare",
+    "source_id": "medicare",
+    "source_side": "spending",
+    "source_parent": "medicare",
+    "national_bn": 1102.358,
+    "response": 1,
+    "amount_bn": 76.72356120560035,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "federal programme authority"
+   },
+   {
+    "id": "unemployment",
+    "source_id": "unemployment",
+    "source_side": "spending",
+    "source_parent": "unemployment",
+    "national_bn": 36.468,
+    "response": 1,
+    "amount_bn": 4.97087048909703,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "railroad_retirement",
+    "source_id": "railroad_retirement",
+    "source_side": "spending",
+    "source_parent": "railroad_retirement",
+    "national_bn": 14.493,
+    "response": 1,
+    "amount_bn": 0.5667475579522138,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "pension_guaranty",
+    "source_id": "pension_guaranty",
+    "source_side": "spending",
+    "source_parent": "pension_guaranty",
+    "national_bn": 0.771,
+    "response": 1,
+    "amount_bn": 0.040048841015700505,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "veterans_life_insurance",
+    "source_id": "veterans_life_insurance",
+    "source_side": "spending",
+    "source_parent": "veterans_life_insurance",
+    "national_bn": 0.449,
+    "response": 1,
+    "amount_bn": 0.02484073724998756,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "workers_compensation",
+    "source_id": "workers_compensation",
+    "source_side": "spending",
+    "source_parent": "workers_compensation",
+    "national_bn": 11.923,
+    "response": 1,
+    "amount_bn": 1.6429054437733868,
+    "federal_share": 0.3211440073806928,
+    "state_local_bn": 1.1152962058124458,
+    "jurisdiction": {
+     "federal": 0.3211440073806928,
+     "state_local": 0.6788559926193072
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "military_medical",
+    "source_id": "military_medical",
+    "source_side": "spending",
+    "source_parent": "military_medical",
+    "national_bn": 7.157,
+    "response": 1,
+    "amount_bn": 0.35152338176889875,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "veterans_pension_disability",
+    "source_id": "veterans_pension_disability",
+    "source_side": "spending",
+    "source_parent": "veterans_pension_disability",
+    "national_bn": 180.525,
+    "response": 1,
+    "amount_bn": 9.987469956898225,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "veterans_readjustment",
+    "source_id": "veterans_readjustment",
+    "source_side": "spending",
+    "source_parent": "veterans_readjustment",
+    "national_bn": 11.391,
+    "response": 1,
+    "amount_bn": 0.6302023001462199,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "veterans_other",
+    "source_id": "veterans_other",
+    "source_side": "spending",
+    "source_parent": "veterans_other",
+    "national_bn": 37.526,
+    "response": 1,
+    "amount_bn": 1.735349895903291,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "snap",
+    "source_id": "snap",
+    "source_side": "spending",
+    "source_parent": "snap",
+    "national_bn": 97.391,
+    "response": 1,
+    "amount_bn": 14.651423300507918,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "federal programme authority"
+   },
+   {
+    "id": "black_lung",
+    "source_id": "black_lung",
+    "source_side": "spending",
+    "source_parent": "black_lung",
+    "national_bn": 0.173,
+    "response": 1,
+    "amount_bn": 0.03491914237904482,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "ssi",
+    "source_id": "ssi",
+    "source_side": "spending",
+    "source_parent": "ssi",
+    "national_bn": 65.134,
+    "response": 1,
+    "amount_bn": 5.463729191757186,
+    "federal_share": 0.9206712316148248,
+    "state_local_bn": 0.4334309075722264,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "federal programme authority"
+   },
+   {
+    "id": "refundable_tax_credits",
+    "source_id": "refundable_tax_credits",
+    "source_side": "spending",
+    "source_parent": "refundable_tax_credits",
+    "national_bn": 228.809,
+    "response": 1,
+    "amount_bn": 37.36358488817567,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "federal programme authority"
+   },
+   {
+    "id": "other_federal_benefits",
+    "source_id": "other_federal_benefits",
+    "source_side": "spending",
+    "source_parent": "other_federal_benefits",
+    "national_bn": 66.62745901599999,
+    "response": 1,
+    "amount_bn": 6.980664037433889,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "temporary_disability",
+    "source_id": "temporary_disability",
+    "source_side": "spending",
+    "source_parent": "temporary_disability",
+    "national_bn": 13.138,
+    "response": 1,
+    "amount_bn": 2.6518363690139717,
+    "federal_share": 0,
+    "state_local_bn": 2.6518363690139717,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "medicaid_and_chip_other_medical",
+    "source_id": "medicaid_and_chip_other_medical",
+    "source_side": "spending",
+    "source_parent": "medicaid_and_chip_other_medical",
+    "national_bn": 954.2,
+    "response": 1,
+    "amount_bn": 126.26375556929503,
+    "federal_share": 0.6372672555490819,
+    "state_local_bn": 45.799998582330275,
+    "jurisdiction": {
+     "federal": 0.6372672555490819,
+     "state_local": 0.3627327444509181
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "family_and_general_assistance",
+    "source_id": "family_and_general_assistance",
+    "source_side": "spending",
+    "source_parent": "family_and_general_assistance",
+    "national_bn": 63.065,
+    "response": 1,
+    "amount_bn": 12.367613566156654,
+    "federal_share": 0.670334394404012,
+    "state_local_bn": 4.07717681606419,
+    "jurisdiction": {
+     "federal": 0.670334394404012,
+     "state_local": 0.329665605595988
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "energy_assistance",
+    "source_id": "energy_assistance",
+    "source_side": "spending",
+    "source_parent": "energy_assistance",
+    "national_bn": 5.218,
+    "response": 1,
+    "amount_bn": 0.6052243015615347,
+    "federal_share": 0.9211862782675355,
+    "state_local_bn": 0.04769997968899597,
+    "jurisdiction": {
+     "federal": 0.9211862782675355,
+     "state_local": 0.07881372173246448
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "other_state_welfare",
+    "source_id": "other_state_welfare",
+    "source_side": "spending",
+    "source_parent": "other_state_welfare",
+    "national_bn": 22.385,
+    "response": 1,
+    "amount_bn": 5.615098472741102,
+    "federal_share": 0.670334394404012,
+    "state_local_bn": 1.8511048384973028,
+    "jurisdiction": {
+     "federal": 0.670334394404012,
+     "state_local": 0.329665605595988
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "education_benefits",
+    "source_id": "education_benefits",
+    "source_side": "spending",
+    "source_parent": "education_benefits",
+    "national_bn": 64.479,
+    "response": 1,
+    "amount_bn": 9.614450986175433,
+    "federal_share": 0.07295759940644665,
+    "state_local_bn": 8.91300372261313,
+    "jurisdiction": {
+     "federal": 0.07295759940644665,
+     "state_local": 0.9270424005935534
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "employment_training",
+    "source_id": "employment_training",
+    "source_side": "spending",
+    "source_parent": "employment_training",
+    "national_bn": 1.377,
+    "response": 1,
+    "amount_bn": 0.17721892850395052,
+    "federal_share": 0.07117592782448226,
+    "state_local_bn": 0.16460520683962127,
+    "jurisdiction": {
+     "federal": 0.07117592782448226,
+     "state_local": 0.9288240721755178
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "other_state_benefits",
+    "source_id": "other_state_benefits",
+    "source_side": "spending",
+    "source_parent": "other_state_benefits",
+    "national_bn": 2.875,
+    "response": 1,
+    "amount_bn": 0.3631782173254553,
+    "federal_share": 0,
+    "state_local_bn": 0.3631782173254553,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "housing_subsidies",
+    "source_id": "housing_subsidies",
+    "source_side": "spending",
+    "source_parent": "housing_subsidies",
+    "national_bn": 55.003189000000006,
+    "response": 1,
+    "amount_bn": 4.495877818341355,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   }
+  ],
+  "high": [
+   {
+    "id": "general_public_services",
+    "source_id": "general_public_services",
+    "source_side": "spending",
+    "source_parent": "general_public_services",
+    "national_bn": 402.771128442,
+    "response": 0.8510539647701243,
+    "amount_bn": 43.300944977812875,
+    "federal_share": 0.25252336938997755,
+    "state_local_bn": 32.36644445424554,
+    "jurisdiction": {
+     "federal": 0.25252336938997755,
+     "state_local": 0.7474766306100225
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "public_order_safety",
+    "source_id": "public_order_safety",
+    "source_side": "spending",
+    "source_parent": "public_order_safety",
+    "national_bn": 521.2025117960001,
+    "response": 1,
+    "amount_bn": 74.60544789447195,
+    "federal_share": 0.15712907371574752,
+    "state_local_bn": 62.882762972665105,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "state-local service delivery; funding retains grants"
+   },
+   {
+    "id": "economic_affairs_services",
+    "source_id": "economic_affairs_services",
+    "source_side": "spending",
+    "source_parent": "economic_affairs_services",
+    "national_bn": 453.136829594,
+    "response": 0.6387399411939584,
+    "amount_bn": 25.409285681957567,
+    "federal_share": 0.2728515214577037,
+    "state_local_bn": 18.476323424482,
+    "jurisdiction": {
+     "federal": 0.2728515214577037,
+     "state_local": 0.7271484785422964
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "housing_community_services",
+    "source_id": "housing_community_services",
+    "source_side": "spending",
+    "source_parent": "housing_community_services",
+    "national_bn": 14.747693443000001,
+    "response": 1,
+    "amount_bn": 1.8629707866117102,
+    "federal_share": 0.19013551626883124,
+    "state_local_bn": 1.5087538743055422,
+    "jurisdiction": {
+     "federal": 0.19013551626883124,
+     "state_local": 0.8098644837311688
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "health_services",
+    "source_id": "health_services",
+    "source_side": "spending",
+    "source_parent": "health_services",
+    "national_bn": 308.35875489899996,
+    "response": 1,
+    "amount_bn": 19.36563373598015,
+    "federal_share": 0.7595529841582421,
+    "state_local_bn": 4.6564088417009,
+    "jurisdiction": {
+     "federal": 0.7595529841582421,
+     "state_local": 0.24044701584175787
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "recreation_culture",
+    "source_id": "recreation_culture",
+    "source_side": "spending",
+    "source_parent": "recreation_culture",
+    "national_bn": 54.483657029,
+    "response": 1,
+    "amount_bn": 6.882531275980676,
+    "federal_share": 0.11398649021737128,
+    "state_local_bn": 6.098015692020352,
+    "jurisdiction": {
+     "federal": 0.11398649021737128,
+     "state_local": 0.8860135097826287
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "education_k12",
+    "source_id": "education_services",
+    "source_side": "spending",
+    "source_parent": "education_services",
+    "national_bn": 950.2544781031669,
+    "response": 1,
+    "amount_bn": 168.09902996665343,
+    "federal_share": 0.08203253380425621,
+    "state_local_bn": 154.30944060845124,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "state-local service delivery; funding retains grants"
+   },
+   {
+    "id": "education_college_other",
+    "source_id": "education_services",
+    "source_side": "spending",
+    "source_parent": "education_services",
+    "national_bn": 276.1423870558331,
+    "response": 1,
+    "amount_bn": 48.84930138863505,
+    "federal_share": 0.08203253380425621,
+    "state_local_bn": 44.84206942115754,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "state-local service delivery; funding retains grants"
+   },
+   {
+    "id": "income_security_services",
+    "source_id": "income_security_services",
+    "source_side": "spending",
+    "source_parent": "income_security_services",
+    "national_bn": 168.26451691100002,
+    "response": 1,
+    "amount_bn": 29.87690988958276,
+    "federal_share": 0.7303160328342441,
+    "state_local_bn": 8.057323585676485,
+    "jurisdiction": {
+     "federal": 0.7303160328342441,
+     "state_local": 0.26968396716575593
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "social_security",
+    "source_id": "social_security",
+    "source_side": "spending",
+    "source_parent": "social_security",
+    "national_bn": 1447.965,
+    "response": 1,
+    "amount_bn": 108.12226356225642,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "federal programme authority"
+   },
+   {
+    "id": "medicare",
+    "source_id": "medicare",
+    "source_side": "spending",
+    "source_parent": "medicare",
+    "national_bn": 1102.358,
+    "response": 1,
+    "amount_bn": 76.72356120560035,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "federal programme authority"
+   },
+   {
+    "id": "unemployment",
+    "source_id": "unemployment",
+    "source_side": "spending",
+    "source_parent": "unemployment",
+    "national_bn": 36.468,
+    "response": 1,
+    "amount_bn": 4.97087048909703,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "railroad_retirement",
+    "source_id": "railroad_retirement",
+    "source_side": "spending",
+    "source_parent": "railroad_retirement",
+    "national_bn": 14.493,
+    "response": 1,
+    "amount_bn": 0.5667475579522138,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "pension_guaranty",
+    "source_id": "pension_guaranty",
+    "source_side": "spending",
+    "source_parent": "pension_guaranty",
+    "national_bn": 0.771,
+    "response": 1,
+    "amount_bn": 0.040048841015700505,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "veterans_life_insurance",
+    "source_id": "veterans_life_insurance",
+    "source_side": "spending",
+    "source_parent": "veterans_life_insurance",
+    "national_bn": 0.449,
+    "response": 1,
+    "amount_bn": 0.02484073724998756,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "workers_compensation",
+    "source_id": "workers_compensation",
+    "source_side": "spending",
+    "source_parent": "workers_compensation",
+    "national_bn": 11.923,
+    "response": 1,
+    "amount_bn": 1.6429054437733868,
+    "federal_share": 0.3211440073806928,
+    "state_local_bn": 1.1152962058124458,
+    "jurisdiction": {
+     "federal": 0.3211440073806928,
+     "state_local": 0.6788559926193072
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "military_medical",
+    "source_id": "military_medical",
+    "source_side": "spending",
+    "source_parent": "military_medical",
+    "national_bn": 7.157,
+    "response": 1,
+    "amount_bn": 0.35152338176889875,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "veterans_pension_disability",
+    "source_id": "veterans_pension_disability",
+    "source_side": "spending",
+    "source_parent": "veterans_pension_disability",
+    "national_bn": 180.525,
+    "response": 1,
+    "amount_bn": 9.987469956898225,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "veterans_readjustment",
+    "source_id": "veterans_readjustment",
+    "source_side": "spending",
+    "source_parent": "veterans_readjustment",
+    "national_bn": 11.391,
+    "response": 1,
+    "amount_bn": 0.6302023001462199,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "veterans_other",
+    "source_id": "veterans_other",
+    "source_side": "spending",
+    "source_parent": "veterans_other",
+    "national_bn": 37.526,
+    "response": 1,
+    "amount_bn": 1.735349895903291,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "snap",
+    "source_id": "snap",
+    "source_side": "spending",
+    "source_parent": "snap",
+    "national_bn": 97.391,
+    "response": 1,
+    "amount_bn": 14.651423300507918,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "federal programme authority"
+   },
+   {
+    "id": "black_lung",
+    "source_id": "black_lung",
+    "source_side": "spending",
+    "source_parent": "black_lung",
+    "national_bn": 0.173,
+    "response": 1,
+    "amount_bn": 0.03491914237904482,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "ssi",
+    "source_id": "ssi",
+    "source_side": "spending",
+    "source_parent": "ssi",
+    "national_bn": 65.134,
+    "response": 1,
+    "amount_bn": 5.463729191757186,
+    "federal_share": 0.9206712316148248,
+    "state_local_bn": 0.4334309075722264,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "federal programme authority"
+   },
+   {
+    "id": "refundable_tax_credits",
+    "source_id": "refundable_tax_credits",
+    "source_side": "spending",
+    "source_parent": "refundable_tax_credits",
+    "national_bn": 228.809,
+    "response": 1,
+    "amount_bn": 37.36358488817567,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "federal programme authority"
+   },
+   {
+    "id": "other_federal_benefits",
+    "source_id": "other_federal_benefits",
+    "source_side": "spending",
+    "source_parent": "other_federal_benefits",
+    "national_bn": 66.62745901599999,
+    "response": 1,
+    "amount_bn": 6.980664037433889,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "temporary_disability",
+    "source_id": "temporary_disability",
+    "source_side": "spending",
+    "source_parent": "temporary_disability",
+    "national_bn": 13.138,
+    "response": 1,
+    "amount_bn": 2.6518363690139717,
+    "federal_share": 0,
+    "state_local_bn": 2.6518363690139717,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "medicaid_and_chip_other_medical",
+    "source_id": "medicaid_and_chip_other_medical",
+    "source_side": "spending",
+    "source_parent": "medicaid_and_chip_other_medical",
+    "national_bn": 954.2,
+    "response": 1,
+    "amount_bn": 128.3859254823917,
+    "federal_share": 0.6262440709469634,
+    "state_local_bn": 47.985000856005236,
+    "jurisdiction": {
+     "federal": 0.6262440709469634,
+     "state_local": 0.37375592905303656
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "family_and_general_assistance",
+    "source_id": "family_and_general_assistance",
+    "source_side": "spending",
+    "source_parent": "family_and_general_assistance",
+    "national_bn": 63.065,
+    "response": 1,
+    "amount_bn": 12.367613566156654,
+    "federal_share": 0.670334394404012,
+    "state_local_bn": 4.07717681606419,
+    "jurisdiction": {
+     "federal": 0.670334394404012,
+     "state_local": 0.329665605595988
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "energy_assistance",
+    "source_id": "energy_assistance",
+    "source_side": "spending",
+    "source_parent": "energy_assistance",
+    "national_bn": 5.218,
+    "response": 1,
+    "amount_bn": 0.6052243015615347,
+    "federal_share": 0.9211862782675355,
+    "state_local_bn": 0.04769997968899597,
+    "jurisdiction": {
+     "federal": 0.9211862782675355,
+     "state_local": 0.07881372173246448
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "other_state_welfare",
+    "source_id": "other_state_welfare",
+    "source_side": "spending",
+    "source_parent": "other_state_welfare",
+    "national_bn": 22.385,
+    "response": 1,
+    "amount_bn": 5.615098472741102,
+    "federal_share": 0.670334394404012,
+    "state_local_bn": 1.8511048384973028,
+    "jurisdiction": {
+     "federal": 0.670334394404012,
+     "state_local": 0.329665605595988
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "education_benefits",
+    "source_id": "education_benefits",
+    "source_side": "spending",
+    "source_parent": "education_benefits",
+    "national_bn": 64.479,
+    "response": 1,
+    "amount_bn": 9.614450986175433,
+    "federal_share": 0.07295759940644665,
+    "state_local_bn": 8.91300372261313,
+    "jurisdiction": {
+     "federal": 0.07295759940644665,
+     "state_local": 0.9270424005935534
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "employment_training",
+    "source_id": "employment_training",
+    "source_side": "spending",
+    "source_parent": "employment_training",
+    "national_bn": 1.377,
+    "response": 1,
+    "amount_bn": 0.17721892850395052,
+    "federal_share": 0.07117592782448226,
+    "state_local_bn": 0.16460520683962127,
+    "jurisdiction": {
+     "federal": 0.07117592782448226,
+     "state_local": 0.9288240721755178
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "other_state_benefits",
+    "source_id": "other_state_benefits",
+    "source_side": "spending",
+    "source_parent": "other_state_benefits",
+    "national_bn": 2.875,
+    "response": 1,
+    "amount_bn": 0.3631782173254553,
+    "federal_share": 0,
+    "state_local_bn": 0.3631782173254553,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   },
+   {
+    "id": "housing_subsidies",
+    "source_id": "housing_subsidies",
+    "source_side": "spending",
+    "source_parent": "housing_subsidies",
+    "national_bn": 55.003189000000006,
+    "response": 1,
+    "amount_bn": 4.495877818341355,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "financing_unlocated": false,
+    "jurisdiction_basis": "source-classified debt funding; unlocated composite stays explicit"
+   }
+  ]
+ },
+ "debt_contract": {
+  "case": "oct15",
+  "status": "current flows only; historical stocks blocked by unlocated financing",
+  "financing_complete": false,
+  "historical_stock_identified": false,
+  "case_commit": "b35ac8fb533b26c797abd2e03f3610b79bbadd73",
+  "gates": [
+   {
+    "basis": "set",
+    "spec": 0,
+    "cost_bn": 369.86725471891816,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 1,
+    "cost_bn": 371.9959816759026,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 2,
+    "cost_bn": 453.00277532670077,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 3,
+    "cost_bn": 455.13150228368534,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 4,
+    "cost_bn": 369.86725471891816,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 5,
+    "cost_bn": 371.9959816759026,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 6,
+    "cost_bn": 453.00277532670077,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 7,
+    "cost_bn": 455.13150228368534,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 8,
+    "cost_bn": 370.71753702421245,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 9,
+    "cost_bn": 372.8462639811971,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 10,
+    "cost_bn": 453.8530576319953,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 11,
+    "cost_bn": 455.98178458897974,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 12,
+    "cost_bn": 370.71753702421245,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 13,
+    "cost_bn": 372.8462639811971,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 14,
+    "cost_bn": 453.8530576319953,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 15,
+    "cost_bn": 455.98178458897974,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 16,
+    "cost_bn": 365.79193025548534,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 17,
+    "cost_bn": 367.9206572124698,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 18,
+    "cost_bn": 448.92745086326795,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 19,
+    "cost_bn": 451.0561778202525,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 20,
+    "cost_bn": 365.79193025548534,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 21,
+    "cost_bn": 367.9206572124698,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 22,
+    "cost_bn": 448.92745086326795,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 23,
+    "cost_bn": 451.0561778202525,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 24,
+    "cost_bn": 366.6422125607796,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 25,
+    "cost_bn": 368.7709395177643,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 26,
+    "cost_bn": 449.77773316856246,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 27,
+    "cost_bn": 451.9064601255469,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 28,
+    "cost_bn": 366.6422125607796,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 29,
+    "cost_bn": 368.7709395177643,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 30,
+    "cost_bn": 449.77773316856246,
+    "passed": true
+   },
+   {
+    "basis": "set",
+    "spec": 31,
+    "cost_bn": 451.9064601255469,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 0,
+    "cost_bn": 285.8278881395059,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 1,
+    "cost_bn": 287.95661509649034,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 2,
+    "cost_bn": 368.9634087472883,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 3,
+    "cost_bn": 371.0921357042729,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 4,
+    "cost_bn": 285.8278881395059,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 5,
+    "cost_bn": 287.95661509649034,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 6,
+    "cost_bn": 368.9634087472883,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 7,
+    "cost_bn": 371.0921357042729,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 8,
+    "cost_bn": 286.6781704448003,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 9,
+    "cost_bn": 288.80689740178485,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 10,
+    "cost_bn": 369.81369105258284,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 11,
+    "cost_bn": 371.9424180095673,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 12,
+    "cost_bn": 286.6781704448003,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 13,
+    "cost_bn": 288.80689740178485,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 14,
+    "cost_bn": 369.81369105258284,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 15,
+    "cost_bn": 371.9424180095673,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 16,
+    "cost_bn": 281.752563676073,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 17,
+    "cost_bn": 283.88129063305746,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 18,
+    "cost_bn": 364.8880842838555,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 19,
+    "cost_bn": 367.01681124084007,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 20,
+    "cost_bn": 281.752563676073,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 21,
+    "cost_bn": 283.88129063305746,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 22,
+    "cost_bn": 364.8880842838555,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 23,
+    "cost_bn": 367.01681124084007,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 24,
+    "cost_bn": 282.6028459813674,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 25,
+    "cost_bn": 284.731572938352,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 26,
+    "cost_bn": 365.73836658915,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 27,
+    "cost_bn": 367.86709354613447,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 28,
+    "cost_bn": 282.6028459813674,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 29,
+    "cost_bn": 284.731572938352,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 30,
+    "cost_bn": 365.73836658915,
+    "passed": true
+   },
+   {
+    "basis": "cash",
+    "spec": 31,
+    "cost_bn": 367.86709354613447,
+    "passed": true
+   }
+  ],
+  "closure_tolerance_bn": 1e-9,
+  "source_pins": {
+   "sources/immigration-fiscal/data/external/bea_nipa/Section1All_xls.xlsx": "238ba851c9a4932d91a0dedb1b3f2e6c6d37574d154a54267da18b9cb0921a19",
+   "sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+   "infra/immigration-fiscal/historical_backcast_2026_09_20/_cache/Section7All_xls.xlsx": "ce107c8ce92393613c0abae38156afcfaef8ab571eedf0302dc09ca44738b9ef",
+   "sources/immigration-fiscal/data/external/omb_hist_fy2027/hist03z1_fy2027.xlsx": "47864b5078698919c3237038ad7296fb7aeb62f6942c3d8acccf98ad0a7122f7",
+   "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/hist03z2_fy2027.xlsx": "78100f3efb1a6b08d675b24af173a57359e47dce103a2f1499d905a4bbba06ce",
+   "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/hist07z1_fy2027.xlsx": "c3cfce645fe7e4eb9beeb46a970e2b0b30301f02f03f3e5461e9950538641ff9",
+   "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/hist12z3_fy2027.xlsx": "43aa30c0d39116909b990a93926540fd173bce4963f26ee3a0d28a6f900d974d",
+   "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/fred_GS10.csv": "e22128f6caa50e4e7fed03a1c2d323a517bad452a2c69eab89277450fb59bc5c",
+   "sources/immigration-fiscal/data/external/nhea/nhe_tables/Table 03 National Health Expenditures, by Source of Funds.xlsx": "d379d2746ece097b6f864543d99832882f7dbdc197d1a25473d53d22cdfd58c7"
+  },
+  "bands_bn": {
+   "set": [
+    365.7919302554848,
+    455.9817845889793
+   ],
+   "cash": [
+    281.75256367607324,
+    371.9424180095669
+   ]
+  },
+  "unlocated_by_set_end_convention": {
+   "cash|high|central": 6.90595676914041,
+   "cash|high|high": 6.90595676914041,
+   "cash|high|low": 6.90595676914041,
+   "cash|low|central": 2.9521605120143652,
+   "cash|low|high": 2.9521605120143652,
+   "cash|low|low": 2.9521605120143652,
+   "set|high|central": 6.893743593401796,
+   "set|high|high": 6.893743593401796,
+   "set|high|low": 6.893743593401796,
+   "set|low|central": 2.939947336275636,
+   "set|low|high": 2.939947336275636,
+   "set|low|low": 2.939947336275636
+  },
+  "population": {
+   "without_coverage": 43269648.68157841,
+   "with_coverage": 45230062.30075857,
+   "completion": 517435.75719317,
+   "coverage": 1960413.6191801599
+  },
+  "source_rule": "classified source pieces retain their government and timing; no aggregate federal/cash fallback",
+  "coverage_production_rule": "producer generation_ratio P/F transport is conditional",
+  "financing_totals_bn": {
+   "cash|high|central|cash": 290.97450837629526,
+   "cash|high|central|displaced_beneficiaries": 9.263855039872865,
+   "cash|high|central|private_production": 0.4850060844461385,
+   "cash|high|central|resource_cost": 64.3130917398127,
+   "cash|high|central|unlocated": 6.90595676914041,
+   "cash|high|high|cash": 290.97450837629526,
+   "cash|high|high|displaced_beneficiaries": 9.263855039872865,
+   "cash|high|high|private_production": 0.4850060844461385,
+   "cash|high|high|resource_cost": 64.3130917398127,
+   "cash|high|high|unlocated": 6.90595676914041,
+   "cash|high|low|cash": 290.97450837629526,
+   "cash|high|low|displaced_beneficiaries": 9.263855039872865,
+   "cash|high|low|private_production": 0.4850060844461385,
+   "cash|high|low|resource_cost": 64.3130917398127,
+   "cash|high|low|unlocated": 6.90595676914041,
+   "cash|low|central|cash": 229.73410779647352,
+   "cash|low|central|displaced_beneficiaries": 9.263855039872865,
+   "cash|low|central|private_production": 0.7372948249361221,
+   "cash|low|central|resource_cost": 39.065145502776154,
+   "cash|low|central|unlocated": 2.9521605120143652,
+   "cash|low|high|cash": 229.73410779647352,
+   "cash|low|high|displaced_beneficiaries": 9.263855039872865,
+   "cash|low|high|private_production": 0.7372948249361221,
+   "cash|low|high|resource_cost": 39.065145502776154,
+   "cash|low|high|unlocated": 2.9521605120143652,
+   "cash|low|low|cash": 229.73410779647352,
+   "cash|low|low|displaced_beneficiaries": 9.263855039872865,
+   "cash|low|low|private_production": 0.7372948249361221,
+   "cash|low|low|resource_cost": 39.065145502776154,
+   "cash|low|low|unlocated": 2.9521605120143652,
+   "set|high|central|cash": 290.97450837629526,
+   "set|high|central|displaced_beneficiaries": 9.263855039872865,
+   "set|high|central|pension_accrual": 84.05157975515104,
+   "set|high|central|private_production": 0.4850060844461385,
+   "set|high|central|resource_cost": 64.3130917398127,
+   "set|high|central|unlocated": 6.893743593401796,
+   "set|high|high|cash": 290.97450837629526,
+   "set|high|high|displaced_beneficiaries": 9.263855039872865,
+   "set|high|high|pension_accrual": 84.05157975515104,
+   "set|high|high|private_production": 0.4850060844461385,
+   "set|high|high|resource_cost": 64.3130917398127,
+   "set|high|high|unlocated": 6.893743593401796,
+   "set|high|low|cash": 290.97450837629526,
+   "set|high|low|displaced_beneficiaries": 9.263855039872865,
+   "set|high|low|pension_accrual": 84.05157975515104,
+   "set|high|low|private_production": 0.4850060844461385,
+   "set|high|low|resource_cost": 64.3130917398127,
+   "set|high|low|unlocated": 6.893743593401796,
+   "set|low|central|cash": 229.73410779647352,
+   "set|low|central|displaced_beneficiaries": 9.263855039872865,
+   "set|low|central|pension_accrual": 84.05157975515104,
+   "set|low|central|private_production": 0.7372948249361221,
+   "set|low|central|resource_cost": 39.065145502776154,
+   "set|low|central|unlocated": 2.939947336275636,
+   "set|low|high|cash": 229.73410779647352,
+   "set|low|high|displaced_beneficiaries": 9.263855039872865,
+   "set|low|high|pension_accrual": 84.05157975515104,
+   "set|low|high|private_production": 0.7372948249361221,
+   "set|low|high|resource_cost": 39.065145502776154,
+   "set|low|high|unlocated": 2.939947336275636,
+   "set|low|low|cash": 229.73410779647352,
+   "set|low|low|displaced_beneficiaries": 9.263855039872865,
+   "set|low|low|pension_accrual": 84.05157975515104,
+   "set|low|low|private_production": 0.7372948249361221,
+   "set|low|low|resource_cost": 39.065145502776154,
+   "set|low|low|unlocated": 2.939947336275636
+  },
+  "mixed_population_rule": "Declared D_added_residual booked to added lineage; other surviving-unit components booked to the identified-union route [ASSUMPTION]. Generation totals alone do not identify a further union/lineage split.",
+  "per_member_usd": {
+   "set": [
+    8087.36295393849,
+    10081.387497477133
+   ],
+   "cash": [
+    6229.320707156042,
+    8223.345250694667
+   ]
+  },
+  "previous_case_bands_bn": {
+   "set": [
+    339.55201782952685,
+    423.64926070050683
+   ],
+   "cash": [
+    264.4255736155055,
+    348.52281648648557
+   ]
+  },
+  "change_from_oct14_bn": {
+   "set": [
+    26.239912425957925,
+    32.33252388847245
+   ],
+   "cash": [
+    17.32699006056771,
+    23.419601523081326
+   ]
+  }
+ },
+ "gates": [
+  {
+   "basis": "set",
+   "end": "low",
+   "total_bn": 365.7919302554853,
+   "case_bn": 365.7919302554848,
+   "gap_bn": 5.115907697472721e-13
+  },
+  {
+   "basis": "cash",
+   "end": "low",
+   "total_bn": 281.7525636760731,
+   "case_bn": 281.75256367607324,
+   "gap_bn": -1.1368683772161603e-13
+  },
+  {
+   "kind": "trust_timing",
+   "end": "low",
+   "fund_accrual_bn": 84.05157975515105,
+   "nontrust_timing_bridge_bn": -0.012213175738729265,
+   "net_set_minus_cash_bn": 84.03936657941085,
+   "gap_bn": 1.4779288903810084e-12
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "general_public_services",
+   "total_bn": 30.554314815439792,
+   "source_bn": 30.554314815439792,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "public_order_safety",
+   "total_bn": 74.60544789447195,
+   "source_bn": 74.60544789447195,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "economic_affairs_services",
+   "total_bn": 15.295516210865138,
+   "source_bn": 15.295516210865138,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "housing_community_services",
+   "total_bn": 1.8629707866117102,
+   "source_bn": 1.8629707866117102,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "health_services",
+   "total_bn": 19.36563373598015,
+   "source_bn": 19.36563373598015,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "recreation_culture",
+   "total_bn": 5.894141167860749,
+   "source_bn": 5.894141167860749,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "education_services",
+   "total_bn": 216.94833135528847,
+   "source_bn": 216.94833135528847,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "income_security_services",
+   "total_bn": 29.87690988958276,
+   "source_bn": 29.87690988958276,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "social_security",
+   "total_bn": 108.12226356225642,
+   "source_bn": 108.12226356225642,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "medicare",
+   "total_bn": 76.72356120560035,
+   "source_bn": 76.72356120560035,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "unemployment",
+   "total_bn": 4.97087048909703,
+   "source_bn": 4.97087048909703,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "railroad_retirement",
+   "total_bn": 0.5667475579522138,
+   "source_bn": 0.5667475579522138,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "pension_guaranty",
+   "total_bn": 0.040048841015700505,
+   "source_bn": 0.040048841015700505,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "veterans_life_insurance",
+   "total_bn": 0.02484073724998756,
+   "source_bn": 0.02484073724998756,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "workers_compensation",
+   "total_bn": 1.6429054437733868,
+   "source_bn": 1.6429054437733868,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "military_medical",
+   "total_bn": 0.35152338176889875,
+   "source_bn": 0.35152338176889875,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "veterans_pension_disability",
+   "total_bn": 9.987469956898225,
+   "source_bn": 9.987469956898225,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "veterans_readjustment",
+   "total_bn": 0.6302023001462199,
+   "source_bn": 0.6302023001462199,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "veterans_other",
+   "total_bn": 1.735349895903291,
+   "source_bn": 1.735349895903291,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "snap",
+   "total_bn": 14.651423300507918,
+   "source_bn": 14.651423300507918,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "black_lung",
+   "total_bn": 0.03491914237904482,
+   "source_bn": 0.03491914237904482,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "ssi",
+   "total_bn": 5.463729191757186,
+   "source_bn": 5.463729191757186,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "refundable_tax_credits",
+   "total_bn": 37.36358488817567,
+   "source_bn": 37.36358488817567,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "other_federal_benefits",
+   "total_bn": 6.980664037433889,
+   "source_bn": 6.980664037433889,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "temporary_disability",
+   "total_bn": 2.6518363690139717,
+   "source_bn": 2.6518363690139717,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "medicaid_and_chip_other_medical",
+   "total_bn": 126.26375556929503,
+   "source_bn": 126.26375556929503,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "family_and_general_assistance",
+   "total_bn": 12.367613566156654,
+   "source_bn": 12.367613566156654,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "energy_assistance",
+   "total_bn": 0.6052243015615347,
+   "source_bn": 0.6052243015615347,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "other_state_welfare",
+   "total_bn": 5.615098472741102,
+   "source_bn": 5.615098472741102,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "education_benefits",
+   "total_bn": 9.614450986175433,
+   "source_bn": 9.614450986175433,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "employment_training",
+   "total_bn": 0.17721892850395052,
+   "source_bn": 0.17721892850395052,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "other_state_benefits",
+   "total_bn": 0.3631782173254553,
+   "source_bn": 0.3631782173254553,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "housing_subsidies",
+   "total_bn": 4.495877818341355,
+   "source_bn": 4.495877818341355,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "school_reprice",
+   "total_bn": 0.2986684801412045,
+   "source_bn": 0.2986684801412045,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "college_rekey",
+   "total_bn": -1.4787050072325516,
+   "source_bn": -1.4787050072325516,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "lane_constants",
+   "total_bn": -5.403908664821494,
+   "source_bn": -5.403908664821494,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "roads_vmt_sl",
+   "total_bn": 2.2699829657139636,
+   "source_bn": 2.2699829657139636,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "state_price_public_order_safety",
+   "total_bn": 6.933109181581708,
+   "source_bn": 6.933109181581708,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "state_price_health_services",
+   "total_bn": 1.9706924100926615,
+   "source_bn": 1.9706924100926615,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "state_price_recreation_culture",
+   "total_bn": 0.37684288632625407,
+   "source_bn": 0.37684288632625407,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_general_public_services_population",
+   "total_bn": 0.3261031999672426,
+   "source_bn": 0.3261031999672426,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_public_order_safety_use",
+   "total_bn": 0.7393625596283073,
+   "source_bn": 0.7393625596283073,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_economic_affairs_services_resources",
+   "total_bn": 0.2021613225647362,
+   "source_bn": 0.2021613225647362,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_housing_community_services_population",
+   "total_bn": 0.01988330416251636,
+   "source_bn": 0.01988330416251636,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_health_services_health_other",
+   "total_bn": 0.21924267486921153,
+   "source_bn": 0.21924267486921153,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_recreation_culture_population",
+   "total_bn": 0.06290758956677889,
+   "source_bn": 0.06290758956677889,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_education_services_education_mix",
+   "total_bn": 2.9369711845173114,
+   "source_bn": 2.9369711845173114,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_income_security_services_cash_assistance",
+   "total_bn": 0.5113034873706273,
+   "source_bn": 0.5113034873706273,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_social_security_social_security",
+   "total_bn": 1.2021303581069354,
+   "source_bn": 1.2021303581069354,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_medicare_medicare",
+   "total_bn": 0.7028746069576521,
+   "source_bn": 0.7028746069576521,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_unemployment_unemployment",
+   "total_bn": 0.0032889343630170286,
+   "source_bn": 0.0032889343630170286,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_railroad_retirement_social_security",
+   "total_bn": 0.005882601219022458,
+   "source_bn": 0.005882601219022458,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_pension_guaranty_age65plus",
+   "total_bn": 0.00039018784455601243,
+   "source_bn": 0.00039018784455601243,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_military_medical_tricare",
+   "total_bn": 0.004854159020701845,
+   "source_bn": 0.004854159020701845,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_veterans_other_va_medical",
+   "total_bn": 0.024081458587555154,
+   "source_bn": 0.024081458587555154,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_snap_snap",
+   "total_bn": 0.1714989918779559,
+   "source_bn": 0.1714989918779559,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_ssi_ssi",
+   "total_bn": 0.07172714031413578,
+   "source_bn": 0.07172714031413578,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_refundable_tax_credits_refundable_credits",
+   "total_bn": 0.15576360312457882,
+   "source_bn": 0.15576360312457882,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_other_federal_benefits_all_cash",
+   "total_bn": 0.07568465195667166,
+   "source_bn": 0.07568465195667166,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_medicaid_and_chip_other_medical_uninsured_use_low",
+   "total_bn": 1.4007884227359444,
+   "source_bn": 1.4007884227359444,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_family_and_general_assistance_cash_assistance",
+   "total_bn": 0.21042195261777136,
+   "source_bn": 0.21042195261777136,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_energy_assistance_energy",
+   "total_bn": 0.009859556476852181,
+   "source_bn": 0.009859556476852181,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_other_state_welfare_wic",
+   "total_bn": 0.09702857472728373,
+   "source_bn": 0.09702857472728373,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_education_benefits_postsecondary",
+   "total_bn": 0.09698014785831043,
+   "source_bn": 0.09698014785831043,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_employment_training_working_age",
+   "total_bn": 0.0014773170097926768,
+   "source_bn": 0.0014773170097926768,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_other_state_benefits_population",
+   "total_bn": 0.003876165429934551,
+   "source_bn": 0.003876165429934551,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_housing_subsidies_housing_support",
+   "total_bn": 0.07496933433598674,
+   "source_bn": 0.07496933433598674,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_school_reprice_k",
+   "total_bn": -0.030672605850673003,
+   "source_bn": -0.030672605850673003,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_college_rekey_k",
+   "total_bn": -0.03011919976145441,
+   "source_bn": -0.03011919976145441,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_roads_vmt_sl_k",
+   "total_bn": -0.007336480184294363,
+   "source_bn": -0.007336480184294363,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_state_price_public_order_safety_k",
+   "total_bn": 0.0653694790450067,
+   "source_bn": 0.0653694790450067,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_state_price_health_services_k",
+   "total_bn": 0.02148662528662275,
+   "source_bn": 0.02148662528662275,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_state_price_recreation_culture_k",
+   "total_bn": 0.0038132201562862847,
+   "source_bn": 0.0038132201562862847,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "low",
+   "source_id": "union_completion_lane_constants_k",
+   "total_bn": -0.04451362305226215,
+   "source_bn": -0.04451362305226215,
+   "gap_bn": 0
+  },
+  {
+   "basis": "set",
+   "end": "high",
+   "total_bn": 455.9817845889801,
+   "case_bn": 455.9817845889793,
+   "gap_bn": 7.958078640513122e-13
+  },
+  {
+   "basis": "cash",
+   "end": "high",
+   "total_bn": 371.9424180095677,
+   "case_bn": 371.9424180095669,
+   "gap_bn": 7.958078640513122e-13
+  },
+  {
+   "kind": "trust_timing",
+   "end": "high",
+   "fund_accrual_bn": 84.05157975515105,
+   "nontrust_timing_bridge_bn": -0.012213175738614024,
+   "net_set_minus_cash_bn": 84.03936657941239,
+   "gap_bn": 5.684341886080802e-14
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "general_public_services",
+   "total_bn": 43.300944977812875,
+   "source_bn": 43.300944977812875,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "public_order_safety",
+   "total_bn": 74.60544789447195,
+   "source_bn": 74.60544789447195,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "economic_affairs_services",
+   "total_bn": 25.409285681957567,
+   "source_bn": 25.409285681957567,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "housing_community_services",
+   "total_bn": 1.8629707866117102,
+   "source_bn": 1.8629707866117102,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "health_services",
+   "total_bn": 19.36563373598015,
+   "source_bn": 19.36563373598015,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "recreation_culture",
+   "total_bn": 6.882531275980676,
+   "source_bn": 6.882531275980676,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "education_services",
+   "total_bn": 216.94833135528847,
+   "source_bn": 216.94833135528847,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "income_security_services",
+   "total_bn": 29.87690988958276,
+   "source_bn": 29.87690988958276,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "social_security",
+   "total_bn": 108.12226356225642,
+   "source_bn": 108.12226356225642,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "medicare",
+   "total_bn": 76.72356120560035,
+   "source_bn": 76.72356120560035,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "unemployment",
+   "total_bn": 4.97087048909703,
+   "source_bn": 4.97087048909703,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "railroad_retirement",
+   "total_bn": 0.5667475579522138,
+   "source_bn": 0.5667475579522138,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "pension_guaranty",
+   "total_bn": 0.040048841015700505,
+   "source_bn": 0.040048841015700505,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "veterans_life_insurance",
+   "total_bn": 0.02484073724998756,
+   "source_bn": 0.02484073724998756,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "workers_compensation",
+   "total_bn": 1.6429054437733868,
+   "source_bn": 1.6429054437733868,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "military_medical",
+   "total_bn": 0.35152338176889875,
+   "source_bn": 0.35152338176889875,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "veterans_pension_disability",
+   "total_bn": 9.987469956898225,
+   "source_bn": 9.987469956898225,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "veterans_readjustment",
+   "total_bn": 0.6302023001462199,
+   "source_bn": 0.6302023001462199,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "veterans_other",
+   "total_bn": 1.735349895903291,
+   "source_bn": 1.735349895903291,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "snap",
+   "total_bn": 14.651423300507918,
+   "source_bn": 14.651423300507918,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "black_lung",
+   "total_bn": 0.03491914237904482,
+   "source_bn": 0.03491914237904482,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "ssi",
+   "total_bn": 5.463729191757186,
+   "source_bn": 5.463729191757186,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "refundable_tax_credits",
+   "total_bn": 37.36358488817567,
+   "source_bn": 37.36358488817567,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "other_federal_benefits",
+   "total_bn": 6.980664037433889,
+   "source_bn": 6.980664037433889,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "temporary_disability",
+   "total_bn": 2.6518363690139717,
+   "source_bn": 2.6518363690139717,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "medicaid_and_chip_other_medical",
+   "total_bn": 128.3859254823917,
+   "source_bn": 128.3859254823917,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "family_and_general_assistance",
+   "total_bn": 12.367613566156654,
+   "source_bn": 12.367613566156654,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "energy_assistance",
+   "total_bn": 0.6052243015615347,
+   "source_bn": 0.6052243015615347,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "other_state_welfare",
+   "total_bn": 5.615098472741102,
+   "source_bn": 5.615098472741102,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "education_benefits",
+   "total_bn": 9.614450986175433,
+   "source_bn": 9.614450986175433,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "employment_training",
+   "total_bn": 0.17721892850395052,
+   "source_bn": 0.17721892850395052,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "other_state_benefits",
+   "total_bn": 0.3631782173254553,
+   "source_bn": 0.3631782173254553,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "housing_subsidies",
+   "total_bn": 4.495877818341355,
+   "source_bn": 4.495877818341355,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "school_reprice",
+   "total_bn": 0.3612277904920184,
+   "source_bn": 0.3612277904920184,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "college_rekey",
+   "total_bn": -0.7004101098608065,
+   "source_bn": -0.7004101098608065,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "lane_constants",
+   "total_bn": -5.403908664821494,
+   "source_bn": -5.403908664821494,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "roads_vmt_sl",
+   "total_bn": 3.066723351665891,
+   "source_bn": 3.066723351665891,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "roads_vmt_fed",
+   "total_bn": 0.027874448712686666,
+   "source_bn": 0.027874448712686666,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "state_price_public_order_safety",
+   "total_bn": 6.933109181581708,
+   "source_bn": 6.933109181581708,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "state_price_health_services",
+   "total_bn": 1.9706924100926615,
+   "source_bn": 1.9706924100926615,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "state_price_recreation_culture",
+   "total_bn": 0.4400357706757508,
+   "source_bn": 0.4400357706757508,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_general_public_services_population",
+   "total_bn": 0.4621467312935727,
+   "source_bn": 0.4621467312935727,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_public_order_safety_use",
+   "total_bn": 0.7393625596283073,
+   "source_bn": 0.7393625596283073,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_economic_affairs_services_resources",
+   "total_bn": 0.33583533422957373,
+   "source_bn": 0.33583533422957373,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_housing_community_services_population",
+   "total_bn": 0.01988330416251636,
+   "source_bn": 0.01988330416251636,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_health_services_health_other",
+   "total_bn": 0.21924267486921153,
+   "source_bn": 0.21924267486921153,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_recreation_culture_population",
+   "total_bn": 0.07345658007832437,
+   "source_bn": 0.07345658007832437,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_education_services_education_mix",
+   "total_bn": 2.9369711845173114,
+   "source_bn": 2.9369711845173114,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_income_security_services_cash_assistance",
+   "total_bn": 0.5113034873706273,
+   "source_bn": 0.5113034873706273,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_social_security_social_security",
+   "total_bn": 1.2021303581069354,
+   "source_bn": 1.2021303581069354,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_medicare_medicare",
+   "total_bn": 0.7028746069576521,
+   "source_bn": 0.7028746069576521,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_unemployment_unemployment",
+   "total_bn": 0.0032889343630170286,
+   "source_bn": 0.0032889343630170286,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_railroad_retirement_social_security",
+   "total_bn": 0.005882601219022458,
+   "source_bn": 0.005882601219022458,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_pension_guaranty_age65plus",
+   "total_bn": 0.00039018784455601243,
+   "source_bn": 0.00039018784455601243,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_military_medical_tricare",
+   "total_bn": 0.004854159020701845,
+   "source_bn": 0.004854159020701845,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_veterans_other_va_medical",
+   "total_bn": 0.024081458587555154,
+   "source_bn": 0.024081458587555154,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_snap_snap",
+   "total_bn": 0.1714989918779559,
+   "source_bn": 0.1714989918779559,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_ssi_ssi",
+   "total_bn": 0.07172714031413578,
+   "source_bn": 0.07172714031413578,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_refundable_tax_credits_refundable_credits",
+   "total_bn": 0.15576360312457882,
+   "source_bn": 0.15576360312457882,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_other_federal_benefits_all_cash",
+   "total_bn": 0.07568465195667166,
+   "source_bn": 0.07568465195667166,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_medicaid_and_chip_other_medical_uninsured_use_high",
+   "total_bn": 1.4073454666238043,
+   "source_bn": 1.4073454666238043,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_family_and_general_assistance_cash_assistance",
+   "total_bn": 0.21042195261777136,
+   "source_bn": 0.21042195261777136,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_energy_assistance_energy",
+   "total_bn": 0.009859556476852181,
+   "source_bn": 0.009859556476852181,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_other_state_welfare_wic",
+   "total_bn": 0.09702857472728373,
+   "source_bn": 0.09702857472728373,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_education_benefits_postsecondary",
+   "total_bn": 0.09698014785831043,
+   "source_bn": 0.09698014785831043,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_employment_training_working_age",
+   "total_bn": 0.0014773170097926768,
+   "source_bn": 0.0014773170097926768,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_other_state_benefits_population",
+   "total_bn": 0.003876165429934551,
+   "source_bn": 0.003876165429934551,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_housing_subsidies_housing_support",
+   "total_bn": 0.07496933433598674,
+   "source_bn": 0.07496933433598674,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_school_reprice_k",
+   "total_bn": -0.03709731149009383,
+   "source_bn": -0.03709731149009383,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_college_rekey_k",
+   "total_bn": -0.014266396550128263,
+   "source_bn": -0.014266396550128263,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_roads_vmt_sl_k",
+   "total_bn": -0.009911508341708258,
+   "source_bn": -0.009911508341708258,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_state_price_public_order_safety_k",
+   "total_bn": 0.0653694790450067,
+   "source_bn": 0.0653694790450067,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_state_price_health_services_k",
+   "total_bn": 0.02148662528662275,
+   "source_bn": 0.02148662528662275,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_state_price_recreation_culture_k",
+   "total_bn": 0.0044526600636824645,
+   "source_bn": 0.0044526600636824645,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_lane_constants_k",
+   "total_bn": -0.04451362305226215,
+   "source_bn": -0.04451362305226215,
+   "gap_bn": 0
+  },
+  {
+   "kind": "programme",
+   "end": "high",
+   "source_id": "union_completion_roads_vmt_fed_k",
+   "total_bn": -0.00009008893181911394,
+   "source_bn": -0.00009008893181911394,
+   "gap_bn": 0
+  }
+ ],
+ "source_pins": {
+  "winners_losers_2026_09_24/derived/oct14/fiscal_specs.csv": {
+   "commit": "2204a2bc0996c3a614262cca55842d0027134417",
+   "sha256": "ad7b25de45d395da5fc50eaf3ce0750171ae8afe70364176b0500d9c048e3797"
+  },
+  "main_case_2026_10_15/package.cjs": {
+   "commit": "d1a24d47d8f17dc6f95bf2b0e431ed7507f52a92",
+   "sha256": "083236226e594247bfe095c6cdf0c71f6bb0ca73b405f5da98568ac8c95b90d6"
+  },
+  "main_case_2026_10_15/derived/corrections.json": {
+   "commit": "d1a24d47d8f17dc6f95bf2b0e431ed7507f52a92",
+   "sha256": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68"
+  },
+  "main_case_2026_10_15/derived/corrections_cash.json": {
+   "commit": "d1a24d47d8f17dc6f95bf2b0e431ed7507f52a92",
+   "sha256": "9af66b4c6a87ddb96d22c208364cd6798d23411590252bbe9520f3019b6446ea"
+  },
+  "main_case_2026_10_15/derived/summary.json": {
+   "commit": "d1a24d47d8f17dc6f95bf2b0e431ed7507f52a92",
+   "sha256": "1d999c666d68696ed2728b9e6fd48c44ab85371e875e3e6f1b16d0b16971013a"
+  },
+  "main_case_2026_10_15/derived/main_case_bands.csv": {
+   "commit": "d1a24d47d8f17dc6f95bf2b0e431ed7507f52a92",
+   "sha256": "fe8fe05bfdeb29f4f4b996bf5e515fcfc172b6094d96c10e67f7cf0840d34ba2"
+  },
+  "main_case_2026_10_15/derived/per_spec.csv": {
+   "commit": "d1a24d47d8f17dc6f95bf2b0e431ed7507f52a92",
+   "sha256": "56b9a3c3ef7c558aee0ffb68e75d9afea1b5df6081cc97898cce00833cce642f"
+  },
+  "debt_legacy_2026_09_23/derived/oct15/current_flow_contract.json": {
+   "commit": "5a8502c942ed580913f5bf5cd511189ca0c4f1ce",
+   "sha256": "153a822a907862ba03ed1c32a50c92c9b5286a9c4961960cd69f90d367c26ec5"
+  },
+  "debt_legacy_2026_09_23/derived/oct15/current_flow_source_parts_2024.csv": {
+   "commit": "5a8502c942ed580913f5bf5cd511189ca0c4f1ce",
+   "sha256": "b4d4595ef1840dc13245e92acc248a6d1333cde9bc012b47241d170a8c104177"
+  },
+  "debt_legacy_2026_09_23/derived/oct14/federal_shares_by_year.csv": {
+   "commit": "6b1250b9959b692a63d124c579b87c4e86c33015",
+   "sha256": "dabcfcef303bafd251191002b69220c36d7eab6dc07134368094ffdb85d44149"
+  }
+ },
+ "net_timing": {
+  "low": 84.03936657941085,
+  "high": 84.03936657941239
+ },
+ "nontrust_timing_bridge": {
+  "low": -0.012213175738729265,
+  "high": -0.012213175738614024
+ },
+ "nontrust_timing_bridge_parts": {
+  "low": [
+   {
+    "side": "coverage",
+    "id": "net_profile_calibration:set_minus_cash",
+    "responsive_bn": "-0.012213175738729265",
+    "federal_bn": "",
+    "state_local_bn": "",
+    "financing": "unlocated",
+    "basis": "set",
+    "end": "low",
+    "convention": "central",
+    "union_bn": "-0.012213175738729265",
+    "lineage_bn": "0.0",
+    "timing_rule": "source-set less its separately priced source-cash counterpart; never borrowing",
+    "reason": "coverage source class/payer unresolved",
+    "part": "",
+    "source_side": "",
+    "source_line": "",
+    "assumption": "",
+    "component": "",
+    "generation": "G3plus",
+    "source_piece_count": "2.0"
+   }
+  ],
+  "high": [
+   {
+    "side": "coverage",
+    "id": "net_profile_calibration:set_minus_cash",
+    "responsive_bn": "-0.012213175738614024",
+    "federal_bn": "",
+    "state_local_bn": "",
+    "financing": "unlocated",
+    "basis": "set",
+    "end": "high",
+    "convention": "central",
+    "union_bn": "-0.012213175738614024",
+    "lineage_bn": "0.0",
+    "timing_rule": "source-set less its separately priced source-cash counterpart; never borrowing",
+    "reason": "coverage source class/payer unresolved",
+    "part": "",
+    "source_side": "",
+    "source_line": "",
+    "assumption": "",
+    "component": "",
+    "generation": "G3plus",
+    "source_piece_count": "2.0"
+   }
+  ]
+ },
+ "timing_bridge": {
+  "low": {
+   "net_set_minus_cash_bn": 84.03936657941085,
+   "nontrust_timing_bridge_bn": -0.012213175738729265,
+   "trust_accrual_bn": 84.05157975515105,
+   "source": "coverage:net_profile_calibration:set_minus_cash"
+  },
+  "high": {
+   "net_set_minus_cash_bn": 84.03936657941239,
+   "nontrust_timing_bridge_bn": -0.012213175738614024,
+   "trust_accrual_bn": 84.05157975515105,
+   "source": "coverage:net_profile_calibration:set_minus_cash"
+  }
+ },
+ "timing_rule": "fund accrual is the principal typed pension_accrual sum; net case timing additionally includes coverage net_profile_calibration:set_minus_cash, which stays unlocated and is never added to trust financing",
+ "rule": "complete gross payroll/cash OASDI-HI plus source-side reporter and coverage parts; fund accrual from typed pension_accrual rows only"
+}

@@ -1,6 +1,6 @@
 /* The adopted main case, specification by specification, split into the engine's three terms.
  *
- * For a case (--case, default oct14) this evaluates the explorer engine at each of the package's
+ * For the live case (--case, default oct15) this evaluates the explorer engine at each of the package's
  * main-case specifications of the case and of the case before it, and writes the direct fiscal
  * response A, the private production term P and the induced receipts F. welfare = P + A + F, and the
  * cost to other residents is -welfare. winners_losers.py puts A + F in the fiscal channel and P in the
@@ -27,8 +27,10 @@
  *   --case oct07           adopted_2026_10_05 (its lane's package, at its band variant oct05_case in OCT07_LANE's
  *                          main_case_bands.csv) and adopted_2026_10_07 (OCT07_LANE: main case v6, v5 plus the items in
  *                          its payload's meta.items), written to derived/oct07/.
- * Live case oct14 writes only derived/oct14/: frozen v6 at its own ends as the positive control,
- * then v7 on its 32 personal MAIN_SPECS. Receipt overrides take the specification's reading (R7).
+ * Live case oct15 writes only derived/oct15/, on its 32 personal MAIN_SPECS.
+ * Old-case tables remain frozen. Coverage's declared P/F enters production and induced receipts;
+ * its fiscal/capital/unclassified parts and mixed-unit recomputation enter A, with explicit line rows.
+ * Receipt overrides take the specification's reading (R7). The oct14 CSV header stays fixed.
  * A payload's line responses are the meta.responses entries with a low and a high other than general government
  * (a receipt under its override id): four on September 27, thirteen on September 29.
  * The specification grid and responses come from the packages, whose MAIN_SPECS carry the responses
@@ -64,6 +66,7 @@
 "use strict";
 const fs = require("fs");
 const path = require("path");
+require("./p7_inputs.cjs").checkPins();
 
 const HERE = __dirname;
 const FISCAL = path.join(HERE, "..");
@@ -71,6 +74,7 @@ const SEPT29_LANE = "main_case_2026_09_29";
 const OCT05_LANE = "main_case_2026_10_05";
 const OCT07_LANE = "main_case_2026_10_07";
 const OCT14_LANE = "main_case_2026_10_14";
+const OCT15_LANE = "main_case_2026_10_15";
 // case -> its main-case lane, and its two models in the order written: [name, payload lane or null for
 // the explorer model, variant in the lane's main_case_bands.csv, the package whose MAIN_SPECS it uses].
 const CASES = {
@@ -98,17 +102,19 @@ const CASES = {
   oct14: { lane: OCT14_LANE, out: "oct14", models: (P) => [
     ["adopted_2026_10_07", OCT07_LANE, "oct07_case", require(path.join(FISCAL, OCT07_LANE, "package.cjs"))],
     ["adopted_2026_10_14", OCT14_LANE, "adopted", P]] },
+  oct15: { lane: OCT15_LANE, out: "oct15", models: (P) => [
+    ["adopted_2026_10_15", OCT15_LANE, "adopted", P]] },
 };
 const opt = (name, fallback) => {
   const i = process.argv.indexOf(name);
   return i > 0 ? process.argv[i + 1] : fallback;
 };
-const CASE = opt("--case", "oct14");
+const CASE = opt("--case", "oct15");
 if (!CASES[CASE]) {
   console.error(`unknown case ${CASE}; one of ${Object.keys(CASES).join(", ")}`);
   process.exit(2);
 }
-if (CASE !== "oct14") throw new Error(`[BLOCKED] only live case oct14 is computed; ${CASE} outputs stay frozen`);
+if (CASE !== "oct15") throw new Error(`[BLOCKED] only live case oct15 is computed; ${CASE} outputs stay frozen`);
 const OUT = path.resolve(opt("--out-dir", path.join(HERE, "derived", CASES[CASE].out || "")));
 const P = require(path.join(FISCAL, CASES[CASE].lane, "package.cjs"));
 const { Engine, MODEL } = P;
@@ -130,7 +136,14 @@ function csvRows(file) {
 function evaluate(pkg, m, spec) {
   if (pkg.evaluateFull) {
     const full = pkg.evaluateFull(m, spec);
-    return { r: full.evaluation, capital: full.capital };
+    const coverage = m.corrections?.coverage?.by_end[spec.reading]?.decomposition;
+    const production = coverage?.production || {P_bn:0,F_bn:0};
+    // Coverage's producer declares P/F separately. The remaining post-engine
+    // amount is fiscal, and must not swallow these production terms.
+    return { r: full.evaluation, capital: full.capital,
+      post:full.post_engine || {total_bn:0}, coverage,
+      postA:-(full.post_engine?.total_bn || 0)-production.P_bn-production.F_bn,
+      postP:production.P_bn,postF:production.F_bn };
   }
   return { r: Engine.evaluate(m, pkg.stateFor(m, spec)), capital: null };
 }
@@ -167,11 +180,11 @@ for (const [caseName, payloadLane, variant, pkg] of CASES[CASE].models(P)) {
   const m = payload ? Engine.applyCorrections(MODEL, payload) : MODEL;
   const specs = pkg.MAIN_SPECS;
   if (payload && payload.meta.allocation) {
-    const ends = readJson(`${payloadLane}/derived/summary.json`).v7.end_specifications;
+    const ends = readJson(`${payloadLane}/derived/summary.json`).v8.end_specifications;
     gate(`${caseName}: the band uses 32 personal specifications`,
       specs.length === 32 && specs.every((s) => s.allocation === "personal"));
     gate(`${caseName}: adopted end specifications are 16 / 11`,
-      [ends.set, ends.cash, ...ends.by_method.set, ...ends.by_method.cash]
+      [...ends.set, ...ends.cash]
         .every((e) => e[0] === 16 && e[1] === 11));
   }
   if (payload && payload.meta.responses) {
@@ -196,7 +209,7 @@ for (const [caseName, payloadLane, variant, pkg] of CASES[CASE].models(P)) {
   }
   const results = specs.map((spec) => Object.assign({ spec }, evaluate(pkg, m, spec)));
   const capOf = (x) => (x.capital ? x.capital.total_bn : 0);
-  const costs = results.map((x) => -x.r.welfare_bn + capOf(x));
+  const costs = results.map((x) => -x.r.welfare_bn + capOf(x)+(x.post?.total_bn||0));
   const lo = Math.min(...costs), hi = Math.max(...costs);
   const want = published[variant];
   gate(`${caseName}: band reproduces main_case_bands.csv (${variant})`,
@@ -205,7 +218,9 @@ for (const [caseName, payloadLane, variant, pkg] of CASES[CASE].models(P)) {
   const vsPackage = Math.max(...results.map(({ spec }, i) => Math.abs(costs[i] - pkg.cost(m, spec))));
   gate(`${caseName}: every specification's cost equals the package's cost()`, vsPackage < 1e-9,
     `max |gap| ${vsPackage.toExponential(2)}`);
-  if (variant === "adopted" && published.uncorrected_at_adopted_responses) {
+  // oct15's inherited uncorrected row predates the union-completion carriers;
+  // evaluating the bare model with their responses is not a declared case.
+  if (CASE !== "oct15" && variant === "adopted" && published.uncorrected_at_adopted_responses) {
     const unc = specs.map((spec) => pkg.cost(MODEL, spec));
     const w = published.uncorrected_at_adopted_responses;
     gate(`${caseName}: the uncorrected model reproduces uncorrected_at_adopted_responses`,
@@ -229,16 +244,20 @@ for (const [caseName, payloadLane, variant, pkg] of CASES[CASE].models(P)) {
   }
   let maxId = 0;
   const pf = {};
-  results.forEach(({ spec, r, capital }, i) => {
+  results.forEach(({ spec, r, capital, postA=0,postP=0,postF=0 }, i) => {
     const cap = capital ? capital.total_bn : 0;
-    const welfare = r.welfare_bn - cap, A = r.direct_fiscal_response_bn - cap;
-    maxId = Math.max(maxId, Math.abs(welfare - (r.private_wtp_bn + A + r.induced_receipts_bn)));
+    const A = r.direct_fiscal_response_bn - cap + postA;
+    const production = r.private_wtp_bn + postP, receipts = r.induced_receipts_bn + postF;
+    const welfare = production + A + receipts;
+    maxId = Math.max(maxId, Math.abs(welfare + costs[i]));
     const key = spec.normalization;
     pf[key] = pf[key] || new Set();
+    // The coverage producer's generation-end P/F transport can vary by reading.
+    // The engine production invariance remains an independent check.
     pf[key].add((r.private_wtp_bn + r.induced_receipts_bn).toFixed(9));
     rows.push(Object.assign({
       case: caseName, spec_id: i, ...specFields(spec), cost_bn: -welfare, welfare_bn: welfare,
-      A_bn: A, P_bn: r.private_wtp_bn, F_bn: r.induced_receipts_bn,
+      A_bn: A, P_bn: production, F_bn: receipts,
       band_end: costs[i] === lo ? "low" : costs[i] === hi ? "high" : "",
     }, capital ? Object.assign({ engine_A_bn: r.direct_fiscal_response_bn }, capitalColumns(capital)) : {}));
   });
@@ -265,6 +284,15 @@ for (const [caseName, payloadLane, variant, pkg] of CASES[CASE].models(P)) {
         lineRows.push({ case: caseName, end, side: "capital_return", line: `capital_${c.id}`, amount_bn: amount, response: c.response, effect_bn: -c.return_bn });
       }
     }
+    if (hit.coverage) {
+      for (const [i,p] of hit.coverage.line_parts.entries()) {
+        if(p.economic_class === "production") continue;
+        lineRows.push({case:caseName,end,side:"coverage",line:`coverage_${i}_${p.generation}_${p.line}`,
+          amount_bn:p.coverage_bn,response:1,effect_bn:-p.coverage_bn});
+      }
+      lineRows.push({case:caseName,end,side:"post_engine",line:"mixed_unit_removal",
+        amount_bn:hit.post.mixed_unit_removal_bn,response:1,effect_bn:-hit.post.mixed_unit_removal_bn});
+    }
     // The lines, capital included, add to fiscal_specs.csv's A_bn at every specification of the band end.
     const sum = lineRows.filter((x) => x.case === caseName && x.end === end).reduce((s, x) => s + x.effect_bn, 0);
     const ends = rows.filter((x) => x.case === caseName && x.band_end === end);
@@ -276,8 +304,8 @@ for (const [caseName, payloadLane, variant, pkg] of CASES[CASE].models(P)) {
 
 // Columns: every row's keys in order of first appearance; a row without one (the previous case's rows
 // lack the September 27 columns) leaves the cell empty.
-function writeCsv(file, list) {
-  const keys = [...new Set(list.flatMap((r) => Object.keys(r)))];
+function writeCsv(file, list, stableKeys) {
+  const keys = stableKeys || [...new Set(list.flatMap((r) => Object.keys(r)))];
   const fmt = (v) => (v === undefined || v === null ? "" : typeof v === "number" ? (Number.isInteger(v) ? String(v) : v.toPrecision(15)) : String(v));
   fs.writeFileSync(file, [keys.join(",")].concat(list.map((r) => keys.map((k) => fmt(r[k])).join(","))).join("\n") + "\n");
 }
@@ -286,6 +314,9 @@ if (failures) {
   process.exit(1);
 }
 fs.mkdirSync(OUT, { recursive: true });
-writeCsv(path.join(OUT, "fiscal_specs.csv"), rows);
+// Downstream world-ledger pins this public schema. New carrier responses are
+// available in the payload and line table; they do not extend these columns.
+const stableSpecKeys=fs.readFileSync(path.join(HERE,"derived/oct14/fiscal_specs.csv"),"utf8").split("\n",1)[0].split(",");
+writeCsv(path.join(OUT, "fiscal_specs.csv"), rows,stableSpecKeys);
 writeCsv(path.join(OUT, "fiscal_lines_band_ends.csv"), lineRows);
 console.log(`wrote ${path.relative(process.cwd(), OUT) || "."}/fiscal_specs.csv (${rows.length} rows) and fiscal_lines_band_ends.csv (${lineRows.length} rows)`);

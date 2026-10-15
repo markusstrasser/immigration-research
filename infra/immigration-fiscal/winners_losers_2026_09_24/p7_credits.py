@@ -139,9 +139,10 @@ def _build(out: Path):
     meta["source_sha256"] = {str(path): _sha(path) for path in sorted(read_paths)}
     meta["source_gates"] = len(source.GATES)
     meta["wall_seconds"] = time.perf_counter() - started
-    peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-    meta["peak_memory_bytes"] = peak if sys.platform == "darwin" else peak * 1024
-    _require(meta["peak_memory_bytes"] < 2.5 * 1024**3, "subprocess exceeded the 2.5 GiB budget")
+    sys.path.insert(0, str(HERE.parent / "scripts"))
+    from memory_budget import require_within_budget
+    meta["peak_memory_bytes"] = require_within_budget("crossing-credit subprocess")
+    meta["descriptive_ru_maxrss"] = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     (out / "metadata.json").write_text(json.dumps(meta, indent=1) + "\n")
 
 

@@ -4,6 +4,10 @@ Reuse the authoritative nest and distribution adapters with isolated function
 globals. No production source, grid, or case payload is modified.
 """
 import types
+import importlib.util
+import json
+import sys
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -15,6 +19,113 @@ def scenario_solver(B, epsilons):
         ("hs_or_less", 2.0, 1.0, epsilon) for epsilon in epsilons]
     return types.FunctionType(B.row4_nest_rows.__code__, scope,
                               B.row4_nest_rows.__name__, B.row4_nest_rows.__defaults__)
+
+
+def low_skill_solve(nest, shares, tree, removed, sigma, labor_share, adjustment, elasticity=0.0):
+    """Use the tree's finite epsilon only in cell 0; cell 1 is exactly linear.
+
+    The existing equilibrium and Euler checks remain authoritative. A local
+    function namespace changes only its two-branch aggregate, never the module.
+    Above-HS wages can still change through complementarity across skill cells.
+    """
+    if len(tree.children) != 2 or tree.children != (0, 1):
+        raise ValueError("Low-skill epsilon requires the two-branch nativity nest")
+
+    def aggregate(node, quantities):
+        total, gradients = nest.aggregate(node, quantities)
+        total = total.copy()
+        total[1] = (node.weights[:, 1] * quantities[:, 1]).sum(axis=0)
+        for index in gradients:
+            gradients[index] = np.broadcast_to(gradients[index], total.shape).copy()
+            gradients[index][1] = node.weights[index, 1]
+        return total, gradients
+
+    scope = dict(nest.solve.__globals__, aggregate=aggregate)
+    solve = types.FunctionType(nest.solve.__code__, scope, nest.solve.__name__, nest.solve.__defaults__)
+    return solve(shares, tree, removed, sigma, labor_share, adjustment, elasticity)
+
+
+def finite_row(B, d, template, row4_info, epsilon, require):
+    """Rebuild the producer's row-4 calibration, then solve the scoped epsilon."""
+    spec = importlib.util.spec_from_file_location("p8_epsilon_builder", B.NEST_DIR / "builder.py")
+    builder = importlib.util.module_from_spec(spec)
+    sys.path.insert(0, str(B.NEST_DIR))
+    try:
+        spec.loader.exec_module(builder)
+    finally:
+        sys.path.remove(str(B.NEST_DIR))
+    weights = d.pw.to_numpy(float).copy()
+    outside = ~np.isin(d.st.to_numpy(), B.ROW4_EXCLUDED_STATES)
+    for status, label in B.ROW4_STATUS.items():
+        mask = d.PENATVTY.eq(B.MEXICO_BIRTHPLACE).to_numpy() & d.PRCITSHP.eq(status).to_numpy() & outside
+        weights[mask] *= row4_info["factors"][label]
+    native, target, civ = d.native.to_numpy(), d.target.to_numpy(), d.civ.to_numpy()
+    branches = (civ & native & ~target, civ & native & target,
+                civ & ~native & ~target, civ & ~native & target)
+    cells = (d.A_HGA.between(31, 39).to_numpy(), d.A_HGA.between(40, 46).to_numpy())
+    earn = np.maximum(d.PEARNVAL.to_numpy(float), 0)
+    four = np.array([[(weights * earn * br * cell).sum() for cell in cells] for br in branches])[:, :, None]
+    total = four.sum(axis=0)
+    case = dict(shares=total / total.sum(axis=0), four_share=four / total[None, :, :])
+    tree, removed, _, _ = builder.make_case(case, "A_by_nativity", epsilon)
+    result = low_skill_solve(builder.nest, case["shares"], tree, removed, template.sigma,
+                            template.labor_share, template.capital_adjustment)
+    # A second branch ratio in the high cell would reveal an accidental finite
+    # high-skill nest even when aggregate production totals still close.
+    require(f"epsilon_{epsilon:g}_above_hs_perfect_substitutes",
+            np.allclose(result["wage_without_over_with"][0, 1],
+                        result["wage_without_over_with"][1, 1], rtol=0, atol=1e-12))
+    tau = np.asarray(builder.TAU).reshape(2, 1)
+    scale = total.sum(axis=0)[0] / .65 / 1e9
+    private = ((1 - tau) * (result["labor_gain_by_branch"] - result["disutility_by_branch"])).sum(axis=1)
+    row = template.copy()
+    row["sigma_NI"] = epsilon
+    for index, tag in enumerate(("native", "other_fb")):
+        for cell in (0, 1):
+            row[f"wage_pct_{tag}_cell{cell}"] = float(100 * (result["wage_without_over_with"][index, cell, 0] - 1))
+    row["native_production_gain_bn"], row["other_immigrant_production_gain_bn"] = scale * private[:, 0]
+    row["capital_gain_bn"] = float(scale * result["capital_gain"][0])
+    row["capital_tax_gain_bn"] = row.capital_gain_bn * builder.CAPITAL_TAX
+    row["capital_private_residual_bn"] = row.capital_gain_bn - row.capital_tax_gain_bn
+    row["induced_current_receipts_bn"] = float(scale * (tau * result["labor_gain_by_branch"]).sum()) + row.capital_tax_gain_bn
+    row["private_plus_receipts_bn"] = row.native_production_gain_bn + row.other_immigrant_production_gain_bn + row.capital_private_residual_bn + row.induced_current_receipts_bn
+    return row
+
+
+def recompute_lineage_row(row, bases, tau, private_delta, receipt_delta):
+    """Solve descendant multipliers on this epsilon's wage bill, never its sibling.
+
+    [ASSUMPTION] The case's first-order descendant P/F addition is held fixed
+    beside the finite union solve. Only its allocation across branches/cells is
+    recomputed; this is not a newly estimated descendant production effect.
+    """
+    tau = np.asarray(tau, float)
+    labor = {(tag, cell): -row[f"wage_pct_{tag}_cell{cell}"] / 100 * bases[(tag, cell)]
+             for tag in ("native", "other_fb") for cell in (0, 1)}
+    wages = np.array([labor[("native", cell)] + labor[("other_fb", cell)] for cell in (0, 1)])
+    private_before = row.native_production_gain_bn + row.other_immigrant_production_gain_bn + row.capital_private_residual_bn
+    target = np.array([private_before + private_delta, row.induced_current_receipts_bn + receipt_delta])
+    if row.capital_private_residual_bn == 0 and row.capital_tax_gain_bn == 0:
+        kappa, lam = 1.0, np.linalg.solve(np.array([(1 - tau) * wages, tau * wages]), target)
+    else:
+        one, kappa = np.linalg.solve(np.array([[float((1 - tau) @ wages), row.capital_private_residual_bn],
+                                               [float(tau @ wages), row.capital_tax_gain_bn]]), target)
+        lam = np.array([one, one])
+    new = row.copy()
+    for tag in ("native", "other_fb"):
+        for cell in (0, 1):
+            new[f"wage_pct_{tag}_cell{cell}"] *= lam[cell]
+    for tag, field in (("native", "native_production_gain_bn"), ("other_fb", "other_immigrant_production_gain_bn")):
+        new[field] = sum((1 - tau[cell]) * lam[cell] * labor[(tag, cell)] for cell in (0, 1))
+    for field in ("capital_gain_bn", "capital_tax_gain_bn", "capital_private_residual_bn"):
+        new[field] *= kappa
+    new["induced_current_receipts_bn"] = float(tau @ (lam * wages)) + new.capital_tax_gain_bn
+    new["private_plus_receipts_bn"] = new.native_production_gain_bn + new.other_immigrant_production_gain_bn + new.capital_private_residual_bn + new.induced_current_receipts_bn
+    return new, dict(sigma_NI=float(row.sigma_NI), lambda_cell0=float(lam[0]), lambda_cell1=float(lam[1]),
+                     kappa=float(kappa), delta_P_bn=float(private_delta), delta_F_bn=float(receipt_delta),
+                     max_abs_closure_bn=float(np.max(np.abs(np.array([
+                         new.native_production_gain_bn + new.other_immigrant_production_gain_bn + new.capital_private_residual_bn,
+                         new.induced_current_receipts_bn]) - target))))
 
 
 def transport_wage_delta(d, delta, old_weights, new_weights, require):
@@ -83,16 +194,39 @@ def build(wl, B, d, I, pin, require, check_total):
                  wl.FISCAL / "distribution_weights_2026_09_23/distribute.py",
                  wl.FISCAL / "matched_benefits_2026_09_19/model.py"):
         pin(path, wl)
-    # Parameters are the parent's requested arms, already present in the
-    # production builder's published grid. No estimate is made on this CPS.
+    source_path = Path(__file__).resolve().parent / "inputs/p8_epsilon_sources.json"
+    pin(source_path, wl)
+    source_evidence = json.loads(source_path.read_text())
+    # Parameters are the parent's requested sensitivity arms, with their exact
+    # source populations recorded locally. Neither is estimated on this CPS.
     epsilons = (8.7, 17.9)
     prod = B.fiscal_totals(wl.CASE["case"])["adopted"]["production"]
     base = B.LATER_CASES[wl.CASE["case"]].grid_base
     for lane in (base, wl.CASE["lane"]):
         pin(wl.FISCAL / lane / "derived/corrections.json", wl)
     pin(wl.FISCAL / prod["grid"]["file"], wl)
-    rows, info = scenario_solver(B, epsilons)(d, B.nest_rows(), prod, base)
-    rows, lineage_info = B.lineage_rows(d, rows, base, wl.CASE["lane"])
+    base_rows, info = B.row4_nest_rows(d, B.nest_rows(), prod, base)
+    rows, lineage_info = B.lineage_rows(d, base_rows, base, wl.CASE["lane"])
+    template = B.pick(base_rows, "hs_or_less", 2.0, 1.0, np.inf)
+    numeric = [k for k in base_rows.columns if k.endswith("_bn") or k.startswith("wage_pct")]
+    infinite_control = finite_row(B, d, template, info, np.inf, require)
+    require("epsilon_calibration_infinite_reproduces_row4", all(
+        abs(infinite_control[k] - template[k]) < 1e-9 for k in numeric))
+    live = B.pick(rows, "hs_or_less", 2.0, 1.0, np.inf)
+    private_delta = (live.native_production_gain_bn + live.other_immigrant_production_gain_bn + live.capital_private_residual_bn
+                     - template.native_production_gain_bn - template.other_immigrant_production_gain_bn - template.capital_private_residual_bn)
+    receipt_delta = live.induced_current_receipts_bn - template.induced_current_receipts_bn
+    bases = {key: float(np.dot(d.pw.to_numpy(), values) / 1e9)
+             for key, values in I["basis"]["hs_or_less"].items()}
+    finite_lineage = []
+    for epsilon in epsilons:
+        row = finite_row(B, d, template, info, epsilon, require)
+        row, metadata = recompute_lineage_row(row, bases, B.TAU, private_delta, receipt_delta)
+        require(f"epsilon_{epsilon:g}_descendant_parts_close", metadata["max_abs_closure_bn"] < 1e-9)
+        finite_lineage.append(metadata)
+        rows = pd.concat([rows, pd.DataFrame([row])], ignore_index=True)
+    lineage_info["finite_scenarios"] = finite_lineage
+    lineage_info["finite_rule"] = "[ASSUMPTION] hold the case-minus-base descendant P/F addition fixed; solve its skill-cell multipliers anew on each finite low-skill epsilon wage bill; do not reuse infinite multipliers"
     factor = info["gdp_factor"]["row4"]
     basis = I["basis"]["hs_or_less"]
     w = d.pw.to_numpy()
@@ -136,6 +270,7 @@ def build(wl, B, d, I, pin, require, check_total):
                     induced_receipts_bn=row.induced_current_receipts_bn * scale,
                     delta_receipts_bn=delta_f[level]))
     return scenarios, pd.DataFrame(detail), dict(row4=info, lineage=lineage_info,
-        epsilon_scope="[ASSUMPTION] one common epsilon in both skill cells, as the existing nest; low-skill literature values transported",
+        epsilon_scope="[ASSUMPTION] finite literature epsilon in hs_or_less only; above_hs has exact infinite substitution. 8.7 transports Caiumi–Peri's no-HS-diploma estimate to hs_or_less; 17.9 transports Piyapromdee's low-skill, gender-specific metro estimate. Infinite remains central",
+        source_evidence=source_evidence,
         receipt_incidence="delta induced labor receipts: national combined-tax key for a; equal persons for b; responding-programme receipts for c",
         card_status="builder has no Card split option; wage-bill reclassification only, no equilibrium/share-ahead estimate")

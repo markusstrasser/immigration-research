@@ -1,0 +1,1090 @@
+{
+ "case": "oct14",
+ "programmes": {
+  "low": [
+   {
+    "id": "general_public_services",
+    "national_bn": 402.771128442,
+    "response": 0.6005266346459308,
+    "amount_bn": 30.51113763147671,
+    "federal_share": 0.252523,
+    "state_local_bn": 22.806373623363317,
+    "jurisdiction": {
+     "federal": 0.252523,
+     "state_local": 0.747477
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "public_order_safety",
+    "national_bn": 521.2025117960001,
+    "response": 1,
+    "amount_bn": 74.55015591898928,
+    "federal_share": 0.158937,
+    "state_local_bn": 62.70137778769288,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "jurisdiction_basis": "state-local service delivery; federal grants remain in funding split"
+   },
+   {
+    "id": "economic_affairs_services",
+    "national_bn": 453.136829594,
+    "response": 0.3844994797314016,
+    "amount_bn": 15.282683151179489,
+    "federal_share": 0.441526,
+    "state_local_bn": 8.534981190171814,
+    "jurisdiction": {
+     "federal": 0.441526,
+     "state_local": 0.558474
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "housing_community_services",
+    "national_bn": 14.747693443000001,
+    "response": 1,
+    "amount_bn": 1.8603381688340848,
+    "federal_share": 0.190136,
+    "state_local_bn": 1.5066209107646473,
+    "jurisdiction": {
+     "federal": 0.190136,
+     "state_local": 0.809864
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "health_services",
+    "national_bn": 308.35875489899996,
+    "response": 1,
+    "amount_bn": 19.352173965499816,
+    "federal_share": 0.759553,
+    "state_local_bn": 4.653172173482534,
+    "jurisdiction": {
+     "federal": 0.759553,
+     "state_local": 0.24044699999999997
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "recreation_culture",
+    "national_bn": 54.483657029,
+    "response": 0.8563914832367988,
+    "amount_bn": 5.885811986890709,
+    "federal_share": 0.113986,
+    "state_local_bn": 5.214911821752985,
+    "jurisdiction": {
+     "federal": 0.113986,
+     "state_local": 0.886014
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "income_security_services",
+    "national_bn": 168.26451691100002,
+    "response": 1,
+    "amount_bn": 29.852907934124666,
+    "federal_share": 0.730316,
+    "state_local_bn": 8.050851623306478,
+    "jurisdiction": {
+     "federal": 0.730316,
+     "state_local": 0.26968400000000003
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "social_security",
+    "national_bn": 1447.965,
+    "response": 1,
+    "amount_bn": 108.11698012221756,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "federal programme authority; SSI state supplement not separately identified"
+   },
+   {
+    "id": "medicare",
+    "national_bn": 1102.358,
+    "response": 1,
+    "amount_bn": 76.7213638123311,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "federal programme authority; SSI state supplement not separately identified"
+   },
+   {
+    "id": "unemployment",
+    "national_bn": 36.468,
+    "response": 1,
+    "amount_bn": 4.970777568679642,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "railroad_retirement",
+    "national_bn": 14.493,
+    "response": 1,
+    "amount_bn": 0.5666919925903448,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "pension_guaranty",
+    "national_bn": 0.771,
+    "response": 1,
+    "amount_bn": 0.0400478999095943,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "veterans_life_insurance",
+    "national_bn": 0.449,
+    "response": 1,
+    "amount_bn": 0.024839598503763237,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "workers_compensation",
+    "national_bn": 11.923,
+    "response": 1,
+    "amount_bn": 1.6429051721203116,
+    "federal_share": 0.321144,
+    "state_local_bn": 1.1152960335249062,
+    "jurisdiction": {
+     "federal": 0.321144,
+     "state_local": 0.678856
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "military_medical",
+    "national_bn": 7.157,
+    "response": 1,
+    "amount_bn": 0.35084208277747103,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "veterans_pension_disability",
+    "national_bn": 180.525,
+    "response": 1,
+    "amount_bn": 9.987012112445596,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "veterans_readjustment",
+    "national_bn": 11.391,
+    "response": 1,
+    "amount_bn": 0.6301734104846313,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "veterans_other",
+    "national_bn": 37.526,
+    "response": 1,
+    "amount_bn": 1.7351783283012046,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "snap",
+    "national_bn": 97.391,
+    "response": 1,
+    "amount_bn": 14.62549462768213,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "federal programme authority; SSI state supplement not separately identified"
+   },
+   {
+    "id": "black_lung",
+    "national_bn": 0.173,
+    "response": 1,
+    "amount_bn": 0.0349191384374209,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "ssi",
+    "national_bn": 65.134,
+    "response": 1,
+    "amount_bn": 5.462842350283602,
+    "federal_share": 0.920671,
+    "state_local_bn": 0.4333618208056478,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "federal programme authority; SSI state supplement not separately identified"
+   },
+   {
+    "id": "refundable_tax_credits",
+    "national_bn": 228.809,
+    "response": 1,
+    "amount_bn": 37.17045293380809,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "federal programme authority; SSI state supplement not separately identified"
+   },
+   {
+    "id": "other_federal_benefits",
+    "national_bn": 66.62745901599999,
+    "response": 1,
+    "amount_bn": 6.9803647089112975,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "temporary_disability",
+    "national_bn": 13.138,
+    "response": 1,
+    "amount_bn": 2.6518360696783936,
+    "federal_share": 0,
+    "state_local_bn": 2.6518360696783936,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "medicaid_and_chip_other_medical",
+    "national_bn": 954.2,
+    "response": 1,
+    "amount_bn": 126.08688622828268,
+    "federal_share": 0.640442,
+    "state_local_bn": 45.33554863846887,
+    "jurisdiction": {
+     "federal": 0.640442,
+     "state_local": 0.35955800000000004
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "family_and_general_assistance",
+    "national_bn": 63.065,
+    "response": 1,
+    "amount_bn": 12.3610870900053,
+    "federal_share": 0.670334,
+    "state_local_bn": 4.075030136613687,
+    "jurisdiction": {
+     "federal": 0.670334,
+     "state_local": 0.329666
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "energy_assistance",
+    "national_bn": 5.218,
+    "response": 1,
+    "amount_bn": 0.6045528356789629,
+    "federal_share": 0.921186,
+    "state_local_bn": 0.04764722719120181,
+    "jurisdiction": {
+     "federal": 0.921186,
+     "state_local": 0.07881400000000005
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "other_state_welfare",
+    "national_bn": 22.385,
+    "response": 1,
+    "amount_bn": 5.601730122075813,
+    "federal_share": 0.670334,
+    "state_local_bn": 1.846699962424245,
+    "jurisdiction": {
+     "federal": 0.670334,
+     "state_local": 0.329666
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "education_benefits",
+    "national_bn": 64.479,
+    "response": 1,
+    "amount_bn": 9.603967561678482,
+    "federal_share": 0.072958,
+    "state_local_bn": 8.903281296313544,
+    "jurisdiction": {
+     "federal": 0.072958,
+     "state_local": 0.927042
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "employment_training",
+    "national_bn": 1.377,
+    "response": 1,
+    "amount_bn": 0.17711346126243668,
+    "federal_share": 0.071176,
+    "state_local_bn": 0.16450723354362148,
+    "jurisdiction": {
+     "federal": 0.071176,
+     "state_local": 0.928824
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "other_state_benefits",
+    "national_bn": 2.875,
+    "response": 1,
+    "amount_bn": 0.3626649997065471,
+    "federal_share": 0,
+    "state_local_bn": 0.3626649997065471,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "housing_subsidies",
+    "national_bn": 55.003189000000006,
+    "response": 1,
+    "amount_bn": 4.488824290011592,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "education_k12",
+    "national_bn": 950.2544781031669,
+    "response": 1,
+    "amount_bn": 167.60009651309608,
+    "federal_share": 0.082033,
+    "state_local_bn": 153.85135779583726,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "jurisdiction_basis": "state-local service delivery; federal grants remain in funding split"
+   },
+   {
+    "id": "education_college_other",
+    "national_bn": 276.1423870558331,
+    "response": 1,
+    "amount_bn": 48.70431214836085,
+    "federal_share": 0.082033,
+    "state_local_bn": 44.70895130989436,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "jurisdiction_basis": "state-local service delivery; federal grants remain in funding split"
+   },
+   {
+    "id": "school_reprice",
+    "national_bn": 0,
+    "response": 0.7153278156243373,
+    "amount_bn": 0.30213159525389593,
+    "federal_share": 0.082033,
+    "state_local_bn": 0.2773468341004331,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "jurisdiction_basis": "state-local service delivery; federal grants remain in funding split"
+   },
+   {
+    "id": "college_rekey",
+    "national_bn": 0,
+    "response": 0.28467218437566266,
+    "amount_bn": -1.4760101675430384,
+    "federal_share": 0.082033,
+    "state_local_bn": -1.3549286254689803,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "jurisdiction_basis": "state-local service delivery; federal grants remain in funding split"
+   },
+   {
+    "id": "lane_constants",
+    "national_bn": 0,
+    "response": 1,
+    "amount_bn": -5.40010769452897,
+    "federal_share": 0.9850234476791945,
+    "state_local_bn": -0.08087499542509761,
+    "jurisdiction": {
+     "federal": 0.9850234476791945,
+     "state_local": 0.014976552320805525
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "roads_vmt_sl",
+    "national_bn": 0,
+    "response": 0.7401981546463505,
+    "amount_bn": 2.2673814488848487,
+    "federal_share": 0.071176,
+    "state_local_bn": 2.105998306879021,
+    "jurisdiction": {
+     "federal": 0.071176,
+     "state_local": 0.928824
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "state_price_public_order_safety",
+    "national_bn": 0,
+    "response": 1,
+    "amount_bn": 6.931151541634829,
+    "federal_share": 0.007837,
+    "state_local_bn": 6.876832107003037,
+    "jurisdiction": {
+     "federal": 0.007837,
+     "state_local": 0.992163
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "state_price_health_services",
+    "national_bn": 0,
+    "response": 1,
+    "amount_bn": 1.9700870661101257,
+    "federal_share": 0.418898,
+    "state_local_bn": 1.1448215342907262,
+    "jurisdiction": {
+     "federal": 0.418898,
+     "state_local": 0.581102
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "state_price_recreation_culture",
+    "national_bn": 0,
+    "response": 0.8563914832367988,
+    "amount_bn": 0.37658077864509987,
+    "federal_share": 0.015603,
+    "state_local_bn": 0.37070498875590036,
+    "jurisdiction": {
+     "federal": 0.015603,
+     "state_local": 0.984397
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   }
+  ],
+  "high": [
+   {
+    "id": "general_public_services",
+    "national_bn": 402.771128442,
+    "response": 0.8510539647701243,
+    "amount_bn": 43.23975516294137,
+    "federal_share": 0.252523,
+    "state_local_bn": 32.320722469929926,
+    "jurisdiction": {
+     "federal": 0.252523,
+     "state_local": 0.747477
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "public_order_safety",
+    "national_bn": 521.2025117960001,
+    "response": 1,
+    "amount_bn": 74.55015591898928,
+    "federal_share": 0.158937,
+    "state_local_bn": 62.70137778769288,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "jurisdiction_basis": "state-local service delivery; federal grants remain in funding split"
+   },
+   {
+    "id": "economic_affairs_services",
+    "national_bn": 453.136829594,
+    "response": 0.6387399411939584,
+    "amount_bn": 25.387967089290868,
+    "federal_share": 0.441526,
+    "state_local_bn": 14.178519532224628,
+    "jurisdiction": {
+     "federal": 0.441526,
+     "state_local": 0.558474
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "housing_community_services",
+    "national_bn": 14.747693443000001,
+    "response": 1,
+    "amount_bn": 1.8603381688340848,
+    "federal_share": 0.190136,
+    "state_local_bn": 1.5066209107646473,
+    "jurisdiction": {
+     "federal": 0.190136,
+     "state_local": 0.809864
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "health_services",
+    "national_bn": 308.35875489899996,
+    "response": 1,
+    "amount_bn": 19.352173965499816,
+    "federal_share": 0.759553,
+    "state_local_bn": 4.653172173482534,
+    "jurisdiction": {
+     "federal": 0.759553,
+     "state_local": 0.24044699999999997
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "recreation_culture",
+    "national_bn": 54.483657029,
+    "response": 1,
+    "amount_bn": 6.87280537242713,
+    "federal_share": 0.113986,
+    "state_local_bn": 6.089401779245651,
+    "jurisdiction": {
+     "federal": 0.113986,
+     "state_local": 0.886014
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "income_security_services",
+    "national_bn": 168.26451691100002,
+    "response": 1,
+    "amount_bn": 29.852907934124666,
+    "federal_share": 0.730316,
+    "state_local_bn": 8.050851623306478,
+    "jurisdiction": {
+     "federal": 0.730316,
+     "state_local": 0.26968400000000003
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "social_security",
+    "national_bn": 1447.965,
+    "response": 1,
+    "amount_bn": 108.11698012221756,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "federal programme authority; SSI state supplement not separately identified"
+   },
+   {
+    "id": "medicare",
+    "national_bn": 1102.358,
+    "response": 1,
+    "amount_bn": 76.7213638123311,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "federal programme authority; SSI state supplement not separately identified"
+   },
+   {
+    "id": "unemployment",
+    "national_bn": 36.468,
+    "response": 1,
+    "amount_bn": 4.970777568679642,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "railroad_retirement",
+    "national_bn": 14.493,
+    "response": 1,
+    "amount_bn": 0.5666919925903448,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "pension_guaranty",
+    "national_bn": 0.771,
+    "response": 1,
+    "amount_bn": 0.0400478999095943,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "veterans_life_insurance",
+    "national_bn": 0.449,
+    "response": 1,
+    "amount_bn": 0.024839598503763237,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "workers_compensation",
+    "national_bn": 11.923,
+    "response": 1,
+    "amount_bn": 1.6429051721203116,
+    "federal_share": 0.321144,
+    "state_local_bn": 1.1152960335249062,
+    "jurisdiction": {
+     "federal": 0.321144,
+     "state_local": 0.678856
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "military_medical",
+    "national_bn": 7.157,
+    "response": 1,
+    "amount_bn": 0.35084208277747103,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "veterans_pension_disability",
+    "national_bn": 180.525,
+    "response": 1,
+    "amount_bn": 9.987012112445596,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "veterans_readjustment",
+    "national_bn": 11.391,
+    "response": 1,
+    "amount_bn": 0.6301734104846313,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "veterans_other",
+    "national_bn": 37.526,
+    "response": 1,
+    "amount_bn": 1.7351783283012046,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "snap",
+    "national_bn": 97.391,
+    "response": 1,
+    "amount_bn": 14.62549462768213,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "federal programme authority; SSI state supplement not separately identified"
+   },
+   {
+    "id": "black_lung",
+    "national_bn": 0.173,
+    "response": 1,
+    "amount_bn": 0.0349191384374209,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "ssi",
+    "national_bn": 65.134,
+    "response": 1,
+    "amount_bn": 5.462842350283602,
+    "federal_share": 0.920671,
+    "state_local_bn": 0.4333618208056478,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "federal programme authority; SSI state supplement not separately identified"
+   },
+   {
+    "id": "refundable_tax_credits",
+    "national_bn": 228.809,
+    "response": 1,
+    "amount_bn": 37.17045293380809,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "federal programme authority; SSI state supplement not separately identified"
+   },
+   {
+    "id": "other_federal_benefits",
+    "national_bn": 66.62745901599999,
+    "response": 1,
+    "amount_bn": 6.9803647089112975,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "temporary_disability",
+    "national_bn": 13.138,
+    "response": 1,
+    "amount_bn": 2.6518360696783936,
+    "federal_share": 0,
+    "state_local_bn": 2.6518360696783936,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "medicaid_and_chip_other_medical",
+    "national_bn": 954.2,
+    "response": 1,
+    "amount_bn": 128.2086413877093,
+    "federal_share": 0.640442,
+    "state_local_bn": 46.09844268008198,
+    "jurisdiction": {
+     "federal": 0.640442,
+     "state_local": 0.35955800000000004
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "family_and_general_assistance",
+    "national_bn": 63.065,
+    "response": 1,
+    "amount_bn": 12.3610870900053,
+    "federal_share": 0.670334,
+    "state_local_bn": 4.075030136613687,
+    "jurisdiction": {
+     "federal": 0.670334,
+     "state_local": 0.329666
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "energy_assistance",
+    "national_bn": 5.218,
+    "response": 1,
+    "amount_bn": 0.6045528356789629,
+    "federal_share": 0.921186,
+    "state_local_bn": 0.04764722719120181,
+    "jurisdiction": {
+     "federal": 0.921186,
+     "state_local": 0.07881400000000005
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "other_state_welfare",
+    "national_bn": 22.385,
+    "response": 1,
+    "amount_bn": 5.601730122075813,
+    "federal_share": 0.670334,
+    "state_local_bn": 1.846699962424245,
+    "jurisdiction": {
+     "federal": 0.670334,
+     "state_local": 0.329666
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "education_benefits",
+    "national_bn": 64.479,
+    "response": 1,
+    "amount_bn": 9.603967561678482,
+    "federal_share": 0.072958,
+    "state_local_bn": 8.903281296313544,
+    "jurisdiction": {
+     "federal": 0.072958,
+     "state_local": 0.927042
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "employment_training",
+    "national_bn": 1.377,
+    "response": 1,
+    "amount_bn": 0.17711346126243668,
+    "federal_share": 0.071176,
+    "state_local_bn": 0.16450723354362148,
+    "jurisdiction": {
+     "federal": 0.071176,
+     "state_local": 0.928824
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "other_state_benefits",
+    "national_bn": 2.875,
+    "response": 1,
+    "amount_bn": 0.3626649997065471,
+    "federal_share": 0,
+    "state_local_bn": 0.3626649997065471,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "housing_subsidies",
+    "national_bn": 55.003189000000006,
+    "response": 1,
+    "amount_bn": 4.488824290011592,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "education_k12",
+    "national_bn": 950.2544781031669,
+    "response": 1,
+    "amount_bn": 167.60009651309608,
+    "federal_share": 0.082033,
+    "state_local_bn": 153.85135779583726,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "jurisdiction_basis": "state-local service delivery; federal grants remain in funding split"
+   },
+   {
+    "id": "education_college_other",
+    "national_bn": 276.1423870558331,
+    "response": 1,
+    "amount_bn": 48.70431214836085,
+    "federal_share": 0.082033,
+    "state_local_bn": 44.70895130989436,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "jurisdiction_basis": "state-local service delivery; federal grants remain in funding split"
+   },
+   {
+    "id": "school_reprice",
+    "national_bn": 0,
+    "response": 0.8651608840454027,
+    "amount_bn": 0.3654162921370049,
+    "federal_share": 0.082033,
+    "state_local_bn": 0.33544009744412995,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "jurisdiction_basis": "state-local service delivery; federal grants remain in funding split"
+   },
+   {
+    "id": "college_rekey",
+    "national_bn": 0,
+    "response": 0.1348391159545973,
+    "amount_bn": -0.6991336598902193,
+    "federal_share": 0.082033,
+    "state_local_bn": -0.6417816283684449,
+    "jurisdiction": {
+     "federal": 0,
+     "state_local": 1
+    },
+    "jurisdiction_basis": "state-local service delivery; federal grants remain in funding split"
+   },
+   {
+    "id": "lane_constants",
+    "national_bn": 0,
+    "response": 1,
+    "amount_bn": -5.40010769452897,
+    "federal_share": 0.9866678592354078,
+    "state_local_bn": -0.07199499592741776,
+    "jurisdiction": {
+     "federal": 0.9866678592354078,
+     "state_local": 0.013332140764592215
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "roads_vmt_sl",
+    "national_bn": 0,
+    "response": 1,
+    "amount_bn": 3.0632087295166937,
+    "federal_share": 0.071176,
+    "state_local_bn": 2.8451817849846135,
+    "jurisdiction": {
+     "federal": 0.071176,
+     "state_local": 0.928824
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "roads_vmt_fed",
+    "national_bn": 0,
+    "response": 1,
+    "amount_bn": 0.027842503165727218,
+    "federal_share": 1,
+    "state_local_bn": 0,
+    "jurisdiction": {
+     "federal": 1,
+     "state_local": 0
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "state_price_public_order_safety",
+    "national_bn": 0,
+    "response": 1,
+    "amount_bn": 6.931151541634829,
+    "federal_share": 0.007837,
+    "state_local_bn": 6.876832107003037,
+    "jurisdiction": {
+     "federal": 0.007837,
+     "state_local": 0.992163
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "state_price_health_services",
+    "national_bn": 0,
+    "response": 1,
+    "amount_bn": 1.9700870661101257,
+    "federal_share": 0.418898,
+    "state_local_bn": 1.1448215342907262,
+    "jurisdiction": {
+     "federal": 0.418898,
+     "state_local": 0.581102
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   },
+   {
+    "id": "state_price_recreation_culture",
+    "national_bn": 0,
+    "response": 1,
+    "amount_bn": 0.4397297100874745,
+    "federal_share": 0.015603,
+    "state_local_bn": 0.43286860742097966,
+    "jurisdiction": {
+     "federal": 0.015603,
+     "state_local": 0.984397
+    },
+    "jurisdiction_basis": "debt-lane central funding share"
+   }
+  ]
+ },
+ "source": "debt_legacy_2026_09_23/derived/oct14/federal_shares_by_year.csv; federal_split_2024_lines.csv (constant line)",
+ "rule": "programme authority for recipient keys; funding shares separately retain federal grants"
+}

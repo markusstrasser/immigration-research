@@ -23,6 +23,9 @@ def markdown(table):
 
 
 def main():
+    if (HERE / "derived/oct15/p7_net_shares.csv").is_file():
+        from p8_document import main as oct15_document
+        return oct15_document()
     shares=pd.read_csv(OUT/"p7_net_shares.csv")
     cuts=pd.read_csv(OUT/"p7_cuts.csv")
     gates=json.loads((OUT/"p7_gates.json").read_text())

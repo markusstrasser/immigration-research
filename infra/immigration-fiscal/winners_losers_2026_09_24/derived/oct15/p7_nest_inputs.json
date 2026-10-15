@@ -1,0 +1,191 @@
+{
+ "row4": {
+  "weights": "row4",
+  "grid": {
+   "grid": "row4",
+   "file": "main_case_candidate_2026_09_28/derived/production_row4.json",
+   "sha256": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+   "rule": "the production model on the account's row-4 weights replaces model.json's grid (private_wtp_bn, induced_receipts_bn, sampling_se_bn), scenario by scenario (item 2)"
+  },
+  "factors": {
+   "naturalized": 0.8556255897504617,
+   "noncitizen": 0.7781269999470055
+  },
+  "gdp_factor": {
+   "published": 1.5155456901687994,
+   "row4": 1.520176444772577
+  },
+  "published_solve_max_abs_diff_vs_nest_scenarios": 3.730349362740526e-12,
+  "published_gdp_factor_max_rel_diff": 1.4486190025309043e-12,
+  "row4_max_abs_diff_vs_case_grid_bn": 4.961862032359932e-10
+ },
+ "lineage": {
+  "rule": "the case's grid less the base's at each scenario's cell: the wage changes of skill cell c scaled by lambda_c and the capital columns by kappa so that P and F are the case grid's (two lambdas without capital terms, one lambda and kappa with them); sigma_NI 3 takes its sigma_NI-infinite sibling's factors [ASSUMPTION: the added members' effects fall on other residents' cells as the union's do]",
+  "base": "main_case_2026_09_29",
+  "scenarios": [
+   {
+    "split": "below_ba",
+    "sigma": 2.0,
+    "capital_adjustment": 1.0,
+    "sigma_NI": "inf",
+    "lambda_cell0": 1.0288700888313778,
+    "lambda_cell1": 1.028884571569789,
+    "kappa": 1.0,
+    "delta_P_bn": -0.0452454976002068,
+    "delta_F_bn": 0.26012796832218044
+   },
+   {
+    "split": "hs_or_less",
+    "sigma": 2.0,
+    "capital_adjustment": 1.0,
+    "sigma_NI": "inf",
+    "lambda_cell0": 1.0191063943457719,
+    "lambda_cell1": 1.0191425376466046,
+    "kappa": 1.0,
+    "delta_P_bn": -0.0061724591766804116,
+    "delta_F_bn": 0.1574378234787055
+   },
+   {
+    "split": "below_ba",
+    "sigma": 2.0,
+    "capital_adjustment": 1.0,
+    "sigma_NI": 3.0,
+    "lambda_cell0": 1.0288700888313778,
+    "lambda_cell1": 1.028884571569789,
+    "kappa": 1.0,
+    "delta_P_bn": 0.06289768949241292,
+    "delta_F_bn": 0.3312124976445361
+   },
+   {
+    "split": "below_ba",
+    "sigma": 2.0,
+    "capital_adjustment": 0.0,
+    "sigma_NI": "inf",
+    "lambda_cell0": 1.040158767411714,
+    "lambda_cell1": 1.040158767411714,
+    "kappa": 1.0398750966809827,
+    "delta_P_bn": 2.5863665636144333,
+    "delta_F_bn": -1.7885171294845748
+   },
+   {
+    "split": "hs_or_less",
+    "sigma": 1.5,
+    "capital_adjustment": 1.0,
+    "sigma_NI": "inf",
+    "lambda_cell0": 1.0191099981279608,
+    "lambda_cell1": 1.019145914889941,
+    "kappa": 1.0,
+    "delta_P_bn": -0.008546911206842034,
+    "delta_F_bn": 0.21107632356470418
+   },
+   {
+    "split": "hs_or_less",
+    "sigma": 2.5,
+    "capital_adjustment": 1.0,
+    "sigma_NI": "inf",
+    "lambda_cell0": 1.0191042108365214,
+    "lambda_cell1": 1.0191404918185059,
+    "kappa": 1.0,
+    "delta_P_bn": -0.004823885352386814,
+    "delta_F_bn": 0.12553297403882802
+   },
+   {
+    "split": "below_ba",
+    "sigma": 1.5,
+    "capital_adjustment": 1.0,
+    "sigma_NI": "inf",
+    "lambda_cell0": 1.0288705429027938,
+    "lambda_cell1": 1.0288850025154626,
+    "kappa": 1.0,
+    "delta_P_bn": -0.06051368606099583,
+    "delta_F_bn": 0.3473198935382733
+   },
+   {
+    "split": "below_ba",
+    "sigma": 2.5,
+    "capital_adjustment": 1.0,
+    "sigma_NI": "inf",
+    "lambda_cell0": 1.0288698065692399,
+    "lambda_cell1": 1.0288843037156008,
+    "kappa": 1.0,
+    "delta_P_bn": -0.03612741966741195,
+    "delta_F_bn": 0.20792489892581578
+   },
+   {
+    "split": "hs_or_less",
+    "sigma": 2.0,
+    "capital_adjustment": 1.0,
+    "sigma_NI": 3.0,
+    "lambda_cell0": 1.0191063943457719,
+    "lambda_cell1": 1.0191425376466046,
+    "kappa": 1.0,
+    "delta_P_bn": 0.074837649430048,
+    "delta_F_bn": 0.2116250669109423
+   }
+  ],
+  "max_abs_diff_vs_case_grid_bn": 5.684341886080802e-14,
+  "finite_scenarios": [
+   {
+    "sigma_NI": 8.7,
+    "lambda_cell0": 1.0193472895721,
+    "lambda_cell1": 1.0189956622233172,
+    "kappa": 1.0,
+    "delta_P_bn": -0.0061724591766804116,
+    "delta_F_bn": 0.1574378234787055,
+    "max_abs_closure_bn": 3.219646771412954e-15
+   },
+   {
+    "sigma_NI": 17.9,
+    "lambda_cell0": 1.0192222764655665,
+    "lambda_cell1": 1.019071144651909,
+    "kappa": 1.0,
+    "delta_P_bn": -0.0061724591766804116,
+    "delta_F_bn": 0.1574378234787055,
+    "max_abs_closure_bn": 3.552713678800501e-15
+   }
+  ],
+  "finite_rule": "[ASSUMPTION] hold the case-minus-base descendant P/F addition fixed; solve its skill-cell multipliers anew on each finite low-skill epsilon wage bill; do not reuse infinite multipliers"
+ },
+ "epsilon_scope": "[ASSUMPTION] finite literature epsilon in hs_or_less only; above_hs has exact infinite substitution. 8.7 transports Caiumi\u2013Peri's no-HS-diploma estimate to hs_or_less; 17.9 transports Piyapromdee's low-skill, gender-specific metro estimate. Infinite remains central",
+ "source_evidence": {
+  "verified_date": "2026-10-15",
+  "status": "Primary full-text values and populations checked; transported sensitivities, not estimates on this lineage. Infinite substitution remains central.",
+  "sources": [
+   {
+    "doi": "10.3386/w32389",
+    "authors": "Alessandro Caiumi and Giovanni Peri",
+    "title": "Immigration's Effect on US Wages and Employment Redux",
+    "url": "https://acaiumi.github.io/alessandrocaiumi.com/caiumi_peri_2024wp.pdf",
+    "archive_pdf": "../corpus/doi_10_3386_w32389/paper.pdf",
+    "archive_pdf_sha256": "55ab0d9510dcd39615b4c84ef29e13e6b39e9a2875a53066576b0e25dc38f2da",
+    "table": "Table 7 Panel A column 1, PDF page 41 (printed page 39)",
+    "inverse_elasticity": 0.115,
+    "inverse_elasticity_se": 0.031,
+    "exact_reciprocal": 8.695652173913043,
+    "used_epsilon": 8.7,
+    "population": "US national native/immigrant education-experience cells, 2000-2019; pooled genders, all workers, employment weighted; the 0.115 row concerns workers WITHOUT a high-school diploma.",
+    "method": "2SLS relative weekly wages versus relative employment, education-specific coefficients, immigrant shift-share and native demographic instruments.",
+    "transfer_limit": "Transporting the no-diploma value to the broader hs_or_less cell is an assumption. The adjacent HS-diploma estimate is 0.017; the paper's own two-cell simulation uses inverse elasticity 0.045 for HS-or-less (PDF page 45), not 0.115. No parameter is estimated for Mexican-origin descendants or removal of a whole lineage."
+   },
+   {
+    "doi": "10.1093/restud/rdaa029",
+    "author": "Suphanit Piyapromdee",
+    "title": "The Impact of Immigration on Wages, Internal Migration and Welfare",
+    "publication": "Review of Economic Studies 88(1), 406-453 (2021); online 2020",
+    "url": "https://discovery.ucl.ac.uk/id/eprint/10094994/1/Immigration_v43_Restud_R3.pdf",
+    "archive_pdf": "../corpus/doi_10_1093_restud_rdaa029/paper.pdf",
+    "archive_pdf_sha256": "8160139c821a5c0842d85e6a71e07fa7392897cb1e113a62b52b8e57c7b83512",
+    "table": "Table 1 Panel I, PDF page 45 (printed page 45); sample definition PDF pages 6-7",
+    "elasticity": 17.87,
+    "elasticity_se": 0.819,
+    "used_epsilon": 17.9,
+    "population": "Low-skill means high-school graduates and dropouts, with separate gender/nativity nests. 114 US metropolitan areas plus an outside option; labor-demand estimation uses Census 1990/2000 and pooled ACS 2005-2007. Workers over 18, positive earnings, 1-40 years of potential experience, not in school; wage sample excludes self-employment and part-time/part-year workers.",
+    "method": "Instrumented spatial equilibrium labor-demand estimation; native/foreign-born substitution within low-skill and gender cells.",
+    "transfer_limit": "Transport to a national two-cell earnings-calibrated model pools gender and changes market, years, and population. The paper separately estimates high-skill nativity elasticity 6.925; this arm deliberately leaves above_hs infinite rather than transporting that estimate."
+   }
+  ],
+  "implementation_scope": "Finite epsilon only in hs_or_less; above_hs infinite. High-skill wages may still move through cross-skill complementarity. Recompute descendant multipliers at each finite epsilon while holding the case's first-order descendant P/F increment fixed; that increment is an explicit allocation assumption, not a finite-epsilon descendant estimate."
+ },
+ "receipt_incidence": "delta induced labor receipts: national combined-tax key for a; equal persons for b; responding-programme receipts for c",
+ "card_status": "builder has no Card split option; wage-bill reclassification only, no equilibrium/share-ahead estimate"
+}

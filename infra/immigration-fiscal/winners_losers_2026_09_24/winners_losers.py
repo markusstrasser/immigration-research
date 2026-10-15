@@ -103,13 +103,13 @@ Steps (BRIEF.md numbering):
 Sister-lane rows map to key templates through an explicit `key` column or the patterns in key_map.csv;
 test_winners_losers.py holds the ingestion's positive controls on a synthetic frame.
 
-Only the live case oct14 is computed; earlier outputs stay frozen. R5 selects the personal specifications;
-R6–R9 enter through the complete payload, distribution A, debt split and generation split. The prior
-oct07 positive control reads its own pinned distribution module without running that module's main().
+Only the live case oct15 is computed; earlier outputs stay frozen. R5 selects the personal specifications;
+R6–R13 enter through the complete payload, typed current debt flows and generation split. The current
+runner keeps stationary financing central and the cohort frame beside.
 
 Run from the repository root (specs.cjs first, with the same --case and --out-dir):
-  node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs --case oct14 [--out-dir DIR]
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct14 [--out-dir DIR]
+  node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs --case oct15 [--out-dir DIR]
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct15 [--out-dir DIR]
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/winners_losers_2026_09_24/ -q
 """
 from __future__ import annotations
@@ -210,6 +210,24 @@ GEN14_COMMIT = "1a02fbbb"
 OCT14_INTEREST = (25.947051, 41.937112)  # main / programme_income_pandemic_per_head / 2005 / effective / all_borrowed
 OCT14_LADDER = "299"
 OCT14_PUBLISHED = "sept24_propagation_2026_09_24/derived/oct14"
+OCT15_LANE = "main_case_2026_10_15"
+BASE15_COMMIT = "60a228cc"
+DEBT15_COMMIT = "5a8502c9"
+GEN15_COMMIT = "3aa9b48f"
+SOCIAL15_COMMIT = "7342b331"
+CASE15_COMMIT = "d1a24d47"
+OCT15_PUBLISHED = "sept24_propagation_2026_09_24/derived/oct15"
+OCT15_SOURCE_PINS = {
+    "distribution_weights_2026_09_23/distribute.py": (BASE15_COMMIT, "36d73fabe94e7466af254c42a5e5efa51c7db08f36818bcc75f43f700e429df3"),
+    "distribution_weights_2026_09_23/derived/case_ends_oct15.json": (BASE15_COMMIT, "f6fd2c1d0ad81cbcc9797898bb9f7910f5e5bba88d408a0ac93630b672361dea"),
+    "generation_account_2026_09_24/derived/generation_results_oct15.csv": (GEN15_COMMIT, "555c7fa1a651e7c12f86ac414c08081a387ff1e6f2dd226e3876d2eaf22cee91"),
+    "sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json": (SOCIAL15_COMMIT, "616c3f3b81088f7ff01a482b191b172388a359af52541187321c68b66f9a5236"),
+    "sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.csv": (SOCIAL15_COMMIT, "7b717aa5e99dd14bcb7da598686dc759f61f3cba15054056a82aaaf41036d414"),
+    "sept24_propagation_2026_09_24/derived/oct15/band_variants.csv": (SOCIAL15_COMMIT, "c93e59cfa9fd5f5f9343d507c78915c505720746f1760723f907ae3df831c22f"),
+    "debt_legacy_2026_09_23/derived/oct15/current_flow_contract.json": (DEBT15_COMMIT, "153a822a907862ba03ed1c32a50c92c9b5286a9c4961960cd69f90d367c26ec5"),
+    "debt_legacy_2026_09_23/derived/oct15/current_flow_source_parts_2024.csv": (DEBT15_COMMIT, "b4d4595ef1840dc13245e92acc248a6d1333cde9bc012b47241d170a8c104177"),
+    "main_case_2026_10_15/derived/corrections.json": (CASE15_COMMIT, "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68"),
+}
 OLD_PROFILE = "cbo_category_lag_non_school_full"   # every case's main profile before September 27
 DEBT_REL = "infra/immigration-fiscal/debt_legacy_2026_09_23/derived"
 GEN_REL = "infra/immigration-fiscal/generation_account_2026_09_24/derived"
@@ -326,9 +344,17 @@ CASES = {
                   capped=True, congestion="long_run", preferences="attribution", production="row4", accrual=True,
                   base_dir="oct14", debt_dir="oct14", gen_results="generation_results_oct14.csv", out="oct14",
                   group_weights="lineage"),
+    "oct15": dict(model="adopted_2026_10_15", label="October 15 case (corrected main case v8)", prev="oct14",
+                  lane=OCT15_LANE, ladder="", date="2026-10-15", base=BASE15_COMMIT, debt=DEBT15_COMMIT,
+                  debt_files=DEBT15_COMMIT, gen=GEN15_COMMIT, gen_split=None, sisters=SISTER26_COMMITS,
+                  interest=(), consumption_proposal=False, published=OCT15_PUBLISHED,
+                  published_dir=OCT15_PUBLISHED, profile="long_run_non_school_full", prev_variant="v7_case",
+                  capped=True, congestion="long_run", preferences="attribution", production="row4", accrual=True,
+                  base_dir="oct15", debt_dir="oct15", gen_results="generation_results_oct15.csv", out="oct15",
+                  group_weights="lineage", current_flows_only=True, case_commit=CASE15_COMMIT),
 }
-RUNNABLE = ("oct14",)
-DEFAULT_CASE = "oct14"
+RUNNABLE = ("oct15",)
+DEFAULT_CASE = "oct15"
 CASE: dict = {}   # the run's case with its previous case under "prev" (configure)
 # At a school response of 1 nothing is left unfunded, so the school dilution rows (priced at the
 # account's former 0.63-0.66) stay in the role table (decisions/2026-09-26-main-case-schools-full-cost.md).
@@ -470,6 +496,20 @@ def configure(case: str, out_dir: Path | None = None, dev_unpinned: bool = False
     PINNED.update(generations=c["gen"], debt_corrections=c["debt_files"])
     if case == "oct14":
         PINNED.update(real_costs="c392d356",band_variants="c392d356")
+    if case == "oct15":
+        PATHS.update(debt_contract=FISCAL / DEBT_REL.replace("infra/immigration-fiscal/", "") / "oct15/current_flow_contract.json",
+                     debt_source_parts=FISCAL / DEBT_REL.replace("infra/immigration-fiscal/", "") / "oct15/current_flow_source_parts_2024.csv",
+                     social_json=FISCAL / OCT15_PUBLISHED / "real_costs_totals.json",
+                     case_payload=FISCAL / OCT15_LANE / "derived/corrections.json")
+        PATHS.pop("debt_corrections", None)
+        PINNED.pop("debt_corrections", None)
+        PINNED.update(real_costs=SOCIAL15_COMMIT, band_variants=SOCIAL15_COMMIT,
+                      social_json=SOCIAL15_COMMIT, debt_contract=DEBT15_COMMIT,
+                      debt_source_parts=DEBT15_COMMIT, case_payload=CASE15_COMMIT)
+        for rel, (commit, digest) in OCT15_SOURCE_PINS.items():
+            body = git_show(f"infra/immigration-fiscal/{rel}", commit)
+            gate(f"oct15_principal_pin_{rel}", sha(body) == digest and file_sha(FISCAL / rel) == digest,
+                 commit=commit, sha256=digest)
     return CASE
 
 
@@ -525,6 +565,8 @@ def load_frame(B):
     d = B.load_cps()
     extra_p = ["PH_SEQ", "PPPOS", "A_SEX", "INDUSTRY", "WORKYN", "WKSWORK", "HRSWK", "SEMP_VAL", "FRSE_VAL",
                "MIG_ST", "MIGSAME", "NOCOV_CYR", "PERRP", "A_CLSWKR"]
+    if CASE.get("current_flows_only"):
+        extra_p += ["A_LINENO", "PEPAR1", "PEPAR2", "PEPAR1TYP", "PEPAR2TYP"]
     extra_h = ["H_SEQ", "GESTFIPS", "H_TENURE", "HRNTVAL", "GTMETSTA"]
     with zipfile.ZipFile(B.PATHS["cps"]) as z:
         p = pd.read_csv(z.open("pppub25.csv"), usecols=extra_p)
@@ -590,13 +632,17 @@ def load_frame(B):
 def fiscal_inputs():
     """The case and the case before it by specification (specs.cjs), with their band ends."""
     s = pd.read_csv(PATHS["specs"])
-    if set(s.case) != {CASE["model"], CASE["prev"]["model"]}:
+    wanted = {CASE["model"]} if CASE.get("current_flows_only") else {CASE["model"], CASE["prev"]["model"]}
+    if set(s.case) != wanted:
         raise SystemExit(f"[BLOCKED] {PATHS['specs']} holds {sorted(set(s.case))}, not the {CASE['case']} run; "
                          f"run specs.cjs --case {CASE['case']} with the same --out-dir first")
     bands = pd.read_csv(PATHS["bands"])
     bands = bands[bands.profile == CASE.get("profile", OLD_PROFILE)].set_index("variant")
     out = {}
-    for case, variant in ((CASE["model"], "adopted"), (CASE["prev"]["model"], CASE.get("prev_variant", CASE["prev"]["model"]))):
+    selections = [(CASE["model"], "adopted")]
+    if not CASE.get("current_flows_only"):
+        selections.append((CASE["prev"]["model"], CASE.get("prev_variant", CASE["prev"]["model"])))
+    for case, variant in selections:
         c = s[s.case == case]
         lo, hi = c.cost_bn.min(), c.cost_bn.max()
         gate(f"band_reproduced_{case}", np.isclose(lo, bands.loc[variant, "cost_low_bn"], atol=5e-5)
@@ -620,23 +666,48 @@ def fiscal_one_definition(B, fin):
     both lanes; it gates its own rebuilt band). It builds A from the published case plus each change,
     so it differs from this lane's engine run by rounding; the gap is recorded and must stay < 1e-3."""
     out = {}
-    for case, arg in ((CASE["model"], CASE["case"]), (CASE["prev"]["model"], CASE["prev"]["case"])):
+    selections = [(CASE["model"], CASE["case"])]
+    if not CASE.get("current_flows_only"):
+        selections.append((CASE["prev"]["model"], CASE["prev"]["case"]))
+    for case, arg in selections:
         ft = base_for_case(B, arg).fiscal_totals(arg)["adopted"]
         A = {"low": float(ft["A_low_cost"]), "high": float(ft["A_high_cost"])}
         e = fin[case]["ends"]
         diff = {end: A[end] - float(e[end]["A_bn"]) for end in ("low", "high")}
         gate(f"fiscal_totals_{arg}_matches_engine", all(abs(v) < 1e-3 for v in diff.values()), fiscal_totals=A,
              engine={end: float(e[end]["A_bn"]) for end in ("low", "high")}, diff=diff)
-        fin[case]["A_one_definition"] = A
+        fin[case]["A_one_definition"] = ({end: float(e[end]["A_bn"]) for end in ("low", "high")}
+                                             if CASE.get("current_flows_only") else A)
         out[case] = dict(A=A, engine_A={end: float(e[end]["A_bn"]) for end in ("low", "high")}, diff=diff,
                          A_mid=float(ft["A_mid"]))
         if "capped_programs" in ft:
             # The distribution lane's case_ends: its capital return must be the engine run's at both ends.
             cap = {end: float(e[end]["capital_total_bn"]) for end in ("low", "high")}
+            if CASE.get("current_flows_only"):
+                source = pd.read_csv(io.BytesIO(read_input("debt_source_parts")))
+                coverage = source[(source.basis == "set") & (source.convention == "central")
+                                  & (source.side != "capital_return") & (source.financing == "resource_cost")]
+                for end in cap:
+                    cap[end] += float(coverage.loc[coverage.end == end, "responsive_bn"].sum())
             gate(f"capital_return_{arg}_matches_engine", all(abs(ft["capital_return"][j] - cap[end]) < 1e-9
                                                              for j, end in enumerate(("low", "high"))),
                  distribution_lane=ft["capital_return"], engine=cap)
             fin[case]["capped"] = dict(programs=ft["capped_programs"], capital_return=ft["capital_return"])
+            if CASE.get("current_flows_only"):
+                # The legacy distribution programme bucket omits post-engine
+                # coverage and mixed-unit pieces. Route their declared source
+                # programme, retaining the source housing-key adjustment.
+                programs = {key: [0., 0.] for key in ft["capped_programs"]}
+                for j, end in enumerate(("low", "high")):
+                    selected = source[(source.basis == "set") & (source.convention == "central")
+                                      & (source.end == end) & (source.financing == "displaced_beneficiaries")]
+                    for row in selected.itertuples():
+                        key = row.source_line if isinstance(row.source_line, str) and row.source_line else row.id
+                        if key == "mixed_unit_removal:M5_housing_key":
+                            key = "housing_subsidies"
+                        gate(f"oct15_displaced_source_programme_{end}_{row.Index}", key in programs, source=key)
+                        programs[key][j] += row.responsive_bn
+                fin[case]["capped"]["programs"] = programs
     return out
 
 
@@ -651,6 +722,57 @@ ACCRUAL = ("accrual_bn", "accrual_federal_bn")
 def financing_parts(c: dict) -> dict:
     """The debt lane's financing parts for a case (a CASES entry): FINANCING, with the pension accrual where it has one."""
     return dict(FINANCING, pension_accrual=ACCRUAL) if c.get("accrual") else FINANCING
+
+
+def current_flow_split(fin):
+    """Read v8's typed current flows; unresolved jurisdiction remains explicit.
+
+    The historical debt stock is not identified by this contract. Unlocated
+    costs use a declared per-person incidence beside the located government
+    budgets, with zero borrowing. Private production is kept out of financing.
+    """
+    raw = read_input("debt_source_parts")
+    table = pd.read_csv(io.BytesIO(raw))
+    contract = json.loads(read_input("debt_contract"))
+    gate("oct15_debt_contract_is_current_flow_only", contract["case"] == "oct15"
+         and not contract["historical_stock_identified"])
+    known = {"cash", "resource_cost", "pension_accrual", "displaced_beneficiaries", "private_production", "unlocated"}
+    gate("oct15_financing_classes_declared", set(table.financing) <= known, classes=sorted(set(table.financing)))
+    out = {}
+    for end in ("low", "high"):
+        e = fin[CASE["model"]]["ends"][end]
+        for convention in ("low", "central", "high"):
+            rows = table[(table.basis == "set") & (table.end == end) & (table.convention == convention)]
+            gate(f"oct15_current_flow_rows_{end}_{convention}", len(rows) > 0)
+            sums = rows.groupby("financing")[["responsive_bn", "federal_bn", "state_local_bn"]].sum()
+            def amount(part, column="responsive_bn"):
+                return float(sums.loc[part, column]) if part in sums.index else 0.
+            whole = float(rows.responsive_bn.sum())
+            gate(f"oct15_debt_whole_case_{end}_{convention}", abs(whole - e["cost_bn"]) < 1e-6,
+                 debt_bn=whole, case_bn=e["cost_bn"])
+            # The native reporter P is in the engine grid and already included
+            # in specs. The debt producer may place that tiny amount in its
+            # cash source carrier; the entire fiscal identity uses exact A/F.
+            fiscal = -(e["A_bn"] + e["F_bn"])
+            row = dict(cost_bn=fiscal, federal_bn=amount("cash", "federal_bn"),
+                       state_local_bn=amount("cash", "state_local_bn"),
+                       federal_share=amount("cash", "federal_bn") / amount("cash"),
+                       resource_cost_bn=amount("resource_cost"),
+                       resource_cost_federal_bn=amount("resource_cost", "federal_bn"),
+                       displaced_bn=amount("displaced_beneficiaries"),
+                       displaced_federal_bn=amount("displaced_beneficiaries", "federal_bn"),
+                       accrual_bn=amount("pension_accrual"),
+                       accrual_federal_bn=amount("pension_accrual", "federal_bn"),
+                       unlocated_bn=amount("unlocated"), private_production_bn=amount("private_production"),
+                       cash_bn=amount("cash"), source_whole_bn=whole)
+            row["source_production_bridge_bn"] = fiscal - sum(row[k] for k in (
+                "cash_bn", "resource_cost_bn", "displaced_bn", "accrual_bn", "unlocated_bn"))
+            gate(f"oct15_source_production_bridge_{end}_{convention}",
+                 abs(row["source_production_bridge_bn"]) < 1e-3, bridge_bn=row["source_production_bridge_bn"])
+            out[(CASE["model"], end, convention)] = row
+    return out, dict(commit=CASE["debt"], sha256=sha(raw), current_flows_only=True,
+        unlocated_rule="[DEGRADED] unresolved jurisdiction: national per person, zero borrowing; distinct channel",
+        historical_stock_rule="unidentified; frozen oct14 stock is not an oct15 estimate")
 
 
 def federal_split(fin):
@@ -670,6 +792,8 @@ def federal_split(fin):
     the capped programs. Each part is recomputed from its own lines and gated against its own columns. The
     row's cost_bn is then their sum, the whole A + F; federal_bn, state_local_bn and federal_share are the
     lane's cash columns; the other two parts sit beside them under the lane's names."""
+    if CASE.get("current_flows_only"):
+        return current_flow_split(fin)
     lines = pd.read_csv(PATHS["lines"])
     out, info = {}, {}
     for case, commit, profile, sub, parts_of in (
@@ -1126,6 +1250,10 @@ def care_inputs():
 
 
 def debt_inputs(fin):
+    if CASE.get("current_flows_only"):
+        return dict(low=0., central=0., high=0., rules_min=None, rules_max=None,
+                    status="unidentified", commit=CASE["debt"],
+                    note="[DEGRADED] no oct15 historical-stock estimate; zero placeholder never enters a net")
     """Interest on past gaps: the debt legacy lane's main benchmark, central payer convention,
     effective rate path, 2005 window, all borrowed, rule programme_income_pandemic_per_head, on the case
     (its debt commit); the previous case's values (on September 24, the September 23 case: decision 4's
@@ -1302,7 +1430,9 @@ def alloc_states(d, key, state_bn: dict, mask=None, fallback=None, notes=None, l
             if (pw * np.where(other & m, k, 0)).sum() > 0:
                 out += alloc(d, k, tot, m)
                 if step and notes is not None:
-                    notes.setdefault("state_fallbacks", []).append(f"{label}: {FIPS.get(s, s)} step {step}")
+                    notes.setdefault("state_fallbacks", []).append(f"[DEGRADED] {label}: {FIPS.get(s, s)} step {step}")
+                if step and notes is None:
+                    raise RuntimeError(f"[BLOCKED] unrecorded state allocation fallback: {label}/{s}")
                 break
         else:
             raise SystemExit(f"[BLOCKED] no other residents in state {s}")
@@ -1776,7 +1906,8 @@ def base_inputs(B, d):
     SCENARIOS = ("central", "account", "eps3_bb", "eps3_hs", "account_gdp", "eps3_hs_gdp")
     published = {k: I[k] for k in SCENARIOS}
     I["nest"] = {CASE["prev"]["case"]: published, CASE["case"]: published}
-    for c in (CASE["prev"], CASE):
+    source_cases = (CASE,) if CASE.get("current_flows_only") else (CASE["prev"], CASE)
+    for c in source_cases:
         if not c.get("production"):
             continue
         own, info4, prod = production_rows(base_for_case(B, c["case"]), d, nest, c["case"])
@@ -1784,7 +1915,8 @@ def base_inputs(B, d):
         # gate keeps the name it had when only the case had a grid.
         got = {end: float(own["account" if v["normalization"] == "cash" else "account_gdp"].private_plus_receipts_bn)
                for end, v in prod["ends"].items()}
-        want = {end: v["case"]["P_bn"] + v["case"]["F_bn"] for end, v in prod["ends"].items()}
+        want = {end: sum(v.get("engine_grid", v["case"])[k] for k in ("P_bn", "F_bn"))
+                for end, v in prod["ends"].items()}
         gate("account_production_term_case_grid" if c is CASE else f"account_production_term_{c['case']}_grid",
              all(abs(got[e] - want[e]) < 1e-6 for e in got), row4=got, case_grid=want,
              normalization={end: v["normalization"] for end, v in prod["ends"].items()})
@@ -1794,7 +1926,7 @@ def base_inputs(B, d):
             I["production_row4"] = info4
         else:
             I["production_row4_prev"] = info4
-    if "lineage" in I.get("production_row4", {}):
+    if "lineage" in I.get("production_row4", {}) and not CASE.get("current_flows_only"):
         # The case's grid adds to the case before's: its re-solve before the addition is on the same grid file, weights
         # and GDP factor as the case before's own, so the addition is all that separates the two cases' scenarios. From
         # October 7 the case before adds to a grid too (October 5 and October 7 both re-solve September 29's grid with
@@ -2040,6 +2172,24 @@ def rake_channel(B, d, R, key, mask, cell_t, state_t: dict, fallback=None, label
     return out
 
 
+def payer_wage_delta(B, d, basis, row, after_tax=True):
+    """Preserve signed wage totals while excluding observed new group members."""
+    vector = B.wage_delta(basis, row, after_tax)
+    if not CASE.get("current_flows_only"):
+        return vector
+    weights, other = d.pw.to_numpy(), d.other.to_numpy()
+    out = np.zeros(len(d))
+    for sign in (-1, 1):
+        selected = vector * sign > 0
+        target = float(np.dot(weights, np.where(selected, vector, 0)))
+        kept = np.where(selected & other, vector, 0)
+        den = float(np.dot(weights, kept))
+        gate(f"oct15_wage_payers_have_sign_{sign}", den != 0 or target == 0)
+        if den:
+            out += kept * target / den
+    return out
+
+
 def build_frame(B, d, I, fin, fedsplit, deficit, notes):
     pw, other, tgt = d.pw.to_numpy(), d.other.to_numpy(), d.target.to_numpy()
     st = d.st.to_numpy()
@@ -2105,6 +2255,17 @@ def build_frame(B, d, I, fin, fedsplit, deficit, notes):
                 x.update(federal=x["federal"] + acc_fed[L], state_local=x["state_local"] - acc[L],
                          future=x["future"] + acc[L], cash=x["cash"] - acc[L], accrual=acc[L], accrual_federal=acc_fed[L],
                          future_borrowing=dsh * fed[L])
+        if CASE.get("current_flows_only"):
+            unlocated = mid({end: sp[end]["unlocated_bn"] + sp[end]["source_production_bridge_bn"] for end in sp})
+            bridge = mid({end: sp[end]["source_production_bridge_bn"] for end in sp})
+            for L in LEVELS:
+                # Unlocated is a declared separate per-person channel. It is
+                # not assigned to a jurisdiction or included in borrowing.
+                x = fisc[L]
+                x.update(unlocated=unlocated[L], source_production_bridge=bridge[L])
+                x["state_local"] -= unlocated[L]
+                x["cash"] -= unlocated[L]
+            meta["unlocated_financing"] = "[DEGRADED] national per person; jurisdiction unresolved; zero borrowing"
     meta["fiscal"] = fisc
     for conv, kf, ks in (("a", tax_fed, tax_sl), ("b", ones, ones)):
         fedt = {L: -alloc(d, kf, fisc[L]["federal_today"]) for L in LEVELS}
@@ -2126,6 +2287,9 @@ def build_frame(B, d, I, fin, fedsplit, deficit, notes):
             worst = max(float(np.abs(ch[f"fiscal_cash_{conv}"][L] + ch[f"fiscal_resource_{conv}"][L]
                                      - ch[f"fiscal_{conv}"][L]).max()) for L in LEVELS)
             gate(f"fiscal_{conv}_is_cash_plus_resource", worst < 1e-6, max_abs_usd_per_person=worst)
+    if CASE.get("current_flows_only"):
+        put("unlocated_fiscal", {L: -alloc(d, ones, fisc[L]["unlocated"]) for L in LEVELS},
+            {L: -fisc[L]["unlocated"] for L in LEVELS})
     if CASE.get("capped"):
         # Capped programs: the distribution lane's amounts at the band ends (fiscal_totals, from case_ends.cjs)
         # on its eligible non-recipient keys; the same total as the debt lane's displaced column.
@@ -2156,10 +2320,16 @@ def build_frame(B, d, I, fin, fedsplit, deficit, notes):
               accg.induced_current_receipts_bn / acc.induced_current_receipts_bn]
     gate("gdp_normalization_is_a_uniform_scale", np.allclose(ratios, ratios[0], rtol=1e-9), ratios=[float(r) for r in ratios])
     nf = {"cash": 1.0, "gdp": float(ratios[0])}
-    cash = B.wage_delta(I["basis"]["hs_or_less"], acc, True)
+    cash = payer_wage_delta(B, d, I["basis"]["hs_or_less"], acc, True)
     P_acc = float(acc.native_production_gain_bn + acc.other_immigrant_production_gain_bn)
     gate("account_wages_equal_P_cash", np.isclose((pw * cash).sum() / 1e9, P_acc, rtol=1e-9), cps=(pw * cash).sum() / 1e9, nest=P_acc)
     wages = {end: cash * nf[e[end]["normalization"]] for end in ("low", "high")}
+    if CASE.get("current_flows_only"):
+        # Native child production is in the admitted grid; reporter and
+        # coverage P are outside it. Keep their exact endpoint addition.
+        for end in ("low", "high"):
+            delta = e[end]["P_bn"] - float(np.dot(pw, wages[end]) / 1e9)
+            wages[end] = wages[end] + alloc(d, np.maximum(d.earn.to_numpy(), 0), delta)
     wages["central"] = (wages["low"] + wages["high"]) / 2
     put("wages", wages, {L: (pw * wages[L]).sum() / 1e9 for L in LEVELS})
     # Gate: inside channels (CPS wages + A + F) equal the adopted cost in every specification.
@@ -2168,27 +2338,31 @@ def build_frame(B, d, I, fin, fedsplit, deficit, notes):
     # the case before it keeps the published scenarios.
     P_of = {CASE["model"]: ((pw * cash).sum() / 1e9, nf)}
     P_of[CASE["prev"]["model"]] = P_of[CASE["model"]]
-    if CASE.get("production"):
+    if CASE.get("production") and not CASE.get("current_flows_only"):
         pa, pg = (I["nest"][CASE["prev"]["case"]][k] for k in ("account", "account_gdp"))
         P_of[CASE["prev"]["model"]] = ((pw * B.wage_delta(I["basis"]["hs_or_less"], pa, True)).sum() / 1e9,
                                        {"cash": 1.0, "gdp": float(pg.native_production_gain_bn / pa.native_production_gain_bn)})
     for cname, c in fin.items():
         tot, nfc = P_of[cname]
         for r in c["specs"].itertuples():
-            inside = tot * nfc[r.normalization] + r.A_bn + r.F_bn
+            p = r.P_bn if CASE.get("current_flows_only") else tot * nfc[r.normalization]
+            inside = p + r.A_bn + r.F_bn
             worst = max(worst, abs(inside + r.cost_bn))
-            gate(f"wages_equal_engine_P_{cname}_{r.spec_id}", np.isclose(tot * nfc[r.normalization], r.P_bn, atol=1e-8))
+            if not CASE.get("current_flows_only"):
+                gate(f"wages_equal_engine_P_{cname}_{r.spec_id}", np.isclose(p, r.P_bn, atol=1e-8))
     gate("inside_channels_sum_to_headline_every_specification", worst < 1e-8, max_abs_gap_bn=worst, specifications=128)
     # With A from fiscal_totals the band ends close to its rounding (recorded), not to 1e-9.
     for end in ("low", "high"):
         inside = (pw * ch["fiscal_a"][end]).sum() / 1e9 - fisc[end]["future"] + (pw * wages[end]).sum() / 1e9
         if CASE.get("capped"):
             inside += (pw * ch["displaced_beneficiaries"][end]).sum() / 1e9
+        if CASE.get("current_flows_only"):
+            inside += float(np.dot(pw, ch["unlocated_fiscal"][end]) / 1e9)
         gate(f"inside_channels_equal_band_end_{end}", abs(inside + e[end]["cost_bn"]) < 1e-3, inside=inside,
              headline=-e[end]["cost_bn"], gap=inside + e[end]["cost_bn"])
     # Variants (overlap wages): epsilon 3 on the account's split; the below-BA split (ladder 194).
     for vname, row, rowg in (("wages_eps3", I["eps3_hs"], I["eps3_hs_gdp"]),):
-        vc = B.wage_delta(I["basis"]["hs_or_less"], row, True)
+        vc = payer_wage_delta(B, d, I["basis"]["hs_or_less"], row, True)
         f_gdp = float((rowg.native_production_gain_bn + rowg.other_immigrant_production_gain_bn)
                       / (row.native_production_gain_bn + row.other_immigrant_production_gain_bn))
         vn = {"cash": 1.0, "gdp": f_gdp}
@@ -2201,7 +2375,7 @@ def build_frame(B, d, I, fin, fedsplit, deficit, notes):
         meta[f"{vname}_delta_F"] = dF
         for conv, k in (("a", tax_all), ("b", ones)):
             put(f"{vname}_receipts_{conv}", {L: alloc(d, k, dF[L]) for L in LEVELS}, {L: dF[L] for L in LEVELS})
-    bb = B.wage_delta(I["basis"]["below_ba"], I["central"], True)
+    bb = payer_wage_delta(B, d, I["basis"]["below_ba"], I["central"], True)
     put("wages_below_ba_cash", {L: bb for L in LEVELS}, {L: (pw * bb).sum() / 1e9 for L in LEVELS})
     meta["wages_P"] = {"cash": P_acc, "gdp": P_acc * nf["gdp"], "gdp_factor": nf["gdp"],
                        "below_ba_cash": float((pw * bb).sum() / 1e9)}
@@ -2723,6 +2897,8 @@ def row4_group_weights(B, d):
     factors, and no other resident moves. Gates: the grid file is the one the case's payload pins; each cell's records
     and CPS population are the grid file's; only group records move; the group's count is the account's row-4 count
     (populations.row4, 1e-9 relative)."""
+    if CASE.get("current_flows_only") and "target_oct14" in d:
+        d = d.assign(target=d.target_oct14)
     prod = B.fiscal_totals(CASE["case"])["adopted"]["production"]
     grid_file = FISCAL / prod["grid"]["file"]
     gate("row4_group_grid_file_is_the_payload_s", file_sha(grid_file) == prod["grid"]["sha256"], file=prod["grid"]["file"])
@@ -2800,6 +2976,43 @@ def age_band_factors(d, w4, g3, lineage):
                    source=f"{CASE['lane']}/derived/corrections.json meta.lineage.age_mix ({am['reading']}, {am['route']})")
 
 
+def completed_group_weights(B, d):
+    """Located v8 members only; net-missing coverage people have no household.
+
+    The original modeled descendants retain their five-year age proxy. Actual
+    completion reporters and children receive their own CPS record weights.
+    Coverage counts belong to the complete population denominator, never a
+    fabricated household record or an additional payer subtraction.
+    """
+    payload = json.loads(read_input("case_payload"))
+    lineage = payload["meta"]["lineage"]
+    original = d.target_oct14.to_numpy(bool) if "target_oct14" in d else d.target.to_numpy(bool)
+    source = d.assign(target=original)
+    w4, info = row4_group_weights(B, source)
+    g3 = original & source.PRCITSHP.isin([1, 2, 3]).to_numpy() & source.PEMNTVTY.isin(US_AREAS).to_numpy() \
+        & source.PEFNTVTY.isin(US_AREAS).to_numpy() & source.PRDTHSP.eq(1).to_numpy()
+    factor, age_info = age_band_factors(source, w4, g3, lineage)
+    weights = np.where(g3, w4 * factor, w4)
+    records = payload["meta"]["union_completion"]["observed_records"]
+    ids = pd.MultiIndex.from_frame(d[["PH_SEQ", "PPPOS"]])
+    completed = np.asarray(ids.isin(pd.MultiIndex.from_tuples([(x["PH_SEQ"], x["PPPOS"]) for x in records])))
+    gate("oct15_completed_group_no_overlap", not np.any(completed & original))
+    gate("oct15_completed_group_record_count", int(completed.sum()) == len(records))
+    weights[completed] = d.pw.to_numpy()[completed]
+    located = original | completed
+    count = float(weights[located].sum())
+    population = payload["meta"]["population_v8"]
+    gate("oct15_group_located_count", np.isclose(count, population["without_coverage"], rtol=1e-12, atol=1e-6),
+         located=count, target=population["without_coverage"])
+    gate("oct15_coverage_not_put_in_households", np.isclose(population["with_coverage"], count + population["coverage"], rtol=1e-12, atol=1e-6),
+         unlocated_coverage_people=population["coverage"])
+    return weights, dict(info, members_m=count / 1e6, row4_members_m=float(w4[original].sum()) / 1e6,
+        added_m=lineage["counts"]["added"] / 1e6, completion_m=float(weights[completed].sum()) / 1e6,
+        complete_population_m=population["with_coverage"] / 1e6,
+        coverage_unlocated_m=population["coverage"] / 1e6, age_bands=age_info,
+        rule="original modeled descendants by measured age band; observed completion at own records; coverage unlocated")
+
+
 def lineage_group_weights(B, d):
     """The group's own frame on the lineage the case counts (CASES group_weights "lineage", October 5 on): the row-4
     weights (row4_group_weights), with the added people placed at the identified third-plus generation's records
@@ -2809,6 +3022,8 @@ def lineage_group_weights(B, d):
     Gates: the group on row 4 is the account's union and its G3+ the identified G3+ (1e-9 relative); the lineage is the
     union plus the added people and the generation split's G3+ is identified plus added (1e-9 relative); only G3+
     records move."""
+    if CASE.get("current_flows_only"):
+        return completed_group_weights(B, d)
     w4, g4 = row4_group_weights(B, d)
     lineage = json.loads((FISCAL / CASE["lane"] / "derived/corrections.json").read_text())["meta"]["lineage"]
     counts = lineage["counts"]
@@ -2966,6 +3181,11 @@ CF_LINEAGE = ("2024, with vs without the 42.8m people of Mexican-origin lineage 
 
 
 def counterfactual() -> str:
+    if CASE.get("current_flows_only"):
+        payload = json.loads(read_input("case_payload"))
+        return ("2024, with vs without the complete Mexican-immigrant lineage "
+                f"({payload['meta']['population_v8']['with_coverage']:.8f} people, coverage included); "
+                "stationary financing central; cohort financing beside")
     return {"row4": CF_ROW4, "lineage": CF_LINEAGE}.get(CASE.get("group_weights"), CF)
 
 
@@ -3396,6 +3616,72 @@ def person_nets_by_cut(cuts):
     return out.reset_index()
 
 
+def core_registry(totals, meta, fin, social=None):
+    """Stable public registry schema/IDs, with no stale numerical fallback.
+
+    Historical row definitions locate the stable IDs only. Every value is
+    replaced by a current source or marked unpriced. New social components and
+    unresolved financing have explicit additional IDs.
+    """
+    table = pd.read_csv(HERE / "derived/oct14/channels.csv", keep_default_na=False)
+    for column in ("bn_low", "bn_central", "bn_high"):
+        table[column] = table[column].astype(object)
+    values = {}
+    endpoints = fin[CASE["model"]]["ends"]
+    def levels(low, high):
+        return dict(low=low, central=(low + high) / 2, high=high)
+    values["main_case"] = levels(-endpoints["low"]["cost_bn"], -endpoints["high"]["cost_bn"])
+    mapping = dict(fiscal="fiscal_a", fiscal_federal_today="fiscal_federal_today_a",
+        fiscal_state_local="fiscal_state_local_a", fiscal_cash="fiscal_cash_a", fiscal_resource="fiscal_resource_a",
+        wages_below_ba="wages_below_ba_cash", care_women_extra_hours="care_women_after_tax_earnings",
+        housing_net_national_uniform="housing_net_national_uniform", preferences="preferences_white_natives")
+    for key in table.id:
+        channel = mapping.get(key, key)
+        if channel in totals:
+            values[key] = totals[channel]
+    values["fiscal"] = {level: -(meta["fiscal"][level]["cost"] - meta["fiscal"][level]["displaced"])
+                        for level in LEVELS}
+    values["future_taxpayers"] = {level: -meta["fiscal"][level]["future_borrowing"] for level in LEVELS}
+    # Preserve the public registry's net set-minus-cash contract, including
+    # the mixed-unit timing bridge that the typed trust class keeps separate.
+    summary = json.loads(git_show(f"infra/immigration-fiscal/{CASE['lane']}/derived/summary.json", CASE["case_commit"]))
+    values["future_pension_accrual"] = levels(*[summary["v8"]["cash_set_bn"][j] - summary["v8"]["band_bn"][j]
+                                                for j in (0, 1)])
+    source = json.loads(read_input("social_json"))
+    pair = source["v8_social_environment"]["variants"]["central"]["pairing_bn"]
+    values["account_plus_social"] = levels(-pair["low"], -pair["high"])
+    values["published_total_equal_footing"] = dict(values["account_plus_social"])
+    for key, amount in (social or {}).items():
+        values[f"p7_social_{key}"] = amount
+    for index, row in table.iterrows():
+        key = row["id"]
+        table.loc[index, ["date", "counterfactual"]] = [CASE["date"], counterfactual()]
+        if key in values:
+            table.loc[index, ["bn_low", "bn_central", "bn_high"]] = [values[key][level] for level in LEVELS]
+            table.loc[index, "note"] = "Current oct15 source; stationary financing verdict, cohort beside."
+            table.loc[index, "source_lane"] = CASE["lane"] if key == "main_case" else "winners_losers_2026_09_24/derived/oct15"
+        else:
+            table.loc[index, ["bn_low", "bn_central", "bn_high"]] = ""
+            table.loc[index, "status"] = "pending"
+            table.loc[index, "in_net"] = "no"
+            table.loc[index, "note"] = "[DEGRADED] no current oct15 price; frozen historical amounts are not reused."
+    table.loc[table.id.isin(["account_plus_social", "published_total_equal_footing"]), "label"] = "Current fiscal case plus paired social stack"
+    if "unlocated_fiscal" in totals:
+        values["unlocated_fiscal"] = totals["unlocated_fiscal"]
+    missing = [key for key in values if key not in set(table.id)]
+    for key in missing:
+        amount = values[key]
+        row = dict.fromkeys(table.columns, "")
+        row.update(id=key, label=key.replace("_", " "), bn_low=amount["low"], bn_central=amount["central"],
+            bn_high=amount["high"], who="explicit channel key", relation="beside" if key.startswith("p7_social_") else "inside",
+            in_net="social" if key.startswith("p7_social_") else "account", counterfactual=counterfactual(),
+            source_lane=CASE["published_dir"] if key.startswith("p7_social_") else CASE["debt_dir"],
+            status="adopted", date=CASE["date"], note="Explicit oct15 addition; stable historical IDs retained.")
+        table = pd.concat([table, pd.DataFrame([row])], ignore_index=True)
+    gate("oct15_registry_ids_unique", table.id.is_unique)
+    return table
+
+
 def sources_manifest(B, base_sha):
     files = [("base distribute.py at " + CASE["base"], f"{BASE_REL}/distribute.py", base_sha)]
     for k, p in list(PATHS.items()) + [(f"base:{k}", v) for k, v in B.PATHS.items()]:
@@ -3409,12 +3695,15 @@ def sources_manifest(B, base_sha):
     if CASE["gen_split"]:
         rel = f"{GEN_REL}/generation_summary.json"
         files.append((f"generations: {CASE['gen_split']} at {CASE['gen']}", rel, sha(git_show(rel, CASE["gen"]))))
-    for c in (CASE["prev"], CASE):
+    source_cases = (CASE,) if CASE.get("current_flows_only") else (CASE["prev"], CASE)
+    for c in source_cases:
         commit, sub = c["debt"], c.get("debt_dir")
-        for name in ("federal_split_2024_lines.csv", "federal_split_2024.csv", "summary.json", "stocks.csv"):
+        names = (("current_flow_contract.json", "current_flow_source_parts_2024.csv") if c.get("current_flows_only")
+                 else ("federal_split_2024_lines.csv", "federal_split_2024.csv", "summary.json", "stocks.csv"))
+        for name in names:
             rel = lane_rel(DEBT_REL, sub, name)
             files.append((f"debt lane at {commit}", rel, sha(git_show(rel, commit))))
-    for c in (CASE["prev"], CASE):
+    for c in source_cases:
         commit, sub = c["base"], c.get("base_dir")
         for name in ("channel_by_quintile.csv", "inputs.json"):
             rel = lane_rel(f"{BASE_REL}/derived", sub, name)
@@ -3452,6 +3741,9 @@ def parse_args(argv=None):
 
 def main():
     args = parse_args()
+    if args.case == "oct15":
+        from p8_phase_b import run
+        return run(args.out_dir)
     configure(args.case, args.out_dir, args.dev_unpinned)
     DERIVED.mkdir(parents=True, exist_ok=True)
     CACHE.mkdir(exist_ok=True)

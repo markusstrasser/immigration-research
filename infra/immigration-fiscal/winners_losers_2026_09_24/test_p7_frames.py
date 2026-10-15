@@ -108,9 +108,71 @@ def test_mixed_pool_preserves_boundary_transfers_and_member_dollars():
     assert y[0]==y[1] and y[2]==x[2]
 
 
+def test_mixed_presence_counts_nonmember_support_of_member_children():
+    d = pd.DataFrame(dict(SPM_ID=[1]*4, other=[True,False,False,False],
+                          target=[False,True,True,True]))
+    weights = np.ones(4)
+    resources = np.array([100.,10.,10.,10.])
+    change, audit = p7.mixed_resource_change(d, weights, weights, resources, np.zeros(4))
+    assert change.tolist() == [-67.5,0.,0.,0.]
+    assert audit["forward_member_to_other_bn"] == pytest.approx(7.5/1e9)
+    assert audit["reverse_other_to_member_bn"] == pytest.approx(75/1e9)
+    assert audit["presence_boundary_change_bn"] == pytest.approx(-67.5/1e9)
+    assert audit["removal_level_change_diagnostic_bn"] == pytest.approx(67.5/1e9)
+    # Existing channel arrays are presence effects, so a cost of 20 lowers
+    # the presence result by 20; it raises resources in the removal world.
+    presence = np.array([-20.,0.,0.,0.])
+    change, audit = p7.mixed_resource_change(d, weights, weights, resources, presence)
+    assert change[0] == -87.5
+    assert audit["other_after_level_bn"] == pytest.approx(120/1e9)
+
+
+def test_mixed_presence_preserves_weighted_levels_and_nonmixed_units():
+    d = pd.DataFrame(dict(SPM_ID=[1,1,1,2,2],other=[True,False,True,True,True],
+                          target=[False,True,False,False,False]))
+    other_weights = np.array([2.,0.,3.,4.,5.])
+    member_weights = np.array([0.,7.,0.,0.,0.])
+    resources = np.array([100.,10.,50.,30.,80.])
+    presence = np.array([-20.,0.,10.,40.,-5.])
+    change, audit = p7.mixed_resource_change(d,other_weights,member_weights,resources,presence)
+    assert np.allclose(change[3:], (4*40+5*(-5))/9)
+    assert np.dot(other_weights,change)/1e9 == pytest.approx(
+        np.dot(other_weights,presence)/1e9 + audit["presence_boundary_change_bn"], abs=1e-15)
+
+
 def test_bad_national_closure_fails_loudly():
     with pytest.raises(RuntimeError,match="BLOCKED.*bad"):
         p7.check_total("bad",np.array([1.]),np.array([1e9]),2.)
+
+
+def test_equal_baselines_zero_presence_leave_no_mixed_transfer():
+    d=pd.DataFrame(dict(SPM_ID=[1,1],other=[True,False],target=[False,True]))
+    w=np.array([2.,3.])
+    result,audit=p7.mixed_resource_change(d,w,w,np.array([30.,30.]),np.zeros(2))
+    assert np.array_equal(result,np.zeros(2))
+    assert audit["presence_boundary_change_bn"] == pytest.approx(0.,abs=1e-15)
+
+
+def test_missing_manifest_does_not_enroll_current_input(tmp_path,monkeypatch):
+    import types
+    monkeypatch.setattr(p7,"HERE",tmp_path/"lane")
+    path=tmp_path/"input"
+    path.write_text("current bytes")
+    wl=types.SimpleNamespace(ROOT=tmp_path,file_sha=lambda p:"arbitrary hash")
+    with pytest.raises(RuntimeError,match="pin_manifest_exists"):
+        p7.pin(path,wl)
+    assert not (p7.HERE/"inputs/pins.json").exists()
+
+
+def test_repeated_premise_gates_retain_every_evaluation(monkeypatch):
+    monkeypatch.setattr(p7,"GATES",{})
+    monkeypatch.setattr(p7,"GATE_COUNTS",{})
+    monkeypatch.setattr(p7,"GATE_SCOPE","fixture")
+    p7.require("premise",True)
+    with pytest.raises(RuntimeError,match="premise"):
+        p7.require("premise",False)
+    assert p7.GATES["fixture/premise"]["passed"]
+    assert not p7.GATES["fixture/premise/check_2"]["passed"]
 
 
 def test_generated_pin_is_independent_of_output_destination(tmp_path,monkeypatch):
@@ -122,6 +184,9 @@ def test_generated_pin_is_independent_of_output_destination(tmp_path,monkeypatch
     first=tmp_path/"first.json"
     second=tmp_path/"elsewhere"/"second.json"
     second.parent.mkdir()
+    (p7.HERE/"inputs").mkdir()
+    import json
+    (p7.HERE/"inputs/pins.json").write_text(json.dumps({"sha256":{"generated:fixture":hashlib.sha256(b'{"source":"same"}\n').hexdigest()}}))
     for path in (first,second):
         path.write_text('{"source":"same"}\n')
         p7.pin_generated(path,"generated:fixture",wl)
@@ -151,7 +216,7 @@ def test_responding_programmes_have_their_national_dollars(tmp_path):
     assert len(table)==2 and "ASSUMPTION" in table[1]["key"]
 
 
-def test_within_run_source_drift_fails_before_a_manifest_exists(tmp_path,monkeypatch):
+def test_within_run_source_drift_fails_with_a_manifest(tmp_path,monkeypatch):
     import hashlib
     import types
     monkeypatch.setattr(p7,"HERE",tmp_path/"lane")
@@ -159,6 +224,9 @@ def test_within_run_source_drift_fails_before_a_manifest_exists(tmp_path,monkeyp
     p7.PINS.clear()
     path=tmp_path/"input.txt"
     path.write_text("before")
+    (p7.HERE/"inputs").mkdir()
+    import json
+    (p7.HERE/"inputs/pins.json").write_text(json.dumps({"sha256":{"input.txt":hashlib.sha256(b"before").hexdigest()}}))
     wl=types.SimpleNamespace(ROOT=tmp_path,file_sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest())
     p7.pin(path,wl)
     path.write_text("after")

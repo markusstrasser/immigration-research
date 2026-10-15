@@ -1,0 +1,145 @@
+scenario,financing,frame,level,isolated_source_cost_bn,current_incidence_delta_bn,future_delta_bn,allocation_rule
+foreign_source_tax,a,stationary,low,3.7746258621753,-3.7746258621753,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,a,stationary,low,2.89321085491838,-2.89321085491838,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,a,stationary,low,10.7400162727018,-10.7400162727018,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,a,stationary,low,8.80281446369088,-8.80281446369088,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,a,stationary,low,,-9.50308511434614,0,
+round3_added_people,a,stationary,low,,-4.39577832519521,0,
+round3_item11_consumption,a,stationary,low,,2.67580369846665,0,
+round3_completion_receivers,a,stationary,low,,0.196119362211464,0,
+foreign_source_tax,a,stationary,high,1.3966115690049,-1.3966115690049,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,a,stationary,high,3.75461632908969,-3.75461632908969,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,a,stationary,high,14.5316901979735,-14.5316901979735,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,a,stationary,high,12.63878515259,-12.63878515259,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,a,stationary,high,,-10.1194623425303,0,
+round3_added_people,a,stationary,high,,-4.54658004888214,0,
+round3_item11_consumption,a,stationary,high,,2.67580369846665,0,
+round3_completion_receivers,a,stationary,high,,0.21063180154249,0,
+foreign_source_tax,a,cohort30,low,3.7746258621753,-3.71026009674468,-0.0643657654306173,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,a,cohort30,low,2.89321085491838,-2.5695700215605,-0.323640833357884,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,a,cohort30,low,10.7400162727018,-10.591111311606,-0.148904961095829,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,a,cohort30,low,8.80281446369088,-5.66556789586714,-3.13724656782374,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,a,cohort30,low,,-9.50308511434614,0,
+round3_added_people,a,cohort30,low,,-4.39577832519521,0,
+round3_item11_consumption,a,cohort30,low,,2.67580369846665,0,
+round3_completion_receivers,a,cohort30,low,,0.196119362211464,0,
+foreign_source_tax,a,cohort30,high,1.3966115690049,-1.37279623579557,-0.0238153332093284,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,a,cohort30,high,3.75461632908969,-3.42335800085393,-0.331258328235757,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,a,cohort30,high,14.5316901979735,-14.3827852368777,-0.148904961095829,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,a,cohort30,high,12.63878515259,-9.46169707166872,-3.17708808092128,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,a,cohort30,high,,-10.1194623425303,0,
+round3_added_people,a,cohort30,high,,-4.54658004888214,0,
+round3_item11_consumption,a,cohort30,high,,2.67580369846665,0,
+round3_completion_receivers,a,cohort30,high,,0.21063180154249,0,
+foreign_source_tax,a,cohort10,low,3.7746258621753,-3.75684494694274,-0.0177809152325563,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,a,cohort10,low,2.89321085491838,-2.55211037463068,-0.341100480287695,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,a,cohort10,low,10.7400162727018,-10.6988815720851,-0.0411347006166822,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,a,cohort10,low,8.80281446369088,-5.58293886764594,-3.21987559604494,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,a,cohort10,low,,-9.50308511434614,0,
+round3_added_people,a,cohort10,low,,-4.39577832519521,0,
+round3_item11_consumption,a,cohort10,low,,2.67580369846665,0,
+round3_completion_receivers,a,cohort10,low,,0.196119362211464,0,
+foreign_source_tax,a,cohort10,high,1.3966115690049,-1.39003263036886,-0.00657893863604585,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,a,cohort10,high,3.75461632908969,-3.41141153092739,-0.343204798162294,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,a,cohort10,high,14.5316901979735,-14.4905554973568,-0.0411347006166822,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,a,cohort10,high,12.63878515259,-9.40790341745257,-3.23088173513743,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,a,cohort10,high,,-10.1194623425303,0,
+round3_added_people,a,cohort10,high,,-4.54658004888214,0,
+round3_item11_consumption,a,cohort10,high,,2.67580369846665,0,
+round3_completion_receivers,a,cohort10,high,,0.21063180154249,0,
+foreign_source_tax,b,stationary,low,3.7746258621753,-3.7746258621753,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,b,stationary,low,2.89321085491838,-2.89321085491838,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,b,stationary,low,10.7400162727018,-10.7400162727018,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,b,stationary,low,8.80281446369088,-8.80281446369088,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,b,stationary,low,,-9.50308511434614,0,
+round3_added_people,b,stationary,low,,-4.39577832519521,0,
+round3_item11_consumption,b,stationary,low,,2.67580369846665,0,
+round3_completion_receivers,b,stationary,low,,0.196119362211464,0,
+foreign_source_tax,b,stationary,high,1.3966115690049,-1.3966115690049,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,b,stationary,high,3.75461632908969,-3.75461632908969,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,b,stationary,high,14.5316901979735,-14.5316901979735,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,b,stationary,high,12.63878515259,-12.63878515259,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,b,stationary,high,,-10.1194623425303,0,
+round3_added_people,b,stationary,high,,-4.54658004888214,0,
+round3_item11_consumption,b,stationary,high,,2.67580369846665,0,
+round3_completion_receivers,b,stationary,high,,0.21063180154249,0,
+foreign_source_tax,b,cohort30,low,3.7746258621753,-3.71026009674468,-0.0643657654306173,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,b,cohort30,low,2.89321085491838,-2.5695700215605,-0.323640833357884,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,b,cohort30,low,10.7400162727018,-10.591111311606,-0.148904961095829,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,b,cohort30,low,8.80281446369088,-5.66556789586714,-3.13724656782374,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,b,cohort30,low,,-9.50308511434614,0,
+round3_added_people,b,cohort30,low,,-4.39577832519521,0,
+round3_item11_consumption,b,cohort30,low,,2.67580369846665,0,
+round3_completion_receivers,b,cohort30,low,,0.196119362211464,0,
+foreign_source_tax,b,cohort30,high,1.3966115690049,-1.37279623579558,-0.0238153332093284,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,b,cohort30,high,3.75461632908969,-3.42335800085393,-0.331258328235757,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,b,cohort30,high,14.5316901979735,-14.3827852368777,-0.148904961095829,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,b,cohort30,high,12.63878515259,-9.46169707166873,-3.17708808092128,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,b,cohort30,high,,-10.1194623425303,0,
+round3_added_people,b,cohort30,high,,-4.54658004888214,0,
+round3_item11_consumption,b,cohort30,high,,2.67580369846665,0,
+round3_completion_receivers,b,cohort30,high,,0.21063180154249,0,
+foreign_source_tax,b,cohort10,low,3.7746258621753,-3.75684494694274,-0.0177809152325563,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,b,cohort10,low,2.89321085491838,-2.55211037463068,-0.341100480287695,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,b,cohort10,low,10.7400162727018,-10.6988815720851,-0.0411347006166822,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,b,cohort10,low,8.80281446369088,-5.58293886764594,-3.21987559604494,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,b,cohort10,low,,-9.50308511434614,0,
+round3_added_people,b,cohort10,low,,-4.39577832519521,0,
+round3_item11_consumption,b,cohort10,low,,2.67580369846665,0,
+round3_completion_receivers,b,cohort10,low,,0.196119362211464,0,
+foreign_source_tax,b,cohort10,high,1.3966115690049,-1.39003263036886,-0.00657893863604585,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,b,cohort10,high,3.75461632908969,-3.41141153092739,-0.343204798162294,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,b,cohort10,high,14.5316901979735,-14.4905554973568,-0.0411347006166822,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,b,cohort10,high,12.63878515259,-9.40790341745257,-3.23088173513743,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,b,cohort10,high,,-10.1194623425303,0,
+round3_added_people,b,cohort10,high,,-4.54658004888214,0,
+round3_item11_consumption,b,cohort10,high,,2.67580369846665,0,
+round3_completion_receivers,b,cohort10,high,,0.21063180154249,0,
+foreign_source_tax,c,stationary,low,3.7746258621753,-3.7746258621753,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,c,stationary,low,2.89321085491838,-2.89321085491838,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,c,stationary,low,10.7400162727018,-10.7400162727018,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,c,stationary,low,8.80281446369088,-8.80281446369088,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,c,stationary,low,,-9.50308511434614,0,
+round3_added_people,c,stationary,low,,-4.39577832519521,0,
+round3_item11_consumption,c,stationary,low,,2.67580369846665,0,
+round3_completion_receivers,c,stationary,low,,0.196119362211464,0,
+foreign_source_tax,c,stationary,high,1.3966115690049,-1.3966115690049,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,c,stationary,high,3.75461632908969,-3.75461632908969,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,c,stationary,high,14.5316901979735,-14.5316901979735,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,c,stationary,high,12.63878515259,-12.63878515259,-0,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,c,stationary,high,,-10.1194623425303,0,
+round3_added_people,c,stationary,high,,-4.54658004888214,0,
+round3_item11_consumption,c,stationary,high,,2.67580369846665,0,
+round3_completion_receivers,c,stationary,high,,0.21063180154249,0,
+foreign_source_tax,c,cohort30,low,3.7746258621753,-3.71026009674468,-0.0643657654306173,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,c,cohort30,low,2.89321085491838,-2.5695700215605,-0.323640833357884,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,c,cohort30,low,10.7400162727018,-10.591111311606,-0.148904961095829,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,c,cohort30,low,8.80281446369088,-5.66556789586714,-3.13724656782374,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,c,cohort30,low,,-9.50308511434614,0,
+round3_added_people,c,cohort30,low,,-4.39577832519521,0,
+round3_item11_consumption,c,cohort30,low,,2.67580369846665,0,
+round3_completion_receivers,c,cohort30,low,,0.196119362211464,0,
+foreign_source_tax,c,cohort30,high,1.3966115690049,-1.37279623579558,-0.0238153332093284,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,c,cohort30,high,3.75461632908969,-3.42335800085393,-0.331258328235757,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,c,cohort30,high,14.5316901979735,-14.3827852368777,-0.148904961095829,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,c,cohort30,high,12.63878515259,-9.46169707166873,-3.17708808092128,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,c,cohort30,high,,-10.1194623425303,0,
+round3_added_people,c,cohort30,high,,-4.54658004888214,0,
+round3_item11_consumption,c,cohort30,high,,2.67580369846665,0,
+round3_completion_receivers,c,cohort30,high,,0.21063180154249,0,
+foreign_source_tax,c,cohort10,low,3.7746258621753,-3.75684494694274,-0.0177809152325563,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,c,cohort10,low,2.89321085491838,-2.55211037463068,-0.341100480287695,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,c,cohort10,low,10.7400162727018,-10.6988815720851,-0.0411347006166822,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,c,cohort10,low,8.80281446369088,-5.58293886764594,-3.21987559604494,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,c,cohort10,low,,-9.50308511434614,0,
+round3_added_people,c,cohort10,low,,-4.39577832519521,0,
+round3_item11_consumption,c,cohort10,low,,2.67580369846665,0,
+round3_completion_receivers,c,cohort10,low,,0.196119362211464,0,
+foreign_source_tax,c,cohort10,high,1.3966115690049,-1.39003263036886,-0.00657893863604585,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+union_completion,c,cohort10,high,3.75461632908969,-3.41141153092739,-0.343204798162294,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+mixed_unit_removal,c,cohort10,high,14.5316901979735,-14.4905554973568,-0.0411347006166822,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+coverage,c,cohort10,high,12.63878515259,-9.40790341745257,-3.23088173513743,native isolated source deltas at this endpoint; full oct15 typed-debt source government/timing ratios transported; no unlocated fallback
+round3_government_side,c,cohort10,high,,-10.1194623425303,0,
+round3_added_people,c,cohort10,high,,-4.54658004888214,0,
+round3_item11_consumption,c,cohort10,high,,2.67580369846665,0,
+round3_completion_receivers,c,cohort10,high,,0.21063180154249,0,

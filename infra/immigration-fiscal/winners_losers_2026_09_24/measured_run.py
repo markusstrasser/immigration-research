@@ -30,8 +30,8 @@ def main():
     with (cache / "timings.jsonl").open("a") as stream:
         stream.write(json.dumps(row) + "\n")
     print("[measurement]", json.dumps(row), flush=True)
-    if result.returncode == 0 and rss_mb > 2500:
-        raise SystemExit("[BLOCKED] command exceeded 2500 MiB peak RSS")
+    # Child RSS is informational. The calculation checks its own lifetime
+    # physical footprint with scripts/memory_budget.py before successful exit.
     raise SystemExit(result.returncode)
 
 

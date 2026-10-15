@@ -1,4 +1,4 @@
-**Verdict:** On the complete adopted social channel set, stationary financing and the corrected lineage payer pool, 4.63% / 8.40% of other residents are ahead under tax shares / per-person cuts, pooled. Their annual net is $-483.072bn. A minority ahead survives; the former one-in-five count depends on inconsistent financing and incomplete channels. [MODEL / FRAMING-SENSITIVE; CALCULATION: derived/oct14/p7_net_shares.csv]
+**Verdict:** On corrected v8, stationary financing, the current paired social stack and household pooling, 2.6140% / 4.4926% / 8.0294% of other residents are ahead under rules a/b/c; their central annual net is $-514.541916bn. Cohort financing is beside. [MODEL / FRAMING-SENSITIVE; CALCULATION: derived/oct15/p7_net_shares.csv]
 
 
 
@@ -1507,3 +1507,1113 @@ The wage rows move by the lineage's smaller production delta (λ 1.0191 for high
 **Log (2026-10-14 JST, from `date`).**
 - 19:31:51: first reproducibility pass, all three commands exit 0 and IDENTICAL 131/131; harness exits 3 because directory-level pytest does not name the changed test file to its coverage scanner. Repeating with the explicit test-file command above; `old_new.py` is excluded explicitly because its two historical propagation rounds are frozen and it writes outside this lane.
 - 19:34: final reproducibility receipt read: **IDENTICAL 131/131, exit 0**, over the three live commands above and explicit `--allow-unrun old_new.py`. Python-measured elapsed 44.85s, child peak RSS 1,929,854,976 bytes. Old derived outputs unchanged; only `derived/oct14/` is new. No git writes.
+
+
+## Round-2 Phase A on frozen v7 inputs, 2026-10-15
+
+Phase A completed at 2026-10-14 16:49:45 UTC. These corrected scratch comparisons are beside the historical v7 tables above; oct15 production/readers await Phase B. Stationary financing remains the verdict, cohort frames beside. The frozen fiscal/social vintage is oct14; Phase B takes the live social producer vintage. All effects report the lineage's presence on other residents, negative for a cost. [CALCULATION: `/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/winners/phase_a_validated/phase_a_fix_comparisons.csv`]
+
+| frame | rule | ahead (%) | presence net ($bn) |
+|---|---|---:|---:|
+| stationary | a | 3.3392 | -483.071540 |
+| cohort30 | a | 8.7499 | -452.035388 |
+| cohort10 | a | 8.6929 | -452.659443 |
+| stationary | b | 5.5002 | -483.071540 |
+| cohort30 | b | 11.4392 | -452.035388 |
+| cohort10 | b | 11.3728 | -452.659443 |
+| stationary | c | 9.7212 | -483.071540 |
+| cohort30 | c | 15.8972 | -452.035388 |
+| cohort10 | c | 15.7826 | -452.659443 |
+
+Fix 1 alone changes the mixed boundary from the one-way arm to -51.557272bn: forward member support 100.039383bn minus reverse non-member support 151.596655bn. Before pools all co-residents' own levels; after pools remaining residents' levels minus signed presence effects, on an equal per-person scale. This arm counts a non-member's support of member children in the same unit as a cost of the members' presence, which is why it stays beside the central. Neither pooling rule models re-partnering. Removal-level changes are labelled diagnostics only in the run log. [ASSUMPTION; CALCULATION: `/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/winners/phase_a_validated/phase_a_mixed_levels.csv`; test_p7_frames.py]
+
+All twelve isolated fixes, low/central/high shares under a/b/c and stationary/cohort10/cohort30, and channel-level changes are reported in `/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/winners/phase_a_validated/phase_a_report.md`, `phase_a_fix_comparisons.csv`, `phase_a_fix_channels.csv`; every arm/sharing/epsilon is retained in the full shares/channels/cuts CSVs. State and landlord results require explicit frame/arm/rule selections; neither a general state winner-share ranking nor an unconditional landlord-benefit claim is supported. [MODEL / FRAMING-SENSITIVE]
+
+Checks: 341,371 retained gates; 108 frozen control rows; 64 tests; Python compile check. Profile elapsed 239.512s; lifetime physical footprint 2.201GB, under 2.5GB. Two failed profiles are preserved in the scratch log; the cache mutation review defect is repaired with an actual-evaluate order regression. [CALCULATION: `/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/winners/phase_a_validated/phase_a_gates.json`, `phase_a_timing.json`; test_p8_incidence.py]
+
+[DEGRADED] School correction geography uses the preferred administrative/district spatial proxy at both ends; exact end-specific school/education-mixture state components need a producer export. Net state financing takes responded spending geography; receipt geography remains unidentified. FARS fatalities proxy injuries, and finite epsilon holds the case's first-order descendant P/F increment fixed while recomputing its multipliers. Item11, coverage payer exclusion, oct15 compressed readers and IDENTICAL rerun remain Phase B. No historical derived outputs were regenerated.
+
+
+## Phase A final programme-source refresh, 2026-10-15
+
+At 2026-10-14 17:00:20 UTC, completed the available ASEC disability-source mapping in fix2: railroad retirement also uses DIS_SC=6; Black Lung uses DIS_SC=8; state temporary sickness uses DIS_SC=9 and excludes private/federal disability. This supersedes the immediately preceding interim Phase-A exact shares. Other isolated fixes reproduce unchanged. The pooling presence boundary remains −$51.557272bn; the household-support and re-partnering limits stated above remain. [SOURCE: ASEC ddl25.txt; CALCULATION: test_p8_incidence.py; `/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/winners/phase_a_complete/phase_a_shares.csv`]
+
+| rule | stationary pooled ahead (%) | presence net ($bn) |
+|---|---:|---:|
+| a | 3.3392 | -483.071540 |
+| b | 5.5002 | -483.071540 |
+| c | 9.7373 | -483.071540 |
+
+All frames, levels, isolated changes, channels and remaining universal programme proxies: `/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/winners/phase_a_complete/phase_a_report.md`, `phase_a_fix_comparisons.csv`, `phase_a_fix_channels.csv`, `phase_a_unmapped_programmes.csv`. Checks: 65 tests; 341,371 retained gates; 108 original frozen-control rows; exported-ledger closure 1.79e-12bn; Python compile check. Profile 234.956s, physical footprint 2.199GB. School correction geography remains [DEGRADED] as documented above. No Git writes or tracked oct14 derived changes. Phase B remains held.
+
+## Phase B verification receipt — 2026-10-15 01:14:56 UTC
+
+[rerun] IDENTICAL: 221/221 files unchanged (backup removed), exit 0; all 44,167 gates pass. Complete harness 121.278s; pricing 107.346s, physical footprint 1.954728GB. All new derived artifacts are below 10MB, and prior oct14 derived files are unchanged. [CALCULATION: _cache/oct15_rerun.log; _cache/oct15_timings.jsonl]
+
+Original public channel ids/columns and fiscal specification columns/ids remain stable. Added channel ids: p7_social_pm25_government_side, p7_social_pm25_respending, p7_social_scale_net_earnings, unlocated_fiscal. [DATA: derived/oct15/channels.csv; fiscal_specs.csv]
+
+## v8 case (oct15) — 2026-10-15 01:11:35 UTC
+
+
+
+On corrected v8, stationary financing, the current paired social stack and household pooling, 2.6140% / 4.4926% / 8.0294% of other residents are ahead under rules a/b/c; their central annual net is $-514.541916bn. Cohort financing is beside. [MODEL / FRAMING-SENSITIVE; CALCULATION: derived/oct15/p7_net_shares.csv]
+
+
+
+All effects are presence minus removal; a positive amount means ahead from the lineage's presence. The stationary frame is the verdict. Cohort30 and cohort10 are beside. The low/high net rows pair the fiscal ends with the producer-range ratios transported to the live social rows; the central uses the central social rows at the fiscal midpoint. The paired-source ledger separately holds social parameters central at each fiscal end. [ASSUMPTION; DATA: p7_net_shares.csv; p8_channel_ledger.csv]
+
+
+
+All accepted Phase-A fixes remain active; fix 8 now uses raw surviving-person item-11 changes. [CALCULATION: p8_incidence.ALL_FIXES; retained phase-A definitions]
+
+
+
+| fix | finding IDs | source files | premise gates |
+|---|---|---|---|
+| 1 | R2E04/05/21/37; W1 | p7_frames.py, p8_incidence.py | mixed_before/after_levels_conserved; mixed_bidirectional_boundary |
+| 2 | R2E07/09/33; W2 | p7_inputs.cjs, p8_incidence.py | programme_authority/exclusion |
+| 3 | R2E10/19/26 | p7_cohorts.py, p8_incidence.py | trust_accrual_covered_earnings_only; cohort projection tests |
+| 4 | R2E13/35; M1 | p8_recipient_keys.py, p8_incidence.py | air_old_recipient_death_share; fatal-victim conservation |
+| 5 | R2E16/17/24/34; M4 | p8_incidence.py, p8_phase_a.py | social_producer_range; complete producer declarations |
+| 6 | R2E01 | p8_incidence.py | matched coverage comparator; frozen control |
+| 7 | R2E20 | p8_recipient_keys.py | rental capitalization only landlords; state stock preservation |
+| 8 | R2E27; M3 | p8_incidence.py | credits_v7_legacy_only; replacement guard tests |
+| 9 | R2E28/36/39 | p7_nest.py, inputs/p8_epsilon_sources.json | above_hs_perfect_substitutes; descendant_parts_close |
+| 10 | R2E29/40/48/49; M2 | p8_recipient_keys.py, p8_incidence.py, p7_inputs.cjs | state_local_geography; end_pairing; prison producer; landlord states |
+| 11 | R2E03/32/42/43 | p8_phase_a_document.py; RESULT.md | explicit frame failure; tagged cut tables |
+| 12 | R2E15/44–47; M6 | p7_frames.py, winners_losers.py, p8_phase_a.py | resource rate; pins; repeated gates; fallback regression |
+
+
+
+### Shares ahead under each financing rule
+
+
+
+| frame | level | financing | persons_m | total_bn | future_bn | winners_share |
+|---|---|---|---|---|---|---|
+| stationary | central | a | 292.274073 | -514.541916 | -0.000000 | 2.6140% |
+| stationary | central | b | 292.274073 | -514.541916 | -0.000000 | 4.4926% |
+| stationary | central | c | 292.274073 | -514.541916 | -0.000000 | 8.0294% |
+| stationary | high | a | 292.274073 | -844.313155 | -0.000000 | 2.7980% |
+| stationary | high | b | 292.274073 | -844.313155 | -0.000000 | 3.0309% |
+| stationary | high | c | 292.274073 | -844.313155 | -0.000000 | 3.5593% |
+| stationary | low | a | 292.274073 | -186.443126 | -0.000000 | 41.8631% |
+| stationary | low | b | 292.274073 | -186.443126 | -0.000000 | 39.4044% |
+| stationary | low | c | 292.274073 | -186.443126 | -0.000000 | 41.4392% |
+| cohort30 | central | a | 292.274073 | -479.700248 | -34.841668 | 7.3989% |
+| cohort30 | central | b | 292.274073 | -479.700248 | -34.841668 | 10.2894% |
+| cohort30 | central | c | 292.274073 | -479.700248 | -34.841668 | 14.7177% |
+| cohort30 | high | a | 292.274073 | -809.020437 | -35.292718 | 2.9927% |
+| cohort30 | high | b | 292.274073 | -809.020437 | -35.292718 | 3.8448% |
+| cohort30 | high | c | 292.274073 | -809.020437 | -35.292718 | 4.7692% |
+| cohort30 | low | a | 292.274073 | -152.052508 | -34.390618 | 38.7429% |
+| cohort30 | low | b | 292.274073 | -152.052508 | -34.390618 | 37.8530% |
+| cohort30 | low | c | 292.274073 | -152.052508 | -34.390618 | 41.7275% |
+| cohort10 | central | a | 292.274073 | -480.386769 | -34.155147 | 7.2975% |
+| cohort10 | central | b | 292.274073 | -480.386769 | -34.155147 | 10.2282% |
+| cohort10 | central | c | 292.274073 | -480.386769 | -34.155147 | 14.5937% |
+| cohort10 | high | a | 292.274073 | -810.033406 | -34.279749 | 2.9912% |
+| cohort10 | high | b | 292.274073 | -810.033406 | -34.279749 | 3.8082% |
+| cohort10 | high | c | 292.274073 | -810.033406 | -34.279749 | 4.7394% |
+| cohort10 | low | a | 292.274073 | -152.412580 | -34.030546 | 38.7179% |
+| cohort10 | low | b | 292.274073 | -152.412580 | -34.030546 | 37.7444% |
+| cohort10 | low | c | 292.274073 | -152.412580 | -34.030546 | 41.6993% |
+
+
+
+Rules a/b/c use tax shares, per-person financing, and responding-programme receipt, respectively. Federal and state-local programme keys remain separate; the trust accrual uses covered earnings under stationary financing and future payroll payers, including future births, under cohort financing. The FY2024 borrowing share is the central financing assumption. Public-capital return is a resource cost, and the unlocated financing block is explicitly per head with zero borrowing. [FRAMING-SENSITIVE; CALCULATION: p8_incidence.py]
+
+
+
+### Case and channel closure
+
+
+
+The corrected case is $365.791930–455.981785bn set and $281.752564–371.942418bn cash, over 45230062.300759 members including coverage. The ledger signs below are from other residents' side. [DATA: p8_channel_ledger.csv; p7_inputs.json population]
+
+
+
+| basis | end | total_bn |
+|---|---|---|
+| cash | high | -371.942418 |
+| cash | low | -281.752564 |
+| set | high | -455.981785 |
+| set | low | -365.791930 |
+
+
+
+The payer pool changes from 292791509.254477 to 292274073.497283 people, exactly removing the completion records' 517435.757193 weight (gap -0.000000060). Coverage contributes 0 payer people. Actual completion members join the group; survey-absent coverage people have no fabricated payer/household records. [CALCULATION: p7_inputs.json membership; p8_membership.py]
+
+
+
+| frame | level | channel | total_bn |
+|---|---|---|---|
+| stationary | low | trust_accrual | -84.051580 |
+| stationary | low | general_federal | -22.542075 |
+| stationary | low | current_trust_cash | 0.000000 |
+| stationary | low | state_local | -246.257179 |
+| stationary | low | unlocated_fiscal | -2.939947 |
+| stationary | low | wages_positive | 109.866071 |
+| stationary | low | wages_negative | -110.603366 |
+| stationary | low | displaced_beneficiaries | -9.263855 |
+| stationary | low | fiscal_source_rounding | 0.000000 |
+| stationary | low | victims | -18.573432 |
+| stationary | low | property_crime | -1.326445 |
+| stationary | low | unreimbursed_care | -2.550811 |
+| stationary | low | congestion | -2.124060 |
+| stationary | low | housing_gain | -0.412728 |
+| stationary | low | fear_avoidance | -3.296335 |
+| stationary | low | private_security | -2.235128 |
+| stationary | low | school_disruption | 13.094526 |
+| stationary | low | pm25_consumption | -36.772442 |
+| stationary | low | road_crash_externality | 65.234700 |
+| stationary | low | scale_net_earnings | 93.272345 |
+| stationary | low | restaurant_variety_market_size | 18.986077 |
+| stationary | low | formal_volunteering_outside_group | 5.150195 |
+| stationary | low | total_consumer_scale | 12.744518 |
+| stationary | low | total_trade_travel_fdi | 26.203227 |
+| stationary | low | pm25_government_side | -9.503085 |
+| stationary | low | pm25_respending | 12.363712 |
+| stationary | low | source_rounding | 0.000000 |
+| stationary | low | item11_stayers_ACA | -0.493828 |
+| stationary | low | item11_stayers_M1_federal | 8.498956 |
+| stationary | low | item11_stayers_M2_state | 0.850817 |
+| stationary | low | item11_stayers_M3_refunds | 1.723087 |
+| stationary | low | item11_stayers_M6_biological_children | 1.928522 |
+| stationary | low | item11_stayers_Medicaid | -1.071476 |
+| stationary | low | item11_stayers_SNAP | -2.342106 |
+| stationary | low | mixed_boundary | -56.010303 |
+| stationary | low | future_cohorts | -0.000000 |
+| stationary | central | trust_accrual | -84.051580 |
+| stationary | central | general_federal | -42.668324 |
+| stationary | central | current_trust_cash | 0.000000 |
+| stationary | central | state_local | -269.375103 |
+| stationary | central | unlocated_fiscal | -4.916845 |
+| stationary | central | wages_positive | 91.068996 |
+| stationary | central | wages_negative | -91.680146 |
+| stationary | central | displaced_beneficiaries | -9.263855 |
+| stationary | central | fiscal_source_rounding | -0.000000 |
+| stationary | central | victims | -39.394626 |
+| stationary | central | property_crime | -1.377571 |
+| stationary | central | unreimbursed_care | -4.693120 |
+| stationary | central | congestion | -12.266357 |
+| stationary | central | housing_gain | 2.295526 |
+| stationary | central | fear_avoidance | -7.088766 |
+| stationary | central | private_security | -0.512160 |
+| stationary | central | school_disruption | 2.180557 |
+| stationary | central | pm25_consumption | -81.349333 |
+| stationary | central | road_crash_externality | -12.615029 |
+| stationary | central | scale_net_earnings | 15.387253 |
+| stationary | central | restaurant_variety_market_size | 6.711441 |
+| stationary | central | formal_volunteering_outside_group | 4.046568 |
+| stationary | central | total_consumer_scale | 2.344365 |
+| stationary | central | total_trade_travel_fdi | 7.468226 |
+| stationary | central | pm25_government_side | -9.811274 |
+| stationary | central | pm25_respending | 14.029432 |
+| stationary | central | source_rounding | 0.000000 |
+| stationary | central | item11_stayers_ACA | -0.022578 |
+| stationary | central | item11_stayers_M1_federal | 8.498956 |
+| stationary | central | item11_stayers_M2_state | 0.850817 |
+| stationary | central | item11_stayers_M3_refunds | 1.723087 |
+| stationary | central | item11_stayers_M6_biological_children | 1.928522 |
+| stationary | central | item11_stayers_Medicaid | -0.579262 |
+| stationary | central | item11_stayers_SNAP | -1.409733 |
+| stationary | central | mixed_boundary | -56.010303 |
+| stationary | central | future_cohorts | -0.000000 |
+| stationary | high | trust_accrual | -84.051580 |
+| stationary | high | general_federal | -62.794573 |
+| stationary | high | current_trust_cash | 0.000000 |
+| stationary | high | state_local | -292.493027 |
+| stationary | high | unlocated_fiscal | -6.893744 |
+| stationary | high | wages_positive | 72.271920 |
+| stationary | high | wages_negative | -72.756927 |
+| stationary | high | displaced_beneficiaries | -9.263855 |
+| stationary | high | fiscal_source_rounding | 0.000000 |
+| stationary | high | victims | -60.861461 |
+| stationary | high | property_crime | -1.544966 |
+| stationary | high | unreimbursed_care | -7.483487 |
+| stationary | high | congestion | -25.654223 |
+| stationary | high | housing_gain | 2.074555 |
+| stationary | high | fear_avoidance | -21.897662 |
+| stationary | high | private_security | 0.368300 |
+| stationary | high | school_disruption | 0.603847 |
+| stationary | high | pm25_consumption | -142.994795 |
+| stationary | high | road_crash_externality | -85.661023 |
+| stationary | high | scale_net_earnings | -62.497839 |
+| stationary | high | restaurant_variety_market_size | 1.061006 |
+| stationary | high | formal_volunteering_outside_group | 2.942941 |
+| stationary | high | total_consumer_scale | -6.501060 |
+| stationary | high | total_trade_travel_fdi | 1.253163 |
+| stationary | high | pm25_government_side | -10.119462 |
+| stationary | high | pm25_respending | 15.695152 |
+| stationary | high | source_rounding | 0.000000 |
+| stationary | high | item11_stayers_ACA | 0.448672 |
+| stationary | high | item11_stayers_M1_federal | 8.498956 |
+| stationary | high | item11_stayers_M2_state | 0.850817 |
+| stationary | high | item11_stayers_M3_refunds | 1.723087 |
+| stationary | high | item11_stayers_M6_biological_children | 1.928522 |
+| stationary | high | item11_stayers_Medicaid | -0.087048 |
+| stationary | high | item11_stayers_SNAP | -0.477360 |
+| stationary | high | mixed_boundary | -56.010303 |
+| stationary | high | future_cohorts | -0.000000 |
+| cohort30 | low | general_federal | -16.716564 |
+| cohort30 | low | current_trust_cash | 0.000000 |
+| cohort30 | low | trust_accrual | -50.158470 |
+| cohort30 | low | borrowing_service | -5.328003 |
+| cohort30 | low | state_local | -246.257179 |
+| cohort30 | low | unlocated_fiscal | -2.939947 |
+| cohort30 | low | wages_positive | 109.866071 |
+| cohort30 | low | wages_negative | -110.603366 |
+| cohort30 | low | displaced_beneficiaries | -9.263855 |
+| cohort30 | low | fiscal_source_rounding | 0.000000 |
+| cohort30 | low | victims | -18.573432 |
+| cohort30 | low | property_crime | -1.326445 |
+| cohort30 | low | unreimbursed_care | -2.550811 |
+| cohort30 | low | congestion | -2.124060 |
+| cohort30 | low | housing_gain | -0.412728 |
+| cohort30 | low | fear_avoidance | -3.296335 |
+| cohort30 | low | private_security | -2.235128 |
+| cohort30 | low | school_disruption | 13.094526 |
+| cohort30 | low | pm25_consumption | -36.772442 |
+| cohort30 | low | road_crash_externality | 65.234700 |
+| cohort30 | low | scale_net_earnings | 93.272345 |
+| cohort30 | low | restaurant_variety_market_size | 18.986077 |
+| cohort30 | low | formal_volunteering_outside_group | 5.150195 |
+| cohort30 | low | total_consumer_scale | 12.744518 |
+| cohort30 | low | total_trade_travel_fdi | 26.203227 |
+| cohort30 | low | pm25_government_side | -9.503085 |
+| cohort30 | low | pm25_respending | 12.363712 |
+| cohort30 | low | source_rounding | 0.000000 |
+| cohort30 | low | item11_stayers_ACA | -0.493828 |
+| cohort30 | low | item11_stayers_M1_federal | 8.498956 |
+| cohort30 | low | item11_stayers_M2_state | 0.850817 |
+| cohort30 | low | item11_stayers_M3_refunds | 1.723087 |
+| cohort30 | low | item11_stayers_M6_biological_children | 1.928522 |
+| cohort30 | low | item11_stayers_Medicaid | -1.071476 |
+| cohort30 | low | item11_stayers_SNAP | -2.342106 |
+| cohort30 | low | mixed_boundary | -56.010303 |
+| cohort30 | low | future_cohorts | -34.390618 |
+| cohort30 | central | general_federal | -31.561292 |
+| cohort30 | central | current_trust_cash | 0.000000 |
+| cohort30 | central | trust_accrual | -50.158470 |
+| cohort30 | central | borrowing_service | -10.158474 |
+| cohort30 | central | state_local | -269.375103 |
+| cohort30 | central | unlocated_fiscal | -4.916845 |
+| cohort30 | central | wages_positive | 91.068996 |
+| cohort30 | central | wages_negative | -91.680146 |
+| cohort30 | central | displaced_beneficiaries | -9.263855 |
+| cohort30 | central | fiscal_source_rounding | 0.000000 |
+| cohort30 | central | victims | -39.394626 |
+| cohort30 | central | property_crime | -1.377571 |
+| cohort30 | central | unreimbursed_care | -4.693120 |
+| cohort30 | central | congestion | -12.266357 |
+| cohort30 | central | housing_gain | 2.295526 |
+| cohort30 | central | fear_avoidance | -7.088766 |
+| cohort30 | central | private_security | -0.512160 |
+| cohort30 | central | school_disruption | 2.180557 |
+| cohort30 | central | pm25_consumption | -81.349333 |
+| cohort30 | central | road_crash_externality | -12.615029 |
+| cohort30 | central | scale_net_earnings | 15.387253 |
+| cohort30 | central | restaurant_variety_market_size | 6.711441 |
+| cohort30 | central | formal_volunteering_outside_group | 4.046568 |
+| cohort30 | central | total_consumer_scale | 2.344365 |
+| cohort30 | central | total_trade_travel_fdi | 7.468226 |
+| cohort30 | central | pm25_government_side | -9.811274 |
+| cohort30 | central | pm25_respending | 14.029432 |
+| cohort30 | central | source_rounding | 0.000000 |
+| cohort30 | central | item11_stayers_ACA | -0.022578 |
+| cohort30 | central | item11_stayers_M1_federal | 8.498956 |
+| cohort30 | central | item11_stayers_M2_state | 0.850817 |
+| cohort30 | central | item11_stayers_M3_refunds | 1.723087 |
+| cohort30 | central | item11_stayers_M6_biological_children | 1.928522 |
+| cohort30 | central | item11_stayers_Medicaid | -0.579262 |
+| cohort30 | central | item11_stayers_SNAP | -1.409733 |
+| cohort30 | central | mixed_boundary | -56.010303 |
+| cohort30 | central | future_cohorts | -34.841668 |
+| cohort30 | high | general_federal | -46.406021 |
+| cohort30 | high | current_trust_cash | 0.000000 |
+| cohort30 | high | trust_accrual | -50.158470 |
+| cohort30 | high | borrowing_service | -14.988945 |
+| cohort30 | high | state_local | -292.493027 |
+| cohort30 | high | unlocated_fiscal | -6.893744 |
+| cohort30 | high | wages_positive | 72.271920 |
+| cohort30 | high | wages_negative | -72.756927 |
+| cohort30 | high | displaced_beneficiaries | -9.263855 |
+| cohort30 | high | fiscal_source_rounding | -0.000000 |
+| cohort30 | high | victims | -60.861461 |
+| cohort30 | high | property_crime | -1.544966 |
+| cohort30 | high | unreimbursed_care | -7.483487 |
+| cohort30 | high | congestion | -25.654223 |
+| cohort30 | high | housing_gain | 2.074555 |
+| cohort30 | high | fear_avoidance | -21.897662 |
+| cohort30 | high | private_security | 0.368300 |
+| cohort30 | high | school_disruption | 0.603847 |
+| cohort30 | high | pm25_consumption | -142.994795 |
+| cohort30 | high | road_crash_externality | -85.661023 |
+| cohort30 | high | scale_net_earnings | -62.497839 |
+| cohort30 | high | restaurant_variety_market_size | 1.061006 |
+| cohort30 | high | formal_volunteering_outside_group | 2.942941 |
+| cohort30 | high | total_consumer_scale | -6.501060 |
+| cohort30 | high | total_trade_travel_fdi | 1.253163 |
+| cohort30 | high | pm25_government_side | -10.119462 |
+| cohort30 | high | pm25_respending | 15.695152 |
+| cohort30 | high | source_rounding | 0.000000 |
+| cohort30 | high | item11_stayers_ACA | 0.448672 |
+| cohort30 | high | item11_stayers_M1_federal | 8.498956 |
+| cohort30 | high | item11_stayers_M2_state | 0.850817 |
+| cohort30 | high | item11_stayers_M3_refunds | 1.723087 |
+| cohort30 | high | item11_stayers_M6_biological_children | 1.928522 |
+| cohort30 | high | item11_stayers_Medicaid | -0.087048 |
+| cohort30 | high | item11_stayers_SNAP | -0.477360 |
+| cohort30 | high | mixed_boundary | -56.010303 |
+| cohort30 | high | future_cohorts | -35.292718 |
+| cohort10 | low | general_federal | -16.716564 |
+| cohort10 | low | current_trust_cash | 0.000000 |
+| cohort10 | low | trust_accrual | -50.158470 |
+| cohort10 | low | borrowing_service | -5.688075 |
+| cohort10 | low | state_local | -246.257179 |
+| cohort10 | low | unlocated_fiscal | -2.939947 |
+| cohort10 | low | wages_positive | 109.866071 |
+| cohort10 | low | wages_negative | -110.603366 |
+| cohort10 | low | displaced_beneficiaries | -9.263855 |
+| cohort10 | low | fiscal_source_rounding | 0.000000 |
+| cohort10 | low | victims | -18.573432 |
+| cohort10 | low | property_crime | -1.326445 |
+| cohort10 | low | unreimbursed_care | -2.550811 |
+| cohort10 | low | congestion | -2.124060 |
+| cohort10 | low | housing_gain | -0.412728 |
+| cohort10 | low | fear_avoidance | -3.296335 |
+| cohort10 | low | private_security | -2.235128 |
+| cohort10 | low | school_disruption | 13.094526 |
+| cohort10 | low | pm25_consumption | -36.772442 |
+| cohort10 | low | road_crash_externality | 65.234700 |
+| cohort10 | low | scale_net_earnings | 93.272345 |
+| cohort10 | low | restaurant_variety_market_size | 18.986077 |
+| cohort10 | low | formal_volunteering_outside_group | 5.150195 |
+| cohort10 | low | total_consumer_scale | 12.744518 |
+| cohort10 | low | total_trade_travel_fdi | 26.203227 |
+| cohort10 | low | pm25_government_side | -9.503085 |
+| cohort10 | low | pm25_respending | 12.363712 |
+| cohort10 | low | source_rounding | 0.000000 |
+| cohort10 | low | item11_stayers_ACA | -0.493828 |
+| cohort10 | low | item11_stayers_M1_federal | 8.498956 |
+| cohort10 | low | item11_stayers_M2_state | 0.850817 |
+| cohort10 | low | item11_stayers_M3_refunds | 1.723087 |
+| cohort10 | low | item11_stayers_M6_biological_children | 1.928522 |
+| cohort10 | low | item11_stayers_Medicaid | -1.071476 |
+| cohort10 | low | item11_stayers_SNAP | -2.342106 |
+| cohort10 | low | mixed_boundary | -56.010303 |
+| cohort10 | low | future_cohorts | -34.030546 |
+| cohort10 | central | general_federal | -31.561292 |
+| cohort10 | central | current_trust_cash | 0.000000 |
+| cohort10 | central | trust_accrual | -50.158470 |
+| cohort10 | central | borrowing_service | -10.844994 |
+| cohort10 | central | state_local | -269.375103 |
+| cohort10 | central | unlocated_fiscal | -4.916845 |
+| cohort10 | central | wages_positive | 91.068996 |
+| cohort10 | central | wages_negative | -91.680146 |
+| cohort10 | central | displaced_beneficiaries | -9.263855 |
+| cohort10 | central | fiscal_source_rounding | -0.000000 |
+| cohort10 | central | victims | -39.394626 |
+| cohort10 | central | property_crime | -1.377571 |
+| cohort10 | central | unreimbursed_care | -4.693120 |
+| cohort10 | central | congestion | -12.266357 |
+| cohort10 | central | housing_gain | 2.295526 |
+| cohort10 | central | fear_avoidance | -7.088766 |
+| cohort10 | central | private_security | -0.512160 |
+| cohort10 | central | school_disruption | 2.180557 |
+| cohort10 | central | pm25_consumption | -81.349333 |
+| cohort10 | central | road_crash_externality | -12.615029 |
+| cohort10 | central | scale_net_earnings | 15.387253 |
+| cohort10 | central | restaurant_variety_market_size | 6.711441 |
+| cohort10 | central | formal_volunteering_outside_group | 4.046568 |
+| cohort10 | central | total_consumer_scale | 2.344365 |
+| cohort10 | central | total_trade_travel_fdi | 7.468226 |
+| cohort10 | central | pm25_government_side | -9.811274 |
+| cohort10 | central | pm25_respending | 14.029432 |
+| cohort10 | central | source_rounding | 0.000000 |
+| cohort10 | central | item11_stayers_ACA | -0.022578 |
+| cohort10 | central | item11_stayers_M1_federal | 8.498956 |
+| cohort10 | central | item11_stayers_M2_state | 0.850817 |
+| cohort10 | central | item11_stayers_M3_refunds | 1.723087 |
+| cohort10 | central | item11_stayers_M6_biological_children | 1.928522 |
+| cohort10 | central | item11_stayers_Medicaid | -0.579262 |
+| cohort10 | central | item11_stayers_SNAP | -1.409733 |
+| cohort10 | central | mixed_boundary | -56.010303 |
+| cohort10 | central | future_cohorts | -34.155147 |
+| cohort10 | high | general_federal | -46.406021 |
+| cohort10 | high | current_trust_cash | 0.000000 |
+| cohort10 | high | trust_accrual | -50.158470 |
+| cohort10 | high | borrowing_service | -16.001913 |
+| cohort10 | high | state_local | -292.493027 |
+| cohort10 | high | unlocated_fiscal | -6.893744 |
+| cohort10 | high | wages_positive | 72.271920 |
+| cohort10 | high | wages_negative | -72.756927 |
+| cohort10 | high | displaced_beneficiaries | -9.263855 |
+| cohort10 | high | fiscal_source_rounding | -0.000000 |
+| cohort10 | high | victims | -60.861461 |
+| cohort10 | high | property_crime | -1.544966 |
+| cohort10 | high | unreimbursed_care | -7.483487 |
+| cohort10 | high | congestion | -25.654223 |
+| cohort10 | high | housing_gain | 2.074555 |
+| cohort10 | high | fear_avoidance | -21.897662 |
+| cohort10 | high | private_security | 0.368300 |
+| cohort10 | high | school_disruption | 0.603847 |
+| cohort10 | high | pm25_consumption | -142.994795 |
+| cohort10 | high | road_crash_externality | -85.661023 |
+| cohort10 | high | scale_net_earnings | -62.497839 |
+| cohort10 | high | restaurant_variety_market_size | 1.061006 |
+| cohort10 | high | formal_volunteering_outside_group | 2.942941 |
+| cohort10 | high | total_consumer_scale | -6.501060 |
+| cohort10 | high | total_trade_travel_fdi | 1.253163 |
+| cohort10 | high | pm25_government_side | -10.119462 |
+| cohort10 | high | pm25_respending | 15.695152 |
+| cohort10 | high | source_rounding | 0.000000 |
+| cohort10 | high | item11_stayers_ACA | 0.448672 |
+| cohort10 | high | item11_stayers_M1_federal | 8.498956 |
+| cohort10 | high | item11_stayers_M2_state | 0.850817 |
+| cohort10 | high | item11_stayers_M3_refunds | 1.723087 |
+| cohort10 | high | item11_stayers_M6_biological_children | 1.928522 |
+| cohort10 | high | item11_stayers_Medicaid | -0.087048 |
+| cohort10 | high | item11_stayers_SNAP | -0.477360 |
+| cohort10 | high | mixed_boundary | -56.010303 |
+| cohort10 | high | future_cohorts | -34.279749 |
+
+
+
+The mixed_boundary row is added only for the mixed_unit sharing arm. It is excluded from the ordinary pooled/person channel sum. Item 11 is the budget's recomputation and the stayers' direct resource changes; the pooling arm compares the household's before/after sharing of resources. Actual surviving-person tax and benefit flows enter that arm once; its separate pooling residual is the member/non-member resource boundary. The budget retains every item-11 part. Fixed-pool attribution movements and unlocated credit extrapolation do not by themselves create disposable resources; the complete attribution reading is the explicit item11_attribution beside arm. Raw surviving-person flows are measured before subtracting either direction of the old-credit convention, so a second crossing-credit gain is forbidden. Neither pooling rule models re-partnering. [CALCULATION: p8_stayers.py; p8_membership.replacement_credit; p7_mixed_reconciliation.csv]
+
+
+
+### Isolated v8 source items and round-3 social changes
+
+
+
+| item | basis | end | cost_bn | A_bn | P_bn | F_bn | capital_bn |
+|---|---|---|---|---|---|---|---|
+| foreign_source_tax | set | low | 3.774626 | -3.774626 | 0.000000 | 0.000000 | 0.000000 |
+| foreign_source_tax | set | high | 1.396612 | -1.396612 | 0.000000 | 0.000000 | 0.000000 |
+| foreign_source_tax | cash | low | 3.774626 | -3.774626 | 0.000000 | 0.000000 | 0.000000 |
+| foreign_source_tax | cash | high | 1.396612 | -1.396612 | 0.000000 | 0.000000 | 0.000000 |
+| union_completion | set | low | 2.893211 | -2.893395 | -0.000007 | 0.000191 | 0.069799 |
+| union_completion | set | high | 3.754616 | -3.754737 | -0.000005 | 0.000126 | 0.110318 |
+| union_completion | cash | low | 2.031263 | -2.031446 | -0.000007 | 0.000191 | 0.069799 |
+| union_completion | cash | high | 2.892668 | -2.892789 | -0.000005 | 0.000126 | 0.110318 |
+| mixed_unit_removal | set | low | 10.740016 | -10.740016 | 0.000000 | 0.000000 | 0.000000 |
+| mixed_unit_removal | set | high | 14.531690 | -14.531690 | 0.000000 | 0.000000 | 0.000000 |
+| mixed_unit_removal | cash | low | 10.740016 | -10.740016 | 0.000000 | 0.000000 | 0.000000 |
+| mixed_unit_removal | cash | high | 14.531690 | -14.531690 | 0.000000 | 0.000000 | 0.000000 |
+| coverage | set | low | 8.802814 | -9.393324 | -0.032830 | 0.623340 | 0.000000 |
+| coverage | set | high | 12.638785 | -13.027233 | -0.021596 | 0.410044 | 0.000000 |
+| coverage | cash | low | 0.751840 | -1.342350 | -0.032830 | 0.623340 | 0.000000 |
+| coverage | cash | high | 4.587811 | -4.976259 | -0.021596 | 0.410044 | 0.000000 |
+
+
+
+The isolated dollar increments above execute each source item alone on v7's actual endpoint specifications. The isolated share changes below add each source item to the all-off fiscal base with current incidence keys, payer frame and paired budget counterflows held fixed. Its exported social-key contributions follow completion/coverage counts in each scope and consumption receipts; item 11 replaces the old direct-credit vector with raw survivor flows. The leave-one-out rows provide a second controlled decomposition. These do not claim a separately solved one-item population equilibrium. The item-interaction financing parts remain explicit in p8_item_effects.json. [ASSUMPTION; CALCULATION: specs.cjs; p8_ablations.py]
+
+
+
+| scenario | frame | level | financing | total_bn | winners_share | delta_total_bn | delta_ahead_pp |
+|---|---|---|---|---|---|---|---|
+| v8_all_off_fixed_keys | stationary | low | a | -444.433219 | 7.2639% | 24.125828 | 1.288263 |
+| isolated_foreign_source_tax | stationary | low | a | -448.207845 | 6.8305% | -3.774626 | -0.433411 |
+| without_foreign_source_tax | stationary | low | a | -464.784422 | 6.2923% | 3.774626 | 0.316698 |
+| isolated_union_completion | stationary | low | a | -448.052548 | 7.1176% | -3.619329 | -0.146258 |
+| without_union_completion | stationary | low | a | -464.939718 | 6.0717% | 3.619329 | 0.096100 |
+| isolated_mixed_unit_removal | stationary | low | a | -448.859492 | 6.4129% | -4.426273 | -0.850938 |
+| without_mixed_unit_removal | stationary | low | a | -464.132774 | 6.6627% | 4.426273 | 0.687106 |
+| isolated_coverage | stationary | low | a | -456.709574 | 7.2078% | -12.276355 | -0.056058 |
+| without_coverage | stationary | low | a | -456.282692 | 5.9667% | 12.276355 | -0.008856 |
+| without_round3_government_side | stationary | low | a | -459.055962 | 6.1662% | 9.503085 | 0.190602 |
+| without_round3_added_people | stationary | low | a | -464.163269 | 5.8941% | 4.395778 | -0.081451 |
+| without_round3_item11_consumption | stationary | low | a | -471.234851 | 5.9709% | -2.675804 | -0.004659 |
+| without_round3_completion_receivers | stationary | low | a | -468.755167 | 5.9787% | -0.196119 | 0.003057 |
+| government_legacy_response | stationary | low | a | -466.085048 | 6.0369% | 2.473999 | 0.061337 |
+| respending_without_government_side | stationary | low | a | -459.055962 | 6.1662% | 9.503085 | 0.190602 |
+| neither_budget_side | stationary | low | a | -471.419674 | 5.9216% | -2.860627 | -0.053960 |
+| matched_justice_footing | stationary | low | a | -463.990944 | 6.0747% | 4.568103 | 0.099125 |
+| borrowing_0 | stationary | low | a | -468.559047 | 5.9756% | 0.000000 | 0.000000 |
+| borrowing_1 | stationary | low | a | -468.559047 | 5.9756% | 0.000000 | 0.000000 |
+| v8_all_off_fixed_keys | stationary | high | a | -533.961730 | 2.0073% | 26.563055 | -0.327610 |
+| isolated_foreign_source_tax | stationary | high | a | -535.358341 | 2.0010% | -1.396612 | -0.006300 |
+| without_foreign_source_tax | stationary | high | a | -559.128173 | 2.3384% | 1.396612 | 0.003537 |
+| isolated_union_completion | stationary | high | a | -538.463768 | 2.0064% | -4.502038 | -0.000833 |
+| without_union_completion | stationary | high | a | -556.022747 | 2.3296% | 4.502038 | -0.005225 |
+| isolated_mixed_unit_removal | stationary | high | a | -538.388003 | 2.3343% | -4.426273 | 0.327031 |
+| without_mixed_unit_removal | stationary | high | a | -556.098512 | 2.0009% | 4.426273 | -0.334003 |
+| isolated_coverage | stationary | high | a | -550.189042 | 2.0055% | -16.227312 | -0.001808 |
+| without_coverage | stationary | high | a | -544.297473 | 2.3201% | 16.227312 | -0.014725 |
+| without_round3_government_side | stationary | high | a | -550.405322 | 2.3653% | 10.119462 | 0.030443 |
+| without_round3_added_people | stationary | high | a | -555.978205 | 2.2849% | 4.546580 | -0.049999 |
+| without_round3_item11_consumption | stationary | high | a | -563.200589 | 2.3206% | -2.675804 | -0.014269 |
+| without_round3_completion_receivers | stationary | high | a | -560.735417 | 2.3349% | -0.210632 | 0.000000 |
+| government_legacy_response | stationary | high | a | -557.434408 | 2.3389% | 3.090376 | 0.004066 |
+| respending_without_government_side | stationary | high | a | -550.405322 | 2.3653% | 10.119462 | 0.030443 |
+| neither_budget_side | stationary | high | a | -566.100474 | 2.3134% | -5.575689 | -0.021514 |
+| matched_justice_footing | stationary | high | a | -560.524785 | 2.3349% | 0.000000 | 0.000000 |
+| borrowing_0 | stationary | high | a | -560.524785 | 2.3349% | 0.000000 | 0.000000 |
+| borrowing_1 | stationary | high | a | -560.524785 | 2.3349% | -0.000000 | 0.000000 |
+| v8_all_off_fixed_keys | cohort30 | low | a | -413.717258 | 13.8428% | 20.451171 | 0.559477 |
+| isolated_foreign_source_tax | cohort30 | low | a | -417.427518 | 13.5776% | -3.710260 | -0.265244 |
+| without_foreign_source_tax | cohort30 | low | a | -430.458170 | 13.5770% | 3.710260 | 0.293664 |
+| isolated_union_completion | cohort30 | low | a | -417.012947 | 13.7656% | -3.295688 | -0.077169 |
+| without_union_completion | cohort30 | low | a | -430.872741 | 13.3775% | 3.295688 | 0.094193 |
+| isolated_mixed_unit_removal | cohort30 | low | a | -417.994627 | 13.2343% | -4.277368 | -0.608467 |
+| without_mixed_unit_removal | cohort30 | low | a | -429.891062 | 13.8266% | 4.277368 | 0.543277 |
+| isolated_coverage | cohort30 | low | a | -422.856367 | 14.2121% | -9.139108 | 0.369281 |
+| without_coverage | cohort30 | low | a | -425.029321 | 12.7763% | 9.139108 | -0.507044 |
+| without_round3_government_side | cohort30 | low | a | -424.665345 | 13.5725% | 9.503085 | 0.289177 |
+| without_round3_added_people | cohort30 | low | a | -429.772651 | 13.3020% | 4.395778 | 0.018714 |
+| without_round3_item11_consumption | cohort30 | low | a | -436.844233 | 13.2111% | -2.675804 | -0.072267 |
+| without_round3_completion_receivers | cohort30 | low | a | -434.364549 | 13.2823% | -0.196119 | -0.000988 |
+| government_legacy_response | cohort30 | low | a | -431.694431 | 13.3709% | 2.473999 | 0.087585 |
+| respending_without_government_side | cohort30 | low | a | -424.665345 | 13.5725% | 9.503085 | 0.289177 |
+| neither_budget_side | cohort30 | low | a | -437.029057 | 13.1755% | -2.860627 | -0.107869 |
+| matched_justice_footing | cohort30 | low | a | -429.600327 | 13.4306% | 4.568103 | 0.147320 |
+| borrowing_0 | cohort30 | low | a | -434.665937 | 13.3453% | -0.497508 | 0.061939 |
+| borrowing_1 | cohort30 | low | a | -432.820126 | 13.1368% | 1.348304 | -0.146555 |
+| v8_all_off_fixed_keys | cohort30 | high | a | -502.350263 | 3.6661% | 22.881804 | -0.134577 |
+| isolated_foreign_source_tax | cohort30 | high | a | -503.723059 | 3.6148% | -1.372796 | -0.051277 |
+| without_foreign_source_tax | cohort30 | high | a | -523.859271 | 3.8482% | 1.372796 | 0.047464 |
+| isolated_union_completion | cohort30 | high | a | -506.521043 | 3.6551% | -4.170779 | -0.010975 |
+| without_union_completion | cohort30 | high | a | -521.061288 | 3.8019% | 4.170779 | 0.001176 |
+| isolated_mixed_unit_removal | cohort30 | high | a | -506.627631 | 3.6778% | -4.277368 | 0.011734 |
+| without_mixed_unit_removal | cohort30 | high | a | -520.954699 | 3.8550% | 4.277368 | 0.054357 |
+| isolated_coverage | cohort30 | high | a | -515.400487 | 3.9122% | -13.050224 | 0.246132 |
+| without_coverage | cohort30 | high | a | -512.181843 | 3.6404% | 13.050224 | -0.160337 |
+| without_round3_government_side | cohort30 | high | a | -515.112605 | 3.9324% | 10.119462 | 0.131742 |
+| without_round3_added_people | cohort30 | high | a | -520.685487 | 3.7519% | 4.546580 | -0.048831 |
+| without_round3_item11_consumption | cohort30 | high | a | -527.907871 | 3.7977% | -2.675804 | -0.003036 |
+| without_round3_completion_receivers | cohort30 | high | a | -525.442699 | 3.8062% | -0.210632 | 0.005480 |
+| government_legacy_response | cohort30 | high | a | -522.141691 | 3.8497% | 3.090376 | 0.049053 |
+| respending_without_government_side | cohort30 | high | a | -515.112605 | 3.9324% | 10.119462 | 0.131742 |
+| neither_budget_side | cohort30 | high | a | -530.807756 | 3.7630% | -5.575689 | -0.037674 |
+| matched_justice_footing | cohort30 | high | a | -525.232067 | 3.8007% | 0.000000 | 0.000000 |
+| borrowing_0 | cohort30 | high | a | -526.631675 | 3.5601% | -1.399608 | -0.240563 |
+| borrowing_1 | cohort30 | high | a | -521.438966 | 4.8003% | 3.793101 | 0.999659 |
+| v8_all_off_fixed_keys | cohort10 | low | a | -414.022703 | 13.8312% | 20.505799 | 0.598210 |
+| isolated_foreign_source_tax | cohort10 | low | a | -417.779548 | 13.5395% | -3.756845 | -0.291642 |
+| without_foreign_source_tax | cohort10 | low | a | -430.771657 | 13.5560% | 3.756845 | 0.323060 |
+| isolated_union_completion | cohort10 | low | a | -417.300932 | 13.7504% | -3.278229 | -0.080815 |
+| without_union_completion | cohort10 | low | a | -431.250273 | 13.3268% | 3.278229 | 0.093845 |
+| isolated_mixed_unit_removal | cohort10 | low | a | -418.407842 | 13.1594% | -4.385138 | -0.671775 |
+| without_mixed_unit_removal | cohort10 | low | a | -430.143363 | 13.8040% | 4.385138 | 0.571049 |
+| isolated_coverage | cohort10 | low | a | -423.079183 | 14.1800% | -9.056479 | 0.348808 |
+| without_coverage | cohort10 | low | a | -425.472022 | 12.7341% | 9.056479 | -0.498911 |
+| without_round3_government_side | cohort10 | low | a | -425.025417 | 13.5560% | 9.503085 | 0.323058 |
+| without_round3_added_people | cohort10 | low | a | -430.132724 | 13.2724% | 4.395778 | 0.039394 |
+| without_round3_item11_consumption | cohort10 | low | a | -437.204306 | 13.1885% | -2.675804 | -0.044458 |
+| without_round3_completion_receivers | cohort10 | low | a | -434.724621 | 13.2298% | -0.196119 | -0.003216 |
+| government_legacy_response | cohort10 | low | a | -432.054503 | 13.3188% | 2.473999 | 0.085842 |
+| respending_without_government_side | cohort10 | low | a | -425.025417 | 13.5560% | 9.503085 | 0.323058 |
+| neither_budget_side | cohort10 | low | a | -437.389129 | 13.1421% | -2.860627 | -0.090870 |
+| matched_justice_footing | cohort10 | low | a | -429.960399 | 13.3886% | 4.568103 | 0.155594 |
+| borrowing_0 | cohort10 | low | a | -434.665937 | 13.3453% | -0.137435 | 0.112287 |
+| borrowing_1 | cohort10 | low | a | -434.156036 | 12.9408% | 0.372466 | -0.292160 |
+| v8_all_off_fixed_keys | cohort10 | high | a | -503.303832 | 3.5803% | 22.941204 | -0.155279 |
+| isolated_foreign_source_tax | cohort10 | high | a | -504.693865 | 3.5333% | -1.390033 | -0.046988 |
+| without_foreign_source_tax | cohort10 | high | a | -524.855003 | 3.7672% | 1.390033 | 0.031624 |
+| isolated_union_completion | cohort10 | high | a | -507.462665 | 3.5746% | -4.158833 | -0.005708 |
+| without_union_completion | cohort10 | high | a | -522.086203 | 3.7365% | 4.158833 | 0.000864 |
+| isolated_mixed_unit_removal | cohort10 | high | a | -507.688970 | 3.5711% | -4.385138 | -0.009215 |
+| without_mixed_unit_removal | cohort10 | high | a | -521.859897 | 3.7568% | 4.385138 | 0.021178 |
+| isolated_coverage | cohort10 | high | a | -516.300262 | 3.8032% | -12.996430 | 0.222864 |
+| without_coverage | cohort10 | high | a | -513.248606 | 3.5295% | 12.996430 | -0.206092 |
+| without_round3_government_side | cohort10 | high | a | -516.125574 | 3.8355% | 10.119462 | 0.099894 |
+| without_round3_added_people | cohort10 | high | a | -521.698456 | 3.6684% | 4.546580 | -0.067209 |
+| without_round3_item11_consumption | cohort10 | high | a | -528.920840 | 3.7132% | -2.675804 | -0.022404 |
+| without_round3_completion_receivers | cohort10 | high | a | -526.455668 | 3.7434% | -0.210632 | 0.007798 |
+| government_legacy_response | cohort10 | high | a | -523.154659 | 3.7585% | 3.090376 | 0.022892 |
+| respending_without_government_side | cohort10 | high | a | -516.125574 | 3.8355% | 10.119462 | 0.099894 |
+| neither_budget_side | cohort10 | high | a | -531.820725 | 3.6558% | -5.575689 | -0.079811 |
+| matched_justice_footing | cohort10 | high | a | -526.245036 | 3.7356% | 0.000000 | 0.000000 |
+| borrowing_0 | cohort10 | high | a | -526.631675 | 3.5601% | -0.386639 | -0.175482 |
+| borrowing_1 | cohort10 | high | a | -525.197199 | 4.5056% | 1.047837 | 0.770022 |
+| v8_all_off_fixed_keys | stationary | low | b | -444.433219 | 9.4969% | 24.125828 | 1.185081 |
+| isolated_foreign_source_tax | stationary | low | b | -448.207845 | 9.1763% | -3.774626 | -0.320626 |
+| without_foreign_source_tax | stationary | low | b | -464.784422 | 8.6018% | 3.774626 | 0.289986 |
+| isolated_union_completion | stationary | low | b | -448.052548 | 9.3576% | -3.619329 | -0.139312 |
+| without_union_completion | stationary | low | b | -464.939718 | 8.4215% | 3.619329 | 0.109681 |
+| isolated_mixed_unit_removal | stationary | low | b | -448.859492 | 8.8185% | -4.426273 | -0.678439 |
+| without_mixed_unit_removal | stationary | low | b | -464.132774 | 8.9204% | 4.426273 | 0.608527 |
+| isolated_coverage | stationary | low | b | -456.709574 | 9.3767% | -12.276355 | -0.120231 |
+| without_coverage | stationary | low | b | -456.282692 | 8.4040% | 12.276355 | 0.092092 |
+| without_round3_government_side | stationary | low | b | -459.055962 | 8.5153% | 9.503085 | 0.203443 |
+| without_round3_added_people | stationary | low | b | -464.163269 | 8.2737% | 4.395778 | -0.038174 |
+| without_round3_item11_consumption | stationary | low | b | -471.234851 | 8.3056% | -2.675804 | -0.006243 |
+| without_round3_completion_receivers | stationary | low | b | -468.755167 | 8.3160% | -0.196119 | 0.004172 |
+| government_legacy_response | stationary | low | b | -466.085048 | 8.3626% | 2.473999 | 0.050766 |
+| respending_without_government_side | stationary | low | b | -459.055962 | 8.5153% | 9.503085 | 0.203443 |
+| neither_budget_side | stationary | low | b | -471.419674 | 8.2628% | -2.860627 | -0.049030 |
+| matched_justice_footing | stationary | low | b | -463.990944 | 8.4074% | 4.568103 | 0.095569 |
+| borrowing_0 | stationary | low | b | -468.559047 | 8.3119% | 0.000000 | 0.000000 |
+| borrowing_1 | stationary | low | b | -468.559047 | 8.3119% | 0.000000 | 0.000000 |
+| v8_all_off_fixed_keys | stationary | high | b | -533.961730 | 3.1177% | 26.563055 | -0.147940 |
+| isolated_foreign_source_tax | stationary | high | b | -535.358341 | 3.1023% | -1.396612 | -0.015316 |
+| without_foreign_source_tax | stationary | high | b | -559.128173 | 3.2700% | 1.396612 | 0.004435 |
+| isolated_union_completion | stationary | high | b | -538.463768 | 3.0969% | -4.502038 | -0.020797 |
+| without_union_completion | stationary | high | b | -556.022747 | 3.2821% | 4.502038 | 0.016539 |
+| isolated_mixed_unit_removal | stationary | high | b | -538.388003 | 3.3339% | -4.426273 | 0.216232 |
+| without_mixed_unit_removal | stationary | high | b | -556.098512 | 3.0356% | 4.426273 | -0.229955 |
+| isolated_coverage | stationary | high | b | -550.189042 | 3.0711% | -16.227312 | -0.046604 |
+| without_coverage | stationary | high | b | -544.297473 | 3.3101% | 16.227312 | 0.044449 |
+| without_round3_government_side | stationary | high | b | -550.405322 | 3.3024% | 10.119462 | 0.036815 |
+| without_round3_added_people | stationary | high | b | -555.978205 | 3.2159% | 4.546580 | -0.049692 |
+| without_round3_item11_consumption | stationary | high | b | -563.200589 | 3.2592% | -2.675804 | -0.006387 |
+| without_round3_completion_receivers | stationary | high | b | -560.735417 | 3.2656% | -0.210632 | 0.000000 |
+| government_legacy_response | stationary | high | b | -557.434408 | 3.2810% | 3.090376 | 0.015417 |
+| respending_without_government_side | stationary | high | b | -550.405322 | 3.3024% | 10.119462 | 0.036815 |
+| neither_budget_side | stationary | high | b | -566.100474 | 3.2463% | -5.575689 | -0.019334 |
+| matched_justice_footing | stationary | high | b | -560.524785 | 3.2656% | 0.000000 | 0.000000 |
+| borrowing_0 | stationary | high | b | -560.524785 | 3.2656% | 0.000000 | 0.000000 |
+| borrowing_1 | stationary | high | b | -560.524785 | 3.2656% | 0.000000 | 0.000000 |
+| v8_all_off_fixed_keys | cohort30 | low | b | -413.717258 | 15.6650% | 20.451171 | 0.554911 |
+| isolated_foreign_source_tax | cohort30 | low | b | -417.427518 | 15.3414% | -3.710260 | -0.323613 |
+| without_foreign_source_tax | cohort30 | low | b | -430.458170 | 15.3767% | 3.710260 | 0.266594 |
+| isolated_union_completion | cohort30 | low | b | -417.012947 | 15.5936% | -3.295688 | -0.071418 |
+| without_union_completion | cohort30 | low | b | -430.872741 | 15.1614% | 3.295688 | 0.051370 |
+| isolated_mixed_unit_removal | cohort30 | low | b | -417.994627 | 15.0563% | -4.277368 | -0.608666 |
+| without_mixed_unit_removal | cohort30 | low | b | -429.891062 | 15.6693% | 4.277368 | 0.559275 |
+| isolated_coverage | cohort30 | low | b | -422.856367 | 16.0039% | -9.139108 | 0.338926 |
+| without_coverage | cohort30 | low | b | -425.029321 | 14.7637% | 9.139108 | -0.346371 |
+| without_round3_government_side | cohort30 | low | b | -424.665345 | 15.3835% | 9.503085 | 0.273477 |
+| without_round3_added_people | cohort30 | low | b | -429.772651 | 15.1675% | 4.395778 | 0.057473 |
+| without_round3_item11_consumption | cohort30 | low | b | -436.844233 | 15.0672% | -2.675804 | -0.042879 |
+| without_round3_completion_receivers | cohort30 | low | b | -434.364549 | 15.1018% | -0.196119 | -0.008272 |
+| government_legacy_response | cohort30 | low | b | -431.694431 | 15.1852% | 2.473999 | 0.075146 |
+| respending_without_government_side | cohort30 | low | b | -424.665345 | 15.3835% | 9.503085 | 0.273477 |
+| neither_budget_side | cohort30 | low | b | -437.029057 | 15.0394% | -2.860627 | -0.070631 |
+| matched_justice_footing | cohort30 | low | b | -429.600327 | 15.2379% | 4.568103 | 0.127807 |
+| borrowing_0 | cohort30 | low | b | -434.665937 | 15.1291% | -0.497508 | 0.019035 |
+| borrowing_1 | cohort30 | low | b | -432.820126 | 15.1004% | 1.348304 | -0.009689 |
+| v8_all_off_fixed_keys | cohort30 | high | b | -502.350263 | 6.8026% | 22.881804 | 0.047660 |
+| isolated_foreign_source_tax | cohort30 | high | b | -503.723059 | 6.7579% | -1.372796 | -0.044738 |
+| without_foreign_source_tax | cohort30 | high | b | -523.859271 | 6.7997% | 1.372796 | 0.044757 |
+| isolated_union_completion | cohort30 | high | b | -506.521043 | 6.7742% | -4.170779 | -0.028438 |
+| without_union_completion | cohort30 | high | b | -521.061288 | 6.7854% | 4.170779 | 0.030420 |
+| isolated_mixed_unit_removal | cohort30 | high | b | -506.627631 | 6.6589% | -4.277368 | -0.143739 |
+| without_mixed_unit_removal | cohort30 | high | b | -520.954699 | 6.8985% | 4.277368 | 0.143547 |
+| isolated_coverage | cohort30 | high | b | -515.400487 | 6.9825% | -13.050224 | 0.179855 |
+| without_coverage | cohort30 | high | b | -512.181843 | 6.5741% | 13.050224 | -0.180845 |
+| without_round3_government_side | cohort30 | high | b | -515.112605 | 6.8912% | 10.119462 | 0.136258 |
+| without_round3_added_people | cohort30 | high | b | -520.685487 | 6.7138% | 4.546580 | -0.041221 |
+| without_round3_item11_consumption | cohort30 | high | b | -527.907871 | 6.7348% | -2.675804 | -0.020226 |
+| without_round3_completion_receivers | cohort30 | high | b | -525.442699 | 6.7531% | -0.210632 | -0.001844 |
+| government_legacy_response | cohort30 | high | b | -522.141691 | 6.8078% | 3.090376 | 0.052777 |
+| respending_without_government_side | cohort30 | high | b | -515.112605 | 6.8912% | 10.119462 | 0.136258 |
+| neither_budget_side | cohort30 | high | b | -530.807756 | 6.6804% | -5.575689 | -0.074607 |
+| matched_justice_footing | cohort30 | high | b | -525.232067 | 6.7550% | 0.000000 | 0.000000 |
+| borrowing_0 | cohort30 | high | b | -526.631675 | 6.7679% | -1.399608 | 0.012970 |
+| borrowing_1 | cohort30 | high | b | -521.438966 | 6.7952% | 3.793101 | 0.040200 |
+| v8_all_off_fixed_keys | cohort10 | low | b | -414.022703 | 15.6466% | 20.505799 | 0.555917 |
+| isolated_foreign_source_tax | cohort10 | low | b | -417.779548 | 15.3035% | -3.756845 | -0.343067 |
+| without_foreign_source_tax | cohort10 | low | b | -430.771657 | 15.3669% | 3.756845 | 0.276217 |
+| isolated_union_completion | cohort10 | low | b | -417.300932 | 15.5841% | -3.278229 | -0.062536 |
+| without_union_completion | cohort10 | low | b | -431.250273 | 15.1436% | 3.278229 | 0.052907 |
+| isolated_mixed_unit_removal | cohort10 | low | b | -418.407842 | 15.0459% | -4.385138 | -0.600709 |
+| without_mixed_unit_removal | cohort10 | low | b | -430.143363 | 15.6548% | 4.385138 | 0.564104 |
+| isolated_coverage | cohort10 | low | b | -423.079183 | 15.9890% | -9.056479 | 0.342392 |
+| without_coverage | cohort10 | low | b | -425.472022 | 14.7242% | 9.056479 | -0.366507 |
+| without_round3_government_side | cohort10 | low | b | -425.025417 | 15.3366% | 9.503085 | 0.245880 |
+| without_round3_added_people | cohort10 | low | b | -430.132724 | 15.1243% | 4.395778 | 0.033651 |
+| without_round3_item11_consumption | cohort10 | low | b | -437.204306 | 15.0549% | -2.675804 | -0.035803 |
+| without_round3_completion_receivers | cohort10 | low | b | -434.724621 | 15.0862% | -0.196119 | -0.004490 |
+| government_legacy_response | cohort10 | low | b | -432.054503 | 15.1448% | 2.473999 | 0.054059 |
+| respending_without_government_side | cohort10 | low | b | -425.025417 | 15.3366% | 9.503085 | 0.245880 |
+| neither_budget_side | cohort10 | low | b | -437.389129 | 15.0339% | -2.860627 | -0.056795 |
+| matched_justice_footing | cohort10 | low | b | -429.960399 | 15.1949% | 4.568103 | 0.104193 |
+| borrowing_0 | cohort10 | low | b | -434.665937 | 15.1291% | -0.137435 | 0.038405 |
+| borrowing_1 | cohort10 | low | b | -434.156036 | 14.9609% | 0.372466 | -0.129800 |
+| v8_all_off_fixed_keys | cohort10 | high | b | -503.303832 | 6.7253% | 22.941204 | 0.065270 |
+| isolated_foreign_source_tax | cohort10 | high | b | -504.693865 | 6.6632% | -1.390033 | -0.062112 |
+| without_foreign_source_tax | cohort10 | high | b | -524.855003 | 6.6916% | 1.390033 | 0.031536 |
+| isolated_union_completion | cohort10 | high | b | -507.462665 | 6.6986% | -4.158833 | -0.026720 |
+| without_union_completion | cohort10 | high | b | -522.086203 | 6.6873% | 4.158833 | 0.027277 |
+| isolated_mixed_unit_removal | cohort10 | high | b | -507.688970 | 6.5674% | -4.385138 | -0.157944 |
+| without_mixed_unit_removal | cohort10 | high | b | -521.859897 | 6.7963% | 4.385138 | 0.136298 |
+| isolated_coverage | cohort10 | high | b | -516.300262 | 6.8830% | -12.996430 | 0.157684 |
+| without_coverage | cohort10 | high | b | -513.248606 | 6.4923% | 12.996430 | -0.167790 |
+| without_round3_government_side | cohort10 | high | b | -516.125574 | 6.8005% | 10.119462 | 0.140436 |
+| without_round3_added_people | cohort10 | high | b | -521.698456 | 6.6284% | 4.546580 | -0.031652 |
+| without_round3_item11_consumption | cohort10 | high | b | -528.920840 | 6.6488% | -2.675804 | -0.011258 |
+| without_round3_completion_receivers | cohort10 | high | b | -526.455668 | 6.6600% | -0.210632 | 0.000000 |
+| government_legacy_response | cohort10 | high | b | -523.154659 | 6.7039% | 3.090376 | 0.043850 |
+| respending_without_government_side | cohort10 | high | b | -516.125574 | 6.8005% | 10.119462 | 0.140436 |
+| neither_budget_side | cohort10 | high | b | -531.820725 | 6.5851% | -5.575689 | -0.074980 |
+| matched_justice_footing | cohort10 | high | b | -526.245036 | 6.6600% | 0.000000 | 0.000000 |
+| borrowing_0 | cohort10 | high | b | -526.631675 | 6.7679% | -0.386639 | 0.107904 |
+| borrowing_1 | cohort10 | high | b | -525.197199 | 6.3729% | 1.047837 | -0.287111 |
+| v8_all_off_fixed_keys | stationary | low | c | -444.433219 | 14.5721% | 24.125828 | 1.394306 |
+| isolated_foreign_source_tax | stationary | low | c | -448.207845 | 14.3035% | -3.774626 | -0.268609 |
+| without_foreign_source_tax | stationary | low | c | -464.784422 | 13.3969% | 3.774626 | 0.219043 |
+| isolated_union_completion | stationary | low | c | -448.052548 | 14.3562% | -3.619329 | -0.215899 |
+| without_union_completion | stationary | low | c | -464.939718 | 13.4220% | 3.619329 | 0.244122 |
+| isolated_mixed_unit_removal | stationary | low | c | -448.859492 | 14.1169% | -4.426273 | -0.455261 |
+| without_mixed_unit_removal | stationary | low | c | -464.132774 | 13.6050% | 4.426273 | 0.427173 |
+| isolated_coverage | stationary | low | c | -456.709574 | 14.0784% | -12.276355 | -0.493719 |
+| without_coverage | stationary | low | c | -456.282692 | 13.6833% | 12.276355 | 0.505471 |
+| without_round3_government_side | stationary | low | c | -459.055962 | 13.9154% | 9.503085 | 0.737574 |
+| without_round3_added_people | stationary | low | c | -464.163269 | 13.3918% | 4.395778 | 0.213928 |
+| without_round3_item11_consumption | stationary | low | c | -471.234851 | 13.0951% | -2.675804 | -0.082764 |
+| without_round3_completion_receivers | stationary | low | c | -468.755167 | 13.1749% | -0.196119 | -0.002933 |
+| government_legacy_response | stationary | low | c | -466.085048 | 13.3246% | 2.473999 | 0.146775 |
+| respending_without_government_side | stationary | low | c | -459.055962 | 13.9154% | 9.503085 | 0.737574 |
+| neither_budget_side | stationary | low | c | -471.419674 | 13.0465% | -2.860627 | -0.131322 |
+| matched_justice_footing | stationary | low | c | -463.990944 | 13.2666% | 4.568103 | 0.088799 |
+| borrowing_0 | stationary | low | c | -468.559047 | 14.5474% | 0.000000 | 1.369607 |
+| borrowing_1 | stationary | low | c | -468.559047 | 10.9176% | -0.000000 | -2.260234 |
+| v8_all_off_fixed_keys | stationary | high | c | -533.961730 | 5.7108% | 26.563055 | 0.317324 |
+| isolated_foreign_source_tax | stationary | high | c | -535.358341 | 5.6729% | -1.396612 | -0.037879 |
+| without_foreign_source_tax | stationary | high | c | -559.128173 | 5.4308% | 1.396612 | 0.037385 |
+| isolated_union_completion | stationary | high | c | -538.463768 | 5.6305% | -4.502038 | -0.080260 |
+| without_union_completion | stationary | high | c | -556.022747 | 5.4497% | 4.502038 | 0.056285 |
+| isolated_mixed_unit_removal | stationary | high | c | -538.388003 | 5.6679% | -4.426273 | -0.042883 |
+| without_mixed_unit_removal | stationary | high | c | -556.098512 | 5.4054% | 4.426273 | 0.011988 |
+| isolated_coverage | stationary | high | c | -550.189042 | 5.4978% | -16.227312 | -0.212998 |
+| without_coverage | stationary | high | c | -544.297473 | 5.5786% | 16.227312 | 0.185217 |
+| without_round3_government_side | stationary | high | c | -550.405322 | 5.6986% | 10.119462 | 0.305196 |
+| without_round3_added_people | stationary | high | c | -555.978205 | 5.4112% | 4.546580 | 0.017781 |
+| without_round3_item11_consumption | stationary | high | c | -563.200589 | 5.3554% | -2.675804 | -0.037982 |
+| without_round3_completion_receivers | stationary | high | c | -560.735417 | 5.3928% | -0.210632 | -0.000637 |
+| government_legacy_response | stationary | high | c | -557.434408 | 5.4716% | 3.090376 | 0.078168 |
+| respending_without_government_side | stationary | high | c | -550.405322 | 5.6986% | 10.119462 | 0.305196 |
+| neither_budget_side | stationary | high | c | -566.100474 | 5.2472% | -5.575689 | -0.146277 |
+| matched_justice_footing | stationary | high | c | -560.524785 | 5.3934% | 0.000000 | 0.000000 |
+| borrowing_0 | stationary | high | c | -560.524785 | 6.8015% | 0.000000 | 1.408091 |
+| borrowing_1 | stationary | high | c | -560.524785 | 3.9420% | 0.000000 | -1.451390 |
+| v8_all_off_fixed_keys | cohort30 | low | c | -413.717258 | 20.1081% | 20.451171 | 0.649668 |
+| isolated_foreign_source_tax | cohort30 | low | c | -417.427518 | 19.9204% | -3.710260 | -0.187653 |
+| without_foreign_source_tax | cohort30 | low | c | -430.458170 | 19.7409% | 3.710260 | 0.282462 |
+| isolated_union_completion | cohort30 | low | c | -417.012947 | 20.0050% | -3.295688 | -0.103073 |
+| without_union_completion | cohort30 | low | c | -430.872741 | 19.6016% | 3.295688 | 0.143204 |
+| isolated_mixed_unit_removal | cohort30 | low | c | -417.994627 | 19.7371% | -4.277368 | -0.370973 |
+| without_mixed_unit_removal | cohort30 | low | c | -429.891062 | 19.8534% | 4.277368 | 0.395030 |
+| isolated_coverage | cohort30 | low | c | -422.856367 | 20.1939% | -9.139108 | 0.085803 |
+| without_coverage | cohort30 | low | c | -425.029321 | 19.3515% | 9.139108 | -0.106875 |
+| without_round3_government_side | cohort30 | low | c | -424.665345 | 20.1257% | 9.503085 | 0.667298 |
+| without_round3_added_people | cohort30 | low | c | -429.772651 | 19.7941% | 4.395778 | 0.335704 |
+| without_round3_item11_consumption | cohort30 | low | c | -436.844233 | 19.3113% | -2.675804 | -0.147157 |
+| without_round3_completion_receivers | cohort30 | low | c | -434.364549 | 19.4533% | -0.196119 | -0.005071 |
+| government_legacy_response | cohort30 | low | c | -431.694431 | 19.6675% | 2.473999 | 0.209046 |
+| respending_without_government_side | cohort30 | low | c | -424.665345 | 20.1257% | 9.503085 | 0.667298 |
+| neither_budget_side | cohort30 | low | c | -437.029057 | 19.2849% | -2.860627 | -0.173498 |
+| matched_justice_footing | cohort30 | low | c | -429.600327 | 19.5840% | 4.568103 | 0.125633 |
+| borrowing_0 | cohort30 | low | c | -434.665937 | 20.9173% | -0.497508 | 1.458843 |
+| borrowing_1 | cohort30 | low | c | -432.820126 | 16.2647% | 1.348304 | -3.193680 |
+| v8_all_off_fixed_keys | cohort30 | high | c | -502.350263 | 11.2339% | 22.881804 | 0.494123 |
+| isolated_foreign_source_tax | cohort30 | high | c | -503.723059 | 11.1907% | -1.372796 | -0.043173 |
+| without_foreign_source_tax | cohort30 | high | c | -523.859271 | 10.8139% | 1.372796 | 0.074138 |
+| isolated_union_completion | cohort30 | high | c | -506.521043 | 11.1704% | -4.170779 | -0.063507 |
+| without_union_completion | cohort30 | high | c | -521.061288 | 10.8398% | 4.170779 | 0.099982 |
+| isolated_mixed_unit_removal | cohort30 | high | c | -506.627631 | 10.8751% | -4.277368 | -0.358816 |
+| without_mixed_unit_removal | cohort30 | high | c | -520.954699 | 11.1174% | 4.277368 | 0.377627 |
+| isolated_coverage | cohort30 | high | c | -515.400487 | 11.2602% | -13.050224 | 0.026296 |
+| without_coverage | cohort30 | high | c | -512.181843 | 10.7586% | 13.050224 | 0.018864 |
+| without_round3_government_side | cohort30 | high | c | -515.112605 | 11.2468% | 10.119462 | 0.507036 |
+| without_round3_added_people | cohort30 | high | c | -520.685487 | 10.9409% | 4.546580 | 0.201066 |
+| without_round3_item11_consumption | cohort30 | high | c | -527.907871 | 10.6174% | -2.675804 | -0.122372 |
+| without_round3_completion_receivers | cohort30 | high | c | -525.442699 | 10.7334% | -0.210632 | -0.006428 |
+| government_legacy_response | cohort30 | high | c | -522.141691 | 10.9074% | 3.090376 | 0.167632 |
+| respending_without_government_side | cohort30 | high | c | -515.112605 | 11.2468% | 10.119462 | 0.507036 |
+| neither_budget_side | cohort30 | high | c | -530.807756 | 10.5054% | -5.575689 | -0.234405 |
+| matched_justice_footing | cohort30 | high | c | -525.232067 | 10.7398% | 0.000000 | 0.000000 |
+| borrowing_0 | cohort30 | high | c | -526.631675 | 12.2833% | -1.399608 | 1.543516 |
+| borrowing_1 | cohort30 | high | c | -521.438966 | 7.8125% | 3.793101 | -2.927279 |
+| v8_all_off_fixed_keys | cohort10 | low | c | -414.022703 | 20.0714% | 20.505799 | 0.674785 |
+| isolated_foreign_source_tax | cohort10 | low | c | -417.779548 | 19.8304% | -3.756845 | -0.241055 |
+| without_foreign_source_tax | cohort10 | low | c | -430.771657 | 19.6504% | 3.756845 | 0.253759 |
+| isolated_union_completion | cohort10 | low | c | -417.300932 | 19.9501% | -3.278229 | -0.121282 |
+| without_union_completion | cohort10 | low | c | -431.250273 | 19.4988% | 3.278229 | 0.102152 |
+| isolated_mixed_unit_removal | cohort10 | low | c | -418.407842 | 19.6195% | -4.385138 | -0.451953 |
+| without_mixed_unit_removal | cohort10 | low | c | -430.143363 | 19.8336% | 4.385138 | 0.437006 |
+| isolated_coverage | cohort10 | low | c | -423.079183 | 20.1655% | -9.056479 | 0.094028 |
+| without_coverage | cohort10 | low | c | -425.472022 | 19.2613% | 9.056479 | -0.135307 |
+| without_round3_government_side | cohort10 | low | c | -425.025417 | 20.0634% | 9.503085 | 0.666793 |
+| without_round3_added_people | cohort10 | low | c | -430.132724 | 19.7115% | 4.395778 | 0.314879 |
+| without_round3_item11_consumption | cohort10 | low | c | -437.204306 | 19.2664% | -2.675804 | -0.130276 |
+| without_round3_completion_receivers | cohort10 | low | c | -434.724621 | 19.3891% | -0.196119 | -0.007582 |
+| government_legacy_response | cohort10 | low | c | -432.054503 | 19.5607% | 2.473999 | 0.164014 |
+| respending_without_government_side | cohort10 | low | c | -425.025417 | 20.0634% | 9.503085 | 0.666793 |
+| neither_budget_side | cohort10 | low | c | -437.389129 | 19.2462% | -2.860627 | -0.150410 |
+| matched_justice_footing | cohort10 | low | c | -429.960399 | 19.5163% | 4.568103 | 0.119632 |
+| borrowing_0 | cohort10 | low | c | -434.665937 | 20.9173% | -0.137435 | 1.520619 |
+| borrowing_1 | cohort10 | low | c | -434.156036 | 16.1450% | 0.372466 | -3.251618 |
+| v8_all_off_fixed_keys | cohort10 | high | c | -503.303832 | 11.0406% | 22.941204 | 0.483492 |
+| isolated_foreign_source_tax | cohort10 | high | c | -504.693865 | 10.9817% | -1.390033 | -0.058850 |
+| without_foreign_source_tax | cohort10 | high | c | -524.855003 | 10.6001% | 1.390033 | 0.042993 |
+| isolated_union_completion | cohort10 | high | c | -507.462665 | 10.9704% | -4.158833 | -0.070145 |
+| without_union_completion | cohort10 | high | c | -522.086203 | 10.5963% | 4.158833 | 0.039183 |
+| isolated_mixed_unit_removal | cohort10 | high | c | -507.688970 | 10.6721% | -4.385138 | -0.368448 |
+| without_mixed_unit_removal | cohort10 | high | c | -521.859897 | 10.9627% | 4.385138 | 0.405607 |
+| isolated_coverage | cohort10 | high | c | -516.300262 | 11.0764% | -12.996430 | 0.035789 |
+| without_coverage | cohort10 | high | c | -513.248606 | 10.5268% | 12.996430 | -0.030325 |
+| without_round3_government_side | cohort10 | high | c | -516.125574 | 11.0416% | 10.119462 | 0.484542 |
+| without_round3_added_people | cohort10 | high | c | -521.698456 | 10.7168% | 4.546580 | 0.159688 |
+| without_round3_item11_consumption | cohort10 | high | c | -528.920840 | 10.4593% | -2.675804 | -0.097833 |
+| without_round3_completion_receivers | cohort10 | high | c | -526.455668 | 10.5486% | -0.210632 | -0.008482 |
+| government_legacy_response | cohort10 | high | c | -523.154659 | 10.7101% | 3.090376 | 0.152964 |
+| respending_without_government_side | cohort10 | high | c | -516.125574 | 11.0416% | 10.119462 | 0.484542 |
+| neither_budget_side | cohort10 | high | c | -531.820725 | 10.3002% | -5.575689 | -0.256879 |
+| matched_justice_footing | cohort10 | high | c | -526.245036 | 10.5571% | 0.000000 | 0.000000 |
+| borrowing_0 | cohort10 | high | c | -526.631675 | 12.2833% | -0.386639 | 1.726207 |
+| borrowing_1 | cohort10 | high | c | -525.197199 | 7.2183% | 1.047837 | -3.338761 |
+
+
+
+Government purchases removed and re-spending of the saving are both central, with the same age-mortality recipient vector. Their one-sided and neither-side readings are named beside variants. The low fiscal row uses the adopted case while victims keep equal NCVS footing; matched_justice_footing stays beside. The added people's crime sender rows are zero; their other rows use the producer's own key shares, including item 11's consumption shift. Current row levels and declared producer ranges come from the live JSON; producer ratios transport its uncertainty, while separately declared point budget counterflows stay fixed. [DATA: live real_costs_totals.json v8_social_environment; p7_channel_coverage.csv]
+
+
+
+### Joint change from accepted oct14 Phase A
+
+
+
+| frame | level | financing | total_bn_oct14 | total_bn_oct15 | delta_total_bn | winners_share_oct14 | winners_share_oct15 | delta_ahead_pp |
+|---|---|---|---|---|---|---|---|---|
+| stationary | low | a | -166.016109 | -186.443126 | -20.427017 | 38.0203% | 41.8631% | 3.842810 |
+| stationary | central | a | -483.071540 | -514.541916 | -31.470376 | 3.3392% | 2.6140% | -0.725230 |
+| stationary | high | a | -794.037481 | -844.313155 | -50.275673 | 1.3945% | 2.7980% | 1.403462 |
+| cohort30 | low | a | -135.423617 | -152.052508 | -16.628892 | 37.0670% | 38.7429% | 1.675877 |
+| cohort30 | central | a | -452.035388 | -479.700248 | -27.664861 | 8.7499% | 7.3989% | -1.350987 |
+| cohort30 | high | a | -762.557669 | -809.020437 | -46.462768 | 1.4793% | 2.9927% | 1.513433 |
+| cohort10 | low | a | -135.726414 | -152.412580 | -16.686166 | 37.0364% | 38.7179% | 1.681475 |
+| cohort10 | central | a | -452.659443 | -480.386769 | -27.727326 | 8.6929% | 7.2975% | -1.395406 |
+| cohort10 | high | a | -763.502982 | -810.033406 | -46.530424 | 1.4808% | 2.9912% | 1.510480 |
+| stationary | low | b | -166.016109 | -186.443126 | -20.427017 | 36.2336% | 39.4044% | 3.170862 |
+| stationary | central | b | -483.071540 | -514.541916 | -31.470376 | 5.5002% | 4.4926% | -1.007589 |
+| stationary | high | b | -794.037481 | -844.313155 | -50.275673 | 1.8401% | 3.0309% | 1.190720 |
+| cohort30 | low | b | -135.423617 | -152.052508 | -16.628892 | 36.4572% | 37.8530% | 1.395747 |
+| cohort30 | central | b | -452.035388 | -479.700248 | -27.664861 | 11.4392% | 10.2894% | -1.149780 |
+| cohort30 | high | b | -762.557669 | -809.020437 | -46.462768 | 2.8893% | 3.8448% | 0.955528 |
+| cohort10 | low | b | -135.726414 | -152.412580 | -16.686166 | 36.3949% | 37.7444% | 1.349521 |
+| cohort10 | central | b | -452.659443 | -480.386769 | -27.727326 | 11.3728% | 10.2282% | -1.144636 |
+| cohort10 | high | b | -763.502982 | -810.033406 | -46.530424 | 2.8658% | 3.8082% | 0.942381 |
+| stationary | low | c | -166.016109 | -186.443126 | -20.427017 | 38.8739% | 41.4392% | 2.565318 |
+| stationary | central | c | -483.071540 | -514.541916 | -31.470376 | 9.7373% | 8.0294% | -1.707913 |
+| stationary | high | c | -794.037481 | -844.313155 | -50.275673 | 2.3181% | 3.5593% | 1.241142 |
+| cohort30 | low | c | -135.423617 | -152.052508 | -16.628892 | 40.0211% | 41.7275% | 1.706421 |
+| cohort30 | central | c | -452.035388 | -479.700248 | -27.664861 | 15.9081% | 14.7177% | -1.190328 |
+| cohort30 | high | c | -762.557669 | -809.020437 | -46.462768 | 4.0175% | 4.7692% | 0.751756 |
+| cohort10 | low | c | -135.726414 | -152.412580 | -16.686166 | 40.0083% | 41.6993% | 1.691010 |
+| cohort10 | central | c | -452.659443 | -480.386769 | -27.727326 | 15.7825% | 14.5937% | -1.188846 |
+| cohort10 | high | c | -763.502982 | -810.033406 | -46.530424 | 3.9294% | 4.7394% | 0.809926 |
+
+
+
+The accepted Phase-A reference is an archived calculated table; no oct14 output is regenerated. The comparison retains all Phase-A corrections and the stationary-first ruling. [DATA: inputs/phase_a_joint_oct14.csv]
+
+
+
+### Geography, uncertainty, provenance and limits
+
+
+
+| arm | financing | cut | group | persons_m | mean_usd | winners_share |
+|---|---|---|---|---|---|---|
+| recommended | a | tenure | landlord | 24.221679 | -1137.589043 | 22.1196% |
+| recommended | a | tenure | owner_no_rental_income | 182.500990 | -1691.535289 | 0.9738% |
+| recommended | a | tenure | renter | 85.551404 | -2083.901902 | 0.5903% |
+| recommended | a | state3 | CA | 25.246685 | -5428.719931 | 2.9521% |
+| recommended | a | state3 | TX | 20.163439 | -4009.258461 | 2.4249% |
+| recommended | a | state3 | rest | 246.863949 | -1201.650927 | 2.5949% |
+| stack | a | tenure | landlord | 24.221679 | -3426.841449 | 2.2244% |
+| stack | a | tenure | owner_no_rental_income | 182.500990 | -1737.167582 | 0.9725% |
+| stack | a | tenure | renter | 85.551404 | -1338.414725 | 2.8836% |
+| stack | a | state3 | CA | 25.246685 | -5509.092932 | 6.1969% |
+| stack | a | state3 | TX | 20.163439 | -4010.197120 | 4.3146% |
+| stack | a | state3 | rest | 246.863949 | -1193.354542 | 0.9504% |
+| coverage | a | tenure | landlord | 24.221679 | -1188.808026 | 14.9462% |
+| coverage | a | tenure | owner_no_rental_income | 182.500990 | -1707.132240 | 0.2846% |
+| coverage | a | tenure | renter | 85.551404 | -2047.786523 | 0.0835% |
+| coverage | a | state3 | CA | 25.246685 | -5473.058276 | 1.8924% |
+| coverage | a | state3 | TX | 20.163439 | -3969.390489 | 1.7108% |
+| coverage | a | state3 | rest | 246.863949 | -1204.412880 | 1.3726% |
+| item11_attribution | a | tenure | landlord | 24.221679 | -1107.286230 | 22.3113% |
+| item11_attribution | a | tenure | owner_no_rental_income | 182.500990 | -1664.981149 | 1.1380% |
+| item11_attribution | a | tenure | renter | 85.551404 | -2066.112189 | 0.7986% |
+| item11_attribution | a | state3 | CA | 25.246685 | -5361.113878 | 3.2421% |
+| item11_attribution | a | state3 | TX | 20.163439 | -3937.622804 | 2.8530% |
+| item11_attribution | a | state3 | rest | 246.863949 | -1185.646862 | 2.7426% |
+| recommended | b | tenure | landlord | 24.221679 | -217.280112 | 27.9374% |
+| recommended | b | tenure | owner_no_rental_income | 182.500990 | -1670.656352 | 3.0733% |
+| recommended | b | tenure | renter | 85.551404 | -2389.003310 | 0.8824% |
+| recommended | b | state3 | CA | 25.246685 | -5378.902689 | 3.1088% |
+| recommended | b | state3 | TX | 20.163439 | -3998.413149 | 2.8470% |
+| recommended | b | state3 | rest | 246.863949 | -1207.631545 | 4.7685% |
+| stack | b | tenure | landlord | 24.221679 | -3278.597666 | 3.0767% |
+| stack | b | tenure | owner_no_rental_income | 182.500990 | -1734.752649 | 1.2396% |
+| stack | b | tenure | renter | 85.551404 | -1385.537751 | 2.9505% |
+| stack | b | state3 | CA | 25.246685 | -5459.275690 | 6.4266% |
+| stack | b | state3 | TX | 20.163439 | -3999.351808 | 5.0053% |
+| stack | b | state3 | rest | 246.863949 | -1199.335160 | 1.1747% |
+| coverage | b | tenure | landlord | 24.221679 | -268.499095 | 22.3879% |
+| coverage | b | tenure | owner_no_rental_income | 182.500990 | -1686.253303 | 2.4815% |
+| coverage | b | tenure | renter | 85.551404 | -2352.887930 | 0.7853% |
+| coverage | b | state3 | CA | 25.246685 | -5423.241034 | 2.5525% |
+| coverage | b | state3 | TX | 20.163439 | -3958.545177 | 2.9856% |
+| coverage | b | state3 | rest | 246.863949 | -1210.393498 | 3.7984% |
+| item11_attribution | b | tenure | landlord | 24.221679 | -186.977299 | 28.0293% |
+| item11_attribution | b | tenure | owner_no_rental_income | 182.500990 | -1644.102212 | 3.2118% |
+| item11_attribution | b | tenure | renter | 85.551404 | -2371.213596 | 1.0726% |
+| item11_attribution | b | state3 | CA | 25.246685 | -5311.296636 | 3.3300% |
+| item11_attribution | b | state3 | TX | 20.163439 | -3926.777492 | 3.4134% |
+| item11_attribution | b | state3 | rest | 246.863949 | -1191.627480 | 4.8769% |
+| recommended | c | tenure | landlord | 24.221679 | -5.726608 | 35.0321% |
+| recommended | c | tenure | owner_no_rental_income | 182.500990 | -1559.348772 | 7.6019% |
+| recommended | c | tenure | renter | 85.551404 | -2686.344128 | 1.2962% |
+| recommended | c | state3 | CA | 25.246685 | -5391.777465 | 4.3327% |
+| recommended | c | state3 | TX | 20.163439 | -3984.351167 | 3.8064% |
+| recommended | c | state3 | rest | 246.863949 | -1207.463406 | 8.7524% |
+| stack | c | tenure | landlord | 24.221679 | -3184.092989 | 5.7633% |
+| stack | c | tenure | owner_no_rental_income | 182.500990 | -1680.311388 | 3.4337% |
+| stack | c | tenure | renter | 85.551404 | -1528.430156 | 3.4481% |
+| stack | c | state3 | CA | 25.246685 | -5472.150466 | 6.4477% |
+| stack | c | state3 | TX | 20.163439 | -3985.289827 | 5.0139% |
+| stack | c | state3 | rest | 246.863949 | -1199.167021 | 3.2300% |
+| coverage | c | tenure | landlord | 24.221679 | -56.945591 | 29.8448% |
+| coverage | c | tenure | owner_no_rental_income | 182.500990 | -1574.945724 | 7.1974% |
+| coverage | c | tenure | renter | 85.551404 | -2650.228749 | 1.8636% |
+| coverage | c | state3 | CA | 25.246685 | -5436.115811 | 3.6924% |
+| coverage | c | state3 | TX | 20.163439 | -3944.483195 | 2.9356% |
+| coverage | c | state3 | rest | 246.863949 | -1210.225359 | 8.2776% |
+| item11_attribution | c | tenure | landlord | 24.221679 | 24.576205 | 35.2191% |
+| item11_attribution | c | tenure | owner_no_rental_income | 182.500990 | -1532.794632 | 7.7885% |
+| item11_attribution | c | tenure | renter | 85.551404 | -2668.554415 | 1.4744% |
+| item11_attribution | c | state3 | CA | 25.246685 | -5324.171412 | 4.5008% |
+| item11_attribution | c | state3 | TX | 20.163439 | -3912.715510 | 4.2840% |
+| item11_attribution | c | state3 | rest | 246.863949 | -1191.459341 | 8.9142% |
+
+
+
+State and landlord claims are specific to the displayed arm. Rental stock enters capitalization, and landlord ownership reassignment preserves state dollars. FARS fatal victim ages/roles proxy crash injuries. School correction geography remains an explicitly degraded administrative/district proxy, and S&L net financing follows responded spending geography. Source item 11 retains its adopted fixed-membership counterfactual; the item10 × item11 nonlinear recomputation is uncomputed. Unlocated stayer flows use named same-state buckets and D a national per-head bucket. Coverage is constructed, with source limitations. The LLM instrument can introduce framing bias. [DEGRADED / FRAMING-SENSITIVE; DATA: p7_inputs.json]
+
+
+
+| extreme | sharing | future_bn | case | financing | frame | level | arm | social_setting | persons_m | total_bn | winners_share | losers_share | mean_usd |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| share_min | mixed_unit | -34.030546 | oct15 | a | cohort10 | low | stack | high | 292.274073 | -767.517633 | 1.5968% | 98.4032% | -2626.020240 |
+| share_max | mixed_unit | -34.030546 | oct15 | a | cohort10 | low | stack | low | 292.274073 | -208.422884 | 39.0288% | 60.9712% | -713.107670 |
+| dollar_min | mixed_unit | -34.279749 | oct15 | a | cohort10 | high | stack | high | 292.274073 | -866.043709 | 2.6472% | 97.3528% | -2963.121904 |
+| dollar_max | mixed_unit | -34.030546 | oct15 | a | cohort10 | low | recommended | low | 292.274073 | -208.422884 | 38.6185% | 61.3815% | -713.107670 |
+| share_min | person | -34.030546 | oct15 | a | cohort10 | low | stack | high | 292.274073 | -711.507329 | 2.4358% | 97.5642% | -2434.384004 |
+| share_max | person | -34.030546 | oct15 | a | cohort10 | low | stack | low | 292.274073 | -152.412580 | 40.7530% | 59.2470% | -521.471434 |
+| dollar_min | person | -34.279749 | oct15 | a | cohort10 | high | recommended | high | 292.274073 | -810.033406 | 3.6485% | 96.3515% | -2771.485668 |
+| dollar_max | person | -34.030546 | oct15 | a | cohort10 | low | stack | low | 292.274073 | -152.412580 | 40.7530% | 59.2470% | -521.471434 |
+| share_min | pooled | -34.030546 | oct15 | a | cohort10 | low | stack | high | 292.274073 | -711.507329 | 1.4544% | 98.5456% | -2434.384004 |
+| share_max | pooled | -34.030546 | oct15 | a | cohort10 | low | stack | low | 292.274073 | -152.412580 | 39.1450% | 60.8550% | -521.471434 |
+| dollar_min | pooled | -34.279749 | oct15 | a | cohort10 | high | stack | high | 292.274073 | -810.033406 | 2.5286% | 97.4714% | -2771.485668 |
+| dollar_max | pooled | -34.030546 | oct15 | a | cohort10 | low | stack | low | 292.274073 | -152.412580 | 39.1450% | 60.8550% | -521.471434 |
+| share_min | mixed_unit | -34.390618 | oct15 | a | cohort30 | low | stack | high | 292.274073 | -767.157561 | 1.5979% | 98.4021% | -2624.788273 |
+| share_max | mixed_unit | -34.390618 | oct15 | a | cohort30 | low | stack | low | 292.274073 | -208.062811 | 39.1402% | 60.8598% | -711.875703 |
+| dollar_min | mixed_unit | -35.292718 | oct15 | a | cohort30 | high | recommended | high | 292.274073 | -865.030740 | 3.1051% | 96.8949% | -2959.656085 |
+| dollar_max | mixed_unit | -34.390618 | oct15 | a | cohort30 | low | stack | low | 292.274073 | -208.062811 | 39.1402% | 60.8598% | -711.875703 |
+| share_min | person | -34.390618 | oct15 | a | cohort30 | low | stack | high | 292.274073 | -711.147257 | 2.4416% | 97.5584% | -2433.152037 |
+| share_max | person | -34.390618 | oct15 | a | cohort30 | low | stack | low | 292.274073 | -152.052508 | 40.8780% | 59.1220% | -520.239467 |
+| dollar_min | person | -35.292718 | oct15 | a | cohort30 | high | recommended | high | 292.274073 | -809.020437 | 3.7144% | 96.2856% | -2768.019849 |
+| dollar_max | person | -34.390618 | oct15 | a | cohort30 | low | recommended | low | 292.274073 | -152.052508 | 37.1442% | 62.8558% | -520.239467 |
+| share_min | pooled | -34.390618 | oct15 | a | cohort30 | low | stack | high | 292.274073 | -711.147257 | 1.4556% | 98.5444% | -2433.152037 |
+| share_max | pooled | -34.390618 | oct15 | a | cohort30 | low | stack | low | 292.274073 | -152.052508 | 39.2539% | 60.7461% | -520.239467 |
+| dollar_min | pooled | -35.292718 | oct15 | a | cohort30 | high | recommended | high | 292.274073 | -809.020437 | 2.9927% | 97.0073% | -2768.019849 |
+| dollar_max | pooled | -34.390618 | oct15 | a | cohort30 | low | recommended | low | 292.274073 | -152.052508 | 38.7429% | 61.2571% | -520.239467 |
+| share_min | mixed_unit | -0.000000 | oct15 | a | stationary | low | stack | high | 292.274073 | -801.548178 | 1.4596% | 98.5404% | -2742.453919 |
+| share_max | mixed_unit | -0.000000 | oct15 | a | stationary | low | recommended | low | 292.274073 | -242.453429 | 41.7271% | 58.2729% | -829.541349 |
+| dollar_min | mixed_unit | -0.000000 | oct15 | a | stationary | high | recommended | high | 292.274073 | -900.323458 | 2.9194% | 97.0806% | -3080.408218 |
+| dollar_max | mixed_unit | -0.000000 | oct15 | a | stationary | low | recommended | low | 292.274073 | -242.453429 | 41.7271% | 58.2729% | -829.541349 |
+| share_min | person | -0.000000 | oct15 | a | stationary | low | stack | high | 292.274073 | -745.537875 | 1.7993% | 98.2007% | -2550.817683 |
+| share_max | person | -0.000000 | oct15 | a | stationary | low | recommended | low | 292.274073 | -186.443126 | 50.8410% | 49.1590% | -637.905113 |
+| dollar_min | person | -0.000000 | oct15 | a | stationary | high | stack | high | 292.274073 | -844.313155 | 2.4290% | 97.5710% | -2888.771982 |
+| dollar_max | person | -0.000000 | oct15 | a | stationary | low | recommended | low | 292.274073 | -186.443126 | 50.8410% | 49.1590% | -637.905113 |
+| share_min | pooled | -0.000000 | oct15 | a | stationary | low | stack | high | 292.274073 | -745.537875 | 1.3034% | 98.6966% | -2550.817683 |
+| share_max | pooled | -0.000000 | oct15 | a | stationary | low | recommended | low | 292.274073 | -186.443126 | 41.8631% | 58.1369% | -637.905113 |
+| dollar_min | pooled | -0.000000 | oct15 | a | stationary | high | recommended | high | 292.274073 | -844.313155 | 2.7980% | 97.2020% | -2888.771982 |
+| dollar_max | pooled | -0.000000 | oct15 | a | stationary | low | recommended | low | 292.274073 | -186.443126 | 41.8631% | 58.1369% | -637.905113 |
+| share_min | mixed_unit | -34.030546 | oct15 | b | cohort10 | low | stack | high | 292.274073 | -767.517633 | 1.9302% | 98.0698% | -2626.020240 |
+| share_max | mixed_unit | -34.030546 | oct15 | b | cohort10 | low | stack | low | 292.274073 | -208.422884 | 42.2394% | 57.7606% | -713.107670 |
+| dollar_min | mixed_unit | -34.279749 | oct15 | b | cohort10 | high | stack | high | 292.274073 | -866.043709 | 3.0326% | 96.9674% | -2963.121904 |
+| dollar_max | mixed_unit | -34.030546 | oct15 | b | cohort10 | low | recommended | low | 292.274073 | -208.422884 | 37.6896% | 62.3104% | -713.107670 |
+| share_min | person | -34.030546 | oct15 | b | cohort10 | low | stack | high | 292.274073 | -711.507329 | 2.7407% | 97.2593% | -2434.384004 |
+| share_max | person | -34.030546 | oct15 | b | cohort10 | low | stack | low | 292.274073 | -152.412580 | 42.8932% | 57.1068% | -521.471434 |
+| dollar_min | person | -34.279749 | oct15 | b | cohort10 | high | stack | high | 292.274073 | -810.033406 | 3.3396% | 96.6604% | -2771.485668 |
+| dollar_max | person | -34.030546 | oct15 | b | cohort10 | low | stack | low | 292.274073 | -152.412580 | 42.8932% | 57.1068% | -521.471434 |
+| share_min | pooled | -34.030546 | oct15 | b | cohort10 | low | stack | high | 292.274073 | -711.507329 | 1.7803% | 98.2197% | -2434.384004 |
+| share_max | pooled | -34.030546 | oct15 | b | cohort10 | low | stack | low | 292.274073 | -152.412580 | 42.3685% | 57.6315% | -521.471434 |
+| dollar_min | pooled | -34.279749 | oct15 | b | cohort10 | high | stack | high | 292.274073 | -810.033406 | 2.9079% | 97.0921% | -2771.485668 |
+| dollar_max | pooled | -34.030546 | oct15 | b | cohort10 | low | recommended | low | 292.274073 | -152.412580 | 37.7444% | 62.2556% | -521.471434 |
+| share_min | mixed_unit | -34.390618 | oct15 | b | cohort30 | low | stack | high | 292.274073 | -767.157561 | 1.9329% | 98.0671% | -2624.788273 |
+| share_max | mixed_unit | -34.390618 | oct15 | b | cohort30 | low | stack | low | 292.274073 | -208.062811 | 42.2474% | 57.7526% | -711.875703 |
+| dollar_min | mixed_unit | -35.292718 | oct15 | b | cohort30 | high | recommended | high | 292.274073 | -865.030740 | 3.9635% | 96.0365% | -2959.656085 |
+| dollar_max | mixed_unit | -34.390618 | oct15 | b | cohort30 | low | stack | low | 292.274073 | -208.062811 | 42.2474% | 57.7526% | -711.875703 |
+| share_min | person | -34.390618 | oct15 | b | cohort30 | low | stack | high | 292.274073 | -711.147257 | 2.7572% | 97.2428% | -2433.152037 |
+| share_max | person | -34.390618 | oct15 | b | cohort30 | low | stack | low | 292.274073 | -152.052508 | 42.9777% | 57.0223% | -520.239467 |
+| dollar_min | person | -35.292718 | oct15 | b | cohort30 | high | stack | high | 292.274073 | -809.020437 | 3.3725% | 96.6275% | -2768.019849 |
+| dollar_max | person | -34.390618 | oct15 | b | cohort30 | low | stack | low | 292.274073 | -152.052508 | 42.9777% | 57.0223% | -520.239467 |
+| share_min | pooled | -34.390618 | oct15 | b | cohort30 | low | stack | high | 292.274073 | -711.147257 | 1.7828% | 98.2172% | -2433.152037 |
+| share_max | pooled | -34.390618 | oct15 | b | cohort30 | low | stack | low | 292.274073 | -152.052508 | 42.3764% | 57.6236% | -520.239467 |
+| dollar_min | pooled | -35.292718 | oct15 | b | cohort30 | high | recommended | high | 292.274073 | -809.020437 | 3.8448% | 96.1552% | -2768.019849 |
+| dollar_max | pooled | -34.390618 | oct15 | b | cohort30 | low | stack | low | 292.274073 | -152.052508 | 42.3764% | 57.6236% | -520.239467 |
+| share_min | mixed_unit | -0.000000 | oct15 | b | stationary | low | stack | high | 292.274073 | -801.548178 | 1.6180% | 98.3820% | -2742.453919 |
+| share_max | mixed_unit | -0.000000 | oct15 | b | stationary | low | recommended | low | 292.274073 | -242.453429 | 39.3568% | 60.6432% | -829.541349 |
+| dollar_min | mixed_unit | -0.000000 | oct15 | b | stationary | high | stack | high | 292.274073 | -900.323458 | 2.6385% | 97.3615% | -3080.408218 |
+| dollar_max | mixed_unit | -0.000000 | oct15 | b | stationary | low | stack | low | 292.274073 | -242.453429 | 38.9599% | 61.0401% | -829.541349 |
+| share_min | person | -0.000000 | oct15 | b | stationary | low | stack | high | 292.274073 | -745.537875 | 1.9189% | 98.0811% | -2550.817683 |
+| share_max | person | -0.000000 | oct15 | b | stationary | low | recommended | low | 292.274073 | -186.443126 | 45.1695% | 54.8305% | -637.905113 |
+| dollar_min | person | -0.000000 | oct15 | b | stationary | high | recommended | high | 292.274073 | -844.313155 | 3.0974% | 96.9026% | -2888.771982 |
+| dollar_max | person | -0.000000 | oct15 | b | stationary | low | stack | low | 292.274073 | -186.443126 | 44.3021% | 55.6979% | -637.905113 |
+| share_min | pooled | -0.000000 | oct15 | b | stationary | low | stack | high | 292.274073 | -745.537875 | 1.4601% | 98.5399% | -2550.817683 |
+| share_max | pooled | -0.000000 | oct15 | b | stationary | low | recommended | low | 292.274073 | -186.443126 | 39.4044% | 60.5956% | -637.905113 |
+| dollar_min | pooled | -0.000000 | oct15 | b | stationary | high | stack | high | 292.274073 | -844.313155 | 2.5006% | 97.4994% | -2888.771982 |
+| dollar_max | pooled | -0.000000 | oct15 | b | stationary | low | recommended | low | 292.274073 | -186.443126 | 39.4044% | 60.5956% | -637.905113 |
+| share_min | mixed_unit | -34.030546 | oct15 | c | cohort10 | low | stack | high | 292.274073 | -767.517633 | 2.4578% | 97.5422% | -2626.020240 |
+| share_max | mixed_unit | -34.030546 | oct15 | c | cohort10 | low | recommended | low | 292.274073 | -208.422884 | 41.5887% | 58.4113% | -713.107670 |
+| dollar_min | mixed_unit | -34.279749 | oct15 | c | cohort10 | high | recommended | high | 292.274073 | -866.043709 | 4.8085% | 95.1915% | -2963.121904 |
+| dollar_max | mixed_unit | -34.030546 | oct15 | c | cohort10 | low | stack | low | 292.274073 | -208.422884 | 39.2312% | 60.7688% | -713.107670 |
+| share_min | person | -34.030546 | oct15 | c | cohort10 | low | stack | high | 292.274073 | -711.507329 | 3.6025% | 96.3975% | -2434.384004 |
+| share_max | person | -34.030546 | oct15 | c | cohort10 | low | recommended | low | 292.274073 | -152.412580 | 42.9031% | 57.0969% | -521.471434 |
+| dollar_min | person | -34.279749 | oct15 | c | cohort10 | high | recommended | high | 292.274073 | -810.033406 | 6.3134% | 93.6866% | -2771.485668 |
+| dollar_max | person | -34.030546 | oct15 | c | cohort10 | low | stack | low | 292.274073 | -152.412580 | 40.8171% | 59.1829% | -521.471434 |
+| share_min | pooled | -34.030546 | oct15 | c | cohort10 | low | stack | high | 292.274073 | -711.507329 | 2.3156% | 97.6844% | -2434.384004 |
+| share_max | pooled | -34.030546 | oct15 | c | cohort10 | low | recommended | low | 292.274073 | -152.412580 | 41.6993% | 58.3007% | -521.471434 |
+| dollar_min | pooled | -34.279749 | oct15 | c | cohort10 | high | recommended | high | 292.274073 | -810.033406 | 4.7394% | 95.2606% | -2771.485668 |
+| dollar_max | pooled | -34.030546 | oct15 | c | cohort10 | low | stack | low | 292.274073 | -152.412580 | 39.3394% | 60.6606% | -521.471434 |
+| share_min | mixed_unit | -34.390618 | oct15 | c | cohort30 | low | stack | high | 292.274073 | -767.157561 | 2.4597% | 97.5403% | -2624.788273 |
+| share_max | mixed_unit | -34.390618 | oct15 | c | cohort30 | low | recommended | low | 292.274073 | -208.062811 | 41.6169% | 58.3831% | -711.875703 |
+| dollar_min | mixed_unit | -35.292718 | oct15 | c | cohort30 | high | recommended | high | 292.274073 | -865.030740 | 4.8374% | 95.1626% | -2959.656085 |
+| dollar_max | mixed_unit | -34.390618 | oct15 | c | cohort30 | low | recommended | low | 292.274073 | -208.062811 | 41.6169% | 58.3831% | -711.875703 |
+| share_min | person | -34.390618 | oct15 | c | cohort30 | low | stack | high | 292.274073 | -711.147257 | 3.6291% | 96.3709% | -2433.152037 |
+| share_max | person | -34.390618 | oct15 | c | cohort30 | low | recommended | low | 292.274073 | -152.052508 | 43.0094% | 56.9906% | -520.239467 |
+| dollar_min | person | -35.292718 | oct15 | c | cohort30 | high | recommended | high | 292.274073 | -809.020437 | 6.4770% | 93.5230% | -2768.019849 |
+| dollar_max | person | -34.390618 | oct15 | c | cohort30 | low | recommended | low | 292.274073 | -152.052508 | 43.0094% | 56.9906% | -520.239467 |
+| share_min | pooled | -34.390618 | oct15 | c | cohort30 | low | stack | high | 292.274073 | -711.147257 | 2.3183% | 97.6817% | -2433.152037 |
+| share_max | pooled | -34.390618 | oct15 | c | cohort30 | low | recommended | low | 292.274073 | -152.052508 | 41.7275% | 58.2725% | -520.239467 |
+| dollar_min | pooled | -35.292718 | oct15 | c | cohort30 | high | recommended | high | 292.274073 | -809.020437 | 4.7692% | 95.2308% | -2768.019849 |
+| dollar_max | pooled | -34.390618 | oct15 | c | cohort30 | low | recommended | low | 292.274073 | -152.052508 | 41.7275% | 58.2725% | -520.239467 |
+| share_min | mixed_unit | -0.000000 | oct15 | c | stationary | low | stack | high | 292.274073 | -801.548178 | 2.0629% | 97.9371% | -2742.453919 |
+| share_max | mixed_unit | -0.000000 | oct15 | c | stationary | low | recommended | low | 292.274073 | -242.453429 | 41.3455% | 58.6545% | -829.541349 |
+| dollar_min | mixed_unit | -0.000000 | oct15 | c | stationary | high | stack | high | 292.274073 | -900.323458 | 3.1536% | 96.8464% | -3080.408218 |
+| dollar_max | mixed_unit | -0.000000 | oct15 | c | stationary | low | recommended | low | 292.274073 | -242.453429 | 41.3455% | 58.6545% | -829.541349 |
+| share_min | person | -0.000000 | oct15 | c | stationary | low | stack | high | 292.274073 | -745.537875 | 2.6708% | 97.3292% | -2550.817683 |
+| share_max | person | -0.000000 | oct15 | c | stationary | low | recommended | low | 292.274073 | -186.443126 | 45.9733% | 54.0267% | -637.905113 |
+| dollar_min | person | -0.000000 | oct15 | c | stationary | high | stack | high | 292.274073 | -844.313155 | 3.2348% | 96.7652% | -2888.771982 |
+| dollar_max | person | -0.000000 | oct15 | c | stationary | low | recommended | low | 292.274073 | -186.443126 | 45.9733% | 54.0267% | -637.905113 |
+| share_min | pooled | -0.000000 | oct15 | c | stationary | low | stack | high | 292.274073 | -745.537875 | 1.8976% | 98.1024% | -2550.817683 |
+| share_max | pooled | -0.000000 | oct15 | c | stationary | low | recommended | low | 292.274073 | -186.443126 | 41.4392% | 58.5608% | -637.905113 |
+| dollar_min | pooled | -0.000000 | oct15 | c | stationary | high | stack | high | 292.274073 | -844.313155 | 2.9807% | 97.0193% | -2888.771982 |
+| dollar_max | pooled | -0.000000 | oct15 | c | stationary | low | recommended | low | 292.274073 | -186.443126 | 41.4392% | 58.5608% | -637.905113 |
+
+
+
+All 44,167 retained gates pass; fiscal and social ledgers close at every end and pension set within the declared absolute bn tolerance. Inputs are checked by SHA-256 and immutable source commit; missing manifests and source drift stop the run. Conditional prevalence SEs are not newly estimated for v8. Cut files use deterministic gzip and explicit frame tags. Historical debt interest remains a separate unpriced stock object. [DATA: p7_gates.json.gz; p7_inputs.json; inputs/p8_pins_oct15.json]
+
+
+
+```sh
+sh infra/immigration-fiscal/winners_losers_2026_09_24/run_all.sh
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/winners_losers_2026_09_24 "sh {lane}/run_all.sh"
+```
+
+
+
+Would change it: measured recipient keys, a joint completion/removal counterfactual, or different explicit financing/sharing premises. Model self-report: inherited GPT-6 agent; no unverified exact served-model claim. The executed source totals and verifier receipts carry the numerical claims. [UNVERIFIED: exact model id]
+
+
