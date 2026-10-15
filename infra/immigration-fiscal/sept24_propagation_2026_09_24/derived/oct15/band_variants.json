@@ -32067,18 +32067,26 @@
    "union_completion_2026_10_14/derived/count_replicates.json": "b9eb3c27338b98f7677358ce2641d09146987186cae3cdda62145b887e052385"
   }
  },
- "social_transport": "source keys of the original priced union and added descendants held; completion/coverage social quantities unpriced pending a producer rule",
+ "social_transport": "source keys of the original priced union and added descendants held; real_costs_totals.py prices completion and coverage people at their own key shares (v8_added_social)",
  "social_resource_account": {
   "ends": {
    "low": {
     "accounting_basis": "national_accounts",
-    "current_H_bn": 237.3161608293076,
-    "capital_return_bn": 38.99970571493921,
-    "net_accrual_timing_bridge_bn": 84.03936657941114,
+    "current_H_bn": 241.95012334836142,
+    "capital_return_bn": 39.06514550277614,
+    "net_accrual_timing_bridge_bn": 84.03936657941085,
     "private_wtp_bn": -0.7372948249361221,
+    "justice_key": "case",
+    "government_consumption_removed_bn": 417.4212489355365,
+    "government_consumption_national_bn": 4005.3818592730004,
+    "government_consumption_parts_bn": {
+     "engine": 399.3699481079024,
+     "completion_carriers": 4.995962738285962,
+     "coverage": 13.055338089348105
+    },
     "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
-    "cash_cost_bn": 277.05316136918293,
-    "set_cost_bn": 361.09252794859407,
+    "cash_cost_bn": 281.7525636760737,
+    "set_cost_bn": 365.79193025548454,
     "coverage_unclassified_bn": 0.6429343014430462,
     "coverage_production_split": {
      "P_bn": -0.03282999400401451,
@@ -32088,7 +32096,7 @@
      "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
     },
     "completion_production_net_without_PF_split_bn": 0.0003730745236037031,
-    "current_H_from_typed_parts_bn": 237.3161608293076,
+    "current_H_from_typed_parts_bn": 241.9501233483614,
     "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
    },
    "high": {
@@ -32097,6 +32105,14 @@
     "capital_return_bn": 64.3130917398127,
     "net_accrual_timing_bridge_bn": 84.03936657941239,
     "private_wtp_bn": -0.4850060844461385,
+    "justice_key": "case",
+    "government_consumption_removed_bn": 444.4955042229749,
+    "government_consumption_national_bn": 4005.3818592730004,
+    "government_consumption_parts_bn": {
+     "engine": 424.9473997762246,
+     "completion_carriers": 5.283631692178744,
+     "coverage": 14.26447275457158
+    },
     "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
     "cash_cost_bn": 371.9424180095667,
     "set_cost_bn": 455.9817845889791,
@@ -32112,6 +32128,35 @@
     "current_H_from_typed_parts_bn": 307.1443201853079,
     "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
    }
+  },
+  "raw_coded_low_end": {
+   "accounting_basis": "national_accounts",
+   "current_H_bn": 237.3161608293076,
+   "capital_return_bn": 38.99970571493921,
+   "net_accrual_timing_bridge_bn": 84.03936657941114,
+   "private_wtp_bn": -0.7372948249361221,
+   "justice_key": "use_raw_coding",
+   "government_consumption_removed_bn": 412.78728641648274,
+   "government_consumption_national_bn": 4005.3818592730004,
+   "government_consumption_parts_bn": {
+    "engine": 394.69288831636857,
+    "completion_carriers": 5.039060010766077,
+    "coverage": 13.055338089348105
+   },
+   "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
+   "cash_cost_bn": 277.05316136918293,
+   "set_cost_bn": 361.09252794859407,
+   "coverage_unclassified_bn": 0.6429343014430462,
+   "coverage_production_split": {
+    "P_bn": -0.03282999400401451,
+    "F_bn": 0.6233395055211013,
+    "allocation_rule": "generation_ratio",
+    "approximation": true,
+    "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
+   },
+   "completion_production_net_without_PF_split_bn": 0.0003730745236037031,
+   "current_H_from_typed_parts_bn": 237.3161608293076,
+   "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
   },
   "closure_tolerance_bn": 1e-9,
   "source": "coverage_bound_2026_10_14/derived/coverage_bound_oct15.json",

@@ -776,14 +776,19 @@ if (LATER) {
     meta.post_engine = { mixed_unit_removal: payload.meta.mixed_unit_removal, coverage: payload.meta.coverage };
     meta.union_completion = payload.meta.union_completion;
     meta.runs[CASE] += "; mixed-unit removal and coverage post-engine amounts included";
-    meta.social_transport = "source keys of the original priced union and added descendants held; completion/coverage social quantities unpriced pending a producer rule";
+    meta.social_transport = "source keys of the original priced union and added descendants held; real_costs_totals.py prices completion and coverage people at their own key shares (v8_added_social)";
     const coveragePath = "coverage_bound_2026_10_14/derived/coverage_bound_oct15.json";
     const coverage = readJson(coveragePath);
+    // The pairing's fiscal row is the case at both ends (2026-10-15, round 3 social review: the cost leg is spending on
+    // measured custody whatever the offending footing). The raw-coded low end is kept beside as the earlier matched
+    // footing. Each end also exports the public consumption the long-run response removes (engine consumption family,
+    // item 10's carriers on consumption-family parents, item 12's consumption-family line parts): the government side
+    // of the same budget response whose saving H the social rows re-spend.
     const funding = {};
-    for (const [end, i] of [["low", 16], ["high", 11]]) {
-      const change = end === "low" ? RAW : {};
-      const cashModel = end === "low" ? onKey(RAW.justice)(P.CASH.payloadModel()) : P.CASH.payloadModel();
-      const setModel = end === "low" ? onKey(RAW.justice)(P.payloadModel()) : P.payloadModel();
+    const resourceAt = (end, i, raw) => {
+      const change = raw ? RAW : {};
+      const cashModel = raw ? onKey(RAW.justice)(P.CASH.payloadModel()) : P.CASH.payloadModel();
+      const setModel = raw ? onKey(RAW.justice)(P.payloadModel()) : P.payloadModel();
       const cash = P.CASH.evaluateFull(cashModel, {...P.CASH.MAIN_SPECS[i], ...change}, P.MAIN_PROFILE);
       const set = P.evaluateFull(setModel, {...P.MAIN_SPECS[i], ...change}, P.MAIN_PROFILE);
       const productionState = P.CASH.stateFor(cashModel, {...P.CASH.MAIN_SPECS[i], ...change}, P.MAIN_PROFILE).production;
@@ -806,8 +811,27 @@ if (LATER) {
           !Number.isFinite(currentFromParts) || Math.abs(currentFromParts-H) > 1e-9 ||
           Math.abs(set.cost_bn - (H + cap + bridge - privateP)) > 1e-9)
         throw new Error("[BLOCKED] social resource identity does not close");
-      funding[end] = {accounting_basis:"national_accounts",current_H_bn:H,capital_return_bn:cap,
+      const familyOf = Object.fromEntries(cash.evaluation.spending.map((x) => [x.id, x.family]));
+      const engineConsumption = -cash.evaluation.spending.filter((x) => x.family === "consumption").reduce((s, x) => s + x.effect_bn, 0);
+      const nationalConsumption = cash.evaluation.spending.filter((x) => x.family === "consumption").reduce((s, x) => s + x.national_bn, 0);
+      const carriers = cashPayload.meta.union_completion.carriers;
+      // Receipt-side carriers ride the spending list as signed carriers; only spending-side ones can be public consumption.
+      const completionRows = cash.evaluation.spending.filter((x) => x.family === "union_completion_carrier");
+      const spendingCarriers = completionRows.filter((x) => carriers[x.id] && carriers[x.id].side === "spending");
+      if (completionRows.some((x) => !carriers[x.id]) || spendingCarriers.some((x) => !familyOf[carriers[x.id].parent_line]))
+        throw new Error("[BLOCKED] a completion carrier has no parent line family");
+      const completionConsumption = -spendingCarriers.filter((x) => familyOf[carriers[x.id].parent_line] === "consumption")
+        .reduce((s, x) => s + x.effect_bn, 0);
+      const coverageConsumption = typed.line_parts.filter((x) => x.source_side === "spending" && familyOf[x.source_line] === "consumption")
+        .reduce((s, x) => s + x.coverage_bn, 0);
+      const removed = engineConsumption + completionConsumption + coverageConsumption;
+      if (![engineConsumption, nationalConsumption, completionConsumption, coverageConsumption, removed].every(Number.isFinite) || removed <= 0)
+        throw new Error("[BLOCKED] removed public consumption");
+      return {accounting_basis:"national_accounts",current_H_bn:H,capital_return_bn:cap,
         net_accrual_timing_bridge_bn:bridge,private_wtp_bn:privateP,
+        justice_key:raw ? "use_raw_coding" : "case",
+        government_consumption_removed_bn:removed,government_consumption_national_bn:nationalConsumption,
+        government_consumption_parts_bn:{engine:engineConsumption,completion_carriers:completionConsumption,coverage:coverageConsumption},
         production_cash_income_rule:"fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
         cash_cost_bn:cash.cost_bn,set_cost_bn:set.cost_bn,
         coverage_unclassified_bn:typed.unclassified_bn,
@@ -815,8 +839,10 @@ if (LATER) {
         completion_production_net_without_PF_split_bn:unclassifiedCompletionProduction,
         current_H_from_typed_parts_bn:currentFromParts,
         timing_rule:"conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"};
-    }
-    meta.social_resource_account = {ends:funding,closure_tolerance_bn:1e-9,source:coveragePath,
+    };
+    for (const [end, i] of [["low", 16], ["high", 11]]) funding[end] = resourceAt(end, i, false);
+    const rawCodedLow = resourceAt("low", 16, true);
+    meta.social_resource_account = {ends:funding,raw_coded_low_end:rawCodedLow,closure_tolerance_bn:1e-9,source:coveragePath,
       source_sha256:sha(coveragePath),production_identity_source:"matched_benefits_2026_09_19/model.py fiscal_and_private",
       production_identity_sha256:sha("matched_benefits_2026_09_19/model.py")};
   }

@@ -38,7 +38,7 @@
  "care_constant_bn": 4.15,
  "sources_sha256": {
   "sept24_propagation_2026_09_24/derived/oct15/band_variants.csv": "c93e59cfa9fd5f5f9343d507c78915c505720746f1760723f907ae3df831c22f",
-  "sept24_propagation_2026_09_24/derived/oct15/band_variants.json": "bbb673c3a0526515e240291847e6b3af500d374016b6eada896ee491fb82bfea",
+  "sept24_propagation_2026_09_24/derived/oct15/band_variants.json": "06a2a2263742eb251f6ec2508c185aab89ef8a2814f3fb9cec4523ebaaf3ba53",
   "main_case_2026_09_24/derived/summary.json": "3887e678c53e93f7f31bf48d5e56e005dcfd3b71f2d76b6dfcf62415489bfb75",
   "crime_victim_cost_2026_09_23/derived/cost_by_offence_central.csv": "8b5caa0ea78a39a501be80baf2887b1fd8457f0f07b9c0fe9a82d6c1692448a8",
   "crime_victim_cost_2026_09_23/derived/arms.csv": "dd5c2c6b30841f62712441be76e43babe032ae4bdcc67bc4594098af78aa8ff7",
@@ -67,9 +67,17 @@
   "social_costs_unpriced_2026_09_28/derived/p7_items.csv": "c5432c1ab4dd8af0e8314f1a615946f05371fd2a9fa792685f2ba1bd2410598b",
   "social_respending_2026_10_14/derived/conditional_stacks.csv": "f0037fc17ae38a5b97c84e7e829ddea2f93b59253675abccf674aeba541d1a0b",
   "social_respending_2026_10_14/derived/integration.json": "db72fa4c72652035cae513d2ad1612e12f7d8d09e60fb24f773cd1ff77b64e74",
+  "social_respending_2026_10_14/derived/items.csv": "f0a36994257e4aaccc0887c1b0e5227f85bf9dda8de50802e2baa54a1e0ba4ab",
+  "social_respending_2026_10_14/derived/case_inputs.json": "fecd574ecbea58e2291bc9f2a4352276970ae1084b7abe14723ffcaf6a74eea0",
   "social_respending_2026_10_14/derived/co2_beside.csv": "fa522887a37e886cf5c5ee1c63bab9fa6887ad49cd0432a1846862ea2c44748b",
   "service_response_long_run_2026_09_27/derived/net_change_oct15.json": "bf52fd1c61a381e86e117dc19096e588fed6d165f31037e311d33bc5680442b4",
-  "social_costs_unpriced_2026_09_28/derived/oct15/mortality_pairing_rows.csv": "b70d0b2314f08b0813306ad7fa3cd6908271ee87734fde73fba430c9e7fcce13"
+  "social_costs_unpriced_2026_09_28/derived/oct15/mortality_pairing_rows.csv": "b70d0b2314f08b0813306ad7fa3cd6908271ee87734fde73fba430c9e7fcce13",
+  "population_basis_2026_09_29/derived/frame_counts.csv": "57d068d5ba8be325048baa07da831910ff318a762f7721bf192b0122b08f3527",
+  "coverage_bound_2026_10_14/derived/coverage_bound_oct15.json": "3456126cc53c353ef0806059dcff33ccc1448cfe8de39d2c92583c6c7d3d073c",
+  "union_completion_2026_10_14/derived/counts.csv": "68c8d1bd1c986bb538110c7cad57fbb010c94d8949a59042682c7b40f3b1c408",
+  "union_completion_2026_10_14/derived/pricing_lines.csv": "9b0f9c15c44f02489e81d2549bd13a63238e922cb072e9b1bc693f0335bc6780",
+  "mixed_unit_removal_2026_10_14/derived/case_inputs.json": "f4d61e67490834771defb55dd9274cd7c090666da99ddadee353a28b4f271c74",
+  "mixed_unit_removal_2026_10_14/derived/round2_results.csv": "e0a3409898a52948c2d4ffdd9d0d6060380f7aef1fc2aa99dff6d62a28a958e4"
  },
  "congestion_by_band_end_bn": {
   "case": "oct15",
@@ -747,7 +755,7 @@
   "status": "historical record-basis control; current priced pairing uses p7_crime"
  },
  "without_round1_social_fixes_bn": {
-  "low": 465.7480154374442,
+  "low": 470.4474177443352,
   "high": 565.1801636221916
  },
  "p7_crime": {
@@ -1078,55 +1086,69 @@
   "beneficiary_after_boundary": "residents_outside_lineage"
  },
  "v8_social_environment": {
-  "transport": "fixed_v7_source_keys",
+  "transport": "v7_source_keys_v8_added_people",
   "contract": {
    "comparator": "with_without",
-   "beneficiary_population": "residents_outside_v7_lineage",
+   "beneficiary_population": "residents_outside_v8_lineage",
    "valuation_basis": "dot_uniform_plus_morbidity; multivehicle_only_crashes; volunteer_replacement_wage",
    "overlap_set": [
     "pm25_consumption",
     "road_crash_externality",
     "formal_volunteering_outside_group",
     "victims",
-    "congestion"
+    "congestion",
+    "pm25_government_side"
    ],
-   "population_transport": "fixed_v7_source_keys",
-   "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack"
+   "population_transport": "v7_source_keys_v8_added_people",
+   "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack"
   },
-  "status": "conditional named stack; added completion/coverage social effects unpriced, not zero measured effects",
+  "status": "conditional named stack; completion and coverage people at their own key shares",
   "without_environment_pairing_bn": {
-   "low": 466.3628489242787,
+   "low": 471.0622512311697,
    "high": 569.7848694771839
   },
   "variants": {
    "central": {
     "pairing_bn": {
-     "low": 462.1634730338281,
-     "high": 561.6308234911985
+     "low": 477.6530190747582,
+     "high": 573.4104303826018
     },
     "parts": {
      "low": {
       "terms": {
        "pm_mortality": 6.262823395409939,
-       "pm_respending": -12.126915229862353,
+       "pm_respending": -12.363711874686489,
        "crash_capacity": 0.5527799552777068,
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": 7.105427357601002e-15,
-       "congestion_capacity": -1.5662118469400337
+       "congestion_capacity": -1.5662118469400337,
+       "government_side": 9.50308511434614,
+       "v8_added_people": 4.395778325195211,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.19611936221146367
       },
-      "delta_bn": -4.199375890450571,
+      "delta_bn": 6.590767843588533,
+      "base_pairing_bn": 471.0622512311697,
       "source_budget_saving_bn": 221.83277240342701,
-      "current_H_bn": 237.3161608293076,
-      "spending_base_bn": 237.3161608293076,
+      "current_H_bn": 241.95012334836142,
+      "spending_base_bn": 241.95012334836142,
       "resource_account": {
        "accounting_basis": "national_accounts",
-       "current_H_bn": 237.3161608293076,
-       "capital_return_bn": 38.99970571493921,
-       "net_accrual_timing_bridge_bn": 84.03936657941114,
+       "current_H_bn": 241.95012334836142,
+       "capital_return_bn": 39.06514550277614,
+       "net_accrual_timing_bridge_bn": 84.03936657941085,
        "private_wtp_bn": -0.7372948249361221,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 417.4212489355365,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 399.3699481079024,
+        "completion_carriers": 4.995962738285962,
+        "coverage": 13.055338089348105
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
-       "cash_cost_bn": 277.05316136918293,
-       "set_cost_bn": 361.09252794859407,
+       "cash_cost_bn": 281.7525636760737,
+       "set_cost_bn": 365.79193025548454,
        "coverage_unclassified_bn": 0.6429343014430462,
        "coverage_production_split": {
         "P_bn": -0.03282999400401451,
@@ -1136,14 +1158,154 @@
         "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
        },
        "completion_production_net_without_PF_split_bn": 0.0003730745236037031,
-       "current_H_from_typed_parts_bn": 237.3161608293076,
+       "current_H_from_typed_parts_bn": 241.9501233483614,
        "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
       },
       "market_income_lost_bn": 13.832478245595558,
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.7372948249361221,
       "pm_unit_harm_per_bn_spent": 0.051100250347403765,
-      "pm_replacement_bn": 67.5558051573889,
+      "government_side_bn": 9.50308511434614,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 417.4212489355365,
+      "v8_added_by_item": {
+       "victims": {
+        "level_bn": 37.34185369413714,
+        "union_part_bn": 34.88880165304532,
+        "key": "justice_use_raw_coding",
+        "share": 0.0,
+        "added_people_bn": 0.0,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": -0.06531430240306485
+       },
+       "property_crime": {
+        "level_bn": 1.3287693245516923,
+        "union_part_bn": 1.2414801307577727,
+        "key": "justice_use_raw_coding",
+        "share": 0.0,
+        "added_people_bn": 0.0,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": -0.002324138544340972
+       },
+       "unreimbursed_care": {
+        "level_bn": 3.2762907285070493,
+        "union_part_bn": 3.0568046906856043,
+        "key": "uninsured_use",
+        "share": 0.06239470676666415,
+        "added_people_bn": 0.19072843231829179,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": -0.0060641322137395546
+       },
+       "congestion": {
+        "level_bn": 12.946717388934198,
+        "union_part_bn": 12.032550937733637,
+        "key": "road",
+        "share": 0.06544394563141911,
+        "added_people_bn": 0.7874576093763213,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": -0.024022322684990473
+       },
+       "housing_gain": {
+        "level_bn": -3.614452003668757,
+        "union_part_bn": -3.357461316575861,
+        "key": "head_count",
+        "share": 0.06239470676666415,
+        "added_people_bn": -0.209487814328169,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": 0.006688418943781176
+       },
+       "fear_avoidance": {
+        "level_bn": 6.61052360369506,
+        "union_part_bn": 6.176266682451865,
+        "key": "justice_use_raw_coding",
+        "share": 0.0,
+        "added_people_bn": 0.0,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": -0.01156240772701988
+       },
+       "private_security": {
+        "level_bn": 0.4585074095464421,
+        "union_part_bn": 0.4283872514510176,
+        "key": "justice_use_raw_coding",
+        "share": 0.0,
+        "added_people_bn": 0.0,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": -0.0008019712102793671
+       },
+       "school_disruption": {
+        "level_bn": -2.0993003864986393,
+        "union_part_bn": -1.8965516169477148,
+        "key": "pupils",
+        "share": 0.047329646026989435,
+        "added_people_bn": -0.0897631167020498,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": 0.00850614453431777
+       },
+       "pm25_consumption": {
+        "level_bn": 79.68272038725125,
+        "union_part_bn": 73.14111938767391,
+        "key": "consumption",
+        "share": 0.0663373685397082,
+        "added_people_bn": 4.851989392226921,
+        "item11_consumption_bn": -3.042839830038913,
+        "completion_receivers_bn": -0.1425367010664653
+       },
+       "road_crash_externality": {
+        "level_bn": 11.80138752810415,
+        "union_part_bn": 10.968092706589733,
+        "key": "road",
+        "share": 0.06544394563141911,
+        "added_people_bn": 0.717795262770423,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": -0.021897190678855007
+       },
+       "scale_net_earnings": {
+        "level_bn": -14.56977307053168,
+        "union_part_bn": -13.533849509122382,
+        "key": "head_count",
+        "share": 0.06239470676666415,
+        "added_people_bn": -0.8444405715458525,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": 0.02696086325468538
+       },
+       "restaurant_variety_market_size": {
+        "level_bn": -6.723200691532994,
+        "union_part_bn": -6.723200691532994,
+        "key": null,
+        "share": 0.0,
+        "added_people_bn": -0.0,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": 0.011759490213851512
+       },
+       "formal_volunteering_outside_group": {
+        "level_bn": -6.308771483251836,
+        "union_part_bn": -5.939357171614452,
+        "key": "adults",
+        "share": 0.07126021857121406,
+        "added_people_bn": -0.42323989022175357,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": 0.007295698675660176
+       },
+       "total_consumer_scale": {
+        "level_bn": -2.2963360381284206,
+        "union_part_bn": -2.107816945790934,
+        "key": "consumption",
+        "share": 0.0663373685397082,
+        "added_people_bn": -0.13982702954717535,
+        "item11_consumption_bn": 0.08769006286448087,
+        "completion_receivers_bn": 0.004107693133770441
+       },
+       "total_trade_travel_fdi": {
+        "level_bn": -7.315223911682378,
+        "union_part_bn": -6.714676191671934,
+        "key": "consumption",
+        "share": 0.0663373685397082,
+        "added_people_bn": -0.44543394915174545,
+        "item11_consumption_bn": 0.27934606870778367,
+        "completion_receivers_bn": 0.013085495561225263
+       }
+      },
+      "pm_replacement_bn": 67.31900851256476,
       "crash_replacement_bn": 11.80138752810415,
       "crime_victim_replacement_bn": 37.34185369413714,
       "congestion_replacement_bn": 12.946717388934198,
@@ -1156,9 +1318,14 @@
        "crash_capacity": 0.7751539697734735,
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": -7.105427357601002e-15,
-       "congestion_capacity": -2.1750195325805173
+       "congestion_capacity": -2.1750195325805173,
+       "government_side": 10.119462342530316,
+       "v8_added_people": 4.546580048882139,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.21063180154248995
       },
-      "delta_bn": -8.15404598598532,
+      "delta_bn": 3.6255609054179967,
+      "base_pairing_bn": 569.7848694771839,
       "source_budget_saving_bn": 286.995155125977,
       "current_H_bn": 307.1443201853079,
       "spending_base_bn": 307.1443201853079,
@@ -1168,6 +1335,14 @@
        "capital_return_bn": 64.3130917398127,
        "net_accrual_timing_bridge_bn": 84.03936657941239,
        "private_wtp_bn": -0.4850060844461385,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 444.4955042229749,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 424.9473997762246,
+        "completion_carriers": 5.283631692178744,
+        "coverage": 14.26447275457158
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
        "cash_cost_bn": 371.9424180095667,
        "set_cost_bn": 455.9817845889791,
@@ -1187,6 +1362,146 @@
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.4850060844461385,
       "pm_unit_harm_per_bn_spent": 0.05110025034740376,
+      "government_side_bn": 10.119462342530316,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 444.4955042229749,
+      "v8_added_by_item": {
+       "victims": {
+        "level_bn": 41.58544934783288,
+        "union_part_bn": 39.00848079365664,
+        "key": "justice_use",
+        "share": 0.0,
+        "added_people_bn": 0.0,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": -0.07273673761670106
+       },
+       "property_crime": {
+        "level_bn": 1.4312009389093026,
+        "union_part_bn": 1.3425122299469938,
+        "key": "justice_use",
+        "share": 0.0,
+        "added_people_bn": 0.0,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": -0.002503300765118391
+       },
+       "unreimbursed_care": {
+        "level_bn": 5.608832695475777,
+        "union_part_bn": 5.238176995256759,
+        "key": "uninsured_use",
+        "share": 0.06239470676666415,
+        "added_people_bn": 0.3268345176109314,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": -0.010382022448456296
+       },
+       "congestion": {
+        "level_bn": 10.219917556869603,
+        "union_part_bn": 9.498290175668622,
+        "key": "road",
+        "share": 0.06544394563141911,
+        "added_people_bn": 0.6216055858478996,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": -0.018962811189109585
+       },
+       "housing_gain": {
+        "level_bn": -0.7326911255804628,
+        "union_part_bn": -0.6805961480849346,
+        "key": "head_count",
+        "share": 0.06239470676666415,
+        "added_people_bn": -0.04246559708628063,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": 0.0013558196925283687
+       },
+       "fear_avoidance": {
+        "level_bn": 7.591849436660065,
+        "union_part_bn": 7.121397449892412,
+        "key": "justice_use",
+        "share": 0.0,
+        "added_people_bn": 0.0,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": -0.013278835966903404
+       },
+       "private_security": {
+        "level_bn": 0.5676075224154165,
+        "union_part_bn": 0.5324339999618317,
+        "key": "justice_use",
+        "share": 0.0,
+        "added_people_bn": 0.0,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": -0.0009927972421764255
+       },
+       "school_disruption": {
+        "level_bn": -2.0993003864986393,
+        "union_part_bn": -1.8965516169477148,
+        "key": "pupils",
+        "share": 0.047329646026989435,
+        "added_people_bn": -0.0897631167020498,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": 0.00850614453431777
+       },
+       "pm25_consumption": {
+        "level_bn": 79.68272038725125,
+        "union_part_bn": 73.14111938767391,
+        "key": "consumption",
+        "share": 0.0663373685397082,
+        "added_people_bn": 4.851989392226921,
+        "item11_consumption_bn": -3.042839830038913,
+        "completion_receivers_bn": -0.1425367010664653
+       },
+       "road_crash_externality": {
+        "level_bn": 12.023761542599917,
+        "union_part_bn": 11.174764913626214,
+        "key": "road",
+        "share": 0.06544394563141911,
+        "added_people_bn": 0.7313207074512439,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": -0.0223098003135984
+       },
+       "scale_net_earnings": {
+        "level_bn": -14.56977307053168,
+        "union_part_bn": -13.533849509122382,
+        "key": "head_count",
+        "share": 0.06239470676666415,
+        "added_people_bn": -0.8444405715458525,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": 0.02696086325468538
+       },
+       "restaurant_variety_market_size": {
+        "level_bn": -6.723200691532994,
+        "union_part_bn": -6.723200691532994,
+        "key": null,
+        "share": 0.0,
+        "added_people_bn": -0.0,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": 0.011759490213851512
+       },
+       "formal_volunteering_outside_group": {
+        "level_bn": -6.308771483251836,
+        "union_part_bn": -5.939357171614452,
+        "key": "adults",
+        "share": 0.07126021857121406,
+        "added_people_bn": -0.42323989022175357,
+        "item11_consumption_bn": 0.0,
+        "completion_receivers_bn": 0.007295698675660176
+       },
+       "total_consumer_scale": {
+        "level_bn": -2.2963360381284206,
+        "union_part_bn": -2.107816945790934,
+        "key": "consumption",
+        "share": 0.0663373685397082,
+        "added_people_bn": -0.13982702954717535,
+        "item11_consumption_bn": 0.08769006286448087,
+        "completion_receivers_bn": 0.004107693133770441
+       },
+       "total_trade_travel_fdi": {
+        "level_bn": -7.315223911682378,
+        "union_part_bn": -6.714676191671934,
+        "key": "consumption",
+        "share": 0.0663373685397082,
+        "added_people_bn": -0.44543394915174545,
+        "item11_consumption_bn": 0.27934606870778367,
+        "completion_receivers_bn": 0.013085495561225263
+       }
+      },
       "pm_replacement_bn": 63.98756873299888,
       "crash_replacement_bn": 12.023761542599917,
       "crime_victim_replacement_bn": 41.58544934783288,
@@ -1196,53 +1511,68 @@
     },
     "contract": {
      "comparator": "with_without",
-     "beneficiary_population": "residents_outside_v7_lineage",
+     "beneficiary_population": "residents_outside_v8_lineage",
      "valuation_basis": "uniform",
      "overlap_set": [
       "pm25_consumption",
       "road_crash_externality",
       "formal_volunteering_outside_group",
       "victims",
-      "congestion"
+      "congestion",
+      "pm25_government_side"
      ],
-     "population_transport": "fixed_v7_source_keys",
-     "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack",
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack",
      "denominator": "PCE",
      "incoming_displacement": 1.0,
-     "government_mirror": false,
+     "budget_sides": "both",
      "crash_arm": "multivehicle_only",
      "timing": "current_cash",
-     "units_sensitivity": false
+     "units_sensitivity": false,
+     "low_end_justice_key": "case"
     }
    },
    "without_incoming_displacement": {
     "pairing_bn": {
-     "low": 459.48532519816393,
-     "high": 558.9526756555343
+     "low": 474.97487123909406,
+     "high": 570.7322825469377
     },
     "parts": {
      "low": {
       "terms": {
        "pm_mortality": 6.262823395409939,
-       "pm_respending": -12.126915229862353,
+       "pm_respending": -12.363711874686489,
        "crash_capacity": 0.5527799552777068,
        "incoming_volunteering": 0.0,
        "crime_mortality": 7.105427357601002e-15,
-       "congestion_capacity": -1.5662118469400337
+       "congestion_capacity": -1.5662118469400337,
+       "government_side": 9.50308511434614,
+       "v8_added_people": 4.395778325195211,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.19611936221146367
       },
-      "delta_bn": -6.877523726114735,
+      "delta_bn": 3.9126200079243687,
+      "base_pairing_bn": 471.0622512311697,
       "source_budget_saving_bn": 221.83277240342701,
-      "current_H_bn": 237.3161608293076,
-      "spending_base_bn": 237.3161608293076,
+      "current_H_bn": 241.95012334836142,
+      "spending_base_bn": 241.95012334836142,
       "resource_account": {
        "accounting_basis": "national_accounts",
-       "current_H_bn": 237.3161608293076,
-       "capital_return_bn": 38.99970571493921,
-       "net_accrual_timing_bridge_bn": 84.03936657941114,
+       "current_H_bn": 241.95012334836142,
+       "capital_return_bn": 39.06514550277614,
+       "net_accrual_timing_bridge_bn": 84.03936657941085,
        "private_wtp_bn": -0.7372948249361221,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 417.4212489355365,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 399.3699481079024,
+        "completion_carriers": 4.995962738285962,
+        "coverage": 13.055338089348105
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
-       "cash_cost_bn": 277.05316136918293,
-       "set_cost_bn": 361.09252794859407,
+       "cash_cost_bn": 281.7525636760737,
+       "set_cost_bn": 365.79193025548454,
        "coverage_unclassified_bn": 0.6429343014430462,
        "coverage_production_split": {
         "P_bn": -0.03282999400401451,
@@ -1252,14 +1582,18 @@
         "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
        },
        "completion_production_net_without_PF_split_bn": 0.0003730745236037031,
-       "current_H_from_typed_parts_bn": 237.3161608293076,
+       "current_H_from_typed_parts_bn": 241.9501233483614,
        "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
       },
       "market_income_lost_bn": 13.832478245595558,
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.7372948249361221,
       "pm_unit_harm_per_bn_spent": 0.051100250347403765,
-      "pm_replacement_bn": 67.5558051573889,
+      "government_side_bn": 9.50308511434614,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 417.4212489355365,
+      "v8_added_by_item": null,
+      "pm_replacement_bn": 67.31900851256476,
       "crash_replacement_bn": 11.80138752810415,
       "crime_victim_replacement_bn": 37.34185369413714,
       "congestion_replacement_bn": 12.946717388934198,
@@ -1272,9 +1606,14 @@
        "crash_capacity": 0.7751539697734735,
        "incoming_volunteering": 0.0,
        "crime_mortality": -7.105427357601002e-15,
-       "congestion_capacity": -2.1750195325805173
+       "congestion_capacity": -2.1750195325805173,
+       "government_side": 10.119462342530316,
+       "v8_added_people": 4.546580048882139,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.21063180154248995
       },
-      "delta_bn": -10.832193821649483,
+      "delta_bn": 0.947413069753833,
+      "base_pairing_bn": 569.7848694771839,
       "source_budget_saving_bn": 286.995155125977,
       "current_H_bn": 307.1443201853079,
       "spending_base_bn": 307.1443201853079,
@@ -1284,6 +1623,14 @@
        "capital_return_bn": 64.3130917398127,
        "net_accrual_timing_bridge_bn": 84.03936657941239,
        "private_wtp_bn": -0.4850060844461385,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 444.4955042229749,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 424.9473997762246,
+        "completion_carriers": 5.283631692178744,
+        "coverage": 14.26447275457158
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
        "cash_cost_bn": 371.9424180095667,
        "set_cost_bn": 455.9817845889791,
@@ -1303,6 +1650,10 @@
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.4850060844461385,
       "pm_unit_harm_per_bn_spent": 0.05110025034740376,
+      "government_side_bn": 10.119462342530316,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 444.4955042229749,
+      "v8_added_by_item": null,
       "pm_replacement_bn": 63.98756873299888,
       "crash_replacement_bn": 12.023761542599917,
       "crime_victim_replacement_bn": 41.58544934783288,
@@ -1312,29 +1663,481 @@
     },
     "contract": {
      "comparator": "with_without",
-     "beneficiary_population": "residents_outside_v7_lineage",
+     "beneficiary_population": "residents_outside_v8_lineage",
      "valuation_basis": "uniform",
      "overlap_set": [
       "pm25_consumption",
       "road_crash_externality",
       "formal_volunteering_outside_group",
       "victims",
-      "congestion"
+      "congestion",
+      "pm25_government_side"
      ],
-     "population_transport": "fixed_v7_source_keys",
-     "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack",
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack",
      "denominator": "PCE",
      "incoming_displacement": 0.0,
-     "government_mirror": false,
+     "budget_sides": "both",
      "crash_arm": "multivehicle_only",
      "timing": "current_cash",
-     "units_sensitivity": false
+     "units_sensitivity": false,
+     "low_end_justice_key": "case"
     }
    },
-   "government_mirror": {
+   "government_legacy_response": {
     "pairing_bn": {
-     "low": 469.1925589005776,
-     "high": 568.659909357948
+     "low": 475.17901982716154,
+     "high": 570.320053906821
+    },
+    "parts": {
+     "low": {
+      "terms": {
+       "pm_mortality": 6.262823395409939,
+       "pm_respending": -12.363711874686489,
+       "crash_capacity": 0.5527799552777068,
+       "incoming_volunteering": 2.6781478356641637,
+       "crime_mortality": 7.105427357601002e-15,
+       "congestion_capacity": -1.5662118469400337,
+       "government_legacy_response": 7.0290858667494485,
+       "v8_added_people": 4.395778325195211,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.19611936221146367
+      },
+      "delta_bn": 4.116768595991841,
+      "base_pairing_bn": 471.0622512311697,
+      "source_budget_saving_bn": 221.83277240342701,
+      "current_H_bn": 241.95012334836142,
+      "spending_base_bn": 241.95012334836142,
+      "resource_account": {
+       "accounting_basis": "national_accounts",
+       "current_H_bn": 241.95012334836142,
+       "capital_return_bn": 39.06514550277614,
+       "net_accrual_timing_bridge_bn": 84.03936657941085,
+       "private_wtp_bn": -0.7372948249361221,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 417.4212489355365,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 399.3699481079024,
+        "completion_carriers": 4.995962738285962,
+        "coverage": 13.055338089348105
+       },
+       "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
+       "cash_cost_bn": 281.7525636760737,
+       "set_cost_bn": 365.79193025548454,
+       "coverage_unclassified_bn": 0.6429343014430462,
+       "coverage_production_split": {
+        "P_bn": -0.03282999400401451,
+        "F_bn": 0.6233395055211013,
+        "allocation_rule": "generation_ratio",
+        "approximation": true,
+        "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
+       },
+       "completion_production_net_without_PF_split_bn": 0.0003730745236037031,
+       "current_H_from_typed_parts_bn": 241.9501233483614,
+       "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
+      },
+      "market_income_lost_bn": 13.832478245595558,
+      "city_income_lost_bn": 14.56977307053168,
+      "private_production_income_lost_bn": -0.7372948249361221,
+      "pm_unit_harm_per_bn_spent": 0.051100250347403765,
+      "government_side_bn": 9.50308511434614,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 417.4212489355365,
+      "v8_added_by_item": null,
+      "pm_replacement_bn": 67.31900851256476,
+      "crash_replacement_bn": 11.80138752810415,
+      "crime_victim_replacement_bn": 37.34185369413714,
+      "congestion_replacement_bn": 12.946717388934198,
+      "volunteering_replacement_bn": -3.6306236475876723
+     },
+     "high": {
+      "terms": {
+       "pm_mortality": 6.262823395409939,
+       "pm_respending": -15.69515165425237,
+       "crash_capacity": 0.7751539697734735,
+       "incoming_volunteering": 2.6781478356641637,
+       "crime_mortality": -7.105427357601002e-15,
+       "congestion_capacity": -2.1750195325805173,
+       "government_legacy_response": 7.0290858667494485,
+       "v8_added_people": 4.546580048882139,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.21063180154248995
+      },
+      "delta_bn": 0.5351844296371295,
+      "base_pairing_bn": 569.7848694771839,
+      "source_budget_saving_bn": 286.995155125977,
+      "current_H_bn": 307.1443201853079,
+      "spending_base_bn": 307.1443201853079,
+      "resource_account": {
+       "accounting_basis": "national_accounts",
+       "current_H_bn": 307.1443201853079,
+       "capital_return_bn": 64.3130917398127,
+       "net_accrual_timing_bridge_bn": 84.03936657941239,
+       "private_wtp_bn": -0.4850060844461385,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 444.4955042229749,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 424.9473997762246,
+        "completion_carriers": 5.283631692178744,
+        "coverage": 14.26447275457158
+       },
+       "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
+       "cash_cost_bn": 371.9424180095667,
+       "set_cost_bn": 455.9817845889791,
+       "coverage_unclassified_bn": 0.8051842925442765,
+       "coverage_production_split": {
+        "P_bn": -0.021596173343085317,
+        "F_bn": 0.4100441811710831,
+        "allocation_rule": "generation_ratio",
+        "approximation": true,
+        "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
+       },
+       "completion_production_net_without_PF_split_bn": 0.0002454152767376039,
+       "current_H_from_typed_parts_bn": 307.1443201853079,
+       "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
+      },
+      "market_income_lost_bn": 14.08476698608554,
+      "city_income_lost_bn": 14.56977307053168,
+      "private_production_income_lost_bn": -0.4850060844461385,
+      "pm_unit_harm_per_bn_spent": 0.05110025034740376,
+      "government_side_bn": 10.119462342530316,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 444.4955042229749,
+      "v8_added_by_item": null,
+      "pm_replacement_bn": 63.98756873299888,
+      "crash_replacement_bn": 12.023761542599917,
+      "crime_victim_replacement_bn": 41.58544934783288,
+      "congestion_replacement_bn": 10.219917556869603,
+      "volunteering_replacement_bn": -3.6306236475876723
+     }
+    },
+    "contract": {
+     "comparator": "with_without",
+     "beneficiary_population": "residents_outside_v8_lineage",
+     "valuation_basis": "uniform",
+     "overlap_set": [
+      "pm25_consumption",
+      "road_crash_externality",
+      "formal_volunteering_outside_group",
+      "victims",
+      "congestion",
+      "pm25_government_side"
+     ],
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack",
+     "denominator": "PCE",
+     "incoming_displacement": 1.0,
+     "budget_sides": "legacy_government",
+     "crash_arm": "multivehicle_only",
+     "timing": "current_cash",
+     "units_sensitivity": false,
+     "low_end_justice_key": "case"
+    }
+   },
+   "respending_without_government_side": {
+    "pairing_bn": {
+     "low": 468.14993396041206,
+     "high": 563.2909680400716
+    },
+    "parts": {
+     "low": {
+      "terms": {
+       "pm_mortality": 6.262823395409939,
+       "pm_respending": -12.363711874686489,
+       "crash_capacity": 0.5527799552777068,
+       "incoming_volunteering": 2.6781478356641637,
+       "crime_mortality": 7.105427357601002e-15,
+       "congestion_capacity": -1.5662118469400337,
+       "v8_added_people": 4.395778325195211,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.19611936221146367
+      },
+      "delta_bn": -2.9123172707576077,
+      "base_pairing_bn": 471.0622512311697,
+      "source_budget_saving_bn": 221.83277240342701,
+      "current_H_bn": 241.95012334836142,
+      "spending_base_bn": 241.95012334836142,
+      "resource_account": {
+       "accounting_basis": "national_accounts",
+       "current_H_bn": 241.95012334836142,
+       "capital_return_bn": 39.06514550277614,
+       "net_accrual_timing_bridge_bn": 84.03936657941085,
+       "private_wtp_bn": -0.7372948249361221,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 417.4212489355365,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 399.3699481079024,
+        "completion_carriers": 4.995962738285962,
+        "coverage": 13.055338089348105
+       },
+       "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
+       "cash_cost_bn": 281.7525636760737,
+       "set_cost_bn": 365.79193025548454,
+       "coverage_unclassified_bn": 0.6429343014430462,
+       "coverage_production_split": {
+        "P_bn": -0.03282999400401451,
+        "F_bn": 0.6233395055211013,
+        "allocation_rule": "generation_ratio",
+        "approximation": true,
+        "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
+       },
+       "completion_production_net_without_PF_split_bn": 0.0003730745236037031,
+       "current_H_from_typed_parts_bn": 241.9501233483614,
+       "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
+      },
+      "market_income_lost_bn": 13.832478245595558,
+      "city_income_lost_bn": 14.56977307053168,
+      "private_production_income_lost_bn": -0.7372948249361221,
+      "pm_unit_harm_per_bn_spent": 0.051100250347403765,
+      "government_side_bn": 9.50308511434614,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 417.4212489355365,
+      "v8_added_by_item": null,
+      "pm_replacement_bn": 67.31900851256476,
+      "crash_replacement_bn": 11.80138752810415,
+      "crime_victim_replacement_bn": 37.34185369413714,
+      "congestion_replacement_bn": 12.946717388934198,
+      "volunteering_replacement_bn": -3.6306236475876723
+     },
+     "high": {
+      "terms": {
+       "pm_mortality": 6.262823395409939,
+       "pm_respending": -15.69515165425237,
+       "crash_capacity": 0.7751539697734735,
+       "incoming_volunteering": 2.6781478356641637,
+       "crime_mortality": -7.105427357601002e-15,
+       "congestion_capacity": -2.1750195325805173,
+       "v8_added_people": 4.546580048882139,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.21063180154248995
+      },
+      "delta_bn": -6.493901437112319,
+      "base_pairing_bn": 569.7848694771839,
+      "source_budget_saving_bn": 286.995155125977,
+      "current_H_bn": 307.1443201853079,
+      "spending_base_bn": 307.1443201853079,
+      "resource_account": {
+       "accounting_basis": "national_accounts",
+       "current_H_bn": 307.1443201853079,
+       "capital_return_bn": 64.3130917398127,
+       "net_accrual_timing_bridge_bn": 84.03936657941239,
+       "private_wtp_bn": -0.4850060844461385,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 444.4955042229749,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 424.9473997762246,
+        "completion_carriers": 5.283631692178744,
+        "coverage": 14.26447275457158
+       },
+       "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
+       "cash_cost_bn": 371.9424180095667,
+       "set_cost_bn": 455.9817845889791,
+       "coverage_unclassified_bn": 0.8051842925442765,
+       "coverage_production_split": {
+        "P_bn": -0.021596173343085317,
+        "F_bn": 0.4100441811710831,
+        "allocation_rule": "generation_ratio",
+        "approximation": true,
+        "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
+       },
+       "completion_production_net_without_PF_split_bn": 0.0002454152767376039,
+       "current_H_from_typed_parts_bn": 307.1443201853079,
+       "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
+      },
+      "market_income_lost_bn": 14.08476698608554,
+      "city_income_lost_bn": 14.56977307053168,
+      "private_production_income_lost_bn": -0.4850060844461385,
+      "pm_unit_harm_per_bn_spent": 0.05110025034740376,
+      "government_side_bn": 10.119462342530316,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 444.4955042229749,
+      "v8_added_by_item": null,
+      "pm_replacement_bn": 63.98756873299888,
+      "crash_replacement_bn": 12.023761542599917,
+      "crime_victim_replacement_bn": 41.58544934783288,
+      "congestion_replacement_bn": 10.219917556869603,
+      "volunteering_replacement_bn": -3.6306236475876723
+     }
+    },
+    "contract": {
+     "comparator": "with_without",
+     "beneficiary_population": "residents_outside_v8_lineage",
+     "valuation_basis": "uniform",
+     "overlap_set": [
+      "pm25_consumption",
+      "road_crash_externality",
+      "formal_volunteering_outside_group",
+      "victims",
+      "congestion",
+      "pm25_government_side"
+     ],
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack",
+     "denominator": "PCE",
+     "incoming_displacement": 1.0,
+     "budget_sides": "respending_only",
+     "crash_arm": "multivehicle_only",
+     "timing": "current_cash",
+     "units_sensitivity": false,
+     "low_end_justice_key": "case"
+    }
+   },
+   "neither_budget_side": {
+    "pairing_bn": {
+     "low": 480.51364583509854,
+     "high": 578.9861196943239
+    },
+    "parts": {
+     "low": {
+      "terms": {
+       "pm_mortality": 6.262823395409939,
+       "crash_capacity": 0.5527799552777068,
+       "incoming_volunteering": 2.6781478356641637,
+       "crime_mortality": 7.105427357601002e-15,
+       "congestion_capacity": -1.5662118469400337,
+       "v8_added_people": 4.395778325195211,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.19611936221146367
+      },
+      "delta_bn": 9.45139460392888,
+      "base_pairing_bn": 471.0622512311697,
+      "source_budget_saving_bn": 221.83277240342701,
+      "current_H_bn": 241.95012334836142,
+      "spending_base_bn": 241.95012334836142,
+      "resource_account": {
+       "accounting_basis": "national_accounts",
+       "current_H_bn": 241.95012334836142,
+       "capital_return_bn": 39.06514550277614,
+       "net_accrual_timing_bridge_bn": 84.03936657941085,
+       "private_wtp_bn": -0.7372948249361221,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 417.4212489355365,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 399.3699481079024,
+        "completion_carriers": 4.995962738285962,
+        "coverage": 13.055338089348105
+       },
+       "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
+       "cash_cost_bn": 281.7525636760737,
+       "set_cost_bn": 365.79193025548454,
+       "coverage_unclassified_bn": 0.6429343014430462,
+       "coverage_production_split": {
+        "P_bn": -0.03282999400401451,
+        "F_bn": 0.6233395055211013,
+        "allocation_rule": "generation_ratio",
+        "approximation": true,
+        "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
+       },
+       "completion_production_net_without_PF_split_bn": 0.0003730745236037031,
+       "current_H_from_typed_parts_bn": 241.9501233483614,
+       "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
+      },
+      "market_income_lost_bn": 13.832478245595558,
+      "city_income_lost_bn": 14.56977307053168,
+      "private_production_income_lost_bn": -0.7372948249361221,
+      "pm_unit_harm_per_bn_spent": 0.051100250347403765,
+      "government_side_bn": 9.50308511434614,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 417.4212489355365,
+      "v8_added_by_item": null,
+      "pm_replacement_bn": 79.68272038725125,
+      "crash_replacement_bn": 11.80138752810415,
+      "crime_victim_replacement_bn": 37.34185369413714,
+      "congestion_replacement_bn": 12.946717388934198,
+      "volunteering_replacement_bn": -3.6306236475876723
+     },
+     "high": {
+      "terms": {
+       "pm_mortality": 6.262823395409939,
+       "crash_capacity": 0.7751539697734735,
+       "incoming_volunteering": 2.6781478356641637,
+       "crime_mortality": -7.105427357601002e-15,
+       "congestion_capacity": -2.1750195325805173,
+       "v8_added_people": 4.546580048882139,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.21063180154248995
+      },
+      "delta_bn": 9.201250217140052,
+      "base_pairing_bn": 569.7848694771839,
+      "source_budget_saving_bn": 286.995155125977,
+      "current_H_bn": 307.1443201853079,
+      "spending_base_bn": 307.1443201853079,
+      "resource_account": {
+       "accounting_basis": "national_accounts",
+       "current_H_bn": 307.1443201853079,
+       "capital_return_bn": 64.3130917398127,
+       "net_accrual_timing_bridge_bn": 84.03936657941239,
+       "private_wtp_bn": -0.4850060844461385,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 444.4955042229749,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 424.9473997762246,
+        "completion_carriers": 5.283631692178744,
+        "coverage": 14.26447275457158
+       },
+       "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
+       "cash_cost_bn": 371.9424180095667,
+       "set_cost_bn": 455.9817845889791,
+       "coverage_unclassified_bn": 0.8051842925442765,
+       "coverage_production_split": {
+        "P_bn": -0.021596173343085317,
+        "F_bn": 0.4100441811710831,
+        "allocation_rule": "generation_ratio",
+        "approximation": true,
+        "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
+       },
+       "completion_production_net_without_PF_split_bn": 0.0002454152767376039,
+       "current_H_from_typed_parts_bn": 307.1443201853079,
+       "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
+      },
+      "market_income_lost_bn": 14.08476698608554,
+      "city_income_lost_bn": 14.56977307053168,
+      "private_production_income_lost_bn": -0.4850060844461385,
+      "pm_unit_harm_per_bn_spent": 0.05110025034740376,
+      "government_side_bn": 10.119462342530316,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 444.4955042229749,
+      "v8_added_by_item": null,
+      "pm_replacement_bn": 79.68272038725125,
+      "crash_replacement_bn": 12.023761542599917,
+      "crime_victim_replacement_bn": 41.58544934783288,
+      "congestion_replacement_bn": 10.219917556869603,
+      "volunteering_replacement_bn": -3.6306236475876723
+     }
+    },
+    "contract": {
+     "comparator": "with_without",
+     "beneficiary_population": "residents_outside_v8_lineage",
+     "valuation_basis": "uniform",
+     "overlap_set": [
+      "pm25_consumption",
+      "road_crash_externality",
+      "formal_volunteering_outside_group",
+      "victims",
+      "congestion",
+      "pm25_government_side"
+     ],
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack",
+     "denominator": "PCE",
+     "incoming_displacement": 1.0,
+     "budget_sides": "neither",
+     "crash_arm": "multivehicle_only",
+     "timing": "current_cash",
+     "units_sensitivity": false,
+     "low_end_justice_key": "case"
+    }
+   },
+   "matched_justice_footing": {
+    "pairing_bn": {
+     "low": 473.0849158120126,
+     "high": 573.4104303826018
     },
     "parts": {
      "low": {
@@ -1345,9 +2148,13 @@
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": 7.105427357601002e-15,
        "congestion_capacity": -1.5662118469400337,
-       "government_mirror": 7.0290858667494485
+       "government_side": 9.397587513666835,
+       "v8_added_people": 4.395778325195211,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.19611936221146367
       },
-      "delta_bn": 2.8297099762988775,
+      "delta_bn": 6.722066887733363,
+      "base_pairing_bn": 466.3628489242792,
       "source_budget_saving_bn": 221.83277240342701,
       "current_H_bn": 237.3161608293076,
       "spending_base_bn": 237.3161608293076,
@@ -1357,6 +2164,14 @@
        "capital_return_bn": 38.99970571493921,
        "net_accrual_timing_bridge_bn": 84.03936657941114,
        "private_wtp_bn": -0.7372948249361221,
+       "justice_key": "use_raw_coding",
+       "government_consumption_removed_bn": 412.78728641648274,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 394.69288831636857,
+        "completion_carriers": 5.039060010766077,
+        "coverage": 13.055338089348105
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
        "cash_cost_bn": 277.05316136918293,
        "set_cost_bn": 361.09252794859407,
@@ -1376,6 +2191,10 @@
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.7372948249361221,
       "pm_unit_harm_per_bn_spent": 0.051100250347403765,
+      "government_side_bn": 9.397587513666835,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 412.78728641648274,
+      "v8_added_by_item": null,
       "pm_replacement_bn": 67.5558051573889,
       "crash_replacement_bn": 11.80138752810415,
       "crime_victim_replacement_bn": 37.34185369413714,
@@ -1390,9 +2209,13 @@
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": -7.105427357601002e-15,
        "congestion_capacity": -2.1750195325805173,
-       "government_mirror": 7.0290858667494485
+       "government_side": 10.119462342530316,
+       "v8_added_people": 4.546580048882139,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.21063180154248995
       },
-      "delta_bn": -1.1249601192358707,
+      "delta_bn": 3.6255609054179967,
+      "base_pairing_bn": 569.7848694771839,
       "source_budget_saving_bn": 286.995155125977,
       "current_H_bn": 307.1443201853079,
       "spending_base_bn": 307.1443201853079,
@@ -1402,6 +2225,14 @@
        "capital_return_bn": 64.3130917398127,
        "net_accrual_timing_bridge_bn": 84.03936657941239,
        "private_wtp_bn": -0.4850060844461385,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 444.4955042229749,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 424.9473997762246,
+        "completion_carriers": 5.283631692178744,
+        "coverage": 14.26447275457158
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
        "cash_cost_bn": 371.9424180095667,
        "set_cost_bn": 455.9817845889791,
@@ -1421,6 +2252,10 @@
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.4850060844461385,
       "pm_unit_harm_per_bn_spent": 0.05110025034740376,
+      "government_side_bn": 10.119462342530316,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 444.4955042229749,
+      "v8_added_by_item": null,
       "pm_replacement_bn": 63.98756873299888,
       "crash_replacement_bn": 12.023761542599917,
       "crime_victim_replacement_bn": 41.58544934783288,
@@ -1430,53 +2265,68 @@
     },
     "contract": {
      "comparator": "with_without",
-     "beneficiary_population": "residents_outside_v7_lineage",
+     "beneficiary_population": "residents_outside_v8_lineage",
      "valuation_basis": "uniform",
      "overlap_set": [
       "pm25_consumption",
       "road_crash_externality",
       "formal_volunteering_outside_group",
       "victims",
-      "congestion"
+      "congestion",
+      "pm25_government_side"
      ],
-     "population_transport": "fixed_v7_source_keys",
-     "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack",
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack",
      "denominator": "PCE",
      "incoming_displacement": 1.0,
-     "government_mirror": true,
+     "budget_sides": "both",
      "crash_arm": "multivehicle_only",
      "timing": "current_cash",
-     "units_sensitivity": false
+     "units_sensitivity": false,
+     "low_end_justice_key": "raw_coded_low"
     }
    },
    "CE_units_sensitivity": {
     "pairing_bn": {
-     "low": 451.7540831883629,
-     "high": 548.1585637156459
+     "low": 467.0403699054377,
+     "high": 559.9381706070492
     },
     "parts": {
      "low": {
       "terms": {
        "pm_mortality": 6.262823395409939,
-       "pm_respending": -22.536305075327558,
+       "pm_respending": -22.976361044007014,
        "crash_capacity": 0.5527799552777068,
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": 7.105427357601002e-15,
-       "congestion_capacity": -1.5662118469400337
+       "congestion_capacity": -1.5662118469400337,
+       "government_side": 9.50308511434614,
+       "v8_added_people": 4.395778325195211,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.19611936221146367
       },
-      "delta_bn": -14.608765735915775,
+      "delta_bn": -4.021881325731992,
+      "base_pairing_bn": 471.0622512311697,
       "source_budget_saving_bn": 221.83277240342701,
-      "current_H_bn": 237.3161608293076,
-      "spending_base_bn": 237.3161608293076,
+      "current_H_bn": 241.95012334836142,
+      "spending_base_bn": 241.95012334836142,
       "resource_account": {
        "accounting_basis": "national_accounts",
-       "current_H_bn": 237.3161608293076,
-       "capital_return_bn": 38.99970571493921,
-       "net_accrual_timing_bridge_bn": 84.03936657941114,
+       "current_H_bn": 241.95012334836142,
+       "capital_return_bn": 39.06514550277614,
+       "net_accrual_timing_bridge_bn": 84.03936657941085,
        "private_wtp_bn": -0.7372948249361221,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 417.4212489355365,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 399.3699481079024,
+        "completion_carriers": 4.995962738285962,
+        "coverage": 13.055338089348105
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
-       "cash_cost_bn": 277.05316136918293,
-       "set_cost_bn": 361.09252794859407,
+       "cash_cost_bn": 281.7525636760737,
+       "set_cost_bn": 365.79193025548454,
        "coverage_unclassified_bn": 0.6429343014430462,
        "coverage_production_split": {
         "P_bn": -0.03282999400401451,
@@ -1486,14 +2336,18 @@
         "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
        },
        "completion_production_net_without_PF_split_bn": 0.0003730745236037031,
-       "current_H_from_typed_parts_bn": 237.3161608293076,
+       "current_H_from_typed_parts_bn": 241.9501233483614,
        "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
       },
       "market_income_lost_bn": 13.832478245595558,
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.7372948249361221,
       "pm_unit_harm_per_bn_spent": 0.09496321277309495,
-      "pm_replacement_bn": 57.14641531192369,
+      "government_side_bn": 9.50308511434614,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 417.4212489355365,
+      "v8_added_by_item": null,
+      "pm_replacement_bn": 56.70635934324424,
       "crash_replacement_bn": 11.80138752810415,
       "crime_victim_replacement_bn": 37.34185369413714,
       "congestion_replacement_bn": 12.946717388934198,
@@ -1506,9 +2360,14 @@
        "crash_capacity": 0.7751539697734735,
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": -7.105427357601002e-15,
-       "congestion_capacity": -2.1750195325805173
+       "congestion_capacity": -2.1750195325805173,
+       "government_side": 10.119462342530316,
+       "v8_added_people": 4.546580048882139,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.21063180154248995
       },
-      "delta_bn": -21.626305761537946,
+      "delta_bn": -9.84669887013463,
+      "base_pairing_bn": 569.7848694771839,
       "source_budget_saving_bn": 286.995155125977,
       "current_H_bn": 307.1443201853079,
       "spending_base_bn": 307.1443201853079,
@@ -1518,6 +2377,14 @@
        "capital_return_bn": 64.3130917398127,
        "net_accrual_timing_bridge_bn": 84.03936657941239,
        "private_wtp_bn": -0.4850060844461385,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 444.4955042229749,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 424.9473997762246,
+        "completion_carriers": 5.283631692178744,
+        "coverage": 14.26447275457158
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
        "cash_cost_bn": 371.9424180095667,
        "set_cost_bn": 455.9817845889791,
@@ -1537,6 +2404,10 @@
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.4850060844461385,
       "pm_unit_harm_per_bn_spent": 0.09496321277309495,
+      "government_side_bn": 10.119462342530316,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 444.4955042229749,
+      "v8_added_by_item": null,
       "pm_replacement_bn": 50.51530895744625,
       "crash_replacement_bn": 12.023761542599917,
       "crime_victim_replacement_bn": 41.58544934783288,
@@ -1546,53 +2417,68 @@
     },
     "contract": {
      "comparator": "with_without",
-     "beneficiary_population": "residents_outside_v7_lineage",
+     "beneficiary_population": "residents_outside_v8_lineage",
      "valuation_basis": "uniform",
      "overlap_set": [
       "pm25_consumption",
       "road_crash_externality",
       "formal_volunteering_outside_group",
       "victims",
-      "congestion"
+      "congestion",
+      "pm25_government_side"
      ],
-     "population_transport": "fixed_v7_source_keys",
-     "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack",
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack",
      "denominator": "CE",
      "incoming_displacement": 1.0,
-     "government_mirror": false,
+     "budget_sides": "both",
      "crash_arm": "multivehicle_only",
      "timing": "current_cash",
-     "units_sensitivity": true
+     "units_sensitivity": true,
+     "low_end_justice_key": "case"
     }
    },
    "all_density": {
     "pairing_bn": {
-     "low": 456.7094610751978,
-     "high": 553.9679203056035
+     "low": 471.8773977800954,
+     "high": 565.2956651137745
     },
     "parts": {
      "low": {
       "terms": {
        "pm_mortality": 6.262823395409939,
-       "pm_respending": -12.126915229862353,
+       "pm_respending": -12.363711874686489,
        "crash_capacity": -4.901232003352641,
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": 7.105427357601002e-15,
-       "congestion_capacity": -1.5662118469400337
+       "congestion_capacity": -1.5662118469400337,
+       "government_side": 9.50308511434614,
+       "v8_added_people": 4.06404920116847,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.18599957421717267
       },
-      "delta_bn": -9.653387849080918,
+      "delta_bn": 0.8151465489257346,
+      "base_pairing_bn": 471.0622512311697,
       "source_budget_saving_bn": 221.83277240342701,
-      "current_H_bn": 237.3161608293076,
-      "spending_base_bn": 237.3161608293076,
+      "current_H_bn": 241.95012334836142,
+      "spending_base_bn": 241.95012334836142,
       "resource_account": {
        "accounting_basis": "national_accounts",
-       "current_H_bn": 237.3161608293076,
-       "capital_return_bn": 38.99970571493921,
-       "net_accrual_timing_bridge_bn": 84.03936657941114,
+       "current_H_bn": 241.95012334836142,
+       "capital_return_bn": 39.06514550277614,
+       "net_accrual_timing_bridge_bn": 84.03936657941085,
        "private_wtp_bn": -0.7372948249361221,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 417.4212489355365,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 399.3699481079024,
+        "completion_carriers": 4.995962738285962,
+        "coverage": 13.055338089348105
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
-       "cash_cost_bn": 277.05316136918293,
-       "set_cost_bn": 361.09252794859407,
+       "cash_cost_bn": 281.7525636760737,
+       "set_cost_bn": 365.79193025548454,
        "coverage_unclassified_bn": 0.6429343014430462,
        "coverage_production_split": {
         "P_bn": -0.03282999400401451,
@@ -1602,14 +2488,18 @@
         "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
        },
        "completion_production_net_without_PF_split_bn": 0.0003730745236037031,
-       "current_H_from_typed_parts_bn": 237.3161608293076,
+       "current_H_from_typed_parts_bn": 241.9501233483614,
        "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
       },
       "market_income_lost_bn": 13.832478245595558,
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.7372948249361221,
       "pm_unit_harm_per_bn_spent": 0.051100250347403765,
-      "pm_replacement_bn": 67.5558051573889,
+      "government_side_bn": 9.50308511434614,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 417.4212489355365,
+      "v8_added_by_item": null,
+      "pm_replacement_bn": 67.31900851256476,
       "crash_replacement_bn": 6.347375569473803,
       "crime_victim_replacement_bn": 37.34185369413714,
       "congestion_replacement_bn": 12.946717388934198,
@@ -1622,9 +2512,14 @@
        "crash_capacity": -6.887749215821646,
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": -7.105427357601002e-15,
-       "congestion_capacity": -2.1750195325805173
+       "congestion_capacity": -2.1750195325805173,
+       "government_side": 10.119462342530316,
+       "v8_added_people": 4.080499633118334,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.19641346901091367
       },
-      "delta_bn": -15.81694917158044,
+      "delta_bn": -4.4892043634093515,
+      "base_pairing_bn": 569.7848694771839,
       "source_budget_saving_bn": 286.995155125977,
       "current_H_bn": 307.1443201853079,
       "spending_base_bn": 307.1443201853079,
@@ -1634,6 +2529,14 @@
        "capital_return_bn": 64.3130917398127,
        "net_accrual_timing_bridge_bn": 84.03936657941239,
        "private_wtp_bn": -0.4850060844461385,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 444.4955042229749,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 424.9473997762246,
+        "completion_carriers": 5.283631692178744,
+        "coverage": 14.26447275457158
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
        "cash_cost_bn": 371.9424180095667,
        "set_cost_bn": 455.9817845889791,
@@ -1653,6 +2556,10 @@
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.4850060844461385,
       "pm_unit_harm_per_bn_spent": 0.05110025034740376,
+      "government_side_bn": 10.119462342530316,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 444.4955042229749,
+      "v8_added_by_item": null,
       "pm_replacement_bn": 63.98756873299888,
       "crash_replacement_bn": 4.360858357004798,
       "crime_victim_replacement_bn": 41.58544934783288,
@@ -1662,53 +2569,68 @@
     },
     "contract": {
      "comparator": "with_without",
-     "beneficiary_population": "residents_outside_v7_lineage",
+     "beneficiary_population": "residents_outside_v8_lineage",
      "valuation_basis": "uniform",
      "overlap_set": [
       "pm25_consumption",
       "road_crash_externality",
       "formal_volunteering_outside_group",
       "victims",
-      "congestion"
+      "congestion",
+      "pm25_government_side"
      ],
-     "population_transport": "fixed_v7_source_keys",
-     "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack",
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack",
      "denominator": "PCE",
      "incoming_displacement": 1.0,
-     "government_mirror": false,
+     "budget_sides": "both",
      "crash_arm": "all_density",
      "timing": "current_cash",
-     "units_sensitivity": false
+     "units_sensitivity": false,
+     "low_end_justice_key": "case"
     }
    },
    "resource_promises_deferred": {
     "pairing_bn": {
-     "low": 460.8774214095946,
-     "high": 559.0641435217524
+     "low": 476.36362346098355,
+     "high": 570.8437504131557
     },
     "parts": {
      "low": {
       "terms": {
        "pm_mortality": 6.262823395409939,
-       "pm_respending": -13.412966854095869,
+       "pm_respending": -13.653107488461155,
        "crash_capacity": 0.5527799552777068,
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": 7.105427357601002e-15,
-       "congestion_capacity": -1.5662118469400337
+       "congestion_capacity": -1.5662118469400337,
+       "government_side": 9.50308511434614,
+       "v8_added_people": 4.395778325195211,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.19611936221146367
       },
-      "delta_bn": -5.485427514684086,
+      "delta_bn": 5.301372229813867,
+      "base_pairing_bn": 471.0622512311697,
       "source_budget_saving_bn": 221.83277240342701,
-      "current_H_bn": 237.3161608293076,
-      "spending_base_bn": 262.4833882986512,
+      "current_H_bn": 241.95012334836142,
+      "spending_base_bn": 267.182790605542,
       "resource_account": {
        "accounting_basis": "national_accounts",
-       "current_H_bn": 237.3161608293076,
-       "capital_return_bn": 38.99970571493921,
-       "net_accrual_timing_bridge_bn": 84.03936657941114,
+       "current_H_bn": 241.95012334836142,
+       "capital_return_bn": 39.06514550277614,
+       "net_accrual_timing_bridge_bn": 84.03936657941085,
        "private_wtp_bn": -0.7372948249361221,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 417.4212489355365,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 399.3699481079024,
+        "completion_carriers": 4.995962738285962,
+        "coverage": 13.055338089348105
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
-       "cash_cost_bn": 277.05316136918293,
-       "set_cost_bn": 361.09252794859407,
+       "cash_cost_bn": 281.7525636760737,
+       "set_cost_bn": 365.79193025548454,
        "coverage_unclassified_bn": 0.6429343014430462,
        "coverage_production_split": {
         "P_bn": -0.03282999400401451,
@@ -1718,14 +2640,18 @@
         "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
        },
        "completion_production_net_without_PF_split_bn": 0.0003730745236037031,
-       "current_H_from_typed_parts_bn": 237.3161608293076,
+       "current_H_from_typed_parts_bn": 241.9501233483614,
        "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
       },
       "market_income_lost_bn": 13.832478245595558,
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.7372948249361221,
       "pm_unit_harm_per_bn_spent": 0.051100250347403765,
-      "pm_replacement_bn": 66.26975353315538,
+      "government_side_bn": 9.50308511434614,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 417.4212489355365,
+      "v8_added_by_item": null,
+      "pm_replacement_bn": 66.02961289879009,
       "crash_replacement_bn": 11.80138752810415,
       "crime_victim_replacement_bn": 37.34185369413714,
       "congestion_replacement_bn": 12.946717388934198,
@@ -1738,9 +2664,14 @@
        "crash_capacity": 0.7751539697734735,
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": -7.105427357601002e-15,
-       "congestion_capacity": -2.1750195325805173
+       "congestion_capacity": -2.1750195325805173,
+       "government_side": 10.119462342530316,
+       "v8_added_people": 4.546580048882139,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.21063180154248995
       },
-      "delta_bn": -10.720725955431476,
+      "delta_bn": 1.0588809359718407,
+      "base_pairing_bn": 569.7848694771839,
       "source_budget_saving_bn": 286.995155125977,
       "current_H_bn": 307.1443201853079,
       "spending_base_bn": 357.37264493903507,
@@ -1750,6 +2681,14 @@
        "capital_return_bn": 64.3130917398127,
        "net_accrual_timing_bridge_bn": 84.03936657941239,
        "private_wtp_bn": -0.4850060844461385,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 444.4955042229749,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 424.9473997762246,
+        "completion_carriers": 5.283631692178744,
+        "coverage": 14.26447275457158
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
        "cash_cost_bn": 371.9424180095667,
        "set_cost_bn": 455.9817845889791,
@@ -1769,6 +2708,10 @@
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.4850060844461385,
       "pm_unit_harm_per_bn_spent": 0.05110025034740376,
+      "government_side_bn": 10.119462342530316,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 444.4955042229749,
+      "v8_added_by_item": null,
       "pm_replacement_bn": 61.420888763552725,
       "crash_replacement_bn": 12.023761542599917,
       "crime_victim_replacement_bn": 41.58544934783288,
@@ -1778,53 +2721,68 @@
     },
     "contract": {
      "comparator": "with_without",
-     "beneficiary_population": "residents_outside_v7_lineage",
+     "beneficiary_population": "residents_outside_v8_lineage",
      "valuation_basis": "uniform",
      "overlap_set": [
       "pm25_consumption",
       "road_crash_externality",
       "formal_volunteering_outside_group",
       "victims",
-      "congestion"
+      "congestion",
+      "pm25_government_side"
      ],
-     "population_transport": "fixed_v7_source_keys",
-     "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack",
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack",
      "denominator": "PCE",
      "incoming_displacement": 1.0,
-     "government_mirror": false,
+     "budget_sides": "both",
      "crash_arm": "multivehicle_only",
      "timing": "resource_deferred",
-     "units_sensitivity": false
+     "units_sensitivity": false,
+     "low_end_justice_key": "case"
     }
    },
    "resource_wealth_equivalent": {
     "pairing_bn": {
-     "low": 456.58298873834946,
-     "high": 554.7697108505072
+     "low": 472.0691907897384,
+     "high": 566.5493177419105
     },
     "parts": {
      "low": {
       "terms": {
        "pm_mortality": 6.262823395409939,
-       "pm_respending": -17.707399525341017,
+       "pm_respending": -17.947540159706286,
        "crash_capacity": 0.5527799552777068,
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": 7.105427357601002e-15,
-       "congestion_capacity": -1.5662118469400337
+       "congestion_capacity": -1.5662118469400337,
+       "government_side": 9.50308511434614,
+       "v8_added_people": 4.395778325195211,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.19611936221146367
       },
-      "delta_bn": -9.779860185929234,
+      "delta_bn": 1.006939558568736,
+      "base_pairing_bn": 471.0622512311697,
       "source_budget_saving_bn": 221.83277240342701,
-      "current_H_bn": 237.3161608293076,
-      "spending_base_bn": 346.52275487806236,
+      "current_H_bn": 241.95012334836142,
+      "spending_base_bn": 351.22215718495283,
       "resource_account": {
        "accounting_basis": "national_accounts",
-       "current_H_bn": 237.3161608293076,
-       "capital_return_bn": 38.99970571493921,
-       "net_accrual_timing_bridge_bn": 84.03936657941114,
+       "current_H_bn": 241.95012334836142,
+       "capital_return_bn": 39.06514550277614,
+       "net_accrual_timing_bridge_bn": 84.03936657941085,
        "private_wtp_bn": -0.7372948249361221,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 417.4212489355365,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 399.3699481079024,
+        "completion_carriers": 4.995962738285962,
+        "coverage": 13.055338089348105
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
-       "cash_cost_bn": 277.05316136918293,
-       "set_cost_bn": 361.09252794859407,
+       "cash_cost_bn": 281.7525636760737,
+       "set_cost_bn": 365.79193025548454,
        "coverage_unclassified_bn": 0.6429343014430462,
        "coverage_production_split": {
         "P_bn": -0.03282999400401451,
@@ -1834,14 +2792,18 @@
         "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
        },
        "completion_production_net_without_PF_split_bn": 0.0003730745236037031,
-       "current_H_from_typed_parts_bn": 237.3161608293076,
+       "current_H_from_typed_parts_bn": 241.9501233483614,
        "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
       },
       "market_income_lost_bn": 13.832478245595558,
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.7372948249361221,
       "pm_unit_harm_per_bn_spent": 0.051100250347403765,
-      "pm_replacement_bn": 61.975320861910234,
+      "government_side_bn": 9.50308511434614,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 417.4212489355365,
+      "v8_added_by_item": null,
+      "pm_replacement_bn": 61.735180227544966,
       "crash_replacement_bn": 11.80138752810415,
       "crime_victim_replacement_bn": 37.34185369413714,
       "congestion_replacement_bn": 12.946717388934198,
@@ -1854,9 +2816,14 @@
        "crash_capacity": 0.7751539697734735,
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": -7.105427357601002e-15,
-       "congestion_capacity": -2.1750195325805173
+       "congestion_capacity": -2.1750195325805173,
+       "government_side": 10.119462342530316,
+       "v8_added_people": 4.546580048882139,
+       "item11_consumption": -2.6758036984666487,
+       "completion_receivers": -0.21063180154248995
       },
-      "delta_bn": -15.015158626676687,
+      "delta_bn": -3.2355517352733703,
+      "base_pairing_bn": 569.7848694771839,
       "source_budget_saving_bn": 286.995155125977,
       "current_H_bn": 307.1443201853079,
       "spending_base_bn": 441.41201151844746,
@@ -1866,6 +2833,14 @@
        "capital_return_bn": 64.3130917398127,
        "net_accrual_timing_bridge_bn": 84.03936657941239,
        "private_wtp_bn": -0.4850060844461385,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 444.4955042229749,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 424.9473997762246,
+        "completion_carriers": 5.283631692178744,
+        "coverage": 14.26447275457158
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
        "cash_cost_bn": 371.9424180095667,
        "set_cost_bn": 455.9817845889791,
@@ -1885,6 +2860,10 @@
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.4850060844461385,
       "pm_unit_harm_per_bn_spent": 0.05110025034740376,
+      "government_side_bn": 10.119462342530316,
+      "government_pm_per_removed_bn": 0.02276617479004699,
+      "government_consumption_removed_bn": 444.4955042229749,
+      "v8_added_by_item": null,
       "pm_replacement_bn": 57.126456092307514,
       "crash_replacement_bn": 12.023761542599917,
       "crime_victim_replacement_bn": 41.58544934783288,
@@ -1894,53 +2873,68 @@
     },
     "contract": {
      "comparator": "with_without",
-     "beneficiary_population": "residents_outside_v7_lineage",
+     "beneficiary_population": "residents_outside_v8_lineage",
      "valuation_basis": "uniform",
      "overlap_set": [
       "pm25_consumption",
       "road_crash_externality",
       "formal_volunteering_outside_group",
       "victims",
-      "congestion"
+      "congestion",
+      "pm25_government_side"
      ],
-     "population_transport": "fixed_v7_source_keys",
-     "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack",
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack",
      "denominator": "PCE",
      "incoming_displacement": 1.0,
-     "government_mirror": false,
+     "budget_sides": "both",
      "crash_arm": "multivehicle_only",
      "timing": "resource_wealth",
-     "units_sensitivity": false
+     "units_sensitivity": false,
+     "low_end_justice_key": "case"
     }
    },
    "life_years_r0": {
     "pairing_bn": {
-     "low": 421.9379734405002,
-     "high": 523.6532775378057
+     "low": 430.7071702565471,
+     "high": 528.1831238946681
     },
     "parts": {
      "low": {
       "terms": {
        "pm_mortality": -42.51184990504878,
-       "pm_respending": -4.698189300489225,
+       "pm_respending": -4.7899286622326755,
        "crash_capacity": 0.1187759461106026,
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": 1.5544517869247727,
-       "congestion_capacity": -1.5662118469400337
+       "congestion_capacity": -1.5662118469400337,
+       "government_side": 3.6861417476297578,
+       "v8_added_people": 1.3994246182668775,
+       "item11_consumption": -0.8132478282040092,
+       "completion_receivers": -0.11078466679322908
       },
-      "delta_bn": -44.42487548377849,
+      "delta_bn": -40.35508097462255,
+      "base_pairing_bn": 471.0622512311697,
       "source_budget_saving_bn": 221.83277240342701,
-      "current_H_bn": 237.3161608293076,
-      "spending_base_bn": 237.3161608293076,
+      "current_H_bn": 241.95012334836142,
+      "spending_base_bn": 241.95012334836142,
       "resource_account": {
        "accounting_basis": "national_accounts",
-       "current_H_bn": 237.3161608293076,
-       "capital_return_bn": 38.99970571493921,
-       "net_accrual_timing_bridge_bn": 84.03936657941114,
+       "current_H_bn": 241.95012334836142,
+       "capital_return_bn": 39.06514550277614,
+       "net_accrual_timing_bridge_bn": 84.03936657941085,
        "private_wtp_bn": -0.7372948249361221,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 417.4212489355365,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 399.3699481079024,
+        "completion_carriers": 4.995962738285962,
+        "coverage": 13.055338089348105
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
-       "cash_cost_bn": 277.05316136918293,
-       "set_cost_bn": 361.09252794859407,
+       "cash_cost_bn": 281.7525636760737,
+       "set_cost_bn": 365.79193025548454,
        "coverage_unclassified_bn": 0.6429343014430462,
        "coverage_production_split": {
         "P_bn": -0.03282999400401451,
@@ -1950,14 +2944,18 @@
         "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
        },
        "completion_production_net_without_PF_split_bn": 0.0003730745236037031,
-       "current_H_from_typed_parts_bn": 237.3161608293076,
+       "current_H_from_typed_parts_bn": 241.9501233483614,
        "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
       },
       "market_income_lost_bn": 13.832478245595558,
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.7372948249361221,
       "pm_unit_harm_per_bn_spent": 0.019797173880073224,
-      "pm_replacement_bn": 26.20985778630331,
+      "government_side_bn": 3.6861417476297578,
+      "government_pm_per_removed_bn": 0.00883074773272747,
+      "government_consumption_removed_bn": 417.4212489355365,
+      "v8_added_by_item": null,
+      "pm_replacement_bn": 26.11811842455986,
       "crash_replacement_bn": 11.367383518937046,
       "crime_victim_replacement_bn": 38.89630548106191,
       "congestion_replacement_bn": 12.946717388934198,
@@ -1970,9 +2968,14 @@
        "crash_capacity": 0.2266166818856128,
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": 1.731102493686791,
-       "congestion_capacity": -2.1750195325805173
+       "congestion_capacity": -2.1750195325805173,
+       "government_side": 3.92522766612459,
+       "v8_added_people": 1.5432600894941222,
+       "item11_consumption": -0.8132478282040092,
+       "completion_receivers": -0.12539357055232914
       },
-      "delta_bn": -46.131591939378154,
+      "delta_bn": -41.601745582515775,
+      "base_pairing_bn": 569.7848694771839,
       "source_budget_saving_bn": 286.995155125977,
       "current_H_bn": 307.1443201853079,
       "spending_base_bn": 307.1443201853079,
@@ -1982,6 +2985,14 @@
        "capital_return_bn": 64.3130917398127,
        "net_accrual_timing_bridge_bn": 84.03936657941239,
        "private_wtp_bn": -0.4850060844461385,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 444.4955042229749,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 424.9473997762246,
+        "completion_carriers": 5.283631692178744,
+        "coverage": 14.26447275457158
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
        "cash_cost_bn": 371.9424180095667,
        "set_cost_bn": 455.9817845889791,
@@ -2001,6 +3012,10 @@
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.4850060844461385,
       "pm_unit_harm_per_bn_spent": 0.019797173880073224,
+      "government_side_bn": 3.92522766612459,
+      "government_pm_per_removed_bn": 0.008830747732727472,
+      "government_consumption_removed_bn": 444.4955042229749,
+      "v8_added_by_item": null,
       "pm_replacement_bn": 24.82745757380711,
       "crash_replacement_bn": 11.475224254712057,
       "crime_victim_replacement_bn": 43.316551841519676,
@@ -2010,53 +3025,68 @@
     },
     "contract": {
      "comparator": "with_without",
-     "beneficiary_population": "residents_outside_v7_lineage",
+     "beneficiary_population": "residents_outside_v8_lineage",
      "valuation_basis": "VSLY",
      "overlap_set": [
       "pm25_consumption",
       "road_crash_externality",
       "formal_volunteering_outside_group",
       "victims",
-      "congestion"
+      "congestion",
+      "pm25_government_side"
      ],
-     "population_transport": "fixed_v7_source_keys",
-     "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack",
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack",
      "denominator": "PCE",
      "incoming_displacement": 1.0,
-     "government_mirror": false,
+     "budget_sides": "both",
      "crash_arm": "multivehicle_only",
      "timing": "current_cash",
-     "units_sensitivity": false
+     "units_sensitivity": false,
+     "low_end_justice_key": "case"
     }
    },
    "life_years_r003": {
     "pairing_bn": {
-     "low": 426.44890959310374,
-     "high": 527.6711908880311
+     "low": 436.1670837681724,
+     "high": 533.2225060062839
     },
     "parts": {
      "low": {
       "terms": {
        "pm_mortality": -35.56594692216824,
-       "pm_respending": -5.75766997960344,
+       "pm_respending": -5.870097328795872,
        "crash_capacity": 0.013409255211881188,
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": 0.28433232666068164,
-       "congestion_capacity": -1.5662118469400337
+       "congestion_capacity": -1.5662118469400337,
+       "government_side": 4.514520936010044,
+       "v8_added_people": 1.815961399455244,
+       "item11_consumption": -1.078490658132247,
+       "completion_receivers": -0.12079245996288007
       },
-      "delta_bn": -39.91393933117499,
+      "delta_bn": -34.89516746299726,
+      "base_pairing_bn": 471.0622512311697,
       "source_budget_saving_bn": 221.83277240342701,
-      "current_H_bn": 237.3161608293076,
-      "spending_base_bn": 237.3161608293076,
+      "current_H_bn": 241.95012334836142,
+      "spending_base_bn": 241.95012334836142,
       "resource_account": {
        "accounting_basis": "national_accounts",
-       "current_H_bn": 237.3161608293076,
-       "capital_return_bn": 38.99970571493921,
-       "net_accrual_timing_bridge_bn": 84.03936657941114,
+       "current_H_bn": 241.95012334836142,
+       "capital_return_bn": 39.06514550277614,
+       "net_accrual_timing_bridge_bn": 84.03936657941085,
        "private_wtp_bn": -0.7372948249361221,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 417.4212489355365,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 399.3699481079024,
+        "completion_carriers": 4.995962738285962,
+        "coverage": 13.055338089348105
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
-       "cash_cost_bn": 277.05316136918293,
-       "set_cost_bn": 361.09252794859407,
+       "cash_cost_bn": 281.7525636760737,
+       "set_cost_bn": 365.79193025548454,
        "coverage_unclassified_bn": 0.6429343014430462,
        "coverage_production_split": {
         "P_bn": -0.03282999400401451,
@@ -2066,14 +3096,18 @@
         "scope": "generation-end P/F ratio on that generation's existing earnings-key price pieces"
        },
        "completion_production_net_without_PF_split_bn": 0.0003730745236037031,
-       "current_H_from_typed_parts_bn": 237.3161608293076,
+       "current_H_from_typed_parts_bn": 241.9501233483614,
        "timing_rule": "conditional H: unclassified cash post-engine net amounts and net completion-production carriers treated as current resources; exact reporter P/F unavailable; promise bridge = complete set minus cash, including mixed-unit and coverage timing"
       },
       "market_income_lost_bn": 13.832478245595558,
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.7372948249361221,
       "pm_unit_harm_per_bn_spent": 0.024261600893437305,
-      "pm_replacement_bn": 32.096280090069634,
+      "government_side_bn": 4.514520936010044,
+      "government_pm_per_removed_bn": 0.01081526383125559,
+      "government_consumption_removed_bn": 417.4212489355365,
+      "v8_added_by_item": null,
+      "pm_replacement_bn": 31.983852740877204,
       "crash_replacement_bn": 11.262016828038325,
       "crime_victim_replacement_bn": 37.62618602079782,
       "congestion_replacement_bn": 12.946717388934198,
@@ -2086,9 +3120,14 @@
        "crash_capacity": 0.08430857748797393,
        "incoming_volunteering": 2.6781478356641637,
        "crime_mortality": 0.31664436546586217,
-       "congestion_capacity": -2.1750195325805173
+       "congestion_capacity": -2.1750195325805173,
+       "government_side": 4.8073361499784575,
+       "v8_added_people": 1.957549984750947,
+       "item11_consumption": -1.078490658132247,
+       "completion_receivers": -0.13508035834433513
       },
-      "delta_bn": -42.11367858915281,
+      "delta_bn": -36.56236347089999,
+      "base_pairing_bn": 569.7848694771839,
       "source_budget_saving_bn": 286.995155125977,
       "current_H_bn": 307.1443201853079,
       "spending_base_bn": 307.1443201853079,
@@ -2098,6 +3137,14 @@
        "capital_return_bn": 64.3130917398127,
        "net_accrual_timing_bridge_bn": 84.03936657941239,
        "private_wtp_bn": -0.4850060844461385,
+       "justice_key": "case",
+       "government_consumption_removed_bn": 444.4955042229749,
+       "government_consumption_national_bn": 4005.3818592730004,
+       "government_consumption_parts_bn": {
+        "engine": 424.9473997762246,
+        "completion_carriers": 5.283631692178744,
+        "coverage": 14.26447275457158
+       },
        "production_cash_income_rule": "fixed labor supply eta=0: disutility_difference is zero; source private WTP equals included after-tax market income. Signed P may be negative. Coverage P uses its declared source-generation approximation; completion net P/F remains unclassified",
        "cash_cost_bn": 371.9424180095667,
        "set_cost_bn": 455.9817845889791,
@@ -2117,6 +3164,10 @@
       "city_income_lost_bn": 14.56977307053168,
       "private_production_income_lost_bn": -0.4850060844461385,
       "pm_unit_harm_per_bn_spent": 0.024261600893437305,
+      "government_side_bn": 4.8073361499784575,
+      "government_pm_per_removed_bn": 0.010815263831255592,
+      "government_consumption_removed_bn": 444.4955042229749,
+      "v8_added_by_item": null,
       "pm_replacement_bn": 30.402137156651015,
       "crash_replacement_bn": 11.332916150314418,
       "crime_victim_replacement_bn": 41.90209371329875,
@@ -2126,23 +3177,25 @@
     },
     "contract": {
      "comparator": "with_without",
-     "beneficiary_population": "residents_outside_v7_lineage",
+     "beneficiary_population": "residents_outside_v8_lineage",
      "valuation_basis": "VSLY",
      "overlap_set": [
       "pm25_consumption",
       "road_crash_externality",
       "formal_volunteering_outside_group",
       "victims",
-      "congestion"
+      "congestion",
+      "pm25_government_side"
      ],
-     "population_transport": "fixed_v7_source_keys",
-     "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack",
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack",
      "denominator": "PCE",
      "incoming_displacement": 1.0,
-     "government_mirror": false,
+     "budget_sides": "both",
      "crash_arm": "multivehicle_only",
      "timing": "current_cash",
-     "units_sensitivity": false
+     "units_sensitivity": false,
+     "low_end_justice_key": "case"
     }
    }
   },
@@ -2152,41 +3205,136 @@
    "multivehicle-only crashes on the live road key",
    "live road-key congestion",
    "incoming volunteering",
-   "all-channel mortality arms; uniform crime central already corrected by P7"
+   "all-channel mortality arms; uniform crime central already corrected by P7",
+   "round 3: government side of the budget response central; low end on the case's justice key",
+   "round 3: completion and coverage people at their key shares; item 11's consumption shift"
   ],
   "held_source_population": 42752212.92438524,
   "current_fiscal_population": 45230062.30075857,
-  "government_mirror": "beside",
+  "government_side": "central: v8 removed public consumption at government-average PM per dollar",
+  "government_legacy_response": "beside",
+  "respending_without_government_side": "beside (round-2 central, one-sided)",
+  "matched_justice_footing": "beside (the low end on the raw-coded key, as through v7)",
   "carbon": "beside",
   "life_years": "beside",
   "full_span": "P7 crime-only range; conditional environment grid is not a confidence interval",
+  "v8_added_social": {
+   "shares": {
+    "low": {
+     "head_count": 0.06239470676666415,
+     "uninsured_use": 0.06239470676666415,
+     "road": 0.06544394563141911,
+     "pupils": 0.047329646026989435,
+     "adults": 0.07126021857121406,
+     "consumption": 0.0663373685397082
+    },
+    "high": {
+     "head_count": 0.06239470676666415,
+     "uninsured_use": 0.06239470676666415,
+     "road": 0.06544394563141911,
+     "pupils": 0.047329646026989435,
+     "adults": 0.07126021857121406,
+     "consumption": 0.0663373685397082
+    }
+   },
+   "item11_consumption_factor": -0.04160231420455546,
+   "completion_receiver_share": {
+    "all": 0.001749091058468785,
+    "18_plus": 0.0010837323752018165,
+    "5_17": 0.0038857459008752857
+   },
+   "consumption_receipts_bn": {
+    "low": {
+     "completion_bn": 1.5088286856689626,
+     "coverage_bn": 5.4634408897510784
+    },
+    "high": {
+     "completion_bn": 1.5088286856689626,
+     "coverage_bn": 5.4634408897510784
+    }
+   },
+   "union_consumption_keyed_receipts_bn": 105.10319792450889,
+   "item11_m5_consumption_bn": 4.372536263959,
+   "people": {
+    "completion": 517435.75719317,
+    "coverage": 1960413.6191801596,
+    "completion_by_scope": {
+     "all": 517435.75719317,
+     "5_plus": 431569.98414633394,
+     "5_17": 176917.96449630306,
+     "18_plus": 254652.01965003088
+    },
+    "coverage_by_scope": {
+     "all": 1960413.6191801596,
+     "5_plus": 1960248.3047057518,
+     "5_17": 243502.31126112794,
+     "18_plus": 1716745.993444624
+    },
+    "union_by_scope": {
+     "all": 39712493.3312,
+     "18_plus": 27664776.4015,
+     "5_17": 8882810.4803,
+     "5_plus": 36547586.8818
+    }
+   },
+   "sources_sha256": {
+    "population_basis_2026_09_29/derived/frame_counts.csv": "57d068d5ba8be325048baa07da831910ff318a762f7721bf192b0122b08f3527",
+    "coverage_bound_2026_10_14/derived/coverage_bound_oct15.json": "3456126cc53c353ef0806059dcff33ccc1448cfe8de39d2c92583c6c7d3d073c",
+    "union_completion_2026_10_14/derived/counts.csv": "68c8d1bd1c986bb538110c7cad57fbb010c94d8949a59042682c7b40f3b1c408",
+    "union_completion_2026_10_14/derived/pricing_lines.csv": "9b0f9c15c44f02489e81d2549bd13a63238e922cb072e9b1bc693f0335bc6780",
+    "mixed_unit_removal_2026_10_14/derived/case_inputs.json": "f4d61e67490834771defb55dd9274cd7c090666da99ddadee353a28b4f271c74",
+    "mixed_unit_removal_2026_10_14/derived/round2_results.csv": "e0a3409898a52948c2d4ffdd9d0d6060380f7aef1fc2aa99dff6d62a28a958e4"
+   },
+   "rule": "Completion (item 10) and coverage (item 12) people take each social row at their share of its key: the\nconsumption key on their consumption-keyed receipts over the union's (CONSUMPTION_LINES), every other key on head\ncounts in its age scope [ASSUMPTION: equal use per head within the scope; uninsured use at the all-age head share,\nwhich leans low for the Census-missed]. Crime rows take zero: their national incident totals times population\nratios already carry both groups (round 3 social review, 2026-10-15). Item 11's M5 moves consumption-keyed\nreceipts to the mixed units' stayers, so the union's consumption key falls by M5 over the union's\nconsumption-keyed receipts; the 3.04M are held, as M5 holds them. Completion people are in the frame's outsiders\nand leave the receiver side at their share of each scope's outsiders [ASSUMPTION: exchangeable exposure]; coverage\npeople were never in the frame's receivers."
+  },
   "current_social_rows": [
    {
     "item": "victims",
     "total_by_end_bn": {
-     "low": 37.34185369413714,
-     "high": 41.58544934783288
+     "low": 37.276539391734076,
+     "high": 41.51271261021618
     },
     "contract": {
      "comparator": "with_without",
-     "beneficiary_population": "residents_outside_v7_lineage",
+     "beneficiary_population": "residents_outside_v8_lineage",
      "valuation_basis": "dot_uniform_plus_morbidity; multivehicle_only_crashes; volunteer_replacement_wage",
      "overlap_set": [
       "pm25_consumption",
       "road_crash_externality",
       "formal_volunteering_outside_group",
       "victims",
-      "congestion"
+      "congestion",
+      "pm25_government_side"
      ],
-     "population_transport": "fixed_v7_source_keys",
-     "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack"
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack"
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": 37.34185369413714,
+      "union_part_bn": 34.88880165304532,
+      "key": "justice_use_raw_coding",
+      "share": 0.0,
+      "added_people_bn": 0.0,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": -0.06531430240306485
+     },
+     "high": {
+      "level_bn": 41.58544934783288,
+      "union_part_bn": 39.00848079365664,
+      "key": "justice_use",
+      "share": 0.0,
+      "added_people_bn": 0.0,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": -0.07273673761670106
+     }
     }
    },
    {
     "item": "property_crime",
     "total_by_end_bn": {
-     "low": 1.3287693245516923,
-     "high": 1.4312009389093026
+     "low": 1.3264451860073514,
+     "high": 1.4286976381441843
     },
     "contract": {
      "comparator": "with_without",
@@ -2195,13 +3343,33 @@
      "overlap_set": [
       "private_security"
      ]
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": 1.3287693245516923,
+      "union_part_bn": 1.2414801307577727,
+      "key": "justice_use_raw_coding",
+      "share": 0.0,
+      "added_people_bn": 0.0,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": -0.002324138544340972
+     },
+     "high": {
+      "level_bn": 1.4312009389093026,
+      "union_part_bn": 1.3425122299469938,
+      "key": "justice_use",
+      "share": 0.0,
+      "added_people_bn": 0.0,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": -0.002503300765118391
+     }
     }
    },
    {
     "item": "unreimbursed_care",
     "total_by_end_bn": {
-     "low": 3.2762907285070493,
-     "high": 5.608832695475777
+     "low": 3.4609550286116018,
+     "high": 5.925285190638252
     },
     "contract": {
      "comparator": "with_without",
@@ -2210,34 +3378,75 @@
      "overlap_set": [
       "fiscal_health"
      ]
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": 3.2762907285070493,
+      "union_part_bn": 3.0568046906856043,
+      "key": "uninsured_use",
+      "share": 0.06239470676666415,
+      "added_people_bn": 0.19072843231829179,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": -0.0060641322137395546
+     },
+     "high": {
+      "level_bn": 5.608832695475777,
+      "union_part_bn": 5.238176995256759,
+      "key": "uninsured_use",
+      "share": 0.06239470676666415,
+      "added_people_bn": 0.3268345176109314,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": -0.010382022448456296
+     }
     }
    },
    {
     "item": "congestion",
     "total_by_end_bn": {
-     "low": 12.946717388934198,
-     "high": 10.219917556869603
+     "low": 13.71015267562553,
+     "high": 10.822560331528393
     },
     "contract": {
      "comparator": "with_without",
-     "beneficiary_population": "residents_outside_v7_lineage",
+     "beneficiary_population": "residents_outside_v8_lineage",
      "valuation_basis": "dot_uniform_plus_morbidity; multivehicle_only_crashes; volunteer_replacement_wage",
      "overlap_set": [
       "pm25_consumption",
       "road_crash_externality",
       "formal_volunteering_outside_group",
       "victims",
-      "congestion"
+      "congestion",
+      "pm25_government_side"
      ],
-     "population_transport": "fixed_v7_source_keys",
-     "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack"
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack"
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": 12.946717388934198,
+      "union_part_bn": 12.032550937733637,
+      "key": "road",
+      "share": 0.06544394563141911,
+      "added_people_bn": 0.7874576093763213,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": -0.024022322684990473
+     },
+     "high": {
+      "level_bn": 10.219917556869603,
+      "union_part_bn": 9.498290175668622,
+      "key": "road",
+      "share": 0.06544394563141911,
+      "added_people_bn": 0.6216055858478996,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": -0.018962811189109585
+     }
     }
    },
    {
     "item": "housing_gain",
     "total_by_end_bn": {
-     "low": -3.614452003668757,
-     "high": -0.7326911255804628
+     "low": -3.817251399053145,
+     "high": -0.773800902974215
     },
     "contract": {
      "comparator": "with_without",
@@ -2247,13 +3456,33 @@
       "capitalized_crime",
       "school_disruption"
      ]
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": -3.614452003668757,
+      "union_part_bn": -3.357461316575861,
+      "key": "head_count",
+      "share": 0.06239470676666415,
+      "added_people_bn": -0.209487814328169,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": 0.006688418943781176
+     },
+     "high": {
+      "level_bn": -0.7326911255804628,
+      "union_part_bn": -0.6805961480849346,
+      "key": "head_count",
+      "share": 0.06239470676666415,
+      "added_people_bn": -0.04246559708628063,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": 0.0013558196925283687
+     }
     }
    },
    {
     "item": "fear_avoidance",
     "total_by_end_bn": {
-     "low": 6.61052360369506,
-     "high": 7.591849436660065
+     "low": 6.59896119596804,
+     "high": 7.578570600693162
     },
     "contract": {
      "comparator": "with_without",
@@ -2263,13 +3492,33 @@
       "victims",
       "private_security"
      ]
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": 6.61052360369506,
+      "union_part_bn": 6.176266682451865,
+      "key": "justice_use_raw_coding",
+      "share": 0.0,
+      "added_people_bn": 0.0,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": -0.01156240772701988
+     },
+     "high": {
+      "level_bn": 7.591849436660065,
+      "union_part_bn": 7.121397449892412,
+      "key": "justice_use",
+      "share": 0.0,
+      "added_people_bn": 0.0,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": -0.013278835966903404
+     }
     }
    },
    {
     "item": "private_security",
     "total_by_end_bn": {
-     "low": 0.4585074095464421,
-     "high": 0.5676075224154165
+     "low": 0.45770543833616273,
+     "high": 0.5666147251732401
     },
     "contract": {
      "comparator": "with_without",
@@ -2278,13 +3527,33 @@
      "overlap_set": [
       "fear_avoidance"
      ]
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": 0.4585074095464421,
+      "union_part_bn": 0.4283872514510176,
+      "key": "justice_use_raw_coding",
+      "share": 0.0,
+      "added_people_bn": 0.0,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": -0.0008019712102793671
+     },
+     "high": {
+      "level_bn": 0.5676075224154165,
+      "union_part_bn": 0.5324339999618317,
+      "key": "justice_use",
+      "share": 0.0,
+      "added_people_bn": 0.0,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": -0.0009927972421764255
+     }
     }
    },
    {
     "item": "school_disruption",
     "total_by_end_bn": {
-     "low": -2.0993003864986393,
-     "high": -2.0993003864986393
+     "low": -2.180557358666371,
+     "high": -2.180557358666371
     },
     "contract": {
      "comparator": "with_without",
@@ -2293,55 +3562,117 @@
      "overlap_set": [
       "school_violence"
      ]
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": -2.0993003864986393,
+      "union_part_bn": -1.8965516169477148,
+      "key": "pupils",
+      "share": 0.047329646026989435,
+      "added_people_bn": -0.0897631167020498,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": 0.00850614453431777
+     },
+     "high": {
+      "level_bn": -2.0993003864986393,
+      "union_part_bn": -1.8965516169477148,
+      "key": "pupils",
+      "share": 0.047329646026989435,
+      "added_people_bn": -0.0897631167020498,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": 0.00850614453431777
+     }
     }
    },
    {
     "item": "pm25_consumption",
     "total_by_end_bn": {
-     "low": 67.5558051573889,
-     "high": 63.98756873299888
+     "low": 68.98562137368631,
+     "high": 65.65418159412043
     },
     "contract": {
      "comparator": "with_without",
-     "beneficiary_population": "residents_outside_v7_lineage",
+     "beneficiary_population": "residents_outside_v8_lineage",
      "valuation_basis": "dot_uniform_plus_morbidity; multivehicle_only_crashes; volunteer_replacement_wage",
      "overlap_set": [
       "pm25_consumption",
       "road_crash_externality",
       "formal_volunteering_outside_group",
       "victims",
-      "congestion"
+      "congestion",
+      "pm25_government_side"
      ],
-     "population_transport": "fixed_v7_source_keys",
-     "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack"
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack"
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": 79.68272038725125,
+      "union_part_bn": 73.14111938767391,
+      "key": "consumption",
+      "share": 0.0663373685397082,
+      "added_people_bn": 4.851989392226921,
+      "item11_consumption_bn": -3.042839830038913,
+      "completion_receivers_bn": -0.1425367010664653
+     },
+     "high": {
+      "level_bn": 79.68272038725125,
+      "union_part_bn": 73.14111938767391,
+      "key": "consumption",
+      "share": 0.0663373685397082,
+      "added_people_bn": 4.851989392226921,
+      "item11_consumption_bn": -3.042839830038913,
+      "completion_receivers_bn": -0.1425367010664653
+     }
     }
    },
    {
     "item": "road_crash_externality",
     "total_by_end_bn": {
-     "low": 11.80138752810415,
-     "high": 12.023761542599917
+     "low": 12.497285600195719,
+     "high": 12.732772449737563
     },
     "contract": {
      "comparator": "with_without",
-     "beneficiary_population": "residents_outside_v7_lineage",
+     "beneficiary_population": "residents_outside_v8_lineage",
      "valuation_basis": "dot_uniform_plus_morbidity; multivehicle_only_crashes; volunteer_replacement_wage",
      "overlap_set": [
       "pm25_consumption",
       "road_crash_externality",
       "formal_volunteering_outside_group",
       "victims",
-      "congestion"
+      "congestion",
+      "pm25_government_side"
      ],
-     "population_transport": "fixed_v7_source_keys",
-     "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack"
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack"
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": 11.80138752810415,
+      "union_part_bn": 10.968092706589733,
+      "key": "road",
+      "share": 0.06544394563141911,
+      "added_people_bn": 0.717795262770423,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": -0.021897190678855007
+     },
+     "high": {
+      "level_bn": 12.023761542599917,
+      "union_part_bn": 11.174764913626214,
+      "key": "road",
+      "share": 0.06544394563141911,
+      "added_people_bn": 0.7313207074512439,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": -0.0223098003135984
+     }
     }
    },
    {
     "item": "scale_net_earnings",
     "total_by_end_bn": {
-     "low": -14.56977307053168,
-     "high": -14.56977307053168
+     "low": -15.387252778822848,
+     "high": -15.387252778822848
     },
     "contract": {
      "comparator": "with_without",
@@ -2350,13 +3681,33 @@
      "overlap_set": [
       "production"
      ]
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": -14.56977307053168,
+      "union_part_bn": -13.533849509122382,
+      "key": "head_count",
+      "share": 0.06239470676666415,
+      "added_people_bn": -0.8444405715458525,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": 0.02696086325468538
+     },
+     "high": {
+      "level_bn": -14.56977307053168,
+      "union_part_bn": -13.533849509122382,
+      "key": "head_count",
+      "share": 0.06239470676666415,
+      "added_people_bn": -0.8444405715458525,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": 0.02696086325468538
+     }
     }
    },
    {
     "item": "restaurant_variety_market_size",
     "total_by_end_bn": {
-     "low": -6.723200691532994,
-     "high": -6.723200691532994
+     "low": -6.7114412013191425,
+     "high": -6.7114412013191425
     },
     "contract": {
      "comparator": "with_without",
@@ -2365,34 +3716,75 @@
      "overlap_set": [
       "consumer_scale"
      ]
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": -6.723200691532994,
+      "union_part_bn": -6.723200691532994,
+      "key": null,
+      "share": 0.0,
+      "added_people_bn": -0.0,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": 0.011759490213851512
+     },
+     "high": {
+      "level_bn": -6.723200691532994,
+      "union_part_bn": -6.723200691532994,
+      "key": null,
+      "share": 0.0,
+      "added_people_bn": -0.0,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": 0.011759490213851512
+     }
     }
    },
    {
     "item": "formal_volunteering_outside_group",
     "total_by_end_bn": {
-     "low": -3.6306236475876723,
-     "high": -3.6306236475876723
+     "low": -4.046567839133766,
+     "high": -4.046567839133766
     },
     "contract": {
      "comparator": "with_without",
-     "beneficiary_population": "residents_outside_v7_lineage",
+     "beneficiary_population": "residents_outside_v8_lineage",
      "valuation_basis": "dot_uniform_plus_morbidity; multivehicle_only_crashes; volunteer_replacement_wage",
      "overlap_set": [
       "pm25_consumption",
       "road_crash_externality",
       "formal_volunteering_outside_group",
       "victims",
-      "congestion"
+      "congestion",
+      "pm25_government_side"
      ],
-     "population_transport": "fixed_v7_source_keys",
-     "assumptions": "frozen v7 sender/receiver keys; v8 current cash resource funding; primary-food incoming hours proxy; full incoming displacement for named central stack"
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "v7 sender/receiver keys for the union and the 3.04M; completion and coverage people at their own key shares, item 11's consumption shift; v8 current cash resource funding; government side of the budget response at government-average PM per removed dollar; primary-food incoming hours proxy; full incoming displacement for named central stack"
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": -6.308771483251836,
+      "union_part_bn": -5.939357171614452,
+      "key": "adults",
+      "share": 0.07126021857121406,
+      "added_people_bn": -0.42323989022175357,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": 0.007295698675660176
+     },
+     "high": {
+      "level_bn": -6.308771483251836,
+      "union_part_bn": -5.939357171614452,
+      "key": "adults",
+      "share": 0.07126021857121406,
+      "added_people_bn": -0.42323989022175357,
+      "item11_consumption_bn": 0.0,
+      "completion_receivers_bn": 0.007295698675660176
+     }
     }
    },
    {
     "item": "total_consumer_scale",
     "total_by_end_bn": {
-     "low": -2.2963360381284206,
-     "high": -2.2963360381284206
+     "low": -2.3443653116773446,
+     "high": -2.3443653116773446
     },
     "contract": {
      "comparator": "with_without",
@@ -2402,13 +3794,33 @@
       "restaurant_variety",
       "trade"
      ]
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": -2.2963360381284206,
+      "union_part_bn": -2.107816945790934,
+      "key": "consumption",
+      "share": 0.0663373685397082,
+      "added_people_bn": -0.13982702954717535,
+      "item11_consumption_bn": 0.08769006286448087,
+      "completion_receivers_bn": 0.004107693133770441
+     },
+     "high": {
+      "level_bn": -2.2963360381284206,
+      "union_part_bn": -2.107816945790934,
+      "key": "consumption",
+      "share": 0.0663373685397082,
+      "added_people_bn": -0.13982702954717535,
+      "item11_consumption_bn": 0.08769006286448087,
+      "completion_receivers_bn": 0.004107693133770441
+     }
     }
    },
    {
     "item": "total_trade_travel_fdi",
     "total_by_end_bn": {
-     "low": -7.315223911682378,
-     "high": -7.315223911682378
+     "low": -7.468226296565114,
+     "high": -7.468226296565114
     },
     "contract": {
      "comparator": "with_without",
@@ -2417,37 +3829,83 @@
      "overlap_set": [
       "consumer_scale"
      ]
+    },
+    "v8_added_by_end_bn": {
+     "low": {
+      "level_bn": -7.315223911682378,
+      "union_part_bn": -6.714676191671934,
+      "key": "consumption",
+      "share": 0.0663373685397082,
+      "added_people_bn": -0.44543394915174545,
+      "item11_consumption_bn": 0.27934606870778367,
+      "completion_receivers_bn": 0.013085495561225263
+     },
+     "high": {
+      "level_bn": -7.315223911682378,
+      "union_part_bn": -6.714676191671934,
+      "key": "consumption",
+      "share": 0.0663373685397082,
+      "added_people_bn": -0.44543394915174545,
+      "item11_consumption_bn": 0.27934606870778367,
+      "completion_receivers_bn": 0.013085495561225263
+     }
     }
+   },
+   {
+    "item": "pm25_government_side",
+    "total_by_end_bn": {
+     "low": 9.50308511434614,
+     "high": 10.119462342530316
+    },
+    "contract": {
+     "comparator": "with_without",
+     "beneficiary_population": "residents_outside_v8_lineage",
+     "valuation_basis": "dot_uniform_plus_morbidity",
+     "overlap_set": [
+      "pm25_consumption"
+     ],
+     "population_transport": "v7_source_keys_v8_added_people",
+     "assumptions": "counterflow to re-spending inside pm25_consumption; removed public consumption at government-average PM per dollar"
+    },
+    "v8_added_by_end_bn": null
    }
   ],
   "current_social_by_end_bn": {
-   "low": 101.0709450852341,
-   "high": 105.64903890221959
+   "low": 111.8610888192732,
+   "high": 117.42864579362292
   }
  },
  "joint_social_stack": {
   "ends": {
    "low": {
-    "without_round1_social_fixes_bn": 465.7480154374442,
+    "without_round1_social_fixes_bn": 470.4474177443352,
     "crime_delta_bn": 0.6148334868344705,
-    "environment_delta_bn": -4.199375890450571,
-    "with_round1_social_fixes_bn": 462.1634730338281,
+    "environment_delta_bn": 6.590767843588533,
+    "with_round1_social_fixes_bn": 477.6530190747582,
     "round2_crime_mortality_delta_bn": 7.105427357601002e-15,
     "round2_congestion_delta_bn": -1.5662118469400337,
-    "interaction_residual_bn": -2.5757174171303632e-14,
-    "fiscal_pairing_bn": 361.092527948594,
-    "social_rows_bn": 101.0709450852341
+    "round3_government_side_bn": 9.50308511434614,
+    "round3_v8_added_people_bn": 4.395778325195211,
+    "round3_item11_consumption_bn": -2.6758036984666487,
+    "round3_completion_receivers_bn": -0.19611936221146367,
+    "interaction_residual_bn": 4.440892098500626e-15,
+    "fiscal_pairing_bn": 365.791930255485,
+    "social_rows_bn": 111.8610888192732
    },
    "high": {
     "without_round1_social_fixes_bn": 565.1801636221916,
     "crime_delta_bn": 4.6047058549922895,
-    "environment_delta_bn": -8.15404598598532,
-    "with_round1_social_fixes_bn": 561.6308234911985,
+    "environment_delta_bn": 3.6255609054179967,
+    "with_round1_social_fixes_bn": 573.4104303826018,
     "round2_crime_mortality_delta_bn": -7.105427357601002e-15,
     "round2_congestion_delta_bn": -2.1750195325805173,
-    "interaction_residual_bn": -4.263256414560601e-14,
+    "round3_government_side_bn": 10.119462342530316,
+    "round3_v8_added_people_bn": 4.546580048882139,
+    "round3_item11_consumption_bn": -2.6758036984666487,
+    "round3_completion_receivers_bn": -0.21063180154248995,
+    "interaction_residual_bn": -4.085620730620576e-14,
     "fiscal_pairing_bn": 455.98178458897894,
-    "social_rows_bn": 105.64903890221959
+    "social_rows_bn": 117.42864579362292
    }
   },
   "interaction_closure_tolerance_bn": 1e-09,

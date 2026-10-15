@@ -782,3 +782,45 @@ Thirteen consumer regressions pass. The constant-choice caller now supplies the 
 ### Round-3 correction
 
 2026-10-15 06:01:26 JST (`date`, parent): rerun on corrected v8 (`d1a24d47`: −$3.199004 / −$3.221092bn on the fiscal row), IDENTICAL 47/47, exit 0. The round-2 receipt above is on the uncorrected v8. Corrected: conditional oct15 joint pairing **$462.163473 / 561.630823bn** (was $465.201265 / 564.690703bn); without round-1 social fixes $465.748015 / 565.180164bn. The pairing's fiscal amounts are $361.092528 / 455.981785bn (the low end is still the raw-coded justice pairing, $4.699402bn under the case's $365.791930bn). The social rows rise $0.161212bn at each end because the PM harm from re-spending the saved budget falls with the smaller saving (pm_respending −$12.126915 / −15.695152bn); the crime, PM mortality, crash capacity, congestion and volunteering terms are unchanged. H is $237.316161 / 307.144320bn (−$3.154828bn). Beside: CE units $451.754083 / 548.158564bn; all-density $456.709461 / 553.967920bn; promises deferred $460.877421 / 559.064144bn; wealth-equivalent promises (bridge $84.039367bn, unchanged) $456.582989 / 554.769711bn; all-channel life years $421.937973 / 523.653278bn at 0% and $426.448910 / 527.671191bn at 3%; government mirror $469.192559 / 568.659909bn; without incoming displacement $459.485325 / 558.952676bn. [CALCULATION: `derived/oct15/real_costs_totals.json` joint_social_stack, v8_social_environment.variants]
+
+### Round 3 of the social review (2026-10-15)
+
+2026-10-15 09:27:11 JST (`date`, parent): three fixes from the round-3 social review (Opus 5.5 and Argon 4;
+dispositions `.model-review/2026-10-15-assumptions-v8-r3-s3-dispositions.md`). Conditional oct15 joint pairing
+**$477.653019 / 573.410430bn** (was $462.163473 / 561.630823bn). Rerun IDENTICAL 47/47, 15 tests pass.
+[CALCULATION: `derived/oct15/real_costs_totals.json` `joint_social_stack`, `v8_social_environment`]
+
+- **Both sides of the budget response are central.** Round 2 put other residents' re-spending of the saving H in the
+  central and left the PM of the public consumption the same response removes beside. The v8 band export now carries
+  the removed public consumption: the engine's consumption family, item 10's spending carriers on consumption-family
+  parents and item 12's consumption-family line parts, $417.421249 / 444.495504bn (v7 lineage $398.570832 /
+  424.118707bn). The government side prices it at government-average PM per dollar on the legacy row's mortality
+  weighting and receiver factor, 0.022766 per dollar at both ends (gated): **+$9.503085 / 10.119517bn**.
+  [ASSUMPTION: uniform intensity across public functions, although schools dominate the removed mix; public investment
+  emissions are not counted] The registry gate makes re-spending and its government counterflow share central or
+  beside status.
+- **The low end's fiscal row is the case.** The cost leg is spending on measured custody whatever the offending
+  footing, and the justice lane found the raw ACS key unstable (`cj_use_allocation_2026_09_23/RESULT.md`, "Prisons,
+  adjusted ACS custody"). The fiscal row is now $365.791930bn at the low end (was $361.092528bn on the raw-coded key);
+  the victims keep the equal footing. H at the low end is $241.950123bn (was $237.316161bn), so re-spending is
+  −$12.363654bn (was −$12.126915bn).
+- **The people v8 adds carry social rows** (`--v8-social-transport v7_source_keys_v8_added_people`, the default).
+  Completion (0.52M) and coverage (1.96M) people take each non-crime row at their share of its key: consumption
+  6.634% on their consumption-keyed receipts, head count 6.239%, road (persons 5+) 6.544%, pupils (5–17) 4.733%,
+  adults 7.126% [ASSUMPTION: equal use per head within each age scope; uninsured use at the all-age share]. Crime rows
+  take zero: their national incident totals times population ratios already carry both groups. Item 11's M5 moves
+  $4.372536bn of the union's $105.103198bn consumption-keyed receipts to the stayers, so the consumption-keyed rows'
+  union part falls 4.160%. Completion people leave the receiver side at 0.175% of outsiders. Added people +$4.395778 /
+  4.546584bn, item 11 −$2.675804bn at each end, completion receivers −$0.196119 / 0.210603bn.
+
+Beside (set): the round-2 rule, re-spending without the government side, $468.149934 / 563.290968bn; the legacy
+government row $475.179020 / 570.320054bn; neither side $480.513646 / 578.986120bn; the matched justice footing (the
+low end on the raw-coded key, as through v7) $473.084916bn at the low end; CE units $467.040370 / 559.938171bn;
+all-density crashes $471.877398 / 565.295665bn; promises deferred $476.363623 / 570.843750bn; wealth-equivalent
+promises $472.069191 / 566.549318bn; without incoming displacement $474.974871 / 570.732283bn; all-channel life years
+$430.707170 / 528.183124bn at 0% and $436.167084 / 533.222506bn at 3%. The held state-price alternative re-priced the
+raw-coded low end and is no longer written for oct15.
+
+Logged below the bar: the capacity formula's traffic share s still reads v7 while its cut c reads the oct15 key
+(+$0.9–1.3bn); a cash-PCE denominator (−$2–3bn); government-paid health care in PCE (+$2–3bn, unverified); fear WTP
+possibly including avoided justice spending (−$1–3bn, unverified).
