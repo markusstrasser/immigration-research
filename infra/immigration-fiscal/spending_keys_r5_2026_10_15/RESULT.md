@@ -236,3 +236,153 @@ With unchanged items14/15 also applied, the fixed-endpoint additive check is **3
 - Scoped native Astra read-only code review: PASS for the scoped L1 step3 implementation. No material correctness defect confirmed. Receipt: `l1-step3-code-review.md` in task scratch.
 
 Every changed or regenerated persistent path is enumerated in `L1-step3-changed-paths.md` in task scratch; `L1-changed-paths.md` links this supplement. No git writes or peer-lane edits. Python `perf_counter` and `resource.getrusage` supply timing/RSS; `/usr/bin/time -l`, `ps` and `sysctl` were not used.
+
+## Item 21
+
+**Verdict:** The restricted-payer central key raises the residual's measured allocation materially. At fixed personal ends16/11, the standalone item adds **$24.042151050 / $24.370900274bn** to v8, identically in set/cash. On the preserved prior v9 principal at its common capital rate, the direct item adds **$24.068802708bn at both ends**; item16/17 count interactions are separate below. These are conditional use-proxy calculations, not an observed causal fiscal effect or an adopted case. [CALCULATION: derived/item21_case_changes.json; FRAMING-SENSITIVE]
+
+### National mass and source construction
+
+The current line is308.358754899bn: federal179.700 plus state/local126.839 plus health OPEB1.819754899. The VA consumption approximation89.742bn stays on its old key and retains item13's zero response. Item21 replaces the key only on **218.616754899bn**, the line times one minus the VA fraction. Residual plus VA closes to the national line within1e-9bn. `state_price_health_services` follows the new key. Fixed user-fee offsets retain their source keys/dollars. [DATA: derived/item21_snapshot.json; CALCULATION: derived/item21.json]
+
+The donor sample, exposure and age×nativity cell means are the source `build/meps_health_transport_2024.py::read_meps/donor_model`: positive person weights, nonnegative ages, known nativity, uninsured-inclusive cell means, and the existing CPS infant exposure exclusion. The new payment variable is **TOTOFD24 + TOTSTL24**. The old variable also includes VA and TRICARE. The 2024 donor masses, $bn, are: [DATA: sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256dat.zip; CALCULATION: health_residual.py]
+
+
+| Payer | 2024 donor mass, $bn |
+|---|---|
+| VA | 64.554760621 |
+| TRICARE | 28.723750808 |
+| Other federal | 2.848940390 |
+| State/local | 6.752310049 |
+
+VA and TRICARE are **90.667503%** of the old donor mass. The new donor mass is9.601250440bn. These are survey payment masses, not the NIPA program composition. The account's CPS-transported raw totals are separately exported for published and row4 weights in `national_donor_mass`; they need not equal the original MEPS masses. Every raw national key normalizes to1. [CALCULATION: derived/item21.json]
+
+The live payload's ethnic construction was traced through `main_case_2026_09_24/package.cjs::medicalShifts` and `generation_account_2026_09_24/run_generations.cjs::scaledSplit`. The all-donor national raw denominator stays fixed; the pooled ethnic ratio changes the Mexican-origin numerator. The published-weight ethnic increment is transported onto the row4 account and reconciled across generations exactly as the source does. The old health translation is rebuilt against the September29 generation payload within1.95e-10bn, then the new-minus-old key is applied to the actual source amounts. This preserves the OPEB scale and later fixed fee edits. Both source generation conventions close to the same total. [CODE; CHECK: health_residual.py::target, derived/item21_gates.json]
+
+**Missing source row resolved explicitly:** the pooled `ratios.csv` has plain `ofd_stl`, but its producer's `WINSOR_MEASURES` omits `ofd_stl`. `health_ratios.py` therefore constructs the requested `winsor_p995` rows inside this lane from the same pooled2016–2024 frame. It imports the source estimator read-only, with PERWT/9, medical CPI, pooled strata/PSUs and joint numerator/denominator covariance. Caps are cell-specific weighted99.5th percentiles across all donors, including zero spenders; a zero cap follows the source's uncapped convention. The ten published plain OFD+STL and ten published winsor other-public rows are independent ratio/SE/count oracles. No producer was edited. [DATA: medical_ethnicity_pooled_2026_09_23/_cache/pooled.parquet, derived/ratios.csv; CODE: health_ratios.py]
+
+### Group shares, old against new
+
+Shares below are percent of the full national health line, with held fee amounts retained; coverage is expressed as a residual-key-equivalent share by undoing only the residual fraction on the changed spending dollars. They are allocation diagnostics, not VA shares under the new key: VA keeps the old amounts. The sum includes the lineage, completion and missing people once. [CALCULATION: derived/item21_shares.csv]
+
+
+| Population / profile | Generation | Old % | New % |
+|---|---|---|---|
+| original_union / identified | G1 | 1.581184 | 9.376584 |
+| original_union / identified | G2 | 1.804942 | 2.385770 |
+| original_union / identified | G3plus | 2.482228 | 2.651210 |
+| added_lineage / lineage_later_g3 | G3plus | 0.129012 | 0.169886 |
+| added_lineage / lineage_g3_rate_g3 | G3plus | 0.132079 | 0.146492 |
+| added_lineage / lineage_g3_rate_white | G3plus | 0.146419 | 0.146419 |
+| completion / native_nonreporters | G3plus | 0.004365 | 0.007213 |
+| completion / reporters | G3plus | 0.071100 | 0.082295 |
+| coverage / source_missing_people | G1 | 0.051162 | 0.372520 |
+| coverage / source_missing_people | G2 | 0.086026 | 0.118104 |
+| coverage / source_missing_people | G3plus | 0.091447 | 0.106204 |
+| All counted parts |  | 6.579964 | 15.562698 |
+
+The added G3 and white profiles use their own source five-year age-band unit models. The white model already uses an OFD/STL-style payer construction, so central white amounts remain unchanged. Item10's observed nonreporters use their own source age-band prices; reporters use their source completion anchors. These are separate population transports: observed union and reporters use their own raw within-generation donor driver; hidden G3/white people use their own age profiles; native children use their own records. This finer allocation assumption differs from collapsing every G3 amount into a single record driver plus a flat net calibration. Every population's changed dollars independently closes to its declared amount. [CODE: health_residual.py; CHECK: test_health_residual.py]
+
+### Fixed-endpoint amounts and arms
+
+All figures are $bn/year. V8 remains unchanged at365.791930255/455.981784589 set and281.752563676/371.942418010 cash before this item. The v9 baseline is the **preserved prior principal**,344.023286152/412.555074128 set and260.390590432/328.922378407 cash, not the live API's exclusion fallback. `inputs/item21_v9_base.json` pins the source summary hash, selected IDs, ends and common real rate; reruns do not regenerate that historical input. The API supplies the health price context only. [DATA: main_case_2026_10_15/derived/summary.json; inputs/item21_v9_base.json; CHECK: health_evaluate.cjs]
+
+
+| Arm | V8 direct delta low / high | V9 direct delta low / high | V9 item16 delta low / high | V9 conditional item17 delta low / high |
+|---|---|---|---|---|
+| central | 24.042151050 / 24.370900274 | 24.068802708 / 24.068802708 | -0.065195754 / -0.065195754 | 0.002846072 / 0.002846072 |
+| population | 17.810995840 / 18.060017237 | 17.831183974 / 17.831183974 | -0.195436976 / -0.195436976 | 0.000626669 / 0.000626669 |
+| no_ethnicity | 17.916369572 / 18.162459844 | 17.936320080 / 17.936320080 | -0.079804556 / -0.079804556 | 0.003125824 / 0.003125824 |
+| plain_pooled | 31.195987740 / 31.623139444 | 31.230616876 / 31.230616876 | -0.075068503 / -0.075068503 | 0.003002279 / 0.003002279 |
+| old_key | 0.000000000 / 0.000000000 | 0.000000000 / 0.000000000 | 0.000000000 / 0.000000000 | 0.000000000 / 0.000000000 |
+
+Population, no ethnic translation, plain pooled translation and old key are arms, never central. The old-key arm changes every reported population, generation, line, set, endpoint, coverage and count component by zero. Arms are construction diagnostics, not confidence bounds. Source health dollars and item21 deltas are imputation-method invariant; both methods are evaluated, not inferred from one method. [CALCULATION: derived/item21_arms.csv; CHECK: health_evaluate.cjs]
+
+
+| Base + direct item21 | Set | Result low / high, $bn | Item21 per member low / high, $ |
+|---|---|---|---|
+| standalone_v8 | set | 389.834081305 / 480.352684863 | 531.552 / 538.821 |
+| standalone_v8 | cash | 305.794714726 / 396.313318283 | 531.552 / 538.821 |
+| v9_base | set | 368.092088861 / 436.623876836 | 532.142 / 532.142 |
+| v9_base | cash | 284.459393141 / 352.991181116 | 532.142 / 532.142 |
+
+Including the separately exported item16 plus conditional item17 increments gives a central combined increment of24.006453026 / 24.006453026bn. This is a signed-price calculation on the existing source coverage/count kernels, not a parent-case adoption or fresh optimization. The per-member denominator above remains45,230,062.300759; item21 changes prices and no population metadata. [CALCULATION: derived/item21_v9_coverage.json]
+
+The direct central pieces at the v9 rate0.020810698764238 are: [CALCULATION: derived/item21_parts.csv]
+
+
+| Population | Low, $bn | High, $bn |
+|---|---|---|
+| original_union | 22.903218533 | 22.903218533 |
+| added_lineage | 0.143646389 | 0.143646389 |
+| completion | 0.036527801 | 0.036527801 |
+| coverage | 0.985409986 | 0.985409986 |
+
+### Capital and held exposure
+
+S&L health structures365.979bn follow the new key. In the optional equipment-and-software sensitivity, the87.919783604bn S&L health equipment stock follows the same key when present, with no invented reporter/coverage carrier: its additional item21 change is0.151280866/0.226921299bn at the source2%/3% rates. Federal nondefense health structures106.019bn remain on the old key: the pinned FAAt701 line43 and the capital lane do not supply a VA/non-VA split. No consumption VA fraction is applied to a mixed capital stock. The unbridged federal equipment/R&D split also remains outside this item. [DATA: capital_return_services_2026_09_27/derived/engine_components.json; CODE: capital_return.py:675–685,773,840–842; CHECK: test_health_item.cjs]
+
+
+| Held federal structures exposure | Low, $bn | High, $bn |
+|---|---|---|
+| engine_bn | 0.133164704 | 0.199747057 |
+| completion_bn | 0.001507587 | 0.002261381 |
+| coverage_bn | 0.004847945 | 0.007271917 |
+| gross_held_return_bn | 0.139520237 | 0.209280355 |
+| gross_held_group_stock_bn | 6.976011838 | 6.976011838 |
+
+These are gross old-key exposures before separately held fee offsets, at source2%/3%; they are not a proposed federal re-keying benefit or a debt flow. The national stock is held, including any VA capital embedded in it. [CALCULATION: derived/item21_exposures.json]
+
+### Sparse cells and uncertainty
+
+2024 donor cell n/positive-n and mean dollar use (sampling SE) are below. Positive means OFD+STL>0; these are raw person counts, not effective sample sizes. [CALCULATION: derived/item21_key_cells.csv]
+
+
+| Age | Nativity | n / positive n | Mean $ (SE) |
+|---|---|---|---|
+| 0-17 | us_born | 3372 / 39 | 15.833 (5.840) |
+| 0-17 | foreign_born | 173 / 3 | 8.330 (6.743) |
+| 18-34 | us_born | 2674 / 46 | 12.520 (5.081) |
+| 18-34 | foreign_born | 466 / 12 | 65.212 (47.100) |
+| 35-49 | us_born | 2458 / 49 | 17.977 (6.643) |
+| 35-49 | foreign_born | 872 / 36 | 33.308 (16.489) |
+| 50-64 | us_born | 2820 / 69 | 46.701 (23.432) |
+| 50-64 | foreign_born | 802 / 42 | 93.764 (74.266) |
+| 65+ | us_born | 4177 / 84 | 33.134 (9.759) |
+| 65+ | foreign_born | 662 / 15 | 37.545 (18.898) |
+
+Pooled2016–2024 transport ratios, Mexican origin/all donors. Central uses winsor; plain is an arm. Counts are common to both specifications; SEs are the source pooled survey-design ratio SEs. [CALCULATION: derived/item21_ratios.csv]
+
+
+| Age | Nativity | Winsor ratio (SE) | Plain ratio (SE) | n Mexican / all | Positive Mexican / all |
+|---|---|---|---|---|---|
+| 0-17 | us_born | 0.821815 (0.160957) | 0.900126 (0.349675) | 12007 / 50220 | 198 / 849 |
+| 0-17 | foreign_born | 0.471992 (0.273372) | 0.330510 (0.200071) | 384 / 2083 | 11 / 57 |
+| 18-34 | us_born | 0.698366 (0.112879) | 0.630748 (0.187035) | 6461 / 37094 | 138 / 925 |
+| 18-34 | foreign_born | 1.725697 (0.258596) | 2.354287 (0.603259) | 2483 / 7593 | 109 / 213 |
+| 35-49 | us_born | 1.065143 (0.204577) | 1.005841 (0.358975) | 2733 / 30101 | 104 / 995 |
+| 35-49 | foreign_born | 1.510442 (0.185822) | 2.014693 (0.356385) | 4825 / 12703 | 338 / 584 |
+| 50-64 | us_born | 0.821735 (0.172208) | 0.995815 (0.473092) | 1784 / 34731 | 103 / 1643 |
+| 50-64 | foreign_born | 1.360634 (0.159048) | 1.596899 (0.400972) | 3503 / 10607 | 262 / 569 |
+| 65+ | us_born | 1.156375 (0.272767) | 1.423024 (0.593220) | 1351 / 39404 | 60 / 1647 |
+| 65+ | foreign_born | 0.922760 (0.315933) | 0.647660 (0.263900) | 1682 / 7235 | 79 / 319 |
+
+The small 2024 payer masses and sparse positive cells make transport noisy; foreign-born Mexican-origin children have only11 pooled positive observations. Pooling and winsorization reduce some sensitivity but do not identify the missing NIPA program composition. **This is a health-use proxy:** the residual combines administration/services with different programs, and their allocation is unmeasured here. There is no IHS-eligible population model in these donor cells, so this key cannot establish IHS spending incidence. No joint fiscal confidence interval is claimed from these ratio SEs; donor and transport uncertainty are not propagated into the account total. [LIMIT; INFERENCE]
+
+### Integration, gates and reproduction
+
+`items.cjs` registers `health_residual_key`, number21, `post_engine`; `deltaParts(21,…)` returns typed line/population/generation parts. `derived/item21.json` supplies source2%/3% dollar and capital-stock deltas. The parent must pass `health_residual_rate = RATE.rateFor(meta.one_rate,s)` when applying the adapter; changing `s.rate` alone does not express item20's selected common-rate post-engine treatment. Missing accounting-set identity, unknown arms, missing stock deltas and non-closing parts fail loudly. [CODE: items.cjs, health_item.cjs]
+
+For parent coverage integration, use **`derived/item21_v9_coverage.json`** and **`derived/item21_v9_count_parts.csv`** at the pinned common rate; `item21_coverage.json`/`item21_count_parts.csv` are the source2%/3% versions. Each arm has `sets[which].scenarios[scenario].ends[end]`, typed `decomposition.line_parts`, declared item12 deltas, count scenarios, and `item_overrides`. Add these **dollar increments** to the existing source coverage/count output; append typed count rows. Preserve the parent's counts and population metadata. The item17 override is joint minus item16; item16 and item17 are not independently additive marginal changes. Capital is revalued before all coverage/count integrations, including adult/minor and generation splits. [CODE: health_coverage.py; DATA: derived/item21_v9_coverage.json]
+
+The parent's coverage replacement must remove the adapter's own `population=coverage` amount exactly once before replacing it with the integrated coverage amount. Items9/11/18, fixed fees, VA and federal health stock stay on their own rules. Items13 and21 share a national line but act on disjoint VA and residual consumption subblocks; S&L capital and state-price corrections belong to21. Item12 and items16/17 are explicitly repriced rather than flat-scaled. Parent noncentral lineage/coverage choices require their own stated transport; the supplied source arms are separately measured and are not silently central prices. No `main_case_2026_10_16` file is written by this lane. [CODE; LIMIT]
+
+Run from repo root:
+
+```sh
+sh infra/immigration-fiscal/spending_keys_r5_2026_10_15/run_all.sh
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/spending_keys_r5_2026_10_15 "sh {lane}/run_all.sh"
+```
+
+Gates cover raw national key closure; residual+VA national mass; old published key/union parity and full old ethnic-translation reconstruction; old-key zero through every source/rate/coverage/count arm; unchanged v8 and frozen prior-v9 baseline; both methods and accounting sets; generation convention closure; separate population closure; typed coverage/count closure; and common-rate capital-only revaluation. Review and measured run receipts are recorded in the item21 append of `L1-result.md`. Timing/RSS use Python `perf_counter` and `resource.getrusage`; dates come from `date`. [CHECK]
+

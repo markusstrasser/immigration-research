@@ -1,0 +1,7 @@
+{
+  "national_raw_key_normalization": true,
+  "national_row4_max_normalization_gap": 1.1102230246251565e-16,
+  "national_residual_plus_va_gap_bn": 0.0,
+  "old_translation_max_gap_bn": 1.949542749457578e-10,
+  "old_key_max_change_bn": 0.0
+}

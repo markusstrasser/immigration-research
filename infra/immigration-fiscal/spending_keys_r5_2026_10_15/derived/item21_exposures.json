@@ -1,0 +1,23 @@
+{
+  "federal_health_structures_national_bn": 106.019,
+  "federal_rule": "Held on old key: source FAAt701 line43 does not split VA from other federal health structures.",
+  "equipment_rule": "eq_health_sl follows the key only in the equipment sensitivity; no absent reporter or coverage equipment carrier is invented.",
+  "by_end": {
+    "low": {
+      "source_rate": 0.02,
+      "engine_bn": 0.13316470445130454,
+      "completion_bn": 0.001507587430398873,
+      "coverage_bn": 0.004847944874572347,
+      "gross_held_return_bn": 0.13952023675627576,
+      "gross_held_group_stock_bn": 6.976011837813788
+    },
+    "high": {
+      "source_rate": 0.03,
+      "engine_bn": 0.19974705667695683,
+      "completion_bn": 0.0022613811455983067,
+      "coverage_bn": 0.00727191731185852,
+      "gross_held_return_bn": 0.20928035513441368,
+      "gross_held_group_stock_bn": 6.97601183781379
+    }
+  }
+}

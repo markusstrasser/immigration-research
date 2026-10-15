@@ -5,8 +5,9 @@ const fs=require('fs'),path=require('path');
 const clone=x=>JSON.parse(JSON.stringify(x));
 const fail=s=>{throw Error('[BLOCKED] spending keys: '+s);};
 const sum=xs=>xs.reduce((a,b)=>a+b,0);
-const FILES={13:'item13.json',14:'item14.json',15:'item15.json'};
-const IDS={13:'veterans_compensation',14:'income_security_administration',15:'public_college_response'};
+const HEALTH=require('./health_item.cjs');
+const FILES={13:'item13.json',14:'item14.json',15:'item15.json',21:'item21.json'};
+const IDS={13:'veterans_compensation',14:'income_security_administration',15:'public_college_response',21:'health_residual_key'};
 const read=n=>JSON.parse(fs.readFileSync(path.join(__dirname,'derived',FILES[n]),'utf8'));
 
 function lineParts(api,r,s,id,generation=null) {
@@ -45,6 +46,7 @@ function collegeParts(api,r,s) {
 }
 
 function deltaParts(number,measurement,api,r,s,arm,generation=null) {
+ if(number===21)return HEALTH.deltaParts(number,measurement,api,r,s,arm,generation);
  if(number===13){
    const medicalArm=measurement.extension?.health_bridge.arms[arm];
    const response=arm&&!medicalArm?measurement.arms[arm]:measurement.response;
@@ -114,6 +116,7 @@ function endpointRuns(api){
 }
 
 function buildItem(number,ctx,arm=null,which='set') {
+ if(number===21)return HEALTH.buildItem(number,ctx,arm,which);
  if(!['set','cash'].includes(which))fail('unknown accounting set');
  const api=which==='cash'?ctx.B.CASH:ctx.B;
  if(!api)fail('missing case API');
@@ -157,6 +160,7 @@ function buildItem(number,ctx,arm=null,which='set') {
 const REGISTRY=[13,14,15].map(number=>({id:IDS[number],kind:'post_engine',number,label:IDS[number].replaceAll('_',' '),
   get arms(){const m=read(number),names=Object.keys(m.arms);if(number===13)names.push(...Object.keys(m.extension.health_bridge.arms));if(number===15)names.push('capital_expense_mix','capital_key_as_operating','uniform_use_ratio','unchanged');return Object.fromEntries(names.map(id=>[id,{label:id.replaceAll('_',' ')}]));},
  build:(ctx,arm,which)=>buildItem(number,ctx,arm,which)}));
+REGISTRY.push(HEALTH.registry);
 function postEngineFor(built,reading,method){
  const block=Object.values(built.meta)[0],end=block.by_end[reading];
  if(!end)fail('unknown reading');
