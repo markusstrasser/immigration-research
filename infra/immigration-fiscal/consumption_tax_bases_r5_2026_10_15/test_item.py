@@ -85,3 +85,51 @@ def test_evaluation_identity_and_complete_account_delta_closure():
         if row["arm"]=="off":
             assert row["delta_bn"] == 0
         assert row["end_indices"] == ([16,16] if row["end"]=="low" else [11,11])
+
+
+def test_sales_proxy_uses_item6_business_base_and_preserves_old_diagnostic():
+    snapshot = json.loads((HERE / "derived/case_snapshot.json").read_text())
+    source = json.loads((HERE.parent / "job_capital_taxes_2026_10_14/derived/item.json").read_text())
+    otp = source["other_production_line"]
+    base = otp["national_bn"]-sum(otp["residential_parts_bn"].values())-otp["mining_part_bn"]
+    for which in ("set", "cash"):
+        row = snapshot["baseline"][which]
+        target = row["job_production_base"]["target_bn"]
+        assert row["job_production_base"]["business_base_bn"] == otp["base_bn"]
+        assert row["job_production_share"] == pytest.approx(target/base, abs=1e-12)
+        assert row["whole_line_share_superseded"] == target/otp["national_bn"]
+        assert row["job_production_share"] > row["whole_line_share_superseded"]
+    item = json.loads((HERE / "derived/item.json").read_text())
+    assert item["arms"]["whole_line_share_superseded"]["status"] == "SUPERSEDED_DIAGNOSTIC"
+    assert item["measurement"]["sales_production_share"] == snapshot["baseline"]["set"]["job_production_share"]
+
+
+def test_mining_assumptions_keep_customs_fixed_and_response_zero():
+    item = json.loads((HERE / "derived/item.json").read_text())
+    result = json.loads((HERE / "derived/evaluation.json").read_text())
+    by_arm = {name: [r for r in result["records"] if r["arm"] == name] for name in item["arms"]}
+    customs = item["arms"]["business_customs_carried"]["receipt_ratios"]["customs_duties"]
+    for percent in (5, 8):
+        assumption = item["measurement"]["sales_mining_assumptions"][str(percent)]
+        assert assumption["mining_response"] == 0
+        assert assumption["taxable_business_purchase_fraction"] == percent/100
+        name = "business_sales_mining_"+str(percent)
+        assert item["arms"][name]["label"].startswith("[ASSUMPTION]")
+        assert item["arms"][name+"_customs"]["receipt_ratios"]["customs_duties"] == customs
+        for sales, pair, duty, base in zip(by_arm[name], by_arm[name+"_customs"],
+                                           by_arm["business_customs_carried"], by_arm["business_sales_crosscheck"]):
+            assert pair["delta_bn"]-sales["delta_bn"] == pytest.approx(duty["delta_bn"], abs=1e-9)
+            assert sales["delta_bn"] > base["delta_bn"]
+
+
+def test_round6_unchanged_household_customs_and_superseded_diagnostic():
+    result = json.loads((HERE / "derived/evaluation.json").read_text())
+    item = json.loads((HERE / "derived/item.json").read_text())
+    assert len(result["records"]) == 4*len(item["arms"])
+    assert result["evaluation_coverage"]["runs_per_arm"] == 128
+    expected = {"household_joint": 0.263314888, "whole_line_share_superseded": 12.291257388,
+                "business_customs_carried": -0.233461615, "business_customs_final_zero": 0.938013542,
+                "business_customs_final_one": -12.125218779}
+    for row in result["records"]:
+        if row["arm"] in expected:
+            assert row["delta_bn"] == pytest.approx(expected[row["arm"]], abs=1e-9)

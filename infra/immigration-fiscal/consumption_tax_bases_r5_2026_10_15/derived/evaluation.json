@@ -7,6 +7,19 @@
     "completion": 517435.75719317,
     "coverage": 1960413.6191801599
   },
+  "evaluation_coverage": {
+    "personal_specifications": 32,
+    "methods": [
+      "b_hotdeck_union_matched",
+      "b_matched_over_pooled"
+    ],
+    "sets": [
+      "set",
+      "cash"
+    ],
+    "runs_per_arm": 128,
+    "household_joint_gate_bn": 0.263314888
+  },
   "records": [
     {
       "arm": "off",
@@ -141,6 +154,38 @@
       "which": "set",
       "end": "low",
       "baseline_bn": 365.7919302554848,
+      "cost_bn": 369.5307681887299,
+      "delta_bn": 3.7388379332451223,
+      "delta_per_member_usd": 82.66267484629171,
+      "engine_delta_bn": 3.566438377268497,
+      "coverage_delta_bn": 0.1723995559766091,
+      "end_indices": [
+        16,
+        16
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_crosscheck",
+      "which": "set",
+      "end": "high",
+      "baseline_bn": 455.9817845889793,
+      "cost_bn": 459.72062252222446,
+      "delta_bn": 3.738837933245179,
+      "delta_per_member_usd": 82.66267484629296,
+      "engine_delta_bn": 3.5664383772685824,
+      "coverage_delta_bn": 0.1723995559766091,
+      "end_indices": [
+        11,
+        11
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "whole_line_share_superseded",
+      "which": "set",
+      "end": "low",
+      "baseline_bn": 365.7919302554848,
       "cost_bn": 378.08318764398155,
       "delta_bn": 12.291257388496774,
       "delta_per_member_usd": 271.7497337670179,
@@ -153,7 +198,7 @@
       "item11_delta_bn": null
     },
     {
-      "arm": "business_sales_crosscheck",
+      "arm": "whole_line_share_superseded",
       "which": "set",
       "end": "high",
       "baseline_bn": 455.9817845889793,
@@ -269,11 +314,11 @@
       "which": "set",
       "end": "low",
       "baseline_bn": 365.7919302554848,
-      "cost_bn": 377.84972602912677,
-      "delta_bn": 12.057795773641999,
-      "delta_per_member_usd": 266.5880867787302,
-      "engine_delta_bn": 11.50182908651854,
-      "coverage_delta_bn": 0.555966687123437,
+      "cost_bn": 369.2973065738752,
+      "delta_bn": 3.505376318390404,
+      "delta_per_member_usd": 77.50102785800527,
+      "engine_delta_bn": 3.343765669944247,
+      "coverage_delta_bn": 0.16161064844610554,
       "end_indices": [
         16,
         16
@@ -285,11 +330,139 @@
       "which": "set",
       "end": "high",
       "baseline_bn": 455.9817845889793,
-      "cost_bn": 468.03958036262134,
-      "delta_bn": 12.057795773642056,
-      "delta_per_member_usd": 266.58808677873145,
-      "engine_delta_bn": 11.501829086518597,
-      "coverage_delta_bn": 0.555966687123437,
+      "cost_bn": 459.48716090736974,
+      "delta_bn": 3.5053763183904607,
+      "delta_per_member_usd": 77.50102785800652,
+      "engine_delta_bn": 3.3437656699443323,
+      "coverage_delta_bn": 0.1616106484461055,
+      "end_indices": [
+        11,
+        11
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_5",
+      "which": "set",
+      "end": "low",
+      "baseline_bn": 365.7919302554848,
+      "cost_bn": 370.6582409411705,
+      "delta_bn": 4.8663106856857326,
+      "delta_per_member_usd": 107.59018312482223,
+      "engine_delta_bn": 4.641922836724206,
+      "coverage_delta_bn": 0.2243878489614743,
+      "end_indices": [
+        16,
+        16
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_5",
+      "which": "set",
+      "end": "high",
+      "baseline_bn": 455.9817845889793,
+      "cost_bn": 460.84809527466507,
+      "delta_bn": 4.866310685685789,
+      "delta_per_member_usd": 107.59018312482347,
+      "engine_delta_bn": 4.641922836724291,
+      "coverage_delta_bn": 0.2243878489614743,
+      "end_indices": [
+        11,
+        11
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_5_customs",
+      "which": "set",
+      "end": "low",
+      "baseline_bn": 365.7919302554848,
+      "cost_bn": 370.42477932631573,
+      "delta_bn": 4.632849070830957,
+      "delta_per_member_usd": 102.42853613653453,
+      "engine_delta_bn": 4.4192501293999555,
+      "coverage_delta_bn": 0.21359894143097072,
+      "end_indices": [
+        16,
+        16
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_5_customs",
+      "which": "set",
+      "end": "high",
+      "baseline_bn": 455.9817845889793,
+      "cost_bn": 460.6146336598103,
+      "delta_bn": 4.632849070831014,
+      "delta_per_member_usd": 102.4285361365358,
+      "engine_delta_bn": 4.419250129400041,
+      "coverage_delta_bn": 0.21359894143097072,
+      "end_indices": [
+        11,
+        11
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_8",
+      "which": "set",
+      "end": "low",
+      "baseline_bn": 365.7919302554848,
+      "cost_bn": 371.33472459263476,
+      "delta_bn": 5.542794337149985,
+      "delta_per_member_usd": 122.54668809193802,
+      "engine_delta_bn": 5.287213512397585,
+      "coverage_delta_bn": 0.25558082475239347,
+      "end_indices": [
+        16,
+        16
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_8",
+      "which": "set",
+      "end": "high",
+      "baseline_bn": 455.9817845889793,
+      "cost_bn": 461.5245789261293,
+      "delta_bn": 5.542794337150042,
+      "delta_per_member_usd": 122.54668809193927,
+      "engine_delta_bn": 5.2872135123976705,
+      "coverage_delta_bn": 0.25558082475239347,
+      "end_indices": [
+        11,
+        11
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_8_customs",
+      "which": "set",
+      "end": "low",
+      "baseline_bn": 365.7919302554848,
+      "cost_bn": 371.10126297778004,
+      "delta_bn": 5.309332722295267,
+      "delta_per_member_usd": 117.38504110365159,
+      "engine_delta_bn": 5.064540805073335,
+      "coverage_delta_bn": 0.24479191722188995,
+      "end_indices": [
+        16,
+        16
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_8_customs",
+      "which": "set",
+      "end": "high",
+      "baseline_bn": 455.9817845889793,
+      "cost_bn": 461.29111731127466,
+      "delta_bn": 5.30933272229538,
+      "delta_per_member_usd": 117.3850411036541,
+      "engine_delta_bn": 5.064540805073477,
+      "coverage_delta_bn": 0.24479191722188995,
       "end_indices": [
         11,
         11
@@ -301,11 +474,11 @@
       "which": "set",
       "end": "low",
       "baseline_bn": 365.7919302554848,
-      "cost_bn": 378.0029752938114,
-      "delta_bn": 12.211045038326631,
-      "delta_per_member_usd": 269.9763037496819,
-      "engine_delta_bn": 11.648011956334727,
-      "coverage_delta_bn": 0.5630330819918652,
+      "cost_bn": 369.4505558385598,
+      "delta_bn": 3.658625583075036,
+      "delta_per_member_usd": 80.88924482895695,
+      "engine_delta_bn": 3.4899485397604906,
+      "coverage_delta_bn": 0.1686770433145331,
       "end_indices": [
         16,
         16
@@ -317,11 +490,11 @@
       "which": "set",
       "end": "high",
       "baseline_bn": 455.9817845889793,
-      "cost_bn": 468.19282962730597,
-      "delta_bn": 12.211045038326688,
-      "delta_per_member_usd": 269.97630374968315,
-      "engine_delta_bn": 11.648011956334784,
-      "coverage_delta_bn": 0.5630330819918652,
+      "cost_bn": 459.6404101720543,
+      "delta_bn": 3.658625583075036,
+      "delta_per_member_usd": 80.88924482895695,
+      "engine_delta_bn": 3.489948539760519,
+      "coverage_delta_bn": 0.16867704331453306,
       "end_indices": [
         11,
         11
@@ -461,6 +634,38 @@
       "which": "cash",
       "end": "low",
       "baseline_bn": 281.75256367607324,
+      "cost_bn": 285.4914016093185,
+      "delta_bn": 3.738837933245236,
+      "delta_per_member_usd": 82.66267484629422,
+      "engine_delta_bn": 3.566438377268639,
+      "coverage_delta_bn": 0.1723995559766091,
+      "end_indices": [
+        16,
+        16
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_crosscheck",
+      "which": "cash",
+      "end": "high",
+      "baseline_bn": 371.9424180095669,
+      "cost_bn": 375.6812559428121,
+      "delta_bn": 3.738837933245179,
+      "delta_per_member_usd": 82.66267484629296,
+      "engine_delta_bn": 3.5664383772685824,
+      "coverage_delta_bn": 0.1723995559766091,
+      "end_indices": [
+        11,
+        11
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "whole_line_share_superseded",
+      "which": "cash",
+      "end": "low",
+      "baseline_bn": 281.75256367607324,
       "cost_bn": 294.04382106457007,
       "delta_bn": 12.291257388496831,
       "delta_per_member_usd": 271.74973376701917,
@@ -473,7 +678,7 @@
       "item11_delta_bn": null
     },
     {
-      "arm": "business_sales_crosscheck",
+      "arm": "whole_line_share_superseded",
       "which": "cash",
       "end": "high",
       "baseline_bn": 371.9424180095669,
@@ -589,11 +794,11 @@
       "which": "cash",
       "end": "low",
       "baseline_bn": 281.75256367607324,
-      "cost_bn": 293.8103594497153,
-      "delta_bn": 12.057795773642056,
-      "delta_per_member_usd": 266.58808677873145,
-      "engine_delta_bn": 11.501829086518683,
-      "coverage_delta_bn": 0.555966687123437,
+      "cost_bn": 285.25793999446375,
+      "delta_bn": 3.5053763183905176,
+      "delta_per_member_usd": 77.50102785800779,
+      "engine_delta_bn": 3.3437656699444176,
+      "coverage_delta_bn": 0.1616106484461055,
       "end_indices": [
         16,
         16
@@ -605,11 +810,139 @@
       "which": "cash",
       "end": "high",
       "baseline_bn": 371.9424180095669,
-      "cost_bn": 384.0002137832087,
-      "delta_bn": 12.057795773641828,
-      "delta_per_member_usd": 266.58808677872645,
-      "engine_delta_bn": 11.501829086518399,
-      "coverage_delta_bn": 0.555966687123437,
+      "cost_bn": 375.44779432795735,
+      "delta_bn": 3.5053763183904607,
+      "delta_per_member_usd": 77.50102785800652,
+      "engine_delta_bn": 3.3437656699443323,
+      "coverage_delta_bn": 0.16161064844610554,
+      "end_indices": [
+        11,
+        11
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_5",
+      "which": "cash",
+      "end": "low",
+      "baseline_bn": 281.75256367607324,
+      "cost_bn": 286.618874361759,
+      "delta_bn": 4.866310685685789,
+      "delta_per_member_usd": 107.59018312482347,
+      "engine_delta_bn": 4.641922836724348,
+      "coverage_delta_bn": 0.2243878489614743,
+      "end_indices": [
+        16,
+        16
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_5",
+      "which": "cash",
+      "end": "high",
+      "baseline_bn": 371.9424180095669,
+      "cost_bn": 376.8087286952525,
+      "delta_bn": 4.866310685685619,
+      "delta_per_member_usd": 107.5901831248197,
+      "engine_delta_bn": 4.64192283672412,
+      "coverage_delta_bn": 0.22438784896147426,
+      "end_indices": [
+        11,
+        11
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_5_customs",
+      "which": "cash",
+      "end": "low",
+      "baseline_bn": 281.75256367607324,
+      "cost_bn": 286.3854127469043,
+      "delta_bn": 4.632849070831071,
+      "delta_per_member_usd": 102.42853613653703,
+      "engine_delta_bn": 4.419250129400126,
+      "coverage_delta_bn": 0.21359894143097072,
+      "end_indices": [
+        16,
+        16
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_5_customs",
+      "which": "cash",
+      "end": "high",
+      "baseline_bn": 371.9424180095669,
+      "cost_bn": 376.5752670803978,
+      "delta_bn": 4.6328490708309005,
+      "delta_per_member_usd": 102.42853613653327,
+      "engine_delta_bn": 4.419250129399927,
+      "coverage_delta_bn": 0.21359894143097072,
+      "end_indices": [
+        11,
+        11
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_8",
+      "which": "cash",
+      "end": "low",
+      "baseline_bn": 281.75256367607324,
+      "cost_bn": 287.29535801322334,
+      "delta_bn": 5.542794337150099,
+      "delta_per_member_usd": 122.54668809194054,
+      "engine_delta_bn": 5.287213512397756,
+      "coverage_delta_bn": 0.25558082475239347,
+      "end_indices": [
+        16,
+        16
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_8",
+      "which": "cash",
+      "end": "high",
+      "baseline_bn": 371.9424180095669,
+      "cost_bn": 377.48521234671676,
+      "delta_bn": 5.542794337149871,
+      "delta_per_member_usd": 122.54668809193552,
+      "engine_delta_bn": 5.2872135123975,
+      "coverage_delta_bn": 0.25558082475239347,
+      "end_indices": [
+        11,
+        11
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_8_customs",
+      "which": "cash",
+      "end": "low",
+      "baseline_bn": 281.75256367607324,
+      "cost_bn": 287.0618963983686,
+      "delta_bn": 5.30933272229538,
+      "delta_per_member_usd": 117.3850411036541,
+      "engine_delta_bn": 5.064540805073534,
+      "coverage_delta_bn": 0.24479191722188995,
+      "end_indices": [
+        16,
+        16
+      ],
+      "item11_delta_bn": null
+    },
+    {
+      "arm": "business_sales_mining_8_customs",
+      "which": "cash",
+      "end": "high",
+      "baseline_bn": 371.9424180095669,
+      "cost_bn": 377.2517507318621,
+      "delta_bn": 5.30933272229521,
+      "delta_per_member_usd": 117.38504110365032,
+      "engine_delta_bn": 5.064540805073307,
+      "coverage_delta_bn": 0.24479191722188992,
       "end_indices": [
         11,
         11
@@ -621,11 +954,11 @@
       "which": "cash",
       "end": "low",
       "baseline_bn": 281.75256367607324,
-      "cost_bn": 293.9636087143999,
-      "delta_bn": 12.211045038326688,
-      "delta_per_member_usd": 269.97630374968315,
-      "engine_delta_bn": 11.64801195633487,
-      "coverage_delta_bn": 0.5630330819918652,
+      "cost_bn": 285.4111892591483,
+      "delta_bn": 3.658625583075036,
+      "delta_per_member_usd": 80.88924482895695,
+      "engine_delta_bn": 3.489948539760576,
+      "coverage_delta_bn": 0.16867704331453306,
       "end_indices": [
         16,
         16
@@ -637,11 +970,11 @@
       "which": "cash",
       "end": "high",
       "baseline_bn": 371.9424180095669,
-      "cost_bn": 384.15346304789335,
-      "delta_bn": 12.21104503832646,
-      "delta_per_member_usd": 269.9763037496781,
-      "engine_delta_bn": 11.648011956334585,
-      "coverage_delta_bn": 0.5630330819918652,
+      "cost_bn": 375.601043592642,
+      "delta_bn": 3.658625583075093,
+      "delta_per_member_usd": 80.88924482895821,
+      "engine_delta_bn": 3.489948539760576,
+      "coverage_delta_bn": 0.1686770433145331,
       "end_indices": [
         11,
         11

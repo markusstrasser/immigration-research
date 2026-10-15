@@ -127,10 +127,17 @@ def assemble():
     for arm in ["grocery", "snap", "joint"]:
         add("household_"+arm, "state-law household basket: "+arm,
             {"general_sales_tax": factors[arm]}, ["All collections remain on the current household proxy; business purchases held."])
-    add("business_sales_crosscheck", "41.8% national sales share crosscheck at item6 aggregate production key",
+    sales_assumptions = ["COST/EY business share is a crosscheck parameter, not a central source.",
+                        "Purchaser industry/state weights transported from item6 other-production taxes.",
+                        "Business-base denominator excludes residential taxes and mining; purchaser mix remains unmeasured."]
+    add("business_sales_crosscheck", "41.8% national sales share crosscheck at item6 business-base key",
         {"general_sales_tax": sales_business_ratio},
-        ["COST/EY business share is a crosscheck parameter, not a central source.",
-         "Purchaser industry/state weights transported from item6 other-production taxes."])
+        sales_assumptions)
+    old_job_share = snapshot["baseline"]["set"]["whole_line_share_superseded"]
+    add("whole_line_share_superseded", "SUPERSEDED diagnostic: whole-OTP-line share in business sales",
+        {"general_sales_tax": ((1-b)*sales_share + b*old_job_share)/sales_share},
+        sales_assumptions[:2]+["Superseded diagnostic divides the business-only OTP target by the whole OTP line; denominator mismatch retained only to reproduce the old arm."])
+    arms["whole_line_share_superseded"]["status"] = "SUPERSEDED_DIAGNOSTIC"
     for name, share in customs_shares.items():
         add("business_customs_"+name, "BEA proportional customs purchaser arm: "+name,
             {"customs_duties": share/old_customs_share},
@@ -139,6 +146,20 @@ def assemble():
     ratios={"general_sales_tax":sales_business_ratio,"customs_duties":customs_shares["carried"]/old_customs_share}
     add("business_sales_customs", "sales crosscheck + conditional customs; excise held", ratios,
         arms["business_sales_crosscheck"]["assumptions"]+arms["business_customs_carried"]["assumptions"])
+    mining_shares = {}
+    for percent in (5, 8):
+        mining = percent/100
+        share = (1-mining)*job_share
+        mining_shares[str(percent)] = {"taxable_business_purchase_fraction": mining,
+                                      "mining_response": 0, "effective_production_share": share}
+        name = "business_sales_mining_"+str(percent)
+        label = f"[ASSUMPTION] mining {percent}% of taxable business purchases; mining response zero"
+        assumptions = sales_assumptions+[label, "Nonmining purchases retain the item6 business-base mix."]
+        sales_ratio = ((1-b)*sales_share + b*share)/sales_share
+        add(name, label, {"general_sales_tax": sales_ratio}, assumptions)
+        add(name+"_customs", label+" + conditional customs; excise held",
+            {"general_sales_tax": sales_ratio, "customs_duties": ratios["customs_duties"]},
+            assumptions+arms["business_customs_carried"]["assumptions"])
     joint=dict(ratios)
     joint["general_sales_tax"] = ((1-b)*sales_share*factors["joint"] + b*job_share)/sales_share
     add("joint_sales_customs_household", "conditional business + joint food/SNAP basket; excise held", joint,
@@ -147,6 +168,7 @@ def assemble():
          "identification_status":"WITHHOLD_FULL_ITEM","central":None,"arms":arms,
          "baseline":snapshot["baseline"],"population":snapshot["population"],
          "measurement":{"basket_factors":factors,"ce_basket_factors":ce_factors,"sales_crosscheck_business_fraction":b,
+                        "sales_production_share":job_share,"sales_mining_assumptions":mining_shares,
                         "customs_producer":production,"customs_shares":customs_shares,
                         "customs_unresolved_purchaser_fraction":final},
          "unresolved":business["required_for_central"]+common_limits,

@@ -25,7 +25,15 @@
           11
         ]
       ],
-      "job_production_share": 0.053021410484609795,
+      "job_production_base": {
+        "target_bn": 7.70178404417345,
+        "whole_line_bn": 145.258,
+        "residential_bn": 26.629310641,
+        "mining_bn": 28.463255566,
+        "business_base_bn": 90.16543379199999
+      },
+      "whole_line_share_superseded": 0.053021410484609795,
+      "job_production_share": 0.08541836622158853,
       "item6": {
         "rule": "the taxes on the business capital that serves the group's jobs: corporate tax (corporate_capital, corporate_labor), business property tax (remaining_production_property) and other taxes on production, re-keyed at every receipt scenario to the group's job-capital amount by cell shifts (national totals hold) and responding as meta.responses sets; the owners keep the same after-tax return, so P and F do not move, and the production module's capital-tax term stays 0 at every case specification (capital_tax_retention 1), so nothing counts twice",
         "stub": false,
@@ -651,7 +659,15 @@
           11
         ]
       ],
-      "job_production_share": 0.053021410484609795,
+      "job_production_base": {
+        "target_bn": 7.70178404417345,
+        "whole_line_bn": 145.258,
+        "residential_bn": 26.629310641,
+        "mining_bn": 28.463255566,
+        "business_base_bn": 90.16543379199999
+      },
+      "whole_line_share_superseded": 0.053021410484609795,
+      "job_production_share": 0.08541836622158853,
       "item6": {
         "rule": "the taxes on the business capital that serves the group's jobs: corporate tax (corporate_capital, corporate_labor), business property tax (remaining_production_property) and other taxes on production, re-keyed at every receipt scenario to the group's job-capital amount by cell shifts (national totals hold) and responding as meta.responses sets; the owners keep the same after-tax return, so P and F do not move, and the production module's capital-tax term stays 0 at every case specification (capital_tax_retention 1), so nothing counts twice",
         "stub": false,
@@ -2083,6 +2099,10 @@
     {
       "path": "job_capital_taxes_2026_10_14/derived/wages_by_industry.csv",
       "sha256": "3bccaa790e713c2206ccba4a091b42a41b293b58eda41ee4aede4ee806202009"
+    },
+    {
+      "path": "job_capital_taxes_2026_10_14/derived/item.json",
+      "sha256": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283"
     }
   ]
 }

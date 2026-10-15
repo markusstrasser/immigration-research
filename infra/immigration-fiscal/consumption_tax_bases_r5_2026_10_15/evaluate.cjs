@@ -11,6 +11,7 @@ function evaluate() {
   const arms=Object.keys(source.arms),records=[],payloads={};
   for(const which of ["set","cash"]) {
     const X=which==="set"?P:P.CASH,models=P.METHODS.map(method=>X.modelFor("central",method,X.withCentral({})));
+    if(X.MAIN_SPECS.length!==32||models.length!==2)fail("personal specification/method coverage changed");
     const base=models.map(m=>X.MAIN_SPECS.map(s=>X.cost(m,s)));
     const band=[0,1].map(e=>mean(base.map(v=>e?Math.max(...v):Math.min(...v))));
     const want=which==="set"?[365.791930,455.981785]:[281.752564,371.942418];
@@ -36,19 +37,23 @@ function evaluate() {
         });
       });
       const endix=values.map(v=>[v.findIndex(x=>x.cost===Math.min(...v.map(x=>x.cost))),v.findIndex(x=>x.cost===Math.max(...v.map(x=>x.cost)))]);
+      if(!endix.every(ix=>ix[0]===16&&ix[1]===11))fail("end specifications moved "+which+" "+arm);
       for(const [e,end] of ["low","high"].entries()) {
         const runs=values.map((v,k)=>v[endix[k][e]]),cost=mean(runs.map(r=>r.cost)),delta=cost-band[e];
         const row={arm,which,end,baseline_bn:band[e],cost_bn:cost,delta_bn:delta,
           delta_per_member_usd:delta*1e9/source.population.with_coverage,
           engine_delta_bn:mean(runs.map(r=>r.engine)),coverage_delta_bn:mean(runs.map(r=>r.post)),
           end_indices:endix.map(ix=>ix[e]),item11_delta_bn:null};
+        if(arm==="household_joint"&&!close(delta,0.263314888))fail("household joint central moved "+which+" "+end);
         if(!close(row.delta_bn,row.engine_delta_bn+row.coverage_delta_bn))fail("delta parts do not close");
         records.push(row);
         console.log(`${which} ${arm} ${end} delta ${delta.toFixed(9)}bn`);
       }
     }
   }
-  const out={identification_status:source.identification_status,central_delta_bn:null,population:source.population,records};
+  const out={identification_status:source.identification_status,central_delta_bn:null,population:source.population,
+    evaluation_coverage:{personal_specifications:32,methods:P.METHODS,sets:["set","cash"],
+      runs_per_arm:128,household_joint_gate_bn:0.263314888},records};
   fs.writeFileSync(path.join(HERE,"derived/evaluation.json"),JSON.stringify(out,null,2)+"\n");
   fs.writeFileSync(path.join(HERE,"derived/item_payloads.json"),JSON.stringify(payloads,null,2)+"\n");
   const header=["arm","which","end","baseline_bn","cost_bn","delta_bn","delta_per_member_usd","engine_delta_bn","coverage_delta_bn","item11_delta_bn","end_indices"];

@@ -8,9 +8,17 @@ const GENS = ["G1", "G2", "G3plus"];
 const mean = a => a.reduce((s,n)=>s+n,0)/a.length;
 const source = rel => ({path:rel,sha256:crypto.createHash("sha256").update(fs.readFileSync(path.join(FISCAL,rel))).digest("hex")});
 function snapshot() {
+  const item6=JSON.parse(fs.readFileSync(path.join(FISCAL,"job_capital_taxes_2026_10_14/derived/item.json"),"utf8"));
+  const otp=item6.other_production_line;
+  const residential=Object.values(otp.residential_parts_bn).reduce((s,n)=>s+n,0);
+  if(![otp.base_bn,otp.national_bn,otp.mining_part_bn,residential].every(Number.isFinite)||
+    otp.base_bn<=0||Math.abs(otp.national_bn-residential-otp.mining_part_bn-otp.base_bn)>1e-8||
+    Math.abs(otp.base_bn-item6.lines.other_production_taxes.base_bn)>1e-8)
+    throw Error("[BLOCKED] item6 business base does not close");
   const out = {population:P.POPULATION_V8, methods:P.METHODS, baseline:{}, lines:{},
     sources:["main_case_2026_10_15/derived/corrections.json", "main_case_2026_10_15/derived/corrections_cash.json",
-      "main_case_2026_10_15/package.cjs", "job_capital_taxes_2026_10_14/derived/wages_by_industry.csv"].map(source)};
+      "main_case_2026_10_15/package.cjs", "job_capital_taxes_2026_10_14/derived/wages_by_industry.csv",
+      "job_capital_taxes_2026_10_14/derived/item.json"].map(source)};
   for(const which of ["set","cash"]) {
     const X = which==="set"?P:P.CASH, m = X.payloadModel();
     const costs = P.METHODS.map(method => {
@@ -34,7 +42,13 @@ function snapshot() {
         direct:c.direct,key:c.key,carriers:amounts,coverage_cost_by_generation_bn:coverage};
     }
     const op=m.receipts.lines.find(l=>l.id==="other_production_taxes");
-    out.baseline[which].job_production_share=op.cells[m.receipts.reference].personal.target_bn/op.national_bn;
+    if(Math.abs(op.national_bn-otp.national_bn)>1e-8)
+      throw Error("[BLOCKED] item6 OTP national line differs from v8");
+    const target=op.cells[m.receipts.reference].personal.target_bn;
+    out.baseline[which].job_production_base={target_bn:target,whole_line_bn:op.national_bn,
+      residential_bn:residential,mining_bn:otp.mining_part_bn,business_base_bn:otp.base_bn};
+    out.baseline[which].whole_line_share_superseded=target/op.national_bn;
+    out.baseline[which].job_production_share=target/otp.base_bn;
     out.baseline[which].item6=m.corrections.job_capital_taxes;
   }
   return out;

@@ -82,8 +82,30 @@
       ]
     },
     "business_sales_crosscheck": {
-      "label": "41.8% national sales share crosscheck at item6 aggregate production key",
+      "label": "41.8% national sales share crosscheck at item6 business-base key",
       "status": "CONDITIONAL_ARM_ONLY",
+      "receipt_ratios": {
+        "general_sales_tax": 0.9405501811333575
+      },
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [
+        "COST/EY business share is a crosscheck parameter, not a central source.",
+        "Purchaser industry/state weights transported from item6 other-production taxes.",
+        "Business-base denominator excludes residential taxes and mining; purchaser mix remains unmeasured."
+      ],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    },
+    "whole_line_share_superseded": {
+      "label": "SUPERSEDED diagnostic: whole-OTP-line share in business sales",
+      "status": "SUPERSEDED_DIAGNOSTIC",
       "receipt_ratios": {
         "general_sales_tax": 0.8045614604227607
       },
@@ -91,7 +113,8 @@
       "item11": "held fixed, not recomputed",
       "assumptions": [
         "COST/EY business share is a crosscheck parameter, not a central source.",
-        "Purchaser industry/state weights transported from item6 other-production taxes."
+        "Purchaser industry/state weights transported from item6 other-production taxes.",
+        "Superseded diagnostic divides the business-only OTP target by the whole OTP line; denominator mismatch retained only to reproduce the old arm."
       ],
       "limits": [
         "State-law proxy omits exact county/city grocery rates and item exceptions.",
@@ -181,7 +204,7 @@
       "label": "sales crosscheck + conditional customs; excise held",
       "status": "CONDITIONAL_ARM_ONLY",
       "receipt_ratios": {
-        "general_sales_tax": 0.8045614604227607,
+        "general_sales_tax": 0.9405501811333575,
         "customs_duties": 1.0297061121714748
       },
       "coverage_transport": "same line ratio, each end/set/source generation separately",
@@ -189,6 +212,117 @@
       "assumptions": [
         "COST/EY business share is a crosscheck parameter, not a central source.",
         "Purchaser industry/state weights transported from item6 other-production taxes.",
+        "Business-base denominator excludes residential taxes and mining; purchaser mix remains unmeasured.",
+        "uniform duty intensity across positive domestic uses within each BEA summary commodity",
+        "exclude direct exports and changes in inventories from duty allocation; inputs used by exporters remain in intermediate purchases",
+        "PCE is household; investment and government final demand are separate nonhousehold buckets",
+        "source total rescales summed rounded commodity cells; caller keeps the case national customs total fixed",
+        "Final-demand key carried at old household key",
+        "National state composition transported from item6."
+      ],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    },
+    "business_sales_mining_5": {
+      "label": "[ASSUMPTION] mining 5% of taxable business purchases; mining response zero",
+      "status": "CONDITIONAL_ARM_ONLY",
+      "receipt_ratios": {
+        "general_sales_tax": 0.9226226720766897
+      },
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [
+        "COST/EY business share is a crosscheck parameter, not a central source.",
+        "Purchaser industry/state weights transported from item6 other-production taxes.",
+        "Business-base denominator excludes residential taxes and mining; purchaser mix remains unmeasured.",
+        "[ASSUMPTION] mining 5% of taxable business purchases; mining response zero",
+        "Nonmining purchases retain the item6 business-base mix."
+      ],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    },
+    "business_sales_mining_5_customs": {
+      "label": "[ASSUMPTION] mining 5% of taxable business purchases; mining response zero + conditional customs; excise held",
+      "status": "CONDITIONAL_ARM_ONLY",
+      "receipt_ratios": {
+        "general_sales_tax": 0.9226226720766897,
+        "customs_duties": 1.0297061121714748
+      },
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [
+        "COST/EY business share is a crosscheck parameter, not a central source.",
+        "Purchaser industry/state weights transported from item6 other-production taxes.",
+        "Business-base denominator excludes residential taxes and mining; purchaser mix remains unmeasured.",
+        "[ASSUMPTION] mining 5% of taxable business purchases; mining response zero",
+        "Nonmining purchases retain the item6 business-base mix.",
+        "uniform duty intensity across positive domestic uses within each BEA summary commodity",
+        "exclude direct exports and changes in inventories from duty allocation; inputs used by exporters remain in intermediate purchases",
+        "PCE is household; investment and government final demand are separate nonhousehold buckets",
+        "source total rescales summed rounded commodity cells; caller keeps the case national customs total fixed",
+        "Final-demand key carried at old household key",
+        "National state composition transported from item6."
+      ],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    },
+    "business_sales_mining_8": {
+      "label": "[ASSUMPTION] mining 8% of taxable business purchases; mining response zero",
+      "status": "CONDITIONAL_ARM_ONLY",
+      "receipt_ratios": {
+        "general_sales_tax": 0.9118661666426889
+      },
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [
+        "COST/EY business share is a crosscheck parameter, not a central source.",
+        "Purchaser industry/state weights transported from item6 other-production taxes.",
+        "Business-base denominator excludes residential taxes and mining; purchaser mix remains unmeasured.",
+        "[ASSUMPTION] mining 8% of taxable business purchases; mining response zero",
+        "Nonmining purchases retain the item6 business-base mix."
+      ],
+      "limits": [
+        "State-law proxy omits exact county/city grocery rates and item exceptions.",
+        "CE food/nonfood grocery split requires the documented BLS decile calibration.",
+        "A basket ratio is transported to latent, completion and missed-person line prices.",
+        "Item11 mixed-household consumption removal is held; its basket-specific response is unidentified.",
+        "The excise business bridge is unmeasured and held, not estimated as zero.",
+        "Industry/state purchaser composition of investment/government final use is missing."
+      ]
+    },
+    "business_sales_mining_8_customs": {
+      "label": "[ASSUMPTION] mining 8% of taxable business purchases; mining response zero + conditional customs; excise held",
+      "status": "CONDITIONAL_ARM_ONLY",
+      "receipt_ratios": {
+        "general_sales_tax": 0.9118661666426889,
+        "customs_duties": 1.0297061121714748
+      },
+      "coverage_transport": "same line ratio, each end/set/source generation separately",
+      "item11": "held fixed, not recomputed",
+      "assumptions": [
+        "COST/EY business share is a crosscheck parameter, not a central source.",
+        "Purchaser industry/state weights transported from item6 other-production taxes.",
+        "Business-base denominator excludes residential taxes and mining; purchaser mix remains unmeasured.",
+        "[ASSUMPTION] mining 8% of taxable business purchases; mining response zero",
+        "Nonmining purchases retain the item6 business-base mix.",
         "uniform duty intensity across positive domestic uses within each BEA summary commodity",
         "exclude direct exports and changes in inventories from duty allocation; inputs used by exporters remain in intermediate purchases",
         "PCE is household; investment and government final demand are separate nonhousehold buckets",
@@ -209,7 +343,7 @@
       "label": "conditional business + joint food/SNAP basket; excise held",
       "status": "CONDITIONAL_ARM_ONLY",
       "receipt_ratios": {
-        "general_sales_tax": 0.8021247030158841,
+        "general_sales_tax": 0.9381134237264812,
         "customs_duties": 1.0297061121714748
       },
       "coverage_transport": "same line ratio, each end/set/source generation separately",
@@ -217,6 +351,7 @@
       "assumptions": [
         "COST/EY business share is a crosscheck parameter, not a central source.",
         "Purchaser industry/state weights transported from item6 other-production taxes.",
+        "Business-base denominator excludes residential taxes and mining; purchaser mix remains unmeasured.",
         "uniform duty intensity across positive domestic uses within each BEA summary commodity",
         "exclude direct exports and changes in inventories from duty allocation; inputs used by exporters remain in intermediate purchases",
         "PCE is household; investment and government final demand are separate nonhousehold buckets",
@@ -251,7 +386,15 @@
           11
         ]
       ],
-      "job_production_share": 0.053021410484609795,
+      "job_production_base": {
+        "target_bn": 7.70178404417345,
+        "whole_line_bn": 145.258,
+        "residential_bn": 26.629310641,
+        "mining_bn": 28.463255566,
+        "business_base_bn": 90.16543379199999
+      },
+      "whole_line_share_superseded": 0.053021410484609795,
+      "job_production_share": 0.08541836622158853,
       "item6": {
         "rule": "the taxes on the business capital that serves the group's jobs: corporate tax (corporate_capital, corporate_labor), business property tax (remaining_production_property) and other taxes on production, re-keyed at every receipt scenario to the group's job-capital amount by cell shifts (national totals hold) and responding as meta.responses sets; the owners keep the same after-tax return, so P and F do not move, and the production module's capital-tax term stays 0 at every case specification (capital_tax_retention 1), so nothing counts twice",
         "stub": false,
@@ -877,7 +1020,15 @@
           11
         ]
       ],
-      "job_production_share": 0.053021410484609795,
+      "job_production_base": {
+        "target_bn": 7.70178404417345,
+        "whole_line_bn": 145.258,
+        "residential_bn": 26.629310641,
+        "mining_bn": 28.463255566,
+        "business_base_bn": 90.16543379199999
+      },
+      "whole_line_share_superseded": 0.053021410484609795,
+      "job_production_share": 0.08541836622158853,
       "item6": {
         "rule": "the taxes on the business capital that serves the group's jobs: corporate tax (corporate_capital, corporate_labor), business property tax (remaining_production_property) and other taxes on production, re-keyed at every receipt scenario to the group's job-capital amount by cell shifts (national totals hold) and responding as meta.responses sets; the owners keep the same after-tax return, so P and F do not move, and the production module's capital-tax term stays 0 at every case specification (capital_tax_retention 1), so nothing counts twice",
         "stub": false,
@@ -1507,6 +1658,19 @@
       "joint": 0.9958422463819238
     },
     "sales_crosscheck_business_fraction": 0.418,
+    "sales_production_share": 0.08541836622158853,
+    "sales_mining_assumptions": {
+      "5": {
+        "taxable_business_purchase_fraction": 0.05,
+        "mining_response": 0,
+        "effective_production_share": 0.08114744791050911
+      },
+      "8": {
+        "taxable_business_purchase_fraction": 0.08,
+        "mining_response": 0,
+        "effective_production_share": 0.07858489692386146
+      }
+    },
     "customs_producer": {
       "share": 0.03752785800050562,
       "union_normalization": 0.9535848571875417,
