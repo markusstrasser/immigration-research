@@ -1,0 +1,54 @@
+{
+  "ssa_oasdi": {
+    "source": "SSA Social Security Administrative Expenses, calendar-year 2024 row",
+    "url": "https://www.ssa.gov/OACT/STATS/admin.html",
+    "verified": "2026-10-15, official primary page opened through web tool",
+    "basis": "CY2024, administrative expenses, millions of dollars",
+    "row_millions": {"total": 7447, "OASI": 4939, "DI": 2508},
+    "calculation_use": "BESIDE_ONLY",
+    "limit": "Trust-fund administrative cash expenses are not the NIPA consumption-by-function mass. OASI alone exceeds the entire BEA federal retirement C+GI block, so a direct substitution fails the bridge."
+  },
+  "ssa_ssi": {
+    "source": "2025 SSI Annual Report, Single-Year Table IV.E1, 2024 row",
+    "url": "https://www.ssa.gov/OACT/ssir/SSI25/SingleYearTables/IV_E1.html",
+    "verified": "2026-10-15, official primary page opened through web tool",
+    "basis": "FY2024, administrative expenses, millions of dollars",
+    "administrative_expenses_millions": 4796,
+    "beneficiary_services_millions": 163.0,
+    "calculation_use": "BESIDE_ONLY",
+    "limit": "Includes state-supplement user fees. Fiscal-year expenses and beneficiary services do not establish calendar-year net NIPA consumption."
+  },
+  "medicaid": {
+    "source": "CMS Financial Management Report FY2024, FY 2024 FMR NET EXPENDITURES.xlsx, ADM - National Totals, row 64 Total Net Expenditures",
+    "url": "https://www.medicaid.gov/medicaid/financial-management/downloads/financial-management-report-fy2024.zip",
+    "documentation_url": "https://www.medicaid.gov/medicaid/financial-management/state-budget-expenditure-reporting-for-medicaid-and-chip/expenditure-reports-mbes/cbes",
+    "cache": "_cache/admin/financial-management-report-fy2024.zip",
+    "sha256": "def068767bb0137aa7f14e4c17935cd0e71b3bcac2650ad18765f739d1acfd66",
+    "basis": "FY2024, Medicaid administration, actual dollars",
+    "national_row_dollars": [40359656171, 24617521810, 15742134361],
+    "columns": ["Total Computable", "Federal Share", "State Share"],
+    "calculation_use": "BESIDE_ONLY",
+    "limit": "Federal/state columns are financing shares of the same state program administration. Do not add both to total. FY/CY timing, territories, capital, fees and NIPA function boundary not bridged; never insert the national amount into both government levels."
+  },
+  "snap": {
+    "source": "USDA FNS SNAP State Activity Reports official page",
+    "url": "https://fns-prod.azureedge.us/pd/snap-state-activity-reports",
+    "verified": "2026-10-15 official page discovery and indexed text; fns.usda.gov direct open returned 403",
+    "administrative_expenses_2024": null,
+    "calculation_use": "NOT_IDENTIFIED_AT_THIS_ROUTE",
+    "limit": "Located official report page describes FY2023 data as of December2024. Do not relabel FY2023 as FY2024 or infer a 2024 program mass from the generally 50 percent federal reimbursement rule. SNAP caseload proxy is measured from CPS separately."
+  },
+  "census_welfare": {
+    "source": "2024 State Government Finances technical documentation, pages 4-5",
+    "url": "https://www2.census.gov/programs-surveys/state/technical-documentation/complete-technical-documentation/statetechdoc2024.pdf",
+    "verified": "2026-10-15 official primary PDF opened through web tool",
+    "limit": "From survey 2022 E74/E75 vendor payments and J/M67/68 cash assistance consolidated into E79/M79/S89. E79 is not a program-pure administrative mass."
+  },
+  "bea_methodology": {
+    "url": "https://www.bea.gov/sites/default/files/methodologies/mp5.pdf",
+    "cache": "_cache/admin/mp5.pdf",
+    "sha256": "7ec9cddb203418a8af23c7158c8345ae4a28606e46d05bae05cdddafa7346881",
+    "sections": "IV pages 3-7; NIPA conversion uses netting, coverage, timing, consumption of fixed capital",
+    "limit": "Source budget administration outlays cannot replace a NIPA consumption block without conversion."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "status": "[APPROXIMATION]",
+  "outlay_status": "[DATA]",
+  "central_national_bn": 89.742,
+  "reason": "Parent-declared approximation: FY2024 Medical Services + Medical Support and Compliance + Medical Facilities actual net outlays transported one-for-one to CY2024. BEA investment, CFC, sales, purchased-care, territorial and timing adjustments are not performed. This is not an observed NIPA consumption decomposition; medical TEF remains outside the three-account mass.",
+  "current_key": "health_other: MEPS TOTVA24 + TOTTRI24 + TOTOFD24 + TOTSTL24, pooled medical transport and case's lineage/native/coverage changes",
+  "fy2024_net_outlays_bn": {
+    "medical_services": 70.484,
+    "medical_support_compliance": 10.372,
+    "medical_facilities": 8.886,
+    "medical_community_care": 31.388,
+    "medical_four_accounts": 121.130,
+    "four_accounts_less_community_care": 89.742,
+    "toxic_exposures_fund_all": 19.457,
+    "toxic_exposures_fund_medical_function": 16.305,
+    "hospital_medical_function_703": 138.543
+  },
+  "arms": {
+    "va_medical_services_only": {"status": "[APPROXIMATION]", "national_bn": 70.484, "definition": "Medical Services only; same declared FY-to-CY bridge."},
+    "va_medical_four_accounts": {"status": "[APPROXIMATION]", "national_bn": 121.130, "definition": "All four accounts including Community Care; scope sensitivity, potentially double counts purchased care already removed on veterans_other, not a recommended joint correction."}
+  },
+  "application": "Divide the selected national mass by the current health_services national amount and apply to its existing keyed engine, selected completion and matching typed coverage exposures. The remaining federal/state/local consumption, civilian OPEB and state-price corrections are held fixed. VA medical is a separate part within item13, not an additional item.",
+  "presence_source": "https://www.bea.gov/sites/default/files/papers/BEA-WP2020-8.pdf, section2.2 p3; https://bea.gov/sites/default/files/papers/BEA-WP2025-7.pdf, medical care in veterans hospitals excluded from PCE and in government consumption",
+  "community_care_classification": "BEA County Personal Income Concepts and Methods, Part V pp58, paragraphs5.43-5.44, explicitly includes veterans community care in personal current transfer receipts. Pinned NIPA T3.12 line20 footnote4 includes private-facility reimbursements from2015. Community care is excluded centrally; the four-account arm is a requested scope sensitivity with potential overlap against the existing veterans_other removal, not a preferred correction.",
+  "sources": [
+    {
+      "file": "bea_va_community_care_excerpt.txt",
+      "url": "https://www.bea.gov/system/files/methodologies/BEA-County-Personal-Income-Concepts-and-Methods.pdf#page=68",
+      "sha256": "67c67609cc5defea9efe5227fdeb5fd887e106235e824d9b8e31a82282e33fe4",
+      "pages": "58, paragraphs5.43-5.44; NIPA T31200-A line20 footnote4 corroboration"
+    },
+    {
+      "file": "va_medical_fy2024_excerpt.txt",
+      "url": "https://department.va.gov/wp-content/uploads/2025/06/2026-Volume-1-Supplemental-Information-Appendices.pdf",
+      "pdf_sha256": "42e5c88df335b31db98bd77cb00c1005bdeb9dba729513064f29ee2e112f41aa",
+      "sha256": "dee3b87a119be7f4e38bf7d325000d5914b78de3121926ad0a259aed5932405e",
+      "pages": "71-72,82; FY2024 actual net outlays, millions"
+    },
+    {
+      "file": "bea_consumption_scope_excerpt.txt",
+      "url": "https://www.bea.gov/resources/methodologies/nipa-handbook/pdf/chapter-09.pdf",
+      "pdf_sha256": "16ef4259973574911060879c5c1f7d3ae0400ab841c3880f29ee67201e1e0fc4",
+      "sha256": "acfab2e515440c17bb8aea7ef24dac27e57f78b66360e47cccec139c57e1b351",
+      "pages": "9-2,9-10,9-11; December2024 update"
+    }
+  ]
+}

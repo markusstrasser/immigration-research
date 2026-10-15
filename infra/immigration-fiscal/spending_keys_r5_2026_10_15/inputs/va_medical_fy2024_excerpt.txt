@@ -1,0 +1,91 @@
+Primary source: https://department.va.gov/wp-content/uploads/2025/06/2026-Volume-1-Supplemental-Information-Appendices.pdf
+PDF SHA256: 42e5c88df335b31db98bd77cb00c1005bdeb9dba729513064f29ee2e112f41aa
+Printed pp71-72,82; pdftotext -layout LF lines3101-3115,3142-3156,3666-3720. Units $millions.
+
+                                                                                        2024           2025           2026
+                                        ($ in millions)
+                                                                                       Actual         Enacted        Request
+Department of Veterans Affairs                                                             325,009        389,381        434,773
+   Veterans Health Administration                                                          123,845        123,847        122,718
+Medical Community Care (036-0140)                                                           31,388         23,578         34,782
+Medical Support and Compliance (036-0152)                                                   10,372         11,616         11,886
+Medical Services (036-0160)                                                                 70,484         75,750         60,918
+Medical and Prosthetic Research (036-0161)                                                     950            948            973
+Medical Facilities (036-0162)                                                                8,886         10,456         12,207
+DOD-VA Health Care Sharing Incentive Fund (036-0165)                                             29            30              29
+Joint DOD-VA Medical Facility Demonstration Fund (036-0169)                                    680            844            829
+General Post Fund, National Homes (036-8180)                                                     20            24              22
+Canteen Service Revolving Fund (036-4014)                                                       (4)            19             (6)
+Veterans Medical Care and Health Fund (036-0173)                                             1,040            582               -
+
+   Departmental Administration                                                                        29,240         44,015        63,647
+Construction, Major Projects (036-0110)                                                                   422           902         1,154
+Construction, Minor Projects (036-0111)                                                                   462           773           512
+National Cemetery Administration (036-0129)                                                               465           535           484
+General Administration (036-0142)                                                                         415           413           455
+Information Technology Systems (036-0167)                                                              6,112          7,716         6,450
+Office of Inspector General (036-0170)                                                                    293           265           294
+Grants for Construction of State Extended Care Facilities (036-0181)                                      254           303           241
+Grants for Construction of Veterans Cemeteries (036-0183)                                                  59            76            58
+Board of Veterans Appeals (036-1122)                                                                      275           253           273
+Franchise Fund (036-4539)                                                                               (157)         (170)         (175)
+Supply Fund (036-4537)                                                                                  (122)            57            81
+Electronic Health Care Record Modernization (036-1123)                                                 1,280          2,513         1,760
+Recurring Expenses Transformation Fund (036-1124)                                                          25            13           179
+Cost of War Toxic Exposures Fund (036-1126)                                                           19,457         30,366        51,716
+
+                                          Functional Distribution of Outlays (Net)
+
+
+
+                                                                                                              2026
+                                                                                 2024          2024
+                                               $ millions                                                   Request &
+                                                                                Actual        Enacted
+                                                                                                            Transmit 4
+    701: Income Security for Veterans
+    Veterans Insurance and Indemnities (036-0120)                                      138           144           132
+    National Service Life Insurance Fund (036-8132)                                    278           218           150
+    United States Government Life Insurance Fund (036-8150)                              -             1              -
+    Compensation and Pensions (036-0102)                                           161,232       201,911       228,990
+    Servicemembers Group Life Insurance Fund (036-4009)                               (526)         (383)         (170)
+    Veterans Reopened Insurance Fund (036-4010)                                          8             6             5
+    Service-disabled Veterans Insurance Fund (036-4012)                                (10)           23             6
+    Veterans Special Life Insurance Fund (036-8455)                                    145           129           115
+    NSLI Fund, Premium and Other Receipts (036-8180)                                    (9)           (7)           (5)
+    Subtotal, Income Security for Veterans                                         161,256       202,042       229,223
+
+    702: Veterans education, training and rehabilitation
+    Readjustment Benefits (036-0137)                                                13,400        17,093        19,705
+    Post-Vietnam Era Veterans Education Account (036-8133)                               3             1             1
+    Contributions from Military Personnel, Veterans Educational Act (247300)           (40)           (1)           (1)
+    Subtotal, Veterans education, training and rehabilitation                       13,363        17,093        19,705
+
+    703: Hospital and medical care for veterans
+    Construction, Major Projects (036-0110)                                            422           902         1,154
+    Construction, Minor Projects (036-0111)                                            462           773           512
+    Medical Community Care (036-0140)                                               31,388        23,578        34,782
+    Medical Support and Compliance (036-0152)                                       10,372        11,616        11,886
+    Medical Services (036-0160)                                                     70,484        75,750        60,918
+    Medical and Prosthetic Research (036-0161)                                         950           948           973
+    Medical Facilities (036-0162)                                                    8,886        10,456        12,207
+    DOD-VA Health Care Sharing Incentive Fund (036-0165)                                29            30            29
+    Joint DOD-VA Medical Facility Demonstration Fund (036-0169)                        680           844           829
+    Veterans Choice Fund (036-0172)                                                      -             -              -
+    Veterans Medical Care and Health Fund (036-0173)                                 1,040           582              -
+    Grants for Construction of State Extended Care Facilities (036-0181)               254           303           241
+    Electronic Health Care Record Modernization (036-1123)                           1,280         2,513         1,760
+    Cost of War Toxic Exposures Fund (036-1126)                                     16,305        26,849        48,320
+    Legislative Proposal Cost of War Toxic Exposures Fund (036-1126)                     -             -           165
+    MCCF Pharmaceutical Co-Payments (528710)                                          (361)         (376)         (413)
+    MCCF Third Part Prescription Claims (528711)                                      (148)         (184)         (221)
+    MCCF Enhanced-use Lease Proceeds (528712)                                           (1)           (1)           (1)
+    MCCF Fee Basis 3rd Party MCCF (528713)                                            (605)         (868)         (883)
+    MCCF First Party Collections (528730)                                             (135)         (118)         (114)
+    MCCF Third Party Collections (528740)                                           (2,690)       (2,776)       (2,884)
+    MCCF Parking Fees (528760)                                                          (4)           (3)           (3)
+    MCCF Compensated Work Therapy (528770)                                             (46)          (25)          (25)
+    MCCF Payments from Compensation and Pension (528780)                                (2)           (2)           (2)
+    MCCF Long-term Care Copayments (528790)                                             (2)           (2)           (2)
+    Fee Basis First Party Collections, Medical Care Collections Fund (528714)          (15)          (34)          (32)
+    Subtotal, Hospital and medical care for veterans                               138,543       150,755       169,196

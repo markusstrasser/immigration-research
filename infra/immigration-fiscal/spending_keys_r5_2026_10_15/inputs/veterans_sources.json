@@ -1,0 +1,22 @@
+[
+  {
+    "file": "va_budget_2024_excerpt.txt",
+    "url": "https://department.va.gov/wp-content/uploads/2025/06/2026-Volume-3-Burial-and-Benefits-Programs-and-Department-Administration.pdf",
+    "pdf_sha256": "2a905508b76b8f251335c1c4c00914b727290011069f84acf38282efe60fb5c1",
+    "excerpt_sha256": "dfbbdb9bc4d4dfc7c7285b0a1c683d0c967a0fe453e01763c78f0f068def6976",
+    "original_text_lines": [
+      5394,
+      5447
+    ]
+  },
+  {
+    "file": "treasury_note13_excerpt.txt",
+    "url": "https://fiscal.treasury.gov/system/files/2026-04/2025-note-13-financial-statements.pdf",
+    "pdf_sha256": "deed540cf26fc8d8d77a6468019b1781c02ebca70a0f267318c3ca899de3cd55",
+    "excerpt_sha256": "094d893057693309268448c6326043b09d6b885c2a148695a1493bd772eb915f",
+    "original_text_lines": [
+      144,
+      205
+    ]
+  }
+]

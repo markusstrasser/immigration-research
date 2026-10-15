@@ -1,0 +1,630 @@
+{
+  "adapter_contract": "Apply effective share ratio only to this spending line; central remains a conditional partial model. Do not relabel complete_measured_key null as zero correction or measured success.",
+  "agency_evidence": {
+    "bea_methodology": {
+      "cache": "_cache/admin/mp5.pdf",
+      "limit": "Source budget administration outlays cannot replace a NIPA consumption block without conversion.",
+      "sections": "IV pages 3-7; NIPA conversion uses netting, coverage, timing, consumption of fixed capital",
+      "sha256": "7ec9cddb203418a8af23c7158c8345ae4a28606e46d05bae05cdddafa7346881",
+      "url": "https://www.bea.gov/sites/default/files/methodologies/mp5.pdf"
+    },
+    "census_welfare": {
+      "limit": "From survey 2022 E74/E75 vendor payments and J/M67/68 cash assistance consolidated into E79/M79/S89. E79 is not a program-pure administrative mass.",
+      "source": "2024 State Government Finances technical documentation, pages 4-5",
+      "url": "https://www2.census.gov/programs-surveys/state/technical-documentation/complete-technical-documentation/statetechdoc2024.pdf",
+      "verified": "2026-10-15 official primary PDF opened through web tool"
+    },
+    "medicaid": {
+      "basis": "FY2024, Medicaid administration, actual dollars",
+      "cache": "_cache/admin/financial-management-report-fy2024.zip",
+      "calculation_use": "BESIDE_ONLY",
+      "columns": [
+        "Total Computable",
+        "Federal Share",
+        "State Share"
+      ],
+      "documentation_url": "https://www.medicaid.gov/medicaid/financial-management/state-budget-expenditure-reporting-for-medicaid-and-chip/expenditure-reports-mbes/cbes",
+      "limit": "Federal/state columns are financing shares of the same state program administration. Do not add both to total. FY/CY timing, territories, capital, fees and NIPA function boundary not bridged; never insert the national amount into both government levels.",
+      "national_row_dollars": [
+        40359656171,
+        24617521810,
+        15742134361
+      ],
+      "sha256": "def068767bb0137aa7f14e4c17935cd0e71b3bcac2650ad18765f739d1acfd66",
+      "source": "CMS Financial Management Report FY2024, FY 2024 FMR NET EXPENDITURES.xlsx, ADM - National Totals, row 64 Total Net Expenditures",
+      "url": "https://www.medicaid.gov/medicaid/financial-management/downloads/financial-management-report-fy2024.zip"
+    },
+    "snap": {
+      "administrative_expenses_2024": null,
+      "calculation_use": "NOT_IDENTIFIED_AT_THIS_ROUTE",
+      "limit": "Located official report page describes FY2023 data as of December2024. Do not relabel FY2023 as FY2024 or infer a 2024 program mass from the generally 50 percent federal reimbursement rule. SNAP caseload proxy is measured from CPS separately.",
+      "source": "USDA FNS SNAP State Activity Reports official page",
+      "url": "https://fns-prod.azureedge.us/pd/snap-state-activity-reports",
+      "verified": "2026-10-15 official page discovery and indexed text; fns.usda.gov direct open returned 403"
+    },
+    "ssa_oasdi": {
+      "basis": "CY2024, administrative expenses, millions of dollars",
+      "calculation_use": "BESIDE_ONLY",
+      "limit": "Trust-fund administrative cash expenses are not the NIPA consumption-by-function mass. OASI alone exceeds the entire BEA federal retirement C+GI block, so a direct substitution fails the bridge.",
+      "row_millions": {
+        "DI": 2508,
+        "OASI": 4939,
+        "total": 7447
+      },
+      "source": "SSA Social Security Administrative Expenses, calendar-year 2024 row",
+      "url": "https://www.ssa.gov/OACT/STATS/admin.html",
+      "verified": "2026-10-15, official primary page opened through web tool"
+    },
+    "ssa_ssi": {
+      "administrative_expenses_millions": 4796,
+      "basis": "FY2024, administrative expenses, millions of dollars",
+      "beneficiary_services_millions": 163.0,
+      "calculation_use": "BESIDE_ONLY",
+      "limit": "Includes state-supplement user fees. Fiscal-year expenses and beneficiary services do not establish calendar-year net NIPA consumption.",
+      "source": "2025 SSI Annual Report, Single-Year Table IV.E1, 2024 row",
+      "url": "https://www.ssa.gov/OACT/ssir/SSI25/SingleYearTables/IV_E1.html",
+      "verified": "2026-10-15, official primary page opened through web tool"
+    }
+  },
+  "arms": {
+    "partial_retirement_proportional_investment": {
+      "by_allocation": {
+        "personal": {
+          "effective_share": 0.16289362066879665,
+          "share_ratio": 0.9908412929568114
+        },
+        "shared": {
+          "effective_share": 0.17342440970857984,
+          "share_ratio": 0.990771912054947
+        }
+      },
+      "effective_key_ratio": {
+        "personal": 0.9908412929568114,
+        "shared": 0.990771912054947
+      },
+      "retirement_consumption_bn": 2.2034835396289565,
+      "status": "CONDITIONAL_PARTIAL_BRIDGE"
+    },
+    "retirement_all_investment": {
+      "by_allocation": {
+        "personal": {
+          "effective_share": 0.16439930574824843,
+          "share_ratio": 1.0
+        },
+        "shared": {
+          "effective_share": 0.17503969137445827,
+          "share_ratio": 1.0
+        }
+      },
+      "effective_key_ratio": {
+        "personal": 1.0,
+        "shared": 1.0
+      },
+      "retirement_consumption_bn": 0.0,
+      "status": "CONDITIONAL_PARTIAL_BRIDGE"
+    },
+    "retirement_no_investment": {
+      "by_allocation": {
+        "personal": {
+          "effective_share": 0.16269032162561547,
+          "share_ratio": 0.989604675549847
+        },
+        "shared": {
+          "effective_share": 0.17320631282921065,
+          "share_ratio": 0.9895259267720855
+        }
+      },
+      "effective_key_ratio": {
+        "personal": 0.989604675549847,
+        "shared": 0.9895259267720855
+      },
+      "retirement_consumption_bn": 2.501,
+      "status": "CONDITIONAL_PARTIAL_BRIDGE"
+    },
+    "state_welfare_residual_medicaid_covered": {
+      "by_allocation": {
+        "personal": {
+          "effective_share": 0.18739198122860318,
+          "share_ratio": 1.1398587139751333
+        },
+        "shared": {
+          "effective_share": 0.189689436645577,
+          "share_ratio": 1.083693847698685
+        }
+      },
+      "effective_key_ratio": {
+        "personal": 1.1398587139751333,
+        "shared": 1.083693847698685
+      },
+      "status": "SCENARIO_NOT_MEASURED_PROGRAM_MIX",
+      "welfare_consumption_bn": 131.583
+    },
+    "state_welfare_residual_population": {
+      "by_allocation": {
+        "personal": {
+          "effective_share": 0.12829498266362133,
+          "share_ratio": 0.7803864017533312
+        },
+        "shared": {
+          "effective_share": 0.13059243808059517,
+          "share_ratio": 0.7460732880362653
+        }
+      },
+      "effective_key_ratio": {
+        "personal": 0.7803864017533312,
+        "shared": 0.7460732880362653
+      },
+      "status": "SCENARIO_NOT_MEASURED_PROGRAM_MIX",
+      "welfare_consumption_bn": 131.583
+    },
+    "state_welfare_residual_snap": {
+      "by_allocation": {
+        "personal": {
+          "effective_share": 0.16284621428829094,
+          "share_ratio": 0.9905529317603335
+        },
+        "shared": {
+          "effective_share": 0.16514366970526476,
+          "share_ratio": 0.9434641275273778
+        }
+      },
+      "effective_key_ratio": {
+        "personal": 0.9905529317603335,
+        "shared": 0.9434641275273778
+      },
+      "status": "SCENARIO_NOT_MEASURED_PROGRAM_MIX",
+      "welfare_consumption_bn": 131.583
+    },
+    "state_welfare_residual_ssi": {
+      "by_allocation": {
+        "personal": {
+          "effective_share": 0.09913473836861579,
+          "share_ratio": 0.603011903957946
+        },
+        "shared": {
+          "effective_share": 0.10122101652267909,
+          "share_ratio": 0.578274651468274
+        }
+      },
+      "effective_key_ratio": {
+        "personal": 0.603011903957946,
+        "shared": 0.578274651468274
+      },
+      "status": "SCENARIO_NOT_MEASURED_PROGRAM_MIX",
+      "welfare_consumption_bn": 131.583
+    },
+    "whole_line_medicaid_covered": {
+      "by_allocation": {
+        "personal": {
+          "effective_share": 0.19372364714312595,
+          "share_ratio": 1.1783726595523654
+        },
+        "shared": {
+          "effective_share": 0.19372364714312595,
+          "share_ratio": 1.1067412517809891
+        }
+      },
+      "effective_key_ratio": {
+        "personal": 1.1783726595523654,
+        "shared": 1.1067412517809891
+      },
+      "status": "SCENARIO_NOT_MEASURED_PROGRAM_MIX"
+    },
+    "whole_line_population": {
+      "by_allocation": {
+        "personal": {
+          "effective_share": 0.11835266377006015,
+          "share_ratio": 0.7199097540673229
+        },
+        "shared": {
+          "effective_share": 0.11835266377006015,
+          "share_ratio": 0.67614758024722
+        }
+      },
+      "effective_key_ratio": {
+        "personal": 0.7199097540673229,
+        "shared": 0.67614758024722
+      },
+      "status": "SCENARIO_NOT_MEASURED_PROGRAM_MIX"
+    },
+    "whole_line_snap": {
+      "by_allocation": {
+        "personal": {
+          "effective_share": 0.1624185278162424,
+          "share_ratio": 0.987951421552599
+        },
+        "shared": {
+          "effective_share": 0.1624185278162424,
+          "share_ratio": 0.9278954192668466
+        }
+      },
+      "effective_key_ratio": {
+        "personal": 0.987951421552599,
+        "shared": 0.9278954192668466
+      },
+      "status": "SCENARIO_NOT_MEASURED_PROGRAM_MIX"
+    },
+    "whole_line_social_security": {
+      "by_allocation": {
+        "personal": {
+          "effective_share": 0.04972585613128947,
+          "share_ratio": 0.302469988574263
+        },
+        "shared": {
+          "effective_share": 0.052019331235967844,
+          "share_ratio": 0.29718591724824356
+        }
+      },
+      "effective_key_ratio": {
+        "personal": 0.302469988574263,
+        "shared": 0.29718591724824356
+      },
+      "status": "SCENARIO_NOT_MEASURED_PROGRAM_MIX"
+    },
+    "whole_line_ssi": {
+      "by_allocation": {
+        "personal": {
+          "effective_share": 0.08116234376596204,
+          "share_ratio": 0.4936903072464877
+        },
+        "shared": {
+          "effective_share": 0.08089301303245452,
+          "share_ratio": 0.46214097155485734
+        }
+      },
+      "effective_key_ratio": {
+        "personal": 0.4936903072464877,
+        "shared": 0.46214097155485734
+      },
+      "status": "SCENARIO_NOT_MEASURED_PROGRAM_MIX"
+    },
+    "whole_line_unemployment": {
+      "by_allocation": {
+        "personal": {
+          "effective_share": 0.12194679324105612,
+          "share_ratio": 0.7417719477951955
+        },
+        "shared": {
+          "effective_share": 0.12595232541037596,
+          "share_ratio": 0.719564370922759
+        }
+      },
+      "effective_key_ratio": {
+        "personal": 0.7417719477951955,
+        "shared": 0.719564370922759
+      },
+      "status": "SCENARIO_NOT_MEASURED_PROGRAM_MIX"
+    },
+    "whole_line_workers_comp": {
+      "by_allocation": {
+        "personal": {
+          "effective_share": 0.1409369361732151,
+          "share_ratio": 0.8572842539191604
+        },
+        "shared": {
+          "effective_share": 0.15163055234754075,
+          "share_ratio": 0.8662638236899144
+        }
+      },
+      "effective_key_ratio": {
+        "personal": 0.8572842539191604,
+        "shared": 0.8662638236899144
+      },
+      "status": "SCENARIO_NOT_MEASURED_PROGRAM_MIX"
+    }
+  },
+  "bea": {
+    "consumption_bn": {
+      "federal": 30.536,
+      "published_level_rounding": 0.001,
+      "state_local": 137.281,
+      "total": 167.818
+    },
+    "consumption_plus_gross_investment_bn": {
+      "federal": {
+        "disability": 1.636,
+        "other": 18.644,
+        "retirement": 2.501,
+        "unemployment": 0.003,
+        "welfare_and_social_services": 11.875
+      },
+      "state_local": {
+        "disability": 5.699,
+        "welfare_and_social_services": 135.343
+      }
+    },
+    "gross_investment_bn": {
+      "federal": 4.123,
+      "state_local": 3.761,
+      "total": 7.884
+    },
+    "retirement_scope": "T3.15.5 footnote 1: administering OASI and railroad retirement; employee pensions excluded",
+    "source": {
+      "path": "sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx",
+      "sha256": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+      "url": "https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx",
+      "vintage": "published 2025-09-26; CY2024; file created 2026-08-25"
+    },
+    "state_local_consumption_accounting_bridge_bn": {
+      "disability": 5.698,
+      "formula": "T3.16:113 minus T3.12:28; remainder of T3.17:31",
+      "status": "ACCOUNTING_BRIDGE_NOT_PROGRAM_WORKLOAD",
+      "welfare_and_social_services": 131.583
+    }
+  },
+  "caseload_keys": {
+    "personal": {
+      "cash_assistance": {
+        "national": 7549287216.384253,
+        "national_positive_records": 710,
+        "ratio_to_current_cash_assistance": 1.0,
+        "share": 0.16439930574824843,
+        "target": 1241097577.267698,
+        "target_positive_records": 113,
+        "unit": "dollars"
+      },
+      "cash_assistance_caseload": {
+        "national": 1666264.2996160307,
+        "national_positive_records": 710,
+        "ratio_to_current_cash_assistance": 0.846323495383806,
+        "share": 0.13913499507952864,
+        "target": 231835.67512827067,
+        "target_positive_records": 113,
+        "unit": "positive_key_persons"
+      },
+      "medicaid_covered": {
+        "national": 59222648.13611563,
+        "national_positive_records": 25578,
+        "ratio_to_current_cash_assistance": 1.1783726595523654,
+        "share": 0.19372364714312595,
+        "target": 11472827.390402371,
+        "target_positive_records": 5169,
+        "unit": "positive_key_persons"
+      },
+      "population": {
+        "national": 335543722.1788498,
+        "national_positive_records": 141649,
+        "ratio_to_current_cash_assistance": 0.7199097540673229,
+        "share": 0.11835266377006015,
+        "target": 39712493.33118789,
+        "target_positive_records": 18331,
+        "unit": "positive_key_persons"
+      },
+      "snap": {
+        "national": 37671363.90546187,
+        "national_positive_records": 15791,
+        "ratio_to_current_cash_assistance": 0.987951421552599,
+        "share": 0.1624185278162424,
+        "target": 6118527.466355048,
+        "target_positive_records": 2762,
+        "unit": "positive_key_persons"
+      },
+      "social_security": {
+        "national": 59171900.42866955,
+        "national_positive_records": 24339,
+        "ratio_to_current_cash_assistance": 0.302469988574263,
+        "share": 0.04972585613128947,
+        "target": 2942373.407731008,
+        "target_positive_records": 1502,
+        "unit": "positive_key_persons"
+      },
+      "ssi": {
+        "national": 5645845.044699885,
+        "national_positive_records": 2252,
+        "ratio_to_current_cash_assistance": 0.4936903072464877,
+        "share": 0.08116234376596204,
+        "target": 458230.0163672854,
+        "target_positive_records": 203,
+        "unit": "positive_key_persons"
+      },
+      "unemployment": {
+        "national": 3553827.598180337,
+        "national_positive_records": 1400,
+        "ratio_to_current_cash_assistance": 0.7417719477951955,
+        "share": 0.12194679324105612,
+        "target": 433377.8793296566,
+        "target_positive_records": 207,
+        "unit": "positive_key_persons"
+      },
+      "workers_comp": {
+        "national": 926604.6411770207,
+        "national_positive_records": 390,
+        "ratio_to_current_cash_assistance": 0.8572842539191604,
+        "share": 0.1409369361732151,
+        "target": 130592.81917137065,
+        "target_positive_records": 57,
+        "unit": "positive_key_persons"
+      }
+    },
+    "scope": {
+      "child_welfare_key": null,
+      "cps_sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+      "oasdi_caveat": "SS_VAL combines OASI and DI; no separately measured OASI/RR caseload",
+      "persons": 39712493.33118789,
+      "population_basis": "row4",
+      "positive_key_persons_are": "CPS reported recipient/exposure proxies; not administrative ethnic caseload counts",
+      "row4_source": {
+        "commit": "c313b53",
+        "factors": {
+          "naturalized": {
+            "acs_population": 1435577.0,
+            "cps_population": 1677809.80045101,
+            "factor": 0.8556255897504617,
+            "records": 943,
+            "replicate_factor_range": [
+              0.7951610892471739,
+              0.9255685433204576
+            ]
+          },
+          "noncitizen": {
+            "acs_population": 3307120.0,
+            "cps_population": 4250103.13255449,
+            "factor": 0.7781269999470055,
+            "records": 2139,
+            "replicate_factor_range": [
+              0.7396314679741801,
+              0.8160947275477066
+            ]
+          }
+        },
+        "path": "infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json"
+      },
+      "snap_caveat": "SPM-unit exposure, not SNAP administrative assistance-unit count"
+    },
+    "shared": {
+      "cash_assistance": {
+        "national": 7740765687.119788,
+        "national_positive_records": 2135,
+        "ratio_to_current_cash_assistance": 1.0,
+        "share": 0.17503969137445827,
+        "target": 1354941236.8754442,
+        "target_positive_records": 404,
+        "unit": "dollars"
+      },
+      "cash_assistance_caseload": {
+        "national": 1707839.4977962845,
+        "national_positive_records": 2135,
+        "ratio_to_current_cash_assistance": 0.8463253406764856,
+        "share": 0.1481405264343953,
+        "target": 253000.24226899486,
+        "target_positive_records": 404,
+        "unit": "positive_key_persons"
+      },
+      "medicaid_covered": {
+        "national": 59222648.13611563,
+        "national_positive_records": 25578,
+        "ratio_to_current_cash_assistance": 1.1067412517809891,
+        "share": 0.19372364714312595,
+        "target": 11472827.390402371,
+        "target_positive_records": 5169,
+        "unit": "positive_key_persons"
+      },
+      "population": {
+        "national": 335543722.1788498,
+        "national_positive_records": 141649,
+        "ratio_to_current_cash_assistance": 0.67614758024722,
+        "share": 0.11835266377006015,
+        "target": 39712493.33118789,
+        "target_positive_records": 18331,
+        "unit": "positive_key_persons"
+      },
+      "snap": {
+        "national": 37671363.90546187,
+        "national_positive_records": 15791,
+        "ratio_to_current_cash_assistance": 0.9278954192668466,
+        "share": 0.1624185278162424,
+        "target": 6118527.466355048,
+        "target_positive_records": 2762,
+        "unit": "positive_key_persons"
+      },
+      "social_security": {
+        "national": 60554263.54214983,
+        "national_positive_records": 36081,
+        "ratio_to_current_cash_assistance": 0.29718591724824356,
+        "share": 0.052019331235967844,
+        "target": 3149992.2929491834,
+        "target_positive_records": 2959,
+        "unit": "positive_key_persons"
+      },
+      "ssi": {
+        "national": 5633033.6921749655,
+        "national_positive_records": 4793,
+        "ratio_to_current_cash_assistance": 0.46214097155485734,
+        "share": 0.08089301303245452,
+        "target": 455673.06787336495,
+        "target_positive_records": 524,
+        "unit": "positive_key_persons"
+      },
+      "unemployment": {
+        "national": 3601424.798698646,
+        "national_positive_records": 3866,
+        "ratio_to_current_cash_assistance": 0.719564370922759,
+        "share": 0.12595232541037596,
+        "target": 453607.82818668964,
+        "target_positive_records": 623,
+        "unit": "positive_key_persons"
+      },
+      "workers_comp": {
+        "national": 933472.227813475,
+        "national_positive_records": 1138,
+        "ratio_to_current_cash_assistance": 0.8662638236899144,
+        "share": 0.15163055234754075,
+        "target": 141542.9095044466,
+        "target_positive_records": 189,
+        "unit": "positive_key_persons"
+      }
+    }
+  },
+  "central": {
+    "by_allocation": {
+      "personal": {
+        "effective_share": 0.16289362066879665,
+        "share_ratio": 0.9908412929568114
+      },
+      "shared": {
+        "effective_share": 0.17342440970857984,
+        "share_ratio": 0.990771912054947
+      }
+    },
+    "effective_key_ratio": {
+      "personal": 0.9908412929568114,
+      "shared": 0.990771912054947
+    },
+    "retirement_consumption_bn": 2.2034835396289565,
+    "status": "CONDITIONAL_PARTIAL_BRIDGE"
+  },
+  "complete_measured_key": null,
+  "components": [
+    {
+      "consumption_bn": 2.2034835396289565,
+      "id": "federal_retirement",
+      "key": "social_security_caseload",
+      "level": "federal",
+      "scope": "T3.15.5 footnote 1: administering OASI and railroad retirement; employee pensions excluded",
+      "status": "MODELED_PROPORTIONAL_CONSUMPTION_INVESTMENT_BRIDGE"
+    },
+    {
+      "consumption_bn": 28.332516460371046,
+      "id": "federal_other_unresolved",
+      "key": "cash_assistance",
+      "level": "federal",
+      "status": "CURRENT_KEY_PRESERVED_UNRESOLVED_PROGRAM_MIX"
+    },
+    {
+      "consumption_bn": 137.281,
+      "id": "state_local_unresolved",
+      "key": "cash_assistance",
+      "level": "state_local",
+      "status": "CURRENT_KEY_PRESERVED_UNRESOLVED_PROGRAM_MIX"
+    },
+    {
+      "consumption_bn": 0.001,
+      "id": "published_rounding",
+      "key": "cash_assistance",
+      "status": "PUBLISHED_ROUNDING"
+    }
+  ],
+  "default_arm": "partial_retirement_proportional_investment",
+  "effective_key_ratio": {
+    "personal": 0.9908412929568114,
+    "shared": 0.990771912054947
+  },
+  "id": "income_security_administration",
+  "interactions": {
+    "item_11": "Adopted source has no income-security administration component; held fixed in retirement-only partial arm. A future SNAP/Medicaid workload bridge needs its own benefit-removal interaction; never multiply the scalar total.",
+    "item_12": "Coverage prices these services; reprice its income-security part under the same arm",
+    "items_13_15": "No common spending lines; item15 only education",
+    "items_9_10": "Rekey source lines and added lineage/completion carriers consistently"
+  },
+  "item": 14,
+  "status": "[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE",
+  "target_line": "income_security_services",
+  "unresolved": [
+    "Consumption vs gross investment within federal subfunctions",
+    "Federal retirement OASI/RR caseload vs combined OASDI proxy",
+    "Federal disability/welfare/other agency-to-NIPA program bridge",
+    "State/local welfare SNAP/Medicaid/TANF/child-welfare consumption masses",
+    "State/local disability workload and matching key",
+    "Child-welfare key absent"
+  ]
+}

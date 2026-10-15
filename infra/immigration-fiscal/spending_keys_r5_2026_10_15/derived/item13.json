@@ -1,0 +1,197 @@
+{
+  "arms": {
+    "burial_retained": 0.0217837585987138,
+    "compensation_only": 0.01964505476335767,
+    "obligation_mix": 0.01970413310342422,
+    "treasury_compensation_mix": 0.017627667940243816,
+    "unchanged": 1
+  },
+  "bea_modeled_split_bn": {
+    "compensation": 176.97857648884488,
+    "means_tested_pension": 3.5464235111551434,
+    "unidentified_other": null
+  },
+  "bea_national_bn": 180.525,
+  "bridge": "BEA CY2024 national line is preserved; split by measured VA FY2024 compensation:pension outlay shares. FY timing, accrual and territorial adjustments are not observed by component.",
+  "compensation_response": 0,
+  "components_fy2024_bn": {
+    "burial": 0.351874,
+    "compensation": 157.781014,
+    "pension": 3.161729
+  },
+  "extension": {
+    "already_removed": "Military retiree purchased care, other_federal_benefits/all_cash: existing retiree_health item removes 19.797540984bn nationally; no second removal.",
+    "already_zero": [
+      "military pension normal cost in defense",
+      "military facilities and MERHCF normal cost in defense",
+      "military pension legacy interest in domestic_interest"
+    ],
+    "health_bridge": {
+      "application": "Divide the selected national mass by the current health_services national amount and apply to its existing keyed engine, selected completion and matching typed coverage exposures. The remaining federal/state/local consumption, civilian OPEB and state-price corrections are held fixed. VA medical is a separate part within item13, not an additional item.",
+      "arms": {
+        "va_medical_four_accounts": {
+          "definition": "All four accounts including Community Care; scope sensitivity, potentially double counts purchased care already removed on veterans_other, not a recommended joint correction.",
+          "national_bn": 121.13,
+          "status": "[APPROXIMATION]"
+        },
+        "va_medical_services_only": {
+          "definition": "Medical Services only; same declared FY-to-CY bridge.",
+          "national_bn": 70.484,
+          "status": "[APPROXIMATION]"
+        }
+      },
+      "central_national_bn": 89.742,
+      "community_care_classification": "BEA County Personal Income Concepts and Methods, Part V pp58, paragraphs5.43-5.44, explicitly includes veterans community care in personal current transfer receipts. Pinned NIPA T3.12 line20 footnote4 includes private-facility reimbursements from2015. Community care is excluded centrally; the four-account arm is a requested scope sensitivity with potential overlap against the existing veterans_other removal, not a preferred correction.",
+      "current_key": "health_other: MEPS TOTVA24 + TOTTRI24 + TOTOFD24 + TOTSTL24, pooled medical transport and case's lineage/native/coverage changes",
+      "federal_health_consumption": 179.7,
+      "fy2024_net_outlays_bn": {
+        "four_accounts_less_community_care": 89.742,
+        "hospital_medical_function_703": 138.543,
+        "medical_community_care": 31.388,
+        "medical_facilities": 8.886,
+        "medical_four_accounts": 121.13,
+        "medical_services": 70.484,
+        "medical_support_compliance": 10.372,
+        "toxic_exposures_fund_all": 19.457,
+        "toxic_exposures_fund_medical_function": 16.305
+      },
+      "health_consumption": 306.539,
+      "outlay_status": "[DATA]",
+      "presence_source": "https://www.bea.gov/sites/default/files/papers/BEA-WP2020-8.pdf, section2.2 p3; https://bea.gov/sites/default/files/papers/BEA-WP2025-7.pdf, medical care in veterans hospitals excluded from PCE and in government consumption",
+      "reason": "Parent-declared approximation: FY2024 Medical Services + Medical Support and Compliance + Medical Facilities actual net outlays transported one-for-one to CY2024. BEA investment, CFC, sales, purchased-care, territorial and timing adjustments are not performed. This is not an observed NIPA consumption decomposition; medical TEF remains outside the three-account mass.",
+      "sources": [
+        {
+          "file": "bea_va_community_care_excerpt.txt",
+          "pages": "58, paragraphs5.43-5.44; NIPA T31200-A line20 footnote4 corroboration",
+          "sha256": "67c67609cc5defea9efe5227fdeb5fd887e106235e824d9b8e31a82282e33fe4",
+          "url": "https://www.bea.gov/system/files/methodologies/BEA-County-Personal-Income-Concepts-and-Methods.pdf#page=68"
+        },
+        {
+          "file": "va_medical_fy2024_excerpt.txt",
+          "pages": "71-72,82; FY2024 actual net outlays, millions",
+          "pdf_sha256": "42e5c88df335b31db98bd77cb00c1005bdeb9dba729513064f29ee2e112f41aa",
+          "sha256": "dee3b87a119be7f4e38bf7d325000d5914b78de3121926ad0a259aed5932405e",
+          "url": "https://department.va.gov/wp-content/uploads/2025/06/2026-Volume-1-Supplemental-Information-Appendices.pdf"
+        },
+        {
+          "file": "bea_consumption_scope_excerpt.txt",
+          "pages": "9-2,9-10,9-11; December2024 update",
+          "pdf_sha256": "16ef4259973574911060879c5c1f7d3ae0400ab841c3880f29ee67201e1e0fc4",
+          "sha256": "acfab2e515440c17bb8aea7ef24dac27e57f78b66360e47cccec139c57e1b351",
+          "url": "https://www.bea.gov/resources/methodologies/nipa-handbook/pdf/chapter-09.pdf"
+        }
+      ],
+      "state_local_health_consumption": 126.839,
+      "status": "[APPROXIMATION]"
+    },
+    "included": "Four complete benefit lines plus the declared three-account VA medical approximation.",
+    "lines": [
+      {
+        "component": "VA purchased care and other veterans benefits",
+        "fraction": 1,
+        "key": "va_medical",
+        "line": "veterans_other",
+        "national_bn": 37.526,
+        "response": 0,
+        "source": "BEA T31200-A:20 CY2024"
+      },
+      {
+        "component": "GI Bill/readjustment",
+        "fraction": 1,
+        "key": "veterans",
+        "line": "veterans_readjustment",
+        "national_bn": 11.391,
+        "response": 0,
+        "source": "BEA T31200-A:19 CY2024"
+      },
+      {
+        "component": "veterans life insurance",
+        "fraction": 1,
+        "key": "veterans",
+        "line": "veterans_life_insurance",
+        "national_bn": 0.449,
+        "response": 0,
+        "source": "BEA T31200-A:14 CY2024"
+      },
+      {
+        "component": "active-duty dependents purchased medical care",
+        "fraction": 1,
+        "key": "tricare",
+        "line": "military_medical",
+        "national_bn": 7.157,
+        "response": 0,
+        "source": "BEA T31200-A:16 CY2024"
+      },
+      {
+        "component": "VA direct hospital and medical care",
+        "fraction": null,
+        "key": "health_other",
+        "line": "health_services",
+        "part": "va_medical",
+        "response": 0,
+        "source": "VA FY2026 Vol1 pp71-72,82 FY2024 actual outlays; declared FY-to-CY approximation"
+      }
+    ],
+    "rule": "Fixed defense: service-earned benefits response0; means-tested pension remains1.",
+    "source_bea_sha256": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+    "unresolved": [
+      {
+        "key": "population",
+        "line": "other_state_benefits",
+        "reason": "T3.12 line42 includes veterans benefits, Alaska dividends and crime victims; military national subblock not bridged.",
+        "status": "[UNVERIFIED]"
+      },
+      {
+        "key": "health_other",
+        "line": "health capital",
+        "reason": "VA hospital stock and military subblock of mixed health capital not measured.",
+        "status": "[UNVERIFIED]"
+      },
+      {
+        "key": "various",
+        "line": "mixed administration/receipts",
+        "reason": "No additive service-contingent national subblocks or VA sales/fees bridged; no blanket removal.",
+        "status": "[UNVERIFIED]"
+      }
+    ]
+  },
+  "fixed": "Defense positions replaced; compensation response0, pension1, no replacement normal cost. Both accounting sets keep this rule.",
+  "group_key": "The existing veterans benefit-dollar key is applied equally to both parts; distinct Mexican-origin pension/compensation shares are not measured.",
+  "id": "veterans_compensation",
+  "kind": "post_engine",
+  "limits": [
+    "FY2024 shares are a declared composition proxy, not an observed CY2024 BEA decomposition.",
+    "VA outlays and Treasury benefits-paid differ in timing/accounting; Treasury mix is an arm, not silently equated.",
+    "Separate group receipt shares could change retained pension cost; current CPS veterans key is benefit dollars, not veteran population."
+  ],
+  "line": "veterans_pension_disability",
+  "method_source": "https://apps.bea.gov/scb/pdf/national/nipa/Methpap/methpap5.pdf, p46: monthly outlays, timing adjustments, survivor programs and foreign/territorial exclusions",
+  "number": 13,
+  "other_limit": "No independent CY2024 other-program amount identified; the two-program central bridge is a scope assumption. Burial inclusion is an explicit alternative, not an observed BEA component.",
+  "other_rule": "Burial is outside the pension/disability benefit bridge; retained at response1 in the inclusion arm.",
+  "pension_response": 1,
+  "response": 0.01964505476335767,
+  "sources": [
+    {
+      "excerpt_sha256": "dfbbdb9bc4d4dfc7c7285b0a1c683d0c967a0fe453e01763c78f0f068def6976",
+      "file": "va_budget_2024_excerpt.txt",
+      "original_text_lines": [
+        5394,
+        5447
+      ],
+      "pdf_sha256": "2a905508b76b8f251335c1c4c00914b727290011069f84acf38282efe60fb5c1",
+      "url": "https://department.va.gov/wp-content/uploads/2025/06/2026-Volume-3-Burial-and-Benefits-Programs-and-Department-Administration.pdf"
+    },
+    {
+      "excerpt_sha256": "094d893057693309268448c6326043b09d6b885c2a148695a1493bd772eb915f",
+      "file": "treasury_note13_excerpt.txt",
+      "original_text_lines": [
+        144,
+        205
+      ],
+      "pdf_sha256": "deed540cf26fc8d8d77a6468019b1781c02ebca70a0f267318c3ca899de3cd55",
+      "url": "https://fiscal.treasury.gov/system/files/2026-04/2025-note-13-financial-statements.pdf"
+    }
+  ],
+  "status": "CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge"
+}

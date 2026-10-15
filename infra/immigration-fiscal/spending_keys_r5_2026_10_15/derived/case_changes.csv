@@ -1,0 +1,145 @@
+item,id,arm,which,end,before_bn,after_bn,change_bn,change_per_member_usd,status
+13,veterans_compensation,central,set,low,365.7919302554848,346.87349148982884,-18.91843876565596,-418.2713399742249,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,central,set,high,455.9817845889793,437.06334582332335,-18.91843876565596,-418.2713399742249,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,burial_retained,set,low,365.7919302554848,346.89562241151157,-18.896307843973183,-417.78204324198475,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,burial_retained,set,high,455.9817845889793,437.0854767450061,-18.896307843973183,-417.78204324198475,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,compensation_only,set,low,365.7919302554848,355.6473940388817,-10.144536216603047,-224.2874694522123,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,compensation_only,set,high,455.9817845889793,445.8372483723762,-10.144536216603047,-224.2874694522123,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,obligation_mix,set,low,365.7919302554848,346.8741028218401,-18.9178274336447,-418.2578239191906,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,obligation_mix,set,high,455.9817845889793,437.0639571553346,-18.9178274336447,-418.2578239191906,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,treasury_compensation_mix,set,low,365.7919302554848,346.8526159347154,-18.939314320769352,-418.73288156960405,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,treasury_compensation_mix,set,high,455.9817845889793,437.0424702682099,-18.939314320769352,-418.73288156960405,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,unchanged,set,low,365.7919302554848,365.7919302554848,0,0,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,unchanged,set,high,455.9817845889793,455.9817845889793,0,0,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,va_medical_four_accounts,set,low,365.7919302554848,344.80817244734305,-20.983757808141732,-463.9338692175493,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,va_medical_four_accounts,set,high,455.9817845889793,434.99802678083756,-20.983757808141732,-463.9338692175493,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,va_medical_services_only,set,low,365.7919302554848,348.1406609214648,-17.651269334019958,-390.2552513999947,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,va_medical_services_only,set,high,455.9817845889793,438.3305152549593,-17.651269334019958,-390.2552513999947,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+14,income_security_administration,central,set,low,365.7919302554848,365.49441861559495,-0.29751163988980034,-6.577741103063009,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,central,set,high,455.9817845889793,455.68427294908946,-0.29751163988980034,-6.577741103063009,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,partial_retirement_proportional_investment,set,low,365.7919302554848,365.49441861559495,-0.29751163988980034,-6.577741103063009,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,partial_retirement_proportional_investment,set,high,455.9817845889793,455.68427294908946,-0.29751163988980034,-6.577741103063009,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,retirement_all_investment,set,low,365.7919302554848,365.7919302554848,0,0,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,retirement_all_investment,set,high,455.9817845889793,455.9817845889793,0,0,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,retirement_no_investment,set,low,365.7919302554848,365.4542483087026,-0.33768194678217844,-7.465874013985497,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,retirement_no_investment,set,high,455.9817845889793,455.6441026421971,-0.33768194678217844,-7.465874013985497,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_medicaid_covered,set,low,365.7919302554848,370.3351037789316,4.543173523446853,100.44588250259072,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_medicaid_covered,set,high,455.9817845889793,460.52495811242613,4.543173523446853,100.44588250259072,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_population,set,low,365.7919302554848,358.65799732714,-7.133932928344796,-157.72547207446917,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_population,set,high,455.9817845889793,448.8478516606345,-7.133932928344796,-157.72547207446917,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_snap,set,low,365.7919302554848,365.4850514841822,-0.30687877130258306,-6.784840782707396,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_snap,set,high,455.9817845889793,455.6749058176767,-0.30687877130258306,-6.784840782707396,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_ssi,set,low,365.7919302554848,352.8961602616143,-12.895769993870465,-285.1150172670486,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_ssi,set,high,455.9817845889793,443.0860145951088,-12.895769993870465,-285.1150172670486,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_medicaid_covered,set,low,365.7919302554848,371.5861916293538,5.794261373868988,128.1064203568831,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_medicaid_covered,set,high,455.9817845889793,461.7760459628483,5.794261373868988,128.1064203568831,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_population,set,low,365.7919302554848,356.693472581097,-9.098457674387774,-201.15952115845704,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_population,set,high,455.9817845889793,446.8833269145915,-9.098457674387774,-201.15952115845704,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_snap,set,low,365.7919302554848,365.4005439696997,-0.39138628578507645,-8.653233400001582,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_snap,set,high,455.9817845889793,455.5903983031942,-0.39138628578507645,-8.653233400001582,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_social_security,set,low,365.7919302554848,343.13335010950664,-22.658580145978128,-500.9628329784129,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_social_security,set,high,455.9817845889793,433.32320444300115,-22.658580145978128,-500.9628329784129,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_ssi,set,low,365.7919302554848,349.3449551232006,-16.446975132284212,-363.62928317276214,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_ssi,set,high,455.9817845889793,439.5348094566951,-16.446975132284212,-363.62928317276214,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_unemployment,set,low,365.7919302554848,357.4036445602745,-8.3882856952103,-185.45819458377392,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_unemployment,set,high,455.9817845889793,447.593498893769,-8.3882856952103,-185.45819458377392,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_workers_comp,set,low,365.7919302554848,361.1559488386335,-4.635981416851266,-102.49778976699561,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_workers_comp,set,high,455.9817845889793,451.345803172128,-4.635981416851266,-102.49778976699561,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+15,public_college_response,central,set,low,365.7919302554848,361.7036549647304,-4.088275290754355,-90.38845145888267,conditional_proportional_bridge
+15,public_college_response,central,set,high,455.9817845889793,451.7024730897882,-4.279311499191054,-94.61210711441545,conditional_proportional_bridge
+15,public_college_response,auxiliaries_outside_education,set,low,365.7919302554848,361.53567776800094,-4.256252487483818,-94.10229106433123,conditional_proportional_bridge
+15,public_college_response,auxiliaries_outside_education,set,high,455.9817845889793,451.5266466841663,-4.455137904812974,-98.4994863634812,conditional_proportional_bridge
+15,public_college_response,education_sales_public_service,set,low,365.7919302554848,364.8468671195691,-0.9450631359156959,-20.894579574785283,conditional_proportional_bridge
+15,public_college_response,education_sales_public_service,set,high,455.9817845889793,454.99256070913646,-0.9892238798428297,-21.870937812664454,conditional_proportional_bridge
+15,public_college_response,interest_charged_to_other,set,low,365.7919302554848,361.49322744204,-4.2987028134447955,-95.04083334797221,conditional_proportional_bridge
+15,public_college_response,interest_charged_to_other,set,high,455.9817845889793,451.4822127468431,-4.4995718421361435,-99.4818846858117,conditional_proportional_bridge
+15,public_college_response,public_service_outside_education,set,low,365.7919302554848,365.7919302554848,0,0,conditional_proportional_bridge
+15,public_college_response,public_service_outside_education,set,high,455.9817845889793,455.9817845889793,0,0,conditional_proportional_bridge
+15,public_college_response,research_not_fully_removed_diagnostic,set,low,365.7919302554848,354.8638878127255,-10.928042442759264,-241.61015676018616,conditional_proportional_bridge
+15,public_college_response,research_not_fully_removed_diagnostic,set,high,455.9817845889793,444.54309850179095,-11.438686087188309,-252.90007365292678,conditional_proportional_bridge
+15,public_college_response,tuition_all_discounts_added_back,set,low,365.7919302554848,361.2777326389944,-4.514197616490376,-99.80524869661006,conditional_proportional_bridge
+15,public_college_response,tuition_all_discounts_added_back,set,high,455.9817845889793,451.25664834055806,-4.725136248421197,-104.46893079654126,conditional_proportional_bridge
+15,public_college_response,tuition_net_only,set,low,365.7919302554848,362.08274417831916,-3.709186077165639,-82.00709635333469,conditional_proportional_bridge
+15,public_college_response,tuition_net_only,set,high,455.9817845889793,452.09927631744716,-3.882508271532145,-85.83910952223097,conditional_proportional_bridge
+15,public_college_response,unclassified_other_fixed,set,low,365.7919302554848,354.3127198987453,-11.479210356739472,-253.79603239120343,conditional_proportional_bridge
+15,public_college_response,unclassified_other_fixed,set,high,455.9817845889793,443.96617571050666,-12.015608878472609,-265.6553687362728,conditional_proportional_bridge
+15,public_college_response,capital_expense_mix,set,low,365.7919302554848,361.46492483194345,-4.327005423541343,-95.66658110636237,conditional_proportional_bridge
+15,public_college_response,capital_expense_mix,set,high,455.9817845889793,451.34437789060775,-4.637406698371536,-102.52930158563501,conditional_proportional_bridge
+15,public_college_response,capital_key_as_operating,set,low,365.7919302554848,361.6791660405505,-4.1127642149342805,-90.92988171420899,conditional_proportional_bridge
+15,public_college_response,capital_key_as_operating,set,high,455.9817845889793,451.6779841656083,-4.303800423370978,-95.15353736974176,conditional_proportional_bridge
+15,public_college_response,uniform_use_ratio,set,low,365.7919302554848,361.70842368327766,-4.0835065722071,-90.2830189588002,conditional_proportional_bridge
+15,public_college_response,uniform_use_ratio,set,high,455.9817845889793,451.7072418083355,-4.274542780643798,-94.50667461433295,conditional_proportional_bridge
+15,public_college_response,unchanged,set,low,365.7919302554848,365.7919302554848,0,0,conditional_proportional_bridge
+15,public_college_response,unchanged,set,high,455.9817845889793,455.9817845889793,0,0,conditional_proportional_bridge
+13,veterans_compensation,central,cash,low,281.75256367607324,262.8341249104173,-18.91843876565596,-418.2713399742249,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,central,cash,high,371.9424180095669,353.02397924391096,-18.91843876565596,-418.2713399742249,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,burial_retained,cash,low,281.75256367607324,262.85625583210003,-18.896307843973183,-417.78204324198475,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,burial_retained,cash,high,371.9424180095669,353.0461101655937,-18.896307843973183,-417.78204324198475,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,compensation_only,cash,low,281.75256367607324,271.6080274594702,-10.144536216603047,-224.2874694522123,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,compensation_only,cash,high,371.9424180095669,361.79788179296384,-10.144536216603047,-224.2874694522123,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,obligation_mix,cash,low,281.75256367607324,262.83473624242856,-18.9178274336447,-418.2578239191906,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,obligation_mix,cash,high,371.9424180095669,353.0245905759222,-18.9178274336447,-418.2578239191906,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,treasury_compensation_mix,cash,low,281.75256367607324,262.81324935530387,-18.939314320769352,-418.73288156960405,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,treasury_compensation_mix,cash,high,371.9424180095669,353.0031036887975,-18.939314320769352,-418.73288156960405,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,unchanged,cash,low,281.75256367607324,281.75256367607324,0,0,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,unchanged,cash,high,371.9424180095669,371.9424180095669,0,0,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,va_medical_four_accounts,cash,low,281.75256367607324,260.7688058679315,-20.983757808141732,-463.9338692175493,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,va_medical_four_accounts,cash,high,371.9424180095669,350.9586602014252,-20.983757808141732,-463.9338692175493,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,va_medical_services_only,cash,low,281.75256367607324,264.1012943420533,-17.651269334019958,-390.2552513999947,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+13,veterans_compensation,va_medical_services_only,cash,high,371.9424180095669,354.29114867554694,-17.651269334019958,-390.2552513999947,CONDITIONAL: accepted compensation FY mix; four service-benefit extensions; VA medical [DATA] outlays with declared [APPROXIMATION] consumption bridge
+14,income_security_administration,central,cash,low,281.75256367607324,281.4550520361834,-0.29751163988980034,-6.577741103063009,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,central,cash,high,371.9424180095669,371.6449063696771,-0.29751163988980034,-6.577741103063009,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,partial_retirement_proportional_investment,cash,low,281.75256367607324,281.4550520361834,-0.29751163988980034,-6.577741103063009,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,partial_retirement_proportional_investment,cash,high,371.9424180095669,371.6449063696771,-0.29751163988980034,-6.577741103063009,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,retirement_all_investment,cash,low,281.75256367607324,281.75256367607324,0,0,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,retirement_all_investment,cash,high,371.9424180095669,371.9424180095669,0,0,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,retirement_no_investment,cash,low,281.75256367607324,281.41488172929104,-0.33768194678217844,-7.465874013985497,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,retirement_no_investment,cash,high,371.9424180095669,371.6047360627847,-0.33768194678217844,-7.465874013985497,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_medicaid_covered,cash,low,281.75256367607324,286.2957371995201,4.543173523446853,100.44588250259072,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_medicaid_covered,cash,high,371.9424180095669,376.48559153301375,4.543173523446853,100.44588250259072,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_population,cash,low,281.75256367607324,274.61863074772845,-7.133932928344796,-157.72547207446917,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_population,cash,high,371.9424180095669,364.8084850812221,-7.133932928344796,-157.72547207446917,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_snap,cash,low,281.75256367607324,281.44568490477064,-0.30687877130258306,-6.784840782707396,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_snap,cash,high,371.9424180095669,371.6355392382643,-0.30687877130258306,-6.784840782707396,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_ssi,cash,low,281.75256367607324,268.85679368220275,-12.895769993870465,-285.1150172670486,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,state_welfare_residual_ssi,cash,high,371.9424180095669,359.0466480156964,-12.895769993870465,-285.1150172670486,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_medicaid_covered,cash,low,281.75256367607324,287.54682504994224,5.794261373868988,128.1064203568831,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_medicaid_covered,cash,high,371.9424180095669,377.7366793834359,5.794261373868988,128.1064203568831,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_population,cash,low,281.75256367607324,272.6541060016855,-9.098457674387774,-201.15952115845704,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_population,cash,high,371.9424180095669,362.84396033517913,-9.098457674387774,-201.15952115845704,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_snap,cash,low,281.75256367607324,281.36117739028816,-0.39138628578507645,-8.653233400001582,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_snap,cash,high,371.9424180095669,371.5510317237818,-0.39138628578507645,-8.653233400001582,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_social_security,cash,low,281.75256367607324,259.0939835300951,-22.658580145978128,-500.9628329784129,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_social_security,cash,high,371.9424180095669,349.28383786358876,-22.658580145978128,-500.9628329784129,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_ssi,cash,low,281.75256367607324,265.30558854378904,-16.446975132284212,-363.62928317276214,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_ssi,cash,high,371.9424180095669,355.4954428772827,-16.446975132284212,-363.62928317276214,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_unemployment,cash,low,281.75256367607324,273.36427798086294,-8.3882856952103,-185.45819458377392,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_unemployment,cash,high,371.9424180095669,363.5541323143566,-8.3882856952103,-185.45819458377392,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_workers_comp,cash,low,281.75256367607324,277.11658225922196,-4.635981416851266,-102.49778976699561,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+14,income_security_administration,whole_line_workers_comp,cash,high,371.9424180095669,367.3064365927156,-4.635981416851266,-102.49778976699561,[DEGRADED] PARTIAL_CONDITIONAL_BRIDGE
+15,public_college_response,central,cash,low,281.75256367607324,277.66428838531886,-4.088275290754355,-90.38845145888267,conditional_proportional_bridge
+15,public_college_response,central,cash,high,371.9424180095669,367.6631065103758,-4.279311499191054,-94.61210711441545,conditional_proportional_bridge
+15,public_college_response,auxiliaries_outside_education,cash,low,281.75256367607324,277.4963111885894,-4.256252487483818,-94.10229106433123,conditional_proportional_bridge
+15,public_college_response,auxiliaries_outside_education,cash,high,371.9424180095669,367.4872801047539,-4.455137904812974,-98.4994863634812,conditional_proportional_bridge
+15,public_college_response,education_sales_public_service,cash,low,281.75256367607324,280.80750054015755,-0.9450631359156959,-20.894579574785283,conditional_proportional_bridge
+15,public_college_response,education_sales_public_service,cash,high,371.9424180095669,370.95319412972407,-0.9892238798428297,-21.870937812664454,conditional_proportional_bridge
+15,public_college_response,interest_charged_to_other,cash,low,281.75256367607324,277.45386086262846,-4.2987028134447955,-95.04083334797221,conditional_proportional_bridge
+15,public_college_response,interest_charged_to_other,cash,high,371.9424180095669,367.44284616743073,-4.4995718421361435,-99.4818846858117,conditional_proportional_bridge
+15,public_college_response,public_service_outside_education,cash,low,281.75256367607324,281.75256367607324,0,0,conditional_proportional_bridge
+15,public_college_response,public_service_outside_education,cash,high,371.9424180095669,371.9424180095669,0,0,conditional_proportional_bridge
+15,public_college_response,research_not_fully_removed_diagnostic,cash,low,281.75256367607324,270.824521233314,-10.928042442759264,-241.61015676018616,conditional_proportional_bridge
+15,public_college_response,research_not_fully_removed_diagnostic,cash,high,371.9424180095669,360.50373192237856,-11.438686087188309,-252.90007365292678,conditional_proportional_bridge
+15,public_college_response,tuition_all_discounts_added_back,cash,low,281.75256367607324,277.23836605958286,-4.514197616490376,-99.80524869661006,conditional_proportional_bridge
+15,public_college_response,tuition_all_discounts_added_back,cash,high,371.9424180095669,367.21728176114567,-4.725136248421197,-104.46893079654126,conditional_proportional_bridge
+15,public_college_response,tuition_net_only,cash,low,281.75256367607324,278.0433775989076,-3.709186077165639,-82.00709635333469,conditional_proportional_bridge
+15,public_college_response,tuition_net_only,cash,high,371.9424180095669,368.0599097380348,-3.882508271532145,-85.83910952223097,conditional_proportional_bridge
+15,public_college_response,unclassified_other_fixed,cash,low,281.75256367607324,270.27335331933375,-11.479210356739472,-253.79603239120343,conditional_proportional_bridge
+15,public_college_response,unclassified_other_fixed,cash,high,371.9424180095669,359.9268091310943,-12.015608878472609,-265.6553687362728,conditional_proportional_bridge
+15,public_college_response,capital_expense_mix,cash,low,281.75256367607324,277.4255582525319,-4.327005423541343,-95.66658110636237,conditional_proportional_bridge
+15,public_college_response,capital_expense_mix,cash,high,371.9424180095669,367.30501131119536,-4.637406698371536,-102.52930158563501,conditional_proportional_bridge
+15,public_college_response,capital_key_as_operating,cash,low,281.75256367607324,277.639799461139,-4.1127642149342805,-90.92988171420899,conditional_proportional_bridge
+15,public_college_response,capital_key_as_operating,cash,high,371.9424180095669,367.6386175861959,-4.303800423370978,-95.15353736974176,conditional_proportional_bridge
+15,public_college_response,uniform_use_ratio,cash,low,281.75256367607324,277.6690571038661,-4.0835065722071,-90.2830189588002,conditional_proportional_bridge
+15,public_college_response,uniform_use_ratio,cash,high,371.9424180095669,367.6678752289231,-4.274542780643798,-94.50667461433295,conditional_proportional_bridge
+15,public_college_response,unchanged,cash,low,281.75256367607324,281.75256367607324,0,0,conditional_proportional_bridge
+15,public_college_response,unchanged,cash,high,371.9424180095669,371.9424180095669,0,0,conditional_proportional_bridge

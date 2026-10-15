@@ -1,0 +1,21 @@
+Primary source: https://www.bea.gov/system/files/methodologies/BEA-County-Personal-Income-Concepts-and-Methods.pdf#page=68
+BEA County Personal Income: Concepts and Methods, Part V Personal Current Transfer Receipts,
+printed p58 (PDF page68), paragraphs5.43-5.44, Other assistance to veterans.
+Retrieved and checked 2026-10-15.
+
+Exact excerpt, paragraph5.44:
+The veterans’ community care benefits are the federal government payments made to private providers of health care services to veterans
+
+[SOURCE PARAPHRASE] Paragraph5.43 places community-care benefits in other assistance
+to veterans under personal current transfer receipts. Paragraph5.44 specifies care
+the VA cannot provide itself. National estimates are allocated using unpublished VA data.
+
+Corroborating primary source: pinned Section3All_xls.xlsx, T31200-A,
+Government Social Benefits, line20 Other veterans benefits, CY2024 $37.526bn.
+Footnote4 exact relevant sentence:
+For 2015 forward, includes reimbursements for health care services received at private facilities.
+
+[INFERENCE] Community care is a social-benefit transfer financing household care,
+so it is excluded from the government-consumption central carve-out. The four-account
+arm is a scope sensitivity; the complete veterans_other transfer correction stays fixed.
+No claim equates FY2024 Community Care account outlays with the complete CY2024 line20.

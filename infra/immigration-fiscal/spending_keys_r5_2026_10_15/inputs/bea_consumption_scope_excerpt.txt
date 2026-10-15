@@ -1,0 +1,83 @@
+Primary source: https://www.bea.gov/resources/methodologies/nipa-handbook/pdf/chapter-09.pdf
+PDF SHA256: 16ef4259973574911060879c5c1f7d3ae0400ab841c3880f29ee67201e1e0fc4
+UpdatedDecember2024 printedpp9-2,9-10,9-11; pdftotext -layout LF lines68-85,498-557.
+
+intermediate inputs to provide goods and services on behalf of the general public. In its
+role as a producer, value added by government measures the contribution of the
+government sector to total value added across all industries, which is equal to GDP. In
+addition, government is treated as either a consumer of, or an investor in, many of the
+goods and services that it produces. In its role as a consumer/investor, government
+consumption expenditures and gross investment measures the portion of final
+expenditures for GDP that is accounted for by the government sector. (For a discussion of
+the three methods for measuring GDP, see Chapter 2.)
+
+       In the NIPAs, the framework for government consumption expenditures explicitly
+recognizes government as a producer of goods and services (table 9.1). The gross output
+of general government consists of all of the goods and services produced by general
+government (see the box “General Government and Government Enterprises” on the next
+page). The value of this output is measured by the cost of inputs—that is, as the sum of
+employee compensation, of consumption of fixed capital (CFC), and of intermediate
+goods and services purchased. 5 This framework is parallel to the concepts and
+presentation of output and intermediate inputs of private business (and of government
+enterprises) in BEA’s input-output accounts and GDP-by-industry accounts. However,
+
+Federal
+
+        In general, the benchmark and nonbenchmark annual NIPA estimates are
+prepared using data from U.S. Treasury financial reports and agency administrative
+reports in conjunction with detailed information from BEA’s translation of the
+President’s budget into a NIPA basis (see the box “NIPA Translation of the Federal
+Budget” below). The budget translation provides a detailed array of NIPA expenditures
+by program and by type of expenditure that is used as the basis for allocating the data on
+program outlays from the MTS to consumption expenditures and gross investment and to
+other expenditures, such as social benefits and subsidies. Supplemental data from other
+government sources are then used to estimate spending by type of consumption
+expenditure and gross investment.
+
+        Estimates of federal government consumption expenditures and gross investment
+are prepared separately for defense and for nondefense. The defense category consists of
+the activities covered by the national defense function in the budget—that is, DOD
+military activities, defense-related atomic energy activities of the Department of Energy,
+and defense-related activities of other agencies. The nondefense category consists of the
+other consumption and investment activities in the budget.
+
+
+
+
+                                          9-10
+CHAPTER 9: GOVERNMENT CONSUMPTION EXPENDITURES AND GROSS I NVESTMENT
+
+
+
+
+                           NIPA Translation of the Federal Budget
+
+        Each year, BEA prepares a “translation” of the information in the President’s
+fiscal year budget into a NIPA framework (see the annual article on the NIPA
+translation of the federal budget, which is usually published in the March issue of the
+Survey of Current Business). Unlike the federal budget, which is a financial plan of the
+government, the NIPA federal-sector estimates are designed to facilitate
+macroeconomic analyses of the effects of federal government activity on economic
+activity. The translation is based on actual budget data on receipts and outlays for the
+preceding fiscal year and on projected and proposed receipts and outlays for the current
+and the next fiscal year.
+
+        In translating the budget data into the framework of the NIPAs, three primary
+types of adjustments are made. These adjustments result in NIPA estimates of current
+receipts and expenditures that differ from corresponding estimates of receipts and
+expenditures in the budget.
+    • Coverage adjustments account for certain transactions that are included in the
+        budget but are excluded from the NIPAs (and vice versa). For example, the
+        NIPA estimates include consumption of fixed capital, but the budget does not.
+    • Netting and grossing adjustments account for certain transactions that are
+        recorded as offsets to outlays in the budget but are recorded as receipts in the
+        NIPAs (and vice versa).
+    • Timing adjustments account for certain transactions that are recorded on a cash
+        basis in the budget but are recorded on an accrual basis in the NIPAs.
+
+
+
+
+Defense estimates
+
+For most categories of defense consumption expenditures other than compensation and

@@ -1,0 +1,62 @@
+      The VA provides eligible veterans and/or their dependents with pension benefits if the veteran died, is over age 65 or is
+totally disabled, based on annual eligibility reviews. Unlike a traditional pension program, VA pension is only available to
+veterans who meet the financial means test. As such, only the amounts currently due and payable are reflected as a liability
+on VA’s balance sheet, which is consistent with federal accounting standards. No actuarial liability is recognized for the NPV
+of projected future benefit payments.
+107                                   NOTES TO THE FY 2025 FINANCIAL STATEMENTS
+
+
+
+
+Veterans Compensation and Burial Benefits
+
+
+Change in Veterans Compensation and Burial Benefits as of September 30, 2025, and 2024
+
+                                                         Compensation               Burial                    Total
+(In billions of dollars)                                  2025      2024          2025         2024         2025         2024
+
+Actuarial accrued liability, beginning of fiscal year   7,198.5    7,084.0        10.9         11.8      7,209.4      7,095.8
+Current year expense:
+  Prior (and past) service costs from program
+  amendments or new programs during the
+  period                                                  11.8       18.6             -            -        11.8         18.6
+  Interest on the liability balance                      211.0      200.8           0.3          0.3       211.3        201.1
+  Actuarial (gains)/losses (from experience)             120.3      105.0          (0.4)        (0.9)      119.9        104.1
+  Actuarial (gains)/losses (from assumption
+  changes)                                                (62.7)     (33.7)          -            -        (62.7)       (33.7)
+    Total current year expense                            280.4      290.7        (0.1)        (0.6)       280.3        290.1
+Less benefits paid                                       (186.7)    (176.2)       (0.3)        (0.3)      (187.0)      (176.5)
+Actuarial accrued liability, end of fiscal year         7,292.2    7,198.5        10.5         10.9      7,302.7      7,209.4
+
+
+Significant Long-Term Economic Assumptions Used in Determining Veterans Compensation and
+Burial Benefits as of September 30, 2025, and 2024
+
+                                                                                                         2025            2024
+
+Discount rate, single equivalent                                                                        3.10%           2.97%
+Long-term COLA rate                                                                                     2.40%           2.40%
+
+
+
+      The government compensates disabled veterans and their survivors to replace lost earnings as a result of their military
+service. Veterans’ disability compensation is payable as a disability benefit or a survivor’s benefit. Entitlement to
+compensation depends on the veterans’ disabilities incurred in or aggravated during active military service, death while on
+duty, or death resulting from service-connected disabilities after active duty.
+      Eligible veterans who die or are disabled during active military service-related causes, as well as their dependents, and
+dependents of service members who died during active military service, receive disability compensation benefits. In addition,
+service members who die during active military service and veterans who separated under other than dishonorable conditions
+are provided with a burial flag, headstone/marker, and grave liner for burial in a VA national cemetery or are provided a
+burial flag, headstone/marker, and a plot allowance for burial in a private cemetery. These benefits are provided under 38
+U.S.C., Part 2, §2301-2308, in recognition of a veteran’s military service and are recorded as a liability in the period the
+requirements are met.
+      Several significant actuarial assumptions were used in the valuation of disability compensation and burial benefits to
+calculate the PV of the liability. A liability was recognized for the projected benefit payments to: 1) those beneficiaries,
+including veterans and survivors, currently receiving benefit payments; 2) current veterans who are expected in the future to
+become beneficiaries of the compensation program; and 3) a proportional share of those in active military service as of the
+valuation date who are expected to be future veterans and to become beneficiaries of the compensation program. Future
+benefit payments to survivors of those veterans in classes 1, 2, and 3 above are also incorporated into the projection.
+      The veterans’ compensation and burial benefits liability is developed on an actuarial basis. It is impacted by interest on
+the liability balance, experience gains or losses, changes in actuarial assumptions, prior service costs, and amounts paid for
+costs included in the liability balance.
