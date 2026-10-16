@@ -1,0 +1,362 @@
+[
+  {
+    "varnum": 1,
+    "name": "SSUID",
+    "label": "Sample unit identifier. This identifier is created by scrambling together PSU, Sequence #1, Sequence #2, and the Frame Indicator for a case. It may be used in matching sample units from different waves.",
+    "dtype": "string"
+  },
+  {
+    "varnum": 3,
+    "name": "SPANEL",
+    "label": "Panel year",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4,
+    "name": "SWAVE",
+    "label": "Wave number of interview",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 239,
+    "name": "PNUM",
+    "label": "Person number",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 259,
+    "name": "EHISPAN",
+    "label": "Detailed Hispanic origin",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 294,
+    "name": "EBORNUS",
+    "label": "Was...born in the United States?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1382,
+    "name": "MONTHCODE",
+    "label": "Value of reference month",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1383,
+    "name": "WPFINWGT",
+    "label": "Final person weight",
+    "dtype": "float"
+  },
+  {
+    "varnum": 1392,
+    "name": "ERESIDENCEID",
+    "label": "This field stores a six-digit identifier for residence addresses, unique within SSUID.",
+    "dtype": "string"
+  },
+  {
+    "varnum": 1405,
+    "name": "EEHC_WHY",
+    "label": "Reason for move to residence.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1406,
+    "name": "AEHC_WHY",
+    "label": "Status Flag for EEHC_WHY",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1414,
+    "name": "ET2_LNO1",
+    "label": "Person number of the first Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1415,
+    "name": "ET2_LNO2",
+    "label": "Person number of the second Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1416,
+    "name": "ET2_LNO3",
+    "label": "Person number of the third Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1417,
+    "name": "ET2_LNO4",
+    "label": "Person number of the fourth Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1418,
+    "name": "ET2_LNO5",
+    "label": "Person number of the fifth Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1419,
+    "name": "ET2_LNO6",
+    "label": "Person number of the sixth Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1420,
+    "name": "ET2_LNO7",
+    "label": "Person number of the seventh Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1421,
+    "name": "ET2_LNO8",
+    "label": "Person number of the eighth Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1422,
+    "name": "ET2_LNO9",
+    "label": "Person number of the ninth Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1423,
+    "name": "ET2_LNO10",
+    "label": "Person number of the tenth Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1464,
+    "name": "ET2_WORK1",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1465,
+    "name": "ET2_WORK2",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1466,
+    "name": "ET2_WORK3",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1467,
+    "name": "ET2_WORK4",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1468,
+    "name": "ET2_WORK5",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1469,
+    "name": "ET2_WORK6",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1470,
+    "name": "ET2_WORK7",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1471,
+    "name": "ET2_WORK8",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1472,
+    "name": "ET2_WORK9",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1473,
+    "name": "ET2_WORK10",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1484,
+    "name": "EMS_EHC",
+    "label": "Is ... married, widowed, divorced, separated, or never married at this month?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1485,
+    "name": "EPNSPOUS_EHC",
+    "label": "Person number of spouse at this month",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1486,
+    "name": "EPNCOHAB_EHC",
+    "label": "Person number of unmarried partner at this month",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1534,
+    "name": "RHNUMPER",
+    "label": "Number of persons in household this month",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1539,
+    "name": "RHNUMPERWT2",
+    "label": "Number of persons in household this month (with Type 2 persons)",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2423,
+    "name": "RMESR",
+    "label": "Recode for monthly employment status.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 3344,
+    "name": "TMOVER",
+    "label": "Recoded variable indicating mover status",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 3354,
+    "name": "THHLDSTATUS",
+    "label": "Household status",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 3994,
+    "name": "TAGE_EHC",
+    "label": "Monthly age during the reference period.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4006,
+    "name": "TT2_AGE1",
+    "label": "What is the first Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4007,
+    "name": "TT2_AGE2",
+    "label": "What is the second Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4008,
+    "name": "TT2_AGE3",
+    "label": "What is the third Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4009,
+    "name": "TT2_AGE4",
+    "label": "What is the fourth Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4010,
+    "name": "TT2_AGE5",
+    "label": "What is the fifth Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4011,
+    "name": "TT2_AGE6",
+    "label": "What is the sixth Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4012,
+    "name": "TT2_AGE7",
+    "label": "What is the seventh Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4013,
+    "name": "TT2_AGE8",
+    "label": "What is the eighth Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4014,
+    "name": "TT2_AGE9",
+    "label": "What is the ninth Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4015,
+    "name": "TT2_AGE10",
+    "label": "What is the tenth Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4142,
+    "name": "TJB1_MWKHRS",
+    "label": "Average number of hours worked per week at job 1 during the reference month.  The average includes all weeks in the reference month.  Weeks before the job began, after the job ended, and during an away without pay spell are counted as 0 hours worked",
+    "dtype": "float"
+  },
+  {
+    "varnum": 4143,
+    "name": "TJB2_MWKHRS",
+    "label": "Average number of hours worked per week at job 2 during the reference month.  The average includes all weeks in the reference month.  Weeks before the job began, after the job ended, and during an away without pay spell are counted as 0 hours worked",
+    "dtype": "float"
+  },
+  {
+    "varnum": 4144,
+    "name": "TJB3_MWKHRS",
+    "label": "Average number of hours worked per week at job 3 during the reference month.  The average includes all weeks in the reference month.  Weeks before the job began, after the job ended, and during an away without pay spell are counted as 0 hours worked",
+    "dtype": "float"
+  },
+  {
+    "varnum": 4145,
+    "name": "TJB4_MWKHRS",
+    "label": "Average number of hours worked per week at job 4 during the reference month.  The average includes all weeks in the reference month.  Weeks before the job began, after the job ended, and during an away without pay spell are counted as 0 hours worked",
+    "dtype": "float"
+  },
+  {
+    "varnum": 4146,
+    "name": "TJB5_MWKHRS",
+    "label": "Average number of hours worked per week at job 5 during the reference month.  The average includes all weeks in the reference month.  Weeks before the job began, after the job ended, and during an away without pay spell are counted as 0 hours worked",
+    "dtype": "float"
+  },
+  {
+    "varnum": 4147,
+    "name": "TJB6_MWKHRS",
+    "label": "Average number of hours worked per week at job 6 during the reference month.  The average includes all weeks in the reference month.  Weeks before the job began, after the job ended, and during an away without pay spell are counted as 0 hours worked",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4155,
+    "name": "TPEARN",
+    "label": "Sum of earnings and profits/losses from all jobs, varying with the number of days in the month (comparable to RPEARN in 1996, 2001, and 2014 SIPP panels).",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 5201,
+    "name": "TJB7_MWKHRS",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2521,
+    "name": "AMWKHRS",
+    "label": "Status Flag for TMWKHRS",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4148,
+    "name": "TMWKHRS",
+    "label": "Average number of hours worked per week at all jobs held during the reference month.",
+    "dtype": "float"
+  }
+]

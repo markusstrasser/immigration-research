@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-16",
+  "raw_replay_exit_codes": [
+    0,
+    0
+  ],
+  "existing_count_comparison": "identical",
+  "excluded_from_comparison": [
+    "runtime seconds",
+    "new diagnostics",
+    "corrected auxiliary eligible-month window"
+  ],
+  "missing_adult_residence_rows": 0,
+  "tracked_focal_event_months_with_pre_post_employment": 232,
+  "eligible_month_window": "April through October, t-3 through t+2",
+  "eligible_window_counts": {
+    "all": 454,
+    "mexican_identifier_focal": 37,
+    "US_born_focal": 366
+  },
+  "source_cache": "/Users/alien/Projects/immigration-research/.model-review/household-response-evidence-2026-10-16",
+  "script_and_schema_sha256": {
+    "sipp_probe.py": "77e868794cfadb4e11d11a0ebd9a408095abc20210a02a418e188c9cd1970f1d",
+    "sipp_support.py": "13dd22bd4a70ff0d239c80c6c80b108a0814705df718a877644e1cb1af89fb15",
+    "sipp_probe_schema.json": "6a3883e8e715268092a75bec8327ea664d5bf201efd0be36a1eda5ee4e23162a"
+  }
+}

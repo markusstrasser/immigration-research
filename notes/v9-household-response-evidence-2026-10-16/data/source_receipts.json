@@ -1,0 +1,47 @@
+{
+  "checked": "2026-10-16",
+  "files": [
+    {
+      "local_path": "sources/immigration-fiscal/data/external/stage2/census/sipp/pu2023_csv.zip",
+      "bytes": 109036604,
+      "sha256": "9c5363d56aca2041db20d46d17b81e9be931eb5b18bd5f5238b367d2dd7fb74b",
+      "source_url": "https://www2.census.gov/programs-surveys/sipp/data/datasets/2023/pu2023_csv.zip"
+    },
+    {
+      "local_path": "sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip",
+      "bytes": 102122301,
+      "sha256": "3a78b26988c76c02b9e206f72507390fb6ec9dac7974ec31aa90abc9d9809764",
+      "source_url": "https://www2.census.gov/programs-surveys/sipp/data/datasets/2024/pu2024_csv.zip"
+    },
+    {
+      "local_path": "sources/immigration-fiscal/data/external/stage3/census/sipp_2025/pu2025_csv.zip",
+      "bytes": 88088487,
+      "sha256": "570798a6f512c8f82af311ee01a1668d178063c9076c18a05bc3a5a0039b67ed",
+      "source_url": "https://www2.census.gov/programs-surveys/sipp/data/datasets/2025/pu2025_csv.zip"
+    },
+    {
+      "local_path": ".scratch/clarity-next-20260905/admission/pu2025_schema.json",
+      "bytes": 754138,
+      "sha256": "6cdc23c537ba1431540e62994f0c05e05e62920e785384872bf5b7c23fe8c241",
+      "source_url": "https://www2.census.gov/programs-surveys/sipp/data/datasets/2025/pu2025_schema.json"
+    },
+    {
+      "local_path": ".scratch/clarity-next-20260905/admission/sipp2025_dictionary.pdf",
+      "bytes": 3994347,
+      "sha256": "571e53b4ec3ebb11bebddbb7190fc1084f5364b8a1ec5fbd7ca8e2f69e7cc752",
+      "source_url": "https://www2.census.gov/programs-surveys/sipp/tech-documentation/data-dictionaries/2025/2025_SIPP_Data_Dictionary.pdf"
+    },
+    {
+      "local_path": "sources/immigration-fiscal/data/external/stage3/census/sipp_2025/2025_SIPP_Users_Guide.pdf",
+      "bytes": 3088346,
+      "sha256": "0f0bfbc9bbd0de97d8cfd07ec3128925159c9696d259893e04aa1e6f5d17ba41",
+      "source_url": "https://www2.census.gov/programs-surveys/sipp/tech-documentation/methodology/2025_SIPP_Users_Guide.pdf"
+    },
+    {
+      "local_path": "/Users/alien/Projects/iq-sex-differences/data/nlsy/nlsy97_all_1997-2023.zip",
+      "bytes": 475462343,
+      "sha256": "8c513e4804e5b07fce0e6b913258747dcf8707c73bb9ae54cce88dbff6d23c28",
+      "source_url": "https://www.nlsinfo.org/investigator/"
+    }
+  ]
+}

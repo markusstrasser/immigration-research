@@ -1,0 +1,72 @@
+{
+  "archive": "/Users/alien/Projects/iq-sex-differences/data/nlsy/nlsy97_all_1997-2023.zip",
+  "csv_columns": 305325,
+  "selected": [
+    {
+      "ref": "E00142.01",
+      "name": "EMP_STATUS_2022.01",
+      "year": "XRND",
+      "description": "E00142.01    [EMP_STATUS_2022.01]                           Survey Year: XRND\n  PRIMARY VARIABLE\n\n             2022 EMPLOYMENT: EMPLOYMENT STATUS IN WEEK 01\n \nRespondent's weekly employment status in 2022\n \n      39           0: No information reported to account for week; job dates \n                          indeterminate\n       0           1: Not associated with an employer, not actively searching \n                          for an employer job\n      34           2: Not working (unemployment vs. out of labor force cannot be\n                          determined)\n      29           3: Associated with an employer, periods not working for the \n                          employer are missing\n     200           4: Unemployed\n    1118           5: Out of the labor force\n      63           6: Active military service\n    5462        9701 TO 202399: Employer on roster (see YEMP_UID)\n  -------\n    6945\n \nRefusal(-1)            0\nDon't Know(-2)         0\nTOTAL =========>    6945   VALID SKIP(-4)    2039     NON-INTERVIEW(-5)       0\n \nMin:              0        Max:         202309        Mean:           157534.75\n \nLead In: E00141.52[Default]\nDefault Next Question: E00142.02\n"
+    },
+    {
+      "ref": "E00242.01",
+      "name": "EMP_HOURS_2022.01",
+      "year": "XRND",
+      "description": "E00242.01    [EMP_HOURS_2022.01]                            Survey Year: XRND\n  PRIMARY VARIABLE\n\n             2022 EMPLOYMENT: TOTAL HOURS WORKED WEEK 01\n \nTotal number of hours worked in this week at a civilian job in 2022\n \nNOTE:  THIS VARIABLE IS PRESENTED AS CALCULATED; RESEARCHERS SHOULD NOTE THAT \nTOTALS ABOVE 168 HOURS PER WEEK ARE SUSPECT.\n \n       0           0: Hours\n     200           1 TO 19: Hours\n     476          20 TO 34: Hours\n    2513          35 TO 44: Hours\n    1227          45 TO 54: Hours\n     506          55 TO 64: Hours\n     395          65 TO 168: Hours\n       4         169 TO 500: Hours\n  -------\n    5321\n \nRefusal(-1)            0\nDon't Know(-2)         0\nInvalid Skip(-3)     209\nTOTAL =========>    5530   VALID SKIP(-4)    3454     NON-INTERVIEW(-5)       0\n \nMin:              1        Max:            208        Mean:                44.3\n \nLead In: E00241.52[Default]\nDefault Next Question: E00242.02\n"
+    },
+    {
+      "ref": "E70142.01",
+      "name": "MAR_STATUS_2022.01",
+      "year": "XRND",
+      "description": "E70142.01    [MAR_STATUS_2022.01]                           Survey Year: XRND\n  PRIMARY VARIABLE\n\n             2022 MARITAL: MARITAL STATUS IN MONTH 01\n \nRespondent's marital status in this month in 2022\n \n    1785       0 Never Married, Not Cohabitating\n     782       1 Never Married, Cohabiting\n    3248       2 Married\n     135       3 Legally Separated\n     912       4 Divorced\n      33       5 Widowed\n  -------\n    6895\n \nRefusal(-1)            0\nDon't Know(-2)         0\nInvalid Skip(-3)      50\nTOTAL =========>    6945   VALID SKIP(-4)    2039     NON-INTERVIEW(-5)       0\n \nMin:              0        Max:              5        Mean:                1.67\n \nLead In: E70141.12[Default]\nDefault Next Question: E70142.02\n"
+    },
+    {
+      "ref": "R00001.00",
+      "name": "PUBID",
+      "year": "1997",
+      "description": "R00001.00    [PUBID]                                        Survey Year: 1997\n  PRIMARY VARIABLE\n\n             PUBID, YOUTH CASE IDENTIFICATION CODE\n \nCOMMENT: YOUTH CASE IDENTIFICATION CODE\n \n       0           0\n     998           1 TO 999\n     999        1000 TO 1999\n     997        2000 TO 2999\n     996        3000 TO 3999\n     998        4000 TO 4999\n     996        5000 TO 5999\n     994        6000 TO 6999\n     994        7000 TO 7999\n     989        8000 TO 8999\n      23        9000 TO 9999\n  -------\n    8984\n \nRefusal(-1)            0\nDon't Know(-2)         0\nTOTAL =========>    8984   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0\n \nMin:              1        Max:           9022        Mean:              4504.3\n \nLead In: R72976.00[Default]\nDefault Next Question: R05363.00\n"
+    },
+    {
+      "ref": "U63408.00",
+      "name": "NONHHI_DECEASEDNUM.01",
+      "year": "2023",
+      "description": "U63408.00    [NONHHI_DECEASEDNUM.01]                        Survey Year: 2023\n  SECONDARY VARIABLE\n\n             NONHH, NONRES MEMBER 01 DECEASED (ROS ITEM)\n \nCOMMENT: NonHousehold Members, Deceased status   \n          Nonhousehold member's Deceased Status\n \n      61       1 YES\n    6490       0 NO\n  -------\n    6551\n \nRefusal(-1)            0\nDon't Know(-2)         0\nTOTAL =========>    6551   VALID SKIP(-4)      18     NON-INTERVIEW(-5)    2415\n \nMin:              0        Max:              1        Mean:                 .01\n \nLead In: U63407.00[Default]\nDefault Next Question: U63409.00\n"
+    },
+    {
+      "ref": "U63566.00",
+      "name": "CV_HH_SIZE",
+      "year": "2023",
+      "description": "U63566.00    [CV_HH_SIZE]                                   Survey Year: 2023\n  PRIMARY VARIABLE\n\n             HOUSEHOLD SIZE\n \nHousehold size as of the survey date.\n \n       0           0\n     874           1\n    1319           2\n    1369           3\n    1552           4\n     893           5\n     344           6\n     131           7\n      45           8\n      24           9\n       8          10\n       5          11\n       1          12\n       1          13\n       0          14\n       2          15\n       0          16\n       0          17\n       0          18\n       1          19\n       0          20 TO 99: 20+\n  -------\n    6569\n \nRefusal(-1)            0\nDon't Know(-2)         0\nTOTAL =========>    6569   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    2415\n \nMin:              1        Max:             19        Mean:                3.36\n \nLead In: U63565.00[Default]\nDefault Next Question: U63567.00\n"
+    },
+    {
+      "ref": "U63654.00",
+      "name": "SAMPLING_WEIGHT_CC",
+      "year": "2023",
+      "description": "U63654.00    [SAMPLING_WEIGHT_CC]                           Survey Year: 2023\n  PRIMARY VARIABLE\n\n             ROUND 21 SAMPLING WEIGHT CUMULATIVE CASES METHOD\n \nSampling Weight: Cumulative Cases Method   0 thru 9999999  (2 implied decimal \nplaces)\n \nNOTE: 0 THRU 9999999 (2 IMPLIED DECIMAL PLACES)\n \n    2415           0\n       0       30000 TO 59999: 300.00-599.99\n      56       60000 TO 99999: 600.00-999.99\n    1906      100000 TO 149999: 1000.00-1499.99\n     547      150000 TO 199999: 1500.00-1999.99\n     172      200000 TO 249999: 2000.00-2499.99\n     227      250000 TO 299999: 2500.00-2999.99\n     193      300000 TO 349999: 3000.00-3499.99\n    1642      350000 TO 399999: 3500.00-3999.99\n    1122      400000 TO 449999: 4000.00-4499.99\n     591      450000 TO 499999: 4500.00-4999.99\n      79      500000 TO 549999: 5000.00-5499.99\n      19      550000 TO 599999: 5500.00-5999.99\n      10      600000 TO 649999: 6000.00-6499.99\n       4      650000 TO 699999: 6500.00-6999.99\n       0      700000 TO 749999: 7000.00-7499.99\n       0      750000 TO 799999: 7500.00-7999.99\n       0      800000 TO 849999: 8000.00-8499.99\n       1      850000 TO 9999999: 8500.00+\n  -------\n    8984\n \nRefusal(-1)            0\nDon't Know(-2)         0\nTOTAL =========>    8984   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0\n \nMin:              0        Max:        2166243        Mean:           215"
+    },
+    {
+      "ref": "U71502.00",
+      "name": "YINC-1400",
+      "year": "2023",
+      "description": "U71502.00    [YINC-1400]                                    Survey Year: 2023\n  PRIMARY VARIABLE\n\n             R RECEIVE INCOME FROM JOB IN PAST YEAR?\n \nDuring 2022, did you receive any income from a job such as wages, salary, \ncommissions, or tips? Please include any income you received from doing odd \njobs, temporary or seasonal work, and service in the military, the military \nreserves, or the National Guard. Also, please be sure to include any 2022 income\nfrom the jobs you discussed with me earlier.\n \nUNIVERSE: All\n \n    5501       1 YES\n    1025       0 NO   (Go To U71506.00)\n  -------\n    6526\n \nRefusal(-1)           38   (Go To U71503.00)\nDon't Know(-2)         4   (Go To U71503.00)\nInvalid Skip(-3)       1\nTOTAL =========>    6569   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    2415\n \nMin:              0        Max:              1        Mean:                 .84\n \nLead In: U71501.00[Default]\nDefault Next Question: U71504.00\n"
+    },
+    {
+      "ref": "U71504.00",
+      "name": "YINC-1700",
+      "year": "2023",
+      "description": "U71504.00    [YINC-1700]                                    Survey Year: 2023\n  PRIMARY VARIABLE\n\n             TOTAL INCOME FROM WAGES AND SALARY IN PAST YEAR\n \nDuring 2022, how much income did you receive from wages, salary, commissions, or\ntips from all jobs, before deductions for taxes or for anything else?\n \nUNIVERSE: R received income from job\n \n \nNOTE: THIS VARIABLE MAY BE TOPCODED IF DATA REQUIREMENTS ARE MET.  IF NECESSARY,\nTHE TOPCODE ASSIGNED IS THE AVERAGE VALUE FOR APPROXIMATELY 2 PERCENT OF THE \nRESPONDENTS REPORTING VALID NON-MISSING RESPONSES AT THE TOP OF THE DISTRIBUTION\nACROSS ALL LOOPS.  ALTERNATIVE TOPCODE THRESHOLDS WILL BE APPLIED IF NECESSARY, \nTO LOW FREQUENCY VARIABLES WITH FEWER THAN 75 VALID RESPONSES.\n \n      29           0\n      20           1 TO 999\n      18        1000 TO 1999\n      28        2000 TO 2999\n      30        3000 TO 3999\n      17        4000 TO 4999\n      57        5000 TO 5999\n      21        6000 TO 6999\n      10        7000 TO 7999\n      10        8000 TO 8999\n      12        9000 TO 9999\n     144       10000 TO 14999\n     131       15000 TO 19999\n     221       20000 TO 24999\n    1315       25000 TO 49999\n    3125       50000 TO 99999999: 50000+\n  -------\n    5188\n \nRefusal(-1)           77   (Go To U71505.00)\nDon't Know(-2)       242   (Go To U71505.00)\nTOTAL =========>    5507   VALID SKIP(-4)    1062     NON-INTERVIEW(-5)    24"
+    },
+    {
+      "ref": "U72825.00",
+      "name": "HHI_UID.01",
+      "year": "2023",
+      "description": "U72825.00    [HHI_UID.01]                                   Survey Year: 2023\n  PRIMARY VARIABLE\n\n             HHI, HH MEMBER 01 UNIQUE ID (ROS ITEM)\n \n     586         101 TO 199\n      42         201 TO 261\n       0      199606\n      36      199801 TO 199861\n      51      199901 TO 199961\n      89      200001 TO 200061\n     156      200101 TO 200161\n     168      200201 TO 200261\n     209      200301 TO 200361\n     286      200401 TO 200461\n     285      200501 TO 200561\n     315      200601 TO 200661\n     309      200701 TO 200761\n     335      200801 TO 200861\n     255      200901 TO 200961\n     273      201001 TO 201061\n     218      201101 TO 201161\n     479      201301 TO 201361\n     394      201501 TO 201561\n     314      201701 TO 201761\n     300      201901 TO 201962\n     304      202101 TO 202145\n     291      202301 TO 202361\n  -------\n    5695\n \nRefusal(-1)            0\nDon't Know(-2)         0\nTOTAL =========>    5695   VALID SKIP(-4)     874     NON-INTERVIEW(-5)    2415\n \nMin:            101        Max:         202321        Mean:           178908.77\n \nLead In: U72842.00[Default]\nDefault Next Question: U72826.00\n"
+    },
+    {
+      "ref": "U73332.00",
+      "name": "NONHHI_UID.01",
+      "year": "2023",
+      "description": "U73332.00    [NONHHI_UID.01]                                Survey Year: 2023\n  SECONDARY VARIABLE\n\n             NONHHI, NONRES MEMBER 01 UNIQUE ID (ROS ITEM)\n \n    2761         101 TO 199\n     350         201 TO 261\n       1      199606\n     176      199801 TO 199861\n     125      199901 TO 199961\n     138      200001 TO 200061\n     163      200101 TO 200161\n     203      200201 TO 200261\n     225      200301 TO 200361\n     228      200401 TO 200461\n     204      200501 TO 200561\n     184      200601 TO 200661\n     159      200701 TO 200761\n     179      200801 TO 200861\n     165      200901 TO 200961\n     166      201001 TO 201061\n     146      201101 TO 201161\n     241      201301 TO 201361\n     208      201501 TO 201561\n     180      201701 TO 201761\n     184      201901 TO 201962\n     160      202101 TO 202145\n       1      202301 TO 202361\n  -------\n    6547\n \nRefusal(-1)            0\nDon't Know(-2)         0\nInvalid Skip(-3)       4\nTOTAL =========>    6551   VALID SKIP(-4)      18     NON-INTERVIEW(-5)    2415\n \nMin:            101        Max:         202341        Mean:           105436.91\n \nLead In: U73382.00[Default]\nDefault Next Question: U73333.00\n"
+    }
+  ]
+}

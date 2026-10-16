@@ -77,6 +77,9 @@ infra/immigration-fiscal/coverage_bound_2026_10_14/inputs/oct15_final_routing/su
 .model-review/*-v9-household-work-response-*/
 .model-review/v9-feedback/
 .model-review/*-v9-behavioral-feedback-*/
+.model-review/household-response-evidence-2026-10-16/
+.model-review/*-v9-household-departure-evidence-*/
+notes/v9-household-response-evidence-2026-10-16/data/*.parquet
 # worker lists of the paths a lane run touched (review aids, rederivable)
 changed-paths.txt
 *-changed-paths.txt

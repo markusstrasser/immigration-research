@@ -1,0 +1,25 @@
+{
+  "all": {
+    "candidate_person_event_months": 599,
+    "unique_focal_people": 544,
+    "events_month4to10": 454,
+    "no_job_prior_month": 148
+  },
+  "mexican_identifier_focal": {
+    "candidate_person_event_months": 47,
+    "unique_focal_people": 45,
+    "events_month4to10": 37,
+    "no_job_prior_month": 10
+  },
+  "US_born_focal": {
+    "candidate_person_event_months": 480,
+    "unique_focal_people": 434,
+    "events_month4to10": 366,
+    "no_job_prior_month": 128
+  },
+  "three_months_each_side": {
+    "all_event_months": 453,
+    "mexican_identifier_focal_event_months": 36,
+    "note": "Three observed employment months before and three including/after first absent month. Not a causal or imputation-valid sample."
+  }
+}

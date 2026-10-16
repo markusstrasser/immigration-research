@@ -1,0 +1,126 @@
+{
+  "description": "Read-only feasibility counts, not an effect estimate or a final analytic sample.",
+  "missing_requested": [
+    "TCBIRTH",
+    "THISPAN"
+  ],
+  "files": {
+    "2023": {
+      "path": "sources/immigration-fiscal/data/external/stage2/census/sipp/pu2023_csv.zip",
+      "bytes": 109036604,
+      "rows": 476744,
+      "persons": 40263,
+      "panels": {
+        "2022": 166306,
+        "2023": 153674,
+        "2020": 82233,
+        "2021": 74531
+      },
+      "seconds": 14.87
+    },
+    "2024": {
+      "path": "sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip",
+      "bytes": 102122301,
+      "rows": 437168,
+      "persons": 36915,
+      "panels": {
+        "2022": 139584,
+        "2024": 139044,
+        "2023": 90973,
+        "2021": 67567
+      },
+      "seconds": 13.77
+    },
+    "2025": {
+      "path": "sources/immigration-fiscal/data/external/stage3/census/sipp_2025/pu2025_csv.zip",
+      "bytes": 88088487,
+      "rows": 379215,
+      "persons": 32052,
+      "panels": {
+        "2022": 120652,
+        "2025": 113431,
+        "2024": 75519,
+        "2023": 69613
+      },
+      "seconds": 13.18,
+      "value_counts": {
+        "THHLDSTATUS": {
+          "1": 249870,
+          "2": 124609,
+          "4": 2915,
+          "3": 1335,
+          "6": 346,
+          "5": 140
+        },
+        "RMESR": {
+          "1.0": 168750,
+          "8.0": 146246,
+          "NaN": 53116,
+          "6.0": 5979,
+          "2.0": 2214,
+          "4.0": 1363,
+          "3.0": 560,
+          "5.0": 507,
+          "7.0": 480
+        },
+        "EEHC_WHY": {
+          "3": 62914,
+          "8": 62427,
+          "9": 38642,
+          "15": 34691,
+          "2": 31185,
+          "1": 29031,
+          "4": 22515,
+          "12": 20391,
+          "11": 18664,
+          "10": 17975,
+          "16": 17719,
+          "6": 15005,
+          "7": 3679,
+          "5": 1550,
+          "13": 1503,
+          "14": 1324
+        },
+        "RHNUMPERWT2": {
+          "2": 116577,
+          "4": 66570,
+          "3": 61730,
+          "1": 58370,
+          "5": 38438,
+          "6": 20174,
+          "7": 8776,
+          "8": 4626,
+          "9": 2121,
+          "12": 624,
+          "10": 514,
+          "11": 429,
+          "13": 182,
+          "14": 84
+        }
+      }
+    }
+  },
+  "type2_focal_departures": {
+    "adult_focal_person_months": 208116,
+    "focal_person_months_with_adult_type2_exit": 600,
+    "focal_people_with_adult_type2_exit": 545,
+    "both_months_employment_observed": 600,
+    "both_months_earnings_observed": 444,
+    "note": "Focal ages 18-64 both months, unchanged residence, adjacent months within 2024; Type2 slot adult in prior month and missing next. Multiple focal adults can share one exit; not deduplicated household events. Missing slots require final codebook validation."
+  },
+  "missing_residence_adult_rows": 0,
+  "tracked_adult_departures": {
+    "focal_other_exit_transitions": 286,
+    "focal_person_exit_months": 232,
+    "departing_adult_months": 160,
+    "focal_people": 214,
+    "focal_person_event_months_with_pre_post_employment": 232,
+    "note": "Adult person pairs co-resident in prior month and both observed next month, other moves and focal stays. Focal age18-64 post only. This is a descriptive candidate screen, not verified cause or clean event study."
+  },
+  "person_overlap": {
+    "2023_2024": 20891,
+    "2024_2025": 18801,
+    "2023_2025": 13015,
+    "all3": 11040
+  }
+}
