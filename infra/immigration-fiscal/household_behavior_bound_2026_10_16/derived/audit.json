@@ -1,0 +1,106 @@
+{
+  "status": "conditional partial cash response; not an identified effect or complete bound",
+  "income_year": 2024,
+  "survey_year": 2025,
+  "cash_materiality_bn": 14.219852172932418,
+  "accrual_scale_reference_bn": 18.401486958944037,
+  "exposures": {
+    "all_exposed": {
+      "sample_adults": 3044,
+      "sample_households": 2370,
+      "adults": {
+        "estimate": 6037595.03300984,
+        "sdr_se": 145179.2547952314
+      },
+      "current_earners": {
+        "estimate": 4539351.095558151,
+        "sdr_se": 116312.66149801562
+      },
+      "earnings_bn": {
+        "estimate": 314.74888403147185,
+        "sdr_se": 10.336077192261875
+      },
+      "annual_hours_million": {
+        "estimate": 8735.925264001022,
+        "sdr_se": 231.73518934171355
+      }
+    },
+    "care_proxy": {
+      "sample_adults": 432,
+      "sample_households": 240,
+      "adults": {
+        "estimate": 848695.78194057,
+        "sdr_se": 72612.55487681688
+      },
+      "current_earners": {
+        "estimate": 540698.53727205,
+        "sdr_se": 51603.63463628485
+      },
+      "earnings_bn": {
+        "estimate": 27.273242773985938,
+        "sdr_se": 3.1935847378458275
+      },
+      "annual_hours_million": {
+        "estimate": 969.2853033102286,
+        "sdr_se": 97.31458574806544
+      }
+    },
+    "personal_care_difficulty": {
+      "sample_adults": 101,
+      "sample_households": 59,
+      "adults": {
+        "estimate": 188355.89693249,
+        "sdr_se": 31098.64755544869
+      },
+      "current_earners": {
+        "estimate": 102411.00971638001,
+        "sdr_se": 20401.994789973112
+      },
+      "earnings_bn": {
+        "estimate": 5.0140095174400745,
+        "sdr_se": 1.282596691003628
+      },
+      "annual_hours_million": {
+        "estimate": 193.6348684787271,
+        "sdr_se": 39.936051052093354
+      }
+    }
+  },
+  "registry": {
+    "new_nonfiler_claimants": 0,
+    "transferred_dependents": 3,
+    "nonmember_dependents_without_remaining_claimant": 68,
+    "rule": "staying spouse, else PEPAR1/PEPAR2 staying adult parent; no invented guardian",
+    "added_exposed_nonfiler_returns": 390,
+    "priced_returns": 2906,
+    "observed_completion_records": 231,
+    "located_latent_records": 245
+  },
+  "snap": {
+    "priced_units": 2451,
+    "unpriced_alaska_or_noncivilian_units": 30,
+    "weight_rule": "original mean person weight per SPM unit; held across shocks"
+  },
+  "checks": {
+    "zero_response_identity": true,
+    "unchanged_returns_identity": true,
+    "signed_replicates": 160,
+    "complete_exposed_adult_return_coverage": true
+  },
+  "source_sha256": {
+    "infra/immigration-fiscal/household_behavior_bound_2026_10_16/bound.py": "e4589d1c7d28cf3c5a8fc4f6694261379aa6fc75ed6fb6cc06e3c043eab57ab1",
+    "infra/immigration-fiscal/household_behavior_bound_2026_10_16/DESIGN.md": "e9f878856f0e7f0ef53ba24336cac238e479bb113b4c55a5e83c38eaca72a21d",
+    "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+    "infra/immigration-fiscal/main_case_2026_10_16/derived/corrections.json": "8e056dd03d5bf7f3636cab99eee487d679490ad060b670d1cdb3a4d4b0e0db04",
+    "infra/immigration-fiscal/main_case_2026_10_16/derived/summary.json": "47c2d4a2a4c398649f4f3320b6b91d33355286064cf2cccf1e843a758111d2a3",
+    "infra/immigration-fiscal/count_composition_r5_2026_10_15/derived/native_person_factors.parquet": "712efac2bb35ea19ad1b9950998b5a0fa425f33fccd0c662669646f65cebff45",
+    "infra/immigration-fiscal/mixed_unit_credits_2026_10_14/credits.py": "d41e16a5fdce5dfcc141aa8c6c11dde9842c614ee185f70b84ecfa2b89782481",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/removal.py": "1b906be4bc635ebab59295aae5854e1d73d206a9c7070f0fb3e1a86be67df19c",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/membership.py": "fb2a078a152481b4a4884faa4d4f5eb4cbdd57364054bf8c3621432b70fcb933",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/state_tax.py": "c3d44bfc8910a24fd3291119cb8e7ecc216fef3eed100c2c831c8d8a3187534f",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/benefits.py": "39ead147df74be8f1eaa194fed61cc7a40f9bfa97441a5a0a42d6a4d826c9b81",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/snap_arm.py": "dccd513d1d2d0eadd98e6f4f321c06941547d7839ca26ab76fdde7e812474953",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/inputs/state_pins.json": "1409339b4addff51e9fbec0f953a72e55b2d3fa446e85c67ba707728f96328a9",
+    "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/inputs/benefit_pins.json": "fe89d7e826300dd008f32dcb737e3f4a2f1ba3be1740a9a7fa3c2900a8b9cf2b"
+  }
+}
