@@ -1,0 +1,13 @@
+{
+  "baskets": "Finance (EP0045, manual function23) and finance+other administration (EP0045+EP0085, functions23+29). Exclude judiciary and unallocable; building staff cannot be separately identified.",
+  "decomposition": "With identical rows/design/weights, payroll beta equals staffing beta plus pay-per-worker beta. Pay per worker includes occupational mix, hours/overtime and bonuses and is not a constant-quality wage index.",
+  "estimand": "Cross-state association of population with administrative full-time staffing and March payroll, not a causal population-removal response.",
+  "fits": "Intercept plus log population, all50 and lower48, equal-state and population weights; log FT count, log FT payroll, log FT payroll/count, and log modeled FTE. No trimming. Population weights change descriptive emphasis and are not inverse-variance weights.",
+  "limits": "No employer benefit costs, contractors, purchased services or capital in payroll. Full-time definitions vary by employer. Some nonresponse imputation scales donors by population. State organization, outsourcing, service choices and geography remain confounders.",
+  "population": "Census Vintage2024 July2022 estimate; March staffing is not simultaneous with July population.",
+  "primary": "Employer-defined full-time employee count and 31-day March full-time gross payroll in current dollars. Reported records subject to Census editing and nonresponse imputation; not universally unimputed direct observations.",
+  "secondary": "FTE is modeled since2019 from historical 2014-18 relationships and current full-/part-time counts; do not label it an independent measured hours quantity.",
+  "total_checks": "Published state/DC aggregate sums versus national and combined versus state+local. Employee counts exact; dollar payroll allows <=52 dollars for 51 rounded state totals; modeled FTE permits 52 persons across states and 2 within state.",
+  "uncertainty": "HC3 WLS sandwich, t(N-2) intervals; model uncertainty, not Census sampling error or causal-transport uncertainty. 2022 is a census year.",
+  "year": 2022
+}

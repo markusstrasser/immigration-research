@@ -1,0 +1,5064 @@
+{
+  "case": "a24d2468ed51d37ae4919fcec55ba153a343a5e1",
+  "units": "2024 USD billion per year; conditional fiscal cost",
+  "mapping": "Same component-wise power-cost rule and federal-fixed low premise; no causal interpretation of cross-state slopes",
+  "general_government": {
+    "low": 0.6005266346459308,
+    "high": 0.8510539647701243,
+    "elasticity": [
+      0.5939193086359557,
+      0.842
+    ],
+    "s": 0.12918222328408055
+  },
+  "generator_sha256": "35f402afe24c25e878a0c51d45282c95921232879b7a9b70ca2d100d0ab513d1",
+  "finance_composition_sha256": "390b148c2e8765814b92b2c3b54bd0fc4c80af1a2fff59afbfde4ce70a027a4b",
+  "rows": [
+    {
+      "basis": "set",
+      "name": "canonical",
+      "responses": [
+        0.6005266346459308,
+        0.8510539647701243
+      ],
+      "band_bn": [
+        368.02973917888073,
+        436.56152715403437
+      ],
+      "delta_bn": [
+        0,
+        0
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": 0,
+            "post_delta_bn": 0,
+            "post_by_item_bn": {
+              "coverage": 0,
+              "native_minor_calibration": 0,
+              "coverage_tenure": 0
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 0,
+            "post_delta_bn": 0,
+            "post_by_item_bn": {
+              "coverage": 0,
+              "native_minor_calibration": 0,
+              "coverage_tenure": 0
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": 0,
+            "post_delta_bn": 0,
+            "post_by_item_bn": {
+              "coverage": 0,
+              "native_minor_calibration": 0,
+              "coverage_tenure": 0
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 0,
+            "post_delta_bn": 0,
+            "post_by_item_bn": {
+              "coverage": 0,
+              "native_minor_calibration": 0,
+              "coverage_tenure": 0
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "set",
+      "name": "zero_cost_bound",
+      "responses": [
+        0,
+        0
+      ],
+      "band_bn": [
+        333.59079769362114,
+        387.75536935422656
+      ],
+      "delta_bn": [
+        -34.43894148525959,
+        -48.806157799807806
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": -33.186166634176516,
+            "post_delta_bn": -1.252774851082809,
+            "post_by_item_bn": {
+              "coverage": -1.5035623127600284,
+              "native_minor_calibration": 0.2507874616772194,
+              "coverage_tenure": -4.412702842016003e-17
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": -47.03075111096558,
+            "post_delta_bn": -1.7754066888422755,
+            "post_by_item_bn": {
+              "coverage": -2.130817508715191,
+              "native_minor_calibration": 0.3554108198729158,
+              "coverage_tenure": -4.5983724640541457e-17
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": -33.186166634177084,
+            "post_delta_bn": -1.252774851082809,
+            "post_by_item_bn": {
+              "coverage": -1.5035623127600284,
+              "native_minor_calibration": 0.2507874616772194,
+              "coverage_tenure": -4.412702842016003e-17
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": -47.030751110965525,
+            "post_delta_bn": -1.7754066888422755,
+            "post_by_item_bn": {
+              "coverage": -2.130817508715191,
+              "native_minor_calibration": 0.3554108198729158,
+              "coverage_tenure": -4.5983724640541457e-17
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "set",
+      "name": "half_response_check",
+      "responses": [
+        0.5,
+        0.5
+      ],
+      "band_bn": [
+        362.26474777209245,
+        416.4293194326983
+      ],
+      "delta_bn": [
+        -5.764991406788283,
+        -20.132207721336044
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": -5.555280075961662,
+            "post_delta_bn": -0.20971133082659066,
+            "post_by_item_bn": {
+              "coverage": -0.25169251547241484,
+              "native_minor_calibration": 0.041981184645824156,
+              "coverage_tenure": -4.544331762019321e-18
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": -19.399864552750046,
+            "post_delta_bn": -0.7323431685860569,
+            "post_by_item_bn": {
+              "coverage": -0.8789477114275772,
+              "native_minor_calibration": 0.14660454284152055,
+              "coverage_tenure": -4.118782409318761e-17
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": -5.555280075961775,
+            "post_delta_bn": -0.20971133082659066,
+            "post_by_item_bn": {
+              "coverage": -0.25169251547241484,
+              "native_minor_calibration": 0.041981184645824156,
+              "coverage_tenure": -4.544331762019321e-18
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": -19.399864552750046,
+            "post_delta_bn": -0.7323431685860569,
+            "post_by_item_bn": {
+              "coverage": -0.8789477114275772,
+              "native_minor_calibration": 0.14660454284152055,
+              "coverage_tenure": -4.118782409318761e-17
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "set",
+      "name": "proportional_cost_scenario",
+      "responses": [
+        1,
+        1
+      ],
+      "band_bn": [
+        390.9386978505639,
+        445.10326951116986
+      ],
+      "delta_bn": [
+        22.908958671683195,
+        8.54174235713549
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": 22.07560648225359,
+            "post_delta_bn": 0.8333521894296277,
+            "post_by_item_bn": {
+              "coverage": 1.0001772818151988,
+              "native_minor_calibration": -0.16682509238557106,
+              "coverage_tenure": -1.9820570965750628e-19
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 8.231022005465206,
+            "post_delta_bn": 0.31072035167016154,
+            "post_by_item_bn": {
+              "coverage": 0.37292208586003633,
+              "native_minor_calibration": -0.062201734189874736,
+              "coverage_tenure": -2.024408743937778e-18
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": 22.075606482253647,
+            "post_delta_bn": 0.8333521894296277,
+            "post_by_item_bn": {
+              "coverage": 1.0001772818151988,
+              "native_minor_calibration": -0.16682509238557106,
+              "coverage_tenure": -1.9820570965750628e-19
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 8.23102200546532,
+            "post_delta_bn": 0.31072035167016154,
+            "post_by_item_bn": {
+              "coverage": 0.37292208586003633,
+              "native_minor_calibration": -0.062201734189874736,
+              "coverage_tenure": -2.024408743937778e-18
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "set",
+      "name": "equal_state_administration_with_judiciary",
+      "source": {
+        "sample": "all50",
+        "weight": "equal_state",
+        "admin_basket": "administration_with_judiciary",
+        "admin_beta": "0.8424261988364043",
+        "finance_beta": "0.7889296558461467",
+        "national_minus_federal_share": "0.6333118262846958",
+        "federal_tax_financial_share": "0.07689575526519872",
+        "federal_fixed_share": "0.2897924184501054",
+        "low_assumed_mix": "0.5941838162325603",
+        "high_assumed_mix": "0.8424261988364043"
+      },
+      "responses": [
+        0.6007786741686308,
+        0.8514601353096887
+      ],
+      "band_bn": [
+        368.04419311626407,
+        436.58482018158406
+      ],
+      "delta_bn": [
+        0.014453937383336779,
+        0.02329302754969831
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": 0.01392815091975308,
+            "post_delta_bn": 0.0005257864635824156,
+            "post_by_item_bn": {
+              "coverage": 0.0006310413323819488,
+              "native_minor_calibration": -0.00010525486879953322,
+              "coverage_tenure": -7.282498112916856e-21
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 0.022445704204017147,
+            "post_delta_bn": 0.0008473233456446601,
+            "post_by_item_bn": {
+              "coverage": 0.0010169452620571787,
+              "native_minor_calibration": -0.00016962191641251855,
+              "coverage_tenure": -2.2585339445147868e-20
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": 0.013928150919809923,
+            "post_delta_bn": 0.0005257864635824156,
+            "post_by_item_bn": {
+              "coverage": 0.0006310413323819488,
+              "native_minor_calibration": -0.00010525486879953322,
+              "coverage_tenure": -7.282498112916856e-21
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 0.022445704204017147,
+            "post_delta_bn": 0.0008473233456446601,
+            "post_by_item_bn": {
+              "coverage": 0.0010169452620571787,
+              "native_minor_calibration": -0.00016962191641251855,
+              "coverage_tenure": -2.2585339445147868e-20
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "set",
+      "name": "equal_state_administration_without_judiciary",
+      "source": {
+        "sample": "all50",
+        "weight": "equal_state",
+        "admin_basket": "administration_without_judiciary",
+        "admin_beta": "0.8004597133605553",
+        "finance_beta": "0.7889296558461467",
+        "national_minus_federal_share": "0.6333118262846958",
+        "federal_tax_financial_share": "0.07689575526519872",
+        "federal_fixed_share": "0.2897924184501054",
+        "low_assumed_mix": "0.5676059446731003",
+        "high_assumed_mix": "0.8004597133605553"
+      },
+      "responses": [
+        0.5753768627750282,
+        0.8113506499987612
+      ],
+      "band_bn": [
+        366.58745257265826,
+        434.2846254226265
+      ],
+      "delta_bn": [
+        -1.442286606222467,
+        -2.276901731407861
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": -1.3898209870599203,
+            "post_delta_bn": -0.052465619162609015,
+            "post_by_item_bn": {
+              "coverage": -0.06296847962771317,
+              "native_minor_calibration": 0.01050286046510417,
+              "coverage_tenure": 2.34734005507848e-19
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": -2.1940755728653585,
+            "post_delta_bn": -0.08282615854251749,
+            "post_by_item_bn": {
+              "coverage": -0.09940676122894536,
+              "native_minor_calibration": 0.016580602686427883,
+              "coverage_tenure": 2.485829941954558e-18
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": -1.3898209870598066,
+            "post_delta_bn": -0.052465619162609015,
+            "post_by_item_bn": {
+              "coverage": -0.06296847962771317,
+              "native_minor_calibration": 0.01050286046510417,
+              "coverage_tenure": 2.34734005507848e-19
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": -2.1940755728653585,
+            "post_delta_bn": -0.08282615854251749,
+            "post_by_item_bn": {
+              "coverage": -0.09940676122894536,
+              "native_minor_calibration": 0.016580602686427883,
+              "coverage_tenure": 2.485829941954558e-18
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "set",
+      "name": "population_administration_with_judiciary",
+      "source": {
+        "sample": "all50",
+        "weight": "population",
+        "admin_basket": "administration_with_judiciary",
+        "admin_beta": "0.9969742686181879",
+        "finance_beta": "0.9515449478708944",
+        "national_minus_federal_share": "0.6333118262846958",
+        "federal_tax_financial_share": "0.07689575526519872",
+        "federal_fixed_share": "0.2897924184501054",
+        "low_assumed_mix": "0.7045653622527501",
+        "high_assumed_mix": "0.9969742686181879"
+      },
+      "responses": [
+        0.70493454914946,
+        0.9971781187911798
+      ],
+      "band_bn": [
+        374.0173138354237,
+        444.9414405493517
+      ],
+      "delta_bn": [
+        5.987574656542961,
+        8.379913395317317
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": 5.76976648285364,
+            "post_delta_bn": 0.2178081736893229,
+            "post_by_item_bn": {
+              "coverage": 0.26141022952951115,
+              "native_minor_calibration": -0.04360205584018829,
+              "coverage_tenure": 1.2982473982566661e-17
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 8.075079846341907,
+            "post_delta_bn": 0.3048335489753278,
+            "post_by_item_bn": {
+              "coverage": 0.3658568301463253,
+              "native_minor_calibration": -0.061023281170997534,
+              "coverage_tenure": 6.306160292308266e-18
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": 5.76976648285364,
+            "post_delta_bn": 0.2178081736893229,
+            "post_by_item_bn": {
+              "coverage": 0.26141022952951115,
+              "native_minor_calibration": -0.04360205584018829,
+              "coverage_tenure": 1.2982473982566661e-17
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 8.075079846341964,
+            "post_delta_bn": 0.3048335489753278,
+            "post_by_item_bn": {
+              "coverage": 0.3658568301463253,
+              "native_minor_calibration": -0.061023281170997534,
+              "coverage_tenure": 6.306160292308266e-18
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "set",
+      "name": "population_administration_without_judiciary",
+      "source": {
+        "sample": "all50",
+        "weight": "population",
+        "admin_basket": "administration_without_judiciary",
+        "admin_beta": "0.9514033147681631",
+        "finance_beta": "0.9515449478708944",
+        "national_minus_federal_share": "0.6333118262846958",
+        "federal_tax_financial_share": "0.07689575526519872",
+        "federal_fixed_share": "0.2897924184501054",
+        "low_assumed_mix": "0.6757047382444553",
+        "high_assumed_mix": "0.9514033147681631"
+      },
+      "responses": [
+        0.67792766645408,
+        0.9545342243074544
+      ],
+      "band_bn": [
+        372.4685258230588,
+        442.4959027461957
+      ],
+      "delta_bn": [
+        4.438786644178094,
+        5.934375592161359
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": 4.277318258759578,
+            "post_delta_bn": 0.1614683854185431,
+            "post_by_item_bn": {
+              "coverage": 0.1937920279990396,
+              "native_minor_calibration": -0.032323642580496456,
+              "coverage_tenure": 4.452852203715857e-18
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 5.7185026245812765,
+            "post_delta_bn": 0.2158729675800692,
+            "post_by_item_bn": {
+              "coverage": 0.25908762306053407,
+              "native_minor_calibration": -0.04321465548046487,
+              "coverage_tenure": 1.0471868326904915e-17
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": 4.277318258759635,
+            "post_delta_bn": 0.1614683854185431,
+            "post_by_item_bn": {
+              "coverage": 0.1937920279990396,
+              "native_minor_calibration": -0.032323642580496456,
+              "coverage_tenure": 4.452852203715857e-18
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 5.7185026245812765,
+            "post_delta_bn": 0.2158729675800692,
+            "post_by_item_bn": {
+              "coverage": 0.25908762306053407,
+              "native_minor_calibration": -0.04321465548046487,
+              "coverage_tenure": 1.0471868326904915e-17
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "cash",
+      "name": "canonical",
+      "responses": [
+        0.6005266346459308,
+        0.8510539647701243
+      ],
+      "band_bn": [
+        284.39704345864834,
+        352.92883143380107
+      ],
+      "delta_bn": [
+        0,
+        0
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": 0,
+            "post_delta_bn": 0,
+            "post_by_item_bn": {
+              "coverage": 0,
+              "native_minor_calibration": 0,
+              "coverage_tenure": 0
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 0,
+            "post_delta_bn": 0,
+            "post_by_item_bn": {
+              "coverage": 0,
+              "native_minor_calibration": 0,
+              "coverage_tenure": 0
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": 0,
+            "post_delta_bn": 0,
+            "post_by_item_bn": {
+              "coverage": 0,
+              "native_minor_calibration": 0,
+              "coverage_tenure": 0
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 0,
+            "post_delta_bn": 0,
+            "post_by_item_bn": {
+              "coverage": 0,
+              "native_minor_calibration": 0,
+              "coverage_tenure": 0
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "cash",
+      "name": "zero_cost_bound",
+      "responses": [
+        0,
+        0
+      ],
+      "band_bn": [
+        249.9581019733883,
+        304.12267363399405
+      ],
+      "delta_bn": [
+        -34.438941485260045,
+        -48.80615779980701
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": -33.1861666341772,
+            "post_delta_bn": -1.252774851082809,
+            "post_by_item_bn": {
+              "coverage": -1.503562312760028,
+              "native_minor_calibration": 0.2507874616772193,
+              "coverage_tenure": -4.412702842016003e-17
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": -47.030751110965355,
+            "post_delta_bn": -1.7754066888422755,
+            "post_by_item_bn": {
+              "coverage": -2.130817508715191,
+              "native_minor_calibration": 0.3554108198729157,
+              "coverage_tenure": -1.8228149024912543e-17
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": -33.186166634177226,
+            "post_delta_bn": -1.252774851082809,
+            "post_by_item_bn": {
+              "coverage": -1.503562312760028,
+              "native_minor_calibration": 0.2507874616772193,
+              "coverage_tenure": -4.412702842016003e-17
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": -47.030751110964104,
+            "post_delta_bn": -1.7754066888422755,
+            "post_by_item_bn": {
+              "coverage": -2.130817508715191,
+              "native_minor_calibration": 0.3554108198729157,
+              "coverage_tenure": -1.8228149024912543e-17
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "cash",
+      "name": "half_response_check",
+      "responses": [
+        0.5,
+        0.5
+      ],
+      "band_bn": [
+        278.63205205186,
+        332.7966237124655
+      ],
+      "delta_bn": [
+        -5.76499140678834,
+        -20.13220772133559
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": -5.555280075961775,
+            "post_delta_bn": -0.2097113308265906,
+            "post_by_item_bn": {
+              "coverage": -0.2516925154724148,
+              "native_minor_calibration": 0.04198118464582414,
+              "coverage_tenure": 2.394562141887907e-18
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": -19.399864552750046,
+            "post_delta_bn": -0.7323431685860569,
+            "post_by_item_bn": {
+              "coverage": -0.8789477114275771,
+              "native_minor_calibration": 0.1466045428415205,
+              "coverage_tenure": -4.118782409318761e-17
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": -5.555280075961775,
+            "post_delta_bn": -0.2097113308265906,
+            "post_by_item_bn": {
+              "coverage": -0.2516925154724148,
+              "native_minor_calibration": 0.04198118464582414,
+              "coverage_tenure": 2.394562141887907e-18
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": -19.399864552749023,
+            "post_delta_bn": -0.7323431685860569,
+            "post_by_item_bn": {
+              "coverage": -0.8789477114275771,
+              "native_minor_calibration": 0.1466045428415205,
+              "coverage_tenure": -4.118782409318761e-17
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "cash",
+      "name": "proportional_cost_scenario",
+      "responses": [
+        1,
+        1
+      ],
+      "band_bn": [
+        307.30600213033165,
+        361.47057379093644
+      ],
+      "delta_bn": [
+        22.90895867168331,
+        8.541742357135377
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": 22.075606482253704,
+            "post_delta_bn": 0.8333521894296275,
+            "post_by_item_bn": {
+              "coverage": 1.0001772818151986,
+              "native_minor_calibration": -0.166825092385571,
+              "coverage_tenure": -1.9820570965750628e-19
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 8.231022005465206,
+            "post_delta_bn": 0.3107203516701615,
+            "post_by_item_bn": {
+              "coverage": 0.3729220858600363,
+              "native_minor_calibration": -0.06220173418987471,
+              "coverage_tenure": 1.196179928112523e-17
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": 22.075606482253647,
+            "post_delta_bn": 0.8333521894296275,
+            "post_by_item_bn": {
+              "coverage": 1.0001772818151986,
+              "native_minor_calibration": -0.166825092385571,
+              "coverage_tenure": -1.9820570965750628e-19
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 8.231022005465206,
+            "post_delta_bn": 0.3107203516701615,
+            "post_by_item_bn": {
+              "coverage": 0.3729220858600363,
+              "native_minor_calibration": -0.06220173418987471,
+              "coverage_tenure": 1.196179928112523e-17
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "cash",
+      "name": "equal_state_administration_with_judiciary",
+      "source": {
+        "sample": "all50",
+        "weight": "equal_state",
+        "admin_basket": "administration_with_judiciary",
+        "admin_beta": "0.8424261988364043",
+        "finance_beta": "0.7889296558461467",
+        "national_minus_federal_share": "0.6333118262846958",
+        "federal_tax_financial_share": "0.07689575526519872",
+        "federal_fixed_share": "0.2897924184501054",
+        "low_assumed_mix": "0.5941838162325603",
+        "high_assumed_mix": "0.8424261988364043"
+      },
+      "responses": [
+        0.6007786741686308,
+        0.8514601353096887
+      ],
+      "band_bn": [
+        284.4114973960318,
+        352.95212446135065
+      ],
+      "delta_bn": [
+        0.014453937383450466,
+        0.023293027549584622
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": 0.013928150919866766,
+            "post_delta_bn": 0.0005257864635824155,
+            "post_by_item_bn": {
+              "coverage": 0.0006310413323819486,
+              "native_minor_calibration": -0.00010525486879953319,
+              "coverage_tenure": -5.062345348824529e-22
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 0.022445704204017147,
+            "post_delta_bn": 0.0008473233456446602,
+            "post_by_item_bn": {
+              "coverage": 0.0010169452620571787,
+              "native_minor_calibration": -0.00016962191641251847,
+              "coverage_tenure": -3.6137866601216673e-20
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": 0.013928150919809923,
+            "post_delta_bn": 0.0005257864635824155,
+            "post_by_item_bn": {
+              "coverage": 0.0006310413323819486,
+              "native_minor_calibration": -0.00010525486879953319,
+              "coverage_tenure": -5.062345348824529e-22
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 0.022445704204017147,
+            "post_delta_bn": 0.0008473233456446602,
+            "post_by_item_bn": {
+              "coverage": 0.0010169452620571787,
+              "native_minor_calibration": -0.00016962191641251847,
+              "coverage_tenure": -3.6137866601216673e-20
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "cash",
+      "name": "equal_state_administration_without_judiciary",
+      "source": {
+        "sample": "all50",
+        "weight": "equal_state",
+        "admin_basket": "administration_without_judiciary",
+        "admin_beta": "0.8004597133605553",
+        "finance_beta": "0.7889296558461467",
+        "national_minus_federal_share": "0.6333118262846958",
+        "federal_tax_financial_share": "0.07689575526519872",
+        "federal_fixed_share": "0.2897924184501054",
+        "low_assumed_mix": "0.5676059446731003",
+        "high_assumed_mix": "0.8004597133605553"
+      },
+      "responses": [
+        0.5753768627750282,
+        0.8113506499987612
+      ],
+      "band_bn": [
+        282.95475685242593,
+        350.6519297023932
+      ],
+      "delta_bn": [
+        -1.4422866062224102,
+        -2.276901731407861
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": -1.3898209870598066,
+            "post_delta_bn": -0.05246561916260901,
+            "post_by_item_bn": {
+              "coverage": -0.06296847962771315,
+              "native_minor_calibration": 0.010502860465104166,
+              "coverage_tenure": -6.326277324805556e-19
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": -2.1940755728654153,
+            "post_delta_bn": -0.08282615854251749,
+            "post_by_item_bn": {
+              "coverage": -0.09940676122894536,
+              "native_minor_calibration": 0.016580602686427876,
+              "coverage_tenure": 2.485829941954558e-18
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": -1.3898209870598066,
+            "post_delta_bn": -0.05246561916260901,
+            "post_by_item_bn": {
+              "coverage": -0.06296847962771315,
+              "native_minor_calibration": 0.010502860465104166,
+              "coverage_tenure": -6.326277324805556e-19
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": -2.1940755728653016,
+            "post_delta_bn": -0.08282615854251749,
+            "post_by_item_bn": {
+              "coverage": -0.09940676122894536,
+              "native_minor_calibration": 0.016580602686427876,
+              "coverage_tenure": 2.485829941954558e-18
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "cash",
+      "name": "population_administration_with_judiciary",
+      "source": {
+        "sample": "all50",
+        "weight": "population",
+        "admin_basket": "administration_with_judiciary",
+        "admin_beta": "0.9969742686181879",
+        "finance_beta": "0.9515449478708944",
+        "national_minus_federal_share": "0.6333118262846958",
+        "federal_tax_financial_share": "0.07689575526519872",
+        "federal_fixed_share": "0.2897924184501054",
+        "low_assumed_mix": "0.7045653622527501",
+        "high_assumed_mix": "0.9969742686181879"
+      },
+      "responses": [
+        0.70493454914946,
+        0.9971781187911798
+      ],
+      "band_bn": [
+        290.3846181151914,
+        361.30874482911827
+      ],
+      "delta_bn": [
+        5.9875746565430745,
+        8.379913395317203
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": 5.769766482853754,
+            "post_delta_bn": 0.2178081736893228,
+            "post_by_item_bn": {
+              "coverage": 0.26141022952951104,
+              "native_minor_calibration": -0.043602055840188274,
+              "coverage_tenure": 6.043580078659433e-18
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 8.075079846341964,
+            "post_delta_bn": 0.30483354897532766,
+            "post_by_item_bn": {
+              "coverage": 0.36585683014632525,
+              "native_minor_calibration": -0.06102328117099751,
+              "coverage_tenure": -5.243133943504119e-19
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": 5.769766482853754,
+            "post_delta_bn": 0.2178081736893228,
+            "post_by_item_bn": {
+              "coverage": 0.26141022952951104,
+              "native_minor_calibration": -0.043602055840188274,
+              "coverage_tenure": 6.043580078659433e-18
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 8.07507984634185,
+            "post_delta_bn": 0.30483354897532766,
+            "post_by_item_bn": {
+              "coverage": 0.36585683014632525,
+              "native_minor_calibration": -0.06102328117099751,
+              "coverage_tenure": -5.243133943504119e-19
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "basis": "cash",
+      "name": "population_administration_without_judiciary",
+      "source": {
+        "sample": "all50",
+        "weight": "population",
+        "admin_basket": "administration_without_judiciary",
+        "admin_beta": "0.9514033147681631",
+        "finance_beta": "0.9515449478708944",
+        "national_minus_federal_share": "0.6333118262846958",
+        "federal_tax_financial_share": "0.07689575526519872",
+        "federal_fixed_share": "0.2897924184501054",
+        "low_assumed_mix": "0.6757047382444553",
+        "high_assumed_mix": "0.9514033147681631"
+      },
+      "responses": [
+        0.67792766645408,
+        0.9545342243074544
+      ],
+      "band_bn": [
+        288.83583010282643,
+        358.8632070259623
+      ],
+      "delta_bn": [
+        4.438786644178094,
+        5.9343755921612455
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "parts_at_ends": [
+        [
+          {
+            "engine_and_rate_delta_bn": 4.277318258759578,
+            "post_delta_bn": 0.16146838541854305,
+            "post_by_item_bn": {
+              "coverage": 0.19379202799903955,
+              "native_minor_calibration": -0.03232364258049645,
+              "coverage_tenure": 4.452852203715857e-18
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 5.7185026245812765,
+            "post_delta_bn": 0.21587296758006916,
+            "post_by_item_bn": {
+              "coverage": 0.259087623060534,
+              "native_minor_calibration": -0.043214655480464846,
+              "coverage_tenure": 1.052607843552919e-17
+            }
+          }
+        ],
+        [
+          {
+            "engine_and_rate_delta_bn": 4.2773182587595215,
+            "post_delta_bn": 0.16146838541854305,
+            "post_by_item_bn": {
+              "coverage": 0.19379202799903955,
+              "native_minor_calibration": -0.03232364258049645,
+              "coverage_tenure": 4.452852203715857e-18
+            }
+          },
+          {
+            "engine_and_rate_delta_bn": 5.718502624581049,
+            "post_delta_bn": 0.21587296758006916,
+            "post_by_item_bn": {
+              "coverage": 0.259087623060534,
+              "native_minor_calibration": -0.043214655480464846,
+              "coverage_tenure": 1.052607843552919e-17
+            }
+          }
+        ]
+      ]
+    }
+  ],
+  "details": {
+    "set": {
+      "zero_response_band_bn": [
+        333.59079769362114,
+        387.75536935422656
+      ],
+      "exposure_at_canonical_ends_bn": [
+        [
+          34.438941485259306,
+          48.80615779980786
+        ],
+        [
+          34.438941485259875,
+          48.806157799807806
+        ]
+      ],
+      "mean_response_change_for_5bn_at_fixed_ends": [
+        0.0871871504678742,
+        0.08718715046787352
+      ]
+    },
+    "cash": {
+      "zero_response_band_bn": [
+        249.9581019733883,
+        304.12267363399405
+      ],
+      "exposure_at_canonical_ends_bn": [
+        [
+          34.43894148526002,
+          48.806157799807636
+        ],
+        [
+          34.438941485260045,
+          48.806157799806385
+        ]
+      ],
+      "mean_response_change_for_5bn_at_fixed_ends": [
+        0.08718715046787345,
+        0.08718715046787485
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "finance CSV rectangular",
+      "pass": true
+    },
+    {
+      "name": "set/0/0 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/0 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/0 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/0 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/0 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/0 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/1 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/1 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/1 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/1 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/1 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/1 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/2 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/2 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/2 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/2 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/2 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/2 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/3 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/3 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/3 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/3 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/3 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/3 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/4 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/4 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/4 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/4 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/4 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/4 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/5 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/5 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/5 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/5 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/5 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/5 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/6 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/6 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/6 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/6 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/6 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/6 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/7 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/7 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/7 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/7 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/7 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/7 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/8 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/8 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/8 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/8 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/8 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/8 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/9 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/9 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/9 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/9 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/9 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/9 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/10 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/10 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/10 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/10 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/10 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/10 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/11 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/11 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/11 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/11 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/11 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/11 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/12 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/12 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/12 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/12 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/12 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/12 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/13 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/13 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/13 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/13 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/13 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/13 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/14 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/14 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/14 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/14 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/14 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/14 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/15 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/15 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/15 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/15 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/15 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/15 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/16 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/16 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/16 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/16 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/16 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/16 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/17 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/17 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/17 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/17 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/17 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/17 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/18 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/18 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/18 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/18 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/18 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/18 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/19 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/19 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/19 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/19 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/19 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/19 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/20 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/20 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/20 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/20 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/20 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/20 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/21 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/21 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/21 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/21 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/21 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/21 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/22 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/22 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/22 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/22 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/22 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/22 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/23 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/23 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/23 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/23 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/23 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/23 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/24 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/24 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/24 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/24 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/24 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/24 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/25 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/25 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/25 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/25 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/25 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/25 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/26 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/26 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/26 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/26 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/26 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/26 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/27 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/27 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/27 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/27 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/27 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/27 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/28 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/28 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/28 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/28 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/28 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/28 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/29 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/29 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/29 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/29 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/29 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/29 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/30 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/30 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/30 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/30 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/30 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/30 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/31 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/31 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/31 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/31 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/0/31 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/0/31 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/0 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/0 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/0 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/0 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/0 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/0 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/1 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/1 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/1 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/1 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/1 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/1 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/2 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/2 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/2 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/2 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/2 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/2 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/3 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/3 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/3 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/3 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/3 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/3 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/4 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/4 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/4 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/4 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/4 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/4 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/5 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/5 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/5 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/5 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/5 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/5 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/6 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/6 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/6 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/6 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/6 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/6 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/7 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/7 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/7 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/7 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/7 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/7 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/8 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/8 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/8 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/8 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/8 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/8 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/9 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/9 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/9 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/9 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/9 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/9 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/10 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/10 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/10 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/10 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/10 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/10 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/11 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/11 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/11 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/11 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/11 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/11 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/12 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/12 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/12 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/12 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/12 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/12 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/13 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/13 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/13 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/13 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/13 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/13 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/14 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/14 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/14 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/14 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/14 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/14 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/15 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/15 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/15 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/15 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/15 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/15 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/16 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/16 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/16 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/16 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/16 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/16 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/17 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/17 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/17 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/17 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/17 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/17 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/18 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/18 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/18 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/18 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/18 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/18 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/19 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/19 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/19 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/19 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/19 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/19 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/20 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/20 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/20 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/20 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/20 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/20 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/21 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/21 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/21 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/21 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/21 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/21 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/22 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/22 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/22 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/22 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/22 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/22 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/23 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/23 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/23 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/23 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/23 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/23 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/24 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/24 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/24 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/24 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/24 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/24 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/25 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/25 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/25 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/25 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/25 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/25 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/26 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/26 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/26 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/26 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/26 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/26 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/27 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/27 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/27 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/27 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/27 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/27 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/28 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/28 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/28 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/28 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/28 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/28 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/29 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/29 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/29 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/29 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/29 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/29 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/30 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/30 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/30 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/30 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/30 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/30 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/31 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/31 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/31 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/31 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "set/1/31 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "set/1/31 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "set frozen v9 baseline",
+      "pass": true
+    },
+    {
+      "name": "set baseline post is zero",
+      "pass": true
+    },
+    {
+      "name": "set affine each specification",
+      "pass": true
+    },
+    {
+      "name": "set nonnegative cost slopes",
+      "pass": true
+    },
+    {
+      "name": "cash/0/0 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/0 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/0 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/0 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/0 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/0 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/1 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/1 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/1 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/1 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/1 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/1 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/2 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/2 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/2 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/2 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/2 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/2 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/3 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/3 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/3 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/3 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/3 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/3 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/4 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/4 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/4 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/4 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/4 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/4 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/5 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/5 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/5 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/5 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/5 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/5 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/6 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/6 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/6 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/6 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/6 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/6 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/7 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/7 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/7 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/7 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/7 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/7 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/8 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/8 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/8 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/8 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/8 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/8 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/9 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/9 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/9 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/9 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/9 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/9 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/10 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/10 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/10 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/10 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/10 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/10 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/11 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/11 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/11 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/11 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/11 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/11 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/12 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/12 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/12 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/12 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/12 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/12 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/13 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/13 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/13 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/13 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/13 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/13 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/14 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/14 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/14 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/14 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/14 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/14 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/15 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/15 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/15 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/15 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/15 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/15 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/16 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/16 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/16 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/16 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/16 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/16 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/17 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/17 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/17 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/17 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/17 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/17 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/18 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/18 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/18 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/18 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/18 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/18 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/19 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/19 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/19 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/19 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/19 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/19 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/20 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/20 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/20 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/20 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/20 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/20 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/21 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/21 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/21 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/21 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/21 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/21 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/22 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/22 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/22 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/22 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/22 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/22 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/23 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/23 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/23 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/23 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/23 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/23 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/24 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/24 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/24 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/24 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/24 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/24 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/25 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/25 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/25 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/25 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/25 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/25 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/26 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/26 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/26 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/26 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/26 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/26 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/27 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/27 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/27 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/27 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/27 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/27 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/28 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/28 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/28 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/28 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/28 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/28 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/29 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/29 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/29 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/29 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/29 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/29 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/30 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/30 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/30 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/30 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/30 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/30 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/31 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/31 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/31 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/31 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/0/31 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/0/31 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/0 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/0 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/0 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/0 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/0 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/0 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/1 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/1 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/1 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/1 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/1 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/1 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/2 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/2 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/2 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/2 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/2 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/2 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/3 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/3 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/3 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/3 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/3 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/3 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/4 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/4 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/4 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/4 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/4 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/4 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/5 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/5 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/5 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/5 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/5 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/5 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/6 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/6 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/6 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/6 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/6 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/6 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/7 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/7 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/7 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/7 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/7 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/7 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/8 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/8 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/8 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/8 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/8 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/8 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/9 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/9 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/9 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/9 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/9 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/9 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/10 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/10 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/10 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/10 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/10 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/10 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/11 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/11 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/11 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/11 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/11 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/11 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/12 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/12 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/12 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/12 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/12 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/12 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/13 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/13 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/13 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/13 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/13 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/13 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/14 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/14 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/14 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/14 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/14 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/14 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/15 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/15 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/15 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/15 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/15 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/15 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/16 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/16 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/16 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/16 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/16 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/16 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/17 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/17 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/17 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/17 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/17 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/17 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/18 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/18 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/18 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/18 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/18 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/18 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/19 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/19 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/19 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/19 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/19 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/19 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/20 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/20 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/20 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/20 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/20 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/20 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/21 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/21 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/21 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/21 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/21 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/21 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/22 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/22 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/22 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/22 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/22 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/22 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/23 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/23 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/23 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/23 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/23 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/23 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/24 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/24 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/24 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/24 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/24 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/24 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/25 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/25 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/25 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/25 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/25 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/25 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/26 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/26 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/26 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/26 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/26 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/26 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/27 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/27 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/27 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/27 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/27 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/27 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/28 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/28 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/28 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/28 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/28 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/28 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/29 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/29 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/29 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/29 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/29 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/29 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/30 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/30 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/30 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/30 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/30 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/30 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/31 unrelated spending unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/31 receipts unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/31 other capital unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/31 selected spending and capital zero",
+      "pass": true
+    },
+    {
+      "name": "cash/1/31 other v9 items unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash/1/31 production unchanged",
+      "pass": true
+    },
+    {
+      "name": "cash frozen v9 baseline",
+      "pass": true
+    },
+    {
+      "name": "cash baseline post is zero",
+      "pass": true
+    },
+    {
+      "name": "cash affine each specification",
+      "pass": true
+    },
+    {
+      "name": "cash nonnegative cost slopes",
+      "pass": true
+    }
+  ],
+  "sources": [
+    {
+      "path": "infra/immigration-fiscal/added_age_mix_2026_10_07/derived/age_mix.json",
+      "sha256": "01b6653fc6291365339be9ad2bdedf9053d2b45c6c98f856c9081f8ccfe713e3"
+    },
+    {
+      "path": "infra/immigration-fiscal/added_age_mix_2026_10_07/derived/band_lines.json",
+      "sha256": "a6be49b3aed84d20caec08a26ffb59d4096ae6da86a900972599efea9d90a346"
+    },
+    {
+      "path": "infra/immigration-fiscal/added_age_mix_2026_10_07/derived/g3_age_keys.json",
+      "sha256": "9feb49b958510ffcb4b86e60cb2ea86f4f458c8a4d0b54a837d0b6308cb6df09"
+    },
+    {
+      "path": "infra/immigration-fiscal/added_age_mix_2026_10_07/derived/price_summary.json",
+      "sha256": "b03c72af40fb20f0ff7c3cea3599aaf0df50efd78bb04f0021bdff395dc109c0"
+    },
+    {
+      "path": "infra/immigration-fiscal/added_age_mix_2026_10_07/derived/summary.json",
+      "sha256": "5d04c9805717e2f80459ecb46486629c6e09d1a293d0eea8a458250b89422e19"
+    },
+    {
+      "path": "infra/immigration-fiscal/admin_benefit_keys_2026_09_24/derived/line_deltas.json",
+      "sha256": "880c4befb17990efe8acae4b9aff25eeb417b7c6693b347eac9642e9869ab250"
+    },
+    {
+      "path": "infra/immigration-fiscal/admin_benefit_keys_2026_09_24/derived/package_se.csv",
+      "sha256": "1c503b5b4a2080e97ffa04b9131bd018e291b084479acb52bb3bffa95d174c28"
+    },
+    {
+      "path": "infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json",
+      "sha256": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd"
+    },
+    {
+      "path": "infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/scaling_check.json",
+      "sha256": "7ecccd9c803813b5f34c3336a41355228180d6bababa747a04d2bc25218ba795"
+    },
+    {
+      "path": "infra/immigration-fiscal/assumption_explorer_2026_09_21/engine.js",
+      "sha256": "055e0503ea4d10ba040942c89d583f4853c5a80924f4ac1043c5f83772def491"
+    },
+    {
+      "path": "infra/immigration-fiscal/backcast_pandemic_measured_2026_09_28/derived/ratio_vs_2024.csv",
+      "sha256": "04e93220cc99e62e45d2063c776b34f3151df009382f9a0c3b4bd6b024a3f2ff"
+    },
+    {
+      "path": "infra/immigration-fiscal/capital_return_services_2026_09_27/derived/block_components.csv",
+      "sha256": "63e6f03bbdf265880bf7a566394f59126b6ef37c5896a5efc0706632b8f9a313"
+    },
+    {
+      "path": "infra/immigration-fiscal/capital_return_services_2026_09_27/derived/engine_components.json",
+      "sha256": "7eb0f6a7bf91ece09c026d2978d60176187b9f6e5c3c1a5edf7f0ff311cb1597"
+    },
+    {
+      "path": "infra/immigration-fiscal/capital_return_services_2026_09_27/derived/enterprise_surplus_vs_return.csv",
+      "sha256": "30100fcf3e11e2af8f01eb51e24ded11485366a0f9f118ce8c0bba7e3db10872"
+    },
+    {
+      "path": "infra/immigration-fiscal/consumption_key_2026_09_24/derived/payloads.json",
+      "sha256": "80eb474e2c3fb104871acab549706dbbb32a6fe99e7ce4ebe917d313770c1917"
+    },
+    {
+      "path": "infra/immigration-fiscal/consumption_tax_bases_r5_2026_10_15/derived/item.json",
+      "sha256": "f9718d90bed360fda298b48403b83ddec6eeb29994e8af5fa40113de2621afa3"
+    },
+    {
+      "path": "infra/immigration-fiscal/consumption_tax_bases_r5_2026_10_15/item.cjs",
+      "sha256": "e2a1d83a3617949b1a5f334a4d991d7a593a87fee452c408af7dcc69e65cc164"
+    },
+    {
+      "path": "infra/immigration-fiscal/count_composition_r5_2026_10_15/derived/items.json",
+      "sha256": "0180f3ecbcaac561c21c8dfa4b5c388dea784cd76b9d27f3ffbb3fe200814c93"
+    },
+    {
+      "path": "infra/immigration-fiscal/count_composition_r5_2026_10_15/derived/native_person_factors.parquet",
+      "sha256": "712efac2bb35ea19ad1b9950998b5a0fa425f33fccd0c662669646f65cebff45"
+    },
+    {
+      "path": "infra/immigration-fiscal/count_composition_r5_2026_10_15/items.cjs",
+      "sha256": "2883ee7185f6db592736035b36efbe3f21153f71b8786c1eb1cb32272ddb2fdb"
+    },
+    {
+      "path": "infra/immigration-fiscal/count_composition_r5_2026_10_15/measure.py",
+      "sha256": "d0a8100484fd73a4eb20185a653105fb1ba33b7e20c337098300b2366b23b746"
+    },
+    {
+      "path": "infra/immigration-fiscal/count_composition_r5_2026_10_15/tenure.py",
+      "sha256": "879eba408d337522ba4b04dd0be1c1161a7d559a86dd631543b67c9b4f393b99"
+    },
+    {
+      "path": "infra/immigration-fiscal/coverage_bound_2026_10_14/coverage_item21_oct16.py",
+      "sha256": "b019b85a78650b9da8cc10246f9ea619bc1b93a43f395fc351f829c64adc75db"
+    },
+    {
+      "path": "infra/immigration-fiscal/coverage_bound_2026_10_14/coverage_oct16.py",
+      "sha256": "578bfb2bdf619f1e54401321484602cadcf5aec588ae6ec59f04ed31c44630e7"
+    },
+    {
+      "path": "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/coverage_bound_oct15.json",
+      "sha256": "3456126cc53c353ef0806059dcff33ccc1448cfe8de39d2c92583c6c7d3d073c"
+    },
+    {
+      "path": "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/coverage_bound_oct16.json",
+      "sha256": "b38985b08a39687cb530baa147f72f8e4976012750dd36de0fd795ca007be402"
+    },
+    {
+      "path": "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/line_parts_oct16_cash.csv",
+      "sha256": "0fce260de051d5ceecaffe2b16ef9e6cf6763746967d63bc65556f99249a0e73"
+    },
+    {
+      "path": "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/line_parts_oct16_set.csv",
+      "sha256": "a1a0943551d5579e3aef452123fc19005ee2bdb78d0230c14022838e78d00d29"
+    },
+    {
+      "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/derived/dollar_effects.csv",
+      "sha256": "203f50a7470026420626304a48ecd54758714e0a3b0e1b71f14b67dab4d30c0d"
+    },
+    {
+      "path": "infra/immigration-fiscal/dataset_integrity_2026_09_23/derived/spending_mts_credits.json",
+      "sha256": "d06bc724ec0bd4fb5f2189cc087ddd498e6f01b93ecba0a07fe653d9e40da05c"
+    },
+    {
+      "path": "infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_deltas.json",
+      "sha256": "f1b5d1536d9ddf04726203502e77f813b2e2dba39febb38f563f3b38fad4986c"
+    },
+    {
+      "path": "infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/ota_deltas.json",
+      "sha256": "3c870581cbb97d20a6435a1fa876fc2388ff216bbb5372b91364137ac67d2ac8"
+    },
+    {
+      "path": "infra/immigration-fiscal/finite_response_2026_09_26/derived/r_values.json",
+      "sha256": "70c90edd6ae4b8ff7d8262756af7d49c3f982ce99de7bbdcff1355ec8251977b"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/age_routing.cjs",
+      "sha256": "f7742bbc46fcd3b44a6f08d3e3d5f15be29e0ef66a7230a67ffbf2b1641fad03"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_corrections_oct15.json",
+      "sha256": "bc0142a8de1d912b79ac5fb77466240dcedda93b85012cd7a3177fa4eeea5ad3"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_corrections_oct15_cash.json",
+      "sha256": "7453c6877fc9b5b0340d47cae01d1ad3204763fa71d09cd8c595fa19c6ec2deb"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_corrections_sept29.json",
+      "sha256": "818adc1715640818ff799e2b20e871d569639e6c635c40c4edf032ed54c7dbfc"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_corrections_sept29_cash.json",
+      "sha256": "50c3500e2a5484e77b918f192a3f8a631459535e105ca7deb4047f5a617f4677"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_G1.json",
+      "sha256": "8a5dc446fcd52cd46f8e0c81c88afae4a4f5bedf9978831b934b6ee1c2a5a50f"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_G2.json",
+      "sha256": "14ff14a27f6f2118624effc63b49b564db5271d52058d9200380f90d3ba67c67"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_G3plus.json",
+      "sha256": "31435455243c290248b569a340276ab0f58aac67533e5b17602db62f956ac33e"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_b_G1.json",
+      "sha256": "edd5fc7c1d1ff680422c8d40176559bd6abee2dc94ef1cff683cf316ad730e97"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_b_G2.json",
+      "sha256": "369ffe88b428098d677b349eeedb134c4a631f8cae5844a191525f12ce236784"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_b_G3plus.json",
+      "sha256": "1ef7691420e2376da8f4af022661d1f1eaff7c3d663c8c264b1ae3ed7ca4046f"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/inputs/routing.json",
+      "sha256": "ee64de0f418b24ce3faba48f4927576fe43338c62444e1a45c62090f991252a2"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/v4_split.cjs",
+      "sha256": "613b49cd746189d1c1db43702fb71d8c0ac118d5755b157306da09be78451d2f"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/v5_split.cjs",
+      "sha256": "9edf433eae10df6897d8abce551ec50da931bedfeaac18026c764971f99d49f4"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/v6_split.cjs",
+      "sha256": "f1317f7dc7dacac29a43e909dc16f539f4f2b4d53e2639d505066023b9e953fc"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/v7_split.cjs",
+      "sha256": "23b2f68aa38937cc4d57a19a5f9480c2918bff03179c284481df5afbd9e79e39"
+    },
+    {
+      "path": "infra/immigration-fiscal/generation_account_2026_09_24/v8_split.cjs",
+      "sha256": "e4232cf9aa193f0c85dfa9f4db31142c0da2566a6f0f3f3e2912db0783ba388a"
+    },
+    {
+      "path": "infra/immigration-fiscal/job_capital_key_refine_2026_10_14/derived/summary.json",
+      "sha256": "7d1fbf614f39b271a6447a47cbef0f4d6928e597321da6b6373fc264b91757f7"
+    },
+    {
+      "path": "infra/immigration-fiscal/job_capital_taxes_2026_10_14/RESULT.md",
+      "sha256": "cc59cf09df738c713342e74d05c18d3016352e73bd1ce76036472546a3a98d0e"
+    },
+    {
+      "path": "infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/item.json",
+      "sha256": "a9c747113ecfc9f23cdf525e232c52a0c9fb592af70201dadb9832c61fcbc283"
+    },
+    {
+      "path": "infra/immigration-fiscal/ltss_share_2026_09_23/derived/combined.csv",
+      "sha256": "c17ff98a9c3d9c9cf49d6c7a2e01c5a263ea6bb6a609d5656cfb61493c028893"
+    },
+    {
+      "path": "infra/immigration-fiscal/ltss_share_2026_09_23/derived/effects.csv",
+      "sha256": "fd0899512beb1a91d8f41e92a10aab45033dd81f2be0463446759f24c8530550"
+    },
+    {
+      "path": "infra/immigration-fiscal/ltss_share_2026_09_23/derived/main_case_effect.csv",
+      "sha256": "d841fba11d6e126800d54d938261b9e5f758826195f9eb798745283aaa0d5754"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_09_24/derived/corrections.json",
+      "sha256": "6413411e9b39f469e37bb50d81aa3ba1c5f2df2e09358b941dc20783b0328f80"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_09_24/derived/mcbs_bound.json",
+      "sha256": "9f79547f44693d3ac788b5cd38b42576e2896976c5cffa6b0a759ad9b0836bbc"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_09_24/derived/stack_line_deltas.json",
+      "sha256": "fa0f8520af8e51e26146843213df2830a6be4571117d0e8bc20b2c3b58b0cec7"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_09_24/package.cjs",
+      "sha256": "be7b3a1cec727122bc1396008e5f7d2dc6fd4de71f675bdce1b312863b5f4907"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_09_26/package.cjs",
+      "sha256": "2c2f13545f4241f5a632a14d5bb543ea03034c384b103a54d7e3a986e998541a"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_09_29/derived/corrections.json",
+      "sha256": "ba72adb198a4765604bb676406df6bfc18063529923bae230d9e0ad8d3b7adbe"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_09_29/package.cjs",
+      "sha256": "57ea6f9ebbf17244515a5aa6a0a6272007fd5c94237fdac7ea9799061ac994f0"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_05/derived/summary.json",
+      "sha256": "28a7cc36530d8a3c8897e511367b67d348396ecf21bce5c310b73a4198100d9c"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_05/package.cjs",
+      "sha256": "17f9e22bbc727e4b76e1df2906d614b9028a2819ffafc120511916f16d90ea0a"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_07/item_age_mix.cjs",
+      "sha256": "6f94386fe460afca36a732982848d0345e96755ee8469fbc481569b7a555c7b5"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_07/item_user_fees.cjs",
+      "sha256": "ed1c8c203ebd44e5f1c5fe8db2876d8e465352f2486825ce6d3be75a03cb7116"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_07/lineage_count.cjs",
+      "sha256": "1fba05c2b5b868f07654e05c92cfeb4534ce1971fb5ad8a7dffb61171d03ba1d"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_07/package.cjs",
+      "sha256": "a7003f087c2a0d4cfa399f8cb7afd3d8b27cf1e41669032e8c2273463928e275"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/ancestry_share.cjs",
+      "sha256": "ce076dd3bc6ceaff6688e72f43aea5180ba253f9bf73f1ed12c1dacccfd8af99"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/derived/corrections.json",
+      "sha256": "fde682e75d23148bb9177726f596374b63ab9027acc49e7d6b546947d89d0958"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/derived/corrections_cash.json",
+      "sha256": "581701613b7f3c8086437100334e3818ebe062dc57e2e486f14897208b05de97"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/derived/lineage_addition.json",
+      "sha256": "fde51a608e49d7bd3a88a4044f8d9637b6c20cbb3ac52f244b478e14c5311a49"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/item_child_credits.cjs",
+      "sha256": "82007b4d94712f344ac72b2a6228bf6470c34c1f3296a45ca5cb5a46b41bd077"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/item_job_capital.cjs",
+      "sha256": "69d93ef3bae160bee3986ddd6920d7bfa9f83fca61f725440fb2efe0e4626f2d"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/item_row4.cjs",
+      "sha256": "c81c45825382a973f4fde10bebe6a4100114e5e0b14283f115cd5e038e8a66f2"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/package.cjs",
+      "sha256": "ec00d49b40c118e61d2a6543ad21a54021b6364ebf49e0e4b3a97260fa3cc907"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_14/sources.cjs",
+      "sha256": "19bdae6f3654002e18ce36b7576c2342e070fec8b9dc62eb3cc2b42dd9d3f041"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_15/child_records.cjs",
+      "sha256": "821fad331f969f88f89b8666486612d52c56c994b52f2c8cd961d11607462d1b"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_15/companions.cjs",
+      "sha256": "6a8dbc0a1bfc57f2c88d550b38e629cf8a9ce45887172d5393c7edcc83a38129"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_15/coverage.cjs",
+      "sha256": "ddc8beae4caa14353fd031741c2e1df33762f39eff8285d2d22782c12b355e81"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_15/derived/union_credit_parts.json",
+      "sha256": "b085afc90d969be813347e2704c83f5bcba7fa679bdca6238b21c0e3620b95f2"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_15/derived/union_people.json",
+      "sha256": "47aa2d549f937f37d14d5a078fed8e6bbf5c6eb1d18aea5f5c9c0fdc5a1a6470"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_15/item_foreign.cjs",
+      "sha256": "015c3ba0a32b8982733583134a8549d701ccf6012cb94430f3b0f91eec7b8a58"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_15/item_mixed.cjs",
+      "sha256": "21495fa261b88d242128d29d9b0b6d19fb5e1391a2894d5d8a423466d5b4b561"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_15/item_union.cjs",
+      "sha256": "cea17e43b89c9b104890362d1d57baefa84b23cf33d95a2c0b5a5abfc4dff2a5"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_15/package.cjs",
+      "sha256": "083236226e594247bfe095c6cdf0c71f6bb0ca73b405f5da98568ac8c95b90d6"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_16/companions.cjs",
+      "sha256": "872c95b1f9aa6a3c1085f505c33328aa6e23af04cf5f762b7201d8c04b10f9e8"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_16/coverage_check.cjs",
+      "sha256": "5e0a85586c91b4a825b15eba612d4f8929c4704c9de281589d6dd78e5965d1ee"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_16/coverage_integration.cjs",
+      "sha256": "94792f059b603e8492fe2ba50d33a29ee7224c088f7dc38951c87a4b8da45a59"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_16/coverage_snapshot.cjs",
+      "sha256": "846ff969773a8476f0ec2e0f88889cfc9a8e848ccca4b8346ad8459933a9b70f"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_16/inputs/item13_ready.json",
+      "sha256": "cc8e0b49844f6cef10de155093915657b3fc99433a3443b06628621e19416ed4"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_16/inputs/item21_ready.json",
+      "sha256": "2e72bf77f39603a8272d85c4eb1b629ba338e43ebd5ad4e5c2216c0cbf78d93c"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_16/item_rate.cjs",
+      "sha256": "250b3bea21894f456f1cd1c99290310ee75773017688c842d88eb64fef8eb159"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_2026_10_16/package.cjs",
+      "sha256": "af3c9f94a7f79a959cfddcb78f6f5088636298af8b3590ae9137b39cd91122d4"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json",
+      "sha256": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_candidate_2026_09_28/package.cjs",
+      "sha256": "ed7f3dc5d8d9cb2728a3ceca6c3dffbdb86083c147c6f6a153baad0c5ebd1ca5"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_candidate_v2_2026_09_28/derived/road_stock.json",
+      "sha256": "24d6384773bd78d7e422e53ff9b6e8abdbd379f2bd9f78b26525d679e7f96b82"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_candidate_v2_2026_09_28/package.cjs",
+      "sha256": "029cf65a0ec698f2786c30da06892ff2584c28ec5ad91c30124250550f30d3b8"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/derived/transit_key.json",
+      "sha256": "ac31c088b7eb85c9a276e8779c0764f601bfa1669f4ae7937cb95379af6f988f"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/package.cjs",
+      "sha256": "8896705eab97ec3e6e177948cbd8003e09fc444aa0e3d59ca24a9cb1e5b17f72"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_candidate_v4_2026_09_29/consumer.cjs",
+      "sha256": "be7f08a1ff40e1dc0f39fd29d8d2c5db81761729031ac29e618ada87a2bf59a7"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json",
+      "sha256": "8a2dd8a81cebcd059b64d811f2bf7d384dd8f2759c8f5fd9e47ded0a56bcfd70"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_candidate_v4_2026_09_29/derived/summary.json",
+      "sha256": "2bfc6aad78fbe396bce4bdbdd80f387b959ebd34ec5e9d0c35332a345eafe3d1"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_candidate_v4_2026_09_29/package.cjs",
+      "sha256": "47dbc843a870cfa1461fcd7d8e8d8f765239189ef420468e1caf35effc74d68b"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_candidate_v4_2026_09_29/payload.cjs",
+      "sha256": "7df5f6408a49895b757b6446e4e8aef12cf95224a137c1c266330a565035d959"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/summary_sept29.json",
+      "sha256": "d0cc8e3133facad831d9e933dc8662236ef99db76a8e2c89b50d601326b9b0aa"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_lineage_2026_10_05/derived/lineage_payload.json",
+      "sha256": "b359ac7ab71e3d1e899900a114a2f4709cc8e853f80018dff6c3952140c290b3"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_lineage_2026_10_05/derived/lineage_payload_cash.json",
+      "sha256": "5d36a5584056335acb5051d9c5e7204423880cb2b621c928b67ed65957c864d5"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_lineage_2026_10_05/derived/population.json",
+      "sha256": "3d4ba08461260a8419ca5c7933e3c69d9ee2dd3bea1c2d3b238addacb0159468"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_lineage_2026_10_05/derived/white_lines.json",
+      "sha256": "6a3703f932dd964802b312025236ba4bd3d713a68b6925c845cc784d487ca234"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_long_run_2026_09_27/derived/corrections.json",
+      "sha256": "d3b10f144ebf438c444a72a8fa964089adf4340959980979ec5d057932bc32ea"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_long_run_2026_09_27/package.cjs",
+      "sha256": "b4f22b35371c715771d8e53436acfc6320c214ab5abf686714020eb2c8fe2a7a"
+    },
+    {
+      "path": "infra/immigration-fiscal/main_case_schools_full_2026_09_26/package.cjs",
+      "sha256": "d8c5b71d3887459e232442cca458b329b8ee60885ae1ae33bb2f2910b135deb4"
+    },
+    {
+      "path": "infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/derived/translation_account.csv",
+      "sha256": "a31954e9c8a3e2c832b6fa4a3d1af15b3f2138d2ecaf6c462c6feac23d7b9453"
+    },
+    {
+      "path": "infra/immigration-fiscal/migrant_shelter_costs_2026_09_23/derived/account_keying.csv",
+      "sha256": "5812533042c44c996e4a1f89b5517a99301a5710c77a0b87535dd54411c144ba"
+    },
+    {
+      "path": "infra/immigration-fiscal/mixed_unit_credits_2026_10_14/RESULT.md",
+      "sha256": "98474cfcd44b265bf91574576017572bd4dbe8dc7e3260e8d08cb8b290f7d0e5"
+    },
+    {
+      "path": "infra/immigration-fiscal/mixed_unit_credits_2026_10_14/derived/item.json",
+      "sha256": "2773e34d4cb02a70dd21544f915b2b83bbdc00855d24d468ed67e81e0310b5ac"
+    },
+    {
+      "path": "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/derived/round2_replicates.csv",
+      "sha256": "008472495fd84072c67b9cd5091001b5533aa7c5d0769b51f324b3603c1d0e40"
+    },
+    {
+      "path": "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/derived/round2_results.csv",
+      "sha256": "e0a3409898a52948c2d4ffdd9d0d6060380f7aef1fc2aa99dff6d62a28a958e4"
+    },
+    {
+      "path": "infra/immigration-fiscal/mixed_unit_removal_2026_10_14/derived/round2_summary.json",
+      "sha256": "acbb2ba55a6f1fdf4f2a66c2e236608bdaebd24090f7b814333417c7ed3bbc01"
+    },
+    {
+      "path": "infra/immigration-fiscal/one_rate_2026_10_15/derived/rates.json",
+      "sha256": "69b34dac781b33b01f66df2603e1ffe8a07a75436d4240960589da50bec2ec94"
+    },
+    {
+      "path": "infra/immigration-fiscal/one_rate_2026_10_15/derived/results.json",
+      "sha256": "4195f6700e22d4eafb0f2a4fe361f40d2e928d03306cbcc50ffe55470a0ef238"
+    },
+    {
+      "path": "infra/immigration-fiscal/passthrough_source_tax_r5_2026_10_15/derived/item.json",
+      "sha256": "9e37a8241ec602cd56901f84019e4f4b0456b8ecd6133cf15ebbf481bd02d4fc"
+    },
+    {
+      "path": "infra/immigration-fiscal/passthrough_source_tax_r5_2026_10_15/item.cjs",
+      "sha256": "69fb5e22dfe1777b76013ab4a77f5fa7bffdd189cdace7f7e1bdcd31c7d1044b"
+    },
+    {
+      "path": "infra/immigration-fiscal/payroll_compliance_2026_09_28/derived/items.json",
+      "sha256": "813359ff693e1462d004259fd469c1fc1fa2d53656f6ec6875eae6971b6c8cb5"
+    },
+    {
+      "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/derived/summary.json",
+      "sha256": "2397bb58f395b0fce3d0162d597f25e4093b49eb904b149f3cb7c5c59d86b8a0"
+    },
+    {
+      "path": "infra/immigration-fiscal/pension_tr2026_2026_10_06/derived/case_oct05.json",
+      "sha256": "9d61572ffcd42e5603555d825d0ba739e5050b14a347c7c71a107833752b8421"
+    },
+    {
+      "path": "infra/immigration-fiscal/pension_tr2026_2026_10_06/derived/summary.json",
+      "sha256": "d1ace679af48d5011c4baaf9e8ebb4d3cae4cddd9976819d4a6a36386f2f2d6a"
+    },
+    {
+      "path": "infra/immigration-fiscal/public_pension_legacy_2026_10_07/derived/by_line_oct05.csv",
+      "sha256": "614c9754c880f0af1ddba73b8daea1864c61fc613b0b3cf04bc168259364e5ef"
+    },
+    {
+      "path": "infra/immigration-fiscal/public_pension_legacy_2026_10_07/derived/case_oct05.json",
+      "sha256": "dcf83bafdb7041bc96ad9690c440dc717ad6dd7f8b4b9c0df890cf9f494daf7c"
+    },
+    {
+      "path": "infra/immigration-fiscal/public_pension_legacy_2026_10_07/derived/inputs.json",
+      "sha256": "54b9f7c275aa57ece10a2d30532d8bdde46cdc862d28a9bd144ab60d166df4a5"
+    },
+    {
+      "path": "infra/immigration-fiscal/public_pension_legacy_2026_10_07/derived/national.csv",
+      "sha256": "b001df5148988baff205b4e62208aa4c35464cc301c03b003ab1412b68724ec2"
+    },
+    {
+      "path": "infra/immigration-fiscal/receipt_side_long_run_2026_09_28/derived/housing.json",
+      "sha256": "3839430f4139716559eec7945ae134400ad58b9ce28603ca73e1e405a0e1c726"
+    },
+    {
+      "path": "infra/immigration-fiscal/receipt_side_long_run_2026_09_28/items.cjs",
+      "sha256": "b8a88b3aa38f0990ca2c3f1b5ef51d42b306ead1894d2d29b5816909dd7aec23"
+    },
+    {
+      "path": "infra/immigration-fiscal/roads_mileage_key_2026_09_29/derived/inputs.json",
+      "sha256": "6ae66b18aab6d9ee5f88c45af6fc1d34ffc793ddbc7b7784e2aeca0b0eb0c1c5"
+    },
+    {
+      "path": "infra/immigration-fiscal/roads_mileage_key_2026_09_29/derived/summary.json",
+      "sha256": "c700869ed1210f852e2f01a387e5bf06951c0634a30410c1fccc21b1b8993928"
+    },
+    {
+      "path": "infra/immigration-fiscal/row4_class_2026_09_29/derived/price_rekeys.json",
+      "sha256": "4a852c514d247f72d71e052d1cac216ca71798f46c0f45a25c8b56e8677b9612"
+    },
+    {
+      "path": "infra/immigration-fiscal/row4_class_2026_09_29/derived/row4_oct07.json",
+      "sha256": "2cb0ae58d4ab09943719ce7525ad0b82dd1c3631b696aff8470e688c99e3d70e"
+    },
+    {
+      "path": "infra/immigration-fiscal/row4_class_2026_09_29/derived/row4_oct07_inputs.json",
+      "sha256": "0fe2a4673cb1dd64db64a28212f1d641669750964dc11699c913636455e2c369"
+    },
+    {
+      "path": "infra/immigration-fiscal/row4_class_2026_09_29/derived/row4_state_index.json",
+      "sha256": "45efd3718d780f1e2a8c6bc9c951b51b18a34825eb7cf3efd8cd5e17fd157b75"
+    },
+    {
+      "path": "infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/derived/engine_school_lines.csv",
+      "sha256": "6603360ec15a6421cb0dbe612dfd238569e40f05ed780198cbd1097565072cd8"
+    },
+    {
+      "path": "infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/derived/school_key_variants.json",
+      "sha256": "dc6b55bae0f9d234dba49d30ea31574b9aa685b92338541edecd7c62f09f15a5"
+    },
+    {
+      "path": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/congestion_bridge.csv",
+      "sha256": "85418bad0df5d3306c69dd7e1bf05e04a15bfd134bd60b658eda452105353926"
+    },
+    {
+      "path": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/net_change.json",
+      "sha256": "f6bc46a8b15b0b5ba64e1491df10669d90796d9713d25f380c944905f16f2660"
+    },
+    {
+      "path": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+      "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c"
+    },
+    {
+      "path": "infra/immigration-fiscal/spending_keys_r5_2026_10_15/derived/item13.json",
+      "sha256": "4b4635c75dc42f3cfada401a6e257f96d61355df8a7a4702bea0554febf56bbb"
+    },
+    {
+      "path": "infra/immigration-fiscal/spending_keys_r5_2026_10_15/derived/item14.json",
+      "sha256": "9bd69d301b800efa291465349c64e6c1e00bfca7bcbd730569f37a83bd735c37"
+    },
+    {
+      "path": "infra/immigration-fiscal/spending_keys_r5_2026_10_15/derived/item15.json",
+      "sha256": "f3f4ffe6aa39b985ddf7899dfcaaea2ca8000bf06058727de1af21f9da457de0"
+    },
+    {
+      "path": "infra/immigration-fiscal/spending_keys_r5_2026_10_15/derived/item21.json",
+      "sha256": "7d26a46cb18dec14819bd7d9be2bf260c6eee68f857488c0f02f23e8a0672b1d"
+    },
+    {
+      "path": "infra/immigration-fiscal/spending_keys_r5_2026_10_15/derived/item21_case_changes.json",
+      "sha256": "e47508d9fb84e633dd11bf692b1897babd2ad01d8a4cb61c9883a1c9a984902c"
+    },
+    {
+      "path": "infra/immigration-fiscal/spending_keys_r5_2026_10_15/derived/item21_coverage.json",
+      "sha256": "b0c81ec47cb2a5708d944fff0691fcd77a1bb21597af967d9c7bf6cc93a5abf9"
+    },
+    {
+      "path": "infra/immigration-fiscal/spending_keys_r5_2026_10_15/derived/item21_v9_count_parts.csv",
+      "sha256": "d6ef71048f35da5a318739e12bade2dbc0c52d9c8640387c24c60b56c44bed41"
+    },
+    {
+      "path": "infra/immigration-fiscal/spending_keys_r5_2026_10_15/derived/item21_v9_coverage.json",
+      "sha256": "c2baf2ce5db3b56d6109593d5f7d21a94bd1a61eeded1890efb1c27aac546317"
+    },
+    {
+      "path": "infra/immigration-fiscal/spending_keys_r5_2026_10_15/health_item.cjs",
+      "sha256": "7df269198cd6a1038277313689597bdb097955daf48ecc930896dbfcc4133213"
+    },
+    {
+      "path": "infra/immigration-fiscal/spending_keys_r5_2026_10_15/item13_generations.cjs",
+      "sha256": "3f6419386982502510cb4314c39060bb6801542c7da0d2f14533f8ad5265b670"
+    },
+    {
+      "path": "infra/immigration-fiscal/spending_keys_r5_2026_10_15/items.cjs",
+      "sha256": "9e311dcb899279ff3fd768d41ac75cecfd83b837abf62dcd0fe10146ac8c3be2"
+    },
+    {
+      "path": "infra/immigration-fiscal/state_priced_services_2026_09_29/derived/corrections.csv",
+      "sha256": "faa2f7692b19e59d78db16eddf60d612839c501712819752e22441be42a2bde7"
+    },
+    {
+      "path": "infra/immigration-fiscal/state_priced_services_2026_09_29/derived/net_state_correction.csv",
+      "sha256": "934e350f41515bed8a242676958caecdac59f08d14cff9d801c5908278e12928"
+    },
+    {
+      "path": "infra/immigration-fiscal/state_priced_services_2026_09_29/derived/receipts_corrections.csv",
+      "sha256": "4c28816fa601c25fc5d868db6be111ef12b96678b849b7672c31450f89184266"
+    },
+    {
+      "path": "infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/translation_inputs.json",
+      "sha256": "a701d8e4d695ec163b3e04ded5357fbde2332881e6d3fe0dd55ca63b5dffd82e"
+    },
+    {
+      "path": "infra/immigration-fiscal/uncompensated_care_2026_09_23/derived/summary.json",
+      "sha256": "29630bef97d4d37566e904a23a2ee8cd0b52144a341f11817b02ba5ddc8749b6"
+    },
+    {
+      "path": "infra/immigration-fiscal/union_completion_2026_10_14/_cache/cash/oct14/lines.json",
+      "sha256": "3df4a72d2ee21eb8d6ba1e3be42ec00f441d0b13dd43b6a3b422c10f64e3dd30"
+    },
+    {
+      "path": "infra/immigration-fiscal/union_completion_2026_10_14/_cache/set/oct14/lines.json",
+      "sha256": "00a5d68278ca8fb2d99ed2db3197c3eddf5d4fe338a03cb8f8f7dc8840462d38"
+    },
+    {
+      "path": "infra/immigration-fiscal/union_completion_2026_10_14/added_band_prices.cjs",
+      "sha256": "6357fef6dc403321ec8d5643592f52579ea64a7dce744ce5754f0c58b25c8e2e"
+    },
+    {
+      "path": "infra/immigration-fiscal/union_completion_2026_10_14/derived/added_band_prices.json",
+      "sha256": "58ae4a2eb332936e9285a1aacd38269bd33664722ec9dbe43e8f559f9bf58fcc"
+    },
+    {
+      "path": "infra/immigration-fiscal/union_completion_2026_10_14/derived/candidate.json",
+      "sha256": "18c0db135d22a96a418d549e85d74feba402928e248da03ba8ca7c3dbd50170e"
+    },
+    {
+      "path": "infra/immigration-fiscal/union_completion_2026_10_14/derived/count_replicates.json",
+      "sha256": "b9eb3c27338b98f7677358ce2641d09146987186cae3cdda62145b887e052385"
+    },
+    {
+      "path": "infra/immigration-fiscal/union_completion_2026_10_14/derived/counts.csv",
+      "sha256": "68c8d1bd1c986bb538110c7cad57fbb010c94d8949a59042682c7b40f3b1c408"
+    },
+    {
+      "path": "infra/immigration-fiscal/union_completion_2026_10_14/derived/credits_interaction.json",
+      "sha256": "49e4be015ce2e58284d84b885196997b380e4420162601acf77dd586a794880f"
+    },
+    {
+      "path": "infra/immigration-fiscal/union_completion_2026_10_14/derived/pricing_lines.csv",
+      "sha256": "9b0f9c15c44f02489e81d2549bd13a63238e922cb072e9b1bc693f0335bc6780"
+    },
+    {
+      "path": "infra/immigration-fiscal/user_fee_allocation_2026_10_07/case.cjs",
+      "sha256": "39c66c6bf4c4fb70ac2c2da8dcf88553813cd9548132818caf7c4b69a1d69cc8"
+    },
+    {
+      "path": "infra/immigration-fiscal/user_fee_allocation_2026_10_07/derived/case_oct05.csv",
+      "sha256": "88e6496741dc67c64726815bb98c94651d70bbb562e488448a77107a694186f5"
+    },
+    {
+      "path": "infra/immigration-fiscal/user_fee_allocation_2026_10_07/derived/case_oct05.json",
+      "sha256": "21a56862dfcc1bce23b1364b277b558c0a8b3d0c6166e0288caf2fdf1b93ccc0"
+    },
+    {
+      "path": "infra/immigration-fiscal/user_fee_allocation_2026_10_07/derived/fee_lines.json",
+      "sha256": "fd6f4bf5fe6b00392925f14e312eeaccebced8d4460670f016c7afd1a1d86977"
+    },
+    {
+      "path": "infra/immigration-fiscal/user_fee_allocation_2026_10_07/fee_lines.py",
+      "sha256": "409efe8ffde32cddaf2be1f6e9ee24696fb802c6f652fba6f126b7a2e8de79fb"
+    },
+    {
+      "path": "infra/immigration-fiscal/white_replacement_2026_09_28/derived/limits_oct07.csv",
+      "sha256": "645102daac73e764f954cd3c68030b5a134ad7d75ade82df6a7b5a5700fcb06d"
+    }
+  ]
+}

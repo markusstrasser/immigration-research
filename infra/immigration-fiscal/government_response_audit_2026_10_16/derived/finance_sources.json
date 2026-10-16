@@ -1,0 +1,27 @@
+{
+  "outputs_sha256": {
+    "finance_composition.csv": "390b148c2e8765814b92b2c3b54bd0fc4c80af1a2fff59afbfde4ce70a027a4b",
+    "finance_fits.csv": "611ea28f28834c9e1737ffb33695994cbc7b343db8935fdeaf9d2fa00999f3ca",
+    "finance_mapping_checks.json": "038f7fee726325367205494e08108d6f381715a38d40eed14b26eba434a4d691",
+    "finance_method.json": "b77e1c61dcb577278d0ab32a82a2667358e37b91bc03c02c34abf38a8a72af03",
+    "finance_states.csv": "50a02edc32dd1adba2a73f25d68d4d5e6ca99273dd40f6d4f15c56733ced89c4"
+  },
+  "script_sha256": "4b6da8faf9c69007394864ad7da80492231469a01904e3e4627ed5ba1625bfc0",
+  "source_files": [
+    {
+      "path": "infra/immigration-fiscal/assumption_explorer_2026_09_21/_cache/slf2022.xlsx",
+      "sha256": "4dd123c5ad520e33d9692f622d389a020e2d3a7e6e782763663854dd84643b9b",
+      "source": "census_finance"
+    },
+    {
+      "path": "sources/immigration-fiscal/data/external/census_popest_2024/NST-EST2024-ALLDATA.csv",
+      "sha256": "b8b50bd345d8a5f33d5c8a28c95aeaa0a50971356f000d9b48276a65fd9022a7",
+      "source": "population"
+    },
+    {
+      "path": "sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx",
+      "sha256": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+      "source": "bea"
+    }
+  ]
+}

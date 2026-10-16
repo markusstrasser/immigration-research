@@ -1,0 +1,10 @@
+{
+  "accounting_basis": "BEA3.16 current components are kept distinct from BEA3.15.5 consumption+gross investment. No finite-removal transform is computed here; parent audit owns full-case sensitivity.",
+  "baskets": "Full Census lines106-109; same basket excluding line107 judiciary; financial administration line106 alone. The four function totals do not separate current operations from capital outlay.",
+  "composition": "BEA Table3.16 lines3+4+6 total; federal components44+45+47. Residual = national minus federal component by component; this is net of grants, not the literal published state/local sum. Low=(residual_total*admin_beta + federal_tax_financial*financial_beta)/total; federal executive/legislative and federal other are fixed at zero response. High=admin_beta for whole pool. This is an explicit assumed allocation rule, not a measured causal elasticity. Applied to both admin baskets in every sample/weight specification.",
+  "models": "Log amount on intercept and log population. All50 states, lower48, and 50states+DC. Equal-state and population weights. No trimming or winsorization. Every fit retained.",
+  "purpose": "Descriptive reconstruction of one administration-population response link; not causal identification of population removal.",
+  "source_units": "Census FY2022 direct expenditures by function, thousands of dollars; Census July2022 population, persons; BEA 2024 function amounts, millions of dollars.",
+  "uncertainty": "Independent WLS sandwich HC3 with t(N-2) intervals. Census source is a census, not a sample. Intervals describe regression/model uncertainty and omit causal/transport uncertainty.",
+  "validation": "Pin hashes, validate workbook titles/header blocks/line labels/unique states, population and finance national sums, state+local component identities, BEA function and federal+state/local-grant identities, and independent implementation tests."
+}

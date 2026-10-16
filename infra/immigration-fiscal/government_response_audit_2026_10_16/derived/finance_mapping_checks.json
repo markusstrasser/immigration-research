@@ -1,0 +1,3371 @@
+{
+  "bea": {
+    "checks": [
+      {
+        "identity": "BEA GPS noninterest components plus interest minus GPS",
+        "residual": 1.0,
+        "tolerance": 3
+      },
+      {
+        "identity": "BEA federal plus literal SL minus grants minus government noninterest",
+        "residual": 0.0,
+        "tolerance": 3
+      },
+      {
+        "identity": "BEA consumption/investment federal plus SL minus national",
+        "residual": 0.0,
+        "tolerance": 2
+      }
+    ],
+    "consumption_and_gross_investment_gps": {
+      "federal": 113333.0,
+      "national": 464332.0,
+      "state_local": 350999.0
+    },
+    "current_federal_components": {
+      "executive_legislative": 137887.0,
+      "other": 0.0,
+      "tax_financial": 36588.0
+    },
+    "current_gps_federal_grants_to_state_local": 4362.0,
+    "current_gps_interest": 1397636.0,
+    "current_gps_total": 1873448.0,
+    "current_national_components": {
+      "executive_legislative": 192820.0,
+      "other": 168676.0,
+      "tax_financial": 114317.0
+    },
+    "current_national_minus_federal_components": {
+      "executive_legislative": 54933.0,
+      "other": 168676.0,
+      "tax_financial": 77729.0
+    },
+    "current_noninterest_component_total": 475813.0,
+    "current_published_state_local_components": {
+      "executive_legislative": 59295.0,
+      "other": 168676.0,
+      "tax_financial": 77729.0
+    },
+    "mappings": [
+      {
+        "cell": "BQ11",
+        "label": "Executive and legislative",
+        "line": 3,
+        "million_dollars": 192820.0,
+        "series": "G16003",
+        "sheet": "T31600-A",
+        "year": 2024
+      },
+      {
+        "cell": "BQ52",
+        "label": "Executive and legislative",
+        "line": 44,
+        "million_dollars": 137887.0,
+        "series": "G16042",
+        "sheet": "T31600-A",
+        "year": 2024
+      },
+      {
+        "cell": "BQ90",
+        "label": "Executive and legislative",
+        "line": 82,
+        "million_dollars": 59295.0,
+        "series": "G16080",
+        "sheet": "T31600-A",
+        "year": 2024
+      },
+      {
+        "cell": "BQ12",
+        "label": "Tax collection and financial management",
+        "line": 4,
+        "million_dollars": 114317.0,
+        "series": "G16004",
+        "sheet": "T31600-A",
+        "year": 2024
+      },
+      {
+        "cell": "BQ53",
+        "label": "Tax collection and financial management",
+        "line": 45,
+        "million_dollars": 36588.0,
+        "series": "G16043",
+        "sheet": "T31600-A",
+        "year": 2024
+      },
+      {
+        "cell": "BQ91",
+        "label": "Tax collection and financial management",
+        "line": 83,
+        "million_dollars": 77729.0,
+        "series": "G16081",
+        "sheet": "T31600-A",
+        "year": 2024
+      },
+      {
+        "cell": "BQ14",
+        "label": "Other\\3\\",
+        "line": 6,
+        "million_dollars": 168676.0,
+        "series": "G16006",
+        "sheet": "T31600-A",
+        "year": 2024
+      },
+      {
+        "cell": "BQ55",
+        "label": "Other\\6\\",
+        "line": 47,
+        "million_dollars": 0.0,
+        "series": "G16045",
+        "sheet": "T31600-A",
+        "year": 2024
+      },
+      {
+        "cell": "BQ93",
+        "label": "Other\\7\\",
+        "line": 85,
+        "million_dollars": 168676.0,
+        "series": "G16083",
+        "sheet": "T31600-A",
+        "year": 2024
+      },
+      {
+        "cell": "BQ10",
+        "label": "General public service",
+        "line": 2,
+        "million_dollars": 1873448.0,
+        "series": "G16002",
+        "sheet": "T31600-A",
+        "year": 2024
+      },
+      {
+        "cell": "BQ13",
+        "label": "Interest payments\\2\\",
+        "line": 5,
+        "million_dollars": 1397636.0,
+        "series": "G16005",
+        "sheet": "T31600-A",
+        "year": 2024
+      },
+      {
+        "cell": "BQ70",
+        "label": "General public service",
+        "line": 58,
+        "million_dollars": 4362.0,
+        "series": "G17056",
+        "sheet": "T31700-A",
+        "year": 2024
+      },
+      {
+        "cell": "BQ10",
+        "label": "General public service",
+        "line": 2,
+        "million_dollars": 464332.0,
+        "series": "W575RC",
+        "sheet": "T31505-A",
+        "year": 2024
+      },
+      {
+        "cell": "BQ50",
+        "label": "General public service",
+        "line": 42,
+        "million_dollars": 113333.0,
+        "series": "W611RC",
+        "sheet": "T31505-A",
+        "year": 2024
+      },
+      {
+        "cell": "BQ87",
+        "label": "General public service",
+        "line": 79,
+        "million_dollars": 350999.0,
+        "series": "W646RC",
+        "sheet": "T31505-A",
+        "year": 2024
+      }
+    ],
+    "note": "National-minus-federal residual is net of federal grants. Current is not consumption plus gross investment. Low/high mix is a scenario assumption, not an identified response.",
+    "units": "million dollars",
+    "year": 2024
+  },
+  "census": {
+    "current_only_admin_available": false,
+    "definition": "Lines106-109 are direct expenditure by function, including current operations and capital. Table1 does not report separate administration capital outlay.",
+    "mappings": [
+      {
+        "combined_cell": "C140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "United States Total",
+        "local_cell": "F140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "E140"
+      },
+      {
+        "combined_cell": "C141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "United States Total",
+        "local_cell": "F141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "E141"
+      },
+      {
+        "combined_cell": "C142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "United States Total",
+        "local_cell": "F142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "E142"
+      },
+      {
+        "combined_cell": "C143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "United States Total",
+        "local_cell": "F143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "E143"
+      },
+      {
+        "combined_cell": "H140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Alabama",
+        "local_cell": "K140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "J140"
+      },
+      {
+        "combined_cell": "H141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Alabama",
+        "local_cell": "K141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "J141"
+      },
+      {
+        "combined_cell": "H142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Alabama",
+        "local_cell": "K142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "J142"
+      },
+      {
+        "combined_cell": "H143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Alabama",
+        "local_cell": "K143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "J143"
+      },
+      {
+        "combined_cell": "M140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Alaska",
+        "local_cell": "P140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "O140"
+      },
+      {
+        "combined_cell": "M141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Alaska",
+        "local_cell": "P141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "O141"
+      },
+      {
+        "combined_cell": "M142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Alaska",
+        "local_cell": "P142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "O142"
+      },
+      {
+        "combined_cell": "M143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Alaska",
+        "local_cell": "P143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "O143"
+      },
+      {
+        "combined_cell": "R140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Arizona",
+        "local_cell": "U140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "T140"
+      },
+      {
+        "combined_cell": "R141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Arizona",
+        "local_cell": "U141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "T141"
+      },
+      {
+        "combined_cell": "R142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Arizona",
+        "local_cell": "U142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "T142"
+      },
+      {
+        "combined_cell": "R143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Arizona",
+        "local_cell": "U143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "T143"
+      },
+      {
+        "combined_cell": "W140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Arkansas",
+        "local_cell": "Z140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "Y140"
+      },
+      {
+        "combined_cell": "W141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Arkansas",
+        "local_cell": "Z141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "Y141"
+      },
+      {
+        "combined_cell": "W142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Arkansas",
+        "local_cell": "Z142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "Y142"
+      },
+      {
+        "combined_cell": "W143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Arkansas",
+        "local_cell": "Z143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "Y143"
+      },
+      {
+        "combined_cell": "AB140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "California",
+        "local_cell": "AE140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "AD140"
+      },
+      {
+        "combined_cell": "AB141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "California",
+        "local_cell": "AE141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "AD141"
+      },
+      {
+        "combined_cell": "AB142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "California",
+        "local_cell": "AE142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "AD142"
+      },
+      {
+        "combined_cell": "AB143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "California",
+        "local_cell": "AE143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "AD143"
+      },
+      {
+        "combined_cell": "AG140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Colorado",
+        "local_cell": "AJ140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "AI140"
+      },
+      {
+        "combined_cell": "AG141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Colorado",
+        "local_cell": "AJ141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "AI141"
+      },
+      {
+        "combined_cell": "AG142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Colorado",
+        "local_cell": "AJ142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "AI142"
+      },
+      {
+        "combined_cell": "AG143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Colorado",
+        "local_cell": "AJ143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "AI143"
+      },
+      {
+        "combined_cell": "AL140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Connecticut",
+        "local_cell": "AO140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "AN140"
+      },
+      {
+        "combined_cell": "AL141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Connecticut",
+        "local_cell": "AO141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "AN141"
+      },
+      {
+        "combined_cell": "AL142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Connecticut",
+        "local_cell": "AO142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "AN142"
+      },
+      {
+        "combined_cell": "AL143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Connecticut",
+        "local_cell": "AO143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "AN143"
+      },
+      {
+        "combined_cell": "AQ140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Delaware",
+        "local_cell": "AT140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "AS140"
+      },
+      {
+        "combined_cell": "AQ141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Delaware",
+        "local_cell": "AT141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "AS141"
+      },
+      {
+        "combined_cell": "AQ142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Delaware",
+        "local_cell": "AT142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "AS142"
+      },
+      {
+        "combined_cell": "AQ143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Delaware",
+        "local_cell": "AT143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "AS143"
+      },
+      {
+        "combined_cell": "AV140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "District of Columbia",
+        "local_cell": "AY140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "AX140"
+      },
+      {
+        "combined_cell": "AV141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "District of Columbia",
+        "local_cell": "AY141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "AX141"
+      },
+      {
+        "combined_cell": "AV142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "District of Columbia",
+        "local_cell": "AY142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "AX142"
+      },
+      {
+        "combined_cell": "AV143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "District of Columbia",
+        "local_cell": "AY143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "AX143"
+      },
+      {
+        "combined_cell": "BA140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Florida",
+        "local_cell": "BD140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "BC140"
+      },
+      {
+        "combined_cell": "BA141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Florida",
+        "local_cell": "BD141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "BC141"
+      },
+      {
+        "combined_cell": "BA142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Florida",
+        "local_cell": "BD142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "BC142"
+      },
+      {
+        "combined_cell": "BA143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Florida",
+        "local_cell": "BD143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "BC143"
+      },
+      {
+        "combined_cell": "BF140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Georgia",
+        "local_cell": "BI140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "BH140"
+      },
+      {
+        "combined_cell": "BF141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Georgia",
+        "local_cell": "BI141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "BH141"
+      },
+      {
+        "combined_cell": "BF142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Georgia",
+        "local_cell": "BI142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "BH142"
+      },
+      {
+        "combined_cell": "BF143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Georgia",
+        "local_cell": "BI143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "BH143"
+      },
+      {
+        "combined_cell": "BK140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Hawaii",
+        "local_cell": "BN140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "BM140"
+      },
+      {
+        "combined_cell": "BK141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Hawaii",
+        "local_cell": "BN141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "BM141"
+      },
+      {
+        "combined_cell": "BK142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Hawaii",
+        "local_cell": "BN142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "BM142"
+      },
+      {
+        "combined_cell": "BK143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Hawaii",
+        "local_cell": "BN143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "BM143"
+      },
+      {
+        "combined_cell": "BP140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Idaho",
+        "local_cell": "BS140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "BR140"
+      },
+      {
+        "combined_cell": "BP141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Idaho",
+        "local_cell": "BS141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "BR141"
+      },
+      {
+        "combined_cell": "BP142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Idaho",
+        "local_cell": "BS142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "BR142"
+      },
+      {
+        "combined_cell": "BP143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Idaho",
+        "local_cell": "BS143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "BR143"
+      },
+      {
+        "combined_cell": "BU140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Illinois",
+        "local_cell": "BX140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "BW140"
+      },
+      {
+        "combined_cell": "BU141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Illinois",
+        "local_cell": "BX141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "BW141"
+      },
+      {
+        "combined_cell": "BU142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Illinois",
+        "local_cell": "BX142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "BW142"
+      },
+      {
+        "combined_cell": "BU143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Illinois",
+        "local_cell": "BX143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "BW143"
+      },
+      {
+        "combined_cell": "BZ140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Indiana",
+        "local_cell": "CC140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "CB140"
+      },
+      {
+        "combined_cell": "BZ141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Indiana",
+        "local_cell": "CC141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "CB141"
+      },
+      {
+        "combined_cell": "BZ142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Indiana",
+        "local_cell": "CC142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "CB142"
+      },
+      {
+        "combined_cell": "BZ143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Indiana",
+        "local_cell": "CC143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "CB143"
+      },
+      {
+        "combined_cell": "CE140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Iowa",
+        "local_cell": "CH140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "CG140"
+      },
+      {
+        "combined_cell": "CE141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Iowa",
+        "local_cell": "CH141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "CG141"
+      },
+      {
+        "combined_cell": "CE142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Iowa",
+        "local_cell": "CH142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "CG142"
+      },
+      {
+        "combined_cell": "CE143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Iowa",
+        "local_cell": "CH143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "CG143"
+      },
+      {
+        "combined_cell": "CJ140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Kansas",
+        "local_cell": "CM140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "CL140"
+      },
+      {
+        "combined_cell": "CJ141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Kansas",
+        "local_cell": "CM141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "CL141"
+      },
+      {
+        "combined_cell": "CJ142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Kansas",
+        "local_cell": "CM142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "CL142"
+      },
+      {
+        "combined_cell": "CJ143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Kansas",
+        "local_cell": "CM143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "CL143"
+      },
+      {
+        "combined_cell": "CO140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Kentucky",
+        "local_cell": "CR140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "CQ140"
+      },
+      {
+        "combined_cell": "CO141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Kentucky",
+        "local_cell": "CR141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "CQ141"
+      },
+      {
+        "combined_cell": "CO142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Kentucky",
+        "local_cell": "CR142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "CQ142"
+      },
+      {
+        "combined_cell": "CO143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Kentucky",
+        "local_cell": "CR143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "CQ143"
+      },
+      {
+        "combined_cell": "CT140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Louisiana",
+        "local_cell": "CW140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "CV140"
+      },
+      {
+        "combined_cell": "CT141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Louisiana",
+        "local_cell": "CW141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "CV141"
+      },
+      {
+        "combined_cell": "CT142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Louisiana",
+        "local_cell": "CW142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "CV142"
+      },
+      {
+        "combined_cell": "CT143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Louisiana",
+        "local_cell": "CW143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "CV143"
+      },
+      {
+        "combined_cell": "CY140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Maine",
+        "local_cell": "DB140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "DA140"
+      },
+      {
+        "combined_cell": "CY141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Maine",
+        "local_cell": "DB141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "DA141"
+      },
+      {
+        "combined_cell": "CY142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Maine",
+        "local_cell": "DB142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "DA142"
+      },
+      {
+        "combined_cell": "CY143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Maine",
+        "local_cell": "DB143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "DA143"
+      },
+      {
+        "combined_cell": "DD140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Maryland",
+        "local_cell": "DG140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "DF140"
+      },
+      {
+        "combined_cell": "DD141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Maryland",
+        "local_cell": "DG141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "DF141"
+      },
+      {
+        "combined_cell": "DD142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Maryland",
+        "local_cell": "DG142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "DF142"
+      },
+      {
+        "combined_cell": "DD143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Maryland",
+        "local_cell": "DG143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "DF143"
+      },
+      {
+        "combined_cell": "DI140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Massachusetts",
+        "local_cell": "DL140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "DK140"
+      },
+      {
+        "combined_cell": "DI141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Massachusetts",
+        "local_cell": "DL141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "DK141"
+      },
+      {
+        "combined_cell": "DI142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Massachusetts",
+        "local_cell": "DL142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "DK142"
+      },
+      {
+        "combined_cell": "DI143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Massachusetts",
+        "local_cell": "DL143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "DK143"
+      },
+      {
+        "combined_cell": "DN140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Michigan",
+        "local_cell": "DQ140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "DP140"
+      },
+      {
+        "combined_cell": "DN141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Michigan",
+        "local_cell": "DQ141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "DP141"
+      },
+      {
+        "combined_cell": "DN142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Michigan",
+        "local_cell": "DQ142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "DP142"
+      },
+      {
+        "combined_cell": "DN143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Michigan",
+        "local_cell": "DQ143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "DP143"
+      },
+      {
+        "combined_cell": "DS140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Minnesota",
+        "local_cell": "DV140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "DU140"
+      },
+      {
+        "combined_cell": "DS141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Minnesota",
+        "local_cell": "DV141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "DU141"
+      },
+      {
+        "combined_cell": "DS142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Minnesota",
+        "local_cell": "DV142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "DU142"
+      },
+      {
+        "combined_cell": "DS143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Minnesota",
+        "local_cell": "DV143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "DU143"
+      },
+      {
+        "combined_cell": "DX140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Mississippi",
+        "local_cell": "EA140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "DZ140"
+      },
+      {
+        "combined_cell": "DX141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Mississippi",
+        "local_cell": "EA141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "DZ141"
+      },
+      {
+        "combined_cell": "DX142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Mississippi",
+        "local_cell": "EA142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "DZ142"
+      },
+      {
+        "combined_cell": "DX143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Mississippi",
+        "local_cell": "EA143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "DZ143"
+      },
+      {
+        "combined_cell": "EC140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Missouri",
+        "local_cell": "EF140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "EE140"
+      },
+      {
+        "combined_cell": "EC141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Missouri",
+        "local_cell": "EF141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "EE141"
+      },
+      {
+        "combined_cell": "EC142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Missouri",
+        "local_cell": "EF142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "EE142"
+      },
+      {
+        "combined_cell": "EC143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Missouri",
+        "local_cell": "EF143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "EE143"
+      },
+      {
+        "combined_cell": "EH140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Montana",
+        "local_cell": "EK140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "EJ140"
+      },
+      {
+        "combined_cell": "EH141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Montana",
+        "local_cell": "EK141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "EJ141"
+      },
+      {
+        "combined_cell": "EH142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Montana",
+        "local_cell": "EK142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "EJ142"
+      },
+      {
+        "combined_cell": "EH143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Montana",
+        "local_cell": "EK143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "EJ143"
+      },
+      {
+        "combined_cell": "EM140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Nebraska",
+        "local_cell": "EP140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "EO140"
+      },
+      {
+        "combined_cell": "EM141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Nebraska",
+        "local_cell": "EP141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "EO141"
+      },
+      {
+        "combined_cell": "EM142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Nebraska",
+        "local_cell": "EP142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "EO142"
+      },
+      {
+        "combined_cell": "EM143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Nebraska",
+        "local_cell": "EP143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "EO143"
+      },
+      {
+        "combined_cell": "ER140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Nevada",
+        "local_cell": "EU140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "ET140"
+      },
+      {
+        "combined_cell": "ER141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Nevada",
+        "local_cell": "EU141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "ET141"
+      },
+      {
+        "combined_cell": "ER142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Nevada",
+        "local_cell": "EU142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "ET142"
+      },
+      {
+        "combined_cell": "ER143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Nevada",
+        "local_cell": "EU143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "ET143"
+      },
+      {
+        "combined_cell": "EW140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "New Hampshire",
+        "local_cell": "EZ140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "EY140"
+      },
+      {
+        "combined_cell": "EW141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "New Hampshire",
+        "local_cell": "EZ141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "EY141"
+      },
+      {
+        "combined_cell": "EW142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "New Hampshire",
+        "local_cell": "EZ142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "EY142"
+      },
+      {
+        "combined_cell": "EW143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "New Hampshire",
+        "local_cell": "EZ143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "EY143"
+      },
+      {
+        "combined_cell": "FB140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "New Jersey",
+        "local_cell": "FE140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "FD140"
+      },
+      {
+        "combined_cell": "FB141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "New Jersey",
+        "local_cell": "FE141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "FD141"
+      },
+      {
+        "combined_cell": "FB142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "New Jersey",
+        "local_cell": "FE142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "FD142"
+      },
+      {
+        "combined_cell": "FB143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "New Jersey",
+        "local_cell": "FE143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "FD143"
+      },
+      {
+        "combined_cell": "FG140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "New Mexico",
+        "local_cell": "FJ140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "FI140"
+      },
+      {
+        "combined_cell": "FG141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "New Mexico",
+        "local_cell": "FJ141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "FI141"
+      },
+      {
+        "combined_cell": "FG142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "New Mexico",
+        "local_cell": "FJ142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "FI142"
+      },
+      {
+        "combined_cell": "FG143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "New Mexico",
+        "local_cell": "FJ143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "FI143"
+      },
+      {
+        "combined_cell": "FL140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "New York",
+        "local_cell": "FO140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "FN140"
+      },
+      {
+        "combined_cell": "FL141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "New York",
+        "local_cell": "FO141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "FN141"
+      },
+      {
+        "combined_cell": "FL142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "New York",
+        "local_cell": "FO142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "FN142"
+      },
+      {
+        "combined_cell": "FL143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "New York",
+        "local_cell": "FO143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "FN143"
+      },
+      {
+        "combined_cell": "FQ140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "North Carolina",
+        "local_cell": "FT140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "FS140"
+      },
+      {
+        "combined_cell": "FQ141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "North Carolina",
+        "local_cell": "FT141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "FS141"
+      },
+      {
+        "combined_cell": "FQ142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "North Carolina",
+        "local_cell": "FT142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "FS142"
+      },
+      {
+        "combined_cell": "FQ143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "North Carolina",
+        "local_cell": "FT143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "FS143"
+      },
+      {
+        "combined_cell": "FV140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "North Dakota",
+        "local_cell": "FY140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "FX140"
+      },
+      {
+        "combined_cell": "FV141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "North Dakota",
+        "local_cell": "FY141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "FX141"
+      },
+      {
+        "combined_cell": "FV142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "North Dakota",
+        "local_cell": "FY142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "FX142"
+      },
+      {
+        "combined_cell": "FV143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "North Dakota",
+        "local_cell": "FY143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "FX143"
+      },
+      {
+        "combined_cell": "GA140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Ohio",
+        "local_cell": "GD140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "GC140"
+      },
+      {
+        "combined_cell": "GA141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Ohio",
+        "local_cell": "GD141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "GC141"
+      },
+      {
+        "combined_cell": "GA142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Ohio",
+        "local_cell": "GD142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "GC142"
+      },
+      {
+        "combined_cell": "GA143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Ohio",
+        "local_cell": "GD143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "GC143"
+      },
+      {
+        "combined_cell": "GF140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Oklahoma",
+        "local_cell": "GI140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "GH140"
+      },
+      {
+        "combined_cell": "GF141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Oklahoma",
+        "local_cell": "GI141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "GH141"
+      },
+      {
+        "combined_cell": "GF142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Oklahoma",
+        "local_cell": "GI142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "GH142"
+      },
+      {
+        "combined_cell": "GF143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Oklahoma",
+        "local_cell": "GI143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "GH143"
+      },
+      {
+        "combined_cell": "GK140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Oregon",
+        "local_cell": "GN140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "GM140"
+      },
+      {
+        "combined_cell": "GK141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Oregon",
+        "local_cell": "GN141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "GM141"
+      },
+      {
+        "combined_cell": "GK142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Oregon",
+        "local_cell": "GN142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "GM142"
+      },
+      {
+        "combined_cell": "GK143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Oregon",
+        "local_cell": "GN143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "GM143"
+      },
+      {
+        "combined_cell": "GP140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Pennsylvania",
+        "local_cell": "GS140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "GR140"
+      },
+      {
+        "combined_cell": "GP141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Pennsylvania",
+        "local_cell": "GS141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "GR141"
+      },
+      {
+        "combined_cell": "GP142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Pennsylvania",
+        "local_cell": "GS142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "GR142"
+      },
+      {
+        "combined_cell": "GP143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Pennsylvania",
+        "local_cell": "GS143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "GR143"
+      },
+      {
+        "combined_cell": "GU140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Rhode Island",
+        "local_cell": "GX140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "GW140"
+      },
+      {
+        "combined_cell": "GU141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Rhode Island",
+        "local_cell": "GX141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "GW141"
+      },
+      {
+        "combined_cell": "GU142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Rhode Island",
+        "local_cell": "GX142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "GW142"
+      },
+      {
+        "combined_cell": "GU143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Rhode Island",
+        "local_cell": "GX143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "GW143"
+      },
+      {
+        "combined_cell": "GZ140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "South Carolina",
+        "local_cell": "HC140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "HB140"
+      },
+      {
+        "combined_cell": "GZ141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "South Carolina",
+        "local_cell": "HC141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "HB141"
+      },
+      {
+        "combined_cell": "GZ142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "South Carolina",
+        "local_cell": "HC142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "HB142"
+      },
+      {
+        "combined_cell": "GZ143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "South Carolina",
+        "local_cell": "HC143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "HB143"
+      },
+      {
+        "combined_cell": "HE140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "South Dakota",
+        "local_cell": "HH140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "HG140"
+      },
+      {
+        "combined_cell": "HE141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "South Dakota",
+        "local_cell": "HH141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "HG141"
+      },
+      {
+        "combined_cell": "HE142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "South Dakota",
+        "local_cell": "HH142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "HG142"
+      },
+      {
+        "combined_cell": "HE143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "South Dakota",
+        "local_cell": "HH143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "HG143"
+      },
+      {
+        "combined_cell": "HJ140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Tennessee",
+        "local_cell": "HM140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "HL140"
+      },
+      {
+        "combined_cell": "HJ141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Tennessee",
+        "local_cell": "HM141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "HL141"
+      },
+      {
+        "combined_cell": "HJ142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Tennessee",
+        "local_cell": "HM142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "HL142"
+      },
+      {
+        "combined_cell": "HJ143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Tennessee",
+        "local_cell": "HM143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "HL143"
+      },
+      {
+        "combined_cell": "HO140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Texas",
+        "local_cell": "HR140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "HQ140"
+      },
+      {
+        "combined_cell": "HO141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Texas",
+        "local_cell": "HR141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "HQ141"
+      },
+      {
+        "combined_cell": "HO142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Texas",
+        "local_cell": "HR142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "HQ142"
+      },
+      {
+        "combined_cell": "HO143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Texas",
+        "local_cell": "HR143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "HQ143"
+      },
+      {
+        "combined_cell": "HT140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Utah",
+        "local_cell": "HW140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "HV140"
+      },
+      {
+        "combined_cell": "HT141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Utah",
+        "local_cell": "HW141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "HV141"
+      },
+      {
+        "combined_cell": "HT142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Utah",
+        "local_cell": "HW142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "HV142"
+      },
+      {
+        "combined_cell": "HT143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Utah",
+        "local_cell": "HW143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "HV143"
+      },
+      {
+        "combined_cell": "HY140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Vermont",
+        "local_cell": "IB140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "IA140"
+      },
+      {
+        "combined_cell": "HY141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Vermont",
+        "local_cell": "IB141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "IA141"
+      },
+      {
+        "combined_cell": "HY142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Vermont",
+        "local_cell": "IB142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "IA142"
+      },
+      {
+        "combined_cell": "HY143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Vermont",
+        "local_cell": "IB143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "IA143"
+      },
+      {
+        "combined_cell": "ID140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Virginia",
+        "local_cell": "IG140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "IF140"
+      },
+      {
+        "combined_cell": "ID141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Virginia",
+        "local_cell": "IG141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "IF141"
+      },
+      {
+        "combined_cell": "ID142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Virginia",
+        "local_cell": "IG142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "IF142"
+      },
+      {
+        "combined_cell": "ID143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Virginia",
+        "local_cell": "IG143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "IF143"
+      },
+      {
+        "combined_cell": "II140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Washington",
+        "local_cell": "IL140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "IK140"
+      },
+      {
+        "combined_cell": "II141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Washington",
+        "local_cell": "IL141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "IK141"
+      },
+      {
+        "combined_cell": "II142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Washington",
+        "local_cell": "IL142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "IK142"
+      },
+      {
+        "combined_cell": "II143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Washington",
+        "local_cell": "IL143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "IK143"
+      },
+      {
+        "combined_cell": "IN140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "West Virginia",
+        "local_cell": "IQ140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "IP140"
+      },
+      {
+        "combined_cell": "IN141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "West Virginia",
+        "local_cell": "IQ141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "IP141"
+      },
+      {
+        "combined_cell": "IN142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "West Virginia",
+        "local_cell": "IQ142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "IP142"
+      },
+      {
+        "combined_cell": "IN143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "West Virginia",
+        "local_cell": "IQ143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "IP143"
+      },
+      {
+        "combined_cell": "IS140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Wisconsin",
+        "local_cell": "IV140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "IU140"
+      },
+      {
+        "combined_cell": "IS141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Wisconsin",
+        "local_cell": "IV141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "IU141"
+      },
+      {
+        "combined_cell": "IS142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Wisconsin",
+        "local_cell": "IV142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "IU142"
+      },
+      {
+        "combined_cell": "IS143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Wisconsin",
+        "local_cell": "IV143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "IU143"
+      },
+      {
+        "combined_cell": "IX140",
+        "excel_row": 140,
+        "function": "financial_administration",
+        "geography": "Wyoming",
+        "local_cell": "JA140",
+        "source_label": "Financial administration",
+        "source_line": 106,
+        "state_cell": "IZ140"
+      },
+      {
+        "combined_cell": "IX141",
+        "excel_row": 141,
+        "function": "judicial_and_legal",
+        "geography": "Wyoming",
+        "local_cell": "JA141",
+        "source_label": "Judicial and legal",
+        "source_line": 107,
+        "state_cell": "IZ141"
+      },
+      {
+        "combined_cell": "IX142",
+        "excel_row": 142,
+        "function": "general_public_buildings",
+        "geography": "Wyoming",
+        "local_cell": "JA142",
+        "source_label": "General public buildings",
+        "source_line": 108,
+        "state_cell": "IZ142"
+      },
+      {
+        "combined_cell": "IX143",
+        "excel_row": 143,
+        "function": "other_administration",
+        "geography": "Wyoming",
+        "local_cell": "JA143",
+        "source_label": "Other governmental administration",
+        "source_line": 109,
+        "state_cell": "IZ143"
+      }
+    ],
+    "national_thousand_dollars": {
+      "administration_with_judiciary": 192798161.0,
+      "administration_without_judiciary": 135975322.0,
+      "financial_administration": 70736763.0,
+      "general_public_buildings": 17950217.0,
+      "judicial_and_legal": 56822839.0,
+      "other_administration": 47288342.0
+    },
+    "notes": [
+      " and contain no confidential data. The data in this table come from a census of state and local governments and are not subject to sampling error. ",
+      "1 Duplicative intergovernmental transactions are excluded.",
+      "Abbreviations and symbols:  -  zero or rounds to zero;  (X)   not applicable",
+      "Note that the data released in the spreadsheets may not meet all the criteria outlined in the Census Bureau Standards for 60% Unit Response Rates.",
+      "For more information, please refer to the Response Rates documents on the Datasets and Tables pages of the website."
+    ],
+    "sheet": "2022_US_WY"
+  },
+  "finance_checks": [
+    {
+      "identity": "United States Total financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "United States Total judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "United States Total general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "United States Total other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Alabama financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Alabama judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Alabama general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Alabama other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Alaska financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Alaska judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Alaska general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Alaska other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Arizona financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Arizona judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Arizona general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Arizona other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Arkansas financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Arkansas judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Arkansas general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Arkansas other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "California financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "California judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "California general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "California other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Colorado financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Colorado judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Colorado general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Colorado other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Connecticut financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Connecticut judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Connecticut general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Connecticut other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Delaware financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Delaware judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Delaware general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Delaware other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "District of Columbia financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "District of Columbia judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "District of Columbia general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "District of Columbia other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Florida financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Florida judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Florida general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Florida other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Georgia financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Georgia judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Georgia general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Georgia other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Hawaii financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Hawaii judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Hawaii general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Hawaii other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Idaho financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Idaho judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Idaho general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Idaho other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Illinois financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Illinois judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Illinois general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Illinois other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Indiana financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Indiana judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Indiana general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Indiana other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Iowa financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Iowa judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Iowa general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Iowa other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Kansas financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Kansas judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Kansas general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Kansas other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Kentucky financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Kentucky judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Kentucky general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Kentucky other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Louisiana financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Louisiana judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Louisiana general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Louisiana other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Maine financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Maine judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Maine general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Maine other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Maryland financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Maryland judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Maryland general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Maryland other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Massachusetts financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Massachusetts judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Massachusetts general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Massachusetts other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Michigan financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Michigan judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Michigan general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Michigan other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Minnesota financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Minnesota judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Minnesota general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Minnesota other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Mississippi financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Mississippi judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Mississippi general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Mississippi other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Missouri financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Missouri judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Missouri general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Missouri other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Montana financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Montana judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Montana general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Montana other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Nebraska financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Nebraska judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Nebraska general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Nebraska other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Nevada financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Nevada judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Nevada general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Nevada other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New Hampshire financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New Hampshire judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New Hampshire general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New Hampshire other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New Jersey financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New Jersey judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New Jersey general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New Jersey other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New Mexico financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New Mexico judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New Mexico general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New Mexico other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New York financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New York judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New York general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "New York other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "North Carolina financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "North Carolina judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "North Carolina general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "North Carolina other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "North Dakota financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "North Dakota judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "North Dakota general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "North Dakota other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Ohio financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Ohio judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Ohio general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Ohio other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Oklahoma financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Oklahoma judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Oklahoma general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Oklahoma other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Oregon financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Oregon judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Oregon general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Oregon other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Pennsylvania financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Pennsylvania judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Pennsylvania general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Pennsylvania other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Rhode Island financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Rhode Island judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Rhode Island general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Rhode Island other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "South Carolina financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "South Carolina judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "South Carolina general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "South Carolina other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "South Dakota financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "South Dakota judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "South Dakota general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "South Dakota other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Tennessee financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Tennessee judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Tennessee general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Tennessee other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Texas financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Texas judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Texas general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Texas other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Utah financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Utah judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Utah general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Utah other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Vermont financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Vermont judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Vermont general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Vermont other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Virginia financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Virginia judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Virginia general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Virginia other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Washington financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Washington judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Washington general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Washington other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "West Virginia financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "West Virginia judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "West Virginia general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "West Virginia other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Wisconsin financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Wisconsin judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Wisconsin general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Wisconsin other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Wyoming financial_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Wyoming judicial_and_legal: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Wyoming general_public_buildings: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "Wyoming other_administration: combined minus state minus local",
+      "residual": 0.0,
+      "tolerance": 2
+    },
+    {
+      "identity": "51 states/DC sum minus national financial_administration",
+      "residual": 0.0,
+      "tolerance": 52
+    },
+    {
+      "identity": "51 states/DC sum minus national judicial_and_legal",
+      "residual": 0.0,
+      "tolerance": 52
+    },
+    {
+      "identity": "51 states/DC sum minus national general_public_buildings",
+      "residual": 0.0,
+      "tolerance": 52
+    },
+    {
+      "identity": "51 states/DC sum minus national other_administration",
+      "residual": 0.0,
+      "tolerance": 52
+    },
+    {
+      "identity": "51 states/DC sum minus national administration_with_judiciary",
+      "residual": 0.0,
+      "tolerance": 52
+    },
+    {
+      "identity": "51 states/DC sum minus national administration_without_judiciary",
+      "residual": 0.0,
+      "tolerance": 52
+    }
+  ],
+  "population_checks": [
+    {
+      "identity": "51 state/DC population sum minus United States",
+      "residual": 0,
+      "tolerance": 0
+    }
+  ]
+}

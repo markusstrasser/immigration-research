@@ -1,0 +1,2707 @@
+[
+  {
+    "identity": "51 state/DC population sum minus United States",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "EP0045 gov001 FT_EMP: states/DC minus US",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "EP0045 gov001 FT_PAY: states/DC minus US",
+    "residual": -5,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0045 gov001 PT_EMP: states/DC minus US",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "EP0045 gov001 PT_PAY: states/DC minus US",
+    "residual": 1,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0045 gov001 FTE: states/DC minus US",
+    "residual": 0,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0045 gov002 FT_EMP: states/DC minus US",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "EP0045 gov002 FT_PAY: states/DC minus US",
+    "residual": 0,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0045 gov002 PT_EMP: states/DC minus US",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "EP0045 gov002 PT_PAY: states/DC minus US",
+    "residual": 0,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0045 gov002 FTE: states/DC minus US",
+    "residual": 0,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0045 gov003 FT_EMP: states/DC minus US",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "EP0045 gov003 FT_PAY: states/DC minus US",
+    "residual": -5,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0045 gov003 PT_EMP: states/DC minus US",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "EP0045 gov003 PT_PAY: states/DC minus US",
+    "residual": 1,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0045 gov003 FTE: states/DC minus US",
+    "residual": 0,
+    "tolerance": 52
+  },
+  {
+    "identity": "01 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "01 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "01 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "01 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "01 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "02 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "02 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "02 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "02 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "02 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "04 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "04 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "04 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "04 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "04 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "05 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "05 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "05 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "05 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "05 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "06 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "06 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "06 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "06 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "06 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "08 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "08 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "08 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "08 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "08 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "09 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "09 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "09 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "09 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "09 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "10 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "10 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "10 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "10 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "10 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "11 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "11 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "11 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "11 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "11 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "12 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "12 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "12 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "12 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "12 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "13 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "13 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "13 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "13 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "13 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "15 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "15 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "15 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "15 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "15 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "16 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "16 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "16 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "16 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "16 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "17 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "17 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "17 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "17 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "17 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "18 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "18 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "18 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "18 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "18 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "19 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "19 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "19 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "19 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "19 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "20 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "20 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "20 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "20 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "20 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "21 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "21 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "21 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "21 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "21 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "22 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "22 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "22 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "22 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "22 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "23 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "23 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "23 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "23 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "23 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "24 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "24 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "24 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "24 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "24 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "25 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "25 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "25 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "25 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "25 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "26 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "26 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "26 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "26 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "26 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "27 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "27 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "27 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "27 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "27 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "28 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "28 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "28 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "28 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "28 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "29 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "29 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "29 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "29 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "29 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "30 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "30 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "30 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "30 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "30 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "31 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "31 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "31 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "31 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "31 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "32 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "32 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "32 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "32 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "32 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "33 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "33 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "33 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "33 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "33 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "34 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "34 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "34 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "34 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "34 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "35 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "35 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "35 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "35 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "35 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "36 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "36 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "36 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "36 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "36 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "37 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "37 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "37 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "37 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "37 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "38 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "38 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "38 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "38 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "38 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "39 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "39 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "39 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "39 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "39 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "40 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "40 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "40 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "40 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "40 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "41 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "41 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "41 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "41 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "41 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "42 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "42 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "42 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "42 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "42 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "44 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "44 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "44 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "44 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "44 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "45 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "45 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "45 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "45 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "45 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "46 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "46 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "46 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "46 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "46 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "47 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "47 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "47 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "47 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "47 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "48 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "48 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "48 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "48 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "48 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "49 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "49 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "49 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "49 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "49 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "50 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "50 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "50 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "50 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "50 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "51 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "51 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "51 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "51 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "51 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "53 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "53 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "53 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "53 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "53 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "54 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "54 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "54 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "54 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "54 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "55 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "55 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "55 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "55 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "55 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "56 EP0045 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "56 EP0045 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "56 EP0045 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "56 EP0045 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "56 EP0045 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "EP0085 gov001 FT_EMP: states/DC minus US",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "EP0085 gov001 FT_PAY: states/DC minus US",
+    "residual": -3,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0085 gov001 PT_EMP: states/DC minus US",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "EP0085 gov001 PT_PAY: states/DC minus US",
+    "residual": 0,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0085 gov001 FTE: states/DC minus US",
+    "residual": 0,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0085 gov002 FT_EMP: states/DC minus US",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "EP0085 gov002 FT_PAY: states/DC minus US",
+    "residual": 0,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0085 gov002 PT_EMP: states/DC minus US",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "EP0085 gov002 PT_PAY: states/DC minus US",
+    "residual": 0,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0085 gov002 FTE: states/DC minus US",
+    "residual": 0,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0085 gov003 FT_EMP: states/DC minus US",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "EP0085 gov003 FT_PAY: states/DC minus US",
+    "residual": -3,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0085 gov003 PT_EMP: states/DC minus US",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "EP0085 gov003 PT_PAY: states/DC minus US",
+    "residual": 0,
+    "tolerance": 52
+  },
+  {
+    "identity": "EP0085 gov003 FTE: states/DC minus US",
+    "residual": 0,
+    "tolerance": 52
+  },
+  {
+    "identity": "01 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "01 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "01 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "01 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "01 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "02 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "02 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "02 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "02 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "02 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "04 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "04 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "04 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "04 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "04 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "05 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "05 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "05 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "05 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "05 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "06 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "06 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "06 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "06 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "06 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "08 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "08 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "08 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "08 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "08 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "09 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "09 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "09 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "09 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "09 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "10 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "10 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "10 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "10 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "10 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "11 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "11 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "11 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "11 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "11 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "12 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "12 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "12 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "12 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "12 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "13 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "13 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "13 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "13 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "13 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "15 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "15 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "15 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "15 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "15 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "16 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "16 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "16 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "16 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "16 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "17 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "17 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "17 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "17 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "17 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "18 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "18 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "18 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "18 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "18 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "19 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "19 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "19 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "19 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "19 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "20 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "20 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "20 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "20 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "20 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "21 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "21 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "21 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "21 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "21 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "22 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "22 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "22 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "22 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "22 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "23 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "23 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "23 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "23 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "23 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "24 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "24 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "24 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "24 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "24 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "25 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "25 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "25 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "25 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "25 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "26 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "26 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "26 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "26 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "26 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "27 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "27 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "27 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "27 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "27 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "28 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "28 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "28 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "28 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "28 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "29 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "29 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "29 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "29 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "29 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "30 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "30 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "30 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "30 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "30 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "31 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "31 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "31 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "31 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "31 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "32 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "32 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "32 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "32 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "32 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "33 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "33 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "33 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "33 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "33 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "34 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "34 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "34 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "34 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "34 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "35 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "35 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "35 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "35 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "35 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "36 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "36 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "36 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "36 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "36 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "37 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "37 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "37 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "37 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "37 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "38 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "38 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "38 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "38 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "38 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "39 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "39 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "39 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "39 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "39 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "40 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "40 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "40 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "40 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "40 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "41 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "41 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "41 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "41 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "41 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "42 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "42 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "42 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "42 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "42 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "44 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "44 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "44 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "44 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "44 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "45 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "45 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "45 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "45 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "45 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "46 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "46 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "46 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "46 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "46 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "47 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "47 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "47 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "47 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "47 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "48 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "48 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "48 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "48 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "48 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "49 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "49 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "49 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "49 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "49 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "50 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "50 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "50 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "50 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "50 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "51 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "51 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "51 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "51 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "51 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "53 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "53 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "53 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "53 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "53 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "54 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "54 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "54 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "54 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "54 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "55 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "55 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "55 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "55 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "55 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "56 EP0085 FT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "56 EP0085 FT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "56 EP0085 PT_EMP: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 0
+  },
+  {
+    "identity": "56 EP0085 PT_PAY: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  },
+  {
+    "identity": "56 EP0085 FTE: combined minus state minus local",
+    "residual": 0,
+    "tolerance": 2
+  }
+]

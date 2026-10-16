@@ -1387,3 +1387,28 @@ estimated ACS-based index, not an instrument for enrollment. Missing matches
 are excluded explicitly; index estimation uncertainty is not propagated.
 **Used in:** [v9 school-response audit](../infra/immigration-fiscal/school_response_audit_2026_10_15/README.md),
 same-sample within-state spending/enrollment fits with and without wage controls.
+
+### CENSUS_ASPEP_2022 — Public employment and payroll by state/function
+
+**Source:** [Census government-employment API](https://api.census.gov/data/timeseries/govsemp.html),
+[original methodology](https://www2.census.gov/programs-surveys/apes/technical-documentation/methodology/22_methodology.pdf),
+[original unit archive](https://www2.census.gov/programs-surveys/apes/tables/2022/2022%20COG-E%20Individual%20Unit%20Files.zip).
+**Acquired:** 2026-10-16; revised published vintage. **Local:**
+`sources/immigration-fiscal/data/external/stage3/census/aspep_2022/`; state and
+national API JSON, methodology/classification PDFs, original ZIP and
+`ACQUIRED.md` with public query, hashes and file inventory. Public Census data.
+**Unit/keys:** state FIPS × government type × function × 2022. Join API `state`
+to population `STATE`; legacy individual-file alphabetical state codes differ.
+`GOVTYPE`001 combined,002 state,003 local; DC lacks002. The audit uses
+`AGG_DESC` EP0045 financial and EP0085 other government administration.
+**Variables:** `FT_EMP`, `PT_EMP` count employees in the March12 pay period;
+`FT_PAY`, `PT_PAY` are current dollars normalized to 31-day March, not annual
+payroll. `FTE` is a modeled historical-hours conversion since2019.
+**Quirks:** published aggregates include editing/imputation; some missing-data
+donors are population-scaled. Contractors and employer benefits are excluded.
+Buildings cannot be isolated from employment89. Predicate headers repeat in
+the API; values must agree before collapse. This is a staffing-scale comparison,
+not a causal national-removal estimate or the full BEA resource-cost pool.
+**Used in:** [v9 general-government response audit](../infra/immigration-fiscal/government_response_audit_2026_10_16/README.md).
+Actual full-time counts/payroll are primary; source hashes, national totals and
+the payroll decomposition are checked before interpretation.
