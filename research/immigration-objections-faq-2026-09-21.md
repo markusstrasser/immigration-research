@@ -175,6 +175,10 @@ every spending effect it reports, and it estimates no total expenditure (ladder 
 [administration scope](immigration-education-administration-scope-2026-09-20.md);
 [scaling test](immigration-service-scaling-test-2026-09-20.md)]
 
+That description applies to the old paper. Its substantially revised successor is assessed in the
+[behavioral-feedback review](immigration-v9-behavioral-feedback-2026-10-16.md#local-finance-the-source-has-changed-materially);
+the source-specific objections above must not be carried forward to it.
+
 ## 3. "They pay into Social Security and Medicare and cannot collect."
 
 Steel-man: unauthorized workers' payroll taxes are a pure transfer to everyone else.

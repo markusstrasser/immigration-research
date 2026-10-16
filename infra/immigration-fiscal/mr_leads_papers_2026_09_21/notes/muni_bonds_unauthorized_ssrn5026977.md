@@ -1,5 +1,9 @@
 claude-opus-5[1m]
 
+**Source-version update, 2026-10-16:** This is the preserved January 2025 reading. A substantially
+revised successor now exists; consult the [new assessment](../../../../research/immigration-v9-behavioral-feedback-2026-10-16.md#local-finance-the-source-has-changed-materially)
+before applying the source-specific objections below.
+
 **Verdict:** A finance working paper asking a useful question — does local fiscal strain from unauthorized arrivals show up in the price of municipal debt? —
 answered by regressing bond spreads and local-government accounts on *quintiles of a push-predicted shift-share index*. Evidence level: **contested / weak-causal**.
 The unconditional yield effect is a null (Table IV); every headline runs through interactions with a non-standard "structurally tight" indicator and a Center for

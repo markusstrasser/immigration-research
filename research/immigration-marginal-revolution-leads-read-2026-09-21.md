@@ -87,6 +87,10 @@ include residents under 65. Against the $165–197bn headline the bound is 1–9
 
 ## 2. Local budgets and municipal bond yields
 
+**Version update, 2026-10-16:** This section records the old paper. See the
+[successor-paper assessment](immigration-v9-behavioral-feedback-2026-10-16.md#local-finance-the-source-has-changed-materially)
+before reusing its source-specific criticisms.
+
 [SOURCE: notes `muni_bonds_unauthorized_ssrn5026977.md`] The treatment is a twelve-month flow of
 immigration-court charging documents (TRAC), predicted from origin-country conditions, allocated
 by county shares lagged one year and entered as quintiles; the paper never converts a quintile
@@ -185,3 +189,7 @@ mine, not the authors'. See `notes/llm-bias-caveat.md`.
   home care the same aides staff, the saving is about $1.5bn a year (design range $1.2–7.6bn).
   The gross $2.3–14.6bn is withdrawn as the figure to quote. Concept affected: the elder-care
   benefit.
+- 2026-10-16: Added a source-version warning to §2. The substantially revised municipal-finance
+  paper changes the evidence available; the original assessment remains as a dated record.
+  [New assessment](immigration-v9-behavioral-feedback-2026-10-16.md#local-finance-the-source-has-changed-materially).
+  Concept affected: local fiscal feedback and the applicability of earlier source criticisms.
