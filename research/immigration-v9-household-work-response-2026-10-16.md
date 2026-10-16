@@ -17,6 +17,15 @@ work; lost income can induce more work. The analysis tests both signs rather tha
 assuming the direction. It measures exposure from raw records and then applies
 declared earnings changes. No causal elasticity is estimated. [INFERENCE]
 
+**Evidence update:** The subsequent [SIPP departure analysis](immigration-sipp-departure-work-2026-10-16.md)
+now measures the same remaining adults' work around ordinary household exits.
+It finds small average employment and hours changes over three months, with
+sample-sensitive earnings and a positive tracked-earnings benchmark contrast.
+This moves the ordinary-exit question beyond data feasibility; it does not
+calibrate the annual earnings changes assumed in the tables below. The forced-
+departure and full-lineage causal response remains unresolved. [CALCULATION;
+INFERENCE: linked memo and its source tables]
+
 ## What the raw records establish
 
 The raw material is the pinned **2025 CPS ASEC**, income year **2024**: person and
@@ -154,3 +163,11 @@ The design's implementation correction is disclosed. [FRAMING-SENSITIVE]
 Validation and [Gemini/Astra review dispositions](../infra/immigration-fiscal/household_behavior_bound_2026_10_16/review.md)
 found no material defect in the stated conditional conclusion. Model review is
 not independent empirical confirmation of the hypothetical work response.
+
+## Revisions
+
+2026-10-16 ([executed SIPP follow-up](immigration-sipp-departure-work-2026-10-16.md),
+`e1c8221f`): added observed short-run work changes alongside the conditional
+fiscal sensitivities. The remaining gap is the relevant annual causal response
+and its transport, rather than whether ordinary departures can be tabulated.
+No sensitivity parameter or v9 total changes.

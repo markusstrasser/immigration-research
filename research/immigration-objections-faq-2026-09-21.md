@@ -503,6 +503,16 @@ it is small once netted. The net saving is inside the main case.
 [care analysis](../infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md); ladders 164
 and 198]
 
+Remaining household adults' work is a separate uncertainty. The
+[executed SIPP departure analysis](immigration-sipp-departure-work-2026-10-16.md)
+finds small average short-run employment and hours changes after ordinary
+household separations, with sample-sensitive earnings, including a positive
+tracked-earnings benchmark contrast. It does not establish zero adjustment
+after a breadwinner's forced removal or calibrate the
+[conditional household fiscal sensitivities](immigration-v9-household-work-response-2026-10-16.md).
+Those effects remain unpriced beyond the existing modeled care channels.
+[CALCULATION; INFERENCE: linked analyses]
+
 ## 14. "Immigrants complement native workers, so your production gain is far too small."
 
 Steel-man: if natives and immigrants are imperfect substitutes, natives' wages rise with
@@ -816,6 +826,8 @@ prior, which is also where errors concentrate; surprising results need more chec
 they get more prominence.
 
 ## Revisions
+
+- 2026-10-16 ([SIPP work-response analysis](immigration-sipp-departure-work-2026-10-16.md), `e1c8221f`): entry 13 now distinguishes measured ordinary-departure work changes from the unresolved forced-departure and full-lineage response. No fiscal figure or adopted assumption changes.
 
 - 2026-10-15 (main case v8, [decision](../decisions/2026-10-15-main-case-v8.md#correction-2026-10-15-round-3-of-the-review-on-v8s-items)): the live account, companions and committed consumers use corrected `oct15`. The reporting union is completed, the non-members who stay in mixed units are recomputed, Census coverage enters the central without duplicate administrative-use justice charges, and foreign-source corporate income is removed. The social pairing carries both budget sides and the case's low fiscal end. Comparator and distribution rows awaiting their phase-2 reruns retain their existing figures. Concept affected: the live population, static-removal boundary and fiscal-plus-social pairing.
 

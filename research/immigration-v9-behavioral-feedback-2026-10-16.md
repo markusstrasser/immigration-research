@@ -8,7 +8,7 @@ The comparison matters. V9 removes a whole Mexican-immigrant lineage, including 
 
 | Link checked | What the original evidence supports | What remains unresolved |
 |---|---|---|
-| Household work and care | Formal care can buffer relatives' employment; an income shock can instead induce more work. A prominent US family-helper result is conditional on receiving any help. | Joint work/care response of the nonmembers who actually remain. |
+| Household work and care | Formal care can buffer relatives' employment; an income shock can instead induce more work. A prominent US family-helper result is conditional on receiving any help. The subsequent [SIPP departure analysis](immigration-sipp-departure-work-2026-10-16.md) measures small average short-run employment/hours changes and sample-sensitive earnings after ordinary exits. | Causal joint work/care response of the nonmembers who actually remain; ordinary-exit observations do not identify forced removal or the full-lineage comparison. |
 | Production bottlenecks and coordination | Firm experiments support complementarity; team experiments show coordination problems. Sudden labor stops disrupt some firms. | Persistent additional effects beyond the production response already modeled. |
 | Private coping and avoidance | Residential sorting occurs in some settings; it is heterogeneous and need not mean deterioration. | Net resources spent plus residual harm or benefit, following movers as well as stayers. |
 | Reciprocity, compliance and policy | Norm reminders can change actual payments; historical immigration changed actual fiscal policy. | Contemporary Mexican-lineage exposure → beliefs → nonmember conduct → public performance. |
@@ -21,6 +21,14 @@ The table summarizes the source-grounded assessments below, not five new measure
 In Kreider and Werner's January 2025 US working paper, the Medicaid subsample comprises adults aged 65 and older with daily-living difficulties. Table 9 estimates a **7.5 percentage-point increase (SE 3.5)** in having family as the primary helper, **conditional on receiving help**. The unconditional probability of having a family helper changes **−2.0 points (SE 2.6)**. The positive conditional share therefore does not measure more caregiving households, caregiver hours or lost employment. It also does not establish that those losses are zero. [SOURCE: [author paper](https://amandakreider.github.io/files/Immigration-Home-Care-2025.pdf), §6.3.1, Tables 8–10]
 
 Austrian care-reform evidence supports a labor-supply mechanism, while US youth evidence points toward additional work after enforcement-related income pressure. Neither identifies v9's remaining-household population. The precise code boundary is item 11's fixed claimant incomes during statutory recalculation, not a claim that every income in v9 is fixed. Unpaid-care labor supply was already explicitly left unpriced. [DATA/SOURCE: [household evidence](../notes/v9-behavioral-feedback-2026-10-16/households.md)]
+
+The [executed SIPP follow-up](immigration-sipp-departure-work-2026-10-16.md) now
+validates ordinary departures and follows the same adults' employment, hours
+and earnings. It retains a positive tracked-earnings benchmark contrast as well
+as the small average employment/hours changes. Few observed departures involve
+spouses or partners, and internal record validation does not make exits
+exogenous. The household evidence is now partly measured; an annual causal
+response for v9 remains uncalibrated. [CALCULATION; INFERENCE]
 
 ## Production: observed disruption is not observed task reassignment
 
@@ -65,3 +73,10 @@ No numerical v9 change follows from this pass. Its conclusion is **unresolved ma
 The four lane notes retain source versions, exact table anchors, uncertainty, contrary evidence, prior local coverage, and access failures. Some final journal texts were inaccessible; estimates from working papers are labeled as such. Citation resolution verifies identifiers, not empirical validity. [Preservation record](../notes/v9-behavioral-feedback-2026-10-16/provenance.md).
 
 Gemini 4 Argon and GPT-6 Astra independently reviewed the same packet. Both reported no material defect; their review checked the argument against the supplied source assessments, not independent microdata replication. All eight extracted cautions have [explicit dispositions](../notes/v9-behavioral-feedback-2026-10-16/critique.md). The clarifications above preserve possible production overlap, bounded feedback and the value of evidence from imperfectly matched settings. The older municipal-paper audit and its living references now point to this reassessment.
+
+## Revisions
+
+2026-10-16 ([SIPP work-response analysis](immigration-sipp-departure-work-2026-10-16.md),
+`e1c8221f`): updated the household link from literature and feasibility alone to
+an executed descriptive panel. The original-paper assessments and other links
+are unchanged; the added evidence does not justify a new fiscal coefficient.

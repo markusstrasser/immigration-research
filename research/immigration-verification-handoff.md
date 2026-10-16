@@ -253,6 +253,17 @@ Not good for:
 
 ### If the claim is about program participation and household transitions
 
+For remaining adults' work after a departure, start with the
+[executed SIPP analysis](immigration-sipp-departure-work-2026-10-16.md) and its
+[reproduction lane](../infra/immigration-fiscal/sipp_departure_work_2026_10_16/README.md).
+It uses SIPP 2025, reference year 2024, from
+`sources/immigration-fiscal/data/external/stage3/census/sipp_2025/`.
+Person-months join on `SSUID,PNUM,MONTHCODE`; residence identity also requires
+`SSUID`. The tracked and Type-2 proxy-roster departure cohorts stay separate.
+Ordinary-exit work changes have been measured; causal effects of forced removal,
+annual persistence and transport to the full lineage remain unresolved.
+Reuse the event, coding and numerical checks before rebuilding this lane.
+
 Use:
 
 1. `SIPP 2024`
@@ -391,6 +402,8 @@ For each commentator claim:
 6. `Notes on category slip or scope inflation`
 
 ## Revisions
+
+- 2026-10-16 ([SIPP work-response analysis](immigration-sipp-departure-work-2026-10-16.md), `e1c8221f`): the household-transition route now leads to the executed same-person departure analysis and distinguishes completed measurement from unresolved causal transport.
 
 - 2026-10-15 (corrected main case v8, [decision](../decisions/2026-10-15-main-case-v8.md)): the living case figures and source pointers follow the completed reporting union and central Census coverage correction, with domestic-source corporate taxes and the mixed-unit stayers recomputed. Concept affected: the live annual account and its population.
 
