@@ -1,0 +1,133 @@
+route,specification,outcome,weighting,adults,clusters,pre,post,change,ci_low,ci_high,interval
+tracked,all,employment,unweighted,147,78,0.7301587302,0.7210884354,-0.009070294785,-0.03597446367,0.01724350788,95% percentile cluster bootstrap; 1999 draws
+tracked,all,employment,December_weighted,147,78,0.7189907193,0.7097099699,-0.009280749441,-0.03768352139,0.01912202251,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,reported_residence,employment,unweighted,60,33,0.7166666667,0.7166666667,0,-0.046875,0.04838709677,95% percentile cluster bootstrap; 1999 draws
+tracked,reported_residence,employment,December_weighted,60,33,0.7227642055,0.7276053534,0.004841147886,-0.03345796406,0.04314025983,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,persistent,employment,unweighted,129,68,0.7002583979,0.6950904393,-0.005167958656,-0.033359375,0.02241633496,95% percentile cluster bootstrap; 1999 draws
+tracked,persistent,employment,December_weighted,129,68,0.6939813014,0.6908169007,-0.003164400703,-0.03139173806,0.02506293665,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,partner,employment,unweighted,7,7,0.5714285714,0.5714285714,0,0,0,95% percentile cluster bootstrap; 1999 draws
+tracked,other_relationship,employment,unweighted,140,73,0.7380952381,0.7285714286,-0.009523809524,-0.038647343,0.01678657074,95% percentile cluster bootstrap; 1999 draws
+tracked,children,employment,unweighted,30,16,0.7444444444,0.7666666667,0.02222222222,0,0.06896551724,95% percentile cluster bootstrap; 1999 draws
+tracked,no_children,employment,unweighted,117,62,0.7264957265,0.7094017094,-0.01709401709,-0.05199707486,0.0122324159,95% percentile cluster bootstrap; 1999 draws
+tracked,common_outcomes,employment,unweighted,146,78,0.7283105023,0.7191780822,-0.009132420091,-0.03623434881,0.01728680511,95% percentile cluster bootstrap; 1999 draws
+tracked,common_outcomes,employment,December_weighted,146,78,0.7183598267,0.7090582411,-0.009301585608,-0.03777360705,0.01917043583,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,female,employment,unweighted,68,55,0.6470588235,0.6470588235,0,-0.0447761194,0.04225352113,95% percentile cluster bootstrap; 1999 draws
+tracked,male,employment,unweighted,79,58,0.8016877637,0.7848101266,-0.01687763713,-0.05366618774,0.01687763713,95% percentile cluster bootstrap; 1999 draws
+tracked,departed_employed,employment,unweighted,104,54,0.7628205128,0.7403846154,-0.02243589744,-0.05861883215,0.006172839506,95% percentile cluster bootstrap; 1999 draws
+tracked,departed_not_employed,employment,unweighted,43,25,0.6511627907,0.6744186047,0.02325581395,0,0.075,95% percentile cluster bootstrap; 1999 draws
+tracked,visible_components_unallocated,employment,unweighted,121,69,0.7465564738,0.7438016529,-0.002754820937,-0.03125445157,0.02400967742,95% percentile cluster bootstrap; 1999 draws
+tracked,all,hours,unweighted,146,78,29.75490868,30.01780822,0.2628995434,-1.044894034,1.770880876,95% percentile cluster bootstrap; 1999 draws
+tracked,all,hours,December_weighted,146,78,29.01605812,29.31216181,0.2961036941,-1.089206464,1.681413852,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,reported_residence,hours,unweighted,59,33,27.57768362,29.06638418,1.488700565,-1.16155914,4.616073868,95% percentile cluster bootstrap; 1999 draws
+tracked,reported_residence,hours,December_weighted,59,33,27.57406257,28.79363611,1.219573533,-1.278168668,3.717315734,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,persistent,hours,unweighted,128,68,27.94960938,28.2421875,0.292578125,-1.160301472,1.850406162,95% percentile cluster bootstrap; 1999 draws
+tracked,persistent,hours,December_weighted,128,68,28.21377867,28.40873946,0.194960793,-1.271656583,1.661578169,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,partner,hours,unweighted,7,7,30,32.14285714,2.142857143,0,6.428571429,95% percentile cluster bootstrap; 1999 draws
+tracked,other_relationship,hours,unweighted,139,73,29.74256595,29.91079137,0.1682254197,-1.168224331,1.696515242,95% percentile cluster bootstrap; 1999 draws
+tracked,children,hours,unweighted,29,16,30.66666667,31.75862069,1.091954023,0,3.076923077,95% percentile cluster bootstrap; 1999 draws
+tracked,no_children,hours,unweighted,117,62,29.52891738,29.58632479,0.05740740741,-1.573400419,1.946799562,95% percentile cluster bootstrap; 1999 draws
+tracked,common_outcomes,hours,unweighted,146,78,29.75490868,30.01780822,0.2628995434,-1.044894034,1.770880876,95% percentile cluster bootstrap; 1999 draws
+tracked,common_outcomes,hours,December_weighted,146,78,29.01605812,29.31216181,0.2961036941,-1.089206464,1.681413852,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,female,hours,unweighted,67,54,25.53358209,25.70149254,0.1679104478,-2.141478138,2.598758754,95% percentile cluster bootstrap; 1999 draws
+tracked,male,hours,unweighted,79,58,33.3350211,33.67848101,0.3434599156,-1.201204929,1.955954429,95% percentile cluster bootstrap; 1999 draws
+tracked,departed_employed,hours,unweighted,103,54,31.4487055,30.72831715,-0.7203883495,-1.990168555,0.3696805847,95% percentile cluster bootstrap; 1999 draws
+tracked,departed_not_employed,hours,unweighted,43,25,25.69767442,28.31589147,2.618217054,-0.7437608353,6.705518287,95% percentile cluster bootstrap; 1999 draws
+tracked,visible_components_unallocated,hours,unweighted,123,73,28.84457995,29.78265583,0.9380758808,-0.2947927289,2.509951469,95% percentile cluster bootstrap; 1999 draws
+tracked,all,earnings,unweighted,147,78,6545.433107,7329.702948,784.2698413,-29.49583977,1929.28663,95% percentile cluster bootstrap; 1999 draws
+tracked,all,earnings,December_weighted,147,78,6559.38163,7298.201304,738.819674,-216.8038898,1694.443238,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,reported_residence,earnings,unweighted,60,33,7243.261111,7358.516667,115.2555556,-180.3240152,407.3876437,95% percentile cluster bootstrap; 1999 draws
+tracked,reported_residence,earnings,December_weighted,60,33,7088.452443,7127.274799,38.82235619,-274.9760415,352.6207539,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,persistent,earnings,unweighted,129,68,6567.385013,7457.49354,890.1085271,-39.17239134,2208.913149,95% percentile cluster bootstrap; 1999 draws
+tracked,persistent,earnings,December_weighted,129,68,6405.492746,7200.460644,794.967898,-264.2797769,1854.215573,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,partner,earnings,unweighted,7,7,13442.66667,13655.04762,212.3809524,0,591.9047619,95% percentile cluster bootstrap; 1999 draws
+tracked,other_relationship,earnings,unweighted,140,73,6200.571429,7013.435714,812.8642857,-36.70190603,2001.334664,95% percentile cluster bootstrap; 1999 draws
+tracked,children,earnings,unweighted,30,16,7394.311111,9162.388889,1768.077778,-406.9318966,5732.506322,95% percentile cluster bootstrap; 1999 draws
+tracked,no_children,earnings,unweighted,117,62,6327.77208,6859.783476,532.011396,-48.72185013,1523.93966,95% percentile cluster bootstrap; 1999 draws
+tracked,common_outcomes,earnings,unweighted,146,78,6590.26484,7379.906393,789.6415525,-29.50422533,1934.410643,95% percentile cluster bootstrap; 1999 draws
+tracked,common_outcomes,earnings,December_weighted,146,78,6574.108066,7314.586461,740.4783946,-217.5129808,1698.46977,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,female,earnings,unweighted,68,55,4313.112745,4332.985294,19.87254902,-184.1890147,218.6336806,95% percentile cluster bootstrap; 1999 draws
+tracked,male,earnings,unweighted,79,58,8466.924051,9909.156118,1442.232068,-31.27259681,3527.172379,95% percentile cluster bootstrap; 1999 draws
+tracked,departed_employed,earnings,unweighted,104,54,7311.195513,8395.689103,1084.49359,-13.24478458,2778.287356,95% percentile cluster bootstrap; 1999 draws
+tracked,departed_not_employed,earnings,unweighted,43,25,4693.356589,4751.503876,58.14728682,-351.7154647,456.8469609,95% percentile cluster bootstrap; 1999 draws
+tracked,visible_components_unallocated,earnings,unweighted,83,54,8083.586345,9358.751004,1275.164659,-94.11207235,3110.074589,95% percentile cluster bootstrap; 1999 draws
+tracked,unpaid_zero_as_missing,earnings,unweighted,146,78,6590.26484,7379.906393,789.6415525,-29.50422533,1934.410643,95% percentile cluster bootstrap; 1999 draws
+tracked,all,calendar_earnings,unweighted,147,78,6536.263039,7329.37415,793.1111111,-15.85547527,1930.38732,95% percentile cluster bootstrap; 1999 draws
+tracked,all,calendar_earnings,December_weighted,147,78,6549.822535,7299.16672,749.3441852,-203.3813124,1702.069683,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,reported_residence,calendar_earnings,unweighted,60,33,7256.255556,7361.083333,104.8277778,-189.1349826,408.0247126,95% percentile cluster bootstrap; 1999 draws
+tracked,reported_residence,calendar_earnings,December_weighted,60,33,7095.419913,7132.181252,36.76133879,-285.6406113,359.1632889,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,persistent,calendar_earnings,unweighted,129,68,6567.98708,7453.103359,885.1162791,-40.67701613,2200.099767,95% percentile cluster bootstrap; 1999 draws
+tracked,persistent,calendar_earnings,December_weighted,129,68,6406.412118,7197.390993,790.9788755,-264.3334024,1846.291154,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,partner,calendar_earnings,unweighted,7,7,13451.47619,13668.71429,217.2380952,6.952380952,602.952381,95% percentile cluster bootstrap; 1999 draws
+tracked,other_relationship,calendar_earnings,unweighted,140,73,6190.502381,7012.407143,821.9047619,-21.77915747,2009.596915,95% percentile cluster bootstrap; 1999 draws
+tracked,children,calendar_earnings,unweighted,30,16,7395.522222,9151.488889,1755.966667,-418.6071501,5700.466667,95% percentile cluster bootstrap; 1999 draws
+tracked,no_children,calendar_earnings,unweighted,117,62,6315.940171,6862.165242,546.2250712,-37.22771134,1536.567705,95% percentile cluster bootstrap; 1999 draws
+tracked,common_outcomes,calendar_earnings,unweighted,146,78,6581.031963,7379.575342,798.543379,-15.95698609,1939.339374,95% percentile cluster bootstrap; 1999 draws
+tracked,common_outcomes,calendar_earnings,December_weighted,146,78,6564.52751,7315.554045,751.0265343,-204.0614105,1706.114479,"95% normal Fay BRR; 240 December replicates, k=.5"
+tracked,female,calendar_earnings,unweighted,68,55,4308.426471,4334.328431,25.90196078,-177.9689394,224.5204482,95% percentile cluster bootstrap; 1999 draws
+tracked,male,calendar_earnings,unweighted,79,58,8453.894515,9907.388186,1453.493671,-16.56811568,3532.42982,95% percentile cluster bootstrap; 1999 draws
+tracked,departed_employed,calendar_earnings,unweighted,104,54,7305.689103,8388.592949,1082.903846,-11.99655167,2774.88766,95% percentile cluster bootstrap; 1999 draws
+tracked,departed_not_employed,calendar_earnings,unweighted,43,25,4675.325581,4767.542636,92.21705426,-326.9252165,492.5341354,95% percentile cluster bootstrap; 1999 draws
+tracked,visible_components_unallocated,calendar_earnings,unweighted,83,54,8081.46988,9350.598394,1269.128514,-98.30655902,3098.900234,95% percentile cluster bootstrap; 1999 draws
+tracked,unpaid_zero_as_missing,calendar_earnings,unweighted,146,78,6581.031963,7379.575342,798.543379,-15.95698609,1939.339374,95% percentile cluster bootstrap; 1999 draws
+type2,all,employment,unweighted,277,145,0.7858002407,0.7761732852,-0.009626955475,-0.03222589215,0.01295964002,95% percentile cluster bootstrap; 1999 draws
+type2,all,employment,December_weighted,277,145,0.790128014,0.7833814326,-0.006746581411,-0.02744136385,0.01394820103,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,reported_residence,employment,unweighted,223,139,0.7877428999,0.77877429,-0.008968609865,-0.0323082845,0.0131150577,95% percentile cluster bootstrap; 1999 draws
+type2,reported_residence,employment,December_weighted,223,139,0.7978880313,0.7882335203,-0.009654511074,-0.03105500128,0.01174597913,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,persistent,employment,unweighted,274,144,0.7907542579,0.7810218978,-0.009732360097,-0.03210673039,0.01282730815,95% percentile cluster bootstrap; 1999 draws
+type2,persistent,employment,December_weighted,274,144,0.7964482473,0.7896234524,-0.006824794859,-0.02776339598,0.01411380626,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,partner,employment,unweighted,21,21,0.7619047619,0.7142857143,-0.04761904762,-0.1428571429,0,95% percentile cluster bootstrap; 1999 draws
+type2,other_relationship,employment,unweighted,256,130,0.7877604167,0.78125,-0.006510416667,-0.02899377308,0.01544700847,95% percentile cluster bootstrap; 1999 draws
+type2,children,employment,unweighted,113,58,0.7610619469,0.7492625369,-0.01179941003,-0.04850708924,0.02142928761,95% percentile cluster bootstrap; 1999 draws
+type2,no_children,employment,unweighted,164,87,0.8028455285,0.7947154472,-0.008130081301,-0.03798357989,0.02008640623,95% percentile cluster bootstrap; 1999 draws
+type2,common_outcomes,employment,unweighted,277,145,0.7858002407,0.7761732852,-0.009626955475,-0.03222589215,0.01295964002,95% percentile cluster bootstrap; 1999 draws
+type2,common_outcomes,employment,December_weighted,277,145,0.790128014,0.7833814326,-0.006746581411,-0.02744136385,0.01394820103,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,female,employment,unweighted,144,119,0.8101851852,0.7916666667,-0.01851851852,-0.04662004662,0.006993006993,95% percentile cluster bootstrap; 1999 draws
+type2,male,employment,unweighted,133,104,0.7593984962,0.7593984962,-1.669508308e-18,-0.03645833333,0.03572344322,95% percentile cluster bootstrap; 1999 draws
+type2,visible_components_unallocated,employment,unweighted,216,134,0.7962962963,0.7932098765,-0.003086419753,-0.02830682235,0.02370899471,95% percentile cluster bootstrap; 1999 draws
+type2,all,hours,unweighted,277,145,30.39163658,29.73965102,-0.6519855596,-1.79186622,0.4056679389,95% percentile cluster bootstrap; 1999 draws
+type2,all,hours,December_weighted,277,145,30.65772167,30.216598,-0.441123675,-1.671411665,0.7891643153,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,reported_residence,hours,unweighted,223,139,30.08796712,29.74469357,-0.3432735426,-1.645262431,0.8975854003,95% percentile cluster bootstrap; 1999 draws
+type2,reported_residence,hours,December_weighted,223,139,30.58731822,30.29498192,-0.2923363075,-1.752458713,1.167786098,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,persistent,hours,unweighted,274,144,30.54920925,29.89008516,-0.6591240876,-1.802472183,0.4767674441,95% percentile cluster bootstrap; 1999 draws
+type2,persistent,hours,December_weighted,274,144,30.87682968,30.43059204,-0.4462376433,-1.691434832,0.7989595453,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,partner,hours,unweighted,21,21,25.81666667,24.03571429,-1.780952381,-6.298968254,2.459087302,95% percentile cluster bootstrap; 1999 draws
+type2,other_relationship,hours,unweighted,256,130,30.76692708,30.20755208,-0.559375,-1.736663165,0.5721406567,95% percentile cluster bootstrap; 1999 draws
+type2,children,hours,unweighted,113,58,29.65427729,29.01017699,-0.644100295,-2.084035371,0.8546487603,95% percentile cluster bootstrap; 1999 draws
+type2,no_children,hours,unweighted,164,87,30.89969512,30.24227642,-0.6574186992,-2.405301673,0.8904909844,95% percentile cluster bootstrap; 1999 draws
+type2,common_outcomes,hours,unweighted,277,145,30.39163658,29.73965102,-0.6519855596,-1.79186622,0.4056679389,95% percentile cluster bootstrap; 1999 draws
+type2,common_outcomes,hours,December_weighted,277,145,30.65772167,30.216598,-0.441123675,-1.671411665,0.7891643153,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,female,hours,unweighted,144,119,29.94675926,29.00520833,-0.9415509259,-2.500468923,0.4001431405,95% percentile cluster bootstrap; 1999 draws
+type2,male,hours,unweighted,133,104,30.87330827,30.53483709,-0.3384711779,-2.144410803,1.431468816,95% percentile cluster bootstrap; 1999 draws
+type2,visible_components_unallocated,hours,unweighted,216,137,30.0882716,30.2025463,0.1142746914,-1.121221385,1.3543809,95% percentile cluster bootstrap; 1999 draws
+type2,all,earnings,unweighted,277,145,5618,5531.051745,-86.94825511,-272.7619618,99.60213675,95% percentile cluster bootstrap; 1999 draws
+type2,all,earnings,December_weighted,277,145,5715.839072,5492.953342,-222.8857294,-646.2456133,200.4741545,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,reported_residence,earnings,unweighted,223,139,5937.775785,5874.109118,-63.66666667,-284.6009202,141.3408476,95% percentile cluster bootstrap; 1999 draws
+type2,reported_residence,earnings,December_weighted,223,139,6194.424008,5952.837144,-241.5868643,-758.3903011,275.2165724,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,persistent,earnings,unweighted,274,144,5669.970803,5582.07056,-87.90024331,-278.1286788,84.17595436,95% percentile cluster bootstrap; 1999 draws
+type2,persistent,earnings,December_weighted,274,144,5774.679942,5549.210288,-225.4696545,-653.6933383,202.7540292,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,partner,earnings,unweighted,21,21,3770.968254,3636.333333,-134.6349206,-564.2698413,208.1,95% percentile cluster bootstrap; 1999 draws
+type2,other_relationship,earnings,unweighted,256,130,5769.514323,5686.477865,-83.03645833,-275.9067073,98.99217054,95% percentile cluster bootstrap; 1999 draws
+type2,children,earnings,unweighted,113,58,5699.879056,5688.141593,-11.73746313,-218.0466977,238.6999008,95% percentile cluster bootstrap; 1999 draws
+type2,no_children,earnings,unweighted,164,87,5561.583333,5422.813008,-138.7703252,-423.0352979,113.3874095,95% percentile cluster bootstrap; 1999 draws
+type2,common_outcomes,earnings,unweighted,277,145,5618,5531.051745,-86.94825511,-272.7619618,99.60213675,95% percentile cluster bootstrap; 1999 draws
+type2,common_outcomes,earnings,December_weighted,277,145,5715.839072,5492.953342,-222.8857294,-646.2456133,200.4741545,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,female,earnings,unweighted,144,119,4389.548611,4398.678241,9.12962963,-142.7004487,159.7995364,95% percentile cluster bootstrap; 1999 draws
+type2,male,earnings,unweighted,133,104,6948.052632,6757.080201,-190.9724311,-540.6596644,154.9085348,95% percentile cluster bootstrap; 1999 draws
+type2,visible_components_unallocated,earnings,unweighted,132,101,6618.684343,6707.267677,88.58333333,-104.6319026,340.8545083,95% percentile cluster bootstrap; 1999 draws
+type2,unpaid_zero_as_missing,earnings,unweighted,277,145,5618,5531.051745,-86.94825511,-272.7619618,99.60213675,95% percentile cluster bootstrap; 1999 draws
+type2,all,calendar_earnings,unweighted,277,145,5627.239471,5533.226233,-94.01323706,-278.2035934,91.14775145,95% percentile cluster bootstrap; 1999 draws
+type2,all,calendar_earnings,December_weighted,277,145,5723.144567,5495.218553,-227.9260142,-648.3478758,192.4958475,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,reported_residence,calendar_earnings,unweighted,223,139,5946.983558,5876.427504,-70.55605381,-293.3344873,138.4382466,95% percentile cluster bootstrap; 1999 draws
+type2,reported_residence,calendar_earnings,December_weighted,223,139,6202.776719,5955.093991,-247.6827279,-761.2874961,265.9220404,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,persistent,calendar_earnings,unweighted,274,144,5679.363747,5584.216545,-95.14720195,-284.0362471,77.60792096,95% percentile cluster bootstrap; 1999 draws
+type2,persistent,calendar_earnings,December_weighted,274,144,5782.110833,5551.461055,-230.6497781,-655.886027,194.5864709,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,partner,calendar_earnings,unweighted,21,21,3767.349206,3645.142857,-122.2063492,-563.0992063,230.1126984,95% percentile cluster bootstrap; 1999 draws
+type2,other_relationship,calendar_earnings,unweighted,256,130,5779.808594,5688.108073,-91.70052083,-283.1283057,92.9338572,95% percentile cluster bootstrap; 1999 draws
+type2,children,calendar_earnings,unweighted,113,58,5711.699115,5688.938053,-22.76106195,-232.8407464,226.3916626,95% percentile cluster bootstrap; 1999 draws
+type2,no_children,calendar_earnings,unweighted,164,87,5569.044715,5425.936992,-143.1077236,-430.1639202,104.5527586,95% percentile cluster bootstrap; 1999 draws
+type2,common_outcomes,calendar_earnings,unweighted,277,145,5627.239471,5533.226233,-94.01323706,-278.2035934,91.14775145,95% percentile cluster bootstrap; 1999 draws
+type2,common_outcomes,calendar_earnings,December_weighted,277,145,5723.144567,5495.218553,-227.9260142,-648.3478758,192.4958475,"95% normal Fay BRR; 240 December replicates, k=.5"
+type2,female,calendar_earnings,unweighted,144,119,4395.55787,4397.569444,2.011574074,-149.1026371,146.7885074,95% percentile cluster bootstrap; 1999 draws
+type2,male,calendar_earnings,unweighted,133,104,6960.789474,6762.809524,-197.9799499,-553.4337166,146.7943627,95% percentile cluster bootstrap; 1999 draws
+type2,visible_components_unallocated,calendar_earnings,unweighted,132,101,6628.643939,6711.103535,82.45959596,-111.574308,331.746487,95% percentile cluster bootstrap; 1999 draws
+type2,unpaid_zero_as_missing,calendar_earnings,unweighted,277,145,5627.239471,5533.226233,-94.01323706,-278.2035934,91.14775145,95% percentile cluster bootstrap; 1999 draws

@@ -1,0 +1,212 @@
+{
+  "aggregate_recode_flags": {
+    "AMESR": {
+      "all_rows": {
+        "0": 53116,
+        "9": 326099
+      },
+      "numeric_outcome_rows": {
+        "9": 326099
+      }
+    },
+    "AMWKHRS": {
+      "all_rows": {
+        "0": 206485,
+        "9": 172730
+      },
+      "numeric_outcome_rows": {
+        "9": 172730
+      }
+    },
+    "APEARN_ALT": {
+      "all_rows": {
+        "0": 206460,
+        "9": 172755
+      },
+      "numeric_outcome_rows": {
+        "9": 172755
+      }
+    }
+  },
+  "categories": {
+    "all_visible": {
+      "allocation_count": 1199612,
+      "complete_clean": 248887,
+      "has_observed_components": 379215,
+      "missing_count": 0,
+      "niu_count": 142141980,
+      "observed_clean": 248887,
+      "observed_count": 149031495,
+      "reported_count": 5689903,
+      "rows_with_allocation": 130328,
+      "rows_with_missing": 0,
+      "rows_with_unresolved_recode": 0,
+      "unresolved_recode_count": 0
+    },
+    "base_earnings": {
+      "allocation_count": 483584,
+      "complete_clean": 286758,
+      "has_observed_components": 379215,
+      "missing_count": 0,
+      "niu_count": 86907831,
+      "observed_clean": 286758,
+      "observed_count": 89115525,
+      "reported_count": 1724110,
+      "rows_with_allocation": 92457,
+      "rows_with_missing": 0,
+      "rows_with_unresolved_recode": 0,
+      "unresolved_recode_count": 0
+    },
+    "base_hours": {
+      "allocation_count": 76056,
+      "complete_clean": 348002,
+      "has_observed_components": 379215,
+      "missing_count": 0,
+      "niu_count": 13597162,
+      "observed_clean": 348002,
+      "observed_count": 14030955,
+      "reported_count": 357737,
+      "rows_with_allocation": 31213,
+      "rows_with_missing": 0,
+      "rows_with_unresolved_recode": 0,
+      "unresolved_recode_count": 0
+    },
+    "base_job_presence_and_timing": {
+      "allocation_count": 414718,
+      "complete_clean": 329061,
+      "has_observed_components": 379215,
+      "missing_count": 0,
+      "niu_count": 14411229,
+      "observed_clean": 329061,
+      "observed_count": 17443890,
+      "reported_count": 2617943,
+      "rows_with_allocation": 50154,
+      "rows_with_missing": 0,
+      "rows_with_unresolved_recode": 0,
+      "unresolved_recode_count": 0
+    },
+    "base_nonemployment": {
+      "allocation_count": 175684,
+      "complete_clean": 345146,
+      "has_observed_components": 379215,
+      "missing_count": 0,
+      "niu_count": 10807242,
+      "observed_clean": 345146,
+      "observed_count": 11755665,
+      "reported_count": 772739,
+      "rows_with_allocation": 34069,
+      "rows_with_missing": 0,
+      "rows_with_unresolved_recode": 0,
+      "unresolved_recode_count": 0
+    },
+    "base_unpaid_absence": {
+      "allocation_count": 49570,
+      "complete_clean": 348779,
+      "has_observed_components": 379215,
+      "missing_count": 0,
+      "niu_count": 16418516,
+      "observed_clean": 348779,
+      "observed_count": 16685460,
+      "reported_count": 217374,
+      "rows_with_allocation": 30436,
+      "rows_with_missing": 0,
+      "rows_with_unresolved_recode": 0,
+      "unresolved_recode_count": 0
+    },
+    "earnings": {
+      "allocation_count": 1023928,
+      "complete_clean": 266051,
+      "has_observed_components": 379215,
+      "missing_count": 0,
+      "niu_count": 131334738,
+      "observed_clean": 266051,
+      "observed_count": 137275830,
+      "reported_count": 4917164,
+      "rows_with_allocation": 113164,
+      "rows_with_missing": 0,
+      "rows_with_unresolved_recode": 0,
+      "unresolved_recode_count": 0
+    },
+    "employment": {
+      "allocation_count": 590402,
+      "complete_clean": 311693,
+      "has_observed_components": 379215,
+      "missing_count": 0,
+      "niu_count": 25218471,
+      "observed_clean": 311693,
+      "observed_count": 29199555,
+      "reported_count": 3390682,
+      "rows_with_allocation": 67522,
+      "rows_with_missing": 0,
+      "rows_with_unresolved_recode": 0,
+      "unresolved_recode_count": 0
+    },
+    "hours": {
+      "allocation_count": 540344,
+      "complete_clean": 323386,
+      "has_observed_components": 379215,
+      "missing_count": 0,
+      "niu_count": 44426907,
+      "observed_clean": 323386,
+      "observed_count": 48160305,
+      "reported_count": 3193054,
+      "rows_with_allocation": 55829,
+      "rows_with_missing": 0,
+      "rows_with_unresolved_recode": 0,
+      "unresolved_recode_count": 0
+    }
+  },
+  "component_flag_histograms": {
+    "earnings": {
+      "0": 86907831,
+      "1": 1724110,
+      "2": 313069,
+      "3": 72550,
+      "4": 88125,
+      "5": 2137,
+      "6": 7587,
+      "7": 116,
+      "missing": 0
+    },
+    "hours": {
+      "0": 13597162,
+      "1": 357737,
+      "2": 73567,
+      "3": 33,
+      "5": 466,
+      "6": 1990,
+      "missing": 0
+    },
+    "job_presence_and_timing": {
+      "0": 14411229,
+      "1": 2617943,
+      "2": 159442,
+      "3": 17549,
+      "4": 237588,
+      "5": 139,
+      "missing": 0
+    },
+    "nonemployment": {
+      "0": 10807242,
+      "1": 772739,
+      "2": 110156,
+      "3": 63897,
+      "5": 219,
+      "6": 1412,
+      "missing": 0
+    },
+    "unpaid_absence": {
+      "0": 16418516,
+      "1": 217374,
+      "2": 44737,
+      "3": 506,
+      "5": 14,
+      "6": 4313,
+      "missing": 0
+    }
+  },
+  "direct_flag1_reason": "The numeric aggregate outcomes use recode status9, which directs users to components; flag1 does not select reported aggregate outcomes.",
+  "direct_flag1_sensitivity_valid": false,
+  "rows": 379215,
+  "unique_person_months": 379215
+}

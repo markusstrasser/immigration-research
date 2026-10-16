@@ -1,0 +1,9 @@
+route,outcome,eligible_adults,complete_six_months,missing_pre,missing_post
+tracked,employment,149,147,0,2
+tracked,hours,149,146,1,3
+tracked,earnings,149,147,0,2
+tracked,calendar_earnings,149,147,0,2
+type2,employment,278,277,0,1
+type2,hours,278,277,0,1
+type2,earnings,278,277,0,1
+type2,calendar_earnings,278,277,0,1

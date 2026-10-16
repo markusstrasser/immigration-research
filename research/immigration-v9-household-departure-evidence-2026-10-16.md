@@ -215,3 +215,12 @@ The raw-file replay preserved the quoted feasibility counts. The
 [Gemini/Astra critique and complete dispositions](../notes/v9-household-response-evidence-2026-10-16/review.md)
 retain the same conclusion; their suggestions were checked against original
 schemas and records rather than accepted by agreement.
+
+## Revisions
+
+2026-10-16: The [SIPP departure follow-up](immigration-sipp-departure-work-2026-10-16.md)
+executes the proposed record validation and same-person outcome analysis. It
+supersedes this memo's data-feasibility-only status for those within-year
+separations. The original-study assessment remains unchanged; no deportation
+parameter or fiscal correction is adopted. This is an empirical follow-up,
+not a methodological adoption requiring a decision-journal entry.

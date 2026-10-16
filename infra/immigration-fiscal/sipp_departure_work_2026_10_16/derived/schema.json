@@ -1,0 +1,1190 @@
+[
+  {
+    "varnum": 1,
+    "name": "SSUID",
+    "label": "Sample unit identifier. This identifier is created by scrambling together PSU, Sequence #1, Sequence #2, and the Frame Indicator for a case. It may be used in matching sample units from different waves.",
+    "dtype": "string"
+  },
+  {
+    "varnum": 3,
+    "name": "SPANEL",
+    "label": "Panel year",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4,
+    "name": "SWAVE",
+    "label": "Wave number of interview",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 239,
+    "name": "PNUM",
+    "label": "Person number",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 254,
+    "name": "ARELRP",
+    "label": "Status Flag for ERELRPE",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 255,
+    "name": "ESEX",
+    "label": "Sex of this person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 259,
+    "name": "EHISPAN",
+    "label": "Detailed Hispanic origin",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 294,
+    "name": "EBORNUS",
+    "label": "Was...born in the United States?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 562,
+    "name": "ARELIG",
+    "label": "Status Flag for ERELIG",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 563,
+    "name": "RRELIG",
+    "label": "Frequency child 6-17 years old attended religious services or religious social or school events in the past year.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1382,
+    "name": "MONTHCODE",
+    "label": "Value of reference month",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1383,
+    "name": "WPFINWGT",
+    "label": "Final person weight",
+    "dtype": "float"
+  },
+  {
+    "varnum": 1392,
+    "name": "ERESIDENCEID",
+    "label": "This field stores a six-digit identifier for residence addresses, unique within SSUID.",
+    "dtype": "string"
+  },
+  {
+    "varnum": 1393,
+    "name": "ARESIDENCEID",
+    "label": "Status Flag for ERESIDENCEID",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1394,
+    "name": "ERH_BMONTH",
+    "label": "Begin month of residence spell.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1395,
+    "name": "ERH_EMONTH",
+    "label": "End month of residence spell.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1396,
+    "name": "ARH_BMONTH",
+    "label": "Status Flag for ERH_BMONTH",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1397,
+    "name": "ARH_EMONTH",
+    "label": "Status Flag for ERH_EMONTH",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1405,
+    "name": "EEHC_WHY",
+    "label": "Reason for move to residence.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1406,
+    "name": "AEHC_WHY",
+    "label": "Status Flag for EEHC_WHY",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1414,
+    "name": "ET2_LNO1",
+    "label": "Person number of the first Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1415,
+    "name": "ET2_LNO2",
+    "label": "Person number of the second Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1416,
+    "name": "ET2_LNO3",
+    "label": "Person number of the third Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1417,
+    "name": "ET2_LNO4",
+    "label": "Person number of the fourth Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1418,
+    "name": "ET2_LNO5",
+    "label": "Person number of the fifth Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1419,
+    "name": "ET2_LNO6",
+    "label": "Person number of the sixth Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1420,
+    "name": "ET2_LNO7",
+    "label": "Person number of the seventh Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1421,
+    "name": "ET2_LNO8",
+    "label": "Person number of the eighth Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1422,
+    "name": "ET2_LNO9",
+    "label": "Person number of the ninth Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1423,
+    "name": "ET2_LNO10",
+    "label": "Person number of the tenth Type 2 person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1424,
+    "name": "AT2_AGE1",
+    "label": "Status Flag for TT2_AGE1",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1425,
+    "name": "AT2_AGE2",
+    "label": "Status Flag for TT2_AGE2",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1426,
+    "name": "AT2_AGE3",
+    "label": "Status Flag for TT2_AGE3",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1427,
+    "name": "AT2_AGE4",
+    "label": "Status Flag for TT2_AGE4",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1428,
+    "name": "AT2_AGE5",
+    "label": "Status Flag for TT2_AGE5",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1429,
+    "name": "AT2_AGE6",
+    "label": "Status Flag for TT2_AGE6",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1430,
+    "name": "AT2_AGE7",
+    "label": "Status Flag for TT2_AGE7",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1431,
+    "name": "AT2_AGE8",
+    "label": "Status Flag for TT2_AGE8",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1432,
+    "name": "AT2_AGE9",
+    "label": "Status Flag for TT2_AGE9",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1433,
+    "name": "AT2_AGE10",
+    "label": "Status Flag for TT2_AGE10",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1464,
+    "name": "ET2_WORK1",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1465,
+    "name": "ET2_WORK2",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1466,
+    "name": "ET2_WORK3",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1467,
+    "name": "ET2_WORK4",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1468,
+    "name": "ET2_WORK5",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1469,
+    "name": "ET2_WORK6",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1470,
+    "name": "ET2_WORK7",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1471,
+    "name": "ET2_WORK8",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1472,
+    "name": "ET2_WORK9",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1473,
+    "name": "ET2_WORK10",
+    "label": "Did the type 2 person work for pay at any time when ... lived together?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1484,
+    "name": "EMS_EHC",
+    "label": "Is ... married, widowed, divorced, separated, or never married at this month?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1485,
+    "name": "EPNSPOUS_EHC",
+    "label": "Person number of spouse at this month",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1486,
+    "name": "EPNCOHAB_EHC",
+    "label": "Person number of unmarried partner at this month",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1491,
+    "name": "AMS_EHC",
+    "label": "Status Flag for EMS_EHC",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1492,
+    "name": "RREL1",
+    "label": "Monthly household relationship to person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1493,
+    "name": "RREL2",
+    "label": "Monthly household relationship to person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1494,
+    "name": "RREL3",
+    "label": "Monthly household relationship to person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1495,
+    "name": "RREL4",
+    "label": "Monthly household relationship to person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1496,
+    "name": "RREL5",
+    "label": "Monthly household relationship to person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1497,
+    "name": "RREL6",
+    "label": "Monthly household relationship to person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1498,
+    "name": "RREL7",
+    "label": "Monthly household relationship to person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1499,
+    "name": "RREL8",
+    "label": "Monthly household relationship to person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1500,
+    "name": "RREL9",
+    "label": "Monthly household relationship to person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1501,
+    "name": "RREL10",
+    "label": "Monthly household relationship to person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1502,
+    "name": "RREL11",
+    "label": "Monthly household relationship to person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1503,
+    "name": "RREL12",
+    "label": "Monthly household relationship to person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1504,
+    "name": "RREL13",
+    "label": "Monthly household relationship to person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1505,
+    "name": "RREL14",
+    "label": "Monthly household relationship to person",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1506,
+    "name": "RREL_PNUM1",
+    "label": "Person number for monthly relationship",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1507,
+    "name": "RREL_PNUM2",
+    "label": "Person number for monthly relationship",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1508,
+    "name": "RREL_PNUM3",
+    "label": "Person number for monthly relationship",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1509,
+    "name": "RREL_PNUM4",
+    "label": "Person number for monthly relationship",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1510,
+    "name": "RREL_PNUM5",
+    "label": "Person number for monthly relationship",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1511,
+    "name": "RREL_PNUM6",
+    "label": "Person number for monthly relationship",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1512,
+    "name": "RREL_PNUM7",
+    "label": "Person number for monthly relationship",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1513,
+    "name": "RREL_PNUM8",
+    "label": "Person number for monthly relationship",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1514,
+    "name": "RREL_PNUM9",
+    "label": "Person number for monthly relationship",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1515,
+    "name": "RREL_PNUM10",
+    "label": "Person number for monthly relationship",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1516,
+    "name": "RREL_PNUM11",
+    "label": "Person number for monthly relationship",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1517,
+    "name": "RREL_PNUM12",
+    "label": "Person number for monthly relationship",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1518,
+    "name": "RREL_PNUM13",
+    "label": "Person number for monthly relationship",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1519,
+    "name": "RREL_PNUM14",
+    "label": "Person number for monthly relationship",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1522,
+    "name": "APNSPOUS_EHC",
+    "label": "Status Flag for EPNSPOUS_EHC",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1523,
+    "name": "APNCOHAB_EHC",
+    "label": "Status Flag for EPNCOHAB_EHC",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1534,
+    "name": "RHNUMPER",
+    "label": "Number of persons in household this month",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1539,
+    "name": "RHNUMPERWT2",
+    "label": "Number of persons in household this month (with Type 2 persons)",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1554,
+    "name": "RIN_UNIV",
+    "label": "Monthly indicator that respondent is in survey frame universe",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1555,
+    "name": "EJB1_BMONTH",
+    "label": "The beginning month of a job spell with employer 1",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1556,
+    "name": "EJB2_BMONTH",
+    "label": "The beginning month of a job spell with employer 2",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1557,
+    "name": "EJB3_BMONTH",
+    "label": "The beginning month of a job spell with employer 3",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1558,
+    "name": "EJB4_BMONTH",
+    "label": "The beginning month of a job spell with employer 4",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1559,
+    "name": "EJB5_BMONTH",
+    "label": "The beginning month of a job spell with employer 5",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1560,
+    "name": "EJB6_BMONTH",
+    "label": "The beginning month of a job spell with employer 6",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1561,
+    "name": "EJB1_EMONTH",
+    "label": "The ending month of a job spell with employer 1",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1562,
+    "name": "EJB2_EMONTH",
+    "label": "The ending month of a job spell with employer 2",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1563,
+    "name": "EJB3_EMONTH",
+    "label": "The ending month of a job spell with employer 3",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1564,
+    "name": "EJB4_EMONTH",
+    "label": "The ending month of a job spell with employer 4",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1565,
+    "name": "EJB5_EMONTH",
+    "label": "The ending month of a job spell with employer 5",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1566,
+    "name": "EJB6_EMONTH",
+    "label": "The ending month of a job spell with employer 6",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1591,
+    "name": "EJB1_ENDWK",
+    "label": "Last week in the reference period where the job was held.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1592,
+    "name": "EJB2_ENDWK",
+    "label": "Last week in the reference period where the job was held.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1593,
+    "name": "EJB3_ENDWK",
+    "label": "Last week in the reference period where the job was held.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1594,
+    "name": "EJB4_ENDWK",
+    "label": "Last week in the reference period where the job was held.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1595,
+    "name": "EJB5_ENDWK",
+    "label": "Last week in the reference period where the job was held.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1596,
+    "name": "EJB6_ENDWK",
+    "label": "Last week in the reference period where the job was held.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1629,
+    "name": "EJB1_STARTWK",
+    "label": "This variable gives the value for the first week in the reference period that the person held this job/business.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1630,
+    "name": "EJB2_STARTWK",
+    "label": "This variable gives the value for the first week in the reference period that the person held this job/business.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1631,
+    "name": "EJB3_STARTWK",
+    "label": "This variable gives the value for the first week in the reference period that the person held this job/business.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1632,
+    "name": "EJB4_STARTWK",
+    "label": "This variable gives the value for the first week in the reference period that the person held this job/business.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1633,
+    "name": "EJB5_STARTWK",
+    "label": "This variable gives the value for the first week in the reference period that the person held this job/business.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 1634,
+    "name": "EJB6_STARTWK",
+    "label": "This variable gives the value for the first week in the reference period that the person held this job/business.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2005,
+    "name": "ENJ_NOWRK11",
+    "label": "Why didn't ... work for pay?  Usually worked 15 or more hours per week without pay in a family business or farm",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2008,
+    "name": "ENJ_UPDWKYN",
+    "label": "Did/does ... work 15 or more hours per week without pay in a related household member's family business or farm?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2423,
+    "name": "RMESR",
+    "label": "Recode for monthly employment status.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2425,
+    "name": "EJB1_JOBID",
+    "label": "Unique identifier for a job which is consistent across waves.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2426,
+    "name": "EJB2_JOBID",
+    "label": "Unique identifier for a job which is consistent across waves.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2427,
+    "name": "EJB3_JOBID",
+    "label": "Unique identifier for a job which is consistent across waves.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2428,
+    "name": "EJB4_JOBID",
+    "label": "Unique identifier for a job which is consistent across waves.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2429,
+    "name": "EJB5_JOBID",
+    "label": "Unique identifier for a job which is consistent across waves.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2430,
+    "name": "EJB6_JOBID",
+    "label": "Unique identifier for a job which is consistent across waves.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2439,
+    "name": "AMESR",
+    "label": "Status Flag for RMESR",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2521,
+    "name": "AMWKHRS",
+    "label": "Status Flag for TMWKHRS",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2523,
+    "name": "APEARN",
+    "label": "Status Flag for TPEARN",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 2524,
+    "name": "APEARN_ALT",
+    "label": "Status Flag for TPEARN_ALT",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 3344,
+    "name": "TMOVER",
+    "label": "Recoded variable indicating mover status",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 3354,
+    "name": "THHLDSTATUS",
+    "label": "Household status",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 3994,
+    "name": "TAGE_EHC",
+    "label": "Monthly age during the reference period.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4006,
+    "name": "TT2_AGE1",
+    "label": "What is the first Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4007,
+    "name": "TT2_AGE2",
+    "label": "What is the second Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4008,
+    "name": "TT2_AGE3",
+    "label": "What is the third Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4009,
+    "name": "TT2_AGE4",
+    "label": "What is the fourth Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4010,
+    "name": "TT2_AGE5",
+    "label": "What is the fifth Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4011,
+    "name": "TT2_AGE6",
+    "label": "What is the sixth Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4012,
+    "name": "TT2_AGE7",
+    "label": "What is the seventh Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4013,
+    "name": "TT2_AGE8",
+    "label": "What is the eighth Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4014,
+    "name": "TT2_AGE9",
+    "label": "What is the ninth Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4015,
+    "name": "TT2_AGE10",
+    "label": "What is the tenth Type 2 person's age?",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4102,
+    "name": "TJB1_MSUM",
+    "label": "Monthly earnings from job 1, varying with the number of days in the month.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4103,
+    "name": "TJB2_MSUM",
+    "label": "Monthly earnings from job 2, varying with the number of days in the month.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4104,
+    "name": "TJB3_MSUM",
+    "label": "Monthly earnings from job 3, varying with the number of days in the month.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4105,
+    "name": "TJB4_MSUM",
+    "label": "Monthly earnings from job 4, varying with the number of days in the month.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4106,
+    "name": "TJB5_MSUM",
+    "label": "Monthly earnings from job 5, varying with the number of days in the month.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4107,
+    "name": "TJB6_MSUM",
+    "label": "Monthly earnings from job 6, varying with the number of days in the month.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4142,
+    "name": "TJB1_MWKHRS",
+    "label": "Average number of hours worked per week at job 1 during the reference month.  The average includes all weeks in the reference month.  Weeks before the job began, after the job ended, and during an away without pay spell are counted as 0 hours worked",
+    "dtype": "float"
+  },
+  {
+    "varnum": 4143,
+    "name": "TJB2_MWKHRS",
+    "label": "Average number of hours worked per week at job 2 during the reference month.  The average includes all weeks in the reference month.  Weeks before the job began, after the job ended, and during an away without pay spell are counted as 0 hours worked",
+    "dtype": "float"
+  },
+  {
+    "varnum": 4144,
+    "name": "TJB3_MWKHRS",
+    "label": "Average number of hours worked per week at job 3 during the reference month.  The average includes all weeks in the reference month.  Weeks before the job began, after the job ended, and during an away without pay spell are counted as 0 hours worked",
+    "dtype": "float"
+  },
+  {
+    "varnum": 4145,
+    "name": "TJB4_MWKHRS",
+    "label": "Average number of hours worked per week at job 4 during the reference month.  The average includes all weeks in the reference month.  Weeks before the job began, after the job ended, and during an away without pay spell are counted as 0 hours worked",
+    "dtype": "float"
+  },
+  {
+    "varnum": 4146,
+    "name": "TJB5_MWKHRS",
+    "label": "Average number of hours worked per week at job 5 during the reference month.  The average includes all weeks in the reference month.  Weeks before the job began, after the job ended, and during an away without pay spell are counted as 0 hours worked",
+    "dtype": "float"
+  },
+  {
+    "varnum": 4147,
+    "name": "TJB6_MWKHRS",
+    "label": "Average number of hours worked per week at job 6 during the reference month.  The average includes all weeks in the reference month.  Weeks before the job began, after the job ended, and during an away without pay spell are counted as 0 hours worked",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4148,
+    "name": "TMWKHRS",
+    "label": "Average number of hours worked per week at all jobs held during the reference month.",
+    "dtype": "float"
+  },
+  {
+    "varnum": 4155,
+    "name": "TPEARN",
+    "label": "Sum of earnings and profits/losses from all jobs, varying with the number of days in the month (comparable to RPEARN in 1996, 2001, and 2014 SIPP panels).",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4156,
+    "name": "TJB1_MSUMALT",
+    "label": "Alternate recode for monthly sum of earnings from job 1 that does not vary with the number of days in the month.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4157,
+    "name": "TJB2_MSUMALT",
+    "label": "Alternate recode for monthly sum of earnings from job 2 that does not vary with the number of days in the month.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4158,
+    "name": "TJB3_MSUMALT",
+    "label": "Alternate recode for monthly sum of earnings from job 3 that does not vary with the number of days in the month.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4159,
+    "name": "TJB4_MSUMALT",
+    "label": "Alternate recode for monthly sum of earnings from job 4 that does not vary with the number of days in the month.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4160,
+    "name": "TJB5_MSUMALT",
+    "label": "Alternate recode for monthly sum of earnings from job 5 that does not vary with the number of days in the month.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4161,
+    "name": "TJB6_MSUMALT",
+    "label": "Alternate recode for monthly sum of earnings from job 6 that does not vary with the number of days in the month.",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4162,
+    "name": "TPEARN_ALT",
+    "label": "Alternate recode of earnings and profits/losses from all jobs that does not vary with the number of days in the month (comparable to RPEARN in 2004 and 2008 SIPP panels).",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4319,
+    "name": "RREL15",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4320,
+    "name": "RREL16",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4321,
+    "name": "RREL17",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4322,
+    "name": "RREL18",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4323,
+    "name": "RREL19",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4324,
+    "name": "RREL20",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4325,
+    "name": "RREL21",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4326,
+    "name": "RREL22",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4327,
+    "name": "RREL23",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4328,
+    "name": "RREL24",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4329,
+    "name": "RREL25",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4330,
+    "name": "RREL26",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4331,
+    "name": "RREL27",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4332,
+    "name": "RREL28",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4333,
+    "name": "RREL29",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4334,
+    "name": "RREL30",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4335,
+    "name": "RREL_PNUM15",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4336,
+    "name": "RREL_PNUM16",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4337,
+    "name": "RREL_PNUM17",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4338,
+    "name": "RREL_PNUM18",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4339,
+    "name": "RREL_PNUM19",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4340,
+    "name": "RREL_PNUM20",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4341,
+    "name": "RREL_PNUM21",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4342,
+    "name": "RREL_PNUM22",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4343,
+    "name": "RREL_PNUM23",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4344,
+    "name": "RREL_PNUM24",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4345,
+    "name": "RREL_PNUM25",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4346,
+    "name": "RREL_PNUM26",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4347,
+    "name": "RREL_PNUM27",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4348,
+    "name": "RREL_PNUM28",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4349,
+    "name": "RREL_PNUM29",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4350,
+    "name": "RREL_PNUM30",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4351,
+    "name": "EJB7_BMONTH",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4352,
+    "name": "EJB7_EMONTH",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4357,
+    "name": "EJB7_ENDWK",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4375,
+    "name": "EJB7_STARTWK",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 4921,
+    "name": "EJB7_JOBID",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 5194,
+    "name": "TJB7_MSUM",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 5201,
+    "name": "TJB7_MWKHRS",
+    "label": "Suppressed",
+    "dtype": "integer"
+  },
+  {
+    "varnum": 5203,
+    "name": "TJB7_MSUMALT",
+    "label": "Suppressed",
+    "dtype": "integer"
+  }
+]

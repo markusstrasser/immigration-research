@@ -1,0 +1,48 @@
+{
+  "stages": {
+    "tracked": {
+      "candidate_pairs": 331,
+      "baseline_working_age": 287,
+      "calendar_window": 218,
+      "focal_residence_universe": 217,
+      "three_pre_co_resident": 192,
+      "validated_pairs": 192
+    },
+    "type2": {
+      "candidate_pairs": 747,
+      "baseline_working_age": 747,
+      "calendar_window": 584,
+      "focal_residence_universe": 581,
+      "three_pre_co_resident": 348,
+      "validated_pairs": 348
+    }
+  },
+  "final": {
+    "tracked": {
+      "focal_adults": 149,
+      "sample_units": 78,
+      "departing_pairs": 181,
+      "post_records": 148,
+      "post_in_universe": 147,
+      "reported_residence": 61,
+      "persistent": 129,
+      "returned": 18,
+      "partner": 7,
+      "children": 30,
+      "later_focal_move": 11
+    },
+    "type2": {
+      "focal_adults": 278,
+      "sample_units": 145,
+      "departing_pairs": 343,
+      "post_records": 277,
+      "post_in_universe": 277,
+      "reported_residence": 223,
+      "persistent": 274,
+      "returned": 3,
+      "partner": 21,
+      "children": 113,
+      "later_focal_move": 7
+    }
+  }
+}

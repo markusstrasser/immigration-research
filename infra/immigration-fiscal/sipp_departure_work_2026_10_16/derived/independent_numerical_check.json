@@ -1,0 +1,436 @@
+{
+  "verdict": "PASS",
+  "results": [
+    {
+      "route": "tracked",
+      "outcome": "employment",
+      "weighting": "unweighted",
+      "adults": 147,
+      "clusters": 78,
+      "pre": 0.7301587301587302,
+      "post": 0.7210884353741497,
+      "change": -0.009070294784580499
+    },
+    {
+      "route": "tracked",
+      "outcome": "employment",
+      "weighting": "December_weighted",
+      "adults": 147,
+      "clusters": 78,
+      "pre": 0.7189907192912113,
+      "post": 0.7097099698499292,
+      "change": -0.009280749441282102,
+      "ci_low": -0.03768352138874109,
+      "ci_high": 0.01912202250617689,
+      "standard_error": 0.014491210177274998,
+      "max_primary_replicate_base_weight_difference": 5.000001692678779e-07
+    },
+    {
+      "route": "tracked",
+      "outcome": "hours",
+      "weighting": "unweighted",
+      "adults": 146,
+      "clusters": 78,
+      "pre": 29.75490867579909,
+      "post": 30.01780821917808,
+      "change": 0.26289954337899535
+    },
+    {
+      "route": "tracked",
+      "outcome": "hours",
+      "weighting": "December_weighted",
+      "adults": 146,
+      "clusters": 78,
+      "pre": 29.01605811550862,
+      "post": 29.312161809558667,
+      "change": 0.29610369405004505,
+      "ci_low": -1.0892064637400745,
+      "ci_high": 1.6814138518401645,
+      "standard_error": 0.7067908968316936,
+      "max_primary_replicate_base_weight_difference": 5.000001692678779e-07
+    },
+    {
+      "route": "tracked",
+      "outcome": "earnings",
+      "weighting": "unweighted",
+      "adults": 147,
+      "clusters": 78,
+      "pre": 6545.433106575964,
+      "post": 7329.702947845804,
+      "change": 784.2698412698412
+    },
+    {
+      "route": "tracked",
+      "outcome": "earnings",
+      "weighting": "December_weighted",
+      "adults": 147,
+      "clusters": 78,
+      "pre": 6559.381629756557,
+      "post": 7298.201303749536,
+      "change": 738.8196739929788,
+      "ci_low": -216.80388983909052,
+      "ci_high": 1694.443237825048,
+      "standard_error": 487.5630427714639,
+      "max_primary_replicate_base_weight_difference": 5.000001692678779e-07
+    },
+    {
+      "route": "tracked",
+      "outcome": "calendar_earnings",
+      "weighting": "unweighted",
+      "adults": 147,
+      "clusters": 78,
+      "pre": 6536.263038548753,
+      "post": 7329.374149659864,
+      "change": 793.1111111111112
+    },
+    {
+      "route": "tracked",
+      "outcome": "calendar_earnings",
+      "weighting": "December_weighted",
+      "adults": 147,
+      "clusters": 78,
+      "pre": 6549.822534815954,
+      "post": 7299.166719973601,
+      "change": 749.3441851576472,
+      "ci_low": -203.38131237940456,
+      "ci_high": 1702.069682694699,
+      "standard_error": 486.08443751890394,
+      "max_primary_replicate_base_weight_difference": 5.000001692678779e-07
+    },
+    {
+      "route": "type2",
+      "outcome": "employment",
+      "weighting": "unweighted",
+      "adults": 277,
+      "clusters": 145,
+      "pre": 0.785800240673887,
+      "post": 0.776173285198556,
+      "change": -0.009626955475330927
+    },
+    {
+      "route": "type2",
+      "outcome": "employment",
+      "weighting": "December_weighted",
+      "adults": 277,
+      "clusters": 145,
+      "pre": 0.7901280140286738,
+      "post": 0.7833814326181558,
+      "change": -0.0067465814105180846,
+      "ci_low": -0.027441363851581232,
+      "ci_high": 0.013948201030545062,
+      "standard_error": 0.010558562469930177,
+      "max_primary_replicate_base_weight_difference": 5.000001692678779e-07
+    },
+    {
+      "route": "type2",
+      "outcome": "hours",
+      "weighting": "unweighted",
+      "adults": 277,
+      "clusters": 145,
+      "pre": 30.391636582430806,
+      "post": 29.73965102286402,
+      "change": -0.651985559566787
+    },
+    {
+      "route": "type2",
+      "outcome": "hours",
+      "weighting": "December_weighted",
+      "adults": 277,
+      "clusters": 145,
+      "pre": 30.657721672591695,
+      "post": 30.216597997639358,
+      "change": -0.44112367495233534,
+      "ci_low": -1.6714116651844222,
+      "ci_high": 0.7891643152797516,
+      "standard_error": 0.6276979542000444,
+      "max_primary_replicate_base_weight_difference": 5.000001692678779e-07
+    },
+    {
+      "route": "type2",
+      "outcome": "earnings",
+      "weighting": "unweighted",
+      "adults": 277,
+      "clusters": 145,
+      "pre": 5618.0,
+      "post": 5531.05174488568,
+      "change": -86.94825511432009
+    },
+    {
+      "route": "type2",
+      "outcome": "earnings",
+      "weighting": "December_weighted",
+      "adults": 277,
+      "clusters": 145,
+      "pre": 5715.83907184337,
+      "post": 5492.953342466735,
+      "change": -222.8857293766353,
+      "ci_low": -646.2456132682461,
+      "ci_high": 200.47415451497545,
+      "standard_error": 215.9999407610259,
+      "max_primary_replicate_base_weight_difference": 5.000001692678779e-07
+    },
+    {
+      "route": "type2",
+      "outcome": "calendar_earnings",
+      "weighting": "unweighted",
+      "adults": 277,
+      "clusters": 145,
+      "pre": 5627.239470517448,
+      "post": 5533.22623345367,
+      "change": -94.0132370637786
+    },
+    {
+      "route": "type2",
+      "outcome": "calendar_earnings",
+      "weighting": "December_weighted",
+      "adults": 277,
+      "clusters": 145,
+      "pre": 5723.1445668346405,
+      "post": 5495.218552636108,
+      "change": -227.9260141985323,
+      "ci_low": -648.3478758488695,
+      "ci_high": 192.49584745180493,
+      "standard_error": 214.50094982160064,
+      "max_primary_replicate_base_weight_difference": 5.000001692678779e-07
+    }
+  ],
+  "comparison": [
+    {
+      "route": "tracked",
+      "outcome": "employment",
+      "weighting": "unweighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": -4.126976538287863e-11,
+        "post": -2.5850321883069682e-11,
+        "change": 4.1950123930156735e-13
+      }
+    },
+    {
+      "route": "tracked",
+      "outcome": "employment",
+      "weighting": "December_weighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": -8.788747507537664e-12,
+        "post": -5.0070836365989635e-11,
+        "change": -2.8210246638682435e-13,
+        "ci_low": 1.2589096431980806e-12,
+        "ci_high": -3.823108496447958e-12
+      }
+    },
+    {
+      "route": "tracked",
+      "outcome": "hours",
+      "weighting": "unweighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": -4.200909842211331e-09,
+        "post": -8.219203095904959e-10,
+        "change": -2.1004642469790724e-11
+      }
+    },
+    {
+      "route": "tracked",
+      "outcome": "hours",
+      "weighting": "December_weighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": -4.49137971259006e-09,
+        "post": -4.4133230403531343e-10,
+        "change": -4.995492908221877e-11,
+        "ci_low": 2.599256365698466e-10,
+        "ci_high": -1.598354781862099e-10
+      }
+    },
+    {
+      "route": "tracked",
+      "outcome": "earnings",
+      "weighting": "unweighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": -4.240355337969959e-07,
+        "post": -1.5419573173858225e-07,
+        "change": -3.01588443107903e-08
+      }
+    },
+    {
+      "route": "tracked",
+      "outcome": "earnings",
+      "weighting": "December_weighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": -2.4344262783415616e-07,
+        "post": -2.5046392693184316e-07,
+        "change": -7.021185410849284e-09,
+        "ci_low": -3.909050860784191e-08,
+        "ci_high": -1.7495199244876858e-07
+      }
+    },
+    {
+      "route": "tracked",
+      "outcome": "calendar_earnings",
+      "weighting": "unweighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": -4.512476152740419e-07,
+        "post": -3.40135557053145e-07,
+        "change": 1.1111183084722143e-08
+      }
+    },
+    {
+      "route": "tracked",
+      "outcome": "calendar_earnings",
+      "weighting": "December_weighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": -1.8404625734547153e-07,
+        "post": -2.6398993213661015e-08,
+        "change": -4.2352780837973114e-08,
+        "ci_low": 2.05954506782291e-08,
+        "ci_high": -3.053010004805401e-07
+      }
+    },
+    {
+      "route": "type2",
+      "outcome": "employment",
+      "weighting": "unweighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": -2.6113000650695994e-11,
+        "post": -1.4439560658274786e-12,
+        "change": -3.309262586181916e-13
+      }
+    },
+    {
+      "route": "type2",
+      "outcome": "employment",
+      "weighting": "December_weighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": 2.867384107929638e-11,
+        "post": 1.8155810188602572e-11,
+        "change": 4.819157226054749e-13,
+        "ci_low": -1.5812316733754272e-12,
+        "ci_high": 5.450622592162446e-13
+      }
+    },
+    {
+      "route": "type2",
+      "outcome": "hours",
+      "weighting": "unweighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": 2.4308057788857695e-09,
+        "post": 2.864020132165024e-09,
+        "change": 3.321298791547633e-11
+      }
+    },
+    {
+      "route": "type2",
+      "outcome": "hours",
+      "weighting": "December_weighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": 2.591693970543929e-09,
+        "post": -2.3606432364431384e-09,
+        "change": 4.766465000471953e-11,
+        "ci_low": -1.844222552449537e-10,
+        "ci_high": -2.0248358545416067e-11
+      }
+    },
+    {
+      "route": "type2",
+      "outcome": "earnings",
+      "weighting": "unweighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": 0.0,
+        "post": -1.1431984603404999e-07,
+        "change": -4.320085622566694e-09
+      }
+    },
+    {
+      "route": "type2",
+      "outcome": "earnings",
+      "weighting": "December_weighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": -1.566295395605266e-07,
+        "post": 4.667354005505331e-07,
+        "change": 2.3364691514871083e-08,
+        "ci_low": 3.175387064402457e-08,
+        "ci_high": 1.4975455542298732e-08
+      }
+    },
+    {
+      "route": "type2",
+      "outcome": "calendar_earnings",
+      "weighting": "unweighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": -4.825515134143643e-07,
+        "post": 4.536695996648632e-07,
+        "change": -3.778609425353352e-09
+      }
+    },
+    {
+      "route": "type2",
+      "outcome": "calendar_earnings",
+      "weighting": "December_weighted",
+      "passed": true,
+      "differences": {
+        "adults": 0.0,
+        "clusters": 0.0,
+        "pre": -1.6535977920284495e-07,
+        "post": -3.638915586634539e-07,
+        "change": 1.467697074986063e-09,
+        "ci_low": -4.886953774985159e-08,
+        "ci_high": -4.819506216335867e-08
+      }
+    }
+  ],
+  "inputs": {
+    "infra/immigration-fiscal/sipp_departure_work_2026_10_16/_cache/events.parquet": "14037e3e5f1332c4d8b1eb27c0bb8f6a4c762f5dc8e29dc0e5771466e4b2f15c",
+    "infra/immigration-fiscal/sipp_departure_work_2026_10_16/_cache/persons.parquet": "384bbca7066eb220c00d620ad7929c989046d53ce73d065eba80a5f06a36bb0d",
+    "infra/immigration-fiscal/sipp_departure_work_2026_10_16/_cache/december_replicates.parquet": "8de7e1cbaa989e455310b24161318e9d63c888846c0300f6500041cd377a3083",
+    "infra/immigration-fiscal/sipp_departure_work_2026_10_16/derived/changes.csv": "0f33ddb10de41781d26c3027934982220d91ea6bf9000cdc0cee317880faea8d"
+  },
+  "zero_diagnostics": {
+    "earnings": 620,
+    "calendar_earnings": 620
+  },
+  "known_nojob_with_active_spell": 2,
+  "rules": "Balanced sixmonth cohort by outcome; RIN_UNIV1; numeric values retained incl negatives; structural zeros require nojob status/noactive job and allocation0; explicit unpaid family work can establish earnings0 but not hours0; later moves allowed.",
+  "skipped": "Cluster bootstrap not independently rerun; no causal interpretation audited."
+}

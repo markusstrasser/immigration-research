@@ -1,0 +1,2769 @@
+{
+  "source": "https://www2.census.gov/programs-surveys/sipp/data/datasets/2025/pu2025_schema.json",
+  "interpretation": "Visible component flag screen, not a verified complete derivation of aggregate recodes. A0=NIU, A1=reported; A2-8=imputed/mixed; A9=consult components. Higher job fields and other source information can be suppressed.",
+  "groups": {
+    "job_presence_and_timing": [
+      {
+        "varnum": 337,
+        "name": "AJB1_SCRNR",
+        "label": "Status Flag for EJB1_SCRNR",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 339,
+        "name": "AJB2_SCRNR",
+        "label": "Status Flag for EJB2_SCRNR",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 341,
+        "name": "AJB3_SCRNR",
+        "label": "Status Flag for EJB3_SCRNR",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 343,
+        "name": "AJB4_SCRNR",
+        "label": "Status Flag for EJB4_SCRNR",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 345,
+        "name": "AJB5_SCRNR",
+        "label": "Status Flag for EJB5_SCRNR",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 347,
+        "name": "AJB6_SCRNR",
+        "label": "Status Flag for EJB6_SCRNR",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1567,
+        "name": "AJB1_BMONTH",
+        "label": "Status Flag for EJB1_BMONTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1568,
+        "name": "AJB2_BMONTH",
+        "label": "Status Flag for EJB2_BMONTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1569,
+        "name": "AJB3_BMONTH",
+        "label": "Status Flag for EJB3_BMONTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1570,
+        "name": "AJB4_BMONTH",
+        "label": "Status Flag for EJB4_BMONTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1571,
+        "name": "AJB5_BMONTH",
+        "label": "Status Flag for EJB5_BMONTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1572,
+        "name": "AJB6_BMONTH",
+        "label": "Status Flag for EJB6_BMONTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1573,
+        "name": "AJB1_EMONTH",
+        "label": "Status Flag for EJB1_EMONTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1574,
+        "name": "AJB2_EMONTH",
+        "label": "Status Flag for EJB2_EMONTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1575,
+        "name": "AJB3_EMONTH",
+        "label": "Status Flag for EJB3_EMONTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1576,
+        "name": "AJB4_EMONTH",
+        "label": "Status Flag for EJB4_EMONTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1577,
+        "name": "AJB5_EMONTH",
+        "label": "Status Flag for EJB5_EMONTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1578,
+        "name": "AJB6_EMONTH",
+        "label": "Status Flag for EJB6_EMONTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1585,
+        "name": "AJB1_CFLG",
+        "label": "Status Flag for RJB1_CFLG",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1586,
+        "name": "AJB2_CFLG",
+        "label": "Status Flag for RJB2_CFLG",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1587,
+        "name": "AJB3_CFLG",
+        "label": "Status Flag for RJB3_CFLG",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1588,
+        "name": "AJB4_CFLG",
+        "label": "Status Flag for RJB4_CFLG",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1589,
+        "name": "AJB5_CFLG",
+        "label": "Status Flag for RJB5_CFLG",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1590,
+        "name": "AJB6_CFLG",
+        "label": "Status Flag for RJB6_CFLG",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1597,
+        "name": "AJB1_ENDWK",
+        "label": "Status Flag for EJB1_ENDWK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1598,
+        "name": "AJB2_ENDWK",
+        "label": "Status Flag for EJB2_ENDWK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1599,
+        "name": "AJB3_ENDWK",
+        "label": "Status Flag for EJB3_ENDWK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1600,
+        "name": "AJB4_ENDWK",
+        "label": "Status Flag for EJB4_ENDWK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1601,
+        "name": "AJB5_ENDWK",
+        "label": "Status Flag for EJB5_ENDWK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1602,
+        "name": "AJB6_ENDWK",
+        "label": "Status Flag for EJB6_ENDWK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1625,
+        "name": "AJB1_STRTJAN",
+        "label": "Status Flag for EJB1_STRTJAN",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1626,
+        "name": "AJB2_STRTJAN",
+        "label": "Status Flag for EJB2_STRTJAN",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1627,
+        "name": "AJB3_STRTJAN",
+        "label": "Status Flag for EJB3_STRTJAN",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1628,
+        "name": "AJB4_STRTJAN",
+        "label": "Status Flag for EJB4_STRTJAN",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1635,
+        "name": "AJB1_STARTWK",
+        "label": "Status Flag for EJB1_STARTWK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1636,
+        "name": "AJB2_STARTWK",
+        "label": "Status Flag for EJB2_STARTWK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1637,
+        "name": "AJB3_STARTWK",
+        "label": "Status Flag for EJB3_STARTWK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1638,
+        "name": "AJB4_STARTWK",
+        "label": "Status Flag for EJB4_STARTWK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1639,
+        "name": "AJB5_STARTWK",
+        "label": "Status Flag for EJB5_STARTWK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1640,
+        "name": "AJB6_STARTWK",
+        "label": "Status Flag for EJB6_STARTWK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1641,
+        "name": "AJB1_STRTYR",
+        "label": "Status Flag for TJB1_STRTYR",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1642,
+        "name": "AJB2_STRTYR",
+        "label": "Status Flag for TJB2_STRTYR",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1643,
+        "name": "AJB3_STRTYR",
+        "label": "Status Flag for TJB3_STRTYR",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1647,
+        "name": "AJB1_STRTMON",
+        "label": "Status Flag for EJB1_STRTMON",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1648,
+        "name": "AJB2_STRTMON",
+        "label": "Status Flag for EJB2_STRTMON",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1649,
+        "name": "AJB3_STRTMON",
+        "label": "Status Flag for EJB3_STRTMON",
+        "dtype": "integer"
+      }
+    ],
+    "hours": [
+      {
+        "varnum": 1908,
+        "name": "AJB1_CHHOUR1",
+        "label": "Status Flag for EJB1_CHHOUR1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1909,
+        "name": "AJB2_CHHOUR1",
+        "label": "Status Flag for EJB2_CHHOUR1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1910,
+        "name": "AJB3_CHHOUR1",
+        "label": "Status Flag for EJB3_CHHOUR1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1911,
+        "name": "AJB4_CHHOUR1",
+        "label": "Status Flag for EJB4_CHHOUR1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1912,
+        "name": "AJB5_CHHOUR1",
+        "label": "Status Flag for EJB5_CHHOUR1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1913,
+        "name": "AJB6_CHHOUR1",
+        "label": "Status Flag for EJB6_CHHOUR1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1918,
+        "name": "AJB1_CHHOUR2",
+        "label": "Status Flag for EJB1_CHHOUR2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1919,
+        "name": "AJB2_CHHOUR2",
+        "label": "Status Flag for EJB2_CHHOUR2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1920,
+        "name": "AJB3_CHHOUR2",
+        "label": "Status Flag for EJB3_CHHOUR2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1921,
+        "name": "AJB4_CHHOUR2",
+        "label": "Status Flag for EJB4_CHHOUR2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1926,
+        "name": "AJB1_CHHOWK1",
+        "label": "Status Flag for EJB1_CHHOWK1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1927,
+        "name": "AJB2_CHHOWK1",
+        "label": "Status Flag for EJB2_CHHOWK1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1928,
+        "name": "AJB3_CHHOWK1",
+        "label": "Status Flag for EJB3_CHHOWK1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1929,
+        "name": "AJB4_CHHOWK1",
+        "label": "Status Flag for EJB4_CHHOWK1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1933,
+        "name": "AJB1_CHHOWK2",
+        "label": "Status Flag for EJB1_CHHOWK2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1934,
+        "name": "AJB2_CHHOWK2",
+        "label": "Status Flag for EJB2_CHHOWK2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1935,
+        "name": "AJB3_CHHOWK2",
+        "label": "Status Flag for EJB3_CHHOWK2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1940,
+        "name": "AJB1_CHHOMN1",
+        "label": "Status Flag for EJB1_CHHOMN1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1941,
+        "name": "AJB2_CHHOMN1",
+        "label": "Status Flag for EJB2_CHHOMN1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1942,
+        "name": "AJB3_CHHOMN1",
+        "label": "Status Flag for EJB3_CHHOMN1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1943,
+        "name": "AJB4_CHHOMN1",
+        "label": "Status Flag for EJB4_CHHOMN1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1947,
+        "name": "AJB1_CHHOMN2",
+        "label": "Status Flag for EJB1_CHHOMN2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1948,
+        "name": "AJB2_CHHOMN2",
+        "label": "Status Flag for EJB2_CHHOMN2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1949,
+        "name": "AJB3_CHHOMN2",
+        "label": "Status Flag for EJB3_CHHOMN2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1950,
+        "name": "AJB1_JOBHRS1",
+        "label": "Status Flag for TJB1_JOBHRS1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1951,
+        "name": "AJB2_JOBHRS1",
+        "label": "Status Flag for TJB2_JOBHRS1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1952,
+        "name": "AJB3_JOBHRS1",
+        "label": "Status Flag for TJB3_JOBHRS1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1953,
+        "name": "AJB4_JOBHRS1",
+        "label": "Status Flag for TJB4_JOBHRS1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1954,
+        "name": "AJB5_JOBHRS1",
+        "label": "Status Flag for TJB5_JOBHRS1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1955,
+        "name": "AJB6_JOBHRS1",
+        "label": "Status Flag for TJB6_JOBHRS1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1956,
+        "name": "AJB1_JOBHRS2",
+        "label": "Status Flag for TJB1_JOBHRS2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1957,
+        "name": "AJB2_JOBHRS2",
+        "label": "Status Flag for TJB2_JOBHRS2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1958,
+        "name": "AJB3_JOBHRS2",
+        "label": "Status Flag for TJB3_JOBHRS2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1959,
+        "name": "AJB4_JOBHRS2",
+        "label": "Status Flag for TJB4_JOBHRS2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1960,
+        "name": "AJB1_JOBHRS3",
+        "label": "Status Flag for TJB1_JOBHRS3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1961,
+        "name": "AJB2_JOBHRS3",
+        "label": "Status Flag for TJB2_JOBHRS3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1962,
+        "name": "AJB3_JOBHRS3",
+        "label": "Status Flag for TJB3_JOBHRS3",
+        "dtype": "integer"
+      }
+    ],
+    "unpaid_absence": [
+      {
+        "varnum": 2314,
+        "name": "AJB1_AWOP1",
+        "label": "Status Flag for EJB1_AWOP1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2315,
+        "name": "AJB2_AWOP1",
+        "label": "Status Flag for EJB2_AWOP1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2316,
+        "name": "AJB3_AWOP1",
+        "label": "Status Flag for EJB3_AWOP1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2317,
+        "name": "AJB4_AWOP1",
+        "label": "Status Flag for EJB4_AWOP1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2318,
+        "name": "AJB5_AWOP1",
+        "label": "Status Flag for EJB5_AWOP1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2319,
+        "name": "AJB6_AWOP1",
+        "label": "Status Flag for EJB6_AWOP1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2320,
+        "name": "AJB1_AWOP2",
+        "label": "Status Flag for EJB1_AWOP2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2321,
+        "name": "AJB2_AWOP2",
+        "label": "Status Flag for EJB2_AWOP2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2322,
+        "name": "AJB3_AWOP2",
+        "label": "Status Flag for EJB3_AWOP2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2323,
+        "name": "AJB4_AWOP2",
+        "label": "Status Flag for EJB4_AWOP2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2324,
+        "name": "AJB1_AWOP3",
+        "label": "Status Flag for EJB1_AWOP3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2325,
+        "name": "AJB2_AWOP3",
+        "label": "Status Flag for EJB2_AWOP3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2334,
+        "name": "AJB1_AWOPSM1",
+        "label": "Status Flag for EJB1_AWOPSM1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2335,
+        "name": "AJB2_AWOPSM1",
+        "label": "Status Flag for EJB2_AWOPSM1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2336,
+        "name": "AJB3_AWOPSM1",
+        "label": "Status Flag for EJB3_AWOPSM1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2337,
+        "name": "AJB4_AWOPSM1",
+        "label": "Status Flag for EJB4_AWOPSM1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2338,
+        "name": "AJB1_AWOPSM2",
+        "label": "Status Flag for EJB1_AWOPSM2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2339,
+        "name": "AJB2_AWOPSM2",
+        "label": "Status Flag for EJB2_AWOPSM2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2340,
+        "name": "AJB1_AWOPSM3",
+        "label": "Status Flag for EJB1_AWOPSM3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2341,
+        "name": "AJB2_AWOPSM3",
+        "label": "Status Flag for EJB2_AWOPSM3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2350,
+        "name": "AJB1_AWOPEM1",
+        "label": "Status Flag for EJB1_AWOPEM1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2351,
+        "name": "AJB2_AWOPEM1",
+        "label": "Status Flag for EJB2_AWOPEM1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2352,
+        "name": "AJB3_AWOPEM1",
+        "label": "Status Flag for EJB3_AWOPEM1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2353,
+        "name": "AJB4_AWOPEM1",
+        "label": "Status Flag for EJB4_AWOPEM1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2354,
+        "name": "AJB1_AWOPEM2",
+        "label": "Status Flag for EJB1_AWOPEM2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2355,
+        "name": "AJB2_AWOPEM2",
+        "label": "Status Flag for EJB2_AWOPEM2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2356,
+        "name": "AJB1_AWOPEM3",
+        "label": "Status Flag for EJB1_AWOPEM3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2357,
+        "name": "AJB2_AWOPEM3",
+        "label": "Status Flag for EJB2_AWOPEM3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2374,
+        "name": "AJB1_AWOPSW1",
+        "label": "Status Flag for EJB1_AWOPSW1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2375,
+        "name": "AJB2_AWOPSW1",
+        "label": "Status Flag for EJB2_AWOPSW1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2376,
+        "name": "AJB3_AWOPSW1",
+        "label": "Status Flag for EJB3_AWOPSW1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2377,
+        "name": "AJB4_AWOPSW1",
+        "label": "Status Flag for EJB4_AWOPSW1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2378,
+        "name": "AJB1_AWOPSW2",
+        "label": "Status Flag for EJB1_AWOPSW2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2379,
+        "name": "AJB2_AWOPSW2",
+        "label": "Status Flag for EJB2_AWOPSW2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2380,
+        "name": "AJB1_AWOPSW3",
+        "label": "Status Flag for EJB1_AWOPSW3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2381,
+        "name": "AJB2_AWOPSW3",
+        "label": "Status Flag for EJB2_AWOPSW3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2390,
+        "name": "AJB1_AWOPEW1",
+        "label": "Status Flag for EJB1_AWOPEW1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2391,
+        "name": "AJB2_AWOPEW1",
+        "label": "Status Flag for EJB2_AWOPEW1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2392,
+        "name": "AJB3_AWOPEW1",
+        "label": "Status Flag for EJB3_AWOPEW1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2393,
+        "name": "AJB4_AWOPEW1",
+        "label": "Status Flag for EJB4_AWOPEW1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2394,
+        "name": "AJB1_AWOPEW2",
+        "label": "Status Flag for EJB1_AWOPEW2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2395,
+        "name": "AJB2_AWOPEW2",
+        "label": "Status Flag for EJB2_AWOPEW2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2396,
+        "name": "AJB1_AWOPEW3",
+        "label": "Status Flag for EJB1_AWOPEW3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2397,
+        "name": "AJB2_AWOPEW3",
+        "label": "Status Flag for EJB2_AWOPEW3",
+        "dtype": "integer"
+      }
+    ],
+    "earnings": [
+      {
+        "varnum": 1609,
+        "name": "AJB1_JBORSE",
+        "label": "Status Flag for EJB1_JBORSE",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1610,
+        "name": "AJB2_JBORSE",
+        "label": "Status Flag for EJB2_JBORSE",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1611,
+        "name": "AJB3_JBORSE",
+        "label": "Status Flag for EJB3_JBORSE",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1612,
+        "name": "AJB4_JBORSE",
+        "label": "Status Flag for EJB4_JBORSE",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1613,
+        "name": "AJB5_JBORSE",
+        "label": "Status Flag for EJB5_JBORSE",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1614,
+        "name": "AJB6_JBORSE",
+        "label": "Status Flag for EJB6_JBORSE",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1686,
+        "name": "AJB1_INCPB",
+        "label": "Status Flag for EJB1_INCPB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1687,
+        "name": "AJB2_INCPB",
+        "label": "Status Flag for EJB2_INCPB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1688,
+        "name": "AJB3_INCPB",
+        "label": "Status Flag for EJB3_INCPB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1689,
+        "name": "AJB4_INCPB",
+        "label": "Status Flag for EJB4_INCPB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1690,
+        "name": "AJB5_INCPB",
+        "label": "Status Flag for EJB5_INCPB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1691,
+        "name": "AJB6_INCPB",
+        "label": "Status Flag for EJB6_INCPB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1792,
+        "name": "AJB1_BSLRYB",
+        "label": "Status Flag for EJB1_BSLRYB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1793,
+        "name": "AJB2_BSLRYB",
+        "label": "Status Flag for EJB2_BSLRYB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1794,
+        "name": "AJB3_BSLRYB",
+        "label": "Status Flag for EJB3_BSLRYB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1795,
+        "name": "AJB4_BSLRYB",
+        "label": "Status Flag for EJB4_BSLRYB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1826,
+        "name": "AJB1_TYPPAY1",
+        "label": "Status Flag for EJB1_TYPPAY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1827,
+        "name": "AJB2_TYPPAY1",
+        "label": "Status Flag for EJB2_TYPPAY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1828,
+        "name": "AJB3_TYPPAY1",
+        "label": "Status Flag for EJB3_TYPPAY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1829,
+        "name": "AJB4_TYPPAY1",
+        "label": "Status Flag for EJB4_TYPPAY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1830,
+        "name": "AJB5_TYPPAY1",
+        "label": "Status Flag for EJB5_TYPPAY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1831,
+        "name": "AJB6_TYPPAY1",
+        "label": "Status Flag for EJB6_TYPPAY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1832,
+        "name": "AJB1_TYPPAY2",
+        "label": "Status Flag for EJB1_TYPPAY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1833,
+        "name": "AJB2_TYPPAY2",
+        "label": "Status Flag for EJB2_TYPPAY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1834,
+        "name": "AJB3_TYPPAY2",
+        "label": "Status Flag for EJB3_TYPPAY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1835,
+        "name": "AJB4_TYPPAY2",
+        "label": "Status Flag for EJB4_TYPPAY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1836,
+        "name": "AJB5_TYPPAY2",
+        "label": "Status Flag for EJB5_TYPPAY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1837,
+        "name": "AJB6_TYPPAY2",
+        "label": "Status Flag for EJB6_TYPPAY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1838,
+        "name": "AJB1_TYPPAY3",
+        "label": "Status Flag for EJB1_TYPPAY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1839,
+        "name": "AJB2_TYPPAY3",
+        "label": "Status Flag for EJB2_TYPPAY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1840,
+        "name": "AJB3_TYPPAY3",
+        "label": "Status Flag for EJB3_TYPPAY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1841,
+        "name": "AJB4_TYPPAY3",
+        "label": "Status Flag for EJB4_TYPPAY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1842,
+        "name": "AJB5_TYPPAY3",
+        "label": "Status Flag for EJB5_TYPPAY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1843,
+        "name": "AJB6_TYPPAY3",
+        "label": "Status Flag for EJB6_TYPPAY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1844,
+        "name": "AJB1_TYPPAY4",
+        "label": "Status Flag for EJB1_TYPPAY4",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1845,
+        "name": "AJB2_TYPPAY4",
+        "label": "Status Flag for EJB2_TYPPAY4",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1846,
+        "name": "AJB3_TYPPAY4",
+        "label": "Status Flag for EJB3_TYPPAY4",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1847,
+        "name": "AJB4_TYPPAY4",
+        "label": "Status Flag for EJB4_TYPPAY4",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1848,
+        "name": "AJB5_TYPPAY4",
+        "label": "Status Flag for EJB5_TYPPAY4",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1849,
+        "name": "AJB6_TYPPAY4",
+        "label": "Status Flag for EJB6_TYPPAY4",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1850,
+        "name": "AJB1_TYPPAY5",
+        "label": "Status Flag for EJB1_TYPPAY5",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1851,
+        "name": "AJB2_TYPPAY5",
+        "label": "Status Flag for EJB2_TYPPAY5",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1852,
+        "name": "AJB3_TYPPAY5",
+        "label": "Status Flag for EJB3_TYPPAY5",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1853,
+        "name": "AJB4_TYPPAY5",
+        "label": "Status Flag for EJB4_TYPPAY5",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1854,
+        "name": "AJB5_TYPPAY5",
+        "label": "Status Flag for EJB5_TYPPAY5",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1855,
+        "name": "AJB6_TYPPAY5",
+        "label": "Status Flag for EJB6_TYPPAY5",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1861,
+        "name": "AJB1_CHEARN1",
+        "label": "Status Flag for EJB1_CHEARN1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1862,
+        "name": "AJB2_CHEARN1",
+        "label": "Status Flag for EJB2_CHEARN1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1863,
+        "name": "AJB3_CHEARN1",
+        "label": "Status Flag for EJB3_CHEARN1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1864,
+        "name": "AJB4_CHEARN1",
+        "label": "Status Flag for EJB4_CHEARN1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1865,
+        "name": "AJB5_CHEARN1",
+        "label": "Status Flag for EJB5_CHEARN1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1870,
+        "name": "AJB1_CHEARN2",
+        "label": "Status Flag for EJB1_CHEARN2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1871,
+        "name": "AJB2_CHEARN2",
+        "label": "Status Flag for EJB2_CHEARN2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1872,
+        "name": "AJB3_CHEARN2",
+        "label": "Status Flag for EJB3_CHEARN2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1873,
+        "name": "AJB4_CHEARN2",
+        "label": "Status Flag for EJB4_CHEARN2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1878,
+        "name": "AJB1_CHERWK1",
+        "label": "Status Flag for EJB1_CHERWK1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1879,
+        "name": "AJB2_CHERWK1",
+        "label": "Status Flag for EJB2_CHERWK1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1880,
+        "name": "AJB3_CHERWK1",
+        "label": "Status Flag for EJB3_CHERWK1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1881,
+        "name": "AJB4_CHERWK1",
+        "label": "Status Flag for EJB4_CHERWK1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1885,
+        "name": "AJB1_CHERWK2",
+        "label": "Status Flag for EJB1_CHERWK2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1886,
+        "name": "AJB2_CHERWK2",
+        "label": "Status Flag for EJB2_CHERWK2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1887,
+        "name": "AJB3_CHERWK2",
+        "label": "Status Flag for EJB3_CHERWK2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1892,
+        "name": "AJB1_CHERMN1",
+        "label": "Status Flag for EJB1_CHERMN1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1893,
+        "name": "AJB2_CHERMN1",
+        "label": "Status Flag for EJB2_CHERMN1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1894,
+        "name": "AJB3_CHERMN1",
+        "label": "Status Flag for EJB3_CHERMN1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1895,
+        "name": "AJB4_CHERMN1",
+        "label": "Status Flag for EJB4_CHERMN1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1899,
+        "name": "AJB1_CHERMN2",
+        "label": "Status Flag for EJB1_CHERMN2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1900,
+        "name": "AJB2_CHERMN2",
+        "label": "Status Flag for EJB2_CHERMN2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 1901,
+        "name": "AJB3_CHERMN2",
+        "label": "Status Flag for EJB3_CHERMN2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2072,
+        "name": "AJB1_PAYHR1",
+        "label": "Status Flag for EJB1_PAYHR1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2073,
+        "name": "AJB2_PAYHR1",
+        "label": "Status Flag for EJB2_PAYHR1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2074,
+        "name": "AJB3_PAYHR1",
+        "label": "Status Flag for EJB3_PAYHR1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2075,
+        "name": "AJB4_PAYHR1",
+        "label": "Status Flag for EJB4_PAYHR1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2076,
+        "name": "AJB5_PAYHR1",
+        "label": "Status Flag for EJB5_PAYHR1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2081,
+        "name": "AJB1_PAYHR2",
+        "label": "Status Flag for EJB1_PAYHR2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2082,
+        "name": "AJB2_PAYHR2",
+        "label": "Status Flag for EJB2_PAYHR2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2083,
+        "name": "AJB3_PAYHR2",
+        "label": "Status Flag for EJB3_PAYHR2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2084,
+        "name": "AJB4_PAYHR2",
+        "label": "Status Flag for EJB4_PAYHR2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2088,
+        "name": "AJB1_PAYHR3",
+        "label": "Status Flag for EJB1_PAYHR3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2089,
+        "name": "AJB2_PAYHR3",
+        "label": "Status Flag for EJB2_PAYHR3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2090,
+        "name": "AJB3_PAYHR3",
+        "label": "Status Flag for EJB3_PAYHR3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2091,
+        "name": "AJB1_ANNSAL1",
+        "label": "Status Flag for TJB1_ANNSAL1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2092,
+        "name": "AJB2_ANNSAL1",
+        "label": "Status Flag for TJB2_ANNSAL1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2093,
+        "name": "AJB3_ANNSAL1",
+        "label": "Status Flag for TJB3_ANNSAL1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2094,
+        "name": "AJB4_ANNSAL1",
+        "label": "Status Flag for TJB4_ANNSAL1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2095,
+        "name": "AJB5_ANNSAL1",
+        "label": "Status Flag for TJB5_ANNSAL1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2096,
+        "name": "AJB1_HOURLY1",
+        "label": "Status Flag for TJB1_HOURLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2097,
+        "name": "AJB2_HOURLY1",
+        "label": "Status Flag for TJB2_HOURLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2098,
+        "name": "AJB3_HOURLY1",
+        "label": "Status Flag for TJB3_HOURLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2099,
+        "name": "AJB4_HOURLY1",
+        "label": "Status Flag for TJB4_HOURLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2100,
+        "name": "AJB5_HOURLY1",
+        "label": "Status Flag for TJB5_HOURLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2101,
+        "name": "AJB1_WKLY1",
+        "label": "Status Flag for TJB1_WKLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2102,
+        "name": "AJB2_WKLY1",
+        "label": "Status Flag for TJB2_WKLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2103,
+        "name": "AJB3_WKLY1",
+        "label": "Status Flag for TJB3_WKLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2104,
+        "name": "AJB4_WKLY1",
+        "label": "Status Flag for TJB4_WKLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2105,
+        "name": "AJB1_BWKLY1",
+        "label": "Status Flag for TJB1_BWKLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2106,
+        "name": "AJB2_BWKLY1",
+        "label": "Status Flag for TJB2_BWKLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2107,
+        "name": "AJB3_BWKLY1",
+        "label": "Status Flag for TJB3_BWKLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2108,
+        "name": "AJB4_BWKLY1",
+        "label": "Status Flag for TJB4_BWKLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2109,
+        "name": "AJB1_MTHLY1",
+        "label": "Status Flag for TJB1_MTHLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2110,
+        "name": "AJB2_MTHLY1",
+        "label": "Status Flag for TJB2_MTHLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2111,
+        "name": "AJB3_MTHLY1",
+        "label": "Status Flag for TJB3_MTHLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2112,
+        "name": "AJB4_MTHLY1",
+        "label": "Status Flag for TJB4_MTHLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2113,
+        "name": "AJB1_SMTHLY1",
+        "label": "Status Flag for TJB1_SMTHLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2114,
+        "name": "AJB2_SMTHLY1",
+        "label": "Status Flag for TJB2_SMTHLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2115,
+        "name": "AJB3_SMTHLY1",
+        "label": "Status Flag for TJB3_SMTHLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2116,
+        "name": "AJB4_SMTHLY1",
+        "label": "Status Flag for TJB4_SMTHLY1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2117,
+        "name": "AJB1_OTHER1",
+        "label": "Status Flag for TJB1_OTHER1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2118,
+        "name": "AJB2_OTHER1",
+        "label": "Status Flag for TJB2_OTHER1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2119,
+        "name": "AJB3_OTHER1",
+        "label": "Status Flag for TJB3_OTHER1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2120,
+        "name": "AJB4_OTHER1",
+        "label": "Status Flag for TJB4_OTHER1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2121,
+        "name": "AJB1_GAMT1",
+        "label": "Status Flag for TJB1_GAMT1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2122,
+        "name": "AJB2_GAMT1",
+        "label": "Status Flag for TJB2_GAMT1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2123,
+        "name": "AJB3_GAMT1",
+        "label": "Status Flag for TJB3_GAMT1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2124,
+        "name": "AJB4_GAMT1",
+        "label": "Status Flag for TJB4_GAMT1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2125,
+        "name": "AJB1_ANNSAL2",
+        "label": "Status Flag for TJB1_ANNSAL2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2126,
+        "name": "AJB2_ANNSAL2",
+        "label": "Status Flag for TJB2_ANNSAL2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2127,
+        "name": "AJB3_ANNSAL2",
+        "label": "Status Flag for TJB3_ANNSAL2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2128,
+        "name": "AJB1_HOURLY2",
+        "label": "Status Flag for TJB1_HOURLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2129,
+        "name": "AJB2_HOURLY2",
+        "label": "Status Flag for TJB2_HOURLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2130,
+        "name": "AJB3_HOURLY2",
+        "label": "Status Flag for TJB3_HOURLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2131,
+        "name": "AJB4_HOURLY2",
+        "label": "Status Flag for TJB4_HOURLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2132,
+        "name": "AJB1_WKLY2",
+        "label": "Status Flag for TJB1_WKLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2133,
+        "name": "AJB2_WKLY2",
+        "label": "Status Flag for TJB2_WKLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2134,
+        "name": "AJB3_WKLY2",
+        "label": "Status Flag for TJB3_WKLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2135,
+        "name": "AJB1_BWKLY2",
+        "label": "Status Flag for TJB1_BWKLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2136,
+        "name": "AJB2_BWKLY2",
+        "label": "Status Flag for TJB2_BWKLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2137,
+        "name": "AJB4_BWKLY2",
+        "label": "Status Flag for TJB4_BWKLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2138,
+        "name": "AJB1_MTHLY2",
+        "label": "Status Flag for TJB1_MTHLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2139,
+        "name": "AJB2_MTHLY2",
+        "label": "Status Flag for TJB2_MTHLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2140,
+        "name": "AJB1_SMTHLY2",
+        "label": "Status Flag for TJB1_SMTHLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2141,
+        "name": "AJB2_SMTHLY2",
+        "label": "Status Flag for TJB2_SMTHLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2142,
+        "name": "AJB3_SMTHLY2",
+        "label": "Status Flag for TJB3_SMTHLY2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2143,
+        "name": "AJB1_OTHER2",
+        "label": "Status Flag for TJB1_OTHER2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2144,
+        "name": "AJB2_OTHER2",
+        "label": "Status Flag for TJB2_OTHER2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2145,
+        "name": "AJB3_OTHER2",
+        "label": "Status Flag for TJB3_OTHER2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2146,
+        "name": "AJB1_ANNSAL3",
+        "label": "Status Flag for TJB1_ANNSAL3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2147,
+        "name": "AJB2_ANNSAL3",
+        "label": "Status Flag for TJB2_ANNSAL3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2148,
+        "name": "AJB3_ANNSAL3",
+        "label": "Status Flag for TJB3_ANNSAL3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2149,
+        "name": "AJB1_HOURLY3",
+        "label": "Status Flag for TJB1_HOURLY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2150,
+        "name": "AJB2_HOURLY3",
+        "label": "Status Flag for TJB2_HOURLY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2151,
+        "name": "AJB3_HOURLY3",
+        "label": "Status Flag for TJB3_HOURLY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2152,
+        "name": "AJB1_WKLY3",
+        "label": "Status Flag for TJB1_WKLY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2153,
+        "name": "AJB2_WKLY3",
+        "label": "Status Flag for TJB2_WKLY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2154,
+        "name": "AJB1_BWKLY3",
+        "label": "Status Flag for TJB1_BWKLY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2155,
+        "name": "AJB2_BWKLY3",
+        "label": "Status Flag for TJB2_BWKLY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2156,
+        "name": "AJB1_MTHLY3",
+        "label": "Status Flag for TJB1_MTHLY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2157,
+        "name": "AJB2_MTHLY3",
+        "label": "Status Flag for TJB2_MTHLY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2158,
+        "name": "AJB1_SMTHLY3",
+        "label": "Status Flag for TJB1_SMTHLY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2159,
+        "name": "AJB2_SMTHLY3",
+        "label": "Status Flag for TJB2_SMTHLY3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2160,
+        "name": "AJB1_OTHER3",
+        "label": "Status Flag for TJB1_OTHER3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2166,
+        "name": "AJB1_NETGRO1",
+        "label": "Status Flag for EJB1_NETGRO1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2167,
+        "name": "AJB2_NETGRO1",
+        "label": "Status Flag for EJB2_NETGRO1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2168,
+        "name": "AJB3_NETGRO1",
+        "label": "Status Flag for EJB3_NETGRO1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2169,
+        "name": "AJB4_NETGRO1",
+        "label": "Status Flag for EJB4_NETGRO1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2170,
+        "name": "AJB5_NETGRO1",
+        "label": "Status Flag for EJB5_NETGRO1",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2175,
+        "name": "AJB1_NETGRO2",
+        "label": "Status Flag for EJB1_NETGRO2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2176,
+        "name": "AJB2_NETGRO2",
+        "label": "Status Flag for EJB2_NETGRO2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2177,
+        "name": "AJB3_NETGRO2",
+        "label": "Status Flag for EJB3_NETGRO2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2178,
+        "name": "AJB4_NETGRO2",
+        "label": "Status Flag for EJB4_NETGRO2",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2182,
+        "name": "AJB1_NETGRO3",
+        "label": "Status Flag for EJB1_NETGRO3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2183,
+        "name": "AJB2_NETGRO3",
+        "label": "Status Flag for EJB2_NETGRO3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2184,
+        "name": "AJB3_NETGRO3",
+        "label": "Status Flag for EJB3_NETGRO3",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2189,
+        "name": "AJB1_BXMTH",
+        "label": "Status Flag for EJB1_BXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2190,
+        "name": "AJB2_BXMTH",
+        "label": "Status Flag for EJB2_BXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2191,
+        "name": "AJB3_BXMTH",
+        "label": "Status Flag for EJB3_BXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2192,
+        "name": "AJB4_BXMTH",
+        "label": "Status Flag for EJB4_BXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2193,
+        "name": "AJB1_BXAMT",
+        "label": "Status Flag for TJB1_BXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2194,
+        "name": "AJB2_BXAMT",
+        "label": "Status Flag for TJB2_BXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2195,
+        "name": "AJB3_BXAMT",
+        "label": "Status Flag for TJB3_BXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2196,
+        "name": "AJB4_BXAMT",
+        "label": "Status Flag for TJB4_BXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2203,
+        "name": "AJB1_CEXPAY",
+        "label": "Status Flag for EJB1_CEXPAY",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2204,
+        "name": "AJB2_CEXPAY",
+        "label": "Status Flag for EJB2_CEXPAY",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2205,
+        "name": "AJB3_CEXPAY",
+        "label": "Status Flag for EJB3_CEXPAY",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2206,
+        "name": "AJB4_CEXPAY",
+        "label": "Status Flag for EJB4_CEXPAY",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2207,
+        "name": "AJB5_CEXPAY",
+        "label": "Status Flag for EJB5_CEXPAY",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2208,
+        "name": "AJB6_CEXPAY",
+        "label": "Status Flag for EJB6_CEXPAY",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2215,
+        "name": "AJB1_CXMTH",
+        "label": "Status Flag for EJB1_CXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2216,
+        "name": "AJB2_CXMTH",
+        "label": "Status Flag for EJB2_CXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2217,
+        "name": "AJB3_CXMTH",
+        "label": "Status Flag for EJB3_CXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2218,
+        "name": "AJB4_CXMTH",
+        "label": "Status Flag for EJB4_CXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2219,
+        "name": "AJB5_CXMTH",
+        "label": "Status Flag for EJB5_CXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2220,
+        "name": "AJB6_CXMTH",
+        "label": "Status Flag for EJB6_CXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2221,
+        "name": "AJB1_CXAMT",
+        "label": "Status Flag for TJB1_CXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2222,
+        "name": "AJB2_CXAMT",
+        "label": "Status Flag for TJB2_CXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2223,
+        "name": "AJB3_CXAMT",
+        "label": "Status Flag for TJB3_CXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2224,
+        "name": "AJB4_CXAMT",
+        "label": "Status Flag for TJB4_CXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2225,
+        "name": "AJB5_CXAMT",
+        "label": "Status Flag for TJB5_CXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2226,
+        "name": "AJB6_CXAMT",
+        "label": "Status Flag for TJB6_CXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2231,
+        "name": "AJB1_TEXPAY",
+        "label": "Status Flag for EJB1_TEXPAY",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2232,
+        "name": "AJB2_TEXPAY",
+        "label": "Status Flag for EJB2_TEXPAY",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2233,
+        "name": "AJB3_TEXPAY",
+        "label": "Status Flag for EJB3_TEXPAY",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2234,
+        "name": "AJB4_TEXPAY",
+        "label": "Status Flag for EJB4_TEXPAY",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2237,
+        "name": "AJB1_TXMTH",
+        "label": "Status Flag for EJB1_TXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2238,
+        "name": "AJB2_TXMTH",
+        "label": "Status Flag for EJB2_TXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2239,
+        "name": "AJB1_TXAMT",
+        "label": "Status Flag for TJB1_TXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2240,
+        "name": "AJB2_TXAMT",
+        "label": "Status Flag for TJB2_TXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2241,
+        "name": "AJB3_TXAMT",
+        "label": "Status Flag for TJB3_TXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2242,
+        "name": "AJB4_TXAMT",
+        "label": "Status Flag for TJB4_TXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2247,
+        "name": "AJB1_OEXPAY",
+        "label": "Status Flag for EJB1_OEXPAY",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2248,
+        "name": "AJB2_OEXPAY",
+        "label": "Status Flag for EJB2_OEXPAY",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2249,
+        "name": "AJB3_OEXPAY",
+        "label": "Status Flag for EJB3_OEXPAY",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2250,
+        "name": "AJB4_OEXPAY",
+        "label": "Status Flag for EJB4_OEXPAY",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2254,
+        "name": "AJB1_OXMTH",
+        "label": "Status Flag for EJB1_OXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2255,
+        "name": "AJB2_OXMTH",
+        "label": "Status Flag for EJB2_OXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2256,
+        "name": "AJB3_OXMTH",
+        "label": "Status Flag for EJB3_OXMTH",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2257,
+        "name": "AJB1_OXAMT",
+        "label": "Status Flag for TJB1_OXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2258,
+        "name": "AJB2_OXAMT",
+        "label": "Status Flag for TJB2_OXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2259,
+        "name": "AJB3_OXAMT",
+        "label": "Status Flag for TJB3_OXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2260,
+        "name": "AJB4_OXAMT",
+        "label": "Status Flag for TJB4_OXAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2267,
+        "name": "AJB1_PFTLOSS",
+        "label": "Status Flag for EJB1_PFTLOSS",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2268,
+        "name": "AJB2_PFTLOSS",
+        "label": "Status Flag for EJB2_PFTLOSS",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2269,
+        "name": "AJB3_PFTLOSS",
+        "label": "Status Flag for EJB3_PFTLOSS",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2270,
+        "name": "AJB4_PFTLOSS",
+        "label": "Status Flag for EJB4_PFTLOSS",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2271,
+        "name": "AJB5_PFTLOSS",
+        "label": "Status Flag for EJB5_PFTLOSS",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2272,
+        "name": "AJB6_PFTLOSS",
+        "label": "Status Flag for EJB6_PFTLOSS",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2273,
+        "name": "AJB1_PRFTB",
+        "label": "Status Flag for TJB1_PRFTB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2274,
+        "name": "AJB2_PRFTB",
+        "label": "Status Flag for TJB2_PRFTB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2275,
+        "name": "AJB3_PRFTB",
+        "label": "Status Flag for TJB3_PRFTB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2276,
+        "name": "AJB4_PRFTB",
+        "label": "Status Flag for TJB4_PRFTB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2277,
+        "name": "AJB5_PRFTB",
+        "label": "Status Flag for TJB5_PRFTB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2278,
+        "name": "AJB6_PRFTB",
+        "label": "Status Flag for TJB6_PRFTB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2283,
+        "name": "AJB1_PFTBCHK",
+        "label": "Status Flag for EJB1_PFTBCHK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2284,
+        "name": "AJB2_PFTBCHK",
+        "label": "Status Flag for EJB2_PFTBCHK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2285,
+        "name": "AJB3_PFTBCHK",
+        "label": "Status Flag for EJB3_PFTBCHK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2286,
+        "name": "AJB4_PFTBCHK",
+        "label": "Status Flag for EJB4_PFTBCHK",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2293,
+        "name": "AJB1_OINCB",
+        "label": "Status Flag for EJB1_OINCB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2294,
+        "name": "AJB2_OINCB",
+        "label": "Status Flag for EJB2_OINCB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2295,
+        "name": "AJB3_OINCB",
+        "label": "Status Flag for EJB3_OINCB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2296,
+        "name": "AJB4_OINCB",
+        "label": "Status Flag for EJB4_OINCB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2297,
+        "name": "AJB5_OINCB",
+        "label": "Status Flag for EJB5_OINCB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2298,
+        "name": "AJB6_OINCB",
+        "label": "Status Flag for EJB6_OINCB",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2299,
+        "name": "AJB1_OINCAMT",
+        "label": "Status Flag for TJB1_OINCAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2300,
+        "name": "AJB2_OINCAMT",
+        "label": "Status Flag for TJB2_OINCAMT",
+        "dtype": "integer"
+      },
+      {
+        "varnum": 2301,
+        "name": "AJB3_OINCAMT",
+        "label": "Status Flag for TJB3_OINCAMT",
+        "dtype": "integer"
+      }
+    ]
+  },
+  "nonemployment_flags": [
+    {
+      "varnum": 1992,
+      "name": "ANJ_BMONTH",
+      "label": "Status Flag for ENJ_BMONTH",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 1994,
+      "name": "ANJ_EMONTH",
+      "label": "Status Flag for ENJ_EMONTH",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2007,
+      "name": "ANJ_NOWRK",
+      "label": "Status Flag for ENJ_NOWRK1, ENJ_NOWRK10, ENJ_NOWRK11, ENJ_NOWRK12, ENJ_NOWRK2, ENJ_NOWRK3, ENJ_NOWRK4, ENJ_NOWRK5, ENJ_NOWRK6, ENJ_NOWRK7, ENJ_NOWRK8, ENJ_NOWRK9,",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2009,
+      "name": "ANJ_UPDWKYN",
+      "label": "Status Flag for ENJ_UPDWKYN",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2011,
+      "name": "ANJ_LAYOFF",
+      "label": "Status Flag for ENJ_LAYOFF",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2013,
+      "name": "ANJ_LAYOTYP",
+      "label": "Status Flag for ENJ_LAYOTYP",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2015,
+      "name": "ANJ_LAYODUR",
+      "label": "Status Flag for ENJ_LAYODUR",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2017,
+      "name": "ANJ_LAYOEWK",
+      "label": "Status Flag for ENJ_LAYOEWK",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2019,
+      "name": "ANJ_LAYOEMN",
+      "label": "Status Flag for ENJ_LAYOEMN",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2021,
+      "name": "ANJ_LAYOCFLG",
+      "label": "Status Flag for ENJ_LAYOCFLG",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2023,
+      "name": "ANJ_LKWRK",
+      "label": "Status Flag for ENJ_LKWRK",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2032,
+      "name": "ANJ_FLKMN1",
+      "label": "Status Flag for ENJ_FLKMN1",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2033,
+      "name": "ANJ_FLKMN2",
+      "label": "Status Flag for ENJ_FLKMN2",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2034,
+      "name": "ANJ_FLKMN3",
+      "label": "Status Flag for ENJ_FLKMN3",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2035,
+      "name": "ANJ_FLKMN4",
+      "label": "Status Flag for ENJ_FLKMN4",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2036,
+      "name": "ANJ_TLKMN1",
+      "label": "Status Flag for ENJ_TLKMN1",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2037,
+      "name": "ANJ_TLKMN2",
+      "label": "Status Flag for ENJ_TLKMN2",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2038,
+      "name": "ANJ_TLKMN3",
+      "label": "Status Flag for ENJ_TLKMN3",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2039,
+      "name": "ANJ_TLKMN4",
+      "label": "Status Flag for ENJ_TLKMN4",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2044,
+      "name": "ANJ_LKCTFLG1",
+      "label": "Status Flag for ENJ_LKCTFLG1",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2045,
+      "name": "ANJ_LKCTFLG2",
+      "label": "Status Flag for ENJ_LKCTFLG2",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2046,
+      "name": "ANJ_LKCTFLG3",
+      "label": "Status Flag for ENJ_LKCTFLG3",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2047,
+      "name": "ANJ_LKCTFLG4",
+      "label": "Status Flag for ENJ_LKCTFLG4",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2056,
+      "name": "ANJ_FLKWK1",
+      "label": "Status Flag for ENJ_FLKWK1",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2057,
+      "name": "ANJ_FLKWK2",
+      "label": "Status Flag for ENJ_FLKWK2",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2058,
+      "name": "ANJ_FLKWK3",
+      "label": "Status Flag for ENJ_FLKWK3",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2059,
+      "name": "ANJ_FLKWK4",
+      "label": "Status Flag for ENJ_FLKWK4",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2060,
+      "name": "ANJ_TLKWK1",
+      "label": "Status Flag for ENJ_TLKWK1",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2061,
+      "name": "ANJ_TLKWK2",
+      "label": "Status Flag for ENJ_TLKWK2",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2062,
+      "name": "ANJ_TLKWK3",
+      "label": "Status Flag for ENJ_TLKWK3",
+      "dtype": "integer"
+    },
+    {
+      "varnum": 2063,
+      "name": "ANJ_TLKWK4",
+      "label": "Status Flag for ENJ_TLKWK4",
+      "dtype": "integer"
+    }
+  ],
+  "names": [
+    "AJB1_ANNSAL1",
+    "AJB1_ANNSAL2",
+    "AJB1_ANNSAL3",
+    "AJB1_AWOP1",
+    "AJB1_AWOP2",
+    "AJB1_AWOP3",
+    "AJB1_AWOPEM1",
+    "AJB1_AWOPEM2",
+    "AJB1_AWOPEM3",
+    "AJB1_AWOPEW1",
+    "AJB1_AWOPEW2",
+    "AJB1_AWOPEW3",
+    "AJB1_AWOPSM1",
+    "AJB1_AWOPSM2",
+    "AJB1_AWOPSM3",
+    "AJB1_AWOPSW1",
+    "AJB1_AWOPSW2",
+    "AJB1_AWOPSW3",
+    "AJB1_BMONTH",
+    "AJB1_BSLRYB",
+    "AJB1_BWKLY1",
+    "AJB1_BWKLY2",
+    "AJB1_BWKLY3",
+    "AJB1_BXAMT",
+    "AJB1_BXMTH",
+    "AJB1_CEXPAY",
+    "AJB1_CFLG",
+    "AJB1_CHEARN1",
+    "AJB1_CHEARN2",
+    "AJB1_CHERMN1",
+    "AJB1_CHERMN2",
+    "AJB1_CHERWK1",
+    "AJB1_CHERWK2",
+    "AJB1_CHHOMN1",
+    "AJB1_CHHOMN2",
+    "AJB1_CHHOUR1",
+    "AJB1_CHHOUR2",
+    "AJB1_CHHOWK1",
+    "AJB1_CHHOWK2",
+    "AJB1_CXAMT",
+    "AJB1_CXMTH",
+    "AJB1_EMONTH",
+    "AJB1_ENDWK",
+    "AJB1_GAMT1",
+    "AJB1_HOURLY1",
+    "AJB1_HOURLY2",
+    "AJB1_HOURLY3",
+    "AJB1_INCPB",
+    "AJB1_JBORSE",
+    "AJB1_JOBHRS1",
+    "AJB1_JOBHRS2",
+    "AJB1_JOBHRS3",
+    "AJB1_MTHLY1",
+    "AJB1_MTHLY2",
+    "AJB1_MTHLY3",
+    "AJB1_NETGRO1",
+    "AJB1_NETGRO2",
+    "AJB1_NETGRO3",
+    "AJB1_OEXPAY",
+    "AJB1_OINCAMT",
+    "AJB1_OINCB",
+    "AJB1_OTHER1",
+    "AJB1_OTHER2",
+    "AJB1_OTHER3",
+    "AJB1_OXAMT",
+    "AJB1_OXMTH",
+    "AJB1_PAYHR1",
+    "AJB1_PAYHR2",
+    "AJB1_PAYHR3",
+    "AJB1_PFTBCHK",
+    "AJB1_PFTLOSS",
+    "AJB1_PRFTB",
+    "AJB1_SCRNR",
+    "AJB1_SMTHLY1",
+    "AJB1_SMTHLY2",
+    "AJB1_SMTHLY3",
+    "AJB1_STARTWK",
+    "AJB1_STRTJAN",
+    "AJB1_STRTMON",
+    "AJB1_STRTYR",
+    "AJB1_TEXPAY",
+    "AJB1_TXAMT",
+    "AJB1_TXMTH",
+    "AJB1_TYPPAY1",
+    "AJB1_TYPPAY2",
+    "AJB1_TYPPAY3",
+    "AJB1_TYPPAY4",
+    "AJB1_TYPPAY5",
+    "AJB1_WKLY1",
+    "AJB1_WKLY2",
+    "AJB1_WKLY3",
+    "AJB2_ANNSAL1",
+    "AJB2_ANNSAL2",
+    "AJB2_ANNSAL3",
+    "AJB2_AWOP1",
+    "AJB2_AWOP2",
+    "AJB2_AWOP3",
+    "AJB2_AWOPEM1",
+    "AJB2_AWOPEM2",
+    "AJB2_AWOPEM3",
+    "AJB2_AWOPEW1",
+    "AJB2_AWOPEW2",
+    "AJB2_AWOPEW3",
+    "AJB2_AWOPSM1",
+    "AJB2_AWOPSM2",
+    "AJB2_AWOPSM3",
+    "AJB2_AWOPSW1",
+    "AJB2_AWOPSW2",
+    "AJB2_AWOPSW3",
+    "AJB2_BMONTH",
+    "AJB2_BSLRYB",
+    "AJB2_BWKLY1",
+    "AJB2_BWKLY2",
+    "AJB2_BWKLY3",
+    "AJB2_BXAMT",
+    "AJB2_BXMTH",
+    "AJB2_CEXPAY",
+    "AJB2_CFLG",
+    "AJB2_CHEARN1",
+    "AJB2_CHEARN2",
+    "AJB2_CHERMN1",
+    "AJB2_CHERMN2",
+    "AJB2_CHERWK1",
+    "AJB2_CHERWK2",
+    "AJB2_CHHOMN1",
+    "AJB2_CHHOMN2",
+    "AJB2_CHHOUR1",
+    "AJB2_CHHOUR2",
+    "AJB2_CHHOWK1",
+    "AJB2_CHHOWK2",
+    "AJB2_CXAMT",
+    "AJB2_CXMTH",
+    "AJB2_EMONTH",
+    "AJB2_ENDWK",
+    "AJB2_GAMT1",
+    "AJB2_HOURLY1",
+    "AJB2_HOURLY2",
+    "AJB2_HOURLY3",
+    "AJB2_INCPB",
+    "AJB2_JBORSE",
+    "AJB2_JOBHRS1",
+    "AJB2_JOBHRS2",
+    "AJB2_JOBHRS3",
+    "AJB2_MTHLY1",
+    "AJB2_MTHLY2",
+    "AJB2_MTHLY3",
+    "AJB2_NETGRO1",
+    "AJB2_NETGRO2",
+    "AJB2_NETGRO3",
+    "AJB2_OEXPAY",
+    "AJB2_OINCAMT",
+    "AJB2_OINCB",
+    "AJB2_OTHER1",
+    "AJB2_OTHER2",
+    "AJB2_OXAMT",
+    "AJB2_OXMTH",
+    "AJB2_PAYHR1",
+    "AJB2_PAYHR2",
+    "AJB2_PAYHR3",
+    "AJB2_PFTBCHK",
+    "AJB2_PFTLOSS",
+    "AJB2_PRFTB",
+    "AJB2_SCRNR",
+    "AJB2_SMTHLY1",
+    "AJB2_SMTHLY2",
+    "AJB2_SMTHLY3",
+    "AJB2_STARTWK",
+    "AJB2_STRTJAN",
+    "AJB2_STRTMON",
+    "AJB2_STRTYR",
+    "AJB2_TEXPAY",
+    "AJB2_TXAMT",
+    "AJB2_TXMTH",
+    "AJB2_TYPPAY1",
+    "AJB2_TYPPAY2",
+    "AJB2_TYPPAY3",
+    "AJB2_TYPPAY4",
+    "AJB2_TYPPAY5",
+    "AJB2_WKLY1",
+    "AJB2_WKLY2",
+    "AJB2_WKLY3",
+    "AJB3_ANNSAL1",
+    "AJB3_ANNSAL2",
+    "AJB3_ANNSAL3",
+    "AJB3_AWOP1",
+    "AJB3_AWOP2",
+    "AJB3_AWOPEM1",
+    "AJB3_AWOPEW1",
+    "AJB3_AWOPSM1",
+    "AJB3_AWOPSW1",
+    "AJB3_BMONTH",
+    "AJB3_BSLRYB",
+    "AJB3_BWKLY1",
+    "AJB3_BXAMT",
+    "AJB3_BXMTH",
+    "AJB3_CEXPAY",
+    "AJB3_CFLG",
+    "AJB3_CHEARN1",
+    "AJB3_CHEARN2",
+    "AJB3_CHERMN1",
+    "AJB3_CHERMN2",
+    "AJB3_CHERWK1",
+    "AJB3_CHERWK2",
+    "AJB3_CHHOMN1",
+    "AJB3_CHHOMN2",
+    "AJB3_CHHOUR1",
+    "AJB3_CHHOUR2",
+    "AJB3_CHHOWK1",
+    "AJB3_CHHOWK2",
+    "AJB3_CXAMT",
+    "AJB3_CXMTH",
+    "AJB3_EMONTH",
+    "AJB3_ENDWK",
+    "AJB3_GAMT1",
+    "AJB3_HOURLY1",
+    "AJB3_HOURLY2",
+    "AJB3_HOURLY3",
+    "AJB3_INCPB",
+    "AJB3_JBORSE",
+    "AJB3_JOBHRS1",
+    "AJB3_JOBHRS2",
+    "AJB3_JOBHRS3",
+    "AJB3_MTHLY1",
+    "AJB3_NETGRO1",
+    "AJB3_NETGRO2",
+    "AJB3_NETGRO3",
+    "AJB3_OEXPAY",
+    "AJB3_OINCAMT",
+    "AJB3_OINCB",
+    "AJB3_OTHER1",
+    "AJB3_OTHER2",
+    "AJB3_OXAMT",
+    "AJB3_OXMTH",
+    "AJB3_PAYHR1",
+    "AJB3_PAYHR2",
+    "AJB3_PAYHR3",
+    "AJB3_PFTBCHK",
+    "AJB3_PFTLOSS",
+    "AJB3_PRFTB",
+    "AJB3_SCRNR",
+    "AJB3_SMTHLY1",
+    "AJB3_SMTHLY2",
+    "AJB3_STARTWK",
+    "AJB3_STRTJAN",
+    "AJB3_STRTMON",
+    "AJB3_STRTYR",
+    "AJB3_TEXPAY",
+    "AJB3_TXAMT",
+    "AJB3_TYPPAY1",
+    "AJB3_TYPPAY2",
+    "AJB3_TYPPAY3",
+    "AJB3_TYPPAY4",
+    "AJB3_TYPPAY5",
+    "AJB3_WKLY1",
+    "AJB3_WKLY2",
+    "AJB4_ANNSAL1",
+    "AJB4_AWOP1",
+    "AJB4_AWOP2",
+    "AJB4_AWOPEM1",
+    "AJB4_AWOPEW1",
+    "AJB4_AWOPSM1",
+    "AJB4_AWOPSW1",
+    "AJB4_BMONTH",
+    "AJB4_BSLRYB",
+    "AJB4_BWKLY1",
+    "AJB4_BWKLY2",
+    "AJB4_BXAMT",
+    "AJB4_BXMTH",
+    "AJB4_CEXPAY",
+    "AJB4_CFLG",
+    "AJB4_CHEARN1",
+    "AJB4_CHEARN2",
+    "AJB4_CHERMN1",
+    "AJB4_CHERWK1",
+    "AJB4_CHHOMN1",
+    "AJB4_CHHOUR1",
+    "AJB4_CHHOUR2",
+    "AJB4_CHHOWK1",
+    "AJB4_CXAMT",
+    "AJB4_CXMTH",
+    "AJB4_EMONTH",
+    "AJB4_ENDWK",
+    "AJB4_GAMT1",
+    "AJB4_HOURLY1",
+    "AJB4_HOURLY2",
+    "AJB4_INCPB",
+    "AJB4_JBORSE",
+    "AJB4_JOBHRS1",
+    "AJB4_JOBHRS2",
+    "AJB4_MTHLY1",
+    "AJB4_NETGRO1",
+    "AJB4_NETGRO2",
+    "AJB4_OEXPAY",
+    "AJB4_OINCB",
+    "AJB4_OTHER1",
+    "AJB4_OXAMT",
+    "AJB4_PAYHR1",
+    "AJB4_PAYHR2",
+    "AJB4_PFTBCHK",
+    "AJB4_PFTLOSS",
+    "AJB4_PRFTB",
+    "AJB4_SCRNR",
+    "AJB4_SMTHLY1",
+    "AJB4_STARTWK",
+    "AJB4_STRTJAN",
+    "AJB4_TEXPAY",
+    "AJB4_TXAMT",
+    "AJB4_TYPPAY1",
+    "AJB4_TYPPAY2",
+    "AJB4_TYPPAY3",
+    "AJB4_TYPPAY4",
+    "AJB4_TYPPAY5",
+    "AJB4_WKLY1",
+    "AJB5_ANNSAL1",
+    "AJB5_AWOP1",
+    "AJB5_BMONTH",
+    "AJB5_CEXPAY",
+    "AJB5_CFLG",
+    "AJB5_CHEARN1",
+    "AJB5_CHHOUR1",
+    "AJB5_CXAMT",
+    "AJB5_CXMTH",
+    "AJB5_EMONTH",
+    "AJB5_ENDWK",
+    "AJB5_HOURLY1",
+    "AJB5_INCPB",
+    "AJB5_JBORSE",
+    "AJB5_JOBHRS1",
+    "AJB5_NETGRO1",
+    "AJB5_OINCB",
+    "AJB5_PAYHR1",
+    "AJB5_PFTLOSS",
+    "AJB5_PRFTB",
+    "AJB5_SCRNR",
+    "AJB5_STARTWK",
+    "AJB5_TYPPAY1",
+    "AJB5_TYPPAY2",
+    "AJB5_TYPPAY3",
+    "AJB5_TYPPAY4",
+    "AJB5_TYPPAY5",
+    "AJB6_AWOP1",
+    "AJB6_BMONTH",
+    "AJB6_CEXPAY",
+    "AJB6_CFLG",
+    "AJB6_CHHOUR1",
+    "AJB6_CXAMT",
+    "AJB6_CXMTH",
+    "AJB6_EMONTH",
+    "AJB6_ENDWK",
+    "AJB6_INCPB",
+    "AJB6_JBORSE",
+    "AJB6_JOBHRS1",
+    "AJB6_OINCB",
+    "AJB6_PFTLOSS",
+    "AJB6_PRFTB",
+    "AJB6_SCRNR",
+    "AJB6_STARTWK",
+    "AJB6_TYPPAY1",
+    "AJB6_TYPPAY2",
+    "AJB6_TYPPAY3",
+    "AJB6_TYPPAY4",
+    "AJB6_TYPPAY5",
+    "ANJ_BMONTH",
+    "ANJ_EMONTH",
+    "ANJ_FLKMN1",
+    "ANJ_FLKMN2",
+    "ANJ_FLKMN3",
+    "ANJ_FLKMN4",
+    "ANJ_FLKWK1",
+    "ANJ_FLKWK2",
+    "ANJ_FLKWK3",
+    "ANJ_FLKWK4",
+    "ANJ_LAYOCFLG",
+    "ANJ_LAYODUR",
+    "ANJ_LAYOEMN",
+    "ANJ_LAYOEWK",
+    "ANJ_LAYOFF",
+    "ANJ_LAYOTYP",
+    "ANJ_LKCTFLG1",
+    "ANJ_LKCTFLG2",
+    "ANJ_LKCTFLG3",
+    "ANJ_LKCTFLG4",
+    "ANJ_LKWRK",
+    "ANJ_NOWRK",
+    "ANJ_TLKMN1",
+    "ANJ_TLKMN2",
+    "ANJ_TLKMN3",
+    "ANJ_TLKMN4",
+    "ANJ_TLKWK1",
+    "ANJ_TLKWK2",
+    "ANJ_TLKWK3",
+    "ANJ_TLKWK4",
+    "ANJ_UPDWKYN"
+  ]
+}

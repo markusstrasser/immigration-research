@@ -1,0 +1,28 @@
+{
+  "tracked": {
+    "adults": 147,
+    "mean_change": 784.2698412698412,
+    "median_change": 0.0,
+    "largest_absolute_changes_contribution_to_mean": {
+      "1": 374.1496598639456,
+      "3": 708.8049886621314,
+      "5": 697.5238095238095
+    },
+    "leave_one_sample_unit_out_mean_min": 415.7770114942528,
+    "leave_one_sample_unit_out_mean_max": 832.887356321839,
+    "note": "Influence diagnostics after seeing the earnings instability; full-sample estimate retained. No preferred trimmed estimate."
+  },
+  "type2": {
+    "adults": 277,
+    "mean_change": -86.94825511432009,
+    "median_change": 0.0,
+    "largest_absolute_changes_contribution_to_mean": {
+      "1": -48.67027677496991,
+      "3": -42.53549939831528,
+      "5": -37.05535499398316
+    },
+    "leave_one_sample_unit_out_mean_min": -123.94424242424242,
+    "leave_one_sample_unit_out_mean_max": -38.55636363636363,
+    "note": "Influence diagnostics after seeing the earnings instability; full-sample estimate retained. No preferred trimmed estimate."
+  }
+}

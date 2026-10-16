@@ -1,0 +1,14 @@
+{
+  "tracked": {
+    "rows": 894,
+    "missing_hours_employed": 6,
+    "earnings_unpaid_zeros": 6,
+    "earnings_structural_zeros": 257
+  },
+  "type2": {
+    "rows": 1668,
+    "missing_hours_employed": 0,
+    "earnings_unpaid_zeros": 0,
+    "earnings_structural_zeros": 362
+  }
+}
