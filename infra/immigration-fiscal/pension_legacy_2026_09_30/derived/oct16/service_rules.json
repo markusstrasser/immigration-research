@@ -1,0 +1,390 @@
+{
+  "case": "oct16",
+  "population": 44903074.086245224,
+  "va_medical": [
+    {
+      "group": "mexican_origin",
+      "end": "low",
+      "service_share": 0.06558740855299318,
+      "annual_va_service_use_2024_bn": 5.885945218362714,
+      "fraction_of_federal_health": 0.49939899833055096,
+      "stock_end2023_removed_bn": 10.61050607495053,
+      "nominal_interest_2024_removed_bn": 0.41025749074750945,
+      "response": 0
+    },
+    {
+      "group": "mexican_origin",
+      "end": "high",
+      "service_share": 0.06558740855299318,
+      "annual_va_service_use_2024_bn": 5.885945218362714,
+      "fraction_of_federal_health": 0.49939899833055096,
+      "stock_end2023_removed_bn": 10.61050607495053,
+      "nominal_interest_2024_removed_bn": 0.41025749074750945,
+      "response": 0
+    },
+    {
+      "group": "mexican_origin_rough",
+      "end": "low",
+      "service_share": 0.06558740855299318,
+      "annual_va_service_use_2024_bn": 5.885945218362714,
+      "fraction_of_federal_health": 0.49939899833055096,
+      "stock_end2023_removed_bn": 10.61050607495053,
+      "nominal_interest_2024_removed_bn": 0.41025749074750945,
+      "response": 0
+    },
+    {
+      "group": "mexican_origin_rough",
+      "end": "high",
+      "service_share": 0.06558740855299318,
+      "annual_va_service_use_2024_bn": 5.885945218362714,
+      "fraction_of_federal_health": 0.49939899833055096,
+      "stock_end2023_removed_bn": 10.61050607495053,
+      "nominal_interest_2024_removed_bn": 0.41025749074750945,
+      "response": 0
+    },
+    {
+      "group": "A1_third_plus_nh_white",
+      "end": "low",
+      "service_share": 0.09486318581586382,
+      "annual_va_service_use_2024_bn": 8.513212021487252,
+      "fraction_of_federal_health": 0.49939899833055096,
+      "stock_end2023_removed_bn": 15.346640942142376,
+      "nominal_interest_2024_removed_bn": 0.5933811601305435,
+      "response": 0
+    },
+    {
+      "group": "A1_third_plus_nh_white",
+      "end": "high",
+      "service_share": 0.09486318581586382,
+      "annual_va_service_use_2024_bn": 8.513212021487252,
+      "fraction_of_federal_health": 0.49939899833055096,
+      "stock_end2023_removed_bn": 15.346640942142376,
+      "nominal_interest_2024_removed_bn": 0.5933811601305435,
+      "response": 0
+    },
+    {
+      "group": "all_residents_slice",
+      "end": "low",
+      "service_share": 0.13382182409681345,
+      "annual_va_service_use_2024_bn": 12.009438138096234,
+      "fraction_of_federal_health": 0.49939899833055096,
+      "stock_end2023_removed_bn": 21.64923586503557,
+      "nominal_interest_2024_removed_bn": 0.8370723431899915,
+      "response": 0
+    },
+    {
+      "group": "all_residents_slice",
+      "end": "high",
+      "service_share": 0.13382182409681345,
+      "annual_va_service_use_2024_bn": 12.009438138096234,
+      "fraction_of_federal_health": 0.49939899833055096,
+      "stock_end2023_removed_bn": 21.64923586503557,
+      "nominal_interest_2024_removed_bn": 0.8370723431899915,
+      "response": 0
+    }
+  ],
+  "va_national_bridge": {
+    "application": "Divide the selected national mass by the current health_services national amount and apply to its existing keyed engine, selected completion and matching typed coverage exposures. The remaining federal/state/local consumption, civilian OPEB and state-price corrections are held fixed. VA medical is a separate part within item13, not an additional item.",
+    "arms": {
+      "va_medical_four_accounts": {
+        "definition": "All four accounts including Community Care; scope sensitivity, potentially double counts purchased care already removed on veterans_other, not a recommended joint correction.",
+        "national_bn": 121.13,
+        "status": "[APPROXIMATION]"
+      },
+      "va_medical_services_only": {
+        "definition": "Medical Services only; same declared FY-to-CY bridge.",
+        "national_bn": 70.484,
+        "status": "[APPROXIMATION]"
+      }
+    },
+    "central_national_bn": 89.742,
+    "community_care_classification": "BEA County Personal Income Concepts and Methods, Part V pp58, paragraphs5.43-5.44, explicitly includes veterans community care in personal current transfer receipts. Pinned NIPA T3.12 line20 footnote4 includes private-facility reimbursements from2015. Community care is excluded centrally; the four-account arm is a requested scope sensitivity with potential overlap against the existing veterans_other removal, not a preferred correction.",
+    "current_key": "health_other: MEPS TOTVA24 + TOTTRI24 + TOTOFD24 + TOTSTL24, pooled medical transport and case's lineage/native/coverage changes",
+    "federal_health_consumption": 179.7,
+    "fy2024_net_outlays_bn": {
+      "four_accounts_less_community_care": 89.742,
+      "hospital_medical_function_703": 138.543,
+      "medical_community_care": 31.388,
+      "medical_facilities": 8.886,
+      "medical_four_accounts": 121.13,
+      "medical_services": 70.484,
+      "medical_support_compliance": 10.372,
+      "toxic_exposures_fund_all": 19.457,
+      "toxic_exposures_fund_medical_function": 16.305
+    },
+    "health_consumption": 306.539,
+    "outlay_status": "[DATA]",
+    "presence_source": "https://www.bea.gov/sites/default/files/papers/BEA-WP2020-8.pdf, section2.2 p3; https://bea.gov/sites/default/files/papers/BEA-WP2025-7.pdf, medical care in veterans hospitals excluded from PCE and in government consumption",
+    "reason": "Parent-declared approximation: FY2024 Medical Services + Medical Support and Compliance + Medical Facilities actual net outlays transported one-for-one to CY2024. BEA investment, CFC, sales, purchased-care, territorial and timing adjustments are not performed. This is not an observed NIPA consumption decomposition; medical TEF remains outside the three-account mass.",
+    "sources": [
+      {
+        "file": "bea_va_community_care_excerpt.txt",
+        "pages": "58, paragraphs5.43-5.44; NIPA T31200-A line20 footnote4 corroboration",
+        "sha256": "67c67609cc5defea9efe5227fdeb5fd887e106235e824d9b8e31a82282e33fe4",
+        "url": "https://www.bea.gov/system/files/methodologies/BEA-County-Personal-Income-Concepts-and-Methods.pdf#page=68"
+      },
+      {
+        "file": "va_medical_fy2024_excerpt.txt",
+        "pages": "71-72,82; FY2024 actual net outlays, millions",
+        "pdf_sha256": "42e5c88df335b31db98bd77cb00c1005bdeb9dba729513064f29ee2e112f41aa",
+        "sha256": "dee3b87a119be7f4e38bf7d325000d5914b78de3121926ad0a259aed5932405e",
+        "url": "https://department.va.gov/wp-content/uploads/2025/06/2026-Volume-1-Supplemental-Information-Appendices.pdf"
+      },
+      {
+        "file": "bea_consumption_scope_excerpt.txt",
+        "pages": "9-2,9-10,9-11; December2024 update",
+        "pdf_sha256": "16ef4259973574911060879c5c1f7d3ae0400ab841c3880f29ee67201e1e0fc4",
+        "sha256": "acfab2e515440c17bb8aea7ef24dac27e57f78b66360e47cccec139c57e1b351",
+        "url": "https://www.bea.gov/resources/methodologies/nipa-handbook/pdf/chapter-09.pdf"
+      }
+    ],
+    "state_local_health_consumption": 126.839,
+    "status": "[APPROXIMATION]"
+  },
+  "operating_adjustments": [
+    {
+      "group": "mexican_origin",
+      "end": "low",
+      "source_line": "education_services",
+      "kind": "college_operating",
+      "delta_service_bn": -3.60989740418143,
+      "source": "canonical source parts"
+    },
+    {
+      "group": "mexican_origin",
+      "end": "low",
+      "source_line": "income_security_services",
+      "kind": "income_security_administration",
+      "delta_service_bn": -0.27831674388541955,
+      "source": "canonical source parts"
+    },
+    {
+      "group": "mexican_origin",
+      "end": "low",
+      "kind": "college_capital",
+      "delta_capital_excluded_bn": -0.38207241687339666,
+      "employee_service": false
+    },
+    {
+      "group": "mexican_origin",
+      "end": "low",
+      "kind": "item21_non_va_health",
+      "residual_consumption_delta_bn": 19.584785703747954,
+      "state_price_delta_bn": 3.739362863788772,
+      "residual_national_bn": 218.61675489899994,
+      "residual_share_change": 0.08958501699833595,
+      "state_price_share_change": 0.012198652908076205,
+      "va_key_changed": false,
+      "capital_employee_service": false
+    },
+    {
+      "group": "mexican_origin_rough",
+      "end": "low",
+      "source_line": "education_services",
+      "kind": "college_operating",
+      "delta_service_bn": -3.60989740418143,
+      "source": "canonical source parts"
+    },
+    {
+      "group": "mexican_origin_rough",
+      "end": "low",
+      "source_line": "income_security_services",
+      "kind": "income_security_administration",
+      "delta_service_bn": -0.27831674388541955,
+      "source": "canonical source parts"
+    },
+    {
+      "group": "mexican_origin_rough",
+      "end": "low",
+      "kind": "college_capital",
+      "delta_capital_excluded_bn": -0.38207241687339666,
+      "employee_service": false
+    },
+    {
+      "group": "mexican_origin_rough",
+      "end": "low",
+      "kind": "item21_non_va_health",
+      "residual_consumption_delta_bn": 19.584785703747954,
+      "state_price_delta_bn": 3.739362863788772,
+      "residual_national_bn": 218.61675489899994,
+      "residual_share_change": 0.08958501699833595,
+      "state_price_share_change": 0.012198652908076205,
+      "va_key_changed": false,
+      "capital_employee_service": false
+    },
+    {
+      "group": "A1_third_plus_nh_white",
+      "end": "low",
+      "source_line": "education_services",
+      "kind": "college_operating",
+      "delta_service_bn": -2.7535701820086587,
+      "source": "own-group comparator parts"
+    },
+    {
+      "group": "A1_third_plus_nh_white",
+      "end": "low",
+      "source_line": "income_security_services",
+      "kind": "income_security_administration",
+      "delta_service_bn": 0.18598198155860662,
+      "source": "own-group comparator parts"
+    },
+    {
+      "group": "A1_third_plus_nh_white",
+      "end": "low",
+      "kind": "college_capital",
+      "delta_capital_excluded_bn": -0.28291297118347075,
+      "employee_service": false
+    },
+    {
+      "group": "all_residents_slice",
+      "end": "low",
+      "source_line": "education_services",
+      "kind": "college_operating",
+      "delta_service_bn": -3.57733549902558,
+      "source": "own-group comparator parts"
+    },
+    {
+      "group": "all_residents_slice",
+      "end": "low",
+      "source_line": "income_security_services",
+      "kind": "income_security_administration",
+      "delta_service_bn": 0.0,
+      "source": "own-group comparator parts"
+    },
+    {
+      "group": "all_residents_slice",
+      "end": "low",
+      "kind": "college_capital",
+      "delta_capital_excluded_bn": -0.3663666939172327,
+      "employee_service": false
+    },
+    {
+      "group": "mexican_origin",
+      "end": "high",
+      "source_line": "education_services",
+      "kind": "college_operating",
+      "delta_service_bn": -3.60989740418143,
+      "source": "canonical source parts"
+    },
+    {
+      "group": "mexican_origin",
+      "end": "high",
+      "source_line": "income_security_services",
+      "kind": "income_security_administration",
+      "delta_service_bn": -0.27831674388541955,
+      "source": "canonical source parts"
+    },
+    {
+      "group": "mexican_origin",
+      "end": "high",
+      "kind": "college_capital",
+      "delta_capital_excluded_bn": -0.5731086253100949,
+      "employee_service": false
+    },
+    {
+      "group": "mexican_origin",
+      "end": "high",
+      "kind": "item21_non_va_health",
+      "residual_consumption_delta_bn": 19.584785703747954,
+      "state_price_delta_bn": 3.739362863788772,
+      "residual_national_bn": 218.61675489899994,
+      "residual_share_change": 0.08958501699833595,
+      "state_price_share_change": 0.012198652908076205,
+      "va_key_changed": false,
+      "capital_employee_service": false
+    },
+    {
+      "group": "mexican_origin_rough",
+      "end": "high",
+      "source_line": "education_services",
+      "kind": "college_operating",
+      "delta_service_bn": -3.60989740418143,
+      "source": "canonical source parts"
+    },
+    {
+      "group": "mexican_origin_rough",
+      "end": "high",
+      "source_line": "income_security_services",
+      "kind": "income_security_administration",
+      "delta_service_bn": -0.27831674388541955,
+      "source": "canonical source parts"
+    },
+    {
+      "group": "mexican_origin_rough",
+      "end": "high",
+      "kind": "college_capital",
+      "delta_capital_excluded_bn": -0.5731086253100949,
+      "employee_service": false
+    },
+    {
+      "group": "mexican_origin_rough",
+      "end": "high",
+      "kind": "item21_non_va_health",
+      "residual_consumption_delta_bn": 19.584785703747954,
+      "state_price_delta_bn": 3.739362863788772,
+      "residual_national_bn": 218.61675489899994,
+      "residual_share_change": 0.08958501699833595,
+      "state_price_share_change": 0.012198652908076205,
+      "va_key_changed": false,
+      "capital_employee_service": false
+    },
+    {
+      "group": "A1_third_plus_nh_white",
+      "end": "high",
+      "source_line": "education_services",
+      "kind": "college_operating",
+      "delta_service_bn": -2.7535701820086587,
+      "source": "own-group comparator parts"
+    },
+    {
+      "group": "A1_third_plus_nh_white",
+      "end": "high",
+      "source_line": "income_security_services",
+      "kind": "income_security_administration",
+      "delta_service_bn": 0.18598198155860662,
+      "source": "own-group comparator parts"
+    },
+    {
+      "group": "A1_third_plus_nh_white",
+      "end": "high",
+      "kind": "college_capital",
+      "delta_capital_excluded_bn": -0.42436945677520616,
+      "employee_service": false
+    },
+    {
+      "group": "all_residents_slice",
+      "end": "high",
+      "source_line": "education_services",
+      "kind": "college_operating",
+      "delta_service_bn": -3.57733549902558,
+      "source": "own-group comparator parts"
+    },
+    {
+      "group": "all_residents_slice",
+      "end": "high",
+      "source_line": "income_security_services",
+      "kind": "income_security_administration",
+      "delta_service_bn": 0.0,
+      "source": "own-group comparator parts"
+    },
+    {
+      "group": "all_residents_slice",
+      "end": "high",
+      "kind": "college_capital",
+      "delta_capital_excluded_bn": -0.549550040875849,
+      "employee_service": false
+    }
+  ],
+  "excluded_capital_rule": "Item15 college_capital, item20 real capital return and item21 health capital never enter employee-service stock attribution.",
+  "health_key_rule": "VA keeps the source13 old key; source21 residual consumption uses its residual national mass for civilian/state service, with state-price changes confined to state/local service. Own comparators already use OFD+STL without pooled ethnic translation.",
+  "plan_valuations": "Pinned BEA/Z.1 booked stocks and interest unchanged; VA payroll-function split is the declared national medical proxy, not measured historical VA payroll.",
+  "alternative_scope": "Average functional-response arms retain the oct16 operating key changes; average_cost restores the separate VA block's response to one.",
+  "source_sha256": {
+    "main_case_2026_10_16/derived/corrections.json": "4300b06c5db6c9ddca86e59538be66a7aa6cea71bdf4ca9c13625756a711f530",
+    "legacy_comparators_2026_09_30/derived/group_lines_oct16.csv": "9228d2a35df566cf074d9526df3283b7fa720257f71fe0364ae377fabce8a31d",
+    "legacy_comparators_2026_09_30/derived/service_parts_oct16.json": "b39459d14ee2bc1ca0a69efaae8ad80b567dd4d2a7e118be1d07913e7547e0e9",
+    "coverage_bound_2026_10_14/derived/coverage_bound_oct16.json": "9d048a80ba1aa0b45d1ed645d6b3775f829b2bf7fe31a938c8ce81046ebbfce6",
+    "coverage_bound_2026_10_14/derived/line_parts_oct16_set.csv": "a1a0943551d5579e3aef452123fc19005ee2bdb78d0230c14022838e78d00d29",
+    "spending_keys_r5_2026_10_15/derived/item13.json": "4b4635c75dc42f3cfada401a6e257f96d61355df8a7a4702bea0554febf56bbb"
+  }
+}

@@ -273,3 +273,132 @@ def test_coverage_composition_and_zero_response_keep_household_prices(tmp_path):
     coverage["sha256"] = pl.sha(source)
     with pytest.raises(ValueError, match="age-price mismatch"):
         pl.coverage_service_amounts(coverage, "low", lines, list(lines), source_root=tmp_path)
+
+
+def test_v9_va_split_preserves_state_health_and_total_before_response(monkeypatch):
+    """VA is a federal health subblock; state-price overlays stay civilian."""
+    monkeypatch.setattr(pl, "v9_military_fraction", lambda: ({}, .5))
+    mixes = {"federal_civilian": {"health_services": .2, "education_services": .8},
+             "state_local": {"health_services": .3, "education_services": .7}}
+    result = pl.v9_function_mixes(mixes)
+    assert result["state_local"]["health_services"] == .3
+    assert result["state_local"]["health_services_va"] == 0
+    assert result["federal_civilian"]["health_services"] == 0
+    assert result["federal_civilian"]["health_services_va"] == .1
+    assert result["federal_civilian"]["health_services_federal_other"] == .1
+    # Raw health .12 plus state-price overlay .02: federal service excludes the overlay.
+    federal_other = (.14-.02-.5*.12)/(1-.5)
+    before = .1*.12+.1*federal_other
+    after = .1*federal_other
+    assert before == pytest.approx(.2*.12, abs=1e-15)
+    assert before-after == pytest.approx(.1*.12, abs=1e-15)
+
+
+def test_v9_raw_health_restores_only_the_declared_military_subblock(monkeypatch):
+    monkeypatch.setattr(pl, "v9_military_fraction", lambda: ({"central_national_bn": 20.}, .5))
+    lines = {"health_services": {"national_bn": 100.}}
+    assert pl.v9_raw_health(8., "health_services", lines) == 10.
+    assert pl.v9_raw_health(8., "state_price_health_services", lines) == 8.
+    lines["health_services"]["national_bn"] = 10.
+    with pytest.raises(ValueError, match="military factor"):
+        pl.v9_raw_health(8., "health_services", lines)
+
+
+def test_v9_service_export_fails_loud_on_absent_or_changed_source(tmp_path, monkeypatch):
+    import json
+    monkeypatch.setattr(pl, "GROUP_LINES", tmp_path / "group_lines_oct16.csv")
+    monkeypatch.setattr(pl, "FISCAL", tmp_path)
+    with pytest.raises(ValueError, match="raw-service/typed-part"):
+        pl.v9_service_sources()
+    source = tmp_path / "service_parts_oct16.json"
+    dep = tmp_path / "source.py"
+    dep.write_text("first source\n")
+    rows = [dict(group=group, end=end, basis="accrual", raw_lines=[], parts=[])
+            for group in pl.GROUP_SOURCES.values() for end in ("low", "high")]
+    source.write_text(json.dumps(dict(case="oct16", runs=rows, source_sha256={dep.name: pl.sha(dep)})))
+    assert len(pl.v9_service_sources()) == 8
+    dep.write_text("changed source\n")
+    with pytest.raises(ValueError, match="stale pension service source"):
+        pl.v9_service_sources()
+
+
+def test_v9_college_operating_routes_without_capital_or_va_double_application(monkeypatch):
+    group = "A1_third_plus_nh_white"
+    parts = [dict(item="15", source_line="education_services", kind="college_operating", delta_bn=-2.),
+             dict(item="15", source_line="college", kind="college_capital", delta_bn=-100.),
+             dict(item="14", source_line="income_security_services", kind="administration", delta_bn=-1.),
+             dict(item="13", source_line="health_services", kind="va_medical", delta_bn=-99.)]
+    monkeypatch.setattr(pl, "V9_SERVICE_RUNS", {(group, "low"): {"parts": parts}})
+    monkeypatch.setattr(pl, "V9_SERVICE_PARTS", [])
+    monkeypatch.setattr(pl, "v9_military_fraction", lambda: ({}, .5))
+    lines = {"education_services": {"national_bn": 100.}, "income_security_services": {"national_bn": 50.}}
+    shares = {"education_services": .2, "income_security_services": .1,
+              "health_services": .14, "health_services_va": .12}
+    pl.v9_service_adjustments(group, "low", lines, shares)
+    assert shares["education_services"] == pytest.approx(.18, abs=1e-15)
+    assert shares["income_security_services"] == pytest.approx(.08, abs=1e-15)
+    assert shares["health_services"] == .14
+    assert shares["health_services_va"] == .12
+    excluded = next(p for p in pl.V9_SERVICE_PARTS if p["kind"] == "college_capital")
+    assert excluded["delta_capital_excluded_bn"] == -100.
+    assert excluded["employee_service"] is False
+
+
+def test_v9_item21_uses_non_va_key_and_state_overlay_without_capital(monkeypatch):
+    parts = [dict(source_line="health_services", population="original_union", delta_bn=1.25),
+             dict(source_line="health_services", population="coverage", delta_bn=.75),
+             dict(source_line="state_price_health_services", population="original_union", delta_bn=2.5),
+             dict(source_line="state_price_health_services", population="coverage", delta_bn=.5),
+             dict(source_line="health_sl", delta_bn=100.)]
+    interactions = {k: {"by_end": {"low": {"total_bn": v}}} for k, v in
+                    (("native_minor_calibration", 1.), ("coverage_tenure", 1.))}
+    metadata = {"health_residual_key": {"by_end": {"low": {"parts": parts, "total_bn": 105.}},
+                                      "count_interactions": interactions}}
+    count = [dict(line="item21:health", source_line="health_services", change_bn=.5),
+             dict(line="item21:overlay", source_line="state_price_health_services", change_bn=.7),
+             dict(line="item21:capital", source_line="health_sl", change_bn=1.6,
+                  economic_class="capital_return", source_capital_rate=.02, capital_rate=.04)]
+    monkeypatch.setattr(pl, "V9_META", metadata)
+    monkeypatch.setattr(pl, "V9_SERVICE_PARTS", [])
+    monkeypatch.setattr(pl, "v9_military_fraction", lambda: ({"central_national_bn": 20.}, .5))
+    lines = {"health_services": {"national_bn": 100.}}
+    shares = {"health_services": .14, "health_services_va": .12, "health_services_federal_other": .12}
+    pl.v9_health_residual_adjustment("mexican_origin", "low", lines, shares, count)
+    assert shares["health_services_va"] == .12
+    assert shares["health_services_federal_other"] == pytest.approx(.12+2.5/80, abs=1e-15)
+    assert shares["health_services"] == pytest.approx(.14+2.5/80+3.7/306.539, abs=1e-15)
+    assert pl.V9_SERVICE_PARTS[-1]["capital_employee_service"] is False
+    parts[-1]["delta_bn"] = 101.
+    with pytest.raises(ValueError, match="item21 source parts"):
+        pl.v9_health_residual_adjustment("mexican_origin", "low", lines, shares, count)
+
+
+def test_v9_state_price_overlay_does_not_enter_federal_employee_health(monkeypatch):
+    group = "A1_third_plus_nh_white"
+    monkeypatch.setattr(pl, "V9_SERVICE_RUNS", {(group, "low"): {"parts": []}})
+    monkeypatch.setattr(pl, "V9_SERVICE_PARTS", [])
+    monkeypatch.setattr(pl, "v9_military_fraction", lambda: ({}, .5))
+    lines = {"education_services": {"national_bn": 100.}, "income_security_services": {"national_bn": 50.}}
+    shares = {"education_services": .2, "income_security_services": .1,
+              "health_services": .14, "health_services_va": .12, "_health_state_price": .02}
+    pl.v9_service_adjustments(group, "low", lines, shares)
+    assert shares["health_services_federal_other"] == pytest.approx(.12, abs=1e-15)
+    assert shares["health_services"] == .14
+    assert shares["health_services_va"] == .12
+
+
+def test_v9_live_outputs_keep_booked_values_and_separate_service_keys():
+    import json
+    live = HERE / "derived/oct16"
+    assert (live / "measured_2024.csv").read_bytes() == (HERE / "derived/oct15/measured_2024.csv").read_bytes()
+    payload = json.loads((pl.FISCAL / "main_case_2026_10_16/derived/corrections.json").read_text())
+    rules = json.loads((live / "service_rules.json").read_text())
+    assert rules["population"] == payload["meta"]["population_v9"]["with_coverage"]
+    assert all(r["response"] == 0 for r in rules["va_medical"])
+    rows = list(csv.DictReader((live / "group_shares.csv").open()))
+    assert {float(r["response"]) for r in rows if r["line"] == "health_services_va"} == {0.}
+    assert {float(r["response"]) for r in rows if r["line"] == "health_services_federal_other"} == {1.}
+    changes = [r for r in rules["operating_adjustments"] if r["kind"] == "item21_non_va_health"]
+    assert {(r["group"], r["end"]) for r in changes} == {
+        (g, e) for g in ("mexican_origin", "mexican_origin_rough") for e in ("low", "high")}
+    assert all(not r["va_key_changed"] and not r["capital_employee_service"] for r in changes)

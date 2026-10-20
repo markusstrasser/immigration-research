@@ -10,8 +10,13 @@ to equal-sized groups by their use of public services, retaining engine and matc
 Run from the repository root (a worktree drops --no-project):
   uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py
   uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --fetch
-  uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --case oct15
-The live default is oct15, after group_lines.py --case oct15; writes derived/oct15/.
+  uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --case oct16
+The live default is oct16, after group_lines.py --case oct16; writes derived/oct16/.
+Oct16 uses population_v9, separates federal VA service from civilian/state health,
+and routes college operating changes separately from capital. The booked national
+plan stocks and interest retain their imported valuations; item20's annual real
+capital return does not revalue either. service_rules.json records the source
+receipts and VA stock/annual-interest reductions in distinct units.
 Earlier entries in CASES locate archived inputs and outputs, which the live run never regenerates.
 `--fetch` downloads every input to `_cache/` (ignored; ASPEP needs CENSUS_API_KEY in the environment,
 never written) and then runs. A default run reads `_cache/` and stops unless every file matches its pin.
@@ -54,6 +59,7 @@ COMPARISON = importlib.util.module_from_spec(_contract_spec)
 _contract_spec.loader.exec_module(COMPARISON)
 CACHE = HERE / "_cache"
 UNION_ROW4 = 39_712_493.33          # dataset audit row 4: the people the account prices (per-member denominator)
+UNION_PER_HEAD_KEY = 0.117175
 RESIDENTS = 340_110_988              # the account's 2024 resident control
 # The case the groups' lines come from (--case). oct05, the v5 case adopted 2026-10-05: group_lines.py --case oct05,
 # whose union rows carry the 3,039,720 added people at the case lane's amounts and whose slices are on the lineage's
@@ -71,7 +77,9 @@ CASES = {"sept29": dict(lines="group_lines_sept29.csv", dump="engine_lines_sept2
          "oct07": dict(lines="group_lines_oct07.csv", dump="engine_lines_oct07.json",
                        lineage="main_case_2026_10_07/derived/corrections.json"),
          "oct15": dict(lines="group_lines_oct15.csv", dump="engine_lines_oct15.json",
-                       lineage="main_case_2026_10_15/derived/corrections.json")}
+                       lineage="main_case_2026_10_15/derived/corrections.json"),
+         "oct16": dict(lines="group_lines_oct16.csv", dump="engine_lines_oct16.json",
+                       lineage="main_case_2026_10_16/derived/corrections.json")}
 CASE = "sept29"
 POPULATION = UNION_ROW4              # the case's priced count (use_case())
 SCALED = {}                          # line -> national total after the case's items' national-scale edits (use_case())
@@ -81,6 +89,9 @@ SERVICE_ATTRIBUTIONS = []
 POPULATION_V8 = {}
 COMPLETION_COUNTS = {}
 DEFENSE_STOCK_BRIDGES = []
+V9_META = {}
+V9_SERVICE_PARTS = []
+V9_SERVICE_RUNS = {}
 
 PINS = {
     "Section3All_xls.xlsx": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
@@ -400,7 +411,7 @@ DUMP_FILE = FISCAL / "white_replacement_2026_09_28/derived/engine_lines_sept29.j
 def use_case(case: str) -> None:
     """Point the group shares at a case's line export, engine dump, priced count and items' national-scale edits."""
     global CASE, POPULATION, GROUP_LINES, DUMP_FILE, SCALED, COMPLETION_CARRIERS, COVERAGE, SERVICE_ATTRIBUTIONS
-    global POPULATION_V8, COMPLETION_COUNTS, DEFENSE_STOCK_BRIDGES
+    global POPULATION_V8, COMPLETION_COUNTS, DEFENSE_STOCK_BRIDGES, V9_META, V9_SERVICE_PARTS, V9_SERVICE_RUNS
     conf = CASES[case]
     CASE = case
     GROUP_LINES = FISCAL / "legacy_comparators_2026_09_30/derived" / conf["lines"]
@@ -408,17 +419,22 @@ def use_case(case: str) -> None:
     POPULATION, SCALED, COMPLETION_CARRIERS, COVERAGE = UNION_ROW4, {}, {}, None
     SERVICE_ATTRIBUTIONS = []
     POPULATION_V8, COMPLETION_COUNTS, DEFENSE_STOCK_BRIDGES = {}, {}, []
+    V9_META, V9_SERVICE_PARTS = {}, []
+    V9_SERVICE_RUNS = {}
     if "lineage" in conf:
         payload = json.loads((FISCAL / conf["lineage"]).read_text())
         POPULATION = payload["meta"]["lineage"]["counts"]["lineage_population"]
-        if case == "oct15":
-            POPULATION = payload["meta"]["population_v8"]["with_coverage"]
+        if case in ("oct15", "oct16"):
+            population_key = "population_v9" if case == "oct16" else "population_v8"
+            POPULATION = payload["meta"][population_key]["with_coverage"]
             COMPLETION_CARRIERS = payload["meta"]["union_completion"]["carriers"]
             COVERAGE = payload["meta"].get("coverage")
             POPULATION_V8 = payload["meta"]["population_v8"]
             COMPLETION_COUNTS = payload["meta"]["union_completion"]["counts"]
             if not math.isfinite(POPULATION) or POPULATION <= 0:
-                raise ValueError("[BLOCKED] oct15 population_v8.with_coverage is not a positive finite count")
+                raise ValueError(f"[BLOCKED] {case} {population_key}.with_coverage is not a positive finite count")
+            if case == "oct16":
+                V9_META = payload["meta"]
         for item in payload["meta"].get("items", []):
             if item["kind"] != "edit_set" or not item["applied"]:
                 continue
@@ -673,6 +689,196 @@ def defense_stock_amount(end, dump_line):
     return bridge["stock_raw_bn"]
 
 
+def v9_service_sources():
+    """Require the live producer's raw snapshot, rather than undoing unknown edits."""
+    path = GROUP_LINES.parent / "service_parts_oct16.json"
+    if not path.exists():
+        raise ValueError("[BLOCKED] oct16 pension source needs the raw-service/typed-part export")
+    source = json.loads(path.read_text())
+    if source.get("case") != "oct16":
+        raise ValueError("[BLOCKED] pension service source case differs")
+    for name, expected in source["source_sha256"].items():
+        if sha(FISCAL / name) != expected:
+            raise ValueError(f"[BLOCKED] stale pension service source: {name}")
+    runs = {(r["group"], r["end"]): r for r in source["runs"] if r["basis"] == "accrual"}
+    expected = {(group, end) for group in GROUP_SOURCES.values() for end in ("low", "high")}
+    if set(runs) != expected:
+        raise ValueError("[BLOCKED] pension service source lacks eight accrual group/end records")
+    return runs
+
+
+def v9_military_fraction():
+    bridge = json.loads((FISCAL / "spending_keys_r5_2026_10_15/derived/item13.json").read_text())["extension"]["health_bridge"]
+    fraction = bridge["central_national_bn"] / bridge["federal_health_consumption"]
+    if not 0 < fraction < 1:
+        raise ValueError("[BLOCKED] pension federal VA service fraction is invalid")
+    if V9_META:
+        declared = [part["national_component_bn"] for part in
+            V9_META["veterans_compensation"]["by_end"]["low"]["parts"] if part.get("part") == "va_medical"]
+        if not declared or any(abs(value-bridge["central_national_bn"]) > 1e-9 for value in declared):
+            raise ValueError("[BLOCKED] pension VA source differs from the canonical live payload")
+    return bridge, fraction
+
+
+def v9_raw_health(cost, line, lines):
+    """Undo only source13's aggregate price factor; VA is routed by plan below."""
+    if line != "health_services":
+        return cost
+    bridge, _ = v9_military_fraction()
+    factor = 1 - bridge["central_national_bn"] / lines[line]["national_bn"]
+    if not 0 < factor < 1:
+        raise ValueError("[BLOCKED] pension health source military factor is invalid")
+    return cost / factor
+
+
+def v9_coverage_service_amounts(end, lines, needed):
+    source = FISCAL / COVERAGE["file"]
+    if COVERAGE.get("stub") or COVERAGE.get("which") != "set" or sha(source) != COVERAGE["sha256"]:
+        raise ValueError("[BLOCKED] pension oct16 coverage is stub, wrong basis or stale")
+    raw = json.loads(source.read_text())
+    if raw.get("key") != "oct16":
+        raise ValueError("[BLOCKED] pension coverage is not oct16")
+    entry = raw["sets"]["set"]["scenarios"][COVERAGE["construction"]]["ends"][end]
+    parts = entry["decomposition"]["line_parts"]
+    if abs(sum(r["coverage_bn"] for r in parts) - COVERAGE["by_end"][end]["total_bn"]) > 1e-9:
+        raise ValueError("[BLOCKED] oct16 pension coverage parts do not close (1e-9bn)")
+    # A zero-response raw defense key has no signed cost to invert. Retain its
+    # separately pinned v8 household raw price, then calibrate people explicitly.
+    old = json.loads((FISCAL / "main_case_2026_10_15/derived/corrections.json").read_text())["meta"]["coverage"]
+    zero = [line for line in needed if lines[line]["response"] == 0]
+    amounts = coverage_service_amounts(old, end, lines, zero) if zero else {}
+    for line in needed:
+        if line in amounts:
+            continue
+        cost = sum(r["coverage_bn"] for r in parts if r.get("source_side") in ("receipt", "spending")
+                   and r.get("source_line") == line and r.get("economic_class") == "fiscal_line"
+                   and not r["line"].startswith("item21:"))
+        sign = -1 if lines[line]["side"] == "receipts" else 1
+        amounts[line] = sign * v9_raw_health(cost, line, lines) / lines[line]["response"]
+    return amounts
+
+
+def v9_service_adjustments(group, end, lines, shares):
+    """Apply operating service changes, never capital, to employee attribution."""
+    run = V9_SERVICE_RUNS[(GROUP_SOURCES[group], end)]
+    own = group in ("mexican_origin", "mexican_origin_rough")
+    parts = ([dict(part, item=number) for number, key in
+              ((14, "income_security_administration"), (15, "public_college_response"))
+              for part in V9_META[key]["by_end"][end]["parts"]] if own else run["parts"])
+    for line, selected in (("education_services", "college_operating"),
+                           ("income_security_services", "income_security_administration")):
+        delta = sum(p["delta_bn"] for p in parts if p.get("population") != "coverage" and
+                    (p.get("kind") == selected or str(p.get("item")) == "14" or p.get("item") == selected)
+                    and p.get("source_line") == line)
+        shares[line] += delta / lines[line]["national_bn"]
+        V9_SERVICE_PARTS.append(dict(group=group, end=end, source_line=line, kind=selected,
+            delta_service_bn=delta, source="canonical source parts" if own else "own-group comparator parts"))
+    V9_SERVICE_PARTS.append(dict(group=group, end=end, kind="college_capital",
+        delta_capital_excluded_bn=sum(p["delta_bn"] for p in parts if p.get("kind") == "college_capital"),
+        employee_service=False))
+    changes = []
+    if own:
+        calibration, tenure = V9_META["native_minor_calibration"], V9_META["coverage_tenure"]
+        if (calibration["parts_file"] != tenure["parts_file"] or
+                tenure.get("subtract_parts_scenario") != calibration["parts_scenario"]):
+            raise ValueError("[BLOCKED] pension count parts lack an explicit joint-minus-calibration declaration")
+        path = FISCAL / calibration["parts_file"]
+        with path.open() as stream:
+            changes = [r for r in csv.DictReader(stream) if r["scenario"] == tenure["parts_scenario"] and r["end"] == end]
+        if abs(sum(float(r["change_bn"]) for r in changes) - sum(
+                V9_META[key]["by_end"][end]["total_bn"] for key in ("native_minor_calibration", "coverage_tenure"))) > 1e-9:
+            raise ValueError("[BLOCKED] pension joint calibrated/coverage service parts do not close (1e-9bn)")
+        for row in changes:
+            if row["line"].startswith("item21:"):
+                continue  # The new payer key never changes VA's old service key.
+            line = row["source_line"]
+            if row["economic_class"] != "fiscal_line" or line not in lines or row["source_side"] not in ("receipt", "spending"):
+                continue
+            cost = v9_raw_health(float(row["change_bn"]), line, lines)
+            if lines[line]["response"] == 0:
+                continue
+            amount = cost / lines[line]["response"] * (-1 if row["source_side"] == "receipt" else 1)
+            target = next((name for name, (overlay, _) in OVERLAY.items() if line == overlay), line)
+            national = next((nat for _, (overlay, nat) in OVERLAY.items() if line == overlay), lines[line]["national_bn"])
+            if target in shares:
+                shares[target] += amount / national
+                if line == "state_price_health_services":
+                    shares["_health_state_price"] += amount / national
+                if line == "health_services":
+                    shares["health_services_va"] += amount / national
+                if line == "economic_affairs_services":
+                    shares["highways"] += amount / national
+            elif line == "roads_vmt_sl":
+                shares["highways"] += amount / HIGHWAYS_NATIONAL
+            elif line == "enterprise_surplus":
+                shares["enterprises"] += amount / national
+        # Both are declared per-person source keys; no whole-account ratio is used.
+        shares["defense"] = UNION_PER_HEAD_KEY * POPULATION / UNION_ROW4
+    _, fraction = v9_military_fraction()
+    state_price = shares.pop("_health_state_price", 0.0)
+    shares["health_services_federal_other"] = (shares["health_services"] - state_price
+        - fraction * shares["health_services_va"]) / (1-fraction)
+    if own:
+        v9_health_residual_adjustment(group, end, lines, shares, changes)
+
+
+def v9_health_residual_adjustment(group, end, lines, shares, count_parts):
+    """The residual key serves civilian/state health; VA and capital stay separate."""
+    if "health_residual_key" not in V9_META:
+        raise ValueError("[BLOCKED] oct16 pension needs the declared item21 health source")
+    block = V9_META["health_residual_key"]["by_end"][end]
+    parts = block["parts"]
+    if abs(sum(p["delta_bn"] for p in parts)-block["total_bn"]) > 1e-9:
+        raise ValueError("[BLOCKED] pension item21 source parts do not close (1e-9bn)")
+    bridge, _ = v9_military_fraction()
+    residual = lines["health_services"]["national_bn"]-bridge["central_national_bn"]
+    if residual <= 0:
+        raise ValueError("[BLOCKED] pension item21 residual national amount is invalid")
+    changes = [p for p in count_parts if p["line"].startswith("item21:")]
+    interactions = V9_META["health_residual_key"]["count_interactions"]
+    target = sum(interactions[k]["by_end"][end]["total_bn"]
+                 for k in ("native_minor_calibration", "coverage_tenure"))
+    # The metadata keeps source2%/3% price coordinates; count parts carry20's
+    # live rate. Undo that coordinate change only for the source-total gate.
+    source_total = 0.0
+    for part in changes:
+        change = float(part["change_bn"])
+        if part.get("economic_class") == "capital_return":
+            source_rate, live_rate = float(part["source_capital_rate"]), float(part["capital_rate"])
+            if source_rate <= 0 or live_rate <= 0:
+                raise ValueError("[BLOCKED] pension item21 count capital lacks its rate bridge")
+            change *= source_rate/live_rate
+        source_total += change
+    if abs(source_total-target) > 1e-9:
+        raise ValueError("[BLOCKED] pension item21 calibrated/coverage parts do not close (1e-9bn)")
+    deltas = {}
+    for line in ("health_services", "state_price_health_services"):
+        deltas[line] = (sum(p["delta_bn"] for p in parts if p["source_line"] == line)
+            + sum(float(p["change_bn"]) for p in changes if p["source_line"] == line))
+    residual_share = deltas["health_services"] / residual
+    overlay_share = deltas["state_price_health_services"] / OVERLAY["health_services"][1]
+    shares["health_services"] += residual_share + overlay_share
+    shares["health_services_federal_other"] += residual_share
+    V9_SERVICE_PARTS.append(dict(group=group, end=end, kind="item21_non_va_health",
+        residual_consumption_delta_bn=deltas["health_services"], state_price_delta_bn=deltas["state_price_health_services"],
+        residual_national_bn=residual, residual_share_change=residual_share, state_price_share_change=overlay_share,
+        va_key_changed=False, capital_employee_service=False))
+
+
+def v9_function_mixes(mixes):
+    """The source VA national subblock applies to federal civilian service only."""
+    _, fraction = v9_military_fraction()
+    for plan, mix in mixes.items():
+        health = mix["health_services"] if plan == "federal_civilian" else 0.0
+        weight = health * fraction
+        mix["health_services"] -= health
+        mix["health_services_va"] = weight
+        mix["health_services_federal_other"] = health-weight
+        if abs(sum(mix.values()) - 1) > 1e-12:
+            raise ValueError("[BLOCKED] VA/non-VA pension function mix does not close")
+    return mixes
+
+
 def group_shares() -> tuple[dict, dict]:
     """Read the white lane's gated sept29 line export on audit row 4, including each group's overlays.
 
@@ -680,15 +886,28 @@ def group_shares() -> tuple[dict, dict]:
     The export's producer runs rekey_sept29.setup(), checks every cost, and records each slice's count.
     Reject a different population, line definition or engine amount before attributing any liability.
     """
+    global V9_SERVICE_RUNS
     SERVICE_ATTRIBUTIONS.clear()
     DEFENSE_STOCK_BRIDGES.clear()
+    V9_SERVICE_PARTS.clear()
     for path in (DUMP_FILE, GROUP_LINES):
         if not path.exists():
             raise ValueError(f"[BLOCKED] pension service-share input absent: {path}; build the matching group-line export")
     dump = json.loads(DUMP_FILE.read_text())
     with GROUP_LINES.open() as f:
         rows = [r for r in csv.DictReader(f) if r["basis"] == "accrual" and r["group"] in GROUP_SOURCES.values()]
-    if CASE == "oct15" and any(r.get("engine") != COMPARISON.engine_for(r["group"]) for r in rows):
+    if CASE == "oct16":
+        V9_SERVICE_RUNS = v9_service_sources()
+        raw = {}
+        for (group, end), run in V9_SERVICE_RUNS.items():
+            for side, line, national, amount, response in run["raw_lines"]:
+                raw[group, end, "receipt" if side == "receipts" else "spending", line] = (national, amount, response)
+        rows = [dict(r) for r in rows]
+        for row in rows:
+            key = row["group"], row["end"], row["side"], row["line"]
+            if key in raw:
+                row.update(zip(("national_bn", "amount_bn", "response"), raw[key]))
+    if CASE in ("oct15", "oct16") and any(r.get("engine") != COMPARISON.engine_for(r["group"]) for r in rows):
         raise ValueError("[BLOCKED] pension group lines have missing or incorrect engine tags")
     source = {(r["group"], r["end"], r["side"], r["line"]): r for r in rows}
     if len(source) != len(rows):
@@ -709,7 +928,7 @@ def group_shares() -> tuple[dict, dict]:
     share, response = {g: {} for g in GROUPS}, {}
     for end in ("low", "high"):
         lines = {l["id"]: l for l in dump[end]["lines"]}
-        if CASE == "oct15":
+        if CASE in ("oct15", "oct16"):
             completion_attribution(end, lines)
             defense_stock = defense_stock_amount(end, lines["defense"])
         if lines["domestic_interest"]["response"] != 0 or abs(lines["domestic_interest"]["national_bn"] - 1118.87) > 1e-9:
@@ -717,9 +936,13 @@ def group_shares() -> tuple[dict, dict]:
         resp = {l: lines[l]["response"] for l in base}
         resp["highways"] = lines["roads_vmt_sl"]["response"]
         resp["enterprises"] = lines["enterprise_surplus"]["response"]
+        if CASE == "oct16":
+            resp["health_services_va"] = 0.0
+            resp["health_services_federal_other"] = resp["health_services"]
         response[end] = resp
         needed = base + [v[0] for v in OVERLAY.values()] + ["roads_vmt_sl", "enterprise_surplus"]
-        coverage_amounts = coverage_service_amounts(COVERAGE, end, lines, needed) if CASE == "oct15" else {}
+        coverage_amounts = (v9_coverage_service_amounts(end, lines, needed) if CASE == "oct16" else
+                            coverage_service_amounts(COVERAGE, end, lines, needed) if CASE == "oct15" else {})
         for g in GROUPS:
             if abs(value(g, end, "population", "amount_bn") - POPULATION) > 0.01:
                 raise ValueError(f"[BLOCKED] {g}/{end} population is not the case's priced count ({POPULATION:,.2f})")
@@ -730,7 +953,7 @@ def group_shares() -> tuple[dict, dict]:
                 if g == "mexican_origin" and abs(value(g, end, l, "amount_bn") - lines[l]["amount_bn"]) > 1e-8:
                     raise ValueError(f"[BLOCKED] {end}/{l} differs from the engine dump")
             s = {l: value(g, end, l, "amount_bn") / lines[l]["national_bn"] for l in base}
-            if CASE == "oct15":
+            if CASE in ("oct15", "oct16"):
                 amounts = {r["line"]: float(r["amount_bn"]) for r in rows
                            if r["group"] == GROUP_SOURCES[g] and r["end"] == end}
                 completion_amounts = {line: service_carrier_amount(line, lines, amounts, COMPLETION_CARRIERS)
@@ -740,28 +963,45 @@ def group_shares() -> tuple[dict, dict]:
             if g in ("mexican_origin", "mexican_origin_rough"):
                 for line in base:
                     s[line] += coverage_amounts.get(line, 0.0) / lines[line]["national_bn"]
-                if CASE == "oct15":
+                if CASE in ("oct15", "oct16"):
                     # A stock-only service attribution. The same per-head price/count
                     # applies to both lineage key variants; defense removal stays zero.
                     s["defense"] = defense_stock / lines["defense"]["national_bn"]
+                if CASE == "oct16":
+                    # The traced raw defense bridge runs on v8's counts (its household source is the oct15
+                    # base). v9_service_adjustments then sets the per-head key at v9's count, so the 5e-7 key
+                    # gate below would compare that key with itself. Test the trace here, on its own count.
+                    v8_key = UNION_PER_HEAD_KEY * POPULATION_V8["with_coverage"] / UNION_ROW4
+                    if abs(s["defense"] - v8_key) > 5e-7:
+                        raise ValueError(f"[BLOCKED] {g}/{end} traced defense stock is not the per-head key "
+                                         f"{v8_key:.6f} at its own v8 count")
+            if CASE == "oct16":
+                s["health_services_va"] = s["health_services"]
+                s["_health_state_price"] = 0.0
             for line, (ov, nat) in OVERLAY.items():
                 if abs(lines[line]["national_bn"] - SCALED.get(line, nat)) > 1e-9:
                     raise ValueError(f"[BLOCKED] {line} national changed")
                 s[line] += value(g, end, ov, "amount_bn") / nat      # a scaled line's overlay stays on nat (CASES)
-                if CASE == "oct15":
+                if CASE in ("oct15", "oct16"):
                     s[line] += completion_amounts[ov] / nat
                 if g in ("mexican_origin", "mexican_origin_rough"):
                     s[line] += coverage_amounts.get(ov, 0.0) / nat
+                if CASE == "oct16" and line == "health_services":
+                    s["_health_state_price"] = (value(g, end, ov, "amount_bn")
+                        + completion_amounts[ov]
+                        + (coverage_amounts.get(ov, 0.0) if g in ("mexican_origin", "mexican_origin_rough") else 0.0)) / nat
             s["highways"] = s["economic_affairs_services"] + value(g, end, "roads_vmt_sl", "amount_bn") / HIGHWAYS_NATIONAL
             s["enterprises"] = value(g, end, "enterprise_surplus", "amount_bn") / lines["enterprise_surplus"]["national_bn"]
-            if CASE == "oct15":
+            if CASE in ("oct15", "oct16"):
                 s["highways"] += completion_amounts["roads_vmt_sl"] / HIGHWAYS_NATIONAL
                 s["enterprises"] += completion_amounts["enterprise_surplus"] / lines["enterprise_surplus"]["national_bn"]
             if g in ("mexican_origin", "mexican_origin_rough"):
                 s["highways"] += coverage_amounts.get("roads_vmt_sl", 0.0) / HIGHWAYS_NATIONAL
                 s["enterprises"] += coverage_amounts.get("enterprise_surplus", 0.0) / lines["enterprise_surplus"]["national_bn"]
+            if CASE == "oct16":
+                v9_service_adjustments(g, end, lines, s)
             share[g][end] = s
-    key = 0.117175 * POPULATION / UNION_ROW4      # the case's per-head key: 0.117175 on audit row 4's count
+    key = UNION_PER_HEAD_KEY * POPULATION / UNION_ROW4
     for g in GROUPS:
         for end in ("low", "high"):
             if abs(share[g][end]["defense"] - key) > 5e-7 or abs(share[g][end]["enterprises"] - key) > 5e-7:
@@ -842,7 +1082,7 @@ def comparison_tags(group):
 
 
 def write(path: Path, header: list[str], rows: list[list]) -> None:
-    if CASE == "oct15" and "group" in header:
+    if CASE in ("oct15", "oct16") and "group" in header:
         group_index = header.index("group")
         header = header + ["case", "mortality_convention", "row_type", "lineage_engine", "comparator_engine"]
         rows = [row + [CASE, "not_applicable_service_share"] + comparison_tags(row[group_index]) for row in rows]
@@ -859,8 +1099,8 @@ def main() -> None:
     ap.add_argument("--census-env", type=Path, default=FISCAL / "acquire/config.local.env",
                     help="file holding CENSUS_API_KEY=... when the variable is not set (only --fetch reads it)")
     ap.add_argument("--out-dir", type=Path, default=None, help="default derived/ (sept29) or derived/<case>/")
-    ap.add_argument("--case", default="oct15", choices=list(CASES),
-                    help="oct15 (live v8); sept29, oct05 and oct07 are archived cases")
+    ap.add_argument("--case", default="oct16", choices=list(CASES),
+                    help="oct16 (live v9); earlier keyed cases are archived")
     args = ap.parse_args()
     if args.fetch:
         fetch(args.census_env if args.census_env.exists() else None)
@@ -874,8 +1114,12 @@ def main() -> None:
     census = measure_census_counts()
     aspep = measure_aspep()
     mix = function_mixes(aspep, m)
+    attribution_lines = LINES
+    if CASE == "oct16":
+        mix = v9_function_mixes(mix)
+        attribution_lines = LINES + ["health_services_va", "health_services_federal_other"]
     share, response = group_shares()
-    if CASE == "oct15":
+    if CASE in ("oct15", "oct16"):
         write(out / "completion_service_attribution.csv", ["end", "carrier", "kind", "parent_line", "service",
               "signed_carrier_amount_bn", "response", "selected_parent_or_end", "employee_service_amount"], SERVICE_ATTRIBUTIONS)
         (out / "defense_stock_bridge.json").write_text(json.dumps(DEFENSE_STOCK_BRIDGES, indent=2) + "\n")
@@ -959,7 +1203,7 @@ def main() -> None:
     # --- function_mix.csv / group_shares.csv
     write(out / "function_mix.csv", ["plan", "line", "weight"], [[p, l, w] for p, d in mix.items() for l, w in d.items()])
     write(out / "group_shares.csv", ["group", "end", "line", "share", "response"],
-          [[g, e, l, share[g][e][l], response[e][l]] for g in GROUPS for e in ("low", "high") for l in LINES])
+          [[g, e, l, share[g][e][l], response[e][l]] for g in GROUPS for e in ("low", "high") for l in attribution_lines])
 
     # --- headcount_path.csv
     years = range(1946, 2025)
@@ -978,7 +1222,7 @@ def main() -> None:
                 for tarm, F in factors[plan].items():
                     for rarm, rf in resp_arms.items():
                         for e in ("low", "high"):
-                            phi = F * sum(mix[plan][l] * share[g][e][l] * rf(e, l) for l in LINES)
+                            phi = F * sum(mix[plan][l] * share[g][e][l] * rf(e, l) for l in attribution_lines)
                             key = (g, plan, basis, tarm, rarm, e)
                             res[key] = (phi, phi * stock, phi * interest)
                             rows.append([g, plan, basis, tarm, rarm, e, phi, phi * stock, phi * interest, phi * interest * 1e9 / POPULATION])
@@ -991,12 +1235,12 @@ def main() -> None:
         for e in ("low", "high"):
             for plan, bases in plans.items():
                 interest = bases["consolidated"][1]
-                for l in LINES:
+                for l in attribution_lines:
                     if mix[plan][l]:
                         x = factors[plan]["vintage_central"] * mix[plan][l] * share[g][e][l] * response[e][l] * interest
                         brows.append([g, e, plan, l, x])
     write(out / "by_line.csv", ["group", "end", "plan", "line", "interest_2024_bn"], brows)
-    if CASE == "oct15":
+    if CASE in ("oct15", "oct16"):
         paired = {(r[0], r[1], r[2], r[3]): r[4] for r in brows}
         bridge_rows = [["case_minus_rough_bridge", e, p, l,
             paired[("mexican_origin", e, p, l)] - paired[("mexican_origin_rough", e, p, l)]]
@@ -1030,10 +1274,10 @@ def main() -> None:
                 srows.append([name, basis, tarm, rarm, e, g, parts["state_local"][1], parts["federal_civilian"][1] + parts["federal_military"][1],
                               stock, parts["state_local"][2], parts["federal_civilian"][2] + parts["federal_military"][2], inter,
                               inter * 1e9 / POPULATION])
-            for g in (("mexican_origin_rough",) if CASE == "oct15" else ("mexican_origin", "mexican_origin_rough")):
+            for g in (("mexican_origin_rough",) if CASE in ("oct15", "oct16") else ("mexican_origin", "mexican_origin_rough")):
                 d = [tot[g][i] - tot["A1_third_plus_nh_white"][i] for i in (0, 1)]
                 srows.append([name, basis, tarm, rarm, e, f"{g}_minus_A1_white", "", "", d[0], "", "", d[1], d[1] * 1e9 / POPULATION])
-            if CASE == "oct15":
+            if CASE in ("oct15", "oct16"):
                 d = [tot["mexican_origin"][i] - tot["mexican_origin_rough"][i] for i in (0, 1)]
                 srows.append([name, basis, tarm, rarm, e, "case_minus_rough_bridge", "", "", d[0], "", "", d[1], d[1] * 1e9 / POPULATION])
     write(out / "summary.csv", ["arm", "federal_basis", "time_weighting", "responses", "end", "group", "stock_sl_bn", "stock_federal_bn",
@@ -1045,11 +1289,32 @@ def main() -> None:
         for e in ("low", "high"):
             for rarm, rf in resp_arms.items():
                 for plan, part in (("federal_civilian", "civilian"), ("federal_military", "military")):
-                    phi = factors[plan]["vintage_central"] * sum(mix[plan][l] * share[g][e][l] * rf(e, l) for l in LINES)
+                    phi = factors[plan]["vintage_central"] * sum(mix[plan][l] * share[g][e][l] * rf(e, l) for l in attribution_lines)
                     orows.append([g, e, rarm, plan, fr["opeb_begin_fy24"][part], fr["opeb_interest_fy24"][part], phi,
                                   phi * fr["opeb_begin_fy24"][part], phi * fr["opeb_interest_fy24"][part]])
     write(out / "opeb_federal.csv", ["group", "end", "responses", "plan", "liability_begin_fy24_bn", "interest_fy24_bn", "fraction",
                                      "stock_bn", "interest_bn"], orows)
+    if CASE == "oct16":
+        bridge, fraction = v9_military_fraction()
+        va = []
+        for group in GROUPS:
+            for end in ("low", "high"):
+                phi = factors["federal_civilian"]["vintage_central"] * mix["federal_civilian"]["health_services_va"] * share[group][end]["health_services_va"]
+                stock, interest = plans["federal_civilian"]["consolidated"]
+                va.append(dict(group=group, end=end, service_share=share[group][end]["health_services_va"],
+                    annual_va_service_use_2024_bn=share[group][end]["health_services_va"]*bridge["central_national_bn"],
+                    fraction_of_federal_health=fraction, stock_end2023_removed_bn=phi*stock,
+                    nominal_interest_2024_removed_bn=phi*interest, response=0))
+        source_paths = [FISCAL / CASES[CASE]["lineage"], GROUP_LINES, GROUP_LINES.parent / "service_parts_oct16.json",
+                        FISCAL / COVERAGE["file"], FISCAL / V9_META["native_minor_calibration"]["parts_file"],
+                        FISCAL / "spending_keys_r5_2026_10_15/derived/item13.json"]
+        (out / "service_rules.json").write_text(json.dumps(dict(case=CASE, population=POPULATION,
+            va_medical=va, va_national_bridge=bridge, operating_adjustments=V9_SERVICE_PARTS,
+            excluded_capital_rule="Item15 college_capital, item20 real capital return and item21 health capital never enter employee-service stock attribution.",
+            health_key_rule="VA keeps the source13 old key; source21 residual consumption uses its residual national mass for civilian/state service, with state-price changes confined to state/local service. Own comparators already use OFD+STL without pooled ethnic translation.",
+            plan_valuations="Pinned BEA/Z.1 booked stocks and interest unchanged; VA payroll-function split is the declared national medical proxy, not measured historical VA payroll.",
+            alternative_scope="Average functional-response arms retain the oct16 operating key changes; average_cost restores the separate VA block's response to one.",
+            source_sha256={str(p.relative_to(FISCAL)): sha(p) for p in source_paths}), indent=2) + "\n")
 
     for (plan, arm), w in sorted(weights.items()):
         print(f"{plan:18s} {arm:16s} F={factors[plan][arm]:.4f}")

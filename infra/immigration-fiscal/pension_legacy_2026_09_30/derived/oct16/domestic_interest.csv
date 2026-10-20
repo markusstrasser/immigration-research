@@ -1,0 +1,7 @@
+government,component,bn_2024,source
+state_local,imputed interest on plans' claims on employers,162.963000,T7.24 line 13
+federal,imputed interest on plans' claims on employers,62.006000,T7.23 line 19
+federal,interest on Treasury securities held by the employee plans,89.071000,T7.23 line 18; in T3.2 line 34 per its footnote 4 (interest accrued = T7.23 line 41)
+state_local,other interest to persons and business,111.645000,T3.3 line 29 less the above
+federal,other interest to persons and business,693.185000,T3.2 line 34 less the above
+all,total (T3.1 line 28),1118.870000,T3.1 line 28

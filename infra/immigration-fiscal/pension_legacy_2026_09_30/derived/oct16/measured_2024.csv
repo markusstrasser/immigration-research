@@ -1,0 +1,75 @@
+item,value_bn,source
+domestic_interest_total,1118.870000,BEA T3.1 line 28
+domestic_interest_federal,844.262000,BEA T3.2 line 34
+domestic_interest_state_local,274.608000,BEA T3.3 line 29
+sl_actual_employer_contributions,214.289000,BEA T7.24 line 5
+sl_imputed_employer_contributions,-41.578000,BEA T7.24 line 6
+sl_plan_monetary_interest,69.729000,BEA T7.24 line 12
+sl_imputed_interest,162.963000,BEA T7.24 line 13
+sl_plan_dividends,46.333000,BEA T7.24 line 14
+sl_interest_accrued_on_entitlements,442.066000,BEA T7.24 line 31
+fed_actual_employer_contributions,250.510000,BEA T7.23 line 5
+fed_imputed_employer_contributions,-144.348000,BEA T7.23 line 8
+fed_plan_interest_total,151.077000,BEA T7.23 line 17
+fed_plan_monetary_interest,89.071000,BEA T7.23 line 18
+fed_imputed_interest,62.006000,BEA T7.23 line 19
+fed_interest_accrued_on_entitlements,151.077000,BEA T7.23 line 41
+supp_federal_civilian_pension,71.747000,BEA T7.8 line 6
+supp_federal_military_pension,49.321000,BEA T7.8 line 7
+supp_state_local_retirement,192.994000,BEA T7.8 line 10
+defense_comp_military,207.101000,BEA T3.11.5 line 6
+defense_comp_civilian,132.631000,BEA T3.11.5 line 7
+nondefense_comp,267.716000,BEA T3.10.5 line 37
+sl_comp,1760.774000,BEA T3.10.5 line 50
+fed_consumption_general_public_services,97.070000,BEA T3.17 line 12
+fed_consumption_public_order_safety,79.064000,BEA T3.17 line 14
+fed_consumption_economic_affairs_services,180.200000,BEA T3.17 line 15
+fed_consumption_housing_community_services,2.764000,BEA T3.17 line 16
+fed_consumption_health_services,179.700000,BEA T3.17 line 17
+fed_consumption_recreation_culture,5.430000,BEA T3.17 line 18
+fed_consumption_education_services,11.954000,BEA T3.17 line 19
+fed_consumption_income_security_services,30.536000,BEA T3.17 line 20
+sl_employer_pension_compensation,172.711000,"BEA T7.24 lines 5+6, including service charges"
+fed_civilian_employer_pension_compensation,58.719000,"BEA T7.23 lines 6+9, including service charges"
+fed_military_employer_pension_compensation,47.443000,"BEA T7.23 lines 7+10, including service charges"
+sl_implied_funding_from_holding_gains,163.041000,"BEA T7.24 line 31 - lines 12,13,14"
+z1_sl_claims_on_sponsor_2023q4,3125.593000,Z.1 FL223073045.Q (S129s1.3.s line 19)
+z1_sl_entitlements_2023q4,8942.670000,Z.1 FL224190043.Q (S129s1.3.s line 21)
+z1_fed_claims_on_sponsor_2023q4,1163.664000,Z.1 FL343073045.Q (S129s1.2.s line 10)
+z1_fed_entitlements_2023q4,3831.670000,Z.1 FL344190045.Q (S129s1.2.s line 11)
+z1_fed_treasury_nonmarketable_2023q4,2639.431000,Z.1 FL343069245.Q (S129s1.2.s)
+z1_fed_total_assets_2023q4,3831.670000,Z.1 FL344090045.Q (S129s1.2.s line 1)
+z1_sl_claims_on_sponsor_2024q4,3005.859000,Z.1 FL223073045.Q (S129s1.3.s line 19)
+z1_sl_entitlements_2024q4,9253.589000,Z.1 FL224190043.Q (S129s1.3.s line 21)
+z1_fed_claims_on_sponsor_2024q4,961.965000,Z.1 FL343073045.Q (S129s1.2.s line 10)
+z1_fed_entitlements_2024q4,3871.937000,Z.1 FL344190045.Q (S129s1.2.s line 11)
+z1_fed_treasury_nonmarketable_2024q4,2881.156000,Z.1 FL343069245.Q (S129s1.2.s)
+z1_fed_total_assets_2024q4,3871.937000,Z.1 FL344090045.Q (S129s1.2.s line 1)
+fed_consolidated_unfunded_2023q4,3803.095000,Z.1 entitlements less assets other than sponsor claims and nonmarketable Treasury securities
+fr_pension_end_fy24_civilian,2882.800000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_pension_end_fy24_military,2814.900000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_pension_end_fy24_total,5697.700000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_pension_begin_fy24_civilian,2748.400000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_pension_begin_fy24_military,2616.000000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_pension_begin_fy24_total,5364.400000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_pension_interest_fy24_civilian,75.300000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_pension_interest_fy24_military,75.700000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_pension_interest_fy24_total,151.000000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_opeb_end_fy24_civilian,443.100000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_opeb_end_fy24_military,1297.800000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_opeb_end_fy24_total,1740.900000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_opeb_begin_fy24_civilian,390.800000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_opeb_begin_fy24_military,1122.200000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_opeb_begin_fy24_total,1513.000000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_opeb_interest_fy24_civilian,12.200000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_opeb_interest_fy24_military,33.300000,"Financial Report FY2025 Note 13, FY2024 column"
+fr_opeb_interest_fy24_total,45.500000,"Financial Report FY2025 Note 13, FY2024 column"
+census_mexican_origin_1970_millions,4.534849,Census briefs C2010BR-04 / C2KBR/01-3 / WE-2R
+census_mexican_origin_1980_millions,8.743189,Census briefs C2010BR-04 / C2KBR/01-3 / WE-2R
+census_mexican_origin_1990_millions,13.499484,Census briefs C2010BR-04 / C2KBR/01-3 / WE-2R
+census_mexican_origin_2000_millions,20.640711,Census briefs C2010BR-04 / C2KBR/01-3 / WE-2R
+census_mexican_origin_2010_millions,31.798258,Census briefs C2010BR-04 / C2KBR/01-3 / WE-2R
+sl_fte_per_resident_1998,0.052492,BEA T6.5D lines 93+96 over T7.1 population
+sl_fte_per_resident_2024,0.051071,BEA T6.5D lines 93+96 over T7.1 population
+acs_census_2010_splice_ratio,1.035581,ACS B03001_004E 2010 (back-cast input) / census 2010
+aspep_sl_march_payroll_2024,108.734162,"Census ASPEP 2024, state and local, total payroll ($bn, March)"

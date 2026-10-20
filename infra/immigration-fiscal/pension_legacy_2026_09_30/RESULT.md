@@ -487,3 +487,37 @@ Log: 2026-10-15 08:40:26 JST (`date`, parent): rerun on round 3's comparator cod
 ### R4C4 downstream receipt — 2026-10-15 10:38:53 JST (`date`)
 
 Full live pension producer and tests reproduce **IDENTICAL 43/43, exit 0**, 5.149s. No code change was needed. This is the employee-service stock companion, mortality `not_applicable_service_share`; annual survivor terms are not charged to stock. Adopted rough-lineage-minus-white stock remains 118.546032 / 112.942871bn; case-lineage stock remains 484.131105 / 507.777811bn. [CALCULATION: derived/oct15/summary.csv; scratch prop8/c4fix-pension-rerun.log]
+
+### Oct16 preparation checkpoint — 2026-10-15 19:14 JST
+
+The live default moves to oct16 and the denominator to `meta.population_v9`. The new route requires the comparator's pinned pre-rule raw service snapshot and typed own-key parts. It splits federal VA service from civilian/state health, routes college operating changes separately from excluded capital, and reads the declared joint calibration/tenure service pieces. Booked national plan valuations and nominal legacy interest remain unchanged by item20. Four development fixtures pass, including state-overlay conservation and a deliberately large excluded capital change; source/closure gates remain strict. [CALCULATION: pension_legacy.py; test_pension_legacy.py]
+
+This is preparation, not an adopted-case receipt. The provisional pension run stops on the undelivered `group_lines_oct16.csv`; its producer stops while the final item21 package and saved case bands differ. No oct16 pension number or byte-replay PASS is claimed. Final producer, complete tests and `rerun_lane.py` wait for `prop9/CASE_FINAL` and refreshed comparator exports. All oct15 outputs remain unchanged. [DATA: parent scratch prop9/prop-d-pensions.md]
+
+### Adopted v9 final receipt — 2026-10-20 20:37:06 JST (`date`)
+
+The live route is oct16, adopted at7dfb4c66, over44,903,074.086245224people (`meta.population_v9.with_coverage`). Source13's VA service uses only federal civilian health; source21's residual-payer change, including its coverage and joint16/17 count parts, enters civilian/state health while VA retains the old key. State-price health amounts stay state/local. College operating service is separate from college capital; all capital, including20's real return and21's health capital, stays outside employee-service attribution. The source21 count gate reconciles the source2%/3% and live20 capital coordinates without adding capital to pension stock. Booked national BEA/Z.1/Financial Report values remain byte-identical to oct15's `measured_2024.csv`. [CALCULATION: `pension_legacy.py --case oct16`; `derived/oct16/service_rules.json`; `test_pension_legacy.py`]
+
+The adopted case-lineage attribution is **$506.018005 / $529.492373bn of end-2023 pension stock** and, separately, **$25.170972 / $26.211090bn/year of 2024 nominal pension interest**. The same-engine rough-lineage-minus-A1-white comparison is **$160.051287 / $154.487311bn stock** and **$8.121012 / $7.890340bn/year interest**. The case-minus-rough bridge is **$8.043025 / $8.034389bn stock** and **$0.402399 / $0.402080bn/year interest**; its plan/service parts close at1e-9bn. These modeled attribution companions are separate from the annual removal account and from unresolved federal historical borrowing. [CALCULATION: `derived/oct16/summary.csv`, `arm=adopted`, fields `stock_total_bn`, `interest_total_bn`; `case_rough_bridge_by_line.csv`]
+
+`service_rules.json.va_medical` exports the case's **$5.885945218bn/year VA service-use proxy** at each end, **$10.610506075bn end-2023 stock removed from attribution**, and **$0.410257491bn/year nominal interest removed**. The VA national mass and federal-health payroll split remain declared proxies rather than measured historical VA payroll. Mortality is `not_applicable_service_share`; item11 is an annual survivor term and is not charged to employee-service stock. [CALCULATION: `derived/oct16/service_rules.json`, `group=mexican_origin`]
+
+Final producer exit0,3.860s, canonical peak physical footprint0.280GB; full tests24passed,exit0. Source hashes, selected parent/carrier responses,1e-9bn typed/bridge closures and the0.01-person group frame gate pass. Full live replay is **IDENTICAL57/57,exit0**,18.224s via Python perf_counter/getrusage; RSS is diagnostic. All82historical/public-pension snapshot paths remain unchanged; no Git writes. [CALCULATION: parent scratch `prop9/pension-{final-oct16,tests-final,rerun-oct16}.{json,log}`; `/private/tmp/prop9_pension_history.py verify`]
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --case oct16
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest -p no:cacheprovider infra/immigration-fiscal/pension_legacy_2026_09_30/test_pension_legacy.py -q
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/pension_legacy_2026_09_30 'uv run --no-project python3 {lane}/pension_legacy.py --case oct16' 'uv run --no-project python3 -m pytest -p no:cacheprovider {lane}/test_pension_legacy.py -q'
+```
+
+Every changed/created lane path is listed in `changed-paths.txt`.
+
+### Defense trace gate restored; refresh — 2026-10-21 00:16 JST (`date`)
+
+On oct16 `v9_service_adjustments` sets the own groups' defense share to the per-head key at v9's count, so the
+5e-7 per-head gate compared that key with itself (review 2026-10-20, MED). The traced raw defense stock bridge
+(v8 counts, oct15 household source) is now gated first against the per-head key at its own v8 count (5e-7), then the
+v9 key is applied. Rerun `pension_legacy.py --case oct16` exits 0; `rerun_lane.py` with both documented commands:
+**IDENTICAL 57/57, exit 0** (23:59:19 JST). `derived/oct16/summary.csv` (arm adopted, mexican_origin) unchanged:
+stock 506.018005/529.492373bn end-2023, interest 25.170972/26.211090bn/year nominal 2024.
+[CALCULATION: rerun_lane.py; derived/oct16/summary.csv]
