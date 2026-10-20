@@ -23,6 +23,7 @@ import valuation as V
 import world_ledger as W
 from service_prices import prepare_us_service_values
 from population_basis import economic_path
+from gz_io import read_artifact, write_csv_gz
 
 HERE = Path(__file__).resolve().parent
 WEIGHTS = ("equal", "equal_lambda_1.16", "equal_lambda_1.5", "equal_lambda_hendren_a",
@@ -60,10 +61,19 @@ def recipient_cells(v, contract):
     records = []
     for r in v.to_dict("records"):
         r["origin_line"] = r["line"]
-        encoded = r.get("recipient_components_json")
+        key = (r["end"], r["line"])
+        source_record = source.loc[key] if str(r["line"]).startswith("coverage_") and key in source.index else None
+        if source_record is not None and source_record.get("recipient_scope") == "counted":
+            r["origin_line"] = "v9_counted_" + r["line"]
+        # Drop the nested source text before constructing scalar records. Arrow
+        # string inference otherwise materializes it once per expanded component
+        # even if the DataFrame drops that column immediately afterward.
+        encoded = r.pop("recipient_components_json", None)
         if isinstance(encoded, str) and encoded:
             for c in json.loads(encoded):
                 x = dict(r, **c)
+                if r.get("cls") == "proportional_mix":
+                    x["recipient_component_transport"] = "signed_proportional_source_mix"
                 x["side"] = c["component_side"]
                 x["receipt_incidence_class"] = c["cls"] if x["side"] == "receipt" else "not_receipt"
                 x["net_cost_bn"] = c["G_bn"]
@@ -174,7 +184,7 @@ def partial_group_rows(rows, prem, full, full_prem):
 def prepare(case):
     """Materialize valuation on the exact package export, including post-engine cells."""
     pins = json.loads((HERE/"inputs/pension_cash_pins.json").read_text())["artifacts"]
-    artifact = json.loads((HERE/pins[case+"_cash"]["path"]).read_text())
+    artifact = json.loads(read_artifact(HERE/pins[case+"_cash"]["path"]))
     gl, vg, val = PC._value(case, artifact["results"]["set"], basis="set")
     PC._closure(artifact["results"]["set"], gl, vg, val)
     for name, frame in (("valuation.csv", val), ("valuation_by_generation.csv", vg)):
@@ -191,7 +201,7 @@ def run(case):
     import coverage_recipient_values as CR
     import scope_b as SB
     record = json.loads((HERE/"inputs/pension_cash_pins.json").read_text())["artifacts"][case+"_cash"]
-    body = (HERE/record["path"]).read_bytes()
+    body = read_artifact(HERE/record["path"])
     W.gate("selected_package_artifact_hash", hashlib.sha256(body).hexdigest() == record["sha256"])
     artifact = json.loads(body)
     W.gate("selected_package_artifact_case", artifact["case"] == case and artifact["package_set"] == "cash")
@@ -306,7 +316,8 @@ def run(case):
     out.to_csv(V.DERIVED/f"readings_cash_{case}.csv", index=False, lineterminator="\n", float_format="%.12f")
     pd.concat(details, ignore_index=True).to_csv(V.DERIVED/f"reading_rows_cash_{case}.csv", index=False, lineterminator="\n", float_format="%.12f")
     pd.DataFrame(private).to_csv(V.DERIVED/f"private_gains_cash_{case}.csv", index=False, lineterminator="\n", float_format="%.12f")
-    pd.concat(cells, ignore_index=True).to_csv(V.DERIVED/f"reading_cells_cash_{case}.csv", index=False, lineterminator="\n", float_format="%.12f")
+    # 562,428 rows for oct16 (259.5 MB as text): v9 coverage components cross every recipient line. gzip keeps it pushable.
+    write_csv_gz(pd.concat(cells, ignore_index=True), V.DERIVED/f"reading_cells_cash_{case}.csv.gz", float_format="%.12f")
     pd.DataFrame(comparisons).to_csv(V.DERIVED/f"residual_convention_cash_{case}.csv", index=False, lineterminator="\n", float_format="%.12f")
     status = pd.DataFrame([dict(case=case, reading="full_accrual", status="[BLOCKED]", reason="Mexico contribution histories and public service-cost bridge unavailable", value_bn=np.nan),
         dict(case=case, reading="debt_split_beside", status=f"[BLOCKED: no {case} federal split]", reason="theta/MCPF/capital/R&D excluded from all reading totals", value_bn=np.nan)])
@@ -319,7 +330,7 @@ def run(case):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--case", default="oct15")
+    parser.add_argument("--case", default="oct16")
     parser.add_argument("--prepare", action="store_true")
     args = parser.parse_args()
     prepare(args.case) if args.prepare else run(args.case)

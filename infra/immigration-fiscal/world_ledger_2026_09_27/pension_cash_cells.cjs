@@ -15,6 +15,10 @@ if (outIndex < 0 || !args[outIndex+1]) throw Error("[BLOCKED] --out-dir required
 const OUT = fs.realpathSync(args[outIndex+1]);
 if (OUT === ROOT || OUT.startsWith(ROOT + path.sep)) throw Error("[BLOCKED] historical --out-dir must be outside the repository");
 const caseIndex=args.indexOf("--case"), CASE=caseIndex<0?"oct14":args[caseIndex+1];
+if(CASE==="oct16"){
+  execFileSync(process.execPath,[path.join(LANE,"v9_cells.cjs"),path.join(OUT,"pension-cash-cells.json")],{stdio:"inherit"});
+  process.exit(0);
+}
 if(CASE!=="oct14") { liveCash(CASE); process.exit(0); }
 const pins = JSON.parse(fs.readFileSync(path.join(LANE, "pins.json")))["oct14"];
 const sources = [];
@@ -110,14 +114,18 @@ console.log(JSON.stringify({ verdict:"PASS",ends:results.cash.ends,cash_oracle_b
   checks:checks.length,source_files:sources.length }));
 
 function liveCash(caseKey) {
+  // The oct14 probe checks its historical package's loaded module bytes.
+  // Load this later routing adapter only for the branches that consume it.
+  const {relocatedRecord}=require("../scripts/historical_paths.cjs");
   const pins=JSON.parse(fs.readFileSync(path.join(LANE,"pins.json")))[caseKey];
   if(!pins)throw Error(`[BLOCKED] no source pins for case ${caseKey}`);
   const caseDir=pins.case_lane || `infra/immigration-fiscal/main_case_${pins.model.replace("adopted_","")}`;
   const sourceRows=[],seen=new Set(),checks=[];
   const hash=body=>crypto.createHash("sha256").update(body).digest("hex");
   const read=(rel,commit)=>{
-    const body=commit?execFileSync("git",["-C",ROOT,"show",`${commit}:${rel}`],{maxBuffer:256*1024*1024}):fs.readFileSync(path.join(ROOT,rel));
-    if(commit&&!body.equals(fs.readFileSync(path.join(ROOT,rel))))throw Error(`[BLOCKED] source differs from pinned ${commit}:${rel}`);
+    const actual=relocatedRecord(path.join(ROOT,rel));
+    const body=commit?execFileSync("git",["-C",ROOT,"show",`${commit}:${rel}`],{maxBuffer:256*1024*1024}):fs.readFileSync(actual);
+    if(commit&&!body.equals(fs.readFileSync(actual)))throw Error(`[BLOCKED] source differs from pinned ${commit}:${rel}`);
     const key=`${commit||"sha256"}:${rel}`;
     if(!seen.has(key)){sourceRows.push({commit:commit||null,path:rel,sha256:hash(body)});seen.add(key);}
     return body.toString("utf8");

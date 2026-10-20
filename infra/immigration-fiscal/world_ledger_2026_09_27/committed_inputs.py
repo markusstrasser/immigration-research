@@ -7,6 +7,14 @@ REPO = Path(__file__).resolve().parents[3]
 
 
 def checked_bytes(commit, relative, repo=REPO):
+    if commit == "WORKTREE_SHA256_OCT16":
+        record = __import__("json").loads((Path(__file__).parent / "inputs/oct16_source_hashes.json").read_text())
+        if record.get("case") != "oct16" or record.get("provenance") != "[WORKTREE INPUT]":
+            raise SystemExit("[BLOCKED] oct16 worktree snapshot identity")
+        path = repo / relative
+        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != record["sha256"].get(relative):
+            raise SystemExit(f"[BLOCKED] stale or undeclared oct16 worktree input: {relative}")
+        return path.read_bytes()
     if not commit or commit == "WORKTREE_SHA256":
         raise SystemExit(f"[BLOCKED] committed input required: {relative}")
     result = subprocess.run(["git", "-C", str(repo), "show", f"{commit}:{relative}"],

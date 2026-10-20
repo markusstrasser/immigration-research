@@ -1,0 +1,37 @@
+case,basis,end,generation,line,source_line,cls,recipient_value_bn,fiscal_cost_bn,native_splits,provenance,recipient_scope
+oct16,cash,low,G1,defense,defense,public_good,1.1267569705652152,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G1,defense,defense,public_good,0,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,low,G1,roads_vmt_fed,roads_vmt_fed,public_good,0.0016182279171328951,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G1,roads_vmt_fed,roads_vmt_fed,public_good,0,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,low,G1,roads_vmt_fed,roads_vmt_fed,public_good,0.00038890505010237596,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G1,roads_vmt_fed,roads_vmt_fed,public_good,0,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,low,G1,roads_vmt_fed,roads_vmt_fed,public_good,-0.0013779850280398031,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G1,roads_vmt_fed,roads_vmt_fed,public_good,0,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,low,G2,defense,defense,public_good,2.068111387225902,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G2,defense,defense,public_good,-0.36367183411668519,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,low,G2,roads_vmt_fed,roads_vmt_fed,public_good,0.0029699873625447207,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G2,roads_vmt_fed,roads_vmt_fed,public_good,-0.00027450606997900761,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,low,G2,roads_vmt_fed,roads_vmt_fed,public_good,0.00083260551527112323,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G2,roads_vmt_fed,roads_vmt_fed,public_good,-8.8997378869957029e-05,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,low,G2,roads_vmt_fed,roads_vmt_fed,public_good,-0.0028892128099863301,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G2,roads_vmt_fed,roads_vmt_fed,public_good,0.00030882856571344715,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,low,G3+,defense,defense,public_good,1.6782562112352213,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G3+,defense,defense,public_good,-0.43139078702501477,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,low,G3+,roads_vmt_fed,roads_vmt_fed,public_good,0.0024023597744244106,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G3+,roads_vmt_fed,roads_vmt_fed,public_good,-9.0879399075049274e-05,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,low,G3+,roads_vmt_fed,roads_vmt_fed,public_good,0.00084607509409143696,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G3+,roads_vmt_fed,roads_vmt_fed,public_good,-0.00016559947035486985,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,low,G3+,roads_vmt_fed,roads_vmt_fed,public_good,-0.0029035898411823007,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G3+,roads_vmt_fed,roads_vmt_fed,public_good,0.00056831000366925461,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,low,G3+,roads_vmt_fed,union_completion_roads_vmt_fed_k,public_good,-0.00019034893605262578,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G3+,roads_vmt_fed,union_completion_roads_vmt_fed_k,public_good,1.9311611695104357e-05,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,low,G3+,roads_vmt_fed,union_completion_roads_vmt_fed_k,public_good,-6.6567388153982387e-05,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G3+,roads_vmt_fed,union_completion_roads_vmt_fed_k,public_good,1.2465219621247558e-05,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,low,G3+,roads_vmt_fed,union_completion_roads_vmt_fed_k,public_good,0.00022844827054683832,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,low,G3+,roads_vmt_fed,union_completion_roads_vmt_fed_k,public_good,-4.2778572863237068e-05,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,high,G1,defense,defense,public_good,1.1267569705652152,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,high,G1,defense,defense,public_good,0,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,high,G2,defense,defense,public_good,2.068111387225902,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,high,G2,defense,defense,public_good,-0.36367183411668519,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted
+oct16,cash,high,G3+,defense,defense,public_good,1.6782562112352213,0,1,canonical routed_split before zero-response fiscal skip; exact exported central donor weights,constructed_coverage
+oct16,cash,high,G3+,defense,defense,public_good,-0.43139078702501477,0,1,observed native minor factor on original zero-response public-good source vector; latent proxy fixed,counted

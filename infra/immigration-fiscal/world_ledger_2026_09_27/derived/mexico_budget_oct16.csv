@@ -1,0 +1,19 @@
+generation,cls,item,bn,basis,students_m
+G1,education,public school places at Mexico's cost per public student,2.581415787410,[DATA: ENIGH attendance; WDI SE.XPD.TOTL.GD.ZS 2022 x GDP PPP 2024],0.568826458694
+G1,health,government health spending per head,7.638491288922,[DATA: WDI SH.XPD.GHED.PP.CD 2023],
+G1,cash,government cash transfers by age (ENIGH bene_gob claves),4.298414427841,[DATA: ENIGH 2024],
+G1,cash,pensions paid in Mexico by age (ENIGH P032),12.196958786506,[DATA: ENIGH 2024],
+G1,public_good,other government consumption per head,14.784096390640,[CALCULATION: WDI NE.CON.GOVT.ZS 2024 less health and education shares; approximate],
+G1,tax,taxes the group would pay in Mexico: withheld from formal pay (lower bound),13.542500000000,"[CALCULATION: 2024 statutory withholding, mexico.py; consumption taxes in world_ledger's central, all taxes its upper bound]",
+G2,education,public school places at Mexico's cost per public student,21.162974069657,[DATA: ENIGH attendance; WDI SE.XPD.TOTL.GD.ZS 2022 x GDP PPP 2024],4.663355533110
+G2,health,government health spending per head,9.983516223685,[DATA: WDI SH.XPD.GHED.PP.CD 2023],
+G2,cash,government cash transfers by age (ENIGH bene_gob claves),2.160049781274,[DATA: ENIGH 2024],
+G2,cash,pensions paid in Mexico by age (ENIGH P032),4.261920096637,[DATA: ENIGH 2024],
+G2,public_good,other government consumption per head,19.322829677443,[CALCULATION: WDI NE.CON.GOVT.ZS 2024 less health and education shares; approximate],
+G2,tax,taxes the group would pay in Mexico: withheld from formal pay (lower bound),11.785850000000,"[CALCULATION: 2024 statutory withholding, mexico.py; consumption taxes in world_ledger's central, all taxes its upper bound]",
+G3+,education,public school places at Mexico's cost per public student,25.752852908488,[DATA: ENIGH attendance; WDI SE.XPD.TOTL.GD.ZS 2022 x GDP PPP 2024],5.674755764898
+G3+,health,government health spending per head,12.248017328160,[DATA: WDI SH.XPD.GHED.PP.CD 2023],
+G3+,cash,government cash transfers by age (ENIGH bene_gob claves),3.944358505797,[DATA: ENIGH 2024],
+G3+,cash,pensions paid in Mexico by age (ENIGH P032),8.996617372543,[DATA: ENIGH 2024],
+G3+,public_good,other government consumption per head,23.705711235981,[CALCULATION: WDI NE.CON.GOVT.ZS 2024 less health and education shares; approximate],
+G3+,tax,taxes the group would pay in Mexico: withheld from formal pay (lower bound),,"[GAP: bounds only, world_ledger]",

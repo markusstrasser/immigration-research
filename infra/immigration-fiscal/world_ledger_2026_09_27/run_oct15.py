@@ -16,18 +16,19 @@ PYTHON = ["uv", "run", "--no-project", "python3"]
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--case", default="oct15")
+    parser.add_argument("--case", default="oct16")
     case = parser.parse_args().case
     V.require_pins(case, "main_case", "generation", "winners", "distribution")
+    if case != "oct16":
+        raise SystemExit(f"[BLOCKED] live case is oct16; {case} outputs are frozen")
+    from v9_snapshot import require_adopted, verify
+    require_adopted(case)
+    verify()
     basis = V.basis_of(case)
-    commands = []
-    if case == "oct15":
-        commands += [["node", str(REL / "v8_snapshot.cjs"), "--capture"],
-                     ["sh", str(REL / "run_core_oct15.sh")]]
-    commands += [
+    commands = [
         PYTHON + [str(REL / "mexico.py")],
         PYTHON + [str(REL / "employer_ui_basis.py")],
-        PYTHON + [str(REL / "coverage_transport.py"), "--case", case, "--basis", "cash"],
+        PYTHON + [str(REL / "v9_transport.py"), "--case", case, "--basis", "cash"],
         PYTHON + [str(REL / "g2_premium.py"), "--basis", basis, "--case", case],
         PYTHON + [str(REL / "weights.py"), "--basis", basis, "--case", case],
         PYTHON + [str(REL / "state_price_quantity.py")],
@@ -54,6 +55,7 @@ def main():
     record = dict(case=case, basis="matched_cash", status="PASS" if result == 0 else "[BLOCKED] route did not finish",
                   executed=completed, pending=commands[len(completed):], exit_code=result)
     (HERE / f"derived/route_{case}.json").write_text(json.dumps(record, indent=1, sort_keys=True) + "\n")
+    verify()
     return result
 
 

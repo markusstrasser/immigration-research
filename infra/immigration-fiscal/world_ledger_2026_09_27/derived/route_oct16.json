@@ -1,0 +1,156 @@
+{
+ "basis": "matched_cash",
+ "case": "oct16",
+ "executed": [
+  {
+   "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "python3",
+    "infra/immigration-fiscal/world_ledger_2026_09_27/mexico.py"
+   ],
+   "exit_code": 0,
+   "log": "_cache/oct16_stage_00.log"
+  },
+  {
+   "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "python3",
+    "infra/immigration-fiscal/world_ledger_2026_09_27/employer_ui_basis.py"
+   ],
+   "exit_code": 0,
+   "log": "_cache/oct16_stage_01.log"
+  },
+  {
+   "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "python3",
+    "infra/immigration-fiscal/world_ledger_2026_09_27/v9_transport.py",
+    "--case",
+    "oct16",
+    "--basis",
+    "cash"
+   ],
+   "exit_code": 0,
+   "log": "_cache/oct16_stage_02.log"
+  },
+  {
+   "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "python3",
+    "infra/immigration-fiscal/world_ledger_2026_09_27/g2_premium.py",
+    "--basis",
+    "oct15",
+    "--case",
+    "oct16"
+   ],
+   "exit_code": 0,
+   "log": "_cache/oct16_stage_03.log"
+  },
+  {
+   "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "python3",
+    "infra/immigration-fiscal/world_ledger_2026_09_27/weights.py",
+    "--basis",
+    "oct15",
+    "--case",
+    "oct16"
+   ],
+   "exit_code": 0,
+   "log": "_cache/oct16_stage_04.log"
+  },
+  {
+   "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "python3",
+    "infra/immigration-fiscal/world_ledger_2026_09_27/state_price_quantity.py"
+   ],
+   "exit_code": 0,
+   "log": "_cache/oct16_stage_05.log"
+  },
+  {
+   "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "python3",
+    "infra/immigration-fiscal/world_ledger_2026_09_27/pension_cash.py",
+    "--case",
+    "oct16",
+    "--verify-artifact"
+   ],
+   "exit_code": 0,
+   "log": "_cache/oct16_stage_06.log"
+  },
+  {
+   "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "python3",
+    "infra/immigration-fiscal/world_ledger_2026_09_27/coverage_recipient_values.py",
+    "--case",
+    "oct16",
+    "--basis",
+    "cash"
+   ],
+   "exit_code": 0,
+   "log": "_cache/oct16_stage_07.log"
+  },
+  {
+   "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "python3",
+    "infra/immigration-fiscal/world_ledger_2026_09_27/cash_readings.py",
+    "--case",
+    "oct16",
+    "--prepare"
+   ],
+   "exit_code": 0,
+   "log": "_cache/oct16_stage_08.log"
+  },
+  {
+   "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "python3",
+    "infra/immigration-fiscal/world_ledger_2026_09_27/cash_readings.py",
+    "--case",
+    "oct16"
+   ],
+   "exit_code": 0,
+   "log": "_cache/oct16_stage_09.log"
+  },
+  {
+   "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "python3",
+    "infra/immigration-fiscal/world_ledger_2026_09_27/phase_c_report.py",
+    "--case",
+    "oct16"
+   ],
+   "exit_code": 0,
+   "log": "_cache/oct16_stage_10.log"
+  }
+ ],
+ "exit_code": 0,
+ "pending": [],
+ "status": "PASS"
+}

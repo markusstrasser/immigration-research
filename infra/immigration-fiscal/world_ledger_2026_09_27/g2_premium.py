@@ -114,7 +114,7 @@ def load_asec(basis="cps", case=None):
     B = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(B)
     d = B.load_cps()
-    d["pw_cps"] = d.pw
+    d["pw_cps"] = d.pw_production if "pw_production" in d else d.pw
     if basis != "cps":
         d = reweight(d, B.PATHS["cps"], gate, basis, case=case)
     extra = ["PH_SEQ", "PPPOS", "A_SEX", "WORKYN", "HRSWK", "PEINUSYR"]
@@ -471,7 +471,11 @@ def main(basis="cps", case=None):
              and float((d.pw_cps - r4)[d.gen.isin(["G2", "G3+"])].abs().sum()) == 0.0, g1_fall=fall,
              union_fall=pop["published"] - pop["row4"])
     counted_g2 = float(d.loc[d.gen.eq("G2"), "pw_counted"].sum() / 1e6) if "pw_counted" in d else meta["persons_m"]["G2"]
-    gate("g2_members", abs(counted_g2 - 14.33) < 0.05, got=counted_g2)
+    if case == "oct16":
+        expected_g2 = meta["population"]["located_persons"]["G2"] / 1e6
+        gate("v9_g2_members", abs(counted_g2 - expected_g2) < 1e-9, got=counted_g2, expected=expected_g2)
+    else:
+        gate("g2_members", abs(counted_g2 - 14.33) < 0.05, got=counted_g2)
     print(json.dumps(meta, indent=1), file=sys.stderr)
 
 

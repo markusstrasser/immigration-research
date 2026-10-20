@@ -105,7 +105,7 @@ def gate(name, ok, **detail):
 
 
 def git_show(commit, rel):
-    if commit in {PINS["oct15"][k] for k in ("main_case", "generation", "winners", "distribution")}:
+    if commit == "WORKTREE_SHA256_OCT16" or commit in {PINS["oct15"][k] for k in ("main_case", "generation", "winners", "distribution")}:
         from committed_inputs import checked_bytes
         return checked_bytes(commit, rel)
     return subprocess.run(["git", "-C", str(REPO), "show", f"{commit}:{rel}"], capture_output=True,
@@ -230,6 +230,22 @@ def lh(lo, mid, hi):
 
 
 # ------------------------------------------------------------------ the group's rows
+def employer_compensation_at_end(I, employer, generation):
+    """Only a declared source mix permits end-specific employer components."""
+    group = employer[employer.generation.eq(generation)]
+    marked = (group.recipient_component_transport.eq("signed_proportional_source_mix").to_numpy()
+              if I.get("pension_basis") == "matched_cash" and "recipient_component_transport" in group
+              else np.zeros(len(group), dtype=bool))
+    s = group.groupby("end").net_cost_bn.sum()
+    direct = group.loc[~marked].groupby("end").net_cost_bn.sum().reindex(s.index, fill_value=0.)
+    mixed = group.loc[marked].groupby("end").net_cost_bn.sum().reindex(s.index, fill_value=0.)
+    gate(f"employer_compensation_{generation}_finite", len(s) == 2 and np.isfinite(s).all()
+         and np.isfinite(group.net_cost_bn).all() and np.isfinite(direct).all() and np.isfinite(mixed).all()
+         and abs(direct.loc["low"] - direct.loc["high"]) < 1e-6,
+         totals=s.to_dict(), direct=direct.to_dict(), source_mix=mixed.to_dict())
+    return -float(s.loc[I["account_end"]] if I.get("account_end") else s.mean())
+
+
 def premium_rows(I, short_run=False, g3_central="zero"):
     """Place premium per generation, $bn, low/central/high, gross pay on both sides. Central: ENIGH 2024 at GDP
     PPP, diploma re-read 0.25, Mexico's wage as observed (long run). G1 selection p56 (range p70-p50); G2 rearing
@@ -324,14 +340,9 @@ def premium_rows(I, short_run=False, g3_central="zero"):
     other = employer.line.eq("other_domestic_social_contributions")
     employer.loc[other, "net_cost_bn"] *= employer_other_basis()["employer_fraction"]
     for gen in GROUP:
-        s = employer[employer.generation.eq(gen)].groupby("end").net_cost_bn.sum()
-        transported_mix = (I.get("pension_basis") == "matched_cash" and "origin_line" in employer
-                           and employer.origin_line.str.startswith("coverage_").any())
-        gate(f"employer_compensation_{gen}_finite", len(s) == 2 and np.isfinite(s).all()
-             and (transported_mix or abs(s.loc["low"] - s.loc["high"]) < 1e-6), totals=s.to_dict())
         # The parent's residual mix is end-specific. Its employer component is
         # valued at that same end; a centre-only diagnostic takes the mean.
-        add = -float(s.loc[I["account_end"]] if I.get("account_end") else s.mean())
+        add = employer_compensation_at_end(I, employer, gen)
         if I.get("basis") == "row4" and gen == "G3+":
             case = I["case"]
             pin = PINS[case]
@@ -1126,75 +1137,14 @@ def write_case(name, new, case, basis):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--case", default="oct15", choices=sorted(PINS))
+    ap.add_argument("--case", default="oct16", choices=sorted(PINS))
     ap.add_argument("--basis", default=None, choices=BASES, help="default: the case's own (pins 'basis', else cps)")
     args = ap.parse_args()
-    gate("live_world_case_oct15_only", args.case == "oct15", requested=args.case)
+    gate("live_world_case_oct16_only", args.case == "oct16", requested=args.case)
     basis = args.basis or basis_of(args.case)
-    I = load(args.case, basis)
-    pos = I["pos"]
-    out, detail = [], []
-    for measure in ("money",):
-        fac = channel_factors(I, measure)
-        gate("displaced_channel_distributed", "displaced_beneficiaries" not in I["ch"].index
-             or "displaced_beneficiaries" in fac)
-        fac["_lambda"] = {f"equal_lambda_{k}": v for k, v in LAMBDAS.items()}
-        fac["_lambda"]["equal_lambda_hendren_a"] = fac["fiscal_a"]["inv_g"]
-        for pgc in ("average_cost", "response_only"):
-            for mtx in ("withheld", "withheld_consumption", "proportional"):
-                # G3+ has bounds only: the central scenario is reported at each bound; the outer spans take the
-                # lower bound at their low end and the upper at their high end, whichever central is built.
-                for g3 in ("zero", "upper", "rearing"):
-                    rows, prem, shares = build_rows(I, pgc, mexico_taxes=mtx, g3_central=g3)
-                    detail.append(rows.assign(case=args.case, pg_convention=pgc, mexico_taxes=mtx, g3_central=g3))
-                    for end in ("low", "central", "high") if g3 == "zero" else ("central",):
-                        scen = {"low": "low_outer", "high": "high_outer", "central": f"central_g3_{g3}"}[end]
-                        out.append(totals(rows, prem, I, end, fac, pos).assign(
-                            case=args.case, pg_convention=pgc, mexico_taxes=mtx, scenario=scen))
-    res = pd.concat(out)[["case", "pg_convention", "mexico_taxes", "scenario", "weighting", "party", "bn",
-                          "unknown_rows"]]
-    write_case("world_ledger.csv", res, args.case, basis)
-    write_case("world_ledger_rows.csv", pd.concat(detail), args.case, basis)
-    write_case("generation_split_check.csv", generation_split_check(I, args.case), args.case, basis)
-    rows_c, prem_c, _ = build_rows(I)
-    rate, rate_inputs = mexico_consumption_tax_rate()
-    source_meta = (mexico_source_tax(I, prem_c, "low") if I.get("mexico_capital_source", True) else None)
-    meta = dict(case=args.case, pins=PINS[args.case], channel_factors=channel_factors(I, "money"),
-                lambda_hendren_tax_shares=channel_factors(I, "money")["fiscal_a"]["inv_g"],
-                generation_shares=shares, short_run_block=short_run_block(I), hours_beside=hours_beside(I),
-                saving_leak=saving_leak(I, rows_c, res), generation_breakeven=generation_breakeven(I, rows_c, res),
-                mexico_tax_bound=dict(zip(("by_generation_bn", "inputs"), mexico_tax_bound(
-                    I, prem_c, 0.0 if source_meta is None else source_meta["national_corporate_receipts_pesos_bn"]))),
-                mexico_withheld_tax_bn={g: prem_c[g]["tax"] for g in GROUP},
-                mexico_consumption_tax=dict(
-                    by_generation_bn={g: prem_c[g]["ctax"] for g in GROUP},
-                    source="SHCP 2026 IVA and IEPS incidence plus the 2024 fuel excise, by household decile x gross "
-                           "pay (mexico.py)",
-                    wdi_check=dict(rate=rate, inputs=rate_inputs, basis="rate x take-home pay", by_generation_bn={
-                        g: {e: rate * prem_c[g]["home"][e] for e in ("low", "central", "high")} for g in GROUP})))
-    if basis != "cps":
-        meta["basis"] = basis
-    if "future_pension_accrual" in I["ch"].index:
-        # Rule 7 beside its alternative, on the default rows (average-cost public goods, withheld plus consumption
-        # taxes in Mexico): the accrual on the future payers of Social Security and Medicare (the rule, as in the
-        # tables), or on today's taxpayers at today's fiscal weights (the distribution lane's reading).
-        payer = {}
-        for key, today in (("rule_future_payers", False), ("alternative_today", True)):
-            rows_p, prem_p, _ = build_rows(I, accrual_today=today)
-            payer[key] = {}
-            for end, scen in (("low", "low_outer"), ("central", "central_g3_zero"), ("high", "high_outer")):
-                t = totals(rows_p, prem_p, I, end, fac, pos).set_index(["weighting", "party"]).bn
-                payer[key][scen] = {wt: {p: float(t[(wt, p)]) for p in (
-                    "others_today", "future_taxpayers", "world_total", "breakeven_w", "breakeven_w_us_only")}
-                    for wt in t.index.get_level_values("weighting").unique()}
-        meta["pension_accrual_payer"] = payer
-    tail = "" if basis == basis_of(args.case) else f"_{basis}"
-    json.dump(meta, open(DERIVED / f"world_ledger_meta_{args.case}{tail}.json", "w"), indent=1, sort_keys=True,
-              default=float)
-    show = res[(res.pg_convention == "average_cost") & (res.mexico_taxes == "withheld_consumption")
-               & res.party.isin(PARTIES + ["world_total", "breakeven_w", "breakeven_w_us_only"])]
-    print(show.pivot_table(index=["scenario", "party"], columns="weighting", values="bn", sort=False).round(1)
-          .to_string(), file=sys.stderr)
+    gate("live_world_case_own_basis", basis == basis_of(args.case), requested=basis)
+    from cash_readings import run
+    run(args.case)
 
 
 if __name__ == "__main__":

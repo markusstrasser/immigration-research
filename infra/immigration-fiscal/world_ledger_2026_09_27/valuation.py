@@ -81,12 +81,13 @@ def lane_file(case, lane, name):
 
 def require_pins(case, *lanes):
     """Stop before computation when the parent has not supplied a committed input for the live case."""
-    if case in ("oct14", "oct15"):
+    gate("registered_case", case in PINS, case=case)
+    if case in ("oct14", "oct15", "oct16"):
         lanes = tuple(dict.fromkeys((*lanes, "main_case")))
     missing = [lane for lane in lanes if not PINS[case].get(lane)]
     if missing:
         raise SystemExit(f"[BLOCKED] {case}: missing committed {'/'.join(missing)} pins; parent supplies live inputs")
-    if case == "oct15":
+    if case in ("oct15", "oct16"):
         from committed_inputs import checked_bytes
         files = {
             "winners": ("channels.csv", "fiscal_specs.csv", "group_frame.csv", "fiscal_lines_band_ends.csv"),
@@ -105,6 +106,24 @@ def require_pins(case, *lanes):
 # _<case> suffix, so adding a case leaves those files byte for byte (the v4 consumer brief, 2026-09-29).
 # world_ledger.py imports case_path, so both scripts read one definition.
 SHARED_OUTPUTS = ("sept26_schools", "sept27")
+
+
+# The repo's declared live case. A superseded case's outputs in this lane's derived/ are frozen (run_all.sh refuses
+# to rebuild them); until 2026-10-20 tests that value the oct15 cells rewrote six tracked oct15 coverage files in
+# place, so a code change would have altered frozen history silently.
+LIVE_CASE = json.loads((REPO / "infra/immigration-fiscal/live_case.json").read_text())["key"]
+
+
+def write_case_csv(frame, path, case, **kwargs):
+    """Write a case's CSV output. For a superseded case, a file in this lane's derived/ is never written: the
+    recomputed bytes must equal the tracked file, and an absent file stays absent."""
+    path = Path(path)
+    text = frame.to_csv(index=False, lineterminator="\n", **kwargs)
+    if case != LIVE_CASE and path.parent.resolve() == (HERE / "derived").resolve():
+        if path.is_file():
+            gate("historical_output_unchanged", path.read_bytes() == text.encode(), case=case, path=path.name)
+        return
+    path.write_text(text)
 
 
 def case_path(name, case, basis=None):
@@ -269,7 +288,7 @@ def gate(name, ok, **detail):
 
 
 def pinned_csv(commit, rel):
-    if commit in {PINS["oct15"][k] for k in ("main_case", "generation", "winners", "distribution")}:
+    if commit == "WORKTREE_SHA256_OCT16" or commit in {PINS["oct15"][k] for k in ("main_case", "generation", "winners", "distribution")}:
         from committed_inputs import checked_bytes
         return pd.read_csv(io.BytesIO(checked_bytes(commit, rel)))
     out = subprocess.run(["git", "-C", str(REPO), "show", f"{commit}:{rel}"], capture_output=True, check=True)
@@ -278,6 +297,9 @@ def pinned_csv(commit, rel):
 
 def case_payload(case):
     """The authoritative item registry and edits, read at the frozen case pin."""
+    if PINS[case].get("main_case") == "WORKTREE_SHA256_OCT16":
+        from committed_inputs import checked_bytes
+        return json.loads(checked_bytes(PINS[case]["main_case"], f"{CASE_LANES[case]}/derived/corrections.json"))
     if PINS[case].get("main_case") == "WORKTREE_SHA256":
         import hashlib
         rel = f"{CASE_LANES[case]}/derived/corrections.json"
@@ -462,8 +484,8 @@ def child_credit_adjustments(case, lines):
 
 def valuation_row(r, classes, payers, credit=0.0):
     """Keep the fiscal closure separate from who receives or bears the economic flow."""
-    finite_rows(pd.DataFrame([{"amount_bn": r.amount_bn, "effect_bn": r.effect_bn, "response": r.response}]),
-                f"line_{r.line}", ("amount_bn", "effect_bn", "response"))
+    gate(f"finite_line_{r.line}", bool(np.isfinite((r.amount_bn, r.effect_bn, r.response)).all()),
+         columns=["amount_bn", "effect_bn", "response"])
     if r.side == "coverage":
         end = getattr(r, "end", getattr(r, "band_end", None))
         key = (end, r.line)
@@ -537,10 +559,8 @@ def offset_classes(case):
     pin = PINS[case]
     if not pin.get("main_case"):
         return {}
-    out = subprocess.run(["git", "-C", str(REPO), "show", f"{pin['main_case']}:{CASE_LANES[case]}/derived/corrections.json"],
-                         capture_output=True, check=True)
     classes = {}
-    for c in json.loads(out.stdout)["meta"]["capital_return"]["components"]:
+    for c in case_payload(case)["meta"]["capital_return"]["components"]:
         if c.get("of_component") is None:
             continue
         cls = LINE_CLASS.get(f"capital_{c['of_component']}")
@@ -707,7 +727,7 @@ def prepare_coverage_values(case, generation_lines, union_lines, payload=None, b
             if side == "post_engine" and parent == "mixed_unit_removal":
                 ITEM_CLASS[parent] = "nonmember_removal"
             gate("coverage_source_side_declared", side in ("receipt", "spending", "post_engine"), source=source)
-            response = source.get("source_response", 1.0)
+            response = float(source.get("source_response", 1.0))
             # Coverage exports fiscal effects, while public goods are valued at
             # average attributed cost. Recover that amount only from the export's
             # own response; no new person-price allocation is constructed here.
@@ -727,22 +747,23 @@ def prepare_coverage_values(case, generation_lines, union_lines, payload=None, b
         contracts.append(dict(end=end, line=name, generation=generation, source_line=parent or source["line"],
                               source_side=side or "signed_mix", economic_class=source["economic_class"],
                               incidence_class=value["cls"], cost_bn=amount, V_central_bn=value["V_central_bn"],
-                              status=status, basis=basis))
+                              status=status, basis=basis,
+                              **({"recipient_scope": source.get("recipient_scope", "constructed_coverage")} if case == "oct16" else {})))
     contract = pd.DataFrame(contracts)
-    contract.to_csv(case_path(f"coverage_valuation_contract{'_cash' if basis == 'cash' else ''}.csv", case),
-                    index=False, lineterminator="\n", float_format="%.12f")
+    write_case_csv(contract, case_path(f"coverage_valuation_contract{'_cash' if basis == 'cash' else ''}.csv", case),
+                   case, float_format="%.12f")
     if mixes:
         mixed = pd.concat(mixes, ignore_index=True)
-        mixed.to_csv(case_path(f"coverage_residual_mix{'_cash' if basis == 'cash' else ''}.csv", case),
-                     index=False, lineterminator="\n", float_format="%.12f")
+        write_case_csv(mixed, case_path(f"coverage_residual_mix{'_cash' if basis == 'cash' else ''}.csv", case),
+                       case, float_format="%.12f")
         comparison = contract[contract.economic_class.eq("unclassified_residual")].groupby("end").agg(
             residual_net_bn=("cost_bn", "sum"), residual_gross_bn=("cost_bn", lambda x: x.abs().sum()),
             convention_gap_bn=("V_central_bn", "sum")).reset_index()
         comparison["zero_recipient_value_bn"] = 0.0
         comparison["basis"] = basis
         comparison["assumption"] = "[ASSUMPTION] proportional mix; zero recipient value is a beside convention"
-        comparison.to_csv(case_path(f"coverage_residual_comparison{'_cash' if basis == 'cash' else ''}.csv", case),
-                          index=False, lineterminator="\n", float_format="%.12f")
+        write_case_csv(comparison, case_path(f"coverage_residual_comparison{'_cash' if basis == 'cash' else ''}.csv",
+                                             case), case, float_format="%.12f")
     return contract
 
 
@@ -926,16 +947,12 @@ def incidence_summary(case, union, generations):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--case", default="oct15", choices=sorted(PINS))
+    ap.add_argument("--case", default="oct16", choices=sorted(PINS))
     case = ap.parse_args().case
+    gate("live_valuation_case_oct16_only", case == "oct16", requested=case)
     require_pins(case, "winners", "generation")
-    DERIVED.mkdir(exist_ok=True)
-    # Mexico's budget on every basis (g2_premium.py runs on each first); world_ledger.py reads the one it runs on.
-    mxs = {b: mexico_budget(b) for b in BASES}
-    for b, mx in mxs.items():
-        mx.to_csv(suffixed(DERIVED / "mexico_budget.csv", b), index=False, lineterminator="\n", float_format="%.6f")
-    value_block([case], mxs[basis_of(case)])
-    print(mxs["cps"].groupby(["cls"]).bn.sum().round(2).to_string(), file=sys.stderr)
+    from cash_readings import prepare
+    prepare(case)
 
 
 if __name__ == "__main__":

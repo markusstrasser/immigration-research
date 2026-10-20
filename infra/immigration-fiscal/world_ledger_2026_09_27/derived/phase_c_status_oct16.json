@@ -1,0 +1,37 @@
+{
+ "basis": "matched_cash",
+ "case": "oct16",
+ "debt_status": "[BLOCKED: no oct16 federal split]",
+ "full_accrual_status": "[BLOCKED] Mexico histories/public service-cost bridge missing",
+ "full_welfare_rerun_pass": true,
+ "main_rows": 96,
+ "pins": {
+  "basis": "oct15",
+  "case_lane": "infra/immigration-fiscal/main_case_2026_10_16",
+  "dirs": {
+   "distribution": "infra/immigration-fiscal/distribution_weights_2026_09_23/derived/oct16",
+   "winners": "infra/immigration-fiscal/winners_losers_2026_09_24/derived/oct16"
+  },
+  "distribution": "WORKTREE_SHA256_OCT16",
+  "files": {
+   "generation": {
+    "generation_corrections.json": "generation_corrections_oct16.json",
+    "generation_results.csv": "generation_results_oct16.csv"
+   }
+  },
+  "generation": "WORKTREE_SHA256_OCT16",
+  "main_case": "WORKTREE_SHA256_OCT16",
+  "model": "adopted_2026_10_16",
+  "provenance": "[WORKTREE INPUT] exact selected source hashes, verified before and after execution; parent commits",
+  "winners": "WORKTREE_SHA256_OCT16"
+ },
+ "readings_rows": 384,
+ "s_beside": [
+  0.5,
+  0
+ ],
+ "s_central": 1,
+ "scope_B_enters_total": false,
+ "shared_holds": "Banxico principal; current P032 recipient payments; matched cash; Phase B social-channel scope; budgets GDP money; US general-price-level recipient services with declared WTP/explicit-price exemptions; actual-dollar fiscal costs; no debt recipe in totals",
+ "status": "PASS [DEGRADED: P032 funding proxy]"
+}

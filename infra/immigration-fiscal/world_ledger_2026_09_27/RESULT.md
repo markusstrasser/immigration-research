@@ -1,6 +1,19 @@
-**Verdict:** On the adopted main case (`sept27`, the account of $322–387bn a year), the evidence supports the
-first claim in part and does not support the second as a measured claim. The schools case (`sept26_schools`)
-points the same way (section D).
+**Verdict:** On the live main case v9 (`oct16`; the matched-cash account of $284.4–352.9bn a year over 44.90M
+people), the evidence still supports the first claim in part and does not support the second as a measured claim.
+At equal weights, complete scope A and the G3+ zero bound, the modeled annual world gain is $327.7bn / $273.0bn
+under R1 (fiscal low / high end), $141.4 / 112.9bn under R2 and $213.7 / 166.8bn under R3. The leak is real:
+charging the payers' cost at λ 1.16 lowers R1 to $263.4 / 207.0bn and at λ 1.5 to $126.8 / 66.9bn, and at λ 1.5
+the R2 and R3 totals turn negative (−$54.9 / −89.3bn and −$6.3 / −54.4bn). Hendren's revealed weights leave R1
+almost unchanged ($327.2 / 277.6bn), which gives no sign that the recipients' dollars are worth less. That claim
+survives only as a moral weight w on the group: counting Mexico's residents, the world total turns negative when w
+is below 0.50 / 0.59 under R1 (0.60 / 0.69 at λ 1.16, 0.81 / 0.90 at λ 1.5) and 0.69 / 0.77 under R2.
+[FRAMING-SENSITIVE] These are modeled readings under the case's removal and donor conventions and the
+`[DEGRADED]` all-public P032 pension-funding proxy, not measured effects. [CALCULATION:
+derived/readings_cash_oct16.csv, scope A_completed, public_pension_share 1, g3_bound zero; README]
+
+The claim-by-claim verdict below was written on the Sept 27 case (`sept27`, the account of $322–387bn a year),
+with the schools case (`sept26_schools`, section D) pointing the same way; it is kept with its dated updates, and
+its numbers are superseded by the paragraph above.
 - **"The transfer leaks": supported in part.** Raising the revenue costs payers more than it raises (λ 1.16–1.5;
   1.29 implied by Hendren's weights). The account charges $335–396bn before its production feedback. About $50bn
   of that buys the group nothing it values, central: $41bn of offender processing and enforcement, and the
@@ -3875,3 +3888,33 @@ Stopped for the parent. Every retained changed path, including inherited Phase B
 Matched-cash R1/R2/R3 complete: 96 central, 192 funding and 96 partial-scope rows; exact cash 281.752564/371.942418bn. Full accrual and debt split remain blocked beside. Final [rerun] IDENTICAL: 309/309 files unchanged (backup removed), exit0; 212 tests pass; reading peak physical 2,081,540,880 bytes. Main tables: derived/readings_table_cash_oct15.md and readings_v7_bridge_oct15.csv. Full record: /private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/world-result.md. First failed memory run and repairs retained in failure-catalog.md. No git writes.
 
 PHASE C DONE
+
+
+## Main case v9 (oct16), 2026-10-20 21:21:05 JST
+
+Matched-cash outputs are complete: 384 rows, including 96 central complete-scope rows and 96 counted-scope rows beside. The exact cash account is 284.397043 / 352.928831bn over 44,903,074.086245 people. Equal weights, A_completed, s=1, G3+ zero: world gain R1=327.691732 / 272.950365bn, R2=141.387185 / 112.942631bn, R3=213.678751 / 166.803133bn at fiscal low/high ends. These are modeled annual gains under the stated donor/removal and P032 funding conventions, not observed effects or confidence intervals. [CALCULATION: derived/readings_cash_oct16.csv; derived/phase_c_status_oct16.json; inputs/pension_cash_cells_oct16.json; derived/g2_meta_oct16.json]
+
+Source/generation closure is 1e-9bn; the complete output party-sum error is 1.3642420526593924e-12bn. All 236 lane tests pass (71.62s); reading lifetime physical peak 1,235,601,208 bytes, suite peak 1,476,462,776 bytes. All 116 previously tracked derived files remain byte-identical to HEAD, including 42 oct15 files. Source-provenance, capital-value, fixed-latent, semantic-ID, scalar-constructor and partitioned employer-mix repairs are recorded in failure-catalog.md. Military recipient values retain their existing effect convention; general public goods retain average-cost values. [CALCULATION: test_v9_contract.py; _cache/oct16_tests_final.log; _cache/oct16_stage_09.log]
+
+The source-stable staged baseline completed all 11 actual producer commands after rerunning affected stages 9/10. The separate complete normal-route byte replay is recorded in the parent handoff world-result.md, together with every changed path. Historical source/outputs remain frozen. Full accrual and debt recipes retain their prior named blockers; no new retirement or source-method change is claimed.
+
+### Scratch-dependency custody correction, 2026-10-20
+
+The historical `changed-paths.txt` narrative is now [changed-paths.md](changed-paths.md), with identical bytes and its ignored status retained. Earlier references above record the original filename. Archived adoption narratives and their manifest likewise retain their original bytes under Markdown names. These records supply provenance; fresh execution uses the repository live-case/package adoption gate.
+
+After legitimate source-receipt refresh, all 241 tests pass with a 1,464,961,208-byte lifetime physical footprint. The complete normal route, followed by current-contract tests, reproduces **293/293 files identically** (exit 0, 192.751 seconds). All 118 numerical CSV files match the pre-refresh baseline byte for byte. The first normal build changed only two duplicated source-hash maps in `g2_meta_oct16.json`; every other value in that receipt remained exact. No digest was edited by hand. [CALCULATION: `check_tests.py`; `scripts/rerun_lane.py` with the README recipe; parent handoff `scratchfix-historical-gates.md`]
+
+### Review fixes, 2026-10-20
+
+The cross-lab review's world findings are fixed. `derived/reading_cells_cash_oct16.csv` (259.5 MB, over GitHub's
+100 MiB limit) is now `reading_cells_cash_oct16.csv.gz` (11.3 MB); its 7.1-fold row growth over oct15 is a widened
+grid, not duplication: the same 72 scenarios and 449 lines, with v9's count and tenure coverage components carried
+across every recipient line. The source-cell artifact is now `inputs/pension_cash_cells_oct16.json.gz` (57.1 MB of
+JSON, 3.2 MB compressed); its pin hashes the JSON content. `v9_cells.cjs` no longer reads the unpinned oct14
+union_completion cache: the count/tenure production parts of items 16/17 stay in A, as in the winners lane, and the
+set-basis A, P and F equal winners' `fiscal_specs.csv` at both end specifications at 1e-9bn. That moved $0.0013bn
+(low end) and $0.0009bn (high end) into P from A and $0.032 / 0.021bn from F into A; the equal-weight readings are
+unchanged at six decimals, in the scope-A, s=1 rows other weightings move by at most $0.0007bn. Tests no longer rewrite tracked oct15
+coverage files (`valuation.write_case_csv`), and the dead code after `main()`'s return is gone. The verdict above is
+restated from the oct16 outputs. Earlier references to the uncompressed file names record the names at the time.
+[CALCULATION: inputs/pension_cash_cells_oct16.json.gz checks "set/* equals winners"; derived/readings_cash_oct16.csv]

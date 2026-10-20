@@ -7,6 +7,7 @@ import pytest
 import beside_extra as E
 import split_residual as S
 import valuation as V
+import cash_readings as CR
 
 
 def test_live_valuation_does_not_rebuild_historical_cases(monkeypatch, tmp_path):
@@ -15,9 +16,9 @@ def test_live_valuation_does_not_rebuild_historical_cases(monkeypatch, tmp_path)
     monkeypatch.setattr(V, "require_pins", lambda *a: None)
     monkeypatch.setattr(V, "mexico_budget", lambda b: pd.DataFrame({"cls": ["tax"], "bn": [1.0]}))
     calls = []
-    monkeypatch.setattr(V, "value_block", lambda cases, mx: calls.append(cases))
+    monkeypatch.setattr(CR, "prepare", lambda case: calls.append([case]))
     V.main()
-    assert calls == [["oct15"]]
+    assert calls == [["oct16"]]
     assert not list(tmp_path.glob("valuation*oct07*"))
 
 

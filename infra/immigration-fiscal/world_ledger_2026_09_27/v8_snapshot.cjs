@@ -3,11 +3,12 @@
 "use strict";
 const fs=require("fs"),path=require("path"),crypto=require("crypto");
 const {execFileSync}=require("child_process");
+const {relocatedRecord}=require("../scripts/historical_paths.cjs");
 const HERE=__dirname,ROOT=path.resolve(HERE,"../../.."),FILE=path.join(HERE,"inputs/oct15_source_hashes.json");
 const sha=f=>crypto.createHash("sha256").update(fs.readFileSync(f)).digest("hex");
 function committed(rel,commit) {
   const body=execFileSync("git",["-C",ROOT,"show",`${commit}:${rel}`],{maxBuffer:256*1024*1024});
-  if(!fs.existsSync(path.join(ROOT,rel))||!fs.readFileSync(path.join(ROOT,rel)).equals(body))
+  if(!fs.existsSync(relocatedRecord(path.join(ROOT,rel)))||!fs.readFileSync(relocatedRecord(path.join(ROOT,rel))).equals(body))
     throw Error(`[BLOCKED] pin does not match file: ${commit}:${rel}`);
 }
 function verifyPins(record) {
@@ -26,7 +27,7 @@ function read(rel) {
   if(!fs.existsSync(FILE))throw Error("[BLOCKED] missing explicit oct15 SHA256 snapshot; capture only after final case/generation readiness");
   const record=JSON.parse(fs.readFileSync(FILE,"utf8"));
   if(record.case!=="oct15"||record.provenance!=="[WORKTREE INPUT]")throw Error("[BLOCKED] invalid oct15 snapshot");
-  const f=path.join(ROOT,rel),want=record.sha256[rel];
+  const f=relocatedRecord(path.join(ROOT,rel)),want=record.sha256[rel];
   if(!want||!fs.existsSync(f)||sha(f)!==want)throw Error(`[BLOCKED] missing, unknown or changed oct15 snapshot input ${rel}`);
   return fs.readFileSync(f,"utf8");
 }
@@ -57,7 +58,7 @@ function capture() {
   for(const name of ["routing.json","pins.json"])files.push(path.join(GEN,"inputs",name));
   const admitted=JSON.parse(fs.readFileSync(path.join(GEN,"inputs/pins.json"),"utf8"));
   for(const [rel,want] of Object.entries(admitted)) {
-    const file=path.join(ROOT,"infra/immigration-fiscal",rel);
+    const file=relocatedRecord(path.join(ROOT,"infra/immigration-fiscal",rel));
     if(typeof want!=="string"||sha(file)!==want)throw Error(`[BLOCKED] generation admitted source changed ${rel}`);
     files.push(file);
   }

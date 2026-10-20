@@ -1,0 +1,15 @@
+{
+ "case": "oct16",
+ "frozen_source": "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/coverage_bound_oct15.json",
+ "lines": {
+  "cash": "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct16/lines_cash.json",
+  "set": "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct16/lines.json"
+ },
+ "source_hashes": {
+  "infra/immigration-fiscal/coverage_bound_2026_10_14/derived/coverage_bound_oct15.json": "3456126cc53c353ef0806059dcff33ccc1448cfe8de39d2c92583c6c7d3d073c",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct16/lines.json": "a54ac39e04a97fbddbcce232b301bc4cc3d6bae504f18d01a1c4cc7918438bb6",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct16/lines_cash.json": "659c70f8348e76e362d2912d759aba5a9259c2f81406655b7b769048f4e7326e",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py": "08b13cca82fc915a2b1d8069efb9efe4c47181d17f30c3894ed9aa7c6453ccbe"
+ },
+ "source_scope": "selected v9 native export's declared original public-good source keys; fiscal posts not substituted"
+}

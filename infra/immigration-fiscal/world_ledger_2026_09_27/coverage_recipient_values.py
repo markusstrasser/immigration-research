@@ -34,6 +34,13 @@ def transport_price(vector, weights, coverage_weights, amount):
     return float(price @ coverage_weights)
 
 
+def observed_calibration_mass(identified_weights, factor):
+    """Only actual observed records change; synthetic descendant mass stays fixed."""
+    require(np.isfinite(identified_weights).all() and np.isfinite(factor).all(),
+            "nonfinite observed calibration")
+    return identified_weights * (factor - 1)
+
+
 def require(ok, why):
     if not ok:
         raise SystemExit("[BLOCKED] coverage recipient values: " + why)
@@ -87,14 +94,26 @@ def instrument(tree):
 def routing_paths(case, basis):
     """Use the selected native routing receipt; never relabel an older case."""
     require(basis in ("cash", "set"), "explicit cash/set routing basis required")
+    if case == "oct16":
+        from v9_routing import paths
+        return paths(basis)
     pin = V.PINS[case]
     directory = CT.ROOT / pin.get("coverage_routing_dir", str((COVERAGE / f"inputs/{case}_final_routing").relative_to(CT.ROOT)))
     manifest = directory / "manifest.json"
+    if not manifest.is_file():
+        manifest = directory / "manifest.md"
     require(manifest.is_file(), f"selected {case} native routing receipt absent")
     receipt = json.loads(manifest.read_text())
     require(receipt.get("vintage") == f"{case}_final_routing"
             and set(receipt["files"]) == {"lines.json", "lines_cash.json"}, "selected routing receipt shape/case")
-    for name, row in {**receipt["files"], "CASE_FINAL": receipt["adoption"]}.items():
+    captured = dict(receipt["files"])
+    if "sha256" in receipt["adoption"]:
+        captured["adoption_receipt.md"] = receipt["adoption"]
+    else:
+        adoption = receipt["adoption"]
+        require(adoption.get("key") == case and adoption.get("adopted") and adoption.get("decision"),
+                "selected routing adoption receipt shape/case")
+    for name, row in captured.items():
         path = directory / name
         require(path.is_file() and path.stat().st_size == row["bytes"]
                 and CT.digest(path) == row["sha256"], "stale selected routing source " + name)
@@ -123,6 +142,7 @@ def export(case="oct15", basis="cash"):
     rows = []
     positions = None
     coverage_mass = None
+    calibration_mass = None
 
     def eligible(row, s):
         if not (row["side"] == "spending" and row["response"] == 0 and row["amount_bn"] != 0
@@ -140,7 +160,7 @@ def export(case="oct15", basis="cash"):
         return True
 
     def capture(s, driver, share):
-        nonlocal positions, coverage_mass
+        nonlocal positions, coverage_mass, calibration_mass
         row = s["row"]
         if not eligible(row, s):
             return
@@ -154,6 +174,15 @@ def export(case="oct15", basis="cash"):
             require((positions >= 0).all(), "donor absent from canonical native frame")
             coverage_mass = np.zeros(len(s["d"]))
             coverage_mass[positions] = donors.coverage_weight.to_numpy()
+            if case == "oct16":
+                # Average-value public goods retain their observed recipient
+                # value even when fiscal response is zero. Reprice only the
+                # source's actually calibrated records, never latent proxies.
+                factors = pd.read_parquet(COVERAGE.parent / "count_composition_r5_2026_10_15/derived/native_person_factors.parquet",
+                    columns=["PH_SEQ", "PPPOS", "central_member_factor"]).set_index(["PH_SEQ", "PPPOS"])
+                factor = factors.reindex(frame_ids).central_member_factor
+                require(factor.notna().all(), "native zero-response calibration identity")
+                calibration_mass = observed_calibration_mass(s["w_id"], factor.to_numpy())
             require(np.array_equal(s["age"][positions], donors.age.to_numpy()), "native donor ages differ")
         mask = s["m"]
         source_line = line
@@ -167,13 +196,26 @@ def export(case="oct15", basis="cash"):
                          line=source_line, source_line=line, cls=cls, recipient_value_bn=value,
                          fiscal_cost_bn=0.0, native_splits=1,
                          provenance="canonical routed_split before zero-response fiscal skip; exact exported central donor weights"))
+        if calibration_mass is not None:
+            observed_value = transport_price(vector, s["w0"], calibration_mass, row["amount_bn"] * share)
+            rows[-1]["recipient_scope"] = "constructed_coverage"
+            rows.append(dict(rows[-1], recipient_value_bn=observed_value, recipient_scope="counted",
+                provenance="observed native minor factor on original zero-response public-good source vector; latent proxy fixed"))
 
     module._capture_zero_recipient = capture
     module._zero_recipient_row = eligible
     exec(compile(instrument(ast.parse(source.read_text())), str(source), "exec"), module.__dict__)
     module.FAILS.clear()
-    module.main("row4", case=case, basis=basis, allocation="personal",
-                lines_path=lines_path)
+    if case == "oct16":
+        import tempfile
+        selected = json.loads(lines_path.read_text())
+        scaffold = {**selected, "meta": {**selected["meta"], "case": selected["meta"]["v9"]["scaffold_case"]}}
+        with tempfile.TemporaryDirectory(prefix="world-v9-native-") as directory:
+            source_path = Path(directory) / "scaffold.json"
+            source_path.write_text(json.dumps(scaffold))
+            module.main("row4", case="oct15", basis=basis, allocation="personal", lines_path=source_path)
+    else:
+        module.main("row4", case=case, basis=basis, allocation="personal", lines_path=lines_path)
     require(not module.FAILS, "canonical construction guards failed " + repr(module.FAILS))
     frame = pd.DataFrame(rows)
     require(not frame.empty and "defense" in set(frame.line), "nonresponsive defense recipient cells absent")
@@ -201,7 +243,16 @@ def supplement(I, case=None, basis="cash"):
             and record.get("frozen_source_receipt_sha256") == CT.digest(frozen_source), "native routing receipt changed")
     _, donor_record = CT.load_donors(case, basis)
     require(record["case"] == case and record["basis"] == basis, "case/basis mismatch")
-    require(record["csv_sha256"] == CT.digest(target) and record["adapter_sha256"] == CT.digest(Path(__file__)),
+    adapter_matches = record["adapter_sha256"] == CT.digest(Path(__file__))
+    if not adapter_matches and case == "oct15":
+        # Frozen historical outputs retain their original producer receipt.
+        # Verify that producer's immutable Git blob, without regenerating them
+        # through today's v9-aware adapter or editing the historical receipt.
+        import subprocess
+        relative = str(Path(__file__).relative_to(CT.ROOT))
+        saved = subprocess.run(["git", "-C", str(CT.ROOT), "show", "7dfb4c66:" + relative], capture_output=True)
+        adapter_matches = saved.returncode == 0 and hashlib.sha256(saved.stdout).hexdigest() == record["adapter_sha256"]
+    require(record["csv_sha256"] == CT.digest(target) and adapter_matches,
             "stale recipient export")
     require(record["donor_csv_sha256"] == donor_record["donor_csv_sha256"], "donor receipt changed")
     require(record["source_sha256"] == CT.digest(COVERAGE.parent / "within_group_distribution_2026_09_29/households.py"),
@@ -210,8 +261,9 @@ def supplement(I, case=None, basis="cash"):
     v = I["vgen"]
     extra = []
     for r in data.itertuples():
+        origin_prefix = "v9_counted_recipient_only_" if getattr(r, "recipient_scope", None) == "counted" else "coverage_recipient_only_"
         row = dict(case=case, end=r.end, generation=r.generation, side="spending", line=r.line,
-                   origin_line=f"coverage_recipient_only_{r.source_line}", cls=r.cls,
+                   origin_line=origin_prefix+r.source_line, cls=r.cls,
                    economic_payer="government_budget", receipt_incidence_class="not_receipt", amount_bn=0.0,
                    response=0.0, G_bn=0.0, net_cost_bn=0.0, third_party_bn=0.0,
                    source_tax_credit_bn=0.0, child_credit_other_residents_bn=0.0, group_credit_adjustment_bn=0.0)

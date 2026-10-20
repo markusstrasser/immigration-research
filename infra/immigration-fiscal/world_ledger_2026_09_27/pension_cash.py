@@ -18,6 +18,7 @@ HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
 sys.path.insert(0, str(HERE))
 import valuation as V
+from gz_io import read_artifact
 import mexico_pensions as C
 
 
@@ -189,7 +190,7 @@ def adapt_cash(I, *, cells_path=None, artifact_key=None, allow_p032_proxy=True,
     gate(record["case"] == I["case"] and record["package_set"] == "cash", "cash_source_artifact_case_mismatch")
     source_path = Path(cells_path) if cells_path is not None else HERE / record["path"]
     gate(source_path.is_file(), "cash_source_artifact_file_missing", path=str(source_path))
-    body = source_path.read_bytes()
+    body = read_artifact(source_path)
     gate(hashlib.sha256(body).hexdigest() == record["sha256"], "cash_source_artifact_stale", path=str(source_path))
     artifact = json.loads(body)
     gate(artifact["mode"] in {"historical_probe", "exact_package_cash"} and artifact["case"] == I["case"]
@@ -318,6 +319,9 @@ def private_cash_inputs(I):
 
 def verify_artifact(case):
     """Deterministic package-cell replay; runtime measurements only go to stdout."""
+    if case == "oct16":
+        from v9_artifact import run
+        return run()
     import resource
     import subprocess
     import tempfile
@@ -331,7 +335,7 @@ def verify_artifact(case):
         result=subprocess.run(command,capture_output=True,text=True)
         gate(result.returncode==0,"cash_source_replay_failed",returncode=result.returncode,stderr=result.stderr)
         got=(Path(temporary)/"pension-cash-cells.json").read_bytes()
-        expected=(HERE/record["path"]).read_bytes()
+        expected=read_artifact(HERE/record["path"])
         gate(got==expected,"cash_source_replay_bytes_changed",actual_sha256=hashlib.sha256(got).hexdigest(),
              expected_sha256=record["sha256"])
     sys.path.insert(0,str(HERE.parent/"scripts"))

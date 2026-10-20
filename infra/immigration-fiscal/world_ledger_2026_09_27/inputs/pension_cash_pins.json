@@ -13,6 +13,13 @@
       "path": "inputs/pension_cash_cells_oct15.json",
       "provenance": "[EXACT PACKAGE CASH] pinned v8 set/cash generation and union cells, all source hashes; debt split excluded",
       "sha256": "ffd968440506014853ff8be79451572df08aa30c107d9288104d2d81b38b2d7d"
+    },
+    "oct16_cash": {
+      "case": "oct16",
+      "package_set": "cash",
+      "path": "inputs/pension_cash_cells_oct16.json.gz",
+      "sha256": "aae7ab541be654b6e4610fafdf41b65591b8e7588c0786d2dae99df25b3b7a6c",
+      "provenance": "[WORKTREE INPUT] exact v9 cells; typed source posts, source joint16/17 and complete before/after hashes"
     }
   }
 }

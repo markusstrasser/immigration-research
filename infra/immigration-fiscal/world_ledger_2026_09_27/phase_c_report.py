@@ -42,8 +42,8 @@ def report(case):
     V.gate("v7_bridge_complete", len(delta) == len(central))
     for part in PARTS:
         delta[f"change_{part}"] = delta[part] - delta[f"{part}_v7"]
-    delta["comparison_basis"] = "frozen published v7 mixed pension basis versus current matched cash; not a v8-only causal effect"
-    delta["reason"] = delta.reading.map(HOLDS) + "; cash timing, v8 items9-12, completed donor economics, ownership/G3 statutory/capital/price fixes and pooled payer convention"
+    delta["comparison_basis"] = "frozen published v7 mixed pension basis versus current matched cash; not a single-case causal effect"
+    delta["reason"] = delta.reading.map(HOLDS) + "; cash timing, v8 items9-12, completed donor economics, ownership/G3 statutory/capital/price fixes and pooled payer convention" + ("; v9 selected military/administration/college/basket/health/rate parts and joint16/17 source calibration" if case == "oct16" else "")
     delta.to_csv(D / f"readings_v7_bridge_{case}.csv", index=False, lineterminator="\n", float_format="%.12f")
     if case == "oct15":
         debt, contract = debt_parts(V.PINS[case])
@@ -54,7 +54,7 @@ def report(case):
                   readings_rows=len(frame), main_rows=len(central), scope_B_enters_total=False,
                   s_central=1, s_beside=[.5, 0], debt_status=contract["status"],
                   full_accrual_status="[BLOCKED] Mexico histories/public service-cost bridge missing",
-                  shared_holds="Banxico principal; current P032 recipient payments; matched cash; Phase B social-channel scope; budgets GDP money; US category recipient prices; no debt recipe in totals",
+                   shared_holds="Banxico principal; current P032 recipient payments; matched cash; Phase B social-channel scope; budgets GDP money; US general-price-level recipient services with declared WTP/explicit-price exemptions; actual-dollar fiscal costs; no debt recipe in totals",
                   pins=V.PINS[case], full_welfare_rerun_pass=True)
     (D / f"phase_c_status_{case}.json").write_text(json.dumps(status, indent=1, sort_keys=True) + "\n")
     lines = [f"# {case}: executed matched-cash readings", "",
@@ -68,7 +68,7 @@ def report(case):
         world = f"{row.world_total_bn:.6f}" if np.isfinite(row.world_total_bn) else "partial scope"
         lines.append(f"| {row.scope} | {row.reading} | {row.public_pension_share:g} | {row.end} | {row.g3_bound} | {row.weighting} | {world} | {row.group_total_bn:.6f} | {row.other_us_residents_bn:.6f} | {row.mexico_residents_bn:.6f} |")
     lines += ["", "## Change from frozen published v7 readings", "",
-              "This bridge changes pension basis and incorporates the adopted fixes. It is not a v8-only effect. Each row holds its named reading, fiscal end, G3+ bound and weighting fixed. The CSV reason column names changed rules.", "",
+               "This bridge changes pension basis and incorporates the adopted fixes. It is not a single-case effect. Each row holds its named reading, fiscal end, G3+ bound and weighting fixed. The CSV reason column names changed rules.", "",
               "| Reading | End | G3+ | Weights | v7 world | Cash world | Change |",
               "|---|---|---|---|---:|---:|---:|"]
     for row in delta.itertuples():
@@ -80,7 +80,7 @@ def report(case):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--case", default="oct15")
+    parser.add_argument("--case", default="oct16")
     report(parser.parse_args().case)
 
 

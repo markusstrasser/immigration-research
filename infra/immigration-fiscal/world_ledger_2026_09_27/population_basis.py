@@ -82,9 +82,21 @@ def g3plus(d):
 def reweight(d, cps_zip, gate, basis="row4", *, payload=None, case=None):
     """The distribution lane's CPS frame (load_cps(): pw = pwwgt0, target = the union, civ = civilians) on row 4, or
     on the lineage: row 4's weights (kept as pw_row4), then the G3+ records' times the lineage factor."""
+    if "pw_production" in d and "central_member_factor" in d:
+        gate("source_rank_calibration_declared", np.allclose(d.pw, d.pw_production * d.central_member_factor,
+                                                             rtol=0, atol=1e-8))
+        d = d.copy()
+        d["pw"] = d.pw_production
+        # The raw production frame must pass row4 before completion and the
+        # selected case's own factor is applied, exactly once, below.
+        d = d.drop(columns=["pw_production", "central_member_factor"])
     if basis == "oct15":
         original = reweight(d, cps_zip, gate, "lineage")
-        return completed_frame(original, oct15_payload(case or basis) if payload is None else payload, gate)
+        selected = oct15_payload(case or basis) if payload is None else payload
+        if "population_v9" in selected["meta"]:
+            from v9_population import calibrate_frame
+            return calibrate_frame(original, selected, gate)
+        return completed_frame(original, selected, gate)
     if basis not in ("row4", "lineage"):
         raise SystemExit(f"[BLOCKED] reweight() takes row4 or lineage, not {basis!r}")
     r = row4()

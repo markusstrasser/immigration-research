@@ -1,0 +1,9 @@
+{
+ "case": "oct16",
+ "medicaid_vg": [
+  0.76,
+  0.92,
+  1.08
+ ],
+ "source": "exact package export"
+}
