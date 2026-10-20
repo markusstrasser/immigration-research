@@ -1,0 +1,4586 @@
+{
+  "case": "oct16",
+  "central": [
+    368.02973917888073,
+    436.56152715403437
+  ],
+  "population_scope": {
+    "without_coverage": 42951314.00418314,
+    "with_coverage": 44903074.086245224,
+    "completion": 517435.75719317,
+    "coverage": 1951760.0820620805,
+    "native_minor_calibration": -326988.2145133476,
+    "tenure": 5.820766091346741e-11
+  },
+  "calibration": {
+    "source": "matched_benefits_2026_09_19/model.py",
+    "sha256": "8740f820a937dcce0dfe700d5a167b4ff6b52b82ea5a92a0ab60d99de93e56cc",
+    "labor_share": 0.65,
+    "alpha": 0.35,
+    "first_year_multiplier": 0.65,
+    "rule": "[ASSUMPTION; APPROX] First-order fixed-capital output/profit response: 1 - alpha; business property response 0. Other production and both corporate lines scale their long-run responses.",
+    "form_probe": {
+      "labor_remaining": 0.9,
+      "fixed_capital": 1,
+      "fixed_output": 0.9338080879268165,
+      "long_run_output": 0.8999999999999999,
+      "finite_loss_ratio": 0.6619191207318348
+    }
+  },
+  "thresholds": {
+    "midpoint_bn": 402.29563316645755,
+    "low_bn": 301.7217248748432,
+    "high_bn": 502.8695414580719
+  },
+  "variants": {
+    "fixed_capital": {
+      "set": [
+        313.83578644083934,
+        370.83815145261286
+      ],
+      "cash": [
+        230.2030907206062,
+        287.20545573237956
+      ]
+    },
+    "whole": {
+      "set": [
+        276.0088427469258,
+        342.5473548117301
+      ],
+      "cash": [
+        192.3761470266927,
+        258.9146590914968
+      ]
+    },
+    "corporate_only": {
+      "set": [
+        303.93845084945747,
+        370.47696291426166
+      ],
+      "cash": [
+        220.30575512922434,
+        286.8442671940284
+      ]
+    },
+    "off": {
+      "set": [
+        347.1862832895063,
+        386.47866091707976
+      ],
+      "cash": [
+        263.5535875692732,
+        302.84596519684646
+      ]
+    }
+  },
+  "ends": {
+    "fixed_capital": {
+      "set": [
+        [
+          24,
+          7
+        ],
+        [
+          24,
+          7
+        ]
+      ],
+      "cash": [
+        [
+          24,
+          7
+        ],
+        [
+          24,
+          7
+        ]
+      ]
+    },
+    "whole": {
+      "set": [
+        [
+          24,
+          7
+        ],
+        [
+          24,
+          7
+        ]
+      ],
+      "cash": [
+        [
+          24,
+          7
+        ],
+        [
+          24,
+          7
+        ]
+      ]
+    },
+    "corporate_only": {
+      "set": [
+        [
+          24,
+          7
+        ],
+        [
+          24,
+          7
+        ]
+      ],
+      "cash": [
+        [
+          24,
+          7
+        ],
+        [
+          24,
+          7
+        ]
+      ]
+    },
+    "off": {
+      "set": [
+        [
+          24,
+          7
+        ],
+        [
+          24,
+          7
+        ]
+      ],
+      "cash": [
+        [
+          24,
+          7
+        ],
+        [
+          24,
+          7
+        ]
+      ]
+    }
+  },
+  "components": [
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 36.53616186602562,
+      "total_cost_change_from_whole_bn": 37.82694369391356,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 0.65
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 0.65
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0.65
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 27.356486209663785,
+      "total_cost_change_from_whole_bn": 28.290796640882775,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0.2405
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0.2405
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0.65
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 36.53616186602562,
+      "total_cost_change_from_whole_bn": 37.826943693913506,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 0.65
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 0.65
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0.65
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 27.356486209663842,
+      "total_cost_change_from_whole_bn": 28.29079664088283,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0.2405
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0.2405
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0.65
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 0,
+      "total_cost_change_from_whole_bn": 0,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0.8806493775433665
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 1
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 0,
+      "total_cost_change_from_whole_bn": 0,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0.8806493775433665
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 1
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 0,
+      "total_cost_change_from_whole_bn": 0,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0.8806493775433665
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 1
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 0,
+      "total_cost_change_from_whole_bn": 0,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0.8806493775433665
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 1
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 27.037254354884567,
+      "total_cost_change_from_whole_bn": 27.929608102531688,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 27.037254354884567,
+      "total_cost_change_from_whole_bn": 27.929608102531574,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 27.037254354884624,
+      "total_cost_change_from_whole_bn": 27.92960810253163,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 27.037254354884624,
+      "total_cost_change_from_whole_bn": 27.92960810253163,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 68.66843646990424,
+      "total_cost_change_from_whole_bn": 71.17744054258054,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 0
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 0
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 42.440791737441884,
+      "total_cost_change_from_whole_bn": 43.931306105349734,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 68.66843646990424,
+      "total_cost_change_from_whole_bn": 71.17744054258048,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 0
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 0
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 42.440791737441884,
+      "total_cost_change_from_whole_bn": 43.931306105349734,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 36.53616186602562,
+      "total_cost_change_from_whole_bn": 37.82694369391348,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 0.65
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 0.65
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0.65
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 27.356486209663785,
+      "total_cost_change_from_whole_bn": 28.290796640882775,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0.2405
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0.2405
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0.65
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 36.536161866025594,
+      "total_cost_change_from_whole_bn": 37.826943693913535,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 0.65
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 0.65
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0.65
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 27.356486209663757,
+      "total_cost_change_from_whole_bn": 28.290796640882775,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0.2405
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0.2405
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0.65
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 0,
+      "total_cost_change_from_whole_bn": 0,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0.8806493775433665
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 1
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 0,
+      "total_cost_change_from_whole_bn": 0,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0.8806493775433665
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 1
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 0,
+      "total_cost_change_from_whole_bn": 0,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0.8806493775433665
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 1
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 0,
+      "total_cost_change_from_whole_bn": 0,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0.8806493775433665
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 1
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 27.037254354884624,
+      "total_cost_change_from_whole_bn": 27.92960810253163,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 27.037254354884624,
+      "total_cost_change_from_whole_bn": 27.92960810253163,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 27.037254354884595,
+      "total_cost_change_from_whole_bn": 27.92960810253166,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 1
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 27.037254354884595,
+      "total_cost_change_from_whole_bn": 27.92960810253163,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0.37
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 68.66843646990424,
+      "total_cost_change_from_whole_bn": 71.17744054258043,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 0
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 0
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 42.440791737441856,
+      "total_cost_change_from_whole_bn": 43.931306105349734,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.55734561413492,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 68.66843646990421,
+      "total_cost_change_from_whole_bn": 71.17744054258051,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 1,
+          "mode_response": 0
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 1,
+          "mode_response": 0
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "allocation": "personal",
+      "engine_cost_change_from_whole_bn": 42.44079173744183,
+      "total_cost_change_from_whole_bn": 43.93130610534968,
+      "receipts": {
+        "corporate_capital": {
+          "amount_bn": 30.98516396649211,
+          "whole_response": 0.37,
+          "mode_response": 0
+        },
+        "corporate_labor": {
+          "amount_bn": 10.3283879888307,
+          "whole_response": 0.37,
+          "mode_response": 0
+        },
+        "remaining_production_property": {
+          "amount_bn": 21.557345614134924,
+          "whole_response": 0.8806493775433665,
+          "mode_response": 0
+        },
+        "other_production_taxes": {
+          "amount_bn": 7.70178404417344,
+          "whole_response": 1,
+          "mode_response": 0
+        }
+      },
+      "source": "canonical adjustedRun; same specification for both response modes"
+    }
+  ],
+  "post_components": [
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 1.2907818278879404,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": 7.923968813812561,
+        "delta_bn": -2.196626467616162,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": 1.6527748846807564
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": 3.6032718888621673
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": 2.6679220402696373
+          }
+        },
+        "line_parts": {
+          "rows": 622,
+          "value_field": "coverage_bn",
+          "sum_bn": 7.923968813812559,
+          "sha256": "7ea5df1f3db252fd9cde4c44efab2b6933af40b46d1e836a40ef7d7b568e18e8"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.198076705860861,
+            "companion_bn": -3.329906098673198,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.8399777519121177,
+            "companion_bn": 3.0611733039103384,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1953,
+          "value_field": "companion_bn",
+          "sum_bn": -0.26873279476285655,
+          "sha256": "2f468faa58f0f1a3f41a38ce8f8331a2733f1e9033c077379a95c14af6c6bbe3"
+        }
+      }
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 0.9343104312189894,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 10.136743751317317,
+        "delta_bn": -2.998629210078904,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 2.1660157876379595
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 4.5185220049016355
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 3.4522059587777223
+          }
+        },
+        "line_parts": {
+          "rows": 662,
+          "value_field": "coverage_bn",
+          "sum_bn": 10.136743751317313,
+          "sha256": "f9cff876e38f84d4aec9d5d66be64175f2bc673d006b24965389def3357195d1"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.418917615064694,
+            "companion_bn": -3.6147795350220044,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.686001341980197,
+            "companion_bn": 2.9913997474611698,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2073,
+          "value_field": "companion_bn",
+          "sum_bn": -0.6233797875608422,
+          "sha256": "852b3a35e79b993bf4ae308e05aec2fd378de6a99ed7e9da60f87d9e234567a4"
+        }
+      }
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 1.2907818278878835,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": 7.923968813812561,
+        "delta_bn": -2.196626467616162,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": 1.6527748846807564
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": 3.6032718888621673
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": 2.6679220402696373
+          }
+        },
+        "line_parts": {
+          "rows": 622,
+          "value_field": "coverage_bn",
+          "sum_bn": 7.923968813812559,
+          "sha256": "7ea5df1f3db252fd9cde4c44efab2b6933af40b46d1e836a40ef7d7b568e18e8"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.198076705860861,
+            "companion_bn": -3.329906098673198,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.8399777519121177,
+            "companion_bn": 3.0611733039103384,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1953,
+          "value_field": "companion_bn",
+          "sum_bn": -0.26873279476285655,
+          "sha256": "2f468faa58f0f1a3f41a38ce8f8331a2733f1e9033c077379a95c14af6c6bbe3"
+        }
+      }
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 0.9343104312189894,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 10.136743751317317,
+        "delta_bn": -2.998629210078904,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 2.1660157876379595
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 4.5185220049016355
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 3.4522059587777223
+          }
+        },
+        "line_parts": {
+          "rows": 662,
+          "value_field": "coverage_bn",
+          "sum_bn": 10.136743751317313,
+          "sha256": "f9cff876e38f84d4aec9d5d66be64175f2bc673d006b24965389def3357195d1"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.418917615064694,
+            "companion_bn": -3.6147795350220044,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.686001341980197,
+            "companion_bn": 2.9913997474611698,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2073,
+          "value_field": "companion_bn",
+          "sum_bn": -0.6233797875608422,
+          "sha256": "852b3a35e79b993bf4ae308e05aec2fd378de6a99ed7e9da60f87d9e234567a4"
+        }
+      }
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 0,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": 6.4074751373652825,
+        "delta_bn": -3.487408295504093,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": 1.325527547659037
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": 3.007291712902042
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": 2.074655876804205
+          }
+        },
+        "line_parts": {
+          "rows": 622,
+          "value_field": "coverage_bn",
+          "sum_bn": 6.407475137365283,
+          "sha256": "940e83bae842bbca3f98cf1016f82d308ece15a57bb239b834920eefdf1fccd0"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.198076705860861,
+            "companion_bn": -3.3285995375664164,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.8399777519121177,
+            "companion_bn": 3.285578591362905,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1953,
+          "value_field": "companion_bn",
+          "sum_bn": -0.04302094620350889,
+          "sha256": "7ea1e70d0f6828212243d75bcc712102c842ccd404f3240a9da3c275d51fa8ab"
+        }
+      }
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 0,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 9.02962018746259,
+        "delta_bn": -3.9329396412978848,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 1.9228699930440134
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 4.088495517090793
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 3.018254677327784
+          }
+        },
+        "line_parts": {
+          "rows": 662,
+          "value_field": "coverage_bn",
+          "sum_bn": 9.029620187462593,
+          "sha256": "f947f3aae013856a667676110e20550ded9820c5e1fd930abf60a767a27849e2"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.418917615064694,
+            "companion_bn": -3.6141937305050322,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.686001341980197,
+            "companion_bn": 3.1636270755799445,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2073,
+          "value_field": "companion_bn",
+          "sum_bn": -0.4505666549250918,
+          "sha256": "e0b2765fba8a1feaaf5514eb5614a0b6202d5c6e967acc97979061ad3918939c"
+        }
+      }
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 0,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": 6.4074751373652825,
+        "delta_bn": -3.487408295504093,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": 1.325527547659037
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": 3.007291712902042
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": 2.074655876804205
+          }
+        },
+        "line_parts": {
+          "rows": 622,
+          "value_field": "coverage_bn",
+          "sum_bn": 6.407475137365283,
+          "sha256": "940e83bae842bbca3f98cf1016f82d308ece15a57bb239b834920eefdf1fccd0"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.198076705860861,
+            "companion_bn": -3.3285995375664164,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.8399777519121177,
+            "companion_bn": 3.285578591362905,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1953,
+          "value_field": "companion_bn",
+          "sum_bn": -0.04302094620350889,
+          "sha256": "7ea1e70d0f6828212243d75bcc712102c842ccd404f3240a9da3c275d51fa8ab"
+        }
+      }
+    },
+    {
+      "mode": "whole",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 0,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 9.02962018746259,
+        "delta_bn": -3.9329396412978848,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 1.9228699930440134
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 4.088495517090793
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 3.018254677327784
+          }
+        },
+        "line_parts": {
+          "rows": 662,
+          "value_field": "coverage_bn",
+          "sum_bn": 9.029620187462593,
+          "sha256": "f947f3aae013856a667676110e20550ded9820c5e1fd930abf60a767a27849e2"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.418917615064694,
+            "companion_bn": -3.6141937305050322,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.686001341980197,
+            "companion_bn": 3.1636270755799445,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2073,
+          "value_field": "companion_bn",
+          "sum_bn": -0.4505666549250918,
+          "sha256": "e0b2765fba8a1feaaf5514eb5614a0b6202d5c6e967acc97979061ad3918939c"
+        }
+      }
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 0.892353747647121,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": 7.474305071484995,
+        "delta_bn": -2.5950545478570555,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": 1.5640199328919249
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": 3.4166453039701814
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": 2.493639834622889
+          }
+        },
+        "line_parts": {
+          "rows": 622,
+          "value_field": "coverage_bn",
+          "sum_bn": 7.474305071484993,
+          "sha256": "14b82e571bf400ee827c1468bbcadfdc71a2a21f467bda80f284e9949ade59f0"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.198076705860861,
+            "companion_bn": -3.3287995642480497,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.8399777519121177,
+            "companion_bn": 3.1113024315718625,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1953,
+          "value_field": "companion_bn",
+          "sum_bn": -0.21749713267618473,
+          "sha256": "389fbda2aa8064ead7813d90d265abf48a2586bfde40d8805907cd4228a33f3f"
+        }
+      }
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 0.8923537476470074,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 10.096450121582302,
+        "delta_bn": -3.040585893650847,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 2.1613623782769027
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 4.497849108158933
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 3.4372386351464668
+          }
+        },
+        "line_parts": {
+          "rows": 662,
+          "value_field": "coverage_bn",
+          "sum_bn": 10.096450121582299,
+          "sha256": "7f85d1d7c7d63224df8d28f73172d3ab75691990fe438d7fd25ad2524f63c817"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.418917615064694,
+            "companion_bn": -3.614393757186666,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.686001341980197,
+            "companion_bn": 2.9893509157889024,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2073,
+          "value_field": "companion_bn",
+          "sum_bn": -0.6250428413977711,
+          "sha256": "9458178269e1f7c54466dcfee47e73c22c5ca48c0e0e510f5be37a845b5e1cc6"
+        }
+      }
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 0.8923537476470074,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": 7.474305071484995,
+        "delta_bn": -2.5950545478570555,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": 1.5640199328919249
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": 3.4166453039701814
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": 2.493639834622889
+          }
+        },
+        "line_parts": {
+          "rows": 622,
+          "value_field": "coverage_bn",
+          "sum_bn": 7.474305071484993,
+          "sha256": "14b82e571bf400ee827c1468bbcadfdc71a2a21f467bda80f284e9949ade59f0"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.198076705860861,
+            "companion_bn": -3.3287995642480497,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.8399777519121177,
+            "companion_bn": 3.1113024315718625,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1953,
+          "value_field": "companion_bn",
+          "sum_bn": -0.21749713267618473,
+          "sha256": "389fbda2aa8064ead7813d90d265abf48a2586bfde40d8805907cd4228a33f3f"
+        }
+      }
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 0.8923537476470074,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 10.096450121582302,
+        "delta_bn": -3.040585893650847,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 2.1613623782769027
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 4.497849108158933
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 3.4372386351464668
+          }
+        },
+        "line_parts": {
+          "rows": 662,
+          "value_field": "coverage_bn",
+          "sum_bn": 10.096450121582299,
+          "sha256": "7f85d1d7c7d63224df8d28f73172d3ab75691990fe438d7fd25ad2524f63c817"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.418917615064694,
+            "companion_bn": -3.614393757186666,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.686001341980197,
+            "companion_bn": 2.9893509157889024,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2073,
+          "value_field": "companion_bn",
+          "sum_bn": -0.6250428413977711,
+          "sha256": "9458178269e1f7c54466dcfee47e73c22c5ca48c0e0e510f5be37a845b5e1cc6"
+        }
+      }
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 2.509004072676305,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": 9.330858870090669,
+        "delta_bn": -0.9784042228278,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": 1.9454328237208365
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": 4.169269740021358
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": 3.2161563063484753
+          }
+        },
+        "line_parts": {
+          "rows": 622,
+          "value_field": "coverage_bn",
+          "sum_bn": 9.330858870090665,
+          "sha256": "fc0570b75490d862494998a915e2c1997a55820361a5ef020fa77271c90df160"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.198076705860861,
+            "companion_bn": -3.3320683016168036,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.8399777519121177,
+            "companion_bn": 2.874667695364198,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1953,
+          "value_field": "companion_bn",
+          "sum_bn": -0.4574006062526022,
+          "sha256": "1c84529fb2565d13b7f78ce87ca09494833987a315ad62dd655b9f50667c5c48"
+        }
+      }
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 1.4905143679078492,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 10.783375027066402,
+        "delta_bn": -2.4424252733900214,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 2.3024851478835995
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 4.776320149497867
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 3.704569729684936
+          }
+        },
+        "line_parts": {
+          "rows": 662,
+          "value_field": "coverage_bn",
+          "sum_bn": 10.783375027066397,
+          "sha256": "f75f0977d25ac12c5259577d60bd025715f86194fdec79bb2aa83e771e9baf65"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.418917615064694,
+            "companion_bn": -3.615603190013105,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.686001341980197,
+            "companion_bn": 2.901796063392066,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2073,
+          "value_field": "companion_bn",
+          "sum_bn": -0.7138071266210466,
+          "sha256": "5cbe690d55ae2a3b2045fe6a2d4b884103b196e48cea8cce7fec7428cc573609"
+        }
+      }
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 2.509004072676248,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": 9.330858870090669,
+        "delta_bn": -0.9784042228278,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": 1.9454328237208365
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": 4.169269740021358
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": 3.2161563063484753
+          }
+        },
+        "line_parts": {
+          "rows": 622,
+          "value_field": "coverage_bn",
+          "sum_bn": 9.330858870090665,
+          "sha256": "fc0570b75490d862494998a915e2c1997a55820361a5ef020fa77271c90df160"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.198076705860861,
+            "companion_bn": -3.3320683016168036,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.8399777519121177,
+            "companion_bn": 2.874667695364198,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1953,
+          "value_field": "companion_bn",
+          "sum_bn": -0.4574006062526022,
+          "sha256": "1c84529fb2565d13b7f78ce87ca09494833987a315ad62dd655b9f50667c5c48"
+        }
+      }
+    },
+    {
+      "mode": "off",
+      "basis": "set",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 1.4905143679078492,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 10.783375027066402,
+        "delta_bn": -2.4424252733900214,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 2.3024851478835995
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 4.776320149497867
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 3.704569729684936
+          }
+        },
+        "line_parts": {
+          "rows": 662,
+          "value_field": "coverage_bn",
+          "sum_bn": 10.783375027066397,
+          "sha256": "f75f0977d25ac12c5259577d60bd025715f86194fdec79bb2aa83e771e9baf65"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.418917615064694,
+            "companion_bn": -3.615603190013105,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 3.686001341980197,
+            "companion_bn": 2.901796063392066,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2073,
+          "value_field": "companion_bn",
+          "sum_bn": -0.7138071266210466,
+          "sha256": "5cbe690d55ae2a3b2045fe6a2d4b884103b196e48cea8cce7fec7428cc573609"
+        }
+      }
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 1.2907818278878551,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": -0.12700539198000682,
+        "delta_bn": -2.19662646761616,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": 0.24685195468701035
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": -0.03441463905360381
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": -0.3394427076134135
+          }
+        },
+        "line_parts": {
+          "rows": 612,
+          "value_field": "coverage_bn",
+          "sum_bn": -0.1270053919800073,
+          "sha256": "4e07a872d94711cc93078ec76124c0cf143521d6fa8d194124b3cbf7e9553e36"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.2145553867039425,
+            "companion_bn": -3.3463847795162796,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.263127291934322,
+            "companion_bn": 3.484322843932544,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1923,
+          "value_field": "companion_bn",
+          "sum_bn": 0.13793806441626372,
+          "sha256": "6270c86e28967a8ee465040e760ed1137f780f706fb30bcdf665cee30a00d183"
+        }
+      }
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 0.9343104312189894,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 2.0857695455246357,
+        "delta_bn": -2.9986292100788994,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 0.7600928576442126
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 0.8808354769858628
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 0.44484121089456025
+          }
+        },
+        "line_parts": {
+          "rows": 652,
+          "value_field": "coverage_bn",
+          "sum_bn": 2.085769545524637,
+          "sha256": "6ec9fe131c3d0a8a2173afef64d62d9a4c667b02e6210096e7697b9cae8a26af"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.435396295907739,
+            "companion_bn": -3.6312582158650506,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.1091508820024005,
+            "companion_bn": 3.414549287483373,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2043,
+          "value_field": "companion_bn",
+          "sum_bn": -0.2167089283816808,
+          "sha256": "c5fa5a167dbc6632ec49a80256a5360af5adf576df0cc69ccd00af92f509f624"
+        }
+      }
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 1.2907818278879404,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": -0.12700539198000682,
+        "delta_bn": -2.19662646761616,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": 0.24685195468701035
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": -0.03441463905360381
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": -0.3394427076134135
+          }
+        },
+        "line_parts": {
+          "rows": 612,
+          "value_field": "coverage_bn",
+          "sum_bn": -0.1270053919800073,
+          "sha256": "4e07a872d94711cc93078ec76124c0cf143521d6fa8d194124b3cbf7e9553e36"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.2145553867039425,
+            "companion_bn": -3.3463847795162796,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.263127291934322,
+            "companion_bn": 3.484322843932544,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1923,
+          "value_field": "companion_bn",
+          "sum_bn": 0.13793806441626372,
+          "sha256": "6270c86e28967a8ee465040e760ed1137f780f706fb30bcdf665cee30a00d183"
+        }
+      }
+    },
+    {
+      "mode": "fixed_capital",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 0.9343104312190178,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 2.0857695455246357,
+        "delta_bn": -2.9986292100788994,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 0.7600928576442126
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 0.8808354769858628
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 0.44484121089456025
+          }
+        },
+        "line_parts": {
+          "rows": 652,
+          "value_field": "coverage_bn",
+          "sum_bn": 2.085769545524637,
+          "sha256": "6ec9fe131c3d0a8a2173afef64d62d9a4c667b02e6210096e7697b9cae8a26af"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.435396295907739,
+            "companion_bn": -3.6312582158650506,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.1091508820024005,
+            "companion_bn": 3.414549287483373,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2043,
+          "value_field": "companion_bn",
+          "sum_bn": -0.2167089283816808,
+          "sha256": "c5fa5a167dbc6632ec49a80256a5360af5adf576df0cc69ccd00af92f509f624"
+        }
+      }
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 0,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": -1.6434990684272845,
+        "delta_bn": -3.4874082955040904,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": -0.0803953823347096
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": -0.6303948150137293
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": -0.9327088710788461
+          }
+        },
+        "line_parts": {
+          "rows": 612,
+          "value_field": "coverage_bn",
+          "sum_bn": -1.6434990684272794,
+          "sha256": "259899785f6b4317fb47b93b943367d9610bedb609b04852e784f2c897973dd0"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.2145553867039425,
+            "companion_bn": -3.3450782184094985,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.263127291934322,
+            "companion_bn": 3.7087281313851106,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1923,
+          "value_field": "companion_bn",
+          "sum_bn": 0.3636499129756106,
+          "sha256": "5f3decde17736a5daeafa4bc1cc5a26ca151f325e800ed586535aafa04940542"
+        }
+      }
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 0,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 0.9786459816699051,
+        "delta_bn": -3.932939641297881,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 0.5169470630502663
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 0.450808989175019
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 0.010889929444619695
+          }
+        },
+        "line_parts": {
+          "rows": 652,
+          "value_field": "coverage_bn",
+          "sum_bn": 0.9786459816699065,
+          "sha256": "eb20071190f0da15c0da81cfa76a8eb7dc6b47ce2f85d5a998554a0d1901b991"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.435396295907739,
+            "companion_bn": -3.6306724113480784,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.1091508820024005,
+            "companion_bn": 3.5867766156021488,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2043,
+          "value_field": "companion_bn",
+          "sum_bn": -0.043895795745933254,
+          "sha256": "cca21755ccf97ae814711308f7a3ac743032ba687b1a7e15bcbc60ffa21368c3"
+        }
+      }
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 0,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": -1.6434990684272845,
+        "delta_bn": -3.4874082955040904,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": -0.0803953823347096
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": -0.6303948150137293
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": -0.9327088710788461
+          }
+        },
+        "line_parts": {
+          "rows": 612,
+          "value_field": "coverage_bn",
+          "sum_bn": -1.6434990684272794,
+          "sha256": "259899785f6b4317fb47b93b943367d9610bedb609b04852e784f2c897973dd0"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.2145553867039425,
+            "companion_bn": -3.3450782184094985,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.263127291934322,
+            "companion_bn": 3.7087281313851106,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1923,
+          "value_field": "companion_bn",
+          "sum_bn": 0.3636499129756106,
+          "sha256": "5f3decde17736a5daeafa4bc1cc5a26ca151f325e800ed586535aafa04940542"
+        }
+      }
+    },
+    {
+      "mode": "whole",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 0,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 0.9786459816699051,
+        "delta_bn": -3.932939641297881,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 0.5169470630502663
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 0.450808989175019
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 0.010889929444619695
+          }
+        },
+        "line_parts": {
+          "rows": 652,
+          "value_field": "coverage_bn",
+          "sum_bn": 0.9786459816699065,
+          "sha256": "eb20071190f0da15c0da81cfa76a8eb7dc6b47ce2f85d5a998554a0d1901b991"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.435396295907739,
+            "companion_bn": -3.6306724113480784,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.1091508820024005,
+            "companion_bn": 3.5867766156021488,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2043,
+          "value_field": "companion_bn",
+          "sum_bn": -0.043895795745933254,
+          "sha256": "cca21755ccf97ae814711308f7a3ac743032ba687b1a7e15bcbc60ffa21368c3"
+        }
+      }
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 0.8923537476470074,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": -0.5766691343075726,
+        "delta_bn": -2.5950545478570533,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": 0.15809700289817838
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": -0.22104122394558962
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": -0.5137249132601615
+          }
+        },
+        "line_parts": {
+          "rows": 612,
+          "value_field": "coverage_bn",
+          "sum_bn": -0.5766691343075705,
+          "sha256": "ca88c5334c526bb506130d67524edcf669076a9c4c630189bf4cb9d3795dfebb"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.2145553867039425,
+            "companion_bn": -3.3452782450911314,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.263127291934322,
+            "companion_bn": 3.5344519715940685,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1923,
+          "value_field": "companion_bn",
+          "sum_bn": 0.1891737265029359,
+          "sha256": "1f60f55e4e22361615f39ea7abf90b55e86616e6f3dcd7bcfb7ab74f7da312b9"
+        }
+      }
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 0.8923537476470074,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 2.045475915789619,
+        "delta_bn": -3.040585893650843,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 0.7554394482831562
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 0.8601625802431585
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 0.42987388726330394
+          }
+        },
+        "line_parts": {
+          "rows": 652,
+          "value_field": "coverage_bn",
+          "sum_bn": 2.045475915789621,
+          "sha256": "4f99cbef5bc60ee562e200f72891b6a053d9b7ea0aafaec5d2c30a162b9ef34c"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.435396295907739,
+            "companion_bn": -3.6308724380297117,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.1091508820024005,
+            "companion_bn": 3.4125004558111067,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2043,
+          "value_field": "companion_bn",
+          "sum_bn": -0.21837198221860812,
+          "sha256": "dbb670de4d6c26656cf777422e1eecfafed1d022f4d27ca1646edb5d40addee8"
+        }
+      }
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 0.8923537476470642,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": -0.5766691343075726,
+        "delta_bn": -2.5950545478570533,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": 0.15809700289817838
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": -0.22104122394558962
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": -0.5137249132601615
+          }
+        },
+        "line_parts": {
+          "rows": 612,
+          "value_field": "coverage_bn",
+          "sum_bn": -0.5766691343075705,
+          "sha256": "ca88c5334c526bb506130d67524edcf669076a9c4c630189bf4cb9d3795dfebb"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.2145553867039425,
+            "companion_bn": -3.3452782450911314,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.263127291934322,
+            "companion_bn": 3.5344519715940685,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1923,
+          "value_field": "companion_bn",
+          "sum_bn": 0.1891737265029359,
+          "sha256": "1f60f55e4e22361615f39ea7abf90b55e86616e6f3dcd7bcfb7ab74f7da312b9"
+        }
+      }
+    },
+    {
+      "mode": "corporate_only",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 0.8923537476470358,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 2.045475915789619,
+        "delta_bn": -3.040585893650843,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 0.7554394482831562
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 0.8601625802431585
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 0.42987388726330394
+          }
+        },
+        "line_parts": {
+          "rows": 652,
+          "value_field": "coverage_bn",
+          "sum_bn": 2.045475915789621,
+          "sha256": "4f99cbef5bc60ee562e200f72891b6a053d9b7ea0aafaec5d2c30a162b9ef34c"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.435396295907739,
+            "companion_bn": -3.6308724380297117,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.1091508820024005,
+            "companion_bn": 3.4125004558111067,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2043,
+          "value_field": "companion_bn",
+          "sum_bn": -0.21837198221860812,
+          "sha256": "dbb670de4d6c26656cf777422e1eecfafed1d022f4d27ca1646edb5d40addee8"
+        }
+      }
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 2.5090040726761913,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": 1.2798846642980999,
+        "delta_bn": -0.9784042228278005,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": 0.5395098937270896
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": 0.5315832121055868
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": 0.20879155846542344
+          }
+        },
+        "line_parts": {
+          "rows": 612,
+          "value_field": "coverage_bn",
+          "sum_bn": 1.2798846642980997,
+          "sha256": "5a1b1960a8d1e7863fc01fad59875a09fdf18258efb1fd1091b84e246950954e"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.2145553867039425,
+            "companion_bn": -3.3485469824598857,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.263127291934322,
+            "companion_bn": 3.2978172353864035,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1923,
+          "value_field": "companion_bn",
+          "sum_bn": -0.050729747073483496,
+          "sha256": "3b8982501f75f7e02b18c45e22bb5f6c8e768af6ac62a2165c1b5c90b0f87217"
+        }
+      }
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "method": "b_hotdeck_union_matched",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 1.4905143679078776,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 2.7324008212737163,
+        "delta_bn": -2.4424252733900222,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 0.8965622178898526
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 1.138633621582094
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 0.6972049818017695
+          }
+        },
+        "line_parts": {
+          "rows": 652,
+          "value_field": "coverage_bn",
+          "sum_bn": 2.7324008212737163,
+          "sha256": "4d787b68d76c9cccd88110fdf4fb81c61bac2e4782d89ae58f39d662721e91c1"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.435396295907739,
+            "companion_bn": -3.6320818708561506,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.1091508820024005,
+            "companion_bn": 3.3249456034142706,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2043,
+          "value_field": "companion_bn",
+          "sum_bn": -0.3071362674418827,
+          "sha256": "01728c7dacb9a36dfe49760b277a59add110ec10c0186149002a676a4e296cda"
+        }
+      }
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "low",
+      "spec": 24,
+      "cost_change_from_whole_bn": 2.509004072676305,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 9.606590372151327,
+        "coverage_bn": 1.2798846642980999,
+        "delta_bn": -0.9784042228278005,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.90494642764261,
+            "coverage_bn": 0.5395098937270896
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 1.051816349410487,
+            "coverage_bn": 0.5315832121055868
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 10.45972045038345,
+            "coverage_bn": 0.20879155846542344
+          }
+        },
+        "line_parts": {
+          "rows": 612,
+          "value_field": "coverage_bn",
+          "sum_bn": 1.2798846642980997,
+          "sha256": "5a1b1960a8d1e7863fc01fad59875a09fdf18258efb1fd1091b84e246950954e"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.2145553867039425,
+            "companion_bn": -3.3485469824598857,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.263127291934322,
+            "companion_bn": 3.2978172353864035,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 1923,
+          "value_field": "companion_bn",
+          "sum_bn": -0.050729747073483496,
+          "sha256": "3b8982501f75f7e02b18c45e22bb5f6c8e768af6ac62a2165c1b5c90b0f87217"
+        }
+      }
+    },
+    {
+      "mode": "off",
+      "basis": "cash",
+      "method": "b_matched_over_pooled",
+      "end": "high",
+      "spec": 7,
+      "cost_change_from_whole_bn": 1.4905143679078492,
+      "item13_bn": 0,
+      "item21_bn": 22.427285237560838,
+      "post_engine": {
+        "mixed_unit_removal_bn": 13.398264297423008,
+        "coverage_bn": 2.7324008212737163,
+        "delta_bn": -2.4424252733900222,
+        "by_generation": {
+          "G1": {
+            "mixed_unit_removal_bn": -1.1846592610966997,
+            "coverage_bn": 0.8965622178898526
+          },
+          "G2": {
+            "mixed_unit_removal_bn": 2.2120525773612574,
+            "coverage_bn": 1.138633621582094
+          },
+          "G3plus": {
+            "mixed_unit_removal_bn": 12.37087098115845,
+            "coverage_bn": 0.6972049818017695
+          }
+        },
+        "line_parts": {
+          "rows": 652,
+          "value_field": "coverage_bn",
+          "sum_bn": 2.7324008212737163,
+          "sha256": "4d787b68d76c9cccd88110fdf4fb81c61bac2e4782d89ae58f39d662721e91c1"
+        },
+        "rule": "first_year",
+        "coverage_rule": "source-line first-year response / central response; public-capital return and property zero; coverage's mixed-property share removed by source generation ratio; production and unclassified residuals held; count-item source prices transported by the same rules; item19/W09 absent centrally",
+        "item11_rule": "M5_owner_property removed by source generation",
+        "v9_by_item": {
+          "item13_coverage_first_year": {
+            "addback_bn": 0.6565123596422223,
+            "rule": "restore each signed military coverage piece before first-year source-response transport"
+          },
+          "native_minor_calibration": {
+            "central_bn": -4.435396295907739,
+            "companion_bn": -3.6320818708561506,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          },
+          "coverage_tenure": {
+            "central_bn": 4.1091508820024005,
+            "companion_bn": 3.3249456034142706,
+            "rule": "source-line response transport; capital zero in first year; unclassified residuals held"
+          }
+        },
+        "v9_line_parts": {
+          "rows": 2043,
+          "value_field": "companion_bn",
+          "sum_bn": -0.3071362674418827,
+          "sha256": "01728c7dacb9a36dfe49760b277a59add110ec10c0186149002a676a4e296cda"
+        }
+      }
+    }
+  ],
+  "checks": [
+    {
+      "label": "set: canonical firstYear matches final case (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "set: independently searched fixed-capital band and ends match firstYear",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/0/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/set/1/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/0/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/set/1/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/0/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/set/1/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/0/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/set/1/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "cash: canonical firstYear matches final case (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "cash: independently searched fixed-capital band and ends match firstYear",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/0/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "fixed_capital/cash/1/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/0/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "whole/cash/1/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/0/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "corporate_only/cash/1/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/0/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/0: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/0: zero capital",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/0/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/0/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/0/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/0/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/0: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/0: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/0: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/0: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/0: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/1: item13 off in first year",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/1: zero capital",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/1/corporate_capital: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/1/corporate_labor: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/1/remaining_production_property: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/1/other_production_taxes: whole and mode responses are the calibrated multipliers (1e-12)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/1: engine change rebuilt from receipt amounts and responses (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/1: non-engine change is post-engine, capital and companion terms (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/1: owner-property exclusion fixed across response modes (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/1: coverage line parts close to the coverage total (1e-9)",
+      "pass": true
+    },
+    {
+      "label": "off/cash/1/1: count-item line parts close to their item totals (1e-9)",
+      "pass": true
+    }
+  ],
+  "options": {
+    "long_run": false,
+    "rental": 0,
+    "capital": false,
+    "enterprise_receipt": 0,
+    "school_rule": "one_year",
+    "roads": "resources",
+    "property": "none",
+    "item6_first_year": true
+  },
+  "first_year_rules": "canonical v9 firstYear/adjustedRun; item13 off, item21 on; zero capital; source-line coverage/count transport; all specification ends re-searched",
+  "sensitivity_limit": "whole/corporate_only/off hold completion fixed-capital source prices; response-only sensitivities [APPROX]",
+  "first_year_breaks_alone": false
+}

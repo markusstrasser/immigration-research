@@ -1,0 +1,148 @@
+{
+  "case": "oct16",
+  "source_only": true,
+  "tables_withheld": true,
+  "bridges_checked": 12,
+  "measured_item11_rows_checked": 12,
+  "source_sha256": {
+    "white_summary.json": "121b787f04637b43d698555fade2b115686f15fa7f30d4d5167ac5c3d4477081",
+    "white_replicates.csv": "3da68f4be49514508c0a601cff1eadb31a0e405c72b940c83c6bd2e4062720b0",
+    "black_summary.json": "2cf7a859a12a3775a385440347ebf7851630302b56b95dbbd00847b26d7c2409",
+    "black_replicates.csv": "b78f9a6e60e5bf9bb72842c58e8385b415db5c27c0006a1ef932a81c7723c03d",
+    "white_children_summary.json": "9b06285b012453a8c7dd8720f4f67cde990795fce2de5c65c67481635eb228eb",
+    "white_children_replicates.csv": "852aaec100e3c589057b3de955f00641dc82f7cc3fbe014497d798f6005fcfd4",
+    "black_children_summary.json": "faedcc82ff1aaed64adac97783a6d4479b8ab339b1a5658e259e57c16ad5ff29",
+    "black_children_replicates.csv": "71c6a4e7c71f930126a339fc438c960362a996415309374b28f3a0b60c9bd8ad",
+    "white_children_round3_summary.json": "ded538a18d275a25a9beec85b2387f916346bddb2deb47c83e85c0e59abb141c",
+    "white_children_round3_replicates.csv": "e9d91836cb5be7201fa4a330d00d6947847f4e2cbf154e67d0e7d29fe820b1c7",
+    "black_children_round3_summary.json": "14f94cef3bbe8a2e7ee838220da68ca8487cf148a656c58043531f582be5519a",
+    "black_children_round3_replicates.csv": "0a8e64a32bb788ea8dd351450c4c6514ac4187618d21460ba6304670e1aadf30",
+    "white_children_half_summary.json": "c4aa4175ef98f1bb8a6a3806f5e8330bf00e558600e25bd39b85e2f1feaf9a42",
+    "white_children_half_replicates.csv": "ee12537d17ae6ee404fdfecd4e3bd038d2dda000a7f3794e6b3cc0cba94f6de9",
+    "black_children_half_summary.json": "046c6dddd22559588754931a8495296ccf8f38db56366609c2b6eccc79df0ae5",
+    "black_children_half_replicates.csv": "663875d6161b31f07e964832c885873d61feda927075922bc0ecec946153de8d",
+    "gaps.csv": "7ab68989d5b9e0f30e276c86fb2f83dc1f95c5703908deb8868822abd820c9d9"
+  },
+  "comparisons": [
+    {
+      "mortality": "mixed mortality conventions",
+      "bound": "none",
+      "basis": "accrual",
+      "group": "A1_third_plus_nh_white",
+      "lineage_minus_comparator_bn": [
+        627.5966639176772,
+        598.258814299612
+      ]
+    },
+    {
+      "mortality": "mixed mortality conventions",
+      "bound": "none",
+      "basis": "accrual",
+      "group": "A3_third_plus_nh_white_at_union_ages",
+      "lineage_minus_comparator_bn": [
+        517.1002856119794,
+        493.28790062551116
+      ]
+    },
+    {
+      "mortality": "mixed mortality conventions",
+      "bound": "none",
+      "basis": "cash",
+      "group": "A1_third_plus_nh_white",
+      "lineage_minus_comparator_bn": [
+        458.7687644084296,
+        429.4309147903647
+      ]
+    },
+    {
+      "mortality": "mixed mortality conventions",
+      "bound": "none",
+      "basis": "cash",
+      "group": "A3_third_plus_nh_white_at_union_ages",
+      "lineage_minus_comparator_bn": [
+        528.5724599336083,
+        504.76007494714
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "low",
+      "basis": "accrual",
+      "group": "A1_third_plus_nh_white",
+      "lineage_minus_comparator_bn": [
+        630.9716127321919,
+        601.6337631141269
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "low",
+      "basis": "accrual",
+      "group": "A3_third_plus_nh_white_at_union_ages",
+      "lineage_minus_comparator_bn": [
+        520.4752344264941,
+        496.6628494400259
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "low",
+      "basis": "cash",
+      "group": "A1_third_plus_nh_white",
+      "lineage_minus_comparator_bn": [
+        458.7687644084296,
+        429.4309147903647
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "low",
+      "basis": "cash",
+      "group": "A3_third_plus_nh_white_at_union_ages",
+      "lineage_minus_comparator_bn": [
+        528.5724599336083,
+        504.76007494714
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "high",
+      "basis": "accrual",
+      "group": "A1_third_plus_nh_white",
+      "lineage_minus_comparator_bn": [
+        630.97566558572,
+        601.6378159676548
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "high",
+      "basis": "accrual",
+      "group": "A3_third_plus_nh_white_at_union_ages",
+      "lineage_minus_comparator_bn": [
+        520.4792872800222,
+        496.6669022935539
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "high",
+      "basis": "cash",
+      "group": "A1_third_plus_nh_white",
+      "lineage_minus_comparator_bn": [
+        458.7687644084296,
+        429.4309147903647
+      ]
+    },
+    {
+      "mortality": "own-group mortality",
+      "bound": "high",
+      "basis": "cash",
+      "group": "A3_third_plus_nh_white_at_union_ages",
+      "lineage_minus_comparator_bn": [
+        528.5724599336083,
+        504.76007494714
+      ]
+    }
+  ]
+}

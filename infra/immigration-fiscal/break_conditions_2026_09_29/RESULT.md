@@ -1366,3 +1366,186 @@ Scheduled-benefit, first-year, minimal-subset, engine-break and C8 source checks
 ### R4C4 final source-schema receipt — 2026-10-15 11:04:28 JST
 
 Following the A3/A4 own-count uncertainty-column completion, C8 source receipt rebuilt and the same supported six-command replay again ends **IDENTICAL 77/77, exit 0**, 289.062s. The new fields do not change comparison point estimates. Full publication remains withheld on the previously recorded debt source stop; tables_oct15.py stays explicitly allow-unrun and the same two publication tests deselected. [CALCULATION: derived/c8_source_checks_oct15.json; scratch prop8/c4fix-break-final-rerun.log]
+
+### Oct16 preparation — 2026-10-15 18:56:16 JST (`date`)
+
+The computed default moves to oct16; explicit historical case switches and every earlier output remain preserved. Initial oct16 probe stopped on the unsupported case key; after adding the declared case it stopped before C1 on stale generation adoption metadata. Preparation now uses canonical v9 `firstYear`/`adjustedRun`, re-searches every method's personal ends, selects central items only (19/W09 beside), and prices inherited arms through the live package instead of accepting v9's explicitly historical v8 band rows. Item20's 7% sensitivity uses its own declared rate arm, with aliases grouped to prevent double selection. Final values, pins and reproduction are pending `prop9/CASE_FINAL`; no final PASS is claimed. Preparation controls: 10 passed, four output-dependent checks deferred. [CALCULATION: test_tables_oct16.py; scratch prop9/prop-d-breaks.md]
+
+## C8 uncertainty contract repair, 2026-10-15 19:08 JST
+
+The oct16 comparator source does not identify a paired item11 SE after the calibrated lineage
+count change. C8 now accepts blank/None only with the source's explicit unmeasured-v9 scope,
+and checks the measured comparator-only SDR separately. A numeric paired SE (including zero),
+missing scope, negative comparator SDR or legacy mixed-unit frame is rejected. The source-only
+checker forwards the case explicitly; the old oct15 branch retains its paired-vector check.
+This changes no dollar or uncertainty tolerance. Twelve preparation controls pass; four checks
+requiring final artifacts remain deferred until CASE_FINAL. [CALCULATION: tables_oct16.py;
+check_c8_sources.py; test_tables_oct16.py; prop9/prop-d-code-review.md]
+
+### Adopted oct16 independent first-year receipt — 2026-10-20 20:25 JST
+
+The adopted case commit `7dfb4c66` is verified. The independent first-year route passes100
+checks: set **313.835786441 / 370.838151453bn**, cash **230.203090721 / 287.205455732bn**,
+with ends **24 / 7** independently found in both methods and sets. It matches the final
+case's canonical companion at1e-9bn; item13 is off, item21 remains, and capital is zero
+through all four response-mode probes. Population44,903,074.086245 people. The first-year
+midpoint342.336968947bn is14.904130% below the long-run midpoint402.295633166bn and above
+the301.721724875bn lower quarter cut: **first-year alone does not break C1**. This applies
+first-year response coefficients to the2024 account; it is not next year's cash saving.
+[CALCULATION: derived/first_year_item6_oct16.json variants.fixed_capital,ends,thresholds,checks]
+
+Direct first-year execution exits0 in118.404794s; principal lifetime physical footprint
+1,039,348,160bytes passes the2.5GB guard. Fourteen focused tests and the80-space exact-search,
+41-arm and generation-negative controls pass. Three final publication/generation checks
+remain deferred, not passed. [CALCULATION: scratch prop9-break-first-year.json/log and tests]
+
+**Core/publication blocked:** oct16 generation set/cash payloads still declare adopted
+2026-10-15 while the live case declares2026-10-20. Full engine refuses before writing.
+The existing generation preflight now also runs before pricing-package import, reducing
+this same refusal from102.736805s to1.261557s; the full in-memory numerical check remains.
+Local adoption guards compare against authoritative live_case.json rather than a date
+inferred from the lane name. Its bytes join the explicit evidence pins. The source's final
+steady-state service sweep uses long_run:true and this consumer follows it; genuine
+first-year specs retain their own horizon. No source metadata or hash was hand-repaired.
+[CALCULATION: generation_preflight.cjs; engine_breaks_sept29.cjs; tables_oct16.py; derive_oct16_pins.py]
+
+White, debt, winner and sept24 pairing oct16 outputs remain external publication dependencies;
+fresh engine/table pins and full C1–C9 output certification wait for their actual producers.
+Scheduled-benefit checks pass in265.172450s; their output changes only accrual_white.py's
+source fingerprint, with every numeric value unchanged. CPU-profiled first-year execution
+attributes64.232363 of126.403142 sampled seconds to three protected cloning functions;
+the evidence and ownership boundary are filed in performance-issues.md. No protected source
+was edited. Earlier keyed outputs remain untouched. [DATA: scoped diff; CALCULATION: scratch
+prop9-break-scheduled.json/log, prop9-break-first-year-profile.json]
+
+- 2026-10-20 20:28 JST — Independent first-year/calibration/search/focused-test replay
+  **IDENTICAL83/83, exit0**,86.541596s. Exact command/exclusions are in scratch
+  prop9/prop-d-breaks.md. Core engine, pin derivation, C1–C9 publication and C8 source
+  checker are explicitly excluded pending their producer dependencies; the three
+  publication/generation output tests remain deselected. All four included commands
+  exit0. This is a scoped route PASS, not full-lane publication certification.
+  Pairing real_costs_totals.csv has arrived; remaining White/debt/winner files and
+  stale generation adoption stamps are enumerated in that report. No earlier keyed
+  output changed. [CALCULATION: scratch prop9-break-first-replay-clean.json/log]
+
+### Oct16 source-contract correction — 2026-10-20 21:37 JST
+
+The earlier generation adoption refusal was this consumer's interpretation error.
+`run_generations_v9.cjs:19–32` deliberately inherits the oct15 payload metadata and
+adds the current case lane, specification vector and scoped posts; `adopted` remains
+historical. The unchanged producer was independently executed for set and cash into
+this lane's ignored cache. All six current generation outputs reproduce byte for
+byte, with264 read-file/module/principal-input hashes retained in
+`derived/generation_source_contract_oct16.json`. The engine verifies every recorded
+input/output hash before admitting that declared inherited stamp, then retains the
+full numerical post/coverage and service-response generation closure gates. Five
+negative controls reject incomplete output coverage, changed inputs/outputs, missing
+reproduction authority and an invented inherited-source declaration. No generation
+producer or published generation file was edited. [CALCULATION:
+reproduce_generation_source.cjs; generation_preflight.cjs; test_tables_oct16.py]
+
+The native debt producer publishes `current_flow_contract.json` and
+`current_flow_source_parts_2024.csv`, explicitly **current flows only; historical
+financing remains unidentified**. C5 now checks their full source closure against
+the case at1e-9bn, preserves unlocated payer/timing parts, and leaves complete
+state-local percentages and legacy interest blank. Resource-capital costs never
+become borrowing. The live winner contract is `p7_net_shares.csv`; C5 selects the
+stationary/recommended/central/infinite/lineage/pooled rows under rules a/b/c.
+Frozen `net_shares.csv` and earlier full-financing outputs are historical evidence,
+not missing live files to recreate. C8 retains the unavailable paired item11 SE's
+explicit source scope and the separately measured comparator-only SDR in its own
+publication rows. [DATA: native debt/winners contracts; CALCULATION: tables_oct16.py]
+
+The full publication reproduction command, after fresh explicit pins, is:
+
+```sh
+OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/break_conditions_2026_09_29 \
+  'node {lane}/reproduce_generation_source.cjs' \
+  'node {lane}/test_minimal_subsets.cjs' \
+  'node --cpu-prof --cpu-prof-dir={lane}/_cache --cpu-prof-name=publication-engine.cpuprofile {lane}/engine_breaks_sept29.cjs --case oct16' \
+  'uv run --no-project python3 {lane}/first_year_calibration.py' \
+  'uv run --no-project python3 {lane}/derive_oct16_pins.py --scope engine --check' \
+  'uv run --no-project python3 {lane}/derive_oct16_pins.py --check' \
+  'uv run --no-project python3 {lane}/tables_oct16.py' \
+  'uv run --no-project python3 {lane}/check_c8_sources.py --case oct16' \
+  'uv run --no-project python3 -m pytest -p no:cacheprovider {lane}/test_tables_oct16.py -q'
+```
+
+Pins are produced only by the explicit `derive_oct16_pins.py --scope engine` and
+`derive_oct16_pins.py` commands after the final engine and external source runs;
+reproduction only checks them. The previously certified first-year route is reached
+by the full engine; its independent standalone receipt remains above. The scheduled
+auxiliary's265.172450s successful direct receipt and unchanged numbers also remain
+above; this route consumes its saved, numerically gated output. Full publication and
+byte-replay receipts follow only after those commands succeed.
+
+### Oct16 pending-source checkpoint — 2026-10-20 21:45 JST
+
+**C1–C9 publication and its final byte replay remain pending.** The next full
+engine failed after393.714877s in item-arm pricing when the protected coverage
+checker detected a peer change to `main_case_2026_10_16/coverage_snapshot.cjs`
+(mtime21:42:35 JST). Its new readiness-based logic differs from the receipt's
+pinned bytes; `package.cjs` also changed after the successful generation proof.
+The full engine wrote no conclusion outputs. The exact generation6/6 proof above
+is a valid predecessor receipt and is **invalidated for the current source tree**.
+The earlier100-check first-year and83/83 scoped replay are also predecessor
+receipts, not current-source certification. No hash or protected source was
+hand-repaired. [DATA: read-only protected-source diff; CALCULATION:
+scratch prop9-break-resume-engine-final.json/log]
+
+The new early source guard rejects this drift in0.507746s. Fourteen independent
+local controls pass, six source/publication-dependent checks deselected; Python
+compile4/4, Node syntax4/4 and scoped whitespace checks pass. These controls
+establish fail-loud behavior, not completed C1–C9 computation. Per-arm timing and
+the documented CPU-profiled replay remain queued behind source-owner repair.
+[CALCULATION: scratch prop9-break-peer-source-stop.json/log,
+prop9-break-source-independent-tests.json/log; performance-issues.md]
+
+Required continuation order: the source owner freezes and rebuilds the canonical
+case/coverage receipts first, without manual pin edits; affected generation and
+external consumer owners refresh their own source receipts and byte replays.
+Then this lane runs unchanged generation reproduction (all six files must match
+the authoritative outputs), its full CPU-profiled engine, explicit fresh engine
+and table pin derivation, tables and C8 checks, followed by the documented
+nine-command byte replay. A differing generation replay stops and returns to its
+owner. Native C5 history/financing gaps, C7/C9 historical-only status, matched local
+white gap and unmeasured paired-v9 uncertainty remain explicit even after a future
+publication PASS. The parent requested this checkpoint while the source freeze is
+pending. No full repeat runs in the meantime; no Git writes.
+
+### Oct16 publication receipt — 2026-10-21 01:25 JST (`date`)
+
+C1–C9 are published on the adopted v9 case (oct16) from this lane's own outputs
+(`derived/conclusions_oct16.csv`, `c1_search_oct16.json`, `first_year_item6_oct16.json`):
+
+- C1 holds, restated: $368.0 / 436.6bn, midpoint $402.3bn, $8,196 / 9,722 per member,
+  personal specifications 16 / 11. The search finds 11,033 minimal cuts of at most 5 arms
+  (8,692 down, 2,341 up). **[SCOPE] The exact search is capped at 5 arms on v9**: 22 downward
+  groups give 1.77e11 eligible sets, and sizes 1–7 took 82.7M evaluations before the run was
+  stopped. Minimal cuts of more than 5 arms are not enumerated. Historical cases stay unbounded.
+  `published_cross_checks` lists the engine and item arms checked against a published case row
+  and those with no current row.
+- First year (item 6 fixed-capital reading): set $313.8 / 370.8bn, cash $230.2 / 287.2bn; whole
+  $276.0 / 342.5bn; corporate only $303.9 / 370.5bn; off $347.2 / 386.5bn. It does not break C1
+  alone (threshold $301.7bn). 356 of 356 checks pass, including receipt-and-response rebuilds of
+  the engine change and the calibrated multipliers. The file is now 162 KB (it was 79 MB): post-engine
+  parts are stored as row counts, sums and sha256.
+- C2: direct receipts less household transfers are $6.7 / 4.5bn. C3 holds the side magnitudes and
+  cancellation but BREAKS net-about-11 (net $-1.72 / -3.85bn).
+- C4 holds, restated: social rows $111.6 / 117.1bn, published pairing $479.6 / 553.7bn. Since v8
+  the pairing's fiscal row is the case at both ends. Pairing minus social rows equals the live band
+  (1e-9; closes at 6e-14). Item spans are the oct15 record-basis spans carried in the oct16
+  real-costs document.
+- C5: most of it is UNMEASURED, and it BREAKS about-one-in-six. C6 holds: minimum $61.2bn, largest
+  service break-even 45.0%. C6 also prices each generation by the payload's consumer rule (the v8
+  evaluator plus `meta.v9_posts_by_spec`), which agrees with the producer route at 1e-6. The union's v9
+  additions at sweep points are split by generation shares [APPROX].
+- C8: A1 BREAKS the historical map claim ($606.0 / 579.1bn); the matched local-white reading is a GAP.
+  C7 and C9 are historical and not rerun.
+
+Route: the engine refuses `V9_CASE_CACHE=0` because that route's `correctionsPayload()` differs
+from the case's `corrections.json` in item 13's part metadata. That defect is the case lane's to fix.
+Item arms are priced in child processes on the canonical route. Engine peak 2.289 GB, 529.7 s.
+Pins: 24 engine, 43 tables, one line per input. The documented nine-command replay, run with
+`--allow-unrun {lane}/tables_oct14.py` (a docstring-only change), gives IDENTICAL 102/102, exit 0.
+[CALCULATION: rerun_lane.py; DATA: derived/*_oct16.*]

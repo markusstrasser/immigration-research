@@ -1,4 +1,4 @@
-/* Break conditions on live v8 by default (--case oct15); explicit historical --case modes retain their old computations.
+/* Break conditions on live v9 by default (--case oct16); explicit historical --case modes retain their old computations.
  * Original v4 route (main_case_2026_09_29, key sept29): the engine computations
  * behind RESULT.md's "v4 case (sept29)" rows for C1, C2, C3 and C6, beside engine_breaks.cjs's September 27 files, which
  * this script does not touch.
@@ -76,14 +76,45 @@ const CASES = {
   oct07: { lane: "main_case_2026_10_07", band: [389.0826, 461.4797], cash: "main_case_2026_10_07/derived/corrections_cash.json" },
   oct14: { lane: "main_case_2026_10_14", cash: "main_case_2026_10_14/derived/corrections_cash.json" },
   oct15: { lane: "main_case_2026_10_15", cash: "main_case_2026_10_15/derived/corrections_cash.json" },
+  oct16: { lane: "main_case_2026_10_16", cash: "main_case_2026_10_16/derived/corrections_cash.json" },
 };
 const CASE_ARG = process.argv.indexOf("--case");
-const CASE = CASE_ARG > 0 ? process.argv[CASE_ARG + 1] : "oct15";
-const LIVE_PERSONAL = CASE === "oct14" || CASE === "oct15";
+const CASE = CASE_ARG > 0 ? process.argv[CASE_ARG + 1] : "oct16";
+const V8PLUS = CASE === "oct15" || CASE === "oct16";
+const LIVE_PERSONAL = CASE === "oct14" || V8PLUS;
+// C1's exact minimal-crossing search is complete on the historical cases (oct15: 15 and 14 groups, 648,000
+// evaluations). v9's item arms make 22 downward groups: on 2026-10-20 sizes 1-7 took 82.7M evaluations and
+// 203,729 minimal crossings, about five times more per size. On oct16 the search is therefore complete through
+// --c1-max-size arms (default 5) and lists no larger minimal crossings [SCOPE]; historical cases stay unbounded.
+const C1_MAX_ARG=process.argv.indexOf("--c1-max-size");
+const C1_MAX_SIZE=C1_MAX_ARG>0?Number(process.argv[C1_MAX_ARG+1]):CASE==="oct16"?5:Infinity;
+if(!(C1_MAX_SIZE>=1))throw Error("[BLOCKED] --c1-max-size must be at least 1");
 const C2_POSTENGINE_CLASS_RULE=process.env.C2_POSTENGINE_CLASS_RULE||"exclude_unclassified";
 if(!["exclude_unclassified","stop"].includes(C2_POSTENGINE_CLASS_RULE))throw Error(`[BLOCKED] unknown C2_POSTENGINE_CLASS_RULE ${C2_POSTENGINE_CLASS_RULE}`);
 if (!CASES[CASE]) throw new Error(`[BLOCKED] --case ${CASE}: not one of ${Object.keys(CASES).join(", ")}`);
 const LANE = CASES[CASE].lane;
+// Source metadata is enough to reject stale generations before loading the
+// pricing package; full numerical closure remains checked below after loading.
+let generationSourceReproduced=false;
+if(CASE==="oct16"){
+  const contractFile=path.join(__dirname,"derived/generation_source_contract_oct16.json");
+  if(!fs.existsSync(contractFile))throw Error("[BLOCKED] final generation source replay absent; run reproduce_generation_source.cjs");
+  generationSourceReproduced=require("./generation_preflight.cjs").validateReproducedSource(JSON.parse(fs.readFileSync(contractFile,"utf8")),ROOT);
+  const saved=JSON.parse(fs.readFileSync(path.join(ROOT,LANE,"derived/corrections.json"),"utf8"));
+  const live=JSON.parse(fs.readFileSync(path.join(ROOT,"live_case.json"),"utf8"));
+  if(live.key!==CASE||live.lane!==LANE||!live.adopted||saved.meta.adopted!==live.adopted||
+      !saved.meta.status?.startsWith("adopted: main case v9"))
+    throw Error("[BLOCKED] oct16 source payload is not the authoritative adopted live case");
+  for(const suffix of ["","_cash"]){
+    const file=path.join(ROOT,"generation_account_2026_09_24/derived",`generation_corrections_${CASE}${suffix}.json`);
+    if(!fs.existsSync(file))throw Error(`[BLOCKED] ${file} absent; run final generation account first`);
+    require("./generation_preflight.cjs").validateGenerationPayloads(JSON.parse(fs.readFileSync(file,"utf8")).payloads,suffix?JSON.parse(fs.readFileSync(path.join(ROOT,LANE,"derived/corrections_cash.json"),"utf8")).meta:saved.meta,CASE,generationSourceReproduced);
+  }
+}
+// oct16 runs the case's canonical cached route. Its uncached bounded route (V9_CASE_CACHE=0) builds a payload whose
+// item 13 part metadata differs from derived/corrections.json (2026-10-21; costs equal), so the payload-identity
+// gate below rejects it; memory is held instead by pricing the item arms in bounded children (item_arm_prices.cjs).
+if(CASE==="oct16"&&process.env.V9_CASE_CACHE==="0")throw Error("[BLOCKED] oct16 needs the canonical cached case route; unset V9_CASE_CACHE");
 const P = require(path.join(ROOT, LANE, "package.cjs"));
 const LIN = CASE === "sept29" ? null : P.correctionsPayload().meta.lineage;   // oct05: the lineage's meta
 if (CASE !== "sept29" && !(LIN && P.CASH)) throw new Error(`[BLOCKED] ${LANE}: no lineage or no cash package`);
@@ -92,9 +123,10 @@ const PC_ = LIN ? P.CASH : null;             // the cash set's package where the
 const stable = x => Array.isArray(x) ? x.map(stable) : x && typeof x === "object"
   ? Object.fromEntries(Object.keys(x).sort().map(k=>[k,stable(x[k])])) : x;
 const optionBands=new Map();
+const ratePackages=new Map();
 // oct15 (round 3, R3-05): the shared allocation and the within-district school reading price items 11 and 12 under
 // their own rules, as main_case.cjs prices those companions (companions.cjs adjustedRun).
-const companionRule = (o) => CASE !== "oct15" ? null : o.allocation === "shared" ? "shared" : o.school_rule === "within_district" ? "school" : null;
+const companionRule = (o) => !V8PLUS ? null : o.allocation === "shared" ? "shared" : o.school_rule === "within_district" ? "school" : null;
 function companionBand(X, o, rule) {
   const COMP = require(path.join(ROOT, LANE, "companions.cjs")), specs = X.specsFor(o);
   const bands = P.METHODS.map((method) => {
@@ -104,9 +136,11 @@ function companionBand(X, o, rule) {
   return [0, 1].map((e) => bands.reduce((t, b) => t + b[e], 0) / bands.length);
 }
 function centralOf(o) {
-  const cash=PC_&&o.pension4==="cash", X=cash?PC_:P;
-  const options=cash?Object.fromEntries(Object.entries(o).filter(([k])=>k!=="pension4")):o;
-  const key=JSON.stringify([cash?"cash":"set",stable(X.withCentral(options))]);
+  const cash=PC_&&o.pension4==="cash";
+  if(CASE==="oct16"&&o.one_rate_arm&&!ratePackages.has(o.one_rate_arm))ratePackages.set(o.one_rate_arm,P.caseOf(P.OCT05,P.CANDIDATE,{one_rate:o.one_rate_arm}));
+  const Q=CASE==="oct16"&&o.one_rate_arm?ratePackages.get(o.one_rate_arm):P,X=cash?Q.CASH:Q;
+  const options=Object.fromEntries(Object.entries(o).filter(([k])=>k!=="one_rate_arm"&&(!cash||k!=="pension4")));
+  const key=JSON.stringify([cash?"cash":"set",o.one_rate_arm||null,stable(X.withCentral(options))]);
   if(!optionBands.has(key)){const rule=companionRule(options);optionBands.set(key,rule?companionBand(X,options,rule):X.central(options));}
   return optionBands.get(key).slice();
 }
@@ -151,15 +185,15 @@ const readCsv = (rel) => {
 };
 const sha256 = (rel) => crypto.createHash("sha256").update(fs.readFileSync(path.join(ROOT, rel))).digest("hex");
 const SUMMARY = readJson(`${LANE}/derived/summary.json`);
-const VERSION = CASE === "oct15" ? "v8" : CASE === "oct14" ? "v7" : "v6";
-const endSet = CASE === "oct15" ? SUMMARY.v8.end_specifications.set[0] : SUMMARY[VERSION].end_specifications?.set;
-const endCash = CASE === "oct15" ? SUMMARY.v8.end_specifications.cash[0] : SUMMARY[VERSION].end_specifications?.cash;
+const VERSION = CASE === "oct16" ? "v9" : CASE === "oct15" ? "v8" : CASE === "oct14" ? "v7" : "v6";
+const endSet = V8PLUS ? SUMMARY[VERSION].end_specifications.set[0] : SUMMARY[VERSION].end_specifications?.set;
+const endCash = V8PLUS ? SUMMARY[VERSION].end_specifications.cash[0] : SUMMARY[VERSION].end_specifications?.cash;
 const endNumbers = LIVE_PERSONAL ? endSet : [48, 11];
 if (LIVE_PERSONAL && (!Array.isArray(endNumbers) || endNumbers.length !== 2 || !endNumbers.every(Number.isInteger))) {
   throw new Error(`[BLOCKED] ${CASE}: missing or invalid personal end specifications`);
 }
-if (CASE === "oct15" && ["set", "cash"].some(b =>
-  SUMMARY.v8.end_specifications[b].some(xs => JSON.stringify(xs) !== JSON.stringify(endNumbers)))) {
+if (V8PLUS && ["set", "cash"].some(b =>
+  SUMMARY[VERSION].end_specifications[b].some(xs => JSON.stringify(xs) !== JSON.stringify(endNumbers)))) {
   throw new Error(`[BLOCKED] ${CASE}: method end specifications differ; the tally rule needs revision`);
 }
 if (LIVE_PERSONAL && JSON.stringify(endNumbers) !== JSON.stringify(endCash)) {
@@ -171,17 +205,22 @@ for (const [, i] of ENDS) {
     throw new Error(`[BLOCKED] ${CASE}: end specification ${i} absent or not personal`);
   }
 }
+if(CASE==="oct16")for(const [basis,pkg]of [["set",P],["cash",PC_]])for(const [k,method]of P.METHODS.entries()){
+  const m=pkg.modelFor("central",method,pkg.withCentral({})),ss=pkg.specsFor({}),values=ss.map(s=>pkg.evaluateFull(m,s).cost_bn);
+  const found=[values.indexOf(Math.min(...values)),values.indexOf(Math.max(...values))];
+  if(JSON.stringify(found)!==JSON.stringify(SUMMARY.v9.end_specifications[basis][k]))throw Error(`[BLOCKED] oct16 ${basis}/${method}: re-searched ends ${found} disagree with final summary`);
+}
 if (process.argv.includes("--probe-only")) {
   console.log(`[probe] ${CASE}: ${MAIN_SPECS.length} specifications; ends ${endNumbers.join(" / ")}`);
   process.exit(0);
 }
 // Reject candidate/coverage-off generation files before the expensive C1 search.
 const generationPreflightHashes=new Map();
-if(CASE==="oct15")for(const [pkg,suffix]of [[P,""],[PC_,"_cash"]]) {
-  const dir="generation_account_2026_09_24/derived",file=`${dir}/generation_corrections_oct15${suffix}.json`;
-  const results=`${dir}/generation_results_oct15${suffix}.csv`;
+if(V8PLUS)for(const [pkg,suffix]of [[P,""],[PC_,"_cash"]]) {
+  const dir="generation_account_2026_09_24/derived",file=`${dir}/generation_corrections_${CASE}${suffix}.json`;
+  const results=`${dir}/generation_results_${CASE}${suffix}.csv`;
   for(const rel of [file,results])if(!fs.existsSync(path.join(ROOT,rel)))throw Error(`[BLOCKED] ${rel} absent; run final generation account first`);
-  require("./generation_preflight.cjs").validateGenerationPayloads(readJson(file).payloads,pkg.correctionsPayload().meta,CASE);
+  require("./generation_preflight.cjs").validateGenerationPayloads(readJson(file).payloads,pkg.correctionsPayload().meta,CASE,generationSourceReproduced);
   for(const rel of [file,results])generationPreflightHashes.set(rel,sha256(rel));
 }
 
@@ -202,6 +241,7 @@ const bandRow = (v) => {
   if (!r) throw new Error(`[BLOCKED] ${LANE}/derived/main_case_bands.csv: no ${v} row`);
   return [+r.cost_low_bn, +r.cost_high_bn];
 };
+const currentBandRow=v=>CASE==="oct16"&&SUMMARY.v9.historical_rows.includes(P.MAIN_PROFILE+"/"+v)?null:bandRow(v);
 const comps = readCsv(`${LANE}/derived/components.csv`);
 const comp = (id) => comps.find((r) => r.component === id);
 const PROP = comp("property_long_run"), CARE = comp("care"), MED = comp("medical");
@@ -217,14 +257,14 @@ const lrMax = lrBands.reduce((a, b) => (mid(b[1]) > mid(a[1]) ? b : a));
 // Engine arms: each is the alternative end of a range the case reports (main_case_bands.csv or components.csv), or an
 // item of v4 turned off.
 const ARMS = {
-  capital_off: { dir: "down", o: { capital: false }, src: "ladder 239: no return on public capital (a convention; main_case_bands.csv without_capital_return)", want: bandRow("without_capital_return") },
+  capital_off: { dir: "down", o: { capital: false }, src: "ladder 239: no return on public capital (a convention; old band row historical on v9; inherited fixed count/coverage amounts held)", want: currentBandRow("without_capital_return") },
   school_within_district: { dir: "down", o: { school_rule: "within_district" }, src: "ladder 230/239: schools at the within-district 0.836 read over the removal", want: bandRow("school_within_district") },
   roads_parks_first_year: { dir: "down", o: { long_run: false, roads: "resources" }, src: "ladder 237: roads and parks at CBO's first-year response 0; v4's miles key needs the long-run subfunction responses, so roads are on resources here", want: null },
-  enterprises_out: { dir: "down", o: { enterprises: "A" }, src: "ladder 239: government enterprises out (option A)", want: bandRow("enterprises_out_option_a") },
-  rental_zero: { dir: "down", o: { rental: 0 }, src: "ladder 239: rental assistance at response 0", want: bandRow("rental_assistance_at_0") },
+  enterprises_out: { dir: "down", o: { enterprises: "A" }, src: "ladder 239: government enterprises out (option A)", want: currentBandRow("enterprises_out_option_a") },
+  rental_zero: { dir: "down", o: { rental: 0 }, src: "ladder 239: rental assistance at response 0", want: currentBandRow("rental_assistance_at_0") },
   pension_cash: { dir: "down", o: { pension4: "cash" }, src: "decision 2026-09-29 alternative 2: the cash set, Social Security and Medicare counted when paid (the September 27 convention)", want: bandRow("cash_set") },
   property_high_reading: { dir: "down", o: { property_reading: "high" }, src: "components.csv property_long_run: the receipt-side lane's responses at 1 everywhere, case-scaled tenant national", want: [MAIN[0] + +PROP.range_dev_low_end_lo, MAIN[1] + +PROP.range_dev_high_end_lo] },
-  capital_7pct: { dir: "up", o: { rates: { low: RATES.reported, high: RATES.reported } }, src: "ladder 238/239: capital at a private 7% return (beside the account)", want: bandRow("capital_return_at_7pct") },
+  capital_7pct: { dir: "up", ...(CASE==="oct16"?{item:"one_rate"}:{}), o: CASE==="oct16"?{one_rate_arm:"capital_7pct"}:{ rates: { low: RATES.reported, high: RATES.reported } }, src: "ladder 238/239: capital at a private 7% return; v9 uses the declared one_rate capital_7pct arm (beside the account)", want: CASE==="oct16"?bandRow("one_rate_capital_7pct"):bandRow("capital_return_at_7pct") },
   long_run_high: { dir: "up", o: { long_run: lrMax[0] }, src: `ladder 239: long-run response variant with the largest midpoint (${lrMax[0]})`, want: null },
   property_none: { dir: "up", o: { property: "none" }, src: "item 5 off: property taxes at zero response, the September 27 convention (ladder 253, decision 2026-09-29)", want: null },
 };
@@ -281,7 +321,7 @@ for (const r of ITEMS) {
   payload.edits.slice(r.edits.first, r.edits.first + r.edits.count).forEach((e, k) => {
     if (e.side !== "spending" || !(e.line in ITEM_PEN.union)) return;
     const parts = partsOf(r, k);
-    if (CASE === "oct15" && r.id === "union_completion") {
+    if (V8PLUS && r.id === "union_completion") {
       const original=MODEL.spending.lines.find(l=>l.id===e.line);
       if (!(e.key in original.keys) || !parts.length || parts.some(([n])=>!n.startsWith("lineage_")) || !P.ALLOCS.every(a=>near(sum(parts.map(([,p])=>p.by[a])),e.by[a],1e-9))) {
         throw Error(`[BLOCKED] completion pension part ${k} lacks its own key/lineage declaration`);
@@ -334,8 +374,11 @@ const ADD = {
 };
 gate("every additive item is a finite pair", Object.values(ADD).every((a) => a.by.length === 2 && a.by.every(Number.isFinite)),
   Object.entries(ADD).map(([id, a]) => `${id} ${a.by.map(f4).join(" / ")}`).join("; "));
+const publishedCrossChecks={engine_arms_checked:[],engine_arms_without_published_row:[],item_arms_checked:[],item_arms_without_current_row:[],
+  rule:"an arm is cross-checked against a current published case row (engine 0.01, item 5e-5). Rows the case lists in summary.json v9.historical_rows are not republished on v9, and some engine arms never had a row; those arms are priced by the case package here, item arms keep the case-plus-change 1e-9 identity, and no published cross-check exists for them"};
 for (const [id, a] of Object.entries(Object.assign({}, ARMS, LISTED))) {
   a.band = centralOf(a.o);
+  if(CASE==="oct16"&&Object.hasOwn(a,"want"))publishedCrossChecks[a.want?"engine_arms_checked":"engine_arms_without_published_row"].push(id);
   if (a.want) gate(`${id} reproduces its published row (0.01)`, near(a.band[0], a.want[0], 0.01) && near(a.band[1], a.want[1], 0.01),
     `${a.band[0].toFixed(2)}–${a.band[1].toFixed(2)}`);
 }
@@ -354,7 +397,16 @@ const HORIZON = {
   first_year_horizon_property_long_run: { o: FIRST, src: "the same, item 5's long-run property response kept" },
   first_year_horizon_cash: { o: Object.assign({}, FIRST, { property: "none", pension4: "cash" }), src: "the same, pensions on cash" },
 };
-if(CASE !== "oct15")for (const h of Object.values(HORIZON)) h.band = centralOf(h.o);
+if(!V8PLUS)for (const h of Object.values(HORIZON)) h.band = centralOf(h.o);
+if (CASE === "oct16") {
+  const FY9=require("./first_year_v9.cjs"), report=FY9.run(P,MAIN,gate);
+  for(const [basis,name]of [["set","first_year_horizon"],["cash","first_year_horizon_cash"]]) {
+    HORIZON[name].band=report.variants.fixed_capital[basis];
+    HORIZON[name].src+="; canonical v9 firstYear; item13 off, item21 on; source-line coverage/count repricing; ends independently searched";
+  }
+  HORIZON.first_year_horizon_property_long_run.band=FY9.band(P,"set","fixed_capital",{...FIRST,item6_first_year:true});
+  outputs["first_year_item6_oct16.json"]=JSON.stringify(report,null,2)+"\n";
+}
 if (CASE === "oct15") {
   const FY8 = require("./first_year_v8.cjs"), report = FY8.run(P, MAIN, gate);
   for (const [basis, name] of [["set", "first_year_horizon"], ["cash", "first_year_horizon_cash"]]) {
@@ -493,9 +545,9 @@ if (LIN) {
     const minus = (b, c) => b.map((x, j) => x - c[j]);
     for (const [id, name] of [["lineage_arm_a", "arm_a"], ["lineage_arm_c", "arm_c"], ["lineage_c3_plus_1se", "c3_plus_se"],
       ["lineage_c3_minus_1se", "c3_minus_se"]]) {
-      const o = CASE === "oct15" ? (() => {
+      const o = V8PLUS ? (() => {
         const x=comp[`lineage_${name}`];
-        return {label:`v8 lineage_${name}`,set:{band_bn:x.band_bn,change_from_the_case_bn:x.band_bn.map((v,i)=>v-MAIN[i])},cash:{band_bn:x.cash_set_bn,change_from_the_case_bn:x.cash_set_bn.map((v,i)=>v-CASH_SET[i])}};
+        return {label:`${VERSION} lineage_${name}`,set:{band_bn:x.band_bn,change_from_the_case_bn:x.band_bn.map((v,i)=>v-MAIN[i])},cash:{band_bn:x.cash_set_bn,change_from_the_case_bn:x.cash_set_bn.map((v,i)=>v-CASH_SET[i])}};
       })() : comp.options[name];
       gate(`${id}: ${VERSION}.companions.options.${name} is the case plus its change and main_case_bands.csv's row, on the set and the cash set (1e-9; 5e-5)`,
         o.set.band_bn.every((x, j) => near(x, MAIN[j] + o.set.change_from_the_case_bn[j], 1e-9) && near(x, bandRow(`lineage_${name}`)[j], 5e-5))
@@ -504,13 +556,13 @@ if (LIN) {
       LINEAGE[id].by = { set: o.set.change_from_the_case_bn.slice(), cash: o.cash.change_from_the_case_bn.slice() };
       LINEAGE[id].src = `${LANE} summary.json ${VERSION}.companions.options.${name}: ${o.label.replace(/"/g, "'")}`;
     }
-    const AS = require(path.join(ROOT, CASE === "oct15" ? "main_case_2026_10_14" : LANE, "ancestry_share.cjs"));
+    const AS = require(path.join(ROOT, V8PLUS ? "main_case_2026_10_14" : LANE, "ancestry_share.cjs"));
     const SH = readJson(AS.SHARES_FILE).shares;
     const SC = { ancestry_share_low: ["g4_at_nothing", SH.G3plus.bound_low], ancestry_share_high: ["g4_at_bound", SH.G3plus.bound_high],
       ancestry_share_convention: ["convention", SH.G3plus.convention] };
     const by = {};
     for (const which of ["set", "cash"]) {
-      if (CASE === "oct15") {
+      if (V8PLUS) {
         const rs = require(path.join(ROOT, LANE,"companions.cjs")).ancestry(P,which);
         for(const [id,[scenario]]of Object.entries(SC)){
           const own=scenario==="convention"?(()=>{
@@ -591,11 +643,17 @@ if (LIN) {
 // does not carry (the pension item's, set only) moves it by 0 [APPROX: additive; at most one arm per item in a
 // combination]. Its direction is its set midpoint's.
 const ITEM_ALTS = {};
+// oct16: every arm but the set-only mixed reading is priced in bounded children on the canonical route.
+const ARM_CHILD_PRICES=CASE==="oct16"?require("./item_arm_prices.cjs").priceInChildren(
+  P.REGISTRY.filter(item=>P.CANDIDATE.includes(item.id)).flatMap(item=>Object.entries(item.arms||{}).filter(([,a])=>a)
+    .map(([arm])=>[item.id,arm]).filter(([id,arm])=>!(id==="mixed_unit_removal"&&arm==="bounded_high_plus_pension_model"))),console.log):{};
 if (ITEMS.length) {
-  const s6 = SUMMARY, v6arms = CASE === "oct15" ? Object.fromEntries(P.REGISTRY.flatMap(item=>Object.entries(item.arms||{}).filter(([,a])=>a).map(([arm,a])=>{
+  const s6 = SUMMARY, v6arms = V8PLUS ? Object.fromEntries(P.REGISTRY.filter(item=>P.CANDIDATE.includes(item.id)).flatMap(item=>Object.entries(item.arms||{}).filter(([,a])=>a).map(([arm,a])=>{
+    const armStarted=performance.now();
     const id=`${item.id}_${arm}`,setOnly=item.id==="mixed_unit_removal"&&arm==="bounded_high_plus_pension_model";
     let b,cash;
     if(setOnly){const z=P.MIXED.get(null,"set",arm);b=[0,1].map(i=>MAIN[i]+z[["low","high"][i]]-P.POST_ENGINE.mixed_unit_removal[["low","high"][i]]);cash=s6.cash_set.band_bn;}
+    else if(CASE==="oct16"){const z=ARM_CHILD_PRICES[`${item.id}:${arm}`];b=z.band_bn.slice();cash=z.cash_bn.slice();}
     else {const Q=P.caseOf(P.OCT05,P.CANDIDATE,{[item.id]:arm});b=Q.central({});cash=Q.CASH.central({});}
     // The case's source gate declares this arm idempotent once item9 is on.
     // Verify exact package parity, then represent the proven no-op as zero; a
@@ -606,15 +664,21 @@ if (ITEMS.length) {
       if(!ok)throw Error("[BLOCKED] domestic-source no-op does not match the exact package");
       b=MAIN.slice();cash=s6.cash_set.band_bn.slice();
     }
+    if(CASE==="oct16"&&b.every((v,i)=>near(v,MAIN[i],1e-9))&&cash.every((v,i)=>near(v,s6.cash_set.band_bn[i],1e-9))){
+      b=MAIN.slice();cash=s6.cash_set.band_bn.slice();
+    }
+    console.log(`  priced item arm ${id}; wall ${((performance.now()-armStarted)/1000).toFixed(3)}s`);
     return [id,{item:item.id,label:a.label||arm,band_bn:b,change_from_the_case_bn:b.map((v,i)=>v-MAIN[i]),cash:{band_bn:cash,change_from_the_cash_set_bn:cash.map((v,i)=>v-s6.cash_set.band_bn[i])}}];
   }))) : s6[VERSION].arms;
   for (const [id, a] of Object.entries(v6arms)) {
     const set = a.change_from_the_case_bn, cash = a.cash ? a.cash.change_from_the_cash_set_bn : [0, 0];
-    const cashRow = (CASE === "oct14" && !P.REGISTRY.find((r) => r.id === a.item).cash.applies) || (CASE === "oct15"&&id==="mixed_unit_removal_bounded_high_plus_pension_model") ? "cash_set" : `${id}_cash_set`;
-    gate(`item arm ${id}: its band is the case plus its change (1e-9) and main_case_bands.csv's row (5e-5), on both sets`,
-      a.band_bn.every((x, j) => near(x, MAIN[j] + set[j], 1e-9) && near(x, bandRow(id)[j], 5e-5))
-      && (!a.cash || a.cash.band_bn.every((x, j) => near(x, s6.cash_set.band_bn[j] + cash[j], 1e-9) && near(x, bandRow(cashRow)[j], 5e-5))));
-    ITEM_ALTS[id] = { item: a.item, dir: mid(set) < 0 ? "down" : "up", by: { set, cash },
+    const cashRow = (CASE === "oct14" && !P.REGISTRY.find((r) => r.id === a.item).cash.applies) || (V8PLUS&&id==="mixed_unit_removal_bounded_high_plus_pension_model") ? "cash_set" : `${id}_cash_set`;
+    const published=currentBandRow(id),publishedCash=currentBandRow(cashRow);
+    if(CASE==="oct16")publishedCrossChecks[published?"item_arms_checked":"item_arms_without_current_row"].push(id);
+    gate(`item arm ${id}: its band is the case plus its change (1e-9), and current published rows (5e-5); historical rows excluded`,
+      a.band_bn.every((x, j) => near(x, MAIN[j] + set[j], 1e-9) && (!published||near(x, published[j], 5e-5)))
+      && (!a.cash || a.cash.band_bn.every((x, j) => near(x, s6.cash_set.band_bn[j] + cash[j], 1e-9) && (!publishedCash||near(x, publishedCash[j], 5e-5)))));
+    ITEM_ALTS[id] = { item: a.item, listed:CASE==="oct16"&&id==="one_rate_capital_7pct",dir: mid(set) < 0 ? "down" : "up", by: { set, cash },
       src: `${LANE} summary.json ${VERSION}.arms ${id} (item ${a.item}): ${a.label.replace(/"/g, "'")}` };
   }
   // An arm's cash change may run against its set direction: coverage's DA-through-29 arm lowers the set and raises the
@@ -646,7 +710,7 @@ for (const [id, x] of Object.entries(Object.assign({}, LINEAGE, LINEAGE_LISTED))
 }
 for (const [id, x] of Object.entries(ITEM_ALTS)) {
   const b = [MAIN[0] + x.by.set[0], MAIN[1] + x.by.set[1]];
-  armRows.push([id, x.dir, "item", b[0], b[1], mid(b), 100 * (mid(b) / M - 1), `"${x.src}"`]);
+   armRows.push([id, x.dir, x.listed?"item (listed alias of capital_7pct)":"item", b[0], b[1], mid(b), 100 * (mid(b) / M - 1), `"${x.src}"`]);
 }
 outputs[`c1_arms_${CASE}.csv`] = csvText(armRows);
 
@@ -659,7 +723,7 @@ function subsetBand(ids) {
   const engineIds = ids.filter((id) => ARMS[id]);
   for (const id of engineIds) Object.assign(o, ARMS[id].o);
   const key = engineIds.join("+");
-  if (!joint.has(key)) joint.set(key, centralOf(o));
+  if (!joint.has(key)) {const t0=performance.now();joint.set(key, centralOf(o));console.log(`  joint engine run ${joint.size} [${key||"none"}]; wall ${((performance.now()-t0)/1000).toFixed(3)}s`);}
   const b = joint.get(key).slice();
   for (const id of ids) if (ADD[id]) { b[0] += ADD[id].by[0]; b[1] += ADD[id].by[1]; }
   const which = o.pension4 === "cash" ? "cash" : "set";
@@ -672,13 +736,16 @@ const searchReceipt={case:CASE,coverage:"all eligible source arms in the declare
   combination_model:"Engine arms are jointly repriced. ADD amounts and delivered LINEAGE/ITEM_ALTS deltas are added to that joint band, on the selected set/cash basis. Lineage/item alternatives retain their declared additive transport approximation; subsets are not all jointly remeasured in the full engine.",directions:{}};
 for (const dir of ["down", "up"]) {
   const lin = Object.keys(LINEAGE).filter((k) => LINEAGE[k].dir === dir);
-  const itm = Object.keys(ITEM_ALTS).filter((k) => ITEM_ALTS[k].dir === dir);
+  const itm = Object.keys(ITEM_ALTS).filter((k) => ITEM_ALTS[k].dir === dir&&!ITEM_ALTS[k].listed);
   const ids = Object.keys(ARMS).filter((k) => ARMS[k].dir === dir).concat(Object.keys(ADD).filter((k) => ADD[k].dir === dir)).concat(lin).concat(itm);
-  const itemGroups=Object.values(itm.reduce((by,id)=>{(by[ITEM_ALTS[id].item]??=[]).push(id);return by;},{}));
-  const groups=ids.filter(id=>!LINEAGE[id]&&!ITEM_ALTS[id]).map(id=>[id]).concat(lin.length?[lin]:[],itemGroups);
+  const grouped=ids.filter(id=>ITEM_ALTS[id]||ARMS[id]?.item);
+  const itemGroups=Object.values(grouped.reduce((by,id)=>{(by[(ITEM_ALTS[id]||ARMS[id]).item]??=[]).push(id);return by;},{}));
+  const groups=ids.filter(id=>!LINEAGE[id]&&!ITEM_ALTS[id]&&!ARMS[id]?.item).map(id=>[id]).concat(lin.length?[lin]:[],itemGroups);
   const started=performance.now();
   const searched=require("./minimal_subsets.cjs").minimalCrossings(groups,subsetBand,
-    b=>dir==="down"?mid(b)<LOW_CUT:mid(b)>HIGH_CUT);
+    b=>dir==="down"?mid(b)<LOW_CUT:mid(b)>HIGH_CUT,
+    x=>console.log(`  ${dir} search size ${x.size}/${groups.length}: ${x.evaluated} evaluated, ${x.minimal_crossings} minimal, ${joint.size} joint engine runs; wall ${((performance.now()-started)/1000).toFixed(1)}s`),
+    C1_MAX_SIZE);
   const minimal=searched.cuts.map(x=>({...x,set:x.set.sort((a,b)=>ids.indexOf(a)-ids.indexOf(b))}));
   searchReceipt.directions[dir]={groups,...searched.counts,proof:searched.proof};
   console.log(`  exact ${dir} search: ${ids.length} arms, ${groups.length} groups; ${searched.counts.evaluated} evaluated / ${searched.counts.eligible_nonempty_sets} eligible; ${minimal.length} minimal crossings; wall ${(performance.now()-started)/1000}s`);
@@ -693,12 +760,17 @@ for (const dir of ["down", "up"]) {
     if (!most[k] || Math.abs(mid(ITEM_ALTS[id].by.set)) > Math.abs(mid(ITEM_ALTS[most[k]].by.set))) most[k] = id;
   }
   const base = ids.filter((id) => !LINEAGE[id] && (!ITEM_ALTS[id] || most[ITEM_ALTS[id].item] === id));
+  if(CASE==="oct16")for(const item of new Set(base.map(id=>(ARMS[id]||ITEM_ALTS[id])?.item).filter(Boolean))){
+    const family=base.filter(id=>(ARMS[id]||ITEM_ALTS[id])?.item===item);
+    if(family.length>1){const keep=family.reduce((a,b)=>Math.abs(mid(subsetBand([a]))-M)>=Math.abs(mid(subsetBand([b]))-M)?a:b);for(const id of family)if(id!==keep)base.splice(base.indexOf(id),1);}
+  }
   for (const stack of pick.length ? [base, base.concat(pick)] : [base]) {
     const all = subsetBand(stack);
     cutRows.push([dir, "ALL:" + stack.join("+"), stack.length, all[0], all[1], mid(all), 100 * (mid(all) / M - 1), "stack"]);
   }
 }
 outputs[`c1_min_cuts_${CASE}.csv`] = csvText(cutRows);
+if(CASE==="oct16"){searchReceipt.max_size_searched=C1_MAX_SIZE;searchReceipt.published_cross_checks=publishedCrossChecks;}
 outputs[`c1_search_${CASE}.json`]=JSON.stringify(searchReceipt,null,2)+"\n";
 console.log(`  thresholds: midpoint ${M.toFixed(2)}, a quarter down ${LOW_CUT.toFixed(2)}, up ${HIGH_CUT.toFixed(2)}`);
 
@@ -710,10 +782,11 @@ gate(`v4's payload opens with the September 27 payload's ${N27} edits, unchanged
   payload.edits.slice(0, N27).every((e, k) => JSON.stringify(e) === JSON.stringify(p27.edits[k])), `${payload.edits.length} edits in all`);
 // oct05: the lineage's edits (its cells, then row 8's move) close the payload and are held in every run, after v4's items.
 const LIN_FIRST = LIN ? LIN.edits.first : payload.edits.length;
+const orderedEditRecords=CASE==="oct16"?payload.meta.items.filter(r=>r.applied&&r.edits):ITEMS;
 if (LIN) gate(ITEMS.length ? "the lineage's edits come before the items', row 8's move last, and the items' edits close the payload in order"
   : "the lineage's edits close the payload, row 8's move last", LIN.edits.first + LIN.edits.count === ITEM_FIRST
-  && LIN.edits.row8_edit_index === ITEM_FIRST - 1 && ITEMS.every((r, k) => r.edits.first === (k ? ITEMS[k - 1].edits.first + ITEMS[k - 1].edits.count : ITEM_FIRST))
-  && (ITEMS.length ? ITEMS[ITEMS.length - 1].edits.first + ITEMS[ITEMS.length - 1].edits.count : ITEM_FIRST) === payload.edits.length);
+  && LIN.edits.row8_edit_index === ITEM_FIRST - 1 && orderedEditRecords.every((r, k) => r.edits.first === (k ? orderedEditRecords[k - 1].edits.first + orderedEditRecords[k - 1].edits.count : ITEM_FIRST))
+  && (orderedEditRecords.length ? orderedEditRecords[orderedEditRecords.length - 1].edits.first + orderedEditRecords[orderedEditRecords.length - 1].edits.count : ITEM_FIRST) === payload.edits.length);
 const DATASET = payload.edits.slice(0, N27), TAIL = payload.edits.slice(N27, LIN_FIRST), LINT = payload.edits.slice(LIN_FIRST);
 gate("the dataset corrections have only receipt and spending edits", DATASET.every((e) => (e.side === "receipt" || e.side === "spending") && e.by));
 // v4's items with a subset of the dataset corrections, in the payload's order (the tail's national-scale edits scale the
@@ -737,7 +810,7 @@ const prefKey = (id) => MODEL.spending.lines.find((l) => l.id === id).preferred_
 gate("the tail's pension switch is one Social Security and one Medicare edit, each on the line's preferred key",
   TAIL_SS.length === 1 && TAIL_MED.length === 1 && TAIL_SS[0].key === prefKey("social_security") && TAIL_MED[0].key === prefKey("medicare"));
 const benefit = (m, id, a) => { const l = m.spending.lines.find((x) => x.id === id); return l.keys[l.preferred_key][a].target_bn; };
-const completionCell=(side,line,a)=>CASE === "oct15" ? sum(payload.edits.slice(payload.meta.items.find(r=>r.id==="union_completion").edits.first,payload.meta.items.find(r=>r.id==="union_completion").edits.first+payload.meta.items.find(r=>r.id==="union_completion").edits.count).filter(e=>e.side===side&&e.line===line&&(side==="receipt"?e.scenario===REF:e.key===prefKey(line))).map(e=>e.by[a])) : 0;
+const completionCell=(side,line,a)=>V8PLUS ? sum(payload.edits.slice(payload.meta.items.find(r=>r.id==="union_completion").edits.first,payload.meta.items.find(r=>r.id==="union_completion").edits.first+payload.meta.items.find(r=>r.id==="union_completion").edits.count).filter(e=>e.side===side&&e.line===line&&(side==="receipt"?e.scenario===REF:e.key===prefKey(line))).map(e=>e.by[a])) : 0;
 const completionOasdi=a=>sum(ACC.oasdi_lines.map(id=>completionCell("receipt",id,a)))+ACC.se_oasdi_share*completionCell("receipt",ACC.se_line,a);
 // oct07: the union's Medicare switch is the tail's edit plus the edit sets' union_* parts on Medicare.
 const tailMed = (a) => TAIL_MED[0].by[a] + ITEM_PEN.union.medicare[a];
@@ -775,18 +848,28 @@ if (LIVE_PERSONAL) gate(`the cash payload equals summary.json ${VERSION}.cash_se
 const tallyRows = [["model", "end", "spec", "direct_receipts_bn", "household_transfers_bn", "tally_bn", "scheduled_move_bn", "tally_at_scheduled_bn"]];
 const tallyModels = [["case_accrual", P, m29, true], ["cash_set", PC, mCash, false],
   ["v4_items_without_dataset_corrections", P, R.base.m, true], ["v4_items_without_dataset_corrections_increments_held", P, mBase, true],
-  ["uncorrected_no_v4_items", P, CASE === "oct15"?P.withSyntheticLines(MODEL):MODEL, false]];
-if(CASE === "oct15"){
+  ["uncorrected_no_v4_items", P, V8PLUS?P.withSyntheticLines(MODEL):MODEL, false]];
+if(V8PLUS){
   if(C2_POSTENGINE_CLASS_RULE==="stop")throw Error("[BLOCKED] C2 post-engine receipt/transfer-class split undeclared");
   console.log("[GAP] C2 class-defined tally excludes unclassified mixed-unit/coverage net costs; service break-even includes them in full");
 }
-function directTally(pkg,ev){
+function directTally(pkg,ev,full){
   let rec=ev.classes.direct_receipts.responsive_bn,tr=ev.classes.household_transfer.responsive_bn;
-  if(CASE === "oct15")for(const [id,src]of Object.entries(pkg.correctionsPayload().meta.union_completion.carriers))if(src.kind==="line"){
+  if(V8PLUS)for(const [id,src]of Object.entries(pkg.correctionsPayload().meta.union_completion.carriers))if(src.kind==="line"){
     const carrier=ev.spending.find(r=>r.id===id),parent=(src.side==="receipt"?ev.receipts:ev.spending).find(r=>r.id===src.parent_line);
     if(!carrier||!parent)throw Error(`[BLOCKED] C2 completion class lacks carrier/parent ${id}`);
     if(src.side==="receipt"&&parent.group==="direct_receipts")rec-=carrier.amount_bn*carrier.response;
     if(src.side==="spending"&&parent.response_class==="household_transfer")tr+=carrier.amount_bn*carrier.response;
+  }
+  if(CASE==="oct16"){
+    if(!full?.v9_post_engine?.parts)throw Error("[BLOCKED] C2 v9 classified post parts absent");
+    for(const parts of Object.values(full.v9_post_engine.parts))for(const p of parts){
+      const line=ev.spending.find(r=>r.id===p.line);
+      if(line?.response_class==="household_transfer"){
+        if(!Number.isFinite(p.delta_bn))throw Error("[BLOCKED] C2 non-finite classified post amount");
+        tr+=p.delta_bn;
+      }
+    }
   }
   return [rec,tr];
 }
@@ -816,14 +899,15 @@ const itemCarriers = () => ITEMS.flatMap((r) => {
   });
 });
 if (LIN) {
-  const mU = Engine.applyCorrections(P.SEPT29.payloadModel(), { lines: CASE === "oct15" ? payload.lines.filter(l=>l.family==="union_completion_carrier") : [], receipt_lines: itemCarriers(), edits: [payload.edits[LIN.edits.row8_edit_index]].concat(itemUnion()) });
+  let mU = Engine.applyCorrections(P.SEPT29.payloadModel(), { lines: V8PLUS ? payload.lines.filter(l=>l.family==="union_completion_carrier") : [], receipt_lines: itemCarriers(), edits: [payload.edits[LIN.edits.row8_edit_index]].concat(itemUnion()) });
+  if(CASE==="oct16")for(const {x}of P.V9_BUILT)mU=Engine.applyCorrections(mU,{edits:x.editsAt?x.editsAt(mU,{}):x.edits,meta:mU.corrections});
   tallyModels.push(["union_at_case_responses", P, mU, "union"]);
 }
 for (const [lab, pkg, m, accrual] of tallyModels) {
   const sched = accrual ? schedAdd(m, accrual === true && Boolean(LIN)) : null;
   ENDS.forEach(([end, i], j) => {
-    const ev = pkg.evaluateFull(m, pkg.MAIN_SPECS[i]).evaluation;
-    const [rec,tr] = directTally(pkg,ev);
+    const full = pkg.evaluateFull(m, pkg.MAIN_SPECS[i]),ev=full.evaluation;
+    const [rec,tr] = directTally(pkg,ev,full);
     tallyRows.push([lab, end, i, rec, tr, rec - tr, accrual ? sched[j] : "", accrual ? rec - tr - sched[j] : ""]);
   });
 }
@@ -831,8 +915,8 @@ if (LIN && LIVE_PERSONAL) {
   for (const arm of ["a", "c"]) {
     const variant = P.caseOf(P.OCT05, P.CANDIDATE, {}, `arm_${arm}`), model = variant.payloadModel();
     ENDS.forEach(([end, i]) => {
-      const ev = variant.evaluateFull(model, variant.MAIN_SPECS[i]).evaluation;
-      const [rec,tr] = directTally(variant,ev);
+      const full = variant.evaluateFull(model, variant.MAIN_SPECS[i]),ev=full.evaluation;
+      const [rec,tr] = directTally(variant,ev,full);
       tallyRows.push([`lineage_arm_${arm}`, end, i, rec, tr, rec - tr, "", ""]);
     });
   }
@@ -874,12 +958,13 @@ outputs[`c2_tally_${CASE}.csv`] = csvText(tallyRows);
 const GG = P.RESPONSES.general_government;
 const PAIRS = S24.PAIRS.map((p) => ({ ...p, g: p.end === "least" ? GG.low : GG.high }));
 const readingOf = (g) => (g === GG.low ? "low" : g === GG.high ? "high" : null);
+const generationServicePosts=new Map(),generationServiceShares=new Map();
 function withCase(pkg, variant, f) {
   const enterprise = [ENTERPRISE_RECEIPT].concat(pkg.ENTERPRISE_SPLITS.map((id) => "receipt:" + id));
   const fixed = Object.entries(pkg.LINE_RESPONSES).filter(([k]) => k.startsWith("receipt:") && !enterprise.includes(k));
-  const carriers = CASE === "oct15" ? pkg.correctionsPayload().meta.union_completion.carriers : {};
+  const carriers = V8PLUS ? pkg.correctionsPayload().meta.union_completion.carriers : {};
   const evaluate = Engine.evaluate;
-  Engine.evaluate = (m, st) => {
+  const sweepAt = (Q, m, st) => {
     const s = st.service_response;
     const reading = readingOf(st.general_government_response);
     if (!reading) throw new Error(`[BLOCKED] general government at ${st.general_government_response}, neither adopted response`);
@@ -897,9 +982,64 @@ function withCase(pkg, variant, f) {
       extra[id]=key===src.parent_key?parent.response:0;
     }
     if(Object.keys(carriers).length)ev=evaluate(m,Object.assign({},st,{response_override:Object.assign({},st.response_override,extra)}));
-    const cap = pkg.capitalReturn(ev, { share: st.school_share, reading, rate: RATES[reading], enterprises: ENTERPRISES, long_run: null });
+    const cap = Q.capitalReturn(ev, { share: st.school_share, reading, rate: RATES[reading], enterprises: ENTERPRISES, long_run: null });
     const ent = cap.components.filter((c) => c.group === "enterprise").reduce((a, c) => a + c.return_bn, 0);
-    const post=CASE === "oct15" ? pkg.postEngine({reading}) : 0;
+    const adjustedCapital=atS?{...cap,total_bn:cap.total_bn-(1-s)*ent,components:cap.components.map(c=>c.group==="enterprise"?{...c,return_bn:c.return_bn*s}:c)}:cap;
+    return {s,reading,atS,ev,cap,ent,adjustedCapital};
+  };
+  Engine.evaluate = (m, st) => {
+    const {s,reading,atS,ev,cap,ent,adjustedCapital}=sweepAt(pkg,m,st);
+    // This is a steady-state service sweep, not the first-year companion.
+    // Match the final case's explicit distinction so item13 stays selected.
+    const spec={allocation:st.allocation,reading,share:st.school_share,school:s,gg:st.general_government_response,uc:st.uncompensated_care_response,rate:pkg.RATES[reading],enterprises:pkg.ENTERPRISES,long_run:CASE==="oct16"?true:null};
+    // generationParts re-evaluates the generation models from a specification (stateOf needs its production
+    // normalization); carry the sweep state's own, never a default.
+    const plainSpec={...spec};
+    if(CASE==="oct16"&&pkg._generation){
+      // generationParts re-evaluates the generation models and the union from a complete specification: take the
+      // case's own specification at this reading, allocation and normalization (its line responses, justice key),
+      // then the sweep's service, government, care, rate and enterprise fields. Its post amounts are therefore
+      // at the case's other line responses, not the sweep's wrapper overrides [APPROX]; the welfare closure below
+      // tests the generation parts against the union at three service responses.
+      const norm=st.production?.normalization;
+      const matches=pkg._full.ALL_SPECS.filter(x=>x.reading===reading&&x.allocation===st.allocation&&x.normalization===norm),base=matches[0];
+      if(!base)throw Error(`[BLOCKED] no case specification at ${reading}/${st.allocation}/${norm} for the generation sweep`);
+      if(new Set(matches.map(x=>JSON.stringify([x.line_responses,x.justice,x.long_run]))).size!==1)
+        throw Error(`[BLOCKED] case specifications at ${reading}/${st.allocation}/${norm} disagree on line responses`);
+      Object.assign(spec,{...JSON.parse(JSON.stringify(base)),...spec,normalization:norm,long_run:base.long_run});
+      if(!spec.long_run)throw Error("[BLOCKED] generation sweep specification is not long-run");
+    }
+    let post;
+    if(CASE==="oct16"&&pkg._generation){
+      // The union's v9 additions at this sweep point (the union path's own rule below), split across generations by
+      // generationParts' shares of each item at the case specification [APPROX: a generation's share of an item is
+      // held at the case's other line responses]. Both are evaluated with the base engine; re-entering this wrapper
+      // would recurse. The welfare closure gate tests the generation parts against the union.
+      const active=Engine.evaluate;Engine.evaluate=evaluate;
+      try{
+        const U=pkg._full,which=U===P?"set":"cash",at=JSON.stringify([which,atS,plainSpec]);
+        if(!generationServicePosts.has(at)){
+          const um=U.payloadModel(),u=sweepAt(U,um,st);
+          generationServicePosts.set(at,U.postFor(um,plainSpec,undefined,{evaluation:u.ev,capital:u.adjustedCapital}).amounts);
+        }
+        const shareKey=JSON.stringify([which,pkg._convention,spec]);
+        if(!generationServiceShares.has(shareKey)){
+          const z=require("../generation_account_2026_09_24/v9_split.cjs").generationParts(U,spec,pkg._convention);
+          const ids=new Set(Object.values(z.posts).flatMap(p=>Object.keys(p)));
+          generationServiceShares.set(shareKey,Object.fromEntries([...ids].map(id=>{
+            const total=sum(Object.values(z.posts).map(p=>p[id]||0));
+            return [id,total?Object.fromEntries(Object.entries(z.posts).map(([g,p])=>[g,(p[id]||0)/total])):null];
+          })));
+        }
+        const shares=generationServiceShares.get(shareKey);let mine=0;
+        for(const [id,amount]of Object.entries(generationServicePosts.get(at))){
+          if(!amount)continue;
+          if(!shares[id])throw Error(`[BLOCKED] ${CASE} sweep: item ${id} moves the union (${amount}) but has no generation shares at the case specification`);
+          mine+=amount*shares[id][pkg._generation];
+        }
+        post=pkg.postEngine(spec)+mine;
+      }finally{Engine.evaluate=active;}
+    }else post=CASE==="oct16" ? pkg.OCT15.postEngine(spec)+pkg.postFor(m,spec,undefined,{evaluation:ev,capital:adjustedCapital}).total_bn : CASE === "oct15" ? pkg.postEngine(spec) : 0;
     return Object.assign({}, ev, { welfare_bn: ev.welfare_bn - (cap.total_bn - (atS ? (1 - s) * ent : 0)) - post });
   };
   try { return f(); } finally { Engine.evaluate = evaluate; }
@@ -949,6 +1089,7 @@ const GEN = "generation_account_2026_09_24/derived";
 const genRows = [["case", "convention", "generation", "cost_low_end_bn", "cost_high_end_bn", "break_even_personal_most", "break_even_personal_least",
   "break_even_shared_most", "break_even_shared_least"]];
 const genHashes = [["file", "sha256"]];
+const GEN_V8_EVALUATORS={};
 for (const [lab, pkg, file, results] of [["case_accrual", P, `generation_corrections_${CASE}.json`, `generation_results_${CASE}.csv`],
   ["cash_set", PC, `generation_corrections_${CASE}_cash.json`, `generation_results_${CASE}_cash.csv`]]) {
   const missing = [file, results].filter((f) => !fs.existsSync(path.join(ROOT, GEN, f)));
@@ -957,37 +1098,71 @@ for (const [lab, pkg, file, results] of [["case_accrual", P, `generation_correct
     continue;
   }
   genHashes.push([`${GEN}/${file}`, sha256(`${GEN}/${file}`)], [`${GEN}/${results}`, sha256(`${GEN}/${results}`)]);
-  if(CASE==="oct15")for(const rel of [`${GEN}/${file}`,`${GEN}/${results}`])
+  if(V8PLUS)for(const rel of [`${GEN}/${file}`,`${GEN}/${results}`])
     if(sha256(rel)!==generationPreflightHashes.get(rel))throw Error(`[BLOCKED] generation input changed during break run: ${rel}`);
   const gp = readJson(`${GEN}/${file}`).payloads;
   const res = readCsv(`${GEN}/${results}`);
   const meta = pkg.correctionsPayload().meta;
   for (const conv of ["a", "b"]) {
-    const costs = { low: 0, high: 0 };
+    const costs = { low: 0, high: 0 }, payloadRoute = { low: 0, high: 0 };
+    const scopedModels=[];
     for (const g of ["G1", "G2", "G3plus"]) {
       const raw = readJson(`${GEN}/${conv === "a" ? `model_${g}.json` : `model_b_${g}.json`}`);
-      const generationMeta=CASE === "oct15"?gp[conv][g].meta:meta;
-      if(CASE === "oct15"&&generationMeta?.generation!==g)throw Error(`[BLOCKED] scoped generation metadata absent for ${conv}/${g}`);
+      const generationMeta=V8PLUS?gp[conv][g].meta:meta;
+      if(V8PLUS&&generationMeta?.generation!==g)throw Error(`[BLOCKED] scoped generation metadata absent for ${conv}/${g}`);
       const mg = Engine.applyCorrections(raw, Object.assign({}, gp[conv][g], { meta:generationMeta }));
       const row = (end) => res.find((r) => r.convention === conv && r.generation === g && r.band_end === end);
-      const scoped = CASE === "oct15" ? {...pkg,postEngine:s=>{
+      const scoped = V8PLUS ? {...pkg,_generation:g,_convention:conv,_full:pkg,postEngine:s=>{
         const mixed=generationMeta.mixed_unit_removal.by_end[s.reading].total_bn;
         const coverage=generationMeta.coverage.by_end[s.reading].total_bn;
         if(!Number.isFinite(mixed)||!Number.isFinite(coverage))throw Error(`[BLOCKED] ${CASE} ${g} post-engine generation parts absent`);
         return mixed+coverage;
       }} : pkg;
-      const costAt=i=>{const s=pkg.MAIN_SPECS[i],r=pkg.evaluateFull(mg,s);return r.cost_bn-(CASE === "oct15"?pkg.postEngine(s)-scoped.postEngine(s):0);};
+      scopedModels.push([scoped,mg]);
+      const costAt=i=>{
+        const s=pkg.MAIN_SPECS[i];
+        if(CASE==="oct16")return require("../generation_account_2026_09_24/v9_split.cjs").generationParts(pkg,s,conv).costs[g];
+        const r=pkg.evaluateFull(mg,s);return r.cost_bn-(CASE === "oct15"?pkg.postEngine(s)-scoped.postEngine(s):0);
+      };
       const lo = costAt(endNumbers[0]), hi = costAt(endNumbers[1]);
       gate(`${lab} ${conv} ${g}: the corrected model reproduces ${results} at ${endNumbers.join(" / ")} (1e-6)`,
         near(lo, +row("low").cost_bn, 1e-6) && near(hi, +row("high").cost_bn, 1e-6), `${lo.toFixed(4)} / ${hi.toFixed(4)}`);
+      if(CASE==="oct16"){
+        // generationParts is the producer's own route, so the gate above replays it. Price the published
+        // payload by its declared consumer rule too: the inherited v8 evaluator on this generation's payload
+        // model, plus that payload's v9_posts_by_spec at the same specification.
+        const which=lab==="case_accrual"?"set":"cash";
+        const ev8=(GEN_V8_EVALUATORS[which]??=(()=>{const G8=require("../generation_account_2026_09_24/v8_split.cjs"),L=G8.loadCase(which);return G8.evaluator(L.payload,L.api);})());
+        const consumer=i=>{
+          const declared=generationMeta.v9_posts_by_spec?.[i];
+          if(!declared||JSON.stringify(generationMeta.v9_specs?.[i])!==JSON.stringify(pkg.MAIN_SPECS[i]))
+            throw Error(`[BLOCKED] ${CASE} ${conv}/${g}: payload v9 posts/specification ${i} absent or not the case's`);
+          return ev8.evaluateFull(mg,pkg.MAIN_SPECS[i]).cost_bn+sum(Object.values(declared));
+        };
+        const plo=consumer(endNumbers[0]),phi=consumer(endNumbers[1]);
+        payloadRoute.low+=plo;payloadRoute.high+=phi;
+        gate(`${lab} ${conv} ${g}: the payload's consumer rule reproduces ${results} at ${endNumbers.join(" / ")} (1e-6)`,
+          near(plo, +row("low").cost_bn, 1e-6) && near(phi, +row("high").cost_bn, 1e-6), `${plo.toFixed(4)} / ${phi.toFixed(4)}`);
+      }
       costs.low += lo; costs.high += hi;
       const bp = withCase(scoped, "enterprises_at_s", () => S24.breakEven(mg, "personal", PAIRS));
       const bs = withCase(scoped, "enterprises_at_s", () => S24.breakEven(mg, "shared", PAIRS));
       genRows.push([lab, conv, g, lo, hi, bp[0], bp[1], bs[0], bs[1]]);
     }
     const want = lab === "case_accrual" ? MAIN : CASH;
-    gate(`${lab} ${conv}: the three generations add to the case at ${endNumbers.join(" / ")} (${CASE === "oct15" ? "1e-9" : "1e-6"})`, near(costs.low, want[0], CASE === "oct15"?1e-9:1e-6) && near(costs.high, want[1], CASE === "oct15"?1e-9:1e-6),
+    gate(`${lab} ${conv}: the three generations add to the case at ${endNumbers.join(" / ")} (${V8PLUS ? "1e-9" : "1e-6"})`, near(costs.low, want[0], V8PLUS?1e-9:1e-6) && near(costs.high, want[1], V8PLUS?1e-9:1e-6),
       `${costs.low.toFixed(4)} / ${costs.high.toFixed(4)}`);
+    if(CASE==="oct16")gate(`${lab} ${conv}: the payload consumer route's three generations add to the case (1e-6)`,
+      near(payloadRoute.low,want[0],1e-6)&&near(payloadRoute.high,want[1],1e-6),`${payloadRoute.low.toFixed(4)} / ${payloadRoute.high.toFixed(4)}`);
+    if(CASE==="oct16"){
+      const whole=pkg.payloadModel(),production=S24.productions(1)[0],share=S24.SHARES[0];let gap=0;
+      for(const allocation of ["personal","shared"])for(const pair of PAIRS)for(const service of [0,.37,1]){
+        const full=withCase(pkg,"enterprises_at_s",()=>S24.welfare(whole,allocation,service,pair,production,share));
+        const parts=sum(scopedModels.map(([Q,m])=>withCase(Q,"enterprises_at_s",()=>S24.welfare(m,allocation,service,pair,production,share))));
+        gap=Math.max(gap,Math.abs(parts-full));
+      }
+      gate(`${lab} ${conv}: generation service-response welfare closes at0/.37/1 and both allocations (1e-9)`,gap<=1e-9,gap.toExponential(3));
+    }
   }
 }
 outputs[`c6_generation_break_even_${CASE}.csv`] = csvText(genRows);
@@ -997,6 +1172,7 @@ if (failures) {
   console.error(`[BLOCKED] ${failures} gate(s) failed; nothing written`);
   process.exit(1);
 }
+if(CASE==="oct16")require("../main_case_2026_10_16/memory_guard.cjs").requireWithinBudget("break conditions v9");
 fs.mkdirSync(OUT, { recursive: true });
 for (const [name, text] of Object.entries(outputs)) fs.writeFileSync(path.join(OUT, name), text);
 console.log("\n[written] " + Object.keys(outputs).join(", "));

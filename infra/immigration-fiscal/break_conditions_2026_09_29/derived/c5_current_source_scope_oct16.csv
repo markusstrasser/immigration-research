@@ -1,0 +1,5 @@
+case,basis,end,identified_federal_cash_bn,identified_state_local_cash_bn,unlocated_source_total_bn,complete_state_local_share_pct,legacy_interest_bn,scope
+oct16,set,low,18.048806259236716,212.77081193348275,2.6801444616315178,,,identified current cash only; full payer/timing and historical financing unmeasured; capital resource cost never borrowing
+oct16,set,high,57.02582083198453,234.6976450026434,6.61556065140066,,,identified current cash only; full payer/timing and historical financing unmeasured; capital resource cost never borrowing
+oct16,cash,low,18.048806259236716,212.77081193348275,2.688845312833268,,,identified current cash only; full payer/timing and historical financing unmeasured; capital resource cost never borrowing
+oct16,cash,high,57.02582083198453,234.6976450026434,6.62426150260233,,,identified current cash only; full payer/timing and historical financing unmeasured; capital resource cost never borrowing

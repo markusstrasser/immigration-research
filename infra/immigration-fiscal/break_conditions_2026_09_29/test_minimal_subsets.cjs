@@ -21,6 +21,19 @@ for(let trial=0;trial<80;trial++) {
   const crosses=b=>b[0]>8;
   assert.deepEqual(canonical(minimalCrossings(groups,band,crosses).cuts),canonical(brute(groups,band,crosses)));
 }
+for(let trial=0;trial<40;trial++) {
+  const groups=Array.from({length:7},(_,i)=>Array.from({length:1+(i%3)},(_,j)=>`${i}_${j}`));
+  const weights=Object.fromEntries(groups.flat().map(id=>[id,Math.floor(random()*9)-3]));
+  const band=set=>{const v=set.reduce((n,id)=>n+weights[id],0)+(set.length%2?0:-3);return [v,v];};
+  const crosses=b=>b[0]>5;
+  for(const cap of [1,2,3]) {
+    const r=minimalCrossings(groups,band,crosses,null,cap);
+    assert.deepEqual(canonical(r.cuts),canonical(brute(groups,band,crosses).filter(x=>x.set.length<=cap)));
+    assert.equal(r.counts.max_size_searched,cap);assert.equal(r.counts.complete,false);assert.match(r.proof,/not enumerated/);
+  }
+}
+assert.equal(minimalCrossings([["a"],["b"]],s=>[s.length,s.length],b=>b[0]>1).counts.complete,true);
+assert.throws(()=>minimalCrossings([["a"]],()=>[0,0],()=>false,null,0),/size cap/);
 const many=[Array.from({length:40},(_,i)=>`exclusive_${i}`),["independent"]];
 const tested=minimalCrossings(many,set=>[set.length,set.length],b=>b[0]>1);
 assert.equal(tested.cuts.length,40);
@@ -34,8 +47,10 @@ validateGenerationPayloads(generation(),full,"oct15");
 const missing=generation();delete missing.a.G1.meta.coverage;
 assert.throws(()=>validateGenerationPayloads(missing,full,"oct15"),/missing coverage/);
 const stale=generation();stale.a.G1.meta.adopted=null;
-assert.throws(()=>validateGenerationPayloads(stale,full,"oct15"),/stale case\/generation stamp/);
+assert.throws(()=>validateGenerationPayloads(stale,full,"oct15"),/unverified inherited adoption stamp/);
+const wrongCase=generation();wrongCase.a.G1.meta.case_key="oct14";
+assert.throws(()=>validateGenerationPayloads(wrongCase,full,"oct15"),/stale case\/generation stamp/);
 const changed=generation();changed.b.G3plus.meta.coverage.by_end.low.total_bn=2;
 assert.throws(()=>validateGenerationPayloads(changed,full,"oct15"),/unclosed coverage/);
-console.log("[gates] exact grouped search matches 80 brute-force nonmonotonic spaces; 41-arm test and fail-loud controls pass");
+console.log("[gates] exact grouped search matches 80 brute-force nonmonotonic spaces and 120 size-capped ones; 41-arm test and fail-loud controls pass");
 console.log("[gates] generation freshness/coverage/sum negative controls pass before engine work");

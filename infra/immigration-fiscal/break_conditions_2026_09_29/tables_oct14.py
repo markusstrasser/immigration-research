@@ -3,7 +3,7 @@
 The oct07 CSVs supply the historical claims and qualitative questions, never live values.
 C8 tests the map's still-oct07 sentence against the live white comparator at personal ends.
 Every input file and its numeric CSV cells is pinned in tables_oct14_pins.json, rederived
-after CASE_FINAL; drift stops before writing. No script repins itself. Historical scripts
+after adoption; drift stops before writing. No script repins itself. Historical scripts
 and outputs are preserved. Run after engine_breaks_sept29.cjs --case oct14 and all of
 the generation, white, pairing, debt and winners lanes' oct14 runs:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 {lane}/tables_oct14.py
