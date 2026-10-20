@@ -713,6 +713,7 @@ Current cross-media coverage: [podcast, YouTube and Substack audit](immigration-
 
 | File | Topic | Consult before |
 |------|-------|----------------|
+| `immigration-claimant-moves-2026-10-20.md` | 81 graded public claims by Nobel laureates, academics, media, think tanks and pundits not audited before (23 restrictionist), and the 20 recurring moves, ranked, with the caveats authors printed beside their headlines | Answering "how do commentators get this wrong" or grading a new public claim |
 | `immigration-clark-respondent-audit.md` | How to read the Clark poll without overclaiming | Saying "economists agree" |
 | `immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md` | Unified comparative audit with one quantitative framework across all three commentators | Wanting a more decisive first-principles comparison |
 | `immigration-david-d-friedman-claims-audit-2026-04-11.md` | Named audit of David D. Friedman claims with a first-principles quantitative pass | Checking libertarian open-borders arguments against the repo and official sources |
