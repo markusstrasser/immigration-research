@@ -397,3 +397,54 @@ Times from `date` (JST).
 CASE_FINAL b35ac8fb inspected. Export/live consumer passes116gates with exactly zero remaining priced row4 residual at both ends/bases,1e-9bn. Absolute set368.9909342553624 /459.20287674292126bn, cash284.95156767595086 /375.1635101635089bn close to principal. VM positive/negative controls pass. Rerun IDENTICAL28/28,exit0,3.847s; Python perf_counter/resource child RSS371,589,120bytes informational. All archived outputs unchanged. [CALCULATION: derived/row4_oct15.json; scratch row4-final.json,row4-repro.json]
 
 Log: 2026-10-15 06:19:49 JST (`date`, parent): rerun on corrected v8 (`d1a24d47`: the coverage term no longer charges the missed people's custody, arrests and ICE a second time, −$3.199004 / −$3.221092bn on the lineage), IDENTICAL 28/28, exit 0. The priced row-4 residual stays exactly zero; the absolute set it closes to is now $365.791930 / 455.981785bn, cash $281.752564 / 371.942418bn.
+
+## Live v9 residual (oct16), preparation 2026-10-15
+
+`row4_oct16.cjs` reads the selected `meta.items` row4_frame range, independently subtracts
+its already carried edits from the measured cell shifts, and resolves personal ends from
+`summary.json/v9.end_specifications`. The canonical full evaluator carries every selected
+v9 post-engine amount. Cell and exact total/residual tolerances stay 1e-9bn; the published
+four-decimal case-band CSV tolerance stays 5e-5bn. [CALCULATION: row4_oct16.cjs]
+
+Live commands (the export path is measurement-only and leaves historical case files untouched):
+
+```sh
+node infra/immigration-fiscal/row4_class_2026_09_29/row4_oct07.cjs --export-row4 infra/immigration-fiscal/row4_class_2026_09_29/derived/row4_oct16_inputs.json
+node infra/immigration-fiscal/row4_class_2026_09_29/row4_oct16.cjs
+node infra/immigration-fiscal/row4_class_2026_09_29/test_residual_gate_oct16.cjs
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/row4_class_2026_09_29 \
+  'node {lane}/row4_oct07.cjs --export-row4 {lane}/derived/row4_oct16_inputs.json' \
+  'node {lane}/row4_oct16.cjs' 'node {lane}/test_residual_gate_oct16.cjs'
+```
+
+The initial provisional run correctly rejects the candidate's unadopted oct16 stamp.
+Final execution waits for CASE_FINAL. [CALCULATION: prop9/prop-d-row4-provisional.json]
+
+### Adopted v9 direct receipt — 2026-10-20 20:22 JST
+
+CASE_FINAL and HEAD resolve to adoption commit `7dfb4c66`. The live adoption guard now
+reads the package's declared `STATUS` and `ADOPTED`, rather than equating the case date
+with its adoption date. The isolated fixture rejects a stale October 16 payload stamp.
+The final direct consumer passes **117 gates**, including the canonical lifetime physical
+footprint guard (593,159,952 bytes). Both sets' priced row4 residuals are **0 / 0bn** at
+1e-9; maximum remaining cell differences are about 1.31e-14bn set and 4.06e-15bn cash.
+Set baselines are 368.0297391788806 / 436.5615271540343bn; cash baselines are
+284.39704345864885 / 352.92883143380107bn. Exact case gates retain 1e-9 and published
+CSV gates retain 5e-5. [CALCULATION: `derived/row4_oct16.json`, `sets.*.baseline_bn`,
+`residual_bn`, `maximum_cell_residual_bn`; `prop9/d9-row4-final.json`, elapsed 69.300s]
+
+An initial byte replay passed every command but correctly returned DIFFERS because the
+stale-adoption fixture was extended while the replay was running. That is not a numerical
+PASS; a new replay follows with the source frozen. [CALCULATION: `prop9/d9-row4-repro.json`]
+
+Final live replay: **IDENTICAL 33/33, exit 0**, 65.235s. All three documented commands
+returned 0; both isolated adoption/residual probes pass and every historical output remains
+byte-identical. This receipt supersedes the interrupted-source replay above.
+[CALCULATION: `prop9/d9-row4-repro-final.json` and `.log`; `prop9/d9-inventory.json`]
+
+### Refresh after the main case's custody rebuild — 2026-10-21 00:16 JST (`date`)
+
+The scratch-path fix rebuilt `main_case_2026_10_16` with new custody receipts only (no number changed). The three
+documented commands rerun, then `rerun_lane.py` with the same three: **IDENTICAL 33/33, exit 0** (23:58:39 JST, 7.2s).
+`derived/row4_oct16.json` still reports `sets.set.residual_bn` and `sets.cash.residual_bn` 0/0 at 1e-9.
+[CALCULATION: rerun_lane.py; derived/row4_oct16.json]

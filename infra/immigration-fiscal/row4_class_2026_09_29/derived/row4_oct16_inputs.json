@@ -1,0 +1,460 @@
+{
+ "source": "row4_oct07.cjs: row-4 measurement, before historical pricing",
+ "edits": {
+  "set": [
+   {
+    "side": "spending",
+    "line": "social_security",
+    "key": "social_security",
+    "by": {
+     "personal": 0.11450225286311877,
+     "shared": 0.12286469530295108
+    }
+   },
+   {
+    "side": "spending",
+    "line": "medicare",
+    "key": "medicare",
+    "by": {
+     "personal": -1.0732520796433533,
+     "shared": -1.0906271904344322
+    }
+   },
+   {
+    "side": "spending",
+    "line": "state_price_public_order_safety",
+    "key": "k",
+    "by": {
+     "personal": 0.30484043071544953,
+     "shared": 0.30484043071544953
+    }
+   },
+   {
+    "side": "spending",
+    "line": "state_price_health_services",
+    "key": "k",
+    "by": {
+     "personal": 0.10585137849975745,
+     "shared": 0.10585137849975745
+    }
+   },
+   {
+    "side": "spending",
+    "line": "state_price_recreation_culture",
+    "key": "k",
+    "by": {
+     "personal": -0.004958031443116351,
+     "shared": -0.004958031443116351
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "scenario": "cbo_collective",
+    "by": {
+     "personal": 0.03039272165533191,
+     "shared": 0.02940902745986307
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "scenario": "corporate_all_capital",
+    "by": {
+     "personal": 0.03039272165533191,
+     "shared": 0.02940902745986307
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "scenario": "federal_gap_high_agi",
+    "by": {
+     "personal": 0.02811958890265487,
+     "shared": 0.027387055065986488
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "scenario": "medicare_income_weighted",
+    "by": {
+     "personal": 0.03039272165533191,
+     "shared": 0.02940902745986307
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "scenario": "nas_80",
+    "by": {
+     "personal": 0.03039272165533191,
+     "shared": 0.02940902745986307
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "scenario": "property_residual_consumption",
+    "by": {
+     "personal": 0.03039272165533191,
+     "shared": 0.02940902745986307
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "scenario": "public_assets_tax_base",
+    "by": {
+     "personal": 0.03039272165533191,
+     "shared": 0.02940902745986307
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "federal_income_tax",
+    "scenario": "treasury_815",
+    "by": {
+     "personal": 0.03039272165533191,
+     "shared": 0.02940902745986307
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "cbo_collective",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "corporate_all_capital",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "federal_gap_high_agi",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "medicare_income_weighted",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "nas_80",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "property_residual_consumption",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "public_assets_tax_base",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "treasury_815",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "cbo_collective",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "corporate_all_capital",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "federal_gap_high_agi",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "medicare_income_weighted",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "nas_80",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "property_residual_consumption",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "public_assets_tax_base",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "treasury_815",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "modeled_owner_property",
+    "scenario": "cbo_collective",
+    "by": {
+     "personal": -0.4394491312580122,
+     "shared": -0.4394491312580122
+    }
+   }
+  ],
+  "cash": [
+   {
+    "side": "spending",
+    "line": "state_price_public_order_safety",
+    "key": "k",
+    "by": {
+     "personal": 0.30484043071544953,
+     "shared": 0.30484043071544953
+    }
+   },
+   {
+    "side": "spending",
+    "line": "state_price_health_services",
+    "key": "k",
+    "by": {
+     "personal": 0.10585137849975745,
+     "shared": 0.10585137849975745
+    }
+   },
+   {
+    "side": "spending",
+    "line": "state_price_recreation_culture",
+    "key": "k",
+    "by": {
+     "personal": -0.004958031443116351,
+     "shared": -0.004958031443116351
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "cbo_collective",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "corporate_all_capital",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "federal_gap_high_agi",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "medicare_income_weighted",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "nas_80",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "property_residual_consumption",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "public_assets_tax_base",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "personal_motor_vehicle",
+    "scenario": "treasury_815",
+    "by": {
+     "personal": 0.036838899979553474,
+     "shared": 0.03697011532348249
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "cbo_collective",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "corporate_all_capital",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "federal_gap_high_agi",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "medicare_income_weighted",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "nas_80",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "property_residual_consumption",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "public_assets_tax_base",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "general_sales_tax",
+    "scenario": "treasury_815",
+    "by": {
+     "personal": -0.013400260995176438,
+     "shared": -0.013402415391766453
+    }
+   },
+   {
+    "side": "receipt",
+    "line": "modeled_owner_property",
+    "scenario": "cbo_collective",
+    "by": {
+     "personal": -0.4394491312580122,
+     "shared": -0.4394491312580122
+    }
+   }
+  ]
+ },
+ "gates_failed": 0
+}
