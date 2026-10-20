@@ -289,3 +289,61 @@ The parent resolves the oct15 precision stop: frozen v7 item 7 remains 1.08644bn
 Final White export_keys was rebuilt after Black exporter; all source hashes pass. The earlier source-order failure is resolved by regenerated metadata, without editing a stored hash. Live consumer passes46gates and5keytests plus isolated VM controls. Actual measured-minus-carried item7 residual remains+1.932434339213529e-7bn at both ends/bases; only that six-decimal comparison uses5e-7bn. Engine pricing and the remainder beyond the declared rounding close at1e-9bn. Rerun IDENTICAL25/25,exit0,8.808s; child RSS1,498,497,024bytes informational via Python resource. heldout.py is explicitly allow-unrun: preserved historical measurement, not a live producer. ends_oct15.cjs is traced through ends.cjs and needs no indirect-module exemption. [CALCULATION: derived/main_case_translation_oct15.json,main_case_change_oct15.csv; scratch tax-final.json,tax-repro.json]
 
 Log: 2026-10-15 06:19:49 JST (`date`, parent): rerun on corrected v8 (`d1a24d47`: the coverage term no longer charges the missed people's custody, arrests and ICE a second time, −$3.199004 / −$3.221092bn on the lineage), IDENTICAL 25/25, exit 0. The held-out tax key's residual is unchanged (1.932435e-7bn); the baselines it adds to are now $365.791930 / 455.981785bn set, $281.752564 / 371.942418bn cash.
+
+## Live v9 residual (oct16), preparation 2026-10-15
+
+`ends.cjs` defaults to oct16 and calls `ends_oct16.cjs`. It consumes the new independent
+White income-tax-key receipt, selected item7 metadata and v9's declared personal ends.
+The full evaluator includes the basket, calibration/tenure, military/health and effective
+capital-rate changes. Old held-out measurements and oct15 outputs are preserved.
+[CALCULATION: ends.cjs; ends_oct16.cjs]
+
+Frozen item7 remains printed to six-decimal bn: only measured-minus-carried admits 5e-7bn.
+The exact measured rounding remainder stays visible. Engine pricing and any residual beyond
+that declared rounding retain 1e-9bn. This is the existing parent-authorized precision rule,
+not a new tolerance or an erased remainder. [SOURCE: above 2026-10-15 precision resolution]
+
+```sh
+node infra/immigration-fiscal/tax_key_heldout_2026_09_28/ends.cjs --case oct16
+node infra/immigration-fiscal/tax_key_heldout_2026_09_28/test_residual_gate_oct16.cjs
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/tax_key_heldout_2026_09_28 \
+  'node {lane}/ends.cjs --case oct16' 'node {lane}/test_residual_gate_oct16.cjs' \
+  'uv run --no-project python3 -m pytest -p no:cacheprovider {lane}/test_keys.py -q' \
+  --allow-unrun infra/immigration-fiscal/tax_key_heldout_2026_09_28/heldout.py
+```
+
+The explicitly excluded historical heldout.py is not regenerated. Initial provisional oct16
+probe stops on the not-yet-produced independent White key receipt; final runs wait for that
+receipt and CASE_FINAL. [CALCULATION: ends_oct16.cjs provisional stderr]
+
+### Adopted v9 direct receipt — 2026-10-20 20:36 JST
+
+The independent White receipt was regenerated after both key CSV writers. The live
+translator passes **51 gates** and exits 0 in 31.633s, including current source hashes,
+actual W count, selected item7 subtraction, full-precision and published-band parity,
+and the canonical physical-footprint guard (869,706,592 bytes). Set baselines are
+368.029739 / 436.561527bn and cash baselines are 284.397043 / 352.928831bn, rounded
+once from `sets.*.baseline_bn`. The independently measured item7 remainder is still
+**+1.932434339213529e-7bn** at both ends and on both bases; it is not reported as exact
+zero. Only measured-minus-carried uses the existing 5e-7bn convention. Engine pricing
+and the excess beyond that convention close at 1e-9. [CALCULATION:
+`derived/main_case_translation_oct16.json`, `sets.*.measured_residual_bn`, `residual_bn`;
+`prop9/d9-tax-final.json` and `.log`]
+
+The adoption guard reads the case package's `STATUS` and `ADOPTED`; it no longer
+substitutes the October 16 case date for the October 20 adoption. The isolated fixture
+accepts the declared stamp and rejects stale data before writes. Historical heldout.py
+and all older keyed outputs are preserved. [CALCULATION: `test_residual_gate_oct16.cjs`]
+
+Final live replay: **IDENTICAL 29/29, exit 0**, 50.320s. All three documented live
+commands return 0, including isolated zero/rounding/stale/memory controls and five
+person-key tests. `heldout.py` remains the explicitly excluded historical measurement,
+not an omitted live producer. [CALCULATION: `prop9/d9-tax-repro.json` and `.log`]
+
+### Refresh after the main case's custody rebuild — 2026-10-21 00:16 JST (`date`)
+
+After the case's custody-only rebuild and White's gate fixes (White's income-tax key bytes unchanged), the three
+documented commands rerun, then `rerun_lane.py` (heldout.py allowed unrun, as before): **IDENTICAL 29/29, exit 0**
+(23:59:00 JST, 10.4s). `derived/main_case_translation_oct16.json` `sets.*.measured_residual_bn` is still
+1.932434339213529e-7bn at both ends of both sets, inside the inherited 5e-7bn rounding exception; it is not a measured
+zero. [CALCULATION: rerun_lane.py; derived/main_case_translation_oct16.json]
