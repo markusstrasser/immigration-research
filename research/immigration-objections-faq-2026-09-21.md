@@ -17,7 +17,7 @@ unmeasured. Counting benefits when paid, it is $284–353bn. It charges the retu
 roads, parks, rental assistance and government enterprises respond, and takes long-run property
 taxes. Applying year-one budget-response coefficients to this account gives
 $314–371bn ($230–287bn counting benefits when paid), which is not next year's cash saving. Other residents' social costs and
-benefits bring the total to $478–573bn.
+benefits bring the total to $480–554bn (entry 4).
 The second anchor is the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
 (same-age gap against third-plus non-Hispanic whites: Mexico-born −$8,849, second generation
 −$8,499, third-plus −$7,118 per person, standard errors 539, 912 and 637). Its income taxes
@@ -33,7 +33,7 @@ members earn as they work, so an older age mix on the ledger adds retirement cos
 already charges during working years. Entries 7 and 9 rest on
 separate partial accounts. The $368–437bn (entries 2, 4, 11 and 15–19) is the complete account's
 change for all other residents in the main case, under a stated service-response assumption and
-with no reference group. Its return on public capital ($39.1–64.3bn) is an imputed resource cost,
+with no reference group. Its return on public capital ($40.7–44.6bn) is an imputed resource cost,
 not a payment, so it never enters a borrowing or debt figure. Its pension accrual ($83.6bn at both ends)
 is a promise of future benefits valued as it is earned, not this year's cash. The account carries later corrections
 that were not propagated to the ledger (ladder 161), and it has its own generation split, computed
@@ -46,7 +46,7 @@ different population; the two are not reconciled, so the services figure is neit
 counted as included. Three care channels sit inside the main case, $4.15bn together: taxes on native
 women's extra hours ($2.69bn), the net elder-care Medicaid saving ($1.49bn) and a second-order output
 effect on other workers and capital, with its taxes (−$0.03bn) (entries 4 and 13; ladders 198 and 219).
-The net of city size and schooling mix (+$15.4bn on the case's lineage,
+The net of city size and schooling mix (+$15.3bn on the case's lineage,
 ladder 201) counts whole, induced receipts included, as a benefit in the
 fiscal-plus-social total; the fiscal main case does not carry it. Mobility insurance ($0.65bn,
 ladder 203) sits beside both totals. The complementarity figure ($26.8–80.4bn) covers half of all
@@ -55,14 +55,14 @@ nest is a different object: it raises the production term, mostly through a tran
 foreign-born residents to natives, and it has not been run on the main case (entry 14). No ratio of
 "offsets to cost" can be formed from these.
 
-**The fiscal-plus-social total is its own object.** The $478–573bn adds other residents' social
+**The fiscal-plus-social total is its own object.** The $480–554bn adds other residents' social
 costs and benefits to the main case's fiscal account at central values (entry 4). Both ends keep the
-case's fiscal charges ($365.8 / 456.0bn); the low end puts victims on the equal-offending footing and
-the high end on the custody footing ($37.3 / 41.5bn of victims' harm). The social rows include the
+case's fiscal charges ($368.0 / 436.6bn); the low end puts victims on the equal-offending footing and
+the high end on the custody footing ($37.3 / 41.6bn of victims' harm). The social rows include the
 descendants and the people added by the reporting-rule and coverage corrections, on their own keys
 [ASSUMPTION]. Re-spending of the budget saving and the PM2.5 of the public purchases the budget response
-removes both count. Holding the other rules fixed, putting the low fiscal end on the raw-coded justice
-key instead gives $473.1bn, beside the central. Figures normalized against the average resident and the
+removes both count. A low fiscal end on the raw-coded justice key, a beside variant, has not been
+computed on the adopted case ([pairing lane](../infra/immigration-fiscal/sept24_propagation_2026_09_24/RESULT.md)). Figures normalized against the average resident and the
 crash figure charged by fault sit beside it and are never added. Property values stay out. Applying year-one
 response coefficients to this account gives $314–371bn, or $230–287bn counting benefits when paid;
 this is a scenario of the account, not next year's cash saving. A fully proportional-services
@@ -113,10 +113,10 @@ about respond as follows ([decision](../decisions/2026-09-27-main-case-capital-r
 [decision](../decisions/2026-09-29-main-case-v4.md)):
 - **Roads, parks and economic administration** take their long-run responses. Across states,
   highway spending rises 0.73% and park spending 0.95% per 1% more residents.
-- **Rental assistance** is a transfer at 1: +$4.6bn.
+- **Rental assistance** is a transfer at 1: +$4.8bn.
 - **Public capital.** A 2.0811% real return, the flat equivalent of the Trustees' path that prices
   Social Security and Part A promises, is charged on the capital behind every responsive line:
-  $39.1 / $64.3bn in the case, enterprises included.
+  $40.7 / $44.6bn in the case, enterprises included.
   Booked public-employee pension and retiree-health normal costs retain their own valuations.
 - **Government enterprises** respond, including their capital return. A separate enterprise-off
   scenario has not been repriced on the adopted case.
@@ -130,8 +130,9 @@ about respond as follows ([decision](../decisions/2026-09-27-main-case-capital-r
   the within-district 0.836 gives $338–410bn with the other case rules fixed
   ([decision](../decisions/2026-09-26-main-case-schools-full-cost.md)).
 - **General public services** respond at 0.60–0.85 of average cost: removing a group that is 13%
-  of residents, at cross-state rates of 0.59–0.84, adds $30.9–43.8bn
-  ([finite removal](../infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md), run C).
+  of residents, at cross-state rates of 0.59–0.84, adds the general-government cost those rates imply
+  ([finite removal](../infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md), run C); that addition's
+  separate size has not been repriced on the adopted case.
   That range is the cross-state scale of administration spending: 0.842 (SE 0.039) for state
   administration and 0.789 for financial administration, with the low end holding the federal
   executive and legislature fixed. The only within-state test gave 0.47 with a 95% interval of
@@ -151,21 +152,18 @@ output. Defense and service-earned benefits stay at zero under equal-cost replac
 beside (ladder 253). Charging the fixed functions
 per capita is a convention, not part of the net-cost headline.
 
-**What about obligations left by past years?** They are now stated beside the account (ladders 278–279),
+**What about obligations left by past years?** They are stated beside the account (ladders 278–279),
 against third-plus non-Hispanic whites on matched keys (every group's income taxes on the case's own keys) and
-the same headcount path,
-ending at 42.75M people. The federal comparison uses **2005–2023**, the annual ACS headcount
-window; earlier starts rely more on interpolation. In 2024 the modeled excess annual financing
-charge is **$109.7–120.0bn** with past accrued Social Security and Part A promises capitalized as if
-borrowed. Carrying those accruals with payroll instead of benefits gives **$100.7–111.1bn**;
-counting benefits when paid gives **$49.5–59.8bn**. The main case carries the
-3.04M added descendants on the third-plus generation's path, measured from 2005 only, so the comparison runs the
-2005 start alone. These are model
-outputs, not measured group debt.
+the same headcount path. The federal comparison uses **2005–2023**, the annual ACS headcount
+window (earlier starts rely more on interpolation), and capitalizes past gaps, including accrued Social Security
+and Part A promises, as if borrowed. It has not yet been measured on the adopted case: its historical route needs
+a complete federal financing contract, which the
+[debt-legacy lane](../infra/immigration-fiscal/debt_legacy_2026_09_23/RESULT.md) does not yet supply for it. Its
+figures are model outputs, not measured group debt.
 
-The public-employee pension excess is **$5.4bn** of
+The public-employee pension excess is **$7.9–8.1bn** a year of
 attributed interest expense, including imputed interest, using a service-year kernel covering
-**1980–2023**. Its comparator weights have been corrected to the account's headcount. **There is no
+**1980–2023**. Its comparator weights follow the account's headcount. **There is no
 combined legacy total:** the federal simulation retains NIPA consumption containing accrued
 public-employee compensation, so distinct interest categories do not establish that the underlying
 financing costs are disjoint. Both rows
@@ -181,16 +179,18 @@ With enterprises held at full response while other services fall, the thresholds
 With every service budget frozen, enterprises included, other residents' net position runs from
 −$56.9bn (a cost) to +$70.1bn (a gain)
 ([sign reversal](../infra/immigration-fiscal/main_case_2026_10_16/RESULT.md), `derived/sign_reversal.csv`, `oct16`,
-the personal rows). A 2025
-municipal-bond paper sometimes cited for "local spending rises and revenue does not" cannot settle
-the response share: its revenue result is +0.2% with an interval of −1.8% to +2.2%, wider than
-every spending effect it reports, and it estimates no total expenditure (ladder 165). [SOURCE: complete account;
+the personal rows). [SOURCE: complete account;
 [administration scope](immigration-education-administration-scope-2026-09-20.md);
 [scaling test](immigration-service-scaling-test-2026-09-20.md)]
 
-That description applies to the old paper. Its substantially revised successor is assessed in the
-[behavioral-feedback review](immigration-v9-behavioral-feedback-2026-10-16.md#local-finance-the-source-has-changed-materially);
-the source-specific objections above must not be carried forward to it.
+A municipal-bond paper (Cornaggia, Cornaggia, Israelsen and Zimmerschied, July 2026 version) is evidence
+against assuming that inflows inevitably strain local finances: on an ancestry instrument with reported first-stage
+diagnostics, a one-point rise in the five-year immigrant inflow lowers municipal bond spreads by 4.8 basis points
+(SE 1.5), and later operating margins improve, with state transfers part of the mechanism. It does not price this
+account: its inflow is all origins over five years, transfers can steady the receiving government by shifting the
+cost to others, and its exclusion restriction and population match are unresolved. [SOURCE:
+[behavioral-feedback review](immigration-v9-behavioral-feedback-2026-10-16.md#local-finance-the-source-has-changed-materially),
+Table 3 col. 8 and Table 9 of the paper; INFERENCE]
 
 ## 3. "They pay into Social Security and Medicare and cannot collect."
 
@@ -234,38 +234,46 @@ So the response share moves the result more than any offset listed here.
   ±$490bn, and is not added (ladder 201). Institutions remain unpriced in both directions.
 
 Beside the fiscal account, a fiscal-plus-social total adds other residents' social costs and
-benefits to the main case: $478–573bn a year at central values, $10.6–12.7k per member of the 45.23M-person
-lineage. Counting benefits when paid, it is $394–489bn. The same cash budget saving funds other residents'
+benefits to the main case: $480–554bn a year at central values[^life-years], $10.7–12.3k per member of the 44.90M-person
+lineage. Counting benefits when paid, it is $396–470bn. The same cash budget saving funds other residents'
 re-spending under both pension timings; capital services and the promises remain separate from that cash resource.
 At the low / high ends it contains:
-- victims' harm from crimes by group members against other residents, $37.3 / $41.5bn (entry 12),
+- victims' harm from crimes by group members against other residents, $37.3 / $41.6bn (entry 12),
   and property crime, $1.3 / $1.4bn;
 - the group's unreimbursed hospital care, borne by hospitals, physicians and private payers,
-  $3.5 / $5.9bn;
+  $3.4 / $5.9bn;
 - the congestion that remains once road budgets respond, $13.7 / $10.8bn;
-- fine particles (PM2.5) from consumption, including other residents' re-spending, $69.0 / $65.7bn;
-- PM2.5 from the public purchases the budget response removes, $9.5 / $10.2bn;
+- fine particles (PM2.5) from consumption, including other residents' re-spending, $68.3 / $65.0bn;
+- PM2.5 from the public purchases the budget response removes, $9.7 / $10.2bn;
 - road crashes, other residents' losses with the group's traffic against without it after traffic adjusts,
   $12.5 / $12.7bn; charging crashes by fault stays beside;
 - fear and avoidance among residents who are not victims, $6.6 / $7.6bn, private security,
   $0.5 / $0.6bn, and school disruption, −$2.2bn at both ends;
 - the housing net, a gain to other residents of $3.8 / $0.8bn; renters' payments to landlords are transfers;
-- five benefits, entered as negative costs: city size net of the schooling mix, $15.4bn; restaurant variety,
-  $6.7bn; volunteering for people outside the group after incoming hours displace some of it, $4.1bn; trade,
-  visit and investment ties with Mexico, $7.5bn; and consumer-side scale, $2.3bn.
+- five benefits, entered as negative costs: city size net of the schooling mix, $15.3bn; restaurant variety,
+  $6.7bn; volunteering for people outside the group after incoming hours displace some of it, $4.0bn; trade,
+  visit and investment ties with Mexico, $7.4bn; and consumer-side scale, $2.3bn.
 
 These rows include the added descendants and, at their shares of each key, the people added by the reporting
 rule and Census coverage. Crime rows add no coverage people: their administrative totals already carry them.
 The stayers in mixed households keep consumption from their own resources [ASSUMPTION]. The social rows total
-$111.9 / $117.4bn; with fiscal charges of $365.8 / $456.0bn, the totals are $477.7 / $573.4bn.
-Two displayed row values move by less than $0.1bn so the printed parts add to the printed totals.
-[CALCULATION: `sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json`,
-`v8_social_environment.current_social_rows`, `joint_social_stack.ends`]
+$111.6 / $117.1bn; with fiscal charges of $368.0 / $436.6bn, the totals are $479.6 / $553.7bn.
+The public-purchase PM2.5 row is displayed less than $0.1bn from its value at each end so the printed parts add to
+the printed totals.
+[CALCULATION: `sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json`,
+`v9_social_environment.current_social_rows`, `joint_social_stack.ends`, `cash_pairing_bn`]
+
+[^life-years]: Valuing deaths by remaining life-years instead of the uniform DOT value of a statistical life, in the
+    crime, PM2.5 and crash rows together, puts the total at $433.0–508.8bn undiscounted and $438.4–513.8bn with life-years
+    discounted at 3%, other rules fixed. It falls mostly because PM2.5 deaths come mostly at ages over 65, where fewer
+    years remain [INFERENCE: people 65 and over are 76.2% of 2024 deaths, `air_pollution_2026_09_28/RESULT.md`].
+    The uniform value stays central. [CALCULATION: `sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.csv`,
+    `pairing_social_env_life_years_r0_beside`, `pairing_social_env_life_years_r003_beside`]
 
 The 1970–2000 college-share studies would turn the scale net into a $109–677bn cost. Mobility across
 local labour markets ($0.65bn) sits beside both totals, and property values stay out. Transfers like
 the renters' payments cancel in dollars but not by income: outside the budget the bottom four
-fifths of other residents lose $80.3bn a year and the top fifth gains $45.4bn (ladder 194).
+fifths of other residents lose $80.1bn a year and the top fifth gains $45.4bn (ladder 194).
 [SOURCE: complete account;
 [prices and hours](immigration-consumer-price-and-native-hours-2026-09-18.md);
 [real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md)]
@@ -315,34 +323,33 @@ subject to ethnic attrition; standard errors are lower bounds. [CALCULATION:
 [second generation by origin](immigration-second-generation-by-origin-2026-09-22.md), ladder 178]
 
 On the adopted account itself, with no reference group, every generation alive in 2024 is a net
-cost at all 32 specifications. Counted with their children, as the National Academies count them,
-a second-generation adult costs other residents $10.3–13.1k a year, against $14.1–16.9k per
-Mexico-born adult and $10.5–13.6k per third-plus adult; the second generation's total is $99–126bn
-and the third-plus's $112–144bn. So the second generation costs less than the first but is not a
+cost at both end specifications. Counted with their children, as the National Academies count them,
+a second-generation adult costs other residents $9.6–11.8k a year, against $15.9–18.0k per
+Mexico-born adult and $9.5–11.8k per third-plus adult; the second generation's total is $92–113bn
+and the third-plus's $101–126bn. So the second generation costs less than the first but is not a
 net contributor in this year's account; whether today's children pay more as adults needs a cohort
 account, which this one-year split is not. Counted in their own generation, children push the
-second generation's total to $150–179bn, above the first's $41–65bn. Per-person figures divide by
-the lineage's count (31.23M adults of 45.23M members). The third-plus includes the 3.10M descendants
+second generation's total to $143–164bn, above the first's $61–81bn. Per-person figures divide by
+the lineage's count (31.23M adults of 44.90M members). The third-plus includes the 3.10M descendants
 who no longer report Mexican origin, at their measured ages (entry 19). Where
 children are counted decides who carries the costs that follow residents and workers. The pension
-accrual follows this year's payroll taxes, so counted in their own generation it adds $37.9 / 37.9bn
-to the second generation and $30.7 / 30.7bn to the third-plus, against $15.4 / 15.4bn to the
-Mexico-born. The return on public capital shifts the same way. With children counted with their
-parents, the Mexico-born carry 37% of it; counted in their own generation, the US-born carry 80–81%.
+accrual follows this year's payroll taxes, so counted in their own generation it adds $37.7 / 37.7bn
+to the second generation and $30.6 / 30.6bn to the third-plus, against $15.3 / 15.3bn to the
+Mexico-born, of the $83.6bn at each end (controlled rounding so the parts add). The split of the return on public capital by generation has not been computed on the adopted case.
 [CALCULATION: [adopted account by generation](immigration-adopted-account-by-generation-2026-09-25.md),
-ladder 224]
+`generation_account_2026_09_24/derived/generation_results_oct16.csv`, `generation_results_oct16_cash.csv`, ladder 224]
 
 ## 6. "Comparing with whites is cherry-picking."
 
 Finding: against all natives the same-age gaps are −$6,478, −$6,128 and −$4,747; against as
-many average residents, the main case's gap counting benefits when paid is −$280–282bn, about
-−$6,555–6,605 per person. The gap is defined on cash flows only: an accrued pension
+many average residents, the main case's gap counting benefits when paid is −$240–242bn, about
+−$5,346–5,393 per member of the 44.90M-person lineage. The gap is defined on cash flows only: an accrued pension
 has no national total to share out. The net-cost headline compares with no reference group at all: it is the change for
 all other residents, other immigrants included. Third-plus whites are not a flattering reference either: with every
 group's income taxes on the case's own keys and its job-capital tax responses they contribute more than they cost on accrual. Holding those rules fixed, the gap against as many of them,
-$482–512bn a year, exceeds the main case's $366–456bn because it subtracts their net contribution. This is a rough matched re-key of both groups, rather than an engine run. [SOURCE: `derived/complete_gaps.csv`;
+$579–606bn a year, exceeds the main case's $368–437bn because it subtracts their net contribution. This is a rough matched re-key of both groups, each with its own Census coverage and mortality, rather than an engine run. [SOURCE: `derived/complete_gaps.csv`;
 [program gaps](../infra/immigration-fiscal/black_comparator_rough_2026_09_28/RESULT.md), ladder 259;
-`derived/rekey_summary_oct14.csv`, 7a051bd3; [white comparison](../infra/immigration-fiscal/white_replacement_2026_09_28/RESULT.md),
+`white_replacement_2026_09_28/derived/symmetric_comparisons_oct16.csv`, the central row; [white comparison](../infra/immigration-fiscal/white_replacement_2026_09_28/RESULT.md),
 ladder 263]
 
 ## 7. "Is this just low education? Poor natives cost money too."
@@ -378,19 +385,19 @@ Finding: only income-year 2024 is a complete account. The adult ledger replicate
 National spending per resident on each programme is measured for every year: Medicaid and
 Medicare were 42–47% smaller in 2005, refundable credits were 4.4 times their 2024 level in
 2021, police, courts and prisons were flat. Carrying the 2024 position back on those series
-gives $3.5–4.6tn over ten years (2015–2024), $5.0–6.7tn over fifteen and $6.1–8.2tn over twenty
+gives $3.5–4.5tn over ten years (2015–2024), $5.1–6.5tn over fifteen and $6.1–8.0tn over twenty
 (whole-budget rules, with the nonreporting descendants and the covered third-plus members following
 the identified third-plus generation's count); the return on public capital,
 an imputed cost rather than cash, is $0.3–0.5tn over the ten years on the ratio rule. The group got the 2020–2021 pandemic
 payments at 0.87–1.03 times other residents per person, not at the 2.3 times the programme-by-programme
 rule had charged. On the account's programme paths, measured pandemic shares, historical school and
-Medicaid use and income changes for each component together give $3.7–4.5tn over the ten years.
+Medicaid use and income changes for each component together give $3.8–4.3tn over the ten years.
 Holding those other branches fixed, the measured pandemic shares lower that total by $50.8bn at both
 ends. The whole-budget figures above keep their broad spending rule. For the CPS-keyed benefits
 the group's relative use is measured for 2019–2023: SNAP, SSI and Social Security stay within 10%
 of 2024, and using every measured year instead of the 2024 ratio barely moves the totals. Its use
 of other programmes before 2024 is unmeasured. [SOURCE: [back-cast](immigration-historical-backcast-2026-09-20.md);
-`historical_backcast_2026_09_20/derived/oct15/round2_windows.csv`, `backcast_windows.csv`,
+`historical_backcast_2026_09_20/derived/oct16/round2_windows.csv`, `backcast_windows.csv`,
 `round2_programme_branches.csv`]
 
 ## 9. "You are measuring the low-skilled inflows of 1970–2007. New arrivals are different."
@@ -434,7 +441,7 @@ and most of the people in it are US-born citizens. In the first years, budgets w
 full average cost of the group's pupils, nor the long-run road and park costs. Applying year-one
 response coefficients to this account, with no capital response and benefits counted when paid, gives
 $230–287bn ($314–371bn with the pension accrual). These are not next year's cash saving. The return on
-public capital ($39–64bn of the case) is an opportunity cost, and the pension accrual ($83.6bn) a
+public capital ($41–45bn of the case) is an opportunity cost, and the pension accrual ($83.6bn) a
 promise of future benefits; neither is cash that a removal would free in the year.
 Schools show how slowly budgets shrink: across US districts whose enrollment fell over twenty-year spans, spending
 fell only about 30% as fast, so they kept about 70% of the money and about half of the staff that proportional cuts
@@ -455,14 +462,14 @@ courts by their criminal share and border enforcement per head. The use key adds
 the account compares the group with the average other resident: Hispanic residents are 20.2% of
 people in prisons and jails against 20.7% of residents aged 18–64. The main case does not isolate
 what the key adds. If Mexican-origin offending equals the Hispanic average as census codes record
-it, the matched-justice variant is $4.7bn lower at the low fiscal end (ladders 218 and 219); this
-variant stays beside the central fiscal-plus-social pairing. BJS's combined share is probably
+it, the matched-justice variant lowers the low fiscal end (ladders 218 and 219); it has not been
+computed on the adopted case, and the variant stays beside the central fiscal-plus-social pairing. BJS's combined share is probably
 under-recorded: jail counts carry no ethnicity adjustment,
 and with jails at the arrest share, prisons and jails are 22.9% Hispanic (ladder 204). The main
 case's custody key comes from the ACS. Hispanic adults are imprisoned at 1.3 times the all-adult
 rate and 2.6 times the non-Hispanic white rate (BJS, 2023).
 Victim costs are outside a fiscal account. Crimes by group members against
-other residents cost the victims $37.3–41.5bn a year on the case's lineage, with descendant
+other residents cost the victims $37.3–41.6bn a year on the case's lineage, with descendant
 exposure and replacement income valued consistently with the other social rows, a social cost beside the fiscal
 headline ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §2–3). Ladder 218's
 own figure, $28.9bn (range $15–45bn) plus $2.0bn for Hispanic members of mixed offender groups, is
@@ -602,8 +609,8 @@ responses, rental assistance, government enterprises and the pension promises me
 work, none of which CBO's projection carries;
 applying year-one response coefficients gives −$314 to −371bn, or −$230 to
 −287bn counting benefits when paid (entry 2); these are not next year's cash saving.
-Where the two overlap they agree: a young recent inflow is net positive on the measured items
-here too, +$3,495 per person for Mexico-born arrivals of 2016–2025 on the partial account with
+Where the two come closest they point the same way: on the nearest cut here, Mexico-born arrivals of
+2016–2025 are net positive on the measured items, +$3,495 per person in one year on the partial account with
 taxes as the survey reports them, and about break-even (−$1,299, interval −$3,151 to +$554) once
 the remaining items are charged flat per person, which is not the
 main case's complete account (ladder 134; entry 9). A decade of a cohort's cheapest years cannot be netted
@@ -682,7 +689,7 @@ that confirms the CPS level.
 ## 18. "2024 was an unusual year: after COVID, after the money printing, in the middle of the border surge."
 
 Steel-man: one year of a price surge, pandemic programmes and a migration wave could make any group look
-expensive. Finding: of the three, only the budget moves the figure appreciably, by about 2–13% in the replay.
+expensive. Finding: of the three, only the budget moves the figure appreciably, by about 1–13% in the replay.
 - **Prices.** Inflation raises the group's taxes and the cost of its services together. The $368–437bn is
   1.3–1.5% of GDP ($29.30tn), or $300–356bn in 2019 dollars (CPI-U).
 - **Pandemic programmes.** They had ended by 2024. Per resident in real terms, 2021's refundable credits were
@@ -695,9 +702,9 @@ expensive. Finding: of the three, only the budget moves the figure appreciably, 
   and Mexican nationals were 0.5–0.8% of the people served.
 - **The budget.** This is the real 2024 effect. From 2019 to 2024, real government spending per resident rose
   13.6% and receipts 9.7%, and 2024 spending ran 26% above receipts. A group that pays below-average taxes carries
-  more of that gap. Replayed through the average budget of 2015–2019 and 2022–2023, the main case costs 2–5% less
-  per member with its lower relative income of those years ($359–434bn at today's size), or 13% less with
-  its 2024 income held fixed ($318–395bn). Against as many average residents, which cancels the deficit everyone
+  more of that gap. Replayed through the average budget of 2015–2019 and 2022–2023, the main case costs 1–4% less
+  per member with its lower relative income of those years ($363–419bn at today's size), or 12–13% less with
+  its 2024 income held fixed ($322–379bn). Against as many average residents, which cancels the deficit everyone
   shares, the replay has not been run on the main case.
 
 About 60% of the rise in the group's largest lines since 2019 is Medicaid, Medicare and Social Security, which
@@ -708,7 +715,7 @@ budgets held fixed, the group's lower employment in an average year would cost o
 which $4–9bn is the group's swing beyond the nation's; it is part of the replay, not an addition to it. Before
 2024 only the group's income is measured; the replays are a model. [SOURCE: [back-cast](immigration-historical-backcast-2026-09-20.md),
 cycle, `cycle_average_2026_10_07/RESULT.md` (ladder 290),
-`historical_backcast_2026_09_20/derived/oct15/backcast_annual.csv` and `derived/national_programme_index.csv`; arrival windows,
+`historical_backcast_2026_09_20/derived/oct16/backcast_annual.csv` and `derived/national_programme_index.csv`; arrival windows,
 `arrival_window_fiscal_2026_09_18/RESULT.md`; shelter, `migrant_shelter_costs_2026_09_23/RESULT.md`; GDP, BEA NIPA
 Table 1.1.5 as quoted in `labor_mobility_insurance_2026_09_23/RESULT.md`] Would change it: a second complete
 measured year, or a budget path that returns spending per resident to its 2019 level.
@@ -778,18 +785,19 @@ Finding: the headline uses income-year 2024 tax and benefit rules, with Social S
 at what current law can pay (2026 Trustees). Current law schedules no rule that closes the budget, so it counts the
 group's share of the deficit as a cost to other residents. That is an assumption, and it is stated beside the
 headline. If a permanent fix closed the federal budget and the lineage paid its share, other residents would pay
-**$332.0–422.2bn** a year instead of $365.8–456.0bn, 7–9% less:
+**$334.4–402.9bn** a year instead of $368.0–436.6bn, 8–9% less:
 - The fix is $332.9bn a year: Auerbach & Gale's (2026) 2.33% of GDP to hold debt at its current share of GDP for
   thirty years, less the 1.19 points that would pay scheduled retirement benefits after the OASI trust fund runs out
   late in 2032, on current law's separate funds (2026 Trustees Report). The account already counts those promises
   at the benefits current law can pay, so that part is closed.
-- The lineage carries $33.8bn of it, 10.16%, its share of households, as AEI proposes. It is 13.48% of residents
+- The lineage carries $33.6bn of it, 10.10%, its share of households, as AEI proposes. It is 13.38% of residents
   but lives in larger households.
 
 Across the current-law gaps (CBO's 1.9 points, Auerbach–Gale's 2.33%) and six sharing rules, from equal per person
-to income tax alone, the cost is $320.9–445.3bn. On current-policy gaps it reaches $248.5bn at the low end.
-AEI's own 2013 figure, with scheduled benefits paid, gives $198.7–288.9bn. The group's excess over as many average residents under the same case rules is $374.0–395.8bn;
-that reference-group comparison is kept separate from the budget-closure scenario. Most of
+to income tax alone, the cost is $323.5–426.5bn. On current-policy gaps it reaches $251.6bn at the low end.
+AEI's own 2013 figure, with scheduled benefits paid, gives $202.2–270.7bn. The group's excess over as many average
+residents under the same case rules is $443.0bn at the case's low end and $421.3bn at its high end, a pair at the two
+ends rather than a range; that reference-group comparison is kept separate from the budget-closure scenario. Most of
 the group's cost falls on state and local budgets, which balance every year. Other residents pay it now, and no
 federal fix shares it.
 
@@ -810,8 +818,9 @@ headline.
 
 Finding: each channel has evidence of a mechanism, and none has a measured national dollar figure. The account
 carries them at zero and says so:
-- **The budget's legacy** is measured, beside the headline. The 2005–2023 federal gaps, carried as if borrowed, cost
-  $101.6–101.7bn a year in interest-equivalent against as many third-plus whites (ladder 278).
+- **The budget's legacy** is modelled beside the headline, not measured as group debt (entry 2). The 2005–2023 federal
+  gaps carried as if borrowed have not yet been modelled on the adopted case (ladder 278); the public-employee pension
+  comparison gives $7.9–8.1bn a year of attributed interest against as many third-plus whites (ladder 279).
 - **Automation:** low-skill immigration moves firms away from machines. In Lewis (2011), a rise of 0.1 in a metro's
   ratio of dropouts to high-school graduates lowers machinery per worker by about 6% (IV −0.59, SE 0.31), while
   output per worker does not measurably change (−0.03, SE 0.24). When the bracero program ended in 1964, crops that
@@ -821,17 +830,21 @@ carries them at zero and says so:
 - **Separation:** at equal income, poverty and schooling, counties with a larger Hispanic share have fewer
   cross-class friendships, mostly through residential separation (ladder 262). Whether that lowers other residents'
   mobility is not identified.
-- **Institutions and productivity:** Clemens and Pritchett's own transmission model, fed the slow assimilation
-  measured here, makes the optimal migration rate negative (ladder 154). That is a model's output, not a measurement.
+- **Institutions and productivity:** Clemens and Pritchett's own transmission model, fed this repo's generational
+  earnings and fiscal gaps in place of its productivity-assimilation rate (a substitution the model does not define),
+  turns the optimal migration rate negative (ladder 154): a scenario, not a measurement.
 - **Political effects:** a larger low-skill immigrant share raises the Republican vote (Mayda, Peri and Steingress
   2022), and populist governments are followed by slower growth (Funke, Schularick and Trebesch 2023). No study links
-  the two, so neither gives a dollar figure (ladder 102).
+  the two, so neither gives a dollar figure (ladder 102). This repo's county panel finds no significant effect of the
+  Mexican-origin share itself, a different treatment that counts residents of every generation, 2000–2024
+  ([county panel](immigration-political-trajectory-county-panel-2026-09-19.md)).
 
 Why these stay at zero: immigrants settle where growth is, and the instruments that predict where they went also
-pick up local booms (ladder 199). A test across places is therefore biased toward finding no drag.
+pick up local booms (ladder 199), so a test across places can mistake local growth for the absence of drag
+[INFERENCE].
 
 [FRAMING-SENSITIVE] A zero here means "not measured", not "no effect". The production gain the group brings is
-priced in the account (entry 14). [SOURCE: ladder 99, 102, 120, 154, 199, 262, 278;
+priced in the account (entry 14). [SOURCE: ladder 99, 102, 120, 154, 199, 262, 278, 279;
 [automation channel](../infra/immigration-fiscal/automation_channel_2026_09_16/);
 [connectedness](../infra/immigration-fiscal/connectedness_fragmentation_2026_09_28/RESULT.md);
 [legacy comparisons](../infra/immigration-fiscal/legacy_comparators_2026_09_30/RESULT.md)] Would change it: a shock
@@ -847,6 +860,8 @@ prior, which is also where errors concentrate; surprising results need more chec
 they get more prominence.
 
 ## Revisions
+
+- 2026-10-21 (main case v9 consumer lanes, [decision](../decisions/2026-10-16-main-case-v9.md); pairing c7b99ac7, distribution 65b6e01c, generation a24d2468, back-cast e85c0766, closed budget 54248e8c, decomposition d133740b, comparators e5c9ab76, pension legacy cb0a5c52, legacy comparators f8c49849): the fiscal-plus-social total (anchors, combining rules, entry 4) is $480–554bn, $396–470bn counting benefits when paid; entry 4 gains a footnote valuing deaths by remaining life-years ($433.0–508.8bn at 0%, $438.4–513.8bn at 3%), at the operator's request. The capital return, rental assistance, production, income split, generation split (now at the two end specifications), average-resident and white gaps, back-cast windows, budget replay and closed budget follow `oct16`; the excess over average residents is printed as a pair at the case's ends. The federal legacy comparison, the raw-coded justice variant, the general-government addition's own size and the capital return's generation split have no v9 run and lose their numbers; the pension legacy comparison is $7.9–8.1bn. Entry 2 replaces its rebuttal of the January 2025 municipal-bond paper with an answer to the July 2026 version; entry 16 says the recent-arrival cut points the same way rather than agrees; entry 21 no longer calls the legacy measured, states the Clemens–Pritchett substitution as a scenario, adds the repo's county panel beside Mayda et al., and marks the bias direction of cross-place tests as inference. Concept affected: the fiscal-plus-social total, the comparators and legacy charges, and four answers' claims.
 
 - 2026-10-20 (main case v9, [decision](../decisions/2026-10-16-main-case-v9.md)): direct case figures use `oct16`: military service costs at zero under equal-cost replacement, one Trustees capital rate, the health residual keyed by non-VA payers, retirement administration and college response, native-minor calibration, fixed-count coverage tenure and the household taxable basket. The first-year and ancestry-share companions state their scope. Historical scenario rows without a v9 repricing lose their numbers; committed consumer figures await their phase-2 pass. Concept affected: the live account, population, response premises and companion readings.
 

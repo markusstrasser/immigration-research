@@ -161,7 +161,7 @@ substituting a web summary or declaring a measurement unavailable:
   the keys stops `[BLOCKED]` unless it passes `--off T` (decision 2026-10-07-ledger-item-t). The finance-refresh and
   enrollment accounts carry the all-generation union only; do not flat-scale the ledger's split
   onto any account total. The adopted main case has its own split, computed on the account with
-  no reference group: `infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_oct15.csv`,
+  no reference group: `infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_oct16.csv`,
   the added descendants counted in G3+ (ladder 224; earlier cases' files are in git).
 - The account prices 39,712,493 people (dataset audit row 4); the CPS ASEC's published weights give
   40.90M. A lane that sums CPS weights gates its total at row 4 (pattern:
@@ -170,8 +170,9 @@ substituting a web summary or declaring a measurement unavailable:
   union leaves out: since 2026-10-05, 3.04M descendants who no longer report Mexican origin (arm b,
   put on the account's frame by factor 0.997189, since row 4 reweights only the Mexico-born); since
   2026-10-15, the 0.52M US-born reporters with one US-born parent and their nonreporting children whom
-  v7's generation rule dropped (item 10), and the 1.96M members the Census misses (item 12).
-  Per-member figures divide by the 45.23M lineage (43.27M before coverage). The CPS cannot see the
+  v7's generation rule dropped (item 10), and the 1.95M members the Census misses (item 12).
+  Per-member figures divide by the 44.90M lineage (42.95M before coverage; v9 item 16 calibrates
+  native minors, −0.33M). The CPS cannot see the
   descendants or the missed people, so a lane that re-keys the CPS takes their cost from the case lane
   or covers the union and says so (ladder 281); it takes item 10's people from
   `union_completion_2026_10_14`'s flags.

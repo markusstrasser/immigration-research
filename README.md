@@ -25,9 +25,9 @@ counting benefits when paid. This is income-year 2024 under 2024 tax and benefit
 and Part A promises at what current law can pay (2026 Trustees); a complete present-law total is unmeasured
 ([lane](infra/immigration-fiscal/main_case_2026_10_16/RESULT.md),
 [decision](decisions/2026-10-16-main-case-v9.md)). Other residents' social costs and
-benefits outside the public budget bring it to $478–573bn, including re-spending of the budget saving and the
+benefits outside the public budget bring it to $480–554bn, including re-spending of the budget saving and the
 fine-particle pollution of the public purchases the same response removes
-([calculation](infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.csv)). Only 2024 is measured;
+([calculation](infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.csv)). Only 2024 is measured;
 earlier years are a model back-cast. The [objections FAQ](research/immigration-objections-faq-2026-09-21.md)
 routes the standard objections to their executed tables, and the
 [evidence map](infra/immigration-fiscal/overview_2026_09_28/) (`build.py` writes the reader page)

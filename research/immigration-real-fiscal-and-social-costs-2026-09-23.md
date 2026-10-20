@@ -7,25 +7,27 @@ people. Counting benefits when paid gives $284.4–352.9bn. This is income-year 
 with Social Security and Part A promises at what current law can pay (2026 Trustees); a complete present-law total
 is unmeasured. [CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9`.] Justice is charged by measured custody and arrests;
 the constructed people the Census misses take zero on administrative-use justice keys already counting them.
-The raw-coded justice alternative lowers the case by $4.7bn at both ends, beside the central.
+A justice key on census ethnicity codes as recorded (the raw-coded alternative) has not been computed on v9.
 
-Fiscal and social costs together come to **$477.7–573.4bn a year** at central values, or $10.6–12.7k per member
-of the 45.23M-person lineage. The fiscal row is the full case at both ends; victims take the equal Hispanic/NCVS
+Fiscal and social costs together come to **$479.6–553.7bn a year** at central values, or $10.7–12.3k per member
+of the 44.90M-person lineage, and $396.0–470.1bn counting benefits when paid (only the fiscal row's pension timing
+changes). The fiscal row is the full case at both ends; victims take the equal Hispanic/NCVS
 footing at the low end and the custody footing at the high. The social rows count effects on people outside
 the lineage, remove harm within the removed group, use common transport-department life values and price crashes
 on the with-versus-without, multivehicle basis. Other residents' re-spending of the budget saving and the pollution
-of the public purchases the same response removes are both central. CO2 and life-year readings remain beside.
+of the public purchases the same response removes are both central. CO2 and life-year readings remain beside (§7).
 These are conditional model results; the receiver mix, expenditure response and environmental transport are
-assumptions, not an observed removal experiment. The matched justice-footing alternative holds the other social
-rules fixed and gives $473.1bn at the low end; it is beside the published pairing.
+assumptions, not an observed removal experiment. The matched justice-footing alternative, which would key the fiscal
+justice cost to the victims' equal footing, has not been computed on v9; the pairing lane withholds it.
 
-Wages move **$66–166bn** a year from less-educated to more-educated natives. Like rent, this is a transfer among
-other residents, not an extra net cost. Outside the budget the bottom four fifths of other residents lose $80.3bn
+In the account's calibrated production model (not a measured wage effect), wages move **$66–166bn** a year from
+less-educated to more-educated natives. Like rent, this is a transfer among other residents, not an extra net cost.
+Outside the budget the bottom four fifths of other residents lose $80.1bn
 a year and the top fifth gains $45.4bn in the distribution lane's four-channel incidence view (§4); that view
 does not price every social row in the pairing. [CALCULATION:
-`sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json`, `joint_social_stack`,
-`v8_social_environment.current_social_rows`, `variants.matched_justice_footing` (7342b331);
-`distribution_weights_2026_09_23/derived/oct15/channel_by_quintile.csv`, SPM rows.]
+`sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json`, `joint_social_stack`, `cash_pairing_bn`,
+`v9_social_environment.current_social_rows`, `uncomputed_variants` (c7b99ac7);
+`distribution_weights_2026_09_23/derived/oct16/channel_by_quintile.csv`, SPM rows.]
 
 Date: 2026-09-23. Operator request: "equal charge --- should it be weighted with use of
 courts, police, prisons? Do the remaining common sense stuff to get at the real fiscal and
@@ -72,8 +74,11 @@ budget-category rule and sets:
   Other services respond proportionally. Imported employee pension and retiree-health normal costs keep their
   booked valuations. [CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9`.]
 
-Its per-case sampling standard error is $11.1–11.4bn, a partial approximation rather than a floor (ladder 184; [CALCULATION:
-`uncertainty_propagation_2026_09_22/derived/oct15/summary.json`, `oct15.se_independent_bn`, b5132efe]). This is not the generation ledger.
+Its per-case sampling standard error, combining the survey blocks as if independent, is $14.2–14.5bn, a partial
+approximation rather than a floor; $9.0bn of it is the MEPS donor model on which item 21's payer-keyed health
+residual rests (ladder 184; [CALCULATION:
+`uncertainty_propagation_2026_09_22/derived/oct16/case_uncertainty_set.csv`, `se_combined_independent_bn` and
+`se_meps_donor_bn` at specifications 11 and 16, 034db791]). This is not the generation ledger.
 Per-person gaps against whites come from a different object and do not combine with these totals
 ([FAQ, "Before combining numbers"](immigration-objections-faq-2026-09-21.md)).
 
@@ -136,15 +141,15 @@ Yes, use is the better key. It changes little because of what the account compar
 
 | Channel | What it is | $bn a year to other residents | Measured or modelled | Adds to the net? |
 |---|---|---:|---|---|
-| Courts, police, prisons by use | reallocation inside the fiscal account | +5.9 adopted (+1.7 raw codes; grid −1.0 to +8.7) | measured shares, assumed keys | adopted into the main case |
-| Uncompensated hospital care | government offsets inside the fiscal account; unreimbursed care outside budgets | 3.5 / 5.9 outside budgets on the current lineage's boundary; the fiscal use-key change is not separately isolated on v8 | measured uninsured share, published offsets, assumed use | fiscal part already inside; outside part a social item |
-| Crime victims' harm | losses of residents outside the lineage; excludes justice costs and offenders | 37.3 / 41.5 on the completed/covered lineage's sender and receiver boundary | measured incidents, modelled prices and recipient mix | yes, as a social (Z) item |
+| Courts, police, prisons by use | reallocation inside the fiscal account | +5.9 on the September 23 lane (2019 arrests; +1.7 raw codes; grid −1.0 to +8.7); not isolated in the live case | measured shares, assumed keys | the key is inside the main case |
+| Uncompensated hospital care | government offsets inside the fiscal account; unreimbursed care outside budgets | 3.4 / 5.9 outside budgets on the current lineage's boundary; the fiscal use-key change is not separately isolated on v9 | measured uninsured share, published offsets, assumed use | fiscal part already inside; outside part a social item |
+| Crime victims' harm | losses of residents outside the lineage; excludes justice costs and offenders | 37.3 / 41.6 on the completed/covered lineage's sender and receiver boundary | measured incidents, modelled prices and recipient mix | yes, as a social (Z) item |
 | Property crime | same boundary, arrest-share proxy | 1.3 / 1.4 | proxy | yes, as Z; separate from violent harm |
 | Housing, net to other residents | rent paid to other residents' landlords, less the surplus triangle | −3.8 / −0.8, a gain | modelled elasticities, measured rents | yes, as Z, long run only |
 | Road congestion | other residents' extra travel time and fuel, with road capacity responding | 13.7 / 10.8 | measured traffic shares and delay, modelled speed/capacity response | yes, as Z beside the main case |
 
-Current dollar rows: `sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json`,
-`v8_social_environment.current_social_rows`. Source methods: [victim harm](../infra/immigration-fiscal/crime_victim_cost_2026_09_23/RESULT.md),
+Current dollar rows: `sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json`,
+`v9_social_environment.current_social_rows`. Source methods: [victim harm](../infra/immigration-fiscal/crime_victim_cost_2026_09_23/RESULT.md),
 [uncompensated care](../infra/immigration-fiscal/uncompensated_care_2026_09_23/RESULT.md),
 [housing](../infra/immigration-fiscal/housing_transfer_2026_09_23/RESULT.md),
 [congestion](../infra/immigration-fiscal/congestion_2026_09_23/RESULT.md).
@@ -161,7 +166,7 @@ Current dollar rows: `sept24_propagation_2026_09_24/derived/oct15/real_costs_tot
   Under the proportional benchmark roads grow with population and only a $9.0bn residual
   remains. The current pairing lets road capacity respond with budgets and counts completion/coverage traffic
   on the declared age-scoped keys: $13.7bn remains at the low end and $10.8bn at the high
-  (`sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json`, current row `congestion`). Crashes and PM2.5 are priced in §3b; pavement wear
+  (`sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json`, current row `congestion`). Crashes and PM2.5 are priced in §3b; pavement wear
   is not.
 
 - **Victims.** The underlying standalone lane counts about 1,020 killings and 402,000 non-fatal violent
@@ -180,9 +185,8 @@ Current dollar rows: `sept24_propagation_2026_09_24/derived/oct15/real_costs_tot
   an adding-up check against NCVS victim counts (ladder 202).
 - **Spending and victims answer different questions.** The current fiscal leg follows measured custody at
   both ends; victims take equal offending at the low end and the custody ratio at the high. The alternative
-  matching justice's fiscal key to the equal footing is beside, $473.1bn at the low end with all other social
-  rules fixed. [CALCULATION: `sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json`,
-  `v8_social_environment.variants.matched_justice_footing`.]
+  matching justice's fiscal key to the equal footing has not been computed on v9. [CALCULATION:
+  `sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json`, `uncomputed_variants.matched_justice_footing`.]
 - **Uncompensated care.** The group holds 25.7% (SE 0.6) of the nation's uninsured
   person-years against 12.0% of residents: 35.1% of the Mexico-born are uninsured and 14.3% of
   US-born members. That is $11.0–13.2bn of hospitals' uncompensated care. Governments offset
@@ -217,10 +221,10 @@ reduces the gain from removal. The same budget response removes public consumpti
 gain. Public-function-specific pollution intensity is unmeasured, so government-average intensity is transported
 to the removed spending [ASSUMPTION]; public investment emissions are unpriced. CO2, ozone, disease/food safety and
 life-year valuations remain beside. The range from stacking every old standalone lane's extremes is not a range
-for this joint current stack. [CALCULATION: `sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json`,
-`v8_social_environment`, `joint_social_stack`.]
+for this joint current stack. [CALCULATION: `sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json`,
+`v9_social_environment`, `joint_social_stack`.]
 
-## 4. Transfers## 4. Transfers among other residents: not added, but who bears them
+## 4. Transfers among other residents: not added, but who bears them
 
 At fiscal weight 1 these cancel inside "other residents", and the production term already
 contains their net. They answer who pays, not how much.
@@ -241,37 +245,39 @@ effects on less-educated natives are disputed in both directions
 ([canon audit](immigration-canon-citation-audit-2026-09-17.md)). The dollar size depends on
 where the skill line falls and on the substitution elasticity σ.
 
-**The transfers run from poorer to richer residents, measured.** The distribution lane ranks
-other residents by SPM resources per equivalent adult (CPS ASEC 2025) and splits each channel by
-income fifth, $bn a year, on corrected main case v8:
+**The transfers run from poorer to richer residents.** The distribution lane places each modelled
+channel by measured income: it ranks other residents by SPM resources per equivalent adult (CPS ASEC 2025)
+and splits each channel by income fifth, $bn a year, on main case v9:
 
 | Channel | Bottom fifth | 2nd | 3rd | 4th | Top fifth | Total |
 |---|---:|---:|---:|---:|---:|---:|
-| Wages, after tax | −4.7 | −10.9 | −11.7 | −4.2 | +29.8 | −1.7 |
+| Wages, after tax | −4.7 | −10.9 | −11.6 | −4.2 | +29.7 | −1.7 |
 | Housing net (renters' extra rent, landlords' receipts) | −7.2 | −5.3 | −3.8 | −1.9 | +21.7 | +3.5 |
 | Crime victims' harm (custody footing) | −10.4 | −6.5 | −5.5 | −5.0 | −4.9 | −32.3 |
-| Unreimbursed hospital care | −0.5 | −0.7 | −0.9 | −1.1 | −1.2 | −4.4 |
-| **Outside the budget, together** | **−22.8** | **−23.4** | **−21.9** | **−12.2** | **+45.4** | **−34.9** |
-| Fiscal cost, financed in proportion to taxes paid | −12.2 | −25.7 | −43.4 | −71.1 | −250.1 | −402.5 |
-| Fiscal cost, financed by equal cuts per person | −80.5 | −80.5 | −80.5 | −80.5 | −80.5 | −402.5 |
-| Rental assistance, LIHEAP and public housing, borne by eligible households without the aid | −6.7 | −2.0 | −0.3 | 0.0 | 0.0 | −9.0 |
+| Unreimbursed hospital care | −0.4 | −0.7 | −0.9 | −1.1 | −1.1 | −4.2 |
+| **Outside the budget, together** | **−22.7** | **−23.4** | **−21.8** | **−12.2** | **+45.4** | **−34.7** |
+| Fiscal cost, financed in proportion to taxes paid | −11.9 | −25.2 | −42.4 | −69.5 | −244.4 | −393.4 |
+| Fiscal cost, financed by equal cuts per person | −78.7 | −78.7 | −78.6 | −78.7 | −78.7 | −393.4 |
+| Rental assistance, LIHEAP and public housing, borne by eligible households without the aid | −7.0 | −2.2 | −0.3 | 0.0 | 0.0 | −9.5 |
 
 The cells are rounded under control so every row and the outside-budget column totals add. The fiscal channel
-is $402.5bn: cash $266.1bn, the public-capital resource cost $51.7bn, unclassified net amounts $0.7bn and pension
-accrual $84.0bn. These are the distribution lane's endpoint-averaged financing channels, not the case's endpoint
-band. [CALCULATION: `distribution_weights_2026_09_23/derived/oct15/channel_by_quintile.csv`, SPM quintile 0,
+is $393.4bn: cash $266.6bn, the public-capital resource cost $42.7bn, unclassified net amounts $0.5bn and pension
+accrual $83.6bn. These are the distribution lane's endpoint-averaged financing channels, not the case's endpoint
+band; the capital return is a resource cost, never borrowing. [CALCULATION:
+`distribution_weights_2026_09_23/derived/oct16/channel_by_quintile.csv`, SPM quintile 0,
 `fiscal_cash_a`, `fiscal_resource_a`, `fiscal_unclassified_a`, `fiscal_accrual_a`.]
 The winners lane's
-construction of the same channel, which the INDEX quotes, comes to $372.2bn on this lane's bridge; holding the
+construction of the same channel on the same case comes to $392.2bn; holding the
 case and allocation rules fixed, the two differ only in induced receipts: the engine's at the band's ends here,
-its central scenario's there ($1.2bn). [CALCULATION: `winners_losers_2026_09_24/derived/oct14/channels.csv`,
-`fiscal`; `distribution_weights_2026_09_23/derived/oct14/channel_by_quintile.csv`, `spm`, `fiscal_a`, quintile `0`.]
+its central scenario's there ($1.2bn). [CALCULATION: `winners_losers_2026_09_24/derived/oct16/channels.csv`,
+`fiscal`, `bn_central`; `distribution_weights_2026_09_23/derived/oct16/channel_by_quintile.csv`, `spm`, `fiscal_a`,
+quintile `0`.]
 The constructed coverage people stay outside the observed payer pool. The survey cannot locate the
 original nonreporting descendants; their distribution uses source age-cell transport [ASSUMPTION]. The lineage's production term
 scales the wage scenarios; the other rows do not move with the case.
 
 In dollars the channels outside the budget nearly cancel. By income they do not: the bottom four
-fifths lose $80.3bn a year and the top fifth gains $45.4bn.
+fifths lose $80.1bn a year and the top fifth gains $45.4bn.
 
 - **Housing.** Renters pay about the same extra rent in every fifth ($566 a year per renter
   household at the bottom, $1,770 at the top, but 13.8m renter households against 4.0m).
@@ -284,25 +290,25 @@ fifths lose $80.3bn a year and the top fifth gains $45.4bn.
   to resources, 0.39% against 0.18%, though 41% of the dollars go to the top fifth.
 
 **The fiscal cost's incidence is a financing convention.** If every tax rises in proportion, the
-top fifth bears 62% of it. If services are cut equally per person, it takes 14.2% of the bottom
+top fifth bears 62% of it. If services are cut equally per person, it takes 13.9% of the bottom
 fifth's resources and 1.5% of the top fifth's. The actual mix of taxes, cuts and deficits is not
 identified. With the channels above and the displaced beneficiaries added (congestion, property
-crime and the §3b items excluded), the central total of $446.4bn takes 7.3% of the bottom fifth's
-resources and 3.8% of the top fifth's under tax-share financing, and 19.4% and 0.66% under
+crime and the §3b items excluded), the central total of $437.6bn takes 7.4% of the bottom fifth's
+resources and 3.7% of the top fifth's under tax-share financing, and 19.1% and 0.62% under
 per-person cuts.
 
 **Weighted by income.** Each dollar is weighted by (y/ȳ)^−η, with a 5th-percentile floor, and
 the result is reported as the equal per-person loss that would be as bad, which does not depend
-on how the weights are normalized. The channels outside the budget cost $94–111bn at η = 1–2,
-2.7–3.2 times their dollar sum. The whole central total is equivalent to $264.6bn under tax-share
-financing and $525.9bn under per-person cuts at η = 1.3, the UK Green Book's value. OMB's 2023
+on how the weights are normalized. The channels outside the budget cost $94–110bn at η = 1–2,
+2.7–3.2 times their dollar sum. The whole central total is equivalent to $262.5bn under tax-share
+financing and $517.9bn under per-person cuts at η = 1.3, the UK Green Book's value. OMB's 2023
 Circular A-4 used 1.4; it was revoked in 2025 and the reinstated 2003 Circular sets no weights.
 Choosing η is a value judgment, so η = 0, 1, 1.3, 1.4 and 2 are all in the lane. The lane's
-mean-normalized totals (−$592.2bn and −$1,177.1bn at 1.3) are the same sums multiplied by the average
+mean-normalized totals (−$587.3bn and −$1,158.7bn at 1.3) are the same sums multiplied by the average
 weight (2.24), not a larger harm.
 [CALCULATION: [distribution lane](../infra/immigration-fiscal/distribution_weights_2026_09_23/RESULT.md)
-(60a228cc),
-`derived/oct15/channel_by_quintile.csv`, `derived/oct15/weighted_totals.csv`, `derived/case_ends_oct15.json`]
+(65b6e01c),
+`derived/oct16/channel_by_quintile.csv`, `derived/oct16/weighted_totals.csv`, `derived/case_ends_oct16.json`]
 [FRAMING-SENSITIVE]
 
 ## 5. Checked and not found, or already inside the account
@@ -310,8 +316,9 @@ weight (2.24), not a larger harm.
 - **Native out-migration** from California is real, but the $2.1bn of state-local revenue it
   costs is 1.1% of that state's gap. It tracks top tax rates, not the Mexican-origin share
   (ladder 139).
-- **Displaced natives drawing transfers:** no take-up on the margins measurable for 2000–2010.
-  The instrument is weak on exogeneity, so this is a null, not a reversal (ladder 140).
+- **Displaced natives drawing transfers:** not identified. The 2000–2010 metro outcomes are
+  all-household rates, and the instrument fails exogeneity tests; the lane's natives-only rows show
+  no take-up but cannot exclude it, and SSDI was unreachable (ladders 140, 182).
 - **Flight from public schools** does not reproduce. Local revenue falls where Hispanic
   enrollment rises, and state aid mostly offsets it (ladder 141).
 - **Neighbourhood upkeep and petty disorder:** no group effect at equal income (ladder 142).
@@ -340,7 +347,7 @@ case since:
 
 ## 7. Putting the pieces together
 
-The fiscal total and social rows use corrected main case v8. The fiscal spending leg follows measured custody
+The fiscal total and social rows use main case v9. The fiscal spending leg follows measured custody
 at both ends, independently of the victims' offending assumption: the low end uses the equal Hispanic/NCVS footing
 for victims; the high end carries the custody ratio over to victims. Victims exclude justice costs and offenders;
 harm within the removed lineage is excluded. The receiver mix remains an exchangeability assumption.
@@ -352,38 +359,47 @@ The stayers' consumption shift and removal of completion members from the receiv
 
 | $bn a year | Low end | High end |
 |---|---:|---:|
-| Fiscal main case | 365.8 | 456.0 |
-| Social rows, net (table below) | 111.9 | 117.4 |
-| **Total at central values** | **477.7** | **573.4** |
-| Per member of the 45.23M-person lineage | $10.6k | $12.7k |
+| Fiscal main case | 368.0 | 436.6 |
+| Social rows, net (table below) | 111.6 | 117.1 |
+| **Total at central values** | **479.6** | **553.7** |
+| Per member of the 44.90M-person lineage | $10.7k | $12.3k |
+| Counting benefits when paid (fiscal row's pension timing only) | 396.0 | 470.1 |
 
 | Social row, $bn a year; positive costs others | Low end | High end |
 |---|---:|---:|
-| Crime victims' harm | 37.3 | 41.5 |
+| Crime victims' harm | 37.3 | 41.6 |
 | Property crime | 1.3 | 1.4 |
-| Unreimbursed care | 3.5 | 5.9 |
+| Unreimbursed care | 3.4 | 5.9 |
 | Congestion | 13.7 | 10.8 |
 | Housing net gain | −3.8 | −0.8 |
 | Fear and avoidance | 6.6 | 7.6 |
 | Private security | 0.5 | 0.6 |
 | School disruption | −2.2 | −2.2 |
-| PM2.5 from consumption, including re-spending | 69.0 | 65.7 |
+| PM2.5 from consumption, including re-spending | 68.3 | 65.0 |
 | Road crashes | 12.5 | 12.7 |
-| City size net of schooling | −15.4 | −15.4 |
+| City size net of schooling | −15.3 | −15.3 |
 | Restaurant variety | −6.7 | −6.7 |
-| Formal volunteering after replacement | −4.1 | −4.1 |
+| Formal volunteering after replacement | −4.0 | −4.0 |
 | Consumer-side scale | −2.3 | −2.3 |
-| Trade, travel and investment ties | −7.5 | −7.5 |
-| PM2.5 from removed public purchases | 9.5 | 10.2 |
-| **Social rows, net** | **111.9** | **117.4** |
+| Trade, travel and investment ties | −7.4 | −7.4 |
+| PM2.5 from removed public purchases | 9.7 | 10.2 |
+| **Social rows, net** | **111.6** | **117.1** |
 
-Three displayed values move by less than $0.1bn under controlled rounding so both columns add.
-The social rows sum to $111.861089 / $117.428646bn before rounding. The source JSON lists every row, its
-sender/receiver scope and overlap rule. Holding the social rules fixed, the matched justice-footing alternative
-uses the raw-coded fiscal key and gives $473.1bn at the low end, beside the central. Promises deferred,
-wealth-equivalent promises, life-year values, CO2 and alternate re-spending/government responses are separate
-readings, never added together. [CALCULATION: `sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json`,
-`joint_social_stack.ends`, `v8_social_environment.current_social_rows`, `variants`; 7342b331.]
+Two displayed values, public purchases' PM2.5 at both ends, move by less than $0.1bn under controlled rounding so
+both columns add. The social rows sum to $111.563948 / $117.124481bn before rounding. The source JSON lists every
+row, its sender/receiver scope and overlap rule. The matched justice-footing alternative, on the raw-coded fiscal
+key, has not been computed on v9. Promises deferred, wealth-equivalent promises, life-year values, CO2 and
+alternate re-spending/government responses are separate readings, never added together.¹ [CALCULATION:
+`sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json`, `joint_social_stack.ends`, `cash_pairing_bn`,
+`v9_social_environment.current_social_rows`, `variants`; c7b99ac7.]
+
+¹ Valuing deaths by remaining life-years instead of the uniform DOT value of a statistical life, in the crime,
+PM2.5 and crash rows together, puts the pairing at $433.0–508.8bn with life-years undiscounted and
+$438.4–513.8bn at a 3% real discount rate. The value falls because PM2.5 deaths, like deaths generally, fall mostly
+on people over 65 ([air-pollution lane](../infra/immigration-fiscal/air_pollution_2026_09_28/RESULT.md)). This is a
+valuation choice beside the central, which keeps the transport departments' one value at every age.
+[FRAMING-SENSITIVE; CALCULATION: `sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.csv`,
+`pairing_social_env_life_years_r0_beside`, `pairing_social_env_life_years_r003_beside`.]
 
 With enterprises and their capital moving with services, fiscal sign break-evens span −2.9% to 11.2% across the
 admitted personal readings. The least favorable remains a cost at every nonnegative common response; the most
@@ -401,8 +417,8 @@ priced. Each lane ruled whether its gain already sits inside the production term
 | Care: taxes on native women's extra hours (+2.69), net elder-care Medicaid saving (+1.49) and a second-order output effect with its taxes (−0.03) | +4.15 (2.60–13.35) | inside the fiscal account since September 24 | 198 |
 | Cheaper services to consumers | 21.8 (11.9 net of native wage gains) | inside P; side view, not added | 198 |
 | Cheaper construction (0.75%) | 0 | inside P; other renters' extra rent $33.5bn → $29.9bn | 200 |
-| City size and schooling mix, one regression (Card–Rothstein–Yi) | +13.7; on the CPS count +13.9 (−56.6 to +84.4) | in the social rows since September 28 (§3b) | 201 |
-| Restaurants, volunteering, consumer-side scale, trade ties | +21.7 | in the social rows since September 28 (§3b) | 261, 265 |
+| City size and schooling mix, one regression (Card–Rothstein–Yi) | +15.3 on the lineage in §7 (+13.9 on the CPS count; −56.6 to +84.4) | in the social rows since September 28 (§3b) | 201 |
+| Restaurants, volunteering, consumer-side scale, trade ties | +20.5 on the lineage in §7 | in the social rows since September 28 (§3b) | 261, 265 |
 | Mobility: local-shock insurance and Borjas's gain | +0.65 (0.18–2.46) | beside the account; fiscal slice 0.03 | 203 |
 | Innovation (patents) | not added | no response at the group's schooling; interval ±$500bn | 201 |
 
@@ -422,7 +438,7 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
 - **Pavement wear** is not priced. Congestion (§3), crashes and PM2.5 (§3b) are. Priced but kept out
   of the total: CO2, ozone, disease and food safety, and the cuisine mix. Government-consumption PM is central;
   public-investment emissions remain unpriced
-  (`sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json`, `v8_social_environment`).
+  (`sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json`, `v9_social_environment`).
 - **Innovation and automation.** The transported patent-effect scenario is too imprecise to
   supply an identified offset; this is not evidence of zero innovation. The schooling-corrected
   arm has a positive point estimate with very wide uncertainty
@@ -460,11 +476,13 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
 | [Wage split](../infra/immigration-fiscal/wage_distribution_2026_09_23/RESULT.md) | 3afdb25 | −$66 to −$166bn / +$71 to +$163bn |
 | [Main case v9](../infra/immigration-fiscal/main_case_2026_10_16/RESULT.md) | 7dfb4c66 | $368.0–436.6bn; $284.4–352.9bn counting benefits when paid; calibrated lineage, fixed military service costs, one Trustees capital rate and payer-keyed health residual |
 | [Congestion](../infra/immigration-fiscal/congestion_2026_09_23/RESULT.md) | dd3c45a | $19.2bn ($8.0–35.3bn); $14.0 / 12.0bn once roads respond (`service_response_long_run_2026_09_27`) |
-| Totals: `sept24_propagation_2026_09_24/real_costs_totals.py` | 7342b331 | the corrected v8 joint social pairing, including both sides of the budget response |
+| Totals: `sept24_propagation_2026_09_24/real_costs_totals.py` | c7b99ac7 | the v9 joint social pairing, including both sides of the budget response |
 | [Population basis](../infra/immigration-fiscal/population_basis_2026_09_29/RESULT.md) | b7f14e7 | every row on the account's 39.7M |
-| [Income weights](../infra/immigration-fiscal/distribution_weights_2026_09_23/RESULT.md) | 60a228cc | four-channel incidence view on corrected v8: bottom four fifths −$80.3bn, top fifth +$45.4bn |
+| [Income weights](../infra/immigration-fiscal/distribution_weights_2026_09_23/RESULT.md) | 65b6e01c | four-channel incidence view on v9: bottom four fifths −$80.1bn, top fifth +$45.4bn |
 
 ## Revisions
+
+- 2026-10-21 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md); consumer lanes: pairing c7b99ac7, distribution 65b6e01c, uncertainty 034db791): the verdict, §1, §3, §4 and §7 state v9's own consumer figures. The pairing is $479.6–553.7bn ($10.7–12.3k per member of the 44.90M lineage), $396.0–470.1bn counting benefits when paid; v8's $477.7–573.4bn had sat beside the v9 headline although its fiscal row was v8's. The social rows are $111.6 / 117.1bn. Outside the budget the bottom four fifths lose $80.1bn and the top fifth gains $45.4bn; §4's fiscal channel is $393.4bn. The sampling standard error is $14.2–14.5bn, wider because item 21's health residual rests on the MEPS donor model. The raw-coded justice alternative and the matched justice-footing pairing are not computed on v9 and their numbers are withdrawn. §7 gains a life-year footnote at the operator's request (2026-10-21): $433.0–508.8bn undiscounted, $438.4–513.8bn at 3%. Wording: the wage transfer is labelled the calibrated model's, not a measured effect; §3's justice row names the September 23 lane; §4's opening no longer calls the split "measured"; §5's displaced-natives line says not identified (ladder 182's withdrawal); §7b states its scale rows on §7's basis; the winners comparison is on the same case. Concept affected: the fiscal-plus-social total, its distribution by income and the stated status of the wage and displaced-natives channels.
 
 - 2026-10-20 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md), adopted 2026-10-20): direct case figures follow the calibrated lineage, fixed military service costs under equal-cost replacement, one Trustees capital rate and payer-keyed non-VA health residual. Income-year 2024 tax and benefit rules remain the frame; only Social Security and Part A promises use current-law payable benefits. Consumer-derived figures await the separate propagation pass. Concept affected: the live annual account and its companion readings.
 

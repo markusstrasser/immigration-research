@@ -8,274 +8,251 @@ wins exactly". [MODEL / FRAMING-SENSITIVE] Three choices shape the result:
 
 Every figure below names the choice it uses.
 
-**Verdict (2026-10-14, main case v7, $339.6–423.6bn; [decision](../decisions/2026-10-14-main-case-v7.md)):**
-About one other US resident in five comes out ahead of the Mexican-origin group's presence, and the rest
-come out behind.
-- Counting each household's gains and costs as shared among its members, 19.6% come out ahead if the
-  fiscal cost is financed by tax shares, and 18.7% if by equal cuts per person. [CALCULATION:
-  `derived/oct14/net_shares.csv`, `net_social_a` and `net_social_b`, unit `spm_unit_pooled`, central; 2204a2bc]
-- Setting every choice at its least costly value gives 26.9% / 24.7%, and at its most costly 11.9% / 12.1%,
-  under tax shares / per-person cuts [CALCULATION:
-  `net_shares.csv`, stacks `least_costly` and `most_costly`].
-- Giving wages to the earner alone, while taxes and rent stay shared, gives 17.9% / 18.0% under tax shares / per-person cuts
-  [CALCULATION: `net_shares.csv`, unit `person`].
+**Verdict (2026-10-21, main case v9, $368.0–436.6bn; [decision](../decisions/2026-10-16-main-case-v9.md)):**
+Few other US residents come out ahead of the Mexican-immigrant lineage's presence, 3–8% at central values
+depending on how the fiscal cost is financed, and the rest come out behind.
+- Counting each household's gains and costs as shared among its members, and charging every part of the cost to
+  today's residents (stationary financing), 2.79% come out ahead if the cost is financed by tax shares (a), 4.71% if
+  by equal cuts per person (b) and 8.31% if by cuts to the programmes that respond (c). [CALCULATION:
+  `derived/oct16/p7_net_shares.csv`, arm `recommended`, epsilon `infinite`, frame `stationary`, level `central`,
+  sharing `pooled`; e6dcde3c]
+- At the case's low end with the social rows' low values, 42.29% / 40.00% / 41.81% come out ahead under (a) / (b) /
+  (c); at its high end with their high values, 2.86% / 3.08% / 3.62% [CALCULATION: the same rows, levels `low` and
+  `high`].
+- Giving wages to the earner alone, while taxes and rent stay shared, gives 3.52% / 4.51% / 9.52% [CALCULATION:
+  sharing `person`].
+- Spreading the trust-fund block over the next 30 years' payers instead (cohort financing, beside) gives
+  8.01% / 10.79% / 15.22% [CALCULATION: frame `cohort30`].
 
-The count runs person by person over the 295.8m other residents in CPS ASEC 2025. It covers the
-adopted main case and the social items the ledger allocates (§2), at central values. Taxpayers carry
-$372.2bn of the fiscal channel at central values; the distribution lane's $373.4bn adds $1.2bn of
-induced receipts at the band's ends, holding the case and allocation rules fixed. $75.1bn of it is the pension accrual: the Social
-Security and Part A benefits the group's 2024 work earns, which nothing finances in 2024. It falls on the
-future payers of those benefits and, like the borrowed federal part ($10.2bn), is allocated to no one
-alive today. With the accrual, 69% of this taxpayer channel is state and local; excluding that accrual
-but keeping its other components, 87%. $49.1bn is the
-return on public capital, which is never borrowed. Rental assistance, LIHEAP and public housing ($8.8bn)
-fall on eligible households that go without the aid. The social net on today's residents is −$341.7bn,
-or −$1,155 per other resident. The group's own rows count the 42.75M lineage,
-the 3.04M added descendants placed at the identified third-plus members' records of their own five-year
-age band [ASSUMPTION]; the direct transfer it receives is $9,157 per member. [CALCULATION:
-`derived/oct14/channels.csv`, rows `fiscal`, `future_pension_accrual`, `future_taxpayers`,
-`fiscal_state_local`, `fiscal_resource` and `displaced_beneficiaries`; `net_shares.csv`, `mean_usd`;
-`group_frame.csv`; 2204a2bc. The distribution lane's $373.4bn: `derived/oct14/channel_by_quintile.csv`,
-`fiscal_a`, 17d3735a]
+The count runs person by person over the 292.59m other residents in CPS ASEC 2025. It covers the main case and
+the social rows of the case's social pairing, each allocated by its own key (§2). At central values (the case's
+midpoint with the social rows' central values) the net on today's residents is −$505.65bn, or −$1,728 per other
+resident; it is −$189.59bn at the low end and −$823.45bn at the high. Under stationary financing nothing is left
+to future payers: the $83.64bn of Social Security and Part A promises that the group's 2024 work earns is charged
+to today's covered earnings, and state and local budgets carry $265.22bn. The group receives a direct transfer of
+$9,190 per member of the 44.90M-person lineage. [CALCULATION: `p7_net_shares.csv`, `total_bn`, `mean_usd`;
+`derived/oct16/p7_channel_table.csv`, channels `trust_accrual` and `state_local`; `derived/oct16/group_frame.csv`;
+e6dcde3c]
 
-Who comes out where:
-- **Behind:** 96–98% in California and Texas, 97–98% of US-born adults with a high-school education or
-  less, 89–91% of renters, and from 82% to over 99% of each decile in the bottom half.
-- **Most often ahead:** households whose earners have some college or more and live outside California
-  and Texas: the top decile (34% under tax shares, 56% under per-person cuts) and landlords (41–46%),
-  whose pooled net under tax shares is −$384 a year.
+Who comes out where, at central values, pooled [CALCULATION: `derived/oct16/p7_cuts.csv.gz`, cuts `state3`,
+`edu_nativity`, `tenure` and `decile`; §3]:
+- **Behind:** 97–98% in California and Texas, 98–99% of US-born adults with a high-school education or less, 99%
+  of renters, and over 98% of each decile in the bottom half, under (a) and (b).
+- **Most often ahead:** landlords (23.3% under (a), 28.8% under (b), 36.0% under (c)), whose pooled net under
+  tax shares is −$1,093 a year, and the top decile (9.6%, 29.6% and 39.2%).
 
-[CALCULATION: `derived/oct14/person_nets_by_cut.csv`, cuts `state3`, `edu_nativity`, `tenure` and
-`decile`, pooled under (a) and (b); 2204a2bc]
-
-Preferences are an attribution under a stated proportional-replacement rule. White natives' part is
-−$0.58bn, and other recipients in the same pools, mostly in admissions, carry −$0.97bn [CALCULATION:
-`derived/oct14/channels.csv`, rows `preferences_group_part` and `preferences_group_part_others`].
-[CALCULATION: [ledger lane](../infra/immigration-fiscal/winners_losers_2026_09_24/RESULT.md),
-`--case oct14` → `derived/oct14/`, 2204a2bc; ladder 226] [FRAMING-SENSITIVE]
-
-The tables and their accompanying analysis below preserve the September 24 calculation record;
-they are not the current verdict. Current pointers in §§1 and 7 name their case separately.
-[CALCULATION: `winners_losers.py` →
-`derived/net_shares.csv`, `person_nets_by_cut.csv` at `--case sept24`]
+Preferences, school dilution and the debt legacy's interest stay out of every net (§6, §7).
+[CALCULATION: [ledger lane](../infra/immigration-fiscal/winners_losers_2026_09_24/RESULT.md), "v9 case (oct16)",
+`--case oct16` → `derived/oct16/`, e6dcde3c; ladder 226] [FRAMING-SENSITIVE]
 
 ## 1. Object and frame
 
-The frame is the [complete annual account](immigration-complete-annual-account-2026-09-20.md) on the
-main case adopted September 24 in the tables below; the verdict above is the lane's run on
-main case v7 of 2026-10-14. It measures the effect of the Mexican-origin residents, all generations, on all
-other US residents in 2024, comparing the year with and without the group. The verdict counts the 42.75M
-lineage the case prices: the 39.7M who report Mexican origin, as the account prices them, and 3.04M
-descendants who no longer do. The September 24 tables count the survey's 40.9m. The survey cannot find the
-added descendants, so they stay among the 295.8m other residents, about 1% of them [ASSUMPTION; lane
-RESULT, October 5 section].
+The frame is the [complete annual account](immigration-complete-annual-account-2026-09-20.md) on main case v9.
+It measures the effect of the Mexican-immigrant lineage, all generations, on all other US residents in 2024,
+comparing the year with and without the group. The lineage is the case's 44.90M people. Of them, 42.95M sit on
+observed or proxy survey records: the reporters, item 10's completion and the 3.04M descendants who no longer report
+Mexican origin, whom the lane takes out of the US-born nonmembers with two US-born parents in their five-year age
+band and places at the identified third-plus members' records [ASSUMPTION]. The 1.95M people the Census misses are on no household record
+and are left out of the payer pool. Native-minor calibration (item 16) changes only members' weights. [DATA:
+`derived/oct16/p7_inputs.json`, `population`; lane RESULT, "v9 case (oct16)"]
 
 A person is "ahead" when their sum over the priced channels is positive. Unpriced effects are not in
 the count. The FAQ's rules for combining numbers apply: the channels below come from one frame and are
 allocated, not added across objects.
 
 Each channel goes to persons by its own key:
-- **Fiscal cost** (inside the account, $223.4bn at central values):
-  - The federal part financed today is split by federal tax share (a) or per person (b).
-  - The state and local part is 81% of the cost. It stays in the states where the group lives, split
-    by state and local taxes (a) or per person (b).
-  - The deficit-financed federal part, $11.3bn, falls on future taxpayers and is not allocated to
-    anyone alive today.
-- **Wages** (inside the account): the account's production nest, split at high school or less (σ 2,
-  ε ∞).
-- **Rent** (beside the account): renters and landlords, by ACS income cells and state.
-- **Crime victims' harm, congestion, unreimbursed hospital care, property crime and mobility** (beside
-  the account): by the states where the group lives or drives, then by the income-split lane's keys
-  within each state.
+- **Fiscal cost:**
+  - Federal general-fund costs go by federal tax share (a), per person (b) or receipt of the responding
+    programmes (c). Rule (c) values each programme at its national budget and response; cash and SPM noncash
+    receipts are survey fields, and health and school receipt are proxied by enrollment and age.
+  - The state and local part stays in the states where the group lives, split by state and local taxes (a), per
+    person (b) or programme receipt (c).
+  - The trust-fund accrual goes to covered earnings under stationary financing and to future payroll payers,
+    future births included, under cohort financing.
+  - The return on public capital is a resource cost, never borrowed; the unlocated block goes per head.
+- **Wages** (inside the account): the account's production nest, split at high school or less (σ 2, ε ∞).
+- **Rent and housing:** renters and landlords, by ACS income cells and state.
+- **Social rows** (the pairing's rows, beside the account): crime victims' harm, property crime, fear and private
+  security by crime risk in the group's states; unreimbursed care; congestion and crashes by urban vehicle exposure;
+  PM2.5 by the source's local share plus national dispersion; school disruption by pupils in the group's states;
+  city size, restaurant variety, volunteering, consumer scale and trade by national or state consumption keys. Every
+  key is an incidence proxy.
+- **Non-members who stay in mixed households** (item 11): their recomputed taxes, credits and benefits.
 
-**Two ways to count persons.**
+**Ways to count persons.**
 - **Person count:** wages go to the earner, while taxes and rent are shared within the household
   (SPM unit). A degree-holding earner can come out ahead while the children and a non-working spouse
   carry their shares of the household's taxes with no offsetting gain.
 - **Pooled count** (central here): each household's amounts are added up and shared among its
-  members, as the income-split lane ([ladder 194](immigration-real-fiscal-and-social-costs-2026-09-23.md))
-  already ranks them. The pooled amount is the household's person-weighted mean, which keeps every
+  other-resident members. The pooled amount is the household's person-weighted mean, which keeps every
   channel's total exact.
-
-Pooling moves 28.1m people ahead and 16.8m behind under (a). They are mostly children and non-working
-adults in households that gain, and earners in households that lose.
-
-The lane reuses the income-split lane's person frame. It reproduces that lane's September 23 and
-September 24 tables to 2.8e-14bn.
+- **Mixed-unit count** (beside): it also shares the members' own after-tax resources with the other residents of
+  their units. The sharing rules are sensitivities, not bounds: an individual's sign can fall outside both
+  endpoints (lane RESULT, "Sharing rules are sensitivities, never bounds").
 
 ## 2. Who gains and who loses, by channel
 
-The table gives $bn a year at central values, signed from the named people's side. Per-person
-figures divide by the people who have a nonzero amount. It does not depend on how persons are counted.
-[CALCULATION: `derived/winners_losers_table.csv`]
+$bn a year at central values, stationary financing, signed from other residents' side. The channel totals do not
+depend on how persons are counted, and (a) and (b) differ only in who pays. Controlled rounding: the trust-fund
+accrual prints −83.7 (nearest −83.6) and the unlocated block −4.7 (nearest −4.6) so the parts add to the total.
+[CALCULATION: `derived/oct16/p7_channel_table.csv`, arm `recommended`, epsilon `infinite`, frame `stationary`,
+level `central`; the mixed-unit boundary row is left out]
 
-| Who | Gain or loss | $bn a year | People (m) | $ per person | Channel | Inside or beside the account |
-|---|---|---:|---:|---:|---|---|
-| Taxpayers today: federal tax share, and state and local taxes in the group's states (a) | loss | −212.1 | 293.2 | −723 | fiscal cost | inside |
-| Every other resident equally; the state and local part within the group's states (b) | loss | −212.1 | 295.8 | −717 | fiscal cost | inside |
-| Future federal taxpayers (the deficit-financed part) | loss | −11.3 | — | — | fiscal cost | inside, not allocated |
-| Workers with some college or more | gain | +95.8 | 107.0 | +895 | wages after tax | inside |
-| Workers with high school or less | loss | −96.0 | 47.1 | −2,037 | wages after tax | inside |
-| Renter households | loss | −33.9 | 85.0 | −398 | rent | beside |
-| Landlords | gain | +37.4 | 24.5 | +1,524 | rent receipts | beside |
-| People 12 and over, by victimization risk, in the group's states | loss | −30.9 | 256.7 | −121 | crime victims' harm | beside |
-| Metropolitan commuters, by the states of the congested urban areas | loss | −19.2 | 133.5 | −144 | road congestion | beside |
-| Privately insured, in the states of the group's uninsured | loss | −4.4 | 199.5 | −22 | unreimbursed hospital care | beside |
-| Households in the group's states | loss | −1.3 | 295.8 | −4 | property crime (proxy) | beside |
-| US-born men with high school or less, and all workers | gain | +0.7 | 154.1 | +4 | mobility insurance | beside |
+| Channel | (a) and (b) | (c) |
+|---|---:|---:|
+| Trust-fund accrual (Social Security and Part A promises) | −83.7 | −83.7 |
+| Federal general fund | −38.7 | −94.2 |
+| Current trust-fund cash | 0.0 | +55.5 |
+| State and local, in the group's states | −265.2 | −265.2 |
+| Unlocated fiscal block, per head | −4.7 | −4.7 |
+| Beneficiaries displaced from capped programmes | −9.5 | −9.5 |
+| Wage gains, workers with some college or more | +91.1 | +91.1 |
+| Wage losses, workers with high school or less | −91.7 | −91.7 |
+| Crime: victims, property, fear, private security | −48.4 | −48.4 |
+| Health and environment: PM2.5 and unreimbursed care | −81.3 | −81.3 |
+| Roads: congestion and crashes | −24.9 | −24.9 |
+| Housing | +2.3 | +2.3 |
+| School disruption | +2.2 | +2.2 |
+| City size, variety, volunteering, consumer scale, trade | +35.8 | +35.8 |
+| Non-members who stay in mixed households (item 11) | +11.0 | +11.0 |
+| **Net on today's residents** | **−505.7** | **−505.7** |
 
-Inside the account, taxes and wages come to −$223.6bn: −$212.3bn on today's residents and −$11.3bn
-on future taxpayers. The wage channel nets to −$0.2bn, but it moves $96bn a year from workers with
-high school or less to workers with more schooling. Allocated to today's residents, the account and
-the social items come to −$263.9bn, a mean of −$892 per other resident. The median is −$377 under (a)
-and −$505 under (b), pooled.
+The wage channel nets to −$0.6bn, but it moves $91bn a year from workers with high school or less to workers with
+more schooling. Rule (c) splits the federal part differently, the general fund at −$94.2bn and the trust funds' current cash at
++$55.5bn, for the same net. The mixed-unit count adds a −$55.35bn boundary row for resources shared across the
+member/nonmember line, for a net of −$561.00bn. [CALCULATION: `p7_channel_table.csv`, channel `mixed_boundary`;
+`p7_net_shares.csv`, sharing `mixed_unit`]
 
 ## 3. Person nets by the cuts that separate them
 
-The social net is the account plus the social items beside it. Net (a) is in $ per person a year,
-pooled. The next two columns give the share ahead, pooled, under each convention. The last column
-gives the share ahead under the person count, (a).
-[CALCULATION: `derived/person_nets_by_cut.csv`, columns `net_social_*_spm_pooled_*`]
+Net (a) is in $ per person a year, pooled, at central values under stationary financing. The next three columns
+give the share ahead, pooled, under each financing rule; the last gives the share ahead under the person count, (a).
+[CALCULATION: `derived/oct16/p7_cuts.csv.gz`, arm `recommended`, epsilon `infinite`, frame `stationary`, level
+`central`]
 
-| Cut | People (m) | Net (a) | Ahead (a) | Ahead (b) | Person count, ahead (a) |
-|---|---:|---:|---:|---:|---:|
-| California | 26.3 | −2,751 | 3.3% | 4.7% | 3.5% |
-| Texas | 21.2 | −2,661 | 2.2% | 3.5% | 2.3% |
-| All states except California and Texas | 248.3 | −544 | 27.9% | 24.7% | 23.3% |
-| US-born, below high school, 25+ | 8.5 | −981 | 2.8% | 1.7% | 0.7% |
-| US-born, high school, 25+ | 48.2 | −1,460 | 3.2% | 2.7% | 1.1% |
-| US-born, some college, 25+ | 47.3 | −657 | 25.6% | 21.3% | 33.7% |
-| US-born, BA or more, 25+ | 70.4 | −708 | 37.4% | 39.4% | 43.3% |
-| Other foreign-born, below high school, 25+ | 4.6 | −1,389 | 3.0% | 1.7% | 0.3% |
-| Other foreign-born, high school, 25+ | 8.2 | −1,666 | 5.3% | 3.4% | 0.9% |
-| Other foreign-born, some college, 25+ | 5.5 | −832 | 29.3% | 21.1% | 36.6% |
-| Other foreign-born, BA or more, 25+ | 16.9 | −1,024 | 37.1% | 36.0% | 40.1% |
-| Under 25 | 86.3 | −724 | 25.4% | 19.0% | 4.0% |
-| Renters | 86.8 | −1,269 | 13.3% | 10.5% | 13.1% |
-| Owners without rental income | 184.5 | −849 | 25.5% | 22.6% | 20.4% |
-| Landlords | 24.5 | +114 | 48.8% | 50.5% | 41.8% |
-| Under 18 | 60.9 | −629 | 27.8% | 20.1% | 1.5% |
-| 18–64 | 176.7 | −1,037 | 26.6% | 25.0% | 29.9% |
-| 65 and over | 58.3 | −727 | 11.5% | 11.8% | 9.6% |
-| Workers in construction | 9.8 | −1,504 | 19.6% | 17.9% | 27.1% |
-| Workers in restaurants | 8.5 | −1,072 | 18.4% | 14.5% | 16.8% |
-| Workers in agriculture | 1.7 | −963 | 21.5% | 21.9% | 26.4% |
-| Workers in landscaping | 1.2 | −1,064 | 15.3% | 12.7% | 18.5% |
-| Workers in other industries | 131.9 | −1,093 | 31.1% | 30.7% | 39.0% |
-| Not working | 142.7 | −651 | 17.9% | 13.5% | 2.2% |
-| Non-Hispanic white | 191.8 | −828 | 25.9% | 24.2% | 22.0% |
-| Non-Hispanic Black | 41.9 | −810 | 18.3% | 13.7% | 16.7% |
-| Non-Hispanic Asian | 22.7 | −1,286 | 25.9% | 24.9% | 20.0% |
-| Hispanic, other than Mexican origin | 28.1 | −1,075 | 18.6% | 13.5% | 14.7% |
-| Other race | 11.4 | −1,032 | 18.3% | 15.5% | 12.4% |
-| Women / men | 150.7 / 145.1 | −828 / −959 | 23.7 / 24.0% | 21.1 / 21.7% | 19.1 / 21.0% |
+| Cut | People (m) | Net (a), $ | Ahead (a) | Ahead (b) | Ahead (c) | Person count, ahead (a) |
+|---|---:|---:|---:|---:|---:|---:|
+| California | 25.2 | −5,504 | 2.9% | 3.1% | 4.1% | 2.7% |
+| Texas | 20.1 | −3,983 | 2.4% | 2.9% | 3.9% | 2.4% |
+| All states except California and Texas | 247.2 | −1,159 | 2.8% | 5.0% | 9.1% | 3.7% |
+| US-born, below high school, 25+ | 8.5 | −1,762 | 1.2% | 1.1% | 2.6% | 1.2% |
+| US-born, high school, 25+ | 47.8 | −2,235 | 1.6% | 1.6% | 4.4% | 1.4% |
+| US-born, some college, 25+ | 46.9 | −1,547 | 2.7% | 3.4% | 8.0% | 3.4% |
+| US-born, BA or more, 25+ | 69.8 | −1,811 | 4.4% | 8.9% | 16.8% | 7.2% |
+| Other foreign-born, below high school, 25+ | 4.6 | −2,225 | 1.1% | 0.9% | 1.3% | 1.0% |
+| Other foreign-born, high school, 25+ | 8.2 | −2,510 | 1.5% | 1.6% | 3.1% | 1.3% |
+| Other foreign-born, some college, 25+ | 5.5 | −1,874 | 2.2% | 2.7% | 6.3% | 3.2% |
+| Other foreign-born, BA or more, 25+ | 16.9 | −2,409 | 3.6% | 7.9% | 12.3% | 6.4% |
+| Under 25 | 84.5 | −1,223 | 2.5% | 4.1% | 4.5% | 1.8% |
+| Renters | 85.7 | −2,061 | 0.6% | 0.9% | 1.4% | 0.7% |
+| Owners without rental income | 182.6 | −1,656 | 1.1% | 3.3% | 7.9% | 2.0% |
+| Landlords | 24.2 | −1,093 | 23.3% | 28.8% | 36.0% | 25.1% |
+| Under 18 | 59.5 | −1,094 | 2.8% | 4.6% | 4.8% | 1.9% |
+| 18–64 | 175.0 | −1,806 | 2.9% | 5.2% | 8.0% | 4.4% |
+| 65 and over | 58.2 | −2,144 | 2.6% | 3.4% | 12.8% | 2.6% |
+| Workers in construction | 9.7 | −2,176 | 2.8% | 4.1% | 6.3% | 4.1% |
+| Workers in restaurants | 8.4 | −1,739 | 1.9% | 2.4% | 3.2% | 2.0% |
+| Workers in agriculture | 1.7 | −1,670 | 3.8% | 5.3% | 9.6% | 4.4% |
+| Workers in landscaping | 1.2 | −1,657 | 3.2% | 3.8% | 5.9% | 3.4% |
+| Workers in other industries | 130.7 | −1,960 | 3.2% | 6.1% | 9.5% | 5.2% |
+| Not working | 140.9 | −1,483 | 2.4% | 3.6% | 7.6% | 2.0% |
+| Non-Hispanic white | 189.7 | −1,676 | 3.2% | 5.5% | 10.0% | 4.1% |
+| Non-Hispanic Black | 41.5 | −1,425 | 1.4% | 1.9% | 3.7% | 1.8% |
+| Non-Hispanic Asian | 22.6 | −2,637 | 2.7% | 5.6% | 8.6% | 3.8% |
+| Hispanic, other than Mexican origin | 27.7 | −1,761 | 2.5% | 3.4% | 4.5% | 2.8% |
+| Other race | 11.1 | −1,822 | 1.8% | 3.3% | 4.7% | 2.0% |
+| Women | 149.1 | −1,695 | 2.8% | 4.6% | 8.1% | 2.9% |
+| Men | 143.5 | −1,763 | 2.8% | 4.9% | 8.5% | 4.1% |
 
-Under the person count, Arizona's 5.1m other residents are $2,832 behind on average, and 3.2% of them
-are ahead (lane RESULT). Two-way cells under the person count: US-born degree holders who are also
-landlords (8.7m) are ahead in 58% (a) to 66% (b) of cases. US-born adults with a high-school
-education in California and Texas are behind by $3,810–4,530 [CALCULATION: `derived/winner_cells.csv`].
-
-**By income.** The table covers SPM deciles of other residents. Net is the social net in $ per
-person, the same under both counts; the share ahead is pooled.
-[CALCULATION: `person_nets_by_cut.csv`, cut `decile`]
+**By income.** SPM deciles of other residents; net in $ per person, pooled, the share ahead pooled
+[CALCULATION: `p7_cuts.csv.gz`, cut `decile`]:
 
 | Decile | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Net (a) | −559 | −627 | −704 | −789 | −826 | −838 | −908 | −928 | −937 | −1,804 |
-| Ahead (a) | 2.8% | 7.4% | 12.2% | 17.4% | 22.6% | 29.1% | 30.1% | 36.6% | 39.3% | 41.3% |
-| Net (b) | −1,126 | −1,081 | −1,135 | −1,143 | −1,113 | −1,039 | −1,026 | −890 | −688 | +319 |
-| Ahead (b) | 0.5% | 0.9% | 2.7% | 6.8% | 12.3% | 20.6% | 28.1% | 38.2% | 44.3% | 59.6% |
+| Net (a) | −1,252 | −1,250 | −1,271 | −1,356 | −1,438 | −1,483 | −1,665 | −1,810 | −1,972 | −3,787 |
+| Ahead (a) | 0.7% | 0.8% | 1.1% | 1.8% | 1.8% | 2.4% | 2.0% | 3.0% | 4.8% | 9.6% |
+| Net (b) | −2,045 | −1,878 | −1,869 | −1,853 | −1,843 | −1,767 | −1,843 | −1,770 | −1,634 | −779 |
+| Ahead (b) | 0.4% | 0.7% | 0.8% | 1.3% | 1.5% | 2.0% | 1.7% | 2.8% | 6.4% | 29.6% |
+| Net (c) | −2,437 | −2,301 | −2,178 | −1,958 | −1,815 | −1,653 | −1,666 | −1,518 | −1,333 | −420 |
+| Ahead (c) | 0.7% | 1.1% | 1.9% | 2.9% | 4.1% | 5.1% | 5.3% | 8.2% | 14.7% | 39.2% |
 
-- **Tax-share financing (a).** The top decile pays the most dollars. As a share of SPM resources,
-  though, the social net is four times heavier in the bottom quintile: −6.2% there against −1.5% in
-  the top (lane RESULT, quintile table). Rent, wages and crime fall toward the bottom, while landlord
-  receipts and wage gains go to the top.
-- **Per-person cuts (b).** The top decile gains on average (+$319), and it is the only decile where
-  most people come out ahead (60%).
+- **Tax-share financing (a).** The top decile pays the most dollars. As a share of SPM resources, though, the net
+  is four times heavier in the bottom quintile: −13.0% there against −3.2% in the top [CALCULATION: cut
+  `quintile`, `pct_of_resources`]. Rent, wages and crime fall toward the bottom, while landlord receipts and wage
+  gains go to the top.
+- **Per-person cuts (b) and programme cuts (c).** The bottom deciles lose more and the top decile less; under (c)
+  39.2% of the top decile come out ahead, the most of any decile.
 
 ## 4. What drives the split
 
-- **Geography.** State and local budgets carry 81% of the fiscal cost, and the lane charges it to the
-  states where the group lives [INFERENCE: a state-level fiscal account would test it].
-  - The average other resident is $2,660–2,830 a year behind in California, Texas and Arizona, and
-    $544 elsewhere.
-  - Charged to the whole country instead, California's net per person moves from −$2,751 to −$1,359,
-    and the rest of the country's from −$544 to −$810. The share ahead (person count) falls to 13%.
-  - Geography is the largest single choice in the result.
-  - These are other residents' shares of the account's cost, a financing allocation. They are not the
-    per-member gaps of the [California–Texas memo](immigration-california-texas-fiscal-geography-2026-09-21.md),
-    and the two are never combined (FAQ, "Before combining numbers"). Against local whites those gaps
-    are −$15,228 / −$9,267 with the income tax the survey misses, placed on the main case's keys
-    (item T), and −$12,133 / −$7,479 with taxes as the survey reports them. The added tax rests on few
-    records: the ten largest white households carry 67% of whites' added tax in California and 98% in
-    Texas.
-- **Schooling.** The account's production nest moves $96bn a year of after-tax wages from workers
-  with high school or less to workers with more schooling. That puts US-born adults with high school
-  or less 97–99% behind. Degree holders are ahead more often than any other schooling group (37–39%
-  pooled).
+- **Financing.** It is the largest single choice. Stationary financing charges the trust-fund accrual and the
+  borrowed federal part to today's residents; cohort financing moves the trust block to the payers of the next 10 or
+  30 years and raises the share ahead to 8.0–15.2% (sensitivities below).
+- **Where the case and the social rows sit in their ranges.** At the low end with the social rows' low values about
+  two in five come out ahead under every rule; at the high end 3–4%. The social producers' ranges move several rows
+  by tens of billions in opposite directions (crashes and city size above all), and the low end's net on today's
+  residents is under a quarter of the high end's.
+- **Geography.** State and local budgets carry the largest part of the fiscal cost, and the lane charges it to the
+  states where the group lives [INFERENCE: a state-level fiscal account would test it]. The average other resident
+  is $5,504 behind in California and $3,983 in Texas, against $1,159 elsewhere, under (a).
+  These are other residents' shares of the account's cost, a financing allocation. They are not the per-member gaps
+  of the [California–Texas memo](immigration-california-texas-fiscal-geography-2026-09-21.md), and the two are never
+  combined (FAQ, "Before combining numbers").
+- **Schooling.** The production nest moves $91bn a year of after-tax wages from workers with high school or less to
+  workers with more schooling. That puts US-born adults with high school or less 98–99% behind. Degree holders are
+  ahead more often than other schooling groups (4.4% of US-born under (a), 8.9% under (b)).
   - The nest is the account's calibration, not a measured wage effect.
   - Measured effects on less-educated natives are disputed in both directions
     ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §4).
-- **Tenure.** Renters pay $33.9bn more in rent and landlords receive $37.4bn more. Rent is the channel
-  that lifts landlords to a positive average: +$114 under (a) and +$740 under (b).
-- **Household composition.** Pooled, children are ahead as often as working-age adults (28% against
-  27% under (a)). People 65 and over are ahead in 12% of cases: they gain little in wages and carry
-  their share of taxes.
+- **Tenure.** Rent is the channel that lifts landlords: they are ahead 23–36% of the time, renters under 2%.
+- **Household composition.** Pooled, children are ahead about as often as working-age adults under (a). People 65
+  and over are ahead in 2.6% of cases under (a) but 12.8% under (c), where cuts follow programme receipt.
 
-**Sensitivities.** Share of other residents ahead, social net, central values. [CALCULATION:
-`net_shares.csv`, columns `unit` and `stack`]
+**Sensitivities.** Share of other residents ahead, pooled, central values unless named. [CALCULATION:
+`derived/oct16/p7_net_shares.csv`; enumerated extrema `derived/oct16/p7_grid_extrema.csv`]
 
-The rows below move one choice at a time or stack choices by their
-dollars. The production nest's substitution elasticity alone moves the pooled share ahead from
-29.2% (σ 1.5) through 23.9% (σ 2, central) to 18.7% (σ 2.5) under tax shares, and 26.2%, 21.4% and
-17.7% under per-person cuts, while the net assigned to these people barely moves (−$260.1bn to
-−$266.1bn): the wage channel's gross gains ($95.8bn) and losses ($96.0bn) almost cancel, so a
-total that reconciles says little about who is ahead. The least- and most-costly rows stack dollar
-extremes; enumerating the existing channel choices gives 13.9–30.5% under tax shares and
-13.8–27.2% under per-person cuts. Pooling shares amounts among other-resident members only, and
-6.97m other residents live in households with a group member whose resources it leaves out (weekly
-audit §2, 2026-09-25).
+| Variant | (a) | (b) | (c) |
+|---|---:|---:|---:|
+| Central: stationary financing | 2.79% | 4.71% | 8.31% |
+| Low end, social rows low | 42.29% | 40.00% | 41.81% |
+| High end, social rows high | 2.86% | 3.08% | 3.62% |
+| Person count | 3.52% | 4.51% | 9.52% |
+| Mixed-unit count | 2.88% | 4.79% | 8.34% |
+| Cohort financing, 30 years | 8.01% | 10.79% | 15.22% |
+| Cohort financing, 10 years | 7.95% | 10.70% | 15.09% |
+| State wage markets, rent capitalized, landlords by owner type (stacked arm) | 1.71% | 1.98% | 3.71% |
+| Nest's within-cell elasticity 8.7 | 2.88% | 4.81% | 8.50% |
+| Nest's within-cell elasticity 17.9 | 2.84% | 4.75% | 8.38% |
 
-| Variant | Pooled (a) | Pooled (b) | Person count (a) | Person count (b) |
-|---|---:|---:|---:|---:|
-| Central | 23.9% | 21.4% | 20.1% | 19.9% |
-| Every choice least costly | 30.0% | 27.0% | 24.0% | 23.7% |
-| Every choice most costly | 13.9% | 13.8% | 14.0% | 14.1% |
-| Account only: fiscal and wages, no social items | 28.5% | 23.5% | 22.4% | 21.6% |
-| With the items kept out of the totals (§6; the lane's "with proposed" net), central | 20.8% | 20.3% | 20.6% | 20.5% |
-| The same, least / most costly | 36.6 / 6.1% | 35.7 / 8.2% | 31.6 / 10.7% | 30.8 / 10.8% |
-| State and local cost charged nationally | — | — | 13.0% | 12.7% |
-| Housing at the national-uniform central (net +$0.71bn, not +$3.51bn) | — | — | 18.4% | 18.5% |
-| Victims' harm on the custody footing ($32.34bn, not $30.93bn, on the lanes' CPS count) | — | — | 20.0% | 19.8% |
-
-The last three variants were run on the person count only. Pooling each household's amounts with a
-plain mean instead of the weighted mean would put 24.3% and 21.7% ahead. That rule moves the totals
-by $1.0bn, so it fails the lane's closure gate.
+Over the lane's enumerated grid under stationary financing and pooling (both case ends, social settings, the
+recommended and stacked arms), the share ahead runs from 1.27% to 42.29% under (a), 1.43% to 40.48% under (b) and
+1.82% to 41.81% under (c). These are extrema of a declared finite grid, not bounds on household outcomes.
 
 ## 5. The group itself
 
 This section is beside the account, and none of it is netted against other residents' rows.
-[CALCULATION: `derived/group_frame.csv`]
+[CALCULATION: `derived/oct16/group_frame.csv`]
 
 | Item | $bn a year (range) | Basis |
 |---|---:|---|
-| Direct fiscal transfer received (the engine's direct response, sign flipped) | +234.7 (214.2–255.1) | at the band ends |
-| First generation's market gain over its earnings in Mexico | +224.6 (196.5–242.8) | place premium Re 2.46 (2.08–2.79) × $378.4bn of US earnings |
-| Wage competition among the group's own workers with high school or less | −20.8 (ε ∞); −37.9 (ε 3) | account nest × members' CPS earnings |
-| Wage gain of the group's own workers with some college or more | +5.8 (ε ∞); +5.9 (ε 3) | same |
+| Direct fiscal transfer received (the engine's direct response, sign flipped) | +412.7 (380.5–444.8) | at the case's ends; $9,190 per member |
+| First generation's market gain over its earnings in Mexico | +201.9 (176.6–218.2) | place premium Re 2.46 (2.08–2.79) × $340.1bn of US earnings |
+| Wage competition among the group's own workers with high school or less | −19.8 (ε ∞); −32.7 (ε 3) | account nest × members' CPS earnings |
+| Wage gain of the group's own workers with some college or more | +6.0 (ε ∞); +6.1 (ε 3) | same |
 | Victims inside the group, excluded from the victim lane | −20.1 | the victim lane's rows, on its equal footing |
 
 Notes on the table:
+- **Direct transfer.** It includes the imputed capital and post-engine components. It is not all cash members
+  receive: item 11 carries effects on the non-members who stay.
 - **Place premium.** The source reads: "the average emigrant comes from the 56th percentile of
   residual wages, suggesting that Ro/Re = 1.03 … so that Re ≈ 2.46" [SOURCE: Clemens, Montenegro &
   Pritchett, "The Place Premium", HKS RWP09-004, sec. 3.3 and Table 8, quote verified in the corpus].
   The gain assumes the same employment and hours in both countries [INFERENCE]. The second and
   third-plus generations have no counterfactual in Mexico here, and none is invented. The
   [world ledger](../infra/immigration-fiscal/world_ledger_2026_09_27/RESULT.md) (ladder 250) builds
-  one for G2: the same people raised in Mexico by parents with the same schooling who stayed, a
-  $252bn premium ($241–260bn). G3+ is bounded between no premium and $253bn ($306bn on main case v6,
-  whose third-plus includes the 3.04M added descendants). On gross pay and measured employment in
-  both places, G1's premium is $263bn ($242–285bn), against $224.6bn here.
+  one for G2 (the same people raised in Mexico by parents with the same schooling who stayed) and bounds G3+
+  between no premium and an upper bound; its live readings hold G3+ at the zero bound
+  (`world_ledger_2026_09_27/derived/g2_premium_oct16.csv`, `readings_status_oct16.csv`).
 - **Remittances.** Mexico received $62.8bn of remittances from the United States in 2024 [SOURCE:
   Banxico SIE table CE167, US-origin receipts, revised]. The corridor carries more than the CPS
   households send at surveyed amounts ([outside checks](immigration-outside-checks-2026-09-24.md),
@@ -286,18 +263,14 @@ Notes on the table:
 
 ## 6. Items out of the totals, and rows on other counterfactuals
 
-**Items kept out of every total** enter only the "with proposed" net (§4), never the verdict:
-- **School dilution, −$20.1bn.** Instruction and support together: a present value of other
-  residents' pupils' lifetime earnings, not annual cash. The operator adopted it on 2026-09-25 as
-  priced beside the account; it stays out of every total unless option 3 is chosen
+**Items kept out of every net:**
+- **School dilution.** A present value of other residents' pupils' lifetime earnings, not annual cash. The operator
+  adopted it on 2026-09-25 as priced beside the account; it stays out of every total unless option 3 is chosen
   ([decision](../decisions/2026-09-25-school-dilution-priced-beside.md)).
-- **Preferences, the group's part, −$0.6bn** (proposed).
-- **City size and schooling mix, +$13.7bn** (ladder 201; $13.9bn on the CPS count; in the fiscal-plus-social total since
-  September 28, and not allocated here).
+- **Preferences, the group's part** (proposed): an attribution under a proportional-replacement rule.
 
-The consumption-key correction (ladder 225) would lower the September 24 run's fiscal cost by $4.1bn.
-That run lists it in the lane's registry and does not allocate it; since September 26 it is inside the
-fiscal channel.
+City size and schooling mix, which the September tables kept out, is now a social row of the pairing and enters
+the nets (§2).
 
 **Rows on other counterfactuals.** Three sister lanes price effects against other comparisons:
 - movers: the movers staying in California;
@@ -305,8 +278,7 @@ fiscal channel.
 - compliance: workers paid on the books.
 
 A row enters a net only if its counterfactual is the group's absence. These rows therefore sit in the
-role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying that rule moved the
-"with proposed" total from −$270.97bn to −$270.62bn and no share by more than 0.01 point.
+role table (`derived/sister_other_counterfactuals.csv`) and in no net.
 
 ## 7. Limits
 
@@ -314,51 +286,56 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
   pay or receive as adults.
 - **State and local incidence.** It uses national ITEP rates by income group, not state rates;
   Texas's taxes are more regressive.
-- **Wages.** They are national. The nest has no local labor markets, and a local model would
-  concentrate the wage loss in the group's states.
+- **Wages.** They are national in the central arm; the stacked arm's state wage markets lower the share ahead.
 - **Survey gaps.** CPS has no school type, no gross rents and few restaurant owners. Landlords are
   assumed to live in the state where the rent is paid.
 - **Pooling.** It treats each household as sharing everything and measures nothing about how families
-  actually share. The truth for any family lies between the two counts.
+  actually share. The truth for any family need not lie between the counts.
 - **Kept out of every net.**
-  - The debt legacy's interest ($25.9–41.9bn on main case v7, `derived/oct14/channels.csv` row
-    `debt_legacy`) is a different object.
-  - The owners' home-value gain is a stock ($1.3–2.9tn).
+  - The debt legacy's interest on past gaps is a different object; historical financing is not yet measured on
+    v9 (`derived/oct16/channels.csv`, row `debt_legacy`).
+  - The owners' home-value gain is a stock.
   - The consumer-price and care side views overlap the wage channel.
-- **The allocation base is not a total.** The lane's allocation base, the adopted fiscal band plus
-  decision 4's victims figure, mixes crime footings. It also leaves out the social items added from
-  September 28 on: fear, security, schools, pollution, crashes and five benefits. The published
-  fiscal-plus-social total is $477.7–573.4bn on the 45.23M-person lineage (ladders 304, 309,
-  [INDEX](immigration-INDEX.md); `sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json`,
-  `joint_social_stack.ends`, 7342b331). The distribution results above await their own committed v8 rerun.
-
+- **The net is not the published total.** The lane's −$505.65bn allocates the case and its social rows, with the
+  wage transfer and item 11's stayers, to today's residents. The published fiscal-plus-social total on main case v9
+  is $479.6–553.7bn on the 44.90M-person lineage (`sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json`,
+  `joint_social_stack.ends`, c7b99ac7); the two are different objects.
 - **Instrument.** The analysis ran through an LLM with known dispositions on charged topics
   ([caveat](../notes/llm-bias-caveat.md)). Every figure here comes from scripts the parent re-ran
-  byte-identically. The three choices that move the result (geography, financing, pooling) are
-  each reported both ways.
+  byte-identically (lane RESULT, final oct16 replay, IDENTICAL 238/238). The choices that move the result
+  (financing, the case's range, geography, pooling) are each reported more than one way.
 
 **Would change it:**
 - a state-level fiscal account, which would settle the geography;
 - a local-labor-market wage model;
-- the operator's choice of financing convention and crime footing.
+- measured recipient keys for the social rows;
+- the operator's choice of financing convention.
 
 ## Sources
 
-- **Lane.** [`winners_losers_2026_09_24`](../infra/immigration-fiscal/winners_losers_2026_09_24/RESULT.md):
-  the brief, `winners_losers.py`, `specs.cjs`, 12 tests and 23 derived CSV and JSON files [DATA].
-- **Inputs.** Every input is pinned by sha256 in `derived/sources_manifest.csv`. They are:
-  - the adopted main case (`main_case_2026_09_24`);
-  - the income-split lane, read from git at 7ec7144;
-  - the debt lane's federal split;
-  - the housing, crime, congestion, unreimbursed-care, mobility, preference and city-size lanes;
-  - the sister lanes' `winners_losers_rows.csv`.
-- **Parent rerun, 2026-09-25.** `specs.cjs`, `winners_losers.py` (443 gates) and the 12 tests all exit
-  0, and all 23 derived files are byte-identical. The input lanes are untouched. [CALCULATION]
+- **Lane.** [`winners_losers_2026_09_24`](../infra/immigration-fiscal/winners_losers_2026_09_24/RESULT.md), section
+  "v9 case (oct16)": `run_all.sh`, `winners_losers.py`, the P7 frames and the oct16 derived files [DATA].
+- **Inputs.** Every input is pinned by SHA-256 in `inputs/p9_pins_oct16.json` and `derived/oct16/p7_inputs.json`
+  (`source_pins`): the adopted main case (`main_case_2026_10_16`), the case's social pairing, the generation account
+  and the income-split person frame.
+- **Parent rerun, 2026-10-20.** `rerun_lane.py`: IDENTICAL 238/238, exit 0, 102 tests [CALCULATION].
 - **Rulings.** The parent's rulings 1–7 are in the lane's RESULT, "Rulings and coordination notes
   applied". Ruling 7 makes the pooled count central.
 
 ## Revisions
 
+- 2026-10-21 (main case v9, [decision](../decisions/2026-10-16-main-case-v9.md), e6dcde3c): the verdict and §§1–7
+  follow the lane's oct16 run and its P7 method, which the memo had not yet taken. The claim changes: about one other
+  resident in five no longer comes out ahead. At central values 2.79% / 4.71% / 8.31% do under tax shares, per-person
+  cuts and programme-receipt cuts (a third rule, new here). Most of the change is the method, not v9: stationary
+  financing charges the trust-fund accrual and the borrowed federal part to today's residents instead of leaving them
+  to future payers; the pairing's complete social rows (PM2.5, crashes, fear, scale and the rest) are allocated; the
+  non-members who stay in mixed households (item 11) get their own rows; and the central sits at the case's midpoint
+  with the social rows' central values. On the same method v8 gave 2.61% / 4.49% / 8.03% and −$514.54bn (lane
+  RESULT, "v8 case (oct15)"); v9 gives −$505.65bn. The ends now differ widely, 40–42% ahead at the low end and 3–4%
+  at the high, because the social producers' ranges are paired with the case's ends. The September 24 tables are
+  replaced by the oct16 tables; the September record stays in git and in the lane RESULT. Concept affected: who
+  comes out ahead, the financing convention and the channel set (ladder 226).
 - 2026-10-15 (corrected main case v8, [decision](../decisions/2026-10-15-main-case-v8.md)): the separate fiscal-plus-social total follows the current joint pairing. The lane's distribution/allocation results are left for the pending v8 rerun. Concept affected: the distinction between the allocation base and the complete published total.
 
 - 2026-09-25 (morning): the operator adopted the school-dilution relabel as priced beside the account

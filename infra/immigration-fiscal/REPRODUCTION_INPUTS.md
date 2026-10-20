@@ -1,6 +1,6 @@
 # Reader inputs, joins and normalization
 
-Updated 2026-10-05. This guide connects source acquisition to the existing analysis recipes. It covers the adopted main case (the headline), the core fiscal warehouse and the named September survey/ledger lanes below; it is not a claim that every research memo is included in one build. No AWS mirror URL is registered here yet.
+Updated 2026-10-21. This guide connects source acquisition to the existing analysis recipes. It covers the adopted main case (the headline, main case v9), the core fiscal warehouse and the named September survey/ledger lanes below; it is not a claim that every research memo is included in one build. No AWS mirror URL is registered here yet.
 
 ## Get the exact inputs
 
@@ -103,14 +103,18 @@ Commands run from the repository root; replace `/path/to/` placeholders with ver
 
 #### The adopted main case (the headline)
 
-The headline is one engine run, `node infra/immigration-fiscal/main_case_2026_10_07/main_case.cjs`, with 129 gates. Its
-package is the October 5 case's (`main_case_2026_10_05`, which applies the lineage lane's committed payload on top of the
-September 29 case's) plus an item registry. Each of the four items reads its source lane's committed outputs, pinned
-by commit: `pension_tr2026_2026_10_06`, `public_pension_legacy_2026_10_07`, `added_age_mix_2026_10_07` and
-`user_fee_allocation_2026_10_07`. Every file it reads is committed except two that the engine's directory generates (`assumption_explorer_2026_09_21`, named for the page it served until 2026-10-15).
-Checked on 2026-10-07 from a clean checkout of a2e439f4: the run stops at the first missing file, and with only these
-two copied in it passes, the lane's other five scripts exit 0, and all 13 tracked files in its `derived/` are
-reproduced byte for byte.
+The headline is main case v9, `node infra/immigration-fiscal/main_case_2026_10_16/main_case.cjs`
+([RESULT](main_case_2026_10_16/RESULT.md), [decision](../../decisions/2026-10-16-main-case-v9.md)). Its package,
+`main_case_2026_10_16/package.cjs`, builds on the unmodified v8 package (`main_case_2026_10_15/package.cjs`), which
+builds on v7 (`main_case_2026_10_14`) and through it on the earlier cases' packages down to the assumption explorer's
+engine. v9 adds eight selected items, each read from its source lane's committed outputs:
+13, 14, 15 and 21 from `spending_keys_r5_2026_10_15` (military service costs, retirement administration, public
+colleges and the non-VA health residual), 16 and 17 from `count_composition_r5_2026_10_15` (native-minor calibration
+and coverage tenure), 18 from `consumption_tax_bases_r5_2026_10_15` (the food/SNAP taxable-basket proxy) and 20 from
+`one_rate_2026_10_15` (one Trustees capital rate). Item 19 (`passthrough_source_tax_r5_2026_10_15`) and W09 stay
+beside with zero central contribution. The coverage block is rebuilt by
+`coverage_bound_2026_10_14/coverage_oct16.py`. Two files at the bottom of the chain are generated, not committed
+(`assumption_explorer_2026_09_21`, named for the page it served until 2026-10-15):
 
 1. `assumption_explorer_2026_09_21/derived/model.json`. `build_model.py` compiles it from the `derived/` outputs of the
    four `full_account_*_2026_09_20` lanes, which are not committed, and stops on a stale upstream hash. Run
@@ -127,13 +131,24 @@ cd infra/immigration-fiscal/assumption_explorer_2026_09_21
 uv run --no-project --with duckdb --with pandas --with numpy python3 build_model.py
 OPENBLAS_NUM_THREADS=1 uv run --no-project --with openpyxl --with numpy python3 scaling_check.py
 cd ../../..
-node infra/immigration-fiscal/main_case_2026_10_07/main_case.cjs
+node infra/immigration-fiscal/main_case_2026_10_16/main_case.cjs
 ```
 
-In a checkout that already holds the inputs, the rerun command in the lane's RESULT (section Gates, G5) reruns the
-lane's scripts and compares every output byte for byte. Earlier cases stay runnable in their own lanes:
-`main_case_2026_10_05/main_case.cjs` for October 5 (v5), `main_case_2026_09_29/main_case.cjs` for September 29 (v4)
-and `main_case_long_run_2026_09_27/main_case.cjs` for September 27.
+The lane's full build, `sh infra/immigration-fiscal/main_case_2026_10_16/run_all.sh`, runs the source, coverage and
+rate checks, the case, its sign search, lineage split and generation runs, and gates G1–G5 (about ten minutes; each
+process is held under a 2.5 GB footprint guard). It rewrites the lane's tracked `derived/` files in place. The byte
+check (RESULT, "Gates and reproduction") reruns it and compares every output:
+
+```bash
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/main_case_2026_10_16 \
+  "uv run --no-project python3 {lane}/measure_run.py -- sh {lane}/run_all.sh"
+```
+
+The final pre-adoption replay (2026-10-15) was IDENTICAL 56/56 in a checkout that holds the inputs. v9 has not been
+checked from a clean checkout; the last clean-checkout check, on v6 (2026-10-07, a8c5a325), found only the two
+generated files above missing. Earlier
+cases stay runnable in their own lanes: `main_case_2026_10_15/main_case.cjs` for v8, `main_case_2026_10_14/main_case.cjs`
+for v7 and `main_case_2026_10_07/main_case.cjs` for v6.
 
 #### CPS fiscal accounts: ASEC 2025, calendar year 2024
 

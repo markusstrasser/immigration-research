@@ -45,11 +45,14 @@ land remains a pricing gap.
 `derived/lineage_addition.json`, `v9.set`.]
 
 Applying year-one budget responses to the current account gives $314–371bn, and $230–287bn counting
-benefits when paid. This is not next year's cash saving. It holds the case's other rules fixed except for the horizon's roads and property-tax
-responses and item 6 at its first-year part (business property still assessed; profits and production taxes at 0.65
-of their long-run fall). Military costs retain response 1 before replacement veterans exist.
-[CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9.companions.first_year`]; coverage follows each
-line's first-year response and the stayers' owner property stays fixed. The every-service-proportional companion
+benefits when paid. This is not next year's cash saving. It swaps the case's long-run rules for year-one ones as a
+set: schools on CBO's one-year rule; no long-run road, park, rental-assistance, enterprise or property-tax response;
+no return on public capital; item 6 at its first-year part (business property still assessed; corporate and other
+production taxes at 0.65 of their long-run fall); and military service costs at response 1, since replacement
+veterans do not yet exist. Its ends are specifications 24 and 7, found again under those rules.
+[CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9.companions.first_year` `options`, `ends`,
+`item13_rule`]; coverage follows each line's first-year response and the stayers' owner property stays fixed. The
+every-service-proportional companion
 has not been repriced on this case.
 The main cases since September 20 are listed, each with its decision, in the
 [topic index](immigration-INDEX.md#core-state) ("Earlier cases"); social costs and benefits are in the
@@ -378,6 +381,12 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+- 2026-10-21 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md)): the first-year paragraph now lists
+  every rule the year-one reading changes (schools on the one-year rule, no long-run road, park, rental-assistance,
+  enterprise or property-tax response, no capital return, item 6's first-year part, military at response 1) and its
+  own end specifications 24 and 7; it had named only roads, property tax and item 6, which misattributed the gap to
+  the headline. No figure changes. Concept affected: what the first-year reading holds fixed.
 
 - 2026-10-20 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md), adopted 2026-10-20): direct case figures follow the calibrated lineage, fixed military service costs under equal-cost replacement, one Trustees capital rate and payer-keyed non-VA health residual. Income-year 2024 tax and benefit rules remain the frame; only Social Security and Part A promises use current-law payable benefits. Consumer-derived figures await the separate propagation pass. Concept affected: the live annual account and its companion readings.
 
