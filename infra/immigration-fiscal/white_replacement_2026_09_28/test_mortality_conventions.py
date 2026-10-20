@@ -8,8 +8,8 @@ HERE = Path(__file__).resolve().parent
 
 
 def test_own_black_and_whole_headline_require_mixed_label():
-    lineage = dict(case='oct15', group_mortality='whole-population')
-    black = dict(case='oct15', group_mortality='own-group')
+    lineage = dict(case='oct16', group_mortality='whole-population')
+    black = dict(case='oct16', group_mortality='own-group')
     for label in ('', None, M.OWN, M.GENERAL):
         with pytest.raises(ValueError, match='requires explicit label'):
             M.validate_pair(lineage, black, label)
@@ -19,7 +19,7 @@ def test_own_black_and_whole_headline_require_mixed_label():
 def test_stale_case_pairing_rejected():
     with pytest.raises(ValueError, match='crosses case keys'):
         M.validate_pair(dict(case='oct14', group_mortality='own-group'),
-                        dict(case='oct15', group_mortality='own-group'), M.OWN)
+                        dict(case='oct16', group_mortality='own-group'), M.OWN)
 
 
 def test_source_method_reproduces_frozen_central_change():
@@ -49,11 +49,11 @@ def test_round3_mix_moves_only_oasdi_and_keeps_part_a():
 
 
 def test_live_delivered_comparisons_trace_tagged_cost_rows():
-    path = HERE / 'derived/symmetric_results_oct15.csv'
+    path = HERE / 'derived/symmetric_results_oct16.csv'
     if not path.exists():
-        pytest.skip('final oct15 outputs await CASE_FINAL')
+        pytest.skip('final adopted oct16 outputs are not published')
     rows = M.read_rows(path)
-    comparisons = M.read_rows(HERE / 'derived/symmetric_comparisons_oct15.csv')
+    comparisons = M.read_rows(HERE / 'derived/symmetric_comparisons_oct16.csv')
     for c in comparisons:
         selected = [r for r in rows if all(r[k] == c[k] for k in
                     ('case', 'arm', 'basis', 'end', 'mortality_convention', 'mortality_bound'))]

@@ -48,14 +48,14 @@ def reporting_files(tmp_path, monkeypatch):
                                         population=45e6, true_own_count=175e6, lineage_item11_se_bn=3.,
                                         own_count_item11_bn=11., own_count_item11_comparator_se_bn=7.,
                                         own_count_item11_paired_se_bn=8.))
-    for lane, name, rows in [(white, 'symmetric_comparisons_oct15.csv', comparisons),
-                             (white, 'symmetric_white_population_oct15.csv', white_rows),
-                             (white, 'symmetric_results_oct15.csv', results),
-                             (black, 'symmetric_population_oct15.csv', black_rows)]:
+    for lane, name, rows in [(white, 'symmetric_comparisons_oct16.csv', comparisons),
+                             (white, 'symmetric_white_population_oct16.csv', white_rows),
+                             (white, 'symmetric_results_oct16.csv', results),
+                             (black, 'symmetric_population_oct16.csv', black_rows)]:
         pd.DataFrame(rows).to_csv(lane / 'derived' / name, index=False, lineterminator='\n')
     precedence = dict(round3=179e6, lineage_precedence=177e6, half_overlap=178e6, overlap=2e6,
                       lineage_observed=43e6, lineage_half_overlap=42e6)
-    (white / 'derived/members_coverage_oct15.json').write_text(json.dumps({'counts': {'precedence': {
+    (white / 'derived/members_coverage_oct16.json').write_text(json.dumps({'counts': {'precedence': {
         'A1_third_plus_nh_white': precedence, 'nh_black_rough': precedence}},
         'controls': {'alternative_white_black_overlap_people': 12345.6,
                      'overlap_gate_scope': 'each lineage/comparator pair; alternatives not simultaneous partition'}}))
@@ -77,7 +77,7 @@ def reporting_files(tmp_path, monkeypatch):
     monkeypatch.setattr(R, 'HERE', white)
     monkeypatch.setattr(R, 'BLACK', black)
     monkeypatch.setattr(R.CC, 'MIXED_SOURCE', mixed / 'derived')
-    monkeypatch.setattr(R.CC, 'load_mixed_unit', lambda: source)
+    monkeypatch.setattr(R.CC, 'load_mixed_unit', lambda *, case: source if case == 'oct16' else pytest.fail('wrong live case'))
     return white, black, originals
 
 
@@ -94,7 +94,8 @@ def test_round4_render_preserves_prefix_and_se_distinctions(reporting_files):
     assert 'Comparator SE' in text and 'Lineage SE' in text and 'Paired SE' in text
     assert 'not computed' in text and '| nan' not in text
     assert '0.56797%' in text and '−$2.036694bn' in text and 'IPEDS' in text
-    assert 'not a paired SE for the whole modeled fiscal cost' in text
+    assert 'calibrated v9 lineage replicate vector is unmeasured' in text
+    assert 'No whole-cost SE is identified' in text
     assert 'Full lineage survivor solve, bound high' in text
     assert 'A1 white, old partial lineage survivor patch, bound low' in text
     assert 'central preserves it in the bridge' in text and 'incidence difference' in text
@@ -136,8 +137,8 @@ def test_optional_policy_delta_is_printed_only_for_changed_policy():
 
 def test_change_table_uses_endpoint_matched_differences(reporting_files):
     white, black, _ = reporting_files
-    comparisons = pd.read_csv(white / 'derived/symmetric_comparisons_oct15.csv')
-    population = pd.read_csv(black / 'derived/symmetric_population_oct15.csv')
+    comparisons = pd.read_csv(white / 'derived/symmetric_comparisons_oct16.csv')
+    population = pd.read_csv(black / 'derived/symmetric_population_oct16.csv')
     lines = []
     R.change_table(lines, comparisons, population)
     text = '\n'.join(lines)

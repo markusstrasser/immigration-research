@@ -225,8 +225,8 @@ def main():
             txt = f"{int(value)}"
         out.append({"case": case, "section": section, "slice": slc, "measure": measure, "basis": basis, "end": end,
                     "value": txt, "unit": unit,
-                    **({'item11_scope': 'one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct15.csv'}
-                       if case == 'oct15' else {})})
+                    **({'item11_scope': 'one-sided evaluator/SDR sensitivity; measured paired survivor term in symmetric_comparisons_oct16.csv'}
+                       if case == 'oct16' else {})})
 
     # ---------------------------------------------------------------- the central, reproduced
     scen = W.scenarios()

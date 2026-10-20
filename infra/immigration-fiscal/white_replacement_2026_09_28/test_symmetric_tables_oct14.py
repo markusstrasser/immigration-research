@@ -12,7 +12,7 @@ HERE = Path(__file__).resolve().parent
 
 def expanded_lineage_vector(symmetric, basis, end, half=None, partial=False):
     """Authenticate the expanded stack independently before asking the producer to select its endpoint."""
-    pins = json.loads((HERE / 'inputs/pins.json').read_text())['symmetric_inputs_oct15']
+    pins = json.loads((HERE / 'inputs/pins.json').read_text())['symmetric_inputs_oct16']
     if partial:
         path = symmetric.CC.LINEAGE_REPLICATES
         assert hashlib.sha256(path.read_bytes()).hexdigest() == symmetric.CC.LINEAGE_REPLICATES_PIN
@@ -28,8 +28,8 @@ def test_actual_comparator_publications_match_pinned_terms_and_paired_se():
     import comparison_contract as C
     import mortality_conventions as MC
     import symmetric_comparators_oct14 as S
-    source = C.load_mixed_unit()
-    d = pd.read_csv(HERE / 'derived/symmetric_results_oct15.csv')
+    source = C.load_mixed_unit(case='oct16')
+    d = pd.read_csv(HERE / 'derived/symmetric_results_oct16.csv')
     vectors = {}
     for row in d[d.group.isin(C.MIXED_GROUPS)].itertuples():
         spec = MC.DERIVED.get(row.arm)
@@ -43,11 +43,13 @@ def test_actual_comparator_publications_match_pinned_terms_and_paired_se():
                                 else expanded_lineage_vector(S, row.basis, row.end, key[3], key[4]))
             term = C.true_count_removal(source, row.group, row.basis, row.end, row.population,
                                         row.true_own_count, rule, lineage_replicates=vectors[key])
-            assert term['paired_se_bn'] is not None
+            assert term['paired_se_bn'] is None
             assert row.item11_comparator_se_bn == pytest.approx(term['comparator_se_bn'], abs=1e-9)
-            assert row.lineage_item11_se_bn == pytest.approx(C.sdr(vectors[key]), abs=1e-9)
+            assert pd.isna(row.lineage_item11_se_bn)
         assert row.comparator_item11_bn == pytest.approx(term['bn'], abs=1e-9)
-        assert row.item11_paired_se_bn == pytest.approx(term['paired_se_bn'], abs=1e-9)
+        assert row.item11_comparator_se_bn == pytest.approx(term['comparator_se_bn'], abs=1e-9)
+        assert 'v9' in row.item11_se_scope and 'unmeasured' in row.item11_se_scope
+        assert pd.isna(row.item11_paired_se_bn) and term['paired_se_bn'] is None
         assert row.item11_spending_bn + row.item11_receipt_bn == pytest.approx(term['bn'], abs=1e-9)
         assert row.cost_bn - row.cost_one_sided_bn == pytest.approx(term['bn'], abs=1e-9)
         assert row.cost_bn - row.cost_without_item11_bn == pytest.approx(term['bn'], abs=1e-9)
@@ -64,7 +66,7 @@ def test_actual_comparator_publications_match_pinned_terms_and_paired_se():
         assert rows.comparison_reading.eq('current-rule reading').all()
         assert rows.central_eligible.eq(False).all()
         assert not rows.arm.isin(MC.DERIVED).any()
-    own = pd.read_csv(HERE / 'derived/symmetric_white_population_oct15.csv')
+    own = pd.read_csv(HERE / 'derived/symmetric_white_population_oct16.csv')
     lineage = d[d.group.eq('mexican_origin_engine')].set_index(['arm', 'basis', 'end', 'mortality_convention', 'mortality_bound'])
     for row in own.itertuples():
         assert row.lineage_minus_comparator_bn == pytest.approx(row.lineage_cost_bn - row.comparator_cost_bn, abs=1e-9)
@@ -73,7 +75,8 @@ def test_actual_comparator_publications_match_pinned_terms_and_paired_se():
         key = row.arm, row.basis, row.end, row.mortality_convention, row.mortality_bound
         assert row.lineage_population == pytest.approx(lineage.loc[key, 'population'], abs=1e-6)
         if row.membership_rule == 'current':
-            assert row.lineage_population == pytest.approx(float(source['gaps'][0]['lineage_count']), abs=1e-6)
+            live=json.loads((HERE.parent/'main_case_2026_10_16/derived/corrections.json').read_text())['meta']['population_v9']['with_coverage']
+            assert row.lineage_population == pytest.approx(live, abs=1e-6)
         assert (row.population_warning == row.population_warning) == (row.population_basis == 'own_count')
 
 
@@ -81,9 +84,9 @@ def test_a3_a4_derived_publications_use_reconstructed_own_counts_and_factors():
     import comparison_contract as C
     import mortality_conventions as MC
     import symmetric_comparators_oct14 as S
-    source = C.load_mixed_unit()
-    d = pd.read_csv(HERE / 'derived/symmetric_results_oct15.csv')
-    counts = json.loads((HERE / 'derived/members_coverage_oct15.json').read_text())['counts']
+    source = C.load_mixed_unit(case='oct16')
+    d = pd.read_csv(HERE / 'derived/symmetric_results_oct16.csv')
+    counts = json.loads((HERE / 'derived/members_coverage_oct16.json').read_text())['counts']
     for group in ('A3_third_plus_nh_white_at_union_ages', 'A4_third_plus_nh_white_stationary'):
         rows = d[d.group.eq(group) & d.arm.isin(MC.DERIVED)]
         assert {'combined_rules_members', 'combined_rules_coverage'} <= set(rows.arm)
@@ -113,16 +116,16 @@ def test_a3_a4_derived_publications_use_reconstructed_own_counts_and_factors():
                                         observed_own=row.observed_own_count, lineage_replicates=vector)
             assert row.comparator_item11_bn == pytest.approx(term['bn'], abs=1e-9)
             assert row.item11_comparator_se_bn == pytest.approx(term['comparator_se_bn'], abs=1e-9)
-            assert row.item11_paired_se_bn == pytest.approx(term['paired_se_bn'], abs=1e-9)
+            assert pd.isna(row.item11_paired_se_bn) and term['paired_se_bn'] is None
             assert row.item11_spending_bn == pytest.approx(term['spending_bn'], abs=1e-9)
             assert row.item11_receipt_bn == pytest.approx(term['receipt_bn'], abs=1e-9)
-            assert row.lineage_item11_se_bn == pytest.approx(C.sdr(vector), abs=1e-9)
+            assert pd.isna(row.lineage_item11_se_bn)
             own_term = C.true_count_removal(source, group, row.basis, row.end, row.true_own_count,
                                             row.true_own_count, row.item11_effective_rule, reweight=factors,
                                             observed_own=row.observed_own_count, lineage_replicates=vector)
             assert row.own_count_item11_bn == pytest.approx(own_term['bn'], abs=1e-9)
             assert row.own_count_item11_comparator_se_bn == pytest.approx(own_term['comparator_se_bn'], abs=1e-9)
-            assert row.own_count_item11_paired_se_bn == pytest.approx(own_term['paired_se_bn'], abs=1e-9)
+            assert pd.isna(row.own_count_item11_paired_se_bn) and own_term['paired_se_bn'] is None
             assert row.own_count_item11_comparator_se_bn == pytest.approx(
                 row.item11_comparator_se_bn * row.true_own_count / row.population, abs=1e-9)
         # Coverage changes the true denominator, without inventing a mixed-unit effect for missed people.
@@ -134,7 +137,7 @@ def test_a3_a4_derived_publications_use_reconstructed_own_counts_and_factors():
 
 
 def test_precedence_zero_overlap_and_half_membership_conservation():
-    data = json.loads((HERE / 'derived/members_coverage_oct15.json').read_text())
+    data = json.loads((HERE / 'derived/members_coverage_oct16.json').read_text())
     precedence = data['counts']['precedence']
     assert data['controls']['alternative_white_black_overlap_people'] > 0.
     assert 'pair' in data['controls']['overlap_gate_scope']
@@ -154,7 +157,7 @@ def test_precedence_zero_overlap_and_half_membership_conservation():
 def test_partial_lineage_survivor_arm_reproduces_old_source_patch_and_isolates_its_cost():
     import comparison_contract as C
     import symmetric_comparators_oct14 as S
-    source = C.load_mixed_unit()
+    source = C.load_mixed_unit(case='oct16')
     counts = json.loads(S.LINEAGE_ROUND2.read_text())['membership']
     ratio = counts['outside_existing_addition_definition'] / counts['latent_children_with_two_US_parents']
     columns = [f'r{i}' for i in range(161)]
@@ -168,7 +171,7 @@ def test_partial_lineage_survivor_arm_reproduces_old_source_patch_and_isolates_i
             expected = (vectors.loc[f'bounded_{end}'] + old_patch).to_numpy(float)
             actual = expanded_lineage_vector(S, basis, end, None, True)
             np.testing.assert_allclose(actual, expected, atol=1e-9, rtol=0.)
-    rows = pd.read_csv(HERE / 'derived/symmetric_results_oct15.csv')
+    rows = pd.read_csv(HERE / 'derived/symmetric_results_oct16.csv')
     key = ['basis', 'end', 'mortality_convention', 'mortality_bound', 'group']
     full = rows[rows.arm.eq('combined_rules_members')].set_index(key)
     partial = rows[rows.arm.eq('combined_rules_members_partial_lineage')].set_index(key)
@@ -189,14 +192,14 @@ def test_partial_lineage_survivor_arm_reproduces_old_source_patch_and_isolates_i
 
 def test_published_lineage_decomposition_and_complete_cost_identity():
     import mortality_conventions as MC
-    results = pd.read_csv(HERE / 'derived/symmetric_results_oct15.csv')
+    results = pd.read_csv(HERE / 'derived/symmetric_results_oct16.csv')
     for name in ('comparison_lineage_cost_bn', 'case_headline_cost_bn', 'lineage_children_block_bn',
                  'lineage_children_item11_bn', 'lineage_mortality_delta_bn', 'case_minus_rough_bridge_bn',
                  'lineage_policy_delta_bn'):
         assert name in results
-    frames = [results, pd.read_csv(HERE / 'derived/symmetric_comparisons_oct15.csv'),
-              pd.read_csv(HERE / 'derived/symmetric_white_population_oct15.csv'),
-              pd.read_csv(HERE.parent / 'black_comparator_rough_2026_09_28/derived/symmetric_population_oct15.csv')]
+    frames = [results, pd.read_csv(HERE / 'derived/symmetric_comparisons_oct16.csv'),
+              pd.read_csv(HERE / 'derived/symmetric_white_population_oct16.csv'),
+              pd.read_csv(HERE.parent / 'black_comparator_rough_2026_09_28/derived/symmetric_population_oct16.csv')]
     for frame in frames:
         # Diagnostic policies are explicit deltas from the same live headline.
         rows = frame
@@ -221,7 +224,7 @@ def test_published_lineage_decomposition_and_complete_cost_identity():
 
 def test_published_base_budget_identity_and_member_balance_definition():
     for lane in (HERE, HERE.parent / 'black_comparator_rough_2026_09_28'):
-        d = pd.read_csv(lane / 'derived/rekey_summary_oct15.csv')
+        d = pd.read_csv(lane / 'derived/rekey_summary_oct16.csv')
         for row in d[d.group.str.startswith(('A1_', 'A3_', 'A4_', 'nh_black'))].itertuples():
             assert row.cost - row.cost_evaluator_bn == pytest.approx(row.comparator_item11_bn, abs=5e-5)
             assert row.cost == pytest.approx(row.net_budget + row.capital - row.production_gain, abs=2e-4)
@@ -233,7 +236,7 @@ def test_published_base_budget_identity_and_member_balance_definition():
 
 def test_tax_parts_exclude_post_evaluator_metadata_from_decomposition():
     import income_tax_parts as P
-    d = pd.read_csv(HERE / 'derived/income_tax_parts_oct15.csv')
+    d = pd.read_csv(HERE / 'derived/income_tax_parts_oct16.csv')
     total = d[[f'{part}_bn' for part in P.PARTS]].sum(axis=1)
     assert (total - (d.central_bn - d.cps_bn)).abs().max() < 1e-3
     a1 = d[d.figure.eq('gap: union less A1_third_plus_nh_white')]
@@ -241,7 +244,7 @@ def test_tax_parts_exclude_post_evaluator_metadata_from_decomposition():
 
 
 def test_zero_production_removes_whole_lineage_gain():
-    d = pd.read_csv(HERE / 'derived/symmetric_results_oct15.csv').query("mortality_bound == 'none'")
+    d = pd.read_csv(HERE / 'derived/symmetric_results_oct16.csv').query("mortality_bound == 'none'")
     for group in ('mexican_origin_engine', 'mexican_origin_rough'):
         for end in ('low', 'high'):
             for basis in ('accrual', 'cash'):
@@ -254,17 +257,17 @@ def test_zero_production_removes_whole_lineage_gain():
 
 def test_scalar_change_is_fail_closed_in_actual_consumer():
     import rekey_sept29 as W
-    dump = json.loads((HERE / 'derived/engine_lines_oct15_union.json').read_text())
+    dump = json.loads((HERE / 'derived/engine_lines_oct16_union.json').read_text())
     dump['low']['lines'].append({'side': 'scalar', 'id': 'new_national_credit', 'effect_bn': 99})
     with pytest.raises(SystemExit, match='undeclared or duplicate comparator scalar policy'):
         W.run29('eng', 'low', dump=dump)
 
 
 def test_black_population_standardization_is_per_person():
-    d = pd.read_csv(HERE.parent / 'black_comparator_rough_2026_09_28/derived/symmetric_population_oct15.csv')
-    principal = json.loads((HERE.parent / 'main_case_2026_10_15/derived/corrections.json').read_text())
-    count = principal['meta']['population_v8']['with_coverage']
-    results = pd.read_csv(HERE / 'derived/symmetric_results_oct15.csv')
+    d = pd.read_csv(HERE.parent / 'black_comparator_rough_2026_09_28/derived/symmetric_population_oct16.csv')
+    principal = json.loads((HERE.parent / 'main_case_2026_10_16/derived/corrections.json').read_text())
+    count = principal['meta']['population_v9']['with_coverage']
+    results = pd.read_csv(HERE / 'derived/symmetric_results_oct16.csv')
     lineage = results[results.group.eq('mexican_origin_engine')].set_index(
         ['arm', 'basis', 'end', 'mortality_convention', 'mortality_bound']).population
     for key, pair in d.groupby(['arm', 'basis', 'end', 'mortality_convention', 'mortality_bound']):
@@ -279,7 +282,7 @@ def test_black_population_standardization_is_per_person():
 
 
 def test_group_mortality_does_not_change_cash_flows():
-    d = pd.read_csv(HERE / 'derived/symmetric_results_oct15.csv').query("basis == 'cash' and mortality_bound == 'none'")
+    d = pd.read_csv(HERE / 'derived/symmetric_results_oct16.csv').query("basis == 'cash' and mortality_bound == 'none'")
     assert d[d.arm.eq('mortality_group')].change_from_raw_bn.abs().max() < 1e-9
 
 
@@ -289,13 +292,13 @@ def test_report_render_preserves_history_and_is_byte_idempotent(tmp_path, monkey
     white, black = tmp_path / 'white', tmp_path / 'black'
     for lane in (white, black):
         (lane / 'derived').mkdir(parents=True)
-    for name in ('symmetric_results_oct15.csv', 'symmetric_comparisons_oct15.csv', 'symmetric_white_population_oct15.csv',
-                  'symmetric_hispanic_arm_oct15.csv', 'symmetric_status_sampling_oct15.csv', 'round2_changes_oct15.csv',
-                  'members_coverage_oct15.json'):
+    for name in ('symmetric_results_oct16.csv', 'symmetric_comparisons_oct16.csv', 'symmetric_white_population_oct16.csv',
+                  'symmetric_hispanic_arm_oct16.csv', 'symmetric_status_sampling_oct16.csv', 'round2_changes_oct16.csv',
+                  'members_coverage_oct16.json'):
         shutil.copyfile(HERE / 'derived' / name, white / 'derived' / name)
-    shutil.copyfile(HERE / 'derived/domestic_source_changes_oct15.csv', white / 'derived/domestic_source_changes_oct15.csv')
-    shutil.copyfile(HERE.parent / 'black_comparator_rough_2026_09_28/derived/symmetric_population_oct15.csv',
-                    black / 'derived/symmetric_population_oct15.csv')
+    shutil.copyfile(HERE / 'derived/domestic_source_changes_oct16.csv', white / 'derived/domestic_source_changes_oct16.csv')
+    shutil.copyfile(HERE.parent / 'black_comparator_rough_2026_09_28/derived/symmetric_population_oct16.csv',
+                    black / 'derived/symmetric_population_oct16.csv')
     originals = {white: 'Original white evidence.\n', black: 'Original Black evidence.\n'}
     for lane, old in originals.items():
         (lane / 'RESULT.md').write_text(old)

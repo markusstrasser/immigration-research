@@ -1,0 +1,13 @@
+{
+  "case": "oct16",
+  "rule": "source household_joint; own scenario weights; fixed state T09 pools",
+  "sha256": {
+    "white_replacement_2026_09_28/v9_basket.py": "1242ddc5ae7e8d584a9a58d25c3ae8ec769a6d1d10bc173297ccffe7cf9fdab6",
+    "consumption_tax_bases_r5_2026_10_15/household.py": "1174009b9e1063c7807c1e7f7e379db742d790e88f3fcee8511203725c032c8a",
+    "consumption_tax_bases_r5_2026_10_15/derived/item.json": "f9718d90bed360fda298b48403b83ddec6eeb29994e8af5fa40113de2621afa3",
+    "consumption_tax_bases_r5_2026_10_15/inputs/grocery_state_2024.csv": "1c711e6d0805558440a1d761c725de129a0a39fed734c479d889025b7a7a4119",
+    "consumption_key_2026_09_24/_cache/cps_arrays.npz": "7f47ada81fac1957aaa3387e8a697e36ac70246be4691c907d6d5b289c12e163"
+  },
+  "array_sha256": "53fe25976b17e1981e38240a76a4b7e6f21daff2b5ec960a7d9cab4f0476b0e4",
+  "records": 142125
+}

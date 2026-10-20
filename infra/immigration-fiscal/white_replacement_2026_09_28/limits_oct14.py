@@ -27,9 +27,9 @@ case's income-tax keys is minus the three lines' move (1e-9); positive controls 
 income-tax amounts a person at the identified G3+'s ages are white_lines.json's and at the G3-rate mix band_lines.json's
 (1e-9 relative); the share formula reproduces the fee lane's central and its 0.5 and 1.0 arms with their personal
 terms (1e-12, 1e-9); every case dump's other_federal_benefits response is 1; at the central θ each group's cost is
-rekey_summary_oct15.csv's (5e-5) and the union's cost does not move with a race's θ (1e-12).
-Outputs: derived/limits_oct15.csv and limits_oct15.json (full-precision white_end_tax_keys_residual).
-Run from the repository root after rekey_sept29.py --case oct15:
+rekey_summary_oct16.csv's (5e-5) and the union's cost does not move with a race's θ (1e-12).
+Outputs: derived/limits_oct16.csv and limits_oct16.json (full-precision white_end_tax_keys_residual).
+Run from the repository root after rekey_sept29.py --case oct16:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/white_replacement_2026_09_28/limits_oct14.py
 """
 from __future__ import annotations
@@ -81,7 +81,7 @@ def case_w(rows, meta):
     s29 = json.loads((DER / "engine_lines_sept29_cash.json").read_text())
     for lid in tax:
         a = next(x for x in s29["low"]["lines"] if x["side"] == "receipts" and x["id"] == lid)["national_bn"]
-        gate(f"{lid}: the sept29 national is oct15's (W's lines come from sept29)", a == R.NATIONAL["receipts|" + lid],
+        gate(f"{lid}: the sept29 national is oct16's (W's lines come from sept29)", a == R.NATIONAL["receipts|" + lid],
              f"{a} vs {R.NATIONAL['receipts|' + lid]}")
     wl = json.loads((FISCAL / "main_case_lineage_2026_10_05/derived/white_lines.json").read_text())
     bl = json.loads((FISCAL / "added_age_mix_2026_10_07/derived/band_lines.json").read_text())
@@ -189,9 +189,9 @@ def pell_hispanic(rows):
 
 def theta_arms(rows, scen):
     """3. A race's tuition residency θ at 0.5 and 1.5."""
-    summary = pd.read_csv(DER / "rekey_summary_oct15.csv")
+    summary = pd.read_csv(DER / "rekey_summary_oct16.csv")
     from comparison_contract import load_mixed_unit, comparator_removal, scenario_reweight
-    mixed = load_mixed_unit()
+    mixed = load_mixed_unit(case=W.CASE)
     reweight = scenario_reweight(W.R, scen)     # round 3 (C3 fix 5): A3 takes A1's item 11, reweighted
     saved = {r: W.IK["races"][r]["tuition"] for r in W.IK["races"]}
     cost = {}
@@ -210,7 +210,7 @@ def theta_arms(rows, scen):
         for end in W.ENDS:
             for g in GROUPS:
                 want = summary[(summary.basis == basis) & (summary.group == g) & (summary.end == end)].cost_evaluator_bn.iloc[0]
-                gate(f"θ central: {g} ({basis}, {end}) is rekey_summary_oct15.csv's (5e-5)",
+                gate(f"θ central: {g} ({basis}, {end}) is rekey_summary_oct16.csv's (5e-5)",
                      abs(cost[("central", basis, end, g)] - want) < 5e-5)
             u = [cost[(a, basis, end, "mexican_origin_rough")] for a in ("central", "0.5", "1.5")]
             gate(f"the union's cost does not move with a race's θ ({basis}, {end}; 1e-12)", max(u) - min(u) < 1e-12)
@@ -235,15 +235,15 @@ def theta_arms(rows, scen):
 def main():
     buf = io.StringIO()
     with contextlib.redirect_stdout(buf):
-        W.use_case("oct15")
+        W.use_case("oct16")
         W.setup()
         scen = W.scenarios()
     fails = [ln for ln in buf.getvalue().splitlines() if "FAIL" in ln]
     if fails or W.FAILS:
         print(buf.getvalue())
-        raise SystemExit(f"[BLOCKED] the library's oct15 setup failed: {fails[:3]}")
-    print(f"the library's oct15 setup: {buf.getvalue().count('PASS')} gates passed")
-    meta = json.loads((FISCAL / "main_case_2026_10_15/derived/corrections.json").read_text())["meta"]
+        raise SystemExit(f"[BLOCKED] the library's oct16 setup failed: {fails[:3]}")
+    print(f"the library's oct16 setup: {buf.getvalue().count('PASS')} gates passed")
+    meta = json.loads((FISCAL / "main_case_2026_10_16/derived/corrections.json").read_text())["meta"]
     gate("the case's white members are the library's payload's (exact)",
          meta["lineage"]["members"]["white"] == W.LINEAGE["members"]["white"], f"{meta['lineage']['members']['white']:,.3f}")
     rows: list[dict] = []
@@ -253,15 +253,15 @@ def main():
     if FAILS:
         print(f"FAIL: {len(FAILS)} gate(s): {FAILS}")
         sys.exit(1)
-    with open(DER / "limits_oct15.csv", "w", newline="") as f:
+    with open(DER / "limits_oct16.csv", "w", newline="") as f:
         wr = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         wr.writeheader()
         wr.writerows(rows)
-    print(f"[written] derived/limits_oct15.csv: {len(rows)} rows")
+    print(f"[written] derived/limits_oct16.csv: {len(rows)} rows")
     residual = {b: {x["end"]: x["residual_bn"] for x in W_RESIDUALS if x["basis"] == b} for b in W.BASES}
     payload_hashes = {b: hashlib.sha256((W.CASE_LANE / "derived" / name).read_bytes()).hexdigest()
                       for b, name in (("accrual", "corrections.json"), ("cash", "corrections_cash.json"))}
-    (DER / "limits_oct15.json").write_text(json.dumps({"case": "oct15", "payload_sha256": payload_hashes,
+    (DER / "limits_oct16.json").write_text(json.dumps({"case": "oct16", "payload_sha256": payload_hashes,
                                                      "white_end_tax_keys_residual": residual,
                                                      "white_end_tax_keys_rows": W_RESIDUALS}, indent=2) + "\n")
 

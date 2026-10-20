@@ -97,7 +97,7 @@ def registered(group):
     raise SystemExit(f'[BLOCKED] comparator group {group!r} is not registered for item 11 (comparison_contract.REGISTRY)')
 
 
-def load_mixed_unit(source=MIXED_SOURCE):
+def load_mixed_unit(source=MIXED_SOURCE, case='oct15'):
     """Frozen own-mask terms. Never called from the comparator evaluator/setup."""
     contents = {}
     for name, expected in MIXED_PINS.items():
@@ -109,7 +109,7 @@ def load_mixed_unit(source=MIXED_SOURCE):
     if hashlib.sha256(LINEAGE_REPLICATES.read_bytes()).hexdigest() != LINEAGE_REPLICATES_PIN:
         raise SystemExit('[BLOCKED] lineage item11 replicate sha256 mismatch')
     groups = [name.removesuffix('_summary.json') for name in contents if name.endswith('_summary.json')]
-    return {'summaries': {group: json.loads(contents[f'{group}_summary.json']) for group in groups},
+    return {'comparison_case': case, 'summaries': {group: json.loads(contents[f'{group}_summary.json']) for group in groups},
             'gaps': gaps, 'sha256': dict(MIXED_PINS),
             'replicates': {group: pd.read_csv(StringIO(contents[f'{group}_replicates.csv']))
                            for group in groups if f'{group}_replicates.csv' in contents},
@@ -203,6 +203,9 @@ def uncertainty(source, mask, basis, end, scale, factors=None, lineage_replicate
         return dict(comparator_se_bn=None, paired_se_bn=None,
                     se_scope='not computed: authenticated comparator replicate parts unavailable')
     vector = vector * scale
+    if source.get('comparison_case') == 'oct16':
+        return dict(comparator_se_bn=sdr(vector), paired_se_bn=None,
+                    se_scope='own-mask comparator SDR at v9 counts; calibrated v9 lineage paired replicate vector unmeasured')
     if lineage_replicates is None and rule == 'current':
         lineage_replicates = lineage_item11_replicates(source, basis, end)
     paired = None if lineage_replicates is None else sdr(np.asarray(lineage_replicates, float) - vector)
@@ -234,6 +237,27 @@ def comparator_removal(source, group, basis, end, population, reweight=None):
     frame = 'own_count' if abs(population - own) < 1e-6 else 'lineage_count'
     paired = next(r for r in gaps if r['population_basis'] == frame)
     expected_population = own if frame == 'own_count' else float(paired['lineage_count'])
+    if source.get('comparison_case') == 'oct16':
+        # v9 prices several lineage readings (44.19-45.08M people) against a source paired at v8's one lineage
+        # count, so the v8 population-equality stop cannot hold. Keep everything else at full strength: the
+        # frozen source's own standardization at its paired count (1e-9), the linear amount at this count, and
+        # its spending/receipt parts against that independently computed amount (checked(), 1e-9).
+        if not math.isfinite(population) or population <= 0:
+            raise SystemExit('[BLOCKED] comparator item11 population must be a positive finite count')
+        source_count = own if frame == 'own_count' else float(paired['lineage_count'])
+        if (not math.isfinite(row['bn'] * source_count / own)
+                or abs(row['bn'] * source_count / own - float(paired['comparator_adjustment_bn'])) > 1e-9):
+            raise SystemExit('[BLOCKED] comparator item11 own-count standardization mismatch')
+        amount = row['bn'] * population / own
+        parts = split(row['parts'], population / own)
+        if not math.isfinite(amount) or abs(parts['spending'] + parts['receipts'] - amount) > 1e-9:
+            raise SystemExit('[BLOCKED] comparator item11 parts do not add to the standardized term (1e-9bn)')
+        se = uncertainty(source, mask, basis, end, population / own)
+        # The published amount stays the parts' sum (its bytes since the oct16 migration); the gate above ties it
+        # to the independently standardized term.
+        return checked(dict(bn=parts['spending']+parts['receipts'], **se,
+                            own_count=own,status=status,spending_bn=parts['spending'],receipt_bn=parts['receipts'],
+                            scope='measured own membership; explicit v9 linear count standardization; paired SE unavailable; '+MIXED_FRAME))
     if abs(population - expected_population) > 1e-6:
         raise SystemExit('[BLOCKED] comparator item11 population differs from paired source')
     amount = row['bn'] * population / own
@@ -346,7 +370,7 @@ def publish_base_summary(summary, lineage_population, reweight=None):
     taxes_lost, so net_budget = spending_saved - taxes_lost still holds. A3 and A4 take A1's term reweighted
     (reweight: scenario_reweight()); without it they stop.
     """
-    source = load_mixed_unit()
+    source = load_mixed_unit(case='oct16')
     lineage_rows = {(row['basis'], row['end']): row for row in summary if row['group'] == 'mexican_origin_rough'}
     for row in summary:
         if 'cost_evaluator_bn' in row:

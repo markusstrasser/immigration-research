@@ -34,7 +34,7 @@ def test_known_scalar_policies_cover_live_and_archived_dump(consumer):
 
 def test_full_only_lineage_scalar_stops(consumer):
     import copy
-    consumer.use_case('oct15')
+    consumer.use_case('oct16')
     bad = copy.deepcopy(consumer.FULL['accrual']['low'])
     bad['lines'].append({'side': 'scalar', 'id': 'added_only_credit', 'effect_bn': 10})
     with pytest.raises(SystemExit, match='undeclared or duplicate'):

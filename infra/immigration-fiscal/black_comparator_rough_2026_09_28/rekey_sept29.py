@@ -102,7 +102,7 @@ PER_HEAD = "per head: government, defense, interest, roads"
 
 
 def write(name, rows):
-    if W.CASE == 'oct15':
+    if W.CASE == 'oct16':
         rows = [dict(r, case=W.CASE, mortality_convention='whole-population mortality') for r in rows]
     with open(DER / name, "w", newline="") as f:
         wr = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
@@ -114,7 +114,7 @@ def by_program(rows, pop_share):
     """Per program group: the cost to others (effects: spending saved less receipts lost) and the no-response gap."""
     cost, gap = {}, {}
     for side, lid, nat, amt, resp in rows:
-        source = W.META.get('union_completion', {}).get('carriers', {}).get(lid, {}) if W.CASE == 'oct15' else {}
+        source = W.META.get('union_completion', {}).get('carriers', {}).get(lid, {}) if W.CASE == 'oct16' else {}
         if source.get('kind') in ('capital', 'production'):
             continue
         if source:
@@ -204,17 +204,17 @@ def main(case="sept29"):
         rough = res[(b, "mexican_origin_rough", end)][0]
         pm = r["cost"] * 1e9 / r["population"]
         summary.append({"basis": b, "group": lab, "end": end, "spec": W.DUMP[b][end]["spec"],
-                        **{k: f"{v:.4f}" for k, v in r.items() if k not in ("population", "pop_share", "gap", "gap_ex_old_age")},
+                        **{k: f"{v:.4f}" for k, v in r.items() if k not in ("population", "pop_share", "gap", "gap_ex_old_age") and not k.startswith('v9_')},
                         "gap": f"{r['gap']:.4f}" if b == "cash" else "",
                         "gap_ex_old_age": f"{r['gap_ex_old_age']:.4f}" if b == "cash" else "",
                         "population": f"{r['population']:.0f}", "pop_share": f"{r['pop_share']:.6f}",
                         "cost_per_member": f"{pm:.0f}",
                         "gap_per_member": f"{r['gap'] * 1e9 / r['population']:.0f}" if b == "cash" else "",
-                        "per_member_over_engine_union": f"{pm / (eng['cost'] * 1e9 / eng['population']):.4f}" if W.CASE != 'oct15' else "",
+                        "per_member_over_engine_union": f"{pm / (eng['cost'] * 1e9 / eng['population']):.4f}" if W.CASE != 'oct16' else "",
                         "per_member_over_rough_union": f"{pm / (rough['cost'] * 1e9 / rough['population']):.4f}",
                         "cost_at_national_prices": f"{alt[(b, lab, end)]:.4f}",
                         "per_member_at_national_prices_over_engine_union":
-                            f"{alt[(b, lab, end)] / r['population'] / (eng['cost'] / eng['population']):.4f}" if W.CASE != 'oct15' else "",
+                            f"{alt[(b, lab, end)] / r['population'] / (eng['cost'] / eng['population']):.4f}" if W.CASE != 'oct16' else "",
                         **({"engine": "case" if lab == "mexican_origin_engine" else "rough",
                             "comparison_engine": "rough" if lab != "mexican_origin_engine" else "not a comparison",
                             "mixed_unit_removal_bn": W.META['mixed_unit_removal']['by_end'][end]['total_bn'],
@@ -222,11 +222,11 @@ def main(case="sept29"):
                             "black_minus_lineage_own_count_bn": r['cost'] - rough['cost'] if lab == 'nh_black_rough' else '',
                             "black_minus_lineage_equal_population_bn": r['cost'] * rough['population'] / r['population'] - rough['cost'] if lab == 'nh_black_rough' else '',
                             "black_minus_lineage_without_item11_bn": r['cost'] - rough['cost'] + W.META['mixed_unit_removal']['by_end'][end]['total_bn'] if lab == 'nh_black_rough' else ''}
-                           if W.CASE == 'oct15' else {}),
+                           if W.CASE == 'oct16' else {}),
                         **{k: f"{v:.4f}" for k, v in arms.get((b, lab, end), {}).items()},
                         **({"delta_like_for_like_cps_bn": f"{arms[(b, 'mexican_origin_rough', end)]['cost_cps'] - arms[(b, lab, end)]['cost_cps']:.4f}",
                             "delta_like_for_like_bn": f"{rough['cost'] - r['cost']:.4f}"} if W.TAX_ON else {})})
-        if W.CASE == 'oct15' and lab == 'mexican_origin_engine':
+        if W.CASE == 'oct16' and lab == 'mexican_origin_engine':
             for key in summary[-1]:
                 if key.startswith('delta_like_for_like') or key == 'per_member_over_rough_union':
                     summary[-1][key] = ''
@@ -240,7 +240,7 @@ def main(case="sept29"):
             for k, v in (("capital return", r["capital"]), ("production gain (subtracted)", -r["production_gain"])):
                 programs.append({"basis": b, "group": lab, "program": k, "cost_bn": f"{v:.4f}",
                                  "cost_per_member": f"{v * 1e9 / r['population']:.0f}", "gap_bn": "", "gap_per_member": ""})
-            if W.CASE == 'oct15':
+            if W.CASE == 'oct16':
                 post = {k: v for k, v in buckets.items() if k.startswith('lineage post-engine ')}
                 for k, v in post.items():
                     programs.append({"basis": b, "group": lab, "program": k, "cost_bn": f"{v:.4f}",
@@ -258,16 +258,16 @@ def main(case="sept29"):
             row[f"amount_{lab}_bn"] = f"{amt:.4f}"
             row[f"share_{lab}"] = f"{amt / nat:.6f}" if abs(nat) > 1e-6 else ""
         line_rows.append(row)
-    if W.CASE == 'oct15':
+    if W.CASE == 'oct16':
         from comparison_contract import publish_base_summary, load_mixed_unit, comparator_removal
-        source = load_mixed_unit()
+        source = load_mixed_unit(case=W.CASE)
         for basis in W.BASES:
             for lab in ('nh_black_rough',):
                 population = res[(basis, lab, 'low')][0]['population']
                 correction = comparator_removal(source, lab, basis, 'low', population)['bn']
                 programs.append(dict(basis=basis, group=lab, program='comparator post-engine mixed_unit_removal',
                     cost_bn=f'{correction:.4f}', cost_per_member=f'{correction * 1e9 / population:.0f}', gap_bn='', gap_per_member=''))
-        publish_base_summary(summary, W.META['population_v8']['with_coverage'])
+        publish_base_summary(summary, W.META['population_v9']['with_coverage'])
     write(f"rekey_summary_{W.CASE}.csv", summary)
     write(f"rekey_by_program_{W.CASE}.csv", programs)
     write(f"rekey_line_shares_{W.CASE}.csv", line_rows)
@@ -288,6 +288,6 @@ def main(case="sept29"):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct15", choices=list(W.CASES),
+    ap.add_argument("--case", default="oct16", choices=list(W.CASES),
                     help="oct14 (default, live v7); sept29 and oct05 are archived input-library routes")
     main(ap.parse_args().case)

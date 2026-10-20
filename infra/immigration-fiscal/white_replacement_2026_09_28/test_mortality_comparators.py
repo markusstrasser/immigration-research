@@ -91,13 +91,13 @@ def ratio_fixture(tmp_path, monkeypatch):
     source.write_text("old status\n")
     lane = tmp_path / "lane"
     (lane / "derived").mkdir(parents=True)
-    ratio = lane / "derived/accrual_ratios_mortality_oct15.csv"
+    ratio = lane / "derived/accrual_ratios_mortality_oct16.csv"
     ratio.write_text("group,mortality,basis,scenario_name,end,payroll_basis,scenario,population,age_mix\n"
                      "white,general,symmetric,A3,,legacy,payable,100,A3\n"
                      "white,general,symmetric,A4,,legacy,payable,100,A4\n")
     manifest = {"dependencies": {"status.py": hashlib.sha256(source.read_bytes()).hexdigest()},
                 "output_sha256": hashlib.sha256(ratio.read_bytes()).hexdigest()}
-    (lane / "derived/accrual_ratios_mortality_oct15.dependencies.json").write_text(json.dumps(manifest))
+    (lane / "derived/accrual_ratios_mortality_oct16.dependencies.json").write_text(json.dumps(manifest))
     return lane, source
 
 
@@ -132,7 +132,7 @@ def test_ratio_denominator_repair_preserves_actuarial_numerators():
 def test_memory_budget_failure_preserves_previous_valid_outputs(tmp_path, monkeypatch):
     derived = tmp_path / "derived"
     derived.mkdir()
-    ratio = derived / "accrual_ratios_mortality_oct15.csv"
+    ratio = derived / "accrual_ratios_mortality_oct16.csv"
     manifest = ratio.with_suffix(".dependencies.json")
     ratio.write_bytes(b"previous valid ratio\n")
     manifest.write_bytes(b"previous valid dependency manifest\n")
@@ -151,7 +151,7 @@ def test_mortality_output_admission_hashes_exact_written_csv(tmp_path, monkeypat
     (tmp_path / "derived").mkdir()
     monkeypatch.setattr(M, "require_within_budget", lambda _label: 123)
     assert M.write_mortality_output(tmp_path, [{"group": "white", "amount": 1.25}], {"dependencies": {}}) == 123
-    ratio = tmp_path / "derived/accrual_ratios_mortality_oct15.csv"
+    ratio = tmp_path / "derived/accrual_ratios_mortality_oct16.csv"
     manifest = json.loads(ratio.with_suffix(".dependencies.json").read_text())
     assert ratio.read_bytes() == b"group,amount\nwhite,1.25\n"
     assert manifest["output_sha256"] == hashlib.sha256(ratio.read_bytes()).hexdigest()
@@ -167,7 +167,7 @@ def test_option_snapshot_rejects_valid_newer_source_and_ratio_pair(tmp_path, mon
     lane, source = ratio_fixture(tmp_path, monkeypatch)
     table = M.read_verified_ratio_table(lane)
     source.write_text("recomputed status\n")
-    ratio = lane / "derived/accrual_ratios_mortality_oct15.csv"
+    ratio = lane / "derived/accrual_ratios_mortality_oct16.csv"
     ratio.write_text(ratio.read_text().replace(",100,A4", ",120,A4"))
     manifest = {"dependencies": {"status.py": M.file_sha256(source)}, "output_sha256": M.file_sha256(ratio)}
     ratio.with_suffix(".dependencies.json").write_text(json.dumps(manifest))

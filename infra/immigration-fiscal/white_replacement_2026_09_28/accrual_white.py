@@ -177,7 +177,7 @@ def main():
              "delta_like_for_like_accrual_bn"]].to_string(index=False))
 
 
-def main_oct07(case="oct15"):
+def main_oct07(case="oct16"):
     """--case oct07 (main case v6, item 1): the payable ratios of the union and the third-plus NH white reference on the
     pension accrual's 2026 path, the arm all_2026_inputs_separate_funds of pension_tr2026_2026_10_06 that the case's
     meta.pension_accrual takes (tr2026_path.py rebuilds its grid, timing and Part A path through that lane's code), by
@@ -189,7 +189,7 @@ def main_oct07(case="oct15"):
     (accrual_ratios.csv's columns), read by rekey_sept29.py --case oct07."""
     import json
     import tr2026_path as TP
-    TP.case_check(json.loads((FISCAL / "main_case_2026_10_15/derived/corrections.json").read_text())["meta"])
+    TP.case_check(json.loads((FISCAL / "main_case_2026_10_16/derived/corrections.json").read_text())["meta"])
     q = P.S.quotes()
     u_long = q["note151_eligible_share"]["value"]["end_of_projection"]
     p = P.frame()
@@ -237,13 +237,13 @@ def main_oct07(case="oct15"):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct15", choices=["sept29", "oct15"],
-                    help="oct15 (default, live v7 on the 2026 path); sept29 is the archived 2025 path")
+    ap.add_argument("--case", default="oct16", choices=["sept29", "oct16"],
+                    help="oct16 (default, live v7 on the 2026 path); sept29 is the archived 2025 path")
     ap.add_argument("--mortality", action="store_true", help="write separate group-mortality and row-4 arms")
     args = ap.parse_args()
     if args.mortality:
-        if args.case != "oct15":
-            raise SystemExit("[BLOCKED] mortality arms require the live oct15 path")
+        if args.case != "oct16":
+            raise SystemExit("[BLOCKED] mortality arms require the live oct16 path")
         from mortality_comparators import run
         run("white")
     else:

@@ -1,0 +1,210 @@
+{
+ "case": "oct16",
+ "case_construction_national_usd": 857841946157.4531,
+ "cells": [
+  {
+   "cell": "14_17:blk",
+   "kish_neff": 406.60052931905756,
+   "n": 508,
+   "n_public": 453,
+   "rate": 0.8959287997821456
+  },
+  {
+   "cell": "14_17:mex",
+   "kish_neff": 605.5668522589381,
+   "n": 760,
+   "n_public": 683,
+   "rate": 0.894324164610179
+  },
+  {
+   "cell": "14_17:owh",
+   "kish_neff": 157.4379429302029,
+   "n": 202,
+   "n_public": 169,
+   "rate": 0.8216270995253823
+  },
+  {
+   "cell": "14_17:rest",
+   "kish_neff": 710.2233991753812,
+   "n": 957,
+   "n_public": 815,
+   "rate": 0.8413545520636138
+  },
+  {
+   "cell": "14_17:w3",
+   "kish_neff": 1820.2813225193074,
+   "n": 2522,
+   "n_public": 2098,
+   "rate": 0.8293463271956503
+  },
+  {
+   "cell": "18_24:blk",
+   "kish_neff": 635.0473681036824,
+   "n": 798,
+   "n_public": 65,
+   "rate": 0.07550063392471879
+  },
+  {
+   "cell": "18_24:mex",
+   "kish_neff": 1009.6635845300756,
+   "n": 1206,
+   "n_public": 77,
+   "rate": 0.07016417746942769
+  },
+  {
+   "cell": "18_24:owh",
+   "kish_neff": 263.6417738584944,
+   "n": 325,
+   "n_public": 13,
+   "rate": 0.04245769214988726
+  },
+  {
+   "cell": "18_24:rest",
+   "kish_neff": 1184.7884372490062,
+   "n": 1499,
+   "n_public": 93,
+   "rate": 0.06723179686333511
+  },
+  {
+   "cell": "18_24:w3",
+   "kish_neff": 2993.3298941927733,
+   "n": 3965,
+   "n_public": 179,
+   "rate": 0.048205648678612566
+  },
+  {
+   "cell": "25_plus:all",
+   "kish_neff": 53952.20719176905,
+   "n": 70939,
+   "n_public": 72,
+   "rate": 0.0010730403285295169
+  },
+  {
+   "cell": "3_4:all",
+   "kish_neff": 1446.5174802064569,
+   "n": 2031,
+   "n_public": 90,
+   "rate": 0.047657142557706755
+  },
+  {
+   "cell": "5_13:blk",
+   "kish_neff": 774.8886510966853,
+   "n": 973,
+   "n_public": 857,
+   "rate": 0.8821985392009607
+  },
+  {
+   "cell": "5_13:mex",
+   "kish_neff": 1166.4749991224865,
+   "n": 1479,
+   "n_public": 1334,
+   "rate": 0.9024155409447724
+  },
+  {
+   "cell": "5_13:owh",
+   "kish_neff": 293.70951197044974,
+   "n": 390,
+   "n_public": 308,
+   "rate": 0.7947781477785959
+  },
+  {
+   "cell": "5_13:rest",
+   "kish_neff": 1494.501518031964,
+   "n": 2114,
+   "n_public": 1797,
+   "rate": 0.8521669904635694
+  },
+  {
+   "cell": "5_13:w3",
+   "kish_neff": 3709.3556431076418,
+   "n": 5367,
+   "n_public": 4399,
+   "rate": 0.8127996015361106
+  }
+ ],
+ "controls": {
+  "mexican_observed_total": {
+   "pupils": 8487011.556366362,
+   "pupils_school_lane": 8487011.21879263,
+   "spending_bn": 143.08743231032452,
+   "spending_bn_account": 143.08742529117228
+  },
+  "national_civilian": {
+   "pupils": 48551030.59027457,
+   "pupils_school_lane": 48551028.65090136,
+   "spending_bn": 857.8419461574531,
+   "spending_bn_account": 857.8419137288022
+  },
+  "other_residents": {
+   "pupils": 40064019.03390822,
+   "pupils_school_lane": 40064017.432108715,
+   "spending_bn": 714.7545138471285,
+   "spending_bn_account": 714.7544884376299
+  }
+ },
+ "national_exposure_usd": 858098489274.5216,
+ "october": {
+  "max_official_161_weight_residual": 7.927417755126953e-06,
+  "official_weight_sum": 332528255.9959,
+  "raw_records": 126387,
+  "replicate_records": 99045,
+  "valid_records": 98719,
+  "zero_weight_nonperson_records_excluded": 27342
+ },
+ "pooled": [
+  "3_4",
+  "25_plus"
+ ],
+ "rates": {
+  "14_17:blk": 0.8959287997821456,
+  "14_17:mex": 0.894324164610179,
+  "14_17:owh": 0.8216270995253823,
+  "14_17:rest": 0.8413545520636138,
+  "14_17:w3": 0.8293463271956503,
+  "18_24:blk": 0.07550063392471879,
+  "18_24:mex": 0.07016417746942769,
+  "18_24:owh": 0.04245769214988726,
+  "18_24:rest": 0.06723179686333511,
+  "18_24:w3": 0.048205648678612566,
+  "25_plus:all": 0.0010730403285295169,
+  "3_4:all": 0.047657142557706755,
+  "5_13:blk": 0.8821985392009607,
+  "5_13:mex": 0.9024155409447724,
+  "5_13:owh": 0.7947781477785959,
+  "5_13:rest": 0.8521669904635694,
+  "5_13:w3": 0.8127996015361106,
+  "out": 0.0
+ },
+ "rule": "The case keys the school part of education_services on public K-12 pupils priced where they live (school_enrollment_2026_09_20): October 2024 CPS public K-12 rates by age band, with 3-4 and 25+ pooled, transported onto March 2025 CPS civilians and priced at the state's current spending per pupil (gen_ledger_extension_2026_09_16 state_parameters.csv). The rough engine keyed every group on persons aged 5-17, so the rough comparison dropped the case's school pricing on the lineage's side (the case-to-rough bridge carried it) and never priced it for the comparators. Here every record takes the rate of its own cell, fitted on the October records of the same cell: the Mexican-origin union (the case's own definition), NH Black alone, third-plus NH white alone (A1), other NH white alone, and everyone else. A member's child outside the group takes its own cell's rate. The national total is every civilian's exposure, so the cells' shares add to 1.",
+ "shares": {
+  "blk": {
+   "case_construction": 0.1337985507753445,
+   "own_cells": 0.14287687513808822,
+   "rough_5_17": 0.13783319094347446
+  },
+  "mex": {
+   "case_construction": 0.16679929554769224,
+   "own_cells": 0.16674942806541662,
+   "rough_5_17": 0.16421785908521647
+  },
+  "w3": {
+   "case_construction": 0.42155998658570953,
+   "own_cells": 0.41018306784267794,
+   "rough_5_17": 0.4355292500344927
+  },
+  "wall": {
+   "case_construction": 0.4689091553067526,
+   "own_cells": 0.4552928633414148,
+   "rough_5_17": 0.4783386041374507
+  }
+ },
+ "sources": {
+  "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+  "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/state_parameters.csv": "00b0bb778861cc8406a04c8159938368146494965348d477e0514c4b0efccff2",
+  "infra/immigration-fiscal/school_enrollment_2026_09_20/_cache/cpsoct24.txt": "a74d110ceeb08a1bd5321f675ccb21c9a1d3ddd58bdf9ef9e05daf6a85243a54",
+  "infra/immigration-fiscal/school_enrollment_2026_09_20/derived/transported_pupils.csv": "7adcf3e149e93c38ba43f0705f91da57de4f66cd154d0c30942c5de8f2db274c",
+  "infra/immigration-fiscal/school_enrollment_2026_09_20/derived/updated_account_components.csv": "1c0dbad6b02c868c4792af66d2b103b0897e2791357968092c723f4a7a647514",
+  "infra/immigration-fiscal/school_enrollment_2026_09_20/measurement.py": "ca273a066357c6a2636d8cd8ea2ef5591b9995222f695f1c8e9bb94a08f12529",
+  "infra/immigration-fiscal/school_enrollment_2026_09_20/sources.json": "cfc3f23ba231e4c9b7ff319896bd76efb6705b1d5d7e9edf0c322f190b13727e"
+ }
+}

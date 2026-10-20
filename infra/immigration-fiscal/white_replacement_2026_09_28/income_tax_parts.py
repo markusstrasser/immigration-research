@@ -176,9 +176,9 @@ def gates_steps(scen, cost, lines, state):
                 own = {"cps": W.run29(sc, end, b, "cps")[0]["cost"], PROP_STEP: W.run29(sc, end, b, "prop")[0]["cost"],
                        "c_federal_raking": W.run29(sc, end, b)[0]["cost"]}
                 row = summary.query("basis == @b and group == @lab and end == @end").iloc[0]
-                files = {"cps": row.cost_cps_evaluator_bn if W.CASE == 'oct15' else row.cost_cps,
-                         PROP_STEP: row.cost_top_tail_proportional_evaluator_bn if W.CASE == 'oct15' else row.cost_top_tail_proportional,
-                         "c_federal_raking": row.cost_evaluator_bn if W.CASE == 'oct15' else row.cost}
+                files = {"cps": row.cost_cps_evaluator_bn if W.CASE == 'oct16' else row.cost_cps,
+                         PROP_STEP: row.cost_top_tail_proportional_evaluator_bn if W.CASE == 'oct16' else row.cost_top_tail_proportional,
+                         "c_federal_raking": row.cost_evaluator_bn if W.CASE == 'oct16' else row.cost}
                 for part, col in (("cps", "cost_cps"), (PROP_STEP, "cost_top_tail_proportional"), ("c_federal_raking", "cost")):
                     got = cost[(part, b, end, lab)]
                     gate(f"{lab} {b} {end}: step {part} is run29's own run (1e-9) and rekey_summary's {col} (5e-5)",
@@ -266,9 +266,9 @@ def bins_rows(scen, pieces, m, lows):
 
 def parts_rows(scen, cost, state):
     out = []
-    if W.CASE == 'oct15':
+    if W.CASE == 'oct16':
         from comparison_contract import load_mixed_unit, comparator_removal
-        mixed = load_mixed_unit()
+        mixed = load_mixed_unit(case=W.CASE)
 
     def add(b, end, figure, series):
         row = {"case": W.CASE, "basis": b, "end": end, "figure": figure, "cps_bn": f"{series[0]:.4f}"}
@@ -276,9 +276,9 @@ def parts_rows(scen, cost, state):
             row[f"{part}_bn"] = f"{series[i] - series[i - 1]:.4f}"
         row["prop_bn"] = f"{series[PARTS.index(PROP_STEP) + 1]:.4f}"
         row["central_bn"] = f"{series[-1]:.4f}"
-        if W.CASE == 'oct15':
+        if W.CASE == 'oct16':
             term = comparator_removal(mixed, 'A1_third_plus_nh_white', b, end,
-                                      W.META['population_v8']['with_coverage'])['bn'] if 'A1_third_plus_nh_white' in figure else 0.
+                                      W.META['population_v9']['with_coverage'])['bn'] if 'A1_third_plus_nh_white' in figure else 0.
             shift = -term if figure.startswith('gap:') else term
             row.update(comparator_item11_bn=term, central_with_comparator_item11_bn=f'{series[-1] + shift:.4f}',
                        scope='one-sided evaluator decomposition; paired survivor term published separately')

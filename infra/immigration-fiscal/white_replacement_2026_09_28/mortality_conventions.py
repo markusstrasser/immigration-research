@@ -12,7 +12,7 @@ import math
 HERE = Path(__file__).resolve().parent
 SOURCE = HERE.parent / 'lineage_mortality_2026_10_14'
 # Round 3 (C3 fix 3a): the source's central rows repriced with the whole-population factor on the left-out share.
-MIX = HERE / 'derived/lineage_mortality_mix_oct15.csv'
+MIX = HERE / 'derived/lineage_mortality_mix_oct16.csv'
 MIXED = 'mixed mortality conventions'
 OWN = 'own-group mortality'
 GENERAL = 'whole-population mortality'
@@ -143,8 +143,8 @@ def source_change(full, union, meta, end, include_coverage=False, mix=True):
     if include_coverage and meta.get('coverage'):
         path = HERE.parent / meta['coverage']['file']
         raw = json.loads(path.read_text())
-        if raw.get('key') != 'oct15':
-            raise ValueError('[BLOCKED] live mortality needs oct15 coverage decomposition')
+        if raw.get('key') != 'oct16':
+            raise ValueError('[BLOCKED] live mortality needs oct16 coverage decomposition')
         pensions = {}
         for basis in ('set', 'cash'):
             rows = raw['sets'][basis]['ends'][end]['decomposition']['line_parts']
@@ -161,8 +161,24 @@ def source_change(full, union, meta, end, include_coverage=False, mix=True):
             css = pensions['set'].get((g, 'social_security'), 0.)
             cpa = pensions['set'].get((g, 'medicare'), 0.) - (1-part_a) * pensions['cash'].get((g, 'medicare'), 0.)
             coverage += css * c['ss_factor'] + cpa * c['pa_factor']
+    count_change = 0.
+    for item in ('native_minor_calibration', 'coverage_tenure'):
+        block = meta.get(item)
+        if not block:
+            continue
+        path = HERE.parent / block['parts_file']
+        rows = list(csv.DictReader(path.open()))
+        for scenario, sign in ((block['parts_scenario'], 1), (block.get('subtract_parts_scenario'), -1)):
+            if not scenario:
+                continue
+            for row in rows:
+                if row['scenario'] != scenario or row['end'] != end or row['category'] != 'pension_accrual':
+                    continue
+                c = gen[row['generation']]
+                factor = c['ss_factor'] if row['source_line'] == 'social_security' else c['pa_factor']
+                count_change += sign * float(row['change_bn']) * factor
     bounds = {bound: identified + ss * choose(p['ss'] for p in profiles)
-              + pa * choose(p['pa'] for p in profiles) + coverage
+              + pa * choose(p['pa'] for p in profiles) + coverage + count_change
               for bound, choose in (('low', min), ('high', max))}
     if not all(math.isfinite(v) for v in bounds.values()):
         raise ValueError('[BLOCKED] nonfinite lineage mortality substitution')
@@ -192,7 +208,7 @@ def validate_pair(lineage, comparator, label):
 
 def tag(row):
     arm, group = row['arm'], row.get('group', '')
-    return dict(row, case='oct15', mortality_convention=convention(arm), mortality_bound='none',
+    return dict(row, case='oct16', mortality_convention=convention(arm), mortality_bound='none',
                 mortality_delta_bn=0.,
                 group_mortality='own-group' if arm in OWN_ARMS and group and not group.startswith('mexican_')
                 else 'whole-population')

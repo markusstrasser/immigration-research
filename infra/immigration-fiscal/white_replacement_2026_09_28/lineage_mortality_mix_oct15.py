@@ -13,7 +13,7 @@ general rows to 1e-9; under whole-population mortality the mix is the identity; 
 
 Run from the repo root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/white_replacement_2026_09_28/lineage_mortality_mix_oct15.py
-Writes derived/lineage_mortality_mix_oct15.csv.
+Writes derived/lineage_mortality_mix_oct16.csv.
 """
 from __future__ import annotations
 
@@ -31,7 +31,7 @@ import pandas as pd
 LANE = Path(__file__).resolve().parent
 FISCAL = LANE.parent
 SOURCE = FISCAL / "lineage_mortality_2026_10_14"
-OUT = LANE / "derived/lineage_mortality_mix_oct15.csv"
+OUT = LANE / "derived/lineage_mortality_mix_oct16.csv"
 METRICS = ("oasdi_per_tax_dollar", "benefit_tax_timing", "oasdi_per_tax_dollar_net", "part_a_per_hi_tax_dollar",
            "cps_oasdi_tax_bn", "cps_hi_tax_bn")
 
@@ -85,7 +85,7 @@ def main():
     R = LM.Route()
     gate("live and frozen accrual modules share the pension module", live.P is R.P)
     m14 = json.loads((FISCAL / "main_case_2026_10_14/derived/corrections.json").read_text())["meta"]["lineage"]["age_mix"]
-    m15 = json.loads((FISCAL / "main_case_2026_10_15/derived/corrections.json").read_text())["meta"]["lineage"]["age_mix"]
+    m15 = json.loads((FISCAL / "main_case_2026_10_16/derived/corrections.json").read_text())["meta"]["lineage"]["age_mix"]
     gate("v8's added age mix is the source's", m14 == m15)
     source = pd.read_csv(SOURCE / "derived/accrual_ratios.csv")
     controls = pd.read_csv(SOURCE / "derived/reproduced_ratios.csv")

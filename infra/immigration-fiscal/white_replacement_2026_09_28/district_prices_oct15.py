@@ -21,7 +21,7 @@ import pandas as pd
 
 HERE = Path(__file__).resolve().parent
 LEDGER = HERE.parent / "ledger_absolute_2026_09_17"
-OUT = HERE / "derived/district_prices_oct15.json"
+OUT = HERE / "derived/district_prices_oct16.json"
 GROUPS = {"hispanic": "Hispanic/Latino", "nh_white": "White", "black": "Black or African American"}
 
 
@@ -31,7 +31,7 @@ def require(ok, why):
 
 
 def ledger_reader():
-    spec = importlib.util.spec_from_file_location("ledger_district_oct15", LEDGER / "district_differential.py")
+    spec = importlib.util.spec_from_file_location("ledger_district_oct16", LEDGER / "district_differential.py")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
@@ -120,7 +120,7 @@ def build():
                        for arm, suffix in (("raw", ""), ("charged", "_charged"))} for g in GROUPS}
     sources = [reader.F33, reader.CCD, LEDGER / "district_differential.py",
                LEDGER / "params/params.json", LEDGER / "derived/district_differential_by_state.csv"]
-    result = dict(case="oct15", vintage="F-33 FY2024 x CCD SY2023-24", counts=counts,
+    result = dict(case="oct16", vintage="F-33 FY2024 x CCD SY2023-24", counts=counts,
                   national_dollars_per_pupil=national, states=table.to_dict(orient="records"),
                   sources={str(p): reader.sha256(p) for p in sources},
                   unmeasured="NH other race differential and comparator school-level premium: zero, beside as asymmetries",
@@ -131,14 +131,14 @@ def build():
 
 def load():
     stored = json.loads(OUT.read_text())
-    require(stored["case"] == "oct15", "wrong case")
+    require(stored["case"] == "oct16", "wrong case")
     return stored
 
 
 def per_pupil_rates(state_fips, race_groups, stored=None):
     """Own race's additive dollars per public pupil; zero for declared NH other.
 
-    Accepted race groups follow members_coverage_oct15.race_group: hispanic,
+    Accepted race groups follow members_coverage_oct16.race_group: hispanic,
     nh_white, black, nh_other. Unknown labels and states fail loudly.
     """
     stored = load() if stored is None else stored

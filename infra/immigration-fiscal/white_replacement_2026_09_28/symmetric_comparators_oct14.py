@@ -11,7 +11,9 @@ import contextlib
 import copy
 import csv
 from functools import lru_cache
+import gzip
 import hashlib
+import io
 import json
 import os
 import sys
@@ -34,7 +36,7 @@ from mortality_comparators import read_verified_ratio_table, select_verified_rat
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 BLACK = W.BLACK_LANE
-MEMBERS = HERE / 'derived/members_coverage_oct15.json'
+MEMBERS = HERE / 'derived/members_coverage_oct16.json'
 LINEAGE_ROUND2 = W.FISCAL / 'mixed_unit_removal_2026_10_14/derived/round2_summary.json'
 DERIVED, CENTRAL = MC.DERIVED, MC.CENTRAL       # round 3's derived arms and the central reading
 DERIVED_GROUPS = ('mexican_origin_engine', 'mexican_origin_rough', 'A1_third_plus_nh_white', 'nh_black_rough',
@@ -53,21 +55,21 @@ def digest(path):
 def check_pins(pin=False):
     paths = [W.R.ZIP, HERE / 'inputs/comparator_baseline_oct14.json',
              HERE / 'derived/rekey_summary_oct14.csv',
-             HERE / 'derived/production_state_oct15.json',
+             HERE / 'derived/production_state_oct16.json',
              W.FISCAL / 'main_case_candidate_2026_09_28/derived/production_row4.json',
              W.FISCAL / 'matched_benefits_2026_09_19/model.py',
              W.FISCAL / 'cps_imputation_keys_2026_09_23/common.py',
              W.FISCAL / 'cps_imputation_keys_2026_09_23/combine_status.py',
              W.FISCAL / 'cps_imputation_keys_2026_09_23/combine_onbooks_lane.py']
-    paths += [W.FISCAL / 'main_case_2026_10_15/derived' / n for n in ('corrections.json', 'corrections_cash.json', 'summary.json')]
-    paths += [lane / 'derived/accrual_ratios_mortality_oct15.csv' for lane in (HERE, BLACK)]
+    paths += [W.FISCAL / 'main_case_2026_10_16/derived' / n for n in ('corrections.json', 'corrections_cash.json', 'summary.json')]
+    paths += [lane / 'derived/accrual_ratios_mortality_oct16.csv' for lane in (HERE, BLACK)]
     paths += [MC.SOURCE / 'derived' / n for n in ('accrual_ratios.csv', 'reproduced_ratios.csv', 'case_changes.csv', 'comparisons.csv')]
     paths += [HERE / 'mortality_conventions.py',
-              W.FISCAL / 'coverage_bound_2026_10_14/derived/coverage_bound_oct15.json',
+              W.FISCAL / 'coverage_bound_2026_10_14/derived/coverage_bound_oct16.json',
               W.FISCAL / 'job_capital_taxes_2026_10_14/derived/item.json']
     # Round 3 (C3): the mortality mix, the school key, the coverage and children terms, the lineage's children shift.
-    paths += [MC.MIX, HERE / 'derived/school_key_oct15.json', MEMBERS, LINEAGE_ROUND2,
-              HERE / 'derived/district_prices_oct15.json', HERE / 'r4_adjustments.py']
+    paths += [MC.MIX, HERE / 'derived/school_key_oct16.json', MEMBERS, LINEAGE_ROUND2,
+              HERE / 'derived/district_prices_oct16.json', HERE / 'r4_adjustments.py']
     paths += [CC.MIXED_SOURCE / n for n in ('lineage_children_delta_summary.json',
         'lineage_children_total_replicates.csv', 'lineage_half_white_total_replicates.csv',
         'lineage_half_black_total_replicates.csv')]
@@ -75,9 +77,9 @@ def check_pins(pin=False):
     target = HERE / 'inputs/pins.json'
     data = json.loads(target.read_text())
     if pin:
-        data['symmetric_inputs_oct15'] = hashes
+        data['symmetric_inputs_oct16'] = hashes
         target.write_text(json.dumps(data, indent=2) + '\n')
-    if data.get('symmetric_inputs_oct15') != hashes:
+    if data.get('symmetric_inputs_oct16') != hashes:
         raise SystemExit('[BLOCKED] comparator input pin mismatch; inspect changed source before repinning')
     return hashes
 
@@ -85,6 +87,18 @@ def check_pins(pin=False):
 def write(lane, name, rows):
     # Rows of the round-3 derived arms carry a few extra columns; every row takes the union schema.
     fields = list(dict.fromkeys(key for row in rows for key in row))
+    if name.endswith('.gz'):
+        # Deterministic gzip (no file name, mtime 0) so a rerun rewrites the same bytes. Used for the
+        # program-level table: 243,105 rows, 51.5 MB as plain CSV on oct15 and oct16, over the 50 MB
+        # limit for tracked files (rerun_lane.py LARGE).
+        text = io.StringIO()
+        writer = csv.DictWriter(text, fieldnames=fields, restval='', lineterminator='\n')
+        writer.writeheader()
+        writer.writerows(rows)
+        with (lane / 'derived' / name).open('wb') as raw, \
+                gzip.GzipFile(filename='', mode='wb', fileobj=raw, compresslevel=9, mtime=0) as stream:
+            stream.write(text.getvalue().encode('utf-8'))
+        return
     with (lane / 'derived' / name).open('w', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=fields, restval='', lineterminator='\n')
         writer.writeheader()
@@ -119,8 +133,8 @@ def coverage_label(name, spec):
 def members_terms():
     """members_coverage_oct15.py's runs by (scenario, rule, coverage, mortality, basis, end), and its counts."""
     data = json.loads(MEMBERS.read_text())
-    if data.get('case') != 'oct15' or data.get('arm') != 'combined_rules_only':
-        raise SystemExit('[BLOCKED] members and coverage terms are not on oct15 combined rules')
+    if data.get('case') != 'oct16' or data.get('arm') != 'combined_rules_only':
+        raise SystemExit('[BLOCKED] members and coverage terms are not on oct16 combined rules')
     runs = {}
     for r in data['runs']:
         key = r['scenario'], r['rule'], r['coverage'], r['mortality'], r['basis'], r['end']
@@ -243,7 +257,7 @@ def derived_rows(arm, spec, lookup, legacy, mixed, members, shift):
                         row['cost_per_person'] = row['cost_bn'] * 1e9 / row['population']
                         row['contribution_to_others_bn'] = -row['cost_bn']
                     row['lineage_school_price_transfer_bn'] = school_transfer
-                    row['lineage_item11_se_bn'] = CC.sdr(lv)
+                    row['lineage_item11_se_bn'] = None
                     row['change_from_base_arm_bn'] = add
                 else:
                     CC.require_central_reading(name)
@@ -287,7 +301,7 @@ def derived_rows(arm, spec, lookup, legacy, mixed, members, shift):
                                own_count_item11_bn=own_term['bn'],
                                own_count_item11_comparator_se_bn=own_term['comparator_se_bn'],
                                own_count_item11_paired_se_bn=own_term['paired_se_bn'],
-                               item11_se_scope=term['se_scope'], lineage_item11_se_bn=CC.sdr(lv), **common,
+                                item11_se_scope=term['se_scope'], lineage_item11_se_bn=None, **common,
                                mixed_unit_asymmetry=term['scope'], framing=CC.MIXED_FRAME,
                                balance_scope='allocated member lines; survivor post-engine term excluded, as on lineage side',
                                cost_one_sided_bn=r['cost_bn'] + extra, cost_without_item11_bn=r['cost_bn'] + extra, cost_bn=cost,
@@ -444,8 +458,9 @@ def hispanic_arm(ratio_table=None):
 
 def main(pin=False):
     started = time.perf_counter()
+    W.use_case('oct16')
     hashes = check_pins(pin)
-    mixed = CC.load_mixed_unit()
+    mixed = CC.load_mixed_unit(case=W.CASE)
     baseline = json.loads((HERE / 'inputs/comparator_baseline_oct14.json').read_text())
     archive = pd.read_csv(HERE / 'derived/rekey_summary_oct14.csv').set_index(['basis', 'end', 'group'])
     for row in baseline:
@@ -454,7 +469,6 @@ def main(pin=False):
             W.gate(f'preserved v7 positive control {index}/{metric} (1e-12bn)', abs(archive.loc[index, metric] - row[metric]) < 1e-12)
     W.stop_if_failed()
     # The archived rows are read-only controls. Compute only the live case.
-    W.use_case('oct15')
     W.setup()
     groups = W.scenarios()
     legacy = {(basis, end, name): W.run29(sc, end, basis)[0]
@@ -541,6 +555,8 @@ def main(pin=False):
                                    comparator_item11_bn=comparator_item11,
                                    item11_spending_bn=correction['spending_bn'], item11_receipt_bn=correction['receipt_bn'],
                                    item11_paired_se_bn=correction['paired_se_bn'],
+                                   item11_comparator_se_bn=correction.get('comparator_se_bn'),
+                                   item11_se_scope=correction.get('se_scope'),
                                    membership_rule='current', comparator_coverage=coverage_label(name, None),
                                    mixed_unit_asymmetry=correction['scope'] if not name.startswith('mexican_') else 'lineage measured; A1/Black counterparts measured',
                                    framing=CC.MIXED_FRAME,
@@ -570,7 +586,7 @@ def main(pin=False):
                                                          source_side=source.get('side', side), source_line=source.get('parent_line', lid),
                                                          carrier_kind=source.get('kind', ''),
                                                          national_bn=national, amount_bn=amount, response=response)))
-                    bridges.extend(dict(case='oct15', arm=arm, basis=basis, end=end,
+                    bridges.extend(dict(case='oct16', arm=arm, basis=basis, end=end,
                                         mortality_convention=MC.convention(arm), mortality_bound='none',
                                         case_engine='case', rough_engine='rough', **part)
                                    for part in CC.bridge_parts(runs['mexican_origin_engine'], runs['mexican_origin_rough'],
@@ -595,8 +611,7 @@ def main(pin=False):
         spec = DERIVED.get(arm)
         if spec is None:
             term = CC.comparator_removal(mixed, name, basis, end, population, reweight=reweight)
-            return dict(term, frame_own_count=term['own_count'],
-                        se_scope='paired lineage-minus-comparator replicate SE')
+            return dict(term, frame_own_count=term['own_count'])
         coverage = spec.get('coverage', 'central') if name == 'nh_black_rough' else 'central'
         count = members[1][f'{name}/{spec["rule"]}/{coverage}']
         true_own = count['true_own_scale']
@@ -621,7 +636,7 @@ def main(pin=False):
                 for end in W.ENDS:
                     for bound in ('low', 'high'):
                         delta = mortality_changes[end][bound] if basis == 'accrual' else 0.
-                        bridges.append(dict(case='oct15', arm=arm, basis=basis, end=end,
+                        bridges.append(dict(case='oct16', arm=arm, basis=basis, end=end,
                             mortality_convention=MC.OWN, mortality_bound=bound, case_engine='case', rough_engine='rough',
                             side='mortality', line='lineage_mortality_substitution', case_bn=delta, rough_bn=delta,
                             case_minus_rough_bn=0.))
@@ -654,7 +669,7 @@ def main(pin=False):
                                          mortality_bound=bound, group_mortality='own-group'))
     for r in results:
         if r['mortality_convention'] == MC.OWN and r['group'].startswith('mexican_'):
-            program_rows.append(dict(case='oct15', mortality_convention=MC.OWN,
+            program_rows.append(dict(case='oct16', mortality_convention=MC.OWN,
                 mortality_bound=r['mortality_bound'], mortality_delta_bn=r['mortality_delta_bn'],
                 group_mortality='own-group', arm=r['arm'], basis=r['basis'], end=r['end'], group=r['group'],
                 side='spending', line='lineage_mortality_substitution', source_side='spending',
@@ -680,7 +695,7 @@ def main(pin=False):
                     lineage_school_price_transfer_bn=u.get('lineage_school_price_transfer_bn', 0.),
                     lineage_mortality_delta_bn=u.get('mortality_delta_bn', 0.),
                     case_minus_rough_bridge_bn=e['cost_bn'] - u['cost_bn'],
-                    lineage_item11_se_bn=u.get('lineage_item11_se_bn', CC.sdr(CC.lineage_item11_replicates(mixed, basis, end))))
+                    lineage_item11_se_bn=u.get('lineage_item11_se_bn'))
                 W.gate(f'{arm}/{basis}/{end}: headline-to-comparison lineage decomposition (1e-9bn)',
                     abs(lineage_fields['case_headline_cost_bn'] - lineage_fields['case_minus_rough_bridge_bn']
                         + lineage_fields['lineage_children_block_bn'] + lineage_fields['lineage_children_item11_bn']
@@ -696,7 +711,7 @@ def main(pin=False):
                 for frame, population in (('own_count', white_own), ('lineage_count', e['population'])):
                     f = population / w['population']
                     correction = item11_at(arm, 'A1_third_plus_nh_white', basis, end, population)
-                    white_scaled.append(dict(case='oct15', arm=arm, basis=basis, end=end,
+                    white_scaled.append(dict(case='oct16', arm=arm, basis=basis, end=end,
                         mortality_convention=mortality_convention, mortality_bound=mortality_bound,
                         population_basis=frame, population=population,
                         lineage_engine=u['engine'], comparator_engine=w['engine'], **lineage_fields,
@@ -711,7 +726,7 @@ def main(pin=False):
                         population_warning=('own count differs from the lineage count: not an as-many comparison'
                                             if frame == 'own_count' else ''),
                         rule='linear standardization of comparator per-person price; lineage held at live count; no new removal solve'))
-                comparisons.append(dict(case='oct15', mortality_convention=mortality_convention, mortality_bound=mortality_bound,
+                comparisons.append(dict(case='oct16', mortality_convention=mortality_convention, mortality_bound=mortality_bound,
                     arm=arm, basis=basis, end=end,
                     **CC.gap_fields(u, w, b, item11),
                     **lineage_fields,
@@ -723,7 +738,7 @@ def main(pin=False):
                 factor = e['population'] / b['population']
                 for frame, f in (('own_count', 1.), ('scaled_to_lineage', factor)):
                     correction = item11_at(arm, 'nh_black_rough', basis, end, b['population'] * f)
-                    scaled.append(dict(case='oct15', mortality_convention=mortality_convention, mortality_bound=mortality_bound,
+                    scaled.append(dict(case='oct16', mortality_convention=mortality_convention, mortality_bound=mortality_bound,
                         arm=arm, basis=basis, end=end, population_basis=frame,
                         population=b['population'] * f, cost_bn=b['cost_bn'] * f,
                         lineage_engine=u['engine'], comparator_engine=b['engine'], **lineage_fields,
@@ -755,7 +770,7 @@ def main(pin=False):
                 payroll = values['combined_payroll_only'] - before
                 joint = values['combined_bracket_payroll_joint'] - before
                 ages = values['combined_rules_only'] - values['combined_bracket_payroll_joint']
-                changes.append(dict(case='oct15', mortality_convention=MC.MIXED, mortality_bound='none',
+                changes.append(dict(case='oct16', mortality_convention=MC.MIXED, mortality_bound='none',
                     basis=basis, end=end, group=name, engine=CC.engine_for(name),
                     before_cost_bn=before, bracket_rerake_change_bn=bracket, payroll_denominator_change_bn=payroll,
                     joint_bracket_payroll_change_bn=joint, interaction_bn=joint - bracket - payroll,
@@ -781,7 +796,7 @@ def main(pin=False):
                     a = next(r for r in old[1] if r[0] == 'receipts' and r[1] == lid)
                     b = next(r for r in new[1] if r[0] == 'receipts' and r[1] == lid)
                     parts.append((a[3] - b[3]) * b[4])
-                    domestic.append(dict(case='oct15', mortality_convention=MC.MIXED, mortality_bound='none',
+                    domestic.append(dict(case='oct16', mortality_convention=MC.MIXED, mortality_bound='none',
                         basis=basis, end=end, group=name, line=lid, old_amount_bn=a[3], domestic_amount_bn=b[3],
                         response=b[4], cost_change_bn=parts[-1], group_total_change_bn=new[0]['cost']-old[0]['cost'],
                         rule='own scenario job wage share times source K2 personal factor; no lineage scaling'))
@@ -791,26 +806,26 @@ def main(pin=False):
     require_within_budget('symmetric comparators, before writing outputs')
     for table in ratio_tables.values():
         require_ratio_snapshot_fresh(table)
-    write(HERE, 'symmetric_results_oct15.csv', results)
-    write(HERE, 'symmetric_comparisons_oct15.csv', comparisons)
-    write(HERE, 'symmetric_white_population_oct15.csv', white_scaled)
-    write(HERE, 'lineage_engine_bridge_oct15.csv', bridges)
-    write(HERE, 'round2_changes_oct15.csv', changes)
-    write(HERE, 'symmetric_programs_oct15.csv', program_rows)
-    write(HERE, 'symmetric_status_sampling_oct15.csv', [dict(r, case='oct15', mortality_convention=MC.GENERAL, mortality_bound='none') for r in sampling])
-    write(HERE, 'symmetric_hispanic_arm_oct15.csv', [dict(r, case='oct15', mortality_convention='pooled Hispanic mortality proxy', mortality_bound='low/high') for r in hispanic])
-    write(HERE, 'domestic_source_changes_oct15.csv', domestic)
-    write(BLACK, 'domestic_source_changes_oct15.csv', [r for r in domestic if r['group'] == 'nh_black_rough'])
-    write(HERE, 'symmetric_white_measures_oct15.csv', [dict(case=r['case'], mortality_convention=r['mortality_convention'], mortality_bound=r['mortality_bound'],
+    write(HERE, 'symmetric_results_oct16.csv', results)
+    write(HERE, 'symmetric_comparisons_oct16.csv', comparisons)
+    write(HERE, 'symmetric_white_population_oct16.csv', white_scaled)
+    write(HERE, 'lineage_engine_bridge_oct16.csv', bridges)
+    write(HERE, 'round2_changes_oct16.csv', changes)
+    write(HERE, 'symmetric_programs_oct16.csv.gz', program_rows)
+    write(HERE, 'symmetric_status_sampling_oct16.csv', [dict(r, case='oct16', mortality_convention=MC.GENERAL, mortality_bound='none') for r in sampling])
+    write(HERE, 'symmetric_hispanic_arm_oct16.csv', [dict(r, case='oct16', mortality_convention='pooled Hispanic mortality proxy', mortality_bound='low/high') for r in hispanic])
+    write(HERE, 'domestic_source_changes_oct16.csv', domestic)
+    write(BLACK, 'domestic_source_changes_oct16.csv', [r for r in domestic if r['group'] == 'nh_black_rough'])
+    write(HERE, 'symmetric_white_measures_oct16.csv', [dict(case=r['case'], mortality_convention=r['mortality_convention'], mortality_bound=r['mortality_bound'],
         arm=r['arm'], basis=r['basis'], end=r['end'], group=r['group'],
         population=r['population'], allocated_balance_bn=r['allocated_balance_bn'],
         responsive_budget_cost_bn=r['responsive_budget_cost_bn'], capital_resource_cost_bn=r['capital_resource_cost_bn'],
         responsive_resource_cost_bn=r['cost_bn'], contribution_to_others_bn=r['contribution_to_others_bn'])
         for r in results if r['group'].startswith('A')])
-    write(BLACK, 'symmetric_results_oct15.csv', [r for r in results if r['group'] in ('mexican_origin_engine', 'mexican_origin_rough', 'nh_black_rough')])
-    write(BLACK, 'symmetric_population_oct15.csv', scaled)
-    write(BLACK, 'round2_changes_oct15.csv', [r for r in changes if r['group'] == 'nh_black_rough'])
-    metadata = dict(case='oct15', allocation='personal', source_hashes=hashes,
+    write(BLACK, 'symmetric_results_oct16.csv', [r for r in results if r['group'] in ('mexican_origin_engine', 'mexican_origin_rough', 'nh_black_rough')])
+    write(BLACK, 'symmetric_population_oct16.csv', scaled)
+    write(BLACK, 'round2_changes_oct16.csv', [r for r in changes if r['group'] == 'nh_black_rough'])
+    metadata = dict(case='oct16', allocation='personal', source_hashes=hashes,
                     assumed_whole_education_bridge_transfer=SCHOOL_BRIDGE_TRANSFER,
                     scalar_policies=W.SCALAR_POLICIES, status_method=status.source_info,
                     full_row13_symmetric=False,
@@ -820,7 +835,7 @@ def main(pin=False):
                     production_point_weight_rounding_max=production.point_weight_rounding_max,
                     source_proxy_limit='diagnostic only: old R9 union ratio held on changed denominator; do not interpret as status correction',
                     preserved_case_lineage=True, comparison_engine='rough on both sides',
-                    bridge='lineage_engine_bridge_oct15.csv: evaluated lines, capital, production and post amounts; case minus rough; 1e-9bn closure',
+                    bridge='lineage_engine_bridge_oct16.csv: evaluated lines, capital, production and post amounts; case minus rough; 1e-9bn closure',
                     mortality_substitution_bn=mortality_changes,
                     mortality_substitution_rule='central Fenelon Models 1/3 source coefficients on live pension amounts; source payer-generation shares held; completion/child overlay pension profiles bounded over source profiles; coverage on exported generation pension stocks; cash unchanged',
                     rough_mortality_limit='rough lineage takes the same authoritative lineage mortality change as the case; its alternative status/pension numerator is not an independent mortality remeasurement',
@@ -852,7 +867,7 @@ def main(pin=False):
                                 lineage_children_shift={f'{m}/{e}': v for (m, e), v in shift.items()},
                                 members_source_sha256=digest(MEMBERS)))
     for lane in (HERE, BLACK):
-        (lane / 'derived/symmetric_audit_oct15.json').write_text(json.dumps(metadata, indent=2) + '\n')
+        (lane / 'derived/symmetric_audit_oct16.json').write_text(json.dumps(metadata, indent=2) + '\n')
     elapsed = time.perf_counter() - started
     peak = require_within_budget('symmetric comparators')
     print(f'[PASS] P7 symmetric rules-only tables; elapsed_seconds={elapsed:.3f} peak_footprint_gb={peak / 1e9:.3f}')

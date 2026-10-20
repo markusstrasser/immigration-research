@@ -1,4 +1,4 @@
-"""Round 3 (C3 fix 4): every group's K-12 key on the case's school construction, for the rough engine (case oct15).
+"""Round 3 (C3 fix 4): every group's K-12 key on the case's school construction, for the rough engine (case oct16).
 
 The case keys the school part of education_services on public K-12 pupils priced where they live
 (school_enrollment_2026_09_20): October 2024 CPS public K-12 rates by age band, with 3-4 and 25+ pooled, transported onto
@@ -15,9 +15,9 @@ school lane's transported pupils (national, Mexican-origin, the rest) and the ca
 group and the nation, personal allocation, to 1e-6 relative. The gap (about 5e-8) is weight rounding: the rough frame
 weighs records MARSUPWT / 100, the school lane the ASEC replicate file's full-sample column.
 
-Run from the repo root (writes derived/school_key_oct15.json; run_oct15.sh runs it before the re-key):
+Run from the repo root (writes derived/school_key_oct16.json; run_oct16.sh runs it before the re-key):
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/white_replacement_2026_09_28/school_key_oct15.py
-rekey_sept29.py (case oct15) reads the rates through exposure() and replaces R.K["k12"] before it sets the case frame.
+rekey_sept29.py (case oct16) reads the rates through exposure() and replaces R.K["k12"] before it sets the case frame.
 """
 from __future__ import annotations
 
@@ -36,7 +36,7 @@ FISCAL = LANE.parent
 SE = FISCAL / "school_enrollment_2026_09_20"
 STATE = FISCAL / "gen_ledger_extension_2026_09_16/state_parameters.csv"
 CPS = FISCAL / "gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip"
-OUT = LANE / "derived/school_key_oct15.json"
+OUT = LANE / "derived/school_key_oct16.json"
 US = [57, 60, 66, 69, 73, 78]
 CELLS = ("mex", "blk", "w3", "owh", "rest")
 POOLED = ("3_4", "25_plus")
@@ -55,7 +55,7 @@ def require(ok, why):
 
 def measurement():
     """The school lane's October reader, as a private module instance (its field table gains the race item)."""
-    spec = importlib.util.spec_from_file_location("school_measurement_oct15", SE / "measurement.py")
+    spec = importlib.util.spec_from_file_location("school_measurement_oct16", SE / "measurement.py")
     M = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(M)
     M.FIELDS = {**M.FIELDS, "PTDTRACE": PTDTRACE}
@@ -155,7 +155,7 @@ def main():
         shares[name] = dict(rough_5_17=float(w[mask] @ rough[mask] / (w @ rough)),
                             case_construction=float(w[mask] @ (case_p * cost)[mask] / case_national),
                             own_cells=float(w[mask] @ exposure[mask] / national))
-    result = dict(case="oct15", rule=__doc__.split("\n\n")[1].replace("\n", " "),
+    result = dict(case="oct16", rule=__doc__.split("\n\n")[1].replace("\n", " "),
                   rates=rates, cells=rows, pooled=list(POOLED), national_exposure_usd=national,
                   case_construction_national_usd=case_national, controls=controls, shares=shares,
                   sources={str(p.relative_to(FISCAL.parent.parent)): sha(p) for p in

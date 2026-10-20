@@ -224,13 +224,13 @@ def dependency_manifest(status=None):
                  FISCAL / "california_medical_status_2026_09_23/cps_ca_status.py",
                  FISCAL / "tax_key_heldout_2026_09_28/reads/irs_table_1_2_ty2023.md",
                  FISCAL / "external_benchmarks_2026_09_24/derived/cbo_group_shares.csv",
-                 FISCAL / "main_case_2026_10_15/derived/corrections.json", SCORE):
+                 FISCAL / "main_case_2026_10_16/derived/corrections.json", SCORE):
         paths[str(path.relative_to(FISCAL))] = file_sha256(path)
     for lane in (LANE, BLACK):
         for entry in json.loads((lane / "inputs/pins.json").read_text())["symmetric_sources"].values():
             path = FISCAL / entry["file"]
             paths[entry["file"]] = file_sha256(path)
-    return dict(case="oct15", dependencies=paths)
+    return dict(case="oct16", dependencies=paths)
 
 
 def write_ratio_dependencies(lane, filename, status=None):
@@ -240,7 +240,7 @@ def write_ratio_dependencies(lane, filename, status=None):
     ratio.with_suffix(".dependencies.json").write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
 
 
-def verify_ratio_dependencies(lane, filename="accrual_ratios_mortality_oct15.csv"):
+def verify_ratio_dependencies(lane, filename="accrual_ratios_mortality_oct16.csv"):
     path = (lane / "derived" / filename).with_suffix(".dependencies.json")
     gate("pension status dependency manifest exists", path.exists())
     manifest = json.loads(path.read_text())
@@ -264,7 +264,7 @@ class VerifiedRatioTable:
 def read_verified_ratio_table(lane):
     """One fresh source verification and one exact ratio snapshot, scoped to a run."""
     manifest = verify_ratio_dependencies(lane)
-    data = (lane / "derived/accrual_ratios_mortality_oct15.csv").read_bytes()
+    data = (lane / "derived/accrual_ratios_mortality_oct16.csv").read_bytes()
     gate("pension snapshot matches verified output", hashlib.sha256(data).hexdigest() == manifest["output_sha256"])
     return VerifiedRatioTable(lane, manifest, pd.read_csv(io.BytesIO(data), keep_default_na=False))
 
@@ -317,7 +317,7 @@ def write_mortality_output(lane, rows, dependencies):
     manifest = dict(dependencies, output_sha256=hashlib.sha256(csv_text.encode()).hexdigest())
     manifest_text = json.dumps(manifest, indent=2, sort_keys=True) + "\n"
     footprint = require_within_budget("comparator mortality")
-    dest = lane / "derived/accrual_ratios_mortality_oct15.csv"
+    dest = lane / "derived/accrual_ratios_mortality_oct16.csv"
     dest.write_text(csv_text)
     dest.with_suffix(".dependencies.json").write_text(manifest_text)
     return footprint
@@ -337,7 +337,7 @@ def run(which):
     P = W.P
     gate("white and Black share the same pension module", B.P is P)
     TP = B.tr2026_path()
-    meta = json.loads((FISCAL / "main_case_2026_10_15/derived/corrections.json").read_text())["meta"]
+    meta = json.loads((FISCAL / "main_case_2026_10_16/derived/corrections.json").read_text())["meta"]
     TP.case_check(meta)
     lane = LANE if which == "white" else BLACK
     paths = verify_tables(lane)
@@ -346,7 +346,7 @@ def run(which):
     import rekey_sept29 as comparison
     from status_keys_oct14 import build as status_build
     checkpoint("comparison imported")
-    comparison.use_case("oct15")
+    comparison.use_case("oct16")
     comparison.setup()
     comparison.stop_if_failed()
     checkpoint("comparison setup")
@@ -479,7 +479,7 @@ def run(which):
         checkpoint("general grid built")
         for name in ("union", group):
             row = price(p, name, grid, taus, econ, fiscal_paths, "general")
-            central = pd.read_csv(lane / "derived/accrual_ratios_oct15.csv")
+            central = pd.read_csv(lane / "derived/accrual_ratios_oct16.csv")
             ref = central[(central.group == name) & central.scenario.eq("payable")]
             if "entry_rule" in ref:
                 ref = ref[ref.entry_rule.eq(row["entry_rule"])]

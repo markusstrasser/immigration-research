@@ -1,4 +1,4 @@
-"""Round 3 comparator fixes 1 and 2 on the rough engine: Census coverage and members' biological children (oct15).
+"""Round 3 comparator fixes 1 and 2 on the rough engine: Census coverage and members' biological children (oct16).
 
 Fix 1, coverage. Every person in a comparator scenario takes the 2020 PES net coverage error of their own group, by
 April-2020 age and sex, under the lineage's rule (`coverage_bound_2026_10_14`, `coverage_bound.factors`, reused
@@ -444,7 +444,7 @@ def main():
     mem = load_module(SOURCE_MEMBERSHIP, 'members_coverage_source_membership')
     extra = frame_extra()
     msex, mgroup = meps_frame()
-    W.use_case('oct15')
+    W.use_case('oct16')
     W.setup()
     groups = W.scenarios()
     production = SYM.Production(W)
@@ -457,7 +457,7 @@ def main():
                                                    ratio_tables=ratio_tables)
         accruals[mortality]['union'] = coupled
     civ = R.civ.astype(bool)
-    result = {'case': 'oct15', 'arm': 'combined_rules_only', 'source_hashes': hashes, 'base_audit': audit,
+    result = {'case': 'oct16', 'arm': 'combined_rules_only', 'source_hashes': hashes, 'base_audit': audit,
               'rates': {g: {k: v for k, v in rates[g].items() if k != 'all'} for g in rates},
               'controls': {}, 'counts': {}, 'missed_by_band': {}, 'runs': []}
 
@@ -490,7 +490,7 @@ def main():
               'arrival': extra.PEINUSYR.to_numpy()[rows_c], 'hispanic': hisp_flag[rows_c]}
     fc, _ = CB.factors(data_c, {'hispanic': rates['hispanic'], 'nonhispanic_white': rates['nh_white']}, tables['hispanic'])
     missed_union += float((np.array([r['people'] for r in completion]) * fc).sum())
-    cov = json.loads((COV / 'derived/coverage_bound_oct15.json').read_text())
+    cov = json.loads((COV / 'derived/coverage_bound_oct16.json').read_text())
     ref = sum(cov['sets']['set']['implied_net_missing_people'][k] for k in ('G1', 'G2', 'G3plus', 'added'))
     gate('lineage net missing people reproduced on the rough frame (100 persons)', abs(missed_union - ref) < 100,
          f'{missed_union:,.3f} vs coverage lane {ref:,.3f}')
@@ -663,10 +663,10 @@ def main():
     targets = children_targets(groups, kids, scs, extra, msex, mgroup, masks)
     if FAILS:
         raise SystemExit('[BLOCKED] ' + '; '.join(FAILS))
-    (OUT / 'children_targets_oct15.json').write_text(json.dumps(targets, indent=1) + '\n')
+    (OUT / 'children_targets_oct16.json').write_text(json.dumps(targets, indent=1) + '\n')
     peak = require_within_budget('members and coverage terms')
-    (OUT / 'members_coverage_oct15.json').write_text(json.dumps(result, indent=1) + '\n')
-    with (OUT / 'members_coverage_runs_oct15.csv').open('w', newline='') as stream:
+    (OUT / 'members_coverage_oct16.json').write_text(json.dumps(result, indent=1) + '\n')
+    with (OUT / 'members_coverage_runs_oct16.csv').open('w', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=list(result['runs'][0]), lineterminator='\n')
         writer.writeheader()
         writer.writerows(result['runs'])

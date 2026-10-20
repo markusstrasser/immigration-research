@@ -11,7 +11,7 @@ def consumer():
     spec = importlib.util.spec_from_file_location("job_policy_consumer", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    module.use_case("oct15")
+    module.use_case("oct16")
     return module
 
 

@@ -1,0 +1,93 @@
+basis,group,program,cost_bn,cost_per_member,gap_bn,gap_per_member,case,mortality_convention
+accrual,mexican_origin_engine,income taxes,-140.7752,-3135,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,payroll taxes and Medicare premiums,-164.9627,-3674,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,"sales, excise, customs, fees",-119.5676,-2663,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,"capital, property, production taxes",-94.0320,-2094,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,Social Security and Medicare,187.3639,4173,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,Medicaid,127.6645,2843,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,schools and colleges,228.3559,5086,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,"police, courts, prisons",82.3433,1834,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,"SNAP, SSI, housing, cash aid, credits, other welfare",121.0459,2696,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,veterans and military medical,12.7583,284,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,"per head: government, defense, interest, roads",80.5920,1795,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,capital return,40.6785,906,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,production gain (subtracted),-12.5310,-279,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,lineage post-engine mixed_unit_removal_bn,10.7400,239,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,lineage post-engine coverage_bn,8.8028,196,,,oct16,whole-population mortality
+accrual,mexican_origin_engine,lineage post-engine v9_additions_bn,-0.4471,-10,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,income taxes,-153.4138,-3417,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,payroll taxes and Medicare premiums,-176.7713,-3937,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,"sales, excise, customs, fees",-118.8339,-2646,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,"capital, property, production taxes",-92.9121,-2069,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,Social Security and Medicare,187.4177,4174,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,Medicaid,127.6645,2843,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,schools and colleges,225.6681,5026,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,"police, courts, prisons",82.3433,1834,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,2779,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,veterans and military medical,12.7030,283,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,"per head: government, defense, interest, roads",80.5849,1795,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,capital return,40.8788,910,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,production gain (subtracted),-12.5310,-279,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,10.7400,239,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,lineage post-engine coverage_bn,8.8028,196,,,oct16,whole-population mortality
+accrual,mexican_origin_rough,lineage post-engine v9_additions_bn,-0.4471,-10,,,oct16,whole-population mortality
+accrual,nh_black_rough,income taxes,-212.7596,-5071,,,oct16,whole-population mortality
+accrual,nh_black_rough,payroll taxes and Medicare premiums,-194.3579,-4633,,,oct16,whole-population mortality
+accrual,nh_black_rough,"sales, excise, customs, fees",-122.8606,-2928,,,oct16,whole-population mortality
+accrual,nh_black_rough,"capital, property, production taxes",-87.9473,-2096,,,oct16,whole-population mortality
+accrual,nh_black_rough,Social Security and Medicare,262.4710,6256,,,oct16,whole-population mortality
+accrual,nh_black_rough,Medicaid,181.2461,4320,,,oct16,whole-population mortality
+accrual,nh_black_rough,schools and colleges,175.9791,4195,,,oct16,whole-population mortality
+accrual,nh_black_rough,"police, courts, prisons",106.3305,2534,,,oct16,whole-population mortality
+accrual,nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",163.9040,3907,,,oct16,whole-population mortality
+accrual,nh_black_rough,veterans and military medical,0.6441,15,,,oct16,whole-population mortality
+accrual,nh_black_rough,"per head: government, defense, interest, roads",74.9333,1786,,,oct16,whole-population mortality
+accrual,nh_black_rough,capital return,37.0814,884,,,oct16,whole-population mortality
+accrual,nh_black_rough,production gain (subtracted),-0.0000,-0,,,oct16,whole-population mortality
+cash,mexican_origin_engine,income taxes,-142.7760,-3180,-223.4965,-4977,oct16,whole-population mortality
+cash,mexican_origin_engine,payroll taxes and Medicare premiums,-164.9627,-3674,-74.3018,-1655,oct16,whole-population mortality
+cash,mexican_origin_engine,"sales, excise, customs, fees",-119.5676,-2663,-31.2936,-697,oct16,whole-population mortality
+cash,mexican_origin_engine,"capital, property, production taxes",-94.0320,-2094,-101.4412,-2259,oct16,whole-population mortality
+cash,mexican_origin_engine,Social Security and Medicare,113.3763,2525,224.0578,4990,oct16,whole-population mortality
+cash,mexican_origin_engine,Medicaid,127.6645,2843,-9.6807,-216,oct16,whole-population mortality
+cash,mexican_origin_engine,schools and colleges,228.3559,5086,-60.3401,-1344,oct16,whole-population mortality
+cash,mexican_origin_engine,"police, courts, prisons",82.3433,1834,-15.6965,-350,oct16,whole-population mortality
+cash,mexican_origin_engine,"SNAP, SSI, housing, cash aid, credits, other welfare",121.0459,2696,-21.0462,-469,oct16,whole-population mortality
+cash,mexican_origin_engine,veterans and military medical,12.7583,284,18.4914,412,oct16,whole-population mortality
+cash,mexican_origin_engine,"per head: government, defense, interest, roads",80.5920,1795,54.7165,1219,oct16,whole-population mortality
+cash,mexican_origin_engine,capital return,40.6785,906,,,oct16,whole-population mortality
+cash,mexican_origin_engine,production gain (subtracted),-12.5310,-279,,,oct16,whole-population mortality
+cash,mexican_origin_engine,lineage post-engine mixed_unit_removal_bn,10.7400,239,,,oct16,whole-population mortality
+cash,mexican_origin_engine,lineage post-engine coverage_bn,0.7518,17,,,oct16,whole-population mortality
+cash,mexican_origin_engine,lineage post-engine v9_additions_bn,-0.0404,-1,,,oct16,whole-population mortality
+cash,mexican_origin_rough,income taxes,-155.4146,-3461,-210.8579,-4696,oct16,whole-population mortality
+cash,mexican_origin_rough,payroll taxes and Medicare premiums,-176.7713,-3937,-62.4931,-1392,oct16,whole-population mortality
+cash,mexican_origin_rough,"sales, excise, customs, fees",-118.8339,-2646,-32.0272,-713,oct16,whole-population mortality
+cash,mexican_origin_rough,"capital, property, production taxes",-92.9121,-2069,-101.0933,-2251,oct16,whole-population mortality
+cash,mexican_origin_rough,Social Security and Medicare,119.4678,2661,217.9663,4854,oct16,whole-population mortality
+cash,mexican_origin_rough,Medicaid,127.6645,2843,-9.6807,-216,oct16,whole-population mortality
+cash,mexican_origin_rough,schools and colleges,225.6681,5026,-57.6523,-1284,oct16,whole-population mortality
+cash,mexican_origin_rough,"police, courts, prisons",82.3433,1834,-15.6965,-350,oct16,whole-population mortality
+cash,mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,2779,-24.7679,-552,oct16,whole-population mortality
+cash,mexican_origin_rough,veterans and military medical,12.7030,283,18.5468,413,oct16,whole-population mortality
+cash,mexican_origin_rough,"per head: government, defense, interest, roads",80.5849,1795,54.6799,1218,oct16,whole-population mortality
+cash,mexican_origin_rough,capital return,40.8788,910,,,oct16,whole-population mortality
+cash,mexican_origin_rough,production gain (subtracted),-12.5310,-279,,,oct16,whole-population mortality
+cash,mexican_origin_rough,lineage post-engine mixed_unit_removal_bn,10.7400,239,,,oct16,whole-population mortality
+cash,mexican_origin_rough,lineage post-engine coverage_bn,0.7518,17,,,oct16,whole-population mortality
+cash,mexican_origin_rough,lineage post-engine v9_additions_bn,-0.0404,-1,,,oct16,whole-population mortality
+cash,nh_black_rough,income taxes,-217.9163,-5194,-145.8745,-3477,oct16,whole-population mortality
+cash,nh_black_rough,payroll taxes and Medicare premiums,-194.3579,-4633,-42.8729,-1022,oct16,whole-population mortality
+cash,nh_black_rough,"sales, excise, customs, fees",-122.8606,-2928,-28.1841,-672,oct16,whole-population mortality
+cash,nh_black_rough,"capital, property, production taxes",-87.9473,-2096,-97.1942,-2317,oct16,whole-population mortality
+cash,nh_black_rough,Social Security and Medicare,254.5079,6066,61.9709,1477,oct16,whole-population mortality
+cash,nh_black_rough,Medicaid,181.2461,4320,-63.5404,-1515,oct16,whole-population mortality
+cash,nh_black_rough,schools and colleges,175.9791,4195,-16.7428,-399,oct16,whole-population mortality
+cash,nh_black_rough,"police, courts, prisons",106.3305,2534,-42.0374,-1002,oct16,whole-population mortality
+cash,nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",163.9040,3907,-69.2939,-1652,oct16,whole-population mortality
+cash,nh_black_rough,veterans and military medical,0.6441,15,28.5970,682,oct16,whole-population mortality
+cash,nh_black_rough,"per head: government, defense, interest, roads",74.9333,1786,38.6453,921,oct16,whole-population mortality
+cash,nh_black_rough,capital return,37.0814,884,,,oct16,whole-population mortality
+cash,nh_black_rough,production gain (subtracted),-0.0000,-0,,,oct16,whole-population mortality
+accrual,nh_black_rough,comparator post-engine mixed_unit_removal,-2.3337,-56,,,oct16,whole-population mortality
+cash,nh_black_rough,comparator post-engine mixed_unit_removal,-2.3337,-56,,,oct16,whole-population mortality

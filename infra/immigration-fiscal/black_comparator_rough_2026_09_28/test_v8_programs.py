@@ -3,7 +3,7 @@ import rekey_sept29 as B
 
 
 def test_signed_receipt_and_resource_carriers(monkeypatch):
-    monkeypatch.setattr(B.W, 'CASE', 'oct15')
+    monkeypatch.setattr(B.W, 'CASE', 'oct16')
     monkeypatch.setattr(B.W, 'META', {'union_completion': {'carriers': {
         'receipt_carrier': {'kind': 'line', 'side': 'receipt', 'parent_line': 'corporate_capital'},
         'capital_carrier': {'kind': 'capital', 'parent_line': 'capital'},

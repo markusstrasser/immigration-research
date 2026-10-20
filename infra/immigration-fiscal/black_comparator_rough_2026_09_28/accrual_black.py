@@ -201,9 +201,9 @@ def main(case="sept29"):
     arrival_any = p.age - (2024.5 - p.PEINUSYR.map(mid))
     foreign = p.PRCITSHP.isin([4, 5]).to_numpy()
     prelim = P.S.scaled_factors().preliminary.to_numpy()
-    if case == "oct15":             # the 2026 path, payable only; Part A under the path's patches
+    if case == "oct16":             # the 2026 path, payable only; Part A under the path's patches
         TP = tr2026_path()
-        TP.case_check(json.loads((FISCAL / "main_case_2026_10_15/derived/corrections.json").read_text())["meta"])
+        TP.case_check(json.loads((FISCAL / "main_case_2026_10_16/derived/corrections.json").read_text())["meta"])
         econ, grid, taus, paths = TP.payable(P, prelim)
         grids, scens = {"payable": grid}, ("payable",)
         on_path = lambda: TP.on_path(P, paths)  # noqa: E731
@@ -249,7 +249,7 @@ def main(case="sept29"):
               f"{o['payable']['ratio']:.6f}{sched}; timing {o['payable']['timing']:.6f}; "
               f"Part A payable {a['payable']['accrual_bn']:.3f}bn on HI tax {a['payable']['hi_tax_bn']:.3f}bn")
     o, a = res[("union", "lane")]
-    if case == "oct15":
+    if case == "oct16":
         row = TP.union_row()
         for k, got, col in (("OASDI accrual per tax dollar", o["payable"]["ratio"], "per_tax_dollar"),
                             ("timing", o["payable"]["timing"], "timing"),
@@ -280,14 +280,14 @@ def main(case="sept29"):
                          "cps_oasdi_tax_bn": f"{o[scen]['tax_bn']:.4f}", "cps_hi_tax_bn": f"{a[scen]['hi_tax_bn']:.4f}",
                          "part_a_accrual_bn": f"{a[scen]['accrual_bn']:.4f}",
                          "p_qualify_65plus": f"{a[scen]['p_qualify']:.6f}"})
-    with open(DER / ("accrual_ratios_oct15.csv" if case == "oct15" else "accrual_ratios.csv"), "w", newline="") as f:
+    with open(DER / ("accrual_ratios_oct16.csv" if case == "oct16" else "accrual_ratios.csv"), "w", newline="") as f:
         wr = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         wr.writeheader()
         wr.writerows(rows)
-    if case == "oct15":
+    if case == "oct16":
         sys.path.insert(0, str(FISCAL / "white_replacement_2026_09_28"))
         from mortality_comparators import write_ratio_dependencies
-        write_ratio_dependencies(LANE, "accrual_ratios_oct15.csv")
+        write_ratio_dependencies(LANE, "accrual_ratios_oct16.csv")
         print(pd.DataFrame(rows)[["group", "entry_rule", "scenario", "oasdi_per_tax_dollar", "oasdi_per_tax_dollar_net",
                                   "part_a_per_hi_tax_dollar", "p_qualify_65plus"]].to_string(index=False))
         return
@@ -304,13 +304,13 @@ def main(case="sept29"):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct15", choices=["sept29", "oct15"],
-                    help="oct15 (default, live v7 on the 2026 path); sept29 is the archived 2025 path")
+    ap.add_argument("--case", default="oct16", choices=["sept29", "oct16"],
+                    help="oct16 (default, live v7 on the 2026 path); sept29 is the archived 2025 path")
     ap.add_argument("--mortality", action="store_true", help="write separate group-mortality and row-4 arms")
     args = ap.parse_args()
     if args.mortality:
-        if args.case != "oct15":
-            raise SystemExit("[BLOCKED] mortality arms require the live oct15 path")
+        if args.case != "oct16":
+            raise SystemExit("[BLOCKED] mortality arms require the live oct16 path")
         sys.path.insert(0, str(FISCAL / "white_replacement_2026_09_28"))
         from mortality_comparators import run
         run("black")

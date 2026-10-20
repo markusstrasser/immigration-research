@@ -166,7 +166,7 @@ def engine_accrual_rates(m, end):
 
 def build(m, income_rake="within_bracket"):
     """Build on the current row-4 national frame, without modifying it or upstream caches."""
-    require(m.CASE == "oct15" and m.TAX_ALLOC == "personal", "requires oct15 personal case keys")
+    require(m.CASE == "oct16" and m.TAX_ALLOC == "personal", "requires oct16 personal case keys")
     require(income_rake in ("within_bracket", "global"), "unsupported income rake")
     c, cs, lane = m.L.c, m.L.cs, m.L
     require((c.CACHE / "asec25_lane.parquet").exists(), "missing existing authoritative source frame")
@@ -234,7 +234,7 @@ def build(m, income_rake="within_bracket"):
 def main():
     import rekey_sept29 as m
     started = time.perf_counter()
-    m.use_case("oct15")
+    m.use_case("oct16")
     m.setup()
     m.stop_if_failed()
     status = build(m)
@@ -261,7 +261,7 @@ def main():
                                      engine_union_bn=ln["amount_bn"] if sc["name"] == "mex" else ""))
     # This stored headline-scope positive control is distinct from the eight
     # identified-union receipt lines above: full lineage, after the pension rule.
-    stored = pd.read_csv(m.BLACK_LANE / "derived/rekey_by_program_oct15.csv")
+    stored = pd.read_csv(m.BLACK_LANE / "derived/rekey_by_program_oct16.csv")
     require({"cost_bn", "program", "basis", "group"} <= set(stored), "stored by-program control schema changed")
     controls = []
     for basis in ("accrual", "cash"):
@@ -269,16 +269,16 @@ def main():
             sub = stored.query("basis == @basis and program == @bucket")
             engine = sub[sub.group.eq("mexican_origin_engine")].iloc[0]
             rough = sub[sub.group.eq("mexican_origin_rough")].iloc[0]
-            controls.append(dict(basis=basis, bucket=bucket, source="black_comparator_rough_2026_09_28/derived/rekey_by_program_oct15.csv",
+            controls.append(dict(basis=basis, bucket=bucket, source="black_comparator_rough_2026_09_28/derived/rekey_by_program_oct16.csv",
                                  rough_less_engine_bn=float(engine.cost_bn)-float(rough.cost_bn)))
-    for filename, records in (("status_receipts_oct15.csv", rows), ("status_closure_oct15.csv", closure),
-                              ("status_stored_control_oct15.csv", controls)):
+    for filename, records in (("status_receipts_oct16.csv", rows), ("status_closure_oct16.csv", closure),
+                              ("status_stored_control_oct16.csv", controls)):
         with (HERE / "derived" / filename).open("w", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=list(records[0]), lineterminator="\n")
             writer.writeheader()
             writer.writerows(records)
     # Timing is printed, not fingerprinted into the deterministic provenance output.
-    (HERE / "derived/status_method_oct15.json").write_text(json.dumps(status.source_info, indent=2, sort_keys=True)+"\n")
+    (HERE / "derived/status_method_oct16.json").write_text(json.dumps(status.source_info, indent=2, sort_keys=True)+"\n")
     print(f"[PASS] raw positive controls and {len(closure)} national closure gates; "
           f"elapsed={time.perf_counter()-started:.3f}s peak_footprint_bytes={require_within_budget('comparator status')}")
 

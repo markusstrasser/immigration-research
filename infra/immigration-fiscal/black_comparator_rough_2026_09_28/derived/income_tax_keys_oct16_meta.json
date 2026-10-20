@@ -1,0 +1,76 @@
+{
+  "case": "oct16",
+  "scope": "raw income-tax keys only; no pension pricing or validated rough totals",
+  "allocation": "personal",
+  "lineage_counts": {
+    "added": 5190580.755045218,
+    "at_g3_rate": 1944891.7263696424,
+    "later_losses": 1094827.8668155947,
+    "lineage_population": 44903074.086245224,
+    "account_union": 39712493.3312,
+    "identified_g3plus": 14342574.606276
+  },
+  "comparison_population": 44903074.086245224,
+  "comparison_population_rule": "population_v9.with_coverage; full oct16 A1 comparison frame",
+  "tax_key_control_baseline_population": 42752212.92438524,
+  "baseline_lineage_counts": {
+    "added": 3039719.593185237,
+    "at_g3_rate": 1944891.7263696424,
+    "later_losses": 1094827.8668155947,
+    "lineage_population": 42752212.92438524,
+    "account_union": 39712493.3312,
+    "identified_g3plus": 14342574.606276
+  },
+  "item7_measurement_rule": "unchanged baseline white-priced members and source age mix; new A1 CSV frame is a separate comparison",
+  "inputs_sha256": {
+    "main_case_2026_10_16/derived/corrections.json": "4300b06c5db6c9ddca86e59538be66a7aa6cea71bdf4ca9c13625756a711f530",
+    "main_case_2026_10_16/derived/corrections_cash.json": "bb99e06673cb09daead29be13ed81dd44eabbf74bae56c06845461e2834648f7",
+    "main_case_2026_10_16/derived/summary.json": "0d48ffa601855c68722e1c1524c22615745ff36ef4789969923934aa6f0fc45a",
+    "white_replacement_2026_09_28/export_keys_oct14.py": "3582c29525cfa6180c688bd884766ded6c29711b639f17909bc62f17b83abd76",
+    "white_replacement_2026_09_28/rekey_sept29.py": "7b9cfd2b0d171be7b7fcd7e66c1661b54e66f1fe102c269a7648e820a2c25cbe",
+    "white_replacement_2026_09_28/rekey_white.py": "bef5e563bb2233262367b3a62d2d26da1c87e44b1ddc4060de81ab1070ad027f",
+    "white_replacement_2026_09_28/check_dumps_oct14.py": "6b3fea5194ffe64bdefb91fc9d16892f6e439e392048c95e723aa020b92a53f5",
+    "live_case.json": "38984550688e14ed2b7b6186e05bf35a847790b155f228cc1e255227f8c2bf2b",
+    "white_replacement_2026_09_28/derived/engine_lines_sept29_cash.json": "616a060be37d285e17a7330015b7254995178e146746350ed053edfe82813ed0",
+    "tax_key_heldout_2026_09_28/keys.py": "cbf2ee35ebc6205bb718fff398ef59f19f4d95d9db98e91beff7a490c6168934",
+    "external_benchmarks_2026_09_24/frame.py": "c5ba5e8c7e6fceef6f4f853b8cf596ebd639b3be8cc6f8a376125831f8e5b6ad",
+    "gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+    "tax_key_heldout_2026_09_28/derived/bins.csv": "950d83f07ab7f63ade40e47570c4b751ea416c72c7753e56f595d2219d8369cb",
+    "external_benchmarks_2026_09_24/derived/cbo_group_shares.csv": "fc73f97db7e8da645e22e546cf6f637c3f059c66fb328c058689f2c1c1d1f24b",
+    "white_replacement_2026_09_28/v9_items.py": "26a203c2efb668dc47fcc026c4288e0fff6a92dcc59bb03bc879399159b88f48",
+    "count_composition_r5_2026_10_15/derived/native_person_factors.parquet": "712efac2bb35ea19ad1b9950998b5a0fa425f33fccd0c662669646f65cebff45",
+    "coverage_bound_2026_10_14/_cache/oct15_final_routing/set/pricing.npz": "58105f8fec99702772ab7f837b0f1bf634f17c6bbae2e8d7e574399d569d260e",
+    "white_replacement_2026_09_28/derived/engine_lines_oct16.json": "cfd8428ad72355d1a60c61109223d0ef8d1e76448e51477c009f370775c84587",
+    "white_replacement_2026_09_28/derived/engine_lines_oct16_cash.json": "b0f238887fb0e8293900f07d00b01f886a5f3ca4430ea405a8bb36155c698e1d",
+    "white_replacement_2026_09_28/derived/engine_lines_oct16_union.json": "df43a09b59502f6fa9e894f6dddcb3c734f6aecf50380ad62edb43f7572daf7b",
+    "white_replacement_2026_09_28/derived/engine_lines_oct16_union_cash.json": "7f30bce1a66353cf8989e61b5119982d73c808675aea9d7e79188b0af45d29dc"
+  },
+  "csv_sha256": {
+    "white_replacement_2026_09_28/derived/income_tax_keys_oct16.csv": "3a7030ffbef44b5cf6676408688a992ba1e9715e7b29b59be652103bc033371c",
+    "black_comparator_rough_2026_09_28/derived/income_tax_keys_oct16.csv": "26adea3a60e5d907b41ecc5d5b2d2e4e5343237f88f9a50583fedf7aa0546caa"
+  },
+  "source_count": 1082721.22406998,
+  "raw_move_bn": 1.086440193243434,
+  "parts_bn": {
+    "federal_income_tax": 0.7578184242392856,
+    "state_local_income_tax": 0.3270835817760852,
+    "other_personal_tax": 0.0015381872280632602
+  },
+  "applied_move_bn": {
+    "accrual": 1.08644,
+    "cash": 1.08644
+  },
+  "item_applied": true,
+  "residual_zero_tolerance_bn": 1e-09,
+  "white_end_tax_keys_residual": {
+    "accrual": {
+      "low": 1.932434339213529e-07,
+      "high": 1.932434339213529e-07
+    },
+    "cash": {
+      "low": 1.932434339213529e-07,
+      "high": 1.932434339213529e-07
+    }
+  },
+  "measurement_scope": "receipt-key arithmetic only; a nonzero residual is reported, never rounded to pass"
+}

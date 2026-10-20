@@ -14,8 +14,8 @@ from mortality_conventions import CENTRAL
 
 HERE = Path(__file__).resolve().parent
 BLACK = HERE.parent / 'black_comparator_rough_2026_09_28'
-MARKER = '<!-- oct15 C40 measured comparator mixed-unit removal -->'
-STAMP = '2026-10-15'
+MARKER = '<!-- oct16 C40 measured comparator mixed-unit removal -->'
+STAMP = '2026-10-20'
 READINGS = [  # arm, mortality convention, profile bound, label
     ('combined_rules_members', MC.OWN, 'low', 'Central: children rule, own coverage, own mortality (lineage profile bound low)'),
     ('combined_rules_members', MC.OWN, 'high', 'Central, lineage profile bound high'),
@@ -93,7 +93,7 @@ def black_coverage_table(lines, comparisons, black):
     lines += ['', '### Black coverage: demographic analysis beside the PES central', '',
               'The 2020 PES stays central for every group. The two demographic-analysis (DA) arms change Black\'s '
               'coverage only; the lineage retains its PES. The envelope prints the two DA arms\' minimum and maximum '
-              'at each cost endpoint. [DATA: symmetric_population_oct15.csv; members_coverage_oct15.json]', '',
+              'at each cost endpoint. [DATA: symmetric_population_oct16.csv; members_coverage_oct16.json]', '',
               '| Coverage and lineage profile bound | Set | Black true count | Black − lineage, Black\'s count, $bn low / high | '
               'Black − lineage, lineage\'s count, $bn low / high | Lineage cost and decomposition, $bn low / high |',
               '|---|---|---:|---:|---:|---|']
@@ -124,7 +124,7 @@ def change_table(lines, comparisons, black):
     lines += ['', '### Isolated and joint changes from the stated baseline', '',
               'Each entry is the central minus the named otherwise-identical baseline. SEs in the item-11 table '
               'describe level contrasts; a sampling SE for these changes is not computed. [CALCULATION: differences '
-              'of symmetric_comparisons_oct15.csv and symmetric_population_oct15.csv]', '',
+              'of symmetric_comparisons_oct16.csv and symmetric_population_oct16.csv]', '',
               '| Change and profile bound | Set | Change in lineage − as many whites, $bn low / high | '
               'Change in Black − lineage, Black\'s count, $bn low / high | '
               'Change in Black − lineage, lineage\'s count, $bn low / high | '
@@ -157,7 +157,7 @@ def item11_table(lines, whites, black, results):
               'SEs condition on the selected coverage factors, population counts and reweighting factors. Comparator '
               'SE is the correction alone; paired SE is the signed lineage-minus-comparator replicate contrast. '
               'An unavailable expanded-lineage vector prints “not computed”. [CALCULATION: comparison_contract.py; '
-              'DATA: symmetric_white_population_oct15.csv; symmetric_population_oct15.csv]', '',
+              'DATA: symmetric_white_population_oct16.csv; symmetric_population_oct16.csv]', '',
               '| Group, coverage, profile bound | Set | Count basis | Population | Item 11, $bn low / high | '
               'Comparator SE, $bn low / high | Lineage SE, $bn low / high | Paired SE, $bn low / high |',
               '|---|---|---|---:|---:|---:|---:|---:|']
@@ -202,7 +202,7 @@ def precedence_table(lines, counts):
               'cost equally; the two half-overlap lineage counts are pair-specific. Each alternative comparator '
               'has zero survey-weight overlap with the lineage under the central rule. A1 and Black are pairwise '
               'comparison alternatives, not a simultaneous partition. '
-              '[DATA: members_coverage_oct15.json, counts.precedence]', '',
+              '[DATA: members_coverage_oct16.json, counts.precedence]', '',
               '| Comparator | Round 3, child in both | Lineage precedence (central) | Half overlap | Overlap | '
               'Lineage under round 3 / precedence | Lineage under half overlap |', '|---|---:|---:|---:|---:|---:|---:|']
     for group, label in [('A1_third_plus_nh_white', 'A1 white'), ('nh_black_rough', 'Black')]:
@@ -238,19 +238,19 @@ def reweighted_table(lines, comparisons, results):
 
 
 def render():
-    c = pd.read_csv(HERE / 'derived/symmetric_comparisons_oct15.csv')
-    pop = pd.read_csv(BLACK / 'derived/symmetric_population_oct15.csv')
-    whites = pd.read_csv(HERE / 'derived/symmetric_white_population_oct15.csv')
-    results = pd.read_csv(HERE / 'derived/symmetric_results_oct15.csv')
-    source = CC.load_mixed_unit()
+    c = pd.read_csv(HERE / 'derived/symmetric_comparisons_oct16.csv')
+    pop = pd.read_csv(BLACK / 'derived/symmetric_population_oct16.csv')
+    whites = pd.read_csv(HERE / 'derived/symmetric_white_population_oct16.csv')
+    results = pd.read_csv(HERE / 'derived/symmetric_results_oct16.csv')
+    source = CC.load_mixed_unit(case='oct16')
     central = c[c.central.astype(bool)]
     if set(central.arm) != {CENTRAL['arm']} or set(central.mortality_convention) != {CENTRAL['mortality_convention']}:
         raise SystemExit('[BLOCKED] the central comparison rows are not the declared central reading')
     CC.require_stated(CENTRAL['mortality_convention'])
     lines = [MARKER, '',
-        f'## Comparators after round 4 (R4C4) — {STAMP}', '',
-        'This section is regenerated by `render_oct15_result.py`; it replaces the R2C40 tables that stood here earlier '
-        'on 2026-10-15 (git keeps them). Each comparator carries its own 2020 '
+        f'## Main case v9 comparators (oct16) — {STAMP}', '',
+        'This section is regenerated by `render_oct15_result.py`; the oct15 section above remains history. '
+        'Each comparator carries its own 2020 '
         'Census coverage by age and sex, members\' biological minor children outside a group\'s definition depart with '
         'them and count as members. The central gives the completed lineage and its added-child universe precedence: '
         'a person belongs to one group. Comparators\' K-12 lines carry their own race-specific school-district prices '
@@ -262,8 +262,10 @@ def render():
         'amounts. "As many whites" scales A1\'s per-person cost to the lineage\'s true count (its own coverage and the '
         'children rule included); Black is shown at its own true count and at the lineage\'s. A stated claim uses a '
         'reading with one mortality convention on both sides; the mixed pair is labelled and refused by the guard '
-        '(`comparison_contract.require_stated`). Uncertainty below concerns item 11 only; it is not a paired SE for '
-        'the whole modeled fiscal cost. [DATA: symmetric_comparisons_oct15.csv; symmetric_population_oct15.csv]', '']
+        '(`comparison_contract.require_stated`). Item 11 retains comparator-only SDR at the new counts. The calibrated '
+        'v9 lineage replicate vector is unmeasured, so all current paired item11 SEs are blank; historical source '
+        'vectors do not supply that missing covariance. No whole-cost SE is identified. '
+        '[DATA: symmetric_comparisons_oct16.csv; symmetric_population_oct16.csv]', '']
     comparison_table(lines, c, pop, READINGS)
     lines += ['', 'The bridge column is the case engine\'s lineage cost less the rough engine\'s on the same reading: '
               'row-13 lines and the exact keys the rough engine does not carry. The comparison itself is rough on both '
@@ -276,7 +278,7 @@ def render():
               'The central preserves it in the bridge. R4_LINEAGE_SCHOOL_BRIDGE=1 separately enables an assumed '
               'whole-education calibration; any school-transfer amount under that switch is already included '
               'in the headline-minus-bridge decomposition. '
-              '[CALCULATION: lineage_engine_bridge_oct15.csv closes the bridge line by line to 1e-9bn]', '',
+              '[CALCULATION: lineage_engine_bridge_oct16.csv closes the bridge line by line to 1e-9bn]', '',
               '### Isolated changes and overlap rules, beside', '',
               'The no-district and round-3 arms isolate each change with other round-4 corrections held fixed. The '
               'round-3/no-district arm is their joint baseline; half-overlap arms are pair-specific endpoint '
@@ -294,12 +296,12 @@ def render():
         diagnostics.extend((arm, MC.OWN, bound, f'{label}, profile bound {bound}') for bound in ('low', 'high'))
     comparison_table(lines, c, pop, diagnostics)
     change_table(lines, c, pop)
-    members = json.loads((HERE / 'derived/members_coverage_oct15.json').read_text())
+    members = json.loads((HERE / 'derived/members_coverage_oct16.json').read_text())
     precedence_table(lines, members['counts'])
     controls = members['controls']
     lines += ['', f"A1 and Black alternatives themselves share {controls['alternative_white_black_overlap_people']:,.2f} "
               'observed, survey-weighted people under the children rule. The zero-overlap gate applies to each '
-              'lineage/comparator pair. [DATA: members_coverage_oct15.json, controls.alternative_white_black_overlap_people '
+              'lineage/comparator pair. [DATA: members_coverage_oct16.json, controls.alternative_white_black_overlap_people '
               'and controls.overlap_gate_scope]', '']
     black_coverage_table(lines, c, pop)
     item11_table(lines, whites, pop, results)
@@ -307,7 +309,7 @@ def render():
     lines += ['',
               '### A1 white at its own count', '',
               'A1 at its own count is a different population from the lineage: not an as-many comparison. It is shown '
-              'for scale only. [DATA: symmetric_white_population_oct15.csv, population_warning]', '',
+              'for scale only. [DATA: symmetric_white_population_oct16.csv, population_warning]', '',
               '| Reading | Set | A1 own count | Lineage − A1 at its own count, $bn low / high | '
               'Lineage cost and decomposition, $bn low / high |', '|---|---|---:|---:|---|']
     for arm, convention, bound, label in READINGS[:1] + READINGS[3:4]:
@@ -315,7 +317,7 @@ def render():
             sub = select(whites, arm, convention, bound, basis, population_basis='own_count')
             lines.append(f"| {label} | {basis} | {sub.population.iloc[0]:,.0f} | {pair(sub, 'lineage_minus_comparator_bn')} | "
                          f'{lineage_decomposition(sub)} |')
-    lines += ['', '### Base route (not the comparison central)', '',
+    lines += ['', '### Historical oct15 source control (not current oct16)', '',
               'The mixed-unit lane\'s own gaps on the base route: whole-population mortality, the original status and '
               'production rules, the current membership rule, no comparator coverage. Kept as that lane\'s record; '
               'the tables above supersede it for every comparison claim. [DATA: ../mixed_unit_comparators_2026_10_15/derived/gaps.csv]', '',
@@ -341,19 +343,19 @@ def render():
     lines += ['', '### Remaining measured and unmeasured asymmetries', '',
               '- The lineage school price retains the measured school-level premium of 0.56797% (about $0.8bn on '
               'the $143bn school base); comparator school-level mixes are unmeasured. Each group now carries its '
-              'own measured district differential. [DATA: district_prices_oct15.json; '
+              'own measured district differential. [DATA: district_prices_oct16.json; '
               '../school_cost_where_enrolled_2026_09_24/derived/within_district.json]',
               '- The education-benefits bridge is −$2.036694bn at both ends. The case\'s state-priced per-head '
               'component P and the comparator\'s low-income college key differ; higher education also carries the '
               'comparators\' IPEDS re-key. Component P is non-school state-local capital, so no existing October '
               'college-enrollment key can simply be ported to remove this difference. '
-              '[CALCULATION: lineage_engine_bridge_oct15.csv; ../full_account_spending_2026_09_20/builder.py; '
+              '[CALCULATION: lineage_engine_bridge_oct16.csv; ../full_account_spending_2026_09_20/builder.py; '
               '../generation_account_2026_09_24/keys.py; rekey_sept29.py]',
               '- The CPS cannot identify adult comparator descendants living apart from member parents. Added '
               'comparator descendants are biological minors; the lineage\'s whole-person descent frame includes '
               'adult descendants. This remaining difference is unmeasured. [ASSUMPTION; measurement limit]', '']
-    lines += ['', 'Reproduce with `sh infra/immigration-fiscal/white_replacement_2026_09_28/run_oct15.sh`. '
-              'The SHA256 pins stop `[BLOCKED]` on a changed summary or paired-SE source. [CALCULATION: run_oct15.sh]', '']
+    lines += ['', 'Reproduce with `sh infra/immigration-fiscal/white_replacement_2026_09_28/run_oct16.sh`. '
+              'The SHA256 pins stop `[BLOCKED]` on a changed summary or paired-SE source. [CALCULATION: run_oct16.sh]', '']
     addition = '\n'.join(lines)
     for lane in (HERE, BLACK):
         path = lane / 'RESULT.md'
