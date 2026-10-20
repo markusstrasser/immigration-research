@@ -113,6 +113,45 @@ def test_base_mortality_metadata_inherits_general_and_rejects_other_conventions(
             module.annual_mortality_label(rows)
 
 
+def test_v9_historical_financing_requires_its_authoritative_contract(legacy, monkeypatch, tmp_path):
+    import json
+    monkeypatch.setattr(legacy, "LANE", tmp_path)
+    with pytest.raises(SystemExit, match="none is delivered"):
+        legacy.require_live_financing_contract("oct16")
+    path = tmp_path / "derived/oct16/current_flow_contract.json"
+    path.parent.mkdir(parents=True)
+    path.write_text(json.dumps(dict(case="oct16", financing_complete=False, historical_stock_identified=False)))
+    with pytest.raises(SystemExit, match="payer/timing rules"):
+        legacy.require_live_financing_contract("oct16")
+    path.write_text(json.dumps(dict(case="oct15", financing_complete=True, historical_stock_identified=True)))
+    with pytest.raises(SystemExit, match="wrong case"):
+        legacy.require_live_financing_contract("oct16")
+    path.write_text(json.dumps(dict(case="oct16", financing_complete=True, historical_stock_identified=True)))
+    with pytest.raises(SystemExit, match="not yet generalized to v9"):
+        legacy.require_live_financing_contract("oct16")
+
+
+def test_v9_annual_mixed_unit_uses_calibrated_frame_and_withholds_old_paired_se(monkeypatch):
+    spec = importlib.util.spec_from_file_location("legacy_v9_mixed_frame", HERE / "group_lines.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    source = module.mixed_source_for_case("oct16")
+    C = module.COMPARISON
+    row, gaps = C.entry(source, "white", "set", "low")
+    own = float(gaps[0]["comparator_own_count"])
+    for population in (44_903_074.086245224, own):
+        term = C.comparator_removal(source, "A1_third_plus_nh_white", "accrual", "low", population)
+        assert term["bn"] == pytest.approx(row["bn"]*population/own, abs=1e-9)
+        assert term["paired_se_bn"] is None
+        assert "paired SE unavailable" in term["scope"]
+    old = dict(source, comparison_case="oct15")
+    with pytest.raises(SystemExit, match="population differs from paired source"):
+        C.comparator_removal(old, "A1_third_plus_nh_white", "accrual", "low", 44_903_074.086245224)
+    monkeypatch.setattr(C, "load_mixed_unit", lambda **kwargs: old)
+    with pytest.raises(SystemExit, match="wrong case frame"):
+        module.mixed_source_for_case("oct16")
+
+
 def test_recorded_live_differences_are_same_engine_and_bridge_is_separate():
     diffs = pd.read_csv(DER / "oct15/legacy_differences.csv")
     assert set(diffs.union) == {"mexican_origin_rough"}

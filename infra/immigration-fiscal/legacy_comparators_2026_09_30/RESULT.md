@@ -686,3 +686,52 @@ Log: 2026-10-15 08:40:26 JST (`date`, parent): rerun on round 3's comparator cod
 ### R4C4 downstream receipt — 2026-10-15 10:38:53 JST (`date`)
 
 Annual group export plus three focused metadata/count/engine fixtures reproduce **IDENTICAL 39/39, exit 0**, 9.086s. No consumer code change was needed. This route deliberately retains current membership, no comparator PES coverage and whole-population mortality; it does not adopt the new symmetric central by import. Its accrued annual rough-lineage-minus-white gaps remain 556.729754 / 528.430696bn. `legacy.py --case oct15` still exits 1 at the authoritative missing post-engine payer/timing financing rule; no historical stock PASS is claimed. [CALCULATION: derived/annual_comparison_oct15.csv; scratch prop8/c4fix-legacy-{full-probe,rerun}.log]
+
+### Oct16 preparation checkpoint — 2026-10-15 19:14 JST
+
+The live annual/default case is oct16; earlier keyed outputs remain history. `group_lines.py` requires raw-service snapshots and typed own-group neutral-item parts, emits their pinned pension source receipt, and gates canonical set/cash costs at1e-9bn. The annual mixed-unit source explicitly receives the selected case; its calibrated-v9 paired SE is withheld rather than inherited from oct15. A pinned-source regression checks both calibrated and own-count routes plus old-frame negatives. [CALCULATION: group_lines.py; test_legacy.py]
+
+No final oct16 export is claimed: the provisional run stops on the moving package/saved-band mismatch during item21 completion. The full historical route separately requires the debt lane's oct16 financing contract and stops on absent/incomplete payer/timing identification. Local military transfer categories have BEA histories, but aggregate T3.17 health does not identify historical VA direct consumption; no2024 annuity supplies that bridge or a complete military stock effect. Item20's annual real capital return is not booked legacy debt or pension liability. Final annual-only production/replay waits for `prop9/CASE_FINAL`; historical stocks remain withheld pending authoritative source rules. [DATA: parent scratch prop9/prop-d-pensions.md; CALCULATION: legacy.py; ../debt_legacy_2026_09_23/debt_legacy.py History/programme_federal]
+
+### Adopted v9 annual receipt and historical source stop — 2026-10-20 20:37:06 JST (`date`)
+
+The annual export now computes oct16 only, from adopted case7dfb4c66 and refreshed White base outputs. It exports6,784rows and a pinned pre-rule raw-service/typed-part receipt, including direct `v9_items.py` and both adopted payload hashes. Canonical Mexican set/cash totals match `summary.json.v9.band_bn/cash_set_bn` at1e-9bn; upstream saved-band gates use the four-decimal `main_case_bands.csv` adopted/cash rows at5e-5bn. Annual case/rough decomposition closes at1e-9bn. The population on both sides is44,903,074.086245224. [CALCULATION: `group_lines.py --case oct16`; `derived/group_lines_oct16.csv`, `service_parts_oct16.json`, `case_rough_line_bridge_oct16.csv`]
+
+On this base route (current membership, no comparator Census coverage, whole-population mortality), annual rough-lineage-minus-as-many-A1-whites removal gaps are **$604.504848351 / $575.315845163bn/year accrual** and **$438.656307958 / $409.467304770bn/year cash**. With the lineage-only item11 omitted, the corresponding gaps are **$584.580954841 / $556.164355245bn/year accrual**, **$418.732414447 / $390.315814851bn/year cash**. These are same-engine annual removal comparisons, separate from the symmetric central and from financing stocks. Comparator item11 is measured on its own mask and linearly standardized to the calibrated count; calibrated-v9 paired SE is unavailable and remains blank. The average-resident slice's item11 remains unmeasured, explicitly labeled as such. [CALCULATION: `derived/annual_comparison_oct16.csv`, `comparator=A1_third_plus_nh_white`, fields `annual_removal_cost_gap_bn`, `annual_gap_without_item11_bn`; `mixed_unit_asymmetry`]
+
+Annual producer exit0,41.067s, canonical peak physical footprint1.515GB;5focused metadata/frame/source-contract fixtures pass. Annual-only replay: **IDENTICAL44/44,exit0**,27.198s. Historical `legacy.py` is explicitly named `--allow-unrun` in that receipt, and7tests requiring historical recorded/live stocks are deselected. The actual historical probe exits1 in4.848s: the authoritative oct16 debt contract has `financing_complete=false` and `historical_stock_identified=false`; all5of its adopted source pins verify. No oct16 historical stock, nominal interest, stock comparison or historical military financing effect is claimed. Historical VA direct-consumption and complete post-engine payer/timing bridges remain unmeasured. Booked legacy liabilities and nominal financing remain separate from20's annual real capital return. All earlier keyed outputs remain unchanged; no Git writes. [CALCULATION: parent scratch `prop9/legacy-{groups-final,tests-final,rerun-oct16,history-resume}.{json,log}`; `../debt_legacy_2026_09_23/derived/oct16/current_flow_contract.json`]
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/legacy_comparators_2026_09_30/group_lines.py --case oct16
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest -p no:cacheprovider infra/immigration-fiscal/legacy_comparators_2026_09_30/test_legacy.py -q -k 'v8_frame or comparison_contract or base_mortality or v9_'
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/legacy_comparators_2026_09_30 'uv run --no-project python3 {lane}/group_lines.py --case oct16' 'uv run --no-project python3 -m pytest -p no:cacheprovider {lane}/test_legacy.py -q -k "v8_frame or comparison_contract or base_mortality or v9_"' --allow-unrun infra/immigration-fiscal/legacy_comparators_2026_09_30/legacy.py
+# Expected source stop, not part of the successful annual-only replay:
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/legacy_comparators_2026_09_30/legacy.py --case oct16
+```
+
+Every changed/created lane path is listed in `changed-paths.txt`. Public-pension remains a fixed-oct05 source, confirmed unchanged.
+### Post-consumer source check — 2026-10-20 21:36:10 JST (`date`)
+
+After the completed debt and winners migrations, the direct `legacy.py --case oct16`
+probe still exits1 before publication: `[BLOCKED] oct16 historical financing lacks
+source payer/timing rules; annual military deltas do not identify legacy stocks`.
+The new debt current-flow and transfer-history files do not supply the missing complete
+historical VA consumption/payer/timing bridge. Annual legacy's successful44/44 byte
+replay remains valid; no historical stock or interest is filled in from current flows.
+[CALCULATION: parent scratch `prop9/d9-legacy-history-final.{json,log}`,0.802s;
+`debt_legacy_2026_09_23/derived/oct16/current_flow_contract.json`]
+
+### Refresh and a latent-gate stop — 2026-10-21 00:16 JST (`date`)
+
+- `group_lines.py --case oct16` rerun after the case's custody-only rebuild refreshed `service_parts_oct16.json`'s
+  source hashes; `rerun_lane.py` with the two annual commands (legacy.py allowed unrun): **IDENTICAL 44/44, exit 0**
+  (23:59:14 JST). `derived/annual_comparison_oct16.csv` A1 `annual_removal_cost_gap_bn` is unchanged:
+  604.504848351/575.315845163bn accrual, 438.656307958/409.467304770bn cash.
+- `legacy.py` ran its population-split, engine-tag, mortality-label and job-capital gates only for oct15. oct16 already
+  stops at the debt lane's financing contract; `require_live_financing_contract` now also stops oct16 when that
+  contract becomes complete, until those gates are generalized to population_v9 (review 2026-10-20, LOW). The
+  financing test now expects that stop. Historical stock, interest and military financing stay unmeasured.
+  [CALCULATION: rerun_lane.py; derived/annual_comparison_oct16.csv]
+- The A1 comparator's own cost fell by $47.07bn from oct15 to oct16 at fixed counts (accrual, low end); item 13
+  removes $45.52bn of White military service cost against $18.92bn for the lineage. Per item:
+  `../white_replacement_2026_09_28/derived/v9_item_changes_oct16.csv`. [DATA]

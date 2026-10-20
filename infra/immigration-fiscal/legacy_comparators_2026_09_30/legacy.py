@@ -86,14 +86,15 @@ _mortality_spec = importlib.util.spec_from_file_location("legacy_stock_mortality
 MORTALITY = importlib.util.module_from_spec(_mortality_spec)
 _mortality_spec.loader.exec_module(MORTALITY)
 LANE = FISCAL / "debt_legacy_2026_09_23"
-CASE = "oct15"          # the live case setup() builds (main() sets it)
+CASE = "oct16"          # the live case setup() builds (main() sets it)
 # Per case: the groups' lines (group_lines.py), the debt lane's directory under its derived/, this lane's output
 # directory, and whether the case carries the lineage (oct05: the 2005 window on the lineage's composite path).
 CASES = {"sept29": dict(lines="group_lines_sept29.csv", lane_dir="sept29", out=HERE / "derived", lineage=False),
          "oct05": dict(lines="group_lines_oct05.csv", lane_dir="oct05", out=HERE / "derived" / "oct05", lineage=True),
          "oct07": dict(lines="group_lines_oct07.csv", lane_dir="oct07", out=HERE / "derived" / "oct07", lineage=True),
          "oct14": dict(lines="group_lines_oct14.csv", lane_dir="oct14", out=HERE / "derived" / "oct14", lineage=True),
-         "oct15": dict(lines="group_lines_oct15.csv", lane_dir="oct15", out=HERE / "derived" / "oct15", lineage=True)}
+         "oct15": dict(lines="group_lines_oct15.csv", lane_dir="oct15", out=HERE / "derived" / "oct15", lineage=True),
+         "oct16": dict(lines="group_lines_oct16.csv", lane_dir="oct16", out=HERE / "derived" / "oct16", lineage=True)}
 GROUPS = ("mexican_origin_engine", "mexican_origin_rough", "A1_third_plus_nh_white", "all_residents_slice")
 UNION = ("mexican_origin_engine", "mexican_origin_rough")
 BASES = ("cash", "accrual")
@@ -454,10 +455,29 @@ def zero_audit(wb, carried: set[str]) -> dict:
     return dict(series_audited=len(refs), zero_before_2005=out)
 
 
-def main(case: str = "oct15") -> None:
+def require_live_financing_contract(case):
+    """An annual source audit cannot silently authorize a historical stock."""
+    if case != "oct16":
+        return
+    path = LANE / "derived/oct16/current_flow_contract.json"
+    if not path.exists():
+        raise SystemExit("[BLOCKED] oct16 historical financing needs the debt lane's source contract; none is delivered")
+    contract = json.loads(path.read_text())
+    if contract.get("case") != case:
+        raise SystemExit("[BLOCKED] oct16 historical financing source contract has the wrong case")
+    if not contract.get("financing_complete") or not contract.get("historical_stock_identified"):
+        raise SystemExit("[BLOCKED] oct16 historical financing lacks source payer/timing rules; annual military deltas do not identify legacy stocks")
+    # Once a complete contract exists, the population-split, engine-tag, mortality-label and job-capital gates
+    # below still run only for oct15; stop until they are generalized to population_v9 (review 2026-10-20).
+    raise SystemExit("[BLOCKED] oct16 historical gates (population split, engine tags, mortality labels, "
+                     "job-capital shares) are not yet generalized to v9")
+
+
+def main(case: str = "oct16") -> None:
     global CASE
     CASE = case
     conf = CASES[case]
+    require_live_financing_contract(case)
     lineage = conf["lineage"]
     lines_all = pd.read_csv(HERE / "derived" / conf["lines"])
     if case == "oct15":
@@ -701,8 +721,8 @@ def main(case: str = "oct15") -> None:
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct15", choices=list(CASES),
-                    help="oct15 (default, v8, derived/oct15/); earlier keyed cases are archived")
+    ap.add_argument("--case", default="oct16", choices=list(CASES),
+                    help="oct16 (default, v9, derived/oct16/); earlier keyed cases are archived")
     main(ap.parse_args().case)
     sys.path.insert(0, str(FISCAL / "scripts"))
     from memory_budget import require_within_budget
