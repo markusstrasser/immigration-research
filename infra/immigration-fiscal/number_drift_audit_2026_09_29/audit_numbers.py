@@ -333,8 +333,9 @@ INDEX_SPANS = [
      "([scope memo](immigration-education-administration-scope-2026-09-20.md))."),
     ("[Real fiscal and social costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) (ladder 188–193)",
      "[re-spending](../infra/immigration-fiscal/social_respending_2026_10_14/RESULT.md)]"),
-    ("Wages move **$66–166bn**", "charged nationally, the share ahead falls to 9.0%."),
-    ("The [world ledger]", "premium over being raised in Mexico. [FRAMING-SENSITIVE]"),
+    ("In the account's calibrated production model, not a measured wage effect, wages move",
+     "variant is not computed on v9."),
+    ("The [world ledger]", "second-generation-premium readings are not computed on v9 (lane)."),
     ("Benefits are priced to the same standard as the costs", "so both figures stand (ladder 199)."),
     # the dataset audit's fill-in correction, sized on the main case (the list's other sizes sit in the ladder)
     ("the fill-in-off companion has not been repriced on the current case.", "Federal tax the CPS misses at the top was"),
@@ -380,7 +381,7 @@ FAQ_SPANS = [
      "is never combined with other entries' ranges."),
     # entry 16, the main case and its first-year response beside CBO's projection (since v6); not CBO's own figures
     ("all ages and generations in income-year 2024, state and local services included",
-     "Where the two overlap they agree"),
+     "Where the two come closest they point the same way"),
     # entries 12, 14 and 17, the figures restated on the main case (2026-10-08): offending at the Hispanic average,
     # fear and private security on the priced count, the production term, the fill-in correction
     ("The main case does not isolate", "variant stays beside the central fiscal-plus-social pairing."),
@@ -404,20 +405,26 @@ MEMO_SPANS = {
         # ends on the next bullet's opening words, which carry no number, so the closing sentence stays in scope
         ("| Channel | Bottom fifth | 2nd | 3rd | 4th | Top fifth | Total |",
          "- **Housing.** Renters pay about the same extra rent in every fifth"),
-        ("**The fiscal cost's incidence is a financing convention.**", "and 19.4% and 0.66% under"),
+        # ends on the paragraph's last words, which carry no number (the v8 anchor ended on two shares)
+        ("**The fiscal cost's incidence is a financing convention.**", "per-person cuts."),
         ("**Weighted by income.**", "weight (2.24), not a larger harm."),
+        # the v9 verdict's pairing, §7's linked table and the life-year footnote (operator 2026-10-21)
+        ("Fiscal and social costs together come to **", "(only the fiscal row's pension timing"),
+        ("| Fiscal main case |", "Two displayed values, public purchases' PM2.5 at both ends"),
+        ("¹ Valuing deaths by remaining life-years", "`pairing_social_env_life_years_r003_beside`.]"),
     ],
     # the v6 verdicts (2026-10-07)
     BY_GENERATION: [
         ("**Verdict (", "state mix are not computed."),
     ],
     WINNERS: [
-        ("**Verdict (2026-10-14, main case v7,", "whose pooled net under tax shares is −$384 a year."),
+        # anchors carry no case name or number, so the next restatement keeps them
+        ("**Verdict (", "-person lineage. [CALCULATION: `p7_net_shares.csv`, `total_bn`, `mean_usd`;"),
     ],
     # the Indian-origin full account on main case v6 (00992d4b): the verdict, §2's table and notes, the v6 revision
     INDIAN: [
-        ("**Verdict:** On main case v7", "reference is third-plus non-Hispanic whites]"),
-        ("Per member a year, low / high end of main case v7", "too few to estimate."),
+        ("**Verdict:** On main case", "reference is third-plus non-Hispanic whites]"),
+        ("Per member a year, low / high end of main case", "too few to estimate."),
         ("- 2026-10-07 (main case v6, [decision]",
          "affected: the Indian-origin full account follows the main case and the comparators' education keys."),
     ],

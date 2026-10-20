@@ -119,6 +119,14 @@ ALLOW = {
     ("research/immigration-second-generation-by-origin-2026-09-22.md", "case.per_member", "$7.9k",
      "below same-age whites"): (
         "the same third-plus tax shortfall, -7906.712114 a person, which reads like v7's case per-member low end"),
+    ("research/immigration-INDEX.md", "household.net_contributor_share", "24.2%",
+     "counting only services a household uses itself"): (
+        "the v9 household split's own-use share at the high end (within_group_distribution oct16 "
+        "net_positive_shares_person_onbooks.csv, B high 0.242185), which reads like the published-CPS run's 24.18"),
+    ("research/immigration-INDEX.md", "household.top10_cost_share", "53–61%",
+     "The costliest tenth of households carries"): (
+        "the v9 household split's top-tenth cost shares (oct16 concentration_person_onbooks.csv, A 0.533242 / "
+        "0.609490), which round like the published-CPS run's 52.60 / 60.93"),
 }
 
 # the records whose current value comes from an adopted lane the evidence map does not show yet: record id → (path,

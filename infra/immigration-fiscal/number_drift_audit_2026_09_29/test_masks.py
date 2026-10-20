@@ -87,6 +87,28 @@ def test_revised_generation_crime_and_incidence_spans_read_the_live_text(tmp_pat
         assert '$1bn' not in raws(scanned)
 
 
+def test_v9_consumer_spans_read_their_restated_text(tmp_path):
+    # the docs pass on the v9 consumer lanes (2026-10-21) moved or added these boundaries
+    starts = {
+        A.INDEX: ["In the account's calibrated production model, not a measured wage effect, wages move",
+                  "The [world ledger]"],
+        A.FAQ: ["all ages and generations in income-year 2024, state and local services included"],
+        A.REAL_COSTS: ["**The fiscal cost's incidence is a financing convention.**",
+                       "Fiscal and social costs together come to **", "| Fiscal main case |",
+                       "¹ Valuing deaths by remaining life-years"],
+        A.WINNERS: ["**Verdict ("],
+        A.INDIAN: ["**Verdict:** On main case", "Per member a year, low / high end of main case"],
+    }
+    for file, names in starts.items():
+        for name in names:
+            start, end = next(s for s in A.MARKDOWN[file] if s[0] == name)
+            path = tmp_path / 'doc.md'
+            path.write_text(f'Outside $1bn\n{start}\n$479.6–553.7bn\n{end} outside $2bn\nOutside $3bn\n')
+            scanned = '\n'.join(text for _, text, _ in A.span_lines(path, [(start, end)]))
+            assert '$479.6–553.7bn' in raws(scanned), name
+            assert not {'$1bn', '$2bn', '$3bn'} & set(raws(scanned)), name
+
+
 def test_world_ledger_bindings_use_the_renamed_other_resident_column():
     rows = [r for r in A.load_map().values() if 'world_ledger' in r['source_path']
             and 'other_us_residents_bn' in r['source_field']]
