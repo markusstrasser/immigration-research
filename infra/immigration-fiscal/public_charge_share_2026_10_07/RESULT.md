@@ -42,3 +42,15 @@ Assumed:
 From the repository root:
 
     OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/public_charge_share_2026_10_07/public_charge_share.py
+## 2026-10-20: live case oct16 (v9)
+
+The live estimate is **42.4%**, or **$4.99bn** combined and **$3.21bn** federal at DHS's10.3% midpoint; the3.3–17.3% arms give **$1.60–8.37bn** combined. Applying the share to DHS's printed combined primary total gives **$5.53bn**. These supersede the earlier live membership numbers above. [DATA: `derived/oct16/summary.json` `rates.10.3%.lineage_weights.{dollar_weighted_share,combined_bn,federal_bn}`, `rates.{3.3%,17.3%}.lineage_weights.combined_bn`, `at_dhs_printed_primary_bn`]
+
+Observed members use the source calibration exactly once; synthetic original descendants retain the measured-age proxy. The located frame is42,951,314.00417103 people, while the complete case denominator is44,903,074.086245224. Constructed coverage is unlocated and excluded from eligible CPS cells; it is not a set of newly identified applicants. DHS's source population-construction mismatch and uniform disenrollment assumption remain unresolved. This is a transfer-reduction companion, not a net2024 fiscal saving; induced uncompensated care is not netted here. [ASSUMPTION; DATA: `derived/oct16/summary.json` `frame`, `scope`; source limitations above]
+
+Reproduce live oct16 only: `sh infra/immigration-fiscal/public_charge_share_2026_10_07/run_all.sh`. Older unkeyed outputs remain historical.
+
+Log: 2026-10-20 20:25 JST (`date`) — own eligible-cell route exits0 in19.191s; source membership/frame, DHS federal-total and programme share gates pass; canonical physical-footprint guard passes. Official deterministic-replay receipt follows.
+Log: 2026-10-20 20:29 JST (`date`) — the upstream row4 adapter now validates the loader's display-calibration declaration and restores production weights itself. Removed the caller's obsolete pre-reset. Final actual-route replay passes the new source guard, all eligible-cell gates and the physical-budget guard, exit 0 in 15.551 s; midpoint outputs remain $4.985805513bn combined, $3.211660890bn federal, share 0.4241720708743631. No protected source edited.
+
+Official oct16 replay, 2026-10-20: 2026-10-20 20:36:22 JST (`date`) — `scripts/rerun_lane.py` with `sh {lane}/run_all.sh`: **IDENTICAL: 7/7, exit 0**, 16.883 s. No uncovered changed scripts or EOL conversion failures. Full route gates and regressions pass; historical keyed files remain preserved. Receipt text and Python timing/resource JSON are in the parent's `prop9/chain-public-charge-rerun.log` pair. This final append records verification only.

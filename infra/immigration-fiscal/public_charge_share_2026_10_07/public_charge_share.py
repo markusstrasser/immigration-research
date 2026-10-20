@@ -44,8 +44,8 @@ import pandas as pd
 
 LANE = Path(__file__).resolve().parent
 FISCAL = LANE.parent
-OUT = LANE / "derived"
-DECOMP = FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct05.json"
+OUT = LANE / "derived/oct16"
+DECOMP = FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct16.json"
 sys.path.insert(0, str(FISCAL / "world_ledger_2026_09_27"))
 from population_basis import reweight  # noqa: E402
 
@@ -75,6 +75,7 @@ def main() -> None:
     B = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(B)
     d = B.load_cps()
+    # reweight validates and removes the loader's display calibration itself.
     with zipfile.ZipFile(B.PATHS["cps"]) as z:
         p = pd.read_csv(z.open("pppub25.csv"), usecols=["PH_SEQ", "PPPOS", "MCAID", "PCHIP", "SSI_YN", "PAW_YN",
                                                          "WICYN"])
@@ -87,7 +88,15 @@ def main() -> None:
     frame = json.loads(DECOMP.read_text())["frame"]["row4"]
     civ, tgt = d.civ.to_numpy(), d.target.to_numpy()
     lw, r4 = d.pw.to_numpy(float), d.pw_row4.to_numpy(float)
-    gate("lineage_is_the_decompositions_NG", abs(lw[tgt].sum() - frame["NG"]) < 1e-2)
+    sys.path.insert(0,str(FISCAL / 'closed_budget_2026_10_06'))
+    from households import age_tilted
+    from calibrated_frame import complete_calibrated, calibration_factors
+    payload_file = FISCAL / 'main_case_2026_10_16/derived/corrections.json'
+    lw = age_tilted(d,payload_file)
+    lw,tgt,frame_meta = complete_calibrated(d,lw,tgt,json.loads(payload_file.read_text()),gate,coverage=False)
+    # National eligible cells receive the same observed-person calibration.
+    r4 = r4*calibration_factors(d)
+    gate("complete_denominator_is_the_decompositions_NG", abs(frame_meta['complete_people'] - frame["NG"]) < 1e-2)
     gate("row4_civilians_are_the_decompositions_NC", abs(r4[civ].sum() - frame["NC"]) < 1.0)
 
     for k in DHS_FEDERAL_TOTAL:
@@ -122,7 +131,8 @@ def main() -> None:
                      "share_lineage_weights": round(s_lin, 6), "share_row4_weights": round(s_r4, 6),
                      **{f"dhs_federal_{k}": v for k, v in DHS_FEDERAL[prog].items()}})
 
-    summary = {"lane": "public_charge_share_2026_10_07", "rates": {}}
+    summary = {"lane": "public_charge_share_2026_10_07", "case_key":"oct16", "frame":frame_meta, "rates": {},
+               "scope":"Own eligible CPS cells and calibrated observed weights; synthetic descendants retain measured-age proxy. Constructed coverage is unlocated and excluded, not identified new applicants. DHS NG/NC and uniform disenrollment limitations retained."}
     for k in DHS_FEDERAL_TOTAL:
         fed = DHS_FEDERAL_TOTAL[k]
         state = sum(DHS_FEDERAL[p][k] for p in MATCHED) * (1 - FMAP) / FMAP
@@ -138,7 +148,10 @@ def main() -> None:
     summary["noncitizen_household_population_row4"] = float(r4[noncit_hh].sum())
     summary["lineage_share_of_that_population"] = float(lw[noncit_hh & tgt].sum() / r4[noncit_hh].sum())
 
-    OUT.mkdir(exist_ok=True)
+    sys.path.insert(0,str(FISCAL / 'scripts'))
+    from memory_budget import require_within_budget
+    require_within_budget('public charge share')
+    OUT.mkdir(parents=True,exist_ok=True)
     with open(OUT / "public_charge_share.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         w.writeheader()

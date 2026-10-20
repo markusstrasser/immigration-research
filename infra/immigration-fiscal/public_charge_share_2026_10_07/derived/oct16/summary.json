@@ -1,0 +1,64 @@
+{
+ "lane": "public_charge_share_2026_10_07",
+ "case_key": "oct16",
+ "frame": {
+  "located_people": 42951314.00417103,
+  "coverage_people": {
+   "G1": 446105.1075376299,
+   "G2": 818805.7202215843,
+   "G3plus": 686849.2543028654
+  },
+  "coverage_in_weights": false,
+  "complete_people": 44903074.086245224,
+  "calibration": "own central_member_factor on observed member weight; latent addition held fixed",
+  "coverage_rule": "[UNLOCATED] coverage excluded from eligible CPS cells"
+ },
+ "rates": {
+  "3.3%": {
+   "dhs_federal_bn": 2.479093994,
+   "combined_matched_only_bn": 3.780009742677966,
+   "lineage_weights": {
+    "federal_bn": 1.0328310686155784,
+    "combined_bn": 1.6033748546848405,
+    "dollar_weighted_share": 0.4241721487069295
+   },
+   "row4_weights": {
+    "federal_bn": 1.0150351021172914,
+    "combined_bn": 1.576304625618482,
+    "dollar_weighted_share": 0.4170107309040271
+   }
+  },
+  "10.3%": {
+   "dhs_federal_bn": 7.708919457,
+   "combined_matched_only_bn": 11.754205086949154,
+   "lineage_weights": {
+    "federal_bn": 3.2116608903295565,
+    "combined_bn": 4.9858055132131955,
+    "dollar_weighted_share": 0.4241720708743631
+   },
+   "row4_weights": {
+    "federal_bn": 3.1563230619999887,
+    "combined_bn": 4.901628735320338,
+    "dollar_weighted_share": 0.41701065270357407
+   }
+  },
+  "17.3%": {
+   "dhs_federal_bn": 12.938100184,
+   "combined_matched_only_bn": 19.72741335981356,
+   "lineage_weights": {
+    "federal_bn": 5.390221500694356,
+    "combined_bn": 8.367816819919625,
+    "dollar_weighted_share": 0.42417202231720796
+   },
+   "row4_weights": {
+    "federal_bn": 5.2973464248748785,
+    "combined_bn": 8.226540548113643,
+    "dollar_weighted_share": 0.4170106033704254
+   }
+  }
+ },
+ "scope": "Own eligible CPS cells and calibrated observed weights; synthetic descendants retain measured-age proxy. Constructed coverage is unlocated and excluded, not identified new applicants. DHS NG/NC and uniform disenrollment limitations retained.",
+ "at_dhs_printed_primary_bn": 5.5333531939453815,
+ "noncitizen_household_population_row4": 47836384.626552165,
+ "lineage_share_of_that_population": 0.33773759370459094
+}

@@ -61,7 +61,7 @@ def read_cps(sb):
     with zipfile.ZipFile(ARCHIVE) as z:
         d = pd.read_csv(z.open("pppub25.csv"), usecols=fields)
         w = pd.read_csv(z.open("asec_csv_repwgt_2025.csv"), usecols=["h_seq", "PPPOS", "pwwgt0"]).rename(columns={"h_seq": "PH_SEQ"})
-        h = pd.read_csv(z.open("hhpub25.csv"), usecols=["H_SEQ", "HSUP_WGT", "HTOTVAL", "HRECORD"])
+        h = pd.read_csv(z.open("hhpub25.csv"), usecols=["H_SEQ", "HSUP_WGT", "HTOTVAL", "HRECORD", "GESTFIPS"])
     d = d.merge(w, on=["PH_SEQ", "PPPOS"], validate="one_to_one", how="left")
     if d.isna().any().any():
         raise ValueError("Missing CPS keys")
@@ -194,6 +194,26 @@ def main():
     completion = json.loads(ACCRUAL.read_text())["meta"]["union_completion"]["counts"]["total"]
     if abs(added - completion) > 1e-6:
         raise ValueError("[BLOCKED] observed completion people differ from v8")
+    sys.path.insert(0,str(FISCAL / 'closed_budget_2026_10_06'))
+    from calibrated_frame import calibration_factors
+    sys.path.insert(0,str(FISCAL / 'world_ledger_2026_09_27'))
+    from population_basis import row4
+    control = row4()
+    state = d.PH_SEQ.map(h.set_index('H_SEQ').GESTFIPS)
+    if state.isna().any():
+        raise ValueError('[BLOCKED] nonresponse row4 missing person state')
+    base = base.copy()
+    for label,code in [('naturalized',4),('noncitizen',5)]:
+        mask = d.PENATVTY.eq(303).to_numpy() & d.PRCITSHP.eq(code).to_numpy() & ~state.isin([6,48]).to_numpy()
+        record = control['row4_factors'][label]
+        if int(mask.sum())!=record['records'] or abs(float(base[mask].sum())-record['cps_population'])>1e-3:
+            raise ValueError('[BLOCKED] nonresponse row4 source mask drift')
+        base[mask] *= record['factor']
+    base = base*calibration_factors(d)
+    metadata = json.loads(ACCRUAL.read_text())['meta']
+    expected_observed = metadata['population_v9']['without_coverage']-metadata['lineage']['counts']['added']
+    if abs(float(base[tgt].sum())-expected_observed)>1e-2:
+        raise ValueError('[BLOCKED] calibrated nonresponse observed people do not close to oct16')
     vectors = key_vectors(d, sb)
     hh_index = pd.Index(h.H_SEQ.to_numpy())
     pos = hh_index.get_indexer(d.PH_SEQ.to_numpy())
@@ -281,7 +301,7 @@ def price_lines(shares):
 # Income-type keys: their national totals should fall by the published all-household bias.
 INCOME_KEYS = {"federal_liability", "federal_liability_irs_bins", "state_liability", "wage", "wage_oasdi",
                "self_payroll", "capital", "consumption", "resources"}
-ACCRUAL = FISCAL/"main_case_2026_10_15/derived/corrections.json"
+ACCRUAL = FISCAL/"main_case_2026_10_16/derived/corrections.json"
 
 
 def price_case(lines, shares, quantiles):
@@ -298,13 +318,13 @@ def price_case(lines, shares, quantiles):
     """
     payload = json.loads(ACCRUAL.read_text())
     acc = payload["meta"]["pension_accrual"]
-    exposure_file = OUT / "v8_exposures.json"
+    exposure_file = OUT / "v9_exposures.json"
     if not exposure_file.exists():
-        raise ValueError("[BLOCKED] run v8_exposures.cjs before reweight.py")
+        raise ValueError("[BLOCKED] run v9_exposures.cjs before reweight.py")
     exposure = json.loads(exposure_file.read_text())
     for file, expected in exposure["source_hashes"].items():
         if hashlib.sha256((FISCAL / file).read_bytes()).hexdigest() != expected:
-            raise ValueError(f"[BLOCKED] stale v8 exposure source: {file}")
+            raise ValueError(f"[BLOCKED] stale oct16 exposure source: {file}")
     rows = []
     for curve, part in lines[lines["count"] == "pinned"].groupby("curve"):
         q = quantiles[(quantiles.curve == curve) & (quantiles.group == "all")]
@@ -327,7 +347,7 @@ def price_case(lines, shares, quantiles):
                     continue
                 source = current["lines"].get(f"{rec.side}|{rec.category}")
                 if source is None:
-                    raise ValueError(f"[BLOCKED] v8 has no source exposure for {rec.side}/{rec.category}")
+                    raise ValueError(f"[BLOCKED] oct16 has no source exposure for {rec.side}/{rec.category}")
                 amount = source["amount_bn"]
                 if rec.category == "medicare":
                     amount = cash["lines"]["spending|medicare"]["amount_bn"]*(1 - acc["part_a_share"])
@@ -345,17 +365,17 @@ def price_case(lines, shares, quantiles):
             for o in out:
                 rows.append(dict(curve=curve, end=end, denominator=denominator, shortfall=shortfall, **o))
     v5 = pd.DataFrame(rows)
-    write(OUT/"v8_line_changes.csv", v5)
+    write(OUT/"v9_line_changes.csv", v5)
     summary = v5.groupby(["curve", "end", "denominator", "side"]).net_cost_change_bn.sum().unstack("side")
     summary["net_cost_change_bn"] = summary.sum(axis=1)
-    population = payload["meta"]["population_v8"]["with_coverage"]
+    population = payload["meta"]["population_v9"]["with_coverage"]
     summary["per_member_change_usd"] = summary["net_cost_change_bn"]*1e9/population
-    write(OUT/"v8_summary.csv", summary.reset_index())
+    write(OUT/"v9_summary.csv", summary.reset_index())
     print(summary.round(2).to_string())
-    (OUT / "v8_sensitivity.json").write_text(json.dumps({"case_key": "oct15", "population": population,
+    (OUT / "v9_sensitivity.json").write_text(json.dumps({"case_key": "oct16", "population": population,
         "source_hashes": exposure["source_hashes"], "coverage_reweighted": False, "mixed_unit_reweighted": False,
-        "rule": "[ASSUMPTION] measured CPS relative key changes transport to actual v8 source-side line exposures, with observed completion records in the target. Modeled descendants retain that first-order key transport; coverage people and mixed/coverage post amounts are held fixed. Public capital and production are not re-run.",
-        "source_gate": "v8_exposures.cjs gates both set/cash ends to exact case totals at 1e-9 and printed band rows at 5e-5bn"}, indent=1)+"\n")
+        "rule": "[ASSUMPTION] Own ACS-calibrated observed CPS key ratios transport to oct16 response-weighted source exposures including eligible completion and native16 source cells. Military response0 is already removed. Modeled descendants retain first-order transport; constructed coverage, mixed post, public capital and production fixed. No new identified coverage applicants.",
+        "source_gate": "v9_exposures.cjs gates both set/cash ends to exact case totals at 1e-9 and printed band rows at 5e-5bn"}, indent=1)+"\n")
 
 
 def write(path, frame):

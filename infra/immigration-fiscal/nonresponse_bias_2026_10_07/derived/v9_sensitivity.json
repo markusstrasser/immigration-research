@@ -1,0 +1,18 @@
+{
+ "case_key": "oct16",
+ "population": 44903074.086245224,
+ "source_hashes": {
+  "main_case_2026_10_16/derived/corrections.json": "4300b06c5db6c9ddca86e59538be66a7aa6cea71bdf4ca9c13625756a711f530",
+  "main_case_2026_10_16/derived/corrections_cash.json": "bb99e06673cb09daead29be13ed81dd44eabbf74bae56c06845461e2834648f7",
+  "main_case_2026_10_16/derived/summary.json": "0d48ffa601855c68722e1c1524c22615745ff36ef4789969923934aa6f0fc45a",
+  "count_composition_r5_2026_10_15/derived/native_person_factors.parquet": "712efac2bb35ea19ad1b9950998b5a0fa425f33fccd0c662669646f65cebff45",
+  "count_composition_r5_2026_10_15/derived/line_parts_set.csv": "0e346410cbb1ac463b7af22e85bf2898d51add30d78a356c7fc60aa0fef44951",
+  "count_composition_r5_2026_10_15/derived/line_parts_cash.csv": "3a5c46fb7d1d49e820db39f80dabb61b608a910addbe44c9d6f0028d5fcf5662",
+  "coverage_bound_2026_10_14/derived/line_parts_oct16_set.csv": "a1a0943551d5579e3aef452123fc19005ee2bdb78d0230c14022838e78d00d29",
+  "coverage_bound_2026_10_14/derived/line_parts_oct16_cash.csv": "0fce260de051d5ceecaffe2b16ef9e6cf6763746967d63bc65556f99249a0e73"
+ },
+ "coverage_reweighted": false,
+ "mixed_unit_reweighted": false,
+ "rule": "[ASSUMPTION] Own ACS-calibrated observed CPS key ratios transport to oct16 response-weighted source exposures including eligible completion and native16 source cells. Military response0 is already removed. Modeled descendants retain first-order transport; constructed coverage, mixed post, public capital and production fixed. No new identified coverage applicants.",
+ "source_gate": "v9_exposures.cjs gates both set/cash ends to exact case totals at 1e-9 and printed band rows at 5e-5bn"
+}
