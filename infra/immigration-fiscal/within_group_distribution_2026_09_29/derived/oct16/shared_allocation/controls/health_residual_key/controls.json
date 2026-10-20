@@ -1,0 +1,91 @@
+{
+  "case": "oct16",
+  "basis": "set",
+  "allocation": "shared",
+  "control_item": "health_residual_key",
+  "accrual_allocation": "flat",
+  "payroll_allocation": "all",
+  "latent_placement": "band",
+  "adoption": {
+    "key": "oct16",
+    "adopted": "2026-10-20",
+    "decision": "decisions/2026-10-16-main-case-v9.md"
+  },
+  "admission": "final",
+  "population": {
+    "without_coverage": 43269648.68157841,
+    "with_coverage": 45230062.30075857,
+    "completion": 517435.75719317,
+    "coverage": 1960413.6191801578,
+    "native_minor_calibration": 0,
+    "tenure": 0
+  },
+  "ranking_weight": "mean calibrated member weight per fixed observed household; quantile members use their own calibrated person weights",
+  "balance_rule": "unweighted sum of per-person dollar balances; conservation uses sum of person-weighted dollars, never mean household weight times household dollars",
+  "allocation_rule": "original per-person prices preserved; direct source deltas priced on original source weights; intrinsic record-weight change counted once. Only the difference from declared native source parts is allocated on changed records; roster is fixed.",
+  "uncertainty": "Point allocations only. No new conditional survey SE or total model SE computed by this adapter; earlier case SEs remain historical.",
+  "unlocated_residual_policy": "retain",
+  "item_controls": "full source standalone item on inherited v8 selected registry at fixed final case endpoints; actual source evaluator and exact typed source bridge are the oracle",
+  "tolerance_bn": 1e-09,
+  "gates": [
+    {
+      "end": "low",
+      "actual_bn": 347.283626372573,
+      "target_bn": 347.2836263725728,
+      "gap_bn": 1.7053025658242404e-13
+    },
+    {
+      "end": "low",
+      "generation": "G1",
+      "actual_bn": 103.3889946219747,
+      "target_bn": 103.38899462197472,
+      "gap_bn": -1.4210854715202004e-14
+    },
+    {
+      "end": "low",
+      "generation": "G2",
+      "actual_bn": 134.28563443261388,
+      "target_bn": 134.2856344326139,
+      "gap_bn": -2.842170943040401e-14
+    },
+    {
+      "end": "low",
+      "generation": "G3plus",
+      "actual_bn": 109.60899731798429,
+      "target_bn": 109.6089973179843,
+      "gap_bn": -1.4210854715202004e-14
+    },
+    {
+      "end": "high",
+      "actual_bn": 436.676980837905,
+      "target_bn": 436.67698083790435,
+      "gap_bn": 6.252776074688882e-13
+    },
+    {
+      "end": "high",
+      "generation": "G1",
+      "actual_bn": 127.1062722387415,
+      "target_bn": 127.10627223874157,
+      "gap_bn": -7.105427357601002e-14
+    },
+    {
+      "end": "high",
+      "generation": "G2",
+      "actual_bn": 162.83213454844645,
+      "target_bn": 162.8321345484465,
+      "gap_bn": -5.684341886080802e-14
+    },
+    {
+      "end": "high",
+      "generation": "G3plus",
+      "actual_bn": 146.7385740507168,
+      "target_bn": 146.73857405071672,
+      "gap_bn": 8.526512829121202e-14
+    }
+  ],
+  "source_sha256": {
+    "within_group_distribution_2026_09_29/households.py": "08b13cca82fc915a2b1d8069efb9efe4c47181d17f30c3894ed9aa7c6453ccbe",
+    "within_group_distribution_2026_09_29/oct16_households.py": "93cd1ec36f14b03c7b6a453fd20ace94d1a3d3b422f558d319c342e86a616d78",
+    "within_group_distribution_2026_09_29/_cache/oct16/shared_allocation/controls/health_residual_key/lines.json": "c5e3c171c356de7c5ff001b82df0ea9d07381e73c7a6a7f27b7ce28d326cc5ab"
+  }
+}

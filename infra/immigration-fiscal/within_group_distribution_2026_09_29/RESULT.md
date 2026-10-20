@@ -1343,3 +1343,174 @@ Parent rerun 2026-10-15 05:38 JST (from `date`), on the corrected v8 (d1a24d47; 
   9,696). [DATA: `derived/oct15/shared_allocation/net_positive_shares.csv`]
 
 All export and household gates pass; 26 tests pass; reproduction IDENTICAL 198/198, exit 0.
+
+## Oct16 route (v9), prepared 2026-10-15
+
+**Status: prepared; final execution waits for the parent's CASE_FINAL.** Earlier case files and all earlier
+execution records remain history. The live reproduction entry is now:
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/run_oct16.py
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/within_group_distribution_2026_09_29 "uv run --no-project python3 {lane}/run_oct16.py"
+```
+
+The wrapper runs the oct16 exporter for personal and shared allocation, both accounting sets, flat/person/person
+with on-books payroll allocation, personal flat uniform placement, the companion-claim exporter, and explicit
+Node/Python regression files. It measures each subprocess with `time.perf_counter`/`resource.getrusage`; child
+RSS is diagnostic. Each actual household producer enforces the existing 2.5GB physical-footprint guard. No
+network or Git write occurs. [CALCULATION: `run_oct16.py`, `oct16_households.py`]
+
+`export_lines.cjs` defaults to oct16 and first evaluates its inherited source scaffold in memory without publishing
+historical outputs. `export_oct16.cjs` searches the actual final ends, checks the saved/API payload and published
+bands, and exports each selected source atom: new engine receipts, source military lines/fractions, retirement
+administration, college consumption/capital, joint count/tenure pieces, the actual common capital rate and health
+residual. Item19/W09 remain beside. The old `cost_bn` fields are explicitly scaffold amounts;
+`v9_target_cost_bn` and `v9_parts` identify the final account. Every union/generation bridge closes at 1e-9bn.
+Typed source-file post checks retain their declared 1e-8bn precision; the published CSV band's check is 1e-4bn.
+[CALCULATION: `export_oct16.cjs`; DATA: case lane Consumers and selected `meta.items`]
+
+The original `households.py`, completion-key producer, reporter graph and old ignored caches are unchanged,
+because they are pinned primary inputs to other consumers. The oct16 Python adapter compiles the unchanged
+constructor through its existing, uniquely matched AST piece boundary, checks all inherited construction gates,
+then uses those declared source drivers. Original per-person prices stay fixed under statistical reweighting.
+Direct selected amounts are priced on original source weights, so their source-price changes reweight naturally
+too. The native item counts that mechanical change once; only the difference from its declared observed source
+parts is reconciled on changed records, with a separate generation/category bridge. Each selected new amount
+follows its own source line/population/generation. This is a declared first-order allocation, not an
+observed household counterfactual. [CALCULATION: `oct16_households.py`; ASSUMPTION: source-key allocation]
+
+Item21 retains original-union, constructed-descendant and completion source ownership. Original and latent
+drivers use their separate observed/constructed weight fractions. Its later-loss/G3-rate descendant profiles
+use the case's own separate age mixes and C3 weights; native-completion parts use the actual observed children's
+source vectors. Within each declared profile this remains the existing household source-key placement proxy,
+not newly observed individual MEPS donor ownership. Unknown populations, profile labels and typed sides stop.
+[CALCULATION: `source_details`, `source_candidates`, `latent_profiles`; ASSUMPTION: within-profile donor placement]
+
+Biological rosters and household record counts stay fixed. Per-person dollar balances are never multiplied by
+survey factors. A household's contributor sign uses the unweighted sum of its members' allocated dollar balances;
+weighted aggregate conservation uses the sum of each member's dollar balance times that member's own calibrated
+weight. Household ranks/household quantiles use mean member survey weight; member shares/quantiles use each
+member's own weight. Concentration uses actual person-weighted household dollars, including signed contributor
+balances; net concentration above 100% is possible, and gross-positive concentration is exported separately.
+[CALCULATION: `oct16_statistics.py`; source-contract regression `test_oct16_households.py`]
+
+Constructed coverage remains outside every observed household and rank. Final counts use
+`meta.population_v9.with_coverage - without_coverage`, not the retained historical `coverage` construction field.
+The separate block reports exact final generation counts/costs; no final joint age allocation is invented. Source
+post residuals lacking an observed driver also stay unlocated. `--unlocated-residual retain` is the explicit
+default; `stop` rejects this conditional allocation. Dollar residuals do not create additional people.
+`lineage_share_bounds*.csv` gives contributor-share identification bounds for all possible classifications of
+coverage people. [CALCULATION: `oct16_households.py`; ASSUMPTION: unlocated source residual retained]
+
+In shared allocation, the delivered count-price kernel carries observed `mixed_unit_removal` corrections while
+the shared scaffold has no item11 household price. Their explicitly unclassified post amounts remain unlocated
+under `retain`; `stop` rejects them. A zero classified driver or a nonzero cancelling driver still stops. This
+preserves the canonical shared total without claiming an identified household allocation or a freshly rebuilt
+shared count-price kernel. [DATA: coverage `line_parts_oct16_set.csv`, item16/joint; CALCULATION: `driver_parts`]
+
+Conditional decomposition controls toggle the selected full-spec source atoms on the same joint-price scaffold;
+weight-only and joint controls are separate. In addition, `export_controls_oct16.cjs` builds full source registries
+with the inherited items plus each new item separately, and an all-new-items-off control. Each control uses the
+final case's fixed specifications, its own selected count/kernel rules and exact source evaluator, then runs
+flat-pension household conventions A/B in both sets and allocations. `oct16_full_controls.py` compares their
+crossings, medians and person-weighted net concentration with the all-off baseline and the joint case. These
+full source runs are distinct from decomposition toggles, and their movements are not additive. Source partial
+selections retain the source's declared v8 standalone pricing; they are not a new own-price solution for every
+possible counterfactual interaction. Crossings, quantiles, actual person-weighted concentration and the H1–H10 companion restatements are
+derived from this lane's own oct16 files. All new uncertainty statements are point-allocation limits: this adapter
+does not produce a new conditional survey SE or full fiscal-model SE. Historical SEs are not transported.
+[CALCULATION: `oct16_households.py`, `oct16_claims.py`]
+
+- 2026-10-15 19:01 JST — Prepared source adapters compile; five bounded weighting/source-ownership regressions pass.
+  CASE_FINAL remains absent; no final case run, adoption gate or replay is claimed. [CALCULATION]
+- 2026-10-15 19:05 JST — Independent source review confirmed that holding each old subtotal while changing weights
+  and then adding the calibrated amount could redistribute unchanged person prices. Prior position: normalization
+  convention sufficient; new evidence: two unchanged $100 prices at weights 1/1 become $33.33/$133.33 under 0.5/1;
+  threshold cleared: yes; FLIP. The revised method preserves original unit prices and counts intrinsic reweighting
+  once, reconciling only source repricing on changed records. The regression also checks contributor signs and
+  weighted aggregate closure; the review record is retained in the parent's prop9 scratch directory. [CALCULATION]
+
+### Adopted oct16 point allocations and companion claims (2026-10-20)
+
+The adopted case is commit `7dfb4c66`. The source bridge reproduces personal set
+$368.029739 / 436.561527bn and cash $284.397043 / 352.928831bn, and the shared companion set
+$322.791968 / 390.470076bn and cash $233.479146 / 301.157255bn. All twelve central
+allocation/set/pension-placement runs pass their union and generation checks at 1e-9bn. The complete denominator
+is 44,903,074.086245 people; 1,951,760.082062 constructed coverage people remain outside every household rank.
+These are modeled member allocations under the stated source-placement rules. The below coverage-only bounds
+condition on those rules, including the unresolved placement of nonreporting descendants. [CALCULATION:
+`derived/oct16/**/controls*.json`, `people_survey_misses*.csv`; DATA: case `main_case_bands.csv`]
+
+The following own-output restatements use **personal allocation, convention A, flat pension allocation and
+member weighting**, except where a row explicitly compares a different convention. Low/high always follow the
+case's found ends. Net contributors have a negative allocated household cost; this is not a claim that those
+people would gain from removal. All variants, including B and person/on-books pension placement, remain in the
+machine-readable companion table. [CALCULATION: `derived/oct16/companion_claims.{json,csv}`, 164 numerical
+restatements and four unresolved/source records; `oct16_claims.py`]
+
+| Claim | Adopted oct16 result, low / high | Own source keys |
+|---|---|---|
+| H1 | Observed mixed-survivor tax-unit ownership remains unmeasured; the declared per-member placement is retained. | `companion_claims.json` `unresolved[id=H1]` |
+| H2 | Coverage-only contributor-share bounds: set 17.59–21.93% / 14.42–18.76%; cash 25.38–29.72% / 22.93–27.27%. | `lineage_share_bounds.csv` and `cash/lineage_share_bounds.csv`, A, `whole_lineage_share_lower/upper` |
+| H3 | Cash minus set allocated contributor share: +8.145 / +8.897 percentage points. | `companion_claims.csv`, H3, flat, personal, A, `value` |
+| H4 | Household-weighted minus member-weighted share: set +7.691 / +7.156pp; cash +9.227 / +8.916pp. | Same, H4; respective basis |
+| H5 | Shared minus personal share: set +2.177 / +1.986pp; cash +1.738 / +1.751pp. Shared also excludes item11, so this contrast includes that change. | Same, H5, flat; respective basis |
+| H6 | Selected nonreporter placement is unidentified. The uniform-placement reading remains a conditional sensitivity. | `companion_claims.json` `unresolved[id=H6]`; `uniform_placement/` point outputs |
+| H7 | Six original sampled minors retain the frozen source treatment; this migration does not reopen that source decision. | `companion_claims.json` `unresolved[id=H7]` |
+| H8 | Person/on-books minus flat contributor share: set +0.607 / +0.785pp; cash −0.124 / −0.217pp. | `companion_claims.csv`, H8, personal; respective basis, `value` |
+| H9 | Schools per head minus pupil-key share: set −4.677 / −3.978pp; cash −4.035 / −4.453pp. | Same, H9, flat, personal; respective basis |
+| H10 | First-order dependent-credit and service ownership remains unmeasured. Conserved source-key allocation does not establish actual mixed-family balances. | `companion_claims.json` `unresolved[id=H10]` |
+
+For that same personal/set/A/flat allocation, the median household balance per member is
+$9,833.08 / 10,870.17. The top 10% of households carry 59.90% / 52.45% of located net cost, and the top 20%
+89.57% / 79.22%. Ranking uses the declared mean calibrated member weight; dollar totals use each person's own
+weight. Gross-positive concentration and contributor offsets are exported separately. No new survey or
+full-model SE is inferred. [CALCULATION: `derived/oct16/household_balance_quantiles.csv`, A, per_member, 0.5,
+`net_cost_usd`; `concentration.csv`, A, `top10_share_of_total`, `top20_share_of_total`]
+
+The full-source comparison has 160 A/B/end/set/allocation rows. For personal allocation A with flat pension
+placement, joint v9 versus all new items off gives the following. Crossings count members at the current
+calibrated weights; selection, weights and prices may all change, so these are conditional source comparisons.
+Each standalone item's rows and the joint rows are retained; item16/17 are not stacked. [CALCULATION:
+`derived/oct16/full_source_item_controls.csv`, `item=joint, allocation=personal, convention=A`]
+
+| Basis/end | Contributor-share change, pp | Members entering / leaving contributor households | Median per-member change, USD | Top10 net-concentration change, pp |
+|---|---:|---:|---:|---:|
+| set/low | −0.271490 | 246,713 / 390,992 | +336.92 | −0.320703 |
+| set/high | +0.060839 | 270,290 / 269,445 | −107.87 | +0.959460 |
+| cash/low | −0.700336 | 156,862 / 492,581 | +312.50 | −0.779122 |
+| cash/high | +0.139197 | 371,825 / 343,916 | −140.34 | +1.535108 |
+
+- 2026-10-20 — Adopted first run: all74 subprocesses exit0, Node source-contract fixtures PASS, all64 Python
+  tests PASS (10.26s). Fifty allocation/control outputs pass all union/generation closures; maximum gap
+  2.8990143619012088e-12bn versus1e-9. Sum of measured subprocess times1806.819s; maximum producer lifetime
+  physical footprint2,197,637,904bytes versus2,500,000,000. Source signatures were taken from the adopted files,
+  not edited from candidate pins. First timings preserved in `_cache/oct16-first-timings.json`; full byte replay
+  follows. [CALCULATION: `_cache/oct16/command-{00..73}.log`, `timings.json`; own final-control JSON gates]
+
+- 2026-10-20 21:05 JST — Full adopted byte replay PASS: `IDENTICAL: 813/813 files unchanged (backup removed)`,
+  exit0,985.963s. All74 subprocesses return0 again; Node contracts PASS and64 Python tests PASS (5.95s).
+  Maximum closure remains2.8990143619012088e-12bn; maximum producer lifetime peak physical footprint is
+  2,293,009,216bytes<2,500,000,000. Wrapper child RSS2,871,296,000bytes is diagnostic and is not the physical
+  budget instrument. Exact receipt: `_cache/oct16-replay.log`; all command logs/timings in `_cache/oct16/`.
+  Historical tracked outputs and the principal case/generation/coverage files have an empty diff. No source
+  changed during replay; subsequent writes only record the receipt and path inventory. No Git writes.
+  [CALCULATION: `scripts/rerun_lane.py`, `run_oct16.py`, canonical producer footprint guards]
+
+- 2026-10-20 22:17 JST — Removed temporary-session adoption authority from all final household publishers.
+  The shared repository gate checks live/package case and lane identity, adopted status, date and decision.
+  Controls now store that structured receipt. The full74-command rebuild passes, exit0,947.209s; Node source
+  fixtures and all68 Python tests pass. An independent before/after comparison checks808 derived files:
+  758 are byte-identical, and the other50 differ only in adoption/source-hash fields of control JSON; all
+  remaining JSON fields compare exactly. No scientific output changed. Diagnostic child maxRSS is
+  2,874,408,960bytes; every principal producer footprint guard passes. Required final byte replay follows.
+  [CALCULATION: `/private/tmp/scratchfix-households-build-receipt.json`,
+  `/private/tmp/scratchfix-consumer-parity.json`, `_cache/oct16/command-{00..73}.log`]
+
+- 2026-10-20 22:34 JST — Required full byte replay PASS, `IDENTICAL: 813/813`, exit0,983.757s.
+  All74 children return0; Node contracts and all68 Python tests pass again (5.58s). The largest principal
+  producer footprint recorded in the final command logs is2,236,910,376bytes versus2,500,000,000; Python
+  diagnostic child maxRSS is2,277,064,704bytes. The finalized source and generated outputs remain unchanged
+  throughout replay. This receipt is appended after comparison. [CALCULATION:
+  `/private/tmp/scratchfix-households-replay.log`, `/private/tmp/scratchfix-households-replay-receipt.json`,
+  `_cache/oct16/command-{00..73}.log`, `/private/tmp/scratchfix-consumer-physical.json`]

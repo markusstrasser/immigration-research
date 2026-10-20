@@ -1,0 +1,7 @@
+convention,end,located_people,unlocated_coverage_people,denominator_people,located_share,whole_lineage_share_lower,whole_lineage_share_upper,interpretation
+A,low,42951314.0042,1951760.08206,44903074.0862,0.265301362754,0.253769755618,0.29723582385,identification bounds: no contributor classification for constructed coverage people
+B,low,42951314.0042,1951760.08206,44903074.0862,0.339309358533,0.324560914803,0.368026983035,identification bounds: no contributor classification for constructed coverage people
+A_schools_per_head,low,42951314.0042,1951760.08206,44903074.0862,0.224954579577,0.215176688472,0.258642756704,identification bounds: no contributor classification for constructed coverage people
+A,high,42951314.0042,1951760.08206,44903074.0862,0.239678908759,0.229261008957,0.272727077189,identification bounds: no contributor classification for constructed coverage people
+B,high,42951314.0042,1951760.08206,44903074.0862,0.327218436338,0.312995537457,0.356461605689,identification bounds: no contributor classification for constructed coverage people
+A_schools_per_head,high,42951314.0042,1951760.08206,44903074.0862,0.195153468768,0.186670914778,0.23013698301,identification bounds: no contributor classification for constructed coverage people

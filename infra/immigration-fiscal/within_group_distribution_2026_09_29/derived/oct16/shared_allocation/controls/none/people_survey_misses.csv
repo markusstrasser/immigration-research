@@ -1,0 +1,7 @@
+end,generation,block,net_missing_people,cost_bn,observed_household,age_band
+low,G1,people the survey misses,446105.107538,0.852209320751,False,unlocated; no final joint age allocation supplied
+low,G2,people the survey misses,824190.864134,4.47147599998,False,unlocated; no final joint age allocation supplied
+low,G3plus,people the survey misses,690117.647508,3.47912914296,False,unlocated; no final joint age allocation supplied
+high,G1,people the survey misses,446105.107538,1.70700305769,False,unlocated; no final joint age allocation supplied
+high,G2,people the survey misses,824190.864134,6.06046336663,False,unlocated; no final joint age allocation supplied
+high,G3plus,people the survey misses,690117.647508,4.87131872827,False,unlocated; no final joint age allocation supplied

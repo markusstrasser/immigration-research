@@ -1,0 +1,41 @@
+convention,end,item,scope,located_delta_bn,baseline_share,single_item_share
+A,low,record_weight_calibration_only,fixed source totals; original vs calibrated normalization and ranking weights,-3.88096169425,0.272304725865,0.273117623759
+A,low,veterans_compensation,conditional joint-price typed toggle,0,0.273117623759,0.273117623759
+A,low,income_security_administration,conditional joint-price typed toggle,0,0.273117623759,0.273117623759
+A,low,public_college_response,conditional joint-price typed toggle,0,0.273117623759,0.273117623759
+A,low,native_minor_calibration,conditional joint-price typed toggle,0,0.273117623759,0.273117623759
+A,low,coverage_tenure,conditional joint-price typed toggle,0,0.273117623759,0.273117623759
+A,low,consumption_tax_bases,conditional joint-price typed toggle,0,0.273117623759,0.273117623759
+A,low,one_rate,conditional joint-price typed toggle,0,0.273117623759,0.273117623759
+A,low,health_residual_key,conditional joint-price typed toggle,0,0.273117623759,0.273117623759
+A,low,coverage_repricing,conditional joint-price typed toggle,0,0.273117623759,0.273117623759
+B,low,record_weight_calibration_only,fixed source totals; original vs calibrated normalization and ranking weights,-2.80877532623,0.347371646234,0.348194879791
+B,low,veterans_compensation,conditional joint-price typed toggle,0,0.348194879791,0.348194879791
+B,low,income_security_administration,conditional joint-price typed toggle,0,0.348194879791,0.348194879791
+B,low,public_college_response,conditional joint-price typed toggle,0,0.348194879791,0.348194879791
+B,low,native_minor_calibration,conditional joint-price typed toggle,0,0.348194879791,0.348194879791
+B,low,coverage_tenure,conditional joint-price typed toggle,0,0.348194879791,0.348194879791
+B,low,consumption_tax_bases,conditional joint-price typed toggle,0,0.348194879791,0.348194879791
+B,low,one_rate,conditional joint-price typed toggle,0,0.348194879791,0.348194879791
+B,low,health_residual_key,conditional joint-price typed toggle,0,0.348194879791,0.348194879791
+B,low,coverage_repricing,conditional joint-price typed toggle,0,0.348194879791,0.348194879791
+A,high,record_weight_calibration_only,fixed source totals; original vs calibrated normalization and ranking weights,-4.2318693418,0.238286940543,0.239029136639
+A,high,veterans_compensation,conditional joint-price typed toggle,0,0.239029136639,0.239029136639
+A,high,income_security_administration,conditional joint-price typed toggle,0,0.239029136639,0.239029136639
+A,high,public_college_response,conditional joint-price typed toggle,0,0.239029136639,0.239029136639
+A,high,native_minor_calibration,conditional joint-price typed toggle,0,0.239029136639,0.239029136639
+A,high,coverage_tenure,conditional joint-price typed toggle,0,0.239029136639,0.239029136639
+A,high,consumption_tax_bases,conditional joint-price typed toggle,0,0.239029136639,0.239029136639
+A,high,one_rate,conditional joint-price typed toggle,0,0.239029136639,0.239029136639
+A,high,health_residual_key,conditional joint-price typed toggle,0,0.239029136639,0.239029136639
+A,high,coverage_repricing,conditional joint-price typed toggle,0,0.239029136639,0.239029136639
+B,high,record_weight_calibration_only,fixed source totals; original vs calibrated normalization and ranking weights,-2.81447837944,0.334409112521,0.335176995609
+B,high,veterans_compensation,conditional joint-price typed toggle,0,0.335176995609,0.335176995609
+B,high,income_security_administration,conditional joint-price typed toggle,0,0.335176995609,0.335176995609
+B,high,public_college_response,conditional joint-price typed toggle,0,0.335176995609,0.335176995609
+B,high,native_minor_calibration,conditional joint-price typed toggle,0,0.335176995609,0.335176995609
+B,high,coverage_tenure,conditional joint-price typed toggle,0,0.335176995609,0.335176995609
+B,high,consumption_tax_bases,conditional joint-price typed toggle,0,0.335176995609,0.335176995609
+B,high,one_rate,conditional joint-price typed toggle,0,0.335176995609,0.335176995609
+B,high,health_residual_key,conditional joint-price typed toggle,0,0.335176995609,0.335176995609
+B,high,coverage_repricing,conditional joint-price typed toggle,0,0.335176995609,0.335176995609

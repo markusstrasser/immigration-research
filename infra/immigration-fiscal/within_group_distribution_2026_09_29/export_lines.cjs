@@ -42,10 +42,14 @@
  * that line. The union and the cash set are also gated at the case's full-precision band (its summary.json, 1e-6).
  * Writes _cache/oct07/lines.json.
  *
- * --case oct14 (the default): live main case v7, on the generation account's oct14 split. MAIN_SPECS is the
+ * --case oct14 (historical): main case v7, on the generation account's oct14 split. MAIN_SPECS is the
  * 32 personal specifications, with its ends checked against summary.json v7.end_specifications. The adopted and
  * cash_set rows of main_case_bands.csv are the oracle. R7's job-capital lineage receipt parts and R6's credit lineage
  * parts are carried in G3+'s own lines, separately from the pension gate's lineage parts. Writes _cache/oct14/lines.json.
+ *
+ * --case oct16 (default): the live v9 source bridge. Builds the inherited oct15 placement scaffold in memory, then
+ * export_oct16.cjs adds dynamic full-specification source atoms and calibrated count/rate metadata. Original
+ * cost_bn stays the baseline; v9_target_cost_bn and v9_parts supply the final cost. Writes only _cache/oct16/.
  *
  * Every case reads capRule, each capital component's key rule, from the case's payload (meta.capital_return
  * components); on September 27 it must equal the capital lane's engine_components.json, whose rules the committed
@@ -63,7 +67,7 @@
  * pieces' implied freight key is the generation's excise share before the gasoline shift (1e-9); the part-rekeyed
  * shares add to the component's key (1e-12).
  * Writes _cache/lines.json (September 27), or _cache/<case>/lines.json for a later case. Run from the repository root:
- *   node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs [--case oct14]
+ *   node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs [--case oct16]
  */
 "use strict";
 const fs = require("fs");
@@ -108,7 +112,16 @@ const CASES = {
     summary: "generation_summary_oct15.json", lineage: true, items: true, live: true, v8: true },
 };
 const argv = process.argv.slice(2);
-const CASE = argv.includes("--case") ? argv[argv.indexOf("--case") + 1] : "oct15";
+const REQUESTED_CASE = argv.includes("--case") ? argv[argv.indexOf("--case") + 1] : "oct16";
+if (REQUESTED_CASE === "oct16") require("../scripts/adoption_gate.cjs").requireAdopted("oct16");
+if (argv.includes("--control-item")) {
+  if(REQUESTED_CASE!=="oct16")throw Error("[BLOCKED] --control-item is oct16 only");
+  require("./export_controls_oct16.cjs").run(argv);
+  process.exit(0);
+}
+// Oct16 retains the thoroughly checked source-placement scaffold in memory, then
+// adds its full-specification typed changes. No historical export is rewritten.
+const CASE = REQUESTED_CASE === "oct16" ? "oct15" : REQUESTED_CASE;
 if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
 const C = CASES[CASE];
 const ALLOCATION = argv.includes("--allocation") ? argv[argv.indexOf("--allocation") + 1] : "personal";
@@ -907,6 +920,13 @@ if(C.v8) {
   if(fails) process.exit(1);
 }
 function atomicWrite(file,data){const temporary=`${file}.tmp-${process.pid}`;try{fs.writeFileSync(temporary,data);fs.renameSync(temporary,file);}finally{if(fs.existsSync(temporary))fs.unlinkSync(temporary);}}
+if (REQUESTED_CASE === "oct16") {
+  const cashExport = out.meta.cash_export;
+  for (const g of GENS) for (const end of ["low","high"]) cashExport.generations[g][end].roads = out.generations[g][end].roads;
+  delete out.meta.cash_export;
+  require("./export_oct16.cjs").write({set:out,cash:cashExport,allocation:ALLOCATION,atomicWrite});
+  process.exit(0);
+}
 fs.mkdirSync(path.dirname(path.join(HERE, "_cache", C.out)), { recursive: true });
 if (C.v8) {
   const cashExport = out.meta.cash_export;
