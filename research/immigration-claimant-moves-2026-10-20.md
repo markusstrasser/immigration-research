@@ -91,10 +91,15 @@ the headline that it contradicts:
 - Blau–Donehower 2017: "the answer depends on what we consider the costs of an immigrant", beside the second
   generation as "fiscal powerhouses".
 
-Unacknowledged reversal (T11): Krugman wrote in 2006 that "you'd be hard pressed to find any set of assumptions under
-which Mexican immigrants are a net fiscal plus" and in 2024 that "undocumented immigrants are especially good for the
-budget". The 2024 column flags his wage reversal ("myself included") but not this one. The 2006 sentence matches the
-repo: the Mexico-born with their children cost other residents $154.8–185.9bn a year, about 0.5–0.6% of GDP.
+Two statements never reconciled: Krugman wrote in 2006 that "you'd be hard pressed to find any set of assumptions under
+which Mexican immigrants are a net fiscal plus" (low-wage Mexican immigrants, NRC estimates, all levels of government)
+and in 2024 that "undocumented immigrants are especially good for the budget, because they pay payroll taxes … without
+being eligible for future benefits" (the unauthorized of all origins, the federal entitlement budget). These are
+different objects, so this is not a sign reversal on one quantity; the 2024 sentence is moves 3, 4 and 11 (federal
+scope, one program's surplus, the worker as the unit) and is heard as answering the question the 2006 one answered the
+other way. The 2024 column flags his wage reversal ("myself included") and does not mention the 2006 fiscal judgment.
+The 2006 sentence matches the repo on its own object: the Mexico-born with their children cost other residents
+$154.8–185.9bn a year, about 0.5–0.6% of GDP.
 [SOURCE: both sentences re-fetched by the parent on 2026-10-20 from archive.nytimes.com and heraldnet.com; DATA:
 `infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_oct15.csv`]
 

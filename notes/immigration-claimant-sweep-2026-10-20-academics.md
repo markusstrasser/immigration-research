@@ -42,7 +42,9 @@ are +$77k (no budget adjustment, no added public-good cost), −$36k (no budget 
 +$259k and +$173k (CBO long-term budget regime, the same two public-good rules). The row omitted the +$173k cell, so
 "the other cells read +$77k and −$36k" is incomplete; $259k is still the most favourable of the four. [SOURCE:
 `infra/immigration-fiscal/all_age_ledger_2026_09_17/derived/review/fiscal-construct-sources-20260917.md`, "Concrete
-NAS sign reversal"] Krugman's 2006 and 2024 sentences (C1, A6) were re-fetched by the parent and match verbatim.
+NAS sign reversal"] Krugman's 2006 and 2024 sentences (C1, A6) were re-fetched by the parent and match verbatim. They are not a sign
+reversal on one object (verdict item 1): 2006 is low-wage Mexican immigrants across all levels of government, 2024 the
+unauthorized of all origins and the federal payroll/entitlement budget. Read A6 as T2/T3/NM5 heard against C1, not T11.
 
 ## 2. New moves
 
