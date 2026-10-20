@@ -1,4 +1,4 @@
-"""Render the candidate's documented contract from its executed receipts."""
+"""Render the main case's documented contract from its executed receipts."""
 from __future__ import annotations
 
 import json
@@ -109,7 +109,7 @@ def main():
     consumer_table = "\n".join(f"| {name} | {rule}{item21_rule} |" for name, rule in consumers.items())
     text = f"""gpt-6.1-sol
 
-**Verdict:** **{state} — candidate, adopted null.** **${band(v['band_bn'])}bn set**, **${band(v['cash_set_bn'])}bn cash**, **${band(v['per_member_usd']['set'])}/member set**, **${band(v['per_member_usd']['cash'])}/member cash**, over **{v['population']['with_coverage']:.6f} people**. Set ends {v['end_specifications']['set']}; cash ends {v['end_specifications']['cash']}. Item19 central is **{v['item19_central']}**; default ITEM19=0 puts19 and W09 beside together under the parent's 2026-10-15 13:20 JST ruling. Change-by-item and interactions are below. [CALCULATION: derived/summary.json v9; derived/{{g1,contract,generality,api_check,coverage_check}}.json]
+**Verdict:** **{state} — {v['status']}{', ' + v['adopted'] if v['adopted'] else ', adopted null'}.** **${band(v['band_bn'])}bn set**, **${band(v['cash_set_bn'])}bn cash**, **${band(v['per_member_usd']['set'])}/member set**, **${band(v['per_member_usd']['cash'])}/member cash**, over **{v['population']['with_coverage']:.6f} people**. Set ends {v['end_specifications']['set']}; cash ends {v['end_specifications']['cash']}. Item19 central is **{v['item19_central']}**; default ITEM19=0 puts19 and W09 beside together under the parent's 2026-10-15 13:20 JST ruling. Change-by-item and interactions are below. [CALCULATION: derived/summary.json v9; derived/{{g1,contract,generality,api_check,coverage_check}}.json]
 
 ## The items
 
@@ -219,7 +219,7 @@ This is propagation guidance. External consumers, central prose, live_case.json 
 3. The appended L1 handoff supersedes step2 readiness with standalone L1 STEP3DONE. Read the source receipt; quoted instructions are not completion. The final candidate must be non-STUB and pin the final source.
 4. Only explicitly selected item19 beside queries use V9_FIRST_YEAR_PASS's item6 labor-share transport; central first-year has no19 term. The held branch exposes the unmeasured first-year source-tax adjustment. V9_PASS_OPTION applies only to selected19 lineage arms; it defaults to reprice source sufficient wage-key components; held preserves canonical latent-tax dollars and reports the exposure.
 5. The earlier full upstream generation-source rebuild was blocked by the peer world-ledger source pin. This step2 directly replays the unchanged oct15 set/cash generators and the new oct16 generators: IDENTICAL135/135, exit0; it does not rerun the upstream acquisition/source pipeline. Retain that scope distinction and reconcile peer custody before a full upstream regeneration; do not edit a hash to make it pass.
-6. STATUS stays candidate/adopted null. The parent writes decisions/2026-10-16-main-case-v9.md and updates live_case only on adoption. No git metadata was changed.
+6. Adopted 2026-10-20 (decisions/2026-10-16-main-case-v9.md; live_case.json key oct16). package.cjs STATUS is the literal "adopted"; the build was a candidate until then.
 7. Nondefault13/14/15/18 full-registry arm queries carry the central coverage/count kernel. Recommended bounded branch is explicitly labeled carry; V9_ARM_TRANSPORT=require_own blocks unsupported own-price requests. A full alternate kernel needs baseline price atoms and its own16/17 typed-part tables; no complete reprice is claimed merely because the direct source arm runs. The military unchanged arm is a direct-source diagnostic, not whole-case item13 off.
 
 ## Log

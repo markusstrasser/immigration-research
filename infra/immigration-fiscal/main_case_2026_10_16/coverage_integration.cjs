@@ -30,7 +30,7 @@ function apply({base,built,which,meta,population,selectedItems}){
  const held=built.filter(b=>Object.hasOwn(centralArms,b.item.id)&&(b.arm||null)!==centralArms[b.item.id]);
  if(held.length&&mode==="require_own")throw Error("[BLOCKED] own-price item-arm kernel unavailable for "+held.map(b=>`${b.item.id}:${b.arm}`).join(", ")+"; V9_ARM_TRANSPORT=carry explicitly carries central coverage/count prices");
  const transport={mode,central_item_arm_prices:true,
-  count_kernel_scope:"items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+  count_kernel_scope:"items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
   by_item:Object.fromEntries(held.map(b=>[b.item.id,{selected_arm:b.arm,central_arm:centralArms[b.item.id],
    observed_channels:"selected source arm on observed engine and completion amounts",
    coverage_channels:"central/default-arm item12 prices carried; not own prices for this selected item arm",

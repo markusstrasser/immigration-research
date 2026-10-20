@@ -1,6 +1,6 @@
 gpt-6.1-sol
 
-**Verdict:** **PASS — candidate, adopted null.** **$368.029739 / 436.561527bn set**, **$284.397043 / 352.928831bn cash**, **$8196.092287 / 9722.308239/member set**, **$6333.576247 / 7859.792199/member cash**, over **44903074.086245 people**. Set ends [[16, 11], [16, 11]]; cash ends [[16, 11], [16, 11]]. Item19 central is **False**; default ITEM19=0 puts19 and W09 beside together under the parent's 2026-10-15 13:20 JST ruling. Change-by-item and interactions are below. [CALCULATION: derived/summary.json v9; derived/{g1,contract,generality,api_check,coverage_check}.json]
+**Verdict:** **PASS — adopted, 2026-10-20.** **$368.029739 / 436.561527bn set**, **$284.397043 / 352.928831bn cash**, **$8196.092287 / 9722.308239/member set**, **$6333.576247 / 7859.792199/member cash**, over **44903074.086245 people**. Set ends [[16, 11], [16, 11]]; cash ends [[16, 11], [16, 11]]. Item19 central is **False**; default ITEM19=0 puts19 and W09 beside together under the parent's 2026-10-15 13:20 JST ruling. Change-by-item and interactions are below. [CALCULATION: derived/summary.json v9; derived/{g1,contract,generality,api_check,coverage_check}.json]
 
 ## The items
 
@@ -160,7 +160,7 @@ This is propagation guidance. External consumers, central prose, live_case.json 
 3. The appended L1 handoff supersedes step2 readiness with standalone L1 STEP3DONE. Read the source receipt; quoted instructions are not completion. The final candidate must be non-STUB and pin the final source.
 4. Only explicitly selected item19 beside queries use V9_FIRST_YEAR_PASS's item6 labor-share transport; central first-year has no19 term. The held branch exposes the unmeasured first-year source-tax adjustment. V9_PASS_OPTION applies only to selected19 lineage arms; it defaults to reprice source sufficient wage-key components; held preserves canonical latent-tax dollars and reports the exposure.
 5. The earlier full upstream generation-source rebuild was blocked by the peer world-ledger source pin. This step2 directly replays the unchanged oct15 set/cash generators and the new oct16 generators: IDENTICAL135/135, exit0; it does not rerun the upstream acquisition/source pipeline. Retain that scope distinction and reconcile peer custody before a full upstream regeneration; do not edit a hash to make it pass.
-6. STATUS stays candidate/adopted null. The parent writes decisions/2026-10-16-main-case-v9.md and updates live_case only on adoption. No git metadata was changed.
+6. Adopted 2026-10-20 (decisions/2026-10-16-main-case-v9.md; live_case.json key oct16). package.cjs STATUS is the literal "adopted"; the build was a candidate until then.
 7. Nondefault13/14/15/18 full-registry arm queries carry the central coverage/count kernel. Recommended bounded branch is explicitly labeled carry; V9_ARM_TRANSPORT=require_own blocks unsupported own-price requests. A full alternate kernel needs baseline price atoms and its own16/17 typed-part tables; no complete reprice is claimed merely because the direct source arm runs. The military unchanged arm is a direct-source diagnostic, not whole-case item13 off.
 
 ## Log

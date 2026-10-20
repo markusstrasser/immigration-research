@@ -1,7 +1,17 @@
 {
-  "key": "oct15",
-  "lane": "main_case_2026_10_15",
-  "adopted": "2026-10-15",
-  "decision": "decisions/2026-10-15-main-case-v8.md",
-  "superseded": ["oct14", "oct07", "oct05", "sept29", "sept27", "sept26", "sept24", "sept23"]
+  "key": "oct16",
+  "lane": "main_case_2026_10_16",
+  "adopted": "2026-10-20",
+  "decision": "decisions/2026-10-16-main-case-v9.md",
+  "superseded": [
+    "oct15",
+    "oct14",
+    "oct07",
+    "oct05",
+    "sept29",
+    "sept27",
+    "sept26",
+    "sept24",
+    "sept23"
+  ]
 }

@@ -60,9 +60,7 @@
    },
    "missing": [],
    "type_changed": [],
-   "type_changes_documented": [
-    "meta.adopted: string -> null: v9 is a candidate; the parent controls adoption"
-   ],
+   "type_changes_documented": [],
    "relocated": [],
    "added_paths": [
     "meta.items.[].arms.burial_retained",
@@ -2204,9 +2202,7 @@
    },
    "missing": [],
    "type_changed": [],
-   "type_changes_documented": [
-    "meta.adopted: string -> null: v9 is a candidate; the parent controls adoption"
-   ],
+   "type_changes_documented": [],
    "relocated": [],
    "added_paths": [
     "meta.items.[].arms.burial_retained",

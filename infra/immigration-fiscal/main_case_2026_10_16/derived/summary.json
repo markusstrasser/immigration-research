@@ -235344,8 +235344,8 @@
   }
  },
  "v9": {
-  "status": "candidate",
-  "adopted": null,
+  "status": "adopted",
+  "adopted": "2026-10-20",
   "stub13": false,
   "item19_central": false,
   "selected_items": [
@@ -748095,7 +748095,7 @@
    "veterans_compensation_burial_retained": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "veterans_compensation": {
       "selected_arm": "burial_retained",
@@ -748115,7 +748115,7 @@
    "veterans_compensation_compensation_only": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "veterans_compensation": {
       "selected_arm": "compensation_only",
@@ -748135,7 +748135,7 @@
    "veterans_compensation_obligation_mix": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "veterans_compensation": {
       "selected_arm": "obligation_mix",
@@ -748155,7 +748155,7 @@
    "veterans_compensation_treasury_compensation_mix": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "veterans_compensation": {
       "selected_arm": "treasury_compensation_mix",
@@ -748175,7 +748175,7 @@
    "veterans_compensation_unchanged": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "veterans_compensation": {
       "selected_arm": "unchanged",
@@ -748195,7 +748195,7 @@
    "veterans_compensation_va_medical_four_accounts": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "veterans_compensation": {
       "selected_arm": "va_medical_four_accounts",
@@ -748215,7 +748215,7 @@
    "veterans_compensation_va_medical_services_only": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "veterans_compensation": {
       "selected_arm": "va_medical_services_only",
@@ -748235,7 +748235,7 @@
    "income_security_administration_partial_retirement_proportional_investment": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "income_security_administration": {
       "selected_arm": "partial_retirement_proportional_investment",
@@ -748255,7 +748255,7 @@
    "income_security_administration_retirement_all_investment": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "income_security_administration": {
       "selected_arm": "retirement_all_investment",
@@ -748275,7 +748275,7 @@
    "income_security_administration_retirement_no_investment": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "income_security_administration": {
       "selected_arm": "retirement_no_investment",
@@ -748295,7 +748295,7 @@
    "income_security_administration_state_welfare_residual_medicaid_covered": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "income_security_administration": {
       "selected_arm": "state_welfare_residual_medicaid_covered",
@@ -748315,7 +748315,7 @@
    "income_security_administration_state_welfare_residual_population": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "income_security_administration": {
       "selected_arm": "state_welfare_residual_population",
@@ -748335,7 +748335,7 @@
    "income_security_administration_state_welfare_residual_snap": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "income_security_administration": {
       "selected_arm": "state_welfare_residual_snap",
@@ -748355,7 +748355,7 @@
    "income_security_administration_state_welfare_residual_ssi": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "income_security_administration": {
       "selected_arm": "state_welfare_residual_ssi",
@@ -748375,7 +748375,7 @@
    "income_security_administration_whole_line_medicaid_covered": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "income_security_administration": {
       "selected_arm": "whole_line_medicaid_covered",
@@ -748395,7 +748395,7 @@
    "income_security_administration_whole_line_population": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "income_security_administration": {
       "selected_arm": "whole_line_population",
@@ -748415,7 +748415,7 @@
    "income_security_administration_whole_line_snap": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "income_security_administration": {
       "selected_arm": "whole_line_snap",
@@ -748435,7 +748435,7 @@
    "income_security_administration_whole_line_social_security": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "income_security_administration": {
       "selected_arm": "whole_line_social_security",
@@ -748455,7 +748455,7 @@
    "income_security_administration_whole_line_ssi": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "income_security_administration": {
       "selected_arm": "whole_line_ssi",
@@ -748475,7 +748475,7 @@
    "income_security_administration_whole_line_unemployment": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "income_security_administration": {
       "selected_arm": "whole_line_unemployment",
@@ -748495,7 +748495,7 @@
    "income_security_administration_whole_line_workers_comp": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "income_security_administration": {
       "selected_arm": "whole_line_workers_comp",
@@ -748515,7 +748515,7 @@
    "public_college_response_auxiliaries_outside_education": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "public_college_response": {
       "selected_arm": "auxiliaries_outside_education",
@@ -748535,7 +748535,7 @@
    "public_college_response_central_conditional": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "public_college_response": {
       "selected_arm": "central_conditional",
@@ -748555,7 +748555,7 @@
    "public_college_response_education_sales_public_service": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "public_college_response": {
       "selected_arm": "education_sales_public_service",
@@ -748575,7 +748575,7 @@
    "public_college_response_interest_charged_to_other": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "public_college_response": {
       "selected_arm": "interest_charged_to_other",
@@ -748595,7 +748595,7 @@
    "public_college_response_public_service_outside_education": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "public_college_response": {
       "selected_arm": "public_service_outside_education",
@@ -748615,7 +748615,7 @@
    "public_college_response_research_not_fully_removed_diagnostic": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "public_college_response": {
       "selected_arm": "research_not_fully_removed_diagnostic",
@@ -748635,7 +748635,7 @@
    "public_college_response_tuition_all_discounts_added_back": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "public_college_response": {
       "selected_arm": "tuition_all_discounts_added_back",
@@ -748655,7 +748655,7 @@
    "public_college_response_tuition_net_only": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "public_college_response": {
       "selected_arm": "tuition_net_only",
@@ -748675,7 +748675,7 @@
    "public_college_response_unclassified_other_fixed": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "public_college_response": {
       "selected_arm": "unclassified_other_fixed",
@@ -748695,7 +748695,7 @@
    "public_college_response_capital_expense_mix": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "public_college_response": {
       "selected_arm": "capital_expense_mix",
@@ -748715,7 +748715,7 @@
    "public_college_response_capital_key_as_operating": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "public_college_response": {
       "selected_arm": "capital_key_as_operating",
@@ -748735,7 +748735,7 @@
    "public_college_response_uniform_use_ratio": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "public_college_response": {
       "selected_arm": "uniform_use_ratio",
@@ -748755,7 +748755,7 @@
    "public_college_response_unchanged": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "public_college_response": {
       "selected_arm": "unchanged",
@@ -748779,7 +748779,7 @@
    "consumption_tax_bases_off": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "consumption_tax_bases": {
       "selected_arm": "off",
@@ -748799,7 +748799,7 @@
    "consumption_tax_bases_household_grocery": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "consumption_tax_bases": {
       "selected_arm": "household_grocery",
@@ -748819,7 +748819,7 @@
    "consumption_tax_bases_household_snap": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "consumption_tax_bases": {
       "selected_arm": "household_snap",
@@ -748843,7 +748843,7 @@
    "consumption_tax_bases_business_sales_crosscheck": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "consumption_tax_bases": {
       "selected_arm": "business_sales_crosscheck",
@@ -748863,7 +748863,7 @@
    "consumption_tax_bases_whole_line_share_superseded": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "consumption_tax_bases": {
       "selected_arm": "whole_line_share_superseded",
@@ -748883,7 +748883,7 @@
    "consumption_tax_bases_business_customs_carried": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "consumption_tax_bases": {
       "selected_arm": "business_customs_carried",
@@ -748903,7 +748903,7 @@
    "consumption_tax_bases_business_customs_final_zero": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "consumption_tax_bases": {
       "selected_arm": "business_customs_final_zero",
@@ -748923,7 +748923,7 @@
    "consumption_tax_bases_business_customs_final_one": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "consumption_tax_bases": {
       "selected_arm": "business_customs_final_one",
@@ -748943,7 +748943,7 @@
    "consumption_tax_bases_business_sales_customs": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "consumption_tax_bases": {
       "selected_arm": "business_sales_customs",
@@ -748963,7 +748963,7 @@
    "consumption_tax_bases_business_sales_mining_5": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "consumption_tax_bases": {
       "selected_arm": "business_sales_mining_5",
@@ -748983,7 +748983,7 @@
    "consumption_tax_bases_business_sales_mining_5_customs": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "consumption_tax_bases": {
       "selected_arm": "business_sales_mining_5_customs",
@@ -749003,7 +749003,7 @@
    "consumption_tax_bases_business_sales_mining_8": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "consumption_tax_bases": {
       "selected_arm": "business_sales_mining_8",
@@ -749023,7 +749023,7 @@
    "consumption_tax_bases_business_sales_mining_8_customs": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "consumption_tax_bases": {
       "selected_arm": "business_sales_mining_8_customs",
@@ -749043,7 +749043,7 @@
    "consumption_tax_bases_joint_sales_customs_household": {
     "mode": "carry",
     "central_item_arm_prices": true,
-    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18/21 arms and noncentral lineage/DA options carry those count-item prices",
+    "count_kernel_scope": "items16/17 use the central/default source-arm signed-price kernel; nondefault13/14/15/18 arms and noncentral lineage/DA options carry those count-item prices",
     "by_item": {
      "consumption_tax_bases": {
       "selected_arm": "joint_sales_customs_household",

@@ -10,7 +10,7 @@ const BASKET=require("../consumption_tax_bases_r5_2026_10_15/item.cjs");
 const PASS=require("../passthrough_source_tax_r5_2026_10_15/item.cjs");
 const RATE=require("./item_rate.cjs");
 const HERE=__dirname,LANE="main_case_2026_10_16",CASE_KEY="oct16";
-const DECISION="decisions/2026-10-16-main-case-v9.md",STATUS=process.env.V9_STATUS||"candidate";
+const DECISION="decisions/2026-10-16-main-case-v9.md",STATUS="adopted",ADOPTED="2026-10-20";
 const COVERAGE_MODE=process.env.V9_COVERAGE||"repriced";
 const clone=x=>JSON.parse(JSON.stringify(x)),sum=a=>a.reduce((x,y)=>x+y,0);
 const PRINCIPAL_LINEAGE=V8.correctionsPayload().meta.lineage;
@@ -98,7 +98,7 @@ function layer(base,built,which,identity){
    ee.push(...clone(e));m=V8.Engine.applyCorrections(m,{edits:e,meta:m.corrections});
   }
   out.edits=bp.edits.concat(ee);
-  Object.assign(out.meta,clone(meta),{source:LANE+"/package.cjs",decision:DECISION,adopted:stamp==="adopted"?"2026-10-16":null,status:stamp+": main case v9",case:bp.meta.case+"; v9 "+stamp,population_v9:clone(population),items:(bp.meta.items||[]).concat(rr),v9:{coverage_mode:COVERAGE_MODE,stub13:STUB13,selected_items:identity.ids,default_arms:DEFAULT_ARMS,post_engine_rule:"evaluateFull or postFor; method-specific spending and specification-specific capital"}});
+  Object.assign(out.meta,clone(meta),{source:LANE+"/package.cjs",decision:DECISION,adopted:stamp==="adopted"?ADOPTED:null,status:stamp+": main case v9",case:bp.meta.case+"; v9 "+stamp,population_v9:clone(population),items:(bp.meta.items||[]).concat(rr),v9:{coverage_mode:COVERAGE_MODE,stub13:STUB13,selected_items:identity.ids,default_arms:DEFAULT_ARMS,post_engine_rule:"evaluateFull or postFor; method-specific spending and specification-specific capital"}});
   return out;
  };
  if(meta.health_residual_key)meta.health_residual_key.parent_transport={allocation:"delivered personal original-union/completion donor prices carried under shared specifications; own household donor calibration not measured",lineage:"source own-age profiles held; each added-lineage profile follows its declared count/C3 mass",coverage_count:"source-owned arm-specific signed coverage/count increments; central count kernel carried under lineage/DA options"};
@@ -162,7 +162,7 @@ function layer(base,built,which,identity){
  const bandFor=(m,p,ss)=>V8.span(ss.map(s=>cost(m,s,p)));
  const evalPackage=(name,method,o)=>{const oo=base.withCentral(o||{});return bandFor(modelFor(name,method,oo),oo.profile,specsFor(o));};
  const central=o=>V8.mean2(...V8.METHODS.map(method=>evalPackage("central",method,o)));
- return {...base,HERE,LANE,CASE_KEY,DECISION,STATUS:stamp,ADOPTED:stamp==="adopted"?"2026-10-16":null,correctionsPayload:payloadFor,payloadModel,modelFor,withItems:(m,o)=>apply(base.withItems(m,o),o),evaluateFull,viaCandidate,cost,bandFor,band:(m,p)=>bandFor(m,p,MAIN_SPECS),evalPackage,central,specsFor,MAIN_SPECS,SHARED_SPECS,ALL_SPECS,CASE_ITEMS:base.CASE_ITEMS.concat(records),ITEM_EDITS:base.ITEM_EDITS.concat(edits),V9_ITEMS:records,V9_EDITS:edits,POST_ENGINE:{...base.POST_ENGINE,...meta},POPULATION_V9:population,postFor:(m,s,p,r)=>postAdditions(m,s,p,r||base.evaluateFull(m,s,p)),postEngine:s=>evaluateFull(payloadModel(),s).post_engine.total_bn,OCT15:base,V9_BASE:base,V9_BUILT:built};
+ return {...base,HERE,LANE,CASE_KEY,DECISION,STATUS:stamp,ADOPTED:stamp==="adopted"?ADOPTED:null,correctionsPayload:payloadFor,payloadModel,modelFor,withItems:(m,o)=>apply(base.withItems(m,o),o),evaluateFull,viaCandidate,cost,bandFor,band:(m,p)=>bandFor(m,p,MAIN_SPECS),evalPackage,central,specsFor,MAIN_SPECS,SHARED_SPECS,ALL_SPECS,CASE_ITEMS:base.CASE_ITEMS.concat(records),ITEM_EDITS:base.ITEM_EDITS.concat(edits),V9_ITEMS:records,V9_EDITS:edits,POST_ENGINE:{...base.POST_ENGINE,...meta},POPULATION_V9:population,postFor:(m,s,p,r)=>postAdditions(m,s,p,r||base.evaluateFull(m,s,p)),postEngine:s=>evaluateFull(payloadModel(),s).post_engine.total_bn,OCT15:base,V9_BASE:base,V9_BUILT:built};
 }
 function caseOf(B,ids,selection={},lineage){
  const order=ids.map(id=>REGISTRY.findIndex(x=>x.id===id));
@@ -220,4 +220,4 @@ function caseOn9(base,next,selection={},stamp,lineage){
  return {...set,CASH:cash,CASH_PAYLOAD:cash.correctionsPayload(),ITEM_IDS:ids,ITEM_ARMS:clone(selection),V9_IDS:next};
 }
 const CASE=caseOf(V8.OCT05,process.env.V9_NEW_ITEMS==="0"?V8.CANDIDATE:CANDIDATE);
-module.exports={...V8,...CASE,V8_PACKAGE:V8,OCT15:V8,REGISTRY,CANDIDATE,NEW_IDS,DEFAULT_ARMS,caseOf,caseOn9,forItems9:layer,COVERAGE_MODE,STUB13,SPEND,R5_COUNT:COUNT_ITEMS,BASKET,PASS,RATE,ITEM19,ITEM19_ARM,ITEM18_CARRIER_MODE,V9:{HERE,LANE,CASE_KEY,DECISION,STATUS,ADOPTED:null}};
+module.exports={...V8,...CASE,V8_PACKAGE:V8,OCT15:V8,REGISTRY,CANDIDATE,NEW_IDS,DEFAULT_ARMS,caseOf,caseOn9,forItems9:layer,COVERAGE_MODE,STUB13,SPEND,R5_COUNT:COUNT_ITEMS,BASKET,PASS,RATE,ITEM19,ITEM19_ARM,ITEM18_CARRIER_MODE,V9:{HERE,LANE,CASE_KEY,DECISION,STATUS,ADOPTED}};

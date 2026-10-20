@@ -111,12 +111,13 @@ def load_live(root=ROOT):
     if set(live) != {"key", "lane", "adopted", "decision", "superseded"}:
         blocked("live_case.json has missing or extra fields")
     adopted = date.fromisoformat(live["adopted"])
-    if key_date(live["key"], adopted.year) != adopted:
-        blocked("live key and adoption date disagree")
-    if live["lane"] != "main_case_" + adopted.strftime("%Y_%m_%d"):
-        blocked("live lane and adoption date disagree")
+    case_date = key_date(live["key"], adopted.year)
+    if case_date > adopted:
+        blocked("live case cannot be adopted before its case date")
+    if live["lane"] != "main_case_" + case_date.strftime("%Y_%m_%d"):
+        blocked("live lane and case key disagree")
     old = [key_date(k, adopted.year) for k in live["superseded"]]
-    if old != sorted(set(old), reverse=True) or any(d >= adopted for d in old):
+    if old != sorted(set(old), reverse=True) or any(d >= case_date for d in old):
         blocked("superseded keys must be unique, newest first, and earlier than live")
     observed = set()
     for p in (root / FISCAL).glob("*/derived/*"):
@@ -124,7 +125,7 @@ def load_live(root=ROOT):
             observed.add(p.name)
         elif p.suffix in {".csv", ".json"}:
             observed.update(re.findall(r"_((?:oct|sept)\d{2})(?=\.|_[A-Za-z]+\.)", p.name))
-    missing = sorted(k for k in observed if key_date(k, adopted.year) < adopted and k not in live["superseded"])
+    missing = sorted(k for k in observed if key_date(k, adopted.year) < case_date and k not in live["superseded"])
     if missing:
         blocked(f"consumer output keys missing from superseded: {missing}")
     package = root / FISCAL / live["lane"] / "package.cjs"

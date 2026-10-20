@@ -32773,7 +32773,7 @@
  "v9": {
   "meta": {
    "lane": "main_case_2026_10_16",
-   "status": "candidate: main case v9",
+   "status": "adopted: main case v9",
    "stub": false,
    "counts": {
     "parts": {
@@ -32810,7 +32810,7 @@
      11
     ]
    },
-   "evaluated_payload_json_sha256": "e5d8396f42c5a34d2d35af62d3e5ec2b39a170412fe119af0ab5237618acac6b",
+   "evaluated_payload_json_sha256": "2127ee221c4be0c65c99a913f75a5e4266cc5856929205658351e625df65f298",
    "source_files": {
     "v8_lineage_addition": {
      "file": "main_case_2026_10_15/derived/lineage_addition.json",

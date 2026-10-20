@@ -125,6 +125,27 @@ def fake_repo(tmp_path, live):
     return package
 
 
+@pytest.mark.parametrize("mutation", [None, "before-case", "wrong-lane", "supersede-live"])
+def test_adoption_can_follow_case_date_without_losing_identity_guards(tmp_path, mutation):
+    live = {"key": "oct16", "lane": "main_case_2026_10_16", "adopted": "2026-10-20",
+            "decision": "decisions/2026-10-16-main-case-v9.md", "superseded": ["oct15", "oct14"]}
+    package = fake_repo(tmp_path, live)
+    # Current output files name the case vintage, even when adoption is later.
+    (package.parent / "derived" / "current_oct16.csv").write_text("value\n")
+    assert C.load_live(tmp_path) == live
+    if mutation is None:
+        return
+    if mutation == "before-case":
+        live["adopted"] = "2026-10-15"
+    elif mutation == "wrong-lane":
+        live["lane"] = "main_case_2026_10_20"
+    else:
+        live["superseded"].insert(0, "oct16")
+    (tmp_path / C.MANIFEST).write_text(json.dumps(live))
+    with pytest.raises(ValueError, match="BLOCKED"):
+        C.load_live(tmp_path)
+
+
 @pytest.mark.parametrize("mutation", ["status", "cash", "set", "newer", "order", "key", "missing-key"])
 def test_adoption_mismatch_blocks(tmp_path, live, mutation):
     package = fake_repo(tmp_path, live)

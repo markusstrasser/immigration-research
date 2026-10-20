@@ -602,3 +602,287 @@ Round 5 therefore rejects convergence. Material findings became measured v9 item
 and companion-claim corrections were retained with their limits. A checked lane and a candidate case do not
 establish that the whole revised case has converged. Its review remains open. [SOURCE: parent's dispositions;
 CALCULATION: measured lanes above; INFERENCE: convergence status]
+
+## Round 6, 2026-10-15: whole-case review of the v9 candidate
+
+**Verdict:** Round 6 led to one conditional correction over the $5bn bar: item 21 replaces a VA/TRICARE-heavy
+health-residual key with an other-federal/state-local payment proxy. It raises the joint case $24.006453bn at each
+end in both sets. Adoption on 2026-10-20 retains the missing program/exposure bridge as **UNSETTLED**, with
+same-scope construction arms −$6.370079 / −$6.370079bn (population), −$6.146812 / −$6.146812bn (no translation),
+and +$7.152098 / +$7.152098bn (plain pooled), relative to the central. These are sensitivities, not error bounds.
+The separate fix check found nine HOLDS, nine draft/metadata DEFECTs and one UNSETTLED; no additional evaluator
+error ≥$5bn. Adoption repairs those draft/metadata defects. Other findings remain below the bar, recorded, refuted
+or unsettled; the open list below runs in both directions. The
+operator ended the loop after this round (2026-10-15 17:16 JST: "ok after round 6 we can take a break ... and finsih
+up here"), so no whole-case round reviewed v9 as adopted: convergence is not shown.
+
+### What ran
+
+Six packets, built on the candidate (969d1fe8, $344.0–412.6bn): receipts (WA), spending and responses (WB), who is
+counted (WC), distribution and uncertainty (U1), stocks and comparisons (U2), and the frame and reader-facing claims
+(F). The bar was $5bn at either end, a stated-claim reversal, or a method failure. Each packet went to Argon
+(architecture and gaps), Opus and Astra at max effort; Astra's premise scout ran for WC, U1, U2 and F and produced no
+output for WA and WB. Opus's WB and U1 runs ended in a transport refusal after their answers were complete; the
+answers were recovered from the stream with a provenance note (`claude-output.salvage-note.md` in each review
+directory). F's packet carried a neutral header only. [SOURCE: `.model-review/2026-10-15-assumptions-v9-r6-*`]
+
+Sol verifiers checked every finding at source, one per packet; the parent spot-checked WB01, the only over-bar
+finding, at source. The verification records keep the reviewer labels, traces, calculations and disagreements, in the
+ignored `.model-review/` directory:
+
+- **WA:** [receipts verification](../.model-review/2026-10-15-assumptions-v9-r6-WA-verification.md).
+- **WB:** [spending verification](../.model-review/2026-10-15-assumptions-v9-r6-WB-verification.md), with the
+  [health bridge](../.model-review/2026-10-15-assumptions-v9-r6-WB-health-bridge.md).
+- **WC:** [counting verification](../.model-review/2026-10-15-assumptions-v9-r6-WC-verification.md).
+- **U1:** [distribution and uncertainty verification](../.model-review/2026-10-15-assumptions-v9-r6-U1-verification.md).
+- **U2:** [stocks and comparisons verification](../.model-review/2026-10-15-assumptions-v9-r6-U2-verification.md).
+- **F:** [frame verification](../.model-review/2026-10-15-assumptions-v9-r6-F-verification.md).
+- **Fixes:** [the check of the fixes before adoption](../.model-review/2026-10-15-assumptions-v9-r6-FIX-verification.md).
+
+### Adopted into v9
+
+| Item or fix | Finding | What changed | Size on v9, low / high |
+|---|---|---|---|
+| 21. The health residual keyed by its payers | WB01 | MEPS OFD+STL donors, pooled winsor translation; VA separate; program bridge unresolved | +$24.006453 / +$24.006453bn joint case, set and cash; standalone +$24.042151 / +$24.370900bn |
+| The first-year reading | WB18 | military costs retain response 1, with signed coverage/count restoration; year-one coefficients, not a cash-transition forecast | +$18.791642 / +$18.791642bn repair, both sets; final set $313.835786–370.838151bn, cash $230.203091–287.205456bn |
+| The business-purchase arm, beside | WA06 | denominator on the same base: +$12.06bn → +$3.51bn on v8 (+$4.63 / 5.31bn with mining weighted back) | beside, 0 / 0 |
+| Population metadata | WC07, WC08 | the population sentence names the 3.04M added descendants; `population_v9.coverage` closes on the calibrated count (8,654 people) | 0 / 0 |
+| Labels | F02–F05, F22, F23 | item 13's equal-cost replacement premise; the shared allocation crosses the member boundary; "current law" scoped to 2024 rules; the one-rate claim's scope; VA "actual outlays"; the ancestry companion's two bands | 0 / 0 |
+
+### Open in both directions (recorded, not adopted)
+
+The rows below were checked against the packet verifications and r6v-FIX. Dollar amounts are annual $bn;
+low / high are the source’s endpoint coordinates, not an interval. Screens and reviewer estimates are labelled.
+None is an additional adopted correction. [SOURCE: round-6 WA, WB, WC, F and FIX verifications]
+
+| Finding | Direction and size | Why not adopted |
+|---|---|---|
+| WB01 item 21’s program/exposure bridge | Relative to adopted central: population −6.370079 / −6.370079; no translation −6.146812 / −6.146812; plain pooled +7.152098 / +7.152098, both sets | Proxy adopted provisionally; arms are not error bounds. Reconcile federal 179.700 and S&L 126.839 consumption plus 1.819755 OPEB into non-VA program subblocks, key each and rerun on the same kernels (FIX:66–70) |
+| WB02 income-security administration’s remainder | Conditional screens −8.871 to −6.895 at each end, both sets, using 11.8–12.8% source shares | Actual program mix/sign unresolved; Medicaid administration is already in health consumption (WB:21,80–90) |
+| WB06 justice subfunctions | Estimated screens −4.6 to −6.9 low, −1.5 to −2.5 high, both sets | New fire/civil-court split unmeasured; recorded border excluded; federal-security split unsized (WB:25) |
+| WB14 Part A transport | Conditional screen −5.125 / −5.125 set; 0 / 0 cash, before count/coverage changes | The 12% haircut is unmeasured; pooled 0.88 is not Part A per-enrollee use (WB:33) |
+| WB19 means-tested VA care | Reviewer estimate +0.5–1.5 at each end; fixed-source-block ceiling screen +5.905 / +5.905, both sets, before count repricing | No lineage-specific spending/response measure; ceiling is not a measured error or a below-bar bound (WB:39) |
+| WA05 business inputs | Sign and complete purchaser effect unmeasured; corrected source-v8 business/customs arm +3.505376 / +3.505376, both sets | Purchaser split unmeasured; incidence does not decide which receipts vanish (WA:26–27; FIX:94–96) |
+| WA08 vacant and second homes | Sign and endpoint amounts unidentified; +3.1–3.9 is an unverified estimate | Receipt reallocation would affect set/cash equally; overlaps agricultural land, not an additive correction (WA:29) |
+| R6WC01 item 16’s origin calibration | Undo-16/retain-17 screen +4.140 / +4.361 set, +4.154 / +4.375 cash | ACS parent-linked test possible; not a measured correction or bound on a joint lineage refit (WC:21) |
+| F01 / F02 military replacement | Benefit-only screen +5 / +5 if replacement fraction q <0.735708, both sets; actual joint net unknown in either direction | Neither replacement-cohort nor receipt/opportunity-cost/recruitment arm is priced (F:21–22; FIX:106–108) |
+| WB17 public land | Conditional screen about +3.5–4.2 at either end, both sets, per 10% land/charged structures | New argument recorded; land ratio and complete v9 correction unmeasured. Engine-only screen +3.869 / +4.244 predates item 15 (WB:36) |
+| WB04 booked normal costs | Competing reviewer estimates ±5–10 or at most ±2 at each end, both sets; neither verified | Recorded new argument; booked plan valuations retained, net sign unknown (WB:23) |
+| R6WC13 C3 (prior WC11) | Conditional screen +6.004 / +5.808 set, +6.089 / +5.893 cash for C3 lower by 0.35 | Recorded sensitivity; no newly measured full-fiscal closure coefficient (WC:33) |
+| R6WC15 identity return (prior WC12) | Prior-v8 r=.5 screen −7.841 / −9.048 set, −6.726 / −7.933 cash | Recorded, not transported as a v9 correction (WC:35) |
+
+### Whole-case findings: WA, WB, WC
+
+Sizes are annual $bn, low / high at the verifier's stated ends, unless another unit is shown. Positive raises net cost to other US residents. **Screen** means conditional, held-fixed arithmetic; **estimate** means an unmeasured reviewer amount; measured describes a checked source fact or calculation, not an observed removal effect. Set and cash are the verifier's accounting sets. An exposure, alternative or companion difference is not a correction. Findings that share a mechanism are not additive.
+
+Evidence abbreviations WA, WB, WC, U1, U2 and F refer to `.model-review/2026-10-15-assumptions-v9-r6-{WA,WB,WC,U1,U2,F}-verification.md`; numbers after a colon are lines in those files. HB refers to `.model-review/2026-10-15-assumptions-v9-r6-WB-health-bridge.md`. Source vintages and numerical precision are retained separately for each verifier. These tables retain the
+pre-fix candidate’s screens where labelled; they are not a current adopted-case results table. The final-state
+updates for WB01, WB18 and R6WC08 below supersede their initial dispositions. WA06 also supersedes the old +12.057796
+source-v8 business-input arm quoted historically by WA05/F09; the corrected arm is +3.505376.
+
+| ID | Claim | Disposition and size | Evidence anchor |
+|---|---|---|---|
+| WA01 | Future benefit taxes are omitted from pension accrual | **REFUTED:** justified extra credit 0 / 0, cash unchanged; accrual is already net of future benefit taxes | WA:22, §Remaining source checks, WA01 |
+| WA02 | Corporate risk and rent treatment is newly inconsistent with item 20 | **RECORDED:** response .37→1 **screen** 0 / −26.227645 engine; 0 / −27.397274 with fixed source coverage, both sets. No measured correction or full count refit | WA:23,94 |
+| WA03 | Industry normal share should replace .37 | **RECORDED:** existing industry-arm **screen** 0 / −2.622764 engine, both sets; coverage moves in the same direction | WA:24,94 |
+| WA04 | Household consumption retains shelter, health and education | **CONFIRMED-BELOW:** completed-union CE-decile **screen** +0.425814 / +0.425814 general sales, set=cash; statutory correction unmeasured | WA:25,96 |
+| WA05 | Alternative 5 confuses source collections with ultimate incidence | **RECORDED-NEW:** sign and both-end/set/cash amount unmeasured. Source-v8 +12.057796 is a conditional arm; WA06's +3.505376 proxy **screen** is not a v9 correction | WA:26, §WA05 |
+| WA06 | Business-sales numerator and denominator cover different bases | **CONFIRMED:** headline 0 / 0; source-v8 beside **screen** +12.057796→+3.505376 / +3.505376, change −8.552419 / −8.552419, both sets. Purchaser mix remains unmeasured | WA:27, §WA06 |
+| WA07 | Agricultural land should follow mining's zero response | **RECORDED:** old-union arm +2.51 / +2.25, both sets, not a transported v9 correction. USDA's 82% premise is misstated | WA:28,78 |
+| WA08 | Vacant and second homes remain in business-property taxes | **UNSETTLED:** sign and low/high amount unidentified; direct receipt reallocation set=cash. +3.1–3.9 is an **estimate**, not verified; combined claim overlaps WA07 | WA:29, §WA08 |
+| WA09 | Item 11 never moves with the new count or household keys | **RECORDED:** base 10.740016 / 14.531690 remains, but assigned count contributions move. Additional nonlinear solve unmeasured; −0.5–3.5 **estimate** not reproduced | WA:30,98 |
+| WA10 | Corporate completion carriers retain the old household capital key | **REFUTED:** justified correction 0 / 0, both sets; differing carrier ratios do not establish the alleged ~$0.23 drift | WA:31,100 |
+| WA11 | Item 18's declared reporter edits differ from its source evaluator | **RECORDED:** declared-carrier alternative **screen** +0.00333949 / +0.00333949 on source v8, both sets; household correction is present | WA:32 |
+| WA12 | Item 19 and W09 beside amounts are frozen under new counts | **RECORDED:** naive frozen-pair **screen** −0.072958 / +0.545384, set=cash; own-key difference unmeasured. Both arms are excluded centrally | WA:33 |
+| WA13 | Active-duty members' taxes remain credited despite fixed defense | **REFUTED:** +1.5–2.5 **estimate** not established; target excludes active-duty records. No military-specific national residual correction measured | WA:34 |
+| WA14 | A zero tuition carrier proves average headcount allocation | **REFUTED:** carrier-omission correction 0 / 0, both sets; fees are embedded in education under their own key | WA:35,100 |
+| WA15 | Tenure transport assumes independence and exceeds its property-tax effect | **RECORDED:** undoing item 17 **screen** −3.837132 / −3.683155 set; −4.260281 / −4.106305 cash. Exposure, not a correction; independence is expressly disclaimed | WA:36,98 |
+| WA16 | Production receipts retain old wedges without phaseouts | **CONFIRMED-BELOW:** headline 0 / 0 under fixed production identity. Fiscal-only **screens** +4.908039 / +3.228598 cash; −3.055763 / −2.010137 set | WA:37,102 |
+| WA17 | Foreign-owner source withholding remains unpriced | **CONFIRMED-BELOW:** zero response is measured; cost-down −1 to −2.8 low, high ×.37 is an **estimate**. Composition and response unverified | WA:38,104 |
+| WA18 | State corporate taxes lack destination-specific apportionment | **CONFIRMED-BELOW:** −2 to −4 at both ends is an **estimate**, not a measured correction; sign and high-end response remain unmeasured | WA:39,104 |
+| WA19 | Provider and MCO taxes need program-specific bases | **CONFIRMED-BELOW:** distinct tax base and absent specific key verified; −1 to −3 at both ends is an **estimate**. NIPA membership and net sign unverified | WA:40,104 |
+| WA20 | Re-keying business transfers could exceed the prior exposure | **RECORDED-NEW:** old response-1 **screen** −4.126bn / −4.126bn, both sets; job-key −8.7 to −12 is an **estimate**. Responsive component unmeasured | WA:41,104 |
+| WB01 | Residual health retains a VA/TRICARE-heavy payer proxy | **CONDITIONAL FIX / UNSETTLED BRIDGE:** item 21 adds +24.006453 / +24.006453 to joint v9, both sets; population/no-translation/plain sensitivities relative to central −6.370079 / −6.370079, −6.146812 / −6.146812, +7.152098 / +7.152098. Initial +14.04–17.31 screen and OPEB story are superseded; program identification remains open | WB:20, §WB01; HB:5–13; FIX:38–70 |
+| WB02 | Income-security administration lacks its own program mix | **UNSETTLED:** conditional **screen** −8.871 to −6.895 / −8.871 to −6.895, both sets, assumes 11.8–12.8% source shares. Actual mix/sign unresolved; Medicaid belongs in health | WB:21, §WB02 |
+| WB03 | Cash should replace all employee pension and OPEB accruals | **RECORDED:** −10 to −16 / −10 to −16 cash is an unmeasured **estimate**. Existing companion switches only members' OASDI/Part A | WB:22,132 |
+| WB04 | Imported normal costs can be repriced at the one rate | **RECORDED-NEW:** competing **estimates** ±5–10 / ±5–10 and at most ±2 / ±2, both sets; neither verified, net sign unidentified | WB:23,128 |
+| WB05 | Border spending should have zero response | **RECORDED:** historical arm −3.11 / −3.11; current −3.3 to −3.8 / −3.3 to −3.8 **estimate**, both sets. No new border evidence | WB:24 |
+| WB06 | Fire, civil courts and federal-security functions need separate rules | **UNSETTLED:** new-part **screen estimate** −4.6 to −6.9 low / −1.5 to −2.5 high, both sets; excludes recorded border and an unmeasured federal-security split | WB:25, §WB06 |
+| WB07 | Item 11 retains obsolete capital, military and college prices | **REFUTED:** established defect 0 / 0, both sets; those terms are absent from the scalar. Household-basket interactions are a separate limitation | WB:26 |
+| WB08 | College response applies a gross research share to a net base | **REFUTED:** established gross/net defect 0 / 0, both sets; response 0.885774850 uses net expenditure and fees keep their own response | WB:27 |
+| WB09 | Equal completion-use and population amounts prove silent fallback | **REFUTED:** raw-coding alternative **screen** +0.0431 / +0.0431, both sets, is not a correction; active use key has a source anchor | WB:28 |
+| WB10 | Nondefault source arms retain central count and coverage kernels | **RECORDED:** own-kernel error unmeasured at both ends/sets; full arm delta and central exposure are not error bounds. Carry mode is explicit | WB:29 |
+| WB11 | Raw response 1 proves full-case military and college corrections failed | **REFUTED:** measured full-case discrepancy 0 / 0, both sets; typed post-engine corrections operate | WB:30 |
+| WB12 | ACA premium credits are still allocated entirely by EITC/ACTC | **REFUTED:** −8 to −10 / −8 to −10 **estimate** duplicates an applied split; no new correction verified | WB:31 |
+| WB13 | Pension accrual omits authorization, career and vesting gates | **REFUTED:** established missing-gate correction 0 / 0; gates operate. 5% ×109.324=5.466 set-only is a threshold **screen**, not measured ineligibility | WB:32,130 |
+| WB14 | Future Part A lacks lineage-specific hospital-use transport | **UNSETTLED:** conditional **screen** −5.125 / −5.125 set; 0 / 0 cash, before count/coverage changes. The 12% haircut is unmeasured; pooled 0.88 is not Part A use | WB:33, §WB14 |
+| WB15 | State health prices still mark up the federal VA block | **REFUTED:** identified VA markup 0 / 0, both sets; state-price correction covers S&L health only | WB:34; HB:15 |
+| WB16 | Low-end schools should use 0.836 and half-per-head police means half-fixed | **RECORDED:** school-arm **screen** −30.1 / −26.9 set and cash; allocation weights are not response coefficients. No new school evidence | WB:35 |
+| WB17 | One-rate and full-cost rules strengthen the public-land objection | **RECORDED-NEW:** conditional **screen** ~+3.5 to +4.2 / +3.5 to +4.2 per 10% land/charged structures, both sets; no measured land ratio or full v9 correction | WB:36,126 |
+| WB18 | First-year evaluation imports steady-state military response zero | **REPAIRED:** headline 0 / 0; final own-count/coverage restoration +18.791642 / +18.791642, both sets. Earlier frozen-count screens +12.562, +13.013 and +18.918 at each end are historical | WB:37, §WB18; FIX:86–92 |
+| WB19 | Means-tested VA access can respond despite fixed veteran stock | **UNSETTLED:** +0.5 to +1.5 / +0.5 to +1.5 is an **estimate**; fixed-block response-1 ceiling **screen** +5.905 / +5.905, both sets, before count repricing | WB:39, §WB19 |
+| WB20 | Care extra-hours credit duplicates production welfare | **REFUTED:** proposed +2.7 / +2.7 removal is not an established overlap correction; production holds native hours fixed | WB:40,136 |
+| WB21 | Private production welfare should be removed from fiscal net cost | **RECORDED:** deletion **screen** lowers cost 0.704 / 0.463, both sets; no identified closure error. Current frame includes private welfare | WB:41,136 |
+| WB22 | VA capital remains responsive after VA operating costs are fixed | **CONFIRMED-BELOW:** exposure **screen** 0 to ~−0.15 / 0 to ~−0.15, set/cash, is the entire federal-health return; VA is only part | WB:42 |
+| WB23 | VA operating bridge is approximate and actual outlays are called appropriation | **CONFIRMED-BELOW:** source-arm **screens** +1.267 / +1.267 or −2.063 / −2.063, set/cash; not joint v9 corrections. Terminology correction 0 / 0 | WB:43,134 |
+| WB24 | First-year college operating change retains source transport | **RECORDED:** noncoverage first-year **screen** −3.561 / −3.561; deletion +3.561 / +3.561, both sets, is not a correction. Instructional response unmeasured | WB:44 |
+| R6WC01 | Origin calibration can alter descent counts for a reporting difference | **UNSETTLED:** undo-16/retain-17 **screen** +4.140 / +4.361 set; +4.154 / +4.375 cash. Neither a correction nor a joint-lineage-refit bound | WC:21, §1 |
+| R6WC02 | Synthetic stock is not jointly refit to calibrated reporters and loss rates | **UNSETTLED:** low/high correction unidentified in both sets. Extra +3–5bn is an unsupported **estimate**; measured single-year loss changes are 2.03% / 3.55% relative, not a national refit | WC:22, §2 |
+| R6WC03 | Neither-US-parent reporters are deducted twice | **REFUTED:** no valid double-subtraction delta; survey marginals cover all reporters while prices apply only to existing lineage members | WC:23 |
+| R6WC04 | Native-adult calibration was never checked | **CONFIRMED-BELOW:** new conditional household-universe **screen** −1.379 / −2.838 set; +1.076 / −0.382 cash, joint with 16/17; no household refit or growth adjustment | WC:24, §6 |
+| R6WC05 | Person rakes do not identify household and survivor recalibration | **UNSETTLED:** both-end/set/cash sign and size unknown; fixed-roster screens do not bound a joint tax/SPM solve | WC:25, §3 |
+| R6WC06 | National Hispanic-total preservation is one-sided | **CONFIRMED-BELOW:** current measured effect 0 / 0, both sets; preservation is selected nationally, not by age-cell tests | WC:26 |
+| R6WC07 | Decision population sentence omits original descendants | **CONFIRMED-BELOW:** fiscal effect 0 / 0; measured prose omission 3,039,719.59 people, already included by evaluator | WC:27,117 |
+| R6WC08 | Coverage metadata fails additive population closure | **CONFIRMED-BELOW:** fiscal effect 0 / 0, both sets; measured overstatement 8,653.537118 people repaired before adoption; coverage now 1,951,760.082062. Final denominator and numerator are correct | WC:28,117 |
+| R6WC09 | Demographic-analysis companions carry central count adjustments | **CONFIRMED-BELOW:** own-minus-carried **screens**, through 29: −1.830 / −1.785 set, −1.921 / −1.875 cash; through 17: −0.336 / −0.318 set, −0.307 / −0.289 cash | WC:29, §7 |
+| R6WC10 | School and first-year companions omit source-response transport | **REFUTED:** alleged +0.5–0.9bn **estimate** unsupported; source multipliers already operate. Broader residual transport is disclosed separately | WC:30 |
+| R6WC11 | Lineage alternatives lack their own count and coverage kernels | **UNSETTLED:** signed low/high error unknown in both sets. Arm a/c set departures −13.474 / −14.943 and +13.467 / +14.935 are alternative-count **screens**, not errors | WC:31, §4 |
+| R6WC12 | Nondefault source arms retain central coverage and count kernels | **UNSETTLED:** arm-specific low/high error unknown, both sets; central case unaffected. Central exposures do not bound selected-arm errors | WC:32, §5 |
+| R6WC13 | Schooling closure does not identify full fiscal closure | **RECORDED:** C3 lower by 0.35 gives conditional **screen** +6.004 / +5.808 set; +6.089 / +5.893 cash. No newly measured fiscal coefficient | WC:33,123 |
+| R6WC14 | Loaded ASEC and NLSY data already identify full fiscal closure | **REFUTED:** no new +6bn correction; claimed benefit fields absent. Measured earnings closure 1.268 (SE2.911), employment 0.448 (SE0.629), do not identify fiscal closure | WC:34,123 |
+| R6WC15 | Return to identification and overlapping parental paths are omitted | **RECORDED:** prior-v8 r=.5 **screen** −7.841 / −9.048 set; −6.726 / −7.933 cash, not a transported v9 estimate | WC:35 |
+| R6WC16 | Later losses and early-loss selectivity need different fiscal transport | **RECORDED:** prior beta=.4 **screen** +3.38 / +3.27 set; +3.42 / +3.32 cash. Later-loss sensitivity remains beside | WC:36 |
+| R6WC17 | Within-generation tenure normalization suppresses reallocation | **CONFIRMED-BELOW:** isolated age×sex alternative **screen** +0.0448 / +0.0272 set; +0.1459 / +0.1283 cash. Claimed −1.66 / −1.84 changes counts too | WC:37, §8 |
+| R6WC18 | Marginal tenure contrasts do not identify joint missing-person profiles | **RECORDED:** standalone-v8 tenure reversal **screen** −3.760 / −3.616 set; −4.182 / −4.037 cash, not estimated bias | WC:38 |
+| R6WC19 | Item 18 omits its declared reporter-carrier edits | **RECORDED:** known declared-carrier **screen** about +0.003339 / +0.003339, both sets, on v8; oracle-preservation policy is explicit | WC:39 |
+| R6WC20 | Pre-1848 ancestry exclusion uses uneven evidence standards | **RECORDED-NEW:** low/high amount unknown; ≤0.3M / ≲−3bn is an unverified historical-demographic **estimate**, not a bound | WC:40,125 |
+| R6WC21 | Institutions and seasonal-worker group quarters are outside the frame | **RECORDED:** net delta unmeasured; ~1bn institutional and <1bn H-2 **estimates** do not identify missing full administrative costs | WC:41,127 |
+| R6WC22 | Former service is misclassified as current active duty | **CONFIRMED-BELOW:** measured exclusion of 116 Mexican and 503 other Hispanic native minors; ~0.002bn Mexican-only **estimate**, not integrated or signed | WC:42,119 |
+
+WA-PACKET is **CONFIRMED**: missing production reduces the displayed total by 11.909829 / 7.834504, set=cash; headline 0 / 0. WB-PACKET is **CONFIRMED**: measured missing credits 11.910 / 7.835, both sets; case correction 0 / 0. The synthetic-response complaint is not reproduced. WC-PACKET is **REFUTED**: the source explicitly uses the unchanged v8 denominator; current-v9 denominator-only **screen** +$55.39 / $66.42 set and +$41.92 / $52.96 cash per member is not a missing case cost. [SOURCE: WA:42, §PACKET; WB:38, §PACKET; WC:43]
+
+### U1: distribution, households and uncertainty
+
+IDs below retain U1's own labels. Historical v8 outputs, candidate migration arithmetic and unexecuted v9 consumers are distinguished in the verifier. Percentages, percentage points and weighted equivalent dollars retain their stated denominators.
+
+| ID | Claim | Disposition and size | Evidence anchor |
+|---|---|---|---|
+| D01 | Financing keys are stipulated rather than observed incidence | **RECORDED:** prior Q1 financing-switch **screen** 68.29; no new headline correction | U1:21; Round 5 U1-D1 |
+| D02 | Fiscal financing includes noncash capital and accrual | **RECORDED:** measured v8 noncash components 123.735 / 149.145; a new bridge is required, not an extra subtraction | U1:22 |
+| D03 | Tax mix changes distributional incidence | **RECORDED:** prior Q5 sensitivity **screen** 24.04–32.58; headline 0 | U1:23; Round 5 U1-D5 |
+| D04 | V9 fiscal migration is computable at fixed distribution keys | **CONFIRMED:** fixed-key migration **screen** −21.768644 / −43.426710 set; −21.361973 / −43.020040 cash; central −32.597677. Not an extra headline correction | U1:24, §D04 |
+| D05 | Welfare weights can make population stress material | **RECORDED-NEW:** fixed-profile **screen** ordinary loss +3.417; weighted +9.212–10.820 at η1–2, same ends/sets. Exposure scaling is not identified | U1:25, §D05 |
+| D06 | Counterpart weights need consistent use across masks | **CONFIRMED-BELOW:** measured other-resident weight +318,334.68; equal-person **screen** redistributes at most 0.034753 / 0.041676, cash smaller; headline 0 | U1:26, §D06 |
+| D07 | Fixed military spending leaves replacement welfare surplus unidentified | **UNSETTLED:** fiscal 0 / 0 both sets; nonbudget sign/size unknown. Gross 18.918439 exposure is not net welfare or a bound | U1:27, §D07 |
+| D08 | Selected-item evaluation must keep item 19 and W09 beside | **RECORDED:** no demonstrated central leak; correction 0. Item-selection contract expressly excludes both arms | U1:28 |
+| H01 | Opening household balance formula has the wrong prose sign | **CONFIRMED-BELOW:** measured effect 0 / 0 both sets; executed contributor predicate is correct | U1:29 |
+| H02 | Net concentration above 100% is invalid | **REFUTED:** correction 0; measured B top-20 net shares 128.30% / 114.14% are possible with negative contributor balances | U1:30,137 |
+| H03 | V9 changes may cross household distribution thresholds | **UNSETTLED:** provisional set contributor **screen** A +0.94 / +1.41pp, B +1.52 / +1.59pp; BA+ A high +2.7pp. Concentration +3–12pp is not validated; cash unmeasured | U1:31, §H03 |
+| H04 | Child raking directly discounts each child's household cost | **REFUTED:** no measured 7.3% household discount; +2.2–4.5pp is an unsupported **estimate**. Weights do not change biological rosters or multiply sign-test balances | U1:32,93 |
+| H05 | Unlocated people imply a whole-lineage identification width | **RECORDED:** measured width 4.346607pp from 1.951760M / 44.903074M, both sets; not error in the located share | U1:33,139 |
+| H06 | Member sums omit nonmember family accounts | **RECORDED:** no new size; mixed-survivor and item-11 placement remain conditional | U1:34; Round 5 U1-H1/H4/H5 |
+| H07 | Fixed-end parts prevent interior and shared conservation | **REFUTED:** no executed v9 gate failure; full-spec APIs exist. Household oct16 is not yet implemented | U1:35 |
+| H08 | Personal/shared and set/cash differences arise from account definitions | **RECORDED:** companion-difference **screen** personal minus shared 45.237771 / 46.091451 set; 50.917897 / 51.771576 cash, not a correction | U1:36 |
+| U01 | Fixed-target replicates condition on ACS targets | **RECORDED:** point change 0; illustrative count-SE dollar **screens** 0.416 national / 0.328 outside CA/TX, not low/high fiscal SEs | U1:37,115 |
+| U02 | Fixed calibration invalidates conditional variance | **REFUTED:** conditional target-count variance zero is appropriate; a combined estimator is feasible but unmeasured | U1:38,115–119 |
+| U03 | Guidance permits unchanged v8 errors except for items 16/17 | **REFUTED:** all selected source changes require propagation; no implemented oct16 uncertainty route exists to establish a current numerical error | U1:39 |
+| U04 | All VA and TRICARE proxy error must disappear | **REFUTED:** ≤0.2bn interval correction is an unsupported **estimate**; retained pension and mixed-health covariance survives | U1:40,121 |
+| U05 | Joint ACS, tenure and price uncertainty needs measurement | **UNSETTLED:** point 0 / 0 both sets; interval-edge changes unmeasured and not bounded by central count-item cancellation | U1:41, §U05 |
+| U06 | Interior specifications may own the interval edges | **RECORDED:** no measured crossing; the prior endpoint-transport uncertainty remains open | U1:42; Round 5 U1-U6 |
+| U07 | Common rates duplicate specification points | **CONFIRMED-BELOW:** measured 32 personal rows per method but 16 distinct costs; duplicates alone do not change the union | U1:43 |
+| U08a | Composite reading supplies most of the specification span | **CONFIRMED:** set sensitivity **screen** 61.461894–61.493014 of span 68.531788. Cash total span is the same; cash coordinate parts unmeasured. Not an extra correction | U1:44, §U08a |
+| U08b | Reading is now only one CBO general-government parameter | **REFUTED:** measured matched economic-affairs difference alone 10.133388; reading also changes roads, parks and capital quantities | U1:45,131 |
+| U09 | Historical sampling-dominance prose describes v9 | **RECORDED:** measured v8 width 43.672–44.857 versus span 90.190; v9 span/old-width 1.528–1.569 is not a v9 uncertainty ranking | U1:46 |
+| U10 | Old interval edges move exactly with new point endpoints | **REFUTED:** set point deltas −21.769 / −43.427 and cash −21.362 / −43.020 are not interval movements; no cash CI computed | U1:47 |
+| U11 | TIPS yield spread is a separate below-bar sensitivity | **CONFIRMED-BELOW:** capital-only **estimate** ≈−2.9 / +1.4 around central, either end/both sets; full-v9 repricing unrun. Yield maturities are not a probability band | U1:48,141 |
+| U12 | VA medical-mass arms remain below the bar | **CONFIRMED-BELOW:** source-oracle **screens** +1.267169 / +1.267169 for 70.484bn mass; −2.065319 / −2.065319 for 121.13bn, both sets; central kernels carried | U1:49,141 |
+| PACKET | Excerpts mix historical consumer checkpoints | **PACKET:** measured excerpt −405.731 versus saved fiscal −402.521; current v8 interval 343.367012–477.821668. Refresh excerpts on reuse; no implemented v9 error established | U1:51 |
+
+### U2: stocks and comparisons
+
+U2's confirmed amounts are propagation requirements measured on fixed v8 inputs, not errors in executed v9 consumers. Stocks, annual interest, current cash and annual removal costs retain their own units and bases.
+
+| ID | Claim | Disposition and size | Evidence anchor |
+|---|---|---|---|
+| V0 | Historical consumers cannot be labelled v9 | **RECORDED:** source migration **screen** −21.769 / −43.427 set; −21.362 / −43.020 cash, not universal consumer deltas | U2:21 |
+| V1 | Engine exports alone omit post-engine response rules | **CONFIRMED:** omission **screens** include D1 −18.918 / −18.918 and L1 gap +27.739 / +27.739, both sets; root mechanism overlaps those effects | U2:22, §V1 |
+| D1 | Military costs must leave classified federal current flow | **CONFIRMED:** fixed-source **screen** −18.918 / −18.918, set/cash; with standalone item 14, −19.216 / −19.216. Central cash then +2.397 / +41.587 before other changes | U2:23, §D1 |
+| D2 | Joint v9 migration may flip low-end federal cash | **UNSETTLED:** full federal and cash-class changes unknown; 13/14 **screen** leaves +2.397 / +41.587 central. All-government ≈−23 / −23 is an **estimate** | U2:24, §D2 |
+| D3 | Old mixed-health routing misclassifies federal VA dollars | **CONFIRMED-BELOW:** routing **screen** 1.355 central, 1.656 low-payer, 2.332 high-payer, each end/base; all-government cost change 0 | U2:25 |
+| D4 | Military response lowers historical absolute financing | **UNSETTLED:** reviewer **estimates** stock −250–350 and annual interest −8–11 at each end, both bases; not verified bounds or current v9 stocks | U2:26, §D4 and L2 |
+| D5 | All-government cash is not Treasury borrowing | **RECORDED:** measured source cash 229.734 / 290.975; central federal 21.613 / 60.803; unlocated 2.952 / 6.906 cash. Historical stock unidentified | U2:27 |
+| C1 | Closed cost must inherit the revised headline | **CONFIRMED:** fixed-credit **screen** −21.769 / −43.427 set, −21.362 / −43.020 cash; conditional totals 310.216 / 378.747 set, 226.583 / 295.115 cash | U2:28, §C1 |
+| C2 | Closed cost always lies between headline and deficit-sharing limit | **RECORDED:** v8 ordering **screen** limit minus central +63.771 / −48.167 already disproves low-end ordering; headline correction 0 | U2:29 |
+| C3 | Cash closure omits future trust-fund benefit cuts | **RECORDED:** prior conditional **screen** cash decrease 13.6–14.0 at each end uses current benefit shares; set 0 with payable promises. Future group correction unidentified | U2:30,144 |
+| C4 | Universal response rules may reverse high-end national ordering | **UNSETTLED:** set-only partial **screens** shared −72.075 / +19.937; excess 416.099 / 392.618, above fixed-credit closed by 105.883 / 13.871. Cash uncomputed; not final v9 results | U2:31, §C4 |
+| C5 | Closure credit above the group deficit proves over-credit | **RECORDED:** fixed-credit **screen** low-end excess 31.410 after 13/14; national burden sharing is not repayment of group borrowing | U2:32 |
+| C6 | Population calibration changes per-person closure credit | **CONFIRMED-BELOW:** fixed-national-input **screen** cost +0.324 / +0.324; household change unmeasured and cannot be flat-scaled | U2:33 |
+| P1 | VA response changes service-based pension allocation | **CONFIRMED:** VA-only **screen** stock −14.457 / −14.457, annual interest −0.454 / −0.454; white stock −18.353 / −18.353, interest −0.576 / −0.576. Stock bar only | U2:34, §P1 |
+| P2 | Coverage enters only the pension divisor | **REFUTED:** service-level coverage numerator is present; no divisor-only dilution established | U2:35 |
+| P3 | Current service shares identify historical pension liability | **RECORDED:** historical demographic bias/sign unmeasured; existing simple, increment and vintage arms do not identify it | U2:36 |
+| P4 | New denominator raises per-member pension amounts | **CONFIRMED-BELOW:** denominator-only **screen** +0.728209% per member; stock and annual totals Δ0 / 0. Does not update P1's numerator | U2:37 |
+| P5 | One-rate policy requires repricing booked pension stocks and interest | **REFUTED:** stock×rate **screen** 10.075 / 10.567 versus booked interest 24.048 / 25.096 is not actuarial revaluation or a correction | U2:38 |
+| L1 | Symmetric military response changes comparative gaps unevenly | **CONFIRMED:** base-line **screens** rough cost −18.115 / −18.115, white −45.854 / −45.854; rough-minus-white gap +27.739 / +27.739, rough-minus-average +25.457 / +25.457, same sets | U2:39, §L1 |
+| L2 | Military removal raises the historical Mexican-white financing gap | **UNSETTLED:** reviewer **estimates** annual interest +5–18 and stock roughly +150–550 at either end; not verified bounds. White cash-stock sign flip unproved | U2:40, §D4 and L2 |
+| L3 | Accrued promises cannot enter a hypothetical financing equivalent | **RECORDED:** old accrual-versus-cash **screen** differs 61.098 at both ends; bases are distinct. Historical cohort bias remains unidentified | U2:41 |
+| L4 | Group export is still blocked by the old thirteen gates | **REFUTED:** current annual export exists; historical financing is blocked for a different reason. No case correction | U2:42 |
+| I1 | A current Indian combined fiscal/social result is unavailable | **RECORDED:** combined rows withheld; measured 7.134923 is a Mexican baseline mismatch, not an Indian correction | U2:43 |
+| I2 | Indian reference and low-end white sign are still uncorrected | **REFUTED:** measured current reference 365.792 / 455.982; A1 already −212.306 / −95.817 set, so alleged new sign flip is false | U2:44 |
+| I3 | Own-key v9 propagation changes the Indian result by 4–6bn | **UNSETTLED:** rate-only **screen** +0.208 / −2.616; military −0.581–0.592 at both ends, both bases. Complete correction unknown; 4–6 high is an **estimate** | U2:45, §I3 |
+| I4 | Military response narrows the Indian advantage over whites materially | **CONFIRMED:** fixed-key military **screen** white-minus-Indian gap −5.572–5.583 at each end, same sets, on 6.079644M people; not an Indian absolute cost increase | U2:46, §I4 |
+| I5 | Indian item 11 is a measured zero | **RECORDED:** sign and size unknown at both ends/bases; numerical 0 is intentionally unmeasured, not a finding of no effect | U2:47,144 |
+| I6 | Indian G1+G2 and Mexican full lineage share a boundary | **RECORDED:** no measured correction; population difference prevents like-lineage or admission inference | U2:48 |
+| A1 | Late-arriving seniors cost less on both accounting bases | **RECORDED:** measured descriptive late-minus-earlier set +$3068 / +$2957 per person; cash −$880 / −$995. Basis reversal was already recorded | U2:49 |
+| A2 | Military removal could reverse the senior cash ordering | **UNSETTLED:** threshold **screen** requires differential removal >$880 / $995 per senior; own military source effects unmeasured in both sets | U2:50, §A2 |
+| A3 | Late-arrival population allocation violates the explicit-allocation rule | **REFUTED:** supplied allocation is explicit; arrival ages remain unobserved. No demonstrated conflict | U2:51 |
+| A4 | Allocation convention b changes the late-arrival slice | **RECORDED:** existing b−a **screen** +1.279 / +1.352 set; +1.288 / +1.361 cash, below the annual bar | U2:52 |
+| A5 | Current late-arrival slice identifies admission or lifetime cost | **RECORDED:** no measured lifetime correction; cross-sectional slice is already included in G1 | U2:53 |
+| X1 | Federal and pension legacies require an overlap bridge before addition | **RECORDED:** overlap unidentified; national interest 89.071bn is not a measured group overlap | U2:54 |
+| X2 | Capital return is automatically duplicated in the debt bridge | **REFUTED:** bridge uses consumption including depreciation, not gross investment; capital return is not compounded. No automatic duplicate measured | U2:55 |
+| X3 | Real carrying cost should be shown beside nominal legacy interest | **RECORDED-NEW:** alternative-metric **screen** 10.075 / 10.567, lower by 13.973 / 14.529 than booked pension interest; not a correction or consistent debt-path revaluation | U2:56,146 |
+| X4 | Historical promises, current benefits and alternative totals can be summed | **RECORDED:** no inspected consumer performs these sums; stock/flow, timing and subgroup boundaries prohibit the proposed additions. No new correction | U2:57 |
+| X5 | Two excess-over-average constructions are interchangeable | **RECORDED-NEW:** measured set decomposition 395.755 / 374.007 versus rough-minus-average 339.529 / 323.393; different objects, not a demonstrated same-estimand error | U2:58,148 |
+| PACKET | Excerpts combine obsolete numbers and incomplete appendices | **PACKET:** headline correction 0; measured current Indian set −118.780 / −95.120 versus excerpt −120.309 / −96.692. Annual export and pension numerator now exist | U2:20 |
+
+### F: frame and reader-facing claims
+
+F's claim reversals distinguish reader-facing wording from numerical corrections. Its conditional source-v8 arms retain their original bases; amounts in other packets are not substituted for them.
+
+| ID | Claim | Disposition and size | Evidence anchor |
+|---|---|---|---|
+| F01 | Military spending lacks a joint replacement-receipt solve | **UNSETTLED:** actual net low/high unknown, both sets. +5–11 or +5–9.3 are **estimates**; 18.918 / 18.918 spending exposure is not a receipt estimate | F:21, §F01 |
+| F02 | Fixed defense implies equal-cost replacement veterans | **UNSETTLED:** ±18.918 / 18.918 premise exposure; 26.43% lower replacement benefits gives +5 / +5 **screen**, both sets. Actual net unknown; recruitment costs can reverse sign | F:22, §F02 |
+| F03 | Shared allocation distributes only within the group | **CONFIRMED:** wording correction 0 / 0; companion-difference **screen** −45.237772 / −46.091451 set, −50.917897 / −51.771576 cash. Nonmember partners' taxes also move | F:23, §F03 |
+| F04 | Unqualified current-law wording covers all current statutes | **CONFIRMED:** relabel 0 / 0 both sets; complete present-law change unknown. Legacy −5.75 each end is a partial-v5 **screen**, not v9 | F:24, §F04 |
+| F05 | The case uses one discount rate for every valuation | **CONFIRMED:** wording correction 0 / 0, both sets; imported employee pension/OPEB valuations retain their own bases. No numerical correction ≥5 demonstrated | F:25, §F05 |
+| F06 | Alternative companions carry central coverage and count prices | **UNSETTLED:** missing low/high interaction unknown, either sign in each set. Military source coverage **screen** −0.656512 / −0.656512 is not a full-error bound | F:26, §F06 |
+| F07 | Home-state receipt prices misallocate business input taxes | **CONFIRMED-BELOW:** +2.36 / +2.36 **estimate**, same sets, assumes full nationalization of a legacy premium's business share; actual net unknown. Overlaps F09 | F:27,114 |
+| F08 | V9 changes need a matched average-resident comparison | **UNSETTLED:** headline correction 0 / 0; v9 excess unknown. V8 rule **screen** average-group cost −43.572 each end versus lineage −18.918, excess ≈+24.654 each end, both sets | F:28, §F08 |
+| F09 | Business input taxes need reconciliation with production-tax rules | **RECORDED-NEW:** source-v8 **screen** +12.057796 / +12.057796 business/customs; combined increment over adopted household arm +11.947730 / +11.947730, both sets. No identified central or exact v9 correction | F:29, §New arguments, F09 |
+| F10 | College functional rules undermine full K12 response | **RECORDED-NEW:** existing school-companion **screen** −30.145799 / −26.860133, both sets; alternative total, not measured overhead correction or new K12 elasticity | F:30,116 |
+| F11 | Tax smoothing requires the closed-budget sharing scenario | **RECORDED-NEW:** joint-scenario **screen** increment falls 20.755 / 31.102 using set-tax shares, 20.412 / 30.836 using cash-tax shares; household rule 40.569 / 42.259. Fiscal correction 0 / 0 absent closure adoption | F:31,118–120 |
+| F12 | Pension-cash is a comprehensive cash budget | **RECORDED:** measured pension switch −83.632696 / −83.632696; capital and employee accrual remain. Review's 219.7 / 284.3 is not a certified cash total | F:32 |
+| F13 | First-year configuration identifies actual first-year cash savings | **RECORDED:** central-to-first-year **screen** −72.303290 / −83.832713 set and cash; school depreciation 10–12 is an old-response **screen**, not a full cash correction | F:33 |
+| F14 | Annual school costs and pension accrual require future pupil taxes | **RECORDED:** annual correction absent; 89.605687 / 81.067159 are measured v8 age attributions, not v9 bias or missing receipts | F:34 |
+| F15 | Whole-person lineage must add across ancestry groups | **RECORDED:** ancestry-alternative **screens** set −118.845819 / −138.594581 or −68.886666 / −80.521752; cash −95.282979 / −115.031741 or −54.395751 / −66.030837. Different attribution object | F:35 |
+| F16 | Administration bridge leaves the complete program mix unresolved | **RECORDED:** adopted measured source change −0.297512 each end/set; remainder unknown. Population alternative −9.098458 is a **screen** under a different rule | F:36 |
+| F17 | Minor calibration leaves adults and households fixed | **RECORDED:** item-16 **screen** −4.193986 / −4.556859 set; −4.210464 / −4.573337 cash. Full adult delta unmeasured by F | F:37 |
+| F18 | Marginal Table D rates imply a different count-changing arm | **RECORDED:** count-changing minus fixed-count **screen** −1.660938 / −1.838733 set; −0.990023 / −1.167817 cash, not an identified compulsory correction | F:38 |
+| F19 | Mixed-unit partners may rematch in the long run | **RECORDED:** v8 item-11 exposure 10.740016 / 14.531690; actual low/high rematching delta unknown, either sign/both sets | F:39 |
+| F20 | Imported employee pensions and OPEB need re-discounting | **RECORDED:** +5–12 is an unverified **estimate**; actual net unknown, both sets. V8 OPEB convention **screens** −1.444 / −1.480 or +2.218 / +2.274 are not re-discounts | F:40 |
+| F21 | A common capital rate requires including 7% centrally | **RECORDED:** standalone-v8 item-20 **screen** +1.583503 / −19.699746; 7% sensitivity is not a correction or probability interval | F:41 |
+| F22 | VA actual outlays are described as appropriations | **REPAIRED LABEL:** actual net outlays already correct at FIX; terminology effect 0 / 0 both sets. Full removal 5.904991 / 5.904991 is exposure, not error size | F:42 |
+| F23 | Compressed ancestry prose merges two structural bands | **CONFIRMED-BELOW:** label/split correction 0 / 0; measured set bands 225.177467–273.960493 and 275.136620–332.033322; cash 165.107612–213.890638 and 205.994839–262.891541 | F:43 |
+| F24 | Old v8 title proves current numerical drift | **RECORDED:** measured historical discrepancy 3.199004 / 3.221092; v9 uses corrected 365.791930 / 455.981785 | F:44 |
+| F25 | Deferred consumer reruns establish a wrong v9 decomposition | **RECORDED:** demonstrated central error 0 / 0; candidate consumer work is expressly deferred. F08 separately retains the unmeasured comparison | F:45 |
+| F26 | Partial evaluation can omit required post-engine terms | **RECORDED:** omission exposure may be large, but no actual caller error or correction sized; full evaluation is canonical | F:46 |
+| F27 | Legacy specification rate fields can mislead consumers | **RECORDED:** no actual caller error; standalone high-end revaluation 19.699746 is exposure, not measured mispricing. Effective rate is exported | F:47 |
+| F28 | Beside legal-form arms may not cancel economically | **RECORDED:** naive frozen-pair **screens** −0.072958 / +0.545384, extension +0.035616 / +0.585556, both sets. Neither arm is central or jointly solved | F:48 |
+| F29 | Owner, replacement-investment and items 10/11 interactions remain open | **RECORDED:** no newly measured signed correction; prior footprint −1.21 / −0.87 is an exposure **screen**, not a nonlinear bound | F:49 |
+| F30 | Community Care classification conflicts with zero veterans response | **REFUTED:** verified correction 0 / 0; consumption classification and budget response are distinct, and purchased care is not counted twice | F:50 |
+| F31 | First-year corporate response remains fully long-run | **REFUTED:** proven correction 0 / 0; +18–38 **estimate** unsupported. Corporate response is scaled and business property is zero | F:51 |
+| PACKET | Old comparator numbers and sorted endpoint pairing imply a v9 range | **RECORDED:** headline 0 / 0; measured corrected-v8 excess 395.755203 at spec 16 / 374.006827 at 11, not a v9 interval | F:52 |
+
+### Corrections to Round 5
+
+- Round 5's "Measured for v9" table lists item 19 among the v9 items. Item 19 was set beside with W09 the same day
+  (2026-10-15, 13:20 JST, after the operator's 13:14 heads-up) and is not in v9.
+- Round 5 gave alternative 5's reason as CBO's consumption incidence. Round 6 (WA05) withdrew it: the incidence rule
+  does not decide which receipts vanish, and under v7's revenue-loss rule the input taxes at the group's jobs would
+  follow the jobs. The arm stays beside because the purchaser split is unmeasured, at +$3.5bn on v8 after WA06.
+
+## Revisions
+
+- 2026-10-20: Appended Round 6 and corrected the Round 5 item-19 and business-input dispositions on adoption of
+  [main case v9](../decisions/2026-10-16-main-case-v9.md). The adopted health proxy is conditional and its program
+  bridge remains unsettled; no claim of whole-case convergence is made.

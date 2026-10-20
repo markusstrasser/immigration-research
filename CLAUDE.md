@@ -106,27 +106,23 @@ set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
   pinned raw download with CRLF goes in `.gitattributes` as `-text`, which also lists the older
   writers' outputs stored byte for byte.
 - Before asserting that a line's key biases a result, read how the engine keys it (schools have
-  been state-priced since 2026-09-20, not national-average). The adopted case is one engine
-  run plus three post-engine amounts, the return on public capital, the mixed-unit removal (item 11)
-  and the Census coverage (item 12): `infra/immigration-fiscal/main_case_2026_10_15/main_case.cjs`.
-  Its package (`package.cjs`) is v7's (`main_case_2026_10_14`, built on v6's, v5's and the September
-  29 case's) plus four items in the same item registry: `meta.items` locates each item's edits, and
-  `forItems`/`withItems` apply them. The ends are the personal specifications 16 / 11 in both methods
-  (`summary.json` `v8.end_specifications`). The line and receipt responses, the capital return and the
-  two post-engine items travel in `derived/corrections.json` → `meta.responses`, `meta.capital_return`,
-  `meta.mixed_unit_removal` and `meta.coverage`. A consumer that applies the payload must set all of
-  them; `evaluateFull` adds the post-engine amounts. The payload adds spending and receipt lines that
-  `model.json` lacks (item 4's carriers and capital components, v8's completion carriers and native child
-  cells): `withSyntheticLines` adds every absent line, so evaluate the engine part as
-  `Engine.evaluate(withSyntheticLines(m), stateFor(m, spec, profile))`, and call `evaluateFull` for the
-  full cost. `meta.lineage` records the added descendants (arm b, C3, the members
-  priced as G3+ and as whites) on the pre-v8 frame; per-member figures divide by
-  `meta.population_v8.with_coverage`. The descendants' edits sit in every engine cell, and the items'
-  edits follow them, so the lineage no longer closes the payload. A consumer that splits the case by
-  generation, household or person needs a stated rule for both (the Consumers tables: R1–R4 in v6's
-  lane, R5–R9 in v7's, R10–R13 in v8's; item 4 splits by `meta.user_fees.splits`, Pell and the K-12
-  weight by the education line). Consumer lanes compute the live case only (`oct15`); outputs of
-  earlier cases stay in git and are not regenerated.
+  been state-priced since 2026-09-20, not national-average). The adopted case is
+  `infra/immigration-fiscal/main_case_2026_10_16/main_case.cjs`; its package (`package.cjs`) builds on v8
+  (`main_case_2026_10_15`) with eight selected items, 13–18, 20 and 21; item 19 stays beside with W09.
+  `meta.items` locates each item's edits, and `forItems`/`withItems` apply them. The ends are the personal
+  specifications 16 / 11 in both methods (`summary.json` `v9.end_specifications`). The line and receipt responses,
+  capital return, mixed-unit removal, coverage and the new method- or specification-specific post-engine terms travel
+  in `derived/corrections.json`; `evaluateFull` is the canonical full evaluator. A raw-engine consumer must use
+  `Engine.evaluate(withSyntheticLines(m), stateFor(m, spec, profile))` and apply every post term; `postFor` returns
+  the new dynamic additions and `postEngine` the complete canonical-method post total. A partial reading alone is
+  insufficient for the dynamic capital/service calculation. `withSyntheticLines` adds every absent carrier and
+  component. `meta.population_v9.with_coverage` is the complete calibrated denominator; earlier population blocks
+  remain historical. `meta.lineage` retains the pre-v8 descendant decomposition, not a closure of the later payload.
+  Consumers splitting by generation, household or person need a rule for each item's typed parts and count/coverage
+  changes (Consumers R1–R4 in v6, R5–R9 in v7, R10–R13 in v8, and the v9 RESULT's payload contract). Item 4 splits
+  by `meta.user_fees.splits`, Pell and the K-12 weight by the education line. Item 17 is joint-minus-16; item 21's
+  source arms have their own signed coverage/count increments. Consumer lanes compute the live case only (`oct16`);
+  outputs of earlier cases stay in git and are not regenerated.
 
 - Consumers of `ledger_absolute_2026_09_17` (the `lifetime.py` loaders, `age_normalizations.py`)
   verify stored source hashes, including upstream
@@ -219,21 +215,38 @@ substituting a web summary or declaring a measurement unavailable:
   foreign-source income from item 6's corporate lines, completes the union's reporting rule, recomputes
   the taxes, credits, benefits and spending of the non-members who stay in mixed households (replacing
   the child-credit item), and carries the 2020 PES Hispanic undercount, which the 2024 population
-  controls keep: **$366–456bn** ([decision](decisions/2026-10-15-main-case-v8.md), corrected the same
-  day). Companion figures:
-  - $365.8–456.0bn unrounded; counting benefits when paid (the cash set), $281.8–371.9bn; per member
-    of the 45.23M lineage, $8,087–10,081;
-  - the count's arms a and c: $351.7–439.7bn and $379.9–472.3bn; C3 (0.557) ± 1 SE: $361.6–460.1bn;
-  - counted by share of Mexican-immigrant ancestry instead of whole (beside, never the headline):
-    $238.3–366.2bn;
-  - low side with the within-district 0.836: $335–428bn;
-  - the shared allocation, for distribution inside the group, not the removal total (it leaves out
-    item 11): $323.2–412.3bn ($7,147–9,116 per member);
-  - the Census coverage from demographic analysis instead of the PES (beside): through age 17,
-    $363.2–453.1bn; through 29, $362.0–450.2bn;
-  - first-year budget response with CBO's 0.63–0.66, business-capital taxes at their first-year part,
-    items 11 and 12 under the same rules: $294–352bn, $210–268bn counting benefits when paid
-    (ladder 270's lane);
+  controls keep ([decision](decisions/2026-10-15-main-case-v8.md)). Adopted 2026-10-20, v9 makes the following
+  changes ([decision](decisions/2026-10-16-main-case-v9.md)):
+  - item 13 holds military service costs at zero long-run response under equal-cost replacement, with the
+    means-tested pension still responsive and military costs retained in the first-year reading;
+  - item 14 keys income-security administration's retirement block by Social Security caseloads, leaving its
+    unmeasured remainder on the existing proxy;
+  - item 15 splits public colleges' response by budget block, with tuition and Pell on their own keys;
+  - item 16 calibrates native Mexican-origin minors to ACS counts while preserving CPS Hispanic totals;
+  - item 17 prices the missed people's PES Table D tenure at fixed counts, jointly with item 16;
+  - item 18 excludes food-at-home and SNAP purchases under the household taxable-basket exemption proxy;
+  - item 20 charges public capital at the Trustees' flat-equivalent rate, the path pricing Social Security and
+    Part A promises; booked employee pension and retiree-health normal costs keep their valuations;
+  - item 21 keys the health residual outside VA by other-federal and state/local payments, with pooled ethnic
+    translation; its program/exposure bridge remains unsettled and its arms stay beside.
+  The case is income-year 2024 under 2024 tax and benefit rules, with Social Security and Part A promises at what
+  current law can pay (2026 Trustees); a complete present-law total is unmeasured: **$368–437bn**.
+  Companion figures from `main_case_2026_10_16/derived/summary.json` `v9.companions`:
+  - $368.0–436.6bn at one decimal; counting benefits when paid (the cash set), $284.4–352.9bn;
+    per member of the 44.90M lineage, $8,196–9,722;
+  - the count's arms a and c: $354.4–421.5bn and $381.6–451.6bn;
+    C3 ± one SE: $363.8–440.7bn;
+  - counted by share of Mexican-immigrant ancestry (beside, never the headline), the two structural readings:
+    $248.7–297.4bn with G4+ at nothing and $298.8–355.7bn at its bound;
+  - schools at the within-district 0.836 response: $337.9–409.7bn;
+  - the household-sharing allocation across members and nonmembers, item 11 excluded (for distribution,
+    not the removal total): $322.8–390.5bn ($7,189–8,696 per member);
+  - Census coverage from demographic analysis (beside): through age 17, $365.4–433.8bn;
+    through 29, $364.1–431.1bn;
+  - year-one response coefficients applied to this account: $313.8–370.8bn,
+    $230.2–287.2bn counting benefits when paid; this is not next year's cash saving;
+  - item 21's population, no-translation and plain-pooled arms: $361.7–430.2bn, $361.9–430.4bn and
+    $375.2–443.7bn set, respectively; construction sensitivities, not error bounds.
   - Earlier cases: the decision records and the INDEX's case table.
 
   The capital return is an imputed resource cost, never a debt flow. Defense,

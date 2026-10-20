@@ -17,7 +17,8 @@ const countData=JSON.parse(fs.readFileSync(path.join(__dirname,"../count_composi
 for(const [which,X]of [["set",P],["cash",P.CASH]]){
  const pl=X.correctionsPayload(),pm=X.payloadModel(),raw=P.Engine.applyCorrections(P.MODEL,pl);
  gate(`${which} payload applies with raw engine`,JSON.stringify(raw)===JSON.stringify(pm));
- gate(`${which} candidate stamp`,pl.meta.adopted===null&&/^candidate: /.test(pl.meta.status)&&pl.meta.decision===P.V9.DECISION);
+ if(P.V9.STATUS==="adopted")gate(`${which} adopted stamp (${P.V9.ADOPTED}, ${P.V9.DECISION} exists)`,pl.meta.adopted===P.V9.ADOPTED&&/^adopted: /.test(pl.meta.status)&&pl.meta.decision===P.V9.DECISION&&fs.existsSync(path.resolve(__dirname,"../../..",P.V9.DECISION)));
+ else gate(`${which} candidate stamp`,pl.meta.adopted===null&&/^candidate: /.test(pl.meta.status)&&pl.meta.decision===P.V9.DECISION);
  gate(`${which} full selected registry declared for sibling routing`,JSON.stringify(pl.meta.v9.selected_items)===JSON.stringify(P.CANDIDATE));
  for(const method of P.METHODS){
   const m=X.modelFor("central",method,X.withCentral({}));
