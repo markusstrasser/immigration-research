@@ -53,7 +53,7 @@ visual grammar ... what's negative / positive").
   - the union-completion capital and production carriers follow the capital and production choices, each service
     capital carrier its service's choice, and item 6's job-capital taxes are their own step.
   Since 2026-10-21 the case's `sign_reversal.cjs` freezes items 21 and 15 and the service capital carriers with the
-  services in the same way; `account.cjs`'s `withCase` is a copy of its definition.
+  services in the same way; `account.cjs` imports its `withCase`, the rule's one definition.
 - The other figures read lane files: who pays and the percentiles (`distribution_weights_2026_09_23`,
   `derived/oct16/`) and the back-cast (`historical_backcast_2026_09_20`, `derived/oct16/`) as they stood on
   v9, pinned by commit in `account.cjs` (`PINS`: distribution 65b6e01c, back-cast e85c0766); the person-by-person

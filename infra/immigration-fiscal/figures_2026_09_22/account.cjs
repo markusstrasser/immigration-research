@@ -375,77 +375,20 @@ const JUSTICE_KEYS = Object.keys(model.spending.lines.find((l) => l.id === "publ
 const UC_KEYS = Object.keys(model.spending.lines.find((l) => l.id === "medicaid_and_chip_other_medical").keys)
   .filter((k) => k === "medicaid" || k.startsWith("uninsured_use"));
 
-/* The sign-reversal definition (main_case_2026_09_24/sign_reversal.cjs) inside the case, as
- * main_case_2026_10_16/sign_reversal.cjs runs it (its withCase, copied): rental assistance at 1, the
- * enterprise receipts at option D's 1 or at s, every other receipt response at the case's, the union-completion
- * carriers mapped to their parents, the service capital carriers and items 21 and 15 following the service
- * response (since 2026-10-21), the return on public capital from the same evaluation, and the case's post-engine
- * costs, item 11 and coverage fixed, the rest priced on the run. */
+/* The sign-reversal definition (main_case_2026_09_24/sign_reversal.cjs) inside the case, imported from
+ * main_case_2026_10_16/sign_reversal.cjs, the rule's one definition: rental assistance at 1, the enterprise receipts at
+ * option D's 1 or at s, every other receipt response at the case's, the union-completion carriers mapped to their
+ * parents, the service capital carriers and items 21 and 15 following the service response (since 2026-10-21), the
+ * return on public capital from the same evaluation, and the case's post-engine costs, item 11 and coverage fixed,
+ * the rest priced on the run. */
 const S24 = require(path.join(FISCAL, "main_case_2026_09_24", "sign_reversal.cjs"));
+const SR = require(path.join(CASE, "sign_reversal.cjs"));
+if (SR.P !== P) throw new Error("[BLOCKED] the sign-reversal rule loads another instance of the case package");
+if (JSON.stringify(Object.keys(SCALED_ITEMS).sort()) !== JSON.stringify([...SR.SCALED_ITEMS].sort()))
+  throw new Error("[BLOCKED] the page's scaled items differ from the sign-reversal rule's");
 const GG9 = P.RESPONSES.general_government;
 const PAIRS = S24.PAIRS.map((p) => ({ ...p, g: p.end === "least" ? GG9.low : GG9.high }));
-let lastSign = null;
-const SERVICE_CAPITAL = new Set(["k12", "k12_user_fees", "college", "college_user_fees", "pos_sl", "pos_fed", "health_sl", "health_fed",
-  "health_sl_user_fees", "health_fed_user_fees", "hwy_sl", "hwy_fed", "air_fed", "rec_sl", "rec_fed"]);
-function carrierFactor(src, reading, s, atS) {
-  if (src.end !== reading) return 0;
-  if (src.kind !== "capital") return 1;
-  if (SERVICE_CAPITAL.has(src.parent_line)) return s;
-  if (src.parent_line.startsWith("ent_")) return atS ? s : 1;
-  if (/^gps_/.test(src.parent_line)) return 1;
-  throw new Error("capital carrier parent unclassified: " + src.parent_line);
-}
-function withCase(variant, f) {
-  if (!["enterprises_at_1", "enterprises_at_s"].includes(variant)) throw new Error("unknown variant " + variant);
-  const carrierEntries = Object.entries(CARRIERS);
-  const fixed = Object.entries(P.LINE_RESPONSES).filter(([k]) => k.startsWith("receipt:") && !ENTERPRISE.includes(k));
-  const evaluate0 = Engine.evaluate;
-  const atS = variant === "enterprises_at_s";
-  function run(m, st) {
-    const s = st.service_response;
-    const reading = st.general_government_response === GG9.low ? "low" : st.general_government_response === GG9.high ? "high" : null;
-    if (!reading) throw new Error(`general government at ${st.general_government_response}, neither of the case's responses`);
-    const extra = { [RENTAL]: 1 };
-    for (const k of ENTERPRISE) extra[k] = atS ? s : 1;
-    for (const [k, e] of fixed) extra[k] = e[reading];
-    for (const [id, src] of carrierEntries) if (src.kind !== "line") extra[id] = carrierFactor(src, reading, s, atS);
-    let state = Object.assign({}, st, { response_override: Object.assign({}, st.response_override, extra) });
-    let ev = evaluate0(m, state);
-    const receiptRows = new Map(ev.receipts.map((row) => [row.id, row]));
-    const spendingRows = new Map(ev.spending.map((row) => [row.id, row]));
-    for (const [id, src] of carrierEntries) if (src.kind === "line") {
-      const parent = (src.side === "receipt" ? receiptRows : spendingRows).get(src.parent_line);
-      if (!parent) throw new Error(`missing carrier parent ${src.parent_line}`);
-      const key = src.side === "receipt" ? state.receipt_scenario : parent.key;
-      extra[id] = key === src.parent_key ? parent.response : 0;
-    }
-    if (carrierEntries.length) {
-      state = Object.assign({}, st, { response_override: Object.assign({}, st.response_override, extra) });
-      ev = evaluate0(m, state);
-    }
-    const cap = P.capitalReturn(ev, { share: st.school_share, reading, rate: P.RATES[reading], enterprises: P.ENTERPRISES, long_run: null });
-    const ent = cap.components.filter((c) => c.group === "enterprise").reduce((a, c) => a + c.return_bn, 0);
-    const capital = cap.total_bn - (atS ? (1 - s) * ent : 0);
-    const spec = { allocation: st.allocation, reading, share: st.school_share, school: st.service_response, gg: st.general_government_response,
-      uc: st.uncompensated_care_response, rate: P.RATES[reading], enterprises: P.ENTERPRISES, long_run: true };
-    const adjusted = atS ? { ...cap, total_bn: capital, components: cap.components.map((c) => (c.group === "enterprise" ? { ...c, return_bn: c.return_bn * s } : c)) } : cap;
-    return { ev, s, capital, post: P.OCT15.postEngine(spec), added: P.postFor(m, spec, undefined, { evaluation: ev, capital: adjusted }) };
-  }
-  Engine.evaluate = (m, st) => {
-    const r = run(m, st), s = r.s;
-    // Items 21 and 15 follow the service response: raw(s) - (1 - s) raw(0).
-    let correction = 0;
-    if (s === 0) for (const k of Object.keys(SCALED_ITEMS)) correction -= r.added.amounts[k] || 0;
-    else if (s !== 1) {
-      const z = run(m, { ...st, service_response: 0, response_override: { ...st.response_override, [SYN.school]: 0, [SYN.college]: 0 } });
-      for (const k of Object.keys(SCALED_ITEMS)) correction -= (1 - s) * (z.added.amounts[k] || 0);
-    }
-    const post = r.post + r.added.total_bn + correction;
-    lastSign = Object.assign({}, r.ev, { welfare_bn: r.ev.welfare_bn - r.capital - post, capital_return_bn: r.capital, post_engine_bn: post });
-    return lastSign;
-  };
-  try { return f(); } finally { Engine.evaluate = evaluate0; }
-}
+const withCase = (variant, f) => SR.withCase(P, variant, f);
 
 module.exports = {
   fs, path, HERE, FISCAL, REPO, CASE_LANE, CASE_KEY, CASE, PINS, PAYLOAD, readText, readJson, readCsv, inputs, P, Engine, model,

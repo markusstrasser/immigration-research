@@ -952,97 +952,58 @@ if (LIN && LIVE_PERSONAL) {
 }
 outputs[`c2_tally_${CASE}.csv`] = csvText(tallyRows);
 
-// Clause 2: the service break-even, main_case_2026_09_24's definition inside a copy of main_case_2026_09_29/
-// sign_reversal.cjs's withCase (rental assistance at 1; the enterprise receipts at 1, or at s in the variant; every other
-// receipt response of meta.responses fixed; the capital return from the same evaluation).
+// Clause 2: the service break-even, main_case_2026_09_24's definition inside the case through
+// main_case_2026_10_16/sign_reversal.cjs's withCase, the rule's one definition (imported since 2026-10-21; this lane
+// kept a copy before): rental assistance at 1, the enterprise receipts at 1 or at s, every other receipt response of
+// meta.responses fixed, the union-completion carriers mapped, service capital carriers and items 21 and 15 following
+// the service response, and the capital return from the same evaluation. It runs on the live case only.
 const GG = P.RESPONSES.general_government;
 const PAIRS = S24.PAIRS.map((p) => ({ ...p, g: p.end === "least" ? GG.low : GG.high }));
-const readingOf = (g) => (g === GG.low ? "low" : g === GG.high ? "high" : null);
 const generationServicePosts=new Map(),generationServiceShares=new Map();
+// A generation's scoped package prices its post-engine costs as its share of the whole case's at the same sweep point:
+// the union's v9 additions there, split across generations by generationParts' shares of each item at the case
+// specification [APPROX: a generation's share of an item is held at the case's other line responses]. The welfare
+// closure gate tests the generation parts against the union. The rule scales items 21 and 15 on these amounts.
+const generationPost=(pkg)=>(r,ctx)=>{
+  const plainSpec=r.spec,spec={...plainSpec};
+  // generationParts re-evaluates the generation models and the union from a complete specification: take the
+  // case's own specification at this reading, allocation and normalization (its line responses, justice key),
+  // then the sweep's service, government, care, rate and enterprise fields. Its post amounts are therefore
+  // at the case's other line responses, not the sweep's wrapper overrides [APPROX].
+  const norm=ctx.st.production?.normalization;
+  const matches=pkg._full.ALL_SPECS.filter(x=>x.reading===r.reading&&x.allocation===ctx.st.allocation&&x.normalization===norm),base=matches[0];
+  if(!base)throw Error(`[BLOCKED] no case specification at ${r.reading}/${ctx.st.allocation}/${norm} for the generation sweep`);
+  if(new Set(matches.map(x=>JSON.stringify([x.line_responses,x.justice,x.long_run]))).size!==1)
+    throw Error(`[BLOCKED] case specifications at ${r.reading}/${ctx.st.allocation}/${norm} disagree on line responses`);
+  Object.assign(spec,{...JSON.parse(JSON.stringify(base)),...plainSpec,normalization:norm,long_run:base.long_run});
+  if(!spec.long_run)throw Error("[BLOCKED] generation sweep specification is not long-run");
+  const U=pkg._full,which=U===P?"set":"cash",at=JSON.stringify([which,ctx.variant,plainSpec]);
+  if(!generationServicePosts.has(at)){
+    const um=U.payloadModel();
+    generationServicePosts.set(at,ctx.sweep(U,um,ctx.st).added.amounts);
+  }
+  const shareKey=JSON.stringify([which,pkg._convention,spec]);
+  if(!generationServiceShares.has(shareKey)){
+    const z=require("../generation_account_2026_09_24/v9_split.cjs").generationParts(U,spec,pkg._convention);
+    const ids=new Set(Object.values(z.posts).flatMap(p=>Object.keys(p)));
+    generationServiceShares.set(shareKey,Object.fromEntries([...ids].map(id=>{
+      const total=sum(Object.values(z.posts).map(p=>p[id]||0));
+      return [id,total?Object.fromEntries(Object.entries(z.posts).map(([g,p])=>[g,(p[id]||0)/total])):null];
+    })));
+  }
+  const shares=generationServiceShares.get(shareKey),amounts={};
+  for(const [id,amount]of Object.entries(generationServicePosts.get(at))){
+    if(!amount)continue;
+    if(!shares[id])throw Error(`[BLOCKED] ${CASE} sweep: item ${id} moves the union (${amount}) but has no generation shares at the case specification`);
+    amounts[id]=amount*shares[id][pkg._generation];
+  }
+  return {base:pkg.postEngine(spec),amounts,total:sum(Object.values(amounts))};
+};
 function withCase(pkg, variant, f) {
-  const enterprise = [ENTERPRISE_RECEIPT].concat(pkg.ENTERPRISE_SPLITS.map((id) => "receipt:" + id));
-  const fixed = Object.entries(pkg.LINE_RESPONSES).filter(([k]) => k.startsWith("receipt:") && !enterprise.includes(k));
-  const carriers = V8PLUS ? pkg.correctionsPayload().meta.union_completion.carriers : {};
-  const evaluate = Engine.evaluate;
-  const sweepAt = (Q, m, st) => {
-    const s = st.service_response;
-    const reading = readingOf(st.general_government_response);
-    if (!reading) throw new Error(`[BLOCKED] general government at ${st.general_government_response}, neither adopted response`);
-    const atS = variant === "enterprises_at_s";
-    const extra = { [RENTAL]: 1 };
-    for (const k of enterprise) extra[k] = atS ? s : 1;
-    for (const [k, e] of fixed) extra[k] = e[reading];
-    for(const [id,src]of Object.entries(carriers))if(src.kind!=="line")extra[id]=src.end===reading?1:0;
-    let state=Object.assign({}, st, { response_override: Object.assign({}, st.response_override, extra) });
-    let ev = evaluate(m, state);
-    for(const [id,src]of Object.entries(carriers))if(src.kind==="line"){
-      const parent=(src.side==="receipt"?ev.receipts:ev.spending).find(row=>row.id===src.parent_line);
-      if(!parent)throw Error(`[BLOCKED] break-even carrier parent ${src.parent_line} absent`);
-      const key=src.side==="receipt"?state.receipt_scenario:parent.key;
-      extra[id]=key===src.parent_key?parent.response:0;
-    }
-    if(Object.keys(carriers).length)ev=evaluate(m,Object.assign({},st,{response_override:Object.assign({},st.response_override,extra)}));
-    const cap = Q.capitalReturn(ev, { share: st.school_share, reading, rate: RATES[reading], enterprises: ENTERPRISES, long_run: null });
-    const ent = cap.components.filter((c) => c.group === "enterprise").reduce((a, c) => a + c.return_bn, 0);
-    const adjustedCapital=atS?{...cap,total_bn:cap.total_bn-(1-s)*ent,components:cap.components.map(c=>c.group==="enterprise"?{...c,return_bn:c.return_bn*s}:c)}:cap;
-    return {s,reading,atS,ev,cap,ent,adjustedCapital};
-  };
-  Engine.evaluate = (m, st) => {
-    const {s,reading,atS,ev,cap,ent,adjustedCapital}=sweepAt(pkg,m,st);
-    // This is a steady-state service sweep, not the first-year companion.
-    // Match the final case's explicit distinction so item13 stays selected.
-    const spec={allocation:st.allocation,reading,share:st.school_share,school:s,gg:st.general_government_response,uc:st.uncompensated_care_response,rate:pkg.RATES[reading],enterprises:pkg.ENTERPRISES,long_run:CASE==="oct16"?true:null};
-    // generationParts re-evaluates the generation models from a specification (stateOf needs its production
-    // normalization); carry the sweep state's own, never a default.
-    const plainSpec={...spec};
-    if(CASE==="oct16"&&pkg._generation){
-      // generationParts re-evaluates the generation models and the union from a complete specification: take the
-      // case's own specification at this reading, allocation and normalization (its line responses, justice key),
-      // then the sweep's service, government, care, rate and enterprise fields. Its post amounts are therefore
-      // at the case's other line responses, not the sweep's wrapper overrides [APPROX]; the welfare closure below
-      // tests the generation parts against the union at three service responses.
-      const norm=st.production?.normalization;
-      const matches=pkg._full.ALL_SPECS.filter(x=>x.reading===reading&&x.allocation===st.allocation&&x.normalization===norm),base=matches[0];
-      if(!base)throw Error(`[BLOCKED] no case specification at ${reading}/${st.allocation}/${norm} for the generation sweep`);
-      if(new Set(matches.map(x=>JSON.stringify([x.line_responses,x.justice,x.long_run]))).size!==1)
-        throw Error(`[BLOCKED] case specifications at ${reading}/${st.allocation}/${norm} disagree on line responses`);
-      Object.assign(spec,{...JSON.parse(JSON.stringify(base)),...spec,normalization:norm,long_run:base.long_run});
-      if(!spec.long_run)throw Error("[BLOCKED] generation sweep specification is not long-run");
-    }
-    let post;
-    if(CASE==="oct16"&&pkg._generation){
-      // The union's v9 additions at this sweep point (the union path's own rule below), split across generations by
-      // generationParts' shares of each item at the case specification [APPROX: a generation's share of an item is
-      // held at the case's other line responses]. Both are evaluated with the base engine; re-entering this wrapper
-      // would recurse. The welfare closure gate tests the generation parts against the union.
-      const active=Engine.evaluate;Engine.evaluate=evaluate;
-      try{
-        const U=pkg._full,which=U===P?"set":"cash",at=JSON.stringify([which,atS,plainSpec]);
-        if(!generationServicePosts.has(at)){
-          const um=U.payloadModel(),u=sweepAt(U,um,st);
-          generationServicePosts.set(at,U.postFor(um,plainSpec,undefined,{evaluation:u.ev,capital:u.adjustedCapital}).amounts);
-        }
-        const shareKey=JSON.stringify([which,pkg._convention,spec]);
-        if(!generationServiceShares.has(shareKey)){
-          const z=require("../generation_account_2026_09_24/v9_split.cjs").generationParts(U,spec,pkg._convention);
-          const ids=new Set(Object.values(z.posts).flatMap(p=>Object.keys(p)));
-          generationServiceShares.set(shareKey,Object.fromEntries([...ids].map(id=>{
-            const total=sum(Object.values(z.posts).map(p=>p[id]||0));
-            return [id,total?Object.fromEntries(Object.entries(z.posts).map(([g,p])=>[g,(p[id]||0)/total])):null];
-          })));
-        }
-        const shares=generationServiceShares.get(shareKey);let mine=0;
-        for(const [id,amount]of Object.entries(generationServicePosts.get(at))){
-          if(!amount)continue;
-          if(!shares[id])throw Error(`[BLOCKED] ${CASE} sweep: item ${id} moves the union (${amount}) but has no generation shares at the case specification`);
-          mine+=amount*shares[id][pkg._generation];
-        }
-        post=pkg.postEngine(spec)+mine;
-      }finally{Engine.evaluate=active;}
-    }else post=CASE==="oct16" ? pkg.OCT15.postEngine(spec)+pkg.postFor(m,spec,undefined,{evaluation:ev,capital:adjustedCapital}).total_bn : CASE === "oct15" ? pkg.postEngine(spec) : 0;
-    return Object.assign({}, ev, { welfare_bn: ev.welfare_bn - (cap.total_bn - (atS ? (1 - s) * ent : 0)) - post });
-  };
-  try { return f(); } finally { Engine.evaluate = evaluate; }
+  if(CASE!=="oct16")throw Error(`[BLOCKED] ${CASE}: the service break-even runs on the live case only; earlier cases' outputs stay in git`);
+  const SR=require("../main_case_2026_10_16/sign_reversal.cjs");
+  if(SR.P!==P)throw Error("[BLOCKED] the sign-reversal rule loads another instance of the case package");
+  return SR.withCase(pkg, variant, f, undefined, pkg._generation ? { post: generationPost(pkg) } : {});
 }
 const pubSR = readCsv(`${LANE}/derived/sign_reversal.csv`);
 const beRows = [["case", "variant", "allocation", "break_even_most_adverse", "break_even_least_adverse"]];

@@ -4,18 +4,14 @@
  * since 2026-10-21 those of service capital take the service response (withCase). Items 21 and 15 follow the
  * service response too. Item 11 and coverage are fixed costs after the engine and enter welfare with the
  * opposite sign.
- * Run: node sign_reversal.cjs [--out-dir DIR]. No old lane is written. */
+ * Run: node sign_reversal.cjs [--out-dir DIR]. No old lane is written.
+ * Imported, it runs nothing and exports the definition: withCase, sweep and the carrier and item sets. It is the one
+ * definition of the rule; break_conditions_2026_09_29 and figures_2026_09_22 import it. */
 "use strict";
 const fs = require("fs"), path = require("path");
 const P = require("./package.cjs");
 const S24 = require("../main_case_2026_09_24/sign_reversal.cjs");
 const { Engine } = P;
-const argv = process.argv.slice(2);
-const OUT = path.resolve(argv.includes("--out-dir") ? argv[argv.indexOf("--out-dir") + 1] : path.join(__dirname, "derived"));
-if (OUT !== path.join(__dirname, "derived") && !OUT.startsWith(__dirname + path.sep)) throw Error("[BLOCKED] sign_reversal output must stay inside v8's lane");
-const oldFile = path.join(__dirname, "../main_case_2026_10_15/derived/sign_reversal.csv");
-const oldLines = fs.readFileSync(oldFile, "utf8").trimEnd().split("\n"), oldRows = oldLines.map(l => l.split(","));
-const oldHeader = oldRows[0], values = new Map();
 const checks = [];
 function gate(name, pass, detail = "") {
   checks.push({ name, pass: !!pass, detail });
@@ -44,7 +40,6 @@ function removeObservedChildren(pkg, model, suppliedPayload) {
   }
   return { model: stripped, parts, record: rec, edits };
 }
-module.exports = { removeObservedChildren };
 let last = null;
 /* Service-tied amounts follow the service response s (fix of 2026-10-21; before it, two post-engine items and the
  * union-completion service capital stayed at the case's response with every service frozen):
@@ -54,11 +49,14 @@ let last = null;
  * - item 21 (the health-residual key) and item 15 (the colleges) are post-engine amounts the package prices at the
  *   case's response whatever the run (item 21 is constant in s; item 15 is affine with a remainder at s = 0). Each
  *   becomes raw(s) - (1 - s) raw(0): zero at s = 0, the case's amount at s = 1, linear between.
- * scale = false keeps the adopted definition, for the v8 reproduction and the old-definition gate. */
+ * scale = false keeps the adopted definition, for the v8 reproduction and the old-definition gate; it is the default
+ * only for v8's package. */
 const SERVICE_CAPITAL = new Set(["k12", "k12_user_fees", "college", "college_user_fees", "pos_sl", "pos_fed", "health_sl", "health_fed",
   "health_sl_user_fees", "health_fed_user_fees", "hwy_sl", "hwy_fed", "air_fed", "rec_sl", "rec_fed"]);
 const GG_CAPITAL = new Set(["gps_sl", "gps_fed"]);
 const SCALED_ITEMS = ["health_residual_key", "public_college_response"];
+const VARIANTS = ["enterprises_at_1", "enterprises_at_s"];
+const scaleFor = pkg => pkg !== P.V8_PACKAGE;
 function carrierFactor(src, reading, s, atS, scale) {
   if (src.end !== reading) return 0;
   if (!scale || src.kind !== "capital") return 1;
@@ -67,55 +65,79 @@ function carrierFactor(src, reading, s, atS, scale) {
   if (GG_CAPITAL.has(src.parent_line)) return 1;
   throw Error(`[BLOCKED] sign_reversal: capital carrier parent ${src.parent_line} unclassified`);
 }
-function withCase(pkg, variant, f, scale = pkg === P) {
-  const gg = pkg.RESPONSES.general_government;
-  const carriers = pkg.correctionsPayload().meta.union_completion?.carriers || {};
-  const carrierEntries = Object.entries(carriers);
+// correctionsPayload() rebuilds the payload on every call; one read per package object.
+const CARRIERS = new WeakMap();
+function carriersOf(pkg) {
+  if (!CARRIERS.has(pkg)) CARRIERS.set(pkg, Object.entries(pkg.correctionsPayload().meta.union_completion?.carriers || {}));
+  return CARRIERS.get(pkg);
+}
+/* One sweep point of package pkg on model m at engine state st, evaluated with the base engine `evaluate`: rental
+ * assistance at 1, the enterprise receipts at 1 or at s, every other receipt at the case's response for the reading,
+ * the union-completion carriers mapped, and the return on public capital from the same evaluation. posts = false skips
+ * the package's v9 post-engine amounts (a caller that prices them itself). */
+function sweep(pkg, variant, m, st, { scale = scaleFor(pkg), evaluate = Engine.evaluate, posts = true } = {}) {
+  if (!VARIANTS.includes(variant)) throw Error(`[BLOCKED] sign_reversal: unknown variant ${variant}`);
+  const gg = pkg.RESPONSES.general_government, atS = variant === "enterprises_at_s";
+  const carrierEntries = carriersOf(pkg);
   const enterprise = [P.ENTERPRISE_RECEIPT, ...pkg.ENTERPRISE_SPLITS.map(id => `receipt:${id}`)];
   const fixedReceipts = Object.entries(pkg.LINE_RESPONSES).filter(([k]) => k.startsWith("receipt:") && !enterprise.includes(k));
-  const evaluate = Engine.evaluate;
-  const atS = variant === "enterprises_at_s";
-  function run(m, st) {
-    const s = st.service_response, reading = st.general_government_response === gg.low ? "low" : st.general_government_response === gg.high ? "high" : null;
-    if (!reading) throw Error("[BLOCKED] sign_reversal general-government response has no case reading");
-    const extra = { [P.RENTAL]: 1 };
-    for (const id of enterprise) extra[id] = atS ? s : 1;
-    for (const [id, response] of fixedReceipts) extra[id] = response[reading];
-    for (const [id, src] of carrierEntries) if (src.kind !== "line") extra[id] = carrierFactor(src, reading, s, atS, scale);
-    let state = { ...st, response_override: { ...st.response_override, ...extra } };
-    let ev = evaluate(m, state);
-    const receiptRows = new Map(ev.receipts.map(row => [row.id, row]));
-    const spendingRows = new Map(ev.spending.map(row => [row.id, row]));
-    for (const [id, src] of carrierEntries) if (src.kind === "line") {
-      const parent = (src.side === "receipt" ? receiptRows : spendingRows).get(src.parent_line);
-      if (!parent) throw Error(`[BLOCKED] sign_reversal missing carrier parent ${src.parent_line}`);
-      const key = src.side === "receipt" ? state.receipt_scenario : parent.key;
-      extra[id] = key === src.parent_key ? parent.response : 0;
-    }
-    if (carrierEntries.length) {
-      state = { ...st, response_override: { ...st.response_override, ...extra } };
-      ev = evaluate(m, state);
-    }
-    const cap = pkg.capitalReturn(ev, { share: st.school_share, reading, rate: P.RATES[reading], enterprises: P.ENTERPRISES, long_run: null });
-    const ent = cap.components.filter(c => c.group === "enterprise").reduce((a, c) => a + c.return_bn, 0);
-    const capital = cap.total_bn - (atS ? (1 - s) * ent : 0);
-    // This sweeps service responses in a steady-state account. null would be
-    // indistinguishable from specsFor(long_run:false)'s first-year horizon.
-    const spec={allocation:st.allocation,reading,share:st.school_share,school:st.service_response,gg:st.general_government_response,uc:st.uncompensated_care_response,rate:pkg.RATES[reading],enterprises:pkg.ENTERPRISES,long_run:true};
-    const basePost=pkg.OCT15?pkg.OCT15.postEngine(spec):(pkg.postEngine?pkg.postEngine(spec):0);
-    const adjustedCapital=atS?{...cap,total_bn:capital,components:cap.components.map(c=>c.group==="enterprise"?{...c,return_bn:c.return_bn*s}:c)}:cap;
-    const added=pkg.postFor?pkg.postFor(m,spec,undefined,{evaluation:ev,capital:adjustedCapital}):{total_bn:0,amounts:{},parts:{}};
-    return { ev, s, capital, basePost, added };
+  const s = st.service_response, reading = st.general_government_response === gg.low ? "low" : st.general_government_response === gg.high ? "high" : null;
+  if (!reading) throw Error("[BLOCKED] sign_reversal general-government response has no case reading");
+  const extra = { [P.RENTAL]: 1 };
+  for (const id of enterprise) extra[id] = atS ? s : 1;
+  for (const [id, response] of fixedReceipts) extra[id] = response[reading];
+  for (const [id, src] of carrierEntries) if (src.kind !== "line") extra[id] = carrierFactor(src, reading, s, atS, scale);
+  let state = { ...st, response_override: { ...st.response_override, ...extra } };
+  let ev = evaluate(m, state);
+  const receiptRows = new Map(ev.receipts.map(row => [row.id, row]));
+  const spendingRows = new Map(ev.spending.map(row => [row.id, row]));
+  for (const [id, src] of carrierEntries) if (src.kind === "line") {
+    const parent = (src.side === "receipt" ? receiptRows : spendingRows).get(src.parent_line);
+    if (!parent) throw Error(`[BLOCKED] sign_reversal missing carrier parent ${src.parent_line}`);
+    const key = src.side === "receipt" ? state.receipt_scenario : parent.key;
+    extra[id] = key === src.parent_key ? parent.response : 0;
   }
+  if (carrierEntries.length) {
+    state = { ...st, response_override: { ...st.response_override, ...extra } };
+    ev = evaluate(m, state);
+  }
+  const cap = pkg.capitalReturn(ev, { share: st.school_share, reading, rate: P.RATES[reading], enterprises: P.ENTERPRISES, long_run: null });
+  const ent = cap.components.filter(c => c.group === "enterprise").reduce((a, c) => a + c.return_bn, 0);
+  const capital = cap.total_bn - (atS ? (1 - s) * ent : 0);
+  // This sweeps service responses in a steady-state account. null would be
+  // indistinguishable from specsFor(long_run:false)'s first-year horizon.
+  const spec={allocation:st.allocation,reading,share:st.school_share,school:st.service_response,gg:st.general_government_response,uc:st.uncompensated_care_response,rate:pkg.RATES[reading],enterprises:pkg.ENTERPRISES,long_run:true};
+  const basePost=pkg.OCT15?pkg.OCT15.postEngine(spec):(pkg.postEngine?pkg.postEngine(spec):0);
+  const adjustedCapital=atS?{...cap,total_bn:capital,components:cap.components.map(c=>c.group==="enterprise"?{...c,return_bn:c.return_bn*s}:c)}:cap;
+  const added=posts&&pkg.postFor?pkg.postFor(m,spec,undefined,{evaluation:ev,capital:adjustedCapital}):{total_bn:0,amounts:{},parts:{}};
+  return { ev, s, reading, spec, capital, adjustedCapital, basePost, added };
+}
+/* Runs f with Engine.evaluate replaced by the sign-reversal evaluation of pkg. options.post(r, ctx) prices the
+ * post-engine costs at sweep point r instead of the package's own ({ base, amounts, total }); ctx.sweep(Q, m, st)
+ * sweeps another package at the same rule (a generation's share of the whole case). Items 21 and 15 are scaled on the
+ * amounts it returns. */
+function withCase(pkg, variant, f, scale = scaleFor(pkg), options = {}) {
+  const evaluate = Engine.evaluate;
+  const ctx = { sweep: (Q, mQ, stQ, o = {}) => sweep(Q, variant, mQ, stQ, { scale, evaluate, ...o }) };
+  const own = !options.post;
+  // The base engine prices each point: a pricing hook that evaluates (a generation split) must not re-enter the wrapper.
+  const priced = (m, st) => {
+    const active = Engine.evaluate;
+    Engine.evaluate = evaluate;
+    try {
+      const r = ctx.sweep(pkg, m, st, { posts: own });
+      return { r, p: own ? { base: r.basePost, amounts: r.added.amounts, total: r.added.total_bn } : options.post(r, { ...ctx, m, st, variant }) };
+    } finally { Engine.evaluate = active; }
+  };
   Engine.evaluate = (m, st) => {
-    const r = run(m, st), s = r.s;
-    const amounts = { ...r.added.amounts };
+    const { r, p } = priced(m, st), s = r.s;
+    const amounts = { ...p.amounts };
     let correction = 0;
     if (scale && s !== 0 && s !== 1) {
-      const z = run(m, { ...st, service_response: 0, response_override: { ...st.response_override, [P.SYN.school]: 0, [P.SYN.college]: 0 } });
-      for (const id of SCALED_ITEMS) { const c = -(1 - s) * (z.added.amounts[id] || 0); amounts[id] = (amounts[id] || 0) + c; correction += c; }
+      const z = priced(m, { ...st, service_response: 0, response_override: { ...st.response_override, [P.SYN.school]: 0, [P.SYN.college]: 0 } }).p;
+      for (const id of SCALED_ITEMS) { const c = -(1 - s) * (z.amounts[id] || 0); amounts[id] = (amounts[id] || 0) + c; correction += c; }
     } else if (scale && s === 0) for (const id of SCALED_ITEMS) { correction -= amounts[id] || 0; amounts[id] = 0; }
-    const post = r.basePost + r.added.total_bn + correction;
+    const post = p.base + p.total + correction;
     last = { ...r.ev, welfare_bn: r.ev.welfare_bn - r.capital - post, engine_welfare_bn: r.ev.welfare_bn, capital_return_bn: r.capital, post_engine_bn: post,
       post_amounts: amounts, post_parts: r.added.parts || {}, scaled_correction_bn: correction };
     return last;
@@ -127,7 +149,7 @@ function frozenPersonal(model, pairs) {
   for (const pair of pairs) for (const prod of S24.productions(0)) for (const share of S24.SHARES) w[pair.end].push(S24.welfare(model, "personal", 0, pair, prod, share));
   return [Math.min(...w.most), Math.max(...w.least)];
 }
-function readings(pkg, scale = pkg === P) {
+function readings(pkg, scale = scaleFor(pkg)) {
   const model = pkg.payloadModel(), pairs = pairsOf(pkg), out = new Map();
   for (const [variant, suffix] of [["enterprises_at_1", ""], ["enterprises_at_s", "__enterprises_at_s"]]) withCase(pkg, variant, () => {
     for (const allocation of ["personal", "shared"]) out.set(`service_break_even_${allocation}${suffix}`, S24.breakEven(model, allocation, pairs));
@@ -136,7 +158,15 @@ function readings(pkg, scale = pkg === P) {
   }, scale);
   return out;
 }
+module.exports = { P, removeObservedChildren, withCase, sweep, carrierFactor, SERVICE_CAPITAL, GG_CAPITAL, SCALED_ITEMS, VARIANTS,
+  lastEvaluation: () => last };
 if (require.main === module) {
+const argv = process.argv.slice(2);
+const OUT = path.resolve(argv.includes("--out-dir") ? argv[argv.indexOf("--out-dir") + 1] : path.join(__dirname, "derived"));
+if (OUT !== path.join(__dirname, "derived") && !OUT.startsWith(__dirname + path.sep)) throw Error("[BLOCKED] sign_reversal output must stay inside v8's lane");
+const oldFile = path.join(__dirname, "../main_case_2026_10_15/derived/sign_reversal.csv");
+const oldLines = fs.readFileSync(oldFile, "utf8").trimEnd().split("\n"), oldRows = oldLines.map(l => l.split(","));
+const oldHeader = oldRows[0], values = new Map();
 const payload = P.correctionsPayload();
 if (payload.meta.coverage?.stub) console.log("[STUB] sign_reversal uses temporary coverage prices");
 const zero = P.V8_PACKAGE, zeroReadings = readings(zero);

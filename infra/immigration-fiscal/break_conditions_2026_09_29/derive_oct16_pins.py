@@ -23,6 +23,8 @@ def main():
         tables.INPUTS = [*tables.INPUTS[:14], *[tables.F / 'generation_account_2026_09_24/derived' / name
                         for name in ('generation_corrections_oct16.json', 'generation_corrections_oct16_cash.json',
                                      'generation_results_oct16.csv', 'generation_results_oct16_cash.csv')],
+                        # The engine's service break-even imports the case's sign-reversal rule and checks its file.
+                        tables.CASE.parent / 'sign_reversal.cjs', tables.CASE / 'sign_reversal.csv',
                         tables.HERE / 'engine_breaks_sept29.cjs', tables.HERE / 'first_year_v9.cjs',
                          tables.HERE / 'generation_preflight.cjs',
                          tables.HERE / 'reproduce_generation_source.cjs',

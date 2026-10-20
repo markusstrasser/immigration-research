@@ -1571,3 +1571,26 @@ longer enter C8.
   exit 0.
 
 [CALCULATION: tables_oct16.py; derived/conclusions_oct16.csv C8; rerun_lane.py]
+
+### Shared sign-reversal rule — 2026-10-21 06:21 JST (`date`)
+
+The engine's service break-even now imports `withCase` from `main_case_2026_10_16/sign_reversal.cjs`, the rule's one
+definition, in place of this lane's copy. Since d28bf7d5 that rule moves item 21's health residual, item 15's college
+remainder and the union completion's service capital carriers with the service response; the copy had kept them at the
+case's response. A generation's scoped package prices its post-engine costs through the rule's `post` hook, as its
+share of the whole case's amounts at the same sweep point, so items 21 and 15 are scaled there too. The break-even step
+now runs on the live case only: another `--case` key stops there with [BLOCKED], and earlier cases' outputs stay in git.
+The engine-scope pins now include the case's `sign_reversal.cjs` and `sign_reversal.csv`. The tables pins also take
+winners' `p7_inputs.json`, whose provenance lines changed in d28bf7d5. [CALCULATION: engine_breaks_sept29.cjs;
+derived/c2_break_even_oct16.csv, c6_generation_break_even_oct16.csv, conclusions_oct16.csv]
+
+- C2 break-evens, most / least adverse (before → now). Case accrual, enterprises at 1: personal −7.17 / 7.55% →
+  −1.54 / 12.39%, shared −1.47 / 14.22% → 3.94 / 18.79%. Enterprises at s: personal −2.94 / 11.20% → 2.29 / 15.70%,
+  shared 2.60 / 17.66% → 7.62 / 21.91%. Cash set, enterprises at 1: personal 12.62 / 27.35% → 17.19 / 31.16%, shared
+  20.02 / 35.75% → 24.28 / 39.17%; at s: personal 16.06 / 30.22% → 20.31 / 33.76%, shared 23.22 / 38.33% → 27.18 /
+  41.51%. The case rows reproduce the case's `sign_reversal.csv` (1e-4). The tally and C2's status do not change.
+- C6: generation costs do not change; the largest service break-even is 45.2% (was 45.0%), on cash 68.2% (was 68.1%).
+  G1 moves most: convention a, personal, from −22.0 / 10.6% to 5.6 / 30.9%. The generation welfare closure holds at
+  0, 0.37 and 1 (largest gap 1.75e-12).
+- Engine peak 2.157 GB, about 8 minutes. Pins: 26 engine, 42 tables. The documented nine-command replay with
+  `--allow-unrun {lane}/tables_oct14.py` gives IDENTICAL 102/102, exit 0.
