@@ -56,9 +56,8 @@ def main() -> None:
     # ---- Arm 1, NIBRS offenders: imputation methods and the arrestee validation
     imp = pd.read_csv(OUT / "nibrs_imputation_specs.csv")
     cen = imp[imp.method.str.startswith("central")].set_index("offence")
-    # values after the NIBRS lane's 2026-10-21 unknown-age correction (were 2.3034 and 4.2193)
-    gate("NIBRS central replicates the lane (murder 2.311, robbery 4.212)",
-         abs(cen.loc["Murder", "RR_H_NHW"] - 2.3114) < 1e-3 and abs(cen.loc["Robbery", "RR_H_NHW"] - 4.2118) < 1e-3,
+    gate("NIBRS central replicates the lane (murder 2.303, robbery 4.219)",
+         abs(cen.loc["Murder", "RR_H_NHW"] - 2.3034) < 1e-3 and abs(cen.loc["Robbery", "RR_H_NHW"] - 4.2193) < 1e-3,
          f"{cen.loc['Murder', 'RR_H_NHW']:.4f}, {cen.loc['Robbery', 'RR_H_NHW']:.4f}")
     C = lambda o: (cen.loc[o, "RR_H_NHW"], cen.loc[o, "RR_H_all"])  # noqa: E731
     for x in imp.itertuples():

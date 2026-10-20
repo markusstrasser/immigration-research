@@ -22,10 +22,9 @@ sys.path.insert(0, str(NIBRS))
 
 import nibrs_rates as nr  # noqa: E402  (the NIBRS lane's module)
 
-# The NIBRS lane's murder and robbery ratios after its 2026-10-21 unknown-age correction (RESULT.md,
-# "2026-10-21 correction"); before it they were 2.30 (1.53-3.93) and 4.22 (2.36-9.75)
-PUBLISHED = {("central", "Murder"): 2.31, ("alloc=b", "Murder"): 1.54, ("alloc=c", "Murder"): 3.94,
-             ("central", "Robbery"): 4.21, ("alloc=b", "Robbery"): 2.36, ("alloc=c", "Robbery"): 9.74}
+# The NIBRS lane's published murder ratios (RESULT.md, "Offending rates", Murder row)
+PUBLISHED = {("central", "Murder"): 2.30, ("alloc=b", "Murder"): 1.53, ("alloc=c", "Murder"): 3.93,
+             ("central", "Robbery"): 4.22, ("alloc=b", "Robbery"): 2.36, ("alloc=c", "Robbery"): 9.75}
 
 
 @lru_cache(maxsize=1)

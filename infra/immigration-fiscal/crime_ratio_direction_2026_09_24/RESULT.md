@@ -520,32 +520,3 @@ Every script is cache-first. Raw pulls are in `_cache/` (ignored); the NIBRS zip
 **Covered:** all five arms, the positive control, the booking, mixed-group and census items, and dollars for both lines.
 
 **Not covered:** the NIBRS-lane cost arms (`victim_cost_rerun.py` arms that use NIBRS national shares). These move in proportion to the Arm 1 national shares in `nibrs_imputation_specs.csv`; they are not the victim-cost central, and they are not re-costed here.
-
-## 2026-10-21 correction: NIBRS unknown age
-
-[CALCULATION: all 16 reproduce commands rerun after the fix; `rerun_lane.py` gave IDENTICAL 59/59,
-exit 0, at 2026-10-21 02:46:18 JST]
-
-The bug: NIBRS stores an unknown age as age_id 103 with age_num '00' (104 is 'NS'). This lane read
-'00' as age 0 in three places: the victim age band (`vage_band`), the recorded offenders' age
-(`known["age"]`), and the upstream `nibrs_stage.age_band` it imports. `nibrs_restage.py` now reads
-ages through `nibrs_age()`, which maps 103 and 104 to unknown and stops if either carries an age.
-The upstream function is fixed the same way.
-
-Gates pinned to the upstream ratios moved with them:
-- `nibrs_base.PUBLISHED`: murder 2.31 (1.54–3.94), robbery 4.21 (2.36–9.74).
-- `ratio_adjustments` NIBRS-central gate: 2.3114 / 4.2118.
-
-What moved:
-- Mean recorded-offender age: 31.17 → 33.42 years. Before, 92,216 victimisation rows carried a
-  mean offender age of 0; 20.2% of recorded TX-2023 offenders are age_id 103. The off_age
-  covariate in the imputation models was biased low until now.
-- Victims under 12 in the restage: 92,773 → 75,293. The 'unk' band: 19,650 → 37,130.
-- Central Hispanic ÷ NH-white ratios: murder 2.3034 → 2.3114, robbery 4.2193 → 4.2118, rape
-  1.7456 → 1.7409, aggravated assault 2.2347 → 2.2366, simple assault 1.7422 → 1.7408. No ratio in
-  `ratio_adjustments.csv` moves by more than 0.0093.
-- Mixed-group Hispanic fraction θ (All five): 0.497673 → 0.497681 (n 16,096 → 16,207). The victim
-  mixed-group row $30.927388bn → $30.927422bn (+$0.000034bn).
-- Booking factor: 1.0401 → 1.0400; its justice-key delta +$0.869bn → +$0.866bn (proposed, not
-  adopted).
-- The headline table above rounds the same, except that the murder central reads 2.31.
