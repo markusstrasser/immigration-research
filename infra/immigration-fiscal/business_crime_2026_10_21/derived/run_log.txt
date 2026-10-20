@@ -1,0 +1,117 @@
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/TX-2022.zip: PASS — 9c2632330fda
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/TX-2023.zip: PASS — 895e70887600
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/AZ-2022.zip: PASS — 3cf8957f3000
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/AZ-2023.zip: PASS — 21e027cd9a93
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/CA-2022.zip: PASS — 313e67394c4b
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/CA-2023.zip: PASS — 2dcf66724830
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/TX-2022.pkl: PASS — 8669794e9f5e
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/TX-2023.pkl: PASS — 3cc65f878b53
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/AZ-2022.pkl: PASS — e244d477f841
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/AZ-2023.pkl: PASS — c18cbe4003c5
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/CA-2022.pkl: PASS — 9bdc8b23e395
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/CA-2023.pkl: PASS — 9e711da9c15c
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/cde_agencies_TX.json: PASS — f5baec7c8e5e
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/cde_agencies_AZ.json: PASS — 55a593cb2eae
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/cde_agencies_CA.json: PASS — 2a969077000e
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/derived/acs5_place_county_groups.csv: PASS — 26029ee2a2a2
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/derived/outside_share_by_offence.csv: PASS — 74083e62ab12
+[gate] pin ../ncvs_victim_offender_2026_09_18/derived/cv_population_12plus.csv: PASS — 3b71509726cc
+[gate] pin ../nibrs_arrests_2026_09_16/_cache/nc-est2024-alldata-h-file08.csv: PASS — 74d5c4be10b4
+[gate] pin ../nibrs_arrests_2026_09_16/_cache/nc-est2024-alldata-h-file10.csv: PASS — d17b66e5661c
+[gate] pin ../nibrs_arrests_2026_09_16/arrests_by_ethnicity_2023.csv: PASS — 0e95fd487791
+[gate] pin ../nibrs_arrests_2026_09_16/_cache/x/est2024/CIUS_Table_7_Offense_Analysis_United_States_2020-2024.xlsx: PASS — f4aef2067d98
+[gate] pin ../nibrs_arrests_2026_09_16/_cache/x/est2024/CIUS_Table_1_Crime_in_the_United_States_by_Volume_and_Rate_per_100000_Inhabitants_2005-2024.xlsx: PASS — f4915ae870fe
+[gate] pin ../nibrs_arrests_2026_09_16/_cache/x/est2024/CIUS_Table_5_Crime_in_the_United_States_by_State_2024.xlsx: PASS — 0feabb80db53
+[gate] pin ../sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json: PASS — 3b7d00abeabf
+[gate] pin ../social_costs_unpriced_2026_09_28/derived/payment_keys.json: PASS — 1c886f0d713f
+[gate] pin ../job_capital_taxes_2026_10_14/derived/wages_by_industry.csv: PASS — 3bccaa790e71
+[gate] pin ../crime_victim_cost_2026_09_23/derived/mortality_arms.csv: PASS — f5f455e8fef6
+[gate] pin ../crime_victim_cost_2026_09_23/derived/unit_costs_victim_only_2024usd.csv: PASS — f4228a76e4a4
+[gate] pin ../crime_victim_cost_2026_09_23/derived/scaling_hispanic_to_mexican.csv: PASS — d4e7ecd8ef0b
+[gate] pin ../crime_victim_cost_2026_09_23/derived/outside_victim_shares_central.csv: PASS — 1d172b7a59e2
+[gate] pin _cache/nrss2023.pdf: PASS — 0c34f950ac64
+[gate] pin _cache/nrss2023.txt: PASS — 3efa0beee691
+[gate] pin _cache/mrtssales92-present.xlsx: PASS — 190d718b8536
+[gate] pin _cache/arts2022r_gmper.xlsx: PASS — 4710df1aa375
+[gate] payment key equal at both ends: PASS
+[gate] case keys read (oct16): PASS — k_low 0.070311, k_high 0.066062, recipient 0.010275, lineage 44.903074M, payment lineage 0.099450
+[gate] Hispanic -> Mexican population share is the victim lane's: PASS — 0.597521
+murder on v9: $14.610–16.270bn (0.3912 of victims $37.342–41.585bn); legacy source-lane share 0.3165
+[gate] MRTS 2024 not-adjusted annual totals parsed: PASS — retail total $7.1067tn
+[gate] MRTS: retail total = excl. motor vehicles + motor vehicles: PASS
+[gate] ARTS 2022 (restated) gross margin parsed: PASS — {'total': 0.313, 'excl_mv': 0.331}
+[gate] NRSS 2023 text: 'average shrink rate in FY 2022 increased to 1.6%...': PASS
+[gate] NRSS 2023 text: '$112.1 billion in losses...': PASS
+[gate] NRSS 2023 text: 'accounted for an average of 36% of total loss...': PASS
+[gate] NRSS 2023 text: 'Internal (employee) theft reported in at 29% of ...': PASS
+[gate] NRSS 2023 text: 'Process, control failures and errors fell at 27%...': PASS
+[gate] NRSS 2023 text: 'more than three-quarters (78%) of respondents do...': PASS
+[gate] NRSS 2023 text: 'over half (57%) do not include supply chain loss...': PASS
+[gate] CIUS 2024 Table 7 parsed: PASS — shoplifting 1,270,097
+[gate] CIUS 2024 Table 1 property crime: PASS — 5,986,400
+[gate] NRF's $112.1bn is 1.6% of a base near MRTS total retail (NRF applies the rate to all retail sales): PASS — implied 2022 base $7006bn vs 2024 total $7107bn
+
+-- National Hispanic share of offending, business victims at retail locations (central) --
+                     weight_total  RR_H_NHW  RR_H_all  local_share_H  local_pop_share_H  national_share_H  unknown_share
+offence                                                                                                                 
+arson                     196.000     0.852     0.911          0.342              0.375             0.180          0.509
+burglary                15668.000     1.399     0.779          0.292              0.375             0.160          0.701
+embezzlement             2668.000     1.674     0.921          0.346              0.375             0.195          0.160
+extortion                  12.000     1.760     0.611          0.229              0.375             0.124          0.333
+fraud                   17699.000     1.170     0.937          0.351              0.375             0.192          0.437
+motor_vehicle_theft      1939.000     0.908     0.807          0.303              0.375             0.160          0.617
+other_larceny           44181.000     1.165     0.885          0.332              0.375             0.181          0.445
+robbery                  6069.000     2.530     0.685          0.257              0.375             0.143          0.283
+shoplifting            170440.000     1.366     0.913          0.342              0.375             0.190          0.350
+theft_coin_machine        450.000     1.455     1.082          0.406              0.375             0.231          0.652
+theft_from_building      3057.000     1.308     0.902          0.338              0.375             0.186          0.525
+vandalism               12134.000     1.240     0.843          0.316              0.375             0.172          0.616
+
+-- arrestees, business-victim incidents --
+                     arrestees  eth_unknown_share  local_share_H  RR_H_NHW  national_share_H
+offence                                                                                     
+arson                  405.000              0.057          0.312     0.860             0.164
+burglary              4915.000              0.044          0.309     0.928             0.164
+embezzlement           463.000              0.058          0.310     1.112             0.167
+extortion                7.000              0.000          0.571     2.240             0.362
+fraud                 6571.000              0.043          0.329     1.030             0.177
+motor_vehicle_theft   1655.000              0.040          0.298     0.879             0.157
+other_larceny        25878.000              0.049          0.331     1.135             0.180
+robbery               2269.000              0.036          0.313     2.111             0.176
+shoplifting          52605.000              0.055          0.342     1.056             0.185
+theft_coin_machine      84.000              0.024          0.268     0.560             0.133
+theft_from_building    648.000              0.063          0.323     1.007             0.173
+vandalism             4996.000              0.043          0.306     0.892             0.161
+
+shoplifting national Hispanic share: central 0.1896, specification range 0.1563–0.1947, allocation bounds 0.1162–0.3794
+national Hispanic population share, all ages (NC-EST2024): 0.2025
+
+A. retail external theft at cost: $21.30bn (low $12.13bn, high at retail $44.02bn); police-recorded shoplifting $0.453bn (1,270,097 offences × $357 mean net loss)
+B. union share of store-retail wages (excl. motor vehicle dealers): 0.0983 (cells 0.0810–0.1309); NIBRS retail embezzlement route 0.1163; high arm takes the larger, 0.1309
+C. police-recorded non-retail business losses, national: $5.086bn; loss-weighted Hispanic share 0.1685
+   (cargo-flagged business losses in TX+AZ NIBRS: $17.22M a year; CargoNet 2024 US+Canada $0.455bn)
+[gate] CIUS 2024 Table 5 TX and AZ state totals: PASS — ARIZONA 7,582,384, TEXAS 31,290,831
+TX+AZ NIBRS covered population 34.20M of 38.87M; national/TX+AZ violent scale 7.939
+D. children under 12 (non-family, outside): union $0.041bn tangible, $0.551bn full
+E. jail/prison location: union $0.012bn tangible, $0.098bn full
+F. fraud/embezzlement/extortion against individuals, police-recorded national $2.569bn; Hispanic share 0.1586; union outside $0.164bn
+beside: employees' intangible loss in 62,791 commercial robberies, union outside $0.069bn (overlaps the NCVS victims row; not added)
+
+-- arms ($bn, lineage, outside residents) --
+arm                                          bound_high        bound_low        central          high           low        police_recorded_floor       
+end                                                high    low      high    low    high    low   high    low   high    low                  high    low
+line                                                                                                                                                   
+A retail external theft                           4.636  4.654     1.419  1.425   2.316  2.325  5.498  5.520  0.980  0.984                 0.049  0.049
+B retail employee theft                             NaN    NaN       NaN    NaN   1.619  1.625  4.455  4.473  0.759  0.762                   NaN    NaN
+C non-retail business, police-recorded              NaN    NaN       NaN    NaN   0.492  0.493  1.099  1.103  0.443  0.445                   NaN    NaN
+D children under 12, non-family (full)              NaN    NaN       NaN    NaN   0.587  0.589  0.656  0.659  0.529  0.531                   NaN    NaN
+E jail/prison location (full)                       NaN    NaN       NaN    NaN   0.105  0.105  0.117  0.118  0.095  0.095                   NaN    NaN
+F fraud against individuals, police-recorded        NaN    NaN       NaN    NaN   0.175  0.176  0.196  0.197  0.158  0.159                   NaN    NaN
+    arm  end  gross_forward_bn  net_with_without_bn  gross_per_member_usd  net_per_member_usd  murder_v9_bn  gross_over_murder  net_over_murder
+central  low             5.314                1.475               118.352              32.854         14.61              0.364            0.101
+central high             5.293                1.452               117.882              32.341         16.27              0.325            0.089
+    low  low             2.976                0.534                66.268              11.889         14.61              0.204            0.037
+    low high             2.964                0.521                66.005              11.604         16.27              0.182            0.032
+   high  low            12.069                4.379               268.784              97.530         14.61              0.826            0.300
+   high high            12.021                4.327               267.717              96.355         16.27              0.739            0.266
+[gate] every arm line present at both ends: PASS

@@ -1,0 +1,43 @@
+line,arm,end,gross_forward_bn,net_with_without_bn,note
+A retail external theft,central,low,2.324907,0.463712,"NRSS 1.6% x 36% x store retail excl. motor vehicles, at cost; NIBRS shoplifting share"
+A retail external theft,low,low,0.984036,-0.113539,"1.4% (FY2021) x store retail excl. motor vehicles, gas and nonstore, at cost; lowest specification share; Mexican/Hispanic ratio 0.901"
+A retail external theft,high,low,5.519865,1.752081,"1.6% x external incl. pro-rata unknown/other x all retail, at retail value; highest specification share; Mexican/Hispanic ratio 1.118"
+A retail external theft,bound_low,low,1.425134,-0.535425,central volume; every unknown offender non-Hispanic
+A retail external theft,bound_high,low,4.654076,3.050097,central volume; every unknown offender Hispanic
+A retail external theft,police_recorded_floor,low,0.049490,0.009871,CIUS 2024 shoplifting x NIBRS mean net loss; police-recorded only
+B retail employee theft,central,low,1.625395,0.098772,union retail worker share 0.0983 [ASSUMPTION: theft per worker equal]
+B retail employee theft,low,low,0.762477,-0.125017,union retail worker share 0.0810 [ASSUMPTION: theft per worker equal]
+B retail employee theft,high,low,4.472508,1.440214,union retail worker share 0.1309 [ASSUMPTION: theft per worker equal]
+"C non-retail business, police-recorded",central,low,0.493465,0.042148,unreported multiplier 1 [ASSUMPTION]; Mexican/Hispanic ratio 1.000
+"C non-retail business, police-recorded",low,low,0.444641,-0.012068,unreported multiplier 1 [ASSUMPTION]; Mexican/Hispanic ratio 0.901
+"C non-retail business, police-recorded",high,low,1.103467,0.213702,unreported multiplier 2 [ASSUMPTION]; Mexican/Hispanic ratio 1.118
+"D children under 12, non-family (full)",central,low,0.589286,0.589286,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
+"D children under 12, non-family (full)",low,low,0.530981,0.530981,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
+"D children under 12, non-family (full)",high,low,0.658868,0.658868,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118
+E jail/prison location (full),central,low,0.105320,0.105320,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
+E jail/prison location (full),low,low,0.094899,0.094899,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
+E jail/prison location (full),high,low,0.117756,0.117756,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118
+"F fraud against individuals, police-recorded",central,low,0.175998,0.175998,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
+"F fraud against individuals, police-recorded",low,low,0.158585,0.158585,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
+"F fraud against individuals, police-recorded",high,low,0.196780,0.196780,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118
+A retail external theft,central,high,2.315678,0.453463,"NRSS 1.6% x 36% x store retail excl. motor vehicles, at cost; NIBRS shoplifting share"
+A retail external theft,low,high,0.980130,-0.117876,"1.4% (FY2021) x store retail excl. motor vehicles, gas and nonstore, at cost; lowest specification share; Mexican/Hispanic ratio 0.901"
+A retail external theft,high,high,5.497953,1.727748,"1.6% x external incl. pro-rata unknown/other x all retail, at retail value; highest specification share; Mexican/Hispanic ratio 1.118"
+A retail external theft,bound_low,high,1.419477,-0.541707,central volume; every unknown offender non-Hispanic
+A retail external theft,bound_high,high,4.635601,3.029581,central volume; every unknown offender Hispanic
+A retail external theft,police_recorded_floor,high,0.049294,0.009653,CIUS 2024 shoplifting x NIBRS mean net loss; police-recorded only
+B retail employee theft,central,high,1.618942,0.091607,union retail worker share 0.0983 [ASSUMPTION: theft per worker equal]
+B retail employee theft,low,high,0.759451,-0.128378,union retail worker share 0.0810 [ASSUMPTION: theft per worker equal]
+B retail employee theft,high,high,4.454754,1.420499,union retail worker share 0.1309 [ASSUMPTION: theft per worker equal]
+"C non-retail business, police-recorded",central,high,0.491506,0.039973,unreported multiplier 1 [ASSUMPTION]; Mexican/Hispanic ratio 1.000
+"C non-retail business, police-recorded",low,high,0.442876,-0.014028,unreported multiplier 1 [ASSUMPTION]; Mexican/Hispanic ratio 0.901
+"C non-retail business, police-recorded",high,high,1.099086,0.208838,unreported multiplier 2 [ASSUMPTION]; Mexican/Hispanic ratio 1.118
+"D children under 12, non-family (full)",central,high,0.586946,0.586946,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
+"D children under 12, non-family (full)",low,high,0.528873,0.528873,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
+"D children under 12, non-family (full)",high,high,0.656253,0.656253,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118
+E jail/prison location (full),central,high,0.104902,0.104902,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
+E jail/prison location (full),low,high,0.094523,0.094523,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
+E jail/prison location (full),high,high,0.117288,0.117288,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118
+"F fraud against individuals, police-recorded",central,high,0.175299,0.175299,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
+"F fraud against individuals, police-recorded",low,high,0.157955,0.157955,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
+"F fraud against individuals, police-recorded",high,high,0.195999,0.195999,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118

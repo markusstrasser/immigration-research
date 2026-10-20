@@ -1,0 +1,105 @@
+{
+ "L_ext_bn": {
+  "central": 21.296544814079997,
+  "high": 44.015671741935485,
+  "low": 12.129154697520002
+ },
+ "L_int_bn": {
+  "central": 17.155549989119997,
+  "high": 35.45706890322581,
+  "low": 9.77070795078
+ },
+ "L_non_bn": 5.086090877034507,
+ "L_shop_police_bn": 0.45333653338716395,
+ "commercial_robbery_employee_intangible_union_bn": 0.06890925929629095,
+ "gross_margin": {
+  "excl_mv": 0.331,
+  "total": 0.313
+ },
+ "k_high": 0.06606175123321623,
+ "k_low": 0.07031058462501538,
+ "lineage_m": 44.903074086245226,
+ "lines": [
+  "A retail external theft",
+  "B retail employee theft",
+  "C non-retail business, police-recorded",
+  "D children under 12, non-family (full)",
+  "E jail/prison location (full)",
+  "F fraud against individuals, police-recorded"
+ ],
+ "mean_shop_loss_usd": 356.9306386733958,
+ "murder_share_source_lane_legacy": 0.316538530759721,
+ "murder_share_v9": 0.3912396384248098,
+ "murder_v9_high_bn": 16.269876166507668,
+ "murder_v9_low_bn": 14.609613337406362,
+ "national_hispanic_pop_share_all_ages": 0.20250389944240943,
+ "nrss": {
+  "external": 0.36,
+  "internal": 0.29,
+  "other": 0.01,
+  "process": 0.27,
+  "shrink": 0.016,
+  "shrink_fy2021": 0.014,
+  "unknown": 0.06
+ },
+ "payment_share_lineage": 0.0994499672980725,
+ "payment_share_union": 0.09130597981153593,
+ "pins": {
+  "../crime_victim_cost_2026_09_23/derived/mortality_arms.csv": "f5f455e8fef6e2465988ba83789190fc30c7e6c4b680b0f0c6ea46a9eb653f6f",
+  "../crime_victim_cost_2026_09_23/derived/outside_victim_shares_central.csv": "1d172b7a59e22f18c23fd12fe6ec6c3a594130bd7a73a2e1121b7eaf317cee80",
+  "../crime_victim_cost_2026_09_23/derived/scaling_hispanic_to_mexican.csv": "d4e7ecd8ef0b25302f113b5fc72c887851f7c60630d0acfcb20b87cc85230b95",
+  "../crime_victim_cost_2026_09_23/derived/unit_costs_victim_only_2024usd.csv": "f4228a76e4a43a33c6e56c2bdcc99b82790994073bf27015c622ab27f28d5de9",
+  "../job_capital_taxes_2026_10_14/derived/wages_by_industry.csv": "3bccaa790e713c2206ccba4a091b42a41b293b58eda41ee4aede4ee806202009",
+  "../ncvs_victim_offender_2026_09_18/derived/cv_population_12plus.csv": "3b71509726cc7d87e4d9f072e59cc61561b6c5be31be18f0e499f2b70d8ccb8f",
+  "../nibrs_arrests_2026_09_16/_cache/nc-est2024-alldata-h-file08.csv": "74d5c4be10b4c14d101c7bf4f8e91a3df3a92a22fc33ee73f44ad7c6c8717d45",
+  "../nibrs_arrests_2026_09_16/_cache/nc-est2024-alldata-h-file10.csv": "d17b66e5661c4dc1c2d0fd129c922d15b928d6b548c0893c016171bf5e33b5f8",
+  "../nibrs_arrests_2026_09_16/_cache/x/est2024/CIUS_Table_1_Crime_in_the_United_States_by_Volume_and_Rate_per_100000_Inhabitants_2005-2024.xlsx": "f4915ae870feca9ad8dd28e23b52c8ec382c4e389bdc1ddb1be7e423c5efc7b7",
+  "../nibrs_arrests_2026_09_16/_cache/x/est2024/CIUS_Table_5_Crime_in_the_United_States_by_State_2024.xlsx": "0feabb80db5341a882c96a09ed30808a734c78e405ee8bc9869e43e25b9c9552",
+  "../nibrs_arrests_2026_09_16/_cache/x/est2024/CIUS_Table_7_Offense_Analysis_United_States_2020-2024.xlsx": "f4aef2067d980ff15a8700fa6ce2ea9d26f8b29172ed62da22a423a1ef872587",
+  "../nibrs_arrests_2026_09_16/arrests_by_ethnicity_2023.csv": "0e95fd4877918a6db5b63a6479ad88b80285de2ee8a6da2c9903d6224e2db23b",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/AZ-2022.zip": "3cf8957f3000b36e5575f0330bec5cc7b472f9d60ff79b6945c221c3d6781649",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/AZ-2023.zip": "21e027cd9a9348d39143e6eca7823eff9e8e2746683302875bdd86e1af69afc3",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/CA-2022.zip": "313e67394c4b1be94b1a69719961fe31df0705f3badcf2c71304d35fc18c0732",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/CA-2023.zip": "2dcf66724830e933722ac7aa4e9d82615fe9adfdcbf5a07a1e67b8f83bc88584",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/TX-2022.zip": "9c2632330fda16ca292f3b32574174a5c92bb89c505661a4dcb9d3b717481224",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/TX-2023.zip": "895e708876005299e0e376c599e8f74971f17b5447fcf8776443c62d709d0b70",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/cde_agencies_AZ.json": "55a593cb2eaee7914d246445a13ceb70cf06ea16f4728833e746f64fc478da12",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/cde_agencies_CA.json": "2a969077000efccee6805c7cf33188459c064c0f97e69477b6da48bcf1f10241",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/cde_agencies_TX.json": "f5baec7c8e5ee588cca0490070226a9b91558858e0a745f858e042a10129ed77",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/stage/AZ-2022.pkl": "e244d477f8411367b7e7f1628abc228b6e659cad289deb71061d22b62e32c80d",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/stage/AZ-2023.pkl": "c18cbe4003c5a9c455435e9aa9121d9db0162504b9c266a4301e3edd099172ce",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/stage/CA-2022.pkl": "9bdc8b23e39513c0eba33c7388c02aed4786b1896d87bb5f9fe26d384f95718e",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/stage/CA-2023.pkl": "9e711da9c15c033cf4f8dd4b6f70c865874028341cc8c55554b0390a9da1d749",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/stage/TX-2022.pkl": "8669794e9f5e24e3cb3d50a75108f661038ae5df9d6d78f337c3c3863fd61624",
+  "../offender_ethnicity_nibrs_2026_09_23/_cache/stage/TX-2023.pkl": "3cc65f878b53dc706a125e3cf4e561b53182d518272a6ef0e301a9c0642b9a58",
+  "../offender_ethnicity_nibrs_2026_09_23/derived/acs5_place_county_groups.csv": "26029ee2a2a22b34535f764a7342310bd508ea6f3073d28535e70707351ed40f",
+  "../offender_ethnicity_nibrs_2026_09_23/derived/outside_share_by_offence.csv": "74083e62ab12152f5eef16d8f8cdad3d4a099a2e48772dde61c474dec977f09b",
+  "../sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json": "3b7d00abeabf786fc140f36ec671c902729ffeed709f5848b00b22cd47a7406c",
+  "../social_costs_unpriced_2026_09_28/derived/payment_keys.json": "1c886f0d713fab51a0a15b8c9460fb3b16233dc39b97a7ed9f9ed38eb442d55a",
+  "_cache/arts2022r_gmper.xlsx": "4710df1aa375585f5fe553709d8f212eb938a02a7dd54df67f89cc217b2b2a68",
+  "_cache/mrtssales92-present.xlsx": "190d718b853613163d3e9c3b5fe4444966ac3a7d908b60f0526df8692ccb6119",
+  "_cache/nrss2023.pdf": "0c34f950ac643c478314bf871cf8067655d92d27ab9be8e79b48826f3a7fb739",
+  "_cache/nrss2023.txt": "3efa0beee69144a27c9a139bf589c71ea32426160c76eebde68147203ff686d4"
+ },
+ "recipient_share": 0.010275181579126573,
+ "s_mex": 0.597521,
+ "sales_base_bn": {
+  "central": 5526.632,
+  "high": 7106.697,
+  "low": 3597.277
+ },
+ "shoplifting_share": {
+  "bound_high": 0.37944906625005204,
+  "bound_low": 0.11619189275927777,
+  "central": 0.18955078862896205,
+  "high": 0.19474998222400636,
+  "low": 0.1563350360166531
+ },
+ "victims_v9_high_bn": 41.585449347832885,
+ "victims_v9_low_bn": 37.341853694137136,
+ "worker_share": {
+  "central": 0.09829616116960485,
+  "high": 0.130867149,
+  "low": 0.08096239
+ }
+}
