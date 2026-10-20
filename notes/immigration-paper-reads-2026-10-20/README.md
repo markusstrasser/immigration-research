@@ -27,7 +27,10 @@ footnote count, datasets the paper uses that the repo lacks, one-line reason.
   - Ramos & Alaniz 2022;
   - LeRoy 2025.
 - **Parses:** Marker 2 on Modal with GPT-6 Luna (OpenRouter) as the cleanup model, after the Gemini key hit its
-  spend cap; each parse logged 0 LLM errors. Two figures were checked by hand against the paper text:
+  spend cap. The 21 parses made 18:30–18:49 JST made 3–52 LLM requests each. Riaz 2026 and the second Santos
+  JAMA parse (19:14–19:17) made none, because the OpenRouter key ran out of credits (402) and Marker fell back to
+  its non-LLM text while reporting 0 errors. That detector was fixed in research-mcp on 2026-10-20. Riaz's read is
+  therefore on a text-layer parse ([DEGRADED] for tables and equations; the read rates it FULL). Two figures were checked by hand against the paper text:
   - Santos (JAMA 2025): emergency Medicaid is 0.4% (SD 0.5%) of reporting states' Medicaid spending.
   - Ommerborn (2022): the payer cells (+13.7 Medicare, +10.2 Medicaid, +39.3 private, −4.9 uncompensated) add to
     $58.3bn, and 89.0% of that is the undocumented share. Both match. [DATA: corpus parses]
