@@ -898,6 +898,15 @@ ed8fc58b.
 | `infra/immigration-fiscal/assumption_explorer_2026_09_21/template.html` | `116ed758` (2026-10-08) | — |
 | `infra/immigration-fiscal/assumption_explorer_2026_09_21/ui.js` | `116ed758` (2026-10-08) | — |
 
+### Deleted 2026-10-20: superseded cases' derived files (tombstones)
+
+At the operator's request, 74 derived files from cases before v8 (sept26 to oct14) that no code reads any more:
+generation_account (3), winners_losers (11), world_ledger (60). Each path and its last commit is in
+[`notes/2026-10-20-deleted-old-case-derived.tsv`](../notes/2026-10-20-deleted-old-case-derived.tsv); recover one with
+`git show <last commit>:<path>`; every one is also on GitHub at origin/main 18c296a2. Files that code can still read
+for an old case, that the evidence map or figures page read, or that sit in lanes holding the uncommitted v9
+propagation stay. The live case reran IDENTICAL 46/46 and the drift audits were byte-identical after the deletion.
+
 ## Revisions
 
 - 2026-10-15 (main case v8, [decision](../decisions/2026-10-15-main-case-v8.md), including its same-day correction): the case and committed phase-1 consumers use `oct15`, including Census coverage, the completed union and mixed-unit stayers. The social pairing follows round 3 with both budget sides central and the fiscal low end on the case. WAVE2 comparator, winners and world-ledger figures remain pending. Concept affected: the live fiscal account, population and fiscal-plus-social pairing.
