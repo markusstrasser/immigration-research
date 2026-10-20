@@ -1,6 +1,6 @@
 /* Builds src/generated/figures.json for the figures page.
  *
- * The complete-account figures run main case v6 (adopted 2026-10-07) through its package on the case's
+ * The complete-account figures run main case v9 (adopted 2026-10-20) through its package on the case's
  * payload model (account.cjs): each staircase step and matrix cell is one evaluation per specification,
  * with every response set explicitly. The other figures read lane files, among them the white-reference
  * ledger with item T, the income tax the survey misses (decision 2026-10-07-ledger-item-t-income-tax-keys).
@@ -12,9 +12,9 @@
 "use strict";
 const A = require("./account.cjs");
 const {
-  fs, path, HERE, FISCAL, readJson, readCsv, inputs, P, Engine, model, SPECS, CBO_SCHOOL, SUMMARY, MAIN, CASH, BANDS,
-  GG, ENDS, NONE, CASE_CHOICE, costAt, evaluate, RECEIPTS, RECEIPT_MOVES, withReceipts, PROD_SPAN, saneProduction,
-  JUSTICE_KEYS, UC_KEYS, S24, PAIRS, withCase, gate, failures, near, round, span,
+  fs, path, HERE, FISCAL, readJson, readCsv, inputs, P, Engine, model, SPECS, PROFILE, CBO_SCHOOL, SUMMARY, V9, MAIN, CASH,
+  COMPANIONS, ONE_RATE, GG, ENDS, NONE, CASE_CHOICE, costAt, evaluate, fixedPost, RECEIPTS, RECEIPT_MOVES, withReceipts, PROD_SPAN,
+  saneProduction, JUSTICE_KEYS, UC_KEYS, S24, PAIRS, withCase, CARRIERS, gate, failures, near, round, span,
 } = A;
 
 // One row of a lane table, by its fields; a missing or doubled row stops the build.
@@ -30,21 +30,49 @@ const num = (x) => {
 };
 const atEnds = (xs) => ENDS.map((i) => xs[i]);
 const BREAK = path.join(FISCAL, "break_conditions_2026_09_29", "derived");
+const END_LABELS = ENDS.map((i, j) => `${j ? "high" : "low"}_end_${i}`);
+// The package's own run of a profile at every specification: the oracle for the rows that set a whole profile.
+const profileCosts = (profile, f = (s) => s) => SPECS.map((s) => P.evaluateFull(model, f(s), profile).cost_bn);
+const profileBand = (profile, f) => span(profileCosts(profile, f));
+
+/* The C2 tally's class rule (break_conditions_2026_09_29/engine_breaks_sept29.cjs directTally, on oct16): the
+ * group's direct receipts less its household transfers, the union-completion carriers in their parents' classes,
+ * and v9's post-engine parts on household-transfer lines (the military item's compensation). The fixed
+ * post-engine costs have no declared class split and stay out. Positive: everyone else worse off. With
+ * carrierParents, a post-engine part on a carrier line takes its parent's class too, as the carrier's own amount
+ * does; the C2 rule classes it by the carrier line's own class, which leaves the military item's parts on the
+ * completed reporters' veterans and TRICARE carriers out of the tally. */
+function classTally(pkg, full, carrierParents = false) {
+  const ev = full.evaluation;
+  let rec = ev.classes.direct_receipts.responsive_bn, tr = ev.classes.household_transfer.responsive_bn;
+  for (const [id, src] of Object.entries(pkg.correctionsPayload().meta.union_completion.carriers)) if (src.kind === "line") {
+    const carrier = ev.spending.find((r) => r.id === id), parent = (src.side === "receipt" ? ev.receipts : ev.spending).find((r) => r.id === src.parent_line);
+    if (!carrier || !parent) throw new Error(`C2 completion class lacks carrier/parent ${id}`);
+    if (src.side === "receipt" && parent.group === "direct_receipts") rec -= carrier.amount_bn * carrier.response;
+    if (src.side === "spending" && parent.response_class === "household_transfer") tr += carrier.amount_bn * carrier.response;
+  }
+  for (const parts of Object.values(full.v9_post_engine.parts)) for (const p of parts) {
+    const src = CARRIERS[p.line];
+    const line = ev.spending.find((r) => r.id === (carrierParents && src?.kind === "line" && src.side === "spending" ? src.parent_line : p.line));
+    if (line?.response_class === "household_transfer") tr += p.delta_bn;
+  }
+  return tr - rec;
+}
 
 /* ---------------------------------------------------------------- staircase ----------------- */
 
 /* From the tally commentators quote to the main case, one line at a time, then beyond it. Each step adds
- * its choice to the ones before; every bar is the range over the case's 64 specifications. */
+ * its choice to the ones before; every bar is the range over the case's 32 specifications. */
 console.log("\n[staircase]");
-const pct = (x) => Math.round(100 * x);
 const STEPS = [
   { id: "tally", label: "Taxes paid minus benefits received", note: "pension promises counted as they are earned", c: {} },
   { id: "property", label: "Property taxes, as tax bases grow", note: "the long-run share", c: { property: true } },
   { id: "production", label: "Gain from their work", note: "wages, profits and the taxes on them", c: { production: true } },
+  { id: "jobcap", label: "Taxes on the business capital their jobs use", note: "corporate, production and property taxes", c: { jobcap: true } },
   { id: "schools", label: "Schools at their full cost per pupil", note: "at the prices of the states they live in", c: { schools: 1 } },
   { id: "colleges", label: "Public colleges, fees and Pell grants", note: "charged by use", c: { colleges: 1 } },
   { id: "police", label: "Police, courts and prisons", note: "charged by use", c: { police: 1 } },
-  { id: "health", label: "Public health services", c: { health: 1 } },
+  { id: "health", label: "Public health services", note: "keyed by who pays for the group’s care", c: { health: 1 } },
   { id: "welfare", label: "Welfare administration, housing, community", c: { welfare: 1 } },
   { id: "constants", label: "Care work, shelter and audit corrections", note: "counted in full", c: { constants: true } },
   { id: "gg", label: `General administration, ${GG.map((g) => g.toFixed(2)).join("–")}`,
@@ -53,7 +81,8 @@ const STEPS = [
     c: { roads: "long_run", parks: "long_run" } },
   { id: "rental", label: "Rental assistance", note: "grows one for one", c: { rental: true } },
   { id: "enterprise", label: "Public enterprises’ losses", note: "transit, utilities, public housing", c: { enterprise: true } },
-  { id: "capital", label: `Return on public capital, ${pct(P.RATES.low)}–${pct(P.RATES.high)}%`,
+  { id: "fixed", label: "Mixed households, people the Census misses", note: "at the case’s responses", c: { fixed: true } },
+  { id: "capital", label: `Return on public capital, ${(100 * ONE_RATE).toFixed(2)}%`,
     note: "the cost of the buildings and roads their services use", c: { capital: "D" }, main: true },
   { id: "full", label: "Roads, transport and parks in full", note: "grow one for one", c: { roads: "full", parks: "full" }, beyond: true },
 ];
@@ -76,77 +105,79 @@ const staircase = STEPS.map((step, k) => {
 const stepAt = (id) => STEPS.findIndex((s) => s.id === id);
 const ends = (id) => atEnds(trajectories.map((t) => t[stepAt(id)]));
 {
-  // The tally is the break-conditions lane's C2 tally: direct receipts less household transfers at the case's
-  // ends, on accrual (c2_tally_oct07.csv, four decimals).
-  const c2 = readCsv(path.join(BREAK, "c2_tally_oct07.csv"));
-  const want = ["low_end_48", "high_end_11"].map((end) => -num(one(c2, { model: "case_accrual", end }, "c2_tally").tally_bn));
+  // The tally is the break-conditions lane's C2 tally on accrual at the case's ends (c2_tally_oct16.csv, four decimals).
+  const c2 = readCsv(path.join(BREAK, "c2_tally_oct16.csv"));
+  const want = END_LABELS.map((end) => -num(one(c2, { model: "case_accrual", end }, "c2_tally").tally_bn));
   const t = ends("tally");
-  gate("tally = the C2 tally on accrual at the band's ends (c2_tally_oct07.csv, 1e-4)",
-    ENDS.join() === "48,11" && t.every((x, j) => near(x, want[j], 1e-4)), `${t.map((x) => x.toFixed(4)).join(" / ")}`);
+  const c2Rule = atEnds(SPECS.map((s, i) => classTally(P, P.evaluateFull(model, s, PROFILE))));
+  const carrierParts = atEnds(SPECS.map((s, i) => { const r = evaluate(i, NONE); return classTally(P, r, true) - classTally(P, r); }));
+  gate("the C2 class rule reproduces c2_tally_oct16.csv's accrual tally at the band's ends (1e-4)",
+    ENDS.join() === "16,11" && c2Rule.every((x, j) => near(x, want[j], 1e-4)), `${c2Rule.map((x) => x.toFixed(4)).join(" / ")}`);
+  gate("tally = the C2 tally plus the military item's parts on the completed reporters' transfer carriers (1e-9 on the rule, 1e-4 on the file)",
+    t.every((x, j) => near(x, c2Rule[j] + carrierParts[j], 1e-9) && near(x, want[j] + carrierParts[j], 1e-4)) && carrierParts.every((x) => Math.abs(x) < 0.05),
+    `${t.map((x) => x.toFixed(4)).join(" / ")}; parts ${carrierParts.map((x) => x.toFixed(4)).join(" / ")}`);
   let worst = 0;
+  SPECS.forEach((s, i) => { worst = Math.max(worst, Math.abs(classTally(P, evaluate(i, NONE), true) - trajectories[i][0])); });
+  gate("tally = that class rule at every specification, every other line at zero (1e-9)", worst < 1e-9, worst.toExponential(1));
+  // Each step is its own line: production's is the evaluation's production gain, the fixed step the case's fixed
+  // post-engine costs, capital's the return on public capital with item 20's one rate and the capital parts that
+  // items 15 and 21 price at it.
+  let prodGap = 0, fixedGap = 0, capGap = 0;
+  const carried = (r, ids) => r.evaluation.spending.filter((x) => ids.includes(x.id)).reduce((t, x) => t + x.amount_bn * x.response, 0);
   SPECS.forEach((s, i) => {
-    const ev = evaluate(i, NONE).evaluation;
-    worst = Math.max(worst, Math.abs(ev.classes.household_transfer.responsive_bn - ev.classes.direct_receipts.responsive_bn - trajectories[i][0]));
+    const r = evaluate(i, CASE_CHOICE), r0 = evaluate(i, { ...CASE_CHOICE, capital: false });
+    const items = ["one_rate_bn", "public_college_response_bn", "health_residual_key_bn"].reduce((t, k) => t + r.post_engine[k] - r0.post_engine[k], 0);
+    if (r0.capital.total_bn !== 0) throw new Error("a choice without the capital return still charges capital");
+    prodGap = Math.max(prodGap, Math.abs(trajectories[i][stepAt("production")] - trajectories[i][stepAt("property")]
+      + r.evaluation.production_gain_bn - carried(r, A.PRODUCTION_CARRIERS)));
+    fixedGap = Math.max(fixedGap, Math.abs(trajectories[i][stepAt("fixed")] - trajectories[i][stepAt("enterprise")] - fixedPost(r)));
+    capGap = Math.max(capGap, Math.abs(trajectories[i][stepAt("capital")] - trajectories[i][stepAt("fixed")] - r.capital.total_bn - carried(r, A.CAPITAL_CARRIERS) - items));
   });
-  gate("tally = household transfers less direct receipts at every specification (1e-9)", worst < 1e-9, worst.toExponential(1));
-  // Each step is its own line: production's is the evaluation's production gain, capital's the return.
-  let prodGap = 0, capGap = 0;
-  SPECS.forEach((s, i) => {
-    const r = evaluate(i, CASE_CHOICE);
-    prodGap = Math.max(prodGap, Math.abs(trajectories[i][stepAt("production")] - trajectories[i][stepAt("property")] + r.evaluation.production_gain_bn));
-    capGap = Math.max(capGap, Math.abs(trajectories[i][stepAt("capital")] - trajectories[i][stepAt("enterprise")] - r.capital.total_bn));
-  });
-  gate("the production step is the case's production gain, the capital step its return on public capital (1e-9)",
-    prodGap < 1e-9 && capGap < 1e-9, `${prodGap.toExponential(1)} / ${capGap.toExponential(1)}`);
-  const w = span(trajectories.map((t) => t[stepAt("enterprise")]));
-  gate("the enterprises row = the case without its capital return (summary.json, 1e-9)",
-    near(w[0], BANDS.withoutCapital[0], 1e-9) && near(w[1], BANDS.withoutCapital[1], 1e-9), w.map((x) => x.toFixed(4)).join(" to "));
+  gate("the production step is the case's production gain, the fixed step its fixed post-engine costs, the capital step its return on public capital (1e-9)",
+    prodGap < 1e-9 && fixedGap < 1e-9 && capGap < 1e-9, `${prodGap.toExponential(1)} / ${fixedGap.toExponential(1)} / ${capGap.toExponential(1)}`);
   const m = staircase.find((s) => s.main);
   const mm = span(trajectories.map((t) => t[stepAt("capital")]));
-  gate("main-case row = the adopted band (summary.json, 1e-9)", near(mm[0], MAIN[0], 1e-9) && near(mm[1], MAIN[1], 1e-9), `${m.total[0]} to ${m.total[1]}`);
-  const p = staircase.at(-1).total;
-  gate("last row = the proportional reference (main_case_bands.csv, 1e-4)",
-    near(p[0], BANDS.proportional[0], 1e-4) && near(p[1], BANDS.proportional[1], 1e-4), `${p[0]} to ${p[1]}`);
+  gate("main-case row = the adopted band (summary.json v9, 1e-9)", near(mm[0], MAIN[0], 1e-9) && near(mm[1], MAIN[1], 1e-9), `${m.total[0]} to ${m.total[1]}`);
+  let fullGap = 0;
+  profileCosts("proportional_reference").forEach((x, i) => { fullGap = Math.max(fullGap, Math.abs(trajectories[i].at(-1) - x)); });
+  gate("last row = the package's proportional reference at every specification (1e-9)", fullGap < 1e-9, fullGap.toExponential(1));
   for (const s of staircase) console.log(`    ${s.label.padEnd(52)} ${s.total.map((x) => x.toFixed(1)).join(" to ")}`);
 }
 
 /* The cash reading: pension benefits counted when they are paid (the case's cash set), its tally and band. */
 const cashTally = (() => {
-  const c2 = readCsv(path.join(BREAK, "c2_tally_oct07.csv"));
-  return ["low_end_48", "high_end_11"].map((end) => -num(one(c2, { model: "cash_set", end }, "c2_tally").tally_bn));
+  const c2 = readCsv(path.join(BREAK, "c2_tally_oct16.csv"));
+  return END_LABELS.map((end) => -num(one(c2, { model: "cash_set", end }, "c2_tally").tally_bn));
 })();
 {
   const PC = P.CASH, mc = PC.payloadModel();
   const costs = PC.MAIN_SPECS.map((s) => PC.evaluateFull(mc, s).cost_bn);
-  gate("the cash package reproduces the cash set (summary.json, 1e-9)",
+  gate("the cash package reproduces the cash set (summary.json v9, 1e-9)",
     near(Math.min(...costs), CASH[0], 1e-9) && near(Math.max(...costs), CASH[1], 1e-9), `${Math.min(...costs).toFixed(4)}–${Math.max(...costs).toFixed(4)}`);
-  const t = ENDS.map((i) => {
-    const cls = PC.evaluateFull(mc, PC.MAIN_SPECS[i]).evaluation.classes;
-    return cls.household_transfer.responsive_bn - cls.direct_receipts.responsive_bn;
-  });
-  gate("the cash tally = c2_tally_oct07.csv's cash set (1e-4)", t.every((x, j) => near(x, cashTally[j], 1e-4)), t.map((x) => x.toFixed(4)).join(" / "));
+  const t = ENDS.map((i) => -classTally(PC, PC.evaluateFull(mc, PC.MAIN_SPECS[i])));
+  gate("the cash tally = c2_tally_oct16.csv's cash set (1e-4)", t.every((x, j) => near(x, -cashTally[j], 1e-4)), t.map((x) => x.toFixed(4)).join(" / "));
 }
 
 /* ---------------------------------------------------------------- matrix -------------------- */
 
 /* Every combination of the service choices × general administration. Rental assistance, care work and the
- * audit items, the long-run property taxes, the enterprises and the return on public capital stay as the
- * case has them in every cell. The inner range is the case's own specifications; the outer adds every executed
- * tax-incidence rule, justice and uncompensated-care key, and the production grid with private capital
- * adjusted and no capital owners excluded. */
+ * audit items, the long-run property taxes, the job-capital taxes, the enterprises, the fixed post-engine costs
+ * and the return on public capital stay as the case has them in every cell. The inner range is the case's own
+ * specifications; the outer adds every executed tax-incidence rule, justice and uncompensated-care key, and the
+ * production grid with private capital adjusted and no capital owners excluded. */
 console.log("\n[matrix]");
 gate("sane production grid: 432 scenarios on the case's grid", saneProduction.length === 432, `${PROD_SPAN[0].toFixed(3)} to ${PROD_SPAN[1].toFixed(3)}`);
-const ALWAYS = { property: true, constants: true, rental: true, enterprise: true, capital: "D", production: true };
+const ALWAYS = { property: true, constants: true, rental: true, enterprise: true, capital: "D", production: true, jobcap: true, fixed: true };
 const GG_COLS = [0, GG[0], GG[1], 1];
 const ROWS = [{ id: "frozen", schools: 0, colleges: 0, roads: "fixed", frozen: true }];
 for (const schools of ["cbo", 1]) for (const colleges of [0, 1]) for (const roads of ["fixed", "long_run", "full"]) {
   ROWS.push({ id: `s${schools}_c${colleges}_${roads}`, schools, colleges, roads });
 }
-// The outer range's specifications: one per allocation, share, reading and September 24 school response; the
-// normalization moves only production, which the grid replaces, and the keys are set below.
+// The outer range's specifications: one per share, reading and September 24 school response; the normalization
+// moves only production, which the grid replaces, and the keys are set below. v9 keeps the personal allocation.
 const OUTER = SPECS.map((s, i) => i).filter((i) => SPECS[i].normalization === SPECS[0].normalization && SPECS[i].uc === SPECS[0].uc);
-gate("the outer range's specifications cover allocation, share, reading and the September 24 school response",
-  OUTER.length === 16 && new Set(OUTER.map((i) => [SPECS[i].allocation, SPECS[i].share, SPECS[i].reading, CBO_SCHOOL[i]].join())).size === 16, `${OUTER.length}`);
+gate("the outer range's specifications cover share, reading and the September 24 school response",
+  OUTER.length === 8 && new Set(OUTER.map((i) => [SPECS[i].share, SPECS[i].reading, CBO_SCHOOL[i]].join())).size === 8, `${OUTER.length}`);
 const choiceOf = (row, g) => ({
   ...NONE, ...ALWAYS, schools: row.schools, colleges: row.colleges, roads: row.roads, parks: row.roads,
   police: row.frozen ? 0 : 1, health: row.frozen ? 0 : 1, welfare: row.frozen ? 0 : 1, gg: g,
@@ -176,32 +207,37 @@ const caseCells = (r) => [r.cells[1].inner[0], r.cells[2].inner[1]];
     gate(label, near(u[0], want[0], tol) && near(u[1], want[1], tol), `${u[0]} to ${u[1]}`);
   };
   check("main-case row at the case's general administration = the adopted band (1e-4)", rowOf(1, 1, "long_run"), MAIN, 1e-4);
-  check("colleges-fixed row = long_run_non_school_fixed, adopted (1e-4)", rowOf(1, 0, "long_run"), BANDS.fixedColleges, 1e-4);
-  check("roads-and-parks-fixed row = the September 24 profile with rental aid, capital and enterprises (1e-4)",
-    rowOf(1, 1, "fixed"), BANDS.roadsFixed, 1e-4);
-  check("all-full row = the proportional reference (1e-4)", rowOf(1, 1, "full"), BANDS.proportional, 1e-4);
-  const g0 = rowOf(1, 1, "long_run").cells[0].inner;
-  gate("main-case row with general administration fixed = general_government_fixed (1e-4)",
-    near(g0[0], BANDS.ggFixed[0], 1e-4) && near(g0[1], BANDS.ggFixed[1], 1e-4), `${g0[0]} to ${g0[1]}`);
+  {
+    // Before item 15 follows the colleges choice (account.cjs SCALED_ITEMS), as the package's profile holds it.
+    const c = choiceOf(rowOf(1, 0, "long_run"), "case"), u = span(SPECS.map((s, i) => costAt(i, c, true))), want = profileBand("long_run_non_school_fixed");
+    gate("colleges-fixed row before item 15 follows the colleges = the package's long_run_non_school_fixed profile (1e-9)",
+      near(u[0], want[0], 1e-9) && near(u[1], want[1], 1e-9), `${u.map((x) => x.toFixed(4)).join(" to ")}`);
+  }
+  check("roads-and-parks-fixed row = the package's cbo_category_lag_non_school_full profile (1e-4)", rowOf(1, 1, "fixed"),
+    profileBand("cbo_category_lag_non_school_full"), 1e-4);
+  check("all-full row = the package's proportional reference (1e-4)", rowOf(1, 1, "full"), profileBand("proportional_reference"), 1e-4);
+  const g0 = rowOf(1, 1, "long_run").cells[0].inner, gWant = profileBand(PROFILE, (s) => ({ ...s, gg: 0 }));
+  gate("main-case row with general administration fixed = the package at gg 0 (1e-4)",
+    near(g0[0], gWant[0], 1e-4) && near(g0[1], gWant[1], 1e-4), `${g0[0]} to ${g0[1]}`);
   gate("outer contains inner in every cell", matrix.every((r) => r.cells.every((x) => x.outer[0] <= x.inner[0] + 1e-9 && x.outer[1] >= x.inner[1] - 1e-9)));
   for (const r of matrix) {
     console.log(`    ${r.id.padEnd(16)} ${r.cells.map((x) => `${x.inner.map((v) => v.toFixed(0)).join("–")} (${x.outer.map((v) => v.toFixed(0)).join("–")})`).join("   ")}`);
   }
 }
 
-/* The sign-reversal figures (main_case_2026_10_07/derived/sign_reversal.csv, oct07): reproduced here with the
+/* The sign-reversal figures (main_case_2026_10_16/derived/sign_reversal.csv, oct16): reproduced here with the
  * definition inside the case, and the frozen row checked against that definition at s = 0. */
 console.log("\n[break-even]");
 const signRows = readCsv(path.join(A.CASE, "derived", "sign_reversal.csv"));
 const sign = (measure) => {
   const r = one(signRows, { measure }, "sign_reversal.csv");
-  return [num(r.oct07_low), num(r.oct07_high)];
+  return [num(r.oct16_low), num(r.oct16_high)];
 };
 const breakEven = {
   personal: sign("service_break_even_personal__enterprises_at_s"), shared: sign("service_break_even_shared__enterprises_at_s"),
   personalAt1: sign("service_break_even_personal"), sharedAt1: sign("service_break_even_shared"),
-  frozenCapitalFixed: sign("frozen_services_capital_fixed_welfare_bn_cbo_preferred__enterprises_at_s"),
-  frozenCapitalFixedAt1: sign("frozen_services_capital_fixed_welfare_bn_cbo_preferred"),
+  frozenCapitalFixed: sign("frozen_services_capital_fixed_welfare_bn_cbo_preferred_personal__enterprises_at_s"),
+  frozenCapitalFixedAt1: sign("frozen_services_capital_fixed_welfare_bn_cbo_preferred_personal"),
 };
 {
   const fx = (x) => x.toFixed(4);
@@ -210,18 +246,22 @@ const breakEven = {
   for (const [variant, suffix] of [["enterprises_at_1", ""], ["enterprises_at_s", "__enterprises_at_s"]]) withCase(variant, () => {
     for (const allocation of ["personal", "shared"]) {
       const b = S24.breakEven(model, allocation, PAIRS), want = one(signRows, { measure: `service_break_even_${allocation}${suffix}` }, "sign");
-      ok = ok && fx(b[0]) === want.oct07_low && fx(b[1]) === want.oct07_high;
+      ok = ok && fx(b[0]) === want.oct16_low && fx(b[1]) === want.oct16_high;
       got.push(`${allocation}${suffix ? " at s" : ""} ${fx(b[0])}/${fx(b[1])}`);
     }
     const f = S24.frozen(model, PAIRS), want = one(signRows, { measure: `frozen_services_capital_fixed_welfare_bn_cbo_preferred${suffix}` }, "sign");
-    ok = ok && fx(f[0]) === want.oct07_low && fx(f[1]) === want.oct07_high;
+    ok = ok && fx(f[0]) === want.oct16_low && fx(f[1]) === want.oct16_high;
   });
-  gate("the sign-reversal definition inside the case reproduces sign_reversal.csv's oct07 columns (four decimals)", ok, got.join("; "));
-  // The frozen row at the case's general administration is that definition at s = 0 with the specification's
-  // production (private capital adjusted), at every specification.
+  gate("the sign-reversal definition inside the case reproduces sign_reversal.csv's oct16 columns (four decimals)", ok, got.join("; "));
+  // The frozen row at the case's general administration, before items 21 and 15 follow the health and college
+  // choices (account.cjs SCALED_ITEMS), is that definition at s = 0 with the specification's production (private
+  // capital adjusted), at every specification. The definition holds both items at the case's response with every
+  // service frozen; the row freezes them with the services they price.
   // The row's costs come first: withCase wraps the engine, so nothing else may evaluate inside it.
   const frozenRow = matrix.find((r) => r.frozen);
-  const own = SPECS.map((s, i) => costAt(i, choiceOf(frozenRow, "case")));
+  const c0 = choiceOf(frozenRow, "case");
+  const own = SPECS.map((s, i) => costAt(i, c0, true));
+  const scaled = SPECS.map((s, i) => costAt(i, c0, true) - costAt(i, c0));
   let worst = 0;
   withCase("enterprises_at_1", () => SPECS.forEach((s, i) => {
     const pair = { end: s.gg === GG[0] ? "least" : "most", g: s.gg, uc: s.uc };
@@ -229,14 +269,17 @@ const breakEven = {
     const w = S24.welfare(model, s.allocation, 0, pair, production, s.share);
     worst = Math.max(worst, Math.abs(-w - own[i]));
   }));
-  gate("the frozen row = the sign-reversal definition at s = 0, every specification (1e-9)", worst < 1e-9, worst.toExponential(1));
+  gate("the frozen row before items 21 and 15 follow their choices = the sign-reversal definition at s = 0, every specification (1e-9)",
+    worst < 1e-9, worst.toExponential(1));
+  breakEven.frozenScaledItems = span(scaled).map((x) => round(x, 4));
+  console.log(`    items 21 and 15 held at the case's response with every service frozen: $${span(scaled).map((x) => x.toFixed(2)).join("–")}bn`);
   console.log(`    break-even, enterprises with services: personal ${breakEven.personal.map((x) => (100 * x).toFixed(2)).join(" / ")}%, shared ${breakEven.shared.map((x) => (100 * x).toFixed(2)).join(" / ")}%`);
 }
 
 /* ---------------------------------------------------------------- who pays ------------------ */
 
 console.log("\n[who pays]");
-const DIST = path.join(FISCAL, "distribution_weights_2026_09_23", "derived", "oct07");
+const DIST = path.join(FISCAL, "distribution_weights_2026_09_23", "derived", A.CASE_KEY);
 const distInputs = readJson(path.join(DIST, "inputs.json"), "distribution");
 const quintiles = readCsv(path.join(DIST, "channel_by_quintile.csv"), "distribution").filter((r) => r.measure === "spm");
 const CHANNELS = [
@@ -261,8 +304,8 @@ const whoPays = CHANNELS.map((c) => ({
 const landlordsTop = num(quint("landlords", 5).bn) / num(quint("landlords", 0).bn);
 {
   const a = distInputs.fiscal.adopted;
-  gate("who-pays runs on main case v6 (inputs.json fiscal.case oct07, band = summary.json, 1e-9)",
-    distInputs.fiscal.case === "oct07" && near(a.band[0], MAIN[0], 1e-9) && near(a.band[1], MAIN[1], 1e-9),
+  gate("who-pays runs on main case v9 (inputs.json fiscal.case oct16, band = summary.json v9, 1e-9)",
+    distInputs.fiscal.case === A.CASE_KEY && near(a.band[0], MAIN[0], 1e-9) && near(a.band[1], MAIN[1], 1e-9),
     `${distInputs.fiscal.case}: ${a.band.map((v) => v.toFixed(4)).join("–")}`);
   // The fiscal channel is the budget's part, A_mid plus the capped programmes (their eligible non-recipients'
   // channel), plus the central induced receipts F; the capped programmes are their own channel.
@@ -276,8 +319,8 @@ const landlordsTop = num(quint("landlords", 5).bn) / num(quint("landlords", 0).b
   gate("the channels add to the lane's total (TOTAL_a, 1e-6)", near(channelsSum, num(quint("TOTAL_a", 0).bn), 1e-6), channelsSum.toFixed(3));
   const sumQ = (ks) => OUTSIDE.reduce((t, id) => t + ks.reduce((u, k) => u + num(quint(id, k).bn), 0), 0);
   const bottom = sumQ([1, 2, 3, 4]), top = sumQ([5]);
-  gate("outside the budget: bottom four fifths −80.3, top fifth +45.4 (FAQ 4, INDEX; ladder 194)",
-    near(bottom, -80.3, 0.05) && near(top, 45.4, 0.05), `${bottom.toFixed(2)} / ${top.toFixed(2)}`);
+  gate("outside the budget: bottom four fifths −80.1, top fifth +45.4 (FAQ 4, INDEX; ladder 194)",
+    near(bottom, -80.1, 0.05) && near(top, 45.4, 0.05), `${bottom.toFixed(2)} / ${top.toFixed(2)}`);
   gate("landlords' extra receipts: 77% to the top fifth", Math.round(100 * landlordsTop) === 77, (100 * landlordsTop).toFixed(1) + "%");
 }
 
@@ -306,7 +349,11 @@ for (const conv of ["a", "b"]) {
 }
 {
   const persons = pctSeries("TOTAL_a").reduce((s, r) => s + num(r.persons_m), 0);
-  gate("percentiles hold the 295.83m other residents in households", near(persons, 295.83, 0.01), persons.toFixed(3) + "m");
+  // v9 calibrates the survey frame (items 16, 17): the other residents are the income frame's, 295.63m.
+  const frame = readCsv(path.join(DIST, "income_frame.csv"), "distribution").filter((r) => r.measure === "spm" && r.bins === "5")
+    .reduce((t, r) => t + num(r.persons_m), 0);
+  gate("percentiles hold the income frame's other residents in households (295.63m)", near(persons, frame, 1e-6) && near(persons, 295.63, 0.01),
+    persons.toFixed(3) + "m");
   byPercentile.personsM = round(persons, 2);
   const a = byPercentile.series.a, b = byPercentile.series.b;
   const a99 = a.slice(0, 99);
@@ -320,15 +367,19 @@ for (const conv of ["a", "b"]) {
     JSON.stringify(byPercentile.top1.a));
   gate("under per-person cuts, the ahead percentiles are the top ones only", b.slice(cross - 1).every((x) => x > 0) &&
     b.slice(0, cross - 1).every((x) => x <= 0), `ahead from percentile ${cross}`);
-  // Person by person (winners_losers_2026_09_24, oct07): the share of other residents ahead, pooled in households.
-  const WL = path.join(FISCAL, "winners_losers_2026_09_24", "derived", "oct07");
-  const wlIn = readJson(path.join(WL, "inputs.json"));
-  const shares = readCsv(path.join(WL, "net_shares.csv"));
-  const ahead = ["a", "b"].map((k) => num(one(shares, { net: `net_social_${k}`, stack: "central", unit: "spm_unit_pooled" }, "net_shares.csv").winners_share));
-  const wlCase = wlIn.case.case === "oct07" && wlIn.published_totals.custody_fiscal.every((x, j) => near(x, MAIN[j], 1e-6));
-  gate("person by person: 17.5% / 16.8% ahead (INDEX, ladder 226), on main case v6 (inputs.json case oct07, its band = summary.json)",
-    ahead.map((x) => (100 * x).toFixed(1)).join("/") === "17.5/16.8" && wlCase, ahead.map((x) => (100 * x).toFixed(2) + "%").join(" / "));
+  // Person by person (winners_losers_2026_09_24, oct16): the share of other residents ahead, pooled in households,
+  // every priced channel with the paired social stack at central values, stationary financing (INDEX).
+  const WL = path.join(FISCAL, "winners_losers_2026_09_24", "derived", A.CASE_KEY);
+  const wlIn = readJson(path.join(WL, "p7_inputs.json"));
+  const shares = readCsv(path.join(WL, "p7_net_shares.csv"));
+  const wlRow = (financing) => one(shares, { sharing: "pooled", financing, frame: "stationary", level: "central", arm: "recommended",
+    epsilon: "infinite", population: "lineage" }, "p7_net_shares.csv");
+  const ahead = ["a", "b"].map((k) => num(wlRow(k).winners_share));
+  const wlCase = wlIn.case === A.CASE_KEY && near(wlIn.population.with_coverage, V9.population.with_coverage, 1e-3);
+  gate("person by person: 2.8% / 4.7% ahead (INDEX, ladder 226), on main case v9 (p7_inputs.json case oct16, its lineage = summary.json v9)",
+    ahead.map((x) => (100 * x).toFixed(1)).join("/") === "2.8/4.7" && wlCase, ahead.map((x) => (100 * x).toFixed(2) + "%").join(" / "));
   byPercentile.aheadShare = ahead.map((x) => round(x, 4));
+  byPercentile.aheadPersonsM = round(num(wlRow("a").persons_m), 2);
   console.log(`    tax shares: ${a99[0]} … ${a[98]}, top 1% ${a[99]}; per-person cuts: ${b[0]} … ahead from ${cross}, top 1% ${b[99]}`);
 }
 
@@ -370,10 +421,13 @@ const custody = {
 gate("custody 2.56× (2010), 1.91×, 1.72×, 1.94× (2024); 2.10–2.23× reallocated since 2019 (FAQ 12)",
   JSON.stringify(custodyYears) === "[2010,2019,2023,2024]" && custody.ratio.map((x) => x.toFixed(2)).join() === "2.56,1.91,1.72,1.94"
   && custody.reallocated.slice(1).map((x) => x.toFixed(2)).join() === "2.10,2.11,2.23", custody.ratio.join(" / "));
-// Victims' harm from the group's offending against other residents, on the account's 39.71M (FAQ 12).
-const pairing = readCsv(path.join(FISCAL, "population_basis_2026_09_29", "derived", "restated_pairing.csv"));
-const victims = ["low", "high"].map((end) => num(one(pairing, { section: "row", item: "victims", end }, "restated_pairing.csv").restated));
-gate("victims' harm $30.5–31.9bn (FAQ 12)", victims.map((x) => x.toFixed(1)).join() === "30.5,31.9", victims.map((x) => x.toFixed(3)).join(" / "));
+// Victims' harm from the group's offending against other residents, on the case's lineage (FAQ 12): the low end on
+// the equal-offending footing, the high end on the custody footing.
+const REAL = readJson(path.join(FISCAL, "sept24_propagation_2026_09_24", "derived", A.CASE_KEY, "real_costs_totals.json"));
+const victimRow = REAL.v9_social_environment.current_social_rows[0];
+const victims = ["low", "high"].map((end) => num(victimRow.total_by_end_bn[end]));
+gate("victims' harm $37.3–41.6bn on the case's lineage (FAQ 12; real_costs_totals.json oct16, its first social row)",
+  victims.map((x) => x.toFixed(1)).join() === "37.3,41.6" && /victim/i.test(JSON.stringify(victimRow).slice(0, 400)), victims.map((x) => x.toFixed(3)).join(" / "));
 
 /* ---------------------------------------------------------------- origins ------------------- */
 
@@ -510,11 +564,25 @@ const lifetime = LIFE_GROUPS.map((g) => Math.round(num(lifeRow("personal", g, "0
   gate("lifetime values at 0% per person-year = the tracked stationary life course (age_normalizations.csv, $0.01)", worst < 0.01, `max |diff| $${worst.toFixed(4)}`);
   gate("lifetime from birth at 3%: −$267k, −$215k, −$68k (FAQ 5)", lifetime.map((x) => Math.round(x / 1000)).join() === "-267,-215,-68", lifetime.join(" / "));
 }
-// The complete account's own split by generation (generation_account_2026_09_24, oct07): no reference group,
+// The complete account's own split by generation (generation_account_2026_09_24, oct16): no reference group,
 // children counted with their parents (b) or in their own generation (a). Not the gaps above, rescaled.
-const GENACC = readCsv(path.join(FISCAL, "generation_account_2026_09_24", "derived", "generation_results_oct07.csv"));
+const GENACC = readCsv(path.join(FISCAL, "generation_account_2026_09_24", "derived", `generation_results_${A.CASE_KEY}.csv`));
 const caseSplit = Object.fromEntries(["a", "b"].map((conv) => [conv, ["G1", "G2", "G3plus"].map((g) =>
-  ["low", "high"].map((band_end) => round(num(one(GENACC, { convention: conv, generation: g, band_end }, "generation_results_oct07.csv").cost_bn), 3)))]));
+  ["low", "high"].map((band_end) => round(num(one(GENACC, { convention: conv, generation: g, band_end }, "generation_results.csv").cost_bn), 3)))]));
+/* Controlled rounding to one decimal (largest remainder): each part rounds down or up so the printed parts add to
+ * the printed total, as the INDEX prints the split. */
+function controlled(parts, total) {
+  const tenths = parts.map((x) => Math.floor(10 * x + 1e-9)), want = Math.round(10 * total);
+  const order = parts.map((x, k) => [10 * x - tenths[k], k]).sort((p, q) => q[0] - p[0]);
+  const short = want - tenths.reduce((t, x) => t + x, 0);
+  if (short < 0 || short > parts.length) throw new Error(`controlled rounding: ${short} tenths short`);
+  for (let n = 0; n < short; n++) tenths[order[n][1]] += 1;
+  return tenths.map((x) => x / 10);
+}
+const caseSplitPrinted = Object.fromEntries(["a", "b"].map((conv) => {
+  const byEnd = [0, 1].map((j) => controlled(caseSplit[conv].map((g) => g[j]), MAIN[j]));
+  return [conv, caseSplit[conv].map((g, k) => [byEnd[0][k], byEnd[1][k]])];
+}));
 gate("the case's generation split adds to the case at both ends, under both conventions (1e-5)",
   ["a", "b"].every((conv) => [0, 1].every((j) => near(GENACC.filter((r) => r.convention === conv && r.band_end === ["low", "high"][j])
     .reduce((t, r) => t + num(r.cost_bn), 0), MAIN[j], 1e-5))), JSON.stringify(caseSplit));
@@ -567,10 +635,10 @@ const topTenShare = Object.fromEntries(["CA", "TX"].map((st) => [st, round(num(o
 /* ---------------------------------------------------------------- sentences ----------------- */
 
 console.log("\n[back-cast]");
-// The whole-budget back-cast of main case v6: each year is the envelope of the flat, ratio and income rules at
+// The whole-budget back-cast of main case v9: each year is the envelope of the flat, ratio and income rules at
 // the band's two ends; flat carries the 2024 level. 2024 is the measured account; earlier years are a model.
-const BACKCAST = path.join(FISCAL, "historical_backcast_2026_09_20", "derived", "oct07");
-const CONCEPT = "net_cost_cbo_informed_oct07";
+const BACKCAST = path.join(FISCAL, "historical_backcast_2026_09_20", "derived", A.CASE_KEY);
+const CONCEPT = `net_cost_cbo_informed_${A.CASE_KEY}`;
 const annual = readCsv(path.join(BACKCAST, "backcast_annual.csv"), "backcast");
 const RULES = ["low", "high"].flatMap((end) => ["flat", "ratio", "income"].map((rule) => `${CONCEPT}_${end}__${rule}`));
 const PER_MEMBER = ["low", "high"].flatMap((end) => ["ratio", "income"].map((rule) => `${CONCEPT}_${end}__${rule}__per_lineage_member_usd`));
@@ -585,9 +653,9 @@ const backcast = annual.map((row) => {
   const ends24 = ["low", "high"].map((e) => num(y24[`${CONCEPT}_${e}__flat`]));
   gate("back-cast 2024 = the adopted band (4 decimals)", near(ends24[0], MAIN[0], 1e-4) && near(ends24[1], MAIN[1], 1e-4), ends24.join(" to "));
   const pm = PER_MEMBER.map((c) => num(y24[c]));
-  const want = SUMMARY.v6.per_member_usd.set;
-  gate("2024 per lineage member = the case's per-member figure (summary.json v6, $0.01)",
-    near(Math.min(...pm), want[0], 0.01) && near(Math.max(...pm), want[1], 0.01) && near(num(y24.lineage_millions), SUMMARY.v6.per_member_usd.population / 1e6, 1e-4),
+  const want = V9.per_member_usd.set;
+  gate("2024 per lineage member = the case's per-member figure (summary.json v9, $0.01)",
+    near(Math.min(...pm), want[0], 0.01) && near(Math.max(...pm), want[1], 0.01) && near(num(y24.lineage_millions), V9.population.with_coverage / 1e6, 1e-4),
     `${pm.map((x) => x.toFixed(2)).join(" / ")}`);
   gate("back-cast covers 2005–2024", backcast.length === 20 && backcast[0].year === 2005 && backcast.at(-1).year === 2024);
 }
@@ -595,6 +663,22 @@ const windows = readCsv(path.join(BACKCAST, "backcast_windows.csv"), "backcast")
 const win = (col) => span(windows.map((r) => num(r[col]))).map((x) => round(x, 3));
 const backcastWindows = { ten: win("10y_2015_2024"), fifteen: win("15y_2010_2024"), twenty: win("20y_2005_2024") };
 gate("back-cast windows: six rules and ends, the 2024 anchor's", windows.length === 6, backcastWindows.ten.join(" to ") + " $tn over ten years");
+gate("back-cast windows $3.5–4.5tn, $5.1–6.5tn, $6.1–8.0tn (FAQ 8)", [backcastWindows.ten, backcastWindows.fifteen, backcastWindows.twenty]
+  .map((r) => r.map((x) => x.toFixed(1)).join("–")).join() === "3.5–4.5,5.1–6.5,6.1–8.0", JSON.stringify(backcastWindows));
+// The pandemic years (ladder 251, FAQ 8): the group got the 2020–2021 payments at about its population share per person
+// (CPS ASEC, the statute's SSN rule, the household-sharing reading the FAQ quotes), and on the back-cast's programme
+// paths those measured shares lower the ten-year total by the same amount at both ends. The whole-budget windows keep
+// their broad rule.
+const EIP = readCsv(path.join(FISCAL, "backcast_pandemic_measured_2026_09_28", "derived", "eip_relative_use.csv"));
+const eip = (allocation, year) => num(one(EIP, { allocation, status: "borjas", nipa_year: String(year) }, "eip_relative_use.csv").per_person_vs_other_residents);
+const BRANCHES = readCsv(path.join(BACKCAST, "round2_programme_branches.csv"), "backcast");
+const pandemicCut = ["low", "high"].map((end) => BRANCHES.filter((r) => r.concept === `${CONCEPT}_${end}` && r.branch === "pandemic_measured"
+  && num(r.year) >= 2015).reduce((t, r) => t + num(r.delta_bn), 0));
+const pandemic = { shares: [eip("shared", 2020), eip("shared", 2021)].map((x) => round(x, 4)),
+  personalShares: [eip("personal", 2020), eip("personal", 2021)].map((x) => round(x, 4)), tenYearCutBn: pandemicCut.map((x) => round(x, 4)) };
+gate("pandemic payments at 0.87–1.03 times other residents per person; measured shares lower the programme paths' ten years by $50.8bn at both ends (FAQ 8)",
+  pandemic.shares.map((x) => x.toFixed(2)).join() === "0.87,1.03" && pandemicCut.every((x) => x.toFixed(1) === "-50.8")
+  && near(pandemicCut[0], pandemicCut[1], 1e-6), JSON.stringify(pandemic));
 
 console.log("\n[sentences]");
 // Real national spending per resident, 2024 = 1, five programmes.
@@ -665,19 +749,22 @@ console.log("\n[claims in the text]");
 {
   const at = (id) => staircase[stepAt(id)].total;
   const first = staircase.findIndex((s) => s.total[0] > 0);
-  gate("staircase: the tally's range crosses zero; property taxes and the gain from their work leave everyone else better off; "
-    + "schools are the first row worse off at every choice, and every row after them is", at("tally")[0] < 0 && at("tally")[1] > 0
-    && at("property")[1] < 0 && at("production")[1] < 0 && staircase[first].id === "schools" && staircase.slice(first).every((s) => s.total[0] > 0));
+  gate("staircase: the tally leaves everyone else better off at every choice; property taxes, the gain from their work and the job-capital "
+    + "taxes widen that; schools are the first row worse off at every choice, and every row after them is", at("tally")[1] < 0
+    && at("property")[1] < at("tally")[0] && at("production")[1] < 0 && at("jobcap")[1] < 0 && staircase[first].id === "schools"
+    && staircase.slice(first).every((s) => s.total[0] > 0));
   const services = matrix.filter((r) => !r.frozen).flatMap((r) => r.cells);
   const frozen = matrix.find((r) => r.frozen).cells;
   gate("matrix: every combination that charges for services is worse off over every executed alternative",
     services.every((c) => c.outer[0] > 0), `outer ${round(Math.min(...services.map((c) => c.outer[0])), 1)} to ${round(Math.max(...services.map((c) => c.outer[1])), 1)}`);
-  gate("matrix: with every service frozen, everyone else is better off only with general administration fixed too (inner ranges)",
-    frozen[0].inner[1] < 0 && frozen.slice(1).every((c) => c.inner[0] > 0), frozen.map((c) => c.inner.map((x) => x.toFixed(1)).join(" to ")).join("; "));
+  gate("matrix: with every service frozen, everyone else is better off with general administration fixed and at the case's low administration, "
+    + "and from better off to worse off at its high and at full administration",
+    frozen[0].inner[1] < 0 && frozen[1].inner[1] < 0 && frozen[2].inner[0] < 0 && frozen[2].inner[1] > 0 && frozen[3].inner[0] < 0 && frozen[3].inner[1] > 0,
+    frozen.map((c) => c.inner.map((x) => x.toFixed(1)).join(" to ")).join("; "));
   gate("matrix: FAQ 2's frozen services leave everyone else from better off to worse off (enterprises with services, capital fixed)",
     breakEven.frozenCapitalFixed[0] < 0 && breakEven.frozenCapitalFixed[1] > 0);
   gate("break-even: the most adverse end is worse off at every service response, the least adverse better off only below a small share",
-    breakEven.personal[0] < 0 && breakEven.shared[0] < 0 && breakEven.personal[1] > 0 && breakEven.shared[1] > 0 && Math.max(breakEven.personal[1], breakEven.shared[1]) < 0.1);
+    breakEven.personal[0] < 0 && breakEven.personal[1] > 0 && breakEven.personal[1] < 0.15);
   gate("ages: at every working age (18–64) the group's net falls short of the white one",
     [1, 2, 3, 4, 5].every((i) => mexicanAges.rate[i] < whiteAges.rate[i]));
   gate("generations: the second generation's tax gap is over $3,000 smaller than the first's, its benefit-use advantage under a quarter of it, "
@@ -685,9 +772,10 @@ console.log("\n[claims in the text]");
     const g = generations[a];
     return g.receipts[1] - g.receipts[0] > 3000 && g.spending[1] < g.spending[0] / 4 && g.net.every((n) => n < -7000);
   }));
-  const printed = (conv, j) => caseSplit[conv].map((g) => Math.round(10 * g[j]) / 10);
-  gate("the case's generation split printed to one decimal adds to the case's printed ends",
-    ["a", "b"].every((conv) => [0, 1].every((j) => near(printed(conv, j).reduce((t, x) => t + x, 0), Math.round(10 * MAIN[j]) / 10, 1e-9))),
+  const printed = (conv, j) => caseSplitPrinted[conv].map((g) => g[j]);
+  gate("the case's generation split printed to one decimal (controlled rounding) adds to the case's printed ends, each part within 0.1 of its value",
+    ["a", "b"].every((conv) => [0, 1].every((j) => near(printed(conv, j).reduce((t, x) => t + x, 0), Math.round(10 * MAIN[j]) / 10, 1e-9)
+      && printed(conv, j).every((x, k) => Math.abs(x - caseSplit[conv][k][j]) < 0.1))),
     ["a", "b"].map((conv) => [0, 1].map((j) => printed(conv, j).join(" + ")).join(" | ")).join("; "));
   gate("the long-run responses the matrix names for roads and parks are the specifications' own",
     [["economic_affairs_services", "low"], ["economic_affairs_services", "high"], ["recreation_culture", "low"], ["recreation_culture", "high"]]
@@ -699,8 +787,8 @@ console.log("\n[claims in the text]");
   const edge = p("California").hi - p("Texas").lo;
   gate("places: California's and Texas's intervals overlap only at their edges (by under $1,000, neither estimate inside the other's interval)",
     edge > 0 && edge < 1000 && p("California").v < p("Texas").lo && p("Texas").v > p("California").hi, `$${edge}`);
-  gate("percentiles: about one person in six is ahead counted person by person, under both financing rules",
-    byPercentile.aheadShare.every((x) => x > 0.15 && x < 0.185), byPercentile.aheadShare.join(" / "));
+  gate("percentiles: fewer than one person in twenty is ahead counted person by person, under both financing rules",
+    byPercentile.aheadShare.every((x) => x > 0.02 && x < 0.05), byPercentile.aheadShare.join(" / "));
   gate("back-cast: everyone else is worse off in every year, at every rule and end", backcast.every((b) => b.lo > 0),
     `lowest ${Math.min(...backcast.map((b) => b.lo))}`);
   gate("who pays: the capped programmes' cost falls mostly on the bottom fifth",
@@ -714,12 +802,13 @@ if (failures()) {
 const out = {
   generatedBy: "build_data.cjs",
   account: {
-    case: A.CASE_LANE, main: MAIN, cash: CASH, perMember: SUMMARY.v6.per_member_usd.set, lineageM: round(SUMMARY.v6.per_member_usd.population / 1e6, 2),
-    gg: GG, rates: [P.RATES.low, P.RATES.high], ends: ENDS, bands: BANDS, tally: { accrual: ends("tally").map((x) => round(x)), cash: cashTally },
+    case: A.CASE_LANE, caseKey: A.CASE_KEY, version: "v9", adopted: P.V9.ADOPTED, main: MAIN, cash: CASH, perMember: V9.per_member_usd.set,
+    lineageM: round(V9.population.with_coverage / 1e6, 2), gg: GG, rate: ONE_RATE, ends: ENDS,
+    tally: { accrual: ends("tally").map((x) => round(x)), cash: cashTally },
     shares: [...new Set(SPECS.map((s) => s.share))].sort((a, b) => a - b),
     longRun: Object.fromEntries([["roads", "economic_affairs_services"], ["parks", "recreation_culture"]]
       .map(([k, id]) => [k, [P.LINE_RESPONSES[id].low, P.LINE_RESPONSES[id].high]])),
-    breakEven,
+    breakEven, coverageM: round(V9.population.coverage / 1e6, 2),
   },
   staircase,
   matrix: { columns: GG_COLS, productionSpan: PROD_SPAN.map((x) => round(x, 2)), receipts: RECEIPTS, receiptMoves: RECEIPT_MOVES,
@@ -730,9 +819,9 @@ const out = {
   origins, education,
   ledger: { bands: BANDS_AGE, mexican: { pop: mexicanAges.pop, rate: mexicanAges.rate }, white: { pop: whiteAges.pop, rate: whiteAges.rate },
     categories, gaps: ageGaps, commonGap, youngHides, unionBalance: hulls.practitioner[2] },
-  generations: { ...generations, lifetime, caseSplit },
+  generations: { ...generations, lifetime, caseSplit, caseSplitPrinted },
   places, topTenShare,
-  sentences: { backcast, backcastWindows, programmeYears, programmes, schooling, fiscalWindows, incomeRatios, kitagawa, hulls },
+  sentences: { backcast, backcastWindows, pandemic, programmeYears, programmes, schooling, fiscalWindows, incomeRatios, kitagawa, hulls },
   inputs: inputs(),
 };
 fs.mkdirSync(path.join(HERE, "src", "generated"), { recursive: true });

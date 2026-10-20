@@ -16,7 +16,7 @@
 </script>
 
 <main>
-  <p class="kicker">Income year 2024 · executed tables</p>
+  <p class="kicker">Income year 2024 · main case v9 · executed tables</p>
   <h1>Assumptions, drawn</h1>
   <p class="subtitle">
     What the Mexican-origin population costs other US residents, and which assumptions decide it.

@@ -15,6 +15,9 @@
   const last = backcast.at(-1)
   const credits = programmes.find((p) => p.name === 'Credits')
   const creditsPeak = credits.v[programmeYears.indexOf(2021)]
+  const pandemic = fig.sentences.pandemic
+  const shares = pandemic.shares.map((v) => v.toFixed(2))
+  const pandemicCut = Math.abs(pandemic.tenYearCutBn[0]).toFixed(1)
 
   // Schooling of recent arrivals.
   const sx = (year) => 3 + ((year - 1980) / 43) * 94
@@ -68,8 +71,10 @@
       {tn(w.ten)} worse off over ten years, {tn(w.fifteen)} over fifteen and {tn(w.twenty)} over twenty, in
       2024 dollars and before interest. A year per member of the lineage, the cost runs from
       {dollars(backcast[0].perMember)} in {backcast[0].year} to {dollars(fig.account.perMember)} in 2024. Only 2024 is
-      measured. The pandemic years are probably over-attributed: refundable credits ran {creditsPeak.toFixed(1)}
-      times their 2024 level in 2021.
+      measured. The whole-budget rule charges the pandemic years at the 2024 ratios, when refundable credits ran
+      {creditsPeak.toFixed(1)} times their 2024 level (2021). Measured, the group got the 2020–2021 payments at
+      {shares[0]}–{shares[1]} times other residents per person, about its population share; on the programme
+      paths those shares lower the ten-year total by ${pandemicCut}bn.
     </p>
 
     <p>
@@ -119,8 +124,9 @@
       graphics keep their shape.
     </p>
     <p>
-      historical_backcast_2026_09_20 (derived/oct07 backcast_annual.csv and backcast_windows.csv, main case
-      v6; national_programme_index.csv; the ACS income input); arrival_cohorts_2026_09_18
+      historical_backcast_2026_09_20 (derived/oct16 backcast_annual.csv, backcast_windows.csv and
+      round2_programme_branches.csv, main case v9; national_programme_index.csv; the ACS income input);
+      backcast_pandemic_measured_2026_09_28 eip_relative_use.csv (ladder 251); arrival_cohorts_2026_09_18
       entry_quality_fixed_duration_ipums.csv; arrival_window_fiscal_2026_09_18 window_estimates.csv;
       indian_generation_2026_09_21 occ_kitagawa.csv; ledger_recut_2026_09_22 hulls.csv.
     </p>

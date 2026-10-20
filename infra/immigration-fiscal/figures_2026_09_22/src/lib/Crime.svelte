@@ -93,13 +93,13 @@
       2.7–3.0.
     </p>
     <p>
-      Victims’ harm from the group’s offending against other residents, ${victims[0]}–{victims[1]}bn a year,
-      sits beside the fiscal account (FAQ 12).
+      Victims’ harm from the group’s offending against other residents, ${victims[0]}–{victims[1]}bn a year on
+      the case’s lineage, sits beside the fiscal account (FAQ 12).
     </p>
     <p>
       offender_ethnicity_nibrs_2026_09_23 rates_by_spec.csv (central, alloc=b, alloc=c);
-      acs_institutional_2026_09_16 acs_institutional_rates.csv; population_basis_2026_09_29
-      restated_pairing.csv.
+      acs_institutional_2026_09_16 acs_institutional_rates.csv; sept24_propagation_2026_09_24
+      derived/oct16/real_costs_totals.json (main case v9).
     </p>
   </aside>
 </section>

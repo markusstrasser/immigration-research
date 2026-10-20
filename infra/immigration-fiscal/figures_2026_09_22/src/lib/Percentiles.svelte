@@ -102,8 +102,10 @@
 
   <aside class="side">
     <p>
-      Counted person by person, household members pooled, instead of by group, about one person in six
-      comes out ahead: {ahead[0]} if the cost is paid through taxes, {ahead[1]} through service cuts (ladder 226).
+      Counted person by person, household members pooled, instead of by group, and with the social costs priced
+      beside the account at central values, fewer than one person in twenty comes out ahead: {ahead[0]} if the
+      cost is paid through taxes, {ahead[1]} through service cuts, of {Math.round(P.aheadPersonsM)} million other
+      residents (ladder 226).
     </p>
     <p>
       The richest 1%, per person a year: from the government cost, {gl(P.top1.a.fiscal)} through taxes or
@@ -117,8 +119,9 @@
       over its members by income, so inside a band the curve is smoother than the evidence.
     </p>
     <p>
-      distribution_weights_2026_09_23/derived/oct07/channel_by_percentile.csv, measure spm, TOTAL_a and TOTAL_b;
-      person by person, winners_losers_2026_09_24/derived/oct07/net_shares.csv.
+      Main case v9: distribution_weights_2026_09_23/derived/oct16/channel_by_percentile.csv, measure spm, TOTAL_a
+      and TOTAL_b; person by person, winners_losers_2026_09_24/derived/oct16/p7_net_shares.csv (pooled, stationary
+      financing, central values).
     </p>
   </aside>
 </section>

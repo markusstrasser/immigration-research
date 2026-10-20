@@ -12,8 +12,8 @@
   const services = m.rows.filter((r) => !r.frozen)
   const costs = services.flatMap((r) => r.cells.flatMap((c) => c.outer))
   const costSpan = [Math.min(...costs), Math.max(...costs)].map(Math.round)
-  // The frozen row (build_data.cjs checks the signs these sentences state): worse off at the case's general
-  // administration, better off only with administration fixed too.
+  // The frozen row (build_data.cjs checks the signs these sentences state): from better off to worse off at the
+  // case's general administration, better off with administration fixed too.
   const frozen = m.rows.find((r) => r.frozen).cells
   const frozenCase = [frozen[1].inner[0], frozen[2].inner[1]].map(Math.round)
   const frozenFixed = frozen[0].inner.map((v) => Math.round(-v)).sort((a, b) => a - b)
@@ -22,7 +22,7 @@
   const faq2 = acc.breakEven.frozenCapitalFixed
   const roads = acc.longRun.roads.map((v) => v.toFixed(2))
   const parks = acc.longRun.parks.map((v) => (v === 1 ? '1' : v.toFixed(2)))
-  const rates = acc.rates.map((r) => Math.round(100 * r))
+  const rate = (100 * acc.rate).toFixed(2)
 
   // Pastel heat, hue for the sign: paper to terracotta where everyone else is worse off, paper to
   // blue where better off, ochre where a cell's own range crosses zero.
@@ -58,9 +58,9 @@
       <span class="num">{cellCount}</span> combinations that charge for services leave everyone else
       <span class="num">${costSpan[0]}–{costSpan[1]}bn</span> a year worse off, whatever the tax-incidence rule,
       the justice and hospital-care keys or the production model. With every service budget frozen, everyone
-      else is still <span class="num">${frozenCase[0]}–{frozenCase[1]}bn</span> worse off at the case’s general
-      administration; only with administration fixed as well do they come out ahead, by
-      <span class="num">${frozenFixed[0]}–{frozenFixed[1]}bn</span>.
+      else ends from <span class="num">${-frozenCase[0]}bn</span> better off to
+      <span class="num">${frozenCase[1]}bn</span> worse off at the case’s general administration, and
+      <span class="num">${frozenFixed[0]}–{frozenFixed[1]}bn</span> better off with administration fixed as well.
     </p>
 
     <div class="scroll">
@@ -116,8 +116,10 @@
     </p>
     <p>
       In every cell, rental assistance grows with the population; care work, shelter and the audit
-      corrections count in full; property taxes take their long-run response; public enterprises’ losses
-      count; and public capital earns {rates[0]}–{rates[1]}%. The frozen row freezes the service budgets alone.
+      corrections count in full; property taxes take their long-run response; the taxes on the business
+      capital their jobs use, public enterprises’ losses, mixed households and the people the Census misses
+      count as the case counts them; and public capital earns {rate}%. The frozen row freezes the service
+      budgets alone, with the case’s re-keying of public health and of the colleges.
     </p>
     <p>
       The small figure adds all {m.receipts.length} executed tax-incidence rules, the
@@ -132,7 +134,7 @@
       adjusting, everyone else ends between ${Math.round(-faq2[0])}bn worse off and ${Math.round(faq2[1])}bn better
       off (FAQ 2).
     </p>
-    <p>build_data.cjs; five cells reproduce main_case_bands.csv and summary.json exactly.</p>
+    <p>build_data.cjs, main case v9; five rows reproduce summary.json and the package’s own profile runs.</p>
   </aside>
 </section>
 
@@ -151,7 +153,7 @@
     border-bottom: 2px solid var(--paper);
     line-height: 1.15;
   }
-  .matrix td.cell .v { display: block; font-size: 0.95rem; }
+  .matrix td.cell .v { display: block; font-size: 0.95rem; white-space: nowrap; }
   .matrix td.cell .o { display: block; font-size: 0.7rem; color: var(--muted); }
   .matrix td.adopted { box-shadow: inset 0 0 0 1.5px var(--ink); }
   .matrix tr.main td.ind { font-weight: 700; }

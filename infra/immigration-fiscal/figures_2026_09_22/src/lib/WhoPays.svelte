@@ -103,7 +103,7 @@
       The fiscal cost here is the who-pays analysis’s central figure, {bn(byId.fiscal_a.totalBn)}, inside the main
       case’s range. Which financing rule applies is a value choice; both are shown (ladder 194).
     </p>
-    <p>distribution_weights_2026_09_23/derived/oct07/channel_by_quintile.csv, measure spm.</p>
+    <p>Main case v9: distribution_weights_2026_09_23/derived/oct16/channel_by_quintile.csv, measure spm.</p>
   </aside>
 </section>
 

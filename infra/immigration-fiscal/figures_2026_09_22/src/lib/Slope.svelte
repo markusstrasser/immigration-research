@@ -6,9 +6,10 @@
   let g = $derived(generations[alloc])
   const thousands = (v) => '$' + Math.round(Math.abs(v) / 1000) + 'k'
   const [life2, life3, lifeWhite] = generations.lifetime.map(thousands)
-  // The case's own split, $bn at the band's low and high ends, one decimal so the parts add to the case.
+  // The case's own split, $bn at the band's low and high ends, one decimal, rounded so the parts add to the case
+  // (build_data.cjs's controlled rounding).
   const tenth = (v) => '$' + v.toFixed(1) + 'bn'
-  const split = (conv) => generations.caseSplit[conv].map((g) => g.map(tenth).join(' / '))
+  const split = (conv) => generations.caseSplitPrinted[conv].map((g) => g.map(tenth).join(' / '))
   const [a1, a2, a3] = split('a')
   const [b1, b2, b3] = split('b')
   const ends = fig.account.main.map(tenth).join(' and ')
@@ -125,7 +126,7 @@
     </p>
     <p>
       ledger_absolute_2026_09_17 age_normalizations.csv, structure white_ages_today; lifetime/period_profiles.csv;
-      generation_account_2026_09_24 generation_results_oct07.csv.
+      generation_account_2026_09_24 generation_results_oct16.csv (main case v9).
     </p>
   </aside>
 </section>
