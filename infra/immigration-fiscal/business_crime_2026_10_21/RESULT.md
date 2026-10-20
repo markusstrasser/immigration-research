@@ -1,9 +1,9 @@
 **Verdict:** Business crime is not bigger than murder. Retail theft, employee theft, non-retail
 business losses and the NIBRS-only person crimes cost residents outside the 44.90M lineage about
-**$5.3bn a year gross** in 2024 ($3.0–12.1bn across the arms), which is **33–36% of murder's
+**$5.2bn a year gross** in 2024 ($2.9–12.0bn across the arms), which is **32–36% of murder's
 $14.6–16.3bn** on v9. On the with/without rule the case's private-security row already uses, the
-group's own purchases also carry part of other offenders' theft, and the net is **$1.5bn**
-($0.5–4.4bn). Per lineage member that is $118 gross and $33 net
+group's own purchases also carry part of other offenders' theft, and the net is **$1.4bn**
+($0.5–4.3bn). Per lineage member that is $117 gross and $31 net
 [CALCULATION: `business_crime.py` → `derived/summary.csv`, `derived/arms.csv`].
 
 Business crime would match murder only if the losses were about three times what the NRF's
@@ -30,14 +30,14 @@ Model self-report: claude-opus-5-5. Lane `infra/immigration-fiscal/business_crim
 | A Retail external theft (shoplifting, ORC, retail burglary, robbery and card fraud by non-employees) | 0.98 / 0.98 | **2.32 / 2.32** | 5.52 / 5.50 | NRF shrink × external share × store sales, at cost |
 | B Retail employee theft | 0.76 / 0.76 | **1.63 / 1.62** | 4.47 / 4.45 | NRF internal share of the same shrink |
 | C Non-retail business losses, police-recorded | 0.44 / 0.44 | **0.49 / 0.49** | 1.10 / 1.10 | NIBRS business victims outside stores, national by CIUS 2024 |
-| D Violence against children under 12 outside the family | 0.53 / 0.53 | **0.59 / 0.59** | 0.66 / 0.66 | NIBRS, Miller victim-only prices |
-| E Violence at jail/prison locations, victims 12+ | 0.09 / 0.09 | **0.11 / 0.10** | 0.12 / 0.12 | NIBRS, Miller prices |
+| D Violence against children under 12 outside the family | 0.46 / 0.46 | **0.51 / 0.51** | 0.57 / 0.57 | NIBRS, Miller victim-only prices |
+| E Violence at jail/prison locations, victims 12+ | 0.10 / 0.10 | **0.11 / 0.11** | 0.12 / 0.12 | NIBRS, Miller prices |
 | F Fraud, embezzlement and extortion against individuals | 0.16 / 0.16 | **0.18 / 0.18** | 0.20 / 0.20 | NIBRS police-recorded losses |
-| **Total, gross** (harm caused by the group) | 2.98 / 2.96 | **5.31 / 5.29** | 12.07 / 12.02 | |
-| **Total, net** (with/without, pass-through) | 0.53 / 0.52 | **1.48 / 1.45** | 4.38 / 4.33 | A–C less the group's payment toward others' losses |
-| Per lineage member, gross / net | $66 / $12 | **$118 / $33** | $268 / $97 | ÷ 44,903,074 |
+| **Total, gross** (harm caused by the group) | 2.91 / 2.90 | **5.24 / 5.22** | 11.99 / 11.94 | |
+| **Total, net** (with/without, pass-through) | 0.47 / 0.46 | **1.40 / 1.38** | 4.30 / 4.25 | A–C less the group's payment toward others' losses |
+| Per lineage member, gross / net | $65 / $10 | **$117 / $31** | $267 / $96 | ÷ 44,903,074 |
 | Murder on v9 (victims row × 0.3912) | | **14.61 / 16.27** | | |
-| Gross total ÷ murder | 0.20 / 0.18 | **0.36 / 0.33** | 0.83 / 0.74 | |
+| Gross total ÷ murder | 0.20 / 0.18 | **0.36 / 0.32** | 0.82 / 0.73 | |
 
 [CALCULATION: `derived/summary.csv`, `derived/arms.csv`] Line A's hard bounds put every unknown
 shoplifting offender on one side. They give a gross of $1.42bn (all non-Hispanic) or $4.65bn (all
@@ -48,8 +48,8 @@ confidence intervals.
 **Bigger than murder? No, on every arm.** On v9 murder is 39.1% of the $37.3–41.6bn victims row:
 $14.6bn at the low end and $16.3bn at the high end. The share is 39% rather than the source lane's
 32% because the case prices deaths at DOT's $13.7M [CALCULATION: `mortality_arms.csv`, mixed and
-custody footings, `dot_uniform`]. Central business and other NCVS-uncovered crime is 0.33–0.36 of
-murder gross and 0.09–0.10 net. The stacked high arm reaches 0.74–0.83 gross. Retail theft (A + B
+custody footings, `dot_uniform`]. Central business and other NCVS-uncovered crime is 0.32–0.36 of
+murder gross and 0.09–0.10 net. The stacked high arm reaches 0.73–0.82 gross. Retail theft (A + B
 + C) would equal murder only if losses at cost were about $134bn a year, against the $43.5bn the
 central arm uses. That is 14.6 ÷ (0.1213 × 0.9006).
 
@@ -257,7 +257,7 @@ Inherited repository inputs are pinned there too:
     - offender-class weights at 1/n per recorded offender, before any allocation of unknowns:
       `off_eth_unknown` (race may be known) and `off_no_record` (no offender record).
 
-    Of 76,696 victimisations, 37,333 are family or household.
+    Of 66,959 victimisations, 36,214 are family or household.
 
 ## Reproduce
 
@@ -275,3 +275,15 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/busin
   12/12, exit 0.
 - 2026-10-21 01:30:26 JST (`date`): added the shared under-12 table for within_group_harm. The lines
   and totals are unchanged. `rerun_lane.py` gave IDENTICAL 14/14, exit 0.
+- 2026-10-21 02:08:14 JST (`date`): corrected the age coding, following withingroup's report. NIBRS age_id 103
+  (Unknown) stores age_num '00', which the sibling's `nibrs_stage.age_band` read as age 0, so unknown-age
+  victims were counted under 12. `bizcrime_stage.py` now has its own age_band: ids 103 and 104 are unknown,
+  ids 1–3 are age 0. The stage was rebuilt from the zips.
+  - Under-12 victimisations fall from 76,696 to 66,959.
+  - Line D falls from $0.59 to $0.51bn.
+  - The central gross falls from $5.31/5.29bn to $5.24/5.22bn.
+  - Hispanic-victim cells now match withingroup's to 0.1 (simple assault to 2).
+  - Not fixed here: the offender-ethnicity lane's `age_band` carries the same defect. Its central
+    keeps ages 12p and unk, so the '00' victims leave its 12+ counts, a small downward bias. That lane
+    belongs to the parent.
+- after the RESULT log edit: rerun IDENTICAL 14/14, exit 0 (run at 02:08:14 JST)

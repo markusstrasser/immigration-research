@@ -30,7 +30,19 @@ FISCAL = HERE.parent
 SIB = FISCAL / "offender_ethnicity_nibrs_2026_09_23"
 sys.path.insert(0, str(SIB))
 from nibrs_stage import (CODE_OFFENCE, H_CLASSES, OFF_CLASSES, RANK, Zip,  # noqa: E402
-                         age_band, offender_class, victim_class)
+                         offender_class, victim_class)
+
+
+def age_band(age_num: pd.Series, age_id: pd.Series, cut: int) -> pd.Series:
+    """NIBRS_AGE ids 1-3 are under one year (codes NN, NB, BB). Id 103 is Unknown and stores its code
+    '00' in age_num, and 104 is Not Specified ('NS'), so both are unknown, never age 0. The sibling
+    lane's nibrs_stage.age_band reads '00' as 0 (found by within_group_harm, 2026-10-21); this local
+    version replaces it here."""
+    a = pd.to_numeric(age_num, errors="coerce")
+    ids = pd.to_numeric(age_id, errors="coerce")
+    a[ids.isin([1, 2, 3])] = 0
+    a[ids.isin([103, 104]) | ids.isna()] = np.nan
+    return pd.Series(np.where(a.isna(), "unk", np.where(a >= cut, f"{cut}p", f"lt{cut}")), index=a.index)
 
 STAGE = HERE / "_cache" / "stage"
 CAP_ITEM = 1_000_000          # $ per property item; NIBRS carries keying errors up to 999,999,999

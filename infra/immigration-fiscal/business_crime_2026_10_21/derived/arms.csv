@@ -11,12 +11,12 @@ B retail employee theft,high,low,4.472508,1.440214,union retail worker share 0.1
 "C non-retail business, police-recorded",central,low,0.493465,0.042148,unreported multiplier 1 [ASSUMPTION]; Mexican/Hispanic ratio 1.000
 "C non-retail business, police-recorded",low,low,0.444641,-0.012068,unreported multiplier 1 [ASSUMPTION]; Mexican/Hispanic ratio 0.901
 "C non-retail business, police-recorded",high,low,1.103467,0.213702,unreported multiplier 2 [ASSUMPTION]; Mexican/Hispanic ratio 1.118
-"D children under 12, non-family (full)",central,low,0.589286,0.589286,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
-"D children under 12, non-family (full)",low,low,0.530981,0.530981,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
-"D children under 12, non-family (full)",high,low,0.658868,0.658868,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118
-E jail/prison location (full),central,low,0.105320,0.105320,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
-E jail/prison location (full),low,low,0.094899,0.094899,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
-E jail/prison location (full),high,low,0.117756,0.117756,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118
+"D children under 12, non-family (full)",central,low,0.514484,0.514484,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
+"D children under 12, non-family (full)",low,low,0.463580,0.463580,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
+"D children under 12, non-family (full)",high,low,0.575234,0.575234,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118
+E jail/prison location (full),central,low,0.106645,0.106645,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
+E jail/prison location (full),low,low,0.096094,0.096094,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
+E jail/prison location (full),high,low,0.119238,0.119238,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118
 "F fraud against individuals, police-recorded",central,low,0.175998,0.175998,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
 "F fraud against individuals, police-recorded",low,low,0.158585,0.158585,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
 "F fraud against individuals, police-recorded",high,low,0.196780,0.196780,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118
@@ -32,12 +32,12 @@ B retail employee theft,high,high,4.454754,1.420499,union retail worker share 0.
 "C non-retail business, police-recorded",central,high,0.491506,0.039973,unreported multiplier 1 [ASSUMPTION]; Mexican/Hispanic ratio 1.000
 "C non-retail business, police-recorded",low,high,0.442876,-0.014028,unreported multiplier 1 [ASSUMPTION]; Mexican/Hispanic ratio 0.901
 "C non-retail business, police-recorded",high,high,1.099086,0.208838,unreported multiplier 2 [ASSUMPTION]; Mexican/Hispanic ratio 1.118
-"D children under 12, non-family (full)",central,high,0.586946,0.586946,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
-"D children under 12, non-family (full)",low,high,0.528873,0.528873,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
-"D children under 12, non-family (full)",high,high,0.656253,0.656253,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118
-E jail/prison location (full),central,high,0.104902,0.104902,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
-E jail/prison location (full),low,high,0.094523,0.094523,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
-E jail/prison location (full),high,high,0.117288,0.117288,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118
+"D children under 12, non-family (full)",central,high,0.512441,0.512441,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
+"D children under 12, non-family (full)",low,high,0.461740,0.461740,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
+"D children under 12, non-family (full)",high,high,0.572950,0.572950,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118
+E jail/prison location (full),central,high,0.106222,0.106222,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
+E jail/prison location (full),low,high,0.095712,0.095712,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
+E jail/prison location (full),high,high,0.118765,0.118765,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118
 "F fraud against individuals, police-recorded",central,high,0.175299,0.175299,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.000
 "F fraud against individuals, police-recorded",low,high,0.157955,0.157955,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 0.901
 "F fraud against individuals, police-recorded",high,high,0.195999,0.195999,union x (1 - recipient 0.0103) x (1 + crime key); Mexican/Hispanic ratio 1.118

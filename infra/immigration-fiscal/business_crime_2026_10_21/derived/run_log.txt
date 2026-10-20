@@ -92,8 +92,8 @@ C. police-recorded non-retail business losses, national: $5.086bn; loss-weighted
    (cargo-flagged business losses in TX+AZ NIBRS: $17.22M a year; CargoNet 2024 US+Canada $0.455bn)
 [gate] CIUS 2024 Table 5 TX and AZ state totals: PASS — ARIZONA 7,582,384, TEXAS 31,290,831
 TX+AZ NIBRS covered population 34.20M of 38.87M; national/TX+AZ violent scale 7.939
-D. children under 12 (non-family, outside): union $0.041bn tangible, $0.551bn full
-E. jail/prison location: union $0.012bn tangible, $0.098bn full
+D. children under 12 (non-family, outside): union $0.035bn tangible, $0.481bn full
+E. jail/prison location: union $0.013bn tangible, $0.100bn full
 F. fraud/embezzlement/extortion against individuals, police-recorded national $2.569bn; Hispanic share 0.1586; union outside $0.164bn
 beside: employees' intangible loss in 62,791 commercial robberies, union outside $0.069bn (overlaps the NCVS victims row; not added)
 
@@ -104,14 +104,14 @@ line
 A retail external theft                           4.636  4.654     1.419  1.425   2.316  2.325  5.498  5.520  0.980  0.984                 0.049  0.049
 B retail employee theft                             NaN    NaN       NaN    NaN   1.619  1.625  4.455  4.473  0.759  0.762                   NaN    NaN
 C non-retail business, police-recorded              NaN    NaN       NaN    NaN   0.492  0.493  1.099  1.103  0.443  0.445                   NaN    NaN
-D children under 12, non-family (full)              NaN    NaN       NaN    NaN   0.587  0.589  0.656  0.659  0.529  0.531                   NaN    NaN
-E jail/prison location (full)                       NaN    NaN       NaN    NaN   0.105  0.105  0.117  0.118  0.095  0.095                   NaN    NaN
+D children under 12, non-family (full)              NaN    NaN       NaN    NaN   0.512  0.514  0.573  0.575  0.462  0.464                   NaN    NaN
+E jail/prison location (full)                       NaN    NaN       NaN    NaN   0.106  0.107  0.119  0.119  0.096  0.096                   NaN    NaN
 F fraud against individuals, police-recorded        NaN    NaN       NaN    NaN   0.175  0.176  0.196  0.197  0.158  0.159                   NaN    NaN
     arm  end  gross_forward_bn  net_with_without_bn  gross_per_member_usd  net_per_member_usd  murder_v9_bn  gross_over_murder  net_over_murder
-central  low             5.314                1.475               118.352              32.854         14.61              0.364            0.101
-central high             5.293                1.452               117.882              32.341         16.27              0.325            0.089
-    low  low             2.976                0.534                66.268              11.889         14.61              0.204            0.037
-    low high             2.964                0.521                66.005              11.604         16.27              0.182            0.032
-   high  low            12.069                4.379               268.784              97.530         14.61              0.826            0.300
-   high high            12.021                4.327               267.717              96.355         16.27              0.739            0.266
+central  low             5.241                1.402               116.716              31.217         14.61              0.359            0.096
+central high             5.220                1.379               116.252              30.711         16.27              0.321            0.085
+    low  low             2.909                0.468                64.793              10.414         14.61              0.199            0.032
+    low high             2.898                0.455                64.536              10.136         16.27              0.178            0.028
+   high  low            11.987                4.297               266.955              95.701         14.61              0.820            0.294
+   high high            11.940                4.245               265.895              94.532         16.27              0.734            0.261
 [gate] every arm line present at both ends: PASS
