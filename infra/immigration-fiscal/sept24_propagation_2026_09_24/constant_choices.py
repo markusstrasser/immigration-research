@@ -59,7 +59,7 @@ LANE = HERE.parent / "debt_legacy_2026_09_23"
 OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=HERE.parent / "sept26_propagation_2026_09_26" / "derived",
                 sept27=HERE.parent / "sept27_propagation_2026_09_27" / "derived", sept29=HERE / "derived" / "sept29",
                 oct05=HERE / "derived" / "oct05", oct07=HERE / "derived" / "oct07", oct14=HERE / "derived" / "oct14",
-                oct15=HERE / "derived" / "oct15")
+                oct15=HERE / "derived" / "oct15", oct16=HERE / "derived" / "oct16")
 LINEAGE_ROW8 = "v5_union_response:row8"                  # October 5: the per-correction split's lineage components
 LINEAGE_CONSTANTS = "v5_lineage:constants"
 OLD_PROFILE = "cbo_category_lag_non_school_full"         # the main profile of every case before September 27
@@ -155,7 +155,7 @@ def central(stocks):
 
 def main():
     ap = argparse.ArgumentParser(description="Federal-dollar effect of the ledger lane's two constant splits.")
-    ap.add_argument("--case", choices=tuple(OUT_DIRS), default="oct15")
+    ap.add_argument("--case", choices=tuple(OUT_DIRS), default="oct16")
     ap.add_argument("--out-dir", type=Path, default=None)
     args = ap.parse_args()
     out = args.out_dir or OUT_DIRS[args.case]

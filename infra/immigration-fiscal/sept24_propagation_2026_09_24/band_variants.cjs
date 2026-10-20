@@ -127,6 +127,7 @@ const CASES = {
     cash: "main_case_2026_10_14/derived/corrections_cash.json", cashPackage: (pkg) => pkg.CASH },
   oct15: { lane: "main_case_2026_10_15", out: path.join(__dirname, "derived", "oct15"),
     cash: "main_case_2026_10_15/derived/corrections_cash.json", cashPackage: (pkg) => pkg.CASH },
+  oct16: { lane: "main_case_2026_10_16", out: path.join(__dirname, "derived", "oct16") },
 };
 const argv = process.argv.slice(2);
 function opt(name, dflt) {
@@ -135,11 +136,12 @@ function opt(name, dflt) {
   if (!argv[i + 1] || argv[i + 1].startsWith("--")) { console.error(`${name} needs a value`); process.exit(2); }
   return argv[i + 1];
 }
-const CASE = opt("--case", "oct15");
+const CASE = opt("--case", "oct16");
 if (!CASES[CASE]) { console.error(`unknown --case ${CASE}; one of ${Object.keys(CASES).join(", ")}`); process.exit(2); }
 const OUT = opt("--out-dir", null) ? path.resolve(opt("--out-dir")) : CASES[CASE].out;
 if (!OUT) { console.error(`--case ${CASE} writes only to --out-dir DIR`); process.exit(2); }
 const LANE = CASES[CASE].lane;
+if(CASE === "oct16") { require("./band_variants_oct16.cjs").build(OUT); process.exit(0); }
 const LATER = CASE !== "sept24";
 
 const P = require(path.join(__dirname, "..", LANE, "package.cjs"));

@@ -145,11 +145,11 @@ PATHS = dict(
 LANES = dict(sept24="main_case_2026_09_24", sept26="main_case_2026_09_26",
              sept26_schools="main_case_schools_full_2026_09_26", sept27="main_case_long_run_2026_09_27",
              sept29="main_case_2026_09_29", oct05="main_case_2026_10_05", oct07="main_case_2026_10_07",
-             oct14="main_case_2026_10_14", oct15="main_case_2026_10_15")
+             oct14="main_case_2026_10_14", oct15="main_case_2026_10_15", oct16="main_case_2026_10_16")
 OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=FISCAL / "sept26_propagation_2026_09_26" / "derived",
                 sept27=FISCAL / "sept27_propagation_2026_09_27" / "derived", sept29=HERE / "derived" / "sept29",
                 oct05=HERE / "derived" / "oct05", oct07=HERE / "derived" / "oct07", oct14=HERE / "derived" / "oct14",
-                oct15=HERE / "derived" / "oct15")
+                oct15=HERE / "derived" / "oct15", oct16=HERE / "derived" / "oct16")
 # Cases whose roads respond: congestion beside the account is the response lane's, by band end.
 LONG_RUN = dict(sept27=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json",
                 sept29=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json",
@@ -634,8 +634,8 @@ def apply_p7_crime(rows, doc, case="oct14"):
 
 def parse_args():
     ap = argparse.ArgumentParser(description="Real-costs totals (memo §7, §7b) on an adopted main case.")
-    ap.add_argument("--case", choices=tuple(LANES), default="oct15",
-                    help="oct15: main case v8 (default); oct14: historical v7; oct07: main case v6 (main_case_2026_10_07); "
+    ap.add_argument("--case", choices=tuple(LANES), default="oct16",
+                    help="oct16: main case v9 (default); oct15: historical v8; oct14: historical v7; oct07: main case v6; "
                          "oct05: the main case adopted 2026-10-05; "
                          "sept29: the main case adopted 2026-09-29; "
                          "sept26_schools: schools at full average cost; sept26: the one-year scenario (--out-dir only); "
@@ -757,7 +757,7 @@ def v8_added_social(bands_meta):
                 rule=v8_added_social.__doc__.split("\n\n")[1].strip())
 
 
-def apply_v8_environment(rows, doc, bands_meta, summary, transport):
+def apply_v8_environment(rows, doc, bands_meta, summary, transport, *, case="oct15", added_override=None):
     """Replace owned PM/crash/volunteering rows, retaining their declared frame.
 
     Sender/receiver quantities keep the v7 keys for the union and the 3.04M descendants. Under
@@ -781,7 +781,7 @@ def apply_v8_environment(rows, doc, bands_meta, summary, transport):
     source_rows = list(csv.DictReader(stack_path.open()))
     integration = json.loads(integration_path.read_text())
     congestion_path = FISCAL / "service_response_long_run_2026_09_27/derived/net_change_oct15.json"
-    live_congestion = json.loads(congestion_path.read_text())
+    live_congestion = bands_meta.get("oct16_transport") or json.loads(congestion_path.read_text())
     crime_mortality_path = FISCAL / "social_costs_unpriced_2026_09_28/derived/oct15/mortality_pairing_rows.csv"
     crime_mortality_rows = list(csv.DictReader(crime_mortality_path.open()))
     if not all(integration["gates"].values()) or integration["counts"]["conditional_stack_rows"] != len(source_rows):
@@ -796,12 +796,12 @@ def apply_v8_environment(rows, doc, bands_meta, summary, transport):
     v7_lineage = {r["end"]: r for r in json.loads(inputs_path.read_text())["rows"] if r["population_basis"] == "lineage"}
     if len(government_rows) != 4 or sorted(v7_lineage) != ["high", "low"]:
         raise ValueError("[BLOCKED] the producer's government rows or v7 removed consumption")
-    added = v8_added_social(bands_meta) if transport == V8_ADDED_TRANSPORT else None
+    added = (added_override if added_override is not None else v8_added_social(bands_meta)) if transport == V8_ADDED_TRANSPORT else None
     source_baseline = doc["p7_crime"]["baseline_pairing_bn"]
     detail = doc["lineage_social_rows"]["rows"]
-    before = {end: next(r["oct15"] for r in rows if r["column"] == "pairing_on_priced_count"
+    before = {end: next(r[case] for r in rows if r["column"] == "pairing_on_priced_count"
                         and r["item"] == f"published pairing ({end})") for end in ("low", "high")}
-    population = doc["per_member_population_m"]["oct15"]
+    population = doc["per_member_population_m"][case]
     account = bands_meta["social_resource_account"]
 
     def amount(item, end, gross=False):
@@ -826,6 +826,9 @@ def apply_v8_environment(rows, doc, bands_meta, summary, transport):
         if len(chosen) != 1:
             raise ValueError(f"[BLOCKED] social environment named stack missing/ambiguous: {end}/{denominator}/{valuation}/{rate}/{displacement}")
         r = chosen[0]
+        if bands_meta.get("oct16_transport"):
+            from v9_totals import load_transport
+            r = dict(r,crash_replacement_bn=load_transport().crash_at_new_capacity(r,bands_meta["oct16_transport"]))
         index = ("low", "high").index(end)
         if abs(float(r["baseline_bn"]) - source_baseline[index]) > 1e-9:
             raise ValueError("[BLOCKED] environment/crime frozen baselines disagree")
@@ -934,6 +937,9 @@ def apply_v8_environment(rows, doc, bands_meta, summary, transport):
             ("resource_wealth_equivalent", "PCE", "uniform", "0", "1.0", "both", "multivehicle_only", "resource_wealth", "case"),
             ("life_years_r0", "PCE", "VSLY", "0", "1.0", "both", "multivehicle_only", "current_cash", "case"),
             ("life_years_r003", "PCE", "VSLY", "0.03", "1.0", "both", "multivehicle_only", "current_cash", "case")):
+        if footing == "raw_coded_low" and account.get("raw_coded_low_end") is None:
+            doc.setdefault("uncomputed_variants", {})[name] = "own raw-coded source funding not computed; central funding is not a substitute"
+            continue
         values, parts = {}, {}
         for end in ("low", "high"):
             raw = footing == "raw_coded_low" and end == "low"
@@ -1001,7 +1007,8 @@ def apply_v8_environment(rows, doc, bands_meta, summary, transport):
 
     def append(column, item, value, unit="bn", note=""):
         row = {key: None for key in template}
-        row.update(section="7", column=column, item=item, unit=unit, oct15=value, note=note)
+        row.update(section="7", column=column, item=item, unit=unit, note=note)
+        row[case] = value
         rows.append(row)
 
     for end in ("low", "high"):
@@ -1059,15 +1066,15 @@ def apply_v8_environment(rows, doc, bands_meta, summary, transport):
         append("pairing_on_priced_count", f"social rows after environmental replacements ({end})", current_social[end],
                note="signed owned row replacements and the government side of the budget response; carbon and life-years excluded")
     for row in rows:
-        if row.get("oct15") is None or not row["column"].startswith("pairing_on_priced_count"):
+        if row.get(case) is None or not row["column"].startswith("pairing_on_priced_count"):
             continue
         if row["column"] == "pairing_on_priced_count_without_social_env":
             continue
         for end in ("low", "high"):
             if row["item"] in (f"published pairing ({end})", f"published pairing per group member ({end})"):
                 per_member = "per group" in row["item"]
-                row["oct15"] += central["parts"][end]["delta_bn"] / (population if per_member else 1)
-                row["change"] = None if row["sept24"] is None else row["oct15"] - row["sept24"]
+                row[case] += central["parts"][end]["delta_bn"] / (population if per_member else 1)
+                row["change"] = None if row["sept24"] is None else row[case] - row["sept24"]
                 row["note"] += ("; conditional PCE uniform-VSL, multivehicle-only crashes, incoming primary-food volunteering "
                                 "at displacement 1; re-spending and the government side central; CO2/life-years beside; "
                                 + ("v8 added people at their key shares" if added else "v7 social keys") + ", v8 current funding")
@@ -1091,7 +1098,7 @@ def apply_v8_environment(rows, doc, bands_meta, summary, transport):
          changed_rows_from_oct14=["fiscal account and divisor", "PM mortality/exposure and PCE re-spending", "multivehicle-only crashes on the live road key", "live road-key congestion", "incoming volunteering", "all-channel mortality arms; uniform crime central already corrected by P7",
                                   "round 3: government side of the budget response central; low end on the case's justice key"]
                                  + (["round 3: completion and coverage people at their key shares; item 11's consumption shift"] if added else []),
-        held_source_population=42752212.92438524, current_fiscal_population=summary["v8"]["population"]["with_coverage"],
+        held_source_population=42752212.92438524, current_fiscal_population=summary["v9" if case == "oct16" else "v8"]["population"]["with_coverage"],
         government_side="central: v8 removed public consumption at government-average PM per dollar",
         government_legacy_response="beside", respending_without_government_side="beside (round-2 central, one-sided)",
         matched_justice_footing="beside (the low end on the raw-coded key, as through v7)",
@@ -1118,6 +1125,10 @@ def rel(p: Path) -> str:
 
 def main():
     args = parse_args()
+    if args.case == "oct16":
+        from v9_totals import main as oct16_totals
+        oct16_totals(args)
+        return
     case, out_dir = args.case, args.out_dir
     later = case != "sept24"
     cols = ("sept23", "sept24") + ((case,) if later else ())   # `change` is the last column minus the one before

@@ -824,3 +824,48 @@ raw-coded low end and is no longer written for oct15.
 Logged below the bar: the capacity formula's traffic share s still reads v7 while its cut c reads the oct15 key
 (+$0.9–1.3bn); a cash-PCE denominator (−$2–3bn); government-paid health care in PCE (+$2–3bn, unverified); fear WTP
 possibly including avoided justice spending (−$1–3bn, unverified).
+
+## Oct16 preparation — 2026-10-15 19:02 JST
+
+The live dispatchers now select oct16 only. `band_variants_oct16.cjs` reads the debt lane's native, source-classified oct16 export and gates set/cash bands and the cash-resource identity. `v9_totals.py` reuses the live named social bundle's row contracts, applying the actual observed calibration by age and the joint16/17 consumption-key change at source pre-item18 prices. A taxable-basket exclusion is not interpreted as a change in physical food consumption. Constructed missing-person ages retain the source's within-generation minor shape; native-minor changes never spill from15–17 into18–19. [CALCULATION: new modules; candidate record/count probes]
+
+F09's equal-count average-resident comparator uses own national fiscal states, native national social formulas, random receivers, own retained road capacity and uniform DOT mortality. Set/cash use matched current-cash re-spending; the pension timing differs in the fiscal leg. It exports a per-component bridge beside the absolute stack. Housing aid displaced to other beneficiaries is **displaced aid**, not a budget saving. Public consumption's PM uses government-average intensity; public investment emissions are omitted. Excess burden remains excluded pending the operator's answer. [CALCULATION: `average_social_oct16.py`; `v9_totals.py`]
+
+Final runs wait for prop9/CASE_FINAL. Then run `node .../band_variants.cjs --case oct16`, `uv run --no-project python3 .../real_costs_totals.py --case oct16`, and the lane's source-contract/average-comparator tests through the reproducibility harness. Historical keyed outputs remain unchanged. `constant_choices.py`'s historical-stock branch remains blocked by the debt payer/timing problem; any runnable-branch replay must explicitly exempt it and state that limit.
+
+## Adopted oct16 execution — 2026-10-20
+
+- 20:24 JST (`date`): adopted source `7dfb4c66` consumed with refreshed source pins. Fiscal set **$368.029739 / $436.561527bn** and cash **$284.397043 / $352.928831bn** pass native and source-resource identities at 1e-9bn. The complete denominator is **44,903,074.086245 people** (`meta.population_v9.with_coverage`). [CALCULATION: `derived/oct16/band_variants.json`; `../debt_legacy_2026_09_23/derived/oct16/current_flow_contract.json`]
+- The absolute joint fiscal-plus-social pair is **$479.593687 / $553.686008bn set**, **$395.960992 / $470.053312bn cash**. The endpoints retain the case's order. Social effects use current 2024 physical effects and current-resource re-spending in both sets; only the fiscal leg changes pension timing. These conditional model outputs are not observed removal effects or confidence bounds. [CALCULATION: `derived/oct16/real_costs_totals.json` `joint_social_stack.ends.{low,high}.with_round1_social_fixes_bn`, `cash_pairing_bn`, `cash_timing_contract`]
+- **F09 built:** equal-count average residents' own fiscal-plus-social pair is **$88.819130 / $173.632947bn set**, **$111.360509 / $196.174326bn cash**. Therefore the joint excess over average is the paired **$390.774558 / $380.053061bn set**, **$284.600483 / $273.878986bn cash**, at the case's low/high fiscal ends, rather than an extrema search. Every component uses its own national formula/receiver rule; shared plus excess closes to the absolute total at 1e-9bn in both sets and ends. National fiscal sources apply the common military/college/rate/health rules; current-cash physical and re-spending inputs must agree across the two accounting sets. [CALCULATION: `real_costs_totals.json` `joint_social_excess_vs_average.sets.{set,cash}.ends`, `component_bridge`, `national_fiscal_inputs`]
+- **F29/F31:** housing aid on the government side is displaced aid to beneficiaries. Public-consumption PM uses government-average emissions intensity, and public-investment emissions are omitted. Excess burden remains excluded; the operator has not selected that addition. The uncomputed raw-coded-justice alternative is withheld. Calibration uses own observed ages, constructed coverage retains its declared within-generation age shape, and receipt-price changes from item18 do not imply lower physical food consumption. [CALCULATION: `v9_totals.py`; `real_costs_totals.json` `v9_social_environment`, `joint_social_stack.funding`; `average_social_oct16.py`]
+- Live reproduction: `sh infra/immigration-fiscal/sept24_propagation_2026_09_24/run_oct16.sh`, then `uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/sept24_propagation_2026_09_24 "sh {lane}/run_oct16.sh" --allow-unrun infra/immigration-fiscal/sept24_propagation_2026_09_24/constant_choices.py`. The exemption is solely the historical-stock alternative: its required debt payer/timing bridge remains unidentified, so it cannot supply a live stock sensitivity. It is not a weakened closure gate. The live wrapper runs ten native-source, capacity, component-conservation and cash-timing regressions. [CALCULATION: `run_oct16.sh`; final replay receipt appended below]
+- 2026-10-20 20:35 JST — Final adopted replay **IDENTICAL: 59/59, exit 0**, 67.993s. The live wrapper now runs **12/12 passing regressions**, including foreign-module shadowing and the shared loader's declared-calibration transition. The exact-path transport fix and caller update preserve all four output files byte for byte. Profiling found duplicate native congestion setup; sharing one read-only setup cut the complete build plus tests to 71.472s (initial unprofiled totals alone 169.909s). Remaining native matching cost is in `../congestion_2026_09_23/arms.py::match_umr`, outside this lane; see failure-catalog.md. [CALCULATION: `prop9/pairing-rerun.log`, `pairing-rerun-timing.json`, `pairing-optimized-timing.json`, `pairing-profile-current.pstats`, `pairing-pre-loader-fix.json`; all in handoff scratch]
+- Joint-stack per member is **$10,680.64 / $12,330.69 set**, **$8,818.13 / $10,468.18 cash**, dividing each unrounded joint total by the live 44.903074086245M count. The capital return stays out of re-spending, and both sets' social legs use their own matched current-cash funding. [CALCULATION: `real_costs_totals.json` `per_member_population_m.oct16`, `joint_social_stack.ends.*.with_round1_social_fixes_bn`, `cash_pairing_bn`]
+
+### 2026-10-20 — review corrections
+
+The live band contract now declares the oct16 package, selected v9 items,
+complete calibrated population and the single Trustees capital rate at both
+ends. It no longer spreads the oct15 registry or its 2%/3% rates into a file
+labeled oct16. Historical congestion, social-row controls and uncomputed oct15
+alternatives in `real_costs_totals.json` sit under `inherited_oct15`; current CSV
+notes name v9. The native debt frame is rebuilt in its ignored cache and verified
+against the tracked frame manifest before use. [CALCULATION:
+`band_variants_oct16.cjs`; `v9_totals.py`; `test_v9_transport.py`]
+
+The cash-resource split is a definition from cash, capital and private production,
+so the earlier phrase “source-resource identities” overstates its evidential
+force. Independent native-versus-flow band comparisons, source hash checks and
+component closure gates remain enforced at their stated tolerances; the
+definitional rearrangement is not an independent validation. [CALCULATION:
+`band_variants_oct16.cjs`; debt `current_flow_contract.json`]
+
+Review replay after rebuilding the current native dependency: **IDENTICAL 59/59,
+exit 0**, 22.290s; all 13 source/metadata/comparator regressions pass. The historical
+40.90M source count is retained under `inherited_oct15.target_population_m`; the
+live top-level count is 44.903074086245M. The set/cash joint totals, average-resident
+comparator, paired excess and per-member figures are exactly equal to their
+pre-review values. The historical-stock `constant_choices.py` exemption retains
+its documented unidentified payer/timing limit. [CALCULATION: `run_oct16.sh`;
+`derived/oct16/{band_variants,real_costs_totals}.json`; `test_v9_transport.py`]
