@@ -25,7 +25,8 @@ RETIRED = {
     138: "replaced by 194", 155: "rating withdrawn", 164: "replaced by 198", 231: "replaced by 238",
     193: "earlier version", 219: "earlier version", 229: "earlier version", 204: "earlier version",
     239: "earlier main estimate, replaced by 275 and 281", 275: "earlier main estimate, replaced by 281",
-    281: "earlier main estimate, replaced by 295", 299: "earlier main estimate, replaced by 304",
+    281: "earlier main estimate, replaced by 295", 295: "earlier main estimate, replaced by 311",
+    299: "earlier main estimate, replaced by 304",
     304: "earlier main estimate, replaced by 311", 301: "replaced by 305", 303: "replaced by 306",
 }
 
@@ -57,21 +58,24 @@ GROUPS = [
              "without the Mexican-origin population? It adds each member's own taxes and benefits, corrected "
              "with records. It then charges a share of every public service that grows with the population."),
         terms=[("counterfactual", "the world we compare with. Here it is the same US without the group."),
-               ("specification", "one full set of choices. The range covers 64 of them."),
-               ("standard error", "sampling noise. It is about {{q:noise.se|range_unit}} here."),
+               ("specification", "one full set of choices. The range covers {{q:count.specifications|value}} of "
+                                 "them."),
+               ("standard error", "noise from sampling and from the survey donors. It is about "
+                                  "{{q:noise.se|range_unit}} here."),
                ("lineage", "the immigrants, their children and later descendants, whether or not they still "
                            "report Mexican origin")],
         findings=[
-            dict(refs=[295],
+            dict(refs=[311],
                  text="Other residents would be about {{q:case.main|mid}} a year better off "
                       "({{q:case.main|range}}). That is about {{q:case.per_member|mid_range}} per member.",
                  why="The count is {{q:headcount.lineage|value}} people. Of them, "
                      "{{q:headcount.identified|value}} report Mexican birth, a Mexico-born parent or Mexican "
-                     "origin. The other {{q:headcount.added|value}} are later descendants who no longer report "
-                     "Mexican origin. Each person counts whole. Counted by share of Mexican-immigrant ancestry, "
-                     "the total would be about {{q:case.ancestry_share|mid_range}}."),
+                     "origin. Another {{q:headcount.added|value}} are later descendants who no longer report "
+                     "Mexican origin. The last {{q:headcount.coverage|value}} are members the Census missed. Each "
+                     "person counts whole. Counted by share of Mexican-immigrant ancestry, the total would be "
+                     "{{q:case.ancestry_share|range_unit}}, depending on how the fourth generation counts."),
             dict(refs=[184],
-                 text="Sampling noise is about ±{{q:noise.sampling_95|value}} (95%).",
+                 text="Sampling and survey-donor noise is about ±{{q:noise.sampling_95|value}} (95%).",
                  why="The assumptions move the number more than the data noise does. The assumption table, in "
                      "the part on how the number is built, ranks them."),
             dict(refs=[54, 55],
@@ -79,37 +83,38 @@ GROUPS = [
                  why="CBO counts the federal budget only, new arrivals of all origins, and projected growth "
                      "effects. Two results can conflict only when population, period and outcome match."),
         ],
-        minor=[305, 311],
+        minor=[305],
     ),
     dict(
         id="why", part="answer",
         claim="The cost comes from lower taxes, not from heavier use of services",
         range="lower taxes make {{q:decomp.taxes_share|range_unit}} of the excess over average residents",
-        why=("Compare the group with as many average residents under the same rules. Almost all of the "
-             "group's extra cost comes from lower taxes at the same ages. At given ages it uses public services "
-             "about as much as other residents do."),
+        why=("Compare the group with as many average residents under the same rules. About two thirds of the "
+             "group's extra cost comes from lower taxes at the same ages, and most of the rest from its young age "
+             "mix. At given ages it uses public services only a little more than other residents do."),
         terms=[("average resident", "national taxes and spending divided by the whole population"),
                ("household transfers", "cash, food, housing and medical benefits paid to households"),
                ("cash vs accrual", "count a pension when it is paid, or count the promise when it is earned")],
         findings=[
             dict(refs=[269],
-                 text="Any {{q:headcount.lineage|value}} average residents would cost others about "
-                      "{{q:decomp.average_residents|mid_range}} under the same rules. The group's excess over "
-                      "them is about {{q:decomp.excess|mid_range}}. Lower taxes at the same ages make up "
+                 text="Under the same rules, {{q:headcount.lineage|value}} average residents would bring others "
+                      "a gain of about {{q:decomp.average_gain_low|value}} at the low end and cost them about "
+                      "{{q:decomp.average_cost_high|value}} at the high end. The group's excess over them is about "
+                      "{{q:decomp.excess|mid_range}}. Lower taxes at the same ages make up "
                       "{{q:decomp.taxes_share|range_unit}} of it.",
-                 why="Governments spend more than they tax, so in this account any residents cost others "
-                     "something. The group's age mix adds {{q:decomp.age_mix|range_unit}}. Its use of services "
-                     "at given ages adds {{q:decomp.use|pair}} at the low and high ends."),
+                 why="The ends differ in how much of each budget grows with the population. The group's age mix "
+                     "adds {{q:decomp.age_mix|range_unit}}. Its use of services at given ages adds "
+                     "{{q:decomp.use|pair}} at the low and high ends."),
             dict(refs=[257, 286, 146],
-                 text="With pensions counted when earned, the group's direct taxes about equal the benefits "
-                      "it draws: {{q:tally.accrual|pair}} at the low and high ends. Schools and other public "
+                 text="With pensions counted when earned, the group's direct taxes slightly exceed the benefits "
+                      "it draws: by {{q:tally.accrual|pair}} at the low and high ends. Schools and other public "
                       "services make the cost.",
-                 why="On cash, the members who report Mexican origin pay about $65bn more payroll tax than they "
-                     "draw (63–68), because they are young. Under current law and the Trustees' 2026 projections, "
-                     "that tax buys future benefits worth about {{q:pension.accrual_ratio|value}} per tax dollar. "
+                 why="Counting pensions when paid, its direct taxes exceed its benefits by {{q:tally.cash|pair}}, "
+                     "because the group is young. Under current law and the Trustees' 2026 projections, its "
+                     "payroll tax buys future benefits worth about {{q:pension.accrual_ratio|value}} per tax dollar. "
                      "Current law keeps the retirement and disability funds apart, and each fund pays only what it "
                      "holds. Counting the promise when earned, as the main estimate does, adds about "
-                     "{{q:pension.accrual|mid_range}} to the total."),
+                     "{{q:pension.accrual|mid}} to the total."),
             dict(refs=[268],
                  text="About {{q:household.net_contributor_share|mid}} of members "
                       "({{q:household.net_contributor_share|range}}) live in households that pay more than they "
@@ -126,7 +131,7 @@ GROUPS = [
     dict(
         id="selection", part="answer",
         claim="Who migrates matters most: under the same rules, Indian-origin residents benefit others",
-        range="{{q:indian.gap_to_union|range_unit}} per member between the two groups",
+        range="{{q:indian.gap_fiscal|range_unit}} per member between the two groups",
         why=("The same account, applied to other groups, shows what is special to this one. Schooling at "
              "arrival sets most of the result, and the children carry it on."),
         terms=[("selection", "how migrants differ from the people who stay home"),
@@ -134,12 +139,13 @@ GROUPS = [
                ("replacement", "the group against an equal number of people from another group")],
         findings=[
             dict(refs=[276, 277],
-                 text="Indian-origin residents benefit others by about {{q:indian.per_member|mid_range}} per "
-                      "member a year, social costs included. The Mexican-origin group costs others about "
-                      "{{q:union.per_member_social|mid_range}} per member on the same terms.",
+                 text="Indian-origin residents benefit others by about {{q:indian.per_member_fiscal|mid_range}} per "
+                      "member a year on the public budget. The Mexican-origin lineage costs others about "
+                      "{{q:union.per_member_fiscal|mid_range}} per member on the same terms.",
                  why="At the ages of third-generation whites the Indian-origin benefit is still about "
-                     "{{q:indian.white_ages|mid_range}}. Each arrival cohort since 1995 sits at the 75th–78th "
-                     "percentile of US white schooling, above the cohorts of 1975–94. Telugu, Tamil, Marathi, "
+                     "{{q:indian.white_ages_fiscal|mid_range}}. The costs outside the budget are not priced for "
+                     "Indian-origin residents on the current account. Each arrival cohort since 1995 sits at the "
+                     "75th–78th percentile of US white schooling, above the cohorts of 1975–94. Telugu, Tamil, Marathi, "
                      "Kannada and Bengali speakers sit near the 80th percentile, Punjabi speakers at the 47th."),
             dict(refs=[74, 75, 86, 92, 133, 174, 197, 228],
                  text="Mexican migrants come from the middle of Mexico's schooling range. Their children move "
@@ -152,19 +158,18 @@ GROUPS = [
                      "balances are on taxes as the survey reports them."),
             dict(refs=[263],
                  text="Against as many third-generation whites, the group costs others about "
-                      "{{q:whites.gap_a1|mid_range}} a year more. Against local whites, state by state, the gap "
-                      "is about {{q:whites.gap_local|mid_range}}.",
-                 why="On raw cash the gap is only {{q:whites.gap_cash|mid_range}}, because whites are older and "
-                     "draw pensions now. Counting pensions when earned removes that effect. Both sides have the "
-                     "same number of people. As many third-generation whites cost others "
-                     "{{q:whites.own_per_member|range_unit}} each, about break even, so the gap is close to the "
-                     "group's whole cost. The gap comes from taxes and schools."),
+                      "{{q:whites.gap_central|mid_range}} a year more.",
+                 why="Both sides have the same number of people and run on the same rough model. Counting pensions "
+                     "when paid, the gap is {{q:whites.gap_central_cash|mid_range}}, because whites are older and "
+                     "draw pensions now. Third-generation whites pay others "
+                     "{{q:whites.own_contribution|range_unit}} each beyond their cost, so the gap is larger than "
+                     "the group's own cost."),
             dict(refs=[259],
                  text="Under the same rules, non-Hispanic Black residents cost others about "
-                      "{{q:black.per_member|mid_range}} per member. That is {{q:black.ratio_engine|range}} times the "
-                      "main estimate per lineage member, {{q:case.per_member|mid}}.",
-                 why="A rough calculation with group shares, not a full model run. Neither figure counts the "
-                     "costs outside public budgets that the Indian comparison adds."),
+                      "{{q:black.per_person|mid_range}} per person. That is {{q:black.ratio_rough|range}} times the "
+                      "lineage's cost per person on the same rough model.",
+                 why="A rough calculation with group shares, not a full model run. Each group has its own Census "
+                     "coverage and mortality, and children count with their parents."),
         ],
         minor=[151, 152, 153, 167, 177, 179],
     ),
@@ -249,38 +254,42 @@ GROUPS = [
     ),
     dict(
         id="whopays", part="whopays",
-        claim="State and local taxpayers pay most of the cost, and about one other resident in six gains",
-        range="{{q:incidence.state_local_share|range_unit}} state and local",
-        why=("State and local budgets carry most of the cost, through schools, police and local services. "
-             "Renters and workers with less schooling lose most."),
+        claim="State and local budgets carry most of the cost, and few other residents come out ahead",
+        range="state and local: {{q:cash.state_local|range_unit}} of the 2024 cash flows",
+        why=("Schools, police and local services make most of the cost. Of the 2024 cash flows the account can "
+             "place, state and local budgets carry {{q:cash.state_local|range_unit}} and the federal budget "
+             "{{q:cash.federal|range_unit}}."),
         terms=[("incidence", "which households finally bear a cost"),
                ("welfare weights", "how much a dollar counts for a rich person vs a poor person")],
         findings=[
             dict(refs=[226],
-                 text="About one other resident in six comes out ahead: {{q:winners.share_ahead_a|value}} when "
-                      "taxes close the gap and {{q:winners.share_ahead_b|value}} under equal cuts. Most of them "
-                      "are landlords or in the top tenth of income.",
-                 why="The analysis follows each person through taxes, wages, rents and crime. Nearly everyone in "
-                     "California and Texas comes out behind, and so do renters and US-born adults with high "
-                     "school or less."),
+                 text="Few other residents come out ahead: {{q:winners.share_ahead_a|value}} when tax shares pay "
+                      "for the cost, {{q:winners.share_ahead_b|value}} under equal cuts per person and "
+                      "{{q:winners.share_ahead_c|value}} when the programmes that grow pay from their own receipts. "
+                      "Landlords and the top tenth of income come out ahead most often.",
+                 why="Who gains is assigned by rule, not observed. The analysis gives each household its share of "
+                     "taxes, cuts, wages, rents and crime, and pools the household's gains and losses. The share "
+                     "depends on where the cost falls in its range: at the low end of the fiscal and social ranges "
+                     "{{q:winners.share_ahead_low_end|range_unit}} come out ahead, at the high end "
+                     "{{q:winners.share_ahead_high_end|range_unit}}."),
             dict(refs=[194],
                  text="If taxes close the gap, the top fifth pays {{q:quintile.top_fifth_tax_share|value}}. If "
                       "equal cuts close it, the bottom fifth loses {{q:quintile.bottom_fifth_cuts|value}} of its "
                       "resources.",
                  why="Who pays depends on how budgets close the gap."),
             dict(refs=[250, 297],
-                 text="Counting the group's own gain, the world gains about "
-                      "{{q:world.reading1_total_equal|value}} in the year measured, with every person weighted "
-                      "equally. A lower valuation gives about {{q:world.reading2_total_equal|value}}, with US health "
-                      "and social services at Mexican prices. It also assumes migrants would have out-earned "
-                      "{{q:world.reading2_selection_pct|value}} of similar urban Mexicans, and counts public goods at "
+                 text="Counting the group's own gain, the world gains about {{q:world.r1_total|mid_range}} in the "
+                      "year measured, with every person weighted equally and benefits counted when paid. A lower "
+                      "valuation, also at equal weights, gives about {{q:world.r2_total|mid_range}}, with services "
+                      "at output prices rather than household prices. It also assumes migrants would have out-earned "
+                      "{{q:world.r2_selection_pct|value}} of similar urban Mexicans, and counts public goods at "
                       "the cost of extending them.",
                  why="The group earns far more here than it would in Mexico. Other US residents lose at any "
-                     "weight. Counting the group as US residents, the US comes out behind when the group's welfare "
-                     "counts for less than {{q:world.reading1_breakeven_us|value}} of other residents'. On the "
-                     "lower valuation, the US comes out behind even at equal weight. Over generations the sign "
-                     "turns on how fast descendants catch up. At the measured pace, Clemens and Pritchett's "
-                     "long-run model favours less migration in 14 of its 21 versions."),
+                     "weight. The world comes out behind when the group's welfare counts for less than "
+                     "{{q:world.r1_breakeven|range}} of other people's, or {{q:world.r2_breakeven|range}} on the "
+                     "lower valuation. Over generations the sign turns on how fast descendants catch up. At the "
+                     "measured pace, Clemens and Pritchett's long-run model favours less migration in 14 of its 21 "
+                     "versions."),
             dict(refs=[139, 213],
                  text="Natives who leave California take about $2.1bn of revenue. Race preferences cost white "
                       "natives about $4bn.",
@@ -306,19 +315,30 @@ GROUPS = [
                  text="Natives with less schooling earn 2.2–7.0% less, about $116bn (66–166). Natives with more "
                       "schooling earn more.",
                  why="A model with two skill groups. The two transfers nearly cancel."),
+            dict(refs=[300, 308],
+                 text="The group's jobs use business capital, and the taxes on that capital leave with the jobs. "
+                      "Counting those capital taxes lowers the main estimate by "
+                      "{{q:items.job_capital_taxes|range_unit}}.",
+                 why="Mining's taxes stay, because the resource is extracted without the group. Corporate tax "
+                     "leaves in full at the low end and at Treasury's normal-return share, 0.37, at the high end. "
+                     "US tax on foreign-source income stays. Each generation's share of each industry's wages "
+                     "keys the taxes."),
             dict(refs=[132, 198, 200, 203],
-                 text="Cheaper services, more work by native women and home care add about $4bn a year.",
-                 why="Price effects from published studies, at face value."),
+                 text="More work by native women, the elder-care Medicaid saving and a small output effect add "
+                      "about $4bn a year. Cheaper household services, worth about $22bn to consumers, are not "
+                      "added.",
+                 why="Price effects from published studies, at face value. The value of cheaper services is the "
+                     "production gain seen from the spending side, so adding it would count it twice."),
             dict(refs=[201, 156],
-                 text="Larger cities raise earnings and lower schooling lowers them. The two nearly cancel "
-                      "(about +$14bn).",
+                 text="Larger cities raise earnings and lower schooling lowers them. The two nearly cancel, "
+                      "leaving a gain to others of about {{q:scale.net|value}}.",
                  why="One regression across commuting zones. Older studies of the college share would make it a "
                      "large cost. Studies of average schooling find nothing."),
             dict(refs=[53, 59, 99, 120, 136, 140, 182],
                  text="The wage and automation designs tested here cannot find a native wage effect.",
                  why="The usual instruments lose their power after {{q:instrument.power_lost_year|value}}."),
         ],
-        minor=[300, 308, 318],
+        minor=[318],
     ),
     dict(
         id="social", part="beyond",
@@ -326,50 +346,48 @@ GROUPS = [
         range="about {{q:social.items|mid_range}}",
         why=("Some costs never pass through a budget: crime victims, pollution, crashes, traffic and fear. "
              "The account prices them beside its total, net of gains from a larger economy. With them the total is "
-             "about {{q:pairing.total|mid_range}}. Its low end also prices offending at the Hispanic average, "
-             "{{q:pairing.footing_reduction|at_low_end}} less."),
+             "about {{q:pairing.total|mid_range}}."),
         terms=[("externality", "a cost that falls on people outside the transaction"),
-               ("value of a statistical life", "the price that cost-benefit analysis uses for a death"),
-               ("normalized", "the same item for as many average residents, taken away")],
+               ("value of a statistical life", "the price that cost-benefit analysis uses for a death")],
         findings=[
             dict(refs=[260],
-                 text="Fine-particle pollution from the group's consumption causes about "
-                      "{{q:pm25.deaths_priced|value}} deaths among others a year. The cost is about "
-                      "{{q:pm25.cost|mid}} ({{q:pm25.span_priced|range}}).",
+                 text="Fine-particle pollution from the group's consumption costs other residents about "
+                      "{{q:pm25.cost|mid_range}} a year. The public purchases that leave with the group add "
+                      "{{q:pm25.public|range_unit}}.",
                  why="Per person the group causes 0.65 of an average resident's pollution because it consumes "
-                     "less. Against as many average residents, the group is about "
-                     "{{q:pm25.normalized_priced|value}} better."),
+                     "less. Most of these deaths fall on people over 65. Valuing each death by the remaining life "
+                     "years lost, the fiscal and social total is {{q:pairing.life_years|range_unit}}."),
             dict(refs=[264, 266],
-                 text="The group's traffic costs other residents about {{q:crash.cost|mid}} a year in road crashes "
-                      "({{q:crash.span_priced|range}}).",
+                 text="The group's traffic costs other residents about {{q:crash.cost|mid}} a year in road crashes.",
                  why="One more car barely changes other drivers' crash risk per mile. So most crashes that others "
-                     "have with group drivers would happen anyway, among the remaining drivers. Counting every "
-                     "crash that group drivers cause gives about {{q:crash.fault_based_priced|mid_range}}. "
-                     "California records show Hispanic drivers are not at fault more often in injury crashes "
-                     "(odds 0.98)."),
+                     "have with group drivers would happen anyway, among the remaining drivers. California records "
+                     "show Hispanic drivers are not at fault more often in injury crashes (odds 0.98)."),
             dict(refs=[189],
                  text="Violent crime by group members costs victims outside the group about "
                       "{{q:victims.harm|mid_range}} a year.",
                  why="The full cost counts a death at a statistical value, plus pain. Tangible losses alone are "
                      "$4.5bn. Police records confirm the offender shares."),
             dict(refs=[195],
-                 text="Traffic costs other commuters about $13bn a year (12–14).",
+                 text="Traffic costs other commuters about {{q:congestion.item|mid_range}} a year.",
                  why="Speed falls 0.12% per 1% more people when road space stays fixed. Roads that grow with "
                      "population take up part of it."),
             dict(refs=[258],
-                 text="Fear, private security and school discipline cost about $8bn a year.",
-                 why="The same method gives $51bn for non-Hispanic Black residents."),
+                 text="Fear, private security and school discipline cost about "
+                      "{{q:social.fear_security_school|range_unit}} a year.",
+                 why="On the earlier survey count, the same method gave $51bn for non-Hispanic Black residents."),
             dict(refs=[190, 79, 180, 183, 57],
                  text="In the long run rents rise {{q:housing.rent_elasticity_long_run|range}}% per 1% more people. "
                       "Other renters pay about $34bn more, and landlords receive it.",
-                 why="Most landlords are other residents, so the net for others is a small gain of about $2bn "
-                     "(0.7–3.5). The loss falls on renters."),
+                 why="Most landlords are other residents, so the net for others is a small gain of about "
+                     "{{q:social.housing_gain|range_unit}}. The loss falls on renters."),
             dict(refs=[265],
-                 text="Three benefits to others count against these costs: volunteering about $6bn, consumer "
-                      "scale about $2bn and trade ties with Mexico about $7bn.",
+                 text="Four benefits to others count against these costs: restaurant variety about "
+                      "{{q:social.restaurants|value}}, volunteering about {{q:social.volunteering|value}}, consumer "
+                      "scale about {{q:social.consumer_scale|value}} and trade ties with Mexico about "
+                      "{{q:social.trade|value}}.",
                  why="The account already carries the large benefits: taxes, production, care and housing. "
-                     "Defense and old interest are never charged to the group. That is an implicit credit of "
-                     "about $271bn a year."),
+                     "Defense and old interest are held fixed. A share per head of them would be about $271bn a "
+                     "year, a convention the account does not use."),
             dict(refs=[261],
                  text="Infectious disease and food safety cost others about $0.3bn a year.",
                  why="Most TB among the foreign-born comes from old infection abroad. About 56 cases a year "
@@ -411,7 +429,9 @@ GROUPS = [
             dict(refs=[202, 218, 148],
                  text="In police records, Hispanic offenders commit murder at 2.30 times the white rate and "
                       "0.92–1.18 times the rate of all residents.",
-                 why="Texas and Arizona incident records. Known recording errors do not change the ratios."),
+                 why="Texas and Arizona incident records, crude rates. With every offender of unknown ethnicity put "
+                     "on one side, the white ratios run 1.25–9.75. The corrections to the victim cost nearly "
+                     "cancel."),
             dict(refs=[71, 72, 73],
                  text="In Europe, composition explains most of the immigrant crime gap but not the gap of "
                       "their children.",
@@ -443,8 +463,10 @@ GROUPS = [
                  text="School spending rises about 1% per 1% more pupils. So each pupil costs the full average. "
                       "Schools are the largest line.",
                  why="Across districts and states the slope is 0.97–1.00. Inside one district over a few years "
-                     "it is 0.84. In the 2022–24 surge, money followed new pupils about half, and late. Without the "
-                     "return on school capital, the short-run response would lower the total by about "
+                     "it is 0.84. At the within-district response the main estimate is "
+                     "{{q:case.school_within_district|range_unit}}. "
+                     "In the 2022–24 surge, money followed new pupils about half, and late. Without the return on "
+                     "school capital, the short-run response would lower the total by about "
                      "{{q:schools.first_year_effect|mid_range}}."),
             dict(refs=[237],
                  text="Road spending rises 0.73% and park spending 0.95% per 1% more residents.",
@@ -456,15 +478,23 @@ GROUPS = [
                  why="From the size of administration spending across states. Designs inside states are too "
                      "noisy to tell it from 0 or 1."),
             dict(refs=[141, 149],
-                 text="Natives did not leave public schools as the Hispanic share rose. Local budgets did not "
-                      "shift from schools to police.",
-                 why="District and county panels, 2007–2023."),
+                 text="Metro and district data show no native flight from public schools as the Hispanic share "
+                      "rose, and no shift from schools to police.",
+                 why="District and county panels, 2007–2023. These are results with no clear effect, not proof "
+                     "of none."),
             dict(refs=[80],
                  text="Fiscal studies charge shared services at average cost. Where prisons are full, building "
                       "costs add 18–27% to a prisoner-year.",
                  why="Prisons are full in 8 states and not in 22."),
+            dict(refs=[312],
+                 text="Veterans' benefits for service do not grow with the group, because the residents who serve "
+                      "in its place earn the same benefits. Holding the veterans' benefits fixed lowers the main "
+                      "estimate by about {{q:items.veterans|mid}}.",
+                 why="The veterans' pension for low incomes still grows with the group. The first-year reading "
+                     "keeps the military service costs growing with the group, because no replacement veterans "
+                     "exist yet."),
         ],
-        minor=[312, 315],
+        minor=[315],
     ),
     dict(
         id="conventions", part="build",
@@ -474,11 +504,15 @@ GROUPS = [
             "prices each one with a band.",
         terms=[("opportunity cost of capital", "what public capital could earn in another use")],
         findings=[
-            dict(refs=[238],
-                 text="Public capital (schools, roads, buildings) could earn 2–3% a year in another use. With "
-                      "government enterprises' capital, this adds about {{q:capital_return.total|mid_range}}.",
+            dict(refs=[238, 313],
+                 text="Public capital (schools, roads, buildings) could earn a return in another use. The main "
+                      "estimate charges {{q:capital.rate|value}} a year real, the rate that also prices the pension "
+                      "promises. With government enterprises' capital, this adds about "
+                      "{{q:capital_return.total|mid_range}}.",
                  why="National accounts charge only wear. The return is a resource cost, not a payment. It never "
-                     "enters debt or the deficit. The assumption table shows the total at a private 7% return."),
+                     "enters debt or the deficit. The rate is the flat equivalent of the Trustees' 2026 path. "
+                     "Market yields on inflation-protected bonds in 2024 were close, 1.94–2.15%. The assumption "
+                     "table shows the total at a private 7% return."),
             dict(refs=[253],
                  text="Property taxes follow people, like the capital they pay for. Taxes on owned and rented "
                       "homes respond at about 0.72–0.77.",
@@ -489,30 +523,36 @@ GROUPS = [
                       "person is {{q:gap_vs_white.per_person_common_age|value}} at a common age mix and "
                       "{{q:gap_vs_white.per_person_own_ages|value}} at the group's own ages.",
                  why="Children cost now and pay later. Old people draw pensions. Counting pensions when earned, "
-                     "as the main estimate does, removes most of this effect."),
+                     "as the main estimate does, narrows this effect. By how much has not been measured."),
             dict(refs=[288],
                  text="Public pensions already count when earned. The main estimate counts public workers' retiree "
-                      "health the same way, which adds about {{q:retiree_health.change|range_unit}}.",
+                      "health the same way. If the retiree-health promises earned each year equalled what "
+                      "governments pay in a year, the total would be {{q:retiree_health.rho_one_change|range_unit}} "
+                      "lower.",
                  why="National accounts book public pensions at the cost of the promises earned each year, but "
                      "retiree health as paid. Care bought for military retirees pays for past service, so it does "
                      "not grow with the group. The sign rests on one ratio: state plans' cost of promises earned in "
                      "a year is {{q:retiree_health.cost_ratio|value}} times what they pay."),
         ],
-        minor=[313],
+        minor=[],
     ),
     dict(
         id="data", part="build",
-        claim="Checks against records move taxes and spending by about $50bn each (44–57), and the two almost cancel",
-        range="net about $11bn",
+        claim="Record checks and an assumed on-books pay share move the cost in opposite directions, and the two "
+              "nearly cancel",
+        range="net {{q:corrections.uncorrected_change|range_unit}} lower",
         why=("Survey answers carry known errors. The analysis checks each tax and benefit share against "
-             "records that the account did not use."),
+             "records that the account did not use. The tax side raises the cost by "
+             "{{q:corrections.tax_side|pair}} at the low and high ends, mostly through an assumed share of pay on "
+             "the books, not a records check. The spending side lowers it by {{q:corrections.spending_side|pair}}. "
+             "Together they lower the cost by {{q:corrections.uncorrected_change|range_unit}}."),
         terms=[("allocation key", "the share of a national total charged to the group"),
                ("imputation", "Census fills a missing answer with a similar person's answer"),
                ("held-out test", "a check against data that the model never saw")],
         findings=[
             dict(refs=[208],
-                 text="Census fill-ins for missing income give the group too much income. The correction raises "
-                      "the cost by about {{q:fill_in.effect|mid_range}}.",
+                 text="Census fill-ins for missing income give the group too much income. The account corrects "
+                      "them, which raises the cost.",
                  why="At equal age, sex and schooling, filled-in wages keep only 9% of the group's wage gap. "
                      "Eight versions of the correction all point the same way."),
             dict(refs=[209],
@@ -524,8 +564,8 @@ GROUPS = [
                  why="Nine pooled MEPS years move cost from adults to children, not the total. CMS records put "
                      "the group at 7.4% of long-term-care dollars, not 12.25%."),
             dict(refs=[217, 216, 249, 289],
-                 text="Fear does not cause people to hide benefits. The income-tax share is slightly too flat at "
-                      "the top, so the main estimate uses IRS shares.",
+                 text="Records show no fear-driven hiding of SNAP, Medicaid or housing aid where the group lives. "
+                      "The income-tax share is slightly too flat at the top, so the main estimate uses IRS shares.",
                  why="Administrative totals match the survey where the group lives. IRS data for a year that "
                      "the account never used confirm the direction."),
             dict(refs=[254, 77, 220],
@@ -537,26 +577,42 @@ GROUPS = [
                  text="Two tests fixed before looking pass. The frame predicts where the group's births and "
                       "hospital charity care fall.",
                  why="Birth records put 14.36% of US births with Mexican-origin mothers. The frame says 14.43%. "
-                     "Courts, police and prisons charged by use add $5.9bn."),
+                     "Courts, police and prisons are charged by use."),
+            dict(refs=[306],
+                 text="The 2020 Census missed about 5% of Hispanics. The main estimate counts the "
+                      "{{q:headcount.coverage|value}} members it missed, which adds about "
+                      "{{q:items.coverage|range_unit}}.",
+                 why="Census population controls keep the 2020 Hispanic total, so the survey does not make up "
+                     "the undercount. Missed people take the Post-Enumeration Survey's rates by age and sex from "
+                     "age 5."),
+            dict(refs=[314],
+                 text="Public health spending outside VA and military care follows the group's other federal and "
+                      "state and local health payments, which adds about {{q:items.health_residual|mid}} to its "
+                      "health cost.",
+                 why="VA and TRICARE made up 91% of the survey payments in the old key."),
             dict(refs=[225, 90],
                  text="The account charges consumption taxes on what households spend, not on their income.",
                  why="Saving and money sent home lower spending. Money sent home lowers sales tax by about "
                      "{{q:remittance.sales_tax_effect|mid}}, or {{q:remittance.sales_tax_effect|min}} at surveyed "
                      "amounts."),
             dict(refs=[267],
-                 text="Prices where the group lives raise its service costs by about $8.6bn and its sales and "
-                      "vehicle taxes by about $6.4bn. The main estimate charges the net, about $2.2bn.",
+                 text="Prices where the group lives raise its service costs by about "
+                      "{{q:state_prices.spending_lane|value}} and its sales and vehicle taxes by about "
+                      "{{q:state_prices.receipts_lane|value}}. The main estimate charges the net, about "
+                      "{{q:state_prices.net_lane|value}}.",
                  why="The group lives where services cost more (California) and where sales taxes are high "
                      "(Texas and Arizona)."),
             dict(refs=[273],
                  text="The main estimate charges road costs by miles driven, net of the fuel taxes that move with "
-                      "it. That adds about $2–4bn.",
+                      "it. When adopted in September, that added about $2–4bn.",
                  why="The group has 8% of household income but drives 10% of the miles. Freight costs "
                      "follow what people buy."),
             dict(refs=[294],
                  text="The main estimate charges public colleges and Pell grants by the group's measured use, and "
-                      "counts fees for the people who pay them. With two smaller keys, the college, Pell and fee "
-                      "changes lower the total by {{q:fees.change|range_unit}}.",
+                      "counts fees for the people who pay them. When adopted in October, with two smaller keys, the "
+                      "college, Pell and fee changes lowered the total by {{q:fees.change|range_unit}}. Colleges' "
+                      "teaching grows with the group and their research does not, which lowers it by a further "
+                      "{{q:items.public_college|mid}}.",
                  why="IPEDS records give the group {{q:fees.use_share|value}} of public colleges' cost, against "
                      "{{q:fees.item_p_share|value}} on a key of state capital spending per head. At the measured "
                      "share, colleges cost {{q:fees.college_key|mid}} less. The group receives "
@@ -567,12 +623,12 @@ GROUPS = [
                  text="A second survey gives the same earnings and income-tax gaps within 4%.",
                  why="ACS against CPS, with one tax calculator on both."),
         ],
-        minor=[284, 285, 298, 306, 314, 316, 317],
+        minor=[284, 285, 298, 316, 317],
     ),
     dict(
         id="time", part="build",
         claim="Only 2024 is measured, and past years and old debt are separate numbers",
-        range="about {{q:backcast.10y|mid}} over ten years, {{q:debt.interest|mid}} interest",
+        range="about {{q:backcast.10y|mid}} over ten years, before interest",
         why=("Earlier years come from a model. Lifetimes use a separate ledger with a reference group. None "
              "of them adds to the annual number."),
         terms=[("back-cast", "a model of past years from today's position and past national data"),
@@ -585,11 +641,11 @@ GROUPS = [
                  why="Receipts, programmes, prices, population and the group's income change each year. "
                      "Pandemic payments reached the group at about the same rate per person as others."),
             dict(refs=[207],
-                 text="If the federal part was borrowed, it left about {{q:debt.stock|mid_range}} of debt. The "
-                      "interest on it in 2024 is about {{q:debt.interest|mid_range}}.",
-                 why="This is a legacy cost. Removing the group today does not remove old debt, so the number "
-                     "stays beside the annual total. State and local budgets must balance and do not borrow "
-                     "for it."),
+                 text="If the federal part of past gaps was borrowed, the debt and its interest are a legacy cost. "
+                      "They are not measured on the current account.",
+                 why="Removing the group today does not remove old debt, so any such number stays beside the "
+                     "annual total. State and local budgets must balance and do not borrow for it. Of the 2024 "
+                     "cash flows, the federal part is {{q:cash.federal|range_unit}}."),
             dict(refs=[123, 125, 126, 128, 172, 119, 296],
                  text="Against third-generation whites of the same ages, the gap is about "
                       "{{q:gap_vs_white.age_matched_partial|value}} a year, and "
@@ -613,7 +669,7 @@ GROUPS = [
     ),
     dict(
         id="method", part="build",
-        claim="Of the budget assumptions, only the horizon moves the size by more than a quarter",
+        claim="No single budget assumption moves the total by a quarter",
         range="first-year budget responses: {{q:case.first_year|range_unit}}",
         why=("The analysis swapped each premise for its best-supported alternative, one at a time. The total stays a "
              "cost under every swap. A calculation that runs is not a test of a theory. Controls and "
@@ -622,11 +678,12 @@ GROUPS = [
         findings=[
             dict(refs=[270],
                  text="With first-year budget responses the total falls by about "
-                      "{{q:breaks.first_year_pct|value}}. Counting descendants by share of ancestry, at the lowest "
-                      "share, lowers it by about {{q:breaks.ancestry_low_pct|value}}. No other single swap moves "
-                      "the total by a quarter.",
-                 why="The group's taxes cover its benefits at the low end of the range, but not at the high "
-                     "end. The observations most worth making next are how "
+                      "{{q:breaks.first_year_pct|value}}. Two counting choices move it more. Counting descendants "
+                      "by share of ancestry, at the lowest share, lowers it by about "
+                      "{{q:breaks.ancestry_low_pct|value}}. A private 7% return on public capital raises it by "
+                      "about {{q:breaks.capital_7pct_pct|value}}.",
+                 why="With pensions counted when earned, the group's direct taxes cover its benefits at both ends "
+                     "of the range. The observations most worth making next are how "
                      "budgets respond when people leave, and how much of the Mexico-born's pay is on the books."),
             dict(refs=[58, 60], text="Controls and placebo tests that pass do not by themselves show a cause.", why=""),
         ],

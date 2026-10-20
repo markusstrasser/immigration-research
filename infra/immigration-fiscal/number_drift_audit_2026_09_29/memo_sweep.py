@@ -130,7 +130,7 @@ ALLOW = {
 }
 
 # the records whose current value comes from an adopted lane the evidence map does not show yet: record id → (path,
-# field, expr). The map and its registry remain on v6; these records bridge to adopted v9. current_values stops
+# field, expr). Since 2026-10-21 the map and its registry are on v9, so no record bridges. current_values stops
 # once a registry row reads the adopted file, requiring its bridge entry to be removed.
 _PAIR = "csv:section=7&column=pairing_on_priced_count&item=published pairing"
 
@@ -157,12 +157,8 @@ def _pairing(case):
 
 ADOPTED_LANE = "infra/immigration-fiscal/main_case_2026_10_16/derived/summary.json"
 ADOPTED_PAIRING_LANE = "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.csv"
-ADOPTED = {
-    "case.main": (ADOPTED_LANE, "a=json:main_case", "(a[0], a[1])"),
-    "case.per_member": (ADOPTED_LANE, "a=json:v9.per_member_usd.set", "(a[0]/1e3, a[1]/1e3)"),
-    "case.cash_set": (ADOPTED_LANE, "a=json:cash_set.band_bn", "(a[0], a[1])"),
-    **{rid: (ADOPTED_PAIRING_LANE, field, expr) for rid, (field, expr) in _pairing("oct16").items()},
-}
+# Empty since 2026-10-21: the evidence map and its registry moved to v9, so the registry reads the adopted files.
+ADOPTED = {}
 
 
 def current_values(recs):
@@ -205,7 +201,7 @@ EARLIER = {
        for rid in _pairing("oct05")},
 }
 
-# The presentation registry stays on v6; its value is already a registry-vintage check above.
+# v6 was the evidence map's case until 2026-10-21.
 # Keep an explicit v6 entry as well so the earlier-case ledger remains complete when the map moves.
 for _rid in ("case.main", "case.per_member", "case.cash_set"):
     _field, _expr = {
@@ -257,6 +253,7 @@ def earlier_values():
 # the item, by record prefix: a number is read as the record's only in a sentence naming it
 ITEM = {
     "case": r"\bcase\b|main estimate|headline|the account",
+    "capital_return": r"capital",
     "tally": r"tally|taxes paid minus benefits|survey values",
     "fill_in": r"fill-?in|imput|allocat",
     "remittance": r"remittance",
@@ -748,13 +745,13 @@ CONTROLS = [
     ("a lane-count total quoted as current", "Adding the social costs gives the pairing, $416.2–490.7bn.",
      {("pairing.total", "count_unlabelled")}),
     ("a lane range written as the current central's range",
-     "Road crashes cost other residents $11.4bn (−$57.7bn to +$74.3bn in the lane).",
+     "Road crashes cost other residents $12.6bn (−$57.7bn to +$74.3bn in the lane).",
      {("crash.span_priced", "count_as_current")}),
     ("the same across a line break",
-     "Road crashes cost other residents $11.4bn\n(−$57.7bn to +$74.3bn in the lane).",
+     "Road crashes cost other residents $12.6bn\n(−$57.7bn to +$74.3bn in the lane).",
      {("crash.span_priced", "count_as_current")}),
     ("the lane range in a clause of its own",
-     "Road crashes cost other residents $11.4bn; the lane's own range is −$57.7bn to +$74.3bn on the CPS's 40.90M.",
+     "Road crashes cost other residents $12.6bn; the lane's own range is −$57.7bn to +$74.3bn on the CPS's 40.90M.",
      {("crash.span_priced", "count_labelled")}),
     ("a dated case after \"now\"", "The main case now costs $258–292bn, the September 26 schools case.",
      {("case.main", "vintage_as_current")}),

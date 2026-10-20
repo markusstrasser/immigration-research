@@ -42,25 +42,31 @@ def test_a_table_with_no_marked_sums_fails():
 
 
 def test_the_built_tables_add_and_rounding_each_line_alone_breaks_them():
-    s, _bands, stairs = B.load_numbers()
+    s, _bands, stairs, _arms = B.load_numbers()
     rows = B.waterfall_rows(s, stairs)
     tables = lambda: [B.ledger_html(rows)[0], B.alternatives_html(rows)[0]]  # noqa: E731
     assert [B.displayed_sum_errors(t) for t in tables()] == [[], []]
     try:
         B.ROUND_EACH = True
-        assert all(B.displayed_sum_errors(t) for t in tables())
+        # on v9 the alternatives' whole-billion steps add even when each is rounded alone, so only the ledger can
+        # serve as the positive control (the synthetic running sum above covers the alternatives' check)
+        ledger, _alternatives = tables()
+        assert B.displayed_sum_errors(ledger)
     finally:
         B.ROUND_EACH = False
 
 
-def test_the_prose_sum_adds_as_printed_and_breaks_without_the_footing():
+def test_the_prose_sums_add_as_printed_and_break_when_a_part_moves():
     recs = B.Q.load_registry()
     assert B.prose_sum_errors(recs) == []
     moved = {k: dict(v) for k, v in recs.items()}
-    moved["pairing.footing_reduction"]["expr"] = "(0.0, 0.0)"
+    moved["social.items"]["expr"] = "(l - 10, h)"
     assert B.prose_sum_errors(moved) == [
-        "the main estimate, less the low end's offending at the Hispanic average, plus the costs outside the budget, "
-        "low end: the parts print as 494, pairing.total as 489"]
+        "the main estimate plus the costs outside the budget, low end: the parts print as 470, pairing.total as 480"]
+    moved = {k: dict(v) for k, v in recs.items()}
+    moved["cash.unplaced"]["expr"] = "(u1 + p1 + 2, u2 + p2)"
+    assert B.prose_sum_errors(moved) == [
+        "the time map's plain entries, low end: the parts print as 370, case.main as 368"]
 
 
 def test_a_claim_in_words_holds_on_the_page_and_fails_when_its_record_moves():
@@ -69,11 +75,12 @@ def test_a_claim_in_words_holds_on_the_page_and_fails_when_its_record_moves():
     sites = B.text_sites((B.HERE / "template.html").read_text(), G.GROUPS)
     assert B.prose_claim_errors(sites, recs) == []
     moved = {k: dict(v) for k, v in recs.items()}
-    moved["world.reading2_breakeven_us"]["expr"] = "0.98"
+    moved["world.other_us_residents"]["expr"] = "(max(l1, l2, l3), 1.0)"
     assert B.prose_claim_errors(sites, moved) == [
-        "'behind even at equal weight' needs the US-only break-even weight above 1; world.reading2_breakeven_us is 0.98"]
+        "'Other US residents lose at any weight' needs other US residents' line below zero at both ends in every "
+        "reading; world.other_us_residents is (-306.536379285804, 1.0)"]
     assert B.prose_claim_errors({}, recs) == [
-        "'behind even at equal weight' stands on no text site: drop its claim or restore the sentence"]
+        "'Other US residents lose at any weight' stands on no text site: drop its claim or restore the sentence"]
 
 
 def test_the_capital_return_total_must_say_the_enterprises_are_in():

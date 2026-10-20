@@ -2,16 +2,19 @@
 
     uv run --no-project python3 infra/immigration-fiscal/overview_2026_09_28/build.py
 
-Reads the confidence ladder, main case v6 (`main_case_2026_10_07/derived/`: `summary.json`,
-`main_case_bands.csv`, `lineage_addition.json`), the figures page's staircase (the steps up to the
-September 24 case, read at its commit in `PINS`) and, through `quantity_registry.csv`, the lanes the
-tables quote. The ledger runs the staircase, the September 26 and 27 changes and v4's items from
-`summary.json`'s `change_at_fixed_specifications`; it splits v4's state-price item with the September 29 lane's
-state-price lines. The added descendants come from `lineage_addition.json`, by count part, on v5 and
-then with v6's items; v6's items on the identified members come from `summary.json`'s item parts,
-with retiree health as the rest of the union-only case's change. Refuses to write if a ladder entry
-is unassigned or assigned twice, or if the ledger misses a case's subtotal (September 23, 24, 26,
-27, 29, October 5, and the main estimate). Writes `derived/overview.html`.
+Reads the confidence ladder, main case v9 (`main_case_2026_10_16/derived/`: `summary.json`,
+`main_case_bands.csv`), v6's split of its lineage (`main_case_2026_10_07/derived/lineage_addition.json`), the
+break-conditions lane's v9 arms (`c1_arms_oct16.csv`, the assumption table), the figures page's staircase (the
+steps up to the September 24 case, read at its commit in `PINS`) and, through `quantity_registry.csv`, the lanes
+the tables quote. The ledger runs the staircase, the September 26 and 27 changes, v4's items and v6's items from
+`summary.json`'s `change_at_fixed_specifications` (v7's items, with v6's nested under `oct07_case`); it splits
+v4's state-price item with the September 29 lane's state-price lines. The added descendants come from v6's
+`lineage_addition.json`, by count part, on v5 and then with v6's items; v6's items on the identified members come
+from the item parts, with retiree health as the rest of the union-only case's change. v7's items follow, then
+v8's and v9's (`summary.json` `v8`/`v9` `change_by_item`, with their interactions); v9's single capital rate is
+split into its enterprise part and the rest. Refuses to write if a ladder entry is unassigned or assigned twice,
+or if the ledger misses a case's subtotal (September 23, 24, 26, 27, 29, October 5, 7, 14, 15, and the main
+estimate). Writes `derived/overview.html`.
 
 The ledger sections sit in `template.html` between `<!-- BUILD_BLOCK:START -->` and
 `<!-- BUILD_BLOCK:END -->`. When groups.py has a "build" part, the build moves them to just after
@@ -47,7 +50,11 @@ import quantities as Q  # noqa: E402
 evidence = None  # imported in main(), after --groups has picked the groups module it reads
 
 LADDER = ROOT / "research/immigration-confidence-ladder.md"
-MAIN = ROOT / "infra/immigration-fiscal/main_case_2026_10_07/derived"
+MAIN = ROOT / "infra/immigration-fiscal/main_case_2026_10_16/derived"
+# v6's own split of its lineage, which the ledger's descendant lines run through
+MAIN6 = ROOT / "infra/immigration-fiscal/main_case_2026_10_07/derived"
+# each premise swapped alone on v9 (break_conditions_2026_09_29 C1)
+ARMS = ROOT / "infra/immigration-fiscal/break_conditions_2026_09_29/derived/c1_arms_oct16.csv"
 STAIRS = ROOT / "infra/immigration-fiscal/figures_2026_09_22/src/generated/figures.json"
 # Files read at a commit, not from the working tree, as account.cjs's PINS does: the figures page moves to newer cases,
 # and the ledger takes from it only the steps up to the September 24 case.
@@ -66,17 +73,18 @@ def q(rid):
 
 
 def load_headcount():
-    """The lineage the account prices, its identified members (row 4 of the data audit) and the added
-    descendants, and the CPS's raw union count. Per-member figures divide engine totals by the lineage."""
-    lineage, identified, added, raw = (q(k) * 1e6 for k in ("headcount.lineage", "headcount.identified",
-                                                            "headcount.added", "headcount.raw"))
+    """The lineage the account prices, its reporting members as counted (row 4 of the data audit, completed and
+    calibrated), the descendants who no longer report Mexican origin, the members the Census missed, and the CPS's
+    raw union count. Per-member figures divide engine totals by the lineage."""
+    lineage, identified, added, coverage, raw = (q(k) * 1e6 for k in (
+        "headcount.lineage", "headcount.identified", "headcount.added", "headcount.coverage", "headcount.raw"))
     if q("headcount.priced") * 1e6 != lineage:
         fail(f"the priced count {q('headcount.priced') * 1e6:,.0f} is not the lineage {lineage:,.0f}")
-    if not (42e6 < lineage < 44e6 and 39e6 < identified < 41e6 and identified <= raw
-            and abs(identified + added - lineage) < 1):
-        fail(f"headcount out of range: lineage {lineage:,.0f}, identified {identified:,.0f} + added {added:,.0f}, "
-             f"raw {raw:,.0f}")
-    return lineage, identified, added, raw
+    if not (44e6 < lineage < 46e6 and 39e6 < identified < 41e6 and identified <= raw
+            and abs(identified + added + coverage - lineage) < 1):
+        fail(f"headcount out of range: lineage {lineage:,.0f}, identified {identified:,.0f} + added {added:,.0f} "
+             f"+ coverage {coverage:,.0f}, raw {raw:,.0f}")
+    return lineage, identified, added, coverage, raw
 
 
 
@@ -169,12 +177,17 @@ def load_numbers():
     last = next(r for r in stairs if r["id"] == "benefits")
     if any(abs(a - b) > 1e-3 for a, b in zip(last["total"], sept24)):
         fail(f"staircase ends at {last['total']}, summary.json September 24 case is {sept24}")
-    for variant, key in [("adopted", "main_case"), ("oct05_case", "adopted_2026_10_05"),
-                         ("sept29_case", "adopted_2026_09_29"), ("sept27_case", "adopted_2026_09_27"),
-                         ("schools_case", "schools_case")]:
-        if any(abs(a - b) > 1e-3 for a, b in zip(bands[variant], s[key])):
-            fail(f"main_case_bands.csv {variant} {bands[variant]} and summary.json {key} {s[key]} disagree")
-    return s, bands, stairs
+    for variant, want in [("adopted", s["main_case"]), ("oct15_case", s["v8"]["band_bn"]),
+                          ("oct14_case", s["v7"]["band_bn"]), ("oct07_case", s["adopted_2026_10_07"]),
+                          ("oct05_case", s["adopted_2026_10_05"]), ("sept29_case", s["adopted_2026_09_29"]),
+                          ("sept27_case", s["adopted_2026_09_27"]), ("schools_case", s["schools_case"])]:
+        if any(abs(a - b) > 1e-3 for a, b in zip(bands[variant], want)):
+            fail(f"main_case_bands.csv {variant} {bands[variant]} and summary.json {want} disagree")
+    arms = {r["arm"]: (float(r["cost_low_bn"]), float(r["cost_high_bn"])) for r in csv.DictReader(ARMS.open())}
+    # the arms file prints four decimals
+    if any(abs(a - b) > 5e-5 for a, b in zip(arms["adopted"], s["main_case"])):
+        fail(f"c1_arms_oct16.csv's adopted arm {arms['adopted']} is not the main case {s['main_case']}")
+    return s, bands, stairs, arms
 
 
 # Reader-facing labels for the figures page's staircase rows: concepts, not the history of the analysis.
@@ -186,8 +199,33 @@ RELABEL = {
 }
 
 
+def one_rate_split(s):
+    """v9's single Trustees rate for public capital (item 20), split into its enterprise part (the capital lines
+    `ent_*`) and the rest, each the mean over the case's two methods as the item's total is."""
+    ent, rest = [], []
+    for end in ("low", "high"):
+        by_end = s["v9"]["one_rate"]["by_end"][end]
+        methods = list(by_end["by_method"].values())
+        e = sum(sum(p["delta_bn"] for p in m["parts"] if p["line"].startswith("ent_")) for m in methods) / len(methods)
+        t = sum(m["total_bn"] for m in methods) / len(methods)
+        if abs(t - by_end["total_bn"]) > 1e-9:
+            fail(f"the capital-rate item's methods average {t}, its {end} total is {by_end['total_bn']}")
+        ent.append(e)
+        rest.append(t - e)
+    return rest, ent
+
+
+# The newest items, in the order summary.json lists them: v7's at its end specifications, v8's and v9's alone on
+# the case before them. Their interactions follow each case's items.
+V7_ITEMS = ("child_credits", "job_capital_taxes", "white_end_tax_keys", "row4_frame")
+V8_ITEMS = ("foreign_source_tax", "union_completion", "mixed_unit_removal", "coverage")
+V9_ITEMS = ("veterans_compensation", "income_security_administration", "public_college_response",
+            "native_minor_calibration", "coverage_tenure", "consumption_tax_bases", "one_rate", "health_residual_key")
+
+
 def waterfall_rows(s, stairs):
-    c = s["change_at_fixed_specifications"]
+    c7 = s["change_at_fixed_specifications"]  # v7's items, with v6's nested under oct07_case
+    c = c7["oct07_case"]
     # The staircase's `step` pairs are sorted by size, not by end, so steps come from the running totals.
     rows, prev = [], [0.0, 0.0]
     for r in stairs:
@@ -218,13 +256,14 @@ def waterfall_rows(s, stairs):
     far = lambda a, b, tol: any(abs(x - y) > tol for x, y in zip(a, b))  # noqa: E731
     # The added descendants by count part, on v5 and with v6's items (lineage_addition.json, the case lane's split of
     # v6 into the union-only case and the lineage's addition). Its v5 parts are v5's lineage block.
-    la = json.loads((MAIN / "lineage_addition.json").read_text())["set"]
+    la = json.loads((MAIN6 / "lineage_addition.json").read_text())["set"]
     parts, resp, resp5 = la["parts"], la["union_response_bn"], la["union_response_on_v5_bn"]
+    v6 = s["adopted_2026_10_07"]
     if far(add(parts["g3_rate"]["on_v5_cost_bn"], parts["later"]["on_v5_cost_bn"], resp5), c05["total"], 1e-9) \
-            or far(resp5, c05["union_response_move"], 1e-9) or far(la["case_bn"], s["main_case"], 1e-9) \
+            or far(resp5, c05["union_response_move"], 1e-9) or far(la["case_bn"], v6, 1e-9) \
             or far(la["union_only"]["on_v5_cost_bn"], s["adopted_2026_09_29"], 1e-6) \
-            or far(add(la["union_only"]["cost_bn"], la["lineage_addition_bn"]), s["main_case"], 1e-9):
-        fail("lineage_addition.json does not split v5's lineage block and v6 as summary.json has them")
+            or far(add(la["union_only"]["cost_bn"], la["lineage_addition_bn"]), v6, 1e-9):
+        fail("v6's lineage_addition.json does not split v5's lineage block and v6 as summary.json has them")
     # v6's items on the identified members: the pension item's union parts, every part of the fee item, and retiree
     # health as the rest of the union-only case's change. summary.json splits retiree health at the case's responses,
     # the union-only case at the union's own; the two differ by under $0.001bn.
@@ -250,6 +289,27 @@ def waterfall_rows(s, stairs):
     state_tax = [a - b for a, b in zip(c29["item_state"], add(*services))]
     if any(abs(a + b) > 1e-9 for a, b in zip(state_tax, q("state_prices.taxes"))):
         fail(f"the state item less its service lines is {state_tax}, not the registry's state_prices.taxes")
+    # v7's items at its end specifications: the personal allocation moves v6's low end from specification 48 to 16
+    # (its band change), the others are at 16 / 11. Its interactions are below 1e-12; they go with the allocation.
+    v7, int7 = c7["items"], add(*c7["interactions"].values())
+    if set(v7) != {"personal_allocation", *V7_ITEMS}:
+        fail(f"v7's items are {sorted(v7)}")
+    if far(add(v7["personal_allocation"]["band_bn"], int7, *(v7[k]["at_end_specifications_bn"] for k in V7_ITEMS)),
+           c7["total"], 1e-9) or far(add(v6, c7["total"]), s["v7"]["band_bn"], 1e-9):
+        fail("v7's items do not add to its change from v6")
+    # v8's and v9's items alone on the case before them, with their interactions (v8's is the one pair of
+    # foreign-source tax and union completion; it goes with the foreign-source line)
+    it8, int8 = s["v8"]["change_by_item"], s["v8"]["interactions"]["total"]["set"]
+    it9, int9 = s["v9"]["change_by_item"], s["v9"]["interactions"]["total"]["set"]
+    for name, its, names, inter, before, after in [("v8", it8, V8_ITEMS, int8, s["v7"]["band_bn"], s["v8"]["band_bn"]),
+                                                   ("v9", it9, V9_ITEMS, int9, s["v8"]["band_bn"], s["main_case"])]:
+        if set(its) != set(names):
+            fail(f"{name}'s items are {sorted(its)}, the ledger labels {sorted(names)}")
+        if far(add(before, inter, *(its[k]["set"] for k in names)), after, 1e-9):
+            fail(f"{name}'s items and interactions do not add to its change")
+    capital_rest, capital_ent = one_rate_split(s)
+    if far(add(capital_rest, capital_ent), it9["one_rate"]["set"], 1e-9):
+        fail("the capital-rate item's two parts do not add to its total")
     rows += [
         dict(label="Consumption taxes on spending", note="net of saving and remittances", step=key26),
         dict(label="Schools, finite removal", note="", step=sch26),
@@ -287,6 +347,29 @@ def waterfall_rows(s, stairs):
              step=parts["g3_rate"]["items_change_bn"]),
         dict(label="Added descendants lost a generation later, v6's items", step=parts["later"]["items_change_bn"]),
         dict(label="Service responses at the larger group size, v6's items", step=sub(resp, resp5)),
+        dict(label="October 7 case", total=True),
+        dict(label="Partners' own taxes stay with them", step=add(v7["personal_allocation"]["band_bn"], int7)),
+        dict(label="Child credits across mixed tax units", step=v7["child_credits"]["at_end_specifications_bn"]),
+        dict(label="Taxes on job capital", step=v7["job_capital_taxes"]["at_end_specifications_bn"]),
+        dict(label="Added people priced as whites on the case's tax keys",
+             step=v7["white_end_tax_keys"]["at_end_specifications_bn"]),
+        dict(label="Frame corrections on audit row 4", step=v7["row4_frame"]["at_end_specifications_bn"]),
+        dict(label="October 14 case", total=True),
+        dict(label="Foreign-source corporate tax removed", step=add(it8["foreign_source_tax"]["set"], int8)),
+        dict(label="Union completion", step=it8["union_completion"]["set"]),
+        dict(label="Mixed-unit removal", step=it8["mixed_unit_removal"]["set"]),
+        dict(label="Census coverage", step=it8["coverage"]["set"]),
+        dict(label="October 15 case", total=True),
+        dict(label="Veterans' benefits for service", step=it9["veterans_compensation"]["set"]),
+        dict(label="Retirement administration by caseload", step=it9["income_security_administration"]["set"]),
+        dict(label="Public colleges by budget block", step=it9["public_college_response"]["set"]),
+        dict(label="Native minors matched to ACS", step=it9["native_minor_calibration"]["set"]),
+        dict(label="Missed people's housing tenure", step=it9["coverage_tenure"]["set"]),
+        dict(label="Food at home and SNAP untaxed", step=it9["consumption_tax_bases"]["set"]),
+        dict(label="One Trustees rate: public capital", step=capital_rest),
+        dict(label="One Trustees rate: enterprise capital", step=capital_ent),
+        dict(label="Health spending outside VA keyed by payers", step=it9["health_residual_key"]["set"]),
+        dict(label="Joint effects of v9's items", step=int9),
         dict(label="Main estimate", total=True, main=True),
     ]
     tot = [0.0, 0.0]
@@ -303,7 +386,9 @@ def waterfall_rows(s, stairs):
     for label, want in [("September 23 case", s["adopted_2026_09_23"]), ("September 24 case", s["adopted_2026_09_24"]),
                         ("September 26 schools case", s["schools_case"]),
                         ("September 27 case", s["adopted_2026_09_27"]), ("September 29 case", s["adopted_2026_09_29"]),
-                        ("September 29 case", q("case.sept29")), ("October 5 case", s["adopted_2026_10_05"])]:
+                        ("September 29 case", q("case.sept29")), ("October 5 case", s["adopted_2026_10_05"]),
+                        ("October 7 case", v6), ("October 14 case", s["v7"]["band_bn"]),
+                        ("October 15 case", s["v8"]["band_bn"])]:
         v = next(r for r in rows if r["label"] == label)["value"]
         if any(abs(a - b) > 1e-3 for a, b in zip(v, want)):
             fail(f"{label} subtotal {v} != {want}")
@@ -319,13 +404,11 @@ def waterfall_rows(s, stairs):
             fail(f"{what} add to {got}, summary.json's total is {total}")
     rows = [r for r in rows if not r.get("total") or r.get("main")]
     # Other ways to count, each from the main estimate: pensions counted when paid, budgets at their first-year
-    # responses, the descendants counted by ancestry share. Beside them the social pairing, whose low end prices
-    # offending at the Hispanic average, so its fiscal case moves first and the social step is the social items alone.
-    main, fisc = list(tot), q("pairing.fiscal_footing")
-    if abs(fisc[1] - s["main_case"][1]) > 1e-6:  # the totals file keeps six decimals
-        fail(f"the pairing's high-end fiscal case {fisc[1]} is not the main case's {s['main_case'][1]}")
-    if any(abs(p - f - x) > 1e-9 for p, f, x in zip(q("pairing.total"), fisc, q("social.items"))):
-        fail("the pairing less its fiscal case is not social.items")
+    # responses, the descendants counted by ancestry share. Beside them the social pairing, whose fiscal row is the
+    # main estimate at both ends, so the social step is the social items alone.
+    main = list(tot)
+    if any(abs(p - m - x) > 1e-6 for p, m, x in zip(q("pairing.total"), s["main_case"], q("social.items"))):
+        fail("the pairing less the main estimate is not social.items")
     if any(abs(a - b) > 1e-6 for a, b in zip(q("case.cash_set"), s["cash_set"]["band_bn"])):
         fail("the registry's cash set is not summary.json's")
     rows += [
@@ -333,8 +416,7 @@ def waterfall_rows(s, stairs):
         dict(label="Budgets respond within the first year", alt=True, block=1, prev=main, value=q("case.first_year")),
         dict(label="Descendants counted by share of Mexican ancestry", alt=True, block=2, prev=main,
              value=q("case.ancestry_share")),
-        dict(label="Offending at the Hispanic average, low end", beside=True, block=3, prev=main, value=fisc),
-        dict(label="Costs outside public budgets", beside=True, block=3, prev=fisc, value=q("pairing.total")),
+        dict(label="Costs outside public budgets", beside=True, block=3, prev=main, value=q("pairing.total")),
     ]
     return rows
 
@@ -396,8 +478,18 @@ LEDGER = [
         ("Pension accrual on the 2026 Trustees, each fund apart", "Pension promises earned", None),
         ("Gain from their work", "Taxes on the gain from their work", "wages and profits of others"),
         ("Production gain rekeyed", "Taxes on the gain from their work", None),
+        ("Taxes on job capital", "Taxes on the business capital their jobs use",
+         "corporate and production taxes on domestic income"),
+        ("Foreign-source corporate tax removed", "Taxes on the business capital their jobs use", None),
+        ("Partners' own taxes stay with them", "Non-member partners' taxes stay with them",
+         "each person's taxes count for that person"),
+        ("Child credits across mixed tax units", "Non-members who stay in mixed households",
+         "their taxes, credits and benefits recomputed by programme rules"),
+        ("Mixed-unit removal", "Non-members who stay in mixed households", None),
         ("Property taxes, long run", "Property taxes", "they follow people in the long run"),
-        ("Consumption taxes on spending", "Sales and excise taxes", "net of saving and remittances"),
+        ("Consumption taxes on spending", "Sales and excise taxes",
+         "net of saving and remittances, food at home untaxed"),
+        ("Food at home and SNAP untaxed", "Sales and excise taxes", None),
         ("State prices: sales and vehicle taxes", "Sales and vehicle taxes at local rates",
          "the states where the group lives"),
     ]),
@@ -407,9 +499,10 @@ LEDGER = [
         ("Schools, finite removal", "Schools, full cost per pupil", None),
         ("Schools, long run: full cost per pupil", "Schools, full cost per pupil", None),
         ("Colleges and other education", "Colleges and other education",
-         "public colleges by measured use, tuition by who pays it"),
+         "public colleges by measured use and budget block, tuition by who pays it"),
         ("Public colleges keyed by use", "Colleges and other education", None),
         ("College tuition by who pays it", "Colleges and other education", None),
+        ("Public colleges by budget block", "Colleges and other education", None),
     ]),
     ("Other public services", [
         ("Police, courts and prisons", "Police, courts and prisons", "charged by use, at state prices"),
@@ -417,10 +510,15 @@ LEDGER = [
         ("General administration", "General administration", "{{q:gg.growth_elasticity|range}}% per 1% more residents"),
         ("General administration, finite removal", "General administration", None),
         ("Welfare administration, housing, community", "Welfare administration, housing, community", ""),
+        ("Retirement administration by caseload", "Welfare administration, housing, community", None),
         ("Public health services", "Public health", "at state prices, hospitals by use, fees by who pays them"),
         ("State prices: health services", "Public health", None),
         ("Public hospitals keyed by use", "Public health", None),
         ("Hospital charges by who pays them", "Public health", None),
+        ("Health spending outside VA keyed by payers", "Other government health spending",
+         "keyed by what payers other than VA spend on the group"),
+        ("Veterans' benefits for service", "Veterans' service benefits",
+         "others serve in the group's place and earn them"),
         ("Roads, parks: long-run response", "Roads and parks",
          "0.73% and 0.95% per 1% more residents, roads by miles driven"),
         ("Roads by miles driven", "Roads and parks", None),
@@ -430,27 +528,42 @@ LEDGER = [
         ("Retiree health on accrual", "Retiree health of public workers", "counted when earned, like public pensions"),
     ]),
     ("Public capital and enterprises", [
-        ("Return on public capital", "Return on public capital", "2% real at the low end, 3% at the high end"),
+        ("Return on public capital", "Return on public capital",
+         "{{q:capital.rate|value}} real, the Trustees' rate for the pension promises"),
         ("K-12 capital at its own key", "Return on public capital", None),
         ("College capital keyed by use", "Return on public capital", None),
         ("Health capital, state and local", "Return on public capital", None),
         ("Health capital, federal", "Return on public capital", None),
+        ("One Trustees rate: public capital", "Return on public capital", None),
         ("Government enterprises", "Government enterprises", "operating loss and capital return"),
         ("Enterprise and housing receipts", "Government enterprises", None),
         ("Enterprise housing capital", "Government enterprises", None),
+        ("One Trustees rate: enterprise capital", "Government enterprises", None),
     ]),
-    ("Descendants who no longer report Mexican origin", [
+    ("People the survey misses or misreports", [
+        ("Census coverage", "Members the Census missed",
+         "{{q:headcount.coverage|value}} people, at their measured ages and housing"),
+        ("Missed people's housing tenure", "Members the Census missed", None),
+        ("Union completion", "Reporters with one US-born parent, and their children",
+         "{{q:headcount.completion|value}} people the reporting rule left out"),
+        ("Native minors matched to ACS", "US-born children matched to ACS counts",
+         "fewer native minors, Hispanic totals kept"),
+        ("Frame corrections on audit row 4", "Survey weights matched to the account's count", ""),
         ("Added descendants lost at the third generation's rate", "Lost at the third generation's rate",
          "{{q:lineage.lost_at_g3_rate|value}} people with their descendants, priced partly like white residents of "
          "the same ages"),
         ("Added descendants lost at the third generation's rate, v6's items", "Lost at the third generation's rate",
          None),
+        ("Added people priced as whites on the case's tax keys", "Lost at the third generation's rate", None),
         ("Added descendants lost a generation later", "Lost a generation later",
          "{{q:lineage.lost_later|value}} people, priced like third-generation members of the same ages"),
         ("Added descendants lost a generation later, v6's items", "Lost a generation later", None),
         ("Service responses at the larger group size", "Service responses at the larger group size",
          "for the members who report Mexican origin"),
         ("Service responses at the larger group size, v6's items", "Service responses at the larger group size", None),
+    ]),
+    ("Interactions", [
+        ("Joint effects of v9's items", "Corrections made together", "beyond the sum of their separate effects"),
     ]),
 ]
 
@@ -669,8 +782,10 @@ def displayed_sum_errors(table):
 # Sums the prose states in words: (what, [(record, sign)], total record). At each end, the parts as printed must
 # add to the total as printed. The bindings keep every sentence that states the sum quoting its records.
 PROSE_SUMS = [
-    ("the main estimate, less the low end's offending at the Hispanic average, plus the costs outside the budget",
-     [("case.main", 1), ("pairing.footing_reduction", -1), ("social.items", 1)], "pairing.total"),
+    ("the main estimate plus the costs outside the budget", [("case.main", 1), ("social.items", 1)], "pairing.total"),
+    ("the time map's plain entries", [("cash_gap.all_governments", 1), ("capital_return.total", 1),
+                                      ("cash.unplaced", 1), ("capped_aid.displaced", 1), ("cash.pension_accrual", 1)],
+     "case.main"),
 ]
 
 
@@ -694,8 +809,8 @@ def prose_sum_errors(recs=None):
 # Claims the prose makes in words, with no number of their own: (phrase, record, test, what the test needs). The phrase
 # must stand in some text site, and the record's unrounded value must pass the test.
 PROSE_CLAIMS = [
-    ("behind even at equal weight", "world.reading2_breakeven_us", lambda v: v > 1,
-     "the US-only break-even weight above 1"),
+    ("Other US residents lose at any weight", "world.other_us_residents", lambda v: max(v) < 0,
+     "other US residents' line below zero at both ends in every reading"),
 ]
 
 
@@ -712,54 +827,64 @@ def prose_claim_errors(sites, recs=None):
     return errs
 
 
-def assumption_rows(s, bands):
+RESP, COUNT, DATA, ECON = ("How budgets respond to more people", "What the account counts",
+                           "Data corrections and noise", "How the economy responds")
+
+
+def assumption_rows(s, arms):
     """(category, label, change at low end, change at high end, kind, link target). Link target: a finding's
     ladder ref, or "§<group id>" when no single finding covers the assumption."""
-    m = bands["adopted"]
+    m = arms["adopted"]
 
-    def d(key):
-        return [bands[key][0] - m[0], bands[key][1] - m[1]]
-
-    def vs_main(rid):
-        v = q(rid)
-        return [v[0] - m[0], v[1] - m[1]]
+    def d(arm):
+        return [arms[arm][0] - m[0], arms[arm][1] - m[1]]
 
     def approx(rid):
         """A row whose record the page would mark approximate says so."""
         return "approximate" if Q.is_approximate(Q.load_registry()[rid]) else ""
 
-    resp, count, data, econ = ("How budgets respond to more people", "What the account counts",
-                               "Data corrections and noise", "How the economy responds")
-    return [
-        (resp, "Services other than schools held fixed", *d("long_run_non_school_fixed:adopted"), "", "§services"),
-        (resp, "Roads and parks respond only after years, as CBO assumes",
-         *d("cbo_category_lag_non_school_full:with_rental_assistance_capital_and_enterprises"), "", "237"),
-        (resp, "Every budget at its first-year response", *vs_main("case.first_year"), "", "270"),
-        (resp, "General administration held fixed", *q("gg.fixed_change"), "", "211"),
-        (resp, "Schools respond at the within-district 0.836", *d("school_within_district"), "", "230"),
-        (resp, "Every service grows fully with population", *d("proportional_reference:adopted"), "", "§services"),
-        (resp, "Rental assistance held fixed", *d("rental_assistance_at_0"), "", "§services"),
-        (count, "Public capital earns 7%, not 2–3%", *d("capital_return_at_7pct"), "", "238"),
-        (count, "No return on public capital", *d("without_capital_return"), "", "238"),
-        (count, "Government enterprises left out", *d("enterprises_out_option_a"), "", "§conventions"),
-        (count, "Pensions counted when paid", *d("cash_set"), "", "257"),
-        # an additive arm: the accrual at scheduled benefits less the case's, outside the engine
-        (count, "Pensions at the benefits scheduled, not those payable", *q("pension.scheduled_change"),
-         "approximate", "257"),
-        (count, "Pensions on one combined trust fund, as if the law changed",
-         *d("pension_tr2026_combined_funds"), "", "286"),
-        (count, "Retiree health promises equal what governments pay in a year", *d("retiree_health_rho_one"), "",
-         "288"),
-        (count, "Fewer descendants stopped reporting Mexican origin", *vs_main("case.arm_a"), "", "295"),
-        (count, "More descendants stopped reporting Mexican origin", *vs_main("case.arm_c"), "", "295"),
-        (count, "Added descendants' ages if childhood reports of origin persisted",
-         *d("added_age_mix_cohort_at_birth"), "", "292"),
-        (data, "Sampling noise, 95% interval", q("noise.sampling_95"), q("noise.sampling_95"), "noise", "184"),
-        (data, "Share of the college gap that non-identifiers close, one standard error",
-         *q("lineage.c3_se_change"), "pm", "295"),
-        (data, "Survey answers left uncorrected", *q("corrections.uncorrected_change"), "", "§data"),
-        (data, "Census income fill-ins left in", *d("no_fill_in_correction"), "", "208"),
-        (econ, "Natives and immigrants are poor substitutes (ε = 3)", *q("production.eps3_change"),
+    # The table's swaps on v9, each one premise changed alone (c1_arms_oct16.csv): (category, label, arm, kind, link
+    # target). An additive arm sits outside the engine, so its row says "approximate". The list stays in this function
+    # so the number drift audit reads its labels; the registry's assumptions.move_range_above_noise reads the same
+    # arms.
+    swaps = [
+        (RESP, "Roads and parks respond only after years, as budget scoring assumes", "roads_parks_first_year", "",
+         "237"),
+        (RESP, "Every budget at its first-year response", "first_year_horizon", "", "270"),
+        (RESP, "Schools respond at the within-district 0.836", "school_within_district", "", "230"),
+        (RESP, "Rental assistance held fixed", "rental_zero", "", "§services"),
+        (RESP, "Property taxes do not follow people", "property_none", "", "253"),
+        (COUNT, "Public capital earns a private 7% return", "capital_7pct", "", "238"),
+        (COUNT, "No return on public capital", "capital_off", "", "238"),
+        (COUNT, "Government enterprises left out", "enterprises_out", "", "§conventions"),
+        (COUNT, "Pensions counted when paid", "pension_cash", "", "257"),
+        (COUNT, "Pensions at the benefits scheduled, not those payable", "pension_scheduled", "approximate", "257"),
+        (COUNT, "Pensions on one combined trust fund, as if the law changed", "pension_tr2026_combined_funds", "",
+         "286"),
+        (COUNT, "Retiree health promises equal what governments pay in a year", "retiree_health_rho_one", "", "288"),
+        (COUNT, "Military service costs grow with the group", "veterans_compensation_unchanged", "", "312"),
+        (COUNT, "Defense charged by share of GDP", "defense_gdp_share", "approximate", "253"),
+        (COUNT, "Corporate tax on job capital falls only by its normal-return share",
+         "job_capital_taxes_normal_return_share", "", "300"),
+        (COUNT, "Only the labour share of corporate tax leaves with the jobs, other capital taxes stay",
+         "job_capital_taxes_floor", "", "300"),
+        (COUNT, "Non-members who stay in mixed households not recomputed", "mixed_unit_removal_off", "", "§why"),
+        (COUNT, "Fewer descendants stopped reporting Mexican origin", "lineage_arm_a", "", "311"),
+        (COUNT, "More descendants stopped reporting Mexican origin", "lineage_arm_c", "", "311"),
+        (COUNT, "Added descendants' ages if childhood reports of origin persisted", "added_age_mix_cohort_at_birth", "",
+         "292"),
+        (COUNT, "The Census misses fewer people (demographic analysis, low)", "coverage_da_low", "", "306"),
+        (COUNT, "The Census misses more people (demographic analysis, high)", "coverage_da_high", "", "306"),
+        (DATA, "Other government health spending on the old VA-heavy key", "health_residual_key_old_key", "", "314"),
+    ]
+
+    return [(cat, label, *d(arm), kind, ref) for cat, label, arm, kind, ref in swaps] + [
+        (DATA, "Sampling and survey-donor noise, 95% interval", q("noise.sampling_95"), q("noise.sampling_95"),
+         "noise", "184"),
+        (DATA, "Share of the college gap that non-identifiers close, one standard error",
+         *q("lineage.c3_se_change"), "pm", "280"),
+        (DATA, "Survey answers left uncorrected", *q("corrections.uncorrected_change"), "", "§data"),
+        (ECON, "Natives and immigrants are poor substitutes (ε = 3)", *q("production.eps3_change"),
          approx("production.eps3_change"), "176"),
     ]
 
@@ -905,7 +1030,7 @@ def main():
     ROUND_EACH = args.round_each
     evidence = load_evidence(args.groups.resolve())
     entries = parse_ladder()
-    s, bands, stairs = load_numbers()
+    s, bands, stairs, arms = load_numbers()
     load_headcount()
     template = args.template.read_text()
     # With a build part in groups.py the template's build fragment moves to the marker after that part's heading.
@@ -923,7 +1048,7 @@ def main():
     page, groups_html = ((rest, r["groups"].replace(evidence.BUILD_MARKER, fragment)) if has_part
                          else (template, r["groups"]))
     wrows = waterfall_rows(s, stairs)
-    arows = assumption_rows(s, bands)
+    arows = assumption_rows(s, arms)
     check_tornado_record(arows)
     # the text sites are the template's lines, wherever the fragment ends up
     n_bind = check_quantities(template, sys.modules["groups"].GROUPS, wrows, arows, args.bindings.resolve())

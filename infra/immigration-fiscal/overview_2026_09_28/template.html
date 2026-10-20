@@ -125,7 +125,7 @@ h2 { border-top: 1px solid var(--rule); padding-top: 18px; }
 <main>
 
 <h1>Evidence Map</h1>
-<p class="sub">What the Mexican-origin population costs other US residents in 2024, why, and on what evidence. {{N_FINDINGS}} findings from {{N_ENTRIES}} analyses.</p>
+<p class="sub">What the Mexican-origin population costs other US residents in 2024, why, and on what evidence. {{N_FINDINGS}} findings from {{N_ENTRIES}} analyses. The figures are from main case v9, adopted on October 20, 2026.</p>
 
 <nav class="toc" aria-label="Contents">
 <ol>
@@ -138,16 +138,16 @@ h2 { border-top: 1px solid var(--rule); padding-top: 18px; }
 
 <h2 id="summary">Summary</h2>
 <ul class="strokes">
-<li><b>Other US residents pay about {{q:case.main|mid}} a year ({{q:case.main|range}}).</b> That is about {{q:case.per_member|mid_range}} per member of a lineage of {{q:headcount.lineage|value}}: immigrants, their children and later descendants. Only 2024 is measured.</li>
-<li><b>The cost comes from lower taxes, not from heavier use.</b> Against as many average residents, lower taxes at the same ages make up {{q:decomp.taxes_share|range_unit}} of the group's extra cost. With pensions counted when earned, its taxes about equal its benefits. Schools and other public services make the cost.</li>
-<li><b>Who migrates matters most.</b> Under the same rules, Indian-origin residents benefit others by about {{q:indian.per_member|mid_range}} per member. Children's schooling follows their parents' place in the home country's schooling range.</li>
+<li><b>Other US residents pay about {{q:case.main|mid}} a year ({{q:case.main|range}}).</b> That is about {{q:case.per_member|mid_range}} per member of a lineage of {{q:headcount.lineage|value}}: immigrants, their children, later descendants and the members the Census missed. Only 2024 is measured.</li>
+<li><b>The cost comes from lower taxes, not from heavier use.</b> Against as many average residents, lower taxes at the same ages make up {{q:decomp.taxes_share|range_unit}} of the group's extra cost. With pensions counted when earned, its direct taxes slightly exceed its benefits. Schools and other public services make the cost.</li>
+<li><b>Who migrates matters most.</b> Under the same rules, Indian-origin residents benefit others by about {{q:indian.per_member_fiscal|mid_range}} per member on the public budget. Children's schooling follows their parents' place in the home country's schooling range.</li>
 <li><b>Legal status explains little.</b> Imputed unauthorized and legal Mexico-born adults have similar fiscal gaps.</li>
 <li><b>The college gap stops closing after the second generation.</b> All three generations cost others. The second generation closes 31% of the college gap, and the third keeps about 86% of what is left. Descendants who stop reporting Mexican origin are too few to explain the stall. The total counts them.</li>
-<li><b>State and local taxpayers pay most.</b> About one other resident in six comes out ahead, mostly landlords and high earners. Renters and workers with less schooling lose most.</li>
+<li><b>State and local budgets carry most of the cost.</b> Few other residents come out ahead: between {{q:winners.share_ahead_a|value}} and {{q:winners.share_ahead_c|value}}, depending on how the cost is paid for, most often landlords and high earners. Who gains is assigned by rule, not observed.</li>
 <li><b>Costs outside the budget raise the total to about {{q:pairing.total|mid_range}}.</b> These are pollution, road crashes, crime victims, traffic and fear, net of gains from a larger economy.</li>
 <li><b>Immigrants offend less than natives, and their US-born sons are held at about twice the white rate.</b> Parental income explains most of the sons' gap.</li>
-<li><b>The frame matters.</b> The group gains much by living here. With every person weighted equally, the world gains about {{q:world.reading1_total_equal|value}} in the year measured. A lower valuation gives about {{q:world.reading2_total_equal|value}}, with US health and social services at Mexican prices. It also assumes migrants would have out-earned {{q:world.reading2_selection_pct|value}} of similar urban Mexicans, and counts public goods at the cost of extending them. Other US residents lose at any weight. Counting the group as US residents, the US comes out behind when the group's welfare counts for less than {{q:world.reading1_breakeven_us|value}} of other residents'. On the lower valuation, the US comes out behind even at equal weight.</li>
-<li><b>Of the budget assumptions, the horizon moves the size most.</b> With first-year budget responses the total is about {{q:case.first_year|mid_range}}. Counting descendants by their share of Mexican ancestry gives about {{q:case.ancestry_share|mid_range}}. Sampling noise is about ±{{q:noise.sampling_95|value}}.</li>
+<li><b>The frame matters.</b> The group gains much by living here. With every person weighted equally and benefits counted when paid, the world gains about {{q:world.r1_total|mid_range}} in the year measured. A lower valuation, also at equal weights, gives about {{q:world.r2_total|mid_range}}, with services at output prices rather than household prices. It also assumes migrants would have out-earned {{q:world.r2_selection_pct|value}} of similar urban Mexicans, and counts public goods at the cost of extending them. Other US residents lose at any weight.</li>
+<li><b>Of the budget assumptions, the horizon moves the size most.</b> With first-year budget responses the total is about {{q:case.first_year|mid_range}}. Counting descendants by their share of Mexican ancestry gives {{q:case.ancestry_share|range_unit}}. Sampling and survey-donor noise is about ±{{q:noise.sampling_95|value}}.</li>
 </ul>
 <p class="prose">Section headings state the claim. A number shows a rounded value first and the range in brackets. Under each finding, two words say where the input comes from and what the analysis does with it. <a href="#reading">How to read this page</a> explains them.{{APPROX_NOTE}}</p>
 
@@ -173,9 +173,10 @@ h2 { border-top: 1px solid var(--rule); padding-top: 18px; }
 <tbody>
 <tr><td>Cash</td><td class="beside">Model of past gaps: about {{q:backcast.10y|mid}} over 2015–2024 ({{q:backcast.10y|range}})</td><td class="in">Cash gap, all governments: about {{q:cash_gap.all_governments|mid_range}}</td><td class="beside">Lifetimes of people alive now and their children (separate ledger)</td></tr>
 <tr><td>Not cash</td><td></td><td class="in">Return on public capital, government enterprises' included: about {{q:capital_return.total|mid_range}}</td><td></td></tr>
+<tr><td>Not placed</td><td></td><td class="in">Pieces the cash classification cannot place, with private production: about {{q:cash.unplaced|mid_range}}</td><td></td></tr>
 <tr><td>Capped aid</td><td></td><td class="in">Housing and energy aid with a fixed budget that would go to other eligible households: about {{q:capped_aid.displaced|mid}}</td><td></td></tr>
-<tr><td>Promises</td><td></td><td class="in">Pension rights earned in 2024, in place of the year's pension cash flows: adds about {{q:pension.accrual|mid_range}}</td><td class="beside">Paid later as benefits</td></tr>
-<tr><td>Debt</td><td class="beside">Federal part, if borrowed: about {{q:debt.stock|mid_range}}</td><td class="beside">Interest on that debt: about {{q:debt.interest|mid_range}}</td><td class="beside">Interest continues while the debt stays</td></tr>
+<tr><td>Promises</td><td></td><td class="in">Pension rights earned in 2024, in place of the year's pension cash flows: adds about {{q:cash.pension_accrual|mid}}</td><td class="beside">Paid later as benefits</td></tr>
+<tr><td>Debt</td><td class="beside">Federal part of past gaps, if borrowed: not measured on this account</td><td class="beside">Interest on that debt: not measured</td><td class="beside">Interest continues while the debt stays</td></tr>
 <tr><td>Outside budgets</td><td></td><td class="beside">Pollution, crashes, victims, traffic, fear, net of gains: about {{q:social.items|mid_range}}</td><td></td></tr>
 </tbody>
 </table>
@@ -184,15 +185,15 @@ h2 { border-top: 1px solid var(--rule); padding-top: 18px; }
 <h4>One year</h4>
 <p class="prose">The account covers 2024 only. It is the only year with a full measured account. It takes the people who live here now and asks what their presence costs others in that year. Economists call this an annual cross-section.</p>
 <h4>All governments, not the federal budget</h4>
-<p class="prose">The total covers federal, state and local budgets together. About {{q:incidence.state_local_share|range_unit}} falls on state and local budgets, mostly through schools, police and local services. The pension promises are federal. Counting pensions when paid, the state and local part is {{q:incidence.state_local_share_cash|range_unit}}.</p>
+<p class="prose">The total covers federal, state and local budgets together. Of the 2024 cash flows the account can place, state and local budgets carry {{q:cash.state_local|range_unit}}, mostly through schools, police and local services, and the federal budget {{q:cash.federal|range_unit}}. The pension promises are federal.</p>
 <h4>Deficit</h4>
 <p class="prose">States and cities must balance their budgets. Their part of the cost shows up as higher taxes or fewer services in the same year. Only the federal part can become debt. So the total is not a deficit number.</p>
 <h4>Interest</h4>
-<p class="prose">If the federal part of past gaps was borrowed, taxpayers pay about {{q:debt.interest|mid_range}} a year in interest on it. This is a legacy cost. Removing the group in 2024 does not remove the old debt. So the interest stays beside the total.</p>
+<p class="prose">If the federal part of past gaps was borrowed, taxpayers pay interest on it each year. This is a legacy cost. Removing the group in 2024 does not remove the old debt. So the interest stays beside the total. It is not measured on the current account.</p>
 <h4>Return on public capital</h4>
-<p class="prose">Schools, roads and public buildings tie up capital that could earn a return in another use. National accounts charge only wear, so they set the return to zero. The total charges 2–3% a year. Economists call this the opportunity cost of capital. It is a resource cost, not a payment. It never enters the deficit or the debt.</p>
+<p class="prose">Schools, roads and public buildings tie up capital that could earn a return in another use. National accounts charge only wear, so they set the return to zero. The total charges {{q:capital.rate|value}} a year real, the flat equivalent of the Trustees' 2026 path, which also prices the pension promises. Economists call this the opportunity cost of capital. It is a resource cost, not a payment. It never enters the deficit or the debt. The capital lines in the table under “How the total is built” measure something else. Each sums the changes made when the estimate took up a correction, priced on the case of that day. The enterprises line also carries the enterprises' operating losses and receipts, and the capital of people and items added later sits on their own lines. The whole case's capital charge, for every member, is about {{q:capital_return.total|mid_range}}, government enterprises' capital included and their operating flows left out.</p>
 <h4>Pensions: when paid or when earned</h4>
-<p class="prose">On a cash basis, a worker's payroll tax counts as income in the year it is paid. But the tax also buys a claim on future benefits. The members who report Mexican origin are young, and they pay about $65bn more payroll tax than they draw (63–68). The main estimate counts the promise when it is earned, at the benefits current law can pay on the Trustees' 2026 projections. Current law keeps the retirement and disability funds apart. In place of the year's pension cash flows, that adds about {{q:pension.accrual|mid_range}} to the total. Counting pensions when paid gives {{q:case.cash_set|mid_range}}.</p>
+<p class="prose">On a cash basis, a worker's payroll tax counts as income in the year it is paid. But the tax also buys a claim on future benefits. The group is young, so with pensions counted when paid its direct taxes exceed its benefits by {{q:tally.cash|pair}} at the low and high ends. The main estimate counts the promise when it is earned, at the benefits current law can pay on the Trustees' 2026 projections. Current law keeps the retirement and disability funds apart. In place of the year's pension cash flows, that adds about {{q:pension.accrual|mid}} to the total. Counting pensions when paid gives {{q:case.cash_set|mid_range}}.</p>
 <h4>Earlier years</h4>
 <p class="prose">Years before 2024 come from a model. It carries the 2024 position back on each year's national data. Do not multiply the annual number by a number of years.</p>
 <h4>Lifetimes</h4>
@@ -202,7 +203,7 @@ h2 { border-top: 1px solid var(--rule); padding-top: 18px; }
 <table>
 <thead><tr><th>Combination</th><th>Adds?</th><th>Reason</th></tr></thead>
 <tbody>
-<tr><td>Total + costs outside the budget</td><td class="yes">Yes</td><td>Separate channels. The {{q:pairing.total|range_unit}} figure adds them. Its low end also prices offending at the Hispanic average, {{q:pairing.footing_reduction|at_low_end}} less.</td></tr>
+<tr><td>Total + costs outside the budget</td><td class="yes">Yes</td><td>Separate channels. The {{q:pairing.total|range_unit}} figure adds them.</td></tr>
 <tr><td>Total with pensions counted when paid</td><td class="yes">As a swap</td><td>It replaces the pension promises with the year's cash pension lines.</td></tr>
 <tr><td>Total + interest on old debt</td><td class="no">No</td><td>Past borrowing, not present presence.</td></tr>
 <tr><td>Capital return + debt or deficit</td><td class="no">No</td><td>The return is not cash and is never borrowed.</td></tr>

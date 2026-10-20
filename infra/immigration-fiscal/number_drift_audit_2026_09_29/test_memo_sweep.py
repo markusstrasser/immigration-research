@@ -22,16 +22,15 @@ def _rounded(cases, places):
     return [[round(x, places) for x in v] for v, _label in cases]
 
 
-def test_v9_is_current_with_the_registry_on_v6_and_v8_retained_as_earlier():
+def test_v9_is_current_in_the_registry_and_earlier_cases_retained():
     recs = M.Q.load_registry()
     values, registry = M.current_values(recs)
     earlier = M.earlier_values()
-    assert set(M.ADOPTED) == set(registry)
-    assert [round(x, 1) for x in registry["case.main"]] == [389.1, 461.5]
+    assert M.ADOPTED == {} and registry == {}
     assert [round(x, 1) for x in values["case.main"]] == [368.0, 436.6]
     assert [round(x, 2) for x in values["case.per_member"]] == [8.20, 9.72]
     assert [round(x, 1) for x in values["case.cash_set"]] == [284.4, 352.9]
-    # Every replaced case is retained, newest first, including the presentation registry's v6.
+    # Every replaced case is retained, newest first, including v6, the evidence map's case until 2026-10-21.
     assert [label for _v, label in earlier["case.main"]] == ["the October 15 case (v8)",
                                                           "the October 14 case (v7)", "the October 7 case (v6)",
                                                           "the October 5 case (v5)", "the September 29 case (v4)"]
@@ -53,7 +52,7 @@ def test_v9_is_current_with_the_registry_on_v6_and_v8_retained_as_earlier():
         assert hits and all(o["kind"] == "vintage" for o in hits)
         assert [round(x, 1) for x in values[ref]] == want
     for rid in M.EARLIER:
-        assert any(o["origin"] == "registry" for o in others[rid])
+        assert not any(o["origin"] == "registry" for o in others[rid])
         assert [o["kind"] for o in others[rid] if o["origin"] == "earlier"] == ["vintage"] * 5
 
 

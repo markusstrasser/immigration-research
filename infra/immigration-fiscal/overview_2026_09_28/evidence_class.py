@@ -21,7 +21,7 @@ Keyed by each finding's first ladder entry. `evidence.py` refuses a finding with
 
 CLASS = {
     # the annual account
-    295: ("sample", "arithmetic", "Survey income for the group was too high. The account corrects it with records."),
+    311: ("sample", "arithmetic", "Survey income for the group was too high. The account corrects it with records."),
     280: ("sample", "arithmetic", None),
     184: ("sample", "tabulated", None),
     269: ("sample", "arithmetic", None),
@@ -36,11 +36,13 @@ CLASS = {
     211: ("count", "fitted", None),
     141: ("count", "fitted", None),
     80: ("count", "tabulated", None),
+    312: ("count", "rule", None),
     # conventions
     238: ("count", "rule", None),
     257: ("count", "rule", None),
     253: ("count", "rule", None),
     288: ("count", "rule", None),
+    300: ("count", "rule", None),
     # measured inputs
     208: ("sample", "fitted", "Census fills missing income with answers from similar people. For this group the "
                               "fill-ins run too high."),
@@ -57,6 +59,10 @@ CLASS = {
                                   "drive less, so the group's share is slightly too low."),
     294: ("count", "arithmetic", None),
     127: ("sample", "tabulated", None),
+    306: ("sample", "extrapolated", "The 2020 undercount is carried to 2024 at the same rates. Later births and "
+                                    "arrivals take none."),
+    314: ("sample", "arithmetic", "Survey payments stand in for the programmes the residual pays for. The bridge "
+                                  "between them is not measured."),
     # outside the budget
     260: ("study", "extrapolated", None),
     264: ("study", "extrapolated", None),  # traffic elasticity from London, Manhattan, German strikes, 2020
@@ -105,8 +111,8 @@ CLASS = {
     65: ("sample", "tabulated", "Prison records code many Hispanics as generic \"other Hispanic\". The corrected "
                                 "ratio is higher."),
     82: ("count", "fitted", None),
-    202: ("count", "tabulated", "Some offenders have no recorded ethnicity. The ratios hold under every allocation "
-                                "tried."),
+    202: ("count", "tabulated", "Some offenders have no recorded ethnicity. Put all on one side, they move the white "
+                                "ratio a lot."),
     143: ("count", "arithmetic", None),
     214: ("count", "tabulated", None),
     56: ("count", "tabulated", None),
