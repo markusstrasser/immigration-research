@@ -1269,3 +1269,36 @@ The current-flow producer no longer depends on a temporary session CASE_FINAL fi
 ### Round-3 correction (2026-10-15)
 
 - 2026-10-15 06:01:26 JST (`date`, parent): rerun on corrected v8 (`d1a24d47`: the coverage term no longer charges the missed people's prisons, arrests and ICE custody a second time, −$3.199004 / −$3.221092bn). The round-2 figures above are on the uncorrected v8. Corrected: **$365.791930 / $455.981785bn set**, **$281.752564 / $371.942418bn cash**, over 45,230,062.30075857 people ($8,087.36 / $10,081.39 set, $6,229.32 / $8,223.35 cash per member); versus oct14 +$26.239912 / $32.332524bn set, +$17.326990 / $23.419602bn cash. Identified cash is **$229.734108 / $290.974508bn** (−$3.154828bn at each end, the justice-use charge); resource-cost public-capital returns **$39.065146 / $64.313092bn** (−$0.044176 / −$0.066264bn, the capital on that custody). Unchanged: classified set-minus-cash promises $84.051580bn, unlocated pieces $2.939947 / $6.893744bn set and $2.952161 / $6.905957bn cash, displaced beneficiaries $9.263855bn, private production $0.737295 / $0.485006bn. The parts close to the set ends. Parent rerun IDENTICAL 95/95, exit 0. [CALCULATION: `derived/oct15/current_flow_contract.json` bands_bn, per_member_usd, change_from_oct14_bn, financing_totals_bn]
+
+## Oct16 preparation — 2026-10-15 19:07 JST
+
+The live default is oct16. `v9_flow.py` carries preserved, audited oct15 source rows through native v9 engine, selected source-item and post-engine deltas. Each selected item and all12 basis/end/payer totals must close at1e-9bn. Current federal military and retirement-administration deltas never follow the mixed health-line average payer. Capital-rate terms remain resource costs, including capital with an unlocated government payer. Combined production carriers stay unlocated when their P/F split is absent. Set/cash source timing is matched after the complete bridge. No complete historical stock is inferred from these annual resource amounts. [CALCULATION: `v9_frame.cjs`; `v9_flow.py`; candidate source and routing probes]
+
+After prop9/CASE_FINAL, run `uv run --no-project python3 .../debt_legacy.py --case oct16 --current-flow-only`, then the lane tests. After the historical back-cast's oct16 producer, run `military_history_oct16.py` for the source-line-only military-benefit histories. The VA direct-consumption history remains unavailable; this partial history never supplies the missing complete financing bridge. Rerun those commands with `scripts/rerun_lane.py`; final numerical corners, pins and reproducibility remain pending the adopted marker. Old oct15 output files remain history. [SCOPE]
+
+## Adopted oct16 execution — 2026-10-20
+
+- 20:22 JST (`date`): adopted commit `7dfb4c66` verified read-only; native source pins regenerated from the adopted files. Set **$368.029739 / $436.561527bn**, cash **$284.397043 / $352.928831bn**, over **44,903,074.086245 people**; per member **$8,196.09 / $9,722.31 set**, **$6,333.58 / $7,859.79 cash**. Native 64-specification endpoint searches reproduce the case; selected-item and full source closures pass at 1e-9bn in all twelve basis/end/payer corners; printed adopted/cash bands pass at 1e-4bn. [CALCULATION: `derived/oct16/current_flow_contract.json` `bands_bn`, `population.with_coverage`, `per_member_usd`, `gates`; `native_frame.json` `sets.*.specs`]
+- **U2 D1 correction:** central identified federal current cash is **$18.048806 / $57.025821bn**. At the low-payer convention it is **−$14.665106 / +$24.169410bn**, and at the high-payer convention **$24.247968 / $69.964121bn**. These are paired case ends, not an all-positive federal-deficit claim. They describe classified source cash, not observed Treasury borrowing; unlocated payer/timing remains outside that claim. [CALCULATION: `current_flow_contract.json` `federal_current_cash_bn` (`cash|low|low`, `cash|high|low`, and corresponding `central`/`high` keys)]
+- Identified current cash across governments is **$230.819618 / $291.723466bn**; public-capital resource cost **$40.678536 / $44.623349bn** stays outside borrowing. Classified earned promises are **$83.641397bn** at both ends. Unlocated amounts remain **$2.680144 / $6.615561bn set**, **$2.688845 / $6.624262bn cash**; no complete historical debt stock is identified. Source21's consumption uses the health payer mix after subtracting the federal VA subblock from both numerator and denominator; its typed capital stays a resource cost at the Trustees rate. [CALCULATION: `current_flow_contract.json` `financing_totals_bn`, `health_payer_rule`; `current_flow_source_parts_2024.csv`]
+- The live commands are `sh infra/immigration-fiscal/debt_legacy_2026_09_23/run_oct16.sh`, followed by `uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/debt_legacy_2026_09_23 "sh {lane}/run_oct16.sh"`. The wrapper runs the current-flow bridge, the source-line-only military history and fourteen source/timing regressions. Earlier keyed files are preserved. [CALCULATION: `run_oct16.sh`; final replay receipt appended below]
+- 2026-10-20 20:57 JST (`date`): after the interrupted back-cast outputs were rebuilt and its official replay passed, the source-only military history was rebuilt successfully: **2,520 rows**, five BEA benefit source lines, with the current compensation fraction carried as an explicit historical assumption. The 2024 anchors pass at 1e-6bn. VA direct-consumption history and complete historical debt/interest remain unmeasured. Full live debt replay **IDENTICAL: 106/106, exit 0**, 25.775s, including fourteen source/timing regressions. All12 set/cash/end/payer closures remain at1e-9bn and capital stays outside borrowing. Existing tracked derived files are unchanged. [CALCULATION: `derived/oct16/military_history_contract.json`; `prop9/military-history-recovered-timing.json`, `debt-rerun-recovered.log`, `debt-rerun-recovered-timing.json` in handoff scratch]
+
+### 2026-10-20 — review corrections
+
+The rebuildable native frame now lives in ignored `_cache/oct16/native_frame.json`.
+Its tracked evidence receipt is `derived/oct16/native_frame_manifest.json`, with
+SHA-256, byte size and upstream source hashes; both debt and social consumers
+reject a missing or stale cache. The military-history consumer verifies the
+back-cast's tracked `case_parts_annual_manifest.json` before reading its ignored
+full annual table. Both source pins are generated from the actual bytes. The
+earlier `native_frame.json` citation above now resolves through this manifest.
+Rebuild debt before social pairing on a fresh checkout. [CALCULATION:
+`v9_flow.py::load_native_frame`; `military_history_oct16.py`]
+
+Review replay after the shared saved-case custody refresh: **IDENTICAL 106/106,
+exit 0**, 21.022s; all 17 routing/cache regressions pass. The native cache and
+military source pins were regenerated by their producers, with the full annual
+table verified against its manifest. Set and cash bands and all twelve source
+closures remain unchanged at 1e-9bn. [CALCULATION: `run_oct16.sh`;
+`derived/oct16/{native_frame_manifest,current_flow_contract,military_history_contract}.json`]

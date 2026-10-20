@@ -11,7 +11,7 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 PRODUCER = HERE.parent / 'backcast_pandemic_measured_2026_09_28/measure_shares.py'
-OUT = HERE / 'derived/oct15/pandemic_zero_audit.json'
+OUT = HERE / 'derived/oct16/pandemic_zero_audit.json'
 
 
 def digest(path):

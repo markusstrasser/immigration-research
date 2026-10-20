@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "case": "oct16",
+  "path": "_cache/oct16/case_parts_annual.csv",
+  "sha256": "650c981239495589becd53ff8043fbdb9f67d045a1ddb2e422eee7e310efe2ed",
+  "bytes": 143803805,
+  "rows": 1420500,
+  "columns": [
+    "concept",
+    "rule",
+    "part",
+    "year",
+    "value_bn"
+  ],
+  "full_key": [
+    "concept",
+    "rule",
+    "part",
+    "year"
+  ]
+}

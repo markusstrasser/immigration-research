@@ -1,0 +1,16 @@
+{
+  "income_year": 2020,
+  "inputs": {
+    "infra/immigration-fiscal/backcast_pandemic_measured_2026_09_28/_cache/asecpub21csv.zip": "7196ff49c52f833f65c537d66a0c8cc1540a8e31711a09c3730c218b4486c1f4",
+    "infra/immigration-fiscal/backcast_pandemic_measured_2026_09_28/measure_shares.py": "5eca4c594675e1fd7ae3eabc83c5b25bce70763b2273797b6140db551967443f",
+    "infra/immigration-fiscal/historical_backcast_2026_09_20/pandemic_zero.py": "cfc66baae6885cd6e23be50c2f3e9e4b5db2fda7f0fa71e258db98604841395b",
+    "infra/immigration-fiscal/status_impute_2026_09_16/impute_status.py": "68dc38e36735e49aeee8d2a7fc0806f3756ee053504596a003efb950c8a6429c"
+  },
+  "max_payment_usd": 0.0,
+  "national_bn": 0.0,
+  "nonzero_records": 0,
+  "payment_year": 2021,
+  "rule": "EIP1 amended credit less advance; producer SSN spouse rule; zero verified on every tax unit",
+  "status": "borjas",
+  "survey_year": 2021
+}

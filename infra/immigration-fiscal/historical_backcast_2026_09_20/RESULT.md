@@ -274,3 +274,100 @@ Rerun on corrected v8 (`d1a24d47`: the coverage term no longer charges the misse
 overlay beside is $3,486.509213–4,239.630970bn. `coverage_components_oct15.json` records the hash of the uncertainty
 lane's `coverage_pes.py`, which round 3's fix changed; its values are unchanged. The rerun exempts
 `bridge_memory.py`, which `v8_components.cjs` spawns (README, Covered). Parent rerun IDENTICAL 94/94, exit 0.
+
+### V9 transport preparation (2026-10-15; final execution pending adoption)
+
+The live default is `oct16`; outputs belong only in `derived/oct16/` and
+`derived/case_components_oct16.json`. Earlier case files remain historical inputs.
+Selected source13–18,20 and21 components retain their declared programme, capital,
+accrual, production and population paths; conditional17 is joint-minus16, coverage
+is the typed new-minus-old kernel once, and19 remains beside. Original descendants
+inside aggregate source changes use the archived component's lineage share,
+explicitly held as a historical composition assumption. [CALCULATION:
+`v9_components.cjs`; ASSUMPTION: source-share/population transport]
+
+The complete calibrated2024 denominator gates to `population_v9` and the v9
+per-member set result. The fixed Trustees real rate reprices every capital stock;
+both ends also carry a separate DFII10 real-yield sensitivity. These remain modeled
+back-casts, not observed historical removals, borrowing flows or reconstructed
+historical law. [CALCULATION: `backcast.py`; DATA: live case `meta.one_rate`]
+
+Correction to the older item11 description above: its existing source-class map
+treated M6 and D_added as federal-income-only. Primary producer arithmetic shows
+M6 combines federal income/refunds/state tax/projection (`round2.py54–58`), while
+D_added transports Df+Dc federal-income/refund changes (`removal.py381–390`;
+`round2.py71–73`). The preserved composite scalars do not identify their category
+split. Oct16 therefore holds these explicit unlocated components per declared
+union/G3+ or lineage/G3+ person path. Their2024 amounts and all oct15 files remain
+unchanged. A regression verifies that the metadata correction preserves every
+2024 source anchor. [SOURCE: `mixed_unit_removal_2026_10_14`; ASSUMPTION: historical
+per-person transport]
+
+### Adopted v9 execution — 2026-10-20 20:54 JST
+
+The live `oct16` back-cast now consumes the adopted v9 payload (adoption
+`7dfb4c66`). Its typed 2024 set/cash anchors are **368.029739 / 436.561527bn**
+and **284.397043 / 352.928831bn**, closing at1e-9bn. The annual CSV's ratio and
+income columns retain the published-band tolerance1e-4bn; their dollars/member
+are **8196.0914 / 9722.3076**, within$0.01 of `v9.per_member_usd.set`.
+`per_lineage_member()` gates the unrounded **44.903074086245 million** denominator
+to `meta.population_v9.with_coverage` and `summary.v9.population.with_coverage`
+at1e-9 million before export. The rounded CSV count is44.9031 million.
+[CALCULATION: `derived/case_components_oct16.json`, `derived/oct16/backcast_annual.csv`;
+DATA: `main_case_2026_10_16/derived/{summary,corrections}.json`]
+
+The programme-plus-per-part-income joint model gives **3770.846119 / 4321.494895bn**
+over2015–2024; these are model back-casts, not observed historical fiscal accounts.
+The fixed Trustees resource rate remains separate from the DFII10 real-yield
+sensitivity and from nominal financing. Item21's direct capital is priced at the
+live Trustees rate before transport; conditional17 and coverage each enter once.
+The declared source-share, historical population, statute and use-key limitations
+above remain. [CALCULATION: `derived/oct16/round2_windows.csv`, scenario
+`live_programme_measured_per_part_income`; `v9_components.cjs`]
+
+Recovery audit: no source file had been changed after the20:41 outage. All16
+potentially partial oct16 files from the stopped substitute build were rebuilt;
+the native producer exited0 in61.249s. The earlier profile led to source-series
+caching, ordered aligned path sums and array-based exports, with source-anchor,
+no-alias and index-mismatch regressions. Final replay ran historical workers,
+pandemic zero, the component bridge, backcast and all four test files: every
+command exited0, **IDENTICAL116/116**, harness exit0 in173.866s. The established
+`bridge_memory.py` exemption covers its dynamic bridge call. Invoked canonical
+physical-footprint guards passed; the recovery producer's lifetime peak was
+1.264GB. All64 archived derived files retain their pre-propagation hashes.
+[CALCULATION: `prop9/backcast-recovery-{audit.md,build-timing.json,replay.log,replay-timing.json}`,
+`prop9/backcast-final-gate.json`; tests: `test_v9_backcast.py`]
+
+### Review correction — 2026-10-20
+
+The annual typed-part export grew from **39,207,388 bytes / 393,480 rows** in
+oct15 to **143,803,805 bytes / 1,420,500 rows** in oct16. Both have zero duplicate
+`(concept, rule, part, year)` keys, the same four concepts, three rules and
+2005–2024 years, with every concept/rule/part grid containing exactly 20 rows.
+Both round to at most six decimals. Distinct parts rose from 2,814 to 10,852;
+the added 1,027,020 rows are coverage tenure 325,920, coverage repricing 299,280
+(the typed new and old kernels), one rate 221,820, native-minor calibration
+162,960, veterans 6,240, income-security administration 1,200, college response
+3,360, consumption tax bases 480 and the health key 5,760. The 3.668-fold byte
+growth is a legitimate expansion of typed pieces, with no wider year/rule grid
+or increased precision. [CALCULATION: full-key and grid checks on oct15's
+`derived/oct15/case_parts_annual.csv` and oct16's manifest-pinned full table]
+
+The full live table is now ignored at `_cache/oct16/case_parts_annual.csv`, with
+its unchanged bytes pinned by `derived/oct16/case_parts_annual_manifest.json`.
+The producer rejects duplicate full keys; consumers validate the tracked hash,
+byte/row counts and schema through `cache_contract.verify_cached_annual()` and
+stop on missing/stale evidence. No aggregation changes any fiscal value.
+Earlier case outputs remain byte for byte. The debt lane must consume this pin
+and replay with this lane; README now gives the full rerun command and its
+existing dynamic memory-guard exemption. [CALCULATION: `backcast.py`,
+`cache_contract.py`; tests: `test_v9_backcast.py`]
+
+The first review replay also exposed a hash-order drift in the residual charged
+base: its five separately carried programme Series were summed by iterating a
+Python set, changing one published sensitivity cell by 1e-9bn. The live oct16
+route now sums those named paths in a fixed order; a regression checks identical
+floating-point results in fresh processes under three Python hash seeds.
+Archived case code and bytes retain their historical route. No scientific gate
+or precision was weakened. [CALCULATION: `ordered_programme_total()`;
+test: `test_v9_charged_programme_sum_is_hash_seed_invariant`]

@@ -1,0 +1,238 @@
+{
+  "case": "oct16",
+  "status": "partial military source-line history; full historical financing blocked",
+  "included_source_lines": [
+    "military_medical",
+    "veterans_life_insurance",
+    "veterans_other",
+    "veterans_pension_disability",
+    "veterans_readjustment"
+  ],
+  "rows": 2520,
+  "national_histories": "BEA3.12 source benefit lines; backcast own population and income rules retained",
+  "conditional_fraction": "current compensation share carried on combined pension/disability series; not measured historical compensation composition",
+  "principal_source_tolerance_bn": 1e-06,
+  "accounting_set": "set; source13 military benefit response changes are current federal flows",
+  "omitted": {
+    "health_services": "no staged military-only VA direct-consumption history; broad federal health series is not a substitute"
+  },
+  "complete_debt_stock": null,
+  "complete_debt_interest": null,
+  "source_parts": {
+    "v6_veterans_compensation_union_0_veterans_pension_disability": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "veterans_pension_disability",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line"
+    },
+    "v6_veterans_compensation_union_0_veterans_pension_disability_lineage": {
+      "item": "veterans_compensation",
+      "path": "lineage",
+      "side": "spending",
+      "line": "veterans_pension_disability",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus",
+      "transport_assumption": "archived method-mean lineage share of this source line/component; held historical relative composition"
+    },
+    "v6_veterans_compensation_union_1_union_completion_veterans_pension_disability_adults": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "veterans_pension_disability",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus"
+    },
+    "v6_veterans_compensation_union_2_union_completion_veterans_pension_disability_veterans": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "veterans_pension_disability",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus"
+    },
+    "v6_veterans_compensation_union_3_veterans_other": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "veterans_other",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line"
+    },
+    "v6_veterans_compensation_union_3_veterans_other_lineage": {
+      "item": "veterans_compensation",
+      "path": "lineage",
+      "side": "spending",
+      "line": "veterans_other",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus",
+      "transport_assumption": "archived method-mean lineage share of this source line/component; held historical relative composition"
+    },
+    "v6_veterans_compensation_union_4_union_completion_veterans_other_va_medical": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "veterans_other",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus"
+    },
+    "v6_veterans_compensation_union_5_union_completion_veterans_other_veterans": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "veterans_other",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus"
+    },
+    "v6_veterans_compensation_union_6_veterans_readjustment": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "veterans_readjustment",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line"
+    },
+    "v6_veterans_compensation_union_6_veterans_readjustment_lineage": {
+      "item": "veterans_compensation",
+      "path": "lineage",
+      "side": "spending",
+      "line": "veterans_readjustment",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus",
+      "transport_assumption": "archived method-mean lineage share of this source line/component; held historical relative composition"
+    },
+    "v6_veterans_compensation_union_7_union_completion_veterans_readjustment_age18_24": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "veterans_readjustment",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus"
+    },
+    "v6_veterans_compensation_union_8_union_completion_veterans_readjustment_veterans": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "veterans_readjustment",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus"
+    },
+    "v6_veterans_compensation_union_9_veterans_life_insurance": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "veterans_life_insurance",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line"
+    },
+    "v6_veterans_compensation_union_9_veterans_life_insurance_lineage": {
+      "item": "veterans_compensation",
+      "path": "lineage",
+      "side": "spending",
+      "line": "veterans_life_insurance",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus",
+      "transport_assumption": "archived method-mean lineage share of this source line/component; held historical relative composition"
+    },
+    "v6_veterans_compensation_union_10_union_completion_veterans_life_insurance_adults": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "veterans_life_insurance",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus"
+    },
+    "v6_veterans_compensation_union_11_union_completion_veterans_life_insurance_veterans": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "veterans_life_insurance",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus"
+    },
+    "v6_veterans_compensation_union_12_military_medical": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "military_medical",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line"
+    },
+    "v6_veterans_compensation_union_12_military_medical_lineage": {
+      "item": "veterans_compensation",
+      "path": "lineage",
+      "side": "spending",
+      "line": "military_medical",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus",
+      "transport_assumption": "archived method-mean lineage share of this source line/component; held historical relative composition"
+    },
+    "v6_veterans_compensation_union_13_union_completion_military_medical_population": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "military_medical",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus"
+    },
+    "v6_veterans_compensation_union_14_union_completion_military_medical_tricare": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "military_medical",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus"
+    },
+    "v6_veterans_compensation_union_15_union_completion_military_medical_veterans": {
+      "item": "veterans_compensation",
+      "path": "union",
+      "side": "spending",
+      "line": "military_medical",
+      "parent": null,
+      "national_bn": null,
+      "rule": "line",
+      "population_path": "g3plus"
+    }
+  },
+  "source_sha256": {
+    "historical_backcast_2026_09_20/derived/case_components_oct16.json": "c5dcd9b9f6795a0f4f901ca85c3e8edf772c2acb93d7a570e239087acc268f21",
+    "historical_backcast_2026_09_20/derived/oct16/case_parts_annual_manifest.json": "a5bcab026b2cf0a2abdd2a1dfd0643a5d3bf4f806df2267b3444f7c2e1b3cb40",
+    "historical_backcast_2026_09_20/_cache/oct16/case_parts_annual.csv": "650c981239495589becd53ff8043fbdb9f67d045a1ddb2e422eee7e310efe2ed"
+  }
+}

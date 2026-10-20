@@ -129,7 +129,7 @@ def wage_only_split(sources):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--out-dir', type=Path, default=HERE / 'derived/oct15')
+    parser.add_argument('--out-dir', type=Path, default=HERE / 'derived/oct16')
     args = parser.parse_args()
     started = time.perf_counter()
     sources = []

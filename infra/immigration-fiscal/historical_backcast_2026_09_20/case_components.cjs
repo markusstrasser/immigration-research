@@ -103,10 +103,14 @@ const OCT05_LANE = "main_case_2026_10_05";
 const OCT07_LANE = "main_case_2026_10_07";
 const OCT14_LANE = "main_case_2026_10_14";
 const CASES = { sept27: "main_case_long_run_2026_09_27", sept29: SEPT29_LANE, oct05: OCT05_LANE, oct07: OCT07_LANE, oct14: OCT14_LANE };
-const DEFAULT_CASE = "oct15";
+const DEFAULT_CASE = "oct16";
 const argv = process.argv.slice(2);
 const opt = (name, dflt) => (argv.includes(name) ? argv[argv.indexOf(name) + 1] : dflt);
 const CASE = opt("--case", DEFAULT_CASE);
+if (CASE === "oct16") {
+  require("./v9_components.cjs").main(opt("--out-dir", path.join(__dirname, "derived")));
+  process.exit(0);
+}
 if (CASE === "oct15") {
   require("./v8_components.cjs").main(opt("--out-dir", path.join(__dirname, "derived")));
   process.exit(0);

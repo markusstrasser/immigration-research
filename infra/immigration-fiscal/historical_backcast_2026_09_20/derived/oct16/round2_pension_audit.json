@@ -1,0 +1,187 @@
+{
+  "inputs": {
+    "infra/immigration-fiscal/pension_accrual_2026_09_28/pension_accrual.py": "90fd40c9bfc5d9b71cd8d300c9244e9ebb14529e09bb3c436e02ca6f2dc32789",
+    "infra/immigration-fiscal/pension_accrual_2026_09_28/lifetime_model.py": "e5337b51943180e383dc2573a49053228881a1518a4453c4e118499a31b02fd6",
+    "infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py": "ae09107dcfabca4bf2c30596db9092cab7b16e384a971c11450ceda95aef566a",
+    "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/stage_88ee8aa858d73421.parquet": "54c7a45b7af377cc4f488a83e6ca37b15aca6410b69f36308a7c01f949cc3e3f",
+    "infra/immigration-fiscal/pension_accrual_2026_09_28/reads/quotes.json": "0400b1726c0606fc431cacb9465ac2b864ca1995e9558d28f01af216786bdab0",
+    "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/an2025-3.txt": "32ab508931a0eddb264d6e1581ee3ba346db977c3ec93b71bb7178ddca6f9cb4",
+    "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/tr2025.txt": "d6d0df478535d12e5831740aaf6539490ebf41bf59f1e4ecad42b9ee38acd999",
+    "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/ss_timing.py": "a4dce98ef0a86c46ec1c812db614eca85f6077a9fb3b25688956f5ac6db183e1",
+    "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/derived/cps_ss_stage.parquet": "4fcf6b421d85583b9dd266f8cd91af3be666a66847b132b44330d22145f238b7",
+    "infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_split.csv": "6a652151547df2c33a35c46a016bb5be3d8cc4f84c359ac6f422b45766553564",
+    "infra/immigration-fiscal/indian_civic_cps_2026_09_18/_cache/asec_2025_PEINUSYR.json": "bb45ce60b5c18448da9b3033f5cd546923d10834e1aa765acdd49d90b392be1f",
+    "infra/immigration-fiscal/historical_backcast_2026_09_20/inputs/acs_mexican_origin.csv": "76d59b3994295967de330dfec6f43c201a01ac3608096ad5b8cbc42436561fba",
+    "infra/immigration-fiscal/historical_backcast_2026_09_20/pension_transport.py": "ef13c1a2092b6ac458374b12df4552279fb0352a2b73cfca76fed7502e485d69"
+  },
+  "groups": {
+    "union": {
+      "pia_earnings_elasticity": 0.557992860339418,
+      "mean_aime_over_first_bend": 3.5900692185902705,
+      "worker_sample_n": 9264,
+      "vested_PIA_sample_n": 9238
+    },
+    "g1": {
+      "pia_earnings_elasticity": 0.5661276323398745,
+      "mean_aime_over_first_bend": 2.9470997928997416,
+      "worker_sample_n": 3639,
+      "vested_PIA_sample_n": 3613
+    },
+    "g2": {
+      "pia_earnings_elasticity": 0.5579551819123729,
+      "mean_aime_over_first_bend": 3.9667272840090027,
+      "worker_sample_n": 2984,
+      "vested_PIA_sample_n": 2984
+    },
+    "g3plus": {
+      "pia_earnings_elasticity": 0.5508573147239293,
+      "mean_aime_over_first_bend": 4.037373806050426,
+      "worker_sample_n": 2641,
+      "vested_PIA_sample_n": 2641
+    }
+  },
+  "worker_rule": "CPS wage/positive-SE workers/member relative to national, normalized to2024; income2019\u20132024 uses surveys2020\u20132025; PartA age<65/OASDI all ages; fixed relative coverage before2019; legal/on-books adjustment held",
+  "earnings_rule": "CPS mean covered-earnings mapping per worker2019\u20132024; unsplit ACS total-income proxy before2019; not an exact ACS decomposition",
+  "median_rule": "geometric mean male/female relative full-time medians; pension-only sensitivity with central worker path",
+  "wage_only_rule": "pooled IPUMS wage-positive workers/mean wages; PartA age<65 and OASDI all ages, all ASEC; missing SE and canonical civilian matching, beside only",
+  "population_rule": "published CPS source weights estimate normalized relative rates; live fiscal population remains the case's own frame/count",
+  "extension": "original pension union inputs transported to completed/coverage people; G3+ mapping used for added people",
+  "benefit_rule": "finite own-PIA response; fixed careers, family/mortality/payability/benefit-tax timing; not full actuarial repricing",
+  "worker_split": {
+    "sources": [
+      {
+        "path": "infra/immigration-fiscal/backcast_pandemic_measured_2026_09_28/_cache/asecpub20csv.zip",
+        "sha256": "f79430c5664745a2ae1c0f7fef615d93fa6b1933d0fe1dabb932ec52c73be591",
+        "bytes": 162135125
+      },
+      {
+        "path": "infra/immigration-fiscal/backcast_pandemic_measured_2026_09_28/_cache/asecpub21csv.zip",
+        "sha256": "7196ff49c52f833f65c537d66a0c8cc1540a8e31711a09c3730c218b4486c1f4",
+        "bytes": 168518554
+      },
+      {
+        "path": "infra/immigration-fiscal/latam_comparison_2026_09_17/_cache/2022/asecpub22csv.zip",
+        "sha256": "7338011adefca16dae30a4469ddaf0c01cef579b607b26b4bceec749376e4ac9",
+        "bytes": 157679473
+      },
+      {
+        "path": "infra/immigration-fiscal/latam_comparison_2026_09_17/_cache/2023/asecpub23csv.zip",
+        "sha256": "d2e000250782adfbdd7f29c82b66d866591a30f0d330496698ec19f9c784ce11",
+        "bytes": 150165063
+      },
+      {
+        "path": "infra/immigration-fiscal/same_year_tax_2026_09_20/_cache/asecpub24csv.zip",
+        "sha256": "cdb39cdac34bef99dd0940ab28e306f692404c2eea44d85dfd634214872a0a09",
+        "bytes": 148664101
+      },
+      {
+        "path": "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+        "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+        "bytes": 147271429
+      },
+      {
+        "path": "infra/immigration-fiscal/g3_identity_pooled_2026_10_05/_cache/asec_pooled.csv.gz",
+        "sha256": "59e1c80d8738f8f3938b235db66f1656bce480b3cee276fcb1ed6ba748822e7e",
+        "bytes": 135937482
+      },
+      {
+        "path": "infra/immigration-fiscal/historical_backcast_2026_09_20/historical_workers.py",
+        "sha256": "5c5b539f26c8c9d92cef8a7ee6bb7926f86a121b17f2c8df9a6f89f7e746e3c6"
+      },
+      {
+        "path": "infra/immigration-fiscal/historical_backcast_2026_09_20/historical_use.py",
+        "sha256": "d0eeff3a29765a2028c6f0cdc1c3d16ead4ab64d9e6963a1e5c4836518ed6004"
+      },
+      {
+        "path": "infra/immigration-fiscal/g3_identity_pooled_2026_10_05/_cache/asec_pooled.xml",
+        "sha256": "19e6e0ac94381e6606802a43d5f812552c42b717deee82ca54c27ed3fef632a0"
+      },
+      {
+        "path": "infra/immigration-fiscal/full_account_spending_2026_09_20/builder.py",
+        "sha256": "a0c69ac4c5d935b7fad99c1f8909ef7b753c77a1596d4747ddad8dc7240541fd"
+      },
+      {
+        "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/pension_accrual.py",
+        "sha256": "90fd40c9bfc5d9b71cd8d300c9244e9ebb14529e09bb3c436e02ca6f2dc32789"
+      },
+      {
+        "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/lifetime_model.py",
+        "sha256": "e5337b51943180e383dc2573a49053228881a1518a4453c4e118499a31b02fd6"
+      },
+      {
+        "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py",
+        "sha256": "ae09107dcfabca4bf2c30596db9092cab7b16e384a971c11450ceda95aef566a"
+      },
+      {
+        "path": "infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/ss_timing.py",
+        "sha256": "a4dce98ef0a86c46ec1c812db614eca85f6077a9fb3b25688956f5ac6db183e1"
+      },
+      {
+        "path": "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/extend_ledger.py",
+        "sha256": "72bfd4162d55e9ab4bbcd5a65513084700ff62975385f2e67095e965a1226055"
+      },
+      {
+        "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/_cache/tr2025.txt",
+        "sha256": "d6d0df478535d12e5831740aaf6539490ebf41bf59f1e4ecad42b9ee38acd999"
+      },
+      {
+        "path": "infra/immigration-fiscal/pension_accrual_2026_09_28/reads/quotes.json",
+        "sha256": "0400b1726c0606fc431cacb9465ac2b864ca1995e9558d28f01af216786bdab0"
+      }
+    ],
+    "survey_year_is_income_year_plus_one": true,
+    "worker_definition": "positive wage or positive farm/self-employment; PartA age<65, OASDI all positive-tax ages",
+    "age_rule": "reported ASEC survey age matches original pension producer; exact prior-year work-spell age not observed",
+    "legal_rule": "on-books/legal coverage relative adjustment held fixed; CPS does not observe covered records",
+    "income_boundary": "CPS earned-income split; not exact ACS total income decomposition",
+    "available_public_years": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "wage_only_years": [
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "historical_cap": "pension lane Economy.base; earnings mapping matches career_levels",
+    "pooled_NIU_source": "asec_pooled.xml INCWAGE codInstr 99999999 and 99999998",
+    "output_sha256": "60df4226d6702654ce6e911f335165aa6482ac9d2fe8f9fb40a40c3e8fa4aa7a"
+  },
+  "worker_profile_sha256": "60df4226d6702654ce6e911f335165aa6482ac9d2fe8f9fb40a40c3e8fa4aa7a",
+  "resource_rate": {
+    "real": 0.020810698764237804,
+    "rule": "fixed Trustees flat equivalent in every year; promises retain Trustees path; imported normal costs held",
+    "financing": "DFII10 real-yield sensitivity separate from resource costs; no nominal financing input here"
+  },
+  "v9_transport": "Typed selected source components, joint-minus16 tenure, own repriced coverage; original union/G1/G2 on union path, G3+ and completion on identified-G3+ path; capital stocks at fixed Trustees real rate; unlocated stays explicit.",
+  "programme_inputs": {
+    "infra/immigration-fiscal/historical_backcast_2026_09_20/round2_programme.py": "b03d034bc33dc38ed4bc8273d9c4139dae98f5fe12ab54404ef54b7d016186ee",
+    "infra/immigration-fiscal/historical_backcast_2026_09_20/p7_backcast.py": "634a51e8643966851e024ffe2c9e9fbc3258f5bf72073855f4c099c85d987044",
+    "infra/immigration-fiscal/historical_backcast_2026_09_20/backcast.py": "60eecebbc102505737183321e0e17b031ec721d495bd6c355e7f62660506427c",
+    "infra/immigration-fiscal/historical_backcast_2026_09_20/derived/oct16/pandemic_zero_audit.json": "bff26b2b72de6083b5491782da16eecb85d871c7636e3551e41650830f5d4895",
+    "infra/immigration-fiscal/historical_backcast_2026_09_20/derived/p7/audit.json": "13bd3eb33cda63cbdaed82e7bb0c54dd5d44f262725423bea98f23ec3e324d5e",
+    "infra/immigration-fiscal/historical_backcast_2026_09_20/derived/p7/programme_lines.csv": "ee1d98bb641c3260ecc0232f961a6e1349bb7324c6c8c416e1d043801110fb4b",
+    "infra/immigration-fiscal/historical_backcast_2026_09_20/derived/p7/programme_inputs.json": "3b12a2af7b6f28c4538dde3d26bc240371bfadb79d8dc7cb63d61c2b8726ad92"
+  }
+}

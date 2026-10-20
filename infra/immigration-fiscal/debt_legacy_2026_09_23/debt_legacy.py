@@ -99,7 +99,7 @@ set is a correction of its own (item_components). The union twin carries the edi
 so the lineage, the case less its twin, holds only the added people's parts. The whole-budget rules take the
 back-cast's v6 parts by their line (cash_whole). One more bridge, from October 5 (items_bridge): item by item.
 
-The live case is oct15 (v8), whose source-classified current flow is written only to derived/oct15/.
+The live case is oct16 (v9), whose source-classified current flow is written only to derived/oct16/.
 Use --current-flow-only explicitly: unlocated post-engine payer/timing stops historical stock construction.
 The personal allocation sets both band ends. The historical v7 port keeps its original rule:
 R6/R7 and later item parts follow the registry's union/lineage tags. The v7 bridge moves the allocation first,
@@ -359,7 +359,7 @@ LATER_CASES = {"sept26": Case("main_case_2026_09_26", "main case adopted 2026-09
                               {"long_run_non_school_full": ("cbo_category_lag_non_school_full", True),
                                "long_run_non_school_fixed": ("cbo_category_lag_non_school_fixed", True),
                                "proportional_reference": ("proportional_reference", False)})}
-DEFAULT_CASE = "oct15"
+DEFAULT_CASE = "oct16"
 # The main case adopted on 2026-09-29 (candidate v4), in one place: its lane; its two payloads, paths under
 # infra/immigration-fiscal/ (the set, with the pension accrual, is the adopted lane's corrections.json, which is the
 # candidate's corrections_v4.json plus five meta stamps, gated in case_payload; the adopted lane writes no cash
@@ -3908,8 +3908,8 @@ def v6_summary(run: dict) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Debt legacy of past federal gaps on an adopted main case.")
-    parser.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24", "sept23"), default=DEFAULT_CASE,
-                        help="a case from September 26 on (default: oct15: main case v8; unresolved historical "
+    parser.add_argument("--case", choices=("oct16", *reversed(list(LATER_CASES)), "sept24", "sept23"), default=DEFAULT_CASE,
+                        help="a case from September 26 on (default: oct16: main case v9; unresolved historical "
                              "financing stops, --current-flow-only publishes classified current flows; "
                              "sept27: long-run road and park responses, rental "
                              "assistance, the return on public capital and the enterprises; oct07: main case v6 of "
@@ -3921,8 +3921,13 @@ def main() -> None:
     parser.add_argument("--out-dir", type=Path, default=None,
                         help="default derived/, and derived/<case>/ for a case with two payloads (including oct14)")
     parser.add_argument("--current-flow-only", action="store_true",
-                        help="oct15 typed current-flow audit; unresolved financing stays unlocated, no legacy stocks")
+                        help="oct16 typed current-flow audit; unresolved financing stays unlocated, no legacy stocks")
     args = parser.parse_args()
+    if args.case == "oct16":
+        from v9_flow import main as current_flow_v9
+
+        current_flow_v9(sys.modules[__name__], args)
+        return
     if args.case == "oct15":
         from v8_flow import main as current_flow
 

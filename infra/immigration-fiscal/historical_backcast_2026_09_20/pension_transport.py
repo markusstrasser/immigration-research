@@ -94,7 +94,7 @@ def income_paths(relative):
         raise ValueError("[BLOCKED] incomplete median earnings proxy")
     paths = dict(covered_workers_per_member=pd.Series(1., index=relative.index),
                  unsplit_income_earnings_proxy=relative / relative[2024], median_earnings_proxy=median)
-    profile_dir = Path(os.environ.get('BACKCAST_WORKER_PROFILE_DIR', HERE / 'derived/oct15'))
+    profile_dir = Path(os.environ.get('BACKCAST_WORKER_PROFILE_DIR', HERE / 'derived/oct16'))
     profile_path, audit_path = profile_dir / 'worker_income.csv', profile_dir / 'worker_income_audit.json'
     if not profile_path.exists() or not audit_path.exists():
         raise ValueError('[BLOCKED] run historical_workers.py for the preserved CPS worker split')

@@ -1,6 +1,96 @@
 # Historical back-cast of the 2024 fiscal concepts, 2005–2024
 
-## Live v8 consumer (`oct15`)
+## Live v9 consumer (`oct16`)
+
+The default now computes only `oct16`, in `derived/oct16/`. All oct15 and earlier
+outputs remain archived byte for byte. `v9_components.cjs` consumes the pinned v8
+decomposition as a historical input and exports each selected v9 change separately.
+Source13/14/15 (and21 when selected) retain their original spending lines; college
+capital and20's revaluation follow their declared BEA stock components. Source18
+follows its selected receipt carrier policy. Items16/17 read the own-price typed
+source file and use `joint-minus16`, never a sum of standalone effects. Coverage
+repricing is its typed new kernel minus the typed old kernel, applied once.
+Item19 and W09 remain beside and absent from this central transport. [CALCULATION:
+`v9_components.cjs`; `main_case_2026_10_16/RESULT.md`, Consumers]
+
+G3+ calibration, coverage and completion components follow the identified G3+
+path; G1/G2 changes follow the existing union proxy. Original added-descendant
+shares inside aggregated service and capital deltas use the archived component's
+method-mean lineage share, held historically. This is an explicit relative-source
+composition assumption; it is not a new historical group estimator. Unclassified
+source residuals remain unlocated and held per declared person path. Production
+keeps the producer's declared generation-end P/F ratio and GDP path. College-only
+operating changes retain the education national price path and are exempt from
+the school-age use adjustment. [ASSUMPTION; CALCULATION: `v9_components.cjs`]
+
+The oct16 transport corrects two inherited source classifications without changing
+the archived oct15 files or any 2024 amount. Mixed-unit M6 combines federal income,
+refunds, state tax and the removed projection; D_added transports a federal-income
+plus refundable-credit remainder. Their preserved outputs do not identify the
+category split. They therefore remain explicit unlocated composites, held per
+declared union/G3+ or lineage/G3+ person path, instead of using a federal-tax index.
+[SOURCE: `mixed_unit_removal_2026_10_14/round2.py:54-58,71-73`,
+`mixed_unit_removal_2026_10_14/removal.py:381-390`; ASSUMPTION: historical path]
+
+All capital components use the fixed **Trustees 2.0810698764% real resource rate**
+in every historical year. OASDI/Part A retain the Trustees promise path and existing
+worker/PIA transport; imported public-employee valuations are retained. DFII10 is
+the separately exported real-yield sensitivity at both ends, not nominal financing
+or observed borrowing. The lane never combines that sensitivity with a nominal
+Treasury financing series. The model back-cast label and historical statute,
+descendant-ratio and use-key limitations below continue to apply. [ASSUMPTION;
+DATA: `main_case_2026_10_16/derived/corrections.json`, `meta.one_rate`]
+
+`lineage_millions` includes each selected observed-count change and the folded
+coverage counts once; G3+ count changes take the same path as their prices. Its
+2024 denominator gates to `meta.population_v9.with_coverage` and the summary's
+`v9.population.with_coverage` at1e-9 million. Ratio and income dollars/member gate
+to `v9.per_member_usd.set` at$0.01. Typed set/cash component closure is1e-9bn;
+published band gates retain1e-4bn. [CALCULATION: `per_lineage_member()`]
+
+The old proportional profile's CSV row is explicitly historical in the v9 case.
+The oct16 alternative is a native v9 API diagnostic, with exact typed component
+closure; it has no separately published current case-band oracle. It carries the
+central coverage/count post prices and is labeled as that diagnostic, not the
+adopted profile. The main profile gates against the current adopted/cash rows.
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/historical_workers.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/pandemic_zero.py
+node infra/immigration-fiscal/historical_backcast_2026_09_20/case_components.cjs
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/backcast.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/historical_backcast_2026_09_20/test_backcast.py infra/immigration-fiscal/historical_backcast_2026_09_20/test_p7_backcast.py infra/immigration-fiscal/historical_backcast_2026_09_20/test_historical_use.py infra/immigration-fiscal/historical_backcast_2026_09_20/test_v9_backcast.py -q --import-mode=importlib
+```
+
+The live pipeline reads the archived typed v8 coverage/mixed profiles rather than
+rewriting them; those helper commands below describe the historical oct15 build.
+`bridge_memory.py` is the canonical memory guard dynamically executed by the Node
+bridge; the rerun uses the established `--allow-unrun bridge_memory.py` exemption
+for this demonstrated dynamic call. No acquisition or network command is needed.
+
+The full live annual typed-part table is regenerated at
+`_cache/oct16/case_parts_annual.csv` (ignored). Its tracked receipt is
+`derived/oct16/case_parts_annual_manifest.json`, containing the lane-relative
+path, SHA-256, byte count, row count, schema and full key. Consumers call
+`cache_contract.verify_cached_annual()` and stop if the cache is missing or
+differs; rebuild it with the commands above. Archived cases keep their original
+tracked paths and bytes. The producer rejects duplicate `(concept, rule, part,
+year)` keys before exporting. [CALCULATION: `backcast.py`, `cache_contract.py`]
+
+The full reproduction check (including the dynamic memory-guard exemption) is:
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/historical_backcast_2026_09_20 \
+  "uv run --no-project python3 {lane}/historical_workers.py" \
+  "uv run --no-project python3 {lane}/pandemic_zero.py" \
+  "node {lane}/case_components.cjs" \
+  "uv run --no-project python3 {lane}/backcast.py" \
+  "uv run --no-project python3 -m pytest {lane}/test_backcast.py {lane}/test_p7_backcast.py {lane}/test_historical_use.py {lane}/test_v9_backcast.py -q --import-mode=importlib --durations=10" \
+  --allow-unrun bridge_memory.py
+```
+
+
+## Archived v8 consumer (`oct15`; superseded by oct16)
 
 The default computes only `oct15`, in `derived/oct15/`; earlier case artifacts
 remain archived. `case_components.cjs` dispatches to `v8_components.cjs`, which

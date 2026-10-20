@@ -56,7 +56,9 @@ def new_measured_parts(parts, metadata, use, end):
     result = {k: v.copy() for k, v in parts.items()}
     audit = []
     for part, info in metadata.items():
-        if info.get("item") not in ("foreign_source_tax", "union_completion", "mixed_unit_removal", "coverage"):
+        if info.get("item") not in ("foreign_source_tax", "union_completion", "mixed_unit_removal", "coverage",
+                                    "native_minor_calibration", "coverage_tenure", "coverage_repricing",
+                                    "public_college_response", "health_residual_key"):
             continue
         if info.get('use_key_exempt'):
             continue

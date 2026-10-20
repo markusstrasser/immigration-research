@@ -79,16 +79,16 @@ def test_live_case_default_and_lineage_denominator():
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
     spec.loader.exec_module(module)
-    assert module.DEFAULT_CASE == "oct15"
-    assert "oct14" not in module.later_cases("oct15")
+    assert module.DEFAULT_CASE == "oct16"
+    assert "oct15" not in module.later_cases("oct16")
     import json
     import pandas as pd
 
-    annual = pd.read_csv(HERE / "derived/oct15/backcast_annual.csv").set_index("year")
-    summary = json.loads((HERE.parent / "main_case_2026_10_15/derived/summary.json").read_text())
-    per_member = summary["v8"]["per_member_usd"]
-    assert abs(annual.loc[2024, "lineage_millions"] - summary["v8"]["population"]["with_coverage"] / 1e6) < 5e-5
-    for name, want in zip(module.PER_LINEAGE_MEMBER["oct15"], per_member["set"]):
+    annual = pd.read_csv(HERE / "derived/oct16/backcast_annual.csv").set_index("year")
+    summary = json.loads((HERE.parent / "main_case_2026_10_16/derived/summary.json").read_text())
+    per_member = summary["v9"]["per_member_usd"]
+    assert abs(annual.loc[2024, "lineage_millions"] - summary["v9"]["population"]["with_coverage"] / 1e6) < 5e-5
+    for name, want in zip(module.PER_LINEAGE_MEMBER["oct16"], per_member["set"]):
         for rule in ("ratio", "income"):
             assert abs(annual.loc[2024, f"{name}__{rule}__per_lineage_member_usd"] - want) < 0.01
 

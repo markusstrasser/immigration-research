@@ -1,0 +1,16 @@
+{
+  "case": "oct16",
+  "artifact": {
+    "path": "_cache/oct16/native_frame.json",
+    "sha256": "f0664a1cb45c8a80f6cb983db9d2ce4df413456dc47bc5a783ade3aafb6831f8",
+    "bytes": 34648054
+  },
+  "source_pins": {
+    "main_case_2026_10_16/package.cjs": "594ca2830ddc2f338664eb69709fc460b2b8fee5656d2891b7e8906b7c6a44ad",
+    "main_case_2026_10_16/derived/summary.json": "0d48ffa601855c68722e1c1524c22615745ff36ef4789969923934aa6f0fc45a",
+    "main_case_2026_10_16/derived/corrections.json": "4300b06c5db6c9ddca86e59538be66a7aa6cea71bdf4ca9c13625756a711f530",
+    "main_case_2026_10_16/derived/corrections_cash.json": "bb99e06673cb09daead29be13ed81dd44eabbf74bae56c06845461e2834648f7",
+    "main_case_2026_10_16/derived/main_case_bands.csv": "87956ff95128b4090ab467e28ddfbc6d76dfe41650af5b5525c26d42a319e59d"
+  },
+  "rebuild": "sh infra/immigration-fiscal/debt_legacy_2026_09_23/run_oct16.sh"
+}
