@@ -144,6 +144,9 @@ def stage(zpath: Path, st: str, yr: int) -> dict:
     w = w.merge(vic, on="victim_id", how="left", suffixes=("", "_v"))
     w = w[w.vtype.eq("I") & w.offence.ne("Intimidation")].copy()
     w["age12"] = age_band(w.age_num, w.age_id, 12)
+    w["age_unknown_code"] = pd.to_numeric(w.age_id, errors="coerce").isin([103, 104])   # a column: merges below re-index
+    if (w.age_unknown_code & w.age12.eq("lt12")).any():
+        raise SystemExit(f"[BLOCKED] {st}-{yr}: unknown-age victims (age_id 103/104) in the under-12 band")
     w["vclass"] = victim_class(w.race_id, w.ethnicity_id)
     w = w.merge(inc[["incident_id", "agency_id"]], on="incident_id", how="left")
     rel = z.read("NIBRS_VICTIM_OFFENDER_REL.csv", ["victim_id", "relationship_id"])
@@ -163,6 +166,8 @@ def stage(zpath: Path, st: str, yr: int) -> dict:
     info = dict(state=st, year=yr, incidents=len(inc), property_victimisations=len(v),
                 property_value_items_capped=int((pd.to_numeric(pdsc.property_value, errors="coerce") > CAP_ITEM).sum()),
                 child_victimisations=len(kids), jail_victimisations=len(jail), arrestees=len(ar),
+                violent_victims_age_id_103=int(pd.to_numeric(w.age_id, errors="coerce").eq(103).sum()),
+                violent_victims_unknown_age_in_lt12=int((w.age_unknown_code & w.age12.eq("lt12")).sum()),
                 cargo_incidents=int(inc.cargo.sum()))
     return dict(info=info, pcells=pcells, acells=acells, kcells=kcells, jcells=jcells)
 

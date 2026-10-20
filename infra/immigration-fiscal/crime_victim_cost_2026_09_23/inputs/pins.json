@@ -18,7 +18,7 @@
     },
     {
       "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/derived/nibrs_mixed_group_hispanic_fraction.csv",
-      "sha256": "ff14af43b24e1f268ae4cde46d7a2ecf6c2f745a0ed36ef26635fb44e751c1de"
+      "sha256": "cd852d3eca3d5c8948d51591aff670af2edec230246799222ca3bc924479e5d1"
     },
     {
       "path": "infra/immigration-fiscal/crime_ratio_direction_2026_09_24/dollar_effects.py",

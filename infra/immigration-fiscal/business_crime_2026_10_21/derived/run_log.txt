@@ -4,17 +4,17 @@
 [gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/AZ-2023.zip: PASS — 21e027cd9a93
 [gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/CA-2022.zip: PASS — 313e67394c4b
 [gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/CA-2023.zip: PASS — 2dcf66724830
-[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/TX-2022.pkl: PASS — 8669794e9f5e
-[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/TX-2023.pkl: PASS — 3cc65f878b53
-[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/AZ-2022.pkl: PASS — e244d477f841
-[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/AZ-2023.pkl: PASS — c18cbe4003c5
-[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/CA-2022.pkl: PASS — 9bdc8b23e395
-[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/CA-2023.pkl: PASS — 9e711da9c15c
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/TX-2022.pkl: PASS — 0846b6e524e8
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/TX-2023.pkl: PASS — c79097ba4a43
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/AZ-2022.pkl: PASS — 53e339a99ad4
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/AZ-2023.pkl: PASS — a5c1af2cacba
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/CA-2022.pkl: PASS — 95de790029cb
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/stage/CA-2023.pkl: PASS — eafb875ebc22
 [gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/cde_agencies_TX.json: PASS — f5baec7c8e5e
 [gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/cde_agencies_AZ.json: PASS — 55a593cb2eae
 [gate] pin ../offender_ethnicity_nibrs_2026_09_23/_cache/cde_agencies_CA.json: PASS — 2a969077000e
 [gate] pin ../offender_ethnicity_nibrs_2026_09_23/derived/acs5_place_county_groups.csv: PASS — 26029ee2a2a2
-[gate] pin ../offender_ethnicity_nibrs_2026_09_23/derived/outside_share_by_offence.csv: PASS — 74083e62ab12
+[gate] pin ../offender_ethnicity_nibrs_2026_09_23/derived/outside_share_by_offence.csv: PASS — 3da247c69024
 [gate] pin ../ncvs_victim_offender_2026_09_18/derived/cv_population_12plus.csv: PASS — 3b71509726cc
 [gate] pin ../nibrs_arrests_2026_09_16/_cache/nc-est2024-alldata-h-file08.csv: PASS — 74d5c4be10b4
 [gate] pin ../nibrs_arrests_2026_09_16/_cache/nc-est2024-alldata-h-file10.csv: PASS — d17b66e5661c
@@ -25,7 +25,7 @@
 [gate] pin ../sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json: PASS — 3b7d00abeabf
 [gate] pin ../social_costs_unpriced_2026_09_28/derived/payment_keys.json: PASS — 1c886f0d713f
 [gate] pin ../job_capital_taxes_2026_10_14/derived/wages_by_industry.csv: PASS — 3bccaa790e71
-[gate] pin ../crime_victim_cost_2026_09_23/derived/mortality_arms.csv: PASS — f5f455e8fef6
+[gate] pin ../crime_victim_cost_2026_09_23/derived/mortality_arms.csv: PASS — f2fc3f0771fd
 [gate] pin ../crime_victim_cost_2026_09_23/derived/unit_costs_victim_only_2024usd.csv: PASS — f4228a76e4a4
 [gate] pin ../crime_victim_cost_2026_09_23/derived/scaling_hispanic_to_mexican.csv: PASS — d4e7ecd8ef0b
 [gate] pin ../crime_victim_cost_2026_09_23/derived/outside_victim_shares_central.csv: PASS — 1d172b7a59e2
@@ -50,6 +50,8 @@ murder on v9: $14.610–16.270bn (0.3912 of victims $37.342–41.585bn); legacy 
 [gate] CIUS 2024 Table 7 parsed: PASS — shoplifting 1,270,097
 [gate] CIUS 2024 Table 1 property crime: PASS — 5,986,400
 [gate] NRF's $112.1bn is 1.6% of a base near MRTS total retail (NRF applies the rate to all retail sales): PASS — implied 2022 base $7006bn vs 2024 total $7107bn
+[gate] age_band: '00' (id 103) and 'NS' (id 104) are unknown; id 1 is under 12: PASS — ['unk', 'unk', 'lt12', 'lt12', '12p']
+[gate] staged victims: age_id 103 rows exist and none sits in the under-12 band: PASS — AZ-2022 id103 477, AZ-2023 id103 456, CA-2022 id103 1467, CA-2023 id103 2919, TX-2022 id103 2465, TX-2023 id103 2205
 
 -- National Hispanic share of offending, business victims at retail locations (central) --
                      weight_total  RR_H_NHW  RR_H_all  local_share_H  local_pop_share_H  national_share_H  unknown_share
@@ -104,14 +106,14 @@ line
 A retail external theft                           4.636  4.654     1.419  1.425   2.316  2.325  5.498  5.520  0.980  0.984                 0.049  0.049
 B retail employee theft                             NaN    NaN       NaN    NaN   1.619  1.625  4.455  4.473  0.759  0.762                   NaN    NaN
 C non-retail business, police-recorded              NaN    NaN       NaN    NaN   0.492  0.493  1.099  1.103  0.443  0.445                   NaN    NaN
-D children under 12, non-family (full)              NaN    NaN       NaN    NaN   0.512  0.514  0.573  0.575  0.462  0.464                   NaN    NaN
+D children under 12, non-family (full)              NaN    NaN       NaN    NaN   0.512  0.515  0.573  0.575  0.462  0.464                   NaN    NaN
 E jail/prison location (full)                       NaN    NaN       NaN    NaN   0.106  0.107  0.119  0.119  0.096  0.096                   NaN    NaN
 F fraud against individuals, police-recorded        NaN    NaN       NaN    NaN   0.175  0.176  0.196  0.197  0.158  0.159                   NaN    NaN
     arm  end  gross_forward_bn  net_with_without_bn  gross_per_member_usd  net_per_member_usd  murder_v9_bn  gross_over_murder  net_over_murder
-central  low             5.241                1.402               116.716              31.217         14.61              0.359            0.096
-central high             5.220                1.379               116.252              30.711         16.27              0.321            0.085
-    low  low             2.909                0.468                64.793              10.414         14.61              0.199            0.032
+central  low             5.241                1.402               116.716              31.218         14.61              0.359            0.096
+central high             5.220                1.379               116.253              30.711         16.27              0.321            0.085
+    low  low             2.909                0.468                64.794              10.415         14.61              0.199            0.032
     low high             2.898                0.455                64.536              10.136         16.27              0.178            0.028
    high  low            11.987                4.297               266.955              95.701         14.61              0.820            0.294
-   high high            11.940                4.245               265.895              94.532         16.27              0.734            0.261
+   high high            11.940                4.245               265.896              94.533         16.27              0.734            0.261
 [gate] every arm line present at both ends: PASS

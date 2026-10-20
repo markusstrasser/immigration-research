@@ -287,3 +287,16 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/busin
     keeps ages 12p and unk, so the '00' victims leave its 12+ counts, a small downward bias. That lane
     belongs to the parent.
 - after the RESULT log edit: rerun IDENTICAL 14/14, exit 0 (run at 02:08:14 JST)
+- 2026-10-21 02:11:11 JST (`date`): added gates. One probe checks that '00'/id 103 and 'NS'/id 104 map
+  to unknown. Each staged state-year records its age_id 103 victims (477–2,919) and must have none in
+  the under-12 band. Staging also stops if any unknown-age victim lands under 12. The stage was rebuilt;
+  line D stays $0.51bn. `rerun_lane.py`: IDENTICAL 14/14, exit 0.
+- 2026-10-21 02:15 JST: the upstream `offender_ethnicity_nibrs_2026_09_23/nibrs_stage.py` age_band is
+  now fixed. Seven of this lane's pins are therefore stale: the six sibling stage pickles and its
+  `outside_share_by_offence.csv`. A run now stops at the pin gate until the parent refreshes them.
+  The transfer ratio this lane reads moves by <0.1%, so line D moves by under $0.001bn (estimated,
+  not rerun).
+- 2026-10-21 02:50:36 JST (`date`): refreshed 8 pins against the corrected upstreams: the six sibling
+  stage pickles, `outside_share_by_offence.csv`, and `crime_victim_cost_2026_09_23/derived/mortality_arms.csv`.
+  D moves +$0.000017bn and E +$0.000004bn; the totals move by at most $0.000024bn, so every printed
+  figure stands. `rerun_lane.py`: IDENTICAL 14/14, exit 0.

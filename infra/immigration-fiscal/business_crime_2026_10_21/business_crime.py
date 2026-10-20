@@ -373,7 +373,15 @@ def main() -> None:
     gate("NRF's $112.1bn is 1.6% of a base near MRTS total retail (NRF applies the rate to all retail sales)",
          abs(112.1 / 0.016 / base["high"] - 1) < 0.08, f"implied 2022 base ${112.1 / 0.016:.0f}bn vs 2024 total ${base['high']:.0f}bn")
 
+    # NIBRS stores unknown age as age_id 103 with age_num '00' (and 104 'NS'): never age 0
+    probe = S.age_band(pd.Series(["00", "NS", "05", "NN", "30"]), pd.Series([103, 104, 17, 1, 41]), 12).tolist()
+    gate("age_band: '00' (id 103) and 'NS' (id 104) are unknown; id 1 is under 12",
+         probe == ["unk", "unk", "lt12", "lt12", "12p"], str(probe))
     stages = load_stages()
+    gate("staged victims: age_id 103 rows exist and none sits in the under-12 band",
+         all(d["info"].get("violent_victims_unknown_age_in_lt12") == 0 for d in stages.values())
+         and sum(d["info"].get("violent_victims_age_id_103", 0) for d in stages.values()) > 0,
+         ", ".join(f"{st}-{yr} id103 {d['info'].get('violent_victims_age_id_103')}" for (st, yr), d in sorted(stages.items())))
     natpop = NR.national_pops()
 
     # ---- offender shares ----

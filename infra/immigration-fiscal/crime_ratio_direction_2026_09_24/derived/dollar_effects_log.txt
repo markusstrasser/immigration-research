@@ -10,12 +10,12 @@
 
 -- NIBRS: mean Hispanic fraction of mixed Hispanic / non-Hispanic offender groups --
             offence  victimisations  mean_hispanic_fraction
-           All five           16096                  0.4977
- Aggravated assault            2849                  0.5023
+           All five           16207                  0.4977
+ Aggravated assault            2889                  0.5022
              Murder             140                  0.4954
-Rape/sexual assault             241                  0.4782
-            Robbery            2247                  0.4951
-     Simple assault           10619                  0.4974
+Rape/sexual assault             249                  0.4782
+            Robbery            2258                  0.4952
+     Simple assault           10671                  0.4975
    Select Hispanic excess over table 13, incidents 2022-2024: 412,377; matched by the Other deficit in the same victim row: 358,997
 [gate] mixed-group move keeps known-offender incidents (theta 0.0000): PASS - 
 [gate] mixed-group move keeps known-offender incidents (theta 0.5000): PASS - 
@@ -68,25 +68,25 @@ non-fatal: mixed-offender groups with a Hispanic member                         
 
 -- booking discordance factors (offender-segment / arrestee-segment Hispanic share) --
                     universe  single_pairs  offender_segment_H  arrestee_segment_H  factor
- all ages, all five offences        213452              0.3876              0.3727  1.0401
-      offender 18+, all five        189729              0.3843              0.3692  1.0411
-            all ages, murder          1210              0.3347              0.3298  1.0150
-           all ages, robbery          5387              0.3427              0.3302  1.0377
-all ages, aggravated assault         47988              0.3744              0.3596  1.0410
-                  Texas only        189898              0.3992              0.3825  1.0439
-                Arizona only         23554              0.2940              0.2940  1.0003
+ all ages, all five offences        214825              0.3875              0.3726  1.0400
+      offender 18+, all five        190989              0.3842              0.3691  1.0409
+            all ages, murder          1219              0.3347              0.3290  1.0175
+           all ages, robbery          5413              0.3418              0.3296  1.0370
+all ages, aggravated assault         48348              0.3746              0.3599  1.0409
+                  Texas only        191099              0.3991              0.3824  1.0438
+                Arizona only         23726              0.2938              0.2937  1.0003
 
 [info] jail arm rows 78, ACS sensitivity rows 34
 [gate] jail worker's BJS-arm central (survey OR mean) re-derived by hand: 0.2186 x 0.70734 key, +$1.54bn: PASS - key 0.1546, +1.541bn
 
 -- justice key --
                                                 item                                                                                                                             method  delta_main_case_bn
-arrest key: booking under-records Hispanic arrestees                                                                             RR x 1.0401 (all ages, all five offences, TX+AZ NIBRS)              +0.869
-arrest key: booking under-records Hispanic arrestees                                                                                  RR x 1.0411 (offender 18+, all five, TX+AZ NIBRS)              +0.890
-arrest key: booking under-records Hispanic arrestees                                                                                        RR x 1.0150 (all ages, murder, TX+AZ NIBRS)              +0.326
-arrest key: booking under-records Hispanic arrestees                                                                                       RR x 1.0377 (all ages, robbery, TX+AZ NIBRS)              +0.816
-arrest key: booking under-records Hispanic arrestees                                                                            RR x 1.0410 (all ages, aggravated assault, TX+AZ NIBRS)              +0.889
-arrest key: booking under-records Hispanic arrestees                                                                                              RR x 1.0439 (Texas only, TX+AZ NIBRS)              +0.951
+arrest key: booking under-records Hispanic arrestees                                                                             RR x 1.0400 (all ages, all five offences, TX+AZ NIBRS)              +0.866
+arrest key: booking under-records Hispanic arrestees                                                                                  RR x 1.0409 (offender 18+, all five, TX+AZ NIBRS)              +0.887
+arrest key: booking under-records Hispanic arrestees                                                                                        RR x 1.0175 (all ages, murder, TX+AZ NIBRS)              +0.378
+arrest key: booking under-records Hispanic arrestees                                                                                       RR x 1.0370 (all ages, robbery, TX+AZ NIBRS)              +0.802
+arrest key: booking under-records Hispanic arrestees                                                                            RR x 1.0409 (all ages, aggravated assault, TX+AZ NIBRS)              +0.885
+arrest key: booking under-records Hispanic arrestees                                                                                              RR x 1.0438 (Texas only, TX+AZ NIBRS)              +0.948
 arrest key: booking under-records Hispanic arrestees                                                                                            RR x 1.0003 (Arizona only, TX+AZ NIBRS)              +0.006
                arrest key: White-subtraction (Arm 5)                                                                                                                               none              +0.000
     arrest key: census undercount of Hispanics (PES)                                                                                                                           A_T x RR              +0.000

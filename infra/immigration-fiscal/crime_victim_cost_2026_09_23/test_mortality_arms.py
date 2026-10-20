@@ -33,9 +33,11 @@ def test_high_end_mixed_correction_uses_the_same_custody_multiplier():
     custody = arms.active_victim_detail("custody", "legacy")
     vc, _ = arms.context()
     ratio = vc.institutional_ratio()["ratio_generic_reallocated"]
-    assert custody.cost_full.sum() == pytest.approx(mixed.cost_full.sum() * ratio, abs=1e-6)
+    # dollars near 3.5e10 carry ~4e-6 of float spacing, so the tolerance is relative (abs=1e-6 passed by luck
+    # until the 2026-10-21 unknown-age correction moved theta in its sixth decimal)
+    assert custody.cost_full.sum() == pytest.approx(mixed.cost_full.sum() * ratio, rel=1e-12)
     assert custody.cost_full.sum() - equal.cost_full.sum() * ratio == pytest.approx(
-        (mixed.cost_full.sum() - equal.cost_full.sum()) * ratio, abs=1e-6)
+        (mixed.cost_full.sum() - equal.cost_full.sum()) * ratio, rel=1e-9)
 
 
 def test_age_missingness_bounds_and_discount_sensitivity():

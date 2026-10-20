@@ -56,9 +56,21 @@ def weapon_cat(w: pd.Series) -> pd.Series:
     return out
 
 
-def vage_band(age_num: pd.Series, age_id: pd.Series) -> tuple[pd.Series, pd.Series]:
+def nibrs_age(age_num: pd.Series, age_id: pd.Series) -> pd.Series:
+    """Age in years. NIBRS_AGE ids 1-3 are under one year (codes NN, NB, BB); id 103 is Unknown and
+    stores its code '00' in age_num, id 104 Not Specified ('NS'): both unknown, never age 0
+    (corrected 2026-10-21; '00' had been read as 0)."""
     a = pd.to_numeric(age_num, errors="coerce")
-    a[age_id.isin([1, 2, 3])] = 0
+    ids = pd.to_numeric(age_id, errors="coerce")
+    a[ids.isin([1, 2, 3])] = 0
+    a[ids.isin([103, 104]) | ids.isna()] = np.nan
+    if (ids.isin([103, 104]) & a.notna()).any():
+        raise SystemExit("[BLOCKED] nibrs_age: unknown-age codes (age_id 103/104) carry an age")
+    return a
+
+
+def vage_band(age_num: pd.Series, age_id: pd.Series) -> tuple[pd.Series, pd.Series]:
+    a = nibrs_age(age_num, age_id)
     bands = pd.cut(a, [-1, 11, 17, 24, 34, 49, 64, 200], labels=["0-11", "12-17", "18-24", "25-34", "35-49",
                                                                  "50-64", "65+"])
     return a, bands.astype(object).where(bands.notna(), "unk")
@@ -74,7 +86,7 @@ def restage(st: str, yr: int) -> pd.DataFrame:
 
     # offenders: the lane's classes and fractional attribution
     od = z.read("NIBRS_OFFENDER.csv", ["offender_id", "incident_id", "offender_seq_num", "race_id", "ethnicity_id",
-                                       "age_num", "sex_code"])
+                                       "age_id", "age_num", "sex_code"])
     odt = od[od.incident_id.isin(target_inc)].copy()
     known = odt[odt.offender_seq_num.gt(0)].copy()
     known["cls"] = ns.offender_class(known.race_id, known.ethnicity_id)
@@ -84,7 +96,7 @@ def restage(st: str, yr: int) -> pd.DataFrame:
     noinfo = pd.Index(target_inc).difference(frac.index)
     frac = pd.concat([frac, pd.DataFrame(0.0, index=noinfo, columns=ns.OFF_CLASSES).assign(NOINFO=1.0)])
     n_known = n_known.reindex(frac.index).fillna(0)
-    known["age"] = pd.to_numeric(known.age_num, errors="coerce")
+    known["age"] = nibrs_age(known.age_num, known.age_id)
     known["male"] = known.sex_code.eq("M").astype(float).where(known.sex_code.isin(["M", "F"]))
     oagg = known.groupby("incident_id").agg(off_age=("age", "mean"), off_male=("male", "mean"))
 

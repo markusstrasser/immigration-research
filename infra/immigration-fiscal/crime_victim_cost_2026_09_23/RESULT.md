@@ -531,3 +531,20 @@ uv run --no-project python3 -m pytest infra/immigration-fiscal/social_costs_unpr
 ```
 
 Log: 2026-10-15 06:01:26 JST (`date`, parent): rerun on corrected v8 (`d1a24d47`): crime IDENTICAL 44/44, social IDENTICAL 71/71, exit 0. The victim rows read no fiscal amount, so every figure above stands. The joint pairing they feed is in `sept24_propagation_2026_09_24/RESULT.md` ($462.163473 / 561.630823bn on the corrected case).
+
+Log: 2026-10-21 02:49:58 JST (`date`): NIBRS unknown-age correction upstream (see
+`crime_ratio_direction_2026_09_24/RESULT.md`, "2026-10-21 correction").
+- Refreshed pins:
+  - the mixed-group fraction's pin in `inputs/pins.json` (ff14af43… → cd852d3e…);
+  - the oct15 dependency manifest, via `mortality_oct15.py --capture`. The path set is unchanged;
+    16 hashes are refreshed, all files the correction rewrote.
+- Test tolerance: `test_high_end_mixed_correction_uses_the_same_custody_multiplier` now uses a
+  relative tolerance. Its abs=1e-6 on $3.5e10 sat below float spacing and failed on a ~1e-5
+  dollar difference.
+- What moved: mixed footing +$0.000034bn and custody +$0.000038bn, in every valuation; the equal,
+  arrest and unmixed footings are unchanged; mortality is unchanged.
+- Rerun of mortality_arms, vsl_standard, mortality_oct15 and the tests: IDENTICAL 44/44, exit 0
+  (7 tests pass).
+- Downstream: the P7 payload in `social_costs_unpriced_2026_09_28` pins `mortality_detail.csv`,
+  `mortality_arms.csv` and `inputs/pins.json`, so `p7_crime.py` and the propagation stop
+  `[BLOCKED] stale` until they are rerun.

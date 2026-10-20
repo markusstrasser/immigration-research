@@ -3,8 +3,9 @@
     OPENBLAS_NUM_THREADS=1 uv run --no-project --with pandas --with numpy --with scikit-learn --with pytest \
         python3 -m pytest infra/immigration-fiscal/crime_ratio_direction_2026_09_24/ -q
 
-1. The NIBRS lane's murder ratios (Hispanic ÷ NH white 2.30 central, 1.53 and 3.93 bounds) and
-   robbery ratios (4.22, 2.36, 9.75) are reproduced from its staged cells before any new method.
+1. The NIBRS lane's murder ratios (Hispanic ÷ NH white 2.31 central, 1.54 and 3.94 bounds) and
+   robbery ratios (4.21, 2.36, 9.74; after its 2026-10-21 unknown-age correction) are reproduced
+   from its staged cells before any new method.
 2. The restaged victimisation rows conserve the lane's staged cells exactly.
 3. The SHR design of the victim-cost lane (2024 P(offender Hispanic | victim group) x WONDER) gives
    its 2.7379 ratio.
