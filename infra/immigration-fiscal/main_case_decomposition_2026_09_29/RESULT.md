@@ -386,6 +386,14 @@ What would make a part mislabelled, and how far each measured alternative moves 
   group is 19.6% of CPS Medicaid enrollees (model.json `medicaid_covered`) but carries 12.3–12.5% of the line's
   dollars. A key with an income or enrollment gradient within age would move dollars into part 4 and raise the
   total. [INFERENCE; the account's key choice, not this lane's]
+  [2026-10-20: the inference leaves out a measurement the case already carries. Pooled MEPS 2016–2024 measured the
+  group's draw inside the key's own age × birth cells: Medicaid +$13.6bn (winsorized; +$12.2 to +21.3 across
+  specifications), offset by Medicare −$9.9bn and health services −$5.7bn, all medical −$3.0bn (SE 8.0); covered
+  members draw fewer dollars per head, so a coverage-share key overstates (CBO's income gradient, +$22.5bn on
+  Medicaid alone, corroborates the Medicaid line and is not additive). The case applies these shifts through
+  `main_case_2026_09_24/package.cjs` (`medTrans`), which this lane scales by κ, so they sit inside part 4 here.
+  [DATA: `medical_ethnicity_pooled_2026_09_23/derived/translation_account.csv`;
+  SOURCE: `external_benchmarks_2026_09_24/RESULT.md`, "Medicaid"]]
 - **Roads keyed by household resources.** Economic affairs is keyed by SPM resources, which charges the group 8.06%
   of the line against 11.72% of residents, 31% less per head. The crash lane measured that the group drives 11%
   fewer miles per person than the average resident (`road_crash_externality_2026_09_28/RESULT.md`). A mileage key
