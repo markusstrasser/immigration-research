@@ -23,6 +23,9 @@ def markdown(table):
 
 
 def main():
+    if (HERE / "derived/oct16/p7_net_shares.csv").is_file():
+        from p9_document import main as oct16_document
+        return oct16_document()
     if (HERE / "derived/oct15/p7_net_shares.csv").is_file():
         from p8_document import main as oct15_document
         return oct15_document()

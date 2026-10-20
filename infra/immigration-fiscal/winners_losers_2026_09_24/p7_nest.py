@@ -54,7 +54,7 @@ def finite_row(B, d, template, row4_info, epsilon, require):
         spec.loader.exec_module(builder)
     finally:
         sys.path.remove(str(B.NEST_DIR))
-    weights = d.pw.to_numpy(float).copy()
+    weights = (d.pw_production if "pw_production" in d else d.pw).to_numpy(float).copy()
     outside = ~np.isin(d.st.to_numpy(), B.ROW4_EXCLUDED_STATES)
     for status, label in B.ROW4_STATUS.items():
         mask = d.PENATVTY.eq(B.MEXICO_BIRTHPLACE).to_numpy() & d.PRCITSHP.eq(status).to_numpy() & outside

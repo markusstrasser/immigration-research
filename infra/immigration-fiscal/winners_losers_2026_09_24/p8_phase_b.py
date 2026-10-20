@@ -1,4 +1,4 @@
-"""Execute the corrected live v8 incidence account and its declared beside arms.
+"""Execute the adopted live v9 incidence account and its declared beside arms.
 
 Native-First: reuse the case exporter, CPS frame, source kernels and allocators.
 Pin acquisition is explicit; the pricing command never enrolls current bytes.
@@ -6,11 +6,13 @@ Pin acquisition is explicit; the pricing command never enrolls current bytes.
 from __future__ import annotations
 
 import argparse
+import faulthandler
 import gzip
 import hashlib
 import io
 import itertools
 import json
+import os
 from pathlib import Path
 import resource
 import subprocess
@@ -28,8 +30,8 @@ from p8_phase_a import load_extra
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-OUT = HERE / "derived/oct15"
-MANIFEST = HERE / "inputs/p8_pins_oct15.json"
+OUT = HERE / 'derived/oct16'
+MANIFEST = HERE / 'inputs/p9_pins_oct16.json'
 COMMIT = "7342b331"
 
 
@@ -53,20 +55,23 @@ def write_json_gzip(data, path):
 
 
 def source_paths():
-    paths = set(json.loads((HERE / "inputs/p8_pins_oct14.json").read_text())["sha256"])
+    # Bytecode is not source: a .pyc changes whenever any import recompiles it (23 .venv/__pycache__ entries were
+    # inherited from the oct14 list until 2026-10-20).
+    paths = {p for p in json.loads((HERE / "inputs/p8_pins_oct14.json").read_text())["sha256"]
+             if not (p.endswith(".pyc") or "/__pycache__/" in p or p.startswith(".venv/"))}
     principals = {
-        "main_case_2026_10_15": ["package.cjs", "derived/corrections.json", "derived/corrections_cash.json", "derived/summary.json", "derived/main_case_bands.csv"],
-        "generation_account_2026_09_24": ["derived/generation_results_oct15.csv", "derived/generation_summary_oct15.json"],
-        "distribution_weights_2026_09_23": ["distribute.py", "derived/case_ends_oct15.json"],
-        "debt_legacy_2026_09_23": ["derived/oct15/current_flow_contract.json", "derived/oct15/current_flow_source_parts_2024.csv"],
-        "late_arrival_account_line_2026_09_27": ["derived/late_arrival_line_oct15.csv"],
-        "sept24_propagation_2026_09_24": ["derived/oct15/real_costs_totals.json", "derived/oct15/real_costs_totals.csv", "derived/oct15/band_variants.json"],
+        'main_case_2026_10_16': ["package.cjs", "derived/corrections.json", "derived/corrections_cash.json", "derived/summary.json", "derived/main_case_bands.csv"],
+        "generation_account_2026_09_24": ['derived/generation_results_oct16.csv', 'derived/generation_summary_oct16.json'],
+        "distribution_weights_2026_09_23": ["distribute.py", 'derived/case_ends_oct16.json'],
+        "debt_legacy_2026_09_23": ['derived/oct16/current_flow_contract.json', 'derived/oct16/current_flow_source_parts_2024.csv'],
+        "late_arrival_account_line_2026_09_27": ['derived/late_arrival_line_oct16.csv'],
+        "sept24_propagation_2026_09_24": ['derived/oct16/real_costs_totals.json', 'derived/oct16/real_costs_totals.csv', 'derived/oct16/band_variants.json'],
     }
     for lane, names in principals.items():
         paths.update(str((wl.FISCAL / lane / n).relative_to(ROOT)) for n in names)
-    for directory in ("within_group_distribution_2026_09_29/derived/oct15", "distribution_weights_2026_09_23/derived/oct15"):
+    for directory in ('within_group_distribution_2026_09_29/derived/oct16', 'distribution_weights_2026_09_23/derived/oct16'):
         paths.update(str(p.relative_to(ROOT)) for p in (wl.FISCAL / directory).glob("*") if p.is_file())
-    for lane in ("union_completion_2026_10_14", "mixed_unit_removal_2026_10_14", "main_case_2026_10_15"):
+    for lane in ("union_completion_2026_10_14", "mixed_unit_removal_2026_10_14", 'main_case_2026_10_16'):
         paths.update(str(p.relative_to(ROOT)) for p in (wl.FISCAL / lane).glob("*.py"))
         paths.update(str(p.relative_to(ROOT)) for p in (wl.FISCAL / lane).glob("*.cjs"))
         paths.update(str(p.relative_to(ROOT)) for p in (wl.FISCAL / lane / "derived").glob("*.json"))
@@ -74,7 +79,10 @@ def source_paths():
     paths.update(str((wl.FISCAL / "generation_account_2026_09_24" / p).relative_to(ROOT)) for p in ("frame.py", "keys.py"))
     from p8_stayers import source_paths as stayer_sources
     paths.update(str(p.relative_to(ROOT)) for p in stayer_sources())
-    paths.update(str(OUT.joinpath(name).relative_to(ROOT)) for name in ("p7_trust_inputs.json", "p8_programmes.json", "p8_item_effects.json"))
+    paths.update(str(OUT.joinpath(name).relative_to(ROOT)) for name in ("p7_trust_inputs.json", "p8_programmes.json"))
+    from p9_calibration import SOURCE
+    paths.add(str(SOURCE.relative_to(ROOT)))
+    paths.add(str((wl.FISCAL / "coverage_bound_2026_10_14/derived/line_parts_oct16_set.csv").relative_to(ROOT)))
     paths.update(str(p.relative_to(ROOT)) for p in HERE.glob("*.py"))
     paths.update(str(p.relative_to(ROOT)) for p in HERE.glob("*.cjs"))
     paths.update(str((HERE / "inputs" / p).relative_to(ROOT)) for p in ("phase_a_joint_oct14.csv", "phase_a_joint_channels_oct14.csv"))
@@ -90,29 +98,36 @@ def source_paths():
 def prepare_pins(revise=False):
     if MANIFEST.exists():
         if not revise:
-            raise SystemExit("[BLOCKED] oct15 pin manifest exists; explicitly review a revision before replacing it")
+            raise SystemExit('[BLOCKED] oct16 pin manifest exists; explicitly review a revision before replacing it')
         archive = HERE / "_cache/pin_history"
         archive.mkdir(exist_ok=True)
         (archive / (wl.file_sha(MANIFEST) + ".json")).write_bytes(MANIFEST.read_bytes())
+    start = time.perf_counter()
+    source_head = subprocess.check_output(["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True).strip()
+    object_format = subprocess.check_output(["git", "-C", str(ROOT), "rev-parse", "--show-object-format"], text=True).strip()
+    paths = source_paths()
+    tree = subprocess.check_output(["git", "-C", str(ROOT), "ls-tree", "-r", "-z", source_head, "--", *paths])
+    blobs = {}
+    for record in tree.split(b"\0"):
+        if record:
+            metadata, rel = record.split(b"\t", 1)
+            blobs[rel.decode()] = metadata.split()[2].decode()
     hashes, commits = {}, {}
-    for rel in source_paths():
+    for rel in paths:
         path = ROOT / rel
-        hashes[rel] = wl.file_sha(path)
-        result = subprocess.run(["git", "-C", str(ROOT), "log", "-1", "--format=%H", "HEAD", "--", rel], capture_output=True, text=True, check=True)
-        if result.stdout.strip():
-            commit = result.stdout.strip()
-            body = wl.git_show(rel, commit)
-            if hashlib.sha256(body).hexdigest() == hashes[rel]:
-                commits[rel] = commit
-    MANIFEST.write_text(json.dumps(dict(case="oct15", source_head=subprocess.check_output(
-        ["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True).strip(), sha256=hashes, commits=commits,
+        body = path.read_bytes()
+        hashes[rel] = hashlib.sha256(body).hexdigest()
+        blob = hashlib.new(object_format, f"blob {len(body)}\0".encode()+body).hexdigest()
+        if blobs.get(rel) == blob:
+            commits[rel] = source_head
+    MANIFEST.write_text(json.dumps(dict(case='oct16', source_head=source_head, sha256=hashes, commits=commits,
         rule="explicit reviewed source acquisition; code pins and hashes verified before and after pricing"), indent=1) + "\n")
-    print(f"[pins] prepared {len(hashes)} hashes, {len(commits)} immutable source commits")
+    print(f"[pins] prepared {len(hashes)} hashes, {len(commits)} immutable source commits in {time.perf_counter()-start:.3f}s")
 
 
 class SourcePins:
     def __init__(self):
-        p7.require("oct15_manifest_exists", MANIFEST.is_file())
+        p7.require('oct16_manifest_exists', MANIFEST.is_file())
         self.manifest = json.loads(MANIFEST.read_text())
         self.used = {}
 
@@ -134,13 +149,14 @@ class SourcePins:
 
 
 def initialize(out):
-    wl.configure("oct15", out)
+    stage_started = time.perf_counter()
+    wl.configure('oct16', out)
     pins = SourcePins()
     p7.pin = pins.pin
     for path in sorted(HERE.glob("*.py")) + sorted(HERE.glob("*.cjs")):
         pins.pin(path)
     for rel in pins.manifest["commits"]:
-        if "/oct15/" in rel or "main_case_2026_10_15" in rel or "generation_results_oct15" in rel:
+        if '/oct16/' in rel or 'main_case_2026_10_16' in rel or 'generation_results_oct16' in rel:
             pins.pin(ROOT / rel)
     B, _ = wl.load_base()
     d, _ = wl.load_frame(B)
@@ -151,22 +167,26 @@ def initialize(out):
     deficit = wl.deficit_share_fy2024()
     notes = {}
     ch, totals, meta, ctx = wl.build_frame(B, d, I, fin, fedsplit, deficit, notes)
-    print("[Phase B] core account initialized", flush=True)
+    print(f"[Phase B] core account initialized ({time.perf_counter()-stage_started:.3f}s)", flush=True)
     meta.update(deficit=deficit, fiscal_A=fiscal_A, federal_split_info=fs_info)
     load_extra(d, B)
     payload = json.loads(pins.pin(wl.FISCAL / wl.CASE["lane"] / "derived/corrections.json").read_text())
-    rates = payload["meta"]["capital_return"]["rates"]
-    p7.require("real_resource_rate", rates["low"] == .02 and rates["high"] == .03, rates=rates)
+    from p9_calibration import SOURCE
+    pins.pin(SOURCE)
+    pins.pin(wl.FISCAL / "coverage_bound_2026_10_14/derived/line_parts_oct16_set.csv")
+    rate = payload["meta"]["one_rate"]["flat_real_equivalent"]
+    p7.require("real_resource_rate", abs(rate - .020810698764237804) < 1e-14, rate=rate)
     trust = json.loads(pins.pin(out / "p7_trust_inputs.json").read_text())["rows"]
     trust["central"] = {k: (trust["low"][k] + trust["high"][k]) / 2 for k in trust["low"]}
     programmes = json.loads(pins.pin(out / "p8_programmes.json").read_text())["programmes"]
     from p7_nest import build
     nest, nest_table, nest_meta = build(wl, B, d, I, pins.pin, p7.require, p7.check_total)
-    print("[Phase B] finite-epsilon controls built", flush=True)
+    print(f"[Phase B] finite-epsilon controls built ({time.perf_counter()-stage_started:.3f}s)", flush=True)
     write(nest_table, "p7_nest_wages.csv", out)
     (out / "p7_nest_inputs.json").write_text(json.dumps(nest_meta, indent=1, default=float) + "\n")
     from p7_credits import crossing_credit_arrays
     legacy = crossing_credit_arrays(d)
+    print(f"[Phase B] source crossing credits built ({time.perf_counter()-stage_started:.3f}s)", flush=True)
     from p8_membership import apply_membership, payer_weights
     d, membership = apply_membership(d, wl.FISCAL, B)
     for path in membership["source_paths"]:
@@ -177,7 +197,7 @@ def initialize(out):
     from p8_membership import replacement_credit
     legacy_vector, legacy_audit = replacement_credit(d, weights, legacy_vector, legacy["source_weight"])
     from p8_stayers import load_stayers
-    credits = load_stayers(d, weights, wl.FISCAL, HERE / "_cache/oct15/stayers", payload, legacy_credit=legacy_vector)
+    credits = load_stayers(d, weights, wl.FISCAL, HERE / '_cache/oct16/stayers', payload, legacy_credit=legacy_vector)
     credits["metadata"]["replacement_credit_routing"] = legacy_audit
     print("[Phase B] observed membership and source stayer arrays joined", flush=True)
     for path in credits["source_paths"]:
@@ -200,6 +220,8 @@ def initialize(out):
 
 def measure(out):
     start = time.perf_counter()
+    if os.environ.get("WINNERS_TRACE_WAIT"):
+        faulthandler.dump_traceback_later(60, repeat=True)
     p7.GATES.clear()
     p7.GATE_COUNTS.clear()
     wl.GATES.clear()
@@ -210,7 +232,7 @@ def measure(out):
             ("recommended", "stack", "coverage", "item11_attribution"), (None, "eps8.7", "eps17.9")):
         if arm in ("coverage", "item11_attribution") and epsilon:
             continue
-        tags = dict(case="oct15", financing=rule, frame=frame, level=level, arm=arm, epsilon=epsilon or "infinite", population="lineage")
+        tags = dict(case='oct16', financing=rule, frame=frame, level=level, arm=arm, epsilon=epsilon or "infinite", population="lineage")
         p7.GATE_SCOPE = "/".join(str(v) for v in tags.values())
         sharing, pieces, future, boundary = model.evaluate(rule, frame, level, arm, level, epsilon)
         for mode, vector in sharing.items():
@@ -223,7 +245,7 @@ def measure(out):
             recon.append(dict(**tags, **boundary))
     for rule, frame, level, arm, setting in itertools.product(("a", "b", "c"),
             ("stationary", "cohort30", "cohort10"), ("low", "high"), ("recommended", "stack"), wl.LEVELS):
-        tags = dict(case="oct15", financing=rule, frame=frame, level=level, arm=arm, social_setting=setting)
+        tags = dict(case='oct16', financing=rule, frame=frame, level=level, arm=arm, social_setting=setting)
         p7.GATE_SCOPE = "uncertainty/" + "/".join(str(v) for v in tags.values())
         sharing, _, future, _ = model.evaluate(rule, frame, level, arm, setting)
         for mode, vector in sharing.items():
@@ -247,8 +269,10 @@ def measure(out):
         out / "channels.csv", index=False, lineterminator="\n", float_format="%.15g")
     write(pd.DataFrame([dict(item=k, **{f"{L}_bn": v[L] for L in wl.LEVELS})
         for k,v in social_values.items()]), "p7_channel_coverage.csv", out)
-    from p8_ablations import measure as measure_ablations, ledger
-    measure_ablations(model, out, write)
+    from p8_ablations import ledger
+    # Per-item isolated and leave-one-out ablations (p8_ablations.measure) need a per-item effects export for
+    # v9's items 13-21, which does not exist; they are not computed for oct16, and the table map does not point at
+    # the frozen oct15 files (2026-10-20 review F4). The complete typed ledger carries every selected v9 item.
     ledger(model, out, write)
     from p8_group_frame import produce_group_frame
     produce_group_frame(model, out)
@@ -256,8 +280,6 @@ def measure(out):
                 ("cuts", "p7_cuts.csv.gz", "gzip; same explicit scenario tags, plus cut and group"),
                 ("channels", "p7_channel_table.csv", "select financing, frame, level, arm, epsilon explicitly; mixed_boundary only with mixed_unit"),
                 ("uncertainty extrema", "p7_grid_extrema.csv", "social low/central/high from live producer; labelled dollar/share extrema"),
-                ("isolated source items", "p8_isolated_channels.csv", "source-isolated fiscal changes at actual endpoints; fixed current incidence keys"),
-                ("controlled beside arms", "p8_ablations.csv", "leave one source item/social correction out, named budget variants; explicit frames"),
                 ("both pension sets", "p8_channel_ledger.csv", "basis=set/cash; end=low/high; current debt-class rows plus social; no historical debt stock")]
     write(pd.DataFrame(mappings, columns=["memo_table","file","selection"]), "p7_table_map.csv", out)
     pins.finish()
@@ -265,8 +287,8 @@ def measure(out):
     sys.path.insert(0, str(FISCAL / "scripts"))
     from memory_budget import require_within_budget
     memory = require_within_budget()
-    audit = dict(case="oct15", stationary_verdict=True, membership=model.membership,
-        population=model.payload["meta"]["population_v8"],
+    audit = dict(case='oct16', stationary_verdict=True, membership=model.membership,
+        population=model.payload["meta"]["population_v9"],
         credits=model.credits["metadata"], notes=dict(initial=model.initial_notes, incidence=model.notes),
         details=model.details, source_pins=pins.used, memory_limit_bytes=2_500_000_000,
         social_uncertainty_rule="live current row levels; declared producer ratios on those rows; budget PM counterflows have point values rather than historical consumer-PM ranges",
@@ -279,7 +301,7 @@ def measure(out):
         raise RuntimeError("[BLOCKED] derived artifacts exceed file-size contract: " + str(oversized))
     receipt = dict(wall_seconds=time.perf_counter()-start, user_seconds=resource.getrusage(resource.RUSAGE_SELF).ru_utime,
                    system_seconds=resource.getrusage(resource.RUSAGE_SELF).ru_stime, memory=memory)
-    with (HERE / "_cache/oct15_timings.jsonl").open("a") as handle:
+    with (HERE / '_cache/oct16_timings.jsonl').open("a") as handle:
         handle.write(json.dumps(receipt) + "\n")
     print("[Phase B] " + json.dumps(dict(rows=len(shares), gates=len(p7.GATES), **receipt)), flush=True)
 

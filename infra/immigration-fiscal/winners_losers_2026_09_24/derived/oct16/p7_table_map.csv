@@ -1,0 +1,6 @@
+memo_table,file,selection
+shares,p7_net_shares.csv,"select financing, frame, level, arm, epsilon, population, sharing explicitly"
+cuts,p7_cuts.csv.gz,"gzip; same explicit scenario tags, plus cut and group"
+channels,p7_channel_table.csv,"select financing, frame, level, arm, epsilon explicitly; mixed_boundary only with mixed_unit"
+uncertainty extrema,p7_grid_extrema.csv,social low/central/high from live producer; labelled dollar/share extrema
+both pension sets,p8_channel_ledger.csv,basis=set/cash; end=low/high; current debt-class rows plus social; no historical debt stock

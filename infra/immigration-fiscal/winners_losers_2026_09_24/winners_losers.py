@@ -353,8 +353,13 @@ CASES = {
                   base_dir="oct15", debt_dir="oct15", gen_results="generation_results_oct15.csv", out="oct15",
                   group_weights="lineage", current_flows_only=True, case_commit=CASE15_COMMIT),
 }
-RUNNABLE = ("oct15",)
-DEFAULT_CASE = "oct15"
+CASES["oct16"] = dict(CASES["oct15"], model="adopted_2026_10_16", label="October 16 case (main case v9)",
+    prev="oct15", lane="main_case_2026_10_16", date="2026-10-20", base="WORKTREE", debt="WORKTREE",
+    debt_files="WORKTREE", gen="WORKTREE", case_commit="7dfb4c66", base_dir="oct16", debt_dir="oct16",
+    gen_results="generation_results_oct16.csv", out="oct16", published="sept24_propagation_2026_09_24/derived/oct16",
+    published_dir="sept24_propagation_2026_09_24/derived/oct16", population_key="population_v9", summary_key="v9")
+RUNNABLE = ("oct16",)
+DEFAULT_CASE = "oct16"
 CASE: dict = {}   # the run's case with its previous case under "prev" (configure)
 # At a school response of 1 nothing is left unfunded, so the school dilution rows (priced at the
 # account's former 0.63-0.66) stay in the role table (decisions/2026-09-26-main-case-schools-full-cost.md).
@@ -510,6 +515,16 @@ def configure(case: str, out_dir: Path | None = None, dev_unpinned: bool = False
             body = git_show(f"infra/immigration-fiscal/{rel}", commit)
             gate(f"oct15_principal_pin_{rel}", sha(body) == digest and file_sha(FISCAL / rel) == digest,
                  commit=commit, sha256=digest)
+    if case == "oct16":
+        PATHS.update(debt_contract=FISCAL / "debt_legacy_2026_09_23/derived/oct16/current_flow_contract.json",
+                     debt_source_parts=FISCAL / "debt_legacy_2026_09_23/derived/oct16/current_flow_source_parts_2024.csv",
+                     social_json=FISCAL / c["published_dir"] / "real_costs_totals.json",
+                     case_payload=FISCAL / c["lane"] / "derived/corrections.json")
+        PATHS.pop("debt_corrections", None)
+        PINNED.pop("debt_corrections", None)
+        for key in ("real_costs", "band_variants", "social_json", "debt_contract", "debt_source_parts", "case_payload"):
+            PINNED[key] = WORKTREE
+        print("[WORKTREE INPUT] oct16 source snapshot is checked before and after pricing by p9 pins")
     return CASE
 
 
@@ -674,8 +689,19 @@ def fiscal_one_definition(B, fin):
         A = {"low": float(ft["A_low_cost"]), "high": float(ft["A_high_cost"])}
         e = fin[case]["ends"]
         diff = {end: A[end] - float(e[end]["A_bn"]) for end in ("low", "high")}
-        gate(f"fiscal_totals_{arg}_matches_engine", all(abs(v) < 1e-3 for v in diff.values()), fiscal_totals=A,
-             engine={end: float(e[end]["A_bn"]) for end in ("low", "high")}, diff=diff)
+        attribution = {end: 0. for end in ("low", "high")}
+        if arg == "oct16":
+            # The source distribution account splits combined reporter/count
+            # production by assumed generation P/F shares. This consumer keeps
+            # those combined carriers explicitly unlocated. Reconcile only
+            # that declared attribution bridge, never a fitted residual.
+            for end in attribution:
+                parts = ft["production"]["ends"][end]
+                attribution[end] = -sum(parts[k][f] for k in ("reporter", "count") for f in ("P_bn", "F_bn"))
+        gap = {end: diff[end] - attribution[end] for end in diff}
+        gate(f"fiscal_totals_{arg}_matches_engine", all(abs(v) < (1e-9 if arg == "oct16" else 1e-3) for v in gap.values()), fiscal_totals=A,
+             engine={end: float(e[end]["A_bn"]) for end in ("low", "high")}, diff=diff,
+             source_production_attribution_bn=attribution, reconciled_gap_bn=gap)
         fin[case]["A_one_definition"] = ({end: float(e[end]["A_bn"]) for end in ("low", "high")}
                                              if CASE.get("current_flows_only") else A)
         out[case] = dict(A=A, engine_A={end: float(e[end]["A_bn"]) for end in ("low", "high")}, diff=diff,
@@ -734,7 +760,7 @@ def current_flow_split(fin):
     raw = read_input("debt_source_parts")
     table = pd.read_csv(io.BytesIO(raw))
     contract = json.loads(read_input("debt_contract"))
-    gate("oct15_debt_contract_is_current_flow_only", contract["case"] == "oct15"
+    gate("oct15_debt_contract_is_current_flow_only", contract["case"] == CASE["case"]
          and not contract["historical_stock_identified"])
     known = {"cash", "resource_cost", "pension_accrual", "displaced_beneficiaries", "private_production", "unlocated"}
     gate("oct15_financing_classes_declared", set(table.financing) <= known, classes=sorted(set(table.financing)))
@@ -2903,7 +2929,8 @@ def row4_group_weights(B, d):
     grid_file = FISCAL / prod["grid"]["file"]
     gate("row4_group_grid_file_is_the_payload_s", file_sha(grid_file) == prod["grid"]["sha256"], file=prod["grid"]["file"])
     r4 = json.loads(grid_file.read_text())
-    pw, civ, tgt = d.pw.to_numpy(), d.civ.to_numpy(), d.target.to_numpy()
+    pw = (d.pw_production if CASE.get("case") == "oct16" else d.pw).to_numpy()
+    civ, tgt = d.civ.to_numpy(), d.target.to_numpy()
     outside = ~np.isin(d.st.to_numpy(), B.ROW4_EXCLUDED_STATES)
     factor = np.ones(len(d))
     for status, label in B.ROW4_STATUS.items():
@@ -2977,7 +3004,7 @@ def age_band_factors(d, w4, g3, lineage):
 
 
 def completed_group_weights(B, d):
-    """Located v8 members only; net-missing coverage people have no household.
+    """Located live-case members only; net-missing coverage people have no household.
 
     The original modeled descendants retain their five-year age proxy. Actual
     completion reporters and children receive their own CPS record weights.
@@ -2998,10 +3025,17 @@ def completed_group_weights(B, d):
     completed = np.asarray(ids.isin(pd.MultiIndex.from_tuples([(x["PH_SEQ"], x["PPPOS"]) for x in records])))
     gate("oct15_completed_group_no_overlap", not np.any(completed & original))
     gate("oct15_completed_group_record_count", int(completed.sum()) == len(records))
-    weights[completed] = d.pw.to_numpy()[completed]
+    observed = (d.pw_production if CASE.get("case") == "oct16" else d.pw).to_numpy()
+    weights[completed] = observed[completed]
     located = original | completed
+    if CASE["case"] == "oct16":
+        from p9_calibration import observed_factors
+        # Calibrate observed members only. The original unreported descendant
+        # addition keeps its measured age distribution and source count.
+        factors = observed_factors(d)
+        weights[located] += np.where(completed, observed, w4)[located] * (factors[located] - 1)
     count = float(weights[located].sum())
-    population = payload["meta"]["population_v8"]
+    population = payload["meta"][CASE.get("population_key", "population_v8")]
     gate("oct15_group_located_count", np.isclose(count, population["without_coverage"], rtol=1e-12, atol=1e-6),
          located=count, target=population["without_coverage"])
     gate("oct15_coverage_not_put_in_households", np.isclose(population["with_coverage"], count + population["coverage"], rtol=1e-12, atol=1e-6),
@@ -3184,7 +3218,7 @@ def counterfactual() -> str:
     if CASE.get("current_flows_only"):
         payload = json.loads(read_input("case_payload"))
         return ("2024, with vs without the complete Mexican-immigrant lineage "
-                f"({payload['meta']['population_v8']['with_coverage']:.8f} people, coverage included); "
+                f"({payload['meta'][CASE.get('population_key', 'population_v8')]['with_coverage']:.8f} people, coverage included); "
                 "stationary financing central; cohort financing beside")
     return {"row4": CF_ROW4, "lineage": CF_LINEAGE}.get(CASE.get("group_weights"), CF)
 
@@ -3645,10 +3679,11 @@ def core_registry(totals, meta, fin, social=None):
     # Preserve the public registry's net set-minus-cash contract, including
     # the mixed-unit timing bridge that the typed trust class keeps separate.
     summary = json.loads(git_show(f"infra/immigration-fiscal/{CASE['lane']}/derived/summary.json", CASE["case_commit"]))
-    values["future_pension_accrual"] = levels(*[summary["v8"]["cash_set_bn"][j] - summary["v8"]["band_bn"][j]
+    values["future_pension_accrual"] = levels(*[summary[CASE.get("summary_key", "v8")]["cash_set_bn"][j] - summary[CASE.get("summary_key", "v8")]["band_bn"][j]
                                                 for j in (0, 1)])
     source = json.loads(read_input("social_json"))
-    pair = source["v8_social_environment"]["variants"]["central"]["pairing_bn"]
+    from p8_social import environment
+    pair = environment(source)["variants"]["central"]["pairing_bn"]
     values["account_plus_social"] = levels(-pair["low"], -pair["high"])
     values["published_total_equal_footing"] = dict(values["account_plus_social"])
     for key, amount in (social or {}).items():
@@ -3658,13 +3693,13 @@ def core_registry(totals, meta, fin, social=None):
         table.loc[index, ["date", "counterfactual"]] = [CASE["date"], counterfactual()]
         if key in values:
             table.loc[index, ["bn_low", "bn_central", "bn_high"]] = [values[key][level] for level in LEVELS]
-            table.loc[index, "note"] = "Current oct15 source; stationary financing verdict, cohort beside."
-            table.loc[index, "source_lane"] = CASE["lane"] if key == "main_case" else "winners_losers_2026_09_24/derived/oct15"
+            table.loc[index, "note"] = f"Current {CASE['case']} source; stationary financing verdict, cohort beside."
+            table.loc[index, "source_lane"] = CASE["lane"] if key == "main_case" else f"winners_losers_2026_09_24/derived/{CASE['case']}"
         else:
             table.loc[index, ["bn_low", "bn_central", "bn_high"]] = ""
             table.loc[index, "status"] = "pending"
             table.loc[index, "in_net"] = "no"
-            table.loc[index, "note"] = "[DEGRADED] no current oct15 price; frozen historical amounts are not reused."
+            table.loc[index, "note"] = f"[DEGRADED] no current {CASE['case']} price; frozen historical amounts are not reused."
     table.loc[table.id.isin(["account_plus_social", "published_total_equal_footing"]), "label"] = "Current fiscal case plus paired social stack"
     if "unlocated_fiscal" in totals:
         values["unlocated_fiscal"] = totals["unlocated_fiscal"]
@@ -3676,7 +3711,7 @@ def core_registry(totals, meta, fin, social=None):
             bn_high=amount["high"], who="explicit channel key", relation="beside" if key.startswith("p7_social_") else "inside",
             in_net="social" if key.startswith("p7_social_") else "account", counterfactual=counterfactual(),
             source_lane=CASE["published_dir"] if key.startswith("p7_social_") else CASE["debt_dir"],
-            status="adopted", date=CASE["date"], note="Explicit oct15 addition; stable historical IDs retained.")
+            status="adopted", date=CASE["date"], note=f"Explicit {CASE['case']} addition; stable historical IDs retained.")
         table = pd.concat([table, pd.DataFrame([row])], ignore_index=True)
     gate("oct15_registry_ids_unique", table.id.is_unique)
     return table
@@ -3741,7 +3776,7 @@ def parse_args(argv=None):
 
 def main():
     args = parse_args()
-    if args.case == "oct15":
+    if args.case in ("oct15", "oct16"):
         from p8_phase_b import run
         return run(args.out_dir)
     configure(args.case, args.out_dir, args.dev_unpinned)

@@ -13,6 +13,7 @@ import itertools
 import json
 import resource
 import sys
+import tempfile
 import time
 import zipfile
 from pathlib import Path
@@ -284,8 +285,9 @@ def main():
     parser.add_argument("--only-baseline", action="store_true", help="probe frozen control before the full ablation grid")
     args = parser.parse_args()
     out = args.out_dir.resolve()
-    if out.is_relative_to(HERE / "derived") or not out.is_relative_to(Path("/private/tmp")):
-        raise SystemExit("[BLOCKED] Phase A writes only to an explicit /private/tmp scratch directory")
+    temp_roots = {Path(tempfile.gettempdir()).resolve(), Path("/tmp").resolve()}
+    if out.is_relative_to(HERE / "derived") or not any(out.is_relative_to(root) for root in temp_roots):
+        raise SystemExit("[BLOCKED] Phase A writes only to an explicit system temporary directory")
     out.mkdir(parents=True, exist_ok=True)
     if args.prepare_pins:
         prepare_pins(out)

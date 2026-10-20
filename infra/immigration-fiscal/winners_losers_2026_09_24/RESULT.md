@@ -1,4 +1,4 @@
-**Verdict:** On corrected v8, stationary financing, the current paired social stack and household pooling, 2.6140% / 4.4926% / 8.0294% of other residents are ahead under rules a/b/c; their central annual net is $-514.541916bn. Cohort financing is beside. [MODEL / FRAMING-SENSITIVE; CALCULATION: derived/oct15/p7_net_shares.csv]
+**Verdict:** On adopted v9, stationary financing, the paired social stack and household pooling, 2.7939% / 4.7146% / 8.3071% of other residents are ahead under rules a/b/c; their central annual net is $-505.650039bn. Cohort financing is beside. [MODEL / FRAMING-SENSITIVE; CALCULATION: derived/oct16/p7_net_shares.csv]
 
 
 
@@ -2616,4 +2616,20 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/winne
 
 Would change it: measured recipient keys, a joint completion/removal counterfactual, or different explicit financing/sharing premises. Model self-report: inherited GPT-6 agent; no unverified exact served-model claim. The executed source totals and verifier receipts carry the numerical claims. [UNVERIFIED: exact model id]
 
+2026-10-20 20:53:24 JST — Moved the live run to adopted oct16. Stationary pooled central shares ahead under a/b/c are 2.7939% / 4.7146% / 8.3071%; annual net -$505.650039bn, from `derived/oct16/p7_net_shares.csv`. All40,680 computation gates and102 tests pass. The full source ledger reproduces set $368.029739–436.561527bn and cash $284.397043–352.928831bn; generation splits close at1e-9. Historical oct15 outputs are preserved. [CALCULATION: derived/oct16/{fiscal_specs.csv,p7_net_shares.csv,p7_gates.json.gz,p7_inputs.json}]
 
+2026-10-20 21:03:34 JST — Final full replay passed: IDENTICAL238/238, exit0;102 tests. All163 historical derived files separately match HEAD byte for byte. The static coverage declaration now names all three p9 test files; no exemption is used. A document-only replay verifies this appended receipt without rerunning unchanged scientific work. [CALCULATION: parent scratch prop9/winners-final-rerun2.log; changed-paths.txt]
+
+## v9 case (oct16)
+
+**Verdict:** On adopted v9, stationary financing, the paired social stack and household pooling, 2.7939% / 4.7146% / 8.3071% of other residents are ahead under rules a/b/c; their central annual net is $-505.650039bn. Cohort financing is beside. [MODEL / FRAMING-SENSITIVE; CALCULATION: derived/oct16/p7_net_shares.csv]
+
+The complete calibrated lineage contains 44903074.08624522 people; 42951314.00418314 are placed on observed/proxy records and 1951760.08206208 remain unlocated. Native-minor calibration changes only observed member weights; the original unreported descendants retain their measured age proxy. Coverage is excluded from payer households. [DATA: derived/oct16/p7_inputs.json population; main-case meta.population_v9]
+
+The full set/cash typed source ledger carries selected military, retirement administration, college, joint count/tenure, taxable-basket, common capital-rate and health-key components. Capital is an imputed resource cost, outside borrowing. Item19/W09 remain beside. Per-item isolated and leave-one-out ablations are not computed for v9: they need a per-item effects export for items 13-21, which does not exist. Financing and attribution scenarios are computed on oct16. [DATA: derived/oct16/p8_channel_ledger.csv; p7_trust_inputs.json; p7_net_shares.csv]
+
+Reporter/count combined production is retained as an explicit unlocated carrier. The distribution source consumer uses assumed generation P/F shares for the same carriers; their declared difference is reconciled at1e-9 before pricing. No private-income split is inferred here. [CALCULATION: fiscal_one_definition; fiscal_specs.csv; p7_gates.json.gz]
+
+Upstream oct16 consumers are explicit SHA256 worktree snapshots because this worker cannot commit. Every used source hash is checked before and after pricing; changes stop the run. Allocation keys and household pooling are modeled incidence, not measured winners. [DATA: inputs/p9_pins_oct16.json; derived/oct16/p7_inputs.json source_pins]
+
+Run `sh infra/immigration-fiscal/winners_losers_2026_09_24/run_all.sh`. Explicit acquisition after reviewing upstream changes: `uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/p8_phase_b.py --prepare-pins` (use --revise-pins for an existing snapshot). Normal pricing never changes source pins.

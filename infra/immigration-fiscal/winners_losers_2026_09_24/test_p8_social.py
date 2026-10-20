@@ -4,6 +4,7 @@ import json
 
 import numpy as np
 import pandas as pd
+import pytest
 
 import p7_frames as p7
 from p8_social import amounts, normalized, SOURCE_REL
@@ -13,7 +14,8 @@ def test_round3_rows_close_and_keep_paired_pm_flows_separate():
     from pathlib import Path
     data = json.loads((Path(__file__).resolve().parent.parent / SOURCE_REL).read_text())
     rows = amounts(data)
-    env = data["v8_social_environment"]
+    from p8_social import environment
+    env = environment(data)
     for end in ("low", "high"):
         assert abs(sum(v[end] for v in rows.values()) - env["current_social_by_end_bn"][end]) < 1e-9
         assert rows["pm25_respending"][end] < 0 < rows["pm25_government_side"][end]
@@ -22,8 +24,14 @@ def test_round3_rows_close_and_keep_paired_pm_flows_separate():
         assert abs(neither["pm25_government_side"][end]) < 1e-12
     adapted = normalized(data)
     assert len(adapted["lineage_social_rows"]["rows"]) == len(rows)
-    matched = amounts(data, "matched_justice_footing")
+    # The v9 producer does not publish this v8 justice companion. Check its
+    # retained historical contract separately; never substitute it into v9.
+    historical = json.loads((Path(__file__).resolve().parent.parent /
+        "sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json").read_text())
+    matched = amounts(historical, "matched_justice_footing")
     assert matched["variant_fiscal_justice"]["high"] == 0.
+    with pytest.raises(KeyError, match="matched_justice_footing"):
+        amounts(data, "matched_justice_footing")
     legacy = amounts(data, "government_legacy_response")
     assert "variant_unlocated" not in legacy
     assert legacy["pm25_government_side"]["low"] > 0
@@ -34,6 +42,27 @@ def test_budget_counterflows_do_not_inherit_historical_consumption_bounds():
     for item in ("pm25_respending", "pm25_government_side"):
         assert uncertainty_ratio({}, item, "low", {}, None) == 1.
         assert uncertainty_ratio({}, item, "high", {}, None) == 1.
+
+
+def test_live_v9_declaration_uses_explicit_inherited_namespace():
+    from pathlib import Path
+    from p8_social import producer_declaration, uncertainty_ratio
+    data = json.loads((Path(__file__).resolve().parent.parent / SOURCE_REL).read_text())
+    declaration = data["inherited_oct15"]["social_items_in_the_social_rows"]
+    assert "social_items_in_the_social_rows" not in data
+    adapted = normalized(data)
+    assert adapted["social_items_in_the_social_rows"] == declaration
+    assert {r["item"] for r in declaration["items"]} <= set(amounts(data))
+    row = next(r for r in declaration["items"] if r["item"] == "school_disruption")
+    assert uncertainty_ratio(data, row["item"], "low", {}, None) == row["low_bn"] / row["central_bn"]
+    assert "social_items_in_the_social_rows" not in data
+    # A top-level decoy cannot replace the producer's required v9 namespace.
+    data["social_items_in_the_social_rows"] = declaration
+    del data["inherited_oct15"]["social_items_in_the_social_rows"]
+    with pytest.raises(RuntimeError, match="BLOCKED.*social producer declaration"):
+        normalized(data)
+    with pytest.raises(RuntimeError, match="BLOCKED.*social producer declaration"):
+        producer_declaration(data)
 
 
 def test_transport_removes_observed_member_without_losing_signed_state_dollars():

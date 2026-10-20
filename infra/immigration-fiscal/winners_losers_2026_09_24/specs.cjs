@@ -1,6 +1,6 @@
 /* The adopted main case, specification by specification, split into the engine's three terms.
  *
- * For the live case (--case, default oct15) this evaluates the explorer engine at each of the package's
+ * For the live case (--case, default oct16) this evaluates the explorer engine at each of the package's
  * main-case specifications of the case and of the case before it, and writes the direct fiscal
  * response A, the private production term P and the induced receipts F. welfare = P + A + F, and the
  * cost to other residents is -welfare. winners_losers.py puts A + F in the fiscal channel and P in the
@@ -27,7 +27,10 @@
  *   --case oct07           adopted_2026_10_05 (its lane's package, at its band variant oct05_case in OCT07_LANE's
  *                          main_case_bands.csv) and adopted_2026_10_07 (OCT07_LANE: main case v6, v5 plus the items in
  *                          its payload's meta.items), written to derived/oct07/.
- * Live case oct15 writes only derived/oct15/, on its 32 personal MAIN_SPECS.
+ * Live case oct16 writes only derived/oct16/, on its 32 personal MAIN_SPECS.
+ * V9 capital columns retain the case's internal source-price coordinates; typed
+ * post rows carry the live one-rate revaluation. Count net-production carriers
+ * have no identified P/F split and remain explicit unlocated post rows in A.
  * Old-case tables remain frozen. Coverage's declared P/F enters production and induced receipts;
  * its fiscal/capital/unclassified parts and mixed-unit recomputation enter A, with explicit line rows.
  * Receipt overrides take the specification's reading (R7). The oct14 CSV header stays fixed.
@@ -66,7 +69,7 @@
 "use strict";
 const fs = require("fs");
 const path = require("path");
-require("./p7_inputs.cjs").checkPins();
+require("./p9_inputs.cjs").checkPins();
 
 const HERE = __dirname;
 const FISCAL = path.join(HERE, "..");
@@ -75,6 +78,7 @@ const OCT05_LANE = "main_case_2026_10_05";
 const OCT07_LANE = "main_case_2026_10_07";
 const OCT14_LANE = "main_case_2026_10_14";
 const OCT15_LANE = "main_case_2026_10_15";
+const OCT16_LANE = "main_case_2026_10_16";
 // case -> its main-case lane, and its two models in the order written: [name, payload lane or null for
 // the explorer model, variant in the lane's main_case_bands.csv, the package whose MAIN_SPECS it uses].
 const CASES = {
@@ -104,17 +108,19 @@ const CASES = {
     ["adopted_2026_10_14", OCT14_LANE, "adopted", P]] },
   oct15: { lane: OCT15_LANE, out: "oct15", models: (P) => [
     ["adopted_2026_10_15", OCT15_LANE, "adopted", P]] },
+  oct16: { lane: OCT16_LANE, out: "oct16", models: (P) => [
+    ["adopted_2026_10_16", OCT16_LANE, "adopted", P]] },
 };
 const opt = (name, fallback) => {
   const i = process.argv.indexOf(name);
   return i > 0 ? process.argv[i + 1] : fallback;
 };
-const CASE = opt("--case", "oct15");
+const CASE = opt("--case", "oct16");
 if (!CASES[CASE]) {
   console.error(`unknown case ${CASE}; one of ${Object.keys(CASES).join(", ")}`);
   process.exit(2);
 }
-if (CASE !== "oct15") throw new Error(`[BLOCKED] only live case oct15 is computed; ${CASE} outputs stay frozen`);
+if (CASE !== "oct16") throw new Error(`[BLOCKED] only live case oct16 is computed; ${CASE} outputs stay frozen`);
 const OUT = path.resolve(opt("--out-dir", path.join(HERE, "derived", CASES[CASE].out || "")));
 const P = require(path.join(FISCAL, CASES[CASE].lane, "package.cjs"));
 const { Engine, MODEL } = P;
@@ -142,6 +148,7 @@ function evaluate(pkg, m, spec) {
     // amount is fiscal, and must not swallow these production terms.
     return { r: full.evaluation, capital: full.capital,
       post:full.post_engine || {total_bn:0}, coverage,
+      v9:full.v9_post_engine,
       postA:-(full.post_engine?.total_bn || 0)-production.P_bn-production.F_bn,
       postP:production.P_bn,postF:production.F_bn };
   }
@@ -180,7 +187,7 @@ for (const [caseName, payloadLane, variant, pkg] of CASES[CASE].models(P)) {
   const m = payload ? Engine.applyCorrections(MODEL, payload) : MODEL;
   const specs = pkg.MAIN_SPECS;
   if (payload && payload.meta.allocation) {
-    const ends = readJson(`${payloadLane}/derived/summary.json`).v8.end_specifications;
+    const ends = readJson(`${payloadLane}/derived/summary.json`).v9.end_specifications;
     gate(`${caseName}: the band uses 32 personal specifications`,
       specs.length === 32 && specs.every((s) => s.allocation === "personal"));
     gate(`${caseName}: adopted end specifications are 16 / 11`,
@@ -212,6 +219,11 @@ for (const [caseName, payloadLane, variant, pkg] of CASES[CASE].models(P)) {
   const costs = results.map((x) => -x.r.welfare_bn + capOf(x)+(x.post?.total_bn||0));
   const lo = Math.min(...costs), hi = Math.max(...costs);
   const want = published[variant];
+  const summary = readJson(`${payloadLane}/derived/summary.json`).v9;
+  gate(`${caseName}: unrounded adopted set band matches summary`,
+    Math.abs(lo-summary.band_bn[0])<1e-9 && Math.abs(hi-summary.band_bn[1])<1e-9);
+  gate(`${caseName}: found end specifications match v9`,
+    summary.end_specifications.set.every(e=>e[0]===costs.indexOf(lo)&&e[1]===costs.indexOf(hi)));
   gate(`${caseName}: band reproduces main_case_bands.csv (${variant})`,
     Math.abs(lo - want[0]) < 1e-4 && Math.abs(hi - want[1]) < 1e-4,
     `${lo.toFixed(4)}–${hi.toFixed(4)} vs ${want[0]}–${want[1]}`);
@@ -220,7 +232,7 @@ for (const [caseName, payloadLane, variant, pkg] of CASES[CASE].models(P)) {
     `max |gap| ${vsPackage.toExponential(2)}`);
   // oct15's inherited uncorrected row predates the union-completion carriers;
   // evaluating the bare model with their responses is not a declared case.
-  if (CASE !== "oct15" && variant === "adopted" && published.uncorrected_at_adopted_responses) {
+  if (!["oct15", "oct16"].includes(CASE) && variant === "adopted" && published.uncorrected_at_adopted_responses) {
     const unc = specs.map((spec) => pkg.cost(MODEL, spec));
     const w = published.uncorrected_at_adopted_responses;
     gate(`${caseName}: the uncorrected model reproduces uncorrected_at_adopted_responses`,
@@ -293,6 +305,22 @@ for (const [caseName, payloadLane, variant, pkg] of CASES[CASE].models(P)) {
       lineRows.push({case:caseName,end,side:"post_engine",line:"mixed_unit_removal",
         amount_bn:hit.post.mixed_unit_removal_bn,response:1,effect_bn:-hit.post.mixed_unit_removal_bn});
     }
+    if (hit.v9) {
+      for (const [id, amount] of Object.entries(hit.v9.amounts)) {
+        // Current coverage already contains its repricing, and its complete
+        // source-side rows were emitted above. Never apply the kernel twice.
+        if (id === "coverage_repricing") continue;
+        const block = m.corrections[id];
+        const parts = ["native_minor_calibration", "coverage_tenure"].includes(id)
+          ? pkg.RATE.countParts(block, end).map(p => ({...p, delta_bn:p.delta_cost_bn}))
+          : hit.v9.parts[id] || [];
+        const total = parts.reduce((s,p) => s + p.delta_bn, 0);
+        gate(`${caseName} ${end}: ${id} typed post closure`, Math.abs(total-amount)<1e-9,
+          `${total} vs ${amount}`);
+        for (const [i,p] of parts.entries()) lineRows.push({case:caseName,end,side:"post_engine",
+          line:`v9_${id}_${i}_${p.source_line || p.line}`,amount_bn:p.delta_bn,response:1,effect_bn:-p.delta_bn});
+      }
+    }
     // The lines, capital included, add to fiscal_specs.csv's A_bn at every specification of the band end.
     const sum = lineRows.filter((x) => x.case === caseName && x.end === end).reduce((s, x) => s + x.effect_bn, 0);
     const ends = rows.filter((x) => x.case === caseName && x.band_end === end);
@@ -314,6 +342,7 @@ if (failures) {
   process.exit(1);
 }
 fs.mkdirSync(OUT, { recursive: true });
+require("./p9_inputs.cjs").checkPins();
 // Downstream world-ledger pins this public schema. New carrier responses are
 // available in the payload and line table; they do not extend these columns.
 const stableSpecKeys=fs.readFileSync(path.join(HERE,"derived/oct14/fiscal_specs.csv"),"utf8").split("\n",1)[0].split(",");

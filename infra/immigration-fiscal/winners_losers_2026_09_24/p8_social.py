@@ -13,13 +13,36 @@ import numpy as np
 
 import p7_frames as p7
 
-SOURCE_REL = "sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json"
+SOURCE_REL = 'sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json'
 PM_ROWS = ("pm25_consumption", "pm25_respending", "pm25_government_side")
+
+
+def environment(data):
+    return data["v9_social_environment" if data.get("case") == "oct16" else "v8_social_environment"]
+
+
+def producer_declaration(data):
+    """Read the producer's explicit historical range/declaration namespace.
+
+    V9 retains these v8 source ranges under inherited_oct15; its current point
+    amounts remain in v9_social_environment.current_social_rows.
+    """
+    case = data.get("case")
+    try:
+        if case == "oct16":
+            parent = data["inherited_oct15"]
+        elif case in ("oct14", "oct15"):
+            parent = data
+        else:
+            raise RuntimeError(f"[BLOCKED] unsupported social declaration case: {case}")
+        return parent["social_items_in_the_social_rows"]
+    except (KeyError, TypeError) as exc:
+        raise RuntimeError(f"[BLOCKED] missing {case} social producer declaration") from exc
 
 
 def source(wl):
     data = json.loads(p7.pin(wl.FISCAL / SOURCE_REL, wl).read_text())
-    env = data["v8_social_environment"]
+    env = environment(data)
     extra = env["v8_added_social"]
     p7.require("item11_social_consumption_shift", abs(extra["item11_consumption_factor"] +
         extra["item11_m5_consumption_bn"] / extra["union_consumption_keyed_receipts_bn"]) < 1e-12)
@@ -31,7 +54,7 @@ def source(wl):
 
 
 def amounts(data, variant="central"):
-    env = data["v8_social_environment"]
+    env = environment(data)
     rows = {r["item"]: dict(r["total_by_end_bn"]) for r in env["current_social_rows"]}
     central = env["variants"]["central"]
     # The producer's PM row already contains re-spending. Separate it once.
@@ -60,12 +83,16 @@ def amounts(data, variant="central"):
 
 
 def normalized(data):
+    declaration = producer_declaration(data)
     out = copy.deepcopy(data)
+    # The existing allocator consumes this declaration key. The adapter names
+    # its exact producer namespace above; the principal source stays untouched.
+    out["social_items_in_the_social_rows"] = copy.deepcopy(declaration)
     values = amounts(data)
     primary = out["lineage_social_rows"]
     primary["rows"] = [dict(item=k, **{f"union_{e}_bn": v[e] for e in ("low", "high")},
                             added_low_bn=0., added_high_bn=0.) for k, v in values.items()]
-    primary["union_social_bn"] = dict(data["v8_social_environment"]["current_social_by_end_bn"])
+    primary["union_social_bn"] = dict(environment(data)["current_social_by_end_bn"])
     primary["added_social_bn"] = dict(low=0., high=0.)
     return out
 
@@ -75,7 +102,7 @@ def allocate(wl, d, I, ch, meta, weights, rule, ctx, notes):
     arrays, values, table = p7.social_channels(wl, d, I, ch, meta, weights,
         "lineage", rule, ctx, notes=notes, source_data=normalized(data))
     for end in ("low", "high"):
-        target = data["v8_social_environment"]["current_social_by_end_bn"][end]
+        target = environment(data)["current_social_by_end_bn"][end]
         p7.check_total(f"round3_social_ledger_{end}", sum(a[end] for a in arrays.values()), weights, -target)
     return arrays, values, table
 
@@ -89,7 +116,7 @@ def uncertainty_ratio(data, item, setting, channels, weights):
         # producer's separately declared funding/purchase amounts.
         return 1.
     producer_item = "pm25_consumption" if item in PM_ROWS else item
-    producers = {r["item"]: r for r in data["social_items_in_the_social_rows"]["items"]}
+    producers = {r["item"]: r for r in producer_declaration(data)["items"]}
     if producer_item in producers:
         row = producers[producer_item]
         p7.require(f"live_social_range_{item}", row["low_bn"] <= row["central_bn"] <= row["high_bn"])

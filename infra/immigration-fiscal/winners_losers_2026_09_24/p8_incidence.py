@@ -126,7 +126,7 @@ class Incidence:
         self.mw, _ = wl.lineage_group_weights(B, d)
         self.uw, _ = wl.row4_group_weights(B, d)
         self.resources = own_resources(d)
-        if wl.CASE["case"] == "oct15":
+        if wl.CASE['case'] in ("oct15", "oct16"):
             from p8_social import source
             self.source = source(wl)
         else:
@@ -146,7 +146,7 @@ class Incidence:
         self.epsilon_cache.clear()
         self.notes = {}
         p7.CUT_CACHE.clear()
-        if self.wl.CASE.get("case") == "oct15":
+        if self.wl.CASE.get('case') in ("oct15", "oct16"):
             from p8_membership import payer_weights
             self.weights, self.payer_cells, self.payer_audit = payer_weights(
                 self.d, self.w, self.lineage, self.wl, geographic=10 in self.fixes)
@@ -175,7 +175,7 @@ class Incidence:
             else:
                 keys = [p7.responding_programme_key(d, weights, self.programmes[e])[0] for e in ("low", "high")]
                 kf = ks = sum(keys) / 2
-        if wl.CASE["case"] == "oct15":
+        if wl.CASE['case'] in ("oct15", "oct16"):
             from p8_social import allocate
             soc, values, cov = allocate(wl, d, self.I, self.channels, self.meta,
                 weights, rule, dict(self.ctx, programme_receipts=kf), self.notes)
@@ -185,7 +185,7 @@ class Incidence:
         if 4 in self.fixes:
             from p8_recipient_keys import air_mortality_key, crash_victim_key
             health_items = [("pm25_consumption", air_mortality_key), ("road_crash_externality", crash_victim_key)]
-            if wl.CASE["case"] == "oct15":
+            if wl.CASE['case'] in ("oct15", "oct16"):
                 health_items += [("pm25_respending", air_mortality_key), ("pm25_government_side", air_mortality_key)]
             for item, helper in health_items:
                 key, audit = helper(d, weights, wl.FISCAL)
@@ -212,7 +212,7 @@ class Incidence:
                     share = abs(p7.total(np.where(old, soc[item]["central"], 0), weights) / values[item]["central"])
                     target = audit["expected_age65_share"]
                     p7.require("air_old_recipient_death_share", abs(share - target) <= .01, allocated_share=share, source_share=target)
-            if wl.CASE.get("case") == "oct15":
+            if wl.CASE.get('case') in ("oct15", "oct16"):
                 for L in wl.LEVELS:
                     a, b = "pm25_government_side", "pm25_respending"
                     error = np.max(np.abs(soc[a][L]*values[b][L] - soc[b][L]*values[a][L]))
@@ -224,7 +224,7 @@ class Incidence:
             pkey, missing = p7.property_key(d, self.I, self.B, weights)
         statew = {L: p7.state_wages(d, weights, self.channels["wages"][L], wl, group_weights=self.mw)[0] for L in wl.LEVELS}
         factor = self.lineage["members"]["g3plus"] / self.lineage["counts"]["identified_g3plus"]
-        if wl.CASE["case"] == "oct15":
+        if wl.CASE['case'] in ("oct15", "oct16"):
             credit_policy(wl.CASE["case"], self.payload, False)
             credit = self.credits["by_end"]
         else:
@@ -234,7 +234,7 @@ class Incidence:
             credit = credit * amount / p7.total(credit, weights)
         result = dict(kf=kf, ks=ks, social=soc, social_values=values, property_key=pkey,
                       statew=statew, credit=credit, programme_table=table, property_audit=missing)
-        if wl.CASE.get("case") == "oct15":
+        if wl.CASE.get('case') in ("oct15", "oct16"):
             result["credit_attribution"] = self.credits.get("by_end_attribution", credit)
         self.cache[rule] = result
         return result
@@ -252,7 +252,7 @@ class Incidence:
             return arrays
         if 5 not in self.fixes or setting == "central":
             return arrays
-        if self.wl.CASE.get("case") == "oct15":
+        if self.wl.CASE.get('case') in ("oct15", "oct16"):
             from p8_social import uncertainty_ratio
             return {item: vector * uncertainty_ratio(self.source, item, setting,
                     self.channels, self.weights) for item, vector in arrays.items()}
@@ -353,7 +353,7 @@ class Incidence:
             self.allocation_cache[allocation_key] = -wl.alloc_states(d,keysl,state_amounts,notes=self.notes,
                 label=f"state-local/{level}/property={geography}/{rule}; reused across financing frames and epsilon arms")
         pieces["state_local"] = self.allocation_cache[allocation_key]
-        if self.wl.CASE.get("case") == "oct15":
+        if self.wl.CASE.get('case') in ("oct15", "oct16"):
             pieces["unlocated_fiscal"] = -wl.alloc(d, np.ones(len(d)), fiscal.get("unlocated", 0.))
         for state_code, amount in state_amounts.items():
             mask = self.state_masks[state_code]
@@ -381,7 +381,7 @@ class Incidence:
             pieces["epsilon_induced_receipts"] = wl.alloc(d, cx["kf"], nest["delta_f"][level])
         pieces.update(self.social_vector(cx, level, social_setting, coverage_only=arm == "coverage"))
         if arm != "coverage":
-            if wl.CASE.get("case") == "oct15":
+            if wl.CASE.get('case') in ("oct15", "oct16"):
                 ends = ("low", "high") if level == "central" else (level,)
                 credits = cx["credit_attribution"] if arm == "item11_attribution" else cx["credit"]
                 components = set().union(*(credits[end] for end in ends))
@@ -401,7 +401,7 @@ class Incidence:
             if 5 in self.fixes and social_setting != "central":
                 # Gross landlord transfer follows the same parameter arm as
                 # the coherent housing net, not a net-only multiplier.
-                if wl.CASE.get("case") == "oct15":
+                if wl.CASE.get('case') in ("oct15", "oct16"):
                     from p8_social import uncertainty_ratio
                     land = land * uncertainty_ratio(self.source, "housing_gain", social_setting,
                                                     self.channels, weights)

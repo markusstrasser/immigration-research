@@ -16,7 +16,7 @@ spec.loader.exec_module(wl)
 
 def financing_fixture(monkeypatch):
     wl.CASE.clear()
-    wl.CASE.update(model="live", debt="pinned")
+    wl.CASE.update(model="live", debt="pinned", case="oct16")
     records = []
     classes = {"cash": (7., 3., 4.), "pension_accrual": (5., 5., 0.),
         "resource_cost": (2., 1., 1.), "displaced_beneficiaries": (1., .5, .5),
@@ -27,7 +27,7 @@ def financing_fixture(monkeypatch):
                 records.append(dict(basis="set", end=end, convention=convention, financing=financing,
                     responsive_bn=amount, federal_bn=federal, state_local_bn=state_local))
     raw = pd.DataFrame(records).to_csv(index=False, lineterminator="\n").encode()
-    contract = json.dumps(dict(case="oct15", historical_stock_identified=False)).encode()
+    contract = json.dumps(dict(case="oct16", historical_stock_identified=False)).encode()
     monkeypatch.setattr(wl, "read_input", lambda key: raw if key == "debt_source_parts" else contract)
     return {"live": {"ends": {end: dict(cost_bn=16., A_bn=-21., F_bn=2.) for end in ("low", "high")}}}
 
@@ -67,7 +67,7 @@ def test_completed_members_do_not_receive_other_resident_wages():
 
 
 def test_live_parser_cannot_regenerate_oct14():
-    assert wl.parse_args([]).case == "oct15"
+    assert wl.parse_args([]).case == "oct16"
     with pytest.raises(SystemExit):
         wl.parse_args(["--case", "oct14"])
 

@@ -75,7 +75,19 @@ def payer_weights(d, weights, lineage, wl, *, geographic=True):
     original = d.copy()
     original['target'], original['other'] = d.target_oct14, d.other_oct14
     fn = lineage_payers_state_age if geographic else p7_frames.lineage_payers
-    out, cells = fn(original, np.asarray(weights, float), lineage, wl)
+    extra = {}
+    if geographic and getattr(wl, 'CASE', {}).get('case') == 'oct16':
+        # Native calibration changes observed people, not the original latent
+        # descendants' state/age donor shape. Use the same raw native-G3 proxy
+        # as completed_group_weights, while thinning the calibrated payer pool.
+        require('pw_production' in original, 'raw latent donor weights missing')
+        raw = original.pw_production.to_numpy(float)
+        g3 = original.target.to_numpy(bool) & original.PRCITSHP.isin([1, 2, 3]).to_numpy() \
+            & original.PEMNTVTY.isin(wl.US_AREAS).to_numpy() \
+            & original.PEFNTVTY.isin(wl.US_AREAS).to_numpy() & original.PRDTHSP.eq(1).to_numpy()
+        factors, _ = wl.age_band_factors(original, raw, g3, lineage)
+        extra['added_weights'] = raw * (factors - 1)
+    out, cells = fn(original, np.asarray(weights, float), lineage, wl, **extra)
     old_other = original.other.to_numpy(bool)
     completion = d.completion_member.to_numpy(bool)
     original_total = float(out[old_other].sum())

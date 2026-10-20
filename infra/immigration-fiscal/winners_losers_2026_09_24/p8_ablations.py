@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 
 import p7_frames as p7
-from p8_social import amounts
+from p8_social import amounts, environment
 
 
 def summaries(model, name, rule, frame, level, vector, future, base, rows):
@@ -198,8 +198,9 @@ def ledger(model, out, write):
     for basis, end in itertools.product(("set", "cash"), ("low", "high")):
         chosen = table[table.basis.eq(basis) & table.end.eq(end) & table.convention.eq("central")]
         fiscal = -float(chosen.responsive_bn.sum())
-        expected = -float(model.fin[model.wl.CASE["model"]]["ends"][end]["cost_bn"]) if basis == "set" else -float(
-            model.source["v8_social_environment"]["variants"]["central"]["parts"][end]["resource_account"]["cash_cost_bn"])
+        case_summary = json.loads((model.wl.FISCAL / model.wl.CASE["lane"] / "derived/summary.json").read_text())
+        block = case_summary[model.wl.CASE.get("summary_key", "v8")]
+        expected = -block["band_bn" if basis == "set" else "cash_set_bn"][("low", "high").index(end)]
         p7.require(f"both_sets_fiscal_{basis}_{end}", abs(fiscal-expected) < 1e-6, actual=fiscal,expected=expected)
         for record in chosen.to_dict("records"):
             rows.append(dict(basis=basis,end=end,channel="fiscal/"+record["financing"]+"/"+record["side"]+"/"+str(record["id"]),
@@ -210,6 +211,6 @@ def ledger(model, out, write):
             value = -values[end]
             social += value
             rows.append(dict(basis=basis,end=end,channel="social/"+item,total_bn=value,federal_bn=0.,state_local_bn=0.,debt_eligible=False))
-        target = -model.source["v8_social_environment"]["variants"]["central"]["pairing_bn"][end] if basis == "set" else expected + social
+        target = -environment(model.source)["variants"]["central"]["pairing_bn"][end] if basis == "set" else expected + social
         p7.require(f"both_sets_full_channel_ledger_{basis}_{end}", abs(fiscal+social-target) < 1e-6)
     write(pd.DataFrame(rows), "p8_channel_ledger.csv", out)
