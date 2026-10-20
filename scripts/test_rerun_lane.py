@@ -46,6 +46,48 @@ def test_clean_lane_passes(tmp_path: Path) -> None:
     assert "IDENTICAL" in r.stdout and "NOT RUN" not in r.stdout
 
 
+def test_session_paths_block_before_any_command_runs(tmp_path: Path) -> None:
+    repo = lane_repo(tmp_path)
+    for name, marker in (("build.py", "/private/" + "tmp/session"),
+                         ("input.json", "/tmp/" + "claude-501/input"),
+                         ("receipt.txt", "scratch" + "pad/receipt")):
+        (repo / "lane" / name).write_text("\n" + marker + "\n")
+    r = rerun(repo)
+    assert r.returncode == 6, r.stdout
+    assert all(f"lane/{name}:2:" in r.stdout for name in ("build.py", "input.json", "receipt.txt"))
+    assert "no commands executed" in r.stdout and "rc=" not in r.stdout
+    assert not list(repo.glob("rerun_*"))
+
+
+def test_session_scan_ignores_markdown_and_ignored_local_cache(tmp_path: Path) -> None:
+    repo = lane_repo(tmp_path)
+    marker = "/private/" + "tmp/session"
+    (repo / "lane" / "RESULT.md").write_text(marker)
+    (repo / ".gitignore").write_text("lane/_cache/\n")
+    (repo / "lane" / "_cache").mkdir()
+    (repo / "lane" / "_cache" / "local.json").write_text(marker)
+    r = rerun(repo)
+    assert r.returncode == 0, r.stdout
+    assert "SESSION PATH" not in r.stdout and "IDENTICAL" in r.stdout
+
+
+def test_session_scan_checks_non_utf8_data_without_a_decode_fallback(tmp_path: Path) -> None:
+    repo = lane_repo(tmp_path)
+    marker = ("/private/" + "tmp/session\n").encode()
+    (repo / "lane" / "binary.dat").write_bytes(marker + b"\n" * 20000 + b"\xff")
+    r = rerun(repo)
+    assert r.returncode == 6, r.stdout
+    assert "SESSION PATH lane/binary.dat:1:" in r.stdout
+
+
+def test_non_utf8_data_without_a_session_path_passes(tmp_path: Path) -> None:
+    repo = lane_repo(tmp_path)
+    (repo / "lane" / "binary.dat").write_bytes(b"\xff\x00\xfe")
+    r = rerun(repo)
+    assert r.returncode == 0, r.stdout
+    assert "SESSION PATH" not in r.stdout
+
+
 def test_untracked_script_no_command_runs_is_flagged(tmp_path: Path) -> None:
     repo = lane_repo(tmp_path)
     (repo / "lane" / "helper.py").write_text("x = 1\n")
@@ -269,3 +311,32 @@ def test_script_a_python_runner_builds_a_path_to_is_covered(tmp_path: Path) -> N
     assert r.returncode == 3, r.stdout
     flagged = {line.split()[-1] for line in r.stdout.splitlines() if "NOT RUN" in line}
     assert flagged == {"lane/notes.py"}, r.stdout
+
+
+def test_file_over_95_mib_blocks_the_push(tmp_path: Path) -> None:
+    repo = lane_repo(tmp_path)
+    with (repo / "lane" / "big.csv").open("wb") as f:
+        f.truncate(96 * 2**20)
+    r = rerun(repo)
+    assert r.returncode == 7, r.stdout
+    assert "TOO LARGE lane/big.csv 96.0 MiB" in r.stdout and "PUSH WOULD FAIL" in r.stdout
+
+
+def test_file_between_50_and_95_mib_only_warns(tmp_path: Path) -> None:
+    repo = lane_repo(tmp_path)
+    with (repo / "lane" / "big.csv").open("wb") as f:
+        f.truncate(60 * 2**20)
+    r = rerun(repo)
+    assert r.returncode == 0, r.stdout
+    assert "LARGE lane/big.csv 60.0 MiB" in r.stdout and "TOO LARGE" not in r.stdout
+
+
+def test_ignored_cache_file_is_not_size_checked(tmp_path: Path) -> None:
+    repo = lane_repo(tmp_path)
+    (repo / ".gitignore").write_text("_cache/\n")
+    (repo / "lane" / "_cache").mkdir()
+    with (repo / "lane" / "_cache" / "big.csv").open("wb") as f:
+        f.truncate(96 * 2**20)
+    r = rerun(repo)
+    assert r.returncode == 0, r.stdout
+    assert "LARGE" not in r.stdout

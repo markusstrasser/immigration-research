@@ -46,6 +46,18 @@ hold different bytes, so pins fail and reruns differ in the clone. On 2026-10-14
 pinned three Census pages with CRLF, git stored them as LF, and 94 tracked files were in the same
 state. Write LF (`csv.writer(f, lineterminator="\\n")`), or list a pinned raw download as `-text` in
 .gitattributes.
+
+Before copying or executing anything, scan all tracked and untracked non-ignored lane files
+except Markdown for session-temporary paths. Such code/data is not portable to a fresh clone;
+report every file:line and exit 6. Captured narrative receipts belong in Markdown, never in an
+executable fallback. Scan raw bytes so non-UTF8 data cannot hide a path; ignored local caches
+are outside this source scan.
+
+After the run, a file a commit would carry above 95 MiB is listed as TOO LARGE and the exit code is 7:
+GitHub rejects a push holding a file over 100 MiB, and the repo has no LFS. Above 50 MiB it is listed as LARGE (a
+warning; GitHub warns there too). On 2026-10-20 the v9 propagation wrote a 143.8 MB back-cast table and a 259.5 MB
+world-ledger cells file, both found only by a reviewer. Aggregate the table, write `.csv.gz`, or keep the full bytes
+in the ignored `_cache/` with a tracked sha256.
 """
 from __future__ import annotations
 
@@ -189,6 +201,35 @@ def output_files(lane: Path) -> set[Path]:
     return {p for p in files if (ROOT / p).is_file() and "__pycache__" not in p.parts}
 
 
+def session_path_references(lane: Path) -> list[str]:
+    """Locate nonportable session paths in the sources a commit would carry."""
+    result = subprocess.run(["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z", "--", str(lane)],
+                            cwd=ROOT, capture_output=True, text=True, check=True)
+    needles = (b"/private/" + b"tmp/", b"/tmp/" + b"claude", b"scratch" + b"pad/")
+    hits = []
+    for name in sorted(set(result.stdout.split("\0")) - {""}):
+        path = ROOT / name
+        if not path.is_file() or path.suffix.lower() == ".md":
+            continue
+        with path.open("rb") as stream:
+            for number, line in enumerate(stream, 1):
+                if any(needle in line for needle in needles):
+                    context = line.decode("utf-8", errors="replace").strip()[:240]
+                    hits.append(f"{name}:{number}:{context}")
+    return hits
+
+
+TOO_LARGE, LARGE = 95 * 2**20, 50 * 2**20
+
+
+def oversized(lane: Path) -> list[tuple[str, int]]:
+    """Lane files a commit would carry above the LARGE warning size, largest first."""
+    r = subprocess.run(["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z", "--", str(lane)],
+                       cwd=ROOT, capture_output=True, text=True, check=True)
+    sizes = [(p, (ROOT / p).stat().st_size) for p in r.stdout.split("\0") if p and (ROOT / p).is_file()]
+    return sorted(((p, s) for p, s in sizes if s > LARGE), key=lambda x: -x[1])
+
+
 def converted_on_commit(lane: Path) -> list[str]:
     """Lane files a commit would carry whose stored bytes would differ from the bytes on disk."""
     r = subprocess.run(["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z", "--", str(lane)],
@@ -228,6 +269,12 @@ def main(argv: list[str]) -> int:
     if not (ROOT / lane).is_dir():
         print(f"[rerun] no lane directory {lane}")
         return 2
+    references = session_path_references(lane)
+    if references:
+        for reference in references:
+            print(f"[rerun] SESSION PATH {reference}")
+        print("[rerun] BLOCKED: session-only paths in lane source/data; no commands executed")
+        return 6
     before = output_files(lane)
     backup = Path(tempfile.mkdtemp(prefix="rerun_")) / "lane"
     for p in before:
@@ -281,9 +328,16 @@ def main(argv: list[str]) -> int:
         print("[rerun] UNCOVERED: new or modified scripts that no command runs. A worker may still be writing,"
               " or the reproduce list misses them; check ListAgents and the RESULT, then add a command or pass"
               " --allow-unrun <path>.")
+    big = oversized(lane)
+    for path, size in big:
+        print(f"[rerun] {'TOO LARGE' if size > TOO_LARGE else 'LARGE'} {path} {size / 2**20:.1f} MiB")
+    too_large = any(size > TOO_LARGE for _, size in big)
+    if too_large:
+        print("[rerun] PUSH WOULD FAIL: GitHub rejects files over 100 MiB and the repo has no LFS. Aggregate, write"
+              " .csv.gz, or keep the bytes in the ignored _cache/ with a tracked sha256.")
     if not ok:
         return 1
-    return 4 if converted else 3 if unrun else 0
+    return 7 if too_large else 4 if converted else 3 if unrun else 0
 
 
 if __name__ == "__main__":
