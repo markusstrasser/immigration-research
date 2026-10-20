@@ -1,8 +1,8 @@
 """Write the nine conclusions and premise matrix on live main case v9 only.
 
 The oct07 CSVs supply the historical claims and qualitative questions, never live values.
-C8 tests the map's still-oct07 sentence against explicitly labelled live comparator
-readings at personal ends, preserving gaps in the local-white symmetric route.
+C8 tests the map's v9 sentence (the white lane's oct16 central) against explicitly labelled
+live comparator readings at personal ends, preserving gaps in the local-white symmetric route.
 Every input file and its numeric CSV cells is pinned in tables_oct16_pins.json, rederived
 after adoption; drift stops before writing. No script repins itself. Historical scripts
 and outputs are preserved. Run after engine_breaks_sept29.cjs --case oct16 and all of
@@ -48,7 +48,6 @@ INPUTS = [
     F / 'winners_losers_2026_09_24/derived/oct16/p7_inputs.json',
     D / 'generation_source_contract_oct16.json',
     D / 'conclusions_oct07.csv', D / 'common_mode_oct07.csv',
-    F / 'white_replacement_2026_09_28/derived/headline_oct07.csv',
     F / 'overview_2026_09_28/groups.py', F / 'overview_2026_09_28/quantity_registry.csv', F / 'overview_2026_09_28/quantities.py',
     F / 'main_case_lineage_2026_10_05/derived/white_lines.json', F / 'main_case_lineage_2026_10_05/derived/v5_summary.json']
 
@@ -330,7 +329,6 @@ def main():
     for basis, key in (('accrual', 'band_bn'), ('cash', 'cash_set_bn')):
         for i, end in enumerate(('low', 'high')):
             check(f'C8 labelled mixed mortality headline {basis}/{end}', comparator[MIXED_MORTALITY, 'none', basis, 'mexican_origin_engine', end], summary[key][i], 1e-09)
-    head = {(r['figure'], r['end']): r for r in rows(white / 'headline_oct16.csv')}
     white_summary = {(r['basis'], r['group'], r['end']): r for r in rows(white / 'rekey_summary_oct16.csv')}
     for basis, key in (('accrual', 'band_bn'), ('cash', 'cash_set_bn')):
         for i, end in enumerate(('low', 'high')):
@@ -338,30 +336,26 @@ def main():
             check(f'C8 {basis} engine union on final adopted case {end}', num(row, 'cost'), summary[key][i], 0.0001)
             check(f'C8 {basis} personal end {end}', num(row, 'spec'), ends[i], 0)
     A1 = 'age artefact removed: A1 third-plus whites, accrual (central)'
-    LOCAL = 'local whites state by state, union ages, accrual (central)'
     RAW = 'raw cash at white ages: A1, cash set'
-
-    def white_band(figure):
-        return [num(head[figure, end], 'oct16_bn') for end in ('low', 'high')]
+    A3 = 'age artefact removed: A3 white rates at union ages, accrual'
+    A3_CASH = 'age artefact removed: A3 white rates at union ages, cash'
     sys.path.insert(0, str(F / 'overview_2026_09_28'))
     MAP = load_module('groups', F / 'overview_2026_09_28/groups.py')
     Q = load_module('quantities', F / 'overview_2026_09_28/quantities.py')
-    site = Q.groups_sites(MAP.GROUPS).get('selection/f263/text', '')
-    if not all((f'{{{{q:{rid}|mid_range}}}}' in site for rid in ('whites.gap_a1', 'whites.gap_local'))):
-        blocked('C8 map sentence no longer quotes the two historical white comparisons')
-    if '{{q:whites.gap_cash|mid_range}}' not in Q.groups_sites(MAP.GROUPS).get('selection/f263/why', ''):
-        blocked('C8 map why line no longer quotes its historical raw-cash comparator')
-    historical = {(r['figure'], r['end']): r for r in rows(white / 'headline_oct07.csv')}
-    references = {}
-    for rid, fig in (('whites.gap_a1', A1), ('whites.gap_local', LOCAL), ('whites.gap_cash', RAW)):
-        expected = tuple((num(historical[fig, e], 'oct07_bn') for e in ('low', 'high')))
-        if Q.record_value(rid) != expected:
-            blocked(f'C8 {rid}: map changed from the explicit historical oct07 baseline')
-        references[fig] = sum(expected) / 2
+    sites = Q.groups_sites(MAP.GROUPS)
+    site = sites.get('selection/f263/text', '')
+    if '{{q:whites.gap_central|mid_range}}' not in site:
+        blocked('C8 map sentence no longer quotes the central white comparison')
+    if '{{q:whites.gap_central_cash|mid_range}}' not in sites.get('selection/f263/why', ''):
+        blocked('C8 map why line no longer quotes the central cash comparison')
+    # The map quotes the white lane's central at the lineage's low mortality bound; both bounds are graded below.
+    central_gap = {(basis, bound): comparator_gap(central, MORTALITY.CENTRAL['mortality_convention'], bound, basis, 'A1_third_plus_nh_white')
+                   for basis in ('accrual', 'cash') for bound in ('low', 'high')}
+    for rid, basis in (('whites.gap_central', 'accrual'), ('whites.gap_central_cash', 'cash')):
+        for got, want in zip(Q.record_value(rid), central_gap[basis, 'low']):
+            check(f'C8 map {rid} is the live central', got, want, 1e-06)
+    references = {basis: sum(Q.record_value(rid)) / 2 for rid, basis in (('whites.gap_central', 'accrual'), ('whites.gap_central_cash', 'cash'))}
     claim = Q.fill(site)[0]
-    historical_claim = next((r['claim_tested'] for r in rows(D / 'conclusions_oct07.csv') if r['id'] == 'C8'))
-    if claim != historical_claim:
-        blocked("C8 map's claim text changed from oct07: restate its frame before grading oct16")
     real = live_pairing_values(rows(F / 'sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.csv'))
     pairing = [real['pairing_on_priced_count', f'published pairing ({e})'] for e in ('low', 'high')]
     # Since v8 the pairing's fiscal row is the case at both ends (no Hispanic/custody footing rows on oct16):
@@ -432,25 +426,31 @@ def main():
     cash_min = min((num(r, k) for r in gen if r['case'] == 'cash_set' for k in ('cost_low_end_bn', 'cost_high_end_bn')))
     cash_bmax = max((100 * num(r, k) for r in gen if r['case'] == 'cash_set' for k in r if k.startswith('break_even')))
     update('C6', 'holds' if cost_min > 0 else 'BREAKS at a generation end', f'Each generation costs others at both ends under both conventions; minimum ${cost_min:.1f}bn. Largest service break-even {bmax:.1f}%.', f"A generation becomes a gain below its own service break-even. On cash, minimum generation cost ${cash_min:.1f}bn at the case's personal ends; largest service break-even {cash_bmax:.1f}% over both allocations and conventions. All values are in c6_generation_break_even_oct16.csv. The progress clause retains its historical cohort evidence.", "G3+ carries the added people and the case's lineage item parts.", 'C1 and lineage/generation allocation')
-    central_a1 = {bound: comparator_gap(central, MORTALITY.CENTRAL['mortality_convention'], bound, 'accrual', 'A1_third_plus_nh_white') for bound in ('low', 'high')}
-    moves = [100 * (sum(central_a1[bound]) / 2 / references[A1] - 1) for bound in ('low', 'high')]
+    central_a1 = {bound: central_gap['accrual', bound] for bound in ('low', 'high')}
+    moves = [100 * (sum(central_a1[bound]) / 2 / references['accrual'] - 1) for bound in ('low', 'high')]
     C['C8']['claim_tested'] = claim
-    comparison_figures = [A1, LOCAL, RAW, 'age artefact removed: A3 white rates at union ages, accrual', 'age artefact removed: A3 white rates at union ages, cash', 'local whites state by state, union ages, cash']
-    historical_midpoints = {fig: sum((num(historical[fig, e], 'oct07_bn') for e in ('low', 'high'))) / 2 for fig in comparison_figures}
-    white_readings = 'Live legacy headline gaps are withheld: they mix the case lineage and rough comparator engines. Historical oct07 figures remain historical.'
-    comparison_rows, matched_readings = ([], [])
-    matched_figures = ((A1, 'accrual', 'A1_third_plus_nh_white'), (RAW, 'cash', 'A1_third_plus_nh_white'), (comparison_figures[3], 'accrual', 'A3_third_plus_nh_white_at_union_ages'), (comparison_figures[4], 'cash', 'A3_third_plus_nh_white_at_union_ages'))
+    C['C8']['observed_yet'] = 'partly (rough engine on both sides; v4-v6 and v9)'
+    white_readings = 'Live legacy headline gaps are withheld: they mix the case lineage and rough comparator engines.'
+    comparison_rows, matched_readings, outside = ([], [], [])
+    matched_figures = ((A1, 'accrual', 'A1_third_plus_nh_white'), (RAW, 'cash', 'A1_third_plus_nh_white'), (A3, 'accrual', 'A3_third_plus_nh_white_at_union_ages'), (A3_CASH, 'cash', 'A3_third_plus_nh_white_at_union_ages'))
     for mortality, bound in MORTALITY_READINGS:
         for figure, basis, group in matched_figures:
             values = comparator_gap(comparator, mortality, bound, basis, group)
             matched_readings.append(f'oct16 {mortality}, mortality bound {bound}, {figure}: ${pair_text(values)}bn')
+            move = 100 * (sum(values) / 2 / references[basis] - 1)
+            if abs(move) > 25:
+                outside.append(f'{mortality} {bound}, {figure} ({move:+.1f}%)')
             for i, end in enumerate(('low', 'high')):
                 lineage_row = comparator_rows[mortality, bound, basis, ROUGH_LINEAGE, end]
                 comparison_row = comparator_rows[mortality, bound, basis, group, end]
                 case_value = comparator[mortality, bound, basis, 'mexican_origin_engine', end]
                 comparison_rows.append({'case': 'oct16', 'mortality_convention': mortality, 'mortality_bound': bound, 'arm': 'combined_rules_only', 'allocation': 'personal', 'basis': basis, 'figure': figure, 'group': group, 'end': end, 'lineage_engine': 'rough', 'comparator_engine': 'rough', 'lineage_cost_bn': comparator[mortality, bound, basis, ROUGH_LINEAGE, end], 'comparator_cost_bn': comparator[mortality, bound, basis, group, end], 'lineage_minus_comparator_bn': values[i], 'lineage_minus_comparator_without_item11_bn': num(lineage_row, 'cost_without_item11_bn') - num(comparison_row, 'cost_without_item11_bn'), 'mixed_unit_removal_bn': num(lineage_row, 'mixed_unit_removal_bn') - num(comparison_row, 'mixed_unit_removal_bn'), 'comparator_item11_bn': num(comparison_row, 'mixed_unit_removal_bn'), 'item11_paired_se_bn': comparison_row.get('item11_paired_se_bn', ''), 'lineage_minus_comparator_one_sided_bn': values[i] + num(comparison_row, 'mixed_unit_removal_bn'), 'mixed_unit_asymmetry': comparison_row['mixed_unit_asymmetry'], 'framing': COMPARISON.MIXED_FRAME, 'case_lineage_cost_bn': case_value, 'case_minus_rough_lineage_bridge_bn': bridges[mortality, bound, basis, end], 'bridge_itemization': 'white_replacement_2026_09_28/derived/lineage_engine_bridge_oct16.csv'})
-    update('C8', ('A1 holds against historical map claim' if max(map(abs, moves)) <= 25 else 'A1 BREAKS historical map claim') + '; matched local-white reading GAP', f"Live v9 A1 on round 3's central (members' children depart with them, every group at its own coverage and its own mortality) ${pair_text(central_a1['low'])}bn / ${pair_text(central_a1['high'])}bn at the lineage's low / high profile bounds; rough engine on both sides. Move on the map's historical oct07 A1 midpoint: {pair_text(moves)}% (bounds low / high). Current-rule readings: " + '; '.join(matched_readings), f'A quarter from the historical map midpoints ${references[A1]:.2f}bn (A1), ${references[LOCAL]:.2f}bn (local). {white_readings} The explicitly tagged A1/A3 matched readings use symmetric_results_oct16.csv; all bounds are preserved in c8_comparisons_oct16.csv. [GAP] No local-state own-production/own-mortality row is delivered; the live legacy source mixes engines and cannot clear that gap.', "The map remains oct07 by operator rule; the consumer is oct16. The live full lineage and A1/A3 use personal ends on the rough engine, own comparator production/status/eligibility/frame rules. The mixed mortality conventions retain whole-population lineage mortality and each comparator's own mortality. Own-group mortality replaces the lineage's mortality using both source bounds. Case-versus-rough lineage bridge and itemization are beside each gap. Item 11 is measured for the lineage, A1 whites and Black; A3 takes A1's term reweighted by its weight on members in mixed units; every row declares its scope and reports its exclusion. Completion remains lineage-only. The current-rule readings leave comparators without Census coverage; round 3's central gives each its own. The mixed mortality pair is labelled and never a stated claim. [FRAMING-SENSITIVE]", 'P05/P07/P14')
-    C['C8']['discriminating_observation'] = '[GAP] The tagged rules-only comparisons do not identify causal replacement or transport lineage-only membership/mixed-unit estimates to comparators; local-state matched mortality/production remains uncomputed.'
+    update('C8', ('A1 central holds, restated on the v9 map' if max(map(abs, moves)) <= 25 else 'A1 central BREAKS the v9 map claim') + '; matched local-white reading GAP', f"Live v9 A1 on round 3's central (members' children depart with them, every group at its own coverage and its own mortality) ${pair_text(central_a1['low'])}bn / ${pair_text(central_a1['high'])}bn at the lineage's low / high profile bounds; rough engine on both sides. Move on the map's v9 midpoint: {pair_text(moves)}% (bounds low / high). Current-rule readings: " + '; '.join(matched_readings), f"A quarter from the map's v9 midpoints ${references['accrual']:.2f}bn (accrual) and ${references['cash']:.2f}bn (cash). Current-rule readings more than a quarter from their basis's midpoint: {'; '.join(outside) or 'none'}. {white_readings} The explicitly tagged A1/A3 matched readings use symmetric_results_oct16.csv; all bounds are preserved in c8_comparisons_oct16.csv. [GAP] No local-state own-production/own-mortality row is delivered; the live legacy source mixes engines and cannot clear that gap.", "The map's sentence quotes the white lane's v9 central at the lineage's low mortality bound; the consumer is oct16. The live full lineage and A1/A3 use personal ends on the rough engine, own comparator production/status/eligibility/frame rules. The mixed mortality conventions retain whole-population lineage mortality and each comparator's own mortality. Own-group mortality replaces the lineage's mortality using both source bounds. Case-versus-rough lineage bridge and itemization are beside each gap. Item 11 is measured for the lineage, A1 whites and Black; A3 takes A1's term reweighted by its weight on members in mixed units; every row declares its scope and reports its exclusion. Completion remains lineage-only. The current-rule readings leave comparators without Census coverage; round 3's central gives each its own. The mixed mortality pair is labelled and never a stated claim. [FRAMING-SENSITIVE]", 'P05/P07/P14')
+    C['C8']['premises'] = ("Rough engine on both sides at the case's personal ends (the white lane's oct16 central: members' children with them, "
+                           'each group at its own Census coverage and own mortality); P14 third-plus non-Hispanic whites at national rates; '
+                           'P05 by accrual on the 2026 separate-funds path; P07, the case\'s income-tax keys for every group; P20: both sides '
+                           'at the same count (lineage_population in symmetric_comparisons_oct16.csv).')
+    C['C8']['discriminating_observation'] ='[GAP] The tagged rules-only comparisons do not identify causal replacement or transport lineage-only membership/mixed-unit estimates to comparators; local-state matched mortality/production remains uncomputed.'
     rivals = {'C1': f"[FRAMING-SENSITIVE] First-year budgets: {arm_text('first_year_horizon')}; first-year cash: {arm_text('first_year_horizon_cash')}; counted by ancestry share: ${pair_text([band(arms['ancestry_share_low'])[0], band(arms['ancestry_share_high'])[1]])}bn.", 'C2': f"[FRAMING-SENSITIVE] Counting benefits when paid gives direct receipts less household transfers of ${pair_text(tally_of('cash_set'))}bn; payroll receipts and future earned benefits belong to different annual budgets.", 'C3': "[ASSUMPTION] The tax side scales imputed-unauthorized wages to an assumed on-books share; correction cancellation does not validate either side's key. Spending checks and tax adjustments have different evidence.", 'C4': f"[FRAMING-SENSITIVE] Against as many average residents, normalized PM2.5 ${normalized_central('pm25_consumption'):.1f}bn and crashes ${normalized_central('road_crash_externality'):.1f}bn (oct15 record-basis items). Absolute and normalized costs have different counterfactuals.", 'C5': '[INFERENCE] Wage-channel totals assigned to survey people do not identify who gains. Household pooling and financing can change the winner share at the same aggregate cost.', 'C6': "[INFERENCE] Today's G3+ descends from earlier stock than today's G2; the cross-section does not identify parent-to-child progress. Linked cohorts could show a different trajectory.", 'C8': '[FRAMING-SENSITIVE] An all-residents slice answers a composition question. The white headline, own-age cash, union-age cash and local-white gaps are distinct comparisons.'}
     for cid, text in rivals.items():
         C[cid]['rival_reading'] = text

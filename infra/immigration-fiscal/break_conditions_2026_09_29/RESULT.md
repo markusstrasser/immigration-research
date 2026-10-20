@@ -1541,6 +1541,7 @@ C1–C9 are published on the adopted v9 case (oct16) from this lane's own output
   evaluator plus `meta.v9_posts_by_spec`), which agrees with the producer route at 1e-6. The union's v9
   additions at sweep points are split by generation shares [APPROX].
 - C8: A1 BREAKS the historical map claim ($606.0 / 579.1bn); the matched local-white reading is a GAP.
+  [Superseded 2026-10-21 03:41 JST: the map moved to v9; see "C8 restated on the v9 map" below.]
   C7 and C9 are historical and not rerun.
 
 Route: the engine refuses `V9_CASE_CACHE=0` because that route's `correctionsPayload()` differs
@@ -1549,3 +1550,24 @@ Item arms are priced in child processes on the canonical route. Engine peak 2.28
 Pins: 24 engine, 43 tables, one line per input. The documented nine-command replay, run with
 `--allow-unrun {lane}/tables_oct14.py` (a docstring-only change), gives IDENTICAL 102/102, exit 0.
 [CALCULATION: rerun_lane.py; DATA: derived/*_oct16.*]
+
+### C8 restated on the v9 map — 2026-10-21 03:51 JST (`date`)
+
+The evidence map moved to v9, so C8 now tests the map's current sentence: "Against as many third-generation
+whites, the group costs others about $593bn (579–606) a year more." Its why line quotes the cash gap. The map
+reads the white lane's oct16 central (`symmetric_comparisons_oct16.csv`: `combined_rules_members`, own-group
+mortality, low bound). `tables_oct16.py` now requires f263 to quote `whites.gap_central` and
+`whites.gap_central_cash`, and it checks both records against the A1 central gaps it computes from
+`symmetric_results_oct16.csv` (1e-6). The oct07 white records, the local-white claim and `headline_oct07.csv` no
+longer enter C8.
+
+- **C8 holds, restated on the v9 map.** The live A1 central is $606.0 / 579.1bn at both of the lineage's mortality
+  bounds, a 0.0% move on the $592.54bn midpoint. All twelve current-rule readings (A1/A3, accrual/cash, three
+  mortality readings) lie within a quarter of their basis's midpoint ($592.54bn accrual, $419.40bn cash). The
+  matched local-white reading stays a GAP. The C8 premises cell now describes the rough engine on both sides.
+- Engine outputs are unchanged (the engine does not read the map). Pins: 24 engine unchanged, 42 tables rederived
+  (the dropped `headline_oct07.csv` is 43 → 42). Tests: 22 passed.
+- The documented nine-command replay, run with `--allow-unrun {lane}/tables_oct14.py`, gives IDENTICAL 102/102,
+  exit 0.
+
+[CALCULATION: tables_oct16.py; derived/conclusions_oct16.csv C8; rerun_lane.py]
